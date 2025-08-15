@@ -81,7 +81,7 @@ Once you enable the **Azure Private Link** tenant setting, running the first Spa
 
 Once the managed virtual network is provisioned, the starter pools (default Compute option) for Spark are disabled, because they're prewarmed clusters hosted in a shared virtual network. Spark jobs run on custom pools that are created on-demand at the time of job submission within the dedicated managed virtual network of the workspace. Workspace migration across capacities in different regions isn't supported when a managed virtual network is allocated to your workspace.
 
-When the private link setting is enabled, Spark jobs won't work for tenants whose home region doesn't support Fabric Data Engineering, even if they use Fabric capacities from other regions that do.
+When the private link setting is enabled, Spark jobs don't work for tenants whose home region doesn't support Fabric Data Engineering, even if they use Fabric capacities from other regions that do.
 
 For more information, see [Managed VNet for Fabric](./security-managed-vnets-fabric-overview.md).
 
@@ -125,8 +125,7 @@ Limitations:
 
 ### Healthcare data solutions (preview)
 
-Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. In a tenant where private link is enabled, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. This includes the ability to ingest healthcare data form various sources, such as Azure Storage accounts, and more.
-
+Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. In a tenant where private link is enabled, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. Also included is the ability to ingest healthcare data from various sources, such as Azure Storage accounts, and more.
 
 Other Fabric items, such as Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 
@@ -137,13 +136,13 @@ Other Fabric items, such as KQL Database, API for GraphQL(TM), and Eventstream, 
 
 ### Microsoft Purview Information Protection
 
-Microsoft Purview Information Protection doesn't currently support Private Link. This means that in Power BI Desktop running in an isolated network, the **Sensitivity** button is grayed out, label information won't appear, and decryption of *.pbix* files fail.
+Microsoft Purview Information Protection doesn't currently support Private Link. This means that in Power BI Desktop running in an isolated network, the **Sensitivity** button is grayed out, label information doesn't appear, and decryption of *.pbix* files fail.
 
 To enable these capabilities in Desktop, admins can configure [service tags](/azure/virtual-network/service-tags-overview) for the underlying services that support Microsoft Purview Information Protection, Exchange Online Protection (EOP), and Azure Information Protection (AIP). Make sure you understand the implications of using service tags in a private links isolated network.
 
 ### Mirrored database
 
-Private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring), [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db) and [SQL Server 2025 mirroring](/fabric/database/mirrored-database/sql-server) (using CTP 2.0 or higher version). For other types of database mirroring, if the **Block public Internet access** tenant setting is **enabled**, active mirrored databases will enter a paused state, and mirroring cannot be started. 
+Private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring), [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db) and [SQL Server 2025 mirroring](/fabric/database/mirrored-database/sql-server) (using CTP 2.0 or higher version). For other types of database mirroring, if the **Block public Internet access** tenant setting is **enabled**, active mirrored databases enter a paused state, and mirroring can't be started. 
 
 For open mirroring, when the **Block public Internet access** tenant setting is **enabled**, ensure the publisher writes data into the OneLake landing zone via a private link. 
 
@@ -172,7 +171,7 @@ There are several considerations to keep in mind while working with private endp
 
 * The Microsoft Fabric Capacity Metrics app doesn't support Private Link.
   
-* The OneLake Catalog - Govern tab won't be available when Private Link is activated.
+* The OneLake Catalog - Govern tab isn't available when Private Link is activated.
   
 * Private links resource REST APIs don't support tags.
 

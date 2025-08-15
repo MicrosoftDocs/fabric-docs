@@ -53,7 +53,7 @@ Review the following considerations when working with unsupported item types.
 * Existing lakehouses and warehouses use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse or warehouse.
 
 * While Data Pipelines and Copy Jobs are generally supported, the following scenario is currently not supported:
-  **Gateway-based connections:** Data Pipelines and Copy Jobs cannot use connections that rely on on-premises data gateway or VNet data gateway infrastructure.
+  **Gateway-based connections:** Data Pipelines and Copy Jobs can't use connections that rely on on-premises data gateway or VNet data gateway infrastructure.
   > **Note:** This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
 
 ## Supported APIs
@@ -242,7 +242,7 @@ A virtual network data gateway must be used for every dataflow connector. The vi
 * [Items - REST API (MirroredDatabase)](/rest/api/fabric/mirroreddatabase/items)
 
 > [!NOTE]
-> * Currently, workspace-level private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring), [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db) and [SQL Server 2025 mirroring](/fabric/database/mirrored-database/sql-server) (using CTP 2.0 or higher version). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases will enter a paused state, and mirroring cannot be started. 
+> * Currently, workspace-level private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring), [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db) and [SQL Server 2025 mirroring](/fabric/database/mirrored-database/sql-server) (using CTP 2.0 or higher version). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started. 
 > * For open mirroring, when your workspace is configured to deny inbound public access, ensure the publisher writes data into the OneLake landing zone via a private link with workspace FQDN.
 
 ## Supported and unsupported tools
