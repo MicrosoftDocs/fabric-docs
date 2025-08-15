@@ -248,7 +248,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 
 - The cross-workspace reference notebook is supported by **runtime version 1.2 and above**.
 - If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), use `notebookutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
-- Reference run allows child notebooks to run only if they use the same lakehouse as the parent, inherit the parent's lakehouse, or neither defines one. The execution will be blocked if the child specifies a different lakehouse to parent notebook. To bypass this check, set `useRootDefaultLakehouse: True`.
+- Reference run allows child notebooks to run only if they use the same lakehouse as the parent, inherit the parent's lakehouse, or neither defines one. The execution is blocked if the child specifies a different lakehouse to parent notebook. To bypass this check, set `useRootDefaultLakehouse: True`.
 
 ### Reference run multiple notebooks in parallel
 
@@ -587,7 +587,7 @@ notebookutils.credentials.getToken('audience Key')
 
 - When you call *notebookutils.credentials.getToken("pbi")*, the returned token has limited scope if the notebook is running under a service principal. The token does not have the full Fabric service scope. If the notebook is running under the user identity, the token still has the full Fabric service scope, but this may change with security improvements. To ensure that the token has the full Fabric service scope, use MSAL authentication instead of the *notebookutils.credentials.getToken* API. For more information, see [Authenticate with Microsoft Entra ID](/entra/msal/python/).
 
-- The Following are the list of scopes that the token have when calling *notebookutils.credentials.getToken* with the audience key *pbi* under the service principal identity:
+- The Following are the list of scopes that the token has when calling *notebookutils.credentials.getToken* with the audience key *pbi* under the service principal identity:
   - Lakehouse.ReadWrite.All
   - MLExperiment.ReadWrite.All
   - MLModel.ReadWrite.All
