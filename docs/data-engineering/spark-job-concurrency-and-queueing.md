@@ -34,7 +34,7 @@ HTTP Response code 430: This Spark job can't be run because you have hit a Spark
 With **queueing enabled**, notebook jobs triggered from **pipelines**, **job scheduler**, and **Spark job definitions** are added to the queue and automatically retried when capacity becomes available.
 
 > [!NOTE]
-> The queue expiration is set to **24 hours** from job submission time. After this period, jobs are **removed from the queue** and must be **resubmitted manually**.
+> The queue expiration is set to **24 hours** from job submission time. After this period, jobs are removed from the queue and must be resubmitted manually.
 
 Fabric capacities are also enabled with **bursting**, allowing you to consume **up to 3×** the number of Spark VCores you've purchased. This burst helps improve concurrency by allowing more jobs to run in parallel.
 

@@ -22,25 +22,61 @@ items:
   - name: Security white paper
     href: white-paper-landing-page.md                                            
 - name: Network security
-  items:
-  - name: Inbound
-    items:
-    - name: Protect inbound traffic
-      href: protect-inbound-traffic.md
-    - name: About tenant-level private links
-      href: security-private-links-overview.md
-    - name: Set up and use tenant-level private links
-      href: security-private-links-use.md
-    - name: Workspace-level protection
-      items:
-      - name: Manage admin access to inbound protection settings
-        href: security-workspace-enable-inbound-access-protection.md
-      - name: About workspace-level private links
-        href: security-workspace-level-private-links-overview.md
-      - name: Supported scenarios and limitations
-        href: security-workspace-level-private-links-support.md
-      - name: Set up and use workspace-level private links
-        href: security-workspace-level-private-links-set-up.md
+  items: 
+    - name: Inbound
+      items: 
+        - name: Tenant-level protection
+          items: 
+            - name: Protect inbound traffic to Fabric tenants
+              href: protect-inbound-traffic.md
+            - name: Microsoft Entra Conditional Access
+              href: security-conditional-access.md
+            - name: Service tags
+              href: security-service-tags.md
+            - name: Tenant-level private links
+              items: 
+                - name: About tenant-level private links
+                  href: security-private-links-overview.md
+                - name: Set up and use tenant-level private links
+                  href: security-private-links-use.md
+        - name: Workspace-level protection
+          items: 
+            - name: Manage admin access to inbound protection settings
+              href: security-workspace-enable-inbound-access-protection.md
+            - name: Workspace-level private links
+              items: 
+                - name: About workspace-level private links
+                  href: security-workspace-level-private-links-overview.md
+                - name: Supported scenarios and limitations
+                  href: security-workspace-level-private-links-support.md
+                - name: Set up and use workspace-level private links
+                  href: security-workspace-level-private-links-set-up.md
+                - name: Using both tenant and workspace private links
+                  href: security-tenant-workspace-private-links-same-tenant.md
+                - name: Cross-tenant communication
+                  href: security-cross-tenant-communication.md
+            - name: Cross-workspace communication
+              items:
+              - name: About cross-workspace communication
+                href: security-cross-workspace-communication.md
+              - name: Examples using managed private endpoints
+                items:
+                  - name: Access a lakehouse from Notebooks
+                    href: security-workspace-private-links-example-notebook.md
+                  - name: Access a notebook from a pipeline
+                    href: security-workspace-private-links-example-pipeline.md
+              - name: Examples using data gateways
+                items: 
+                  - name: Access a lakehouse from Power BI using OPDG
+                    href: security-workspace-private-links-example-on-premises-data-gateway.md
+                  - name: Access a lakehouse from Power BI using VNet gateway
+                    href: security-workspace-private-links-example-power-bi-virtual-network.md
+            - name: Multi-workspace communication
+              href: security-fabric-multi-workspace-api-overview.md
+        - name: Add Fabric URLs to your allowlist
+          href: fabric-allow-list-urls.md
+        - name: Add Power BI URLs to your allowlist
+          href: power-bi-allow-list-urls.md
     - name: Service tags
       href: security-service-tags.md
     - name: Microsoft Entra Conditional Access
@@ -49,16 +85,16 @@ items:
       href: fabric-allow-list-urls.md
     - name: Add Power BI URLs to your allowlist
       href: power-bi-allow-list-urls.md
-  - name: Outbound
-    items:
-    - name: Overview of managed VNets
-      href: security-managed-vnets-fabric-overview.md
-    - name: About managed private endpoints
-      href: security-managed-private-endpoints-overview.md
-    - name: Create managed private endpoints
-      href: security-managed-private-endpoints-create.md
-    - name: Trusted workspace access
-      href: security-trusted-workspace-access.md
+    - name: Outbound
+      items:
+      - name: Overview of managed VNets
+        href: security-managed-vnets-fabric-overview.md
+      - name: About managed private endpoints
+        href: security-managed-private-endpoints-overview.md
+      - name: Create managed private endpoints
+        href: security-managed-private-endpoints-create.md
+      - name: Trusted workspace access
+        href: security-trusted-workspace-access.md
 - name: Data security
   items:
   - name: Workspace customer managed keys
