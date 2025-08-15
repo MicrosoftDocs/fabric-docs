@@ -96,37 +96,37 @@ The **draft folder** contains the configuration files corresponding to the draft
 
 :::image type="content" source="./media/data-agent-cicd/git-config-draft.png" alt-text="Screenshot showing the draft folder." lightbox="./media/data-agent-cicd/git-config-draft.png":::
 
-- **stage_config.json** that contains `aiInstructions` which refers to the agent instructions.
+- **stage_config.json** that contains `aiInstructions`, which refers to the agent instructions.
 
 :::image type="content" source="./media/data-agent-cicd/git-config-ai-instructions.png" alt-text="Screenshot showing the ai instructions." lightbox="./media/data-agent-cicd/git-config-ai-instructions.png":::
 
-Each data source folder contains **datasource.json** and **fewshots.json**. However, if the data source is a semantic model, it does not support example queries, so its folder only contains **datasource.json**.
+Each data source folder contains **datasource.json** and **fewshots.json**. However, if the data source is a semantic model, it doesn't support example queries, so its folder only contains **datasource.json**.
 
 :::image type="content" source="./media/data-agent-cicd/git-config-draft-lakehouse.png" alt-text="Screenshot showing the lakehouse data source folder." lightbox="./media/data-agent-cicd/git-config-draft-lakehouse.png":::
 
 The **datasource.json** defines the configuration for that data source, including:
 
-- `dataSourceInstructions` which represents the instructions provided for that data source.
-- `displayName` which shows the name of the data source.
-- `elements` which refers to the schema map and includes a complete list of tables and columns from the data source.
-  - Each table has an `is_selected` property. If `true`, the table is included and if `false`, it means the table is not selected and will not be used by the data agent.
-  - Column entries also show `is_selected`, but column-level selection isn’t currently supported. If a table is selected, all of its columns are included regardless of the column `is_selected` value. If a table is not selected (`is_selected`: `false` at the table level), none of the columns are considered despite that `is_selected` is set to `true` at the column level.
+- `dataSourceInstructions`, which represents the instructions provided for that data source.
+- `displayName`, which shows the name of the data source.
+- `elements`, which refers to the schema map and includes a complete list of tables and columns from the data source.
+  - Each table has an `is_selected` property. If `true`, the table is included and if `false`, it means the table isn't selected and won't be used by the data agent.
+  - Column entries also show `is_selected`, but column-level selection isn’t currently supported. If a table is selected, all of its columns are included regardless of the column `is_selected` value. If a table isn't selected (`is_selected`: `false` at the table level), none of the columns are considered despite that `is_selected` is set to `true` at the column level.
 - Type conventions:
 
-  - If the type is a data source, it is simply the data source type (for example: `"type": "lakehouse_tables"`).
-  - If the type is a table, it ends with .table (for example: `"type": "lakehouse_tables.table"`).
-  - If the type is a column, it ends with .column (for example: `"type": "lakehouse_tables.column"`).
+  - If the type is a data source, it's simply the data source type (for example: `"type": "lakehouse_tables"`).
+  - If the type is a table, it ends with `.table` (for example: `"type": "lakehouse_tables.table"`).
+  - If the type is a column, it ends with `.column` (for example: `"type": "lakehouse_tables.column"`).
 
 :::image type="content" source="./media/data-agent-cicd/git-config-draft-lakehouse-config.png" alt-text="Screenshot showing the lakehouse config." lightbox="./media/data-agent-cicd/git-config-draft-lakehouse-config.png":::
 
 The **fewshots.json** stores example queries for the data source. Each entry includes:
   - `id` as the unique identifier for the example query.
-  - `question` which refers t the natural language question.
+  - `question`, which refers t the natural language question.
   - `query` shows the query text, which may be SQL or KQL depending on the data source type.
 
 :::image type="content" source="./media/data-agent-cicd/git-configure-lakehouse-few-shots.png" alt-text="Screenshot showing the few shots." lightbox="./media/data-agent-cicd/git-configure-lakehouse-few-shots.png":::
 
-The **published folder** mirrors the structure of the draft folder, but represents the published version of the data agent. It is best practice to not modify files in the published folder directly. Changes should be made in the draft folder and then once data agent is published, those changes will be reflected in the published folder. This ensures that the published version is always generated from a controlled draft state.
+The **published folder** mirrors the structure of the draft folder, but represents the published version of the data agent. It's best practice to not modify files in the published folder directly. Changes should be made in the draft folder. Once the data agent is published, those changes are reflected in the published folder. This ensures that the published version is always generated from a controlled draft state.
 
 :::image type="content" source="./media/data-agent-cicd/git-config-published.png" alt-text="Screenshot showing the published folder." lightbox="./media/data-agent-cicd/git-config-published.png":::
 
@@ -136,11 +136,11 @@ Deployment pipelines provide a controlled way to move data agents between worksp
 
 1. Develop a new data agent or update an existing one in the development workspace.
 2. Promote the changes to the test workspace for validation.
-3. Promote the tested changes to the production workspace where it will available to end users.
+3. Promote the tested changes to the production workspace where it is available to end users.
 
 :::image type="content" source="./media/data-agent-cicd/select-deployment-pipeline.png" alt-text="Screenshot showing the deployment pipeline setup." lightbox="./media/data-agent-cicd/select-deployment-pipeline.png":::
 
-Before deploying, you need to assign a workspace to each stage in the deployment pipeline: development, test, and production. If you don’t assign a workspace to the test or production stage, the workspaces will be automatically created. The automatically created workspaces are named after the development workspace, with [test] or [prod] appended.
+Before deploying, you need to assign a workspace to each stage in the deployment pipeline: development, test, and production. If you don’t assign a workspace to the test or production stage, the workspaces are automatically created. The automatically created workspaces are named after the development workspace, with [test] or [prod] appended.
 
 :::image type="content" source="./media/data-agent-cicd/test-workspace.png" alt-text="Screenshot showing the dev to test." lightbox="./media/data-agent-cicd/test-workspace.png":::
 
@@ -154,7 +154,7 @@ To deploy changes:
 You can review a deployment plan before applying changes, ensuring that only intended updates are promoted. For more information, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md?tabs=from-fabric%2Cnew-ui).
 
 > [!NOTE]
-> Service principals are supported in the Fabric data agent **only** as part of ALM scenarios. This support is limited to enabling ALM operations (such as Git integration and deployment pipelines) and does not extend to other Fabric data agent features. If you need to interact with a data agent outside of ALM workflows, service principal is not supported.
+> Service principals are supported in the Fabric data agent **only** as part of ALM scenarios. This support is limited to enabling ALM operations (such as Git integration and deployment pipelines) and doesn't extend to other Fabric data agent features. If you need to interact with a data agent outside of ALM workflows, service principal isn't supported.
 
 ### Publishing a Fabric data agent for the deployment pipelines
 
@@ -162,7 +162,7 @@ Publishing a Fabric data agent makes it available for use across all different c
 
 - To assess and consume the data agent across these channels, the data agent must be published; unpublished data agents are not accessible for consumption even if they are in production workspace. In order to follow the best practices in accordance with deployment pipeline, note that: 
 
-- Publishing from a development workspace should be limited to authorized users only who are working on data agent development and want to assess its performance across different consumption channels. Access to this workspace must be restricted so that unfinished or experimental data agents are not exposed to broader audiences.
+- Publishing from a development workspace should be limited to authorized users only who are working on data agent development and want to assess its performance across different consumption channels. Access to this workspace must be restricted so that unfinished or experimental data agents aren't exposed to broader audiences.
 - End users should access data agents that are published from the production workspace only, ensuring they interact with stable, approved versions of the data agent.
 
 This approach supports both the functional requirement of enabling consumption and performance evaluation, and it ensures proper access control by keeping development and production environments separate.
@@ -173,12 +173,12 @@ This approach supports both the functional requirement of enabling consumption a
 - Keep related resources (data sources, data agents, notebooks, pipelines) in the same workspace for easier promotion.
 - Test data agent changes in the test workspace before promoting to production.
 - Use descriptive commit messages to make history easier to understand.
-- Do not directly make changes to the published folder in the Git repository.
+- Don't directly make changes to the published folder in the Git repository.
 
 ### Limitations and considerations
 
 - Only workspaces connected to a Git repository can use Git-based ALM features.
-- Service principals are supported in the Fabric data agent only as part of ALM scenarios. If you need to interact with a data agent outside of ALM workflows, service principal is not supported.
+- Service principals are supported in the Fabric data agent only as part of ALM scenarios. If you need to interact with a data agent outside of ALM workflows, service principal isn't supported.
 - Deployment pipelines require that the source and target workspaces are in the same tenant.
 - Large numbers of frequent commits can impact repository size and performance.
 
