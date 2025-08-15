@@ -139,6 +139,9 @@ Deployment pipelines provide a controlled way to move data agents between worksp
 
 You can review a deployment plan before applying changes, ensuring that only intended updates are promoted. For more information, see [Get started with deployment pipelines](https://learn.microsoft.com/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines?tabs=from-fabric%2Cnew-ui).
 
+> [!NOTE]
+> Service principals are supported in the Fabric data agent **only** as part of ALM scenarios. This support is limited to enabling ALM operations (such as Git integration and deployment pipelines) and does not extend to other Fabric data agent features. If you need to interact with a data agent outside of ALM workflows, service principal is not supported.
+
 ### Publishing a Fabric data agent for the deployment pipelines
 
 Publishing a Fabric data agent makes it available for use across all different consumption channels, including Copilot for Power BI, Microsoft Copilot Studio, and Azure AI Foundry Services.
