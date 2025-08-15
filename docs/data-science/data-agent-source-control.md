@@ -56,10 +56,10 @@ You can connect your Fabric workspace to a Git repository from the **Workspace s
 
 4. When you make modifications to the Fabric data agent in a Git-connected workspace, the changes are detected and the data agent’s status in the Source control pane will change to Uncommitted changes. These modifications can include:
 
-- Changing the schema selection.
-- Updating AI instructions or data source instructions.
-- Editing example queries.
-- Publishing the data agent or updating its publishing description.
+  - Changing the schema selection.
+  - Updating AI instructions or data source instructions.
+  - Editing example queries.
+  - Publishing the data agent or updating its publishing description.
 
 Any change—whether functional or descriptive—causes the data agent to become out of sync with the linked Git repository. The workspace items with changes will appear under the Changes tab in the Source control pane. You can review these changes, compare them to the committed version, and commit them back to the Git repository to synchronize.
 
@@ -90,9 +90,9 @@ Inside the **config** folder, the **publish_info.json** contains the publishing 
 The **draft folder** contains the configuration files corresponding to the draft version of the data agent and the **published folder** contains the configuration files for the published version of the data agent. The **draft folder** contains:
 
 - **Data source folders** where there is one folder for each data source used by the data agent.
-  - Lakehouse or warehouse data sources: Folder names start with lakehouse-tables- or warehouse-tables-, followed by the name of the lakehouse or warehouse.
-  - Semantic model data sources: Folder names start with semantic-model-, followed by the name of the semantic model.
-  - KQL database data sources: Folder names start with kusto-, followed by the name of KQL database.
+  - Lakehouse or warehouse data sources: Folder names start with `lakehouse-tables-` or `warehouse-tables-`, followed by the name of the lakehouse or warehouse.
+  - Semantic model data sources: Folder names start with `semantic-model-`, followed by the name of the semantic model.
+  - KQL database data sources: Folder names start with `kusto-`, followed by the name of KQL database.
 
 :::image type="content" source="./media/data-agent-cicd/git-config-draft.png" alt-text="Screenshot showing the draft folder." lightbox="./media/data-agent-cicd/git-config-draft.png":::
 
@@ -119,9 +119,9 @@ The **datasource.json** defines the configuration for that data source, includin
 :::image type="content" source="./media/data-agent-cicd/git-config-draft-lakehouse-config.png" alt-text="Screenshot showing the lakehouse config." lightbox="./media/data-agent-cicd/git-config-draft-lakehouse-config.png":::
 
 The **fewshots.json** stores example queries for the data source. Each entry includes:
-  - "id" – Unique identifier for the example query.
-  - "question" – Natural language question.
-  - "query" – The query text, which may be SQL or KQL depending on the data source type.
+  - `id` as the unique identifier for the example query.
+  - `question` which refers t the natural language question.
+  - `query` shows the query text, which may be SQL or KQL depending on the data source type.
 
 :::image type="content" source="./media/data-agent-cicd/git-config-lakehouse-fewshots.png" alt-text="Screenshot showing the few shots." lightbox="./media/data-agent-cicd/git-config-lakehouse-fewshots.png":::
 
