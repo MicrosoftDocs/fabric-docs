@@ -14,9 +14,9 @@ ms.date: 08/13/2025
 
 # Access inbound restricted lakehouse data from Power BI using an OPDG gateway
 
-An on-premises data gateway (OPDG) can be used to establish [cross-workspace communication](security-cross-workspace-communication.md) between an open workspace and a workspace that [restricts inbound public access](security-workspace-level-private-links-set-up.md#step-8-deny-public-access-to-the-workspace). For example, if you want to access a lakehouse in an inbound restricted workspace from Power BI reports and semantic models in an open workspace, you can set up an OPDG. An OPDG is typically installed on a virtual machine or a physical server inside a private network and acts as a bridge between your data and Fabric cloud services.
+An on-premises data gateway (OPDG) can be used to establish cross-workspace communication between an open workspace and a workspace that [restricts inbound public access](security-workspace-level-private-links-set-up.md#step-8-deny-public-access-to-the-workspace). For example, if you want to access a lakehouse in an inbound restricted workspace from Power BI reports and semantic models in an open workspace, you can set up an OPDG. An OPDG is typically installed on a virtual machine or a physical server inside a private network and acts as a bridge between your data and Fabric cloud services.
 
-:::image type="content" source="./media/security-workspace-private-links-example-on-premises-data-gateway/on-premises-data-gateway.png" alt-text="Diagram illustrating a connection using an on-premises data gateway." border="false":::  
+:::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/on-premises-data-gateway.png" alt-text="Diagram illustrating a connection using an on-premises data gateway." border="false":::  
 
 In this diagram, the open workspace (Workspace 1) contains Power BI reports and a semantic model that is bound to an OPDG. The OPDG enables the connection to the lakehouse in the inbound restricted workspace. This setup allows Power BI reports and semantic models in Workspace 1 to securely access the lakehouse in Workspace 2 without exposing it to public access.
 
@@ -64,7 +64,7 @@ Create a lakehouse in the target workspace and upload a Delta Table to it by fol
 
 1. Add data to the lakehouse by using Azure Storage Explorer to upload your Delta Table folder into the lakehouse. In Azure Storage Explorer, select **ADLS Gen2 container or directory**.  
 
-   :::image type="content" source="./media/security-workspace-private-links-example-on-premises-data-gateway/select-resource.png" alt-text="Screenshot of selecting the resource." lightbox="./media/security-workspace-private-links-example-on-premises-data-gateway/select-resource.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/select-resource.png" alt-text="Screenshot of selecting the resource." lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/select-resource.png":::
 
 1. Sign in. Then enter a display name for the storage and enter the blob container URL in the following format:
 
@@ -78,7 +78,7 @@ Create a lakehouse in the target workspace and upload a Delta Table to it by fol
 
 1. Under the **Tables** folder, upload the Delta Table you want to use (for example, the `customers` table).
    
-   :::image type="content" source="./media/security-workspace-private-links-example-on-premises-data-gateway/upload-folder.png" alt-text="Screenshot of the upload folder pane." lightbox="./media/security-workspace-private-links-example-on-premises-data-gateway/upload-folder.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/upload-folder.png" alt-text="Screenshot of the upload folder pane." lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/upload-folder.png":::
 
 ## Step 3: Create a semantic model in the open workspace
 
@@ -94,11 +94,11 @@ Now that you have a lakehouse in the restricted workspace, you can create a sema
 
 1. Before executing the semantic model creation, edit the data source to reference the restricted lakehouse’s connection string and lakehouse ID. Convert the `definition/tables/customers.tmdl` file from the semantic model definition from Base64 to JSON and copy the output.
 
-   :::image type="content" source="./media/security-workspace-private-links-example-on-premises-data-gateway/convert-json-copy.png" alt-text="Screenshot of converting from Base64 to JSON." lightbox="./media/security-workspace-private-links-example-on-premises-data-gateway/convert-json-copy.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/convert-json-copy.png" alt-text="Screenshot of converting from Base64 to JSON." lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/convert-json-copy.png":::
 
 1. Update the source with the restricted lakehouse’s connection string and database ID. Then convert the JSON back to Base64 and use it in your semantic model creation request.
 
-   :::image type="content" source="./media/security-workspace-private-links-example-on-premises-data-gateway/convert-back.png" alt-text="Screenshot of converting JSON back to Base64." lightbox="./media/security-workspace-private-links-example-on-premises-data-gateway/convert-back.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/convert-back.png" alt-text="Screenshot of converting JSON back to Base64." lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/convert-back.png":::
 
 1. Use the Get Lakehouse API to retrieve the connection string and lakehouse ID:
 
@@ -114,7 +114,7 @@ To enable the semantic model to connect to the lakehouse in the restricted works
 
 1. In the Power BI semantic model settings, turn on the toggle under **Gateway Connections**.
 
-   :::image type="content" source="./media/security-workspace-private-links-example-on-premises-data-gateway/gateway-connections.png" alt-text="Screenshot of enabling gateway connections." lightbox="./media/security-workspace-private-links-example-on-premises-data-gateway/gateway-connections.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/gateway-connections.png" alt-text="Screenshot of enabling gateway connections." lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/gateway-connections.png":::
 
 1. Install and configure an OPDG on a virtual machine as described in [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install).
 
@@ -124,18 +124,18 @@ To enable the semantic model to connect to the lakehouse in the restricted works
 
 1. In Power BI, create the OPDG SQL Server connection. Use the lakehouse's server name and lakehouse ID as the database, authenticate using OAuth2, and copy the resulting Connection ID.
 
-   :::image type="content" source="./media/security-workspace-private-links-example-on-premises-data-gateway/settings-connection-name.png" alt-text="Screenshot of settings connection name." lightbox="./media/security-workspace-private-links-example-on-premises-data-gateway/settings-connection-name.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/settings-connection-name.png" alt-text="Screenshot of settings connection name." lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/settings-connection-name.png":::
 
 1. Use the API to bind the semantic model to the gateway ID and connection ID:
 
       `https://api.powerbi.com/v1.0/myorg/groups/{workspaceID}/datasets/{SemanticModelID}/Default.BindToGateway`
 
-      :::image type="content" source="./media/security-workspace-private-links-example-on-premises-data-gateway/bind-semantic-model.png" alt-text="Screenshot of bind semantic model." lightbox="./media/security-workspace-private-links-example-on-premises-data-gateway/bind-semantic-model.png":::
+      :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/bind-semantic-model.png" alt-text="Screenshot of bind semantic model." lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/bind-semantic-model.png":::
 
 1. Verify the gateway binding. In the Semantic Model settings, refresh the page. The OPDG should now be shown as the active gateway.
 
-      :::image type="content" source="./media/security-workspace-private-links-example-on-premises-data-gateway/verify-gateway-binding.png" alt-text="Screenshot of verify-gateway-binding" lightbox="./media/security-workspace-private-links-example-on-premises-data-gateway/verify-gateway-binding.png":::
+      :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/verify-gateway-binding.png" alt-text="Screenshot of verify-gateway-binding" lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/verify-gateway-binding.png":::
 
 1. Refresh the dataset and build a report.
 
-   :::image type="content" source="./media/security-workspace-private-links-example-on-premises-data-gateway/refresh-dataset.png" alt-text="Screenshot of refresh dataset." lightbox="./media/security-workspace-private-links-example-on-premises-data-gateway/refresh-dataset.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/refresh-dataset.png" alt-text="Screenshot of refresh dataset." lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/refresh-dataset.png":::
