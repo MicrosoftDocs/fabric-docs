@@ -17,9 +17,12 @@ ms.custom: configuration
 [Azure Key Vault (AKV)](/azure/key-vault/general/overview) is Microsoft’s cloud service for storing secrets, keys, and certificates centrally, so you don’t have to hardcode them into your apps. With Azure Key Vault references in Microsoft Fabric, you can just point to a secret in your vault instead of copying and pasting credentials. Fabric grabs the secret automatically whenever it’s needed for a data connection.
 
 ## How Azure Key Vault references work
-When you add an Azure Key Vault reference in Fabric, you’re just telling Fabric where to find the secret—using the vault’s link and the name of the secret. The service records the vault URI and the secret name by using Microsoft Entra ID OAuth 2.0 consent. During the consent flow, you grant Fabric’s system-assigned managed identity **Get** and **List** permissions on the specified secrets; the secret values themselves never leave the key vault.
+When you configure an Azure Key Vault reference in Fabric, you're creating a secure pointer to your secret rather than storing the secret itself. Here's how the process works:
+**Initial Setup:**
+Fabric records only the vault URI, secret name from your Key Vault and user auth / OAuth2.0 credential for connecting to the Azure Key Vault (AKV). You must grant your the user identity **Get** and **List** permissions in the specified AKV. Importantly, the actual secret values are never stored within Fabric.
 
-Fabric doesn’t store the secret itself, just an encrypted token. When it’s time to connect to your data, Fabric quietly grabs the secret, uses it to build the connection, and then lets it go. Nothing is saved to disk or sent through your browser. The secret is held just long enough to establish the connection and is then discarded.
+**Runtime Secret Retrieval:**
+When Fabric needs to establish a data connection, it dynamically retrieves the secret from your Key Vault using the stored reference. The secret is used immediately to authenticate the connection and is held in memory only for the duration needed to establish that connection.
 
 ## Prerequisites
 
