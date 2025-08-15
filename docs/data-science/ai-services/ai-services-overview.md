@@ -1,16 +1,16 @@
----
+﻿---
 title: Use Azure AI services in Fabric
 description: Overview of using Azure AI services in Fabric.
-ms.author: scottpolly
-author: s-polly
+ms.author: lagayhar
+author: lgayhardt
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: overview
-ms.custom:
+ms.custom: 
   - references_regions
 ms.date: 11/29/2024
 ms.update-cycle: 180-days
-ms.search.form:
+ms.search.form: 
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---

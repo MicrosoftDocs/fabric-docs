@@ -1,13 +1,14 @@
----
+﻿---
 title: Use R for Apache Spark
 description: Overview of developing Spark applications using the R language.
 ms.reviewer: None
-author: sdgilley
-ms.author: sgilley
+author: lgayhardt
+ms.author: lagayhar
 ms.topic: overview
-ms.custom:
-ms.date: 08/15/2025
+ms.custom: 
+ms.date: 11/15/2023
 ms.search.form: R Language
+reviewer: sdgilley
 ---
 
 # Use R for Apache Spark

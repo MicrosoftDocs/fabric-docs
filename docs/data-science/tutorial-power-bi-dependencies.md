@@ -1,13 +1,13 @@
----
+﻿---
 title: 'Tutorial: Analyze functional dependencies in a Power BI semantic model'
 description: This article shows how to analyze functional dependencies that exist in columns of a DataFrame.
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: alsavelv
 reviewer: alsavelv
 ms.topic: tutorial
-ms.custom:
-ms.date: 08/15/2025
+ms.custom: 
+ms.date: 09/27/2023
 ---
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_dependencies_tutorial.ipynb -->

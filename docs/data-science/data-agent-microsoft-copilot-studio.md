@@ -1,9 +1,9 @@
----
+﻿---
 title: Consume a data agent in Microsoft Copilot Studio (preview)
 description: Learn how to consume a data agent in Microsoft Copilot Studio.
-author: amhjf
-ms.author: amjafari
-ms.reviewer: jburchel
+author: jonburchel
+ms.author: jburchel
+ms.reviewer: amjafari
 reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science

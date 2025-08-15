@@ -267,6 +267,12 @@
         href: connector-azure-table-storage.md
       - name: Configure in a data pipeline Copy activity
         href: connector-azure-table-storage-copy-activity.md
+    - name: Cassandra
+      items:
+      - name: Cassandra - Overview
+        href: connector-cassandra-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-cassandra-copy-activity.md 
     - name: CloudBluePSA
       items:
       - name: CloudBluePSA - Overview
@@ -769,6 +775,8 @@
           href: expression-language.md
       - name: Data pipeline runs
         href: pipeline-runs.md
+      - name: Schedule pipeline
+        href: schedule-pipeline.md
       - name: Storage event triggers
         href: pipeline-storage-event-triggers.md
       - name: Variable library integration (Preview)
