@@ -34,7 +34,7 @@ REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier [FULL
 
 ## Known issues
 
-* At present, all refresh operations default to a full refresh.
+* Currently, all refresh operations default to a full refresh.
 
 ## Related articles
 

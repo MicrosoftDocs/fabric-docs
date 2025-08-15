@@ -1,6 +1,6 @@
 ---
 title: Overview of Materialized Lake Views
-description: Materialized lake views in Microsoft Fabric facilitate the implementation of the medallion architecture by enabling automated creation, scheduling, and execution of materialized lake views.
+description: Learn about the features, availability, and limitations of materialized lake views in Microsoft Fabric.
 ms.author: nijelsf 
 author: reachnijel
 ms.reviewer: balaji.sankaran

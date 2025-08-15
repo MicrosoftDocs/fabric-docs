@@ -1,6 +1,6 @@
 ---
 title: Spark SQL Reference for Materialized Lake Views
-description: Learn about the Spark SQL syntax of activities for materialized lake views in Microsoft Fabric.
+description: Learn about the Spark SQL syntax for activities related to materialized lake views in Microsoft Fabric.
 ms.topic: concept-article
 author: abhishjain002 
 ms.author: abhishjain
@@ -11,7 +11,7 @@ ms.date: 08/12/2025
 
 # Spark SQL reference for materialized lake views
 
-In this article, you learn about the Spark SQL syntax of activities for materialized lake views in Microsoft Fabric.
+In this article, you learn about the Spark SQL syntax for activities related to materialized lake views in Microsoft Fabric.
 
 ## Create a materialized lake view
 
