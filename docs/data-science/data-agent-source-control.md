@@ -15,8 +15,8 @@ This article describes how to manage Fabric data agents using Git integration an
 
 You can use two complementary approaches to support ALM for Fabric data agents:
 
-- [Git integration](#git-integration): Sync an entire workspace with a Git repository (either Azure DevOps or GitHub as a Git provider) to enable version control, collaboration through branches, and history tracking for individual items including Fabric data agents.
-- [Deployment pipelines](#deployment-pipelines): Promote content between separate workspaces representing development, test, and production stages using built‑in pipelines.
+- Git integration: Sync an entire workspace with a Git repository (either Azure DevOps or GitHub as a Git provider) to enable version control, collaboration through branches, and history tracking for individual items including Fabric data agents.
+- Deployment pipelines: Promote content between separate workspaces representing development, test, and production stages using built‑in pipelines.
 
 These capabilities together provide end-to-end ALM support for Fabric data agents.
 
@@ -32,15 +32,15 @@ Microsoft Fabric Git integration synchronizes a Fabric workspace with a Git repo
 
 For more information on the Git integration process, you can refer to the following:
 
-- [What is Microsoft Fabric Git integration?](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration?tabs=azure-devops)
-- [Basic concepts in Git integration](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/git-integration-process?tabs=Azure%2Cazure-devops)
-- [Get started with Git integration](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git)
+- [What is Microsoft Fabric Git integration?](https://learn.microsoft.com/fabric/cicd/git-integration/intro-to-git-integration?tabs=azure-devops)
+- [Basic concepts in Git integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-integration-process?tabs=Azure%2Cazure-devops)
+- [Get started with Git integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git)
 
 ### Set up a connection to source control
 
 You can connect your Fabric workspace to a Git repository from the **Workspace settings** page. This lets you commit and sync changes directly from Fabric.
 
-1. See [Get started with Git integration](ttps://learn.microsoft.com/en-us/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git) for detailed steps to connect to a Git repository in Azure DevOps or GitHub.
+1. See [Get started with Git integration](ttps://learn.microsoft.com/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git) for detailed steps to connect to a Git repository in Azure DevOps or GitHub.
 
 2. After connecting to the Git repository, your workspace items, including Fabric data agents, appear in the Source control panel.
 
@@ -67,7 +67,7 @@ Any change—whether functional or descriptive—causes the data agent to become
 
 Once the updates are pushed and available in the repository, your Fabric workspace will detect them and display an Updates available notification in the Source control pane. The updated items such as data agent will appear under the Updates tab, where you can review and accept them. Accepting these updates applies the repository changes to your workspace items, ensuring the workspace reflects the latest committed version in Git.
 
-:::image type="content" source="./media/data-agent-cicd/source-updates.png" alt-text="Screenshot showing the updates from Git in the source control." lightbox="./media/data-agent-cicd/source-control-updates.png":::
+:::image type="content" source="./media/data-agent-cicd/source-control-updates.png" alt-text="Screenshot showing the updates from Git in the source control." lightbox="./media/data-agent-cicd/source-control-updates.png":::
 
 ### Folder and file structure in the Git repository
 
@@ -84,7 +84,7 @@ At the root, the data agent content is stored under the **files** folder. Inside
 - **data_agent.json**: The main configuration file for the data agent.
 - **publish_info.json**: Contains the publishing description for the data agent. This file can be updated to change the description that appears when the agent is published.
 
-:::image type="content" source="./media/data-agent-cicd/git-config-publish-info.png" alt-text="Screenshot showing the publish file in git." lightbox="./media/data-agent-cicd/git-config-publish-infol.png":::
+:::image type="content" source="./media/data-agent-cicd/git-config-publish-info.png" alt-text="Screenshot showing the publish file in git." lightbox="./media/data-agent-cicd/git-config-publish-info.png":::
 
 - **draft folder**: Contains the editable version of the data agent configuration.
 - **published folder**: Contains the published version of the data agent configuration.
@@ -141,7 +141,7 @@ Deployment pipelines provide a controlled way to move data agents between worksp
 2. Promote the changes to the test workspace for validation.
 3. Promote the tested changes to the production workspace where it will available to end users.
 
-You can review a deployment plan before applying changes, ensuring that only intended updates are promoted. For more information, see [Get started with deployment pipelines](https://learn.microsoft.com/en-us/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines?tabs=from-fabric%2Cnew-ui).
+You can review a deployment plan before applying changes, ensuring that only intended updates are promoted. For more information, see [Get started with deployment pipelines](https://learn.microsoft.com/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines?tabs=from-fabric%2Cnew-ui).
 
 ### Publishing a Fabric data agent for the deployment pipelines
 
@@ -169,7 +169,6 @@ This approach supports both the functional requirement of enabling consumption a
 
 ## Related content
 
-- [Get started with Git integration](../cicd/git-integration/git-get-started.md)
-- [Basic concepts in Git integration](../cicd/git-integration/git-integration-process.md)
-- [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
-- [Tutorial: Set up dbt for Fabric Data Warehouse](tutorial-setup-dbt.md)
+- [Get started with Git integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git)
+- [Basic concepts in Git integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-integration-process?tabs=Azure%2Cazure-devops)
+- [What is lifecycle management in Microsoft Fabric?](https://learn.microsoft.com/fabric/cicd/cicd-overview)
