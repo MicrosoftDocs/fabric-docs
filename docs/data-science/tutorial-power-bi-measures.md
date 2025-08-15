@@ -7,7 +7,7 @@ ms.author: jburchel
 author: jonburchel
 ms.topic: tutorial
 ms.custom:
-ms.date: 08/15/2025
+ms.date: 09/27/2023
 ---
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_measures_tutorial.ipynb -->

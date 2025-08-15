@@ -14,7 +14,7 @@ ms.custom:
 
 The Azure Cosmos DB for MongoDB connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-Supported capabilities
+## Supported capabilities
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|

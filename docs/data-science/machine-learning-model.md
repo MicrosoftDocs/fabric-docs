@@ -1,12 +1,12 @@
----
+﻿---
 title: Machine learning model
 description: Learn how to create machine learning models, manage versions within a model, track models, and apply a model.
-ms.author: lagayhar 
-author: lgayhardt
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: midesa
 reviewer: midesa
 ms.topic: conceptual
-ms.custom:
+ms.custom: 
 ms.date: 01/14/2025
 ms.search.form: Create New Model, Model Comparison
 ---
