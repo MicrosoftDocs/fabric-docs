@@ -124,7 +124,7 @@ The **fewshots.json** stores example queries for the data source. Each entry inc
   - `question` which refers t the natural language question.
   - `query` shows the query text, which may be SQL or KQL depending on the data source type.
 
-:::image type="content" source="./media/data-agent-cicd/git-config-lakehouse-fewshots.png" alt-text="Screenshot showing the few shots." lightbox="./media/data-agent-cicd/git-config-lakehouse-fewshots.png":::
+:::image type="content" source="./media/data-agent-cicd/git-configure-lakehouse-few-shots.png" alt-text="Screenshot showing the few shots." lightbox="./media/data-agent-cicd/git-configure-lakehouse-few-shots.png":::
 
 The **published folder** mirrors the structure of the draft folder, but represents the published version of the data agent. It is best practice to not modify files in the published folder directly. Changes should be made in the draft folder and then once data agent is published, those changes will be reflected in the published folder. This ensures that the published version is always generated from a controlled draft state.
 
