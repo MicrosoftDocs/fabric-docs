@@ -55,20 +55,30 @@ items:
                   href: security-tenant-workspace-private-links-same-tenant.md
                 - name: Cross-tenant communication
                   href: security-cross-tenant-communication.md
-        - name: Cross-workspace communication
-          items:
-          - name: About cross-workspace communication
-            href: security-cross-workspace-communication.md
-          - name: Examples using managed private endpoints
-            items:
-              - name: Access a lakehouse from Notebooks
-                href: security-workspace-private-links-example-notebook.md
-              - name: Access a notebook from a pipeline
-                href: security-workspace-private-links-example-pipeline.md
+            - name: Cross-workspace communication
+              items:
+              - name: About cross-workspace communication
+                href: security-cross-workspace-communication.md
+              - name: Examples using managed private endpoints
+                items:
+                  - name: Access a lakehouse from Notebooks
+                    href: security-workspace-private-links-example-notebook.md
+                  - name: Access a notebook from a pipeline
+                    href: security-workspace-private-links-example-pipeline.md
+            - name: Multi-workspace communication
+              href: security-fabric-multi-workspace-api-overview.md
         - name: Add Fabric URLs to your allowlist
           href: fabric-allow-list-urls.md
         - name: Add Power BI URLs to your allowlist
           href: power-bi-allow-list-urls.md
+    - name: Service tags
+      href: security-service-tags.md
+    - name: Microsoft Entra Conditional Access
+      href: security-conditional-access.md
+    - name: Add Fabric URLs to your allowlist
+      href: fabric-allow-list-urls.md
+    - name: Add Power BI URLs to your allowlist
+      href: power-bi-allow-list-urls.md
     - name: Outbound
       items:
       - name: Overview of managed VNets

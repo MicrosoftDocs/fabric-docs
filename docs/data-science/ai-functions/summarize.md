@@ -1,13 +1,12 @@
----
+﻿---
 title: Summarize text with the `ai.summarize` function
 description: Learn how to use the `ai.summarize` function to produce summaries of input text (either values from a single column of a DataFrame or values across all the columns).
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.date: 02/26/2025
-
 ms.search.form: AI functions
 ---
 
