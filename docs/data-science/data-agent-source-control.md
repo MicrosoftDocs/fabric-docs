@@ -37,14 +37,14 @@ Microsoft Fabric Git integration synchronizes a Fabric workspace with a Git repo
 For more information on the Git integration process, you can refer to the following:
 
 - [What is Microsoft Fabric Git integration?](../cicd/git-integration/intro-to-git-integration.md?tabs=azure-devops)
-- [Basic concepts in Git integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-integration-process?tabs=Azure%2Cazure-devops)
-- [Get started with Git integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git)
+- [Basic concepts in Git integration](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops)
+- [Get started with Git integration](../cicd/git-integration/git-get-started.md?tabs=azure-devops%2CAzure%2Ccommit-to-git)
 
 ### Set up a connection to source control
 
 You can connect your Fabric workspace to a Git repository from the **Workspace settings** page. This lets you commit and sync changes directly from Fabric.
 
-1. See [Get started with Git integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git) for detailed steps to connect to a Git repository in Azure DevOps or GitHub.
+1. See [Get started with Git integration](../cicd/git-integration/git-get-started.md?tabs=azure-devops%2CAzure%2Ccommit-to-git) for detailed steps to connect to a Git repository in Azure DevOps or GitHub.
 
 2. After connecting to the Git repository, your workspace items, including Fabric data agents, appear in the Source control panel. In the status bar at the bottom left, you can see the name of the connected branch, the time of the last sync, and the Git commit ID.
 
@@ -151,7 +151,7 @@ To deploy changes:
 
 :::image type="content" source="./media/data-agent-cicd/deployment-test.png" alt-text="Screenshot showing the deployment from dev to test was successful." lightbox="./media/data-agent-cicd/deployment-test.png":::
 
-You can review a deployment plan before applying changes, ensuring that only intended updates are promoted. For more information, see [Get started with deployment pipelines](https://learn.microsoft.com/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines?tabs=from-fabric%2Cnew-ui).
+You can review a deployment plan before applying changes, ensuring that only intended updates are promoted. For more information, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md?tabs=from-fabric%2Cnew-ui).
 
 > [!NOTE]
 > Service principals are supported in the Fabric data agent **only** as part of ALM scenarios. This support is limited to enabling ALM operations (such as Git integration and deployment pipelines) and does not extend to other Fabric data agent features. If you need to interact with a data agent outside of ALM workflows, service principal is not supported.
@@ -184,6 +184,6 @@ This approach supports both the functional requirement of enabling consumption a
 
 ## Related content
 
-- [Get started with Git integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git)
-- [Basic concepts in Git integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-integration-process?tabs=Azure%2Cazure-devops)
-- [What is lifecycle management in Microsoft Fabric?](https://learn.microsoft.com/fabric/cicd/cicd-overview)
+- [Get started with Git integration](../cicd/git-integration/git-get-started.md?tabs=azure-devops%2CAzure%2Ccommit-to-git)
+- [Basic concepts in Git integration](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops)
+- [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
