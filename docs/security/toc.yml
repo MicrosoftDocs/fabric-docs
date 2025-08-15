@@ -22,7 +22,7 @@ items:
   - name: Security white paper
     href: white-paper-landing-page.md                                            
 - name: Network security
-  items:
+  items: 
     - name: Inbound
       items: 
         - name: Tenant-level protection
@@ -55,20 +55,20 @@ items:
                   href: security-tenant-workspace-private-links-same-tenant.md
                 - name: Cross-tenant communication
                   href: security-cross-tenant-communication.md
+            - name: Cross-workspace communication
+              items: 
+                - name: Examples using data gateways
+                  items: 
+                    - name: Access a lakehouse from Power BI using OPDG
+                      href: security-workspace-private-links-example-on-premises-data-gateway.md
+                    - name: Access a lakehouse from Power BI using VNet gateway
+                      href: security-workspace-private-links-example-powerbi-vnet.md
             - name: Multi-workspace communication
               href: security-fabric-multi-workspace-api-overview.md
         - name: Add Fabric URLs to your allowlist
           href: fabric-allow-list-urls.md
         - name: Add Power BI URLs to your allowlist
           href: power-bi-allow-list-urls.md
-    - name: Service tags
-      href: security-service-tags.md
-    - name: Microsoft Entra Conditional Access
-      href: security-conditional-access.md
-    - name: Add Fabric URLs to your allowlist
-      href: fabric-allow-list-urls.md
-    - name: Add Power BI URLs to your allowlist
-      href: power-bi-allow-list-urls.md
     - name: Outbound
       items:
       - name: Overview of managed VNets
