@@ -55,6 +55,16 @@ items:
                   href: security-tenant-workspace-private-links-same-tenant.md
                 - name: Cross-tenant communication
                   href: security-cross-tenant-communication.md
+            - name: Cross-workspace communication
+              items:
+              - name: About cross-workspace communication
+                href: security-cross-workspace-communication.md
+              - name: Examples using managed private endpoints
+                items:
+                  - name: Access a lakehouse from Notebooks
+                    href: security-workspace-private-links-example-notebook.md
+                  - name: Access a notebook from a pipeline
+                    href: security-workspace-private-links-example-pipeline.md
             - name: Multi-workspace communication
               href: security-fabric-multi-workspace-api-overview.md
         - name: Add Fabric URLs to your allowlist
