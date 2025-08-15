@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.date: 08/8/2025
 ---
 
-# Source Control, CI/CD, and ALM for Fabric Data Agent (preview)
+# Source Control, CI/CD, and ALM for Fabric data agent (preview)
 
 This article describes how to manage Fabric data agents using Git integration and deployment pipelines as part of Microsoft Fabric’s Application Lifecycle Management (ALM) capabilities. You’ll learn how to connect a workspace to a Git repository, track and version data agent configurations, and promote updates across development, test, and production environments. Git integration and deployment pipelines enable continuous integration and continuous deployment (CI/CD) of data agent changes, allowing updates to be tested and promoted automatically as part of your ALM workflow. Source control for Fabric data agents is currently in preview.
 
