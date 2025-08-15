@@ -51,17 +51,29 @@ Review the following considerations when working with unsupported item types.
 
 * Existing lakehouses and warehouses use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse or warehouse.
 
-* Lakehouses with schemas are not supported when workspace level private link is enabled for a workspace.
+* Lakehouses with schemas aren't supported when a workspace-level private link is enabled for a workspace.
 
-* Using fully qualified paths with workspace and Lakehouse names can cause a socket timeout exception. To access files, use relative paths for the current Lakehouse or use a fully qualified path with the Workspace and Lakehouse GUIDs. Use the following guidelines for correct path usage.
+* Using fully qualified paths with workspace and lakehouse names can cause a socket timeout exception. To access files, use relative paths for the current lakehouse or use a fully qualified path with the workspace and lakehouse GUIDs. Use the following guidelines for correct path usage.
 
-   * Incorrect path: `abfss://<YourWorkspace>@onelake.dfs.fabric.microsoft.com/<YourLakehouse>.Lakehouse/Files/people.csv`. This path fails because the Spark session's default configuration can't resolve paths using display names.
+   * Incorrect path: 
+
+     `Path: abfss://<YourWorkspace>@onelake.dfs.fabric.microsoft.com/<YourLakehouse>.Lakehouse/Files/people.csv`
+
+     This path fails because the Spark session's default configuration can't resolve paths using display names.
 
    * Correct paths:
 
-      * Relative path: `Files/people.csv`. Use this path for files within your current Lakehouse.
+      * Relative path:
 
-      * Fully Qualified Path (with GUIDs): `abfss://<YourWorkspaceID>@onelake.dfs.fabric.microsoft.com/<YourLakehouseID>/Files/people.csv`. Use this path to access data in a different workspace or when a fully qualified path is required.
+         `Path: Files/people.csv`
+
+         Use this path for files within your current Lakehouse.
+
+      * Fully Qualified Path (with GUIDs):
+
+         `Path: abfss://<YourWorkspaceID>@onelake.dfs.fabric.microsoft.com/<YourLakehouseID>/Files/people.csv`
+
+         Use this path to access data in a different workspace or when a fully qualified path is required.
 
 * Spark connector for SQL DW isn't currently supported when a workspace-level private link is enabled for a workspace.
 
