@@ -37,7 +37,7 @@ When a Spark job is submitted, if the Fabric capacity is already at its maximum 
 
 1. The Job enters FIFO queue. Navigate to the **Monitor** hub and notice that the job status is **Not Started** indicating it's been queued and awaiting capacity.
 
-1. As existing jobs complete and free up compute resources, jobs from the queue are picked up. When the execution begins, he status changes from **Not Started** to **In Progress**. Queue expires after 24 hours for all jobs from the time they were admitted into the queue. Once the expiration time is reached, the jobs must be resubmitted.
+1. As existing jobs complete and free up compute resources, jobs from the queue are picked up. When the execution begins, the status changes from **Not Started** to **In Progress**. Queue expires after 24 hours for all jobs from the time they were admitted into the queue. Once the expiration time is reached, the jobs must be resubmitted.
 
 ## Queue Sizes
 
