@@ -22,7 +22,7 @@ items:
   - name: Security white paper
     href: white-paper-landing-page.md                                            
 - name: Network security
-  items:
+  items: 
     - name: Inbound
       items: 
         - name: Tenant-level protection
@@ -55,6 +55,22 @@ items:
                   href: security-tenant-workspace-private-links-same-tenant.md
                 - name: Cross-tenant communication
                   href: security-cross-tenant-communication.md
+            - name: Cross-workspace communication
+              items:
+              - name: About cross-workspace communication
+                href: security-cross-workspace-communication.md
+              - name: Examples using managed private endpoints
+                items:
+                  - name: Access a lakehouse from Notebooks
+                    href: security-workspace-private-links-example-notebook.md
+                  - name: Access a notebook from a pipeline
+                    href: security-workspace-private-links-example-pipeline.md
+              - name: Examples using data gateways
+                items: 
+                  - name: Access a lakehouse from Power BI using OPDG
+                    href: security-workspace-private-links-example-on-premises-data-gateway.md
+                  - name: Access a lakehouse from Power BI using VNet gateway
+                    href: security-workspace-private-links-example-power-bi-virtual-network.md
             - name: Multi-workspace communication
               href: security-fabric-multi-workspace-api-overview.md
         - name: Add Fabric URLs to your allowlist

@@ -40,7 +40,7 @@ To use a Dataflow activity in a pipeline, complete the following steps:
 Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
 >[!NOTE]
->The timeout setting for the dataflow activity only applies for Dataflow Gen2 with CI/CD support. When you trigger a run for a Dataflow Gen2 without CI/CD support the timeout setting is ignored.
+>Timeout and cancellation only apply to Dataflow Gen2 with CI/CD support. For runs for Dataflow Gen2 without CI/CD support, timeouts are ignored and pipeline cancellation won’t stop the dataflow run.
 
 ### Dataflow activity settings
 
