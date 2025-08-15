@@ -20,6 +20,10 @@ You can use two complementary approaches to support ALM for Fabric data agents:
 
 These capabilities together provide end-to-end ALM support for Fabric data agents.
 
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+
+[!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
+
 ## Git integration
 
 Microsoft Fabric Git integration synchronizes a Fabric workspace with a Git repository, allowing you to use your existing development processes, tools, and best practices directly in the Fabric platform. It supports Azure DevOps and GitHub and is available at the workspace level. When you commit changes from Fabric, including updates to the data agent configuration, those changes are saved as files in the connected Git repository. It's key capabilities include:
@@ -44,7 +48,7 @@ You can connect your Fabric workspace to a Git repository from the **Workspace s
 
 2. After connecting to the Git repository, your workspace items, including Fabric data agents, appear in the Source control panel.
 
-:::image type="content" source="./media/data-agent-cicd/source-control.png" alt-text="Screenshot showing the source control in general." lightbox="./media/data-agent-cicd/source-control.png":::
+:::image type="content" source="./media/data-agent-cicd/data-agent-git-source-control.png" alt-text="Screenshot showing the source control in general." lightbox="./media/data-agent-cicd/data-agent-git-source-control.png":::
 
 3. The linked Git repository displays a folder structure representing your workspace items including Fabric data agents and their configuration files. Each data agent is stored in its own folder, enabling you to review changes, track version history, and use Git workflows such as creating pull requests to merge updates into your main branch.
 
@@ -61,11 +65,7 @@ Any change—whether functional or descriptive—causes the data agent to become
 
 :::image type="content" source="./media/data-agent-cicd/source-control-data-agent.png" alt-text="Screenshot showing the data agent in the source control." lightbox="./media/data-agent-cicd/source-control-data-agent.png":::
 
-5. When updates are made directly in the linked Git repository (Azure DevOps or GitHub), for example, modifying AI instructions, changing example queries, or editing the publishing descriptions, those changes can be committed and pushed to the repository.
-
-:::image type="content" source="./media/data-agent-cicd/git-commit.png" alt-text="Screenshot showing making changes in the Git repository." lightbox="./media/data-agent-cicd/git-commit.png":::
-
-Once the updates are pushed and available in the repository, your Fabric workspace will detect them and display an Updates available notification in the Source control pane. The updated items such as data agent will appear under the Updates tab, where you can review and accept them. Accepting these updates applies the repository changes to your workspace items, ensuring the workspace reflects the latest committed version in Git.
+5. When updates are made directly in the linked Git repository (Azure DevOps or GitHub), for example, modifying AI instructions, changing example queries, or editing the publishing descriptions, those changes can be committed and pushed to the repository. Once the updates are pushed and available in the repository, your Fabric workspace will detect them and display an Updates available notification in the Source control pane. The updated items such as data agent will appear under the Updates tab, where you can review and accept them. Accepting these updates applies the repository changes to your workspace items, ensuring the workspace reflects the latest committed version in Git.
 
 :::image type="content" source="./media/data-agent-cicd/source-control-updates.png" alt-text="Screenshot showing the updates from Git in the source control." lightbox="./media/data-agent-cicd/source-control-updates.png":::
 
@@ -75,28 +75,24 @@ In the following, you will review the structure of how a data agent’s configur
 
 #### Root structure
 
-At the root, the data agent content is stored under the **files** folder. Inside **files**, you’ll find a **config** folder, which contains:
+At the root, the data agent content is stored under the **files** folder. Inside **files**, you’ll find a **config** folder, which contains **data_agent.json**, **publish_info.json**, **draft folder**, and **published folder**.
 
 :::image type="content" source="./media/data-agent-cicd/git-branch-files.png" alt-text="Screenshot showing the root folder for data agent in git repo." lightbox="./media/data-agent-cicd/git-branch-files.png":::
 
 :::image type="content" source="./media/data-agent-cicd/git-branch-config.png" alt-text="Screenshot showing the config for data agent." lightbox="./media/data-agent-cicd/git-branch-config.png":::
 
-- **data_agent.json**: The main configuration file for the data agent.
-- **publish_info.json**: Contains the publishing description for the data agent. This file can be updated to change the description that appears when the agent is published.
+:::image type="content" source="./media/data-agent-cicd/git-branch-config-all.png" alt-text="Screenshot showing all the config for data agent." lightbox="./media/data-agent-cicd/git-branch-config-all.png":::
+
+Inside the **config** folder, the **publish_info.json** contains the publishing description for the data agent. This file can be updated to change the description that appears when the agent is published.
 
 :::image type="content" source="./media/data-agent-cicd/git-config-publish-info.png" alt-text="Screenshot showing the publish file in git." lightbox="./media/data-agent-cicd/git-config-publish-info.png":::
 
-- **draft folder**: Contains the editable version of the data agent configuration.
-- **published folder**: Contains the published version of the data agent configuration.
-
-:::image type="content" source="./media/data-agent-cicd/git-branch-config-all.png" alt-text="Screenshot showing all the config for data agent." lightbox="./media/data-agent-cicd/git-branch-config-all.png":::
-
-The draft folder contains:
+The **draft folder** contains the configuration files corresponding to the draft version of the data agent and the **published folder** contains the configuration files for the published version of the data agent. The **draft folder** contains:
 
 - **Data source folders** where there is one folder for each data source used by the data agent.
-- Lakehouse or warehouse data sources: Folder names start with lakehouse-tables- or warehouse-tables-, followed by the name of the lakehouse or warehouse.
-- Semantic model data sources: Folder names start with semantic-model-, followed by the name of the semantic model.
-- KQL database data sources: Folder names start with kusto-, followed by the name of KQL database.
+  - Lakehouse or warehouse data sources: Folder names start with lakehouse-tables- or warehouse-tables-, followed by the name of the lakehouse or warehouse.
+  - Semantic model data sources: Folder names start with semantic-model-, followed by the name of the semantic model.
+  - KQL database data sources: Folder names start with kusto-, followed by the name of KQL database.
 
 :::image type="content" source="./media/data-agent-cicd/git-config-draft.png" alt-text="Screenshot showing the draft folder." lightbox="./media/data-agent-cicd/git-config-draft.png":::
 
@@ -104,7 +100,7 @@ The draft folder contains:
 
 :::image type="content" source="./media/data-agent-cicd/git-config-ai-instructions.png" alt-text="Screenshot showing the ai instructions." lightbox="./media/data-agent-cicd/git-config-ai-instructions.png":::
 
-Each data source folder contains **datasource.json** and **fewshots.json**. However, if the data source is a semantic model, it does not support example queries, so so their folders only contain **datasource.json**.
+Each data source folder contains **datasource.json** and **fewshots.json**. However, if the data source is a semantic model, it does not support example queries, so its folder only contains **datasource.json**.
 
 :::image type="content" source="./media/data-agent-cicd/git-config-draft-lakehouse.png" alt-text="Screenshot showing the lakehouse data source folder." lightbox="./media/data-agent-cicd/git-config-draft-lakehouse.png":::
 
@@ -129,7 +125,7 @@ The **fewshots.json** stores example queries for the data source. Each entry inc
 
 :::image type="content" source="./media/data-agent-cicd/git-config-lakehouse-fewshots.png" alt-text="Screenshot showing the few shots." lightbox="./media/data-agent-cicd/git-config-lakehouse-fewshots.png":::
 
-The published folder mirrors the structure of the draft folder but represents the published version of the data agent. It is best practice to not modify files in the published folder directly. Changes should be made in the draft folder and then once data agent is published, those changes will be reflected in the published folder. This ensures that the published version is always generated from a controlled draft state.
+The **published folder** mirrors the structure of the draft folder, but represents the published version of the data agent. It is best practice to not modify files in the published folder directly. Changes should be made in the draft folder and then once data agent is published, those changes will be reflected in the published folder. This ensures that the published version is always generated from a controlled draft state.
 
 :::image type="content" source="./media/data-agent-cicd/git-config-published.png" alt-text="Screenshot showing the published folder." lightbox="./media/data-agent-cicd/git-config-published.png":::
 
