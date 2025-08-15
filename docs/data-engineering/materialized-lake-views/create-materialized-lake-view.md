@@ -36,7 +36,7 @@ AS select_statement
 | `MLV_Identifier` | Name of the materialized lake view.|
 | `CONSTRAINT` | Keyword to define a data quality constraint, followed by a user-defined name. The constraint applies at the level of the materialized lake view.|
 | `CHECK` | Parameter for enforcing a condition based on certain column values. Mandatory to use when you're defining constraint.|
-| `ON MISMATCH` | Parameter for specifying the action to be taken if the constraint is violated. Possible actions are `DROP` and `FAIL`. By default, without this clause, the action is `FAIL`.|
+| `ON MISMATCH` | Parameter for specifying the action to take if the constraint is violated. Possible actions are `DROP` and `FAIL`. By default, without this clause, the action is `FAIL`.|
 | `PARTITIONED BY` | Parameter for creating partitions based on the specified column.|
 | `TBLPROPERTIES` | List of key/value pairs for tagging the definition of the materialized lake view.|  
 | `COMMENT` | Statement to describe the materialized lake view.|
