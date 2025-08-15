@@ -1,6 +1,6 @@
 ---
 title: "Source Control, CI/CD, and ALM for Fabric data agent (preview)"
-description: "Learn how to use source control, CI/CD and ALM with Microsoft Fabric data agent."
+description: "Learn how to use source control, CI/CD, and ALM with Microsoft Fabric data agent."
 ms.author: amjafari
 author: amjafari
 ms.reviewer: amjafari
@@ -11,7 +11,7 @@ ms.date: 08/8/2025
 
 # Source Control, CI/CD, and ALM for Fabric data agent (preview)
 
-This article describes how to manage Fabric data agents using Git integration and deployment pipelines as part of Microsoft Fabric’s Application Lifecycle Management (ALM) capabilities. You’ll learn how to connect a workspace to a Git repository, track and version data agent configurations, and promote updates across development, test, and production environments. Git integration and deployment pipelines enable continuous integration and continuous deployment (CI/CD) of data agent changes, allowing updates to be tested and promoted automatically as part of your ALM workflow. Source control for Fabric data agents is currently in preview.
+This article describes how to manage Fabric data agents using Git integration and deployment pipelines as part of Microsoft Fabric’s Application Lifecycle Management (ALM) capabilities. You learn how to connect a workspace to a Git repository. You’ll also learn how to track and version data agent configurations. Finally, you’ll learn how to promote updates across development, test, and production environments. Git integration and deployment pipelines enable continuous integration and continuous deployment (CI/CD) of data agent changes, allowing updates to be tested and promoted automatically as part of your ALM workflow. Source control for Fabric data agents is currently in preview.
 
 You can use two complementary approaches to support ALM for Fabric data agents:
 
@@ -26,7 +26,7 @@ These capabilities together provide end-to-end ALM support for Fabric data agent
 
 ## Git integration
 
-Microsoft Fabric Git integration synchronizes a Fabric workspace with a Git repository, allowing you to use your existing development processes, tools, and best practices directly in the Fabric platform. It supports Azure DevOps and GitHub and is available at the workspace level. When you commit changes from Fabric, including updates to the data agent configuration, those changes are saved as files in the connected Git repository. It's key capabilities include:
+Microsoft Fabric Git integration synchronizes a Fabric workspace with a Git repository, allowing you to use your existing development processes, tools, and best practices directly in the Fabric platform. It supports Azure DevOps and GitHub and is available at the workspace level. When you commit changes from Fabric, including updates to the data agent configuration, those changes are saved as files in the connected Git repository. Its key capabilities include:
 
 - Full backup and version control of workspace items
 - The folder structure in Git mirrors the workspace structure
@@ -34,7 +34,7 @@ Microsoft Fabric Git integration synchronizes a Fabric workspace with a Git repo
 - Ability to view differences, review history, and revert to prior states via history for different workspace items including data agents
 - Branch-based collaboration (feature branches, main)
 
-For more information on the Git integration process, you can refer to the following:
+For more information on the Git integration process, you can refer to the following resources.
 
 - [What is Microsoft Fabric Git integration?](../cicd/git-integration/intro-to-git-integration.md?tabs=azure-devops)
 - [Basic concepts in Git integration](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops)
@@ -42,7 +42,7 @@ For more information on the Git integration process, you can refer to the follow
 
 ### Set up a connection to source control
 
-You can connect your Fabric workspace to a Git repository from the **Workspace settings** page. This lets you commit and sync changes directly from Fabric.
+You can connect your Fabric workspace to a Git repository from the **Workspace settings** page. This connection lets you commit and sync changes directly from Fabric.
 
 1. See [Get started with Git integration](../cicd/git-integration/git-get-started.md?tabs=azure-devops%2CAzure%2Ccommit-to-git) for detailed steps to connect to a Git repository in Azure DevOps or GitHub.
 
@@ -54,7 +54,7 @@ You can connect your Fabric workspace to a Git repository from the **Workspace s
 
 :::image type="content" source="./media/data-agent-cicd/git-repo.png" alt-text="Screenshot showing the git repository." lightbox="./media/data-agent-cicd/git-repo.png":::
 
-4. When you make modifications to the Fabric data agent in a Git-connected workspace, the changes are detected and the data agent’s status in the Source control pane will change to Uncommitted changes. These modifications can include:
+4. When you make modifications to the Fabric data agent in a Git-connected workspace, the changes are detected and the data agent’s status in the Source control pane changes to Uncommitted changes. These modifications can include:
 
     - Changing the schema selection.
     - Updating AI instructions or data source instructions.
@@ -65,17 +65,17 @@ Any change—whether functional or descriptive—causes the data agent to become
 
 :::image type="content" source="./media/data-agent-cicd/source-control-data-agent.png" alt-text="Screenshot showing the data agent in the source control." lightbox="./media/data-agent-cicd/source-control-data-agent.png":::
 
-5. When updates are made directly in the linked Git repository (Azure DevOps or GitHub), for example, modifying AI instructions, changing example queries, or editing the publishing descriptions, those changes can be committed and pushed to the repository. Once the updates are pushed and available in the repository, your Fabric workspace will detect them and display an Updates available notification in the Source control pane. The updated items such as data agent will appear under the Updates tab, where you can review and accept them. Accepting these updates applies the repository changes to your workspace items, ensuring the workspace reflects the latest committed version in Git.
+5. When updates are made directly in the linked Git repository (Azure DevOps or GitHub), they can include actions such as modifying AI instructions, changing example queries, or editing publishing descriptions. You can then commit and push those changes to the repository. Once the updates are pushed and available in the repository, your Fabric workspace detects them and display an Updates available notification in the Source control pane. The updated items such as data agent appear under the Updates tab, where you can review and accept them. Accepting these updates applies the repository changes to your workspace items, ensuring the workspace reflects the latest committed version in Git.
 
 :::image type="content" source="./media/data-agent-cicd/source-control-updates.png" alt-text="Screenshot showing the updates from Git in the source control." lightbox="./media/data-agent-cicd/source-control-updates.png":::
 
 ### Folder and file structure in the Git repository
 
-In the following, you will review the structure of how a data agent’s configuration is stored in a Git repository. Understanding this structure is important for managing changes and following best practices.
+In the following, you review the structure of how a data agent’s configuration is stored in a Git repository. Understanding this structure is important for managing changes and following best practices.
 
 #### Root structure
 
-At the root, the data agent content is stored under the **files** folder. Inside **files**, you’ll find a **config** folder, which contains **data_agent.json**, **publish_info.json**, **draft folder**, and **published folder**.
+At the root, the data agent content is stored under the **files** folder. Inside **files**, you find a **config** folder, which contains **data_agent.json**, **publish_info.json**, **draft folder**, and **published folder**.
 
 :::image type="content" source="./media/data-agent-cicd/git-branch-files.png" alt-text="Screenshot showing the root folder for data agent in git repo." lightbox="./media/data-agent-cicd/git-branch-files.png":::
 
@@ -89,7 +89,7 @@ Inside the **config** folder, the **publish_info.json** contains the publishing 
 
 The **draft folder** contains the configuration files corresponding to the draft version of the data agent and the **published folder** contains the configuration files for the published version of the data agent. The **draft folder** contains:
 
-- **Data source folders** where there is one folder for each data source used by the data agent.
+- **Data source folders** where there's one folder for each data source used by the data agent.
   - **Lakehouse or warehouse data sources**: Folder names start with `lakehouse-tables-` or `warehouse-tables-`, followed by the name of the lakehouse or warehouse.
   - **Semantic model data sources**: Folder names start with `semantic-model-`, followed by the name of the semantic model.
   - **KQL database data sources**: Folder names start with `kusto-`, followed by the name of KQL database.
