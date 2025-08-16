@@ -11,7 +11,7 @@ ms.custom: dataflows
 # Copilot explainer skill in Dataflow Gen2
 
 >[!NOTE]
->This capability is part of the Fabric Data Factory Copilot experience. Find more information about this capability and how to enable it from the article [What is Copilot in Fabric in the Data Factory workload?](copilot-fabric-data-factory.md)
+>This capability is part of the Fabric Data Factory Copilot experience. Find more information about this capability and how to enable it from the article [What is Copilot in Fabric in the Data Factory workload](copilot-fabric-data-factory.md).
 
 The Copilot explainer skill in Dataflow Gen2 is an AI-powered assistant within Microsoft Fabric's Data Factory workload that helps you interpret Mashup (Power Query M) code in natural language.
 
