@@ -843,6 +843,8 @@
         href: dataflow-gen2-incremental-refresh.md
       - name: Dataflow Gen2 with CICD and Git integration
         href: dataflow-gen2-cicd-and-git-integration.md
+      - name: Copilot explainer skill in Dataflow Gen2 
+        href: dataflow-gen2-copilot-explain.md
       - name: Dataflow Gen2 public APIs
         href: dataflow-gen2-public-apis.md
     - name: How-to
