@@ -12,5 +12,5 @@ ms.custom: dataflows
 
 The Copilot explainer skill in Dataflow Gen2 is an AI-powered assistant within Microsoft Fabric's Data Factory workload that helps you   interpret Mashup (Power Query M) code in natural language.
 
-With a simple right click on a query or one of its steps, Copilot will be able to provide a clear explanaition for it.
+You can trigger this experience via the Copilot pane or with a simple right click on a query or one of its steps. Copilot is able to provide a clear explanation for it.
 
