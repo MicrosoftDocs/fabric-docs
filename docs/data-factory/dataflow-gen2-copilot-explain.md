@@ -19,9 +19,9 @@ The experience allows you to explain the full query or a particular step of a qu
 
 * **Explain this query**: you can trigger this experience via the Copilot pane or via right-clicking your queries through the Queries pane and selecting the option to *Explain* or *Describe*.
 
-![Screenshot showcasing entry points in the Dataflow Gen2 user interface for Queries and Copilot pane to trigger the copilot explain experience](media/dataflow-gen2-copilot-explain/explain-query.png)
+![Screenshot showcasing entry points in the Dataflow Gen2 user interface for Queries and Copilot pane to trigger the copilot explain experience.](media/dataflow-gen2-copilot-explain/explain-query.png)
 
 * **Explain this step**: when only selecting a step inside a query through the applied steps section, you can right-click the step and select the option to *explain* from the list. 
 
-![Screenshot of the right-click context menu for a step showing the entry for the Copilot explain this query experience](media/dataflow-gen2-copilot-explain/explain-step.png)
+![Screenshot of the right-click context menu for a step showing the entry for the Copilot explain this query experience.](media/dataflow-gen2-copilot-explain/explain-step.png)
 
