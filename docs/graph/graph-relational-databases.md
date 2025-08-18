@@ -8,7 +8,7 @@ ms.author: eur
 ms.reviewer: eur
 ---
 
-#  Compare Graph and Relational Databases
+#  Compare graph and relational databases
 
 In this article, we compare graph databases and relational databases, highlighting key differences, use cases, and advantages in analytics. You can evaluate whether to use Graph for Microsoft Fabric or a relational database based on your specific needs.
 
