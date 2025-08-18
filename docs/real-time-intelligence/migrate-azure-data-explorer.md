@@ -33,10 +33,10 @@ Follow steps from the article: [Create a database shortcut](database-shortcut.md
 
 
 ## Creare a KQL database 
-Create a new KQL DB with the same schema using the SyncKusto tool or the database script options. https://learn.microsoft.com/en-us/azure/data-explorer/sync-kusto
+Create a new KQL DB with the same schema using the SyncKusto tool or the database script options. For more information, see [Sync Kusto](/azure/data-explorer/sync-kusto).
 
 ## Union old and new data until Azure Data Explroer data expires
-Create a unioning [view](/kusto/query/schema-entities/views?view=microsoft-fabric) that joins the old and potentially new data. 
+Create a unioning [view](/kusto/query/schema-entities/views?view=microsoft-fabric&preserve-view=true) that joins the old and potentially new data. 
 
 - Table from ADX and table from eventhouse
 - View on eventhouse Union of ADX cluster
