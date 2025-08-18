@@ -39,3 +39,8 @@ For most customers, LPG provides the best balance of performance, usability, and
 - **Performance and storage efficiency:** Graph databases that use the LPG model store data compactly and enable fast traversals, even for large, complex graphs.
 - **Flexible schema:** You can evolve your graph model as your business needs change, without rigid constraints.
 - **Integration with Fabric:** LPG in Graph in Microsoft Fabric is deeply integrated with OneLake and Power BI, enabling seamless analytics and visualization.
+
+## Related content
+
+- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)

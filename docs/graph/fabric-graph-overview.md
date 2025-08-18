@@ -35,3 +35,7 @@ Graph in Microsoft Fabric broadens access to graph insights beyond specialized r
 
 Graph in Microsoft Fabric is deeply integrated with the Microsoft Fabric platform, including OneLake for unified data storage and Power BI for visualization. This integration allows seamless access to data, collaboration, and sharing across your organization. The service is designed to work with other Microsoft tools and services, making it easy to incorporate graph analytics into your existing workflows.
 
+## Related content
+
+- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)

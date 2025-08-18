@@ -68,3 +68,8 @@ Graph databases can outperform relational systems for queries involving many edg
 ## Hybrid Approaches
 
 Many projects use both: a relational database for core transactional data, and a graph database for specialized analytics or network analysis features.
+
+## Related content
+
+- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)
