@@ -1,475 +1,472 @@
 items:
-  - name: Data Engineering documentation
-    href: index.yml
-  - name: Overview
+- name: Data Engineering documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is Data Engineering?
+    href: data-engineering-overview.md
+  - name: Fabric vs. Azure Synapse Spark
+    href: comparison-between-fabric-and-azure-synapse-spark.md
+- name: Get started
+  items:
+  - name: Decision guide - copy activity, dataflow, or Spark
+    href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+  - name: Decision guide - choose a data store
+    href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+  - name: Decision guide - Warehouse and Lakehouse
+    href: ../fundamentals/decision-guide-lakehouse-warehouse.md
+  - name: Upload CSV to delta tables
+    href: get-started-csv-upload.md
+  - name: Get streaming data into lakehouse
+    href: get-started-streaming.md
+  - name: Reference external data for data science
+    href: get-started-shortcuts.md
+  - name: Submit batch and session jobs using the Livy APIs
+    href: get-started-api-livy.md
+- name: Tutorials
+  items:
+  - name: 1 Lakehouse tutorial introduction
+    href: tutorial-lakehouse-introduction.md
+  - name: 2 Get started
+    href: tutorial-lakehouse-get-started.md
+  - name: 3 Build a lakehouse 
+    href: tutorial-build-lakehouse.md
+  - name: 4 Ingest data
+    href: tutorial-lakehouse-data-ingestion.md
+  - name: 5 Prepare data
+    href: tutorial-lakehouse-data-preparation.md
+  - name: 6 Build a report
+    href: tutorial-lakehouse-build-report.md
+  - name: 7 Clean up resources
+    href: tutorial-lakehouse-clean-up.md
+- name: Lakehouse
+  items:
+  - name: What is a lakehouse?
+    href: lakehouse-overview.md
+  - name: Create a lakehouse
+    href: create-lakehouse.md
+  - name: Navigate the lakehouse explorer
+    href: navigate-lakehouse-explorer.md
+  - name: Lakehouse SQL analytics endpoint
+    href: lakehouse-sql-analytics-endpoint.md
+  - name: Lakehouse schemas
+    href: lakehouse-schemas.md
+  - name: Git and deployment pipelines
+    href: lakehouse-git-deployment-pipelines.md
+  - name: Lakehouse REST API
+    href: lakehouse-api.md
+- name: Get data into lakehouse
+  items:
+  - name: Get data into a lakehouse
+    href: load-data-lakehouse.md
+  - name: Shortcut data in a lakehouse
+    href: lakehouse-shortcuts.md
+  - name: Optimize streaming data ingestion
+    href: lakehouse-streaming-data.md
+  - name: Get streaming data into lakehouse with eventstreams 
+    href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
+- name: Copilot
+  items:
+  - name: Overview of Copilot for Data Science and Data Engineering in Microsoft Fabric (preview)
+    href: copilot-notebooks-overview.md
+  - name: Copilot for Data Science and Data Engineering
+    href: copilot-notebooks-overview.md
+  - name: Chat-magics in notebooks (preview)
+    href: copilot-notebooks-chat-magics.md
+  - name: Use the Copilot chat panel (preview)
+    href: copilot-notebooks-chat-pane.md
+- name: AI functions
+  items: 
+    - name: Transform and enrich data with AI functions
+      href: ../data-science/ai-functions/overview.md
+    - name: ai.similarity
+      href: ../data-science/ai-functions/similarity.md
+    - name: ai.classify
+      href: ../data-science/ai-functions/classify.md
+    - name: ai.analyze_sentiment
+      href: ../data-science/ai-functions/analyze-sentiment.md
+    - name: ai.extract
+      href: ../data-science/ai-functions/extract.md
+    - name: ai.fix_grammar
+      href: ../data-science/ai-functions/fix-grammar.md
+    - name: ai.summarize
+      href: ../data-science/ai-functions/summarize.md
+    - name: ai.translate
+      href: ../data-science/ai-functions/translate.md
+    - name: ai.generate_response
+      href: ../data-science/ai-functions/generate-response.md
+    - name: Customize AI function configurations
+      href: ../data-science/ai-functions/configuration.md
+- name: Lakehouse access control
+  items:
+  - name: Workspace roles and permissions
+    href: workspace-roles-lakehouse.md
+  - name: Sharing and permissions management
+    href: lakehouse-sharing.md
+- name: Spark compute
+  items:
+    - name: Overview
+      href: spark-compute.md
+    - name: Configure starter pools
+      href: configure-starter-pools.md
+    - name: Create custom pools
+      href: create-custom-spark-pools.md
+    - name: Billing and utilization
+      href: billing-capacity-management-for-spark.md
+    - name: High Concurrency mode
+      href: high-concurrency-overview.md
+    - name: Autotune Spark configuration
+      href: autotune.md
+    - name: Spark concurrency limits
+      href: spark-job-concurrency-and-queueing.md
+    - name: Job admission and management
+      href: job-admission-management.md
+    - name: Job queueing for Fabric Spark
+      href: job-queueing-for-fabric-spark.md
+    - name: Autoscale Spark billing
+      href: autoscale-billing-for-spark-overview.md
+    - name: Configure Autoscale Billing 
+      href: configure-autoscale-billing.md
+    - name: Resource profile configurations
+      href: configure-resource-profile-configurations.md
+- name: Apache Spark
+  items:
+  - name: Apache Spark Runtimes
     items:
-      - name: What is Data Engineering?
-        href: data-engineering-overview.md
-      - name: Fabric vs. Azure Synapse Spark
-        href: comparison-between-fabric-and-azure-synapse-spark.md
-  - name: Get started
+    - name: Runtimes overview
+      href: runtime.md
+    - name: Runtime lifecycle
+      href: lifecycle.md
+    - name: Runtime 1.3 (Spark 3.5)
+      href: runtime-1-3.md
+    - name: Runtime 1.2 (Spark 3.4)
+      href: runtime-1-2.md
+    - name: Runtime 1.1 (Spark 3.3)
+      href: runtime-1-1.md
+  - name: Native Execution Engine
+    href: native-execution-engine-overview.md
+  - name: Spark job definition (SJD)
     items:
-      - name: Decision guide - copy activity, dataflow, or Spark
-        href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
-      - name: Decision guide - choose a data store
-        href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
-      - name: Decision guide - Warehouse and Lakehouse
-        href: ../fundamentals/decision-guide-lakehouse-warehouse.md
-      - name: Upload CSV to delta tables
-        href: get-started-csv-upload.md
-      - name: Get streaming data into lakehouse
-        href: get-started-streaming.md
-      - name: Reference external data for data science
-        href: get-started-shortcuts.md
-      - name: Submit batch and session jobs using the Livy APIs
+    - name: What is a Spark job definition?
+      href: spark-job-definition.md
+    - name: Create a Spark job definition
+      href: create-spark-job-definition.md
+    - name: Run a Spark job definition
+      href: run-spark-job-definition.md
+    - name: Spark job definition API tutorial
+      href: spark-job-definition-api.md
+    - name: SJD Git integration
+      href: spark-job-definition-source-control.md
+    - name: SJD deployment pipeline integration
+      href: spark-job-definition-deployment-pipeline.md
+  - name: Spark development
+    items:
+    - name: Spark utilities
+      href: microsoft-spark-utilities.md
+    - name: Library management
+      href: library-management.md
+  - name: Spark administration settings
+    items:
+    - name: Capacity settings overview
+      href: capacity-settings-overview.md
+    - name: Configure capacity settings
+      href: capacity-settings-management.md
+    - name: Spark workspace settings 
+      href: workspace-admin-settings.md
+    - name: Spark admin settings - FAQ
+      href: spark-admin-settings-faq.yml 
+  - name: Spark monitoring
+    items:
+      - name: Apache Spark Core Monitoring Features
+        items: 
+         - name: Apache Spark monitoring Overview
+           href: spark-monitoring-overview.md
+         - name: Monitor Spark Capacity Consumption
+           href: monitor-spark-capacity-consumption.md
+         - name: Browse Spark Applications in the Monitoring Hub
+           href: browse-spark-applications-monitoring-hub.md
+         - name: View Recent Spark Runs for Items
+           href: spark-item-recent-runs.md
+         - name: Monitor Spark Jobs within Notebooks
+           href: spark-monitor-debug.md
+         - name: Monitor Spark Job Definition Runs
+           href: monitor-spark-job-definitions.md
+         - name: Leverage the Apache Spark Advisor
+           href: spark-advisor-introduction.md
+      - name: Spark Application Run Series Analysis
+        items: 
+         - name: Run series analysis Overview
+           href: run-series-analyisis-overview.md
+         - name: Monitor run series
+           href: apache-spark-monitor-run-series.md
+      - name: Single Spark Application Monitoring
+        items: 
+         - name: Monitor a Single Spark Application
+           href: spark-detail-monitoring.md
+         - name: Monitor Apache Spark Resource Utilization
+           href: monitor-spark-resource-utilization.md       
+         - name: Navigate the Apache Spark History Server
+           href: apache-spark-history-server.md   
+      - name: Single Spark Application Monitoring APIs
+        items: 
+          - name: Overview
+            href: spark-monitoring-api-overview.md
+          - name: Open-source APIs
+            href: open-source-apis.md
+          - name: Livy log APIs
+            href: livy-log.md
+          - name: Driver log APIs
+            href: driver-log.md
+          - name: Executor log APIs
+            href: executor-log.md
+          - name: Resource usage APIs
+            href: resource-usage-apis.md
+      - name: Collecting Spark Logs & Metrics
+        items: 
+          - name: Collect Logs & Metrics with Azure Log Analytics
+            href: azure-fabric-diagnostic-emitters-log-analytics.md
+          - name: Collect Logs & Metrics with Azure Storage Account
+            href: azure-fabric-diagnostic-emitters-azure-storage.md
+          - name: Collect Logs & Metrics with Azure Event Hubs
+            href: azure-fabric-diagnostic-emitters-azure-event-hub.md
+  - name: Spark Connectors
+    items:
+    - name: Data warehouse and lakehouse connector
+      href: spark-data-warehouse-connector.md
+  - name: Intelligent cache
+    href: intelligent-cache.md
+  - name: What is the Livy API?
+    href: api-livy-overview.md
+    items:
+      - name: Create and run Spark jobs using the Livy API
         href: get-started-api-livy.md
-  - name: Tutorials
+      - name: Submit Livy API session jobs
+        href: get-started-api-livy-session.md
+      - name: Submit Livy API batch jobs
+        href: get-started-api-livy-batch.md
+- name: Delta Lake
+  items:
+    - name: Lakehouse and Delta tables
+      href: lakehouse-and-delta-tables.md
+    - name: Load to tables
+      href: load-to-tables.md
+    - name: Lakehouse table maintenance
+      href: lakehouse-table-maintenance.md
+    - name: Delta optimization and V-Order
+      href: delta-optimization-and-v-order.md
+    - name: Automated Statistics for Delta Tables
+      href: automated-table-statistics.md	
+    - name: Delta Driver Mode Snapshot
+      href: driver-mode-snapshot.md
+- name: Notebooks
+  items:
+  - name: Create and use notebooks
+    href: how-to-use-notebook.md
+  - name: Develop and run notebooks
+    href: author-execute-notebook.md  
+  - name: Use Python experience on notebook
+    href: using-python-experience-on-notebook.md  
+  - name: NotebookUtils
+    href: notebook-utilities.md
+    displayName: MSSparkUtils
+  - name: Run notebooks in High Concurrency mode
+    href: configure-high-concurrency-session-notebooks.md
+  - name: Run notebooks in pipelines with high concurrency mode
+    href: configure-high-concurrency-session-notebooks-in-pipelines.md
+  - name: Notebook visualization
+    href: notebook-visualization.md
+  - name: Notebook in app
+    href: notebook-in-app.md  
+  - name: Explore data in lakehouse
+    href: lakehouse-notebook-explore.md
+  - name: Load data in lakehouse
+    href: lakehouse-notebook-load-data.md
+  - name: Notebook source control and deployment
+    href: notebook-source-control-deployment.md
+  - name: Use Notebook public APIs
+    href: notebook-public-api.md
+  - name: Format code in notebooks
+    href: author-notebook-format-code.md
+  - name: Author and run T-SQL in notebook
+    href: author-tsql-notebook.md
+  - name: Python vs. PySpark Notebooks
+    href: fabric-notebook-selection-guide.md
+  - name: T-SQL magic command in Python Notebook
+    href: tsql-magic-command-notebook.md
+  - name: Fabric Notebook known limitation
+    href: notebook-limitation.md
+- name: Environments
+  items:
+  - name: Create, configure and use an environment
+    href: create-and-use-environment.md
+  - name: Manage Spark compute in environments
+    href: environment-manage-compute.md
+  - name: Manage libraries in environments
+    href: environment-manage-library.md
+  - name: Environment Git integration and deployment pipeline
+    href: environment-git-and-deployment-pipeline.md
+  - name: Manage the environment through public APIs
+    href: environment-public-api.md
+  - name: Manage the resources in Fabric environment
+    href: environment-manage-resources.md
+  - name: Migrate the existing workspace libraries and Spark properties
+    href: environment-workspace-migration.md
+- name: VS Code integration 
+  items:
+  - name: Fabric extensions for VS Code  
     items:
-      - name: 1 Lakehouse tutorial introduction
-        href: tutorial-lakehouse-introduction.md
-      - name: 2 Get started
-        href: tutorial-lakehouse-get-started.md
-      - name: 3 Build a lakehouse
-        href: tutorial-build-lakehouse.md
-      - name: 4 Ingest data
-        href: tutorial-lakehouse-data-ingestion.md
-      - name: 5 Prepare data
-        href: tutorial-lakehouse-data-preparation.md
-      - name: 6 Build a report
-        href: tutorial-lakehouse-build-report.md
-      - name: 7 Clean up resources
-        href: tutorial-lakehouse-clean-up.md
-  - name: Lakehouse
+    - name: Overview
+      href: set-up-fabric-vs-code-extension.md
+    - name: Develop user data functions in VS Code
+      href: ./user-data-functions/create-user-data-functions-vs-code.md
+  - name: Fabric Data Engineering VS Code extension
     items:
-      - name: What is a lakehouse?
-        href: lakehouse-overview.md
-      - name: Create a lakehouse
-        href: create-lakehouse.md
-      - name: Navigate the lakehouse explorer
-        href: navigate-lakehouse-explorer.md
-      - name: Lakehouse SQL analytics endpoint
-        href: lakehouse-sql-analytics-endpoint.md
-      - name: Lakehouse schemas
-        href: lakehouse-schemas.md
-      - name: Git and deployment pipelines
-        href: lakehouse-git-deployment-pipelines.md
-      - name: Lakehouse REST API
-        href: lakehouse-api.md
-  - name: Get data into lakehouse
+    - name: Overview
+      href: setup-vs-code-extension.md
+    - name: VS Code extension with Docker image
+      href: set-up-vs-code-extension-with-docker-image.md
+    - name: Manage environment artifact with VS Code extension
+      href: manage-environment-with-vs-code.md  
+    - name: Notebook with VS Code extension
+      href: author-notebook-with-vs-code.md
+    - name: Notebook resource with VS Code extension
+      href: author-notebook-resource-with-vs-code.md
+    - name: Spark job definition with VS Code extension
+      href: author-sjd-with-vs-code.md
+    - name: Explore lakehouse with VS Code extension
+      href: explore-lakehouse-with-vs-code.md
+    - name: Develop notebook with VS Code web experience
+      href: author-notebook-with-vs-code-web.md
+    - name: Develop notebook with Fabric runtime
+      href: fabric-runtime-in-vscode.md
+- name: Migrate to Fabric
+  items:
+  - name: From Azure Synapse
     items:
-      - name: Get data into a lakehouse
-        href: load-data-lakehouse.md
-      - name: Shortcut data in a lakehouse
-        href: lakehouse-shortcuts.md
-      - name: Optimize streaming data ingestion
-        href: lakehouse-streaming-data.md
-      - name: Get streaming data into lakehouse with eventstreams
-        href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
-  - name: Copilot
-    items:
-      - name: Overview of Copilot for Data Science and Data Engineering in Microsoft Fabric (preview)
-        href: copilot-notebooks-overview.md
-      - name: Copilot for Data Science and Data Engineering
-        href: copilot-notebooks-overview.md
-      - name: Chat-magics in notebooks (preview)
-        href: copilot-notebooks-chat-magics.md
-      - name: Use the Copilot chat panel (preview)
-        href: copilot-notebooks-chat-pane.md
-  - name: AI functions
-    items:
-      - name: Transform and enrich data with AI functions
-        href: ../data-science/ai-functions/overview.md
-      - name: ai.similarity
-        href: ../data-science/ai-functions/similarity.md
-      - name: ai.classify
-        href: ../data-science/ai-functions/classify.md
-      - name: ai.analyze_sentiment
-        href: ../data-science/ai-functions/analyze-sentiment.md
-      - name: ai.extract
-        href: ../data-science/ai-functions/extract.md
-      - name: ai.fix_grammar
-        href: ../data-science/ai-functions/fix-grammar.md
-      - name: ai.summarize
-        href: ../data-science/ai-functions/summarize.md
-      - name: ai.translate
-        href: ../data-science/ai-functions/translate.md
-      - name: ai.generate_response
-        href: ../data-science/ai-functions/generate-response.md
-      - name: Customize AI function configurations
-        href: ../data-science/ai-functions/configuration.md
-  - name: Lakehouse access control
-    items:
-      - name: Workspace roles and permissions
-        href: workspace-roles-lakehouse.md
-      - name: Sharing and permissions management
-        href: lakehouse-sharing.md
-  - name: Spark compute
-    items:
-      - name: Overview
-        href: spark-compute.md
-      - name: Configure starter pools
-        href: configure-starter-pools.md
-      - name: Create custom pools
-        href: create-custom-spark-pools.md
-      - name: Billing and utilization
-        href: billing-capacity-management-for-spark.md
-      - name: High Concurrency mode
-        href: high-concurrency-overview.md
-      - name: Autotune Spark configuration
-        href: autotune.md
-      - name: Spark concurrency limits
-        href: spark-job-concurrency-and-queueing.md
-      - name: Job admission and management
-        href: job-admission-management.md
-      - name: Job queueing for Fabric Spark
-        href: job-queueing-for-fabric-spark.md
-      - name: Autoscale Spark billing
-        href: autoscale-billing-for-spark-overview.md
-      - name: Configure Autoscale Billing
-        href: configure-autoscale-billing.md
-      - name: Resource profile configurations
-        href: configure-resource-profile-configurations.md
-  - name: Apache Spark
-    items:
-      - name: Apache Spark Runtimes
-        items:
-          - name: Runtimes overview
-            href: runtime.md
-          - name: Runtime lifecycle
-            href: lifecycle.md
-          - name: Runtime 1.3 (Spark 3.5)
-            href: runtime-1-3.md
-          - name: Runtime 1.2 (Spark 3.4)
-            href: runtime-1-2.md
-          - name: Runtime 1.1 (Spark 3.3)
-            href: runtime-1-1.md
-      - name: Native Execution Engine
-        href: native-execution-engine-overview.md
-      - name: Spark job definition (SJD)
-        items:
-          - name: What is a Spark job definition?
-            href: spark-job-definition.md
-          - name: Create a Spark job definition
-            href: create-spark-job-definition.md
-          - name: Run a Spark job definition
-            href: run-spark-job-definition.md
-          - name: Spark job definition API tutorial
-            href: spark-job-definition-api.md
-          - name: SJD Git integration
-            href: spark-job-definition-source-control.md
-          - name: SJD deployment pipeline integration
-            href: spark-job-definition-deployment-pipeline.md
-      - name: Spark development
-        items:
-          - name: Spark utilities
-            href: microsoft-spark-utilities.md
-          - name: Library management
-            href: library-management.md
-      - name: Spark administration settings
-        items:
-          - name: Capacity settings overview
-            href: capacity-settings-overview.md
-          - name: Configure capacity settings
-            href: capacity-settings-management.md
-          - name: Spark workspace settings
-            href: workspace-admin-settings.md
-          - name: Spark admin settings - FAQ
-            href: spark-admin-settings-faq.yml
-      - name: Spark monitoring
-        items:
-          - name: Apache Spark Core Monitoring Features
-            items:
-              - name: Apache Spark monitoring Overview
-                href: spark-monitoring-overview.md
-              - name: Monitor Spark Capacity Consumption
-                href: monitor-spark-capacity-consumption.md
-              - name: Browse Spark Applications in the Monitoring Hub
-                href: browse-spark-applications-monitoring-hub.md
-              - name: View Recent Spark Runs for Items
-                href: spark-item-recent-runs.md
-              - name: Monitor Spark Jobs within Notebooks
-                href: spark-monitor-debug.md
-              - name: Monitor Spark Job Definition Runs
-                href: monitor-spark-job-definitions.md
-              - name: Leverage the Apache Spark Advisor
-                href: spark-advisor-introduction.md
-          - name: Spark Application Run Series Analysis
-            items:
-              - name: Run series analysis Overview
-                href: run-series-analyisis-overview.md
-              - name: Monitor run series
-                href: apache-spark-monitor-run-series.md
-          - name: Single Spark Application Monitoring
-            items:
-              - name: Monitor a Single Spark Application
-                href: spark-detail-monitoring.md
-              - name: Monitor Apache Spark Resource Utilization
-                href: monitor-spark-resource-utilization.md
-              - name: Navigate the Apache Spark History Server
-                href: apache-spark-history-server.md
-          - name: Single Spark Application Monitoring APIs
-            items:
-              - name: Overview
-                href: spark-monitoring-api-overview.md
-              - name: Open-source APIs
-                href: open-source-apis.md
-              - name: Livy log APIs
-                href: livy-log.md
-              - name: Driver log APIs
-                href: driver-log.md
-              - name: Executor log APIs
-                href: executor-log.md
-              - name: Resource usage APIs
-                href: resource-usage-apis.md
-          - name: Collecting Spark Logs & Metrics
-            items:
-              - name: Collect Logs & Metrics with Azure Log Analytics
-                href: azure-fabric-diagnostic-emitters-log-analytics.md
-              - name: Collect Logs & Metrics with Azure Storage Account
-                href: azure-fabric-diagnostic-emitters-azure-storage.md
-              - name: Collect Logs & Metrics with Azure Event Hubs
-                href: azure-fabric-diagnostic-emitters-azure-event-hub.md
-      - name: Spark Connectors
-        items:
-          - name: Data warehouse and lakehouse connector
-            href: spark-data-warehouse-connector.md
-      - name: Intelligent cache
-        href: intelligent-cache.md
-      - name: What is the Livy API?
-        href: api-livy-overview.md
-        items:
-          - name: Create and run Spark jobs using the Livy API
-            href: get-started-api-livy.md
-          - name: Submit Livy API session jobs
-            href: get-started-api-livy-session.md
-          - name: Submit Livy API batch jobs
-            href: get-started-api-livy-batch.md
-  - name: Delta Lake
-    items:
-      - name: Lakehouse and Delta tables
-        href: lakehouse-and-delta-tables.md
-      - name: Load to tables
-        href: load-to-tables.md
-      - name: Lakehouse table maintenance
-        href: lakehouse-table-maintenance.md
-      - name: Delta optimization and V-Order
-        href: delta-optimization-and-v-order.md
-      - name: Automated Statistics for Delta Tables
-        href: automated-table-statistics.md
-      - name: Delta Driver Mode Snapshot
-        href: driver-mode-snapshot.md
-  - name: Notebooks
-    items:
-      - name: Create and use notebooks
-        href: how-to-use-notebook.md
-      - name: Develop and run notebooks
-        href: author-execute-notebook.md
-      - name: Use Python experience on notebook
-        href: using-python-experience-on-notebook.md
-      - name: NotebookUtils
-        href: notebook-utilities.md
-        displayName: MSSparkUtils
-      - name: Run notebooks in High Concurrency mode
-        href: configure-high-concurrency-session-notebooks.md
-      - name: Run notebooks in pipelines with high concurrency mode
-        href: configure-high-concurrency-session-notebooks-in-pipelines.md
-      - name: Notebook visualization
-        href: notebook-visualization.md
-      - name: Notebook in app
-        href: notebook-in-app.md
-      - name: Explore data in lakehouse
-        href: lakehouse-notebook-explore.md
-      - name: Load data in lakehouse
-        href: lakehouse-notebook-load-data.md
-      - name: Notebook source control and deployment
-        href: notebook-source-control-deployment.md
-      - name: Use Notebook public APIs
-        href: notebook-public-api.md
-      - name: Format code in notebooks
-        href: author-notebook-format-code.md
-      - name: Author and run T-SQL in notebook
-        href: author-tsql-notebook.md
-      - name: Python vs. PySpark Notebooks
-        href: fabric-notebook-selection-guide.md
-      - name: T-SQL magic command in Python Notebook
-        href: tsql-magic-command-notebook.md
-      - name: Fabric Notebook known limitation
-        href: notebook-limitation.md
-  - name: Environments
-    items:
-      - name: Create, configure and use an environment
-        href: create-and-use-environment.md
-      - name: Manage Spark compute in environments
-        href: environment-manage-compute.md
-      - name: Manage libraries in environments
-        href: environment-manage-library.md
-      - name: Environment Git integration and deployment pipeline
-        href: environment-git-and-deployment-pipeline.md
-      - name: Manage the environment through public APIs
-        href: environment-public-api.md
-      - name: Manage the resources in Fabric environment
-        href: environment-manage-resources.md
-      - name: Migrate the existing workspace libraries and Spark properties
-        href: environment-workspace-migration.md
-  - name: VS Code integration
-    items:
-      - name: Fabric extensions for VS Code
-        items:
-          - name: Overview
-            href: set-up-fabric-vs-code-extension.md
-          - name: Develop user data functions in VS Code
-            href: ./user-data-functions/create-user-data-functions-vs-code.md
-      - name: Fabric Data Engineering VS Code extension
-        items:
-          - name: Overview
-            href: setup-vs-code-extension.md
-          - name: VS Code extension with Docker image
-            href: set-up-vs-code-extension-with-docker-image.md
-          - name: Manage environment artifact with VS Code extension
-            href: manage-environment-with-vs-code.md
-          - name: Notebook with VS Code extension
-            href: author-notebook-with-vs-code.md
-          - name: Notebook resource with VS Code extension
-            href: author-notebook-resource-with-vs-code.md
-          - name: Spark job definition with VS Code extension
-            href: author-sjd-with-vs-code.md
-          - name: Explore lakehouse with VS Code extension
-            href: explore-lakehouse-with-vs-code.md
-          - name: Develop notebook with VS Code web experience
-            href: author-notebook-with-vs-code-web.md
-          - name: Develop notebook with Fabric runtime
-            href: fabric-runtime-in-vscode.md
-  - name: Migrate to Fabric
-    items:
-      - name: From Azure Synapse
-        items:
-          - name: Overview
-            href: migrate-synapse-overview.md
-          - name: Migrate Spark pools
-            href: migrate-synapse-spark-pools.md
-          - name: Migrate Spark configurations
-            href: migrate-synapse-spark-configurations.md
-          - name: Migrate Spark libraries
-            href: migrate-synapse-spark-libraries.md
-          - name: Migrate notebooks
-            href: migrate-synapse-notebooks.md
-          - name: Migrate Spark job definition
-            href: migrate-synapse-spark-job-definition.md
-          - name: Migrate data and pipelines
-            href: migrate-synapse-data-pipelines.md
-          - name: Migrate Hive Metastore metadata
-            href: migrate-synapse-hms-metadata.md
-  - name: API for GraphQL
-    items:
-      - name: What is API for GraphQL?
-        href: api-graphql-overview.md
-      - name: API for GraphQL editor
-        href: api-graphql-editor.md
-      - name: Schema view and explorer
-        href: graphql-schema-view.md
-      - name: Data aggregation
-        href: api-graphql-aggregations.md
-      - name: Introspection and schema export
-        href: api-graphql-introspection-schema-export.md
-      - name: GraphQL source control and deployment pipelines (preview)
-        href: graphql-source-control-and-deployment.md
-      - name: How tos
-        items:
-          - name: Create an API for GraphQL
-            href: get-started-api-graphql.md
-          - name: Manage relationships
-            href: manage-relationships-graphql.md
-          - name: Query multiple data sources
-            href: multiple-data-sources-graphql.md
-          - name: Connect applications
-            href: connect-apps-api-graphql.md
-          - name: Use Service Principals
-            href: api-graphql-service-principal.md
-          - name: Use Stored procedures
-            href: api-graphql-stored-procedures.md
-          - name: Integrate with Azure API Management (APIM)
-            href: api-graphql-azure-api-management.md
-          - name: Connect AI Agents with a local Model Context Protocol (MCP) server
-            href: api-graphql-local-model-context-protocol.md
-      - name: Monitoring
-        items:
-          - name: Monitoring dashboard and logging (preview)
-            href: graphql-monitor-log.md
-          - name: Monitoring GraphQL operations
-            href: graphql-operations.md
-      - name: Performance best practices
-        href: api-graphql-performance.md
-      - name: Pricing
-        href: api-graphql-pricing.md
-      - name: Limitations
-        href: api-graphql-limits.md
-      - name: Frequently asked questions
-        href: graphql-faq.yml
-  - name: Partner integration
-    items:
-      - name: Esri - ArcGIS GeoAnalytics (preview)
-        href: spark-arcgis-geoanalytics.md
-  - name: User data functions (preview)
-    items:
-      - name: Overview
-        href: ./user-data-functions/user-data-functions-overview.md
-      - name: Create a User data functions item
-        href: ./user-data-functions/create-user-data-functions-portal.md
-      - name: Connect to data sources
-        href: ./user-data-functions/connect-to-data-sources.md
-      - name: Integration with Fabric data pipelines
-        href: ./user-data-functions/create-functions-activity-data-pipelines.md
-      - name: Integration with Fabric notebooks
-        href: ./notebook-utilities.md#user-data-function-udf-utilities
-      - name: Manage public and private libraries
-        href: ./user-data-functions/how-to-manage-libraries.md
-      - name: Service details and limitations
-        href: ./user-data-functions/user-data-functions-service-limits.md
-      - name: Source control and deployment pipelines
-        href: ./user-data-functions/git-and-deployment-pipelines.md
-      - name: Python programming model
-        href: ./user-data-functions/python-programming-model.md
-      - name: Invoke functions using Python
-        href: ./user-data-functions/tutorial-invoke-from-python-app.md
-      - name: View logs
-        href: ./user-data-functions/view-function-logs.md
-  - name: Materialized lake views (preview)
-    items:
-      - name: Overview
-        href: ./materialized-lake-views/overview-materialized-lake-view.md
-      - name: Get started
-        items:
-          - name: Quick start guide
-            href: ./materialized-lake-views/get-started-with-materialized-lake-views.md
-          - name: Create materialized lake views
-            href: ./materialized-lake-views/create-materialized-lake-view.md
-          - name: Refresh materialized lake views
-            href: ./materialized-lake-views/refresh-materialized-lake-view.md
-      - name: Manage
-        items:
-          - name: View lineage
-            href: ./materialized-lake-views/view-lineage.md
-          - name: Schedule materialized lake views
-            href: ./materialized-lake-views/schedule-lineage-run.md
-          - name: Run history of materialized lake views
-            href: ./materialized-lake-views/run-history.md
-          - name: Operational run details
-            href: ./materialized-lake-views/operational-run-details.md
-      - name: Data quality
-        items:
-          - name: Data quality in materialized lake views
-            href: ./materialized-lake-views/data-quality.md
-          - name: Data quality report
-            href: ./materialized-lake-views/data-quality-reports.md
-      - name: Monitor
-        items:
-          - name: Monitor materialized lake views
-            href: ./materialized-lake-views/monitor-materialized-lake-views.md
-      - name: Tutorial
-        items:
-          - name: Tutorial - medallion architecture with materialized lake views
-            href: ./materialized-lake-views/tutorial.md
-      - name: Service details and limitations
-        href: user-data-functions/user-data-functions-service-limits.md
-      - name: Quickstart   View invocation logs for a Fabric User data functions item (Preview)
-        href: user-data-functions/view-function-logs.md
+    - name: Overview
+      href: migrate-synapse-overview.md
+    - name: Migrate Spark pools
+      href: migrate-synapse-spark-pools.md
+    - name: Migrate Spark configurations
+      href: migrate-synapse-spark-configurations.md
+    - name: Migrate Spark libraries
+      href: migrate-synapse-spark-libraries.md
+    - name: Migrate notebooks
+      href: migrate-synapse-notebooks.md
+    - name: Migrate Spark job definition
+      href: migrate-synapse-spark-job-definition.md
+    - name: Migrate data and pipelines
+      href: migrate-synapse-data-pipelines.md
+    - name: Migrate Hive Metastore metadata
+      href: migrate-synapse-hms-metadata.md
+- name: API for GraphQL
+  items:
+   - name: What is API for GraphQL?
+     href: api-graphql-overview.md
+   - name: API for GraphQL editor
+     href: api-graphql-editor.md
+   - name: Schema view and explorer
+     href: graphql-schema-view.md
+   - name: Data aggregation
+     href: api-graphql-aggregations.md
+   - name: Introspection and schema export
+     href: api-graphql-introspection-schema-export.md 
+   - name: GraphQL source control and deployment pipelines (preview)
+     href: graphql-source-control-and-deployment.md     
+   - name: How tos
+     items:
+      - name: Create an API for GraphQL
+        href: get-started-api-graphql.md  
+      - name: Manage relationships
+        href: manage-relationships-graphql.md
+      - name: Query multiple data sources
+        href: multiple-data-sources-graphql.md
+      - name: Connect applications
+        href: connect-apps-api-graphql.md
+      - name: Use Service Principals
+        href: api-graphql-service-principal.md
+      - name: Use Stored procedures
+        href: api-graphql-stored-procedures.md
+      - name: Integrate with Azure API Management (APIM)
+        href: api-graphql-azure-api-management.md     
+      - name: Connect AI Agents with a local Model Context Protocol (MCP) server
+        href: api-graphql-local-model-context-protocol.md     
+   - name: Monitoring  
+     items:
+      - name: Monitoring dashboard and logging (preview)
+        href: graphql-monitor-log.md
+      - name: Monitoring GraphQL operations
+        href: graphql-operations.md
+   - name: Performance best practices
+     href: api-graphql-performance.md
+   - name: Pricing
+     href: api-graphql-pricing.md     
+   - name: Limitations
+     href: api-graphql-limits.md
+   - name: Frequently asked questions
+     href: graphql-faq.yml  
+- name: Partner integration
+  items:
+   - name: Esri - ArcGIS GeoAnalytics (preview)
+     href: spark-arcgis-geoanalytics.md
+- name: User data functions (preview)
+  items:
+   - name: Overview
+     href: ./user-data-functions/user-data-functions-overview.md
+   - name: Create a User data functions item
+     href: ./user-data-functions/create-user-data-functions-portal.md
+   - name: Connect to data sources
+     href: ./user-data-functions/connect-to-data-sources.md
+   - name: Integration with Fabric data pipelines
+     href: ./user-data-functions/create-functions-activity-data-pipelines.md
+   - name: Integration with Fabric notebooks
+     href: ./notebook-utilities.md#user-data-function-udf-utilities
+   - name: Manage public and private libraries
+     href: ./user-data-functions/how-to-manage-libraries.md
+   - name: Service details and limitations
+     href: ./user-data-functions/user-data-functions-service-limits.md
+   - name: Source control and deployment pipelines
+     href: ./user-data-functions/git-and-deployment-pipelines.md
+   - name: Python programming model
+     href: ./user-data-functions/python-programming-model.md
+   - name: Invoke functions using Python
+     href: ./user-data-functions/tutorial-invoke-from-python-app.md
+   - name: View logs
+     href: ./user-data-functions/view-function-logs.md
+- name: Materialized lake views (preview)
+  items:
+  - name: Overview
+    href: ./materialized-lake-views/overview-materialized-lake-view.md
+  - name: Get started
+    items:  
+    - name: Quick start guide
+      href: ./materialized-lake-views/get-started-with-materialized-lake-views.md
+    - name: Create materialized lake views
+      href: ./materialized-lake-views/create-materialized-lake-view.md
+    - name: Refresh materialized lake views
+      href: ./materialized-lake-views/refresh-materialized-lake-view.md
+  - name: Manage
+    items:  
+    - name: View lineage
+      href: ./materialized-lake-views/view-lineage.md
+    - name: Schedule materialized lake views
+      href: ./materialized-lake-views/schedule-lineage-run.md
+    - name: Run history of materialized lake views
+      href: ./materialized-lake-views/run-history.md
+    - name: Operational run details
+      href: ./materialized-lake-views/operational-run-details.md
+  - name: Data quality
+    items:  
+    - name: Data quality in materialized lake views
+      href: ./materialized-lake-views/data-quality.md
+    - name: Data quality report
+      href: ./materialized-lake-views/data-quality-reports.md
+  - name: Monitor
+    items:  
+    - name: Monitor materialized lake views
+      href: ./materialized-lake-views/monitor-materialized-lake-views.md
+  - name: Tutorial
+    items: 
+    - name: Tutorial - medallion architecture with materialized lake views
+      href: ./materialized-lake-views/tutorial.md
+
