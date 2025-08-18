@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: overview
 ms.custom:
-ms.date: 08/13/2025
+ms.date: 08/18/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -103,7 +103,8 @@ APIs with endpoints containing `v1/workspaces/{workspaceId}` support workspace-l
 * [External Data Shares Provider - REST API (Core)](/rest/api/fabric/core/external-data-shares-provider): The recipient needs to use the workspace fully qualified domain name (FQDN) to access the shared OneLake URL.
 
 > [!NOTE]
-> * **Deployment pipelines:** If any workspace in a deployment pipeline is configured to deny public access (restricted), deployment pipelines can't connect to that workspace. 
+> * The [workspaces network communication policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy) isn't restricted by workspace-level network settings. This API remains accessible from public networks, even if public access to the workspace is blocked. Tenant-level network restrictions still apply. For details, see [access to workspace communication policy API based on tenant and private link settings](security-workspace-level-private-links-set-up.md#access-to-workspace-communication-policy-api-based-on-tenant-and-private-link-settings).
+> * **Deployment pipelines:** If any workspace in a deployment pipeline is set to deny public access (restricted), deployment pipelines can't connect to that workspace. 
 > * **Item sharing:** Item sharing isn't supported. If items are already shared with users, those users can no longer access the items using the shared links.
 
 ### Lakehouse support
