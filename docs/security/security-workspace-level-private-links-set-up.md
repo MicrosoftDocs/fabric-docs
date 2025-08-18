@@ -186,7 +186,9 @@ Use the [Workspaces - Get Network Communication Policy API](/rest/api/fabric/cor
 
 You can use the workspace communication policy API even if no private link is set up, regardless of the current communication policy. The table below shows where and when this API is accessible based on tenant and private link settings.
 
-### Access to workspace communication policy API based on tenant and private link settings.
+<a name="workspace-communication-policy-access"></a>
+
+**Table 1. Access to workspace communication policy API based on tenant and private link settings**
 
 | Tenant-level public access setting | Private link type | Access from | Allowed to get or set workspace communication policy API? |
 |--|--|--|--|
