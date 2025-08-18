@@ -1,0 +1,12 @@
+items:
+  - name: Graph in Microsoft Fabric documentation
+    href: index.yml
+  - name: Overview
+    items:
+      - name: What is Graph in Microsoft Fabric?
+        href: fabric-graph-overview.md
+      - name:  Compare Graph and Relational Databases
+        href: graph-database-vs-relational.md
+      - name: Graph in Microsoft Fabric Data Models
+        href: graph-data-models.md
+  
