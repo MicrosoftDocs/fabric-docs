@@ -45,7 +45,7 @@ The items that you can create and access appear on Home. If your Home canvas get
 
 1. The left navigation pane (nav pane) links you to different views of your items and to creator resources. You can [remove buttons from the nav pane](#add-and-remove-buttons-from-the-nav-pane) to suit your workflow.
 1. The selector for switching between Fabric and Power BI.
-1. Options for creating new items. 
+1. Options for creating new items.
 1. The top menu bar for orienting yourself in Fabric, finding items, help, and sending feedback to Microsoft. The Account manager control is a critical button for looking up your account information and managing your Fabric trial.
 1. Learning resources to get you started learning about Fabric and creating items.
 1. Your items organized by recent workspaces, recent items, and favorites.
@@ -118,6 +118,33 @@ When you select a workload, the landing page for that workload displays. Each wo
 :::image type="content" source="media/fabric-home/fabric-home-workload-landing.png" alt-text="Screenshot of the Data Engineering workload detail page." lightbox="media/fabric-home/fabric-home-workload-landing.png":::
 
 For more information about workloads, see [Workloads in Fabric](../workload-development-kit/more-workloads-add.md)
+
+## Tabbed navigation to access resources (preview)
+
+The tabbed navigation allows you to work with multiple items and workspaces at the same time. It enhances navigation and reduces the need to switch context.
+
+### Tabs for open items
+
+Tabs appear horizontally across the top of the Fabric portal and show the item name, type (for example, notebook, pipeline, report), and workspace context. Tabs make it easier to identify and switch between open items without losing focus.
+
+### Multiple open workspaces
+
+You can now open and work across multiple workspaces side by side.
+
+- Items are color-coded and numbered to indicate which workspace they belong to.  
+- This feature helps reduce confusion and improves context when working in multiple environments.
+
+### Object explorer
+
+The Object Explorer provides a structured view of items across all your currently open workspaces. Use it to quickly locate and open resources without having to switch between pages.
+
+### More open items
+
+The previous limit of 10 open items has been raised, so you can keep more resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
+
+> [!NOTE]
+> These multitasking features are rolling out in phases starting mid-August 2025. Availability might vary across tenants as the rollout progresses.
+
 
 ## Get help from the Help pane
 
