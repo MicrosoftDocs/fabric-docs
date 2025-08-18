@@ -101,10 +101,13 @@ To complete the installation, configure the Microsoft Fabric Capacity Metrics ap
     |Field          |Required |Value    |Notes    |
     |---------------|---------|---------|---------|
     |**CapacityID** |Yes |An ID of a capacity you're an admin of |You can find the capacity ID in the URL of the capacity management page. In Microsoft Fabric, go to **Settings** > **Governance and insights** > **Admin portal** > **Capacity settings**, then select a capacity. The capacity ID is shown in the URL after */capacities/*. For example, `00001111-aaaa-2222-bbbb-3333cccc4444` is the capacity ID in this URL: `https://app.powerbi.com/admin-portal/capacities/00001111-aaaa-2222-bbbb-3333cccc4444`.</br> After installation, the app will let you see all the capacities you can access. |
-    |**UTC_offset** |Yes |Numerical values ranging from `14` to `-12`.</br> To signify a Half hour timezone, use `.5`. For example, for Iran's standard time enter `3.5`.   |Enter your organization's standard time in Coordinated Universal Time (UTC). |
+    |**UTC_offset** |Yes |Numerical values ranging from `14` to `-12`.</br> To signify a Half hour timezone, use `.5`. For example, for India's standard time enter `5.5`.   |Enter your organization's standard time in Coordinated Universal Time (UTC). |
     |**Timepoint**  |Automatically populated  |         |This field is automatically populated and is used for internal purposes. The value in this field will be overwritten when you use the app. |
     |**Timepoint2** |Automatically populated  |         |This field is automatically populated and is used for internal purposes. The value in this field will be overwritten when you use the app. |
     |**Advanced**   |Optional |**On** or **Off** |The app automatically refreshed your data at midnight. This option can be disabled by expanding the *advanced* option and selecting **Off**. |
+
+    > [!Note]
+    > If you're using Fabric Capacity Metrics app version 1.9 or higher, you only need to configure the UTC_offset parameter during installation.
 
 5. Select **Next**.
 
