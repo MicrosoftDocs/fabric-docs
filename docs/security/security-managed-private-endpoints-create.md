@@ -160,7 +160,7 @@ Ensure resource ID format is followed as shown in the following table.
 | Azure Functions | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{function-app-name}|
 | Azure Event Hubs | /subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/Microsoft.EventHub/namespaces/{namespace-name}
 | Azure IoT Hub | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Devices/IotHubs/{iothub-name}
-
+| Azure Data Manager for Energy (ADME) | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.OpenEnergyPlatform/energyServices/{service-name} |
 Please note creating managed private endpoint to a private link service for your Fabric tenant isn't supported. 
 
 ## Related content
