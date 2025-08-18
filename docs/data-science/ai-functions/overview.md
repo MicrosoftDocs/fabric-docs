@@ -1,5 +1,5 @@
 ---
-title: Seamlessly Transform and Enrich Data with AI Functions
+title: Transform and Enrich Data with AI Functions
 description: Learn how to transform and enrich data with lightweight, LLM-powered code by using AI functions in Microsoft Fabric.
 ms.author: jburchel
 author: jonburchel
@@ -10,11 +10,11 @@ ms.date: 05/18/2025
 ms.search.form: AI functions
 ---
 
-# Seamlessly transform and enrich data with AI functions (preview)
+# Transform and enrich data with AI functions (preview)
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-With Microsoft Fabric, all business professionals (from developers to analysts) can get more value from their enterprise data through Generative AI. They can use experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and [Fabric data agents](../how-to-create-data-agent.md). Because of a new set of AI functions for data engineering, Fabric users can take advantage of industry-leading large language models (LLMs) to seamlessly transform and enrich data.
+With Microsoft Fabric, all business professionals (from developers to analysts) can get more value from their enterprise data through Generative AI. They can use experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and [Fabric data agents](../how-to-create-data-agent.md). Because of a new set of AI functions for data engineering, Fabric users can take advantage of industry-leading large language models (LLMs) to transform and enrich data.
 
 AI functions use the power of generative AI for summarization, classification, text generation, and more. With a single line of code, users can:
 
@@ -27,7 +27,7 @@ AI functions use the power of generative AI for summarization, classification, t
 - [Translate text with `ai.translate`](#translate-text-with-aitranslate): Translate input text into another language.
 - [Answer custom user prompts with `ai.generate_response`](#answer-custom-user-prompts-with-aigenerate_response): Generate responses based on your own instructions.
 
-You can seamlessly incorporate these functions as part of data-science and data-engineering workflows, whether you're working with pandas or Spark. There's no detailed configuration and no complex infrastructure management. You don't need any specific technical expertise.
+You can incorporate these functions as part of data-science and data-engineering workflows, whether you're working with pandas or Spark. There's no detailed configuration and no complex infrastructure management. You don't need any specific technical expertise.
 
 ## Prerequisites
 
