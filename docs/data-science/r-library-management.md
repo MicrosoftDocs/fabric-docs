@@ -1,13 +1,14 @@
----
+﻿---
 title: R library management
 description: How to manage R libraries.
 ms.reviewer: None
-ms.author: sgilley
-author: sdgilley
+ms.author: lagayhar
+author: lgayhardt
 ms.topic: how-to
-ms.custom:
+ms.custom: 
 ms.date: 03/22/2024
 ms.search.form: R Language
+reviewer: sdgilley
 ---
 
 # R library management

@@ -1,9 +1,9 @@
----
+﻿---
 title: Fabric data agent scenario (preview)
 description: Learn how to configure a Fabric data agent on the AdventureWorks dataset.
 author: jonburchel
-ms.author: amjafari
-ms.reviewer: jburchel
+ms.author: jburchel
+ms.reviewer: amjafari
 reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
@@ -11,7 +11,6 @@ ms.topic: concept-article #Don't change; maybe should change to "how-to".
 ms.date: 03/25/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
-
 ---
 
 # Fabric data agent example with the AdventureWorks dataset (preview)

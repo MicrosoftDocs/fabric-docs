@@ -1,10 +1,10 @@
----
+﻿---
 title: Overview of LightGBM in SynapseML
 description: Learn about LightGBM in SynapseML.
 ms.topic: overview
-ms.custom:
-ms.author: ssalgado
-author: ssalgadodev
+ms.custom: 
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
 ms.date: 06/25/2024
