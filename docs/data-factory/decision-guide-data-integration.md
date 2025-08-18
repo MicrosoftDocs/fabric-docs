@@ -9,7 +9,7 @@ ms.topic: concept-article
 ai-usage: ai-assisted
 ---
 
-# Microsoft Fabric decision guide: choose a data integration strategy
+# Microsoft Fabric decision guide: Choose a data integration strategy
 
 Microsoft Fabric has a comprehensive suite of tools to handle data and analytics workloads efficiently. With so many options available, it can be challenging to pick the right tool for your specific needs. This decision guide provides a roadmap to help you select the right strategy.
 
