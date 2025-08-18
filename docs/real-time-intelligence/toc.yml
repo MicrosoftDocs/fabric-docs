@@ -888,5 +888,7 @@ items:
       href: migrate-api-validate-synapse-data-explorer.md
     - name: Migrate to Eventhouse
       href: migrate-api-to-eventhouse.md
+  - name: Migrate from Azure Data Explorer
+    href: migrate-azure-data-explorer.md
 - name: KQL reference
   href: kusto-tocs/query/toc.yml
