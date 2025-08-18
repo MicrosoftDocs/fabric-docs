@@ -53,7 +53,7 @@ Customers can recreate lakehouses by using a custom Scala script.
 
 1. Create a new notebook in the workspace C2.W2.
 
-1. To recover the tables and files from the original lakehouse, refer to the data with OneLake paths such as abfss (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the code example below (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
+1. To recover the tables and files from the original lakehouse, refer to the data with OneLake paths such as abfss (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the following code example (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
 
     ```
     mssparkutils.fs.ls('abfs[s]://<C1.W1>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
@@ -85,7 +85,7 @@ Customers can recreate lakehouses by using a custom Scala script.
     mssparkutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
     ```
 
-1. Once you run the script, the tables will appear in the new lakehouse.
+1. Once you run the script, the tables appear in the new lakehouse.
 
 #### Approach 2: Use Azure Storage Explorer to copy files and tables
 
@@ -96,7 +96,7 @@ To recover only specific Lakehouse files or tables from the original lakehouse, 
 
 ### Notebook
 
-Notebooks from the primary region remain unavailable to customers and the code in notebooks won't be replicated to the secondary region. To recover Notebook code in the new region, there are two approaches to recovering Notebook code content.
+Notebooks from the primary region remain unavailable to customers and the code in notebooks aren't replicated to the secondary region. To recover Notebook code in the new region, there are two approaches to recovering Notebook code content.
 
 #### Approach 1: User-managed redundancy with Git integration (in public preview)
 
@@ -116,7 +116,7 @@ The best way to make this easy and quick is to use Fabric Git integration, then 
 
         :::image type="content" source="./media/experience-specific-guidance/notebook-reconnect-to-ado-repo.png" alt-text="Screenshot showing notebook reconnected to ADO repo.":::
 
-    1. Select the Source control button. Then select the relevant branch of the repo. Then select **Update all**. The original notebook will appear.
+    1. Select the Source control button. Then select the relevant branch of the repo. Then select **Update all**. The original notebook appears.
 
         :::image type="content" source="./media/experience-specific-guidance/notebook-source-control-update-all.png" alt-text="Screenshot showing how to update all notebooks on a branch.":::
 
@@ -158,7 +158,7 @@ If you don't take the Git integration approach, you can save the latest version 
 
 ### Spark Job Definition
 
-Spark job definitions (SJD) from the primary region remain unavailable to customers, and the main definition file and reference file in the notebook will be replicated to the secondary region via OneLake. If you want to recover the SJD in the new region, you can follow the manual steps described below to recover the SJD. Note that historical runs of the SJD won't be recovered.
+Spark job definitions (SJD) from the primary region remain unavailable to customers, and the main definition file and reference file in the notebook will be replicated to the secondary region via OneLake. If you want to recover the SJD in the new region, you can follow the manual steps described below to recover the SJD. Historical runs of the SJD won't be recovered.
 
 You can recover the SJD items by copying the code from the original region by using Azure Storage Explorer and manually reconnecting Lakehouse references after the disaster.
 
