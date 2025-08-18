@@ -23,7 +23,7 @@ Migrating your Azure Data Explorer workloads to Microsoft Fabric enables you to 
 
 ## Create a database shortcut
 
-While Azure Data Explorer provides data in databases that reside in clusters, Fabric offers data in [KQL databases](create-database.md). KQL databases run on the same technology as, and are compliant with, Azure Data Explorer. As such, all current applications, SDK libraries, integrations, and tools that work with Azure Data Explorer will continue to work with Fabric KQL databases. There is a also broad set of capabilities to support mixed environments and migrations, as follows:
+While Azure Data Explorer provides data in databases that reside in clusters, Fabric offers data in [KQL databases](create-database.md). KQL databases run on the same technology as, and are compliant with, Azure Data Explorer. As such, all current applications, SDK libraries, integrations, and tools that work with Azure Data Explorer continue to work with Fabric KQL databases. There's also a broad set of capabilities to support mixed environments and migrations, as follows:
 
 You can create a [database shortcut](database-shortcut.md) to an Azure Data Explorer database, and query without migrating data to Fabric. A database shortcut in Real-Time intelligence is an embedded reference within a KQL database to a source database in Azure Data Explorer. The behavior exhibited by the database shortcut is similar to that of a [follower database](/azure/data-explorer/follower?tabs=csharp).
 
@@ -32,11 +32,11 @@ Follow steps from the article: [Create a database shortcut](database-shortcut.md
 ## Add an ADX source to a KQL Queryset
 
 
-## Creare a KQL database 
+## Create a KQL database 
 Create a new KQL DB with the same schema using the SyncKusto tool or the database script options. For more information, see [Sync Kusto](/azure/data-explorer/sync-kusto).
 
-## Union old and new data until Azure Data Explroer data expires
-Create a unioning [view](/kusto/query/schema-entities/views?view=microsoft-fabric&preserve-view=true) that joins the old and potentially new data. 
+## Union old and new data until Azure Data Explorer data expires
+Create a [view](/kusto/query/schema-entities/views?view=microsoft-fabric&preserve-view=true) using the Union operator that joins the old and potentially new data. 
 
 - Table from ADX and table from eventhouse
 - View on eventhouse Union of ADX cluster
@@ -49,8 +49,8 @@ A materialized view in Fabric is a persisted result of a query over a source tab
 
 ### Ensure prerequisites:
 
-- You have a Fabric workspace with Real-Time Intelligence enabled.
-- You’ve created a database shortcut to the ADX database.
+- A Fabric workspace with Real-Time Intelligence enabled.
+- A database shortcut to the ADX database.
 
 ### Create view
 1. Go to your KQL database in Fabric.
@@ -63,7 +63,7 @@ A materialized view in Fabric is a persisted result of a query over a source tab
         | summarize count() by Category
     }
     ```
-1. Click Run to create the view.
+1. Select Run to create the view.
 
 Yes, you can create a materialized view in Microsoft Fabric that unions data from an Azure Data Explorer (ADX) table (via a database shortcut) and a native KQL table in your Fabric workspace.
 
@@ -78,7 +78,7 @@ Yes, you can create a materialized view in Microsoft Fabric that unions data fro
 }
 ```
 
-- ADXShortcutTable: This is the table from the linked ADX cluster via a database shortcut.
+- ADXShortcutTable: This one is the table from the linked ADX cluster via a database shortcut.
 - LocalKQLTable: This is a native KQL table in your Fabric workspace.
 - project: Ensures both datasets have the same schema for union.
 - Source: Adds a column to identify the origin of each row.
@@ -87,7 +87,7 @@ Yes, you can create a materialized view in Microsoft Fabric that unions data fro
 Notes:
 - You must have read access to the ADX shortcut.
 - Both tables must have compatible schemas (same column names and types).
-- You can use .create async materialized-view if you want to backfill historical data.
+- You can use `.create async materialized-view` if you want to backfill historical data.
 
 ## Switch ingestion to the new database 
 
