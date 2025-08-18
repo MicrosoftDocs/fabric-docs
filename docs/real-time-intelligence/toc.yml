@@ -851,12 +851,6 @@ items:
       href: data-activator/activator-trigger-power-automate-flows.md
   - name: Troubleshoot errors
     href: data-activator/activator-troubleshooting.md
-- name: Analyze data with Copilot
-  items:
-    - name: Copilot for Writing KQL Queries
-      href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Generate Real-Time Dashboard Using Copilot
-      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
 - name: Monitor
   items:
     - name: Eventhouse monitoring
