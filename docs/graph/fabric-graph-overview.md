@@ -8,9 +8,7 @@ ms.author: eur
 ms.reviewer: eur
 ---
 
-# Graph in Microsoft Fabric Overview
-
-## What is Graph in Microsoft Fabric?
+# Graph in Microsoft Fabric overview
 
 Graph in Microsoft Fabric allows users to integrate and find connected insights across multiple data stores in their organization.
 

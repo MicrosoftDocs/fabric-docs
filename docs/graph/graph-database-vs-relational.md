@@ -19,7 +19,7 @@ A **graph database** stores and queries data as a network of nodes (entities) an
 - **Graph databases:** Organize data as nodes and edges, storing relationships explicitly. Traversing connections is efficient and often independent of total dataset size.
 - **Relational databases:** Organize data in tables with rows and columns. Relationships are inferred at query time using JOIN operations, which can become complex and slow for highly connected data.
 
-## Querying Relationships: Joins vs. Traversals
+## Querying relationships: Joins versus traversals
 
 **Relational database queries:** Data in different tables is linked through foreign keys. To retrieve related data, relational databases use JOIN operations to combine rows from multiple tables. This works well for simple relationships but can become expensive and complex for deep or variable-length connections.
 

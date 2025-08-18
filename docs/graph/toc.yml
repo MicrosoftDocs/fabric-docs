@@ -5,8 +5,8 @@ items:
     items:
       - name: What is Graph in Microsoft Fabric?
         href: fabric-graph-overview.md
-      - name:  Compare Graph and Relational Databases
+      - name: Compare graph and relational databases
         href: graph-database-vs-relational.md
-      - name: Graph in Microsoft Fabric Data Models
+      - name: Graph in Microsoft Fabric data models
         href: graph-data-models.md
   

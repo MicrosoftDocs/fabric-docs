@@ -8,7 +8,7 @@ ms.author: eur
 ms.reviewer: eur
 ---
 
-# Graph in Microsoft Fabric Data Models
+# Graph in Microsoft Fabric data models
 
 In this article, we explore the Labeled Property Graph (LPG) model, which is the recommended and only supported model in Graph in Microsoft Fabric. LPG delivers practical benefits for analytics and connected data in Microsoft Fabric.
 
