@@ -69,6 +69,10 @@
       href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
       href: transform-data.md
+    - name: Decide - Data integration strategy
+      href: decision-guide-data-integration.md
+    - name: Decide - Data movement strategy
+      href: decision-guide-data-movement.md
     - name: Decide - Copy activity, Copy job, dataflow, or Spark?
       href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md
     - name: How to access on-premises Data
@@ -709,6 +713,8 @@
         href: azure-machine-learning-activity.md
       - name: Copy activity
         href: copy-data-activity.md
+      - name: Copy job activity
+        href: copy-job-activity.md
       - name: Dataflow activity
         href: dataflow-activity.md
       - name: Deactivate an activity
