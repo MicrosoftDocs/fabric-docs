@@ -121,7 +121,7 @@ Before adding your Fabric data agent to Copilot Studio, complete these verificat
 
    :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-publish.png" alt-text="Screenshot showing to publish custom agent in MCS." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-publish.png":::
 
-   :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-channels.png" alt-text="Screenshot showing the list of channel to which you can publish from Copilot Studio." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-channels.png":::
+   :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-channels.png" alt-text="Screenshot showing the list of channels to which you can publish from Copilot Studio." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-channels.png":::
 
    > [!NOTE]
    > The ability to use the custom agent with connected Fabric data agent isn't currently supported in Microsoft 365 Copilot.
