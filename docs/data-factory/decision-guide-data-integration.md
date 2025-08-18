@@ -32,7 +32,7 @@ For the list of supported connectors across Copy job, Copy activity, and Dataflo
 | | [**Mirroring**](/fabric/database/mirrored-database/overview) | [**Copy Job**](/fabric/data-factory/create-copy-job) | [**Copy Activity (Pipeline)**](/fabric/data-factory/copy-data-activity) |
 |---|---|---|---|
 | **Use Case** | Data Replication | Data Ingestion & Replication | Data Ingestion |
-| **Flagship Scenarios** | Near real-time sync with turn-key setup. Replication | Incremental Copy / Replication (water-mark + Native CDC), Data Lake / Storage Data Migration, Medallion Ingestion, Out-of-the-box multi-table copy. | Data Lake / Storage Data Migration, Medallion Ingestion, User defined Incremental Copy (water-mark based only), Copy using user defined query |
+| **Flagship Scenarios** | Near real-time sync with turn-key setup. Replication | Incremental Copy / Replication (water-mark + Native CDC), Data Lake / Storage Data Migration, Medallion Ingestion, Out-of-the-box multi-table copy. | Data Lake / Storage Data Migration, Medallion Ingestion, Incremental copy via pipeline expressions & control tables (water-mark only)|
 | **Source** | 6+ [connectors](/fabric/database/mirrored-database/overview#types-of-mirroring) | 50+ [connectors](/fabric/data-factory/connector-overview) | 50+ [connectors](/fabric/data-factory/connector-overview) |
 | **Destination** | Mirrored database (stored as read-only Delta table in Fabric OneLake) | 40+ [connectors](/fabric/data-factory/connector-overview) | 40+ [connectors](/fabric/data-factory/connector-overview) |
 | **Type of Incoming Data** | Near Real-time | Batch / Incremental Copy (water-mark based & change data capture) / Near Real-time | Batch / Bulk / Manual Watermark-based incremental copy |
