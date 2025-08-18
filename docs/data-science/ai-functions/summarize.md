@@ -1,13 +1,12 @@
 ---
 title: Summarize Text with the ai.summarize Function
 description: Learn how to to produce summaries of input text by using the ai.summarize function.
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.date: 02/26/2025
-
 ms.search.form: AI functions
 ---
 

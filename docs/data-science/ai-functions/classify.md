@@ -1,13 +1,12 @@
 ---
 title: Categorize Text with the ai.classify Function
 description: Learn how to categorize input text according to custom labels by using the ai.classify function.
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.date: 02/26/2025
-
 ms.search.form: AI functions
 ---
 

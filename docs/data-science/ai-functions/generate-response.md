@@ -1,13 +1,12 @@
 ---
 title: Answer Custom User Prompts with the ai.generate_response Function
 description: Learn how to generate custom text responses based on your own instruction by using the ai.generate_response function.
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.date: 02/26/2025
-
 ms.search.form: AI functions
 ---
 

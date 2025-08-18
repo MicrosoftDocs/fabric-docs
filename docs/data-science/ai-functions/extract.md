@@ -1,13 +1,12 @@
 ---
 title: Extract Entities with the ai.extract Function
 description: Learn how to scan input text and extract information by using the ai.extract function.
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.date: 02/26/2025
-
 ms.search.form: AI functions
 ---
 

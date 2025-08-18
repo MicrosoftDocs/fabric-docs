@@ -73,6 +73,7 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | [Bloomberg Data and Analytics](/power-query/connectors/bloomberg-data-and-analytics) | ✓/− |  |  |
 | [BQE CORE](/power-query/connectors/bqecore) | ✓/− |  |  |
 | [BuildingConnected & Trade Tapp](/power-query/connectors/buildingconnected) | ✓/− |  |  |
+| [Cassandra](connector-cassandra-overview.md) | | ✓/− |  |
 | [CData Connect Cloud](/power-query/connectors/cdata-connect-cloud) | ✓/− |  |  |
 | [Celonis EMS](/power-query/connectors/celonis-ems)  | ✓/− |  |  |
 | Cherwell (Beta) | ✓/− |  |  |
@@ -122,7 +123,7 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | Hexagon PPM Smart API | ✓/− |  |  |
 | [Hive LLAP](connector-hive-llap-overview.md) | ✓/− |  |  |
 | [HTTP](connector-http-overview.md) |  | ✓/✓ |  |
-| [IBM Db2 database](connector-ibm-db2-database-overview.md) | ✓/− | ✓/✓ |✓/−  |
+| [IBM Db2 database](connector-ibm-db2-database-overview.md) | ✓/− | ✓/− |✓/−  |
 | IBM Netezza | ✓/− |  |  |
 | [Impala](connector-impala-overview.md) | ✓/− |  |  |
 | Indexima | ✓/− |  |  |

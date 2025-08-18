@@ -1,13 +1,12 @@
 ---
 title: Seamlessly Transform and Enrich Data with AI Functions
 description: Learn how to transform and enrich data with lightweight, LLM-powered code by using AI functions in Microsoft Fabric.
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.date: 05/18/2025
-
 ms.search.form: AI functions
 ---
 

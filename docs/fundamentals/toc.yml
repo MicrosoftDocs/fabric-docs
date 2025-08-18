@@ -13,6 +13,8 @@ items:
     href: fabric-terminology.md
   - name: What's New
     href: whats-new.md
+  - name: Migration to Microsoft Fabric
+    href: migration.md
 - name: Get started
   items:
   - name: End-to-end tutorials
@@ -29,6 +31,10 @@ items:
   items:
   - name: Decision guide - copy activity, copy job, dataflow, or Spark
     href: decision-guide-pipeline-dataflow-spark.md
+  - name: Decision guide - data integration strategy
+    href: ../data-factory/decision-guide-data-integration.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+  - name: Decision guide - data movement strategy
+    href: ../data-factory/decision-guide-data-movement.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
   - name: Decision guide - choose a data store
     href: decision-guide-data-store.md
   - name: Decision guide - Warehouse and Lakehouse
@@ -169,6 +175,8 @@ items:
   href: share-items.md
 - name: Apply sensitivity labels
   href: apply-sensitivity-labels.md
+- name: Schedule recurring jobs
+  href: job-scheduler.md
 - name: Delta Lake interoperability
   href: delta-lake-interoperability.md
 - name: Learn about Microsoft Fabric feedback
