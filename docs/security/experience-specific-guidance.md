@@ -262,6 +262,8 @@ If you want to recover a Dataflow Gen2 item in the new region, you need to expor
 
 1. The template is then imported into your new Dataflow Gen2 item.
 
+Dataflows Save As feature is not supported in the event of disaster recovery.
+
 ### Data Pipelines
 
 Customers can't access data pipelines in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical data pipelines in multiple workspaces across different regions.
