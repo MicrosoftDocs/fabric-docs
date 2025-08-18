@@ -171,6 +171,8 @@ items:
   href: share-items.md
 - name: Apply sensitivity labels
   href: apply-sensitivity-labels.md
+- name: Schedule recurring jobs
+  href: job-scheduler.md
 - name: Delta Lake interoperability
   href: delta-lake-interoperability.md
 - name: Learn about Microsoft Fabric feedback
