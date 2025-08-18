@@ -72,6 +72,13 @@ This step opens the Test panel, which includes the following components:
 
    :::image type="content" source="..\media\user-data-functions-test\user-data-functions-test-panel.png" alt-text="Screenshot showing the different parts of the Test panel." lightbox="..\media\user-data-functions-test\user-data-functions-test-panel.png":::
 
+## Regional limitations for Test capability in Develop mode
+
+The Test capability is not available in all Fabric regions yet. If your Tenant region is not supported yet, you may see the following message in the Functions portal. You can view the supported regions in the [Service details and limitations](./user-data-functions-service-limits.md#limitations) article.
+
+   :::image type="content" source="..\media\user-data-functions-test\user-data-functions-test-region-unavailable.png" alt-text="Screenshot showing the region unavailable banner." lightbox="..\media\user-data-functions-test\user-data-functions-test-region-unavailable.png":::
+
+If you see this informational message, you can still publish your functions and use the Run capability to test them as you did before. Learn more about [how to manage your Fabric capacity](../../admin/capacity-settings.md##create-a-new-capacity) if you prefer to create a new capacity in a supported region.
 
 ## Next steps
 
