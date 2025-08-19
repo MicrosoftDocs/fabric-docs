@@ -47,7 +47,7 @@ To connect artifacts (for example, Notebook) in a workspace enabled with outboun
 
 :::image type="content" source="media/workspace-outbound-access-protection-set-up/private-link-service-diagram.png" alt-text="Diagram showing a connection from an outbound access protection enabled workspace to another workspace." lightbox="media/workspace-outbound-access-protection-set-up/private-link-service-diagram.png" border="false":::
 
-This section describes how to create a target workspace if it hasn't been created yet. Then it describes how to create a private link service (PLS) in the target workspace and a managed private endpoint from the OAP-enabled workspace to the target workspace.
+This section describes how to create a target workspace if one isn't created yet. Then it describes how to create a private link service (PLS) in the target workspace and a managed private endpoint from the OAP-enabled workspace to the target workspace.
 
 ### Create a workspace in Fabric
 
@@ -108,9 +108,9 @@ This section describes how to establish connectivity between an outbound access 
 
    :::image type="content" source="media/workspace-outbound-access-protection-set-up/copy-paste-resource-id.png" alt-text="Screenshot showing the resource JSON with the resource ID." lightbox="media/workspace-outbound-access-protection-set-up/copy-paste-resource-id.png":::
 	
-1. In the target sub-resource, select **Workspace** and select **Create**.
+1. In the target subresource, select **Workspace** and select **Create**.
 
-   :::image type="content" source="media/workspace-outbound-access-protection-set-up/create-managed-private-endpoint.png" alt-text="Screenshot showing the create managed private endpoint page." lightbox="media/workspace-outbound-access-protection-set-up/create-managed-private-endpoint.png":::
+   :::image type="content" source="media/workspace-outbound-access-protection-set-up/create-managed-private-endpoint.png" alt-text="Screenshot showing the page for creating a managed private endpoint." lightbox="media/workspace-outbound-access-protection-set-up/create-managed-private-endpoint.png":::
 
 > [!IMPORTANT]
 > The activation status shows as *Provisioning* and approval as blank. A tenant admin must approve this request as described in the following section.

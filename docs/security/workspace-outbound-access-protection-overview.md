@@ -20,7 +20,7 @@ Workspace outbound access protection in Microsoft Fabric allows admins to contro
 
 For inbound security, Fabric supports private links at the [tenant level](security-private-links-overview.md) and the [workspace level](security-workspace-level-private-links-overview.md), which play a crucial role by providing secure connections directly between your virtual network and Fabric.
 
-For outbound security, Fabric supports workspace outbound access protection (WS OAP). This network security feature ensures that connections outside the workspace go through a secure connection between Fabric and a virtual network. It prevents items from establishing unsecure connections to sources outside the workspace boundary unless allowed by the workspace admins. This granular control makes it possible to restrict outbound connectivity for some workspaces while allowing the rest of the workspaces to remain open. This article provides an overview of workspace outbound access protection. 
+For outbound security, Fabric supports workspace outbound access protection. This network security feature ensures that connections outside the workspace go through a secure connection between Fabric and a virtual network. It prevents items from establishing unsecure connections to sources outside the workspace boundary unless allowed by the workspace admins. This granular control makes it possible to restrict outbound connectivity for some workspaces while allowing the rest of the workspaces to remain open. This article provides an overview of workspace outbound access protection. 
 
 ## Key benefits of workspace outbound access protection
 
@@ -34,7 +34,7 @@ Workspace level outbound access protection makes it possible to control what the
 
 * The WS OAP enabled workspace can also connect to another workspace within the same tenant if a managed private endpoint is established from the source to the target workspace. For example, in the diagram, Workspace B has a managed private endpoint configured to workspace C. This managed private endpoint allows items in Workspace B (for example shortcuts) to reference the data in Workspace C (for example, in a lakehouse).
 
-* Multiple workspaces can connect to the same source by setting up managed private endpoints. For example, in the diagram, both Workspace A and Workspace B can connect to the SQL server because they each have managed private endpoints set up for this SQL server.
+* Multiple workspaces can connect to the same source by setting up managed private endpoints. For example, in the diagram, both Workspace A and Workspace B can connect to the SQL server because managed private endpoints are set up for each of them for this SQL server.
 
 ## Supported item types
 
@@ -53,15 +53,15 @@ For information about workspace outbound access protection scenarios across the 
 
 The following limitations apply when using workspace outbound access protection:
 
-* Workspace outbound access protection (WS OAP) isn't supported for Semantic models and SQL Endpoints. Special considerations for Lakehouse:
-   * We recommend enabling OAP on the workspace before creating a Lakehouse to ensure compatibility.
-   * Enabling OAP on an existing workspace that already contains a Lakehouse (and its associated Semantic model and SQL Endpoint) will fail.
-* OAP is only available in regions where Fabric Data Engineering workloads are supported. For more information, see [Overview of managed private endpoints for Microsoft Fabric](security-managed-private-endpoints-overview.md#limitations-and-considerations).
-* OAP only supports workspaces hosted on Fabric SKUs. Other capacity types and F SKU trials aren't supported.
-* If a workspace contains unsupported artifacts, workspace admins can't enable OAP until those artifacts are removed.
-* If OAP is enabled on a workspace, workspace admins can't add unsupported artifacts. OAP must be disabled first, and then workspace admins can add unsupported artifacts.
-* If the workspace is part of GIT integration, workspace admins can't enable OAP because GIT integration is unsupported. Similarly, if OAP is enabled, the workspace can't be added to GIT integration.
-* If the workspace is part of Deployment Pipelines, workspace admins can't enable OAP because Deployment Pipelines are unsupported. Similarly, if OAP is enabled, the workspace can't be added to Deployment Pipelines.
+* Workspace outbound access protection isn't supported for semantic models and SQL Endpoints. However, there are special considerations for lakehouses:
+   * We recommend enabling outbound access protection on the workspace before creating a lakehouse to ensure compatibility.
+   * Enabling outbound access protection on an existing workspace that already contains a lakehouse (and its associated semantic model and SQL Endpoint) will fail.
+* Outbound access protection is only available in regions where Fabric Data Engineering workloads are supported. For more information, see [Overview of managed private endpoints for Microsoft Fabric](security-managed-private-endpoints-overview.md#limitations-and-considerations).
+* Outbound access protection only supports workspaces hosted on Fabric SKUs. Other capacity types and F SKU trials aren't supported.
+* If a workspace contains unsupported artifacts, workspace admins can't enable outbound access protection until those artifacts are removed.
+* If outbound access protection is enabled on a workspace, workspace admins can't add unsupported artifacts. Outbound access protection must be disabled first, and then workspace admins can add unsupported artifacts.
+* If the workspace is part of GIT integration, workspace admins can't enable outbound access protection because GIT integration is unsupported. Similarly, if outbound access protection is enabled, the workspace can't be added to GIT integration.
+* If the workspace is part of Deployment Pipelines, workspace admins can't enable outbound access protection because Deployment Pipelines are unsupported. Similarly, if outbound access protection is enabled, the workspace can't be added to Deployment Pipelines.
 * If your workspace has outbound access protection enabled, it uses managed virtual networks (VNETs) for Spark. This means that Starter pools are disabled, and you should expect Spark sessions to take 3 to 5 minutes to start.
 * With outbound access protection, all public access from Spark is blocked. This prevents users from downloading libraries directly from public channels like PyPI using pip.
 To install libraries for their Data Engineering jobs, users have two options:
@@ -70,7 +70,8 @@ Upload wheel files for their required libraries and dependencies (that aren’t 
 * Enabling outbound access protection blocks all public access from your workspace. Therefore, to query a Lakehouse from another workspace, you must create a cross-workspace managed private endpoint to allow the Spark jobs to establish a connection.
 * Using fully qualified paths with workspace and Lakehouse names can cause a socket timeout exception. To access files, use relative paths for the current Lakehouse or use a fully qualified path with the Workspace and Lakehouse GUIDs.
 
-Incorrect vs. Correct Path Usage
+### Incorrect vs. Correct Path Usage
+
 Incorrect:
 
 Path: abfss://<YourWorkspace>@onelake.dfs.fabric.microsoft.com/<YourLakehouse>.Lakehouse/Files/people.csv
