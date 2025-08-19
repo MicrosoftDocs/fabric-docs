@@ -92,7 +92,7 @@ Use the Save As feature if you’re aiming to upgrade an entire Dataflow Gen1 to
 
 To use the Save As feature:
 
-[!INCLUDE [save-as-feature-how-to](../includes/save-as-feature-how-to.md)]
+[!INCLUDE [save-as-feature-how-to](includes/save-as-feature-how-to.md)]
 
 ## Related content
 

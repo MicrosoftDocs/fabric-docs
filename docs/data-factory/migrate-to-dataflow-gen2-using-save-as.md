@@ -39,7 +39,7 @@ You can also use the new Save As feature to save a Dataflow Gen1 to a new Datafl
 
 To use the Save As feature:
 
-[!INCLUDE [save-as-feature-how-to](../includes/save-as-feature-how-to.md)]
+[!INCLUDE [save-as-feature-how-to](includes/save-as-feature-how-to.md)]
 
 ## Bulk migration and automation
 
