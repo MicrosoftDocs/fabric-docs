@@ -15,12 +15,12 @@ ms.custom:
 ---
 
 # Migrate from Azure Data Explorer (ADX) to Fabric Real-Time intelligence (Eventhouse)
-Migrate your Azure Data Explorer workloads to Microsoft Fabric to use advanced analytics, real-time data processing, and seamless integration with Fabric’s powerful features. This article show you how to gradually transition your analytics workloads from Azure Data Explorer to Fabric Real-Time intelligence without downtime. 
+Migrate your Azure Data Explorer workloads to Microsoft Fabric to use advanced analytics, real-time data processing, and seamless integration with Fabric’s powerful features. This article shows you how to gradually transition your analytics workloads from Azure Data Explorer to Fabric Real-Time intelligence without downtime. 
 
-Start by using **Fabric as the query layer** while ADX continues ingesting data, and explore Fabric’s features. When you are ready, **migrate fully** by moving schema and ingestion to Fabric.
+Start by using **Fabric as the query layer** while ADX continues ingesting data, and explore Fabric’s features. When you're ready, **migrate fully** by moving schema and ingestion to Fabric.
 
 
-## Explore ADX data in Fabric
+## Consume ADX data in Fabric
 
 Keep ADX for ingestion only, and move querying to Fabric by using one of these two methods to use ADX data from Fabric without duplicating data.
 
@@ -31,7 +31,7 @@ Keep ADX for ingestion only, and move querying to Fabric by using one of these t
 
     In Fabric, make sure you have a connection to the ADX cluster. Add an Azure Data Explorer source in KQL queryset, which lets certain Fabric items like queryset and real-time dashboards query ADX data. For more information, see [Query data in a KQL queryset - Microsoft Fabric](kusto-query-set.md).
 
-    This approach lets you run cross-cluster queries from Fabric to ADX. Try Fabric's capabilities like Copilot-assisted query generation and integrated reports on your live ADX data. Run all your dashboards and queries in Fabric, which reduces load on the ADX cluster because it just ingests data. No data moves yet, so this step is a safe way to explore. When you're ready to fully migrate, follow the next steps.
+    Try Fabric's capabilities like Copilot-assisted query generation, Power BI reports, Notebooks, Activator on your ADX data. Run all your dashboards and queries in Fabric while the ingestion continues to happen in ADX. When you're ready to fully migrate, follow the next steps.
 
 ## High-level migration steps
 
@@ -56,7 +56,7 @@ Create an empty KQL database in a Fabric eventhouse that eventually replaces the
     Alternatively, you can run the KQL command: `.show database schema` in ADX, which generates a script of all table definitions, functions, and policies, and then run the generated script on KQL database in Fabric.
 1. **Verify schema**
     
-    Confirm all tables, columns, data types, and relevant policies (retention, caching, etc.) in KQL database match those in the ADX database. At this point, the Fabric KQL database is empty but ready to receive data, and you can also still query ADX using methods from the [Explore ADX data in Fabric](#explore-adx-data-in-fabric) section.
+    Confirm all tables, columns, data types, and relevant policies (retention, caching, etc.) in KQL database match those in the ADX database. At this point, the Fabric KQL database is empty but ready to receive data, and you can also still query ADX using methods from the [Explore ADX data in Fabric](#consume-adx-data-in-fabric) section.
 
 ## Create union views for seamless data access
 To avoid any interruption during data migration, create KQL views in Fabric that combine data from both the old ADX database and the new Fabric KQL database. This approach lets queries return a complete dataset during the transition:
@@ -85,7 +85,7 @@ Now update your tools and applications to query the new Fabric KQL database inst
 
 1. **Update connection strings**
 
-    Change analytics applications, KQL queries, or Power BI reports, to use the Fabric Real-Time intelligence endpoint, that is the new Eventhouse and the KQL database, rather than the ADX cluster. The queries remain the same since table names and KQL didn’t change, but they now run in Fabric. Because of the union view created in the previous step, users querying the Fabric KQL database still get all historical data from ADX via the view plus any new data that's ingested into Fabric.
+    Change analytics applications, KQL queries, or Power BI reports, to use the KQL database's endpoint ([query URI](access-database-copy-uri.md#copy-uri)), rather than the ADX cluster. The queries remain the same since table names and KQL didn’t change, but they now run in Fabric. Because of the union view created in the previous step, users querying the Fabric KQL database still get all historical data from ADX via the view plus any new data that's ingested into Fabric.
 1. **Test reports and apps**
 
     Ensure that dashboards and scripts are getting results as expected from the Fabric KQL database. Performance might differ slightly. Fabric might cache some ADX data if you used a shortcut. This step effectively moves the query endpoints to Fabric. From here on, all read/query operations occur on Fabric.
@@ -95,7 +95,7 @@ With queries now served by Fabric, direct the incoming data streams to Fabric:
 
 1. **Repoint ingestion pipelines**
 
-    Change all data producers like IoT devices, extract-transform-load (ETL) jobs, Event Hubs connections, and others that previously ingest into the ADX database, so they ingest into the Fabric KQL database. This step can include changing cluster URLs, authentication, or updating connection strings in Azure Data Factory, Stream Analytics, or custom apps to use the Fabric Eventhouse/KQL database endpoints.
+    Change all data producers like IoT devices, extract-transform-load (ETL) jobs, Event Hubs connections, and others that previously ingest into the ADX database, so they ingest into the Fabric KQL database. This step can include changing cluster URLs, authentication, or updating connection strings in Azure Data Factory, Stream Analytics, or custom apps to use the KQL database [ingestion endpoint or URI](access-database-copy-uri.md#copy-uri).
 1. **Verify new data flow**
 
     Check that new records land in tables in the KQL database. The KQL database in Fabric starts accumulating data. Because you're using the union views, queries in Fabric still show a unified dataset. Over time, data in ADX becomes stale because no new data is ingested into ADX after this switch.
@@ -115,5 +115,5 @@ When you're confident that all required data is available in Fabric, decommissio
 
 
 ## Summary
-By following the steps in this article, you migrate from ADX to Fabric with minimal disruption. You start by using Fabric as a consumer of ADX, which unlocks features like Copilot and integrated BI, and then gradually shift the backend to Fabric. Now, Fabric's real-time intelligence (Eventhouse) handles both ingestion and querying of your data, and ADX isn't in use.
+By following the steps in this article, you migrate from ADX to Fabric with minimal disruption. You start by moving consumption layer to Fabric, which unlocks features like Copilot, Power BI, Notebooks, and Activator, and then gradually shift the backend to Fabric. Now, Fabric's real-time intelligence (Eventhouse) handles both ingestion and querying of your data, and ADX isn't in use.
 
