@@ -15,10 +15,10 @@ ms.custom:
 ---
 
 # Migrate from Azure Data Explorer (ADX) to Fabric Real-Time intelligence (Eventhouse)
-Migrate your Azure Data Explorer workloads to Microsoft Fabric to use advanced analytics, real-time data processing, and seamless integration with Fabric’s powerful features. This article shows you how to gradually transition your analytics workloads from Azure Data Explorer to Fabric without downtime. 
+This article shows you how to gradually transition your analytics workloads from Azure Data Explorer to Eventhouse in Fabric Real-Time intelligence without downtime. Start by using **Fabric as the query layer** while ADX continues ingesting data to explore Fabric’s features. When you're ready, **migrate fully** by moving schema and ingestion to Fabric.
 
-Start by using **Fabric as the query layer** while ADX continues ingesting data to explore Fabric’s features. When you're ready, **migrate fully** by moving schema and ingestion to Fabric.
-
+> [!NOTE]
+> To learn about differences between Fabric Real-Time intelligence and comparable Azure solutions, see [Compare with Azure solutions](real-time-intelligence-compare.md).
 
 ## Consume ADX data in Fabric
 
@@ -38,7 +38,7 @@ Keep ADX for ingestion only, and move querying to Fabric by using one of these t
 Follow these steps to migrate from ADX to Fabric:
 
 1. [Create a new KQL database in Fabric with the ADX schema](#create-kql-database-in-fabric-with-adx-schema)
-1. [Create a view with union operator that accesses both KQL table and ADX table](#create-union-views-for-seamless-data-access)
+1. [Create a view with union operator that accesses both table in KQL database and table in ADX database](#create-union-views-for-seamless-data-access)
 1. [Redirect query workloads to Fabric](#redirect-query-workloads-to-fabric)
 1. [Switch data ingestion to Fabric](#switch-data-ingestion-to-fabric)
 1. [Retire the ADX cluster](#retire-the-adx-cluster)
@@ -47,8 +47,7 @@ The following sections give details about each step.
 
 ## Create KQL database in Fabric with ADX schema
 
-Create an empty KQL database in a Fabric eventhouse that eventually replaces the ADX database. It must have the same tables and functions schema as your ADX database. For instructions, see [Create an eventhouse and a KQL database](create-eventhouse.md). After you create the KQL database, follow these steps: 
-
+1. Create an empty KQL database in a Fabric eventhouse that eventually replaces the ADX database. It must have the same tables and functions schema as your ADX database. For instructions, see [Create an eventhouse and a KQL database](create-eventhouse.md).
 1. **Replicate the schema**
 
     Use the [Sync Kusto](/azure/data-explorer/sync-kusto) or export the schema from ADX database to recreate it in Fabric KQL database. SyncKusto is a dedicated tool that synchronizes Kusto database schemas (tables, functions, etc.) between environments.
@@ -80,7 +79,7 @@ To avoid any interruption during data migration, create KQL views in Fabric that
 
     Run a count or sample query on the view (for example, `MyTable | count`) to make sure it returns data from ADX. The Fabric KQL database is still empty now, but as you migrate ingestion in the next step, the view starts returning both old and new records.
 
-## Redirect query workloads to Fabric
+## Redirect query endpoints to KQL Database in Fabric Eventhouse
 Now update your tools and applications to query the new Fabric KQL database instead of the ADX database:
 
 1. **Update connection strings**
