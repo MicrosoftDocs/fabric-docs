@@ -13,11 +13,9 @@ ms.date: 08/19/2025
 
 Use this guide to quickly identify and resolve common issues when working in Fabric Notebooks. Each issue type includes examples and actionable next steps to help you recover efficiently.
 
-## Notebook errors
+## Error messages and associated resolution categories
 
-The following section outlines common notebook errors, with links to their potential resolutions.
-
-### Error messages and associated resolution categories
+The following table lists common error messages you may encounter in Fabric Notebooks, along with links to the relevant troubleshooting sections.
 
 | Error Message | Categories / Resolution |
 |---------------|------------------------|
@@ -35,6 +33,10 @@ The following section outlines common notebook errors, with links to their poten
 | Your organization has reached its compute capacity limit. | [Paused Capacity](#paused-capacity) |
 | Item not found. | [Missing Items](#missing-items) |
 | Cannot call methods on a stopped SparkContext | [Spark Code Issue](#spark-code-issue) |
+
+## Notebook errors
+
+The following section outlines common Notebook errors and their suggested resolutions.
 
 ### Troubleshooting details
 
@@ -156,16 +158,6 @@ In order to manage user access within a Fabric Workspace, take the following ste
 **What to do**:
 1. Select the **View changes** button on the error message bar and choose a version to work as the live notebook.
 1. Select the **History** button at the top right of the window and use the **Version history** panel to find the _external_ record. Then you can either restore or save a copy of that version.
-
-#### Copilot in Notebook
-
-When you run Copilot inline or Copilot chat panel in Notebook, you see an error:
-
-_Something went wrong. Rephrase your request and try again._
-
-**Why it happens**: Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F2 or higher, or P1 or higher) are supported. 
-
-**What to do**:  Check if the workspace capacity is F2 or higher, or P1 or higher. 
 
 #### Spark code issue
 
