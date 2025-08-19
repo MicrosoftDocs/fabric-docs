@@ -120,7 +120,7 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 
 ## Known limitations
 - When both CDC-enabled and non-CDC-enabled source tables are selected in a Copy Job, it treats all tables as watermark-based incremental copy.
-- When CDC-enabled source tables are selected, column mapping and temp DB can't be configured.
+- When CDC-enabled source tables are selected, column mapping can't be configured.
 - Custom capture instances aren't supported; only the default capture instance is supported.
 - SCD2 isn't supported for CDC-enabled source datastore yet.
 - DDL isn't supported yet in Copy job.
