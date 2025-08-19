@@ -135,7 +135,8 @@ To change the name of your Power BI Premium capacity, follow these steps:
 
 #### A SKUs
 
-Use the Azure Command-Line Interface (CLI) [az powerbi](/cli/azure/powerbi) commands.
+>[!NOTE]
+>Renaming isn’t supported for A SKUs.
 
 #### EM SKUs
 
