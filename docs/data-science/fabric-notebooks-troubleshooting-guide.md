@@ -24,14 +24,14 @@ The following section outlines common notebook errors, with links to their poten
 | Your session timed out after inactivity. | [Timeouts](#timeouts) |
 | Your session expired. | [General connectivity](#general-connectivity) / [Timeouts](#timeouts) / [Session Connectivity](#session-connectivity) |
 | Your notebook disconnected. | [General connectivity](#general-connectivity) / [Timeouts](#timeouts) |
-| Failed to retrieve MWC token… | [General connectivity](#general-connectivity) / [Configuration Issue](#configuration-issue) |
-| You're currently offline. | [General connectivity](#general-connectivity) / [Configuration Issue](#configuration-issue) |
-| Can't connect to the collaboration server. | [General connectivity](#general-connectivity) / [Configuration Issue](#configuration-issue) |
+| Failed to retrieve MWC token… | [General connectivity](#general-connectivity) |
+| You're currently offline. | [General connectivity](#general-connectivity) |
+| Can't connect to the collaboration server. | [General connectivity](#general-connectivity) |
 | Error when shutting down kernel due to ajax error 410. | [General connectivity](#general-connectivity) |
 | Access denied. | [Access](#access) |
 | Unable to fetch high concurrency sessions. | [Access](#access) |
 | Unable to save your notebook. | [Save Failures](#save-failures) / [Access](#access) / [Paused Capacity](#paused-capacity) |
-| The capacity with <<ID>> is paused. Your organization has reached its compute capacity limit. | [Paused Capacity](#paused-capacity) |
+| The capacity with ID _&lt;ID&gt;_ is paused. Your organization has reached its compute capacity limit. | [Paused Capacity](#paused-capacity) |
 | Your organization has reached its compute capacity limit. | [Paused Capacity](#paused-capacity) |
 | Item not found. | [Missing Items](#missing-items) |
 | Cannot call methods on a stopped SparkContext | [Spark Code Issue](#spark-code-issue) |
