@@ -1,0 +1,37 @@
+### YamlMime:Landing
+
+title: Graph in Microsoft Fabric documentation
+summary: Learn about Graph in Microsoft Fabric, a unified graph database for analytics and modeling in Microsoft Fabric.
+
+metadata:
+  title: Graph in Microsoft Fabric documentation
+  description: Graph in Microsoft Fabric is a unified graph database for analytics and modeling. Find resources, guides, and API references here.
+  ms.service: fabric  #Required; use either service or product per approved list.
+  #ms.subservice: onelake
+  ms.topic: landing-page
+  author: eric-urban
+  ms.author: eur
+  ms.date: 08/18/2025
+
+landingContent:
+  # Card: About Graph in Microsoft Fabric
+  - title: About Graph in Microsoft Fabric
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Graph in Microsoft Fabric Overview
+            url: fabric-graph-overview.md
+          - text: Graph in Microsoft Fabric Data Models
+            url: graph-data-models.md
+          - text: What is a graph database?
+            url: graph-relational-databases.md
+
+  # Card: Get started
+  - title: Get started with Microsoft Fabric
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Try Microsoft Fabric for free
+            url: /fabric/fundamentals/fabric-trial
+          - text: End-to-end tutorials in Microsoft Fabric
+            url: /fabric/fundamentals/end-to-end-tutorials
