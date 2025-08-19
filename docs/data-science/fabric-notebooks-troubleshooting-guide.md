@@ -53,10 +53,10 @@ To change timeout at the **Notebook** level:
 1. Select the **Session ready** indicator in the lower-left corner.
 1. Update the timeout duration in the dialog that appears.
 
-> [!NOTE]
-> The “Session Ready” indicator is only visible when a session is active.
+   > [!NOTE]
+   > The “Session Ready” indicator is only visible when a session is active.
 
-:::image type="content" source="media/fabric-notebooks-troubleshooting-guide/session-timeout.png" alt-text="Screenshot showing where to adjust the session timeout for a Fabric Notebook.":::
+   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/session-timeout.png" alt-text="Screenshot showing where to adjust the session timeout for a Fabric Notebook.":::
  
 To change timeout at the **Workspace** level:
 
@@ -64,7 +64,7 @@ To change timeout at the **Workspace** level:
 1. Select **Data Engineering/Science Spark settings**.
 1. Under the **Jobs** tab, adjust the session timeout duration as needed.
 
-:::image type="content" source="media/fabric-notebooks-troubleshooting-guide/workspace-timeout.png" alt-text="Screenshot showing where to adjust the workspace timeout for a Fabric Notebook.":::
+   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/workspace-timeout.png" alt-text="Screenshot showing where to adjust the workspace timeout for a Fabric Notebook.":::
 
 #### General connectivity
 
@@ -82,7 +82,7 @@ You can start a session using three methods:
 1. Select **Run all** to start a session and execute all code cells in the notebook.
 1. Select **Run** on a cell to start a session and execute the selected cell.
 
-:::image type="content" source="media/fabric-notebooks-troubleshooting-guide/start-session.png" alt-text="Screenshot showing the methods to start a new session in a Fabric Notebook.":::
+   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/start-session.png" alt-text="Screenshot showing the methods to start a new session in a Fabric Notebook.":::
 
 #### Access
 
@@ -92,7 +92,7 @@ You can start a session using three methods:
 - _Verify your sign-in_: Ensure you're logged in with the correct Microsoft Entra (formerly Azure AD) account associated with your Fabric environment.
 - _Refresh your session_: Sign out and sign back in to refresh your authentication token. You can do this by selecting your profile icon in the top-right corner of the window, and then and selecting **Sign out**.
 - _Check permissions_: Confirm that you have the necessary role (i.e. Contributor or Admin) for the resource you’re trying to access. This includes the Notebook, Lakehouse, Workspace, or Data Warehouse.
-- Contact your administrator: If you're still blocked, contact your tenant or workspace administrator to:
+- _Contact your administrator_: If you're still blocked, contact your tenant or workspace administrator to:
   - Confirm your user role and access level.
   - Check for token expiration issues.
   - Ensure you’re added to the correct Fabric tenant, especially if you recently joined the organization or switched accounts.
