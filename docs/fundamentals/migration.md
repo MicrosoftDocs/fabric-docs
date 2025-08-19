@@ -4,7 +4,7 @@ description: Overview of migration options for moving data and workloads to Fabr
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sngun
-ms.date: 08/06/2025
+ms.date: 08/19/2025
 ms.topic: overview
 ms.custom:
 - migration
@@ -94,6 +94,13 @@ Microsoft Fabric provides a unified analytics platform, and migrating your data 
 | Article | Description |
 |:--|:--|
 | **[SqlPackage and Copy job](../database/sql/sqlpackage.md#import-a-database-with-sqlpackage)** | You can migrate from Azure SQL Database or on-premises SQL Server to SQL database in Fabric with minimal downtime using a `.bacpac` file and SqlPackage, then a [Copy job](../data-factory/what-is-copy-job.md). |
+
+## Migration resources
+
+- [Azure Architectures for Microsoft Fabric](/azure/architecture/browse/?terms=Fabric)
+- [Migration to Fabric - IFS customer case story](https://www.microsoft.com/customers/story/24678-ifs-microsoft-fabric)
+- [Enable Microsoft Fabric for your organization](../admin/fabric-switch.md)
+- [Microsoft Fabric security fundamentals](../security/security-fundamentals.md)
 
 ## Related content
 
