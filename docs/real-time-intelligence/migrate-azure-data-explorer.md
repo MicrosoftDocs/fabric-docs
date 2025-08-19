@@ -15,9 +15,9 @@ ms.custom:
 ---
 
 # Migrate from Azure Data Explorer (ADX) to Fabric Real-Time intelligence (Eventhouse)
-Migrate your Azure Data Explorer workloads to Microsoft Fabric to use advanced analytics, real-time data processing, and seamless integration with Fabric’s powerful features. This article shows you how to gradually transition your analytics workloads from Azure Data Explorer to Fabric Real-Time intelligence without downtime. 
+Migrate your Azure Data Explorer workloads to Microsoft Fabric to use advanced analytics, real-time data processing, and seamless integration with Fabric’s powerful features. This article shows you how to gradually transition your analytics workloads from Azure Data Explorer to Fabric without downtime. 
 
-Start by using **Fabric as the query layer** while ADX continues ingesting data, and explore Fabric’s features. When you're ready, **migrate fully** by moving schema and ingestion to Fabric.
+Start by using **Fabric as the query layer** while ADX continues ingesting data to explore Fabric’s features. When you're ready, **migrate fully** by moving schema and ingestion to Fabric.
 
 
 ## Consume ADX data in Fabric
@@ -26,12 +26,12 @@ Keep ADX for ingestion only, and move querying to Fabric by using one of these t
 
 - **Fabric database shortcut (follower)**
 
-    Create a [database shortcut](database-shortcut.md) to an Azure Data Explorer database, and query without migrating data to Fabric. A database shortcut in Real-Time intelligence is an embedded reference in a Kusto Query Language (KQL) database to a source database in Azure Data Explorer. The behavior of the database shortcut is similar to a [follower database](/azure/data-explorer/follower). It's read-only, syncs new data with a slight lag (seconds to minutes), and lets all Fabric items view and query ADX data without reingesting it.
+    Create a [database shortcut](database-shortcut.md) to an Azure Data Explorer database, and query without migrating data to Fabric. A database shortcut in the Fabric Real-Time intelligence workload is an embedded reference in a Kusto Query Language (KQL) database to a source database in Azure Data Explorer. The behavior of the database shortcut is similar to a [follower database](/azure/data-explorer/follower). It's read-only, syncs new data with a slight lag (seconds to minutes), and lets all Fabric items view and query ADX data without reingesting it.
 - **Attach the ADX cluster as a queryable source**
 
     In Fabric, make sure you have a connection to the ADX cluster. Add an Azure Data Explorer source in KQL queryset, which lets certain Fabric items like queryset and real-time dashboards query ADX data. For more information, see [Query data in a KQL queryset - Microsoft Fabric](kusto-query-set.md).
 
-    Try Fabric's capabilities like Copilot-assisted query generation, Power BI reports, Notebooks, Activator on your ADX data. Run all your dashboards and queries in Fabric while the ingestion continues to happen in ADX. When you're ready to fully migrate, follow the next steps.
+    Try Fabric's capabilities like Copilot-assisted query generation, Notebooks, Activator, and Power BI reports on your ADX data. Run all your dashboards and queries in Fabric while the ingestion continues to happen in ADX. When you're ready to fully migrate, follow the next steps.
 
 ## High-level migration steps
 
@@ -63,7 +63,7 @@ To avoid any interruption during data migration, create KQL views in Fabric that
 
 1. **Define union views**
     
-    For each table, create a stored function in Fabric (with `.create function with (view=true)`) that unions the Fabric table with the corresponding ADX table. Name the function exactly the same as the table to transparently override it. For example, for a table `MyTable`:
+    For each table, create a stored function in Fabric (with `.create function with (view=true)`) that unions the Fabric table with the corresponding ADX table. Name the function exactly the same as the table to transparently override it. For example, for a table `MyTable`, create a function using the following command:
 
     ```kusto
     .create function with (view=true) MyTable() {
@@ -81,7 +81,7 @@ To avoid any interruption during data migration, create KQL views in Fabric that
     Run a count or sample query on the view (for example, `MyTable | count`) to make sure it returns data from ADX. The Fabric KQL database is still empty now, but as you migrate ingestion in the next step, the view starts returning both old and new records.
 
 ## Redirect query workloads to Fabric
-Now update your tools and applications to query the new Fabric KQL database instead of ADX database:
+Now update your tools and applications to query the new Fabric KQL database instead of the ADX database:
 
 1. **Update connection strings**
 
