@@ -74,7 +74,7 @@ Upload wheel files for their required libraries and dependencies (that aren’t 
 
 Incorrect:
 
-Path: abfss://<YourWorkspace>@onelake.dfs.fabric.microsoft.com/<YourLakehouse>.Lakehouse/Files/people.csv
+`Path: abfss://<YourWorkspace>@onelake.dfs.fabric.microsoft.com/<YourLakehouse>.Lakehouse/Files/people.csv`
 
 Why it fails: The Spark session's default configuration can't resolve paths using display names.
 
@@ -88,7 +88,7 @@ When to use: For files within your current Lakehouse.
 
 Fully Qualified Path (with GUIDs):
 
-Path: abfss://<YourWorkspaceID>@onelake.dfs.fabric.microsoft.com/<YourLakehouseID>/Files/people.csv
+`Path: abfss://<YourWorkspaceID>@onelake.dfs.fabric.microsoft.com/<YourLakehouseID>/Files/people.csv`
 
 When to use: To access data in a different workspace or when a fully qualified path is required.
 * Outbound access protection (OAP) isn't supported for schema enabled Lakehouses.
