@@ -6,12 +6,12 @@ ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
 ms.custom:
-ms.date: 07/10/2025
+ms.date: 08/19/2025
 ms.search.form: Eventhouse
 ---
 # Tutorial: Use an Eventhouse as a vector database
 
-In this tutorial, you learn how to use an Eventhouse as a vector database to store and query vector data in Real-Time Intelligence. For general information about vector databases, see [Vector databases](vector-database.md)
+In this tutorial, you learn how to use an Eventhouse as a vector database to store and query vector data in Real-Time Intelligence. For general information about vector databases, see [Vector databases](vector-database.md).
 
 The given scenario involves the use of semantic searches on Wikipedia pages to find pages with common themes. You use an available sample dataset, which includes vectors for tens of thousands of Wikipedia pages. These pages were embedded with an OpenAI model to produce vectors for each page. The vectors, along with some pertinent metadata related to the page, are then stored in an Eventhouse. You can use this dataset to find pages that are similar to each other, or to find pages that are similar to some theme you want to find. For example, say you want to look up "famous female scientists of the 19th century." You encode this phrase using the same OpenAI model, and then run a vector similarity search over the stored Wikipedia page data to find the pages with the highest semantic similarity.
 
@@ -33,6 +33,7 @@ This flow can be visualized as follows:
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [eventhouse](create-eventhouse.md) in your workspace
+* An [ai-embeddings](/kusto/query/ai-embeddings-plugin?view=fabric&preserve-view=true&tabs=managed-identity) plugin enabled in your eventhouse
 * An Azure OpenAI resource with the text-embedding-ada-002 (Version 2) model deployed. This model is currently only available in certain regions. For more information, see [Create a resource](/azure/ai-services/openai/how-to/create-resource).
     * Make sure that local authentication is [enabled](/azure/ai-services/disable-local-auth#re-enable-local-authentication) on your Azure OpenAI resource.
 * Download the [sample notebook](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/vector-database-eventhouse-notebook.ipynb) from the GitHub repository
@@ -174,7 +175,7 @@ To successfully make a call against Azure OpenAI, you need an endpoint, key, and
 | Variable name | Value |
 |---|---|
 | endpoint |This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). Alternatively, you can find the value in the **[Azure AI Foundry](https://oai.azure.com/) > Playground > Code View**. An example endpoint is: `https://docs-test-001.openai.azure.com/`. |
-| API key |	This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). You can use either KEY1 or KEY2. |
+| API key |This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). You can use either KEY1 or KEY2. |
 | deployment ID | This value can be found under the **Deployments** section in the [Azure AI Foundry](https://oai.azure.com/). |
 
 Use the information in the table when running the Azure OpenAI cells.
@@ -182,49 +183,25 @@ Use the information in the table when running the Azure OpenAI cells.
 > [!IMPORTANT]
 > Local authentication must be [enabled](/azure/ai-services/disable-local-auth#re-enable-local-authentication) on your Azure Open AI resource in order to use the API key.
 
-```python
-import openai
-```
-
-```python
-openai.api_version = '2022-12-01'
-openai.api_base = 'endpoint' # Add your endpoint here
-openai.api_type = 'azure'
-openai.api_key = 'api key'  # Add your api key here
-
-def embed(query):
-  # Creates embedding vector from user query
-  embedded_query = openai.Embedding.create(
-          input=query,
-          deployment_id="deployment id", # Add your deployment id here
-          chunk_size=1
-  )["data"][0]["embedding"]
-  return embedded_query
-```
-
-```python
-searchedEmbedding = embed("most difficult gymnastics moves in the olympics")
-#print(searchedEmbedding)
+```kusto
+let model_endpoint = 'https://deployment-name.openai.azure.com/openai/deployments/kusto-text-embedding-ada-002/embeddings?api-version=2024-10-21;managed_identity=system';
+let searchedEmbedding = toscalar(evaluate ai_embeddings("most difficult gymnastics moves in the olympics", model_endpoint));
+print(searchedEmbedding)
 ```
 
 ## Query the similarity
 
-The query is run directly from the notebook, and uses the returned embedding from the previous step in a comparison against the embedded Wikipedia pages stored in your eventhouse. This query uses the [cosine similarity function](/azure/data-explorer/kusto/query/series-cosine-similarity-function) and returns the top 10 most similar vectors.
+The query is run directly in the Eventhouse, and uses the returned embedding from the previous step in a comparison against the embedded Wikipedia pages stored in your eventhouse. This query uses the [cosine similarity function](/azure/data-explorer/kusto/query/series-cosine-similarity-function) and returns the top 10 most similar vectors.
 
-Run the cells in the notebook to see the results of the query. You can change the search term and rerun the query to see different results. You could also compare an existing entry in the Wiki database to find similar entries.
+Run the KQL query to see the results. You can change the search term and rerun the query to see different results. You could also compare an existing entry in the Wiki database to find similar entries.
 
-```python
-kustoQuery = "Wiki | extend similarity = series_cosine_similarity(dynamic("+str(searchedEmbedding)+"), content_vector) | top 10 by similarity desc" 
-accessToken = mssparkutils.credentials.getToken(KUSTO_CLUSTER)
-kustoDf  = spark.read\
-    .format("com.microsoft.kusto.spark.synapse.datasource")\
-    .option("accessToken", accessToken)\
-    .option("kustoCluster", KUSTO_CLUSTER)\
-    .option("kustoDatabase", KUSTO_DATABASE)\
-    .option("kustoQuery", kustoQuery).load()
-
-# Example that uses the result data frame.
-kustoDf.show()
+```kusto
+let model_endpoint = 'https://deployment-name.openai.azure.com/openai/deployments/kusto-text-embedding-ada-002/embeddings?api-version=2024-10-21;managed_identity=system';
+let searchedEmbedding = toscalar(evaluate ai_embeddings("most difficult gymnastics moves in the olympics", model_endpoint));
+//
+Wiki
+| extend similarity = series_cosine_similarity(searchedEmbedding, content_vector)
+| top 10 by similarity desc
 ```
 
 :::image type="content" source="media/vector-database/similarity-results.png" alt-text="Screenshot of running cell of similarity results." lightbox="media/vector-database/similarity-results.png":::
