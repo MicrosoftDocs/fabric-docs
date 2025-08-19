@@ -38,9 +38,7 @@ The following table lists common error messages you may encounter in Fabric Note
 
 The following section outlines common Notebook errors and their suggested resolutions.
 
-### Troubleshooting details
-
-#### Timeouts
+### Timeouts
 
 **Why it happens**: Notebook sessions auto-shutdown after a period of inactivity. By default, this timeout is set to 20 minutes.
 
@@ -68,12 +66,12 @@ To change timeout at the **Workspace** level:
 
    :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/workspace-timeout.png" alt-text="Screenshot showing where to adjust the workspace timeout for a Fabric Notebook.":::
 
-#### General connectivity
+### General connectivity
 
 **Why it happens**: Network instability or temporary backend delay
 **What to do**:	Retry after a few moments.
 
-#### Session connectivity
+### Session connectivity
 
 **Why it happens**: A session is not connected.
 **What to do**: Start a session.
@@ -86,7 +84,7 @@ You can start a session using three methods:
 
    :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/start-session.png" alt-text="Screenshot showing the methods to start a new session in a Fabric Notebook.":::
 
-#### Access
+### Access
 
 **Why it happens**: Incorrect sign-in credentials; expired login session; missing permissions for Notebook, Lakehouse, or Workspace; tenant restrictions
 
@@ -99,7 +97,7 @@ You can start a session using three methods:
   - Check for token expiration issues.
   - Ensure you’re added to the correct Fabric tenant, especially if you recently joined the organization or switched accounts.
 
-##### How to manage access in a Fabric Workspace
+#### How to manage access in a Fabric Workspace
 
 In order to manage user access within a Fabric Workspace, take the following steps:
 
@@ -111,7 +109,7 @@ In order to manage user access within a Fabric Workspace, take the following ste
 
 1. A list of users and their assigned roles - Admin, Member, Contributor, or Viewer, is displayed, and you can update or add new users as required.
 
-#### Paused capacity
+### Paused capacity
 
 **Why it happens**: An administrator has paused Fabric capacity.
 **What to do**:
@@ -122,7 +120,7 @@ In order to manage user access within a Fabric Workspace, take the following ste
   - Select the paused capacity.
   - Select **Resume**.
 
-#### Missing items
+### Missing items
 
 **Why it happens**: An item was deleted, moved, or you don’t have access.
 **What to do**:
@@ -130,7 +128,7 @@ In order to manage user access within a Fabric Workspace, take the following ste
 - Contact the item owner to confirm whether it still exists and request access if needed.
 - If the item was deleted, the owner may be able to restore it from version history or a backup, depending on workspace settings.
 
-#### Save failures
+### Save failures
 
 **Why it happens**: Network connectivity drops before changes are saved, or the session timed out.
 **What to do**:
@@ -149,7 +147,7 @@ In order to manage user access within a Fabric Workspace, take the following ste
   
     :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/new-version.png" alt-text="Screenshot showing the + Version button in the Fabric Notebook history window.":::
 
-#### Collaboration conflicts
+### Collaboration conflicts
 
 **Why it happens**: The same notebook was modified by another user outside of a collaboration session - such as through VS Code, the Update Definition API, manual save mode, a deployment pipeline, or Git sync.
 
@@ -159,7 +157,7 @@ In order to manage user access within a Fabric Workspace, take the following ste
 1. Select the **View changes** button on the error message bar and choose a version to work as the live notebook.
 1. Select the **History** button at the top right of the window and use the **Version history** panel to find the _external_ record. Then you can either restore or save a copy of that version.
 
-#### Spark code issue
+### Spark code issue
 
 You see an error indicating: **Excessive query complexity** - Spark's Catalyst optimizer has produced a very large logical/physical plan.
 
