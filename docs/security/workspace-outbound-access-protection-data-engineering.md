@@ -5,15 +5,15 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview #Don't change
-ms.date: 08/13/2025
+ms.date: 08/18/2025
 
-#customer intent: As a <role>, I want <what> so that <why>.
+#customer intent: As a data engineer, I want to control and secure outbound network access from my Fabric workspace so that I can prevent unauthorized data exfiltration and comply with organizational security policies.
 
 ---
 
-# Workspace outbound access protection for data engineering workloads
+# Workspace outbound access protection for data engineering workloads (preview)
 
-Outbound Access Protection (OAP) provides fine-grained control over external communication from Microsoft Fabric workspaces. Once enabled, any item within a workspace (such as notebooks, Spark job definitions, or lakehouses) is restricted from making outbound connections to public endpoints unless explicitly permitted via approved managed private endpoints (MPEs). This feature is essential for customers operating in secure or regulated environments, since it helps prevent data exfiltration and enforces organizational network boundaries. 
+Workspace outbound access protection provides fine-grained control over external communication from Microsoft Fabric workspaces. Once enabled, any item within a workspace (such as notebooks, Spark job definitions, or lakehouses) is restricted from making outbound connections to public endpoints unless explicitly permitted via approved managed private endpoints. This feature is essential for customers operating in secure or regulated environments, since it helps prevent data exfiltration and enforces organizational network boundaries. 
 
 ## Configuring outbound access protection for Data Engineering workloads
 
@@ -28,7 +28,7 @@ To configure outbound access protection:
 
 ## Running Spark Jobs with Outbound Access Protection Enabled 
 
-Once OAP is enabled: 
+Once workspace OAP is enabled: 
 
 - All public internet access from Spark clusters is **completely blocked**. 
 - This includes: 
@@ -38,21 +38,21 @@ Once OAP is enabled:
 
 This restriction is **enforced via Managed Virtual Networks (Managed VNETs)** provisioned by Microsoft Fabric. These secure networking environments are isolated unless explicitly connected to external resources via approved endpoints. 
 
-## Connecting Securely Using Managed Private Endpoints 
+## Connecting securely using managed private endpoints 
 
 When outbound access is restricted: 
 
-- Only **approved Managed Private Endpoints** (MPEs) can facilitate connections from Spark clusters to: 
-  - External services (e.g., Azure SQL, Blob Storage) 
+- Only **approved managed private endpoints** can facilitate connections from Spark clusters to: 
+  - External services (for example, Azure SQL, Blob Storage) 
   - Other Fabric workspaces within the same tenant 
 
 Once an MPE is created and approved, it becomes the **only allowed channel** for outbound data access. 
 
-## Installing Libraries Securely in OAP-Protected Workspaces 
+## Installing libraries securely in outbound access protected Workspaces 
 
 ### Challenge 
 
-Since Fabric blocks public internet traffic, Spark clusters cannot directly install packages from PyPI using `pip install`. 
+Since Fabric blocks public internet traffic, Spark clusters can't directly install packages from PyPI using `pip install`. 
 
 ### Solution Options 
 
@@ -60,7 +60,7 @@ Since Fabric blocks public internet traffic, Spark clusters cannot directly inst
 
 1. Identify missing packages not included in the Fabric Spark Runtime. 
 
-1. Run the following script on your compute resource to set up a local python environment that's the same as the Microsoft Fabric Spark runtime 1.3. This script requires a YAML file containing a list of all the libraries included in the pre-baked environment. 
+1. Run the following script on your compute resource to set up a local python environment that's the same as the Microsoft Fabric Spark runtime 1.3. This script requires a YAML file containing a list of all the libraries included in the prebaked environment. 
 
 1. Ensure that Microsoft hosted private libraries are removed from this YAML.  
 
@@ -75,7 +75,7 @@ Since Fabric blocks public internet traffic, Spark clusters cannot directly inst
    source activate <custom-env-name> 
    ```
 
-1. The script can be used to pass your requirements.txt file, which has all the packages and versions that you intend to install in the spark runtime. It will print the names of the new wheel files/dependencies for your input library requirements.  
+1. The script can be used to pass your requirements.txt file, which has all the packages and versions that you intend to install in the spark runtime. It prints the names of the new wheel files/dependencies for your input library requirements.  
 
    ```yaml
    pip install -r <input-user-req.txt> > pip_output.txt 
@@ -84,41 +84,37 @@ Since Fabric blocks public internet traffic, Spark clusters cannot directly inst
 
 1. Download `.whl` files manually. 
 
-1. Use Environment Artifact to upload all required wheels from above step : Upload wheels 
+1. Use Environment Artifact to upload all required wheels.
 
-   A screenshot of a computer
- 
 1. Attach the environment to notebooks or jobs. 
-
  
 #### Option 2: Host a Private PyPI Mirror on Azure Storage 
 
 ##### Prerequisites 
 
 - Compute Resources:
-   - Example, Linux devbox, WSL or an Azure VM 
-   - Example: [Quickstart - Create a Linux VM in the Azure portal - Azure Virtual Machines](/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu) 
-- Azure Storage Account: To store the mirrored packages. 
-- [Create a storage account - Azure Storage](/azure/storage/common/storage-account-create?tabs=azure-portal) 
+   - Example, Linux devbox, WSL (Windows Subsystem for Linux), or an Azure VM.
+   - Example: [Quickstart - Create a Linux VM in the Azure portal - Azure Virtual Machines](/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu).
+- Azure Storage Account: To store the mirrored packages.
+- [Create a storage account - Azure Storage](/azure/storage/common/storage-account-create?tabs=azure-portal).
 - Utilities needed:  
-   - Bandersnatch: A PyPI mirroring tool that handles synchronization. Please review [Bandersnatch documentation — bandersnatch 6.6.0.dev0 documentation](https://bandersnatch.readthedocs.io/en/latest/) 
-   - Az CLI or Blobefuse2 or Azcopy: A utility for efficient file synchronization 
-
+   - Bandersnatch: PyPI mirroring tool for repository synchronization. See the [Bandersnatch documentation](https://bandersnatch.readthedocs.io/en/latest/).
+   - Azure CLI, Blobfuse2, or AzCopy: Utilities for uploading and synchronizing files with Azure Storage.
 
 ##### Initial Setup
 
-The size of the entire PyPI repository is quite large and constantly growing. There will be a one-time initial effort of setting up the entire PyPI repository. Please review: [Statistics · PyPI](https://pypi.org/stats/). 
+The size of the entire PyPI repository is large and continually increasing. The initial setup involves a substantial one-time effort. For up-to-date repository statistics, see [Statistics · PyPI](https://pypi.org/stats/).
 
 ##### Maintenance
 
-Periodic monitoring and updates, to keep the mirror in sync. 
+Periodic monitoring and updates are required to keep the mirror in sync.
 
-There will be various factors of your compute resource like 
+Several factors affect synchronization speed:
 
-- Network speed 
-- Server resources like CPU, memory, disk I/O of the compute resource running Bandersnatch will impact the synchronization speed  
-- Disk speed - The speed of the storage system (e.g., SSD vs. HDD) can affect how quickly Bandersnatch can write data to disk. 
-- Initial setup vs. Maintenance sync - The initial sync (when you first set up Bandersnatch) will generally take longer as it downloads the entire repository. On a typical setup with decent network and hardware, it might range from 8 to 48 hours. Subsequent syncs, which only update new or changed packages, will be faster. 
+- Network speed
+- Server resources such as CPU, memory, and disk I/O on the compute resource running Bandersnatch
+- Disk speed (SSD vs. HDD) impacts how quickly Bandersnatch writes data
+- Initial setup vs. maintenance sync: The initial sync downloads the entire repository and may take 8–48 hours depending on hardware and network. Subsequent syncs update only new or changed packages and are faster. 
 
 ##### Setup 
 
@@ -133,14 +129,14 @@ There will be various factors of your compute resource like
    export PATH="/usr/lib/miniforge3/bin:$PATH" 
    ``` 
  
-1. Install Bandersnatch to mirror PyPI. Bandersnatch is a PyPI mirroring tool which downloads all of PyPI and associated index files on **local filesystem**.
+1. Install Bandersnatch to mirror PyPI. Bandersnatch is a PyPI mirroring tool that downloads all of PyPI and associated index files on **local filesystem**.
 
    ```
    # Install Bandersnatch 
    pip install bandersnatch
    ```
 
-1. Configure Bandersnatch: Create a bandersnatch.conf file with the configurations specified in the example on GitHub at [bandersnatch/src/bandersnatch/example.conf](https://github.com/pypa/bandersnatch/blob/main/src/bandersnatch/example.conf). Alternatively, find the exact conf file we created at MS. Refer attachment bandersnatch.conf.-???
+1. Configure Bandersnatch: Create a bandersnatch.conf file with the configurations specified in the example on GitHub at [bandersnatch/src/bandersnatch/example.conf](https://github.com/pypa/bandersnatch/blob/main/src/bandersnatch/example.conf). Alternatively, find the exact conf file we created at MS. <!--Refer attachment bandersnatch.conf.-->
 
 1. Execute a mirror command to perform a one-time synchronization with the PyPI primary server.
 
@@ -151,11 +147,11 @@ There will be various factors of your compute resource like
    A screenshot of a computer [Description automatically generated, Picture]
 
    > [!NOTE]
-   > The initial sync will take time to run. Please refer to: [Statistics · PyPI](https://pypi.org/stats/). This tool also supports partial mirroring through allowlist and blocklist plugins, enabling more efficient management of dependencies. By filtering unnecessary packages, it helps reduce the size of the full mirror, minimizing both cost and maintenance effort. For example, if the mirror is intended solely for Fabric, you can exclude Windows binaries to optimize storage. We recommend evaluating these filtering options based on your specific use case. 
+   > The initial sync takes time to run. Refer to: [Statistics · PyPI](https://pypi.org/stats/). This tool also supports partial mirroring through allowlist and blocklist plugins, enabling more efficient management of dependencies. By filtering unnecessary packages, it helps reduce the size of the full mirror, minimizing both cost and maintenance effort. For example, if the mirror is intended solely for Fabric, you can exclude Windows binaries to optimize storage. We recommend evaluating these filtering options based on your specific use case. 
 See [Mirror filtering — bandersnatch 6.6.0.dev0 documentation] (https://bandersnatch.readthedocs.io/en/latest/filtering_configuration.html).
 
 
-1. To verify the mirror setup, you can use a simple HTTP server to serve your local PyPI mirror. This command starts a simple HTTP server on port 8000 that serves the contents of the mirror directory:
+1. To verify the mirror setup, you can use an HTTP server to serve your local PyPI mirror. This command starts a simple HTTP server on port 8000 that serves the contents of the mirror directory:
 
    ``` 
    cd <directory-to-mirror>
@@ -167,19 +163,15 @@ See [Mirror filtering — bandersnatch 6.6.0.dev0 documentation] (https://bander
    pip install <package> -index-url http://localhost:8000/simple 
    ```
 
-1. Upload Mirror to the storage account and **Enable Static Website on your Azure storage account**. This will allow you to host static content like PyPI index page in this case. Enabling this will automatically generate a container named $web.
-
-   A screen shot of a computer. Description automatically generated, Picture.
+1. Upload Mirror to the storage account and **Enable Static Website on your Azure storage account**. This setting allows you to host static content like PyPI the index page. Enabling this setting automatically generates a container named $web.
 
    You can use either az CLI or azcopy of blobfuse2 to upload the local mirror from your devbox to your Azure storage account.
    - Upload packages folder to your chosen container on the storage account container.
    - Upload simple, pypi, local-stats and json folders to $web container of your storage account.
  
-1. To use this mirror in your Fabric environment item, create two Managed Private Endpoints in Fabric: 
+1. To use this mirror in your Fabric environment item, create two managed private endpoints in Fabric: 
    - One for blob container (packages) 
    - One for static website (index) 
-
-   Screens screenshot of a login screen. AI-generated content may be incorrect., Picture.
 
 1. Use Environment Artifact to specify a yml file to install [Library management in Fabric environments](/fabric/data-engineering/environment-manage-library). 
 
@@ -198,38 +190,43 @@ See [Mirror filtering — bandersnatch 6.6.0.dev0 documentation] (https://bander
 ```
 
 ### Understanding the Behavior of File Paths
+
 When working with data in your Lakehouse using a Fabric notebook, you can reference files in two primary ways:
 
-Relative Path: This is the easiest and most common method. When you drag and drop a file from the Lakehouse explorer into a notebook cell, it uses a relative path that points to the file within your current Lakehouse. This format works without any additional configuration.
+* Relative Path: This method is the easiest and most common method. When you drag and drop a file from the Lakehouse explorer into a notebook cell, it uses a relative path that points to the file within your current Lakehouse. This format works without any more configuration.
 
-Example: Files/people.csv
+   Example: Files/people.csv
 
-Spark code: df = spark.read.format("csv").option("header", "true").load("Files/people.csv")
+   Spark code: `df = spark.read.format("csv").option("header", "true").load("Files/people.csv")`
 
-Fully Qualified Path (Absolute Path): This path provides the complete location of the file, including the workspace and Lakehouse names. The Spark session's default configuration isn't set up to resolve these paths, which can cause a socket timeout exception when trying to access data.
+* Fully Qualified Path (Absolute Path): This path provides the complete location of the file, including the workspace and Lakehouse names. The Spark session's default configuration isn't set up to resolve these paths, which can cause a socket timeout exception when trying to access data.
 
-Example (will throw a socket timeout error): abfss://your_workspace@onelake.dfs.fabric.microsoft.com/your_lakehouse**.Lakehouse/Files/people.csv
+   Example (will throw a socket timeout error): `abfss://your_workspace@onelake.dfs.fabric.microsoft.com/your_lakehouse**.Lakehouse/Files/people.csv`
 
-The Recommended Solution
+#### Recommended solution
+
 To read files using a fully qualified path, especially when connecting to a Lakehouse in another workspace, you must use a different URI format. This format uses the Workspace ID and Lakehouse ID instead of their display names. This ensures the Spark session can correctly resolve the path and access the data.
 
-Correct URI format: abfss://your_workspace_id@onelake.dfs.fabric.microsoft.com/your_lakehouse_id/Files/people.csv
+* Correct URI format: `abfss://your_workspace_id@onelake.dfs.fabric.microsoft.com/your_lakehouse_id/Files/people.csv`
 
-How to Find Your Workspace and Lakehouse IDs
+### How to Find Your Workspace and Lakehouse IDs
+
 You can find these unique identifiers in the URL of your Fabric workspace and Lakehouse.
 
-Workspace ID: This is the GUID that appears after /groups/ in the URL.
+* Workspace ID: The GUID that appears after /groups/ in the URL.
 
-Lakehouse ID: This is the GUID that appears after /lakehouses/ in the URL.
+* Lakehouse ID: The GUID that appears after /lakehouses/ in the URL.
 
-Example: If your URL is https://app.fabric.microsoft.com/groups/**4c8efb42-7d2a-4a87-b1b1-e7e98bea053d**/lakehouses/**5a0ffa3d-80b9-49ce-acd2-2c9302cce6b8**/...
+Example: If your URL is `https://app.fabric.microsoft.com/groups/**4c8efb42-7d2a-4a87-b1b1-e7e98bea053d**/lakehouses/**5a0ffa3d-80b9-49ce-acd2-2c9302cce6b8**/...`
 
 Correct Spark code:
 
 Python
 
-df = spark.read.format("csv").option("header", "true").load("abfss://4c8efb42-7d2a-4a87-b1b1-e7e98bea053d@onelake.dfs.fabric.microsoft.com/5a0ffa3d-80b9-49ce-acd2-2c9302cce6b8/Files/people.csv")
-Note: This same approach should be used when you need to access data in a different workspace.
+`df = spark.read.format("csv").option("header", "true").load("abfss://4c8efb42-7d2a-4a87-b1b1-e7e98bea053d@onelake.dfs.fabric.microsoft.com/5a0ffa3d-80b9-49ce-acd2-2c9302cce6b8/Files/people.csv")`
+
+> [!NOTE]
+> Use this same approach when you need to access data in a different workspace.
 
 ## Related content
 

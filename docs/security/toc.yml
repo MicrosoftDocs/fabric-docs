@@ -89,14 +89,14 @@ items:
         items: 
           - name: Overview of workspace outbound access protection
             href: workspace-outbound-access-protection-overview.md
+          - name: Manage admin access to outbound protection settings
+            href: workspace-outbound-access-protection-tenant-setting.md
           - name: Set up workspace outbound access protection
             href: workspace-outbound-access-protection-set-up.md
           - name: Workspace outbound access protection scenarios
             href: workspace-outbound-access-protection-scenarios.md
           - name: Workspace outbound access protection for data engineering
             href: workspace-outbound-access-protection-data-engineering.md
-          - name: Manage admin access to outbound protection settings
-            href: workspace-outbound-access-protection-tenant-setting.md
       - name: Trusted workspace access
         href: security-trusted-workspace-access.md
 - name: Data security
