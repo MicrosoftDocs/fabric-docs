@@ -51,25 +51,24 @@ For a step-by-step guide, see [Explore data in your mirrored database directly i
 
 ## Model your data and add business semantics
 
-In Microsoft Fabric, [Power BI datasets are a semantic model](../../data-warehouse/datasets.md) with metrics; a logical description of an analytical domain, with business friendly terminology and representation, to enable deeper analysis. This semantic model is typically a star schema with facts that represent a domain. Dimensions allow you to analyze the domain to drill down, filter, and calculate different analyses. With the semantic model, the dataset is created automatically for you, with inherited business logic from the parent mirrored database. Your downstream analytics experience for business intelligence and analysis starts with an item in Microsoft Fabric that is managed, optimized, and kept in sync with no user intervention.
+In Microsoft Fabric, [Power BI semantic models](../../data-warehouse/semantic-models.md) (formerly known as Power BI data sets) are a logical description of an analytical domain, with business friendly terminology and representation, to enable deeper analysis. 
 
-The default Power BI dataset inherits all relationships between entities defined in the model view and infers them as Power BI dataset relationships, when objects are enabled for BI (Power BI Reports). Inheriting the mirrored database's business logic allows a warehouse developer or BI analyst to decrease the time to value toward building a useful semantic model and metrics layer for analytical business intelligence (BI) reports in Power BI, Excel, or external tools like Tableau, that read the XMLA format. For more information, see [Data modeling in the default Power BI dataset](../../data-warehouse/model-default-power-bi-dataset.md).
+A semantic model is typically a star schema with facts that represent a domain. Dimensions allow you to analyze the domain to drill down, filter, and calculate different analyses.
 
-A well-defined data model is instrumental in driving your analytics and reporting workloads. In a SQL analytics endpoint in Microsoft Fabric, you can easily [build and change your data model](../../data-warehouse/data-modeling-defining-relationships.md) with a few simple steps in our visual editor. Modeling the mirrored database item is possible by setting primary and foreign key constraints and setting identity columns on the model view within the SQL analytics endpoint page in the Fabric portal. After you navigate the model view, you can do this in a visual entity relationship diagram. The diagram allows you to drag and drop tables to infer how the objects relate to one another. Lines visually connecting the entities infer the type of physical relationships that exist.
+A well-defined data model is instrumental in driving your analytics and reporting workloads. Modeling the mirrored database item is possible by first [creating a semantic model](../../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model), and setting relationships in the model view. After you navigate the model view, you can do this in a visual entity relationship diagram. The diagram allows you to drag and drop tables to infer how the objects relate to one another. Lines visually connecting the entities infer the type of logical relationships that exist.
 
 ## Create a report
 
-Create a report directly from the semantic model (default) in three different ways:
+Create a report directly from the semantic model in three different ways:
 
 - SQL analytics endpoint editor in the ribbon
 - **Data** pane in the navigation bar
-- Semantic model (default) in the workspace
+- Semantic model in the workspace
 
 For more information, see [Create reports in the Power BI service in Microsoft Fabric and Power BI Desktop](../../data-warehouse/reports-power-bi-service.md).
 
 ## Related content
 
 - [What is Mirroring in Fabric?](overview.md)
-- [Model data in the default Power BI semantic model in Microsoft Fabric](../../data-warehouse/model-default-power-bi-dataset.md)
 - [What is the SQL analytics endpoint for a lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
 - [Direct Lake overview](../../fundamentals/direct-lake-overview.md)

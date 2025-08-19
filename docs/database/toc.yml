@@ -1,8 +1,7 @@
 items:
 - name: Fabric Databases documentation
   href: index.yml
-- name: SQL database in Fabric 
-  expanded: true
+- name: SQL database in Fabric
   items:
   - name: Overview
     href: sql/overview.md
@@ -14,6 +13,10 @@ items:
     href: sql/decision-guide.md
   - name: "Decision guide: Choose a data store"
     href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
+  - name: "Decision guide: Choose a data integration strategy"
+    href: ../data-factory/decision-guide-data-integration.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
+  - name: "Decision guide: Choose a data movement strategy"
+    href: ../data-factory/decision-guide-data-movement.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
   - name: Copilot
     items:
     - name: What is Copilot in Fabric SQL database? 
@@ -154,12 +157,16 @@ items:
     items: 
     - name: T-SQL Reference for Fabric
       href: /sql/t-sql/language-reference?view=fabric&preserve-view=true
+  - name: Resources
+    items: 
+    - name: SQL database in Fabric Community
+      href: https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion
+    - name: What's new in SQL database in Fabric?
+      href: ../fundamentals/whats-new.md#sql-database-in-microsoft-fabric
+- name: Cosmos DB in Fabric
+  href: cosmos-db/toc.yml
 - name: Resources
-  items: 
-  - name: SQL database in Fabric Community
-    href: https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion
-  - name: What's new in SQL database in Fabric?
-    href: ../fundamentals/whats-new.md#fabric-databases
+  items:
   - name: Contribute to Fabric docs
     href: /contribute/
   - name: Help

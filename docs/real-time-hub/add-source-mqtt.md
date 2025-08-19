@@ -4,7 +4,7 @@ description: This article describes how to add an MQTT topic as an event source 
 author: spelluru
 ms.author: spelluru
 ms.topic: how-to
-ms.date: 03/14/2025
+ms.date: 07/22/2025
 ---
 
 # Add an MQTT topic as source in Real-Time hub (Preview)
@@ -26,9 +26,7 @@ On the **Data sources** page, search for **MQTT**, and select **Connect** on the
 ## View data stream details
 
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected MQTT source. To close the wizard, select **Close** at the bottom of the page. 
-1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you.
-
-    For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+2. You should see the stream in the **Recent streaming data** section of the **Real-Time hub** home page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
  
 ## Related content
 To learn about consuming data streams, see the following articles:

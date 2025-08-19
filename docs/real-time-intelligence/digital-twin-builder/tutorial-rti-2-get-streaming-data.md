@@ -97,7 +97,7 @@ Now that your bus streaming data is in a KQL database, you can use functions and
 * Break apart the JSON field `Properties` into separate columns for each of its contained data items, `BusStatus` and `TimeToNextStation`. Digital twin builder doesn't have JSON parsing capabilities, so you need to separate these values before the data goes to digital twin builder.
 * Add column `StopCode`, which is a unique key representing each bus stop. The purpose of this step is just to complete the sample data set to support this tutorial scenario. Joinable entity instances from separate data sources must contain a common column that digital twin builder can use to link them together, so this step adds a simulated set of int values that matches the `Stop_Code` field in the static bus stops data set. In the real world, related data sets already contain some kind of commonality.
 * Create a new table called *bus_data_processed* that contains the transformed bus data.
-* Enable OneLake availability for the new table, so that you can use a shortcut to access the data in your *Tutorial* lakehouse. 
+* Enable OneLake availability for the new table, so that you can use a shortcut to access the data in your *TutorialLH* lakehouse. 
 
 To run the transformation queries, follow these steps.
 1. Select the **Tutorial** KQL database inside your eventhouse. From the menu ribbon, select **Query with code**, which opens the KQL query editor.
@@ -156,9 +156,9 @@ To run the transformation queries, follow these steps.
 
 ## Create lakehouse shortcut
 
-Finally, create a shortcut that exposes the processed bus data in the *Tutorial* lakehouse, which holds sample data for digital twin builder (preview). This step is necessary because digital twin builder requires its data source to be a lakehouse.
+Finally, create a shortcut that exposes the processed bus data in the *TutorialLH* lakehouse, which holds sample data for digital twin builder (preview). This step is necessary because digital twin builder requires its data source to be a lakehouse.
 
-1. Go to your *Tutorial* lakehouse (you created it earlier in part one, [Upload contextual data](tutorial-rti-1-upload-contextual-data.md#create-a-lakehouse)). From the menu ribbon, select **Get data** > **New shortcut**.
+1. Go to your *TutorialLH* lakehouse (you created it earlier in part one, [Upload contextual data](tutorial-rti-1-upload-contextual-data.md#create-a-lakehouse)). From the menu ribbon, select **Get data** > **New shortcut**.
 
     :::image type="content" source="media/tutorial-rti/prep-new-shortcut.png" alt-text="Screenshot of the New shortcut button.":::
 

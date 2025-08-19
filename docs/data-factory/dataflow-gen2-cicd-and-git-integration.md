@@ -107,12 +107,25 @@ During the save operation, we also check if the dataflow is in a valid state. If
 
 This evaluation means that we run all the queries in the dataflow in a manner that only requests the schema of the query result, without returning any rows. If a query evaluation fails or a query’s schema can't be determined within 10 minutes, we fail validation and use the previously saved version of the dataflow for refreshes.
 
+## Just in time publishing
+
+Dataflow Gen2 with CI/CD introduces an automated "just in time" publishing model to streamline your workflow. When you save a dataflow in the editor, your changes are immediately saved and published, making them available for the next refresh or execution. Using **Save and run** both publishes and refreshes the dataflow in a single step.
+
+When you sync changes from Git or use deployment pipelines, the updated dataflow is saved in your workspace but not immediately published. Instead, the next time you trigger a refresh (either manually or on a schedule), the system automatically attempts to publish the latest saved version before running the refresh. If publishing fails (for example, due to validation errors), the system reports the error in refresh history.
+
+This approach ensures that the most recent changes from Git or deployment pipelines are always considered at refresh time, without requiring a manual publish step. However, changes made in the editor aren't saved automatically if you close your browser or navigate away&mdash;you must explicitly save your dataflow to include your changes in the next publish or refresh.
+
+In some scenarios, the backend decides to publish the dataflow automatically during a refresh operation. This happens when the dataflow backend is updated and requires the dataflow to be re-published to ensure compatibility with the latest backend changes. This automatic publishing occurs without any user intervention and is sporadic, depending on backend updates.
+
+Additionally, APIs are available to refresh a dataflow without publishing or to manually trigger the publish operation for saved changes, giving you flexibility in managing your deployment workflows.
+
 ## Limitations and known issues
 
 While Dataflow Gen2 with CI/CD and Git support offers a powerful set of features for enterprise ready collaboration, this required us to rebuild the backend to the fabric architecture. This means that some features aren't yet available or have limitations. We're actively working to improve the experience and will update this article as new features are added.
 
 - When you delete the last Dataflow Gen2 with CI/CD and Git support, the staging artifacts become visible in the workspace and are safe to be deleted by the user.
-- Workspace view doesn't show if a refresh is ongoing for the dataflow.
+- Workspace view doesn't show the following: Ongoing refresh indication, last refresh, next refresh, and refresh failure indication.
+- When your dataflow fails to refresh we do not support automatically sending you a failure notification. As a workaround you can leverarage the orchrestration capabilities of Data Pipelines.
 - When branching out to another workspace, a Dataflow Gen2 refresh might fail with the message that the staging lakehouse couldn't be found. When this happens, create a new Dataflow Gen2 with CI/CD and Git support in the workspace to trigger the creation of the staging lakehouse. After this, all other dataflows in the workspace should start to function again.
 - When you sync changes from GIT into the workspace or use deployment pipelines, you need to open the new or updated dataflow and save changes manually with the editor. This triggers a publish action in the background to allow the changes to be used during refresh of your dataflow. You can also use the [on-demand Dataflow publish job API call](/fabric/data-factory/dataflow-gen2-public-apis#run-on-demand-dataflow-publish-job) to automate the publish operation.
 - Power Automate connector for dataflows isn't working with the new Dataflow Gen2 with CI/CD and Git support.

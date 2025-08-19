@@ -75,12 +75,14 @@ items:
           href: develop-iterative-process-data-agent.md
     - name: How to consume a Fabric data agent
       items:
-        - name: Consume a data agent in Azure AI foundry (preview)
-          href: how-to-consume-data-agent.md
+        - name: Consume a data agent from Azure AI foundry (preview)
+          href: data-agent-foundry.md
         - name: Consume a data agent from Copilot in Power BI (preview)
           href: data-agent-copilot-powerbi.md
-    - name: Fabric data agent scenario
-      href: data-agent-scenario.md        
+        - name: Consume a data agent from Microsoft Copilot Studio (preview)
+          href: data-agent-microsoft-copilot-studio.md          
+    - name: Fabric data agent end-to-end tutorial
+      href: data-agent-end-to-end-tutorial.md        
     - name: Fabric data agent sharing
       href: data-agent-sharing.md
 - name: Notebooks
@@ -217,6 +219,8 @@ items:
   items:
     - name: Score models with PREDICT
       href: model-scoring-predict.md
+    - name: Serve real-time predictions with ML model endpoints
+      href: model-endpoints.md
 - name: Secure and manage ML items
   items:
     - name: Disaster recovery for ML items

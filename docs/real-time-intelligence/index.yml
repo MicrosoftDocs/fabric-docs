@@ -121,7 +121,7 @@ landingContent:
             url: create-empty-table.md
           - text: Manage a KQL database
             url: data-management.md
-          - text: Create a shortcut to access data in OneLake
+          - text: Create a shortcut to OneLake
             url: onelake-shortcuts.md
 
   # Card
@@ -135,8 +135,6 @@ landingContent:
           links:
           - text: Get data from Power BI
             url: data-activator/activator-get-data-power-bi.md
-          - text: Get data from Eventstreams
-            url: data-activator/activator-get-data-eventstreams.md
         - linkListType: how-to-guide
           links:
           - text: Activate Fabric items
@@ -163,7 +161,7 @@ landingContent:
             url: digital-twin-builder/concept-modeling.md
           - text: Mapping data to entities
             url: digital-twin-builder/concept-mapping.md
-          - text: Digital twin builder (preview) flow
+          - text: Digital twin builder flow (preview)
             url: digital-twin-builder/concept-flows.md
 
   # Card
@@ -213,3 +211,16 @@ landingContent:
               url: monitor-logs-ingestion-results.md
             - text: Query logs
               url: monitor-logs-query.md
+  
+  # Card
+  - title: Build AI agents
+    linkLists:
+        - linkListType: overview
+          links:
+            - text: Fabric RTI MCP Server (preview)
+              url: mcp-overview.md 
+        - linkListType: how-to-guide
+          links:
+          - text: Use MCP with Eventhouse
+            url:  mcp-eventhouse.md
+              

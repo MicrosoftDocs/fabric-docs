@@ -2,8 +2,8 @@
 title: Data Factory Pricing
 description: This article provides an overview of the pricing model for Data Factory in Microsoft Fabric.
 ms.reviewer: whhender
-ms.author: adija
-author: adityajain2408
+ms.author: whhender
+author: whhender
 ms.topic: conceptual
 ms.custom: configuration
 ms.date: 12/18/2024
@@ -23,9 +23,9 @@ You can manage your Fabric Data Factory run costs easily with simplified billing
 
 ## Data Factory pricing meters
 
-Whether you’re a citizen or professional developer, Data Factory enables you to develop enterprise-scale data integration solutions with next-generation dataflows and data pipelines. These experiences operate on multiple services with different capacity meters. Data pipelines use **Data Orchestration** and **Data Movement** meters, while Dataflow Gen2 uses **Standard Compute** and **High Scale Compute**. Additionally, like other Fabric experiences, the common meter for storage consumption is OneLake Storage.
+Whether you’re a citizen or professional developer, Data Factory enables you to develop enterprise-scale data integration solutions with next-generation dataflows and data pipelines. These experiences operate on multiple services with different capacity meters. Data pipelines use **Data Orchestration** and **Data Movement** meters, while Dataflow Gen2 uses **Standard Compute** and **High Scale Compute**. Copy Job, on the other hand, uses **Data Movement** and **Data Movement – Incremental copy** meters for billing. Additionally, like other Fabric experiences, the common meter for storage consumption is OneLake Storage.
 
-:::image type="content" source="media/pricing-overview/pricing-meters.svg" alt-text="Diagram showing the pricing meters for Data Factory in Microsoft Fabric.":::
+:::image type="content" source="media/pricing-overview/pricing-meters.png" alt-text="Diagram showing the pricing meters for Data Factory in Microsoft Fabric.":::
 
 ## Pricing examples
 
@@ -42,7 +42,11 @@ Here are some pricing examples for Dataflow Gen2:
 - [Load on-premises 2-GB CSV file to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md)
 - [Load 2-GB Parquet to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md)
 
+Here are some pricing examples for Copy job:
+- [Load 1-TB of CSV to a Lakehouse table](pricing-scenario-copy-job.md)
+  
 ## Related content
 
 - [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
+- [Copy job pricing for Data Factory in Microsoft Fabric](pricing-copy-job.md)

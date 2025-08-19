@@ -86,6 +86,8 @@ items:
     href: tsql-surface-area.md
   - name: Transactions
     href: transactions.md 
+  - name: Warehouse collation
+    href: collation.md
   - name: Warehouse performance
     href: guidelines-warehouse-performance.md
   - name: Warehouse snapshots
@@ -104,9 +106,6 @@ items:
       href: datamart-upgrade-to-warehouse.md
     - name: Generate unique identifiers
       href: generate-unique-identifiers.md      
-    - name: Use case-insensitive collation
-      href: collation.md
-      displayName: case insensitive collation
 - name: Dimensional modeling
   items:
   - name: Overview
@@ -135,10 +134,6 @@ items:
   items:
   - name: Semantic models
     href: semantic-models.md
-  - name: Model data in the default Power BI semantic model
-    href: default-power-bi-semantic-model.md          
-  - name: Define relationships in data models
-    href: data-modeling-defining-relationships.md
   - name: Create reports in the Power BI service
     href: reports-power-bi-service.md    
 - name: Collaborate, share, and manage security

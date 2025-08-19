@@ -4,7 +4,7 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
-ms.date: 07/03/2025
+ms.date: 07/30/2025
 ms.topic: troubleshooting
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -42,8 +42,8 @@ Review limitations documentation for each data source:
 
 | Scenario                      | Description                                                  |
 | ----------------------------- | ------------------------------------------------------------ |
-| Fabric capacity paused        | Mirroring is stopped and you cannot list or access the mirrored database item. Resume or reassign the capacity to your workspace. |
-| Fabric capacity resumed       | **Known limitation:** When capacity is resumed from a paused state, the mirrored database status appears as Running, but mirroring doesn't start automatically. As a result, changes made in the source are not replicated to OneLake.<br>To resume mirroring, go to the mirrored database in the Fabric portal, select **Configure replication**, and click **Apply change**. Mirroring will continue from where it was paused. <br>Note if the capacity is paused for a long time, mirroring may not resume from its stopping point and will reseed data from the beginning. For example, this can occur if the transaction log for the database is full. |
+| Fabric capacity paused        | Mirroring is stopped and you can't list or access the mirrored database item. Resume or reassign the capacity to your workspace. |
+| Fabric capacity resumed       | When capacity is resumed from a paused state, the mirrored database status appears as **Paused**. As a result, changes made in the source aren't replicated to OneLake.<br>To resume mirroring, go to the mirrored database in the Fabric portal, select **Resume replication**. Mirroring continues from where it was paused. <br>Note if the capacity remains paused for a long time, mirroring may not resume from its stopping point and will reseed data from the beginning. This situation may arise, for example, if the database transaction log becomes full. |
 | Fabric capacity scaling       | Mirroring continues. If you scale down the capacity, be aware that the OneLake storage for the mirrored data is free up to a limit based on the capacity size, thus scaling down the capacity may incur additional storage charge. Learn more from [Cost of mirroring](overview.md#cost-of-mirroring). |
 | Fabric capacity throttled     | Wait until the overload state is over or update your capacity. Mirroring will continue once the capacity is restored. Learn more from [Actions you can take to recover from overload situations](../../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs). |
 | Fabric trial capacity expired | Mirroring is stopped. To retain your mirrored database, purchase Fabric capacity. Learn more from [Fabric trial capacity expires](../../fundamentals/fabric-trial.md#the-trial-expires). |
@@ -52,7 +52,7 @@ Review limitations documentation for each data source:
 
 If you observe a delay in the appearance of mirrored data, check the following:
 
-- **Mirroring status:** In the [Fabric portal monitoring page](monitor.md#monitor-from-the-fabric-portal) of the mirrored database, check the status of mirrored database and specific tables, and the "**Last completed**" column which indicates the last time that Fabric refreshes the mirrored table from source. Empty means the table is not yet mirrored. 
+- **Mirroring status:** In the [Fabric portal monitoring page](monitor.md#monitor-from-the-fabric-portal) of the mirrored database, check the status of mirrored database and specific tables, and the "**Last completed**" column that indicates the last time that Fabric refreshes the mirrored table from source. Empty means the table is not yet mirrored. 
 
   If you enable the workspace monitoring, you can check the mirroring execution latency in addition, by querying the `ReplicatorBatchLatency` value from the [mirrored database operation logs](monitor-logs.md).
 
@@ -76,13 +76,13 @@ When you mirror data from various types of source databases, your source schema 
 
 For mirrored databases created before this feature enabled, you see the source schema is flattened in the mirrored database, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database.
 
-If you use API to create/update mirrored database, set value for property `defaultSchema` which indicates whether to replicate the schema hierarchy from the source database. Refer to the definition samples in [Microsoft Fabric mirroring public REST API](mirrored-database-rest-api.md).
+If you use API to create/update mirrored database, set value for property `defaultSchema`, which indicates whether to replicate the schema hierarchy from the source database. Refer to the definition samples in [Microsoft Fabric mirroring public REST API](mirrored-database-rest-api.md).
 
 ## Delta column mapping support
 
 Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`) from your source databases to the mirrored databases. Behind the scene, mirroring writes data into OneLake with Delta column mapping enabled.
 
-For tables that are already under replication before this feature enabled, to include columns with special character in names, you need to update the mirrored database settings by removing and re-adding those tables, or stop and restart the mirrored database.
+For tables that are already under replication before this feature enabled, to include columns with special character in names, you need to update the mirrored database settings by removing and readding those tables, or stop and restart the mirrored database.
 
 ## Take ownership of a mirrored database
 
@@ -118,7 +118,7 @@ Currently, views are not supported. Only replicating regular tables are supporte
 
 #### Some of the data in my column appears to be truncated
 
-The SQL analytics endpoint does not support **VARCHAR(max)** it only currently supports **VARCHAR(8000)**.
+The SQL analytics endpoint doesn't support **varchar(max)** it only currently supports **varchar(8000)**. A workaround is to use a [warehouse](../../data-warehouse/data-warehousing.md#fabric-data-warehouse), which supports **varchar(max)** up to 1MB. You can copy the data from the tables mirrored in OneLake into the warehouse by creating a [copy job](../../data-factory/create-copy-job.md) or using the T-SQL [COPY INTO](../../data-warehouse/ingest-data-copy.md) statement in a notebook scheduled to run periodically.
 
 #### I can't change the source database
 

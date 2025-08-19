@@ -1,12 +1,13 @@
----
+﻿---
 title: "Tutorial: Perform batch scoring and save predictions"
 description: In this fourth part of the tutorial series, learn how to import a trained and registered model and perform batch predictions on a test dataset.
-ms.reviewer: None
-ms.author: scottpolly
-author: s-polly
+ms.reviewer: amjafari
+ms.author: lagayhar
+author: lgayhardt
 ms.topic: tutorial
-ms.custom:
+ms.custom: 
 ms.date: 04/25/2025
+reviewer: s-polly
 ---
 
 # Tutorial Part 4: Perform batch scoring and save predictions to a lakehouse

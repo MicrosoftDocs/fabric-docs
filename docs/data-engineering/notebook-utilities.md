@@ -15,7 +15,6 @@ ms.date: 03/31/2025
 Notebook Utilities (NotebookUtils) is a built-in package to help you easily perform common tasks in Fabric Notebook. You can use NotebookUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. The NotebookUtils package is available in PySpark (Python) Scala, SparkR notebooks, and Fabric pipelines.
 
 > [!NOTE]
->
 > - MsSparkUtils is officially renamed to **NotebookUtils**. The existing code remains **backward compatible** and does not cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
 > - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates are exclusively supported with notebookutils namespace going forward.
 
@@ -61,9 +60,9 @@ NotebookUtils works with the file system in the same way as Spark APIs. Take *no
 | Non-default lakehouse | Not supported |  *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* |
 | Default lakehouse | Directory under 'Files' or 'Tables': *notebookutils.fs.mkdirs("Files/<new_dir>")* | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* |
 
-> [!NOTE]
-> - For the default Lakehouse, file paths are mounted in your Notebook with a default file cache timeout of 120 seconds. This means that files are cached in the Notebook's local temporary folder for 120 seconds, even if they are removed from the Lakehouse. If you want to change the timeout rule, you can unmount the default Lakehouse file paths and mount them again with different [*fileCacheTimeout*](#mount-via-shared-access-signature-token-or-account-key) value.
-> - For non-default Lakehouse configurations, you can set the appropriate [*fileCacheTimeout*](#mount-via-shared-access-signature-token-or-account-key) parameter during the mounting of the Lakehouse paths. Setting the timeout to 0 ensures that the latest file is fetched from the Lakehouse server.
+- For the default Lakehouse, file paths are mounted in your Notebook with a default file cache timeout of 120 seconds. This means that files are cached in the Notebook's local temporary folder for 120 seconds, even if they are removed from the Lakehouse. If you want to change the timeout rule, you can unmount the default Lakehouse file paths and mount them again with different [*fileCacheTimeout*](#mount-via-shared-access-signature-token-or-account-key) value.
+
+- For non-default Lakehouse configurations, you can set the appropriate [*fileCacheTimeout*](#mount-via-shared-access-signature-token-or-account-key) parameter during the mounting of the Lakehouse paths. Setting the timeout to 0 ensures that the latest file is fetched from the Lakehouse server.
 
 ### List files
 
@@ -127,14 +126,14 @@ notebookutils.fs.cp('source file or directory', 'destination file or directory',
 
 This method offers a more efficient approach to copying or moving files, particularly when dealing with large data volumes. For enhanced performance on Fabric, it is advisable to utilize `fastcp` as a substitute for the traditional `cp` method.
 
-> [!NOTE]
-> - ``` notebookutils.fs.fastcp() ``` does not support copying files in OneLake across regions. In this case, you can use ``` notebookutils.fs.cp() ``` instead.
-> - Due to the [limitations of OneLake shortcut](../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use ```notebookutils.fs.fastcp()``` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
-
-
 ```python
 notebookutils.fs.fastcp('source file or directory', 'destination file or directory', True)# Set the third parameter as True to copy all files and directories recursively
 ```
+
+**Considerations:**
+
+ - ``` notebookutils.fs.fastcp() ``` does not support copying files in OneLake across regions. In this case, you can use ``` notebookutils.fs.cp() ``` instead.
+ - Due to the [limitations of OneLake shortcut](../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use ```notebookutils.fs.fastcp()``` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
 
 ### Preview file content
 
@@ -169,9 +168,10 @@ This method appends the given string to a file, encoded in UTF-8.
 notebookutils.fs.append("file path", "content to append", True) # Set the last parameter as True to create the file if it does not exist
 ```
 
-> [!NOTE] 
-> - ```notebookutils.fs.append()``` and ```notebookutils.fs.put()``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
-> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend adding a ```sleep``` statement around 0.5 s ~ 1 s between the recurring writes. This recommendation is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
+**Considerations:**
+
+- ```notebookutils.fs.append()``` and ```notebookutils.fs.put()``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
+- When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend adding a ```sleep``` statement around 0.5 s ~ 1 s between the recurring writes. This recommendation is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
 
 ### Delete file or directory
 
@@ -244,15 +244,16 @@ You can open the snapshot link of the reference run in the cell output. The snap
 
 :::image type="content" source="media\notebook-utilities\run-snapshot.png" alt-text="Screenshot of a snapshot example." lightbox="media\notebook-utilities\run-snapshot.png":::
 
-> [!NOTE]
->
-> - The cross-workspace reference notebook is supported by **runtime version 1.2 and above**.
-> - If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), use `notebookutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
+**Considerations:**
+
+- The cross-workspace reference notebook is supported by **runtime version 1.2 and above**.
+- If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), use `notebookutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
+- Reference run allows child notebooks to run only if they use the same lakehouse as the parent, inherit the parent's lakehouse, or neither defines one. The execution is blocked if the child specifies a different lakehouse to parent notebook. To bypass this check, set `useRootDefaultLakehouse: True`.
 
 ### Reference run multiple notebooks in parallel
 
 > [!IMPORTANT]
-> This feature is in [preview](../fundamentals/preview.md).
+> This feature is currently in [preview](../fundamentals/preview.md).
 
 The method `notebookutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the reference notebook runs share the compute resources.
 
@@ -273,9 +274,7 @@ You can also try to run the notebookutils.notebook.help("runMultiple") to find t
 Here's a simple example of running a list of notebooks in parallel using this method:
 
 ```python
-
 notebookutils.notebook.runMultiple(["NotebookSimple", "NotebookSimple2"])
-
 ```
 
 The execution result from the root notebook is as follows:
@@ -325,10 +324,11 @@ We also provide a method to check if the DAG is correctly defined.
 notebookutils.notebook.validateDAG(DAG)
 ```
 
-> [!NOTE]
-> - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
-> - The upper limit for notebook activities or concurrent notebooks is **50**. Exceeding this limit may lead to stability and performance issues due to high compute resource usage. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
-> - The default time-out for entire DAG is 12 hours, and the default time-out for each cell in child notebook is 90 seconds. You can change the time-out by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter.
+**Considerations:**
+
+- The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
+- The upper limit for notebook activities or concurrent notebooks is **50**. Exceeding this limit may lead to stability and performance issues due to high compute resource usage. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
+- The default time-out for entire DAG is 12 hours, and the default time-out for each cell in child notebook is 90 seconds. You can change the time-out by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter.
 
 ### Exit a notebook
 
@@ -581,8 +581,22 @@ Run the following command to get the token:
 notebookutils.credentials.getToken('audience Key')
 ```
 
-### Get secret using user credentials
+**Considerations:**
 
+- Token scopes with 'pbi' as audience may change over time. The following scopes are currently supported.
+
+- When you call *notebookutils.credentials.getToken("pbi")*, the returned token has limited scope if the notebook is running under a service principal. The token does not have the full Fabric service scope. If the notebook is running under the user identity, the token still has the full Fabric service scope, but this may change with security improvements. To ensure that the token has the full Fabric service scope, use MSAL authentication instead of the *notebookutils.credentials.getToken* API. For more information, see [Authenticate with Microsoft Entra ID](/entra/msal/python/).
+
+- The Following are the list of scopes that the token has when calling *notebookutils.credentials.getToken* with the audience key *pbi* under the service principal identity:
+  - Lakehouse.ReadWrite.All
+  - MLExperiment.ReadWrite.All
+  - MLModel.ReadWrite.All
+  - Notebook.ReadWrite.All
+  - SparkJobDefinition.ReadWrite.All
+  - Workspace.ReadWrite.All
+  - Dataset.ReadWrite.All
+
+### Get secret
 getSecret returns an Azure Key Vault secret for a given Azure Key Vault endpoint and secret name using user credentials.
 
 ```python
@@ -839,7 +853,7 @@ With ``` notebookutils.runtime.context ``` you can get the context information o
 notebookutils.runtime.context
 ```
 
-The table below outlines the properties.
+The following table outlines the properties.
 
 | **Parameter** | **Explanation** | 
 |---|---|
@@ -852,8 +866,8 @@ The table below outlines the properties.
 | `defaultLakehouseWorkspaceName` | The workspace name of the default lakehouse, if defined |
 | `defaultLakehouseWorkspaceId` | The workspace ID of the default lakehouse, if defined |
 | `currentRunId` | In a reference run, the current run ID |
-| `parentRunId` | In a reference run with nested runs, this is the parent run ID |
-| `rootRunId` | In a reference run with nested runs, this is the root run ID |
+| `parentRunId` | In a reference run with nested runs, this ID is the parent run ID |
+| `rootRunId` | In a reference run with nested runs, this ID is the root run ID |
 | `isForPipeline` | Whether the run is for a pipeline |
 | `isReferenceRun` | Whether the current run is a reference run |
 | `referenceTreePath` | The tree structure of nested reference runs, used only for the snapshot hierarchy in the monitoring L2 page |
@@ -890,15 +904,112 @@ notebookutils.session utility provides a way to restart the Python interpreter.
 notebookutils.session.restartPython()
 ```
 
+**Considerations:**
+
+- In the notebook reference run case, ```restartPython()``` only restarts the Python interpreter of the current notebook that being referenced.
+- In rare case, the command may fail due to the Spark reflection mechanism, adding retry can mitigate the problem.
+
+## Variable library utilities
+
 > [!NOTE]
-> - In the notebook reference run case, ```restartPython()``` only restarts the Python interpreter of the current notebook that being referenced.
-> - In rare case, the command may fail due to the Spark reflection mechanism, adding retry can mitigate the problem.
+> "Variable Library utilities" in Notebooks is in Preview.
+
+Variable libraries allow you to avoid hardcoding values in your notebook code. You can update the values in the library instead of modifying the code. The notebook references the variable library to retrieve those values. This approach simplifies the reuse of code across teams and projects by utilizing a centrally managed library. 
+
+Run the following commands for an overview of the available methods:
+
+```python
+notebookutils.variableLibrary.help()
+```
+
+**Output**
+```console
+[Preview] notebookutils.variableLibrary is a utility to Variable Library.
+
+Below is overview about the available methods:
+
+get(variableReference: String): String
+-> Run the variable value with type.
+getLibrary(variableLibraryName: String): VariableLibrary
+-> Get the variable library.
+Use notebookutils.variableLibrary.help("methodName") for more info about a method.
+
+```
+
+### Define the variable in your Variable Library
+
+Define the variables first before using ```notebookutils.variableLibrary```.
+
+:::image type="content" source="media\notebook-utilities\variable-library.png" alt-text="Screenshot of variables list in variable library." lightbox="media\notebook-utilities\variable-library.png":::
+
+### Retrieve the variable library from the Notebook
+
+```python
+samplevl = notebookutils.variableLibrary.getLibrary("sampleVL")
+
+samplevl.test_int
+samplevl.test_str
+```
+
+```scala
+val samplevl = notebookutils.variableLibrary.getLibrary("sampleVL")
+
+samplevl.test_int
+samplevl.test_str
+```
+
+```r
+samplevl <- notebookutils.variableLibrary.getLibrary("sampleVL")
+
+samplevl.test_int
+samplevl.test_str
+```
+
+Example for dynamically using the variable.
+
+```python
+samplevl = notebookutils.variableLibrary.getLibrary("sampleVL")
+
+file_path = f"abfss://{samplevl.Workspace_name}@onelake.dfs.fabric.microsoft.com/{samplevl.Lakehouse_name}.Lakehouse/Files/<FileName>.csv" 
+df = spark.read.format("csv").option("header","true").load(file_path) 
+
+display(df) 
+
+```
+
+### Access a single variable by reference
+
+```python
+notebookutils.variableLibrary.get("$(/**/samplevl/test_int)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_str)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
+```
+
+```scala
+notebookutils.variableLibrary.get("$(/**/samplevl/test_int)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_str)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
+```
+
+```r
+notebookutils.variableLibrary.get("$(/**/samplevl/test_int)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_str)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
+```
+
+> [!NOTE] 
+> - The ```notebookutils.variableLibrary``` API only supports accessing variable libraries within the same workspace.
+> - Retrieving variable libraries across workspaces is not supported in child notebooks during a reference run.
+> - The notebook code references the variables defined in the active value set of the Variable Library. 
+
 
 ## Known issue 
 
 - When using runtime version above 1.2 and run ``` notebookutils.help() ```, the listed **fabricClient**, **PBIClient** APIs are not supported for now, will be available in the further. Additionally, the **Credentials** API isn't supported in Scala notebooks for now.
 
 - The Python notebook doesn't support the **stop**, **restartPython** APIs when using notebookutils.session utility for session management.
+
+- Currently SPN is not supported for variable library utilities.
 
 ## Related content
 

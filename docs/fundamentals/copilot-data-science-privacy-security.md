@@ -6,12 +6,13 @@ ms.author: sngun
 ms.reviewer: 'guptamaya'
 ms.topic: conceptual
 ms.date: 05/11/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
 
 # Privacy, security, and responsible use of Copilot in notebooks and Fabric data agents
 
-In this article, learn how [Microsoft Copilot in Notebooks](../data-engineering/copilot-notebooks-overview.md) and and Fabric [data agents](../data-science/concept-data-agent.md) (formerly known as AI Skill) works, how it keeps your business data secure and compliant with privacy requirements, and how to responsibly use generative AI. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot (preview)](../fundamentals/copilot-privacy-security.md).
+In this article, learn how [Microsoft Copilot in Notebooks](../data-engineering/copilot-notebooks-overview.md) and and Fabric [data agents](../data-science/concept-data-agent.md) (formerly known as Data agent) works, how it keeps your business data secure and compliant with privacy requirements, and how to responsibly use generative AI. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot (preview)](../fundamentals/copilot-privacy-security.md).
 
 
 ## Data use

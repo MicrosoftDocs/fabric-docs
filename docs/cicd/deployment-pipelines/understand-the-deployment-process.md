@@ -76,11 +76,21 @@ Deploying content from a working production pipeline to a stage that has an exis
 
 * Deploying updated content to replace some of the content already there.
 
+After the initial deployment:
+
+- the gateway associated with the target item is not automatically mapped to the corresponding data source.
+- You need to manually configure this mapping through the target item's settings page
+- After configuring verify that the data refresh completes successfully.
+- Subsequent deployments do not alter or reset this gateway configuration.
+
 ### Deployment process
 
 When content from the source stage is copied to the target stage, Fabric identifies existing content in the target stage and overwrites it. To identify which content item needs to be overwritten, deployment pipelines uses the connection between the parent item and its clones. This connection is kept when new content is created. The overwrite operation only overwrites the content of the item. The item's ID, URL, and permissions remain unchanged.
 
 In the target stage, [item properties that aren't copied](understand-the-deployment-process.md#item-properties-that-are-not-copied), remain as they were before deployment. New content and new items are copied from the source stage to the target stage.
+
+
+
 
 ## Autobinding
 
@@ -110,17 +120,16 @@ Autobinding works only with items that are supported by deployment pipelines and
 
 Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item connected to it in the other pipeline. For example, if you have a report in the test stage of pipeline *A* that's connected to a semantic model in the test stage of pipeline *B*, deployment pipelines recognizes this connection.
 
+>[!NOTE]
+>Each pipeline must have the same number of stages. So for example, if pipeline *A* has 3 stages, then pipeline *B* must also have 3 stages.  Pipeline *A* cannot have 3 stages and pipeline *B* 5 stages for autobinding to succeed. 
+
 Here's an example with illustrations that to help demonstrate how autobinding across pipelines works:
 
-1. You have a semantic model in the development stage of pipeline A.
-
-1. You also have a report in the development stage of pipeline B.
-
-1. Your report in pipeline B is connected to your semantic model in pipeline A. Your report depends on this semantic model.
-
-1. You deploy the report in pipeline B from the development stage to the test stage.
-
-1. The deployment succeeds or fails, depending on whether or not you have a copy of the semantic model it depends on in the test stage of pipeline A:
+- You have a semantic model in the development stage of pipeline A.
+- You also have a report in the development stage of pipeline B.
+- Your report in pipeline B is connected to your semantic model in pipeline A. Your report depends on this semantic model.
+- You deploy the report in pipeline B from the development stage to the test stage.
+- The deployment succeeds or fails, depending on whether or not you have a copy of the semantic model it depends on in the test stage of pipeline A:
 
     * *If you have a copy of the semantic model the report depends on in the test stage of pipeline A*:
 
@@ -170,6 +179,9 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a cont
 Folders enable users to efficiently organize and manage workspace items in a familiar way.
 When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
 
+>[!NOTE]
+>Items cannot be selected for deployment across workspace folders in the default stage view. However switching to [flat list view](deploy-content.md#flat-list-view) allows you to select items for deployment across workspace folders.
+
 ### Folders representation
 
 #### [New folders representation UI](#tab/new-ui)
@@ -190,7 +202,9 @@ The workspace content is shown in Deployment pipelines as a flat list of items. 
 
 In Deployment pipelines, folders are considered part of an item’s name (an item name includes its full path). When an item is deployed, after its path was changed (moved from folder A to folder B, for example), then Deployment pipelines applies this change to its paired item during deployment - the paired item will be moved as well to folder B. If folder B doesn't exist in the stage we're deploying to, it's created in its workspace first. Folders can be seen and managed only on the workspace page.
 
-Deploy items inside a folder from that folder. You can't deploy items from different hierarchies at the same time.
+With the current view of the folders hierarchy, you can select for deployment, only items in the same folder level. You cannot select items across folders.
+ 
+Flat list view of deployment pipelines allows you to select items regardless of its location. With the flat list view, you can select items across folders, regarding their location in the workspace. For more information, see [flat list view](deploy-content.md#flat-list-view).
 
 ### Identify items that were moved to different folders
 

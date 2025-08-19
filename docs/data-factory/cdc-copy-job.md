@@ -42,6 +42,7 @@ Supported destination store:
    - Azure SQL DB
    - On-premises SQL Server
    - Azure SQL Managed Instance
+   - SQL Database in Fabric (Preview)
 
 ## How to get started:
 
@@ -58,7 +59,7 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
    > - Be sure supports_net_changes is enabled.
    > - All of the columns in the source table must be identified as captured columns as default.
    
-   Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](/sql/relational-databases/track-changes/enable-and-disable-change-tracking-sql-server).
+   Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
  
 1. Select **+ New Item**, choose the **Copy job** icon,  name your Copy job, and click **Create**.
 
@@ -119,7 +120,7 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 
 ## Known limitations
 - When both CDC-enabled and non-CDC-enabled source tables are selected in a Copy Job, it treats all tables as watermark-based incremental copy.
-- When CDC-enabled source tables are selected, column mapping and temp DB can't be configured.
+- When CDC-enabled source tables are selected, column mapping can't be configured.
 - Custom capture instances aren't supported; only the default capture instance is supported.
 - SCD2 isn't supported for CDC-enabled source datastore yet.
 - DDL isn't supported yet in Copy job.

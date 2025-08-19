@@ -1,18 +1,18 @@
 ---
-title: Data pipelines storage event triggers in Data Factory
-description: This article describes how data pipelines storage event triggers work in Data Factory for Microsoft Fabric.
+title: Data pipelines event triggers in Data Factory
+description: This article describes how data pipelines event triggers work in Data Factory for Microsoft Fabric.
 author: kromerm
 ms.author: makromer
 ms.topic: concept-article
 ms.custom: pipelines
-ms.date: 02/13/2025
+ms.date: 07/16/2025
 ---
 
-# Data pipelines storage event triggers in Data Factory
+# Data pipelines event triggers in Data Factory
 
-## Introduction
+Triggers in Fabric Data Factory allow you to invoke a pipeline from many different events including file events, job events, and workspace events. A common use case for invoking Data Factory data pipelines is to trigger a pipeline upon events like file arrival and file delete. For customers moving from Azure Data Factory (ADF) to Microsoft Fabric, using ADLS/Blob storage events is common. New Fabric users not previously familiar with ADF might generally use file events from OneLake. Triggers in Fabric Data Factory use Fabric platform capabilities including eventstreams and Data Activator alerts. Inside of the Fabric Data Factory pipeline design canvas, there's a trigger button used to create and manage a Data Activator alert for your pipeline, or you can create the trigger directly from the Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] Real-Time Intelligence experience.
 
-A common use case for invoking Data Factory data pipelines is to trigger a pipeline upon file events like file arrival and file delete. For customers moving from Azure Data Factory (ADF) to Microsoft Fabric, using ADLS/Blob storage events is common. New Fabric users not previously familiar with ADF might generally use file events from OneLake. Triggers in Fabric Data Factory use Fabric platform capabilities including eventstreams and Reflex triggers. Inside of the Fabric Data Factory pipeline design canvas, there's a Trigger button to create a Reflex trigger for your pipeline, or you can create the trigger directly from the Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] experience.
+> [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=9f36af9d-f362-4452-a221-ca27d39da11c]
 
 ## How to set storage event triggers on a pipeline
 
@@ -20,7 +20,7 @@ A common use case for invoking Data Factory data pipelines is to trigger a pipel
 
    :::image type="content" source="media/pipeline-storage-event-triggers/set-trigger-button.png" alt-text="Screenshot showing the Trigger button on the Home ribbon of the pipeline canvas editor window.":::
 
-1. The **Set alert** panel opens where you can define source events for your trigger using the Reflex alert service.
+1. The **Set alert** panel opens where you can define source events for your trigger using the Data Activator alert service.
 
    :::image type="content" source="media/pipeline-storage-event-triggers/set-alert-panel.png" alt-text="Screenshot showing the Set Alert panel.":::
 
@@ -70,6 +70,10 @@ A common use case for invoking Data Factory data pipelines is to trigger a pipel
 
    :::image type="content" source="media/pipeline-storage-event-triggers/view-reflex-object.png" alt-text="Screenshot showing the details of the Reflex object.":::
 
+1. To view the triggers that are part of your pipeline, you can use "Triggers > View triggers" from the pipeline menu
+
+   :::image type="content" source="media/pipeline-storage-event-triggers/manage-triggers.png" alt-text="Screenshot showing the manage trigger rules pane.":::
+
 ## Setting expression values with the trigger file name and folder name
 
 Inside of your pipeline, you can utilize the name of the file and folder path from the storage event using built-in trigger parameters. Data Factory sets these parameters when it receives the storage event. Blob path and file name parameters are set by the trigger activation. Select the trigger parameters tab on the expression builder inside of your pipeline and Data Factory automatically parses the file name and folder names for you, allowing you to dynamically add them to your pipeline expression.
@@ -84,5 +88,5 @@ You might notice the use of a _?_ after the _pipeline()_ object reference, which
 
 ## Related content
 
-- [Create a Reflex trigger](../real-time-intelligence/data-activator/activator-get-started.md#create-an-activator-item)
+- [Create a Data Activator trigger](../real-time-intelligence/data-activator/activator-get-started.md#create-an-activator-item)
 - [Microsoft Fabric eventstreams](../real-time-analytics/event-streams/overview.md)

@@ -3,7 +3,7 @@ title: Manage entity types and mappings
 description: Create and manage mappings in digital twin builder (preview).
 author: baanders
 ms.author: baanders
-ms.date: 05/02/2025
+ms.date: 05/28/2025
 ms.topic: how-to
 ---
 
@@ -21,6 +21,10 @@ This document describes how to create entity types and manage their data mapping
 * Your desired data in a [Fabric lakehouse](../../data-engineering/lakehouse-overview.md) with the necessary ETL done.
     * Time series data should be in *columnar* format. Columnar time series data is structured so that each column represents a different variable or attribute, while each row corresponds to a specific timestamp. 
     * Digital twin builder supports source columns with the following data types: `bigint`, `boolean`, `char`, `date`, `datetime`, `decimal`, `double`, `float`, `integer`, `long`, `short`, `smallint`, `string`, `timestamp`, `timestampint64`, `tinyint`.
+
+        >[!NOTE]
+        > Decimal type precision in the source data isn't perfectly conserved when the data's imported into digital twin builder.
+
 * A [digital twin builder (preview) item](tutorial-1-set-up-resources.md#create-new-digital-twin-builder-item-in-fabric).
 
 ## Create an entity type
@@ -86,7 +90,7 @@ First, map non-time series data. Non-time series mappings must be run before tim
 
     :::image type="content" source="media/model-manage-mappings/map-non-time-save.png" alt-text="Screenshot of saving mapped properties.":::
 
-1. Go to the **Scheduling** tab and select **Run now** to run the mapping. Running the mapping models the identified properties on your entity instances. **Once properties have been modeled, they can't be deleted and their names can't be changed.**
+1. Go to the **Scheduling** tab and select **Run** to run the mapping. Running the mapping models the identified properties on your entity instances. **Once properties have been modeled, they can't be deleted and their names can't be changed.**
 
     :::image type="content" source="media/model-manage-mappings/map-non-time-run.png" alt-text="Screenshot of running the mapping.":::
 
@@ -125,7 +129,7 @@ First, map non-time series data. Non-time series mappings must be run before tim
 
     :::image type="content" source="media/model-manage-mappings/map-time-save.png" alt-text="Screenshot of entity type configuration options after configuring the link property.":::
 
-1. Go to the **Scheduling** tab and select **Run now** to run the mapping.
+1. Go to the **Scheduling** tab and select **Run** to run the mapping.
 
 ## Manage mappings
 
