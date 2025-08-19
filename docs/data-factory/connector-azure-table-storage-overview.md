@@ -19,8 +19,8 @@ This Azure Table Storage connector is supported in Data Factory for [!INCLUDE [p
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Account key<br> Organizational account<br> Workspace identity |
-| **Data pipeline**<br>- [Copy activity](connector-azure-table-storage-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Account key |
-| **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Account key |
+| **Data pipeline**<br>- [Copy activity](connector-azure-table-storage-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Account key<br> Workspace identity |
+| **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Account key<br> Workspace identity |
 
 ## Related content
 

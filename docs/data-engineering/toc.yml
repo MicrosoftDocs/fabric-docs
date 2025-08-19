@@ -11,6 +11,10 @@ items:
   items:
   - name: Decision guide - copy activity, dataflow, or Spark
     href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+  - name: Decision guide - data integration strategy
+    href: ../data-factory/decision-guide-data-integration.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+  - name: Decision guide - data movement strategy
+    href: ../data-factory/decision-guide-data-movement.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
   - name: Decision guide - choose a data store
     href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
   - name: Decision guide - Warehouse and Lakehouse
@@ -293,6 +297,8 @@ items:
     href: fabric-notebook-selection-guide.md
   - name: T-SQL magic command in Python Notebook
     href: tsql-magic-command-notebook.md
+  - name: Fabric Notebook known limitation
+    href: notebook-limitation.md
 - name: Environments
   items:
   - name: Create, configure and use an environment

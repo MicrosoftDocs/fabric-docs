@@ -1,8 +1,8 @@
----
+﻿---
 title: Create a Fabric data agent (preview)
 description: Learn how to create a Fabric data agent.
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: amjafari
 reviewer: midesa
 ms.service: fabric
@@ -11,9 +11,7 @@ ms.topic: how-to #Don't change
 ms.date: 03/25/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
-
 #customer intent: As an Analyst, I want to create a Fabric data agent that relies on generative AI, that my colleagues and I can use to have conversations about our data.
-
 ---
 
 # Create a Fabric data agent (preview)
