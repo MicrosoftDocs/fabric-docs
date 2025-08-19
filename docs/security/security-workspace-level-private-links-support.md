@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: overview
 ms.custom:
-ms.date: 08/18/2025
+ms.date: 08/19/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -104,7 +104,7 @@ APIs with endpoints containing `v1/workspaces/{workspaceId}` support workspace-l
 
 > [!NOTE]
 > * The [workspaces network communication policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy) isn't restricted by workspace-level network settings. This API remains accessible from public networks, even if public access to the workspace is blocked. Tenant-level network restrictions still apply. See also [Table 1. Access to workspace communication policy API based on tenant and private link settings](security-workspace-level-private-links-set-up.md#step-8-deny-public-access-to-the-workspace).
-> * **Deployment pipelines:** If any workspace in a deployment pipeline is set to deny public access (restricted), deployment pipelines can't connect to that workspace. 
+> * **Deployment pipelines:** If any workspace in a deployment pipeline is set to deny public access (restricted), deployment pipelines can't connect to that workspace. Configuring inbound restriction is blocked for any workspace that is assigned to a pipeline.
 > * **Item sharing:** Item sharing isn't supported. If items are already shared with users, those users can no longer access the items using the shared links.
 
 ### Lakehouse support
