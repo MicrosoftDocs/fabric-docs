@@ -212,7 +212,7 @@ The **Up** and **Down** arrows navigate through the list in the following ways:
 
 ## View query
 
-You can view the query in either editing or viewing mode.
+You can view the query in either viewing or editing mode.
 
 1. On the tile you want to explore, select the **More menu [...]** > **View query**. A pane opens with the query and results table.
 
@@ -220,7 +220,7 @@ You can view the query in either editing or viewing mode.
 1. Select **Edit query**.
 1. Choose either **Existing KQL Queryset** or **New KQL Queryset**. Proceed to edit the query in the [KQL Queryset](kusto-query-set.md).
 
-    :::image type="content" source="media/real-time-dashboard/edit-query.png" alt-text="Screenshot of the KQL query editor." lightbox="media/real-time-dashboard/edit-query.png"::: 
+    :::image type="content" source="media/real-time-dashboard/edit-query.png" alt-text="Screenshot of the KQL query editor." lightbox="media/real-time-dashboard/edit-query.png":::
 
     > [!NOTE]
     > Any edits made to the query using this flow won't be reflected in the original Real-Time Dashboard.
