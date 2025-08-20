@@ -12,7 +12,9 @@ ms.custom:
 
 # Dataflow Gen2 pricing for Data Factory in Microsoft Fabric
 
-Dataflow Gen2 lets you use a low-code interface with 300+ data and AI-based transformations, letting you transform data easier and with more flexibility than any other tool. Dataflow Gen2 is authored using the familiar Power Query experience that’s available today across several Microsoft products and services such as Excel, Power BI, Power Platform, Dynamics 365 Insights applications, and more. Once you publish a dataflow, the dataflow definition is generated - this is the program that runs once the dataflow is refreshed to produce tables in staging storage and/or output destination. During refresh, the definition of a dataflow is used by the dataflow engine to generate an orchestration plan, manage resources, and orchestrate execution of queries. It does this work across data sources, gateways, and compute engines, and creates tables in either the staging storage or data destination.
+Dataflow Gen2 helps you shape and transform data with ease. It offers a low-code interface and over 300 built-in data and AI transformations, all powered by the familiar Power Query experience you’ll find in Excel, Power BI, Power Platform, and Dynamics 365.
+
+When you publish a dataflow, it creates a definition that runs during refresh. The Dataflow Gen2 engine uses that definition to plan and manage how queries run—across data sources, gateways, and compute engines. It builds tables in staging storage or sends them to your chosen destination, so you get reliable results without the heavy lifting.
 
 
 :::image type="content" source="media/pricing-dataflows-gen2/dataflows-gen2-pricing-diagram.png" alt-text="Diagram of the Dataflow Gen2 architecture.":::
