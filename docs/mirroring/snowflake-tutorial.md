@@ -15,7 +15,7 @@ In this tutorial, you'll configure a Fabric mirrored database from Snowflake.
 In this example, you'll learn how to configure a secure connection to your Snowflake data source(s) along with other helpful information to get you acquainted with and proficient with the concepts of Mirroring in Microsoft Fabric.
 
 > [!NOTE]
-> While this example is specific to Snowflake, you can find detailed steps to configure Mirroring for other data sources, like Azure SQL Database or Azure Cosmos DB. For more information, see [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
+> While this example is specific to Snowflake, you can find detailed steps to configure Mirroring for other data sources, like Azure SQL Database or Azure Cosmos DB. For more information, see [What is Mirroring in Fabric?](../mirroring/overview.md)
 
 ## Prerequisites
 
@@ -98,12 +98,12 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
 
 Once mirroring is configured, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication.
 
-For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md).
+For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../mirroring/monitor.md).
 
 > [!IMPORTANT]
 > If there are no updates in the source tables, the replicator engine will start to back off with an exponentially increasing duration, up to an hour. The replicator engine will automatically resume regular polling after updated data is detected.
 
 ## Related content
 
-- [Mirroring Snowflake](../database/mirrored-database/snowflake.md)
-- [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
+- [Mirroring Snowflake](../mirroring/snowflake.md)
+- [What is Mirroring in Fabric?](../mirroring/overview.md)

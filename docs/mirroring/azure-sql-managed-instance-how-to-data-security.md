@@ -19,7 +19,7 @@ This guide helps you establish data security in your mirrored Azure SQL Managed 
    - After enabling the SAMI, if the SAMI is disabled or removed, the mirroring of Azure SQL Managed Instance to Fabric OneLake will fail.
    - After enabling the SAMI, if you add a user assigned managed identity (UAMI), it will become the primary identity, replacing the SAMI as primary. This will cause replication to fail. To resolve, remove the UAMI.
 
-1. Fabric needs to connect to the Azure SQL Managed Instance. For this purpose, create a dedicated database user with limited permissions, to follow the principle of least privilege. For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../database/mirrored-database/azure-sql-managed-instance-tutorial.md).
+1. Fabric needs to connect to the Azure SQL Managed Instance. For this purpose, create a dedicated database user with limited permissions, to follow the principle of least privilege. For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-tutorial.md).
 
 > [!IMPORTANT]
 > Any granular security established in the source database must be reconfigured in the mirrored database in Microsoft Fabric.
@@ -38,5 +38,5 @@ You can also mask sensitive data from non-admins using dynamic data masking:
 
 ## Related content
 
-- [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
+- [What is Mirroring in Fabric?](../mirroring/overview.md)
 - [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md)

@@ -13,9 +13,9 @@ no-loc: [Copilot]
 
 # Mirroring Snowflake in Microsoft Fabric
 
-[Mirroring in Fabric](../database/mirrored-database/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Snowflake warehouse data with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Snowflake data directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
+[Mirroring in Fabric](../mirroring/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Snowflake warehouse data with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Snowflake data directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
-For a tutorial on configuring your Snowflake database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../database/mirrored-database/snowflake-tutorial.md).
+For a tutorial on configuring your Snowflake database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../mirroring/snowflake-tutorial.md).
 
 ## Why use Mirroring in Fabric?
 
@@ -59,7 +59,7 @@ For more information, see Snowflake documentation on [Access Control Privileges 
 
 ## Mirroring Snowflake behind firewall (preview)
 
-Check the networking requirements to access your Snowflake data source. If your Snowflake data source is not publicly accessible and is within a private network, [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. The Azure Virtual Network or the gateway machine's network must connect to the Snowflake instance via a private endpoint or be allowed by the firewall rule. To get started, see [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../database/mirrored-database/snowflake-tutorial.md).
+Check the networking requirements to access your Snowflake data source. If your Snowflake data source is not publicly accessible and is within a private network, [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. The Azure Virtual Network or the gateway machine's network must connect to the Snowflake instance via a private endpoint or be allowed by the firewall rule. To get started, see [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../mirroring/snowflake-tutorial.md).
 
 ## Mirrored Snowflake cost considerations
 
@@ -85,9 +85,9 @@ For more information of Snowflake specific cloud query costs, see [Snowflake doc
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../database/mirrored-database/snowflake-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../mirroring/snowflake-tutorial.md)
 
 ## Related content
 
-- [How to: Secure data Microsoft Fabric mirrored databases from Snowflake](../database/mirrored-database/snowflake-how-to-data-security.md)
-- [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md)
+- [How to: Secure data Microsoft Fabric mirrored databases from Snowflake](../mirroring/snowflake-how-to-data-security.md)
+- [Monitor Fabric mirrored database replication](../mirroring/monitor.md)

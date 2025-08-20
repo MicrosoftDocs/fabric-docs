@@ -67,7 +67,7 @@ User Assigned Managed Identity (UAMI) isn't supported. If you add a UAMI, it bec
 
 ## SAMI permissions
 
-The System Assigned Managed Identity (SAMI) of the Azure SQL Managed Instance needs to have **Read** and **Write** permissions on the mirrored database item in Microsoft Fabric. When you create the mirrored database from the Fabric portal, the permission is granted automatically. If you encounter error `Unable to grant required permission to the source server. User does not have permission to reshare` during the setup, ensure you have a member or admin role in the workspace with sufficient privilege. When you [use API](../database/mirrored-database/mirrored-database-rest-api.md) to create the mirrored database, make sure you grant the permission explicitly.
+The System Assigned Managed Identity (SAMI) of the Azure SQL Managed Instance needs to have **Read** and **Write** permissions on the mirrored database item in Microsoft Fabric. When you create the mirrored database from the Fabric portal, the permission is granted automatically. If you encounter error `Unable to grant required permission to the source server. User does not have permission to reshare` during the setup, ensure you have a member or admin role in the workspace with sufficient privilege. When you [use API](../mirroring/mirrored-database-rest-api.md) to create the mirrored database, make sure you grant the permission explicitly.
 
 Don't remove SAMI **Read** and **Write** permissions on Fabric mirrored database item. If you accidentally remove the permissions, mirroring Azure SQL Managed Instance won't function as expected. No new data can be mirrored from the source database.
 
@@ -79,5 +79,5 @@ If you remove Azure SQL Managed Instance SAMI permissions or permissions aren't 
 
 ## Related content
 
-- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../database/mirrored-database/azure-sql-managed-instance-limitations.md)
-- [Frequently asked questions for Mirroring Azure SQL Managed Instance in Microsoft Fabric (Preview)](../database/mirrored-database/azure-sql-managed-instance-faq.yml)
+- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-limitations.md)
+- [Frequently asked questions for Mirroring Azure SQL Managed Instance in Microsoft Fabric (Preview)](../mirroring/azure-sql-managed-instance-faq.yml)

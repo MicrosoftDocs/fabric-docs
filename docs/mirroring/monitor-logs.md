@@ -62,4 +62,4 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 * [What is workspace monitoring?](../fundamentals/workspace-monitoring-overview.md)
 * [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md)
-* [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md)
+* [Monitor Fabric mirrored database replication](../mirroring/monitor.md)

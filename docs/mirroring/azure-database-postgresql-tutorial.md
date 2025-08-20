@@ -10,7 +10,7 @@ ms.topic: tutorial
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL
 
-[Mirroring in Fabric](../database/mirrored-database/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored Azure Database for PostgreSQL flexible server, which creates a read-only, continuously replicated copy of your PostgreSQL data in OneLake.
+[Mirroring in Fabric](../mirroring/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored Azure Database for PostgreSQL flexible server, which creates a read-only, continuously replicated copy of your PostgreSQL data in OneLake.
 
 ## Prerequisites
 
@@ -110,10 +110,10 @@ The following steps guide you through the process of creating the connection to 
 
 ## Monitor Fabric mirroring
 
-Once mirroring is configured, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication. For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md).
+Once mirroring is configured, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication. For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../mirroring/monitor.md).
 
 ## Related content
 
-- [Troubleshoot Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../database/mirrored-database/azure-database-postgresql-troubleshoot.md)
-- [Mirroring Azure Database for PostgreSQL flexible server](../database/mirrored-database/azure-database-postgresql.md)
-- [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
+- [Troubleshoot Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-troubleshoot.md)
+- [Mirroring Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql.md)
+- [What is Mirroring in Fabric?](../mirroring/overview.md)

@@ -24,7 +24,7 @@ By default, sharing a mirrored database grants users Read permission to the mirr
 
 - **"Read all SQL analytics endpoint data"**: Grants the recipient the ReadData permission for the SQL analytics endpoint, allowing the recipient to read all data via the SQL analytics endpoint using Transact-SQL queries.
 
-- **"Read all OneLake data"**: Grants the ReadAll and SubscribeOneLakeEvents permission to the recipient, allowing them to access the mirrored data in OneLake, for example, by using Spark or [OneLake Explorer](../database/mirrored-database/explore-data-directly.md), and subscribe to OneLake events in Fabric Real-Time Hub.
+- **"Read all OneLake data"**: Grants the ReadAll and SubscribeOneLakeEvents permission to the recipient, allowing them to access the mirrored data in OneLake, for example, by using Spark or [OneLake Explorer](../mirroring/explore-data-directly.md), and subscribe to OneLake events in Fabric Real-Time Hub.
 
 - **"Read and write"**: Grants the recipient the Write permission for the mirrored database, allowing them to edit the mirrored database configuration and read/write data from/to the landing zone.
 
@@ -43,5 +43,5 @@ The sharing dialog for a mirrored database provides the option to subscribe to O
 
 ## Related content
 
-- [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
+- [What is Mirroring in Fabric?](../mirroring/overview.md)
 - [What is the SQL analytics endpoint for a lakehouse?](../data-engineering/lakehouse-sql-analytics-endpoint.md)

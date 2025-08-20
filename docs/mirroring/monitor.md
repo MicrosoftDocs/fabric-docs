@@ -30,7 +30,7 @@ The following are the possible statuses for the replication:
 
 ## Monitor programmatically
 
-You can monitor the mirrored databases programmatically by using the REST APIs or SDK. Learn more from [Microsoft Fabric mirroring public REST API](../database/mirrored-database/mirrored-database-rest-api.md) on how to get mirroring status for the mirrored database or specific tables.
+You can monitor the mirrored databases programmatically by using the REST APIs or SDK. Learn more from [Microsoft Fabric mirroring public REST API](../mirroring/mirrored-database-rest-api.md) on how to get mirroring status for the mirrored database or specific tables.
 
 ## Use workspace monitoring
 
@@ -38,7 +38,7 @@ You can monitor the mirrored databases programmatically by using the REST APIs o
 
 Mirroring in Fabric supports operation logs in workspace monitoring to provide a more comprehensive monitoring experience for your mirrored databases. You can use these logs to monitor execution and performance of your mirrored database, including data replication, table changes, mirroring status, failures, and replication latency.
 
-To get started, [enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md). Once the monitoring of your workspace is enabled, the mirrored database execution logs are automatically ingested into the `MirroredDatabaseTableExecution` table in the monitoring KQL database. Learn more about the available logs and the structure from [Mirrored database operation logs](../database/mirrored-database/monitor-logs.md).
+To get started, [enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md). Once the monitoring of your workspace is enabled, the mirrored database execution logs are automatically ingested into the `MirroredDatabaseTableExecution` table in the monitoring KQL database. Learn more about the available logs and the structure from [Mirrored database operation logs](../mirroring/monitor-logs.md).
 
 :::image type="content" source="media/monitor/enable-workspace-monitoring.png" alt-text="Screenshot from the Fabric portal of monitoring enablement in workspace settings." lightbox="media/monitor/enable-workspace-monitoring.png":::
 
@@ -56,5 +56,5 @@ Then you have full access to an advanced monitoring experience for mirrored data
 
 ## Related content
 
-- [Troubleshoot Fabric mirrored databases](../database/mirrored-database/troubleshooting.md)
-- [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
+- [Troubleshoot Fabric mirrored databases](../mirroring/troubleshooting.md)
+- [What is Mirroring in Fabric?](../mirroring/overview.md)

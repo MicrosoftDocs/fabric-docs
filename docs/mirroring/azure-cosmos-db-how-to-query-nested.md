@@ -365,6 +365,6 @@ Finally, create a T-SQL query that can find data deeply nested in a JSON string.
 
 ## Related content
 
-- [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../database/mirrored-database/azure-cosmos-db-faq.yml)
-- [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](../database/mirrored-database/azure-cosmos-db-troubleshooting.yml)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../database/mirrored-database/azure-cosmos-db-limitations.md)
+- [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
+- [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-troubleshooting.yml)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-limitations.md)

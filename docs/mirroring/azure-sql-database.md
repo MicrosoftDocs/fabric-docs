@@ -12,9 +12,9 @@ no-loc: [Copilot]
 
 # Mirroring Azure SQL Database
 
-[Mirroring in Fabric](../database/mirrored-database/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Azure SQL Database estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Azure SQL Databases directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
+[Mirroring in Fabric](../mirroring/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Azure SQL Database estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Azure SQL Databases directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
-For a tutorial on configuring your Azure SQL Database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](../database/mirrored-database/azure-sql-database-tutorial.md).
+For a tutorial on configuring your Azure SQL Database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-tutorial.md).
 
 To learn more and watch demos of Mirroring Azure SQL Database in Fabric, watch the following the [Data Exposed episode](/shows/data-exposed/key-mirroring-to-azure-sql-database-in-fabric-benefits-data-exposed).
 
@@ -47,7 +47,7 @@ In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), th
 
 ## Mirroring Azure SQL Database behind firewall
 
-If your Azure SQL Database is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can set up [virtual network data gateway](/data-integration/vnet/overview) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. For more information, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](../database/mirrored-database/azure-sql-database-tutorial.md).
+If your Azure SQL Database is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can set up [virtual network data gateway](/data-integration/vnet/overview) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. For more information, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-tutorial.md).
 
 ## Active transactions, workloads, and replicator engine behaviors
 
@@ -68,11 +68,11 @@ Fabric compute used to replicate your data into Fabric OneLake is free. Storage 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](../database/mirrored-database/azure-sql-database-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-tutorial.md)
 
 ## Related content
 
-- [How to: Secure data Microsoft Fabric mirrored databases from Azure SQL Database](../database/mirrored-database/azure-sql-database-how-to-data-security.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database](../database/mirrored-database/azure-sql-database-limitations.md)
-- [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md)
-- [Troubleshoot Fabric mirrored databases from Azure SQL Database](../database/mirrored-database/azure-sql-database-troubleshoot.md)
+- [How to: Secure data Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-how-to-data-security.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-limitations.md)
+- [Monitor Fabric mirrored database replication](../mirroring/monitor.md)
+- [Troubleshoot Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-troubleshoot.md)

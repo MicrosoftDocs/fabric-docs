@@ -13,9 +13,9 @@ no-loc: [Copilot]
 
 # Mirroring SQL Server
 
-[Mirroring in Fabric](../database/mirrored-database/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing SQL Server estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing SQL Server databases directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
+[Mirroring in Fabric](../mirroring/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing SQL Server estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing SQL Server databases directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
-For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases From SQL Server](../database/mirrored-database/sql-server-tutorial.md).
+For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-tutorial.md).
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
@@ -59,7 +59,7 @@ In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), th
 
 ## Mirroring SQL Server behind firewall
 
-Set up an [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. Learn more from [the mirrored SQL Server tutorial](../database/mirrored-database/sql-server-tutorial.md) and [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../database/mirrored-database/sql-server-security.md).
+Set up an [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. Learn more from [the mirrored SQL Server tutorial](../mirroring/sql-server-tutorial.md) and [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
 
 ## Active transactions, workloads, and replicator engine behaviors
 
@@ -73,11 +73,11 @@ Fabric compute used to replicate your data into Fabric OneLake is free. Storage 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases From SQL Server](../database/mirrored-database/sql-server-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-tutorial.md)
 
 ## Related content
 
-- [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../database/mirrored-database/sql-server-security.md)
-- [Limitations in Microsoft Fabric mirrored databases From SQL Server](../database/mirrored-database/sql-server-limitations.md)
-- [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md)
-- [Troubleshoot Fabric mirrored databases From SQL Server](../database/mirrored-database/sql-server-troubleshoot.md)
+- [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md)
+- [Limitations in Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-limitations.md)
+- [Monitor Fabric mirrored database replication](../mirroring/monitor.md)
+- [Troubleshoot Fabric mirrored databases From SQL Server](../mirroring/sql-server-troubleshoot.md)

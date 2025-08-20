@@ -44,7 +44,7 @@ To upload initial data and/or incremental changed data for open mirroring:
 1. On the **Upload files** page, upload a file using the upload dialog in the Fabric portal.
    
    > [!IMPORTANT]
-   > The file name of the Parquet or delimited text file needs to match the format and filename documented. For more information, see [Open mirroring landing zone requirements and format](../database/mirrored-database/open-mirroring-landing-zone-format.md).
+   > The file name of the Parquet or delimited text file needs to match the format and filename documented. For more information, see [Open mirroring landing zone requirements and format](../mirroring/open-mirroring-landing-zone-format.md).
 
 1. On the **Preview data** page, you can see a preview of the data you are about to upload. Provide the **Table name** a name and specify **Primary key column(s)**. Select **Create table**.
 
@@ -59,7 +59,7 @@ To upload initial data and/or incremental changed data for open mirroring:
 Your application can now write initial load and incremental change data into the landing zone URL, which is your specific open mirroring path to the OneLake. 
 
 - Follow [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md) to authorize and write to the mirrored database landing zone in OneLake, using the [ADLS Gen2 API](/rest/api/storageservices/data-lake-storage-gen2).
-- Review the [Open mirroring landing zone requirements and format](../database/mirrored-database/open-mirroring-landing-zone-format.md) specifications.
+- Review the [Open mirroring landing zone requirements and format](../mirroring/open-mirroring-landing-zone-format.md) specifications.
 - Use the [Open Mirroring Python SDK](https://github.com/microsoft/fabric-toolbox/tree/main/tools/OpenMirroringPythonSDK) to get started! 
 
 ## Start mirroring process
@@ -79,7 +79,7 @@ Your application can now write initial load and incremental change data into the
 
 Once mirroring is configured, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication.
 
-For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md).
+For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../mirroring/monitor.md).
 
 ## Next step
 
@@ -89,4 +89,4 @@ For more information and details on the replication states, see [Monitor Fabric 
 ## Related content
 
 - [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)
-- [Open mirroring landing zone requirements and format](../database/mirrored-database/open-mirroring-landing-zone-format.md)
+- [Open mirroring landing zone requirements and format](../mirroring/open-mirroring-landing-zone-format.md)

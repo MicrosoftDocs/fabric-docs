@@ -37,7 +37,7 @@ Mirroring is only available for the Azure Cosmos DB account types listed here.
 
 ### Supported regions
 
-[!INCLUDE [fabric-mirroreddb-supported-regions](../database/mirrored-database/includes/fabric-mirroreddb-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](../mirroring/includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Account and database limitations
 
@@ -99,7 +99,7 @@ Mirroring is only available for the Azure Cosmos DB account types listed here.
 
 - Nested JSON objects in Azure Cosmos DB items are represented as JSON strings in warehouse tables.
 - Commands such as `OPENJSON`, `CROSS APPLY`, and `OUTER APPLY` are available to expand JSON string data selectively.
-  - Auto schema inference through `OPENJSON` allows you to flatten and explore nested data with unknown or unpredictable nested schemas. For more information, see [how to query nested data](../database/mirrored-database/azure-cosmos-db-how-to-query-nested.md).
+  - Auto schema inference through `OPENJSON` allows you to flatten and explore nested data with unknown or unpredictable nested schemas. For more information, see [how to query nested data](../mirroring/azure-cosmos-db-how-to-query-nested.md).
 - PowerQuery includes `ToJson` to expand JSON string data selectively.
 - Mirroring doesn't have schema constraints on the level of nesting. For more information, see [Azure Cosmos DB analytical store schema constraints](/azure/cosmos-db/analytical-store-introduction#schema-constraints).
 
@@ -121,6 +121,6 @@ If you would like to give feedback on current limitations, features, or issues; 
 
 ## Related content
 
-- [Mirroring Azure Cosmos DB (Preview)](../database/mirrored-database/azure-cosmos-db.md)
-- [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../database/mirrored-database/azure-cosmos-db-faq.yml)
-- [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](../database/mirrored-database/azure-cosmos-db-troubleshooting.yml)
+- [Mirroring Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db.md)
+- [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
+- [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-troubleshooting.yml)

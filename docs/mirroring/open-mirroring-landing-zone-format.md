@@ -272,8 +272,8 @@ A cleanup process for opening mirroring moves all processed files to a separate 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric open mirrored databases](../database/mirrored-database/open-mirroring-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric open mirrored databases](../mirroring/open-mirroring-tutorial.md)
 
 ## Related content
 
-- [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md)
+- [Monitor Fabric mirrored database replication](../mirroring/monitor.md)

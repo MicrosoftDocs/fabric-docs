@@ -13,9 +13,9 @@ ms.search.form: Databricks overview
 
 Many organizations today register their data in Unity Catalog within Azure Databricks. A mirrored Unity Catalog in Fabric enables customer to read data managed by Unity Catalog from Fabric workloads. Azure Databricks and Fabric are better together.
 
-For a tutorial on configuring your Azure Databricks Workspace for mirroring the Unity Catalog into Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](../database/mirrored-database/azure-databricks-tutorial.md).
+For a tutorial on configuring your Azure Databricks Workspace for mirroring the Unity Catalog into Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-tutorial.md).
 
-[Mirrored databases in Fabric](../database/mirrored-database/overview.md) allow users to enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs. You can enjoy an easy-to-use product designed to simplify your analytics needs and built for openness and collaboration between Microsoft Fabric and Azure Databricks.
+[Mirrored databases in Fabric](../mirroring/overview.md) allow users to enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs. You can enjoy an easy-to-use product designed to simplify your analytics needs and built for openness and collaboration between Microsoft Fabric and Azure Databricks.
 
 When you use Fabric to read data that is registered in Unity Catalog, there is no data movement or data replication. Only the Azure Databricks catalog structure is mirrored to Fabric and the underlying catalog data is accessed through shortcuts. Hence any changes in data are reflected immediately in Fabric.
 
@@ -57,7 +57,7 @@ There are other filtration conditions that are applied to catalogs/schemas/table
 
 ## Related content
 
-- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](../database/mirrored-database/azure-databricks-tutorial.md)
-- [Secure Fabric mirrored databases from Azure Databricks](../database/mirrored-database/azure-databricks-security.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](../database/mirrored-database/azure-databricks-limitations.md)
-- [Review the FAQ](../database/mirrored-database/azure-databricks-faq.yml)
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-tutorial.md)
+- [Secure Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-security.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-limitations.md)
+- [Review the FAQ](../mirroring/azure-databricks-faq.yml)

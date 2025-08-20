@@ -100,7 +100,7 @@ Now that your data is up and running, there are various analytics scenarios avai
 
 1. Once Fabric Mirroring is configured, you're automatically navigated to the **Replication Status** pane.
 
-1. Here, monitor the current state of replication. For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md).
+1. Here, monitor the current state of replication. For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../mirroring/monitor.md).
 
 ## Query the source database from Fabric
 
@@ -197,11 +197,11 @@ Now, use T-SQL to query your NoSQL data that is now stored in Fabric OneLake.
 
 Learn more about how to access and query mirrored Azure Cosmos DB data in Fabric:
 
-- [How to: Query nested data in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../database/mirrored-database/azure-cosmos-db-how-to-query-nested.md)
-- [How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview)](../database/mirrored-database/azure-cosmos-db-lakehouse-notebooks.md)
-- [How to: Join mirrored Azure Cosmos DB data with other mirrored databases in Microsoft Fabric (Preview)](../database/mirrored-database/azure-cosmos-db-how-to-join-multiple.md)
+- [How to: Query nested data in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-how-to-query-nested.md)
+- [How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview)](../mirroring/azure-cosmos-db-lakehouse-notebooks.md)
+- [How to: Join mirrored Azure Cosmos DB data with other mirrored databases in Microsoft Fabric (Preview)](../mirroring/azure-cosmos-db-how-to-join-multiple.md)
 
 ## Related content
 
-- [Mirroring Azure Cosmos DB (Preview)](../database/mirrored-database/azure-cosmos-db.md)
-- [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../database/mirrored-database/azure-cosmos-db-faq.yml)
+- [Mirroring Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db.md)
+- [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)

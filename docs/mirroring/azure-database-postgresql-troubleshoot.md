@@ -126,4 +126,4 @@ If you remove Azure Database for PostgreSQL flexible server SAMI permissions or 
 ## Related content
 
 - [Limitations of Microsoft Fabric Data Warehouse](../data-warehouse/limitations.md)
-- [Frequently asked questions for Mirroring Azure Database for PostgreSQL flexible server in Microsoft Fabric](../database/mirrored-database/azure-database-postgresql-mirroring-faq.yml)
+- [Frequently asked questions for Mirroring Azure Database for PostgreSQL flexible server in Microsoft Fabric](../mirroring/azure-database-postgresql-mirroring-faq.yml)

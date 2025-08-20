@@ -40,5 +40,5 @@ You can also mask sensitive data from non-admins using dynamic data masking:
 
 ## Related content
 
-- [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
+- [What is Mirroring in Fabric?](../mirroring/overview.md)
 - [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md)

@@ -11,12 +11,12 @@ ms.custom:
 ---
 # Limitations in Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server
 
-Current limitations in the [Microsoft Fabric mirrored databases](../database/mirrored-database/overview.md) from Azure Database for PostgreSQL flexible server are listed in this page. This page is subject to change.
+Current limitations in the [Microsoft Fabric mirrored databases](../mirroring/overview.md) from Azure Database for PostgreSQL flexible server are listed in this page. This page is subject to change.
 
 For troubleshooting, see:
 
-- [Troubleshoot Fabric mirrored databases](../database/mirrored-database/troubleshooting.md)
-- [Troubleshoot Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../database/mirrored-database/azure-database-postgresql-troubleshoot.md)
+- [Troubleshoot Fabric mirrored databases](../mirroring/troubleshooting.md)
+- [Troubleshoot Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-troubleshoot.md)
 
 ## Server level limitations
 
@@ -98,13 +98,13 @@ For troubleshooting, see:
 
 ## Supported regions
 
-[!INCLUDE [fabric-mirroreddb-supported-regions](../database/mirrored-database/includes/fabric-mirroreddb-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](../mirroring/includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../database/mirrored-database/azure-database-postgresql-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-tutorial.md)
 
 ## Related content
 
-- [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md)
+- [Monitor Fabric mirrored database replication](../mirroring/monitor.md)

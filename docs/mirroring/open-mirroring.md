@@ -12,13 +12,13 @@ no-loc: [Copilot]
 
 # Open mirroring in Microsoft Fabric
 
-[Mirroring in Fabric](../database/mirrored-database/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing data into OneLake with the rest of your data in Microsoft Fabric. You can continuously replicate your existing data directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
+[Mirroring in Fabric](../mirroring/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing data into OneLake with the rest of your data in Microsoft Fabric. You can continuously replicate your existing data directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
 **Open mirroring** enables any application to write change data directly into a mirrored database in Fabric. Open mirroring is designed to be extensible, customizable, and open. It's a powerful feature that extends mirroring in Fabric based on open Delta Lake table format.
 
 Once the data lands in OneLake in Fabric, open mirroring simplifies the handling of complex data changes, ensuring that all mirrored data is continuously up-to-date and ready for analysis.
 
-For a tutorial on configuring your open mirrored database in Fabric, see [Tutorial: Configure Microsoft Fabric open mirrored databases](../database/mirrored-database/open-mirroring-tutorial.md).
+For a tutorial on configuring your open mirrored database in Fabric, see [Tutorial: Configure Microsoft Fabric open mirrored databases](../mirroring/open-mirroring-tutorial.md).
 
 ## Why use open mirroring in Fabric?
 
@@ -28,8 +28,8 @@ Open mirroring extends the Mirroring in Fabric capability to your own applicatio
 
 Open mirroring meets your data replication needs if you:
 
-- Use your own application to write data into the open mirroring landing zone per the [open mirroring landing zone requirements and formats](../database/mirrored-database/open-mirroring-landing-zone-format.md).
- - Use one of our existing [open mirroring partners](../database/mirrored-database/open-mirroring-partners-ecosystem.md) to help you ingest data.
+- Use your own application to write data into the open mirroring landing zone per the [open mirroring landing zone requirements and formats](../mirroring/open-mirroring-landing-zone-format.md).
+ - Use one of our existing [open mirroring partners](../mirroring/open-mirroring-partners-ecosystem.md) to help you ingest data.
 
 ## What analytics experiences are built in?
 
@@ -57,8 +57,8 @@ Fabric compute used to replicate your data into Fabric OneLake is free. The Mirr
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric open mirrored databases](../database/mirrored-database/open-mirroring-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric open mirrored databases](../mirroring/open-mirroring-tutorial.md)
 
 ## Related content
 
-- [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md)
+- [Monitor Fabric mirrored database replication](../mirroring/monitor.md)

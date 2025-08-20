@@ -10,7 +10,7 @@ ms.topic: tutorial
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)
 
-[Mirroring in Fabric](../database/mirrored-database/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored Azure SQL Managed Instance database, which represents a read-only, continuously replicated copy of chosen database from your Azure SQL Managed Instance in OneLake.
+[Mirroring in Fabric](../mirroring/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored Azure SQL Managed Instance database, which represents a read-only, continuously replicated copy of chosen database from your Azure SQL Managed Instance in OneLake.
 
 ## Prerequisites
 
@@ -150,9 +150,9 @@ If the initial sync is completed, a **Last completed** timestamp is shown next t
 
 Also, note the **Rows replicated** column. It counts all the rows that have been replicated for the table. Each time a row is replicated, it is counted again. This means that, for example, inserting a row with primary key =1 on the source increases the "Rows replicated" count by one. If you update the row with the same primary key, replicates to Fabric again, and the row count increases by one, even though it's the same row which replicated again. Fabric counts all replications that happened on the row, including inserts, deletes, updates.
 
-The **Monitor replication** screen also reflects any errors and warnings with tables being mirrored. If the table has unsupported column types or if the entire table is unsupported (for example, in memory or columnstore indexes), a notification about the limitation is shown on this screen. For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md).
+The **Monitor replication** screen also reflects any errors and warnings with tables being mirrored. If the table has unsupported column types or if the entire table is unsupported (for example, in memory or columnstore indexes), a notification about the limitation is shown on this screen. For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../mirroring/monitor.md).
 
 ## Related content
 
-- [Mirroring Azure SQL Managed Instance (Preview)](../database/mirrored-database/azure-sql-managed-instance.md)
-- [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
+- [Mirroring Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance.md)
+- [What is Mirroring in Fabric?](../mirroring/overview.md)

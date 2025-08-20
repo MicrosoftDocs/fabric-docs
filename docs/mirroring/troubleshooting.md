@@ -18,24 +18,24 @@ Scenarios, resolutions, and workarounds for Microsoft Fabric mirrored databases.
 
 Review the troubleshooting section of frequently asked questions for each data source:
 
-- [Troubleshoot Mirroring Azure SQL Database](../database/mirrored-database/azure-sql-database-troubleshoot.md) and [FAQ about Mirroring Azure SQL Database](../database/mirrored-database/azure-sql-database-mirroring-faq.yml)
-- [Troubleshoot Mirroring Azure SQL Managed Instance](../database/mirrored-database/azure-sql-managed-instance-troubleshoot.md) and [FAQ about Mirroring Azure SQL Managed Instance](../database/mirrored-database/azure-sql-managed-instance-faq.yml)
-- [Troubleshoot Mirroring Azure Database for PostgreSQL flexible server](../database/mirrored-database/azure-database-postgresql-troubleshoot.md) and [FAQ about Mirroring Azure Database for PostgreSQL flexible server](../database/mirrored-database/azure-database-postgresql-mirroring-faq.yml)
-- [Troubleshoot Mirroring Azure Cosmos DB](../database/mirrored-database/azure-cosmos-db-troubleshooting.yml) and [FAQ about Mirroring Azure Cosmos DB](../database/mirrored-database/azure-cosmos-db-faq.yml)
+- [Troubleshoot Mirroring Azure SQL Database](../mirroring/azure-sql-database-troubleshoot.md) and [FAQ about Mirroring Azure SQL Database](../mirroring/azure-sql-database-mirroring-faq.yml)
+- [Troubleshoot Mirroring Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-troubleshoot.md) and [FAQ about Mirroring Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-faq.yml)
+- [Troubleshoot Mirroring Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-troubleshoot.md) and [FAQ about Mirroring Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-mirroring-faq.yml)
+- [Troubleshoot Mirroring Azure Cosmos DB](../mirroring/azure-cosmos-db-troubleshooting.yml) and [FAQ about Mirroring Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
 - [Troubleshoot Mirroring Snowflake](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric)
-- [FAQ about Mirroring Azure Databricks](../database/mirrored-database/azure-databricks-faq.yml)
+- [FAQ about Mirroring Azure Databricks](../mirroring/azure-databricks-faq.yml)
 - [Troubleshoot mirroring from Fabric SQL database (preview)](../database/sql/mirroring-troubleshooting.md) and [FAQ for Mirroring Fabric SQL database (preview)](../database/sql/mirroring-faq.yml)
-- [Troubleshoot Fabric mirrored databases From SQL Server](../database/mirrored-database/sql-server-troubleshoot.md) and [FAQ for Mirroring SQL Server in Microsoft Fabric](../database/mirrored-database/sql-server-faq.yml)
+- [Troubleshoot Fabric mirrored databases From SQL Server](../mirroring/sql-server-troubleshoot.md) and [FAQ for Mirroring SQL Server in Microsoft Fabric](../mirroring/sql-server-faq.yml)
 
 Review limitations documentation for each data source:
 
-- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database](../database/mirrored-database/azure-sql-database-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../database/mirrored-database/azure-sql-managed-instance-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server (Preview)](../database/mirrored-database/azure-database-postgresql-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../database/mirrored-database/azure-cosmos-db-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](../database/mirrored-database/azure-databricks-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Snowflake](../database/mirrored-database/snowflake-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases From SQL Server](../database/mirrored-database/sql-server-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server (Preview)](../mirroring/azure-database-postgresql-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Snowflake](../mirroring/snowflake-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-limitations.md)
 - [Limitations in mirroring from Fabric SQL database](../database/sql/mirroring-limitations.md)
 
 ## Changes to Fabric capacity
@@ -54,11 +54,11 @@ If you observe a delay in the appearance of mirrored data, check the following:
 
 - **Mirroring status:** In the [Fabric portal monitoring page](monitor.md#monitor-from-the-fabric-portal) of the mirrored database, check the status of mirrored database and specific tables, and the "**Last completed**" column that indicates the last time that Fabric refreshes the mirrored table from source. Empty means the table is not yet mirrored. 
 
-  If you enable the workspace monitoring, you can check the mirroring execution latency in addition, by querying the `ReplicatorBatchLatency` value from the [mirrored database operation logs](../database/mirrored-database/monitor-logs.md).
+  If you enable the workspace monitoring, you can check the mirroring execution latency in addition, by querying the `ReplicatorBatchLatency` value from the [mirrored database operation logs](../mirroring/monitor-logs.md).
 
   For source types like [Azure SQL Database](azure-sql-database-troubleshoot.md#t-sql-queries-for-troubleshooting), [Azure SQL Managed Instance](azure-sql-managed-instance-troubleshoot.md#t-sql-queries-for-troubleshooting) and [Azure Database for PostgreSQL](azure-database-postgresql-troubleshoot.md#sql-queries-for-troubleshooting), follow the specific instruction to also check the source database configuration and status.
 
-- **Data in OneLake:** Mirroring continuously replicates your data into OneLake in Delta Lake table format. To validate if the data lands in OneLake properly, you can create a shortcut from the mirrored tables into a Lakehouse, then build notebooks with Spark queries to query the data. Learn more about [Explore with notebooks](../database/mirrored-database/explore-onelake-shortcut.md).
+- **Data in OneLake:** Mirroring continuously replicates your data into OneLake in Delta Lake table format. To validate if the data lands in OneLake properly, you can create a shortcut from the mirrored tables into a Lakehouse, then build notebooks with Spark queries to query the data. Learn more about [Explore with notebooks](../mirroring/explore-onelake-shortcut.md).
 
 - **Data in SQL analytics endpoint:** You can query mirrored data through the SQL analytics endpoint of the mirrored database or a Lakehouse with a shortcut to the mirrored data. When you see a delay, validate the mirroring status and data in OneLake as mentioned above first. If the data shows up in OneLake but not in SQL analytics endpoint, it may be caused by a delay in [metadata sync](../data-warehouse/sql-analytics-endpoint-performance.md) in SQL analytics endpoint. 
 
@@ -76,7 +76,7 @@ When you mirror data from various types of source databases, your source schema 
 
 For mirrored databases created before this feature enabled, you see the source schema is flattened in the mirrored database, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database.
 
-If you use API to create/update mirrored database, set value for property `defaultSchema`, which indicates whether to replicate the schema hierarchy from the source database. Refer to the definition samples in [Microsoft Fabric mirroring public REST API](../database/mirrored-database/mirrored-database-rest-api.md).
+If you use API to create/update mirrored database, set value for property `defaultSchema`, which indicates whether to replicate the schema hierarchy from the source database. Refer to the definition samples in [Microsoft Fabric mirroring public REST API](../mirroring/mirrored-database-rest-api.md).
 
 ## Delta column mapping support
 
@@ -90,7 +90,7 @@ Currently, mirrored database doesn't support ownership change. If a mirrored dat
 
 ## Supported regions
 
-[!INCLUDE [fabric-mirroreddb-supported-regions](../database/mirrored-database/includes/fabric-mirroreddb-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](../mirroring/includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Troubleshoot
 
@@ -108,7 +108,7 @@ Currently, views are not supported. Only replicating regular tables are supporte
 
 #### No tables are being replicated
 
-1. Check the monitoring status to check the status of the tables. For more information, see [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md).
+1. Check the monitoring status to check the status of the tables. For more information, see [Monitor Fabric mirrored database replication](../mirroring/monitor.md).
 1. Select the **Configure replication** button. Check to see if the tables are present in the list of tables, or if any Alerts on each table detail are present.
 
 #### Columns are missing from the destination table
@@ -135,5 +135,5 @@ These common error messages have explanations and mitigations:
 
 ## Related content
 
-- [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
-- [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md)
+- [What is Mirroring in Fabric?](../mirroring/overview.md)
+- [Monitor Fabric mirrored database replication](../mirroring/monitor.md)

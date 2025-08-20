@@ -98,7 +98,7 @@ Here's a list of regions that support mirroring for Azure Databricks Catalog:
 
 ## Related content
 
-- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](../database/mirrored-database/azure-databricks-tutorial.md)
-- [Secure Fabric mirrored databases from Azure Databricks](../database/mirrored-database/azure-databricks-security.md)
-- [Review the FAQ](../database/mirrored-database/azure-databricks-faq.yml)
-- [Mirroring Azure Databricks Unity Catalog](../database/mirrored-database/azure-databricks.md)
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-tutorial.md)
+- [Secure Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-security.md)
+- [Review the FAQ](../mirroring/azure-databricks-faq.yml)
+- [Mirroring Azure Databricks Unity Catalog](../mirroring/azure-databricks.md)

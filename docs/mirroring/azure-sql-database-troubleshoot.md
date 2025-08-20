@@ -73,7 +73,7 @@ User Assigned Managed Identity (UAMI) is not supported. If you add a UAMI, it be
 
 ## SAMI permissions
 
-The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to have **Read** and **Write** permissions on the mirrored database item in Microsoft Fabric. When you create the mirrored database from the Fabric portal, the permission is granted automatically. If you encounter error `Unable to grant required permission to the source server. User does not have permission to reshare` during the setup, ensure you have a member or admin role in the workspace with sufficient privilege. When you [use API](../database/mirrored-database/mirrored-database-rest-api.md) to create the mirrored database, make sure you grant the permission explicitly.
+The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to have **Read** and **Write** permissions on the mirrored database item in Microsoft Fabric. When you create the mirrored database from the Fabric portal, the permission is granted automatically. If you encounter error `Unable to grant required permission to the source server. User does not have permission to reshare` during the setup, ensure you have a member or admin role in the workspace with sufficient privilege. When you [use API](../mirroring/mirrored-database-rest-api.md) to create the mirrored database, make sure you grant the permission explicitly.
 
 Do not remove SAMI **Read** and **Write** permissions on Fabric mirrored database item. If you accidentally remove the permissions, mirroring Azure SQL Database will not function as expected. No new data can be mirrored from the source database.
 
@@ -99,4 +99,4 @@ During the current preview, the following commands should be used to address the
 ## Related content
 
 - [Limitations of Microsoft Fabric Data Warehouse](../data-warehouse/limitations.md)
-- [FAQs for Mirroring Azure SQL Database in Microsoft Fabric](../database/mirrored-database/azure-sql-database-mirroring-faq.yml)
+- [FAQs for Mirroring Azure SQL Database in Microsoft Fabric](../mirroring/azure-sql-database-mirroring-faq.yml)

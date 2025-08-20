@@ -201,173 +201,173 @@ items:
 - name: Mirroring databases
   items: 
   - name: Mirroring overview
-    href: ../database/mirrored-database/overview.md
+    href: ../mirroring/overview.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: How to
     items:
     - name: Monitor mirrored databases
       displayName: Monitor mirroring
-      href: ../database/mirrored-database/monitor.md
+      href: ../mirroring/monitor.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
     - name: Mirrored database logs
-      href: ../database/mirrored-database/monitor-logs.md
+      href: ../mirroring/monitor-logs.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
     - name: Share and manage permissions
-      href: ../database/mirrored-database/share-and-manage-permissions.md
+      href: ../mirroring/share-and-manage-permissions.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Explore mirrored data
     items:
     - name: Explore your mirrored database
-      href: ../database/mirrored-database/explore.md
+      href: ../mirroring/explore.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
     - name: Explore directly in OneLake
       displayName: Explore mirrored data directly in OneLake
-      href: ../database/mirrored-database/explore-data-directly.md
+      href: ../mirroring/explore-data-directly.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
     - name: Explore with notebooks
       displayName: Explore mirrored data with notebooks
-      href: ../database/mirrored-database/explore-onelake-shortcut.md
+      href: ../mirroring/explore-onelake-shortcut.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Mirroring Azure SQL Database
     items:
       - name: Mirrored database from Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database.md
+        href: ../mirroring/azure-sql-database.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Azure SQL Database tutorial
-        href: ../database/mirrored-database/azure-sql-database-tutorial.md
+        href: ../mirroring/azure-sql-database-tutorial.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: FAQ about mirrored Azure SQL Database
         displayName: Frequently asked questions about Mirroring Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database-mirroring-faq.yml
+        href: ../mirroring/azure-sql-database-mirroring-faq.yml
       - name: Secure data 
         displayName: Securing data in mirrored Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database-how-to-data-security.md
+        href: ../mirroring/azure-sql-database-how-to-data-security.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Troubleshoot
         displayName: Troubleshoot mirrored Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database-troubleshoot.md
+        href: ../mirroring/azure-sql-database-troubleshoot.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Limitations
         displayName: Limitations in mirrored Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database-limitations.md
+        href: ../mirroring/azure-sql-database-limitations.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Mirroring Azure SQL Managed Instance
     items:
       - name: Mirrored database from Azure SQL Managed Instance
-        href: ../database/mirrored-database/azure-sql-managed-instance.md
+        href: ../mirroring/azure-sql-managed-instance.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Azure SQL Managed Instance tutorial
-        href: ../database/mirrored-database/azure-sql-managed-instance-tutorial.md
+        href: ../mirroring/azure-sql-managed-instance-tutorial.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: FAQ about mirrored Azure SQL Managed Instance
         displayName: Frequently asked questions about Mirroring Azure SQL Managed Instance
-        href: ../database/mirrored-database/azure-sql-managed-instance-faq.yml
+        href: ../mirroring/azure-sql-managed-instance-faq.yml
       - name: Secure data 
         displayName: Securing data in mirrored Azure SQL Managed Instance
-        href: ../database/mirrored-database/azure-sql-managed-instance-how-to-data-security.md
+        href: ../mirroring/azure-sql-managed-instance-how-to-data-security.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Troubleshoot
         displayName: Troubleshoot mirrored Azure SQL Managed Instance
-        href: ../database/mirrored-database/azure-sql-managed-instance-troubleshoot.md
+        href: ../mirroring/azure-sql-managed-instance-troubleshoot.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Limitations
         displayName: Limitations in mirrored Azure SQL Managed Instance
-        href: ../database/mirrored-database/azure-sql-managed-instance-limitations.md
+        href: ../mirroring/azure-sql-managed-instance-limitations.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Mirroring Azure Cosmos DB
     items: 
       - name: Mirrored databases from Azure Cosmos DB
-        href: ../database/mirrored-database/azure-cosmos-db.md        
+        href: ../mirroring/azure-cosmos-db.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json        
       - name: Azure Cosmos DB tutorial
-        href: ../database/mirrored-database/azure-cosmos-db-tutorial.md
+        href: ../mirroring/azure-cosmos-db-tutorial.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: FAQ about mirrored Azure Cosmos DB 
         displayName: Frequently asked questions about mirrored Azure Cosmos DB
-        href: ../database/mirrored-database/azure-cosmos-db-faq.yml
+        href: ../mirroring/azure-cosmos-db-faq.yml
       - name: Limitations
         displayName: Limitations in mirrored Azure Cosmos DB
-        href: ../database/mirrored-database/azure-cosmos-db-limitations.md
+        href: ../mirroring/azure-cosmos-db-limitations.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Troubleshoot 
         displayName: Troubleshoot mirrored Azure Cosmos DB
-        href: ../database/mirrored-database/azure-cosmos-db-troubleshooting.yml
+        href: ../mirroring/azure-cosmos-db-troubleshooting.yml
       - name: How to
         items:
           - name: Join data
-            href: ../database/mirrored-database/azure-cosmos-db-how-to-join-multiple.md
+            href: ../mirroring/azure-cosmos-db-how-to-join-multiple.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
           - name: Query nested data
-            href: ../database/mirrored-database/azure-cosmos-db-how-to-query-nested.md
+            href: ../mirroring/azure-cosmos-db-how-to-query-nested.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
           - name: Access data using Lakehouse and notebooks
-            href: ../database/mirrored-database/azure-cosmos-db-lakehouse-notebooks.md
+            href: ../mirroring/azure-cosmos-db-lakehouse-notebooks.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Mirroring Azure Databricks
     items:
       - name: Mirroring Azure Databricks
-        href: ../database/mirrored-database/azure-databricks.md
+        href: ../mirroring/azure-databricks.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Tutorial
         displayName: Mirroring Azure Databricks tutorial
-        href: ../database/mirrored-database/azure-databricks-tutorial.md
+        href: ../mirroring/azure-databricks-tutorial.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Secure data
         displayName: Mirroring Azure Databricks security
-        href: ../database/mirrored-database/azure-databricks-security.md
+        href: ../mirroring/azure-databricks-security.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Limitations
         displayName: Mirroring Azure Databricks Limitations
-        href: ../database/mirrored-database/azure-databricks-limitations.md
+        href: ../mirroring/azure-databricks-limitations.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: FAQ about Mirroring Azure Databricks
         displayName: Frequently asked questions about Mirroring Azure Databricks
-        href: ../database/mirrored-database/azure-databricks-faq.yml
+        href: ../mirroring/azure-databricks-faq.yml
   - name: Mirroring PostgreSQL
     items: 
       - name: Mirrored databases from PostgreSQL
-        href: ../database/mirrored-database/azure-database-postgresql.md
+        href: ../mirroring/azure-database-postgresql.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: PostgreSQL tutorial
-        href: ../database/mirrored-database/azure-database-postgresql-tutorial.md
+        href: ../mirroring/azure-database-postgresql-tutorial.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: FAQ about mirrored PostgreSQL
         displayName: Frequently asked questions about mirrored PostgreSQL
-        href: ../database/mirrored-database/azure-database-postgresql-mirroring-faq.yml
+        href: ../mirroring/azure-database-postgresql-mirroring-faq.yml
       - name: Secure data
         displayName: Secure data in mirrored PostgreSQL
-        href: ../database/mirrored-database/azure-database-postgresql-how-to-data-security.md
+        href: ../mirroring/azure-database-postgresql-how-to-data-security.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Limitations
         displayName: Limitations in mirrored PostgreSQL
-        href: ../database/mirrored-database/azure-database-postgresql-limitations.md
+        href: ../mirroring/azure-database-postgresql-limitations.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Troubleshoot
         displayName: Troubleshoot mirrored PostgreSQL
-        href: ../database/mirrored-database/azure-database-postgresql-troubleshoot.md
+        href: ../mirroring/azure-database-postgresql-troubleshoot.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Mirroring Snowflake
     items: 
       - name: Mirrored warehouses from Snowflake
-        href: ../database/mirrored-database/snowflake.md
+        href: ../mirroring/snowflake.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Snowflake tutorial
-        href: ../database/mirrored-database/snowflake-tutorial.md
+        href: ../mirroring/snowflake-tutorial.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: FAQ about mirrored Snowflake
         displayName: Frequently asked questions about mirrored Snowflake
-        href: ../database/mirrored-database/snowflake-mirroring-faq.yml
+        href: ../mirroring/snowflake-mirroring-faq.yml
       - name: Secure data
         displayName: Secure data in mirrored Snowflake
-        href: ../database/mirrored-database/snowflake-how-to-data-security.md
+        href: ../mirroring/snowflake-how-to-data-security.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Limitations 
         displayName: Limitations in mirrored Snowflake
-        href: ../database/mirrored-database/snowflake-limitations.md
+        href: ../mirroring/snowflake-limitations.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Mirroring SQL Server
     items: 
       - name: Mirrored databases from SQL Server
-        href: ../database/mirrored-database/sql-server.md
+        href: ../mirroring/sql-server.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: SQL Server tutorial
-        href: ../database/mirrored-database/sql-server-tutorial.md
+        href: ../mirroring/sql-server-tutorial.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: FAQ about mirrored SQL Server
         displayName: Frequently asked questions about mirrored SQL Server
-        href: ../database/mirrored-database/sql-server-faq.yml
+        href: ../mirroring/sql-server-faq.yml
       - name: Secure data 
         displayName: Securing data in mirrored SQL Server
-        href: ../database/mirrored-database/sql-server-security.md
+        href: ../mirroring/sql-server-security.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Limitations 
         displayName: Limitations in mirrored SQL Server
-        href: ../database/mirrored-database/sql-server-limitations.md
+        href: ../mirroring/sql-server-limitations.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Troubleshoot 
         displayName: Troubleshoot mirrored SQL Server
-        href: ../database/mirrored-database/sql-server-troubleshoot.md
+        href: ../mirroring/sql-server-troubleshoot.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Open mirroring 
     items:
       - name: Open mirroring overview
-        href: ../database/mirrored-database/open-mirroring.md
+        href: ../mirroring/open-mirroring.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Tutorial
         displayName: Open mirroring tutorial
-        href: ../database/mirrored-database/open-mirroring-tutorial.md
+        href: ../mirroring/open-mirroring-tutorial.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Open mirroring landing zone
         displayName: Open mirroring landing zone requirements and format
-        href: ../database/mirrored-database/open-mirroring-landing-zone-format.md
+        href: ../mirroring/open-mirroring-landing-zone-format.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Open mirroring FAQ
         displayName: Frequently asked questions about Open Mirroring
-        href: ../database/mirrored-database/open-mirroring-faq.yml
+        href: ../mirroring/open-mirroring-faq.yml
       - name: Open mirroring Partners Ecosystem
-        href: ../database/mirrored-database/open-mirroring-partners-ecosystem.md
+        href: ../mirroring/open-mirroring-partners-ecosystem.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Mirroring REST API
-    href: ../database/mirrored-database/mirrored-database-rest-api.md 
+    href: ../mirroring/mirrored-database-rest-api.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json 
   - name: CI/CD for mirrored databases
-    href: ../database/mirrored-database/mirrored-database-cicd.md 
+    href: ../mirroring/mirrored-database-cicd.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json 
   - name: Troubleshoot Mirroring
-    href: ../database/mirrored-database/troubleshooting.md           
+    href: ../mirroring/troubleshooting.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json           
 - name: Manage performance
   items:
   - name: In-memory and disk caching

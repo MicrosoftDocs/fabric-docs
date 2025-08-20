@@ -11,14 +11,14 @@ ms.custom:
 ---
 # Limitations in Microsoft Fabric mirrored databases from SQL Server
 
-Current limitations in the [Microsoft Fabric mirrored databases](../database/mirrored-database/overview.md) From SQL Server are listed in this page. This page is subject to change.
+Current limitations in the [Microsoft Fabric mirrored databases](../mirroring/overview.md) From SQL Server are listed in this page. This page is subject to change.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 For troubleshooting, see:
 
-- [Troubleshoot Fabric mirrored databases](../database/mirrored-database/troubleshooting.md)
-- [Troubleshoot Fabric mirrored databases From SQL Server](../database/mirrored-database/sql-server-troubleshoot.md)
+- [Troubleshoot Fabric mirrored databases](../mirroring/troubleshooting.md)
+- [Troubleshoot Fabric mirrored databases From SQL Server](../mirroring/sql-server-troubleshoot.md)
 
 ## Platform limitations
 
@@ -112,13 +112,13 @@ For troubleshooting, see:
 
 ## Supported regions
 
-[!INCLUDE [fabric-mirroreddb-supported-regions](../database/mirrored-database/includes/fabric-mirroreddb-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](../mirroring/includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases From SQL Server](../database/mirrored-database/sql-server-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-tutorial.md)
 
 ## Related content
 
-- [Monitor Fabric mirrored database replication](../database/mirrored-database/monitor.md)
+- [Monitor Fabric mirrored database replication](../mirroring/monitor.md)

@@ -12,9 +12,9 @@ no-loc: [Copilot]
 
 # Mirroring Azure SQL Managed Instance (Preview)
 
-[Mirroring in Fabric](../database/mirrored-database/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Azure SQL Managed Instance estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing SQL Managed Instance databases directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
+[Mirroring in Fabric](../mirroring/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Azure SQL Managed Instance estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing SQL Managed Instance databases directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
-For a tutorial on configuring your Azure SQL Managed Instance for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../database/mirrored-database/azure-sql-managed-instance-tutorial.md).
+For a tutorial on configuring your Azure SQL Managed Instance for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-tutorial.md).
 
 ## Why use Mirroring in Fabric?
 
@@ -65,11 +65,11 @@ Fabric compute used to replicate your data into Fabric OneLake is free. Storage 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../database/mirrored-database/azure-sql-managed-instance-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-tutorial.md)
 
 ## Related content
 
-- [How to: Secure data Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../database/mirrored-database/azure-sql-managed-instance-how-to-data-security.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../database/mirrored-database/azure-sql-managed-instance-limitations.md)
-- [Monitor Fabric mirrored Managed Instance database replication](../database/mirrored-database/monitor.md)
-- [Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../database/mirrored-database/azure-sql-managed-instance-troubleshoot.md)
+- [How to: Secure data Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-how-to-data-security.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-limitations.md)
+- [Monitor Fabric mirrored Managed Instance database replication](../mirroring/monitor.md)
+- [Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-troubleshoot.md)

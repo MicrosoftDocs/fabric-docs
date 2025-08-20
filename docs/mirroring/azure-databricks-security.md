@@ -29,7 +29,7 @@ When configuring Azure Databricks mirroring to Microsoft Fabric, enable [trusted
 
 Trusted workspace access requires creating a connection directly to the ADLS storage account which can be used independently of the Azure Databricks workspace connection. Unity Catalog policies such as [RLS/CLM or ABAC](/azure/databricks/tables/row-and-column-filters) are not enforced at the storage layer and will not be applied if a connection is used to directly access storage. Trusted workspace access instead relies on [Fabric workspace identities administration and governance](../../security/workspace-identity.md#security-administration-and-governance-of-the-workspace-identity).
 
-Follow the steps in the [Tutorial to Enable network security access](../database/mirrored-database/azure-databricks-tutorial.md). It is recommended to give granular control on the storage account by specifying a specific folder within a container, and [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal#step-2-open-the-add-role-assignment-page).
+Follow the steps in the [Tutorial to Enable network security access](../mirroring/azure-databricks-tutorial.md). It is recommended to give granular control on the storage account by specifying a specific folder within a container, and [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal#step-2-open-the-add-role-assignment-page).
 
 ## Permissions
 
@@ -41,7 +41,7 @@ For more information on setting up Fabric Workspace security, see the [Permissio
 
 ## Related content
 
-- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](../database/mirrored-database/azure-databricks-tutorial.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](../database/mirrored-database/azure-databricks-limitations.md)
-- [Review the FAQ](../database/mirrored-database/azure-databricks-faq.yml)
-- [Mirroring Azure Databricks Unity Catalog](../database/mirrored-database/azure-databricks.md)
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-tutorial.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-limitations.md)
+- [Review the FAQ](../mirroring/azure-databricks-faq.yml)
+- [Mirroring Azure Databricks Unity Catalog](../mirroring/azure-databricks.md)

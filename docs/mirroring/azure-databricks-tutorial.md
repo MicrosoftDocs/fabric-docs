@@ -10,7 +10,7 @@ ms.topic: tutorial
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks
 
-[Database mirroring in Microsoft Fabric](../database/mirrored-database/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. This guide helps you establish a mirrored database from Azure Databricks, which creates a read-only, continuously replicated copy of your Azure Databricks data in OneLake.
+[Database mirroring in Microsoft Fabric](../mirroring/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. This guide helps you establish a mirrored database from Azure Databricks, which creates a read-only, continuously replicated copy of your Azure Databricks data in OneLake.
 
 ## Prerequisites
 
@@ -116,9 +116,9 @@ Map Unity Catalog (UC) policies to Microsoft OneLake security by following these
 
 ## Related content
 
-- [Secure Fabric mirrored databases from Azure Databricks](../database/mirrored-database/azure-databricks-security.md)
+- [Secure Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-security.md)
 - [Blog: Secure Mirrored Azure Databricks Data in Fabric with OneLake security](https://blog.fabric.microsoft.com/blog/secure-mirrored-azure-databricks-data-in-fabric-with-onelake-security)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](../database/mirrored-database/azure-databricks-limitations.md)
-- [Frequently asked questions for mirrored databases from Azure Databricks in Microsoft Fabric](../database/mirrored-database/azure-databricks-faq.yml)
-- [Mirroring Azure Databricks Unity Catalog](../database/mirrored-database/azure-databricks.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-limitations.md)
+- [Frequently asked questions for mirrored databases from Azure Databricks in Microsoft Fabric](../mirroring/azure-databricks-faq.yml)
+- [Mirroring Azure Databricks Unity Catalog](../mirroring/azure-databricks.md)
 - [Control external access to data in Unity Catalog](/azure/databricks/data-governance/unity-catalog/access-open-api)

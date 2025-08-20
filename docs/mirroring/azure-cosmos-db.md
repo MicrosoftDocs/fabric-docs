@@ -13,7 +13,7 @@ no-loc: [Copilot]
 
 # Mirroring Azure Cosmos DB (Preview)
 
-[Mirroring in Microsoft Fabric](../database/mirrored-database/overview.md) provides a seamless no-ETL experience to integrate your existing Azure Cosmos DB data with the rest of your data in Microsoft Fabric. 
+[Mirroring in Microsoft Fabric](../mirroring/overview.md) provides a seamless no-ETL experience to integrate your existing Azure Cosmos DB data with the rest of your data in Microsoft Fabric. 
 Your Azure Cosmos DB data is continuously replicated directly into Fabric OneLake in near real-time, without any performance impact on your transactional workloads or consuming Request Units (RUs). 
 
 Data in OneLake is stored in the open-source delta format and automatically made available to all analytical engines on Fabric. 
@@ -100,7 +100,7 @@ To mirror a database, it should already be provisioned in Azure. You must enable
 
 Nested data is shown as a JSON string in SQL analytics endpoint tables. You can use `OPENJSON`, `CROSS APPLY`, and `OUTER APPLY` in T-SQL queries or views to expand this data selectively. If you're using Power Query, you can also apply the `ToJson` function to expand this data.
 
-Through auto schema inference, nested data can be flattened through `OPENJSON` without having to explicitely define the nested schema. This is especially useful for workloads with dynamic or unpredictable nested schemas. For more information, see [how to query nested data](../database/mirrored-database/azure-cosmos-db-how-to-query-nested.md).
+Through auto schema inference, nested data can be flattened through `OPENJSON` without having to explicitely define the nested schema. This is especially useful for workloads with dynamic or unpredictable nested schemas. For more information, see [how to query nested data](../mirroring/azure-cosmos-db-how-to-query-nested.md).
 
 > [!NOTE]
 > Fabric has a limitation for string columns of 8 KB in size. For more information and our current workaround, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
@@ -193,9 +193,9 @@ If you're using the data explorer in Fabric mirroring, you accrue typical costs 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../database/mirrored-database/azure-cosmos-db-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-tutorial.md)
 
 ## Related content
 
-- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../database/mirrored-database/azure-cosmos-db-limitations.md)
-- [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../database/mirrored-database/azure-cosmos-db-faq.yml)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-limitations.md)
+- [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)

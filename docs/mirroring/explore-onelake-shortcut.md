@@ -17,13 +17,13 @@ Notebooks are a powerful code item for you to develop Apache Spark jobs and mach
 ## Prerequisites
 
 - Complete the tutorial to create a mirrored database from your source database.
-    - [Tutorial: Configure Microsoft Fabric mirrored database for Azure Cosmos DB (Preview)](../database/mirrored-database/azure-cosmos-db-tutorial.md)
-    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](../database/mirrored-database/azure-databricks-tutorial.md)
-    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](../database/mirrored-database/azure-sql-database-tutorial.md)
-    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../database/mirrored-database/azure-sql-managed-instance-tutorial.md)
-    - [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../database/mirrored-database/snowflake-tutorial.md)
-    - [Tutorial: Configure Microsoft Fabric mirrored databases from SQL Server](../database/mirrored-database/sql-server-tutorial.md)
-    - [Tutorial: Create an open mirrored database](../database/mirrored-database/open-mirroring-tutorial.md)
+    - [Tutorial: Configure Microsoft Fabric mirrored database for Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-tutorial.md)
+    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-tutorial.md)
+    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-tutorial.md)
+    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-tutorial.md)
+    - [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../mirroring/snowflake-tutorial.md)
+    - [Tutorial: Configure Microsoft Fabric mirrored databases from SQL Server](../mirroring/sql-server-tutorial.md)
+    - [Tutorial: Create an open mirrored database](../mirroring/open-mirroring-tutorial.md)
 
 ## Create a shortcut
 
@@ -53,6 +53,6 @@ You first need to create a shortcut from your mirrored tables into the Lakehouse
 
 ## Related content
 
-- [Explore data in your mirrored database using Microsoft Fabric](../database/mirrored-database/explore.md)
+- [Explore data in your mirrored database using Microsoft Fabric](../mirroring/explore.md)
 - [Create shortcuts in lakehouse](../data-engineering/lakehouse-shortcuts.md)
 - [Explore the data in your lakehouse with a notebook](../data-engineering/lakehouse-notebook-explore.md)

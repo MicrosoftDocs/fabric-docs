@@ -35,10 +35,10 @@ Current limitations in the Microsoft Fabric mirrored databases from Snowflake ar
 
 ## Supported regions
 
-[!INCLUDE [fabric-mirroreddb-supported-regions](../database/mirrored-database/includes/fabric-mirroreddb-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](../mirroring/includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Related content
 
-- [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
-- [Mirroring Snowflake](../database/mirrored-database/snowflake.md)
-- [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../database/mirrored-database/snowflake-tutorial.md)
+- [What is Mirroring in Fabric?](../mirroring/overview.md)
+- [Mirroring Snowflake](../mirroring/snowflake.md)
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../mirroring/snowflake-tutorial.md)

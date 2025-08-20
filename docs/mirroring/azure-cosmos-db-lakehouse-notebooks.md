@@ -114,6 +114,6 @@ Finally, you can use Spark and Python code to write data back to your source Azu
 
 ## Related content
 
-- [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../database/mirrored-database/azure-cosmos-db-faq.yml)
-- [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](../database/mirrored-database/azure-cosmos-db-troubleshooting.yml)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../database/mirrored-database/azure-cosmos-db-limitations.md)
+- [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
+- [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-troubleshooting.yml)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-limitations.md)

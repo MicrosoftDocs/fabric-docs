@@ -39,7 +39,7 @@ For more information, see [Query using the SQL query editor](../data-warehouse/s
 
 Notebooks are a powerful code item for you to develop Apache Spark jobs and machine learning experiments on your data. You can use notebooks in the Fabric Lakehouse to explore your mirrored tables. You can access your mirrored database from the Lakehouse with Spark queries in notebooks. You first need to create a shortcut from your mirrored tables into the Lakehouse, and then build notebooks with Spark queries in your Lakehouse.
 
-For a step-by-step guide, see [Explore data in your mirrored database with notebooks](../database/mirrored-database/explore-onelake-shortcut.md).
+For a step-by-step guide, see [Explore data in your mirrored database with notebooks](../mirroring/explore-onelake-shortcut.md).
 
 For more information, see [Create shortcuts in lakehouse](../data-engineering/lakehouse-shortcuts.md) and see [Explore the data in your lakehouse with a notebook](../data-engineering/lakehouse-notebook-explore.md).
 
@@ -47,7 +47,7 @@ For more information, see [Create shortcuts in lakehouse](../data-engineering/la
 
 You can access mirrored database table data in Delta format files. Connect to the [OneLake](../onelake/onelake-overview.md) directly through the [OneLake file explorer](../onelake/onelake-file-explorer.md) or [Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md).
 
-For a step-by-step guide, see [Explore data in your mirrored database directly in OneLake](../database/mirrored-database/explore-data-directly.md).
+For a step-by-step guide, see [Explore data in your mirrored database directly in OneLake](../mirroring/explore-data-directly.md).
 
 ## Model your data and add business semantics
 
@@ -69,6 +69,6 @@ For more information, see [Create reports in the Power BI service in Microsoft F
 
 ## Related content
 
-- [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
+- [What is Mirroring in Fabric?](../mirroring/overview.md)
 - [What is the SQL analytics endpoint for a lakehouse?](../data-engineering/lakehouse-sql-analytics-endpoint.md)
 - [Direct Lake overview](../fundamentals/direct-lake-overview.md)

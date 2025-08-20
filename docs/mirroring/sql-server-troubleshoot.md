@@ -51,7 +51,7 @@ If you're experiencing mirroring problems in SQL Server 2025, perform the follow
 
     The key columns to look for here are the `table_name` and `state`. Any value besides `4` indicates a potential problem.
 
-1. Review [Troubleshoot Fabric mirrored databases](../database/mirrored-database/troubleshooting.md).
+1. Review [Troubleshoot Fabric mirrored databases](../mirroring/troubleshooting.md).
 1. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
 
 
@@ -86,10 +86,10 @@ Change Data Capture (CDC) is used for Fabric Mirroring in versions SQL Server 20
 
 1. Review [Known issues and errors in CDC](/sql/relational-databases/track-changes/known-issues-and-errors-change-data-capture?view=sql-server-ver16&preserve-view=true#troubleshooting-errors) for common error resolutions.
 1. Review [Administer and monitor CDC](/sql/relational-databases/track-changes/administer-and-monitor-change-data-capture-sql-server?view=sql-server-ver16&preserve-view=true) for diagnostic queries.
-1. Review [Troubleshoot Fabric mirrored databases](../database/mirrored-database/troubleshooting.md).
+1. Review [Troubleshoot Fabric mirrored databases](../mirroring/troubleshooting.md).
 1. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
 
 ## Related content
 
-- [Troubleshoot Fabric mirrored databases](../database/mirrored-database/troubleshooting.md)
-- [Frequently asked questions for Mirroring SQL Server in Microsoft Fabric](../database/mirrored-database/sql-server-faq.yml)
+- [Troubleshoot Fabric mirrored databases](../mirroring/troubleshooting.md)
+- [Frequently asked questions for Mirroring SQL Server in Microsoft Fabric](../mirroring/sql-server-faq.yml)

@@ -14,13 +14,13 @@ You can access mirrored database table data in Delta format files. This tutorial
 ## Prerequisites
 
 - Complete the tutorial to create a mirrored database from your source database.
-    - [Tutorial: Create a mirrored database from Azure Cosmos DB](../database/mirrored-database/azure-cosmos-db-tutorial.md)
-    - [Tutorial: Create a mirrored database from Azure Databricks](../database/mirrored-database/azure-databricks-tutorial.md)
-    - [Tutorial: Create a mirrored database from Azure SQL Database](../database/mirrored-database/azure-sql-database-tutorial.md)
-    - [Tutorial: Create a mirrored database from Azure SQL Managed Instance](../database/mirrored-database/azure-sql-managed-instance-tutorial.md)
-    - [Tutorial: Create a mirrored database from Snowflake](../database/mirrored-database/snowflake-tutorial.md)
-    - [Tutorial: Create a mirrored database from SQL Server](../database/mirrored-database/sql-server-tutorial.md)
-    - [Tutorial: Create an open mirrored database](../database/mirrored-database/open-mirroring-tutorial.md)
+    - [Tutorial: Create a mirrored database from Azure Cosmos DB](../mirroring/azure-cosmos-db-tutorial.md)
+    - [Tutorial: Create a mirrored database from Azure Databricks](../mirroring/azure-databricks-tutorial.md)
+    - [Tutorial: Create a mirrored database from Azure SQL Database](../mirroring/azure-sql-database-tutorial.md)
+    - [Tutorial: Create a mirrored database from Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-tutorial.md)
+    - [Tutorial: Create a mirrored database from Snowflake](../mirroring/snowflake-tutorial.md)
+    - [Tutorial: Create a mirrored database from SQL Server](../mirroring/sql-server-tutorial.md)
+    - [Tutorial: Create an open mirrored database](../mirroring/open-mirroring-tutorial.md)
 
 ## Access OneLake files
 
@@ -49,6 +49,6 @@ You can access mirrored database table data in Delta format files. This tutorial
 
 ## Related content
 
-- [Explore data in your mirrored database using Microsoft Fabric](../database/mirrored-database/explore.md)
-- [Explore data in your mirrored database with notebooks](../database/mirrored-database/explore-onelake-shortcut.md)
+- [Explore data in your mirrored database using Microsoft Fabric](../mirroring/explore.md)
+- [Explore data in your mirrored database with notebooks](../mirroring/explore-onelake-shortcut.md)
 - [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)
