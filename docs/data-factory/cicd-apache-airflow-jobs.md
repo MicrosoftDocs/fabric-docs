@@ -115,7 +115,7 @@ Before you get started, be sure to set up the following prerequisites:
 2. When the **Create deployment pipeline** window opens, enter a name and description for your pipeline, then select **Next**.
 3. Choose how many stages you want in your pipeline. By default, you see three stages: _Development_, _Test_, and _Production_.
 
-### Step 3: Assign a workspace to the deployment pipeline
+### Step 2: Assign a workspace to the deployment pipeline
 
 After creating a deployment pipeline, you need to add content you want to manage to the deployment pipeline. Adding content to the deployment pipeline is done by assigning a workspace to any deployment pipeline stage:
 
