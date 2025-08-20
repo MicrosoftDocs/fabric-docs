@@ -133,10 +133,6 @@ To change the name of your Power BI Premium capacity, follow these steps:
 
 # [Power BI Embedded](#tab/power-bi-embedded)
 
-#### A SKUs
-
->[!NOTE]
->Renaming isn’t supported for A SKUs.
 
 #### EM SKUs
 
@@ -146,6 +142,9 @@ To change the name of your EM capacity, follow these steps:
 1. From the list of capacities, select the gear icon (**&#9881;**) next to the capacity you want to change.
 1. Select the pencil icon next to the **Capacity name** field.
 1. Enter the new name for the capacity, and then select the checkmark icon (**&check;*)*.
+
+>[!NOTE]
+>Renaming isn’t supported for A SKUs.
 
 # [Trial](#tab/trial)
 
