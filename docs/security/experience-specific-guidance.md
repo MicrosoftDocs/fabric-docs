@@ -346,6 +346,26 @@ Customers can also achieve geo-redundancy by deploying identical Eventstream wor
 
 1. Add identical destinations for each eventstream in different regions.
 
+## Transactional database
+
+This guide describes the recovery procedures for the transactional database experience. 
+
+### SQL database
+
+To protect against a regional failure, users of SQL databases can take proactive measures to periodically export their data and use the exported data to recreate the database in a new workspace when needed.
+
+This can be achieved by using the [SqlPackage](../database/sql/sqlpackage.md) CLI tool that provides database portability and facilitates database deployments.
+
+1. Use the SqlPackage tool to export the database to a `.bacpac` file.  See [Export a database with SqlPackage](../database/sql/sqlpackage.md#export-a-database-with-sqlpackage) for more details.
+1. Store the `.bacpac` file in a secure location that is in a different region than the database.  Examples include storing the `.bacpac` file in a Lakehouse that is in a different region, using a geo-redundant Azure Storage Account, or using another secure storage medium that is in a different region.
+3. If the SQL database and region are unavailable, you can use the `.bacpac` file with SqlPackage to recreate the database in a workspace in a new region – Workspace C2.W2 in Region B as described in the scenario above.  Follow the steps detailed in [Import a database with SqlPackage](../database/sql/sqlpackage.md#import-a-database-with-sqlpackage) to recreate the database with your `.bacpac` file.
+
+The recreated database is an independent database from the original database and reflects the state of the data at the time of the export operation.
+
+#### Failback considerations
+
+The recreated database is an independent database.  Data added to the recreated database would not be reflected in the original database.  If you plan to failback to the original database when the home region becomes available, you will need to consider manually reconciling data from the recreated database to the original database.
+
 ## Platform
 
 Platform refers to the underlying shared services and architecture that apply to all workloads. This section walks you through the recovery procedures for shared experiences. It covers variable libraries.
