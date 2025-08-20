@@ -76,11 +76,33 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workspaces tied to a capacity. It's used by capacity administrators to monitor the performance of workloads and their usage compared to purchased capacity. Using the Metrics app is the most accurate way to estimate the costs of Dataflow Gen2 refresh runs. To understand how the tiered pricing impacted your standard compute costs, you will need to also use Dataflow refresh history.
 
-These exercises shows you how to validate costs:
+These exercises shows you how to validate costs for both CI/CD and non CI/CD Dataflows
 
-1. Exercise 1: Understanding standard Compute
+1. Exercise 1: Understanding standard Compute for a CI/CD Dataflow
 
-This dataflow has two queries involving transformation, and staging is disabled. Dataflows Gen2 will only use the 
+This dataflow has two queries involving transformation, and staging is disabled. Dataflows Gen2 will only use the Standard Compute.
+
+
+For each query, access the query duration from Refresh history and apply the following formula to compute the CU consumption per query.
+
+<code>StandardComputeCapacityConsumptionInCUSeconds = if(QueryDurationInSeconds < 600, QueryDurationInSeconds x 12, (QueryDurationInSeconds - 600) x 1.5 + 600 x 12) </code>
+
+Aggregate the Capacity Consumption in CU seconds and validate the consumption in the Fabric capacity metrics app.
+
+2. Exercise 2: Understanding standard Compute for a non CI / CD Dataflow
+
+This dataflow has two queries involving transformation, and staging is disabled. Dataflows Gen2 will only use the Standard Compute.
+
+
+For each query, access the query duration from Refresh history and apply the following formula to compute the CU consumption per query.
+
+<code>StandardComputeCapacityConsumptionInCUSeconds = QueryDurationInSeconds x 16 </code>
+
+Aggregate the Capacity Consumption in CU seconds and validate the consumption in the Fabric capacity metrics app.
+
+3. Exercise 3: Understanding High Scale Compute Consumption
+
+This dataflow has staging enabled. To calculate the High Scale compute usage you can navigate to the Fabric Capacity Metrics App and filter for the Dataflow Item Name. Right click on the name and under the list of operations, check for High Scale compute. The consumption is 6 x the duration in seconds.
 
 ## Related content
 
