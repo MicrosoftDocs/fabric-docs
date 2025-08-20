@@ -72,7 +72,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. In the upper tool bar, select **New data source** > **Azure Data Explorer**.
 
-    :::image type="content" source="media/real-time-dashboard/azure-data.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with azure data explorer highlighted.":::
+    :::image type="content" source="media/real-time-dashboard/azure-data.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with Azure data explorer highlighted.":::
 
 ## [Azure Monitor](#tab/azure-data-monitor)
 
@@ -80,7 +80,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. In the upper tool bar, select **New data source** > **Azure Monitor** and select either **Application Insights** or **Log Analytics**.
 
-    :::image type="content" source="media/real-time-dashboard/azure-monitor.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with azure monitor highlighted.":::
+    :::image type="content" source="media/real-time-dashboard/azure-monitor.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with Azure monitor highlighted.":::
 
 1. Enter your connection parameters or a full connection URI:
 
