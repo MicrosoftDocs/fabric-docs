@@ -30,7 +30,7 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 1. Browse to the [admin portal](../admin/admin-center.md).
 
 1. In the **Tenant settings** tab, search for *Real-Time Dashboards*. For more information, see [About tenant settings](../admin/about-tenant-settings.md).
-1. Toggle the button for **Create Real-Time Dashboards** to **Enabled**. For more information, see [Tenant settings - Microsoft Fabric](../admin/tenant-settings-index.md).
+1. Toggle the button for **Create Real-Time dashboards** to **Enabled**. For more information, see [Tenant settings - Microsoft Fabric](../admin/tenant-settings-index.md).
 1. Select **Apply**.
 
     :::image type="content" source="media/real-time-dashboard/enable-tenant-settings.png" alt-text="Screenshot of enabling tenant settings for Real-Time Dashboards.":::
@@ -43,26 +43,75 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 > You can also use Copilot to help you write queries. For more information, see [Use Copilot in KQL Queryset](../fundamentals/copilot-for-writing-queries.md).
 
 ## Edit mode
-If you aren't able to edit a dashboard, ensure that you are in the Editing mode. 
+If you aren't able to edit a dashboard, ensure that you are in the Editing mode.
 
 :::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view." lightbox="media/real-time-dashboard/edit-mode.png":::
 
 ## Add data source
 
-Data sources are reusable references to a specific database in the same workspace as the Real-Time Dashboard. Different tiles can be based on different data sources.
+Data sources are reusable references to a specific database in the same workspace as the Real-Time dashboard. Different tiles can be based on different data sources.
 
-1. Select **New data source** on the ribbon at the top, and then select **Azure Data Explorer**.
+Select the tab that corresponds with your desired data source type.
+
+## [Eventhouse / KQL Database](#tab/kql-database)
+
+1. Open your Real-Time dashboard.
+
+1. In the upper tool bar, select **New data source** > **Eventhouse / KQL Database**.
+
+    :::image type="content" source="media/real-time-dashboard/event-house.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with eventhouse/kql database highlighted.":::
+
+1. In the **OneLake catalog** window, select a KQL database to connect to your KQL queryset, and then select **Connect**.
+
+    Alternatively, close the **OneLake data hub** window and use the **+ Add data source** menu to connect to a different data source.
+
+## [Azure Data Explorer](#tab/azure-data-explorer-cluster)
+
+1. Open your Real-Time dashboard.
+
+1. In the upper tool bar, select **New data source** > **Azure Data Explorer**.
+
+    :::image type="content" source="media/real-time-dashboard/azure-data.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with Azure data explorer highlighted.":::
+
+## [Azure Monitor](#tab/azure-data-monitor)
+
+1. Open your Real-Time dashboard.
+
+1. In the upper tool bar, select **New data source** > **Azure Monitor** and select either **Application Insights** or **Log Analytics**.
+
+    :::image type="content" source="media/real-time-dashboard/azure-monitor.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with Azure monitor highlighted.":::
+
+1. Enter your connection parameters or a full connection URI:
+
+    **To enter your connection parameters**:
+
+    1. Enter your **Subscription ID**. You can find the ID in the Azure portal by selecting **Subscriptions** > your subscription name > copy the Subscription ID from the resource Overview tab.
+
+    1. Select the **Resource Group** that contains your Application Insights or Log Analytics database.
+
+    1. Enter the **Workspace Name** for Log Analytics or the **Application Insights app name** for Application Insights. You can find the name in the Azure portal by selecting the Application Insights or Log Analytics resource.
+
+    1. Select the **Application Insights** or **Log Analytics** database from the drop-down list. This list is populated with the databases in your selected database group.
+
+    **To enter a full connection URI**:
+
+    1. Select **Connection URI** and enter your Connection URI in this format:
+
+    > Replace \<subscription-id\>, \<resource-group-name\> and \<ai-app-name\> with your own values.
+
+    For Log Analytics: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`
+
+    For Application Insights: `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`
+
+1. Select a **Database**. Expand the list and select a database.
 
     :::image type="content" source="media/real-time-dashboard/new-data-source.png" alt-text="Screenshot of adding a new data source to a Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric.":::
 1. In the **Connect Azure Data Explorer cluster** window, follow these steps:
     1. Enter the **Connection URI** for your Azure Data Explorer cluster.
     1. Select a **database** in the cluster.
-    1. Select **Create**.
+    1. Select **Connect**.
 
-        :::image type="content" source="media/real-time-dashboard/connect-azure-data-explorer-cluster.png" alt-text="Screenshot of the Connect Azure Data Explorer cluster window.":::  
-1. On the **Create new data source** page, enter a display name for the data source, and select **Add**. 
-
-    :::image type="content" source="media/real-time-dashboard/create-new-data-source.png" alt-text="Screenshot of the Create new data source window.":::  
+ A list of tables associated with this data source appears below the data source name
 
 ## Add tile
 
