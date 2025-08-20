@@ -43,6 +43,11 @@ OneLake security enables users to define data access roles for the following Fab
 
 ## OneLake security and Workspace permissions
 
+Workspace permissions are the first security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../../fundamentals/roles-workspaces.md)
+
+Workspace roles manage the control plane data access, meaning interactions with creating and managing Fabric artifacts and permissions. In addition, workspace roles also provide default access levels to data items through the use of OneLake security default roles. A default role is a normal OneLake security role that is created automatically with every new item. It gives users with certain workspace or item permissions a default level of access to data in that item. For example, Lakehouse items have a DefaultReader role that lets users with the ReadAll permission see data in the Lakehouse. This ensures that users accessing a newly created item have a basic level of access. The table below
+
+Wo
 Workspace and item permissions let you grant "coarse-grain" access to data in OneLake for the given item. OneLake security permissions enable you to restrict the data access in OneLake only to specific folders.
 
 :::image type="content" source=".\media\security-flow.png" alt-text="Diagram showing the order of permissions evaluations with workspace, item, and RBAC.":::
@@ -51,7 +56,7 @@ When a user tries to access a folder in a lakehouse, OneLake security first chec
 
 
 
-Workspace permissions are the first security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../../fundamentals/roles-workspaces.md)
+
 
 Workspace roles in Fabric grant the following permissions in OneLake.
 
