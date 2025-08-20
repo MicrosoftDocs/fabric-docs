@@ -125,18 +125,17 @@ The tabbed navigation allows you to work with multiple items and workspaces at t
 
 ### Tabs for open items
 
-Tabs appear horizontally across the top of the Fabric portal and show the item name, type (for example, notebook, pipeline, report), and workspace context. Tabs make it easier to identify and switch between open items without losing focus.
+When you create a new item, it appears in a tab horizontally across the top of the Fabric portal and shows the item name, icon for the item type (for example, notebook, pipeline, semantic model etc.). You can hover over the tab to view the workspace it's created in. You can drag a tab to the required position. Tabs make it easier to identify and switch between open items without losing focus.
 
 ### Multiple open workspaces
 
-You can now open and work across multiple workspaces side by side.
-
-- Items are color-coded and numbered to indicate which workspace they belong to.  
-- This feature helps reduce confusion and improves context when working in multiple environments.
+You can open and work across multiple workspaces side by side. Items are color-coded and numbered to indicate which workspace they belong to. This feature helps reduce confusion and improves context when working in multiple environments.
 
 ### Object explorer
 
-The Object Explorer provides a structured view of items across all your currently open workspaces. Use it to quickly locate and open resources without having to switch between pages.
+The object explorer provides a structured view of items across all your currently open workspaces. Use it to quickly locate and open resources without having to switch between pages. You can pin the object explorer for easy access. Use the filter option to view items of a specific type or search for an item by a keyword. The items are organized by the hierarchy they belong to.
+
+:::image type="content" source="media/fabric-home/tabs-object-explorer.png" alt-text="Screenshot showing the object explorer & multiple tabs to quickly locate and open resources.":::
 
 ### More open items
 
