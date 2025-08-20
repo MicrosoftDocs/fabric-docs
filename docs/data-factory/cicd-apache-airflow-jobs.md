@@ -48,7 +48,7 @@ Follow these steps to connect your Airflow in Data Factory to Git. Git helps you
 To use Git integration with Airflow in Fabric, you first need to connect to a Git repository:
 
 1. Sign in to Fabric and go to the workspace you want to connect to Git.
-2. Select **Workspace settings**.
+1. Select **Workspace settings**.
 
    :::image type="content" source="media/cicd-data-pipelines/workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings in Fabric UI.":::
 
