@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: overview
 ms.custom:
-ms.date: 08/18/2025
+ms.date: 08/20/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -24,7 +24,7 @@ Workspace-level private links in Microsoft Fabric provide a secure way to connec
 
 ## Supported item types for workspace-level private link
 
-You can use workspace-level private links to connect to following item types in Fabric:
+You can use workspace-level private links to connect to the following item types in Fabric:
 
 * Lakehouse, SQL Endpoint, Shortcut
 * Direct connection via OneLake endpoint
@@ -33,9 +33,7 @@ You can use workspace-level private links to connect to following item types in 
 * Data pipeline
 * Copy Job
 * Mounted Data Factory
-* Eventstream
 * Warehouse 
-* Eventhouse
 * Dataflows Gen2 (CI/CD)
 * Variable library
 
@@ -97,14 +95,15 @@ APIs with endpoints containing `v1/workspaces/{workspaceId}` support workspace-l
 * [OneLake Data Access Security - Create Or Update Data Access Roles - REST API (Core)](/rest/api/fabric/core/onelake-data-access-security) 
 * [OneLake Shortcuts - REST API (Core)](/rest/api/fabric/core/onelake-shortcuts)
     * From a restricted workspace, you can create shortcuts to other data sources such as external storage, or through trusted access.
-    * When you create a shortcut to another restricted workspace, you need to create a managed private endpoint and get approval from the target workspace private link service owner in Azure. <!--For more information, see [Cross-workspace communication](./security-cross-workspace-communication.md).-->
+    * When you create a shortcut to another restricted workspace, you need to create a managed private endpoint and get approval from the target workspace private link service owner in Azure. For more information, see [Cross-workspace communication](security-cross-workspace-communication.md).
+    * Shortcut transforms are not currently supported in restricted workspaces.
 * [Tags - REST API (Core)](/rest/api/fabric/core/tags)
 * [Workspaces - REST API (Core)](/rest/api/fabric/core/workspaces)
 * [External Data Shares Provider - REST API (Core)](/rest/api/fabric/core/external-data-shares-provider): The recipient needs to use the workspace fully qualified domain name (FQDN) to access the shared OneLake URL.
 
 > [!NOTE]
 > * The [workspaces network communication policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy) isn't restricted by workspace-level network settings. This API remains accessible from public networks, even if public access to the workspace is blocked. Tenant-level network restrictions still apply. See also [Table 1. Access to workspace communication policy API based on tenant and private link settings](security-workspace-level-private-links-set-up.md#step-8-deny-public-access-to-the-workspace).
-> * **Deployment pipelines:** If any workspace in a deployment pipeline is set to deny public access (restricted), deployment pipelines can't connect to that workspace. 
+> * **Deployment pipelines:** If any workspace in a deployment pipeline is set to deny public access (restricted), deployment pipelines can't connect to that workspace. Configuring inbound restriction is blocked for any workspace that is assigned to a pipeline.
 > * **Item sharing:** Item sharing isn't supported. If items are already shared with users, those users can no longer access the items using the shared links.
 
 ### Lakehouse support
@@ -215,42 +214,6 @@ Unsupported scenarios:
 
 * Consuming events from Eventstreams 
 * SQL Server TDS endpoints 
-
-### Eventstream support
-
-[Items - REST API (Eventstream)](/rest/api/fabric/eventstream/items)
-
-Eventstream APIs use a graph-like structure to define an Eventstream item, which consists of two key components: source and destination. The following table shows the currently supported scenarios for workspace-level Private Link. **Note**: If you include an unsupported component in the Eventstream API payload, it might result in failure.
-
-| Source / Destination  | Category               | Type                    | Workspace private link support |
-|-----------------------|------------------------|-------------------------|--------------|
-| **Sources**           | **Azure streams**      | Azure Event Hubs         | Yes          |
-|                       |                        | Azure IoT Hub           | Yes          |
-|                       |                        | Azure Service Bus       | Yes          |
-|                       | **Basic**              | Custom Endpoint         | No           |
-|                       |                        | Sample data             | No           |
-|                       | **External streams**   | Confluent Cloud         | Yes          |
-|                       |                        | Amazon Kinesis          | Yes          |
-|                       |                        | Amazon MSK Kafka        | Yes          |
-|                       |                        | Apache Kafka            | Yes          |
-|                       |                        | Google Cloud Pub/Sub    | Yes          |
-|                       | **Database CDC**       | Azure Cosmos DB         | Yes          |
-|                       |                        | Azure DB for PostgreSQL | Yes          |
-|                       |                        | Azure SQL DB            | Yes          |
-|                       |                        | Azure SQL MI DB         | Yes          |
-|                       |                        | MySQL DB                | Yes          |
-|                       |                        | SQL Server on VM DB     | Yes          |
-|                       | **Fabric events**      | Workspace item events   | No           |
-|                       |                        | OneLake events          | No           |
-|                       |                        | Fabric job events       | No           |
-|                       |                        | Capacity events         | No           |
-|                       | **Azure events**       | Azure Blob Storage      | No           |
-| **Destinations**      | **Fabric destinations**| Lakehouse               | Yes          |
-|                       |                        | Kusto Push              | Yes          |
-|                       |                        | Kusto Pull              | No           |
-|                       |                        | Data Activator          | No           |
-|                       |                        | Custom Endpoint         | No           |
-
 
 ### Dataflows Gen2 (CI/CD) support
 
