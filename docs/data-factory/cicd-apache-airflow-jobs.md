@@ -77,8 +77,6 @@ Once you’ve connected to a Git repository, you need to connect to your workspa
 
 3. After connecting, select **Source control** for information about the linked branch, the status of each item, and when it last synced.
 
-   :::image type="content" source="media/cicd-copy-job/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for Copy job.":::
-
 ### Step 3: Commit changes to Git
 
 You can commit your changes to Git by following these steps:
