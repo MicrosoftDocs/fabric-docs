@@ -344,7 +344,7 @@ Customers can also achieve geo-redundancy by deploying identical Eventstream wor
 
 1. Add identical destinations for each eventstream in different regions.
 
-## Transactional Database
+## Transactional database
 
 This guide describes the recovery procedures for the transactional database experience. 
 
@@ -360,7 +360,7 @@ This can be achieved by using the [SqlPackage](../database/sql/sqlpackage.md) CL
 
 The recreated database is an independent database from the original database and reflects the state of the data at the time of the export operation.
 
-#### Failback Considerations
+#### Failback considerations
 
 The recreated database is an independent database.  Data added to the recreated database would not be reflected in the original database.  If you plan to failback to the original database when the home region becomes available, you will need to consider manually reconciling data from the recreated database to the original database.
 
