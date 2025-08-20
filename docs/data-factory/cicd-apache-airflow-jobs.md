@@ -40,8 +40,6 @@ Follow these steps to connect your Airflow in Data Factory to Git. Git helps you
       - Sign up for a free [GitHub account](https://github.com/) if you don’t have one.
       - You need a [fine-grained token](https://github.com/settings/personal-access-tokens/new) with _read_ and _write_ permissions for _Contents_, or a [GitHub classic token](https://github.com/settings/tokens/new) with repo scopes enabled.
 
-### Connect to a Git repository
-
 ### Step 1: Connect to a Git repository
 
 To use Git integration with Airflow in Fabric, you first need to connect to a Git repository:
