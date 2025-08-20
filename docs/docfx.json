@@ -162,6 +162,11 @@
                 "security/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "security/**/*.yml": "https://community.fabric.microsoft.com/powerbi"
             },
+            {
+                "ms.update-cycle": {
+                    "value": "1095-days"
+                }
+            },
             "search.app": {
                 "get-started/**/*.md": [
                     "fabric-powerbi-docs"
