@@ -28,11 +28,21 @@ When you refresh or publish a Dataflow Gen2 item, Fabric Capacity Units are cons
 
 ## Dataflow Gen2 pricing model
 
-The following table indicates that to determine Dataflow Gen2 execution costs, each query execution utilizes the mashup engine for standard computing, and that compute execution duration is translated to a consumption rate of 16 CU (for every second, 16 CU seconds of capacity is consumed). Secondly, for high scale compute scenarios when staging is enabled, Lakehouse/Warehouse SQL engine execution duration should be accounted for as well. Compute execution duration is translated to a consumption rate of 6 CU. At the end of each Dataflow Gen2 run, the Capacity Unit (CU) consumption for each engine type is summed and is billed according to the translated price for Fabric capacity in the region where it's deployed.
+### 
+Dataflow Gen2 pricing depends on how each query uses compute. For standard compute, queries run on the mashup engine and follow a two-tier rate applied to the query duration:
+
+- If a query runs under 10 minutes, it uses 12 CU
+- If it runs longer, each extra second uses 1.5 CU.
+
+For high-scale scenarios—when staging is turned on—queries run on the Lakehouse or Warehouse SQL engine. Each second of compute time uses 6 CU seconds, so longer queries consume more.
+
+If you turn on fast copy, there's a separate rate for data movement: 1.5 CU, based on how long the activity runs.
+
+At the end of each run, Dataflow Gen2 adds up the CU usage from each engine and bills it based on the Fabric capacity pricing in your region.
 
 |Dataflow Gen2 Engine Type  |Consumption Meters  |Fabric CU consumption rate  |Consumption reporting granularity      |
 |---------|---------|---------|---------|
-|Standard Compute     | Based on each mashup engine query execution duration in seconds.         | 16 CU         | Per Dataflow Gen2 item        |
+|Standard Compute     | Based on each mashup engine query execution duration in seconds. Standard Compute has two tier pricing depending on the query duration.       | -  For every second up to 10 minutes	12 CU -  For every additional second beyond 10 minutes	1.5 CU      | Per Dataflow Gen2 item        |
 |High Scale Dataflows Compute     | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds.         | 6 CU         | Per workspace        |
 |Data movement     | Based on Fast Copy run duration in hours and the used intelligent optimization throughput resources.         | 1.5 CU         | Per Dataflow Gen2 item        |
 
