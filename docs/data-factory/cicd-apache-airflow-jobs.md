@@ -15,6 +15,9 @@ ai-usage: ai-assisted
 > [!IMPORTANT]
 > CI/CD in Apache Airflow in Data Factory for Microsoft Fabric is currently in preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+> [!NOTE]
+> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+
 You can use source control, CI/CD, and a shared workspace with Apache Airflow to manage your workflows.
 
 Microsoft Fabric includes two built-in tools to support CI/CD: Git integration and deployment pipelines. These tools help you organize your Airflow pipelines and workspace resources.
