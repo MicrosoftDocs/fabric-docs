@@ -104,8 +104,6 @@ To disable encrypting the workspace using a customer-managed key, go to *Workspa
 
 You can't disable customer-managed keys while encryption for any of the Fabric items in your workspace is in progress.
 
-Encryption is currently available in selected regions and will only work for workspaces using capacities in those regions.
-
 ## Considerations and limitations
 
 Before you configure your Fabric workspace with a customer-managed key, consider the following limitations:
@@ -127,7 +125,7 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 
 * The data listed below isn't protected with customer-managed keys:
  
-  * Lakehouse column names, table format, table compression, SQL endpoint. Once you enable CMK, no SQL endpoint is created for the Fabric items created within that workspace.
+  * Lakehouse column names, table format, table compression, SQL endpoint. Once you enable CMK, no SQL endpoint is created for the Lakehouse created within that workspace.
   * All data stored in the Spark Clusters (data stored in temp discs as part of  shuffle or data spills or RDD caches in a spark application) are not protected. This includes all the Spark Jobs from Notebooks, Lakehouses, Spark Job Definitions, Lakehouse Table Load and Maintenance jobs, Shortcut Transforms, Fabric Materialized View Refresh.
   * The job logs stored in the history server
   * Libraries attached as part of environments or added as part of the Spark session customization using magic commands are not protected
@@ -136,7 +134,7 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 
 * CMK is only supported in all public regions.
 
-* CMK is supported on all [F SKUs](../enterprise/licenses.md). CMK cannot be enabled for workspaces that have BYOK enabled and CMK workspaces cannot be moved to capacities for which BYOK is enabled either.
+* CMK is supported on all [F SKUs](../enterprise/licenses.md). Trial capacities cannot be used for encryption using CMK. CMK cannot be enabled for workspaces that have BYOK enabled and CMK workspaces cannot be moved to capacities for which BYOK is enabled either.
 
 * CMK can be enabled using the Fabric portal and does not have API support.
 

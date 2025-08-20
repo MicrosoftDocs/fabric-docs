@@ -5,7 +5,7 @@ ms.topic: quickstart
 author: abhishjain002 
 ms.author: abhishjain
 ms.reviewer: nijelsf
-ms.date: 06/27/2025
+ms.date: 08/12/2025
 #customer intent: As a data engineer, I want to create materialized lake views (mlv) in lakehouse so that I can optimize query performance and manage data quality.
 ---
 
@@ -64,7 +64,7 @@ The following example defines a materialized lake view called "customers_enriche
 CREATE MATERIALIZED LAKE VIEW IF NOT EXISTS silver.customers_enriched 
 COMMENT "This is a sample materialzied view" 
 PARTITIONED BY (city)
-SELECT 
+AS SELECT 
      c.customerID, 
      c.customerName, 
      c.contact, 
@@ -142,7 +142,7 @@ DROP MATERIALIZED LAKE VIEW customers_enriched;
 
 ## Current limitations
 
-* The Schema name will full capitals is not supported and is a known limitation, you can continue to use Create MLVs without full caps in Schema name.
+* Schema names with all capital letters are not supported and is a known limitation. You can continue to create MLVs without full caps in the schema name.
 * Spark properties set at the session level aren't applied during scheduled lineage refresh.
 * The creation of materialized lake view with delta time-travel isn't supported.
 * DML statements aren't supported with materialized lake views.
