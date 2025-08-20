@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 # CI/CD for Apache Airflow in Data Factory in Microsoft Fabric
 
 > [!NOTE]
-> This feature is in [preview](https://learn.microsoft.com/en-us/fabric/fundamentals/preview). Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+> This feature is in [preview](https://learn.microsoft.com/fabric/fundamentals/preview). Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
 You can use source control, CI/CD, and a shared workspace with Apache Airflow to manage your workflows.
 
