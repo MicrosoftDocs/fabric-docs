@@ -19,20 +19,29 @@ When you publish a dataflow, it creates a definition that runs during refresh. T
 
 :::image type="content" source="media/pricing-dataflows-gen2/dataflows-gen2-pricing-diagram.png" alt-text="Diagram of the Dataflow Gen2 architecture.":::
 
-The diagram captures components of the Data Factory Dataflow Gen2 architecture, including the Lakehouse used to stage data being ingested, and Warehouse artifact used as a compute engine to write results to staging or output faster. When Warehouse compute can't be used, or when staging is disabled for a query, the Mashup Engine will extract, transform, or load the data to staging or data destinations. You can learn more about how Dataflow Gen2 works in this blog: [Data Factory Spotlight: Dataflow Gen2](https://blog.fabric.microsoft.com/blog/data-factory-spotlight-dataflows-gen2?ft=All).
+This diagram gives you a quick look at how Dataflow Gen2 works behind the scenes. It includes the Lakehouse, which stages incoming data, and the Warehouse, which acts as a compute engine to write results faster—either to staging or directly to your output.
+
+If the Warehouse engine isn’t available or staging is turned off for a query, the Mashup Engine steps in. It handles extracting, transforming, and loading data to staging or wherever you’ve set as the destination.
+
+Want to learn more? Check out the blog: [Data Factory Spotlight: Dataflow Gen2](https://blog.fabric.microsoft.com/blog/data-factory-spotlight-dataflows-gen2?ft=All).
 
 When you refresh or publish a Dataflow Gen2 item, Fabric Capacity Units are consumed for the following engines:
 
 - Standard Compute: You're charged for it based on the query evaluation time across all your Dataflow queries ran through the Mashup engine.  
-- High Scale Dataflows Compute: You're charged when staging is enabled based on Lakehouse (Staging storage) and Warehouse (Storage Compute) SQL engine consumption duration.  
+- High Scale Dataflows Compute: You're charged when staging is enabled based on Lakehouse (Staging storage) and Warehouse (Storage Compute) SQL engine consumption duration.
+- Fast Copy: You're charged hen fast copy connectors are enabled and can be used in the Dataflow based on copy job duration.
 
 ## Dataflow Gen2 pricing model
 
 ### 
-Dataflow Gen2 pricing depends on how each query uses compute. For standard compute, queries run on the mashup engine and follow a two-tier rate applied to the query duration:
+Dataflow Gen2 pricing depends on how each query uses compute. For standard compute, queries run on the mashup engine. Depending on whether your Dataflow is Dataflow Gen2 (CI/CD), the rating varies.
 
-- If a query runs under 10 minutes, it uses 12 CU
-- If it runs longer, each extra second uses 1.5 CU.
+If Dataflow Gen2 (CI/CD), there is a two-tier rate applied to the query duration:
+
+- If a query runs under 10 minutes, it is rated at 12 CU
+- If it runs longer, each extra second is rated at 1.5 CU.
+
+If your Dataflow Gen2 is non-CI/CD, the rate is 16 CU applied to the entire query duration.
 
 For high-scale scenarios—when staging is turned on—queries run on the Lakehouse or Warehouse SQL engine. Each second of compute time uses 6 CU seconds, so longer queries consume more.
 
@@ -42,7 +51,8 @@ At the end of each run, Dataflow Gen2 adds up the CU usage from each engine and 
 
 |Dataflow Gen2 Engine Type  |Consumption Meters  |Fabric CU consumption rate  |Consumption reporting granularity      |
 |---------|---------|---------|---------|
-|Standard Compute     | Based on each mashup engine query execution duration in seconds. Standard Compute has two tier pricing depending on the query duration.       | -  For every second up to 10 minutes	12 CU<br>-  For every additional second beyond 10 minutes	1.5 CU      | Per Dataflow Gen2 item        |
+|Standard Compute  (Dataflow Gen2 (CI/CD))   | Based on each mashup engine query execution duration in seconds. Standard Compute has two tier pricing depending on the query duration.       | -  For every second up to 10 minutes, 12 CU<br>-  For every additional second beyond 10 minutes, 1.5 CU      | Per Dataflow Gen2 item        |
+|Standard Compute  (non CI/CD)   | Based on each mashup engine query execution duration in seconds.      | 16 CU| Per Dataflow Gen2 item        |
 |High Scale Dataflows Compute     | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds.         | 6 CU         | Per workspace        |
 |Data movement     | Based on Fast Copy run duration in hours and the used intelligent optimization throughput resources.         | 1.5 CU         | Per Dataflow Gen2 item        |
 
@@ -54,7 +64,7 @@ The total bill for running Dataflows Gen2 through the VNET Data Gateway is calcu
 
 The VNET Data Gateway Charge is proportional to your usage of the VNET Data Gateway, where usage is defined as uptime, or anytime the VNET Data Gateway is on.
 
-VNET Data Gateway CU consumption rate: (4 CU-hour) * (Fabric capacity per unit price)
+VNET Data Gateway CU consumption rate : 4 CU
 
 Learn more at [Virtual Network Data Gateways Pricing and Billing](/data-integration/vnet/data-gateway-business-model).
 
@@ -64,16 +74,13 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 ## Compute estimated costs using the Fabric Metrics App
 
-The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workspaces tied to a capacity. It's used by capacity administrators to monitor the performance of workloads and their usage compared to purchased capacity. Using the Metrics app is the most accurate way to estimate the costs of Dataflow Gen2 refresh runs. When you load-test your scenario, create the Dataflow Gen2 item in a new workspace to reduce any reported noise in the Fabric Metrics App.
+The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workspaces tied to a capacity. It's used by capacity administrators to monitor the performance of workloads and their usage compared to purchased capacity. Using the Metrics app is the most accurate way to estimate the costs of Dataflow Gen2 refresh runs. To understand how the tiered pricing impacted your standard compute costs, you will need to also use Dataflow refresh history.
 
-The following table can be utilized as a template to compute estimated costs using Fabric Metrics app for a Dataflow Gen2 refresh:
+These exercises shows you how to validate costs:
 
-|Metric  |Standard Compute  |High Scale Compute  |
-|---------|---------|---------|
-|Total CUs     | s CU seconds        |  h CU seconds       |
-|Effective CU-hours billed      | s / (60*60) = S CU-hour        |  h / (60*60) = H CU-hour       |
+1. Exercise 1: Understanding standard Compute
 
-**Total refresh cost** = (S + H CU-hour) * (Fabric capacity per unit price)
+This dataflow has two queries involving transformation, and staging is disabled. Dataflows Gen2 will only use the 
 
 ## Related content
 
