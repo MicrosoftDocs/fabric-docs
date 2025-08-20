@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # Upgrade Azure Data Factory pipelines to Microsoft Fabric using PowerShell
 > [!TIP]
-> New to migration options? Start with the **Microsoft Fabric migration overview** for the full landscape and ADF‑to‑Fabric migration guidance. [Fabric migration guidance](fabric/fundamentals/migration.md)
+> New to migration options? Start with the **Microsoft Fabric migration overview** for the full landscape and ADF‑to‑Fabric migration guidance. [Fabric migration guidance](../fundamentals/migration.md)
 
 ## What you’ll do
 
@@ -63,22 +63,22 @@ Compare outputs to your source ADF runs to confirm parity.
 Fix gaps (for example, activities that don’t have a direct Fabric equivalent yet).
 For broader context on Fabric migration validation, see the Fabric migration overview. 
 
-### Step‑by‑step tutorial (GitHub)
+## Step‑by‑step tutorial (GitHub)
 
 For a detailed, click‑through tutorial with screenshots and examples, see:
 
 [FabricPipelineUpgrade tutorial (GitHub Wiki)](https://github.com/microsoft/FabricPipelineUpgrade/wiki/The-FabricPipelineUpgrade-Tutorial)
 
-## Frequently asked questions (FAQ)
+### Frequently asked questions (FAQ)
 
-### Is this module supported by Microsoft?
+**Is this module supported by Microsoft?**
 
 The code is open‑source in the microsoft organization on GitHub. Review the repo’s README and issue tracker for support information and known limitations. 
 
-## Which activities are supported?
+**Which activities are supported?**
 Support depends on the module version and the target Fabric capabilities. Check the [Supported functionality (GitHub Wiki)](https://github.com/microsoft/FabricPipelineUpgrade/wiki/Supported-Functionality) for the latest.
 
-## Next steps
+### Next steps
 
 Try a pilot migration of a low‑risk pipeline.
 Open issues or feature requests in the GitHub repo if you hit blockers.
