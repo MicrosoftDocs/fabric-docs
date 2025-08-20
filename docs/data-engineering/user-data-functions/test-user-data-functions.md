@@ -17,7 +17,7 @@ In this article, you will learn how to:
 - Use the Test capabilities in Develop mode to test your functions.
 
 >[!NOTE]
-> Some users may not have access to the Test capability in Develop mode depending on the region of their Fabric tenant. These users need to publish and run their functions to test them, or use VS Code to test them locally.
+> Some users may not have access to the Test capability in Develop mode depending on the region of their Fabric tenant. Please review the [regional limitations](#regional-limitations-for-test-capability-in-develop-mode) note in this article. 
 
 ## What is Develop mode and View/Run only mode?
 
