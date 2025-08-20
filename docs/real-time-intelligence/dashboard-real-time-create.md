@@ -111,7 +111,7 @@ Select the tab that corresponds with your desired data source type.
     1. Select a **database** in the cluster.
     1. Select **Connect**.
 
- A list of tables associated with this data source appears below the data source name
+ A list of tables associated with this data source appears below the data source name.
 
 ## Add tile
 
