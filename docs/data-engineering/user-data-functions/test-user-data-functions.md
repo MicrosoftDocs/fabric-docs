@@ -41,7 +41,7 @@ The following are the components of Develop mode:
 
 In **Run only mode** users with Execute permissions can view and run the published functions. This experience creates a separate view between the published version of the code the version that is under development in Develop mode.
 
-   :::image type="content" source="..\media\user-data-functions-test\user-data-functions-run-only-mode.png" alt-text="Screenshot showing the components of Develop mode in the Fabric portal." lightbox="..\media\user-data-functions-test\user-data-functions-run-only-mode.png":::
+   :::image type="content" source="..\media\user-data-functions-test\user-data-functions-run-only-mode.png" alt-text="Screenshot showing the components of Run only mode in the Fabric portal." lightbox="..\media\user-data-functions-test\user-data-functions-run-only-mode.png":::
 
 The following are the components of Run only mode:
 1. **Mode switcher:** This control allows you to switch to Run only mode from Develop mode. 
@@ -78,7 +78,7 @@ The Test capability is not available in all Fabric regions yet. If your Tenant r
 
    :::image type="content" source="..\media\user-data-functions-test\user-data-functions-test-region-unavailable.png" alt-text="Screenshot showing the region unavailable banner." lightbox="..\media\user-data-functions-test\user-data-functions-test-region-unavailable.png":::
 
-If you see this informational message, you can still publish your functions and use the Run capability to test them as you did before. Learn more about [how to manage your Fabric capacity](../../admin/capacity-settings.md##create-a-new-capacity) if you prefer to create a new capacity in a supported region.
+If you see this informational message, you can still publish your functions and use the Run capability to test them as you did before. Learn more about [how to manage your Fabric capacity](../../admin/capacity-settings.md#create-a-new-capacity) if you prefer to create a new capacity in a supported region.
 
 ## Next steps
 
