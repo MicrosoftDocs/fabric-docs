@@ -419,6 +419,8 @@ items:
      href: ./user-data-functions/user-data-functions-overview.md
    - name: Create a User data functions item
      href: ./user-data-functions/create-user-data-functions-portal.md
+   - name: Test your User data functions
+     href: ./user-data-functions/test-user-data-functions.md
    - name: Connect to data sources
      href: ./user-data-functions/connect-to-data-sources.md
    - name: Integration with Fabric data pipelines
