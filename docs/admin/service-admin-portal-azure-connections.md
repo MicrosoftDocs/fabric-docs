@@ -14,7 +14,7 @@ LocalizationGroup: Administration
 
 # Manage Azure connections
 
-The Azure connections admin settings connect Azure services to Fabric. Using these settings, you can store your dataflows in your organization's Azure Data Lake Storage Gen2 (ADLS Gen2) account. You can review the benefits of this approach in [Reasons to use the ADLS Gen 2 workspace or tenant connection](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration#reasons-to-use-the-adls-gen-2-workspace-or-tenant-connection). Workspace-level Log Analytics enables administrators and workspace owners to configure a Log Analytics connection to collect usage and performance logs for the workspace. You can review [how the integration between Log Analytics and Power BI works](/powerbi-docs/transform-model/log-analytics/desktop-log-analytics-overview.md).
+The Azure connections admin settings connect Azure services to Fabric. Using these settings, you can store your dataflows in your organization's Azure Data Lake Storage Gen2 (ADLS Gen2) account. You can review the benefits of this approach in [Reasons to use the ADLS Gen 2 workspace or tenant connection](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration#reasons-to-use-the-adls-gen-2-workspace-or-tenant-connection). Workspace-level Log Analytics enables administrators and workspace owners to configure a Log Analytics connection to collect usage and performance logs for the workspace. You can review [how the integration between Log Analytics and Power BI works](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview).
 
 The Azure connections admin settings have the following options:
 
@@ -22,7 +22,7 @@ The Azure connections admin settings have the following options:
 
 * [Workspace-level storage permissions](#workspace-level-storage-permissions) - Use to store dataflows in specific ADLS Gen 2 accounts, organized per workspace.
 
-* [Workspace-level Log Analytics permissions] (#Workspace-level-Log-Analytics-permissions) - Use to configure activity logging in Log Analytics.
+* [Workspace-level Log Analytics permissions](#Workspace-level-Log-Analytics-permissions) - Use to configure activity logging in Log Analytics.
 
 To learn how to access the Fabric admin portal settings, see [What is the admin portal?](admin-center.md)
 
@@ -40,7 +40,7 @@ To activate this feature, go to **Admin portal > Azure connections > Connect to 
 
 ## Workspace-level Log Analytics permissions 
 
-Fabric administrators can find and configure activity logging in **Tenant settings > Audit and usage settings > Azure Log Analytics connections for workspace administrators**. For more information, see [Allow workspace level logging from the admin portal](/powerbi-docs/transform-model/log-analytics/desktop-log-analytics-configure.md#allow-workspace-level-logging-from-the-admin-portal)
+Fabric administrators can find and configure activity logging in **Tenant settings > Audit and usage settings > Azure Log Analytics connections for workspace administrators**. For more information, see [Allow workspace level logging from the admin portal](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure #allow-workspace-level-logging-from-the-admin-portal)
 
 ## Related content
 
