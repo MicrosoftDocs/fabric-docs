@@ -75,7 +75,7 @@ Once you’ve connected to a Git repository, you need to connect to your workspa
      - Branch name
      - Folder name
 
-2. Select **Connect and sync**.
+1. Select **Connect and sync**.
 
 1. After connecting, select **Source control** for information about the linked branch, the status of each item, and when it last synced.
 
