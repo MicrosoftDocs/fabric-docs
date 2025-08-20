@@ -68,7 +68,7 @@ Data sources are reusable references to a specific database in the same workspac
 
 Dashboard tiles use Kusto Query Language (KQL) queries to fetch data and generate visuals. Each tile or query is designed to support a single visual representation.
 
-1. Select **Add tile** from the dashboard canvas or the top menu bar.
+1. Select **Add tile** from the dashboard canvas or **New tile** from the top menu bar.
 
     :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button.":::
 1. In the **Query** pane,
@@ -112,11 +112,11 @@ Editing the underlying query of a tile is only possible in editing mode.
     :::image type="content" source="media/real-time-dashboard/edit-tile.png" alt-text="Screenshot of the Edit tile pencil icon in Real-Time Dashboards tile.":::
 
 1. In the edit tile page, you can edit the query and visual formatting options.
-1. The explorer pane on the left side allows you to explore the data source, view the available tables, functions etc. and help you build your query.
+1. The explorer pane on the left side allows you to explore the data source, view the available tables, functions, etc. and help you build your query.
 
     :::image type="content" source="media/real-time-dashboard/explorer-pane.png" alt-text="Screenshot of the explorer pane in Real-Time Dashboards.":::
 
-1. Select the **Copilot** icon and describe in natural language what you want to visualize. Copilot will generate a query which you can edit as needed. For more information, see [Use Copilot for writing KQL quries](../fundamentals/copilot-for-writing-queries.md).
+1. Select the **Copilot** icon and describe in natural language what you want to visualize. Copilot generates a query that you can edit as needed. For more information, see [Use Copilot for writing KQL queries](../fundamentals/copilot-for-writing-queries.md).
 
     :::image type="content" source="media/real-time-dashboard/copilot.png" alt-text="Screenshot of the Copilot icon in Real-Time Dashboards.":::
 
