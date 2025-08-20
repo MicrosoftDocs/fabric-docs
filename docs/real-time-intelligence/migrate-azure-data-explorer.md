@@ -39,7 +39,7 @@ Follow these steps to migrate from ADX to Fabric:
 
 1. [Create a new KQL database in Fabric with the ADX schema](#create-kql-database-in-fabric-with-adx-schema)
 1. [Create a view with union operator that accesses both table in KQL database and table in ADX database](#create-union-views-for-seamless-data-access)
-1. [Redirect query workloads to Fabric](#redirect-query-workloads-to-fabric)
+1. [Redirect query endpoints to KQL Database in Fabric Eventhouse](#redirect-query-endpoints-to-kql-database-in-fabric-eventhouse)
 1. [Switch data ingestion to Fabric](#switch-data-ingestion-to-fabric)
 1. [Retire the ADX cluster](#retire-the-adx-cluster)
 
