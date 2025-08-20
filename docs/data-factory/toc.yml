@@ -99,6 +99,8 @@
         href: migrate-pipelines-azure-data-factory-item.md 
       - name: Planning your migration from Azure Data Factory to Fabric
         href: migrate-planning-azure-data-factory.md
+      - name: PowerShell-Based Migration of Azure Data Factory Pipelines to Fabric
+        href: migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md
       - name: Activity Continuity
         href: activity-parity.md
       - name: Connector Continuity
