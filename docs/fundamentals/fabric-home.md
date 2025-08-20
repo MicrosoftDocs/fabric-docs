@@ -139,11 +139,10 @@ The object explorer provides a structured view of items across all your currentl
 
 ### More open items
 
-The previous limit of 10 open items has been raised, so you can keep more resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
+The previous limit of 10 open items has been increased. You can keep more resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
 
 > [!NOTE]
 > These multitasking features are rolling out in phases starting mid-August 2025. Availability might vary across tenants as the rollout progresses.
-
 
 ## Get help from the Help pane
 
