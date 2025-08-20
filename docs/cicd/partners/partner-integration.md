@@ -131,6 +131,14 @@ Fabric administrators have the rights to [manage workload](../../workload-develo
 
 
 
+- [Lumel EPM](): Empowers business users build no-code Enterprise Performance Management (EPM) apps on top of the semantic models.
+
+  ![Screenshot 2025-08-20 at 12.28.42 AM](media/partner-integration/screenshot-2025-08-20-at-12.28.42 am.png)
+  
+  **[Neo4j AuraDB with Graph Analytics]()**: Create graph models from OneLake data, visually analyze and explore data connections, query your data, and run any of the 65+ built-in algorithms with a seamless experience in the Fabric Console.
+  
+  ![Screenshot 2025-08-20 at 12.39.27 AM](media/partner-integration/screenshot-2025-08-20-at-12.39.27 am.png)
+  
 - **[Osmos AI Data Wrangler](https://app.fabric.microsoft.com/workloadhub/detail/Osmos.Osmos.Product?experience=fabric-developer)**: Automates data preparation with AI-powered data wranglers, making data transformation effortless.
 
 ![Screenshot 2025-08-20 at 12.30.46 AM](media/partner-integration/screenshot-2025-08-20-at-12.30.46 am.png)
@@ -140,18 +148,38 @@ Fabric administrators have the rights to [manage workload](../../workload-develo
   ![Screenshot 2025-08-20 at 12.31.28 AM](media/partner-integration/screenshot-2025-08-20-at-12.31.28 am.png)
   
   
-- Celonis Process Intelligence: 
+- [Celonis Process Intelligence](): Allows organisations to expose Celonis’ unique class of data and context in Microsoft Fabric
 
+  ![Screenshot 2025-08-20 at 12.32.07 AM](media/partner-integration/screenshot-2025-08-20-at-12.32.07 am.png)
+  
+- [Profisee Master Data Management:]() empowers users to efficiently match, merge, standardize, remediate and validate data, transforming it into trusted, consumption-ready data products for analytics and AI.​
+
+  ![Screenshot 2025-08-20 at 12.35.27 AM](media/partner-integration/screenshot-2025-08-20-at-12.35.27 am.png)
+  
 - **[Quantexa Unify](https://app.fabric.microsoft.com/workloadhub/detail/Quantexa.Unify.Product?experience=fabric-developer)**: Enhances Microsoft OneLake data sources by providing a 360-degree view with advanced data resolution capabilities.
 
-  :::image type="content" source="media/partner-integration/quantexa-workload.png" alt-text="Screenshot showing quantexa's workload." lightbox="media/partner-integration/quantexa-workload.png":::
+  ![Screenshot 2025-08-20 at 12.35.44 AM](media/partner-integration/screenshot-2025-08-20-at-12.35.44 am.png)
   
+  
+  
+- **[SAS Decision Builder]()**: Helps organizations automate, optimize, and scale their decision-making processes.
+
+  ![Screenshot 2025-08-20 at 12.36.24 AM](media/partner-integration/screenshot-2025-08-20-at-12.36.24 am.png)
+  
+  
+  
+- **[Statsig:]()** Brings data visualization and analysis directly to your warehouse.
+
+- ![Screenshot 2025-08-20 at 12.44.29 AM](media/partner-integration/screenshot-2025-08-20-at-12.44.29 am.png)
+
+
 - **[Teradata AI Unlimited](https://app.fabric.microsoft.com/workloadhub/detail/Teradata.AIUnlimited.AIUnlimited?experience=fabric-developer)**: Combines Teradata's analytic engine with Microsoft Fabric's data management capabilities through Teradata's in-database functions.
 
-  :::image type="content" source="media/partner-integration/teradata-workload.png" alt-text="Screenshot showing teradata's workload." lightbox="media/partner-integration/teradata-workload.png":::
+  ![Screenshot 2025-08-20 at 12.45.43 AM](media/partner-integration/screenshot-2025-08-20-at-12.45.43 am.png)
   
-- [Lumel EPM](): Empowers business users build no-code Enterprise Performance Management (EPM) apps on top of the semantic models.
+- **[SQL2Fabric-Mirroring by Striim]()**: Fully managed, zero-code replication solution that seamlessly mirrors on-premises SQL Server data to Microsoft Fabric OneLake
+![Screenshot 2025-08-20 at 12.43.58 AM](media/partner-integration/screenshot-2025-08-20-at-12.43.58 am.png)
 
-  ![Screenshot 2025-08-20 at 12.28.42 AM](media/partner-integration/screenshot-2025-08-20-at-12.28.42 am.png)
-  
+
+
 As more workloads become available, the Workload Hub will continue to serve as a dynamic space for discovering new capabilities, ensuring that users have the tools they need to scale and optimize their data-driven solutions.
