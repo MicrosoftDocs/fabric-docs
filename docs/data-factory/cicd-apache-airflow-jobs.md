@@ -97,7 +97,7 @@ Once you commit, those items disappear from the list, and your workspace points 
 Follow these steps to use deployment pipelines with your Fabric workspace:
 
 1. [Prerequisites](#prerequisites-for-deployment-pipelines)
-2. [Create a deployment pipeline](#step-1-create-a-deployment-pipeline)
+1. [Create a deployment pipeline](#step-1-create-a-deployment-pipeline)
 3. [Assign a workspace to the deployment pipeline](#step-3-assign-a-workspace-to-the-deployment-pipeline)
 4. [Deploy to an empty stage](#deploy-to-an-empty-stage)
 5. [Deploy content from one stage to another](#deploy-content-from-one-stage-to-another)
