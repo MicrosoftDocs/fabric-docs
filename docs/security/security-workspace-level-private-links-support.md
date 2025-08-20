@@ -215,42 +215,6 @@ Unsupported scenarios:
 * Consuming events from Eventstreams 
 * SQL Server TDS endpoints 
 
-### Eventstream support
-
-[Items - REST API (Eventstream)](/rest/api/fabric/eventstream/items)
-
-Eventstream APIs use a graph-like structure to define an Eventstream item, which consists of two key components: source and destination. The following table shows the currently supported scenarios for workspace-level Private Link. **Note**: If you include an unsupported component in the Eventstream API payload, it might result in failure.
-
-| Source / Destination  | Category               | Type                    | Workspace private link support |
-|-----------------------|------------------------|-------------------------|--------------|
-| **Sources**           | **Azure streams**      | Azure Event Hubs         | Yes          |
-|                       |                        | Azure IoT Hub           | Yes          |
-|                       |                        | Azure Service Bus       | Yes          |
-|                       | **Basic**              | Custom Endpoint         | No           |
-|                       |                        | Sample data             | No           |
-|                       | **External streams**   | Confluent Cloud         | Yes          |
-|                       |                        | Amazon Kinesis          | Yes          |
-|                       |                        | Amazon MSK Kafka        | Yes          |
-|                       |                        | Apache Kafka            | Yes          |
-|                       |                        | Google Cloud Pub/Sub    | Yes          |
-|                       | **Database CDC**       | Azure Cosmos DB         | Yes          |
-|                       |                        | Azure DB for PostgreSQL | Yes          |
-|                       |                        | Azure SQL DB            | Yes          |
-|                       |                        | Azure SQL MI DB         | Yes          |
-|                       |                        | MySQL DB                | Yes          |
-|                       |                        | SQL Server on VM DB     | Yes          |
-|                       | **Fabric events**      | Workspace item events   | No           |
-|                       |                        | OneLake events          | No           |
-|                       |                        | Fabric job events       | No           |
-|                       |                        | Capacity events         | No           |
-|                       | **Azure events**       | Azure Blob Storage      | No           |
-| **Destinations**      | **Fabric destinations**| Lakehouse               | Yes          |
-|                       |                        | Kusto Push              | Yes          |
-|                       |                        | Kusto Pull              | No           |
-|                       |                        | Data Activator          | No           |
-|                       |                        | Custom Endpoint         | No           |
-
-
 ### Dataflows Gen2 (CI/CD) support
 
 * [Public APIs capabilities for Dataflows Gen2 in Fabric Data Factory (Preview)](/fabric/data-factory/dataflow-gen2-public-apis)
