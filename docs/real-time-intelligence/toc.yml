@@ -874,11 +874,12 @@ items:
       href: mcp-eventhouse.md
 - name: Migrate
   items:
-  - name: From Azure Synapse Data Explorer
+  - name: Migrate from Azure Data Explorer
+    href: migrate-azure-data-explorer.md
+  - name: Migrate from Azure Synapse Data Explorer
     href: migrate-synapse-data-explorer.md
-  - name: API endpoints
-    items:
-    - name: Validate migration
+    items: 
+    - name: Validate migration using REST API endpoints
       href: migrate-api-validate-synapse-data-explorer.md
     - name: Migrate to Eventhouse
       href: migrate-api-to-eventhouse.md
