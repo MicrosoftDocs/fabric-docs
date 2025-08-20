@@ -27,9 +27,9 @@ Want to learn more? Check out the blog: [Data Factory Spotlight: Dataflow Gen2](
 
 When you refresh or publish a Dataflow Gen2 item, Fabric Capacity Units are consumed for the following engines:
 
-- Standard Compute: You're charged for it based on the query evaluation time across all your Dataflow queries ran through the Mashup engine.  
-- High Scale Dataflows Compute: You're charged when staging is enabled based on Lakehouse (Staging storage) and Warehouse (Storage Compute) SQL engine consumption duration.
-- Fast Copy: You're charged hen fast copy connectors are enabled and can be used in the Dataflow based on copy job duration.
+- Standard Compute: You're charged for it based on the query evaluation time across all your Dataflow queries that run through the Mashup engine.  
+- High Scale Dataflows Compute: You're charged when staging is enabled, based on Lakehouse (Staging storage) and Warehouse (Storage Compute) SQL engine consumption duration.
+- Fast Copy: You're charged when fast copy connectors are enabled and can be used in the Dataflow, based on copy job duration.
 
 ## Dataflow Gen2 pricing model
 
@@ -95,18 +95,19 @@ Aggregate the Capacity Consumption in CU seconds and validate the consumption in
 
 This dataflow has two queries involving transformation, and staging is disabled. Dataflows Gen2 will only use the Standard Compute.
 
-
 For each query, access the query duration from Refresh history and apply the following formula to compute the CU consumption per query.
 
 <code>StandardComputeCapacityConsumptionInCUSeconds = QueryDurationInSeconds x 16 </code>
 
 Aggregate the Capacity Consumption in CU seconds and validate the consumption in the Fabric capacity metrics app.
 
-### Exercise 3: Understanding High Scale Compute Consumption
+### Exercise 3: Understanding High Scale Compute Consumption (both CI/CD and non CI/CD Dataflows)
 
-This dataflow has staging enabled. To calculate the High Scale compute usage you can navigate to the Fabric Capacity Metrics App and filter for the Dataflow Item Name. Right click on the name and under the list of operations, check for High Scale compute and measure the duration.
+This dataflow uses staging. To find out how much High Scale compute you used, open the Fabric Capacity Metrics App and filter by your Dataflow’s name. Right-click the name, look for High Scale compute in the list of operations, and check the duration.
 
 <code>HighScaleComputeCapacityConsumptionInCUSeconds = QueryDurationInSeconds x 6 </code>
+
+###
 
 ## Related content
 
