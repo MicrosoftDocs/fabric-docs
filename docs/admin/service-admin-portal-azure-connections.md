@@ -40,7 +40,7 @@ To activate this feature, go to **Admin portal > Azure connections > Connect to 
 
 ## Workspace-level Log Analytics permissions 
 
-Fabric administrators can find and configure activity logging in **Tenant settings > Audit and usage settings > Azure Log Analytics connections for workspace administrators**. For more information, see [Allow workspace level logging from the admin portal](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure #allow-workspace-level-logging-from-the-admin-portal)
+Fabric administrators can find and configure activity logging in **Tenant settings > Audit and usage settings > Azure Log Analytics connections for workspace administrators**. For more information, see [Allow workspace level logging from the admin portal](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure#allow-workspace-level-logging-from-the-admin-portal)
 
 ## Related content
 
