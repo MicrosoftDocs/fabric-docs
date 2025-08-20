@@ -6,6 +6,7 @@ ms.author: mimart
 ms.topic: reference
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ms.date: 08/15/2025
 
 ---
