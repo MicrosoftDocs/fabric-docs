@@ -34,7 +34,6 @@ You can use workspace-level private links to connect to the following item types
 * Copy Job
 * Mounted Data Factory
 * Warehouse 
-* Eventhouse
 * Dataflows Gen2 (CI/CD)
 * Variable library
 
@@ -104,7 +103,7 @@ APIs with endpoints containing `v1/workspaces/{workspaceId}` support workspace-l
 
 > [!NOTE]
 > * The [workspaces network communication policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy) isn't restricted by workspace-level network settings. This API remains accessible from public networks, even if public access to the workspace is blocked. Tenant-level network restrictions still apply. See also [Table 1. Access to workspace communication policy API based on tenant and private link settings](security-workspace-level-private-links-set-up.md#step-8-deny-public-access-to-the-workspace).
-> * **Deployment pipelines:** If any workspace in a deployment pipeline is set to deny public access (restricted), deployment pipelines can't connect to that workspace. 
+> * **Deployment pipelines:** If any workspace in a deployment pipeline is set to deny public access (restricted), deployment pipelines can't connect to that workspace. Configuring inbound restriction is blocked for any workspace that is assigned to a pipeline.
 > * **Item sharing:** Item sharing isn't supported. If items are already shared with users, those users can no longer access the items using the shared links.
 
 ### Lakehouse support
