@@ -1,27 +1,27 @@
 ---
-title: Security for Data Warehousing
-description: Learn more about securing the SQL analytics endpoint and Warehouse in Microsoft Fabric.
+title: Secure Your Fabric Data Warehouse
+description: Learn more about securing your warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: cynotebo
-ms.date: 04/06/2025
+ms.reviewer: chweb
+ms.date: 08/12/2025
 ms.topic: overview
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 
-# Security for data warehousing in Microsoft Fabric
+# Secure your Fabric Data Warehouse
 
-**Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-This article covers security topics for securing the [!INCLUDE [fabric-se](includes/fabric-se.md)] and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+Fabric Data Warehouse provides an enterprise data warehousing solution, managed entirely and fully integrated within [!INCLUDE [product-name](../includes/product-name.md)]. When storing sensitive and business-critical data, however, you must take steps to maximize the security of your warehouses and the data stored in them.
 
-For information on [!INCLUDE [product-name](../includes/product-name.md)] security, see [Security in Microsoft Fabric](../security/security-overview.md).
+This article provides guidance on how to best secure your warehouse in [!INCLUDE [product-name](../includes/product-name.md)].
 
-For information on connecting to the [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Warehouse connectivity](connectivity.md).
+<a id="share-a-warehouse"></a>
 
 ## Warehouse access model
 
-[!INCLUDE [product-name](../includes/product-name.md)] permissions and granular SQL permissions work together to govern Warehouse access and the user permissions once connected.
+[!INCLUDE [product-name](../includes/product-name.md)] permissions and granular SQL permissions work together to govern warehouse access and the user permissions once connected.
 
 - Warehouse connectivity is dependent on being granted the [!INCLUDE [product-name](../includes/product-name.md)] Read permission, at a minimum, for the Warehouse.
 - [!INCLUDE [product-name](../includes/product-name.md)] item permissions enable the ability to provide a user with SQL permissions, without needing to grant those permissions within SQL.
@@ -35,13 +35,22 @@ Workspace roles are used for development team collaboration within a workspace. 
 - For an overview of [!INCLUDE [product-name](../includes/product-name.md)] workspace roles, see [Roles in workspaces in Microsoft Fabric](../fundamentals/roles-workspaces.md).
 - For instructions on assigning workspace roles, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
 
-For details on the specific Warehouse capabilities provided through workspace roles, see [Workspace roles in Fabric data warehousing](workspace-roles.md).
+For details on the specific Warehouse capabilities provided through workspace roles, see [Workspace roles in Fabric Data Warehouse](workspace-roles.md).
 
 ### Item permissions
 
-In contrast to workspace roles, which apply to all items within a workspace, item permissions can be assigned directly to individual Warehouses. The user will receive the assigned permission on that single warehouse. The primary purpose for these permissions is to enable sharing for downstream consumption of the Warehouse.
+In contrast to workspace roles, which apply to all items within a workspace, item permissions can be assigned directly to individual warehouses. 
 
-For details on the specific permissions provided for warehouses, see [Share your data and manage permissions](share-warehouse-manage-permissions.md).
+Always follow the principal of least privilege when granting permissions and role memberships. When evaluating the permissions to assign to a user, consider the following guidance:
+
+- If they primarily require read only access, assign them to the Viewer role and grant read access on specific objects through T-SQL. For more information, see [Manage SQL granular permissions](sql-granular-permissions.md).
+- Only team members who are currently collaborating on the solution should be assigned to workspace roles Admin, Member, and Contributor, as they provide access to all items within the workspace.
+- If they are higher privileged users, assign them to Admin, Member, or Contributor roles. The appropriate role is dependent on the other actions that they need to perform.  
+- Other users, who only need access to an individual warehouse or require access to only specific SQL objects, should be given Fabric Item permissions and granted access through SQL to the specific objects.
+- You can manage permissions on Microsoft Entra ID groups, as well, rather than adding each specific member. For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
+- Audit user activity in your warehouse with [User audit logs](#user-audit-logs).
+
+For more information on sharing, see [Share your data and manage permissions](share-warehouse-manage-permissions.md).
 
 ### Granular security
 
@@ -78,31 +87,16 @@ Dynamic data masking helps prevent unauthorized viewing of sensitive data by ena
 
 For details on dynamic data masking, see [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md).
 
-## Share a warehouse
+## User audit logs
 
-Sharing is a convenient way to provide users read access to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] for downstream consumption. Sharing allows downstream users in your organization to consume a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using SQL, Spark, or Power BI. You can customize the level of permissions that the shared recipient is granted to provide the appropriate level of access.
+To track user activity in warehouse and SQL analytics endpoint for meeting regulatory compliance and records managements requirements, a set of audit activities are accessible via Microsoft Purview and PowerShell. 
 
-For more information on sharing, see [Share your data and manage permissions](share-warehouse-manage-permissions.md).
-
-## Guidance on user access
-
-When evaluating the permissions to assign to a user, consider the following guidance:
-
-- Only team members who are currently collaborating on the solution should be assigned to Workspace roles (Admin, Member, Contributor), as this provides them access to all Items within the workspace.
-- If they primarily require read only access, assign them to the Viewer role and grant read access on specific objects through T-SQL. For more information, see [Manage SQL granular permissions](sql-granular-permissions.md).
-- If they are higher privileged users, assign them to Admin, Member, or Contributor roles. The appropriate role is dependent on the other actions that they need to perform.  
-- Other users, who only need access to an individual warehouse or require access to only specific SQL objects, should be given Fabric Item permissions and granted access through SQL to the specific objects.
-- You can manage permissions on Microsoft Entra ID (formerly Azure Active Directory) groups, as well, rather than adding each specific member. For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
-
-### User audit logs
-
-To track user activity in warehouse and SQL analytics endpoint for meeting regulatory compliance and records managements requirements, a set of audit activities are accessible via Microsoft Purview and PowerShell. You can use user audit logs to identify who is taking what action on your Fabric items.
-
-For more information on how to access user audit logs, see [Track user activities in Microsoft Fabric](../admin/track-user-activities.md) and [Operation list](../admin/operation-list.md).
+- You can use user audit logs to identify who is taking what action on your Fabric items. 
+- To get started, learn [how to configure SQL audit logs in Fabric Data Warehouse (Preview)](configure-sql-audit-logs.md). 
+- You can [track user activities across Microsoft Fabric](../admin/track-user-activities.md). For more information, see the [Operation list](../admin/operation-list.md).
 
 ## Related content
 
 - [Warehouse connectivity in Microsoft Fabric](connectivity.md)
+- [Workspace roles in Fabric Data Warehouse](workspace-roles.md)
 - [SQL granular permissions in Microsoft Fabric](sql-granular-permissions.md)
-- [Share your data and manage permissions](share-warehouse-manage-permissions.md)
-- [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md)

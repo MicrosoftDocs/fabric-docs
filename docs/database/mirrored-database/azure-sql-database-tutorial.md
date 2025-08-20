@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure SQL Database 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala
-ms.date: 07/31/2025
+ms.date: 08/18/2025
 ms.topic: tutorial
 ms.custom:
 ---
@@ -40,14 +40,14 @@ The System Assigned Managed Identity (SAMI) of your Azure SQL logical server mus
 
 ### Database principal for Fabric
 
-Next, you need to create a way for the Fabric service to connect to your Azure SQL Database.
+Next, you need to create a way for the Fabric service to connect to your Azure SQL Database. Basic (SQL authentication), Organization account (Microsoft Entra ID), and [Service Principal Name (SPN)](/azure/azure-sql/database/authentication-aad-service-principal?view=azuresql-db&preserve-view=true) are the supported authentication methods to connect to Azure SQL Database.
 
 You can accomplish this with a [login and mapped database user](#use-a-login-and-mapped-database-user).
 
 #### Use a login and mapped database user
 
 > [!NOTE]
-> Microsoft Entra server principals (logins) are currently in preview for Azure SQL Database. Before using Microsoft Entra ID authentication, review the limitations in [Microsoft Entra server principals](/azure/azure-sql/database/authentication-azure-ad-logins?view=azuresql-db&preserve-view=true#limitations-and-remarks). Database users created using Microsoft Entra logins may experience delays when being granted roles and permissions. If you encounter issue, refer to the document to mitigate.
+> Microsoft Entra server principals (logins) are currently in preview for Azure SQL Database. Before using Microsoft Entra ID authentication, review the limitations in [Microsoft Entra server principals](/azure/azure-sql/database/authentication-azure-ad-logins?view=azuresql-db&preserve-view=true#limitations-and-remarks). Database users created using Microsoft Entra logins can experience delays when being granted roles and permissions.
 
 1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
@@ -65,20 +65,34 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
     ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
     ```
 
+    - Or, log in as the Microsoft Entra admin, and create a Service Principal Name (SPN) authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+
+    ```sql
+    CREATE LOGIN [Service Principal Name] FROM EXTERNAL PROVIDER;
+    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [Service Principal Name];
+    ```
+
 1. Connect to the user database that will be mirrored. Create a database user connected to the login and grant the minimum privileges necessary:
 
-    For a SQL Authenticated login:
+    - For a SQL Authenticated login:
 
     ```sql
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
     GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO [fabric_user];
     ```
     
-    Or, for a Microsoft Entra authenticated login:
+    - Or, for a Microsoft Entra authenticated login:
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
     GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO [bob@contoso.com];
+    ```
+  
+    - Or, for a Service Principal Name (SPN) login:
+
+    ```sql
+    CREATE USER [Service Principal Name] FOR LOGIN [Service Principal Name];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO [Service Principal Name];
     ```
 
 ## Create a mirrored Azure SQL Database
@@ -99,10 +113,10 @@ To enable Mirroring, you will need to connect to the Azure SQL logical server fr
    - **Connection**: Create new connection.
    - **Connection name**: An automatic name is provided. You can change it.
    - **Data gateway:** Select the default (None) or the name of virtual network data gateway / on-premises data gateway you set up according to your scenario.
-   - **Authentication kind**:
-       - Basic (SQL Authentication): Specify the username and password.
-       - Organization account (Microsoft Entra ID)  
-       - Service principal: Specify the service principal's tenant ID, client ID and client secret.
+   - **Authentication kind**: Choose the type of login you created previously for the [login and mapped database user](#use-a-login-and-mapped-database-user).     
+      - Basic (SQL Authentication): Specify the username and password.
+      - Organization account (Microsoft Entra ID)
+      - Service principal: Specify the service principal's tenant ID, client ID, and client secret.
 1. Select **Connect**.
 
 ## Start mirroring process
@@ -117,9 +131,7 @@ To enable Mirroring, you will need to connect to the Azure SQL logical server fr
 
 1. Select **Mirror database**. Mirroring begins.
 1. Wait for 2-5 minutes. Then, select **Monitor replication** to see the status.
-1. After a few minutes, the status should change to *Running*, which means the tables are being synchronized.
-
-    If you don't see the tables and the corresponding replication status, wait a few seconds and then refresh the panel.
+1. After a few minutes, the status should change to *Running*, which means the tables are being synchronized. If you don't see the tables and the corresponding replication status, wait a few seconds and then refresh the panel.
 1. When they have finished the initial copying of the tables, a date appears in the **Last refresh** column.
 1. Now that your data is up and running, there are various analytics scenarios available across all of Fabric.
 
