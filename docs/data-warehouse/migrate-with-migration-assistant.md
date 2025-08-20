@@ -70,7 +70,7 @@ The AI-assisted migration features of the Migration Assistant to fix migration i
 
    The **State** column indicates if the object's metadata was adjusted during the translation to be supported in Fabric Warehouse. For example, you might see that certain column datatypes or T-SQL language constructs are automatically converted to the ones that are supported in Fabric. The **Details** column shows the information about the adjustments that were made to the objects. 
 
-1. Open the metadata migration summary in full screen view for better readability. Apply filters on object types to filter specific object types.
+1. Open the metadata migration summary in full screen view for better readability. Apply filters to view specific object types.
 
    :::image type="content" source="media/migrate-with-migration-assistant/show-migrated-objects-full-screen.png" alt-text="Screenshot of the full screen view of the Migration Assistant's metadata migration summary of migrated objects." lightbox="media/migrate-with-migration-assistant/show-migrated-objects-full-screen.png":::
 
