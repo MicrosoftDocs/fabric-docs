@@ -4,7 +4,7 @@ description: This article explains how to copy data using Azure Cosmos DB for Mo
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/06/2024
+ms.date: 08/20/2025
 ms.custom: 
   - pipelines
   - template-how-to
@@ -40,6 +40,7 @@ The following properties are **required**:
 - **Connection**: Select an Azure Cosmos DB for MongoDB connection from the connection list. If no connection exists, then create a new Azure Cosmos DB for MongoDB connection by selecting **More** at the bottom of the connection list.
 - **Database**: Select your database from the drop-down list.
 - **Collection name**: Specify the name of the Azure Cosmos DB collection. You can select the collection from the drop-down list. 
+- **Version**: The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. To learn the difference between various versions, go to this [section](#differences-between-azure-cosmos-db-for-mongodb-versions).
 
 Under **Advanced**, you can specify the following fields:
 
@@ -127,6 +128,7 @@ The following table contains more information about the copy activity in Azure C
 |**Connection**|Your connection to the source data store.|< your Azure Cosmos DB for MongoDB connection >|Yes|connection|
 |**Database**|Your database that you use as source.|< your database >|Yes|database|
 |**Collection name**|The name of the Azure Cosmos DB collection.|< your collection >|Yes|collection|
+|**Version**|The version that you specify.|• 1.1<br>• 1.0|Yes|version:<br>• 1.1<br>• 1.0|
 |**Filter**|The selection filter using query operators. To return all documents in a collection, omit this parameter or pass an empty document ({}).|< your selection filter >|No|filter|
 |**Cursor methods**|The way that the underlying query is executed.|• **project**<br>• **sort**<br>• **limit**<br>• **skip**|No|cursorMethods:<br>• project<br>• sort<br>• limit<br>• skip|
 |**Batch size**|The number of documents to return in each batch of the response from MongoDB instance. In most cases, modifying the batch size will not affect the user or the application. Azure Cosmos DB limits each batch cannot exceed 40MB in size, which is the sum of the **Batch size** number of documents' size, so decrease this value if your document size being large.|< your write batch size ><br>(the default is 100)|No|batchSize|
