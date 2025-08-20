@@ -7,6 +7,7 @@ ms.author: conxu
 ms.topic: how-to
 ms.date: 08/20/2025
 ms.custom: airflows
+ai-usage: ai-assisted
 ---
 
 # CI/CD for Apache Airflow in Data Factory in Microsoft Fabric
@@ -14,15 +15,15 @@ ms.custom: airflows
 > [!NOTE]
 > This feature is in [preview](https://learn.microsoft.com/en-us/fabric/fundamentals/preview). Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
-You can utilize source control, continuous integration (CI), continuous deployment (CD), and a collaborative workspace with Apache Airflow. 
+You can use source control, CI/CD, and a shared workspace with Apache Airflow to manage your workflows.
 
-Microsoft Fabric offers two built-in tools to support CI/CD: Git integration and deployment pipelines. These tools work together to help you manage your Airflow pipelines and workspace resources efficiently. 
+Microsoft Fabric includes two built-in tools to support CI/CD: Git integration and deployment pipelines. These tools help you organize your Airflow pipelines and workspace resources.
 
-With Git integration, you can connect your own repositories in Azure DevOps or GitHub. Deployment pipelines let you move updates across environments—so you only change what’s needed. Together, they make it easy to build, test, and deploy your Airflow workflows with confidence. 
+Git integration lets you connect to your own repositories in Azure DevOps or GitHub. Deployment pipelines help you move updates between environments, so you only update what’s needed. Together, they make it easier to build, test, and deploy your Airflow workflows.
 
 ## Git integration for Airflow
 
-Follow these steps to connect your Airflow in Data Factory to Git. This helps you track changes, work with your team, and keep your work safe.
+Follow these steps to connect your Airflow in Data Factory to Git. Git helps you track changes, work with your team, and keep your work safe.
 
 ### Prerequisites for Git integration
 
@@ -43,7 +44,7 @@ Follow these steps to connect your Airflow in Data Factory to Git. This helps yo
 
 ### Step 1: Connect to a Git repository
 
-To use Git integration with Copy job in Fabric, you first need to connect to a Git repository:
+To use Git integration with Airflow in Fabric, you first need to connect to a Git repository:
 
 1. Sign in to Fabric and go to the workspace you want to connect to Git.
 2. Select **Workspace settings**.
@@ -90,9 +91,9 @@ You can commit your changes to Git by following these steps:
 
 Once you commit, those items disappear from the list, and your workspace points to the latest commit.
 
-## Deployment pipelines for Git
+## Deployment pipelines
 
-Follow these steps to use Git deployment pipelines with your Fabric workspace:
+Follow these steps to use deployment pipelines with your Fabric workspace:
 
 1. [Prerequisites](#prerequisites-for-deployment-pipelines)
 2. [Create a deployment pipeline](#step-1-create-a-deployment-pipeline)
@@ -115,7 +116,7 @@ Before you get started, be sure to set up the following prerequisites:
 
 ### Step 3: Assign a workspace to the deployment pipeline
 
-After creating a pipeline, you need to add content you want to manage to the pipeline. Adding content to the pipeline is done by assigning a workspace to any pipeline stage:
+After creating a deployment pipeline, you need to add content you want to manage to the deployment pipeline. Adding content to the deployment pipeline is done by assigning a workspace to any deployment pipeline stage:
 
 1. Open the deployment pipeline.
 
