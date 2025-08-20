@@ -10,7 +10,7 @@ ms.search.form: Test your User Data Functions
 
 # Test your User Data Functions in the Fabric portal (preview)
 
-Fabric User data functions provides capabilities to test your functions and validate your code changes in the Fabric portal or by using the [VS Code extension](./create-user-data-functions-vs-code.md). These features are helpful to ensure that your functions can run successfully without the need to publish them. 
+Fabric User data functions provide capabilities to test and validate your code changes in the Fabric portal or by using the [VS Code extension](./create-user-data-functions-vs-code.md). These features are helpful to ensure that your functions can run successfully without the need to publish them. 
 
 In this article, you will learn how to:
 - Use the Develop and View/Run only modes in the portal editor.
@@ -27,13 +27,13 @@ Fabric User Data Functions provides two modes to interact with your functions in
 
 ### Develop mode
 
-**Develop mode** allows users with Write permissions to edit, test and publish their code. In this mode, users can see their modified code including any new, unpublished functions they have written.
+**Develop mode** allows users with Write permissions to edit, test, and publish their code. In this mode, users can see their modified code including any new, unpublished functions they wrote.
 
    :::image type="content" source="..\media\user-data-functions-test\user-data-functions-develop-mode.png" alt-text="Screenshot showing the components of Develop mode in the Fabric portal." lightbox="..\media\user-data-functions-test\user-data-functions-develop-mode.png":::
 
 The following are the components of Develop mode:
 1. **Mode switcher:** This control allows you to switch to Develop mode from Run only mode. 
-1. **Functions list:** This list contains new functions along with any previously published function. The dot next to the function name indicates that a function is new and that it hasn't been published yet.
+1. **Functions list:** This list contains new functions along with any previously published function. The dot next to the function name indicates that a function is new and that it's not published yet.
 1. **Code editor:** In Develop mode, the code editor is enabled and the user can make changes to the code. 
 1. **Test session indicator:** This indicator shows if the test session is active. The test session is created after running a test and it has a timeout after 15 minutes of inactivity.
 
@@ -49,7 +49,7 @@ The following are the components of Run only mode:
 1. **Code editor:** In Run only mode, the code editor is ready-only and can't be modified in this mode. 
 1. **Code changes indicator:** This message bar indicates if there are unpublished changes in Develop mode. To see those changes, the user needs to switch to Develop mode by clicking on the button in the bar or using the Mode switcher. 
 
-Users that only have View permissions can see the **View only mode**. In this mode, users have a access to a read-only version of the code and its metadata. 
+Users that only have View permissions can see the **View only mode**. In this mode, users have access to a read-only version of the code and its metadata. 
 
 >[!NOTE]
 > Only users that only have View permissions are able to see the code the View only mode.
