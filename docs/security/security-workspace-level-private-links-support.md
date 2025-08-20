@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: overview
 ms.custom:
-ms.date: 08/18/2025
+ms.date: 08/20/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -24,7 +24,7 @@ Workspace-level private links in Microsoft Fabric provide a secure way to connec
 
 ## Supported item types for workspace-level private link
 
-You can use workspace-level private links to connect to following item types in Fabric:
+You can use workspace-level private links to connect to the following item types in Fabric:
 
 * Lakehouse, SQL Endpoint, Shortcut
 * Direct connection via OneLake endpoint
@@ -33,7 +33,6 @@ You can use workspace-level private links to connect to following item types in 
 * Data pipeline
 * Copy Job
 * Mounted Data Factory
-* Eventstream
 * Warehouse 
 * Eventhouse
 * Dataflows Gen2 (CI/CD)
@@ -97,7 +96,8 @@ APIs with endpoints containing `v1/workspaces/{workspaceId}` support workspace-l
 * [OneLake Data Access Security - Create Or Update Data Access Roles - REST API (Core)](/rest/api/fabric/core/onelake-data-access-security) 
 * [OneLake Shortcuts - REST API (Core)](/rest/api/fabric/core/onelake-shortcuts)
     * From a restricted workspace, you can create shortcuts to other data sources such as external storage, or through trusted access.
-    * When you create a shortcut to another restricted workspace, you need to create a managed private endpoint and get approval from the target workspace private link service owner in Azure. <!--For more information, see [Cross-workspace communication](./security-cross-workspace-communication.md).-->
+    * When you create a shortcut to another restricted workspace, you need to create a managed private endpoint and get approval from the target workspace private link service owner in Azure. For more information, see [Cross-workspace communication](security-cross-workspace-communication.md).
+    * Shortcut transforms are not currently supported in restricted workspaces.
 * [Tags - REST API (Core)](/rest/api/fabric/core/tags)
 * [Workspaces - REST API (Core)](/rest/api/fabric/core/workspaces)
 * [External Data Shares Provider - REST API (Core)](/rest/api/fabric/core/external-data-shares-provider): The recipient needs to use the workspace fully qualified domain name (FQDN) to access the shared OneLake URL.
