@@ -22,7 +22,7 @@ The Azure connections admin settings have the following options:
 
 * [Workspace-level storage permissions](#workspace-level-storage-permissions) - Use to store dataflows in specific ADLS Gen 2 accounts, organized per workspace.
 
-* [Workspace-level log analytics permissions](#Workspace-level-log-analytics-permissions) - Use to configure activity logging in Log Analytics.
+* [Workspace-level log analytics permissions](#workspace-level-log-analytics-permissions) - Use to configure activity logging in Log Analytics.
 
 To learn how to access the Fabric admin portal settings, see [What is the admin portal?](admin-center.md)
 
