@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview #Don't change
-ms.date: 08/18/2025
+ms.date: 08/20/2025
 
 #customer intent: As a security administrator, I want to understand workspace outbound access protection scenarios so that I can configure secure data access and movement between workspaces and external sources.
 ---
