@@ -13,7 +13,7 @@ ms.custom:
 
 This article includes important steps to optimize performance of the source database and mirrored database from SQL Server in Microsoft Fabric.
 
-[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Control scan performance
 
