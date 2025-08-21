@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: overview
 ms.custom:
-ms.date: 08/20/2025
+ms.date: 08/21/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -36,6 +36,7 @@ You can use workspace-level private links to connect to the following item types
 * Warehouse 
 * Dataflows Gen2 (CI/CD)
 * Variable library
+* Mirrored database
 
 ### Notes about unsupported item types
 
@@ -224,6 +225,15 @@ A virtual network data gateway must be used for every dataflow connector. The vi
 ### Variable library support
 
 [Items - REST API (VariableLibrary)](/rest/api/fabric/variablelibrary/items)
+
+### Mirrored database support
+
+* [Fabric Mirroring Public REST API](/fabric/database/mirrored-database/mirrored-database-rest-api)
+* [Items - REST API (MirroredDatabase)](/rest/api/fabric/mirroreddatabase/items)
+
+> [!NOTE]
+> * Currently, workspace-level private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring), [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db) and [SQL Server 2025 mirroring](/fabric/database/mirrored-database/sql-server) (using CTP 2.0 or higher version). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started. 
+> * For open mirroring, when your workspace is configured to deny inbound public access, ensure the publisher writes data into the OneLake landing zone via a private link with workspace FQDN.
 
 ## Supported and unsupported tools
 
