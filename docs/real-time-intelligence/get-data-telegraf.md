@@ -11,7 +11,7 @@ ms.date: 08/21/2025
 ---
 # Ingest data from Telegraf into Microsoft Fabric Eventhouse
 
-Microsoft Fabric Real-Time Intelligence supports data ingestion from [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/). Telegraf is an open source, lightweight agent with a minimal memory footprint for collecting, processing, and writing telemetry data, including logs, metrics, and IoT data.
+Microsoft Fabric Real-Time Intelligence supports data ingestion from [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/). Telegraf is an open source, lightweight agent that uses minimal memory to collect, process, and write telemetry: logs, metrics, and IoT data.
 
 What you'll learn in this article:
 
@@ -108,7 +108,7 @@ The following table lists all the possible properties that can be included in a 
 | Initial Catalog | Database | The database name in the Eventhouse. For example, `MyDatabase`. | Required |
 | Ingestion Type | IngestionType | Values can be set to `managed` for streaming ingestion with fallback to batched ingestion or `queued` for queuing up metrics and process sequentially | `queued` |
 | Table Name | TableName | Name of the single table to store all the metrics; only needed if `MetricsGroupingType` is `SingleTable` | - |
-| Create Tables | CreateTables | Creates tables and relevant mapping if `true`. Otherwise table and mapping creation is skipped.  Useful for running Telegraf with the lowest possible permissions, for example, table ingestor role. | `true` |
+| Create Tables | CreateTables | Creates tables and relevant mapping if `true`. Otherwise table and mapping creation is skipped. Useful for running Telegraf with the lowest possible permissions, for example, table ingestor role. | `true` |
 | Metrics Grouping Type | MetricsGroupingType | Type of metrics grouping used when pushing to Eventhouse either being `TablePerMetric` or `SingleTable`. | `TablePerMetric` |
 
 ### Example connection strings
@@ -143,7 +143,7 @@ The table name matches the metric name. The metric name must comply with the Eve
 
 ### SingleTable
 
-The plugin sends all the metrics received to a single Eventhouse KQL DB table. The name of the table must be supplied via `Table Name` parameter in the `connection_string`. If the table doesn't exist, the plugin creates the table. If the table exists, the plugin tries to merge the Telegraf metric schema to the existing table.
+The plugin sends all the metrics received to a single Eventhouse KQL database table. The name of the table must be supplied via `Table Name` parameter in the `connection_string`. If the table doesn't exist, the plugin creates the table. If the table exists, the plugin tries to merge the Telegraf metric schema to the existing table.
 
 ## Ingestion types
 
@@ -155,7 +155,7 @@ The service queues and processes metrics in batches. It's the default and recomm
 
 ### Managed ingestion
 
-Streaming ingestion with fallback to batched ingestion. This provides lower latency but falls back to batched ingestion when streaming ingestion isn't enabled on Eventhouse.
+Streaming ingestion with fallback to batched ingestion provides lower latency but falls back to batched ingestion when streaming ingestion isn't enabled on Eventhouse.
 
 > [!IMPORTANT]
 > To use managed ingestion, you must enable [streaming ingestion](/azure/data-explorer/ingest-data-streaming?tabs=azure-portal%2Ccsharp) on your Eventhouse.
@@ -168,7 +168,7 @@ To check if streaming ingestion is enabled, run this query in your Eventhouse:
 
 ## Table schema
 
-When using Eventhouse, the schema of the table matches the structure of the Telegraf metric. The plugin automatically creates tables with the following schema:
+Eventhouse automatically creates tables whose schema matches the Telegraf metric structure:
 
 ```kql
 .create-merge table ['table-name'] (['fields']:dynamic, ['name']:string, ['tags']:dynamic, ['timestamp']:datetime)
@@ -181,7 +181,7 @@ The corresponding table mapping is automatically created:
 ```
 
 > [!NOTE]
-> This plugin creates tables and corresponding table mapping using the commands above when `CreateTables=true` (default).
+> When `CreateTables=true` (it's the default), this plugin creates tables and corresponding table mappings using the commands above.
 
 ## Query ingested data
 
@@ -219,7 +219,7 @@ disk
 ```
 
 > [!NOTE]
-> This approach can affect performance with large volumes of data. For better performance with large datasets, use the update policy approach described below.
+> This approach can affect performance with large volumes of data. For better performance with large datasets, use the update policy approach.
 
 ### Use an update policy for better performance
 
