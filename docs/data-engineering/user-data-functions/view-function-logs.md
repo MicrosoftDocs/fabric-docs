@@ -23,9 +23,9 @@ There are some limitations to keep in mind when using user data functions invoca
 
 ## View the function invocation logs
 
-In the Functions explorer, hover over the name of the function and select the ellipses icon (...) that appears, then select **View historical log** to view the logs.
+In **Run only mode**, hover over the name of the function in the Functions explorer and select the ellipses icon (...), then select **View historical log** to view the logs.
 
-:::image type="content" source="..\media\user-data-functions-view-logs\select-view-historical-logs.png" alt-text="Screenshot showing how to view historical logs for a function." lightbox="..\media\user-data-functions-view-logs\select-view-historical-logs.png":::
+:::image type="content" source="..\media\user-data-functions-view-logs\select-view-historical-logs-1.png" alt-text="Screenshot showing how to view historical logs for a function." lightbox="..\media\user-data-functions-view-logs\select-view-historical-logs-1.png":::
 
 ## View all invocation logs
 

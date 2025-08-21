@@ -341,12 +341,20 @@ items:
       - name: Secure data 
         displayName: Securing data in mirrored SQL Server
         href: ../database/mirrored-database/sql-server-security.md
+      - name: Performance
+        displayName: Performance in mirrored SQL Server
+        href: ../database/mirrored-database/sql-server-performance.md
       - name: Limitations 
         displayName: Limitations in mirrored SQL Server
         href: ../database/mirrored-database/sql-server-limitations.md
       - name: Troubleshoot 
-        displayName: Troubleshoot mirrored SQL Server
-        href: ../database/mirrored-database/sql-server-troubleshoot.md
+        items:
+          - name: Troubleshoot mirrored SQL Server
+            displayName: Troubleshoot mirrored SQL Server
+            href: ../database/mirrored-database/sql-server-troubleshoot.md
+          - name: Automatic reseed
+            href: ../database/mirrored-database/sql-server-configure-automatic-reseed.md
+
   - name: Open mirroring 
     items:
       - name: Open mirroring overview

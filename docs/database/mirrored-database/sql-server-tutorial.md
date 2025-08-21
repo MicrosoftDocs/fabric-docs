@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database From SQL Server in Micro
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajayj, rajpo
-ms.date: 08/07/2025
+ms.date: 08/18/2025
 ms.topic: tutorial
 ms.custom:
 ---
@@ -37,9 +37,18 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 #### Use a login and mapped database user
 
+Fabric will use a dedicated login to connect to the source SQL Server instance. 
+
 Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to create a login and database user for database mirroring.
 
 ## [SQL Server 2025](#tab/sql2025)
+
+In SQL Server 2025, the permissions required for the Fabric login are:
+
+- Membership in the server role `##MS_ServerStateReader##`
+- The following permissions in the user database:
+    - SELECT
+    - ALTER ANY EXTERNAL MIRROR
 
 1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
@@ -50,14 +59,20 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
    - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
 
    ```sql
+   --Run in the master database
+   USE [master];
    CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
+
    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [fabric_login];
    ```
 
    - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account (recommended). Run the following T-SQL script in the `master` database:
 
    ```sql
+   --Run in the master database
+   USE [master];
    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
+
    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
    ```
 
@@ -66,20 +81,28 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
     - For a SQL Authenticated login:
 
     ```sql
+    --Run in the user database
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, 
-       VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE, VIEW PERFORMANCE DEFINITION TO [fabric_user];
+
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR
+       TO [fabric_user];
     ```
     
     - Or, for a Microsoft Entra authenticated login (recommended):
 
     ```sql
+    --Run in the user database
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, 
-       VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE, VIEW PERFORMANCE DEFINITION TO [bob@contoso.com];
+
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR
+       TO [bob@contoso.com];
     ```
 
 ## [SQL Server 2016-2022](#tab/sql201622)
+
+For SQL Server versions 2016-2022, membership in the sysadmin server role or db_owner database role is only needed to initially setup CDC. 
+
+Once CDC is setup, only SELECT and CONNECT permissions are needed to replicate the data.
 
 1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
@@ -92,6 +115,8 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
    - Run the following T-SQL script in the `master` database to create a SQL authenticated login named `fabric_login`. Provide your own strong password.
 
    ```sql
+   --Run in the master database
+   USE [master];
    CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
    ALTER SERVER ROLE [sysadmin] ADD MEMBER [fabric_login];
    ```
@@ -99,8 +124,10 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
    - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
 
    ```sql
+   --Run in the master database
+   USE [master];
    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
-   ALTER SERVER ROLE [sysadmin] ADD MEMBER  [bob@contoso.com];
+   ALTER SERVER ROLE [sysadmin] ADD MEMBER [bob@contoso.com];
    ```
    
 1. Membership in the db_owner database role of the source database for mirroring is required to manage CDC.
@@ -110,6 +137,7 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
     - For a SQL Authenticated login:
 
     ```sql
+    --Run in the user database
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
     ALTER ROLE [db_owner] ADD MEMBER [fabric_user];
     ```
@@ -117,8 +145,40 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
     - Or, for a Microsoft Entra authenticated login (recommended):
 
     ```sql
+    --Run in the user database
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    ALTER ROLE [db_owner] ADD MEMBER [fabric_user];
+    ALTER ROLE [db_owner] ADD MEMBER [bob@contoso.com];
+    ```
+
+1. Once CDC is enabled, you can remove `fabric_login` from the sysadmin server role and db_owner database role.
+
+   - For a SQL Authenticated login:
+
+    ```sql
+    --Run in the master database
+    USE [master];
+    ALTER SERVER ROLE [sysadmin] DROP MEMBER [fabric_login];
+    GRANT CONNECT, SELECT to [fabric_login];
+    ```
+
+    ```sql
+    --Run in the user database
+    ALTER ROLE [db_owner] DROP MEMBER [fabric_user];
+    GRANT CONNECT, SELECT to [fabric_user];
+    ```
+
+   - Or, for a Microsoft Entra authenticated login (recommended):
+   
+    ```sql
+    --Run in the master database
+    USE [master];
+    ALTER SERVER ROLE [sysadmin] DROP MEMBER [bob@contoso.com];
+    ```
+
+    ```sql
+    --Run in the user database
+    ALTER ROLE [db_owner] DROP MEMBER [bob@contoso.com];
+    GRANT CONNECT, SELECT to [bob@contoso.com];
     ```
 
 ---
@@ -157,16 +217,13 @@ To configure Fabric Mirroring, you need to configure Azure Arc for your SQL Serv
     $apiVersion = "2020-06-01"
     $resource = "https://storage.azure.com/"
     $ep = $env:IDENTITY_ENDPOINT
-    $msi = "arc"
     if (!$ep) {
-        $msi = "vm"
-        $ep = 'http://169.254.169.254/metadata/identity/oauth2/token'
+        throw "Azure Arc service is not installed, Microsoft Fabric Mirroring cannot be enabled."
     }
     $endpoint = "{0}?resource={1}&api-version={2}" -f $ep,$resource,$apiVersion
     $secretFile = ""
     try {
         Invoke-WebRequest -Method GET -Uri $endpoint -Headers @{Metadata='True'} -UseBasicParsing > $null
-        $msi = "vm"
     } catch {
         if ($_.Exception.Response.Headers) {
             $wwwAuthHeader = $_.Exception.Response.Headers["WWW-Authenticate"]
@@ -175,16 +232,19 @@ To configure Fabric Mirroring, you need to configure Azure Arc for your SQL Serv
             }
         }
     }
-    $secret = ""
-    if ($secretFile) {
-        $msi = "arc"
-        $secret = cat -Raw $secretFile
+     
+    if (!$secretFile) {
+        throw "Secret file path not found."
     }
+     
+    $secret = cat -Raw $secretFile
+     
     try {
         $response = Invoke-WebRequest -Method GET -Uri $endpoint -Headers @{Metadata='True'; Authorization="Basic $secret"} -UseBasicParsing
     } catch {
-        Write-Output "Can not establish communication with IMDS service. You need either to have Azure Arc service installed or run this script on Azure VM."
+        throw "Can not establish communication with IMDS service. You need to have Azure Arc service installed"
     }
+     
     if ($response) {
         $parts = (ConvertFrom-Json -InputObject $response.Content).access_token -split "\."
         $padLength = 4 - ($parts[1].Length % 4)
@@ -201,41 +261,31 @@ To configure Fabric Mirroring, you need to configure Azure Arc for your SQL Serv
             if (-not (Test-Path -Path $regFed)) {
                 New-Item -Path $regFed -Force > $null
             }
-            if ($msi -eq "arc") {
-                Write-Host "Registering Azure Arc MSI service for SQL Server instance: " $instance `n
-                Set-ItemProperty -Path $regFed -Name "ArcServerManagedIdentityClientId" -Value ""
-                Set-ItemProperty -Path $regFed -Name "ArcServerSystemAssignedManagedIdentityClientId" -Value $($payload.appid)
-                Set-ItemProperty -Path $regFed -Name "ArcServerSystemAssignedManagedIdentityTenantId" -Value $($payload.tid)
-                $svcPath = "HKLM:\SYSTEM\CurrentControlSet\Services\$($service)"
-                if (Test-Path -Path $svcPath) {
-                    $keyPath = Split-Path $secretFile
-                    $svcKey = Get-Item -Path $svcPath
-                    $sqlAccount = $svcKey.GetValue("ObjectName")
-                    if ($sqlAccount -ne "LocalSystem") {
-                        Write-Host "Permissioning folder" $keyPath "for SQL Server account" $sqlAccount `n
-                        icacls $keyPath /grant "$($sqlAccount):(OI)(CI)R"
-                        $group = "Hybrid agent extension applications"
-                        $isMember = Get-LocalGroupMember -Group $group | Where-Object { $_.Name -eq $sqlAccount }
-                        if (-not $isMember) {
-                            Write-Host "Also adding SQL running account to local group: $group" `n
-                            Add-LocalGroupMember -Group $group -Member $sqlAccount
-                        } else {
-                            Write-Host ""
-                        }
+            Write-Host "Registering Azure Arc MSI service for SQL Server instance: " $instance `n
+            Set-ItemProperty -Path $regFed -Name "ArcServerManagedIdentityClientId" -Value ""
+            Set-ItemProperty -Path $regFed -Name "ArcServerSystemAssignedManagedIdentityClientId" -Value $($payload.appid)
+            Set-ItemProperty -Path $regFed -Name "ArcServerSystemAssignedManagedIdentityTenantId" -Value $($payload.tid)
+            $svcPath = "HKLM:\SYSTEM\CurrentControlSet\Services\$($service)"
+            if (Test-Path -Path $svcPath) {
+                $keyPath = Split-Path $secretFile
+                $svcKey = Get-Item -Path $svcPath
+                $sqlAccount = $svcKey.GetValue("ObjectName")
+                if ($sqlAccount -ne "LocalSystem") {
+                    Write-Host "Permissioning folder" $keyPath "for SQL Server account" $sqlAccount `n
+                    icacls $keyPath /grant "$($sqlAccount):(OI)(CI)R"
+                    $group = "Hybrid agent extension applications"
+                    $isMember = Get-LocalGroupMember -Group $group | Where-Object { $_.Name -eq $sqlAccount }
+                    if (-not $isMember) {
+                        Write-Host "Also adding SQL running account to local group: $group" `n
+                        Add-LocalGroupMember -Group $group -Member $sqlAccount
+                    } else {
+                        Write-Host ""
                     }
                 }
-            } else {
-                Write-Host "Registering Azure VM MSI service for SQL Server instance: " $instance `n
-                Set-ItemProperty -Path $regFed -Name "PrimaryAADTenant" -Value ""
-                Set-ItemProperty -Path $regFed -Name "OnBehalfOfAuthority" -Value "https://login.windows.net/"
-                Set-ItemProperty -Path $regFed -Name "FederationMetadataEndpoint" -Value "login.windows.net"
-                Set-ItemProperty -Path $regFed -Name "AzureVmManagedIdentityClientId" -Value ""
-                Set-ItemProperty -Path $regFed -Name "AzureVmSystemAssignedManagedIdentityClientId" -Value $($payload.appid)
-                Set-ItemProperty -Path $regFed -Name "AzureVmSystemAssignedManagedIdentityTenantId" -Value $($payload.tid)
             }
         }
-        Write-Host "Registeration complete for:" `n "Client ID: " $($payload.appid) `n "Tenant ID: " $($payload.tid) `n
-    } 
+        Write-Host "Registration complete for:" `n "Client ID: " $($payload.appid) `n "Tenant ID: " $($payload.tid) `n
+    }
    ```
    
    > [!IMPORTANT]
@@ -245,6 +295,8 @@ To configure Fabric Mirroring, you need to configure Azure Arc for your SQL Serv
 1. View the managed identities:
 
    ```sql
+   --Run in the master database
+   USE [master];
    SELECT *
    FROM sys.dm_server_managed_identities;
    ```
@@ -357,7 +409,7 @@ If the source database is in an AlwaysOn availability group, additional steps ar
 1. Fail over the availability group to a secondary replica. 
 1. Use the provided script to create, if they don't already exist, cleanup and capture jobs in the secondary replica instance's `msdb` system database. These jobs are important to maintain the historical data retained by CDC.
 
-   In the following script, replace `<YOUR DATABASE NAME>` with the name of the mirrored database. Execute the following on the mirrored database.
+   In the following script, replace `<YOUR DATABASE NAME>` with the name of the user database that will be mirrored. Execute the following T-SQL sample on the user database:
 
    ```sql
    DECLARE @db nvarchar(128) = '<YOUR DATABASE NAME>';
@@ -455,6 +507,10 @@ For more information and details on the replication states, see [Monitor Fabric 
 With Fabric Mirroring up and running, you can now query from your SQL Server database in Microsoft Fabric. For possibilities, see [Explore data in your mirrored database using Microsoft Fabric](explore.md).
 
 :::image type="content" source="media/sql-server-tutorial/validate-data-in-onelake.png" alt-text="Screenshot of querying data in a mirrored SQL Server database with the SQL analytics endpoint." lightbox="media/sql-server-tutorial/validate-data-in-onelake.png" :::
+
+## Performance optimization
+
+Now that mirroring is up and running, learn how to [optimize performance of the source database and mirrored database from SQL Server](sql-server-performance.md) in Microsoft Fabric.
 
 ## Related content
 

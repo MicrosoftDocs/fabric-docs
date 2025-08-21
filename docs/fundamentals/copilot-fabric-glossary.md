@@ -6,6 +6,7 @@ ms.author: daengli
 ms.reviewer: sngun
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ms.date: 04/02/2025
 ---
 
