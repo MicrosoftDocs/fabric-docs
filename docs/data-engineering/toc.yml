@@ -387,6 +387,8 @@ items:
         href: multiple-data-sources-graphql.md
       - name: Connect applications
         href: connect-apps-api-graphql.md
+      - name: Develop GraphQL applications on VS Code
+        href: api-graphql-develop-vs-code.md
       - name: Use Service Principals
         href: api-graphql-service-principal.md
       - name: Use Stored procedures
