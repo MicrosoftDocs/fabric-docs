@@ -127,7 +127,7 @@ sections:
       - question: |
           What are licensing options for Fabric Mirroring? 
         answer:
-          A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../../enterprise/licenses.md).
+          A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../enterprise/licenses.md).
 
   - name: Stop or pause Fabric Mirroring
     questions:

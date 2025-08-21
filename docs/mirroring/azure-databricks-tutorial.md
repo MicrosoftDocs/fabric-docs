@@ -57,7 +57,7 @@ You can also create shortcuts from your Lakehouse to your Databricks catalog ite
 
 ## Create a semantic model
 
-You can create a Power BI semantic model based on your mirrored item, and manually add/remove tables. For more information about creating and managing semantic models, see [Create a Power BI semantic model](../../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model).
+You can create a Power BI semantic model based on your mirrored item, and manually add/remove tables. For more information about creating and managing semantic models, see [Create a Power BI semantic model](../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model).
 
 For the best experience, it's recommended that you use Microsoft Edge Browser for Semantic Modeling Tasks.
 
@@ -76,7 +76,7 @@ This section guides you on configuring network security for your Azure Data Lake
 ### Prerequisites
 
 - Create or use an existing Azure Databricks workspace with Unity Catalog enabled.
-- To enable the workspace identity authentication type (recommended), the Fabric workspace must be associated with any F capacity. To create a workspace identity, see [Authenticate with workspace identity](../../security/workspace-identity-authenticate.md#step-1-create-the-workspace-identity).
+- To enable the workspace identity authentication type (recommended), the Fabric workspace must be associated with any F capacity. To create a workspace identity, see [Authenticate with workspace identity](../security/workspace-identity-authenticate.md#step-1-create-the-workspace-identity).
 - This section is for reaching an Azure Data Lake Storage (ADLS) Gen2 storage account behind an Azure Storage firewall. Azure Databricks workspace storage behind an Azure Storage firewall is not supported.
 - A catalog must be associated with a single storage account.
 

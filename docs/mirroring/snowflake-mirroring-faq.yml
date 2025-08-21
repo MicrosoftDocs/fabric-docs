@@ -105,7 +105,7 @@ sections:
       - question: |
           What are licensing options for Fabric Mirroring? 
         answer:
-          A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../../enterprise/licenses.md).
+          A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../enterprise/licenses.md).
       - question: |  
           What are the Fabric compute costs associated with Mirroring?
         answer:
@@ -116,4 +116,4 @@ additionalContent: |
   ## Related content
 
   - [What is Mirroring in Fabric?](overview.md)
-  - [Snowflake connector overview](../../data-factory/connector-snowflake-overview.md)
+  - [Snowflake connector overview](../data-factory/connector-snowflake-overview.md)

@@ -103,7 +103,7 @@ For more information, see [Share your mirrored database and manage permissions](
 
 ## Cross-database queries
 
-With the data from your mirrored database stored in the OneLake, you can write cross-database queries, joining data from mirrored databases, warehouses, and the SQL analytics endpoints of Lakehouses in a single T-SQL query. For more information, see [Write a cross-database query](../../data-warehouse/query-warehouse.md#write-a-cross-database-query).
+With the data from your mirrored database stored in the OneLake, you can write cross-database queries, joining data from mirrored databases, warehouses, and the SQL analytics endpoints of Lakehouses in a single T-SQL query. For more information, see [Write a cross-database query](../data-warehouse/query-warehouse.md#write-a-cross-database-query).
 
 For example, you can reference the table from mirrored databases and warehouses using three-part naming. In the following example, use the three-part name to refer to `ContosoSalesTable` in the warehouse `ContosoWarehouse`. From other databases or warehouses, the first part of the standard SQL three-part naming convention is the name of the mirrored database.
 

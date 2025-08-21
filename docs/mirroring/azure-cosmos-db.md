@@ -68,7 +68,7 @@ In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), th
 
 ### Semantic model
 
-You can create a Power BI Semantic Model on the database to allow business metrics to be created, shared, and reused. For more information, see [Create a Power BI semantic model](../../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model).
+You can create a Power BI Semantic Model on the database to allow business metrics to be created, shared, and reused. For more information, see [Create a Power BI semantic model](../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model).
 
 ## How does near real-time replication work?
 

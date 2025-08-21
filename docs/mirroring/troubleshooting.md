@@ -45,8 +45,8 @@ Review limitations documentation for each data source:
 | Fabric capacity paused        | Mirroring is stopped and you can't list or access the mirrored database item. Resume or reassign the capacity to your workspace. |
 | Fabric capacity resumed       | When capacity is resumed from a paused state, the mirrored database status appears as **Paused**. As a result, changes made in the source aren't replicated to OneLake.<br>To resume mirroring, go to the mirrored database in the Fabric portal, select **Resume replication**. Mirroring continues from where it was paused. <br>Note if the capacity remains paused for a long time, mirroring may not resume from its stopping point and will reseed data from the beginning. This situation may arise, for example, if the database transaction log becomes full. |
 | Fabric capacity scaling       | Mirroring continues. If you scale down the capacity, be aware that the OneLake storage for the mirrored data is free up to a limit based on the capacity size, thus scaling down the capacity may incur additional storage charge. Learn more from [Cost of mirroring](overview.md#cost-of-mirroring). |
-| Fabric capacity throttled     | Wait until the overload state is over or update your capacity. Mirroring will continue once the capacity is restored. Learn more from [Actions you can take to recover from overload situations](../../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs). |
-| Fabric trial capacity expired | Mirroring is stopped. To retain your mirrored database, purchase Fabric capacity. Learn more from [Fabric trial capacity expires](../../fundamentals/fabric-trial.md#the-trial-expires). |
+| Fabric capacity throttled     | Wait until the overload state is over or update your capacity. Mirroring will continue once the capacity is restored. Learn more from [Actions you can take to recover from overload situations](../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs). |
+| Fabric trial capacity expired | Mirroring is stopped. To retain your mirrored database, purchase Fabric capacity. Learn more from [Fabric trial capacity expires](../fundamentals/fabric-trial.md#the-trial-expires). |
 
 ## Data doesn't appear to be replicating
 
@@ -118,7 +118,7 @@ Currently, views are not supported. Only replicating regular tables are supporte
 
 #### Some of the data in my column appears to be truncated
 
-The SQL analytics endpoint doesn't support **varchar(max)** it only currently supports **varchar(8000)**. A workaround is to use a [warehouse](../../data-warehouse/data-warehousing.md#fabric-data-warehouse), which supports **varchar(max)** up to 1MB. You can copy the data from the tables mirrored in OneLake into the warehouse by creating a [copy job](../data-factory/create-copy-job.md) or using the T-SQL [COPY INTO](../data-warehouse/ingest-data-copy.md) statement in a notebook scheduled to run periodically.
+The SQL analytics endpoint doesn't support **varchar(max)** it only currently supports **varchar(8000)**. A workaround is to use a [warehouse](../data-warehouse/data-warehousing.md#fabric-data-warehouse), which supports **varchar(max)** up to 1MB. You can copy the data from the tables mirrored in OneLake into the warehouse by creating a [copy job](../data-factory/create-copy-job.md) or using the T-SQL [COPY INTO](../data-warehouse/ingest-data-copy.md) statement in a notebook scheduled to run periodically.
 
 #### I can't change the source database
 

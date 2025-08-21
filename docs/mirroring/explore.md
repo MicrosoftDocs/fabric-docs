@@ -55,7 +55,7 @@ In Microsoft Fabric, [Power BI semantic models](../data-warehouse/semantic-model
 
 A semantic model is typically a star schema with facts that represent a domain. Dimensions allow you to analyze the domain to drill down, filter, and calculate different analyses.
 
-A well-defined data model is instrumental in driving your analytics and reporting workloads. Modeling the mirrored database item is possible by first [creating a semantic model](../../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model), and setting relationships in the model view. After you navigate the model view, you can do this in a visual entity relationship diagram. The diagram allows you to drag and drop tables to infer how the objects relate to one another. Lines visually connecting the entities infer the type of logical relationships that exist.
+A well-defined data model is instrumental in driving your analytics and reporting workloads. Modeling the mirrored database item is possible by first [creating a semantic model](../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model), and setting relationships in the model view. After you navigate the model view, you can do this in a visual entity relationship diagram. The diagram allows you to drag and drop tables to infer how the objects relate to one another. Lines visually connecting the entities infer the type of logical relationships that exist.
 
 ## Create a report
 

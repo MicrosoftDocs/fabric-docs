@@ -86,7 +86,7 @@ Mirroring is only available for the Azure Cosmos DB account types listed here.
 - Fabric OneLake mirrors from the geographically closest Azure region to Fabric's capacity region in scenarios where an Azure Cosmos DB account has multiple read regions. In disaster recovery scenarios, mirroring automatically scans and picks up new read regions as your read regions could potentially fail over and change.
 - Delete operations in the source container are immediately reflected in Fabric OneLake using mirroring. Soft-delete operations using time-to-live (TTL) values isn't supported.
 - Mirroring doesn't support custom partitioning.
-- Fabric has existing limitations with T-SQL. For more information, see [T-SQL limitations](../../data-warehouse/tsql-surface-area.md#limitations).
+- Fabric has existing limitations with T-SQL. For more information, see [T-SQL limitations](../data-warehouse/tsql-surface-area.md#limitations).
 
 ### Schema and data changes
 
