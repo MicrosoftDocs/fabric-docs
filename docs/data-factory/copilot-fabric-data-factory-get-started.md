@@ -7,6 +7,7 @@ ms.reviewer: maghan, sngun
 ms.date: 07/15/2025
 ms.service: fabric
 ms.subservice: data-factory
+ms.update-cycle: 180-days
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
