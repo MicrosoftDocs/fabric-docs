@@ -70,31 +70,22 @@ Upload wheel files for their required libraries and dependencies (that aren’t 
 * Enabling outbound access protection blocks all public access from your workspace. Therefore, to query a Lakehouse from another workspace, you must create a cross-workspace managed private endpoint to allow the Spark jobs to establish a connection.
 * Using fully qualified paths with workspace and Lakehouse names can cause a socket timeout exception. To access files, use relative paths for the current Lakehouse or use a fully qualified path with the Workspace and Lakehouse GUIDs.
 * You could run into Spark issues in the following regions when outbound access protection is enabled for the workspace: Mexico Central, Israel Central, and Spain Central.
+* Use the correct file path formats when referencing files in a lakehouse.
+   * For files within the current lakehouse, use *relative paths*, for example:
 
-### Incorrect vs. Correct Path Usage
+      `Files/people.csv`
 
-Incorrect:
+   * When accessing files across workspaces or when absolute paths are required, use *fully qualified paths* with GUIDs, including your workspace ID and lakehouse ID, for example:
 
-`Path: abfss://<YourWorkspace>@onelake.dfs.fabric.microsoft.com/<YourLakehouse>.Lakehouse/Files/people.csv`
+      `Path: abfss://<YourWorkspaceID>@onelake.dfs.fabric.microsoft.com/<YourLakehouseID>/Files/people.csv`
 
-Why it fails: The Spark session's default configuration can't resolve paths using display names.
+   * Avoid using workspace or lakehouse display names in fully qualified paths, as Spark sessions can't resolve them and may result in socket timeout errors. Example of an **incorrect** file path:
 
-Correct:
+      `Path: abfss://<YourWorkspace>@onelake.dfs.fabric.microsoft.com/<YourLakehouse>.Lakehouse/Files/people.csv`
 
-Relative Path:
-
-Path: Files/people.csv
-
-When to use: For files within your current Lakehouse.
-
-Fully Qualified Path (with GUIDs):
-
-`Path: abfss://<YourWorkspaceID>@onelake.dfs.fabric.microsoft.com/<YourLakehouseID>/Files/people.csv`
-
-When to use: To access data in a different workspace or when a fully qualified path is required.
-* Outbound access protection (OAP) isn't supported for schema enabled Lakehouses.
+* Outbound access protection isn't supported for schema enabled lakehouses.
 * Ensure you re-register the `Microsoft.Network` feature on your subscription in the Azure portal.
-* OAP doesn't protect from data exfiltration via inbound requests, such as GET requests made as part of external AzCopy operations to move data out of a workspace.  To protect your data from unauthorized inbound requests, see [Protect inbound traffic](protect-inbound-traffic.md).
+* Outbound access protection doesn't protect from data exfiltration via inbound requests, such as GET requests made as part of external AzCopy operations to move data out of a workspace.  To protect your data from unauthorized inbound requests, see [Protect inbound traffic](protect-inbound-traffic.md).
 
 
 ## Related content
