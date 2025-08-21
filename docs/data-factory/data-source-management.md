@@ -137,28 +137,28 @@ Use the [List Connections](/rest/api/fabric/core/connections/list-connections) e
 
 Sample Python snippet that uses `requests` and Microsoft Authentication Library (`msal`)  to call the `GET /v1/connections` endpoint and parse connection IDs:
 
-    ```python
-    import requests
-    import msal
-    
-    # 1. Acquire token
-    app = msal.ConfidentialClientApplication(
-       client_id="YOUR_CLIENT_ID",
-       client_credential="YOUR_CLIENT_SECRET",
-       authority="https://login.microsoftonline.com/YOUR_TENANT_ID"
-    )
-    result = app.acquire_token_for_client(scopes=["https://api.fabric.microsoft.com/.default"])
-    token = result["access_token"]
-    
-    # 2. Call API
-    headers = {"Authorization": f"Bearer {token}"}
-    resp = requests.get("https://api.fabric.microsoft.com/v1/connections", headers=headers)
-    resp.raise_for_status()
-    
-    # 3. Parse IDs
-    for conn in resp.json().get("value", []):
-       print(f"{conn['displayName']}: {conn['id']}")
-    ```
+```python
+import requests
+import msal
+
+# 1. Acquire token
+app = msal.ConfidentialClientApplication(
+   client_id="YOUR_CLIENT_ID",
+   client_credential="YOUR_CLIENT_SECRET",
+   authority="https://login.microsoftonline.com/YOUR_TENANT_ID"
+)
+result = app.acquire_token_for_client(scopes=["https://api.fabric.microsoft.com/.default"])
+token = result["access_token"]
+
+# 2. Call API
+headers = {"Authorization": f"Bearer {token}"}
+resp = requests.get("https://api.fabric.microsoft.com/v1/connections", headers=headers)
+resp.raise_for_status()
+
+# 3. Parse IDs
+for conn in resp.json().get("value", []):
+   print(f"{conn['displayName']}: {conn['id']}")
+```
 
 ## Manage users
 
