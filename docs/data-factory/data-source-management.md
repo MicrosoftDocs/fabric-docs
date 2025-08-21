@@ -105,58 +105,60 @@ To retrieve a connection ID for use in Microsoft Fabric items or REST APIs, use 
 
 Use the [List Connections](/rest/api/fabric/core/connections/list-connections) endpoint to retrieve your connection information:
 
-1.	Send an HTTP GET to the Fabric Connections API, including your token in the `Authorization` header:  
-   ```bash
-   curl -X GET https://api.fabric.microsoft.com/v1/connections \
-   -H "Authorization: Bearer $ACCESS_TOKEN"
-   ```
+1. Send an HTTP GET to the Fabric Connections API, including your token in the `Authorization` header:
+  
+    ```bash
+    curl -X GET https://api.fabric.microsoft.com/v1/connections \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
+    ```
 
-2.	A successful response returns a JSON payload similar to: 
+1. A successful response returns a JSON payload similar to:
+
    ```json
-   {
-   "value": [
-      {
-         "id": "6952a7b2-aea3-414f-9d85-6c0fe5d34539",
-         "displayName": "ContosoConnection1",
-         …
-      },
-      {
-         "id": "f6a39b76-9816-4e4b-b93a-f42e405017b7",
-         "displayName": "ContosoConnection2",
-         …
-      }
-   ],
-   "continuationToken": "…",
-   "continuationUri": "…"
-   }
-```
+    {
+    "value": [
+       {
+          "id": "bbbbbbbb-1111-2222-3333-cccccccccccc",
+          "displayName": "ContosoConnection1",
+          …
+       },
+       {
+          "id": "cccccccc-2222-3333-4444-dddddddddddd",
+          "displayName": "ContosoConnection2",
+          …
+       }
+    ],
+    "continuationToken": "…",
+    "continuationUri": "…"
+    }
+    ```
 
-3. Each object’s `id` property under the `value` array is the connection ID. Extract the `id` property from the response as needed. Note: If you have more than 100 connections, use the `continuationToken` query parameter on subsequent requests to page through all results.
+1. Each object’s `id` property under the `value` array is the connection ID. Extract the `id` property from the response as needed. Note: If you have more than 100 connections, use the `continuationToken` query parameter on subsequent requests to page through all results.
 
 Sample Python snippet that uses `requests` and Microsoft Authentication Library (`msal`)  to call the `GET /v1/connections` endpoint and parse connection IDs:
 
-```python
-import requests
-import msal
-
-# 1. Acquire token
-app = msal.ConfidentialClientApplication(
-   client_id="YOUR_CLIENT_ID",
-   client_credential="YOUR_CLIENT_SECRET",
-   authority="https://login.microsoftonline.com/YOUR_TENANT_ID"
-)
-result = app.acquire_token_for_client(scopes=["https://api.fabric.microsoft.com/.default"])
-token = result["access_token"]
-
-# 2. Call API
-headers = {"Authorization": f"Bearer {token}"}
-resp = requests.get("https://api.fabric.microsoft.com/v1/connections", headers=headers)
-resp.raise_for_status()
-
-# 3. Parse IDs
-for conn in resp.json().get("value", []):
-   print(f"{conn['displayName']}: {conn['id']}")
-```
+    ```python
+    import requests
+    import msal
+    
+    # 1. Acquire token
+    app = msal.ConfidentialClientApplication(
+       client_id="YOUR_CLIENT_ID",
+       client_credential="YOUR_CLIENT_SECRET",
+       authority="https://login.microsoftonline.com/YOUR_TENANT_ID"
+    )
+    result = app.acquire_token_for_client(scopes=["https://api.fabric.microsoft.com/.default"])
+    token = result["access_token"]
+    
+    # 2. Call API
+    headers = {"Authorization": f"Bearer {token}"}
+    resp = requests.get("https://api.fabric.microsoft.com/v1/connections", headers=headers)
+    resp.raise_for_status()
+    
+    # 3. Parse IDs
+    for conn in resp.json().get("value", []):
+       print(f"{conn['displayName']}: {conn['id']}")
+    ```
 
 ## Manage users
 
@@ -226,6 +228,7 @@ As a tenant admin, you can limit who can share connections:
    :::image type="content" source="media/data-source-management/manage-cloud-connection-sharing-on.png" alt-text="Screenshot showing the manage cloud connection sharing feature toggled on.":::
 
 > [!NOTE]
+>
 > * Blocking sharing could limit collaboration between users
 > * Existing shared connections stay shared when you turn on the restriction
 
