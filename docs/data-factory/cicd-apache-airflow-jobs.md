@@ -129,7 +129,7 @@ After creating a deployment pipeline, you need to add content you want to manage
 
 4. Select Assign.
 
-### Deploy to an empty stage
+### Step 3: Deploy to an empty stage
 
 When you're ready to move your content from one pipeline stage to the next, you can deploy it using one of these options:
 
@@ -139,7 +139,7 @@ When you're ready to move your content from one pipeline stage to the next, you 
 
 After you choose your deployment option, you can [review the details and leave a note about the deployment if you'd like](../cicd/deployment-pipelines/deploy-content.md#review-your-deployment-and-leave-a-note).
 
-### Deploy content from one stage to another
+### Step 4: Deploy content from one stage to another
 
 1. Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. [Paired items](../cicd/deployment-pipelines/assign-pipeline.md#item-pairing) are overwritten. You can learn more about this process, in the [Deploy content to an existing workspace](../cicd/deployment-pipelines/understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) article
 2. You can also review the deployment history to see the last time content was deployed to each stage. To examine the differences between the two pipelines before you deploy, see [Compare content in different deployment stages](../cicd/deployment-pipelines/compare-pipeline-content.md).
