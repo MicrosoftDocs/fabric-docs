@@ -175,7 +175,6 @@ To successfully make a call against Azure OpenAI, you need an endpoint and deplo
 | Variable name | Value |
 |---|---|
 | endpoint |This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). Alternatively, you can find the value in the **[Azure AI Foundry](https://oai.azure.com/) > Playground > Code View**. An example endpoint is: `https://docs-test-001.openai.azure.com/`. |
-| deployment ID | This value can be found under the **Deployments** section in the [Azure AI Foundry](https://oai.azure.com/). |
 
 Use the information in the table when running the Azure OpenAI cells.
 
