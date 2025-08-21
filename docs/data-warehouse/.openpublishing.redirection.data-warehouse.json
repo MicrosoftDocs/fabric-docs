@@ -33,7 +33,7 @@
       {
         "source_path_from_root": "/docs/database/mirrored-database/enable-mirroring.md",
         "redirect_url": "../mirroring/overview",
-        "redirect_document_id": true
+        "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-warehouse/troubleshoot-synapse-data-warehouse.md",
