@@ -2,7 +2,7 @@
 title: Ingest Data from Telegraf into Microsoft Fabric Eventhouse
 description: In this article, you learn how to ingest (load) data into Microsoft Fabric Eventhouse from Telegraf.
 ms.reviewer: aksdi
-author: absaharn
+author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.date: 08/21/2025
@@ -32,7 +32,7 @@ The Microsoft Fabric [Real-Time Intelligence output plugin](https://github.com/i
 
 ## Supported authentication methods
 
-The plugin uses **Azure default credential** authentication, which automatically tries multiple authentication methods in a specific order until one succeeds. This provides flexibility and security without requiring hardcoded credentials.
+The plugin uses `DefaultAzureCredential` authentication. This credential tries multiple authentication methods in order until one succeeds, so it doesn't require hardcoded credentials.
 
 ### Azure default credential chain
 
@@ -108,7 +108,7 @@ The following table lists all the possible properties that can be included in a 
 | Initial Catalog | Database | The database name in the Eventhouse. For example, `MyDatabase`. | Required |
 | Ingestion Type | IngestionType | Values can be set to `managed` for streaming ingestion with fallback to batched ingestion or `queued` for queuing up metrics and process sequentially | `queued` |
 | Table Name | TableName | Name of the single table to store all the metrics; only needed if `MetricsGroupingType` is `SingleTable` | - |
-| Create Tables | CreateTables | Creates tables and relevant mapping if `true`. Otherwise table and mapping creation is skipped. This is useful for running Telegraf with the lowest possible permissions, i.e., table ingestor role. | `true` |
+| Create Tables | CreateTables | Creates tables and relevant mapping if `true`. Otherwise table and mapping creation is skipped.  Useful for running Telegraf with the lowest possible permissions, for example, table ingestor role. | `true` |
 | Metrics Grouping Type | MetricsGroupingType | Type of metrics grouping used when pushing to Eventhouse either being `TablePerMetric` or `SingleTable`. | `TablePerMetric` |
 
 ### Example connection strings
@@ -137,9 +137,9 @@ Metrics can be grouped in two ways when sent to Eventhouse:
 
 ### TablePerMetric (Recommended)
 
-The plugin groups the metrics by the metric name and sends each group of metrics to a separate Eventhouse KQL DB table. If the table doesn't exist, the plugin creates the table. If the table exists, the plugin tries to merge the Telegraf metric schema to the existing table.
+The plugin groups the metrics by the metric name and sends each group of metrics to a separate Eventhouse KQL database table. If the table doesn't exist, the plugin creates the table. If the table exists, the plugin tries to merge the Telegraf metric schema to the existing table.
 
-The table name matches the metric name. The metric name must comply with the Eventhouse KQL DB table naming constraints.
+The table name matches the metric name. The metric name must comply with the Eventhouse KQL database table naming constraints.
 
 ### SingleTable
 
@@ -151,11 +151,11 @@ The plugin supports two ingestion types:
 
 ### Queued ingestion (default)
 
-Metrics are queued and processed in batches. This is the default and recommended method for most use cases as it provides better throughput and reliability.
+The service queues and processes metrics in batches. It's the default and recommended method for most use cases because it provides better throughput and reliability.
 
 ### Managed ingestion
 
-Streaming ingestion with fallback to batched ingestion. This provides lower latency but requires streaming ingestion to be enabled on your Eventhouse.
+Streaming ingestion with fallback to batched ingestion. This provides lower latency but falls back to batched ingestion when streaming ingestion isn't enabled on Eventhouse.
 
 > [!IMPORTANT]
 > To use managed ingestion, you must enable [streaming ingestion](/azure/data-explorer/ingest-data-streaming?tabs=azure-portal%2Ccsharp) on your Eventhouse.
@@ -168,7 +168,7 @@ To check if streaming ingestion is enabled, run this query in your Eventhouse:
 
 ## Table schema
 
-When using Eventhouse, the schema of the table will match the structure of the Telegraf metric. The plugin automatically creates tables with the following schema:
+When using Eventhouse, the schema of the table matches the structure of the Telegraf metric. The plugin automatically creates tables with the following schema:
 
 ```kql
 .create-merge table ['table-name'] (['fields']:dynamic, ['name']:string, ['tags']:dynamic, ['timestamp']:datetime)
@@ -181,7 +181,7 @@ The corresponding table mapping is automatically created:
 ```
 
 > [!NOTE]
-> This plugin will automatically create tables and corresponding table mapping using the commands above when `CreateTables=true` (default).
+> This plugin creates tables and corresponding table mapping using the commands above when `CreateTables=true` (default).
 
 ## Query ingested data
 
