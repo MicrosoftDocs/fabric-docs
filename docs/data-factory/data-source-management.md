@@ -135,7 +135,7 @@ Use the [List Connections](/rest/api/fabric/core/connections/list-connections) e
 
 1. Each object’s `id` property under the `value` array is the connection ID. Extract the `id` property from the response as needed. Note: If you have more than 100 connections, use the `continuationToken` query parameter on subsequent requests to page through all results.
 
-Sample Python snippet that uses `requests` and Microsoft Authentication Library (`msal`)  to call the `GET /v1/connections` endpoint and parse connection IDs:
+Here's a sample Python snippet that uses `requests` and Microsoft Authentication Library (`msal`) to call the `GET /v1/connections` endpoint and parse connection IDs:
 
 ```python
 import requests
