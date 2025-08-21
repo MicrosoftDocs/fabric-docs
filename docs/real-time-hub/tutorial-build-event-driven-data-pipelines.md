@@ -1,6 +1,6 @@
 ---
 title: Build Event-Driven Data Pipelines in Microsoft Fabric
-description: Build real-time, event-driven data pipelines in Microsoft Fabric to process data instantly from OneLake or Azure Blob Storage. Learn how to automate workflows.
+description: Build real-time, event-driven data pipelines in Microsoft Fabric using Azure and Fabric events to process data instantly from OneLake or Azure Blob Storage. 
 author: spelluru
 ms.author: spelluru
 ms.reviewer: george-guirguis
@@ -8,7 +8,7 @@ ms.date: 08/13/2025
 ms.topic: tutorial
 ---
 
-# Build event-driven data pipelines in Microsoft Fabric 
+# Build event-driven data pipelines in Microsoft Fabric using Azure and Fabric events
 
 Today’s organizations demand real-time responsiveness from their analytics platforms. When data processing relies on scheduled job runs, insights and actions are delayed, and decisions are based on stale data. Whether your data lands in Azure Blob Storage or Fabric OneLake, it should be processed the moment it arrives to ensure timely decisions and continuous data freshness. Fabric events and Azure events make that possible by enabling event-driven data workflows that react in real-time to new data, without manual triggers or schedules.  
  
