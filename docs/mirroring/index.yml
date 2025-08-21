@@ -162,7 +162,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: Troubleshoot Mirroring
-            url: troubleshoot.md
+            url: troubleshooting.md
       - linkListType: how-to-guide
         links:
           - text: Troubleshoot Azure Cosmos DB

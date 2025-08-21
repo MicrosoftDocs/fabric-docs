@@ -32,7 +32,7 @@
       },
       {
         "source_path_from_root": "/docs/database/mirrored-database/enable-mirroring.md",
-        "redirect_url": "/fabric/database/mirrored-database/overview",
+        "redirect_url": "../mirroring/overview.md",
         "redirect_document_id": true
       },
       {
