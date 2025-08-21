@@ -56,7 +56,7 @@ Notebook sessions autoshutdown after a period of inactivity. By default, this ti
 1. Update the timeout duration in the dialog that appears.
 
    > [!NOTE]
-   > The “Session Ready” indicator is only visible when a session is active.
+   > The **Session Ready** indicator is only visible when a session is active.
 
    :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/session-timeout.png" alt-text="Screenshot showing where to adjust the session timeout for a Fabric Notebook.":::
  
@@ -109,9 +109,9 @@ These failures can happen for any of the following reasons:
 
 #### What to do
 
-1. _Verify your sign-in_: Ensure you're logged in with the correct Microsoft Entra (formerly Azure AD) account associated with your Fabric environment.
+1. _Verify your sign-in_: Ensure you're logged in with the correct Microsoft Entra (formerly Azure Active Directory) account associated with your Fabric environment.
 1. _Refresh your session_: Sign out and sign back in to refresh your authentication token. You can do this by selecting your profile icon in the top-right corner of the window, and then and selecting **Sign out**.
-1. _Check permissions_: Confirm that you have the necessary role (i.e. Contributor or Admin) for the resource you’re trying to access. This includes the Notebook, Lakehouse, Workspace, or Data Warehouse.
+1. _Check permissions_: Confirm that you have the necessary role (that is, Contributor or Admin) for the resource you’re trying to access. This includes the Notebook, Lakehouse, Workspace, or Data Warehouse.
 1. _Contact your administrator_: If you're still blocked, contact your tenant or workspace administrator to:
   - Confirm your user role and access level.
   - Check for token expiration issues.
@@ -123,7 +123,7 @@ In order to manage user access within a Fabric Workspace, take the following ste
 
 1. Browse to [Microsoft Fabric](https://app.fabric.microsoft.com) and sign in with your Microsoft account.
 1. Open the workspace for which you need to manage access, by selecting **Workspaces** on the left navigation pane and selecting the workspace you need to manage.
-1. Select the elipsis button (**...**) that appears to the right of the selected workspace as you hover above it, and then select **Workspace access** from the menu that appears.
+1. Select the ellipsis button (**...**) that appears to the right of the selected workspace as you hover above it, and then select **Workspace access** from the menu that appears.
    
    :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/workspace-access.png" alt-text="Screenshot showing the Workspace access menu option for a workspace.":::
 
@@ -133,7 +133,7 @@ In order to manage user access within a Fabric Workspace, take the following ste
 
 #### Why it happens
 
-An administrator has paused Fabric capacity.
+An administrator paused Fabric capacity.
 
 #### What to do
 
@@ -154,7 +154,7 @@ An item was deleted, moved, or you don’t have access.
 
 1. Use the global search box at the top center of the Fabric browser page to try locating the item across all workspaces.                  
 1. Contact the item owner to confirm whether it still exists and request access if needed.
-1. If the item was deleted, the owner may be able to restore it from version history or a backup, depending on workspace settings.
+1. If the item was deleted, the owner can restore it from version history or a backup, depending on workspace settings.
 
 ### Save failures
 
