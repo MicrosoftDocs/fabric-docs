@@ -228,14 +228,35 @@ Files/
 
 OneLake security allows users to specify row level security by writing SQL predicates to limit what data is shown to a user. RLS operates by showing rows where the predicate evaluates to true. See the [row level security]() page for more details on the types of allowed RLS statements.
 
-Row level security evaluates string data as case insensitive. To ensure consistent results when using string based RLS evaluation, we recommend formatting the data without case using UPPER or LOWER while creating the tables. 
+Row level security evaluates string data as case insensitive, using the following collation for sorting and comparisons: Latin1_General_100_CI_AS_KS_WS_SC_UTF8
 
-TODO: best practices for how to configure your data for RLS with case insensitivity
+When using row level security, ensure that the RLS statements are clean and easy to understand. Use integer columns for sorting and greater than or less than operations. Avoid string equivalencies if you don't know the format of the input data, especially in relation to unicode characters or accent sensitivity. 
+
+### Column level security
+
+OneLake security supports limiting access to columns by removing (hiding) a user's access to a column. A hidden column is treated as having no permissions assigned to it, resulting in the default policy of no access. Hidden columns will not be visible to users, and queries on data containing hidden columns will return no data for that column. As noted in [metadata security](###Metadata security) there are certain case where the metadata of a column might still be visible in some error messages.
+
+Column level security also follows a more strict behavior in SQL Endpoint by operating through a deny semantic. Deny on a column in SQL Endpoint ensures that all access to the column is blocked, even if multiple roles would combine to give access to it. As a result, CLS in SQL Endpoint will operate using an intersection between all roles a user is part of instead of the union behavior in place for all other permission types. See the Evaluating multiple OneLake security roles section for more information on how roles combine.
 
 
 
 ## Evaluating multiple OneLake security roles
 
+Users can be members of multiple different OneLake security roles, each one providing its own access to data. The combination of these roles together is called the "effective role" and is what a user will see when accessing data in OneLake. Roles combine in OneLake security using a UNION or least-restrictive model. This means if Role1 gives access to TableA, and Role2 gives access to TableB, then the user will be able to see both TableA and TableB.
+
+OneLake security roles also contain row and column level security, which limits access to the rows and columns of a table. Each RLS and CLS policy exists within a role and limits access to data for all users within that single role. For example, if Role1 gives access to Table1, but has RLS on Table1 and only shows some columns of Table1 then the effective role for Role1 is going to be the RLS and CLS subsets of Table1. This can be expressed as (R1ols n R1cls n R1rls) where n is the INTERSECTION of each component in the role.
+
+When dealing with multiple roles, RLS and CLS combine with a UNION semantic on the respective tables. CLS is a direct set UNION of the tables visible in each role. RLS is combined across predicates using an OR operator. For example, WHERE city = 'Redmond' OR city = 'New York'. 
+
+To evaluate multiple roles each with RLS or CLS, each role is first resolved based on the access given by the role itself. This means evaluating the INTERSECTION of all object, row, and column level security. Each evaluated role is then combined with all other roles a user is a member of via the UNION operation. The output is the effective role for that user. This can be expressed as:
+
+( (R1ols n R1cls n R1rls) u (R2ols n R2cls n R2rls) )
+
+Lastly, each shortcut in a lakehouse generates a set of inferred roles that are used to propagate the shortcut target's permissions to the item being queried. Inferred roles operate in a similar way to non-inferred roles except they are resolved first in place on the shortcut target before being combined with roles in the shortcut lakehouse. This ensures that any inheritance of permissions on the shortcut lakehouse is broken and the inferred roles are evaluated correctly. The full combination logic can then be expressed as:
+
+( (R1ols n R1cls n R1rls) u (R2ols n R2cls n R2rls) ) n ( (R1'ols n R1'cls n R1'rls) u (R2'ols n R2'cls n R2'rls)) )
+
+Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehouse roles.
 
 ## Shortcuts
 
