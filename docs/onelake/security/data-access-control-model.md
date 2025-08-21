@@ -30,7 +30,7 @@ By assigning a member to a role, that user is then subject to the associated per
 
 OneLake security roles support the following permissions:
 
-- Read: Grants the user the ability to read data from a table and view the associated table and column metadata. In SQL terms, this permission is equivalent to both VIEW_DEFINITION and SELECT. See the Inheritance section for more details
+- Read: Grants the user the ability to read data from a table and view the associated table and column metadata. In SQL terms, this permission is equivalent to both VIEW_DEFINITION and SELECT. See the [Metadata security](#metadata security) section for more details
 - ReadWrite [(coming soon)](https://aka.ms/fabricroadmap): Gives the user the same read privileges as Read, and the ability to write data to tables and folders in OneLake. This permission allows any user to create, update, delete, or rename files or folders in OneLake. 
 
 OneLake security enables users to define data access roles for the following Fabric items only.
@@ -88,6 +88,15 @@ Learn more in [Get started with data access roles](../security/get-started-data-
 
 This section will provide details on how OneLake security roles grant access to specific scopes, how that access operates, and how access is resolved across multiple roles and access types. 
 
+### Metadata security
+
+OneLake security's Read access to data grants full access to the data in a table, and generally hides the metadata for that table as well. This also applies to column level security and a users ability to see or not see a column in that table. However, OneLake security does not guarantee that the metadata for a table will not be accessible to users that don't have access to it, specifically in the following cases:
+
+- SQL Endpoint queries: SQL Analytics Endpoint uses the same metadata security behavior as SQL Server. This means that if a user does not have access to a table or column, the error message for that query will explicitly state the table or column names the user doesn't have access to.
+- Semantic models: Giving a user Build permission on a semantic model will allow them access to see the table names included in the model, regardless of whether the user has access to them or not. In addition, report visuals that contain hidden columns will show the column name in the error message.
+
+### Permission inheritance
+
 For any given folder, OneLake security permissions always inherit to the entire hierarchy of the folder's files and subfolders.
 
 For example, consider the following hierarchy of a lakehouse in OneLake:
@@ -111,7 +120,7 @@ Files/
 
 You create two roles for this lakehouse. `Role1` grants read permission to folder1, and `Role2` grants read permission to folder2. 
 
-For the given hierarchy, OneLake security permissions for `Role1` and `Role2` inherit in a following way:
+For the given hierarchy, OneLake security permissions for `Role1` and `Role2` inherit in the following way:
 
 * Role1: Read folder1
 
@@ -131,7 +140,7 @@ For the given hierarchy, OneLake security permissions for `Role1` and `Role2` in
       │   file21.txt
   ```
 
-## Traversal and listing in OneLake security
+### Traversal and listing in OneLake security
 
 OneLake security provides automatic traversal of parent items to ensure that data is easy to discover. Granting a user Read permissions to subfolder11 grants the user the ability to list and traverse the parent directory folder1. This functionality is similar to Windows folder permissions where giving access to a subfolder provides discovery and traversal for the parent directories. The list and traversal granted to the parent doesn't extend to other items outside of the direct parents, ensuring other folders are kept secure.
 
@@ -215,6 +224,20 @@ Files/
   └───shortcut3
   ```
 
+### Row level security
+
+OneLake security allows users to specify row level security by writing SQL predicates to limit what data is shown to a user. RLS operates by showing rows where the predicate evaluates to true. See the [row level security]() page for more details on the types of allowed RLS statements.
+
+TODO: best practices for how to configure your data for RLS with case insensitivity
+
+
+OneLake security roles allow for row-level security (RLS) and column-level security (CLS) on tables within a lakehouse. The RLS and CLS follow specific composition rules for single and multiple roles. In general, RLS and CLS are an intersection within a role and compose with a union across multiple roles. 
+
+
+
+
+
+
 ## Shortcuts
 
 ### OneLake security in internal shortcuts
@@ -254,11 +277,7 @@ Unlike other types of access in OneLake security, a user accessing an external s
 
 Learn more about S3, ADLS, and Dataverse shortcuts in [OneLake shortcuts](../onelake-shortcuts.md).
 
-## Row and column security
 
-OneLake security roles allow for row-level security (RLS) and column-level security (CLS) on tables within a lakehouse. The RLS and CLS follow specific composition rules for single and multiple roles. In general, RLS and CLS are an intersection within a role and compose with a union across multiple roles. 
-
-[!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
 
 ### Single role
 
