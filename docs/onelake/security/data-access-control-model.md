@@ -31,7 +31,7 @@ By assigning a member to a role, that user is then subject to the associated per
 OneLake security roles support the following permissions:
 
 - Read: Grants the user the ability to read data from a table and view the associated table and column metadata. In SQL terms, this permission is equivalent to both VIEW_DEFINITION and SELECT. See the Inheritance section for more details
-- ReadWrite (coming soon): Gives the user the same read privileges as Read, and the ability to write data to tables and folders in OneLake. This permission allows any user to create, update, delete, or rename files or folders in OneLake. 
+- ReadWrite [(coming soon)](https://aka.ms/fabricroadmap): Gives the user the same read privileges as Read, and the ability to write data to tables and folders in OneLake. This permission allows any user to create, update, delete, or rename files or folders in OneLake. 
 
 OneLake security enables users to define data access roles for the following Fabric items only.
 
@@ -45,100 +45,17 @@ OneLake security enables users to define data access roles for the following Fab
 
 Workspace permissions are the first security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../../fundamentals/roles-workspaces.md)
 
-Workspace roles manage the control plane data access, meaning interactions with creating and managing Fabric artifacts and permissions. In addition, workspace roles also provide default access levels to data items through the use of OneLake security default roles. A default role is a normal OneLake security role that is created automatically with every new item. It gives users with certain workspace or item permissions a default level of access to data in that item. For example, Lakehouse items have a DefaultReader role that lets users with the ReadAll permission see data in the Lakehouse. This ensures that users accessing a newly created item have a basic level of access. The table below
-
-Wo
-Workspace and item permissions let you grant "coarse-grain" access to data in OneLake for the given item. OneLake security permissions enable you to restrict the data access in OneLake only to specific folders.
-
-:::image type="content" source=".\media\security-flow.png" alt-text="Diagram showing the order of permissions evaluations with workspace, item, and RBAC.":::
-
-When a user tries to access a folder in a lakehouse, OneLake security first checks permissions for the workspace, then the lakehouse item, then the folder.
-
-
-
-
-
-Workspace roles in Fabric grant the following permissions in OneLake.
+Fabric workspace roles give permissions that apply to all items in the workspace. The table below outlines the basic permissions allowed by workspace roles.
 
 | **Permission** | **Admin** | **Member** | **Contributor** | **Viewer** |
 |---|---|---|---|---|
 | View files in OneLake | Always* Yes | Always* Yes | Always* Yes | No by default. Use OneLake security to grant the access. |
 | Write files in OneLake | Always* Yes | Always* Yes | Always* Yes | No |
+| Can edit OneLake security roles | Always* Yes | Always* Yes | No | No |
 
 *Since Workspace Admin, Member and Contributor roles automatically grant Write permissions to OneLake, they override any OneLake security Read permissions.
 
-| **Workspace role** | **Does OneLake apply RBAC Read permissions?**|
-|---|---|
-| Admin, Contributor, Member | No, OneLake Security ignores any OneLake RBC Read permissions |
-| Viewer | Yes, if defined, OneLake security Read permissions are applied |
-
-## OneLake security and Lakehouse permissions
-
-Within a workspace, Fabric items can have permissions configured separately from the workspace roles. You can configure permissions either through sharing an item or by managing the permissions of an item. The following permissions determine a user's ability to perform actions on data in OneLake.
-
-### Lakehouse permissions
-
-| **Lakehouse permission** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** |
-|----------|----------|----------|--------------|
-| Read  | No by default. Use OneLake security to grant access. | No | No |
-| ReadAll | Yes by default. Use OneLake security to restrict access. | No | No |
-| Write | Yes | Yes | Yes |
-| Execute, Reshare, ViewOutput, ViewLogs | N/A - can't be granted on its own |  N/A - can't be granted on its own |  N/A - can't be granted on its own |
-
-### Lakehouse SQL analytics endpoint permissions
-
-SQL analytics endpoint is automatically generated from a lakehouse in Microsoft Fabric. It enables users to query lakehouse data using familiar T-SQL syntax. This endpoint supports the data engineering (Lake view with Apache Spark) and relational (SQL view) experiences on the same lakehouse. To learn more, see [SQL analytics endpoint in Data Warehouse documentation](../../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
-
-| **SQL analytics endpoint permission** | **Users can view files via OneLake endpoint?** | **Users can write files via OneLake endpoint?** | **Users can read data via SQL analytics endpoint?** |
-|----------|----------|----------|--------------|
-| Read  | No by default. Use OneLake security to grant access. | No | No by default, but can be configured with [SQL granular permissions](../../data-warehouse/sql-granular-permissions.md). |
-| ReadData | No by default. Use OneLake security to grant access. | No | Yes |
-| Write | Yes | Yes | Yes |
-
-### Default Lakehouse semantic model permissions
-
-In Microsoft Fabric, when the user creates a lakehouse, the system also provisions the associated default semantic model. The default semantic model has metrics on top of lakehouse data. The semantic model allows Power BI to load data for reporting.
-
-| **Default semantic model permission** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can see schema in semantic model?** | **Can read data in semantic model?** |
-|----------|----------|----------|--------------|-------------|
-| Read  | No by default. Use OneLake security to grant access. | No | No | Yes by default. Can be restricted with [Power BI object-level security](../../security/service-admin-object-level-security.md?tabs=table) and [Power BI row-level security](../../security/service-admin-row-level-security.md)  |
-| Build | Yes by default. Use OneLake security to restrict access. | Yes | Yes | Yes |
-| Write | Yes | Yes | Yes | Yes |
-| Reshare |  N/A - can't be granted on its own | N/A - can't be granted on its own | N/A - can't be granted on its own | N/A - can't be granted on its own |
-
-### Lakehouse sharing
-
-When user shares a lakehouse, they grant other users or a group of users access to a lakehouse without giving access to the workspace and the rest of its items.
-
-When someone shares a lakehouse, they can also grant the following additional permissions:
-
-* ReadData permission on the SQL analytics endpoint
-* ReadAll permission on the lakehouse
-* Build permission on the default semantic model
-
-For more information, see [How Lakehouse sharing works](../../data-engineering/lakehouse-sharing.md)
-
-The SQL analytics endpoint is a warehouse. For more information about its permission model, see [Share Warehouse data and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md)
-
-| **Sharing option** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** | **Can view and build semantic models?** |
-|----------|----------|----------|----------|-----|
-| *No additional permissions selected* | No by default. Use OneLake RBAC to grant access. |  No | No | No |
-| Read all SQL endpoint data | No by default. Use OneLake RBAC to grant access. |  No | Yes | No |
-| Read all Apache Spark and subscribe to events | Yes by default. Use OneLake RBAC to restrict the access. |  No | No | No |
-| Build reports on the default dataset | Yes by default. Use OneLake RBAC to restrict the access. | No | No | Yes |
-
-
-## Create roles
-
-You can define and manage OneLake security roles through your lakehouse data access settings.
-
-Learn more in [Get started with data access roles](../security/get-started-data-access-roles.md).
-
-## Default roles in lakehouse
-
-When a user creates a new lakehouse, OneLake generates default roles. These roles provide users with Fabric workspace permissions access to the data in the lakehouse. You can delete or edit the default roles like any other role.
-
-Default role definitions:
+Workspace roles manage the control plane data access, meaning interactions with creating and managing Fabric artifacts and permissions. In addition, workspace roles also provide default access levels to data items through the use of OneLake security default roles. (note that default roles only apply to Viewers, since Admin, Member, and Contributor have elevated access through the Write permission) A default role is a normal OneLake security role that is created automatically with every new item. It gives users with certain workspace or item permissions a default level of access to data in that item. For example, Lakehouse items have a DefaultReader role that lets users with the ReadAll permission see data in the Lakehouse. This ensures that users accessing a newly created item have a basic level of access. All default roles use a member virtualization feature, so that the members of the role are any user in that workspace with the required permission. For example, all users with ReadAll permission on the Lakehouse. The table below shows what the standard default roles are. Note that some items may have specialized default roles that apply only to that item type.
 
 | Fabric item | Role name | Permission | Folders included | Assigned members |
 | ---- | --- | --- | ---- | ---- |
@@ -148,7 +65,28 @@ Default role definitions:
 > [!NOTE]
 > To restrict the access to specific users or specific folders, either modify the default role or remove it and create a new custom role.
 
-## Inheritance in OneLake security
+## OneLake security and item permissions
+
+Within a workspace, Fabric items can have permissions configured separately from the workspace roles. You can configure permissions either through sharing an item or by managing the permissions of an item. The following permissions determine a user's ability to perform actions on data in OneLake. For more information on item sharing, see [How Lakehouse sharing works](../../data-engineering/lakehouse-sharing.md)
+
+| **Permission** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** |
+|----------|----------|----------|--------------|
+| Read  | No by default. Use OneLake security to grant access. | No | No |
+| ReadAll | Yes through the DefaultReader role. Use OneLake security to restrict access. | No | No* |
+| Write | Yes | Yes | Yes |
+| Execute, Reshare, ViewOutput, ViewLogs | N/A - can't be granted on its own |  N/A - can't be granted on its own |  N/A - can't be granted on its own |
+
+*Depends on the [SQL analytics endpoint mode.](TODO LINK)
+
+## Create roles
+
+You can define and manage OneLake security roles through your lakehouse data access settings.
+
+Learn more in [Get started with data access roles](../security/get-started-data-access-roles.md).
+
+## OneLake security access control model details
+
+This section will provide details on how OneLake security roles grant access to specific scopes, how that access operates, and how access is resolved across multiple roles and access types. 
 
 For any given folder, OneLake security permissions always inherit to the entire hierarchy of the folder's files and subfolders.
 
