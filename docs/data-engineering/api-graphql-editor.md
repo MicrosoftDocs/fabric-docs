@@ -25,14 +25,14 @@ Type and execute GraphQL queries directly on the **Query** tab. Intellisense cap
 
 ## Generate code
 
-After testing and prototyping the desired GraphQL operation, the API editor generates boilerplate Python or Node.js code based on the query or mutation executed in the editor. You can run the generated code locally for testing purposes and re-use parts of it in the application development process.
+After testing and prototyping the desired GraphQL operation, the API editor generates boilerplate Python or Node.js code based on the query or mutation executed in the editor. You can run the generated code locally for testing purposes and reuse parts of it in the application development process.
 
 > [!IMPORTANT]
 > The generated code uses interactive browser credentials and should be used for testing purposes only. In production, always register an application in Microsoft Entra and use the appropriate `client_id` and scopes. You can find an end-to-end example with sample code at [Connect Applications](connect-apps-api-graphql.md).
 
 To get started, execute a query, select the **Generate code** button, and choose the language accordingly:
 
-:::image type="content" source="media/api-graphql-editor/query-editor-generate-code.png" alt-text="Screenshot of the API editor screen showing the generate code option." lightbox="media/api-graphql-editor/query-editor-generate-code.png":::
+:::image type="content" source="media/api-graphql-editor/query-editor-generate-code.png" alt-text="Screenshot of the API editor screen showing the hw to generate code option." lightbox="media/api-graphql-editor/query-editor-generate-code.png":::
 
 You can then copy the generated code and save it as a file in a local folder. Depending on the chosen language, follow these simple steps to test locally:
 

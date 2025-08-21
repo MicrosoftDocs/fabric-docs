@@ -28,7 +28,7 @@ Follow the steps in the [connect applications](connect-apps-api-graphql.md) sect
 :::image type="content" source="media/connect-apps-api-graphql/add-spn-permissions.png" alt-text="Screenshot of GraphQL API permissions.":::
 
 
-Because a service principal requires either a certificate or a client secret, it isn't supported by the Microsoft Authentication Library (MSAL) in single-page applications (SPAs) like the React app built in the last step. You can leverage a backend service properly secured with well defined authorization logic depending on your requirements and use cases.
+Because a service principal requires either a certificate or a client secret, it isn't supported by the Microsoft Authentication Library (MSAL) in single-page applications (SPAs) like the React app built in the last step. You can use a backend service properly secured with well defined authorization logic depending on your requirements and use cases.
 
 Once your API is configured to be accessed by a Service Principal, you can test it locally using a simple Node.JS application in your local machine:
 
@@ -59,7 +59,7 @@ async function getToken() {
 
 Install the dependencies (`@azure/identity`) with your Node.js package manager of choice, modify the file with the required information, save it, and execute it (`node <filename.js>`). This retrieves a token from Microsoft Entra.
 
-The token can then be used to invoke your GraphQL API using PowerShell by replacing the appropriate details with the **token** you just retrieved, the **GraphQL query** you want to execute, and the **GraphQL API Endpoint**:
+The token can then be used to invoke your GraphQL API using PowerShell by replacing the appropriate details with the **token** you retrieved, the **GraphQL query** you want to execute, and the **GraphQL API Endpoint**:
 
 ```powershell
 $headers = @{
@@ -90,7 +90,7 @@ curl -X POST <YOUR_GRAPHQL_API_ENDPOINT> \
 -d '{"query": "<YOUR_GRAPHQL_QUERY(in a single line)>"}'
 ```
 
-For local testing, modify the Node.js code slightly with an additional dependency (`axios`) to retrieve the token and invoke the API in a single execution:
+For local testing, modify the Node.js code slightly with an extra dependency (`axios`) to retrieve the token and invoke the API in a single execution:
 
 ```javascript
 const { ClientSecretCredential } = require('@azure/identity');
