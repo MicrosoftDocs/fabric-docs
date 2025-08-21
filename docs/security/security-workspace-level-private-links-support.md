@@ -80,6 +80,8 @@ Review the following considerations when working with unsupported item types.
 
    * **Gateway-based connections:** Data Pipelines and Copy Jobs can't use connections that rely on an on-premises data gateway or a virtual network (VNet) data gateway infrastructure. This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
 
+* The OneLake Catalog - Govern tab isn't available when Private Link is activated.
+
 ## Supported APIs
 
 This section lists the APIs that support workspace-level private links.
