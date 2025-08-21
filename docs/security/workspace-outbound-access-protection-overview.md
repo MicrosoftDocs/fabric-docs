@@ -30,9 +30,9 @@ The following diagram illustrates workspace-level outbound access protection fro
 
 Workspace level outbound access protection makes it possible to control what the items in the workspace can access outside the workspace boundary. Customers can set up private endpoints to connect the workspace items to different resources from a specific virtual network.
 
-* The outbound enabled workspace can connect to all the resources that support private endpoints by setting up a managed private endpoint from the workspace to the destination. For example, in the preceding diagram, Workspace A (OAP enabled) can connect to the SQL server because it has a managed private endpoint set up to the SQL server.
+* The outbound enabled workspace can connect to all the resources that support private endpoints by setting up a managed private endpoint from the workspace to the destination. For example, in the preceding diagram, Workspace A (outbound access protection enabled) can connect to the SQL server because it has a managed private endpoint set up to the SQL server.
 
-* The WS OAP enabled workspace can also connect to another workspace within the same tenant if a managed private endpoint is established from the source to the target workspace. For example, in the diagram, Workspace B has a managed private endpoint configured to workspace C. This managed private endpoint allows items in Workspace B (for example shortcuts) to reference the data in Workspace C (for example, in a lakehouse).
+* The outbound access protection enabled workspace can also connect to another workspace within the same tenant if a managed private endpoint is established from the source to the target workspace. For example, in the diagram, Workspace B has a managed private endpoint configured to workspace C. This managed private endpoint allows items in Workspace B (for example shortcuts) to reference the data in Workspace C (for example, in a lakehouse).
 
 * Multiple workspaces can connect to the same source by setting up managed private endpoints. For example, in the diagram, both Workspace A and Workspace B can connect to the SQL server because managed private endpoints are set up for each of them for this SQL server.
 
@@ -62,8 +62,8 @@ The following limitations apply when using workspace outbound access protection:
 * If outbound access protection is enabled on a workspace, workspace admins can't add unsupported artifacts. Outbound access protection must be disabled first, and then workspace admins can add unsupported artifacts.
 * If the workspace is part of GIT integration, workspace admins can't enable outbound access protection because GIT integration is unsupported. Similarly, if outbound access protection is enabled, the workspace can't be added to GIT integration.
 * If the workspace is part of Deployment Pipelines, workspace admins can't enable outbound access protection because Deployment Pipelines are unsupported. Similarly, if outbound access protection is enabled, the workspace can't be added to Deployment Pipelines.
-* If your workspace has outbound access protection enabled, it uses managed virtual networks (VNETs) for Spark. This means that Starter pools are disabled, and you should expect Spark sessions to take 3 to 5 minutes to start.
-* With outbound access protection, all public access from Spark is blocked. This prevents users from downloading libraries directly from public channels like PyPI using pip.
+* If your workspace has outbound access protection enabled, it uses managed virtual networks (VNETs) for Spark. In this case, Starter pools are disabled, and you should expect Spark sessions to take 3 to 5 minutes to start.
+* With outbound access protection, all public access from Spark is blocked. This restriction prevents users from downloading libraries directly from public channels like PyPI using pip.
 To install libraries for their Data Engineering jobs, users have two options:
 Reference library packages from a data source connected to the Fabric workspace via a managed private endpoint.
 Upload wheel files for their required libraries and dependencies (that aren’t already included in the prebaked runtime).
@@ -79,13 +79,13 @@ Upload wheel files for their required libraries and dependencies (that aren’t 
 
       `Path: abfss://<YourWorkspaceID>@onelake.dfs.fabric.microsoft.com/<YourLakehouseID>/Files/people.csv`
 
-   * Avoid using workspace or lakehouse display names in fully qualified paths, as Spark sessions can't resolve them and may result in socket timeout errors. Example of an **incorrect** file path:
+   * Avoid using workspace or lakehouse display names in fully qualified paths, as Spark sessions can't resolve them and might result in socket timeout errors. Example of an **incorrect** file path:
 
       `Path: abfss://<YourWorkspace>@onelake.dfs.fabric.microsoft.com/<YourLakehouse>.Lakehouse/Files/people.csv`
 
 * Outbound access protection isn't supported for schema enabled lakehouses.
 * Ensure you re-register the `Microsoft.Network` feature on your subscription in the Azure portal.
-* Outbound access protection doesn't protect from data exfiltration via inbound requests, such as GET requests made as part of external AzCopy operations to move data out of a workspace.  To protect your data from unauthorized inbound requests, see [Protect inbound traffic](protect-inbound-traffic.md).
+* Outbound access protection doesn't protect from data exfiltration via inbound requests, such as GET requests made as part of external AzCopy operations to move data out of a workspace. To protect your data from unauthorized inbound requests, see [Protect inbound traffic](protect-inbound-traffic.md).
 
 
 ## Related content

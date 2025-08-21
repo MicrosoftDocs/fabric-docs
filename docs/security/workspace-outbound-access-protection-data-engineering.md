@@ -41,7 +41,7 @@ When outbound access is restricted, only approved managed private endpoints can 
 * External services (for example, Azure SQL, Blob Storage)
 * Other Fabric workspaces within the same tenant
 
-Once a managed private endpoint (MPE) is created and approved, it becomes the only allowed channel for outbound data access.
+Once a managed private endpoint is created and approved, it becomes the only allowed channel for outbound data access.
 
 ## Installing libraries securely in outbound access protected Workspaces 
 
