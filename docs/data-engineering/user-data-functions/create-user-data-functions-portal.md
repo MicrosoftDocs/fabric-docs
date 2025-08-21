@@ -78,7 +78,7 @@ This is an example of how to add a new function from the `Insert sample` menu. I
 ### Run your function 
 1. To run your function, first you need to switch to the **Run only mode** by clicking on the mode switcher. 
    
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\switch-mode-run-mode.gif" alt-text="Screenshot showing how to switch to Run only mode." lightbox="..\media\user-data-functions-create-in-portal\switch-mode-run-mode.gif":::
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\switch-mode-run-mode.gif" alt-text="Animated screenshot showing how to switch to Run only mode." lightbox="..\media\user-data-functions-create-in-portal\switch-mode-run-mode.gif":::
 
 1. Select **Run** icon that shows up when you hover over a function in the Functions explorer list. 
 
