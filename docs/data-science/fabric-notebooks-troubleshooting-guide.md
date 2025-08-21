@@ -15,7 +15,7 @@ Use this guide to quickly identify and resolve common issues when working in Fab
 
 ## Error messages and associated resolution categories
 
-The following table lists common error messages you may encounter in Fabric Notebooks, along with links to the relevant troubleshooting sections.
+The following table lists common error messages you might encounter in Fabric Notebooks, along with links to the relevant troubleshooting sections.
 
 | Error Message | Categories / Resolution |
 |---------------|------------------------|
@@ -42,12 +42,12 @@ The following section outlines common Notebook errors and their suggested resolu
 
 #### Why it happens
 
-Notebook sessions auto-shutdown after a period of inactivity. By default, this timeout is set to 20 minutes.
+Notebook sessions autoshutdown after a period of inactivity. By default, this timeout is set to 20 minutes.
 
 #### What to do
 
-- Re-run the notebook to restart the session.
-- Adjust the session timeout duration at either the Notebook or Workspace level.
+1. Rerun the notebook to restart the session.
+1. Adjust the session timeout duration at either the Notebook or Workspace level.
 
 ##### Change timeout at the Notebook level
 
@@ -82,7 +82,7 @@ Retry after a few moments.
 
 #### Why it happens
 
-A session is not connected.
+A session isn't connected.
 
 #### What to do
 
@@ -100,13 +100,19 @@ You can start a session using three methods:
 
 #### Why it happens
 
-Incorrect sign-in credentials; expired login session; missing permissions for Notebook, Lakehouse, or Workspace; tenant restrictions
+These failures can happen for any of the following reasons:
+
+- Incorrect sign-in credentials
+- Expired login session
+- Missing permissions for Notebook, Lakehouse, or Workspace
+- Tenant restrictions
 
 #### What to do
-- _Verify your sign-in_: Ensure you're logged in with the correct Microsoft Entra (formerly Azure AD) account associated with your Fabric environment.
-- _Refresh your session_: Sign out and sign back in to refresh your authentication token. You can do this by selecting your profile icon in the top-right corner of the window, and then and selecting **Sign out**.
-- _Check permissions_: Confirm that you have the necessary role (i.e. Contributor or Admin) for the resource you’re trying to access. This includes the Notebook, Lakehouse, Workspace, or Data Warehouse.
-- _Contact your administrator_: If you're still blocked, contact your tenant or workspace administrator to:
+
+1. _Verify your sign-in_: Ensure you're logged in with the correct Microsoft Entra (formerly Azure AD) account associated with your Fabric environment.
+1. _Refresh your session_: Sign out and sign back in to refresh your authentication token. You can do this by selecting your profile icon in the top-right corner of the window, and then and selecting **Sign out**.
+1. _Check permissions_: Confirm that you have the necessary role (i.e. Contributor or Admin) for the resource you’re trying to access. This includes the Notebook, Lakehouse, Workspace, or Data Warehouse.
+1. _Contact your administrator_: If you're still blocked, contact your tenant or workspace administrator to:
   - Confirm your user role and access level.
   - Check for token expiration issues.
   - Ensure you’re added to the correct Fabric tenant, especially if you recently joined the organization or switched accounts.
@@ -130,12 +136,13 @@ In order to manage user access within a Fabric Workspace, take the following ste
 An administrator has paused Fabric capacity.
 
 #### What to do
+
 - Ask your Fabric administrator to resume capacity.
 - Steps (for admins):
-  - Go to the [Microsoft Fabric Admin Portal](https://app.fabric.microsoft.com/admin-portal).
-  - Navigate to **Capacities**.
-  - Select the paused capacity.
-  - Select **Resume**.
+  1. Go to the [Microsoft Fabric Admin Portal](https://app.fabric.microsoft.com/admin-portal).
+  1. Navigate to **Capacities**.
+  1. Select the paused capacity.
+  1. Select **Resume**.
 
 ### Missing items
 
@@ -145,9 +152,9 @@ An item was deleted, moved, or you don’t have access.
 
 #### What to do
 
-- Use the global search box at the top center of the Fabric browser page to try locating the item across all workspaces.                  
-- Contact the item owner to confirm whether it still exists and request access if needed.
-- If the item was deleted, the owner may be able to restore it from version history or a backup, depending on workspace settings.
+1. Use the global search box at the top center of the Fabric browser page to try locating the item across all workspaces.                  
+1. Contact the item owner to confirm whether it still exists and request access if needed.
+1. If the item was deleted, the owner may be able to restore it from version history or a backup, depending on workspace settings.
 
 ### Save failures
 
@@ -156,13 +163,14 @@ An item was deleted, moved, or you don’t have access.
 Network connectivity drops before changes are saved, or the session timed out.
 
 #### What to do
-- _Check network connectivity_: Save failures are often caused by temporary internet or service disruptions.
-- _Save a copy_: Duplicate the notebook to avoid losing unsaved changes.
-- _Turn on AutoSave_: AutoSave is on by default. Check under the **Edit** menu to ensure that it hasn’t been disabled so your changes are saved automatically at regular intervals.
+
+1. _Check network connectivity_: Save failures are often caused by temporary internet or service disruptions.
+1. _Save a copy_: Duplicate the notebook to avoid losing unsaved changes.
+1. _Turn on AutoSave_: AutoSave is on by default. Check under the **Edit** menu to ensure that it hasn’t been disabled so your changes are saved automatically at regular intervals.
   
   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/autosave.png" alt-text="Screenshot showing the AutoSave button on the Edit menu of the Fabric user interface.":::
 
-- _Create a checkpoint_: If changes were saved before the failure, use the **Version history** feature in the Microsoft Fabric Notebook to manually save a snapshot of the notebook.
+1. _Create a checkpoint_: If changes were saved before the failure, use the **Version history** feature in the Microsoft Fabric Notebook to manually save a snapshot of the notebook.
   - Select the **History** button at the top right:
   
     :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/history.png" alt-text="Screenshot showing the History button in the Fabric Notebook user interface.":::
