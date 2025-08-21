@@ -7,7 +7,7 @@ ms.reviewer: Lee
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: tutorial
-ms.date: 07/22/2025
+ms.date: 08/21/2025
 ms.search.form: Variable library tutorial
 #customer intent: As a developer, I want to learn how to use the Microsoft Fabric Variable library tool to customize and share item configurations in a workspace so that I can manage my content lifecycle..
 ---
@@ -32,7 +32,6 @@ In this tutorial, you:
 ## Prerequisites
 
 * A Fabric tenant account with an active subscription. [Create an account for free](../../get-started/fabric-trial.md).
-* A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * The following [tenant switches](../../admin/about-tenant-settings.md) must be enabled from the Admin portal:
  * [Users can create Fabric items](../../admin/fabric-switch.md)
  * Users can create variable libraries
