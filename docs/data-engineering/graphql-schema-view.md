@@ -54,7 +54,7 @@ The following options are available for Types:
 
 - **Update schema** - Lets you update the schema with new objects from the data source.
 
-- **Rename** - Changes the name of the object. Note: This change **only** affects the API schema and doesn't affect the original data source object from which it's derived.
+- **Rename** - Changes the name of the object. This change **only** affects the API schema and doesn't affect the original data source object from which it's derived.
 
 - **Remove from schema** - Deletes the object from the GraphQL schema, so you can't reference it anymore.
 

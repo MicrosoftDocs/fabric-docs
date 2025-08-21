@@ -11,22 +11,17 @@ ms.search.form: Connecting applications to GraphQL
 ms.date: 08/21/2025
 ---
 
-# Use Service Principals with Fabric API for GraphQL
+# Use service p with Fabric API for GraphQL
 
 Follow the steps in the [connect applications](connect-apps-api-graphql.md) section to provide access to user principals. You can also access the GraphQL API with a service principal:
 
-
 1. Follow the steps in [connect applications](connect-apps-api-graphql.md) to create a Microsoft Entra app, but keep in mind that scopes aren't needed for Service Principals. In the new app, add a client secret under **Certificates and Secrets**. For more information, see [Register a Microsoft Entra app and create a service principal](/entra/identity-platform/howto-create-service-principal-portal).
-
 
 1. Ensure that tenant administrators enable the usage of service principals in Fabric. In the Tenant Admin portal, go to **Tenant Settings**. Under **Developer Settings** enable **Service Principals can use Fabric APIs**. With this setting enabled, the application is visible in the Fabric Portal for role or permissions assignment. You can find more information on [Identity support](/rest/api/fabric/articles/identity-support#service-principal-tenant-setting).
 
-
 1. The service principal needs access to both the GraphQL API and the data source, more specifically *Execute* permission to the GraphQL API and read or write access required in the data source of choice accordingly. In the Fabric Portal, open the workspace and select the ellipsis next to API. Select *Manage permissions* for the API then *Add user*. Add the application and select *Run Queries and Mutations*, which provides the required *Execute* permissions to the service principal.  For testing purposes, the easiest way to implement the required permissions for both the API and data source is by adding the application as a workspace member with a contributor role where both the GraphQL API and data source items are located.
 
-
 :::image type="content" source="media/connect-apps-api-graphql/add-spn-permissions.png" alt-text="Screenshot of GraphQL API permissions.":::
-
 
 Because a service principal requires either a certificate or a client secret, it isn't supported by the Microsoft Authentication Library (MSAL) in single-page applications (SPAs) like the React app built in the last step. You can use a backend service properly secured with well defined authorization logic depending on your requirements and use cases.
 

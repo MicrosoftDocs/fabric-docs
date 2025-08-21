@@ -67,17 +67,17 @@ After installing the code formatting extension, enable code formatting for the n
 
 1. Use the ```%load_ext``` magic command:
 
-```python
-# Load the jupyter-black extension
-%load_ext jupyter_black
-```
+   ```python
+   # Load the jupyter-black extension
+   %load_ext jupyter_black
+   ```
 
 1. Use the programming API:
 
-```python
-import jupyter_black
-jupyter_black.load()
-```
+   ```python
+   import jupyter_black
+   jupyter_black.load()
+   ```
 
 > [!TIP]
 > To ensure that all notebooks enable code formatting, which can be helpful in enterprise development scenarios, enable formatting in a template notebook.

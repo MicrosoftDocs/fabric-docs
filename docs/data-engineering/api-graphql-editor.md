@@ -32,7 +32,7 @@ After testing and prototyping the desired GraphQL operation, the API editor gene
 
 To get started, execute a query, select the **Generate code** button, and choose the language accordingly:
 
-:::image type="content" source="media/api-graphql-editor/query-editor-generate-code.png" alt-text="Screenshot of the API editor screen showing the hw to generate code option." lightbox="media/api-graphql-editor/query-editor-generate-code.png":::
+:::image type="content" source="media/api-graphql-editor/query-editor-generate-code.png" alt-text="Screenshot of the API editor screen showing the how to generate code option." lightbox="media/api-graphql-editor/query-editor-generate-code.png":::
 
 You can then copy the generated code and save it as a file in a local folder. Depending on the chosen language, follow these simple steps to test locally:
 
