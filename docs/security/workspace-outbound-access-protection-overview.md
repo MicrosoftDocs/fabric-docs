@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview
-ms.date: 08/18/2025
+ms.date: 08/20/2025
 
 #customer intent: As a Fabric administrator, I want to control and secure outbound connections from workspace artifacts so that I can protect organizational data and ensure compliance with security policies.
 
@@ -69,6 +69,7 @@ Reference library packages from a data source connected to the Fabric workspace 
 Upload wheel files for their required libraries and dependencies (that aren’t already included in the prebaked runtime).
 * Enabling outbound access protection blocks all public access from your workspace. Therefore, to query a Lakehouse from another workspace, you must create a cross-workspace managed private endpoint to allow the Spark jobs to establish a connection.
 * Using fully qualified paths with workspace and Lakehouse names can cause a socket timeout exception. To access files, use relative paths for the current Lakehouse or use a fully qualified path with the Workspace and Lakehouse GUIDs.
+* You could run into Spark issues in the following regions when outbound access protection is enabled for the workspace: Mexico Central, Israel Central, and Spain Central.
 
 ### Incorrect vs. Correct Path Usage
 
