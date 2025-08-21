@@ -16,9 +16,6 @@ Data Factory in Microsoft Fabric now includes a Save As feature that lets you pe
 
 ## Save a Dataflow Gen2 or Gen2 (CI/CD) as a new Dataflow Gen2 (CI/CD)
 
->[!IMPORTANT]
->Saving from Gen2 (CI/CD) is still in preview.
-
 You can now use the new Save As feature to save a Dataflow Gen2 or Dataflow Gen2 (CI/CD) to a new Dataflow Gen2 (CI/CD). To use the Save As feature:
 
 [!INCLUDE [save-as-feature-how-to](includes/save-as-feature-how-to.md)]
@@ -47,16 +44,16 @@ The following tables contain the known limitations for the Save As feature:
 
 | Feature/Limitation | Dataflow Gen1 | Dataflow Gen2 |
 | ------------------ | ------------- | ------------- |
-| You're required to reconnect to data sources | * | * |
-| Scheduled refresh settings aren't copied | ** | √ |
-| Incremental refresh settings aren't copied | √*** | √ |
-| After creating a new Dataflow Gen2 (CI/CD) that contains Microsoft Fabric connections (for example, Lakehouse, Warehouse), if you add more Fabric connections, you'll need to reconnect existing Fabric connections.| √ | √ |
+| You're required to reconnect to data sources | No limitation<sup>1</sup> | No limitation<sup>1</sup> |
+| Scheduled refresh settings aren't copied | No limitation<sup>2</sup> | Limited |
+| Incremental refresh settings aren't copied | Limited<sup>3</sup> | Limited |
+| After creating a new Dataflow Gen2 (CI/CD) that contains Microsoft Fabric connections (for example, Lakehouse, Warehouse), if you add more Fabric connections, you'll need to reconnect existing Fabric connections.| Limited | Limited |
 
-/* Cloud – Personal connections are copied from Dataflows Gen1/Gen2 to Dataflows Gen2 (CI/CD) created by Save As.
+<sup>1</sup> Cloud – Personal connections are copied from Dataflows Gen1/Gen2 to Dataflows Gen2 (CI/CD) created by Save As.
 
-/** Refresh schedule is copied from Dataflows Gen1 to Dataflows Gen2 (CI/CD) created by Save As. The Schedule is set to **Off**, Start date and time = current date, and End date and time = current date + 100 years.
+<sup>2</sup> Refresh schedule is copied from Dataflows Gen1 to Dataflows Gen2 (CI/CD) created by Save As. The Schedule is set to **Off**, Start date and time = current date, and End date and time = current date + 100 years.
 
-/*** Since Dataflows Gen1 Incremental Refresh isn't compatible with Dataflows Gen2 (CI/CD), its settings aren't copied. RangeStart, RangeEnd parameters, and _Canary queries are removed from the new Dataflow Gen2(CI/CD) after Save As. For more information, see [Incremental refresh in Dataflow Gen2](dataflow-gen2-incremental-refresh.md#differences-between-incremental-refresh-in-dataflow-gen1-and-dataflow-gen2).
+<sup>3</sup> Since Dataflows Gen1 Incremental Refresh isn't compatible with Dataflows Gen2 (CI/CD), its settings aren't copied. RangeStart, RangeEnd parameters, and _Canary queries are removed from the new Dataflow Gen2(CI/CD) after Save As. For more information, see [Incremental refresh in Dataflow Gen2](dataflow-gen2-incremental-refresh.md#differences-between-incremental-refresh-in-dataflow-gen1-and-dataflow-gen2).
 
 Dataflow Gen1 capabilities that aren't applicable in Dataflow Gen2 (CI/CD) and therefore aren't copied:
 
