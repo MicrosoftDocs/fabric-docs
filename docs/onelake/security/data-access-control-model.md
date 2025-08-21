@@ -238,7 +238,44 @@ OneLake security supports limiting access to columns by removing (hiding) a user
 
 Column level security also follows a more strict behavior in SQL Endpoint by operating through a deny semantic. Deny on a column in SQL Endpoint ensures that all access to the column is blocked, even if multiple roles would combine to give access to it. As a result, CLS in SQL Endpoint will operate using an intersection between all roles a user is part of instead of the union behavior in place for all other permission types. See the Evaluating multiple OneLake security roles section for more information on how roles combine.
 
+## Shortcuts
 
+### Shortcuts overview
+
+OneLake security integrates with shortcuts in OneLake to ensure data inside and outside of OneLake can be easily secured. There are two main authentication modes for shortcuts:
+
+- Passthrough shortcuts (SSO): The credential of the querying user is evaluated against the shortcut target to determine what data is allowed to be seen.
+- Delegated shortcuts: The shortcut uses a fixed credential to access the target and the querying user is evaluated against OneLake security prior to checking the delegated credentia's access to the source.
+
+In addition, OneLake security permissions are evaluated when creating any shortcuts in OneLake. Read about shortcut permissions in the [shortcut security document.](../onelake-shortcut-security.md)
+
+### OneLake security in passthrough shortcuts
+
+Security set on a OneLake folder always flows across any [internal shortcuts](../onelake-shortcuts.md) to restrict access to the shortcut source path. When a user accesses data through a shortcut to another OneLake location, the identity of the calling user is used to authorize access to the data in the target path of the shortcut. As a result, this user must have OneLake security permissions in the target location to read the data.
+
+> [!IMPORTANT]
+> When accessing shortcuts through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines in Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user. To resolve this, use **Power BI semantic models in DirectLake over OneLake mode** or **T-SQL in User's identity mode**.
+
+Defining OneLake security permissions for the internal shortcut isn't allowed and must be defined on the target folder located in the target item. The target item must be an item type that supports OneLake security roles. If the target item does not support OneLake security, the user's access is evaluated based on whether they have the Fabric ReadAll permission on the target item. Users do not need Fabric Read permission on an item in order to access it through a shortcut.
+
+### OneLake security in delegated shortcuts
+
+OneLake supports defining permissions for shortcuts such as [ADLS, S3, and Dataverse shortcuts](../onelake-shortcuts.md). In this case, the permissions are applied on top of the delegated authorization model enabled for this type of shortcut.
+
+Suppose user1 creates an S3 shortcut in a lakehouse pointing to a folder in an AWS S3 bucket. Then user2 is attempting to access data in this shortcut.
+
+| Does S3 connection authorize access for the delegated user1? | Does OneLake security authorize access for the requesting user2? | Result: Can user2 access data in S3 Shortcut?  |
+| ---- | --- | --- |
+| Yes | Yes | Yes |
+| No | No | No |
+| No | Yes | No |
+| Yes | No | No |
+
+The OneLake security permissions can be defined either for the entire scope of the shortcut or for selected subfolders. Permissions set on a folder inherit recursively to all subfolders, even if the subfolder is within the shortcut. Security set on an external shortcut can be scoped to grant access either to the entire shortcut, or any subpath inside the shortcut. Additional internal shortcuts pointing to an external shortcut still require the user to have access to the original external shortcut.
+
+Unlike other types of access in OneLake security, a user accessing an external shortcut will require Fabric Read permission on the data item where the external shortcut resides. This is necessary for securely resolving the connection to the external system. 
+
+Learn more about S3, ADLS, and Dataverse shortcuts in [OneLake shortcuts](../onelake-shortcuts.md).
 
 ## Evaluating multiple OneLake security roles
 
@@ -257,69 +294,6 @@ Lastly, each shortcut in a lakehouse generates a set of inferred roles that are 
 ( (R1ols n R1cls n R1rls) u (R2ols n R2cls n R2rls) ) n ( (R1'ols n R1'cls n R1'rls) u (R2'ols n R2'cls n R2'rls)) )
 
 Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehouse roles.
-
-## Shortcuts
-
-### OneLake security in internal shortcuts
-
-Security set on a OneLake folder always flows across any [internal shortcuts](../onelake-shortcuts.md) to restrict access to the shortcut source path. When a user accesses data through a shortcut to another OneLake location, the identity of the calling user is used to authorize access to the data in the target path of the shortcut. As a result, this user must have OneLake security permissions in the target location to read the data.
-
-> [!IMPORTANT]
-> When accessing shortcuts through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines in Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user. To resolve this, use **Power BI semantic models in DirectLake over OneLake mode** or **T-SQL in User's identity mode**.
-
-Defining OneLake security permissions for the internal shortcut isn't allowed and must be defined on the target folder located in the target item. The target item must be an item type that supports OneLake security roles. If the target item does not support OneLake security, the user's access is evaluated based on whether they have the Fabric ReadAll permission on the target item. Users do not need Fabric Read permission on an item in order to access it through a shortcut.
-
-The next table specifies whether the corresponding shortcut scenario supports OneLake security permissions.
-
-| Internal shortcut scenario | OneLake security permissions supported? | Comments |
-| ---- | ---- | --- |
-| Shortcut in a lakehouse pointing to folder2 located in the **same lakehouse**. | Supported. | To restrict the access to data in shortcut, define OneLake security for folder2. |
-| Shortcut in a lakehouse pointing to folder2 located in **another lakehouse** | Supported. | To restrict the access to data in shortcut, define OneLake security for folder2 in the other lakehouse. |
-| Shortcut in a lakehouse pointing to a table located in a **data warehouse** | Not supported. | OneLake doesn't support defining security permissions in data warehouses. Access is determined based on the ReadAll permission instead.|
-| Shortcut in a lakehouse pointing to a table located in a **KQL database** | Not supported. | OneLake doesn't support defining security permissions in KQL databases. Access is determined based on the ReadAll permission instead.|
-
-### OneLake security in external (multicloud) shortcuts
-
-OneLake supports defining permissions for shortcuts such as [ADLS, S3, and Dataverse shortcuts](../onelake-shortcuts.md). In this case, the permissions are applied on top of the delegated authorization model enabled for this type of shortcut.
-
-Suppose user1 creates an S3 shortcut in a lakehouse pointing to a folder in an AWS S3 bucket. Then user2 is attempting to access data in this shortcut.
-
-| Does S3 connection authorize access for the delegated user1? | Does OneLake security authorize access for the requesting user2? | Result: Can user2 access data in S3 Shortcut?  |
-| ---- | --- | --- |
-| Yes | Yes | Yes |
-| No | No | No |
-| No | Yes | No |
-| Yes | No | No |
-
-The OneLake security permissions can be defined either for the entire scope of the shortcut or for selected subfolders. Permissions set on a folder inherit recursively to all subfolders, even if the subfolder is within the shortcut. Security set on an external shortcut applies only to access on that shortcut path directly. Additional internal shortcuts pointing to an external shortcut still require the user to have access to the original external shortcut.
-
-Unlike other types of access in OneLake security, a user accessing an external shortcut will require Fabric Read permission on the data item where the external shortcut resides. This is necessary for securely resolving the connection to the external system. 
-
-Learn more about S3, ADLS, and Dataverse shortcuts in [OneLake shortcuts](../onelake-shortcuts.md).
-
-
-
-### Single role
-
-When defining a role with RLS and CLS, a user first chooses tables to grant access to. From this selection, constraints such as RLS and CLS can be defined on one or more tables. The RLS and CLS compose as filters on the full schema and data granted to a table.  
-
-For example:  
-
-UserA is a member of Role1. Role1 has the following definition: 
-
-* Read access to Table1
-* CLS: Table1 has Column1 removed. 
-* RLS: Table1 where Column2 = “US”. 
-
-When UserA runs a query on Table1, they see all columns except Column1, and only rows where Column2 has a value of “US”. 
-
-### Multiple roles
-
-For RLS and CLS across multiple roles, the security combines through a union of each category. Each role produces a view of a table with RLS and CLS rules applied, and the user sees a union of these views.
-
-CLS combines as a simple union across roles. Any restriction unioned with no restriction results in no restrictions to that table. 
-
-RLS combines with an OR between SQL statements. Like CLS, any RLS rules unioned with full access to the table results in all rows being visible. 
 
 >[!IMPORTANT]
 >If two roles combine such that the columns and rows aren't aligned across the queries, access is blocked to ensure that no data is leaked to the end user. 
