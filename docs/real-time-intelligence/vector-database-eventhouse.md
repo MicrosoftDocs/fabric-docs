@@ -170,7 +170,7 @@ At this point, you can verify the data was written to the eventhouse by browsing
 
 Now that you stored the embedded wiki data in your eventhouse, you can use this data as a reference to find pages on a particular article. In order to make the comparison, you embed the search term, and then do a comparison between the search term and the Wikipedia pages.
 
-To successfully make a call against Azure OpenAI, you need an endpoint, key, and deployment ID.
+To successfully make a call against Azure OpenAI, you need an endpoint and deployment ID.
 
 | Variable name | Value |
 |---|---|
