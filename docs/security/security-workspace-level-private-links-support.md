@@ -48,7 +48,7 @@ Review the following considerations when working with unsupported item types.
 
 * When a workspace is assigned to a deployment pipeline, it can't be configured to block public access, as deployment pipelines don't currently support workspace-level private link.
 
-* Existing lakehouses and warehouses use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse or warehouse.
+* Existing lakehouses, warehouses and mirrored databases use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse, warehouse or mirrored database.
 
 * Lakehouses with schemas aren't supported when a workspace-level private link is enabled for a workspace.
 
@@ -79,6 +79,8 @@ Review the following considerations when working with unsupported item types.
 * Data Pipelines and Copy Jobs are generally supported. However, the following scenario isn't currently supported:
 
    * **Gateway-based connections:** Data Pipelines and Copy Jobs can't use connections that rely on an on-premises data gateway or a virtual network (VNet) data gateway infrastructure. This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
+
+* The OneLake Catalog - Govern tab isn't available when Private Link is activated.
 
 ## Supported APIs
 

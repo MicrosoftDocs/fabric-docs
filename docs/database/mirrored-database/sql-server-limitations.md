@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases From SQL Serv
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajayj, rajpo
-ms.date: 06/03/2025
+ms.date: 08/21/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -37,7 +37,7 @@ For troubleshooting, see:
 - Fabric Mirroring from SQL Server 2025 isn't supported when the following features are enabled:
   - Replication
   - CDC
-    - Fabric Mirroring from SQL Server 2016-2022 requires CDC.
+    - Fabric Mirroring from SQL Server 2016-2022 requires CDC. Review [Known Issues and Limitations with CDC](/sql/relational-databases/track-changes/known-issues-and-errors-change-data-capture?view=sql-server-ver17&preserve-view=true).
     
 - A SQL Server database cannot be mirrored if [delayed transaction durability](/sql/relational-databases/logs/control-transaction-durability?view=sql-server-ver17&preserve-view=true) is enabled for the database.
 
