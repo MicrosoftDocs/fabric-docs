@@ -99,8 +99,8 @@ Follow these steps to use deployment pipelines with your Fabric workspace:
 1. [Prerequisites](#prerequisites-for-deployment-pipelines)
 1. [Create a deployment pipeline](#step-1-create-a-deployment-pipeline)
 1. [Assign a workspace to the deployment pipeline](#step-2-assign-a-workspace-to-the-deployment-pipeline)
-1. [Deploy to an empty stage](#deploy-to-an-empty-stage)
-1. [Deploy content from one stage to another](#deploy-content-from-one-stage-to-another)
+1. [Deploy to an empty stage](#step-3-deploy-to-an-empty-stage)
+1. [Deploy content from one stage to another](#step-4-deploy-content-from-one-stage-to-another)
 
 ### Prerequisites for deployment pipelines
 
