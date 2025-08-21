@@ -240,7 +240,7 @@ A virtual network data gateway must be used for every dataflow connector. The vi
 - A workspace can't be deleted if an existing private link service is set up for it.
 - Only one private link service can be created per workspace, and each workspace can have only one private link service. However, multiple private endpoints can be created for a single private link service.
 - The limit of private endpoints for a workspace is 100. Create a support ticket if you need to increase this limit.
-- Limit of workspace private link services you can create per tenant: 500. Create a support ticket if you need to increase this limit.
+- Limit of workspace PLS you can create per tenant: 500. Create a support ticket if you need to increase this limit.
 - Up to 10 workspace private link services can be created per minute.
 - For Data Engineering workloads:
    - To query Lakehouse files or tables from a workspace that has workspace-level private link enabled, you must create a cross-workspace managed private endpoint connection to access resources in the other workspace. <!--For instructions, see [Cross workspace communication](security-cross-workspace-communication.md).-->
