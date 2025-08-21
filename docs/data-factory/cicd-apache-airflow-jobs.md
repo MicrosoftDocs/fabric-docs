@@ -52,7 +52,7 @@ To use Git integration with Airflow in Fabric, you first need to connect to a Gi
 
    :::image type="content" source="media/cicd-data-pipelines/workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings in Fabric UI.":::
 
-3. Select **Git integration**.
+1. Select **Git integration**.
 1. Choose your Git provider—either _Azure DevOps_ or _GitHub_. If you pick GitHub, select **Add account** to connect your GitHub account. After you sign in, select **Connect** so Fabric can access your GitHub account.
 
    :::image type="content" source="media/cicd-data-pipelines/add-github-account.png" alt-text="Screenshot showing where to add a GitHub account for a Fabric workspace Git integration.":::
