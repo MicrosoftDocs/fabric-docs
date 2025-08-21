@@ -312,7 +312,9 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 
 * Spark notebooks require that the environment be 3.5 or higher and using Fabric runtime 1.3.
 
-* OneLake security does not work with [private link protection](../../security/security-private-links-overview.md). 
+* OneLake security does not work with [private link protection](../../security/security-private-links-overview.md).
+
+* The [external data sharing preview](../../governance/external-data-sharing-overview.md) feature isn't compatible with the data access roles preview. When you enable the data access roles preview on a lakehouse, any existing external data shares might stop working.
 
 * The following table provides the limitations of OneLake data access roles.
 
