@@ -33,9 +33,9 @@ Any data connections you add are associated with your user data functions item a
 
 ### 1. Access the Manage connections feature from the Functions portal
 
-Find and select **Manage connections** in the ribbon of the Functions portal editor.
+In **Develop mode**, find and select **Manage connections** in the ribbon of the Functions portal editor.
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-1.png" alt-text="Screenshot of functions portal editor with manage connections button highlighted." lightbox="..\media\user-data-functions-manage-connections\manage-connections-1.png":::
+:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-1-2.png" alt-text="Screenshot of functions portal editor with manage connections button highlighted." lightbox="..\media\user-data-functions-manage-connections\manage-connections-1.png":::
 
 The pane that opens contains any data connections you created. Select **Add data connection** to create a new connection.
 
@@ -57,9 +57,11 @@ Once created, the new connection to the data source you selected is shown in the
 :::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-4.png" alt-text="Screenshot of the connections side pane with a new data source connection created." lightbox="..\media\user-data-functions-manage-connections\manage-connections-4.png":::
 
 ### 3. Use your connection alias in your function code
-Once you're back in the portal editor, you need to add the alias of the connection you created in the `Manage Connections` tab to your code. In this case we will use a code sample called "Read data from a table in SQL Database". You can find this sample by clicking on the Edit tab, then clicking on the "Insert sample" button and navigating to "SQL Database".
+Once you're back in the portal editor, you need to add the alias of the connection you created in the `Manage Connections` tab to your code. This alias is automatically created based on the name of the Fabric item you are connecting to.
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-5.png" alt-text="Screenshot of Insert Sample data catalog with a list of data sources." lightbox="..\media\user-data-functions-manage-connections\manage-connections-5.png":::
+In this case we will use a code sample called "Read data from a table in SQL Database". You can find this sample by clicking on the Edit tab, then clicking on the "Insert sample" button and navigating to "SQL Database".
+
+:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-5-1.png" alt-text="Screenshot of Insert Sample data catalog with a list of data sources." lightbox="..\media\user-data-functions-manage-connections\manage-connections-5-1.png":::
 
 This is the sample code that was inserted:
 
@@ -103,9 +105,9 @@ def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
     [...]
 ```
 
-After modifying the code, publish your function using the Publish button in the toolbar. This operation may take a few minutes.
+After modifying the code, you can test your changes by using the [Test capability](./test-user-data-functions.md) in Develop mode. Once you are ready, you can publish your function using the Publish button in the toolbar. This operation may take a few minutes.
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-6.png" alt-text="Screenshot of the 'Publish' button." lightbox="..\media\user-data-functions-manage-connections\manage-connections-6.png":::
+:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-6-1.png" alt-text="Screenshot of the 'Publish' button." lightbox="..\media\user-data-functions-manage-connections\manage-connections-6-1.png":::
 
 Once the publishing is completed, you can run your function by hovering on its name in the Functions Explorer list, and clicking on the "Run" button in the side panel. The bottom panel "Output" will show the outcome of running the function.
 
