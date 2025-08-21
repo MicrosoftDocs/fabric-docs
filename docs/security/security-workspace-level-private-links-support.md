@@ -48,7 +48,7 @@ Review the following considerations when working with unsupported item types.
 
 * When a workspace is assigned to a deployment pipeline, it can't be configured to block public access, as deployment pipelines don't currently support workspace-level private link.
 
-* Existing lakehouses, warehouses and mirrored databases use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse or warehouse.
+* Existing lakehouses, warehouses and mirrored databases use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse, warehouse or mirrored database.
 
 * Lakehouses with schemas aren't supported when a workspace-level private link is enabled for a workspace.
 
