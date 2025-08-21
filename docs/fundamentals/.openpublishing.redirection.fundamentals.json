@@ -1984,6 +1984,11 @@
             "source_path_from_root": "/docs/fundamentals/lakehouse-power-bi-reporting.md",
             "redirect_url": "/fabric/fundamentals/building-reports",
             "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/fundamentals/copilot-for-writing-queries.md",
+            "redirect_url": "/fabric/real-time-intelligence/copilot-writing-queries",
+            "redirect_document_id": true
         }
     ]
 }
