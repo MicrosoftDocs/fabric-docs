@@ -43,28 +43,31 @@ Specifically, you learn how to:
 
 1. Once the `hello_fabric` function is published, you can run it from the list of functions in the Functions explorer.
 
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\hello-fabric-template.png" alt-text="Screenshot showing the code for hello-fabric function." lightbox="..\media\user-data-functions-create-in-portal\hello-fabric-template.png":::
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\hello-fabric-template-1.png" alt-text="Screenshot showing the code for hello-fabric function." lightbox="..\media\user-data-functions-create-in-portal\hello-fabric-template-1.png":::
 
 
 ### Add a new function from sample 
 This is an example of how to add a new function from the `Insert sample` menu. In this case, we will add a function called **Manipulate data with pandas library** that uses the `pandas` library as a requirement. Follow the steps to add this sample function:
 
-1. Select **Library management** to add the libraries that your function requires. 
+1. Make sure you are in **Develop mode**. Select **Library management** to add the libraries that your function requires. 
 
    :::image type="content" source="..\media\user-data-functions-manage-libraries\select-library-management.png" alt-text="Screenshot showing how to manage libraries." lightbox="..\media\user-data-functions-manage-libraries\select-library-management.png":::
    
    >[!NOTE]
    > `fabric_user_data_functions` library is added by default and can't be removed. This library is required for the functionality of User data functions. You need to update the version of this library for any future releases of this SDK.
 
-2. Select **pandas** library and select the version. Once the library is added, it's automatically saved in your User Data Functions item.
+1. Select **pandas** library and select the version. Once the library is added, it's automatically saved in your User Data Functions item.
 
    :::image type="content" source="..\media\user-data-functions-manage-libraries\add-pandas-library.png" alt-text="Screenshot showing how to add pandas library." lightbox="..\media\user-data-functions-manage-libraries\add-pandas-library.png":::
 
-3. Select **Insert sample** and select **Manipulate data with pandas library**. This action will insert sample code at the bottom of your code, after the other functions.
+1. Select **Insert sample** and select **Manipulate data with pandas library**. This action will insert sample code at the bottom of your code, after the other functions.
 
    :::image type="content" source="..\media\user-data-functions-create-in-portal\insert-sample-using-pandas.png" alt-text="Screenshot showing how to insert a sample that uses pandas library." lightbox="..\media\user-data-functions-create-in-portal\insert-sample-using-pandas.png":::
 
-5. Once the sample is inserted into the editor, you can save your changes by selecting **Publish**. Publishing the changes may take a few minutes. 
+1. Once the sample is inserted into the editor, you test it by using the [Test capability](./test-user-data-functions.md) in Develop mode. 
+
+
+1. When you are ready, you can select **Publish** to save your changes and update your functions. Publishing may take a few minutes. 
    
    :::image type="content" source="..\media\user-data-functions-create-in-portal\sample-added-to-function-editor.png" alt-text="Screenshot showing code snippet of the sample in the editor." lightbox="..\media\user-data-functions-create-in-portal\sample-added-to-function-editor.png":::
 
@@ -73,9 +76,13 @@ This is an example of how to add a new function from the `Insert sample` menu. I
    :::image type="content" source="..\media\user-data-functions-create-in-portal\sample-added-to-function-editor.png" alt-text="Screenshot showing code snippet of the sample in the editor." lightbox="..\media\user-data-functions-create-in-portal\test-data-function-2.png":::
 
 ### Run your function 
+1. To run your function, first you need to switch to the **Run only mode** by clicking on the mode switcher. 
+   
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\switch-mode-run-mode.gif" alt-text="Screenshot showing how to switch to Run only mode." lightbox="..\media\user-data-functions-create-in-portal\switch-mode-run-mode.gif":::
+
 1. Select **Run** icon that shows up when you hover over a function in the Functions explorer list. 
 
-    :::image type="content" source="..\media\user-data-functions-create-in-portal\test-data-function.png" alt-text="Screenshot showing how to test the data functions." lightbox="..\media\user-data-functions-create-in-portal\test-data-function.png":::
+    :::image type="content" source="..\media\user-data-functions-create-in-portal\test-data-function.png" alt-text="Screenshot showing how to run the functions." lightbox="..\media\user-data-functions-create-in-portal\test-data-function.png":::
 
 1. Pass the required parameters in presented as a form in the Functions explorer. In this case, we are going to run the `manipulate_data` function which requires a JSON string as a parameter.   
    ```json
@@ -141,7 +148,7 @@ udf = fn.UserDataFunctions()
 
 ### Rename a function
 
-1. Select into the code editor and update the name of the function. For example, rename `hello_fabric` to `hello_fabric1`. Here's an example:
+1. In **Develop mode**, select into the code editor and update the name of the function. For example, rename `hello_fabric` to `hello_fabric1`:
 
    ```python
    @udf.function()
