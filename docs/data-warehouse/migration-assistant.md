@@ -3,8 +3,8 @@ title: Migration Assistant for Fabric Data Warehouse
 description: This article explains the Migration Assistant experience for Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: anphil, prlangad
-ms.date: 06/23/2025
+ms.reviewer: anphil, prlangad, chweb
+ms.date: 08/19/2025
 ms.topic: concept-article
 ms.search.form: Migration Assistant
 ---
@@ -15,6 +15,8 @@ ms.search.form: Migration Assistant
 The Fabric Migration Assistant is a migration experience built natively into Fabric, providing a guided migration experience to Microsoft Fabric. 
 
 The Migration Assistant copies metadata and data from the source database, automatically converting the source schema to Fabric Data Warehouse. AI-powered assistance provides quick solutions for migration incompatibility or errors.
+
+You can use the Fabric Migration Assistant for Data Warehouse to copy dedicated SQL pools in Azure Synapse Analytics, as well as terabyte or larger scale OLAP data in SQL Server and other SQL database platforms.
 
 > [!TIP]
 > For a step-by-step guide to migrate with the Migration Assistant, see [Migrate with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md).
@@ -32,7 +34,7 @@ Migration with the Fabric Migration Assistant involves these steps at a high lev
 
 ## Migrated objects
 
-The Migration Assistant helps users migrate to Fabric warehouse using DACPAC files. The database object metadata captured within the DACPAC are:
+The Migration Assistant helps users migrate to Fabric Data Warehouse using DACPAC files. The database object metadata captured within the DACPAC are:
 
 -   Tables
 -   Views
