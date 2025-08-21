@@ -1,207 +1,255 @@
 ---
-title: Ingest Data from Telegraf into Azure Data Explorer or into Fabric Real-Time Intelligence
-description: In this article, you learn how to ingest (load) data into Azure Data Explorer from Telegraf.
+title: Ingest Data from Telegraf into Microsoft Fabric Eventhouse
+description: In this article, you learn how to ingest (load) data into Microsoft Fabric Eventhouse from Telegraf.
 ms.reviewer: 
 ms.topic: how-to
-ms.date: 07/31/2025
+ms.date: 08/21/2025
 
-#Customer intent: As an integration developer, I want to build integration pipelines from Telegraf into Azure Data Explorer, so I can make data available for near real-time analytics.
+#Customer intent: As an integration developer, I want to build integration pipelines from Telegraf into Microsoft Fabric Eventhouse, so I can make data available for near real-time analytics.
 ---
-# Ingest data from Telegraf into Azure Data Explorer
+# Ingest data from Telegraf into Microsoft Fabric Eventhouse
 
-[!INCLUDE [real-time-analytics-connectors-note](includes/real-time-analytics-connectors-note.md)]
-
-Azure Data Explorer supports [data ingestion](ingest-data-overview.md) from [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/). Telegraf is an open source, lightweight, and minimal memory foot print agent for collecting, processing, and writing telemetry data including logs, metrics, and IoT data.
+Microsoft Fabric Real-Time Intelligence supports [data ingestion](ingest-data-overview.md) from [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/). Telegraf is an open source, lightweight, and minimal memory foot print agent for collecting, processing, and writing telemetry data including logs, metrics, and IoT data.
 
 Telegraf supports hundreds of input and output plugins. It's widely used and the open source community supports it.
 
-The Azure Data Explorer [ADX output plugin](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/azure_data_explorer) serves as the connector from Telegraf and supports ingestion of data from many types of [input plugins](https://github.com/influxdata/telegraf/tree/master/plugins/inputs) into Azure Data Explorer.
-
-The Fabric Real-Time Intelligence [RTI output plugin](https://github.com/influxdata/telegraf/blob/release-1.35/plugins/outputs/microsoft_fabric/README.md) serves as the connector from Telegraf and supports ingestion of data from many types of [input plugins](https://github.com/influxdata/telegraf/tree/master/plugins/inputs) into Real-Time Intelligence artifacts, namely Eventhouse and Eventstream.
+The Microsoft Fabric [Real-Time Intelligence output plugin](https://github.com/influxdata/telegraf/blob/release-1.35/plugins/outputs/microsoft_fabric/README.md) serves as the connector from Telegraf and supports ingestion of data from many types of [input plugins](https://github.com/influxdata/telegraf/tree/master/plugins/inputs) into Eventhouse, a high-performance, scalable data-store designed for real-time analytics.
 
 ## Prerequisites
 
-* An Azure subscription. Create a [free Azure account](https://azure.microsoft.com/free/).
-* An Azure Data Explorer cluster and database. [Create a cluster and database](create-cluster-and-database.md).
-* [Telegraf](https://portal.influxdata.com/downloads/). Host Telegraf in a virtual machine (VM) or container. Telegraf can be hosted locally where the app or service being monitored is deployed, or remotely on a dedicated monitoring compute/container.
+* A Microsoft Fabric workspace with Real-Time Intelligence enabled.
+* An Eventhouse and KQL Database. [Create an Eventhouse](https://learn.microsoft.com/fabric/real-time-intelligence/create-eventhouse)
+* [Telegraf](https://portal.influxdata.com/downloads/) version 1.35.0 or later. Host Telegraf in a virtual machine (VM) or container. Telegraf can be hosted locally where the app or service being monitored is deployed, or remotely on a dedicated monitoring compute/container.
+* Appropriate permissions in Microsoft Fabric for the principal running Telegraf (Database User role or higher for the Eventhouse database).
 
-## Supported authentication methods
+## Supported authentication method
 
-The plugin supports the following authentication methods:
+The plugin uses **Azure Default Credential** authentication, which automatically tries multiple authentication methods in a specific order until one succeeds. This provides flexibility and security without requiring hardcoded credentials.
 
-* Microsoft Entra applications with app keys or certificates.
+### Azure Default Credential Chain
 
-    * For information on how to create and register an app in Microsoft Entra ID, see [Register an application](/azure/active-directory/develop/quickstart-register-app#register-an-application).
-    * For information on service principals, see [Application and service principal objects in Microsoft Entra ID](/azure/active-directory/develop/app-objects-and-service-principals).
+Azure Default Credential automatically tries authentication methods in this order:
 
-* Microsoft Entra user tokens
+* **Environment Variables** - Checks for service principal credentials in environment variables:
+  * `AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET`, `AZURE_TENANT_ID` (for client secret authentication)
+  * `AZURE_CLIENT_ID`, `AZURE_CLIENT_CERTIFICATE_PATH`, `AZURE_TENANT_ID` (for client certificate authentication)
 
-    * Allows the plugin to authenticate like a user. Use this method only for development.
+* **Managed Identity** - Uses system-assigned or user-assigned managed identity if running on Azure resources (VMs, App Service, Functions, etc.)
 
-* Azure Managed Service Identity (MSI) token
+* **Azure CLI** - Uses credentials from `az login` if Azure CLI is installed and user is logged in
 
-    * This is the preferred authentication method if you're running Telegraf in a supporting Azure environment, such as Azure Virtual Machines.
+* **Azure PowerShell** - Uses credentials from `Connect-AzAccount` if Azure PowerShell is installed and user is logged in
 
-Whichever method you use, the designated principal must be assigned the *Database User* role in Azure Data Explorer. This role allows the plugin to create the tables required for ingesting data. If the plugin is configured with `create_tables=false`, the designated principal must at least have the *Database Ingestor* role.
+* **Interactive Browser** - Opens browser for interactive login (typically disabled in production scenarios)
 
-### Configure authentication method
+### Authentication Setup Options
 
-The plugin checks for specific configurations of environment variables to determine which authentication method to use. The configurations are assessed in the specified order, and the first configuration that detected is used. If a valid configuration isn't detected, the plugin will fail to authenticate.
+Choose the authentication method that best fits your deployment scenario:
 
-To configure authentication for the plugin, set the appropriate environment variables for your chosen authentication method:
+**For Production (Recommended):**
+* Use **Managed Identity** when running Telegraf on Azure resources (VMs, containers, etc.)
+* Use **Service Principal with Environment Variables** for non-Azure environments
 
-* **Client credentials (Microsoft Entra application tokens)**: Microsoft Entra application ID and secret.
+**For Development:**
+* Use **Azure CLI** authentication by running `az login`
+* Use **Azure PowerShell** authentication by running `Connect-AzAccount`
 
-    * `AZURE_TENANT_ID`: The Microsoft Entra tenant ID used for authentication.
-    * `AZURE_CLIENT_ID`: The client ID of an App Registration in the tenant.
-    * `AZURE_CLIENT_SECRET`: The client secret that was generated for the App Registration.
+**Service Principal Environment Variables:**
+If using service principal authentication, set these environment variables:
 
-* **Client certificate (Microsoft Entra application tokens)**: Microsoft Entra application ID and an X.509 certificate.
-
-    * `AZURE_TENANT_ID`: The Microsoft Entra tenant ID used for authentication.
-    * `AZURE_CERTIFICATE_PATH`: A path to certificate and private key pair in PEM or PFX format, which can authenticate the App Registration.
-    * `AZURE_CERTIFICATE_PASSWORD`: The password that was set for the certificate.
-
-* **Resource owner password (Microsoft Entra user tokens)**: Microsoft Entra user and password. We don't recommend using this grant type. If you need an interactive sign in, use device login.
-
-    * `AZURE_TENANT_ID`: The Microsoft Entra tenant ID used for authentication.
-    * `AZURE_CLIENT_ID`: The client ID of an App Registration in the tenant.
-    * `AZURE_USERNAME`: The username, also known as upn, of a Microsoft Entra user account.
-    * `AZURE_PASSWORD`: The password of the Microsoft Entra user account. Note: This feature doesn't support accounts with multifactor authentication (MFA) enabled.
-
-* **Azure Managed Service Identity**: Delegate credential management to the platform. Run code in Azure, such as on a VM. Azure handles all configuration. For more information, see [Azure Managed Service Identity](/azure/active-directory/msi-overview). This method is only available when using [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview).
+```bash
+export AZURE_TENANT_ID="your-tenant-id"
+export AZURE_CLIENT_ID="your-client-id"
+export AZURE_CLIENT_SECRET="your-client-secret"
+```
 
 ## Configure Telegraf
 
-Telergraf is a configuration driven agent. To get started, you must install Telegraf and configure the required input and output plugins. The default location of configuration file, is as follows:
+Telegraf is a configuration driven agent. To get started, you must install Telegraf and configure the required input and output plugins. The default location of configuration file is as follows:
 
 * For Windows: *C:\Program Files\Telegraf\telegraf.conf*
-* For Linux: *etc/telegraf/telegraf.conf*
+* For Linux: */etc/telegraf/telegraf.conf*
 
-To enable the Azure Data Explorer output plugin, you must uncomment the following section in the automatically generated config file:
+To enable the Microsoft Fabric output plugin for Eventhouse, add the following section to your configuration file:
 
 ```ini
-[[outputs.azure_data_explorer]]
-  ## The URI property of the Azure Data Explorer resource on Azure
-  ## ex: https://myadxresource.australiasoutheast.kusto.windows.net
-  # endpoint_url = ""
+[[outputs.microsoft_fabric]]
+  ## The connection string for Microsoft Fabric Eventhouse
+  connection_string = "Data Source=https://your-eventhouse.fabric.microsoft.com;Database=your-database;MetricsGroupingType=TablePerMetric;CreateTables=true"
 
-  ## The Azure Data Explorer database that the metrics will be ingested into.
-  ## The plugin will NOT generate this database automatically, it's expected that this database already exists before ingestion.
-  ## ex: "exampledatabase"
-  # database = ""
-
-  ## Timeout for Azure Data Explorer operations, default value is 20 seconds
-  # timeout = "20s"
-
-  ## Type of metrics grouping used when ingesting to Azure Data Explorer
-  ## Default value is "TablePerMetric" which means there will be one table for each metric
-  # metrics_grouping_type = "TablePerMetric"
-
-  ## Name of the single table to store all the metrics (Only needed if metrics_grouping_type is "SingleTable").
-  # table_name = ""
-
-  ## Creates tables and relevant mapping if set to true(default).
-  ## Skips table and mapping creation if set to false, this is useful for running telegraf with the least possible access permissions i.e. table ingestor role.
-  # create_tables = true
+  ## Client timeout
+  # timeout = "30s"
 ```
 
-## Supported ingestion types
+## Connection String Configuration
 
-The plugin supports managed (streaming) and queued (batching) [ingestion](ingest-data-overview.md#continuous-data-ingestion). The default ingestion type is *queued*.
+The `connection_string` provides information necessary for the plugin to establish a connection to the Eventhouse endpoint. It is a semicolon-delimited list of name-value parameter pairs.
+
+### Eventhouse Connection String Parameters
+
+The following table lists all the possible properties that can be included in a connection string for Eventhouse:
+
+| Property name | Aliases | Description | Default |
+|---|---|---|---|
+| Data Source | Addr, Address, Network Address, Server | The URI specifying the Eventhouse service endpoint. For example, `https://mycluster.fabric.microsoft.com`. | Required |
+| Initial Catalog | Database | The database name in the Eventhouse. For example, `MyDatabase`. | Required |
+| Ingestion Type | IngestionType | Values can be set to `managed` for streaming ingestion with fallback to batched ingestion or `queued` for queuing up metrics and process sequentially | `queued` |
+| Table Name | TableName | Name of the single table to store all the metrics; only needed if `MetricsGroupingType` is `SingleTable` | - |
+| Create Tables | CreateTables | Creates tables and relevant mapping if `true`. Otherwise table and mapping creation is skipped. This is useful for running Telegraf with the lowest possible permissions i.e. table ingestor role. | `true` |
+| Metrics Grouping Type | MetricsGroupingType | Type of metrics grouping used when pushing to Eventhouse either being `TablePerMetric` or `SingleTable`. | `TablePerMetric` |
+
+### Example Connection Strings
+
+**TablePerMetric grouping (recommended):**
+```ini
+connection_string = "Data Source=https://mycluster.fabric.microsoft.com;Database=MyDatabase;MetricsGroupingType=TablePerMetric;CreateTables=true"
+```
+
+**SingleTable grouping:**
+```ini
+connection_string = "Data Source=https://mycluster.fabric.microsoft.com;Database=MyDatabase;MetricsGroupingType=SingleTable;Table Name=telegraf_metrics;CreateTables=true"
+```
+
+**With managed ingestion:**
+```ini
+connection_string = "Data Source=https://mycluster.fabric.microsoft.com;Database=MyDatabase;IngestionType=managed;CreateTables=true"
+```
+
+## Metrics Grouping
+
+Metrics can be grouped in two ways when sent to Eventhouse:
+
+### TablePerMetric (Recommended)
+
+The plugin will group the metrics by the metric name and will send each group of metrics to a separate Eventhouse KQL DB table. If the table doesn't exist, the plugin will create the table. If the table exists, the plugin will try to merge the Telegraf metric schema to the existing table.
+
+The table name will match the metric name. The metric name must comply with the Eventhouse KQL DB table naming constraints.
+
+### SingleTable
+
+The plugin will send all the metrics received to a single Eventhouse KQL DB table. The name of the table must be supplied via `Table Name` parameter in the `connection_string`. If the table doesn't exist, the plugin will create the table. If the table exists, the plugin will try to merge the Telegraf metric schema to the existing table.
+
+## Ingestion Types
+
+The plugin supports two ingestion types:
+
+### Queued Ingestion (Default)
+
+Metrics are queued and processed in batches. This is the default and recommended method for most use cases as it provides better throughput and reliability.
+
+### Managed Ingestion
+
+Streaming ingestion with fallback to batched ingestion. This provides lower latency but requires streaming ingestion to be enabled on your Eventhouse.
 
 > [!IMPORTANT]
-> To use managed ingestion, you must enable [streaming ingestion](ingest-data-streaming.md) on your cluster.
+> To use managed ingestion, you must enable [streaming ingestion](https://learn.microsoft.com/azure/data-explorer/ingest-data-streaming?tabs=azure-portal%2Ccsharp) on your Eventhouse.
 
-To configure the ingestion type for the plugin, modify the automatically generated configuration file, as follows:
+To check if streaming ingestion is enabled, run this query in your Eventhouse:
 
-```ini
-  ##  Ingestion method to use.
-  ##  Available options are
-  ##    - managed  --  streaming ingestion with fallback to batched ingestion or the "queued" method below
-  ##    - queued   --  queue up metrics data and process sequentially
-  # ingestion_type = "queued"
+```kql
+.show database <DB-Name> policy streamingingestion
 ```
+
+## Table Schema
+
+When using Eventhouse, the schema of the table will match the structure of the Telegraf metric. The plugin automatically creates tables with the following schema:
+
+```kql
+.create-merge table ['table-name'] (['fields']:dynamic, ['name']:string, ['tags']:dynamic, ['timestamp']:datetime)
+```
+
+The corresponding table mapping is automatically created:
+
+```kql
+.create-or-alter table ['table-name'] ingestion json mapping 'table-name_mapping' '[{"column":"fields", "Properties":{"Path":"$[\'fields\']"}},{"column":"name", "Properties":{"Path":"$[\'name\']"}},{"column":"tags", "Properties":{"Path":"$[\'tags\']"}},{"column":"timestamp", "Properties":{"Path":"$[\'timestamp\']"}}]'
+```
+
+> [!NOTE]
+> This plugin will automatically create tables and corresponding table mapping using the commands above when `CreateTables=true` (default).
 
 ## Query ingested data
 
-The following are examples of data collected using the SQL and syslog input plugins along with the Azure Data Explorer output plugin. For each input method, there's an example of how to use data transformations and queries in Azure Data Explorer.
+The following are examples of data collected using input plugins along with the Microsoft Fabric output plugin. The examples show how to use data transformations and queries in Eventhouse.
 
-### SQL input plugin
+### Sample metrics data
 
-The following table shows sample metrics data collected by SQL input plugin:
-
-| name | tags | timestamp | fields |
-|--|--|--|--|
-| sqlserver_database_io | {"database_name":"azure-sql-db2","file_type":"DATA","host":"adx-vm","logical_filename":"tempdev","measurement_db_type":"AzureSQLDB","physical_filename":"tempdb.mdf","replica_updateability":"READ_WRITE","sql_instance":"adx-sql-server"} | 2021-09-09T13:51:20Z | {"current_size_mb":16,"database_id":2,"file_id":1,"read_bytes":2965504,"read_latency_ms":68,"reads":47,"rg_read_stall_ms":42,"rg_write_stall_ms":0,"space_used_mb":0,"write_bytes":1220608,"write_latency_ms":103,"writes":149} |
-| sqlserver_waitstats | {"database_name":"azure-sql-db2","host":"adx-vm","measurement_db_type":"AzureSQLDB","replica_updateability":"READ_WRITE","sql_instance":"adx-sql-server","wait_category":"Worker Thread","wait_type":"THREADPOOL"} | 2021-09-09T13:51:20Z | {"max_wait_time_ms":15,"resource_wait_ms":4469,"signal_wait_time_ms":0,"wait_time_ms":4469,"waiting_tasks_count":1464} |
-
-Since the collected metrics object is a complex type, the *fields* and *tags* columns are stored as dynamic data types. There are many ways to query this data, for example:
-
-* **Query JSON attributes directly**: You can query JSON data in raw format without parsing it.
-
-    **Example 1**
-
-    ```kusto
-    Tablename
-    | where name == "sqlserver_azure_db_resource_stats" and todouble(fields.avg_cpu_percent) > 7
-    ```
-
-    **Example 2**
-
-    ```kusto
-    Tablename
-    | distinct tostring(tags.database_name)
-    ```
-
-    > [!NOTE]
-    > 
-    > This approach can affect performance with large volumes of data. In these cases, use the update policy approach.
-
-* **Use an [update policy](/kusto/management/update-policy?view=azure-data-explorer&preserve-view=true)**: Transform dynamic data type columns using an update policy. We recommend this approach for querying large volumes of data.
-
-    ```kusto
-    // Function to transform data
-    .create-or-alter function Transform_TargetTableName() {
-      SourceTableName
-      | mv-apply fields on (extend key = tostring(bag_keys(fields)[0]))
-      | project fieldname=key, value=todouble(fields[key]), name, tags, timestamp
-    }
-
-    // Create destination table with above query's results schema (if it doesn't exist already)
-    .set-or-append TargetTableName <| Transform_TargetTableName() | take 0
-
-    // Apply update policy on destination table
-    .alter table TargetTableName policy update
-    @'[{"IsEnabled": true, "Source": "SourceTableName", "Query": "Transform_TargetTableName()", "IsTransactional": true, "PropagateIngestionProperties": false}]'
-    ```
-
-### Syslog input plugin
-
-The following table shows sample metrics data collected by Syslog input plugin:
+The following table shows sample metrics data collected by various input plugins:
 
 | name | tags | timestamp | fields |
 |--|--|--|--|
-| syslog | {"appname":"azsecmond","facility":"user","host":"adx-linux-vm","hostname":"adx-linux-vm","severity":"info"} | 2021-09-20T14:36:44Z | {"facility_code":1,"message":" 2021/09/20 14:36:44.890110 Failed to connect to mdsd: dial unix /var/run/mdsd/default_djson.socket: connect: no such file or directory","procid":"2184","severity_code":6,"timestamp":"1632148604890477000","version":1} |
-| syslog | {"appname":"CRON","facility":"authpriv","host":"adx-linux-vm","hostname":"adx-linux-vm","severity":"info"} | 2021-09-20T14:37:01Z | {"facility_code":10,"message":" pam_unix(cron:session): session opened for user root by (uid=0)","procid":"26446","severity_code":6,"timestamp":"1632148621120781000","version":1} |
+| cpu | {"cpu":"cpu-total","host":"telegraf-host"} | 2021-09-09T13:51:20Z | {"usage_idle":85.5,"usage_system":8.2,"usage_user":6.3} |
+| disk | {"device":"sda1","fstype":"ext4","host":"telegraf-host","mode":"rw","path":"/"} | 2021-09-09T13:51:20Z | {"free":45234176000,"total":63241359360,"used":15759433728,"used_percent":25.9} |
+
+Since the collected metrics object is a complex type, the *fields* and *tags* columns are stored as dynamic data types. There are several ways to query this data:
+
+### Query JSON attributes directly
+
+You can query JSON data in raw format without parsing it:
+
+**Example 1**
+```kusto
+cpu
+| where todouble(fields.usage_user) > 10
+| project timestamp, host=tostring(tags.host), cpu_usage=todouble(fields.usage_user)
+```
+
+**Example 2**
+```kusto
+disk
+| where todouble(fields.used_percent) > 80
+| project timestamp, host=tostring(tags.host), device=tostring(tags.device), used_percent=todouble(fields.used_percent)
+```
+
+> [!NOTE]
+> This approach can affect performance with large volumes of data. For better performance with large datasets, use the update policy approach described below.
+
+### Use an update policy for better performance
+
+Transform dynamic data type columns using an update policy. This approach is recommended for querying large volumes of data:
+
+```kusto
+// Function to transform data
+.create-or-alter function Transform_cpu_metrics() {
+    cpu
+    | extend 
+        usage_idle = todouble(fields.usage_idle),
+        usage_system = todouble(fields.usage_system), 
+        usage_user = todouble(fields.usage_user),
+        host = tostring(tags.host),
+        cpu_name = tostring(tags.cpu)
+    | project timestamp, name, host, cpu_name, usage_idle, usage_system, usage_user
+}
+
+// Create destination table with transformed schema
+.set-or-append cpu_transformed <| Transform_cpu_metrics() | take 0
+
+// Apply update policy on destination table
+.alter table cpu_transformed policy update
+@'[{"IsEnabled": true, "Source": "cpu", "Query": "Transform_cpu_metrics()", "IsTransactional": true, "PropagateIngestionProperties": false}]'
+```
+
+### Flatten dynamic columns
 
 There are multiple ways to flatten dynamic columns by using the [extended](/kusto/query/extend-operator?view=azure-data-explorer&preserve-view=true) operator or [bag_unpack()](/kusto/query/bag-unpack-plugin?view=azure-data-explorer&preserve-view=true) plugin. You can use either of them in the update policy *Transform_TargetTableName()* function.
 
 * **Use the extend operator**: Use this approach because it's faster and robust. Even if the schema changes, it doesn't break queries or dashboards.
 
     ```kusto
-    Tablename
-
-    | extend facility_code=toint(fields.facility_code), message=tostring(fields.message), procid= tolong(fields.procid), severity_code=toint(fields.severity_code),
-    SysLogTimestamp=unixtime_nanoseconds_todatetime(tolong(fields.timestamp)), version= todouble(fields.version),
-    appname= tostring(tags.appname), facility= tostring(tags.facility),host= tostring(tags.host), hostname=tostring(tags.hostname), severity=tostring(tags.severity)
+    cpu
+    | extend 
+        usage_idle = todouble(fields.usage_idle),
+        usage_system = todouble(fields.usage_system), 
+        usage_user = todouble(fields.usage_user),
+        host = tostring(tags.host),
+        cpu_name = tostring(tags.cpu)
     | project-away fields, tags
     ```
 
 * **Use bag_unpack() plugin**: This approach automatically unpacks dynamic type columns. Changing the source schema can cause issues when dynamically expanding columns.
 
     ```kusto
-    Tablename
+    cpu
     | evaluate bag_unpack(tags, columnsConflict='replace_source')
     | evaluate bag_unpack(fields, columnsConflict='replace_source')
+    | project timestamp, name, host, cpu, usage_idle, usage_system, usage_user
     ```
