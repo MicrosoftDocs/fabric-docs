@@ -10,11 +10,9 @@ ms.search.form: User data functions overview
 
 # What is Fabric User data functions (Preview)?
 
-Fabric User data functions is a platform that allows you to host and run applications on Fabric. This empowers data developers to write custom logic and embed it into their Fabric ecosystem. This feature supports the [Python 3.11.9 runtime](https://www.python.org/downloads/release/python-3119/) and allows you to use [public libraries from PyPI](https://pypi.org/).
+User data functions is a feature that allows you to host and run your own code on Fabric. This empowers data developers to write their business logic and embed it into their Fabric ecosystem. This feature supports the [Python 3.11.9 runtime](https://www.python.org/downloads/release/python-3119/) and allows you to use [public libraries from PyPI](https://pypi.org/), [Fabric data connections](./connect-to-data-sources.md) and much more.
 
-:::image type="content" source="..\media\user-data-functions-overview\user-data-functions-overview.gif" alt-text="Animated GIF showing the interface of Fabric User Data Functions." lightbox="..\media\user-data-functions-overview\user-data-functions-overview.gif":::
-
-You can use the native Fabric integrations to connect to your Fabric data sources, such as Fabric Warehouse, Fabric Lakehouse or Fabric SQL Databases, or invoke your functions from Fabric notebooks, Power BI reports, or data pipelines. You can edit your functions directly in the Fabric portal using the in-browser tooling, or with the dedicated Visual Studio (VS) Code extension.
+:::image type="content" source="..\media\user-data-functions-overview\overview-user-data-functions.gif" alt-text="Animated GIF showing the interface of Fabric User Data Functions." lightbox="..\media\user-data-functions-overview\overview-user-data-functions.gif":::
 
 **Ready to get started?** Follow this guide to [create a new user data functions item](./create-user-data-functions-portal.md) or [use the VS Code extension](./create-user-data-functions-vs-code.md).
 
