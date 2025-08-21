@@ -176,10 +176,10 @@ The rest of the steps in this quickstart are performed in Visual Studio. Use thi
 
 2. In PowerShell, run the command: `.\Microsoft.Fabric.Workload.DevGateway.exe`. When the output shows the message *info: DevGateway started*. the workload is running successfully.
 
-    If you saved the `workload-dev-mode.json` file from [step 10](#step-10-copy-to-your-local-drive) to a specific folder, run the command with `DevMode`.
+    If you saved the `workload-dev-mode.json` file from [step 10](#step-10-copy-to-your-local-drive) to a specific folder, run the command with the `DevMode:LocalConfigFilePath` parameter.
 
     ```powershell
-    .\Microsoft.Fabric.Workload.DevGateway.exe -DevMode:<path_to_config_json_path>
+    .\Microsoft.Fabric.Workload.DevGateway.exe -DevMode:LocalConfigFilePath <path_to_config_json_path>
     ```
 
 ## Step 13: Open the sample workload in Fabric

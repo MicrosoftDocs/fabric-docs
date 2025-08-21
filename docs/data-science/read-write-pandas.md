@@ -7,25 +7,30 @@ ms.reviewer: vimeland
 reviewer: s-polly
 ms.topic: how-to
 ms.custom:
-ms.date: 07/16/2025
+ms.date: 08/06/2025
 ms.search.form: Read and Write Pandas
 ---
 
 # How to read and write data with Pandas in Microsoft Fabric
 
-[!INCLUDE [product-name](../includes/product-name.md)] notebooks support seamless interaction with Lakehouse data using Pandas, the most popular Python library for data exploration and processing. Within a notebook, you can quickly read data from, and write data back to, their Lakehouse resources in various file formats. This guide provides code samples to help you get started in your own notebook.
+[!INCLUDE [product-name](../includes/product-name.md)] notebooks support seamless interaction with Lakehouse data using Pandas, the most popular Python library for data exploration and processing. Within a notebook, you can quickly read data from and write data back to your Lakehouse resources in various file formats. This guide provides code samples to help you get started in your own notebook.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
+- Complete the steps in [Prepare your system for data science tutorials](tutorial-data-science-prepare-system.md) to create a new notebook and attach a Lakehouse to it. For this article, follow the steps to create a new notebook rather than importing an existing one.
+
 ## Load Lakehouse data into a notebook
 
-Once you attach a Lakehouse to your [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can explore stored data without leaving the page, and read it into your notebook, all with a few steps. Selection of any Lakehouse file surfaces options to "Load data" into a Spark or a Pandas DataFrame. You can also copy the file's full ABFS path or a friendly relative path.
+> [!NOTE]
+> You need some data in your Lakehouse to follow the steps in this section. If you don't have any data, follow the steps in [Download dataset and upload to lakehouse](tutorial-data-science-ingest-data.md#download-dataset-and-upload-to-lakehouse) to add the **churn.csv** file to your Lakehouse.
+
+Once you attach a Lakehouse to your [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can explore stored data without leaving the page and read it into your notebook with just a few steps. Selecting any Lakehouse file displays options to "Load data" into a Spark or Pandas DataFrame. You can also copy the file's full ABFS path or a friendly relative path.
 
 :::image type="content" source="media/read-write-pandas/load-data-pandas-dataframe.png" alt-text="Screenshot that shows the options to load data into a Pandas DataFrame." lightbox="media/read-write-pandas/load-data-pandas-dataframe.png":::
 
-Selection of one of the "Load data" prompts generates a code cell to load that file into a DataFrame in your notebook.
+Selecting one of the "Load data" prompts generates a code cell that loads the file into a DataFrame in your notebook.
 
 :::image type="content" source="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png" alt-text="Screenshot that shows a code cell added to the notebook." lightbox="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png":::
 
@@ -43,12 +48,10 @@ pandas_df = spark_df.toPandas()
 > Modifying the version of a specific package could potentially break other packages that depend on it. For instance, downgrading `azure-storage-blob` might cause problems with `Pandas` and various other libraries that rely on `Pandas`, including `mssparkutils`, `fsspec_wrapper`, and `notebookutils`.
 > You can view the list of preinstalled packages and their versions for each runtime [here](../data-engineering/runtime.md).
 
-These code samples describe the Pandas operations to read and write various file formats.
+These code samples demonstrate Pandas operations to read and write various file formats. These samples aren't intended to be run sequentially as in a tutorial, but rather to be copied and pasted into your own notebook as needed.
 
 > [!NOTE]
-> You must replace the file paths in these code samples. Pandas supports both relative paths, as shown here, and full ABFS paths. Paths of either type can be retrieved and copied from the interface according to the previous step.
-
-
+> You must replace the file paths in these code samples. Pandas supports both relative paths, as shown here, and full ABFS paths. You can retrieve and copy paths of either type from the interface using the previous steps.
 
 ### Read data from a CSV file
 
@@ -98,8 +101,9 @@ df.to_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet")
 import pandas as pd 
  
 # Read an Excel file from your Lakehouse into a Pandas DataFrame
-# Replace LAKEHOUSE_PATH and FILENAME with your own values. Also need to add correct filepath after Files/ if file is placed in different folders
-# if using default lakehouse that attached to the notebook use the code to replace below: df = pd.read_excel("/lakehouse/default/Files/FILENAME.xlsx") 
+# Replace LAKEHOUSE_PATH and FILENAME with your own values
+# If the file is in a subfolder, add the correct file path after Files/
+# For the default lakehouse attached to the notebook, use: df = pd.read_excel("/lakehouse/default/Files/FILENAME.xlsx") 
 df = pd.read_excel("/LAKEHOUSE_PATH/Files/FILENAME.xlsx") 
 display(df) 
 ```

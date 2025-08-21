@@ -4,7 +4,7 @@ description: Learn about limitations for Azure Databricks mirroring in Microsoft
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sheppardshep, whhender, preshah
-ms.date: 02/26/2025
+ms.date: 07/29/2025
 ms.topic: overview
 ms.custom: references_regions
 ---
@@ -42,42 +42,12 @@ Here's a list of regions that support mirroring for Azure Databricks Catalog:
 
 :::row:::
    :::column span="":::
-    **Asia Pacific**:
-
-    - Australia East
-    - Australia Southeast
-    - Central India
-    - East Asia
-    - Japan East
-    - Japan West
-    - Korea Central
-    - Southeast Asia
-    - South India
-   :::column-end:::
-   :::column span="":::
-   **Europe**
-
-    - North Europe
-    - West Europe
-    - France Central
-    - Germany North
-    - Germany West Central
-    - Norway East
-    - Norway West
-    - Sweden Central
-    - Switzerland North
-    - Switzerland West
-    - Poland Central
-    - Italy North
-    - UK South
-    - UK West
-   :::column-end:::
-   :::column span="":::
     **Americas**:
 
     - Brazil South
     - Canada Central
     - Canada East
+    - Mexico Central
     - Central US
     - East US
     - East US2
@@ -88,13 +58,42 @@ Here's a list of regions that support mirroring for Azure Databricks Catalog:
  
    :::column-end:::
    :::column span="":::
-    **Middle East and Africa**:
+    **Asia Pacific**:
 
+    - East Asia
+    - Southeast Asia
+    - Australia East
+    - Australia Southeast
+    - Central India
+    - South India
+    - Japan East
+    - Japan West
+    - Korea Central
+   :::column-end:::
+   :::column span="":::
+   **Europe, Middle East, and Africa**:
+
+    - North Europe
+    - West Europe
+    - France Central
+    - Germany North
+    - Germany West Central
+    - Israel Central
+    - Italy North
+    - Norway East
+    - Norway West
+    - Poland Central
+    - Spain Central
+    - Sweden Central
+    - Switzerland North
+    - Switzerland West
     - South Africa North
     - South Africa West
     - UAE North
-    - Israel Central
+    - UK South
+    - UK West
    :::column-end:::
+
 :::row-end:::
 
 ## Related content

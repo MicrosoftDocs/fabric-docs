@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - copilot-learning-hub
-ms.date: 05/06/2025
+ms.date: 08/15/2025
 ms.update-cycle: 180-days
 ms.search.form: Data Science Overview
 no-loc: [Copilot]
@@ -159,14 +159,16 @@ Copilot inline code completion is an AI-powered feature that helps you to write 
 
 ## Limitations
 
-Copilot features in the Data Science experience are currently scoped to notebooks. These features include the Copilot chat pane, IPython magic commands that can be used within a code cell, and automatic code suggestions as you type in a code cell. Copilot can also read Power BI semantic models using an integration of semantic link.
+* Copilot features in the Data Science experience are currently scoped to notebooks. These features include the Copilot chat pane, IPython magic commands that can be used within a code cell, and automatic code suggestions as you type in a code cell. Copilot can also read Power BI semantic models using an integration of semantic link.
 
-Copilot has two key intended uses:
+* If your tenant is configured with private link, the Copilot chat (sidecar chat) experience will not function. Copilot’s inline code suggestions and quick actions may still work, but chat interactions will fail to load.
+
+* Copilot has two key intended uses:
 
   - You can ask Copilot to examine and analyze data in your notebook (for example, by first loading a DataFrame and then asking Copilot about data inside the DataFrame).
   - You can ask Copilot to generate a range of suggestions about your data analysis process - for example, what predictive models might be relevant, code to perform different types of data analysis, and documentation for a completed notebook.
 
-Code generation with fast-moving or recently released libraries might include inaccuracies or fabrications.
+* Code generation with fast-moving or recently released libraries might include inaccuracies or fabrications.
 
 ## Deletion and Export of Data
 

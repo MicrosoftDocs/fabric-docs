@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala
 ms.topic: conceptual
-ms.date: 04/28/2025
+ms.date: 08/14/2025
 ---
 # What is the SQL analytics endpoint for a SQL database in Fabric?
 
@@ -38,6 +38,12 @@ For more information on connecting to your SQL database data, see [Connect to yo
 ## Access control using SQL security
 
 You can set object-level security for database users or database roles using ([workspace roles](authorization.md#workspace-roles) or [item permissions](authorization.md#item-permissions)) in the Fabric portal, or by using [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) Transact-SQL statements. These security rules will only apply for accessing data via SQL analytics endpoint. 
+
+## Collation
+
+Currently by default, a SQL database and its SQL analytics endpoint have different collations. A SQL database uses a case-insensitive collation by default, and its SQL analytics endpoint uses a case-sensitive collation by default. The new SQL analytics endpoint item for a new SQL database in Fabric uses the Fabric workspace collation, not the collation of the parent item.
+
+You can change the default collation for all new SQL analytics endpoints at the workspace level. By default, a workspace's **Data Warehouse Collations** setting is case sensitive (`Latin1_General_100_BIN2_UTF8`). You can change the workspace to use a case insensitive (`Latin1_General_100_CI_AS_KS_WS_SC_UTF8`) collation, but this only applies to new SQL analytics endpoint items. The default SQL analytics endpoint collation is controlled by the workspace's Data Warehouse collation setting. For more information and steps to change the workspace's Data Warehouse default collation, see [Warehouse collation](../../data-warehouse/collation.md).
 
 ## Related content
 

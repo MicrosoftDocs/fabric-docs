@@ -5,7 +5,7 @@ description: Learn how to use a lakehouse and notebook in Microsoft Fabric to qu
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 07/29/2025
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---

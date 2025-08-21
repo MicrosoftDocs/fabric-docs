@@ -1,13 +1,12 @@
----
+﻿---
 title: Serve real-time predictions with ML model endpoints (Preview)
 description: Learn how to serve real-time predictions seamlessly from ML models with secure, scalable, and fully managed online endpoints.
-ms.author: erenorbey
-author: orbey
+ms.author: lagayhar
+author: lgayhardt
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.date: 07/16/2025
-
 ms.search.form: ML model endpoints
 ---
 
@@ -113,6 +112,21 @@ A toast message shows that Fabric is dismantling your active deployment, and the
 You can deactivate endpoints for multiple versions at once from the model’s settings pane. Select "Manage endpoints" from the ribbon in the interface and choose one or more active endpoints to deactivate.
 
 :::image type="content" source="media/model-endpoints/deactivate-multiple.jpg" alt-text="Screenshot showing how to deactivate multiple ML model endpoints at once from the Fabric interface." lightbox="media/model-endpoints/deactivate-multiple.jpg":::
+
+## Consumption rate
+
+Hosting active model endpoints consume Fabric Capacity Units. The table defines how many capacity units (CU) are consumed when a Machine Learning model endpoint is active.
+
+| **Operation** | **Operation Unit of Measure** | **Consumption rate** |
+|---|---|---|
+|model endpoint | 1 model endpoint (version) per second | 5 CU seconds|
+
+[The Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for model endpoint operations under the name "Model Endpoint". Additionally, users are able to view a summary of their billing charges for Model Endpoint usage under the invoicing item "ML Model Endpoint Capacity Usage CU".
+
+Model endpoint operation is classified as [background operations](../enterprise/fabric-operations.md#background-operations).
+
+Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in the Microsoft Release Notes or the Microsoft Fabric Blog. If any change to the model endpoint in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use, customers can use the cancellation options available for the chosen payment method.
+
 
 ## Related content
 

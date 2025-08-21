@@ -86,6 +86,8 @@ items:
     href: tsql-surface-area.md
   - name: Transactions
     href: transactions.md 
+  - name: Warehouse collation
+    href: collation.md
   - name: Warehouse performance
     href: guidelines-warehouse-performance.md
   - name: Warehouse snapshots
@@ -104,9 +106,6 @@ items:
       href: datamart-upgrade-to-warehouse.md
     - name: Generate unique identifiers
       href: generate-unique-identifiers.md      
-    - name: Use case-insensitive collation
-      href: collation.md
-      displayName: case insensitive collation
 - name: Dimensional modeling
   items:
   - name: Overview
@@ -342,12 +341,20 @@ items:
       - name: Secure data 
         displayName: Securing data in mirrored SQL Server
         href: ../database/mirrored-database/sql-server-security.md
+      - name: Performance
+        displayName: Performance in mirrored SQL Server
+        href: ../database/mirrored-database/sql-server-performance.md
       - name: Limitations 
         displayName: Limitations in mirrored SQL Server
         href: ../database/mirrored-database/sql-server-limitations.md
       - name: Troubleshoot 
-        displayName: Troubleshoot mirrored SQL Server
-        href: ../database/mirrored-database/sql-server-troubleshoot.md
+        items:
+          - name: Troubleshoot mirrored SQL Server
+            displayName: Troubleshoot mirrored SQL Server
+            href: ../database/mirrored-database/sql-server-troubleshoot.md
+          - name: Automatic reseed
+            href: ../database/mirrored-database/sql-server-configure-automatic-reseed.md
+
   - name: Open mirroring 
     items:
       - name: Open mirroring overview

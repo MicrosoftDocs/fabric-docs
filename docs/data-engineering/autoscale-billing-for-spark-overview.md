@@ -9,7 +9,7 @@ ms.custom:
 ms.date: 03/26/2025
 ---
 
-# Autoscale Billing for Spark in Microsoft Fabric (Preview)
+# Autoscale Billing for Spark in Microsoft Fabric
 
 Autoscale Billing for Spark introduces a new pay-as-you-go billing model for Apache Spark workloads in Microsoft Fabric, designed to provide greater flexibility and cost optimization. With this model enabled, Spark jobs no longer consume compute from the Fabric capacity but instead use dedicated, serverless resources billed independently—similar to Azure Synapse Spark.
 
