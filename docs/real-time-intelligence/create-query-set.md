@@ -39,14 +39,14 @@ The KQL Queryset exists within the context of a workspace. A new KQL queryset is
 1. Select **Create**.
 1. In the **Get started...** window, add a data source to the KQL Queryset. You can add a data source from the following options:
 
+    Select one of the options to add a data source to the KQL Queryset. For connection details for each option, see [Select a data source](kusto-query-set.md#select-a-data-source).
+
     - **Eventhouse / KQL Database**: See the list of databases in the OneLake catalog.
     - **Azure Data Explorer**: Connect to Azure Data Explorer (ADX) clusters to query data.
     - **Azure Application Insights**: Run direct or cross-service queries.
     - **Azure Log Analytics**: Connect to Log Analytics workspaces to query direct or cross-service data.
 
     :::image type="content" source="media/kusto-query-set/new-queryset-add-data-source.png" alt-text="Screenshot of get started page whith add data sources highlighted.":::
-
-    Select one of the options to add a data source to the KQL Queryset. For connection details for each option, see [Select a data source](kusto-query-set.md#select-a-data-source)
 
 ## Open an existing KQL queryset
 
