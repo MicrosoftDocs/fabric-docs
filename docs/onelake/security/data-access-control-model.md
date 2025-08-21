@@ -1,9 +1,9 @@
 ---
 title: OneLake security access control model (preview)
 description: Learn the details of how OneLake secures data with role-based access control and the impact on Fabric permissions.
-ms.reviewer: aamerril
-ms.author: yuturchi
-author: yuturchi
+ms.reviewer: eloldag
+ms.author: aamerril
+author: aamerril
 ms.topic: concept-article
 ms.custom:
 - onelake-data-access-public-preview-april-2024
@@ -90,7 +90,7 @@ This section will provide details on how OneLake security roles grant access to 
 
 ### Metadata security
 
-OneLake security's Read access to data grants full access to the data in a table, and generally hides the metadata for that table as well. This also applies to column level security and a users ability to see or not see a column in that table. However, OneLake security does not guarantee that the metadata for a table will not be accessible to users that don't have access to it, specifically in the following cases:
+OneLake security's Read access to data grants full access to the data and metadata in a table. For users with no access to a table, the data is never exposed and generally the metadata is not visible. This also applies to column level security and a users ability to see or not see a column in that table. However, OneLake security does not guarantee that the metadata for a table will not be accessible to users that don't have access to it, specifically in the following cases:
 
 - SQL Endpoint queries: SQL Analytics Endpoint uses the same metadata security behavior as SQL Server. This means that if a user does not have access to a table or column, the error message for that query will explicitly state the table or column names the user doesn't have access to.
 - Semantic models: Giving a user Build permission on a semantic model will allow them access to see the table names included in the model, regardless of whether the user has access to them or not. In addition, report visuals that contain hidden columns will show the column name in the error message.
@@ -228,14 +228,13 @@ Files/
 
 OneLake security allows users to specify row level security by writing SQL predicates to limit what data is shown to a user. RLS operates by showing rows where the predicate evaluates to true. See the [row level security]() page for more details on the types of allowed RLS statements.
 
+Row level security evaluates string data as case insensitive. To ensure consistent results when using string based RLS evaluation, we recommend formatting the data without case using UPPER or LOWER while creating the tables. 
+
 TODO: best practices for how to configure your data for RLS with case insensitivity
 
 
-OneLake security roles allow for row-level security (RLS) and column-level security (CLS) on tables within a lakehouse. The RLS and CLS follow specific composition rules for single and multiple roles. In general, RLS and CLS are an intersection within a role and compose with a union across multiple roles. 
 
-
-
-
+## Evaluating multiple OneLake security roles
 
 
 ## Shortcuts
