@@ -21,7 +21,7 @@ Specifically, in this tutorial you will:
 >
 > * Prepare a table in the Eventhouse with `Vector16` encoding for the vector columns.
 > * Store vector data from a pre-embedded dataset to an Eventhouse.
-> * Embed afor a natural language query using the Open AI model.
+> * Embed a natural language query using the Open AI model.
 > * Use the [series_cosine_similarity KQL function](/azure/data-explorer/kusto/query/series-cosine-similarity-function) to calculate the similarities between the query embedding vector and those of the wiki pages.
 > * View rows of the highest similarity to get the wiki pages that are most relevant to your search query.
 
@@ -175,7 +175,6 @@ To successfully make a call against Azure OpenAI, you need an endpoint, key, and
 | Variable name | Value |
 |---|---|
 | endpoint |This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). Alternatively, you can find the value in the **[Azure AI Foundry](https://oai.azure.com/) > Playground > Code View**. An example endpoint is: `https://docs-test-001.openai.azure.com/`. |
-| API key |This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). You can use either KEY1 or KEY2. |
 | deployment ID | This value can be found under the **Deployments** section in the [Azure AI Foundry](https://oai.azure.com/). |
 
 Use the information in the table when running the Azure OpenAI cells.
@@ -197,14 +196,16 @@ Run the KQL query to see the results. You can change the search term and rerun t
 
 ```kusto
 let model_endpoint = 'https://deployment-name.openai.azure.com/openai/deployments/kusto-text-embedding-ada-002/embeddings?api-version=2024-10-21;managed_identity=system';
-let searchedEmbedding = toscalar(evaluate ai_embeddings("most difficult gymnastics moves in the olympics", model_endpoint));
+let model_endpoint = 'https://deployment-name.openai.azure.com/openai/deployments/kusto-text-embedding-ada-002/embeddings?api-version=2024-10-21;impersonate';
 //
 Wiki
 | extend similarity = series_cosine_similarity(searchedEmbedding, content_vector)
 | top 10 by similarity desc
 ```
 
+<!--
 :::image type="content" source="media/vector-database/similarity-results.png" alt-text="Screenshot of running cell of similarity results." lightbox="media/vector-database/similarity-results.png":::
+-->
 
 ## Clean up resources
 
