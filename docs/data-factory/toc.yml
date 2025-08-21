@@ -453,6 +453,12 @@
         href: connector-impala-overview.md
       - name: Set up your connection
         href: connector-impala.md
+    - name: Informix For Pipeline
+      items:
+      - name: Informix For Pipeline - Overview
+        href: connector-informix-for-pipeline-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-informix-for-pipeline-copy-activity.md
     - name: KQL database
       items:
       - name: KQL database - Overview
