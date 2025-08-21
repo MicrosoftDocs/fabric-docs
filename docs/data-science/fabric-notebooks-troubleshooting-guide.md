@@ -40,14 +40,16 @@ The following section outlines common Notebook errors and their suggested resolu
 
 ### Timeouts
 
-**Why it happens**: Notebook sessions auto-shutdown after a period of inactivity. By default, this timeout is set to 20 minutes.
+#### Why it happens
 
-**What to do**:
+Notebook sessions auto-shutdown after a period of inactivity. By default, this timeout is set to 20 minutes.
+
+#### What to do
 
 - Re-run the notebook to restart the session.
 - Adjust the session timeout duration at either the Notebook or Workspace level.
 
-To change timeout at the **Notebook** level:
+##### Change timeout at the Notebook level
 
 1. Open a notebook and start a session from the **Connect** toolbar menu.
 1. Select the **Session ready** indicator in the lower-left corner.
@@ -58,7 +60,7 @@ To change timeout at the **Notebook** level:
 
    :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/session-timeout.png" alt-text="Screenshot showing where to adjust the session timeout for a Fabric Notebook.":::
  
-To change timeout at the **Workspace** level:
+##### Change timeout at the **Workspace** level
 
 1. Navigate to **Workspace settings**.
 1. Select **Data Engineering/Science Spark settings**.
@@ -68,13 +70,23 @@ To change timeout at the **Workspace** level:
 
 ### General connectivity
 
-**Why it happens**: Network instability or temporary backend delay
-**What to do**:	Retry after a few moments.
+#### Why it happens
+
+Network instability or temporary backend delay
+
+#### What to do
+
+Retry after a few moments.
 
 ### Session connectivity
 
-**Why it happens**: A session is not connected.
-**What to do**: Start a session.
+#### Why it happens
+
+A session is not connected.
+
+#### What to do
+
+Start a session.
 
 You can start a session using three methods:
 
@@ -86,9 +98,11 @@ You can start a session using three methods:
 
 ### Access
 
-**Why it happens**: Incorrect sign-in credentials; expired login session; missing permissions for Notebook, Lakehouse, or Workspace; tenant restrictions
+#### Why it happens
 
-**What to do**:
+Incorrect sign-in credentials; expired login session; missing permissions for Notebook, Lakehouse, or Workspace; tenant restrictions
+
+#### What to do
 - _Verify your sign-in_: Ensure you're logged in with the correct Microsoft Entra (formerly Azure AD) account associated with your Fabric environment.
 - _Refresh your session_: Sign out and sign back in to refresh your authentication token. You can do this by selecting your profile icon in the top-right corner of the window, and then and selecting **Sign out**.
 - _Check permissions_: Confirm that you have the necessary role (i.e. Contributor or Admin) for the resource you’re trying to access. This includes the Notebook, Lakehouse, Workspace, or Data Warehouse.
@@ -97,7 +111,7 @@ You can start a session using three methods:
   - Check for token expiration issues.
   - Ensure you’re added to the correct Fabric tenant, especially if you recently joined the organization or switched accounts.
 
-#### How to manage access in a Fabric Workspace
+##### How to manage access in a Fabric Workspace
 
 In order to manage user access within a Fabric Workspace, take the following steps:
 
@@ -111,8 +125,11 @@ In order to manage user access within a Fabric Workspace, take the following ste
 
 ### Paused capacity
 
-**Why it happens**: An administrator has paused Fabric capacity.
-**What to do**:
+#### Why it happens
+
+An administrator has paused Fabric capacity.
+
+#### What to do
 - Ask your Fabric administrator to resume capacity.
 - Steps (for admins):
   - Go to the [Microsoft Fabric Admin Portal](https://app.fabric.microsoft.com/admin-portal).
@@ -122,16 +139,23 @@ In order to manage user access within a Fabric Workspace, take the following ste
 
 ### Missing items
 
-**Why it happens**: An item was deleted, moved, or you don’t have access.
-**What to do**:
+#### Why it happens
+
+An item was deleted, moved, or you don’t have access.
+
+#### What to do
+
 - Use the global search box at the top center of the Fabric browser page to try locating the item across all workspaces.                  
 - Contact the item owner to confirm whether it still exists and request access if needed.
 - If the item was deleted, the owner may be able to restore it from version history or a backup, depending on workspace settings.
 
 ### Save failures
 
-**Why it happens**: Network connectivity drops before changes are saved, or the session timed out.
-**What to do**:
+#### Why it happens
+
+Network connectivity drops before changes are saved, or the session timed out.
+
+#### What to do
 - _Check network connectivity_: Save failures are often caused by temporary internet or service disruptions.
 - _Save a copy_: Duplicate the notebook to avoid losing unsaved changes.
 - _Turn on AutoSave_: AutoSave is on by default. Check under the **Edit** menu to ensure that it hasn’t been disabled so your changes are saved automatically at regular intervals.
@@ -149,11 +173,14 @@ In order to manage user access within a Fabric Workspace, take the following ste
 
 ### Collaboration conflicts
 
-**Why it happens**: The same notebook was modified by another user outside of a collaboration session - such as through VS Code, the Update Definition API, manual save mode, a deployment pipeline, or Git sync.
+#### Why it happens
+
+The same notebook was modified by another user outside of a collaboration session - such as through VS Code, the Update Definition API, manual save mode, a deployment pipeline, or Git sync.
 
 :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/collaboration-conflict.png" alt-text="Screenshot showing the collaboration conflict error that appears in the Fabric Notebook user interface.":::
  
-**What to do**:
+#### What to do
+
 1. Select the **View changes** button on the error message bar and choose a version to work as the live notebook.
 1. Select the **History** button at the top right of the window and use the **Version history** panel to find the _external_ record. Then you can either restore or save a copy of that version.
 
@@ -161,7 +188,9 @@ In order to manage user access within a Fabric Workspace, take the following ste
 
 You see an error indicating: **Excessive query complexity** - Spark's Catalyst optimizer has produced a very large logical/physical plan.
 
-**What to do**: Modify the query logic by breaking down the query. Refactor complex pipelines into smaller, staged queries.
+#### What to do
+
+Modify the query logic by breaking down the query. Refactor complex pipelines into smaller, staged queries.
 
 **Example fix**:
 
