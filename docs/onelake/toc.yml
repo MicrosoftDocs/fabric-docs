@@ -111,6 +111,12 @@ items:
       href: onelake-shared-access-signature-overview.md
     - name: Create a OneLake SAS
       href: how-to-create-a-onelake-shared-access-signature.md
+  - name: Network security
+    items:
+    - name: Manage inbound access to OneLake
+      href: onelake-manage-inbound-access.md
+    - name: Manage outbound access from OneLake
+      href: onelake-manage-outbound-access.md
   - name: Plan for disaster recovery and data protection
     href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
