@@ -341,12 +341,19 @@ items:
       - name: Secure data 
         displayName: Securing data in mirrored SQL Server
         href: ../mirroring/sql-server-security.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+      - name: Performance
+        displayName: Performance in mirrored SQL Server
+        href: ../mirroring/sql-server-performance.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Limitations 
         displayName: Limitations in mirrored SQL Server
         href: ../mirroring/sql-server-limitations.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
       - name: Troubleshoot 
-        displayName: Troubleshoot mirrored SQL Server
-        href: ../mirroring/sql-server-troubleshoot.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+        items:
+          - name: Troubleshoot mirrored SQL Server
+            displayName: Troubleshoot mirrored SQL Server
+            href: ../mirroring/sql-server-troubleshoot.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+          - name: Automatic reseed
+            href: ../mirroring/sql-server-configure-automatic-reseed.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Open mirroring 
     items:
       - name: Open mirroring overview
