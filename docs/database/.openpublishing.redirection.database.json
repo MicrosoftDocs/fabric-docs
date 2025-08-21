@@ -1,0 +1,5 @@
+{
+  "comment": "Created at the database level to accommodate moving all mirroring links. For all others, they should probably be in their individual database folders. Create it and add it to .openpublishing.publish.config.json.",
+  "redirections": [
+  ]
+}
