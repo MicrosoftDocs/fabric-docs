@@ -5,14 +5,14 @@ author: spelluru
 ms.author: spelluru
 ms.reviewer: mibar, maghan
 ms.date: 08/21/2025
-ms.topic: concept-article
+ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ---
 
-# Writing queries for Copilot in Fabric in the Real-time intelligence workload
+# Writing queries with Copilot in Fabric in the Real-time intelligence workload
 
 You can use Copilot to translate your natural language questions into Kusto Query Language (KQL) queries. Simply describe what you want to analyze or find in plain language, and Copilot generates the corresponding KQL query for you. This feature makes it easier for anyone—regardless of their familiarity with KQL—to explore and analyze data efficiently.
 

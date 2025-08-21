@@ -12,7 +12,7 @@ ms.update-cycle: 180-days
 no-loc: [Copilot]
 ---
 
-# Generate Real-Time dashboard with Copilot in Fabric in the Real-time intelligence workload
+# Generate Real-time dashboards with Copilot in Fabric in the Real-time intelligence workload
 
 Copilot makes it easy to create dashboards by automating the initial setup. You don't need any technical expertise. The process includes selecting a data table in Real-Time Hub or KQL Queryset and using AI to generate a Real-Time Dashboard. The dashboard includes an insights page for a quick overview and a data profile page.
 
@@ -55,4 +55,3 @@ Copilot automatically generates the Insights Page and Data Profile Page. The Ins
 - [Privacy, security, and responsible use of Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence-privacy-security.md)
 - [Copilot in Fabric](../fundamentals/copilot-fabric-overview.md)
 - [Copilot for Microsoft Fabric: FAQ](../fundamentals/copilot-faq-fabric.yml)
-
