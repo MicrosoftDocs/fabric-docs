@@ -179,11 +179,8 @@ To successfully make a call against Azure OpenAI, you need an endpoint, key, and
 
 Use the information in the table when running the Azure OpenAI cells.
 
-> [!IMPORTANT]
-> Local authentication must be [enabled](/azure/ai-services/disable-local-auth#re-enable-local-authentication) on your Azure Open AI resource in order to use the API key.
-
 ```kusto
-let model_endpoint = 'https://deployment-name.openai.azure.com/openai/deployments/kusto-text-embedding-ada-002/embeddings?api-version=2024-10-21;managed_identity=system';
+let model_endpoint = 'https://deployment-name.openai.azure.com/openai/deployments/kusto-text-embedding-ada-002/embeddings?api-version=2024-10-21;impersonate';
 let searchedEmbedding = toscalar(evaluate ai_embeddings("most difficult gymnastics moves in the olympics", model_endpoint));
 print(searchedEmbedding)
 ```
@@ -195,7 +192,6 @@ The query is run directly in the Eventhouse, and uses the returned embedding fro
 Run the KQL query to see the results. You can change the search term and rerun the query to see different results. You could also compare an existing entry in the Wiki database to find similar entries.
 
 ```kusto
-let model_endpoint = 'https://deployment-name.openai.azure.com/openai/deployments/kusto-text-embedding-ada-002/embeddings?api-version=2024-10-21;managed_identity=system';
 let model_endpoint = 'https://deployment-name.openai.azure.com/openai/deployments/kusto-text-embedding-ada-002/embeddings?api-version=2024-10-21;impersonate';
 //
 Wiki
