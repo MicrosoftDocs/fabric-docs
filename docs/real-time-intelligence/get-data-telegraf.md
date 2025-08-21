@@ -1,7 +1,9 @@
 ---
 title: Ingest Data from Telegraf into Microsoft Fabric Eventhouse
 description: In this article, you learn how to ingest (load) data into Microsoft Fabric Eventhouse from Telegraf.
-ms.reviewer: 
+ms.reviewer: aksdi
+author: absaharn
+ms.author: spelluru
 ms.topic: how-to
 ms.date: 08/21/2025
 
@@ -9,28 +11,35 @@ ms.date: 08/21/2025
 ---
 # Ingest data from Telegraf into Microsoft Fabric Eventhouse
 
-Microsoft Fabric Real-Time Intelligence supports [data ingestion](ingest-data-overview.md) from [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/). Telegraf is an open source, lightweight, and minimal memory foot print agent for collecting, processing, and writing telemetry data including logs, metrics, and IoT data.
+Microsoft Fabric Real-Time Intelligence supports data ingestion from [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/). Telegraf is an open source, lightweight agent with a minimal memory footprint for collecting, processing, and writing telemetry data, including logs, metrics, and IoT data.
 
-Telegraf supports hundreds of input and output plugins. It's widely used and the open source community supports it.
+What you'll learn in this article:
 
-The Microsoft Fabric [Real-Time Intelligence output plugin](https://github.com/influxdata/telegraf/blob/release-1.35/plugins/outputs/microsoft_fabric/README.md) serves as the connector from Telegraf and supports ingestion of data from many types of [input plugins](https://github.com/influxdata/telegraf/tree/master/plugins/inputs) into Eventhouse, a high-performance, scalable data-store designed for real-time analytics.
+- Configure Telegraf to send metrics to Microsoft Fabric Eventhouse.
+- Choose connection-string settings (MetricsGroupingType, IngestionType) and authentication options.
+- Create tables and query ingested metrics for near real-time analytics.
+
+Telegraf supports hundreds of input and output plugins. A broad open source community uses and supports it.
+
+The Microsoft Fabric [Real-Time Intelligence output plugin](https://github.com/influxdata/telegraf/blob/release-1.35/plugins/outputs/microsoft_fabric/README.md) serves as Telegraf's connector and sends data from many [input plugins](https://github.com/influxdata/telegraf/tree/master/plugins/inputs) to Eventhouse, a high-performance, scalable data store for real-time analytics.
 
 ## Prerequisites
 
 * A Microsoft Fabric workspace with Real-Time Intelligence enabled.
-* An Eventhouse and KQL Database. [Create an Eventhouse](https://learn.microsoft.com/fabric/real-time-intelligence/create-eventhouse)
-* [Telegraf](https://portal.influxdata.com/downloads/) version 1.35.0 or later. Host Telegraf in a virtual machine (VM) or container. Telegraf can be hosted locally where the app or service being monitored is deployed, or remotely on a dedicated monitoring compute/container.
-* Appropriate permissions in Microsoft Fabric for the principal running Telegraf (Database User role or higher for the Eventhouse database).
+* An Eventhouse instance and a KQL (Kusto Query Language) database. [Create an Eventhouse](create-eventhouse.md)
+* [Telegraf](https://portal.influxdata.com/downloads/) version 1.35.0 or later. Host Telegraf on a virtual machine (VM) or container, either locally where the monitored app or service runs or remotely on a dedicated monitoring compute or container.
+* Give the principal that runs Telegraf appropriate permissions in Microsoft Fabric, and assign the Database user role or higher for the Eventhouse database.
 
-## Supported authentication method
+## Supported authentication methods
 
-The plugin uses **Azure Default Credential** authentication, which automatically tries multiple authentication methods in a specific order until one succeeds. This provides flexibility and security without requiring hardcoded credentials.
+The plugin uses **Azure default credential** authentication, which automatically tries multiple authentication methods in a specific order until one succeeds. This provides flexibility and security without requiring hardcoded credentials.
 
-### Azure Default Credential Chain
+### Azure default credential chain
 
-Azure Default Credential automatically tries authentication methods in this order:
+Azure default credentials automatically try authentication methods in this order:
 
 * **Environment Variables** - Checks for service principal credentials in environment variables:
+
   * `AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET`, `AZURE_TENANT_ID` (for client secret authentication)
   * `AZURE_CLIENT_ID`, `AZURE_CLIENT_CERTIFICATE_PATH`, `AZURE_TENANT_ID` (for client certificate authentication)
 
@@ -40,27 +49,31 @@ Azure Default Credential automatically tries authentication methods in this orde
 
 * **Azure PowerShell** - Uses credentials from `Connect-AzAccount` if Azure PowerShell is installed and user is logged in
 
-* **Interactive Browser** - Opens browser for interactive login (typically disabled in production scenarios)
+* **Interactive Browser** - Opens browser for interactive sign-in (typically disabled in production scenarios)
 
-### Authentication Setup Options
+### Authentication setup options
 
 Choose the authentication method that best fits your deployment scenario:
 
-**For Production (Recommended):**
+**For production (recommended)**
+
 * Use **Managed Identity** when running Telegraf on Azure resources (VMs, containers, etc.)
 * Use **Service Principal with Environment Variables** for non-Azure environments
 
-**For Development:**
+**For development**
+
 * Use **Azure CLI** authentication by running `az login`
 * Use **Azure PowerShell** authentication by running `Connect-AzAccount`
 
-**Service Principal Environment Variables:**
+**Service principal environment variables:**
 If using service principal authentication, set these environment variables:
 
+Replace the placeholder text in the following example with your own values.
+
 ```bash
-export AZURE_TENANT_ID="your-tenant-id"
-export AZURE_CLIENT_ID="your-client-id"
-export AZURE_CLIENT_SECRET="your-client-secret"
+export AZURE_TENANT_ID=<your-tenant-id>
+export AZURE_CLIENT_ID=<your-client-id>
+export AZURE_CLIENT_SECRET=<your-client-secret>
 ```
 
 ## Configure Telegraf
@@ -81,11 +94,11 @@ To enable the Microsoft Fabric output plugin for Eventhouse, add the following s
   # timeout = "30s"
 ```
 
-## Connection String Configuration
+## Connection string configuration
 
-The `connection_string` provides information necessary for the plugin to establish a connection to the Eventhouse endpoint. It is a semicolon-delimited list of name-value parameter pairs.
+The `connection_string` provides information necessary for the plugin to establish a connection to the Eventhouse endpoint. It's a semicolon-delimited list of name-value parameter pairs.
 
-### Eventhouse Connection String Parameters
+### Eventhouse connection string parameters
 
 The following table lists all the possible properties that can be included in a connection string for Eventhouse:
 
@@ -95,54 +108,57 @@ The following table lists all the possible properties that can be included in a 
 | Initial Catalog | Database | The database name in the Eventhouse. For example, `MyDatabase`. | Required |
 | Ingestion Type | IngestionType | Values can be set to `managed` for streaming ingestion with fallback to batched ingestion or `queued` for queuing up metrics and process sequentially | `queued` |
 | Table Name | TableName | Name of the single table to store all the metrics; only needed if `MetricsGroupingType` is `SingleTable` | - |
-| Create Tables | CreateTables | Creates tables and relevant mapping if `true`. Otherwise table and mapping creation is skipped. This is useful for running Telegraf with the lowest possible permissions i.e. table ingestor role. | `true` |
+| Create Tables | CreateTables | Creates tables and relevant mapping if `true`. Otherwise table and mapping creation is skipped. This is useful for running Telegraf with the lowest possible permissions, i.e., table ingestor role. | `true` |
 | Metrics Grouping Type | MetricsGroupingType | Type of metrics grouping used when pushing to Eventhouse either being `TablePerMetric` or `SingleTable`. | `TablePerMetric` |
 
-### Example Connection Strings
+### Example connection strings
 
 **TablePerMetric grouping (recommended):**
+
 ```ini
 connection_string = "Data Source=https://mycluster.fabric.microsoft.com;Database=MyDatabase;MetricsGroupingType=TablePerMetric;CreateTables=true"
 ```
 
 **SingleTable grouping:**
+
 ```ini
 connection_string = "Data Source=https://mycluster.fabric.microsoft.com;Database=MyDatabase;MetricsGroupingType=SingleTable;Table Name=telegraf_metrics;CreateTables=true"
 ```
 
 **With managed ingestion:**
+
 ```ini
 connection_string = "Data Source=https://mycluster.fabric.microsoft.com;Database=MyDatabase;IngestionType=managed;CreateTables=true"
 ```
 
-## Metrics Grouping
+## Metrics grouping
 
 Metrics can be grouped in two ways when sent to Eventhouse:
 
 ### TablePerMetric (Recommended)
 
-The plugin will group the metrics by the metric name and will send each group of metrics to a separate Eventhouse KQL DB table. If the table doesn't exist, the plugin will create the table. If the table exists, the plugin will try to merge the Telegraf metric schema to the existing table.
+The plugin groups the metrics by the metric name and sends each group of metrics to a separate Eventhouse KQL DB table. If the table doesn't exist, the plugin creates the table. If the table exists, the plugin tries to merge the Telegraf metric schema to the existing table.
 
-The table name will match the metric name. The metric name must comply with the Eventhouse KQL DB table naming constraints.
+The table name matches the metric name. The metric name must comply with the Eventhouse KQL DB table naming constraints.
 
 ### SingleTable
 
-The plugin will send all the metrics received to a single Eventhouse KQL DB table. The name of the table must be supplied via `Table Name` parameter in the `connection_string`. If the table doesn't exist, the plugin will create the table. If the table exists, the plugin will try to merge the Telegraf metric schema to the existing table.
+The plugin sends all the metrics received to a single Eventhouse KQL DB table. The name of the table must be supplied via `Table Name` parameter in the `connection_string`. If the table doesn't exist, the plugin creates the table. If the table exists, the plugin tries to merge the Telegraf metric schema to the existing table.
 
-## Ingestion Types
+## Ingestion types
 
 The plugin supports two ingestion types:
 
-### Queued Ingestion (Default)
+### Queued ingestion (default)
 
 Metrics are queued and processed in batches. This is the default and recommended method for most use cases as it provides better throughput and reliability.
 
-### Managed Ingestion
+### Managed ingestion
 
 Streaming ingestion with fallback to batched ingestion. This provides lower latency but requires streaming ingestion to be enabled on your Eventhouse.
 
 > [!IMPORTANT]
-> To use managed ingestion, you must enable [streaming ingestion](https://learn.microsoft.com/azure/data-explorer/ingest-data-streaming?tabs=azure-portal%2Ccsharp) on your Eventhouse.
+> To use managed ingestion, you must enable [streaming ingestion](/azure/data-explorer/ingest-data-streaming?tabs=azure-portal%2Ccsharp) on your Eventhouse.
 
 To check if streaming ingestion is enabled, run this query in your Eventhouse:
 
@@ -150,7 +166,7 @@ To check if streaming ingestion is enabled, run this query in your Eventhouse:
 .show database <DB-Name> policy streamingingestion
 ```
 
-## Table Schema
+## Table schema
 
 When using Eventhouse, the schema of the table will match the structure of the Telegraf metric. The plugin automatically creates tables with the following schema:
 
@@ -187,6 +203,7 @@ Since the collected metrics object is a complex type, the *fields* and *tags* co
 You can query JSON data in raw format without parsing it:
 
 **Example 1**
+
 ```kusto
 cpu
 | where todouble(fields.usage_user) > 10
@@ -194,6 +211,7 @@ cpu
 ```
 
 **Example 2**
+
 ```kusto
 disk
 | where todouble(fields.used_percent) > 80
@@ -232,7 +250,7 @@ Transform dynamic data type columns using an update policy. This approach is rec
 
 There are multiple ways to flatten dynamic columns by using the [extended](/kusto/query/extend-operator?view=azure-data-explorer&preserve-view=true) operator or [bag_unpack()](/kusto/query/bag-unpack-plugin?view=azure-data-explorer&preserve-view=true) plugin. You can use either of them in the update policy *Transform_TargetTableName()* function.
 
-* **Use the extend operator**: Use this approach because it's faster and robust. Even if the schema changes, it doesn't break queries or dashboards.
+* **Use the `extend` operator**: Use this approach because it's faster and robust. Even if the schema changes, it doesn't break queries or dashboards.
 
     ```kusto
     cpu
