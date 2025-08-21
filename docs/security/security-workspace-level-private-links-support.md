@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: overview
 ms.custom:
-ms.date: 08/18/2025
+ms.date: 08/21/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 

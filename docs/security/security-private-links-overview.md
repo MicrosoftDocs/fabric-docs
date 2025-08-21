@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: conceptual
 ms.custom:
-ms.date: 08/15/2025
+ms.date: 08/21/2025
 ---
 
 # Private links for Fabric tenants
