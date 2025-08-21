@@ -26,7 +26,7 @@ The Microsoft Fabric [Real-Time Intelligence output plugin](https://github.com/i
 ## Prerequisites
 
 * A Microsoft Fabric workspace with Real-Time Intelligence enabled.
-* An Eventhouse instance and a KQL (Kusto Query Language) database. [Create an Eventhouse](create-eventhouse.md)
+* An Eventhouse instance and a KQL (Kusto Query Language) database. [Create an Eventhouse](create-eventhouse.md).
 * [Telegraf](https://portal.influxdata.com/downloads/) version 1.35.0 or later. Host Telegraf on a virtual machine (VM) or container, either locally where the monitored app or service runs or remotely on a dedicated monitoring compute or container.
 * Give the principal that runs Telegraf appropriate permissions in Microsoft Fabric, and assign the Database user role or higher for the Eventhouse database.
 

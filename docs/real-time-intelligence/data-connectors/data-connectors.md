@@ -238,5 +238,5 @@ Telegraf is an open source, lightweight, minimal memory foot print agent for col
 * **Use cases:** Telemetry, Logs, Metrics
 * **Underlying SDK:** [Go](/azure/data-explorer/kusto/api/golang/kusto-golang-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** InfluxData - https://github.com/influxdata/telegraf/tree/master/plugins/outputs/azure_data_explorer
-* **Documentation:** [Get data from Telegraf](/azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Ingest data from Telegraf into Microsoft Fabric Eventhouse](../get-data-telegraf.md)
 * **Community Blog:**  [New Azure Data Explorer output plugin for Telegraf enables SQL monitoring at huge scale](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/new-azure-data-explorer-output-plugin-for-telegraf-enables-sql/ba-p/2829444)
