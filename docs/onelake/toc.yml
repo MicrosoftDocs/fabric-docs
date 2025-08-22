@@ -105,6 +105,8 @@ items:
       href: ./security/how-to-secure-data-onelake-for-data-warehousing.md
     - name: For common data architectures
       href: ./security/how-to-common-data-architectures.md
+  - name: How to encrypt data in Onelake?
+    href: ../fabric/security/workspace-customer-managed-keys.md    
   - name: Authorize with a OneLake shared access signature (SAS)
     items:
     - name: What is OneLake SAS?
