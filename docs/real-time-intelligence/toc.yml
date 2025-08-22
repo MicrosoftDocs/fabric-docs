@@ -719,8 +719,7 @@ items:
 - name: Analyze and train data
   items:
   - name: Copilot for Writing KQL Queries
-    displayName: KQL queryset, kusto query language, natural language
-    href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
+    href: copilot-writing-queries.md
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
@@ -771,7 +770,7 @@ items:
   - name: Real-Time Dashboards
     items:
     - name: Generate Real-Time Dashboard Using Copilot
-      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
+      href: copilot-generate-dashboard.md      
     - name: Create a Real-Time Dashboard
       href: dashboard-real-time-create.md
     - name: Real-Time Dashboard permissions
@@ -851,12 +850,6 @@ items:
       href: data-activator/activator-trigger-power-automate-flows.md
   - name: Troubleshoot errors
     href: data-activator/activator-troubleshooting.md
-- name: Analyze data with Copilot
-  items:
-    - name: Copilot for Writing KQL Queries
-      href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Generate Real-Time Dashboard Using Copilot
-      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
 - name: Monitor
   items:
     - name: Eventhouse monitoring
@@ -880,11 +873,12 @@ items:
       href: mcp-eventhouse.md
 - name: Migrate
   items:
-  - name: From Azure Synapse Data Explorer
+  - name: Migrate from Azure Data Explorer
+    href: migrate-azure-data-explorer.md
+  - name: Migrate from Azure Synapse Data Explorer
     href: migrate-synapse-data-explorer.md
-  - name: API endpoints
-    items:
-    - name: Validate migration
+    items: 
+    - name: Validate migration using REST API endpoints
       href: migrate-api-validate-synapse-data-explorer.md
     - name: Migrate to Eventhouse
       href: migrate-api-to-eventhouse.md

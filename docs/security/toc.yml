@@ -77,6 +77,14 @@ items:
           href: fabric-allow-list-urls.md
         - name: Add Power BI URLs to your allowlist
           href: power-bi-allow-list-urls.md
+    - name: Service tags
+      href: security-service-tags.md
+    - name: Microsoft Entra Conditional Access
+      href: security-conditional-access.md
+    - name: Add Fabric URLs to your allowlist
+      href: fabric-allow-list-urls.md
+    - name: Add Power BI URLs to your allowlist
+      href: power-bi-allow-list-urls.md
     - name: Outbound
       items:
       - name: Overview of managed VNets
@@ -85,6 +93,18 @@ items:
         href: security-managed-private-endpoints-overview.md
       - name: Create managed private endpoints
         href: security-managed-private-endpoints-create.md
+      - name: Workspace outbound access protection
+        items: 
+          - name: Overview of workspace outbound access protection
+            href: workspace-outbound-access-protection-overview.md
+          - name: Manage admin access to outbound protection settings
+            href: workspace-outbound-access-protection-tenant-setting.md
+          - name: Set up workspace outbound access protection
+            href: workspace-outbound-access-protection-set-up.md
+          - name: Workspace outbound access protection scenarios
+            href: workspace-outbound-access-protection-scenarios.md
+          - name: Workspace outbound access protection for data engineering
+            href: workspace-outbound-access-protection-data-engineering.md
       - name: Trusted workspace access
         href: security-trusted-workspace-access.md
 - name: Data security

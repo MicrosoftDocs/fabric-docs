@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: how-to
 ms.custom:
-ms.date: 08/13/2025
+ms.date: 08/18/2025
 
 #customer intent: As a workspace admin, I want to configure workspace-level Private Link on my workspace to prevent access to the workspace from the public internet.
 
@@ -167,7 +167,7 @@ You can optionally deny public access to the workspace. When the workspace is se
 > [!NOTE]
 > The workspace-level setting to deny public access can take up to 30 minutes to take effect.
 
-API to set workspace public access rule:  
+Use the [Workspaces - Set Network Communication Policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy) to set the workspace public access rule:  
 
 `PUT https://api.fabric.microsoft.com/v1/workspaces/{workspaceID}/networking/communicationPolicy` 
 
@@ -180,13 +180,15 @@ API to set workspace public access rule:
       }
     }
 ```
-API to get Workspace public access rule: 
+Use the [Workspaces - Get Network Communication Policy API](/rest/api/fabric/core/workspaces/get-network-communication-policy) to get the workspace public access rule: 
 
 `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceID}/networking/communicationPolicy`
 
 You can use the workspace communication policy API even if no private link is set up, regardless of the current communication policy. The table below shows where and when this API is accessible based on tenant and private link settings.
 
-**Table 1.** Access to workspace communication policy API based on tenant and private link settings.
+<a name="workspace-communication-policy-access"></a>
+
+**Table 1. Access to workspace communication policy API based on tenant and private link settings**
 
 | Tenant-level public access setting | Private link type | Access from | Allowed to get or set workspace communication policy API? |
 |--|--|--|--|
