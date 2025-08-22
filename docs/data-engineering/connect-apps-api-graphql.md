@@ -337,7 +337,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
 1. Once the application loads in your browser from `http://localhost:3000`, follow the steps on the last part of the tutorial [Call the API from the application](/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code).
 
-1. After signing in, click on the button **Query Fabric API for GraphQL Data**.
+1. After signing in, select on the button **Query Fabric API for GraphQL Data**.
 
    :::image type="content" source="media/connect-apps-api-graphql/test-react-app.png" alt-text="Screenshot of the React sample app after sign in.":::
 
