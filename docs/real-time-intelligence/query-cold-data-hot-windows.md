@@ -1,5 +1,5 @@
 ---
-title: Use hot windows for infrequent queries over cold data in Azure Data Explorer
+title: Use Hot Windows for Infrequent Queries over Cold Data in Azure Data Explorer
 description: In this article, you learn how to efficiently query cold data in Azure Data Explorer.
 author: spelluru
 ms.author: spelluru
