@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 [!INCLUDE [product-name](../includes/product-name.md)] works with many data sources, both on-premises and in the cloud. Each data source has specific setup requirements. This article shows you how to add an Azure SQL Server as a cloud data source as an example - and the process is similar for other sources. If you need help with on-premises data sources, see [Add or remove a gateway data source](/power-bi/connect-data/service-gateway-data-sources).
 
 > [!NOTE]
-> Right now, cloud connections work with data pipelines and Kusto. For datasets, datamarts, and dataflows, you need to use Power Query Online's "get data" experience to create personal cloud connections. Support for cloud connections in other features will be available in the future.
+> Right now, cloud connections work with data pipelines and Kusto. For datasets, datamarts, and dataflows, you need to use Power Query Online's "get data" experience to create personal cloud connections.
 
 ## Add a data source
 
@@ -68,8 +68,7 @@ When creating a connection, you see a setting labeled **This connection can be u
 * When checked: The connection can work with gateway-based evaluations
 
 >[!CAUTION]
-> While this setting appears when creating cloud connections through Dataflow Gen2, it isn't enforced yet. Currently, all shareable cloud connections work through a gateway if one is present.
-> We're adding enforcement of this security boundary soon and will communicate the changes in advance.
+> While this setting appears when creating cloud connections through Dataflow Gen2, it isn't currently enforced. All shareable cloud connections work through a gateway if one is present.
 
 ## Remove a data source
 
@@ -88,10 +87,10 @@ To remove a data source that's no longer needed, follow these steps:
 
 To retrieve a connection ID for use in Microsoft Fabric items or REST APIs, use one of these methods:
 
-* [Using the service interface](#using-the-service-interface)
-* [Using the REST API](#using-the-rest-api)
+* [Use the service interface](#use-the-service-interface)
+* [Use the REST API](#use-the-rest-api)
 
-### Using the service interface
+### Use the service interface
 
 1. Go to **Manage connections and gateways**
 
@@ -101,7 +100,7 @@ To retrieve a connection ID for use in Microsoft Fabric items or REST APIs, use 
 
    :::image type="content" source="media/data-source-management/retrieve-data-source-connection-id.png" alt-text="Screenshot of retrieving connection ID from the connection settings.":::
 
-### Using the REST API
+### Use the REST API
 
 Use the [List Connections](/rest/api/fabric/core/connections/list-connections) endpoint to retrieve your connection information:
 
@@ -133,7 +132,10 @@ Use the [List Connections](/rest/api/fabric/core/connections/list-connections) e
     }
     ```
 
-1. Each object’s `id` property under the `value` array is the connection ID. Extract the `id` property from the response as needed. Note: If you have more than 100 connections, use the `continuationToken` query parameter on subsequent requests to page through all results.
+1. Each object’s `id` property under the `value` array is the connection ID. Extract the `id` property from the response as needed.
+
+   > [!NOTE]
+   > If you have more than 100 connections, use the `continuationToken` query parameter on subsequent requests to page through all results.
 
 Here's a sample Python snippet that uses `requests` and Microsoft Authentication Library (`msal`) to call the `GET /v1/connections` endpoint and parse connection IDs:
 
