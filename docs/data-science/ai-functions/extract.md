@@ -12,7 +12,7 @@ ms.search.form: AI functions
 
 # Extract entities with the ai.extract function
 
-The `ai.extract` function uses generative AI to scan input text and extract specific types of information designated by labels you choose (for example: locations or names). It uses only a single line of code.
+The `ai.extract` function uses generative AI to scan input text and extract specific types of information designated by labels you choose (for example, locations or names). It uses only a single line of code.
 
 AI functions improve data engineering by using the power of large language models in Microsoft Fabric. To learn more, see [this overview article](./overview.md).
 
