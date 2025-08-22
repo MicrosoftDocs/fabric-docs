@@ -580,7 +580,7 @@ items:
     - name: Manage and monitor an eventhouse
       href: manage-monitor-eventhouse.md
     - name: Query cold data with hot windows
-      href: query-cold-data-hot-windows.md``
+      href: query-cold-data-hot-windows.md
   - name: KQL Database
     items:
     - name: Create a KQL database
