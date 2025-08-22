@@ -14,15 +14,15 @@ ms.search.form: AI functions
 
 The `ai.analyze_sentiment` function uses generative AI to detect the emotional state expressed by input text. It uses only a single line of code. It can detect whether the emotional state of the input text is positive, negative, mixed, or neutral. If the function can't determine the sentiment, it leaves the output blank.
 
-AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
+AI functions improve data engineering by using the power of large languages models that are included with Microsoft Fabric. To learn more, see [this overview article](./overview.md).
 
 > [!IMPORTANT]
-> This feature is in [preview](../../get-started/preview.md), for use in the [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and higher.
+> This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
 > - By default, the *gpt-4o-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
+> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with the Fabric built-in AI endpoint.
 
 ## Use ai.analyze_sentiment with pandas
 
