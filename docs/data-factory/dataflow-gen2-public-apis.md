@@ -9,10 +9,7 @@ ms.date: 05/01/2025
 ms.custom: dataflows
 ---
 
-# Public APIs capabilities for Dataflows Gen2 in Fabric Data Factory (Preview)
-
->[!NOTE]
->The Microsoft Fabric API for Data Factory is currently in public preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+# Public APIs capabilities for Dataflows Gen2 in Fabric Data Factory
 
 Fabric Data Factory provides a robust set of APIs that enable users to automate and manage their dataflows efficiently. These APIs allow for seamless integration with various data sources and services, enabling users to create, update, and monitor their data workflows programmatically. The APIs support a wide range of operations including dataflows CRUD (Create, Read, Update, and Delete), scheduling, and monitoring, making it easier for users to manage their data integration processes.
 
