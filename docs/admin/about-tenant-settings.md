@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.topic: conceptual
 ms.custom:
-ms.date: 01/29/2025
+ms.date: 08/22/2025
 ---
 
 # About tenant settings
@@ -61,5 +61,6 @@ Many of the settings can have one of three states:
 
 ## Related content
 
+- [Use the Fabric REST API to list tenant settings](/rest/api/fabric/admin/tenants/list-tenant-settings)
 - [What is the admin portal?](admin-center.md)
 - [Tenant settings index](tenant-settings-index.md)
