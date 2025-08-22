@@ -19,7 +19,7 @@ GraphQL lets you establish relationships across types, including one-to-one (1:1
 
 1. From the **Schema explorer** pane, select the ellipsis next to a type, and then select the **Manage relationships** option. The **Manage relationships** screen appears.
 
-   :::image type="content" source="media/manage-relationships-graphql/manage-relationships-start.png" alt-text="Screenshot showing where to select aew relationship in Manage relationships pane. It shows.":::
+   :::image type="content" source="media/manage-relationships-graphql/manage-relationships-start.png" alt-text="Screenshot showing where to select new relationship in manage relationships pane.":::
 
 1. Select **New relationship**. For this example, we create a new one-to-one relationship between the **Product** type and the **ProductModel** type, based on the **ProductModelID** field that exists in both types. We select **One to one** for **Cardinality**, select the **From** and **To** types, and then select the From and To fields for this relationship.
 
