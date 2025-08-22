@@ -84,6 +84,6 @@ David reviews the available options and chooses **Copy Activities in Pipelines**
 
 Now that you have an idea of which data movement strategy to use, you can get started with these resources:
 
-- [Get started with Mirroring](/fabric/database/mirrored-database/overview)
+- [Get started with Mirroring](/fabric/mirroring/overview)
 - [Create a Copy Job](/fabric/data-factory/create-copy-job)
 - [Create a Copy Activity](/fabric/data-factory/copy-data-activity)

@@ -103,25 +103,25 @@ landingContent:
       - linkListType: concept
         links:
           - text: Mirroring 
-            url: ../database/mirrored-database/overview.md
+            url: ../mirroring/overview.md
           - text: Database Mirroring in Fabric
-            url: ../database/mirrored-database/overview.md
+            url: ../mirroring/overview.md
           - text: Mirroring Azure SQL Database
-            url: ../database/mirrored-database/azure-sql-database.md
+            url: ../mirroring/azure-sql-database.md
           - text: Mirroring Azure SQL Managed Instance
-            url: ../database/mirrored-database/azure-sql-managed-instance.md
+            url: ../mirroring/azure-sql-managed-instance.md
           - text: Mirroring Azure Cosmos DB
-            url: ../database/mirrored-database/azure-cosmos-db.md
+            url: ../mirroring/azure-cosmos-db.md
           - text: Mirroring Databricks
-            url: ../database/mirrored-database/azure-databricks.md
+            url: ../mirroring/azure-databricks.md
           - text: Mirroring Snowflake
-            url: ../database/mirrored-database/snowflake.md
+            url: ../mirroring/snowflake.md
           - text: Mirroring SQL Server
-            url: ../database/mirrored-database/sql-server.md
+            url: ../mirroring/sql-server.md
           - text: Open mirroring 
-            url: ../database/mirrored-database/open-mirroring.md
+            url: ../mirroring/open-mirroring.md
           - text: Share and secure mirrored databases
-            url: ../database/mirrored-database/share-and-manage-permissions.md
+            url: ../mirroring/share-and-manage-permissions.md
   # Card 
   - title: Design and Develop
     linkLists:
