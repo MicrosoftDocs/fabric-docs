@@ -21,7 +21,7 @@ AI functions use the power of generative AI for summarization, classification, t
 - [Calculate similarity with `ai.similarity`](#calculate-similarity-with-aisimilarity): Compare the meaning of input text with a single common text value, or with corresponding text values in another column.
 - [Categorize text with `ai.classify`](#categorize-text-with-aiclassify): Classify input text values according to labels you choose.
 - [Detect sentiment with `ai.analyze_sentiment`](#detect-sentiment-with-aianalyze_sentiment): Identify the emotional state expressed by input text.
-- [Extract entities with `ai.extract`](#extract-entities-with-aiextract): Find and extract specific types of information from input text. For example, locations or names.
+- [Extract entities with `ai.extract`](#extract-entities-with-aiextract): Find and extract specific types of information from input text (for example, locations or names).
 - [Fix grammar with `ai.fix_grammar`](#fix-grammar-with-aifix_grammar): Correct the spelling, grammar, and punctuation of input text.
 - [Summarize text with `ai.summarize`](#summarize-text-with-aisummarize): Get summaries of input text.
 - [Translate text with `ai.translate`](#translate-text-with-aitranslate): Translate input text into another language.
