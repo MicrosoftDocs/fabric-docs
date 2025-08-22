@@ -45,27 +45,29 @@ items:
       href: metrics-app.md
     - name: Install the Microsoft Fabric Capacity Metrics app
       href: metrics-app-install.md
-    - name: Understand the Microsoft Fabric Capacity Metrics app compute page
+    - name: Understand the Health page (preview)
+      href: metrics-app-health-page.md
+    - name: Understand the Compute page
       href: metrics-app-compute-page.md
-    - name: Understand the metrics app storage page
+    - name: Understand the Storage page
       href: metrics-app-storage-page.md
-    - name: Understand the metrics app timepoint page
+    - name: Understand the Timepoint page
       href: metrics-app-timepoint-page.md
-    - name: Understand the metrics app timepoint summary page (preview)
+    - name: Understand the Timepoint summary page (preview)
       href: metrics-app-timepoint-summary-page.md
-    - name: Understand the metrics app timepoint item detail page (preview)
+    - name: Understand the Timepoint item detail page (preview)
       href: metrics-app-timepoint-item-detail-page.md
-    - name: Understand the metrics app Autoscale compute for Spark page
+    - name: Understand the Autoscale compute for Spark page
       href: metrics-app-feature-autoscale-page.md
-    - name: Understand Autoscale compute for Spark detail page
+    - name: Understand the Autoscale compute for Spark detail page
       href: metrics-app-feature-autoscale-detail-page.md
-    - name: Understand the metrics app Item history page (preview)
+    - name: Understand the Item history page (preview)
       href: metrics-app-item-history-page.md
     - name: Plan your capacity size
       href: plan-capacity.md    
     - name: Monitor a paused capacity
       href: monitor-paused-capacity.md
-    - name: Understand the metrics app calculations
+    - name: Understand metrics app calculations
       href: metrics-app-calculations.md
   - name: Capacity troubleshooting guides
     items:

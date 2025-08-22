@@ -9,15 +9,7 @@ ms.topic: tutorial
 
 # Digital twin builder (preview) tutorial part 2: Add entity types and map data
 
-In this part of the tutorial, you define entity types in digital twin builder (preview) and map data to entity instances. The entity types include:
-* *Distiller*
-* *Condenser*
-* *Reboiler*
-* *Process*
-* *Technician*
-* *MaintenanceRequest*
 
-For each entity type, you configure how property and/or time series data is mapped from the sample tables to the entity instances' properties in digital twin builder.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
