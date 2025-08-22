@@ -285,6 +285,16 @@
       "source_path_from_root": "/docs/database/mirrored-database/sql-server-faq.yml",
       "redirect_url": "../mirroring/sql-server-faq.md",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/database/mirrored-database/sql-server-configure-automatic-reseed.md",
+      "redirect_url": "../mirroring/sql-server-configure-automatic-reseed.md",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/database/mirrored-database/sql-server-performance.md",
+      "redirect_url": "../mirroring/sql-server-performance.md",
+      "redirect_document_id": false
     }
   ]
 }
