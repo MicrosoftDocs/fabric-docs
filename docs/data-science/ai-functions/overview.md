@@ -31,28 +31,28 @@ You can incorporate these functions as part of data-science and data-engineering
 
 ## Prerequisites
 
-- To use AI functions with Fabric's built-in AI endpoint, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
-- Depending on your location, you might need to enable a tenant setting for cross-geo processing. Learn more [here](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
-- You also need an F2 or higher SKU or a P SKU. If you use a trial SKU, you can bring your own Azure Open AI resource.
+- To use AI functions with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
+- Depending on your location, you might need to enable a tenant setting for cross-geo processing. Learn more about [available regions for Azure OpenAI Service](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
+- You also need an F2 or later edition or a P edition. If you use a trial edition, you can bring your own Azure Open AI resource.
 
 > [!NOTE]
 >
-> - AI functions are supported in the [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and higher.
+> - AI functions are supported in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
 > - AI functions use the *gpt-4o-mini (2024-07-18)* model by default. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Most of the AI functions are optimized for use on English-language texts.
 
 ## Getting started with AI functions
 
-When you use pandas, the OpenAI package must be installed. In the Python environment, the AI Functions package must also be installed.
+When you use pandas, the OpenAI package must be installed. In the Python environment, the AI functions package must also be installed.
 
-No installation is required when you use PySpark, because AI Functions are preinstalled in the PySpark environment.
+No installation is required when you use PySpark, because AI functions are preinstalled in the PySpark environment.
 
 The following code cells include all the necessary installation commands.
 
 # [pandas (PySpark environment)](#tab/pandas-pyspark)
 
 ```python
-# Pandas AI Functions requires openai version 1.30 or higher.
+# The pandas AI functions package requires OpenAI version 1.30 or later.
 %pip install -q --force-reinstall openai==1.30 2>/dev/null
 
 # AI functions are preinstalled on the Fabric PySpark runtime.
@@ -98,7 +98,7 @@ from synapse.ml.spark.aifunc.DataFrameExtensions import AIFunctions
 
 ## Apply AI functions
 
-Each of the following functions allows you to invoke Fabric's built-in AI endpoint to transform and enrich data with a single line of code. You can use AI functions to analyze pandas DataFrames or Spark DataFrames.
+Each of the following functions allows you to invoke the built-in AI endpoint in Fabric to transform and enrich data with a single line of code. You can use AI functions to analyze pandas DataFrames or Spark DataFrames.
 
 > [!TIP]
 > Learn how to [customize the configuration](./configuration.md) of AI functions.
@@ -185,7 +185,7 @@ display(categories)
 
 ### Detect sentiment with ai.analyze_sentiment
 
-The `ai.analyze_sentiment` function invokes AI to identify whether the emotional state expressed by input text is positive, negative, mixed, or neutral. If AI can't make this determination, the output is left blank. Get [more detailed instructions](./analyze-sentiment.md) about the use of `ai.analyze_sentiment`.
+The `ai.analyze_sentiment` function invokes AI to identify whether the emotional state expressed by input text is positive, negative, mixed, or neutral. If AI can't make this determination, the output is left blank. For more detailed instructions about the use of `ai.analyze_sentiment`, see [this article](./analyze-sentiment.md).
 
 #### Sample usage
 
@@ -227,7 +227,7 @@ display(sentiment)
 
 ### Extract entities with ai.extract
 
-The `ai.extract` function invokes AI to scan input text and extract specific types of information that are designated by labels you choose. For example, locations or names. Get [more detailed instructions](./extract.md) about the use of `ai.extract`.
+The `ai.extract` function invokes AI to scan input text and extract specific types of information that are designated by labels you choose (for example, locations or names). For more detailed instructions about the use of `ai.extract`, see [this article](./extract.md).
 
 #### Sample usage
 
@@ -265,7 +265,7 @@ display(df_entities)
 
 ### Fix grammar with ai.fix_grammar
 
-The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and punctuation of input text. Get [more detailed instructions](./fix-grammar.md) about the use of `ai.fix_grammar`.
+The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and punctuation of input text. For more detailed instructions about the use of `ai.fix_grammar`, see [this article](./fix-grammar.md).
 
 #### Sample usage
 
@@ -305,7 +305,7 @@ display(corrections)
 
 ### Summarize text with ai.summarize
 
-The `ai.summarize` function invokes AI to generate summaries of input text (either values from a single column of a DataFrame, or row values across all the columns). Get [more detailed instructions](./summarize.md) about the use of `ai.summarize`.
+The `ai.summarize` function invokes AI to generate summaries of input text (either values from a single column of a DataFrame, or row values across all the columns). For more detailed instructions about the use of `ai.summarize`, see [this article](./summarize.md).
 
 #### Sample usage
 
@@ -363,7 +363,7 @@ display(summaries)
 
 ### Translate text with ai.translate
 
-The `ai.translate` function invokes AI to translate input text to a new language of your choice. Get [more detailed instructions](./translate.md) about the use of `ai.translate`.
+The `ai.translate` function invokes AI to translate input text to a new language of your choice. For more detailed instructions about the use of `ai.translate`, see [this article](./translate.md).
 
 #### Sample usage
 
@@ -403,7 +403,7 @@ display(translations)
 
 ### Answer custom user prompts with ai.generate_response
 
-The `ai.generate_response` function invokes AI to generate custom text based on your own instructions. Get [more detailed instructions](./generate-response.md) about the use of `ai.generate_response`.
+The `ai.generate_response` function invokes AI to generate custom text based on your own instructions. For more detailed instructions about the use of `ai.generate_response`, see [this article](./generate-response.md).
 
 #### Sample usage
 
