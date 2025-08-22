@@ -40,16 +40,16 @@ The following section outlines common Notebook errors and their suggested resolu
 
 ### Timeouts
 
-#### Why it happens
+**Why it happens:**
 
 Notebook sessions autoshutdown after a period of inactivity. By default, this timeout is set to 20 minutes.
 
-#### What to do
+**What to do:**
 
 1. Rerun the notebook to restart the session.
 1. Adjust the session timeout duration at either the Notebook or Workspace level.
 
-##### Change timeout at the Notebook level
+#### Change timeout at the Notebook level
 
 1. Open a notebook and start a session from the **Connect** toolbar menu.
 1. Select the **Session ready** indicator in the lower-left corner.
@@ -60,7 +60,7 @@ Notebook sessions autoshutdown after a period of inactivity. By default, this ti
 
    :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/session-timeout.png" alt-text="Screenshot showing where to adjust the session timeout for a Fabric Notebook.":::
  
-##### Change timeout at the **Workspace** level
+#### Change timeout at the **Workspace** level
 
 1. Navigate to **Workspace settings**.
 1. Select **Data Engineering/Science Spark settings**.
@@ -70,21 +70,21 @@ Notebook sessions autoshutdown after a period of inactivity. By default, this ti
 
 ### General connectivity
 
-#### Why it happens
+**Why it happens:**
 
 Network instability or temporary backend delay
 
-#### What to do
+**What to do:**
 
 Retry after a few moments.
 
 ### Session connectivity
 
-#### Why it happens
+**Why it happens:**
 
 A session isn't connected.
 
-#### What to do
+**What to do:**
 
 Start a session.
 
@@ -98,7 +98,7 @@ You can start a session using three methods:
 
 ### Access
 
-#### Why it happens
+**Why it happens:**
 
 These failures can happen for any of the following reasons:
 
@@ -107,7 +107,7 @@ These failures can happen for any of the following reasons:
 - Missing permissions for Notebook, Lakehouse, or Workspace
 - Tenant restrictions
 
-#### What to do
+**What to do:**
 
 1. _Verify your sign-in_: Ensure you're logged in with the correct Microsoft Entra (formerly Azure Active Directory) account associated with your Fabric environment.
 1. _Refresh your session_: Sign out and sign back in to refresh your authentication token. You can do this by selecting your profile icon in the top-right corner of the window, and then and selecting **Sign out**.
@@ -117,7 +117,7 @@ These failures can happen for any of the following reasons:
   - Check for token expiration issues.
   - Ensure you’re added to the correct Fabric tenant, especially if you recently joined the organization or switched accounts.
 
-##### How to manage access in a Fabric Workspace
+#### How to manage access in a Fabric Workspace
 
 In order to manage user access within a Fabric Workspace, take the following steps:
 
@@ -131,11 +131,11 @@ In order to manage user access within a Fabric Workspace, take the following ste
 
 ### Paused capacity
 
-#### Why it happens
+**Why it happens:**
 
 An administrator paused Fabric capacity.
 
-#### What to do
+**What to do:**
 
 - Ask your Fabric administrator to resume capacity.
 - Steps (for admins):
@@ -146,11 +146,11 @@ An administrator paused Fabric capacity.
 
 ### Missing items
 
-#### Why it happens
+**Why it happens:**
 
 An item was deleted, moved, or you don’t have access.
 
-#### What to do
+**What to do:**
 
 1. Use the global search box at the top center of the Fabric browser page to try locating the item across all workspaces.                  
 1. Contact the item owner to confirm whether it still exists and request access if needed.
@@ -158,11 +158,11 @@ An item was deleted, moved, or you don’t have access.
 
 ### Save failures
 
-#### Why it happens
+**Why it happens:**
 
 Network connectivity drops before changes are saved, or the session timed out.
 
-#### What to do
+**What to do:**
 
 1. _Check network connectivity_: Save failures are often caused by temporary internet or service disruptions.
 1. _Save a copy_: Duplicate the notebook to avoid losing unsaved changes.
@@ -181,22 +181,26 @@ Network connectivity drops before changes are saved, or the session timed out.
 
 ### Collaboration conflicts
 
-#### Why it happens
+**Why it happens:**
 
 The same notebook was modified by another user outside of a collaboration session - such as through VS Code, the Update Definition API, manual save mode, a deployment pipeline, or Git sync.
 
 :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/collaboration-conflict.png" alt-text="Screenshot showing the collaboration conflict error that appears in the Fabric Notebook user interface.":::
  
-#### What to do
+**What to do:**
 
 1. Select the **View changes** button on the error message bar and choose a version to work as the live notebook.
 1. Select the **History** button at the top right of the window and use the **Version history** panel to find the _external_ record. Then you can either restore or save a copy of that version.
 
 ### Spark code issue
 
-You see an error indicating: **Excessive query complexity** - Spark's Catalyst optimizer has produced a very large logical/physical plan.
+You see an error indicating: **Excessive query complexity**.
 
-#### What to do
+**Why it happens:**
+
+Spark's Catalyst optimizer has produced a very large logical/physical plan.
+
+**What to do:**
 
 Modify the query logic by breaking down the query. Refactor complex pipelines into smaller, staged queries.
 
