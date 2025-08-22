@@ -16,10 +16,10 @@ ms.date: 03/14/2025
 
     If there's an existing connection to your Solace PubSub+ source, select that existing connection. 
 1. In the **Connection settings** section, follow these steps:
-    1. For Solace PubSub+ broker URL, enter the SMF URI, starting with `tcp://`. 
+    1. For Solace PubSub+ broker URL, enter the SMF URI, starting with `tcp://` or `ssl://`. 
 
         > [!NOTE]
-        > The Solace PubSub+ source currently supports only the PLAIN-TEXT Solace Message Format (SMF) protocol between your Solace PubSub+ broker and Eventstream. Support for secured SMF over TLS/SSL will be available soon. 
+        > The Solace PubSub+ source currently supports both the PLAIN-TEXT Solace Message Format (SMF) protocol and secured SMF over TLS/SSL between your Solace PubSub+ broker and Eventstream.
     1. For **Connection name**, enter a name for the connection to the Solace PubSub+. 
     1. Enter the **Username** and **Password** for the Solace PubSub+ client. 
 
