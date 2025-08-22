@@ -1,0 +1,177 @@
+### YamlMime:Landing
+
+title: Mirroring documentation in Microsoft Fabric  # < 60 chars
+summary: Learn more about Mirroring in Microsoft Fabric # < 160 chars
+
+metadata:
+  title: Mirroring # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Mirroring in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
+  ms.service: fabric  #Required; use either service or product per approved list.
+  ms.subservice:
+  ms.custom:
+  ms.topic: landing-page # Required
+  ms.collection: collection # Optional; Remove if no collection is used.
+  author: whhender #Required; your GitHub user alias, with correct capitalization.
+  ms.author: whhender #Required; microsoft alias of author; optional team alias.
+  ms.date: 08/20/2025
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  # Card 
+  - title: Mirroring
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Overview
+            url: overview.md
+  # Card 
+  - title: Mirroring Azure SQL
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Mirror Azure SQL Database
+            url: azure-sql-database.md
+          - text: Mirror Azure SQL Managed Instance
+            url: azure-sql-managed-instance.md
+      - linkListType: tutorial
+        links:
+          - text: Azure SQL database tutorial
+            url: azure-sql-database-tutorial.md
+          - text: Azure SQL managed instance tutorial
+            url: azure-sql-managed-instance-tutorial.md               
+      - linkListType: how-to-guide
+        links:
+          - text: Secure mirrored Azure SQL databases
+            url: azure-sql-database-how-to-data-security.md
+          - text: Azure SQL database limitations
+            url: azure-sql-database-limitations.md
+          - text: Secure mirrored Azure SQL managed instances
+            url: azure-sql-managed-instance-how-to-data-security.md
+          - text: Azure SQL managed instance limitations
+            url: azure-sql-managed-instance-limitations.md
+
+  # Card 
+  - title: Mirroring Azure Cosmos DB
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Mirror Azure Cosmos DB
+            url: azure-cosmos-db.md
+      - linkListType: tutorial
+        links:
+          - text: Azure Cosmos DB tutorial
+            url: azure-cosmos-db-tutorial.md           
+      - linkListType: how-to-guide
+        links:
+          - text: Azure Cosmos DB limitations
+            url: azure-cosmos-db-limitations.md
+
+  # Card 
+  - title: Mirroring Azure Databricks
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Mirror Azure Databricks
+            url: azure-databricks.md
+      - linkListType: tutorial
+        links:
+          - text: Azure Databricks tutorial
+            url: azure-databricks-tutorial.md
+      - linkListType: how-to-guide
+        links:
+          - text: Azure Databricks limitations
+            url: azure-databricks-limitations.md
+          - text: Secure mirrored Azure Databricks
+            url: azure-databricks-security.md
+
+  # Card 
+  - title: Mirroring PostgreSQL
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Mirror PostgreSQL
+            url: azure-database-postgresql.md
+      - linkListType: tutorial
+        links:
+          - text: PostgreSQL tutorial
+            url: azure-database-postgresql-tutorial.md
+      - linkListType: how-to-guide
+        links:
+          - text: PostgreSQL limitations
+            url: azure-database-postgresql-limitations.md
+          - text: Secure mirrored PostgreSQL
+            url: azure-database-postgresql-how-to-data-security.md
+
+  # Card 
+  - title: Mirroring Snowflake
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Mirror Snowflake
+            url: snowflake.md
+      - linkListType: tutorial
+        links:
+          - text: Snowflake tutorial
+            url: snowflake-tutorial.md
+      - linkListType: how-to-guide
+        links:
+          - text: Snowflake limitations
+            url: snowflake-limitations.md
+          - text: Secure mirrored Snowflake
+            url: snowflake-how-to-data-security.md
+
+  # Card 
+  - title: Mirroring SQL Server
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Mirror SQL Server
+            url: sql-server.md
+      - linkListType: tutorial
+        links:
+          - text: SQL Server tutorial
+            url: sql-server-tutorial.md
+      - linkListType: how-to-guide
+        links:
+          - text: SQL Server limitations
+            url: sql-server-limitations.md
+          - text: Secure mirrored SQL Server
+            url: sql-server-security.md
+
+  # Card 
+  - title: Open Mirroring
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Open Mirroring overview
+            url: open-mirroring.md
+      - linkListType: tutorial
+        links:
+          - text: Open Mirroring tutorial
+            url: open-mirroring-tutorial.md
+      - linkListType: how-to-guide
+        links:
+          - text: Open Mirroring partners
+            url: open-mirroring-partners-ecosystem.md
+
+  # Card 
+  - title: Troubleshoot Mirroring
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Troubleshoot Mirroring
+            url: troubleshooting.md
+      - linkListType: how-to-guide
+        links:
+          - text: Troubleshoot Azure Cosmos DB
+            url: azure-cosmos-db-troubleshooting.yml
+          - text: Troubleshoot Azure SQL Database
+            url: azure-sql-database-troubleshoot.md
+          - text: Troubleshoot Azure SQL Managed Instance
+            url: azure-sql-managed-instance-troubleshoot.md
+          - text: Troubleshoot PostgreSQL
+            url: azure-database-postgresql-troubleshoot.md
+          - text: Troubleshoot SQL Server
+            url: sql-server-troubleshoot.md

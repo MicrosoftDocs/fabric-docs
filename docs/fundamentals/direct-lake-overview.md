@@ -271,11 +271,16 @@ Direct Lake semantic models present some considerations and limitations.
 |Deployment pipeline rules to rebind data source.   |Not supported   |Supported   |
 
 
-- Analyze in Excel pivot tables have the same limitations as DirectQuery with Direct Lake tables in the semantic model. Import table user-defined hierarchies are supported even with Direct Lake tables in the semantic model.
+- Analyze in Excel pivot tables (and other MDX clients) have the same limitations as DirectQuery with Direct Lake tables in the semantic model. Session-scoped MDX statements, such as named sets, calculated members, default members, etc. are not supported. Query-scoped MDX statements, such as the 'WITH' clause, are supported. Direct Lake table user-defined hierarchies are not supported. Import table user-defined hierarchies are supported even with Direct Lake tables in the semantic model.
+
 - Power BI Desktop can live edit a semantic model with Direct Lake tables only. [Calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters), which implicitly create calculated tables, and calculated tables that don't reference Direct Lake columns or tables can also be included.
+  
 - Power BI web modeling can open any semantic model, including Direct Lake tables with other storage mode tables. Edit tables and adding additional tables in Direct Lake or import is not yet supported for Direct Lake on OneLake. Edit tables is available for Direct Lake on SQL.
+
 - DAX query view when live editing or live connected, and writing DAX queries in the web, are supported for Direct Lake on SQL, Direct Lake on OneLake, and true composite (Direct Lake on OneLake + import from any data source) semantic models.
+
 - TMDL view is supported when live editing in Power BI Desktop.
+
 - Creating reports with a live connection is supported for all semantic models, when the report author has at least build access.
 
 ## Related content

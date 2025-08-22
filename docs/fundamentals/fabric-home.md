@@ -125,7 +125,7 @@ The tabbed navigation allows you to work with multiple items and workspaces at t
 
 ### Tabs for open items
 
-When you create a new item, it appears in a tab horizontally across the top of the Fabric portal and shows the item name, icon for the item type (for example, notebook, pipeline, semantic model etc.). You can hover over the tab to view the workspace it's created in. You can drag a tab to the required position. Tabs make it easier to identify and switch between open items without losing focus.
+When you create or open an item, it appears in a tab horizontally across the top of the Fabric portal and shows the item name, icon for the item type (for example, notebook, pipeline, semantic model etc.). You can hover over the tab to view the workspace it's created in. You can drag a tab to the required position. Tabs make it easier to identify and switch between open items without losing focus.
 
 ### Multiple open workspaces
 
@@ -142,7 +142,7 @@ The object explorer provides a structured view of items across all your currentl
 The previous limit of 10 open items has been increased. You can keep more resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
 
 > [!NOTE]
-> These multitasking features are rolling out in phases starting mid-August 2025. Availability might vary across tenants as the rollout progresses.
+> These multitasking features are rolling out in phases starting mid September 2025. Availability might vary across tenants as the rollout progresses.
 
 ## Get help from the Help pane
 

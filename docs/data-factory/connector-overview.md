@@ -73,6 +73,7 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | [Bloomberg Data and Analytics](/power-query/connectors/bloomberg-data-and-analytics) | ✓/− |  |  |
 | [BQE CORE](/power-query/connectors/bqecore) | ✓/− |  |  |
 | [BuildingConnected & Trade Tapp](/power-query/connectors/buildingconnected) | ✓/− |  |  |
+| [Cassandra](connector-cassandra-overview.md) | | ✓/− |  |
 | [CData Connect Cloud](/power-query/connectors/cdata-connect-cloud) | ✓/− |  |  |
 | [Celonis EMS](/power-query/connectors/celonis-ems)  | ✓/− |  |  |
 | Cherwell (Beta) | ✓/− |  |  |
