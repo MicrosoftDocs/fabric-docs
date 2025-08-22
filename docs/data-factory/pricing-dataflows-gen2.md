@@ -82,7 +82,7 @@ These exercises show you how to validate costs for both CI/CD and non CI/CD Data
 
 ### Exercise 1: Understanding standard Compute for a CI/CD Dataflow
 
-:::image type="content" source="media/pricing-dataflows-gen2/dataflow-gen2-query-editor.png" alt-text="Dataflow Gen2 with two queries.":::
+:::image type="content" source="media/pricing-dataflows-gen2/dataflow-gen2-query-details.png" alt-text="Dataflow Gen2 with two queries.":::
 
 This dataflow has two queries involving transformation, and staging is disabled. 
 
@@ -125,13 +125,12 @@ If your dataflow uses staging, to find out how much High Scale compute you used,
 
 <code>HighScaleComputeCapacityConsumptionInCUSeconds = QueryDurationInSeconds x 6 </code>
 
-### Exercise 3: Understanding Fast Copy Compute Consumption (both CI/CD and non CI/CD Dataflows)
+### Exercise 4: Understanding Fast Copy Compute Consumption (both CI/CD and non CI/CD Dataflows)
 
 If your dataflow uses fast copy, to find out how much Data Movement compute you used, open the Fabric Capacity Metrics App and filter by your Dataflow’s name. Right-click the name, look for Data Movement in the list of operations, and check the duration.
 
 <code>HighScaleComputeCapacityConsumptionInCUSeconds = QueryDurationInSeconds x 1.5 </code>
 
-###
 
 ## Related content
 
