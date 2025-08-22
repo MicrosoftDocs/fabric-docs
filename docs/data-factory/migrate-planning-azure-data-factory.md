@@ -97,7 +97,7 @@ Change Data Capture (CDC) in ADF is a preview feature that makes it easy to move
 
 ### Azure Synapse Link
 
-Although not available in ADF, Synapse pipeline users frequently utilize Azure Synapse Link to replicate data from SQL databases to their data lake in turnkey approach. In Fabric, you recreate the Azure Synapse Link artifacts as Mirroring items in your workspace. For more information, see on Fabric [database mirroring](../database/mirrored-database/overview.md).
+Although not available in ADF, Synapse pipeline users frequently utilize Azure Synapse Link to replicate data from SQL databases to their data lake in turnkey approach. In Fabric, you recreate the Azure Synapse Link artifacts as Mirroring items in your workspace. For more information, see on Fabric [database mirroring](../mirroring/overview.md).
 
 ### SQL Server Integration Services (SSIS)
 
