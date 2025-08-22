@@ -579,6 +579,8 @@ items:
       href: eventhouse-deploy-with-fabric-api.md
     - name: Manage and monitor an eventhouse
       href: manage-monitor-eventhouse.md
+    - name: Query cold data with hot windows
+      href: query-cold-data-hot-windows.md
   - name: KQL Database
     items:
     - name: Create a KQL database
@@ -629,6 +631,10 @@ items:
           href: query-acceleration-overview.md
         - name: Accelerate queries over OneLake shortcuts
           href: query-acceleration.md
+      - name: External tools
+        items: 
+        - name: Query Fabric OneLake Delta tables from Snowflake
+          href: query-onelake-from-snowflake.md
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
     href: real-time-intelligence-consumption.md
@@ -636,71 +642,86 @@ items:
     href: eventhouse-compute-observability.md
 - name: Model data
   items:
-  - name: Get started with digital twin builder
+  - name: Digital twin builder
     items:
-    - name: What is digital twin builder?
-      href: digital-twin-builder/overview.md
-    - name: Digital twin builder tutorial
+    - name: Get started with digital twin builder
       items:
-      - name: Tutorial introduction
-        href: digital-twin-builder/tutorial-0-introduction.md
-      - name: 1- Set up resources
-        href: digital-twin-builder/tutorial-1-set-up-resources.md
-      - name: 2- Add entity types and map data
-        href: digital-twin-builder/tutorial-2-add-entities-map-data.md
-      - name: 3- Define relationship types
-        href: digital-twin-builder/tutorial-3-define-relationships.md
-      - name: 4- Explore your ontology
-        href: digital-twin-builder/tutorial-4-explore-ontology.md
-      - name: 5- Create a Power BI report
-        href: digital-twin-builder/tutorial-5-power-bi-report.md
-      - name: 6- Clean up resources
-        href: digital-twin-builder/tutorial-6-clean-up-resources.md
-    - name: Role-based access control
-      href: digital-twin-builder/overview-rbac.md
-  - name: Concepts
+      - name: What is digital twin builder?
+        href: digital-twin-builder/overview.md
+      - name: Digital twin builder tutorial
+        items:
+        - name: Tutorial introduction
+          href: digital-twin-builder/tutorial-0-introduction.md
+        - name: 1- Set up resources
+          href: digital-twin-builder/tutorial-1-set-up-resources.md
+        - name: 2- Add entity types and map data
+          href: digital-twin-builder/tutorial-2-add-entities-map-data.md
+        - name: 3- Define relationship types
+          href: digital-twin-builder/tutorial-3-define-relationships.md
+        - name: 4- Explore your ontology
+          href: digital-twin-builder/tutorial-4-explore-ontology.md
+        - name: 5- Create a Power BI report
+          href: digital-twin-builder/tutorial-5-power-bi-report.md
+        - name: 6- Clean up resources
+          href: digital-twin-builder/tutorial-6-clean-up-resources.md
+      - name: Role-based access control
+        href: digital-twin-builder/overview-rbac.md
+    - name: Concepts
+      items:
+      - name: Using the semantic canvas
+        href: digital-twin-builder/concept-semantic-canvas.md
+      - name: Modeling
+        href: digital-twin-builder/concept-modeling.md
+      - name: Mapping data to entity types
+        href: digital-twin-builder/concept-mapping.md
+      - name: Flows
+        href: digital-twin-builder/concept-flows.md
+      - name: Integrating with Fabric tools
+        href: digital-twin-builder/concept-integrating-fabric.md
+      - name: Integrating with machine learning
+        href: digital-twin-builder/concept-integrating-machine-learning.md
+    - name: Build and explore models
+      items:
+      - name: Manage entity types and mappings
+        href: digital-twin-builder/model-manage-mappings.md
+      - name: Perform contextualization
+        href: digital-twin-builder/model-perform-contextualization.md
+      - name: Search and visualize
+        href: digital-twin-builder/explore-search-visualize.md
+      - name: Connect to a Real-Time Dashboard
+        href: digital-twin-builder/explore-connect-dashboard.md
+    - name: Digital twin builder resources
+      items:
+      - name: Glossary
+        href: digital-twin-builder/resources-glossary.md
+      - name: Troubleshooting
+        href: digital-twin-builder/resources-troubleshooting.md
+      - name: Capacity usage
+        href: digital-twin-builder/resources-capacity-usage.md
+      - name: FAQ
+        href: digital-twin-builder/resources-faq.md
+      - name: Digital twin builder REST API
+        href: /rest/api/fabric/digitaltwinbuilder/items
+      - name: Digital twin builder flow REST API
+        href: /rest/api/fabric/digitaltwinbuilderflow/items
+  - name: Event schema sets
     items:
-    - name: Using the semantic canvas
-      href: digital-twin-builder/concept-semantic-canvas.md
-    - name: Modeling
-      href: digital-twin-builder/concept-modeling.md
-    - name: Mapping data to entity types
-      href: digital-twin-builder/concept-mapping.md
-    - name: Flows
-      href: digital-twin-builder/concept-flows.md
-    - name: Integrating with Fabric tools
-      href: digital-twin-builder/concept-integrating-fabric.md
-    - name: Integrating with machine learning
-      href: digital-twin-builder/concept-integrating-machine-learning.md
-  - name: Build and explore models
-    items:
-    - name: Manage entity types and mappings
-      href: digital-twin-builder/model-manage-mappings.md
-    - name: Perform contextualization
-      href: digital-twin-builder/model-perform-contextualization.md
-    - name: Search and visualize
-      href: digital-twin-builder/explore-search-visualize.md
-    - name: Connect to a Real-Time Dashboard
-      href: digital-twin-builder/explore-connect-dashboard.md
-  - name: Digital twin builder resources
-    items:
-    - name: Glossary
-      href: digital-twin-builder/resources-glossary.md
-    - name: Troubleshooting
-      href: digital-twin-builder/resources-troubleshooting.md
-    - name: Capacity usage
-      href: digital-twin-builder/resources-capacity-usage.md
-    - name: FAQ
-      href: digital-twin-builder/resources-faq.md
-    - name: Digital twin builder REST API
-      href: /rest/api/fabric/digitaltwinbuilder/items
-    - name: Digital twin builder flow REST API
-      href: /rest/api/fabric/digitaltwinbuilderflow/items
+    - name: Schema Registry in Real-Time hub
+      href: schema-sets/schema-registry-overview.md
+    - name: Create and manage event schema sets
+      href: schema-sets/create-manage-event-schema-sets.md
+    - name: Create and manage schemas in schema sets
+      href: schema-sets/create-manage-event-schemas.md
+    - name: Create and manage schemas in Real-Time hub
+      href: schema-sets/create-manage-event-schemas-real-time-hub.md
+    - name: Use schemas in eventstreams
+      href: schema-sets/use-event-schemas.md
+    - name: Known limitations
+      href: schema-sets/schema-registry-limitations.md      
 - name: Analyze and train data
   items:
   - name: Copilot for Writing KQL Queries
-    displayName: KQL queryset, kusto query language, natural language
-    href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
+    href: copilot-writing-queries.md
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
@@ -751,7 +772,7 @@ items:
   - name: Real-Time Dashboards
     items:
     - name: Generate Real-Time Dashboard Using Copilot
-      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
+      href: copilot-generate-dashboard.md      
     - name: Create a Real-Time Dashboard
       href: dashboard-real-time-create.md
     - name: Real-Time Dashboard permissions
@@ -831,12 +852,6 @@ items:
       href: data-activator/activator-trigger-power-automate-flows.md
   - name: Troubleshoot errors
     href: data-activator/activator-troubleshooting.md
-- name: Analyze data with Copilot
-  items:
-    - name: Copilot for Writing KQL Queries
-      href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Generate Real-Time Dashboard Using Copilot
-      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
 - name: Monitor
   items:
     - name: Eventhouse monitoring
@@ -860,11 +875,12 @@ items:
       href: mcp-eventhouse.md
 - name: Migrate
   items:
-  - name: From Azure Synapse Data Explorer
+  - name: Migrate from Azure Data Explorer
+    href: migrate-azure-data-explorer.md
+  - name: Migrate from Azure Synapse Data Explorer
     href: migrate-synapse-data-explorer.md
-  - name: API endpoints
-    items:
-    - name: Validate migration
+    items: 
+    - name: Validate migration using REST API endpoints
       href: migrate-api-validate-synapse-data-explorer.md
     - name: Migrate to Eventhouse
       href: migrate-api-to-eventhouse.md

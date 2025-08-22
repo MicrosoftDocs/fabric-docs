@@ -1,5 +1,5 @@
 ---
-title: Workspace Roles
+title: Workspace Roles in Fabric Data Warehouse
 description: Learn about the roles you can use to manage user access within a workspace.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -8,7 +8,7 @@ ms.date: 06/26/2025
 ms.topic: conceptual
 ms.search.form: Warehouse roles and permissions, Workspace roles and permissions # This article's title should not change. If so, contact engineering.
 ---
-# Workspace roles in Fabric data warehousing
+# Workspace roles in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
