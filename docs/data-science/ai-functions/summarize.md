@@ -108,7 +108,7 @@ display(df)
 
 ---
 
-## Use `ai.summarize` with PySpark
+## Use ai.summarize with PySpark
 
 The `ai.summarize` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). If you specify the name of an existing input column as a parameter, the function summarizes each value from that column alone. Otherwise, the function summarizes values across all columns of the DataFrame, row by row.
 
