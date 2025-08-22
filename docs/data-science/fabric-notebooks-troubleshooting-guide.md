@@ -168,7 +168,7 @@ Network connectivity drops before changes are saved, or the session timed out.
 1. _Save a copy_: Duplicate the notebook to avoid losing unsaved changes.
 1. _Turn on AutoSave_: AutoSave is on by default. Check under the **Edit** menu to ensure that it hasn’t been disabled so your changes are saved automatically at regular intervals.
   
-  :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/autosave.png" alt-text="Screenshot showing the AutoSave button on the Edit menu of the Fabric user interface.":::
+   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/autosave.png" alt-text="Screenshot showing the AutoSave button on the Edit menu of the Fabric user interface.":::
 
 1. _Create a checkpoint_: If changes were saved before the failure, use the **Version history** feature in the Microsoft Fabric Notebook to manually save a snapshot of the notebook.
   - Select the **History** button at the top right:
