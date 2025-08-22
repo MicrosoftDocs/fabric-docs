@@ -59,13 +59,11 @@ The items that you can create and access appear on Home. If your Home canvas get
 
 ### Use the navigation pane
 
-Along the left side is a narrow vertical bar, referred to as the ***nav pane***. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items.
+Along the left side is a narrow vertical bar, referred to as the ***nav pane***. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly.
 
 :::image type="content" source="media/fabric-home/fabric-left-nav-panes.png" alt-text="Screenshot of the nav pane for Data factory.":::
 
-In the bottom section of the nav pane is where your active workspaces and items are listed. In this example, our active items are: an Activator, the *Retail sales* workspace, and a KQL database. Select any of these items to display them on your canvas. To open other workspaces, use the [workspace selector](#find-and-open-workspaces) to view a list of your workspaces and select one to open on your canvas. To open other items, select them from the nav pane buttons.
-
-The nav pane is there when you open Home and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)].
+In the bottom section of the nav pane is where your active workspaces and items are listed. In this example, our active items are: an Activator, the *Retail sales* workspace, and a KQL database. Select any of these items to display them on your canvas, they are also displayed in the [object explorer](#object-explorer). To open other workspaces, use the [workspace selector](#find-and-open-workspaces) to view a list of your workspaces and select one to open on your canvas.
 
 #### Add and remove buttons from the nav pane
 
@@ -126,6 +124,9 @@ The tabbed navigation allows you to work with multiple items and workspaces at t
 ### Tabs for open items
 
 When you create or open an item, it appears in a tab horizontally across the top of the Fabric portal and shows the item name, icon for the item type (for example, notebook, pipeline, semantic model etc.). You can hover over the tab to view the workspace it's created in. You can drag a tab to the required position. Tabs make it easier to identify and switch between open items without losing focus.
+
+> [!NOTE]
+> The tabbed navigation is available only in Fabric view and not in Power BI view i.e When you switch to the PowerBI view from the left nav switcher, the tabbed experience is not available.
 
 ### Multiple open workspaces
 
