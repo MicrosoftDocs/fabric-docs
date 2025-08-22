@@ -82,9 +82,11 @@ These exercises show you how to validate costs for both CI/CD and non CI/CD Data
 
 ### Exercise 1: Understanding standard Compute for a CI/CD Dataflow
 
+The following dataflow has two queries involving transformation, and staging is disabled. 
+
 :::image type="content" source="media/pricing-dataflows-gen2/dataflows-query-details.png" alt-text="Dataflow Gen2 with two queries.":::
 
-This dataflow has two queries involving transformation, and staging is disabled. 
+
 
 :::image type="content" source="media/pricing-dataflows-gen2/staging-disabled.png" alt-text="Dataflow Gen2 with Staging Disabled.":::
 
