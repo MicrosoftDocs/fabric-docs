@@ -64,7 +64,7 @@ The following example defines a materialized lake view called `customers_enriche
 
 ```sql
 CREATE MATERIALIZED LAKE VIEW IF NOT EXISTS silver.customers_enriched 
-COMMENT "This is a sample materialized view" 
+COMMENT "This is a sample materialized lake view" 
 PARTITIONED BY (city)
 AS SELECT 
      c.customerID, 

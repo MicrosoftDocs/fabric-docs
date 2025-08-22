@@ -23,33 +23,6 @@ Materialized lake views in Microsoft Fabric facilitate the implementation of a m
 
   This feature offers an integrated report that highlights data quality trends. You can also configure alerts based on any condition related to violations of a data quality rule.
 
-## Regional availability
-
-This feature is currently available in:
-
-* Australia East, Australia Southeast
-* Brazil South
-* Canada Central, Canada East
-* Central India
-* Central US, East US, East US 2, West US, West US 2, West US 3
-* East Asia, Southeast Asia
-* France Central
-* Germany West Central
-* Israel Central
-* Italy North
-* Japan East, Japan West
-* Korea Central
-* Mexico Central
-* North Europe, West Europe Capacity Regions
-* Norway East
-* Poland Central
-* South Africa North
-* Spain Central
-* Sweden Central
-* Switzerland North, Switzerland West
-* UAE North
-* UK South, UK West
-
 ## Current limitations
 
 The following features are currently not available for materialized lake views in Microsoft Fabric:
