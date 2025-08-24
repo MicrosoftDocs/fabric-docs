@@ -85,13 +85,13 @@ The following table showcases the currently supported parameter types and the li
 
  
 ## Considerations and limitations
+The following is a list of all considerations and limitations when using the public parameteres mode in Dataflow Gen2 with CI/CD:
 
-* **Dataflows with the public parameters mode enabled cannot be scheduled for run through the Fabric scheduler.** The only exception is a dataflow with no required parameters set.
-* **Dataflows with the public parameters mode enabled cannot be manually triggered through the Fabric Workspace list or lineage view.** The only exception is a dataflow with no required parameters set.
-* **Parameters that affect the resource path of a data source or a destination are not supported.** Connections are linked to the exact data source path defined in the authored dataflow and can't be currently override to use other connections or resource paths.
-* **Dataflows with incremental refresh can't leverage this new mode.**
-* **The public parameters mode allows users to modify the logic defined within the Dataflow by overriding the parameter values.** It  would allow others who have permissions to the dataflow to run the data with other values, resulting in different outputs from the data sources used in the dataflow.
-* **Monitoring hub does not display information about the parameters passed during the invocation of the dataflow.**
-* **Staged queries will only keep the last data run of a Dataflow stored in the Staging Lakehouse.** Users are able to look at the data from the Staging Lakehouse using the Dataflows connector to determine what was data is stored. Defining data destinations when using the public parameters mode is highly encouraged.
-* **When submitting a duplicated request for the same parameter values, only the first request will be accepted and subsequent will be rejected until the first request finishes its evaluation.**
-* **In the context of data destinations, parameters cannot be used to change the mapping schema.** The Dataflow run applies all mappings and data destination settings that are saved by the Dataflow during the authoring stage. Check out the article for more information on [data destinations and managed settings in Dataflow Gen2](dataflow-gen2-data-destinations-and-managed-settings.md).
+* **Scheduling & manual triggering**: Dataflows with public parameters can't be scheduled or manually triggered via Fabric, unless no required parameters are set.
+* **Unsupported parameterization**: Parameters that alter resource paths for sources or destinations aren't supported. Connections are fixed to the authored path.
+* **Incremental refresh**: Not compatible with public parameters mode.
+* **Logic Modification**: Public parameters allow users with access to override values, potentially changing the dataflow output.
+* **Monitoring Hub**: The Monitoring Hub doesn't show parameter values used during execution.
+* **Staging behavior**: Only the latest run is stored in the Staging Lakehouse. Use defined destinations to retain data.
+* **Duplicate Requests**: If the same parameter values are submitted multiple times, only the first request is accepted until it completes.
+* **Schema Mapping**: Parameters can't modify destination schema mappings. All mappings follow the authored configuration. Check out the article for more information on [data destinations and managed settings in Dataflow Gen2](dataflow-gen2-data-destinations-and-managed-settings.md).
