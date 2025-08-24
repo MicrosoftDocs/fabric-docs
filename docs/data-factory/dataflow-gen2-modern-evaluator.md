@@ -17,7 +17,7 @@ The Modern Query Evaluation Engine (also known as the "Modern Evaluator") is a n
 
 Some of the key benefits are:
 
-* **Faster dataflow execution**: The modern engine can substantially reduce query evaluation time. Many dataflows run noticeably faster (often up to 40–50% quicker in internal tests), enabling you to refresh data more frequently or meet tight refresh windows.
+* **Faster dataflow execution**: The modern engine can substantially reduce query evaluation time. Many dataflows run noticeably faster, enabling you to refresh data more frequently or meet tight refresh windows.
 * **More efficient processing**: The engine is optimized for efficiency, using improved algorithms and a modern runtime. This means it can handle complex transformations with less overhead, which helps maintain performance as your data volume grows.
 * **Scalability and reliability**: By speeding up execution and reducing bottlenecks, the Modern Evaluator helps dataflows scale to larger volumes with greater stability. Customers can expect more consistent refresh durations and fewer timeout issues on large dataflows when using the new engine.
 
