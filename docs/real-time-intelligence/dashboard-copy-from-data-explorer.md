@@ -16,7 +16,7 @@ ms.search.form:
 #CustomerIntent: As a data analyst or BI professional, I want to copy my existing Azure Data Explorer dashboards to Fabric Real-Time Dashboards so that I can leverage Fabric's enhanced features while keeping my data in place.
 ---
 
-# Save an Azure Data Explorer dashboard in Fabric RTI
+# Copy an Azure Data Explorer dashboard to Fabric RTI
 
 This article guides you through replicating your existing Azure Data Explorer (ADX) dashboards as Real-Time Dashboards in Microsoft Fabric. You'll learn how to copy your dashboards while keeping your data in its current location.
 
