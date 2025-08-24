@@ -13,9 +13,9 @@ ms.custom: dataflows
 >[!NOTE]
 >Preview only step is currently in preview. 
 
-Preview only steps are transformation steps in Dataflow Gen2 that are executed only during the authoring phase. They are excluded from run operations, ensuring they do not affect runtime behavior or production logic. 
+Preview only steps are transformation steps in Dataflow Gen2 that are executed only during the authoring phase for the data preview. They're excluded from run operations, ensuring they don't affect runtime behavior or production logic. 
 
-They are designed to accelerate the authoring experience by reducing evaluation time in the data preview pane. They allow you to iterate and validate transformations more quickly without impacting the final execution of the dataflow.
+They're designed to accelerate the authoring experience by reducing evaluation time in the data preview pane. They allow you to iterate and validate transformations more quickly without impacting the final execution of the dataflow.
 
 ## Set a preview only step
 
@@ -29,14 +29,13 @@ Once the option is selected, the step name is shown in italic style. To remove t
 
 ![Screenshot of the Power Query editor in Dataflow Gen2 with the contextual menu of a step showing the enable only in previews optin](media/dataflow-gen2-preview-only-step/enable-only-in-preview-option.png)
 
-
 ## Common transforms used as preview only steps
 
 * Filtering or isolating subsets of data for faster previews.
 * Testing logic without waiting for full dataset evaluation.
 * Exploring new data sources without impacting run integrity.
 
-## Pressence in dialogs
+## Presence in dialogs
 
 ### File system view connectors 
 
