@@ -37,7 +37,13 @@ Once the option is selected, the step name is shown in italic style. To remove t
 
 ## Common transforms used as preview only steps
 
+Preview only steps are especially useful for transformations that help streamline the authoring experience without affecting the final execution of the dataflow. Common examples include:
 
+* **Filtering rows**: Apply filters to reduce the volume of data shown in the preview pane, making it easier to focus on specific records during development.
+* **Column selection or removal**: Temporarily hide or remove columns that aren't needed during authoring to simplify the preview layout.
+* **Sorting data**: Sort rows to bring relevant records to the top for easier inspection.
+* **Grouping or aggregating**: Use grouping to collapse data into summary views that are faster to render in preview.
+* **Sample file filtering**: When working with a data source that list files available through the file-system view, limit the preview to a specific sample file or subset of files to reduce load time.
 
 ## Presence in dialogs
 
