@@ -73,15 +73,15 @@ The following table showcases the currently supported parameter types and the li
 
 |Dataflow parameter type| REST API definition|
 |----|---|
-|Text|[DataflowStringParameter](rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowStringParameter)|
-|Integer (int64)|[DataflowIntegerParameter](rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowIntegerParameter)|
-|Decimal number|[DataflowNumberParameter](rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowNumberParameter)|
-|Date|[DataflowDateParameter](rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowDateParameter)|
-|DateTime|[DataflowDateTimeParameter](rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowDateTimeParameter)|
-|Time|[DataflowTimeParameter](rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowTimeParameter)|
-|DateTimeZone|[DataflowDateTimeZoneParameter](rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowDateTimeZoneParameter)|
-|Duration|[DataflowDurationParameter](rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowDurationParameter)|
-|True/False|[DataflowBooleanParameter](rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowbooleanparameter)|
+|Text|[DataflowStringParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowStringParameter)|
+|Integer (int64)|[DataflowIntegerParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowIntegerParameter)|
+|Decimal number|[DataflowNumberParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowNumberParameter)|
+|Date|[DataflowDateParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowDateParameter)|
+|DateTime|[DataflowDateTimeParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowDateTimeParameter)|
+|Time|[DataflowTimeParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowTimeParameter)|
+|DateTimeZone|[DataflowDateTimeZoneParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowDateTimeZoneParameter)|
+|Duration|[DataflowDurationParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#DataflowDurationParameter)|
+|True/False|[DataflowBooleanParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowbooleanparameter)|
 
  
 ## Considerations and limitations
