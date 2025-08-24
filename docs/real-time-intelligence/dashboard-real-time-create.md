@@ -37,34 +37,41 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 
 ## Create a new dashboard
 
-There are several ways to create a new Real-Time dashboard:
+There are several ways to create a new Real-Time dashboard, select the tab that corresponds with your desired creation method.
 
-1. **Create a dashboard manually**:
-    [!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
-1. **Create a dashboard using Copilot**: See [Generate Real-Time Dashboard Using Copilot](../fundamentals/copilot-generate-dashboard.md)
-1. **Create a dashboard from queryset**:
-    1. [Open an existing KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-    1. [Write a query](kusto-query-set.md#write-a-query).
-    1. Select **Save to dashboard**.
-    1. In the **Pin query to dashboard** window, do the following:
+## [Manual](#tab/create-manual)
 
-        :::image type="content" source="media/real-time-dashboard/save-query-to-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
+[!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
 
-    1. Select create a new dashboard.
-    1. Name your dashboard tile.
-    1. Optionally, select **Open dashboard after tile creation** to view your dashboard immediately after creation.
-    1. Select **Create**.
-1. **Create a dashboard by replacing the file**:
-    Select the **Manage** tab, then choose **Replace with file**. Select the file you want to use to create a new dashboard, update an existing one, restore a previous version, or use a file received from another user.
+## [Copilot](#tab/create-copilot)
 
-    :::image type="content" source="media/real-time-dashboard/replace-file.png" alt-text="Screenshot of the Replace with file option.":::
+Copilot streamlines the creation of Real-Time Dashboards by automating the setup process, making it accessible even to users without advanced technical expertise. By using natural language input, you can describe the dashboard you want, and Copilot uses AI to generate it. Start by selecting a data table from the Real-Time Hub or a KQL Queryset. Copilot will then create a Real-Time Dashboard tailored to your specifications, including an insights page for a high-level summary and a data profile page for in-depth analysis.
 
-1. **Create a dashboard from ADX**:
+For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../fundamentals/copilot-generate-dashboard.md).
 
-## Edit mode
-If you aren't able to edit a dashboard, ensure that you are in the Editing mode.
+## [Queryset](#tab/create-queryset)
 
-:::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view." lightbox="media/real-time-dashboard/edit-mode.png":::
+1. [Open an existing KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
+1. [Write a query](kusto-query-set.md#write-a-query).
+1. Select **Save to dashboard**.
+1. In the **Pin query to dashboard** window, do the following:
+
+    :::image type="content" source="media/real-time-dashboard/save-query-to-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
+
+1. Select create a new dashboard.
+1. Name your dashboard tile.
+1. Optionally, select **Open dashboard after tile creation** to view your dashboard immediately after creation.
+1. Select **Create**.
+
+## [Replacing the file](#tab/replacing-file)
+
+Select the **Manage** tab, then choose **Replace with file**. Select the file you want to use to create a new dashboard, update an existing one, restore a previous version, or use a file received from another user.
+
+:::image type="content" source="media/real-time-dashboard/replace-file.png" alt-text="Screenshot of the Replace with file option.":::
+
+## [Create a dashboard from ADX](#tab/create-adx)
+
+----
 
 ## Add data source
 
@@ -132,6 +139,25 @@ Select the tab that corresponds with your desired data source type.
  A list of tables associated with this data source appears below the data source name.
 
 ----
+
+## Edit mode
+
+To switch to edit mode, select **Editing** in the top-right corner.
+
+:::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view." lightbox="media/real-time-dashboard/edit-mode.png":::
+
+Under the Home tab, you can perform the following actions:
+
+- [View queries](#view-query) to analyze the underlying data.
+- [Add tiles](#add-tile) to include new visualizations.
+- [Modify tiles](#edit-tile) to update queries or visuals.
+- Delete tiles or pages to reorganize your dashboard.
+
+:::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab" lightbox="media/real-time-dashboard/home-tab.png":::
+
+Under the Manage tab, you can manage data sources and parameters, as well as configure settings for [Auto refresh](#enable-auto-refresh).
+
+:::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab. lightbox="media/real-time-dashboard/manage-tab.png":::
 
 ## Add tile
 
