@@ -21,7 +21,9 @@
         "docs/data-factory/.openpublishing.redirection.data-factory.json",
         "docs/data-science/.openpublishing.redirection.data-science.json",        
         "docs/data-warehouse/.openpublishing.redirection.data-warehouse.json",
+        "docs/database/.openpublishing.redirection.database.json",
         "docs/database/sql/.openpublishing.redirection.sql-database.json",
+        "docs/database/mirrored-database/.openpublishing.redirection.database.json",
         "docs/enterprise/.openpublishing.redirection.enterprise.json",
         "docs/fundamentals/.openpublishing.redirection.fundamentals.json",
         "docs/onelake/.openpublishing.redirection.onelake.json",
@@ -92,3 +94,4 @@
   "skip_source_output_uploading": false,
   "need_generate_pdf_url_template": true
 }
+

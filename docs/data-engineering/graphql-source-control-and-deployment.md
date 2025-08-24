@@ -77,6 +77,12 @@ When you commit the API for GraphQL item to the Git repo, the API for GraphQL de
 
 :::image type="content" source="media\graphql-source-control-and-deployment\graphql-source-control-graphql-definition.png" alt-text="Screenshot of API for GraphQL definitions stored in Git.":::
 
+You can find more information about the GraphQL API definition format, syntax and examples on the Fabric control plane APIs documentation:
+
+* [GraphQL API definition](/rest/api/fabric/articles/item-management/definitions/graphql-api-definition)
+* [Create a GraphQLApi with public definition example](/rest/api/fabric/graphqlapi/items/create-graphqlapi?tabs=HTTP#create-a-graphqlapi-with-public-definition-example)
+
+
 ## API for GraphQL in deployment pipeline
 
 Use the following steps to complete your API for GraphQL deployment using the deployment pipeline.

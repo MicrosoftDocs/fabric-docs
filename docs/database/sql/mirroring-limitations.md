@@ -15,8 +15,8 @@ Current limitations in the [Fabric SQL database mirroring](mirroring-overview.md
 For troubleshooting, see:
 
 - [Troubleshoot mirroring from Fabric SQL database](mirroring-troubleshooting.md)
-- [Troubleshoot Fabric mirrored databases](../mirrored-database/troubleshooting.md)
-- [Troubleshoot Fabric mirrored databases from Azure SQL Database (preview)](../mirrored-database/azure-sql-database-troubleshoot.md)
+- [Troubleshoot Fabric mirrored databases](../../mirroring/troubleshooting.md)
+- [Troubleshoot Fabric mirrored databases from Azure SQL Database (preview)](../../mirroring/azure-sql-database-troubleshoot.md)
 
 For general limitations for SQL database in Microsoft Fabric, see [Limitations in SQL database in Microsoft Fabric (preview)](limitations.md).
 
