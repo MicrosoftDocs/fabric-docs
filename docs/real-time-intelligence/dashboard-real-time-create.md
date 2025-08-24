@@ -37,10 +37,29 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 
 ## Create a new dashboard
 
-[!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
+There are several ways to create a new Real-Time dashboard:
 
-> [!NOTE]
-> You can also use Copilot to help you write queries. For more information, see [Use Copilot in KQL Queryset](../fundamentals/copilot-for-writing-queries.md).
+1. **Create a dashboard manually**:
+    [!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
+1. **Create a dashboard using Copilot**: See [Generate Real-Time Dashboard Using Copilot](../fundamentals/copilot-generate-dashboard.md)
+1. **Create a dashboard from queryset**:
+    1. [Open an existing KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
+    1. [Write a query](kusto-query-set.md#write-a-query).
+    1. Select **Save to dashboard**.
+    1. In the **Pin query to dashboard** window, do the following:
+
+        :::image type="content" source="media/real-time-dashboard/save-query-to-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
+
+    1. Select create a new dashboard.
+    1. Name your dashboard tile.
+    1. Optionally, select **Open dashboard after tile creation** to view your dashboard immediately after creation.
+    1. Select **Create**.
+1. **Create a dashboard by replacing the file**:
+    Select the **Manage** tab, then choose **Replace with file**. Select the file you want to use to create a new dashboard, update an existing one, restore a previous version, or use a file received from another user.
+
+    :::image type="content" source="media/real-time-dashboard/replace-file.png" alt-text="Screenshot of the Replace with file option.":::
+
+1. **Create a dashboard from ADX**:
 
 ## Edit mode
 If you aren't able to edit a dashboard, ensure that you are in the Editing mode.
