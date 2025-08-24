@@ -56,7 +56,7 @@ For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../f
 1. Select **Save to dashboard**.
 1. In the **Pin query to dashboard** window, do the following:
 
-    :::image type="content" source="media/real-time-dashboard/save-query-to-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
+    :::image type="content" source="media/real-time-dashboard/save-query-to-dashboard.png" alt-text="Screenshot of the Save query to dashboard window.":::
 
 1. Select create a new dashboard.
 1. Name your dashboard tile.
@@ -144,7 +144,7 @@ Select the tab that corresponds with your desired data source type.
 
 To switch to edit mode, select **Editing** in the top-right corner.
 
-:::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view." lightbox="media/real-time-dashboard/edit-mode.png":::
+:::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view.":::
 
 Under the Home tab, you can perform the following actions:
 
@@ -153,11 +153,11 @@ Under the Home tab, you can perform the following actions:
 - [Modify tiles](#edit-tile) to update queries or visuals.
 - Delete tiles or pages to reorganize your dashboard.
 
-:::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab" lightbox="media/real-time-dashboard/home-tab.png":::
+:::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab.":::
 
 Under the Manage tab, you can manage data sources and parameters, as well as configure settings for [Auto refresh](#enable-auto-refresh).
 
-:::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab. lightbox="media/real-time-dashboard/manage-tab.png":::
+:::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab.":::
 
 ## Add tile
 
