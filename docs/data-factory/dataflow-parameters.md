@@ -47,16 +47,16 @@ The public parameter mode follows the definition of the parameters inside the da
 * **Required parameters**: if a parameter is set as required, in order to run the dataflow a value needs to be passed to the run job. The run fails if no value is passed for a parameter that is set to required.
 * **Non-required parameters**: these are also called ***optional*** parameters and no value is required to be passed for a run to be triggered. If no value is passed, the **Current value** defined within your parameter is used for run.
 
-### Use the Dataflow activity within Data Pipelines
+### Use the Dataflow activity within Pipelines
 
 >[!NOTE]
->We recommend reading more about the [dataflow activity from Fabric data pipelines](dataflow-activity.md) to understand all its capabilities. 
+>We recommend reading more about the [dataflow activity from Fabric pipelines](dataflow-activity.md) to understand all its capabilities. 
 
 When you create a pipeline in Fabric, you can use the dataflow activity to trigger the run of a Dataflow Gen2 with CI/CD support that has the public parameters mode enabled. 
 
 You can select the dataflow that you want to use and set the parameters that you want to use in the **Dataflow parameters** section.
 
-![Screenshot of the dataflow activity within Fabric Data pipelines that allows to pass parameters for Dataflow run.](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
+![Screenshot of the dataflow activity within Fabric pipelines that allows to pass parameters for Dataflow run.](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
 
 In the **Dataflow parameters** section, you're able to see all parameters available in your Dataflow and the default value from each inside the value section.
 
