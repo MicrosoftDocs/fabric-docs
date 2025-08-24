@@ -22,7 +22,7 @@ This article guides you through replicating your existing Azure Data Explorer (A
 
 Microsoft Fabric Real-Time Dashboards provide a modern alternative to Azure Data Explorer dashboards with enhanced features and better integration with the Fabric ecosystem. The process allows you to preserve your dashboard definition (including tile layout, queries, parameters, visualizations etc.) while gaining access to improved functionality.
 
-**Retain your data in place**
+##  Retain your data in place
 
 When you copy your ADX dashboard to Fabric RTI, your existing data architecture remains intact. Fabric connects directly to your Azure Data Explorer clusters, so you don't need to move your data.
 
