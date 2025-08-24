@@ -52,7 +52,7 @@ Follow these steps to re-create your existing Azure Data Explorer dashboards to 
 1. Select **Save a copy to Fabric**. You can find this option in many places, including the dashboard's file menu or the top-right corner of the dashboard interface. In the dialog, select **Save a copy to Fabric** again.
     :::image type="content" source="media/real-time-dashboard/copy-from-fabric.png" alt-text="Screenshot of the Save a copy to Fabric option in the Azure Data Explorer dashboard.":::
 1. The copy process begins, and a new Fabric tab opens where you are prompted to create a copy of the dashboard. Keep or modify the dashboard name, decide on the current or another workspace, and select **Create**.
-    :::image type="content" source="media/real-time-dashboard/copy-to-fabric-create.png" alt-text="Screenshot of the dialog to create a copy of the dashboard in Fabric.":::
+    :::image type="content" source="media/real-time-dashboard/copy-from-fabric-create.png" alt-text="Screenshot of the dialog to create a copy of the dashboard in Fabric.":::
 1. You can now explore the dashboard tiles in Fabric. Each tile corresponds to a query from the original ADX dashboard.
 1. If you want to share the dashboard with others, configure the appropriate permissions in Fabric. 
 
