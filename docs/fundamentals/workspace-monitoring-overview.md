@@ -38,7 +38,7 @@ After you install [workspace monitoring](enable-workspace-monitoring.md), you ca
     * [Query logs](../real-time-intelligence/monitor-logs-query.md)
 
 * Mirrored database
-    * [Mirrored database logs](../database/mirrored-database/monitor-logs.md)
+    * [Mirrored database logs](../mirroring/monitor-logs.md)
 
 * Power BI
     * [Semantic models](/power-bi/enterprise/semantic-model-operations)

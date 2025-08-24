@@ -21,6 +21,9 @@ items:
   - name: Data Warehouse
     tocHref: /fabric/data-warehouse/
     topicHref: /fabric/data-warehouse/index
+  - name: Mirroring
+    tocHref: /fabric/mirroring/
+    topicHref: /fabric/mirroring/index
   - name: OneLake
     tocHref: /fabric/onelake/
     topicHref: /fabric/onelake/index

@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/23/2025
+ms.date: 08/22/2025
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 # customer intent: As a developer, I want to understand how the Microsoft Fabric deployment pipelines process works so that I can use it effectively.
 ---
@@ -265,6 +265,8 @@ During deployment, the following item properties are copied and overwrite the it
 
   * The source item has a label with protection and the target item doesn't. In this case, a pop-up window asks for consent to override the target sensitivity label.
 
+    See also [Data loss prevention (DLP) considerations](#data-loss-prevention-dlp-considerations).
+
 ### Item properties that are not copied
 
 The following item properties aren't copied during deployment:
@@ -470,6 +472,14 @@ The following table lists required permissions for popular deployment pipeline a
 
 This section lists most of the limitations in deployment pipelines.
 
+* [General considerations and limitations](#general-considerations-and-limitations)
+* [Semantic model limitations](#semantic-model-limitations)
+* [Dataflow limitations](#dataflow-limitations)
+* [Datamart limitations](#datamart-limitations)
+* [Data loss prevention (DLP) considerations](#data-loss-prevention-dlp-considerations)
+
+### General considerations and limitations
+
 * The workspace must reside on a [Fabric capacity](../../enterprise/licenses.md#capacity).
 * The maximum number of items that can be deployed in a single deployment is 300.
 * Downloading a *.pbix* file after deployment isn't supported.
@@ -522,6 +532,10 @@ This section lists most of the limitations in deployment pipelines.
 * You can't deploy a datamart with sensitivity labels.
 
 * You need to be the datamart owner to deploy a datamart.
+
+### Data loss prevention (DLP) considerations
+
+After deploying an item to a new stage, if you see a DLP policy tip indication on the item, try refreshing the item to see whether the indication disappears before investigating further. Because DLP runs as soon as an item is copied, possibly before other processes that bring in data or metadata (such as a default sensitivity label) have completed, DLP might have run on the item prematurely, resulting in the misapplication of the policy tip indication. Refreshing the item should cause the policy tip indication to go away.
 
 ## Related content
 
