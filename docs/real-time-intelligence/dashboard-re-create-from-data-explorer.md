@@ -1,6 +1,6 @@
 ---
-title: Re-create a Real-Time Dashboard from your Azure Data Explorer dashboards.
-description: Learn how to migrate your Azure Data Explorer dashboards to Fabric Real-Time Dashboards while keeping your data in place.
+title: Copy an Azure Data Explorer dashboard to Fabric.
+description: Learn how to copy your Azure Data Explorer dashboard and save it as a Fabric Real-Time Dashboards while keeping your data in place.
 ms.reviewer: mbar
 author: spelluru
 ms.author: spelluru
@@ -13,20 +13,20 @@ ms.search.form:
   - Dashboard
   - ADX
 
-#CustomerIntent: As a data analyst or BI professional, I want to migrate my existing Azure Data Explorer dashboards to Fabric Real-Time Dashboards so that I can leverage Fabric's enhanced features while keeping my data in place.
+#CustomerIntent: As a data analyst or BI professional, I want to copy my existing Azure Data Explorer dashboards to Fabric Real-Time Dashboards so that I can leverage Fabric's enhanced features while keeping my data in place.
 ---
 
-# Re-create Azure Data Explorer dashboards as Fabric Real-Time Dashboards
+# Save an Azure Data Explorer dashboard in Fabric RTI
 
-This article guides you through replicating your existing Azure Data Explorer (ADX) dashboards as Real-Time Dashboards in Microsoft Fabric. You'll learn how to re-create your dashboards while keeping your data in its current location.
+This article guides you through replicating your existing Azure Data Explorer (ADX) dashboards as Real-Time Dashboards in Microsoft Fabric. You'll learn how to copy your dashboards while keeping your data in its current location.
 
 Microsoft Fabric Real-Time Dashboards provide a modern alternative to Azure Data Explorer dashboards with enhanced features and better integration with the Fabric ecosystem. The process allows you to preserve your existing queries and visualizations while gaining access to improved functionality.
 
 :::image type="content" source="media/real-time-dashboard/example-dashboard.png" alt-text="Screenshot of a Fabric Real-Time Intelligence dashboard displaying multiple tiles.":::
 
-## Why re-create your ADX dashboards in Fabric?
+## Why copy your ADX dashboards to Fabric?
 
-Your organization might have multiple ADX dashboards that are used frequently to analyze and visualize critical data. 
+Your organization might have multiple ADX dashboards that are used frequently to analyze and visualize critical data. Moving these dashboards to Fabric Real-Time Dashboards can enhance collaboration, improve data governance, and provide a more seamless experience within the Fabric environment.
 
 The benefits of moving these dashboards to Fabric include:
 
@@ -42,49 +42,19 @@ The benefits of moving these dashboards to Fabric include:
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [Azure Data Explorer cluster](/azure/data-explorer/create-cluster-database-portal)
+* Verify your Azure Data Explorer cluster is accessible from Fabric and authentication is configured correctly.
 
-## How to re-create your dashboards
+## How to copy the ADX dashboard to Fabric
 
 Follow these steps to re-create your existing Azure Data Explorer dashboards to Fabric Real-Time Dashboards:
 
-<!-- These steps will be automated.....remove or change when dev is ready. Also, add a link to this topic from ADX dashboard docs -->
-
-### Step 1: Export your ADX dashboard
-
 1. In the Azure Data Explorer web UI, navigate to your existing dashboard.
-1. Select **Export** from the dashboard toolbar.
-1. Choose **Export as JSON** to download the dashboard configuration.
-1. Save the JSON file to a location where you can easily access it later.
-
-### Step 2: Create a new Real-Time Dashboard
-
-1. In the Fabric portal, navigate to your workspace.
-1. Select **+ New** and then choose **Real-Time Dashboard**.
-1. Enter a name for your new dashboard that clearly identifies it as the migrated version.
-1. Select **Create** to create an empty Real-Time Dashboard.
-
-### Step 3: Import your dashboard configuration
-
-1. In the Real-Time Dashboard editor, select **Import**.
-1. Upload the JSON file you exported from Azure Data Explorer.
-1. Review the import preview to verify that all tiles and queries are recognized.
-1. Address any compatibility issues or missing elements that are flagged during import.
-1. Select **Import** to complete the process.
-
-### Step 4: Validate and customize your dashboard
-
-1. Review each tile to ensure data is displaying correctly.
-1. Adjust visualizations as needed to take advantage of Real-Time Dashboard features.
-1. Update any queries that may need modification for optimal performance.
-1. Configure tile layouts and sizing to optimize the dashboard appearance.
-
-### Step 5: Configure permissions and sharing
-
-1. Set permissions for the Real-Time Dashboard:
-   - Navigate to **Settings** > **Permissions**
-   - Add users or groups with appropriate access levels
-1. Configure data source permissions separately if needed.
-1. Test access with different user roles to ensure permissions are working correctly.
+1. Select **Save a copy to Fabric**. You can find this option in many places, including the dashboard's file menu or the top-right corner of the dashboard interface. In the dialog, select **Save a copy to Fabric** again.
+    :::image type="content" source="media/real-time-dashboard/copy-from-fabric.png" alt-text="Screenshot of the Save a copy to Fabric option in the Azure Data Explorer dashboard.":::
+1. The copy process begins, and a new Fabric tab opens where you are prompted to create a copy of the dashboard. Keep or modify the dashboard name, decide on the current or another workspace, and select **Create**.
+    :::image type="content" source="media/real-time-dashboard/copy-to-fabric-create.png" alt-text="Screenshot of the dialog to create a copy of the dashboard in Fabric.":::
+1. You can now explore the dashboard tiles in Fabric. Each tile corresponds to a query from the original ADX dashboard.
+1. If you want to share the dashboard with others, configure the appropriate permissions in Fabric. 
 
 ## Troubleshooting common issues
 
