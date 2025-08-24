@@ -49,7 +49,7 @@ The Modern Query Evaluation Engine supports a limited set of data connectors. En
 * [Power Platform Dataflows](connector-dataflows-overview.md) 
 * [SharePoint Online List](connector-sharepoint-online-list-overview.md)
 * [SharePoint folder](connector-sharepoint-folder-overview.md)
-* Web
+* [Web](connector-web-overview.md)
 
 If a dataflow uses connectors not in this list, those queries continue to run with the standard (legacy) engine. Support for more connectors will expand over time as the feature moves toward general availability.
 
