@@ -47,6 +47,19 @@ Preview only steps are especially useful for transformations that help streamlin
 
 ## Presence in dialogs
 
-### File system view connectors 
+Some dialogs in Dataflow Gen2 have experiences that can automatically add preview only steps to expedite the preview evaluation. The current dialogs that offer these experiences are:
+
+* [File system view](#file-system-view)
+* [Combine files experience](#combine-files-experience)
+
+### File system view 
+
+When you connect data sources that display files—such as SharePoint folder, Folder, Azure Data Lake Gen2, or Azure Blob Storage—a gear icon appears in the top-right corner of the dialog. You can select this icon to define which files to include in the data preview.
+
+![Screenshot of the file system view experience showing a gear icon on the top right to select the logic for the preview only step](media/dataflow-gen2-preview-only-step/file-system-view-experience.png)
 
 ### Combine files experience
+
+Similar to the file system view experience, a gear icon appears in the top-right corner of the Combine files dialog. You can use it to define preview-only logic for the sample file, which influences how data is previewed across all combined files.
+
+![Screenshot of the combine files experience showing a gear icon on the top right to select the logic for the preview only step](media/dataflow-gen2-preview-only-step/combine-files-experience.png)
