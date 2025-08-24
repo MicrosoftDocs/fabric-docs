@@ -113,6 +113,8 @@ Select the tab that corresponds with your desired data source type.
 
  A list of tables associated with this data source appears below the data source name.
 
+----
+
 ## Add tile
 
 Dashboard tiles use Kusto Query Language (KQL) queries to fetch data and generate visuals. Each tile or query is designed to support a single visual representation.
