@@ -105,7 +105,6 @@ Select the tab that corresponds with your desired data source type.
 
 1. Select a **Database**. Expand the list and select a database.
 
-    :::image type="content" source="media/real-time-dashboard/new-data-source.png" alt-text="Screenshot of adding a new data source to a Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric.":::
 1. In the **Connect Azure Data Explorer cluster** window, follow these steps:
     1. Enter the **Connection URI** for your Azure Data Explorer cluster.
     1. Select a **database** in the cluster.
