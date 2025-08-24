@@ -48,22 +48,20 @@ Select the **Settings** tab, then select an existing workspace and dataflow to r
 
    :::image type="content" source="media/dataflow-activity/select-a-dataflow.png" alt-text="Screenshot showing the dropdown with a list of dataflows to select in the Dataflow activity Settings tab":::
 
-The notification option is not currently available.
+The notification option isn't currently available.
 
-When selecting a [Dataflow Gen2 with CI/CD that has the public parameters mode enabled](dataflow-parameters.md), a Dataflow parameters section will be displayed which lists all the available parameteres, their types and default values for the selected Dataflow.
+When selecting a [Dataflow Gen2 with CI/CD that has the public parameters mode enabled](dataflow-parameters.md), a Dataflow parameters section is displayed which lists all the available parameters, their types, and default values for the selected Dataflow.
 
    :::image type="content" source="media/dataflow-activity/dataflow-settings.png" alt-text="Screenshot showing the Dataflow activity Settings tab, and highlighting the tab.":::
 
-Required parameters are shown with an asterisk next to their name, whereas optional parameters do not not have the asterisk. Furthermore, optional parameters can be selected and deleted from the grid, but required parameters are can't be deleted and must be passed for the dataflow to run.
+Required parameters are shown with an asterisk next to their name, whereas optional parameters don't not have the asterisk. Furthermore, optional parameters can be selected and deleted from the grid, but required parameters can't be deleted and must be passed for the dataflow to run.
 
 You can select the refresh button to request the latest parameter information from your dataflow.
 
+Inside the Dataflow parameters section you're able to enter the name of the parameter that you wish to pass and the type and value that you wish to pass.
+
 >[!NOTE]
->Parameterizing the DataflowId in the dataflow pipeline activity settings will only support the legacy Dataflow Gen2 version without CI/CD support. I.e. you cannot invoke Dataflows with CI/CD support using parameterization of the DataflowId. This is only a temporary limitation that the product group will be adressing.
-
-Inside the Dataflow parameters section you are able to enter the name of the parameter that you wish to pass as well as the type and value that you wish to pass.
-
-For more information on how to enable the Dataflow parameters capability on your Dataflow Gen2, check the article on [Public parameters for Dataflow Gen2](dataflow-parameters.md).
+>Parameterizing the DataflowId in the dataflow pipeline activity settings will only support the legacy Dataflow Gen2 version without CI/CD support. I.e.,  you can't invoke Dataflows with CI/CD support using parameterization of the DataflowId. This is only a temporary limitation that the product group will be addressing.
 
 ## Save and run or schedule the pipeline
 
