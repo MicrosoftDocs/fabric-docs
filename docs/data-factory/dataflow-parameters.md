@@ -58,16 +58,16 @@ You can select the dataflow that you want to use and set the parameters that you
 
 ![Screenshot of the dataflow activity within Fabric Data pipelines that allows to pass parameters for refresh.](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
 
-In the **Dataflow parameters** section, you will be able to see all parameters available in your Dataflow as well as the default value from each inside the value section.
+In the **Dataflow parameters** section, you're able to see all parameters available in your Dataflow and the default value from each inside the value section.
 
-Required parameters have an asterisk next to their name, whilst optional parameters do not. At the same time, optional parameters can be removed from the grid, whereas required parameters cannot be deleted and a value must be passed for the dataflow to run.
+Required parameters have an asterisk next to their name, while optional parameters don't. At the same time, optional parameters can be removed from the grid, whereas required parameters can't be deleted and a value must be passed for the dataflow to run.
 
 You can select the refresh button to request the latest parameter information from your dataflow 
 
 ## Supported parameter types
 
->[!HINT]
->It is recommended that you read and use the [Dataflow parameter discover REST API](rest/api/fabric/dataflow/items/discover-dataflow-parameters). The documentation provides all available parameter types and their expected values, and the REST API provides a way to get the parameter information from your dataflow.
+>[!TIP]
+>Read and use the [discover Dataflow parameter REST API](rest/api/fabric/dataflow/items/discover-dataflow-parameters). The documentation provides all available parameter types and their expected values, and the REST API provides a way to get the parameter information from your dataflow.
 
 The following table showcases the currently supported parameter types and the link to the REST API definition for it to understand what are the values expected by the REST API. 
 
@@ -94,4 +94,4 @@ The following table showcases the currently supported parameter types and the li
 * **Monitoring hub does not display information about the parameters passed during the invocation of the dataflow.**
 * **Staged queries will only keep the last data refresh of a Dataflow stored in the Staging Lakehouse.** Users are able to look at the data from the Staging Lakehouse using the Dataflows connector to determine what was data is stored. Defining data destinations when using the public parameters mode is highly encouraged.
 * **When submitting a duplicated request for the same parameter values, only the first request will be accepted and subsequent will be rejected until the first request finishes its evaluation.**
-* **In the context of data destinations, parameters cannot be used to change the mapping schema.** The Dataflow refresh will apply all mappings and data destination settings that were saved by the Dataflow during the authoring stage. Check out the article for more information on [data destinations and managed settings in Dataflow Gen2](dataflow-gen2-data-destinations-and-managed-settings.md).
+* **In the context of data destinations, parameters cannot be used to change the mapping schema.** The Dataflow refresh applies all mappings and data destination settings that are saved by the Dataflow during the authoring stage. Check out the article for more information on [data destinations and managed settings in Dataflow Gen2](dataflow-gen2-data-destinations-and-managed-settings.md).
