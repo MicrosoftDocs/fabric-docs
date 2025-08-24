@@ -78,12 +78,12 @@ Data Sharing allows Fabric users to share data across different Fabric tenants w
 ### Database mirroring
 
 Mirroring in Fabric provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing data into OneLake with the rest of your data in Microsoft Fabric. You can continuously replicate your existing data directly into Fabric's OneLake. In Fabric, you can unlock powerful Business Intelligence, Artificial Intelligence, Data Engineering, Data Science, and data sharing scenarios. 
-- Learn more about [mirroring and the supported databases](../../database/mirrored-database/overview.md).
+- Learn more about [mirroring and the supported databases](../../mirroring/overview.md).
 
 :::image type="content" source="media/partner-integration/database-mirroring.png" alt-text="Diagram showing database mirroring in Fabric." lightbox="media/partner-integration/database-mirroring.png":::
 
 Open mirroring enables **any application** to write change data directly into a mirrored database in Fabric. Open mirroring is designed to be extensible, customizable, and open. It's a powerful feature that extends mirroring in Fabric based on open Delta Lake table format. Once the data lands in OneLake in Fabric, open mirroring simplifies the handling of complex data changes, ensuring that all mirrored data is continuously up-to-date and ready for analysis. 
-- Learn more about [open mirroring and when to use it.](../../database/mirrored-database/open-mirroring.md)
+- Learn more about [open mirroring and when to use it.](../../mirroring/open-mirroring.md)
 
 ## Develop on Fabric
 
