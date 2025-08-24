@@ -62,7 +62,7 @@ In the **Dataflow parameters** section, you're able to see all parameters availa
 
 Required parameters have an asterisk next to their name, while optional parameters don't. At the same time, optional parameters can be removed from the grid, whereas required parameters can't be deleted and a value must be passed for the dataflow to run.
 
-You can select the refresh button to request the latest parameter information from your dataflow 
+You can select the refresh button to request the latest parameter information from your dataflow.
 
 ## Supported parameter types
 
