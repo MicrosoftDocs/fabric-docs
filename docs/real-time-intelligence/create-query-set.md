@@ -46,7 +46,7 @@ The KQL Queryset exists within the context of a workspace. A new KQL queryset is
     - **Azure Application Insights**: Run direct or cross-service queries.
     - **Azure Log Analytics**: Connect to Log Analytics workspaces to query direct or cross-service data.
 
-    :::image type="content" source="media/kusto-query-set/new-queryset-add-data-source.png" alt-text="Screenshot of get started page whith add data sources highlighted.":::
+    :::image type="content" source="media/kusto-query-set/new-queryset-add-data-source.png" alt-text="Screenshot of get started page with add data sources highlighted.":::
 
 ## Open an existing KQL queryset
 
