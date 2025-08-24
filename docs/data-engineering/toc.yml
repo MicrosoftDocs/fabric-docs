@@ -387,6 +387,8 @@ items:
         href: multiple-data-sources-graphql.md
       - name: Connect applications
         href: connect-apps-api-graphql.md
+      - name: Develop GraphQL applications on VS Code
+        href: api-graphql-develop-vs-code.md
       - name: Use Service Principals
         href: api-graphql-service-principal.md
       - name: Use Stored procedures
@@ -419,6 +421,8 @@ items:
      href: ./user-data-functions/user-data-functions-overview.md
    - name: Create a User data functions item
      href: ./user-data-functions/create-user-data-functions-portal.md
+   - name: Test your User data functions
+     href: ./user-data-functions/test-user-data-functions.md
    - name: Connect to data sources
      href: ./user-data-functions/connect-to-data-sources.md
    - name: Integration with Fabric data pipelines

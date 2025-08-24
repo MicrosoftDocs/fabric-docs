@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: overview
 ms.custom:
-ms.date: 08/18/2025
+ms.date: 08/21/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -24,7 +24,7 @@ Workspace-level private links in Microsoft Fabric provide a secure way to connec
 
 ## Supported item types for workspace-level private link
 
-You can use workspace-level private links to connect to following item types in Fabric:
+You can use workspace-level private links to connect to the following item types in Fabric:
 
 * Lakehouse, SQL Endpoint, Shortcut
 * Direct connection via OneLake endpoint
@@ -33,11 +33,10 @@ You can use workspace-level private links to connect to following item types in 
 * Data pipeline
 * Copy Job
 * Mounted Data Factory
-* Eventstream
 * Warehouse 
-* Eventhouse
 * Dataflows Gen2 (CI/CD)
 * Variable library
+* Mirrored database
 
 ### Notes about unsupported item types
 
@@ -49,7 +48,7 @@ Review the following considerations when working with unsupported item types.
 
 * When a workspace is assigned to a deployment pipeline, it can't be configured to block public access, as deployment pipelines don't currently support workspace-level private link.
 
-* Existing lakehouses and warehouses use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse or warehouse.
+* Existing lakehouses, warehouses and mirrored databases use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse, warehouse or mirrored database.
 
 * Lakehouses with schemas aren't supported when a workspace-level private link is enabled for a workspace.
 
@@ -81,6 +80,8 @@ Review the following considerations when working with unsupported item types.
 
    * **Gateway-based connections:** Data Pipelines and Copy Jobs can't use connections that rely on an on-premises data gateway or a virtual network (VNet) data gateway infrastructure. This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
 
+* The OneLake Catalog - Govern tab isn't available when Private Link is activated.
+
 ## Supported APIs
 
 This section lists the APIs that support workspace-level private links.
@@ -97,14 +98,15 @@ APIs with endpoints containing `v1/workspaces/{workspaceId}` support workspace-l
 * [OneLake Data Access Security - Create Or Update Data Access Roles - REST API (Core)](/rest/api/fabric/core/onelake-data-access-security) 
 * [OneLake Shortcuts - REST API (Core)](/rest/api/fabric/core/onelake-shortcuts)
     * From a restricted workspace, you can create shortcuts to other data sources such as external storage, or through trusted access.
-    * When you create a shortcut to another restricted workspace, you need to create a managed private endpoint and get approval from the target workspace private link service owner in Azure. <!--For more information, see [Cross-workspace communication](./security-cross-workspace-communication.md).-->
+    * When you create a shortcut to another restricted workspace, you need to create a managed private endpoint and get approval from the target workspace private link service owner in Azure. For more information, see [Cross-workspace communication](security-cross-workspace-communication.md).
+    * Shortcut transforms are not currently supported in restricted workspaces.
 * [Tags - REST API (Core)](/rest/api/fabric/core/tags)
 * [Workspaces - REST API (Core)](/rest/api/fabric/core/workspaces)
 * [External Data Shares Provider - REST API (Core)](/rest/api/fabric/core/external-data-shares-provider): The recipient needs to use the workspace fully qualified domain name (FQDN) to access the shared OneLake URL.
 
 > [!NOTE]
 > * The [workspaces network communication policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy) isn't restricted by workspace-level network settings. This API remains accessible from public networks, even if public access to the workspace is blocked. Tenant-level network restrictions still apply. See also [Table 1. Access to workspace communication policy API based on tenant and private link settings](security-workspace-level-private-links-set-up.md#step-8-deny-public-access-to-the-workspace).
-> * **Deployment pipelines:** If any workspace in a deployment pipeline is set to deny public access (restricted), deployment pipelines can't connect to that workspace. 
+> * **Deployment pipelines:** If any workspace in a deployment pipeline is set to deny public access (restricted), deployment pipelines can't connect to that workspace. Configuring inbound restriction is blocked for any workspace that is assigned to a pipeline.
 > * **Item sharing:** Item sharing isn't supported. If items are already shared with users, those users can no longer access the items using the shared links.
 
 ### Lakehouse support
@@ -216,42 +218,6 @@ Unsupported scenarios:
 * Consuming events from Eventstreams 
 * SQL Server TDS endpoints 
 
-### Eventstream support
-
-[Items - REST API (Eventstream)](/rest/api/fabric/eventstream/items)
-
-Eventstream APIs use a graph-like structure to define an Eventstream item, which consists of two key components: source and destination. The following table shows the currently supported scenarios for workspace-level Private Link. **Note**: If you include an unsupported component in the Eventstream API payload, it might result in failure.
-
-| Source / Destination  | Category               | Type                    | Workspace private link support |
-|-----------------------|------------------------|-------------------------|--------------|
-| **Sources**           | **Azure streams**      | Azure Event Hubs         | Yes          |
-|                       |                        | Azure IoT Hub           | Yes          |
-|                       |                        | Azure Service Bus       | Yes          |
-|                       | **Basic**              | Custom Endpoint         | No           |
-|                       |                        | Sample data             | No           |
-|                       | **External streams**   | Confluent Cloud         | Yes          |
-|                       |                        | Amazon Kinesis          | Yes          |
-|                       |                        | Amazon MSK Kafka        | Yes          |
-|                       |                        | Apache Kafka            | Yes          |
-|                       |                        | Google Cloud Pub/Sub    | Yes          |
-|                       | **Database CDC**       | Azure Cosmos DB         | Yes          |
-|                       |                        | Azure DB for PostgreSQL | Yes          |
-|                       |                        | Azure SQL DB            | Yes          |
-|                       |                        | Azure SQL MI DB         | Yes          |
-|                       |                        | MySQL DB                | Yes          |
-|                       |                        | SQL Server on VM DB     | Yes          |
-|                       | **Fabric events**      | Workspace item events   | No           |
-|                       |                        | OneLake events          | No           |
-|                       |                        | Fabric job events       | No           |
-|                       |                        | Capacity events         | No           |
-|                       | **Azure events**       | Azure Blob Storage      | No           |
-| **Destinations**      | **Fabric destinations**| Lakehouse               | Yes          |
-|                       |                        | Kusto Push              | Yes          |
-|                       |                        | Kusto Pull              | No           |
-|                       |                        | Data Activator          | No           |
-|                       |                        | Custom Endpoint         | No           |
-
-
 ### Dataflows Gen2 (CI/CD) support
 
 * [Public APIs capabilities for Dataflows Gen2 in Fabric Data Factory (Preview)](/fabric/data-factory/dataflow-gen2-public-apis)
@@ -261,6 +227,15 @@ A virtual network data gateway must be used for every dataflow connector. The vi
 ### Variable library support
 
 [Items - REST API (VariableLibrary)](/rest/api/fabric/variablelibrary/items)
+
+### Mirrored database support
+
+* [Fabric Mirroring Public REST API](/fabric/database/mirrored-database/mirrored-database-rest-api)
+* [Items - REST API (MirroredDatabase)](/rest/api/fabric/mirroreddatabase/items)
+
+> [!NOTE]
+> * Currently, workspace-level private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring) and [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started. 
+> * For open mirroring, when your workspace is configured to deny inbound public access, ensure the publisher writes data into the OneLake landing zone via a private link with workspace FQDN.
 
 ## Supported and unsupported tools
 
@@ -282,6 +257,7 @@ A virtual network data gateway must be used for every dataflow connector. The vi
 - For Data Engineering workloads:
    - To query Lakehouse files or tables from a workspace that has workspace-level private link enabled, you must create a cross-workspace managed private endpoint connection to access resources in the other workspace. <!--For instructions, see [Cross workspace communication](security-cross-workspace-communication.md).-->
    - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace.
+- You could run into Spark issues in the following regions when outbound access protection is enabled for the workspace: Mexico Central, Israel Central, and Spain Central.
 
 ## Common errors and troubleshooting
 

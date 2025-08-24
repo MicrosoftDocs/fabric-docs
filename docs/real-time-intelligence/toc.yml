@@ -579,6 +579,8 @@ items:
       href: eventhouse-deploy-with-fabric-api.md
     - name: Manage and monitor an eventhouse
       href: manage-monitor-eventhouse.md
+    - name: Query cold data with hot windows
+      href: query-cold-data-hot-windows.md
   - name: KQL Database
     items:
     - name: Create a KQL database
@@ -719,8 +721,7 @@ items:
 - name: Analyze and train data
   items:
   - name: Copilot for Writing KQL Queries
-    displayName: KQL queryset, kusto query language, natural language
-    href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
+    href: copilot-writing-queries.md
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
@@ -874,11 +875,12 @@ items:
       href: mcp-eventhouse.md
 - name: Migrate
   items:
-  - name: From Azure Synapse Data Explorer
+  - name: Migrate from Azure Data Explorer
+    href: migrate-azure-data-explorer.md
+  - name: Migrate from Azure Synapse Data Explorer
     href: migrate-synapse-data-explorer.md
-  - name: API endpoints
-    items:
-    - name: Validate migration
+    items: 
+    - name: Validate migration using REST API endpoints
       href: migrate-api-validate-synapse-data-explorer.md
     - name: Migrate to Eventhouse
       href: migrate-api-to-eventhouse.md
