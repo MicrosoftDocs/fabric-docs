@@ -56,7 +56,7 @@ For more information, see [Metric sets setting (preview)](./service-admin-portal
 
 ## Mirrored Azure Databricks Catalog
 
-For more information, see [Mirroring Azure Databricks Unity Catalog](../database/mirrored-database/azure-databricks.md).
+For more information, see [Mirroring Azure Databricks Unity Catalog](../mirroring/azure-databricks.md).
 
 ## Users can create variable libraries
 

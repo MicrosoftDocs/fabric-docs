@@ -145,6 +145,9 @@ If the data isn't refreshing as expected, check the notifications pane and the [
 
 * The govern tab doesn't support cross-tenant scenarios.
 
+* The govern tab isn't available when Private Link is activated.
+
+
 ## Related content
 
 * [OneLake catalog overview](./onelake-catalog-overview.md)

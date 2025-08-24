@@ -1011,6 +1011,8 @@
         items:
           - name: Synchronize your code from an existing Git repo
             href: apache-airflow-jobs-sync-git-repo.md
+          - name: CI/CD in Apache Airflow
+            href: cicd-apache-airflow-jobs.md
           - name: Apache Airflow Job workspace settings
             href: apache-airflow-jobs-workspace-settings.md
           - name: Install a private package
