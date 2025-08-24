@@ -888,6 +888,8 @@
             href: dataflows-gen2-fast-copy.md
           - name: Modern query evaluator (Preview)
             href: dataflow-gen2-modern-evaluator.md
+          - name: Preview only step (Preview)
+            href: dataflow-gen2-preview-only-step.md
           - name: How to handle schema drift
             href: how-to-handle-schema-drift.md
           - name: How to obfuscate data
