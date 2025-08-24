@@ -886,6 +886,8 @@
             href: dataflow-gen2-cicd-and-git-integration.md
           - name: Fast copy at scale
             href: dataflows-gen2-fast-copy.md
+          - name: Modern query evaluator (Preview)
+            href: dataflow-gen2-modern-evaluator.md
           - name: How to handle schema drift
             href: how-to-handle-schema-drift.md
           - name: How to obfuscate data
