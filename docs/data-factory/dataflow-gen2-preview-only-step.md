@@ -17,6 +17,12 @@ Preview only steps are transformation steps in Dataflow Gen2 that are executed o
 
 They're designed to accelerate the authoring experience by reducing evaluation time in the data preview pane. They allow you to iterate and validate transformations more quickly without impacting the final execution of the dataflow.
 
+Some of the scenarios where preview only steps can help are:
+
+* Filtering or isolating subsets of data for faster previews.
+* Testing logic without waiting for full dataset evaluation.
+* Exploring new data sources without impacting run integrity.
+
 ## Set a preview only step
 
 To set a preview-only step in Dataflow Gen2, follow these steps:
@@ -31,9 +37,7 @@ Once the option is selected, the step name is shown in italic style. To remove t
 
 ## Common transforms used as preview only steps
 
-* Filtering or isolating subsets of data for faster previews.
-* Testing logic without waiting for full dataset evaluation.
-* Exploring new data sources without impacting run integrity.
+
 
 ## Presence in dialogs
 
