@@ -796,6 +796,10 @@ items:
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
       href: power-bi-data-connector.md
+  - name: Maps
+    items:
+    - name: Manage Map permissions
+      href: maps/manage-map-permissions.md
 - name: Track data
   items:
   - name: What is Activator?
