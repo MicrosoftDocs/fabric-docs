@@ -115,11 +115,21 @@ You can deactivate endpoints for multiple versions at once from the model’s se
 
 ## Consumption rate
 
-Hosting active model endpoints consume Fabric Capacity Units. The table defines how many capacity units (CU) are consumed when a Machine Learning model endpoint is active.
+Hosting active model endpoints consumes Fabric Capacity Units (CUs). Endpoints run on compute nodes and can automatically scale up to three nodes based on incoming traffic. Billing is calculated per node while an endpoint is active. The table below shows the CU consumption for an active Machine Learning model endpoint.
 
 | **Operation** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|
-|model endpoint | 1 model endpoint (version) per second | 5 CU seconds|
+|model endpoint | 1 model endpoint (version) per second per node| 5 CU seconds|
+
+The table below shows example scenarios and their corresponding consumption rates and hourly costs.
+
+|**Scenario**|**Description**|**Consumption rate**|**Hourly Cost**|
+|---|---|---|---|
+|Models with Inactive Endpoints|These models have no active version endpoints and no associated resource utilization. They involve no additional cost.| 0 CU seconds| 0 CU |
+|Models with Active but Idle Endpoints|These models have one or more active version endpoints, but, without regular traffic, all have scaled to zero, reducing costs automatically.|5 CU seconds|1,500 CUs|
+|Models with 1 Active Endpoint and Constant Low Traffic|These models have only 1 active version endpoint serving predictions, but without enough traffic to trigger a full scale-out. One node can serve all the traffic. Other version endpoints may be inactive or idle.| 5 CU seconds|18,000 CUs|
+|Models with 1 Active Endpoint and Constant High Traffic|These models have only 1 active version endpoint serving predictions, with enough traffic to trigger a full scale-out. Other version endpoints may be inactive or idle.|15 CU seconds|54,000 CUs|
+|Models with 5 Active Endpoints and Constant High Traffic|These models have 5 active version endpoints (the current limit) serving predictions, each with enough traffic to trigger a full scale-out.|75 CU seconds |270,000 CUs|
 
 [The Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for model endpoint operations under the name "Model Endpoint". Additionally, users are able to view a summary of their billing charges for Model Endpoint usage under the invoicing item "ML Model Endpoint Capacity Usage CU".
 
