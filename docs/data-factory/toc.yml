@@ -27,8 +27,6 @@
         href: pricing-copy-job.md
       - name: Pricing Apache Airflow job
         href: pricing-apache-airflow-job.md
-      - name: Cost estimation from Azure Data Factory to Fabric
-        href: cost-estimation-from-azure-data-factory-to-fabric-pipeline.md
       - name: Pricing examples
         items:
         - name: Data pipelines
@@ -71,6 +69,10 @@
       href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
       href: transform-data.md
+    - name: Decide - Data integration strategy
+      href: decision-guide-data-integration.md
+    - name: Decide - Data movement strategy
+      href: decision-guide-data-movement.md
     - name: Decide - Copy activity, Copy job, dataflow, or Spark?
       href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md
     - name: How to access on-premises Data
@@ -239,12 +241,6 @@
         href: connector-azure-files-overview.md 
       - name: Configure in a data pipeline Copy activity 
         href: connector-azure-files-copy-activity.md 
-    - name: Azure HDInsight on AKS Trino
-      items:
-      - name: Azure HDInsight on AKS Trino - Overview
-        href: connector-azure-hdinsight-on-aks-trino-overview.md
-      - name: Set up your connection
-        href: connector-azure-hdinsight-on-aks-trino.md
     - name: Azure SQL database
       items:
       - name: Azure SQL database - Overview
@@ -275,6 +271,12 @@
         href: connector-azure-table-storage.md
       - name: Configure in a data pipeline Copy activity
         href: connector-azure-table-storage-copy-activity.md
+    - name: Cassandra
+      items:
+      - name: Cassandra - Overview
+        href: connector-cassandra-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-cassandra-copy-activity.md 
     - name: CloudBluePSA
       items:
       - name: CloudBluePSA - Overview
@@ -443,6 +445,8 @@
         href: connector-ibm-db2-database-overview.md
       - name: Set up your connection
         href: connector-ibm-db2-database.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-ibm-db2-database-copy-activity.md
     - name: Impala
       items:
       - name: Impala - Overview
@@ -709,6 +713,8 @@
         href: azure-machine-learning-activity.md
       - name: Copy activity
         href: copy-data-activity.md
+      - name: Copy job activity
+        href: copy-job-activity.md
       - name: Dataflow activity
         href: dataflow-activity.md
       - name: Deactivate an activity
@@ -775,6 +781,8 @@
           href: expression-language.md
       - name: Data pipeline runs
         href: pipeline-runs.md
+      - name: Schedule pipeline
+        href: schedule-pipeline.md
       - name: Storage event triggers
         href: pipeline-storage-event-triggers.md
       - name: Variable library integration (Preview)
@@ -829,6 +837,8 @@
         href: dataflows-gen2-overview.md
       - name: Data source management
         href: data-source-management.md
+      - name: Using cloud connections through gateways
+        href: dataflow-gen2-cloud-connection-gateway-use.md
       - name: Dataflow Gen2 destinations and managed settings
         href: dataflow-gen2-data-destinations-and-managed-settings.md
       - name: Dataflow Gen2 default destination
@@ -847,6 +857,8 @@
         href: dataflow-gen2-incremental-refresh.md
       - name: Dataflow Gen2 with CICD and Git integration
         href: dataflow-gen2-cicd-and-git-integration.md
+      - name: Copilot explainer skill in Dataflow Gen2 
+        href: dataflow-gen2-copilot-explain.md
       - name: Dataflow Gen2 public APIs
         href: dataflow-gen2-public-apis.md
     - name: How-to
@@ -999,6 +1011,8 @@
         items:
           - name: Synchronize your code from an existing Git repo
             href: apache-airflow-jobs-sync-git-repo.md
+          - name: CI/CD in Apache Airflow
+            href: cicd-apache-airflow-jobs.md
           - name: Apache Airflow Job workspace settings
             href: apache-airflow-jobs-workspace-settings.md
           - name: Install a private package

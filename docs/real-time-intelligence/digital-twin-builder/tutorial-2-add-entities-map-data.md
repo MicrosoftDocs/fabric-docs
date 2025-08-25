@@ -9,15 +9,7 @@ ms.topic: tutorial
 
 # Digital twin builder (preview) tutorial part 2: Add entity types and map data
 
-In this part of the tutorial, you define entity types in digital twin builder (preview) and map data to entity instances. The entity types include:
-* *Distiller*
-* *Condenser*
-* *Reboiler*
-* *Process*
-* *Technician*
-* *MaintenanceRequest*
 
-For each entity type, you configure how property and/or time series data is mapped from the sample tables to the entity instances' properties in digital twin builder.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -86,9 +78,9 @@ Start by mapping the asset metadata.
 1. Select **Apply** to save your properties. Then select **Save** to save your mapping.
 
     :::image type="content" source="media/tutorial/save-mapping.png" alt-text="Screenshot of the mapping and Save button.":::
-1. Go to the **Scheduling** tab to run your mapping job. Under the name of your mapping job, select **Run now**.
+1. Go to the **Scheduling** tab to run your mapping job. Under the name of your mapping job, select **Run**.
 
-    :::image type="content" source="media/tutorial/run-now.png" alt-text="Screenshot of the Run now button.":::
+    :::image type="content" source="media/tutorial/run-now.png" alt-text="Screenshot of the Run button.":::
 
 1. Check the status of your mapping job in the **Manage operations** tab. Wait for the status to say **Completed** before proceeding to the next section (you might need to refresh the content a few times).
 
@@ -132,7 +124,7 @@ Next, map some time series data. For the *Distiller* entity type, there are four
     1. Select **Apply** to save and close the modal.
 
 1. Make sure **Incremental mapping** is enabled, then select **Save** to save your mapping job. Confirm when prompted that you want to save the incremental mapping.
-1. Go to the **Scheduling** tab to run your mapping job. Locate the new mapping job (it ends in *TimeSeries*) and select **Run now**.
+1. Go to the **Scheduling** tab to run your mapping job. Locate the new mapping job (it ends in *TimeSeries*) and select **Run**.
 
 Next, add a schedule for the timeseries mapping so that it refreshes the data automatically. Here you create a schedule that runs every five minutes.
 1. Go to the **Scheduling** tab. Under the name of your time series run, toggle on the switch for **Schedule flow**. This displays a schedule selector. Expand the dropdown menu and select **Create flow**.

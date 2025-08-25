@@ -3,7 +3,7 @@ title: Troubleshooting digital twin builder (preview)
 description: This article provides troubleshooting suggestions for digital twin builder (preview).
 author: baanders
 ms.author: baanders
-ms.date: 04/29/2025
+ms.date: 08/04/2025
 ms.topic: concept-article
 ---
 

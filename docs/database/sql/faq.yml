@@ -134,7 +134,7 @@ sections:
         answer:
           See [Fabric availability](../../admin/region-availability.md#all-workloads).
 
-          Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
+          Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../../mirroring/azure-sql-database-limitations.md#supported-regions).
       - question: |
           My capacity is in a supported region but I still do not see the option to enable SQL database. What should I do?
         answer:

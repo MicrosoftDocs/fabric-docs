@@ -15,15 +15,8 @@ Digital twin builder (preview) is a new item within the [Real-Time Intelligence]
 
 In this tutorial, you learn how to set up a digital twin builder item and use it to build an ontology that contextualizes sample data streamed from an eventstream. After building the ontology in digital twin builder, you use shortcuts to expose the data in an eventhouse, and query it using KQL (Kusto Query Language) queries. Then, you visualize these query results in a Real-Time Dashboard.
 
-## Prerequisites
-
-* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* Digital twin builder access enabled on your tenant.
-    - [Fabric administrators](../../admin/roles.md) can grant access to digital twin builder in the [admin portal](../../admin/admin-center.md). In the [tenant settings](../../admin/tenant-settings-index.md), enable *Digital Twin Builder (preview).*
-
-        :::image type="content" source="media/tutorial/prereq-tenant-setting.png" alt-text="Screenshot of enabling digital twin builder in the admin portal.":::
-
-    - The tenant can't have [Autoscale Billing for Spark](../../data-engineering/autoscale-billing-for-spark-overview.md) enabled, as digital twin builder isn't compatible with it. This setting is also managed in the [admin portal](../../admin/admin-center.md). 
+<!--## Prerequisites (title in include)-->
+[!INCLUDE [Prerequisites for digital twin builder](../includes/digital-twin-builder-prerequisites.md)]
 
 ## Scenario
 
