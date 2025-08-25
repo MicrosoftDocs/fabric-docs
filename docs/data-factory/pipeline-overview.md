@@ -1,5 +1,5 @@
 ---
-title: Pipeline overview
+title: Pipeline Overview
 description: Learn about pipelines in Microsoft Fabric Data Factory, including activities, triggers, control flow, and how to use them for data processing workflows.
 ms.reviewer: whhender
 ms.author: whhender
@@ -92,7 +92,7 @@ When designing pipelines, consider these recommendations:
 - **Start simple**: Begin with basic data movement and gradually add complexity
 - **Use parameters**: Make your pipelines reusable by parameterizing connections and file paths
 - **Handle errors**: Plan for failures with retry logic and alternative processing paths
-- **Monitor performance**: Regular review execution times and optimize slow-running activities
+- **Monitor performance**: Regularly review execution times and optimize slow-running activities
 - **Test thoroughly**: Validate your pipelines with sample data before processing production workloads
 
 ## Next steps
