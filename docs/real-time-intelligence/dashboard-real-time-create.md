@@ -69,8 +69,6 @@ Select the **Manage** tab, then choose **Replace with file**. Select the file yo
 
 :::image type="content" source="media/real-time-dashboard/replace-file.png" alt-text="Screenshot of the Replace with file option.":::
 
-## [Create a dashboard from ADX](#tab/create-adx)
-
 ----
 
 ## Add data source
