@@ -105,6 +105,12 @@ The following screenshot shows an example of DNS Conditional Forwarder entries i
 
 :::image type="content" source="media/service-security-private-links-on-premises/service-security-private-links-on-premises-09.png" alt-text="Screenshot of an IP address used for the conditional forwarder.":::
 
+> [!IMPORTANT]
+> Fabric now supports enabling private endpoints without disabling public access. In this scenario, you must additionally configure the following Conditional Forwarders on your on-premises DNS server:
+>
+> - app.powerbi.com
+> - app.fabric.microsoft.com
+
 
 ## Verification of successful configuration
 
