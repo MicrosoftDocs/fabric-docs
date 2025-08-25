@@ -69,7 +69,7 @@ You can use this feature to automatically generate different types of code templ
 #### Client application
 This feature generates a code snippet to invoke your functions from a client application. You can choose between Python, C# or Node.js in the code options.
 
-    :::image type="content" source="..\media\user-data-functions-portal-editor\portal-editor-client-code.png" alt-text="Screenshot showing the client code output." lightbox="..\media\user-data-functions-portal-editor\portal-editor-client-code.png":::
+:::image type="content" source="..\media\user-data-functions-portal-editor\portal-editor-client-code.png" alt-text="Screenshot showing the client code output." lightbox="..\media\user-data-functions-portal-editor\portal-editor-client-code.png":::
 
 This article contains an example for [how to use this invocation code in a Python client application](./tutorial-invoke-from-python-app.md).
 
@@ -81,7 +81,7 @@ The [Open API specification](https://swagger.io/docs/specification/v3_0/about/),
 
 This feature generates an OpenAPI specification in JSON or YAML format for all your functions. This feature uses the DOCSTRING property of your functions in addition to the function parameters, error messages and endpoints.
 
-    :::image type="content" source="..\media\user-data-functions-portal-editor\portal-editor-openapi-spec.gif" alt-text="Screenshot showing the openAPI spec." lightbox="..\media\user-data-functions-portal-editor\portal-editor-openapi-spec.gif":::
+:::image type="content" source="..\media\user-data-functions-portal-editor\portal-editor-openapi-spec.gif" alt-text="Screenshot showing the openAPI spec." lightbox="..\media\user-data-functions-portal-editor\portal-editor-openapi-spec.gif":::
 
 Use the following properties in the DOCSTRING of your functions to provide the content for your API documentation:
 
