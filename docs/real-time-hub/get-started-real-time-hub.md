@@ -20,9 +20,44 @@ This article provides guidance on getting started with Fabric Real-Time hub.
 [!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
 
 ## Real-Time hub page
-On the **Real-Time hub** page, there are two sections. 
 
-In the first section at the top, you see **cards or tiles** that provide a quick way to performing the tasks:
+The Real-Time hub page looks differently when you have no streams or tables and when you have at least one stream or a table. The following sections provide more details. 
+
+### Hub page when you have no streams or no tables
+If you don't have any stream or a table, the **Real-Time hub** has three sections.
+
+:::image type="content" source="./media/get-started-real-time-hub/home-page-empty.png" alt-text="Screenshot that shows the Real-Time hub page when you don't have any streams or tables." lightbox="./media/get-started-real-time-hub/home-page-empty.png":::
+ 
+
+The **first section** at the top should have a few cards that provide a quick to perform the following tasks: 
+
+| Card | Description |
+| ---- | ----------- |
+| Subscribe to OneLake events | Provides a shortcut to create streams based on Fabric OneLake events. For details, see [Subscribe to OneLake events](create-streams-fabric-onelake-events.md#configure-and-create-an-eventstream). |
+| Act on Job events | Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for OneLake](set-alerts-fabric-onelake-events.md#set-alert-for-onelake-events) |
+| Connect weather data | Provides a shortcut to create a data streams based on real-time weather data. For more information, see [Real-Time weather source](add-source-real-time-weather.md) |
+| Learn from a tutorial | Links to the [Fabric Real-Time intelligence tutorial](../real-time-intelligence/tutorial-introduction.md) that has a module on using the Real-Time hub. |
+| Case study | Links to a [case study](https://www.microsoft.com/customers/story/1770346240728000716-elcome-microsoft-copilot-consumer-goods-en-united-arab-emirates). 
+
+The **second section** in the middle has the following links:
+
+- **Bicycle rentals** or **Stock market** - When you select these links, the flow creates a group of sample Fabric Real-Time intelligence items. You get an end-to-end solution that demonstrates how Real-Time Intelligence components work together, enabling you to stream, analyze, and visualize real-time data in a real-world context. For more information, see [End-to-end Real-Time Intelligence sample](/fabric/real-time-intelligence/sample-end-to-end).
+- **View more samples** - You see the two end-to-end samples, **Bicycle rentals** and **Stock market**, and also an Eventstream sample, **Yellow tax**. 
+- **Connect data sources** - This link takes you to the **Data sources** page where you see all the supported data sources that you can connect to and create streams. 
+
+The **third section** has link to learning resources including the following:
+
+- [Real-Time intelligence tutorial](/fabric/real-time-intelligence/tutorial-introduction) 
+- [Real-Time documentation home page](/fabric/real-time-intelligence/)
+- [Microsoft events page where you can register for a workshop](https://www.microsoft.com/events/search-catalog?q=Real-Time+Intelligence+in+a+Day)
+- [Customer success stories](https://www.microsoft.com/customers/search?filters=product%3Aazure&q=Real-time+intelligence)
+- [Partners list who can help you with implementing Fabric Real-Time intelligence solutions](https://appsource.microsoft.com/marketplace/partner-dir?filter=sort%3D0%3BendorsedProduct%3DMicrosoft%2520Fabric;endorsedWorkloads=Real-Time%20Intelligence)
+- [Blog post on Fabric Real-Time Intelligence updates](https://blog.fabric.microsoft.com/blog/category/real-time-intelligence/) 
+
+### Hub page when you have atleast one stream or a table 
+When you have access to atleast one eventstream or a Kusto Query Language (KQL) table, the **Real-Time hub** page has two sections. 
+
+In the **first section** at the top, you see **cards or tiles** that provide a quick way to performing the tasks:
 
 :::image type="content" source="./media/get-started-real-time-hub/cards.png" alt-text="Screenshot that shows cards at the top of the Real-Time hub page." lightbox="./media/get-started-real-time-hub/cards.png":::
 
