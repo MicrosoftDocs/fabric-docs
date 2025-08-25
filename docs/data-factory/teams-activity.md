@@ -57,7 +57,7 @@ Set up the Teams activity by following these steps:
 
 1. If you're posting to a channel, you can add a subject for the message in the **Subject** text box.
 
-   :::image type="content" source="media/teams-activity/select-a-subject.png" alt-text="Screenshot showing the Settings tab of the Teams activity highlighting the link to select to use dynamic expressions.":::
+   :::image type="content" source="media/teams-activity/select-a-subject.png" alt-text="Screenshot showing the Settings tab of the Teams activity highlighting boxes to add the subject.":::
 
 ## Related content
 
