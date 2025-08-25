@@ -37,7 +37,7 @@ However, some features aren't available:
 - Copilot and Trusted Workspace Access aren't supported.
 - Private Link is disabled.
 
-Learn more about which [Microsoft Fabric features are supported in a trial capacity](enterprise/fabric-features.md).
+Learn more about which [Microsoft Fabric features are supported in a trial capacity](../enterprise/fabric-features.md).
 
 > [!NOTE]
 > The [Fabric Analyst in a Day (FAIAD)](https://aka.ms/LearnFAIAD) workshop is a free, hands-on training designed for analysts working with Power BI and Microsoft Fabric. You can get hands-on experience on how to analyze data and build reports, using Fabric. It covers key concepts like working with lakehouses, creating reports, and analyzing data in the Fabric environment.
@@ -174,6 +174,7 @@ You can also downgrade from 64 capacity units to 4 capacity units using these sa
 > [!NOTE]
 > Changing the trial capacity doesn't change the length of the trial. The number of remaining days doesn't reset or become extended.
 
+<a id="end-a-fabric-trial"></a>
 ## End a Fabric trial capacity
 
 End a Fabric capacity trail by [canceling](#cancel-the-fabric-trial), [letting it expire](#let-the-trial-expire), or [purchasing the full Fabric experience](#purchase-the-full-fabric-experience).
