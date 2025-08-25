@@ -1,9 +1,8 @@
 ---
 title: "Manage Direct Lake semantic models"
 description: "Learn about how to manage Direct Lake semantic models."
-author: peter-myers
-ms.author: phseamar
-ms.reviewer: davidi
+author: JulCsc
+ms.author: juliacawthra
 ms.date: 09/16/2024
 ms.topic: conceptual
 ms.custom: fabric-cat

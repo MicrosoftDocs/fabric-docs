@@ -1,22 +1,39 @@
 ---
-title: Share queries
+title: Share KQL queries
 description: Learn how to share KQL queries in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 03/05/2025
-ms.search.form: KQL Queryset
+ms.date: 08/10/2025
 ---
-# Share queries
+# Share KQL queries
 
-In this article, you learn how to share Kusto Query Language (KQL) queries. This includes how to share a query link, share the query results, or pin it to a dashboard. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
+In this article, you learn how to share Kusto Query Language (KQL) queries, including how to share a query link, share the query results, or pin it to a dashboard. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions and data.
+
+## Pin to dashboard
+
+To pin a query to a dashboard for continuous monitoring, follow these steps:
+
+1. In the query window, select the query that you want to pin.
+
+1. Select **Pin to dashboard**.
+
+    :::image type="content" source="media/kusto-share-queries/pin-dashboard.png" alt-text="Screenshot of the pin to dashboard button.":::
+
+1. In the **Pin query to dashboard** pane:
+    1. Select an existing dashboard or create a new dashboard.
+    1. Name your dashboard tile.
+    1. Optionally, select **Open dashboard after tile creation** to view your dashboard immediately after creation.
+    1. Select **Create**.
+
+        :::image type="content" source="media/kusto-share-queries/pin-query-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
 
 ## Copy query
 
@@ -41,13 +58,13 @@ To copy and share the queries you create, follow these steps:
 
 To use a shared query, follow these steps:
 
-1. Open the Real-Time Intelligence link that was shared with you. The link opens as an unsaved, temporary query.
+1. Open the Real-Time Intelligence shared link. The link opens as an unsaved, temporary query.
 1. Run the query or add other steps to the query.
 1. Then either:
     1. Close the query without saving it.
     1. Select **Save to** and then **New KQL queryset** or **Existing KQL queryset**.
-
-        :::image type="content" source="media/kusto-share-queries/save-shared-query.png" alt-text="Screenshot of the Save query dropdown.":::
+    
+    :::image type="content" source="media/kusto-share-queries/save-shared-query.png" alt-text="Screenshot of the Save query dropdown.":::
 
 ## Export query data to CSV
 
@@ -59,25 +76,7 @@ To export the query results to a CSV file, follow these steps:
 
     :::image type="content" source="media/kusto-share-queries/export-to-csv.png" alt-text="Screenshot of the export to CSV button.":::
 
-## Pin to dashboard
-
-To pin a query to a [Real-Time dashboard](dashboard-real-time-create.md) for continuous monitoring, follow these steps:
-
-1. In the query window, select the query that you want to pin.
-
-1. Select **Pin to dashboard**.
-
-    :::image type="content" source="media/kusto-share-queries/pin-dashboard.png" alt-text="Screenshot of the pin to dashboard button.":::
-
-1. In the **Pin query to dashboard** pane:
-    1. Select an existing dashboard or create a new dashboard.
-    1. Name your dashboard tile.
-    1. Optionally, select **Open dashboard after tile creation** to view your dashboard immediately after creation.
-    1. Select **Create**.
-
-        :::image type="content" source="media/kusto-share-queries/pin-query-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
-
-## Related content
+## Next step
 
 > [!div class="nextstepaction"]
 > [Query data in a KQL queryset](kusto-query-set.md)

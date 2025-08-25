@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/23/2025
+ms.date: 08/22/2025
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 # customer intent: As a developer, I want to understand how the Microsoft Fabric deployment pipelines process works so that I can use it effectively.
 ---
@@ -179,6 +179,9 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a cont
 Folders enable users to efficiently organize and manage workspace items in a familiar way.
 When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
 
+>[!NOTE]
+>Items cannot be selected for deployment across workspace folders in the default stage view. However switching to [flat list view](deploy-content.md#flat-list-view) allows you to select items for deployment across workspace folders.
+
 ### Folders representation
 
 #### [New folders representation UI](#tab/new-ui)
@@ -199,7 +202,9 @@ The workspace content is shown in Deployment pipelines as a flat list of items. 
 
 In Deployment pipelines, folders are considered part of an item’s name (an item name includes its full path). When an item is deployed, after its path was changed (moved from folder A to folder B, for example), then Deployment pipelines applies this change to its paired item during deployment - the paired item will be moved as well to folder B. If folder B doesn't exist in the stage we're deploying to, it's created in its workspace first. Folders can be seen and managed only on the workspace page.
 
-Deploy items inside a folder from that folder. You can't deploy items from different hierarchies at the same time.
+With the current view of the folders hierarchy, you can select for deployment, only items in the same folder level. You cannot select items across folders.
+ 
+Flat list view of deployment pipelines allows you to select items regardless of its location. With the flat list view, you can select items across folders, regarding their location in the workspace. For more information, see [flat list view](deploy-content.md#flat-list-view).
 
 ### Identify items that were moved to different folders
 
@@ -259,6 +264,8 @@ During deployment, the following item properties are copied and overwrite the it
     > In cases where default labeling is enabled on the tenant, and the default label is valid, if the item being deployed is a semantic model or dataflow, the label is copied from the source item **only** if the label has protection. If the label isn't protected, the default label is applied to the newly created target semantic model or dataflow.
 
   * The source item has a label with protection and the target item doesn't. In this case, a pop-up window asks for consent to override the target sensitivity label.
+
+    See also [Data loss prevention (DLP) considerations](#data-loss-prevention-dlp-considerations).
 
 ### Item properties that are not copied
 
@@ -465,6 +472,14 @@ The following table lists required permissions for popular deployment pipeline a
 
 This section lists most of the limitations in deployment pipelines.
 
+* [General considerations and limitations](#general-considerations-and-limitations)
+* [Semantic model limitations](#semantic-model-limitations)
+* [Dataflow limitations](#dataflow-limitations)
+* [Datamart limitations](#datamart-limitations)
+* [Data loss prevention (DLP) considerations](#data-loss-prevention-dlp-considerations)
+
+### General considerations and limitations
+
 * The workspace must reside on a [Fabric capacity](../../enterprise/licenses.md#capacity).
 * The maximum number of items that can be deployed in a single deployment is 300.
 * Downloading a *.pbix* file after deployment isn't supported.
@@ -517,6 +532,10 @@ This section lists most of the limitations in deployment pipelines.
 * You can't deploy a datamart with sensitivity labels.
 
 * You need to be the datamart owner to deploy a datamart.
+
+### Data loss prevention (DLP) considerations
+
+After deploying an item to a new stage, if you see a DLP policy tip indication on the item, try refreshing the item to see whether the indication disappears before investigating further. Because DLP runs as soon as an item is copied, possibly before other processes that bring in data or metadata (such as a default sensitivity label) have completed, DLP might have run on the item prematurely, resulting in the misapplication of the policy tip indication. Refreshing the item should cause the policy tip indication to go away.
 
 ## Related content
 
