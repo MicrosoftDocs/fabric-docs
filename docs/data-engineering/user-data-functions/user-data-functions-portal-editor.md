@@ -61,9 +61,9 @@ This toolbar provides features to help you edit your functions code. Some of the
 1. **Publish button:** This button starts the publish process for your User Data Functions item. This process will publish all functions in your item. This button is only enabled in **Develop mode**.
 
 ## Generate invocation code feature 
-You can use this feature to automatically generate different types of code templates based on your functions. There are two types of code: 
-    1. Client code 
-    1. OpenAPI specification
+You can use this feature to automatically generate different types of code templates based on your functions. There are two types of code:
+1. Client code 
+1. OpenAPI specification
 
 ### Client code
 This feature allows you to generate code for the following scenarios:
@@ -98,7 +98,7 @@ myFunctions.functionName('value1', 'value2'...)
 For more examples in different languages, visit the [Fabric Notebooks User Data Functions](../notebook-utilities.md#user-data-function-udf-utilities) utilities documentation article.
 
 ### OpenAPI specification
-The [Open API specification](https://swagger.io/docs/specification/v3_0/about/), formerly Swagger Specification, is a widely used, language-agnostic description format for REST APIs. This specification allows humans and computers alike to discover and understand the capabilities of a service in a standardized format. This specification is useful for creating integrations with external systems, AI agents and code generators.
+The [Open API specification](https://swagger.io/docs/specification/v3_0/about/), formerly Swagger Specification, is a widely used, language-agnostic description format for REST APIs. This specification allows humans and computers alike to discover and understand the capabilities of a service in a standardized format. This specification is useful for creating integrations with external systems, AI agents and generate client code in any language using [OpenAPI Codegen](https://swagger.io/api-hub/design/).
 
 This feature generates an OpenAPI specification in JSON or YAML format for all your functions. This feature uses the DOCSTRING property of your functions in addition to the function parameters, error messages, and endpoints.
 
