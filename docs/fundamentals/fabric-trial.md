@@ -287,7 +287,7 @@ To learn more about regional availability for Fabric trials, see [Fabric trial c
 
 #### How is the Fabric trial capacity different from a Power BI individual trial?
 
-A Power BI individual trial provides use rights equivalent to a Power BI Premium Per User license. A Fabric trial capacity, is for storing Fabric items and running Fabric workloads. All rules guiding [Power BI licenses](/power-bi/fundamentals/service-features-license-type) and what you can do in the Power BI workload remain the same with a Fabric trial capacity, which is why having a complementary Power BI individual trial is useful. The key difference is that a Fabric capacity is required to use non-Power BI workloads and items.
+A Power BI individual trial provides use rights equivalent to a Power BI Premium Per User license. A Fabric trial capacity is for storing Fabric items and running Fabric workloads. All rules guiding [Power BI licenses](/power-bi/fundamentals/service-features-license-type) and what you can do in the Power BI workload remain the same with a Fabric trial capacity, which is why having a complementary Power BI individual trial is useful. The key difference is that a Fabric capacity is required to use non-Power BI workloads and items.
 
 #### Does the Fabric trial capacity support autoscale?
 
