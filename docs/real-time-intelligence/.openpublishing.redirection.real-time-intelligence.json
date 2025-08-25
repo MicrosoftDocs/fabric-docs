@@ -704,6 +704,11 @@
       "source_path_from_root": "/docs/fundamentals/copilot-generate-dashboard.md",
       "redirect_url": "/fabric/real-time-intelligence/copilot-generate-dashboard",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/dashboard-copy-from-data-explorer.md",
+      "redirect_url": "/fabric/real-time-intelligence/",
+      "redirect_document_id": true
     }
   ]
 }
