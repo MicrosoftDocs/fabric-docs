@@ -80,20 +80,8 @@ This article contains an example for [how to use this invocation code in a Pytho
 #### Fabric Notebooks
 This feature generates a code snippet you can use to invoke your functions from a [Fabric Notebook](../notebook-utilities.md#user-data-function-udf-utilities).
 
-```python
-# Get the User Data Functions item from the same workspace
-myFunctions = notebookutils.udf.getFunctions('UDFItemName')
+:::image type="content" source="..\media\user-data-functions-portal-editor\portal-editor-notebooks-code.png" alt-text="Screenshot showing the generated Notebooks invocation code." lightbox="..\media\user-data-functions-portal-editor\portal-editor-notebooks-code.png":::
 
-# Get the User Data Functions item from a given workspace
-myFunctions = notebookutils.udf.getFunctions('UDFItemName', 'workspaceId')
-
-# Display the metadata of a User Data Functions item
-display([myFunctions.itemDetails])
-
-# Invoke a function from the User Data Functions item with parameters
-myFunctions.functionName('value1', 'value2'...)
-
-```
 
 For more examples in different languages, visit the [Fabric Notebooks User Data Functions](../notebook-utilities.md#user-data-function-udf-utilities) utilities documentation article.
 
