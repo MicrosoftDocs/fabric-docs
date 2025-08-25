@@ -62,13 +62,13 @@ This toolbar provides features to help you edit your functions code. Some of the
 
 ## Generate invocation code feature 
 You can use this feature to automatically generate different types of code templates based on your functions. There are two types of code:
-1. Client code 
-1. OpenAPI specification
+- Client code 
+- OpenAPI specification
 
 ### Client code
 This feature allows you to generate code for the following scenarios:
-1. **Client application:** This feature generates code to run in a application using the public endpoint of your User Data Functions item in your language of choice.
-1. **Fabric Notebooks:** This feature generates code to run from your [Fabric Notebooks](../how-to-use-notebook.md) in your language of choice.
+- **Client application:** This feature generates code to run in an application using the public endpoint of your User Data Functions item in your language of choice.
+- **Fabric Notebooks:** This feature generates code to run from your [Fabric Notebooks](../how-to-use-notebook.md) in your language of choice.
 
 #### Client application
 This feature generates a code snippet to invoke your functions from a client application. You can choose between Python, C# or Node.js in the code options.
@@ -86,11 +86,11 @@ This feature generates a code snippet you can use to invoke your functions from 
 For more examples in different languages, visit the [Fabric Notebooks User Data Functions](../notebook-utilities.md#user-data-function-udf-utilities) utilities documentation article.
 
 ### OpenAPI specification
-The [Open API specification](https://swagger.io/docs/specification/v3_0/about/), formerly Swagger Specification, is a widely used, language-agnostic description format for REST APIs. This specification allows humans and computers alike to discover and understand the capabilities of a service in a standardized format. This specification is useful for creating integrations with external systems, AI agents and generate client code in any language using [OpenAPI Codegen](https://swagger.io/api-hub/design/).
+The [Open API specification](https://swagger.io/docs/specification/v3_0/about/), formerly Swagger Specification, is a widely used, language-agnostic description format for REST APIs. This specification allows humans and computers alike to discover and understand the capabilities of a service in a standardized format. This specification is useful for creating integrations with external systems and AI agents and generating client code in any language using [OpenAPI Codegen](https://swagger.io/api-hub/design/).
 
 This feature generates an OpenAPI specification in JSON or YAML format for all your functions. This feature uses the DOCSTRING property of your functions in addition to the function parameters, error messages, and endpoints.
 
-:::image type="content" source="..\media\user-data-functions-portal-editor\portal-editor-openapi-spec.gif" alt-text="Screenshot showing the openAPI spec." lightbox="..\media\user-data-functions-portal-editor\portal-editor-openapi-spec.gif":::
+:::image type="content" source="..\media\user-data-functions-portal-editor\portal-editor-openapi-spec.gif" alt-text="Screenshot showing the OpenAPI spec." lightbox="..\media\user-data-functions-portal-editor\portal-editor-openapi-spec.gif":::
 
 To define the content for your API documentation, use the following properties in the DOCSTRING of your functions:
 
