@@ -475,6 +475,12 @@
         href: connector-mariadb-overview.md
       - name: Configure in a data pipeline Copy activity
         href: connector-mariadb-copy-activity.md
+    - name: Microsoft Access
+      items:
+      - name: Microsoft Access - Overview
+        href: connector-microsoft-access-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-microsoft-access-copy-activity.md
     - name: Microsoft 365
       items:
       - name: Microsoft 365 - Overview
