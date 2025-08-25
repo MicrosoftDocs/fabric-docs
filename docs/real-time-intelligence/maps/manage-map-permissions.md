@@ -21,7 +21,7 @@ The following table shows the default permissions assigned to each Fabric worksp
 | Permissions                     | Administrator | Member | Contributor | Viewer |
 |---------------------------------|:-------------:|:------:|:-----------:|:------:|
 | View and read Map Item content  | ✔️            | ✔️    | ✔️          | ✔️    |
-| Create, edit and delete Map     | ✔️            | ✔️    | ✔️          | ❌    |
+| Create, edit, and delete Map     | ✔️            | ✔️    | ✔️          | ❌    |
 | Share Map                       | ✔️            | ✔️    | ❌          | ❌    |
 
 ## Managing Map Permissions
@@ -48,4 +48,4 @@ Map items depend on other Fabric artifacts, such as Lakehouse or KQL Database. T
 
 > [!NOTE]
 >
-> If a user lacks permission to the Lakehouse or KQL Database, the Map may display errors or incomplete data. Map access is always governed by underlying data permissions—shared Maps only reveal data the user is authorized to view.
+> If a user lacks permission to the Lakehouse or KQL Database, the Map may display errors or incomplete data. Map access is governed by underlying data permissions—shared Maps only reveal data the user is authorized to view.
