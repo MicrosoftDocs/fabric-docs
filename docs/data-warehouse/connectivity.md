@@ -33,9 +33,9 @@ For more information, see [Microsoft Entra authentication as an alternative to S
 
 The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the standard SQL Server port number. The SQL connection string also respects the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] security model for data access. Data can be obtained for all objects to which a user has access.
 
-### Allow Power BI service tags through firewall
+### Allow Azure service tags through firewall
 
-To ensure proper access, you need to allow the Power BI service tags for firewall access. For more information, see [Power BI Service Tags](/power-bi/enterprise/service-premium-service-tags). You cannot use the Fully Qualified Domain Name (FQDN) of the TDS Endpoint alone. Allowing the Power BI service tags is necessary for connectivity through the firewall.
+To ensure proper access, you need to allow the Power BI service tags and SQL service tags for firewall access. For more information, see [Power BI Service Tags](/power-bi/enterprise/service-premium-service-tags) and [Service tags](/fabric-docs/docs/security/security-service-tags.md). You cannot use the Fully Qualified Domain Name (FQDN) of the TDS Endpoint alone. Allowing the Power BI service tags and SQL service tags is necessary for connectivity through the firewall.
 
 ## Retrieve the SQL connection string
 
