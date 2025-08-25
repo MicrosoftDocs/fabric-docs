@@ -144,8 +144,8 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | [LinkedIn Learning](/power-query/connectors/linkedin-learning) | ✓/− |  |  |
 | [MariaDB](connector-mariadb-overview.md)| ✓/− | ✓/− |✓/−   |
 | MarkLogic | ✓/− |  |  |
-| [Microsoft Access](connector-microsoft-access-overview.md) |  | ✓/✓ |  |
 | [Microsoft 365](connector-microsoft-365-overview.md) |  | ✓/− |  |
+| [Microsoft Access](connector-microsoft-access-overview.md) |  | ✓/✓ |  |
 | Microsoft Azure Data Manager for Energy | ✓/− |  |  |
 | [Microsoft Exchange Online](connector-microsoft-exchange-online-overview.md) | ✓/− |  |  |
 | Strategy for Power BI | ✓/− |  |  |
