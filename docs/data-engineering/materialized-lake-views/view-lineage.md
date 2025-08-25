@@ -67,10 +67,11 @@ The lineage UI also has the following functionalities:
 
   ## Associate Environment
 
-The ability to attach a custom Spark environment to  MLV lineage in Microsoft Fabric allows users to optimize performance and resource usage during lineage refreshes. By default, lineage use the workspace’s environment. However, users can associate a specific environment to the lineage to tailor compute configurations suited for different workloads. Only environments that the user has access to can be selected, and any changes to the environment will take effect from the next scheduled or manual run. If the user does not have access to the selected environment, they may not see the environment name or workspace-specific details of the environment, and options such as “Schedule” or “Run Now” will be disabled. In cases where the environment has been deleted, the system will display an error on the Environment dropdown, prompting the user to choose an accessible environment to proceed.
+The ability to attach a custom Spark environment to  MLV lineage in Microsoft Fabric allows users to optimize performance and resource usage during lineage refreshes. By default, lineage uses the workspace’s environment. However, users can associate a specific environment to the lineage to tailor compute configurations suited for different workloads. Only environments that the user has access to can be selected, and any changes to the environment will take effect from the next scheduled or manual run. If the user doesn't have access to the selected environment, they may not see the environment name or workspace-specific details of the environment, and options such as “Schedule” or “Run Now” will be disabled. In cases where the environment has been deleted, the system will display an error on the Environment dropdown, prompting the user to choose an accessible environment to proceed.
 
 ## Related articles
 
 * [Microsoft Fabric materialized lake views overview](overview-materialized-lake-view.md)
 * [Microsoft Fabric materialized lake view tutorial](tutorial.md)
+
 
