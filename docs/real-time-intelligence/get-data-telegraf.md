@@ -5,7 +5,7 @@ ms.reviewer: aksdi
 author: spelluru
 ms.author: spelluru
 ms.topic: how-to
-ms.date: 08/21/2025
+ms.date: 08/25/2025
 
 #Customer intent: As an integration developer, I want to build integration pipelines from Telegraf into Microsoft Fabric Eventhouse, so I can make data available for near real-time analytics.
 ---
@@ -22,6 +22,9 @@ What you'll learn in this article:
 Telegraf supports hundreds of input and output plugins. A broad open source community uses and supports it.
 
 The Microsoft Fabric [Real-Time Intelligence output plugin](https://github.com/influxdata/telegraf/blob/release-1.35/plugins/outputs/microsoft_fabric/README.md) serves as Telegraf's connector and sends data from many [input plugins](https://github.com/influxdata/telegraf/tree/master/plugins/inputs) to Eventhouse, a high-performance, scalable data store for real-time analytics.
+
+> [!TIP]
+> You can also configure Telegraf to send data to an Eventstream. For details, see [Add and manage an event source in an eventstream](event-streams/add-manage-eventstream-sources.md).
 
 ## Prerequisites
 
