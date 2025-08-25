@@ -51,7 +51,7 @@ Set up the Teams activity by following these steps:
 
 1. If you select group chat, use the dropdown to pick a group chat you're part of. If you select channel, choose a team and then a channel from the dropdowns.
 
-1. Write your message in the **Message** area. Use dynamic expressions to include system or user variables, expressions, or functions. Select **View in expression builder** to add dynamic expressions.
+1. Write your message in the **Message** area. Use [dynamic expressions](expression-language.md) to include system or user variables, expressions, or functions. Select **View in expression builder** to add dynamic expressions.
 
    :::image type="content" source="media/teams-activity/create-message.png" alt-text="Screenshot showing the Settings tab of the Teams activity highlighting the link to select to use dynamic expressions.":::
 
