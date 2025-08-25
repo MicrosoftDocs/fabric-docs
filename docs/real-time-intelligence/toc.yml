@@ -566,7 +566,7 @@ items:
       - name: Splunk Universal Forwarder
         href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
       - name: Telegraf
-        href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rti&pivots=fabric
+        href: ingest-data-telegraf.md
 - name: Store data
   items:
   - name: Eventhouse
