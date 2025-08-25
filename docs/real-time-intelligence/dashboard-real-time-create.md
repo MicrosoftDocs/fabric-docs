@@ -146,16 +146,11 @@ To switch to edit mode, select **Editing** in the top-right corner.
 
 :::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view.":::
 
-Under the Home tab, you can perform the following actions:
-
-- [View queries](#view-query) to analyze the underlying data.
-- [Add tiles](#add-tile) to include new visualizations.
-- [Modify tiles](#edit-tile) to update queries or visuals.
-- Delete tiles or pages to reorganize your dashboard.
+Under the Home tab in the **toolbar**, you can perform edit actions to enrich the dashboard such as [adding new tiles](#add-tile), creating base queries, and [defining new parameters](dashboard-parameters.md#create-a-parameter).
 
 :::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab.":::
 
-Under the Manage tab, you can manage data sources and parameters, as well as configure settings for [Auto refresh](#enable-auto-refresh).
+Under the Manage tab, you can manage data sources and [parameters](dashboard-parameters.md), as well as configure settings for [Auto refresh](#enable-auto-refresh).
 
 :::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab.":::
 
