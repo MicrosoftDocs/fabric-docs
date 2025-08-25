@@ -17,7 +17,10 @@ The Informix For Pipeline connector is supported in Data Factory for [!INCLUDE [
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-informix-for-pipeline-copy-activity.md) (source/destination)<br>- Lookup activity | On-premises<br> Virtual network | Anonymous <br>Basic   |
+| **Data pipeline** <br>- [Copy activity](connector-informix-for-pipeline-copy-activity.md) (source/destination)<br>- Lookup activity | On-premises | Anonymous <br>Basic   |
+
+> [!NOTE]
+> To use Informix For Pipeline connector in data pipelines, install [the 64-bit Informix Client SDK](https://www.ibm.com/support/pages/informix-client-software-development-kit-client-sdk-and-informix-connect-system-requirements) on the computer running on-premises data gateway.
 
 ## Related content
 
