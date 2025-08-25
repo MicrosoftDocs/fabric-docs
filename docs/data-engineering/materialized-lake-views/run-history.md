@@ -15,7 +15,7 @@ You can access the last 25 runs of a materialized lake view (MLV), including lin
 
 :::image type="content" source="./media/materialized-lake-view-run-history/view-past-runs.png" alt-text="Screenshot showing a view of the past runs." border="true" lightbox="./media/materialized-lake-view-run-history/view-past-runs.png":::
 
-You can click on **View more past runs** to see the last 25 runs for MLVs or the runs in the last seven days, whichever comes first. You can also find the environment which was associated with any given run from the run details panel provided you have access to the environment and the environment exists.
+You can click on **View more past runs** to see the last 25 runs for MLVs or the runs in the last seven days, whichever comes first. The environment associated with any given run is shown in the run details panel. Environment details are displayed only if you have access to the environment and the environment exists.
 
 :::image type="content" source="./media/materialized-lake-view-run-history/view-all-past-runs.png" alt-text="Screenshot showing a view of the past 25 runs." border="true" lightbox="./media/materialized-lake-view-run-history/view-all-past-runs.png":::
 
