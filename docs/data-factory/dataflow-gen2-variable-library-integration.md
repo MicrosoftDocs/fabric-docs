@@ -36,13 +36,7 @@ Variable.ValueOrDefault("$(/**/My Library/My Variable)", "Sample")
 Variable.Value("$(/**//My Library/My Variable)")
 ```
 
->[!NOTE]
->The Power Query editor doesn't currently support the evaluation of variables. We recommend using the **Variable.ValueOrDefault** function to ensure that your authoring experience uses the default value for prototyping.
-> 
->Using a default value through Variable.ValueOrDefault ensures that your formula resolves even when you copy or move your solution to another environment that doesn't have the reference variable library.
->At runtime, the variable is resolved to the correct value.
-
-Applying this function to a query script, take the following example query that connects to a table named **Table1** from a specific LakehouseId and WorkspaceId using the [Fabric Lakehouse connector](connector-lakehouse-overview.md). 
+Applying this function to a query script, let's take the following example query that connects to a table named **Table1** from a specific LakehouseId and WorkspaceId using the [Fabric Lakehouse connector](connector-lakehouse-overview.md). 
 
 ```M code
 let
@@ -53,7 +47,36 @@ let
 in
   #"Navigation 3" 
 ```
-In the scenario where y
+
+You plan to replace the values passed for the `workspaceId` and `lakehouseId` so that in CI/CD scenarios it dynamically points to the right item in the right stage.
+
+To that end, in the same workspace where your Dataflow is located, you also have a variable library named **My Library** that contains the following variables that you plan to reference in your dataflow:
+
+|Variable name|Variable type|Default value set|
+|---|---|---|
+|Workspace ID|String|a8a1bffa-7eea-49dc-a1d2-6281c1d031f1|
+|Lakehouse ID|String|37dc8a41-dea9-465d-b528-3e95043b2356|
+
+With this information, you can modify your query script to replace the values that result in the next script:
+
+
+```M code
+let
+  Source = Lakehouse.Contents([]),
+  #"Navigation 1" = Source{[workspaceId = Variable.ValueOrDefault("$(/**/My Library/Workspace ID)",  "cfafbeb1-8037-4d0c-896e-a46fb27ff229")]}[Data],
+  #"Navigation 2" = #"Navigation 1"{[lakehouseId =  Variable.ValueOrDefault("$(/**/My Library/Lakehouse ID)","5b218778-e7a5-4d73-8187-f10824047715")]}[Data],
+  #"Navigation 3" = #"Navigation 2"{[Id = "Table1", ItemKind = "Table"]}[Data]
+in
+  #"Navigation 3" 
+```
+
+When you run the Dataflow with the modified script it will resolve to the value from the variable and the correct data type defined by the variable. This will point to a different Workspace and Lakehouse depending on the values available at the time of running your Dataflow
+
+>[!CAUTION]
+>The Power Query editor doesn't currently support the evaluation of variables. We recommend using the **Variable.ValueOrDefault** function to ensure that your authoring experience uses the default value for prototyping.
+> 
+>Using a default value through Variable.ValueOrDefault ensures that your formula resolves even when you copy or move your solution to another environment that doesn't have the reference variable library.
+>At runtime, the variable is resolved to the correct value.
 
 ## Considerations and limitations
 
@@ -61,11 +84,13 @@ The following list outlines important constraints and behaviors to keep in mind 
 
 * **Workspace Scope**: Variable libraries must reside in the same workspace as the Dataflow Gen2 with CI/CD.
 * **Reference Location**: Variables can only be used inside the [mashup.pq file of a Dataflow Gen2 with CI/CD](rest/api/fabric/articles/item-management/definitions/dataflow-definition#mashup-contentdetails-example).
-* **Runtime Only**: Variables are evaluated only during run operations—not within the Power Query editor.
-* **Using a default value**: When using a default value, make sure that the data type of the default value matches the data type of the referenced variable.
+* **Runtime behavior**: Variables values are retrieved at the start of a run operation and persisted throughout the operation. Changes that happen to a library during a Dataflow run will not halt or impact the run.
+* **Power Query editor support**: No current support to resolve or evaluate variables within the Power Query editor. 
+* **Using a default value**: When using a default value through the function **Variable.ValueOrDefault**, make sure that the data type of the default value matches the data type of the referenced variable.
 * **Supported Types**: Only variables of basic types are supported (`boolean`, `datetime`, `guid`, `integer`, `number`, and `string`).
-* **Fixed paths**: Variables can't alter source or destination paths. Connections remain fixed to the authored configuration.
+* **Fixed connections**: Variables can't alter connection informaiton. Connections remain fixed to the authored resource path configurations.
 * **Override risk**: Users with access to modify variable libraries can override variable values, potentially affecting dataflow output.
 * **Schema mapping**: Variables can't modify destination schema mappings; mappings follow the authored setup.
 * **Lineage visibility**: Lineage views don't show links between Dataflow Gen2 and the variable libraries it references.
 * **Gateway support**: Dataflows that rely on a gateway can't resolve variable libraries.
+* **Variable limit**: Dataflows can only retrieve a maximum of 50 variables. 
