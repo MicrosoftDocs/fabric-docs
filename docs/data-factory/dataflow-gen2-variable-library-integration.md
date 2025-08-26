@@ -86,7 +86,7 @@ The following list outlines important constraints and behaviors to keep in mind 
 * **Reference Location**: Variables can only be used inside the [mashup.pq file of a Dataflow Gen2 with CI/CD](rest/api/fabric/articles/item-management/definitions/dataflow-definition#mashup-contentdetails-example).
 * **Runtime behavior**: Variables values are retrieved at the start of a run operation and persisted throughout the operation. Changes that happen to a library during a Dataflow run don't halt or impact its run.
 * **Power Query editor support**: No current support to resolve or evaluate variables within the Power Query editor. 
-* **Using a default value**: When using a default value through the function **Variable.ValueOrDefault**, make sure that the data type of the default value matches the data type of the referenced variable.
+* **Using a default value**: When using a default value through the function *Variable.ValueOrDefault*, make sure that the data type of the default value matches the data type of the referenced variable.
 * **Supported Types**: Only variables of basic types are supported (`boolean`, `datetime`, `guid`, `integer`, `number`, and `string`).
 * **Fixed connections**: Variables can't alter connection information. Connections remain fixed to the authored resource path configurations.
 * **Override risk**: Users with access to modify variable libraries can override variable values, potentially affecting dataflow output.
