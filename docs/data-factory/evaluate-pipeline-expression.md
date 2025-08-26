@@ -22,7 +22,7 @@ Here's what you can do with the evaluate expression feature:
 
 This way, you can confirm your logic and formatting work correctly before you schedule or run your pipeline.
 
-:::image type="content" source="media/evaluate-pipeline-expression/evaluate-dynamic-content.png" alt-text="Screenshot of the Evaluate expression feature showing dynamic content evaluation.":::
+:::image type="content" source="media/evaluate-pipeline-expression/evaluate-dynamic-content.png" alt-text="Screenshot of the Evaluate expression feature showing dynamic content evaluation." lightbox="media/evaluate-pipeline-expression/evaluate-dynamic-content.png":::
 
 ## When to use the Evaluate expression feature
 
