@@ -35,22 +35,22 @@ Mirroring is designed to be simple and free, but it won't cover every advanced s
 
 | **Capability** | **Mirroring** | **Copy job** | **Copy Activity (Pipeline)** |
 | --- | :---: | :---: | :---: |
-| Custom scheduling |  | X | X |
-| Table and Column management |  | X | X |
-| Copy behavior: Append, Upsert, Override |  | X | X |
-| Advanced observability + auditing |  | X | X |
+| Custom scheduling |  | Yes | Yes |
+| Table and Column management |  | Yes | Yes |
+| Copy behavior: Append, Upsert, Override |  | Yes | Yes |
+| Advanced observability + auditing |  | Yes | Yes |
 | Copy modes |  |  |  |
-| CDC-based continuous replication | X | X |  |
-| Batch or bulk copy |  | X | X |
-| Native support for Incremental copy (watermark-based) |  | X |  |
-| Copy using user defined query |  |  | X |
+| CDC-based continuous replication | Yes | Yes |  |
+| Batch or bulk copy |  | Yes | Yes |
+| Native support for Incremental copy (watermark-based) |  | Yes |  |
+| Copy using user defined query |  | Yes | Yes |
 | Use cases |  |  |  |
-| Continuous Replication for analytics and reporting | X | X |  |
-| Metadata driven ELT/ETL for data warehousing |  | X | X |
-| Data consolidation |  | X | X |
-| Data migration / Data backup / Data sharing |  | X | X |
-| Free of cost | X |  |  |
-| Predictable performance |  | X | X |
+| Continuous Replication for analytics and reporting | Yes | Yes |  |
+| Metadata driven ELT/ETL for data warehousing |  | Yes | Yes |
+| Data consolidation |  | Yes | Yes |
+| Data migration / Data backup / Data sharing |  | Yes | Yes |
+| Free of cost | Yes |  |  |
+| Predictable performance |  | Yes | Yes |
 
 ## Scenarios
 
@@ -84,6 +84,6 @@ David reviews the available options and chooses **Copy Activities in Pipelines**
 
 Now that you have an idea of which data movement strategy to use, you can get started with these resources:
 
-- [Get started with Mirroring](/fabric/database/mirrored-database/overview)
+- [Get started with Mirroring](/fabric/mirroring/overview)
 - [Create a Copy Job](/fabric/data-factory/create-copy-job)
 - [Create a Copy Activity](/fabric/data-factory/copy-data-activity)
