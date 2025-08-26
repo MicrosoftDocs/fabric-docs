@@ -15,7 +15,7 @@ Survey responses and other natural language feedback provide rich qualitative da
 
 Microsoft Fabric brings a comprehensive suite of features that empower organizations to deliver end-to-end Generative AI based text analysis solutions. You don't need to set up and manage separate Azure resources. Instead, you can use Fabric-native tools like Notebooks to access Azure OpenAI (AOAI) GPT models hosted in Fabric via SynapseML. These tools help you build, automate, and scale natural language analysis workflows.
 
-In this blog, we demonstrate how we use these capabilities to build a Fabric-native, LLM-powered text classification system that drastically reduces the time-to-insight for stakeholders.
+In this tutorial, we demonstrate how we use these capabilities to build a Fabric-native, LLM-powered text classification system that drastically reduces the time-to-insight for stakeholders.
 
 ### System Overview: Multi-Label Text Classification
 
