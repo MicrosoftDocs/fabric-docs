@@ -93,11 +93,11 @@ Debugging pipelines is simpler in Fabric than in ADF. This simplicity is because
 
 ### Change Data Capture
 
-Change Data Capture (CDC) in ADF is a preview feature that makes it easy to move data quickly in an incremental manner by applying source-side CDC features of your data stores. To migrate your CDC artifacts to Fabric Data Factory, you recreate these artifacts as _Copy job_ items in your Fabric workspace. This feature provides similar capabilities of incremental data movement with an easy-to-use UI without requiring a pipeline, just like in ADF CDC. For more information, see the [Copy job](what-is-copy-job.md) for Data Factory in Fabric.
+Change Data Capture (CDC) in ADF is a preview feature that makes it easy to move data quickly in an incremental manner by applying source-side CDC features of your data stores. To migrate your CDC items to Fabric Data Factory, you recreate these items as _Copy job_ items in your Fabric workspace. This feature provides similar capabilities of incremental data movement with an easy-to-use UI without requiring a pipeline, just like in ADF CDC. For more information, see the [Copy job](what-is-copy-job.md) for Data Factory in Fabric.
 
 ### Azure Synapse Link
 
-Although not available in ADF, Synapse pipeline users frequently utilize Azure Synapse Link to replicate data from SQL databases to their data lake in turnkey approach. In Fabric, you recreate the Azure Synapse Link artifacts as Mirroring items in your workspace. For more information, see on Fabric [database mirroring](../mirroring/overview.md).
+Although not available in ADF, Synapse pipeline users frequently utilize Azure Synapse Link to replicate data from SQL databases to their data lake in turnkey approach. In Fabric, you recreate the Azure Synapse Link items as Mirroring items in your workspace. For more information, see on Fabric [database mirroring](../mirroring/overview.md).
 
 ### SQL Server Integration Services (SSIS)
 
@@ -149,7 +149,7 @@ It's common, although not required, that your ADF or Synapse factories and works
 
 Fabric provides two primary ways to enable CI/CD, both at the workspace level: Git integration, where you bring your own Git repo in ADO and connect to it from Fabric and built-in deployment pipelines where you can promote code to higher environments without the need of bringing your own Git. 
 
-In both cases, your existing Git repo from ADF doesn't work with Fabric. Instead, you need to point to a new repo, or start a new [deployment pipeline](cicd-pipelines.md) in Fabric, and rebuild your pipeline artifacts in Fabric.
+In both cases, your existing Git repo from ADF doesn't work with Fabric. Instead, you need to point to a new repo, or start a new [deployment pipeline](cicd-pipelines.md) in Fabric, and rebuild your pipeline items in Fabric.
 
 ## Mount your existing ADF instances directly to a Fabric workspace
 
@@ -159,7 +159,7 @@ Previously, we spoke about using the Fabric Data Factory Invoke Pipeline activit
 
 For more information about mounting usage scenarios, see [Content collaboration and delivery scenarios](/power-bi/guidance/powerbi-implementation-planning-usage-scenario-overview#content-collaboration-and-delivery-scenarios).
 
-Mounting your Azure Data Factory inside your Fabric workspace brings many benefits to consider. If you're new to Fabric and would like to keep your factories side-by-side within the same pane-of-glass, you can mount them into Fabric so that you can manage both inside of Fabric. The complete ADF UI is now available to you from your mounted factory where you can monitor, manage, and edit your ADF factory items fully from within the Fabric workspace. This feature makes it much easier to begin migrating these items into Fabric as native Fabric artifacts. This feature is primarily for ease-of-use and makes it easy to see your ADF factories in your Fabric workspace. However, the actual execution of the pipelines, activities, integration runtimes, etc., still occurs inside of your Azure resources.
+Mounting your Azure Data Factory inside your Fabric workspace brings many benefits to consider. If you're new to Fabric and would like to keep your factories side-by-side within the same pane-of-glass, you can mount them into Fabric so that you can manage both inside of Fabric. The complete ADF UI is now available to you from your mounted factory where you can monitor, manage, and edit your ADF factory items fully from within the Fabric workspace. This feature makes it much easier to begin migrating these items into Fabric as native Fabric items. This feature is primarily for ease-of-use and makes it easy to see your ADF factories in your Fabric workspace. However, the actual execution of the pipelines, activities, integration runtimes, etc., still occurs inside of your Azure resources.
 
 ## Related content
 

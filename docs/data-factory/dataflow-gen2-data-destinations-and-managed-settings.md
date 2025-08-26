@@ -68,11 +68,11 @@ By default, your table name matches your query name. If your table name has any 
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/new-table.png" alt-text="Screenshot of the Choose destination target window with the New table button selected.":::
 
-Next, you need to select the destination container. If you chose any of the Fabric data destinations, you can use the navigator to select the Fabric artifact where you want to load your data. For Azure destinations, you can either specify the database during connection creation, or select the database from the navigator experience.
+Next, you need to select the destination container. If you chose any of the Fabric data destinations, you can use the navigator to select the Fabric item where you want to load your data. For Azure destinations, you can either specify the database during connection creation, or select the database from the navigator experience.
 
 ### Use an existing table
 
-To choose an existing table, use the toggle at the top of the navigator. When choosing an existing table, you need to pick both the Fabric artifact/database and table using the navigator.
+To choose an existing table, use the toggle at the top of the navigator. When choosing an existing table, you need to pick both the Fabric item/database and table using the navigator.
 
 When you use an existing table, the table can't be recreated in any scenario. If you delete the table manually from the data destination, Dataflow Gen2 won't recreate the table on the next refresh.
 

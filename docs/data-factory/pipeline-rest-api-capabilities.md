@@ -101,7 +101,7 @@ Create a pipeline in a specified workspace.
 
 ```rest
 {
-    "id": "<artifactId>",
+    "id": "<itemId>",
     "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
@@ -150,7 +150,7 @@ Create a pipeline with a base64 definition in a specified workspace.
 
 ```rest
 {
-    "id": "<Your artifactId>",
+    "id": "<Your itemId>",
     "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
@@ -178,7 +178,7 @@ Returns properties of specified pipeline.
 
 ```rest
 {
-    "id": "<Your artifactId>",
+    "id": "<Your itemId>",
     "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
@@ -254,7 +254,7 @@ Updates the properties of the pipeline.
 
 ```rest
 {
-    "id": "<Your artifactId>",
+    "id": "<Your itemId>",
     "type": "pipeline",
     "displayName": "My pipeline updated",
     "description": "My pipeline description updated",
