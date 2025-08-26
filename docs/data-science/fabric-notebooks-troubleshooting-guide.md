@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: deevij
 ms.topic: troubleshooting
 ms.custom: 
-ms.date: 08/19/2025
+ms.date: 08/26/2025
 ---
 
 # Fabric Notebooks troubleshooting guide
