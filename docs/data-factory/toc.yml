@@ -898,6 +898,8 @@
             href: dataflows-gen2-monitor.md
           - name: Public parameters in Dataflow Gen2
             href: dataflow-parameters.md
+          - name: Variable libraries in Dataflow Gen2
+            href: dataflow-gen2-variable-library-integration.md
           - name: Saving a draft of your dataflow
             href: dataflows-gen2-save-draft.md
   - name: Manage your pipelines
