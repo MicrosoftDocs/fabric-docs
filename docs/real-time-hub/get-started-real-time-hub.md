@@ -1,11 +1,12 @@
 ---
-title: Get started with Fabric Real-Time hub
-description: This article shows how to get started with Fabric Real-Time hub.
+title: Get Started With Fabric Real-Time Hub
+description: This article shows how to get started with Fabric Real-Time hub and provides a high-level overview of all the features.
+#customer intent: As a new Fabric user, I want to find and open the Real-Time hub so that I can start streaming and monitoring data.
 author: mystina
 ms.author: majia
 ms.topic: quickstart
-ms.custom:
-ms.date: 07/21/2025
+ms.custom: null
+ms.date: 08/25/2025
 ---
 
 # Get started with Fabric Real-Time hub
@@ -21,28 +22,27 @@ This article provides guidance on getting started with Fabric Real-Time hub.
 
 ## Real-Time hub page
 
-The Real-Time hub page looks differently when you have no streams or tables and when you have at least one stream or a table. The following sections provide more details. 
+The Real-Time hub page layout changes based on whether you have streams or tables. Details are provided in the following sections.
 
 ### Hub page when you have no streams or no tables
-If you don't have any stream or a table, the **Real-Time hub** has three sections.
+If you don't have any streams or tables, the **Real-Time hub** has three sections.
 
 :::image type="content" source="./media/get-started-real-time-hub/home-page-empty.png" alt-text="Screenshot that shows the Real-Time hub page when you don't have any streams or tables." lightbox="./media/get-started-real-time-hub/home-page-empty.png":::
  
 
-The **first section** at the top should have a few cards that provide a quick to perform the following tasks: 
+The **first section** at the top has the following cards that provides shortcuts to the common tasks. 
 
-| Card | Description |
-| ---- | ----------- |
-| Subscribe to OneLake events | Provides a shortcut to create streams based on Fabric OneLake events. For details, see [Subscribe to OneLake events](create-streams-fabric-onelake-events.md#configure-and-create-an-eventstream). |
-| Act on Job events | Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for OneLake](set-alerts-fabric-onelake-events.md#set-alert-for-onelake-events) |
-| Connect weather data | Provides a shortcut to create a data streams based on real-time weather data. For more information, see [Real-Time weather source](add-source-real-time-weather.md) |
-| Learn from a tutorial | Links to the [Fabric Real-Time intelligence tutorial](../real-time-intelligence/tutorial-introduction.md) that has a module on using the Real-Time hub. |
-| Case study | Links to a [case study](https://www.microsoft.com/customers/story/1770346240728000716-elcome-microsoft-copilot-consumer-goods-en-united-arab-emirates). 
+- **Subscribe to OneLake events** - Provides a shortcut to create streams based on Fabric OneLake events. For details, see [Subscribe to OneLake events](create-streams-fabric-onelake-events.
+md#configure-and-create-an-eventstream). 
+- **Act on Job events** - Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for OneLake](set-alerts-fabric-onelake-events.md#set-alert-for-onelake-events) 
+- **Connect weather data** - Provides a shortcut to create a data streams based on real-time weather data. For more information, see [Real-Time weather source](add-source-real-time-weather.md) 
+- **Learn from a tutorial** - Links to the [Fabric Real-Time intelligence tutorial](/fabric/real-time-intelligence/tutorial-introduction) that has a module on using the Real-Time hub. 
+- **Case study** - Links to a [case study](https://www.microsoft.com/customers/story/1770346240728000716-elcome-microsoft-copilot-consumer-goods-en-united-arab-emirates). 
 
-The **second section** in the middle has the following links:
+The **second section** in the middle has the following cards:
 
-- **Bicycle rentals** or **Stock market** - When you select these links, the flow creates a group of sample Fabric Real-Time intelligence items. You get an end-to-end solution that demonstrates how Real-Time Intelligence components work together, enabling you to stream, analyze, and visualize real-time data in a real-world context. For more information, see [End-to-end Real-Time Intelligence sample](/fabric/real-time-intelligence/sample-end-to-end).
-- **View more samples** - You see the two end-to-end samples, **Bicycle rentals** and **Stock market**, and also an Eventstream sample, **Yellow tax**. 
+- **Bicycle rentals** or **Stock market** - When you select these cards, the flow creates a group of sample Fabric Real-Time intelligence items. You get an end-to-end solution that demonstrates how Real-Time Intelligence components work together, enabling you to stream, analyze, and visualize real-time data in a real-world context. For more information, see [End-to-end Real-Time Intelligence sample](/fabric/real-time-intelligence/sample-end-to-end).
+- **View more samples** - You see the two end-to-end samples, **Bicycle rentals** and **Stock market**, and also an Eventstream sample, **Yellow tax**. When you select the first tow, the flow creates a group of Fabric Real-Time intelligence work items as described in the previous bullet point. When you select the third option, the flow creates an eventstream with Yellow Taxi sample as an input. 
 - **Connect data sources** - This link takes you to the **Data sources** page where you see all the supported data sources that you can connect to and create streams. 
 
 The **third section** has link to learning resources including the following:
@@ -62,15 +62,13 @@ In the **first section** at the top, you see **cards or tiles** that provide a q
 :::image type="content" source="./media/get-started-real-time-hub/cards.png" alt-text="Screenshot that shows cards at the top of the Real-Time hub page." lightbox="./media/get-started-real-time-hub/cards.png":::
 
 
-| Card | Description |
-| ---- | ----------- |
-| Subscribe to OneLake events | Provides a shortcut to create streams based on Fabric OneLake events. For details, see [Subscribe to OneLake events](create-streams-fabric-onelake-events.md#configure-and-create-an-eventstream). |
-| Act on Job events | Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for OneLake](set-alerts-fabric-onelake-events.md#set-alert-for-onelake-events) |
-| Visualize data | Provides a shortcut to create a dashboard based on data in a KQL table. |
-| Explore data in motion | Provides a shortcut to preview data in a data source. For more information, see [Preview data streams](preview-data-streams.md). |
-| Connect weather data | Provides a shortcut to create a data streams based on real-time weather data. For more information, see [Real-Time weather source](add-source-real-time-weather.md) |
-| Learn from a tutorial | Links to the [Fabric Real-Time intelligence tutorial](../real-time-intelligence/tutorial-introduction.md) that has a module on using the Real-Time hub. |
-| Case study | Links to a [case study](https://www.microsoft.com/customers/story/1770346240728000716-elcome-microsoft-copilot-consumer-goods-en-united-arab-emirates). 
+- **Subscribe to OneLake events** - Provides a shortcut to create streams based on Fabric OneLake events. For details, see [Subscribe to OneLake events](create-streams-fabric-onelake-events.md#configure-and-create-an-eventstream). 
+- **Act on Job events** - Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for OneLake](set-alerts-fabric-onelake-events.md#set-alert-for-onelake-events). 
+- **Visualize data** - Provides a shortcut to create a dashboard based on data in a KQL table. 
+- **Explore data in motion** - Provides a shortcut to preview data in a data source. For more information, see [Preview data streams](preview-data-streams.md).
+- **Connect weather data** - Provides a shortcut to create a data streams based on real-time weather data. For more information, see [Real-Time weather source](add-source-real-time-weather.md) 
+- **Learn from a tutorial** - Links to the [Fabric Real-Time intelligence tutorial](/fabric/real-time-intelligence/tutorial-introduction) that has a module on using the Real-Time hub.
+- **Case study** - Links to a [case study](https://www.microsoft.com/customers/story/1770346240728000716-elcome-microsoft-copilot-consumer-goods-en-united-arab-emirates). 
 
 In the **All data streams** section at the bottom, you see all the streams and tables you can access. Streams are the outputs from [Fabric eventstreams](../real-time-intelligence/event-streams/overview.md) and tables are from Kusto Query Language (KQL) databases that you can access. 
 
