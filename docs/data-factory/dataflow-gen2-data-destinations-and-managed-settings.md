@@ -78,6 +78,14 @@ When you use an existing table, the table can't be recreated in any scenario. If
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/existing-table.png" alt-text="Screenshot of the Choose destination target window with the Existing table button selected.":::
 
+## Lakehouse Files or Tables
+
+For Lakehouse you have the option to create either files or tables in your lakehouse. This is unique as most destinations only support one or the other. This allows for more flexibility in how you structure your data in your lakehouse.
+
+To switch between files and tables, you can use the toggle when you browse for your lakehouse.
+
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/switch-to-file-mode.png" alt-text="Screenshot highlighting the switch to file mode toggle.":::
+
 ## Managed settings for new tables
 
 When you're loading into a new table, automatic settings are turned on by default. If you use automatic settings, Dataflow Gen2 manages the mapping for you. Here's what automatic settings do:
