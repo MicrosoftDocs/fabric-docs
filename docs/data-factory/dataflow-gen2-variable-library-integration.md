@@ -21,7 +21,7 @@ Inside your Dataflow Gen2, you can reference a variable using either one of the 
 * [Variable.ValueOrDefault](/powerquery-m/variable-valueordefault)
 * [Variable.Value](/powerquery-m/variable-value)
 
-The expected identifier that must be passed to either of these two functions must follow the following format:
+The expected identifier that must be passed to either of these two functions must follow the format of:
 ```
 $(/**/LibraryName/VariableName)
 ```
@@ -70,7 +70,7 @@ in
   #"Navigation 3" 
 ```
 
-When you run the Dataflow with the modified script it will resolve to the value from the variable and the correct data type defined by the variable. This will point to a different Workspace and Lakehouse depending on the values available at the time of running your Dataflow.
+When you run the Dataflow with the modified script, it resolves to the value from the variable, and the correct data type defined by the variable. This points to a different Workspace and Lakehouse depending on the values available at the time of running your Dataflow.
 
 >[!CAUTION]
 >The Power Query editor doesn't currently support the evaluation of variables. We recommend using the **Variable.ValueOrDefault** function to ensure that your authoring experience uses the default value for prototyping.
@@ -84,7 +84,7 @@ The following list outlines important constraints and behaviors to keep in mind 
 
 * **Workspace Scope**: Variable libraries must reside in the same workspace as the Dataflow Gen2 with CI/CD.
 * **Reference Location**: Variables can only be used inside the [mashup.pq file of a Dataflow Gen2 with CI/CD](rest/api/fabric/articles/item-management/definitions/dataflow-definition#mashup-contentdetails-example).
-* **Runtime behavior**: Variables values are retrieved at the start of a run operation and persisted throughout the operation. Changes that happen to a library during a Dataflow run will not halt or impact the run.
+* **Runtime behavior**: Variables values are retrieved at the start of a run operation and persisted throughout the operation. Changes that happen to a library during a Dataflow run won't halt or impact the run.
 * **Power Query editor support**: No current support to resolve or evaluate variables within the Power Query editor. 
 * **Using a default value**: When using a default value through the function **Variable.ValueOrDefault**, make sure that the data type of the default value matches the data type of the referenced variable.
 * **Supported Types**: Only variables of basic types are supported (`boolean`, `datetime`, `guid`, `integer`, `number`, and `string`).
