@@ -13,7 +13,7 @@ ms.custom: dataflows
 >[!NOTE]
 >This feature is currently in public preview and only available for Dataflow Gen2 with CI/CD.
 
-[Fabric variable libraries](/cicd/variable-library/variable-library-overview) offer a centralized way to manage configuration values across Microsoft Fabric workloads. With the new integration in Dataflow Gen2 (Preview), you can reference these variables directly in your dataflow, enabling dynamic behavior across environments and simplifying CI/CD workflows.
+[Fabric variable libraries](/fabric/cicd/variable-library/variable-library-overview) offer a centralized way to manage configuration values across Microsoft Fabric workloads. With the new integration in Dataflow Gen2 (Preview), you can reference these variables directly in your dataflow, enabling dynamic behavior across environments and simplifying CI/CD workflows.
 
 ## Prerequisites
 
