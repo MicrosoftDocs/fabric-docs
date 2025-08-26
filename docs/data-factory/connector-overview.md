@@ -126,6 +126,7 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | [IBM Db2 database](connector-ibm-db2-database-overview.md) | ✓/− | ✓/− |✓/−  |
 | IBM Netezza | ✓/− |  |  |
 | [Impala](connector-impala-overview.md) | ✓/− |  |  |
+| [Informix For Pipeline](connector-informix-for-pipeline-overview.md) |  | ✓/✓ | ✓/✓ |
 | Indexima | ✓/− |  |  |
 | Industrial App Store | ✓/− |  |  |
 | InformationGrid | ✓/− |  |  |
