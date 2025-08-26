@@ -8,6 +8,7 @@ reviewer: alsavelv
 ms.topic: tutorial
 ms.custom: 
 ms.date: 08/26/2025
+ai.usage: ai-assisted
 ---
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_dependencies_tutorial.ipynb -->

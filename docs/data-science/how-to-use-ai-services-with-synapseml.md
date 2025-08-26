@@ -10,6 +10,7 @@ reviewer: JessicaXYWang
 ms.date: 08/26/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
+ai.usage: ai-assisted
 ---
 
 # Use Azure AI services with SynapseML in Microsoft Fabric

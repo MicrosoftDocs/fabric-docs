@@ -7,6 +7,7 @@ ms.author: jburchel
 ms.topic: conceptual
 ms.date: 08/26/2025
 reviewer: JessicaXYWang
+ai.usage: ai-assisted
 ---
 
 # What is SynapseML?

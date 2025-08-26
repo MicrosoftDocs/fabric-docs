@@ -7,6 +7,7 @@ ms.reviewer: deevij
 ms.topic: troubleshooting
 ms.custom: 
 ms.date: 08/26/2025
+ai.usage: ai-assisted
 ---
 
 # Fabric Notebooks troubleshooting guide

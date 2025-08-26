@@ -9,6 +9,7 @@ ms.custom:
 ms.date: 08/26/2025
 ms.search.form: R Language
 reviewer: sdgilley
+ai.usage: ai-assisted
 ---
 
 # Use R for Apache Spark
