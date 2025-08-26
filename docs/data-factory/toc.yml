@@ -557,6 +557,12 @@
         href: connector-postgresql.md
       - name: Configure in a data pipeline Copy activity
         href: connector-postgresql-copy-activity.md
+    - name: Presto
+      items:
+      - name: Presto - Overview
+        href: connector-presto-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-presto-copy-activity.md    
     - name: REST
       items:
       - name: REST - Overview
