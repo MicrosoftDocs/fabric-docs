@@ -41,7 +41,8 @@ Set up the Teams activity by following these steps:
 1. Add a connection to your Teams activity. You can create a new connection or use an existing one.
 
     > [!NOTE]
-    > If you're using user authentication and deploying the pipeline with the Teams activity to another workspace, the activity will be inactive until you create a new user authentication connection in the target workspace.
+    > * If you're using user authentication and deploying the pipeline with the Teams activity to another workspace, the activity will be inactive until you create a new user authentication connection in the target workspace.
+    > * If you don't have access to the connections used in the Teams activity, the target environment will set those activities to inactive. After that you can edit the target pipeline, change the authorization, and set the activity to active.
 
    :::image type="content" source="media/teams-activity/connect-to-teams.png" alt-text="Screenshot showing the Settings tab of the Teams activity highlighting where to create a new connection or use an existing connection.":::
 
