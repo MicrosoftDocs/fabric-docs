@@ -1,4 +1,13 @@
-Classification of Natural Language Text with Generative AI in Microsoft Fabric
+---
+title: Classification of Natural Language Text with Generative AI in Microsoft Fabric
+description: Learn to build a scalable multi-label text classifier for natural language using Generative AI and LLMs in Microsoft Fabric.
+ms.author: pbhandia
+author: priyank96
+ms.topic: tutorial
+ms.date: 08/26/2025
+---
+
+# Classification of Natural Language Text with Generative AI in Microsoft Fabric
 
 ### Introduction
 
