@@ -81,8 +81,6 @@ For **General** tab configuration, see our [General settings overview](activity-
 
 The SharePoint Online List source supports the following properties under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-sharepoint-online-list/source.png" lightbox="./media/connector-sharepoint-online-list/source.png" alt-text="Screenshot that shows source tab and the list of properties.":::
-
 **Required properties:**
 
 - **Connection**: Select a SharePoint Online List connection from the connection list. If no connection exists, create a new HTTP connection by selecting **Browse all**, then **SharePoint Online List**, and following the [connection guide](connector-sharepoint-online-list.md) to fill out the details.
@@ -101,7 +99,7 @@ The SharePoint Online List source supports the following properties under the **
 Under **Advanced**, you can specify the following fields:
 
 - **Request timeout**: The wait time to get a response from SharePoint Online. Default value is 5 minutes (00:05:00).
-- **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
+- **Additional columns**: Add other data columns to store source files' relative path or static value. Expression is supported for the latter.
 
   :::image type="content" source="./media/connector-sharepoint-online-list/additional-columns.png" lightbox="./media/connector-sharepoint-online-list/additional-columns.png" alt-text="Screenshot that shows additional columns.":::
 
