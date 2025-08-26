@@ -78,7 +78,7 @@ sections:
       - question: |
           Within Fabric DataFlow Gen2, I occasionally encounter features such as DataflowsStaginglakehouse / DataflowsStagingwarehouse. What are these features?
         answer: |
-          In certain user experiences, you may encounter system artifacts not intended for interaction. It's best to disregard these artifacts, as they'll eventually be removed from the Get Data experiences in the future.
+          In certain user experiences, you may encounter system items not intended for interaction. It's best to disregard these items, as they'll eventually be removed from the Get Data experiences in the future.
       - question: |
           My refresh failed with the error message "The dataflow refresh failed due to insufficient permissions for accessing staging artifacts." What should I do?
         answer: |

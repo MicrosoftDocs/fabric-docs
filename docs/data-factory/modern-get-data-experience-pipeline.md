@@ -11,7 +11,7 @@ ms.custom: pipelines
 
 # Easily connect to your data with the new modern get data experience for data pipelines
 
-The new modern get data experience for data pipelines simplifies connecting to data by intuitively browsing different Fabric artifacts through the OneLake data hub. This feature lets you get to your data in the quickest way possible. This new experience empowers you to more easily move your data from various sources to your preferred destinations.
+The new modern get data experience for data pipelines simplifies connecting to data by intuitively browsing different Fabric items through the OneLake data hub. This feature lets you get to your data in the quickest way possible. This new experience empowers you to more easily move your data from various sources to your preferred destinations.
 
 ## Prerequisites
 

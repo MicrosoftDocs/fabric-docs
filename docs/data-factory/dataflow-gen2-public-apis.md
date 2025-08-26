@@ -124,7 +124,7 @@ Payload:
 
 ```http
 {
-    "id": "\<artifactId>",
+    "id": "\<itemId>",
     "type": "Dataflow",
     "displayName": "My dataflow",
     "description": "My dataflow description",
@@ -207,7 +207,7 @@ Payload:
 
 ```http
 {
-    "id": "\<artifactId>",
+    "id": "\<itemId>",
     "type": "Dataflow",
     "displayName": "My dataflow",
     "description": "My dataflow description",
@@ -235,7 +235,7 @@ Headers:
 
 ```http
 {
-    "id": "\<artifactId>",
+    "id": "\<itemId>",
     "type": "Dataflow",
     "displayName": "My dataflow",
     "description": "My dataflow description",
@@ -344,7 +344,7 @@ Payload:
 
 ```http
 { 
-    "id": "\<artifactId>", 
+    "id": "\<itemId>", 
     "type": "Dataflow", 
     "displayName": "My dataflow updated", 
     "description": "My dataflow description updated", 

@@ -123,7 +123,7 @@ Additionally, APIs are available to refresh a dataflow without publishing or to 
 
 While Dataflow Gen2 with CI/CD and Git support offers a powerful set of features for enterprise ready collaboration, this required us to rebuild the backend to the fabric architecture. This means that some features aren't yet available or have limitations. We're actively working to improve the experience and will update this article as new features are added.
 
-- When you delete the last Dataflow Gen2 with CI/CD and Git support, the staging artifacts become visible in the workspace and are safe to be deleted by the user.
+- When you delete the last Dataflow Gen2 with CI/CD and Git support, the staging items become visible in the workspace and are safe to be deleted by the user.
 - Workspace view doesn't show the following: Ongoing refresh indication, last refresh, next refresh, and refresh failure indication.
 - When your dataflow fails to refresh we do not support automatically sending you a failure notification. As a workaround you can leverarage the orchrestration capabilities of Data Pipelines.
 - When branching out to another workspace, a Dataflow Gen2 refresh might fail with the message that the staging lakehouse couldn't be found. When this happens, create a new Dataflow Gen2 with CI/CD and Git support in the workspace to trigger the creation of the staging lakehouse. After this, all other dataflows in the workspace should start to function again.

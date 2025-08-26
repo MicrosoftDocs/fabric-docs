@@ -70,8 +70,8 @@ Before proceeding with the steps in this article, Save the following values from
 The first step in the authorization code flow is for the user to authorize the app to act on their behalf. By sending the 'GET' request to '/authorize' endpoint, Microsoft Entra ID signs the user in and requests their consent for the permissions that the app requests. Replace the placeholders with your values and paste the following URL in your browser. 
 
 The plugin requires the following scopes for authentication:
--  **itemType.Execute.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all artifacts of '\<itemtype\>' that the user has access to.
--  **itemType.Read.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all artifacts of type '\<itemType\>' that the user has access to.
+-  **itemType.Execute.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all items of '\<itemtype\>' that the user has access to.
+-  **itemType.Read.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all items of type '\<itemType\>' that the user has access to.
 -  **offline_access**: Standard OIDC scope requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
 ```http
 // Line breaks for legibility only

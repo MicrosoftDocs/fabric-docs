@@ -101,7 +101,7 @@ Before you start, complete these prerequisites:
 
     :::image type="content" source="media/quickstart-copy-job/schedule-runs.png" alt-text="Screenshot of the review and save page, with the run options set to run on schedule every one minute." lightbox="media/quickstart-copy-job/schedule-runs.png":::
 
-1. Once the Copy job artifact is saved successfully, it starts the first run to bring in the initial data from the source table.
+1. Once the Copy job item is saved successfully, it starts the first run to bring in the initial data from the source table.
 
 1. Use the **Copy Job panel** or **Monitoring Hub** to monitor progress. [Learn more about monitoring Copy Jobs](monitor-copy-job.md).
 
