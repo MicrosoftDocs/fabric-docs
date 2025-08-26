@@ -1,5 +1,5 @@
 ---
-title: Use Fabric Variable Libraries in Dataflow Gen2 (Preview)
+title: Use Fabric variable libraries in Dataflow Gen2 (Preview)
 description: Overview on how to use Fabric variable libraries inside of a Dataflow Gen2 with CI/CD.
 author: ptyx507x
 ms.author: miescobar
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/15/2025
 ms.custom: dataflows
 ---
-# Use Fabric Variable Libraries in Dataflow Gen2 (Preview)
+# Use Fabric variable libraries in Dataflow Gen2 (Preview)
 
 >[!NOTE]
 >This feature is currently in public preview and only available for Dataflow Gen2 with CI/CD.
 
-[Fabric variable libraries](/cicd/variable-library/variable-library-overview.md) offer a centralized way to manage configuration values across Microsoft Fabric workloads. With the new integration in Dataflow Gen2 (Preview), you can reference these variables directly in your dataflow, enabling dynamic behavior across environments and simplifying CI/CD workflows.
+[Fabric variable libraries](/cicd/variable-library/variable-library-overview) offer a centralized way to manage configuration values across Microsoft Fabric workloads. With the new integration in Dataflow Gen2 (Preview), you can reference these variables directly in your dataflow, enabling dynamic behavior across environments and simplifying CI/CD workflows.
 
 ## How to Use Variable Libraries in Dataflow Gen2
 
@@ -70,7 +70,7 @@ in
   #"Navigation 3" 
 ```
 
-When you run the Dataflow with the modified script it will resolve to the value from the variable and the correct data type defined by the variable. This will point to a different Workspace and Lakehouse depending on the values available at the time of running your Dataflow
+When you run the Dataflow with the modified script it will resolve to the value from the variable and the correct data type defined by the variable. This will point to a different Workspace and Lakehouse depending on the values available at the time of running your Dataflow.
 
 >[!CAUTION]
 >The Power Query editor doesn't currently support the evaluation of variables. We recommend using the **Variable.ValueOrDefault** function to ensure that your authoring experience uses the default value for prototyping.
