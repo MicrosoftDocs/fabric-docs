@@ -5,7 +5,7 @@ author: julcsc
 ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom:
-ms.date: 08/20/2025
+ms.date: 08/25/2025
 #customer intent: As a Fabric user, I know how to find my content from Home.
 ---
 
@@ -53,7 +53,7 @@ The items that you can create and access appear on Home. If your Home canvas get
 > [!IMPORTANT]
 > Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. The exception to this restriction is if your subscription or license changes to one with less access, then you receive a prompt letting you know that the item is no longer available and asking you to start a trial or upgrade your license.
 
-## Locate items from Home
+## Locate resources from Home
 
 [!INCLUDE [product-name](../includes/product-name.md)] offers many ways of locating and viewing your items and ways of creating new items. All approaches access the same pool of items, just in different ways. Searching is sometimes the easiest and quickest way to find something. While other times, using the nav pane to open a workspace, using the nav pane to open OneLake, or selecting a card on the Home canvas is your best option.
 
@@ -61,9 +61,7 @@ The items that you can create and access appear on Home. If your Home canvas get
 
 Along the left side is a narrow vertical bar, referred to as the ***nav pane***. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly.
 
-:::image type="content" source="media/fabric-home/fabric-left-nav-panes.png" alt-text="Screenshot of the nav pane for Data factory.":::
-
-In the bottom section of the nav pane is where your active workspaces and items are listed. In this example, our active items are: an Activator, the *Retail sales* workspace, and a KQL database. Select any of these items to display them on your canvas, they are also displayed in the [object explorer](#object-explorer). To open other workspaces, use the [workspace selector](#find-and-open-workspaces) to view a list of your workspaces and select one to open on your canvas.
+In the bottom section of the nav pane is where your active workspaces are listed. Select a workspace to display it on your canvas, it is also available from the [object explorer](#object-explorer). Usethe [workspace selector](#find-and-open-workspaces) to view a list of your workspaces and select one to open on your canvas.
 
 #### Add and remove buttons from the nav pane
 
