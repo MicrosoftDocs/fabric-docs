@@ -694,6 +694,21 @@
       "source_path_from_root": "/docs/real-time-intelligence/eventhouse-git-deployment-pipelines.md",
       "redirect_url": "/fabric/real-time-intelligence/git-deployment-pipelines",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/copilot-for-writing-queries.md",
+      "redirect_url": "/fabric/real-time-intelligence/copilot-writing-queries",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/copilot-generate-dashboard.md",
+      "redirect_url": "/fabric/real-time-intelligence/copilot-generate-dashboard",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/dashboard-copy-from-data-explorer.md",
+      "redirect_url": "/fabric/real-time-intelligence/",
+      "redirect_document_id": true
     }
   ]
 }

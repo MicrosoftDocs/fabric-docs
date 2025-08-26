@@ -142,7 +142,7 @@ To enable these capabilities in Desktop, admins can configure [service tags](/az
 
 ### Mirrored database
 
-Private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring), [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db) and [SQL Server 2025 mirroring](/fabric/database/mirrored-database/sql-server) (using CTP 2.0 or higher version). For other types of database mirroring, if the **Block public Internet access** tenant setting is **enabled**, active mirrored databases enter a paused state, and mirroring can't be started. 
+Private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring) and [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db). For other types of database mirroring, if the **Block public Internet access** tenant setting is **enabled**, active mirrored databases enter a paused state, and mirroring can't be started. 
 
 For open mirroring, when the **Block public Internet access** tenant setting is **enabled**, ensure the publisher writes data into the OneLake landing zone via a private link. 
 
