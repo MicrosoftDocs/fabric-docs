@@ -14,13 +14,15 @@ ms.collection: ce-skilling-ai-copilot
 ---
 # Azure AI services in SynapseML with bring your own key
 
-[SynapseML](../synapse-overview.md) is an open source library that simplifies building scalable machine learning pipelines and integrates with Azure Synapse Analytics. It handles text analytics and computer vision tasks and supports Python, R, Scala, Java, and .NET.
+[SynapseML](../synapse-overview.md) is an open source library that simplifies building scalable machine learning pipelines and integrates with Azure Synapse Analytics. It handles text analytics and computer vision tasks. It supports Python, R, Scala, Java, and .NET.
 
-[Azure AI services](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that developers use to add AI features to their apps. Azure AI services helps developers build apps that can see, hear, speak, understand, and reason. Azure AI services includes five pillars: vision, speech, language, web search, and decision. Fabric uses SynapseML to provide access to these services.
+[Azure AI services](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that you use to add AI features to your apps. Azure AI services helps you build apps that see, hear, speak, understand, and reason. It includes five capabilities: vision, speech, language, web search, and decision. Fabric uses SynapseML to provide access to these services.
 
 
 > [!NOTE] 
-> Fabric integrates with Azure AI services to enrich your data with [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/). This integration is in public preview. For more information about prebuilt AI services in Fabric, see [AI services in Fabric](./ai-services-overview.md).
+> Fabric integrates with Azure AI services to enrich your data with [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/). This integration is in public preview. Learn more in [AI services in Fabric](./ai-services-overview.md).
+
+
 
 
 ## Usage of Azure AI services with bring your own key
@@ -92,4 +94,4 @@ ms.collection: ce-skilling-ai-copilot
 
 - [Use Azure AI services with SynapseML in Microsoft Fabric](../how-to-use-ai-services-with-synapseml.md)
 - [Use Azure AI services with SynapseML for multivariate anomaly detection](../multivariate-anomaly-detection.md)
-- [Create a custom search engine and question-answering system](../create-a-multilingual-search-engine-from-forms.md)
+- [Create a custom search engine and question answering system](../create-a-multilingual-search-engine-from-forms.md)
