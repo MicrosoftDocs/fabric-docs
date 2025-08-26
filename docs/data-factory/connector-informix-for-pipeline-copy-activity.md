@@ -37,7 +37,7 @@ The following properties are supported for Informix For Pipeline under the **Sou
 
 The following properties are **required**:
 
-- **Connection**:  Select a Informix For Pipeline connection from the connection list. If no connection exists, then create a new Informix For Pipeline connection.
+- **Connection**:  Select an Informix For Pipeline connection from the connection list. If no connection exists, then create a new Informix For Pipeline connection.
 
 - **Use query**: Select **Table** or **Query**.
 
@@ -63,7 +63,7 @@ The following properties are supported for Informix For Pipeline under the **Des
 
 The following properties are **required**:
 
-- **Connection**: Select a Informix For Pipeline connection from the connection list. If no connection exists, then create a new Informix For Pipeline connection.
+- **Connection**: Select an Informix For Pipeline connection from the connection list. If no connection exists, then create a new Informix For Pipeline connection.
 
 - **Table**: Specify the name of the table in the Informix For Pipeline to write data.
 
