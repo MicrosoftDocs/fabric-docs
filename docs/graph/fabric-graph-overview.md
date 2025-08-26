@@ -6,6 +6,7 @@ ms.date: 08/18/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: eur
+ms.search.form: Getting started with Graph
 ---
 
 # Graph in Microsoft Fabric overview
