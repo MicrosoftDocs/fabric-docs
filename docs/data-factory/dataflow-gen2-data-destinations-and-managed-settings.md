@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.date: 08/03/2025
+ms.date: 08/26/2025
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -138,7 +138,7 @@ Schema options on publish only apply when the update method is **replace**. When
 > Parameters in the data destination can also be applied directly through the M script created for the queries related to it. You can manually alter the script of your data destination queries to apply the parameters to meet your requirements.
 > However, the user interface currently only supports parameterization for the table or file name field.
 
-##  Mashup script for data destination queries
+## Mashup script for data destination queries
 
 When using the data destination feature, the settings defined to load the data to your destination are defined in the mashup document of your Dataflow. The Dataflow application fundamentally creates two components:
 * **A query that contains the navigation steps to your destination**. It follows the pattern of your initial query name with a suffix of **_DataDestination**. For example:
@@ -210,6 +210,12 @@ When staging is disabled, and you choose Warehouse as the output destination, yo
 If you already have a warehouse as a destination and try to disable staging, a warning is displayed. You can either remove the warehouse as the destination or dismiss the staging action.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-staging.png" alt-text="Screenshot of the Enable staging warning.":::
+
+### Schema support for Lakehouse, Warehouse and SQL databases
+
+Lakehouse, Warehouse, and SQL databases in Microsoft Fabric all support the ability to create a schema for your data. This means you can structure your data in a way that makes it easier to manage and query. In order to be able to write to schemas in these destinations you need to enable the **Navigate using full hierarchy** option under **advanced options** when you setup your connection. If you don't enable this option, you won't be able to select or view the schemas in the destination.
+
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-schema-support.png" alt-text="Screenshot highlighting the Enable schema support option.":::
 
 ### Vacuuming your Lakehouse data destination
 
