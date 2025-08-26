@@ -39,7 +39,7 @@ Variable.Value("$(/**//My Library/My Variable)")
 >[!NOTE]
 >The Power Query editor doesn't currently support the evaluation of variables. We recommend using the **Variable.ValueOrDefault** function to ensure that your authoring experience uses the default value for prototyping.
 > 
->Using a default value through **Variable.ValueOrDefault** ensures that your formula resolves even when you move or copy your solution to another environment that doesn't have the reference variable library.
+>Using a default value through Variable.ValueOrDefault ensures that your formula resolves even when you copy or move your solution to another environment that doesn't have the reference variable library.
 >At runtime, the variable is resolved to the correct value.
 
 Applying this function to a query script, take the following example query that connects to a table named **Table1** from a specific LakehouseId and WorkspaceId using the [Fabric Lakehouse connector](connector-lakehouse-overview.md). 
