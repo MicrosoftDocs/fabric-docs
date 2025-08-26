@@ -139,11 +139,11 @@ And here's a Copy activity for Data Factory in Fabric, where compression and fil
 
 ### Scenario 2: ADF with CDC, SSIS, and Airflow
 
-Recreate CDC as [Copy job](create-copy-job.md) items. For Airflow, copy your DAGs into Fabric’s Airflow offering. Execute SSIS packages using ADF pipelines and call them from Fabric. See [Fabric Airflow](fabric-airflow.md).
+Recreate CDC as [Copy job](create-copy-job.md) items. For Airflow, copy your DAGs into [Fabric’s Apache Airflow offering](cicd-apache-airflow-jobs.md). Execute SSIS packages using ADF pipelines and call them from Fabric.
 
 ### Scenario 3: Git-enabled Data Factory migration
 
-If your ADF or Synapse factories are connected to an external Git provider like Azure DevOps (ADO) or GitHub, you’ll need to migrate these items to a Fabric workspace. This involves setting up Git integration in Fabric and aligning your workflows with Fabric’s CI/CD capabilities. See [Git integration in Fabric](git-integration.md).
+If your ADF or Synapse factories are connected to an external Git provider like Azure DevOps (ADO) or GitHub, you’ll need to migrate these items to a Fabric workspace. This involves setting up Git integration in Fabric and aligning your workflows with Fabric’s CI/CD capabilities. See [Git integration in Fabric](../cicd/git-integration/intro-to-git-integration.md).
 
 Fabric offers two primary CI/CD options:
 
