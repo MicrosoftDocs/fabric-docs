@@ -41,7 +41,7 @@ Fabric provides two options to use Azure AI services:
 
 [REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md), [SynapseML](how-to-use-openai-sdk-synapse.md)
 
-- gpt-4 family: `gpt-4o`, `gpt-4o-mini`, and `gpt-4.1` are supported.
+- Language Models: `gpt-4.1`, `gpt-4o`, `gpt-4o-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
 - text-embedding-ada-002 (version 2), embedding model that can be used with embedding API requests. The maximum accepted request token is 8,191, and the returned vector has dimensions of 1,536.
 
 ### [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) 
