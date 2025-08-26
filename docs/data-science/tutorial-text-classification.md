@@ -28,7 +28,7 @@ If you'd like to build your own text classifier, you need the following Fabric I
 - **OneLake** for secure schema-organized storage
   - To learn more about lakehouse schemas, view [this post](https://blog.fabric.microsoft.com/en-US/blog/organizing-your-tables-with-lakehouse-schemas-and-more-public-preview/).
 
-- **Pipelines or Taskflows** for orchestration
+- **Pipelines** for orchestration
 
 - **Fabric API calls** to enable Continuous Integration/Continuous Deployment
   - To learn more about using the Fabric API for CICD, view [this post](https://blog.fabric.microsoft.com/en-us/blog/introducing-fabric-cicd-deployment-tool?ft=All).
@@ -135,7 +135,7 @@ def combine_system_user(row):
 
 ### Prompting
 
-Carefully constructed user and system prompts are critical to make the LLMs focus on a specific task. Well-designed prompts reduce the occurence incorrect outputs, provide necessary context for LLMs to complete their task, and help control output token cost. The following snippet is an example prompt used to segment natural language text into individual topics and subjects in the context of a survey response.
+Carefully constructed user and system prompts are critical to make the language models focus on a specific task. Well-designed prompts reduce the occurrence incorrect outputs, provide necessary context for LLMs to complete their task, and help control output token cost. The following snippet is an example prompt used to segment natural language text into individual topics and subjects in the context of a survey response.
 
 ```plaintext
 You are an AI assistant that helps people study survey responses from customers.
