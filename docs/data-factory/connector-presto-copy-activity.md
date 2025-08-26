@@ -58,6 +58,38 @@ Under **Advanced**, you can specify the following fields:
 
 For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
 
+#### Data type mapping for Presto
+
+When copying data from Presto, the following mappings are used from Presto data types to interim data types used by the service internally.
+
+| Presto data type     | Interim service data type   |
+|:--- |:--- |
+| ARRAY | String |
+| BIGINT | Int64 |
+| BOOLEAN | Boolean |
+| CHAR | String |
+| DATE | Date |
+| DECIMAL (Precision < 28) | Decimal |
+| DECIMAL (Precision >= 28) | Decimal |
+| DOUBLE | Double |
+| INTEGER | Int32 |
+| INTERVAL_DAY_TO_SECOND | TimeSpan |
+| INTERVAL_YEAR_TO_MONTH | String |
+| IPADDRESS | String |
+| JSON | String |
+| MAP | String |
+| REAL | Single |
+| ROW | String |
+| SMALLINT | Int16 |
+| TIME | Time |
+| TIME_WITH_TIME_ZONE | String |
+| TIMESTAMP | Datetime |
+| TIMESTAMPWITHTIMEZONE | Datetimeoffset |
+| TINYINT | SByte |
+| UUID | Guid |
+| VARBINARY | Byte[] |
+| VARCHAR | String |
+
 ### Settings
 
 For **Settings** tab configuration, see [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).

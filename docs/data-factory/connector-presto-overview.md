@@ -18,6 +18,7 @@ The Presto connector is supported in Data Factory for [!INCLUDE [product-name](.
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Data pipeline** <br>- [Copy activity](connector-presto-copy-activity.md) (source/-)<br>- Lookup activity | None <br>On-premises<br> Virtual network | Anonymous <br>LDAP   |
+| **Copy job** (source/-) | None <br>On-premises<br> Virtual network |  Anonymous <br>LDAP |
 
 ## Related content
 
