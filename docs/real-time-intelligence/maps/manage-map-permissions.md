@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.service: azure-maps
 ms.subservice:
 ms.custom:
+ms.search.form: Map permissions 
 ---
 
 # Manage Map permissions
