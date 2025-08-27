@@ -8,9 +8,10 @@ reviewer: midesa
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
-ms.date: 03/25/2025
+ms.date: 08/272025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
+ai.usage: ai-assisted
 #customer intent: As an Analyst, I want to create a Fabric data agent that relies on generative AI, that my colleagues and I can use to have conversations about our data.
 ---
 
