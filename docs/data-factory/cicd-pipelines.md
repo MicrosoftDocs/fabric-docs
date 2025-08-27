@@ -197,6 +197,74 @@ After creating a pipeline, you need to add content you want to manage to the pip
 1. Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. [Paired items](../cicd/deployment-pipelines/assign-pipeline.md#item-pairing) are overwritten. You can learn more about this process, in the [Deploy content to an existing workspace](../cicd/deployment-pipelines/understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
 1. You can review the deployment history to see the last time content was deployed to each stage. To examine the differences between the two pipelines before you deploy, see [Compare content in different deployment stages](../cicd/deployment-pipelines/compare-pipeline-content.md).
 
+## Scheduled pipeline CI/CD integration
+
+When you create a schedule for a pipeline, it is automatically added to the Git repository connected to your workspace and store in a *.schedules* file in the pipeline definition.
+
+:::image type="content" source="media/pipeline-runs/pipeline-job-scheduler-git.png" alt-text="Screenshot of the .schedules file for a scheduled pipeline in Fabric Data Factory." lightbox="media/pipeline-runs/pipeline-job-scheduler-git.png":::
+
+### Scheduler API
+
+The Scheduler API supports the following operations:  
+
+- Cancel Pipeline Job Instance  
+- Create Pipeline Schedule  
+- Delete Pipeline Schedule  
+- Get Pipeline Instance  
+- Get Pipeline Schedule  
+- List Pipeline Job Instances  
+- List Pipeline Schedules  
+- Run On Demand Pipeline Job  
+- Update Pipeline Schedule  
+
+For example, you can set up a pipeline that runs every 10 minutes between May 27 and May 31, 2025, in Central Standard Time, and is currently enabled:
+
+```http
+POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/items/<pipelineId>/jobs/<jobType>/schedules 
+
+{ 
+  "enabled": true, 
+  "configuration": { 
+    "startDateTime": "2025-05-27T00:00:00", 
+    "endDateTime": "2025-05-31T23:59:00", 
+    "localTimeZoneId": " Central Standard Time", 
+    "type": "Cron", 
+    "interval": 10 
+  } 
+} 
+```
+
+|Name|In|Required|Type|Description|Example|
+|---|---|---|---|---|---|
+|pipelineID|Path|True|String(guid)|The pipeline id|aaaa0000-bb11-2222-33cc-444444dddddd|
+|jobType|Path|True|String|The job type|DefaultJob|
+|workspaceId|Path|True|String|The workspace ID|aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb|
+
+**Response:**
+
+Status code: 201
+
+```json
+{ 
+  "id": " xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 
+  "enabled": true, 
+  "createdDateTime": "2025-05-27T05:35:20.5366667", 
+  "configuration": { 
+    "startDateTime": "2025-05-27T00:00:00", 
+    "endDateTime": "2025-05-31T23:59:00", 
+    "localTimeZoneId": "Central Standard Time", 
+    "type": "Cron", 
+    "interval": 10 
+  }, 
+  "owner": { 
+    "id": " xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 
+    "type": "User" 
+  } 
+} 
+```
+
+For more information on the available operations and their use, see [the Job Scheduler API documentation](/rest/api/fabric/core/job-scheduler).
+
 ## Known limitations
 
 The following known limitations apply to CI/CD for pipelines in Data Factory in Microsoft Fabric:
