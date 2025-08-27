@@ -246,7 +246,7 @@ Status code: 201
 
 ```json
 { 
-  "id": " xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 
+  "id": " eeeeeeee-4444-5555-6666-ffffffffffff", 
   "enabled": true, 
   "createdDateTime": "2025-05-27T05:35:20.5366667", 
   "configuration": { 
@@ -257,7 +257,7 @@ Status code: 201
     "interval": 10 
   }, 
   "owner": { 
-    "id": " xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 
+    "id": " aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e", 
     "type": "User" 
   } 
 } 
