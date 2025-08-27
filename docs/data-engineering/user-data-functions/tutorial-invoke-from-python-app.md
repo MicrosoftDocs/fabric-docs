@@ -19,7 +19,25 @@ To invoke Fabric User data function items (Preview) from a console application i
 - Create a [Microsoft Fabric account for free](https://www.microsoft.com/microsoft-fabric/getting-started) if you don't have one.
 - [Create a workspace](../../fundamentals/create-workspaces.md).
 - Create a user data functions item and publish it. Check these articles on [how to create one in VS Code](./create-user-data-functions-vs-code.md) or [how to create one in the portal](./create-user-data-functions-portal.md). Publish the changes so the user data functions item is ready to be invoked.
-- [Create a Microsoft Entra app in Azure](../../get-started/create-entra-app) to invoke User data functions with Microsoft Entra for authentication.
+
+## Create a Microsoft Entra app
+
+The following steps explain how to configure support for a ReactJS application in Microsoft Entra.
+
+1. Register an application using the steps described on [Quickstart: Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
+
+2. The Microsoft Entra app **Application (client) ID** and **Directory (tenant) ID** values appear in the Summary box. Record these values because they're required later.
+
+3. Under the *Manage* list, select **API permissions**, then **Add permission**.
+
+4. Add the **PowerBI Service**, select **Delegated permissions**, and select **GraphQLApi.Execute.All** permissions. Confirm that admin consent isn't required.
+
+5. Go back to the *Manage* list, select **Authentication** > **Add a platform** > **Single-page application**.
+
+6. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm that the application is enabled for the [authorization code flow with Proof Key for Code Exchange (PKCE)](/azure/active-directory/develop/v2-oauth2-auth-code-flow). Select the **Configure** button to save your changes. If the application encounters an error related to cross-origin requests, add the **Mobile and desktop applications** platform in the previous step with the same redirect URI.
+
+7. Back to **Authentication**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
+
 
 ## Create a console application to invoke the function
 
