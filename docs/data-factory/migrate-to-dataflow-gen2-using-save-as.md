@@ -1,5 +1,5 @@
 ---
-title: Migrate to Dataflow Gen2 (CI/CD) using Save As
+title: Migrate to Dataflow Gen2 (CI/CD) using Save As (Preview)
 description: This article describes the procedure for migrating Dataflow Gen1, Dataflow Gen2, and Dataflow Gen2 (CI/CD) to Dataflow Gen2 (CI/CD) in Data Factory.
 author: whhender
 ms.author: whhender
@@ -10,17 +10,20 @@ ms.custom:
   - dataflows
 ---
 
-# Migrate to Dataflow Gen2 (CI/CD) using Save As
+# Migrate to Dataflow Gen2 (CI/CD) using Save As (Preview)
 
 Data Factory in Microsoft Fabric now includes a Save As feature that lets you perform a single gesture to save an existing dataflow as a new Dataflow Gen2 (CI/CD) item.
 
-## Save a Dataflow Gen2 or Gen2 (CI/CD) as a new Dataflow Gen2 (CI/CD)
+## Save a Dataflow Gen2 or Gen2 (CI/CD) as a new Dataflow Gen2 (CI/CD) (Preview)
+
+>[!IMPORTANT]
+>Saving from Gen2 (CI/CD) is still in preview.
 
 You can now use the new Save As feature to save a Dataflow Gen2 or Dataflow Gen2 (CI/CD) to a new Dataflow Gen2 (CI/CD). To use the Save As feature:
 
 [!INCLUDE [save-as-feature-how-to](includes/save-as-feature-how-to.md)]
 
-## Save a Dataflow Gen1 as a new Dataflow Gen2 (CI/CD)
+## Save a Dataflow Gen1 as a new Dataflow Gen2 (CI/CD) (Preview)
 
 You can also use the new Save As feature to save a Dataflow Gen1 to a new Dataflow Gen2 (CI/CD). To learn more, go to [Migrate from Dataflow Gen1 to Dataflow Gen2](dataflow-gen2-migrate-from-dataflow-gen1.md).  
 
@@ -34,26 +37,15 @@ To use the Save As feature:
 
 1. Close the new Dataflow Gen2 (CI/CD), or select **Save** or **Save and run**.
 
-## Bulk migration and automation
-
-For automation and bulk migrations of Dataflows Gen1 to Dataflows Gen2 (CI/CD), use the Dataflows Save As operation in Power BI REST API. Learn more at [Dataflows Save As operation in Power BI REST API](/rest/api/power-bi/dataflows).
-
 ## Known limitations
 
 The following tables contain the known limitations for the Save As feature:
 
 | Feature/Limitation | Dataflow Gen1 | Dataflow Gen2 |
 | ------------------ | ------------- | ------------- |
-| You're required to reconnect to data sources | No limitation<sup>1</sup> | No limitation<sup>1</sup> |
-| Scheduled refresh settings aren't copied | No limitation<sup>2</sup> | Limited |
-| Incremental refresh settings aren't copied | Limited<sup>3</sup> | Limited |
-| After creating a new Dataflow Gen2 (CI/CD) that contains Microsoft Fabric connections (for example, Lakehouse, Warehouse), if you add more Fabric connections, you'll need to reconnect existing Fabric connections.| Limited | Limited |
-
-<sup>1</sup> Cloud – Personal connections are copied from Dataflows Gen1/Gen2 to Dataflows Gen2 (CI/CD) created by Save As.
-
-<sup>2</sup> Refresh schedule is copied from Dataflows Gen1 to Dataflows Gen2 (CI/CD) created by Save As. The Schedule is set to **Off**, Start date and time = current date, and End date and time = current date + 100 years.
-
-<sup>3</sup> Since Dataflows Gen1 Incremental Refresh isn't compatible with Dataflows Gen2 (CI/CD), its settings aren't copied. RangeStart, RangeEnd parameters, and _Canary queries are removed from the new Dataflow Gen2(CI/CD) after Save As. For more information, see [Incremental refresh in Dataflow Gen2](dataflow-gen2-incremental-refresh.md#differences-between-incremental-refresh-in-dataflow-gen1-and-dataflow-gen2).
+| You're required to reconnect to data sources | Limited | Limited |
+| Scheduled refresh settings aren't copied | No limitation| Limited |
+| Incremental refresh settings aren't copied | Limited | Limited |
 
 Dataflow Gen1 capabilities that aren't applicable in Dataflow Gen2 (CI/CD) and therefore aren't copied:
 
