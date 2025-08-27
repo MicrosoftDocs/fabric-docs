@@ -51,7 +51,9 @@ Once the entire pipeline executes and the output status updates to **Succeeded**
 
 ## Scheduled data pipeline runs
 
-When you schedule a data pipeline run, you can choose the frequency that your pipeline runs. Select **Schedule**, found in the top banner of the **Home** tab, and then select **Add Schedule** to view your options. By default, your data pipeline isn't set on a schedule.
+When you schedule a data pipeline run, you can set multiple, specific schedules for each pipeline, so your data is prepared and available when you need it.
+
+Select **Schedule**, found in the top banner of the **Home** tab, and then select **Add Schedule** to view your options. By default, your data pipeline isn't set on a schedule.
 
 :::image type="content" source="media/pipeline-runs/schedule-pipeline-run.png" alt-text="Screenshot showing where to select Schedule on the Home tab." lightbox="media/pipeline-runs/schedule-pipeline-run.png":::
 
