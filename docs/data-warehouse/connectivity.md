@@ -3,7 +3,7 @@ title: Warehouse Connectivity
 description: Follow steps to connect SSMS to a warehouse item in your Microsoft Fabric workspace.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: salilkanade, dhsundar, fresantos
+ms.reviewer: fresantos, salilkanade
 ms.date: 08/27/2025
 ms.topic: how-to
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
