@@ -13,7 +13,7 @@ ms.search.form: Job insight
 
 Job insight is a Java-based diagnostic library designed to help you interactively analyze completed Spark applications in Microsoft Fabric. Job insight lets you gain deeper insights into Spark jobs by retrieving structured execution data such as queries, jobs, stages, tasks, and executors within your Fabric Spark notebooks using Scala.
 
-Whether you're troubleshooting performance issues or conducting custom diagnostics. Job insight library lets you work with Spark telemetry as native Spark Datasets, making it easier to troubleshoot performance issues and explore execution insights.
+Whether you're troubleshooting performance issues or conducting custom diagnostics, Job insight library lets you work with Spark telemetry as native Spark Datasets, making it easier to troubleshoot performance issues and explore execution insights.
 
 > [!NOTE]
 > Accessing the Job insight library using PySpark isn't supported yet.
