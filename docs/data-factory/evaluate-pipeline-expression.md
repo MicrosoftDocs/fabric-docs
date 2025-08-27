@@ -62,7 +62,7 @@ Here are some ways the Evaluate expression feature can help you:
 
 ## Current limitations
 
-Currently, evaluation happens before the pipeline runs. The evaluator doesn't know anything that occurs at runtime or afterward. It doesn't pull a run ID, trigger instance ID, activity outputs, or any values that only exist during a run.
+Currently, evaluation happens before the pipeline runs. The evaluator doesn't know anything that occurs at runtime or afterward. It doesn't pull a run ID, trigger instance ID, activity outputs, or any values that only exist during a run. So, you’ll have to manually provide these values.
 
 **What to do instead:** In the **Value** column, type sample values to mirror the data you expect at runtime (like paste a mock JSON for `activity('LookupCustomers').output`). This lets you validate your expression's structure and formatting even though the pipeline isn't running.
 
