@@ -6,33 +6,34 @@ author: jonburchel
 ms.reviewer: deevij
 ms.topic: troubleshooting
 ms.custom: 
-ms.date: 08/19/2025
+ms.date: 08/26/2025
+ai.usage: ai-assisted
 ---
 
-# Fabric Notebooks troubleshooting guide
+# Fabric notebooks troubleshooting guide
 
-Use this guide to quickly identify and resolve common issues when working in Fabric Notebooks. Each issue type includes examples and actionable next steps to help you recover efficiently.
+Use this guide to quickly find and fix common issues in Fabric notebooks. Each issue includes examples and next steps to help you fix problems fast.
 
-## Error messages and associated resolution categories
+## Error messages and resolution categories
 
-The following table lists common error messages you might encounter in Fabric Notebooks, along with links to the relevant troubleshooting sections.
+This table lists common Fabric Notebooks error messages and links to relevant troubleshooting sections.
 
-| Error Message | Categories / Resolution |
+| Error message | Categories and resolution |
 |---------------|------------------------|
 | Your session timed out after inactivity. | [Timeouts](#timeouts) |
-| Your session expired. | [General connectivity](#general-connectivity) / [Timeouts](#timeouts) / [Session Connectivity](#session-connectivity) |
-| Your notebook disconnected. | [General connectivity](#general-connectivity) / [Timeouts](#timeouts) |
+| Your session expired. | [General connectivity](#general-connectivity), [Timeouts](#timeouts), and [Session connectivity](#session-connectivity) |
+| Your notebook disconnected. | [General connectivity](#general-connectivity) and [Timeouts](#timeouts) |
 | Failed to retrieve MWC token… | [General connectivity](#general-connectivity) |
 | You're currently offline. | [General connectivity](#general-connectivity) |
 | Can't connect to the collaboration server. | [General connectivity](#general-connectivity) |
 | Error when shutting down kernel due to ajax error 410. | [General connectivity](#general-connectivity) |
 | Access denied. | [Access](#access) |
 | Unable to fetch high concurrency sessions. | [Access](#access) |
-| Unable to save your notebook. | [Save Failures](#save-failures) / [Access](#access) / [Paused Capacity](#paused-capacity) |
-| The capacity with ID _&lt;ID&gt;_ is paused. Your organization has reached its compute capacity limit. | [Paused Capacity](#paused-capacity) |
-| Your organization has reached its compute capacity limit. | [Paused Capacity](#paused-capacity) |
-| Item not found. | [Missing Items](#missing-items) |
-| Cannot call methods on a stopped SparkContext | [Spark Code Issue](#spark-code-issue) |
+| Unable to save your notebook. | [Save failures](#save-failures), [Access](#access), and [Paused capacity](#paused-capacity) |
+| The capacity with ID `<ID>` is paused. Your organization has reached its compute capacity limit. | [Paused capacity](#paused-capacity) |
+| Your organization has reached its compute capacity limit. | [Paused capacity](#paused-capacity) |
+| Item not found. | [Missing items](#missing-items) |
+| Cannot call methods on a stopped SparkContext | [Spark code issue](#spark-code-issue) |
 
 ## Notebook errors
 
@@ -42,14 +43,14 @@ The following section outlines common Notebook errors and their suggested resolu
 
 **Why it happens:**
 
-Notebook sessions autoshutdown after a period of inactivity. By default, this timeout is set to 20 minutes.
+Notebook sessions automatically shut down after a period of inactivity. By default, the timeout is 20 minutes.
 
 **What to do:**
 
 1. Rerun the notebook to restart the session.
-1. Adjust the session timeout duration at either the Notebook or Workspace level.
+1. Adjust the session timeout at the notebook or workspace level.
 
-#### Change timeout at the Notebook level
+#### Change the timeout at the notebook level
 
 1. Open a notebook and start a session from the **Connect** toolbar menu.
 1. Select the **Session ready** indicator in the lower-left corner.
@@ -58,21 +59,21 @@ Notebook sessions autoshutdown after a period of inactivity. By default, this ti
    > [!NOTE]
    > The **Session Ready** indicator is only visible when a session is active.
 
-   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/session-timeout.png" alt-text="Screenshot showing where to adjust the session timeout for a Fabric Notebook.":::
+   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/session-timeout.png" alt-text="Screenshot of where to adjust the session timeout for a Fabric notebook.":::
  
-#### Change timeout at the **Workspace** level
+#### Change the timeout at the **Workspace** level
 
-1. Navigate to **Workspace settings**.
+1. Go to **Workspace settings**.
 1. Select **Data Engineering/Science Spark settings**.
 1. Under the **Jobs** tab, adjust the session timeout duration as needed.
 
-   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/workspace-timeout.png" alt-text="Screenshot showing where to adjust the workspace timeout for a Fabric Notebook.":::
+   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/workspace-timeout.png" alt-text="Screenshot of where to adjust the workspace timeout for a Fabric notebook.":::
 
 ### General connectivity
 
 **Why it happens:**
 
-Network instability or temporary backend delay
+Network instability or a temporary backend delay.
 
 **What to do:**
 
@@ -94,7 +95,7 @@ You can start a session using three methods:
 1. Select **Run all** to start a session and execute all code cells in the notebook.
 1. Select **Run** on a cell to start a session and execute the selected cell.
 
-   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/start-session.png" alt-text="Screenshot showing the methods to start a new session in a Fabric Notebook.":::
+   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/start-session.png" alt-text="Screenshot of the methods to start a new session in a Fabric notebook.":::
 
 ### Access
 
@@ -110,24 +111,24 @@ These failures can happen for any of the following reasons:
 **What to do:**
 
 1. _Verify your sign-in_: Ensure you're logged in with the correct Microsoft Entra (formerly Azure Active Directory) account associated with your Fabric environment.
-1. _Refresh your session_: Sign out and sign back in to refresh your authentication token. You can do this by selecting your profile icon in the top-right corner of the window, and then and selecting **Sign out**.
-1. _Check permissions_: Confirm that you have the necessary role (that is, Contributor or Admin) for the resource you’re trying to access. This includes the Notebook, Lakehouse, Workspace, or Data Warehouse.
+1. _Refresh your session_: Sign out and sign back in to refresh your authentication token. To do this, select your profile icon in the top-right corner of the window, and then select **Sign out**.
+1. _Check permissions_: Confirm that you have the necessary role (that is, Contributor or Admin) for the resource you’re trying to access. This includes the notebook, lakehouse, workspace, or data warehouse.
 1. _Contact your administrator_: If you're still blocked, contact your tenant or workspace administrator to:
   - Confirm your user role and access level.
   - Check for token expiration issues.
   - Ensure you’re added to the correct Fabric tenant, especially if you recently joined the organization or switched accounts.
 
-#### How to manage access in a Fabric Workspace
+#### How to manage access in a Fabric workspace
 
-In order to manage user access within a Fabric Workspace, take the following steps:
+To manage user access in a Fabric workspace, follow these steps:
 
 1. Browse to [Microsoft Fabric](https://app.fabric.microsoft.com) and sign in with your Microsoft account.
 1. Open the workspace for which you need to manage access, by selecting **Workspaces** on the left navigation pane and selecting the workspace you need to manage.
 1. Select the ellipsis button (**...**) that appears to the right of the selected workspace as you hover above it, and then select **Workspace access** from the menu that appears.
    
-   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/workspace-access.png" alt-text="Screenshot showing the Workspace access menu option for a workspace.":::
+   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/workspace-access.png" alt-text="Screenshot of the Workspace access menu option for a workspace.":::
 
-1. A list of users and their assigned roles - Admin, Member, Contributor, or Viewer, is displayed, and you can update or add new users as required.
+1. A list of users and their assigned roles—Admin, Member, Contributor, or Viewer—is displayed, and you can update or add users as needed.
 
 ### Paused capacity
 
@@ -168,24 +169,24 @@ Network connectivity drops before changes are saved, or the session timed out.
 1. _Save a copy_: Duplicate the notebook to avoid losing unsaved changes.
 1. _Turn on AutoSave_: AutoSave is on by default. Check under the **Edit** menu to ensure that it hasn’t been disabled so your changes are saved automatically at regular intervals.
   
-   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/autosave.png" alt-text="Screenshot showing the AutoSave button on the Edit menu of the Fabric user interface.":::
+   :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/autosave.png" alt-text="Screenshot of the AutoSave button on the Edit menu in the Fabric user interface.":::
 
 1. _Create a checkpoint_: If changes were saved before the failure, use the **Version history** feature in the Microsoft Fabric Notebook to manually save a snapshot of the notebook.
-  - Select the **History** button at the top right:
+  - Select the **History** button at the top right.
   
-    :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/history.png" alt-text="Screenshot showing the History button in the Fabric Notebook user interface.":::
+    :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/history.png" alt-text="Screenshot of the History button in the Fabric notebook user interface.":::
 
   - Select **+ Version** to add a new snapshot of the notebook.
   
-    :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/new-version.png" alt-text="Screenshot showing the + Version button in the Fabric Notebook history window.":::
+    :::image type="content" source="media/fabric-notebooks-troubleshooting-guide/new-version.png" alt-text="Screenshot of the + Version button in the Fabric notebook history window.":::
 
 ### Collaboration conflicts
 
 **Why it happens:**
 
-The same notebook was modified by another user outside of a collaboration session - such as through VS Code, the Update Definition API, manual save mode, a deployment pipeline, or Git sync.
+The same notebook was modified by another user outside of a collaboration session—such as through VS Code, the Update Definition API, manual save mode, a deployment pipeline, or Git sync.
 
-:::image type="content" source="media/fabric-notebooks-troubleshooting-guide/collaboration-conflict.png" alt-text="Screenshot showing the collaboration conflict error that appears in the Fabric Notebook user interface.":::
+:::image type="content" source="media/fabric-notebooks-troubleshooting-guide/collaboration-conflict.png" alt-text="Screenshot of the collaboration conflict error in the Fabric notebook user interface.":::
  
 **What to do:**
 
