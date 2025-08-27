@@ -19,6 +19,7 @@ To invoke Fabric User data function items (Preview) from a console application i
 - Create a [Microsoft Fabric account for free](https://www.microsoft.com/microsoft-fabric/getting-started) if you don't have one.
 - [Create a workspace](../../fundamentals/create-workspaces.md).
 - Create a user data functions item and publish it. Check these articles on [how to create one in VS Code](./create-user-data-functions-vs-code.md) or [how to create one in the portal](./create-user-data-functions-portal.md). Publish the changes so the user data functions item is ready to be invoked.
+- [Create a Microsoft Entra app in Azure](../../get-started/create-entra-app) to invoke User data functions with Microsoft Entra for authentication.
 
 ## Create a console application to invoke the function
 
@@ -51,7 +52,7 @@ To invoke Fabric User data function items (Preview) from a console application i
 
     # Acquire a token
     # DO NOT USE IN PRODUCTION.
-    # Below code to acquire token is to test the GraphQL endpoint and is for the purpose of development only.
+    # Below code to acquire token is to test the User data function endpoint and is for the purpose of development only.
     # For production, always register an application in a Microsoft Entra ID tenant and use the appropriate client_id and scopes.
     # https://learn.microsoft.com/fabric/data-engineering/connect-apps-api-graphql#create-a-microsoft-entra-app
 
