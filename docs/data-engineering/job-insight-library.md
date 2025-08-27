@@ -22,9 +22,9 @@ Whether you're troubleshooting performance issues or conducting custom diagnosti
 
 - Only Scala is supported.
 
-- Spark 3.5 or later is supported.
+- Requires Fabric Runtime 1.3 or later (with Spark 3.5+).
 
-- PySpark doesn't support accessing the Job Insight library.
+- PySpark does not support access to the Job Insight library.
 
 ## Key capabilities
 
@@ -38,9 +38,16 @@ Whether you're troubleshooting performance issues or conducting custom diagnosti
 
 Currently the library doesn't support handling large event logs, such as strings over 20 MB or deeply nested structures.
 
-## Getting started
+## Sample Notebook
 
-Get started by adding the following Spark job or download the [sample ipynb file](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-engineering/SparkMonitoring/JobInsightSample/JobInsight_SampleNotebook.ipynb), which contains these jobs.
+You can use the provided sample notebook [(sample ipynb file)](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-engineering/SparkMonitoring/JobInsightSample/JobInsight_SampleNotebook.ipynb) to get started. The notebook includes:
+
+- Sample `analyze()` and `loadJobInsight()` code
+- Display commands (for example, `queries.show()`)
+- Event log copy examples.
+
+
+## Getting started
 
 ### 1. Analyze a completed Spark job
 
@@ -109,14 +116,6 @@ val contentLength = LogUtils.copyEventLog(
     $attemptId 
 )
 ```
-
-## Sample Notebook
-
-A sample notebook (*JobInsight-TestTemplate.ipynb*) is available to help you get started. It includes:
-
-- Sample `analyze()` and `loadJobInsight()` code
-- Display commands (for example, `queries.show()`)
-- Event log copy examples.
 
 ## Best practices
 
