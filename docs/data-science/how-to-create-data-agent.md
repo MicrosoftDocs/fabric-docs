@@ -22,6 +22,15 @@ With a data agent in Microsoft Fabric, you can create conversational AI experien
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
+## Authentication and tokens
+
+You don't need to create or supply an Azure OpenAI key or an access token to use a Fabric data agent. Fabric uses a Microsoft-managed Azure OpenAI Assistant and handles authentication for you.
+
+- Data access runs under your Microsoft Entra ID user identity and your workspace/data permissions. The agent reads schemas and runs SQL/DAX/KQL only if you have access.
+- To add a Power BI semantic model as a data source, you need read/write permission on that model (see note below). View-only access is sufficient to ask questions against sources you can read.
+- If your organization uses a Power BI Premium per capacity (P1 or higher) capacity instead of an F SKU, make sure [Microsoft Fabric is enabled](../admin/fabric-switch.md) on that capacity.
+- Service principals and API tokens aren't required for the in-product chat experience. Any automation with service principals is a separate scenario and isn't covered here.
+
 ## End-to-End Flow for creating and consuming Fabric data agents
 
 This section outlines the key steps to create, validate, and share a Fabric data agent in Fabric, making it accessible for consumption.
