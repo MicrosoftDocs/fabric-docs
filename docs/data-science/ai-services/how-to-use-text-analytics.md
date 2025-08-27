@@ -7,7 +7,7 @@ ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
 ms.custom: 
-ms.date: 07/31/2025
+ms.date: 08/20/2025
 ms.update-cycle: 180-days
 ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
@@ -20,7 +20,7 @@ ms.collection: ce-skilling-ai-copilot
 
 [Azure AI Language](/azure/ai-services/language-service/) is an [Azure AI service](/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
 
-In this article, you learn how to use Azure AI Language services directly in Microsoft Fabric to analyze text. By the end of this article, you are able to:
+In this article, you learn how to use Azure AI Language services directly in Microsoft Fabric to analyze text. By the end of this article, you're able to:
 
 -   Detect sentiment labels at the sentence or document level
 -   Identify the language for a given text input
@@ -118,7 +118,7 @@ from pyspark.sql.functions import col
 
 # [Rest API](#tab/rest)
 
-The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral, and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
+The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative," "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral, and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
 
 ### Analyze sentiment of text
 
@@ -151,7 +151,7 @@ print_response(response)
 ```
 
 > [!TIP]
-> You can replace the text in the "text" field with your own content to analyze. The service returns sentiment scores and identify which parts of the text are positive, negative, or neutral.
+> You can replace the text in the "text" field with your own content to analyze. The service returns sentiment scores and identifies which parts of the text are positive, negative, or neutral.
 
 #### Expected output
 
@@ -283,7 +283,7 @@ When you run the following code successfully, you should see output similar to t
 
 # [SynapseML](#tab/synapseml)
 
-The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document & sentences
+The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative," "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document & sentences
 within it for positive, neutral, and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
 
 ``` Python
