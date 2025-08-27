@@ -14,7 +14,7 @@ ai.usage: ai-assisted
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/data_cleaning_functional_dependencies_tutorial.ipynb -->
 
-# Tutorial: clean data with functional dependencies
+# Tutorial: Clean data with functional dependencies
 
 Use functional dependencies to clean data. A functional dependency exists when one column in a semantic model (a Power BI dataset) depends on another column. For example, a `ZIP code` column can determine the value in a `city` column. A functional dependency appears as a one-to-many relationship between values in two or more columns in a `DataFrame`. This tutorial uses the Synthea dataset to show how functional dependencies help detect data quality problems.
 
