@@ -218,7 +218,7 @@ items:
   - name: Fabric autologging
     href: mlflow-autologging.md
   - name: Git and deployment pipelines 
-    href: machine-learning-git-deployment-pipelines.md
+    href: machine-learning-artifacts-git-deployment-pipelines.md
 - name: Model scoring
   items:
     - name: Score models with PREDICT
