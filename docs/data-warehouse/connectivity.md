@@ -4,7 +4,7 @@ description: Follow steps to connect SSMS to a warehouse item in your Microsoft 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, dhsundar, jacinda-eng
-ms.date: 08/06/2025
+ms.date: 08/27/2025
 ms.topic: how-to
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
@@ -32,6 +32,8 @@ In [!INCLUDE [product-name](../includes/product-name.md)], two types of authenti
 For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
 The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the standard SQL Server port number. The SQL connection string also respects the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] security model for data access. Data can be obtained for all objects to which a user has access.
+
+<a id="allow-power-bi-service-tags-through-firewall"></a>
 
 ### Allow Azure service tags through firewall
 
