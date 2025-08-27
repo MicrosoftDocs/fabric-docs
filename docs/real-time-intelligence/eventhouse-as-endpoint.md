@@ -19,9 +19,9 @@ Use this endpoint to:
 - Use time-series, anomaly detection, and even embedded Python for advanced insights.
 - Access all current and future source data directly from the Eventhouse experience.
 
-**Query Acceleration Policy (QAP)**
+**Mirrored schema**
 
-Enabling the endpoint adds a new branch in the Lakehouse data source tree showing KQL Database and external tables with QAP, and reflecting source schema changes within seconds. Additions, deletions, and updates to tables in the data source are automatically and promptly mirrored in the Eventhouse endpoint. The eventhouse maintains metadata of database structures, listens for schema changes, and ensures high accuracy and timely notifications for updates, defining each schema as one KQL Database.  
+Enabling the endpoint adds a new branch to the Lakehouse data source tree. The branch shows the KQL database and external tables with query acceleration (QAP) and reflects source schema changes within seconds.
 
 // diagram of LH structure vs EH structure or image of both structures
 
@@ -35,14 +35,14 @@ Enables query exploration and visual data analysis.
 
 **Disabling the endpoint**
 
-Users can deactivate the Eventhouse endpoint from the data source interface.  
+Users can remove the Eventhouse endpoint from the Workspace or from the OneLake catalog.  
 
 ## Prerequisites
 
 - A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 - An exixting Lakehouse or Data Warehouse.
 
-## Getting Started / Enabling the Eventhouse endpoint
+## Get Started
 
 There are multiple ways to enable the Eventhouse endpoint:
 
@@ -54,10 +54,12 @@ There are multiple ways to enable the Eventhouse endpoint:
 
 1. Click the more options mene select ** Eventhouse endpoint**.
 
+        //image
         :::image type="content" source="media/eventhouse/enable-endpoint.png" alt-text="Screenshot showing how to enable the Eventhouse endpoint from a Lakehouse." lightbox="media/eventhouse/enable-endpoint.png":::
 
 1. A new Eventhouse endpoint child item is created under the Lakehouse item.
-
+        
+        //image
         :::image type="content" source="media/eventhouse/enabled-endpoint.png" alt-text="Screenshot showing the enabled Eventhouse endpoint under a Lakehouse." lightbox="media/eventhouse/enabled-endpoint.png":::
 
 **From the OneLake catalog:**
