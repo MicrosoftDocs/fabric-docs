@@ -8,7 +8,7 @@ reviewer: midesa
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
-ms.date: 08/272025
+ms.date: 08/27/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ai.usage: ai-assisted
