@@ -44,26 +44,26 @@ Set up a notebook environment with the modules and data you need.
 
 1. Install the `semantic-link` package from PyPI by using the `%pip` inline command in the notebook.
 
-    ```python
-    %pip install semantic-link
-    ```
+```python
+%pip install semantic-link
+```
 
 1. Import the `sempy` modules you'll use later.
 
-    ```python
-    import sempy.fabric as fabric
-    
-    from sempy.relationships import plot_relationship_metadata
-    from sempy.relationships import find_relationships
-    from sempy.fabric import list_relationship_violations
-    ```
+```python
+import sempy.fabric as fabric
+
+from sempy.relationships import plot_relationship_metadata
+from sempy.relationships import find_relationships
+from sempy.fabric import list_relationship_violations
+```
 
 1. Import the `pandas` library and set a display option for output formatting.
 
-    ```python
-    import pandas as pd
-    pd.set_option('display.max_colwidth', None)
-    ```
+```python
+import pandas as pd
+pd.set_option('display.max_colwidth', None)
+```
 
 ## Explore semantic models
 
@@ -71,9 +71,9 @@ This tutorial uses the Customer Profitability Sample semantic model [_Customer P
 
 - Use SemPy's `list_datasets` function to explore semantic models in your current workspace:
 
-    ```python
-    fabric.list_datasets()
-    ```
+```python
+fabric.list_datasets()
+```
 
 For the rest of this notebook, use two versions of the Customer Profitability Sample semantic model:
 
@@ -84,17 +84,17 @@ For the rest of this notebook, use two versions of the Customer Profitability Sa
 
 1. Load the predefined relationships in the Customer Profitability Sample semantic model by using SemPy's `list_relationships` function. The function lists relationships from the Tabular Object Model (TOM).
 
-    ```python
-    dataset = "Customer Profitability Sample"
-    relationships = fabric.list_relationships(dataset)
-    relationships
-    ```
+```python
+dataset = "Customer Profitability Sample"
+relationships = fabric.list_relationships(dataset)
+relationships
+```
 
 1. Visualize the `relationships` DataFrame as a graph by using SemPy's `plot_relationship_metadata` function.
 
-    ```python
-    plot_relationship_metadata(relationships)
-    ```
+```python
+plot_relationship_metadata(relationships)
+```
 
     :::image type="content" source="media/tutorial-power-bi-relationships/plot-of-relationship-metadata.png" alt-text="Screenshot of the relationships graph between tables in the semantic model." lightbox="media/tutorial-power-bi-relationships/plot-of-relationship-metadata.png":::
 
@@ -106,96 +106,92 @@ If you start with relationships that Power BI autodetects, you have a smaller se
 
 1. Visualize the relationships that Power BI autodetected in the semantic model:
 
-    ```python
-    dataset = "Customer Profitability Sample (auto)"
-    autodetected = fabric.list_relationships(dataset)
-    plot_relationship_metadata(autodetected)
-    ```
+```python
+dataset = "Customer Profitability Sample (auto)"
+autodetected = fabric.list_relationships(dataset)
+plot_relationship_metadata(autodetected)
+```
 
-        :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-autodetected-relationships.png" alt-text="Screenshot of relationships that Power BI autodetected in the semantic model." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-autodetected-relationships.png":::
+    :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-autodetected-relationships.png" alt-text="Screenshot of relationships that Power BI autodetected in the semantic model." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-autodetected-relationships.png":::
 
-        Power BI's autodetection misses many relationships. Also, two of the autodetected relationships are semantically incorrect:
+    Power BI's autodetection misses many relationships. Also, two of the autodetected relationships are semantically incorrect:
 
     - `Executive[ID]` -> `Industry[ID]`
     - `BU[Executive_id]` -> `Industry[ID]`
 
 1. Print the relationships as a table:
 
-    ```python
-    autodetected
-    ```
+```python
+autodetected
+```
 
-        Rows 3 and 4 show incorrect relationships to the `Industry` table. Remove these rows.
+    Rows 3 and 4 show incorrect relationships to the `Industry` table. Remove these rows.
 
 1. Discard the incorrectly identified relationships.
 
-    ```python
-1. Visualize these incomplete relationships using `plot_relationship_metadata`:
-      Now you have correct but incomplete relationships.
+```python
+# Remove rows 3 and 4 which point incorrectly to Industry[ID]
+autodetected = autodetected[~autodetected.index.isin([3, 4])]
+```
 
-1. Visualize these incomplete relationships, using `plot_relationship_metadata`:
+    Now you have correct but incomplete relationships. Visualize these incomplete relationships using `plot_relationship_metadata`:
 
-    ```python
-    plot_relationship_metadata(autodetected)
-    ```
+```python
+plot_relationship_metadata(autodetected)
+```
 
         :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-incomplete-relationships.png" alt-text="Screenshot of a visualization of relationships after removing incorrect ones." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-incomplete-relationships.png":::
 
-1. Load all the tables from the semantic model, using SemPy's `list_tables` and `read_table` functions:
+1. Load all the tables from the semantic model, using SemPy's `list_tables` and `read_table` functions, then find relationships between tables using `find_relationships`. Review the log output to get insights into how this function works:
 
-   1. Find relationships between tables using `find_relationships`, and review the log output to see how the function works:
-    ```
-
-1. Find relationships between tables, using `find_relationships`, and review the log output to get some insights into how this function works:
-
-    ```python
-    suggested_relationships_all = find_relationships(
-        tables,
-        name_similarity_threshold=0.7,
-        coverage_threshold=0.7,
-        verbose=2
-    )
-    ```
+```python
+suggested_relationships_all = find_relationships(
+    tables,
+    name_similarity_threshold=0.7,
+    coverage_threshold=0.7,
+    verbose=2
+)
+```
 
 1. Visualize newly discovered relationships:
 
-    ```python
-    plot_relationship_metadata(suggested_relationships_all)
-    ```
+```python
+plot_relationship_metadata(suggested_relationships_all)
+```
 
-        :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png" alt-text="Screenshot of a visualization of newly discovered relationships." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png":::
+    :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png" alt-text="Screenshot of a visualization of newly discovered relationships." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png":::
 
-        SemPy detects all relationships.
+    SemPy detects all relationships.
 
 1. Use the `exclude` parameter to limit the search to additional relationships that weren't identified previously:
 
-    ```python
-    additional_relationships = find_relationships(
-        tables,
-        exclude=autodetected,
-        name_similarity_threshold=0.7,
-        coverage_threshold=0.7
-    )
-    
-    additional_relationships
-    ```
+```python
+additional_relationships = find_relationships(
+    tables,
+    exclude=autodetected,
+    name_similarity_threshold=0.7,
+    coverage_threshold=0.7
+)
+
+additional_relationships
+```
 
 ## Validate relationships
 
 1. First, load data from the _Customer Profitability Sample_ semantic model.
 
-    ```python
-    dataset = "Customer Profitability Sample"
-    tables = {table: fabric.read_table(dataset, table) for table in fabric.list_tables(dataset)['Name']}
-    
-    tables.keys()
-    ```
+```python
+dataset = "Customer Profitability Sample"
+tables = {table: fabric.read_table(dataset, table) for table in fabric.list_tables(dataset)['Name']}
+
+tables.keys()
+```
 
 1. Check primary and foreign key overlap with the `list_relationship_violations` function. Pass the output of the `list_relationships` function to `list_relationship_violations`.
 
-    ```python
-    list_relationship_violations(tables, fabric.list_relationships(dataset))
-    ```
+```python
+list_relationship_violations(tables, fabric.list_relationships(dataset))
+```
 
     The results reveal useful insights. For example, one of seven values in `Fact[Product Key]` isn't present in `Product[Product Key]`, and the missing key is `50`.
 
