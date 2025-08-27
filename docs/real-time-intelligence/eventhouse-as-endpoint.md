@@ -1,6 +1,6 @@
 ---
 title: Understand Eventhouse as an Endpoint
-description: 
+description: Use an eventhouse endpoint to query Lakehouse tables with enhanced performance and flexibility in Real-Time Intelligence.
 ms.reviewer: spelluru
 ms.author: tzgitlin
 author: tzgitlin
@@ -19,17 +19,23 @@ Use this endpoint to:
 - Use time-series, anomaly detection, and even embedded Python for advanced insights.
 - Access all current and future source data directly from the Eventhouse experience.
 
-**Eventhouse endpoint with Query Acceleration Policy (QAP)**
-Enabling the endpoint adds a new branch in the data source tree showing KQL Database and external tables with QAP, reflecting source schema changes within seconds. Additions, deletions, and updates to tables in the data source are automatically and promptly mirrored in the Eventhouse endpoint. The eventhouse maintains metadata of database structures, listens for schema changes, and ensures high accuracy and timely notifications for updates, defining each schema as one KQL Database.  
+**Query Acceleration Policy (QAP)**
+
+Enabling the endpoint adds a new branch in the Lakehouse data source tree showing KQL Database and external tables with QAP, and reflecting source schema changes within seconds. Additions, deletions, and updates to tables in the data source are automatically and promptly mirrored in the Eventhouse endpoint. The eventhouse maintains metadata of database structures, listens for schema changes, and ensures high accuracy and timely notifications for updates, defining each schema as one KQL Database.  
+
+// diagram of LH structure vs EH structure or image of both structures
 
 **User permissions**
+
 Users with view, contributor, or owner permissions on the parent data source automatically receive view permissions on the Eventhouse, enabling query execution and consumption experiences.
 
 **Embedded KQL Queryset**
+
 Enables query exploration and visual data analysis.
 
 **Disabling the endpoint**
-Users can deactivate the Eventhouse Endpoint via the data source interface, reverting the child item to a dormant state and removing optimizations and KQL Database from the tree.  
+
+Users can deactivate the Eventhouse endpoint from the data source interface.  
 
 ## Prerequisites
 
@@ -38,9 +44,29 @@ Users can deactivate the Eventhouse Endpoint via the data source interface, reve
 
 ## Getting Started / Enabling the Eventhouse endpoint
 
-From Fabric > Browse > Lakehouse > Eventhouse as endpoint
-From OneLake catalog > analyze data
-From Lakehouse > analyze data
+There are multiple ways to enable the Eventhouse endpoint:
+
+**From your Fabric workspace:**
+
+1. Navigate to your Fabric workspace.
+
+1. Browse to the Lakehouse you want to enable the Eventhouse endpoint for.
+
+1. Click the more options mene select ** Eventhouse endpoint**.
+
+        :::image type="content" source="media/eventhouse/enable-endpoint.png" alt-text="Screenshot showing how to enable the Eventhouse endpoint from a Lakehouse." lightbox="media/eventhouse/enable-endpoint.png":::
+
+1. A new Eventhouse endpoint child item is created under the Lakehouse item.
+
+        :::image type="content" source="media/eventhouse/enabled-endpoint.png" alt-text="Screenshot showing the enabled Eventhouse endpoint under a Lakehouse." lightbox="media/eventhouse/enabled-endpoint.png":::
+
+**From the OneLake catalog:**
+
+TBD
+
+**From a Lakehouse**
+
+ TBD analyze data
 
 ## Eventhouse endpoint experience
 
@@ -50,5 +76,12 @@ The Eventhouse structure cannot be updated by users, but settings like cache and
 
 From the Eventhouse endpoint you can run queries, create visualizations, and perform advanced analytics using KQL or SQL. For more details on using the Eventhouse endpoint, see [Eventhouse overview](eventhouse.md).
 
+## Disable the endpoint
 
-## Disabling the Eventhouse endpoint
+The user can remove the eventhouse endpoint from both the OneLake catalog or from the Workpace:
+
+1. Navigate to your Fabric workspace.
+
+1. Browse to the Lakehouse with the Eventhouse endpoint enabled.
+
+1. Right-click the child Eventhouse endpoint item, and select **Delete**.
