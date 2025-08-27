@@ -55,7 +55,7 @@ The following properties are **required**:
 Under **Advanced**, you can specify the following fields:
 
 - **Include deleted objects**: Specify whether to query the existing records (unselected), or query all records including the deleted ones (selected).
-- **Partition option**: Provide options to automatically detects and uses source data partitioning to optimize read performance when applicable. The default value is Auto detect.
+- **Partition option**: Provide options to automatically detects and uses source data partitioning to optimize read performance when applicable. You are recommended to select Auto detect for better performance. The default value is Auto detect. 
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 ### Destination
