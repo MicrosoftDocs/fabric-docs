@@ -74,7 +74,7 @@ You can manage your scheduled runs by selecting **Schedule** in the top banner o
 
 To delete a schedule, select the **Edit** icon (pencil) next to the schedule you want to delete. In the Edit Schedule pane, select **Delete schedule** at the bottom of the pane.
 
-:::image type="content" source="media/pipeline-runs/delete-schedule.png" alt-text="Screenshot showing where in the schedule menu you can toggle or edit a scheduled run.":::
+:::image type="content" source="media/pipeline-runs/delete-schedule.png" alt-text="Screenshot showing the delete button can be found in the edit window.":::
 
 ## Related content
 
