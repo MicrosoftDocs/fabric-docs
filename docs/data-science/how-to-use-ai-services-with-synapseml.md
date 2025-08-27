@@ -17,7 +17,7 @@ ai.usage: ai-assisted
 
 [Azure AI services](https://azure.microsoft.com/products/ai-services/) help developers and organizations build responsible applications with ready to use and customizable APIs and models. In this article, you use Azure AI services to perform tasks that include: text analytics, translation, document intelligence, vision, image search, speech to text and text to speech, anomaly detection, and data extraction from web APIs.
 
-Azure AI services help developers create applications that see, hear, speak, understand, and begin to reason. The Azure AI services catalog includes five pillars: [Vision](https://azure.microsoft.com/products/ai-services/ai-vision/), [Speech](https://azure.microsoft.com/products/ai-services/ai-speech/), [Language](https://azure.microsoft.com/products/ai-services/text-analytics/), [Web search](https://learn.microsoft.com/bing/search-apis/bing-image-search/overview), and [Decision](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector).
+Azure AI services help developers create applications that see, hear, speak, understand, and begin to reason. The Azure AI services catalog includes five pillars: [Vision](https://azure.microsoft.com/products/ai-services/ai-vision/), [Speech](https://azure.microsoft.com/products/ai-services/ai-speech/), [Language](https://azure.microsoft.com/products/ai-services/text-analytics/), [Web search](/bing/search-apis/bing-image-search/overview), and [Decision](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector).
 
 ## Prerequisites
 
@@ -247,7 +247,7 @@ display(analysis.transform(df).select("image", "analysis_results.description.tag
 
 ## Search for images that are related to a natural language query
 
-[Bing Image Search](https://learn.microsoft.com/bing/search-apis/bing-image-search/overview) searches the web to retrieve images related to a user's natural language query. 
+[Bing Image Search](/bing/search-apis/bing-image-search/overview) searches the web to retrieve images related to a user's natural language query. 
 
 This sample uses a text query to find images of quotes. It outputs a list of image URLs related to the query.
 

@@ -96,7 +96,7 @@ relationships
 plot_relationship_metadata(relationships)
 ```
 
-    :::image type="content" source="media/tutorial-power-bi-relationships/plot-of-relationship-metadata.png" alt-text="Screenshot of the relationships graph between tables in the semantic model." lightbox="media/tutorial-power-bi-relationships/plot-of-relationship-metadata.png":::
+:::image type="content" source="media/tutorial-power-bi-relationships/plot-of-relationship-metadata.png" alt-text="Screenshot of the relationships graph between tables in the semantic model." lightbox="media/tutorial-power-bi-relationships/plot-of-relationship-metadata.png":::
 
 This graph shows the relationships between tables in this semantic model as defined in Power BI by a subject matter expert.
 
@@ -112,12 +112,12 @@ autodetected = fabric.list_relationships(dataset)
 plot_relationship_metadata(autodetected)
 ```
 
-    :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-autodetected-relationships.png" alt-text="Screenshot of relationships that Power BI autodetected in the semantic model." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-autodetected-relationships.png":::
+:::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-autodetected-relationships.png" alt-text="Screenshot of relationships that Power BI autodetected in the semantic model." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-autodetected-relationships.png":::
 
-    Power BI's autodetection misses many relationships. Also, two of the autodetected relationships are semantically incorrect:
+Power BI's autodetection misses many relationships. Also, two of the autodetected relationships are semantically incorrect:
 
-    - `Executive[ID]` -> `Industry[ID]`
-    - `BU[Executive_id]` -> `Industry[ID]`
+- `Executive[ID]` -> `Industry[ID]`
+- `BU[Executive_id]` -> `Industry[ID]`
 
 1. Print the relationships as a table:
 
@@ -125,7 +125,7 @@ plot_relationship_metadata(autodetected)
 autodetected
 ```
 
-    Rows 3 and 4 show incorrect relationships to the `Industry` table. Remove these rows.
+Rows 3 and 4 show incorrect relationships to the `Industry` table. Remove these rows.
 
 1. Discard the incorrectly identified relationships.
 
@@ -134,13 +134,13 @@ autodetected
 autodetected = autodetected[~autodetected.index.isin([3, 4])]
 ```
 
-    Now you have correct but incomplete relationships. Visualize these incomplete relationships using `plot_relationship_metadata`:
+Now you have correct but incomplete relationships. Visualize these incomplete relationships using `plot_relationship_metadata`:
 
 ```python
 plot_relationship_metadata(autodetected)
 ```
 
-        :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-incomplete-relationships.png" alt-text="Screenshot of a visualization of relationships after removing incorrect ones." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-incomplete-relationships.png":::
+:::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-incomplete-relationships.png" alt-text="Screenshot of a visualization of relationships after removing incorrect ones." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-incomplete-relationships.png":::
 
 1. Load all the tables from the semantic model, using SemPy's `list_tables` and `read_table` functions, then find relationships between tables using `find_relationships`. Review the log output to get insights into how this function works:
 
@@ -159,9 +159,9 @@ suggested_relationships_all = find_relationships(
 plot_relationship_metadata(suggested_relationships_all)
 ```
 
-    :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png" alt-text="Screenshot of a visualization of newly discovered relationships." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png":::
+:::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png" alt-text="Screenshot of a visualization of newly discovered relationships." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png":::
 
-    SemPy detects all relationships.
+SemPy detects all relationships.
 
 1. Use the `exclude` parameter to limit the search to additional relationships that weren't identified previously:
 
@@ -193,7 +193,7 @@ tables.keys()
 list_relationship_violations(tables, fabric.list_relationships(dataset))
 ```
 
-    The results reveal useful insights. For example, one of seven values in `Fact[Product Key]` isn't present in `Product[Product Key]`, and the missing key is `50`.
+The results reveal useful insights. For example, one of seven values in `Fact[Product Key]` isn't present in `Product[Product Key]`, and the missing key is `50`.
 
 Exploratory data analysis and data cleaning are iterative. What you learn depends on your questions and how you explore the data. Semantic link adds tools that help you do more with your data.
 

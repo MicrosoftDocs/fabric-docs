@@ -77,9 +77,9 @@ deps = providers.find_dependencies()
 plot_dependency_metadata(deps)
 ```
 
-    :::image type="content" source="media/tutorial-data-cleaning-functional-dependencies/graph-of-functional-dependencies.png" alt-text="Screenshot of a functional dependency graph showing Id determines NAME and ORGANIZATION." lightbox="media/tutorial-data-cleaning-functional-dependencies/graph-of-functional-dependencies.png":::
+:::image type="content" source="media/tutorial-data-cleaning-functional-dependencies/graph-of-functional-dependencies.png" alt-text="Screenshot of a functional dependency graph showing Id determines NAME and ORGANIZATION." lightbox="media/tutorial-data-cleaning-functional-dependencies/graph-of-functional-dependencies.png":::
 
-    The graph shows that `Id` determines `NAME` and `ORGANIZATION`. This result is expected because `Id` is unique.
+The graph shows that `Id` determines `NAME` and `ORGANIZATION`. This result is expected because `Id` is unique.
 
 1. Confirm that `Id` is unique.
 
@@ -87,7 +87,7 @@ plot_dependency_metadata(deps)
 providers.Id.is_unique
 ```
 
-    The code returns `True` to confirm that `Id` is unique.
+The code returns `True` to confirm that `Id` is unique.
 
 ## Analyze functional dependencies in depth
 
@@ -107,9 +107,9 @@ providers.list_dependency_violations('ZIP', 'CITY')
 providers.plot_dependency_violations('ZIP', 'CITY')
 ```
 
-    :::image type="content" source="media/tutorial-data-cleaning-functional-dependencies/plot-of-dependency-violations.png" alt-text="Screenshot of the plot of dependency violations.":::
+:::image type="content" source="media/tutorial-data-cleaning-functional-dependencies/plot-of-dependency-violations.png" alt-text="Screenshot of the plot of dependency violations.":::
 
-    The plot of dependency violations shows values for `ZIP` on the left hand side and values for `CITY` on the right hand side. An edge connects a zip code on the left hand side of the plot with a city on the right hand side if there's a row that contains these two values. The edges are annotated with the count of such rows. For example, there are two rows with zip code 02747-1242, one row with city "NORTH DARTHMOUTH" and the other with city "DARTHMOUTH", as shown in the previous plot and the following code:
+The plot of dependency violations shows values for `ZIP` on the left hand side and values for `CITY` on the right hand side. An edge connects a zip code on the left hand side of the plot with a city on the right hand side if there's a row that contains these two values. The edges are annotated with the count of such rows. For example, there are two rows with zip code 02747-1242, one row with city "NORTH DARTHMOUTH" and the other with city "DARTHMOUTH", as shown in the previous plot and the following code:
 
 1. Confirm the observations from the plot by running the following code:
 
@@ -153,9 +153,9 @@ providers['CITY'] = providers.CITY.str.title()
 providers.list_dependency_violations('ZIP', 'CITY')
 ```
 
-    Refine the data manually, or drop rows that violate functional constraints between columns by using SemPy's `drop_dependency_violations` function.
+Refine the data manually, or drop rows that violate functional constraints between columns by using SemPy's `drop_dependency_violations` function.
 
-    For each value of the determinant variable, `drop_dependency_violations` picks the most common value of the dependent variable and drops all rows with other values. Apply this operation only if you're confident that this statistical heuristic leads to correct results for your data. Otherwise, write your own code to handle the detected violations.
+For each value of the determinant variable, `drop_dependency_violations` picks the most common value of the dependent variable and drops all rows with other values. Apply this operation only if you're confident that this statistical heuristic leads to correct results for your data. Otherwise, write your own code to handle the detected violations.
 
 1. Run the `drop_dependency_violations` function on the `ZIP` and `CITY` columns.
 
@@ -169,7 +169,7 @@ providers_clean = providers.drop_dependency_violations('ZIP', 'CITY')
 providers_clean.list_dependency_violations('ZIP', 'CITY')
 ```
 
-    The code returns an empty list to indicate that there are no more violations of the functional constraint `ZIP -> CITY`.
+The code returns an empty list to indicate that there are no more violations of the functional constraint `ZIP -> CITY`.
 
 ## Related content
 
