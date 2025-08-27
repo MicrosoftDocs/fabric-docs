@@ -42,52 +42,52 @@ In this section, you set up a notebook environment.
 
 1. Check your Spark version. If you're using Spark 3.4 or later in Microsoft Fabric, Semantic Link is included by default, so you don't need to install it. If you're using Spark 3.3 or earlier, or you want to update to the latest Semantic Link, run the following command.
 
-```python
-%pip install -U semantic-link
-```
+   ```python
+   %pip install -U semantic-link
+   ```
 
 1. Import the modules you use in this notebook.
 
-```python
-import pandas as pd
-import sempy.fabric as fabric
-from sempy.fabric import FabricDataFrame
-from sempy.dependencies import plot_dependency_metadata
-```
+   ```python
+   import pandas as pd
+   import sempy.fabric as fabric
+   from sempy.fabric import FabricDataFrame
+   from sempy.dependencies import plot_dependency_metadata
+   ```
 
 1. Download the sample data. In this tutorial, use the Synthea dataset of synthetic medical records (small version for simplicity).
 
-```python
-download_synthea(which='small')
-```
+   ```python
+   download_synthea(which='small')
+   ```
 
 ## Explore the data
 
 1. Initialize a ``FabricDataFrame`` with the content of the _providers.csv_ file.
 
-```python
-providers = FabricDataFrame(pd.read_csv("synthea/csv/providers.csv"))
-providers.head()
-```
+   ```python
+   providers = FabricDataFrame(pd.read_csv("synthea/csv/providers.csv"))
+   providers.head()
+   ```
 
 1. Check for data quality issues with SemPy's `find_dependencies` function by plotting a graph of autodetected functional dependencies.
 
-```python
-deps = providers.find_dependencies()
-plot_dependency_metadata(deps)
-```
+   ```python
+   deps = providers.find_dependencies()
+   plot_dependency_metadata(deps)
+   ```
 
-:::image type="content" source="media/tutorial-data-cleaning-functional-dependencies/graph-of-functional-dependencies.png" alt-text="Screenshot of a functional dependency graph showing Id determines NAME and ORGANIZATION." lightbox="media/tutorial-data-cleaning-functional-dependencies/graph-of-functional-dependencies.png":::
+   :::image type="content" source="media/tutorial-data-cleaning-functional-dependencies/graph-of-functional-dependencies.png" alt-text="Screenshot of a functional dependency graph showing Id determines NAME and ORGANIZATION." lightbox="media/tutorial-data-cleaning-functional-dependencies/graph-of-functional-dependencies.png":::
 
-The graph shows that `Id` determines `NAME` and `ORGANIZATION`. This result is expected because `Id` is unique.
+   The graph shows that `Id` determines `NAME` and `ORGANIZATION`. This result is expected because `Id` is unique.
 
 1. Confirm that `Id` is unique.
 
-```python
-providers.Id.is_unique
-```
+   ```python
+   providers.Id.is_unique
+   ```
 
-The code returns `True` to confirm that `Id` is unique.
+   The code returns `True` to confirm that `Id` is unique.
 
 ## Analyze functional dependencies in depth
 
@@ -119,15 +119,15 @@ providers[providers.ZIP == '02747-1242'].CITY.value_counts()
 
 1. The plot also shows that, among the rows that have `CITY` as "DARTHMOUTH", nine rows have a `ZIP` of 02747-1262. One row has a `ZIP` of 02747-1242. One row has a `ZIP` of 02747-2537. Confirm these observations with the following code:
 
-```python
-providers[providers.CITY == 'DARTHMOUTH'].ZIP.value_counts()
-```
+   ```python
+   providers[providers.CITY == 'DARTHMOUTH'].ZIP.value_counts()
+   ```
 
 1. There are other zip codes associated with "DARTMOUTH", but these zip codes aren't shown in the graph of dependency violations because they don't hint at data quality issues. For example, the zip code "02747-4302" is uniquely associated with "DARTMOUTH" and doesn't show up in the graph of dependency violations. Confirm by running the following code:
 
-```python
-providers[providers.ZIP == '02747-4302'].CITY.value_counts()
-```
+   ```python
+   providers[providers.ZIP == '02747-4302'].CITY.value_counts()
+   ```
 
 ## Summarize data quality issues detected with SemPy
 
@@ -143,15 +143,15 @@ The dependency violations graph shows several data quality issues in this semant
 
 1. Fix capitalization by changing values to title case.
 
-```python
-providers['CITY'] = providers.CITY.str.title()
-```
+   ```python
+   providers['CITY'] = providers.CITY.str.title()
+   ```
 
 1. Run violation detection again to confirm that there are fewer ambiguities.
 
-```python
-providers.list_dependency_violations('ZIP', 'CITY')
-```
+   ```python
+   providers.list_dependency_violations('ZIP', 'CITY')
+   ```
 
 Refine the data manually, or drop rows that violate functional constraints between columns by using SemPy's `drop_dependency_violations` function.
 
@@ -159,15 +159,15 @@ For each value of the determinant variable, `drop_dependency_violations` picks t
 
 1. Run the `drop_dependency_violations` function on the `ZIP` and `CITY` columns.
 
-```python
-providers_clean = providers.drop_dependency_violations('ZIP', 'CITY')
-```
+   ```python
+   providers_clean = providers.drop_dependency_violations('ZIP', 'CITY')
+   ```
 
 1. List any dependency violations between `ZIP` and `CITY`.
 
-```python
-providers_clean.list_dependency_violations('ZIP', 'CITY')
-```
+   ```python
+   providers_clean.list_dependency_violations('ZIP', 'CITY')
+   ```
 
 The code returns an empty list to indicate that there are no more violations of the functional constraint `ZIP -> CITY`.
 

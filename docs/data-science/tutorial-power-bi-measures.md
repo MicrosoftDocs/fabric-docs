@@ -43,31 +43,31 @@ In this section, you set up a notebook environment.
 
 1. Install `SemPy` from PyPI by using `%pip` inline in the notebook.
 
-```python
-%pip install semantic-link-sempy
-```
+   ```python
+   %pip install semantic-link-sempy
+   ```
 
 1. Import the modules you'll use later.
 
-```python
-import sempy.fabric as fabric
-```
+   ```python
+   import sempy.fabric as fabric
+   ```
 
 1. Connect to the Power BI workspace, and list the semantic models in the workspace.
 
-```python
-fabric.list_datasets()
-```
+   ```python
+   fabric.list_datasets()
+   ```
 
 1. Load the semantic model. In this tutorial, you use the Retail Analysis Sample semantic model.
 
-```python
-dataset = "Retail Analysis Sample"
-```
+   ```python
+   dataset = "Retail Analysis Sample"
+   ```
 
-```python
-dataset = "Retail Analysis Sample PBIX"
-```
+   ```python
+   dataset = "Retail Analysis Sample PBIX"
+   ```
 
 ## List workspace measures
 
