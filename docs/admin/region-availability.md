@@ -62,6 +62,8 @@ This table lists regions where the only available Fabric workload is Power BI.
  | Norway West   |                |                   | New Zealand North|
  |               |                |                   | Taiwan North     |
  |               |                |                   | Taiwan Northwest |
+ |               |                |                   | Indonesia Central |
+ |               |                |                   | Malaysia West |
 
 ** Copilot is not supported for regions listed in this section. 
 
