@@ -78,7 +78,6 @@ For all these tools, Copilot in Fabric is there to help you get started and assi
 
 - A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. If you don't have one, you can [create a free account](https://azure.microsoft.com/free/).
 - A [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace. [Learn how to create a workspace.](../fundamentals/create-workspaces.md)
-- Access to [Power BI](https://app.powerbi.com/).
 
 ## Related content
 
