@@ -44,7 +44,8 @@ The following tables contain the known limitations for the Save As feature:
 | Feature/Limitation | Dataflow Gen1 | Dataflow Gen2 |
 | ------------------ | ------------- | ------------- |
 | You're required to reconnect to data sources | Limited | Limited |
-| Scheduled refresh settings aren't copied | No limitation| Limited |
+| You're required to reconnect to the output destination | No limitation| Limited |
+| Scheduled refresh settings aren't copied | Limited | Limited |
 | Incremental refresh settings aren't copied | Limited | Limited |
 
 Dataflow Gen1 capabilities that aren't applicable in Dataflow Gen2 (CI/CD) and therefore aren't copied:
