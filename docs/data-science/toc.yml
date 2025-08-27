@@ -129,6 +129,8 @@ items:
       href: retail-recommend-model.md
     - name: Customer churn prediction
       href: customer-churn.md
+    - name: Evaluate RAG performance
+      href: tutorialevaluate-rag-performance.md
     - name: Fraud detection
       href: fraud-detection.md
     - name: Machine failure prediction
