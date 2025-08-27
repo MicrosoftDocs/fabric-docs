@@ -1,10 +1,10 @@
 ---
-title: Warehouse Connectivity
-description: Learn about connecting to Fabric Data Warehouse, including authentication and best practices.
+title: How to Connect
+description: Follow steps to connect SSMS to a warehouse item in your Microsoft Fabric workspace.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: fresantos, salilkanade
-ms.date: 08/27/2025
+ms.reviewer: salilkanade, dhsundar, jacinda-eng
+ms.date: 08/06/2025
 ms.topic: how-to
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
