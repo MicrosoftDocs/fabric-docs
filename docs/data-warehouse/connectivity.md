@@ -3,7 +3,7 @@ title: Warehouse Connectivity
 description: Follow steps to connect SSMS to a warehouse item in your Microsoft Fabric workspace.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: salilkanade, dhsundar, jacinda-eng
+ms.reviewer: salilkanade, dhsundar, fresantos
 ms.date: 08/27/2025
 ms.topic: how-to
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
@@ -37,7 +37,7 @@ The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the sta
 
 ### Allow Azure service tags through firewall
 
-To ensure proper access, you need to allow the Power BI service tags and SQL service tags for firewall access. For more information, see [Power BI Service Tags](/power-bi/enterprise/service-premium-service-tags) and [Service tags](/fabric-docs/docs/security/security-service-tags.md). You cannot use the Fully Qualified Domain Name (FQDN) of the TDS Endpoint alone. Allowing the Power BI service tags and SQL service tags is necessary for connectivity through the firewall.
+To ensure proper access, you need to allow the Power BI service tags and SQL service tags for firewall access. For more information, see [Power BI Service Tags](/power-bi/enterprise/service-premium-service-tags) and [Service tags](../security/security-service-tags.md). You cannot use the Fully Qualified Domain Name (FQDN) of the TDS Endpoint alone. Allowing the Power BI service tags and SQL service tags is necessary for connectivity through the firewall.
 
 ## Retrieve the SQL connection string
 
