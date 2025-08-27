@@ -8,6 +8,7 @@ ms.topic: tutorial
 ms.custom: 
 ms.date: 08/27/2025
 reviewer: jonburchel
+ai.usage: ai-assisted
 ---
 
 # Prepare your system for data science tutorials
