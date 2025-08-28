@@ -302,14 +302,8 @@ display(df)
 
 
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 9, Finished, Available, Finished)
-
-
-    Number of rows: 20, Number of columns: 7
-    
-
-
-    SynapseWidget(Synapse.DataFrame, 47aff8cb-72f8-4a36-885c-f4f3bb830a91)
-
+Number of rows: 20, Number of columns: 7
+SynapseWidget(Synapse.DataFrame, 47aff8cb-72f8-4a36-885c-f4f3bb830a91)
 
 The result is a DataFrame with 20 rows—this is the demo benchmark. Important fields are `Question`, `Answer` (human-curated 'ground truth' answer), and `ExtractedPath` (the source document where information is found). Change the filtering criteria to include other questions and vary complexity for a more realistic example. Try this exercise.
 
@@ -327,12 +321,9 @@ print(answer)
 
 
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 10, Finished, Available, Finished)
+Three
 
-
-    Three
-    
-
-This quick smoke test helps you find issues in the RAG implementation, such as incorrect credentials, a missing or empty vector index, or incompatible function interfaces. If the test fails, pause and check for issues. The expected output is `Three`. If the smoke test passes, go to the next section to evaluate RAG in more detail. 
+This quick smoke test helps you find issues in the RAG implementation, such as incorrect credentials, a missing or empty vector index, or incompatible function interfaces. If the test fails, pause and check for issues. The expected output is `Three`. If the smoke test passes, go to the next section to evaluate RAG in more detail.
 
 # Establish metrics
 
@@ -347,33 +338,20 @@ def get_retrieval_score(target_source, retrieved_sources):
         return 0
 ```
 
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 11, Finished, Available, Finished)
 
-
 According to the benchmark, the answer is contained in the source with ID `"S08/data/set1/a9"`. Testing the function on the example we ran above returns `1`, as expected, because it's returned in the top 3 relevant text chunks (in fact, it's the first in the list!).
-
 
 ```python
 print("Retrieved sources: ", retrieved_sources)
 get_retrieval_score("S08/data/set1/a9", retrieved_sources)
 ```
 
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 12, Finished, Available, Finished)
-
-
-    Retrieved sources:  ['S08/data/set1/a9', 'S08/data/set1/a9', 'S08/data/set1/a5']
-    
-
-
-
-    1
-
-
+Retrieved sources:  ['S08/data/set1/a9', 'S08/data/set1/a9', 'S08/data/set1/a5']
+1
 
 This section defines AI-assisted metrics. The prompt template includes a few examples of input (CONTEXT and ANSWER) and suggested output; this is called a few-shot model. It's the same prompt that's used in Azure AI Studio. Learn more in [Built-in evaluation metrics](/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=warning#ai-assisted-relevance). This demo uses the `groundedness` and `relevance` metrics—these are usually the most useful and reliable for evaluating GPT models. Other metrics can be useful but provide less intuition—for example, answers don't have to be similar to be correct, so `similarity` scores can be misleading. The scale for all metrics is 1 to 5. Higher is better. Groundedness takes only two inputs (context and generated answer), while the other two metrics also use ground truth for evaluation. 
-
 
 
 ```python
@@ -433,11 +411,7 @@ def get_groundedness_metric(context, answer):
     return metric_completion.choices[0].message.content
 
 ```
-
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 13, Finished, Available, Finished)
-
-
 
 ```python
 def get_relevance_metric(context, question, answer):    
@@ -512,10 +486,7 @@ def get_relevance_metric(context, question, answer):
 
 ```
 
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 14, Finished, Available, Finished)
-
-
 
 ```python
 def get_similarity_metric(question, ground_truth, answer):
@@ -591,43 +562,24 @@ def get_similarity_metric(question, ground_truth, answer):
 
 ```
 
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 15, Finished, Available, Finished)
-
-
 Test the relevance metric:
-
 
 ```python
 get_relevance_metric(retrieved_context, question, answer)
 ```
 
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 16, Finished, Available, Finished)
-
-
-
-
-    '2'
-
-
+'2'
 
 A score of 5 means the answer is very relevant to the question. Here's the similarity metric:
-
 
 ```python
 get_similarity_metric(question, 'three', answer)
 ```
 
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 17, Finished, Available, Finished)
-
-
-
-
-    '5'
-
-
+'5'
 
 A score of 5 means the answer is completely similar to the ground truth answer curated by a human expert. Keep in mind that AI-assisted metrics can fluctuate for the same input. Using them is usually faster than involving human judges.
 
@@ -686,35 +638,23 @@ print("Aggregate Retrieval score: {:.2f}%".format((df.where(df["retrieval_score"
 display(df.select(["question", "retrieval_score",  "ExtractedPath", "retrieved_sources"]))
 ```
 
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 19, Finished, Available, Finished)
-
-
-    Aggregate Retrieval score: 100.00%
-    
-
-
-    SynapseWidget(Synapse.DataFrame, 14efe386-836a-4765-bd88-b121f32c7cfc)
-
+Aggregate Retrieval score: 100.00%
+SynapseWidget(Synapse.DataFrame, 14efe386-836a-4765-bd88-b121f32c7cfc)
 
 For all questions, the retriever fetches the correct context, and in most cases it's the first entry in the list. Azure AI Search does a great job. You might wonder why, in some cases, the context has two or three identical values. That's not an error—it means the retriever fetches fragments of the same article that don't fit into one chunk during splitting.
 
 ### Check-in #2: performance of the response generator
 
-
 Pass the question and context to the LLM to generate an answer, and store it in the `generated_answer` column in the DataFrame:
-
 
 ```python
 df = df.withColumn('generated_answer', get_answer_udf(df.Question, df.retrieved_context))
 ```
 
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 20, Finished, Available, Finished)
 
-
 Use the generated answer, ground-truth answer, question, and context to calculate metrics and display evaluation results for each question-answer pair:
-
 
 ```python
 df = df.withColumn('gpt_groundedness', get_groundedness_metric_udf(df.retrieved_context, df.generated_answer))
@@ -722,14 +662,8 @@ df = df.withColumn('gpt_relevance', get_relevance_metric_udf(df.retrieved_contex
 df = df.withColumn('gpt_similarity', get_similarity_metric_udf(df.Question, df.Answer, df.generated_answer))
 display(df.select(["question", "answer", "generated_answer", "retrieval_score", "gpt_groundedness","gpt_relevance", "gpt_similarity"]))
 ```
-
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 21, Finished, Available, Finished)
-
-
-
-    SynapseWidget(Synapse.DataFrame, 22b97d27-91e1-40f3-b888-3a3399de9d6b)
-
+SynapseWidget(Synapse.DataFrame, 22b97d27-91e1-40f3-b888-3a3399de9d6b)
 
 What do these values show? To make them easier to interpret, plot histograms of groundedness, relevance, and similarity. The LLM is more verbose than human ground-truth answers, which lowers the similarity metric—about half the answers are semantically correct but receive four stars as mostly similar. Most values for all three metrics are 4 or 5, which suggests RAG performance is good. There are a few outliers—for example, for the question `How many species of otter are there?`, the model generated `There are 13 species of otter`, which is correct with high relevance and similarity (5). For some reason, GPT considered it poorly grounded in the provided context and gave it 1 star. In the other three cases with at least one AI-assisted metric of 1 star, the low score points to a bad answer. Like humans, the LLM is occasionally wrong in evaluation, but in most cases it does a good job.
 
@@ -766,15 +700,10 @@ plt.tight_layout()
 plt.show()
 ```
 
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 24, Finished, Available, Finished)
-
-
     
 :::image type="content" source="media/tutorial-evaluate-rag-performance/evaluate-rag-gpt-scores-histogram.png" alt-text="Screenshot of histograms that show the distribution of GPT relevance and similarity scores for the evaluated questions." lightbox="media/tutorial-evaluate-rag-performance/evaluate-rag-gpt-scores-histogram.png":::
-    
-
-
+ 
 As a final step, save the benchmark results to a table in your lakehouse. This step is optional but highly recommended—it makes your findings more useful. When you change something in the RAG (for example, modify the prompt, update the index, or use a different GPT model in the response generator), you can measure the impact, quantify improvements, and detect regressions.
 
 
