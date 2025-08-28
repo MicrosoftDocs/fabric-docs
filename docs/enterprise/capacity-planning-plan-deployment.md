@@ -14,7 +14,7 @@ ms.date: 08/26/2025
 
 # Microsoft Fabric capacity planning guide: Plan your first deployment
 
-This article is **part 1** of the Microsoft Fabric capacity planning guide. It helps Microsoft Fabric capacity admins, tenant admins, Center of Excellence (COE) leads, and analytics team leaders plan Microsoft Fabric capacity for your organization's first deployment. Strategic capacity planning lets you budget, scale, and optimize your analytics solution from proof of concept to production.
+This article is **part 1** of the Microsoft Fabric capacity planning guide. It helps Microsoft Fabric capacity admins, tenant admins, Center of Excellence (COE) leads, and analytics team leaders plan Microsoft Fabric capacity for your organization's first deployment. Strategic capacity planning lets you budget, scale, and optimize your analytics solution from proof of concept (POC) to production.
 
 ## Scenario
 
@@ -24,7 +24,7 @@ An organization is evaluating Microsoft Fabric as a unified analytics platform. 
 
 ## Guidance for Microsoft Fabric capacity planning
 
-When you start with Fabric, it's smart to **start small, learn, and scale gradually**. The [Microsoft Fabric Adoption Roadmap](/power-bi/guidance/fabric-adoption-roadmap) recommends starting with early projects that involve much [**exploration and experimentation**](/power-bi/guidance/powerbi-implementation-planning-usage-scenario-prototyping-and-sharing). Use a trial or small capacity for a proof of concept, then gradually increase capacity as you move to pilot and production. This phased approach manages cost and risk, so you only invest in larger capacity when you have data to justify it.
+When you start with Fabric, it's smart to **start small, learn, and scale gradually**. The [Microsoft Fabric Adoption Roadmap](/power-bi/guidance/fabric-adoption-roadmap) recommends starting with early projects that involve much [**exploration and experimentation**](/power-bi/guidance/powerbi-implementation-planning-usage-scenario-prototyping-and-sharing). Use a trial or small capacity for a POC, then gradually increase capacity as you move to pilot and production. This phased approach manages cost and risk, so you only invest in larger capacity when you have data to justify it.
 
 ## Phase 1: Proof of concept (POC)
 
@@ -103,4 +103,4 @@ The next articles cover advanced capacity planning topics like scaling strategie
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 2: Scale self-service analytics](capacity-planning-scale-self-service-analytics.md)
+> [Part 2: Scale for self-service analytics](capacity-planning-scale-self-service-analytics.md)

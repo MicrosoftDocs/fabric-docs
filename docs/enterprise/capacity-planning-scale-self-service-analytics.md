@@ -93,4 +93,4 @@ When multiple business units use Fabric in a self-service model, strong **govern
 By following these guidelines, Fabric admins foster a successful **self-service analytics ecosystem** that scales. You achieve cost efficiency by sharing resources where appropriate, while still ensuring each group gets the performance it needs through smart isolation tactics. In short, **plan capacity with both the forest and the trees in mind**—the big picture of total resources, and the individual needs of each team. This article concludes part 2 of the strategic capacity planning series. With these strategies, you confidently expand Fabric usage across your organization without compromising governance or user satisfaction. The next part in the series covers enterprise-scale considerations for centrally managed solutions, building on these foundations.
 
 > [!div class="nextstepaction"]
-> [Part 3: Scale for centrally owned content](capacity-planning-enterprise-managed-self-service-solutions.md)
+> [Part 3: Scale for enterprise and managed self-service solutions](capacity-planning-enterprise-managed-self-service-solutions.md)
