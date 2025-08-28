@@ -51,7 +51,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - `PREDICT`
 - Queries targeting system and user tables
 - Recursive queries
-- Result Set Caching
 - Schema and table names can't contain `/` or `\`
 - `SELECT` - `FOR XML`
 - `SET ROWCOUNT`
