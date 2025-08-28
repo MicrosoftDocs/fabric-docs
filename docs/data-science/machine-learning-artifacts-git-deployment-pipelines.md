@@ -25,16 +25,13 @@ As a principle, __data is not stored in Git—only artifact metadata is tracked_
 
 ### Git representation
 The following information is serialized and tracked in a git connected workspace for machine learning experiment and models:
-* Display name
-* Version 
-* Logical guid
-* Dependencies
-
-> [!NOTE]
-> The tracked logical guid is an automatically generated cross-workspace identifier representing an item and its source control representation.
+* __Display name__.
+* __Version__.
+* __Logical guid__. The tracked logical guid is an automatically generated cross-workspace identifier representing an item and its source control representation.
+* __Dependencies__. Lineage between notebooks, experiments, and models are preserved across Git-connected workspaces, maintaining clear traceability among related artifacts.
 
 > [!IMPORTANT]
-> Only the Machine learning experiments and models artifact is tracked in git in the current experience. __`Experiment runs` and `Model versions` aren't tracked and versioned in git__.
+> Only machine learning experiment and model artifact metadata is tracked in Git in the current experience. __Experiment runs__ and __model versions__ (the run outputs and model data) are not stored or versioned in Git; their data remains in workspace storage.
 
 ### Git integration capabilities
 The following capabilities are available:
@@ -48,6 +45,9 @@ The following capabilities are available:
 
 ## Machine learning experiments and models in deployment pipelines
 Machine learning (ML) experiments and models are supported in Microsoft Fabric lifecycle management deployment pipelines. It enables environment segmentation [best-practices](../cicd/best-practices-cicd.md).
+
+> [!IMPORTANT]
+> Only machine learning experiment and model artifacts are tracked in deployment pipelines in the current experience. __Experiment runs__ and __model versions__ aren't tracked or versioned by pipelines; their data remains in workspace storage.
 
 ML experiments and models deployment pipelines integration capabilities:
 
