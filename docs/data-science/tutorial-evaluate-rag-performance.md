@@ -12,8 +12,6 @@ ai.usage: ai-assisted
 ---
 # Evaluation of RAG performance basics
 
-### Introduction
-
 This tutorial is a quickstart guide for using Fabric to evaluate RAG application performance. Performance evaluation focuses on two main components of RAG: the retriever (in our scenario, it uses Azure AI Search) and the response generator (an LLM that uses the user's query, retrieved context, and a prompt to generate a reply). The main steps in this tutorial are as follows:
 
 1. Set up Azure OpenAI and Azure AI Search Services
@@ -24,7 +22,7 @@ This tutorial is a quickstart guide for using Fabric to evaluate RAG application
 1. Check-in #2 - evaluate the performance of response generator using Groundedness, Relevance, and Similarity metrics
 1. Visualize results and preserve evaluation results in OneLake for future reference and continuous evaluation
 
-### Prerequisites
+## Prerequisites
 
 Before you start this tutorial, complete "Building Retrieval Augmented Generation in Fabric: A step-by-step guide" [here](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-bring-your-own-keys/quickstart-genai-guidance.ipynb).
 
@@ -41,7 +39,7 @@ In the previous tutorial, you have uploaded data to your lakehouse and built an 
 :::image type="content" source="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png" alt-text="Screenshot of diagram showing the flow of a user conversation with the RAG system." lightbox="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png":::
 
 
-### Set up access to Azure OpenAI and Azure AI Search
+## Set up access to Azure OpenAI and Azure AI Search
 
 Define the endpoints and the required keys. Then import required libraries and functions. Instantiate clients for Azure OpenAI and Azure AI Search. Finally, define a function wrapper with a prompt for querying RAG system.
 
@@ -141,12 +139,9 @@ search_client = SearchClient(
 )
 ```
 
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 7, Finished, Available, Finished)
 
-
 Definitions of the functions below implement the two main components of RAG—retriever (`get_context_source`) and response generator (`get_answer`). This code should be familiar from the previous tutorial. Note the `topN` parameter—it lets you configure how many relevant resources to fetch from the index (we use 3 in this tutorial, but the optimal value can vary by dataset):
-
 
 ```python
 # implementation of retriever
@@ -224,10 +219,7 @@ def get_answer(question, context):
 
     return chat_completion.choices[0].message.content
 ```
-
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 8, Finished, Available, Finished)
-
 
 ## Dataset
 
@@ -300,7 +292,6 @@ df.persist()
 display(df)
 ```
 
-
 StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 9, Finished, Available, Finished)
 Number of rows: 20, Number of columns: 7
 SynapseWidget(Synapse.DataFrame, 47aff8cb-72f8-4a36-885c-f4f3bb830a91)
@@ -310,7 +301,6 @@ The result is a DataFrame with 20 rows—this is the demo benchmark. Important f
 ## Run a simple end-to-end test
 
 Start with a simple end-to-end smoke test of retrieval-augmented generation (RAG).
-
 
 ```python
 question = "How many suborders are turtles divided into?"
@@ -325,7 +315,7 @@ Three
 
 This quick smoke test helps you find issues in the RAG implementation, such as incorrect credentials, a missing or empty vector index, or incompatible function interfaces. If the test fails, pause and check for issues. The expected output is `Three`. If the smoke test passes, go to the next section to evaluate RAG in more detail.
 
-# Establish metrics
+## Establish metrics
 
 Define a deterministic metric to evaluate the retriever. It's inspired by search engines and is familiar to people with that background. It checks whether the list of retrieved sources includes the ground truth source. This metric is often called a top N accuracy score because the `topN` parameter controls the number of retrieved sources.
 
