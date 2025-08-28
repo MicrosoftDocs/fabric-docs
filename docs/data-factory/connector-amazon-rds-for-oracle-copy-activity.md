@@ -15,6 +15,17 @@ ms.custom:
 
 This article outlines how to use the copy activity in data pipeline to copy data from Amazon Rds For Oracle.
 
+Specifically, this Amazon Rds For Oracle connector supports:
+
+- The following versions of an Amazon Rds For Oracle database:
+    - Amazon Rds For Oracle 19c and higher
+    - Amazon Rds For Oracle 18c and higher
+    - Amazon Rds For Oracle 12c and higher
+- Parallel copying from an Amazon Rds For Oracle source. See the [Parallel copy from Amazon Rds For Oracle](#parallel-copy-from-amazon-rds-for-oracle) section for details.
+
+> [!Note]
+> Amazon Rds For Oracle proxy server isn't supported.
+
 ## Supported configuration
 
 For the configuration of each tab under copy activity, go to the following sections respectively.
