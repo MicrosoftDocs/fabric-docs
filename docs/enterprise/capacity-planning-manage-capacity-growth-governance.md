@@ -27,7 +27,7 @@ In decentralized self-service environments, multiple business units share the sa
 > [!NOTE]
 > Each Microsoft Fabric workload has specific thresholds determined by capacity SKU size and license type. Ensure your chosen [SKU meets these requirements](sku-considerations.md).
 
-## Centralized (enterprise) capacities
+## Enterprise (centralized) capacities
 
 In centralized environments, a core IT or COE team is responsible for managing essential content, including enterprise business intelligence and managed self-service applications. Governance is implemented through formal mechanisms, emphasizing **stringent service level agreements (SLAs), proactive oversight, and hierarchical supervision**. It's recommended that organizations consistently maintain, administer, and enhance their enterprise capacities. The following guidelines are vital for mission-critical (tier 1) solutions, yet they remain relevant to other high-priority business operational (tier 2) and select noncritical ad-hoc (tier 3) solutions as well.
 
