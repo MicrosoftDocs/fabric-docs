@@ -910,6 +910,8 @@
             items: 
               - name: Synchronize your code from an existing Git repo
                 href: apache-airflow-jobs-sync-git-repo.md
+              - name: APIs in Apache Airflow Jobs
+                href: apache-airflow-jobs-api-capabilities.md
               - name: Apache Airflow Job workspace settings
                 href: apache-airflow-jobs-workspace-settings.md
               - name: Install a private package
