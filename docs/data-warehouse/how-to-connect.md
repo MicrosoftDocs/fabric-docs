@@ -136,7 +136,7 @@ The `dbt` adapter is a data transformation framework that uses software engineer
 
 The `dbt` data platform-specific adapter plugins allow users to connect to the data store of choice. To connect to a warehouse from `dbt`, use `dbt-fabric` adapter. Similarly, the Azure Synapse Analytics dedicated SQL pool data source has its own adapter, `dbt-synapse`.
 
-Both adapters support Microsoft Entra ID authentication and allow developers to use `az cli authentication`. However, SQL authentication isn't supported for `dbt-fabric`
+Both adapters support Microsoft Entra ID authentication and allow developers to use `az cli authentication`. However, SQL authentication isn't supported for `dbt-fabric`.
 
 The `dbt` Fabric DW Adapter uses the `pyodbc` library to establish connectivity with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The `pyodbc` library is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/). The `pyodbc` library directly passes connection string to the database driver through SQLDriverConnect in the `msodbc` connection structure to [!INCLUDE [product-name](../includes/product-name.md)] using a TDS (Tabular Data Streaming) proxy service.
 
