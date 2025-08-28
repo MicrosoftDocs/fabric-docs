@@ -503,7 +503,7 @@ df_chunks
 ```
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 19, Finished, Available, Finished)*
 
-|   | Embedding | ExtractedPath | ArticleTitle | Chunk | Id | @search.score | @search.reranker_score | @search.highlights | @search.captions |
+| Chunk Ordinal  | Embedding | ExtractedPath | ArticleTitle | Chunk | Id | @search.score | @search.reranker_score | @search.highlights | @search.captions |
 |---|-----------|---------------|--------------|-------|----|--------------|-----------------------|-------------------|------------------|
 | 0 | [-0.03276262, -0.006002287, 0.009044814, -0.02...] | S08/data/set1/a5 | elephant | hand, live mostly solitary lives.\n\nThe socia... | 131 | 0.888358 | None | None | None |
 | 1 | [-0.011676712, -0.0079745, 0.001480885, -0.021...] | S08/data/set1/a5 | elephant | farther north, in slightly cooler climates, an... | 130 | 0.877915 | None | None | None |
