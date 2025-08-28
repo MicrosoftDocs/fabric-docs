@@ -16,10 +16,12 @@ ms.date: 03/14/2025
 
     If there's an existing connection to your MQTT source, select that existing connection. 
 1. In the **Connection settings** section, 
-    1. For **MQTT Broker URL**, enter the URL of your MQTT broker, starting with `ssl://` or `tcp://`. 
-    
+    1. For **MQTT Broker URL**, enter the URL of your MQTT broker, starting with `ssl://` or `wss://`. 
+
         > [!NOTE]
-        > The MQTT source currently supports both the secured MQTT over TLS/SSL and the PLAIN-TEXT MQTT protocol between your MQTT broker and eventstream.
+        > The MQTT source supports TLS/SSL-secured MQTT connections between your MQTT broker and Eventstream.
+        > TLS/SSL connections are only supported if the server certificate is signed by a Certificate Authority (CA) included in the [trusted CA list](https://github.com/microsoft/fabric-event-streams/blob/main/References/certificate-authority-list/trusted-ca-list.txt).
+
     1. For **Connection name**, enter a name for the connection to the MQTT. 
     1. Enter the **Username** and **Password** for the MQTT broker. 
 

@@ -23,7 +23,8 @@ ms.date: 07/22/2025
     1. For **Topic**, enter the Kafka topic. 
     1. For **Consumer group**, enter the consumer group of your Apache Kafka cluster. This field provides you with a dedicated consumer group for getting events.  
     1. Select **Reset auto offset** to specify where to start reading offsets if there's no commit. 
-    1. For newly added Apache Kafka sources, the only supported **Security protocol** is **SASL_SSL**.
+    1. For newly added Apache Kafka sources, the only supported **Security protocol** is **SASL_SSL**. When using **SASL_SSL**, the server certificate must be signed by a Certificate Authority (CA) included in the [trusted CA list](https://github.com/microsoft/fabric-event-streams/blob/main/References/certificate-authority-list/trusted-ca-list.txt).
+   
        > [!NOTE] 
        > For existing Apache Kafka sources already added to your eventstream and configured with the security protocol set to SASL_PLAINTEXT or PLAINTEXT, you can update the security protocol to SASL_SSL in Eventstream edit mode. Once updated and saved, the protocol cannot be reverted to SASL_PLAINTEXT or PLAINTEXT.
        
