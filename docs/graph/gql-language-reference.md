@@ -10,18 +10,18 @@ ms.reviewer: eur
 
 # GQL language reference
 
-GQL (Graph Query Language) is the ISO-standardized query language for graph databases. It's designed to help you query and work with graph data efficiently. The same international working group that oversees SQL develops GQL, so you see familiar syntax if you already know SQL. This article covers how GQL works in graph in Microsoft Fabric, including syntax, data types, query patterns, and practical examples.
+GQL (Graph Query Language) is the ISO-standardized query language for graph databases. It helps you query and work with graph data efficiently. The same international working group that oversees SQL develops GQL, so you see familiar syntax if you already know SQL. This article explains how GQL works in graph in Microsoft Fabric, including syntax, data types, query patterns, and practical examples.
 
 > [!NOTE]
-> The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
+> The official international standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
 
 ## GQL fundamentals
 
 If you're new to GQL, learn these essential concepts:
 
 - **Graphs** have nodes and edges with labels and properties that represent your data.
-- **Graph types** set what nodes and edges can exist in your graph, acting like a schema.
-- **Constraints** restrict the set of valid graphs of a graph type to keep data accurate.
+- **Graph types** set what nodes and edges can exist in your graph, like a schema.
+- **Constraints** limit the set of valid graphs of a graph type to keep data accurate.
 - **Queries** use statements like `MATCH`, `FILTER`, and `RETURN` to show results in a table.
 - **Patterns** describe the graph structures you want to find using visual syntax.
 - **Expressions** describe value computations performed by queries, like SQL expressions.
@@ -36,33 +36,33 @@ WHERE person.age > 25 AND friend.age > 25
 RETURN person.name, friend.name
 ```
 
-This query matches friends (`Person` nodes that `know` each other) who are both older than 25 and returns the names of each pair of such friends found in the graph. Notice how the pattern `(person:Person)-[:knows]-(friend:Person)` visually represents the relationship structure you're looking for.
+This query matches friends (`Person` nodes that `know` each other) who are both older than 25, and returns the names of each pair found in the graph. The pattern `(person:Person)-[:knows]-(friend:Person)` visually shows the relationship structure you're looking for.
 
 ## Graph fundamentals
 
-In GQL, you work with labeled property graphs. A graph contains nodes and edges, which we call graph elements. Understanding these building blocks is essential for effective graph modeling and querying.
+In GQL, you use labeled property graphs. A graph has nodes and edges, which are called graph elements. Learning these building blocks helps you model and query graphs effectively.
 
 ### Nodes and edges represent your domain
 
-Nodes are typically used to model the entities (the "nouns") of your system: persons, organizations, or posts and comments on a social media site. They represent the things that exist independently in your domain.
+Nodes usually model the entities (the "nouns") in your system, like people, organizations, posts, or comments on a social media site. They are things that exist independently in your domain.
 
-Graph edges are used to model relationships between entities (the "verbs"): which persons know each other, which organization is located in which country/region, or who commented on which post. They capture how your entities connect and interact.
+Graph edges model relationships between entities (the "verbs"), like which people know each other, which organization is in which country or region, or who commented on which post. They show how your entities connect and interact.
 
 Every graph element has these characteristics:
 
 - An **internal ID** (a unique identifier) that distinguishes it from other graph elements.
-- **One or more labels**—character strings like `Person` or `knows`. Graph edges currently require exactly one label, while nodes require one but can have more labels.
-- **Multiple properties**—name-value pairs like `service: "Fabric Graph"` that store the actual data attributes of your nodes and edges. Property names are sometimes also called property keys.
+- **One or more labels**—character strings like `Person` or `knows`. Graph edges need one label, and nodes need one but can have more labels.
+- **Multiple properties**—name-value pairs like `service: "Fabric Graph"` that store the data attributes of your nodes and edges. Property names are sometimes called property keys.
 
-Every node in graph in Microsoft Fabric is additionally restricted by an associated node key constraint. Each such constraint defines a unique key value that identifies the node in the graph in terms of its properties.
+Each node in a graph in Microsoft Fabric has a node key constraint. This constraint sets a unique key value that identifies the node by its properties.
 
 ### Understanding graph structure
 
-Each edge connects two endpoints: a source node to a destination node, both identified by their internal ID. This forms your graph's essential structure. The direction of an edge matters—a `Person` who `follows` another `Person` creates a directed relationship.
+Each edge connects two endpoints: a source node and a destination node, both identified by their internal ID. This creates your graph's structure. The direction of an edge matters—a `Person` who `follows` another `Person` makes a directed relationship.
 
-GQL graphs are always well-formed, meaning they never have "dangling" edges. If you see an edge in a graph, you also find both its source and destination nodes.
+GQL graphs are always well formed, so they don't have dangling edges. If you see an edge in a graph, you also find both its source and destination nodes.
 
-The overall structure of a graph is controlled by its [graph type](#graph-types--schema), which acts like a schema definition.
+The structure of a graph is set by its [graph type](#graph-types--schema), which works like a schema definition.
 
 ## Example: Social network domain
 
@@ -83,18 +83,18 @@ The example social network domain includes:
 - **Tags** for categorizing content and interests.
 - **Relationships** like friendships, employment, education, content creation, and user interactions.
 
-Here's a visual overview of our example social network structure. The dotted edges represent inheritance via label implication, the plain edges represent edge types, and the bold edges represent edge type families.
+Here's a visual overview of the example social network structure. The dotted edges show inheritance via label implication, the plain edges show edge types, and the bold edges show edge type families.
 
 :::image type="content" source="./media/schema.png" alt-text="Diagram of the example social network structure." lightbox="./media/schema.png":::
 
-Notable features of this graph include:
+Notable features of this graph are:
 
-- **Inheritance hierarchies** for places (City → Country → Continent) and organizations (University, Company → Organization).
-- **Abstract types** for Message and Organization to define shared properties.
-- **Graph edge families** for relationships like `isPartOf` and `likes` that connect different types of nodes.
-- **Comprehensive constraints** to ensure data integrity.
+- **Inheritance hierarchies** for places (City → Country → Continent) and organizations (University, Company → Organization)
+- **Abstract types** for Message and Organization to define shared properties
+- **Graph edge families** for relationships like `isPartOf` and `likes` that connect different types of nodes
+- **Comprehensive constraints** to ensure data integrity
 
-Here's the complete technical specification of this graph type:
+Here is the complete technical specification of this graph type:
 
 ```gql
 (:TagClass => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
@@ -206,14 +206,14 @@ FOR (n:Message) REQUIRE (n.id) IS PRIMARY KEY,
 
 ## Write queries with GQL
 
-GQL gives you powerful and intuitive tools for querying graph data. You can write queries to find patterns, traverse relationships, and transform your results. The language is designed to be both expressive and readable, making complex graph operations accessible.
+GQL gives you powerful, intuitive tools for querying graph data. Write queries to find patterns, traverse relationships, and transform results. The language is expressive and readable, so complex graph operations are accessible.
 
 ### Basic query structure
 
-A GQL query in Fabric Graph is a linear query—a sequence of statements like `MATCH`, `LET`, `FILTER`, `ORDER BY`, `OFFSET`, `LIMIT`, and `RETURN`. Most queries start with the `MATCH` statement to find patterns in your graph. The `RETURN` statement is special because it must be the last statement in your query and determines what data you get back.
+A GQL query in Fabric Graph is a linear query—a sequence of statements like `MATCH`, `LET`, `FILTER`, `ORDER BY`, `OFFSET`, `LIMIT`, and `RETURN`. Most queries start with the `MATCH` statement to find patterns in the graph. The `RETURN` statement must be last and determines what data you get back.
 
 > [!TIP]
-> GQL supports both C-style `//` line comments, SQL-style `--` line comments, and C-style `/* */` block comments
+> GQL supports C-style `//` line comments, SQL-style `--` line comments, and C-style `/* */` block comments.
 
 **Example:**
 
@@ -225,36 +225,36 @@ RETURN count(*) AS num_same_age_friends
 
 Here's how this query works step by step:
 
-1. **`MATCH`** finds all pairs of `Person` nodes that know each other and have the same age. Each match creates one row with `n` and `m` columns containing the matching nodes
-1. **`RETURN`** counts the rows from step 1 and outputs a single row with the count in the `num_same_age_friends` column
+1. **`MATCH`** finds all pairs of `Person` nodes that know each other and have the same age. Each match creates one row with `n` and `m` columns containing the matching nodes.
+1. **`RETURN`** counts the rows from step 1 and outputs a single row with the count in the `num_same_age_friends` column.
 
-You can write more complex queries using multiple statements, advanced graph patterns, expressions, and predicates to handle sophisticated analytical needs.
+Write more complex queries using multiple statements, advanced graph patterns, expressions, and predicates to handle sophisticated analytical needs.
 
 #### Linear statement composition
 
-The statements of linear queries get composed in the order you write them and also are executed as if performed in that order. Each statement transforms the input table from the preceding statement into an output table for the following statement (or returns it to you). The first statement always conceptually starts with a unit table—a table with one row and no columns.
+Statements in linear queries are composed and executed in the order you write them. Each statement transforms the input table from the previous statement into an output table for the next statement or returns it. The first statement conceptually starts with a unit table—a table with one row and no columns.
 
-This linear statement composition is an expression of a core design principle in GQL: the reading order follows the data flow order. This principle makes queries easier to understand and debug, and helps you build new queries by reusing parts from other working queries. If you know SQL, you might need a moment to adjust to this reading order, but you find its simplicity beneficial for composing complex graph traversals.
+Linear statement composition follows a core design principle in GQL: reading order matches data flow order. This principle makes queries easier to understand and debug, and helps you build new queries by reusing parts from other working queries. If you know SQL, you might need a moment to adjust to this reading order, but its simplicity helps you compose complex graph traversals.
 
 > [!NOTE]
 > Linear statement composition works like UNIX pipes, lateral joins in SQL, and monadic list operations in functional programming languages.
 
 #### Variables
 
-In any given statement, the columns from rows produced by preceding statements and the columns produced by the current statement are called (input and output) *variables*. Understanding variable scope is crucial for writing correct queries, especially when combining multiple `MATCH` statements or using complex expressions.
+In any statement, columns from rows produced by previous statements and columns produced by the current statement are called input and output *variables*. Understanding variable scope is crucial for writing correct queries, especially when combining multiple `MATCH` statements or using complex expressions.
 
 ### What happens when you run a query
 
-When you execute a query, the system provides comprehensive feedback about the operation:
+When you run a query, the system provides feedback about the operation:
 
 **Success results:**
 
-- A result table with the rows produced by your query's last statement (if execution succeeds).
-- Status information showing whether your query succeeded or failed.
+- A result table with the rows produced by the query's last statement (if execution succeeds).
+- Status information showing whether the query succeeded or failed.
 
 **Status information details:**
 
-Every execution of a query returns one primary status and possibly multiple more (secondary) statuses to give you complete visibility into what happened. Each status includes a GQLSTATUS code, a descriptive message, and more metadata about the status, including a possible cause (if available). 
+Each query run returns one primary status and possibly multiple secondary statuses to give you complete visibility into what happened. Each status includes a GQLSTATUS code, a descriptive message, and more metadata about the status, including a possible cause (if available).
 
 The following GQLSTATUS codes indicate successful query execution:
 
@@ -264,13 +264,13 @@ The following GQLSTATUS codes indicate successful query execution:
 | 00001     | note: successful completion - omitted result | Success with no table (currently unused) |
 | 02000     | note: no data                                | Success with an empty table              |
 
-Other GQLSTATUS codes are used to indicate exception conditions when execution fails.
+Other GQLSTATUS codes indicate exception conditions when a query fails.
 
 For the complete table of status codes, see [GQLSTATUS codes](#gqlstatus-codes).
 
 ## Use query statements
 
-Query statements are the building blocks of GQL queries. Each statement type serves a specific purpose in the data processing pipeline.
+Query statements build GQL queries. Each statement type has a specific role in the data processing pipeline.
 
 ### `MATCH` statement
 
@@ -282,15 +282,15 @@ MATCH <graph pattern>, <graph pattern>, ... [ WHERE <predicate> ]
 
 **Description:**
 
-Use the `MATCH` statement to find all matches for your graph pattern in the graph. A `MATCH` statement is typically the starting point for most queries, as it identifies the data you want to work with.
+Use the `MATCH` statement to find matches for your graph pattern in the graph. The `MATCH` statement usually starts most queries because it identifies the data you want to use.
 
-Each match creates a single row with columns for each path, node, or edge variable that is bound by the graph pattern. The power of `MATCH` comes from its ability to describe complex graph structures using intuitive visual patterns.
+Each match creates a row with columns for each path, node, or edge variable bound by the graph pattern. `MATCH` lets you describe complex graph structures using intuitive visual patterns.
 
 **How matching works:**
 
-- If columns from a preceding statement overlap with columns from matched nodes and edges, they get joined automatically using equality.
-- Input rows without corresponding graph matches get discarded (similar to an inner join in SQL).
-- If a predicate is given, only those rows where the predicate evaluates to `TRUE` are retained.
+- If columns from a previous statement overlap with columns from matched nodes and edges, they're joined automatically using equality.
+- Input rows without matching graph patterns are discarded (like an inner join in SQL).
+- If you use a predicate, only rows where the predicate is `TRUE` are kept.
 
 For complete details about graph pattern syntax, see the [Work with graph patterns](#work-with-graph-patterns) section.
 
@@ -310,11 +310,11 @@ LET <variable> = <expression>, <variable> = <expression>, ...
 
 **Description:**
 
-Use the `LET` statement to create new variables by evaluating expressions and binding the results to variable names. This statement is essential for computing derived values, transforming data, and preparing values for later use in your query.
+Use the `LET` statement to create new variables by evaluating expressions and binding the results to variable names. Use it to compute derived values, transform data, and prepare values for later use in your query.
 
 **How it works:**
 
-- Each expression gets evaluated for every input row.
+- Each expression is evaluated for every input row.
 - The results are added as new columns to the output table.
 - Variables you create with `LET` can reference existing variables from previous statements only (no forward references).
 - Multiple variable assignments in a single `LET` statement are evaluated in parallel (they don't see the variables bound by another variable assignment in the same `LET` statement).
@@ -330,13 +330,13 @@ FILTER [ WHERE ] <predicate>
 
 **Description:**
 
-Use the `FILTER` statement to filter input rows by keeping only those rows where the specified predicate evaluates to `TRUE`. The `FILTER` statement works similar to the `WHERE` clause in SQL and is essential for narrowing down your results based on specific conditions.
+Use the `FILTER` statement to keep only rows where the predicate is `TRUE`. The `FILTER` statement works like the `WHERE` clause in SQL and helps you narrow your results based on specific conditions.
 
 **Key behaviors:**
 
-- Rows where the predicate evaluates to `FALSE` or `UNKNOWN` (null) are removed.
-- The `WHERE` keyword is optional—`FILTER predicate` and `FILTER WHERE predicate` are equivalent.
-- Complex predicates can be built using logical operators (`AND`, `OR`, `NOT`).
+- Rows where the predicate is `FALSE` or `UNKNOWN` (null) are removed.
+- The `WHERE` keyword is optional—`FILTER predicate` and `FILTER WHERE predicate` mean the same thing.
+- Build complex predicates using logical operators (`AND`, `OR`, `NOT`).
 
 > [!CAUTION]
 > Remember that in three-valued logic, conditions involving null values return `UNKNOWN`, which means those rows are filtered out. Also, `NOT UNKNOWN = UNKNOWN`, so special care needs to be taken when using negation.
@@ -351,13 +351,13 @@ ORDER BY <expression> [ ASC | DESC ], <expression> [ ASC | DESC ], ...
 
 **Description:**
 
-Use the `ORDER BY` statement to sort input rows based on the specified expressions. Proper sorting is crucial for producing consistent, repeatable results and for supporting deterministic slicing of rows with `OFFSET` and `LIMIT`.
+Use the `ORDER BY` statement to sort input rows by the specified expressions. Sorting helps you get consistent, repeatable results and lets you slice rows with `OFFSET` and `LIMIT`.
 
 **Sorting behavior:**
 
-- Each expression gets evaluated for every row, and rows are ordered by the resulting values.
+- Each expression is evaluated for every row, and rows are ordered by the resulting values.
 - You can specify multiple sort expressions separated by commas.
-- Rows get sorted first by the first expression, then by the second expression for rows with equal first values, and so on.
+- Rows are sorted first by the first expression, then by the second expression for rows with equal first values, and so on.
 - Use `ASC` for ascending order (the default) or `DESC` for descending order.
 - The null value is always considered the "smallest" value in sorting operations.
 
@@ -373,18 +373,18 @@ Use the `ORDER BY` statement to sort input rows based on the specified expressio
 
 **Description:**
 
-Use the `OFFSET` and `LIMIT` statements to control which portion of the input rows to include in your output. These statements are essential for implementing slicing of rows and managing large result sets efficiently.
+Use the `OFFSET` and `LIMIT` statements to control which part of the input rows to include in your output. These statements help you slice rows and manage large result sets efficiently.
 
 **How they work:**
 
-- **`OFFSET`** skips the first `<offset>` rows from the input
-- **`LIMIT`** restricts the output to at most `<limit>` rows
+- **`OFFSET`** skips the first `<offset>` rows from the input.
+- **`LIMIT`** restricts the output to at most `<limit>` rows.
 
 **Usage patterns:**
 
-- When you use both together, `OFFSET` gets applied first, then `LIMIT` gets applied to the remaining rows
-- You can use `LIMIT` alone to get the first N rows (equivalent to "TOP N" in SQL)
-- Combine both to extract a specific slice of rows from the result (useful for pagination)
+- When you use both together, `OFFSET` is applied first, then `LIMIT` is applied to the remaining rows.
+- You can use `LIMIT` alone to get the first N rows (like "TOP N" in SQL).
+- Combine both to extract a specific slice of rows from the result. This is useful for pagination.
 
 > [!IMPORTANT]
 > For predictable pagination results, always use `ORDER BY` before `OFFSET` and `LIMIT` to ensure consistent row ordering across queries.
@@ -401,32 +401,32 @@ RETURN [ DISTINCT ] <expression> [ AS <alias> ], <expression> [ AS <alias> ], <e
 
 **Description:**
 
-Use the `RETURN` statement to produce your query's final output by evaluating expressions for each input row. This statement determines what data your query returns and is always the final statement in any query.
+Use the `RETURN` statement to produce your query's final output by evaluating expressions for each input row. The `RETURN` statement always comes last and determines what data your query returns.
 
 **Key features:**
 
 **Column naming and aliases:**
 
-- Use `AS <alias>` to give columns custom names for better readability
-- You can omit `AS` when you're just returning variables or expressions involving simple property and list element lookups
-- Choose meaningful aliases that help others understand your query results
+- Use `AS <alias>` to give columns custom names for better readability.
+- You can omit `AS` when you're returning variables or expressions involving simple property and list element lookups.
+- Choose meaningful aliases that help others understand your query results.
 
 **Duplicate handling:**
 
-- `DISTINCT` removes duplicate rows from the output based on row-wise distinctness
-- Rows are considered duplicate if they aren't distinct according to GQL's distinctness rules
-- See [equality and comparison](#how-equality-and-comparison-work) for the definition of distinctness
+- `DISTINCT` removes duplicate rows from the output based on row-wise distinctness.
+- Rows are considered duplicate if they aren't distinct according to GQL's distinctness rules.
+- See [equality and comparison](#how-equality-and-comparison-work) for the definition of distinctness.
 
 **Grouping and aggregation:**
 
-- `GROUP BY` groups rows with the same, non-distinct values for the specified variables
-- Use `GROUP BY` with aggregate functions to compute summaries for each group
-- Common aggregate functions include `count(*)`, `sum()`, `avg()`, `min()`, and `max()`
+- `GROUP BY` groups rows with the same, non-distinct values for the specified variables.
+- Use `GROUP BY` with aggregate functions to compute summaries for each group.
+- Common aggregate functions include `count(*)`, `sum()`, `avg()`, `min()`, and `max()`.
 
 **Final sorting:**
 
-- `ORDER BY` can be included to sort your final results
-- This is often more efficient than using a separate `ORDER BY` statement before `RETURN`
+- `ORDER BY` can be included to sort your final results.
+- This is often more efficient than using a separate `ORDER BY` statement before `RETURN`.
 
 For detailed information about aggregation, see [Aggregate functions](#aggregate-functions).
 
@@ -1592,7 +1592,7 @@ RETURN zoned_datetime() AS now
 
 ### GQLSTATUS codes
 
-The following GQLSTATUS codes are currently used by graph in Microsoft Fabric:
+The following GQLSTATUS codes are used by graph in Microsoft Fabric:
 
 | GQLSTATUS | Message                                                       |
 |-----------|---------------------------------------------------------------|
@@ -1605,16 +1605,16 @@ The following GQLSTATUS codes are currently used by graph in Microsoft Fabric:
 
 ### Reserved words
 
-GQL reserves certain keywords that you can't use as identifiers such as variables, property names, or label names. See [GQL reserved words](gql-reserved-words.md) for the complete list.
+GQL reserves certain keywords that you can't use as identifiers like variables, property names, or label names. See [GQL reserved words](gql-reserved-words.md) for the complete list.
 
-If you need to use reserved words as identifiers, you can escape them with backticks: `` `match` ``, `` `return` ``. 
+If you need to use reserved words as identifiers, escape them with backticks: `` `match` ``, `` `return` ``.
 
-Alternatively, to avoid having to escape reserved words, consider to adopt the following naming convention:
-- When using single-word identifiers, append an underscore as in `:Product_`. Microsoft Fabric intends to never add single reserved words that end in an underscore.
-- Otherwise, when using multi-word identifiers, either do the same or, alternatively, do NOT join them with underscores. Use the camelCase or the PascalCase conventions instead, like so `:MyEntity`, `:hasAttribute`, or `textColor`. Graph in Microsoft Fabric intends to never add compound reserved words in which the compounds aren't separated by underscores.
+Alternatively, to avoid escaping reserved words, use these naming conventions:
+1. When you use single-word identifiers, append an underscore as in `:Product_`. Microsoft Fabric intends to never add single reserved words that end in an underscore.
+1. When you use multi-word identifiers, either do the same or, alternatively, don't join them with underscores. Use camelCase or PascalCase conventions instead, like `:MyEntity`, `:hasAttribute`, or `textColor`. Graph in Microsoft Fabric intends to never add compound reserved words in which the compounds aren't separated by underscores.
 
 ## Related content
 
-- [Fabric Graph overview](fabric-graph-overview.md) - Learn about graph in Microsoft Fabric capabilities
-- [Graph data models](graph-data-models.md) - Understand how to design effective graph schemas
-- [Graph vs relational databases](graph-relational-databases.md) - Compare graph and relational approaches
+- [Fabric Graph overview](fabric-graph-overview.md) - Learn about graph capabilities in Microsoft Fabric.
+- [Graph data models](graph-data-models.md) - Learn how to design effective graph schemas.
+- [Graph vs relational databases](graph-relational-databases.md) - Compare graph and relational database approaches.
