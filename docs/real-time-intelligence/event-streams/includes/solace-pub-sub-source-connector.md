@@ -19,7 +19,7 @@ ms.date: 03/14/2025
     1. For Solace PubSub+ broker URL, enter the SMF URI, starting with `tcps://`. 
 
         > [!NOTE]
-        > The Solace PubSub+ source supports TLS/SSL-secured SMF connections between your Solace broker and Eventstream. 
+        > The Solace PubSub+ source supports TLS/SSL-secured SMF connections between your Solace broker and Eventstream.
         > TLS/SSL connections are only supported if the server certificate is signed by a Certificate Authority (CA) included in the [trusted CA list](https://github.com/microsoft/fabric-event-streams/blob/main/References/certificate-authority-list/trusted-ca-list.txt).
     1. For **Connection name**, enter a name for the connection to the Solace PubSub+. 
     1. Enter the **Username** and **Password** for the Solace PubSub+ client. 
