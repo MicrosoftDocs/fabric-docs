@@ -82,4 +82,4 @@ To delete a schedule, select the **Edit** icon (pencil) next to the schedule you
 
 - [How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
 - [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
-- [CI/CD integration for pipelines](cicd-pipelines.md)
+- [REST API capabilities for pipelines in Fabric Data Factory](pipeline-rest-api-capabilities.md)

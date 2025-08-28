@@ -203,68 +203,6 @@ When you create a schedule for a pipeline, it is automatically added to the Git 
 
 :::image type="content" source="media/pipeline-runs/pipeline-job-scheduler-git.png" alt-text="Screenshot of the .schedules file for a scheduled pipeline in Fabric Data Factory." lightbox="media/pipeline-runs/pipeline-job-scheduler-git.png":::
 
-### Scheduler API
-
-The Scheduler API supports the following operations:  
-
-- Cancel Pipeline Job Instance  
-- Create Pipeline Schedule  
-- Delete Pipeline Schedule  
-- Get Pipeline Instance  
-- Get Pipeline Schedule  
-- List Pipeline Job Instances  
-- List Pipeline Schedules  
-- Run On Demand Pipeline Job  
-- Update Pipeline Schedule  
-
-For example, you can set up a pipeline that runs every 10 minutes between May 27 and May 31, 2025, in Central Standard Time, and is currently enabled:
-
-```http
-POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/items/<pipelineId>/jobs/<jobType>/schedules 
-
-{ 
-  "enabled": true, 
-  "configuration": { 
-    "startDateTime": "2025-05-27T00:00:00", 
-    "endDateTime": "2025-05-31T23:59:00", 
-    "localTimeZoneId": " Central Standard Time", 
-    "type": "Cron", 
-    "interval": 10 
-  } 
-} 
-```
-
-|Name|In|Required|Type|Description|Example|
-|---|---|---|---|---|---|
-|pipelineID|Path|True|String(guid)|The pipeline id|aaaa0000-bb11-2222-33cc-444444dddddd|
-|jobType|Path|True|String|The job type|DefaultJob|
-|workspaceId|Path|True|String|The workspace ID|aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb|
-
-**Response:**
-
-Status code: 201
-
-```json
-{ 
-  "id": " eeeeeeee-4444-5555-6666-ffffffffffff", 
-  "enabled": true, 
-  "createdDateTime": "2025-05-27T05:35:20.5366667", 
-  "configuration": { 
-    "startDateTime": "2025-05-27T00:00:00", 
-    "endDateTime": "2025-05-31T23:59:00", 
-    "localTimeZoneId": "Central Standard Time", 
-    "type": "Cron", 
-    "interval": 10 
-  }, 
-  "owner": { 
-    "id": " aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e", 
-    "type": "User" 
-  } 
-} 
-```
-
-For more information on the available operations and their use, see [the Job Scheduler API documentation](/rest/api/fabric/core/job-scheduler).
-
 ## Known limitations
 
 The following known limitations apply to CI/CD for pipelines in Data Factory in Microsoft Fabric:
