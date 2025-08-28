@@ -6,7 +6,8 @@ ms.author: jburchel
 ms.reviewer: alsavelv
 ms.date: 08/27/2025
 ms.topic: tutorial
-ms.service: azure-ai-foundry
+ms.service: fabric
+ms.subservice: data-science
 ai.usage: ai-assisted
 ---
 # Evaluation of RAG performance basics
