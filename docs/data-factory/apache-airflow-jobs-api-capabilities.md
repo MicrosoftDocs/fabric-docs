@@ -352,7 +352,6 @@ For more detailed information on how to set up and use SPNs in Fabric Data Facto
 
 Refer to the following content for more information on APIs in Apache Airflow Jobs in Fabric Data Factory:
 
-### Documentation
 
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [CRUD Items APIs in Fabric](/rest/api/fabric/core/items)
