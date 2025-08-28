@@ -142,7 +142,7 @@
       - name: Amazon RDS for SQL Oracle - Overview
         href: connector-amazon-rds-for-oracle-overview.md
       - name: Configure in data pipeline Copy activity
-        href: connector-amazon-rds-for-sql-server-copy-activity.md
+        href: connector-amazon-rds-for-oracle-copy-activity.md
     - name: Amazon RDS for SQL Server
       items:
       - name: Amazon RDS for SQL Server - Overview

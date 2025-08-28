@@ -32,7 +32,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Amazon Rds For Oracle under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-amazon-rds-for-oracle/source.png" alt-text="Screenshot showing the source tab and the list of properties." lightbox="./media/connector-connector-amazon-rds-for-oracle/source.png":::
+:::image type="content" source="./media/connector-amazon-rds-for-oracle/source.png" alt-text="Screenshot showing the source tab and the list of properties." lightbox="./media/connector-amazon-rds-for-oracle/source.png":::
 
 The following properties are **required**:
 
@@ -48,7 +48,7 @@ The following properties are **required**:
 
     - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`.
 
-      :::image type="content" source="./media/connector-amazon-rds-for-oracle/query.png" alt-text="Screenshot showing query." lightbox="./media/connector-connector-amazon-rds-for-oracle/query.png":::
+      :::image type="content" source="./media/connector-amazon-rds-for-oracle/query.png" alt-text="Screenshot showing query." lightbox="./media/connector-amazon-rds-for-oracle/query.png":::
 
 Under **Advanced**, you can specify the following fields:
 
