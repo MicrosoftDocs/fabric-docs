@@ -71,6 +71,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/schedule-pipeline.md",
+        "redirect_url": "/fabric/data-factory/pipeline-runs",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/connector-amazon-s3-dataflows.md",
         "redirect_url": "/fabric/data-factory/connector-amazon-s3",
         "redirect_document_id": false

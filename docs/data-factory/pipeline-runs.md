@@ -60,6 +60,8 @@ Once the entire pipeline executes and the output status updates to **Succeeded**
 
 When you schedule a data pipeline run, you can set multiple, specific schedules for each pipeline, so your data is prepared and available when you need it.
 
+> [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=57ecfaaf-cd4c-4b57-b8c2-723f98839496]
+
 Select **Schedule**, found in the top banner of the **Home** tab, and then select **Add Schedule** to view your options. By default, your data pipeline isn't set on a schedule.
 
 :::image type="content" source="media/pipeline-runs/schedule-pipeline-run.png" alt-text="Screenshot showing where to select Schedule on the Home tab." lightbox="media/pipeline-runs/schedule-pipeline-run.png":::
