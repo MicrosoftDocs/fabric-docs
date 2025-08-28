@@ -213,20 +213,20 @@ Returns the Apache Airflow Job item definition.
 
 ```rest
 {
-    "definition": {
-        "parts": [
-          {
-            "path": "ApacheAirflowJob.json",
-            "payload": "{apacheAirflowJobPayload}",
-            "payloadType": "InlineBase64"
-          },
-          {
-            "path": ".platform",
-            "payload": "{apacheAirflowJobPayload}",
-            "payloadType": "InlineBase64"
-          }
-        ]
-    }
+  "definition": {
+    "parts": [
+      {
+        "path": "ApacheAirflowJob.json",
+        "payload": "{apacheAirflowJobPayload}",
+        "payloadType": "InlineBase64"
+      },
+      {
+        "path": ".platform",
+        "payload": "{apacheAirflowJobPayload}",
+        "payloadType": "InlineBase64"
+      }
+    ]
+  }
 }
 ```
 
@@ -261,11 +261,11 @@ Updates the properties of the Apache Airflow Job.
 
 ```rest
 {
-    "id": "<Your artifactId>",
-    "type": "ApacheAirflowJobs",
-    "displayName": "My Apache Airflow Job updated",
-    "description": "My Apache Airflow Job description updated",
-    "workspaceId": "<Your workspaceId>"
+  "id": "<Your artifactId>",
+  "type": "ApacheAirflowJobs",
+  "displayName": "My Apache Airflow Job updated",
+  "description": "My Apache Airflow Job description updated",
+  "workspaceId": "<Your workspaceId>"
 }
 ```
 
@@ -294,16 +294,16 @@ Updates the Apache Airflow Job item definition.
   "type": "ApacheAirflowJobs",
   "definition": {
     "parts": [ 
-          {
-            "path": "ApacheAirflowJob.json",
-            "payload": "{apacheAirflowJobPayload}",
-            "payloadType": "InlineBase64"
-          },
-          {
-            "path": ".platform",
-            "payload": "{apacheAirflowJobPayload}",
-            "payloadType": "InlineBase64"
-          }
+      {
+        "path": "ApacheAirflowJob.json",
+        "payload": "{apacheAirflowJobPayload}",
+        "payloadType": "InlineBase64"
+      },
+      {
+        "path": ".platform",
+        "payload": "{apacheAirflowJobPayload}",
+        "payloadType": "InlineBase64"
+      }
     ]
   }
 }
