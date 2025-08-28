@@ -108,14 +108,13 @@ When establishing connectivity via JDBC, check for the following dependencies:
        <groupId>com.microsoft.azure</groupId>
        <artifactId>msal4j</artifactId>
        <version>1.13.3</version>
-    
     </dependency>
     
     <dependency>
        <groupId>com.microsoft.sqlserver</groupId>
        <artifactId>mssql-jdbc_auth</artifactId>
        <version>11.2.1.x86</version>
-</dependency>
+    </dependency>
     
      <dependency>
        <groupId>com.microsoft.sqlserver</groupId>
