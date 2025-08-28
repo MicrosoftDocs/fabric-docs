@@ -6,7 +6,8 @@ ms.author: jburchel
 ms.reviewer: alsavelv
 ms.date: 08/28/2025
 ms.topic: concept-article
-ms.service: azure-ai-foundry
+ms.service: fabric
+ms.subservice: data-science
 ai.usage: ai-assisted
 ---
 # Building Retrieval Augmented Generation in Fabric: A Step-by-Step Guide
