@@ -93,8 +93,8 @@ items:
     href: ./security/data-access-control-model.md
   - name: Get started with securing data in OneLake
     items:
-    - name: Get started with data access roles
-      href: ./security/get-started-data-access-roles.md
+    - name: Get started with OneLake security
+      href: ./security/get-started-onelake-securitys.md
     - name: Best practices
       href: ./security/best-practices-secure-data-in-onelake.md
   - name: How to secure data in OneLake
