@@ -10,14 +10,14 @@ ms.reviewer: eur
 
 # GQL quick reference
 
-Quick reference for GQL (Graph Query Language) syntax in graph in Microsoft Fabric. For detailed explanations, see the [GQL language reference](gql-language-reference.md).
+This article is a quick reference for GQL (Graph Query Language) syntax in graph in Microsoft Fabric. For detailed explanations, see the [GQL language reference](gql-language-reference.md).
 
 ## Query structure
 
-GQL queries are composed of a sequence of statements that define what data to retrieve from the graph, how to process it, and how to present the results. Each statement serves a specific purpose, and together they form a linear pipeline that transforms graph data step by step.
+GQL queries use a sequence of statements that define what data to get from the graph, how to process it, and how to show the results. Each statement has a specific purpose, and together they form a linear pipeline that transforms graph data step by step.
 
 **Typical query flow:**  
-A GQL query usually starts by specifying the graph pattern to match, followed by optional statements for variable creation, filtering, sorting, pagination, and finally, result output.
+A GQL query usually starts by specifying the graph pattern to match, then uses optional statements for variable creation, filtering, sorting, pagination, and result output.
 
 **Example:**
 ```gql
@@ -33,20 +33,20 @@ RETURN fullName, m.city
 **Statement order:**  
 Statements must appear in the following order within a query:
 1. `MATCH` – Specify graph patterns to find.
-2. `LET` – Define variables from expressions.
-3. `FILTER` – Keep rows matching conditions.
-4. `ORDER BY` – Sort results.
-5. `OFFSET` – Skip a number of rows.
-6. `LIMIT` – Restrict the number of rows.
-7. `RETURN` – Output the final results.
+1. `LET` – Define variables from expressions.
+1. `FILTER` – Keep rows matching conditions.
+1. `ORDER BY` – Sort results.
+1. `OFFSET` – Skip a number of rows.
+1. `LIMIT` – Restrict the number of rows.
+1. `RETURN` – Output the final results.
 
-Each statement builds on the previous, allowing you to incrementally refine and shape the query output. For more details on each statement, see the sections below.
+Each statement builds on the previous one, so you incrementally refine and shape the query output. For more details on each statement, see the sections below.
 
 ## Query statements
 
 ### MATCH
 
-Find graph patterns. 
+Find graph patterns in your data.
 
 **Syntax:**
 ```gql
@@ -61,7 +61,7 @@ For more information about the `MATCH` statement, see the [comprehensive guide](
 
 ### LET  
 
-Create variables from expressions. 
+Create variables using expressions.
 
 **Syntax:**
 ```gql
@@ -76,7 +76,7 @@ For more information about the `LET` statement, see the [comprehensive guide](gq
 
 ### FILTER
 
-Keep rows matching conditions. 
+Keep rows that match conditions.
 
 **Syntax:**
 ```gql
@@ -92,7 +92,7 @@ For more information about the `FILTER` statement, see the [comprehensive guide]
 
 ### ORDER BY
 
-Sort results. 
+Sort the results.
 
 **Syntax:**
 ```gql
@@ -107,7 +107,7 @@ For more information about the `ORDER BY` statement, see the [comprehensive guid
 
 ### OFFSET/LIMIT
 
-Skip and limit rows. 
+Skip rows and limit the number of results.
 
 **Syntax:**
 ```gql
@@ -123,7 +123,7 @@ For more information about the `OFFSET` and `LIMIT` statements, see the [compreh
 
 ### RETURN
 
-Output final results. 
+Output the final results.
 
 **Syntax:**
 ```gql
@@ -138,11 +138,11 @@ For more information about the `RETURN` statement, see the [comprehensive guide]
 
 ## Graph patterns
 
-Graph patterns describe the structure of the graph to match against.
+Graph patterns describe the structure of the graph to match.
 
 ### Node patterns
 
-Node patterns describe how to match nodes in the graph, optionally filtering by label or binding variables.
+Node patterns describe how to match nodes in the graph. You can filter by label or bind variables.
 
 ```gql
 (n)              -- Any node
@@ -167,7 +167,7 @@ For more information about edge patterns, see the [comprehensive guide](gql-lang
 ### Label expressions
 
 
-Label expressions allow you to match nodes with specific label combinations using logical operators.
+Label expressions let you match nodes with specific label combinations using logical operators.
 
 ```gql
 :Person&Company                  -- Both Person AND Company labels
@@ -196,7 +196,7 @@ For more information about path patterns, see the [comprehensive guide](gql-lang
 ### Multiple patterns
 
 
-Multiple patterns allow you to match complex, non-linear graph structures in a single query.
+Multiple patterns let you match complex, non-linear graph structures in a single query.
 
 ```gql
 (a)->(b), (a)->(c)               -- Multiple edges from same node
@@ -209,35 +209,32 @@ For more information about multiple patterns, see the [comprehensive guide](gql-
 
 ### Basic types
 
-
-Basic types represent primitive data values such as strings, numbers, booleans, and datetimes.
+Basic types are primitive data values like strings, numbers, booleans, and datetimes.
 
 ```gql
 STRING           -- 'hello', "world"
 INT64            -- 42, -17
 FLOAT64          -- 3.14, -2.5e10
-BOOL             -- TRUE, FAKSE, UNKNOWN
+BOOL             -- TRUE, FALSE, UNKNOWN
 ZONED DATETIME   -- ZONED_DATETIME('2023-01-15T10:30:00Z')
 ```
 
-For more information about basic types, see the [comprehensive guide](gql-language-reference.md#understand-values-and-value-types).
+Learn more about basic types in the [comprehensive guide](gql-language-reference.md#understand-values-and-value-types).
 
 ### Reference value types
 
-
-Reference value types represent nodes and edges as values in queries.
+Reference value types are nodes and edges used as values in queries.
 
 ```gql
 NODE             -- Node reference values
 EDGE             -- Edge reference values
 ```
 
-For more information about reference value types, see the [comprehensive guide](gql-language-reference.md#reference-value-types).
+Learn more about reference value types in the [comprehensive guide](gql-language-reference.md#reference-value-types).
 
 ### Collection types
 
-
-Collection types group multiple values together, such as lists and paths.
+Collection types group multiple values, like lists and paths.
 
 ```gql
 LIST<INT64>      -- [1, 2, 3]
@@ -245,12 +242,12 @@ LIST<STRING>     -- ['a', 'b', 'c']
 PATH             -- Path values
 ```
 
-For more information about collection types, see the [comprehensive guide](gql-language-reference.md#constructed-value-types).
+Learn more about collection types in the [comprehensive guide](gql-language-reference.md#constructed-value-types).
 
 ### Nullable types
 
 ```gql
-STRING NOT NULL  -- Non-nullable string
+STRING NOT NULL  -- Nonnullable string
 INT64            -- Nullable int (default)
 ```
 
@@ -287,14 +284,14 @@ CONSTRAINT compound_key
   FOR (n:Node) REQUIRE (n.prop1, n.prop2) IS KEY
 ```
 
-For more information about graph types and schema, see the [comprehensive guide](gql-language-reference.md#graph-types--schema).
+Learn more about graph types and schema in the [comprehensive guide](gql-language-reference.md#graph-types--schema).
 
 ## Expressions & operators
 
 ### Comparison
 
 
-Comparison operators are used to compare values and check for equality, ordering, or nulls.
+Comparison operators compare values and check for equality, ordering, or nulls.
 
 ```gql
 =, <>, <, <=, >, >=              -- Standard comparison
@@ -317,24 +314,23 @@ For more information about logical expressions, see the [comprehensive guide](gq
 ### Arithmetic  
 
 
-Arithmetic operators perform mathematical calculations on numeric values.
+Arithmetic operators perform calculations on numbers.
 
 ```gql
-, -, *, /                       -- Basic math
++, -, *, /                       -- Basic math
 ```
 
 For more information about arithmetic expressions, see the [comprehensive guide](gql-language-reference.md#arithmetic-expressions).
-+, -, *, /                       -- Basic math
-```
+
 
 ### String patterns
 
 
-String pattern predicates match substrings, prefixes, or suffixes in string values.
+String pattern predicates match substrings, prefixes, or suffixes in strings.
 
 ```gql
-n.name CONTAINS 'John'           -- Contains substring
-n.email STARTS WITH 'admin'     -- Starts with prefix  
+n.name CONTAINS 'John'           -- Has substring
+n.email STARTS WITH 'admin'     -- Starts with prefix
 n.phone ENDS WITH '1234'        -- Ends with suffix
 ```
 
@@ -343,7 +339,7 @@ For more information about string pattern predicates, see the [comprehensive gui
 ### List operations
 
 
-List operations test membership, access elements, and measure list size.
+List operations test membership, access elements, and measure list length.
 
 ```gql
 n.age IN [25, 30, 35]            -- Membership test
@@ -356,7 +352,7 @@ For more information about list membership predicates, see the [comprehensive gu
 ### Property access
 
 
-Property access retrieves the value of a property from a node or edge.
+Property access gets the value of a property from a node or edge.
 
 ```gql
 n.firstName                      -- Property access
@@ -369,49 +365,49 @@ For more information about property access, see the [comprehensive guide](gql-la
 ### Aggregate functions
 
 
-Aggregate functions compute summary values over groups of rows.
+Aggregate functions compute summary values for groups of rows.
 
 ```gql
 count(*)                         -- Count all rows
 count(expr)                      -- Count non-null values
 sum(n.age)                       -- Sum values
 avg(n.age)                       -- Average
-min(n.age), max(n.age)           -- Min/max values
-collect_list(n.name)             -- Collect into list
+min(n.age), max(n.age)           -- Minimum and maximum values
+collect_list(n.name)             -- Collect values into a list
 ```
 
-For more information about aggregate functions, see the [comprehensive guide](gql-language-reference.md#aggregate-functions).
+Learn more about aggregate functions in the [comprehensive guide](gql-language-reference.md#aggregate-functions).
 
 ### String functions  
 
 
-String functions manipulate and analyze string values.
+String functions let you work with and analyze string values.
 
 ```gql
 char_length(s)                   -- String length
-upper(s), lower(s)               -- Case conversion (US ASCII only)
-trim(s)                          -- Remove leading/trailing whitespace
-string_join(list, separator)     -- Join list elements with separator
+upper(s), lower(s)               -- Change case (US ASCII only)
+trim(s)                          -- Remove leading and trailing whitespace
+string_join(list, separator)     -- Join list elements with a separator
 ```
 
-For more information about string functions, see the [comprehensive guide](gql-language-reference.md#string-functions).
+Learn more about string functions in the [comprehensive guide](gql-language-reference.md#string-functions).
 
 ### List functions
 
 
-List functions operate on lists, such as measuring length or trimming size.
+List functions let you work with lists, like checking length or trimming size.
 
 ```gql
 size(list)                       -- List length
-trim(list,n)                     -- trim a list to be at most of size `n`
+trim(list, n)                    -- Trim a list to be at most size `n`
 ```
 
-For more information about list functions, see the [comprehensive guide](gql-language-reference.md#list-functions).
+Learn more about list functions in the [comprehensive guide](gql-language-reference.md#list-functions).
 
 ### Graph functions
 
 
-Graph functions extract information from nodes, paths, and edges.
+Graph functions let you get information from nodes, paths, and edges.
 
 ```gql
 labels(node)                     -- Get node labels
@@ -419,27 +415,27 @@ nodes(path)                      -- Get path nodes
 edges(path)                      -- Get path edges
 ```
 
-For more information about graph functions, see the [comprehensive guide](gql-language-reference.md#graph-functions).
+Learn more about graph functions in the [comprehensive guide](gql-language-reference.md#graph-functions).
 
 ### Temporal functions
 
-Temporal functions deal with date and time values.
+Temporal functions let you work with date and time values.
 
 ```gql
-zoned_datetime()               -- Current timestamp
+zoned_datetime()               -- Get the current timestamp
 ```
 
-For more information about temporal functions, see the [comprehensive guide](gql-language-reference.md#temporal-functions).
+Learn more about temporal functions in the [comprehensive guide](gql-language-reference.md#temporal-functions).
 
 ### Generic functions
 
-Generic functions provide common utilities for working with data.
+Generic functions let you work with data in common ways.
 
 ```gql
-coalesce(expr1, expr2, ...)    -- First non-null value
+coalesce(expr1, expr2, ...)    -- Get the first non-null value
 ```
 
-For more information about generic functions, see the [comprehensive guide](gql-language-reference.md#generic-functions).
+Learn more about generic functions in the [comprehensive guide](gql-language-reference.md#generic-functions).
 
 ## Common patterns
 
@@ -471,12 +467,12 @@ ORDER BY posts DESC
 LIMIT 10
 ```
 
-### Filtering & conditions
+### Filtering and conditions
 
 ```gql
 -- Complex conditions
 MATCH (p:Person)
-WHERE p.age >= 25 AND p.age <= 65 
+WHERE p.age >= 25 AND p.age <= 65
   AND p.city IN ['Seattle', 'Portland']
   AND p.name IS NOT NULL
 RETURN p.name, p.age
@@ -493,6 +489,6 @@ RETURN path
 
 ## Related content
 
-- [Graph overview](fabric-graph-overview.md) - graph in Microsoft Fabric introduction
-- [Graph data models](graph-data-models.md) - Conceptual overview
-- [GQL language reference](gql-language-reference.md) - Complete syntax and examples
+- [Graph overview](fabric-graph-overview.md) - Introduction to graph in Microsoft Fabric.
+- [Graph data models](graph-data-models.md) - Conceptual overview.
+- [GQL language reference](gql-language-reference.md) - Complete syntax and examples.
