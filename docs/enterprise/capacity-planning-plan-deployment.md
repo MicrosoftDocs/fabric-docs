@@ -1,5 +1,5 @@
 ---
-title: 'Microsoft Fabric capacity planning guide: Plan your first deployment'
+title: 'Microsoft Fabric Capacity Planning Guide: Plan Your First Deployment'
 description: Learn how to plan Microsoft Fabric capacity for your first deployment. Discover strategies for budgeting, scaling, and optimizing your analytics solution.
 author: JulCsc
 ms.author: juliacawthra
