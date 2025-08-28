@@ -59,7 +59,7 @@ aisearch_index_name = "" # TODO: Create a new index name: must only contain lowe
 aisearch_api_key = "" # TODO: Fill in your API key from Azure AI Search
 aisearch_endpoint = "https://<CHANGE_ME>.search.windows.net" # TODO: Provide the url endpoint for your created Azure AI Search 
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 5, Finished, Available, Finished)
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 5, Finished, Available, Finished)*
 
 After setting up your Azure OpenAI and Azure AI Search Keys, you must import required libraries from [Spark](https://spark.apache.org/), [SynapseML](https://aka.ms/AboutSynapseML), [Azure Search](https://aka.ms/azure-search-libraries), and OpenAI. 
 
@@ -110,7 +110,7 @@ import ipywidgets as widgets
 from IPython.display import display as w_display
 import openai
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 7, Finished, Available, Finished)
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 7, Finished, Available, Finished)*
 
 ## Step 2: Load the data into the Lakehouse and Spark
 
@@ -132,30 +132,28 @@ For more information about the license, please download a copy of the license na
 
 The dataset used for this notebook requires the following citation:
 
-```
-CMU Question/Answer Dataset, Release 1.2
+*CMU Question/Answer Dataset, Release 1.2*
 
-8/23/2013
+*8/23/2013*
 
-Noah A. Smith, Michael Heilman, and Rebecca Hw
+*Noah A. Smith, Michael Heilman, and Rebecca Hw*
 
-Question Generation as a Competitive Undergraduate Course Project
+***Question Generation as a Competitive Undergraduate Course Project***
 
-In Proceedings of the NSF Workshop on the Question Generation Shared Task and Evaluation Challenge, Arlington, VA, September 2008. 
-Available at: http://www.cs.cmu.edu/~nasmith/papers/smith+heilman+hwa.nsf08.pdf
+*In Proceedings of the NSF Workshop on the Question Generation Shared Task and Evaluation Challenge, Arlington, VA, September 2008.*
+*Available at: http://www.cs.cmu.edu/~nasmith/papers/smith+heilman+hwa.nsf08.pdf*
 
-Original dataset acknowledgements:
-This research project was supported by NSF IIS-0713265 (to Smith), an NSF Graduate Research Fellowship (to Heilman), NSF IIS-0712810 and IIS-0745914 (to Hwa), and Institute of Education Sciences, U.S. Department of Education R305B040063 (to Carnegie Mellon).
+*Original dataset acknowledgements:*
+*This research project was supported by NSF IIS-0713265 (to Smith), an NSF Graduate Research Fellowship (to Heilman), NSF IIS-0712810 and IIS-0745914 (to Hwa), and Institute of Education Sciences, U.S. Department of Education R305B040063 (to Carnegie Mellon).*
 
-cmu-qa-08-09 (modified verison)
+*cmu-qa-08-09 (modified verison)*
 
-6/12/2024
+*6/12/2024*
 
-Amir Jafari, Alexandra Savelieva, Brice Chung, Hossein Khadivi Heris, Journey McDowell
+*Amir Jafari, Alexandra Savelieva, Brice Chung, Hossein Khadivi Heris, Journey McDowell*
 
-Released under same license GFDL (http://www.gnu.org/licenses/fdl.html)
-All the GNU license applies to the dataset in all copies.
-```
+*Released under same license GFDL (http://www.gnu.org/licenses/fdl.html)*
+*All the GNU license applies to the dataset in all copies.*
 
 ```python
 import requests
@@ -180,8 +178,8 @@ print(f"Blob content successfully stored at {fabric_lakehouse_path}")
 spark.read.parquet(location).write.mode("overwrite").format("delta").saveAsTable("cmu_qa_08_09_refresh")
 
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 8, Finished, Available, Finished)
-Blob content successfully stored at /lakehouse/default/Files/cmu_qa.parquet
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 8, Finished, Available, Finished)*
+*Blob content successfully stored at /lakehouse/default/Files/cmu_qa.parquet*
 
 The original dataset is divided into student Semesters S08, S09, and S10. Each semester contains multiple sets, and each set comprises approximately 10 Wikipedia articles. As illustrated earlier, due to varying licenses, the entire datasets are consolidated into a single table encompassing S08 and S09, omitting S10. For sake of simplicity in demonstration, this tutorial will specifically highlight sets 1 and 2 within S08. The primary focus areas will be `wildlife` and `countries`.
 
@@ -202,9 +200,9 @@ df_wiki = filtered_df.dropDuplicates(['ExtractedPath', 'ArticleTitle', 'text'])
 # Show the result
 display(df_wiki)
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 9, Finished, Available, Finished)
-SynapseWidget(Synapse.DataFrame, eb3e3dac-90fb-4fd7-9574-e5eba6335aad)
-SynapseWidget(Synapse.DataFrame, 29a22160-4fb3-437c-a4c9-afa46e6510f1)
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 9, Finished, Available, Finished)*
+*SynapseWidget(Synapse.DataFrame, eb3e3dac-90fb-4fd7-9574-e5eba6335aad)*
+*SynapseWidget(Synapse.DataFrame, 29a22160-4fb3-437c-a4c9-afa46e6510f1)*
 
 ## Step 3: Chunk the Text 
 
@@ -225,8 +223,8 @@ ps = (
 df_splitted = ps.transform(df_wiki) 
 display(df_splitted.limit(10)) 
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 10, Finished, Available, Finished)
-SynapseWidget(Synapse.DataFrame, 8353f865-eadd-4edf-bcbb-2a3980f06cf6)
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 10, Finished, Available, Finished)*
+*SynapseWidget(Synapse.DataFrame, 8353f865-eadd-4edf-bcbb-2a3980f06cf6)*
 
 Note that each row can contain multiple chunks from the same document represented as a vector. The function `explode` distributes and duplicates the vector's content across several rows.
 
@@ -234,8 +232,8 @@ Note that each row can contain multiple chunks from the same document represente
 df_chunks = df_splitted.select('ExtractedPath', 'ArticleTitle', 'text', explode(col("chunks")).alias("chunk"))
 display(df_chunks)
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 11, Finished, Available, Finished)
-SynapseWidget(Synapse.DataFrame, d1459c26-9eb4-4996-8fdd-a996c9b30777)
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 11, Finished, Available, Finished)*
+*SynapseWidget(Synapse.DataFrame, d1459c26-9eb4-4996-8fdd-a996c9b30777)*
 
 Now, you will add a unique id for each row. 
 
@@ -243,8 +241,8 @@ Now, you will add a unique id for each row.
 df_chunks_id = df_chunks.withColumn("Id", monotonically_increasing_id())
 display(df_chunks_id)
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 12, Finished, Available, Finished)
-SynapseWidget(Synapse.DataFrame, 5cc2055a-96e9-4c7d-8ad6-558b04d847fd)
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 12, Finished, Available, Finished)*
+*SynapseWidget(Synapse.DataFrame, 5cc2055a-96e9-4c7d-8ad6-558b04d847fd)*
 
 ## Step 4: Create Embeddings
 
@@ -261,8 +259,8 @@ Embd = (In this section, we use SynapseML Library to obtain embeddings for each 
 df_embeddings = Embd.transform(df_chunks_id)
 display(df_embeddings)
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 13, Finished, Available, Finished)
-SynapseWidget(Synapse.DataFrame, b3dcfce1-7bd9-419b-b233-d848f5fddb06)
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 13, Finished, Available, Finished)*
+*SynapseWidget(Synapse.DataFrame, b3dcfce1-7bd9-419b-b233-d848f5fddb06)*
 
 ## Step 5: Create Vector Index with Azure AI Search 
 
@@ -381,8 +379,7 @@ def insertToAISearch(Id, ArticleTitle, ExtractedPath, Chunk, Embedding):
     else:
         return response.text
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 15, Finished, Available, Finished)
-
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 15, Finished, Available, Finished)*
 
 In the following, you will be using the previously defined UDF `insertToAISearch` to upload data from a DataFrame to the Azure AI Search index. The DataFrame `df_embeddings` contains fields such as `Id`, `ArticleTitle`, `ExtractedPath`, `Chunk`, and `Embedding`.
 
@@ -405,8 +402,8 @@ df_embeddings_ingested = df_embeddings.withColumn(
 
 display(df_embeddings_ingested)
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 16, Finished, Available, Finished)
-SynapseWidget(Synapse.DataFrame, 5be010aa-4b2a-47b5-8008-978031e0795a)
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 16, Finished, Available, Finished)*
+*SynapseWidget(Synapse.DataFrame, 5be010aa-4b2a-47b5-8008-978031e0795a)*
 
 You can now proceed to perform sanity checks to ensure the data has been correctly uploaded to the Azure AI Search index. First, count the number of successful uploads by filtering the DataFrame for rows where `errorAISearch` is "Success" and using the count method to determine the total. Next, identify unsuccessful uploads by filtering for rows containing errors in `errorAISearch` and count these occurrences. Print the counts of successful and unsuccessful uploads to summarize the results. If there are any unsuccessful uploads, use the show method to display details of those rows. This allows you to inspect and address any issues, ensuring the upload process is validated and any necessary corrective actions are taken.
 
@@ -427,9 +424,9 @@ print(f"Number of unsuccessful uploads: {unsuccessful_uploads_count}")
 if unsuccessful_uploads_count > 0:
     unsuccessful_uploads.show()
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 17, Finished, Available, Finished)
-Number of successful uploads: 172
-Number of unsuccessful uploads: 0
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 17, Finished, Available, Finished)*
+*Number of successful uploads: 172*
+*Number of unsuccessful uploads: 0*
    
 ## Step 6: Demonstrate Retrieval Augmented Generation
 
@@ -496,84 +493,20 @@ def vector_search(question, filter = '', topN = 3):
 
     return results
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 18, Finished, Available, Finished)
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 18, Finished, Available, Finished)*
 
 ```python
 question = "How do elephants communicate over long distances?"
 retrieved_context, retrieved_sources, df_chunks = get_context_source(vector_search, question)
 df_chunks
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 19, Finished, Available, Finished)
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 19, Finished, Available, Finished)*
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Embedding</th>
-      <th>ExtractedPath</th>
-      <th>ArticleTitle</th>
-      <th>Chunk</th>
-      <th>Id</th>
-      <th>@search.score</th>
-      <th>@search.reranker_score</th>
-      <th>@search.highlights</th>
-      <th>@search.captions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>[-0.03276262, -0.006002287, 0.009044814, -0.02...</td>
-      <td>S08/data/set1/a5</td>
-      <td>elephant</td>
-      <td>hand, live mostly solitary lives.\n\nThe socia...</td>
-      <td>131</td>
-      <td>0.888358</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>[-0.011676712, -0.0079745, 0.001480885, -0.021...</td>
-      <td>S08/data/set1/a5</td>
-      <td>elephant</td>
-      <td>farther north, in slightly cooler climates, an...</td>
-      <td>130</td>
-      <td>0.877915</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>[-0.018319938, -0.013896506, 0.014269567, -0.0...</td>
-      <td>S08/data/set1/a5</td>
-      <td>elephant</td>
-      <td>trunk, which pick up the resonant vibrations m...</td>
-      <td>132</td>
-      <td>0.867543</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|   | Embedding | ExtractedPath | ArticleTitle | Chunk | Id | @search.score | @search.reranker_score | @search.highlights | @search.captions |
+|---|-----------|---------------|--------------|-------|----|--------------|-----------------------|-------------------|------------------|
+| 0 | [-0.03276262, -0.006002287, 0.009044814, -0.02...] | S08/data/set1/a5 | elephant | hand, live mostly solitary lives.\n\nThe socia... | 131 | 0.888358 | None | None | None |
+| 1 | [-0.011676712, -0.0079745, 0.001480885, -0.021...] | S08/data/set1/a5 | elephant | farther north, in slightly cooler climates, an... | 130 | 0.877915 | None | None | None |
+| 2 | [-0.018319938, -0.013896506, 0.014269567, -0.0...] | S08/data/set1/a5 | elephant | trunk, which pick up the resonant vibrations m... | 132 | 0.867543 | None | None | None |
 
 You need another function to get the response from the OpenAI Chat model. This function combines the user question with the context retrieved from Azure AI Search. This example is basic and doesn't include chat history or memory. First, you initialize the chat client with the chosen model and then perform a chat completion to obtain the response. The messages have a "system" content that can be adjusted to enhance the response's tone, conciseness, and other aspects.
 
@@ -611,7 +544,7 @@ def get_answer(question, context):
     return response.choices[0].message.content
 
 ```
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 20, Finished, Available, Finished)
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 20, Finished, Available, Finished)*
 
 Note: please consult the [documentation for python SDK](/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=python) for the other available deployment_ids. 
 
@@ -620,19 +553,15 @@ Note: please consult the [documentation for python SDK](/fabric/data-science/ai-
 answer = get_answer(question, retrieved_context)
 print(answer)
 ```
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 21, Finished, Available, Finished)*
 
-
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 21, Finished, Available, Finished)
-
-```
-    Elephants communicate over long distances by producing and receiving low-frequency sounds known as infrasound. This sub-sonic rumbling can travel through the ground farther than sound travels through the air. Elephants can feel these vibrations through the sensitive skin of their feet and trunks. They use this method of communication to stay connected with other elephants over large distances. This ability to communicate through infrasound plays a crucial role in their social lives and helps them coordinate movements and interactions within their groups.
+*Elephants communicate over long distances by producing and receiving low-frequency sounds known as infrasound. This sub-sonic rumbling can travel through the ground farther than sound travels through the air. Elephants can feel these vibrations through the sensitive skin of their feet and trunks. They use this method of communication to stay connected with other elephants over large distances. This ability to communicate through infrasound plays a crucial role in their social lives and helps them coordinate movements and interactions within their groups.*
     
-    The ability of elephants to recognize themselves in a mirror test demonstrates their self-awareness and cognitive abilities. This test involves marking an elephant and observing its reaction to its reflection in a mirror. Elephants have shown the capacity to understand that the image in the mirror is their own reflection, indicating a level of self-awareness similar to that seen in humans, apes, and dolphins.
+ *The ability of elephants to recognize themselves in a mirror test demonstrates their self-awareness and cognitive abilities. This test involves marking an elephant and observing its reaction to its reflection in a mirror. Elephants have shown the capacity to understand that the image in the mirror is their own reflection, indicating a level of self-awareness similar to that seen in humans, apes, and dolphins.*
     
-    In addition to infrasound communication, elephants also use other forms of communication such as visual displays and olfactory cues. For example, during the mating period, male elephants emit a specific odor from a gland behind their eyes. They may fan their ears to help disperse this scent over long distances, a behavior theorized by researcher Joyce Poole as a way to attract potential mates.
+ *In addition to infrasound communication, elephants also use other forms of communication such as visual displays and olfactory cues. For example, during the mating period, male elephants emit a specific odor from a gland behind their eyes. They may fan their ears to help disperse this scent over long distances, a behavior theorized by researcher Joyce Poole as a way to attract potential mates.*
     
-    Overall, elephants have complex social structures and behaviors that involve various forms of communication to maintain relationships, coordinate movements, and express emotions within their groups.
-``` 
+ *Overall, elephants have complex social structures and behaviors that involve various forms of communication to maintain relationships, coordinate movements, and express emotions within their groups.*
 
 You learn how to use the tools mentioned above to embed and chunk the CMU QA dataset for your RAG application. Now that you see the retrieval and answering functions in action, you can create a basic ipywidget to serve as a chatbot interface.  After running the cell below, enter your question and select `Enter` to get a response from the RAG solution. Modify the text to ask a new question and select `Enter` again.
 
@@ -667,26 +596,11 @@ text.observe(on_text_change)
 # Display the text box and label  
 w_display(text, label)
 ```
-
-
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 37, Finished, Available, Finished)
-
-
-
-    Text(value='', continuous_update=False, description='Question:', layout=Layout(width='800px'), placeholder='Ty…
-
-
-
-    HTML(value='', layout=Layout(width='800px'))
-
-
-
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 38, Finished, Available, Finished)
-
-
-
-StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 39, Finished, Available, Finished)
-
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 37, Finished, Available, Finished)*
+*Text(value='', continuous_update=False, description='Question:', layout=Layout(width='800px'), placeholder='Ty…*
+*HTML(value='', layout=Layout(width='800px'))*
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 38, Finished, Available, Finished)*
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 39, Finished, Available, Finished)*
 
 This concludes the Quickstart tutorial on creating a RAG application in Fabric using Fabric's built-in OpenAI endpoint.
 
