@@ -9,4 +9,11 @@ items:
         href: graph-relational-databases.md
       - name: Graph in Microsoft Fabric data models
         href: graph-data-models.md
-  
+  - name: Graph Query Language (GQL)
+    items:
+      - name: GQL language reference
+        href: gql-language-reference.md
+      - name: GQL quick reference
+        href: gql-quick-reference.md
+      - name: GQL reserved words
+        href: gql-reserved-words.md

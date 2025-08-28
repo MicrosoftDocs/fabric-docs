@@ -23,7 +23,7 @@ A **graph database** stores and queries data as a network of nodes (entities) an
 
 **Relational database queries:** Data in different tables is linked through foreign keys. To retrieve related data, relational databases use JOIN operations to combine rows from multiple tables. This works well for simple relationships but can become expensive and complex for deep or variable-length connections.
 
-**Graph database queries:** Relationships are stored as edges, allowing direct traversal from one node to another. Graph queries can efficiently navigate multiple hops and complex patterns. Query languages like graph query language (GQL) make it easy to express traversals and pattern matching.
+**Graph database queries:** Relationships are stored as edges, allowing direct traversal from one node to another. Graph queries can efficiently navigate multiple hops and complex patterns. Graph query languages like GQL make it easy to express traversals and pattern matching.
 
 **Example:**
 
@@ -41,7 +41,7 @@ WHERE u.name = 'Alice';
 ```
 
 > [!NOTE]
-> GQL (Graph Query Language) is a standardized query language for graph databases, designed for efficient querying and manipulation of graph-structured data. The same international working group that oversees SQL is developing it.
+> GQL is an ISO-standardized query language for graph databases, designed for efficient querying and manipulation of graph-structured data. The same international working group that oversees SQL is developing it.
 
 ## Performance Implications
 
