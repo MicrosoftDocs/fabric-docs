@@ -108,7 +108,7 @@ from IPython.display import display as w_display
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 6, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 6, Finished, Available, Finished)
 
 
 ```python
@@ -141,7 +141,7 @@ search_client = SearchClient(
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 7, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 7, Finished, Available, Finished)
 
 
 Definitions of the functions below implement the two main components of RAG—retriever (`get_context_source`) and response generator (`get_answer`). This code should be familiar from the previous tutorial. Note the `topN` parameter—it lets you configure how many relevant resources to fetch from the index (we use 3 in this tutorial, but the optimal value can vary by dataset):
@@ -225,7 +225,7 @@ def get_answer(question, context):
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 8, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 8, Finished, Available, Finished)
 
 
 ## Dataset
@@ -300,7 +300,7 @@ display(df)
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 9, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 9, Finished, Available, Finished)
 
 
     Number of rows: 20, Number of columns: 7
@@ -325,7 +325,7 @@ print(answer)
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 10, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 10, Finished, Available, Finished)
 
 
     Three
@@ -347,7 +347,7 @@ def get_retrieval_score(target_source, retrieved_sources):
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 11, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 11, Finished, Available, Finished)
 
 
 According to the benchmark, the answer is contained in the source with ID `"S08/data/set1/a9"`. Testing the function on the example we ran above returns `1`, as expected, because it's returned in the top 3 relevant text chunks (in fact, it's the first in the list!).
@@ -359,7 +359,7 @@ get_retrieval_score("S08/data/set1/a9", retrieved_sources)
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 12, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 12, Finished, Available, Finished)
 
 
     Retrieved sources:  ['S08/data/set1/a9', 'S08/data/set1/a9', 'S08/data/set1/a5']
@@ -434,7 +434,7 @@ def get_groundedness_metric(context, answer):
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 13, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 13, Finished, Available, Finished)
 
 
 
@@ -512,7 +512,7 @@ def get_relevance_metric(context, question, answer):
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 14, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 14, Finished, Available, Finished)
 
 
 
@@ -591,7 +591,7 @@ def get_similarity_metric(question, ground_truth, answer):
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 15, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 15, Finished, Available, Finished)
 
 
 Test the relevance metric:
@@ -602,7 +602,7 @@ get_relevance_metric(retrieved_context, question, answer)
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 16, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 16, Finished, Available, Finished)
 
 
 
@@ -619,7 +619,7 @@ get_similarity_metric(question, 'three', answer)
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 17, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 17, Finished, Available, Finished)
 
 
 
@@ -670,7 +670,7 @@ def get_similarity_metric_udf(question, ground_truth, answer):
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 18, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 18, Finished, Available, Finished)
 
 
 ### Check-in #1: performance of the retriever
@@ -686,7 +686,7 @@ display(df.select(["question", "retrieval_score",  "ExtractedPath", "retrieved_s
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 19, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 19, Finished, Available, Finished)
 
 
     Aggregate Retrieval score: 100.00%
@@ -709,7 +709,7 @@ df = df.withColumn('generated_answer', get_answer_udf(df.Question, df.retrieved_
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 20, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 20, Finished, Available, Finished)
 
 
 Use the generated answer, ground-truth answer, question, and context to calculate metrics and display evaluation results for each question-answer pair:
@@ -723,7 +723,7 @@ display(df.select(["question", "answer", "generated_answer", "retrieval_score", 
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 21, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 21, Finished, Available, Finished)
 
 
 
@@ -766,7 +766,7 @@ plt.show()
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 24, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 24, Finished, Available, Finished)
 
 
     
@@ -798,7 +798,7 @@ updated_df.write.format("parquet").mode("append").saveAsTable(table_name)
 ```
 
 
-    StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 28, Finished, Available, Finished)
+StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 28, Finished, Available, Finished)
 
 
 You can return to your experiment results at any time to review them, compare with new experiments, and choose the configuration that works best for your production release. 
