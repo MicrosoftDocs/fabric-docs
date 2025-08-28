@@ -9,11 +9,11 @@ ms.topic: tutorial
 ms.service: azure-ai-foundry
 ai.usage: ai-assisted
 ---
-# Evaluation of RAG Performance Basics
+# Evaluation of RAG performance basics
 
 ### Introduction
 
-This tutorial provides a quickstart guide to use Fabric for evaluating the performance RAG applications. Performance evaluation is focused on two main components of RAG: the retriever (in our scenario it is based on Azure AI Search) and response generator (an LLM that uses provided user query, retrieved context, and prompt to spit out a reply that can be served to the user).  The main steps in this tutorial are as following:
+This tutorial is a quickstart guide for using Fabric to evaluate RAG application performance. Performance evaluation focuses on two main components of RAG: the retriever (in our scenario, it uses Azure AI Search) and the response generator (an LLM that uses the user's query, retrieved context, and a prompt to generate a reply). The main steps in this tutorial are as follows:
 
 1. Set up Azure OpenAI and Azure AI Search Services
 1. Load and manipulate the data from CMU's QA dataset of Wikipedia articles to curate a benchmark
@@ -25,7 +25,7 @@ This tutorial provides a quickstart guide to use Fabric for evaluating the perfo
 
 ### Prerequisites
 
-‼️ Prior to starting this tutorial, please complete "Building Retrieval Augmented Generation in Fabric: A Step-by-Step Guide" [here](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-bring-your-own-keys/quickstart-genai-guidance.ipynb)
+Before you start this tutorial, complete "Building Retrieval Augmented Generation in Fabric: A step-by-step guide" [here](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-bring-your-own-keys/quickstart-genai-guidance.ipynb).
 
 You need the following services to run this notebook:
 
@@ -40,12 +40,12 @@ In the previous tutorial, you have uploaded data to your lakehouse and built an 
 :::image type="content" source="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png" alt-text="Screenshot of diagram showing the flow of a user conversation with the RAG system." lightbox="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png":::
 
 
-### Set up access to Azure Open AI and Azure AI Search
+### Set up access to Azure OpenAI and Azure AI Search
 
 Define the endpoints and the required keys. Then import required libraries and functions. Instantiate clients for Azure OpenAI and Azure AI Search. Finally, define a function wrapper with a prompt for querying RAG system.
 
 
-```textpython
+```python
 # Fill in the following lines with your Azure OpenAI service information
 aoai_endpoint = "https://.openai.azure.com" # TODO: Provide the URL endpoint for your created Azure OpenAI
 aoai_key = "" # TODO: Fill in your API key from Azure OpenAI 
@@ -144,7 +144,7 @@ search_client = SearchClient(
     StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 7, Finished, Available, Finished)
 
 
-Definitions of functions below are the implementations of two main components of RAG - retriever (`get_context_source`) and response generator (`get_answer`). This code within these functions should be already familiar to you from the previous tutorial. Note the `topN` parameter - it allows you to configure how many relevant resources to fetch from the index (we will use 3 in this tutorial, but optimal value may vary for different data):
+Definitions of the functions below implement the two main components of RAG—retriever (`get_context_source`) and response generator (`get_answer`). This code should be familiar from the previous tutorial. Note the `topN` parameter—it lets you configure how many relevant resources to fetch from the index (we use 3 in this tutorial, but the optimal value can vary by dataset):
 
 
 ```python
@@ -230,17 +230,17 @@ def get_answer(question, context):
 
 ## Dataset
 
-The Carnegie Mellon University Question-Answer dataset version 1.2 is a corpus of Wikipedia articles, manually generated factual questions based on the articles, and manually generated answers. The data is hosted in Azure Blob Storage under the same GFDL license. For simplicity, the dataset uses a single structured table with the following fields.
+The Carnegie Mellon University Question-Answer dataset, version 1.2, is a corpus of Wikipedia articles with manually written factual questions and answers. The data is hosted in Azure Blob Storage under the GFDL license. For simplicity, the dataset uses a single structured table with the following fields.
 
-* ArticleTitle: the name of the Wikipedia article from which questions and answers initially came.
-* Question: manually generated question based on the article.
-* Answer: manually generated answer based on the question and the article.
-* DifficultyFromQuestioner: prescribed difficulty rating for the question as given to the question writer.
-* DifficultyFromAnswerer: difficulty rating assigned by the individual who evaluated and answered the question, which might differ from the rating in DifficultyFromQuestioner.
-* ExtractedPath: path to the original article. There can be more than one question-answer pair per article.
-* text: cleaned Wikipedia articles.
+* `ArticleTitle`: the name of the Wikipedia article the questions and answers come from.
+* `Question`: a manually generated question about the article.
+* `Answer`: a manually generated answer to the question based on the article.
+* `DifficultyFromQuestioner`: the difficulty rating the question writer assigns.
+* `DifficultyFromAnswerer`: the difficulty rating the evaluator assigns, which can differ from `DifficultyFromQuestioner`.
+* `ExtractedPath`: the path to the original article. There can be more than one question-answer pair per article.
+* `text`: the cleaned Wikipedia article text.
 
-For more information about the license, download the LICENSE-S08,S09 file from the same location.
+To learn about the license, download the LICENSE-S08,S09 file from the same location.
 
 ## History and citation
 
@@ -249,7 +249,7 @@ Use the following citation for this dataset:
 ```
 CMU Question/Answer Dataset, Release 1.2
 
-8/23/2013
+August 23, 2013
 
 Noah A. Smith, Michael Heilman, and Rebecca Hwa
 
@@ -263,18 +263,17 @@ This research project was supported by NSF IIS-0713265 (to Smith), an NSF Gradua
 
 cmu-qa-08-09 (modified version)
 
-6/12/2024
+June 12, 2024
 
 Amir Jafari, Alexandra Savelieva, Brice Chung, Hossein Khadivi Heris, Journey McDowell
 
-Released under the same license, GFDL (http://www.gnu.org/licenses/fdl.html).
+This release uses the GNU Free Documentation License (GFDL) (http://www.gnu.org/licenses/fdl.html).
 The GNU license applies to the dataset in all copies.
 ```
 
-
 ## Create benchmark
 
-Import the benchmark. For this demo, use a subset of questions prepared by CMU students in the `S08/set1` and `S08/set2` buckets. To limit to one question per article, apply `df.dropDuplicates(["ExtractedPath"])` to the data. There are also duplicate questions-so drop duplicates. Labels on the complexity of questions have been provided as part of the curation process: in the below example they're limited to `medium`. 
+Import the benchmark. For this demo, use a subset of questions prepared by CMU students in the `S08/set1` and `S08/set2` buckets. To limit to one question per article, apply `df.dropDuplicates(["ExtractedPath"])` to the data. There are also duplicate questions, so drop duplicates. Labels on the complexity of questions are provided as part of the curation process: in the example below they're limited to `medium`. 
 
 
 ```python
@@ -311,11 +310,11 @@ display(df)
     SynapseWidget(Synapse.DataFrame, 47aff8cb-72f8-4a36-885c-f4f3bb830a91)
 
 
-The result is a DataFrame with 20 rows-this is the demo benchmark. Important fields are `Question`, `Answer` (human-curated 'ground truth' answer), and `ExtractedPath` (the source document where information is found). Modify the filtering criteria to include other questions and vary complexity for a more realistic example. Try this as an exercise for additional experiments.
+The result is a DataFrame with 20 rows—this is the demo benchmark. Important fields are `Question`, `Answer` (human-curated 'ground truth' answer), and `ExtractedPath` (the source document where information is found). Change the filtering criteria to include other questions and vary complexity for a more realistic example. Try this exercise.
 
 ## Run a simple end-to-end test
 
-Start with a simple end-to-end smoke test of retrieval-augmented generation (RAG):
+Start with a simple end-to-end smoke test of retrieval-augmented generation (RAG).
 
 
 ```python
@@ -332,7 +331,7 @@ print(answer)
     Three
     
 
-Although it's quick to run, this test is informative because it helps you quickly find issues in the RAG implementation. It can fail if credentials are incorrect, a vector index is missing or empty, or function interfaces are incompatible. If it fails, pause and check for issues. The expected output is `Three`. If the smoke test passes, go to the next section to evaluate RAG in more detail. 
+This quick smoke test helps you find issues in the RAG implementation, such as incorrect credentials, a missing or empty vector index, or incompatible function interfaces. If the test fails, pause and check for issues. The expected output is `Three`. If the smoke test passes, go to the next section to evaluate RAG in more detail. 
 
 # Establish metrics
 
@@ -351,7 +350,7 @@ def get_retrieval_score(target_source, retrieved_sources):
     StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 11, Finished, Available, Finished)
 
 
-According to the benchmark, the answer is contained in the source with id `"S08/data/set1/a9"`. Test the function on the example we ran above returns `1`, as expected, because it is returned in top 3 relevant text chunks (in fact, it is the first in the list!):
+According to the benchmark, the answer is contained in the source with ID `"S08/data/set1/a9"`. Testing the function on the example we ran above returns `1`, as expected, because it's returned in the top 3 relevant text chunks (in fact, it's the first in the list!).
 
 
 ```python
@@ -372,7 +371,7 @@ get_retrieval_score("S08/data/set1/a9", retrieved_sources)
 
 
 
-This section defines AI-assisted metrics. The prompt template includes a few examples of input (CONTEXT and ANSWER) and suggested output; this is called a few-shot model. It's the same prompt that's used in Azure AI Studio. Learn more in [Built-in evaluation metrics](/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=warning#ai-assisted-relevance). This demo uses the `groundedness` and `relevance` metrics-these are usually the most useful and reliable for evaluating GPT models. Other metrics can be useful but provide less intuition-for example, answers don't have to be similar to be correct, so `similarity` scores can be misleading. The scale for all metrics is 1 to 5. Higher is better. Groundedness takes only two inputs (context and generated answer), while the other two metrics also use ground truth for evaluation. 
+This section defines AI-assisted metrics. The prompt template includes a few examples of input (CONTEXT and ANSWER) and suggested output; this is called a few-shot model. It's the same prompt that's used in Azure AI Studio. Learn more in [Built-in evaluation metrics](/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=warning#ai-assisted-relevance). This demo uses the `groundedness` and `relevance` metrics—these are usually the most useful and reliable for evaluating GPT models. Other metrics can be useful but provide less intuition—for example, answers don't have to be similar to be correct, so `similarity` scores can be misleading. The scale for all metrics is 1 to 5. Higher is better. Groundedness takes only two inputs (context and generated answer), while the other two metrics also use ground truth for evaluation. 
 
 
 
@@ -381,7 +380,7 @@ def get_groundedness_metric(context, answer):
     """ Using context and answer, get groundedness score with the help of LLM"""
 
     groundedness_prompt_template = """
-    You will be presented with a CONTEXT and an ANSWER about that CONTEXT. You need to decide whether the ANSWER is entailed by the CONTEXT by choosing one of the following rating:
+    You are presented with a CONTEXT and an ANSWER about that CONTEXT. Decide whether the ANSWER is entailed by the CONTEXT by choosing one of the following ratings:
     1. 5: The ANSWER follows logically from the information contained in the CONTEXT.
     2. 1: The ANSWER is logically false from the information contained in the CONTEXT.
     3. an integer score between 1 and 5 and if such integer score does not exist, use 1: It is not possible to determine whether the ANSWER is true or false without further information. Read the passage of information thoroughly and select the correct answer from the three answer labels. Read the CONTEXT thoroughly to ensure you know what the CONTEXT entails. Note the ANSWER is generated by a computer system, it can contain certain symbols, which should not be a negative factor in the evaluation.
@@ -697,7 +696,7 @@ display(df.select(["question", "retrieval_score",  "ExtractedPath", "retrieved_s
     SynapseWidget(Synapse.DataFrame, 14efe386-836a-4765-bd88-b121f32c7cfc)
 
 
-For all questions, the correct context was fetched, and in most cases it's the first entry in the list. Azure AI Search did a great job. You might wonder why, in some cases, the context has two or three identical values. That's not an error-it means the retriever fetched fragments of the same article that didn't fit into one chunk during splitting.
+For all questions, the retriever fetches the correct context, and in most cases it's the first entry in the list. Azure AI Search does a great job. You might wonder why, in some cases, the context has two or three identical values. That's not an error—it means the retriever fetches fragments of the same article that don't fit into one chunk during splitting.
 
 ### Check-in #2: performance of the response generator
 
@@ -731,7 +730,7 @@ display(df.select(["question", "answer", "generated_answer", "retrieval_score", 
     SynapseWidget(Synapse.DataFrame, 22b97d27-91e1-40f3-b888-3a3399de9d6b)
 
 
-What do these values show? To make them easier to interpret, plot histograms of groundedness, relevance, and similarity. The LLM is more verbose than the human-written ground-truth answers, which affects the similarity metric (about half of the answers are semantically correct but get 4 stars as mostly similar). Most values for all three metrics are 4 or 5, which suggests that RAG performance is good. There are a few outliers-for example, for the question `How many species of otter are there?`, the model generated `There are 13 species of otter`, which is correct with high relevance and similarity (5). For some reason, GPT considered it poorly grounded in the provided context and gave it 1 star. In the other three cases with at least one AI-assisted metric of 1 star, the low score points to a bad answer. Like humans, the LLM is occasionally wrong in evaluation, but in most cases it does a good job.
+What do these values show? To make them easier to interpret, plot histograms of groundedness, relevance, and similarity. The LLM is more verbose than human ground-truth answers, which lowers the similarity metric—about half the answers are semantically correct but receive four stars as mostly similar. Most values for all three metrics are 4 or 5, which suggests RAG performance is good. There are a few outliers—for example, for the question `How many species of otter are there?`, the model generated `There are 13 species of otter`, which is correct with high relevance and similarity (5). For some reason, GPT considered it poorly grounded in the provided context and gave it 1 star. In the other three cases with at least one AI-assisted metric of 1 star, the low score points to a bad answer. Like humans, the LLM is occasionally wrong in evaluation, but in most cases it does a good job.
 
 
 
@@ -775,7 +774,7 @@ plt.show()
     
 
 
-As a final step, save the benchmark results to a table in your lakehouse. This step is optional but highly recommended-it makes your findings more useful. When you change something in the RAG (for example, modify the prompt, update the index, or use a different GPT model in the response generator), you can measure the impact, quantify improvements, and detect regressions.
+As a final step, save the benchmark results to a table in your lakehouse. This step is optional but highly recommended—it makes your findings more useful. When you change something in the RAG (for example, modify the prompt, update the index, or use a different GPT model in the response generator), you can measure the impact, quantify improvements, and detect regressions.
 
 
 ```python
@@ -806,6 +805,6 @@ You can return to your experiment results at any time to review them, compare wi
 
 ## Summary
 
-By now, you're comfortable using AI-assisted metrics and the top N retrieval rate to build your retrieval-augmented generation (RAG) solution.
+You're comfortable using AI-assisted metrics and top N retrieval rate to build your retrieval-augmented generation (RAG) solution.
 
-In the upcoming tutorials, you continue your generative AI (GenAI) journey with Microsoft Fabric-the next steps show how to change your RAG configuration to fit your scenario.
+In the upcoming tutorials, you continue your generative AI (GenAI) journey with Microsoft Fabric. The next steps show how to change your RAG configuration to fit your scenario.
