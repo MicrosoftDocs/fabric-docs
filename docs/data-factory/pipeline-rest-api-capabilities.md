@@ -93,7 +93,7 @@ Create a pipeline in a specified workspace.
 {
   "displayName": "My pipeline",
   "description": "My pipeline description",
-  "type": "pipeline"
+  "type": "DataPipeline"
 }
 ```
 
@@ -102,7 +102,7 @@ Create a pipeline in a specified workspace.
 ```rest
 {
     "id": "<artifactId>",
-    "type": "pipeline",
+    "type": "DataPipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
     "workspaceId": "<workspaceId>"
@@ -133,7 +133,7 @@ Create a pipeline with a base64 definition in a specified workspace.
   "displayName": " My pipeline",
   "description": "My pipeline description",
 
-  "type": "pipeline",
+  "type": "DataPipeline",
   "definition": { 
     "parts": [ 
       { 
@@ -151,7 +151,7 @@ Create a pipeline with a base64 definition in a specified workspace.
 ```rest
 {
     "id": "<Your artifactId>",
-    "type": "pipeline",
+    "type": "DataPipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
     "workspaceId": "<Your workspaceId>"
@@ -179,7 +179,7 @@ Returns properties of specified pipeline.
 ```rest
 {
     "id": "<Your artifactId>",
-    "type": "pipeline",
+    "type": "DataPipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
     "workspaceId": "<Your workspaceId>"
@@ -246,7 +246,7 @@ Updates the properties of the pipeline.
 {
   "displayName": "My pipeline updated",
   "description": "My pipeline description updated",
-  "type": "pipeline"
+  "type": "DataPipeline"
 }
 ```
 
@@ -255,7 +255,7 @@ Updates the properties of the pipeline.
 ```rest
 {
     "id": "<Your artifactId>",
-    "type": "pipeline",
+    "type": "DataPipeline",
     "displayName": "My pipeline updated",
     "description": "My pipeline description updated",
     "workspaceId": "<Your workspaceId>"
@@ -284,7 +284,7 @@ Updates the pipeline item definition.
 ```rest
 {
   "displayName": " My pipeline ",
-  "type": "pipeline",
+  "type": "DataPipeline",
   "definition": {
     "parts": [ 
       { 
