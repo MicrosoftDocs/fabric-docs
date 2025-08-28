@@ -45,6 +45,7 @@ Fast copy works with these Dataflow Gen2 connectors:
 - Warehouse
 - Oracle
 - Snowflake
+- Fabric SQL database
 
 ### Transformation limitations
 
