@@ -5,7 +5,7 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: include
 ms.custom:
-ms.date: 03/31/2025
+ms.date: 08/26/2025
 ---
 
 | Sources          | Description |
@@ -16,6 +16,7 @@ ms.date: 03/31/2025
 | [Azure Service Bus (preview)](../add-source-azure-service-bus.md) | You can ingest data from an Azure Service Bus queue or a topic's subscription into Microsoft Fabric using Eventstream.  |
 | [Azure IoT Hub](../add-source-azure-iot-hub.md) | If you have an Azure IoT hub, you can ingest IoT data into Microsoft Fabric using Eventstream.  |
 | [Custom endpoint (that is, Custom App in standard capability)](../add-source-custom-app.md) | The custom endpoint feature allows your applications or Kafka clients to connect to Eventstream using a connection string, enabling the smooth ingestion of streaming data into Eventstream. |
+| [Azure IoT Operations](/azure/iot-operations/connect-to-cloud/howto-configure-fabric-real-time-intelligence) | Configure Azure IoT Operations to send real-time data directly to Microsoft Fabric Real-Time Intelligence using an eventstream custom endpoint (supports Microsoft Entra ID or SASL authentication).  |
 | [Sample data](../add-source-sample-data.md) | You can choose **Bicycles**, **Yellow Taxi**, or **Stock Market events** as a sample data source to test the data ingestion while setting up an eventstream. |
 | [Real-time weather (preview)](../add-source-real-time-weather.md) | You can add a real-time weather source to an eventstream to stream real-time weather data from different locations. |
 | [Azure SQL Database Change Data Capture (CDC)](../add-source-azure-sql-database-change-data-capture.md) | The Azure SQL Database CDC source connector allows you to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data. |

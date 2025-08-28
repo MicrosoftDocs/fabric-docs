@@ -791,7 +791,7 @@
           href: parameters.md
         - name: Expression language
           href: expression-language.md
-      - name: Data pipeline runs
+      - name: Run or schedule pipelines
         href: pipeline-runs.md
       - name: Schedule pipeline
         href: schedule-pipeline.md

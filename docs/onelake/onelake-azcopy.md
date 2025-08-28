@@ -71,6 +71,10 @@ azcopy copy "https://<account-name>.blob.core.windows.net/<source-container-name
 
 Since OneLake is a managed data lake, some operations aren't supported with AzCopy. For example, you can't use AzCopy to move or copy entire items or workspaces. Instead, create the new item in your destination location using a Fabric experience (like the portal), and then use AzCopy to move the contents of the existing item into the new item.  
 
+### Cross-tenant operations
+
+When attempting to perform operations directly between two Fabric tenants, you must use [external data sharing](/fabric/governance/external-data-sharing-overview).  This means you cannot currently use AzCopy to directly load data between two Fabric tenants, as that results in a direct cross-tenant operation.  Other methods to load data, such as downloading the data locally or to a Spark cluster and then re-uploading the data to the new tenant, will function.  
+
 ## Related content
 
 * [Copy blobs between Azure Storage accounts by using AzCopy](/azure/storage/common/storage-use-azcopy-blobs-copy)
