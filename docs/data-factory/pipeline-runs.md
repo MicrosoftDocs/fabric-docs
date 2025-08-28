@@ -12,11 +12,9 @@ ai-usage: ai-assisted
 
 # Run, schedule, or use events to trigger a data pipeline
 
-A data pipeline run occurs when a data pipeline is executed. This means that the activities in your data pipeline ran and were executed to completion. For example, running a data pipeline with a **Copy data** activity performs that action and copy your data. Each data pipeline run has its own unique pipeline run ID.
+A data pipeline run occurs when a data pipeline is started and the activities are executed.
 
-:::image type="content" source="media/pipeline-runs/copy-data-activity.png" alt-text="Screenshot showing a copy data activity pipeline run.":::
-
-You can start pipeline runs in three ways:
+You can start a pipeline run in three ways:
 
 - [**On-demand runs**](#on-demand-data-pipeline-run): Select **Run** in the pipeline editor to trigger an immediate run. You'll need to save any changes before the pipeline starts.
 
@@ -24,7 +22,7 @@ You can start pipeline runs in three ways:
 
 - [**Scheduled runs**](#scheduled-data-pipeline-runs): Set up automatic runs based on time and frequency. When you create a schedule, you specify start and end dates, frequency, and time zone.
 
-    :::image type="content" source="media/pipeline-runs/schedule-pipeline-run.png" alt-text="Screenshot showing where to select Schedule on the Home tab.":::
+    :::image type="content" source="media/pipeline-runs/schedule-pipeline-run.png" alt-text="Screenshot showing where to select Schedule on the Home tab." lightbox="media/pipeline-runs/schedule-pipeline-run.png":::
 
 - [**Event-based runs**](#event-based-data-pipeline-runs): Use event triggers to start your pipeline when specific events occur, such as new files arriving in a data lake or changes in a database.
 
