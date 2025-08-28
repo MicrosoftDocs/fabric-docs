@@ -15,3 +15,4 @@ ms.date: 08/26/2025
 * Fabric KQL database
 * Fabric SQL database
 * SharePoint Files
+* Snowflake (preview)
