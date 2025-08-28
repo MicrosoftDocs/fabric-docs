@@ -10,23 +10,23 @@ ms.reviewer: eur
 
 # GQL language reference
 
-GQL (Graph Query Language) is the ISO-standardized query language for graph databases. It was designed to help you query and work with graph data efficiently. The same international working group that oversees SQL developed GQL, so you find familiar syntax if you already know SQL. This comprehensive reference covers how GQL works in graph in Microsoft Fabric, including syntax, data types, query patterns, and practical examples.
+GQL (Graph Query Language) is the ISO-standardized query language for graph databases. It's designed to help you query and work with graph data efficiently. The same international working group that oversees SQL develops GQL, so you see familiar syntax if you already know SQL. This article covers how GQL works in graph in Microsoft Fabric, including syntax, data types, query patterns, and practical examples.
 
 > [!NOTE]
 > The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
 
-## Quick start with GQL
+## GQL fundamentals
 
-If you're new to GQL, here are the essential concepts you need to understand:
+If you're new to GQL, learn these essential concepts:
 
-- **Graphs** contain nodes and edges with labels and properties that represent your data
-- **Graph types** define what nodes and edges can exist in your graph, acting like a schema
-- **Constraints** further restrict the set of valid graphs of a graph type to ensure data integrity
-- **Queries** use linear statements like `MATCH`, `FILTER`, and `RETURN` to produce a tabular result
-- **Patterns** describe the graph structures you want to find using intuitive visual syntax
-- **Expressions** describe value computations performed by queries, similar to SQL expressions
-- **Predicates** are expressions that evaluate to a truth value for use in filters and conditions
-- **Value types** define the values that are stored in properties and computed by expressions
+- **Graphs** have nodes and edges with labels and properties that represent your data.
+- **Graph types** set what nodes and edges can exist in your graph, acting like a schema.
+- **Constraints** restrict the set of valid graphs of a graph type to keep data accurate.
+- **Queries** use statements like `MATCH`, `FILTER`, and `RETURN` to show results in a table.
+- **Patterns** describe the graph structures you want to find using visual syntax.
+- **Expressions** describe value computations performed by queries, like SQL expressions.
+- **Predicates** are expressions that return a true or false value for filters and conditions.
+- **Value types** set the values stored in properties and computed by expressions.
 
 Here's a basic query that demonstrates GQL's pattern-matching approach:
 
@@ -38,7 +38,6 @@ RETURN person.name, friend.name
 
 This query matches friends (`Person` nodes that `know` each other) who are both older than 25 and returns the names of each pair of such friends found in the graph. Notice how the pattern `(person:Person)-[:knows]-(friend:Person)` visually represents the relationship structure you're looking for.
 
-
 ## Graph fundamentals
 
 In GQL, you work with labeled property graphs. A graph contains nodes and edges, which we call graph elements. Understanding these building blocks is essential for effective graph modeling and querying.
@@ -49,14 +48,11 @@ Nodes are typically used to model the entities (the "nouns") of your system: per
 
 Graph edges are used to model relationships between entities (the "verbs"): which persons know each other, which organization is located in which country/region, or who commented on which post. They capture how your entities connect and interact.
 
-*Every graph element has these characteristics:
+Every graph element has these characteristics:
 
-- An **internal ID** (a unique identifier) that distinguishes it from other graph elements
-- **One or more labels**—character strings like `Person` or `knows`. Graph edges currently require exactly one label, while nodes require one but can have more labels
-- **Multiple properties**—name-value pairs like `service: "Fabric Graph"` that store the actual data attributes of your nodes and edges
-
-  > [!NOTE]
-  > Property names are sometimes also called property keys.
+- An **internal ID** (a unique identifier) that distinguishes it from other graph elements.
+- **One or more labels**—character strings like `Person` or `knows`. Graph edges currently require exactly one label, while nodes require one but can have more labels.
+- **Multiple properties**—name-value pairs like `service: "Fabric Graph"` that store the actual data attributes of your nodes and edges. Property names are sometimes also called property keys.
 
 Every node in graph in Microsoft Fabric is additionally restricted by an associated node key constraint. Each such constraint defines a unique key value that identifies the node in the graph in terms of its properties.
 
@@ -68,9 +64,17 @@ GQL graphs are always well-formed, meaning they never have "dangling" edges. If 
 
 The overall structure of a graph is controlled by its [graph type](#graph-types--schema), which acts like a schema definition.
 
-### Example: Social network domain
+## Example: Social network domain
 
-Throughout this reference, we use a social network as our running example to demonstrate GQL concepts. This domain includes:
+This documentation uses a social network graph to illustrate GQL concepts.
+
+The social network domain demonstrates many common features of complex graphs:
+
+- **Node hierarchies** with shared properties (like different types of organizations and places).
+- **Relationship diversity** from simple friendships to complex content interactions.
+- **Real-world complexity** that you encounter in actual graph database use-cases.
+
+The example social network domain includes:
 
 - **People** with properties like names, ages, birthdates, and locations.
 - **Organizations** including universities and companies with their own properties. 
@@ -83,14 +87,122 @@ Here's a visual overview of our example social network structure. The dotted edg
 
 :::image type="content" source="./media/schema.png" alt-text="Diagram of the example social network structure." lightbox="./media/schema.png":::
 
-The social network domain demonstrates many common features of complex graphs:
+Notable features of this graph include:
 
-- **Node hierarchies** with shared properties (like different types of organizations and places)
-- **Relationship diversity** from simple friendships to complex content interactions
-- **Real-world complexity** that you encounter in actual graph database use-cases
+- **Inheritance hierarchies** for places (City → Country → Continent) and organizations (University, Company → Organization).
+- **Abstract types** for Message and Organization to define shared properties.
+- **Graph edge families** for relationships like `isPartOf` and `likes` that connect different types of nodes.
+- **Comprehensive constraints** to ensure data integrity.
 
+Here's the complete technical specification of this graph type:
 
-You can follow along with the examples throughout this document using this domain as your mental model. The complete technical specification of this graph type appears in the [Graph Types & Schema](#graph-types--schema) section.
+```gql
+(:TagClass => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
+
+CONSTRAINT tag_class_pk
+FOR (n:TagClass) REQUIRE (n.id) IS PRIMARY KEY,
+
+(:TagClass)-[:isSubclassOf]->(:TagClass),
+
+(:Tag => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
+
+(:Tag)-[:hasType]->(:TagClass),
+
+CONSTRAINT tag_pk
+FOR (n:Tag) REQUIRE (n.id) IS PRIMARY KEY,
+
+ABSTRACT
+(:Place => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
+
+(:City => :Place),
+(:Country => :Place),
+(:Continent => :Place),
+
+CONSTRAINT place_pk
+FOR (n:Place) REQUIRE (n.id) IS PRIMARY KEY,
+
+(:City)-[:isPartOf]->(:Country),
+(:Country)-[:isPartOf]->(:Continent),
+
+ABSTRACT
+(:Organisation => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
+
+(:University => :Organisation),
+(:Company => :Organisation),
+
+CONSTRAINT organisation_pk
+FOR (n:Organisation) REQUIRE (n.id) IS KEY,
+
+(:University)-[:isLocatedIn]->(:City),
+(:Company)-[:isLocatedIn]->(:Country),
+
+(:Person => {
+    id :: UINT64 NOT NULL,
+    creationDate :: ZONED DATETIME,
+    firstName :: STRING,
+    lastName :: STRING,
+    gender :: STRING,
+    birthday :: UINT64,
+    browserUsed :: STRING,
+    locationIP :: STRING
+}),
+
+CONSTRAINT person_pk
+FOR (n:Person) REQUIRE (n.id) IS PRIMARY KEY,
+
+(:Person)-[:hasInterest]->(:Tag),
+(:Person)-[:isLocatedIn]->(:City),
+(:Person)-[:studyAt { classYear :: UINT64 }]->(:University),
+(:Person)-[:workAt { workFrom :: UINT64 }]->(:Company),
+(:Person)-[:knows { creationDate :: ZONED DATETIME }]->(:Person),
+
+(:Forum => {
+    id :: UINT64 NOT NULL,
+    creationDate :: ZONED DATETIME,
+    title :: STRING
+}),
+
+CONSTRAINT forum_pk
+FOR (n:Forum) REQUIRE (n.id) IS PRIMARY KEY,
+
+(:Forum)-[:hasTag]->(:Tag),
+(:Forum)-[:hasMember { creationDate :: ZONED DATETIME, joinDate :: UINT64 }]->(:Person),
+(:Forum)-[:hasModerator]->(:Person),
+
+ABSTRACT (:Message => {
+    id :: UINT64 NOT NULL,
+    creationDate :: ZONED DATETIME,
+    browserUsed :: STRING,
+    locationIP :: STRING,
+    content :: STRING,
+    length :: UINT64
+}),
+
+CONSTRAINT message_pk
+FOR (n:Message) REQUIRE (n.id) IS PRIMARY KEY,
+
+(:Post => :Message += {
+    language :: STRING,
+    imageFile :: STRING
+}),
+
+(:Person)-[:likes { creationDate :: ZONED DATETIME }]->(:Post),
+(:Post)-[:hasCreator]->(:Person),
+(:Post)-[:isLocatedIn]->(:Country),
+(:Forum)-[:containerOf]->(:Post),
+
+(:Comment => :Message),
+
+(:Person)-[:likes { creationDate :: ZONED DATETIME }]->(:Comment),
+(:Comment)-[:hasCreator]->(:Person),
+(:Comment)-[:isLocatedIn]->(:Country),
+
+(:Comment)-[:replyOf]->(<:Message),
+(:Person)-[:likes { creationDate :: ZONED DATETIME }]->(<:Message),
+(<:Message)-[:hasCreator]->(:Person),
+(<:Message)-[:isLocatedIn]->(:Country),
+(<:Message)-[:hasTag]->(:Tag)
+```
 
 ## Write queries with GQL
 
@@ -114,7 +226,7 @@ RETURN count(*) AS num_same_age_friends
 Here's how this query works step by step:
 
 1. **`MATCH`** finds all pairs of `Person` nodes that know each other and have the same age. Each match creates one row with `n` and `m` columns containing the matching nodes
-2. **`RETURN`** counts the rows from step 1 and outputs a single row with the count in the `num_same_age_friends` column
+1. **`RETURN`** counts the rows from step 1 and outputs a single row with the count in the `num_same_age_friends` column
 
 You can write more complex queries using multiple statements, advanced graph patterns, expressions, and predicates to handle sophisticated analytical needs.
 
@@ -137,8 +249,8 @@ When you execute a query, the system provides comprehensive feedback about the o
 
 **Success results:**
 
-- A result table with the rows produced by your query's last statement (if execution succeeds)
-- Status information showing whether your query succeeded or failed
+- A result table with the rows produced by your query's last statement (if execution succeeds).
+- Status information showing whether your query succeeded or failed.
 
 **Status information details:**
 
@@ -176,18 +288,17 @@ Each match creates a single row with columns for each path, node, or edge variab
 
 **How matching works:**
 
-- If columns from a preceding statement overlap with columns from matched nodes and edges, they get joined automatically using equality
-- Input rows without corresponding graph matches get discarded (similar to an inner join in SQL)
-- If a predicate is given, only those rows where the predicate evaluates to `TRUE` are retained
+- If columns from a preceding statement overlap with columns from matched nodes and edges, they get joined automatically using equality.
+- Input rows without corresponding graph matches get discarded (similar to an inner join in SQL).
+- If a predicate is given, only those rows where the predicate evaluates to `TRUE` are retained.
 
 For complete details about graph pattern syntax, see the [Work with graph patterns](#work-with-graph-patterns) section.
 
-
 > [!IMPORTANT]
-> Current restrictions for `MATCH` statement graph patterns:
+> The following restrictions apply to `MATCH` statement graph patterns:
 >
-> 1. If this `MATCH` statement isn't the first linear query statement: At least one input variable must join with at least one graph pattern variable
-> 2. If you specify multiple graph patterns: All graph patterns must have one variable in common
+> - If this `MATCH` statement isn't the first linear query statement, at least one input variable must join with at least one graph pattern variable.
+> - If you specify multiple graph patterns, all graph patterns must have one variable in common.
 
 ### `LET` statement
 
@@ -203,10 +314,10 @@ Use the `LET` statement to create new variables by evaluating expressions and bi
 
 **How it works:**
 
-- Each expression gets evaluated for every input row
-- The results are added as new columns to the output table
-- Variables you create with `LET` can reference existing variables from previous statements only (no forward references)
-- Multiple variable assignments in a single `LET` statement are evaluated in parallel (they don't see the variables bound by another variable assignment in the same `LET` statement)
+- Each expression gets evaluated for every input row.
+- The results are added as new columns to the output table.
+- Variables you create with `LET` can reference existing variables from previous statements only (no forward references).
+- Multiple variable assignments in a single `LET` statement are evaluated in parallel (they don't see the variables bound by another variable assignment in the same `LET` statement).
 
 
 ### `FILTER` statement
@@ -223,9 +334,9 @@ Use the `FILTER` statement to filter input rows by keeping only those rows where
 
 **Key behaviors:**
 
-- Rows where the predicate evaluates to `FALSE` or `UNKNOWN` (null) are removed
-- The `WHERE` keyword is optional—`FILTER predicate` and `FILTER WHERE predicate` are equivalent
-- Complex predicates can be built using logical operators (`AND`, `OR`, `NOT`)
+- Rows where the predicate evaluates to `FALSE` or `UNKNOWN` (null) are removed.
+- The `WHERE` keyword is optional—`FILTER predicate` and `FILTER WHERE predicate` are equivalent.
+- Complex predicates can be built using logical operators (`AND`, `OR`, `NOT`).
 
 > [!CAUTION]
 > Remember that in three-valued logic, conditions involving null values return `UNKNOWN`, which means those rows are filtered out. Also, `NOT UNKNOWN = UNKNOWN`, so special care needs to be taken when using negation.
@@ -244,11 +355,11 @@ Use the `ORDER BY` statement to sort input rows based on the specified expressio
 
 **Sorting behavior:**
 
-- Each expression gets evaluated for every row, and rows are ordered by the resulting values
-- You can specify multiple sort expressions separated by commas
-- Rows get sorted first by the first expression, then by the second expression for rows with equal first values, and so on
-- Use `ASC` for ascending order (the default) or `DESC` for descending order
-- The null value is always considered the "smallest" value in sorting operations
+- Each expression gets evaluated for every row, and rows are ordered by the resulting values.
+- You can specify multiple sort expressions separated by commas.
+- Rows get sorted first by the first expression, then by the second expression for rows with equal first values, and so on.
+- Use `ASC` for ascending order (the default) or `DESC` for descending order.
+- The null value is always considered the "smallest" value in sorting operations.
 
 
 ### `OFFSET` and `LIMIT` statements
@@ -404,9 +515,9 @@ This counts the number of `isLocatedIn` edges connecting `Person` nodes or not-`
 
 | Syntax | Meaning                                       |
 |--------|-----------------------------------------------|
-| `A&B`  | Labels need to include both A and B           |
-| `A\|B` | Labels need to include at least one of A or B |
-| `!A`   | Labels need to exclude A                      |
+| `A&B`  | Labels need to include both A and B.           |
+| `A\|B` | Labels need to include at least one of A or B. |
+| `!A`   | Labels need to exclude A.                      |
 
 Additionally, use parenthesis to control the order of label expression evaluation. By default, `!` has the highest precedence and `&` has higher precedence than `\|`. Therefore `!A&B|C|!D` is the same as `(!A)&(B|C|(!D))`.
 
@@ -416,7 +527,7 @@ Variables allow you to refer to matched graph elements in other parts of your qu
 
 #### Binding element variables
 
-Both node and edge patterns can bind matched nodes and edges to variables for later reference:
+Both node and edge patterns can bind matched nodes and edges to variables for later reference.
 
 ```gql
 (p:Person)-[w:workAt]->(c:Company)
@@ -426,7 +537,7 @@ In this pattern, `p` is bound to matching `Person` nodes, `w` to matching `workA
 
 **Variable reuse for structural constraints:**
 
-Re-using the same variable in a pattern multiple times expresses a restriction on the structure of matches: Every occurrence of the same variable must always bind to the same graph element in a valid match. This is powerful for expressing complex structural requirements:
+Re-using the same variable in a pattern multiple times expresses a restriction on the structure of matches. Every occurrence of the same variable must always bind to the same graph element in a valid match. This is powerful for expressing complex structural requirements.
 
 ```gql
 (c:Company)<-[:workAt]-(x:Person)-[:knows]-(y:Person)-[:workAt]->(c:Company)
@@ -461,7 +572,7 @@ Real-world queries often require more complex patterns than simple node-edge-nod
 
 #### Compose path patterns
 
-Path patterns can be composed by concatenating simple node and edge patterns to create longer traversals:
+Path patterns can be composed by concatenating simple node and edge patterns to create longer traversals.
 
 ```gql
 (:Person)-[:knows]->(:Person)-[:workAt]->(:Company)-[:locatedIn]->(:City)-[:isPartOf]->(:Country)
@@ -595,9 +706,9 @@ A graph type describes your graph's structure by defining which nodes and edges 
 
 Graph types provide several key benefits:
 
-- **Data validation**: Ensure your graph contains only valid node and edge combinations
-- **Query optimization**: Help the query engine understand your data structure for better performance
-- **Documentation**: Serve as a clear specification of your graph's structure for developers and analysts
+- **Data validation**: Ensure your graph contains only valid node and edge combinations.
+- **Query optimization**: Help the query engine understand your data structure for better performance.
+- **Documentation**: Serve as a clear specification of your graph's structure for developers and analysts.
 
 ### Define node types
 
@@ -613,10 +724,10 @@ A node type specifies what labels and property types your nodes can have. Here's
 
 This example creates a node type that defines nodes with:
 
-- The label `Organisation`
-- An `id` property that holds unsigned integer values and can't be null
-- A `name` property that holds string values (can be null)
-- A `url` property that holds string values (can be null)
+- The label `Organisation`.
+- An `id` property that holds unsigned integer values and can't be null.
+- A `name` property that holds string values (can be null).
+- A `url` property that holds string values (can be null).
 
 The `::` operator specifies the data type for each property, while `NOT NULL` indicates that the property must always have a value
 
@@ -662,9 +773,9 @@ An edge type defines the key label, property types, and endpoint node types for 
 
 This edge type defines all edges with:
 
-- The (key) label `knows`
-- A `creationDate` property that holds `ZONED DATETIME` values (timestamps together with a timezone offset)
-- Source and destination endpoints that must both be `Person` nodes
+- The (key) label `knows`.
+- A `creationDate` property that holds `ZONED DATETIME` values (timestamps together with a timezone offset).
+- Source and destination endpoints that must both be `Person` nodes.
 
 The arrow `->` indicates the direction of the edge, from source to destination. This directional information is crucial for understanding your graph's semantics.
 
@@ -782,8 +893,8 @@ Here are the data types you can use for property values:
 - `STRING`
 - `BOOL`
 - `DOUBLE` (also: `FLOAT64`, `FLOAT`)
-- `T NOT NULL`, where `T` is any of the preceding data types
-- `LIST<T>` and `LIST<T NOT NULL>`, where `T` is any of the preceding data types
+- `T NOT NULL`, where `T` is any of the preceding data types.
+- `LIST<T>` and `LIST<T NOT NULL>`, where `T` is any of the preceding data types.
 
 For complete details, see the [Values and value types](#understand-values-and-value-types) section.
 
@@ -796,9 +907,9 @@ Node key constraints define how each node in your graph gets uniquely identified
 
 Understanding key constraints is crucial because they:
 
-- **Ensure uniqueness**: Prevent duplicate nodes based on your business logic
-- **Enable efficient lookups**: Allow the system to optimize queries that search for specific nodes
-- **Support data integration**: Provide a stable way to reference nodes across different data sources
+- **Ensure uniqueness**: Prevent duplicate nodes based on your business logic.
+- **Enable efficient lookups**: Allow the system to optimize queries that search for specific nodes.
+- **Support data integration**: Provide a stable way to reference nodes across different data sources.
 
 > [!IMPORTANT]
 > In Fabric Graph, every node must be constrained by exactly one key constraint.
@@ -809,9 +920,9 @@ You can specify node key constraints in your graph type. Each node key constrain
 
 **Components of a node key constraint:**
 
-- Has a unique name within the graph type for easy reference
-- Defines targeted nodes using a simple *constraint pattern* that specifies which nodes the constraint applies to
-- Defines the properties that form the unique key value
+- Has a unique name within the graph type for easy reference.
+- Defines targeted nodes using a simple *constraint pattern* that specifies which nodes the constraint applies to.
+- Defines the properties that form the unique key value.
 
 **Example:**
 
@@ -830,128 +941,6 @@ You can also define compound keys that use multiple properties together to ensur
 > - Can't be null
 > - Must be declared as `NOT NULL` in the node types and edge types that the key constraint targets
 
-### Example: Social network graph type
-
-The queries and examples throughout this language reference use the following social network graph type. This comprehensive example demonstrates how to model a complex domain using the concepts we cover.
-
-The dotted edges represent inheritance via label implication, the plain edges represent edge types, and the bold edges represent edge type families.
-
-:::image type="content" source="./media/schema.png" alt-text="Diagram of the example social network structure." lightbox="./media/schema.png":::
-
-This graph type models a social network with people, organizations, places, forums, and messages. Notice how it uses:
-
-- **Inheritance hierarchies** for places (City → Country → Continent) and organizations (University, Company → Organization)
-- **Abstract types** for Message and Organization to define shared properties
-- **Graph edge families** for relationships like `isPartOf` and `likes` that connect different types of nodes
-- **Comprehensive constraints** to ensure data integrity
-
-```gql
-(:TagClass => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
-
-CONSTRAINT tag_class_pk
-FOR (n:TagClass) REQUIRE (n.id) IS PRIMARY KEY,
-
-(:TagClass)-[:isSubclassOf]->(:TagClass),
-
-(:Tag => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
-
-(:Tag)-[:hasType]->(:TagClass),
-
-CONSTRAINT tag_pk
-FOR (n:Tag) REQUIRE (n.id) IS PRIMARY KEY,
-
-ABSTRACT
-(:Place => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
-
-(:City => :Place),
-(:Country => :Place),
-(:Continent => :Place),
-
-CONSTRAINT place_pk
-FOR (n:Place) REQUIRE (n.id) IS PRIMARY KEY,
-
-(:City)-[:isPartOf]->(:Country),
-(:Country)-[:isPartOf]->(:Continent),
-
-ABSTRACT
-(:Organisation => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
-
-(:University => :Organisation),
-(:Company => :Organisation),
-
-CONSTRAINT organisation_pk
-FOR (n:Organisation) REQUIRE (n.id) IS KEY,
-
-(:University)-[:isLocatedIn]->(:City),
-(:Company)-[:isLocatedIn]->(:Country),
-
-(:Person => {
-    id :: UINT64 NOT NULL,
-    creationDate :: ZONED DATETIME,
-    firstName :: STRING,
-    lastName :: STRING,
-    gender :: STRING,
-    birthday :: UINT64,
-    browserUsed :: STRING,
-    locationIP :: STRING
-}),
-
-CONSTRAINT person_pk
-FOR (n:Person) REQUIRE (n.id) IS PRIMARY KEY,
-
-(:Person)-[:hasInterest]->(:Tag),
-(:Person)-[:isLocatedIn]->(:City),
-(:Person)-[:studyAt { classYear :: UINT64 }]->(:University),
-(:Person)-[:workAt { workFrom :: UINT64 }]->(:Company),
-(:Person)-[:knows { creationDate :: ZONED DATETIME }]->(:Person),
-
-(:Forum => {
-    id :: UINT64 NOT NULL,
-    creationDate :: ZONED DATETIME,
-    title :: STRING
-}),
-
-CONSTRAINT forum_pk
-FOR (n:Forum) REQUIRE (n.id) IS PRIMARY KEY,
-
-(:Forum)-[:hasTag]->(:Tag),
-(:Forum)-[:hasMember { creationDate :: ZONED DATETIME, joinDate :: UINT64 }]->(:Person),
-(:Forum)-[:hasModerator]->(:Person),
-
-ABSTRACT (:Message => {
-    id :: UINT64 NOT NULL,
-    creationDate :: ZONED DATETIME,
-    browserUsed :: STRING,
-    locationIP :: STRING,
-    content :: STRING,
-    length :: UINT64
-}),
-
-CONSTRAINT message_pk
-FOR (n:Message) REQUIRE (n.id) IS PRIMARY KEY,
-
-(:Post => :Message += {
-    language :: STRING,
-    imageFile :: STRING
-}),
-
-(:Person)-[:likes { creationDate :: ZONED DATETIME }]->(:Post),
-(:Post)-[:hasCreator]->(:Person),
-(:Post)-[:isLocatedIn]->(:Country),
-(:Forum)-[:containerOf]->(:Post),
-
-(:Comment => :Message),
-
-(:Person)-[:likes { creationDate :: ZONED DATETIME }]->(:Comment),
-(:Comment)-[:hasCreator]->(:Person),
-(:Comment)-[:isLocatedIn]->(:Country),
-
-(:Comment)-[:replyOf]->(<:Message),
-(:Person)-[:likes { creationDate :: ZONED DATETIME }]->(<:Message),
-(<:Message)-[:hasCreator]->(:Person),
-(<:Message)-[:isLocatedIn]->(:Country),
-(<:Message)-[:hasTag]->(:Tag)
-```
 
 ## Understand values and value types
 
@@ -959,26 +948,26 @@ GQL supports various kinds of values like numbers, strings, and graph elements. 
 
 **Key concepts:**
 
-- **Value types** can be nullable or non-nullable (material), depending on whether they include or exclude the null value
-- **Non-nullable value types** are specified syntactically as `NOT NULL`
-- **The same value** can belong to multiple value types (polymorphism)
-- **The null value** is a member of every nullable value type
+- **Value types** can be nullable or non-nullable (material), depending on whether they include or exclude the null value.
+- **Non-nullable value types** are specified syntactically as `NOT NULL`.
+- **The same value** can belong to multiple value types (polymorphism).
+- **The null value** is a member of every nullable value type.
 
 ### How value types are organized
 
 All value types fall into two major categories that serve different purposes in your queries:
 
-- **Predefined value types** - Built into the language (numbers, strings, booleans, etc.)
-- **Constructed value types** - Composed from other types (lists, paths)
+- **Predefined value types** - Built into the language (numbers, strings, booleans, etc.).
+- **Constructed value types** - Composed from other types (lists, paths).
 
 Predefined value types are further organized into specialized categories:
 
-- **Boolean value types** - True, false, and unknown values for logical operations
-- **Character string value types** - Text data with Unicode support
-- **Numeric value types** - Integers and floating-point numbers  
-- **Temporal value types** - Date and time values with timezone support
-- **Reference value types** - References to nodes and edges in your graph
-- **Immaterial value types** - Special values like null and nothing
+- **Boolean value types** - True, false, and unknown values for logical operations.
+- **Character string value types** - Text data with Unicode support.
+- **Numeric value types** - Integers and floating-point numbers.
+- **Temporal value types** - Date and time values with timezone support.
+- **Reference value types** - References to nodes and edges in your graph.
+- **Immaterial value types** - Special values like null and nothing.
 
 ### How equality and comparison work
 
@@ -986,9 +975,9 @@ Understanding how GQL compares values is crucial for writing effective queries, 
 
 ### Basic comparison rules
 
-- You can generally compare values of the same kind
-- All numbers can be compared with each other (integers with floats, etc.)
-- Only reference values referencing the same kind of object can be compared (node references with node references, edge references with edge references)
+- You can generally compare values of the same kind.
+- All numbers can be compared with each other (integers with floats, etc.).
+- Only reference values referencing the same kind of object can be compared (node references with node references, edge references with edge references).
 
 ### Null handling in comparisons
 
@@ -1004,8 +993,8 @@ Distinctness testing follows the same rules as equality with one crucial excepti
 
 Distinctness testing is used by:
 
-- **`RETURN DISTINCT`**: Determines whether two rows are duplicates of each other
-- **`GROUP BY`**: Determines whether two rows belong to the same grouping key during aggregation
+- **`RETURN DISTINCT`**: Determines whether two rows are duplicates of each other.
+- **`GROUP BY`**: Determines whether two rows belong to the same grouping key during aggregation.
 
 Two rows from a table are considered distinct if there's at least one column in which the values from both rows are distinct.
 
@@ -1323,8 +1312,8 @@ Path values represent paths matched in your graph. A path value contains a non-e
 A path consists of:
 
 - A sequence of nodes and edges: `node₁ - edge₁ - node₂ - edge₂ - ... - nodeₙ`
-- Always starts and ends with a node
-- Contains at least one node (minimum path length is zero edges)
+- Always starts and ends with a node.
+- Contains at least one node (minimum path length is zero edges).
 
 **How comparison works:**
 
