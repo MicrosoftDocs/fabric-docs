@@ -10,7 +10,9 @@ ms.service: azure-ai-foundry
 ai.usage: ai-assisted
 ---
 # Evaluation of RAG Performance Basics
+
 ### Introduction
+
 This tutorial provides a quickstart guide to use Fabric for evaluating the performance RAG applications. Performance evaluation is focused on two main components of RAG: the retriever (in our scenario it is based on Azure AI Search) and response generator (an LLM that uses provided user query, retrieved context, and prompt to spit out a reply that can be served to the user).  The main steps in this tutorial are as following:
 
 1. Set up Azure OpenAI and Azure AI Search Services
@@ -35,10 +37,11 @@ You need the following services to run this notebook:
 In the previous tutorial, you have uploaded data to your lakehouse and built an index of documents that is in the backend of RAG. The index will be used here as part of an exercise to learn the main techniques for evaluation of RAG performance and identification of potential problems. If you haven't done this yet, or removed previously created index, please follow [here](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-bring-your-own-keys/quickstart-genai-guidance.ipynb) to complete that prerequisite.
 
 
-:::image type="content" source="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png" alt-text="Diagram showing the flow of a user conversation with the RAG system." lightbox="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png":::
+:::image type="content" source="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png" alt-text="Screenshot of diagram showing the flow of a user conversation with the RAG system." lightbox="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png":::
 
 
-### Set up Access to Azure Open AI and Azure AI Search 
+### Set up access to Azure Open AI and Azure AI Search
+
 Define the endpoints and the required keys. Then import required libraries and functions. Instantiate clients for Azure OpenAI and Azure AI Search. Finally, define a function wrapper with a prompt for querying RAG system.
 
 
@@ -106,7 +109,6 @@ from IPython.display import display as w_display
 
 
     StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 6, Finished, Available, Finished)
-
 
 
 ```python
@@ -227,6 +229,7 @@ def get_answer(question, context):
 
 
 ## Dataset
+
 The Carnegie Mellon University Question-Answer dataset version 1.2 is a corpus of Wikipedia articles, manually generated factual questions based on the articles, and manually generated answers. The data is hosted in Azure Blob Storage under the same GFDL license. For simplicity, the dataset uses a single structured table with the following fields.
 
 * ArticleTitle: the name of the Wikipedia article from which questions and answers initially came.
@@ -236,9 +239,11 @@ The Carnegie Mellon University Question-Answer dataset version 1.2 is a corpus o
 * DifficultyFromAnswerer: difficulty rating assigned by the individual who evaluated and answered the question, which might differ from the rating in DifficultyFromQuestioner.
 * ExtractedPath: path to the original article. There can be more than one question-answer pair per article.
 * text: cleaned Wikipedia articles.
+
 For more information about the license, download the LICENSE-S08,S09 file from the same location.
 
 ## History and citation
+
 Use the following citation for this dataset:
 
 ```
@@ -269,7 +274,7 @@ The GNU license applies to the dataset in all copies.
 
 ## Create benchmark
 
-Import the benchmark. For this demo, use a subset of questions prepared by CMU students in the `S08/set1` and `S08/set2` buckets. To limit to one question per article, apply `df.dropDuplicates(["ExtractedPath"])` to the data. There are also duplicate questions—so drop duplicates. Labels on the complexity of questions have been provided as part of the curation process: in the below example they're limited to `medium`. 
+Import the benchmark. For this demo, use a subset of questions prepared by CMU students in the `S08/set1` and `S08/set2` buckets. To limit to one question per article, apply `df.dropDuplicates(["ExtractedPath"])` to the data. There are also duplicate questions-so drop duplicates. Labels on the complexity of questions have been provided as part of the curation process: in the below example they're limited to `medium`. 
 
 
 ```python
@@ -306,7 +311,7 @@ display(df)
     SynapseWidget(Synapse.DataFrame, 47aff8cb-72f8-4a36-885c-f4f3bb830a91)
 
 
-The result is a DataFrame with 20 rows—this is the demo benchmark. Important fields are `Question`, `Answer` (human-curated 'ground truth' answer), and `ExtractedPath` (the source document where information is found). Modify the filtering criteria to include other questions and vary complexity for a more realistic example. Try this as an exercise for additional experiments.
+The result is a DataFrame with 20 rows-this is the demo benchmark. Important fields are `Question`, `Answer` (human-curated 'ground truth' answer), and `ExtractedPath` (the source document where information is found). Modify the filtering criteria to include other questions and vary complexity for a more realistic example. Try this as an exercise for additional experiments.
 
 ## Run a simple end-to-end test
 
@@ -363,12 +368,11 @@ get_retrieval_score("S08/data/set1/a9", retrieved_sources)
 
 
 
-
     1
 
 
 
-This section defines AI-assisted metrics. The prompt template includes a few examples of input (CONTEXT and ANSWER) and suggested output; this is called a few-shot model. It's the same prompt that's used in Azure AI Studio. Learn more in [Built-in evaluation metrics](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=warning#ai-assisted-relevance). This demo uses the `groundedness` and `relevance` metrics—these are usually the most useful and reliable for evaluating GPT models. Other metrics can be useful but provide less intuition—for example, answers don't have to be similar to be correct, so `similarity` scores can be misleading. The scale for all metrics is 1 to 5. Higher is better. Groundedness takes only two inputs (context and generated answer), while the other two metrics also use ground truth for evaluation. 
+This section defines AI-assisted metrics. The prompt template includes a few examples of input (CONTEXT and ANSWER) and suggested output; this is called a few-shot model. It's the same prompt that's used in Azure AI Studio. Learn more in [Built-in evaluation metrics](/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=warning#ai-assisted-relevance). This demo uses the `groundedness` and `relevance` metrics-these are usually the most useful and reliable for evaluating GPT models. Other metrics can be useful but provide less intuition-for example, answers don't have to be similar to be correct, so `similarity` scores can be misleading. The scale for all metrics is 1 to 5. Higher is better. Groundedness takes only two inputs (context and generated answer), while the other two metrics also use ground truth for evaluation. 
 
 
 
@@ -604,7 +608,6 @@ get_relevance_metric(retrieved_context, question, answer)
 
 
 
-
     '2'
 
 
@@ -618,7 +621,6 @@ get_similarity_metric(question, 'three', answer)
 
 
     StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 17, Finished, Available, Finished)
-
 
 
 
@@ -695,7 +697,7 @@ display(df.select(["question", "retrieval_score",  "ExtractedPath", "retrieved_s
     SynapseWidget(Synapse.DataFrame, 14efe386-836a-4765-bd88-b121f32c7cfc)
 
 
-For all questions, the correct context was fetched, and in most cases it's the first entry in the list. Azure AI Search did a great job. You might wonder why, in some cases, the context has two or three identical values. That's not an error—it means the retriever fetched fragments of the same article that didn't fit into one chunk during splitting.
+For all questions, the correct context was fetched, and in most cases it's the first entry in the list. Azure AI Search did a great job. You might wonder why, in some cases, the context has two or three identical values. That's not an error-it means the retriever fetched fragments of the same article that didn't fit into one chunk during splitting.
 
 ### Check-in #2: performance of the response generator
 
@@ -729,7 +731,7 @@ display(df.select(["question", "answer", "generated_answer", "retrieval_score", 
     SynapseWidget(Synapse.DataFrame, 22b97d27-91e1-40f3-b888-3a3399de9d6b)
 
 
-What do these values show? To make them easier to interpret, plot histograms of groundedness, relevance, and similarity. The LLM is more verbose than the human-written ground-truth answers, which affects the similarity metric (about half of the answers are semantically correct but get 4 stars as mostly similar). Most values for all three metrics are 4 or 5, which suggests that RAG performance is good. There are a few outliers—for example, for the question `How many species of otter are there?`, the model generated `There are 13 species of otter`, which is correct with high relevance and similarity (5). For some reason, GPT considered it poorly grounded in the provided context and gave it 1 star. In the other three cases with at least one AI-assisted metric of 1 star, the low score points to a bad answer. Like humans, the LLM is occasionally wrong in evaluation, but in most cases it does a good job.
+What do these values show? To make them easier to interpret, plot histograms of groundedness, relevance, and similarity. The LLM is more verbose than the human-written ground-truth answers, which affects the similarity metric (about half of the answers are semantically correct but get 4 stars as mostly similar). Most values for all three metrics are 4 or 5, which suggests that RAG performance is good. There are a few outliers-for example, for the question `How many species of otter are there?`, the model generated `There are 13 species of otter`, which is correct with high relevance and similarity (5). For some reason, GPT considered it poorly grounded in the provided context and gave it 1 star. In the other three cases with at least one AI-assisted metric of 1 star, the low score points to a bad answer. Like humans, the LLM is occasionally wrong in evaluation, but in most cases it does a good job.
 
 
 
@@ -768,13 +770,12 @@ plt.show()
     StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 24, Finished, Available, Finished)
 
 
-
     
 :::image type="content" source="media/tutorial-evaluate-rag-performance/evaluate-rag-gpt-scores-histogram.png" alt-text="Screenshot of histograms that show the distribution of GPT relevance and similarity scores for the evaluated questions." lightbox="media/tutorial-evaluate-rag-performance/evaluate-rag-gpt-scores-histogram.png":::
     
 
 
-As a final step, save the benchmark results to a table in your lakehouse. This step is optional but highly recommended—it makes your findings more useful. When you change something in the RAG (for example, modify the prompt, update the index, or use a different GPT model in the response generator), you can measure the impact, quantify improvements, and detect regressions.
+As a final step, save the benchmark results to a table in your lakehouse. This step is optional but highly recommended-it makes your findings more useful. When you change something in the RAG (for example, modify the prompt, update the index, or use a different GPT model in the response generator), you can measure the impact, quantify improvements, and detect regressions.
 
 
 ```python
@@ -807,4 +808,4 @@ You can return to your experiment results at any time to review them, compare wi
 
 By now, you're comfortable using AI-assisted metrics and the top N retrieval rate to build your retrieval-augmented generation (RAG) solution.
 
-In the upcoming tutorials, you continue your generative AI (GenAI) journey with Microsoft Fabric—the next steps show how to change your RAG configuration to fit your scenario. 
+In the upcoming tutorials, you continue your generative AI (GenAI) journey with Microsoft Fabric-the next steps show how to change your RAG configuration to fit your scenario.
