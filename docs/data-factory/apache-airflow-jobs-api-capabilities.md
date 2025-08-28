@@ -103,11 +103,11 @@ Create an Apache Airflow Job in a specified workspace.
 
 ```rest
 {
-    "id": "<artifactId>",
-    "type": "ApacheAirflowJobs",
-    "displayName": "My Apache Airflow Job",
-    "description": "My Apache Airflow Job description",
-    "workspaceId": "<workspaceId>"
+  "id": "<artifactId>",
+  "type": "ApacheAirflowJobs",
+  "displayName": "My Apache Airflow Job",
+  "description": "My Apache Airflow Job description",
+  "workspaceId": "<workspaceId>"
 }
 ```
 
@@ -157,11 +157,11 @@ Create an Apache Airflow Job with a public definition in a specified workspace.
 
 ```rest
 {
-    "id": "<Your artifactId>",
-    "type": "ApacheAirflowJobs",
-    "displayName": "My Apache Airflow Job",
-    "description": "My Apache Airflow Job description",
-    "workspaceId": "<Your workspaceId>"
+  "id": "<Your artifactId>",
+  "type": "ApacheAirflowJobs",
+  "displayName": "My Apache Airflow Job",
+  "description": "My Apache Airflow Job description",
+  "workspaceId": "<Your workspaceId>"
 }
 ```
 
@@ -185,11 +185,11 @@ Returns properties of specified Apache Airflow Job.
 
 ```rest
 {
-    "id": "<Your artifactId>",
-    "type": "ApacheAirflowJobs",
-    "displayName": "My Apache Airflow Job",
-    "description": "My Apache Airflow Job description",
-    "workspaceId": "<Your workspaceId>"
+  "id": "<Your artifactId>",
+  "type": "ApacheAirflowJobs",
+  "displayName": "My Apache Airflow Job",
+  "description": "My Apache Airflow Job description",
+  "workspaceId": "<Your workspaceId>"
 }
 ```
 
@@ -351,7 +351,6 @@ For more detailed information on how to set up and use SPNs in Fabric Data Facto
 ## Related content
 
 Refer to the following content for more information on APIs in Apache Airflow Jobs in Fabric Data Factory:
-
 
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [CRUD Items APIs in Fabric](/rest/api/fabric/core/items)
