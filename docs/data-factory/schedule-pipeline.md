@@ -13,6 +13,8 @@ ms.date: 08/14/2025
 
 With Data Factory pipelines, once you've completed designing your logic and testing your pipelines with manual runs, you'll next want to automate the execution of your pipeline logic. We provide several options to do this including scheduling and triggering based on events. In this article, will introduce you to the concept of scheduling your pipelines via a wall-clock scheduler. Scheduling pipelines in Data Factory ensures that your workflows run automatically, reliably, and at the right time without manual intervention. By setting up schedules, you can align data movement, data processing, and data transformation with business requirements—such as refreshing reports before the start of the workday, syncing systems during off-peak hours, or meeting compliance deadlines. Automated scheduling reduces operational overhead, minimizes the risk of missed or delayed runs, and enables consistent, predictable data delivery.
 
+[!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=57ecfaaf-cd4c-4b57-b8c2-723f98839496]
+
 ## Create and manage your schedules
 
 In Fabric Data Factory, each pipeline contains the schedules inside the pipeline definition. Open your pipeline designer and you'll see Schedule button on the Home ribbon.
