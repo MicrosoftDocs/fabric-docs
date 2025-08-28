@@ -73,6 +73,10 @@
             href: tutorial-end-to-end-dataflow.md
           - name: Module 3 - Automate and send notification
             href: tutorial-end-to-end-integration.md
+      - name: Decide - Data integration strategy
+        href: decision-guide-data-integration.md
+      - name: Decide - Data movement strategy
+        href: decision-guide-data-movement.md
       - name: Decide - Copy activity, Copy job, dataflow, or Spark?
         href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md 
       - name: Create a Copy job
@@ -274,6 +278,12 @@
                 href: connector-azure-table-storage.md
               - name: Configure in a data pipeline Copy activity
                 href: connector-azure-table-storage-copy-activity.md
+          - name: Cassandra
+            items:
+            - name: Cassandra - Overview
+              href: connector-cassandra-overview.md
+            - name: Configure in a data pipeline Copy activity
+              href: connector-cassandra-copy-activity.md 
           - name: CloudBluePSA
             items: 
               - name: CloudBluePSA - Overview
@@ -437,17 +447,25 @@
               - name: Configure in a data pipeline Copy activity
                 href: connector-http-copy-activity.md
           - name: IBM DB2 database
-            items: 
-              - name: IBM DB2 database - Overview
-                href: connector-ibm-db2-database-overview.md
-              - name: Set up your connection
-                href: connector-ibm-db2-database.md
+            items:
+            - name: IBM DB2 database - Overview
+              href: connector-ibm-db2-database-overview.md
+            - name: Set up your connection
+              href: connector-ibm-db2-database.md
+            - name: Configure in a data pipeline Copy activity
+              href: connector-ibm-db2-database-copy-activity.md
           - name: Impala
             items: 
               - name: Impala - Overview
                 href: connector-impala-overview.md
               - name: Set up your connection
                 href: connector-impala.md
+          - name: Informix For Pipeline
+            items:
+            - name: Informix For Pipeline - Overview
+              href: connector-informix-for-pipeline-overview.md
+            - name: Configure in a data pipeline Copy activity
+              href: connector-informix-for-pipeline-copy-activity.md          
           - name: KQL database
             items: 
               - name: KQL database - Overview
@@ -552,6 +570,12 @@
                 href: connector-postgresql.md
               - name: Configure in a data pipeline Copy activity
                 href: connector-postgresql-copy-activity.md
+          - name: Presto
+            items:
+            - name: Presto - Overview
+              href: connector-presto-overview.md
+            - name: Configure in a data pipeline Copy activity
+              href: connector-presto-copy-activity.md    
           - name: REST
             items: 
               - name: REST - Overview
@@ -593,12 +617,28 @@
                 href: connector-sap-bw-message-server-overview.md
               - name: Set up your connection
                 href: connector-sap-bw-message-server.md
+          - name: SAP BW Open Hub Application Server
+            items:
+            - name: SAP BW Open Hub Application Server - Overview
+              href: connector-sap-bw-open-hub-application-server-overview.md
+          - name: SAP BW Open Hub Message Server
+            items:
+            - name: SAP BW Open Hub Message Server - Overview
+              href: connector-sap-bw-open-hub-message-server-overview.md
           - name: SAP HANA database
             items: 
               - name: SAP HANA database - Overview
                 href: connector-sap-hana-overview.md
               - name: Set up your connection
                 href: connector-sap-hana.md
+          - name: SAP Table Application Server
+            items:
+            - name: SAP Table Application Server - Overview
+              href: connector-sap-table-application-server-overview.md
+          - name: SAP Table Message Server
+            items:
+            - name: SAP Table Message Server - Overview
+              href: connector-sap-table-message-server-overview.md   
           - name: ServiceNow
             items: 
               - name: ServiceNow - Overview
@@ -795,6 +835,8 @@
                     href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json  
   - name: Move data
     items:
+      - name: Decide - Data movement strategy
+        href: decision-guide-data-movement.md
       - name: Copy activity
         href: copy-data-activity.md
         items:
@@ -830,12 +872,20 @@
             href: create-copy-job.md
           - name: How to monitor a Copy job
             href: monitor-copy-job.md
+          - name: Copy job activity
+            href: copy-job-activity.md
           - name: Change data capture (CDC) in Copy job
             href: cdc-copy-job.md
           - name: CI/CD for Copy job
             href: cicd-copy-job.md
           - name: REST API Capabilities
             href: copy-job-rest-api-capabilities.md
+      - name: Mirroring
+        items:
+          - name: Mirroring overview
+            href: /fabric/mirroring/overview?toc=/fabric/data-factory/toc.json
+          - name: Mirroring documentation
+            href: /fabric/mirroring/
   - name: Transform data
     items: 
       - name: Data transformation pipeline activities
@@ -868,6 +918,8 @@
                 href: slowly-changing-dimension-type-one.md
               - name: Slowly changing dimension type 2
                 href: slowly-changing-dimension-type-two.md
+          - name: Dataflow Gen2 performance and scalability
+            href: dataflow-gen2-performance-best-practices.md  
           - name: Data in Dataflow Gen2 staging
             href: data-in-staging-artifacts.md
           - name: Data source management
@@ -896,6 +948,10 @@
             href: dataflow-parameters.md
           - name: Saving a draft of your dataflow
             href: dataflows-gen2-save-draft.md
+          - name: Use cloud connections through gateways
+            href: dataflow-gen2-cloud-connection-gateway-use.md
+          - name: Copilot explainer skill in Dataflow Gen2 
+            href: dataflow-gen2-copilot-explain.md
   - name: Orchestrate your workflows
     items:
       - name: What is a data pipeline?
@@ -928,6 +984,8 @@
                 href: apache-airflow-jobs-migrate-azure-workflow-orchestration-manager.md
               - name: Access logs
                 href: access-apache-airflow-job-logs.md
+              - name: CI/CD for Apache Airflow Jobs
+                href: cicd-apache-airflow-jobs.md
           - name: Tutorials
             items: 
               - name: Hello World
