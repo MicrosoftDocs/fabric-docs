@@ -114,6 +114,7 @@ Create a new cell in your Fabric notebook to use this code, separate from the ce
 
 ```Python
 import openai
+import os
 
 os.environ["OPENAI_API_VERSION"] = "2023-05-15"
 
