@@ -29,11 +29,11 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. From your newly created pipeline, select **Pipeline activity** to add an activity to the pipeline and select **Copy data**. This action adds copy data activity to the pipeline canvas.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\pipeline-copy-data.png" alt-text="Screenshot showing where to select Pipeline activity and Copy data.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\pipeline-copy-data.png" alt-text="Screenshot showing where to select Pipeline activity and Copy data." lightbox="media\tutorial-lakehouse-data-ingestion\pipeline-copy-data.png":::
 
 1. Select the newly added copy data activity from the canvas. Activity properties appear in a pane below the canvas (you might need to expand the pane upwards by dragging the top edge). From the **General** tab in the properties pane, type **Data Copy to Lakehouse** in the **Name** field. Leave remaining properties to their default values.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-copy-to-lakehouse.png" alt-text="Screenshot showing where to add the copy activity name on the General tab.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-copy-to-lakehouse.png" alt-text="Screenshot showing where to add the copy activity name on the General tab." lightbox="media\tutorial-lakehouse-data-ingestion\data-copy-to-lakehouse.png":::
 
 1. From the **Source** tab of the selected copy data activity, open the **Connection** field and select **Browse all**. Choose data source window pops up, search and select **Azure blobs**. For this tutorial, all the sample data is available in a public container of Azure blob storage. You connect to this container to copy data from it.
 
@@ -46,7 +46,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
    | Connection name | wwisampledata |
    | Authentication kind | Anonymous |
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-blob.png" alt-text="Screenshot showing where to select blob storage connection":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-blob.png" alt-text="Screenshot showing where to select blob storage connection" lightbox="media\tutorial-lakehouse-data-ingestion\data-store-source-blob.png":::
 
 1. Once the new connection is created, return to the **Source** tab of the copy data activity, and the newly created connection is selected by default. Specify the following properties before moving to the destination settings.
 
@@ -58,7 +58,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
    | Recursively | Checked |
    | File format | Binary |
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\blob-storage-connection-settings.png" alt-text="Screenshot showing the Blob Storage connection settings.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\blob-storage-connection-settings.png" alt-text="Screenshot showing the Blob Storage connection settings." lightbox="media\tutorial-lakehouse-data-ingestion\blob-storage-connection-settings.png":::
 
 1. From the **Destination** tab of the selected copy data activity, specify the following properties:
 
@@ -69,7 +69,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
    | File path | Directory name (first text box): wwi-raw-data |
    | File format | Binary |
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-settings.png" alt-text="Screenshot of the destination tab, showing where to enter specific details.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-settings.png" alt-text="Screenshot of the destination tab, showing where to enter specific details." lightbox="media\tutorial-lakehouse-data-ingestion\destination-settings.png":::
 
 1. You have configured the copy data activity. Select the **Save** icon on the top ribbon (below Home) to save your changes, and select **Run** to execute your pipeline and its activity. You can also schedule pipelines to refresh data at defined intervals to meet your business requirements. For this tutorial, we run the pipeline only once by selecting **Run**.
 
