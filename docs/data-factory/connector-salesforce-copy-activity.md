@@ -55,7 +55,7 @@ The following properties are **required**:
 Under **Advanced**, you can specify the following fields:
 
 - **Include deleted objects**: Specify whether to query the existing records (unselected), or query all records including the deleted ones (selected).
-- **Partition option**: Provide capability to automatically detect and apply the optimal partitioning algorithm to optimize for read throughput when applicable. You are recommended to select 'auto detect' for long-running copy that can benefit from multi-threaded reads. The default value is Auto detect.
+- **Partition option**: Provide capability to automatically detect and apply the optimal partitioning algorithm to optimize for read throughput when applicable. You are recommended to select Auto detect for long-running copy that can benefit from multi-threaded reads. The default value is Auto detect.
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 ### Destination
@@ -114,7 +114,7 @@ The following tables contain more information about the copy activity in Salesfo
 | **SOQL Query** | Use the custom query to read data. You can only use [Salesforce Object Query Language (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query with limitations [Understanding Bulk API 2.0 Query](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/queries.htm#SOQL%20Considerations). If you don't specify **SOQL query**, all the data of the Salesforce object specified in **Object API** or **Report ID** will be retrieved. |< your SOQL query >  | Yes | query |
 |  |  |  |  |  |
 | **Include deleted objects** | Indicates whether to query the existing records, or query all records including the deleted ones. | selected or unselected (default) | No |
-| **Partition option** |Provide capability to automatically detect and apply the optimal partitioning algorithm to optimize for read throughput when applicable. You are recommended to select 'auto detect' for long-running copy that can benefit from multi-threaded reads.   | None or AutoDetect (default) | No | partitionOption |
+| **Partition option** |Provide capability to automatically detect and apply the optimal partitioning algorithm to optimize for read throughput when applicable. You are recommended to select Auto detect for long-running copy that can benefit from multi-threaded reads.   | None or AutoDetect (default) | No | partitionOption |
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
 ### Destination information
