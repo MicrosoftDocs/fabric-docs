@@ -46,7 +46,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
    | Connection name | wwisampledata |
    | Authentication kind | Anonymous |
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-blob.png" alt-text="Screenshot showing where to select blob storage connection" lightbox="media\tutorial-lakehouse-data-ingestion\data-store-source-blob.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-blob.png" alt-text="Screenshot showing where to select blob storage connection." lightbox="media\tutorial-lakehouse-data-ingestion\data-store-source-blob.png":::
 
 1. Once the new connection is created, return to the **Source** tab of the copy data activity, and the newly created connection is selected by default. Specify the following properties before moving to the destination settings.
 
