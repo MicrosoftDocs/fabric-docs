@@ -37,55 +37,50 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. From the **Source** tab of the selected copy data activity, open the **Connection** field and select **Browse all**. Choose data source window pops up, search and select **Azure blobs**. For this tutorial, all the sample data is available in a public container of Azure blob storage. You connect to this container to copy data from it.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-external.png" alt-text="Screenshot showing where to select External and + New on the Source tab.":::
-
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\new-connection-azure-blob-storage.png" alt-text="Screenshot of the New connection wizard, showing where to select Azure Blob Storage.":::
-
 1. Enter the following details in the **Connection settings** window,  and select **Connect** to create the connection to the data source.
 
-| Property | Value |
-|--|--|
-| Account name or URL | https://fabrictutorialdata.blob.core.windows.net/sampledata/ | 
-| Connection | Create new connection |
-| Connection name | wwisampledata |
-| Authentication kind | Anonymous |
+   | Property | Value |
+   |--|--|
+   | Account name or URL | https://fabrictutorialdata.blob.core.windows.net/sampledata/ |
+   | Connection | Create new connection |
+   | Connection name | wwisampledata |
+   | Authentication kind | Anonymous |
 
-:::image type="content" source="media\tutorial-lakehouse-data-ingestion\connection-settings-details.png" alt-text="Screenshot of the Connection settings screen, showing where to enter the details and select Create.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-blob.png" alt-text="Screenshot showing where to select blob storage connection":::
 
 1. Once the new connection is created, return to the **Source** tab of the copy data activity, and the newly created connection is selected by default. Specify the following properties before moving to the destination settings.
 
-| Property | Value |
-|--|--|
-| Connection | wwisampledata |
-| File path type | File path |
-| File path | Container name (first text box): sampledata<br>Directory name (second text box): WideWorldImportersDW/parquet |
-| Recursively | Checked |
-| File format | Binary |
+   | Property | Value |
+   |--|--|
+   | Connection | wwisampledata |
+   | File path type | File path |
+   | File path | Container name (first text box): sampledata<br>Directory name (second text box): WideWorldImportersDW/parquet |
+   | Recursively | Checked |
+   | File format | Binary |
 
-:::image type="content" source="media\tutorial-lakehouse-data-ingestion\source-tab-details.png" alt-text="Screenshot of the source tab showing where to enter the specific details.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\blob-storage-connection-settings.png" alt-text="Screenshot showing the Blob Storage connection settings.":::
 
 1. From the **Destination** tab of the selected copy data activity, specify the following properties:
 
-| Property | Value |
-|--|--|
-| Connection | wwilakehouse (choose your lakehouse if you named it differently) |
-| Root folder | Files |
-| File path | Directory name (first text box): wwi-raw-data |
-| File format | Binary |
+   | Property | Value |
+   |--|--|
+   | Connection | wwilakehouse (choose your lakehouse if you named it differently) |
+   | Root folder | Files |
+   | File path | Directory name (first text box): wwi-raw-data |
+   | File format | Binary |
 
-:::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-tab-details.png" alt-text="Screenshot of the Destination tab, showing where to enter specific details.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-settings.png" alt-text="Screenshot of the destination tab, showing where to enter specific details.":::
 
-You have configured the copy data activity. Select the **save** icon on the top ribbon (below Home) to save your changes, and select **Run** to execute your pipeline and its activity. You can also schedule pipelines to refresh data at defined intervals to meet your business requirements. For this tutorial, we run the pipeline only once by selecting **Run**.
+1. You have configured the copy data activity. Select the **Save** icon on the top ribbon (below Home) to save your changes, and select **Run** to execute your pipeline and its activity. You can also schedule pipelines to refresh data at defined intervals to meet your business requirements. For this tutorial, we run the pipeline only once by selecting **Run**.
 
-This action triggers data copy from the underlying data source to the specified lakehouse and might take up to a minute to complete. You can monitor the execution of the pipeline and its activity under the **Output** tab. The activity status changes from **Queued** > **In progress** > **Succeeded**.
+1. This action triggers data copy from the underlying data source to the specified lakehouse and might take up to a minute to complete. You can monitor the execution of the pipeline and its activity under the **Output** tab. The activity status changes from **Queued** > **In progress** > **Succeeded**.
 
-:::image type="content" source="media\tutorial-lakehouse-data-ingestion\save-run-output-tab.png" alt-text="Screenshot showing where to select Save and Run, and where to find the run details and glasses icon on the Output tab.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\save-run-output-tab.png" alt-text="Screenshot showing where to select Save and Run, and where to find the run details and glasses icon on the Output tab.":::
 
-Once the data is copied, open your lakehouse (wwilakehouse) to view the data. Refresh the **Files** section to see the ingested data.
+1. After the copy activity is successful, open your lakehouse (wwilakehouse) to view the data. Refresh the **Files** section to see the ingested data. A new folder **wwi-raw-data** appears in the files section, and data from Azure Blob tables is copied there.
 
-:::image type="content" source="media\tutorial-lakehouse-data-ingestion\item-view-select-lakehouse.png" alt-text="Screenshot showing where to select the lakehouse to launch the Explorer view.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\validate-data-lakehouse.png" alt-text="Screenshot showing blob data copied into destination lakehouse.":::
 
-1. Validate that a new folder **wwi-raw-data** appears in the files section, and data for all the tables is copied there.
 
 <!-- Don't delete this section, it shows HTTP connection to load data, used as an alternative incase the blob link is not accessible.
 
