@@ -22,7 +22,7 @@ Microsoft Fabric uses a multi-layer security model with different controls avail
 
 In the Fabric Data Warehouse workload, the warehouse and SQL analytics endpoint items also allow for the defining of native SQL security. SQL security uses the full library of T-SQL security constructs to allow for granular access control of tables, views, rows, and columns within an item. For more information on SQL security, see [SQL granular permissions](../../data-warehouse/sql-granular-permissions.md).
 
-The SQL permissions that are configured in the warehouse or SQL analytics endpoint only apply to queries that are executed against the warehouse or SQL analytics endpoint. The underlying data lives in OneLake, but access to OneLake data is controlled separately through [OneLake data access roles](./get-started-data-access-roles.md). To ensure users with SQL specific permissions don't see data they don't have SQL access to, don't include those users in a OneLake data access role.
+The SQL permissions that are configured in the warehouse or SQL analytics endpoint only apply to queries that are executed against the warehouse or SQL analytics endpoint. The underlying data lives in OneLake, but access to OneLake data is controlled separately through [OneLake data access roles](./get-started-onelake-security.md). To ensure users with SQL specific permissions don't see data they don't have SQL access to, don't include those users in a OneLake data access role.
 
 ## Secure by use case
 
@@ -68,13 +68,13 @@ All shortcuts in a lakehouse are accessed in a delegated mode when querying thro
 > [!NOTE]
 > For example, UserA is the owner of a lakehouse and UserB is running a query on a table that is a shortcut. UserB must first have read access on the table, whether through ReadData or through SQL permissions. In order to see data, the query then checks if UserA has access to the shortcut. If UserA has access, UserB will see the query results. If UserA does not have access, the query will fail.
 
-For lakehouses using the [OneLake data access roles](./get-started-data-access-roles.md) feature, access to a shortcut is determined by whether the SQL analytics endpoint owner has access to see the target lakehouse and read the table through a OneLake data access role.
+For lakehouses using the [OneLake data access roles](./get-started-onelake-security.md) feature, access to a shortcut is determined by whether the SQL analytics endpoint owner has access to see the target lakehouse and read the table through a OneLake data access role.
 
-For lakehouses that are not yet using the [OneLake data access roles](./get-started-data-access-roles.md) feature, shortcut access is determined by whether the SQL analytics endpoint owner has the Read and ReadAll permission on the target path.
+For lakehouses that are not yet using the [OneLake data access roles](./get-started-onelake-security.md) feature, shortcut access is determined by whether the SQL analytics endpoint owner has the Read and ReadAll permission on the target path.
 
 ## Related content
 
-- [OneLake data access roles (preview)](./get-started-data-access-roles.md)
+- [OneLake data access roles (preview)](./get-started-onelake-security.md)
 - [OneLake data access control model](./data-access-control-model.md)
 - [Workspace roles](../../fundamentals/roles-workspaces.md)
 - [How to secure data in OneLake for data science](./how-to-secure-data-onelake-for-data-science.md)

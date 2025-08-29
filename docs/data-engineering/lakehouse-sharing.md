@@ -56,7 +56,7 @@ To create a new data access role:
 1. Choose the permissions you would like to assign, enter names or email addresses in the **Add people or groups** field and select **Add**.
 1. Review the assignee list under **Assigned people and groups**, remove any that you don't want on the list, and select **Save**.
 
-For more information, see [Get started with OneLake data access roles](../onelake/security/get-started-data-access-roles.md).
+For more information, see [Get started with OneLake data access roles](../onelake/security/get-started-onelake-security.md).
 
 ## Known issues
 * The sharing dialog for lakehouse shows an option to subscribe to OneLake events. Permission to subscribe to this event is granted along with the *Read All* Apache Spark permission. This is a temporary limitation.

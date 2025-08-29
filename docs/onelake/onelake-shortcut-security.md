@@ -29,7 +29,7 @@ To create a shortcut a user needs to have Write permission on the Fabric Item wh
 | **Create a shortcut** | Write<sup>2</sup> | ReadAll<sup>1</sup> |
 | **Delete a shortcut** | Write<sup>2</sup>| N/A |
 
-<sup>1</sup> If [OneLake security](./security/get-started-data-onelake-security.md) is enabled the user needs to be in a role that grants access to the target path.
+<sup>1</sup> If [OneLake security](./security/get-started-onelake-security.md) is enabled the user needs to be in a role that grants access to the target path.
 <sup>2</sup> If [OneLake data access roles](./security/get-started-onelake-security.md) is enabled the user needs to be in a role that grants access to the target path.
 
 ## Accessing shortcuts
@@ -44,7 +44,7 @@ The following table shows the shortcut-related permissions for each shortcut act
 | **Write to shortcut target location** | Write | Write |
 | **Read data from shortcuts in table section of the lakehouse via TDS endpoint** | Read | ReadAll<sup>2</sup> |
 
-<sup>1</sup> If [OneLake security](./security/get-started-data-onelake-security.md) is enabled the user needs to be in a role that grants access to the target path.
+<sup>1</sup> If [OneLake security](./security/get-started-onelake-security.md) is enabled the user needs to be in a role that grants access to the target path.
 
 > [!IMPORTANT]
 > <sup>2</sup> When accessing shortcuts through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines in Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user. To resolve this, use **Power BI semantic models in DirectLake over OneLake mode** or **T-SQL in User's identity mode**.
@@ -65,13 +65,13 @@ In the passthrough model, the shortcut accesses data in the target location by �
 
 With OneLake to OneLake shortcuts, only passthrough mode is supported. This design ensures that the source system retains full control over its data. Organizations benefit from enhanced security because there’s no need to replicate or redefine access controls for the shortcut. However, it’s important to understand that security for OneLake shortcuts cannot be modified directly from the downstream item. Any changes to access permissions must be made at the source location.
 
-:::image type="content" source=".\media\onelake-shortcut-security\PassthroughMode.png" alt-text="Diagram showing the user identity getting passed along the shortcut to the target path." lightbox=".\media\onelake-shortcut-security\PassthroughMode.png":::
+:::image type="content" source=".\media\onelake-shortcut-security\passthrough-mode.png" alt-text="Diagram showing the user identity getting passed along the shortcut to the target path." lightbox=".\media\onelake-shortcut-security\passthrough-mode.png":::
 
 Delegated shortcuts access data by using some intermediate credential, such as another user or an account key. These shortcuts allow for permission management to be separated or ‘delegated’ to another team or downstream user to manage. Delegated shortcuts always break the flow of security from one system to another. All delegated shortcuts in OneLake can have OneLake security roles defined for them.
 
 All shortcuts from OneLake to external systems (multi-cloud shortcuts) like AWS S3 or Google Cloud Storage are delegated. This allows users to connect to the external system without being given direct access. OneLake security can then be configured on the shortcut to limit what data in the external system can be accessed
 
-:::image type="content" source=".\media\onelake-shortcut-security\DelegatedMode.png" alt-text="Diagram showing the delegated identity used to access the data in the shortcut target." lightbox=".\media\onelake-shortcut-security\DelegatedMode.png":::
+:::image type="content" source=".\media\onelake-shortcut-security\delegated-mode.png" alt-text="Diagram showing the delegated identity used to access the data in the shortcut target." lightbox=".\media\onelake-shortcut-security\delegated-mode.png":::
 
 ### OneLake security limitations
 

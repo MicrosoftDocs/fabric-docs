@@ -64,13 +64,13 @@ Workspace role assignments follow the same guidelines for both hub and spoke and
 
 Data scientists need access to data in a lakehouse to consume through Apache Spark. For _data mesh_ and _hub and spoke_, the Spark users consume data from a separate workspace than the one the data resides in. This allows data scientists to have access to create models and experiments without adding clutter to the workspace that holds the data. Data scientists can also use other non-Spark services that connect directly to the OneLake data paths, such as Azure Databricks or Dremio.
 
-To provision access for data scientists, use the share button to share the lakehouse. Select the **Read all Apache Spark** box in the dialog. For lakehouses with [OneLake data access roles](.\get-started-data-access-roles.md) enabled, give the same users access by adding them to a OneLake data access role. Using OneLake data access roles gives finer-grained access to the data. Data engineers can then create [shortcuts](../onelake-shortcuts.md) to select tables or folders in a lakehouse.
+To provision access for data scientists, use the share button to share the lakehouse. Select the **Read all Apache Spark** box in the dialog. For lakehouses with [OneLake data access roles](.\get-started-onelake-security.md) enabled, give the same users access by adding them to a OneLake data access role. Using OneLake data access roles gives finer-grained access to the data. Data engineers can then create [shortcuts](../onelake-shortcuts.md) to select tables or folders in a lakehouse.
 
 ### Data engineers
 
 Data engineers need access to data in a lakehouse to build out downstream data products. Data engineers need access to the data in OneLake so pipelines or notebooks can be created to read the data. In a true hub and spoke model, the data engineer role exists only within the layers of the central hub team. However, for data mesh, data engineers combine data products across domains to build new data sets.
 
-Use the share button to share the lakehouse with data engineers. Check the **Read all Apache Spark** box in the dialog. For lakehouses with [OneLake data access roles](.\get-started-data-access-roles.md) enabled, give the same users access by adding them to a OneLake data access role. Using OneLake data access roles gives finer-grained access to the data. Data engineers can then create [shortcuts](../onelake-shortcuts.md) to select tables or folders in a lakehouse.
+Use the share button to share the lakehouse with data engineers. Check the **Read all Apache Spark** box in the dialog. For lakehouses with [OneLake data access roles](.\get-started-onelake-security.md) enabled, give the same users access by adding them to a OneLake data access role. Using OneLake data access roles gives finer-grained access to the data. Data engineers can then create [shortcuts](../onelake-shortcuts.md) to select tables or folders in a lakehouse.
 
 ### Business analysts
 
@@ -96,7 +96,7 @@ You can also share data with report consumers by using an [app](/power-bi/consum
 
 ## Related content
 
-- [OneLake data access roles (preview)](./get-started-data-access-roles.md)
+- [OneLake data access roles (preview)](./get-started-onelake-security.md)
 - [OneLake data access control model](./data-access-control-model.md)
 - [Workspace roles](../../fundamentals/roles-workspaces.md)
 - [Share items](../../fundamentals/share-items.md)

@@ -43,7 +43,7 @@ For users that need to read data using pipelines or Apache Spark notebooks, perm
 
 In order to read data, a user first needs access to the lakehouse where that data lives. Granting access to a lakehouse can be done by selecting the **Share** button on a lakehouse either from the workspace page or from within the lakehouse UI. Enter the email addresses or security group for those users and select **Share**. (Leave the Additional permissions boxes unchecked. For lakehouses without the OneLake data access roles preview enabled, check the **Read all OneLake data (ReadAll)**) box.
 
-Next, navigate to the lakehouse and select the **Manage OneLake data access (preview)** button. With these options, you can create roles that grant users access to see and read from specific folders in the lakehouse. Access to folders is disallowed by default. Users that are added to a role are granted access to the folders covered by that role. For more information, see [OneLake data access roles (preview).](../security/get-started-data-access-roles.md) Create roles as needed to grant users access to read the folders through pipelines, shortcuts, or Spark notebooks.
+Next, navigate to the lakehouse and select the **Manage OneLake data access (preview)** button. With these options, you can create roles that grant users access to see and read from specific folders in the lakehouse. Access to folders is disallowed by default. Users that are added to a role are granted access to the folders covered by that role. For more information, see [OneLake data access roles (preview).](../security/get-started-onelake-security.md) Create roles as needed to grant users access to read the folders through pipelines, shortcuts, or Spark notebooks.
 
 > [!IMPORTANT]
 > All lakehouses using the OneLake data access roles preview have a DefaultReader role that grants access to the lakehouse data. If a user has the ReadAll permission, they will not be restricted by other data access roles. Make sure that any users that are included in a data access role are not also part of the DefaultReader role or remove the DefaultReader role.
@@ -59,7 +59,7 @@ You can secure data for use with shortcuts just like any other folder in OneLake
 
 ## Related content
 
-- [OneLake data access roles (preview)](./get-started-data-access-roles.md)
+- [OneLake data access roles (preview)](./get-started-onelake-security.md)
 - [OneLake data access control model](./data-access-control-model.md)
 - [Workspace roles](../../fundamentals/roles-workspaces.md)
 - [Share items](../../fundamentals/share-items.md)
