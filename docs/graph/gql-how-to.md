@@ -1601,7 +1601,7 @@ The following GQLSTATUS codes are used by graph in Microsoft Fabric:
 
 ### Reserved words
 
-GQL reserves certain keywords that you can't use as identifiers like variables, property names, or label names. See [GQL reserved words](gql-reserved-words.md) for the complete list.
+GQL reserves certain keywords that you can't use as identifiers like variables, property names, or label names. See [GQL reserved words](gql-reference-reserved-terms.md) for the complete list.
 
 If you need to use reserved words as identifiers, escape them with backticks: `` `match` ``, `` `return` ``.
 

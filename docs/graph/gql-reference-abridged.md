@@ -10,7 +10,7 @@ ms.reviewer: eur
 
 # GQL quick reference
 
-This article is a quick reference for GQL (Graph Query Language) syntax in graph in Microsoft Fabric. For detailed explanations, see the [GQL language reference](gql-language-reference.md).
+This article is a quick reference for GQL (Graph Query Language) syntax in graph in Microsoft Fabric. For detailed explanations, see the [GQL language reference](gql-how-to.md).
 
 ## Query structure
 
@@ -57,7 +57,7 @@ MATCH <graph pattern> [ WHERE <predicate> ]
 MATCH (n:Person)-[:knows]-(m:Person) WHERE n.age > 25
 ```
 
-For more information about the `MATCH` statement, see the [comprehensive guide](gql-language-reference.md#match-statement).
+For more information about the `MATCH` statement, see the [comprehensive guide](gql-how-to.md#match-statement).
 
 ### LET  
 
@@ -72,7 +72,7 @@ LET <variable> = <expression>, <variable> = <expression>, ...
 LET fullName = n.firstName || ' ' || n.lastName
 ```
 
-For more information about the `LET` statement, see the [comprehensive guide](gql-language-reference.md#let-statement).
+For more information about the `LET` statement, see the [comprehensive guide](gql-how-to.md#let-statement).
 
 ### FILTER
 
@@ -87,7 +87,7 @@ FILTER [ WHERE ] <predicate>
 FILTER WHERE n.age > m.age
 ```
 
-For more information about the `FILTER` statement, see the [comprehensive guide](gql-language-reference.md#filter-statement).
+For more information about the `FILTER` statement, see the [comprehensive guide](gql-how-to.md#filter-statement).
 
 
 ### ORDER BY
@@ -103,7 +103,7 @@ ORDER BY <expression> [ ASC | DESC ], ...
 ORDER BY n.lastName ASC, n.firstName ASC
 ```
 
-For more information about the `ORDER BY` statement, see the [comprehensive guide](gql-language-reference.md#order-by-statement).
+For more information about the `ORDER BY` statement, see the [comprehensive guide](gql-how-to.md#order-by-statement).
 
 ### OFFSET/LIMIT
 
@@ -119,7 +119,7 @@ LIMIT <limit>
 OFFSET 10 LIMIT 20
 ```
 
-For more information about the `OFFSET` and `LIMIT` statements, see the [comprehensive guide](gql-language-reference.md#offset-and-limit-statements).
+For more information about the `OFFSET` and `LIMIT` statements, see the [comprehensive guide](gql-how-to.md#offset-and-limit-statements).
 
 ### RETURN
 
@@ -134,7 +134,7 @@ RETURN [ DISTINCT ] <expression> [ AS <alias> ], ...
 RETURN n.name, m.age
 ```
 
-For more information about the `RETURN` statement, see the [comprehensive guide](gql-language-reference.md#return-statement).
+For more information about the `RETURN` statement, see the [comprehensive guide](gql-how-to.md#return-statement).
 
 ## Graph patterns
 
@@ -151,7 +151,7 @@ Node patterns describe how to match nodes in the graph. You can filter by label 
 (:Person)        -- Person node, don't bind variable
 ```
 
-For more information about node patterns, see the [comprehensive guide](gql-language-reference.md#simple-node-patterns).
+For more information about node patterns, see the [comprehensive guide](gql-how-to.md#simple-node-patterns).
 
 ### Edge patterns
 
@@ -162,7 +162,7 @@ Edge patterns specify relationships between nodes, including direction and edge 
 <-[e]-             -- Incoming edge
 ```
 
-For more information about edge patterns, see the [comprehensive guide](gql-language-reference.md#simple-edge-patterns).
+For more information about edge patterns, see the [comprehensive guide](gql-how-to.md#simple-edge-patterns).
 
 ### Label expressions
 
@@ -176,7 +176,7 @@ Label expressions let you match nodes with specific label combinations using log
 :(Person|!Company)&Active        -- Complex expressions with parentheses
 ```
 
-For more information about label expressions, see the [comprehensive guide](gql-language-reference.md#label-expressions).
+For more information about label expressions, see the [comprehensive guide](gql-how-to.md#label-expressions).
 
 ### Path patterns  
 
@@ -191,7 +191,7 @@ Path patterns describe traversals through the graph, including hop counts and va
 p=()-[:knows]->()                 -- Binding a path variable
 ```
 
-For more information about path patterns, see the [comprehensive guide](gql-language-reference.md#compose-path-patterns).
+For more information about path patterns, see the [comprehensive guide](gql-how-to.md#compose-path-patterns).
 
 ### Multiple patterns
 
@@ -203,7 +203,7 @@ Multiple patterns let you match complex, non-linear graph structures in a single
 (a)->(b)<-(c), (b)->(d)          -- Non-linear structures
 ```
 
-For more information about multiple patterns, see the [comprehensive guide](gql-language-reference.md#compose-non-linear-patterns).
+For more information about multiple patterns, see the [comprehensive guide](gql-how-to.md#compose-non-linear-patterns).
 
 ## Data types
 
@@ -219,7 +219,7 @@ BOOL             -- TRUE, FALSE, UNKNOWN
 ZONED DATETIME   -- ZONED_DATETIME('2023-01-15T10:30:00Z')
 ```
 
-Learn more about basic types in the [comprehensive guide](gql-language-reference.md#understand-values-and-value-types).
+Learn more about basic types in the [comprehensive guide](gql-how-to.md#understand-values-and-value-types).
 
 ### Reference value types
 
@@ -230,7 +230,7 @@ NODE             -- Node reference values
 EDGE             -- Edge reference values
 ```
 
-Learn more about reference value types in the [comprehensive guide](gql-language-reference.md#reference-value-types).
+Learn more about reference value types in the [comprehensive guide](gql-how-to.md#reference-value-types).
 
 ### Collection types
 
@@ -242,7 +242,7 @@ LIST<STRING>     -- ['a', 'b', 'c']
 PATH             -- Path values
 ```
 
-Learn more about collection types in the [comprehensive guide](gql-language-reference.md#constructed-value-types).
+Learn more about collection types in the [comprehensive guide](gql-how-to.md#constructed-value-types).
 
 ### Nullable types
 
@@ -284,7 +284,7 @@ CONSTRAINT compound_key
   FOR (n:Node) REQUIRE (n.prop1, n.prop2) IS KEY
 ```
 
-Learn more about graph types and schema in the [comprehensive guide](gql-language-reference.md#graph-types--schema).
+Learn more about graph types and schema in the [comprehensive guide](gql-how-to.md#graph-types--schema).
 
 ## Expressions & operators
 
@@ -298,7 +298,7 @@ Comparison operators compare values and check for equality, ordering, or nulls.
 IS NULL, IS NOT NULL             -- Null checks
 ```
 
-For more information about comparison predicates, see the [comprehensive guide](gql-language-reference.md#comparison-predicates).
+For more information about comparison predicates, see the [comprehensive guide](gql-how-to.md#comparison-predicates).
 
 ### Logical
 
@@ -309,7 +309,7 @@ Logical operators combine or negate boolean conditions in queries.
 AND, OR, NOT                     -- Boolean logic
 ```
 
-For more information about logical expressions, see the [comprehensive guide](gql-language-reference.md#logical-expressions).
+For more information about logical expressions, see the [comprehensive guide](gql-how-to.md#logical-expressions).
 
 ### Arithmetic  
 
@@ -320,7 +320,7 @@ Arithmetic operators perform calculations on numbers.
 +, -, *, /                       -- Basic math
 ```
 
-For more information about arithmetic expressions, see the [comprehensive guide](gql-language-reference.md#arithmetic-expressions).
+For more information about arithmetic expressions, see the [comprehensive guide](gql-how-to.md#arithmetic-expressions).
 
 
 ### String patterns
@@ -334,7 +334,7 @@ n.email STARTS WITH 'admin'     -- Starts with prefix
 n.phone ENDS WITH '1234'        -- Ends with suffix
 ```
 
-For more information about string pattern predicates, see the [comprehensive guide](gql-language-reference.md#string-pattern-predicates).
+For more information about string pattern predicates, see the [comprehensive guide](gql-how-to.md#string-pattern-predicates).
 
 ### List operations
 
@@ -347,7 +347,7 @@ n.tags[0]                        -- First element
 size(n.tags)                     -- List length
 ```
 
-For more information about list membership predicates, see the [comprehensive guide](gql-language-reference.md#list-membership-predicates).
+For more information about list membership predicates, see the [comprehensive guide](gql-how-to.md#list-membership-predicates).
 
 ### Property access
 
@@ -358,7 +358,7 @@ Property access gets the value of a property from a node or edge.
 n.firstName                      -- Property access
 ```
 
-For more information about property access, see the [comprehensive guide](gql-language-reference.md#property-access).
+For more information about property access, see the [comprehensive guide](gql-how-to.md#property-access).
 
 ## Functions
 
@@ -376,7 +376,7 @@ min(n.age), max(n.age)           -- Minimum and maximum values
 collect_list(n.name)             -- Collect values into a list
 ```
 
-Learn more about aggregate functions in the [comprehensive guide](gql-language-reference.md#aggregate-functions).
+Learn more about aggregate functions in the [comprehensive guide](gql-how-to.md#aggregate-functions).
 
 ### String functions  
 
@@ -390,7 +390,7 @@ trim(s)                          -- Remove leading and trailing whitespace
 string_join(list, separator)     -- Join list elements with a separator
 ```
 
-Learn more about string functions in the [comprehensive guide](gql-language-reference.md#string-functions).
+Learn more about string functions in the [comprehensive guide](gql-how-to.md#string-functions).
 
 ### List functions
 
@@ -402,7 +402,7 @@ size(list)                       -- List length
 trim(list, n)                    -- Trim a list to be at most size `n`
 ```
 
-Learn more about list functions in the [comprehensive guide](gql-language-reference.md#list-functions).
+Learn more about list functions in the [comprehensive guide](gql-how-to.md#list-functions).
 
 ### Graph functions
 
@@ -415,7 +415,7 @@ nodes(path)                      -- Get path nodes
 edges(path)                      -- Get path edges
 ```
 
-Learn more about graph functions in the [comprehensive guide](gql-language-reference.md#graph-functions).
+Learn more about graph functions in the [comprehensive guide](gql-how-to.md#graph-functions).
 
 ### Temporal functions
 
@@ -425,7 +425,7 @@ Temporal functions let you work with date and time values.
 zoned_datetime()               -- Get the current timestamp
 ```
 
-Learn more about temporal functions in the [comprehensive guide](gql-language-reference.md#temporal-functions).
+Learn more about temporal functions in the [comprehensive guide](gql-how-to.md#temporal-functions).
 
 ### Generic functions
 
@@ -435,7 +435,7 @@ Generic functions let you work with data in common ways.
 coalesce(expr1, expr2, ...)    -- Get the first non-null value
 ```
 
-Learn more about generic functions in the [comprehensive guide](gql-language-reference.md#generic-functions).
+Learn more about generic functions in the [comprehensive guide](gql-how-to.md#generic-functions).
 
 ## Common patterns
 
