@@ -71,8 +71,8 @@ Usage is measured in capacity minutes or capacity unit hours, depending on your 
 
 | Fabric operation name | Azure billing meter | Unit of measure | Fabric Consumption Unit |
 |---|---|---|---|
-| Graph general operations | Graph Capacity Usage CU | CPU hour | 10 |
-| Graph algorithm operations| Graph Capacity Usage CU | CPU hour | 16 |
+| Graph general operations | Graph Capacity Usage CU | Minute | 10 CUs per minute |
+| Graph algorithm operations| Graph Capacity Usage CU | Minute | 16 CUs per minute |
 | Graph cache storage | OneLakeCache | Per GB per month | - |
 | Graph standard storage | OneLakeStorage | Per GB per month | - |
 
