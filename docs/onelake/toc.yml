@@ -94,7 +94,7 @@ items:
   - name: Get started with securing data in OneLake
     items:
     - name: Get started with OneLake security
-      href: ./security/get-started-onelake-securitys.md
+      href: ./security/get-started-onelake-security.md
     - name: Best practices
       href: ./security/best-practices-secure-data-in-onelake.md
   - name: Authorize with a OneLake shared access signature (SAS)
