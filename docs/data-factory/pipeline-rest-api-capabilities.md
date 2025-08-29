@@ -5,7 +5,7 @@ author: conxu-ms
 ms.author: conxu
 ms.topic: conceptual
 ms.custom: pipelines
-ms.date: 10/24/2024
+ms.date: 08/28/2025
 ---
 
 # REST API capabilities for pipelines in Fabric Data Factory
@@ -93,7 +93,7 @@ Create a pipeline in a specified workspace.
 {
   "displayName": "My pipeline",
   "description": "My pipeline description",
-  "type": "pipeline"
+  "type": "DataPipeline"
 }
 ```
 
@@ -133,7 +133,7 @@ Create a pipeline with a base64 definition in a specified workspace.
   "displayName": " My pipeline",
   "description": "My pipeline description",
 
-  "type": "pipeline",
+  "type": "DataPipeline",
   "definition": { 
     "parts": [ 
       { 
@@ -246,7 +246,7 @@ Updates the properties of the pipeline.
 {
   "displayName": "My pipeline updated",
   "description": "My pipeline description updated",
-  "type": "pipeline"
+  "type": "DataPipeline"
 }
 ```
 
@@ -284,7 +284,7 @@ Updates the pipeline item definition.
 ```rest
 {
   "displayName": " My pipeline ",
-  "type": "pipeline",
+  "type": "DataPipeline",
   "definition": {
     "parts": [ 
       { 
