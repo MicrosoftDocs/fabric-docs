@@ -771,10 +771,10 @@ items:
   items:
   - name: Real-Time Dashboards
     items:
-    - name: Generate Real-Time Dashboard Using Copilot
-      href: copilot-generate-dashboard.md      
     - name: Create a Real-Time Dashboard
       href: dashboard-real-time-create.md
+    - name: Generate Real-Time Dashboard Using Copilot
+      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
     - name: Real-Time Dashboard permissions
       href: dashboard-permissions.md
     - name: Explore data in Real-Time Dashboard tiles
