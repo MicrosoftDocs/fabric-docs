@@ -84,6 +84,21 @@ You can define and manage OneLake security roles through your lakehouse data acc
 
 Learn more in [Get started with data access roles](../security/get-started-data-access-roles.md).
 
+## Engine and user access to data
+
+All data access to OneLake occurs in one of two ways: through a Fabric query engine or through user access. (Queries from non-Fabric engines are considered user access) OneLake security ensures that data is always kept secure. Because certain OneLake security features like row and column level security are not supported by storage level operations, not all types of access to row or column level secured data can be permitted. This guarantees that users cannot see rows or columns they aren't permitted to. Microsoft Fabric engines are enabled to apply row and column level security filtering to data queries. This means when a user queries data in a lakehouse or other item with OneLake security RLS or CLS on it, the results the user sees will have the hidden rows and columns removed. For user access to data in OneLake with RLS or CLS on it, the query will be blocked if the user requesting access is not permitted to see all the rows or columns in that table.
+
+The table below outlines which Microsoft Fabric engines support RLS and CLS filtering.
+
+| **Engine** | **RLS/CLS filtering** | **Status** |
+|---|---|---|---|---|
+| Lakehouse | Yes | Public preview |
+| Spark notebooks | Yes | Public preview |
+| SQL Analytics Endpoint in "user's identity mode" | Yes | Public preview |
+| Semantic models using DirectLake on OneLake mode | Yes | Public preview |
+| Eventhouse | No | Planned |
+| Data warehouse external tables | No | Planned |
+
 ## OneLake security access control model details
 
 This section will provide details on how OneLake security roles grant access to specific scopes, how that access operates, and how access is resolved across multiple roles and access types. 
