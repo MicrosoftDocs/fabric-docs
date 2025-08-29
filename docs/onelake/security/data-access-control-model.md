@@ -319,9 +319,7 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 
 * OneLake security doesn't support cross-region shortcuts. Any attempts to access shortcut to data across different capacity regions result in 404 errors.
 
-* If you add a distribution list to a role in OneLake security, the SQL endpoint can't resolve the members of the list to enforce access. The result is that users appear not to be members of the role when they access the SQL endpoint.
-
-* Semantic models don't support shortcuts pointing to other lakehouses that don't have OneLake security enabled.
+* If you add a distribution list to a role in OneLake security, the SQL endpoint can't resolve the members of the list to enforce access. The result is that users appear not to be members of the role when they access the SQL endpoint. DirectLake on SQL semantic models are subject to this limitation too.
 
 * To query data from a Spark notebook using Spark SQL, the user must have at least Viewer access in the workspace they're querying.
 

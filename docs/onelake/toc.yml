@@ -97,14 +97,6 @@ items:
       href: ./security/get-started-onelake-securitys.md
     - name: Best practices
       href: ./security/best-practices-secure-data-in-onelake.md
-  - name: How to secure data in OneLake
-    items:
-    - name: For data science
-      href: ./security/how-to-secure-data-onelake-for-data-science.md
-    - name: For data warehousing
-      href: ./security/how-to-secure-data-onelake-for-data-warehousing.md
-    - name: For common data architectures
-      href: ./security/how-to-common-data-architectures.md
   - name: Authorize with a OneLake shared access signature (SAS)
     items:
     - name: What is OneLake SAS?
