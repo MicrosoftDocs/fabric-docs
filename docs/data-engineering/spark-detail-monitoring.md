@@ -17,7 +17,7 @@ With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache 
 You can access the Spark monitoring detail page from either the Fabric Monitoring Hub or the item's Recent runs panel. 
 
 To open an Apache Spark application job from the recent runs panel:
-- From the Spark job definition or notebook item context menu, select Recent run.
+- From the Spark job definition or notebook item context menu, select **Recent run**.
 - In the Recent runs page, select a job to open its monitoring details.
 
 ## Jobs tab
