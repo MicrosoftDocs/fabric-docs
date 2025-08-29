@@ -52,9 +52,9 @@ Every graph element has these characteristics:
 
 - An **internal ID** (a unique identifier) that distinguishes it from other graph elements.
 - **One or more labels**—character strings like `Person` or `knows`. Graph edges need one label, and nodes need one but can have more labels.
-- **Multiple properties**—name-value pairs like `service: "Fabric Graph"` that store the data attributes of your nodes and edges. Property names are sometimes called property keys.
+- **Multiple properties**—name-value pairs like `service: "Graph in Microsoft Fabric"` that store the data attributes of your nodes and edges. Property names are sometimes called property keys.
 
-Each node in a graph in Microsoft Fabric has a node key constraint. This constraint sets a unique key value that identifies the node by its properties.
+Each node in a graph has a node key constraint. This constraint sets a unique key value that identifies the node by its properties.
 
 ### Understanding graph structure
 
@@ -210,7 +210,7 @@ GQL gives you powerful, intuitive tools for querying graph data. Write queries t
 
 ### Basic query structure
 
-A GQL query in Fabric Graph is a linear query—a sequence of statements like `MATCH`, `LET`, `FILTER`, `ORDER BY`, `OFFSET`, `LIMIT`, and `RETURN`. Most queries start with the `MATCH` statement to find patterns in the graph. The `RETURN` statement must be last and determines what data you get back.
+A GQL query in graph in Microsoft Fabric is a linear query—a sequence of statements like `MATCH`, `LET`, `FILTER`, `ORDER BY`, `OFFSET`, `LIMIT`, and `RETURN`. Most queries start with the `MATCH` statement to find patterns in the graph. The `RETURN` statement must be last and determines what data you get back.
 
 > [!TIP]
 > GQL supports C-style `//` line comments, SQL-style `--` line comments, and C-style `/* */` block comments.
@@ -606,7 +606,7 @@ This pattern finds a person along with their education, employment, and content 
 
 #### Match trails
 
-In complex patterns, it's often undesirable to traverse the same edge multiple times. This becomes important when the actual graph contains cycles that could lead to infinite or overly long paths. To handle this, Fabric Graph supports the `TRAIL` match mode. 
+In complex patterns, it's often undesirable to traverse the same edge multiple times. This becomes important when the actual graph contains cycles that could lead to infinite or overly long paths. To handle this, graph in Microsoft Fabric supports the `TRAIL` match mode. 
 
 Prefixing a path pattern with the keyword `TRAIL` discards all matches that bind the same edge multiple times:
 
@@ -844,13 +844,13 @@ Here's how to create a hierarchy for different types of messages:
 })
 ```
 
-Both `Post` and `Comment` node types have the extra `Message` label, so they must include the same labels and property types as the `Message` node type (such as `creationDate` or `browserUsed`). If they didn't include all required properties, Fabric Graph would reject the graph type as invalid during deployment.
+Both `Post` and `Comment` node types have the extra `Message` label, so they must include the same labels and property types as the `Message` node type (such as `creationDate` or `browserUsed`). If they didn't include all required properties, graph in Microsoft Fabric rejects the graph type as invalid during deployment.
 
 This inheritance ensures that all messages, whether posts or comments, share common properties while still allowing each type to have its own specific properties.
 
 #### Save time with inheritance shortcuts
 
-Repeating labels and properties from parent node types gets tedious and error-prone. Fabric Graph provides the `+=` operator so you can specify only the extra (non-inherited) labels and property types:
+Repeating labels and properties from parent node types gets tedious and error-prone. Graph in Microsoft Fabric provides the `+=` operator so you can specify only the extra (non-inherited) labels and property types:
 
 ```gql
 (:Post => :Message += {
@@ -867,7 +867,7 @@ When no extra properties are specified, the graph inherits all required properti
 
 #### Use abstract node types
 
-You can define node types purely for building hierarchies, even when your graph doesn't contain concrete nodes of that type. This is useful for creating conceptual groupings and shared property sets. For this purpose, you can define a node type as `ABSTRACT` in Fabric Graph:
+You can define node types purely for building hierarchies, even when your graph doesn't contain concrete nodes of that type. This is useful for creating conceptual groupings and shared property sets. For this purpose, you can define a node type as `ABSTRACT` in graph in Microsoft Fabric:
 
 ```gql
 ABSTRACT (:Message => {
@@ -884,7 +884,7 @@ Abstract node types aren't available for direct graph loading—they exist only 
 
 ### Supported property types
 
-When you're defining a property type, the property value type must be one that Fabric Graph supports. Choosing the right data types is important for storage efficiency and query performance.
+When you're defining a property type, the property value type must be one that graph in Microsoft Fabric supports. Choosing the right data types is important for storage efficiency and query performance.
    
 Here are the data types you can use for property values:
 
@@ -912,7 +912,7 @@ Understanding key constraints is crucial because they:
 - **Support data integration**: Provide a stable way to reference nodes across different data sources.
 
 > [!IMPORTANT]
-> In Fabric Graph, every node must be constrained by exactly one key constraint.
+> For graph in Microsoft Fabric, every node must be constrained by exactly one key constraint.
 
 #### How node key constraints work
 
@@ -1090,7 +1090,7 @@ STRING [ NOT NULL ]
 
 #### Exact numeric types
 
-Fabric Graph supports exact numbers that are negative or positive integers.
+Graph in Microsoft Fabric supports exact numbers that are negative or positive integers.
 
 **How comparison works:**
 
@@ -1114,7 +1114,7 @@ UINT64 [ NOT NULL ]
 
 #### Approximate numeric types
 
-Fabric Graph supports approximate numbers that are IEEE 754-compatible floating point numbers.
+Graph in Microsoft Fabric supports approximate numbers that are IEEE 754-compatible floating point numbers.
 
 **How comparison works:**
 
@@ -1177,7 +1177,7 @@ Node reference values represent references to specific nodes in your graph. You 
 
 You should only compare node reference values for equality. Two node reference values are equal if and only if they reference the same node. 
 
-graph in Microsoft Fabric defines a deterministic order over reference values. However, this order can change from query to query and shouldn't be relied upon in production queries.
+Graph in Microsoft Fabric defines a deterministic order over reference values. However, this order can change from query to query and shouldn't be relied upon in production queries.
 
 **How to access properties:**
 
@@ -1270,7 +1270,7 @@ Lists are compared first by size, then element by element in order. Two lists ar
 
 **Group lists:**
 
-Group lists are lists bound by matching variable-length edge patterns. Their status as group lists is tracked by Fabric Graph.
+Group lists are lists bound by matching variable-length edge patterns. Their status as group lists is tracked by graph in Microsoft Fabric.
 
 Group lists can be used in horizontal aggregation. For more information, see [Aggregate functions](#aggregate-functions).
 
@@ -1493,7 +1493,7 @@ GQL supports various built-in functions:
 
 #### Aggregate functions
 
-Aggregate functions are used to evaluate an expression over a set of rows and obtain a final result value by combining the values computed for each row. The following aggregate functions are supported in Fabric Graph:
+Aggregate functions are used to evaluate an expression over a set of rows and obtain a final result value by combining the values computed for each row. The following aggregate functions are supported in graph in Microsoft Fabric:
 
 - `count(*)` - counts rows
 - `sum(expression)` - sums numeric values
