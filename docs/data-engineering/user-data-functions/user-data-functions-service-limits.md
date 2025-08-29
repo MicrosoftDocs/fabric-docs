@@ -53,7 +53,9 @@ The following list details the service limits for User Data Functions items.
 | Response size limit | 30 MB | The maximum size of the response's return value of a function. | 
 | Log retention | 30 days | The number of days that historical invocation logs are retained for by default. | 
 | Private library max size | 28.6 MB | The maximum size of a `.whl` file uploaded to the Library Management experience as a private library. | 
-| Test in portal timeout | 15 minutes | The amount of time the test session is active for until a new request is processed. The session is extended by 15 minutes when a new request is received within the timeout period. | 
+| Test in portal timeout | 15 minutes | The amount of time the test session is active for until a new request is processed. The session is extended by 15 minutes when a new request is received within the timeout period. |
+| Python version (Run capability) | 3.11 | The Python version used for published functions in Run only mode. | 
+| Python version (Test capability) | 3.12 | The Python version used for the [test capability](./test-user-data-functions.md#use-develop-mode-to-test-your-changes-in-the-fabric-portal) in Develop mode. |
 
 ## Next steps
 - [Create a new User Data Functions item from the Fabric portal](./create-user-data-functions-portal.md) or by using [the VS Code extension](./create-user-data-functions-vs-code.md).
