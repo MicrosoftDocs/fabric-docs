@@ -20,7 +20,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: Graph in Microsoft Fabric Overview
-            url: fabric-graph-overview.md
+            url: overview.md
           - text: Graph in Microsoft Fabric Data Models
             url: graph-data-models.md
           - text: What is a graph database?
