@@ -83,10 +83,6 @@ The example social network domain includes:
 - **Tags** for categorizing content and interests.
 - **Relationships** like friendships, employment, education, content creation, and user interactions.
 
-Here's a visual overview of the example social network structure. The dotted edges show inheritance via label implication, the plain edges show edge types, and the bold edges show edge type families.
-
-:::image type="content" source="./media/schema.png" alt-text="Diagram of the example social network structure." lightbox="./media/schema.png":::
-
 Notable features of this graph are:
 
 - **Inheritance hierarchies** for places (City → Country → Continent) and organizations (University, Company → Organization)
@@ -663,8 +659,8 @@ When you bind a variable-length edge pattern, the value and type of the edge var
 
 **Two degrees of reference:**
 
-1. **Inside a variable-length edge pattern**: Graph edge variables bind to each individual edge along the matched path (singleton degree of reference)
-2. **Outside a variable-length pattern**: Graph edge variables bind to the sequence of all edges along the matched path (group degree of reference)
+- **Inside a variable-length edge pattern**: Graph edge variables bind to each individual edge along the matched path (singleton degree of reference)
+- **Outside a variable-length pattern**: Graph edge variables bind to the sequence of all edges along the matched path (group degree of reference)
 
 **Example demonstrating both contexts:**
   
@@ -675,9 +671,9 @@ RETURN e[0]
 
 The evaluation of the edge variable `e` occurs in two contexts:
 
-1. **In the `MATCH` statement**: The query finds chains of friends-of-friends-of-friends where each friendship was established since the year 2000. During pattern matching, the edge pattern predicate `e.creationDate >= ZONED_DATETIME("2000-01-01T00:00:00Z")` is evaluated once for each candidate edge. In this context, `e` is bound to a single edge reference value.
+- **In the `MATCH` statement**: The query finds chains of friends-of-friends-of-friends where each friendship was established since the year 2000. During pattern matching, the edge pattern predicate `e.creationDate >= ZONED_DATETIME("2000-01-01T00:00:00Z")` is evaluated once for each candidate edge. In this context, `e` is bound to a single edge reference value.
 
-2. **In the `RETURN` statement**: Here `e` is bound to a (group) list of edge reference values in the order they occur in the matched chain. The result of `e[0]` is the first edge reference value in each matched chain.
+- **In the `RETURN` statement**: Here `e` is bound to a (group) list of edge reference values in the order they occur in the matched chain. The result of `e[0]` is the first edge reference value in each matched chain.
 
 #### Unbounded variable-length patterns
 
@@ -1610,8 +1606,8 @@ GQL reserves certain keywords that you can't use as identifiers like variables, 
 If you need to use reserved words as identifiers, escape them with backticks: `` `match` ``, `` `return` ``.
 
 Alternatively, to avoid escaping reserved words, use these naming conventions:
-1. When you use single-word identifiers, append an underscore as in `:Product_`. Microsoft Fabric intends to never add single reserved words that end in an underscore.
-1. When you use multi-word identifiers, either do the same or, alternatively, don't join them with underscores. Use camelCase or PascalCase conventions instead, like `:MyEntity`, `:hasAttribute`, or `textColor`. Graph in Microsoft Fabric intends to never add compound reserved words in which the compounds aren't separated by underscores.
+- When you use single-word identifiers, append an underscore as in `:Product_`. Microsoft Fabric intends to never add single reserved words that end in an underscore.
+- When you use multi-word identifiers, either do the same or, alternatively, don't join them with underscores. Use camelCase or PascalCase conventions instead, like `:MyEntity`, `:hasAttribute`, or `textColor`. Graph in Microsoft Fabric intends to never add compound reserved words in which the compounds aren't separated by underscores.
 
 ## Related content
 
