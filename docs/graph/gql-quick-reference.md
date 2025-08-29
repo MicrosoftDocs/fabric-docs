@@ -489,6 +489,5 @@ RETURN path
 
 ## Related content
 
-- [Graph overview](fabric-graph-overview.md) - Introduction to graph in Microsoft Fabric.
-- [Graph data models](graph-data-models.md) - Conceptual overview.
-- [GQL language reference](gql-language-reference.md) - Complete syntax and examples.
+- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)

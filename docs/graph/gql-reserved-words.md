@@ -390,3 +390,8 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **ZONED** - GQL standard
 - **ZONED_DATETIME** - GQL standard
 - **ZONED_TIME** - GQL standard
+
+## Related content
+
+- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)

@@ -1615,6 +1615,5 @@ Alternatively, to avoid escaping reserved words, use these naming conventions:
 
 ## Related content
 
-- [Fabric Graph overview](fabric-graph-overview.md) - Learn about graph capabilities in Microsoft Fabric.
-- [Graph data models](graph-data-models.md) - Learn how to design effective graph schemas.
-- [Graph vs relational databases](graph-relational-databases.md) - Compare graph and relational database approaches.
+- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)
