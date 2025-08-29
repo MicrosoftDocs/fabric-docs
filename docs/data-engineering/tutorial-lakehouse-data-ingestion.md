@@ -41,7 +41,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
    | Property | Value |
    |--|--|
-   | Account name or URL | https://fabrictutorialdata.blob.core.windows.net/sampledata/ |
+   | Account name or URL | `https://fabrictutorialdata.blob.core.windows.net/sampledata/` |
    | Connection | Create new connection |
    | Connection name | wwisampledata |
    | Authentication kind | Anonymous |
