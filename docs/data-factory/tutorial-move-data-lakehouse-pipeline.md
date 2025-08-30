@@ -35,7 +35,7 @@ To get started, you must complete the following prerequisites:
 
    :::image type="content" source="media/copy-data-activity/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
-## Copy data using pipeline
+## Copy data using a pipeline
 
 In this session, you start to build your pipeline by following below steps about copying data from Azure SQL Database to Lakehouse.
 
