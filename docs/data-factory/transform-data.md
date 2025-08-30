@@ -1,6 +1,6 @@
 ---
-title: Move and transform data with dataflow and data pipelines
-description: Steps for moving and transforming data with dataflows and data pipelines.
+title: Move and transform data with dataflow and pipelines
+description: Steps for moving and transforming data with dataflows and pipelines.
 ms.reviewer: whhender
 ms.author: noelleli
 author: n0elleli
@@ -12,9 +12,9 @@ ms.custom:
 ms.date: 12/18/2024
 ---
 
-# Quickstart: Move and transform data with dataflows and data pipelines
+# Quickstart: Move and transform data with dataflows and pipelines
 
-In this tutorial, you discover how the dataflow and data pipeline experience can create a powerful and comprehensive Data Factory solution.  
+In this tutorial, you discover how the dataflow and pipeline experience can create a powerful and comprehensive Data Factory solution.  
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ To get started, you must have the following prerequisites:
 
 ## Dataflows compared to pipelines
 
-Dataflows Gen2 lets you to use a low-code interface and 300+ data and AI-based transformations to you easily clean, prep, and transform data with more flexibility than any other tool. Data Pipelines enable rich out-of-the-box data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.  In a pipeline, you can create logical groupings of activities that perform a task, which might include calling a Dataflow to clean and prep your data. While there's some functionality overlap between the two, the choice of which to use for a specific scenario depends on whether you require the full richness of pipelines or can use the simpler but more limited capabilities of dataflows. For more information, see the [Fabric decision guide](../fundamentals/decision-guide-pipeline-dataflow-spark.md)
+Dataflows Gen2 lets you to use a low-code interface and 300+ data and AI-based transformations to you easily clean, prep, and transform data with more flexibility than any other tool. Pipelines enable rich out-of-the-box data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.  In a pipeline, you can create logical groupings of activities that perform a task, which might include calling a Dataflow to clean and prep your data. While there's some functionality overlap between the two, the choice of which to use for a specific scenario depends on whether you require the full richness of pipelines or can use the simpler but more limited capabilities of dataflows. For more information, see the [Fabric decision guide](../fundamentals/decision-guide-pipeline-dataflow-spark.md)
 
 ## Transform data with dataflows
 
@@ -87,15 +87,15 @@ Follow these steps to set up your dataflow.
 
    :::image type="content" source="media/transform-data/publish-dataflow-gen2-inline.png" alt-text="Screenshot highlighting the Publish button on the dataflow gen2 editor." lightbox="media/transform-data/publish-dataflow-gen2.png":::
 
-## Move data with data pipelines
+## Move data with pipelines
 
 Now that you created a Dataflow Gen2, you can operate on it in a pipeline. In this example, you copy the data generated from the dataflow into text format in an Azure Blob Storage account.
 
-### Step 1: Create a new data pipeline
+### Step 1: Create a new pipeline
 
-1. From your workspace, select **New**, and then select **Data pipeline**.  
+1. From your workspace, select **New**, and then select **Pipeline**.  
 
-   :::image type="content" source="media/transform-data/create-new-pipeline.png" alt-text="Screenshot showing where to start a new data pipeline.":::
+   :::image type="content" source="media/transform-data/create-new-pipeline.png" alt-text="Screenshot showing where to start a new pipeline.":::
 
 1. Name your pipeline then select **Create**.
 
@@ -103,7 +103,7 @@ Now that you created a Dataflow Gen2, you can operate on it in a pipeline. In th
 
 ### Step 2: Configure your dataflow
 
-1. Add a new dataflow activity to your data pipeline by selecting **Dataflow** in the **Activities** tab.  
+1. Add a new dataflow activity to your pipeline by selecting **Dataflow** in the **Activities** tab.  
 
    :::image type="content" source="media/transform-data/add-dataflow-activity.png" alt-text="Screenshot showing where to select the Dataflow option.":::
 
@@ -152,13 +152,13 @@ Now that you created a Dataflow Gen2, you can operate on it in a pipeline. In th
 
    :::image type="content" source="media/transform-data/finalize-and-review.png" alt-text="Screenshot showing how to review copy data settings.":::
 
-### Step 5: Design your data pipeline and save to run and load data
+### Step 5: Design your pipeline and save to run and load data
 
 1. To run the **Copy** activity after the **Dataflow** activity, drag from **Succeeded** on the **Dataflow** activity to the **Copy** activity. The **Copy** activity only runs after the **Dataflow** activity succeeds.  
 
    :::image type="content" source="media/transform-data/copy-dataflow-activity.png" alt-text="Screenshot showing how to make the dataflow run take place after the copy activity.":::
 
-1. Select **Save** to save your data pipeline. Then select **Run** to run your data pipeline and load your data.  
+1. Select **Save** to save your pipeline. Then select **Run** to run your pipeline and load your data.  
 
    :::image type="content" source="media/transform-data/save-run-pipeline.png" alt-text="Screenshot showing where to select Save and Run.":::
 
@@ -181,10 +181,10 @@ This sample shows you how to create and configure a Dataflow Gen2 to create a me
 > [!div class="checklist"]
 > - Create a dataflow.
 > - Transform data with the dataflow.
-> - Create a data pipeline using the dataflow.
+> - Create a pipeline using the dataflow.
 > - Order the execution of steps in the pipeline.
 > - Copy data with the Copy Assistant.
-> - Run and schedule your data pipeline.
+> - Run and schedule your pipeline.
 
 Next, advance to learn more about monitoring your pipeline runs.
 
