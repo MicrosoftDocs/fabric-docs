@@ -18,6 +18,6 @@ The Access database connector is supported in Data Factory for [!INCLUDE [produc
 
 To learn about how to connect to an Access database in Dataflow Gen2, go to [Set up your Access database connection](connector-access-database.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support an Access database in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support an Access database in pipelines.
