@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure REST in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to a REST endpoint.
+This article outlines how to use the copy activity in pipeline to copy data from and to a REST endpoint.
 
 Specifically, this generic REST connector supports:
 
