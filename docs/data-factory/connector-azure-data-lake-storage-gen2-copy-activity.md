@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure Data Lake Storage Gen2 in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Data Lake Storage Gen2.
+This article outlines how to use the copy activity in pipeline to copy data from and to Azure Data Lake Storage Gen2.
 
 ## Supported format
 
