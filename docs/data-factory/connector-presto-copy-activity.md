@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Presto in a copy activity
 
-This article outlines how to use the copy activity in pipeline to copy data from Presto.
+This article outlines how to use the copy activity in a pipeline to copy data from Presto.
 
 ## Supported configuration
 

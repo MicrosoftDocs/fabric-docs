@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Oracle database in a copy activity
 
-This article outlines how to use the copy activity in pipeline to copy data from and to Oracle database.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Oracle database.
 
 ## Supported configuration
 
