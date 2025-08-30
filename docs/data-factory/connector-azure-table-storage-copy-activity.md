@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure Table Storage in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Table Storage.
+This article outlines how to use the copy activity in pipeline to copy data from and to Azure Table Storage.
 
 
 ## Supported configuration
