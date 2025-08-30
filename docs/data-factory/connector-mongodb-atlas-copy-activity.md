@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure MongoDB Atlas in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to MongoDB Atlas.
+This article outlines how to use the copy activity in pipeline to copy data from and to MongoDB Atlas.
 
 
 ## Supported configuration

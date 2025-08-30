@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure MariaDB in copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from MariaDB.
+This article outlines how to use the copy activity in pipeline to copy data from MariaDB.
 
 This connector supports MariaDB version 10.x, 11.x.
 
