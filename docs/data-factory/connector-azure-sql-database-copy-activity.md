@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure SQL Database in a copy activity
 
-This article outlines how to use the copy activity in pipeline to copy data from and to Azure SQL Database.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure SQL Database.
 
 ## Supported configuration
 

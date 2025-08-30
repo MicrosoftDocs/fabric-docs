@@ -11,9 +11,9 @@ ms.custom:
   - connectors
 ---
 
-# How to configure Azure SQL Managed Instance in copy activity
+# How to configure Azure SQL Managed Instance in a copy activity
 
-This article outlines how to use the copy activity in pipeline to copy data from and to Azure SQL Managed Instance.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure SQL Managed Instance.
 
 ## Supported configuration
 
