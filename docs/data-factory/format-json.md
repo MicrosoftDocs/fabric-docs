@@ -40,7 +40,7 @@ JSON format is supported for the following activities and connectors as a source
 
 ## JSON format in copy activity
 
-To configure JSON format, choose your connection in the source or destination of pipeline copy activity, and then select **JSON** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
+To configure JSON format, choose your connection in the source or destination of a pipeline copy activity, and then select **JSON** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
 
 :::image type="content" source="./media/format-common/file-settings.png" alt-text="Screenshot showing file format settings.":::
 

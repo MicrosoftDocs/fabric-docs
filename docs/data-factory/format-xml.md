@@ -39,7 +39,7 @@ XML format is supported for the following activities and connectors as source.
 
 ## XML format in copy activity
 
-To configure XML format, choose your connection in the source of pipeline copy activity, and then select **XML** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
+To configure XML format, choose your connection in the source of a pipeline copy activity, and then select **XML** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
 
 :::image type="content" source="./media/format-common/file-settings.png" alt-text="Screenshot showing file format settings.":::
 
