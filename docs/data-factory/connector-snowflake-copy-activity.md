@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Snowflake in a copy activity
 
-This article outlines how to use the copy activity in pipeline to copy data from and to Snowflake.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Snowflake.
 
 ## Supported configuration
 

@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure SQL database in a copy activity (Preview)
 
-This article outlines how to use the copy activity in pipeline to copy data from and to SQL database.
+This article outlines how to use the copy activity in a pipeline to copy data from and to SQL database.
 
 ## Supported configuration
 
