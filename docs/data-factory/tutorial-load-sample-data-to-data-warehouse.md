@@ -79,7 +79,7 @@ In this session, you start to build your pipeline by following below steps about
 
 1. The Copy activity is added to your new data pipeline canvas. All settings including advanced settings for the activity are available in the tabs below the pipeline canvas when the created **Copy data** activity is selected.
 
-   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/complete-copy-activity.png" alt-text="Screenshot showing the completed Copy activity in pipeline canvas.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/complete-copy-activity.png" alt-text="Screenshot showing the completed Copy activity in the pipeline canvas.":::
 
 ## Schedule your data pipeline
 

@@ -20,7 +20,7 @@ To get started, you must complete the following prerequisites:
 - A tenant account with an active subscription. Create an account for free.
 - A workspace is created.
 
-## Step 1: Add a new Stored procedure activity in Pipeline canvas
+## Step 1: Add a new Stored procedure activity in the pipeline canvas
 
 1. Open an existing data pipeline or create a new data pipeline.
 1. Select the **Stored procedure** activity.
