@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure SQL server in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to SQL server.
+This article outlines how to use the copy activity in pipeline to copy data from and to SQL server.
 
 
 ## Supported configuration

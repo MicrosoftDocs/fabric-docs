@@ -18,8 +18,8 @@ The SFTP connector is supported in Data Factory for [!INCLUDE [product-name](../
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-sftp-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity| None<br> On-premises<br> Virtual network | Basic           |
+| **Pipeline** <br>- [Copy activity](connector-sftp-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity| None<br> On-premises<br> Virtual network | Basic           |
 
 ## Related content
 
-To learn about the copy activity configuration for SFTP in data pipelines, go to [Configure SFTP in a copy activity](connector-sftp-copy-activity.md).
+To learn about the copy activity configuration for SFTP in pipelines, go to [Configure SFTP in a copy activity](connector-sftp-copy-activity.md).
