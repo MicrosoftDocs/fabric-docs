@@ -1,6 +1,6 @@
 ---
 title: How to copy data using copy activity
-description: Learn how to use copy activities in pipeline to move data between cloud data stores. Includes steps for using the copy assistant and adding activities directly.
+description: Learn how to use copy activities in a pipeline to move data between cloud data stores. Includes steps for using the copy assistant and adding activities directly.
 ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen

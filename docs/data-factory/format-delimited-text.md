@@ -37,9 +37,9 @@ Delimited text format is supported for the following activities and connectors a
 |  | [GetMetadata activity](get-metadata-activity.md) |
 |  | [Delete activity](delete-data-activity.md) | 
 
-## Delimited text format in copy activity
+## Delimited text format in a copy activity
 
-To configure delimited text format, choose your connection in the source or destination of pipeline copy activity, and then select **DelimitedText** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
+To configure delimited text format, choose your connection in the source or destination of a pipeline copy activity, and then select **DelimitedText** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
 
 :::image type="content" source="./media/format-common/file-settings.png" alt-text="Screenshot showing file format settings.":::
 
