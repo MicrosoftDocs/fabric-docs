@@ -1,6 +1,6 @@
 ---
-title: How to configure Binary format in the data pipeline of Data Factory in Microsoft Fabric
-description: This article explains how to configure Binary format in the data pipeline of Data Factory in Microsoft Fabric.
+title: How to configure Binary format in the pipeline of Data Factory in Microsoft Fabric
+description: This article explains how to configure Binary format in the pipeline of Data Factory in Microsoft Fabric.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -38,7 +38,7 @@ Binary format is supported for the following activities and connectors as source
 
 ## Binary format in copy activity
 
-To configure Binary format, choose your connection in the source or destination of the data pipeline copy activity, and then select **Binary** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
+To configure Binary format, choose your connection in the source or destination of the pipeline copy activity, and then select **Binary** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
 
 :::image type="content" source="./media/format-common/file-settings.png" alt-text="Screenshot showing file settings button.":::
 

@@ -1,6 +1,6 @@
 ---
-title: How to configure delimited text format in the data pipeline of Data Factory in Microsoft Fabric
-description: This article explains how to configure delimited text format in the data pipeline of Data Factory in Microsoft Fabric.
+title: How to configure delimited text format in the pipeline of Data Factory in Microsoft Fabric
+description: This article explains how to configure delimited text format in the pipeline of Data Factory in Microsoft Fabric.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -11,7 +11,7 @@ ms.custom:
 
 # Delimited text format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
-This article outlines how to configure delimited text format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+This article outlines how to configure delimited text format in the pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
@@ -39,7 +39,7 @@ Delimited text format is supported for the following activities and connectors a
 
 ## Delimited text format in copy activity
 
-To configure delimited text format, choose your connection in the source or destination of data pipeline copy activity, and then select **DelimitedText** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
+To configure delimited text format, choose your connection in the source or destination of pipeline copy activity, and then select **DelimitedText** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
 
 :::image type="content" source="./media/format-common/file-settings.png" alt-text="Screenshot showing file format settings.":::
 

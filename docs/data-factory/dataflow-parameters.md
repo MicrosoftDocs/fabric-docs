@@ -60,16 +60,16 @@ The public parameter mode follows the definition of the parameters inside the da
 * **Required parameters**: if a parameter is set as required, in order to refresh the dataflow a value needs to be passed to the refresh job. The refresh fails if no value is passed for a parameter that is set to required.
 * **Non-required parameters**: these are also called ***optional*** parameters and no value is required to be passed for a refresh to be triggered. If no value is passed, the **Current value** defined within your parameter used for refresh. However, you can always pass an override value, which is used for refresh.
 
-## Use the Dataflow refresh activity within Data Pipelines
+## Use the Dataflow refresh activity within pipelines
 
 >[!NOTE]
->We recommend reading more about the [dataflow activity from Fabric data pipelines](dataflow-activity.md) to understand all its capabilities. 
+>We recommend reading more about the [dataflow activity from Fabric pipelines](dataflow-activity.md) to understand all its capabilities. 
 
 When you create a pipeline in Fabric, you can use the dataflow refresh activity to trigger the refresh of a Dataflow Gen2 with CI/CD support that has the public parameters mode enabled. 
 
 You can select the dataflow that you want to use and set the parameters that you want to use in the **Dataflow parameters** section.
 
-![Screenshot of the dataflow activity within Fabric Data pipelines that allows to pass parameters for refresh.](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
+![Screenshot of the dataflow activity within Fabric pipelines that allows to pass parameters for refresh.](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
 
 In the **Dataflow parameters** section, you can pass the name of the parameter, the type of value that you want to pass, and the value to pass. You can manually add all the supported parameters that you want to override.
 
