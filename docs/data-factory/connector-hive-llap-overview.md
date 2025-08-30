@@ -19,6 +19,6 @@ The Hive LLAP connector is supported in Data Factory for [!INCLUDE [product-name
 
 For information on how to connect to Hive LLAP data in Dataflow Gen2, go to [Set up your Hive LLAP connection](connector-hive-llap.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Hive LLAP data in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Hive LLAP data in pipelines.

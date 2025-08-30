@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Informix For Pipeline in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Informix For Pipeline.
+This article outlines how to use the copy activity in pipeline to copy data from and to Informix For Pipeline.
 
 ## Supported configuration
 

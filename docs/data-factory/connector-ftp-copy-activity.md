@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure FTP in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from FTP.
+This article outlines how to use the copy activity in pipeline to copy data from FTP.
 
 ## Supported format
 

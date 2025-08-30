@@ -11,7 +11,7 @@ ms.custom:
 
 # Configure Greenplum for Pipeline in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Greenplum for Pipeline.
+This article outlines how to use the copy activity in pipeline to copy data from and to Greenplum for Pipeline.
 
 ## Supported configuration
 
