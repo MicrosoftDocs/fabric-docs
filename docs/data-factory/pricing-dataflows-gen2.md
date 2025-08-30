@@ -66,4 +66,4 @@ The following table can be utilized as a template to compute estimated costs usi
 ## Related content
 
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)
-- [Pricing data pipelines](pricing-pipelines.md)
+- [Pricing pipelines](pricing-pipelines.md)

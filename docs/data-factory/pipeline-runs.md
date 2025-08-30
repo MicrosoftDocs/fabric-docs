@@ -1,5 +1,5 @@
 ---
-title: Run, schedule, or use events to trigger a data pipeline
+title: Run, schedule, or use events to trigger a pipeline
 description: Explanation of what a pipeline run is, including on-demand and scheduled runs.
 ms.reviewer: whhender
 ms.author: noelleli
@@ -10,27 +10,27 @@ ms.date: 08/27/2025
 ai-usage: ai-assisted
 ---
 
-# Run, schedule, or use events to trigger a data pipeline
+# Run, schedule, or use events to trigger a pipeline
 
-A data pipeline run occurs when a data pipeline is started and the activities are executed.
+A pipeline run occurs when a pipeline is started and the activities are executed.
 
 You can start a pipeline run in three ways:
 
-- [**On-demand runs**](#on-demand-data-pipeline-run): Select **Run** in the pipeline editor to trigger an immediate run. You'll need to save any changes before the pipeline starts.
+- [**On-demand runs**](#on-demand-pipeline-run): Select **Run** in the pipeline editor to trigger an immediate run. You'll need to save any changes before the pipeline starts.
 
     :::image type="content" source="media/pipeline-runs/trigger-pipeline-run.png" alt-text="Screenshot showing where to select Run on the Home tab.":::
 
-- [**Scheduled runs**](#scheduled-data-pipeline-runs): Set up automatic runs based on time and frequency. When you create a schedule, you specify start and end dates, frequency, and time zone.
+- [**Scheduled runs**](#scheduled-pipeline-runs): Set up automatic runs based on time and frequency. When you create a schedule, you specify start and end dates, frequency, and time zone.
 
     :::image type="content" source="media/pipeline-runs/schedule-pipeline-run.png" alt-text="Screenshot showing where to select Schedule on the Home tab." lightbox="media/pipeline-runs/schedule-pipeline-run.png":::
 
-- [**Event-based runs**](#event-based-data-pipeline-runs): Use event triggers to start your pipeline when specific events occur, such as new files arriving in a data lake or changes in a database.
+- [**Event-based runs**](#event-based-pipeline-runs): Use event triggers to start your pipeline when specific events occur, such as new files arriving in a data lake or changes in a database.
 
     :::image type="content" source="media/pipeline-runs/event-based-run.png" alt-text="Screenshot showing where to select Trigger to add event-based run triggers on the home tab.":::
 
-## On-demand data pipeline run
+## On-demand pipeline run
 
-To manually trigger a data pipeline run, select **Run** found in the top banner of the **Home** tab.
+To manually trigger a pipeline run, select **Run** found in the top banner of the **Home** tab.
 
 :::image type="content" source="media/pipeline-runs/trigger-pipeline-run.png" alt-text="Screenshot showing where to select Run on the Home tab.":::
 
@@ -54,13 +54,13 @@ Once the entire pipeline executes and the output status updates to **Succeeded**
 
 :::image type="content" source="media/pipeline-runs/output-status.png" alt-text="Screenshot showing where Succeeded status shows in Output tab." lightbox="media/pipeline-runs/output-status.png":::
 
-## Scheduled data pipeline runs
+## Scheduled pipeline runs
 
-When you schedule a data pipeline run, you can set multiple, specific schedules for each pipeline, so your data is prepared and available when you need it.
+When you schedule a pipeline run, you can set multiple, specific schedules for each pipeline, so your data is prepared and available when you need it.
 
 > [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=57ecfaaf-cd4c-4b57-b8c2-723f98839496]
 
-Select **Schedule**, found in the top banner of the **Home** tab, and then select **Add Schedule** to view your options. By default, your data pipeline isn't set on a schedule.
+Select **Schedule**, found in the top banner of the **Home** tab, and then select **Add Schedule** to view your options. By default, your pipeline isn't set on a schedule.
 
 :::image type="content" source="media/pipeline-runs/schedule-pipeline-run.png" alt-text="Screenshot showing where to select Schedule on the Home tab." lightbox="media/pipeline-runs/schedule-pipeline-run.png":::
 
@@ -85,7 +85,7 @@ To delete a schedule, select the **Edit** icon (pencil) next to the schedule you
 
 :::image type="content" source="media/pipeline-runs/delete-schedule.png" alt-text="Screenshot showing the delete button can be found in the edit window.":::
 
-## Event-based data pipeline runs
+## Event-based pipeline runs
 
 Event triggers let you start pipelines when specific events happen, like when files arrive or get deleted in storage. You can trigger pipelines from file events, job events, and workspace events. If you're moving from Azure Data Factory, you'll find storage events familiar.
 
@@ -174,6 +174,6 @@ Notice the `?` after the `pipeline()` object reference. This handles NULL values
 
 ## Related content
 
-- [How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
-- [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
+- [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
+- [Quickstart: Create your first pipeline to copy data](create-first-pipeline-with-sample-data.md)
 - [REST API capabilities for pipelines in Fabric Data Factory](pipeline-rest-api-capabilities.md)
