@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Google BigQuery in a copy activity
 
-This article outlines how to use the copy activity in pipeline to copy data from Google BigQuery.
+This article outlines how to use the copy activity in a pipeline to copy data from Google BigQuery.
 
 ## Supported configuration
 
