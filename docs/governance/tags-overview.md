@@ -30,7 +30,7 @@ Tags are an important component of Fabric's data mesh architecture. They provide
 
 1.  **Users utilize tags for discoverability.** Once tags are applied to items, users in the organization can use them to [filter or search for the most relevant content](#how-tags-enhance-data-discoverability).
 
-1. **Admins utilize tags for governance.** Admins can use the [Metadata Scanning (Scanner)](/metadata-scanning-overview) APIs to programmatically fetch tag associations at scale and use them in downstream governance and discovery solutions.
+1. **Admins utilize tags for governance.** Admins can use the [Metadata Scanning (Scanner)](./metadata-scanning-overview.md) APIs to programmatically fetch tag associations at scale and use them in downstream governance and discovery solutions.
 
 ## How tags enhance data discoverability
 
