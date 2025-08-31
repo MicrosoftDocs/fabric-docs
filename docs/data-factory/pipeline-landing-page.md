@@ -1,6 +1,6 @@
 ---
-title: The data pipeline landing page
-description: Learn how to explore data solutions efficiently using the data pipeline landing page in Data Factory for Microsoft Fabric.
+title: The pipeline landing page
+description: Learn how to explore data solutions efficiently using the pipeline landing page in Data Factory for Microsoft Fabric.
 ms.reviewer: whhender
 ms.author: xupzhou
 author: PennyZhou-MSFT
@@ -11,12 +11,12 @@ ms.custom: pipelines
 
 # Explore data solutions efficiently using the Data Factory pipeline landing page
 
-The data pipeline landing page in Data Factory for Microsoft Fabric is the first page you are presented when you create a new pipeline. This page offers an updated and user-friendly experience to make it easy for you to find and build useful data solutions fast. You can even create your first data pipeline in as little as 5 minutes using pre-defined templates to build powerful solutions, allowing you quickly transfer data from many various sources to your preferred destinations with rich orchestration capabilities as well.
+The pipeline landing page in Data Factory for Microsoft Fabric is the first page you are presented when you create a new pipeline. This page offers an updated and user-friendly experience to make it easy for you to find and build useful data solutions fast. You can even create your first pipeline in as little as 5 minutes using pre-defined templates to build powerful solutions, allowing you quickly transfer data from many various sources to your preferred destinations with rich orchestration capabilities as well.
 
 
-## Create a data pipeline from the landing page
+## Create a pipeline from the landing page
 
-Let's get started exploring data solutions from the data pipeline landing page! Below the pipeline menus and toolbar at the top of the window, you're presented with several cards:
+Let's get started exploring data solutions from the pipeline landing page! Below the pipeline menus and toolbar at the top of the window, you're presented with several cards:
 
 :::image type="content" source="media/pipeline-landing-page/pipeline-landing-page.png" lightbox="media/pipeline-landing-page/pipeline-landing-page.png" alt-text="Screenshot showing the Data Factory new pipeline landing page.":::
 
@@ -42,7 +42,7 @@ This option allows you to choose from pre-defined templates that make it easy to
 
 ## Pipeline activity
 
-Data pipelines feature a [library of activities](activity-overview.md) (for example, Copy data, Filter, ForEach, Teams and Outlook notifications) that enable users to build rich and sophisticated data orchestration.
+Pipelines feature a [library of activities](activity-overview.md) (for example, Copy data, Filter, ForEach, Teams and Outlook notifications) that enable users to build rich and sophisticated data orchestration.
 
 :::image type="content" source="media/pipeline-landing-page/pipeline-activities.png" lightbox="media/pipeline-landing-page/pipeline-activities.png" alt-text="Screenshot showing the pipeline activities selection.":::
 
