@@ -81,7 +81,7 @@ landingContent:
             url: customer-churn.md 
 
 # Card 
-  - title: Model Scoring
+  - title: Model scoring
     linkLists:
       - linkListType: how-to-guide
         links:
