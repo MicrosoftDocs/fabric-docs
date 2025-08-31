@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Oracle Cloud Storage in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from Oracle Cloud Storage.
+This article outlines how to use the copy activity in a pipeline to copy data from Oracle Cloud Storage.
 
 ## Prerequisites
 
