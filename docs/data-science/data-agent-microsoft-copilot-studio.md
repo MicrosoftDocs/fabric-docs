@@ -8,7 +8,7 @@ reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
-ms.date: 08/15/2025
+ms.date: 08/20/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 #customer intent: As an Analyst, I want to consume a Fabric data agent within Microsoft Copilot Studio.

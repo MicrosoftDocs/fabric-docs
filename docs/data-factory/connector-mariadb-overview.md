@@ -14,14 +14,14 @@ ms.custom:
 
 The MariaDB connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Data pipeline
+## Support in a pipeline
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Basic |
-| **Data pipeline**<br>- [Copy activity](connector-mariadb-copy-activity.md) (source/-) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Basic |
+| **Pipeline**<br>- [Copy activity](connector-mariadb-copy-activity.md) (source/-) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Basic |
 | **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Basic |
 
 ## Related content
 
-To learn more about the copy activity configuration for MariaDB in Data pipeline, go to [Configure in a data pipeline copy activity](connector-mariadb-copy-activity.md).
+To learn more about the copy activity configuration for MariaDB in a pipeline, go to [Configure in a pipeline copy activity](connector-mariadb-copy-activity.md).

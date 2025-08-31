@@ -47,6 +47,7 @@ The public parameter mode follows the definition of the parameters inside the da
 * **Required parameters**: if a parameter is set as required, in order to run the dataflow a value needs to be passed to the run job. The run fails if no value is passed for a parameter that is set to required.
 * **Non-required parameters**: these are also called ***optional*** parameters and no value is required to be passed for a run to be triggered. If no value is passed, the **Current value** defined within your parameter is used for run.
 
+
 ### Use the Dataflow activity within Pipelines
 
 >[!NOTE]
@@ -61,6 +62,7 @@ You can select the dataflow that you want to use and set the parameters that you
 In the **Dataflow parameters** section, you're able to see all parameters available in your Dataflow and the default value from each inside the value section.
 
 Required parameters have an asterisk next to their name, while optional parameters don't. At the same time, optional parameters can be removed from the grid, whereas required parameters can't be deleted and a value must be passed for the dataflow to run.
+
 
 You can select the refresh button to request the latest parameter information from your dataflow.
 

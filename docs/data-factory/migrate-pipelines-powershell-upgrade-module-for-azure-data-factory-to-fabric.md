@@ -26,7 +26,7 @@ ai-usage: ai-assisted
 To get started, you must complete the following prerequisites:
 
 - **Fabric**: A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- **Permissions**: Read access to the ADF workspace and artifacts you’ll migrate and Contributor or higher rights in the Fabric workspace you’ll write to.
+- **Permissions**: Read access to the ADF workspace and items you’ll migrate and Contributor or higher rights in the Fabric workspace you’ll write to.
 - **Tenant**: Your ADF and Fabric workspace must be in the same Azure AD tenant.
 - **Region** (Recommended): For best performance, keep your Fabric workspace in the same region as your ADF.
 - **PowerShell**: Use PowerShell version 7.2 or later.

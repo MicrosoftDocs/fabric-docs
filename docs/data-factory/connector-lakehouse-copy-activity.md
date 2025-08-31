@@ -15,7 +15,7 @@ ms.custom:
 
 # Configure Lakehouse in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to the Fabric Lakehouse. By default, data is written to Lakehouse Table in V-Order, and you can go to [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md#what-is-v-order) for more information.
+This article outlines how to use the copy activity in a pipeline to copy data from and to the Fabric Lakehouse. By default, data is written to Lakehouse Table in V-Order, and you can go to [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md#what-is-v-order) for more information.
 
 ## Supported format
 
@@ -265,7 +265,7 @@ The following tables contain more information about a copy activity in Lakehouse
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>artifactId|
+|**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>itemId|
 |**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |No|rootFolder:<br>Table or Files|
 |**Table name** |The name of the table that you want to read data. |\<your table name> |Yes when you select **Tables** in **Root folder** | table  |
 |**Table** |The name of the table with a schema that you want to read data when you apply Lakehouse with schemas as the connection. |\<your table with a schema> |Yes when you select **Tables** in **Root folder** | / |
@@ -292,7 +292,7 @@ The following tables contain more information about a copy activity in Lakehouse
 
 |Name |Description |Value |Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>artifactId|
+|**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>itemId|
 |**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |Yes | rootFolder:<br>Table or Files|
 |**Table name** |The name of the table that you want to write data to. |\<your table name> |Yes when you select **Tables** in **Root folder** | table |
 |**Table** |The name of the table with a schema that you want to write data to when you apply Lakehouse with schemas as the connection. |\<your table with a schema> |Yes when you select **Tables** in **Root folder** | / |

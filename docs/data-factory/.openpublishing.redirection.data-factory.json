@@ -31,6 +31,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/pipeline-storage-event-triggers.md",
+        "redirect_url": "/fabric/data-factory/pipeline-runs",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/pipeline-copy-from-azure-blob-storage-to-lakehouse.md",
         "redirect_url": "/fabric/data-factory/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse",
         "redirect_document_id": false
@@ -63,6 +68,11 @@
       {
         "source_path_from_root": "/docs/data-factory/connector-azure-blob-storage-dataflows.md",
         "redirect_url": "/fabric/data-factory/connector-azure-blob-storage",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/schedule-pipeline.md",
+        "redirect_url": "/fabric/data-factory/pipeline-runs",
         "redirect_document_id": false
       },
       {

@@ -181,9 +181,9 @@ The dataflow in this sample shows you how to load and transform data in Dataflow
 > - Create a Dataflow Gen2.
 > - Transform data.
 > - Configure destination settings for transformed data.
-> - Run and schedule your data pipeline.
+> - Run and schedule your pipeline.
 
-Advance to the next article to learn how to create your first data pipeline.
+Advance to the next article to learn how to create your first pipeline.
 
 > [!div class="nextstepaction"]
-> [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md).
+> [Quickstart: Create your first pipeline to copy data](create-first-pipeline-with-sample-data.md).
