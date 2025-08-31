@@ -27,7 +27,7 @@ The Amazon S3 connector supports the following authentication types for copy and
 
 The Amazon S3 connector isn't currently supported in Dataflow Gen2.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
 Browse to the **New connection page** for the Data Factory pipeline to configure the connection details and create the connection.
 
@@ -94,4 +94,4 @@ The following table contains properties for the supported authentication type.
 
 ## Related content
 
-- [Configure in a data pipeline copy activity](connector-amazon-s3-copy-activity.md)
+- [Configure in a pipeline copy activity](connector-amazon-s3-copy-activity.md)

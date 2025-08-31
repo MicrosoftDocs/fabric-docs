@@ -1,6 +1,6 @@
 ---
-title: Run a Fabric data pipeline and notebook using Apache Airflow DAG.
-description: Learn to run Microsoft Fabric data pipelines and notebooks using Apache Airflow DAG.
+title: Run a Fabric pipeline and notebook using Apache Airflow DAG.
+description: Learn to run Microsoft Fabric pipelines and notebooks using Apache Airflow DAG.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
@@ -9,12 +9,12 @@ ms.date: 12/18/2024
 ms.custom: airflows, sfi-image-nochange
 ---
 
-# Tutorial: Run a Fabric data pipeline and notebook using Apache Airflow DAGs
+# Tutorial: Run a Fabric pipeline and notebook using Apache Airflow DAGs
 
 > [!NOTE]
 > Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
-In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric item such as data pipelines and notebooks.
+In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric item such as pipelines and notebooks.
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ To get started, you must complete the following prerequisites:
 
    For more information, Refer to: [Configure user consent](/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
 
-- Ensure that the account used for generating the refresh tokens has contributor permissions on the workspace that contains the data pipeline and notebook.
+- Ensure that the account used for generating the refresh tokens has contributor permissions on the workspace that contains the pipeline and notebook.
 
 - Enable the Triggers in data workflows to allow the usage of deferrable operators.
    :::image type="content" source="media/apache-airflow-jobs/enable-triggerers.png" lightbox="media/apache-airflow-jobs/enable-triggerers.png" alt-text="Screenshot to enable triggers.":::
