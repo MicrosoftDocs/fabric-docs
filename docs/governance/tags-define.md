@@ -112,7 +112,7 @@ The Scanner APIs include applied tags for each scanned item.
 
 For every applicable item returned in a scan, the payload includes a `tags` field containing a list of applied tag UUIDs. To resolve tag IDs to tag names, use the [List Tags Admin REST API](/rest/api/fabric/admin/tags/list-tags).
 
-For more information, see [Metadata scanning overview](https://learn.microsoft.com/en-us/fabric/governance/metadata-scanning-overview).
+For more information, see [Metadata scanning overview](./metadata-scanning-overview.md).
 
 
 ## Related content
