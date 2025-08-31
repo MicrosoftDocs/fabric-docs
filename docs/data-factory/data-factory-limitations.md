@@ -14,7 +14,7 @@ There are certain limitations to the current Data Factory in Microsoft Fabric fe
 
 For service level outages or degradation notifications, check [Microsoft Fabric support](https://support.fabric.microsoft.com/).  
 
-## Data pipeline limitations in Microsoft Fabric
+## Pipeline limitations in Microsoft Fabric
 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
@@ -27,7 +27,7 @@ The following list describes the current limitations of pipelines in Data Factor
 -	Web activity doesn't support service principal based authentication.
 -	Background sync of authentication doesn't happen for pipelines. Recommendation is to do minor description like updates to pipelines and save them. That way, new token is obtained and cached so pipeline can run again with updated password of entra id. 
 
-## Data pipeline resource limits
+## Pipeline resource limits
 
 The following table describes the resource limitations for pipelines in Data Factory in Microsoft Fabric.
 

@@ -571,7 +571,7 @@ Retry-After: 60
 
 ### Documentation
 
-- [Fabric data pipeline public REST API](pipeline-rest-api-capabilities.md)
+- [Fabric pipeline public REST API](pipeline-rest-api-capabilities.md)
 
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 
