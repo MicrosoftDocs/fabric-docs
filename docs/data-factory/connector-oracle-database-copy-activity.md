@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 06/21/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Oracle database in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Oracle database.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Oracle database.
 
 ## Supported configuration
 

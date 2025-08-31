@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/21/2024
 ms.search.form: Event Processor
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
@@ -36,7 +36,7 @@ To perform stream processing operations on your data streams using a no-code edi
 
     :::image type="content" source="./media/process-events-using-event-processor-editor/enhanced-edit-mode.png" alt-text="Screenshot showing the event processor editor in the Edit mode." lightbox="./media/process-events-using-event-processor-editor/enhanced-edit-mode.png":::
 1. To insert an event processing operator between stream node and destination in the edit mode, you can use one of the following two methods: 
-    - Insert the operator directly from the connection line. Hover on the connection line and then select the **+** button. A drop-down menu appears on the connection line, and you can select an operator from this menu. 
+    - Insert the operator directly from the connection line. Hover on the connection line and then select the **+** button. A dropdown menu appears on the connection line, and you can select an operator from this menu. 
 
         :::image type="content" source="./media/process-events-using-event-processor-editor/select-add.png" alt-text="Screenshot showing the selection of the + button on the connection line." lightbox="./media/process-events-using-event-processor-editor/select-add.png":::
     - Insert the operator from ribbon menu or canvas. 
@@ -44,7 +44,7 @@ To perform stream processing operations on your data streams using a no-code edi
 
             :::image type="content" source="./media/process-events-using-event-processor-editor/select-manage-fields.png" alt-text="Screenshot showing the selection Manage fields on the ribbon.":::
 
-            Alternatively, you can hover on one of the nodes and then select the **+** button if you deleted the connection line. A drop-down menu appears next to that node, and you can select an operator from this menu. 
+            Alternatively, you can hover on one of the nodes and then select the **+** button if you deleted the connection line. A dropdown menu appears next to that node, and you can select an operator from this menu. 
 
             :::image type="content" source="./media/process-events-using-event-processor-editor/connection-line-plus.png" alt-text="Screenshot showing the selection of the plus link on the connection line." lightbox="./media/process-events-using-event-processor-editor/connection-line-plus.png":::            
         1. After inserting the operator, you need to reconnect these nodes. Hover on the left edge of the stream node, and then select and drag the green circle to connect it to the **Manage fields** operator node. Follow the same process to connect the **Manage fields** operator node to your destination. 
@@ -131,12 +131,12 @@ To design your event processing with the event processor editor:
 
 1. To insert an event processing operator between this eventstream and destination in the event processor editor, you can use one of the following two methods:
 
-   1. Insert the operator directly from the connection line. Hover on the connection line and then select the "+" button. A drop-down menu appears on the connection line, and you can select an operator from this menu.
+   1. Insert the operator directly from the connection line. Hover on the connection line and then select the "+" button. A dropdown menu appears on the connection line, and you can select an operator from this menu.
 
       :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-insert-node-1.png" alt-text="Screenshot showing where to hover on connection line to insert a node." :::
 
    1. Insert the operator from ribbon menu or canvas.
-      1. You can select an operator from the **Operations** menu in the ribbon. Alternatively, you can hover on one of the nodes and then select the "+" button if you deleted the connection line. A drop-down menu appears next to that node, and you can select an operator from this menu.
+      1. You can select an operator from the **Operations** menu in the ribbon. Alternatively, you can hover on one of the nodes and then select the "+" button if you deleted the connection line. A dropdown menu appears next to that node, and you can select an operator from this menu.
 
          :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing where to select an operator from the Operations menu." :::
 

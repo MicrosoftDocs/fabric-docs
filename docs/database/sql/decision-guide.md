@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer:
 ms.topic: product-comparison
 ms.custom:
-ms.search.form: SQL database Overview
+ms.search.form: SQL database Overview, Databases decision guide for SQL
 ms.date: 02/13/2025
 ---
 # Microsoft Fabric decision guide: choose a SQL database
@@ -33,7 +33,7 @@ For a detailed comparison of features and capabilities, see [Features comparison
 | Create options | Azure portal, PowerShell, Az CLI, Azure Resource Manager, Bicep, Terraform, T-SQL, REST API | Fabric portal, REST API |
 | Secure | Azure RBAC, SQL permissions | [Fabric workspace roles and sharing permissions](share-sql-manage-permission.md), SQL permissions |
 | Authentication | Microsoft Entra ID authentication, SQL authentication | Microsoft Entra ID authentication |
-| Database mirroring to Fabric OneLake | [Yes, manually enabled](../mirrored-database/azure-sql-database.md) | [Yes, automatically enabled for all eligible tables](../mirrored-database/overview.md) |
+| Database mirroring to Fabric OneLake | [Yes, manually enabled](../../mirroring/azure-sql-database.md) | [Yes, automatically enabled for all eligible tables](../../mirroring/overview.md) |
 | Cross-platform queries in Fabric | Yes, via mirroring to Fabric | Yes, via Fabric OneLake automatically |
 | Source of Fabric shortcuts | Yes, via mirroring to Fabric | Yes, via Fabric OneLake automatically |
 | Source for Power BI DirectLake mode | Yes, via mirroring to Fabric | Yes, via Fabric OneLake automatically |
@@ -63,3 +63,6 @@ Arin chooses [Azure SQL Database Hyperscale](/azure/azure-sql/database/service-t
 ## Related content
 
 - [Features comparison: Azure SQL Database and SQL database in Fabric (preview)](feature-comparison-sql-database-fabric.md)
+- [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#sql-database-in-microsoft-fabric)
+- [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)

@@ -1,8 +1,8 @@
 ---
 title: Git integration process
 description: Understand how Microsoft Fabric interacts with Git on Azure Repos or GitHub, what permissions are needed, and how to sync.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
@@ -110,24 +110,18 @@ If you don’t select which content to sync, you can’t continue to work.
 
 ### Folders
 
-Folders are not yet supported in Git. Currently, all items appear in the top level of the Git folder even if your workspace has folders.
-
-<!--- 
 When connected and synced, the workspace structure is mirrored in the Git repository, including folders structure. Workspace items in folders are exported to folders with the same name in the Git repo. Conversely, items in Git folders are imported to folders with the same name in the workspace.
 
---->
-
 > [!NOTE]
-> If your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different. You get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace. If you update first, the Git folder structure **overwrites the workspace** folder structure. For more information, see [Handling folder changes safely](#handling-folder-changes-safely).
+> Since folder structure is retained, if your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different. You get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace. If you update first, the Git folder structure **overwrites the workspace** folder structure. For more information, see [Handling folder changes safely](#handling-folder-changes-safely).
 
-<!---
 :::image type="content" source="./media/git-integration-process/git-subfolders.png" alt-text="Screenshot of workspace and corresponding Git branch with subfolders.":::
 
-* Empty folders aren't copied to Git. When you create or move items to a folder, the folder is created in Git.
-* Empty folders in Git are deleted automatically.
-* Empty folders in the workspace aren't deleted automatically even if all items are moved to different folders.
-* Folder structure is retained up to 10 levels deep.
---->
+- Empty folders aren't copied to Git. When you create or move items to a folder, the folder is created in Git.
+- Empty folders in Git are deleted automatically.
+- Empty folders in the workspace aren't deleted automatically even if all items are moved to different folders.
+- Folder structure is retained up to 10 levels deep.
+
 #### Handling folder changes safely
 
 If your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different because the folder structure is different. When you connect a workspace that has folders to Git, you get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace.
@@ -202,6 +196,7 @@ In each section, the changed items are listed with an icon indicating the status
 - :::image type="icon" source="./media/git-integration-process/modified-icon.png"::: modified
 - :::image type="icon" source="./media/git-integration-process/deleted-icon.png" ::: deleted
 - :::image type="icon" source="./media/git-integration-process/conflict-icon.png"::: conflict
+- :::image type="icon" source="./media/git-integration-process/warning.png"::: same-changes
 
 The Refresh button :::image type="icon" source="./media/git-integration-process/refresh-icon.png"::: on top of the panel updates the list of changes and updates.
 
@@ -273,7 +268,7 @@ GitHub account details include:
 --->
 ## Considerations and limitations
 
-[!INCLUDE [limitations](../../includes/git-limitations.md)]
+[!INCLUDE [limitations](../includes/git-limitations.md)]
 
 ## Related content
 

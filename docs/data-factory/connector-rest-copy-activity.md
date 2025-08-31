@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 12/18/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure REST in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to a REST endpoint.
+This article outlines how to use the copy activity in a pipeline to copy data from and to a REST endpoint.
 
 Specifically, this generic REST connector supports:
 

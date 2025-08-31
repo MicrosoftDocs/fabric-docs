@@ -32,7 +32,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/eventstreams/{
 ## Sample request
 
 ```http
-POST https://api.fabric.microsoft.com/v1/workspaces/cfafbeb1-8037-4d0c-896e-a46fb27ff229/eventstreams/5b218778-e7a5-4d73-8187-f10824047715/updateDefinition?updateMetadata=True
+POST https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/eventstreams/bbbbcccc-1111-dddd-2222-eeee3333ffff/updateDefinition?updateMetadata=True
 
 {
  "definition": {
@@ -164,8 +164,8 @@ POST https://api.fabric.microsoft.com/v1/workspaces/cfafbeb1-8037-4d0c-896e-a46f
 ## Sample response
 
 ```http
-    Location: https://api.fabric.microsoft.com/v1/operations/427f6c34-b64e-4ee4-8ea5-b533c0e203ef
-    x-ms-operation-id: 427f6c34-b64e-4ee4-8ea5-b533c0e203ef
+    Location: https://api.fabric.microsoft.com/v1/operations/ccccdddd-2222-eeee-3333-ffff4444aaaa
+    x-ms-operation-id: ccccdddd-2222-eeee-3333-ffff4444aaaa
     Retry-After: 30
 ```
 

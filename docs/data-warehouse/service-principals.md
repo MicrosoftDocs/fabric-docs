@@ -1,10 +1,10 @@
 ---
-title: Service principals in Fabric Data Warehouse
+title: Service Principals in Fabric Data Warehouse
 description: Learn about service principals (SPN) as security identities for applications and tools in Fabric warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: sosivara # Microsoft alias
-ms.date: 01/15/2025
+ms.reviewer: sosivara, fresantos # Microsoft alias
+ms.date: 06/09/2025
 ms.topic: how-to
 ---
 
@@ -92,7 +92,11 @@ Ownership of warehouses can be changed from an SPN to user, and from a user to a
 Limitations of service principals with Microsoft Fabric Data Warehouse:
 
 - Service principal or Entra ID credentials are currently not supported for COPY INTO error files.
-- Service principals are not supported for [GIT APIs](/rest/api/fabric/core/git). SPN support exists only for [Deployment pipeline APIs](/rest/api/fabric/core/deployment-pipelines). 
+- Service principals are not supported for [GIT APIs](/rest/api/fabric/core/git). SPN support exists only for [Deployment pipeline APIs](/rest/api/fabric/core/deployment-pipelines).
+- Service principals are currently not allowed to perform DCL operations within the warehouse. This includes `GRANT`, `REVOKE`, and `DENY` commands, regardless of the target principal's existence.
+- Service principals cannot trigger operations that result in the automatic creation of user identities within the data warehouse. This includes scenarios where the system would normally attempt to create a user as part of an operation. Examples of operations that may trigger implicit user creation include:
+  - `ALTER USER ... WITH DEFAULT_SCHEMA`
+  - `ALTER ROLE ... ADD MEMBER`
 
 ### Related content
 

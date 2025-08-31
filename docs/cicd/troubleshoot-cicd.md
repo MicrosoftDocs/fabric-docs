@@ -1,13 +1,13 @@
 ---
 title: Troubleshoot the Fabric lifecycle management tools.
 description: Troubleshoot problems with deployment pipelines, the Fabric Application lifecycle management (ALM) tools.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.service: fabric
 ms.subservice: cicd
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 02/27/2025
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
@@ -55,6 +55,16 @@ To understand the considerations and limitations of various lifecycle management
 
 **Cause**: If the authentication method in Power BI is weaker than the authentication method in Azure DevOps, the functionalities between them doesn't work.  
 **Workaround**: The admin needs to align the authentication method in Power BI and Azure DevOps. The authentication policies for Microsoft Entra ID (formerly known as Azure Active Directory) are defined in [Manage authentication methods](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy).
+
+#### I exceeded the Git rate limit
+
+**Description of problem**: When I try to update or commit to Git, I get an error message that says that I exceeded the Git rate limit.
+
+:::image type="content" source="./media/troubleshoot-cicd/git-rate-limit.png" alt-text="Screenshot of error message saying Git rate limit exceeded.":::
+
+**Cause**: Your git provider limits the number of Git actions you can perform in a given amount of time. The rate limit can be reached either by performing a large number of Git operations, or by executing operations that involve a large number of items. For information about GitHub rate limits, see [About primary rate limits](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-primary-rate-limits). For Azure DevOps limits, see [Rate and usage limits](/azure/devops/integrate/concepts/rate-limits).
+
+**Solution**: Wait the amount of time specified in the error message, and then try again. If you continue to see this error, contact your Git provider for more information.
 
 ### Connect issues
 
@@ -195,6 +205,20 @@ Reason: Git Integration doesn't support Direct Query and proxy models at this ti
 
 ### Resolve error issues
 
+#### Fix duplicate logical IDs
+
+**Description of problem**: When you try to commit changes to Git, you get an error message that says that there are duplicate logical IDs in the workspace.
+
+:::image type="content" source="./media/troubleshoot-cicd/fix-logical-id.png" alt-text="Screenshot of error message when there are two or more items in the workspace with the same logical ID.":::
+
+**Cause**: The logical ID is a unique ID for each item in the workspace. When you copy an item in Git, the entire folder is duplicated exactly, including the logical ID. When you try to update the workspace, the system checks for duplicate logical IDs and prevents you from committing changes if it finds any.
+
+**Solution**: To fix the issue, you need to change the logical ID of one of the items.
+
+* If you have write permission to the repository, select **Fix with direct commit**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then commit the changes.
+
+* If you don't have write permission to the repository, select *Create branch and go to Git**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then create a pull request to merge the changes.
+
 ### Undo issues
 
 #### Undo failure: After selecting "Undo" a dialog pops up indicating failure because dependency can't be found
@@ -244,7 +268,8 @@ Deployment pipelines display a pipeline stage tag in workspaces that are assigne
 
 ### Lost connections after deployment
 
-**Description of problem**: In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item.  
+**Description of problem**: In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item.
+
 **Solution**: To reestablish these connections, unassign and reassign the same workspace in the target stage.
 
 ### I can't assign a workspace to a stage
@@ -514,7 +539,7 @@ If one of the rule options is greyed out, it could be because of the following r
 
 ## Troubleshooting errors
 
-Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-rules.md) you created. If you don't see a rule error message name, review the [deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations) and the [supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-semantic-model-rules), and try to reconfigure the rule.
+Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-rules.md) you created. If you don't see a rule error message name, review the [deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations) and the [supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-gen1-and-semantic-model-rules), and try to reconfigure the rule.
 
 |Error message |Solution |
 |--------------|---------|

@@ -1,62 +1,62 @@
 ---
-title: Office 365 Outlook activity (Preview)
+title: Office 365 Outlook activity
 description: Learn how to add an Office 365 Outlook activity to a pipeline and use it to send a Teams message.
 ms.reviewer: xupxhou
 ms.author: whhender
 author: whhender
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 08/25/2025
+ms.custom: pipelines
+ai-usage: ai-assisted
 ---
 
-# Use the Office 365 Outlook activity to send an email with Outlook (Preview)
+# Use the Office 365 Outlook activity to send an email with Outlook
 
-The Office 365 Outlook activity in Data Factory for Microsoft Fabric allows you to send an email with your Office 365 account. The message can include dynamic expressions to be customized as much as necessary.
-
-> [!IMPORTANT]
-> The Office 365 Outlook activity in Data Factory for Microsoft Fabric is currently in preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+The Office 365 Outlook activity in Data Factory for Microsoft Fabric lets you send emails using your Office 365 account. You can customize the message with dynamic expressions.
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+Make sure you have the following:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+- A tenant account with an active subscription. [Sign up for free](../fundamentals/fabric-trial.md).
+- A created workspace.
 
-## Add an Office 365 Outlook activity to a pipeline with UI
+## Add the Office 365 Outlook activity to a pipeline
 
-To use an Office 365 Outlook activity in a pipeline, complete the following steps:
-
-### Creating the activity
+Follow these steps to use the Office 365 Outlook activity in a pipeline:
 
 1. Create a new pipeline in your workspace.
-1. Search for Office 365 Outlook in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. It might be necessary to expand the activities list on the far right side of the pane, or the Outlook icon can be compressed without labeling text beneath it, as shown in this image, depending on the window width of your browser.
+1. Search for "Office 365 Outlook" in the pipeline **Activities** pane and select it to add it to the pipeline canvas. Depending on your browser window width, you might need to expand the activities list or look for the Outlook icon without a label.
 
    :::image type="content" source="media/outlook-activity/add-outlook-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Office 365 Outlook activity highlighted.":::
 
-1. Select the new Outlook activity on the canvas if it isn't already selected.
+1. Select the new Outlook activity on the canvas if it isn’t already selected.
 
    :::image type="content" source="media/outlook-activity/outlook-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the Office 365 Outlook activity.":::
 
-Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
+Refer to the [**General** settings](activity-overview.md#general-settings) guide to configure the **General** settings tab.
 
-### Office 365 Outlook activity settings
+> [!TIP]
+> Use a separate Outlook activity for each activity you want to monitor for failures.
+>
+> If you attach more than one activity to the Outlook activity, all connected statuses must be met to trigger it. For example, if two copy activities are connected to an Outlook activity set to trigger "on failure," both activities must fail to activate the Outlook activity. If only one fails, the Outlook activity won’t trigger.
 
-1. Select the **Settings** tab, then select **Sign in** to sign in to your Office 365 account.
+## Configure the Office 365 Outlook activity
 
-   :::image type="content" source="media/outlook-activity/sign-in-to-office-365.png" alt-text="Screenshot showing the Outlook activity Settings tab, highlighting the tab, and where to sign in.":::
+To set up the Office 365 Outlook activity:
 
-1. An authentication dialog appears for you to provide credentials for the account you want to use in Outlook. After that, a confirmation appears for you to allow access to Outlook from your pipeline. Select **Allow access** on the confirmation dialog to connect your Outlook activity to your account.
+1. Add a connection to your Outlook activity at the top of the settings. You can create a new connection or use an existing one.
 
-1. Once connected, you can choose to provide details for the email, including its recipients, subject, body. You can also include **Advanced** details such as a custom from address, CC and BCC recipients, sensitivity, and a custom reply-to address. All of the fields support [dynamic expressions](expression-language.md).
+   > [!NOTE]
+   > * If you’re using user authentication and deploying the pipeline with the Outlook or Teams activity to another workspace, the activity will be inactive in the target workspace until you create a new user authentication connection there.
+   > * If you don't have access to the connections used in the Outlook activity, the target environment will set those activities to inactive. After that you can edit the target pipeline, change the authorization, and set the activity to active.
+   > * **The content being sent from the email will be sent from your account.**
 
-   :::image type="content" source="media/outlook-activity/email-settings.png" alt-text="Screenshot showing the Office 365 Outlook activity Settings tab, after signing in, with the Post in options dropdown expanded to show its available options.":::
+1. Provide details for the email, including recipients, subject, and body. You can also add advanced details like a custom "from" address, CC and BCC recipients, sensitivity, and a custom reply-to address. All fields support [dynamic expressions](expression-language.md).
 
-## Save and run or schedule the pipeline
-
-The Office 365 Outlook activity is typically used with other activities, often as a status notification for the outcome of prior steps in a pipeline. After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
-
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+   :::image type="content" source="media/outlook-activity/email-details.png" alt-text="Screenshot showing the settings windows in the Outlook Activity.":::
 
 ## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [Run, schedule, and trigger pipelines](pipeline-runs.md)
+- [Monitor pipeline runs](monitor-pipeline-runs.md)

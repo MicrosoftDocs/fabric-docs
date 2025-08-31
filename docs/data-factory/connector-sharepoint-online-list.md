@@ -4,9 +4,11 @@ description: This article provides information about how to create a SharePoint 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 04/01/2025
 ms.custom:
-  - template-how-to
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # Set up your SharePoint Online List connection
@@ -19,7 +21,7 @@ The SharePoint Online List connector supports the following authentication types
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Organizational account| n/a | √|
+|Organizational account| √ | √|
 |Service Principal| √ | √ |
 
 ## Set up your connection in Dataflow Gen2
@@ -32,9 +34,9 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-To create a connection in a data pipeline:
+To create a connection in a pipeline:
 
 1. From the page header in Data Factory service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**.
 

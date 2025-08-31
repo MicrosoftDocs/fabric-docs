@@ -6,12 +6,14 @@ ms.author: jianleishen
 ms.topic: how-to
 ms.date: 03/20/2024
 ms.custom:
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Google BigQuery in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from Google BigQuery.
+This article outlines how to use the copy activity in a pipeline to copy data from Google BigQuery.
 
 ## Supported configuration
 

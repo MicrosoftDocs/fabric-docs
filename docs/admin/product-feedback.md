@@ -1,8 +1,8 @@
 ---
 title: Product feedback
 description: Microsoft product feedback is enabled by default. Learn how to disable product feedback or reenable this setting.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
 ms.date: 04/30/2024
 ---

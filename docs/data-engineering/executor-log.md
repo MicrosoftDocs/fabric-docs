@@ -33,9 +33,9 @@ This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-
 | User | Yes |
 | [Service principal](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) and [Managed identities](/entra/identity/managed-identities-azure-resources/overview) | Yes |
 
-## Get driver log metadata
+## Get executor log metadata
 
-Get metadata of a log file of driver of a Spark application.
+Get metadata(s) of log file(s) of executors of a Spark application.
 
 ### Interface
 
@@ -56,7 +56,7 @@ With optional parameters:
 With attemptId
 
 ```HTTP
-https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=executor&meta=true&containerId={containerId}&filenamePrefix={filenamePrefix}&offset={offset}&maxResults={maxResults} 
+https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=executor&meta=true&filenamePrefix={filenamePrefix}&offset={offset}&maxResults={maxResults}
 ```
 
 Without attemptId
@@ -81,14 +81,14 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 
 | Name | Type | Description |
 | --- | --- | --- |
-| 200 OK | A list of ContainerLogMeta | Request completed successfully |
+| 200 OK | A list of [ContainerLogMeta](./driver-log.md#definitions) | Request completed successfully |
 
 ### Examples
 
 ### Sample request
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/application_1724388946961_0001/logs?type=executor&meta=true&filenamePrefix=stdout 
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/application/application_1724388946961_0001/logs?type=executor&meta=true&filenamePrefix=stdout 
 ```
 
 ### Sample response
@@ -183,12 +183,5 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 ### Sample request
 
 ``` HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/application_1731308630223_0001/logs?type=executor&containerId=container_1704417105000_0001_01_000001&fileName=stdout
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/application/application_1731308630223_0001/logs?type=executor&containerId=container_1704417105000_0001_01_000001&fileName=stdout
 ```
-
-## Next steps
-
-- [Livy Log](../data-engineering/livy-log.md)
-- [Driver log](../data-engineering/driver-log.md)
-- [Open-Source APIs ](../data-engineering/open-source-apis.md)
-

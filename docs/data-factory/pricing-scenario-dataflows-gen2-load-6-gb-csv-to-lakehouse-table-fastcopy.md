@@ -5,8 +5,10 @@ ms.reviewer:
 ms.author: yexu
 author: dearandyxu
 ms.topic: conceptual
-ms.custom:
 ms.date: 07/05/2024
+ms.custom: 
+    - dataflows
+    - configuration
 ---
 
 # Pricing scenario using Dataflow Gen2 to load 6 GB of CSV data to a Lakehouse table with Fast Copy enabled
@@ -41,6 +43,6 @@ The Dataflow Gen2 Refresh operation consumed almost about 4 minutes with 3,696 C
 
 ## Related content
 
-- [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
+- [Pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)

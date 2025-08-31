@@ -3,10 +3,10 @@ title: "Migrate from Dataflow Gen1 to Dataflow Gen2"
 description: "Guidance to help you migrate your Dataflow Gen1 to Dataflow Gen2 in Data Factory for Microsoft Fabric."
 author: itsnotaboutthecell
 ms.author: alpowers
-ms.reviewer: dougklopfenstein, mllopis
+ms.reviewer: whhender, mllopis
 ms.topic: conceptual
 ms.date: 12/08/2024
-ms.custom: fabric-cat, intro-migration
+ms.custom: fabric-cat, intro-migration, dataflows
 ---
 
 # Migrate from Dataflow Gen1 to Dataflow Gen2
@@ -36,7 +36,7 @@ Answers to many of these questions are described in this article.
 > [!NOTE]
 > The decision to migrate to Fabric capacity depends on the requirements of each customer. Customers should carefully evaluate the benefits in order to make an informed decision. We expect to see organic migration to Dataflow Gen2 over time, and our intention is that it happens on terms that the customer is comfortable with.
 >
-> To be clear, currently there aren't any plans to deprecate Power BI dataflows or Power Platform dataflows. However, there is a priority to focus investment on Dataflow Gen2 for enterprise data ingestion, and so the value provided by Fabric capacity will increase over time. Customers that choose Fabric capacity can expect to benefit from alignment with the [Microsoft Fabric product roadmap](/fabric/release-plan/data-factory).
+> To be clear, currently there aren't any plans to deprecate Power BI dataflows or Power Platform dataflows. However, there is a priority to focus investment on Dataflow Gen2 for enterprise data ingestion, and so the value provided by Fabric capacity will increase over time. Customers that choose Fabric capacity can expect to benefit from alignment with the [Microsoft Fabric product roadmap](https://aka.ms/fabricrm).
 
 ### Convergence of self-service and enterprise data integration
 
@@ -61,10 +61,10 @@ The following table presents features supported in Power BI dataflow and/or Fabr
 | Connect to, and load data from, dataflows in Power BI Desktop, Excel, or Power Apps | Yes | Yes |
 | [DirectQuery via dataflows](/power-bi/transform-model/dataflows/dataflows-directquery) to connect directly to a dataflow, bypassing data import into a semantic model | Yes | No <sup>1</sup> |
 | **Scalability** |||
-| [Fast copy](dataflows-gen2-fast-copy.md), which supports large-scale data ingestion, utilizing the data pipeline [Copy activity](copy-data-activity.md) within dataflows | No | Yes |
+| [Fast copy](dataflows-gen2-fast-copy.md), which supports large-scale data ingestion, utilizing the pipeline [Copy activity](copy-data-activity.md) within dataflows | No | Yes |
 | [Scheduled refresh](dataflow-gen2-refresh.md), which keeps data current | Yes | Yes |
 | [Incremental refresh](dataflow-gen2-incremental-refresh.md), which uses policies to automate incremental data load and can help deliver near real-time reporting | Yes | Yes |
-| [Data pipeline orchestration](dataflow-activity.md), which allows you to add a [Dataflow activity](dataflow-activity.md) to a data pipeline and create orchestrated conditional events | No | Yes |
+| [Pipeline orchestration](dataflow-activity.md), which allows you to add a [Dataflow activity](dataflow-activity.md) to a pipeline and create orchestrated conditional events | No | Yes |
 | **Artificial intelligence** |||
 | [Copilot for Data Factory](../fundamentals/copilot-fabric-data-factory.md), which provides intelligent code generation to transform data with ease, and generates code explanations to help better understand complex tasks | No | Yes |
 | [Cognitive Services](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration), which use artificial intelligence (AI) to apply different algorithms from Azure Cognitive Services to enrich self-service data preparation | Yes | No <sup>2</sup> |
@@ -114,7 +114,7 @@ In the [migration scenarios article](dataflow-gen2-migrate-from-dataflow-gen1-sc
 
 ### Roadmap
 
-The [Microsoft Fabric release plan](https://aka.ms/fabricreleaseplan) announces the latest updates and timelines as features are prepared for future release, including what's new and planned for [Data Factory in Microsoft Fabric](/fabric/release-plan/data-factory).
+The [Microsoft Fabric release plan](https://aka.ms/fabricreleaseplan) announces the latest updates and timelines as features are prepared for future release, including what's new and planned for [Data Factory in Microsoft Fabric](https://aka.ms/fabricrm).
 
 ## Related content
 

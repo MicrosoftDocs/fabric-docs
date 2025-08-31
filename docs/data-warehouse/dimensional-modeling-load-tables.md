@@ -1,12 +1,13 @@
 ---
-title: "Load tables in a dimensional model"
+title: "Load Tables in a Dimensional Model"
 description: "Learn about loading tables in a dimensional model in Microsoft Fabric Warehouse."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: drubiolo, chweb
-ms.date: 01/06/2025
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom: fabric-cat
+ms.custom:
+  - fabric-cat
 ---
 
 # Dimensional modeling in Microsoft Fabric Warehouse: Load tables
@@ -27,11 +28,11 @@ This article provides you with guidance and best practices for loading dimension
 
 Loading a dimensional model involves periodically running an Extract, Transform, and Load (ETL) process. An ETL process orchestrates the running of other processes, which are generally concerned with staging source data, synchronizing dimension data, inserting rows into fact tables, and recording auditing data and errors.
 
-For a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] solution, you can use [Data Factory](../data-factory/data-factory-overview.md) to develop and run your ETL process. The process can stage, transform, and load source data into your dimensional model tables.
+For a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] solution, you can use [Data Factory in Microsoft Fabric](../data-factory/data-factory-overview.md) to develop and run your ETL process. The process can stage, transform, and load source data into your dimensional model tables.
 
 Specifically, you can:
 
-- Use [data pipelines](../data-factory/data-factory-overview.md#data-pipelines) to build workflows to orchestrate the ETL process. Data pipelines can execute SQL scripts, stored procedures, and more.
+- Use [data pipelines](../data-factory/data-factory-overview.md#pipelines) to build workflows to orchestrate the ETL process. Data pipelines can execute SQL scripts, stored procedures, and more.
 - Use [dataflows](../data-factory/data-factory-overview.md#dataflows) to develop low-code logic to ingest data from hundreds of data sources. Dataflows support combining data from multiple sources, transforming data, and then loading it to a destination, like a dimensional model table. Dataflows are built by using the familiar [Power Query](/power-query/power-query-what-is-power-query) experience that's available today across many Microsoft products, including Microsoft Excel and Power BI Desktop.
 
 > [!NOTE]
@@ -46,7 +47,7 @@ The general workflow of an ETL process is to:
 1. [Process fact tables](#process-fact-tables).
 1. Optionally, perform post-processing tasks, like triggering the refresh of dependent Fabric content (like a semantic model).
 
-:::image type="content" source="media/dimensional-modeling-load-tables/etl-process-steps.svg" alt-text="Diagram shows the four steps of the ETL process as described in the previous paragraph." border="false":::
+:::image type="content" source="media/dimensional-modeling-load-tables/etl-process-steps.svg" alt-text="Diagram shows the four steps of the ETL process as described in the previous paragraph.":::
 
 Dimension tables should be processed first to ensure that they store all dimension members, including those added to source systems since the last ETL process. When there are dependencies between dimensions, as is the case with [outrigger dimensions](dimensional-modeling-dimension-tables.md#outrigger-dimensions), dimension tables should be processed in order of dependency. For example, a geography dimension that's used by a customer dimension and a vendor dimension should be processed before the other two dimensions.
 
@@ -71,7 +72,7 @@ We recommend that you create a schema in the warehouse, possibly named `staging`
 
 You can also consider data virtualization alternatives as part of your staging strategy. You can use:
 
-- [Mirroring](../database/mirrored-database/overview.md), which is a low-cost and low-latency turnkey solution that allows you to create a replica of your data in OneLake. For more information, see [Why use Mirroring in Fabric?](../database/mirrored-database/overview.md#why-use-mirroring-in-fabric).
+- [Mirroring](../mirroring/overview.md), which is a low-cost and low-latency turnkey solution that allows you to create a replica of your data in OneLake. For more information, see [Why use Mirroring in Fabric?](../mirroring/overview.md#why-use-mirroring-in-fabric).
 - [OneLake shortcuts](../onelake/onelake-shortcuts.md), which point to other storage locations that could contain your source data. Shortcuts can be [used as tables in T-SQL queries](../onelake/onelake-shortcuts.md#sql).
 - [PolyBase in SQL Server](/sql/relational-databases/polybase/polybase-guide?view=sql-server-ver16&preserve-view=true), which is a data virtualization feature for SQL Server. PolyBase allows T-SQL queries to join data from external sources to relational tables in an instance of SQL Server.
 - [Data virtualization with Azure SQL Managed Instance](/azure/azure-sql/managed-instance/data-virtualization-overview?view=azuresql&tabs=managed-identity&preserve-view=true), which allows you to execute T-SQL queries on files storing data in common data formats in [Azure Data Lake Storage (ADLS) Gen2](/azure/storage/blobs/data-lake-storage-introduction) or [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction), and combine it with locally stored relational data by using joins.
@@ -100,7 +101,7 @@ You can load tables in a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] by
 - **[COPY INTO (T-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true):** This option is useful when the source data comprise Parquet or CSV files stored in an external Azure storage account, like [ADLS Gen2](/azure/storage/blobs/data-lake-storage-introduction) or [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction).
 - **Data pipelines:** In addition to orchestrating the ETL process, data pipelines can include activities that run T-SQL statements, perform lookups, or copy data from a data source to a destination.
 - **Dataflows:** As an alternative to data pipelines, dataflows provide a code-free experience to transform and clean data.
-- **Cross-warehouse ingestion:** When data is stored in the same workspace, cross-warehouse ingestion allows joining different warehouse or lakehouse tables. It supports T-SQL commands like `INSERT…SELECT`, `SELECT INTO`, and `CREATE TABLE AS SELECT (CTAS)`. These commands are especially useful when you want to transform and load data from staging tables within the same workspace. They're also set-based operations, which is likely to be the most efficient and fastest way to load dimensional model tables.
+- **Cross-warehouse ingestion:** When data is stored in the same workspace, cross-warehouse ingestion allows joining different warehouse or lakehouse tables. It supports T-SQL commands like `INSERT...SELECT`, `SELECT INTO`, and `CREATE TABLE AS SELECT (CTAS)`. These commands are especially useful when you want to transform and load data from staging tables within the same workspace. They're also set-based operations, which is likely to be the most efficient and fastest way to load dimensional model tables.
 
 > [!TIP]
 > For a complete explanation of these data ingestion options including best practices, see [Ingest data into the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](ingest-data.md).
@@ -134,7 +135,7 @@ Processing a dimension table involves synchronizing the data warehouse data with
 
 The following diagram depicts the logic used to process a dimension table.
 
-:::image type="content" source="media/dimensional-modeling-load-tables/process-dimension-table.svg" alt-text="Diagram shows a flow that describes how new and changed source rows are loaded to a dimension table, as described in the following paragraph." border="false":::
+:::image type="content" source="media/dimensional-modeling-load-tables/process-dimension-table.svg" alt-text="Diagram shows a flow that describes how new and changed source rows are loaded to a dimension table, as described in the following paragraph.":::
 
 Consider the process of the `Product` dimension table.
 
@@ -212,7 +213,7 @@ Another approach, relevant when there's confidence that the [natural key](dimens
 
 The following diagram depicts the logic used to process a fact table.
 
-:::image type="content" source="media/dimensional-modeling-load-tables/process-fact-table.svg" alt-text="Diagram shows a flow that describes how new source rows are loaded to a fact table, as described in the previous paragraphs." border="false":::
+:::image type="content" source="media/dimensional-modeling-load-tables/process-fact-table.svg" alt-text="Diagram shows a flow that describes how new source rows are loaded to a fact table, as described in the previous paragraphs.":::
 
 Whenever possible, a fact table should be loaded incrementally, meaning that new facts are detected and inserted. An incremental load strategy is more scalable, and it reduces the workload for both the source systems and the destination systems.
 

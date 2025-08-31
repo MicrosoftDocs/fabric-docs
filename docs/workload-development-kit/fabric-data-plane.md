@@ -4,7 +4,7 @@ description: Learn about how to work with customer data in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept-article
-ms.custom:
+ms.custom: sfi-ropc-nochange
 ms.date: 05/21/2024
 #customer intent:
 ---
@@ -122,6 +122,43 @@ You can also use the APIs to create files and directories.
 Alternatively, you can use other Fabric workloads to write data to the platform. For example, you can use Fabric's Lakehouse workload API to efficiently [load common file types to an optimized Delta table](../data-engineering/load-to-tables.md). This is done by sending a POST request to the [Tables - Load Table API endpoint](/rest/api/fabric/lakehouse/tables/load-table).
 
 The SQL connection can also be used to carry out commands that insert data into tables.
+
+## OneLake integration
+
+You may opt in to use OneLake integration in your workloads.
+If you do, when a new item is created for your workload, Fabric will automatically create folders for the new item.
+
+To opt in, your item's manifest XML must declare this by setting the `CreateOneLakeFoldersOnArtifactCreation` attribute to `true`.
+For example:
+```
+<ItemManifestConfiguration xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="1.101.0">  
+  <Item TypeName="Org.WorkloadSample.SampleWorkloadItem" Category="Data" CreateOneLakeFoldersOnArtifactCreation="true">
+    <Workload WorkloadName="Org.WorkloadSample" />
+    ...
+  </Item>
+</ItemManifestConfiguration>
+```
+> [!Note]
+> SchemaVersion must be set to 1.101.0 (or later supported versions).
+
+The same SchemaVersion must be set in `WorkloadManifest.xml`:
+
+```
+<WorkloadManifestConfiguration xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="1.101.0">
+  <Workload WorkloadName="Org.WorkloadSample" HostingType="Remote">
+  ...
+  </Workload>
+</WorkloadManifestConfiguration>
+```
+
+When a new item is created, the following root folders are created in OneLake:
+
+`<WorkspaceID>/<ItemID>/Files`
+
+`<WorkspaceID>/<ItemID>/Tables`
+
+You can create additional folders under these, and use them for storing data in any format (under `Files` folder) or in parquet format (under `Tables` folder).
+Follow the [instructions](#how-to-read-and-write-data-in-microsoft-fabric) above to read/write from OneLake storage.
 
 ## Related content
 

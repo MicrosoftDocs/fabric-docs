@@ -6,7 +6,9 @@ ms.author: xupzhou
 ms.topic: how-to
 ms.date: 09/16/2024
 ms.custom:
-  - template-how-to
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # Set up your Azure Data Lake Storage Gen2 connection
@@ -35,9 +37,9 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-To create a connection in a data pipeline:
+To create a connection in a pipeline:
 
 1. From the page header in Data Integration service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**
 
@@ -80,7 +82,7 @@ To create a connection in a data pipeline:
 ### Considerations and limitations
 
 * Workspace identity, Organizational Account, and Service Principal are the only supported authentication types.
-* Connections for trusted workspace access only work in OneLake shortcuts and data pipelines.
+* Connections for trusted workspace access only work in OneLake shortcuts and pipelines.
 * Connections for trusted workspace access can't be created from the **Manage Gateways and connections** experience.
 * Existing connections that work for trusted workspace access can't be modified in the **Manage Gateways and connections** experience.
 * Connections to firewall-enabled Storage accounts will have the status *Offline* in Manage connections and gateways.
@@ -158,7 +160,7 @@ To use service principal authentication, follow these steps:
 
 #### Workspace identity authentication
 
-**Workspace identity**: Select workspace identity from the authentication method dropdown. A Fabric workspace identity is an automatically managed service principal that can be associated with a Fabric workspace. Fabric workspaces with a workspace identity can securely read or write to Azure Data Lake Storage Gen2 accounts through OneLake shortcuts and data pipelines. When selecting this option in the connector, make sure that the workspace has a workspace identity and that the identity has the ability to read or write to the intended Azure Data Lake Storage Gen2 account. For more information, see [Workspace identity](../security/workspace-identity.md)
+**Workspace identity**: Select workspace identity from the authentication method dropdown. A Fabric workspace identity is an automatically managed service principal that can be associated with a Fabric workspace. Fabric workspaces with a workspace identity can securely read or write to Azure Data Lake Storage Gen2 accounts through OneLake shortcuts and pipelines. When selecting this option in the connector, make sure that the workspace has a workspace identity and that the identity has the ability to read or write to the intended Azure Data Lake Storage Gen2 account. For more information, see [Workspace identity](../security/workspace-identity.md)
 
 > [!NOTE]
 > Connections with workspace identity will have the status *Offline* in Manage connections and gateways. Checking the status of a connection with workspace identity isn't supported.
@@ -177,7 +179,7 @@ Select **Create**. Your creation is successfully tested and saved if all the cre
 
 ## Table summary
 
-The connector properties in the following table are supported in pipeline copy.
+The connector properties in the following table are supported in a pipeline copy.
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|

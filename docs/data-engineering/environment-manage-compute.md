@@ -1,10 +1,10 @@
 ---
-title: Compute management in Fabric environments
-description: A Fabric environment contains a collection of configurations, including Spark compute properties. Learn how to configure these properties in an environment.
+title: Compute Management in Fabric Environments
+description: A Microsoft Fabric environment contains configurations that include Spark compute properties. Learn how to configure these properties in an environment.
 ms.author: saravi
 author: santhoshravindran7
-ms.topic: overview
-ms.date: 03/13/2025
+ms.topic: how-to
+ms.date: 07/03/2025
 ms.search.form: Manage Spark compute in Environment
 ---
 
@@ -12,30 +12,38 @@ ms.search.form: Manage Spark compute in Environment
 
 Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. It includes starter pools and custom pools.
 
-A Fabric environment contains a collection of configurations, including Spark compute properties that allow users to configure the Spark session after they're attached to notebooks and Spark jobs. With an environment, you have a flexible way to customize compute configurations for running your Spark jobs. In an environment, the compute section allows you to configure the Spark session level properties to customize the memory and cores of executors based on workload requirements. The Spark properties set via `spark.conf.set` control application-level parameters and they aren't related to environment variables.
+A Fabric environment contains a collection of configurations, including Spark compute properties, that you can use to configure the Spark session after they're attached to notebooks and Spark jobs. With an environment, you have a flexible way to customize compute configurations for running your Spark jobs.
 
-Workspace admins can enable or disable compute customizations with the **Customize compute configurations for items** switch in the **Pool** tab of the **Data Engineering/Science** section in the **Workspace settings** screen.
+## Configure settings
 
-Workspace admins can delegate the members and contributors to change the default session level compute configurations in s Fabric environment by enabling this setting.
+As a workspace admin, you can enable or disable compute customizations.
 
-:::image type="content" source="media\environment-introduction\customize-compute-items.png" alt-text="Screenshot showing the item-level compute customization option in Workspace settings.":::
+1. On the **Workspace settings** pane, select the **Data Engineering/Science** section.
 
-If the workspace admin disables this option in the workspace settings, the compute section of the environment is disabled and the default pool compute configurations for the workspace are used for running Spark jobs.
+1. On the **Pool** tab, turn the **Customize compute configurations for items** toggle to **On**.
 
-## Customizing session level compute properties in an environment
+   You can also delegate members and contributors to change the default session-level compute configurations in a Fabric environment by enabling this setting.
+
+   :::image type="content" source="media\environment-introduction\customize-compute-items.png" alt-text="Screenshot that shows the item-level compute customization option in Workspace settings.":::
+
+   If you disable this option on the **Workspace settings** pane, the **Compute** section of the environment is disabled. The default pool compute configurations for the workspace are used for running Spark jobs.
+
+## Customize session-level compute properties in an environment
 
 As a user, you can select a pool for the environment from the list of pools available in the Fabric workspace. The Fabric workspace admin creates the default starter pool and custom pools.
 
-:::image type="content" source="media\environment-introduction\environment-pool-selection.png" alt-text="Screenshot showing where to select pools in the environment Compute section.":::
+:::image type="content" source="media\environment-introduction\environment-pool-selection.png" alt-text="Screenshot that shows where to select pools in the environment Compute section.":::
 
-After you select a pool in the **Compute** section, you can tune the cores and memory for the executors within the bounds of the node sizes and limits of the selected pool.
+After you select a pool in the **Compute** section, you can tune the cores and memory for the executors within the bounds of the node sizes and limits of the selected pool. For more information about Spark compute sizes and their cores or memory options, see [Spark compute in Fabric](spark-compute.md). Use the **Compute** section to configure the Spark session-level properties to customize the memory and cores of executors based on workload requirements. The Spark properties set via `spark.conf.set` control application-level parameters aren't related to environment variables.
 
-For example: You select a custom pool with node size of large, which is 16 Spark vCores, as the environment pool. You can then choose the driver/executor core to be either 4, 8 or 16, based on your job level requirement. For the memory allocated to driver and executors, you can choose 28 g, 56 g, or 112 g, which are all within the bounds of a large node memory limit.
+For example, say that you want to select a custom pool with a large node size, which is 16 Spark vCores, as the environment pool.
 
-:::image type="content" source="media\environment-introduction\env-cores-selection.png" alt-text="Screenshot showing where to select the number of cores in the environment Compute section.":::
+1. In the **Compute** section, under **Environment pool**, use the **Spark driver core** dropdown to choose either **4**, **8**, or **16**, based on your job-level requirement.
 
-For more information about Spark compute sizes and their cores or memory options, see [What is Spark compute in Microsoft Fabric?](spark-compute.md).
+1. To allocate memory to drivers and executors, under **Spark executor memory**, select **28 g**, **56 g**, or **112 g**. All are within the bounds of a large node memory limit.
+
+   :::image type="content" source="media\environment-introduction\env-cores-selection.png" alt-text="Screenshot that shows where to select the number of cores in the environment Compute section.":::
 
 ## Related content
 
-- [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md).
+- [Create, configure, and use an environment in Fabric](create-and-use-environment.md)

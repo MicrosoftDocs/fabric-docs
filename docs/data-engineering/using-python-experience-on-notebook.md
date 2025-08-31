@@ -12,10 +12,10 @@ ms.date: 03/31/2025
 
 # Use Python experience on Notebook
 
- > [!NOTE]
- > Currently, the feature is in preview.
 
 The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This capability makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that don't require big data and distributed computing.
+
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 With a Python notebook, you can get:
 
@@ -64,7 +64,8 @@ You can monitor the Python notebook job run details on the ribbon tab **Run** ->
 You can interact with Lakehouse, Warehouses, SQL endpoints, and built-in resources folders on Python notebook.
 
  > [!NOTE]
- > The Python Notebook runtime comes pre-installed with [delta‑rs](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries to support both reading and writing Delta Lake data. However, please note that some Delta Lake features may not be fully supported at this time. For more details and the latest updates, kindly refer to the official [delta‑rs](https://github.com/delta-io/delta-rs) and [duckdb](https://duckdb.org/docs/stable/extensions/delta.html) websites.
+ > - The Python Notebook runtime comes pre-installed with [delta‑rs](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries to support both reading and writing Delta Lake data. However, note that some Delta Lake features may not be fully supported at this time. For more details and the latest updates, kindly refer to the official [delta‑rs](https://github.com/delta-io/delta-rs) and [duckdb](https://duckdb.org/docs/stable/extensions/delta.html) websites.
+ > - We currently do not support deltalake(delta-rs) version 1.0.0 or above. Stay tuned.
 
 ### Lakehouse interaction
 
@@ -108,9 +109,26 @@ There are commands that can lead to kernel died. For example, *quit()*, *exit()*
 
 You can use *%pip* and *%conda* commands for inline installations, the commands support both public libraries and customized libraries.  
 
-For customized libraries, you can upload the lib files to the [**Built-in resources**](#notebook-resources-folder) folder. We support multiple types of libraries like *.whl*, *.jar*, *.dll*, *.py*, etc., just try drag&drop to the file and the code snippet is generated automatically.
+For customized libraries, you can upload the lib files to the [**Built-in resources**](#notebook-resources-folder) folder. We support multiple types of libraries, including formats such as Wheel (*.whl*), JAR (*.jar*), DLL (*.dll*), and Python (*.py*). Just try drag&drop to the file and the code snippet is generated automatically.
 
 You may need to restart the kernel to use the updated packages.
+
+
+To better understand and use similar commands clearly, refer to the table below.
+
+| **Command/Syntax** | **Main purpose** | **How it works in Jupyter Notebook** | **Typical use case** | **Notes**|
+|---|---|---|---|---|
+| ```%pip install package``` | Install Python packages | Runs pip in the notebook’s Python kernel | Recommended way to install packages | In Python Notebook, same as ```!pip```; does **not** restart kernel automatically |
+| ```!pip install package``` | Install Python packages via shell | Runs pip as a shell command | Alternative way to install packages | In Python Notebook, same as ```%pip```; does **not** restart kernel automatically |
+| ```import sys; sys.exit(0)``` | Restart the notebook kernel | Immediately restarts the kernel | Programmatically restart the kernel | Clears all variables and states; **not recommended** to use directly |
+| ```notebookutils.session.restartPython()``` | Restart the notebook kernel | Calls ```sys.exit(0)``` internally | Recommended way to restart the kernel | Official API, safer and more compatible than using ```sys.exit(0)``` directly |
+
+
+> [!NOTE]
+> - In Python Notebook, ```%pip``` and ```!pip``` have the **same behavior**: both install packages into the current kernel’s environment, and neither will automatically restart the kernel after installation.
+> - If you need to restart the kernel (for example, after installing certain packages), it is **recommended** to use ```notebookutils.session.restartPython()``` instead of ```import sys; sys.exit(0)```.
+>   - ```notebookutils.session.restartPython()``` is an official API that wraps ```sys.exit(0)``` , and it is safer and more compatible in notebook environments.
+> - It is **not recommended** to use ```sys.exit(0)``` directly unless necessary.
 
 ## Session configuration magic command
 

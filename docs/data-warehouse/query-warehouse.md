@@ -1,12 +1,11 @@
 ---
-title: Query the SQL analytics endpoint or Warehouse
+title: Query the SQL Analytics Endpoint or Warehouse
 description: Learn more about options to write TSQL queries on the SQL analytics endpoint or Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad, kecona
-ms.date: 01/02/2025
+ms.date: 04/06/2025
 ms.topic: how-to
-ms.custom:
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
 # Query the SQL analytics endpoint or Warehouse in Microsoft Fabric
@@ -22,10 +21,10 @@ To get started with this tutorial, check the following prerequisites:
 
 - Alternatively, you can use any of these tools to connect to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#fabric-data-warehouse) via a T-SQL connection string. For more information, see [Connectivity](connectivity.md).
     - [Download SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
-    - [Download Azure Data Studio](https://aka.ms/azuredatastudio).
+    - Download and install both [Visual Studio Code and the mssql extension](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 
 > [!NOTE]
-> Review the [T-SQL surface area](tsql-surface-area.md) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+> Review the [T-SQL surface area in Fabric Data Warehouse](tsql-surface-area.md) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Run a new query in SQL query editor
 
@@ -48,14 +47,14 @@ To get started with this tutorial, check the following prerequisites:
    :::image type="content" source="media/query-warehouse/new-visual-query.png" alt-text="Screenshot showing where to select New visual query in the ribbon." lightbox="media/query-warehouse/new-visual-query.png":::
 
 1. A new tab appears for you to create a visual query. To add tables to the visual query, right-click on tables in the **Explorer**, or select their `...` action menu, and select **Insert to canvas**. Or, you can drag and drop them into the visual query by selecting, holding, then dragging the tables from the **Explorer**.
-   :::image type="content" source="media/query-warehouse/insert-into-canvas.png" lightbox="media/query-warehouse/insert-into-canvas.png" alt-text="Screenshot of adding a table to the visual query. Select Insert to canvas.":::
+   :::image type="content" source="media/query-warehouse/insert-into-canvas.png" alt-text="Screenshot of adding a table to the visual query. Select Insert to canvas." lightbox="media/query-warehouse/insert-into-canvas.png":::
 
    > [!TIP]
    > To drag and drop tables from the **Explorer**, select, hold, and then drag them into the visual query.
 
 1. Join tables together using options in the **Combine** window. In the following screenshot, we join the `Date` and `Weather` tables using an **Inner** join on the common `DateID` key columns.
 
-   :::image type="content" source="media/query-warehouse/merge.png" lightbox="media/query-warehouse/merge.png" alt-text="Screenshot of the Merge window joining the Date and Trip tables in the visual query editor.":::
+   :::image type="content" source="media/query-warehouse/merge.png" alt-text="Screenshot of the Merge window joining the Date and Trip tables in the visual query editor." lightbox="media/query-warehouse/merge.png":::
 
 1. The result set join shows combined data. You can manipulate the query with other functions in the Visual query editor toolbar. You can save the resulting query as a new view or view the T-SQL as well.
 

@@ -6,7 +6,9 @@ ms.author: xupzhou
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
-  - template-how-to
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # Set up your Azure Cosmos DB for NoSQL connection
@@ -25,9 +27,9 @@ The Azure Cosmos DB for NoSQL connector supports the following authentication ty
 
 The Azure Cosmos DB for NoSQL connector isn't currently supported in Dataflow Gen2.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-To create a connection in a data pipeline:
+To create a connection in a pipeline:
 
 1. From the page header in the [!INCLUDE [product-name](../includes/product-name.md)] service, select **Settings** :::image type="icon" source="media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
@@ -50,7 +52,7 @@ To create a connection in a data pipeline:
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
 - **Connection name**: Specify a name for your connection.
-- **Connection type**: Select **Azure CosmosDB (Data pipeline)** for your connection type.
+- **Connection type**: Select **Azure CosmosDB (Pipeline)** for your connection type.
 - **Account Endpoint**: Enter your account endpoint URL of your Azure Cosmos DB for NoSQL.
 - **Database**: Enter the database ID of your Azure Cosmos DB for NoSQL.
 
@@ -80,12 +82,12 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 ## Table summary
 
-The connector properties in the following table are supported in pipeline copy:
+The connector properties in the following table are supported in a pipeline copy:
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓|
-|**Connection type**|Select **Azure CosmosDB (Data pipeline)** for your connection type.|Yes||✓|
+|**Connection type**|Select **Azure CosmosDB (Pipeline)** for your connection type.|Yes||✓|
 |**Account Endpoint**|Enter your Azure Cosmos DB for NoSQL account endpoint URL.|Yes||✓|
 |**Database**|Enter the Azure Cosmos DB for NoSQL database ID.|Yes||✓|
 |**Authentication**|Go to [Authentication](#authentication). |Yes|Go to [Authentication](#authentication).|Go to [Authentication](#authentication).|

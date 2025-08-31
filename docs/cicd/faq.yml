@@ -2,8 +2,8 @@
 metadata:
   title: "Fabric lifecycle management tools Frequently asked questions"
   description: "Frequently asked questions about Fabric lifecycle management tools."
-  author: mberdugo
-  ms.author: monaberdugo
+  author: billmath
+  ms.author: billmath
   ms.service: fabric
   ms.topic: faq
   ms.date: 04/20/2024
@@ -74,7 +74,7 @@ sections:
           The following considerations are important to keep in mind:
           
           * [Deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations)
-          * [Supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-semantic-model-rules)
+          * [Supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-gen1-and-semantic-model-rules)
           * [Incremental refresh](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
           * [Automation](deployment-pipelines/pipeline-automation.md#considerations-and-limitations)
           

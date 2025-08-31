@@ -1,8 +1,8 @@
 ---
 title: What is the Microsoft Fabric admin portal?
 description: This article provides an overview of the admin Microsoft Fabric admin portal.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
 ms.date: 09/22/2024
@@ -12,13 +12,13 @@ ms.date: 09/22/2024
 
 The Microsoft Fabric admin portal includes settings that govern Microsoft Fabric. For example, you can make changes to [tenant settings](tenant-settings-index.md), access the Microsoft 365 admin portal, and control how users interact with Microsoft Fabric.
 
-To access the admin portal you need a [Fabric license](../enterprise/licenses.md#per-user-licenses) and the *Fabric administrator* role.
+To access the admin portal, you need a [Fabric license](../enterprise/licenses.md#per-user-licenses) and the *Fabric administrator* role.
 
 If you're not in one of these roles, you only see *Capacity settings* in the admin portal.
 
 ## What can I do in the admin portal
 
-The many controls in the admin portal are listed in the table below with links to relevant documentation for each one.
+The many controls in the admin portal are listed in the following table, with links to relevant documentation for each one.
 
 | Feature | Description  |
 | :---    | :---         |
@@ -26,7 +26,7 @@ The many controls in the admin portal are listed in the table below with links t
 | [Usage metrics](feature-usage-adoption.md) | View the feature usage and adoption report. |
 | [Users](service-admin-portal-users.md) | Manage users in the Microsoft 365 admin portal. |
 | [Premium Per User](service-admin-portal-premium-per-user.md) | Configure auto refresh and semantic model workload settings. |
-| [Audit logs](service-admin-portal-audit-logs.md) | Audit Microsoft Fabric activities in the Microsoft Purview compliance portal. |
+| [Audit logs](service-admin-portal-audit-logs.md) | Audit Microsoft Fabric activities in the Microsoft Purview portal. |
 | [Capacity settings](capacity-settings.md) | Manage Microsoft Fabric F, Power BI Premium P, and Power BI Embedded EM and A capacities. |
 | [Refresh summary](service-admin-portal-refresh-summary.md) | Schedule refresh on a capacity and view the details of refreshes that occurred. |
 | [Embed codes](service-admin-portal-embed-codes.md) | View and manage the embed codes that have been generated for your organization to share reports publicly. |
@@ -34,7 +34,6 @@ The many controls in the admin portal are listed in the table below with links t
 | [Azure connections](service-admin-portal-azure-connections.md) | Configure and manage connections to Azure resources. |
 | [Workspaces](portal-workspaces.md) | View and manage the workspaces that exist in your organization. |
 | [Custom branding](service-admin-custom-branding.md) |  Change the look and feel of the Microsoft Fabric to match your organization's own branding. |
-| [Protection metrics](service-admin-portal-protection-metrics.md) | Monitor and track sensitivity label usage and adoption in your organization. |
 | [Featured content](service-admin-portal-featured-content.md) |  Manage the reports, dashboards, and apps that were promoted to the Featured section on your Home page. |
 
 ## How to get to the admin portal

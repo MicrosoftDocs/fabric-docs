@@ -6,7 +6,9 @@ ms.author: xupzhou
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
-  - template-how-to
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # Set up your HTTP connection
@@ -26,9 +28,9 @@ The HTTP connector supports the following authentication types for copy and Data
 
 The HTTP connector isn't currently supported in Dataflow Gen2.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-To create a connection in a data pipeline:
+To create a connection in a pipeline:
 
 1. From the page header in the Data Factory service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
@@ -81,7 +83,7 @@ Select **Create**. Your creation is successfully tested and saved if all the cre
 
 ## Table summary
 
-The following connector properties in the table are supported in pipeline copy:
+The following connector properties in the table are supported in a pipeline copy:
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|

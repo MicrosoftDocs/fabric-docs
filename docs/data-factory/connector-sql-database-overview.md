@@ -4,29 +4,25 @@ description: This article explains the overview of using SQL database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 07/09/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # SQL database connector overview (Preview)
 
-SQL database in Microsoft Fabric is a developer-friendly transactional database, based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview), that allows you to easily create your operational database in Fabric. A SQL database in Fabric uses the same SQL Database Engine as Azure SQL Database. For more information, see this [article](/fabric/database/sql/overview).
+The SQL database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-This SQL database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+## Supported capabilities
 
-## Support in data pipelines
+| Supported capabilities                                                                 | Gateway                        | Authentication   |
+|----------------------------------------------------------------------------------------|--------------------------------|------------------|
+| **Dataflow Gen2** (source/destination)                                                 | None<br> On-premises<br> Virtual network | Organizational account |
+| **Pipeline** <br>- [Copy activity](connector-sql-database-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Organizational account |
 
-The SQL database connector supports the following capabilities in data pipelines:
+## Related content
 
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | --- |
-| **Copy activity (Source/Destination)** | None <br> On-premises | User Auth |
-| **Lookup activity** | None <br> On-premises | User Auth |
-| **GetMetadata activity** | None <br> On-premises | User Auth |
-| **Script activity** | None <br> On-premises | User Auth |
-| **Stored procedure activity** | None <br> On-premises | User Auth |
+To learn about how to connect to SQL Database in pipelines, go to [Set up your SQL Database connection](connector-sql-database.md).
 
-To learn about how to connect to SQL Database in data pipelines, go to [Set up your SQL Database connection](connector-sql-database.md).
-
-To learn about the copy activity configuration for SQL database in data pipelines, go to [Configure SQL database in a copy activity](connector-sql-database-copy-activity.md).
+To learn about the copy activity configuration for SQL database in pipelines, go to [Configure SQL database in a copy activity](connector-sql-database-copy-activity.md).

@@ -28,7 +28,7 @@ The following table lists the runtime name, and release dates for supported Azur
 |-----------------------------------------------------------|---------------|---------------------|
 | [Runtime 1.3 based on Apache Spark 3.5](./runtime-1-3.md) | GA            | September 30, 2026  |
 | [Runtime 1.2 based on Apache Spark 3.4](./runtime-1-2.md) | GA            | March 31, 2026      |
-| [Runtime 1.1 based on Apache Spark 3.3](./runtime-1-1.md) | EOSA          | March 31, 2025      |
+| [Runtime 1.1 based on Apache Spark 3.3](./runtime-1-1.md) | EOS         | March 31, 2025      |
 
 
 :::image type="content" source="media\runtime\lifecycle-runtimes.png" alt-text="Diagram showing lifecycle of a runtime in Fabric." lightbox="media\runtime\lifecycle-runtimes.png":::

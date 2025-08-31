@@ -7,25 +7,23 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Azure Table Storage connector overview
 
 This Azure Table Storage connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-To learn about how to connect to Azure Table Storage in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-azure-table-storage.md#set-up-your-connection-in-dataflow-gen2).
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Account key<br> Organizational account<br> Workspace identity |
+| **Pipeline**<br>- [Copy activity](connector-azure-table-storage-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Account key<br> Workspace identity |
+| **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Account key<br> Workspace identity |
 
-## Support in data pipelines
+## Related content
 
-The Azure Table Storage connector supports the following capabilities in data pipelines:
+To learn about how to connect to Azure Table Storage, go to [Set up your Azure Table Storage connection](connector-azure-table-storage.md).
 
-The Azure Table Storage connector supports the following capabilities in Data pipeline:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | Account key |
-| **Lookup activity** | None <br> On-premises | Account key |
-
-To learn more about the copy activity configuration for Azure Table Storage in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-table-storage-copy-activity.md).
+To learn more about the copy activity configuration for Azure Table Storage in pipelines, go to [Configure in a pipeline copy activity](connector-azure-table-storage-copy-activity.md).

@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure KQL Database in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to KQL Database.
+This article outlines how to use the copy activity in a pipeline to copy data from and to KQL Database.
 
 ## Supported configuration
 

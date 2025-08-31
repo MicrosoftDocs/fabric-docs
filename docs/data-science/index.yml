@@ -51,7 +51,7 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Fabric data agent over Adventure Works
-            url: data-agent-scenario.md
+            url: data-agent-end-to-end-tutorial.md
           - text: Get started with Fabric data agents
             url: how-to-create-data-agent.md
   

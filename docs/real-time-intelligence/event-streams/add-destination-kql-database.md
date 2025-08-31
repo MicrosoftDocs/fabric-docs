@@ -5,20 +5,15 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.custom:
-ms.date: 11/18/2024
+ms.custom: sfi-image-nochange
+ms.date: 05/05/2025
 ms.search.form: Source and Destination
-zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
-zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Add an Eventhouse destination to an eventstream
 
 This article shows you how to add an Eventhouse as a destination to an eventstream in Microsoft Fabric event streams.
 
-[!INCLUDE [select-view](./includes/select-view.md)]
-
-::: zone pivot="enhanced-capabilities"  
 
 ## Prerequisites
 
@@ -27,16 +22,13 @@ This article shows you how to add an Eventhouse as a destination to an eventstre
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
-##  Add an Eventhouse as a destination
+## Add an Eventhouse destination to a default stream
 
 To add an Eventhouse as a destination, you can choose between two ingestion modes: **Direct ingestion** or **Event processing before ingestion**.
 
 ### Direct ingestion mode
 
-Direct ingestion mode ingests your event data directly into the Eventhouse without any processing. You can use direct ingestion mode to add an Eventhouse destination to your default stream.
-
-> [!IMPORTANT]
-> You can use **Direct ingestion** only for your default stream. Direct ingestion can't follow processing operators or derived streams. If you want to add an Eventhouse destination after processing operators or derived streams, use **Event processing before ingestion** instead.
+Direct ingestion mode ingests your event data directly into the Eventhouse without any processing. You can use direct ingestion mode to add an Eventhouse destination to your default stream or a derived stream. 
 
 1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon or select the **Transform events or add destination** card on the canvas, and then select **Eventhouse**. 
 
@@ -113,10 +105,30 @@ Once you complete these steps, the eventstream with Eventhouse destination is av
 
 :::image type="content" source="media/add-destination-kql-database/live-view-processed-eventhouse.png" alt-text="A screenshot of the configured KQL Database event processing flow in Live view." lightbox="media/add-destination-kql-database/live-view-processed-eventhouse.png":::
 
+## Add an Eventhouse destination to a derived stream
+You can now seamlessly add an Eventhouse as a destination to a derived stream.This enhancement gives you more flexibility in routing the data as is or transformed into Eventhouse for real-time analytics and storage.
+
+A derived stream refers to a logical stream of data. This stream is created by applying transformations or filters to the default stream. Derived streams enhance data management and analytics by providing a curated subset of data tailored to specific needs.
+With this update, you can now:
+- Route the derived stream data into Eventhouse for advanced querying and visualization.
+- Choose your preferred ingestion mode—either **Direct Ingestion** or **Event processing before ingestion**.
+- Maintain a consistent setup experience: The configuration process mirrors what you’re already familiar with for default streams, so there’s no learning curve.
+
+1.  In Edit mode for your eventstream, follow these steps to add Eventhouse destination to the derived stream: 
+* From the derived stream select Eventhouse destination.
+   
+   :::image type="content" source="media/add-destination-kql-database/select-eventhouse-destination.png" alt-text="Screenshot showing how to add Eventhouse destination from derived stream." lightbox="./media/add-destination-kql-database/select-eventhouse-destination.png":::
+
+* Complete the configuration for the preferred ingestion modes. Setup process remains the same as explained above for the default stream.
+   
+   :::image type="content" source="media/add-destination-kql-database/add-eventhouse-destination-configuration.png" alt-text="Screenshot showing configurations for Eventhouse destination." lightbox="./media/add-destination-kql-database/add-eventhouse-destination-configuration.png":::
+
+
+
 > [!NOTE]  
-> When configuring an Eventstream, the source, transformation logic, and destination are typically added together. By default, when publishing the Eventstream, the backend services for both data ingestion and data routing start with **Now** respectively. However, data ingestion may begin faster than data routing, causing some data to be ingested into Eventstream before routing is fully initialized. As a result, this data may not be routed to the destination.  
+> When configuring an Eventstream, the source, transformation logic, and destination are typically added together. By default, when publishing the Eventstream, the backend services for both data ingestion and data routing start with **Now** respectively. However, data ingestion might begin faster than data routing, causing some data to be ingested into Eventstream before routing is fully initialized. As a result, this data might not be routed to the destination.  
 >  
-> A common example is a database CDC source, where some initial snapshot data could remain in Eventstream without being routed to the destination.  
+> A common example is a database Change Data Capture (CDC) source, where some initial snapshot data could remain in Eventstream without being routed to the destination.  
 >  
 > To mitigate this, follow these steps:  
 > 1. When configuring an **Eventhouse (Event processing before ingestion)** or **Lakehouse** destination, uncheck **Activate ingestion** after adding the data source. 
@@ -126,109 +138,8 @@ Once you complete these steps, the eventstream with Eventhouse destination is av
 > 1. Use the **Custom time** option to select an earlier timestamp, ensuring initial data is properly processed and routed.  
 > 
 >    :::image type="content" source="media/add-destination-kql-database/resume-kusto.png" alt-text="A screenshot of resuming the KQL Database." lightbox="media/add-destination-kql-database/resume-kusto.png":::
-> For more information, see [Pause and resume data streams](pause-resume-data-streams.md)
+> For more information, see [Pause, and resume data streams](pause-resume-data-streams.md)
 
 ## Related content
 
-To learn how to add other destinations to an eventstream, see the following articles:
-
-- [Custom app](add-destination-custom-app.md)
-- [Derived stream](add-destination-derived-stream.md)
-- [Lakehouse](add-destination-lakehouse.md)
-- [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
-- [Create an eventstream](create-manage-an-eventstream.md)
-
-
-::: zone-end
-
-::: zone pivot="standard-capabilities"
-
-
-## Prerequisites
-
-Before you start, you must complete the following prerequisites:
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- Access to the workspace with Contributor or above permissions where your KQL database is located.
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
-## Add a KQL database as a destination
-
-To add a KQL database as a destination, you need to have a KQL database created in the workspace, and choose between two ingestion modes: **Direct ingestion** and **Event processing before ingestion**.
-
-### Direct ingestion
-   This mode ingests your event data directly into the KQL database without any processing. You can use this mode if you want to ingest your event data as-is and perform any processing or transformation later in KQL database using KQL queries.
-   1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **KQL Database**. The **KQL Database** destination configuration screen appears.
-
-   2. Select **Direct ingestion**, enter a destination name, select a workspace, choose a KQL database from the selected workspace, and then select **Add and configure**.
-
-      > [!NOTE]
-      > You can only select workspaces that have the same region Fabric capacity as the eventstream.
-
-      :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database pull mode destination configuration screen." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png" :::
-
-   3. On the **Get data** page, navigate through the tabs to complete the configuration:
-      1. **Configure**: Use an existing table of your KQL database or create a new one to route and ingest the data. Complete the required fields and select **Next**.
-
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-1.png" alt-text="Screenshot showing the Destination tab of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-1.png" :::
-
-      2. **Inspect**: Select a data format, and preview how the data is sent to your KQL database.
-
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-2.png" alt-text="Screenshot showing the data format of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-2.png" :::
-
-         You can also change the column name, data type, or update column by clicking the arrow in the table header. Complete the required fields and select **Finish**.
-
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" alt-text="Screenshot showing how to change the column of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png":::
-
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" alt-text="Screenshot showing the change the column name, data type of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" :::
-
-      3. **Summary**: Review the status of your data ingestion, including the table created with the schema you defined, and connection between the eventstream and the KQL database.
-
-          :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-5.png" alt-text="Screenshot showing the Summary tab of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-5.png" :::
-
-   4. After you configure everything and select **Close**, a KQL database destination appears on the canvas, connected to your eventstream.
-
-      :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" alt-text="Screenshot showing the new KQL database pull mode destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" :::
-
-### Event processing before ingestion
-   This mode processes your event data before ingesting it into the KQL database. You can use this mode if you want to apply some processing or transformation to your event data before ingesting it, such as filtering, aggregating, or expanding. You can design the processing logic using event processor.
-   1. Select **Event processing before ingestion**, complete the information about your KQL Database, and then select **Open event processor**.
-
-      :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-push-mode.png" alt-text="Screenshot of the KQL Database push mode destination configuration screen." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database-push-mode.png":::
-
-   2. Design the event processing with event processor, and then select **Save**
-
-      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-preview.png" alt-text="Screenshot of the push mode event processor screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-preview.png":::
-
-   3. When you choose an existing Kusto table, schema validation between the current schema in this eventstream and the target KQL table is performed. If the two schemas aren't matched, an error message is shown and reminds you to open event processor to adjust the schema in this eventstream accordingly.
-
-      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-error.png" alt-text="Screenshot of the push mode event processor error screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-error.png":::
-
-      When you open the event processor, the detailed mismatch information is shown in Authoring error tab.
-
-      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png" alt-text="Screenshot of the push mode event processor mismatch information screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png":::
-
-   4. After you configure everything and select **Save**, a KQL database destination appears on the canvas, connected to your eventstream, and you can check the metrics in the **Data insights** and logs in **Runtime logs**.
-
-      :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-push-mode.png" alt-text="Screenshot showing the new KQL database push mode destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-push-mode.png" :::
-
-## Manage a destination
-
-**Edit/remove**: You can edit or remove an eventstream destination either through the navigation pane or canvas.
-
-When you select **Edit**, the edit pane opens in the right side of the main editor. You can modify the configuration as you wish, including the event transformation logic through the event processor editor.
-
-:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot showing where to select the modify and delete options for destinations on the canvas." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
-
-## Related content
-
-To learn how to add other destinations to an eventstream, see the following articles:
-
-- [Route events to destinations](add-manage-eventstream-destinations.md)
-- [Custom app destination](add-destination-custom-app.md)
-- [Lakehouse destination](add-destination-lakehouse.md)
-- [Activator destination](add-destination-activator.md)
-- [Create an eventstream](create-manage-an-eventstream.md)
-
-::: zone-end
+To learn how to add other destinations to an eventstream, see the following article: [Route events to destinations](add-manage-eventstream-destinations.md)

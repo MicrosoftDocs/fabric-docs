@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 09/16/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Azure Data Lake Storage Gen2 in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Data Lake Storage Gen2.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure Data Lake Storage Gen2.
 
 ## Supported format
 

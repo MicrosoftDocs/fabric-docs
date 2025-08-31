@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 02/11/2025
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Salesforce Service Cloud in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Salesforce Service Cloud.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Salesforce Service Cloud.
 
 ## Supported configuration
 

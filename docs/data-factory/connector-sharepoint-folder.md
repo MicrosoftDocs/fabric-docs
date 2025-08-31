@@ -1,12 +1,13 @@
 ---
 title: Set up your SharePoint folder connection
 description: This article provides information about how to create a SharePoint folder connection in Microsoft Fabric.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
 ms.date: 12/18/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Set up your SharePoint folder connection
@@ -33,6 +34,6 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support a SharePoint folder in data pipelines.
+Data Factory in Microsoft Fabric doesn't currently support a SharePoint folder in pipelines.

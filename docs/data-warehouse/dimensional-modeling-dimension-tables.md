@@ -1,12 +1,13 @@
 ---
-title: "Modeling dimension tables in Warehouse"
+title: "Modeling Dimension Tables in Warehouse"
 description: "Learn about dimension tables in Microsoft Fabric Warehouse."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: drubiolo, chweb
-ms.date: 02/19/2025
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom: fabric-cat
+ms.custom:
+  - fabric-cat
 ---
 
 # Dimensional modeling in Microsoft Fabric Warehouse: Dimension tables
@@ -40,11 +41,11 @@ CREATE TABLE d_Salesperson
     
     --Dimension attributes
     FirstName VARCHAR(20) NOT NULL,
-    <…>
+    <...>
     
     --Foreign key(s) to other dimensions
     SalesRegion_FK INT NOT NULL,
-    <…>
+    <...>
     
     --Historical tracking attributes (SCD type 2)
     RecChangeDate_FK INT NOT NULL,
@@ -136,7 +137,7 @@ One exception to denormalization is to design a _snowflake dimension_. A snowfla
 
 The following diagram depicts a snowflake dimension that comprises three related dimension tables: `Product`, `Subcategory`, and `Category`.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/snowflake-dimension.svg" alt-text="Diagram shows an illustration of the snowflake dimension as described in the previous paragraph." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/snowflake-dimension.svg" alt-text="Diagram shows an illustration of the snowflake dimension as described in the previous paragraph.":::
 
 Consider implementing a snowflake dimension when:
 
@@ -145,7 +146,7 @@ Consider implementing a snowflake dimension when:
 - You need to [track historical changes](#manage-historical-change) at higher levels of granularity.
 
 > [!NOTE]
-> Bear in mind that a hierarchy in a Power BI semantic model can only be based on columns from a single semantic model table. Therefore, a snowflake dimension should deliver a denormalized result by using a view that joins the snowflake tables together.
+> Bear in mind that a hierarchy in a semantic model can only be based on columns from a single semantic model table. Therefore, a snowflake dimension should deliver a denormalized result by using a view that joins the snowflake tables together.
 
 ### Hierarchies
 
@@ -165,7 +166,7 @@ _Balanced hierarchies_ are the most common type of hierarchy. A balanced hierarc
 
 The following diagram depicts a balanced hierarchy of sales regions. It comprises two levels, which are sales region group and sales region.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/balanced-hierarchy.svg" alt-text="Diagram shows a table of sales region dimension members that includes Group and Sales Region columns." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/balanced-hierarchy.svg" alt-text="Diagram shows a table of sales region dimension members that includes Group and Sales Region columns.":::
 
 Levels of a balanced hierarchy are either based on columns from a single, denormalized dimension, or from tables that form a snowflake dimension. When based on a single, denormalized dimension, the columns that represent the higher levels contain redundant data.
 
@@ -177,9 +178,9 @@ _Unbalanced hierarchies_ are a less common type of hierarchy. An unbalanced hier
 
 A common example of an unbalanced hierarchy is an employee hierarchy where each row in an employee dimension relates to a reporting manager row _in the same table_. In this case, any employee can be a manager with reporting employees. Naturally, some branches of the hierarchy will have more levels than others.
 
-The following diagram depicts an unbalanced hierarchy. It comprises four levels, and each member in the hierarchy is a salesperson. Notice that salespeople have a different number of ancestors in the hierarchy according to who they report to.
+The following diagram depicts an unbalanced hierarchy. It comprises four levels, and each member in the hierarchy is a salesperson. Salespeople have a different number of ancestors in the hierarchy according to who they report to.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/unbalanced-hierarchy.svg" alt-text="Diagram shows a table of salesperson dimension members that includes a 'reports to' column." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/unbalanced-hierarchy.svg" alt-text="Diagram shows a table of salesperson dimension members that includes a 'reports to' column.":::
 
 Other common examples of unbalanced hierarchies include bill of materials, company ownership models, and general ledger.
 
@@ -188,7 +189,7 @@ For unbalanced hierarchies, facts always relate to the dimension grain. For exam
 Querying parent-child hierarchies can be complex and slow, especially for large dimensions. While the source system might store relationships as parent-child, we recommend that you _naturalize_ the hierarchy. In this instance, naturalize means to transform and store the hierarchy levels in the dimension as columns.
 
 > [!TIP]
-> If you choose not to naturalize the hierarchy, you can still create a hierarchy based on a parent-child relationship in a Power BI semantic model. However, this approach isn't recommended for large dimensions. For more information, see [Understanding functions for parent-child hierarchies in DAX](/dax/understanding-functions-for-parent-child-hierarchies-in-dax).
+> If you choose not to naturalize the hierarchy, you can still create a hierarchy based on a parent-child relationship in a semantic model. However, this approach isn't recommended for large dimensions. For more information, see [Understanding functions for parent-child hierarchies in DAX](/dax/understanding-functions-for-parent-child-hierarchies-in-dax).
 
 #### Ragged hierarchies
 
@@ -198,7 +199,7 @@ Consider an example of a balanced geography hierarchy. A ragged hierarchy exists
 
 The following diagram depicts a ragged hierarchy of geographical regions.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/ragged-hierarchy.svg" alt-text="Diagram shows a table of geography dimension members that includes Country/Region, State/Province, and City columns." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/ragged-hierarchy.svg" alt-text="Diagram shows a table of geography dimension members that includes Country/Region, State/Province, and City columns.":::
 
 ### Manage historical change
 
@@ -223,7 +224,7 @@ SCD type 1 changes overwrite the existing dimension row because there's no need 
 
 The following diagram depicts the before and after state of a salesperson dimension member where their phone number has changed.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/slowly-changing-dimension-type-1.svg" alt-text="Diagram shows the structure of the salesperson dimension table, and the before and after values for a changed phone number for a single salesperson." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/slowly-changing-dimension-type-1.svg" alt-text="Diagram shows the structure of the salesperson dimension table, and the before and after values for a changed phone number for a single salesperson.":::
 
 This SCD type doesn't preserve historical perspective because the existing row is updated. That means SCD type 1 changes can result in different higher-level aggregations. For example, if a salesperson is assigned to a different sales region, an SCD type 1 change would overwrite the dimension row. The rollup of salespeople historic sales results to region would then produce a different outcome because it now uses the new current sales region. It's as if that salesperson was always assigned to the new sales region.
 
@@ -242,7 +243,7 @@ It's important to understand that the granularity of related fact tables isn't a
 
 The following diagram depicts the before and after state of a salesperson dimension member where their sales region has changed. Because the organization wants to analyze salespeople effort by the region they're assigned to, it triggers an SCD type 2 change.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/slowly-changing-dimension-type-2.svg" alt-text="Diagram shows the structure of the salesperson dimension table, which includes 'start date', 'end date', and 'is current' columns." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/slowly-changing-dimension-type-2.svg" alt-text="Diagram shows the structure of the salesperson dimension table, which includes 'start date', 'end date', and 'is current' columns.":::
 
 > [!TIP]
 > When a dimension table supports SCD type 2 changes, you should include a label attribute that describes the member and the version. Consider an example when the salesperson Lynn Tsoflias from Adventure Works changes assignment from the Australian sales region to the United Kingdom sales region. The label attribute for the first version could read "Lynn Tsoflias (Australia)" and the label attribute for the new, current version could read "Lynn Tsoflias (United Kingdom)." If helpful, you might include the validity dates in the label too.  
@@ -256,7 +257,7 @@ Consider the following SCD type 2 historical tracking attributes.
 ```sql
 CREATE TABLE d_Salesperson
 (
-    <…>
+    <...>
 
     --Historical tracking attributes (SCD type 2)
     RecChangeDate_FK INT NOT NULL,
@@ -265,7 +266,7 @@ CREATE TABLE d_Salesperson
     RecReason VARCHAR(15) NOT NULL,
     RecIsCurrent BIT NOT NULL,
 
-    <…>
+    <...>
 );
 ```
 
@@ -289,7 +290,7 @@ For example, if a salesperson is assigned to a different sales region, an SCD ty
 
 The following diagram depicts the before and after state of a salesperson dimension member where their sales region has changed. Because the organization wants to determine any previous sales region assignment, it triggers an SCD type 3 change.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/slowly-changing-dimension-type-3.svg" alt-text="Diagram shows the structure of the salesperson dimension table, which contains a 'previous sales region' and 'previous sales region end date' columns." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/slowly-changing-dimension-type-3.svg" alt-text="Diagram shows the structure of the salesperson dimension table, which contains a 'previous sales region' and 'previous sales region end date' columns.":::
 
 ### Special dimension members
 
@@ -327,7 +328,7 @@ Here are some common attributes to include in a date dimension.
 - `IsHoliday`, `HolidayText` – if your organization operates in multiple geographies, you should maintain multiple sets of holiday lists that each geography observes as a separate dimension or naturalized in multiple attributes in the date dimension. Adding a `HolidayText` attribute could help identify holidays for reporting.
 - `IsWeekday` – similarly, in some geographies, the standard work week isn't Monday to Friday. For example, the work week is Sunday to Thursday in many Middle Eastern regions, while other regions employ a four-day or six-day work week.
 - `LastDayOfMonth`
-- `RelativeYearOffset`, `RelativeQuarterOffset`, `RelativeMonthOffset`, `RelativeDayOffset` – which might be required to support relative date filtering (for example, previous month). Current periods use an offset of zero (0); previous periods store offsets of -1, -2, -3…; future periods store offsets of 1, 2, 3….
+- `RelativeYearOffset`, `RelativeQuarterOffset`, `RelativeMonthOffset`, `RelativeDayOffset` – which might be required to support relative date filtering (for example, previous month). Current periods use an offset of zero (0); previous periods store offsets of -1, -2, -3...; future periods store offsets of 1, 2, 3....
 
 As with any dimension, what's important is that it contains attributes that support the known filtering, grouping, and hierarchy requirements. There might also be attributes that store translations of labels into other languages.
 
@@ -361,7 +362,7 @@ For example, it's typical that fact tables store at least one date dimension key
 
 The following diagram shows the `Sales` fact table and the `Inventory` fact table. Each fact table relates to the `Date` dimension and `Product` dimension, which are conformed dimensions.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/conformed-dimensions.svg" alt-text="Diagram shows an illustration of conformed dimensions as described in the previous paragraph." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/conformed-dimensions.svg" alt-text="Diagram shows an illustration of conformed dimensions as described in the previous paragraph.":::
 
 As another example, your employee and users could be the same set of people. In this case, it might make sense to combine the attributes of each entity to produce one conformed dimension.
 
@@ -373,7 +374,7 @@ For example, when a sales fact table has order date, ship date, and delivery dat
 
 The following diagram depicts a `Flight` fact table. The `Airport` dimension is a role-playing dimension because it's related twice to the fact table as the `Departure Airport` dimension and the `Arrival Airport` dimension.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/role-playing-dimensions.svg" alt-text="Diagram shows an illustration of a star schema for airline flight facts as described in the previous paragraph." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/role-playing-dimensions.svg" alt-text="Diagram shows an illustration of a star schema for airline flight facts as described in the previous paragraph.":::
 
 ### Junk dimensions
 
@@ -385,7 +386,7 @@ Good candidates include flags and indicators, order status, and customer demogra
 
 The following diagram depicts a junk dimension named `Sales Status` that combines order status values and delivery status values.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/junk-dimension.svg" alt-text="Diagram shows order status and delivery status values, and how the Cartesian product of those values creates the 'Sales Status' dimension rows." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/junk-dimension.svg" alt-text="Diagram shows order status and delivery status values, and how the Cartesian product of those values creates the 'Sales Status' dimension rows.":::
 
 ### Degenerate dimensions
 
@@ -393,7 +394,7 @@ A _degenerate dimension_ can occur when the dimension is at the same grain as th
 
 The following diagram depicts a `Sales Order` dimension that's a degenerate dimension based on the `SalesOrderNumber` column in a sales fact table. This dimension is implemented as a view that retrieves the distinct sales order number values.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/degenerate-dimension.svg" alt-text="Diagram shows a degenerate dimension as described in the previous paragraph." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/degenerate-dimension.svg" alt-text="Diagram shows a degenerate dimension as described in the previous paragraph.":::
 
 > [!TIP]
 > It's possible to create a view in a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] that presents the degenerate dimension as a dimension for querying purposes.
@@ -408,7 +409,7 @@ For example, you could create a geography dimension that stores geographic locat
 
 The following diagram depicts a `Geography` dimension that's an outrigger dimension. It doesn't relate directly to the `Sales` fact table. Instead, it's related indirectly via the `Customer` dimension and the `Salesperson` dimension.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/outrigger-dimension.svg" alt-text="Diagram shows an illustration of an outrigger dimension as described in the previous paragraph." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/outrigger-dimension.svg" alt-text="Diagram shows an illustration of an outrigger dimension as described in the previous paragraph.":::
 
 Consider that the date dimension can be used as an outrigger dimension when other dimension table attributes store dates. For example, the birth date in a customer dimension could be stored by using the surrogate key of the date dimension table.
 
@@ -420,7 +421,7 @@ For example, consider there's a salesperson dimension, and that each salesperson
 
 In the following diagram, the `Account` dimension table relates to the `Transaction` fact table. Because customers can have multiple accounts and accounts can have multiple customers, the `Customer` dimension table is related via the `Customer Account` bridge table.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/multivalued-dimension.svg" alt-text="Diagram shows an illustration of a multivalued dimension as described in the previous paragraph." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/multivalued-dimension.svg" alt-text="Diagram shows an illustration of a multivalued dimension as described in the previous paragraph.":::
 
 ## Related content
 

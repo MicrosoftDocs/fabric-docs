@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 04/09/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Azure Files in a copy activity
 
-This article outlines how to use the copy activity in Data pipeline to copy data from and to Azure Files.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure Files.
 
 ## Supported format
 

@@ -1,33 +1,32 @@
 ---
 title: SQL Server database connector overview
 description: This article provides an overview of the supported capabilities of the SQL Server database connector.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 07/09/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # SQL Server database connector overview
 
 The SQL Server database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities                                                                 | Gateway                        | Authentication   |
+|----------------------------------------------------------------------------------------|--------------------------------|------------------|
+| **Dataflow Gen2** (source/-)                                                 | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal<br> Windows |
+| **Pipeline** <br>- [Copy activity](connector-sql-server-copy-activity.md) (source/-)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal |
+| **Copy job** (source/destination)  <br>- Full load<br>- CDC<br>- Incremental load<br>- Append<br>- Merge | None<br> On-premises<br> Virtual network |  Basic<br> Organizational account<br> Service principal|
 
-For information on how to connect to a SQL Server database in Dataflow Gen2, go to [Set up your SQL Server database connection](connector-sql-server-database.md).
+> [!NOTE]
+> The Service principal authentication only applies to [SQL Server on Azure VMs](/azure/azure-sql/virtual-machines).
 
-## Support in Data pipeline
+## Related content
 
-The SQL Server database connector supports the following capabilities in Data pipeline:
+To learn about how to connect to SQL Server database, go to [Set up your SQL Server database connection](connector-sql-server-database.md).
 
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | --- |
-| **Copy activity (source/destination)** | None <br> On-premises | Basic |
-| **Lookup activity** | None <br> On-premises | Basic |
-| **GetMetadata activity** | None <br> On-premises | Basic |
-| **Script activity** | None <br> On-premises | Basic |
-| **Stored procedure activity** | None <br> On-premises | Basic |
-
-To learn more about the copy activity configuration for SQL Server database in Data pipeline, go to [Configure in a data pipeline copy activity](connector-sql-server-copy-activity.md).
+To learn more about the copy activity configuration for SQL Server database in a pipeline, go to [Configure in a pipeline copy activity](connector-sql-server-copy-activity.md).

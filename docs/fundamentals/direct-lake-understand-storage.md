@@ -1,352 +1,432 @@
 ---
-title: "Understand storage for Direct Lake semantic models"
-description: "Learn about storage concepts for Direct Lake semantic models and how to optimize for reliable, fast query performance."
-author: peter-myers
-ms.author: phseamar
-ms.reviewer: davidi
-ms.date: 09/16/2024
+title: "Understand Direct Lake query performance"
+description: "Learn how Direct Lake query performance depends on Delta table health and efficient data updates. Understand the importance of V-Order optimization, row groups, and Delta log management for optimal query execution."
+author: JulCsc
+ms.author: juliacawthra
+ms.reviewer: phseamar, Kay.Unkroth
+ms.date: 06/03/2025
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
 
-# Understand storage for Direct Lake semantic models
+# Understand Direct Lake query performance
 
-This article introduces [Direct Lake](direct-lake-overview.md) storage concepts. It describes Delta tables and Parquet files. It also describes how you can optimize Delta tables for Direct Lake semantic models, and how you can maintain them to help deliver reliable, fast query performance.
+Apart from semantic model design and query complexity, Direct Lake performance specifically depends on well-tuned Delta tables for efficient and fast column loading (transcoding) and optimal query execution. Make sure you apply V-Order optimization. Also, keep the number of Parquet files small, use large row groups, and strive to minimize the effect of data updates on the Delta log. These are common best practices that can help to ensure fast query execution in cold, semiwarm, warm, and hot Direct Lake mode states.
 
-## Delta tables
+This article explains how Direct Lake performance depends on Delta table health and efficient data updates. Understanding these dependencies is crucial. You learn that the data layout in your Parquet files is as important for query performance as are a good semantic model design and well-tuned data analysis expression (DAX) measures.
 
-Delta tables exist in OneLake. They organize file-based data into rows and columns and are available to Microsoft Fabric compute engines such as [notebooks](../data-engineering/how-to-use-notebook.md), [Kusto](../real-time-analytics/kusto-query-set.md?tabs=kql-database&preserve-view=true), and the [lakehouse](../data-engineering/lakehouse-overview.md) and [warehouse](../data-warehouse/data-warehousing.md). You can query Delta tables by using Data Analysis Expressions (DAX), Multidimensional Expressions (MDX), T-SQL (Transact-SQL), Spark SQL, and even Python.
+## What you need to know
 
-> [!NOTE]
-> Delta—or _Delta Lake_—is an open-source storage format. That means Fabric can also query Delta tables created by other tools and vendors.
+This article assumes that you're already familiar with the following concepts:
 
-Delta tables store their data in Parquet files, which are typically stored in a lakehouse that a Direct Lake semantic model uses to load data. However, Parquet files can also be stored externally. External Parquet files can be referenced by using a [OneLake shortcut](../onelake/onelake-shortcuts.md), which points to a specific storage location, such as [Azure Data Lake Storage (ADLS) Gen2](/azure/storage/blobs/data-lake-storage-introduction), Amazon S3 storage accounts, or [Dataverse](/power-apps/maker/data-platform/data-platform-intro). In almost all cases, compute engines access the Parquet files by querying Delta tables. However, typically Direct Lake semantic models load column data directly from optimized Parquet files in OneLake by using a process known as [transcoding](direct-lake-overview.md#column-loading-transcoding).
+- **Delta tables in OneLake**: Detailed information about Delta tables in OneLake is available in the [Microsoft Fabric fundamentals documentation](index.yml).
+- **Parquet files, row groups, and Delta log**: The Parquet file format, including how data is organized into row groups and column chunks, and how metadata is handled, is explained in the [Parquet file format documentation](https://Parquet.apache.org/docs/file-format/). See also the [Delta transaction log protocol documentation](https://github.com/delta-io/delta/blob/master/PROTOCOL.md).
+- **Delta table optimization and V-Order**: See the Fabric Lakehouse documentation about Delta table maintenance, such as [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
+- **Framing and transcoding**: Refreshing a Direct Lake semantic model (framing) and on-demand column data loading (transcoding) are important concepts, covered at an introductory level in the [Direct Lake overview article](direct-lake-overview.md).
+- **Formula and Storage Engine**: When a DAX query is executed, the Formula Engine generates the query plan and retrieves the necessary data and initial aggregations from the Storage Engine. The optimizations discussed in this article focus on the Storage Engine. To learn more about the Formula Engine and the Storage Engine, explore the [Analysis Services developer documentation](/analysis-services/analysis-services-developer-documentation).
+- **VertiPaq and VertiScan**: In import mode and in Direct Lake mode, the Storage Engine uses its VertiPaq engine to maintain a columnar in-memory store. VertiScan enables the Formula Engine to interact with VertiPaq. For more information, see the [Analysis Services developer documentation](/analysis-services/analysis-services-developer-documentation).
+- **Dictionary encoding**: Both Parquet files and VertiPaq use dictionary encoding, which is a data compression technique applied to individual columns of various data types, such as int, long, date, and char. It works by storing each unique column value in memory as an integer using Run Length Encoding (RLE)/Bit-Packing Hybrid encoding. VertiPaq always uses dictionary encoding, but Parquet might switch to plain encoding or delta encoding under some circumstances, as explained in [Encodings in the Parquet File-Format documentation](https://Parquet.apache.org/docs/file-format/data-pages/encodings/), which would require Direct Lake to re-encode the data with corresponding effect on transcoding performance.
+- **Column chunks and column segments**: Refer to the way Parquet and VertiPaq store column data for efficient data retrieval. Each column in a table is divided into smaller chunks that can be processed and compressed independently. VertiPaq calls these chunks segments. You can use the [DISCOVER_STORAGE_TABLE_COLUMN_SEGMENTS schema rowset](/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services) to retrieve information about the column segments in a Direct Lake semantic model.
+- **Python and Jupyter Notebooks**: Jupyter Notebooks provide an interactive environment to write and run Python code. Basic knowledge of Python is helpful if you want to follow the code snippets later in this chapter. For more information, see the [Python language reference](https://docs.python.org/3/reference/index.html). For information on how to use notebooks in Microsoft Fabric, see [How to use notebooks - Microsoft Fabric](../data-engineering/how-to-use-notebook.md).
 
-### Data versioning
+## What affects Direct Lake query performance
 
-Delta tables comprise one or more Parquet files. These files are accompanied by a set of JSON-based link files, which track the order and nature of each Parquet file that's associated with a Delta table.
+This section summarizes the main factors affecting Direct Lake performance. Subsequent sections offer more detailed explanations:
 
-It's important to understand that the underlying Parquet files are incremental in nature. Hence the name _Delta_ as a reference to incremental data modification. Every time a write operation to a Delta table takes place—such as when data is inserted, updated, or deleted—new Parquet files are created that represent the data modifications as a _version_. Parquet files are therefore _immutable_, meaning they're never modified. It's therefore possible for data to be duplicated many times across a set of Parquet files for a Delta table. The Delta framework relies on link files to determine which physical Parquet files are required to produce the correct query result.
+- **V-Order compression**: The effectiveness of compression can affect query performance, as better compression leads to faster data loading and more efficient query processing. Data loading is fast because streaming compressed data boosts transcoding efficiency. Query performance is also optimal because V-Order compression enables VertiScan to compute results directly on top of compressed data, skipping the decompression step.
+- **Data types**: Using appropriate data types for columns can improve compression and performance. For example, use integer data types instead of strings where possible and avoid storing integers as strings.
+- **Segment size and count**: VertiPaq stores column data in segments. A large number of smaller segments can negatively affect query performance. For large tables, Direct Lake prefers large segment sizes, such as between 1 million to 16 million rows.
+- **Column cardinality**: High cardinality columns (columns with many unique values) can slow down performance. Reducing cardinality where possible can help.
+- **Indexes and aggregations**: Columns with lower cardinality benefit from dictionary encoding, which can speed up queries by reducing the amount of data that needs to be scanned.
+- **DirectQuery fallback**: Fallback operations might result in slower query performance as the data must now be fetched from the SQL analytics endpoint of the Fabric data source. Moreover, fallback relies on hybrid query plans to support both DirectQuery and VertiScan with some tradeoffs on performance even when Direct Lake doesn't need to fallback. If possible, disable DirectQuery fallback to avoid hybrid query plans.
+- **Degree of memory residency**: Direct Lake semantic models can be in cold, semiwarm, warm, or hot state with increasingly better performance from cold to hot. Transitioning quickly from cold to warm is a key to good Direct Lake performance.
+  - *Cold*: VertiPaq store is empty. All data required to answer a DAX query must be loaded from Delta tables.
+  - *Semiwarm*: Direct Lake only drops those column segments during framing that belong to removed row groups. This means that only updated or newly added data must be loaded. A Direct Lake semantic model can also go into semiwarm state under memory pressure when it must unload segments and join indexes due to memory pressure.
+  - *Warm*: The column data required to answer a DAX query is already fully loaded into memory.
+  - *Hot*: The column data is already fully loaded into memory, VertiScan caches are populated, and the DAX queries hit the caches.
+- **Memory pressure**: Direct Lake must load all column data required to answer a DAX query into memory, which can exhaust available memory resources. With insufficient memory, Direct Lake must unload previously loaded column data, which Direct Lake then might have to reload again for subsequent DAX queries. Adequately sizing Direct Lake semantic models can help to avoid frequent reloading.
 
-Consider a simple example of a Delta table that this article uses to explain different data modification operations. The table has two columns and stores three rows.
+## Memory residency and query performance
 
-| ProductID | StockOnHand |
-| --- | --: |
-| A | 1 |
-| B | 2 |
-| C | 3 |
+Direct Lake performs best in the warm or hot state, while cold states result in slower performance. Direct Lake avoids falling back to cold as much as possible by using incremental framing.
 
-The Delta table data is stored in a single Parquet file that contains all data, and there's a single link file that contains metadata about when the data was inserted (appended).
+### Bootstrapping
 
-- Parquet file 1:
-  - **ProductID**: A, B, C
-  - **StockOnHand**: 1, 2, 3
-- Link file 1:
-  - Contains the timestamp when `Parquet file 1` was created, and records that data was appended.
+After the initial semantic model load, no column data is resident in memory yet. Direct Lake is cold. When a client submits a DAX query to a Direct Lake semantic model in the cold state, Direct Lake must perform the following main tasks so that the DAX query can be processed and answered:
 
-#### Insert operations
+- VertiPaq dictionary transcoding. Direct Lake must merge the local Parquet dictionaries for each column chunk to create a global VertiPaq dictionary for the column. This **merge** operation affects query response time.
+- Loading Parquet column chunks into column segments. In most cases, this is a direct remapping of Parquet data IDs to VertiPaq IDs when both sides can use RLE/Bit-Packing Hybrid encoding. If the Parquet dictionaries use plain encoding, VertiPaq must convert the values to RLE/Bit-Packing Hybrid encoding, which takes longer.
+  - Direct Lake performance is optimal on V-Ordered Parquet files because V-Ordering increases the quality of RLE compression. Direct Lake can load tightly packed V-Ordered data faster than less compressed data.
+- Generating join indexes. If the DAX query accesses columns from multiple tables, Direct Lake must build join indexes according to the table relationships so that VertiScan can join the tables correctly. To build the join indexes, Direct Lake must load the dictionaries of the key columns participating in the relationship and the column segments of the primary key column (the column on the One side of the table relationship).
+- Applying Delta deletion vectors. If a source Delta table uses deletion vectors, Direct Lake must load these deletion vectors to ensure deleted data is excluded from query processing.
 
-Consider what happens when an insert operation occurs: A new row for product `C` with a stock on hand value of `4` is inserted. This operations results in the creation of a new Parquet file and link file, so there's now two Parquet files and two link files.
+  > [!NOTE]
+  > The cold state can also be induced by sending a `processClear` followed by a `processFull` XMLA command to the model. The `ProcessClear` command removes all data and the association with the framed Delta table version. The `ProcessFull` XMLA command performs framing to bind the model to the latest available Delta commit version.
 
-- Parquet file 1:
-  - **ProductID**: A, B, C
-  - **StockOnHand**: 1, 2, 3
-- Parquet file 2:
-  - **ProductID**: D
-  - **StockOnHand**: 4
-- Link file 1:
-  - Contains the timestamp when `Parquet file 1` was created, and records that data was appended.
-- Link file 2:
-  - Contains the timestamp when `Parquet file 2` was created, and records that data was appended.
+### Incremental framing
 
-At this point, a query of the Delta table returns the following result. It doesn't matter that the result is sourced from multiple Parquet files.
+During framing, Direct Lake analyzes the Delta log of each Delta table and drops loaded column segments and join indexes only when the underlying data has changed. Dictionaries are retained to avoid unnecessary transcoding and new values are simply added to the existing dictionaries. This incremental framing approach reduces the reload burden and benefits cold query performance.
 
-| ProductID | StockOnHand |
-| --- | --: |
-| A | 1 |
-| B | 2 |
-| C | 3 |
-| D | 4 |
+You can analyze incremental framing effectiveness by using the `INFO.STORAGETABLECOLUMNSEGMENTS()` DAX function, which wraps the `DISCOVER_STORAGE_TABLE_COLUMN_SEGMENTS` schema rowset. Follow these steps to ensure meaningful results:
 
-Every subsequent insert operation creates new Parquet files and link files. That means the number of Parquet files and link files grows with every insert operation.
+1. Query your Direct Lake semantic model to ensure it is in warm or hot state.
+1. Update the Delta table you want to investigate and refresh the Direct Lake semantic model to perform framing.
+1. Run a DAX query to retrieve column segment information by using the `INFO.STORAGETABLECOLUMNSEGMENTS()` function, as in the following screenshot. The screenshot uses a small sample table for illustration purposes. Each column only has a single segment. The segments aren't resident in memory. This indicates a true cold state. If the model was warm before framing, this means that the Delta table was updated using a destructive data loading pattern, making it impossible to use incremental framing. Delta table update patterns are covered later in this article.
 
-#### Update operations
-
-Now consider what happens when an update operation occurs: The row for product `D` has its stock on hand value changed to `10`. This operations results in the creation of a new Parquet file and link file, so there are now three Parquet files and three link files.
-
-- Parquet file 1:
-  - **ProductID**: A, B, C
-  - **StockOnHand**: 1, 2, 3
-- Parquet file 2:
-  - **ProductID**: D
-  - **StockOnHand**: 4
-- Parquet file 3:
-  - **ProductID**: C
-  - **StockOnHand**: 10
-- Link file 1:
-  - Contains the timestamp when `Parquet file 1` was created, and records that data was appended.
-- Link file 2:
-  - Contains the timestamp when `Parquet file 2` was created, and records that data was appended.
-- Link file 3:
-  - Contains the timestamp when `Parquet file 3` was created, and records that data was updated.
-
-At this point, a query of the Delta table returns the following result.
-
-| ProductID | StockOnHand |
-| --- | --: |
-| A | 1 |
-| B | 2 |
-| C | 10|
-| D | 4 |
-
-Data for product `C` now exists in multiple Parquet files. However, queries to the Delta table combine the link files to determine what data should be used to provide the correct result.
-
-#### Delete operations
-
-Now consider what happens when a delete operation occurs: The row for product `B` is deleted. This operation results in a new Parquet file and link file, so there are now four Parquet files and four link files.
-
-- Parquet file 1:
-  - **ProductID**: A, B, C
-  - **StockOnHand**: 1, 2, 3
-- Parquet file 2:
-  - **ProductID**: D
-  - **StockOnHand**: 4
-- Parquet file 3:
-  - **ProductID**: C
-  - **StockOnHand**: 10
-- Parquet file 4:
-  - **ProductID**: A, C, D
-  - **StockOnHand**: 1, 10, 4
-- Link file 1:
-  - Contains the timestamp when `Parquet file 1` was created, and records that data was appended.
-- Link file 2:
-  - Contains the timestamp when `Parquet file 2` was created, and records that data was appended.
-- Link file 3:
-  - Contains the timestamp when `Parquet file 3` was created, and records that data was updated.
-- Link file 4:
-  - Contains the timestamp when `Parquet file 4` was created, and records that data was deleted.
-
-Notice that `Parquet file 4` no longer contains data for product `B`, but it does contain data for all other rows in the table.
-
-At this point, a query of the Delta table returns the following result.
-
-| ProductID | StockOnHand |
-| --- | --: |
-| A | 1 |
-| C | 10|
-| D | 4 |
+:::image type="content" source="media/direct-lake-query-performance/run-dax-query.png" alt-text="Screenshot showing the result of a DAX query using INFO.STORAGETABLECOLUMNSEGMENTS in a Direct Lake semantic model, highlighting column segment residency." lightbox="media/direct-lake-query-performance/run-dax-query.png":::
 
 > [!NOTE]
-> This example is simple because it involves a small table, just a few operations, and only minor modifications. Large tables that experience many write operations and that contain many rows of data will generate more than one Parquet file per version.
+> When a Delta table receives no updates, no reload is necessary for columns already resident in memory. When using nondestructive update patterns, queries show far less performance effect after framing because incremental framing essentially enables Direct Lake to update substantial portions of the existing in-memory data in place.
 
-> [!IMPORTANT]
-> Depending on how you define your Delta tables and the frequency of data modification operations, it might result in many Parquet files. Be aware that each Fabric capacity license has [guardrails](direct-lake-overview.md#fabric-capacity-guardrails-and-limitations). If the number of Parquet files for a Delta table exceeds the limit for your SKU, queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
->
-> To manage the number of Parquet files, see [Delta table maintenance](#delta-table-maintenance) later in this article.
+### Full memory residency
 
-#### Delta time travel
+With dictionaries, column segments, and join indexes loaded, Direct Lake reaches the warm state with query performance on par with import mode. In both modes, the number and size of column segments play a crucial role in optimizing query performance.
 
-Link files enable querying data as of an earlier point in time. This capability is known as _Delta time travel_. The earlier point in time could be a timestamp or version.
+## Delta table differences
 
-Consider the following query examples.
+Parquet files organize data by columns rather than rows. Direct Lake also organizes data by columns. The alignment facilitates seamless integration, yet there are important differences, specifically concerning row groups and dictionaries.
 
-```sql
-SELECT * FROM Inventory TIMESTAMP AS OF '2024-04-28T09:15:00.000Z';
-SELECT * FROM Inventory AS OF VERSION 2;
-```
+### Row groups versus column segments
 
-> [!TIP]
-> You can also query a table by using the `@` shorthand syntax to specify the timestamp or version as part of the table name. The timestamp must be in `yyyyMMddHHmmssSSS` format. You can specify a version after `@` by prepending a `v` to the version.
+A row group in a Parquet file consists of column chunks, and each chunk contains data for a specific column. A column segment in a semantic model, on the other hand, also contains a chunk of column data.
 
-Here are the previous query examples rewritten with shorthand syntax.
+There's a direct relationship between the total row group count of a Delta table and the segment count for each column of the corresponding semantic model table. For example, if a Delta table across all its current Parquet files has three row groups in total, then the corresponding semantic model table has three segments per column, as illustrated in the following diagram. In other words, if a Delta table has a large number of tiny row groups, a corresponding semantic model table would also have a large number of tiny column segments. This would negatively affect query performance.
 
-```sql
-SELECT * FROM Inventory@20240428091500000;
-SELECT * FROM Inventory@v2;
-```
+:::image type="content" source="media/direct-lake-query-performance/delta-table-model-table.png" alt-text="Diagram showing the relationship between Delta table row groups and semantic model column segments in Direct Lake." lightbox="media/direct-lake-query-performance/delta-table-model-table.png":::
 
-> [!IMPORTANT]
-> Table versions accessible with time travel are determined by a combination of the retention threshold for transaction log files and the frequency and specified retention for VACUUM operations (described later in the [Delta table maintenance](#delta-table-maintenance) section). If you run VACUUM daily with the default values, seven days of data will be available for time travel.
+  > [!NOTE]
+  > Because Direct Lake prefers large column segments, the row groups of the source Delta tables should ideally be large.
 
-#### Framing
+### Local dictionaries versus global dictionary
 
-_Framing_ is a Direct Lake operation that sets the version of a Delta table that should be used to load data into a semantic model column. Equally important, the version also determines what should be excluded when data is loaded.
+The total row group count of a Delta table also has direct effect on dictionary transcoding performance because Parquet files use local dictionaries while Direct Lake semantic models use a global dictionary for each column, as depicted in the following diagram. The higher the number of row groups, the higher the number of local dictionaries that Direct Lake must merge to create a global dictionary, and the longer it takes for transcoding to complete.
 
-A framing operation stamps the timestamp/version of each Delta table into the semantic model tables. From this point, when the semantic model needs to load data from a Delta table, the timestamp/version associated with the most recent framing operation is used to determine what data to load. Any subsequent data modifications that occur for the Delta table since the latest framing operation are ignored (until the next framing operation).
+:::image type="content" source="media/direct-lake-query-performance/table-dictionary-transcoding.png" alt-text="Diagram illustrating the process of merging local Parquet dictionaries into a global dictionary for Direct Lake semantic models." lightbox="media/direct-lake-query-performance/table-dictionary-transcoding.png":::
 
-> [!IMPORTANT]
-> Because a framed semantic model references a particular Delta table version, the source must ensure it keeps that Delta table version until framing of a new version is completed. Otherwise, users will encounter errors when the Delta table files need to be accessed by the model and have been vacuumed or otherwise deleted by the producer workload.
+## Delta table update patterns
 
-For more information about framing, see [Direct Lake overview](direct-lake-overview.md#framing).
+The method used to ingest data into a Delta table can greatly influence incremental framing efficiency. For instance, using the **Overwrite** option when loading data into an existing table erases the Delta log with each load. This means Direct Lake can't use incremental framing and must reload all the data, dictionaries, and join indexes. Such destructive update patterns negatively affect query performance.
 
-### Table partitioning
+:::image type="content" source="media/direct-lake-query-performance/connect-data-destination.png" alt-text="Diagram showing data ingestion and update patterns for Delta tables in Direct Lake." lightbox="media/direct-lake-query-performance/connect-data-destination.png":::
 
-Delta tables can be partitioned so that a subset of rows are stored together in a single set of Parquet files. Partitions can speed up queries as well as write operations.
+This section covers Delta table update patterns that enable Direct Lake to use incremental framing, preserving VertiPaq column store elements like dictionaries, column segments, and join indexes, to maximize transcoding efficiency and boost cold query performance.
 
-Consider a Delta table that has a billion rows of sales data for a two-year period. While it's possible to store all the data in a single set of Parquet files, for this data volume it's not optimal for read and write operations. Instead, performance can be improved by spreading the billion rows of data across multiple series of Parquet files.
+### Batch processing without partitioning
 
-A _partition key_ must be defined when setting up table partitioning. The partition key determines which rows to store in which series. For Delta tables, the partition key can be defined based on the distinct values of a specified column (or columns), such as a month/year column of a date table. In this case, two years of data would be distributed across 24 partitions (2 years x 12 months).
+This update pattern collects and processes data in large batches at scheduled intervals, such as on a weekly or monthly basis. As new data arrives, old data is often removed in a rolling or sliding window fashion to keep the table size under control. However, removing old data can be a challenge if the data is spread across most of the Parquet files. For example, removing one day out of 30 days might affect 95% of the Parquet files instead of 5%. In this case, Direct Lake would have to reload 95% of the data even for a relatively small **delete** operation. The same issue also applies to updates of existing rows because updates are combined deletes and appends. You can analyze the effect of **delete** and **update** operations by using Delta Analyzer, as explained later in this article.
 
-Fabric compute engines are unaware of table partitions. As they insert new partition key values, new partitions are created automatically. In OneLake, you'll find one subfolder for each unique partition key value, and each subfolder stores its own set of Parquet files and link files. At least one Parquet file and one link file must exist, but the actual number of files in each subfolder can vary. As data modification operations take place, each partition maintains its own set of Parquet files and link files to keep track of what to return for a given timestamp or version.
+### Batch processing with partitioning
 
-If a query of a partitioned Delta table is filtered to only the most recent three months of sales data, the subset of Parquet files and link files that need to be accessed can be quickly identified. That then allows skipping many Parquet files altogether, resulting in better read performance.
+Delta table partitioning can help to reduce the effect of **delete** operations as the table is divided into smaller Parquet files stored in folders based on the distinct values in the partition column. Commonly used partition columns include date, region, or other dimensional categories. In the previous example of removing one day out of 30 days, a Delta table partitioned by date would constrain the deletes to only the Parquet files of the partition for that day. However, it's important to note that extensive partitioning could result in a substantially increased number of Parquet files and row groups, thereby causing an excessive increase in column segments within the Direct Lake semantic model, negatively affecting query performance. Choosing a low-cardinality partition column is crucial for query performance. As a best practice, the column should have fewer than 100-200 distinct values.
 
-However, queries that don't filter on the partition key might not always perform better. That can be the case when a Delta table stores all data in a single large set of Parquet files and there's file or row group fragmentation. While it's possible to parallelize the data retrieval from multiple Parquet files across multiple cluster nodes, many small Parquet files can adversely affect file I/O and therefore query performance. For this reason, it's best to avoid partitioning Delta tables in most cases—unless write operations or extract, transform, and load (ETL) processes would clearly benefit from it.
+### Incremental loading
 
-Partitioning benefits insert, update, and delete operations too, because file activity only takes place in subfolders matching the partition key of the modified or deleted rows. For example, if a batch of data is inserted into a partitioned Delta table, the data is assessed to determine what partition key values exist in the batch. Data is then directed only to the relevant folders for the partitions.
+With incremental loading, the update process only inserts new data into a Delta table without affecting existing Parquet files and row groups. There are no deletes. Direct Lake can load the new data incrementally without having to discard and reload existing VertiPaq column store elements. This method works well with Direct Lake incremental framing. Delta table partitioning isn't necessary.
 
-Understanding how Delta tables use partitions can help you design optimal ETL scenarios that reduce the write operations that need to take place when updating large Delta tables. Write performance improves by reducing the number and size of any new Parquet files that must be created. For a large Delta table partitioned by month/year, as described in the previous example, new data only adds new Parquet files to the latest partition. Subfolders of previous calendar months remain untouched. If any data of previous calendar months must be modified, only the relevant partition folders receive new partition and link files.
+### Stream processing
 
-> [!IMPORTANT]
-> If the main purpose of a Delta table is to serve as a data source for semantic models (and secondarily, other query workloads), it's usually better to avoid partitioning in preference for optimizing the [load of columns into memory](direct-lake-overview.md#column-loading-transcoding).
+Processing data near real-time, as it arrives, can cause a proliferation of small Parquet files and row groups, which can negatively affect Direct Lake performance. As with the incremental loading pattern, it isn't necessary to partition the Delta table. However, frequent table maintenance is essential to ensure that the number of Parquet files and row groups remains within the guardrail limits specified in the [Direct Lake overview article](direct-lake-overview.md). In other words, don't forget to run Spark Optimize regularly, such as daily or even more often. Spark Optimize is covered again in the next section.
 
-For Direct Lake semantic models or the [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md), the best way to optimize Delta table partitions is to let Fabric automatically manage the Parquet files for each version of a Delta table. Leaving the management to Fabric should result in high query performance through parallelization, however it might not necessarily provide the best write performance.
-
-If you must optimize for write operations, consider using partitions to optimize write operations to Delta tables based on the partition key. However, be aware that over partitioning a Delta table can negatively impact on read performance. For this reason, we recommend that you test the read and write performance carefully, perhaps by creating multiple copies of the same Delta table with different configurations to compare timings.
-
-> [!WARNING]
-> If you partition on a high cardinality column, it can result in an excessive number of Parquet files. Be aware that every Fabric capacity license has [guardrails](direct-lake-overview.md#fabric-capacity-guardrails-and-limitations). If the number of Parquet files for a Delta table exceeds the limit for your SKU, queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
-
-### Parquet files
-
-The underlying storage for a Delta table is one or more Parquet files. Parquet file format is generally used for _write-once, read-many_ applications. New Parquet files are created every time data in a Delta table is modified, whether by an insert, update, or delete operation.
-
-> [!NOTE]
-> You can access Parquet files that are associated with Delta tables by using a tool, like [OneLake file explorer](../onelake/onelake-file-explorer.md). Files can be downloaded, copied, or moved to other destinations as easily as moving any other files. However, it's the combination of Parquet files and the JSON-based link files that allow compute engines to issue queries against the files as a Delta table.
-
-#### Parquet file format
-
-The internal format of a Parquet file differs from other common data storage formats, such as CSV, TSV, XMLA, and JSON. These formats organize data _by rows_, while Parquet organizes data _by columns_. Also, Parquet file format differs from these formats because it organizes rows of data into one or more _row groups_.
-
-The internal data structure of a Power BI semantic model is column-based, which means Parquet files share a lot in common with Power BI. This similarity means that a Direct Lake semantic model can efficiently load data from the Parquet files directly into memory. In fact, very large volumes of data can be loaded in seconds. Contrast this capability with the refresh of an Import semantic model which must retrieve blocks or source data, then process, encode, store, and then load it into memory. An Import semantic model refresh operation can also consume significant amounts of compute (memory and CPU) and take considerable time to complete. However, with Delta tables, most of the effort to prepare the data suitable for direct loading into a semantic model takes place when the Parquet file is generated.
-
-#### How Parquet files store data
-
-Consider the following example set of data.
-
-| Date | ProductID | StockOnHand |
-| --- | --- | --: |
-| 2024-09-16 | A | 10|
-| 2024-09-16 | B | 11|
-| 2024-09-17 | A | 13|
-| … | | |
-
-When stored in Parquet file format, conceptually, this set of data might look like the following text.
-
-```html
-Header:
-RowGroup1:
-    Date: 2024-09-16, 2024-09-16, 2024-09-17…
-    ProductID: A, B, A…
-    StockOnHand: 10, 11, 13…
-RowGroup2:
-    …
-Footer:
-```
-
-Data is compressed by substituting dictionary keys for common values, and by applying _run-length encoding (RLE)_. RLE strives to compress a series of same values into a smaller representation. In the following example, a dictionary mapping of numeric keys to values is created in the header, and the smaller key values are used in place of the data values.
-
-```html
-Header:
-    Dictionary: [
-        (1, 2024-09-16), (2, 2024-09-17),
-        (3, A), (4, B),
-        (5, 10), (6, 11), (7, 13)
-        …
-    ]
-RowGroup1:
-    Date: 1, 1, 2…
-    ProductID: 3, 4, 3…
-    StockOnHand: 5, 6, 7…
-Footer:
-```
-
-When the Direct Lake semantic model needs data to compute the sum of the `StockOnHand` column grouped by `ProductID`, only the dictionary and data associated with the two columns is required. In large files that contain many columns, substantial portions of the Parquet file can be skipped to help speed up the read process.
-
-> [!NOTE]
-> The contents of a Parquet file aren't human readable and so it isn't suited to opening in a text editor. However, there are many open-source tools available that can open and reveal the contents of a Parquet file. These tools can also let you inspect metadata, such as the number of rows and row groups contained in a file.
-
-#### V-Order
-
-Fabric supports an additional optimization called _[V-Order](../data-engineering/delta-optimization-and-v-order.md?tabs=sparksql&preserve-view=true)_. V-Order is a write-time optimization to the Parquet file format. Once V-Order is applied, it results in a smaller and therefore faster file to read. This optimization is especially relevant for a Direct Lake semantic model because it prepares the data for fast loading into memory, and so it makes less demands on capacity resources. It also results in faster query performance because less memory needs to be scanned.
-
-Delta tables created and loaded by Fabric items such as [data pipelines](../data-factory/data-factory-overview.md#data-pipelines), [dataflows](../data-factory/data-factory-overview.md#dataflows), and [notebooks](../data-engineering/data-engineering-overview.md#notebook) automatically apply V-Order. However, Parquet files uploaded to a Fabric lakehouse, or that are referenced by a [shortcut](../onelake/onelake-shortcuts.md), might not have this optimization applied. While non-optimized Parquet files can still be read, the read performance likely won't be as fast as an equivalent Parquet file that's had V-Order applied.
-
-> [!NOTE]
-> Parquet files that have V-Order applied still conform to the open-source Parquet file format. Therefore, they can be read by non-Fabric tools.
-
-For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md?tabs=sparksql&preserve-view=true).
-
-## Delta table optimization
-
-This section describes various topics for optimizing Delta tables for semantic models.
-
-### Data volume
-
-While Delta tables can grow to store extremely large volumes of data, [Fabric capacity guardrails](direct-lake-overview.md#fabric-capacity-guardrails-and-limitations) impose limits on semantic models that query them. When those limits are exceeded, queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
-
-Therefore, consider limiting the row count of a large [fact table](../data-warehouse/dimensional-modeling-fact-tables.md) by raising its granularity (store summarized data), reducing dimensionality, or storing less history.
-
-Also, ensure that [V-Order](#v-order) is applied because it results in a smaller and therefore faster file to read.
-
-### Column data type
-
-Strive to reduce cardinality (the number of unique values) in every column of each Delta table. That's because all columns are compressed and stored by using _hash encoding_. Hash encoding requires V-Order optimization to assign a numeric identifier to each unique value contained in the column. It's the numeric identifier, then, that's stored, requiring a hash lookup during storage and querying.
-
-When you use [approximate numeric data types](../data-warehouse/data-types.md#data-types-in-warehouse) (like **float** and **real**), consider rounding values and using a lower precision.
-
-### Unnecessary columns
-
-As with any data table, Delta tables should only store columns that are required. In the context of this article, that means required by the semantic model, though there could be other analytic workloads that query the Delta tables.
-
-Delta tables should include columns required by the semantic model for filtering, grouping, sorting, and summarizing, in addition to columns that support model relationships. While unnecessary columns don't affect semantic model query performance (because they won't be loaded into memory), they result in a larger storage size and so require more compute resources to load and maintain.
-
-Because Direct Lake semantic models don't support calculated columns, you should materialize such columns in the Delta tables. Note that this design approach is an anti-pattern for Import and DirectQuery semantic models. For example, if you have `FirstName` and `LastName` columns, and you need a `FullName` column, materialize the values for this column when inserting rows into the Delta table.
-
-Consider that some semantic model summarizations might depend on more than one column. For example, to calculate sales, the measure in the model sums the product of two columns: `Quantity` and `Price`. If neither of these columns is used independently, it would be more efficient to materialize the sales calculation as a single column than store its component values in separate columns.
-
-### Row group size
-
-Internally, a Parquet file organizes rows of data into multiple row groups within each file. For example, a Parquet file that contains 30,000 rows might chunk them into three row groups, each having 10,000 rows.
-
-The number of rows in a row group influences how quickly Direct Lake can read the data. A higher number of row groups with fewer rows is likely to negatively impact loading column data into a semantic model due to excessive I/O.
-
-Generally, we don't recommend that you change the default row group size. However, you might consider changing the row group size for large Delta tables. Be sure to test the read and write performance carefully, perhaps by creating multiple copies of the same Delta tables with different configurations to compare timings.
-
-> [!IMPORTANT]
-> Be aware that every Fabric capacity license has [guardrails](direct-lake-overview.md#fabric-capacity-guardrails-and-limitations). If the number of row groups for a Delta table exceeds the limit for your SKU, queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
+  > [!NOTE]
+  > Actual real-time analysis is best implemented using Eventstreams, KQL databases, and Eventhouse. Refer to the [Real-Time Intelligence documentation in Microsoft Fabric](../real-time-intelligence/index.yml) for guidance.
 
 ## Delta table maintenance
 
-Over time, as write operations take place, Delta table versions accumulate. Eventually, you might reach a point at which a negative impact on read performance becomes noticeable. Worse, if the number of Parquet files per table, or row groups per table, or rows per table exceeds the [guardrails for your capacity](direct-lake-overview.md#fabric-capacity-guardrails-and-limitations), queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance. It's therefore important that you maintain Delta tables regularly.
+Key maintenance tasks include vacuuming and optimizing Delta tables. To automate maintenance operations, you can use the Lakehouse APIs as explained in the [Manage the Lakehouse with Microsoft Fabric REST API](../data-engineering/lakehouse-api.md) documentation.
 
-### OPTIMIZE
+### Vacuuming
 
-You can use [OPTIMIZE](/azure/databricks/sql/language-manual/delta-optimize) to optimize a Delta table to coalesce smaller files into larger ones. You can also set the `WHERE` clause to target only a filtered subset of rows that match a given partition predicate. Only filters involving partition keys are supported. The `OPTIMIZE` command can also apply V-Order to compact and rewrite the Parquet files.
+Vacuuming removes Parquet files no longer included in the current Delta commit version and older than a set retention threshold. Removing these Parquet files doesn't affect Direct Lake performance because Direct Lake only loads the Parquet files that are in the current commit version. If you run VACUUM daily with the default values, the Delta commit versions of the last seven days are retained for time travel.
 
-We recommend that you run this command on large, frequently updated Delta tables on a regular basis, perhaps every day when your ETL process completes. Balance the trade-off between better query performance and the cost of resource usage required to optimize the table.
+  > [!IMPORTANT]
+  > Because a framed Direct Lake semantic model references a particular Delta commit version, you must ensure that the Delta table keeps this version until you refresh (frame) the model again to move it to the current version. Otherwise, users encounter query errors when the Direct Lake semantic model tries to access Parquet files that no longer exist.
 
-### VACUUM
+### Spark Optimize
 
-You can use [VACUUM](/azure/databricks/sql/language-manual/delta-vacuum) to remove files that are no longer referenced and/or that are older than a set retention threshold. Take care to set an appropriate retention period, otherwise you might lose the ability to [time travel](#delta-time-travel) back to a version older than the frame stamped into semantic model tables.
+Delta table optimization merges multiple small Parquet files into fewer large files. Because this can affect cold Direct Lake performance, it's good practice to optimize infrequently, such as over weekends or at the end of the month. Optimize more often if small Parquet files accumulate quickly (high-frequency small updates) to ensure the Delta table stays within guardrail limits.
 
-> [!IMPORTANT]
-> Because a framed semantic model references a particular Delta table version, the source must ensure it keeps that Delta table version until framing of a new version is completed. Otherwise, users will encounter errors when the Delta table files need to be accessed by the model and have been vacuumed or otherwise deleted by the producer workload.
+Partitioning can help to minimize optimization effect on incremental framing because partitioning effectively collocates the data. For example, partitioning a large Delta table based on a low-cardinality date_key column would constrain weekly maintenance to a maximum of seven partitions. The Delta table would retain most of the existing Parquet files. Direct Lake would only have to reload seven days of data.
 
-### REORG TABLE
+## Analyzing Delta table updates
 
-You can use [REORG TABLE](/azure/databricks/sql/language-manual/delta-reorg-table) to reorganize a Delta table by rewriting files to purge soft-deleted data, such as when you drop a column by using [ALTER TABLE DROP COLUMN](/azure/databricks/sql/language-manual/sql-ref-syntax-ddl-alter-table-manage-column).
+Use Delta Analyzer or similar tools to study how Delta table updates affect Parquet files and row groups. Delta Analyzer lets you track the evolution of Parquet files, row groups, column chunks, and columns in response to **append**, **update**, and **delete** operations. Delta Analyzer is available as a [standalone Jupyter Notebook](https://github.com/microsoft/Analysis-Services/tree/master/DeltaAnalyzer). It's also available in the [semantic-link-labs library](https://github.com/microsoft/semantic-link-labs). The following sections use semantic-link-labs. This library is easy to install in a notebook using the `%pip install semantic-link-labs` command.
 
-### Automate table maintenance
+### Row group size
 
-To automate table maintenance operations, you can use the Lakehouse API. For more information, see [Manage the Lakehouse with Microsoft Fabric REST API](../data-engineering/lakehouse-api.md).
+The ideal row-group size for Direct Lake semantic models is between 1 million and 16 million rows, yet Fabric might use larger row group sizes for large tables if the data is compressible. Generally, we don't recommend that you change the default row group size. It's best to let Fabric manage the Delta table layout. But it's also a good idea to double check.
 
-> [!TIP]
-> You can also use the lakehouse [Table maintenance feature](../data-engineering/lakehouse-table-maintenance.md) in the Fabric portal to simplify management of your Delta tables.
+The following Python code can serve as a starting point to analyze the row group sizes and other details of a Delta table in a Fabric notebook-connected lakehouse. The following table shows the output for a sample table with 1 billion rows.
 
-## Related content
+```
+import sempy_labs as labs
+from IPython.display import HTML
+from IPython.display import clear_output
 
-- [Direct Lake overview](direct-lake-overview.md)
-- [Develop Direct Lake semantic models](direct-lake-develop.md)
-- [Manage Direct Lake semantic models](direct-lake-manage.md)
-- [Delta Lake table optimization and V-Order](/fabric/data-engineering/delta-optimization-and-v-order?tabs=sparksql&preserve-view=true)
+table_name = "<Provide your table name>"
+
+# Load the Delta table and run Delta Analyzer
+df = spark.read.format("delta").load(f"Tables/{table_name}")
+da_results = labs.delta_analyzer(table_name)
+
+# Display the table summary in an HTML table.
+clear_output()
+
+df1 = da_results['Summary'].iloc[0]
+
+html_table = "<table border='1'><tr><th>Column Name</th><th>{table_name}</th></tr>"
+for column in da_results['Summary'].columns:
+    html_table += f"<tr><td>{column}</td><td>{df1[column]}</td></tr>"
+html_table += "</table>"
+
+display(HTML(html_table))
+```
+
+**Output**:
+
+| Parameter | Value |
+|---|---|
+| **Table name** | sales_1 |
+| **Row count** | 1000000000 |
+| **Row groups** | 24 |
+| **Parquet files** | 8 |
+| **Max rows per row group** | 51210000 |
+| **Min rows per row group** | 22580000 |
+| **Avg rows per row group** | 41666666.666666664 |
+| **VOrder enabled** | True |
+| **Total size** | 7700808430 |
+| **Timestamp** | 2025-03-24 03:01:02.794979 |
+
+The Delta Analyzer summary shows an average row group size of approximately 40 million rows. This is larger than the recommended maximum row group size of 16 million rows. Fortunately, the larger row group size doesn't cause significant issues for Direct Lake. Larger row groups facilitate continuous segment jobs with minimal overhead in the Storage Engine. Conversely, small row groups, those significantly under 1 million rows, can cause performance issues.
+
+More important in the previous example is that Fabric distributed the row groups across eight Parquet files. This aligns with the number of cores on the Fabric capacity to support efficient parallel **read** operations. Also important is that the individual row group sizes don't deviate too far from the average. Large variations can cause nonuniform VertiScan load, resulting in less optimal query performance.
+
+### Rolling window updates
+
+For illustration purposes, the following Python code sample simulates a rolling window update. The code removes the rows with the oldest DateID from a sample Delta table. It then updates the DateID of these rows and inserts them back again into the sample table as the most recent rows.
+
+```
+from pyspark.sql.functions import lit
+
+table_name = "<Provide your table name>"
+table_df = spark.read.format("delta").load(f"Tables/{table_name}")
+
+# Get the rows of the oldest DateID.
+rows_df = table_df[table_df["DateID"] == 20200101]
+rows_df = spark.createDataFrame(rows_df.rdd, schema=rows_df.schema)
+
+# Delete these rows from the table
+table_df.createOrReplaceTempView(f"{table_name}_view")
+spark.sql(f"DELETE From {table_name}_view WHERE DateID = '20200101'")
+
+# Update the DateID and append the rows as new data
+rows_df = rows_df.withColumn("DateID", lit(20250101))
+rows_df.write.format("delta").mode("append").save(f"Tables/{table_name}")
+```
+
+The `get_delta_table_history` function in the [semantic-link-labs library](https://github.com/microsoft/semantic-link-labs) can help to analyze the effect of this rolling window update. See the following Python code sample. See also the table with the output after the code snippet.
+
+```
+import sempy_labs as labs
+from IPython.display import HTML
+from IPython.display import clear_output
+
+table_name = "<Provide your table name>"
+da_results = labs.get_delta_table_history(table_name)
+
+# Create a single HTML table for specified columns
+html_table = "<table border='1'>"
+# Add data rows for specified columns
+for index, row in da_results.iterrows():
+    for column in ['Version', 'Operation', 'Operation Parameters', 'Operation Metrics']:
+        if column == 'Version':
+            html_table += f"<tr><td><b>Version</b></td><td><b>{row[column]}</b></td></tr>"
+        else:
+            html_table += f"<tr><td>{column}</td><td>{row[column]}</td></tr>"
+html_table += "</table>"
+
+# Display the HTML table
+display(HTML(html_table))
+```
+
+**Output**:
+
+| Version | Description | Value |
+|---|---|---|
+| **2** | **Operation** | WRITE |
+| |**Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} |
+| |**Operation metrics** | {'numFiles': '1', 'numOutputRows': '548665', 'numOutputBytes': '4103076'} |
+| **1** | **Operation** | DELETE |
+|| **Operation parameters** | {'predicate': '["(DateID#3910 = 20200101)"]'} |
+|| **Operation metrics** | {'numRemovedFiles': '8', 'numRemovedBytes': '7700855198', 'numCopiedRows': '999451335', 'numDeletionVectorsAdded': '0', 'numDeletionVectorsRemoved': '0', 'numAddedChangeFiles': '0', 'executionTimeMs': '123446', 'numDeletionVectorsUpdated': '0', 'numDeletedRows': '548665', 'scanTimeMs': '4820', 'numAddedFiles': '18', 'numAddedBytes': '7696900084', 'rewriteTimeMs': '198625'} |
+| **0** | **Operation** | WRITE |
+||**Operation parameters** | {'mode': 'Overwrite', 'partitionBy': '[]'} |
+|| **Operation metrics** | {'numFiles': '8', 'numOutputRows': '1000000000', 'numOutputBytes': '7700892169'} |
+
+The Delta Analyzer history above shows that this Delta table now has the following three versions:
+
+- **Version 0**: This is the original version with eight Parquet files and 24 row groups as discussed in the previous section.
+- **Version 1**: This version reflects the **delete** operation. Although only a single day's worth of data (DateID = '20200101') was removed from the sample table with five years of sales transactions, all eight Parquet files were affected. In the Operation Metrics, `numRemovedFiles` is eight [Parquet files] and `numAddedFiles` is 18 [Parquet files]. The means that the **delete** operation replaced the original eight Parquet files with 18 new Parquet files.
+- **Version 3**: The Operation Metrics reveal that one more Parquet file with 548,665 rows was added to the Delta table.
+
+After the rolling window update, the most current Delta commit version includes 19 Parquet files and 21 row groups, with sizes ranging from 500 thousand to 50 million rows. The rolling window update of 548,665 rows affected the entire Delta table of 1 billion rows. It replaced all Parquet files and row groups. Incremental framing can't be expected to improve cold performance in this case, and the increased variation in row group sizes is unlikely to benefit warm performance.
+
+### Delta table updates
+
+The following Python code updates a Delta table in essentially the same way as described in the previous section. On the surface, the update function only changes the DateID value of the existing rows that match a given DateID. However, Parquet files are immutable and can't be modified. Below the surface, the **update** operation removes existing Parquet files and adds new Parquet files. The outcome and effect are the same as for the rolling window update.
+
+```
+from pyspark.sql.functions import col, when
+from delta.tables import DeltaTable
+
+# Load the Delta table
+table_name = "<Provide your table name>"
+delta_table = DeltaTable.forPath(spark, f"Tables/{table_name}")
+
+# Define the condition and the column to update
+condition = col("DateID") == 20200101
+column_name = "DateID"
+new_value = 20250101
+
+# Update the DateID column based on the condition
+delta_table.update(
+    condition,
+    {column_name: when(condition, new_value).otherwise(col(column_name))}
+)
+```
+
+### Partitioned rolling window updates
+
+Partitioning can help to reduce the effect of table updates. It might be tempting to use the date keys, but a quick cardinality check can reveal that this isn't the best choice. For example, the sample table discussed so far contains sales transactions for the last five years, equivalent to about 1800 distinct date values. This cardinality is too high. The partition column should have fewer than 200 distinct values.
+
+```
+column_name = 'DateID'
+table_name = "<Provide your table name>"
+table_df = spark.read.format("delta").load(f"Tables/{table_name}")
+
+distinct_count = table_df.select(column_name).distinct().count()
+print(f"The '{column_name}' column has {distinct_count} distinct values.")
+
+if distinct_count <= 200:
+    print(f"The '{column_name}' column is a good partitioning candidate.")
+    table_df.write.format("delta").partitionBy(column_name).save(f"Tables/{table_name}_by_date_id")
+    print(f"Table '{table_name}_by_date_id' partitioned and saved successfully.")
+else:   
+    print(f"The cardinality of the '{column_name}' column is possibly too high.")
+```
+
+**Output**:
+
+```
+The 'DateID' column has 1825 distinct values.
+The cardinality of the 'DateID' column is possibly too high.
+```
+
+If there's no suitable partition column, it can be created artificially by reducing the cardinality of an existing column. The following Python code adds a Month column by removing the last two digits of the DateID. This produces 60 distinct values. The sample code then saves the Delta table partitioned by the Month column.
+
+```
+from pyspark.sql.functions import col, expr
+
+column_name = 'DateID'
+table_name = "sales_1"
+table_df = spark.read.format("delta").load(f"Tables/{table_name}")
+
+partition_column = 'Month'
+partitioned_table = f"{table_name}_by_month"
+table_df = table_df.withColumn(partition_column, expr(f"int({column_name} / 100)"))
+
+distinct_count = table_df.select(partition_column).distinct().count()
+print(f"The '{partition_column}' column has {distinct_count} distinct values.")
+
+if distinct_count <= 200:
+    print(f"The '{partition_column}' column is a good partitioning candidate.")
+    table_df.write.format("delta").partitionBy(partition_column).save(f"Tables/{partitioned_table}")
+    print(f"Table '{partitioned_table}' partitioned and saved successfully.")
+else:   
+    print(f"The cardinality of the '{partition_column}' column is possibly too high.")
+```
+
+**Output**:
+
+```
+The 'Month' column has 60 distinct values.
+The 'Month' column is a good partitioning candidate.
+Table 'sales_1_by_month' partitioned and saved successfully.
+```
+
+The Delta Analyzer summary now shows that the Delta table layout is well aligned with Direct Lake. The average row group size is about 16 million rows, and the mean absolute deviation of the row group sizes and therefore segment sizes is fewer than 1 million rows.
+
+| Parameter | Value |
+|---|---|
+| **Table name** | sales_1_by_month |
+| **Row count** | 1000000000 |
+| **Row groups** | 60 |
+| **Parquet files** | 60 |
+| **Max rows per row group** | 16997436 |
+| **Min rows per row group** | 15339311 |
+| **Avg rows per row group** | 16666666.666666666 |
+| **VOrder enabled** | True |
+| **Total size** | 7447946016 |
+| **Timestamp** | 2025-03-24 03:01:02.794979 |
+
+After a rolling window update against a partitioned sample table, the Delta Analyzer history shows that only one Parquet file was affected. See the following output table. Version 2 has exactly 16,445,655 rows copied over from the old Parquet file into a replacement Parquet file, and Version 3 adds a new Parquet file with 548,665 rows. In total, Direct Lake only needs to reload about 17 million rows, a sizeable improvement over a 1-billion-rows reload without partitioning.
+
+| Version | Description | Value|
+|---|---|---|
+|**2** | **Operation** | WRITE |
+| |**Operation parameters** | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+| |**Operation metrics** | {'numFiles': '1', 'numOutputRows': '548665', 'numOutputBytes': '4103076'} |
+|**1** | **Operation** | DELETE |
+|| **Operation parameters** | {'predicate': '["(DateID#3910 = 20200101)"]'} |
+|| **Operation metrics** | {'numRemovedFiles': '1', 'numRemovedBytes': '126464179', 'numCopiedRows': '16445655', 'numDeletionVectorsAdded': '0', 'numDeletionVectorsRemoved': '0', 'numAddedChangeFiles': '0', 'executionTimeMs': '19065', 'numDeletionVectorsUpdated': '0', 'numDeletedRows': '548665', 'scanTimeMs': '1926', 'numAddedFiles': '1', 'numAddedBytes': '121275513', 'rewriteTimeMs': '17138'} |
+| **0** | **Operation** | WRITE |
+|| **Operation parameters** | {'mode': 'Overwrite', 'partitionBy': '["Month"]'} |
+|| **Operation metrics** | {'numFiles': '60', 'numOutputRows': '1000000000', 'numOutputBytes': '7447681467'} |
+
+### Append-only pattern followed by Spark Optimize
+
+Append-only patterns don't affect existing Parquet files. They work well with Direct Lake incremental framing. However, don't forget to optimize your Delta tables to consolidate Parquet files and row groups, as discussed earlier in this article. Small and frequent appends can accumulate files quickly and can distort the uniformity of the row group sizes.
+
+The following output shows the Delta Analyzer history for a nonpartitioned table compared to a partitioned table. The history includes seven appends and one subsequent **optimize** operation.
+
+| Version | Description | Value in *default* layout | Value in *partitioned* layout |
+|---|---|---|---|
+|**8** | **Operation** | OPTIMIZE | OPTIMIZE |
+|| **Operation parameters** | {'predicate': '[]', 'auto': 'false', 'clusterBy': '[]', 'vorder': 'true', 'zOrderBy': '[]'} | {'predicate': '["(\'Month >= 202501)"]', 'auto': 'false', 'clusterBy': '[]', 'vorder': 'true', 'zOrderBy': '[]'} |
+|| **Operation metrics** | {'numRemovedFiles': '8', 'numRemovedBytes': '991234561', 'p25FileSize': '990694179', 'numDeletionVectorsRemoved': '0', 'minFileSize': '990694179', 'numAddedFiles': '1', 'maxFileSize': '990694179', 'p75FileSize': '990694179', 'p50FileSize': '990694179', 'numAddedBytes': '990694179'} | {'numRemovedFiles': '7', 'numRemovedBytes': '28658548', 'p25FileSize': '28308495', 'numDeletionVectorsRemoved': '0', 'minFileSize': '28308495', 'numAddedFiles': '1', 'maxFileSize': '28308495', 'p75FileSize': '28308495', 'p50FileSize': '28308495', 'numAddedBytes': '28308495'} |
+| **7** | **Operation** | WRITE | WRITE |
+||**Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+||**Operation metrics** | {'numFiles': '1', 'numOutputRows': '547453', 'numOutputBytes': '4091802'} | {'numFiles': '1', 'numOutputRows': '547453', 'numOutputBytes': '4091802'} |
+| **6** | **Operation** | WRITE | WRITE |
+||**Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+||**Operation metrics** | {'numFiles': '1', 'numOutputRows': '548176', 'numOutputBytes': '4095497'} | {'numFiles': '1', 'numOutputRows': '548176', 'numOutputBytes': '4095497'} |
+| **5** | **Operation** | WRITE | WRITE |
+|| **Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+|| **Operation metrics** | {'numFiles': '1', 'numOutputRows': '547952', 'numOutputBytes': '4090107'} | {'numFiles': '1', 'numOutputRows': '547952', 'numOutputBytes': '4093015'} |
+| **4** | **Operation** | WRITE | WRITE |
+|| **Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+|| **Operation metrics** | {'numFiles': '1', 'numOutputRows': '548631', 'numOutputBytes': '4093134'} | {'numFiles': '1', 'numOutputRows': '548631', 'numOutputBytes': '4094376'} |
+| **3**|**Operation** | WRITE | WRITE |
+||**Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+||**Operation metrics** | {'numFiles': '1', 'numOutputRows': '548671', 'numOutputBytes': '4101221'} | {'numFiles': '1', 'numOutputRows': '548671', 'numOutputBytes': '4101221'} |
+| **2** |**Operation** | WRITE | WRITE |
+||**Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+||**Operation metrics** | {'numFiles': '1', 'numOutputRows': '546530', 'numOutputBytes': '4081589'} | {'numFiles': '1', 'numOutputRows': '546530', 'numOutputBytes': '4081589'} |
+| **1** | **Operation** | WRITE | WRITE |
+||**Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+||**Operation metrics** | {'numFiles': '1', 'numOutputRows': '548665', 'numOutputBytes': '4101048'} | {'numFiles': '1', 'numOutputRows': '548665', 'numOutputBytes': '4101048'} |
+| **0** | **Operation** | WRITE | WRITE |
+||**Operation parameters** | {'mode': 'Overwrite', 'partitionBy': '[]'} | {'mode': 'Overwrite', 'partitionBy': '["Month"]'} |
+||**Operation metrics** | {'numFiles': '8', 'numOutputRows': '1000000000', 'numOutputBytes': '7700855198'} | {'numFiles': '60', 'numOutputRows': '1000000000', 'numOutputBytes': '7447681467'} |
+
+Looking at the Operation Metrics of Version 8, it's worth pointing out that the **optimize** operation for the nonpartitioned tabled merged eight Parquet files affecting roughly 1 GB of data while the **optimize** operation of the partitioned table merged seven Parquet files affecting only about 25 MB of data. It follows that Direct Lake would perform better with the partitioned table.
+
+## Considerations and limitations
+
+Considerations and limitations for optimizing Direct Lake performance are as follows:
+
+- Avoid destructive update patterns on large Delta tables to preserve incremental framing in Direct Lake.
+- Small Delta tables don't need to be optimized for incremental framing.
+- Aim for a row group size of between 1 million to 16 million rows to create column segments in Direct Lake with 1 million to 16 million rows. Direct Lake prefers large column segments.
+- Avoid high cardinality partition columns because Direct Lake transcoding is less efficient with many small Parquet files and row groups than with fewer large Parquet files and row groups.
+- Due to unforeseen demand for compute and memory resources, a semantic model might be reloaded onto another Fabric cluster node in cold state.
+- Direct Lake doesn't use delta\Parquet statistics for row group\file skipping to optimize data loading.

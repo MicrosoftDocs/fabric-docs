@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines
 ms.date: 12/18/2024
 ---
 
@@ -22,7 +22,7 @@ To get started, you must complete the following prerequisites:
 
 ## Add a Script activity to a Pipeline with UI
 
-1. Open an existing data pipeline or create a new data pipeline.
+1. Open an existing pipeline or create a new pipeline.
 1. Select on add a pipeline activity and search for **Script**.
 
     :::image type="content" source="media/script-activity/add-script-activity-canvas.png" alt-text="Screenshot showing where to select the Script activity in the canvas." lightbox="media/script-activity/add-script-activity-canvas.png":::

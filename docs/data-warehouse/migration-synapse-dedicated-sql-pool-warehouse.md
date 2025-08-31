@@ -1,10 +1,10 @@
 ---
-title: Migration strategy and planning for ​​Azure Synapse dedicated SQL pools to Fabric Migration​
+title: Migration Strategy and Planning for ​​Azure Synapse Dedicated SQL Pools to Fabric Migration​
 description: This article details the strategy and considerations of migration of data warehousing in Azure Synapse dedicated SQL pools to Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: arturv, johoang
-ms.date: 03/22/2025
+ms.date: 04/06/2025
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
@@ -27,9 +27,9 @@ This article focuses on options for schema (DDL) migration, database code (DML) 
 
 ## Prepare for migration
 
-Carefully plan your migration project before you get started and ensure that your schema, code, and data are compatible with Fabric Warehouse. There are some [limitations](../data-warehouse/limitations.md) that you need to consider. Quantify the refactoring work of the incompatible items, as well as any other resources needed before the migration delivery.
+Carefully plan your migration project before you get started and ensure that your schema, code, and data are compatible with Fabric Warehouse. There are some [limitations](limitations.md) that you need to consider. Quantify the refactoring work of the incompatible items, as well as any other resources needed before the migration delivery.
 
-Another key goal of planning is to adjust your design to ensure that your solution takes full advantage of the high query performance that Fabric Warehouse is designed to provide. Designing data warehouses for scale introduces unique design patterns, so traditional approaches aren't always the best. Review the [Fabric Warehouse performance guidelines](../data-warehouse/guidelines-warehouse-performance.md), because although some design adjustments can be made after migration, making changes earlier in the process will save you time and effort. Migration from one technology/environment to another is always a major effort.
+Another key goal of planning is to adjust your design to ensure that your solution takes full advantage of the high query performance that Fabric Warehouse is designed to provide. Designing data warehouses for scale introduces unique design patterns, so traditional approaches aren't always the best. Review the [performance guidelines](guidelines-warehouse-performance.md), because although some design adjustments can be made after migration, making changes earlier in the process will save you time and effort. Migration from one technology/environment to another is always a major effort.
 
 The following diagram depicts the Migration Lifecycle listing the major pillars consisting of **Assess and Evaluate**, **Plan and Design**, **Migrate**, **Monitor and Govern**, **Optimize and Modernize** pillars with the associated tasks in each pillar to plan and prepare for the smooth migration.
 
@@ -127,7 +127,7 @@ Performance optimizations in the source environment, such as indexes, indicate w
 
 ### T-SQL considerations
 
-There are several Data Manipulation Language (DML) syntax differences to be aware of. Refer to [T-SQL surface area in Microsoft Fabric](tsql-surface-area.md). Consider also a [code assessment when choosing method(s) of migration for the database code (DML)](migration-synapse-dedicated-sql-pool-methods.md).
+There are several Data Manipulation Language (DML) syntax differences to be aware of. Refer to [T-SQL surface area in Fabric Data Warehouse](tsql-surface-area.md). Consider also a [code assessment when choosing method(s) of migration for the database code (DML)](migration-synapse-dedicated-sql-pool-methods.md).
 
 Depending on the parity differences at the time of the migration, you might need to rewrite parts of your T-SQL DML code.
 
@@ -164,3 +164,4 @@ The following table provides the mapping of supported data types from Synapse de
 - [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)
+- [Microsoft Fabric Migration Overview](../fundamentals/migration.md)

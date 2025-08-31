@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure HTTP in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to HTTP.
+This article outlines how to use the copy activity in a pipeline to copy data from and to HTTP.
 
 ## Supported format
 

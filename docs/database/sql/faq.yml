@@ -13,7 +13,7 @@ title: "Frequently asked questions for SQL database in Microsoft Fabric (preview
 summary: |
   **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-  This article answers frequently asked questions about SQL database in Microsoft Fabric.
+  This article answers frequently asked questions about SQL database in Microsoft Fabric. For more Q&A, engage with the [Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion).
 
 sections:
   - name: Connectivity
@@ -134,7 +134,7 @@ sections:
         answer:
           See [Fabric availability](../../admin/region-availability.md#all-workloads).
 
-          Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
+          Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../../mirroring/azure-sql-database-limitations.md#supported-regions).
       - question: |
           My capacity is in a supported region but I still do not see the option to enable SQL database. What should I do?
         answer:
@@ -147,7 +147,10 @@ sections:
         answer:
           Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md). If you don't, users who try to create a new SQL database will receive an error message "SQL database failed to create."
  
-
+      - question: |
+          Where can I ask questions to the community about SQL database in Fabric?
+        answer:
+          Engage with the [Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion).
 
 
 additionalContent: |
@@ -155,5 +158,5 @@ additionalContent: |
   ## Related content
 
   - [SQL database in Fabric](overview.md)
-  - [Performance Dashboard for SQL database in Fabric](performance-dashboard.md)
-  
+  - [What's new in Fabric Databases](../../fundamentals/whats-new.md#sql-database-in-microsoft-fabric)
+  - [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)  

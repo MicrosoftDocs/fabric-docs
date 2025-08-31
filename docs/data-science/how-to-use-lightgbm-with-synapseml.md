@@ -3,11 +3,11 @@ title: How to use LightGBM with SynapseML in Microsoft Fabric
 description: Build LightGBM classification, regression, and ranking models with SynapseML in Microsoft Fabric.
 ms.topic: how-to
 ms.custom:
-ms.author: ssalgado
-author: ssalgadodev
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: JessicaXYWang
 reviewer: jessiwang
-ms.date: 08/21/2024
+ms.date: 07/30/2025
 ---
 
 # Use LightGBM models with SynapseML in Microsoft Fabric
@@ -15,8 +15,7 @@ ms.date: 08/21/2024
 The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in creating high-quality and GPU-enabled decision tree algorithms for ranking, classification, and many other machine learning tasks. In this article, you use LightGBM to build classification, regression, and ranking models.
 
 LightGBM is an open-source, distributed, high-performance gradient boosting (GBDT, GBRT, GBM, or
-MART) framework. LightGBM is part of Microsoft's
-[DMTK](https://github.com/microsoft/dmtk) project. You can use LightGBM by using LightGBMClassifier, LightGBMRegressor, and LightGBMRanker. LightGBM comes with the advantages of being incorporated into existing SparkML pipelines and used for batch, streaming, and serving workloads. It also offers a wide array of tunable parameters, that one can use to customize their decision tree system. LightGBM on Spark also supports new types of problems such as quantile regression.
+MART) framework. You can use LightGBM by using LightGBMClassifier, LightGBMRegressor, and LightGBMRanker. LightGBM comes with the advantages of being incorporated into existing SparkML pipelines and used for batch, streaming, and serving workloads. It also offers a wide array of tunable parameters, that one can use to customize their decision tree system. LightGBM on Spark also supports new types of problems such as quantile regression.
 
 ## Prerequisites
 

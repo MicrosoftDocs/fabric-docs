@@ -1,25 +1,25 @@
 ---
-title: Variable library integration with Data pipelines (Preview)
-description: Learn about how to use Variable library with data pipelines. 
+title: Variable library integration with pipelines (Preview)
+description: Learn about how to use Variable library with pipelines. 
 ms.reviewer: whhender
 ms.author: noelleli
 author: n0elleli
 ms.topic: concept-article
-ms.custom:
-ms.date: 03/18/2025
+ms.custom: pipelines
+ms.date: 04/01/2025
 ---
 
-# Variable library integration with Data pipelines (Preview)
+# Variable library integration with pipelines (Preview)
 
 
 
-The Variable library is a new item type in Microsoft Fabric that allows users to define and manage variables at the workspace level, so they could soon be used across various workspace items, such as data pipelines, notebooks, Shortcut for lakehouse and more. It provides a unified and centralized way to manage configurations, reducing the need for hardcoded values and simplifying your CI/CD processes, making it easier to manage configurations across different environments.
+The [Variable library](../cicd/variable-library/variable-library-overview.md) is a new item type in Microsoft Fabric that allows users to define and manage variables at the workspace level, so they could soon be used across various workspace items, such as pipelines, notebooks, Shortcut for lakehouse and more. It provides a unified and centralized way to manage configurations, reducing the need for hardcoded values and simplifying your CI/CD processes, making it easier to manage configurations across different environments.
 
 > [!NOTE]
->  Variable library and its integration with data pipelines is currently in public preview.
+>  Variable library and its integration with pipelines is currently in public preview.
 
 
-## How to use Variable library with data pipelines
+## How to use Variable library with pipelines
 
 ### Create a Variable Library
 
@@ -35,7 +35,7 @@ The Variable library is a new item type in Microsoft Fabric that allows users to
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/set-variable-library-name.png" lightbox="media/variable-library-integration-with-data-pipelines/set-variable-library-name.png" alt-text="Screenshot showing a new Variable library item with a name set and the Create button highlighted.":::
  
-4. Once the Variable library is created, you will be taken to the homepage. Click **+ New** to add a new variable.
+4. Once the Variable library is created, you are taken to the homepage. Click **+ New** to add a new variable.
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-new-variables.png" lightbox="media/variable-library-integration-with-data-pipelines/add-new-variables.png" alt-text="Screenshot showing the start page for a new Variable library item.":::
 
@@ -43,7 +43,7 @@ The Variable library is a new item type in Microsoft Fabric that allows users to
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/variable-configurations.png" lightbox="media/variable-library-integration-with-data-pipelines/variable-configurations.png" alt-text="Screenshot showing the configurations to set for a new variable.":::
 
-6. Add Alternative value sets as you need (e.g. different values for different deployment pipeline environments). After you set a name and click **Create**, you can edit the variable values and choose value set to make active. 
+6. Add Alternative value sets as you need (for example, different values for different deployment pipeline environments). After you set a name and click **Create**, you can edit the variable values and choose value set to make active. 
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-value-sets.png" lightbox="media/variable-library-integration-with-data-pipelines/add-value-sets.png" alt-text="Screenshot highlighting where to add new value sets for a variable.":::
 
@@ -57,9 +57,9 @@ The Variable library is a new item type in Microsoft Fabric that allows users to
 
 1. To use a Variable library variable in your pipeline, create a new pipeline or navigate to an existing pipeline.
 
-   :::image type="content" source="media/variable-library-integration-with-data-pipelines/create-new-data-pipeline.png" lightbox="media/variable-library-integration-with-data-pipelines/create-new-data-pipeline.png" alt-text="Screenshot highlighting the create new item button in the top left corner and the Data pipeline item highlighted.":::
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/create-new-data-pipeline.png" lightbox="media/variable-library-integration-with-data-pipelines/create-new-data-pipeline.png" alt-text="Screenshot highlighting the create new item button in the top left corner and the pipeline item highlighted.":::
 
-2. In your data pipeline, you'll need to create a reference to your variable library variable in the bottom panel.
+2. In your pipeline, you need to create a reference to your variable library variable in the bottom panel.
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/new-variable-library-reference-in-pipeline.png" lightbox="media/variable-library-integration-with-data-pipelines/new-variable-library-reference-in-pipeline.png" alt-text="Screenshot highlighting the Library variables (preview) tab and the +New button in the bottom panel of the pipeline canvas.":::
 
@@ -73,7 +73,7 @@ The Variable library is a new item type in Microsoft Fabric that allows users to
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-dynamic-content.png" lightbox="media/variable-library-integration-with-data-pipelines/add-dynamic-content.png" alt-text="Screenshot showing Add dynamic content highlighted in the settings of a Lookup activity.":::
 
-5. The expression builder will open. If you don't see **Library variables (preview)**, click the 3 dots next to **Functions** and select **Library variables (preview)**. 
+5. The expression builder opens. If you don't see **Library variables (preview)**, click the 3 dots next to **Functions** and select **Library variables (preview)**. 
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/pipeline-expression-builder.png" lightbox="media/variable-library-integration-with-data-pipelines/pipeline-expression-builder.png" alt-text="Screenshot showing the 3 dots next to Functions in the expression builder and the Library variables (preview) tab highlighted.":::
 
@@ -96,11 +96,12 @@ The Variable library is a new item type in Microsoft Fabric that allows users to
 
 The following known limitations apply to the integration of Variable library in pipelines in Data Factory in Microsoft Fabric:
 
-- It is required for you to set a name for your variable reference within the pipeline canvas in order to use your Variable library variables in data pipeline. Unique names must be set for your variable references.
-- The Variable library supports Boolean, Datetime, Guid, Integer, Number, and String as data types. In your data pipeline, you will see Boolean as Bool type, Datetime as String type, Guid as String type, Integer as Int type, and String as String type. Number types are not supported in data pipelines. 
-- Connection parameterization is **not** supported with variable library integrated with data pipelines. You can, however, parameterize internal workspace artifact IDs which include Lakehouse, Warehouse, KQL Database, SQL Database (preview).
-- If you choose to parameterize with a library variable, note that you will not be able to preview your data or use the drop-down selection to see existing tables or files.
-- Currently, you are unable to view what value has been set for the variable library variable in the pipeline canvas. 
+- It is required for you to set a name for your variable reference within the pipeline canvas in order to use your Variable library variables in pipeline. Unique names must be set for your variable references.
+- The Variable library supports Boolean, Datetime, Guid, Integer, Number, and String as data types. In your pipeline, you will see Boolean as Bool type, Datetime as String type, Guid as String type, Integer as Int type, and String as String type. Number types are not supported in pipelines. 
+- External connection parameterization is supported with variable library integrated with pipelines. However, you must look up the GUID for your connection from Settings | Manage connections and gateways. There you will find the GUID for your connection by clicking Settings next to your connection name.
+- If you choose to parameterize with a library variable, you will not be able to preview your data or use the drop-down selection to see existing tables or files.
+- Currently, you're unable to view what value is set for the variable library variable in the pipeline canvas prior to running the pipeline.
+- If you make changes in your Variable Library, you might not see new variables or changes to your existing pipeline references immediately. If that happens, close your pipeline and re-open it. 
 
 
 

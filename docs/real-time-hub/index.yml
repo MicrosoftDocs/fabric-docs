@@ -84,6 +84,9 @@ landingContent:
             url: add-source-mqtt.md
           - text: Solace PubSub+
             url: add-source-solace-pub-sub.md
+          - text: Real-time weather
+            url: add-source-real-time-weather.md
+
   # Card 
   - title: Process and analyze data streams
     linkLists:
@@ -113,8 +116,6 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Explore streams
-            url: explore-data-streams.md
           - text: Explore Azure events
             url: explore-azure-events.md
           - text: Explore Fabric events

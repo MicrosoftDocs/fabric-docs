@@ -1,11 +1,11 @@
 ---
 title: Domains
 description: Learn about domains and how to create and manage them.
-author: paulinbar
-ms.author: painbar
-ms.topic: conceptual
-ms.custom:
-ms.date: 12/16/2024
+author: msmimart
+ms.author: mimart
+ms.topic: overview
+ms.custom: sfi-image-nochange
+ms.date: 05/01/2025
 ---
 
 # Fabric domains
@@ -26,7 +26,13 @@ Currently, Microsoft Fabric's data mesh architecture primarily supports organizi
 
 In Fabric, a domain is a way of logically grouping together all the data in an organization that is relevant to a particular area or field. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
 
-To group data into domains, workspaces are associated with domains. When a workspace is associated with a domain, all the items in the workspace are also associated with the domain, and they receive a domain attribute as part of their metadata. Currently, the association of workspaces and the items in them with domains primarily enables a better consumption experience. For instance, in the [OneLake data hub](../governance/onelake-catalog-overview.md), users can filter content by domain in order find content that is relevant to them. In addition, some tenant-level settings for managing and governing data can be [delegated to the domain level](#domain-settings-delegation), thus allowing domain-specific configuration of those settings.
+To group data into domains, workspaces are associated with domains. When a workspace is associated with a domain, all the items in the workspace are also associated with the domain, and they receive a domain attribute as part of their metadata. Currently, the association of workspaces and the items in them with domains primarily enables a better consumption experience. For instance, in the [OneLake catalog](../governance/onelake-catalog-overview.md), users can filter content by domain in order find content that is relevant to them. In addition, some tenant-level settings for managing and governing data can be [delegated to the domain level](#domain-settings-delegation), thus allowing domain-specific configuration of those settings.
+
+> [!NOTE]
+> Domain assignment doesn't affect item visibility or accessibility for tenant users. Item discovery, visibility, and access depend on such things as workspace role and item permissions, but not domain assignment.
+>
+> Likewise, all users within a tenant can see all the domains defined in the tenant, regardless of their specific domain roles. For example, users who are neither contributors nor admins of a domain called "Finance" in their tenant can still see this domain in the [domains filter](./onelake-catalog-explore.md#scope-the-catalog-to-a-particular-domain) of the Onelake Catalog.
+
 
 ### Subdomains
 
@@ -45,7 +51,7 @@ There are three roles involved in the creation and management of domains:
 * **Domain contributor**: Domain contributors are [workspace admins](../fundamentals/roles-workspaces.md) whom a domain or Fabric admin has authorized to assign the workspaces they're the admins of to a domain, or to change the current domain assignment.
 
     Domain contributors assign the workspaces they're an admin of in the settings of the workspace itself. They don't have access to the **Domains** tab in the admin portal.
-    
+
     > [!NOTE]
     > Remember, to be able to assign a workspace to a domain, a domain contributor must be a workspace admin (that is, have the [Admin role](../fundamentals/roles-workspaces.md) in the workspace).
 
@@ -55,9 +61,9 @@ To allow domain-specific configuration, some tenant-level settings for managing 
 
 ### Domain image
 
-When users look for data items in the OneLake data hub, they might want to see only the data items that belong to a particular domain. To do this, they can select the domain in the domain selector on the data hub to display only items belonging to that domain. To remind them which domain's data items they're seeing, you can choose an image to represent your domain. Then, when your domain is selected in the domain selector, the image becomes part of the data hub's theme, as illustrated in the following image.
+When users look for data items in the OneLake catalog, they might want to see only the data items that belong to a particular domain. To do this, they can select the domain in the domain selector in the OneLake catalog to display only items belonging to that domain. To remind them which domain's data items they're seeing, you can choose an image to represent your domain. Then, when your domain is selected in the domain selector, the image becomes part of OneLake catalog's theme, as illustrated in the following image.
 
-:::image type="content" source="./media/domains/domain-image-data-hub.png" alt-text="Screenshot of the OneLake data hub with a domain image.":::
+:::image type="content" source="./media/domains/domain-image-onelake-catalog.png" alt-text="Screenshot of the OneLake catalog with a domain image.":::
 
 For information about how to specify an image for a domain, see [Specify a domain image](#specify-a-domain-image).
 
@@ -189,7 +195,7 @@ Alternatively, for domains, you can hover over the domain on the Domain tab, sel
 
 Select **Image** and then select **Select an image**.
 
-In the photo gallery that pops up you can choose an image or color to represent your domain in the OneLake data hub when your domain is selected.
+In the photo gallery that pops up you can choose an image or color to represent your domain in the OneLake catalog when your domain is selected.
 
 :::image type="content" source="./media/domains/domain-image-gallery.png" alt-text="Screenshot showing the domains image gallery.":::
 

@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 01/23/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Amazon S3 Compatible in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from Amazon S3 Compatible.
+This article outlines how to use the copy activity in a pipeline to copy data from Amazon S3 Compatible.
 
 
 ## Required permissions

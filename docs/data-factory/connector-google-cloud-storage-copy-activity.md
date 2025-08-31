@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 01/24/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Google Cloud Storage in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Google Cloud Storage.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Google Cloud Storage.
 
 ## Prerequisites
 

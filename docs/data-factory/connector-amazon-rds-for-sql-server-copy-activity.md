@@ -5,12 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom: template-how-to
+ms.custom: 
+  - pipelines
+  - template-how-to
+  - connectors
 ---
 
 # How to configure Amazon RDS for SQL Server in copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from Amazon RDS for SQL Server.
+This article outlines how to use the copy activity in a pipeline to copy data from Amazon RDS for SQL Server.
 
 ## Supported configuration
 

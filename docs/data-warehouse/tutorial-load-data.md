@@ -1,12 +1,12 @@
 ---
-title: "Data warehouse tutorial: Load data with T-SQL into a Warehouse"
+title: "Data Warehouse Tutorial: Load Data with T-SQL into a Warehouse"
 description: "In this tutorial, learn how to load data from a public storage Azure Blob storage account into Warehouse tables with T-SQL."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 12/29/2024
+ms.date: 04/06/2025
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange
 ---
 
 # Tutorial: Load data with T-SQL into a Warehouse
@@ -31,7 +31,7 @@ In this task, learn to load data with T-SQL.
 
 1. On the **Home** ribbon, select **New SQL query**.
 
-   :::image type="content" source="media/tutorial-load-data/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option.":::
+   :::image type="content" source="media/tutorial-load-data/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option." lightbox="media/tutorial-load-data/ribbon-new-sql-query.png":::
 
 1. In the query editor, paste the following code. The code returns a sample data from Parquet files sourced from an Azure Blob storage account. Ensure that the columns in the results match the `dimension_city` and `fact_sale` table schemas.
 

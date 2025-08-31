@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 09/29/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure MariaDB in copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from MariaDB.
+This article outlines how to use the copy activity in a pipeline to copy data from MariaDB.
 
 This connector supports MariaDB version 10.x, 11.x.
 

@@ -6,7 +6,9 @@ ms.author: jianleishen
 ms.topic: how-to
 ms.date: 07/31/2024
 ms.custom:
-  - template-how-to
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # Set up your Oracle database connection
@@ -49,7 +51,7 @@ The Oracle database connector supports the following authentication types for co
 
             :::image type="content" source="./media/connector-oracle-database/click-install.png" alt-text="Screenshot showing the Install page."::: 
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
 Browse to the **Connect data source** for the Data Factory pipeline to configure the connection details and create the connection.
 
@@ -58,7 +60,7 @@ Browse to the **Connect data source** for the Data Factory pipeline to configure
 You have two ways to browse to this page:
 
 - In copy assistant, browse to this page after selecting the connector.
-- In a data pipeline, browse to this page after selecting **More** in Connection section and selecting the connector.
+- In a pipeline, browse to this page after selecting **More** in Connection section and selecting the connector.
 
 ### Step 1: Specify the server, connection, connection name and data gateway
 
@@ -100,7 +102,7 @@ Select **Create**. Your creation is successfully tested and saved if all the cre
 
 ## Table summary
 
-The following table contains connector properties that are supported in pipeline copy.
+The following table contains connector properties that are supported in a pipeline copy.
 
 |Name|Description|Required|Copy|
 |:---|:---|:---:|:---|
@@ -122,4 +124,4 @@ The following table contains properties for the supported authentication type.
 
 ## Related content
 
-- [Configure in a data pipeline copy activity](connector-oracle-database-copy-activity.md)
+- [Configure in a pipeline copy activity](connector-oracle-database-copy-activity.md)

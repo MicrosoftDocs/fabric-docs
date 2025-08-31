@@ -11,7 +11,7 @@ ms.date: 11/12/2024
 
 Real-Time hub allows you to discover and subscribe to changes produced when Fabric runs a job. For example, you can react to changes when refreshing a semantic model, running a scheduled pipeline, or running a notebook. Each of these activities can generate a corresponding job, which in turn generates a set of corresponding job events. 
 
-Job events allow you to monitor job results in time and set up alerts using Data Activator alerting capabilities. For example, when the scheduler triggers a new job, or a job fails, you can receive an email alert. This way, even if you aren't in front of the computer, you can still get the information you care about. 
+Job events allow you to monitor job results in time and set up alerts using Activator alerting capabilities. For example, when the scheduler triggers a new job, or a job fails, you can receive an email alert. This way, even if you aren't in front of the computer, you can still get the information you care about. 
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
@@ -42,7 +42,7 @@ This section shows the artifacts using Job events. Here are the columns and thei
 | Column | Description |
 | ------ | ------------ |
 | Name | Name of the artifact that's using Job events. |
-| Type | Artifact type – Data Activator or Eventstream |
+| Type | Artifact type – Activator or Eventstream |
 | Workspace | Workspace where the artifact lives. |
 | Source | Name of the workspace that is source of the events. |
 
@@ -59,14 +59,32 @@ This section shows the artifacts using Job events. Here are the columns and thei
 | Microsoft.Fabric.ItemJobSucceeded | Raised when the job completes successfully. |     
 | Microsoft.Fabric.ItemJobFailed | Raised when the job fails, including job getting stuck or canceled. |
 
-
+### Supported item types
+| Item type |
+| --------------- | 
+| Data Pipeline |
+| Notebook |
+| Lakehouse |
+| Warehouse |
+| Sql Analytics Endpoint |
+| Spark Job Definition |
+| CopyJob |
+| Dataflow gen2 |
+| DBT Item |
+| Digital Operations |
+| MLExperiment |
+| GraphIndex |
+| Digital Twin Builder |
+| Digital Twin Builder Flow |
+| Databricks |
+| Sustainability Data Manager |
 
 ### Schemas
 An event has the following top-level data:
 
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ----- |
-| `source` | string | Identifies the context in which an event happened. A tenant ID. | `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` |
+| `source` | string | Identifies the context in which an event happened. A tenant ID. | `aaaabbbb-0000-cccc-1111-dddd2222eeee` |
 | `subject` | string | Identifies the subject of the event in the context of the event producer. | `/workspaces/<WORKSPACEID>/items/<ARTIFACTID>/jobs/instances/{JOBID}`  |
 | `type` | string | One of the registered event types for this event source. | `Microsoft.Fabric.ItemJobCreated` |
 | `time` | timestamp | The time the event is generated based on the provider's UTC time. | `2017-06-26T18:41:00.9584103Z` |

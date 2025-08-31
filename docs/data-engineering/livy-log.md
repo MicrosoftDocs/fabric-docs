@@ -39,32 +39,27 @@ Get metadata of Livy log.
 
 ### Interface
 
-With attemptId
-```HTTP
-https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/none/{attemptId}/logs?type=livy&meta=true 
-```
-
 Without attemptId
 ```HTTP
-https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/none/logs?type=livy&meta=true 
-r&meta=true&containerId={containerId}&filenamePrefix={filenamePrefix}&offset={offset}&maxResults={maxResults}
+https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/none/logs?type=livy&meta=true
 ```
 
 ### URI parameters
+
 None
 
 ### Responses
 
 | Name | Type | Description |
 | --- | --- | --- |
-| 200 OK | FileMetadata | Request completed successfully |
+| 200 OK | [FileMeta](#definitions) | Request completed successfully |
 
 ### Examples
 
 ### Sample request
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/none/logs?type=livy&meta=true
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/application/none/logs?type=livy&meta=true
 ```
 
 Status code: 200
@@ -85,26 +80,16 @@ Get file content of Livy log.
 
 ### Interface
 
-With attemptId
-```HTTP
-https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=executor&containerId={containerId}&fileName={fileName}
-```
-
 Without attemptId
 ```HTTP
-https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/logs?type=executor&containerId={containerId}&fileName={fileName}
+https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/none/logs?type=livy
 ```
 
 With optional parameters:
 
-With attemptId
-```HTTP
-https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=executor&containerId={containerId}&fileName={fileName}&size={size} 
-```
-
 Without attemptId
 ```HTTP
-https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/logs?type=executor&containerId={containerId}&fileName={fileName}&size={size}
+https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/none/logs?type=livy&isDownload={isDownload}&isPartial={isPartial}&offset={offset}&size={size}
 ```
 
 ### URI parameters
@@ -115,7 +100,6 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. | 
 | livyId | path | True | string uuid | The Livy session ID. | 
 | appId | path | True | string | The Spark application ID, like application_1704417105000_0001. | 
-| attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. | 
 | isDownload | query | False | bool | True to download the log file as a stream. Default as false. |
 | isPartial | query | False | bool | Only take effect when isDownload is true. True to download a part of file content according to the given offset and size. Default as false to download the whole file |
 | offset, size | query | False | Long | The starting offset (in byte) and the size (in byte) to read the file content. Only take effect when isDownload = true and isPartial = true <br> - For offset, the default value is 0, meaning reading from the beginning of the file <br> - For size, the default value is 1M (1024*1024) bytes|
@@ -124,18 +108,27 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 
 | Name | Type | Description|
 | ---- | ---- | ---- |
-| 200 OK |  | Request completed successfully |
+| 200 OK | [FileMeta](#definitions) | Request completed successfully |
 
 ### Examples
 
 ### Sample request
 
 ``` HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/none/logs?type=livy
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/application/none/logs?type=livy
 ```
 
-## Next steps
+## Definitions
+*FileMeta* 
 
-- [Executor Log](../data-engineering/executor-log.md)
-- [Driver log](../data-engineering/driver-log.md)
-- [Open-Source APIs ](../data-engineering/open-source-apis.md)
+Object
+
+Metadata of a log file
+
+| Name | Type | Description |
+| --- | --- | --- |
+| fileName | string | File name |
+| length | long | The size of the file, in byte |
+| lastModified | string | The last time when the file was modified |
+| creationTime | string | The time when the file was created |
+| metaData | map of string to string | Auxiliary data if there is any |

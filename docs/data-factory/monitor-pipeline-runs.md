@@ -5,17 +5,17 @@ ms.reviewer: whhender
 ms.author: noelleli
 author: n0elleli
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 12/18/2024
 ---
 
-# How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]
+# How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]
 
-In this how-to guide, you learn the different ways to review and monitor your pipeline runs.
+This guide walks you through ways to check in on your pipeline runs, or monitor your pipeline runs. Whether you're just curious about how things are going or need to troubleshoot something specific, we’ll show you how to track progress, spot issues early, and make sure everything’s running smoothly. Monitoring helps you stay in control so that you can catch problems before they grow and keep your workflows on track.
 
-## Monitor data pipeline runs
+## Monitor pipeline runs
 
-1. To monitor your data pipeline runs, hover over your pipeline in your workspace. Doing so brings up three dots to the right of your pipeline name.
+1. To monitor your pipeline runs, hover over your pipeline in your workspace. Doing so brings up three dots to the right of your pipeline name.
 
    :::image type="content" source="media/monitor-pipeline-runs/more-options-for-pipeline.png" alt-text="Screenshot showing where to find more pipeline options.":::
 
@@ -25,7 +25,7 @@ In this how-to guide, you learn the different ways to review and monitor your pi
 
    :::image type="content" source="media/monitor-pipeline-runs/view-recent-pipeline-runs.png" alt-text="Screenshot showing a recent run list.":::
 
-3. Select **Go to monitoring hub** from the prior screenshot to view more details and filter results. Use the filter to find specific data pipeline runs based on several criteria.
+3. Select **Go to monitoring hub** from the prior screenshot to view more details and filter results. Use the filter to find specific pipeline runs based on several criteria.
 
    :::image type="content" source="media/monitor-pipeline-runs/filter-recent-runs.png" alt-text="Screenshot of filter options.":::
 
@@ -59,7 +59,7 @@ In this how-to guide, you learn the different ways to review and monitor your pi
 
 9. You can select **Update pipeline** to make changes to your pipeline from this screen. This selection takes you back to the pipeline canvas.
 
-10. You can also **Rerun** your data pipeline. You can choose to rerun the entire pipeline or only rerun the pipeline from the failed activity.  
+10. You can also **Rerun** your pipeline. You can choose to rerun the entire pipeline or only rerun the pipeline from the failed activity.  
 
 11. To view performance details, select an activity from the list of **Activity Runs**. Performance details pop up.
 
@@ -71,7 +71,7 @@ In this how-to guide, you learn the different ways to review and monitor your pi
 
 ## Gantt view
 
-A Gantt chart is a view that lets you see the run history over a time range. If you switch to a Gantt view, all pipeline runs are grouped by name, displayed as bars relative to how long the run took.
+Switching to the Gantt view gives you a clear, visual way to track your pipeline runs over time. Each run shows up as a bar, grouped by pipeline name, and the length of the bar shows how long the run took. It’s a great way to spot patterns, compare durations, and quickly see what’s running when. This view makes monitoring easier so that you can catch delays, overlaps, or anything unusual at a glance.
 
 :::image type="content" source="media/monitor-pipeline-runs/gantt-view.png" alt-text="Screenshot showing where to switch between views.":::
 
@@ -83,5 +83,5 @@ The length of the bar relates to the duration of the pipeline. You can select th
 
 ## Related content
 
-- [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
+- [Quickstart: Create your first pipeline to copy data](create-first-pipeline-with-sample-data.md)
 - [Quickstart: Create your first Dataflow Gen2 to get and transform data](create-first-dataflow-gen2.md)

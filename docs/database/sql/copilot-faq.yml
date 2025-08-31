@@ -1,35 +1,36 @@
 ### YamlMime:FAQ
 metadata:
-  title: "Frequently asked questions for Copilot in SQL database (preview)"
-  description: This article answers frequently asked questions about Copilot in SQL database in Microsoft Fabric (preview).
+  title: "Frequently asked questions for Microsoft Copilot in Fabric in the SQL database workload"
+  description: This article answers frequently asked questions about Microsoft Copilot in Fabric in hte SQL database workload.
   author: markingmyname
   ms.author: maghan
   ms.reviewer: yoleichen
   ms.topic: faq
   ms.custom:
   ms.date: 03/31/2025
+  ms.update-cycle: 180-days
   ms.collection: ce-skilling-ai-copilot
-title: "Frequently asked questions for Copilot in SQL database in Microsoft Fabric (preview)"
+title: "Frequently asked questions for Copilot in Fabric in the SQL database workload (Preview)"
 summary: |
   **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-  This article answers frequently asked questions about Copilot in SQL database in Microsoft Fabric.
+  This article answers frequently asked questions about Microsoft Copilot in Fabric in SQL database.
 
   Copilot is now integrated with the query editor, enhancing the management and operation of SQL-dependent applications. It improves productivity by offering natural language to SQL conversion and self-help for database administration.
 
 sections:
   - name: Connectivity
     questions:
-    - question: "In SQL database in Fabric, where can I find Copilot?"
+    - question: "Where in SQL database in Fabric can I find Copilot?"
       answer: |
-        In the [SQL Query editor](query-editor.md), you can find Copilot at various locations:
+        In the [SQL Query editor](../sql/query-editor.md), you can find Copilot at various locations:
         
         - **Chat Pane**: Use the chat pane to ask questions to Copilot through natural language. Copilot responds with a generated SQL query or natural language based on the question asked.
-          - [How to: Use the Copilot Chat Pane for SQL database](copilot-chat-pane.md)
+          - [How to: Use the Copilot Chat Pane Copilot in Fabric in SQL database](copilot-chat-pane.md)
         - **Code completions**: Start writing T-SQL in the SQL query editor and Copilot automatically generates a code suggestion to help complete your query.
-          - [How to: Use the Copilot Code Completion for SQL database](copilot-code-completion.md)
+          - [How to: Use the Copilot Code Completion Copilot in Fabric in SQL database](copilot-code-completion.md)
         - **Quick Actions**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
-          - [How to: Use the Copilot Explain and Fix quick action features for SQL database](copilot-quick-actions.md)          
+          - [How to: Use the Copilot Explain and Fix quick action features Copilot in Fabric in SQL database](copilot-quick-actions.md)          
     - question: How do I enable Copilot for my SQL database in Fabric?
       answer: |
         Review the steps in [Enable Copilot in Fabric](../../fundamentals/copilot-enable-fabric.md). 
@@ -68,8 +69,8 @@ additionalContent: |
 
   ## Related content
 
-  - [What is Copilot for SQL database in Fabric](copilot.md)
-  - [How to: Use the Copilot chat pane for SQL database](copilot-chat-pane.md)
-  - [How to: Use Copilot code completion for SQL database](copilot-code-completion.md)
-  - [How to: Use Copilot quick actions for SQL database](copilot-quick-actions.md)
-  - [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
+  - [What is Copilot in Fabric in the SQL database workload?](copilot.md)
+  - [How to use the Copilot chat pane for Copilot in Fabric in SQL database](copilot-chat-pane.md)
+  - [How to use the Copilot code completion for Copilot in Fabric in SQL database](copilot-code-completion.md)
+  - [How to use Copilot quick actions in Fabric in SQL database](copilot-quick-actions.md)
+  - [Privacy, security, and responsible AI use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)

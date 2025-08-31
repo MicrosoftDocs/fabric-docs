@@ -4,9 +4,9 @@ description: Learn about SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur
-ms.date: 03/18/2025
+ms.date: 05/29/2025
 ms.topic: overview
-ms.search.form: product-databases, SQL database Overview
+ms.search.form: product-databases, SQL database Overview, Databases Overview
 ---
 # SQL database in Microsoft Fabric (Preview)
 
@@ -28,7 +28,7 @@ SQL database in Fabric is:
 - Easy to configure and manage
 - Set up for analytics by automatically replicating the data into OneLake near real time
 - Integrated with development frameworks and analytics
-- Based on the underlying technology of [Mirroring in Fabric](../mirrored-database/overview.md)
+- Based on the underlying technology of [Mirroring in Fabric](../../mirroring/overview.md)
 - Queried in all the same ways as [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), plus a [web-based editor in the Fabric portal](query-editor.md).
 
 Intelligent performance features from Azure SQL Database are enabled by default in SQL database in Fabric, including:
@@ -47,12 +47,10 @@ With your SQL database in Fabric, you don't need to piece together different ser
 
 The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS). To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 
-SQL database in Fabric creates three items in your Fabric workspace:
+Creating a new SQL database in Fabric creates these items in your Fabric workspace:
 
 - Data in your SQL database is automatically replicated of into the [OneLake](../../onelake/onelake-overview.md) and converted to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
-
-- A SQL analytics endpoint
-- A default semantic model
+- A [SQL analytics endpoint](sql-analytics-endpoint.md)
 
 In addition to the [Fabric SQL database Query Editor](query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
 
@@ -60,7 +58,7 @@ In addition to the [Fabric SQL database Query Editor](query-editor.md), there's 
 
 Sharing enables ease of access control and management, while security controls like row level security (RLS) and object level security (OLS), and more make sure you can control access to sensitive information. Sharing also enables secure and democratized decision-making across your organization.
 
-By sharing your SQL database, you can grant other users or a group of users access to a database without giving access to the workspace and the rest of its items. When someone shares a database, they also grant access to the SQL analytics endpoint and associated default semantic model.
+By sharing your SQL database, you can grant other users or a group of users access to a database without giving access to the workspace and the rest of its items. When someone shares a database, they also grant access to the SQL analytics endpoint.
 
 Access the Sharing dialog with the **Share** button next to the database name in the **Workspace** view. Shared databases can be found through **OneLake** **Data Hub** or the **Shared with Me** section in Microsoft Fabric.
 
@@ -124,12 +122,11 @@ You can use the Fabric portal to easily [create a GraphQL API](graphql-api.md) f
 
 You can use the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) to monitor the SQL database usage and consumption in non-trial Fabric capacities.
 
-> [!NOTE]
-> During the current preview, no billing will occur for SQL database in Fabric, but billing metrics will still flow for tracking purposes.
+For more information, see [Billing and utilization reporting for SQL database in Microsoft Fabric](usage-reporting.md).
 
 ## Mirroring for Azure SQL Database
 
-Do you already have an external database and want to leverage Fabric's integration? You can use Mirroring in Fabric as a low-cost and low-latency solution to bring data from various systems together. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from an existing [Azure SQL Database](../mirrored-database/azure-sql-database.md).
+Do you already have an external database and want to leverage Fabric's integration? You can use Mirroring in Fabric as a low-cost and low-latency solution to bring data from various systems together. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from an existing [Azure SQL Database](../../mirroring/azure-sql-database.md).
 
 ## Elastic pools
 
@@ -142,7 +139,7 @@ Fabric SQL database doesn't support the Azure SQL Database elastic pools concept
 
 ## Related content
 
-- [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 - [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)
-- [What is the SQL analytics endpoint for a Lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
-- [Direct Lake](/power-bi/enterprise/directlake-overview)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#sql-database-in-microsoft-fabric)
+- [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)  
+- [What is the SQL analytics endpoint for a SQL database in Fabric?](sql-analytics-endpoint.md)

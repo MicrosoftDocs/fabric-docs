@@ -1,13 +1,14 @@
 ---
 title: Create your first Microsoft Fabric dataflow
 description: Steps for creating dataflows and transforming data.
-ms.reviewer: DougKlopfenstein
+ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: quickstart
-ms.custom:
-ms.date: 12/18/2024
+ms.date: 06/26/2025
 ms.search.form: DataflowGen2 Tutorials
+ms.custom: dataflows, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Quickstart: Create your first dataflow to get and transform data
@@ -25,13 +26,11 @@ The following prerequisites are required before you start:
 
 In this section, you're creating your first dataflow.
 
-1. Switch to the **Data factory** experience.
-
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
    :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace." lightbox="media/create-first-dataflow-gen2/navigate-to-workspace.png":::
 
-1. Select **New**, and then select **Dataflow Gen2**.
+1. Select **+New item**, and then select **Dataflow Gen2**.
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-dataflow-gen2.png" alt-text="Screenshot with the Dataflow Gen2 selection emphasized.":::
 
@@ -59,29 +58,27 @@ Let's get some data! In this example, you're getting data from an OData service.
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-order-customers.png" alt-text="Screenshot of the Power Query navigator with the Customers and Orders tables emphasized." lightbox="media/create-first-dataflow-gen2/select-order-customers.png":::
 
-You can learn more about the get data experience and functionality at [Getting data overview](/power-query/get-data-experience).
+You can learn more about the get data experience and functionality in the [get data overview](/power-query/get-data-experience).
 
 ## Apply transformations and publish
 
-You loaded your data into your first dataflow now. Congratulations! Now it's time to apply a couple of transformations in order to bring this data into the desired shape.
+You loaded your data into your first dataflow. Congratulations! Now it's time to apply a couple of transformations to bring this data into the shape we need.
 
-You do this task from the Power Query editor. You can find a detailed overview of the Power Query editor at [The Power Query user interface](/power-query/power-query-ui).
+You transform the data in the Power Query editor. You can find a detailed overview of the Power Query editor at [The Power Query user interface](/power-query/power-query-ui), but this section takes you through the basic steps:
 
-Follow these steps to apply transformations and publish:
-
-1. Ensure that the [Data Profiling tools](/power-query/data-profiling-tools) are enabled by navigating to **Home** > **Options** > **Global Options**.
+1. Make sure the [Data Profiling tools](/power-query/data-profiling-tools) are turned on. Go to **Home** > **Options** > **Global Options**, then select all the options under **Column profile**.
 
    :::image type="content" source="media/create-first-dataflow-gen2/global-options.png" alt-text="Screenshot of Global options with the Column profile selections emphasized.":::
 
-   Also make sure you enable the [diagram view](/power-query/diagram-view) using the options under the **View** tab in the Power Query editor ribbon, or by selecting the diagram view icon on the lower right side of the Power Query window.
+   Also make sure you enable the [diagram view](/power-query/diagram-view) using the Layout configurations under the **View** tab in the Power Query editor ribbon, or by selecting the diagram view icon on the lower right side of the Power Query window.
 
    :::image type="content" source="media/create-first-dataflow-gen2/diagram-view.png" alt-text="Screenshot of the overall look of Power Query diagram view." lightbox="media/create-first-dataflow-gen2/diagram-view.png":::
 
-1. Within the Orders table, you calculate the total number of orders per customer. To achieve this goal, select the **CustomerID** column in the data preview and then select **Group By** under the **Transform** tab in the ribbon.
+1. Within the Orders table, calculate the total number of orders per customer: Select the **CustomerID** column in the data preview and then select **Group By** under the **Transform** tab in the ribbon.
 
    :::image type="content" source="media/create-first-dataflow-gen2/calculate-orders.png" alt-text="Screenshot showing the Orders table selected, and Group by emphasized in the Transform tab." lightbox="media/create-first-dataflow-gen2/calculate-orders.png":::
 
-1. You perform a count of rows as the aggregation within **Group By**. You can learn more about **Group By** capabilities at [Grouping or summarizing rows](/power-query/group-by).
+1. You perform a count of rows as the aggregation within **Group By**. You can learn more about **Group By** capabilities in [Grouping or summarizing rows](/power-query/group-by).
 
    :::image type="content" source="media/create-first-dataflow-gen2/group-by-row-count.png" alt-text="Screenshot of Group by, with the Count rows operation selected.":::
 
@@ -89,37 +86,37 @@ Follow these steps to apply transformations and publish:
 
    :::image type="content" source="media/create-first-dataflow-gen2/customerid-count-rows.png" alt-text="Screenshot of the two column table." lightbox="media/create-first-dataflow-gen2/customerid-count-rows.png":::
 
-1. Next, you want to combine data from the Customers table with the Count of Orders per customer. To combine data, select the Customers query in the Diagram View and use the "⋮" menu to access the **Merge queries as new** transformation.
+1. Next, you want to combine data from the Customers table with the Count of Orders per customer: Select the Customers query in the Diagram View and use the "⋮" menu to access the **Merge queries as new** transformation.
 
    :::image type="content" source="media/create-first-dataflow-gen2/combine-customers-orders.png" alt-text="Screenshot of the dataflow editor, with the vertical ellipsis of the Customers table and Merge queries as new emphasized." lightbox="media/create-first-dataflow-gen2/combine-customers-orders.png":::
 
-1. Configure the [Merge operation](/power-query/merge-queries-overview) as shown in the following screenshot by selecting **CustomerID** as the matching column in both tables. Then select **Ok**.
+1. Configure the [Merge operation](/power-query/merge-queries-overview) by selecting **CustomerID** as the matching column in both tables. Then select **Ok**.
 
    :::image type="complex" source="media/create-first-dataflow-gen2/merge-customers.png" alt-text="Screenshot of the Merge window.":::
    Screenshot of the Merge window, with the Left table for merge set to the Customers table and the Right table for merge set to the Orders table. The CustomerID column is selected for both the Customers and Orders tables. Also, the Join Kind is set to Left outer. All other selections are set to their default value.
 :::image-end:::
 
-1. Upon performing the **Merge queries as new** operation, you obtain a new query with all columns from the Customers table and one column with nested data from the Orders table.
+1. Now there's a new query with all columns from the Customers table and one column with nested data from the Orders table.
 
    :::image type="content" source="media/create-first-dataflow-gen2/new-merge-query.png" alt-text="Screenshot of the dataflows editor with the new Merge query added to the right of the Customers and Orders tables." lightbox="media/create-first-dataflow-gen2/new-merge-query.png":::
 
-1. In this example, you're only interested in a subset of columns in the Customers table. You select those columns by using the schema view. Enable the schema view within the toggle button on the bottom-right corner of the dataflows editor.
+1. Let's focus on just a few columns from the Customers table. To do this, turn on schema view by selecting the schema view button in the bottom-right corner of the dataflows editor.
 
     :::image type="content" source="media/create-first-dataflow-gen2/enable-schema-view.png" alt-text="Screenshot of the dataflows editor with the schema view button emphasized in the bottom-right corner." lightbox="media/create-first-dataflow-gen2/enable-schema-view.png":::
 
-1. The schema view provides a focused view into a table’s schema information, including column names and data types. Schema view has a set of schema tools available through a contextual ribbon tab. In this scenario, you select the **CustomerID**, **CompanyName**, and **Orders (2)** columns, then select the **Remove columns** button, and then select **Remove other columns** in the **Schema tools** tab.
+1. In schema view, you'll see all the columns in your table. Select **CustomerID**, **CompanyName**, and **Orders (2)**. Then, go to the **Schema tools** tab, select **Remove columns**, and choose **Remove other columns**. This keeps only the columns you want.
 
    :::image type="content" source="media/create-first-dataflow-gen2/remove-columns-result.png" alt-text="Screenshot of the schema view showing all of the available column names, with the CustomerID, CompanyName, and Orders (2) columns emphasized." lightbox="media/create-first-dataflow-gen2/remove-columns-result.png":::
 
    :::image type="content" source="media/create-first-dataflow-gen2/remove-other-columns.png" alt-text="Screenshot of the schema tools menu with Remove other columns emphasized.":::
 
-1. The **Orders (2)** column contains nested information resulting from the merge operation you performed a few steps ago. Now, switch back to the data view by selecting the **Show data view** button next to the **Show schema view** button in the bottom-right corner of the UI. Then use the **Expand Column** transformation in the **Orders (2)** column header to select the **Count** column.
+1. The **Orders (2)** column holds extra details from the merge step. To see and use this data, select the **Show data view** button in the bottom-right corner, next to **Show schema view**. Then, in the **Orders (2)** column header, select the **Expand Column** icon and pick the **Count** column. This adds the order count for each customer to your table.
 
     :::image type="complex" source="media/create-first-dataflow-gen2/select-count-column.png" alt-text="Screenshot for using data view." lightbox="media/create-first-dataflow-gen2/select-count-column.png":::
     Screenshot of the dataflows editor with the Show data view button in the bottom-right corner, the expand column icon in the Orders (2) column, and the Count column selected in the expand column window.
     :::image-end:::
 
-1. As the final operation, you want to rank your customers based on their number of orders. Select the **Count** column and then select the **[Rank column](/power-query/rank-column)** button under the **Add Column** tab in the ribbon.
+1. Now let's rank your customers by how many orders they've made. Select the **Count** column, then go to the **Add Column** tab and select **[Rank column](/power-query/rank-column)**. This adds a new column showing each customer's rank based on their order count.
 
     :::image type="content" source="media/create-first-dataflow-gen2/select-rank-column.png" alt-text="Screenshot of the dataflows editor with the Count column selected." lightbox="media/create-first-dataflow-gen2/select-rank-column.png":::
 
@@ -131,11 +128,11 @@ Follow these steps to apply transformations and publish:
 
     :::image type="content" source="media/create-first-dataflow-gen2/rename-query.png" alt-text="Screenshot of the dataflows editor with the Ranked Customers name emphasized under the query settings properties." lightbox="media/create-first-dataflow-gen2/rename-query.png":::
 
-1. Now that you finished transforming and combining your data, you can configure its output destination settings. Select **Choose data destination** at the bottom of the **Query settings** pane.
+1. You're ready to set where your data goes. In the **Query settings** pane, scroll to the bottom and select **Choose data destination**.
 
     :::image type="content" source="media/create-first-dataflow-gen2/choose-data-destination.png" alt-text="Screenshot of the dataflows editor with the location of the Data destination selection emphasized." lightbox="media/create-first-dataflow-gen2/choose-data-destination.png":::
 
-1. For this step, you can configure an output to your lakehouse if you have one available, or skip this step if you don't. Within this experience, you're able to configure the destination lakehouse and table for your query results, in addition to the update method (Append or Replace).
+1. You can send your results to a lakehouse if you have one, or skip this step if you don't. Here, you can pick which lakehouse and table to use for your data, and choose whether to add new data (Append) or replace what's there (Replace).
 
     :::image type="content" source="media/create-first-dataflow-gen2/configure-output.png" alt-text="Screenshot of the Connect to data destination window with lakehouse selected." lightbox="media/create-first-dataflow-gen2/configure-output.png":::
 
@@ -143,12 +140,12 @@ Follow these steps to apply transformations and publish:
 
 1. Your dataflow is now ready to be published. Review the queries in the diagram view, and then select **Publish**.
 
-    :::image type="content" source="media/create-first-dataflow-gen2/publish-dataflow.png" alt-text="Screenshot of the dataflows editor with the Publish button on the lower-right side emphasized." lightbox="media/create-first-dataflow-gen2/publish-dataflow.png":::
+   :::image type="content" source="media/create-first-dataflow-gen2/publish-dataflow.png" alt-text="Screenshot of the dataflows editor with the Publish button on the lower-right side emphasized." lightbox="media/create-first-dataflow-gen2/publish-dataflow.png":::
 
-    You're now returned to the workspace. A spinner icon next to your dataflow name indicates publishing is in progress. Once the publishing completes, your dataflow is ready to refresh!
+   Select **Publish** in the lower-right corner to save your dataflow. You'll go back to your workspace, where a spinner icon next to your dataflow name shows it's publishing. When the spinner disappears, your dataflow's ready to refresh!
 
-    > [!IMPORTANT]
-    > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items are provisioned along with their related SQL analytics endpoint and semantic models. These items are shared by all dataflows in the workspace and are required for Dataflow Gen2 to operate, shouldn't be deleted, and aren't intended to be used directly by users. The items are an implementation detail of Dataflow Gen2. The items aren't visible in the workspace, but might be accessible in other experiences such as the Notebook, SQL analytics endpoint, Lakehouse, and Warehouse experiences. You can recognize the items by their prefix in the name. The prefix of the items is `DataflowsStaging'.
+   > [!IMPORTANT]
+   > The first time you create a Dataflow Gen2 in a workspace, Fabric sets up some background items (Lakehouse and Warehouse) that help your dataflow run. These items are shared by all dataflows in the workspace, and you shouldn't delete them. They're not meant to be used directly and usually aren't visible in your workspace, but you might see them in other places like Notebooks or SQL analytics. Look for names that start with `DataflowsStaging` to spot them.
 
 1. In your workspace, select the **Schedule Refresh** icon.
 
@@ -178,15 +175,15 @@ If you're not going to continue to use this dataflow, delete the dataflow using 
 
 ## Related content
 
-The dataflow in this sample shows you how to load and transform data in Dataflow Gen2.  You learned how to:
+The dataflow in this sample shows you how to load and transform data in Dataflow Gen2. You learned how to:
 
 > [!div class="checklist"]
 > - Create a Dataflow Gen2.
 > - Transform data.
 > - Configure destination settings for transformed data.
-> - Run and schedule your data pipeline.
+> - Run and schedule your pipeline.
 
-Advance to the next article to learn how to create your first data pipeline.
+Advance to the next article to learn how to create your first pipeline.
 
 > [!div class="nextstepaction"]
-> [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md).
+> [Quickstart: Create your first pipeline to copy data](create-first-pipeline-with-sample-data.md).

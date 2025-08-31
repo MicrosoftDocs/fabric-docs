@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 07/01/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Salesforce in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Salesforce.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Salesforce.
 
 ## Supported configuration
 

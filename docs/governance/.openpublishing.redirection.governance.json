@@ -19,6 +19,11 @@
             "source_path_from_root": "/docs/governance/service-security-sensitivity-label-default-label-policy.md",
             "redirect_url": "/fabric/governance/sensitivity-label-default-label-policy",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/governance/use-microsoft-purview-hub-data-owners.md",
+            "redirect_url": "/fabric/governance/onelake-catalog-govern",
+            "redirect_document_id": false
         }
     ]
 }

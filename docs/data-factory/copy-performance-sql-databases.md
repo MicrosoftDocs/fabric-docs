@@ -1,11 +1,11 @@
 ---
 title: Copy activity performance with SQL databases
-description: Learn about settings and practices to optimize Data pipeline Copy activities for SQL databases in Data Factory for Microsoft Fabric.
+description: Learn about settings and practices to optimize pipeline Copy activities for SQL databases in Data Factory for Microsoft Fabric.
 ms.reviewer: whhender
 ms.author: seanmirabile
 author: Mirabile-S
 ms.topic: best-practice
-ms.custom:
+ms.custom: pipelines
 ms.date: 05/03/2024
 ---
 
@@ -18,7 +18,7 @@ In this article, we discuss techniques to help you to optimize Copy activity wit
 > [!NOTE]
 > The metrics included in this article are the results of test cases comparing and contrasting behavior across various capabilities, and are not formal engineering benchmarks. All test cases are moving data from East US 2 to West US 2 regions.  
 
-When starting with a Data pipeline Copy activity, it's important to understand the source and destination systems before starting development. You should state what you are optimizing for, and understand how to monitor the source, destination, and Data pipeline to achieve the best resource utilization, performance, and consumption.
+When starting with a pipeline Copy activity, it's important to understand the source and destination systems before starting development. You should state what you are optimizing for, and understand how to monitor the source, destination, and pipeline to achieve the best resource utilization, performance, and consumption.
 
 When sourcing from an Azure SQL Database, it's important to understand:
 
@@ -29,7 +29,7 @@ When sourcing from an Azure SQL Database, it's important to understand:
 - Primary Key or other column with a good distribution of data (skew)
 - Compute allocated and associated limitations such as number of concurrent connections
 
-The same applies to your destination. With an understanding of both, you can design a Data pipeline to operate within the bounds and limits of both the source and destination while optimizing for your priorities.  
+The same applies to your destination. With an understanding of both, you can design a pipeline to operate within the bounds and limits of both the source and destination while optimizing for your priorities.  
 
 > [!NOTE]
 > Network bandwidth between the source and destination, along with input/output per second (IOPs) of each, can both be a bottleneck to throughput, and it is recommended to understand these boundaries. However, networking is not within the scope of this article.
@@ -178,7 +178,7 @@ Compared to a heap table, a table with a clustered key index on the column selec
 
 The logical partition design pattern is more advanced and requires more developer effort. However, this design is used in scenarios with strict data loading requirements. This design was originally developed to meet the needs of an on-premises Oracle database to load 180 GB of data in under 1.5 hours. The original design, using defaults of the copy activity, took over 65 hours. By using a Logical Partitioning Design, we see the same data transferred in under 1.5 hours.
 
-This design was also used in this blog series: [Data pipeline performance improvements Part 1: How to convert a time interval into seconds](https://blog.fabric.microsoft.com/en-us/blog/data-pipeline-performance-improvements-part-1-how-to-convert-a-time-interval-dd-hhmmss-into-seconds)). This design is good to emulate in your environment when you're loading large source tables and need optimal loading performance by using techniques like setting a data range to partition the source data reads. 
+This design was also used in this blog series: [Pipeline performance improvements Part 1: How to convert a time interval into seconds](https://blog.fabric.microsoft.com/en-us/blog/data-pipeline-performance-improvements-part-1-how-to-convert-a-time-interval-dd-hhmmss-into-seconds)). This design is good to emulate in your environment when you're loading large source tables and need optimal loading performance by using techniques like setting a data range to partition the source data reads. 
 This design generates many subdate ranges. Then using a For-Each activity to iterate over the ranges, many copy activities are invoked to source data between the specified range. Within the For-Each activity, all of the copy activities run in parallel (up to the batch count maximum of 50) and have degree of copy parallelism set to _Auto_.  
 
 For the below examples, the partitioned date values were set to these values:
@@ -326,4 +326,4 @@ Consider maintainability and developer effort. While leaving the default options
 - [Copy and transform data in Azure SQL Database](/azure/data-factory/connector-azure-sql-database?tabs=data-factory#parallel-copy-from-sql-database)
 - [Configure Azure SQL Database in a copy activity](connector-azure-sql-database-copy-activity.md)
 - [Create partitioned tables and indexes in Azure SQL Database](/sql/relational-databases/partitions/create-partitioned-tables-and-indexes)
-- Microsoft Fabric Blog: [Data pipeline performance improvement part 3 - Gaining more than 50% improvement for historical loads](https://blog.fabric.microsoft.com/en-us/blog/data-pipeline-performance-improvement-part-3-gaining-more-than-50-improvement-for-historical-loads)
+- Microsoft Fabric Blog: [Pipeline performance improvement part 3 - Gaining more than 50% improvement for historical loads](https://blog.fabric.microsoft.com/en-us/blog/data-pipeline-performance-improvement-part-3-gaining-more-than-50-improvement-for-historical-loads)

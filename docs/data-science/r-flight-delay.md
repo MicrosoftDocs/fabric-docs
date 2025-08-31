@@ -1,26 +1,32 @@
----
+﻿---
 title: 'Tutorial: Use R to predict flight delay'
 description: This tutorial shows how to predict flight delay by using tidymodels packages and build a Power BI report on the results.
 ms.reviewer: None
-author: sdgilley
-ms.author: sgilley
+ms.author: lagayhar
+author: lgayhardt
 ms.topic: tutorial
-ms.custom:
-ms.date: 01/22/2024
+ms.custom: 
+ms.date: 04/10/2025
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to build a machine learning model by using R so I can predict delays.
+reviewer: s-polly
 ---
 
 # Tutorial: Use R to predict flight delay
 
-This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. It uses the [nycflights13](https://github.com/hadley/nycflights13) data, and R, to predict whether or not a plane arrives more than 30 minutes late. It then uses the prediction results to build an interactive Power BI dashboard.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. It uses both the [nycflights13](https://github.com/hadley/nycflights13) data resource, and R, to predict whether or not a plane arrives more than 30 minutes late. It then uses the prediction results to build an interactive Power BI dashboard.
 
 In this tutorial, you learn how to:
 
-> [!div class="checklist"]
-> - Use [tidymodels](https://www.tidymodels.org/) packages ([recipes](https://recipes.tidymodels.org/), [parsnip](https://parsnip.tidymodels.org/), [rsample](https://rsample.tidymodels.org/), [workflows](https://workflows.tidymodels.org/)) to process data and train a machine learning model
-> - Write the output data to a lakehouse as a delta table
-> - Build a Power BI visual report to directly access data in that lakehouse
+- Use [tidymodels](https://www.tidymodels.org/) packages
+
+  - [recipes](https://recipes.tidymodels.org/)
+  - [parsnip](https://parsnip.tidymodels.org/)
+  - [rsample](https://rsample.tidymodels.org/)
+  - [workflows](https://workflows.tidymodels.org/)
+  to process data and train a machine learning model
+- Write the output data to a lakehouse as a delta table
+- Build a Power BI visual report to directly access data in that lakehouse
 
 ## Prerequisites
 
@@ -43,11 +49,13 @@ library(nycflights13)    # For flight data
 
 ## Explore the data
 
-The `nycflights13` data has information about 325,819 flights that arrived near New York City in 2013. First, view the distribution of flight delays. This graph shows that the distribution of the arrival delays is right skewed. It has a long tail in the high values.
+The `nycflights13` data has information about 325,819 flights that arrived near New York City in 2013. First, examine the distribution of flight delays. The following code cell generates a graph showing that the arrival delay distribution is right skewed:
 
 ```r
 ggplot(flights, aes(arr_delay)) + geom_histogram(color="blue", bins = 300)
 ```
+
+It has a long tail in the high values, as shown in the following image:
 
 :::image type="content" source="media/r-flight-delay/flight-delay.png" alt-text="Screenshot that shows a graph of flight delays.":::
 
@@ -77,15 +85,15 @@ flight_data <-
   mutate_if(is.character, as.factor)
 ```
 
-Before we build the model, consider a few specific variables that are important for both preprocessing and modeling.
+Before we build the model, consider a few specific variables that have importance for both preprocessing and modeling.
 
-Variable `arr_delay` is a factor variable. For logistic regression model training, it's important that the outcome variable is a factor variable.
+The `arr_delay` variable is a factor variable. For logistic regression model training, it's important that the outcome variable is a factor variable.
 
 ```r
 glimpse(flight_data)
 ```
 
-About 16% of the flights in this dataset arrived more than 30 minutes late.
+About 16% of the flights in this dataset arrived more than 30 minutes late:
 
 ```r
 flight_data %>% 
@@ -93,13 +101,13 @@ flight_data %>%
   mutate(prop = n/sum(n))
 ```
 
-The `dest` feature has 104 flight destinations.
+The `dest` feature has 104 flight destinations:
 
 ```r
 unique(flight_data$dest)
 ```
 
-There are 16 distinct carriers.
+There are 16 distinct carriers:
 
 ```r
 unique(flight_data$carrier)
@@ -125,7 +133,7 @@ test_data  <- testing(data_split)
 
 Create a recipe for a simple logistic regression model. Before training the model, use a recipe to create new predictors, and conduct the preprocessing that the model requires.
 
-Use the `update_role()` function so that the recipes know that `flight` and `time_hour` are variables, with a custom role called `ID`. A role can have any character value. The formula includes all variables in the training set, other than `arr_delay`, as predictors. The recipe keeps these two ID variables but doesn't use them as either outcomes or predictors.
+Use the `update_role()` function, with a custom role named `ID`, so that the recipes know that `flight` and `time_hour` are variables. A role can have any character value. The formula includes all variables in the training set as predictors, except for `arr_delay`. The recipe keeps these two ID variables but doesn't use them as either outcomes or predictors:
 
 ```r
 flights_rec <- 
@@ -141,7 +149,7 @@ summary(flights_rec)
 
 ## Create features
 
-Do some feature engineering to improve your model. The flight date might have a reasonable effect on the likelihood of a late arrival.
+Feature engineering can improve your model. The flight date might have a reasonable effect on the likelihood of a late arrival:
 
 ```r
 flight_data %>% 
@@ -149,7 +157,7 @@ flight_data %>%
   mutate(numeric_date = as.numeric(date)) 
 ```
 
-It might help to add model terms derived from the date that potentially have importance to the model. Derive the following meaningful features from the single date variable:
+It might help to add model terms, derived from the date, that have potential importance for the model. Derive the following meaningful features from the single date variable:
 
 - Day of the week
 - Month
@@ -200,7 +208,7 @@ flights_fit <-
   fit(data = train_data)
 ```
 
-Use the helper functions `xtract_fit_parsnip()` and `extract_recipe()` to extract the model or recipe objects from the workflow. In this example, pull the fitted model object, then use the `broom::tidy()` function to get a tidy tibble of model coefficients:
+Use the helper functions `xtract_fit_parsnip()` and `extract_recipe()` to extract the model or recipe objects from the workflow. In this example, pull the fitted model object, then use the `broom::tidy()` function to get a tidy [tibble](https://r4ds.had.co.nz/tibbles.html) of model coefficients:
 
 ```r
 flights_fit %>% 
@@ -231,9 +239,9 @@ glimpse(flights_aug)
 
 ## Evaluate the model
 
-We now have a tibble with the predicted class probabilities. In the first few rows, the model correctly predicted five on-time flights (values of `.pred_on_time` are `p > 0.50`). However, we have 81,455 rows total to predict.
+We now have a tibble with the predicted class probabilities. In the first few rows, the model correctly predicted five on-time flights (values of `.pred_on_time` are `p > 0.50`). However, we need predictions for a total of 81,455 rows.
 
-We need a metric that tells how well the model predicted late arrivals, compared to the true status of your outcome variable, `arr_delay`.
+We need a metric that tells how well the model predicted late arrivals, compared to the true status of the `arr_delay` outcome variable.
 
 Use the Area Under the Curve Receiver Operating Characteristic (AUC-ROC) as the metric. Compute it with `roc_curve()` and `roc_auc()`, from the `yardstick` package:
 
@@ -247,7 +255,7 @@ flights_aug %>%
 
 The model result looks good. Use the flight delay prediction results to build an interactive Power BI dashboard. The dashboard shows the number of flights by carrier, and the number of flights by destination. The dashboard can filter by the delay prediction results.
 
-:::image type="content" source="media/r-flight-delay/power-bi-report.png" alt-text="Screenshot that shows bar charts for number of flights by carrier and number of flights by destination in a Power BI report.":::
+:::image type="content" source="media/r-flight-delay/power-bi-report.png" alt-text="Screenshot that shows bar charts for number of flights by carrier and number of flights by destination in a Power BI report." lightbox="media/r-flight-delay/power-bi-report.png":::
 
 Include the carrier name and airport name in the prediction result dataset:
 
@@ -289,15 +297,30 @@ write.df(sparkdf, temp_delta ,source="delta", mode = "overwrite", header = "true
 
 Use the delta table to create a semantic model.
 
-1. On the left, select **OneLake**
-1. Select the lakehouse that you attached to your notebook
-1. Select **Open**
+1. In the left nav, select your workspace, and in the upper right textbox, enter the name of the lakehouse you attached to your notebook. The following screenshot shows that we selected **My Workspace**:
 
-    :::image type="content" source="media/r-flight-delay/open-lakehouse.png" alt-text="Screenshot that shows the button to open a lakehouse.":::
+   :::image type="content" source="media/r-flight-delay/select-lakehouse.png" alt-text="Screenshot that shows the initial lakehouse selection steps." lightbox="media/r-flight-delay/select-lakehouse.png":::
 
-1. Select **New semantic model**
-1. Select **nycflight13** for your new semantic model, then select **Confirm**
-1. Your semantic model is created. Select **New report**
+1. Enter the name of the lakehouse that you attached to your notebook. We enter **test_lakehouse1**, as shown in the following screenshot:
+
+   :::image type="content" source="media/r-flight-delay/open-lakehouse.png" alt-text="Screenshot that shows the selection of a specific lakehouse." lightbox="media/r-flight-delay/open-lakehouse.png":::
+
+1. In the filtered results area, select the lakehouse, as shown in the following screenshot:
+
+   :::image type="content" source="media/r-flight-delay/selected-lakehouse.png" alt-text="Screenshot that shows a selected lakehouse." lightbox="media/r-flight-delay/selected-lakehouse.png":::
+
+1. Select **New semantic model** as shown in the following screenshot:
+
+   :::image type="content" source="media/r-flight-delay/new-semantic-model.png" alt-text="Screenshot that shows the creation of a new semantic model." lightbox="media/r-flight-delay/new-semantic-model.png":::
+
+1. At the New semantic model pane, enter a name for the new semantic model, select a workspace, and select the tables to use for that new model, then select **Confirm**, as shown in the following screenshot:
+
+   :::image type="content" source="media/r-flight-delay/new-semantic-model-parameters.png" alt-text="Screenshot that shows the parameters of a new semantic model." lightbox="media/r-flight-delay/new-semantic-model-parameters.png":::
+
+1. To create a new report, select **Create new report**, as shown in the following screenshot:
+
+   :::image type="content" source="media/r-flight-delay/create-new-report.png" alt-text="Screenshot that shows creation of a new report." lightbox="media/r-flight-delay/create-new-report.png":::
+
 1. Select or drag fields from the **Data** and **Visualizations** panes onto the report canvas to build your report
 
     :::image type="content" source="media/r-flight-delay/power-bi-data.png" alt-text="Screenshot that shows data and visualization details for a report.":::

@@ -6,7 +6,9 @@ ms.author: lle
 ms.topic: how-to
 ms.date: 12/18/2024
 ms.custom:
-  - template-how-to
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # Set up your Azure Blob Storage connection
@@ -19,11 +21,11 @@ The Azure Blob Storage connector supports the following authentication types for
 
 | Authentication type | Copy | Dataflow Gen2 |
 | --- | :---: | :---: |
-| Anonymous | √ | √ |
-| Account key | √ | √ |
-| Shared Access Signature (SAS) | √ | √ |
-| Organizational account | √ | √ |
-| Service principal | √ | √ |
+| [Anonymous](#anonymous-authentication) | √ | √ |
+| [Account key](#account-key-authentication) | √ | √ |
+| [Shared Access Signature (SAS)](#shared-access-signature-sas-authentication) | √ | √ |
+| [Organizational account](#organizational-account-authentication) | √ | √ |
+| [Service principal](#service-principal-authentication) | √ | √ |
 
 ## Set up your connection in Dataflow Gen2
 
@@ -35,7 +37,7 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
 Browse to the **New connection page** for the data factory pipeline to configure the connection details and create the connection.
 
@@ -127,7 +129,7 @@ Select **Create** to create your connection. Your creation is successfully teste
 
 ### Table summary
 
-The following table contains the properties for data pipeline connection creation.
+The following table contains the properties for pipeline connection creation.
 
 | Name | Description | Required | Property | Copy |
 | --- | --- | :---: | --- | :---: |

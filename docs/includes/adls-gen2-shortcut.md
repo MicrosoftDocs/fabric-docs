@@ -1,8 +1,8 @@
 ---
 title: Include file for Azure Data Lake Storage Gen2 shortcut in Microsoft Fabric
 description: Include file for Azure Data Lake Storage Gen2 shortcut in Microsoft Fabric.
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: include
 ms.date: 07/16/2023
 ---

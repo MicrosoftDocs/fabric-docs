@@ -5,14 +5,14 @@ ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
-ms.custom:
+ms.custom: pipelines
 ms.date: 08/05/2024
 ms.search.form: Pipeline tutorials
 ---
 
 # Incrementally copy new and changed files based on the last modified date
 
-In this tutorial, you'll create a data pipeline that incrementally copies new and changed files only, from Lakehouse to Lakehouse. It uses **Filter by last modified** to determine which files to copy.
+In this tutorial, you'll create a pipeline that incrementally copies new and changed files only, from Lakehouse to Lakehouse. It uses **Filter by last modified** to determine which files to copy.
 
 After you complete the steps here, Data Factory will scan all the files in the source store, apply the file filter by **Filter by last modified**, and copy to the destination store only files that are new or have been updated since last time.
 
@@ -20,7 +20,7 @@ After you complete the steps here, Data Factory will scan all the files in the s
 
 - **Lakehouse**. You use the Lakehouse as the destination data store. If you don't have it, see [Create a Lakehouse](../data-engineering/create-lakehouse.md) for steps to create one. Create a folder named *source* and a folder named *destination*.
 
-## Configure a data pipeline for incremental copy
+## Configure a pipeline for incremental copy
 
 ### Step 1: Create a pipeline
 
@@ -29,9 +29,9 @@ After you complete the steps here, Data Factory will scan all the files in the s
 
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
-1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
+1. Select **Pipeline** and then input a pipeline name to create a new pipeline.
 
-   :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+   :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
 
    :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 

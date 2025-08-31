@@ -1,12 +1,11 @@
 ---
-title: Smoothing and throttling
+title: Smoothing and Throttling
 description: Learn about smoothing and throttling principles applicable for Microsoft Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
-ms.date: 10/07/2024
+ms.date: 07/02/2025
 ms.topic: conceptual
-ms.custom:
 ---
 
 # Smoothing and throttling in Fabric Data Warehouse
@@ -15,7 +14,7 @@ ms.custom:
 
 This article details the concepts of smoothing and throttling in workloads using [!INCLUDE [fabricdw](includes/fabric-dw.md)] and [!INCLUDE [fabricse](includes/fabric-se.md)] in Microsoft Fabric.
 
-This article is specific to data warehousing workloads in Microsoft Fabric. For all Fabric workloads and general information, see [Throttling in Microsoft Fabric](../enterprise/throttling.md).
+This article is specific to data warehousing workloads in Microsoft Fabric. For all Fabric workloads and general information, see [The Fabric throttling policy](../enterprise/throttling.md).
 
 ## Compute capacity
 
@@ -38,19 +37,19 @@ In general, similar to Power BI, [operations](../enterprise/fabric-operations.md
 
 Most [operations](usage-reporting.md#warehouse-operation-categories) in the **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. With 24-hour smoothing, operations can run simultaneously without causing any spikes at any time during the day. Customers get the benefit of a consistently fast performance without having to worry about tiny spikes in their workload. Thus, classifying data warehousing as *background* reduces the frequency of peaks of CU utilization from triggering throttling too quickly.
 
-Most [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] operations only experience operation rejection after over-utilization averaged over a 24-hour period. For more information, see [Future smoothed consumption](../enterprise/throttling.md#future-smoothed-consumption).
+Most [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] operations only experience operation rejection after over-utilization averaged over a 24-hour period. For more information, see [The Fabric throttling policy](../enterprise/throttling.md).
 
 ### Throttling considerations
 
 - Any inflight operations including long-running queries, stored procedures, batches won't get throttled mid-way. Throttling policies are applicable to the next operation after consumption is smoothed.
-- Warehouse operations are *background* except for scenarios that involves Modeling operations (such as creating a measure, adding or removing tables from a default semantic model, visualize results, etc.) or creating/updating Power BI semantic models (including a default semantic model) or reports. These operations continue to follow "Interactive Rejection" policy.
+- Warehouse operations are *background* except for scenarios that involves Modeling operations (such as creating a measure, visualize results, etc.) or creating/updating Power BI semantic models or reports. These operations continue to follow "Interactive Rejection" policy.
 - Just like most **Warehouse** operations, dynamic management views (DMVs) are also classified as *background* and covered by the "Background Rejection" policy. As a result, DMVs cannot be queried when capacity is throttled. Even though DMVs are not available, capacity admins can go to [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) to understand the root cause.
-- When the ["Background Rejection" policy](../enterprise/throttling.md#future-smoothed-consumption) is enabled, any activity on [the SQL query editor](sql-query-editor.md), [visual query editor](visual-query-editor.md), or modeling view, might see the error message: `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
+- When the ["Background Rejection" policy](../enterprise/throttling.md) is enabled, any activity on [the SQL query editor](sql-query-editor.md), [visual query editor](visual-query-editor.md), or modeling view, might see the error message: `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
 - When the "Background Rejection" policy is enabled, if you attempt to connect to a warehouse or run a new TSQL query in client applications like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) via SQL connection string, you might see SQL error code 24801 and the error text `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
 
 ## Best practices to recover from overload situations
 
-Review [actions you can take to recover from overload situations](../enterprise/throttling.md#actions-you-can-take-to-recover-from-overload-situations).
+Review [actions you can take to recover from overload situations](../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs).
 
 ## Monitor overload information with Fabric Capacity Metrics App
 

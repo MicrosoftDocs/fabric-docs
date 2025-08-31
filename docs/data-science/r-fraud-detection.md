@@ -1,19 +1,20 @@
----
+﻿---
 title: 'Tutorial: Use R to detect fraud'
 description: This tutorial shows a data science workflow in R, with an end-to-end example of building a model to detect fraud.
 ms.reviewer: None
-ms.author: sgilley
-author: sdgilley
+ms.author: lagayhar
+author: lgayhardt
 ms.topic: tutorial
-ms.custom:
-ms.date: 01/22/2024
+ms.custom: 
+ms.date: 04/14/2025
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to build a machine learning model in R so I can detect future fraudulent transactions.
+reviewer: s-polly
 ---
 
 # Tutorial: Use R to create, evaluate, and score a fraud detection model
 
-This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. In this scenario, we build a fraud detection model, in R, with machine learning algorithms trained on historical data. We then use the model to detect future fraudulent transactions.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. This scenario builds an R language fraud detection model, with machine learning algorithms trained on historical data. The scenario then uses the model to detect future fraudulent transactions.
 
 This tutorial covers these steps:
 
@@ -32,7 +33,7 @@ This tutorial covers these steps:
 
 ## Follow along in a notebook
 
-You can choose one of these options to follow along in a notebook:
+To follow along in a notebook, you have these options:
 
 - Open and run the built-in notebook in the Synapse Data Science experience
 - Upload your notebook from GitHub to the Synapse Data Science experience
@@ -55,8 +56,8 @@ The [AIsample - R Fraud Detection.ipynb](https://github.com/microsoft/fabric-sam
 
 For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You have two options to install libraries.
 
-* Use inline installation resources, for example `install.packages` and `devtools::install_version`, to install in your current notebook only.
-* Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment will then become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
+* Use inline installation resources - for example `install.packages` and `devtools::install_version` - to install in your current notebook only.
+* As an alternative, you can create a Fabric environment, and install libraries from public sources or upload custom libraries to it. Then, your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment then become available for use in any notebooks and Spark job definitions in the workspace. For more information about environments, visit [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
 
 In this tutorial, use `install.version()` to install the imbalanced-learn library:
 
@@ -67,9 +68,11 @@ devtools::install_version("bnlearn", version = "4.8")
 devtools::install_version("imbalance", version = "1.0.2.1")
 ```
 
+This installation step might need 8 to 10 minutes to complete.
+
 ## Step 2: Load the data
 
-The fraud detection dataset contains credit card transactions from September 2013, that European cardholders made over the course of two days. The dataset contains only numerical features because of a Principal Component Analysis (PCA) transformation applied to the original features. PCA transformed all features except for `Time` and `Amount`. To protect confidentiality, we can't provide the original features or more background information about the dataset.
+The fraud detection dataset contains credit card transactions from September 2013, that European cardholders made over the course of two days. The dataset contains only numerical features, because of a Principal Component Analysis (PCA) transformation applied to the original features. The PCA transformed all features except for `Time` and `Amount`. To protect confidentiality, the original features or more background information about the dataset are not available.
 
 These details describe the dataset:
 
@@ -102,10 +105,10 @@ DATA_FOLDER <- "Files/fraud-detection"  # Folder with data files
 DATA_FILE <- "creditcard.csv"  # Data file name
 ```
 
-This code downloads a publicly available version of the dataset, and then stores it in a Fabric lakehouse.
+This code downloads a publicly available version of the dataset, and then stores that data in a Fabric lakehouse:
 
 > [!IMPORTANT]
-> Be sure to [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. Otherwise, you'll get an error.
+> Be sure to [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. Otherwise, you get an error.
 
 ```r
 if (!IS_CUSTOM_DATA) {
@@ -155,7 +158,7 @@ if (IS_SAMPLE) {
 }
 ```
 
-Print the distribution of classes in the dataset:
+Print the dataset distribution of the classes:
 
 ```r
 # The distribution of classes in the dataset
@@ -167,7 +170,7 @@ This class distribution shows that most of the transactions are nonfraudulent. T
 
 ### View the distribution of fraudulent versus nonfraudulent transactions
 
-View the distribution of fraudulent versus nonfraudulent transactions with a plot, to show the class imbalance in the dataset:
+To show the class imbalance in the dataset, view the distribution of fraudulent versus nonfraudulent transactions with a plot:
 
 ```r
 library(ggplot2)
@@ -179,9 +182,9 @@ ggplot(data_df, aes(x = factor(Class), fill = factor(Class))) +
   theme(plot.title = element_text(size = 10))
 ```
 
-:::image type="content" source="media/r-fraud-detection/bar-plot-fraud.png" alt-text="Screenshot that shows a bar chart of fraud.":::
+:::image type="content" source="media/r-fraud-detection/bar-plot-fraud.png" alt-text="Screenshot that shows a bar chart of the fraud.":::
 
-The plot clearly shows the dataset imbalance:
+The plot clearly shows the dataset imbalance.
 
 ### Show the five-number summary
 
@@ -198,13 +201,13 @@ ggplot(data_df, aes(x = as.factor(Class), y = Amount, fill = as.factor(Class))) 
   coord_cartesian(ylim = quantile(data_df$Amount, c(0.05, 0.95)))
 ```
 
-:::image type="content" source="media/r-fraud-detection/box-plot.png" alt-text="Screenshot that shows box plots for transaction amount split by class.":::
+:::image type="content" source="media/r-fraud-detection/box-plot.png" alt-text="Screenshot that shows box plots for transaction amounts, split by class.":::
 
 For highly imbalanced data, box plots might not show accurate insights. However, you can address the `Class` imbalance problem first, and then create the same plots for more accurate insights.
 
 ## Step 4: Train and evaluate the models
 
-Here, you train a LightGBM model to classify the fraud transactions. You train a LightGBM model on both the imbalanced dataset and the balanced dataset. Then, you compare the performance of both models.
+Train a LightGBM model to classify the fraud transactions. Here, you train a LightGBM model on both the imbalanced dataset and the balanced dataset. Then, you compare the performance of both models.
 
 ### Prepare training and test datasets
 
@@ -221,7 +224,7 @@ test_df <- data_df[-train_sample_ids, ]
 
 ### Apply SMOTE to the training dataset
 
-Imbalanced classification has a problem. It has too few minority class examples for a model to effectively learn the decision boundary. Synthetic Minority Oversampling Technique (SMOTE) can handle this problem. SMOTE is the most widely used approach to synthesize new samples for the minority class. You can access SMOTE by using the `imbalance` library that you installed in Step 1.
+Imbalanced classification has a problem. It has too few minority class examples for a model to effectively learn the decision boundary. The Synthetic Minority Oversampling Technique (SMOTE) can handle this problem. SMOTE is the most widely used approach to synthesize new samples for the minority class. You can access SMOTE with the `imbalance` library that you installed in Step 1.
 
 Apply SMOTE only to the training dataset, instead of the test dataset. When you score the model with the test data, you need an approximation of the model performance on unseen data in production. For a valid approximation, your test data relies on the original imbalanced distribution to represent production data as closely as possible.
 
@@ -254,7 +257,7 @@ message(
 )
 ```
 
-For more Information about SMOTE, see the [Package 'imbalance'](https://cran.r-project.org/web/packages/imbalance/imbalance.pdf) and [Working with imbalanced datasets](https://cran.r-project.org/web/packages/imbalance/vignettes/imbalance.pdf) resources at the CRAN website.
+For more information about SMOTE, visit the [Package 'imbalance'](https://cran.r-project.org/web/packages/imbalance/imbalance.pdf) and [Working with imbalanced datasets](https://cran.r-project.org/web/packages/imbalance/vignettes/imbalance.pdf) resources at the CRAN website.
 
 ### Train the model with LightGBM
 
@@ -344,7 +347,7 @@ A comparison of these plots clearly shows that balanced and imbalanced training 
 
 ### Evaluate the models
 
-Here, you evaluate the two trained models:
+Evaluate the two trained models:
 
 - `model` trained on raw, imbalanced data
 - `smote_model` trained on balanced data
@@ -394,7 +397,7 @@ that a model produces when scored with test data. For binary classification, the
     plot_cm(ifelse(preds > 0.5, 1, 0), test_df$Class, "Confusion Matrix (Imbalanced dataset)")
     ```
 
-    :::image type="content" source="media/r-fraud-detection/confusion-matrix-imbalanced.png" alt-text="Screenshot of a confusion matrix for the imbalanced model.":::
+    :::image type="content" source="media/r-fraud-detection/confusion-matrix-imbalanced.png" alt-text="Screenshot that shows a confusion matrix for the imbalanced model.":::
 
 1. Plot the confusion matrix for the model trained on the balanced dataset:
 
@@ -402,13 +405,13 @@ that a model produces when scored with test data. For binary classification, the
     plot_cm(ifelse(smote_preds > 0.5, 1, 0), test_df$Class, "Confusion Matrix (Balanced dataset)")
     ```
 
-    :::image type="content" source="media/r-fraud-detection/confusion-matrix-balanced.png" alt-text="Screenshot of a confusion matrix for the balanced model.":::
+    :::image type="content" source="media/r-fraud-detection/confusion-matrix-balanced.png" alt-text="Screenshot that shows a confusion matrix for the balanced model.":::
 
 ### Evaluate model performance with AUC-ROC and AUPRC measures
 
-The Area Under the Curve Receiver Operating Characteristic (AUC-ROC) measure assesses the performance of binary classifiers. The AUC-ROC chart visualizes the trade-off between the true positive rate (TPR) and the false positive rate (FPR).
+The **Area Under the Curve Receiver Operating Characteristic (AUC-ROC)** measure assesses the performance of binary classifiers. The AUC-ROC chart visualizes the trade-off between the true positive rate (TPR) and the false positive rate (FPR).
 
-In some cases, it's more appropriate to evaluate your classifier based on the Area Under the Precision-Recall Curve (AUPRC) measure. The AUPRC curve combines these rates:
+In some cases, it's more appropriate to evaluate your classifier based on the **Area Under the Precision-Recall Curve (AUPRC)** measure. The AUPRC curve combines these rates:
 
 - The precision, or the positive predictive value (PPV)
 - The recall, or TPR

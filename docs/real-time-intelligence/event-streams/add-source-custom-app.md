@@ -5,8 +5,8 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.custom:
-ms.date: 11/18/2024
+ms.custom: sfi-image-nochange
+ms.date: 04/11/2025
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -24,9 +24,33 @@ This article shows you how to add a custom endpoint source or a custom app sourc
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
-- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
+Before you start, make sure you have access to the workspace where your eventstream is located. The workspace must be in **Fabric capacity** or **Trial** mode.
 
+- **Contributor** or higher permissions are required to edit the eventstream to add a **Custom endpoint** source.
+- If you want to use **Entra ID authentication** to connect your application, you need **Member** or higher permissions.
+
+If you're using **Entra ID authentication**, you also need to make sure the managed identity of the custom endpoint has the required permissions. To do this, configure the necessary settings in the **Admin portal**:
+
+1. Select **Settings** (gear icon) in the top-right corner.
+1. Select **Admin portal** under the **Governance and insights** section.
+
+    :::image type="content" source="./media/add-source-azure-event-grid/admin-portal-link.png" alt-text="Screenshot that shows the selection of Admin portal link in the Governance and insights section." lightbox="./media/add-source-azure-event-grid/admin-portal-link.png":::        
+
+1. Activate the following tenant setting to grant the service principal access to Fabric APIs for creating workspaces, connections, or deployment pipelines:
+    - On the **Tenant settings** page, in the **Developer settings** section, expand the **Service principal can use Fabric API** option.
+    - Toggle to **Enabled**.
+    - Apply to **the entire organization**.
+    - Select **Apply**.
+
+    :::image type="content" source="./media/add-source-azure-event-grid/developer-settings.png" alt-text="Screenshot that shows the developer settings." lightbox="./media/add-source-azure-event-grid/developer-settings.png":::              
+
+1. Enable this option to access all other APIs (enabled by default for new tenants):
+    - Still on the **Tenant settings** page, expand the **Allow Service principals to create and use profiles** option.
+    - Toggle to **Enabled**.
+    - Apply to **the entire organization**.
+    - Select **Apply**.
+  
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add custom endpoint data as a source
 1. To add a custom endpoint source, on the get-started page, select **Use custom endpoint**.    Or, if you already have a published eventstream and you want to add custom endpoint data as a source, switch to edit mode. On the ribbon, select **Add source** > **Custom endpoint**.   
@@ -110,9 +134,8 @@ For a list of supported sources, see [Add an event source in an eventstream](add
 
 ## Prerequisites
 
-Before you start, you must get access to a workspace with Contributor or higher permissions where your eventstream is located.
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
+- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 ## Add a custom app as a source
 
@@ -130,15 +153,19 @@ To add a custom app source:
 
 After you successfully create the custom application as a source, you can view the information on the **Details** pane.
 
-The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code**. These pages offer the endpoint details with the corresponding protocol for connecting.
-
+The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab contains three pages: **Basic**, **SAS Key Authentication**, and **Entra ID Authentication**. These pages provide endpoint information specific to the selected protocol.
 :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source.png" alt-text="Screenshot that shows a custom app source." lightbox="./media/add-manage-eventstream-sources/custom-app-source.png":::
 
-**Basic** shows the name, type, and status of your custom app.
+- The **Basic** page shows the name, type, and status of your custom endpoint.
 
 :::image type="content" source="media\add-source-custom-app-enhanced\custom-app-details-event-basic.png" alt-text="Screenshot that shows basic information for a custom app on the Details pane of an eventstream.":::
 
-**Keys** provides information about connection keys. **Sample code** provides the sample code, with the corresponding keys embedded, that you can use to stream the events to your eventstream. The information on these pages varies by protocol.
+- **SAS Key Authentication** and **Entra ID Authentication** are two supported authentication methods for connecting to your application:
+  - **SAS Key Authentication** provides the information needed to produce and consume Eventstream data using Shared Access Signature (SAS) keys.
+  - **Entra ID Authentication** enables a security principal (such as a user or service principal) to consume Eventstream data using Microsoft Entra ID authentication.
+
+For steps to use **Entra ID Authentication**, see [Enable Entra ID Authentication for an Application in Eventstream](custom-endpoint-entra-id-auth.md).  
+The following section describes how to connect to a custom endpoint destination using **SAS Key Authentication**.
 
 ### Event hub
 
@@ -152,7 +179,7 @@ The following example shows what the connection string looks like in event hub f
 
 > *Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxx*
 
-The **Sample code** page on the **Event Hub** tab offers ready-to-use code that includes the required information about connection keys in the event hub. Simply copy and paste it into your application for use.
+Select **Show sample code** button on the **Event Hub** page to get ready-to-use code that includes the required information about connection keys in the event hub. Simply copy and paste it into your application for use.
 
 :::image type="content" source="media\add-source-custom-app-enhanced\details-event-sample.png" alt-text="Screenshot that shows sample code on the Details pane of the eventstream.":::
 
@@ -162,7 +189,7 @@ The Kafka format is compatible with the Apache Kafka protocol, which is a popula
 
 :::image type="content" source="media\add-source-custom-app-enhanced\details-kafka-keys.png" alt-text="Screenshot that shows Kafka keys on the Details pane of the eventstream.":::
 
-The **Sample code** page on the **Kafka** tab provides ready-made code, including the necessary connection keys in Kafka format. Simply copy it for your use.
+Select **Show sample code** button on the **Kafka** page to get ready-made code, including the necessary connection keys in Kafka format. Simply copy it for your use.
 
 :::image type="content" source="media\add-source-custom-app-enhanced\details-kafka-sample-code.png" alt-text="Screenshot that shows Kafka sample code on the Details pane of the eventstream.":::
 
@@ -172,7 +199,7 @@ The AMQP format is compatible with the AMQP 1.0 protocol, which is a standard me
 
 :::image type="content" source="media\add-source-custom-app-enhanced\details-amqp-keys.png" alt-text="Screenshot that shows AMQP keys on the Details pane of the eventstream.":::
 
-The **Sample code** page on the **AMQP** tab provides ready-to-use code with connection key information in AMQP format.
+Select **Show sample code** button on the **AMQP** page to get ready-to-use code with connection key information in AMQP format.
 
 :::image type="content" source="media\add-source-custom-app-enhanced\details-amqp-sample-code.png" alt-text="Screenshot that shows AMQP sample code on the Details pane of the eventstream.":::
 

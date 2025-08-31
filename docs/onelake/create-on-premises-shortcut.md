@@ -29,8 +29,6 @@ On-premises data gateway shortcuts can take advantage of file caching to reduce 
 
 In this document, we show you how to install and use these on-premises data gateways to create shortcuts to on-premises or network-restricted data.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 * Create or identify a Fabric lakehouse that will contain your shortcut(s).

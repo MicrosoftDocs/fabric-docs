@@ -1,12 +1,12 @@
----
+﻿---
 title: Semantic functions
 description: Learn about semantic functions that you can apply to FabricDataFrames and FabricSeries.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: marcozo
 reviewer: eisber
 ms.topic: conceptual
-ms.custom:
+ms.custom: 
 ms.date: 06/17/2024
 ms.search.form: semantic link
 ---
@@ -74,7 +74,7 @@ df_geo.explore()
 
 The SemPy Python library provides a set of built-in semantic functions that are available out of the box. These built-in functions include:
 
-- `is_holiday(...)` uses the [holidays](https://pypi.org/project/holidays/) Python package to return `true` if the date is a holiday in the given country.
+- `is_holiday(...)` uses the [holidays](https://pypi.org/project/holidays/) Python package to return `true` if the date is a holiday in the given country/region.
 - `to_geopandas(...)` converts a FabricDataFrame to a [GeoPandas](https://geopandas.org/en/stable/) GeoDataFrame.
 - `parse_phonenumber(...)` uses the [phone numbers](https://pypi.org/project/phonenumbers/) Python package to parse a phone number into its components.
 - `validators` uses the [validators](https://pypi.org/project/validators/) Python package to validate common data types like email and credit card numbers.
@@ -83,7 +83,7 @@ The SemPy Python library provides a set of built-in semantic functions that are 
 
 Semantic functions are designed for extensibility. You can define your own semantic functions within your notebook or as separate Python modules.
 
-To use a semantic function outside of a notebook, declare the semantic function within the `sempy.functions` module. The following code example shows the definition of a semantic function `_is_capital` that returns `true` if a city is the capital of a country.
+To use a semantic function outside of a notebook, declare the semantic function within the `sempy.functions` module. The following code example shows the definition of a semantic function `_is_capital` that returns `true` if a city is the capital/major city of a country/region.
 
 ```python
 from sempy.fabric import FabricDataFrame, FabricSeries

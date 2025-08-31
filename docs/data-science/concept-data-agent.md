@@ -1,20 +1,19 @@
----
+﻿---
 title: Fabric data agent creation (preview)
 titleSuffix: Learn how to create a Fabric data agent
 description: Learn how to create a Fabric data agent that can answer questions about data.
-author: fbsolo-ms1
-ms.author: amjafari
-ms.reviewer: franksolomon
+author: jonburchel
+ms.author: jburchel
+ms.reviewer: amjafari
 reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "conceptual".
 ms.date: 03/25/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Fabric data agent Concepts
-
 #customer intent: As a Data Analyst, I want to create a Fabric data agent so that I can make it easier for me and my colleagues to get answers from data.
-
 ---
 
 # Fabric data agent concepts (preview)
@@ -25,21 +24,13 @@ You can also add organization-specific instructions, examples, and guidance to f
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-## Prerequisites
-
-- [A paid F64 or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
-- [Fabric data agent tenant settings](./data-agent-tenant-settings.md) is enabled.
-- [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- At least one of these: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
-- [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
+[!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
 ## How the Fabric data agent works
 
 Fabric data agent uses large language models (LLMs) to help users interact with their data naturally. Fabric data agent applies Azure OpenAI Assistant APIs, and it behaves like an agent. It processes user questions, determines the most relevant data source (Lakehouse, Warehouse, Power BI dataset, KQL databases), and it invokes the appropriate tool to generate, validate, and execute queries. Users can then ask questions in plain language and receive structured, human-readable answers—eliminating the need to write complex queries and ensuring accurate and secure data access.
 
-Here’s how it works in detail:
+Here's how it works in detail:
 
 **Question Parsing & Validation**: The Fabric data agent applies Azure OpenAI Assistant APIs as the underlying agent to process user questions. This approach ensures that the question complies with security protocols, responsible AI (RAI) policies, and user permissions. The Fabric data agent strictly enforces read-only access, maintaining read-only data connections to all data sources.
 
@@ -80,7 +71,7 @@ Configuring a Fabric data agent is similar to building a Power BI report—you s
 > [!NOTE]
 > Adding sample query/question pairs isn't currently supported for Power BI semantic model data sources.
 
-By combining clear AI instructions and relevant example queries, you can better align the Fabric data agent with your organization’s data needs, ensuring more accurate and context-aware responses.
+By combining clear AI instructions and relevant example queries, you can better align the Fabric data agent with your organization's data needs, ensuring more accurate and context-aware responses.
 
 ## Difference between a Fabric data agent and a copilot
 
@@ -102,27 +93,12 @@ The quality and safety of Fabric data agent responses went through rigorous eval
 
 The Fabric data agent is currently in public preview and it has limitations. Updates will improve the Fabric data agent over time.
 
-- The Fabric data agent can retrieve data by generating structured queries (SQL, DAX, or KQL) for questions that involve facts, totals, rankings, or filters. However, it can't interpret trends, provide explanations, or analyze underlying causes.
 - The Fabric data agent only generates SQL/DAX/KQL "read" queries. It doesn't generate SQL/DAX/KQL queries that create, update, or delete data.
-- The Fabric data agent can only access data that you provide. It only uses the data resource configurations that you provide.
-- The Fabric data agent has data access permissions that match the permissions granted to the user interacting with the Fabric data agent. This is true when the Fabric data agent is published to other locations-for example, Microsoft Copilot Studio, Azure AI Foundry, and Microsoft Teams.
-- You can't add more than five data sources to the Fabric data agent.
-- You can't use the Fabric data agent to access unstructured data resources. These resources include .pdf, .docx, or .txt files, for example.
-- The Fabric data agent blocks non-English language questions or instructions.
+- Fabric Data Agent does not support unstructured Data (.pdf, .docx, or .txt). You can't use the Fabric data agent to access unstructured data resources. These resources include .pdf, .docx, or .txt files, for example.
+- The Fabric data agent does not currently support non-English languages. For optimal performance please provide questions, instructions, and example queries in English. 
 - You can't change the LLM that the Fabric data agent uses.
-- You can't add a KQL database as a data source if it has more than 1,000 tables or any table with over 100 columns.
-- You can't add a Power BI semantic model as a data source if it contains more than a total of 100 columns and measures.
-- The Fabric data agent works best with 25 or fewer tables selected across all data sources.
-- Nondescriptive data resource column and table names have a significant, negative impact on generated SQL/DAX/KQL query quality. We recommend the use of descriptive names.
-- Use of too many columns and tables might lower Fabric data agent performance.
-- The Fabric data agent is currently designed to handle simple queries. Complex queries that require many joins or sophisticated logic tend to have lower reliability.
-- If you add a Power BI semantic model as a data source, the Fabric data agent doesn't use any hidden tables, columns, or measures.
-- If you previously created a Fabric data agent that used a warehouse as a data source, and the warehouse was located in a workspace that doesn't host that Fabric data agent, you might encounter an error. To resolve this issue, delete the existing data source and add it again.
-- To add a Power BI semantic model as a data source for Fabric data agent, you need read/write permissions for that Power BI semantic model. Querying a Fabric data agent that uses a Power BI semantic model also requires that you have read/write permissions for the underlying Power BI semantic model.
-- The Fabric data agent might return incorrect answers. You should test the Fabric data agent with your colleagues to verify that it answers questions as expected. If it makes mistakes, provide it with more examples and instructions.
-- If you previously created and published a Fabric data agent, and you have used its URL programmatically, the URL will no longer work if you open the Fabric data agent in the Fabric data agent new user interface page. To resolve this, you must republish the Fabric data agent, and use the new URL based on the Assistants API.
 
 ## Related content
 
-- [Fabric data agent scenario](data-agent-scenario.md)
+- [Fabric data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
 - [Create a Fabric data agent](how-to-create-data-agent.md)

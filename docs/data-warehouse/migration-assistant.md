@@ -3,8 +3,8 @@ title: Migration Assistant for Fabric Data Warehouse
 description: This article explains the Migration Assistant experience for Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: anphil
-ms.date: 03/22/2025
+ms.reviewer: anphil, prlangad, chweb
+ms.date: 08/19/2025
 ms.topic: concept-article
 ms.search.form: Migration Assistant
 ---
@@ -16,8 +16,10 @@ The Fabric Migration Assistant is a migration experience built natively into Fab
 
 The Migration Assistant copies metadata and data from the source database, automatically converting the source schema to Fabric Data Warehouse. AI-powered assistance provides quick solutions for migration incompatibility or errors.
 
+You can use the Fabric Migration Assistant for Data Warehouse to copy dedicated SQL pools in Azure Synapse Analytics, as well as terabyte or larger scale OLAP data in SQL Server and other SQL database platforms.
+
 > [!TIP]
-> For a step-by-step guide to migrate with the Migration Assistant, see [Migrate Data with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md).
+> For a step-by-step guide to migrate with the Migration Assistant, see [Migrate with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md).
 >
 > For more information on strategy and planning your migration, see [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md).
 
@@ -32,7 +34,7 @@ Migration with the Fabric Migration Assistant involves these steps at a high lev
 
 ## Migrated objects
 
-The Migration Assistant helps users migrate to Fabric warehouse using DACPAC files. The database object metadata captured within the DACPAC are:
+The Migration Assistant helps users migrate to Fabric Data Warehouse using DACPAC files. The database object metadata captured within the DACPAC are:
 
 -   Tables
 -   Views
@@ -77,8 +79,8 @@ Before copying data, make sure to fix the security objects that failed to migrat
 
 Currently, there isn't full T-SQL compatibility between the source warehouse and Fabric warehouse. For more information, see: 
 
-- [Limitations of Microsoft Fabric Data Warehouse](limitations.md) 
-- [T-SQL surface area in Microsoft Fabric Data Warehouse](tsql-surface-area.md)
+- [Limitations of Fabric Data Warehouse](limitations.md) 
+- [T-SQL surface area in Fabric Data Warehouse](tsql-surface-area.md)
 
 The workarounds for some of the common unsupported features:
 
@@ -86,7 +88,7 @@ The workarounds for some of the common unsupported features:
 | :-- | :-- |
 | SQL authentication | Replace SQL authentication users with [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md). |
 | Column-level encryption | Use alternative ways to protect your data such as implementing encryption at the application layer and [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md) for obfuscating sensitive data. |
-| Scalar functions | Use alternative workarounds such as stored procedures, inline table-valued functions, or common table expressions. |
+| Scalar functions | Scalar user-defined functions (UDFs) are not currently migrated by the Migration Assistant. Scalar UDFs are supported in Fabric Data Warehouse, but only when inlineable (currently in preview). For more information, see [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true) and [Scalar UDF inlining](/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=fabric&preserve-view=true). |
 | Identity columns | Use alternative methods to assign a unique identifier. For examples, see [Generate unique identifiers in a warehouse table in Microsoft Fabric](generate-unique-identifiers.md) |
 | Temp tables | Use regular tables. |
 
@@ -107,5 +109,5 @@ Other currently unsupported features you might see:
 
 ## Related content
 
-- [Migrate Data with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md)
+- [Migrate with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md)
 - [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md)

@@ -4,29 +4,26 @@ description: This article explains the overview of using Azure Synapse Analytics
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 07/09/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Azure Synapse Analytics connector overview
 
-This Azure Synapse Analytics connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Azure Synapse Analytics connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-To learn about how to connect to Azure Synapse Analytics in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-azure-synapse-analytics.md#set-up-your-connection-in-dataflow-gen2).
+| Supported capabilities                                                                 | Gateway                        | Authentication   |
+|----------------------------------------------------------------------------------------|--------------------------------|------------------|
+| **Dataflow Gen2** (source/-)                                                           | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal |
+| **Pipeline** <br>- [Copy activity](connector-azure-synapse-analytics-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal <br>Workspace identity|
+| **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- Append<br>- Merge | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal <br>Workspace identity|
 
-## Support in data pipelines
+## Related content
 
-The Azure Synapse analytics connector supports the following capabilities in data pipelines.
+To learn about how to connect to Azure Synapse Analytics, go to [Set up your Azure Synapse Analytics connection](connector-azure-synapse-analytics.md).
 
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | --- |
-| **Copy activity (Source/Destination)** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
-| **Lookup activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
-| **GetMetadata activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
-| **Script activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
-| **Stored procedure activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
-
-To learn about the copy activity configuration for Azure Synapse Analytics in data pipelines, go to [Configure Azure Synapse Analytics in a copy activity](connector-azure-synapse-analytics-copy-activity.md).
+To learn about the copy activity configuration for Azure Synapse Analytics in pipelines, go to [Configure Azure Synapse Analytics in a copy activity](connector-azure-synapse-analytics-copy-activity.md).

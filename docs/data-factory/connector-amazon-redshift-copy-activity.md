@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Amazon Redshift in a copy activity
 
-This article outlines how to use the copy activity in data pipelines to copy data from Amazon Redshift.
+This article outlines how to use the copy activity in pipelines to copy data from Amazon Redshift.
 
 
 ## Supported configuration

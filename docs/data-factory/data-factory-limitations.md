@@ -5,6 +5,7 @@ author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
 ms.date: 03/07/2025
+ms.custom: configuration
 ---
 
 # Data Factory limitations overview
@@ -13,25 +14,20 @@ There are certain limitations to the current Data Factory in Microsoft Fabric fe
 
 For service level outages or degradation notifications, check [Microsoft Fabric support](https://support.fabric.microsoft.com/).  
 
-## Data pipeline limitations in Microsoft Fabric
+## Pipeline limitations in Microsoft Fabric
 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
 - Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) isn't yet available.
 -	Connectors don't support OAuth and  Azure key vault (AKV).
 -	Managed System Identity (MSI) is only available for Azure Blob Storage. Support for other sources is coming soon. 
--	Connectors can't use parameters.
 -	GetMetaData activity can't have a source from Fabric KQL databases.
 -	Script activity can't have a source from Fabric KQL databases.
--	Copy activity uses a Web connector, whereas Web/Webhook activities use a Web v2 connector that supports richer functionality, like audience and resource URI.
 -	Validation activity, Mapping Data Flow activity, and the SSIS integration runtime aren't available. 
--	Pipelines can't use a managed virtual network.
 -	Web activity doesn't support service principal based authentication.
--	Pipeline scheduling options currently include only by the minute, hourly, daily, and weekly.
--	Dataflow Gen2 (CI/CD, preview) is currently not supported in pipeline as activity. 
 -	Background sync of authentication doesn't happen for pipelines. Recommendation is to do minor description like updates to pipelines and save them. That way, new token is obtained and cached so pipeline can run again with updated password of entra id. 
 
-## Data pipeline resource limits
+## Pipeline resource limits
 
 The following table describes the resource limitations for pipelines in Data Factory in Microsoft Fabric.
 
@@ -39,11 +35,12 @@ The following table describes the resource limitations for pipelines in Data Fac
 |---|---|---|
 | Total number of pipelines within a workspace | 5,000 | 5,000 |
 | Concurrent pipeline runs per workspace that's shared among all pipelines in workspace  | 10,000 | 10,000 |
-| External activities like stored procedure, Web, Web Hook, and others | 3,000 | 3,000 |
-| Pipeline activities execution for Lookup, GetMetadata, and Delete | 1,000 | 1,000 |
-| Concurrent authoring operations, including test connection, browse folder list and table list, preview data, and so on | 200 | 200 |
+| Concurrent external activities like stored procedure, Web, Web Hook, and others per workspace | 100 | 100 |
+| Concurrent pipeline activities execution for Lookup, GetMetadata, and Delete per workspace | 100 | 100 |
+| Concurrent authoring operations, including test connection, browse folder list and table list, preview data, and so on per workspace | 50 | 50 |
 | Maximum activities per pipeline, which includes inner activities for containers | 120 | 120 |
 | Maximum parameters per pipeline | 50 | 50 |
+|Maximum schedules per pipeline|20|20|
 | ForEach items | 100,000 | 100,000 |
 | ForEach parallelism | 20 | 50 |
 | Lookup Activity item count | 5000 | 5000 |

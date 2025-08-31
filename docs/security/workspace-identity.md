@@ -1,18 +1,18 @@
 ---
 title: Workspace identity
 description: Learn about workspace identity in Microsoft Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
-ms.date: 08/28/2024
+ms.date: 08/01/2025
 ---
 
 # Workspace identity
 
 A Fabric workspace identity is an automatically managed service principal that can be associated with a Fabric workspace. Fabric workspaces with a workspace identity can securely read or write to firewall-enabled Azure Data Lake Storage Gen2 accounts through [trusted workspace access](../security/security-trusted-workspace-access.md) for OneLake shortcuts. Fabric items can use the identity when connecting to resources that support Microsoft Entra authentication. Fabric uses workspace identities to obtain Microsoft Entra tokens without the customer having to manage any credentials.
 
-Workspace identities can be created in the workspace settings of any workspace except My workspaces. A workspace identity is automatically assigned the workspace contributor role and has access to workspace items.
+Workspace identities can be created in the workspace settings of any workspace except My workspaces.
 
 When you create a workspace identity, Fabric creates a service principal in Microsoft Entra ID to represent the identity. An accompanying app registration is also created. Fabric automatically manages the credentials associated with workspace identities, thereby preventing credential leaks and downtime due to improper credential handling.
 
@@ -24,7 +24,9 @@ While Fabric workspace identities share some similarities with Azure managed ide
 ## Create and manage a workspace identity
 
 You must be a workspace admin to be able to create and manage a workspace identity. The workspace you're creating the identity for can't be a **My Workspace**.
-1. Navigate to the workspace and open the workspace settings.
+1. Sign in to the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
+1. Select **Workspaces**, and then select the workspace you want to create a workspace identity for.
+1. In the workspace, select the **Workspace settings** (gear) icon.
 1. Select the **Workspace identity** tab.
 1. Select the **+ Workspace identity** button.
 
@@ -40,7 +42,7 @@ The sections of the workspace identity configuration are described in the follow
 |:-------|:-----|
 | **Name** | Workspace identity name. The workspace identity name is the same as the workspace name.|
 | **ID** | The workspace identity GUID. This is a unique identifier for the identity. |
-| **Role** | The workspace role assigned to the identity. Workspace identities are automatically assigned the contributor role upon creation. |
+| **Role** | The workspace role assigned to the identity. |
 | **State** | The state of the workspace. Possible values: *Active*, *Inactive*, *Deleting*, *Unusable*, *Failed*, *DeleteFailed* |
 
 ### Authorized users
@@ -68,14 +70,18 @@ The following sections describe who can use the workspace identity, and how you 
 
 ### Access control
 
-Workspace identity can be [created and deleted by workspace admins](#create-and-manage-a-workspace-identity). The workspace identity has the workspace contributor role on the workspace.
+Workspace identity can be [created and deleted by workspace admins](#create-and-manage-a-workspace-identity). By default, the workspace identity is not granted any workspace role.
+
+> [!WARNING]
+> Workspace identity is an automatically managed service principal created by Fabric users. Access to this identity should be carefully managed and monitored, as any individual given access to the identity is allowed to assume it.
 
 Workspace identity is supported for authentication to target resources in connections. Only users with an admin, member, or contributor role in the workspace can configure the workspace identity for authentication in connections.
 
 [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or users with higher roles can view, modify, and delete the service principal and app registration associated with the workspace identity in Azure.
 
 > [!WARNING]
-> Modifying or deleting the service principal or app registration in Azure is not recommended, as it will cause Fabric items relying on workspace identity to stop working.
+> Modifying or deleting the service principal or app registration in Azure is not recommended, as it will cause Fabric items relying on workspace identity to stop working. Such changes may be reverted.
+> Additionally, adhere to the principle of least privilege when managing Application Administrator roles. Ensure that only appropriate users are assigned this role. For more details, refer to [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
 
 ### Administer the workspace identity in Fabric
 
@@ -109,7 +115,8 @@ The application associated with the workspace identity can be viewed under both 
 The application associated with the workspace identity can be seen in **Enterprise Applications** in the Azure portal. Fabric Identity Management app is its configuration owner.
 
 > [!WARNING]
-> Modifications to the application made here will cause the workspace identity to stop working.
+> Modifications to the application made here will cause the workspace identity to stop working, and such changes may be reverted.
+> Additionally, adhere to the principle of least privilege when managing Application Administrator roles. Ensure that only appropriate users are assigned this role. For more details, refer to [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
 
 To view the audit logs and sign-in logs for this identity:
 

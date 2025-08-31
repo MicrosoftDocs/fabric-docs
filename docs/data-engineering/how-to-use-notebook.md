@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.search.form: Create and use notebooks
 ms.date: 07/25/2024
 ---
@@ -229,8 +229,7 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
 
 ## Version history
 
-> [!NOTE]
-> Currently, the feature is in preview.
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 Version history allows you to easily version your live notebook changes. It supports history tracking and notebook management with robust built-in version control capabilities, which is especially helpful for collaborative work with multiple contributors on the same notebook.
 

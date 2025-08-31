@@ -1,18 +1,18 @@
 ---
 title: Load Sample data to Data Warehouse
-description: Learn how to build and schedule a new data pipeline to copy sample data to a Data Warehouse.
+description: Learn how to build and schedule a new pipeline to copy sample data to a Data Warehouse.
 ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
-ms.custom:
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 02/25/2025
 ms.search.form: Pipeline Tutorials
 ---
 
 # Load Sample data to Data Warehouse
 
-In this tutorial, you build a data pipeline to move a Sample dataset to the Data Warehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Data Warehouse.
+In this tutorial, you build a pipeline to move a Sample dataset to the Data Warehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Data Warehouse.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ To get started, you must complete the following prerequisites:
 - Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 - Make sure you have already created a Data Warehouse. To create it, refer to [Create a Data Warehouse](../data-warehouse/create-warehouse.md)
 
-## Create a data pipeline
+## Create a pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
 1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
@@ -31,9 +31,9 @@ To get started, you must complete the following prerequisites:
 
    :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
 
-1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
+1. Select **Pipeline** and then input a pipeline name to create a new pipeline.
 
-   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
 
    :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
@@ -77,11 +77,11 @@ In this session, you start to build your pipeline by following below steps about
 
    :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/review-create-activity.png" alt-text="Screenshot of the Review + create page of the Copy data assistant highlighting source and destination.":::
 
-1. The Copy activity is added to your new data pipeline canvas. All settings including advanced settings for the activity are available in the tabs below the pipeline canvas when the created **Copy data** activity is selected.
+1. The Copy activity is added to your new pipeline canvas. All settings including advanced settings for the activity are available in the tabs below the pipeline canvas when the created **Copy data** activity is selected.
 
-   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/complete-copy-activity.png" alt-text="Screenshot showing the completed Copy activity in pipeline canvas.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/complete-copy-activity.png" alt-text="Screenshot showing the completed Copy activity in the pipeline canvas.":::
 
-## Schedule your data pipeline
+## Schedule your pipeline
 
 1. You can monitor the running process and check the results on the **Output** tab below the pipeline canvas.  Select the run details button (with the glasses icon highlighted) to view the run details.
 
@@ -100,9 +100,9 @@ In this session, you start to build your pipeline by following below steps about
 This sample shows you how to load sample data into a Data Warehouse using Data Factory in Microsoft Fabric.  You learned how to:
 
 > [!div class="checklist"]
-> - Create a data pipeline.
+> - Create a pipeline.
 > - Copy data using your pipeline.
-> - Run and schedule your data pipeline.
+> - Run and schedule your pipeline.
 
 Next, advance to learn more about monitoring your pipeline runs.
 

@@ -70,14 +70,14 @@ None
 
 | Name | Type | Description |
 | --- | --- | --- |
-| 200 OK | ContainerLogMeta | Request completed successfully |
+| 200 OK | [ContainerLogMeta](#definitions) | Request completed successfully |
 
 ### Examples
 
 ### Sample request
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/applications/application_1741176604085_0001/logs?type=driver&meta=true&fileName=stderr 
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/applications/application_1741176604085_0001/logs?type=driver&meta=true&fileName=stderr 
 ```
 
 ### Sample response
@@ -140,7 +140,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | appId | path | True | string | The Spark application ID, like application_1704417105000_0001. | 
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. | 
 | filenamePrefix  | query | False  | string | The prefix of log file names to filter, could be either "stdout" or "stderr". |
-| offset, maxResults   | query | False  | int |  The starting index and number of log files to get:<br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br><br>- For maxResults, the valid range is 1 to 3,000. The default value is 3,000. |
+| offset, maxResults   | query | False  | int |  The starting index and number of log files to get:<br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0. <br>- For maxResults, the valid range is 1 to 3,000. The default value is 3,000. |
 
 ### Request body
 
@@ -150,21 +150,21 @@ None
 
 | Name | Type | Description |
 | --- | --- | --- |
-| 200 OK | ContainerLogMeta | Request completed successfully |
+| 200 OK | [ContainerLogMeta](#definitions) | Request completed successfully |
 
 ### Examples
 
 ### Sample request
 
 ``` HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/application_1725346176782_0001/logs?type=rollingdriver &meta=true&filenamePrefix=stderr
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/application/application_1725346176782_0001/logs?type=rollingdriver &meta=true&filenamePrefix=stderr
 ```
 
 ### Sample response
 
 Status code: 200
 
-```Jeson
+```Json
 {
 	"containerId": "container_1725346176782_0001_01_000001",
 	"nodeId": "vm-fe289417:42885",
@@ -231,7 +231,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | containerId | query | False | string | The specific driver container ID. Leave it not specified if you aren't sure what the driver container ID is. |
 | isDownload | query | False | bool | True to download the log file as a stream. Default as false. |
 | isPartial | query | False | bool | Only take effect when isDownload is true. True to download a part of file content according to the given offset and size. Default as false to download the whole file. |
-| offset, size   | query | False  | long | The starting offset (in byte) and the size (in byte) to read the file content. Only take effect when isDownload = true and isPartial = true <br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br><br>- For size, the default value is 1M (1024*1024) bytes. |
+| offset, size   | query | False  | long | The starting offset (in byte) and the size (in byte) to read the file content. Only take effect when isDownload = true and isPartial = true <br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br>- For size, the default value is 1M (1024*1024) bytes. <br> *Note that the parameter "offset" is only valid while the Spark application is still running. Once the application stops running, the parameter will have no effect. Consider using rolling driver logs instead.* |
 
 ### Request body
 
@@ -248,12 +248,18 @@ None
 ### Sample request
 
 ``` HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/application_1731308630223_0001/logs?type=driver&fileName=stderr&isDownload=true&isPartial=true&offset=100&size=1000
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/application/application_1731308630223_0001/logs?type=driver&fileName=stderr&isDownload=true&isPartial=true&offset=100&size=1000
 ```
 
-## Next steps
+## Definitions 
+*ContainerLogMeta* 
 
-- [Livy Log](../data-engineering/livy-log.md)
-- [Executor Log](../data-engineering/executor-log.md)
-- [Open-Source APIs ](../data-engineering/open-source-apis.md)
+Object 
 
+Metadata(s) of log file(s) with the corresponding container and node information 
+
+| Name | Type | Description |
+| --- | --- | --- |
+| containerId  | string | The container ID where driver or executor is hosted in |
+| nodeId | string | The node ID where the container locates |
+| containerLogMeta  | A single [FileMeta](./livy-log.md#definitions) or a list of [FileMeta](./livy-log.md#definitions) | The metadata(s) of a file or a list of files |

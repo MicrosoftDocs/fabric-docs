@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
-ms.custom:
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 12/18/2024
 ms.search.form: Pipeline Tutorials
 ---
@@ -145,7 +145,7 @@ In this section, we use a Script activity to run the stored procedure created in
 This sample shows you how to preprocess data with a stored procedure before loading the results into Lakehouse.  You learned how to:
 
 > [!div class="checklist"]
-> - Create a data pipeline with a Script activity to run a stored procedure.
+> - Create a pipeline with a Script activity to run a stored procedure.
 > - Use a pipeline activity to load the preprocessed table data into Lakehouse.
 > - Execute the pipeline activities to load the data.
 

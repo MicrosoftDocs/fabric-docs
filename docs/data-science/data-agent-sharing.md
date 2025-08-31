@@ -1,27 +1,21 @@
----
+﻿---
 title: Fabric data agent sharing and permission management (preview)
 description: Learn how to share a Fabric data agent, and manage Fabric data agent permissions.
-author: fbsolo-ms1
-ms.author: amjafari
-ms.reviewer: franksolomon
+author: jonburchel
+ms.author: jburchel
+ms.reviewer: amjafari
 ms.topic: concept-article
 ms.date: 03/25/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
+reviewer: s-polly
 ---
 
 # Fabric data agent sharing and permission management (preview)
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-## Prerequisites
-
-- [A paid F64 or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
-- [Fabric data agent tenant settings](./data-agent-tenant-settings.md) is enabled.
-- [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- At least one of these: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
-- [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
+[!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
 ## Publishing and versioning
 
@@ -38,9 +32,9 @@ When you try to publish the Fabric data agent, you can include a description tha
 > [!NOTE]
 > You can ask the Fabric data agent to describe what it does. You can then refine and summarize the response to use as its description when publishing.
 
-:::image type="content" source="./media/data-agent-sharing/publish-ai-skill-description.png" alt-text="Screenshot showing creation of a Fabric data agent description." lightbox="./media/data-agent-sharing/publish-ai-skill-description.png":::
+:::image type="content" source="./media/data-agent-sharing/publish-data-agent-description.png" alt-text="Screenshot showing creation of a Fabric data agent description." lightbox="./media/data-agent-sharing/publish-data-agent-description.png":::
 
-<!-- <img src="./media/data-agent-sharing/publish-ai-skill-description.png" alt="Screenshot showing creation of a Fabric data agent description." width="700"/> -->
+<!-- <img src="./media/data-agent-sharing/publish-data-agent-description.png" alt="Screenshot showing creation of a Fabric data agent description." width="700"/> -->
 
 After you publish your Fabric data agent, you can continue to refine its current draft version to enhance its performance, without affecting the published version that other people use. This way, you can iterate with confidence, knowing that your changes remain isolated from the published version. You can seamlessly switch between the published and draft versions, testing the same set of queries on both to compare their performance. This helps you assess the effects of your changes, and you can gain valuable insights into how they improve the effectiveness of your Fabric data agent. The following screenshot shows how to switch between published and developed Fabric data agent versions:
 

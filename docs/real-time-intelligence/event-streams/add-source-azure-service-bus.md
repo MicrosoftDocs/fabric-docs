@@ -36,8 +36,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 ## Configure Azure Service Bus connector
 [!INCLUDE [azure-service-bus-connector](./includes/azure-service-bus-source-connector.md)]
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 ## View updated eventstream
 
 1. You see that the Azure Service Bus source is added to your eventstream on the canvas in the **Edit** mode. To publish it to live, select **Publish** on the ribbon.

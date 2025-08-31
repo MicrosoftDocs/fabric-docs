@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: bwoody
 ms.date: 03/04/2025
 ms.topic: tutorial
-ms.search.form: Get Started
+ms.search.form: Get Started, Databases Get Started
 ---
 
 # SQL database in Fabric tutorial introduction
@@ -50,11 +50,16 @@ Here's a summary of the architecture this tutorial introduces.
 
 **Data sources** - Microsoft Fabric makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data and build applications that generate and edit data.
 
-**Ingestion** - With 200+ native connectors as part of the Microsoft Fabric pipeline and with drag and drop data transformation with dataflow, you can quickly build insights for your organization. Shortcut is a new feature in Microsoft Fabric that provides a way to connect to existing data without having to copy or move it. You can find more details about the Shortcut feature later in this tutorial. For development, you have the Tabular Data Stream (TDS) protocol that can access the database just like a SQL Server instance. You also have GraphQL API to query across not only SQL database in Fabric, but multiple data sources in Microsoft Fabric, in a consistent, safe, and integrated way.
+**Ingestion** - With 200+ native connectors as part of the Microsoft Fabric pipeline and with drag and drop data transformation with dataflow, you can quickly build insights for your organization. [OneLake shortcuts](../../onelake/onelake-shortcuts.md) are a new feature in Microsoft Fabric that provides a way to connect to existing data without having to copy or move it. For development, you have the Tabular Data Stream (TDS) protocol that can access the database just like a SQL Server instance. You also have GraphQL API to query across not only SQL database in Fabric, but multiple data sources in Microsoft Fabric, in a consistent, safe, and integrated way.
 
 **Store, Query and Enrich** – SQL database in Fabric works with industry standard Transact-SQL commands to create, read, update, and delete data and data objects, as well as the GraphQL API.
 
-**Expose** - Data from SQL database in Fabric and the SQL analytics endpoint can be consumed by Power BI, the industry leading business intelligence tool, for reporting and visualization. Each SQL database in Fabric connection and SQL analytics endpoint comes with a built-in TDS endpoint for easily connecting to and querying data from other reporting tools, when needed. When a SQL database is created, a secondary item called a default semantic model is generated at the same time with the same name. You can use the default semantic model through the SQL analytics endpoint of the SQL database. With a semantic model, you can visualize data with just a couple of steps. The SQL database and the SQL analytics endpoint can be exposed through the GraphQL API.
+**Expose** - Data from your SQL database in Fabric can be consumed in a variety of ways:
+
+   - Data from SQL database in Fabric and the SQL analytics endpoint can be consumed by Power BI, the industry leading business intelligence tool, for reporting and visualization. 
+   - Each SQL database in Fabric connection and SQL analytics endpoint comes with a built-in TDS endpoint for easily connecting to and querying data from other reporting tools, when needed. 
+   - You can also create a semantic model through the SQL analytics endpoint of the SQL database. With a semantic model, you can visualize data with just a couple of steps. 
+   - The SQL database and the SQL analytics endpoint can also be exposed through the GraphQL API.
 
 ## Sample data
 

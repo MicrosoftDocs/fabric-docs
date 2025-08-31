@@ -6,7 +6,9 @@ ms.author: xupzhou
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
-  - template-how-to
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # How to create a Microsoft 365 connection
@@ -25,9 +27,9 @@ This Microsoft 365 connector supports the following authentication types for cop
 
 The Microsoft 365 connector isn't currently supported in Dataflow Gen2.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-To create a connection in a data pipeline:
+To create a connection in a pipeline:
 
 1. From the page header in Data Integration service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
@@ -80,7 +82,7 @@ Select **Create**. Your creation is successfully tested and saved if all the cre
 
 ## Table summary
 
-The connector properties in the following table are supported in pipeline copy:
+The connector properties in the following table are supported in a pipeline copy:
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|

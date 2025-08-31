@@ -1,12 +1,11 @@
 ---
-title: Primary, foreign, and unique keys
+title: Primary, Foreign, and Unique Keys
 description: Learn more about table constraints support using Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: kecona, xiaoyul
+ms.reviewer: xiaoyul
 ms.date: 08/01/2024
 ms.topic: how-to
-ms.custom:
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Primary keys, foreign keys, and unique keys in Warehouse in Microsoft Fabric

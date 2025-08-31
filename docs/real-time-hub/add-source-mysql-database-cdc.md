@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 07/21/2025
 ---
 
 # Add MySQL Database CDC as source in Real-Time hub
@@ -107,13 +107,9 @@ You can get events from an Azure MySQL Database CDC into Real-Time hub in one of
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure MySQL DB CDC as a source. To close the wizard, select **Finish** or **X*** in the top-right corner of the page.
 
     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review + connect page after successful creation of the source." lightbox="./media/add-source-azure-mysql-database-cdc/review-create-success.png":::
-1. In Real-Time hub, select **My data streams**. To see the new data stream, refresh the page. 
+1. You should see the stream in the **Recent streaming data** section of the **Real-Time hub** home page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
-     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub My data streams page with the stream based on MySQL Database CDC source." lightbox="./media/add-source-azure-mysql-database-cdc/verify-data-stream.png":::
-
-
-    For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
-
+. 
 ## Related content
 
 To learn about consuming data streams, see the following articles:

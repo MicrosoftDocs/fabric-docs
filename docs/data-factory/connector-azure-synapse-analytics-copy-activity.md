@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 02/27/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Azure Synapse Analytics in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Synapse Analytics.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure Synapse Analytics.
 
 ## Supported configuration
 

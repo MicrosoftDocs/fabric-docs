@@ -1,12 +1,11 @@
 ---
-title: Workload management
+title: Workload Management
 description: Learn how Microsoft manages data warehouse compute resources to service workloads.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: stevehow, prlangad
-ms.date: 03/11/2025
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # Workload management
@@ -35,7 +34,7 @@ Backend compute capacity benefits from a fast provisioning architecture. Althoug
 
 The system is fault tolerant and if a node becomes unhealthy, operations executing on the node are redistributed to healthy nodes for completion.
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] provide [burstable capacity](burstable-capacity.md) that allows workloads to use more resources to achieve better performance, and use [smoothing](compute-capacity-smoothing-throttling.md) to offer relief for customers who create sudden spikes during their peak times,  while they have a lot of idle capacity that is unused. Smoothing simplifies capacity management by spreading the evaluation of compute to ensure that customer jobs run smoothly and efficiently.
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] provide [burstable capacity](burstable-capacity.md) that allows workloads to use more resources to achieve better performance, and use [smoothing](compute-capacity-smoothing-throttling.md) to offer relief for customers who create sudden spikes during their peak times, while they have a lot of idle capacity that is unused. Smoothing simplifies capacity management by spreading the evaluation of compute to ensure that customer jobs run smoothly and efficiently.
 
 ## Scheduling and resourcing
 
@@ -60,7 +59,7 @@ In the backend compute pool of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in 
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] have a user session limit of 2048 per workspace. When this limit is reached an error will be returned: `The user session limit for the workspace is 2048 and has been reached`.
 
 > [!NOTE]
-> As Microsoft Fabric is a SaaS platform, there are many system connections that run to continuously optimize the environment. DMVs show both system and user sessions. For more information, see [Monitor using DMVs](monitor-using-dmv.md).
+> As Microsoft Fabric is a SaaS platform, there are many system connections that run to continuously optimize the environment. DMVs show both system and user sessions. For more information, see [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md).
 
 ## Best practices
 
@@ -75,5 +74,5 @@ The [!INCLUDE [product-name](../includes/product-name.md)] workspace provides a 
 - [OneLake, the OneDrive for data](../onelake/onelake-overview.md)
 - [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
 - [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-analytics-endpoint.md)
-- [Burstable capacity in Fabric data warehousing](burstable-capacity.md)
-- [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
+- [Burstable capacity in Fabric Data Warehouse](burstable-capacity.md)
+- [Smoothing and throttling in Fabric Data Warehouse](compute-capacity-smoothing-throttling.md)

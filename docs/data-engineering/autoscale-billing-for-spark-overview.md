@@ -38,7 +38,7 @@ When enabled, Autoscale Billing changes how Spark workloads are handled:
 
 - Spark jobs will be offloaded from the Fabric Capacity and do **not** consume CU from Fabric capacity.
 - A max CU limit can be configured to align with budget or governance policies. This limit is just a max limit(more like a quota) for your Spark workloads. You only get charged for the CUs your jobs use and there is no idle compute costs.
-- There is no change to the bill rate for Spark. Cost of Spark remains the same which is 0.5 CU Hour 
+- There is no change to the bill rate for Spark. Cost of Spark remains the same which is 0.5 CU Hour per Spark job.
 - Once the CU limit is reached, Spark jobs will queue (batch) or throttle (interactive).
 - Spark usage and cost are reported separately in the **Fabric Capacity Metrics App** and **Azure Cost Analysis**.
 

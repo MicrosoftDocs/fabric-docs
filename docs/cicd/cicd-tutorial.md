@@ -1,13 +1,14 @@
 ---
 title: Lifecycle management tutorial
 description: Understand the workflow of using Git integration with deployment pipelines to manage the lifecycle of your apps.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
+ms.search.form: Variable library tutorial
 ms.topic: tutorial
 ms.service: fabric
 ms.subservice: cicd
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 07/10/2024
 #customer intent: As a developer, I want to understand how to use Git integration with deployment pipelines to manage the lifecycle of my apps.
 ---
@@ -21,7 +22,7 @@ In this tutorial, you go through the whole process of loading data into your wor
 
 ## Prerequisites
 
-[!INCLUDE [github-prereqs](../includes/github-prereqs.md)]
+[!INCLUDE [github-prereqs](./includes/github-prereqs.md)]
 
 * Download the [FoodSales.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/cicd/FoodSales.pbix) file into a Git repo that you can edit. We use this sample file in this tutorial. Alternatively, you can use your own semantic model and report, if you prefer.
 

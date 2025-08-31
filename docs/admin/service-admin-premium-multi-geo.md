@@ -1,12 +1,12 @@
 ---
 title: Multi-Geo support for Fabric
 description: Learn how you can deploy content to data centers in regions other than the home region of the Fabric tenant.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 ms.custom:
 ms.topic: how-to
-ms.date: 02/02/2025
+ms.date: 07/31/2025
 LocalizationGroup: Premium
 ---
 
@@ -52,7 +52,9 @@ Follow these steps to change the default capacity region when you're creating a 
 
 # [Trial](#tab/trial)
 
-Trial capacities are created in your home region and don't support Multi-Geo.
+Trial capacities are available in multiple geos. Your home region is used as the default region.
+
+For information about selecting a region for your trial capacity, refer to step 4 in [Start a new trial capacity from the Account manager](../fundamentals/fabric-trial.md#method-1-start-a-new-trial-capacity-from-the-account-manager).
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
@@ -125,7 +127,7 @@ Large-storage format semantic models shouldn't be moved from the region where th
   
 * Detailed semantic model metadata lives in the home tenant.
 
-* The [dataflows](/power-bi/transform-model/dataflows/dataflows-introduction-self-service) feature isn't supported on Multi-Geo.
+* To use [dataflows gen1](/power-bi/transform-model/dataflows/dataflows-introduction-self-service) on Multi-Geo you must configure dataflow storage to use [Azure Data Lake Storage (ADLS) Gen2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration).
 
 * It's possible to create and maintain large-storage format semantic models in remote regions to meet data residency requirements. However, you can't move storage format semantic models to another region. Moving large-storage format semantic models from the region where they were created results in reports failing to load the semantic model. Move the large-storage semantic model back to its original region to make it available. If you must move such a model, deploy it as if it was a new model, and then delete the old model from the undesired region.
 

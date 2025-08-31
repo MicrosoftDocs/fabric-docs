@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 03/27/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure MySQL in a copy activity
 
-This article outlines how to use the copy activity in Data pipeline to copy data from MySQL.
+This article outlines how to use the copy activity in a pipeline to copy data from MySQL.
 
 This connector supports MySQL version 5.5, 5.6, 5.7, 8.0, 8.1 and 8.2.
 

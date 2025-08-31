@@ -5,31 +5,32 @@ ms.reviewer: sngun
 ms.author: qixwang
 author: qixwang
 ms.topic: overview
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 03/31/2025
 ms.search.form: VSCodeExtension
 ---
 
 # Create and manage Microsoft Fabric notebooks inside Visual Studio Code for the web
 
-Visual Studio Code for the web offers a free, browser-based experience with no installation required. It enables quick and secure browsing of code repositories and lightweight edits. To get started, visit the [VS Code Dev site](https://vscode.dev).
+Visual Studio (VS) Code for the web offers a free, browser-based experience with no installation required. It enables quick and secure browsing of code repositories and lightweight edits. To get started, visit the [VS Code Dev site](https://vscode.dev).
 
-The Fabric Data Engineering VS Code extension can also be used in the VS Code for the Web experience. The extension supports the CRUD (create, read, update, and delete) notebook experience in Fabric. The changes from the VS Code for the Web experience are applied to the workspace immediately. The extension also supports running notebooks in the VS Code for the web experience.
+The Fabric Data Engineering VS Code extension can also be used in the VS Code for the Web experience. The extension supports the create, read, update, and delete (CRUD) notebook experience in Fabric. The changes from the VS Code for the Web experience are applied to the workspace immediately. The extension also supports running notebooks in the VS Code for the web experience.
 
 > [!IMPORTANT]
-> The Synapse VS Code Remote extension is currently in preview.
+> The Fabric Data Engineering VS Code extension is currently in preview.
 
 ## Install the Fabric Data Engineering VS Code extension for the Web
 
 1. Go to https://insider.vscode.dev from your browser.
 1. Select the **Extensions** icon in the left navigation bar.
 1. Search for **Fabric Data Engineering** and select the **Fabric Data Engineering VS Code - Remotes** extension
-1. click **Install**.
+1. Select **Install**.
+
    :::image type="content" source="media\vscode\install-vs-code-web.png" alt-text="Screenshot that shows installation of Fabric Data Engineering VS Code extension web.":::
 
 ## Open a notebook with the Fabric Data Engineering VS Code extension for the Web
 
-You can open a notebook in the VS Code for the Web experience by clicking the **Open in VS Code(Web)** button on the notebook authoring page in the Fabric portal. After you select the button, a separate browser tab is opened with the VS Code for the web experience. If you haven't already installed the extension, it is automatically installed, and activated, and the notebook is opened.
+You can open a notebook in the VS Code for the Web experience by selecting the **Open in VS Code (Web)** button on the notebook authoring page in the Fabric portal. After you select the button, a separate browser tab is opened with the VS Code for the web experience. If you haven't already installed the extension, it is automatically installed, and activated, and the notebook is opened.
 
 :::image type="content" source="media\vscode\open-notebook-in-vs-code-web.png" alt-text="Screenshot showing how to open notebook in VS Code for the Web." lightbox="media\vscode\open-notebook-in-vs-code-web.png":::
 

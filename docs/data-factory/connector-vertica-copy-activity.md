@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 09/06/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Vertica in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from Vertica.
+This article outlines how to use the copy activity in a pipeline to copy data from Vertica.
 
 ## Prerequisites
 

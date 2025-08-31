@@ -1,8 +1,8 @@
 ---
 title: Train models with scikit-learn in Microsoft Fabric
 description: Learn how to train models with scikit-learn, a popular open-source machine learning framework frequently used for supervised and unsupervised learning.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: negust
 reviewer: nelgson
 ms.topic: how-to

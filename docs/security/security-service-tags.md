@@ -1,8 +1,8 @@
 ---
 title: Service tags
 description: Learn how to use service tags in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
 ms.date: 02/25/2024
@@ -21,7 +21,7 @@ In Microsoft Fabric, you can use the service tags listed in the table below. The
 | DataFactory | Azure Data Factory | Both | No | Yes |
 | DataFactoryManagement| On premises data pipeline activity | Outbound | No | Yes |
 | EventHub | Azure Event Hubs | Outbound | Yes | Yes |
-| Power BI | Power BI and Microsoft Fabric | Both | No | Yes |
+| Power BI | Power BI and Microsoft Fabric | Both | Yes | Yes |
 | PowerQueryOnline | Power Query Online | Both | No | Yes |
 | KustoAnalytics | Real-Time Analytics | Both | No | No |
 | SQL | Warehouse | Outbound | Yes | Yes |
@@ -35,4 +35,4 @@ You can use the service tags to define network access controls on [network secur
 
 * [Private endpoints](/power-bi/enterprise/service-security-private-links)
 
-* [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519)<br/>You can refer to the `PowerBI` tag. Microsoft Fabric currently doesn't support regional service tags nor breakdown IP ranges by region.
+* [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519)<br/>You can refer to the `PowerBI` tag. 

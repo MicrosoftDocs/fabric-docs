@@ -4,9 +4,11 @@ description: This article provides information about how to do create a REST con
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 07/01/2025
 ms.custom:
-  - template-how-to
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # How to create REST connection
@@ -20,17 +22,18 @@ This REST connector supports the following authentication types for copy and Dat
 |Authentication type |Copy |Dataflow Gen2 (Web API) |
 |:---|:---|:---|
 |Anonymous| √| √|
-|Basic| | √|
-|Organizational account| | √|
+|Basic| √| √|
+|Organizational account| √| √|
+|Service principal| √| |
 |Windows| | √|
 
 ## Set up your connection in Dataflow Gen2
 
 The Microsoft 365 connector isn't currently supported in Dataflow Gen2. To connect to REST data in Dataflow Gen2, use the [Web API](/power-query/connectors/web/web) connector.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-To create a connection in a data pipeline:
+To create a connection in a pipeline:
 
 1. From the page header in Data Factory service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
@@ -82,7 +85,7 @@ Select **Create**. Your creation is successfully tested and saved if all the cre
 
 ## Table summary
 
-The following table contains connector properties that are supported in pipeline copy.
+The following table contains connector properties that are supported in a pipeline copy.
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|

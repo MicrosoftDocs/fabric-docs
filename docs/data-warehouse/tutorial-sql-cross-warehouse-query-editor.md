@@ -1,15 +1,14 @@
 ---
-title: "Data warehouse tutorial: Create a cross-warehouse query in a Warehouse"
+title: "Data Warehouse Tutorial: Create a Cross-Warehouse Query in a Warehouse"
 description: "In this tutorial, learn how to work with the SQL query editor to write cross-warehouse query."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 12/29/2024
+ms.date: 04/06/2025
 ms.topic: tutorial
-ms.custom:
 ---
 
-# Tutorial: Create a cross-warehouse query in Warehouse
+# Tutorial: Create a cross-warehouse query in a warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -33,7 +32,7 @@ In this task, learn how to work with the SQL query editor to write cross-warehou
 
 1. In the **Explorer** pane, select **+ Warehouses**.
 
-    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses.png" alt-text="Screenshot of the Explorer pane, highlighting the + Warehouse button." border="false":::
+    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses.png" alt-text="Screenshot of the Explorer pane, highlighting the + Warehouse button.":::
 
 1. In the **OneLake catalog** window, select the `Shortcut_Exercise` SQL analytics endpoint.
 
@@ -50,7 +49,7 @@ In this task, learn how to run the cross-warehouse query. Specifically, you will
 
 1. On the **Home** ribbon, select **New SQL query**.
 
-   :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option." border="false":::
+   :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option." lightbox="media/tutorial-sql-cross-warehouse-query-editor/ribbon-new-sql-query.png":::
 
 1. In the query editor, paste the following code. The code retrieves an aggregate of quantity sold by stock item, description, and customer.
 
@@ -73,7 +72,7 @@ In this task, learn how to run the cross-warehouse query. Specifically, you will
 
 1. Run the query, and review the query result.
 
-    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/query-result.png" alt-text="Screenshot of the query result of the cross-warehouse query." border="false":::
+    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/query-result.png" alt-text="Screenshot of the query result of the cross-warehouse query.":::
 
 1. When execution completes, rename the query as `Cross-warehouse Query`.
 

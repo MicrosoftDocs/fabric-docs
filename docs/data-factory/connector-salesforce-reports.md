@@ -1,12 +1,13 @@
 ---
 title: Set up your Salesforce reports connection
 description: This article provides information about how to create a Salesforce reports connection in Microsoft Fabric.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Set up your Salesforce reports connection
@@ -32,6 +33,6 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Salesforce reports in data pipelines.
+Data Factory in Microsoft Fabric doesn't currently support Salesforce reports in pipelines.

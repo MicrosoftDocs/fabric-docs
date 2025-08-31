@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
-ms.custom:
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 12/18/2024
 ms.search.form: Pipeline Copy Assistant
 ---
@@ -33,7 +33,7 @@ Follow these steps to set up your copy activity.
 
 ### Step 1: Start with copy assistant
 
-1. Open an existing data pipeline or create a new data pipeline.
+1. Open an existing pipeline or create a new pipeline.
 
 1. Select **Copy data assistant** on the canvas to open the wizard and get started. Or select **Use copy assistant** from the **Copy data** drop down list under **Activities** tab on the ribbon.
 
@@ -77,7 +77,7 @@ Follow these steps to set up your copy activity.
 
    :::image type="content" source="media/tutorial-move-data-lakehouse-copy-assistant/review-create.png" alt-text="Screenshot showing where to select ok on the Review and create screen.":::
 
-### Step 4: Save your data pipeline and run it to load data
+### Step 4: Save your pipeline and run it to load data
 
 1. Select **Run** from the **Home** toolbar and then select **Save and run** when prompted.
 

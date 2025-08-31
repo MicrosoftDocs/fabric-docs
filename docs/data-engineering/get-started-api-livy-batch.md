@@ -6,17 +6,17 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: how-to
 ms.search.form: Get started with batch jobs with the Livy API for Data Engineering
-ms.date: 11/19/2024
+ms.date: 03/14/2025
+ms.custom: sfi-image-nochange
 ---
 
 # Use the Livy API to submit and execute Livy batch jobs
 
-> [!NOTE]
-> The Livy API for Fabric Data Engineering is in preview.
-
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Submit Spark batch jobs using the Livy API for Fabric Data Engineering.
+Learn how to submit Spark batch jobs using the Livy API for Fabric Data Engineering. The Livy API currently doesn't support Azure Service Principal (SPN).
+
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -50,38 +50,38 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code
 
-   ```python
-   import sys
-   import os
+    ```python
+    import sys
+    import os
 
-   from pyspark.sql import SparkSession
-   from pyspark.conf import SparkConf
-   from pyspark.sql.functions import col
+    from pyspark.sql import SparkSession
+    from pyspark.conf import SparkConf
+    from pyspark.sql.functions import col
 
-   if __name__ == "__main__":
+    if __name__ == "__main__":
 
-        #Spark session builder
-        spark_session = (SparkSession
-          .builder
-          .appName("livybatchdemo") 
-          .getOrCreate())
-    
-        spark_context = spark_session.sparkContext
-        spark_context.setLogLevel("DEBUG")  
-    
-        targetLakehouse = spark_context.getConf().get("spark.targetLakehouse")
+    #Spark session builder
+    spark_session = (SparkSession
+        .builder
+        .appName("livybatchdemo") 
+        .getOrCreate())
 
-        if targetLakehouse is not None:
-          print("targetLakehouse: " + str(targetLakehouse))
-        else:
-          print("targetLakehouse is None")
+    spark_context = spark_session.sparkContext
+    spark_context.setLogLevel("DEBUG")  
+ 
+    targetLakehouse = spark_context.getConf().get("spark.targetLakehouse")
 
-   df_valid_totalPrice = spark_session.sql("SELECT * FROM <YourLakeHouseDataTableName>.transactions where TotalPrice > 0")
-   df_valid_totalPrice_plus_year = df_valid_totalPrice.withColumn("transaction_year", col("TransactionDate").substr(1, 4))
-     
-   deltaTablePath = "abfss:<YourABFSSpath>"+str(targetLakehouse)+".Lakehouse/Tables/CleanedTransactions"
-   df_valid_totalPrice_plus_year.write.mode('overwrite').format('delta').save(deltaTablePath)
-   ```
+    if targetLakehouse is not None:
+        print("targetLakehouse: " + str(targetLakehouse))
+    else:
+        print("targetLakehouse is None")
+
+    df_valid_totalPrice = spark_session.sql("SELECT * FROM <YourLakeHouseDataTableName>.transactions where TotalPrice > 0")
+    df_valid_totalPrice_plus_year = df_valid_totalPrice.withColumn("transaction_year", col("TransactionDate").substr(1, 4))
+
+    deltaTablePath = "abfss:<YourABFSSpath>"+str(targetLakehouse)+".Lakehouse/Tables/CleanedTransactions"
+    df_valid_totalPrice_plus_year.write.mode('overwrite').format('delta').save(deltaTablePath)
+    ```
 
 1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse and needs to be uploaded to your Lakehouse.  You'll need the ABFS path of the payload to reference in your Livy API batch job in Visual Studio Code and your Lakehouse table name in the Select SQL statement..
 
@@ -101,43 +101,41 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
-   ```python
+    ```python
+    from msal import PublicClientApplication
+    import requests
+    import time
 
-   from msal import PublicClientApplication
-   import requests
-   import time
+    tenant_id = "<Entra_TenantID>"
+    client_id = "<Entra_ClientID>"
 
-   tenant_id = "<Entra_TenantID>"
-   client_id = "<Entra_ClientID>"
+    workspace_id = "<Fabric_WorkspaceID>"
+    lakehouse_id = "<Fabric_LakehouseID>"
 
-   workspace_id = "<Fabric_WorkspaceID>"
-   lakehouse_id = "<Fabric_LakehouseID>"
+    app = PublicClientApplication(
+        client_id,
+        authority="https://login.microsoftonline.com/43a26159-4e8e-442a-9f9c-cb7a13481d48"
+    )
 
-   app = PublicClientApplication(
-      client_id,
-      authority="https://login.microsoftonline.com/43a26159-4e8e-442a-9f9c-cb7a13481d48"
-   )
-
-   result = None
+    result = None
 
     # If no cached tokens or user interaction needed, acquire tokens interactively
     if not result:
-        result = app.acquire_token_interactive(scopes=["https://api.fabric.microsoft.com/Lakehouse.Execute.All", "https://api.fabric.microsoft.com/Lakehouse.Read.All", "https://api.fabric.microsoft.com/Item.ReadWrite.All", 
-                                                   "https://api.fabric.microsoft.com/Workspace.ReadWrite.All", "https://api.fabric.microsoft.com/Code.AccessStorage.All", "https://api.fabric.microsoft.com/Code.AccessAzureKeyvault.All", 
-                                                   "https://api.fabric.microsoft.com/Code.AccessAzureDataExplorer.All", "https://api.fabric.microsoft.com/Code.AccessAzureDataLake.All", "https://api.fabric.microsoft.com/Code.AccessFabric.All"])
+        result = app.acquire_token_interactive(scopes=["https://api.fabric.microsoft.com/Lakehouse.Execute.All", "https://api.fabric.microsoft.com/Lakehouse.Read.All", "https://api.fabric.microsoft.com/Item.ReadWrite.All", "https://api.fabric.microsoft.com/Workspace.ReadWrite.All", "https://api.fabric.microsoft.com/Code.AccessStorage.All", "https://api.fabric.microsoft.com/Code.AccessAzureKeyvault.All", 
+        "https://api.fabric.microsoft.com/Code.AccessAzureDataExplorer.All", "https://api.fabric.microsoft.com/Code.AccessAzureDataLake.All", "https://api.fabric.microsoft.com/Code.AccessFabric.All"])
 
-   # Print the access token (you can use it to call APIs)
-   if "access_token" in result:
-      print(f"Access token: {result['access_token']}")
-   else:
-      print("Authentication failed or no access token obtained.")
+    # Print the access token (you can use it to call APIs)
+    if "access_token" in result:
+        print(f"Access token: {result['access_token']}")
+    else:
+        print("Authentication failed or no access token obtained.")
 
-   if "access_token" in result:
-      access_token = result['access_token']
-      api_base_url_mist='https://api.fabric.microsoft.com/v1'
-      livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"
-      headers = {"Authorization": "Bearer " + access_token}
-   ```
+    if "access_token" in result:
+        access_token = result['access_token']
+        api_base_url ='https://api.fabric.microsoft.com/v1'
+        livy_base_url = api_base_url + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"
+            headers = {"Authorization": "Bearer " + access_token}
+    ```
 
 1. Run the notebook cell, a popup should appear in your browser allowing you to choose the identity to sign-in with.
 
@@ -157,18 +155,18 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Add another notebook cell and insert this code.
 
-   ```python
-   # call get batch API
+    ```python
+    # call get batch API
 
-   get_livy_get_batch = livy_base_url
-   get_batch_response = requests.get(get_livy_get_batch, headers=headers)
-   if get_batch_response.status_code == 200:
-      print("API call successful")
-      print(get_batch_response.json())
-   else:
-      print(f"API call failed with status code: {get_batch_response.status_code}")
-      print(get_batch_response.text)
-   ```
+    get_livy_get_batch = livy_base_url
+    get_batch_response = requests.get(get_livy_get_batch, headers = headers)
+    if get_batch_response.status_code == 200:
+        print("API call successful")
+        print(get_batch_response.json())
+    else:
+        print(f"API call failed with status code: {get_batch_response.status_code}")
+        print(get_batch_response.text)
+    ```
 
 1. Run the notebook cell, you should see two lines printed as the Livy batch job is created.
 
@@ -178,39 +176,55 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Add another notebook cell and insert this code.
 
-   ```python
-   # submit payload to existing batch session
+    ```python
+    # submit payload to existing batch session
 
-   print('Submit a spark job via the livy batch API to ') 
+    print('Submit a spark job via the livy batch API to ') 
 
-   newlakehouseName = "YourNewLakehouseName"
-   create_lakehouse = api_base_url_mist + "/workspaces/" + workspace_id + "/items"
-   create_lakehouse_payload = {
-      "displayName": newlakehouseName,
-      "type": 'Lakehouse'
-   }
+    newlakehouseName = "YourNewLakehouseName"
+    create_lakehouse = api_base_url + "/workspaces/" + workspace_id + "/items"
+    create_lakehouse_payload = {
+        "displayName": newlakehouseName,
+        "type": 'Lakehouse'
+        }
 
-   create_lakehouse_response = requests.post(create_lakehouse, headers=headers, json=create_lakehouse_payload)
-   print(create_lakehouse_response.json())
+    create_lakehouse_response = requests.post(create_lakehouse, headers = headers, json = create_lakehouse_payload)
+    print(create_lakehouse_response.json())
 
-   payload_data = {
-      "name":"livybatchdemo_with"+ newlakehouseName,
-      "file":"abfss://YourABFSPathToYourPayload.py", 
-      "conf": {
-        "spark.targetLakehouse": "Fabric_LakehouseID"
-      }
-   }
-   get_batch_response = requests.post(get_livy_get_batch, headers=headers, json=payload_data)
+    payload_data = {
+        "name":"livybatchdemo_with"+ newlakehouseName,
+        "file":"abfss://YourABFSPathToYourPayload.py", 
+        "conf": {
+            "spark.targetLakehouse": "Fabric_LakehouseID"
+            }
+        }
 
-   print("The Livy batch job submitted successful")
-   print(get_batch_response.json())
-   ```
+    get_batch_response = requests.post(get_livy_get_batch, headers = headers, json = payload_data)
+
+    print("The Livy batch job submitted successful")
+    print(get_batch_response.json())
+    ```
 
 1. Run the notebook cell, you should see several lines printed as the Livy Batch job is created and run.
 
     :::image type="content" source="media\livy-api\Livy-batch-job-submission.png" alt-text="Screenshot showing results in Visual Studio Code after Livy Batch Job has been successfully submitted." lightbox="media\livy-api\Livy-batch-job-submission.png" :::
 
 1. Navigate back to your Lakehouse to see the changes.
+
+## Integration with Fabric Environments
+
+By default, this Livy API session runs against the default starter pool for the workspace.  Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  To use your Fabric Environment, simply update the prior notebook cell with this one line line change.
+
+```python
+payload_data = {
+    "name":"livybatchdemo_with"+ newlakehouseName,
+    "file":"abfss://YourABFSPathToYourPayload.py", 
+    "conf": {
+        "spark.targetLakehouse": "Fabric_LakehouseID",
+        "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
+        }
+    }
+```
 
 ## View your jobs in the Monitoring hub
 

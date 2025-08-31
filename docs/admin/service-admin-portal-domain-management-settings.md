@@ -1,8 +1,8 @@
 ---
 title: Domain management tenant settings
 description: Learn how to configure domain management tenant settings in Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 ms.custom:
   - tenant-setting

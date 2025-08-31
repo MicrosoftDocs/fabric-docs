@@ -3,8 +3,8 @@ title: "Features comparison: Azure SQL Database and SQL database (preview)"
 description: This article compares the database engine features of Azure SQL Database and SQL database in Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: nzagorac, antho, sukkaur, drskwier
-ms.date: 03/18/2025
+ms.reviewer: nzagorac, antho, sukkaur, drskwier, jovanpop
+ms.date: 07/21/2025
 ms.topic: conceptual
 ms.search.form: SQL database Overview
 ---
@@ -14,7 +14,7 @@ ms.search.form: SQL database Overview
 
 Azure SQL Database and SQL database in Microsoft Fabric share a common code base with the latest stable version of the Microsoft SQL Database Engine. Most of the standard SQL language, query processing, and database management features are identical.
 
-- For a decision guide comparing Azure SQL Database to SQL database in Fabric, see [Microsoft Fabric decision guide: choose a SQL database](decision-guide.md).
+- For a decision guide comparing [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresql-db&preserve-view=true) to [SQL database in Fabric](overview.md), see [Microsoft Fabric decision guide: choose a SQL database](decision-guide.md).
 - For a decision guide comparing SQL database to other data stores in Microsoft Fabric, see [Microsoft Fabric decision guide: choose a data store](../../fundamentals/decision-guide-data-store.md).
 
 Many features are common between SQL Server and Azure SQL Database and SQL database in Fabric, for example:
@@ -47,7 +47,7 @@ The following table lists the major features of SQL Server and provides informat
 | [Credentials](/sql/relational-databases/security/authentication-access/credentials-database-engine) | Yes, but only [database scoped credentials](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?view=azuresqldb-current&preserve-view=true). | Yes, but only [database scoped credentials](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?view=fabric&preserve-view=true).|
 | [Cross-database/three-part name queries](/sql/relational-databases/linked-servers/linked-servers-database-engine) | No, see [Elastic queries](/azure/azure-sql/database/elastic-query-overview) | Yes, you can do cross-database three-part name queries via the SQL analytics endpoint.  |
 | [Data classification and labeling](/azure/azure-sql/database/data-discovery-and-classification-overview) | Yes, via [Database discovery and classification](/azure/azure-sql/database/data-discovery-and-classification-overview) | Yes, with [database labeling with Microsoft Purview Information Protection sensitivity labels](protect-databases-with-protection-policies.md) |
-| [Database mirroring to Fabric OneLake](../mirrored-database/overview.md) | Yes, manually enabled | Yes, automatically enabled for all eligible tables |
+| [Database mirroring to Fabric OneLake](../../mirroring/overview.md) | Yes, manually enabled | Yes, automatically enabled for all eligible tables |
 | [Database-level roles](/sql/relational-databases/security/authentication-access/database-level-roles) | Yes | Yes. In addition to Transact-SQL support, Fabric supports managing [database-level roles in Fabric portal](configure-sql-access-controls.md#manage-sql-database-level-roles-from-fabric-portal).|
 | [DBCC statements](/sql/t-sql/database-console-commands/dbcc-transact-sql) | Most, see individual statements | Most, see individual statements |
 | [DDL statements](/sql/t-sql/statements/statements) | Most, see individual statements | Most, see individual statements. See [Limitations in Fabric SQL database](limitations.md). |
@@ -66,6 +66,7 @@ The following table lists the major features of SQL Server and provides informat
 | [Full-text search (FTS)](/sql/relational-databases/search/full-text-search) |  Yes, but third-party filters and word breakers aren't supported | No |
 | [Functions](/sql/t-sql/functions/functions) | Most, see individual functions |  Most, see individual functions |
 | [In-memory optimization](/sql/relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization) | Yes in [Premium and Business Critical service tiers](/azure/azure-sql/database/in-memory-oltp-overview?view=azuresql-db&preserve-view=true).</br> Limited support for non-persistent In-Memory OLTP objects such as memory-optimized table variables in [Hyperscale service tier](/azure/azure-sql/database/service-tier-hyperscale). | No |
+| [Intelligent query processing](/sql/relational-databases/performance/intelligent-query-processing?view=azuresqldb-current&preserve-view=true) | Yes | Yes |
 | [Language elements](/sql/t-sql/language-elements/language-elements-transact-sql) | Most, see individual elements | Most, see individual elements  |
 | [Ledger](/sql/relational-databases/security/ledger/ledger-overview) | Yes | No |
 | [Linked servers](/sql/relational-databases/linked-servers/linked-servers-database-engine) | Yes, only as a target | Yes, only as a target |
@@ -74,7 +75,7 @@ The following table lists the major features of SQL Server and provides informat
 | [Modifying system data](/sql/relational-databases/databases/system-databases) | No | No |
 | [OPENDATASOURCE](/sql/t-sql/functions/opendatasource-transact-sql)| No | No |
 | [OPENQUERY](/sql/t-sql/functions/openquery-transact-sql)| No | No |
-| [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql)|Yes, only to import from Azure Blob storage | No |
+| [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql)|Yes, only to import from Azure Blob storage | Yes, with [OPENROWSET BULK function](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric&preserve-view=true) (preview) |
 | [Operators](/sql/t-sql/language-elements/operators-transact-sql) | Most, see individual operators | Most, see individual operators |
 | [Optimized locking](/sql/relational-databases/performance/optimized-locking) | Yes | Yes |
 | [Recovery models](/sql/relational-databases/backup-restore/recovery-models-sql-server) | Full Recovery only | Full Recovery only |
@@ -178,5 +179,6 @@ Azure SQL Database and SQL database in Fabric support various data tools that ca
 
 ## Related content
 
-- [What is Azure SQL Database?](/azure/azure-sql/database/sql-database-paas-overview?view=azuresql-db&preserve-view=true)
-- [What is SQL database in Fabric?](overview.md)
+- [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#sql-database-in-microsoft-fabric)
+- [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)

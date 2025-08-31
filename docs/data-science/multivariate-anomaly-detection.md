@@ -2,44 +2,55 @@
 title: Analyze time series
 description: Use SynapseML and Azure AI services for multivariate anomaly detection.
 ms.topic: overview
-ms.custom:
-ms.author: ssalgado
-author: ssalgadodev
+ms.custom: sfi-ropc-nochange
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
-ms.date: 01/24/2024
+ms.date: 07/21/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
+
 # Recipe: Azure AI services - Multivariate Anomaly Detection
 
-This recipe shows how you can use SynapseML and Azure AI services on Apache Spark for multivariate anomaly detection. Multivariate anomaly detection allows for the detection of anomalies among many variables or time series, taking into account all the inter-correlations and dependencies between the different variables. In this scenario, we use SynapseML to train a model for multivariate anomaly detection using the Azure AI services, and we then use to the model to infer multivariate anomalies within a dataset containing synthetic measurements from three IoT sensors.
+This recipe shows how to use SynapseML and Azure AI services, on Apache Spark, for multivariate anomaly detection. Multivariate anomaly detection involves detection of anomalies among many variables or time series, while accounting for all the inter-correlations and dependencies between the different variables. This scenario uses SynapseML and the Azure AI services to train a model for multivariate anomaly detection. We then use the model to infer multivariate anomalies within a dataset that contains synthetic measurements from three IoT sensors.
 
 > [!IMPORTANT]
-> Starting on the 20th of September, 2023 you won't be able to create new Anomaly Detector resources. The Anomaly Detector service is being retired on the 1st of October, 2026.
+> Starting September, 20, 2023, you can't create new Anomaly Detector resources. The Anomaly Detector service will be retired on October 1, 2026.
 
-To learn more about the Azure AI Anomaly Detector, refer to [this documentation page](/azure/ai-services/anomaly-detector/).
+For more information about the Azure AI Anomaly Detector, visit the [Anomaly Detector](/azure/ai-services/anomaly-detector/) information resource.
 
 ## Prerequisites
+
 * An Azure subscription - [Create one for free](https://azure.microsoft.com/free/)
 * Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
 ## Setup
 
-Follow the instructions to create an `Anomaly Detector` resource using the Azure portal or alternatively, you can also use the Azure CLI to create this resource.
+Starting with an existing `Anomaly Detector` resource, you can explore ways to handle data of various forms. The catalog of services within Azure AI provides several options:
 
-After you set up an `Anomaly Detector`, you can explore methods of handling data of various forms. The catalog of services within Azure AI provides several options: [Vision](https://azure.microsoft.com/products/ai-services/ai-vision/), [Speech](https://azure.microsoft.com/products/ai-services/ai-speech/), [Language](https://azure.microsoft.com/products/ai-services/text-analytics/), [Web search](https://www.microsoft.com/bing/apis/bing-image-search-api), [Decision](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector), [Translation](https://azure.microsoft.com/products/ai-services/ai-translator), and [Document Intelligence](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/).
+- [Decision](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector)
+- [Document Intelligence](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/)
+- [Language](https://azure.microsoft.com/products/ai-services/text-analytics/)
+- [Speech](https://azure.microsoft.com/products/ai-services/ai-speech/)
+- [Translation](https://azure.microsoft.com/products/ai-services/ai-translator)
+- [Vision](https://azure.microsoft.com/products/ai-services/ai-vision/)
+- [Web search](https://www.microsoft.com/bing/apis/bing-image-search-api)
 
 ### Create an Anomaly Detector resource
 
 - In the Azure portal, select **Create** in your resource group, and then type **Anomaly Detector**. Select the Anomaly Detector resource.
-- Give the resource a name, and ideally use the same region as the rest of your resource group. Use the default options for the rest, and then select **Review + Create** and then **Create**.
-- Once the Anomaly Detector resource is created, open it and select the `Keys and Endpoints` panel in the left nav. Copy the key for the Anomaly Detector resource into the `ANOMALY_API_KEY` environment variable, or store it in the `anomalyKey` variable.
+- Name the resource, and ideally use the same region as the rest of your resource group. Use the default options for the rest, and then select **Review + Create** and then **Create**.
+- After you create the Anomaly Detector resource, open it, and select the `Keys and Endpoints` panel in the left nav. Copy the key for the Anomaly Detector resource into the `ANOMALY_API_KEY` environment variable, or store it in the `anomalyKey` variable.
 
 ### Create a Storage Account resource
-In order to save intermediate data, you need to create an Azure Blob Storage Account. Within that storage account, create a container for storing the intermediate data. Make note of the container name, and copy the connection string to that container. You need it later to populate the `containerName` variable and the `BLOB_CONNECTION_STRING` environment variable.
+
+To save intermediate data, you must create an Azure Blob Storage Account. Within that storage account, create a container for storing the intermediate data. Make note of the container name, and copy the connection string to that container. You need it to later populate the `containerName` variable and the `BLOB_CONNECTION_STRING` environment variable.
 
 ### Enter your service keys
-Let's start by setting up the environment variables for our service keys. The next cell sets the `ANOMALY_API_KEY` and the `BLOB_CONNECTION_STRING` environment variables based on the values stored in our Azure Key Vault. If you're running this tutorial in your own environment, make sure you set these environment variables before you proceed.
+
+First, set up the environment variables for our service keys. The next cell sets the `ANOMALY_API_KEY` and the `BLOB_CONNECTION_STRING` environment variables, based on the values stored in our Azure Key Vault. If you run this tutorial in your own environment, be sure to set these environment variables before you proceed:
 
 ```python
 import os
@@ -50,7 +61,7 @@ from synapse.ml.core.platform import find_secret
 spark = SparkSession.builder.getOrCreate()
 ```
 
-Now, lets read the `ANOMALY_API_KEY` and `BLOB_CONNECTION_STRING` environment variables and set the `containerName` and `location` variables.
+Read the `ANOMALY_API_KEY` and `BLOB_CONNECTION_STRING` environment variables, and set the `containerName` and `location` variables:
 
 ```python
 # An Anomaly Dectector subscription key
@@ -67,7 +78,7 @@ intermediateSaveDir = (
 location = "westus2"
 ```
 
-First we connect to our storage account so that anomaly detector can save intermediate results there:
+Connect to our storage account, so that the anomaly detector can save intermediate results in that storage account:
 
 ```python
 spark.sparkContext._jsc.hadoopConfiguration().set(
@@ -75,7 +86,7 @@ spark.sparkContext._jsc.hadoopConfiguration().set(
 )
 ```
 
-Let's import all the necessary modules.
+Import all the necessary modules:
 
 ```python
 import numpy as np
@@ -91,7 +102,7 @@ import synapse.ml
 from synapse.ml.cognitive import *
 ```
 
-Now, let's read our sample data into a Spark DataFrame.
+Read the sample data into a Spark DataFrame:
 
 ```python
 df = (
@@ -110,7 +121,7 @@ df = (
 df.show(5)
 ```
 
-We can now create an `estimator` object, which is used to train our model. We specify the start and end times for the training data. We also specify the input columns to use, and the name of the column that contains the timestamps. Finally, we specify the number of data points to use in the anomaly detection sliding window, and we set the connection string to the Azure Blob Storage Account.
+We can now create an `estimator` object, which we use to train our model. We specify the start and end times for the training data. We also specify the input columns to use, and the name of the column that contains the timestamps. Finally, we specify the number of data points to use in the anomaly detection sliding window, and we set the connection string to the Azure Blob Storage Account:
 
 ```python
 trainingStartTime = "2020-06-01T12:00:00Z"
@@ -131,13 +142,13 @@ estimator = (
 )
 ```
 
-Now that we created the `estimator`, let's fit it to the data:
+Let's fit the `estimator` to the data:
 
 ```python
 model = estimator.fit(df)
-```parameter
+```
 
-Once the training is done, we can now use the model for inference. The code in the next cell specifies the start and end times for the data we would like to detect the anomalies in.
+Once the training is done, we can use the model for inference. The code in the next cell specifies the start and end times for the data in which we'd like to detect the anomalies:
 
 ```python
 inferenceStartTime = "2020-07-02T18:00:00Z"
@@ -156,11 +167,11 @@ result = (
 result.show(5)
 ```
 
-When we called `.show(5)` in the previous cell, it showed us the first five rows in the dataframe. The results were all `null` because they weren't inside the inference window.
+In the previous cell, `.show(5)` showed us the first five dataframe rows. The results were all `null` because they landed outside the inference window.
 
-To show the results only for the inferred data, lets select the columns we need. We can then order the rows in the dataframe by ascending order, and filter the result to only show the rows that are in the range of the inference window. In our case `inferenceEndTime` is the same as the last row in the dataframe, so can ignore that.
+To show the results only for the inferred data, select the needed columns. We can then order the rows in the dataframe by ascending order, and filter the result to show only the rows in the inference window range. Here, `inferenceEndTime` matches the last row in the dataframe, so can ignore it.
 
-Finally, to be able to better plot the results, lets convert the Spark dataframe to a Pandas dataframe.
+Finally, to better plot the results, convert the Spark dataframe to a Pandas dataframe:
 
 ```python
 rdf = (
@@ -179,7 +190,7 @@ rdf = (
 rdf
 ```
 
-Format the `contributors` column that stores the contribution score from each sensor to the detected anomalies. The next cell formats this data, and splits the contribution score of each sensor into its own column.
+Format the `contributors` column that stores the contribution score from each sensor to the detected anomalies. The next cell handles this, and splits the contribution score of each sensor into its own column:
 
 ```python
 def parse(x):
@@ -195,9 +206,9 @@ rdf = pd.concat(
 rdf
 ```
 
-Great! We now have the contribution scores of sensors 1, 2, and 3 in the `series_0`, `series_1`, and `series_2` columns respectively.
+We now have the contribution scores of sensors 1, 2, and 3 in the `series_0`, `series_1`, and `series_2` columns respectively.
 
-Run the next cell to plot the results. The `minSeverity` parameter specifies the minimum severity of the anomalies to be plotted.
+To plot the results, run the next cell. The `minSeverity` parameter specifies the minimum severity of the anomalies to plot:
 
 ```python
 minSeverity = 0.1
@@ -303,6 +314,7 @@ The plots show the raw data from the sensors (inside the inference window) in or
 The second plot shows the severity score of all the detected anomalies, with the `minSeverity` threshold shown in the dotted red line.
 
 Finally, the last plot shows the contribution of the data from each sensor to the detected anomalies. It helps us diagnose and understand the most likely cause of each anomaly.
+
 ## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)

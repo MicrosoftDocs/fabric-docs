@@ -19,6 +19,10 @@ Column-level security (CLS) is a feature of OneLake security (preview) that allo
 ## Prerequisites
 
 * A Lakehouse in OneLake with OneLake data access roles turned on. For more information, see [Get started with OneLake data access roles](get-started-data-access-roles.md).
+* A Lakehouse with [schemas enabled](../../data-engineering/lakehouse-schemas.md).
+* Switch the SQL Analytics Endpoint on the lakehouse to "User's identity" mode through the **Security** tab.
+* For creating semantic models, use the steps to create a [DirectLake model](../../fundamentals/direct-lake-power-bi-desktop.md).
+* For a full list of limitations, see the [known limitations section.](./data-access-control-model.md#onelake-security-limitations)
 
 ## Enforce column-level security
 
@@ -36,7 +40,7 @@ For filtered tables, the following behaviors apply:
   * CLS rules that are applied to non-Delta table objects instead block access to the entire table for members of the role. 
 * If a user runs a `select *` query for a table where they only have access to some of the columns, CLS rules behave differently depending on the Fabric engine.
   * Spark notebooks: The query succeeds and only shows the allowed columns.
-  * SQL Analytics Endpoint: Column access is blocked for the columns the user can't access.
+  * SQL analytics Endpoint: Column access is blocked for the columns the user can't access.
   * Semantic models: Column access is blocked for the columns the user can't access. 
 
 ## Define column-level security rules
@@ -66,6 +70,27 @@ Use the following steps to define column-level security:
 
 1. If you want to readd a column, select **New rule**. This action adds a new CLS rule entry to the end of the list. Then, use the dropdown to choose the column you want to include in the access. 
 
-1. Once you complete your changes, select **Save**. 
+1. Once you complete your changes, select **Save**.
+
+### Enable OneLake security for SQL analytics endpoint
+
+Before you can use OneLake security with SQL analytics endpoint, you must enable its **User's identity mode**. Newly created SQL analytics endpoints in a preview enabled workspace will default to user's identity mode, so these steps must be followed for existing SQL analytics endpoints.
+
+> [!NOTE]
+> Switching to **User's identity** mode only needs to be done once per SQL analytics endpoint. Endpoints that are not switched to user's identity mode will continue to use a delegated identity to evaluate permissions.
+
+1. Navigate to SQL analytics endpoint.
+
+1. In the SQL analytics endpoint experience, select the **Security** tab in the top ribbon.
+
+1. Select **User's identity** under **OneLake access mode**.
+
+   :::image type="content" source="./media/column-level-security/sqlaep-enable-userid.png" alt-text="Screenshot that shows selecting 'user identity' to enable OneLake security for SQL analytics endpoint.":::
+
+1. In the prompt, select **Yes, use the user's identity**. 
+
+   :::image type="content" source="./media/column-level-security/sqlaep-prompt.png" alt-text="Screenshot that shows user prompt which must be accepted to enable OneLake security for table read access.":::
+
+Now the SQL analytics endpoint is ready to use with OneLake security.
 
 [!INCLUDE [onelake-rls-cls](../../includes/onelake-rls-cls.md)]

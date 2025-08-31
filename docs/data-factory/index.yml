@@ -1,5 +1,4 @@
 ### YamlMime:Landing
-
 title: Data Factory documentation in Microsoft Fabric
 summary: Data factory in Microsoft Fabric provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios. It's intended to make your data factory experience easy to use, powerful, and truly enterprise-grade. # < 160 chars
 
@@ -8,114 +7,114 @@ metadata:
   description: Summary of the Data Factory in Microsoft Fabric documentation # Required; article description that is displayed in search results. < 160 chars.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-factory
-  ms.custom:
+  ms.custom: configuration
   ms.topic: landing-page # Required
-  author: DougKlopfenstein #Required; your GitHub user alias, with correct capitalization.
-  ms.author: dougklo #Required; microsoft alias of author; optional team alias.
-  ms.date: 9/17/2024 #Required; mm/dd/yyyy format.
+  author: whhender #Required; your GitHub user alias, with correct capitalization.
+  ms.author: whhender #Required; microsoft alias of author; optional team alias.
+  ms.date: 6/02/2025 #Required; mm/dd/yyyy format.
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About Data Factory
+  - title: What is Data Factory?
     linkLists:
       - linkListType: overview
         links:
           - text: What is Data Factory?
             url: data-factory-overview.md
-          - text: Connector overview
-            url: connector-overview.md
+          - text: Data Factory demo
+            url: https://aka.ms/DataFactoryLab
           - text: What's new in Data Factory?
             url: whats-new.md
-
-  # Card 
-  - title: Using Data Factory
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: Create your first dataflow
-            url: create-first-dataflow-gen2.md
-          - text: Create your first data pipeline
-            url: create-first-pipeline-with-sample-data.md
-          - text: Move and transform data
-            url: transform-data.md
-          - text: Migrate to Data Factory
-            url: upgrade-paths.md
+          - text: What can I connect to?
+            url: connector-overview.md
           - text: Pricing in Data Factory
             url: pricing-overview.md
-      - linkListType: tutorial
-        links:
-          - text: Create an end-to-end data integration scenario
-            url: tutorial-end-to-end-introduction.md
+          - text: Migrate to Data Factory in Fabric
+            url: upgrade-paths.md
+          - text: Compare Azure Data Factory to Data Factory in Fabric
+            url: compare-fabric-data-factory-and-azure-data-factory.md
       - linkListType: learn
         links:
           - text: Data Factory training
             url: /training/browse/?terms=data%20factory%20fabric
-  
-  # Card 
-  - title: Working with data pipelines
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Data pipeline runs
-            url: pipeline-runs.md
-          - text: Copy data - copy activity
-            url: copy-data-activity.md
-          - text: Monitor data pipeline runs
-            url: monitor-pipeline-runs.md
-          - text: Activity Overview
-            url: activity-overview.md
-          - text: Move data with copy assistant
-            url: tutorial-move-data-lakehouse-copy-assistant.md
-          - text: Migrate from Dataflow Gen1 to Dataflow Gen2
-            url: dataflow-gen2-migrate-from-dataflow-gen1.md
-
   # Card
-  - title: Data gateway
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-        - text: What is an on-premises data gateway?
-          url: /data-integration/gateway/service-gateway-onprem?toc=/fabric/data-factory/toc.json
-        - text: On-premises data gateway FAQ
-          url: /data-integration/gateway/service-gateway-onprem-faq?toc=/fabric/data-factory/toc.json 
-        - text: What is a virtual network data gateway?
-          url: /data-integration/vnet/overview?toc=/fabric/data-factory/toc.json 
-        - text: Virtual network data gateway FAQ
-          url: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json 
-          
-  # Card 
-  - title: Working with dataflows
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Data source management
-            url: data-source-management.md
-          - text: Monitor your dataflows
-            url: dataflows-gen2-monitor.md
-          - text: Save a draft of your dataflow
-            url: dataflows-gen2-save-draft.md
-
-  # Card
-  - title: FAQs
-    linkLists:
-      - linkListType: get-started
-        links:
-        - text: Frequently asked questions
-          url: frequently-asked-questions.yml
-
-  # Card
-  - title: Connectors
+  - title: Connect to your data
     linkLists:
       - linkListType: get-started
         links:
         - text: Dataflow Gen2 connectors
           url: dataflow-support.md
-        - text: Data pipeline connectors
+        - text: Pipeline connectors
           url: pipeline-support.md
+
+  # Card
+  - title: Connect on-premises from the cloud
+    linkLists:
       - linkListType: how-to-guide
         links:
-        - text: Connector certification
-          url: connector-certification.md
+        - text: How to access on-premises data
+          url: how-to-access-on-premises-data.md
+        - text: What is an on-premises data gateway?
+          url: /data-integration/gateway/service-gateway-onprem?toc=/fabric/data-factory/toc.json
+        - text: What is a virtual network data gateway?
+          url: /data-integration/vnet/overview?toc=/fabric/data-factory/toc.json 
+          
+  # Card 
+  - title: Transform data
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Create your first dataflow
+            url: create-first-dataflow-gen2.md
+          - text: Connect your source to your dataflow
+            url: data-source-management.md
+          - text: Save a draft of your dataflow
+            url: dataflows-gen2-save-draft.md
+
+  # Card 
+  - title: Move data
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Create your first pipeline
+            url: create-first-pipeline-with-sample-data.md
+          - text: Move and transform data
+            url: transform-data.md
+      - linkListType: how-to-guide
+        links:
+          - text: Pipeline runs
+            url: pipeline-runs.md
+          - text: Copy activity in pipelines
+            url: copy-data-activity.md
+          - text: Copy job
+            url: copy-job.md
+      - linkListType: tutorial
+        links:
+          - text: Create an end-to-end data integration scenario
+            url: tutorial-end-to-end-introduction.md
+          - text: Move data with copy assistant
+            url: tutorial-move-data-lakehouse-copy-assistant.md
+
+  # Card 
+  - title: Manage your pipelines
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Schedule pipelines
+            url: pipeline-runs.md#scheduled-pipeline-runs
+          - text: Orchestrate with Apache Airflow
+            url: apache-airflow-jobs-concepts.md
+      - linkListType: how-to-guide
+        links:
+          - text: Start a pipeline from a storage event
+            url: pipeline-storage-event-triggers.md
+          - text: Monitor your pipelines
+            url: monitor-pipeline-runs.md
+      - linkListType: tutorial
+        links:
+          - text: Run Fabric pipelines with Apache Airflow
+            url: apache-airflow-jobs-run-fabric-item-job.md
+     

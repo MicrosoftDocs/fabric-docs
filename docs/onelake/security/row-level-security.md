@@ -19,6 +19,10 @@ Row-level security (RLS) is a feature of OneLake security (preview) that allows 
 ## Prerequisites
 
 * A Lakehouse in OneLake with OneLake data access roles turned on. For more information, see [Get started with OneLake data access roles](get-started-data-access-roles.md).
+* A Lakehouse with [schemas enabled](../../data-engineering/lakehouse-schemas.md).
+* Switch the SQL Analytics Endpoint on the lakehouse to "User's identity" mode through the **Security** tab.
+* For creating semantic models, use the steps to create a [DirectLake model](../../fundamentals/direct-lake-power-bi-desktop.md).
+* For a full list of limitations, see the [known limitations section.](./data-access-control-model.md#onelake-security-limitations)
 
 ## Enforce row-level security
 
@@ -55,6 +59,27 @@ Use the following steps to define RLS rules:
 1. Type the SQL statement for defining which rows you want users to see in the code editor. Use the [Syntax rules](#syntax-rules) section for guidance. 
 
 1. Select **Save** to confirm the row security rules.
+
+### Enable OneLake security for SQL analytics endpoint
+
+Before you can use OneLake security with SQL analytics endpoint, you must enable its **User's identity mode**. Newly created SQL analytics endpoints in a preview enabled workspace will default to user's identity mode, so these steps must be followed for existing SQL analytics endpoints.
+
+> [!NOTE]
+> Switching to **User's identity** mode only needs to be done once per SQL analytics endpoint. Endpoints that are not switched to user's identity mode will continue to use a delegated identity to evaluate permissions.
+
+1. Navigate to SQL analytics endpoint.
+
+1. In the SQL analytics endpoint experience, select the **Security** tab in the top ribbon.
+
+1. Select **User's identity** under **OneLake access mode**.
+
+   :::image type="content" source="./media/row-level-security/sqlaep-enable-userid.png" alt-text="Screenshot that shows selecting 'user identity' to enable OneLake security for SQL analytics endpoint.":::
+
+1. In the prompt, select **Yes, use the user's identity**. 
+
+   :::image type="content" source="./media/row-level-security/sqlaep-prompt.png" alt-text="Screenshot that shows user prompt which must be accepted to enable OneLake security for table read access.":::
+
+Now the SQL analytics endpoint is ready to use with OneLake security.
 
 ## Syntax rules
 
@@ -94,5 +119,6 @@ Row-level security rules support the following list of operators and keywords:
 | FALSE | The Boolean expression for false. |
 | BLANK | The blank data type, which can be used with the IS operator. For example, `row IS BLANK`.|
 | NULL | The null data type, which can be used with the IS operator. For example, `row IS NULL`.|
+
 
 [!INCLUDE [onelake-rls-cls](../../includes/onelake-rls-cls.md)]

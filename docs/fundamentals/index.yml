@@ -29,6 +29,8 @@ landingContent:
             url: fabric-terminology.md
           - text: What's New
             url: whats-new.md
+          - text: Migration to Microsoft Fabric
+            url: migration.md
       - linkListType: get-started
         links:
           - text: Start a Fabric trial 
@@ -98,7 +100,7 @@ landingContent:
           - text: Use the integrated Help pane
             url: fabric-help-pane.md
           - text: Check for known issues
-            url: ../get-started/fabric-known-issues.md
+            url: https://support.fabric.microsoft.com/known-issues/
           - text: Contact Support
             url: /power-bi/support/service-support-options
    

@@ -1,12 +1,13 @@
 ---
 title: Set up your Web connection
 description: This article provides information about how to create a Web connection in Microsoft Fabric.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
 ms.date: 12/18/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Set up your Web connection
@@ -38,6 +39,6 @@ The following Power Query Web connector articles supply more useful information 
 - [Get webpage data by providing examples](/power-query/connectors/web/web-by-example)
 - [Troubleshooting the Web connector](/power-query/connectors/web/web-troubleshoot)
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support the Web API or Web page connector in data pipelines.
+Data Factory in Microsoft Fabric doesn't currently support the Web API or Web page connector in pipelines.

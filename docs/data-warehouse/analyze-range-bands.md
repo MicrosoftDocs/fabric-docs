@@ -1,11 +1,12 @@
 ---
-title: "Analyze Microsoft Fabric Warehouse data with range bands"
+title: "Analyze Microsoft Fabric Warehouse Data with Range Bands"
 description: "Learn how to analyze Microsoft Fabric Warehouse data with range bands."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 02/19/2025
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom: fabric-cat
+ms.custom:
+  - fabric-cat
 ---
 
 # Analyze Microsoft Fabric Warehouse data with range bands
@@ -16,7 +17,7 @@ This article describes a query technique to summarize [fact table](dimensional-m
 
 - $0.00 to $999.99
 - $1,000.00 to $4,999.99
-- and others…
+- and others...
 
 > [!TIP]
 > If you're inexperienced with dimensional modeling, consider reading the series of articles on [dimensional modeling](dimensional-modeling-overview.md) as your first step to populating a data warehouse with fact and dimension tables.

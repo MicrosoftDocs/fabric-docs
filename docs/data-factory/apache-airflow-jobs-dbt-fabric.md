@@ -5,8 +5,7 @@ ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
 ms.topic: how-to
-ms.custom:
-# ms.custom:
+ms.custom: airflows
 ms.date: 05/24/2024
 ---
 
@@ -17,7 +16,7 @@ ms.date: 05/24/2024
 
 [dbt(Data Build Tool)](https://www.getdbt.com/product/what-is-dbt) is an open-source command-line interface (CLI) that simplifies data transformation and modeling within data warehouses by managing complex SQL code in a structured, maintainable way. It enables data teams to create reliable, testable transformations at the core of their analytical pipelines.
 
-When paired with Apache Airflow, dbt's transformation capabilities are enhanced by Airflow's scheduling, orchestration, and task management features. This combined approach, using dbt's transformation expertise alongside Airflow's workflow management, delivers efficient and robust data pipelines, ultimately leading to faster and more insightful data-driven decisions.
+When paired with Apache Airflow, dbt's transformation capabilities are enhanced by Airflow's scheduling, orchestration, and task management features. This combined approach, using dbt's transformation expertise alongside Airflow's workflow management, delivers efficient and robust pipelines, ultimately leading to faster and more insightful data-driven decisions.
 
 This tutorial illustrates how to create an Apache Airflow DAG that uses dbt to transform data stored in the Microsoft Fabric Data Warehouse.
 
@@ -25,19 +24,9 @@ This tutorial illustrates how to create an Apache Airflow DAG that uses dbt to t
 
 To get started, you must complete the following prerequisites:
 
-- Enable Apache Airflow Job in your Tenant.
-
-  > [!NOTE]
-  > Since Apache Airflow job is in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it.
-
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow Job (preview)" section.
-
-  2. Select Apply.
-     :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
-
 - [Create the Service Principal](/entra/identity-platform/howto-create-service-principal-portal). Add the service principal as the `Contributor` in the workspace where you create data warehouse.
 
-- If you don't have one, [Create a Fabric warehouse](../data-warehouse/create-warehouse.md). Ingest the sample data into the warehouse using data pipeline. For this tutorial, we use the <strong>NYC Taxi-Green</strong> sample.
+- If you don't have one, [Create a Fabric warehouse](../data-warehouse/create-warehouse.md). Ingest the sample data into the warehouse using a pipeline. For this tutorial, we use the <strong>NYC Taxi-Green</strong> sample.
 
 - [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
 
@@ -57,8 +46,8 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
 - [dbt-fabric](https://pypi.org/project/dbt-fabric/): This package is used to create dbt project, which can then be deployed to a [Fabric Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup)
 
   ```bash
-     astronomer-cosmos==1.0.3
-     dbt-fabric==1.5.0
+  astronomer-cosmos==1.10.1
+  dbt-fabric==1.9.5   
   ```
 
 ### [Create a dbt project in the Fabric managed storage provided by the Apache Airflow job.](#create-a-dbt-project-in-the-fabric-managed-storage-provided-by-the-apache-airflow-job)
@@ -165,6 +154,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
    from pathlib import Path
    from datetime import datetime
    from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
+   from airflow import DAG
 
    DEFAULT_DBT_ROOT_PATH = Path(__file__).parent.parent / "dags" / "nyc_taxi_green"
    DBT_ROOT_PATH = Path(os.getenv("DBT_ROOT_PATH", DEFAULT_DBT_ROOT_PATH))

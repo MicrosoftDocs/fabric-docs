@@ -1,6 +1,6 @@
 ---
-title: Fabric and Azure events capacity consumption
-description: Learn how to monitor capacity consumption for Fabric events.
+title: Azure and Fabric events capacity consumption
+description: Learn how to monitor capacity consumption for Azure and Fabric events.
 author: george-guirguis
 ms.author: geguirgu
 ms.topic: how-to
@@ -9,9 +9,9 @@ ms.date: 11/18/2024
 ms.search.form: Monitor Fabric events capacity consumption
 ---
 
-# Microsoft Fabric and Azure events capacity consumption
+# Azure and Fabric events capacity consumption
 
-Fabric and Azure events support event-driven scenarios like real-time alerting and triggering downstream actions. Publishers like Azure Storage or Fabric Workspaces emit events that are received by consumers like Activator or Eventstreams to enable you to monitor and react to events by triggering actions or workflows.
+Azure and Fabric events support event-driven scenarios like real-time alerting and triggering downstream actions. Publishers like Azure Storage or Fabric Workspaces emit events that are received by consumers like Activator or Eventstreams to enable you to monitor and react to events by triggering actions or workflows.
 
 > [!NOTE]
 > In this article, Fabric events refer to both events generated within Fabric and also Azure events. 
@@ -20,7 +20,7 @@ When you use a Fabric capacity, your usage charges appear in the Azure portal un
 
 
 ## Operation types
-Fabric and Azure events usage is defined by two operation types, which are described in the following table. The table provides information about Fabric and Azure events operations shown in the Fabric Capacity Metrics app and their Fabric consumption rates. For more information about the app, see [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md).
+Azure and Fabric events usage is defined by two operation types, which are described in the following table. The table provides information about Azure and Fabric events operations shown in the Fabric Capacity Metrics app and their Fabric consumption rates. For more information about the app, see [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md).
  
 
 | Operation in Capacity Metrics App | Description | Operation unit of measure | Fabric consumption rate |
@@ -32,7 +32,7 @@ Fabric and Azure events usage is defined by two operation types, which are descr
 
 ### Event operations
 
-Event operations represent operations for publish, filtering, and delivery of events. For Fabric and Azure events generated in Fabric, the publish operation charge doesn’t kick in until a consumer is established for these events. The publish operations are charged to the publisher’s capacity, while the filtering and delivery operations are charged to the consumer’s capacity.
+Event operations represent operations for publish, filtering, and delivery of events. For Azure and Fabric events generated in Fabric, the publish operation charge doesn’t kick in until a consumer is established for these events. The publish operations are charged to the publisher’s capacity, while the filtering and delivery operations are charged to the consumer’s capacity.
  
 For example, when a Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] trigger is created to take an action on a workspace item event, the source workspace’s capacity is charged for the publish operations, and the [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)]’s capacity is charged for the filtering and delivery operations. 
 
@@ -43,9 +43,9 @@ The following operations are the different types of Event Operations:
 -	Delivery operations: are charged for every delivery attempt of an event. If the destination is temporarily unavailable or if there's a transient failure, the event is retried with an exponential back-off mechanism. Each attempt to deliver the event is counted for the bill.
 
 ### Event listener 
-This meter kicks in when a consumer is created for Fabric and Azure events and is charged to the consumer’s capacity. For example when an [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] trigger is created to act on an event, this meter is charged per hour during the existence of this trigger.
+This meter kicks in when a consumer is created for Azure and Fabric events and is charged to the consumer’s capacity. For example when an [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] trigger is created to act on an event, this meter is charged per hour during the existence of this trigger.
 
-### Fabric and Azure events operations in the Microsoft Fabric Capacity Metrics app
+### Azure and Fabric events operations in the Microsoft Fabric Capacity Metrics app
 
 The Microsoft Fabric Capacity Metrics app is designed to provide monitoring capabilities for Microsoft Fabric capacities. Use the app to monitor your capacity consumption and make informed decisions on how to use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on autoscale.
 

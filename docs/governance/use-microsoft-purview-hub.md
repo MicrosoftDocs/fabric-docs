@@ -1,23 +1,23 @@
 ---
-title: The Microsoft Purview hub in Microsoft Fabric - Fabric administrators
+title: The Microsoft Purview hub in Microsoft Fabric
 description: This article describes how Fabric administrators can use the Microsoft Purview hub in Microsoft Fabric to monitor and govern their organization's data estate.
 ms.reviewer: antonfr
-ms.author: painbar
-author: paulinbar
+ms.author: mimart
+author: msmimart
 ms.topic: how-to 
 ms.custom: 
 ms.date: 12/08/2024
 ---
 
-# The Microsoft Purview hub for administrators (preview)
+# The Microsoft Purview hub (preview)
 
-Microsoft Purview hub for administrators is a centralized place in Fabric that helps Fabric administrators manage and govern their organization's Fabric data estate. It contains reports that provide insights about sensitive data, item endorsement, and domains, and also serves as a gateway to more advanced capabilities in the Microsoft Purview portal such as Data Catalog, Information Protection, Data Loss Prevention, and Audit.
+Microsoft Purview hub is a centralized place in Fabric that helps Fabric administrators manage and govern their organization's Fabric data estate. It contains reports that provide insights about sensitive data, item endorsement, and domains, and also serves as a gateway to more advanced capabilities in the Microsoft Purview portal such as Data Catalog, Information Protection, Data Loss Prevention, and Audit.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-view.png" alt-text="Screenshot of the Microsoft Purview hub admin view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-view.png":::
 
 ## Requirements
 
-Access to Purview hub for administrators requires the [Fabric administrator role](../admin/roles.md) or higher.
+Access to Purview hub requires the [Fabric administrator role](../admin/roles.md) or higher.
 
 ## Access the hub
 

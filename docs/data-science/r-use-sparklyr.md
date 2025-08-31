@@ -1,36 +1,32 @@
----
+﻿---
 title: Use sparklyr
 description: How to use sparklyr, an R interface to Apache Spark.
 ms.reviewer: None
-ms.author: sgilley
-author: sdgilley
+ms.author: lagayhar
+author: lgayhardt
 ms.topic: how-to
-ms.custom:
-ms.date: 11/15/2023
+ms.custom: 
+ms.date: 04/16/2025
 ms.search.form: R Language
+reviewer: s-polly
 ---
 
 # Use sparklyr
 
-[sparklyr](https://spark.rstudio.com/) is an R interface to Apache Spark. It provides a mechanism to interact with Spark using familiar R interfaces. You can use sparklyr through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)]  notebooks.
+The R language [sparklyr](https://spark.rstudio.com/) resource serves as an interface to Apache Spark. The sparklr resource provides a mechanism to interact with Spark with familiar R interfaces. Use sparklyr through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks.
 
-
-
-`sparklyr` is used along with other [tidyverse](https://www.tidyverse.org/) packages such as [dplyr](https://cran.rstudio.com/web/packages/dplyr/vignettes/dplyr.html). [!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of sparklyr and tidyverse with every runtime release. You can import them and start using the API.
+`sparklyr` is used with other [tidyverse](https://www.tidyverse.org/) packages - for example, [dplyr](https://cran.rstudio.com/web/packages/dplyr/vignettes/dplyr.html). [!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of both sparklyr and tidyverse with every runtime release. You can import these resources and start using the API.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
-
 [!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
-
-
 
 ## Connect sparklyr to Synapse Spark cluster
 
-Use the following connection method in `spark_connect()` to establish a `sparklyr` connection. We support a new connection method called `synapse`, which allows you to connect to an existing Spark session. It dramatically reduces the `sparklyr` session start time. Additionally, we contributed this connection method to the [open sourced sparklyr project](https://github.com/sparklyr/sparklyr/pull/3336). With `method = "synapse"`, you can use both `sparklyr` and `SparkR` in the same session and easily [share data between them](#share-data-between-sparklyr-and-sparkr). 
+The `spark_connect()` function connection method establishes a `sparklyr` connection. The function builds a new connection method named `synapse`, which connects to an existing Spark session. It dramatically reduces the `sparklyr` session start time. This connection method is available in the [open sourced sparklyr project](https://github.com/sparklyr/sparklyr/pull/3336). With `method = "synapse"`, you can use both `sparklyr` and `SparkR` in the same session, and easily [share data between them](#share-data-between-sparklyr-and-sparkr). The following notebook cell code sample uses the `spark_connect()` function:
 
-```R
+```r
 # connect sparklyr to your spark cluster
 spark_version <- sparkR.version()
 config <- spark_config()
@@ -39,9 +35,9 @@ sc <- spark_connect(master = "yarn", version = spark_version, spark_home = "/opt
 
 ## Use sparklyr to read data
 
-A new Spark session contains no data. The first step is to either load data into your Spark session's memory, or point Spark to the location of the data so it can access the data on-demand.
+A new Spark session contains no data. You must then either load data into your Spark session's memory, or point Spark to the location of the data so that the session can access the data on-demand:
 
-```R
+```r
 # load the sparklyr package
 library(sparklyr)
 
@@ -51,11 +47,11 @@ mtcars_tbl <- copy_to(sc, mtcars, "spark_mtcars", overwrite = TRUE)
 head(mtcars_tbl)
 ```
 
-Using `sparklyr`, you can also `write` and `read` data from a Lakehouse file using ABFS path. To read and write to a Lakehouse, first add it to your session. On the left side of the notebook, select **Add** to add an existing Lakehouse or create a Lakehouse.
+With `sparklyr`, you can also `write` and `read` data from a Lakehouse file using an ABFS path value. To read and write to a Lakehouse, first add the Lakehouse to your session. On the left side of the notebook, select **Add** to add an existing Lakehouse. Additionally, you can create a Lakehouse.
 
-To find your ABFS path, right click on the **Files** folder in your Lakehouse, then select **Copy ABFS path**.  Paste your path to replace `abfss://xxxx@onelake.dfs.fabric.microsoft.com/xxxx/Files` in this code:
+To find your ABFS path, right-select the **Files** folder in your Lakehouse, and select **Copy ABFS path**. Paste your path to replace `abfss://xxxx@onelake.dfs.fabric.microsoft.com/xxxx/Files` in the following code sample:
 
-```R
+```r
 temp_csv = "abfss://xxxx@onelake.dfs.fabric.microsoft.com/xxxx/Files/data/mtcars.csv"
 
 # write the table to your lakehouse using the ABFS path
@@ -68,7 +64,7 @@ head(mtcarsDF)
 
 ## Use sparklyr to manipulate data
 
-`sparklyr` provides multiple methods to process data inside Spark using:
+`sparklyr` provides different ways to process data inside Spark, with:
 
 - `dplyr` commands
 - SparkSQL
@@ -76,11 +72,9 @@ head(mtcarsDF)
 
 ### Use `dplyr`
 
-You can use familiar `dplyr` commands to prepare data inside Spark. The commands run inside Spark, so there are no unnecessary data transfers between R and Spark. 
+You can use familiar `dplyr` commands to prepare data inside Spark. The commands run inside Spark, preventing unnecessary data transfers between R and Spark.
 
-Click the [Manipulating Data with `dplyr`](https://spark.rstudio.com/guides/dplyr.html) to see extra documentation on using dplyr with Spark. 
-
-```R
+```r
 # count cars by the number of cylinders the engine contains (cyl), order the results descendingly
 library(dplyr)
 
@@ -91,18 +85,18 @@ cargroup <- group_by(mtcars_tbl, cyl) %>%
 cargroup
 ```
 
-`sparklyr` and `dplyr` translate the R commands into Spark SQL for us. To see the resulting query use `show_query()`:
+The [Manipulating Data with `dplyr`](https://spark.rstudio.com/guides/dplyr.html) resource offers more information about use of dplyr with Spark. `sparklyr` and `dplyr` translate the R commands into Spark SQL. Use `show_query()` to show the resulting query:
 
-```R
+```r
 # show the dplyr commands that are to run against the Spark connection
 dplyr::show_query(cargroup)
 ```
 
 ### Use SQL
 
-It's also possible to execute SQL queries directly against tables within a Spark cluster. The `spark_connection() `object implements a [DBI](https://dbi.r-dbi.org/) interface for Spark, so you can use `dbGetQuery()` to execute SQL and return the result as an R data frame:
+You can also execute SQL queries directly against tables within a Spark cluster. The `spark_connection() `object implements a [DBI](https://dbi.r-dbi.org/) interface for Spark, so you can use `dbGetQuery()` to execute SQL and return the result as an R data frame:
 
-```R
+```r
 library(DBI)
 dbGetQuery(sc, "select cyl, count(*) as n from spark_mtcars
 GROUP BY cyl
@@ -111,24 +105,22 @@ ORDER BY n DESC")
 
 ### Use Feature Transformers
 
-Both of the previous methods rely on SQL statements. Spark provides commands that make some data transformation more convenient, and without the use of SQL.
+Both of the previous methods rely on SQL statements. Spark provides commands that make some data transformations more convenient, without the use of SQL. For example, the `ft_binarizer()` command simplifies the creation of a new column that indicates whether or not a value in another column exceeds a certain threshold:
 
-For example, the `ft_binarizer()` command simplifies the creation of a new column that indicates if the value of another column is above a certain threshold.
-
-You can find the full list of the Spark Feature Transformers available through `sparklyr` from [Reference -FT](https://spark.rstudio.com/packages/sparklyr/latest/reference/#spark-feature-transformers).
-
-```R
+```r
 mtcars_tbl %>% 
   ft_binarizer("mpg", "over_20", threshold = 20) %>% 
   select(mpg, over_20) %>% 
   head(5)
 ```
 
+The [Reference -FT](https://spark.rstudio.com/packages/sparklyr/latest/reference/#spark-feature-transformers) resource offers a full list of the Spark Feature Transformers available through `sparklyr`.
+
 ## Share data between `sparklyr` and `SparkR`
 
-When you [connect `sparklyr` to synapse spark cluster with `method = "synapse"`](#connect-sparklyr-to-synapse-spark-cluster), you can use both `sparklyr` and `SparkR` in the same session and easily share data between them. You can create a spark table in `sparklyr` and read it from `SparkR`.
+When you [connect `sparklyr` to synapse spark cluster with `method = "synapse"`](#connect-sparklyr-to-synapse-spark-cluster), both `sparklyr` and `SparkR` become available in the same session and can easily share data between themselves. You can create a spark table in `sparklyr`, and read it from `SparkR`:
 
-```R
+```r
 # load the sparklyr package
 library(sparklyr)
 
@@ -144,17 +136,15 @@ ORDER BY n DESC")
 head(mtcars_sparklr)
 ```
 
-
-
 ## Machine learning
 
-Here's an example where we use `ml_linear_regression()` to fit a linear regression model. We use the built-in `mtcars` dataset, and see if we can predict a car's fuel consumption (`mpg`) based on its weight (`wt`), and the number of cylinders the engine contains (`cyl`). We assume in each case that the relationship between `mpg` and each of our features is linear.
+The following example uses `ml_linear_regression()` to fit a linear regression model. The model uses the built-in `mtcars` dataset to try to predict the fuel consumption (`mpg`) of a car based on the weight (`wt`) of the car and the number of cylinders (`cyl`) of the car engine. All cases here assume a linear relationship between `mpg` and each of our features.
 
 ### Generate testing and training data sets
 
-Use a split, 70% for training and 30% for testing the model. Playing with this ratio results in different models.
+Use a split - 70% for training and 30% - to test the model. Changes to this ratio lead to different models:
 
-```R
+```r
 # split the dataframe into test and training dataframes
 
 partitions <- mtcars_tbl %>%
@@ -166,39 +156,38 @@ partitions <- mtcars_tbl %>%
 
 Train the Logistic Regression model.
 
-```R
+```r
 fit <- partitions$training %>%
   ml_linear_regression(mpg ~ .)
 
 fit
 ```
 
-Now use `summary() `to learn a bit more about the quality of our model, and the statistical significance of each of our predictors.
+Use `summary() ` to learn more about the quality of our model, and the statistical significance of each of our predictors:
 
-```R
+```r
 summary(fit)
 ```
 
 ### Use the model
 
-You can apply the model on the test dataset by calling `ml_predict()`.
+Call `ml_predict()` to apply the model to the test dataset:
 
-```R
+```r
 pred <- ml_predict(fit, partitions$test)
 
 head(pred)
 ```
 
-For a list of Spark ML models available through sparklyr visit [Reference - ML](https://spark.rstudio.com/packages/sparklyr/latest/reference/#spark-machine-learning)
+Visit [Reference - ML](https://spark.rstudio.com/packages/sparklyr/latest/reference/#spark-machine-learning) for a list of Spark ML models available through sparklyr.
 
 ## Disconnect from Spark cluster
 
-You can call `spark_disconnect()` to or select the **Stop session** button on top of the notebook ribbon end your Spark session.
+Call `spark_disconnect()`, or select the **Stop session** button on top of the notebook ribbon, to end your Spark session:
 
-```R
+```r
 spark_disconnect(sc)
 ```
-
 
 ## Related content
 

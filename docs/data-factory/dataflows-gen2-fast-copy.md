@@ -1,46 +1,55 @@
 ---
-title: Fast copy in Dataflows Gen2
-description: Learn about the fast copy feature in Dataflows Gen2 in Data Factory for Microsoft Fabric.
+title: Fast copy in Dataflow Gen2
+description: Learn about the fast copy feature in Dataflow Gen2 in Data Factory for Microsoft Fabric.
 author: dearandyxu
-ms.topic: concept-article
-ms.date: 04/08/2024
+ms.topic: article
+ms.date: 07/23/2025
 ms.author: yexu
+ms.custom: dataflows, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
-# Fast copy in Dataflows Gen2
+# Fast copy in Dataflow Gen2
 
-This article describes the fast copy feature in Dataflows Gen2 for Data Factory in Microsoft Fabric. Dataflows help with ingesting and transforming data. With the introduction of dataflow scale out with SQL DW compute, you can transform your data at scale. However, your data needs to be ingested first. With the introduction of fast copy, you can ingest terabytes of data with the easy experience of dataflows, but with the scalable back-end of the pipeline Copy Activity.
+Fast copy helps you move large amounts of data faster in Dataflow Gen2. Think of it as switching to a more powerful engine when you need to handle terabytes of data.
 
-After enabling this capability, Dataflows automatically switch the back-end when data size exceeds a particular threshold, without needing to change anything during authoring of the dataflows. After the refresh of a dataflow, you can check in the refresh history to see if fast copy was used during the run by looking at the **Engine** type that appears there.
+When you're working with dataflows, you need to ingest data first, then transform it. With dataflow scale-out using SQL DW compute, you can transform data at scale. Fast copy takes care of the ingestion part by giving you the easy dataflow experience with the powerful backend of pipeline Copy Activity.
 
-With the _Require fast copy_ option enabled, the dataflow refresh is canceled if fast copy isn't used. This helps you avoid waiting for a refresh timeout to continue. This behavior can also be helpful in a debugging session to test the dataflow behavior with your data while reducing wait time. Using the fast copy indicators in the query steps pane, you can easily check if your query can run with fast copy.
+Here's how it works: After you enable fast copy, dataflows automatically switch to the faster backend when your data size passes a certain threshold. You don't need to change anything while building your dataflows. After your dataflow refreshes, you can check the refresh history to see if fast copy was used by looking at the **Engine** type listed there.
+
+If you enable the _Require fast copy_ option, the dataflow refresh stops if fast copy can't be used for some reason. This helps you avoid waiting for a timeout and can be helpful when debugging. You can use the fast copy indicators in the query steps pane to check if your query can run with fast copy.
 
 :::image type="content" source="media/dataflows-gen2-fast-copy/fast-copy-indicators.png" alt-text="Screenshot showing where the fast copy indicator appears in the query steps pane.":::
 
 ## Prerequisites
 
-- You must have a Fabric capacity.
-- For file data, files are in .csv or parquet format of at least 100 MB, and stored in an Azure Data Lake Storage (ADLS) Gen2 or a Blob storage account.
-- For database including Azure SQL DB and PostgreSQL, 5 million rows or more of data in the data source.
+Before you can use fast copy, you'll need:
+
+- A Fabric capacity
+- For file data: CSV or Parquet files that are at least 100 MB and stored in Azure Data Lake Storage (ADLS) Gen2 or blob storage
+- For databases (including Azure SQL DB and PostgreSQL): 5 million rows or more of data in the data source
 
 > [!NOTE]
-> You can bypass the threshold to force Fast Copy by selecting "Require fast copy" setting.
+> You can bypass the threshold to force fast copy by selecting the **Require fast copy** setting.
 
 ## Connector support
 
-Fast copy is currently supported for the following Dataflow Gen2 connectors:
+Fast copy works with these Dataflow Gen2 connectors:
 
 - ADLS Gen2
 - Blob storage
 - Azure SQL DB
 - Lakehouse
 - PostgreSQL
-- On premise SQL Server
+- On-premises SQL Server
 - Warehouse
 - Oracle
 - Snowflake
+- Fabric SQL database
 
-The copy activity only supports a few transformations when connecting to a file source:
+### Transformation limitations
+
+When connecting to file sources, copy activity only supports these transformations:
 
 - Combine files
 - Select columns
@@ -48,100 +57,113 @@ The copy activity only supports a few transformations when connecting to a file 
 - Rename a column
 - Remove a column
 
-You can still apply other transformations by splitting the ingestion and transformation steps into separate queries. The first query actually retrieves the data and the second query references its results so that DW compute can be used. For SQL sources, any transformation that's part of the native query is supported.
+If you need other transformations, you can split your work into separate queries. Create one query to get the data and another query that references the first one. This way, you can use DW compute for the transformations.
 
-When you directly load the query to an output destination, only Lakehouse destinations are supported currently. If you want to use another output destination, you can stage the query first and reference it later.
+For SQL sources, any transformation that's part of the native query works fine.
+
+### Output destinations
+
+Right now, fast copy only supports loading directly to a Lakehouse destination. If you want to use a different output destination, you can stage the query first and reference it in a later query with your preferred destination.
 
 ## How to use fast copy
 
-1. Navigate to the appropriate Fabric endpoint.
-1. Navigate to a premium workspace and create a dataflow Gen2.
-1. On the **Home** tab of the new dataflow, select **Options**:
+Here's how to set up and use fast copy:
 
-   :::image type="content" source="media/dataflows-gen2-fast-copy/options.png" alt-text="Screenshot showing where to select the Options for Dataflows Gen2 on the Home tab.":::
+1. In Fabric, go to a premium workspace and create a Dataflow Gen2.
 
-1. Then choose the **Scale** tab on the Options dialog and select the **Allow use of fast copy connectors** checkbox to turn on fast copy. Then close the Options dialog.
+1. On the **Home** tab of your new dataflow, select **Options**:
+
+   :::image type="content" source="media/dataflows-gen2-fast-copy/options.png" alt-text="Screenshot showing where to select the Options for Dataflow Gen2 on the Home tab." lightbox="media/dataflows-gen2-fast-copy/options.png":::
+
+1. In the **Options** dialog, select the **Scale** tab, then turn on **Allow use of fast copy connectors**. Close the **Options** dialog when you're done.
 
    :::image type="content" source="media/dataflows-gen2-fast-copy/enable-fast-copy.png" alt-text="Screenshot showing where to enable fast copy on the Scale tab of the Options dialog.":::
 
-1. Select **Get data** and then choose the ADLS Gen2 source, and fill in the details for your container.
-1. Use the **Combine file**  functionality.
+1. Select **Get data**, choose the ADLS Gen2 source, and fill in the details for your container.
+
+1. Select the **Combine** button.
 
    :::image type="content" source="media/dataflows-gen2-fast-copy/preview-folder-data.png" lightbox="media/dataflows-gen2-fast-copy/preview-folder-data.png" alt-text="Screenshot showing the Preview folder data window with the Combine option highlighted.":::
 
-1. To ensure fast copy, only apply transformations listed in the [Connector support](#connector-support) section of this article. If you need to apply more transformations, stage the data first, and reference the query later. Make other transformations on the referenced query.
-1. **(Optional)** You can set the **Require fast copy** option for the query by right-clicking on it to select and enable that option.
+1. To make sure fast copy works, only apply transformations listed in the [Connector support](#connector-support) section. If you need other transformations, stage the data first and reference the staged query in a later query. Apply your other transformations to the referenced query.
+
+1. **(Optional)** You can require fast copy for the query by right-clicking the query and selecting **Require fast copy**.
 
    :::image type="content" source="media/dataflows-gen2-fast-copy/require-fast-copy.png" alt-text="Screenshot showing where to select the Require fast copy option on the right-click menu for a query.":::
 
-1. **(Optional)** Currently, you can only configure a Lakehouse as the output destination. For any other destination, stage the query and reference it later in another query where you can output to any source.
-1. Check the fast copy indicators to see if your query can run with fast copy. If so, the **Engine** type shows **CopyActivity**.
+1. **(Optional)** Right now, you can only set up a Lakehouse as the output destination. For any other destination, stage the query and reference it later in another query where you can output to any source.
 
-   :::image type="content" source="media/dataflows-gen2-fast-copy/refresh-details.png" alt-text="Screenshot showing the refresh details indicating the pipeline CopyActivity engine was used.":::
+1. Check the fast copy indicators to make sure your query can run with fast copy. If it can, the **Engine** type shows **CopyActivity**.
+
+   :::image type="content" source="media/dataflows-gen2-fast-copy/refresh-details.png" alt-text="Screenshot showing the refresh details indicating the pipeline CopyActivity engine was used." lightbox="media/dataflows-gen2-fast-copy/refresh-details.png":::
 
 1. Publish the dataflow.
-1. Check after refresh completed to confirm fast copy was used.
 
-## How to split your query to leverage fast copy
+1. After the refresh completes, check to confirm that fast copy was used.
 
-For optimal performance when processing large volumes of data with Dataflow Gen2, use the Fast Copy feature to first ingest data into staging, then transform it at scale with SQL DW compute. This approach significantly enhances end-to-end performance.
+## How to split your query to use fast copy
 
-To implement this, Fast Copy indicators can guide you to split query into two parts: data ingestion to staging and large-scale transformation with SQL DW compute.  You're encouraged to push as much of the evaluation of a query to Fast Copy that can be used to ingest your data.  When Fast Copy indicators tell that the rest steps can't be executed by Fast Copy, you can split the rest of the query with staging enabled.
+When you're working with large amounts of data, you can get the best performance by using fast copy to ingest data into staging first, then transform it at scale with SQL DW compute.
 
-### Step diagnostics indicators 
+Fast copy indicators help you figure out how to split your query into two parts: data ingestion to staging and large-scale transformation with SQL DW compute. Try to push as much of your query evaluation to fast copy as possible for data ingestion. When the fast copy indicators show that the remaining steps can't run with fast copy, you can split the rest of the query with staging enabled.
+
+### Step diagnostics indicators
 
 |Indicator|Icon|Description|
 |---------|----|-------|
-|**This step is going to be evaluated with fast copy**|:::image type="icon" source="media/dataflows-gen2-fast-copy/green-indicator.png" alt-text="Screenshot showing green indicator.":::|The Fast Copy indicator tells you that the query up to this step supports fast copy.|
-|**This step is not supported by fast copy**|:::image type="icon" source="media/dataflows-gen2-fast-copy/red-indicator.png" alt-text="Screenshot showing red indicator.":::|The Fast Copy indicator shows that this step doesn't support Fast Copy.|
-|**One or more steps in your query are not supported by fast query**|:::image type="icon" source="media/dataflows-gen2-fast-copy/yellow-indicator.png" alt-text="Screenshot showing yellow indicator.":::|The Fast Copy indicator shows that some steps in this query support Fast Copy, while others don't. To optimize, split the query: yellow steps (potentially supported by Fast Copy) and red steps (not supported).|
+|**This step will be evaluated with fast copy**|:::image type="icon" source="media/dataflows-gen2-fast-copy/green-indicator.png":::|The fast copy indicator shows that the query up to this step supports fast copy.|
+|**This step isn't supported by fast copy**|:::image type="icon" source="media/dataflows-gen2-fast-copy/red-indicator.png":::|The fast copy indicator shows that this step doesn't support fast copy.|
+|**One or more steps in your query aren't supported by fast copy**|:::image type="icon" source="media/dataflows-gen2-fast-copy/yellow-indicator.png":::|The fast copy indicator shows that some steps in this query support fast copy, while others don't. To optimize, split the query: yellow steps (potentially supported by fast copy) and red steps (not supported).|
 
 ### Step-by-step guidance
 
-After completing your data transformation logic in Dataflow Gen2, the Fast Copy indicator evaluates each step to determine how many steps can leverage Fast Copy for better performance.
+After you complete your data transformation logic in Dataflow Gen2, the fast copy indicator evaluates each step to figure out how many steps can use fast copy for better performance.
 
-In the example below, the last step shows red, indicating that the step with **Group By** isn't supported by Fast Copy. However, all previous steps showing yellow can be potentially supported by Fast Copy.
+In this example, the last step shows a red icon, which means the **Group By** step isn't supported by fast copy. However, all the previous steps with yellow icons can potentially be supported by fast copy.
 
-   :::image type="content" source="media/dataflows-gen2-fast-copy/query-step-one.png" alt-text="Screenshot showing the first query.":::
+   :::image type="content" source="media/dataflows-gen2-fast-copy/query-step-one.png" alt-text="Screenshot showing the contents of the first query with the last step in red." lightbox="media/dataflows-gen2-fast-copy/query-step-one.png":::
 
-At this moment, if you directly publish and run your Dataflow Gen2, it will not use the Fast Copy engine to load your data as the picture below:
+If you publish and run your Dataflow Gen2 at this point, it won't use the fast copy engine to load your data.
 
-   :::image type="content" source="media/dataflows-gen2-fast-copy/none-fast-copy-result.png" alt-text="Screenshot showing result without fast copy enabled.":::
+   :::image type="content" source="media/dataflows-gen2-fast-copy/none-fast-copy-result.png" alt-text="Screenshot showing the result of the query without fast copy enabled." lightbox="media/dataflows-gen2-fast-copy/none-fast-copy-result.png":::
 
-To use the Fast Copy engine and improve the performance of your Dataflow Gen2, you can split your query into two parts: data ingestion to staging and large-scale transformation with SQL DW compute, as following:
+To use the fast copy engine and improve your Dataflow Gen2 performance, you can split your query into two parts: data ingestion to staging and large-scale transformation with SQL DW compute. Here's how:
 
-1. Remove the transformations (showing red) that aren't supported by Fast Copy, along with the destination (if defined).
+1. Delete any transformations showing red icons (which means they aren't supported by fast copy) along with the destination (if you defined one).
 
-2. The Fast Copy indicator now shows green for the remaining steps, meaning your first query can leverage Fast Copy for better performance.
+   :::image type="content" source="media/dataflows-gen2-fast-copy/query-step-two.png" alt-text="Screenshot showing the first query, where you deleted any steps that don't support fast copy." lightbox="media/dataflows-gen2-fast-copy/query-step-two.png":::
 
-   Select Action for your first query, then choose Enable Staging and Reference.
+1. The fast copy indicator now shows green for the remaining steps, which means your first query can use fast copy for better performance.
 
-      :::image type="content" source="media/dataflows-gen2-fast-copy/query-step-two.png" alt-text="Screenshot showing the second query.":::
+   Right-click on your first query, select **Enable staging**, then right-click on your first query again and select **Reference**.
 
-3.	In a new referenced query, readd the "Group By" transformation and the destination (if applicable).
+   :::image type="content" source="media/dataflows-gen2-fast-copy/query-step-three.png" alt-text="Screenshot showing the selections required to reference your fast copy query with a second query.":::
 
-      :::image type="content" source="media/dataflows-gen2-fast-copy/query-step-three.png" alt-text="Screenshot showing the third query.":::
+1. In your new referenced query, add back the "Group By" transformation and the destination (if applicable).
 
-4.	Publish and refresh your Dataflow Gen2. You'll now see two queries in your Dataflow Gen2, and the overall duration is largely reduced. 
-    - The first query ingests data into staging using Fast Copy.
-    - The second query performs large-scale transformations using SQL DW compute.
+1. Publish and refresh your Dataflow Gen2. You now have two queries in your Dataflow Gen2, and the overall duration is shorter.
 
-      :::image type="content" source="media/dataflows-gen2-fast-copy/fast-copy-result-overall.png" alt-text="Screenshot showing the result of query.":::
+   - The first query ingests data into staging using fast copy.
+   - The second query does large-scale transformations using SQL DW compute.
 
-    The first query:
-      
-      :::image type="content" source="media/dataflows-gen2-fast-copy/fast-copy-result-ingestion.png" alt-text="Screenshot showing the result of ingestion.":::
+      :::image type="content" source="media/dataflows-gen2-fast-copy/fast-copy-result-overall.png" alt-text="Screenshot of the details of the run state showing the results of the query." lightbox="media/dataflows-gen2-fast-copy/fast-copy-result-overall.png":::
 
-    The second query:
-     
-      :::image type="content" source="media/dataflows-gen2-fast-copy/fast-copy-result-transform.png" alt-text="Screenshot showing the result of transform.":::
+    The first query details:
 
-   
+      :::image type="content" source="media/dataflows-gen2-fast-copy/fast-copy-result-ingestion.png" alt-text="Screenshot showing the results of the data ingestion." lightbox="media/dataflows-gen2-fast-copy/fast-copy-result-ingestion.png":::
+
+    The second query details:
+
+      :::image type="content" source="media/dataflows-gen2-fast-copy/fast-copy-result-transform.png" alt-text="Screenshot showing the results of the transform steps." lightbox="media/dataflows-gen2-fast-copy/fast-copy-result-transform.png":::
+
 ## Known limitations
-1. An on-premises data gateway version 3000.214.2 or newer is needed to support Fast Copy.
-2. Fixed schema isn't supported.
+
+Here are the current limitations for fast copy:
+
+- You need an on-premises data gateway version 3000.214.2 or newer to support fast copy.
+- Fixed schema isn't supported.
 
 ## Related content
 
-- [Dataflows Gen2 Overview](dataflows-gen2-overview.md)
-- [Monitor Dataflows Gen2](dataflows-gen2-monitor.md)
+- [Dataflow Gen2 Overview](dataflows-gen2-overview.md)
+- [Monitor Dataflow Gen2](dataflows-gen2-monitor.md)

@@ -5,7 +5,7 @@ ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
 ms.topic: tutorial
-ms.custom:
+ms.custom: airflows
 ms.date: 04/15/2024
 ---
 
@@ -16,22 +16,7 @@ ms.date: 04/15/2024
 
 In this tutorial, you'll run a hello-world DAG in Apache Airflow Job. This tutorial focuses on familiarizing users with the features and environment of the Apache Airflow Job.
 
-## Prerequisites
-
-To get started, you must complete the following prerequisite:
-
-- Enable Apache Airflow Job in your Tenant.
-
-  > [!NOTE]
-  > Since Apache Airflow job is in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it.
-
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Job (preview)' section.
-
-  2. Click Apply.
-
-     :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png":::
-
-### Create an Apache Airflow Job
+## Create an Apache Airflow Job
 
 1. You can use an existing workspace or [Create a new workspace](../fundamentals/create-workspaces.md).
 
@@ -43,7 +28,7 @@ To get started, you must complete the following prerequisite:
 
 3. Give a suitable name to your project and click on the "Create" button.
 
-### Create a DAG File
+## Create a DAG File
 
 1. Click on "New DAG file" card -> Give the name to the file and Click on "Create" button.
 
@@ -57,7 +42,7 @@ To get started, you must complete the following prerequisite:
 
    :::image type="content" source="media/apache-airflow-jobs/click-on-save-icon.png" lightbox="media/apache-airflow-jobs/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
-### Monitor your Apache Airflow DAG in Apache Airflow UI
+## Monitor your Apache Airflow DAG in Apache Airflow UI
 
 1. The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on the "Monitor in Apache Airflow" button.
 

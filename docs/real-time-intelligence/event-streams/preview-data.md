@@ -57,7 +57,7 @@ To preview your eventstream data:
 
 2. You see it appear in the tab if there's data within the eventstream.
 
-3. To preview data that has a different format, select the correct format from the **Data format** drop-down menu.
+3. To preview data that has a different format, select the correct format from the **Data format** dropdown menu.
 
    :::image type="content" source="./media/preview-data/preview-data-eventstream.png" alt-text="Screenshot showing the data preview for an eventstream." lightbox="./media/preview-data/preview-data-eventstream.png" :::
 

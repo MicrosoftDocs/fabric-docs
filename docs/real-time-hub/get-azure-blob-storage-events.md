@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 07/22/2025
 ---
 
 # Get Azure Blob Storage events into Real-Time hub
@@ -18,7 +18,7 @@ The following Blob Storage event types are supported:
 
 |Event name|Description|
 |-------|------------|
-|Microsoft.Storage.BlobCreated|Triggered when a blob is created or replaced.|
+|Microsoft.Storage.BlobCreated|Triggered when a blob is created or updated.|
 |Microsoft.Storage.BlobDeleted                    |Triggered when a blob is deleted.|
 |Microsoft.Storage.BlobRenamed                    |Triggered when a blob is renamed.|
 |Microsoft.Storage.BlobTierChanged                |Triggered when the blob access tier is changed.|
@@ -77,8 +77,8 @@ You can create streams for Azure Blob Storage events in Real-Time hub using one 
 
     :::image type="content" source="./media/get-azure-blob-storage-events/review-create-success.png" alt-text="Screenshot that shows the Review + connect page with links to open the eventstream." lightbox="./media/get-azure-blob-storage-events/review-create-success.png":::
 
-## View data stream details
-Select **My data streams** on the left navigation menu, and confirm that you see the stream you created. Refresh the page if you don't see it. 
+## View stream from the Real-Time hub page
+Select **Real-Time hub** on the left navigation menu, and confirm that you see the stream you created. Refresh the page if you don't see it. 
 
 :::image type="content" source="./media/get-azure-blob-storage-events/verify-data-stream.png" alt-text="Screenshot that shows the All data streams page with the generated stream." lightbox="./media/get-azure-blob-storage-events/verify-data-stream.png":::
 

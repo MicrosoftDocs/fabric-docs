@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Common Data Service (Legacy) connector overview
@@ -17,6 +18,6 @@ The Common Data Service (Legacy) connector is supported in Data Factory for [!IN
 
 To learn about how to connect to Common Data Service (Legacy) in Dataflow Gen2, go to [Set up your Common Data Service (Legacy) connection](connector-common-data-service-legacy.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Common Data Service (Legacy) in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Common Data Service (Legacy) in pipelines.

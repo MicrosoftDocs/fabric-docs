@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure OData in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to OData.
+This article outlines how to use the copy activity in a pipeline to copy data from and to OData.
 
 ## Supported configuration
 

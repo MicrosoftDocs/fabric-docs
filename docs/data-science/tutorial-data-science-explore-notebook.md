@@ -1,13 +1,14 @@
----
+﻿---
 title: "Tutorial: Explore and visualize data with notebooks"
 description: In this second part of the tutorial series, learn how to read data from a delta table, explore, and cleanse the data.
-ms.reviewer: None
-ms.author: sgilley
-author: sdgilley
+ms.reviewer: amjafari
+ms.author: lagayhar
+author: lgayhardt
 ms.topic: tutorial
-ms.custom:
-ms.date: 10/16/2023
+ms.custom: 
+ms.date: 06/30/2025
 #  CustomerIntent: As a data scientist, I want to explore and visualize my data in a notebook.
+reviewer: sdgilley
 ---
 
 # Tutorial Part 2: Explore and visualize data using Microsoft Fabric notebooks
@@ -165,6 +166,7 @@ Show the distribution of exited versus nonexited customers across the categorica
 
 ```python
 attr_list = ['Geography', 'Gender', 'HasCrCard', 'IsActiveMember', 'NumOfProducts', 'Tenure']
+df_clean['Exited'] = df_clean['Exited'].astype(str)
 fig, axarr = plt.subplots(2, 3, figsize=(15, 4))
 for ind, item in enumerate (attr_list):
     sns.countplot(x = item, hue = 'Exited', data = df_clean, ax = axarr[ind%2][ind//2])
@@ -198,6 +200,7 @@ plt.show()
 Perform feature engineering to generate new attributes based on current attributes:
 
 ```python
+df_clean['Tenure'] = df_clean['Tenure'].astype(int)
 df_clean["NewTenure"] = df_clean["Tenure"]/df_clean["Age"]
 df_clean["NewCreditsScore"] = pd.qcut(df_clean['CreditScore'], 6, labels = [1, 2, 3, 4, 5, 6])
 df_clean["NewAgeScore"] = pd.qcut(df_clean['Age'], 8, labels = [1, 2, 3, 4, 5, 6, 7, 8])

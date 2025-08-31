@@ -1,12 +1,11 @@
 ---
-title: Burstable capacity
+title: Burstable Capacity
 description: Learn more about how burstable capacity is used and limited with SKU guardrails in Fabric data warehousing.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: stevehow
-ms.date: 04/24/2024
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 
@@ -61,7 +60,7 @@ Larger SKU sizes have access to more total capacity units, allowing more complex
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] fully isolates ingestion from query processing, as described in [Workload management](workload-management.md#ingestion-isolation). 
 
-The burstable scale factor can be achieved independently for ingestion at the same time the burstable scale factor is achieved for query processing. These scale factors encapsulate all processes within a single workspace. However, capacity can be assigned to multiple workspaces. Therefore, the aggregate max scale factor across a capacity would be represented in the following formula: `([Query burstable scale factor] + [Ingestion burstable scale factor]) * [number of Fabric workspaces] = [aggregate burstable scale factor]`
+The burstable scale factor can be achieved independently for ingestion at the same time the burstable scale factor is achieved for query processing. These scale factors encapsulate all processes within a single workspace. However, multiple workspaces can be assigned to a capacity. Therefore, the aggregate max scale factor across a capacity would be represented in the following formula: `([Query burstable scale factor] + [Ingestion burstable scale factor]) * [number of Fabric workspaces] = [aggregate burstable scale factor]`
 
 ## Considerations
 
@@ -75,5 +74,5 @@ The burstable scale factor can be achieved independently for ingestion at the sa
 
 - [Workload management](workload-management.md)
 - [Scale your capacity](../enterprise/scale-capacity.md)
-- [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
-- [Capacity settings](../admin/capacity-settings.md)
+- [Smoothing and throttling in Fabric Data Warehouse](compute-capacity-smoothing-throttling.md)
+- [Manage your Fabric capacity](../admin/capacity-settings.md)

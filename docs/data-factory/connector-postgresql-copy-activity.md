@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 11/19/2023
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure PostgreSQL in a copy activity
 
-This article outlines how to use the copy activity in data pipelines to copy data from PostgreSQL.
+This article outlines how to use the copy activity in pipelines to copy data from PostgreSQL.
 
 
 ## Supported configuration

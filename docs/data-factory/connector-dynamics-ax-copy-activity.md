@@ -5,13 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 04/24/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Dynamics AX in a copy activity
 
-This article outlines how to use the copy activity in Data pipeline to copy data from Dynamics AX.
+This article outlines how to use the copy activity in a pipeline to copy data from Dynamics AX.
 
 ## Supported configuration
 
