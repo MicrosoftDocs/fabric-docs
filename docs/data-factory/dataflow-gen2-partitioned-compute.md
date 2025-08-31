@@ -27,6 +27,13 @@ In order to use this capability, you'll need to:
 
 ### Enable the partitioned compute setting in the *Options* dialog 
 
+Inside the Home tab of the ribbon, select the Options button to display its dialog. Navigate to the Scale section and enable the setting that reads *Allow use of partitioned compute*.
+
+![Screenshot of the partitioned compute setting inside the scale section of the options dialog](media/dataflow-gen2-partitioned-compute/partitioned-compute-setting.png)
+
+Enabling this option has two purposes:
+* Allows your Dataflow to leverage partitioned compute if discovered through your query scripts
+* Experiences like the combine files will now automatically create partition keys that can be used for partitioned computed 
 
 ### Have a query that defines a partition key
 
