@@ -22,13 +22,15 @@ Tags are an important component of Fabric's data mesh architecture. They provide
 
 1. **Tenant and domain admins [create tags](./tags-define.md).**
 
-   * **Tenant-level tags** are defined by Fabric administrators and are available for use across all items and workspaces throughout the entire tenant. These tags are suitable for broad classifications, compliance, or security labels that apply universally across your organization.
+* **Tenant-level tags** are defined by Fabric administrators and are available for use across all items and workspaces throughout the entire tenant. These tags are suitable for broad classifications, compliance, or security labels that apply universally across your organization.
 
    * **Domain-level tags** can be defined by Fabric or domain administrators and are specific to particular organizational domains within your Fabric environment. These tags are exclusively available for items residing within workspaces that are assigned to that specific domain. Domain-level tags enable domain owners to implement more granular and localized governance policies, reflecting the unique needs and structures of their respective areas. A tag created at the domain level can't be duplicated at the tenant level. However, it can be duplicated on other domains.
 
 1.  **Data owners apply tags to items.** Data owners, who best know how to categorize their own data, [apply tags to items](./tags-apply.md). An item can have up to 10 tags applied to it. When data owners apply tags, they can choose from the list of available tenant-level tags and, if the item resides in a workspace assigned to a domain, the domain-level tags associated with that domain.
 
 1.  **Users utilize tags for discoverability.** Once tags are applied to items, users in the organization can use them to [filter or search for the most relevant content](#how-tags-enhance-data-discoverability).
+
+1. **Admins utilize tags for governance.** Admins can use the [Metadata Scanning (Scanner)](/metadata-scanning-overview) APIs to programmatically fetch tag associations at scale and use them in downstream governance and discovery solutions.
 
 ## How tags enhance data discoverability
 
@@ -58,18 +60,14 @@ You can also use the global search to search by tags and see all the relevant re
 
 :::image type="content" source="./media/tags-overview/tags-global-search.png" alt-text="Screenshot showing tags used as a search term in the global search.":::
 
-## Microsoft Fabric REST Admin APIs for tags
-
-All of the actions related to creating and managing tags in the UI can be performed programmatically via APIs. For more information, see [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags).
-
 ## Considerations and limitations
 
-* A maximum of 10,000 tags can be created in a tenant.
-* An item can have a maximum of 10 tags applied to it at any one time.
-* Tag icons next to item names are currently supported only in the workspace items list.
-* After a tag is applied to an item, it might be several hours before the icon shows up next to the tag name, and before it's possible to find the item in the global search using the tag name as the search term.
-* Filtering by tag is currently available only in workspaces.
+* A maximum of 10,000 unique tags can be created in a tenant. 
 
+* An item can have a maximum of 10 tags applied to it at any one time.
+* There is no limit on the number of tagged items.
+
+* After a tag is applied to an item, it might be several hours before the icon shows up next to the tag name, and before it's possible to find the item in the global search using the tag name as the search term.
 ## Related content
 
 - [Create and manage a set of tags](tags-define.md)
