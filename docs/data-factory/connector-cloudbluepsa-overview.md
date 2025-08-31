@@ -18,6 +18,6 @@ The CloudBluePSA connector is supported in Data Factory for [!INCLUDE [product-n
 
 For information on how to connect to CloudBluePSA in Dataflow Gen2, go to [Set up your CloudBluePSA connection](connector-cloudbluepsa.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support CloudBluePSA in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support CloudBluePSA in pipelines.

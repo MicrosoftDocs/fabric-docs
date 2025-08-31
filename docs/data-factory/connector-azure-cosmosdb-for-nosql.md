@@ -82,7 +82,7 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 ## Table summary
 
-The connector properties in the following table are supported in pipeline copy:
+The connector properties in the following table are supported in a pipeline copy:
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
