@@ -890,6 +890,8 @@
             href: dataflow-gen2-modern-evaluator.md
           - name: Preview only step (Preview)
             href: dataflow-gen2-preview-only-step.md
+          - name: Partitioned compute (Preview)
+            href: dataflow-gen2-partitioned-compute.md
           - name: How to handle schema drift
             href: how-to-handle-schema-drift.md
           - name: How to obfuscate data
