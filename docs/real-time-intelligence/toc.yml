@@ -581,8 +581,6 @@ items:
       href: manage-monitor-eventhouse.md
     - name: Query cold data with hot windows
       href: query-cold-data-hot-windows.md
-    - name: Eventhouse as an endpoint
-      href: evethouse-as-endpoint
   - name: KQL Database
     items:
     - name: Create a KQL database
@@ -633,6 +631,8 @@ items:
           href: query-acceleration-overview.md
         - name: Accelerate queries over OneLake shortcuts
           href: query-acceleration.md
+      - name: Eventhouse endpoint for Lakehouse
+        href: eventhouse-as-endpoint
       - name: External tools
         items: 
         - name: Query Fabric OneLake Delta tables from Snowflake
