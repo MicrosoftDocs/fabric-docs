@@ -60,7 +60,7 @@ The following Semantic Link functions are supported for service principal trigge
 - `sempy.fabric.list_items`
 - `sempy.fabric.list_folders`
 - `sempy.fabric.list_datsets(..., mode='rest', endpoint='fabric')`
-- `sempy.fabric.list_dataflow(..., endpoint='fabric')`
+- `sempy.fabric.list_dataflows(..., endpoint='fabric')`
 - `sempy.fabric.list_reports(..., endpoint='fabric')`
 - `sempy.fabric.list_workspaces(..., endpoint='fabric')`
 - `sempy.fabric.move_folder`
@@ -86,14 +86,14 @@ The following Semantic Link functions are supported for service principal trigge
 You can authenticate a service principal for interactive notebook runs in two ways:
 
 - Use the sempy `set_service_principal` as a context manager. This is the simpler option with less code and built-in support for plain values or Key Vault references—see the [Use semantic link set service principal](#use-semantic-link-set-service-principal) section.
-- Use an [Azure SDK](/azure/developer/python/sdk/azure-sdk-overview) `TokenCredential` for more control and interoperability with other Azure libraries—see the [Use Azure SDK token credential](#use-azure-sdk-token-crendential) section.
+- Use an [Azure SDK](/azure/developer/python/sdk/azure-sdk-overview) `TokenCredential` for more control and interoperability with other Azure libraries—see the [Use Azure SDK token credential](#use-azure-sdk-token-credential) section.
 
 
 ### Prerequisites
 
 1. [Create a service principal, assign roles, and create secret using Azure](/entra/identity-platform/howto-create-service-principal-portal).
 
-2. Ensure a user with Administrator [workspace role](workspace-roles.md) can grant access for an SPN through **Manage access** in the Workspace.
+2. Ensure a user with Administrator workspace role can grant access for an SPN through **Manage access** in the Workspace.
 
       :::image type="content" source="media/semantic-link-service-principal-support/manage-access.png" alt-text="Screenshot from the Fabric portal of the manage access popup window.":::
 
@@ -159,7 +159,7 @@ with SetFabricAnalyticsDefaultTokenCredentials(credential):
     fabric.run_model_bpa(dataset, workspace=workspace)
 ```
 
-> [!NOTE]:
+> [!NOTE]
 > - Don't commit secrets to source control. Use environment variables or Key Vault references.
 >- Ensure the service principal has the required roles and workspace access.
 >- Service principal authentication still can't access "My workspace".
