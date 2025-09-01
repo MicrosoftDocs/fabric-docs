@@ -48,9 +48,6 @@ Users with view, contributor, or owner permissions on the parent data source aut
 ## Enable the eventhouse endpoint
 
 Once enabled, the item forever tracks the source Lakehouse data and optimizes it for Eventhouse-like query performance and flexibility.
-There are multiple ways to enable the Eventhouse endpoint:
-
-**From the Workspace:**
 
 1. Navigate to your Fabric workspace or OneLake catalog and find the **Lakehouse** you want to query.
 
