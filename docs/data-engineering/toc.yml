@@ -205,6 +205,8 @@ items:
            href: run-series-analyisis-overview.md
          - name: Monitor run series
            href: apache-spark-monitor-run-series.md
+         - name: Apache Spark applications comparison
+           href: spark-comparison-runs.md
       - name: Single Spark Application Monitoring
         items: 
          - name: Monitor a Single Spark Application
