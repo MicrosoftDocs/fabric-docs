@@ -22,10 +22,10 @@ Partitioned compute targets scenarios where the Dataflow engine can efficiently 
 
 In order to use this capability, you'll need to:
 
-* Enable the partitioned compute setting in the *Options* dialog 
-* Have a query that defines a partition key
+* Enable Dataflow settings
+* Query with partition keys 
 
-### Enable the partitioned compute setting in the *Options* dialog 
+### Enable Dataflow settings
 
 Inside the Home tab of the ribbon, select the Options button to display its dialog. Navigate to the Scale section and enable the setting that reads *Allow use of partitioned compute*.
 
@@ -35,7 +35,28 @@ Enabling this option has two purposes:
 * Allows your Dataflow to leverage partitioned compute if discovered through your query scripts
 * Experiences like the combine files will now automatically create partition keys that can be used for partitioned computed 
 
-### Have a query that defines a partition key
+Beyond this setting, it is also required that you enable the seting found within the privacy section to *Allow combining data from multiple sources*. 
+
+### Query with partition key
+>[!NOTE]
+>To leverage partitioned compute, make sure that your query is set to be staged.
+
+After enabling the setting, you can use the combine files experience for a data source that uses the file system view such as Azure Data Lake Storage Gen2. When the combine files experience finalizes, you'll notice that your query will now have an **Added custom** step which will have a script similar to the one below:
+
+```M code 
+let
+    rootPath = Text.TrimEnd(Value.Metadata(Value.Type(#"Filtered hidden files"))[FileSystemTable.RootPath]?, "\"),
+    combinePaths = (path1, path2) => Text.Combine({Text.TrimEnd(path1, "\"), path2}, "\"),
+    getRelativePath = (path, relativeTo) => Text.Middle(path, Text.Length(relativeTo) + 1),
+    withRelativePath = Table.AddColumn(#"Filtered hidden files", "Relative Path", each getRelativePath(combinePaths([Folder Path], [Name]), rootPath), type text),
+    withPartitionKey = Table.ReplacePartitionKey(withRelativePath, {"Relative Path"})
+in
+    withPartitionKey
+```
+This script, and specifically the ``withPartitionKey`` component, is the one that drives the logic on how your Dataflow will try to partition your data and how it will try to evalute things in parallel.
+
+You can use the [Table.PartitionKey](/powerquery-m/table-partitionkey) function against the **Added custom** step. This function returns the partition key of the specified table. For the case above, it'll be the column "RelativePath". You can get a distinct list of the values in that column to understand all the partitions that will be used during the dataflow run.
+
 
 
 
