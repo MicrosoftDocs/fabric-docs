@@ -26,7 +26,7 @@ When moving data from private networks, you might encounter challenges such as:
 
 The Virtual Network Data Gateway addresses these challenges by acting as a secure bridge between your private data sources and Microsoft Fabric. Copy Job now supports using the gateway directly, ensuring data stays private and compliant.
 
-## How it works
+## How it works 
 
 1. Deploy the Virtual Network Data Gateway inside your Azure Virtual Network.
 2. Configure Copy Job in Fabric to use the Virtual Network Data Gateway for source connections.
