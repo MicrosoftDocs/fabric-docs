@@ -118,7 +118,7 @@ A column remains resident until there's reason for it to be removed (evicted) fr
 - No query used the column for some time.
 - Other memory management reasons, including memory pressure in the capacity due to other, concurrent operations.
 
-Your choice of Fabric SKU determines the maximum available memory for each Direct Lake semantic model on the capacity. For more information about resource guardrails and maximum memory limits, see [Fabric capacity requirements](/fabric/fundamentals/direct-lake-overview#fabric-capacity-requirements) later in this article.
+Your choice of Fabric SKU determines the maximum available memory for each Direct Lake semantic model on the capacity. For more information about resource guardrails and maximum memory limits, see [Fabric capacity requirements](#fabric-capacity-requirements) later in this article.
 
 ### Framing
 
@@ -129,7 +129,7 @@ When framing occurs, resident table column segments and dictionaries might be ev
 The semantic model analyzes the Delta log of each Delta table during framing to drop only the affected column segments and to reload newly added data during transcoding. An important optimization is that dictionaries will usually not be dropped when incremental framing takes effect, and new values are added to the existing dictionaries. This incremental framing approach helps to reduce the reload burden and benefits query performance. In the ideal case, when a Delta table received no updates, no reload is necessary for columns already resident in memory and queries show far less performance impact after framing because incremental framing essentially enables the semantic model to update substantial portions of the existing in-memory data in place.
 
 > [!NOTE]
-> Framing may fail if a Delta table exceeds the Fabric capacity guardrails, such as when a Delta table has more than 10,000 parquet files. For more information about resource guardrails, see [Fabric capacity requirements](/fabric/fundamentals/direct-lake-overview#fabric-capacity-requirements) later in this article.
+> Framing may fail if a Delta table exceeds the Fabric capacity guardrails, such as when a Delta table has more than 10,000 parquet files. For more information about resource guardrails, see [Fabric capacity requirements](#fabric-capacity-requirements) later in this article.
 
 The following diagram shows how Direct Lake framing operations work.
 
