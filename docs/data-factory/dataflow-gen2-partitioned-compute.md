@@ -11,12 +11,14 @@ ms.custom: dataflows
 # Use partitioned compute in Dataflow Gen2 (Preview)
 
 >[!NOTE]
->Preview only step is currently in preview and only available in Dataflow Gen2 with CI/CD.
->Before proceeding with this article, it is recommended that you become acquainted with the 
+>Partitioned compute is currently in preview and only available in Dataflow Gen2 with CI/CD.
 
 Partitioned compute is a capability of the Dataflow Gen2 engine that allows parts of your dataflow logic to run in parallel that can in turn reduce the time that it completes its evaluations.
 
 Partitioned compute targets scenarios where the Dataflow engine can efficiently fold operations that can partition the data source and process each partition in parallel. For example, in a scenario where you're connecting to multiple files stored in an Azure Data Lake Storage Gen2, you can partition the list of files from your source, efficiently retrieve the partitioned list of files using [query folding](/power-query/query-folding-basics), use the [combine files experience](/power-query/combine-files-overview) and process all files in parallel.
+
+>[!NOTE]
+>Only connectors for Azure Data Lake Storage Gen2, Fabric Lakehouse, Folder and Azure Blob Storage emmit the correct script to use partitioned compute. The connector for SharePoint does not support it today.
 
 ## How to set partitioned compute
 
@@ -60,9 +62,12 @@ You can use the [Table.PartitionKey](/powerquery-m/table-partitionkey) function 
 >[!IMPORTANT]
 >It is important that the partition key columns remains in the query in order for partitioned compute to be applied.
 
-## Considerations and limitations
+## Considerations and recommendations
 
-* Only connectors for Azure Data Lake Storage Gen2, Fabric Lakehouse, Folder and Azure Blob Storage emmit the correct script to use partitioned compute. The connector for SharePoint does not support it today.
+* For scenarios where your data source doesn't support folding the transformations for your files, it is recommended that you choose partitioned compute over fast copy. 
+* For best performance, it is recommended to use this method to load data directly to staging as your destination or to a Fabric Warehouse. 
+* It is recommended to use the *Sample transform file* from the **Combine files** experience to introduce transformations that should happen in every file. 
+* Partitioned compute only supports a subset of transformations at the performance may vary depending on your source and set of transformations used.
 
 
 
