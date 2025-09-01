@@ -18,11 +18,11 @@ Partitioned compute is a capability of the Dataflow Gen2 engine that allows part
 Partitioned compute targets scenarios where the Dataflow engine can efficiently fold operations that can partition the data source and process each partition in parallel. For example, in a scenario where you're connecting to multiple files stored in an Azure Data Lake Storage Gen2, you can partition the list of files from your source, efficiently retrieve the partitioned list of files using [query folding](/power-query/query-folding-basics), use the [combine files experience](/power-query/combine-files-overview) and process all files in parallel.
 
 >[!NOTE]
->Only connectors for Azure Data Lake Storage Gen2, Fabric Lakehouse, Folder and Azure Blob Storage emmit the correct script to use partitioned compute. The connector for SharePoint does not support it today.
+>Only connectors for Azure Data Lake Storage Gen2, Fabric Lakehouse, Folder, and Azure Blob Storage emit the correct script to use partitioned compute. The connector for SharePoint doesn't support it today.
 
 ## How to set partitioned compute
 
-In order to use this capability, you'll need to:
+In order to use this capability, you need to:
 
 * Enable Dataflow settings
 * Query with partition keys 
@@ -34,16 +34,16 @@ Inside the Home tab of the ribbon, select the Options button to display its dial
 ![Screenshot of the partitioned compute setting inside the scale section of the options dialog](media/dataflow-gen2-partitioned-compute/partitioned-compute-setting.png)
 
 Enabling this option has two purposes:
-* Allows your Dataflow to leverage partitioned compute if discovered through your query scripts
+* Allows your Dataflow to use partitioned compute if discovered through your query scripts
 * Experiences like the combine files will now automatically create partition keys that can be used for partitioned computed 
 
-Beyond this setting, it is also required that you enable the seting found within the privacy section to *Allow combining data from multiple sources*. 
+Beyond this setting, it's also required that you enable the setting found within the privacy section to *Allow combining data from multiple sources*. 
 
 ### Query with partition key
 >[!NOTE]
->To leverage partitioned compute, make sure that your query is set to be staged.
+>To use partitioned compute, make sure that your query is set to be staged.
 
-After enabling the setting, you can use the combine files experience for a data source that uses the file system view such as Azure Data Lake Storage Gen2. When the combine files experience finalizes, you'll notice that your query will now have an **Added custom** step which will have a script similar to the one below:
+After enabling the setting, you can use the combine files experience for a data source that uses the file system view such as Azure Data Lake Storage Gen2. When the combine files experience finalizes, you notice that your query has an **Added custom** step, which has a script similar to the following one:
 
 ```M code 
 let
@@ -55,19 +55,17 @@ let
 in
     withPartitionKey
 ```
-This script, and specifically the ``withPartitionKey`` component, is the one that drives the logic on how your Dataflow will try to partition your data and how it will try to evalute things in parallel.
+This script, and specifically the ``withPartitionKey`` component, is the one that drives the logic on how your Dataflow tries to partition your data and how it tries to evaluate things in parallel.
 
-You can use the [Table.PartitionKey](/powerquery-m/table-partitionkey) function against the **Added custom** step. This function returns the partition key of the specified table. For the case above, it'll be the column "RelativePath". You can get a distinct list of the values in that column to understand all the partitions that will be used during the dataflow run.
+You can use the [Table.PartitionKey](/powerquery-m/table-partitionkey) function against the **Added custom** step. This function returns the partition key of the specified table. For the case above, it's the column *RelativePath*. You can get a distinct list of the values in that column to understand all the partitions that will be used during the dataflow run.
 
 >[!IMPORTANT]
->It is important that the partition key columns remains in the query in order for partitioned compute to be applied.
+>It's important that the partition key column remains in the query in order for partitioned compute to be applied.
 
 ## Considerations and recommendations
 
-* For scenarios where your data source doesn't support folding the transformations for your files, it is recommended that you choose partitioned compute over fast copy. 
-* For best performance, it is recommended to use this method to load data directly to staging as your destination or to a Fabric Warehouse. 
-* It is recommended to use the *Sample transform file* from the **Combine files** experience to introduce transformations that should happen in every file. 
-* Partitioned compute only supports a subset of transformations at the performance may vary depending on your source and set of transformations used.
-
-
-
+* For scenarios where your data source doesn't support folding the transformations for your files, it's recommended that you choose partitioned compute over fast copy. 
+* For best performance, use this method to load data directly to staging as your destination or to a Fabric Warehouse. 
+* Use the *Sample transform file* from the **Combine files** experience to introduce transformations that should happen in every file. 
+* Partitioned compute only supports a subset of transformations at the performance might vary depending on your source and set of transformations used.
+* Billing for the dataflow run is based on capacity unit (CU) consumption.
