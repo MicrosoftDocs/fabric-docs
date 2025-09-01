@@ -1,5 +1,5 @@
 ---
-title: Apache Spark applications comparison
+title: Apache Spark Applications Comparison
 description: This article introduces the Compare runs feature of Spark applications.
 ms.reviewer: snehagunda
 ms.author: jejiang
