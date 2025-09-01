@@ -40,7 +40,7 @@ Variable.ValueOrDefault("$(/**/My Library/My Variable)", "Sample")
 ```
 
 ```M code
-Variable.Value("$(/**//My Library/My Variable)")
+Variable.Value("$(/**/My Library/My Variable)")
 ```
 
 Applying this function to a query script, let's take the following example query that connects to a table named **Table1** from a specific LakehouseId and WorkspaceId using the [Fabric Lakehouse connector](connector-lakehouse-overview.md). 
