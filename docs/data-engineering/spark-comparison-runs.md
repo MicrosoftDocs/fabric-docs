@@ -10,53 +10,77 @@ ms.date: 06/26/2025
 ms.search.form: Apache Spark applications comparison
 ---
 
-# Apache Spark applications comparison
+# Apache Spark applications comparison (preview)
 
-This article introduces the Compare runs feature of Spark applications. By comparing the duration trend and data input or output trend for each Spark application instance, you can intuitively see how this run compares to the baseline run. 
+The Spark Applications Comparison feature allows you to analyze and compare the performance of multiple Spark application runs. By examining trends in duration, input/output data, and other metrics, you can quickly spot regressions, improvements, or anomalies relative to a baseline run.
 
-## Access the compare run feature 
+## Access the Spark applications comparison feature 
 
-You can access the compare run feature from the [Monitor Run series](apache-spark-monitor-run-series.md#access-the-monitor-run-series-feature):
+You can access the Spark applications comparison from the [Monitor run series](apache-spark-monitor-run-series.md#access-the-monitor-run-series-feature):
 
-1. Go to the Monitor Run series page.
-2. Switch to Compare runs tab.
+1. Go to the **Monitor run series** page.
+2. Switch to the **Compare runs** tab.
 
 :::image type="content" source="media\spark-comparison-runs\access-the-compare-run-feature.png" alt-text="Screenshot showing access the compare run feature." lightbox="media\spark-comparison-runs\access-the-compare-run-feature.png":::
 
-View Spark application runs list. This list shows only the Spark application runs that are in the Completed state. The Spark applications in the Queued, Launching, Submitting, and Running states are filtered. 
+## Spark application runs list
 
-By default, the run entered by the user from the Monitoring Center/Recent Runs panel is considered base run. The base run is a reference Spark application that serves as a baseline for comparing the performance and metrics of other Spark applications. Users can also clear all selections to re-label (select the flag icon button) the base run. You can select up to 4 runs to compare, this selection includes the base run. c
+- Only completed Spark applications are displayed. 
+- Applications in Queued, Launching, Submitting, or Running status are excluded. 
+- By default, the run you open from Monitoring Center or Recent Runs is set as the base run. The base run serves as the baseline for performance and metric comparisons. 
+- You can select up to four completed runs (including the base run) for comparison. 
+- Use the flag icon to reassign the base run at any time. 
 
 :::image type="content" source="media\spark-comparison-runs\view-spark-application-runs-list.png" alt-text="Screenshot showing view spark application runs list." lightbox="media\spark-comparison-runs\view-spark-application-runs-list.png":::
 
+> [!NOTE]
+> Spark applications comparison currently supports comparing runs within the same artifact (for example, within a single Notebook or Spark Job Definition). Cross-artifact comparisons are not yet supported.
 
-## View Compare Panel
+## View the compare panel
 
-In the compare panel, you can view the comparison of the performance and metrics of the base run Spark application and other Spark applications 
+Once runs are selected, the compare panel displays a side-by-side visualization of key metrics across the chosen Spark applications. 
 
-Once you have selected the runs for comparison, the Compare Panel provides a side-by-side visualization of key performance metrics. Here, you can examine variations in execution duration, input and output data volumes, and other important Spark application parameters. The panel highlights (Delta to the base run (delta %)) differences and trends, making it easier to identify regressions, improvements, or anomalies between runs. 
+Here, you can:
+
+- Compare execution duration, input/output volumes, and other metrics. 
+- Review deltas (%) relative to the base run to easily spot regressions or optimizations. 
+- Identify anomalies and surface likely causes. 
 
 :::image type="content" source="media\spark-comparison-runs\compare-panel.png" alt-text="Screenshot showing compare panel." lightbox="media\spark-comparison-runs\compare-panel.png":::
 
-For anomaly Spark applications run, potential cause is listed in the comparison list, and the activities that take the most time during the run are listed. 
+## Anomalous runs
+
+If a run is flagged as anomalous, the compare panel highlights: 
+
+- Potential causes of the anomaly, with estimated contribution percentages. 
+- Time-intensive activities consumed the most execution time. 
+
+This enables you to quickly diagnose whether regressions stem from query inefficiencies, shuffle skew, resource bottlenecks, or other factors. 
 
 :::image type="content" source="media\spark-comparison-runs\anomaly-spark-applications-run.png" alt-text="Screenshot showing anomaly spark applications run." lightbox="media\spark-comparison-runs\anomaly-spark-applications-run.png":::
 
-The following table describes the comparison metrics and their definitions: 
+## Deep dive with Spark L2 monitoring
 
-| **API Metric Name** | **Description** (All time-related metrics are measured in seconds, and all byte-related metrics are measured in bytes) |
+From the Spark applications comparison view, you can drill down into Spark L2 monitoring pages for any run to access detailed information, including job, query, and task-level insights, logs, and Notebook snapshots.
+
+## Comparison metrics
+
+The following table defines all available comparison metrics. 
+(All time metrics are in **seconds**, and all data metrics are in **bytes** unless otherwise noted.) 
+
+| **Metric** | **Description** |
 | --- | --- |
-| Shuffle Write Records| Total number of rows shuffle write. |
-| Allocated executors | Minimum to maximum number of executors allocated during the run. |
-| Anomaly | Indicates whether the current run is considered a slow run. |
-| Expected duration | Predicted duration for the current run, based on historical data. |
-| Potential Causes | Root causes contributing to the anomaly, along with their estimated contribution percentages. |
+| Shuffle Write Records| Total number of rows written during shuffle. |
+| Allocated executors | Range (min-max) of executors allocated during the run.  |
+| Anomaly | Indicates whether the run is flagged as anomalous (slow run). |
+| Expected duration | Predicted run time based on historical data. |
+| Potential Causes | Root causes for anomalies, with estimated contribution percentages. |
 | TotalDuration | Total duration of the Spark application. |
 | JobCount | Number of jobs executed. |
 | QueryCount | Number of SQL queries processed. |
 | TaskCount | Total number of tasks executed. |
-| ReadRows | Total number of rows read. |
-| WriteRows | Total number of rows written. |
+| ReadRows | Total rows read. |
+| WriteRows | Total rows written. |
 | JoinCount | Number of join operations. |
 | ScanCount | Number of scan operations. |
 | FilterCount | Number of filter operations. |
@@ -66,38 +90,41 @@ The following table describes the comparison metrics and their definitions:
 | ExchangeCount | Number of shuffle exchanges.|
 | ShuffleReadLocalBytes | Bytes read from local shuffle data. |
 | ShuffleReadRemoteBytes | Bytes read from remote shuffle data.|
-| ShuffleWriteBytes | Bytes written for shuffles. |
+| ShuffleWriteBytes | Bytes written during shuffle. |
 | ReadBytes | Total bytes read.|
 | WriteBytes | Total bytes written. |
 | MemorySpilledBytes | Bytes spilled to memory. |
 | DiskSpilledBytes | Bytes spilled to disk. |
-| GCTime | Time spent in garbage collection (seconds). |
+| GCTime | Time spent in garbage collection. |
 | StageCount | Number of stages completed. |
 | ShuffleMapStageCount | Number of shuffle map stages. |
 | ResultStageCount | Number of result stages. |
-| CompilationTime | Time spent compiling (seconds).|
-| ExecutionTime | Total execution time (seconds). |
-| IdleTime | Total idle time (seconds). |
-| CoreAllocation | Average number of cores allocated. |
+| CompilationTime | Time spent on code compilation. |
+| ExecutionTime | Total execution time. |
+| IdleTime | Total idle time. |
+| CoreAllocation | Average number of cores allocated.|
 | UtilizationPercentage | Percentage of core utilization. |
-| TaskDuration | Duration of all tasks combined (seconds). |
-| ShuffleTime | Time spent in shuffle operations (seconds). ShuffleTime = ShuffleReadTime + ShuffleWriteTime |
-| IOTime | Time spent in I/O operations (seconds). IOTime = ReadTime + WriteTime |
-| CPUTime | Time spent by CPU on tasks (seconds). |
-| ShuffleReadTime | Time spent reading shuffle data (seconds). |
-| ShuffleWriteTime | Time spent writing shuffle data (seconds). |
-| ReadTime | Time spent reading data (seconds). |
-| WriteTime | Time spent writing data (seconds). |
-| SerializationTime | Time spent serializing data (seconds). |
-| DeserializeTime | Time spent deserializing data (seconds). |
-| ExecutorComputingTime | Computing time spent by executors (seconds). |
-| ApplicationRunTime | Total application runtime (seconds). |
-| OverheadTime | Time spent in overhead (seconds).|
-| QueueingTime | Time elapsed between when the job was submitted by the user (submitTime) and when the GJS system began processing the job (startTime) (seconds). |
-| StartingTime | Time elapsed between the GJS system's recorded job start (startTime) and the actual application execution start time (seconds). |
+| TaskDuration | Combined duration of all tasks. |
+| ShuffleTime | Time spent in shuffle operations (ShuffleReadTime + ShuffleWriteTime). |
+| IOTime | Time spent in I/O operations (ReadTime + WriteTime). |
+| CPUTime | CPU time spent on tasks. |
+| ShuffleReadTime | Time spent reading shuffle data. |
+| ShuffleWriteTime | Time spent writing shuffle data. |
+| ReadTime | Time spent reading data. |
+| WriteTime | Time spent writing data. |
+| SerializationTime | Time spent serializing data. |
+| DeserializeTime | Time spent deserializing data. |
+| ExecutorComputingTime | Total executor computing time. |
+| ApplicationRunTime | Total application runtime. |
+| OverheadTime | Time spent in overhead. |
+| QueueingTime | Time from job submission to processing start. |
+| StartingTime | Time from recorded start to actual execution start. |
 
 ## Related content
 
-The next step after viewing the details of an Apache Spark application is to view **Spark job progress** below the Notebook cell. You can refer to:
+After reviewing Spark Applications Comparison, you may also want to explore:
 
+- [What is Spark run series analysis?](run-series-analyisis-overview.md)
+- [Apache Spark application detail monitoring](spark-detail-monitoring.md)
 - [Notebook contextual monitoring and debugging](spark-monitor-debug.md)
+
