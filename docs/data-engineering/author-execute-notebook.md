@@ -511,6 +511,25 @@ After you create a notebook with parameters, you can execute it from a pipeline 
 
 When assigning parameter values, you can use the [pipeline expression language](..\data-factory\expression-language.md) or [functions and variables](..\data-factory\parameters.md).
 
+Notebook parameters support simple type such as `int`, `float`, `bool`, and `string`. Complex types such as `list` and `dict` aren't supported. If you need to pass a complex type, consider serializing it to a string format (e.g., JSON) and then deserializing it within the notebook. Following is a sample that you can pass a JSON string from pipeline to Notebook and deserialize it.
+
+:::image type="content" source="media\author-execute-notebook\notebook_parameter_json_pipeline.png" alt-text="Screenshot showing how to pass json string from a pipeline." lightbox="media\author-execute-notebook\notebook_parameter_json_pipeline.png":::
+
+The following python code demonstrates how to deserialize the JSON string into a Python dictionary:
+
+```python
+import json
+
+# Deserialize the JSON string into a Python dictionary
+params = json.loads(json_string)
+
+# Access the individual parameters
+param1 = params.get("param1")
+param2 = params.get("param2")
+```
+
+Please make sure the parameter name in the parameter code cell matches the parameter name in the pipeline.
+
 ## Spark session configuration magic command
 
 You can personalize your Spark session with the magic command **%%configure**. Fabric notebook supports customized vCores, Memory of the Driver and Executor, Apache Spark properties, mount points, pool, and the default lakehouse of the notebook session. They can be used in both interactive notebook and pipeline notebook activities. We recommend that you run the **%%configure** command at the beginning of your notebook, or you must restart the Spark session to make the settings take effect.
