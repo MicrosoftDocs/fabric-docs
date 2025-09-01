@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.topic: how-to
 ms.custom:
-ms.date: 02/11/2025
+ms.date: 09/01/2025
 ---
 
 # Install the Microsoft Fabric capacity metrics app
@@ -72,7 +72,7 @@ To upgrade a previous installation of the *Microsoft Fabric Capacity Metrics* ap
 
     * **Update the workspace and the app**
 
-    Updates your current app and the workspace it resides in. This is the default option for upgrading the app. It will remove the current version and its workspace and replace them with the new version of the app and a corresponding workspace.
+    Updates your current app and the workspace it resides in. This is the default option for upgrading the app. It removes the current version and its workspace and replaces them with the new version of the app and a corresponding workspace.
 
     * **Update only workspace content without updating the app**
 
@@ -80,7 +80,7 @@ To upgrade a previous installation of the *Microsoft Fabric Capacity Metrics* ap
 
     * **Install another copy of the app into a new workspace**
 
-    Creates a new workspace and installs the new version of the app in this workspace. Select this option if you want to keep the old version of the app with the new one. This option creates another workspace for the new app version and installs the app in the newly created workspace. If you select this option, you'll need to provide a name for the new workspace.
+    Creates a new workspace and installs the new version of the app in this workspace. Select this option if you want to keep the old version of the app with the new one. This option creates another workspace for the new app version and installs the app in the newly created workspace. If you select this option, you need to provide a name for the new workspace.
 
 3. Select **Install**.
 
@@ -101,12 +101,12 @@ To complete the installation, configure the Microsoft Fabric Capacity Metrics ap
     |Field          |Required |Value    |Notes    |
     |---------------|---------|---------|---------|
     |**UTC_offset** |Yes |Numerical values ranging from `14` to `-12`.</br> To signify a Half hour timezone, use `.5`. For example, for India's standard time enter `5.5`.   |Enter your organization's standard time in Coordinated Universal Time (UTC). |
-    | **RegionName** | Yes | **Capacity Administrator**: Set the region parameter as "**Default**".<br><br>**Tenant Administrator**:<br>&nbsp;&nbsp;• If you are a tenant admin and have admin permissions on a capacity in the home region **or** there are no capacities in home region for the whole tenant then set the parameter as "**Default**".<br>&nbsp;&nbsp;• Otherwise, set it as one of the regions where you have admin permission on a capacity (for example, **"West Europe"**). | 1. Both **paused** and **trial capacities** are also considered when determining your available regions.<br><br>2. After configuration, if you **create or delete a capacity**, it may impact the report, re-evaulate the value of **RegionName** parameter. If the value needs to be different than currently configured value, please update the value from **semantic model settings** and refresh the model.<br><br>3. You can find the **RegionName** of a capacity in capacity settings section from the admin portal. In Microsoft Fabric, go to **Settings** > **Governance and insights** > **Admin portal** > **Capacity settings**, then look for the region value displayed next to the capacity name. |
+    | **RegionName** | Yes | **Capacity Administrator**: Set the region parameter as "**Default**".<br><br>**Tenant Administrator**:<br>&nbsp;&nbsp;• If you're a tenant admin and have admin permissions on a capacity in the home region, **or** there are no capacities in home region for the whole tenant then set the parameter as "**Default**".<br>&nbsp;&nbsp;• Otherwise, set it as one of the regions where you have admin permission on a capacity (for example, **"West Europe"**). | 1. Both **paused** and **trial capacities** are also considered when determining your available regions.<br><br>2. After configuration, if you **create or delete a capacity**, it might affect the report, reevaluate the value of **RegionName** parameter. If the value needs to be different than currently configured value, update the value from **semantic model settings** and refresh the model.<br><br>3. You can find the **RegionName** of a capacity in capacity settings section from the admin portal. In Microsoft Fabric, go to **Settings** > **Governance and insights** > **Admin portal** > **Capacity settings**, then look for the region value displayed next to the capacity name. |
     |**CapacityID** | Applicable for version 1.8 and below |An ID of a capacity you're an admin of |You can find the capacity ID in the URL of the capacity management page. In Microsoft Fabric, go to **Settings** > **Governance and insights** > **Admin portal** > **Capacity settings**, then select a capacity. The capacity ID is shown in the URL after */capacities/*. For example, `00001111-aaaa-2222-bbbb-3333cccc4444` is the capacity ID in this URL: `https://app.powerbi.com/admin-portal/capacities/00001111-aaaa-2222-bbbb-3333cccc4444`.</br> After installation, the app will let you see all the capacities you can access. |
     |**Advanced**   |Optional |**On** or **Off** |The app automatically refreshed your data at midnight. This option can be disabled by expanding the *advanced* option and selecting **Off**. |
 
     >[!NOTE] 
-    > The Fabric Capacity Metrics app uses several other parameters. These parameters are not meant to be user-configurable and should not be modified. Changing them can break the semantic model and/or the report.
+    > The Fabric Capacity Metrics app uses several other parameters. These parameters aren't meant to be user-configurable and shouldn't be modified. Changing them can break the semantic model and/or the report.
 
 5. Select **Next**.
 
@@ -117,7 +117,7 @@ To complete the installation, configure the Microsoft Fabric Capacity Metrics ap
     * **Privacy level setting for this data source** - Select *Organizational* to enable app access to all the data sources in your organization.
 
     >[!NOTE]
-    >*ExtensionDataSourceKind* and *ExtensionDataSourcePath* are internal fields related to the app's connector. Do not change the values of these fields.
+    >*ExtensionDataSourceKind* and *ExtensionDataSourcePath* are internal fields related to the app's connector. Don't change the values of these fields.
 
 7. Select **Sign in and continue**.
 
