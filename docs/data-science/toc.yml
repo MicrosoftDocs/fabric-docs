@@ -361,6 +361,8 @@ items:
       href: tutorial-relationships-detection.md
     - name: Validate data with Great Expectations (GX)
       href: tutorial-great-expectations.md
+  - name: Service principal support
+    href: semantic-link-service-principal-support.md
   - name: Power BI connectivity
     href: semantic-link-power-bi.md
   - name: Semantic propagation
