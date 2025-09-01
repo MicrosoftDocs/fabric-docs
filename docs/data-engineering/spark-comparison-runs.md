@@ -16,7 +16,7 @@ The Spark applications comparison feature allows you to analyze and compare the 
 
 ## Access the Spark applications comparison feature 
 
-You can access the Spark applications comparison from the [Monitor run series](apache-spark-monitor-run-series.md#access-the-monitor-run-series-feature):
+You can access the Spark applications comparison from the [Monitor run series](apache-spark-monitor-run-series.md#access-the-monitor-run-series-feature) page:
 
 1. Go to the **Monitor run series** page.
 2. Switch to the **Compare runs** tab.
@@ -71,9 +71,9 @@ The following table defines all available comparison metrics.
 | **Metric** | **Description** |
 | --- | --- |
 | Shuffle Write Records| Total number of rows written during shuffle. |
-| Allocated executors | Range (min-max) of executors allocated during the run.  |
+| Allocated Executors | Range (min-max) of executors allocated during the run.  |
 | Anomaly | Indicates whether the run is flagged as anomalous (slow run). |
-| Expected duration | Predicted run time based on historical data. |
+| Expected Duration | Predicted run time based on historical data. |
 | Potential Causes | Root causes for anomalies, with estimated contribution percentages. |
 | TotalDuration | Total duration of the Spark application. |
 | JobCount | Number of jobs executed. |
