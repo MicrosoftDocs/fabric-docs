@@ -57,6 +57,9 @@ This script, and specifically the ``withPartitionKey`` component, is the one tha
 
 You can use the [Table.PartitionKey](/powerquery-m/table-partitionkey) function against the **Added custom** step. This function returns the partition key of the specified table. For the case above, it'll be the column "RelativePath". You can get a distinct list of the values in that column to understand all the partitions that will be used during the dataflow run.
 
+>[!IMPORTANT]
+>It is important that the partition key columns remains in the query in order for partitioned compute to be applied.
+
 
 
 
