@@ -2,14 +2,17 @@
 title: Graph in Microsoft Fabric Overview
 description: Learn about the core purpose, architecture, and benefits of Graph in Microsoft Fabric, including integration and feature highlights.
 ms.topic: concept-article
-ms.date: 08/18/2025
+ms.date: 09/15/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: eur
-ms.search.form: Getting started with Graph
+ms.service: fabric
+#ms.subservice: graph
 ---
 
 # Graph in Microsoft Fabric overview
+
+[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 Graph in Microsoft Fabric is an intelligent, scalable solution that transforms disconnected data into AI-powered insights. 
 
