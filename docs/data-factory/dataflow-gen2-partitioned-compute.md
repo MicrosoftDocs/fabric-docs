@@ -60,7 +60,9 @@ You can use the [Table.PartitionKey](/powerquery-m/table-partitionkey) function 
 >[!IMPORTANT]
 >It is important that the partition key columns remains in the query in order for partitioned compute to be applied.
 
+## Considerations and limitations
 
+* Only connectors for Azure Data Lake Storage Gen2, Fabric Lakehouse, Folder and Azure Blob Storage emmit the correct script to use partitioned compute. The connector for SharePoint does not support it today.
 
 
 
