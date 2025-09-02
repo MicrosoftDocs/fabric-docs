@@ -102,7 +102,7 @@ Similarly, for the second query, the duration is 913 seconds
 
 For query 1, the computed consumption is 9497 CU seconds and for query 2, the computed consumption is 7670 CU seconds.
 
-Aggregate the Capacity Consumption in CU seconds and validate the consumption in the Fabric capacity metrics app. In the above scenario, the metrics app shows 17,180 CU seconds as the Standard Compute usage which compares well with the computed consumption of 17,167 CU seconds. Any discrepancies could be due to rounding in periodic reporting of usage.
+Aggregate the Capacity Consumption in CU seconds and validate the consumption in the Fabric capacity metrics app. In this scenario, the metrics app shows 17,180 CU seconds as the Standard Compute usage which compares well with the computed consumption of 17,167 CU seconds. Any discrepancies could be due to rounding in periodic reporting of usage.
 
 :::image type="content" source="media/pricing-dataflows-gen2/fabric-capacity-metrics-app-dataflow.png" alt-text="Fabric Capacity Metrics App showing Dataflow consumption.":::
 
