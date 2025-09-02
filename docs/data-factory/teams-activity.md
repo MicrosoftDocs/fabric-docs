@@ -60,6 +60,10 @@ Set up the Teams activity by following these steps:
 
    :::image type="content" source="media/teams-activity/select-a-subject.png" alt-text="Screenshot showing the Settings tab of the Teams activity highlighting boxes to add the subject.":::
 
+## Known limitations
+
+- The Teams activity will be inactive when using CI/CD.
+
 ## Related content
 
 - [Run, schedule, and trigger pipelines](pipeline-runs.md)
