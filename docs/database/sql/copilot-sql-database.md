@@ -7,6 +7,7 @@ ms.reviewer: yoleichen, wiassaf
 ms.date: 04/09/2025
 ms.update-cycle: 180-days
 ms.topic: overview
+ms.devlang: copilot-prompt
 ms.collection:
   - ce-skilling-ai-copilot
 ---
