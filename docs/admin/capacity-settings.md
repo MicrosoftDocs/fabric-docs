@@ -367,7 +367,7 @@ To optimize performance and prevent memory-related errors, administrators can ad
 5. Adjust the **Max memory (%)** slider to allocate more memory as needed.
 
 > [NOTE]
-> Increasing memory allocation may help resolve issues such as model loading failures or performance bottlenecks. For more context on SKU limitations, see [Semantic model SKU limitation](https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-premium-what-is#semantic-model-sku-limitation).
+> Increasing memory allocation may help resolve issues such as model loading failures or performance bottlenecks. For more context on SKU limitations, see [Semantic model SKU limitation](../enterprise/powerbi/service-premium-what-is.md#semantic-model-sku-limitation).
 
 ## Related content
 
