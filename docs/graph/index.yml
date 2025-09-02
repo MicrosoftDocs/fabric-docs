@@ -46,4 +46,4 @@ landingContent:
           - text: Graph Query Language (GQL) documentation
             url: /fabric/graph/gql-reference-abridged
           - text: Microsoft Fabric REST API reference
-            url: /fabric/rest-api
+            url: /rest/api/fabric/articles
