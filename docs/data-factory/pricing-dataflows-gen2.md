@@ -36,7 +36,7 @@ When you refresh or publish a Dataflow Gen2 item, Fabric Capacity Units are cons
 ### How Pricing Rates are determined
 Dataflow Gen2 pricing depends on how each query uses compute. For standard compute, queries run on the mashup engine. Depending on whether your Dataflow is Dataflow Gen2 (CI/CD), the rating varies.
 
-If Dataflow Gen2 (CI/CD), there is a two-tier rate applied to the query duration:
+In Dataflow Gen2 (CI/CD), there's a two-tier rate applied to the query duration:
 
 - If a query runs under 10 minutes, it is rated at 12 CU
 - If it runs longer, each extra second is rated at 1.5 CU.
