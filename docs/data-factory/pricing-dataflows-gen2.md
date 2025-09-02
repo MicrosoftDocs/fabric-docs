@@ -38,7 +38,7 @@ Dataflow Gen2 pricing depends on how each query uses compute. For standard compu
 
 In Dataflow Gen2 (CI/CD), there's a two-tier rate applied to the query duration:
 
-- If a query runs under 10 minutes, it is rated at 12 CU
+- If a query runs under 10 minutes, it's rated at 12 CU
 - If it runs longer, each extra second is rated at 1.5 CU.
 
 If your Dataflow Gen2 is non-CI/CD, the rate is 16 CU applied to the entire query duration.
