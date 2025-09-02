@@ -6,7 +6,7 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
-ms.date: 07/28/2025
+ms.date: 09/01/2025
 ai-usage: ai-assisted
 ---
 
@@ -181,34 +181,34 @@ See the following table for the description of each setting.
 
 ### Configure parameters in a copy activity
 
-Parameters can be used to control the behavior of a pipeline and its activities. You can use **Add dynamic content** to specify parameters for your copy activity properties. Let's take specifying Lakehouse/Data Warehouse/KQL Database as an example to see how to use it.
+Parameters can be used to control the behavior of a pipeline and its activities. You can use **Add dynamic content** to specify parameters for your copy activity properties. Let's take specifying Lakehouse/Data Warehouse as an example to see how to use it.
 
-1. In your source or destination, after selecting **Workspace** as data store type and specifying **Lakehouse**/**Data Warehouse**/**KQL Database** as workspace data store type, select **Add dynamic content** in the drop-down list of **Lakehouse** or **Data Warehouse** or **KQL Database**.
+1. In your source or destination, select **Use dynamic content** in the drop-down list of **Connection**.
 1. In the pop-up **Add dynamic content** pane, under **Parameters** tab, select **+**.
 
     :::image type="content" source="./media/copy-data-activity/add-dynamic-content-page.png" alt-text="Screenshot showing the Add dynamic content page.":::
 
-1. Specify the name for your parameter and give it a default value if you want, or you can specify the value for the parameter after selecting **Run** in the pipeline.
+1. Specify the name for your parameter and give it a default value if you want, or you can specify the value for the parameter when it is triggered in the pipeline.
 
     :::image type="content" source="./media/copy-data-activity/new-parameter.png" alt-text="Screenshot shows creating a new parameter.":::
 
-    The parameter value should be Lakehouse/Data Warehouse/KQL Database object ID. To get your Lakehouse/Data Warehouse/KQL Database object ID, open your Lakehouse/Data Warehouse/KQL Database in your workspace, and the ID is after `/lakehouses/` or `/datawarehouses/` or `/databases/` in your URL.
+    The parameter value should be Lakehouse/Data Warehouse connection ID. To get it, open your **Manage Connections and Gateways**, choose the Lakehouse/Data Warehouse connection that you want to use, and open **Settings** to get your connection ID.
 
-    - **Lakehouse object ID**:
+1. Select **Save** to go back to the **Add dynamic content** pane. Then select your parameter so it appears in the expression box. Then select **OK**. You'll go back to the pipeline page and can see the parameter expression is specified after **Connection**.
+
+    :::image type="content" source="./media/copy-data-activity/select-parameter.png" alt-text="Screenshot showing selecting parameter.":::
+
+1. Specify the ID of your Lakehouse or Data Warehouse. To find the ID, go to your Lakehouse or Data Warehouse in your workspace. The ID appears in the URL after `/lakehouses/` or `/datawarehouses/`.
+
+    - **Lakehouse ID**:
 
         :::image type="content" source="./media/copy-data-activity/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
 
-    - **Data Warehouse object ID**:
+    - **Warehouse ID**:
 
         :::image type="content" source="./media/copy-data-activity/data-warehouse-object-id.png" alt-text="Screenshot showing the Data Warehouse object ID.":::
 
-    - **KQL Database object ID**:
-
-        :::image type="content" source="./media/copy-data-activity/kql-database-object-id.png" alt-text="Screenshot showing the KQL Database object ID.":::
-
-1. Select **Save** to go back to the **Add dynamic content** pane. Then select your parameter so it appears in the expression box. Then select **OK**. You'll go back to the pipeline page and can see the parameter expression is specified after **Lakehouse object ID**/**Data Warehouse object ID**/**KQL Database object ID**.
-
-    :::image type="content" source="./media/copy-data-activity/select-parameter.png" alt-text="Screenshot showing selecting parameter.":::
+1. Specify the [SQL connection string for your Data Warehouse](../data-warehouse/how-to-connect#find-the-warehouse-connection-string).
 
 ## Related content
 
