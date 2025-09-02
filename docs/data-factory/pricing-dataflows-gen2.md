@@ -122,7 +122,7 @@ If your dataflow uses staging, to find out how much High Scale compute you used,
 
 <code>HighScaleComputeCapacityConsumptionInCUSeconds = QueryDurationInSeconds x 6 </code>
 
-### Exercise 4: Understanding Fast Copy Compute Consumption (both CI/CD and non CI/CD Dataflows)
+### Exercise 4: Understanding Fast Copy Compute Consumption (both CI/CD and non-CI/CD Dataflows)
 
 If your dataflow uses fast copy, to find out how much Data Movement compute you used, open the Fabric Capacity Metrics App and filter by your Dataflow’s name. Right-click the name, look for Data Movement in the list of operations, and check the duration.
 
