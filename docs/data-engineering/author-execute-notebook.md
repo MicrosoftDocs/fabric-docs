@@ -513,7 +513,7 @@ When assigning parameter values, you can use the [pipeline expression language](
 
 Notebook parameters support simple types such as `int`, `float`, `bool`, and `string`. Complex types such as `list` and `dict` aren't yet supported. To pass a complex type, consider serializing it to a string format (for example, JSON) and then deserializing it within the notebook. The following sample shows how to pass a JSON string from pipeline to notebook and deserialize it:
 
-:::image type="content" source="media\author-execute-notebook\notebook_parameter_json_pipeline.png" alt-text="Screenshot showing how to pass json string from a pipeline." lightbox="media\author-execute-notebook\notebook_parameter_json_pipeline.png":::
+:::image type="content" source="media\author-execute-notebook\notebook-parameter-json-pipeline.png" alt-text="Screenshot showing how to pass json string from a pipeline." lightbox="media\author-execute-notebook\notebook_parameter_json_pipeline.png":::
 
 The following python code demonstrates how to deserialize the JSON string into a Python dictionary:
 
