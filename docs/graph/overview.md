@@ -74,8 +74,8 @@ Usage is measured in minutes of CPU uptime. You can monitor your graph workload'
 
 | Fabric operation name | Azure billing meter | Unit of measure | Fabric CU consumption rate |
 |---|---|---|---|
-| Graph general operations | Graph Capacity Usage CU | Minute | 10 CUs per minute |
-| Graph algorithm operations| Graph Capacity Usage CU | Minute | 16 CUs per minute |
+| Graph general operations | Graph capacity usage CU | Minute | 0.16667 CUs per minute<br/><br/>10 CUs per hour |
+| Graph algorithm operations| Graph capacity usage CU | Minute | 0.26667 CUs per minute<br/><br/>16 CUs per hour |
 | Graph cache storage | OneLakeCache | Per GB per month | - |
 | Graph standard storage | OneLakeStorage | Per GB per month | - |
 
