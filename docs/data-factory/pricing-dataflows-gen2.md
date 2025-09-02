@@ -110,7 +110,7 @@ Aggregate the Capacity Consumption in CU seconds and validate the consumption in
 
 :::image type="content" source="media/pricing-dataflows-gen2/fabric-capacity-metrics-app-dataflow.png" alt-text="Fabric Capacity Metrics App showing Dataflow consumption.":::
 
-### Exercise 2: Understanding standard Compute for a non CI / CD Dataflow
+### Exercise 2: Standard compute for a non-CI/CD Dataflow
 
 When your dataflow involves transformation, and staging is disabled, Dataflows Gen2 will only use the Standard Compute.
 
