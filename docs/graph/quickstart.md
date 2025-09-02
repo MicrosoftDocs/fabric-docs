@@ -67,24 +67,25 @@ To build a graph in Microsoft Fabric, follow these steps:
 
    :::image type="content" source="./media/quickstart/graph-data-view.png" alt-text="Screenshot showing the data view in the graph model." lightbox="./media/quickstart/graph-data-view.png":::
 
-Now you can start modeling. 
 
 ## Start modeling
 
+Now you can start modeling. We use the Adventure Works data model as an example.
 
 ### Add nodes
 
-Here is the node list, what you want to do is use the left hand side ellipses to right click and add node.  When you are adding the node you will see this below, you want to sync the node you are selecting and the id in the mapping column.( As you can see below it is Customers and CustomerID_K). Do this until all the nodes are populated on your canvas.
+In this section, we create nodes for each entity in the Adventure Works data model.
 
-| Node label  | Mapping table | Mapping column |
+| Node label | Mapping table | Mapping column |
 |------------------|--------------------|-----------------------|
-| Customer         | customers          | CustomerID_K            |
-| Order            | orders             | SalesOrderID_K          |
-| Employee         | employees          | EmployeeID_K            |
-| Product         | products           | ProductID_K             |
-| ProductCategory  | productCategories  | CategoryID_K            |
-| ProductSubcategory| productSubcategories| SubcategoryID_K        |
+| Customer | customers | CustomerID_K |
+| Order | orders | SalesOrderID_K |
+| Employee | employees | EmployeeID_K |
+| Product | products | ProductID_K |
+| ProductCategory | productCategories | CategoryID_K |
+| ProductSubcategory| productSubcategories| SubcategoryID_K |
 
+To add the nodes to your graph, follow these steps:
 
 1. In your graph model, select **Add node** to add a new node to your graph.
 1. In the **Add node to graph** dialog, enter a **Label** name and select the appropriate **Mapping table** and **Mapping column**. 
@@ -100,22 +101,29 @@ Here is the node list, what you want to do is use the left hand side ellipses to
 
 ### Add edges
 
-Here is the edge creation, this connects your nodes together to build the graph. When you select a node (click) you will see a red circle appear, drag that to the node you are targeting to create an edge. Here your starting node is the Source Node and your Target Node is your end point. When you create an edge it will put a temporary label which you should update.
+In this section, we create edges to define the relationships between the nodes in the Adventure Works data model.
 
 | Edge | Mapping table | Source node mapping column | Target node mapping column |
 |-----|-------|------|----|
-| sells | Orders | Employee<br/><br/>EmployeeID_FK | Order<br/><br/>salesOrderDetailID_K |
-| purchases | Orders | Customer<br/><br/>CustomerID_FK | Order<br/><br/>salesOrderDetailID_K |
-| contains | Orders | Order<br/><br/>salesOrderDetailID_K | Product<br/><br/>ProductID_FK |
-| isOfType | Products | Product<br/><br/>ProductID_K |ProductSubCategory<br/><br/>subcategoryID_FK |
-| belongsTo | ProductSubcategories | ProductSubCategory<br/><br/>subcategoryID_K | ProductCategory<br/><br/>CategoryID_FK |
+| sells | orders | Employee<br/><br/>EmployeeID_FK | Order<br/><br/>SalesOrderDetailID_K |
+| purchases | orders | Customer<br/><br/>CustomerID_FK | Order<br/><br/>SalesOrderDetailID_K |
+| contains | orders | Order<br/><br/>SalesOrderDetailID_K | Product<br/><br/>ProductID_FK |
+| isOfType | products | Product<br/><br/>ProductID_K |ProductSubCategory<br/><br/>SubcategoryID_FK |
+| belongsTo | productSubcategories | ProductSubCategory<br/><br/>SubcategoryID_K | ProductCategory<br/><br/>CategoryID_FK |
 
-
-
+To add the edges to your graph, follow these steps:
 
 1. Select **Add edge** to create a relationship between nodes.
-1. In the **Add edge** pane, select the source and target nodes, and define the relationship.
+1. In the **Add edge** dialog, select the mapping table, source and target nodes, and define the relationship. 
 
+    :::image type="content" source="./media/quickstart/edge-add-sells.png" alt-text="Screenshot showing the add edge dialog." lightbox="./media/quickstart/edge-add-sells.png":::
+
+    In this example, the edge is defined as "sells" with the mapping table "orders", connecting the source node "Employee" (EmployeeID_FK) to the target node "Order" (SalesOrderDetailID_K).
+
+1. Select **Confirm** to add the edge to your graph.
+1. Repeat the process for all other edges. You should see all the edges represented in your graph.
+
+    :::image type="content" source="./media/quickstart/edge-add-completed.png" alt-text="Screenshot showing all of the edges added to the graph." lightbox="./media/quickstart/edge-add-completed.png":::
 
 ## Related content
 
