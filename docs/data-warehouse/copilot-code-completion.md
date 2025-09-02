@@ -4,11 +4,11 @@ description: Learn more about Copilot code completion in Microsoft Fabric in Dat
 author: markingmyname
 ms.author: maghan
 ms.reviewer: salilkanade, wiassaf
-ms.date: 04/09/2025
-ms.update-cycle: 180-days
+ms.date: 09/02/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ---
 
 # How to Use Copilot code completion in Fabric in Data Warehouse (Preview)
@@ -36,27 +36,27 @@ Code completion enhances your productivity and workflow in Copilot for Data Ware
 
 1. Verify the **Show Copilot completions** setting in enabled in your warehouse settings.
 
-    1. You can also check the setting's status through the status bar at the bottom of the query editor.
+   1. You can also check the setting's status through the status bar at the bottom of the query editor.
 
-        :::image type="content" source="media/copilot-code-completion/copilot-setting-status-bar.jpg" alt-text="Screenshot of the Copilot in-line completion status bar.":::
+      :::image type="content" source="media/copilot-code-completion/copilot-setting-status-bar.jpg" alt-text="Screenshot of the Copilot in-line completion status bar.":::
 
-    1. If not enabled, then in your warehouse **Settings**, select the **Copilot** pane. Enable the **Show Copilot completions** option is enabled.
+   1. If not enabled, then in your warehouse **Settings**, select the **Copilot** pane. Enable the **Show Copilot completions** option is enabled.
 
-      :::image type="content" source="media/copilot-code-completion/copilot-setting.png" alt-text="Screenshot of the Copilot in-line completions setting in the setting pane." lightbox="media/copilot-code-completion/copilot-setting.png":::
+   :::image type="content" source="media/copilot-code-completion/copilot-setting.png" alt-text="Screenshot of the Copilot in-line completions setting in the setting pane." lightbox="media/copilot-code-completion/copilot-setting.png":::
 
 1. Start writing your query in the SQL query editor within the warehouse. As you type, Copilot provides real-time code suggestions and completions of your query by presenting a dimmed ghost text.
 
-    :::image type="content" source="media/copilot-code-completion/code-completion-suggestion.png" alt-text="Screenshot from the query editor showing the dimmed text of a Copilot code suggestion.":::
+   :::image type="content" source="media/copilot-code-completion/code-completion-suggestion.png" alt-text="Screenshot from the query editor showing the dimmed text of a Copilot code suggestion.":::
 
 1. You can then accept the suggestion with the **Tab** key, or dismiss it. If you don't want to accept an entire suggestion from Copilot, you can use the **Ctrl+Right** keyboard shortcut to accept the next word of a suggestion.
 
 1. Copilot can provide different suggestions for the same input. You can hover over the suggestion to preview the other options.
 
-    :::image type="content" source="media/copilot-code-completion/code-completion-suggestion-other-options.png" alt-text="Screenshot from the query editor showing the dimmed text and the selector for multiple selection options." lightbox="media/copilot-code-completion/code-completion-suggestion-other-options.png":::
+   :::image type="content" source="media/copilot-code-completion/code-completion-suggestion-other-options.png" alt-text="Screenshot from the query editor showing the dimmed text and the selector for multiple selection options." lightbox="media/copilot-code-completion/code-completion-suggestion-other-options.png":::
 
 1. To help Copilot, understand the query you're writing, you can provide context about what code you expect by leaving a comment with `--`. For example, you could specify which warehouse object, condition, or methods to use. Copilot can even autocomplete your comment to help you write clear and accurate comments more efficiently.
 
-    :::image type="content" source="media/copilot-code-completion/code-completion-comments.png" alt-text="Screenshot from the query editor showing a block of code suggestions based on a comment asking for 'list the average temperature of each city'.":::
+   :::image type="content" source="media/copilot-code-completion/code-completion-comments.png" alt-text="Screenshot from the query editor showing a block of code suggestions based on a comment asking for 'list the average temperature of each city'.":::
 
 ## Related content
 
