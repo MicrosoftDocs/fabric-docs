@@ -78,7 +78,7 @@ With *Power BI Premium* and [Power BI Embedded](/power-bi/developer/embedded/emb
 <sup>4</sup> These limits apply to Direct Lake tables and models, and are guardrails that affect fallback to DirectQuery. Direct Lake semantic models have additional constraints that are based on SKUs, as listed in [fallback](/fabric/get-started/direct-lake-overview#fallback).
 
 > [!NOTE]
-> While SKU limitations define the maximum memory available for semantic models, administrators can manage memory allocation through capacity settings in the Power BI admin portal. For details on adjusting memory settings, see [Configure workloads in Power BI Premium](https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-admin-premium-workloads).
+> While SKU limitations define the maximum memory available for semantic models, administrators can manage memory allocation through capacity settings in the Power BI admin portal. For details on adjusting memory settings, see [Configure workloads in Power BI Premium](service-admin-premium-workloads.md).
 
 ### Semantic model memory usage
 
