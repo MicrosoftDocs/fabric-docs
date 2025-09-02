@@ -80,7 +80,7 @@ The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provid
 
 These exercises show you how to validate costs for both CI/CD and non CI/CD Dataflows. For the CI/CD Dataflow with Standard Compute, we will use an example, and we will provide instructions for all other scenarios.
 
-### Exercise 1: Understanding standard Compute for a CI/CD Dataflow
+### Exercise 1: Standard compute for a CI/CD Dataflow
 
 The following dataflow has two queries involving transformation, and staging is disabled. 
 
