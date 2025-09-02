@@ -5,6 +5,7 @@ author: julcsc
 ms.author: juliacawthra
 ms.topic: how-to
 ms.date: 09/02/2025
+ai-usage: ai-assisted
 ---
 
 # Manage your Fabric capacity
