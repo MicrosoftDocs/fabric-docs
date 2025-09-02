@@ -19,14 +19,14 @@ The Oracle database connector is supported in Data Factory for [!INCLUDE [produc
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/-)                                                 | On-premises | Basic           |
-| **Data pipeline** <br>- [Copy activity](connector-oracle-database-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Script activity| On-premises | Basic           |
+| **Pipeline** <br>- [Copy activity](connector-oracle-database-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Script activity| On-premises | Basic           |
 | **Copy job** (source/destination) <br>- Full load<br>- Append | On-premises | Basic           |
 
 > [!NOTE]
->To use Oracle connector in data pipelines, install [Oracle Client for Microsoft Tools (OCMT)](https://www.oracle.com/database/technologies/appdev/ocmt.html) on the computer running on-premises data gateway. For detailed steps, go to [Prerequisites](connector-oracle-database.md#prerequisites).
+>To use Oracle connector in pipelines, install [Oracle Client for Microsoft Tools (OCMT)](https://www.oracle.com/database/technologies/appdev/ocmt.html) on the computer running on-premises data gateway. For detailed steps, go to [Prerequisites](connector-oracle-database.md#prerequisites).
 
 ## Related content
 
 To learn about how to connect to Oracle database, go to [Set up your Oracle database connection](connector-oracle-database.md).
 
-To learn more about the copy activity configuration for Oracle database in data pipelines, go to [Configure in a data pipeline copy activity](connector-oracle-database-copy-activity.md).
+To learn more about the copy activity configuration for Oracle database in pipelines, go to [Configure in a pipeline copy activity](connector-oracle-database-copy-activity.md).

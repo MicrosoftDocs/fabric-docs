@@ -1,6 +1,6 @@
 ---
-title: The modern get data experience in data pipelines
-description: Learn how to easily connect to your data with the new modern get data experience for data pipelines.
+title: The modern get data experience in pipelines
+description: Learn how to easily connect to your data with the new modern get data experience for pipelines.
 ms.reviewer: whhender
 ms.author: xupzhou
 author: PennyZhou-MSFT
@@ -9,9 +9,9 @@ ms.date: 05/21/2024
 ms.custom: pipelines
 ---
 
-# Easily connect to your data with the new modern get data experience for data pipelines
+# Easily connect to your data with the new modern get data experience for pipelines
 
-The new modern get data experience for data pipelines simplifies connecting to data by intuitively browsing different Fabric artifacts through the OneLake data hub. This feature lets you get to your data in the quickest way possible. This new experience empowers you to more easily move your data from various sources to your preferred destinations.
+The new modern get data experience for pipelines simplifies connecting to data by intuitively browsing different Fabric items through the OneLake data hub. This feature lets you get to your data in the quickest way possible. This new experience empowers you to more easily move your data from various sources to your preferred destinations.
 
 ## Prerequisites
 
@@ -65,4 +65,4 @@ When you choose this option, you can use the full modern get data experience to 
 
 ## Related content
 
-[Monitor data pipeline runs](monitor-pipeline-runs.md)
+[Monitor pipeline runs](monitor-pipeline-runs.md)

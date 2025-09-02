@@ -19,11 +19,7 @@ When you publish a dataflow, it creates a definition that runs during refresh. T
 
 :::image type="content" source="media/pricing-dataflows-gen2/dataflows-gen2-pricing-diagram.png" alt-text="Diagram of the Dataflow Gen2 architecture.":::
 
-This diagram gives you a quick look at how Dataflow Gen2 works behind the scenes. It includes the Lakehouse, which stages incoming data, and the Warehouse, which acts as a compute engine to write results faster—either to staging or directly to your output.
-
-If the Warehouse engine isn’t available or staging is turned off for a query, the Mashup Engine steps in. It handles extracting, transforming, and loading data to staging or wherever you’ve set as the destination.
-
-Want to learn more? Check out the blog: [Data Factory Spotlight: Dataflow Gen2](https://blog.fabric.microsoft.com/blog/data-factory-spotlight-dataflows-gen2?ft=All).
+The diagram captures components of the Data Factory Dataflow Gen2 architecture, including the Lakehouse used to stage data being ingested, and Warehouse item used as a compute engine to write results to staging or output faster. When Warehouse compute can't be used, or when staging is disabled for a query, the Mashup Engine will extract, transform, or load the data to staging or data destinations. You can learn more about how Dataflow Gen2 works in this blog: [Data Factory Spotlight: Dataflow Gen2](https://blog.fabric.microsoft.com/blog/data-factory-spotlight-dataflows-gen2?ft=All).
 
 When you refresh or publish a Dataflow Gen2 item, Fabric Capacity Units are consumed for the following engines:
 
@@ -136,4 +132,4 @@ If your dataflow uses fast copy, to find out how much Data Movement compute you 
 ## Related content
 
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)
-- [Pricing data pipelines](pricing-pipelines.md)
+- [Pricing pipelines](pricing-pipelines.md)

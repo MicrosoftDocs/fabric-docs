@@ -29,11 +29,11 @@ For the list of supported connectors across Copy job, Copy activity, and Dataflo
 
 ## Data movement strategies
 
-| | [**Mirroring**](/fabric/database/mirrored-database/overview) | [**Copy Job**](/fabric/data-factory/create-copy-job) | [**Copy Activity (Pipeline)**](/fabric/data-factory/copy-data-activity) |
+| | [**Mirroring**](/fabric/mirroring/overview) | [**Copy Job**](/fabric/data-factory/create-copy-job) | [**Copy Activity (Pipeline)**](/fabric/data-factory/copy-data-activity) |
 |---|---|---|---|
 | **Use Case** | Data Replication | Data Ingestion & Replication | Data Ingestion |
 | **Flagship Scenarios** | Near real-time sync with turn-key setup. Replication | Incremental Copy / Replication (water-mark + Native CDC), Data Lake / Storage Data Migration, Medallion Ingestion, Out-of-the-box multi-table copy. | Data Lake / Storage Data Migration, Medallion Ingestion, Incremental copy via pipeline expressions & control tables (water-mark only)|
-| **Source** | 6+ [connectors](/fabric/database/mirrored-database/overview#types-of-mirroring) | 50+ [connectors](/fabric/data-factory/connector-overview) | 50+ [connectors](/fabric/data-factory/connector-overview) |
+| **Source** | 6+ [connectors](../mirroring/overview.md#types-of-mirroring) | 50+ [connectors](/fabric/data-factory/connector-overview) | 50+ [connectors](/fabric/data-factory/connector-overview) |
 | **Destination** | Mirrored database (stored as read-only Delta table in Fabric OneLake) | 40+ [connectors](/fabric/data-factory/connector-overview) | 40+ [connectors](/fabric/data-factory/connector-overview) |
 | **Type of Incoming Data** | Near Real-time | Batch / Incremental Copy (water-mark based & change data capture) / Near Real-time | Batch / Bulk / Manual Watermark-based incremental copy |
 | **Persona** | Business Analyst, Database Administrator | Business Analyst, Data Integrator, Data Engineer | Data Integrator, Business Analyst, Data Engineer |
@@ -43,7 +43,7 @@ For the list of supported connectors across Copy job, Copy activity, and Dataflo
 
 ## Orchestration strategies
 
-| | [**Pipeline**](data-factory-overview.md#data-pipelines) | [**Apache Airflow Job**](/fabric/data-factory/apache-airflow-jobs-concepts) |
+| | [**Pipeline**](data-factory-overview.md#pipelines) | [**Apache Airflow Job**](/fabric/data-factory/apache-airflow-jobs-concepts) |
 |---|---|---|
 | **Use Case** | Low Code Orchestration | Code-first Orchestration |
 | **Flagship Scenarios** | Logical grouping of several activities together to perform a task. | Python Code-Centric Authoring |
@@ -133,10 +133,10 @@ Ako reviews the available options and selects **Dataflow Gen 2** as her preferre
 
 Now that you understand which service to use, you can start building your data integration solutions in Microsoft Fabric.
 
-- [Get started with Mirroring](/fabric/database/mirrored-database/overview)
+- [Get started with Mirroring](/fabric/mirroring/overview)
 - [Create a Copy Job](/fabric/data-factory/create-copy-job)
 - [Create a Copy Activity](/fabric/data-factory/copy-data-activity)
-- [Get started with Pipelines](data-factory-overview.md#data-pipelines)
+- [Get started with Pipelines](data-factory-overview.md#pipelines)
 - [Get started with Apache Airflow Jobs](/fabric/data-factory/apache-airflow-jobs-concepts)
 - [Create and use Notebooks](/fabric/data-engineering/how-to-use-notebook)
 - [Create a dataflow](/fabric/data-factory/tutorial-dataflows-gen2-pipeline-activity#create-a-dataflow)

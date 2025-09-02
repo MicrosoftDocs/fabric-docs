@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: overview
 ms.custom:
-ms.date: 08/20/2025
+ms.date: 08/21/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -36,6 +36,7 @@ You can use workspace-level private links to connect to the following item types
 * Warehouse 
 * Dataflows Gen2 (CI/CD)
 * Variable library
+* Mirrored database
 
 ### Notes about unsupported item types
 
@@ -47,7 +48,7 @@ Review the following considerations when working with unsupported item types.
 
 * When a workspace is assigned to a deployment pipeline, it can't be configured to block public access, as deployment pipelines don't currently support workspace-level private link.
 
-* Existing lakehouses and warehouses use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse or warehouse.
+* Existing lakehouses, warehouses and mirrored databases use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse, warehouse or mirrored database.
 
 * Lakehouses with schemas aren't supported when a workspace-level private link is enabled for a workspace.
 
@@ -78,6 +79,8 @@ Review the following considerations when working with unsupported item types.
 * Data Pipelines and Copy Jobs are generally supported. However, the following scenario isn't currently supported:
 
    * **Gateway-based connections:** Data Pipelines and Copy Jobs can't use connections that rely on an on-premises data gateway or a virtual network (VNet) data gateway infrastructure. This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
+
+* The OneLake Catalog - Govern tab isn't available when Private Link is activated.
 
 ## Supported APIs
 
@@ -225,6 +228,15 @@ A virtual network data gateway must be used for every dataflow connector. The vi
 
 [Items - REST API (VariableLibrary)](/rest/api/fabric/variablelibrary/items)
 
+### Mirrored database support
+
+* [Fabric Mirroring Public REST API](/fabric/database/mirrored-database/mirrored-database-rest-api)
+* [Items - REST API (MirroredDatabase)](/rest/api/fabric/mirroreddatabase/items)
+
+> [!NOTE]
+> * Currently, workspace-level private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring) and [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started. 
+> * For open mirroring, when your workspace is configured to deny inbound public access, ensure the publisher writes data into the OneLake landing zone via a private link with workspace FQDN.
+
 ## Supported and unsupported tools
 
 - Workspace-level private link connections are supported via REST API.
@@ -245,6 +257,7 @@ A virtual network data gateway must be used for every dataflow connector. The vi
 - For Data Engineering workloads:
    - To query Lakehouse files or tables from a workspace that has workspace-level private link enabled, you must create a cross-workspace managed private endpoint connection to access resources in the other workspace. <!--For instructions, see [Cross workspace communication](security-cross-workspace-communication.md).-->
    - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace.
+- You could run into Spark issues in the following regions when outbound access protection is enabled for the workspace: Mexico Central, Israel Central, and Spain Central.
 
 ## Common errors and troubleshooting
 

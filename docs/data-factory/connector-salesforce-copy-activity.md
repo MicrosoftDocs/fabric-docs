@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Salesforce in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Salesforce.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Salesforce.
 
 ## Supported configuration
 

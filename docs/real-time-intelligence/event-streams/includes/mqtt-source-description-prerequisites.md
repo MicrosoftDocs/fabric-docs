@@ -6,7 +6,7 @@ ms.author: xujiang1
 author: WenyangShi
 ms.topic: include
 ms.custom:
-ms.date: 03/14/2025
+ms.date: 08/26/2025
 ---
 
 
@@ -23,3 +23,5 @@ Before you start, you must complete the following prerequisites:
 - Ensure that the MQTT broker is publicly accessible and not restricted by a firewall or a virtual network. 
 
 To learn how to configure this setup and stream your MQTT data through **Azure Event Grid**, see [Add Azure Event Grid Namespace as a source to an eventstream (preview)](../add-source-azure-event-grid.md). 
+
+To learn how to stream MQTT data from **Azure IoT Operations** by configuring a data flow endpoint that targets an eventstream custom endpoint, see [Configure data flow endpoints for Microsoft Fabric Real-Time Intelligence](/azure/iot-operations/connect-to-cloud/howto-configure-fabric-real-time-intelligence).

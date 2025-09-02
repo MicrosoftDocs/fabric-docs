@@ -1,37 +1,39 @@
 ---
-title: "Get started with materialized lake views in a Lakehouse"
-description: Learn how to get started with materialized lake view and create your first materialized lake view.
+title: Get Started with Materialized Lake Views in a Lakehouse
+description: Learn how to create your first materialized lake view in a lakehouse.
 ms.topic: quickstart
 author: abhishjain002 
 ms.author: abhishjain
 ms.reviewer: nijelsf
 ms.date: 06/27/2025
-#customer intent: As a data engineer, I want to create materialized lake views in lakehouse so that I can optimize query performance and manage data quality.
+#customer intent: As a data engineer, I want to create materialized lake views in a lakehouse so that I can optimize query performance and manage data quality.
 ---
 
 # Get started with materialized lake views
 
-In this article, you learn how to get started and create materialized lake views (MLV) in a lakehouse in Microsoft Fabric. 
+In this article, you learn how to get started with materialized lake views by creating one in a Microsoft Fabric lakehouse.
 
 ## Prerequisites
 
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* A lakehouse with [Lakehouse schemas](../lakehouse-schemas.md) enabled.
-* Materialized lake views are compatible with Fabric [Runtime 1.3](../runtime-1-3.md).
+* A lakehouse with [lakehouse schemas](../lakehouse-schemas.md) enabled.
+* [Fabric Runtime 1.3](../runtime-1-3.md). Materialized lake views are compatible with this runtime version.
 
 ## Create your first materialized lake view
 
 1. Go to your lakehouse and select **Manage materialized lake views**.
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/manage-materialized-lake-views.png" alt-text="Screenshot showing materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/manage-materialized-lake-views.png":::
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/manage-materialized-lake-views.png" alt-text="Screenshot that shows the menu item for managing materialized lake views." border="true" lightbox="./media/get-started-with-materialized-lake-views/manage-materialized-lake-views.png":::
 
-1. Select **New materialized lake view** and click on **New notebook** to open a new notebook.
+1. Select **New materialized lake view**, and then select **New notebook**.
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/new-materialized-lake-view.png" alt-text="Screenshot showing how to open notebook to create new materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/new-materialized-lake-view.png":::
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/new-materialized-lake-view.png" alt-text="Screenshot of selections for opening a new notebook to create a materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/new-materialized-lake-view.png":::
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png" alt-text="Screenshot showing notebook template to create new materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png":::
+   A new notebook opens.
 
-1. Create sample source tables `products` and `orders`. Run the following commands in the notebook.
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png" alt-text="Screenshot that shows a notebook template to create a materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png":::
+
+1. Create the sample source tables `products` and `orders`. Run the following commands in the notebook:
 
    ```sql
       CREATE SCHEMA IF NOT EXISTS bronze;
@@ -47,6 +49,7 @@ In this article, you learn how to get started and create materialized lake views
       (102, 'Smartphone', 699.99),
       (103, 'Tablet', 450.00);
    ```
+
    ```sql
 
       CREATE TABLE IF NOT EXISTS bronze.orders (
@@ -61,7 +64,7 @@ In this article, you learn how to get started and create materialized lake views
        (1003, 102, 3, '2025-06-03');
    ```
 
-1. Create materialized lake views using the source tables. Run the following commands in the notebook.
+1. Create materialized lake views by using the source tables. Run the following commands in the notebook:
 
    ```sql
       CREATE SCHEMA IF NOT EXISTS SILVER;
@@ -96,28 +99,28 @@ In this article, you learn how to get started and create materialized lake views
           product_id,
           product_name;
    ```
-1. Open Lakehouse explorer to view all created tables and MLVs.
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/materialized-lake-views-created.png" alt-text="Screenshot showing materialized lake views created in lakehouse." border="true" lightbox="./media/get-started-with-materialized-lake-views/materialized-lake-views-created.png":::
-   
-1. Navigate to the **Manage materialized lake views** option in your Lakehouse to view the autogenerated lineage.
+1. Open the lakehouse explorer to view all created tables and materialized lake views.
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/sample-lineage.png" alt-text="Screenshot showing lineage." border="true" lightbox="./media/get-started-with-materialized-lake-views/sample-lineage.png":::
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/materialized-lake-views-created.png" alt-text="Screenshot that shows materialized lake views created in a lakehouse." border="true" lightbox="./media/get-started-with-materialized-lake-views/materialized-lake-views-created.png":::
+
+1. In your lakehouse, go to **Manage materialized lake views** to view the autogenerated lineage.
+
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/sample-lineage.png" alt-text="Screenshot that shows lineage." border="true" lightbox="./media/get-started-with-materialized-lake-views/sample-lineage.png":::
   
 1. Schedule the lineage execution.
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/schedule-lineage-run.png" alt-text="Screenshot showing how to schedule the lineage." border="true" lightbox="./media/get-started-with-materialized-lake-views/schedule-lineage-run.png":::
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/schedule-lineage-run.png" alt-text="Screenshot of the pane for scheduling lineage." border="true" lightbox="./media/get-started-with-materialized-lake-views/schedule-lineage-run.png":::
 
-1. Click on the ongoing run to monitor progress once the schedule starts.
+1. Select the ongoing run to monitor progress after the schedule starts.
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/ongoing-run-progress.png" alt-text="Screenshot showing progress of ongoing run." border="true" lightbox="./media/get-started-with-materialized-lake-views/ongoing-run-progress.png":::
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/ongoing-run-progress.png" alt-text="Screenshot that shows the progress of an ongoing run." border="true" lightbox="./media/get-started-with-materialized-lake-views/ongoing-run-progress.png":::
 
-1. Once the run succeeds, the lineage will display as completed.
+1. After the run succeeds, the status of the lineage is **Completed**.
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/completed-lineage-run.png" alt-text="Screenshot showing completed lineage run." border="true" lightbox="./media/get-started-with-materialized-lake-views/completed-lineage-run.png":::
-    
-## Next steps
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/completed-lineage-run.png" alt-text="Screenshot that shows a completed lineage run." border="true" lightbox="./media/get-started-with-materialized-lake-views/completed-lineage-run.png":::
 
-* [Create materialized lake views](./create-materialized-lake-view.md)
-* [Refresh materialized lake views](./refresh-materialized-lake-view.md)
-   
+## Related content
+
+* [Spark SQL reference for materialized lake views](./create-materialized-lake-view.md)
+* [Refresh materialized lake views in a lakehouse](./refresh-materialized-lake-view.md)

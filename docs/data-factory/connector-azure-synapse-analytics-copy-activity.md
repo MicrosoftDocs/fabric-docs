@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure Synapse Analytics in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Synapse Analytics.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure Synapse Analytics.
 
 ## Supported configuration
 

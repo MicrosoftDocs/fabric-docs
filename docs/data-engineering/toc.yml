@@ -197,6 +197,8 @@ items:
            href: monitor-spark-job-definitions.md
          - name: Leverage the Apache Spark Advisor
            href: spark-advisor-introduction.md
+         - name: Job insights diagnostic library (Preview)
+           href: job-insight-library.md    
       - name: Spark Application Run Series Analysis
         items: 
          - name: Run series analysis Overview
@@ -387,6 +389,8 @@ items:
         href: multiple-data-sources-graphql.md
       - name: Connect applications
         href: connect-apps-api-graphql.md
+      - name: Develop GraphQL applications on VS Code
+        href: api-graphql-develop-vs-code.md
       - name: Use Service Principals
         href: api-graphql-service-principal.md
       - name: Use Stored procedures
@@ -419,6 +423,8 @@ items:
      href: ./user-data-functions/user-data-functions-overview.md
    - name: Create a User data functions item
      href: ./user-data-functions/create-user-data-functions-portal.md
+   - name: Use the functions portal editor
+     href: ./user-data-functions/user-data-functions-portal-editor.md
    - name: Test your User data functions
      href: ./user-data-functions/test-user-data-functions.md
    - name: Connect to data sources
