@@ -66,7 +66,7 @@ The total bill for running Dataflows Gen2 through the VNET Data Gateway is calcu
 
 The VNET Data Gateway Charge is proportional to your usage of the VNET Data Gateway, where usage is defined as uptime, or anytime the VNET Data Gateway is on.
 
-VNET Data Gateway CU consumption rate : 4 CU
+VNET Data Gateway CU consumption rate: 4 CU
 
 Learn more at [Virtual Network Data Gateways Pricing and Billing](/data-integration/vnet/data-gateway-business-model).
 
