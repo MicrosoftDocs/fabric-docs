@@ -90,7 +90,7 @@ When you run the Dataflow with the modified script, it resolves to the value fro
 The following list outlines important constraints and behaviors to keep in mind when using Fabric variable libraries with Dataflow Gen2. These limitations affect how variables are referenced, evaluated, and applied during design and runtime.
 
 * **Workspace Scope**: Variable libraries must reside in the same workspace as the Dataflow Gen2 with CI/CD.
-* **Reference Location**: Variables can only be used inside the [mashup.pq file of a Dataflow Gen2 with CI/CD](rest/api/fabric/articles/item-management/definitions/dataflow-definition#mashup-contentdetails-example).
+* **Reference Location**: Variables can only be used inside the [mashup.pq file of a Dataflow Gen2 with CI/CD](/rest/api/fabric/articles/item-management/definitions/dataflow-definition).
 * **Runtime behavior**: Variables values are retrieved at the start of a run operation and persisted throughout the operation. Changes that happen to a library during a Dataflow run don't halt or impact its run.
 * **Power Query editor support**: No current support to resolve or evaluate variables within the Power Query editor. 
 * **Using a default value**: When using a default value through the function *Variable.ValueOrDefault*, make sure that the data type of the default value matches the data type of the referenced variable.
