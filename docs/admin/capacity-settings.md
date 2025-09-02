@@ -356,6 +356,19 @@ By default, delegated tenant settings inherit their configuration from the tenan
    
 1. Select **Apply**.
 
+## Manage max memory for semantic models
+
+To optimize performance and prevent memory-related errors, administrators can adjust the **Max memory (%)** setting for semantic models within the Power BI Premium and Power BI Embedded capacity settings.
+
+1. Go to the **Admin portal**.
+2. Select **Capacity settings**.
+3. Choose the relevant capacity and click on the **Workloads** tab.
+4. Locate the **Semantic models** section.
+5. Adjust the **Max memory (%)** slider to allocate more memory as needed.
+
+> [NOTE]
+> Increasing memory allocation may help resolve issues such as model loading failures or performance bottlenecks. For more context on SKU limitations, see [Semantic model SKU limitation](../enterprise/powerbi/service-premium-what-is.md#semantic-model-sku-limitation).
+
 ## Related content
 
 * [Microsoft Fabric licenses](../enterprise/licenses.md)
