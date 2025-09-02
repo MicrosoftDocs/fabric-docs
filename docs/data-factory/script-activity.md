@@ -11,7 +11,18 @@ ms.date: 12/18/2024
 
 # How to use Script activity
 
-In this article, you learn how to add a new SQL Script activity, add a new connection, and configure script content. The Script activity can be used to execute both query and nonquery SQL scripts against a backend SQL Azure or on-premises SQL instance.
+In this article, you learn how to add a new SQL Script activity, add a new connection, and configure script content. The Script activity can be used to execute both query and nonquery SQL scripts against data stores that support Data Manipulation Language (DML) and Data Definition Language (DDL).
+
+You can use the Script activity to invoke a SQL script in one of the following data stores:
+- [Fabric SQL database](/fabric/data-factory/connector-sql-database-overview)
+- [Fabric Data Warehouse](/fabric/data-factory/connector-data-warehouse-overview)
+- [Azure Database for PostgreSQL](/fabric/data-factory/connector-azure-database-for-postgresql-overview)
+- [Azure SQL Database](/fabric/data-factory/connector-azure-sql-database-overview)
+- [Azure SQL Managed Instance](/fabric/data-factory/connector-azure-sql-managed-instance-overview)
+- [Azure Synapse Analytics](/fabric/data-factory/connector-azure-synapse-analytics-overview)
+- [Oracle database](/fabric/data-factory/connector-oracle-database-overview)
+- [SQL Server Database](/fabric/data-factory/connector-sql-server-database-overview)
+- [Snowflake](/fabric/data-factory/connector-snowflake-overview)
 
 ## Prerequisites
 

@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.custom:
 ms.date: 08/06/2025
 ms.search.form: Read and Write Pandas
+ai-usage: ai-assisted
 ---
 
 # How to read and write data with Pandas in Microsoft Fabric
@@ -138,6 +139,77 @@ import pandas as pd
 # Replace LAKEHOUSE_PATH and FILENAME with your own values
 df.to_json("/LAKEHOUSE_PATH/Files/FILENAME.json") 
 ```
+
+## Working with Delta tables
+
+Delta tables are the default table format in Microsoft Fabric and are stored in the **Tables** section of your Lakehouse. Unlike files, Delta tables require a two-step process to work with pandas: first read the table into a Spark DataFrame, then convert it to a pandas DataFrame.
+
+
+### Create a test Delta table
+
+ To follow the steps in this section, you need a Delta table in your Lakehouse. Follow the steps in [Download dataset and upload to lakehouse](tutorial-data-science-ingest-data.md#download-dataset-and-upload-to-lakehouse) to add the **churn.csv** file to your Lakehouse, then create a test table from the **churn.csv** file by running this code in your notebook:
+
+```python
+import pandas as pd
+# Create a test Delta table from the churn.csv file
+
+df = pd.read_csv("/lakehouse/default/Files/churn/raw/churn.csv")
+spark_df = spark.createDataFrame(df)
+spark_df.write.format("delta").mode("overwrite").saveAsTable("churn_table")
+```
+
+ This creates a Delta table named **churn_table** that you can use for testing the examples below.
+
+### Read data from a Delta table
+
+```Python
+# Read a Delta table from your Lakehouse into a pandas DataFrame
+# This example uses the churn_table created above
+spark_df = spark.read.format("delta").load("Tables/churn_table")
+pandas_df = spark_df.toPandas()
+display(pandas_df)
+```
+
+You can also read Delta tables using Spark SQL syntax:
+
+```Python
+# Alternative method using Spark SQL
+spark_df = spark.sql("SELECT * FROM churn_table")
+pandas_df = spark_df.toPandas()
+display(pandas_df)
+```
+
+### Write pandas DataFrame to a Delta table
+
+```Python
+# Convert pandas DataFrame to Spark DataFrame, then save as Delta table
+# Replace TABLE_NAME with your desired table name
+spark_df = spark.createDataFrame(pandas_df)
+spark_df.write.format("delta").mode("overwrite").saveAsTable("TABLE_NAME")
+```
+
+You can also save to a specific path in the Tables section:
+
+```Python
+# Save to a specific path in the Tables section
+spark_df = spark.createDataFrame(pandas_df)
+spark_df.write.format("delta").mode("overwrite").save("Tables/TABLE_NAME")
+```
+
+### Write modes for Delta tables
+
+When writing to Delta tables, you can specify different modes:
+
+```Python
+# Overwrite the entire table
+spark_df.write.format("delta").mode("overwrite").saveAsTable("TABLE_NAME")
+
+# Append new data to existing table
+spark_df.write.format("delta").mode("append").saveAsTable("TABLE_NAME")
+```
+
+> [!NOTE]
+> Delta tables created in the **Tables** section of your Lakehouse are discoverable without any additional registration or configuration steps, and can be queried using Spark SQL. They also appear in the Lakehouse explorer interface (you may need to refresh the Lakehouse explorer to see recent changes).
 
 ## Related content
 

@@ -8,7 +8,7 @@ ms.reviewer: ''
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 11/07/2023
+ms.date: 09/02/2025
 LocalizationGroup: Administration
 ---
 
@@ -42,7 +42,10 @@ To learn more, see [Navigation for Power BI business users: global search](/powe
 
 ## Use Azure Maps Visual
 
-When enabled, users in the organization can use the Azure Maps visual for Power BI.
+When enabled, users in the organization can create and view reports that use the Azure Maps visual.
+
+- Microsoft temporarily stores and processes your data for essential services like translating locations into latitudes and longitudes.
+- If Azure Maps services are unavailable in your region, your data can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance.
 
 To learn more, see [Get started with Azure Maps Power BI visual](/azure/azure-maps/power-bi-visual-get-started).
 
