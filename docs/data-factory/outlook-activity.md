@@ -56,6 +56,10 @@ To set up the Office 365 Outlook activity:
 
    :::image type="content" source="media/outlook-activity/email-details.png" alt-text="Screenshot showing the settings windows in the Outlook Activity.":::
 
+## Known limitations
+
+- The Outlook activity will be inactive when using CI/CD.
+
 ## Related content
 
 - [Run, schedule, and trigger pipelines](pipeline-runs.md)
