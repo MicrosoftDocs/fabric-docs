@@ -4,7 +4,7 @@ description: Learn how to manage your Microsoft Fabric capacity and understand t
 author: julcsc
 ms.author: juliacawthra
 ms.topic: how-to
-ms.date: 03/20/2025
+ms.date: 09/02/2025
 ---
 
 # Manage your Fabric capacity
@@ -334,7 +334,7 @@ This table summarizes the actions you can take in the details section.
 | Data Engineering/Science Settings    | Allow workspace admins to set the size of their spark [pools](../data-engineering/workspace-admin-settings.md#pool) |
 | Workspaces assigned to this capacity | <sup>*</sup>Add or remove workspaces assigned to the capacity |
 
-<sup>*</sup> To assign a workspace to a Fabric capacity or a capacity with an A SKU, you need to have a capacity contributor role, and a workspace admin role.
+<sup>*</sup> To assign a workspace to a Fabric capacity or a capacity with an A SKU, you need to have a capacity **contributor** role, and a workspace admin role. A **contributor** on a capacity can assign workspaces to that capacity but can't modify capacity settings or delete the capacity. This role is typically used to allow workspace admins to move their workspaces into a managed capacity without giving them full administrative control.
 
 ### Delegated tenant settings
 
