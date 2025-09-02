@@ -80,11 +80,11 @@ These exercises show you how to validate costs for both CI/CD and non CI/CD Data
 
 The following dataflow has two queries involving transformation, and staging is disabled. 
 
-:::image type="content" source="media/pricing-dataflows-gen2/dataflows-query-details.png" alt-text="Dataflow Gen2 with two queries.":::
+:::image type="content" source="media/pricing-dataflows-gen2/dataflows-query-details.png" alt-text="Screenshot showing Dataflow Gen2 with two queries.":::
 
 
 
-:::image type="content" source="media/pricing-dataflows-gen2/staging-disabled.png" alt-text="Dataflow Gen2 with Staging Disabled.":::
+:::image type="content" source="media/pricing-dataflows-gen2/staging-disabled.png" alt-text="Screenshot showing Dataflow Gen2 with Staging Disabled.":::
 
 Dataflows Gen2 will only use the Standard Compute.
 
@@ -92,11 +92,11 @@ For each query, access the query duration from Refresh history and apply the fol
 
 For the first query, the duration is 2,131 seconds.
 
-:::image type="content" source="media/pricing-dataflows-gen2/recent-run-history-no-staging-1.png" alt-text="Query 1 refresh history.":::
+:::image type="content" source="media/pricing-dataflows-gen2/recent-run-history-no-staging-1.png" alt-text="Screenshot showing Query 1 refresh history.":::
 
 Similarly, for the second query, the duration is 913 seconds
 
-:::image type="content" source="media/pricing-dataflows-gen2/recent-run-history-no-staging-2.png" alt-text="Query 2 refresh history.":::
+:::image type="content" source="media/pricing-dataflows-gen2/recent-run-history-no-staging-2.png" alt-text="Screenshot showing Query 2 refresh history.":::
 
 <code>StandardComputeCapacityConsumptionInCUSeconds = if(QueryDurationInSeconds < 600, QueryDurationInSeconds x 12, (QueryDurationInSeconds - 600) x 1.5 + 600 x 12) </code>
 
@@ -104,7 +104,7 @@ For query 1, the computed consumption is 9497 CU seconds and for query 2, the co
 
 Aggregate the Capacity Consumption in CU seconds and validate the consumption in the Fabric capacity metrics app. In this scenario, the metrics app shows 17,180 CU seconds as the Standard Compute usage which compares well with the computed consumption of 17,167 CU seconds. Any discrepancies could be due to rounding in periodic reporting of usage.
 
-:::image type="content" source="media/pricing-dataflows-gen2/fabric-capacity-metrics-app-dataflow.png" alt-text="Fabric Capacity Metrics App showing Dataflow consumption.":::
+:::image type="content" source="media/pricing-dataflows-gen2/fabric-capacity-metrics-app-dataflow.png" alt-text="Screenshot showing Fabric Capacity Metrics App showing Dataflow consumption.":::
 
 ### Exercise 2: Standard compute for a non-CI/CD Dataflow
 
