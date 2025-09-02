@@ -49,7 +49,7 @@ At the end of each run, Dataflow Gen2 adds up the CU usage from each engine and 
 
 |Dataflow Gen2 Engine Type  |Consumption Meters  |Fabric CU consumption rate  |Consumption reporting granularity      |
 |---------|---------|---------|---------|
-|Standard Compute  (Dataflow Gen2 (CI/CD))   | Based on each mashup engine query execution duration in seconds. Standard Compute has two tier pricing depending on the query duration.       | -  For every second up to 10 minutes, 12 CU<br>-  For every additional second beyond 10 minutes, 1.5 CU      | Per Dataflow Gen2 item        |
+|Standard Compute  (Dataflow Gen2 (CI/CD))   | Based on each mashup engine query execution duration in seconds. Standard Compute has two tier pricing depending on the query duration.       | -  For every second up to 10 minutes, 12 CU<br>-  For every second beyond 10 minutes, 1.5 CU      | Per Dataflow Gen2 item        |
 |Standard Compute  (non CI/CD)   | Based on each mashup engine query execution duration in seconds.      | 16 CU| Per Dataflow Gen2 item        |
 |High Scale Dataflows Compute     | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds.         | 6 CU         | Per workspace        |
 |Data movement     | Based on Fast Copy run duration in hours and the used intelligent optimization throughput resources.         | 1.5 CU         | Per Dataflow Gen2 item        |
