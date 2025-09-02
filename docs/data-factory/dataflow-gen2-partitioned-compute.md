@@ -13,7 +13,7 @@ ms.custom: dataflows
 >[!NOTE]
 >Partitioned compute is currently in preview and only available in Dataflow Gen2 with CI/CD.
 
-Partitioned compute is a capability of the Dataflow Gen2 engine that allows parts of your dataflow logic to run in parallel that can in turn reduce the time that it completes its evaluations.
+Partitioned compute is a capability of the Dataflow Gen2 engine that allows parts of your dataflow logic to run in parallel reducing the time to complete its evaluations.
 
 Partitioned compute targets scenarios where the Dataflow engine can efficiently fold operations that can partition the data source and process each partition in parallel. For example, in a scenario where you're connecting to multiple files stored in an Azure Data Lake Storage Gen2, you can partition the list of files from your source, efficiently retrieve the partitioned list of files using [query folding](/power-query/query-folding-basics), use the [combine files experience](/power-query/combine-files-overview) and process all files in parallel.
 
@@ -67,5 +67,5 @@ You can use the [Table.PartitionKey](/powerquery-m/table-partitionkey) function 
 * For scenarios where your data source doesn't support folding the transformations for your files, it's recommended that you choose partitioned compute over fast copy. 
 * For best performance, use this method to load data directly to staging as your destination or to a Fabric Warehouse. 
 * Use the *Sample transform file* from the **Combine files** experience to introduce transformations that should happen in every file. 
-* Partitioned compute only supports a subset of transformations at the performance might vary depending on your source and set of transformations used.
+* Partitioned compute only supports a subset of transformations. The performance might vary depending on your source and set of transformations used.
 * Billing for the dataflow run is based on capacity unit (CU) consumption.
