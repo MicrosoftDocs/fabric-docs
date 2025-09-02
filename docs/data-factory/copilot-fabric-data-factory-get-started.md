@@ -4,15 +4,16 @@ description: Learn how to get started with Microsoft Copilot in Fabric in the Da
 author: whhender
 ms.author: whhender
 ms.reviewer: maghan, sngun
-ms.date: 07/15/2025
+ms.date: 09/02/2025
 ms.service: fabric
 ms.subservice: data-factory
-ms.update-cycle: 180-days
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ms.custom:
   - copilot-scenario-highlight
+ms.devlang: copilot-prompt
 ai-usage: ai-assisted
 ---
 
@@ -81,7 +82,7 @@ You can use AI tools, such as Copilot, to generate custom transformation queries
 Take my current data and create a transformation that filters for customers in Europe, groups employees by city with counts, and removes orders below the median quantity value.
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
 ## Get started with Copilot for Data pipelines
@@ -111,7 +112,7 @@ You can use AI tools, such as Copilot, to generate complete data pipeline workfl
 Create a data pipeline that copies data from a SQL Server database table called "Orders" to an Azure Data Lake Storage Gen2 container, with error handling and logging enabled.
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
 ### Summarize a Data pipeline with Copilot
@@ -144,7 +145,7 @@ You can use AI tools, such as Copilot, to help diagnose and resolve pipeline err
 Explain this pipeline error and provide troubleshooting steps: "The pipeline failed with a timeout error when connecting to the SQL Server database. Connection string: Server=myserver;Database=mydb;Integrated Security=true"
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
 ## Related content

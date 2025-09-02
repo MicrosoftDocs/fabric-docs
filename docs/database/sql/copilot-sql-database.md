@@ -1,14 +1,15 @@
 ---
-title: Microsoft Copilot in Microsoft Fabric in the SQL database workload Overview
+title: Microsoft Copilot in Microsoft Fabric in the SQL Database Workload Overview
 description: "Learn more about the Microsoft Copilot in Microsoft Fabric in the SQL database workload, an AI assistant designed to streamline your database tasks."
 author: markingmyname
 ms.author: maghan
 ms.reviewer: yoleichen, wiassaf
-ms.date: 04/09/2025
-ms.update-cycle: 180-days
+ms.date: 09/02/2025
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
+ms.update-cycle: 180-days
+ms.devlang: copilot-prompt
 ---
 
 # What is Copilot in Fabric in the SQL database workload (Preview)?
@@ -57,7 +58,7 @@ The following example prompts are clear, specific, and tailored to the propertie
  - Show all sales transactions that occurred on [a specific date]
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
 ## Responsible AI use of Copilot
