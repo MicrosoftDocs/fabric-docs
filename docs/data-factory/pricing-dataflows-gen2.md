@@ -72,7 +72,7 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 ## Compute estimated costs using the Fabric Metrics App and Dataflow Refresh History
 
-The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workspaces tied to a capacity. It's used by capacity administrators to monitor the performance of workloads and their usage compared to purchased capacity. Using the Metrics app is the most accurate way to estimate the costs of Dataflow Gen2 refresh runs. To understand how the tiered pricing impacted your standard compute costs, you will need to also use Dataflow refresh history.
+The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workspaces tied to a capacity. It's used by capacity administrators to monitor the performance of workloads and their usage compared to purchased capacity. Using the Metrics app is the most accurate way to estimate the costs of Dataflow Gen2 refresh runs. To understand how the tiered pricing impacted your standard compute costs, you also need to use Dataflow refresh history.
 
 These exercises show you how to validate costs for both CI/CD and non CI/CD Dataflows. For the CI/CD Dataflow with Standard Compute, we'll use an example, and we'll provide instructions for all other scenarios.
 
