@@ -90,7 +90,7 @@ Dataflows Gen2 will only use the Standard Compute.
 
 For each query, access the query duration from Refresh history and apply the following formula to compute the CU consumption per query.
 
-For the first query, the duration is 2131 seconds.
+For the first query, the duration is 2,131 seconds.
 
 :::image type="content" source="media/pricing-dataflows-gen2/recent-run-history-no-staging-1.png" alt-text="Query 1 refresh history.":::
 
