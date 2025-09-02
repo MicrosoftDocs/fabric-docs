@@ -71,10 +71,51 @@ Now you can start modeling.
 
 ## Start modeling
 
+
+### Add nodes
+
+Here is the node list, what you want to do is use the left hand side ellipses to right click and add node.  When you are adding the node you will see this below, you want to sync the node you are selecting and the id in the mapping column.( As you can see below it is Customers and CustomerID_K). Do this until all the nodes are populated on your canvas.
+
+| Node label  | Mapping table | Mapping column |
+|------------------|--------------------|-----------------------|
+| Customer         | customers          | CustomerID_K            |
+| Order            | orders             | SalesOrderID_K          |
+| Employee         | employees          | EmployeeID_K            |
+| Product         | products           | ProductID_K             |
+| ProductCategory  | productCategories  | CategoryID_K            |
+| ProductSubcategory| productSubcategories| SubcategoryID_K        |
+
+
 1. In your graph model, select **Add node** to add a new node to your graph.
-1. In the **Add node** pane, select the data you want to use for the node.
+1. In the **Add node to graph** dialog, enter a **Label** name and select the appropriate **Mapping table** and **Mapping column**. 
+
+    :::image type="content" source="./media/quickstart/node-add-customer.png" alt-text="Screenshot showing the add node to graph dialog." lightbox="./media/quickstart/node-add-customer.png":::
+
+    In this example, the node label is "Customer", the mapping table is "customers", and the mapping column is "CustomerID_K".
+
+1. Select **Confirm** to add the node to your graph.
+1. Repeat the process for all other nodes. You should see all the nodes represented in your graph.
+
+    :::image type="content" source="./media/quickstart/node-add-completed.png" alt-text="Screenshot showing all of the nodes added to the graph." lightbox="./media/quickstart/node-add-completed.png":::
+
+### Add edges
+
+Here is the edge creation, this connects your nodes together to build the graph. When you select a node (click) you will see a red circle appear, drag that to the node you are targeting to create an edge. Here your starting node is the Source Node and your Target Node is your end point. When you create an edge it will put a temporary label which you should update.
+
+| Edge | Mapping table | Source node mapping column | Target node mapping column |
+|-----|-------|------|----|
+| sells | Orders | Employee<br/><br/>EmployeeID_FK | Order<br/><br/>salesOrderDetailID_K |
+| purchases | Orders | Customer<br/><br/>CustomerID_FK | Order<br/><br/>salesOrderDetailID_K |
+| contains | Orders | Order<br/><br/>salesOrderDetailID_K | Product<br/><br/>ProductID_FK |
+| isOfType | Products | Product<br/><br/>ProductID_K |ProductSubCategory<br/><br/>subcategoryID_FK |
+| belongsTo | ProductSubcategories | ProductSubCategory<br/><br/>subcategoryID_K | ProductCategory<br/><br/>CategoryID_FK |
+
+
+
+
 1. Select **Add edge** to create a relationship between nodes.
 1. In the **Add edge** pane, select the source and target nodes, and define the relationship.
+
 
 ## Related content
 
