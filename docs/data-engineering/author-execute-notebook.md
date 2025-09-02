@@ -511,7 +511,7 @@ After you create a notebook with parameters, you can execute it from a pipeline 
 
 When assigning parameter values, you can use the [pipeline expression language](..\data-factory\expression-language.md) or [functions and variables](..\data-factory\parameters.md).
 
-Notebook parameters support simple type such as `int`, `float`, `bool`, and `string`. Complex types such as `list` and `dict` aren't supported. If you need to pass a complex type, consider serializing it to a string format (e.g., JSON) and then deserializing it within the notebook. Following is a sample that you can pass a JSON string from pipeline to Notebook and deserialize it.
+Notebook parameters support simple types such as `int`, `float`, `bool`, and `string`. Complex types such as `list` and `dict` aren't yet supported. To pass a complex type, consider serializing it to a string format (for example, JSON) and then deserializing it within the notebook. The following sample shows how to pass a JSON string from pipeline to notebook and deserialize it:
 
 :::image type="content" source="media\author-execute-notebook\notebook_parameter_json_pipeline.png" alt-text="Screenshot showing how to pass json string from a pipeline." lightbox="media\author-execute-notebook\notebook_parameter_json_pipeline.png":::
 
@@ -528,7 +528,7 @@ param1 = params.get("param1")
 param2 = params.get("param2")
 ```
 
-Please make sure the parameter name in the parameter code cell matches the parameter name in the pipeline.
+Make sure that the parameter name in the parameter code cell matches the parameter name in the pipeline.
 
 ## Spark session configuration magic command
 
