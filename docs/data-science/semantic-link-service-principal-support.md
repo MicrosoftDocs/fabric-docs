@@ -37,7 +37,7 @@ Choose the scenario that matches your workflow and continue with the configurati
 
 ## Using Semantic Link in service principal triggered notebook runs
 
-Service-principal-triggered notebook (SPN) runs refer to non-interactive notebook executions that are authenticated with a service principal. There are two scenarios:
+Service-principal-triggered notebook runs refer to non-interactive notebook executions that are authenticated with a service principal. There are two scenarios:
 
 - **Fabric Pipelines**: notebooks invoked as part of a pipeline using service principal authentication.
 - **Job Scheduler API**: notebooks triggered via the [Fabric public API](/rest/api/fabric/core/job-scheduler/run-on-demand-item-job?tabs=HTTP) using service principal authentication.
