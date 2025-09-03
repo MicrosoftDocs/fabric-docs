@@ -33,7 +33,7 @@ The Virtual Network Data Gateway addresses these challenges by acting as a secur
 3. When the job runs, data flows through the gateway via the private network path.
 4. Data doesn't leave the secure perimeter or traverse the public internet.
 
-:::image type="content" source="media/copy-job/copy-job-with-vnet-gateway.png" alt-text="Screenshot of the copy job with virtual network data gateway." lightbox="media/copy-job/copy-job-with-vnet-gateway.png":::
+:::image type="content" source="media/copy-job/copy-job-with-virtual-network-gateway.png" alt-text="Screenshot of the copy job with virtual network data gateway." lightbox="media/copy-job/copy-job-with-virtual-network-gateway.png":::
 
 ## Benefits
 
