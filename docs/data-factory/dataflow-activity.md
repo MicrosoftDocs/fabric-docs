@@ -54,14 +54,14 @@ When selecting a [Dataflow Gen2 with CI/CD that has the public parameters mode e
 
    :::image type="content" source="media/dataflow-activity/dataflow-settings.png" alt-text="Screenshot showing the Dataflow activity Settings tab, and highlighting the tab.":::
 
-Required parameters are shown with an asterisk next to their name, whereas optional parameters don't not have the asterisk. Furthermore, optional parameters can be selected and deleted from the grid, but required parameters can't be deleted and must be passed for the dataflow to run.
+Required parameters are shown with an asterisk next to their name, whereas optional parameters don't have the asterisk. Furthermore, optional parameters can be selected and deleted from the grid, but required parameters can't be deleted and must be passed for the dataflow to run.
 
 You can select the refresh button to request the latest parameter information from your dataflow.
 
 Inside the Dataflow parameters section you're able to enter the name of the parameter that you wish to pass and the type and value that you wish to pass.
 
 >[!NOTE]
->Parameterizing the DataflowId in the dataflow pipeline activity settings will only support the legacy Dataflow Gen2 version without CI/CD support. I.e.,  you can't invoke Dataflows with CI/CD support using parameterization of the DataflowId. This is only a temporary limitation that the product group will be addressing.
+>Parameterizing the DataflowId in the dataflow pipeline activity settings will only support the legacy Dataflow Gen2 version without CI/CD support. That is,  you can't invoke Dataflows with CI/CD support using parameterization of the DataflowId.
 
 ## Save and run or schedule the pipeline
 

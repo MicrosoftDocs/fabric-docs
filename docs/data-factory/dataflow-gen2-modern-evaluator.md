@@ -34,7 +34,7 @@ Follow these steps to turn on the Modern Query Evaluation Engine for a dataflow:
 
 1. **Enable the Modern Evaluator**: Find the setting for Modern query evaluation engine (Preview). Turn this option On (check or toggle it).
 
-    :::image type="content" source="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png" alt-text="Screenshot of the options dialog in a Dataflow Gen2 with CI/CD displaying the modern query evaluator setting.":::
+    :::image type="content" source="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png" alt-text="Screenshot of the options dialog in a Dataflow Gen2 with CI/CD displaying the modern query evaluator setting." lightbox="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png":::
 
 1. **Save and run**: Save the dataflow settings. The next time you run the dataflow, it will use the Modern Evaluator for supported connectors.
 

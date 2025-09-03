@@ -57,7 +57,7 @@ When you create a pipeline in Fabric, you can use the dataflow activity to trigg
 
 You can select the dataflow that you want to use and set the parameters that you want to use in the **Dataflow parameters** section.
 
-![Screenshot of the dataflow activity within Fabric pipelines that allows to pass parameters for Dataflow run.](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
+![Screenshot of the dataflow activity in Fabric pipelines that enables passing parameters for a Dataflow run.](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
 
 In the **Dataflow parameters** section, you're able to see all parameters available in your Dataflow and the default value from each inside the value section.
 
