@@ -66,7 +66,7 @@ Data Factory connects to your data, moves it, transforms it, and orchestrates yo
 - [Copy job](what-is-copy-job.md) - A way to copy data from one place to another without creating a pipeline.
 - [Mirroring](/fabric/database/mirrored-database/overview) - Create a near real-time replica of your operational database within OneLake in Microsoft Fabric to make your analytics and reporting easier.
 
-See our [data movement decision guide](data-movement-decision-guide.md) to help you choose the right data movement method for your scenario.
+See our [data movement decision guide](decision-guide-data-movement.md) to help you choose the right data movement method for your scenario.
 
 **Transform**: Data Factory provides activities to connect you to your custom transformation scripts or the powerful dataflows designer.
 
