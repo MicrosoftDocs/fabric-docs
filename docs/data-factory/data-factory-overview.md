@@ -17,7 +17,7 @@ Data Factory in Microsoft Fabric helps you solve one of business's toughest chal
 
 Your organization's data lives in many different places: databases, files, cloud services, and legacy systems. This makes it hard to get a complete picture of your business. Data Factory connects to over 170 data sources and helps you move and transform your data at scale. It turns your data into formats that work well for analytics and decision-making.
 
-:::image type="content" source="media/data-factory-overview/data-integration-stack.png" alt-text="Diagram of the data integration stack in Microsoft Fabric.":::
+:::image type="complex" source="media/data-factory-overview/data-integration-stack.png" alt-text="Diagram of the data integration stack in Microsoft Fabric.":::
    Diagram of Data Factory in Microsoft Fabric that shows a selection of connectors linked to analytics and data development tools in Fabric through data movement, orchestration, and transformation. This all sits on top of Fabric OneLake, and the entire stack is woven through with AI-powered intelligence.
 :::image-end:::
 
