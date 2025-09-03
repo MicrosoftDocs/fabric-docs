@@ -49,7 +49,7 @@ To set up the Office 365 Outlook activity:
 
    > [!NOTE]
    > * If you’re using user authentication and deploying the pipeline with the Outlook or Teams activity to another workspace, the activity will be inactive in the target workspace until you create a new user authentication connection there.
-   > * If you don't have access to the connections used in the Outlook activity, the target environment will set those activities to inactive. After that you can edit the target pipeline, change the authorization, and set the activity to active.
+   > * If you don't have access to the connections used in the Outlook activity, the initial deployment will fail. To troubleshoot, you can edit the target pipeline and change the authorization or set the activity to inactive.
    > * **The content being sent from the email will be sent from your account.**
 
 1. Provide details for the email, including recipients, subject, and body. You can also add advanced details like a custom "from" address, CC and BCC recipients, sensitivity, and a custom reply-to address. All fields support [dynamic expressions](expression-language.md).
