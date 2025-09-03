@@ -58,7 +58,7 @@ Microsoft provides a [**Fabric Chargeback app**](chargeback-app.md) to attribute
 > - **Priority and service-level agreement (SLA):** Don't mix a mission-critical workload with a noncritical project on one capacity. Align shared groups by similar criticality or SLA expectations.
 > - **Ownership and support:** Make sure any shared capacity has a clearly identified Capacity Admin or central team to monitor it, and all contributing teams agree to follow usage guidelines.
 
-Once you identify logical groupings, **size the capacity appropriately** for them. Use the [Fabric Capacity Metrics App](metrics-app.md) data from any existing usage to estimate combined load. If historical data isn't available, the [**Fabric SKU Estimator**](fabric-sku-estimator.md) gives a starting SKU recommendation, but measure and adjust over time. Use the [Fabric Chargeback app](chargeback-app-install.md) to track each workspace's capacity usage (capacity unit consumption), so you can report monthly usage by department and charge accordingly, like through internal cost center transfers. This transparency encourages teams to use resources responsibly.
+Once you identify logical groupings, **size the capacity appropriately** for them. Use the [Fabric Capacity Metrics App](metrics-app.md) data from any existing usage to estimate combined load. If historical data isn't available, the [**Fabric SKU Estimator**](fabric-sku-estimator.md) gives a starting stock-keeping unit (SKU) recommendation, but measure and adjust over time. Use the [Fabric Chargeback app](chargeback-app-install.md) to track each workspace's capacity usage (capacity unit consumption), so you can report monthly usage by department and charge accordingly, like through internal cost center transfers. This transparency encourages teams to use resources responsibly.
 
 Finally, [**monitor the shared capacity**](capacity-planning-troubleshoot-consumption.md) closely for the health of each unit sharing it. The [Fabric metrics app](metrics-app.md) shows at a glance which workspace or item uses the most capacity. Regularly share these insights with each department, like "Marketing used 30 percent of the capacity this month, mostly from semantic model X refreshes." This lets each unit optimize their own heavy items, maybe with help from the COE on best practices. It also flags if a team's growth means they need their own capacity soon.
 
@@ -76,7 +76,7 @@ In the try-out animation, we see the process of onboarding a new workspace in Mi
 
 - **Approach**:
   - Create a small F SKU capacity to try out new workspaces/items
-  - Assess CU consumption using metrics app
+  - Assess capacity unit (CU) consumption using metrics app
   - If acceptable, move to production capacity
   - If not, optimize
   - Pause tryout capacity when not in use, if possible
@@ -91,9 +91,9 @@ In the timeout animation, we see the process of moving a workspace to a smaller 
 
 - **Approach**
   - Create a small F SKU capacity
-  - Assess CU consumption using metrics app
-  - If CU for new items/workspaces affects existing workloads (throttling), move new workspace to timeout capacity (Admin Portal/Capacity Settings)
-  - High CU items/WSs (noisy neighbors) share smaller capacity (or you can pause it post move)
+  - Assess CU consumption using the metrics app
+  - If CU for new items or workspaces affects existing workloads (throttling), move the new workspace to timeout capacity (Admin Portal/Capacity Settings)
+  - High CU items or workspaces (noisy neighbors) share smaller capacity (or you can pause it post move)
   - Note workload thresholds before moving
 
 ### Rescue capacity: Handle temporary overloads
@@ -105,10 +105,10 @@ Keep a **standby capacity** ready to handle occasional spikes. For example, a ca
 In the rescue animation, we see the process of moving a workspace to a standby capacity in Microsoft Fabric:
 
 - **Approach**: 
-  - Create an F SKU capacity, keep it paused
+  - Create an F SKU capacity; keep it paused
   - Assess CU consumption using metrics app
   - If CU for new items/workspaces affects priority workloads (throttling), resume the new capacity
-  - Move priority workspace to new capacity (Admin Portal/Capacity Settings)
+  - Move the priority workspace to new capacity (Admin Portal/Capacity Settings)
   - Address issues with new content, then bring it back to original capacity, and pause the new one
   - Note workload thresholds before moving
 

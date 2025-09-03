@@ -48,11 +48,11 @@ In phase 1, the goal is to **validate your solution idea on Fabric with minimal 
     - Provide isolated capacity for key items built by experienced developers
   - **Pros**:
     - Easy
-    - Provides isolation from items built by inexperienced developers and/or rapid unplanned usage growth
-    - Flexibility in capacity settings/governance
+    - Provides isolation from items built by inexperienced developers and rapid unplanned usage growth
+    - Flexibility in capacity settings and governance
   - **Cons**:
     - Cost
-    - May lead to frustration of lower priority content developers/consumers
+    - Can lead to frustration of lower priority content developers and consumers
 - **Measure usage and feedback**: Even at this early stage, start using the [**Fabric Capacity Metrics app**](metrics-app.md) to monitor how the proof of concept uses resources. Track the capacity units used during background and interactive operations like pipeline runs for data refreshes, or interactive report runs. Also, gather feedback from the proof of concept users: Was their experience with the solution fast? Useful? Any issues? The combination of metrics and user feedback shows whether the solution approach works and guides improvements. If the trial capacity shows signs of strain (for example, approaching its limits), review the scope, simplify the proof of concept, or plan for more capacity in the next phase. Typically, a proof of concept on a trial runs comfortably if scoped right.
 
 ## Phase 2: Development to pilot
@@ -61,7 +61,7 @@ Phase 2 involves **building out the full solution and testing it in a controlled
 
 ### Key actions in phase 2
 
-- **Estimate required capacity and acquire it**: Based on proof of concept learnings, estimate what capacity SKU you need for the full solution. Microsoft provides the [**Fabric SKU Estimator (Preview)**](fabric-sku-estimator.md) tool to help with this. You input expected data volumes, usage patterns, number of users, and it suggests an SKU (for example, it might suggest an **F16** or **F32**).
+- **Estimate required capacity and acquire it**: Based on proof of concept learnings, estimate what capacity stock-keeping unit (SKU) you need for the full solution. Microsoft provides the [**Fabric SKU Estimator (Preview)**](fabric-sku-estimator.md) tool to help with this. You input expected data volumes, usage patterns, number of users, and it suggests an SKU (for example, it might suggest an **F16** or **F32**).
 
   > [!NOTE]
   > Fabric SKU Estimator is a starting point, not an absolute answer. As mentioned in [Evaluate and optimize your Microsoft Fabric capacity](optimize-capacity.md), capacity planning is a continuous exercise until you find the right balance between optimization and cost. It's always a good strategy to start small and then gradually increase the size as needed.
@@ -75,7 +75,7 @@ Phase 2 involves **building out the full solution and testing it in a controlled
   In the optimization animation, we see the process of optimizing capacity in Microsoft Fabric during the pilot phase:
 
   - **Approach**:
-    - Work with content creators to follow best practices and reduce CU consumption
+    - Work with content creators to follow best practices and reduce capacity unit (CU) consumption
   - **Pros**:
     - Avoids increased cost
     - Learning carries over to future content
@@ -109,7 +109,7 @@ In phase 3, deploy your Fabric solution to a **production capacity** and open it
 
   - **Approach**:
     - Move to a bigger F SKU
-    - Schedule scale using Azure automation, Fabric CLI or notebook
+    - Schedule scale using Azure Automation, Fabric CLI, or notebook
   - **Pros**:
     - Add CUs for all items
     - Easy
@@ -131,7 +131,7 @@ In phase 3, deploy your Fabric solution to a **production capacity** and open it
     - Flexibility in capacity settings/governance
   - **Cons**:
     - Cost
-    - High CU items have increased chance of throttling
+    - High CU items have an increased chance of throttling
     - Workload thresholds should be observed
 
 - **Implement governance**: Running in production means setting up governance and management processes. Assign clear responsibility for capacity monitoring (who checks metrics and when). Use [surge protection](surge-protection.md) (a Fabric feature that automatically protects against background over usage) as a safety net. Governance can also include regular reviews with stakeholders about capacity costs and needs, like monthly reports showing how the capacity is used to justify ROI.
