@@ -904,7 +904,9 @@
     - name: CI/CD for Copy job
       href: cicd-copy-job.md
     - name: REST API Capabilities
-      href: copy-job-rest-api-capabilities.md    
+      href: copy-job-rest-api-capabilities.md
+    - name: Secure your data movement with Copy Job and Virtual Network Data Gateway
+      href: copy-job-with-virtual-network-data-gateway.md
   - name: Data gateway
     items:
     - name: "Business continuity and disaster recovery (BCDR) for gateways"

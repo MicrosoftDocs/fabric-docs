@@ -20,7 +20,7 @@ For more information about tags, see [Tags in Microsoft Fabric](./tags-overview.
 
 As a Fabric or domain administrator, you can:
 
-  * **Create a set of tags** that users in your organization or domain can use to categorize their Fabric items.
+* **Create a set of tags** that users in your organization or domain can use to categorize their Fabric items.
   * **Rename tags.** If desired or necessary, you can rename a tag. When you rename a tag, its name changes wherever the tag is applied.
   * **Delete a tag.** If you decide that a tag isn't needed, you can delete it from the set of tags you defined. When you delete a tag from the set of defined tags, the tag is removed from all items where it was previously applied.
 
@@ -54,7 +54,7 @@ This section shows how [domain](./domains.md) administrators create and manage t
 
 When creating domain-level tags, consider the following uniqueness rules:
 
-  * A tag created at the tenant level can't be duplicated at the domain level and vice-versa. If you attempt to create a tag that duplicates an existing one at a different scope (tenant or domain), an error message indicates the existing tag and its scope.
+* A tag created at the tenant level can't be duplicated at the domain level and vice-versa. If you attempt to create a tag that duplicates an existing one at a different scope (tenant or domain), an error message indicates the existing tag and its scope.
 
     :::image type="content" source="./media/tags-define/duplicate-tags.png" alt-text="Screenshot showing the error that appears when a tag already exists.":::
 
@@ -97,10 +97,22 @@ You can delete both tenant-level and domain-level tags.
 
     The tag is deleted from the set of defined tags and is removed from all items where it was previously applied.
 
+## Create and manage tags programmatically
 
-## Create and manage tags programmatically using APIs
+All actions related to creating and managing tags can be performed programmatically via APIs. In addition, tags are included in Metadata Scanning (Scanner) APIs so that governance and discovery solutions can harvest tag assignments at scale.
 
-All of the actions described in this article for creating and managing tags in the UI can be performed programmatically via APIs. For more information, see [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags).
+### Tags REST APIs
+
+Use the Fabric REST Admin APIs for tags to programmatically create, list, rename and delete tenant and domain-level tags, allowing you to automate tag lifecycle and governance workflows.
+For more information, see [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags).  
+
+### Tags in Metadata scanning (Scanner) APIs
+
+The Scanner APIs include applied tags for each scanned item. 
+
+For every applicable item returned in a scan, the payload includes a `tags` field containing a list of applied tag UUIDs. To resolve tag IDs to tag names, use the [List Tags Admin REST API](/rest/api/fabric/admin/tags/list-tags).
+
+For more information, see [Metadata scanning overview](./metadata-scanning-overview.md).
 
 
 ## Related content
