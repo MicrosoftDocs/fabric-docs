@@ -69,6 +69,22 @@ items:
       href: monitor-paused-capacity.md
     - name: Understand metrics app calculations
       href: metrics-app-calculations.md
+  - name: Chargeback app
+    items:
+    - name: What is Microsoft Fabric Chargeback app (preview)?
+      href: chargeback-app.md
+    - name: Install the Microsoft Fabric Chargeback app
+      href: chargeback-app-install.md
+  - name: Fabric SKU Estimator (preview)
+    items:
+    - name: What is the Microsoft Fabric SKU Estimator (preview)?
+      href: fabric-sku-estimator.md
+    - name: Scenario for the Fabric SKU Estimator (preview)
+      href: fabric-sku-estimator-scenario.md
+    - name: Fabric SKU Estimator (preview) Release Notes
+      href: fabric-sku-estimator-release-notes.md
+- name: Capacity guidance
+  items:
   - name: Capacity planning guide
     items:
     - name: Strategic capacity planning overview
@@ -89,20 +105,6 @@ items:
       href: capacity-planning-troubleshoot-throttling.md
     - name: Diagnose and resolve capacity limit errors
       href: capacity-planning-troubleshoot-errors.md 
-  - name: Chargeback app
-    items:
-    - name: What is Microsoft Fabric Chargeback app (preview)?
-      href: chargeback-app.md
-    - name: Install the Microsoft Fabric Chargeback app
-      href: chargeback-app-install.md
-  - name: Fabric SKU Estimator (preview)
-    items:
-    - name: What is the Microsoft Fabric SKU Estimator (preview)?
-      href: fabric-sku-estimator.md
-    - name: Scenario for the Fabric SKU Estimator (preview)
-      href: fabric-sku-estimator-scenario.md
-    - name: Fabric SKU Estimator (preview) Release Notes
-      href: fabric-sku-estimator-release-notes.md
 - name: Power BI enterprise
   items:
   - name: Automatic aggregations
