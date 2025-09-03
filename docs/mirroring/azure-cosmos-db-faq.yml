@@ -186,11 +186,11 @@ sections:
       - question: |
           Does Azure Cosmos DB mirroring support nested data?
         answer: |
-          Yes, nested data is flattened in OneLake as a JSON string. Use `OPENJSON`, `CROSS APPLY`, and `OUTER APPLY` to flatten the data for view. For more information, see [nested data](azure-cosmos-db-limitations.md#nested-data). For a step-by-step tutorial, see [how to query nested data](azure-cosmos-db-how-to-query-nested.md).
+          Yes, nested data is flattened in OneLake as a JSON string. Use `OPENJSON`, `CROSS APPLY`, and `OUTER APPLY` to flatten the data for view. For more information, see [nested data](azure-cosmos-db-limitations.md#nested-data-limitations). For a step-by-step tutorial, see [how to query nested data](azure-cosmos-db-how-to-query-nested.md).
       - question: |
           Does Azure Cosmos DB mirroring support automatic flattening.
         answer: |
-          No, mirroring doesn't automatically flatten nested data. Methods are available for the SQL analytics endpoint to work with nested JSON strings. For more information, see [nested data](azure-cosmos-db-limitations.md#nested-data).
+          No, mirroring doesn't automatically flatten nested data. Methods are available for the SQL analytics endpoint to work with nested JSON strings. For more information, see [nested data](azure-cosmos-db-limitations.md#nested-data-limitations).
       - question: |
           Should I be concerned about cold start performance with mirrored data from Azure Cosmos DB?
         answer: |

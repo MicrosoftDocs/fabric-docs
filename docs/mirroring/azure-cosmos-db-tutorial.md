@@ -24,7 +24,7 @@ You can build Power BI reports directly on the data in OneLake, using DirectLake
 - An existing Azure Cosmos DB for NoSQL account.
   - If you don't have an Azure subscription, [Try Azure Cosmos DB for NoSQL free](https://cosmos.azure.com/try/).
   - If you have an existing Azure subscription, [create a new Azure Cosmos DB for NoSQL account](/azure/cosmos-db/nosql/quickstart-portal).
-- An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../fundamentals/fabric-trial.md). Mirroring might not be available in some Fabric regions. For more information, see [supported regions.](azure-cosmos-db-limitations.md#supported-regions)
+- An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../fundamentals/fabric-trial.md). Mirroring might not be available in some Fabric regions. For more information, see [supported regions.](azure-cosmos-db-limitations.md#availability-limitations)
 
 > [!TIP]
 > During the public preview, it's recommended to use a test or development copy of your existing Azure Cosmos DB data that can be recovered quickly from a backup.
