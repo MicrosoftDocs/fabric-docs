@@ -62,7 +62,7 @@ Some governance practices apply universally, whether content is self-service or 
   - If peak usage for a particular capacity is steadily increasing (for example, 60% → 75% → 90%), it's advisable to scale up to the next SKU before reaching full utilization. Analyze usage trends to accurately predict when scaling will be necessary; this might involve upgrading from F32 to F64 or expanding capacity by adding more units to distribute workloads more effectively.
   - On the other hand, if a capacity is consistently underutilized (with peak usage remaining below 30%), consider consolidating workloads onto it or scaling down to optimize costs provided service-level agreements are upheld.
   - Utilize collected data - including metrics applications and logs - for capacity forecasting. For instance: "Following an increase of 50 users last quarter, peak CU rose by 20%. We anticipate onboarding 100 more users next quarter, which suggests an approximate 40% CU increase; therefore, upgrading from F64 to F128 would be prudent." This approach facilitates proactive procurement and budgeting.
-  - Ensure compliance with regional data residency requirements during new project expansions. If the organization establishes a new branch that uses central analytics resources, review [multi geo capacities](../admin/service-admin-premium-multi-geo.md) accordingly.
+  - Ensure compliance with regional data residency requirements during new project expansions. If the organization establishes a new branch that uses central analytics resources, review [multigeo capacities](../admin/service-admin-premium-multi-geo.md) accordingly.
   - Each Microsoft Fabric workload has specific thresholds determined by capacity SKU size and license type. Ensure your chosen [SKU meets these requirements](sku-considerations.md). For instance, review [Fabric capacity requirements](../fundamentals/direct-lake-overview.md) when implementing semantic model. If the semantic model demands F128 capacity, begin with the F128 SKU.
 - **Optimize before scaling:** Always [optimize workloads](optimize-capacity.md) before increasing capacity. Inefficiencies result in unnecessary costs, so ensure operations run efficiently. Performance tuning might be supported by central IT or the COE. For instance:
   - Optimize slow Power BI measures or SQL queries, seeking COE best-practice advice.
@@ -82,6 +82,6 @@ By adopting robust growth and governance practices, Fabric administrators ensure
 ## Related content
 
 - [Plan your Microsoft Fabric capacity: Strategic guide overview](capacity-planning-overview.md)
-- [Part 1: Plan your deployment](capacity-planning-plan-deployment.md)
-- [Part 2: Scale for decentralized analytics](capacity-planning-scale-self-service-analytics.md)
-- [Part 3: Scale for centralized analytics](capacity-planning-enterprise-managed-self-service-solutions.md)
+- [Plan your deployment](capacity-planning-plan-deployment.md)
+- [Scale for decentralized analytics](capacity-planning-scale-self-service-analytics.md)
+- [Scale for centralized analytics](capacity-planning-enterprise-managed-self-service-solutions.md)

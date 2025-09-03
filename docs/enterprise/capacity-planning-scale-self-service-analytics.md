@@ -66,31 +66,59 @@ Finally, [**monitor the shared capacity**](capacity-planning-troubleshoot-consum
 
 If you consolidate multiple teams on a shared capacity, it's important to set up safeguards for **isolation** when needed. Even with governance, you can run into situations where one workload disrupts others. Here are strategies to help you manage these situations—think of them as tools to keep the capacity healthy and all teams happy:
 
-### Try-out capacity - onboard new solutions safely
-
-:::image type="content" source="media/capacity-planning/try-out.gif" alt-text="Animation of a new workspace being onboarded in Microsoft Fabric.":::
+### Try-out capacity: Onboard new solutions safely
 
 When you roll out a **new workspace or project**, deploy it on a small temporary capacity instead of directly into a shared one. This isolated pilot lets you measure its capacity utilization in a controlled way. Optimize and tune it if needed. After you check that it runs efficiently, move it into the shared capacity for full release. This approach prevents surprises—if the new solution uses too many resources, you catch it in the trial phase without affecting other teams. Pause the capacity when it's not in use to avoid billing.
 
-### "Timeout" capacity - quarantine noisy neighbors
+:::image type="content" source="media/capacity-planning/try-out.gif" alt-text="Animation of a new workspace being onboarded in Microsoft Fabric.":::
 
-:::image type="content" source="media/capacity-planning/timeout.gif" alt-text="Animation of a workspace being moved to a smaller capacity in Microsoft Fabric.":::
+In the try-out animation, we see the process of onboarding a new workspace in Microsoft Fabric:
+
+- **Approach**:
+  - Create a small F SKU capacity to try out new workspaces/items
+  - Assess CU consumption using metrics app
+  - If acceptable, move to production capacity
+  - If not, optimize
+  - Pause tryout capacity when not in use, if possible
+
+### "Timeout" capacity: Quarantine noisy neighbors
 
 If a workspace or user starts using too many resources on the shared capacity (causing others to throttle), move that workload to a separate **small capacity** temporarily. This acts as a quarantine: the rest of the teams recover, and the team using too many resources experiences limited compute, which often motivates them to fix their queries or upgrade to their own capacity. Admins can assign the workspace to a new capacity in the Fabric admin portal. Communicate this as an exceptional measure—"you maxed out the shared environment, so you've been moved to a smaller sandbox until the issue is resolved." This tactic protects everyone and creates accountability for heavy users. Pause the quarantine capacity when it's not in use.
 
-### Rescue capacity - handle temporary overloads
+:::image type="content" source="media/capacity-planning/timeout.gif" alt-text="Animation of a workspace being moved to a smaller capacity in Microsoft Fabric.":::
 
-:::image type="content" source="media/capacity-planning/rescue.gif" alt-text="Animation of a workspace being moved to a standby capacity in Microsoft Fabric.":::
+In the timeout animation, we see the process of moving a workspace to a smaller capacity in Microsoft Fabric:
+
+- **Approach**
+  - Create a small F SKU capacity
+  - Assess CU consumption using metrics app
+  - If CU for new items/workspaces affects existing workloads (throttling), move new workspace to timeout capacity (Admin Portal/Capacity Settings)
+  - High CU items/WSs (noisy neighbors) share smaller capacity (or you can pause it post move)
+  - Note workload thresholds before moving
+
+### Rescue capacity: Handle temporary overloads
 
 Keep a **standby capacity** ready to handle occasional spikes. For example, a capacity that's usually paused (no cost while paused) can be quickly resumed during an emergency. If a team has an urgent job that's overloading the shared capacity, switch that team's workspace to the standby capacity for the peak period. This approach "rescues" the workload, letting it finish on dedicated resources, while the main capacity instantly frees up for others. After the surge, move the workspace back and pause the standby. This strategy helps with one-off events or seasonal/reporting spikes that aren't frequent enough to permanently allocate capacity. It's manual burst handling beyond Fabric's automatic bursting and smoothing. Watch for cost (pay-as-you-go charges while it's running) and set criteria for when to trigger this. Pause the capacity when it's not in use.
 
+:::image type="content" source="media/capacity-planning/rescue.gif" alt-text="Animation of a workspace being moved to a standby capacity in Microsoft Fabric.":::
+
+In the rescue animation, we see the process of moving a workspace to a standby capacity in Microsoft Fabric:
+
+- **Approach**: 
+  - Create an F SKU capacity, keep it paused
+  - Assess CU consumption using metrics app
+  - If CU for new items/workspaces affects priority workloads (throttling), resume the new capacity
+  - Move priority workspace to new capacity (Admin Portal/Capacity Settings)
+  - Address issues with new content, then bring it back to original capacity, and pause the new one
+  - Note workload thresholds before moving
+
 ## Managing self-service growth and governance
 
-When multiple business units use Fabric in a self-service model, strong **governance and communication** are key to sustainable capacity management. Part 4 of the strategic capacity planning series covers best practices to manage capacity growth and governance.
+When multiple business units use Fabric in a self-service model, strong **governance and communication** are key to sustainable capacity management. [Manage capacity growth and governance](capacity-planning-manage-capacity-growth-governance.md) covers best practices to manage capacity growth and governance.
 
 ## Conclusion
 
-By following these guidelines, Fabric admins foster a successful **self-service analytics ecosystem** that scales. You achieve cost efficiency by sharing resources where appropriate, while still ensuring each group gets the performance it needs through smart isolation tactics. In short, **plan capacity with both the forest and the trees in mind**—the big picture of total resources, and the individual needs of each team. This article concludes part 2 of the strategic capacity planning series. With these strategies, you confidently expand Fabric usage across your organization without compromising governance or user satisfaction. The next part in the series covers enterprise-scale considerations for centrally managed solutions, building on these foundations.
+By following these guidelines, Fabric admins foster a successful **self-service analytics ecosystem** that scales. You achieve cost efficiency by sharing resources where appropriate, while still ensuring each group gets the performance it needs through smart isolation tactics. In short, **plan capacity with both the forest and the trees in mind**—the big picture of total resources, and the individual needs of each team. With these strategies, you confidently expand Fabric usage across your organization without compromising governance or user satisfaction. The next part in the series covers enterprise-scale considerations for centrally managed solutions, building on these foundations.
 
 > [!div class="nextstepaction"]
-> [Part 3: Scale for enterprise and managed self-service solutions](capacity-planning-enterprise-managed-self-service-solutions.md)
+> [Scale for enterprise and managed self-service solutions](capacity-planning-enterprise-managed-self-service-solutions.md)

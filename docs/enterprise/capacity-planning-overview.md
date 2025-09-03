@@ -25,13 +25,13 @@ By the end of the series, you understand how to:
 
 The series is organized into four parts, each focusing on a specific scenario or phase of capacity planning:
 
-- [**Part 1: Start your Fabric journey to plan your deployment**](capacity-planning-plan-deployment.md)  
+- [**Plan your first deployment**](capacity-planning-plan-deployment.md)  
   - **First solution – POC to production**: Learn how to begin with a limited-scope Fabric POC using free trial capacity, then gradually scale up through a pilot to a production deployment.
-- [**Part 2: Scale for self-service analytics**](capacity-planning-scale-self-service-analytics.md)  
+- [**Scale for self-service analytics**](capacity-planning-scale-self-service-analytics.md)  
   - **Decentralized content – consolidation and isolation**: Focus on multiteam capacity strategies. Learn when to use dedicated or shared capacities, and how to maximize utilization while avoiding “noisy neighbor” issues in a self-service environment.
-- [**Part 3: Scale for enterprise and managed self-service solutions**](capacity-planning-enterprise-managed-self-service-solutions.md)
+- [**Scale for enterprise and managed self-service solutions**](capacity-planning-enterprise-managed-self-service-solutions.md)
   - **Centrally owned content – tiered planning**: Learn capacity planning for content managed by central IT/COE. Support critical enterprise Data and AI workloads with appropriate capacity (tier 1 or tier 2), and ensure performance SLAs and governance requirements are met.
-- [**Part 4: Manage capacity growth and governance**](capacity-planning-manage-capacity-growth-governance.md)
+- [**Manage capacity growth and governance**](capacity-planning-manage-capacity-growth-governance.md)
   - **Ongoing management – monitoring and optimization**: Get best practices for continuous capacity governance. Monitor usage (Fabric Metrics App), enforce governance (like surge protection, chargeback for fair usage), and optimize or scale capacity proactively as Fabric adoption grows.
 
 Each part builds on the previous, guiding you from a successful pilot deployment to a well governed, scalable Fabric environment. By following this series, you get a comprehensive roadmap to **plan**, **implement**, and **manage** Microsoft Fabric capacities effectively as your organization's analytics needs evolve.
@@ -39,4 +39,4 @@ Each part builds on the previous, guiding you from a successful pilot deployment
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 1: Plan your deployment](capacity-planning-plan-deployment.md)
+> [Plan your deployment](capacity-planning-plan-deployment.md)
