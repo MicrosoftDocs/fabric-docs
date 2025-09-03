@@ -106,7 +106,7 @@ Use the following steps to edit an existing OneLake security role.
 
 1. Review the information in the **Data in role** tab:
 
-   This tab shows all of the data that is members of the role can access.
+   This tab shows all of the data that the members of the role can access.
 
    The **Data** column shows the name of the tables or folders that are part of the role access. You can expand and collapse schemas to view the items underneath. Hovering over an entry shows the full path of the table or folder. Hovering over the **...** will give you options to configure **Row-level security** or **Column-level security**. The [row level security](./row-level-security.md) and [column level security](./column-level-security.md) guides provide more information on how that works. 
 
