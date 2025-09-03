@@ -17,7 +17,8 @@ The Microsoft Access connector is supported in Data Factory for [!INCLUDE [produ
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-microsoft-access-copy-activity.md) (source/destination)<br>- Lookup activity | On-premises | Anonymous <br>Basic   |
+| **Data pipeline** <br>- [Copy activity](connector-microsoft-access-copy-activity.md) (source/destination)<br>- Lookup activity | On-premises (version 3000.278.5 or above) | Anonymous <br>Basic   |
+| **Copy job** (source/destination) | On-premises (version 3000.278.5 or above) | Anonymous <br>Basic |
 
 > [!NOTE]
 > To use Microsoft Access connector in date pipelines, please install [Microsoft Access ODBC driver](https://www.microsoft.com/download/details.aspx?id=54920) on the computer running on-premises data gateway. The recommended driver version is 16.00.5378.1000 or above.
