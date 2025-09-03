@@ -938,6 +938,12 @@
             href: dataflow-gen2-cicd-and-git-integration.md
           - name: Fast copy at scale
             href: dataflows-gen2-fast-copy.md
+          - name: Modern query evaluator (Preview)
+            href: dataflow-gen2-modern-evaluator.md
+          - name: Preview only step (Preview)
+            href: dataflow-gen2-preview-only-step.md
+          - name: Partitioned compute (Preview)
+            href: dataflow-gen2-partitioned-compute.md
           - name: How to handle schema drift
             href: how-to-handle-schema-drift.md
           - name: How to obfuscate data
@@ -946,6 +952,8 @@
             href: dataflows-gen2-monitor.md
           - name: Public parameters in Dataflow Gen2
             href: dataflow-parameters.md
+          - name: Variable libraries in Dataflow Gen2
+            href: dataflow-gen2-variable-library-integration.md
           - name: Saving a draft of your dataflow
             href: dataflows-gen2-save-draft.md
           - name: Use cloud connections through gateways

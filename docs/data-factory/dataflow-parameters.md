@@ -4,8 +4,8 @@ description: Dataflow Gen2 within Fabric offers the capability to define paramet
 author: ptyx507x
 ms.author: miescobar
 ms.reviewer: whhender
-ms.topic: conceptual
-ms.date: 08/20/2025
+ms.topic: concept-article
+ms.date: 09/15/2025
 ms.custom: dataflows
 ---
 
@@ -13,29 +13,16 @@ ms.custom: dataflows
 
 Parameters in Dataflow Gen2 allow you to dynamically control and customize dataflows, making them more flexible and reusable by enabling different inputs and scenarios without modifying the dataflow itself. It helps keep things organized by reducing the need for multiple dataflows and centralizing control within a single, parameterized dataflow.
 
-**Public parameters** in Dataflow Gen2 is a new mode where you can allow your Dataflow to be refreshed by passing parameter values outside of the Power Query editor through the Fabric REST API or through native Fabric experiences. It allows you to have a more dynamic experience with your Dataflow where each refresh can be invoked with different parameters that affect how your Dataflow is refreshed.
+**Public parameters** in Dataflow Gen2 is a new mode where you can allow your Dataflow to be run by passing parameter values outside of the Power Query editor through the Fabric REST API or through native Fabric experiences. It allows you to have a more dynamic experience with your Dataflow where each run can be invoked with different parameters that affect how your Dataflow runs.
 
 ## Prerequisites
 
 * **A Dataflow Gen2 with CI/CD support**
-* **Parameters must be set within your Dataflow.** [Learn more on how to set Query parameters in Dataflow](/power-query/power-query-query-parameters).
-
-## Considerations and limitations
-
-* **Dataflows with the public parameters mode enabled cannot be scheduled for refresh through the Fabric scheduler.** The only exception is a dataflow with no required parameters set.
-* **Dataflows with the public parameters mode enabled cannot be manually triggered through the Fabric Workspace list or lineage view.** The only exception is a dataflow with no required parameters set.
-* **Parameters that affect the resource path of a data source or a destination are not supported.** Connections are linked to the exact data source path defined in the authored dataflow and can't be currently override to use other connections or resource paths.
-* **Dataflows with incremental refresh can't leverage this new mode.**
-* **Only parameters of the type *Text*, *Decimal number*, *DateTime*, *Date*, *Time*, *DateTimeZone*, *Duration* and *True/False*, can be passed for override.**  Any other data types don't produce a refresh request in the refresh history but show in the monitoring hub. 
-* **The public parameters mode allows users to modify the logic defined within the Dataflow by overriding the parameter values.** It  would allow others who have permissions to the dataflow to refresh the data with other values, resulting in different outputs from the data sources used in the dataflow.
-* **Monitoring hub does not display information about the parameters passed during the invocation of the dataflow.**
-* **Staged queries will only keep the last data refresh of a Dataflow stored in the Staging Lakehouse.** Users are able to look at the data from the Staging Lakehouse using the Dataflows connector to determine what was data is stored. Defining data destinations when using the public parameters mode is highly encouraged.
-* **When submitting a duplicated request for the same parameter values, only the first request will be accepted and subsequent will be rejected until the first request finishes its evaluation.**
-* **In the context of data destinations, parameters cannot be used to change the mapping schema.** The Dataflow refresh will apply all mappings and data destination settings that were saved by the Dataflow during the authoring stage. Check out the article for more information on [data destinations and managed settings in Dataflow Gen2](dataflow-gen2-data-destinations-and-managed-settings.md).
+* **Parameters must be set within your Dataflow.** [Learn more on how to set query parameters in Dataflow](/power-query/power-query-query-parameters).
 
 ## Enable the public parameter mode
 
-As the author of the dataflow, open the Dataflow. Inside the Home tab of the ribbon, select the **Options** button.
+As the owner of the dataflow, open the Dataflow. Inside the Home tab of the ribbon, select the **Options** button.
 
 ![Screenshot of the Options button found within the Home tab of the ribbon for the Power Query Editor.](media/dataflow-parameters/options-button.png)
 
@@ -53,26 +40,60 @@ Once the public parameter mode has been enabled, you can save your dataflow.
 
 ![Screenshot of the options to save a dataflow within the home tab of the ribbon.](media/dataflow-parameters/save-dataflow.png)
 
-## Pass custom parameter values for refresh
+## Pass custom parameter values for Dataflow runs
 
 The public parameter mode follows the definition of the parameters inside the dataflow where there's a distinction between required and nonrequired parameters.
 
-* **Required parameters**: if a parameter is set as required, in order to refresh the dataflow a value needs to be passed to the refresh job. The refresh fails if no value is passed for a parameter that is set to required.
-* **Non-required parameters**: these are also called ***optional*** parameters and no value is required to be passed for a refresh to be triggered. If no value is passed, the **Current value** defined within your parameter used for refresh. However, you can always pass an override value, which is used for refresh.
+* **Required parameters**: if a parameter is set as required, in order to run the dataflow a value needs to be passed to the run job. The run fails if no value is passed for a parameter that is set to required.
+* **Non-required parameters**: these are also called ***optional*** parameters and no value is required to be passed for a run to be triggered. If no value is passed, the **Current value** defined within your parameter is used for run.
 
-## Use the Dataflow refresh activity within pipelines
+
+### Use the Dataflow activity within Pipelines
 
 >[!NOTE]
 >We recommend reading more about the [dataflow activity from Fabric pipelines](dataflow-activity.md) to understand all its capabilities. 
 
-When you create a pipeline in Fabric, you can use the dataflow refresh activity to trigger the refresh of a Dataflow Gen2 with CI/CD support that has the public parameters mode enabled. 
+When you create a pipeline in Fabric, you can use the dataflow activity to trigger the run of a Dataflow Gen2 with CI/CD support that has the public parameters mode enabled. 
 
 You can select the dataflow that you want to use and set the parameters that you want to use in the **Dataflow parameters** section.
 
-![Screenshot of the dataflow activity within Fabric pipelines that allows to pass parameters for refresh.](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
+![Screenshot of the dataflow activity in Fabric pipelines that enables passing parameters for a Dataflow run.](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
 
-In the **Dataflow parameters** section, you can pass the name of the parameter, the type of value that you want to pass, and the value to pass. You can manually add all the supported parameters that you want to override.
+In the **Dataflow parameters** section, you're able to see all parameters available in your Dataflow and the default value from each inside the value section.
 
->[!IMPORTANT]
->Be sure to pass the name of the parameters exactly as typed inside of the dataflow as parameter names are case sensitive.
+Required parameters have an asterisk next to their name, while optional parameters don't. At the same time, optional parameters can be removed from the grid, whereas required parameters can't be deleted and a value must be passed for the dataflow to run.
+
+
+You can select the refresh button to request the latest parameter information from your dataflow.
+
+## Supported parameter types
+
+>[!TIP]
+>Read and use the [discover Dataflow parameter REST API](/rest/api/fabric/dataflow/items). The documentation provides all available parameter types and their expected values, and the REST API provides a way to get the parameter information from your dataflow.
+
+The following table showcases the currently supported parameter types and the link to the REST API definition for it to understand what are the values expected by the REST API. 
+
+|Dataflow parameter type| REST API definition|
+|----|---|
+|Text|[DataflowStringParameter](/rest/api/fabric/dataflow/items)|
+|Integer (int64)|[DataflowIntegerParameter](/rest/api/fabric/dataflow/items)|
+|Decimal number|[DataflowNumberParameter](/rest/api/fabric/dataflow/items)|
+|Date|[DataflowDateParameter](/rest/api/fabric/dataflow/items)|
+|DateTime|[DataflowDateTimeParameter](/rest/api/fabric/dataflow/items)|
+|Time|[DataflowTimeParameter](/rest/api/fabric/dataflow/items)|
+|DateTimeZone|[DataflowDateTimeZoneParameter](/rest/api/fabric/dataflow/items)|
+|Duration|[DataflowDurationParameter](/rest/api/fabric/dataflow/itemsr)|
+|True/False|[DataflowBooleanParameter](/rest/api/fabric/dataflow/items)|
+
  
+## Considerations and limitations
+The following is a list of all considerations and limitations when using the public parameters mode in Dataflow Gen2 with CI/CD:
+
+* **Scheduling & manual triggering**: Dataflows with public parameters can't be scheduled or manually triggered via Fabric, unless no required parameters are set.
+* **Unsupported parameterization**: Parameters that alter resource paths for sources or destinations aren't supported. Connections are fixed to the authored path.
+* **Incremental refresh**: Not compatible with public parameters mode.
+* **Logic Modification**: Public parameters allow users with access to override values, potentially changing the dataflow output.
+* **Monitoring Hub**: The Monitoring Hub doesn't show parameter values used during execution.
+* **Staging behavior**: Only the latest run is stored in the Staging Lakehouse. Use defined destinations to retain data.
+* **Duplicate Requests**: If the same parameter values are submitted multiple times, only the first request is accepted until it completes.
+* **Schema Mapping**: Parameters can't modify destination schema mappings. All mappings follow the authored configuration. Check out the article for more information on [data destinations and managed settings in Dataflow Gen2](dataflow-gen2-data-destinations-and-managed-settings.md).
