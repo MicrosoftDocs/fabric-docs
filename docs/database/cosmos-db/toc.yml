@@ -18,6 +18,8 @@ items:
     items:
       - name: Mirror to OneLake
         href: mirror-onelake.md
+      - name: Mirroring limitations
+        href: mirroring-limitations.md
       - name: Create Power BI reports
         href: how-to-create-reports.md
       - name: Access data from a lakehouse
