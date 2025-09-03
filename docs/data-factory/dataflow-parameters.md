@@ -87,7 +87,7 @@ The following table showcases the currently supported parameter types and the li
 
  
 ## Considerations and limitations
-The following is a list of all considerations and limitations when using the public parameteres mode in Dataflow Gen2 with CI/CD:
+The following is a list of all considerations and limitations when using the public parameters mode in Dataflow Gen2 with CI/CD:
 
 * **Scheduling & manual triggering**: Dataflows with public parameters can't be scheduled or manually triggered via Fabric, unless no required parameters are set.
 * **Unsupported parameterization**: Parameters that alter resource paths for sources or destinations aren't supported. Connections are fixed to the authored path.
