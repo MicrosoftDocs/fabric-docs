@@ -85,7 +85,7 @@ The following Semantic Link functions are supported for service principal trigge
 
 You can authenticate a service principal for interactive notebook runs in two ways:
 
-- Use the sempy `set_service_principal` as a context manager. This is the simpler option with less code and built-in support for plain values or Key Vault references—see the [Use Semantic Link set service principal](#use-semantic-link-set-service-principal) section.
+- Use the sempy `set_service_principal` as a context manager. This is the simpler option with less code and built-in support for plain values or Key Vault references—see the [Use Semantic Link set service principal](#use-semantic-link-set_service_principal) section.
 - Use an [Azure SDK](/azure/developer/python/sdk/azure-sdk-overview) `TokenCredential` for more control and interoperability with other Azure libraries—see the [Use Azure SDK token credential](#use-azure-sdk-token-credential) section.
 
 
