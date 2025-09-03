@@ -906,7 +906,7 @@
     - name: REST API Capabilities
       href: copy-job-rest-api-capabilities.md
     - name: Secure your data movement with Copy Job and Virtual Network Data Gateway
-      href: copy-job-with-vnet-data-gw.md
+      href: copy-job-with-vnet-data-gateway.md
   - name: Data gateway
     items:
     - name: "Business continuity and disaster recovery (BCDR) for gateways"
