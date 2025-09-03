@@ -192,7 +192,7 @@ Parameters can be used to control the behavior of a pipeline and its activities.
 
     :::image type="content" source="./media/copy-data-activity/new-parameter.png" alt-text="Screenshot shows creating a new parameter.":::
 
-    The parameter value should be Lakehouse/Data Warehouse connection ID. To get it, open your **Manage Connections and Gateways**, choose the Lakehouse/Data Warehouse connection that you want to use, and open **Settings** to get your connection ID.
+    The parameter value should be Lakehouse/Data Warehouse connection ID. To get it, open your **Manage Connections and Gateways**, choose the Lakehouse/Data Warehouse connection that you want to use, and open **Settings** to get your connection ID. If you want to create a new connection, you can select **+ New** on this page or go to get data page through **Connection** drop-down list.
 
 1. Select **Save** to go back to the **Add dynamic content** pane. Then select your parameter so it appears in the expression box. Then select **OK**. You'll go back to the pipeline page and can see the parameter expression is specified after **Connection**.
 
@@ -208,7 +208,7 @@ Parameters can be used to control the behavior of a pipeline and its activities.
 
         :::image type="content" source="./media/copy-data-activity/data-warehouse-object-id.png" alt-text="Screenshot showing the Data Warehouse object ID.":::
 
-1. Specify the [SQL connection string for your Data Warehouse](../data-warehouse/how-to-connect#find-the-warehouse-connection-string).
+1. Specify the [SQL connection string for your Data Warehouse](../data-warehouse/how-to-connect.md#find-the-warehouse-connection-string).
 
 ## Related content
 
