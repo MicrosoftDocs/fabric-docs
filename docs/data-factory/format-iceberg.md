@@ -1,6 +1,6 @@
 ---
-title: How to configure Iceberg format in the data pipeline of Data Factory in Microsoft Fabric
-description: This article explains how to configure Iceberg format in the data pipeline of Data Factory in Microsoft Fabric.
+title: How to configure Iceberg format in the pipeline of Data Factory in Microsoft Fabric
+description: This article explains how to configure Iceberg format in the pipeline of Data Factory in Microsoft Fabric.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -24,7 +24,7 @@ Iceberg format is supported for the following activities and connectors as desti
 
 ## Iceberg format in copy activity
 
-To configure Iceberg format, choose your connection in the destination of the data pipeline copy activity, and then select **Iceberg** in the drop-down list of **File format**.
+To configure Iceberg format, choose your connection in the destination of the pipeline copy activity, and then select **Iceberg** in the drop-down list of **File format**.
 
 :::image type="content" source="./media/format-iceberg/file-settings-iceberg.png" alt-text="Screenshot showing selecting Iceberg.":::
 

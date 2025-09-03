@@ -18,13 +18,13 @@ The Azure Blob Storage connector is supported in Data Factory for [!INCLUDE [pro
 
 | Supported capabilities                                                                 | Gateway                        | Authentication                                                                                                 |
 |----------------------------------------------------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------|
-| **Dataflow Gen2** (source/-)                                                 | None<br> On-premises<br> Virtual network | Account key<br> Anonymous<br> Organizational account<br> Service principal<br> Shared Access Signature (SAS) |
-| **Data pipeline** <br>- [Copy activity](connector-azure-blob-storage-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity| None<br> On-premises<br> Virtual network | Account key<br> Anonymous<br> Organizational account<br> Service principal<br> Shared Access Signature (SAS) |
-| **Copy job** (source/destination) <br>- Full load<br>- Incremental load <br>- Append<br>- Override | None<br> On-premises<br> Virtual network | Account key<br> Anonymous<br> Organizational account<br> Service principal<br> Shared Access Signature (SAS) |
+| **Dataflow Gen2** (source/-)                                                 | None<br> On-premises<br> Virtual network | Account key<br> Anonymous<br> Organizational account<br> Service principal<br> Shared Access Signature (SAS)|
+| **Pipeline** <br>- [Copy activity](connector-azure-blob-storage-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity| None<br> On-premises<br> Virtual network | Account key<br> Anonymous<br> Organizational account<br> Service principal<br> Shared Access Signature (SAS) <br>Workspace identity|
+| **Copy job** (source/destination) <br>- Full load<br>- Incremental load <br>- Append<br>- Override | None<br> On-premises<br> Virtual network | Account key<br> Anonymous<br> Organizational account<br> Service principal<br> Shared Access Signature (SAS) <br>Workspace identity|
 
 
 ## Related content
 
 To learn about how to connect to Azure Blob Storage, go to [Set up your Azure Blob Storage connection](connector-azure-blob-storage.md).
 
-To learn about the copy activity configuration for Azure Blob Storage in data pipelines, go to [Configure Azure Blob Storage in a copy activity](connector-azure-blob-storage-copy-activity.md).
+To learn about the copy activity configuration for Azure Blob Storage in pipelines, go to [Configure Azure Blob Storage in a copy activity](connector-azure-blob-storage-copy-activity.md).

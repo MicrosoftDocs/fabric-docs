@@ -5,12 +5,12 @@ author: msmimart
 ms.author: mimart
 ms.topic: conceptual
 ms.custom:
-ms.date: 07/17/2024
+ms.date: 08/13/2025
 ---
 
-# Protect inbound traffic
+# Protect inbound traffic to Microsoft Fabric tenants
 
-Inbound traffic is traffic coming into Fabric from the internet. This article explains the differences between the two ways to protect inbound traffic in Microsoft Fabric, *private links* and *Entra Conditional Access*. Use this article to decide which method is best for your organization.
+Inbound traffic is traffic coming into Fabric from the internet. This article explains the differences between the two ways to protect inbound traffic in Microsoft Fabric, *private links* and *Microsoft Entra Conditional Access*. Use this article to decide which method is best for your organization.
 
 * **Private links** (Option 1, Customer Vnet) - Fabric uses a private IP address from your virtual network. The endpoint allows users in your network to communicate with Fabric over the private IP address using private links.
 
@@ -26,7 +26,7 @@ By default, Fabric communicates between [experiences](../fundamentals/microsoft-
 
 Fabric's default security settings include:
 
-* [Microsoft Entra ID](/entra/fundamentals/whatis) which is used to authenticate every request.
+* [Microsoft Entra ID](/entra/fundamentals/whatis), which is used to authenticate every request.
 
 * Upon successful authentication, requests are routed to the appropriate backend service through secure Microsoft managed endpoints.
 
@@ -34,11 +34,11 @@ Fabric's default security settings include:
 
 * Traffic between clients and Fabric is encrypted using at least the Transport Layer Security (TLS) 1.2 protocol.
 
-## Entra Conditional Access
+## Microsoft Entra Conditional Access
 
 Every interaction with Fabric is authenticated with Microsoft Entra ID. Microsoft Entra ID is based upon the [Zero Trust](/azure/security/fundamentals/zero-trust) security model, which assumes that you're not fully protected within your organization's network perimeter. Instead of looking at your network as a security boundary, Zero Trust looks at identity as the primary perimeter for security.
 
-To determine access at the time of authentication you can define and enforce [conditional access policies](/entra/identity/conditional-access/overview) based on your users' identity, device context, location, network, and application sensitivity. For example, you can require multifactor authentication, device compliance, or approved apps for accessing your data and resources in Fabric. You can also block or limit access from risky locations, devices, or networks.
+To determine access at the time of authentication, you can define and enforce [conditional access policies](/entra/identity/conditional-access/overview) based on your users' identity, device context, location, network, and application sensitivity. For example, you can require multifactor authentication, device compliance, or approved apps for accessing your data and resources in Fabric. You can also block or limit access from risky locations, devices, or networks.
 
 Conditional access policies help you protect your data and applications without compromising user productivity and experience. Here are a few examples of access restrictions you can enforce using conditional access.
 
@@ -55,7 +55,7 @@ Fabric doesn't support other authentication methods such as account keys or SQL 
 To [configure conditional access in Fabric](security-conditional-access.md#configure-conditional-access-for-fabric), you need to select several Fabric related Azure services such as Power BI, Azure Data Explorer, Azure SQL Database, and Azure Storage.
 
 >[!NOTE]
->Conditional access can be considered too broad for some customers as any policy will be applied to Fabric and the related Azure services.
+>Conditional access can be considered too broad for some customers as any policy is applied to Fabric and the related Azure services.
 
 ### Licensing
 
@@ -63,19 +63,25 @@ Conditional access requires Microsoft Entra ID P1 licenses. Often these licenses
 
 ### Trusted access
 
-Fabric doesn't need to reside in your private network, even when you have your data stored inside one. With PaaS services, it's common to put the compute in the same private network as the storage account. However, with Fabric this isn't needed. To enable trusted access into Fabric, you can use features such as [on-premises Data gateways](/power-bi/connect-data/service-gateway-onprem), [Trusted workspace access](security-trusted-workspace-access.md) and [managed private endpoints](/azure/private-link/manage-private-endpoint). For more information, see [Security in Microsoft Fabric](security-overview.md).
+Fabric doesn't need to reside in your private network, even when you have your data stored inside one. With PaaS services, it's common to put the compute in the same private network as the storage account. However, with Fabric it isn't necessary. To enable trusted access into Fabric, you can use features such as [on-premises Data gateways](/power-bi/connect-data/service-gateway-onprem), [Trusted workspace access](security-trusted-workspace-access.md) and [managed private endpoints](/azure/private-link/manage-private-endpoint). For more information, see [Security in Microsoft Fabric](security-overview.md).
 
 ## Private links
 
-With private endpoints your service is assigned a private IP address from your virtual network. The endpoint allows other resources in the network to communicate with the service over the private IP address.
+With private endpoints, your service is assigned a private IP address from your virtual network. The endpoint allows other resources in the network to communicate with the service over the private IP address.
 
 Using Private links, a tunnel from the service into one of your subnets creates a private channel. Communication from external devices travels from their IP address, to a private endpoint in that subnet, through the tunnel and into the service.
 
 After implementing private links, Fabric is no longer accessed through the public internet. To access Fabric, all users have to connect through the private network. The private network is required for all communications with Fabric, including viewing a Power BI report in the browser and using SQL Server Management Studio (SSMS) to connect to a SQL connections string like `<guid_unique_your_item>.datawarehouse.fabric.microsoft.com`.
 
+Fabric supports two levels of Private Link:
+
+* **Tenant-level private links**, which provide network policy to the entire tenant. For more information about tenant-level private links, see [Private links for Fabric tenants](security-private-links-overview.md).
+
+* **Workspace-level private links (preview)**, which provide more granular control, making it possible to restrict access to certain workspaces while allowing the rest of the workspaces to remain open for public access. For more information about workspace-level private links, see [About workspace-level private links](security-workspace-level-private-links-overview.md).
+
 ### On-premises networks
 
-If you're using on-premises networks, you can extend them to the Azure Virtual Network (VNet) using an ExpressRoute circuit, or a site-to-site VPN, to access Fabric using private connections.
+If you're using on-premises networks, you can extend them to the Azure Virtual Network using an ExpressRoute circuit, or a site-to-site VPN, to access Fabric using private connections.
 
 ### Bandwidth
 
@@ -83,11 +89,11 @@ With private links, all traffic to Fabric travels through the private endpoint, 
 
 ### Cost
 
-The [cost of private links](https://azure.microsoft.com/pricing/details/private-link/) and the increase of the [ExpressRoute](/azure/expressroute/expressroute-introduction) bandwidth to allow private connectivity from your network, might add costs to your organization.
+The [cost of private links](https://azure.microsoft.com/pricing/details/private-link/) and the increase of the [ExpressRoute](/azure/expressroute/expressroute-introduction) bandwidth to allow private connectivity from your network might add costs to your organization.
 
 ### Considerations and limitations
 
-With private links you're closing off Fabric to the public internet. As a result, there are many [considerations and limitations](security-private-links-overview.md#other-considerations-and-limitations) you need to take into account.
+With private links, you're closing off Fabric to the public internet. As a result, there are many [considerations and limitations](security-private-links-overview.md#other-considerations-and-limitations) you need to take into account.
 
 ## Related content
 

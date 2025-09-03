@@ -47,7 +47,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Connector:** Data Factory offers a rich set of connectors that allow you to connect to different types of data stores. Once connected, you can transform the data. For more information, see [connectors](../data-factory/connector-overview.md).
 
-- **Data pipeline:** In Data Factory, a data pipeline is used for orchestrating data movement and transformation. These pipelines are different from the deployment pipelines in Fabric. For more information, see [Pipelines](../data-factory/pipeline-runs.md).
+- **Pipeline:** In Data Factory, a pipeline is used for orchestrating data movement and transformation. These pipelines are different from the deployment pipelines in Fabric. For more information, see [Pipelines](../data-factory/pipeline-overview.md).
 
 - **Dataflow Gen2:** Dataflows provide a low-code interface for ingesting data from hundreds of data sources and transforming your data. Dataflows in Fabric are referred to as Dataflow Gen2. Dataflow Gen1 exists in Power BI. Dataflow Gen2 offers extra capabilities compared to Dataflows in Azure Data Factory or Power BI. You can't upgrade from Gen1 to Gen2. For more information, see [Dataflows](../data-factory/dataflows-gen2-overview.md) in the Data Factory overview.
 

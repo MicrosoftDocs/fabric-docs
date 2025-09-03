@@ -13,7 +13,7 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: SnehaGunda
   ms.author: sngun
-  ms.date: 05/21/2024
+  ms.date: 08/06/2025
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -28,8 +28,20 @@ landingContent:
             url: data-engineering-overview.md
           - text: What is a lakehouse?
             url: lakehouse-overview.md
+      - linkListType: concept
+        links:
+          - text: Lakehouse and Delta tables
+            url: lakehouse-and-delta-tables.md
           - text: Workspace roles and permissions
             url: workspace-roles-lakehouse.md
+          - text: Choose a data store
+            url: ../fundamentals/decision-guide-data-store.md
+      - linkListType: how-to-guide
+        links:
+          - text: Delta optimization and V-Order
+            url: delta-optimization-and-v-order.md
+          - text: Load to tables
+            url: load-to-tables.md  
 
   # Card 
   - title: Get started with lakehouse
@@ -44,75 +56,6 @@ landingContent:
         links:
           - text: Get data into lakehouse using notebook
             url: lakehouse-notebook-load-data.md
-
-  # Card 
-  - title: Get started with notebooks
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: Create and use notebooks
-            url: how-to-use-notebook.md
-      - linkListType: how-to-guide
-        links:
-          - text: Develop and run notebooks
-            url: author-execute-notebook.md
-          - text: Explore lakehouse data with a notebook
-            url: lakehouse-notebook-explore.md
-          - text: Visualize notebooks
-            url: notebook-visualization.md
-          - text: Use Python experience on Notebook
-            url: using-python-experience-on-notebook.md
-          - text: Notebooks source control and deployment
-            url: notebook-source-control-deployment.md
-          - text: Use NotebookUtils in notebook
-            url: notebook-utilities.md
-          - text: Author and run T-SQL Notebooks
-            url: author-tsql-notebook.md
-  # Card 
-  - title: API for GraphQL
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What is Fabric API for GraphQL?
-            url: api-graphql-overview.md
-      - linkListType: get-started
-        links:
-          - text: Create an API for GraphQL and add data
-            url: get-started-api-graphql.md
-      - linkListType: how-to-guide
-        links:
-          - text: Manage relationships
-            url: manage-relationships-graphql.md
-          - text: Connect applications
-            url: connect-apps-api-graphql.md
-          - text: Query multiple data sources
-            url: multiple-data-sources-graphql.md
-          - text: GraphQL source control and deployment pipelines
-            url: graphql-source-control-and-deployment.md
-          - text: Monitoring dashboard and logging (preview) 
-            url: graphql-monitor-log.md
-   
-  # Card 
-  - title: Delta Lake
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Lakehouse and Delta tables
-            url: lakehouse-and-delta-tables.md
-      - linkListType: how-to-guide
-        links:
-          - text: Delta optimization and V-Order
-            url: delta-optimization-and-v-order.md
-          - text: Load to tables
-            url: load-to-tables.md
-
-  # Card 
-  - title: Lakehouse end-to-end tutorial
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Lakehouse scenario overview
-            url: tutorial-lakehouse-introduction.md
       - linkListType: tutorial
         links:
           - text: Step 1 - Create a workspace
@@ -129,35 +72,76 @@ landingContent:
             url: tutorial-lakehouse-clean-up.md
 
   # Card 
+  - title: Get started with notebooks
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Create and use notebooks
+            url: how-to-use-notebook.md
+      - linkListType: how-to-guide
+        links:
+          - text: Develop and run notebooks
+            url: author-execute-notebook.md
+          - text: Explore lakehouse data with a notebook
+            url: lakehouse-notebook-explore.md
+          - text: Visualize notebooks
+            url: notebook-visualization.md
+          - text: Notebooks source control and deployment
+            url: notebook-source-control-deployment.md
+          - text: Author and run T-SQL Notebooks
+            url: author-tsql-notebook.md
+  # Card 
+  - title: Query with API for GraphQL
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Fabric API for GraphQL?
+            url: api-graphql-overview.md
+      - linkListType: get-started
+        links:
+          - text: Create an API for GraphQL and add data
+            url: get-started-api-graphql.md
+      - linkListType: how-to-guide
+        links:
+          - text: Manage relationships
+            url: manage-relationships-graphql.md
+          - text: Connect to applications
+            url: connect-apps-api-graphql.md
+          - text: Query multiple data sources
+            url: multiple-data-sources-graphql.md
+          - text: GraphQL source control and deployment pipelines
+            url: graphql-source-control-and-deployment.md
+          - text: Monitoring dashboard and logging (preview) 
+            url: graphql-monitor-log.md
+
+  # Card 
   - title: VS Code integration
     linkLists:
+      - linkListType: concept
+        links:
+          - text: What is Data Engineering VS Code extension?
+            url: setup-vs-code-extension.md
       - linkListType: how-to-guide
         links:
           - text: Use notebooks from VS Code
             url: author-notebook-with-vs-code.md
           - text: Use container image from VS Code
             url: set-up-vs-code-extension-with-docker-image.md
-          - text: Use notebooks from VS Code with resource
-            url: author-notebook-resource-with-vs-code.md
           - text: Use Spark job definitions from VS Code
             url: author-sjd-with-vs-code.md
           - text: Explore lakehouse from VS Code
             url: explore-lakehouse-with-vs-code.md
           - text: Develop notebook from VS Code web experience
             url: author-notebook-with-vs-code-web.md
-          - text: Develop notebook with Fabric runtime
-            url: fabric-runtime-in-vscode.md
 
   # Card 
-  - title: Apache Spark
+  - title: Apache Spark for Data Engineering
     linkLists:
       - linkListType: concept
         links:
           - text: Apache Spark job definition
             url: spark-job-definition.md
-          - text: Spark monitoring overview
-            url: spark-monitoring-overview.md
-          - text: Apache Spark advisor
+          - text: What is Apache Spark advisor?
             url: spark-advisor-introduction.md
       - linkListType: get-started
         links:
@@ -171,14 +155,10 @@ landingContent:
         links:
           - text: Schedule and run a Spark job definition
             url: run-spark-job-definition.md
-          - text: Monitor a Spark application
-            url: spark-detail-monitoring.md
           - text: Manage Apache Spark libraries
             url: library-management.md
           - text: How to use Fabric MSSparkUtils
             url: microsoft-spark-utilities.md
-          - text: Configure capacity settings
-            url: capacity-settings-management.md
 
   # Card 
   - title: Get started with environment
@@ -195,14 +175,10 @@ landingContent:
             url: environment-manage-library.md
           - text: Environment Git integration and deployment pipeline
             url: environment-git-and-deployment-pipeline.md
-          - text: Manage the environment through public APIs
-            url: environment-public-api.md
-          - text: Manage the resources in Fabric environment
-            url: environment-manage-resources.md
-          - text: Migrate the existing workspace libraries and Spark properties to an environment
+          - text: Migrate libraries and Spark properties to an environment
             url: environment-workspace-migration.md   
 # Card 
-  - title: Livy API
+  - title: Fabric Livy API
     linkLists:
       - linkListType: overview
         links:
@@ -216,3 +192,19 @@ landingContent:
             url: get-started-api-livy-session.md
           - text: Submit Livy API batch jobs
             url: get-started-api-livy-batch.md
+
+# Card 
+  - title: Optimize with Materialized lake views 
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What are materialized lake views?
+            url: materialized-lake-views/overview-materialized-lake-view.md
+      - linkListType: get-started
+        links:
+          - text: Get started with materialized lake views
+            url: materialized-lake-views/get-started-with-materialized-lake-views.md
+          - text: Implement Medallion architecture with materialized lake views
+            url: materialized-lake-views/tutorial.md
+          - text: Manage materialized lake views
+            url: materialized-lake-views/create-materialized-lake-view.md

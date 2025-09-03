@@ -1,12 +1,12 @@
----
+﻿---
 title: Use Python for Apache Spark
 description: Learn to develop Spark applications in Synapse, using Python to analyze data through Spark batch job definitions or with interactive Fabric notebooks.
-ms.author: jburchel
-author: jonburchel
+ms.author: lagayhar
+author: lgayhardt
 ms.reviewer: pimorano
 reviewer: pimorano
 ms.topic: overview
-ms.custom:
+ms.custom: 
 ms.date: 07/22/2025
 ms.search.form: Python Language
 #customer intent: As a data analyst, I want to understand how Spark applications in Synapse can analyze data.

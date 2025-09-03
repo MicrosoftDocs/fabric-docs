@@ -19,6 +19,6 @@ The Databricks connector is supported in Data Factory for [!INCLUDE [product-nam
 
 To learn about how to connect to Databricks in Dataflow Gen2, go to [Set up your Databricks connection](connector-databricks.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Databricks in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Databricks in pipelines.

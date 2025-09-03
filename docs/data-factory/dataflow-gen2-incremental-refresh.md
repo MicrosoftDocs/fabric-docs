@@ -32,7 +32,7 @@ To use incremental refresh in Dataflow Gen2, you need:
 
 These data destinations support incremental refresh:
 
-- Fabric Lakehouse (preview)
+- Fabric Lakehouse
 - Fabric Warehouse
 - Azure SQL Database
 - Azure Synapse Analytics

@@ -77,16 +77,16 @@ CREATE SCHEMA wwi;
 
 ## Collation
 
-`Latin1_General_100_BIN2_UTF8` is the default collation for both tables and metadata.
+Fabric warehouses are configured based on the workspace's collation setting, which by default are the case-sensitive (CS) collation `Latin1_General_100_BIN2_UTF8`. When creating a [new warehouse](create-warehouse.md), the collation of the workspace will be used. For more information, see [Data Warehouse collation](collation.md).
 
-You can create a warehouse with the case-insensitive (CI) collation `Latin1_General_100_CI_AS_KS_WS_SC_UTF8`. For more information, see [How to: Create a warehouse with case-insensitive (CI) collation](collation.md).
-
-Supported collations in the API are:
+Supported warehouse collations are:
 
 - `Latin1_General_100_BIN2_UTF8` (default)
 - `Latin1_General_100_CI_AS_KS_WS_SC_UTF8`
 
-Once the collation is set during database creation, all subsequent objects (tables, columns, etc.) will inherit this default collation.
+You can create a warehouse with a non-default collation using the REST API. For more information, see [How to: Create a warehouse with case-insensitive (CI) collation](collation.md#create-a-warehouse-with-a-non-default-collation-with-rest-api).
+
+Once the collation is set during database creation, all subsequent objects (tables, columns, etc.) will inherit this default collation. Once a warehouse is created, the collation setting cannot be changed.
 
 ## Statistics
 

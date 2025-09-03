@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.date: 07/17/2025
+ms.date: 08/26/2025
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -68,15 +68,23 @@ By default, your table name matches your query name. If your table name has any 
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/new-table.png" alt-text="Screenshot of the Choose destination target window with the New table button selected.":::
 
-Next, you need to select the destination container. If you chose any of the Fabric data destinations, you can use the navigator to select the Fabric artifact where you want to load your data. For Azure destinations, you can either specify the database during connection creation, or select the database from the navigator experience.
+Next, you need to select the destination container. If you chose any of the Fabric data destinations, you can use the navigator to select the Fabric item where you want to load your data. For Azure destinations, you can either specify the database during connection creation, or select the database from the navigator experience.
 
 ### Use an existing table
 
-To choose an existing table, use the toggle at the top of the navigator. When choosing an existing table, you need to pick both the Fabric artifact/database and table using the navigator.
+To choose an existing table, use the toggle at the top of the navigator. When choosing an existing table, you need to pick both the Fabric item/database and table using the navigator.
 
 When you use an existing table, the table can't be recreated in any scenario. If you delete the table manually from the data destination, Dataflow Gen2 won't recreate the table on the next refresh.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/existing-table.png" alt-text="Screenshot of the Choose destination target window with the Existing table button selected.":::
+
+## Lakehouse Files or Tables
+
+For Lakehouse you have the option to create either files or tables in your lakehouse. This is unique as most destinations only support one or the other. This allows for more flexibility in how you structure your data in your lakehouse.
+
+To switch between files and tables, you can use the toggle when you browse for your lakehouse.
+
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/switch-to-file-mode.png" alt-text="Screenshot highlighting the switch to file mode toggle.":::
 
 ## Managed settings for new tables
 
@@ -130,6 +138,31 @@ Schema options on publish only apply when the update method is **replace**. When
 > Parameters in the data destination can also be applied directly through the M script created for the queries related to it. You can manually alter the script of your data destination queries to apply the parameters to meet your requirements.
 > However, the user interface currently only supports parameterization for the table or file name field.
 
+## Mashup script for data destination queries
+
+When using the data destination feature, the settings defined to load the data to your destination are defined in the mashup document of your Dataflow. The Dataflow application fundamentally creates two components:
+* **A query that contains the navigation steps to your destination**. It follows the pattern of your initial query name with a suffix of **_DataDestination**. For example:
+
+```M code 
+shared #"Orders by Region_DataDestination" = let
+  Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false]),
+  Navigation_1 = Pattern{[workspaceId = "cfafbeb1-8037-4d0c-896e-a46fb27ff229"]}[Data],
+  Navigation_2 = Navigation_1{[lakehouseId = "b218778-e7a5-4d73-8187-f10824047715"]}[Data],
+  TableNavigation = Navigation_2{[Id = "Orders by Region", ItemKind = "Table"]}?[Data]?
+in
+  TableNavigation;
+``` 
+
+* **A DataDestinations attribute record for the query that contains the logic to be used for how to load data to your destination**. The record has pointer to the query that contains the navigation steps to your destination and the overall destination settings such as update methods, schema options and what Kind of target the destination is such as a Table or other kind. For example:
+
+```M code
+[DataDestinations = {[Definition = [Kind = "Reference", QueryName = "Orders by Region_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
+```
+
+These pieces of M scripts aren't visible inside of the Dataflow application, but you can access this information through:
+* [Fabric REST API for GET Dataflow definition](/rest/api/fabric/dataflow/items/get-dataflow-definition)
+* [Mashup.pq document when using the Git integration](dataflow-gen2-cicd-and-git-integration.md)  
+
 
 ## Supported data source types per destination
 
@@ -177,6 +210,12 @@ When staging is disabled, and you choose Warehouse as the output destination, yo
 If you already have a warehouse as a destination and try to disable staging, a warning is displayed. You can either remove the warehouse as the destination or dismiss the staging action.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-staging.png" alt-text="Screenshot of the Enable staging warning.":::
+
+### Schema support for Lakehouse, Warehouse and SQL databases
+
+Lakehouse, Warehouse, and SQL databases in Microsoft Fabric all support the ability to create a schema for your data. This means you can structure your data in a way that makes it easier to manage and query. In order to be able to write to schemas in these destinations you need to enable the **Navigate using full hierarchy** option under **advanced options** when you set up your connection. If you don't enable this option, you won't be able to select or view the schemas in the destination.
+
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-schema-support.png" alt-text="Screenshot highlighting the Enable schema support option.":::
 
 ### Vacuuming your Lakehouse data destination
 

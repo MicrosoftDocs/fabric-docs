@@ -19,6 +19,6 @@ The SAP Business Warehouse (BW) Application Server connector is supported in Dat
 
 For information on how to connect to an SAP BW Application Server in Dataflow Gen2, go to [Set up your SAP BW Application Server connection](connector-sap-bw-application-server.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support an SAP BW Application Server connection in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support an SAP BW Application Server connection in pipelines.

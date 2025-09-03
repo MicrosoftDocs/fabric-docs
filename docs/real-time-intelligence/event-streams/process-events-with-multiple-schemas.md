@@ -34,7 +34,7 @@ This feature is useful for the following scenarios:
 
 To use this feature, you need to enable multiple-schema inferencing in your eventstream. You can enable it in both new and existing eventstream. 
 1. Open your eventstream and go to **Settings**, and then select **Schema**.
-1. Turn on **Multiple schema support** and select **Apply**.
+1. Turn on **Multiple schema inferencing** and select **Apply**.
 
 :::image type="content" source="./media/process-events-with-multiple-schemas/enable-multiple-schema.png" alt-text="Screenshot showing how to enable multiple schema feature." lightbox="./media/process-events-with-multiple-schemas/enable-multiple-schema.png":::
 

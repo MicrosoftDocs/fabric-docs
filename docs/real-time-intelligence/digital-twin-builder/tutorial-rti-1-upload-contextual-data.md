@@ -17,12 +17,12 @@ In this part of the tutorial, you set up the sample data lakehouse and upload th
 1. Select **+ New item**.
 1. In the **Filter by item type** search box, enter **Lakehouse**.
 1. Select the lakehouse item.
-1. Enter *Tutorial* as the lakehouse name.
+1. Enter *TutorialLH* as the lakehouse name.
 1. Select **Create**. When provisioning is complete, the lakehouse explorer page is shown. 
 
 ## Upload static contextual data
 
-In this section, you upload a static file of bus stop data to the *Tutorial* lakehouse. The information in this file provides context about the locations of the bus stops along the bus routes.
+In this section, you upload a static file of bus stop data to the *TutorialLH* lakehouse. The information in this file provides context about the locations of the bus stops along the bus routes.
 
 1. Download the *stops_data.csv* sample data file from the sample folder in GitHub: [digital-twin-builder/bus-scenario](https://aka.ms/dtb-samples-bus).
 1. In the lakehouse explorer page in Fabric, select **Get data** from the menu ribbon and choose **Upload files**.
@@ -34,7 +34,7 @@ In this section, you upload a static file of bus stop data to the *Tutorial* lak
 
     :::image type="content" source="media/tutorial-rti/prep-new-table.png" alt-text="Screenshot of Microsoft Fabric, selecting the Load to Tables option.":::
     
-1. Name the table *stops_data*. Leave the other default settings and select **Load**.
+1. Leave the default table name of *stops_data* and the other default settings, and select **Load**.
 1. When the table is created, review your new **stops_data** table and verify that it contains data.
 
     :::image type="content" source="media/tutorial-rti/prep-stops-data.png" alt-text="Screenshot of the stops_data table with data.":::

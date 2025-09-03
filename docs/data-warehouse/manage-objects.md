@@ -45,7 +45,7 @@ Use **Explorer** to create, alter, and drop objects using T-SQL templates. You c
 
 ### Manage objects in other tools
 
-You can manage your warehouse objects in other tools, including [SQL Server Management Studio (SSMS)](connectivity.md#get-started-with-sql-server-management-studio-ssms) or the [SQL Database Projects extension](/sql/azure-data-studio/extensions/sql-database-project-extension?view=fabric&preserve-view=true) in [Visual Studio Code](https://visualstudio.microsoft.com/downloads/). The SQL Projects extension enables capabilities for source control, database testing, and schema validation. To connect to your warehouse, see [Connectivity to data warehousing in Microsoft Fabric](connectivity.md).
+You can manage your warehouse objects in other tools, including [Connect using SQL Server Management Studio (SSMS)](how-to-connect.md#connect-using-sql-server-management-studio-ssms) or the [SQL Database Projects extension](/sql/azure-data-studio/extensions/sql-database-project-extension?view=fabric&preserve-view=true) in [Visual Studio Code](https://visualstudio.microsoft.com/downloads/). The SQL Projects extension enables capabilities for source control, database testing, and schema validation. To connect to your warehouse, see [Connectivity to data warehousing in Microsoft Fabric](connectivity.md).
 
 For more information on source control for warehouses in Microsoft Fabric, including Git integration and deployment pipelines, see [Source control with Warehouse](source-control.md).
 
