@@ -207,9 +207,9 @@ The find and replace option can help you match and locate the keywords or expres
 
 :::image type="content" source="media\author-execute-notebook\find-replace.png" alt-text="Screenshot showing find and replace pane." lightbox="media\author-execute-notebook\find-replace.png":::
 
-## Copilot's inline code completion (Preview)
+## Copilot inline code completion (Preview)
 
-Copilot's inline code completion is an AI-powered feature that helps you to write Python code faster and more efficiently in Fabric Notebooks. This feature provides intelligent, context-aware code suggestions as you type code. It reduces repetitive tasks, minimizes syntax errors, and accelerates development by integrating seamlessly into your notebook workflow.
+Copilot inline code completion is an AI-powered feature that helps you to write Python code faster and more efficiently in Fabric Notebooks. This feature provides intelligent, context-aware code suggestions as you type code. It reduces repetitive tasks, minimizes syntax errors, and accelerates development by integrating seamlessly into your notebook workflow.
 
 ### Key benefits
 
