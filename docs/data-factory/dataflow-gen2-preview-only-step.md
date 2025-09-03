@@ -72,4 +72,4 @@ When you connect data sources that display files—such as SharePoint folder, Fo
 
 Similar to the file system view experience, a gear icon appears in the top-right corner of the Combine files dialog. You can use it to define preview-only logic for the sample file, which influences how data is previewed across all combined files.
 
-:::image type="content" source="media/dataflow-gen2-preview-only-step/combine-files-experience.png" alt-text="Screenshot of the combine files experience showing a gear icon on the top right to select the logic for the preview only step." lightbos="media/dataflow-gen2-preview-only-step/combine-files-experience.png":::
+:::image type="content" source="media/dataflow-gen2-preview-only-step/combine-files-experience.png" alt-text="Screenshot of the combine files experience showing a gear icon on the top right to select the logic for the preview only step." lightbox="media/dataflow-gen2-preview-only-step/combine-files-experience.png":::
