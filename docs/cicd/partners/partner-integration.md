@@ -15,8 +15,7 @@ ms.date: 04/29/2025
 
 [Microsoft Fabric](https://www.microsoft.com/microsoft-fabric/blog/) offers three distinct pathways for Independent Software Vendors (ISVs) to seamlessly integrate with Fabric. For an ISV starting on this journey, we want to walk through various resources we have available under each of these pathways.
 
-![User's image](media/partner-integration/image.png)
-
+:::image type="content" source="media/partner-integration/pathsofintegration.png" alt-text="Figure showing different ways of integrating with Fabric":::
 
 
 ## Interop with Fabric OneLake
@@ -115,8 +114,7 @@ The [**Microsoft Fabric Workload Development Kit**](../../workload-development-k
 
 The [Workload Hub](https://app.fabric.microsoft.com/workloadhub) in Microsoft Fabric serves as a centralized interface where users can explore, manage, and access all available workloads. Each workload in Fabric is associated with a specific item type that can be created within Fabric workspaces. By navigating through the Workload Hub, users can easily discover and interact with various workloads, enhancing their analytical and operational capabilities.
 
-![Screenshot 2025-08-20 at 12.08.14 AM](media/partner-integration/screenshot-2025-08-20-at-12.08.14 am.png)
-
+  :::image type="content" source="media/partner-integration/workloadhub.png" alt-text="Screenshot showing Workload Hub." lightbox="media/partner-integration/workloadhub.png":::
 
 
 Fabric administrators have the rights to [manage workload](../../workload-development-kit/more-workloads-add.md) availability, making them accessible across the entire tenant or within specific capacities. This extensibility ensures that Fabric remains a flexible and scalable platform, allowing organizations to tailor their workload environment to meet evolving data and business requirements. By integrating seamlessly with Fabric’s security and governance framework, the Workload Hub simplifies workload deployment and management. Every workload comes with a trial experience for users to quickly get started. Following are the available workloads:
@@ -127,59 +125,52 @@ Fabric administrators have the rights to [manage workload](../../workload-develo
   
 - **[Informatica Cloud Data Quality](https://app.fabric.microsoft.com/workloadhub/detail/Informatica.DataQuality.dataQuality?experience=fabric-developer)**: Let's you profile, detect, and fix data issues—such as duplicates, missing values, and inconsistencies—directly within your Fabric environment.
 
-- ![User's image](media/partner-integration/image1.png)
+   :::image type="content" source="media/partner-integration/informatica-workloadtile.png" alt-text="Screenshot showing Informatica's workload." lightbox="media/partner-integration/informatica-workloadtile.png":::
 
+- **[Lumel EPM](https://app.fabric.microsoft.com/workloadhub/detail/Lumel.powertables.app?experience=fabric-developer)**: Empowers business users build no-code Enterprise Performance Management (EPM) apps on top of the semantic models.
 
-
-- [Lumel EPM](): Empowers business users build no-code Enterprise Performance Management (EPM) apps on top of the semantic models.
-
-  ![Screenshot 2025-08-20 at 12.28.42 AM](media/partner-integration/screenshot-2025-08-20-at-12.28.42 am.png)
+    :::image type="content" source="media/partner-integration/lumel-workloadtile.png" alt-text="Screenshot showing Lumel's workload." lightbox="media/partner-integration/lumel-workloadtile.png":::
   
-  **[Neo4j AuraDB with Graph Analytics]()**: Create graph models from OneLake data, visually analyze and explore data connections, query your data, and run any of the 65+ built-in algorithms with a seamless experience in the Fabric Console.
+- **[Neo4j AuraDB with Graph Analytics](https://app.fabric.microsoft.com/workloadhub/detail/Neo4j.GraphAnalytics.Neo4j%20Graph%20Analytics?experience=fabric-developer)**: Create graph models from OneLake data, visually analyze and explore data connections, query your data, and run any of the 65+ built-in algorithms with a seamless experience in the Fabric Console.
   
-  ![Screenshot 2025-08-20 at 12.39.27 AM](media/partner-integration/screenshot-2025-08-20-at-12.39.27 am.png)
+    :::image type="content" source="media/partner-integration/neo4j-workloadtile.png" alt-text="Screenshot showing Neo4j's workload." lightbox="media/partner-integration/neo4j-workloadtile.png":::
   
 - **[Osmos AI Data Wrangler](https://app.fabric.microsoft.com/workloadhub/detail/Osmos.Osmos.Product?experience=fabric-developer)**: Automates data preparation with AI-powered data wranglers, making data transformation effortless.
 
-![Screenshot 2025-08-20 at 12.30.46 AM](media/partner-integration/screenshot-2025-08-20-at-12.30.46 am.png)
+  :::image type="content" source="media/partner-integration/osmos-workloadtile.png" alt-text="Screenshot showing Osmos's workload." lightbox="media/partner-integration/osmos-workloadtile.png":::
 
 - **[Power Designer](https://app.fabric.microsoft.com/workloadhub/detail/tips.tools.Product?experience=fabric-developer)**: A tool for company-wide styling and report template creation, improving Power BI report designs.
 
-  ![Screenshot 2025-08-20 at 12.31.28 AM](media/partner-integration/screenshot-2025-08-20-at-12.31.28 am.png)
+  :::image type="content" source="media/partner-integration/pbitips-workloadtile.png" alt-text="Screenshot showing PBI Tips's workload." lightbox="media/partner-integration/pbitips-workloadtile.png":::
   
   
-- [Celonis Process Intelligence](): Allows organisations to expose Celonis’ unique class of data and context in Microsoft Fabric
+- **[Celonis Process Intelligence](https://app.fabric.microsoft.com/workloadhub/detail/celonis.fabric-integration.Product?experience=fabric-developer)**: Allows organisations to expose Celonis’ unique class of data and context in Microsoft Fabric
 
-  ![Screenshot 2025-08-20 at 12.32.07 AM](media/partner-integration/screenshot-2025-08-20-at-12.32.07 am.png)
+  :::image type="content" source="media/partner-integration/celonis-workloadtile.png" alt-text="Screenshot showing Celonis's workload." lightbox="media/partner-integration/celonis-workloadtile.png":::
   
-- [Profisee Master Data Management:]() empowers users to efficiently match, merge, standardize, remediate and validate data, transforming it into trusted, consumption-ready data products for analytics and AI.​
+- **[Profisee Master Data Management:](https://app.fabric.microsoft.com/workloadhub/detail/Profisee.MDM.Product?experience=fabric-developer)** empowers users to efficiently match, merge, standardize, remediate and validate data, transforming it into trusted, consumption-ready data products for analytics and AI.​
 
-  ![Screenshot 2025-08-20 at 12.35.27 AM](media/partner-integration/screenshot-2025-08-20-at-12.35.27 am.png)
+  :::image type="content" source="media/partner-integration/profisee-workloadtile.png" alt-text="Screenshot showing Profisee's workload." lightbox="media/partner-integration/profisee-workloadtile.png":::
   
 - **[Quantexa Unify](https://app.fabric.microsoft.com/workloadhub/detail/Quantexa.Unify.Product?experience=fabric-developer)**: Enhances Microsoft OneLake data sources by providing a 360-degree view with advanced data resolution capabilities.
 
-  ![Screenshot 2025-08-20 at 12.35.44 AM](media/partner-integration/screenshot-2025-08-20-at-12.35.44 am.png)
+  :::image type="content" source="media/partner-integration/quantexa-workloadtile.png" alt-text="Screenshot showing Quantexa's workload." lightbox="media/partner-integration/quantexa-workloadtile.png":::
   
-  
-  
-- **[SAS Decision Builder]()**: Helps organizations automate, optimize, and scale their decision-making processes.
+- **[SAS Decision Builder](https://app.fabric.microsoft.com/workloadhub/detail/SAS.DecisionBuilder.SASDecisionBuilder?experience=fabric-developer)**: Helps organizations automate, optimize, and scale their decision-making processes.
 
-  ![Screenshot 2025-08-20 at 12.36.24 AM](media/partner-integration/screenshot-2025-08-20-at-12.36.24 am.png)
+  :::image type="content" source="media/partner-integration/sas-workloadtile.png" alt-text="Screenshot showing SAS's workload." lightbox="media/partner-integration/sas-workloadtile.png":::
   
-  
-  
-- **[Statsig:]()** Brings data visualization and analysis directly to your warehouse.
+- **[Statsig:](https://app.fabric.microsoft.com/workloadhub/detail/Statsig.Statsig.Statsig?experience=fabric-developer)** Brings data visualization and analysis directly to your warehouse.
 
-- ![Screenshot 2025-08-20 at 12.44.29 AM](media/partner-integration/screenshot-2025-08-20-at-12.44.29 am.png)
+  :::image type="content" source="media/partner-integration/statsig-workloadtile.png" alt-text="Screenshot showing Statsig's workload." lightbox="media/partner-integration/statsig-workloadtile.png":::
 
 
 - **[Teradata AI Unlimited](https://app.fabric.microsoft.com/workloadhub/detail/Teradata.AIUnlimited.AIUnlimited?experience=fabric-developer)**: Combines Teradata's analytic engine with Microsoft Fabric's data management capabilities through Teradata's in-database functions.
 
-  ![Screenshot 2025-08-20 at 12.45.43 AM](media/partner-integration/screenshot-2025-08-20-at-12.45.43 am.png)
+  :::image type="content" source="media/partner-integration/teradata-workloadtile.png" alt-text="Screenshot showing Teradata's workload." lightbox="media/partner-integration/teradata-workloadtile.png":::
   
-- **[SQL2Fabric-Mirroring by Striim]()**: Fully managed, zero-code replication solution that seamlessly mirrors on-premises SQL Server data to Microsoft Fabric OneLake
-![Screenshot 2025-08-20 at 12.43.58 AM](media/partner-integration/screenshot-2025-08-20-at-12.43.58 am.png)
+- **[SQL2Fabric-Mirroring by Striim](https://app.fabric.microsoft.com/workloadhub/detail/striim.SQL2Fabric-Mirroring.Product?experience=fabric-developer)**: Fully managed, zero-code replication solution that seamlessly mirrors on-premises SQL Server data to Microsoft Fabric OneLake
 
-
+  :::image type="content" source="media/partner-integration/striim-workloadtile.png" alt-text="Screenshot showing Striim's workload." lightbox="media/partner-integration/striim-workloadtile.png":::
 
 As more workloads become available, the Workload Hub will continue to serve as a dynamic space for discovering new capabilities, ensuring that users have the tools they need to scale and optimize their data-driven solutions.
