@@ -1,6 +1,6 @@
 ---
 title:  Spark advisor API
-description: This article explains how to get real-time advices of a Spark application.
+description: This article explains how to get real-time advice of a Spark application.
 author: jejiang
 ms.author: jejiang
 ms.reviewer: whhender
@@ -40,13 +40,13 @@ This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-
 With attemptId:
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/advices
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/advice
 ```
 
 Without attemptId:
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/advices
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/advice
 ```
 
 With optional parameters:
@@ -54,13 +54,13 @@ With optional parameters:
 With attemptId 
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/advices?stageId={stageId}&jobId={jobId}&executionId={executionId}&jobGroupId={jobGroupId}&executorId={executorId} 
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/advice?stageId={stageId}&jobId={jobId}&executionId={executionId}&jobGroupId={jobGroupId}&executorId={executorId} 
 ```
 
 Without attemptId 
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/advices?stageId={stageId}&jobId={jobId}&executionId={executionId}&jobGroupId={jobGroupId}&executorId={executorId} 
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/advice?stageId={stageId}&jobId={jobId}&executionId={executionId}&jobGroupId={jobGroupId}&executorId={executorId} 
 ```
 
 ### URI parameters
@@ -72,11 +72,11 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 | livyId | path | True | string uuid | The Livy session ID. |
 | appId | path | True | string | The Spark application ID, like application_1111111111111_0001. |
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |
-| stageId | query | False | long | The specific stage ID to get advices on. |
-| jobId | query | False | long | The specific job ID to get advices on. |
-| executionId | query | False | long | The specific execution (SQL query) ID to get advices on. |
-| jobGroupId | query | False | string | The specific job group (statement) ID to get advices on. |
-| executorId | query | False | string | The specific executor ID to get advices on. |
+| stageId | query | False | long | The specific stage ID to get advice on. |
+| jobId | query | False | long | The specific job ID to get advice on. |
+| executionId | query | False | long | The specific execution (SQL query) ID to get advice on. |
+| jobGroupId | query | False | string | The specific job group (statement) ID to get advice on. |
+| executorId | query | False | string | The specific executor ID to get advice on. |
 
 ### Request body
 
@@ -93,7 +93,7 @@ None
 #### Sampe request
 
 ```
-GET https://api.fabric.microsoft.com/v1/workspaces/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advices  
+GET https://api.fabric.microsoft.com/v1/workspaces/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advice  
 ```
 
 #### Sampe response
@@ -125,14 +125,14 @@ Status code: 200
 With attemptId
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/advices/{filter}/{byId} 
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/advice/{filter}/{byId} 
 ```
  
 
 Without attemptId
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/advices/{filter}/{byId} 
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/advice/{filter}/{byId} 
 ```
 
 ### URI parameters
@@ -162,7 +162,7 @@ None
 #### Sampe request
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advices/jobGroups/6
+GET https://api.fabric.microsoft.com/v1/workspaces/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advice/jobGroups/6
 ```
 
 Status code: 200
