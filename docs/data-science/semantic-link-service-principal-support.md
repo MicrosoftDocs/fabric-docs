@@ -11,19 +11,19 @@ ms.date: 09/01/2025
 ms.search.form: Semantic Link, service principal, SPN
 ---
 
-# Service Principal support for Semantic Link
+# Service principal support for semantic link
 
 An Azure service principal (SPN) is a security identity used by applications or automation tools to access specific Azure resources. Unlike user identities, service principals are non-interactive, application-based identities that can be assigned precise permissions, making them perfect for automated processes or background services. To learn more about service principals in general, see [Application and service principal objects in Microsoft Entra ID](/entra/identity-platform/app-objects-and-service-principals).
 
-Microsoft Fabric supports two common scenarios for using Semantic Link with service principal authentication:
+Microsoft Fabric supports two common scenarios for using semantic link with service principal authentication:
 
-- **Service principal triggered notebook runs**: Use a service principal to authenticate automated or scheduled notebook jobs that call Semantic Link, enabling non-interactive execution without a user sign-in.
-- **Manually authenticate Semantic Link with a service principal**: Provide the service principal credentials when invoking Semantic Link during interactive or ad-hoc workflows.
+- **Service principal triggered notebook runs**: Use a service principal to authenticate automated or scheduled notebook jobs that call semantic link, enabling non-interactive execution without a user sign-in.
+- **Manually authenticate semantic link with a service principal**: Provide the service principal credentials when invoking semantic link during interactive or ad-hoc workflows.
 
 Choose the scenario that matches your workflow and continue with the configuration steps.
 
 > [!NOTE]
-> Service principal support requires Semantic Link version 0.12.0 or later. The default runtime image might include an earlier version. Update the package in your notebook environment with:
+> Service principal support requires semantic link version 0.12.0 or later. The default runtime image might include an earlier version. Update the package in your notebook environment with:
 > ```python
 > %pip install -U semantic-link
 > ```
@@ -35,18 +35,18 @@ Choose the scenario that matches your workflow and continue with the configurati
 > If you run notebooks in pipelines or via the Job Scheduler API, ensure the execution environment installs the updated package as part of the job setup.
 
 
-## Using Semantic Link in Service Principal triggered notebook runs
+## Using semantic link in service principal triggered notebook runs
 
 Service-principal-triggered notebook runs refer to non-interactive notebook executions that are authenticated with a service principal. There are two scenarios:
 
 - **Fabric Pipelines**: notebooks invoked as part of a pipeline using service principal authentication.
 - **Job Scheduler API**: notebooks triggered via the [Fabric public API](/rest/api/fabric/core/job-scheduler/run-on-demand-item-job?tabs=HTTP) using service principal authentication.
 
-By default, Service-principal-triggered notebook runs require no extra configuration or code changes. The default token service automatically handles underlying authentication for Semantic Link. However, this default flow has **functional limitations** and supports only a subset of Semantic Link features, see the [supported Semantic Link functions](#supported-semantic-link-functions). To use other capabilities, you're recommended to [manually authenticate Semantic Link with a service principal](#manually-authenticate-semantic-link-with-a-service-principal).
+By default, service-principal-triggered notebook runs require no extra configuration or code changes. The default token service automatically handles underlying authentication for Semantic Link. However, this default flow has **functional limitations** and supports only a subset of semantic link features, see the [supported semantic link functions](#supported-semantic-link-functions). To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](#manually-authenticate-semantic-link-with-a-service-principal).
 
-### Supported Semantic Link functions
+### Supported semantic link functions
 
-The following Semantic Link functions are supported for service principal triggered notebook runs using the default token service:
+The following semantic link functions are supported for service principal triggered notebook runs using the default token service:
 
 > [!NOTE]
 > Service principal authentication blocks access to the personal "My workspace". Any calls that target "My workspace" fails, including functions on this supported list.
@@ -81,11 +81,11 @@ The following Semantic Link functions are supported for service principal trigge
 - `sempy.fabric.get_artifact_id`
 - `sempy.fabric.get_notebook_workspace_id`
 
-## Manually authenticate Semantic Link with a Service Principal
+## Manually authenticate semantic link with a Service Principal
 
 You can authenticate a service principal for interactive notebook runs in two ways:
 
-- Use the sempy `set_service_principal` as a context manager. This is the simpler option with less code and built-in support for plain values or Key Vault references—see the [Use Semantic Link set service principal](#use-semantic-link-set_service_principal) section.
+- Use the sempy `set_service_principal` as a context manager. This is the simpler option with less code and built-in support for plain values or Key Vault references—see the [Use semantic link set service principal](#use-semantic-link-set_service_principal) section.
 - Use an [Azure SDK](/azure/developer/python/sdk/azure-sdk-overview) `TokenCredential` for more control and interoperability with other Azure libraries—see the [Use Azure SDK token credential](#use-azure-sdk-token-credential) section.
 
 
@@ -97,7 +97,7 @@ You can authenticate a service principal for interactive notebook runs in two wa
 
       :::image type="content" source="media/semantic-link-service-principal-support/manage-access.png" alt-text="Screenshot from the Fabric portal of the manage access popup window.":::
 
-### Use Semantic Link set_service_principal
+### Use semantic link set_service_principal
 
 You can set service principal authentication with plain values:
 
@@ -165,7 +165,7 @@ with SetFabricAnalyticsDefaultTokenCredentials(credential):
 >- Service principal authentication still can't access "My workspace".
 
 ### Limitations
-When you manually authenticate Semantic Link with a service principal, be aware of these limitations:
+When you manually authenticate semantic link with a service principal, be aware of these limitations:
 
 - Access to the personal "My workspace" is denied. Any calls that target it fails.
 - The following functions aren't supported with service principal authentication:
