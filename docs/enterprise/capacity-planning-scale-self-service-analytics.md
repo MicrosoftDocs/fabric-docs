@@ -5,7 +5,8 @@ author: JulCsc
 ms.author: juliacawthra
 ms.reviewer: cnovak
 ms.topic: troubleshooting
-ms.date: 08/26/2025
+ms.date: 09/04/2025
+ai-usage: ai-assisted
 ---
 
 # Microsoft Fabric capacity planning guide: Scale for decentralized analytics

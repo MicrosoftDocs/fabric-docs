@@ -9,7 +9,8 @@ ms.custom:
   - ai-gen-docs-bap
   - ai-gen-title
   - ai-seo-date:08/26/2025
-ms.date: 08/26/2025
+ms.date: 09/04/2025
+ai-usage: ai-assisted
 ---
 
 # Plan your Microsoft Fabric capacity: Strategic guide overview

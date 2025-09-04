@@ -9,7 +9,8 @@ ms.custom:
    - ai-gen-docs-bap
    - ai-gen-title
    - ai-seo-date:08/26/2025
-ms.date: 08/26/2025
+ms.date: 09/04/2025
+ai-usage: ai-assisted
 ---
 
 # Microsoft Fabric capacity planning guide: Scale for centralized analytics
@@ -96,7 +97,7 @@ With a clear inventory of central versus distributed content, the next step is t
 
 ## Phase 3: Maintain, monitor, and optimize enterprise capacities
 
-Deploying the capacities isn't the end - it's the beginning of an **ongoing operational process**. Phase 3 focuses on **operational excellence** in capacity management. This includes proactive monitoring to catch issues early, iterative optimization to make the best use of the capacity you have, scaling or rearchitecting when needed to adjust the plan, and strong communication and governance to keep everyone aligned. In the next part of the strategic capacities planning series, we explore managing capacity growth and governance.
+Deploying the capacities isn't the end - it's the beginning of an **ongoing operational process**. Phase 3 focuses on **operational excellence** in capacity management. This includes proactive monitoring to catch issues early, iterative optimization to make the best use of the capacity you have, scaling or rearchitecting when needed to adjust the plan, and strong communication and governance to keep everyone aligned. In the next part of the strategic capacities planning series, we explore [managing capacity growth and governance](capacity-planning-manage-capacity-growth-governance.md).
 
 ## Conclusion
 

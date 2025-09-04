@@ -5,7 +5,8 @@ author: JulCsc
 ms.author: juliacawthra
 ms.reviewer: cnovak
 ms.topic: troubleshooting
-ms.date: 08/26/2025
+ms.date: 09/04/2025
+ai-usage: ai-assisted
 ---
 
 # Microsoft Fabric capacity planning guide: Manage growth and governance
@@ -36,7 +37,7 @@ In centralized environments, a core IT or COE team is responsible for managing e
 - **Combine RI / Pay Go:** Use reserved instance (RI) for discounts on pricing when possible, and supplement it [**pause/resume/resize**](pause-resume.md) of the capacity with pay-as-you-go pricing for flexibility. For predictable surges, compare costs: scaling up with pay-as-you-go for occasional peaks (for example, you have a F64 as RI, using F128 on Mondays by adding pay-as-you-go F64) can be cheaper than buying extra RI. However, if added capacity is needed more than four days a week, RI can offer better value.
 
   > [!NOTE]
-  > Background operations are smoothed over 24 hours. So, if a large job or set of jobs is executed you should ensure the smoothed usage is well below the set threshold of your capacity at lower size. For example, the smoothed capacity usage of F128 capacity should be < 40% in order to bring it down to F64 in order for it to not throttle at F64.
+  > Background operations are smoothed over 24 hours. So, if a large job or set of jobs is executed, you should ensure the smoothed usage is well below the set threshold of your capacity at lower size. For example, the smoothed capacity usage of F128 capacity should be <40% in order for it to be 80% when you scale it down to F64 and ensure it's not throttled at the F64 size.
 
 - **Use surge protection for interactive workloads:** Enable [**surge protection**](surge-protection.md) in capacity settings when user-facing queries (for example, reports) share capacity with background tasks (for example, refreshes, AI jobs). It helps prioritize interactive workloads by limiting background compute when 24-hour usage is high. Remember, 
   - **Surge protection is not a substitute** for proper capacity sizing or content optimization
