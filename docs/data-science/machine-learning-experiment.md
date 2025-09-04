@@ -22,7 +22,7 @@ In this article, you learn more about how data scientists can interact with and 
 
 ## Prerequisites
 
-- A Power BI Premium subscription. If you don't have one, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
+- A Power BI Premium subscription. If you don't have one, see [What is Power BI Premium?](/fabric/enterprise/powerbi/service-premium-what-is)
 - A Power BI Workspace with assigned premium capacity.
 
 ## Create an experiment
