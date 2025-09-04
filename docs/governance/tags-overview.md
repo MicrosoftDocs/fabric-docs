@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: governance
 ms.custom:
 ms.topic: overview #Don't change
-ms.date: 05/05/2025
+ms.date: 09/04/2025
 #customer intent: As a Fabric admin, domain admin, data creator, or data consumer, I want to learn about tags in Microsoft Fabric.
 ---
 
@@ -20,45 +20,51 @@ Tags are an important component of Fabric's data mesh architecture. They provide
 
 ## How tags work
 
-1. **Tenant and domain admins [create tags](./tags-define.md).**
+* **Tenant and domain admins [create tags](./tags-define.md).**
 
-* **Tenant-level tags** are defined by Fabric administrators and are available for use across all items and workspaces throughout the entire tenant. These tags are suitable for broad classifications, compliance, or security labels that apply universally across your organization.
+   * **Tenant-level tags** are defined by Fabric administrators and are available for use across all items and workspaces throughout the entire tenant. These tags are suitable for broad classifications, compliance, or security labels that apply universally across your organization.
 
    * **Domain-level tags** can be defined by Fabric or domain administrators and are specific to particular organizational domains within your Fabric environment. These tags are exclusively available for items residing within workspaces that are assigned to that specific domain. Domain-level tags enable domain owners to implement more granular and localized governance policies, reflecting the unique needs and structures of their respective areas. A tag created at the domain level can't be duplicated at the tenant level. However, it can be duplicated on other domains.
 
-1.  **Data owners apply tags to items.** Data owners, who best know how to categorize their own data, [apply tags to items](./tags-apply.md). An item can have up to 10 tags applied to it. When data owners apply tags, they can choose from the list of available tenant-level tags and, if the item resides in a workspace assigned to a domain, the domain-level tags associated with that domain.
+* **Data owners apply tags to items.** Data owners, who best know how to categorize their own data, [apply tags to items](./tags-apply.md). An item can have up to 10 tags applied to it. When data owners apply tags, they can choose from the list of available tenant-level tags and, if the item resides in a workspace assigned to a domain, the domain-level tags associated with that domain.
 
-1.  **Users utilize tags for discoverability.** Once tags are applied to items, users in the organization can use them to [filter or search for the most relevant content](#how-tags-enhance-data-discoverability).
+* **Users use tags for discoverability.** Once tags are applied to items, users in the organization can use them to [filter or search for the most relevant content](#how-tags-enhance-data-discoverability).
 
-1. **Admins utilize tags for governance.** Admins can use the [Metadata Scanning (Scanner)](./metadata-scanning-overview.md) APIs to programmatically fetch tag associations at scale and use them in downstream governance and discovery solutions.
+* **Admins use tags for governance.** Admins can use the [metadata scanning (scanner)](./metadata-scanning-overview.md) APIs to programmatically fetch tag associations at scale and use them in downstream governance and discovery solutions.
 
 ## How tags enhance data discoverability
 
-Once an item has tags applied, a tag icon appears next to the item name in supported views. You can hover over the icon to see what tags are applied to the item.
+Once tags are applied, they enhance item visibility across multiple surfaces:
 
-:::image type="content" source="./media/tags-overview/tags-icon.png" alt-text="Screenshot showing the tag icon and hover card for a tagged item.":::
+- **Item list views:** A tag icon appears next to the item name. Hover to view applied tags.
 
-You can also filter the workspace items list by tag.
+  :::image type="content" source="./media/tags-overview/tags-icon.png" alt-text="Screenshot showing the tag icon and hover card for a tagged item.":::
 
-:::image type="content" source="./media/tags-overview/tags-filter.png" alt-text="Screenshot showing the tags filter.":::
+- **Workspaces:** Filter items list by assigned tag.
 
-In addition, you can see the applied tags in an item's details, in the item's flyout card, and in lineage view.
+  :::image type="content" source="./media/tags-overview/tags-filter.png" alt-text="Screenshot showing the tags filter.":::
 
-* **Item details**
+-  **Item details:** Tags are shown in the OneLake Catalog item details pane of each item.
 
-    :::image type="content" source="./media/tags-overview/tag-indication-item-details.png" alt-text="Screenshot showing the tag indication in item details.":::
+   :::image type="content" source="./media/tags-overview/tag-indication-item-details.png" alt-text="Screenshot showing the tag indication in item details.":::
 
-* **Flyout card**
+* **Flyout card:** When editing an item, click the item name or sensitivity label to view tags.
 
-    :::image type="content" source="./media/tags-overview/tag-indication-item-flyout.png" alt-text="Screenshot showing the tag indication in an item's flyout card.":::
+  :::image type="content" source="./media/tags-overview/tag-indication-item-flyout.png" alt-text="Screenshot showing the tag indication in an item's flyout card.":::
 
-* **Lineage view**
+* **Lineage view:** Tags appear in workspace lineage and item-level lineage views.
 
-    :::image type="content" source="./media/tags-overview/tags-indication-lineage-view.png" alt-text="Screenshot showing the tag indication in lineage view.":::
+  :::image type="content" source="./media/tags-overview/tags-indication-lineage-view.png" alt-text="Screenshot showing the tag indication in lineage view.":::
 
-You can also use the global search to search by tags and see all the relevant results, accompanied by other metadata, such as item owner and location.
+* **Global Search:** Use the global search to search by tags and see all the relevant results, accompanied by other metadata, such as item owner and location.
 
-:::image type="content" source="./media/tags-overview/tags-global-search.png" alt-text="Screenshot showing tags used as a search term in the global search.":::
+  :::image type="content" source="./media/tags-overview/tags-global-search.png" alt-text="Screenshot showing tags used as a search term in the global search.":::
+
+- **Scanner API**: Tags are included in [metadata scanning](/fabric/governance/metadata-scanning-overview) (scanner) APIs so that governance and discovery solutions can harvest tag assignments at scale.
+ 
+  For every applicable item returned in a scan, the payload includes a `tags` field containing a list of applied tag UUIDs. To resolve tag IDs to tag names, use the [List Tags Admin REST API](/rest/api/fabric/admin/tags/list-tags).
+
+  :::image type="content" source="./media/tags-overview/tags-list-api.png" alt-text="Screenshot showing tags in the scanner API response.":::
 
 ## Considerations and limitations
 
