@@ -20,17 +20,17 @@ Tags are an important component of Fabric's data mesh architecture. They provide
 
 ## How tags work
 
-1. **Tenant and domain admins [create tags](./tags-define.md).**
+* **Tenant and domain admins [create tags](./tags-define.md).**
 
-   1. **Tenant-level tags** are defined by Fabric administrators and are available for use across all items and workspaces throughout the entire tenant. These tags are suitable for broad classifications, compliance, or security labels that apply universally across your organization.
+   * **Tenant-level tags** are defined by Fabric administrators and are available for use across all items and workspaces throughout the entire tenant. These tags are suitable for broad classifications, compliance, or security labels that apply universally across your organization.
 
-   1. **Domain-level tags** can be defined by Fabric or domain administrators and are specific to particular organizational domains within your Fabric environment. These tags are exclusively available for items residing within workspaces that are assigned to that specific domain. Domain-level tags enable domain owners to implement more granular and localized governance policies, reflecting the unique needs and structures of their respective areas. A tag created at the domain level can't be duplicated at the tenant level. However, it can be duplicated on other domains.
+   * **Domain-level tags** can be defined by Fabric or domain administrators and are specific to particular organizational domains within your Fabric environment. These tags are exclusively available for items residing within workspaces that are assigned to that specific domain. Domain-level tags enable domain owners to implement more granular and localized governance policies, reflecting the unique needs and structures of their respective areas. A tag created at the domain level can't be duplicated at the tenant level. However, it can be duplicated on other domains.
 
-1. **Data owners apply tags to items.** Data owners, who best know how to categorize their own data, [apply tags to items](./tags-apply.md). An item can have up to 10 tags applied to it. When data owners apply tags, they can choose from the list of available tenant-level tags and, if the item resides in a workspace assigned to a domain, the domain-level tags associated with that domain.
+* **Data owners apply tags to items.** Data owners, who best know how to categorize their own data, [apply tags to items](./tags-apply.md). An item can have up to 10 tags applied to it. When data owners apply tags, they can choose from the list of available tenant-level tags and, if the item resides in a workspace assigned to a domain, the domain-level tags associated with that domain.
 
-1. **Users use tags for discoverability.** Once tags are applied to items, users in the organization can use them to [filter or search for the most relevant content](#how-tags-enhance-data-discoverability).
+* **Users use tags for discoverability.** Once tags are applied to items, users in the organization can use them to [filter or search for the most relevant content](#how-tags-enhance-data-discoverability).
 
-1. **Admins use tags for governance.** Admins can use the [metadata scanning (scanner)](./metadata-scanning-overview.md) APIs to programmatically fetch tag associations at scale and use them in downstream governance and discovery solutions.
+* **Admins use tags for governance.** Admins can use the [metadata scanning (scanner)](./metadata-scanning-overview.md) APIs to programmatically fetch tag associations at scale and use them in downstream governance and discovery solutions.
 
 ## How tags enhance data discoverability
 
