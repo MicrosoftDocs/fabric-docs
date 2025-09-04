@@ -6,7 +6,7 @@ ms.author: mimart
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: 05/05/2025
+ms.date: 09/04/2025
 
 #customer intent: As a Fabric admin, I want to create and manage a set of tags so that data creators and data consumers can use them to better manage and find data.
 
@@ -50,7 +50,7 @@ This section shows how Fabric administrators create a set of tenant-level tags. 
 
 This section shows how [domain](./domains.md) administrators create and manage tags specific to their assigned domains. These tags are only available for items within workspaces assigned to that domain and subdomains under it.
 
-### Tag Uniqueness Rules
+### Tag uniqueness rules
 
 When creating domain-level tags, consider the following uniqueness rules:
 
@@ -58,10 +58,10 @@ When creating domain-level tags, consider the following uniqueness rules:
 
     :::image type="content" source="./media/tags-define/duplicate-tags.png" alt-text="Screenshot showing the error that appears when a tag already exists.":::
 
-  * You can create the same tag name in different domains. For example, you can add a tag named "FY2025" separately in both the "Sales" and "Marketing" domains.
-  * If you reassign a workspace from one domain to another, any domain-specific tags already applied to items in that workspace remain on those items. This approach maintains continuity and helps prevent confusion about previous tagging. However, you can't reapply tags from a previous domain to items if the workspace is no longer associated with that domain.
+* You can create the same tag name in different domains. For example, you can add a tag named "FY2025" separately in both the "Sales" and "Marketing" domains.
+* If you reassign a workspace from one domain to another, any domain-specific tags already applied to items in that workspace remain on those items. This approach maintains continuity and helps prevent confusion about previous tagging. However, you can't reapply tags from a previous domain to items if the workspace is no longer associated with that domain.
     
-### Steps to Create Domain-Level Tags
+### Steps to create domain-level tags
 
 1.  Open the [admin portal](../admin/admin-center.md%23how-to-get-to-the-admin-portal).
 2.  In the admin portal, select **Domains**.
@@ -106,11 +106,9 @@ All actions related to creating and managing tags can be performed programmatica
 Use the Fabric REST Admin APIs for tags to programmatically create, list, rename and delete tenant and domain-level tags, allowing you to automate tag lifecycle and governance workflows.
 For more information, see [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags).  
 
-### Tags in Metadata scanning (Scanner) APIs
+### Tags in metadata scanning (scanner) APIs
 
-The Scanner APIs include applied tags for each scanned item. 
-
-For every applicable item returned in a scan, the payload includes a `tags` field containing a list of applied tag UUIDs. To resolve tag IDs to tag names, use the [List Tags Admin REST API](/rest/api/fabric/admin/tags/list-tags).
+The Scanner APIs include applied tags for each scanned item. For every applicable item returned in a scan, the payload includes a `tags` field containing a list of applied tag UUIDs. To resolve tag IDs to tag names, use the [List Tags Admin REST API](/rest/api/fabric/admin/tags/list-tags).
 
 For more information, see [Metadata scanning overview](./metadata-scanning-overview.md).
 
