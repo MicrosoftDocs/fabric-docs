@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 # Microsoft Fabric capacity planning guide: Plan your first deployment
 
-This article is the first part of the Microsoft Fabric capacity planning guide. It helps Microsoft Fabric capacity admins, tenant admins, Center of Excellence (COE) leads, and analytics team leaders plan Microsoft Fabric capacity for your organization's first deployment. Strategic capacity planning lets you budget, scale, and optimize your analytics solution from proof of concept (POC) to production.
+This article is **part 1** of the Microsoft Fabric capacity planning guide. It helps Microsoft Fabric capacity admins, tenant admins, Center of Excellence (COE) leads, and analytics team leaders plan Microsoft Fabric capacity for your organization's first deployment. Strategic capacity planning lets you budget, scale, and optimize your analytics solution from proof of concept (POC) to production.
 
 ## Scenario
 
