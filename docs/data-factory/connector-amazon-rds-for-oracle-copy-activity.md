@@ -21,6 +21,7 @@ Specifically, this Amazon Rds For Oracle connector supports:
     - Amazon Rds For Oracle 19c and higher
     - Amazon Rds For Oracle 18c and higher
     - Amazon Rds For Oracle 12c and higher
+    - Amazon Rds For Oracle 11g and higher
 - Parallel copying from an Amazon Rds For Oracle source. See the [Parallel copy from Amazon Rds For Oracle](#parallel-copy-from-amazon-rds-for-oracle) section for details.
 
 > [!Note]
