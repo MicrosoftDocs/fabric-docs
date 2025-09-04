@@ -17,8 +17,8 @@ The Amazon Rds For Oracle connector is supported in Data Factory for [!INCLUDE [
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-amazon-rds-for-oracle-copy-activity.md) (source/-)<br>- Lookup activity | None <br>On-premises<br> Virtual network | Basic  |
-| **Copy job** (source/-) | None <br>On-premises<br> Virtual network | Basic |
+| **Data pipeline** <br>- [Copy activity](connector-amazon-rds-for-oracle-copy-activity.md) (source/-)<br>- Lookup activity | None <br>On-premises (version 3000.278.5 or above)<br> Virtual network | Basic  |
+| **Copy job** (source/-) | None <br>On-premises (version 3000.278.5 or above)<br> Virtual network | Basic |
 
 ## Related content
 
