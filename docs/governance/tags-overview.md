@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: governance
 ms.custom:
 ms.topic: overview #Don't change
-ms.date: 05/05/2025
+ms.date: 09/04/2025
 #customer intent: As a Fabric admin, domain admin, data creator, or data consumer, I want to learn about tags in Microsoft Fabric.
 ---
 
