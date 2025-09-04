@@ -39,6 +39,8 @@ landingContent:
             url: chargeback-app.md 
           - text: Troubleshoot capacity issues
             url: capacity-planning-troubleshoot-consumption.md
+          - text: Plan your capacity
+            url: capacity-planning-overview.md
       - linkListType: concept
         links:
           - text: Throttling policy
