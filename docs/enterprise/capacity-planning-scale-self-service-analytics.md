@@ -76,11 +76,11 @@ When you roll out a **new workspace or project**, deploy it on a small temporary
 In the try-out animation, we see the process of onboarding a new workspace in Microsoft Fabric:
 
 - **Approach**:
-  - Create a small F SKU capacity to try out new workspaces/items
-  - Assess capacity unit (CU) consumption using metrics app
-  - If acceptable, move to production capacity
-  - If not, optimize
-  - Pause tryout capacity when not in use, if possible
+  1. Create a small F SKU capacity to try out new workspaces/items.
+  1. Assess capacity unit (CU) consumption using metrics app.
+     1. If acceptable, move to production capacity.
+     1. If not acceptable, optimize.
+  1. Pause tryout capacity when not in use, if possible.
 
 ### "Timeout" capacity: Quarantine noisy neighbors
 
@@ -91,11 +91,11 @@ If a workspace or user starts using too many resources on the shared capacity (c
 In the timeout animation, we see the process of moving a workspace to a smaller capacity in Microsoft Fabric:
 
 - **Approach**
-  - Create a small F SKU capacity
-  - Assess CU consumption using the metrics app
-  - If CU for new items or workspaces affects existing workloads (throttling), move the new workspace to timeout capacity (Admin Portal/Capacity Settings)
-  - High CU items or workspaces (noisy neighbors) share smaller capacity (or you can pause it post move)
-  - Note workload thresholds before moving
+  1. Create a small F SKU capacity.
+  1. Assess CU consumption using the metrics app.
+  1. If CU for new items or workspaces affects existing workloads (throttling), move the new workspace to timeout capacity (Admin Portal/Capacity Settings).
+  1. High CU items or workspaces (noisy neighbors) share smaller capacity (or you can pause it post move).
+  1. Note workload thresholds before moving.
 
 ### Rescue capacity: Handle temporary overloads
 
@@ -106,12 +106,12 @@ Keep a **standby capacity** ready to handle occasional spikes. For example, a ca
 In the rescue animation, we see the process of moving a workspace to a standby capacity in Microsoft Fabric:
 
 - **Approach**: 
-  - Create an F SKU capacity; keep it paused
-  - Assess CU consumption using metrics app
-  - If CU for new items/workspaces affects priority workloads (throttling), resume the new capacity
-  - Move the priority workspace to new capacity (Admin Portal/Capacity Settings)
-  - Address issues with new content, then bring it back to original capacity, and pause the new one
-  - Note workload thresholds before moving
+  1. Create an F SKU capacity; keep it paused.
+  1. Assess CU consumption using metrics app.
+  1. If CU for new items/workspaces affects priority workloads (throttling), resume the new capacity.
+  1. Move the priority workspace to new capacity (Admin Portal/Capacity Settings).
+  1. Address issues with new content, then bring it back to original capacity, and pause the new one.
+  1. Note workload thresholds before moving.
 
 ## Managing self-service growth and governance
 

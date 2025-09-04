@@ -17,12 +17,16 @@ ai-usage: ai-assisted
 
 This four-part series provides Fabric capacity planning guidance for administrators and Center of Excellence (COE) leads. Learn how to allocate and manage Fabric capacity effectively, from initial adoption to enterprise-scale governance, ensuring your analytics solutions are scalable and well governed.
 
+## Series objectives
+
 By the end of the series, you understand how to:
 
 - **Plan and budget capacity for your first Fabric solution**: Start with a small **proof of concept (POC)** on a trial capacity and scale it to production confidently.
 - **Scale Fabric capacities for self-service analytics across multiple teams**: Balance **cost efficiency** and resource **isolation** when departments share or split capacities.
 - **Strategize capacities for centrally managed (enterprise) content**: Support **mission-critical data and AI workloads** with the right capacity tiers and ensure **stringent SLAs** are met.
 - **Implement growth monitoring and governance**: Use the Microsoft Fabric Capacity **Metrics app** and Microsoft Fabric **Chargeback app** for transparency, continuously optimize usage, and scale capacity proactively as adoption expands.
+
+## Series structure
 
 The series is organized into four parts, each focusing on a specific scenario or phase of capacity planning:
 

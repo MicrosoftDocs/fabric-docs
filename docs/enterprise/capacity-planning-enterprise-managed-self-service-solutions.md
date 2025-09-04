@@ -23,9 +23,9 @@ Large organizations at this stage might need to formalize SLAs (for example, upt
 
 We use a three-phase approach:
 
-- **Identify and segregate** centrally managed content versus self-service content, and plan the data architecture accordingly.
-- **Provision capacity** according to workload criticality, measure usage, and allocate the right size and number of capacities.
-- **Maintain and optimize** capacities, monitor usage, adjust scaling, and enforce governance continuously. We discuss this part in detail in [Manage capacity growth and governance](capacity-planning-manage-capacity-growth-governance.md).
+1. **Identify and segregate** centrally managed content versus self-service content, and plan the data architecture accordingly.
+1. **Provision capacity** according to workload criticality, measure usage, and allocate the right size and number of capacities.
+1. **Maintain and optimize** capacities, monitor usage, adjust scaling, and enforce governance continuously. We discuss this part in detail in [Manage capacity growth and governance](capacity-planning-manage-capacity-growth-governance.md).
 
 ## Phase 1: Identify and segregate central content
 
@@ -88,7 +88,7 @@ With a clear inventory of central versus distributed content, the next step is t
     - Whenever possible, [**start with smaller SKUs and scale up gradually**](optimize-capacity.md). You can always [scale up](scale-capacity.md) a capacity's size with minimal downtime. This incremental approach avoids over-allocating budget. For instance, you might start a new enterprise solution on F64, closely watch metrics for a month, then decide to scale to F128 if needed.
 
     > [!NOTE]
-    > For Power BI workload, scaling up and down between F32 to F64 applies different licensing and might take some time. Similarly, scaling up or down between sizes smaller or equal to F256, and equal or higher than F512, might result in a slower experience.
+    > For Power BI workload, scaling up and down between F32 to F64 applies different licensing and might take some time. Similarly, scaling up or down between sizes smaller or equal to F256, and equal to or higher than F512, might result in a slower experience.
 
     - Keep **mission-critical workloads separate from others on different capacities**. Using two medium capacities - one for mission-critical tasks and one for other workloads - is preferable to combining them on a larger capacity if their SLA needs differ. For instance, run tier 1 on an F64 and tier 2 on another F64 rather than both on a single F128. This way, issues with tier 2 don't affect tier 1. This approach might increase costs, so proper workload classification is necessary.
 
