@@ -14,7 +14,8 @@ LocalizationGroup: Premium
 
 # Bring your own encryption keys for Power BI
 
-By default, Power BI uses Microsoft-managed keys to encrypt your data. In Power BI Premium, you can also use your own keys for data at-rest that's imported into a semantic model. This approach is often described as *bring your own key* (BYOK). For more information, see [Data source and storage considerations](#data-source-and-storage-considerations). 
+By default, Power BI uses Microsoft-managed keys to encrypt your data. In Power BI Premium, you can also use your own keys for data at-rest that's imported into a semantic model. This approach is often described as *bring your own key* (BYOK). For more information, see [Data source and storage considerations](#data-source-and-storage-considerations). Power BI BYOK supports double encryption, ensuring layered security and compliance with enterprise encryption standards. This includes storage-level encryption using Server-Side Encryption (SSE) and client-side encryption with a Microsoft-managed Data Encryption Key (DEK). This DEK is wrapped using a CMK before data is stored at rest.
+
 
 ## Why use BYOK?
 
@@ -77,6 +78,8 @@ Configure your key vault in the following way:
 
 5. Select **Next**, then **Review + create** > **Create**.
 
+[Azure role-based access control](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#security) can also be used to grant permissions by selecting a role that includes **Unwrap Key** and **Wrap Key** permissions.
+
 > [!NOTE]
 > To revoke Power BI access to your data, remove access rights to this service principal from your Azure Key Vault.
 
@@ -119,11 +122,11 @@ To configure Azure Key Vault to allow access to trusted Microsoft services, foll
 
 2. Select **Networking** from the left-side navigation panel.
 
-3. Under **Firewalls and virtual networks**, select **Allow public access from specific virtual networks and IP addresses**.
+3. Under **Public Access - Allow access from:**, choose **Selected networks**.
 
     :::image type="content" source="media/service-encryption-byok/key-vault-firewall.png" alt-text="Screenshot of the Azure Key Vault networking option, with the firewalls and virtual networks option selected.":::
 
-4. Scroll down to the **Firewall** section. Select **Allow trusted Microsoft services to bypass this firewall**.
+4. Scroll down to the **Exception** section and select **Allow trusted Microsoft services to bypass this firewall**.
 
     :::image type="content" source="media/service-encryption-byok/trusted-service.png" alt-text="Screenshot of the option to allow trusted Microsoft services to bypass this firewall.":::
 
