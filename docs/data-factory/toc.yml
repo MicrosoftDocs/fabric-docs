@@ -489,6 +489,12 @@
         href: connector-microsoft-365.md
       - name: Configure in a data pipeline Copy activity
         href: connector-microsoft-365-copy-activity.md
+    - name: Microsoft Access
+      items:
+      - name: Microsoft Access - Overview
+        href: connector-microsoft-access-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-microsoft-access-copy-activity.md
     - name: Microsoft Exchange Online
       items:
       - name: Microsoft Exchange Online - Overview
