@@ -5,13 +5,14 @@ description: Learn how data is mirrored from Cosmos DB in Microsoft Fabric to On
 author: seesharprun
 ms.author: sidandrews
 ms.topic: limits-and-quotas
-ms.date: 09/03/2025
-ms.search.form: Databases replication to OneLake,Integrate Cosmos DB with other services
+ms.date: 09/04/2025
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
 # Mirroring limitations in Cosmos DB database in Microsoft Fabric (preview)
+
+[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
 This article details the current limitations for mirroring for Cosmos DB databases in Microsoft Fabric. The limitation and quota details on this page are subject to change in the future.
 
@@ -39,7 +40,7 @@ This article details the current limitations for mirroring for Cosmos DB databas
 
 - TODO
 
-[!INCLUDE[Feature preview note](../../mirroring/includes/cosmos-db-mirroring-limitations.md)]
+[!INCLUDE[Cosmos DB Mirroring Limitations](../../mirroring/includes/cosmos-db-mirroring-limitations.md)]
 
 ## Related content
 

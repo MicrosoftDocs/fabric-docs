@@ -4,7 +4,7 @@ description: This article includes a list of limitations and quotas for Microsof
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 09/03/2025
+ms.date: 09/04/2025
 ms.topic: limits-and-quotas
 ms.custom:
   - references_regions
@@ -103,7 +103,7 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
 - Fabric has existing limitations with T-SQL. For more information, see [T-SQL limitations](../data-warehouse/tsql-surface-area.md#limitations).
 
-[!INCLUDE[Feature preview note](includes/cosmos-db-mirroring-limitations.md)]
+[!INCLUDE[Cosmos DB Mirroring Limitations](includes/cosmos-db-mirroring-limitations.md)]
 
 ## Related content
 
