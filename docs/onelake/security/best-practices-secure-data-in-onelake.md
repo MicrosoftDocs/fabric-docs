@@ -6,7 +6,7 @@ ms.author: aamerril
 author: aamerril
 ms.topic: concept-article
 ms.custom:
-ms.date: 05/09/2024
+ms.date: 09/05/2025
 #customer intent: As a security engineer, I want to learn best practices for securing my data in OneLake, including least privilege access, workload permissions, and user permissions, so that I can effectively protect my data and reduce security risks.
 ---
 

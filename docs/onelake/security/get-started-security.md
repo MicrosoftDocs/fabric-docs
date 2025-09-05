@@ -6,7 +6,7 @@ ms.author: aamerril
 author: aamerril
 ms.topic: concept-article
 ms.custom:
-ms.date: 03/24/2025
+ms.date: 09/05/2025
 #customer intent: As a OneLake user, I want to understand the core concepts and capabilities of data security in OneLake so that I can use them to protect my data stored and accessed in OneLake.
 ---
 

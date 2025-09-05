@@ -6,7 +6,7 @@ ms.author: aamerril
 author: aamerril
 ms.topic: how-to
 ms.custom:
-ms.date: 03/17/2025
+ms.date: 09/05/2025
 #customer intent: As a Fabric user, I want to learn how to create and manage OneLake security so that I can control access to specific folders in my lakehouse and ensure data security.
 ---
 

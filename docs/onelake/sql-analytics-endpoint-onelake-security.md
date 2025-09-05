@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric's OneLake Security enhances data access 
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: sngun
-ms.date: 09/03/2025
+ms.date: 09/05/2025
 ms.topic: concept-article
 ---
 
@@ -69,7 +69,7 @@ If a user belongs to **multiple OneLake roles**, the most permissive role define
 
 * The broader access role takes precedence. This behavior ensures users aren't unintentionally blocked, but it requires careful role design to avoid conflicts. It's recommended to keep restrictive and permissive roles **mutually exclusive** when enforcing row- or column-level access controls.
 
-For more information, see the [data access control model](/security/data-access-control-model.md) for OneLake security.
+For more information, see the [data access control model](security/data-access-control-model.md) for OneLake security.
 
 ## Security sync between OneLake and SQL analytics endpoint
 
@@ -222,4 +222,5 @@ The access mode determines how data access is authenticated and enforced when qu
 
 ## Related content
 
-* OneLake se
+* [Best practices to secure data in OneLake](security/best-practices-secure-data-in-onelake.md)
+* [OneLake security access control model](security/data-access-control-model.md)
