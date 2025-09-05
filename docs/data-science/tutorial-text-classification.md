@@ -6,7 +6,7 @@ reviewer: priyank96
 ms.author: lagayhar
 author: lgayhardt
 ms.topic: tutorial
-ms.date: 09/04/2025
+ms.date: 09/05/2025
 ---
 
 # Classification of natural language text with generative AI in Microsoft Fabric
@@ -173,7 +173,7 @@ Please provide an answer in accordance with the following rules:
 
 ```
 
-This type of prompt improves upon traditional chunking algorithms by minimizing the number of fragmented words and phrases because of the LLM’s intrinsic understanding of natural language. Specific prompting instructs the LLM to identify shifts in tone and topic, enabling a more human interpretable decomposition of long survey responses.
+This type of prompt improves upon traditional chunking algorithms by minimizing the number of fragmented words and phrases because of the LLM’s intrinsic understanding of natural language. Specific prompting instructs the LLM to identify shifts in tone and topic, enabling a more human interpretable decomposition of long survey responses. This prompt follows the “cautious system instruction” technique described in the [Orca 2 paper produced by Microsoft Research](https://arxiv.org/pdf/2311.11045). The two phrases near the top of the system prompt improves reasoning and task following behaviors; “You are a cautious assistant. You carefully follow instructions.”.
 
 LLMs are often literal in their interpretation of instructions. Specific choice of nomenclature influences the LLM’s interpretation of your instructions. We encountered an over-segmentation issue in an earlier version of the segmentation prompt where the response would include several small segments of sentences of the same subject. We identified the problem from the use of the phrase *“…produce multiple topics…”* and resolved the issue by adjusting the phrase to: *“…distinguish the different topics…”*.
 
@@ -275,3 +275,7 @@ def add_system_user_label_validation(row):
 
 ## Related content
 
+* [Introduction to deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md).
+* [Use OpenAI for big data with SynapseML](open-ai.md)
+* [ Use Python for Apache Spark](./python-guide/python-overview.md)
+* [Create, evaluate, and score a text classification model](title-genre-classification.md)
