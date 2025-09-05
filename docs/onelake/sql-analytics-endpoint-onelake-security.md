@@ -22,7 +22,7 @@ When using the **SQL analytics endpoint**, the selected access mode determines h
 
 Each mode supports different governance models. Understanding their implications is essential for choosing the right approach in your Fabric environment.
 
-### Access mode comparison
+## Comparison between access modes
 
 Here’s a clear and concise comparison table focused on how and where you set security in user identity mode versus delegated identity mode—broken down by object type and data access policies:
 
@@ -61,7 +61,7 @@ Users with the **Admin**, **Member**, or **Contributor** role at the workspace l
 
 * Share the Lakehouse or SQL analytics endpoint with users using **read-only** permissions. Only users with read-only access will have their queries filtered according to OneLake security roles.
 
-### Role precedence: Most permissive access wins
+## Role precedence: Most permissive access wins
 
 If a user belongs to **multiple OneLake roles**, the most permissive role defines their effective access. For example:
 
@@ -71,7 +71,7 @@ If a user belongs to **multiple OneLake roles**, the most permissive role define
 
 For more details, see the [data access control model](/security/data-access-control-model.md) for OneLake security.
 
-### Security sync between OneLake and SQL analytics endpoint
+## Security sync between OneLake and SQL analytics endpoint
 
 A critical component of user identity mode is the **security sync service**. This background service monitors changes made to security roles in OneLake and ensures those changes are reflected in the SQL analytics endpoint.
 
@@ -115,9 +115,7 @@ This design preserves security integrity across Lakehouse boundaries, but it int
 
 ## Delegated mode in OneLake security
 
-In **Delegated Identity Mode**, the SQL analytics endpoint uses the same **security model that exists today** in Microsoft Fabric. Security and permissions are managed entirely at the **SQL layer**, and **OneLake roles or access policies aren't enforced** for table-level access.
-
-When a user connects to the SQL analytics endpoint and issues a query:
+In **Delegated Identity Mode**, the SQL analytics endpoint uses the same **security model that exists today** in Microsoft Fabric. Security and permissions are managed entirely at the **SQL layer**, and **OneLake roles or access policies aren't enforced** for table-level access. When a user connects to the SQL analytics endpoint and issues a query:
 
 * SQL validates access based on **SQL permissions** (GRANT, REVOKE, RLS, CLS, DDM, roles, etc.).
 
@@ -133,9 +131,7 @@ In this model:
 
 * The **item owner** is responsible for having sufficient permissions in OneLake to read the underlying files on behalf of the workload.
 
-Because this is a delegated pattern, any misalignment between SQL permissions and OneLake access for the owner results in query failures.
-
-This mode provides full compatibility with:
+Because this is a delegated pattern, any misalignment between SQL permissions and OneLake access for the owner results in query failures.This mode provides full compatibility with:
 
 * SQL GRANT/REVOKE at all object levels
 
@@ -143,29 +139,25 @@ This mode provides full compatibility with:
 
 * Existing T-SQL tooling and practices used by DBAs or applications
 
-# How to change the OneLake access mode
+## How to change the OneLake access mode
 
-The access mode determines how data access is authenticated and enforced when querying OneLake through SQL analytics endpoint. You can switch between **User Identity Mode** and **Delegated Identity Mode** using the steps below.
+The access mode determines how data access is authenticated and enforced when querying OneLake through SQL analytics endpoint. You can switch between user identity mode and delegated identity mode using the following steps:
 
-### Step-by-Step: Change Access Mode
+1. Navigate to your Fabric workspace and open your lakehouse. From top right hand corner, switch from lakehouse to **SQL analytics endpoint**.
 
-1. **Open the SQL Analytics Endpoint** Navigate to your Fabric workspace. Open the Lakehouse associated with the SQL analytics endpoint and select the **"** **SQL analytics endpoint "** tab.
+1. **Access SQL analytics endpoint settings** On the SQL analytics endpoint page, select the **Settings**.
 
-2. **Access SQL analytics endpoint settings** On the SQL analytics endpoint page, select the **Settings**.
+1. **Select Desired Access Mode**  In the access mode settings panel, choose one of the following options:
 
-3. **Select Desired Access Mode**  In the access mode settings panel, choose one of the following options:
+   * **User identity** – Uses the signed-in user's identity. It enforces OneLake roles.
 
-    * **User Identity** – Uses the signed-in user's identity; enforces
-      OneLake roles.
+   * **Delegated identity** – Uses the item owner's identity; enforces only SQL permissions.
 
-    * **Delegated Identity** – Uses the item owner's identity; enforces
-      only SQL permissions.
+1. **Save the Configuration** Click **Save** or **Apply** to confirm the change.
 
-4. **Save the Configuration** Click **Save** or **Apply** to confirm the change.
+## Considerations when switching between modes
 
-### Considerations when switching between modes
-
-* **Switching to user identity mode**
+**Switching to user identity mode**
 
   * SQL RLS, CLS, and table-level permissions are ignored.
 
@@ -176,7 +168,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
   * Existing SQL Roles will be deleted and cannot be recovered.
 
-* **Switching to delegated identity mode**
+**Switching to delegated identity mode**
 
   * OneLake roles and security policies are no longer applied.
 
@@ -185,7 +177,7 @@ The access mode determines how data access is authenticated and enforced when qu
   * The item owner must have valid OneLake access, or all queries may
     fail.
 
-# Limitations
+## Limitations
 
 * **Applies only to readers**  
   OneLake Security governs users accessing data as *Viewers*. Users in other workspace roles (Admin Member, or Contributor) bypass OneLake Security and retain full access.
