@@ -32,7 +32,7 @@ In this diagram:
 
 * **Workspace 2** restricts inbound public access and can only be accessed from machines in **VNet B** via a workspace-level private link.
 
-* **Workspace 3** can be accessed from the public internet because it doesn't have a restricted inbound communication rule configured. It can also be accessed from **VNet A** via a workspace-level private link. This configuration allows both public and private access, which isn't recommended for production environments. This setup should be used only for testing purposes, as it exposes the workspace to the public internet and doesn't provide full inbound network protection.
+* **Workspace 3** can be accessed from the public internet because it doesn't have a restricted inbound communication rule configured. It can also be accessed from **VNet B** via a workspace-level private link. This configuration allows both public and private access, which isn't recommended for production environments. This setup should be used only for testing purposes, as it exposes the workspace to the public internet and doesn't provide full inbound network protection.
 
 * **Workspace 4** can be accessed from the public internet because it doesn't have a restricted inbound communication rule configured.
 

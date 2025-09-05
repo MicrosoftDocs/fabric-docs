@@ -1,17 +1,19 @@
----
+﻿---
 title: Data science tutorials - prepare your system
 description: Before you begin following the data science end-to-end scenario, learn about prerequisites, the sample dataset, and the lakehouse and notebooks you need.
 ms.reviewer: amjafari
-ms.author: jburchel
-author: jonburchel
+ms.author: lagayhar
+author: lgayhardt
 ms.topic: tutorial
-ms.custom:
-ms.date: 07/31/2025
+ms.custom: 
+ms.date: 08/27/2025
+reviewer: jonburchel
+ai.usage: ai-assisted
 ---
 
 # Prepare your system for data science tutorials
 
-Before you begin the data science end-to-end tutorial series, learn about prerequisites, how to import notebooks, and how to attach a lakehouse to those notebooks.
+Before you begin the data science end-to-end tutorial series, learn about prerequisites, how to add notebooks (.ipynb) to your workspace, and how to attach a lakehouse to those notebooks.
 
 ## Prerequisites
 
@@ -25,9 +27,9 @@ Each tutorial in the Get Started end-to-end series is available as a Jupyter not
 
 * [Create a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks), then copy and paste the code from the tutorial.
    
-* <a name="import-tutorial-notebooks"></a> Import the notebook from GitHub to your workspace:
+* <a name="upload-tutorial-notebooks"></a><a name="import-tutorial-notebooks"></a> Upload the notebook (.ipynb) from GitHub to your workspace:
 
-    1. Download your notebook(s).  Make sure to download the files by using the "Raw" file link in GitHub.
+    1. Download your notebook(s). Make sure to download the files by using the "Raw" file link in GitHub.
         * For the **Get started** notebooks, download the notebook(.ipynb) files from the parent folder: [data-science-tutorial](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-tutorial). The Get Started tutorial series uses the following notebooks:
             * [Ingest data into Fabric lakehouse using Apache Spark](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/1-ingest-data.ipynb)
             * [Explore and clean data](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/2-explore-cleanse-data.ipynb)
@@ -36,24 +38,20 @@ Each tutorial in the Get Started end-to-end series is available as a Jupyter not
 
         * For the **Tutorials** notebooks, download the notebooks(.ipynb) files from the parent folder [ai-samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/ai-samples).
 
-    1. On the left navigation for the Fabric homepage, select your workspace.
-    1. Select **Import** > **Notebook** > **From this computer**.
+    1. In the Fabric web app, go to your workspace.
+    1. In the workspace command bar, select **Upload**, then choose the downloaded notebook (.ipynb) file.
+    1. When the upload completes, the notebooks are available in your workspace for use.
 
-        :::image type="content" source="media\tutorial-data-science-prepare-system\select-import-notebook.png" alt-text="Screenshot showing where to select Import notebook on the Data science home page." lightbox="media\tutorial-data-science-prepare-system\select-import-notebook.png":::
-
-    1. Select Upload and select the downloaded notebook file.
-
-        :::image type="content" source="media\tutorial-data-science-prepare-system\import-status-upload.png" alt-text="Screenshot of Import status dialog box, showing where to select Upload." lightbox="media\tutorial-data-science-prepare-system\import-status-upload.png":::
-
-    1. Once the notebooks are imported, select **Go to workspace** in the import dialog box.
-
-        :::image type="content" source="media\tutorial-data-science-prepare-system\import-success-workspace.png" alt-text="Screenshot of the import success dialog box, showing where to select Go to workspace." lightbox="media\tutorial-data-science-prepare-system\import-success-workspace.png":::
-
-    1. The imported notebooks are now available in your workspace for use.
-
-    1. If the imported notebook includes output, select the **Edit** menu, then select **Clear all outputs**.
+    1. If the uploaded notebook includes output, select the **Edit** menu, then select **Clear all outputs**.
 
         :::image type="content" source="media\tutorial-data-science-prepare-system\clear-outputs.png" alt-text="Screenshot shows the edit menu option to clear all outputs." lightbox="media\tutorial-data-science-prepare-system\clear-outputs.png":::
+
+    > [!TIP]
+    > Don't see an option to upload a notebook (.ipynb) in your workspace?
+    > 
+    > 1. Use **Create a new notebook**, then copy and paste the code from the tutorial.
+    > 1. Or, use the **Open the sample notebook** option in the Data Science workload (when available).
+    > 1. If your organization has Git integration enabled, you can also bring notebooks from a connected repo.
 
 * <a name="open-sample-notebook"></a> Open the sample notebook (when available) in the Data Science workload:
 

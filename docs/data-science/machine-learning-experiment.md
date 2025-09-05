@@ -1,8 +1,8 @@
----
+﻿---
 title: Machine learning experiment
 description: Learn how to create machine learning experiments, use the MLflow API, manage and compare runs, and save a run as a model.
-ms.author: lagayhar
-author: lgayhardt
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: midesa
 reviewer: midesa
 ms.topic: conceptual
@@ -22,7 +22,7 @@ In this article, you learn more about how data scientists can interact with and 
 
 ## Prerequisites
 
-- A Power BI Premium subscription. If you don't have one, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
+- A Power BI Premium subscription. If you don't have one, see [What is Power BI Premium?](/fabric/enterprise/powerbi/service-premium-what-is)
 - A Power BI Workspace with assigned premium capacity.
 
 ## Create an experiment

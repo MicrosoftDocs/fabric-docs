@@ -1,10 +1,10 @@
----
+﻿---
 title: Build a Search Engine
 description: Build a custom search engine and question-answering system with SynapseML.
 ms.topic: overview
 ms.custom: 
-ms.author: ssalgado
-author: ssalgadodev
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
 ms.date: 06/30/2025
