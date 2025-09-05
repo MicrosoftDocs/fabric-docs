@@ -87,7 +87,12 @@ Learn more in [Get started with data access roles](../security/get-started-onela
 
 ## Engine and user access to data
 
-All data access to OneLake occurs in one of two ways: through a Fabric query engine or through user access. (Queries from non-Fabric engines are considered user access) OneLake security ensures that data is always kept secure. Because certain OneLake security features like row and column level security aren't supported by storage level operations, not all types of access to row or column level secured data can be permitted. This guarantees that users can't see rows or columns they aren't permitted to. Microsoft Fabric engines are enabled to apply row and column level security filtering to data queries. This means when a user queries data in a lakehouse or other item with OneLake security RLS or CLS on it, the results the user sees have the hidden rows and columns removed. For user access to data in OneLake with RLS or CLS on it, the query is blocked if the user requesting access isn't permitted to see all the rows or columns in that table.
+Data access to OneLake occurs in one of two ways: 
+
+* Through a Fabric query engine or
+* Through user access (Queries from non-Fabric engines are considered user access)
+
+OneLake security ensures that data is always kept secure. Because certain OneLake security features like row and column level security aren't supported by storage level operations, not all types of access to row or column level secured data can be permitted. This guarantees that users can't see rows or columns they aren't permitted to. Microsoft Fabric engines are enabled to apply row and column level security filtering to data queries. This means when a user queries data in a lakehouse or other item with OneLake security RLS or CLS on it, the results the user sees have the hidden rows and columns removed. For user access to data in OneLake with RLS or CLS on it, the query is blocked if the user requesting access isn't permitted to see all the rows or columns in that table.
 
 The table below outlines which Microsoft Fabric engines support RLS and CLS filtering.
 
@@ -244,13 +249,13 @@ Files/
 
 OneLake security allows users to specify row level security by writing SQL predicates to limit what data is shown to a user. RLS operates by showing rows where the predicate evaluates to true. For more information, see the [row level security](./row-level-security.md).
 
-Row level security evaluates string data as case insensitive, using the following collation for sorting and comparisons: Latin1_General_100_CI_AS_KS_WS_SC_UTF8
+Row level security evaluates string data as case insensitive, using the following collation for sorting and comparisons: *Latin1_General_100_CI_AS_KS_WS_SC_UTF8*
 
 When using row level security, ensure that the RLS statements are clean and easy to understand. Use integer columns for sorting and greater than or less than operations. Avoid string equivalencies if you don't know the format of the input data, especially in relation to unicode characters or accent sensitivity.
 
 ### Column level security
 
-OneLake security supports limiting access to columns by removing (hiding) a user's access to a column. A hidden column is treated as having no permissions assigned to it, resulting in the default policy of no access. Hidden columns won't be visible to users, and queries on data containing hidden columns return no data for that column. As noted in [metadata security](###Metadata security) there are certain case where the metadata of a column might still be visible in some error messages.
+OneLake security supports limiting access to columns by removing (hiding) a user's access to a column. A hidden column is treated as having no permissions assigned to it, resulting in the default policy of no access. Hidden columns won't be visible to users, and queries on data containing hidden columns return no data for that column. As noted in [metadata security](#metadata-security) there are certain case where the metadata of a column might still be visible in some error messages.
 
 Column level security also follows a more strict behavior in SQL Endpoint by operating through a deny semantic. Deny on a column in SQL Endpoint ensures that all access to the column is blocked, even if multiple roles would combine to give access to it. As a result, CLS in SQL Endpoint operates using an intersection between all roles a user is part of instead of the union behavior in place for all other permission types. See the Evaluating multiple OneLake security roles section for more information on how roles combine.
 
