@@ -1,6 +1,6 @@
 ---
 title: What is Data Factory
-description: Overview of Data Factory dataflows and pipelines.
+description: Overview of Data Factory services and capabilities in Microsoft Fabric.
 ms.author: whhender
 author: whhender
 ms.reviewer: makromer
@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 Data Factory in Microsoft Fabric helps you solve one of business's toughest challenges: turning scattered data into useful insights.
 
-Your organization's data lives in many different places: databases, files, cloud services, and legacy systems. This makes it hard to get a complete picture of your business. Data Factory connects to over 170 data sources and helps you move and transform your data at scale. It turns your data into formats that work well for analytics and decision-making.
+Your organization's data lives in many different places: databases, files, cloud services, and legacy systems. This makes it hard to get a complete picture of your business. Data Factory connects to over 170 data sources, including multi-cloud environments and hybrid setups with on-premises gateways. It helps you move and transform your data at scale, turning it into formats that work well for analytics and decision-making.
 
 :::image type="complex" source="media/data-factory-overview/data-integration-stack.png" alt-text="Diagram of the data integration stack in Microsoft Fabric.":::
    Diagram of Data Factory in Microsoft Fabric that shows a selection of connectors linked to analytics and data development tools in Fabric through data movement, orchestration, and transformation. This all sits on top of Fabric OneLake, and the entire stack is woven through with AI-powered intelligence.
@@ -44,7 +44,7 @@ Here's what each phase does:
 
 When you work with data, how you move and transform it matters, and every organization is going to have different needs. for example: ETL (Extract, Transform, Load) and ELT (Extract, Load, Transform). Each has strengths, depending on your needs for performance, scalability, and cost.
 
-**ETL**: Transform your data before loading it into its destination. This works well when you need to clean, standardize, or enrich data as it moves. For example, use Data Factory's Dataflows to apply transformations at scale before loading data into a warehouse or Lakehouse.
+**ETL**: Transform your data before loading it into its destination. This works well when you need to clean, standardize, or enrich data as it moves. For example, use Data Factory's Dataflow Gen 2 to apply transformations at scale before loading data into a warehouse or Lakehouse.
 
 **ELT**: Load raw data first, then transform it where it's stored. This approach uses the power of analytics engines like Fabric's OneLake, Spark Notebooks, or SQL-based tools. ELT works well for handling large datasets with modern, cloud-scale compute.
 
@@ -58,7 +58,7 @@ Fabric Data Factory supports both. You can:
 
 Data Factory connects to your data, moves it, transforms it, and orchestrates your data movement and transformation tasks from one place. You decide what strategy works best for your business, and Data Factory provides the tools to get it done.
 
-**Connect to your data**: Whether on-premises or in the cloud, Data Factory connects to your data sources and destinations. It supports a wide range of data sources, including databases, data lakes, file systems, APIs, and more. See [available connectors](connector-overview.md) for a complete list of supported data sources and destinations.
+**Connect to your data**: Whether on-premises, in the cloud, or across multi-cloud environments, Data Factory connects to your data sources and destinations. It supports a wide range of data sources, including databases, data lakes, file systems, APIs, and more. See [available connectors](connector-overview.md) for a complete list of supported data sources and destinations.
 
 **Move data**: Data Factory provides several methods to move data from source to destination, or provide easy access to existing data, depending on your needs.
 
@@ -71,7 +71,7 @@ See our [data movement decision guide](decision-guide-data-movement.md) to help 
 **Transform**: Data Factory provides activities to connect you to your custom transformation scripts or the powerful dataflows designer.
 
 - [Pipeline activities](activity-overview.md#data-transformation-activities) - Fabric notebook, HDInsight activity, Spark job definition, stored procedure, SQL scripts, and more. These activities let you run custom code or scripts to transform your data.
-- [Dataflows](dataflows-gen2-overview.md) - Transform your data using a low-code interface with over 300 transformations. You can perform joins, aggregations, data cleansing, custom transformations, and much more.
+- [Dataflow Gen 2](dataflows-gen2-overview.md) - Transform your data using a low-code interface with over 300 transformations. You can perform joins, aggregations, data cleansing, custom transformations, and much more.
 
 **Orchestrate**: Data Factory lets you create pipelines that can run multiple data movements, transformations, and other activities in a single workflow.
 
@@ -79,7 +79,13 @@ See our [data movement decision guide](decision-guide-data-movement.md) to help 
 - Pipelines can include [control flow logic](activity-overview.md#control-flow-activities), such as loops and conditionals, to handle complex workflows and orchestrate all of your data processing using a simple low-code pipeline designer UI.
 - If you prefer to express your orchestration processes in code, Fabric Data Factory integrates with [Apache Airflow to build DAGs for orchestration using Python](create-apache-airflow-jobs.md).
 
-For all these tools, Copilot in Fabric is there to help you get started and assist you in building your dataflows and pipelines. Copilot can help you with everything from writing queries to creating dataflows to building pipelines. For more information, see [Copilot in Fabric in the Data Factory workload](copilot-fabric-data-factory.md).
+## AI powered data integration
+
+AI shows up throughout Data Factory to help you get more done with less effort. Copilot for Data Factory lets you design, edit, and manage pipelines and dataflows using natural language. You can type plain-English prompts, and Copilot turns them into working ETL steps.
+
+Copilot also summarizes your existing dataflow queries and pipelines, so you can quickly understand what they do. If you run into errors, Copilot explains what went wrong and suggests ways to fix it.
+
+For details, see [Copilot in Fabric in the Data Factory workload](copilot-fabric-data-factory.md).
 
 ## What do you need to get started?
 
