@@ -1,6 +1,6 @@
 ---
-title: Amazon Rds For Oracle connector overview
-description: This article provides an overview of the supported capabilities of the Amazon Rds For Oracle connector.
+title: Amazon RDS For Oracle connector overview
+description: This article provides an overview of the supported capabilities of the Amazon RDS For Oracle connector.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -9,9 +9,9 @@ ms.custom:
   - template-how-to
 ---
 
-# Amazon Rds For Oracle connector overview
+# Amazon RDS For Oracle connector overview
 
-The Amazon Rds For Oracle connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Amazon RDS For Oracle connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 
@@ -22,4 +22,4 @@ The Amazon Rds For Oracle connector is supported in Data Factory for [!INCLUDE [
 
 ## Related content
 
-To learn more about the copy activity configuration for Amazon Rds For Oracle in data pipelines, go to [Configure in a Data pipeline copy activity](connector-amazon-rds-for-oracle-copy-activity.md).
+To learn more about the copy activity configuration for Amazon RDS For Oracle in data pipelines, go to [Configure in a Data pipeline copy activity](connector-amazon-rds-for-oracle-copy-activity.md).

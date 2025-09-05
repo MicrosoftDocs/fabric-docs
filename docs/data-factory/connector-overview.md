@@ -35,7 +35,7 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | [ADPAnalytics (Beta)](/power-query/connectors/adp-analytics) | ✓/− |  |  |
 | [Amazon Athena](/power-query/connectors/amazon-athena) | ✓/− |  |  |
 | [Amazon OpenSearch Service (Beta)](/power-query/connectors/amazon-opensearch-service)  | ✓/− |  |  |
-| [Amazon RDS for Oracle](connector-amazon-rds-for-oracle-overview.md) |  | ✓/− | ✓/− |
+| [Amazon RDS For Oracle](connector-amazon-rds-for-oracle-overview.md) |  | ✓/− | ✓/− |
 | [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) |  | ✓/− | ✓/− |
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/− | ✓/− |  |
 | [Amazon S3](connector-amazon-s3-overview.md) |  | ✓/✓ | ✓/✓ |
