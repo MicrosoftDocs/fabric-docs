@@ -75,7 +75,7 @@ All shortcuts from OneLake to external systems (multi-cloud shortcuts) like AWS 
 
 ### OneLake security limitations
 
-* In addition to OneLake security access to the target path, accessing external shortcuts via Spark or direct API calls also requires Fabric Read permission on the item containing the external shortcut. (the shortcut path for the external shortcut) We plan to remove this requirement at a future date.
+* In addition to OneLake security access to the target path, accessing external shortcuts via Spark or direct API calls also require read permissions on the item containing the external shortcut path.
 
 ## Related content
 
