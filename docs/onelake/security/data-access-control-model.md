@@ -19,10 +19,10 @@ This document provides a detailed guide to how the OneLake security access contr
 ## OneLake security roles
 OneLake security uses a role based access control (RBAC) model for managing access to data in OneLake. Each role is made up of several key components.
 
-- Type: whether the role gives access (GRANT) or removes access (DENY). Only GRANT type roles are supported.
-- Permission: the specific action or actions that are being granted or denied.
-- Scope: the OneLake objects that are given the permission. Objects are tables, folders, or schemas.
-- Members: any Microsoft Entra identity that is assigned to the role, such as users, groups, or nonuser identities. The role is granted to all members of an Microsoft Entra group.
+- **Type:** Whether the role gives access (GRANT) or removes access (DENY). Only GRANT type roles are supported.
+- **Permission:** The specific action or actions that are being granted or denied.
+- **Scope:** The OneLake objects that have the permission. Objects are tables, folders, or schemas.
+- **Members:** Any Microsoft Entra identity that is assigned to the role, such as users, groups, or nonuser identities. The role is granted to all members of a Microsoft Entra group.
 
 By assigning a member to a role, that user is then subject to the associated permissions on the scope of that role. Because OneLake security uses a deny-by-default model, all users start with no access to data unless explicitly granted by a OneLake security role.
 
@@ -30,8 +30,9 @@ By assigning a member to a role, that user is then subject to the associated per
 
 OneLake security roles support the following permissions:
 
-- Read: Grants the user the ability to read data from a table and view the associated table and column metadata. In SQL terms, this permission is equivalent to both VIEW_DEFINITION and SELECT. For more information, see the [Metadata security](#metadata-security).
-- ReadWrite [(coming soon)](https://aka.ms/fabricroadmap): Gives the user the same read privileges as Read, and the ability to write data to tables and folders in OneLake. This permission allows any user to create, update, delete, or rename files or folders in OneLake.
+- **Read:** Grants the user the ability to read data from a table and view the associated table and column metadata. In SQL terms, this permission is equivalent to both VIEW_DEFINITION and SELECT. For more information, see the [Metadata security](#metadata-security).
+
+- **ReadWrite** [(coming soon)](https://aka.ms/fabricroadmap): Gives the user the same read privileges as Read, and the ability to write data to tables and folders in OneLake. This permission allows any user to create, update, delete, or rename files or folders in OneLake.
 
 OneLake security enables users to define data access roles for the following Fabric items only.
 
@@ -41,7 +42,7 @@ OneLake security enables users to define data access roles for the following Fab
 | Azure Databricks Mirrored Catalog | Public Preview | Read |
 | Mirrored Databases | Public Preview | Read |
 
-## OneLake security and Workspace permissions
+## OneLake security and workspace permissions
 
 Workspace permissions are the first security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../../fundamentals/roles-workspaces.md)
 
@@ -55,7 +56,7 @@ Fabric workspace roles give permissions that apply to all items in the workspace
 
 *Since Workspace Admin, Member and Contributor roles automatically grant Write permissions to OneLake, they override any OneLake security Read permissions.
 
-Workspace roles manage the control plane data access, meaning interactions with creating and managing Fabric artifacts and permissions. In addition, workspace roles also provide default access levels to data items through the use of OneLake security default roles. (Note that default roles only apply to Viewers, since Admin, Member, and Contributor have elevated access through the Write permission) A default role is a normal OneLake security role that is created automatically with every new item. It gives users with certain workspace or item permissions a default level of access to data in that item. For example, Lakehouse items have a DefaultReader role that lets users with the ReadAll permission see data in the Lakehouse. This ensures that users accessing a newly created item have a basic level of access. All default roles use a member virtualization feature, so that the members of the role are any user in that workspace with the required permission. For example, all users with ReadAll permission on the Lakehouse. The following table shows what the standard default roles are. Note that items may have specialized default roles that apply only to that item type.
+Workspace roles manage the control plane data access, meaning interactions with creating and managing Fabric artifacts and permissions. In addition, workspace roles also provide default access levels to data items by using OneLake security default roles. (Note that default roles only apply to Viewers, since Admin, Member, and Contributor have elevated access through the Write permission) A default role is a normal OneLake security role that is created automatically with every new item. It gives users with certain workspace or item permissions a default level of access to data in that item. For example, Lakehouse items have a DefaultReader role that lets users with the ReadAll permission see data in the Lakehouse. This ensures that users accessing a newly created item have a basic level of access. All default roles use a member virtualization feature, so that the members of the role are any user in that workspace with the required permission. For example, all users with ReadAll permission on the Lakehouse. The following table shows what the standard default roles are. Items may have specialized default roles that apply only to that item type.
 
 | Fabric item | Role name | Permission | Folders included | Assigned members |
 | ---- | --- | --- | ---- | ---- |
@@ -249,7 +250,7 @@ When using row level security, ensure that the RLS statements are clean and easy
 
 ### Column level security
 
-OneLake security supports limiting access to columns by removing (hiding) a user's access to a column. A hidden column is treated as having no permissions assigned to it, resulting in the default policy of no access. Hidden columns will not be visible to users, and queries on data containing hidden columns return no data for that column. As noted in [metadata security](###Metadata security) there are certain case where the metadata of a column might still be visible in some error messages.
+OneLake security supports limiting access to columns by removing (hiding) a user's access to a column. A hidden column is treated as having no permissions assigned to it, resulting in the default policy of no access. Hidden columns won't be visible to users, and queries on data containing hidden columns return no data for that column. As noted in [metadata security](###Metadata security) there are certain case where the metadata of a column might still be visible in some error messages.
 
 Column level security also follows a more strict behavior in SQL Endpoint by operating through a deny semantic. Deny on a column in SQL Endpoint ensures that all access to the column is blocked, even if multiple roles would combine to give access to it. As a result, CLS in SQL Endpoint operates using an intersection between all roles a user is part of instead of the union behavior in place for all other permission types. See the Evaluating multiple OneLake security roles section for more information on how roles combine.
 
@@ -302,16 +303,16 @@ When dealing with multiple roles, RLS and CLS combine with a UNION semantic on t
 
 To evaluate multiple roles each with RLS or CLS, each role is first resolved based on the access given by the role itself. This means evaluating the INTERSECTION of all object, row, and column level security. Each evaluated role is then combined with all other roles a user is a member of via the UNION operation. The output is the effective role for that user. This can be expressed as:
 
-( (R1ols n R1cls n R1rls) u (R2ols n R2cls n R2rls) )
+`( (R1ols n R1cls n R1rls) u (R2ols n R2cls n R2rls) )`
 
 Lastly, each shortcut in a lakehouse generates a set of inferred roles that are used to propagate the shortcut target's permissions to the item being queried. Inferred roles operate in a similar way to noninferred roles except they're resolved first in place on the shortcut target before being combined with roles in the shortcut lakehouse. This ensures that any inheritance of permissions on the shortcut lakehouse is broken and the inferred roles are evaluated correctly. The full combination logic can then be expressed as:
 
-( (R1ols n R1cls n R1rls) u (R2ols n R2cls n R2rls) ) n ( (R1'ols n R1'cls n R1'rls) u (R2'ols n R2'cls n R2'rls)) )
+`( (R1ols n R1cls n R1rls) u (R2ols n R2cls n R2rls) ) n ( (R1'ols n R1'cls n R1'rls) u (R2'ols n R2'cls n R2'rls)) )`
 
 Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehouse roles.
 
->[!IMPORTANT]
->If two roles combine such that the columns and rows aren't aligned across the queries, access is blocked to ensure that no data is leaked to the end user. 
+> [!IMPORTANT]
+> If two roles combine such that the columns and rows aren't aligned across the queries, access is blocked to ensure that no data is leaked to the end user. 
 
 ## OneLake security limitations
 
@@ -341,4 +342,4 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 
 * Changes to role definitions take about 5 minutes to apply.
 * Changes to a user group in a OneLake security role take about an hour for OneLake to apply the role's permissions on the updated user group.
-  * Some Fabric engines have their own caching layer, so might require an additional hour to update access in all systems.
+  * Some Fabric engines have their own caching layer, so might require an extra hour to update access in all systems.
