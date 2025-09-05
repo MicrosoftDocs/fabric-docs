@@ -12,13 +12,13 @@ ms.topic: concept-article
 
 With OneLake security, Microsoft Fabric is expanding how organizations can manage and enforce data access across workloads. This new security framework gives administrators greater flexibility to configure permissions. Administrators can choose between **centralized governance through OneLake** or **granular SQL-based control** within the SQL analytics endpoint.
 
-## Access modes in SQL Analytics Endpoint
+## Access modes in SQL analytics endpoint
 
 When using the **SQL analytics endpoint**, the selected access mode determines how data security is enforced. Fabric supports two distinct access models, each offering different benefits depending on your operational and compliance needs:
 
-1. **User identity mode**: Enforces security using OneLake roles and policies. In this mode, the SQL analytics endpoint passes the signed-in user’s identity to OneLake, and **read access is governed entirely by the security rules defined within OneLake**. SQL-level permissions on tables are supported, ensuring consistent governance across tools like Power BI, notebooks, and lakehouse.
+* **User identity mode**: Enforces security using OneLake roles and policies. In this mode, the SQL analytics endpoint passes the signed-in user’s identity to OneLake, and **read access is governed entirely by the security rules defined within OneLake**. SQL-level permissions on tables are supported, ensuring consistent governance across tools like Power BI, notebooks, and lakehouse.
 
-2. **Delegated identity mode**: Provides full control through SQL. In this mode, the SQL analytics endpoint connects to OneLake using the identity of the **workspace or item** owner, and **security is governed exclusively by SQL permissions** defined inside the database. This model supports traditional security approaches including GRANT, REVOKE, custom roles, Row-Level Security, and Dynamic Data Masking.
+* **Delegated identity mode**: Provides full control through SQL. In this mode, the SQL analytics endpoint connects to OneLake using the identity of the **workspace or item** owner, and **security is governed exclusively by SQL permissions** defined inside the database. This model supports traditional security approaches including GRANT, REVOKE, custom roles, Row-Level Security, and Dynamic Data Masking.
 
 Each mode supports different governance models. Understanding their implications is essential for choosing the right approach in your Fabric environment.
 
