@@ -35,6 +35,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [ADPAnalytics (Beta)](/power-query/connectors/adp-analytics) | ✓/− |  |  |
 | [Amazon Athena](/power-query/connectors/amazon-athena) | ✓/− |  |  |
 | [Amazon OpenSearch Service (Beta)](/power-query/connectors/amazon-opensearch-service)  | ✓/− |  |  |
+| [Amazon RDS For Oracle](connector-amazon-rds-for-oracle-overview.md) |  | ✓/− | ✓/− |
 | [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) |  | ✓/− | ✓/− |
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/− | ✓/− |  |
 | [Amazon S3](connector-amazon-s3-overview.md) |  | ✓/✓ | ✓/✓ |
@@ -145,6 +146,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [MariaDB](connector-mariadb-overview.md)| ✓/− | ✓/− |✓/−   |
 | MarkLogic | ✓/− |  |  |
 | [Microsoft 365](connector-microsoft-365-overview.md) |  | ✓/− |  |
+| [Microsoft Access](connector-microsoft-access-overview.md) |  | ✓/✓ | ✓/✓ |
 | Microsoft Azure Data Manager for Energy | ✓/− |  |  |
 | [Microsoft Exchange Online](connector-microsoft-exchange-online-overview.md) | ✓/− |  |  |
 | Strategy for Power BI | ✓/− |  |  |
