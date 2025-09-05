@@ -5,7 +5,7 @@ ms.reviewer: abnarain
 ms.author: noelleli
 author: n0elleli
 ms.topic: how-to
-ms.date: 03/20/2025
+ms.date: 09/03/2025
 ms.custom: pipelines
 ---
 
@@ -16,13 +16,9 @@ The Azure Databricks activity in Data Factory for Microsoft Fabric allows you to
 - Notebook
 - Jar
 - Python
-- Job (Preview)
+- Job
 
-This article provides a step-by-step walkthrough that describes how to create an Azure Databricks activity using the Data Factory interface.
-
-> [!IMPORTANT]
-> The Azure Databricks Jobs type is currently in preview. This information relates to a pre-release product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
+This article provides a step-by-step walkthrough that describes how to create an Azure Databricks activity using the Data Factory interface
 
 ## Prerequisites
 
@@ -57,21 +53,22 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 1. Select the **Cluster** tab. Then you can choose an existing or create a new **Azure Databricks connection**, and then pick a **new job cluster**, an **existing interactive cluster**, or an **existing instance pool**.
 1. Depending on what you pick for the cluster, fill out the corresponding fields as presented.
     - Under **new job cluster** and **existing instance pool**, you also have the ability to configure the number of **workers** and enable **spot instances**.
-3. You can also specify additional cluster settings, such as **Cluster policy**, **Spark configuration**, **Spark environment variables**, and **custom tags**, as required for the cluster you are connecting to. **Databricks init scripts** and **Cluster Log destination path** can also be added under the additional cluster settings.
+3. You can also specify other cluster settings, such as **Cluster policy**, **Spark configuration**, **Spark environment variables**, and **custom tags**, as required for the cluster you're connecting to. **Databricks init scripts** and **Cluster Log destination path** can also be added under the additional cluster settings.
 
     > [!NOTE]
-    > All advanced cluster properties and dynamic expressions supported in the Azure Data Factory Azure Databricks linked service are now also supported in the Azure Databricks activity in Microsoft Fabric under the ‘Additional cluster configuration’ section in the UI. As these properties are now included within the activity UI; they can be easily used with an expression (dynamic content) without the need for the Advanced JSON specification in the Azure Data Factory Azure Databricks linked service.
+    > All advanced cluster properties and dynamic expressions supported in the Azure Data Factory Azure Databricks linked service are now also supported in the Azure Databricks activity in Microsoft Fabric under the 'Additional cluster configuration' section in the UI. As these properties are now included within the activity UI, they can be used with an expression (dynamic content) without the need for the Advanced JSON specification.
 
     :::image type="content" source="media/azure-databricks-activity/databricks-activity-cluster.png" alt-text="Screenshot showing the Cluster settings tab of the Azure Databricks activity.":::
 
 1. The Azure Databricks Activity now also supports **Cluster Policy and Unity Catalog support**.
-    - Under advanced settings, you have the option to choose the **Cluster Policy** so you can specify which cluster configurations are permitted.
-    - Also, under advanced settings, you have the option to configure the **Unity Catalog Access Mode** for added security. The available [access mode types](/azure/databricks/compute/access-mode-limitations) are:
+    - Under advanced settings, you can choose the **Cluster Policy** so you can specify which cluster configurations are permitted.
+    - Also, under advanced settings, you can configure the **Unity Catalog Access Mode** for added security. The available [access mode types](/azure/databricks/compute/access-mode-limitations) are:
       - **Single User Access Mode** This mode is designed for scenarios where each cluster is used by a single user. It ensures that the data access within the cluster is restricted to that user only. This mode is useful for tasks that require isolation and individual data handling.
       - **Shared Access Mode** In this mode, multiple users can access the same cluster. It combines Unity Catalog's data governance with the legacy table access control lists (ACLs). This mode allows for collaborative data access while maintaining governance and security protocols. However, it has certain limitations, such as not supporting Databricks Runtime ML, Spark-submit jobs, and specific Spark APIs and UDFs.
-      - **No Access Mode** This mode disables interaction with the Unity Catalog, meaning clusters do not have access to data managed by Unity Catalog. This mode is useful for workloads that do not require Unity Catalog’s governance features.
+      - **No Access Mode** This mode disables interaction with the Unity Catalog, meaning clusters don't have access to data managed by Unity Catalog. This mode is useful for workloads that don't require Unity Catalog’s governance features.
 
     :::image type="content" source="media/azure-databricks-activity/databricks-activity-policy-uc-support.png" alt-text="Screenshot showing the policy ID and Unity Catalog support under Cluster settings tab of the Azure Databricks activity.":::
+
 
 ### Configuring settings
 
@@ -81,25 +78,25 @@ Selecting the **Settings** tab, you can choose between 4 options which **Azure D
 
 #### Orchestrating the Notebook type in Azure Databricks activity:
 
-1. Under the **Settings** tab, you can choose the **Notebook** radio button to run a Notebook. You will need to specify the notebook path to be executed on Azure Databricks, optional base parameters to be passed to the notebook, and any additional libraries to be installed on the cluster to execute the job.
+Under the **Settings** tab, you can choose the **Notebook** radio button to run a Notebook. You need to specify the notebook path to be executed on Azure Databricks, optional base parameters to be passed to the notebook, and any extra libraries to be installed on the cluster to execute the job.
 
-    :::image type="content" source="media/azure-databricks-activity/databricks-activity-notebook.png" alt-text="Screenshot showing the Notebooks type of the Azure Databricks activity.":::
+:::image type="content" source="media/azure-databricks-activity/databricks-activity-notebook.png" alt-text="Screenshot showing the Notebooks type of the Azure Databricks activity.":::
 
 #### Orchestrating the Jar type in Azure Databricks activity:
 
-1. Under the **Settings** tab, you can choose the **Jar** radio button to run a Jar. You will need to specify the class name to be executed on Azure Databricks, optional base parameters to be passed to the Jar, and any additional libraries to be installed on the cluster to execute the job.
+Under the **Settings** tab, you can choose the **Jar** radio button to run a Jar. You need to specify the class name to be executed on Azure Databricks, optional base parameters to be passed to the Jar, and any additional libraries to be installed on the cluster to execute the job.
 
-    :::image type="content" source="media/azure-databricks-activity/databricks-activity-jar.png" alt-text="Screenshot showing the Jar type of the Azure Databricks activity.":::
+:::image type="content" source="media/azure-databricks-activity/databricks-activity-jar.png" alt-text="Screenshot showing the Jar type of the Azure Databricks activity.":::
 
 #### Orchestrating the Python type in Azure Databricks activity:
 
-1. Under the **Settings** tab, you can choose the **Python** radio button to run a Python file. You will need to specify the path within Azure Databricks to a Python file to be executed, optional base parameters to be passed, and any additional libraries to be installed on the cluster to execute the job.
+Under the **Settings** tab, you can choose the **Python** radio button to run a Python file. You need to specify the path within Azure Databricks to a Python file to be executed, optional base parameters to be passed, and any additional libraries to be installed on the cluster to execute the job.
 
-    :::image type="content" source="media/azure-databricks-activity/databricks-activity-python.png" alt-text="Screenshot showing the Python type of the Azure Databricks activity.":::
+:::image type="content" source="media/azure-databricks-activity/databricks-activity-python.png" alt-text="Screenshot showing the Python type of the Azure Databricks activity.":::
 
-#### Orchestrating the Job type (Preview) in Azure Databricks activity:
+#### Orchestrating the Job type in Azure Databricks activity:
 
-1. Under the **Settings** tab, you can choose the **Job** radio button to run a Databricks Job. You will need to specify Job using the drop-down to be executed on Azure Databricks and any optional Job parameters to be passed. You can run Serverless jobs with this option. 
+Under the **Settings** tab, you can choose the **Job** radio button to run a Databricks Job. You need to specify Job using the drop-down to be executed on Azure Databricks and any optional Job parameters to be passed. You can run Serverless jobs with this option. 
 
    :::image type="content" source="media/azure-databricks-activity/databricks-activity-job.png" alt-text="Screenshot showing the Job type of the Azure Databricks activity.":::
 
@@ -113,13 +110,14 @@ For more information, see the [Databricks documentation](/azure/databricks/dev-t
 
 You can pass parameters to notebooks using *baseParameters* property in Databricks activity.
 
-In certain cases, you might require to pass back certain values from notebook back to the service, which can be used for control flow (conditional checks) in the service or be consumed by downstream activities (size limit is 2 MB).
+:::image type="content" source="media/azure-databricks-activity/databricks-activity-base-parameters.png" alt-text="Screenshot showing how to pass base parameters in the Azure Databricks activity.":::
 
-1. In your notebook, for example, you may call [dbutils.notebook.exit("returnValue")](/azure/databricks/notebooks/notebook-workflows#notebook-workflows-exit) and corresponding "returnValue" will be returned to the service.
+Sometimes, you may need to return values from a notebook to the service for control flow or use in downstream activities (with a size limit of 2 MB).
+
+1. In your notebook, for example, you may call [dbutils.notebook.exit("returnValue")](/azure/databricks/notebooks/notebook-workflows#notebook-workflows-exit) and the corresponding "returnValue" will be returned to the service.
 
 1. You can consume the output in the service by using expression such as `@{activity('databricks activity name').output.runOutput}`.
 
-:::image type="content" source="media/azure-databricks-activity/databricks-activity-base-parameters.png" alt-text="Screenshot showing how to pass base parameters in the Azure Databricks activity.":::
 
 ## Save and run or schedule the pipeline
 
