@@ -69,7 +69,7 @@ With OneLake to OneLake shortcuts, only passthrough mode is supported. This desi
 
 Delegated shortcuts access data by using some intermediate credential, such as another user or an account key. These shortcuts allow for permission management to be separated or ‘delegated’ to another team or downstream user to manage. Delegated shortcuts always break the flow of security from one system to another. All delegated shortcuts in OneLake can have OneLake security roles defined for them.
 
-All shortcuts from OneLake to external systems (multi-cloud shortcuts) like AWS S3 or Google Cloud Storage are delegated. This allows users to connect to the external system without being given direct access. OneLake security can then be configured on the shortcut to limit what data in the external system can be accessed
+All shortcuts from OneLake to external systems (multicloud shortcuts) like AWS S3 or Google Cloud Storage are delegated. This allows users to connect to the external system without being given direct access. OneLake security can then be configured on the shortcut to limit what data in the external system can be accessed
 
 :::image type="content" source=".\media\onelake-shortcut-security\delegated-mode.png" alt-text="Diagram showing the delegated identity used to access the data in the shortcut target." lightbox=".\media\onelake-shortcut-security\delegated-mode.png":::
 
