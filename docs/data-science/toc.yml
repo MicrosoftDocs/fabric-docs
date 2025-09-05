@@ -361,7 +361,7 @@ items:
       href: tutorial-relationships-detection.md
     - name: Validate data with Great Expectations (GX)
       href: tutorial-great-expectations.md
-    - name: Classification of Natural Language Text with Generative AI in Microsoft Fabric
+    - name: Classification of Natural Language Text with Generative AI
       href: tutorial-text-classification.md
   - name: Power BI connectivity
     href: semantic-link-power-bi.md
