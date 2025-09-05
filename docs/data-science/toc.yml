@@ -361,6 +361,8 @@ items:
       href: tutorial-relationships-detection.md
     - name: Validate data with Great Expectations (GX)
       href: tutorial-great-expectations.md
+    - name: Service principal support
+      href: semantic-link-service-principal-support.md
     - name: Classification of Natural Language Text with Generative AI
       href: tutorial-text-classification.md
   - name: Power BI connectivity
