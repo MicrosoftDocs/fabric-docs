@@ -29,7 +29,7 @@ The [Variable library](../cicd/variable-library/variable-library-overview.md) is
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/set-variable-library-name.png" lightbox="media/variable-library-integration-with-data-pipelines/set-variable-library-name.png" alt-text="Screenshot showing a new Variable library item with a name set and the Create button highlighted.":::
  
-1. Once the Variable library is created, you are taken to the homepage. Click **+ New** to add a new variable.
+1. Once the Variable library is created, you are taken to the homepage. Select **+ New** to add a new variable.
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-new-variables.png" lightbox="media/variable-library-integration-with-data-pipelines/add-new-variables.png" alt-text="Screenshot showing the start page for a new Variable library item.":::
 
@@ -37,7 +37,7 @@ The [Variable library](../cicd/variable-library/variable-library-overview.md) is
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/variable-configurations.png" lightbox="media/variable-library-integration-with-data-pipelines/variable-configurations.png" alt-text="Screenshot showing the configurations to set for a new variable.":::
 
-1. Add Alternative value sets as you need (for example, different values for different deployment pipeline environments). After you set a name and click **Create**, you can edit the variable values and choose value set to make active. 
+1. Add Alternative value sets as you need (for example, different values for different deployment pipeline environments). After you set a name and select **Create**, you can edit the variable values and choose value set to make active. 
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-value-sets.png" lightbox="media/variable-library-integration-with-data-pipelines/add-value-sets.png" alt-text="Screenshot highlighting where to add new value sets for a variable.":::
 
@@ -57,23 +57,19 @@ The [Variable library](../cicd/variable-library/variable-library-overview.md) is
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/new-variable-library-reference-in-pipeline.png" lightbox="media/variable-library-integration-with-data-pipelines/new-variable-library-reference-in-pipeline.png" alt-text="Screenshot highlighting the Library variables tab and the +New button in the bottom panel of the pipeline canvas.":::
 
-1. After you click **+ New**, a pop-up will open that shows you all your Variable libraries. You can use this picker to select your Variable library variable and click **Ok**.
-
-   :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-new-variable-library-reference.png" lightbox="media/variable-library-integration-with-data-pipelines/add-new-variable-library-reference.png" alt-text="Screenshot showing the +New button in the Library variable tab highlighted.":::
-
-   :::image type="content" source="media/variable-library-integration-with-data-pipelines/configure-new-variable-library-reference.png" lightbox="media/variable-library-integration-with-data-pipelines/configure-new-variable-library-reference.png" alt-text="Screenshot showing a Library variable selected in the variable picker.":::
+1. After you select **+ New**, a pop-up will open that shows you all your Variable libraries. You can use this picker to select your Variable library variable and select **Ok**.
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/pipeline-library-reference.png" lightbox="media/variable-library-integration-with-data-pipelines/pipeline-library-reference.png" alt-text="Screenshot showing the configuration set for a new Library variable reference.":::
 
-1. Once you have added your library variable references, add your pipeline activities. In the activity settings, click **Add dynamic content** for the setting you want to parameterize. 
+1. Once you have added your library variable references, add your pipeline activities. In the activity settings, select **Add dynamic content** for the setting you want to parameterize. 
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-dynamic-content.png" lightbox="media/variable-library-integration-with-data-pipelines/add-dynamic-content.png" alt-text="Screenshot showing Add dynamic content highlighted in the settings of a Lookup activity.":::
 
-1. The expression builder opens. If you don't see **Library variables**, click the 3 dots next to **Functions** and select **Library variables**. 
+1. The expression builder opens. If you don't see **Library variables**, select the 3 dots next to **Functions** and select **Library variables**. 
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/pipeline-expression-builder.png" lightbox="media/variable-library-integration-with-data-pipelines/pipeline-expression-builder.png" alt-text="Screenshot showing the 3 dots next to Functions in the expression builder and the Library variables tab highlighted.":::
 
-1. Click on your Library variable reference to add a new expression to the expression builder. Then, click **Ok** to add your expression. 
+1. Select your Library variable reference to add a new expression to the expression builder. Then, select **Ok** to add your expression. 
 
    :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-expression.png" lightbox="media/variable-library-integration-with-data-pipelines/add-expression.png" alt-text="Screenshot showing a Library variable reference highlighted to be added to the expression builder."
 
@@ -83,7 +79,7 @@ The [Variable library](../cicd/variable-library/variable-library-overview.md) is
 
       :::image type="content" source="media/variable-library-integration-with-data-pipelines/dynamic-content-populated.png" lightbox="media/variable-library-integration-with-data-pipelines/dynamic-content-populated.png" alt-text="Screenshot showing the expression set as dynamic content in the Lookup activity settings.":::
 
-1. You can preview your data by clicking **Preview data**. This will open a new pane that shows the value of your library variable. Click **Ok** to get a preview of your data.
+1. You can preview your data by selecting **Preview data**. This will open a new pane that shows the value of your library variable. Select **Ok** to get a preview of your data.
 
       :::image type="content" source="media/variable-library-integration-with-data-pipelines/preview-data.png" lightbox="media/variable-library-integration-with-data-pipelines/preview-data.png" alt-text="Screenshot showing the preview data option.":::
 
@@ -100,7 +96,7 @@ The [Variable library](../cicd/variable-library/variable-library-overview.md) is
 The following known limitations apply to the integration of Variable library in pipelines in Data Factory in Microsoft Fabric:
 
 - The Variable library supports Boolean, Datetime, Guid, Integer, Number, and String as data types. In your pipeline, you will see Boolean as Bool type, Datetime as String type, Guid as String type, Integer as Int type, and String as String type. Number types are not supported in pipelines. 
-- External connection parameterization is supported with variable library integrated with pipelines. However, you must look up the GUID for your connection from Settings | Manage connections and gateways. There you will find the GUID for your connection by clicking Settings next to your connection name.
+- External connection parameterization is supported with variable library integrated with pipelines. However, you must look up the GUID for your connection from Settings | Manage connections and gateways. There you will find the GUID for your connection by selecting Settings next to your connection name.
 
 ## Related content
 
