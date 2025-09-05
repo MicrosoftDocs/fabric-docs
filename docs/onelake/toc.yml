@@ -93,18 +93,10 @@ items:
     href: ./security/data-access-control-model.md
   - name: Get started with securing data in OneLake
     items:
-    - name: Get started with data access roles
-      href: ./security/get-started-data-access-roles.md
+    - name: Get started with OneLake security
+      href: ./security/get-started-onelake-security.md
     - name: Best practices
       href: ./security/best-practices-secure-data-in-onelake.md
-  - name: How to secure data in OneLake
-    items:
-    - name: For data science
-      href: ./security/how-to-secure-data-onelake-for-data-science.md
-    - name: For data warehousing
-      href: ./security/how-to-secure-data-onelake-for-data-warehousing.md
-    - name: For common data architectures
-      href: ./security/how-to-common-data-architectures.md
   - name: How to encrypt data in Onelake?
     href: /fabric/security/workspace-customer-managed-keys?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json    
   - name: Authorize with a OneLake shared access signature (SAS)
