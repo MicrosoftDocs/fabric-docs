@@ -53,7 +53,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 1. Select the **Cluster** tab. Then you can choose an existing or create a new **Azure Databricks connection**, and then pick a **new job cluster**, an **existing interactive cluster**, or an **existing instance pool**.
 1. Depending on what you pick for the cluster, fill out the corresponding fields as presented.
     - Under **new job cluster** and **existing instance pool**, you also have the ability to configure the number of **workers** and enable **spot instances**.
-3. You can also specify other cluster settings, such as **Cluster policy**, **Spark configuration**, **Spark environment variables**, and **custom tags**, as required for the cluster you're connecting to. **Databricks init scripts** and **Cluster Log destination path** can also be added under the additional cluster settings.
+1. You can also specify other cluster settings, such as **Cluster policy**, **Spark configuration**, **Spark environment variables**, and **custom tags**, as required for the cluster you're connecting to. **Databricks init scripts** and **Cluster Log destination path** can also be added under the additional cluster settings.
 
     > [!NOTE]
     > All advanced cluster properties and dynamic expressions supported in the Azure Data Factory Azure Databricks linked service are now also supported in the Azure Databricks activity in Microsoft Fabric under the 'Additional cluster configuration' section in the UI. As these properties are now included within the activity UI, they can be used with an expression (dynamic content) without the need for the Advanced JSON specification.
@@ -98,7 +98,7 @@ Under the **Settings** tab, you can choose the **Python** radio button to run a 
 
 Under the **Settings** tab, you can choose the **Job** radio button to run a Databricks Job. You need to specify Job using the drop-down to be executed on Azure Databricks and any optional Job parameters to be passed. You can run Serverless jobs with this option. 
 
-   :::image type="content" source="media/azure-databricks-activity/databricks-activity-job.png" alt-text="Screenshot showing the Job type of the Azure Databricks activity.":::
+:::image type="content" source="media/azure-databricks-activity/databricks-activity-job.png" alt-text="Screenshot showing the Job type of the Azure Databricks activity.":::
 
 ## Supported Libraries for the Azure Databricks activity
 
@@ -117,7 +117,6 @@ Sometimes, you may need to return values from a notebook to the service for cont
 1. In your notebook, for example, you may call [dbutils.notebook.exit("returnValue")](/azure/databricks/notebooks/notebook-workflows#notebook-workflows-exit) and the corresponding "returnValue" will be returned to the service.
 
 1. You can consume the output in the service by using expression such as `@{activity('databricks activity name').output.runOutput}`.
-
 
 ## Save and run or schedule the pipeline
 
