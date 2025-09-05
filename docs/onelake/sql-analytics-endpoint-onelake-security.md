@@ -145,69 +145,56 @@ The access mode determines how data access is authenticated and enforced when qu
 
 1. Navigate to your Fabric workspace and open your lakehouse. From top right hand corner, switch from lakehouse to **SQL analytics endpoint**.
 
-1. **Access SQL analytics endpoint settings** On the SQL analytics endpoint page, select the **Settings**.
-
-1. **Select Desired Access Mode**  In the access mode settings panel, choose one of the following options:
+1. From the top navigation, go to **Security** tab and select the one of the following OneLake access modes:  
 
    * **User identity** – Uses the signed-in user's identity. It enforces OneLake roles.
 
    * **Delegated identity** – Uses the item owner's identity; enforces only SQL permissions.
 
-1. **Save the Configuration** Click **Save** or **Apply** to confirm the change.
+1. A pop up lanuches to confirm your selection. Select **Yes** to confirm the change.
 
 ## Considerations when switching between modes
 
 **Switching to user identity mode**
 
-  * SQL RLS, CLS, and table-level permissions are ignored.
+* SQL RLS, CLS, and table-level permissions are ignored.
 
-  * OneLake roles must be configured for users to maintain access.
+* OneLake roles must be configured for users to maintain access.
 
-  * Only users with Viewer permissions or shared read-only access will
-    be governed by OneLake security.
+* Only users with Viewer permissions or shared read-only access will be governed by OneLake security.
 
-  * Existing SQL Roles will be deleted and cannot be recovered.
+* Existing SQL Roles will be deleted and cannot be recovered.
 
 **Switching to delegated identity mode**
 
-  * OneLake roles and security policies are no longer applied.
+* OneLake roles and security policies are no longer applied.
 
-  * SQL roles and security policies become active.
+* SQL roles and security policies become active.
 
-  * The item owner must have valid OneLake access, or all queries may
-    fail.
+* The item owner must have valid OneLake access, or all queries may fail.
 
 ## Limitations
 
-* **Applies only to readers**  
-  OneLake Security governs users accessing data as *Viewers*. Users in other workspace roles (Admin Member, or Contributor) bypass OneLake Security and retain full access.
+* **Applies only to readers**: OneLake Security governs users accessing data as *Viewers*. Users in other workspace roles (Admin Member, or Contributor) bypass OneLake Security and retain full access.
 
-* **SQL objects do not inherit ownership**  
-  Shortcuts are surfaced in SQL analytics endpoint as tables. When accessing these tables, directly or through views, stored procedures, and other derived SQL objects do not carry object-level ownership; all
+* **SQL objects do not inherit ownership**: Shortcuts are surfaced in SQL analytics endpoint as tables. When accessing these tables, directly or through views, stored procedures, and other derived SQL objects do not carry object-level ownership; all
   permissions are checked at runtime to prevent the security bypass.
 
-* **Shortcut changes trigger validation downtime**  
-  When a shortcut target changes (e.g., rename, URL update), the database enters *single-user mode* briefly while the system validates the new target. During this period queries are blocked, these operations a fairly quick, but sometimes depending on different internal process can take up to 5 minutes to synchronize.
+* **Shortcut changes trigger validation downtime**: When a shortcut target changes (e.g., rename, URL update), the database enters *single-user mode* briefly while the system validates the new target. During this period queries are blocked, these operations a fairly quick, but sometimes depending on different internal process can take up to 5 minutes to synchronize.
 
   * Creating schema shortcuts might cause a known error that affects validation and delays metadata sync.
 
-* **Delayed permission propagation**  
-  Permission changes are not instantaneous. Switching between security modes (User Identity vs. Delegated) may require time to propagate before taking effect, but should take less than 1 minute.
+* **Delayed permission propagation**: Permission changes are not instantaneous. Switching between security modes (User Identity vs. Delegated) may require time to propagate before taking effect, but should take less than 1 minute.
 
-* **Control-plane dependency**  
-  Permissions cannot be applied to users or groups that do not already exist in the workspace control plane. You either need to share the source item, or the user must be member of Viewer workspace role.
+* **Control-plane dependency**: Permissions cannot be applied to users or groups that do not already exist in the workspace control plane. You either need to share the source item, or the user must be member of Viewer workspace role.
 
-* **Most-permissive access prevails**  
-  When users belong to multiple groups or roles, the most permissive effective permission is honored *Example*: If a user has both DENY through one role and GRANT through another, the GRANT will take precedence.
+* **Most-permissive access prevails**: When users belong to multiple groups or roles, the most permissive effective permission is honored *Example*: If a user has both DENY through one role and GRANT through another, the GRANT will take precedence.
 
-* **Delegated mode limitations**  
-  In Delegated mode, metadata sync on shortcut tables can fail if the source item has OneLake Security policies that do not grant full table access to the item owner.
+* **Delegated mode limitations**: In Delegated mode, metadata sync on shortcut tables can fail if the source item has OneLake Security policies that do not grant full table access to the item owner.
 
-* **DENY behavior**  
-  When multiple roles apply to a single shortcut table, the intersection of permissions follows SQL Server semantics: DENY overrides GRANT. This can produce unexpected access results.
+* **DENY behavior**: When multiple roles apply to a single shortcut table, the intersection of permissions follows SQL Server semantics: DENY overrides GRANT. This can produce unexpected access results.
 
-* **Expected error conditions**  
-  Users may encounter errors in scenarios such as:
+* **Expected error conditions**: Users may encounter errors in scenarios such as:
 
   * Shortcut target renamed or invalid
 
@@ -231,10 +218,8 @@ The access mode determines how data access is authenticated and enforced when qu
 
     * If there are changes to the table, like renaming a column, security isn't replicated on the new object, and you receive UI errors showing that the column doesn't exist.
 
-* **Table renames do not preserve security policies**  
-  
-If OneLake Security (OLS) roles are defined on Schema level, those roles remain in effect only as long as the table name is unchanged. Renaming the table breaks the association, and security policies will not be migrated automatically. This can result in unintended data exposure until policies are reapplied.
+* **Table renames do not preserve security policies**: If OneLake Security (OLS) roles are defined on Schema level, those roles remain in effect only as long as the table name is unchanged. Renaming the table breaks the association, and security policies will not be migrated automatically. This can result in unintended data exposure until policies are reapplied.
 
 ## Related content
 
-*
+* OneLake se

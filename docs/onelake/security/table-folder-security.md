@@ -1,5 +1,5 @@
 ---
-title: Table and folder security
+title: Table and folder security in OneLake
 description: Learn how to use OneLake security (preview) to enforce access permissions at the table and folder level in OneLake.
 ms.reviewer: aamerril
 ms.author: kgremban
@@ -12,26 +12,22 @@ ms.date: 03/24/2025
 
 # Table and folder security in OneLake (preview)
 
-Table-level and folder-level security, or object level security (OLS), is a feature of OneLake security (preview) that allows for granting access to specific tables or folders in a data item. Using OLS lets you create permissions for both structured and unstructured data at the folder level.
-
-[!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
+Table-level and folder-level security, or object level security (OLS), is a feature of OneLake security (preview) that lets you grant access to specific tables or folders in a data item. Using OLS you create permissions for both structured and unstructured data at the folder level.
 
 ## Prerequisites
 
-* A Lakehouse in OneLake with OneLake data access roles turned on. For more information, see [Get started with OneLake data access roles](get-started-data-access-roles.md).
-* A Lakehouse with [schemas enabled](../../data-engineering/lakehouse-schemas.md).
-* Switch the SQL Analytics Endpoint on the lakehouse to "User's identity" mode through the **Security** tab.
+* An item in Fabric with OneLake security turned on. For more information, see [Get started with OneLake security](get-started-onelake-security.md).
+* Switch the SQL analytics endpoint on the lakehouse to **User's identity** mode through the **Security** tab.
 * For creating semantic models, use the steps to create a [DirectLake model](../../fundamentals/direct-lake-power-bi-desktop.md).
 * For a full list of limitations, see the [known limitations section.](./data-access-control-model.md#onelake-security-limitations)
 
-
 ## Define security rules
 
-Users can define object-level security on any folder within a data item. Because delta-parquet tables in OneLake are represented as folders, security can also be configured on tables. Likewise, schemas are also folders and can be secured similarly.
+You can define object-level security on any folder within a data item. Because delta-parquet tables in OneLake are represented as folders, security can also be configured on tables. Likewise, schemas are also folders and can be secured similarly.
 
 Use the following steps to define security roles for tables or folders.
 
-1. Navigate to your Lakehouse and select **Manage OneLake data access (preview)**.
+1. Navigate to your Lakehouse and select **Manage OneLake security (preview)**.
 
 1. Select an existing role that you want to define table or folder security for, or select **New** to create a new role.
 
