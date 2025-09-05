@@ -137,6 +137,12 @@
         href: connector-access-database-overview.md
       - name: Set up your connection
         href: connector-access-database.md
+    - name: Amazon RDS For Oracle
+      items:
+      - name: Amazon RDS For Oracle - Overview
+        href: connector-amazon-rds-for-oracle-overview.md
+      - name: Configure in data pipeline Copy activity
+        href: connector-amazon-rds-for-oracle-copy-activity.md
     - name: Amazon RDS for SQL Server
       items:
       - name: Amazon RDS for SQL Server - Overview
