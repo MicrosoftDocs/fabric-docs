@@ -34,7 +34,7 @@ To use an Azure Databricks activity in a pipeline, complete the following steps:
 ### Configuring connection
 
 1. Create a new pipeline in your workspace.
-1. Click on add a pipeline activity and search for Azure Databricks.
+1. Select **Add pipeline activity** and search for Azure Databricks.
 
     :::image type="content" source="media/azure-databricks-activity/pick-databricks-activity.png" alt-text="Screenshot of the Fabric pipelines landing page and Azure Databricks activity highlighted.":::
 
