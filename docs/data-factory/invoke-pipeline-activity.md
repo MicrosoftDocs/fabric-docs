@@ -43,12 +43,12 @@ To use an **Invoke pipeline activity** in a pipeline, complete the following ste
 
 Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
-### Invoke Pipeline (Legacy) settings
+### Invoke pipeline (legacy) settings
 Select the **Settings** tab, and choose an existing pipeline from the **Invoked pipeline** dropdown, or use the **+ New** button to create a new pipeline directly. You can choose to wait on completion, or continue directly, in which case the invoked pipeline executes in parallel with activities following it within the parent pipeline's execution flow.
 
 :::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-legacy-settings.png" alt-text="Screenshot showing the Invoke pipeline (Legacy) activity settings tab, highlighting the tab.":::
 
-### Invoke Pipeline settings
+### Invoke pipeline settings
 
 Select the **Settings** tab and configure your activity. 
 
@@ -58,7 +58,7 @@ Select the **Settings** tab and configure your activity.
 
 * Connection: Each **Invoke pipeline activity** requires a Connection object that is stored in the secure Fabric credentials store. This connection object stores your user token associated with your Fabric workspace. If you haven't yet created a new **Invoke pipeline activity**, you are required to create a new connection object first before you can use the activity.
 
-   When setting up your pipeline connection, you will now have 3 options for **Authentication kind**: Organizational account, Service principal, or Workspace identity.
+   When setting up your pipeline connection, you will now have 3 options for **Authentication kind**: Organizational account, service principal, or workspace identity.
 
   :::image type="content" source="media/invoke-pipeline-activity/connection-authentication-supported-types.png" alt-text="Screenshot showing the pipeline connection set up with Authentication kind highlighted.":::
   
