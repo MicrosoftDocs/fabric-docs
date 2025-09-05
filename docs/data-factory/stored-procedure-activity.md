@@ -13,6 +13,15 @@ ms.date: 12/18/2024
 
 In this article, you learn how to add a new Stored procedure activity to a pipeline, add a new connection, and configure the activity to run.
 
+You can use the Stored Procedure Activity to invoke a stored procedure in one of the following data stores:
+- [Fabric SQL database](/fabric/data-factory/connector-sql-database-overview)
+- [Fabric Data Warehouse](/fabric/data-factory/connector-data-warehouse-overview)
+- [Azure SQL Database](/fabric/data-factory/connector-azure-sql-database-overview)
+- [Azure SQL Managed Instance](/fabric/data-factory/connector-azure-sql-managed-instance-overview)
+- [Azure Synapse Analytics](/fabric/data-factory/connector-azure-synapse-analytics-overview)
+- [Amazon RDS](/fabric/data-factory/connector-amazon-rds-for-sql-server-overview)
+- [SQL Server Database](/fabric/data-factory/connector-sql-server-database-overview)
+
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:  

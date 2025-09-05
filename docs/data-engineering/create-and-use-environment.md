@@ -58,6 +58,10 @@ On the **Home** tab, you can easily find **Save** and **Publish**. They're activ
 
 :::image type="content" source="media\environment-introduction\env-save-and-publish.png" alt-text="Screenshot that shows where to select Save and Publish.":::
 
+> [!IMPORTANT]
+>
+> - If Private Link is enabled, the first Spark job in the workspace need to trigger VNet provisioning, which can take approximately 10–15 minutes. Since environment publishing also runs as a Spark job, it may experience an additional delay if it happens to be the first Spark job executed after Private Link is enabled.
+
 When pending changes are in the **Libraries** and **Spark compute** sections, you also see a banner that prompts you with **Save** and **Publish**. The functionalities are the same as for the buttons:
 
 - The unsaved changes are lost if you refresh or leave the browser open. Select **Save** to make sure that your changes are recorded before you leave. Saving doesn't apply the configuration but caches the changes in the system.

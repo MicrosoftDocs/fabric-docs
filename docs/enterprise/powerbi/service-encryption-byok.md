@@ -1,4 +1,4 @@
-﻿---
+---
 title: Bring your own encryption keys for Power BI
 description: Learn how to use your own encryption keys (BYOK) in Power BI Premium to gain more control and help meet compliance requirements.
 author: JulCsc
@@ -7,14 +7,14 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: how-to
-ms.date: 03/03/2025
+ms.date: 09/04/2025
 
 LocalizationGroup: Premium
 ---
 
 # Bring your own encryption keys for Power BI
 
-By default, Power BI uses Microsoft-managed keys to encrypt your data. In Power BI Premium, you can also use your own keys for data at-rest that's imported into a semantic model. This approach is often described as *bring your own key* (BYOK). For more information, see [Data source and storage considerations](#data-source-and-storage-considerations). 
+By default, Power BI uses Microsoft-managed keys to encrypt your data. In Power BI Premium, you can also use your own keys for data at-rest that's imported into a semantic model. This approach is often described as *bring your own key* (BYOK). For more information, see [Data source and storage considerations](#data-source-and-storage-considerations). Power BI BYOK supports double encryption, ensuring layered security and compliance with enterprise encryption standards. This includes storage-level encryption using Server-Side Encryption (SSE) and client-side encryption with a Microsoft-managed Data Encryption Key (DEK). This DEK is wrapped using a CMK before data is stored at rest.
 
 ## Why use BYOK?
 
@@ -26,8 +26,10 @@ To use BYOK, you must upload data to the Power BI service from a Power BI Deskto
 
 - Analysis Services Live Connection
 - Excel workbooks, unless data is first imported into Power BI Desktop.
+  
     >[!NOTE]
     >For Excel workbooks stored in SharePoint and OneDrive, you can use [Customer Key](/purview/customer-key-set-up#onboard-to-customer-key-for-sharepoint-and-onedrive).
+
 - [Push semantic models](/rest/api/power-bi/pushdatasets)
 - [Streaming semantic models](/power-bi/connect-data/service-real-time-streaming#set-up-your-real-time-streaming-semantic-model-in-power-bi)
 - [Power BI metrics](/power-bi/create-reports/service-goals-introduction) don't currently support BYOK
@@ -48,34 +50,34 @@ The following instructions assume basic knowledge of Azure Key Vault. For more i
 Configure your key vault in the following way:
 
 1. [Add the Power BI service as a service principal](#add-the-service-principal) for the key vault, with wrap and unwrap permissions.
-
-2. [Create an RSA key](#create-an-rsa-key) with a 4096-bit length, or use an existing key of this type, with wrap and unwrap permissions.
+1. [Create an RSA key](#create-an-rsa-key) with a 4096-bit length, or use an existing key of this type, with wrap and unwrap permissions.
 
     > [!IMPORTANT]
     > Power BI BYOK supports RSA and RSA-HSM keys with a 4096-bit length.
 
-3. Recommended: Check that the key vault has the [*soft delete* option enabled](#soft-delete-option).
+1. Recommended: Check that the key vault has the [*soft delete* option enabled](#soft-delete-option).
 
 ### Add the service principal
 
 1. Log into the [Azure portal](https://portal.azure.com) and search for **Key Vaults**.
-
-2. In your key vault, select **Access policies**, and then choose **Create**.
+1. In your key vault, select **Access policies**, and then choose **Create**.
 
     :::image type="content" source="media/service-encryption-byok/add-access-policy.png" alt-text="Screenshot of the Create button for access policies in the Azure portal.":::
 
-3. On the **Permissions** screen, under **Key permissions**, select **Unwrap Key** and **Wrap Key**, then choose **Next**.
+1. On the **Permissions** screen, under **Key permissions**, select **Unwrap Key** and **Wrap Key**, then choose **Next**.
 
     :::image type="content" source="media/service-encryption-byok/key-permissions.png" alt-text="Screenshot of the permission screen to create a new access policy.":::
 
-4. On the **Principal** screen, search for and select *Microsoft.Azure.AnalysisServices*.
+1. On the **Principal** screen, search for and select *Microsoft.Azure.AnalysisServices*.
 
     > [!NOTE]
     > If you can't find *Microsoft.Azure.AnalysisServices*, it's likely that the Azure subscription associated with your Azure Key Vault never had a Power BI resource associated with it. Try searching for the following string instead: 00000009-0000-0000-c000-000000000000.
 
     :::image type="content" source="media/service-encryption-byok/select-principal.png" alt-text="Screenshot of the Principal screen to select a new principal for the access policy.":::
 
-5. Select **Next**, then **Review + create** > **Create**.
+1. Select **Next**, then **Review + create** > **Create**.
+
+[Azure role-based access control](/azure/role-based-access-control/built-in-roles#security) can also be used to grant permissions by selecting a role that includes **Unwrap Key** and **Wrap Key** permissions.
 
 > [!NOTE]
 > To revoke Power BI access to your data, remove access rights to this service principal from your Azure Key Vault.
@@ -83,18 +85,14 @@ Configure your key vault in the following way:
 ### Create an RSA key
 
 1. In your key vault, under **Keys**, select **Generate/Import**.
-
-2. Select a **Key type** of *RSA* and an **RSA key size** of *4096*.
+1. Select a **Key type** of *RSA* and an **RSA key size** of *4096*.
 
     :::image type="content" source="media/service-encryption-byok/create-rsa-key.png" alt-text="Screenshot of the RSA key type and size selections.":::
 
-3. Select **Create**.
-
-4. Under **Keys**, select the key you created.
-
-5. Select the GUID for the **Current Version** of the key.
-
-6. Check that **Wrap Key** and **Unwrap Key** are both selected. Copy the **Key Identifier** to use when you enable BYOK in Power BI.
+1. Select **Create**.
+1. Under **Keys**, select the key you created.
+1. Select the GUID for the **Current Version** of the key.
+1. Check that **Wrap Key** and **Unwrap Key** are both selected. Copy the **Key Identifier** to use when you enable BYOK in Power BI.
 
     :::image type="content" source="media/service-encryption-byok/key-properties.png" alt-text="Screenshot of the key properties with the identifier and permitted operations.":::
 
@@ -116,18 +114,16 @@ Power BI is a trusted Microsoft service. You can instruct the key vault firewall
 To configure Azure Key Vault to allow access to trusted Microsoft services, follow these steps:
 
 1. Search for **Key Vaults** in the Azure portal, then select the key vault you want to allow access from Power BI and all other trusted Microsoft services.
-
-2. Select **Networking** from the left-side navigation panel.
-
-3. Under **Firewalls and virtual networks**, select **Allow public access from specific virtual networks and IP addresses**.
+1. Select **Networking** from the left-side navigation panel.
+1. Under **Public Access - Allow access from:**, choose **Selected networks**.
 
     :::image type="content" source="media/service-encryption-byok/key-vault-firewall.png" alt-text="Screenshot of the Azure Key Vault networking option, with the firewalls and virtual networks option selected.":::
 
-4. Scroll down to the **Firewall** section. Select **Allow trusted Microsoft services to bypass this firewall**.
+1. Scroll down to the **Exception** section and select **Allow trusted Microsoft services to bypass this firewall**.
 
     :::image type="content" source="media/service-encryption-byok/trusted-service.png" alt-text="Screenshot of the option to allow trusted Microsoft services to bypass this firewall.":::
 
-5. Select **Apply**.
+1. Select **Apply**.
 
 ## Enable BYOK on your tenant
 
@@ -138,9 +134,7 @@ You enable BYOK at the tenant level by using PowerShell. First, install the [Pow
 Before you enable BYOK, keep the following considerations in mind:
 
 - At this time, you can't disable BYOK after you enable it. Depending on how you specify parameters for `Add-PowerBIEncryptionKey`, you can control how you use BYOK for one or more of your capacities. However, you can't undo the introduction of keys to your tenant. For more information, see [Enable BYOK](#enable-byok).
-
 - You can't *directly* move a workspace that uses BYOK from a capacity in Power BI Premium to a shared capacity. You must first move the workspace to a capacity that doesn't have BYOK enabled.
-
 - If you move a workspace that uses BYOK from a capacity in Power BI Premium to a shared capacity, reports and semantic models become inaccessible since they're encrypted with the Key. To avoid this situation, you must first move the workspace to a capacity that doesnâ€™t have BYOK enabled.
 
 ### Enable BYOK
@@ -156,7 +150,6 @@ To add multiple keys, run `Add-PowerBIEncryptionKey` with different values for `
 The cmdlet accepts two switch parameters that affect encryption for current and future capacities. By default, neither of the switches are set:
 
 - `-Activate`: Indicates that this key is used for all existing capacities in the tenant that aren't already encrypted.
-
 - `-Default`: Indicates that this key is now the default for the entire tenant. When you create a new capacity, the capacity inherits this key.
 
 > [!IMPORTANT]
@@ -225,14 +218,8 @@ Power BI provides additional cmdlets to help manage BYOK in your tenant:
 ## Related content
 
 - [Overview of Power BI PowerShell cmdlet module.](/powershell/power-bi/overview)
-
 - [Ways to share your work in Power BI.](/power-bi/collaborate-share/service-how-to-collaborate-distribute-dashboards-reports)
-
 - [Filter a report using query string parameters in the URL.](/power-bi/collaborate-share/service-url-filters)
-
 - [Embed with report web part in SharePoint Online.](/power-bi/collaborate-share/service-embed-report-spo)
-
 - [Publish to web from Power BI.](/power-bi/collaborate-share/service-publish-to-web)
-
 - [What is Power BI Premium?](service-premium-what-is.md)
-

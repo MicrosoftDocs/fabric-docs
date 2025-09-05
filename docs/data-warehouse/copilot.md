@@ -4,13 +4,14 @@ description: Learn more about Copilot in Fabric in the Data Warehouse workload.
 author: markingmyname
 ms.author: maghan
 ms.reviewer: salilkanade, wiassaf
-ms.date: 04/09/2025
-ms.update-cycle: 180-days
+ms.date: 09/02/2025
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ms.custom:
   - copilot-learning-hub
+ms.devlang: copilot-prompt
 ---
 
 # What is Copilot in Fabric in the Data Warehouse workload (Preview)?
@@ -52,7 +53,7 @@ Here are some tips for maximizing productivity with Copilot.
 - When crafting prompts, be sure to start with a clear and concise description of the specific information you're looking for.
 - Natural language to SQL depends on expressive table and column names. If your table and columns aren't expressive and descriptive, Copilot might not be able to construct a meaningful query.
 - Use natural language that is applicable to your table and view names, column names, primary keys, and foreign keys of your warehouse. This context helps Copilot generate accurate queries. Specify what columns you wish to see, aggregations, and any filtering criteria as explicitly as possible. Copilot should be able to correct typos or understand context given your schema context.
-- Create relationships in the model view of the warehouse to increase the accuracy of JOIN statements in your generated SQL queries.
+- Create relationships in the model view of the warehouse to increase the accuracy of `JOIN` statements in your generated SQL queries.
 - When using code completions, leave a comment at the top of the query with `--` to help guide the Copilot with context about the query you're trying to write.
 - Avoid ambiguous or overly complex language in your prompts. Simplify the question while maintaining its clarity. This editing ensures Copilot can effectively translate it into a meaningful T-SQL query that retrieves the desired data from the associated tables and views.
 - Currently, natural language to SQL supports English language to T-SQL.
@@ -69,7 +70,7 @@ Here are some tips for maximizing productivity with Copilot.
     - Show the rank of each agent by property sales and show name, total sales, and rank
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
 ## Responsible AI use of Copilot

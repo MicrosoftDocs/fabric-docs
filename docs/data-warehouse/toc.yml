@@ -56,6 +56,8 @@ items:
   items: 
   - name: Connectivity
     href: connectivity.md
+  - name: How to Connect
+    href: how-to-connect.md
 - name: Copilot in Fabric in Data Warehouse
   items:
   - name: What is Copilot in Fabric in Data Warehouse?

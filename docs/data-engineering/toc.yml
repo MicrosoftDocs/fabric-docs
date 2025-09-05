@@ -197,12 +197,16 @@ items:
            href: monitor-spark-job-definitions.md
          - name: Leverage the Apache Spark Advisor
            href: spark-advisor-introduction.md
+         - name: Job insights diagnostic library (Preview)
+           href: job-insight-library.md    
       - name: Spark Application Run Series Analysis
         items: 
          - name: Run series analysis Overview
            href: run-series-analyisis-overview.md
          - name: Monitor run series
            href: apache-spark-monitor-run-series.md
+         - name: Apache Spark applications comparison
+           href: spark-comparison-runs.md
       - name: Single Spark Application Monitoring
         items: 
          - name: Monitor a Single Spark Application
