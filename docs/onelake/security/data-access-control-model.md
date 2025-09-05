@@ -8,7 +8,7 @@ ms.topic: concept-article
 ms.custom:
 - onelake-data-access-public-preview-april-2024
 - sfi-image-nochange
-ms.date: 03/25/2025
+ms.date: 09/05/2025
 #customer intent: As a OneLake user, I want to understand how OneLake secures data with role-based access control and the interaction with Fabric permissions so that I can protect data stored and accessed in OneLake.
 ---
 
@@ -75,7 +75,7 @@ Within a workspace, Fabric items can have permissions configured separately from
 | Write | Yes | Yes | Yes |
 | Execute, Reshare, ViewOutput, ViewLogs | N/A - can't be granted on its own |  N/A - can't be granted on its own |  N/A - can't be granted on its own |
 
-*Depends on the SQL analytics endpoint mode.
+*Depends on the [SQL analytics endpoint mode](../sql-analytics-endpoint-onelake-security.md).
 
 ## Create roles
 

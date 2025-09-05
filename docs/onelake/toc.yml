@@ -81,6 +81,14 @@ items:
   items:
   - name: OneLake security overview
     href: ./security/get-started-security.md
+  - name: Get started with securing data in OneLake
+    items:
+    - name: Get started with OneLake security
+      href: ./security/get-started-onelake-security.md
+    - name: Best practices
+      href: ./security/best-practices-secure-data-in-onelake.md
+  - name: OneLake data access control model
+    href: ./security/data-access-control-model.md
   - name: OneLake security features
     items:
     - name: Table and folder security
@@ -89,14 +97,6 @@ items:
       href: ./security/column-level-security.md
     - name: Row-level security
       href: ./security/row-level-security.md
-  - name: OneLake data access control model
-    href: ./security/data-access-control-model.md
-  - name: Get started with securing data in OneLake
-    items:
-    - name: Get started with OneLake security
-      href: ./security/get-started-onelake-security.md
-    - name: Best practices
-      href: ./security/best-practices-secure-data-in-onelake.md
   - name: How to encrypt data in Onelake?
     href: /fabric/security/workspace-customer-managed-keys?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json    
   - name: Authorize with a OneLake shared access signature (SAS)
@@ -143,3 +143,7 @@ items:
     href: /rest/api/fabric/core/onelake-shortcuts
   - name: OneLake data access roles REST API
     href: /rest/api/fabric/core/onelake-data-access-security
+- name: SQL analytics endpoint
+  items:
+    - name: SQL analytics endpoint onelake security
+      href: sql-analytics-endpoint-onelake-security.md
