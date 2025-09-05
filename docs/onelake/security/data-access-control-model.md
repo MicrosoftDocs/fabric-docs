@@ -28,11 +28,9 @@ By assigning a member to a role, that user is then subject to the associated per
 
 ## Permissions and supported items
 
-OneLake security roles support the following permissions:
+OneLake security roles support the following permission:
 
 - **Read:** Grants the user the ability to read data from a table and view the associated table and column metadata. In SQL terms, this permission is equivalent to both VIEW_DEFINITION and SELECT. For more information, see the [Metadata security](#metadata-security).
-
-- **ReadWrite** [(coming soon)](https://aka.ms/fabricroadmap): Gives the user the same read privileges as Read, and the ability to write data to tables and folders in OneLake. This permission allows any user to create, update, delete, or rename files or folders in OneLake.
 
 OneLake security enables users to define data access roles for the following Fabric items only.
 
@@ -77,7 +75,7 @@ Within a workspace, Fabric items can have permissions configured separately from
 | Write | Yes | Yes | Yes |
 | Execute, Reshare, ViewOutput, ViewLogs | N/A - can't be granted on its own |  N/A - can't be granted on its own |  N/A - can't be granted on its own |
 
-*Depends on the [SQL analytics endpoint mode.](TODO LINK)
+*Depends on the SQL analytics endpoint mode.
 
 ## Create roles
 
