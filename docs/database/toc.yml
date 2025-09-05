@@ -97,8 +97,10 @@ items:
       href: sql/deployment-pipelines.md
     - name: SqlPackage
       href: sql/sqlpackage.md
-    - name: Connect App Service to SQL database in Fabric
+    - name: Connect App Service
       href: sql/tutorial-service-connector.md
+    - name: Connect .NET Aspire application 
+      href: sql/connect-your-dotnet-aspire-application-to-fabric-sql-database.md
   - name: Load data into a SQL database
     items:
     - name: Load data with data pipelines

@@ -39,7 +39,6 @@ The following diagram shows the workspace layout for this tutorial.
 ## Prerequisites
 
 * A Fabric tenant account with an active subscription. [Create an account for free](../../get-started/fabric-trial.md).
-* A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
 * The following [tenant switches](../../admin/about-tenant-settings.md) enabled from the admin portal:
   * [Users can create Fabric items](../../admin/fabric-switch.md)
   * **Users can create variable libraries**
