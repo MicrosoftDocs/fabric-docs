@@ -4,7 +4,7 @@ description: Learn about monitoring mirrored database replication in Microsoft F
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
-ms.date: 07/22/2025
+ms.date: 09/05/2025
 ms.topic: conceptual
 ms.custom: sfi-image-nochange
 ---
@@ -14,19 +14,22 @@ This article outlines various methods for monitoring your mirrored database afte
 
 ## Monitor from the Fabric portal
 
-Once the mirrored database is configured, you can monitor the current state of replication. The **Monitor replication** section shows you the database level status, and a list of tables under replication along with the corresponding status, total rows replicated, and the last completed time to refresh mirrored table from source.
+Once the mirrored database is configured, you can monitor the current state of replication. The **Monitor replication** section shows you the database level status, and a list of tables under replication along with the corresponding status, total rows replicated, and the last completed time.
 
 :::image type="content" source="media/monitor/monitor-mirrored-database.png" alt-text="Screenshot from the Fabric portal of the Monitor mirror database pane. The status of the source replication and all tables show Running." lightbox="media/monitor/monitor-mirrored-database.png":::
 
 > [!TIP]
 > If you observe a delay in the appearance of mirrored data, follow the [troubleshooting guide](troubleshooting.md#data-doesnt-appear-to-be-replicating) to debug the potential issue.
 
-The following are the possible statuses for the replication:
+The following are the details about the monitoring view:
 
-| **Monitor** | **Status** |
+| **Monitor** | **Description** |
 |:--|:--|
-| Database level | **Running**: Replication is currently running bringing snapshot and change data into OneLake.<br/>**Running with warning**: Replication is running, with transient errors.<br/>**Stopping/Stopped**: Replication has stopped.<br/>**Failed**: Fatal error in replication that can't be recovered.<br/>**Paused**: Replication is paused. It happens when you pause and resume the Fabric capacity. Learn more from [Changes to Fabric capacity](troubleshooting.md#changes-to-fabric-capacity). |
-| Table level | **Running**: Data is replicating.<br/>**Running with warning**: Warning of nonfatal error with replication of the data from the table.<br/>**Stopping/Stopped**: Replication has stopped.<br/>**Failed**: Fatal error in replication for that table. |
+| Database level status | The possible statuses include:<br>- **Running**: Replication is currently running bringing snapshot and change data into OneLake.<br/>- **Running with warning**: Replication is running, with transient errors.<br/>- **Stopping/Stopped**: Replication has stopped.<br/>- **Failed**: Fatal error in replication that can't be recovered.<br/>- **Paused**: Replication is paused. It happens when you pause and resume the Fabric capacity. Learn more from [Changes to Fabric capacity](troubleshooting.md#changes-to-fabric-capacity). |
+| Name | The name of the source table in `[schema_name].[table_name]` or `[table_Name]` format. |
+| Table level status | The possible statuses include:<br>- **Running**: Data is replicating.<br/>- **Running with warning**: Warning of nonfatal error with replication of the data from the table.<br/>- **Stopping/Stopped**: Replication has stopped.<br/>- **Failed**: Fatal error in replication for that table. |
+| Rows replicated | The cumulative count of replicated rows, including all inserts, updates, and deletes applied to the target table. |
+| Last completed | The last completed time to refresh mirrored table from source. |
 
 ## Monitor programmatically
 
