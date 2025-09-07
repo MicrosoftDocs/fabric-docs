@@ -8,6 +8,7 @@ ms.author: eur
 ms.reviewer: eur
 ms.service: fabric
 #ms.subservice: graph
+ms.custom: references_regions
 ---
 
 # Graph in Microsoft Fabric overview (preview)
@@ -80,6 +81,14 @@ Usage is measured in minutes of CPU uptime. You can monitor your graph workload'
 | Graph standard storage | OneLakeStorage | Per GB per month | - |
 
 For more information on pricing and capacity units, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+
+## Region availability
+
+Graph in Microsoft Fabric is available in the following Azure regions:
+
+- East US 2
+- North Central US
+- West Europe
 
 ## Related content
 
