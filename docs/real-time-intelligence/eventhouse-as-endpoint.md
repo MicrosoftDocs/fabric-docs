@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 09/01/2025
 ---
 
-# Eventhouse endpoint for lakehouse
+# Enable eventhouse endpoint for lakehouse
 
 Use the Eventhouse endpoint to query lakehouse data and to discover real-time insights across your data estate and to streamline access and analysis for structured, semi-structured, and unstructured data. Once enabled, the item tracks the source lakehouse data and optimizes it for Eventhouse-like query performance and flexibility. The source data is optimized with [query acceleration policies](query-acceleration-overview.md), and the endpoint is populated with OneLake shortcuts that can be queried as external tables. The eventhouse shortcuts are automatically updated as the source lakehouse schema evolves.
 
