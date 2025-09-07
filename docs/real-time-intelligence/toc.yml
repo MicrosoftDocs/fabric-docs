@@ -632,7 +632,7 @@ items:
         - name: Accelerate queries over OneLake shortcuts
           href: query-acceleration.md
       - name: Eventhouse endpoint for Lakehouse
-        href: eventhouse-as-endpoint
+        href: eventhouse-as-endpoint.md
       - name: External tools
         items: 
         - name: Query Fabric OneLake Delta tables from Snowflake
