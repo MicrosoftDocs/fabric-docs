@@ -12,7 +12,6 @@ ms.date: 09/01/2025
 
 Use the Eventhouse endpoint to query lakehouse data, discover real-time insights across your data estate, and streamline analysis of structured, semi-structured, and unstructured data. After you enable the endpoint, it tracks the source lakehouse data and optimizes it for Eventhouse-like performance and flexibility. [Query acceleration policies](query-acceleration-overview.md) optimize the source data, and the endpoint adds OneLake shortcuts that you query as external tables. Eventhouse shortcuts update automatically as the source lakehouse schema changes.
 
-
 ## Benefits
 
 Enable the Eventhouse endpoint to get:
@@ -20,7 +19,7 @@ Enable the Eventhouse endpoint to get:
 * **Instant schema sync**: The endpoint syncs tables and schema changes within seconds with no manual setup. See the list of [sync statuses](#sync-statuses).
 * **Mirrored schema**: Access current and future Lakehouse data through a mirrored schema in a dedicated KQL database view.
 * **Rich consumption and visualization options**: Use Copilot, NL2KQL, dashboards, embedded queries, and visual data exploration.
-* **Reflected in lakehouse and warehouse tree**: The endpoint appears as a new branch in your lakehouse data source tree.
+* **Reflected in Workspace and OneLake catalog trees**: The endpoint eventhouse and database appear as new branches in your lakehouse tree.
 * **Fast, scalable queries**: Run analytics in KQL or SQL using advanced external table operators and commands.
 * **Advanced insights**: Run time series analysis, detect anomalies, and use Python for advanced processing.
 
@@ -84,7 +83,7 @@ Remove the Eventhouse endpoint from the workspace or the OneLake catalog.
 
 ## Re-enable the endpoint
 
-If you want to re-enable the Eventhouse endpoint after deletion, you can do so by following the steps in the [Enable the eventhouse endpoint](#enable-the-eventhouse-endpoint) section. If the endpoint is still being deleted, an error message asks you to wait a few seconds before trying again.
+[Enable the eventhouse endpoint](#enable-the-eventhouse-endpoint)
 
 :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-deleted.png" alt-text="Message stating that the endpoint is being deleted and to wait a few seconds.":::
 
