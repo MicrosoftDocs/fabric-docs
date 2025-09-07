@@ -10,11 +10,9 @@ ms.date: 09/01/2025
 
 # Eventhouse endpoint for lakehouse
 
-Use the Eventhouse endpoint for lakehouse to query lakehouse tables with high performance and flexibility. It’s ideal for discovering real-time insights across your data estate and streamlines access and analysis for structured, semi-structured, and unstructured data.
+Use the Eventhouse endpoint for lakehouse to query lakehouse tables with high performance and flexibility. It’s ideal for discovering real-time insights across your data and streamlines access and analysis for structured, semi-structured, and unstructured data.
 
-Enabling the Eventhouse endpoint creates a managed Eventhouse child item that is linked to data source, and automatically syncs tables and schema changes, providing a seamless and efficient querying experience.
-
-By enabling the Eventhouse Endpoint, lakehouse users gain:
+By enabling the Eventhouse endpoint, lakehouse users gain:
 
 * **Instant schema sync**: The endpoint syncs tables and schema changes within seconds. No manual setup required.
 
@@ -22,51 +20,49 @@ By enabling the Eventhouse Endpoint, lakehouse users gain:
 
 * **Advanced insights**: Run time series analysis, detect anomalies, and use Python for complex processing.
 
-* **Unified experience**: Access current and future source data through a mirrored schema in a dedicated KQL database view. the , and use [Query Acceleration Policy](query-acceleration-overview.md) on external tables
+* **Unified experience**: Access current and future source Lakehouse data through a mirrored schema in a dedicated KQL database view. Use [Query Acceleration Policy](query-acceleration-overview.md) on external tables.
 
 * **Rich consumption and visualization options**: Use Copilot and NL2KQL, dashboards, embedded queries, and visual data exploration.
 
 * **Reflected in lakehouse tree**: The endpoint is added as a new branch to your lakehouse data source tree and provides a managed Eventhouse item that evolves with your data.
 
-## Seamless enablement, mirrored schema
+## Permissions
 
-Once you enable the Eventhouse Endpoint in one click, you’ll see a new Eventhouse, named Eventhouse Endpoint, containing an embedded KQL queryset, and showing OneLake shortcuts to tables with Query Acceleration policies, automatically synced and ready for querying.
-
-Enabling the endpoint adds a new branch to the Lakehouse data source tree. The branch shows the KQL database and external tables with query acceleration policy and reflects source schema changes within seconds.
-
-// diagram of LH structure vs EH structure or image of both structures
-
-**User permissions**
-
-Users with view, contributor, or owner permissions on the parent data source automatically receive view permissions for the Eventhouse, enabling query execution and consumption experiences.
+Users with view, contributor, or owner permissions on the parent data source automatically receive view permissions for the Eventhouse endpoint, enabling query execution and consumption experiences.
 
 ## Prerequisites
 
-- A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
-- An existing Lakehouse containing tables with a [query acceleration policy](query-acceleration-overview.md).
+* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
+* Write permissions to the workspace. 
+* An existing Lakehouse containing tables with a [query acceleration policy](query-acceleration-overview.md).
 
 ## Enable the eventhouse endpoint
 
-Once enabled, the item forever tracks the source Lakehouse data and optimizes it for Eventhouse-like query performance and flexibility.
+Once enabled, the item tracks the source Lakehouse data and optimizes it for Eventhouse-like query performance and flexibility.
 
-1. Navigate to your Fabric workspace or OneLake catalog and find the **Lakehouse** you want to query.
+1. Navigate to your **Fabric workspace** or **OneLake catalog** and find the Lakehouse* you want to query.
 
 1. Right-click the more options menu **...** and select **Eventhouse endpoint**.
 
     :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-workspace.png" alt-text="Screenshot showing how to enable the Eventhouse endpoint from a Lakehouse listed in the workspace.":::
 
-1. A new Eventhouse tab opens with a welcome to the eventhouse endpoint message. Close the message to view the new Eventhouse.
+1. A new Eventhouse tab opens with a welcome to the eventhouse endpoint message. **Close** the message to view the new Eventhouse.
 
-    - The Eventhouse is named **Eventhouse Endpoint** 
-    - The Eventhouse contains an embedded KQL queryset named **<LakhouseName>_EventhouseEndpoint**
-    - The Lakehouse tables with query acceleration policies are listed as external tables under the KQL database shortcuts.
-        
+    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome-small.png" alt-text="Screenshot showing the welcome message for the Eventhouse endpoint." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome.png":::
+
+    * The Eventhouse is named **Eventhouse Endpoint**
+    * The Eventhouse opens in viewing mode
+    * The Eventhouse contains an embedded KQL queryset named **<LakhouseName>_EventhouseEndpoint_queryset**
+    * The Lakehouse tables with query acceleration policies are listed as external tables under the KQL database **Shortcuts**
+    * In the eventhouse System Overview and databases page, you see the synchronization status and a link to the source Lakehouse.
+    * In the table shortcut, you see the table schema, a preview of the data, and the sync status of the table.
+
         //image
         :::image type="content" source="media/eventhouse/enabled-endpoint.png" alt-text="Screenshot showing the enabled Eventhouse endpoint under a Lakehouse." lightbox="media/eventhouse/enabled-endpoint.png":::
 
-## Eventhouse endpoint experience
+## Query the Eventhouse endpoint
 
-Every schema at the source is represented by one KQL Database. Changes in the source structure are reflected in Eventhouse with a 10-second delay.  
+Every source schema is represented by one KQL Database. Changes in the source structure are reflected in the Eventhouse with a 10-second delay.  
 
 The Eventhouse structure cannot be updated by users, but settings like cache and retention can be managed.
 
@@ -81,3 +77,9 @@ Users can remove the Eventhouse endpoint from the Workspace or from the OneLake 
 1. Browse to the Lakehouse with the Eventhouse endpoint enabled.
 
 1. Right-click the child Eventhouse endpoint item, and select **Delete**.
+
+## Sync status
+
+The Eventhouse endpoint syncs the source Lakehouse tables and schema changes within seconds. The sync status is displayed in the System Overview and databases page, as well as in each table shortcut.
+
+These are the possible sync statuses: 
