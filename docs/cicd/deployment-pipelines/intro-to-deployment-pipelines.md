@@ -48,6 +48,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Data Science items:
   * [Machine learning experiments](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-in-deployment-pipelines) *(preview)*
   * [Machine learning models](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-in-deployment-pipelines) *(preview)*
+  * [Data Agents](../../data-science/how-to-create-data-agent.md) *(preview)*
 
 * Data Factory items:
 
@@ -56,7 +57,7 @@ When you deploy content from one pipeline stage to another, the copied content c
   * [Data pipeline](../../data-factory/cicd-pipelines.md)
   * [Mirrored database](../../mirroring/mirrored-database-cicd.md#mirrored-database-in-deployment-pipelines)
   * Mount ADF *(preview)*
-  * [Variable library](../variable-library/variable-library-cicd.md#variable-libraries-and-deployment-pipelines) *(preview)*
+  
 
 * Real-time Intelligence items:
 
@@ -67,10 +68,13 @@ When you deploy content from one pipeline stage to another, the copied content c
   * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)
   * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md)
+  * [Maps](/azure/azure-maps/)
+  * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md)
 
 * Data Warehouse items:
 
-  * [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
+  * [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)
   * Mirrored Azure Databricks Catalog *(preview)*
 
 
@@ -87,6 +91,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Database items:
 
   * [SQL database](../../database/sql/deployment-pipelines.md) *(preview)*
+  * [Cosmos database](../../database/cosmos-db/overview.md) *(preview)*
 
 * Industry solutions:
 

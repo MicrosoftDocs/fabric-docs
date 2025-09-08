@@ -78,7 +78,7 @@ The following items currently support Git integration:
   * [Data pipeline](../../data-factory/cicd-pipelines.md)
   * [Mirrored database](../../mirroring/mirrored-database-cicd.md#mirrored-database-git-integration)
   * Mount ADF *(preview)*
-  * [Variable library](../variable-library/variable-library-cicd.md#variable-libraries-and-git-integration) *(preview)*
+
 
 * Real-time Intelligence items:
 
