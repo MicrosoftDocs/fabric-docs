@@ -170,7 +170,7 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide outpu
 
 ### Cell output security
 
-Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
+Using [OneLake data access roles (preview)](../onelake/security/get-started-onelake-security.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
 
 > [!IMPORTANT]
 > Security only applies during query execution and any notebook cells containing query results can be viewed by users that aren't authorized to run queries against the data directly.
