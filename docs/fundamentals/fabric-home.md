@@ -5,7 +5,7 @@ author: julcsc
 ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom:
-ms.date: 06/18/2025
+ms.date: 08/25/2025
 #customer intent: As a Fabric user, I know how to find my content from Home.
 ---
 
@@ -45,7 +45,7 @@ The items that you can create and access appear on Home. If your Home canvas get
 
 1. The left navigation pane (nav pane) links you to different views of your items and to creator resources. You can [remove buttons from the nav pane](#add-and-remove-buttons-from-the-nav-pane) to suit your workflow.
 1. The selector for switching between Fabric and Power BI.
-1. Options for creating new items. 
+1. Options for creating new items.
 1. The top menu bar for orienting yourself in Fabric, finding items, help, and sending feedback to Microsoft. The Account manager control is a critical button for looking up your account information and managing your Fabric trial.
 1. Learning resources to get you started learning about Fabric and creating items.
 1. Your items organized by recent workspaces, recent items, and favorites.
@@ -53,19 +53,15 @@ The items that you can create and access appear on Home. If your Home canvas get
 > [!IMPORTANT]
 > Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. The exception to this restriction is if your subscription or license changes to one with less access, then you receive a prompt letting you know that the item is no longer available and asking you to start a trial or upgrade your license.
 
-## Locate items from Home
+## Locate resources from Home
 
 [!INCLUDE [product-name](../includes/product-name.md)] offers many ways of locating and viewing your items and ways of creating new items. All approaches access the same pool of items, just in different ways. Searching is sometimes the easiest and quickest way to find something. While other times, using the nav pane to open a workspace, using the nav pane to open OneLake, or selecting a card on the Home canvas is your best option.
 
 ### Use the navigation pane
 
-Along the left side is a narrow vertical bar, referred to as the ***nav pane***. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items.
+Along the left side is a narrow vertical bar, referred to as the ***nav pane***. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly.
 
-:::image type="content" source="media/fabric-home/fabric-left-nav-panes.png" alt-text="Screenshot of the nav pane for Data factory.":::
-
-In the bottom section of the nav pane is where your active workspaces and items are listed. In this example, our active items are: an Activator, the *Retail sales* workspace, and a KQL database. Select any of these items to display them on your canvas. To open other workspaces, use the [workspace selector](#find-and-open-workspaces) to view a list of your workspaces and select one to open on your canvas. To open other items, select them from the nav pane buttons.
-
-The nav pane is there when you open Home and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)].
+In the bottom section of the nav pane is where your active workspaces are listed. Select a workspace to display it on your canvas. It is also available from the [object explorer](#object-explorer). Use the [workspace selector](#find-and-open-workspaces) to view a list of your workspaces and select one to open on your canvas.
 
 #### Add and remove buttons from the nav pane
 
@@ -118,6 +114,34 @@ When you select a workload, the landing page for that workload displays. Each wo
 :::image type="content" source="media/fabric-home/fabric-home-workload-landing.png" alt-text="Screenshot of the Data Engineering workload detail page." lightbox="media/fabric-home/fabric-home-workload-landing.png":::
 
 For more information about workloads, see [Workloads in Fabric](../workload-development-kit/more-workloads-add.md)
+
+## Tabbed navigation to access resources (preview)
+
+The tabbed navigation allows you to work with multiple items and workspaces at the same time. It enhances navigation and reduces the need to switch context.
+
+### Tabs for open items
+
+When you create or open an item, it appears in a tab horizontally across the top of the Fabric portal and shows the item name, icon for the item type (for example, notebook, pipeline, semantic model etc.). You can hover over the tab to view the workspace it's created in. You can drag a tab to the required position. Tabs make it easier to identify and switch between open items without losing focus.
+
+> [!NOTE]
+> The tabbed navigation is available only in Fabric view and not in Power BI view i.e when you switch to the Power BI view from the left nav switcher, the tabbed experience is not available.
+
+### Multiple open workspaces
+
+You can open and work across multiple workspaces side by side. Items are color-coded and numbered to indicate which workspace they belong to. This feature helps reduce confusion and improves context when working in multiple environments.
+
+### Object explorer
+
+The object explorer provides a structured view of items across all your currently open workspaces. Use it to quickly locate and open resources without having to switch between pages. You can pin the object explorer for easy access. Use the filter option to view items of a specific type or search for an item by a keyword. The items are organized by the hierarchy they belong to.
+
+:::image type="content" source="media/fabric-home/tabs-object-explorer.png" alt-text="Screenshot showing the object explorer & multiple tabs to quickly locate and open resources.":::
+
+### More open items
+
+The previous limit of 10 open items has been increased. You can keep more resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
+
+> [!NOTE]
+> These multitasking features are rolling out in phases starting mid September 2025. Availability might vary across tenants as the rollout progresses.
 
 ## Get help from the Help pane
 
