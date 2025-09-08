@@ -9,118 +9,122 @@ ms.custom:
 - dataflows
 - pipelines
 - sfi-image-nochange
-ms.date: 12/18/2024
+ms.date: 09/08/2025
+ai-usage: ai-assisted
 ---
 
-# Quickstart: Move and transform data with dataflows and pipelines
+# Quickstart: Create a solution to move and transform data
 
-In this tutorial, you discover how the dataflow and pipeline experience can create a powerful and comprehensive Data Factory solution.  
+In this quickstart, you learn how dataflows and pipelines work together to create a powerful Data Factory solution. You'll clean data with dataflows and move it with pipelines.
 
 ## Prerequisites
 
-To get started, you must have the following prerequisites:
+Before you start, you need:
 
-- A tenant account with an active subscription. Create a [free account](https://azure.microsoft.com/free/).
-- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md) that isn’t the default My Workspace.
+- A tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/free/).
+- A [!INCLUDE [product-name](../includes/product-name.md)] enabled workspace: [Set up a workspace](../fundamentals/create-workspaces.md) that isn’t the default My Workspace.
 - [An Azure SQL database with table data](/azure/azure-sql/database/single-database-create-quickstart).
 - [A Blob Storage account](/azure/storage/common/storage-account-create).
 
-## Dataflows compared to pipelines
+## Compare dataflows and pipelines
 
-Dataflows Gen2 lets you to use a low-code interface and 300+ data and AI-based transformations to you easily clean, prep, and transform data with more flexibility than any other tool. Pipelines enable rich out-of-the-box data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.  In a pipeline, you can create logical groupings of activities that perform a task, which might include calling a Dataflow to clean and prep your data. While there's some functionality overlap between the two, the choice of which to use for a specific scenario depends on whether you require the full richness of pipelines or can use the simpler but more limited capabilities of dataflows. For more information, see the [Fabric decision guide](../fundamentals/decision-guide-pipeline-dataflow-spark.md)
+Dataflows Gen2 provide a low-code interface with 300+ data and AI-based transformations. You can easily clean, prep, and transform data with flexibility. Pipelines offer rich data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.
+
+In a pipeline, you can create logical groupings of activities that perform a task. This might include calling a dataflow to clean and prep your data. While there's some functionality overlap between the two, your choice depends on whether you need the full capabilities of pipelines or can use the simpler capabilities of dataflows. For more information, see the [Fabric decision guide](../fundamentals/decision-guide-pipeline-dataflow-spark.md).
 
 ## Transform data with dataflows
 
 Follow these steps to set up your dataflow.
 
-### Step 1: Create a dataflow
+### Create a dataflow
 
-1. Choose your Fabric enabled workspace, and then select **New**. Then select **Dataflow Gen2**.
+1. Select your Fabric-enabled workspace, then **New**, and choose **Dataflow Gen2**.
 
-   :::image type="content" source="media/transform-data/select-dataflow.png" alt-text="Screenshot showing where to start creating a dataflow gen2." lightbox="media/transform-data/select-dataflow.png":::
+   :::image type="content" source="media/transform-data/select-dataflow.png" alt-text="Screenshot of starting a Dataflow Gen2." lightbox="media/transform-data/select-dataflow.png":::
 
-1. The dataflow editor window appears.  Select the **Import from SQL Server** card.
+1. In the dataflow editor, select **Import from SQL Server**.
 
-   :::image type="content" source="media/transform-data/start-creating-dataflow-inline.png" alt-text="Screenshot showing the dataflow editor window." lightbox="media/transform-data/start-creating-dataflow.png":::
+   :::image type="content" source="media/transform-data/start-creating-dataflow-inline.png" alt-text="Screenshot of the dataflow editor." lightbox="media/transform-data/start-creating-dataflow.png":::
 
-### Step 2: Get data
+### Get data
 
-1. On the **Connect to data source** dialog presented next, enter the details to connect to your Azure SQL database, then select **Next**. For this example, you use the **AdventureWorksLT** sample database configured when you set up the Azure SQL database in the prerequisites.
+1. In the **Connect to data source** dialog, enter your Azure SQL database details and select **Next**. Use the **AdventureWorksLT** sample database from the prerequisites.
 
-   :::image type="content" source="media/transform-data/select-azure-sql-inline.png" alt-text="Screenshot showing how to connect to an Azure SQL database." lightbox="media/transform-data/select-azure-sql.png":::
+   :::image type="content" source="media/transform-data/select-azure-sql-inline.png" alt-text="Screenshot of connecting to an Azure SQL database." lightbox="media/transform-data/select-azure-sql.png":::
 
-1. Select the data you’d like to transform and then select **Create**. For this quickstart, select **SalesLT.Customer** from the **AdventureWorksLT** sample data provided for Azure SQL DB, and then the **Select related tables** button to automatically include two other related tables.
+1. Select the data to transform, such as **SalesLT.Customer**, and use **Select related tables** to include related tables. Then select **Create**.
 
-   :::image type="content" source="media/transform-data/data-to-transform-inline.png" alt-text="Screenshot showing where to choose from the available data." lightbox="media/transform-data/data-to-transform.png":::
+   :::image type="content" source="media/transform-data/data-to-transform-inline.png" alt-text="Screenshot of selecting data to transform." lightbox="media/transform-data/data-to-transform.png":::
 
-### Step 3: Transform your data
+### Transform your data
 
-1. If it isn't selected, select the **Diagram view** button along the status bar at the bottom of the page, or select **Diagram view** under the **View** menu at the top of the Power Query editor. Either of these options can toggle the diagram view.
+1. Select **Diagram view** from the status bar or the **View** menu in the Power Query editor.
 
-   :::image type="content" source="media/transform-data/select-diagram-view-inline.png" alt-text="Screenshot showing where to select diagram view." lightbox="media/transform-data/select-diagram-view.png":::
+   :::image type="content" source="media/transform-data/select-diagram-view-inline.png" alt-text="Screenshot of selecting diagram view." lightbox="media/transform-data/select-diagram-view.png":::
 
-1. Right-click your **SalesLT Customer** query, or select the vertical ellipsis on the right of the query, then select **Merge queries**.  
+1. Right-select your **SalesLT Customer** query, or select the vertical ellipsis on the right of the query, then select **Merge queries**.
 
-   :::image type="content" source="media/transform-data/select-merge-query.png" alt-text="Screenshot showing where to find the Merge queries option.":::
+   :::image type="content" source="media/transform-data/select-merge-query.png" alt-text="Screenshot of the Merge queries option.":::
 
-1. Configure the merge by selecting the **SalesLTOrderHeader** table as the right table for the merge, the **CustomerID** column from each table as the join column, and **Left outer** as the join kind. Then select **OK** to add the merge query.  
+1. Configure the merge with **SalesLTOrderHeader** as the right table, **CustomerID** as the join column, and **Left outer** as the join type. Select **OK**.
 
    :::image type="content" source="media/transform-data/select-join-keys-kind.png" alt-text="Screenshot of the Merge configuration screen.":::
 
-1. Select the **Add data destination** button, which looks like a database symbol with an arrow above it, from the new merge query you created. Then select **Azure SQL database** as the destination type.
+1. Add a data destination by selecting the database symbol with an arrow. Choose **Azure SQL database** as the destination type.
 
-   :::image type="content" source="media/transform-data/select-data-destination-inline.png" alt-text="Screenshot highlighting the Add data destination button on the newly created merge query." lightbox="media/transform-data/select-data-destination.png":::
+   :::image type="content" source="media/transform-data/select-data-destination-inline.png" alt-text="Screenshot of the Add data destination button." lightbox="media/transform-data/select-data-destination.png":::
 
-1. Provide the details for your Azure SQL database connection where the merge query is to be published. In this example, you can use the **AdventureWorksLT** database we used as the data source for the destination too.
+1. Provide the details for your Azure SQL database connection where the merge query is to be published. In this example, we use the **AdventureWorksLT** database we used as the data source for the destination too.
 
-   :::image type="content" source="media/transform-data/configure-data-destination.png" alt-text="Screenshot showing the Connect to data destination dialog with sample values populated.":::
+   :::image type="content" source="media/transform-data/configure-data-destination.png" alt-text="Screenshot of the Connect to data destination dialog.":::
 
 1. Choose a database to store the data, and provide a table name, then select **Next**.
 
-   :::image type="content" source="media/transform-data/choose-table-for-merge-query.png" alt-text="Screenshot showing the Choose destination target window.":::
+   :::image type="content" source="media/transform-data/choose-table-for-merge-query.png" alt-text="Screenshot of the Choose destination target window.":::
 
-1. You can leave the default settings on the **Choose destination settings** dialog, and just select **Save settings** without making any changes here.
+1. Accept the default settings in the **Choose destination settings** dialog and select **Save settings**.
 
-   :::image type="content" source="media/transform-data/choose-destination-settings.png" alt-text="Screenshot showing the Choose destination settings dialog.":::
+   :::image type="content" source="media/transform-data/choose-destination-settings.png" alt-text="Screenshot of the Choose destination settings dialog.":::
 
-1. Select **Publish** back on the dataflow editor page, to publish the dataflow.
+1. Select **Publish** in the dataflow editor to publish the dataflow.
 
    :::image type="content" source="media/transform-data/publish-dataflow-gen2-inline.png" alt-text="Screenshot highlighting the Publish button on the dataflow gen2 editor." lightbox="media/transform-data/publish-dataflow-gen2.png":::
 
 ## Move data with pipelines
 
-Now that you created a Dataflow Gen2, you can operate on it in a pipeline. In this example, you copy the data generated from the dataflow into text format in an Azure Blob Storage account.
+Now that you've created a Dataflow Gen2, you can operate on it in a pipeline. In this example, you copy the data generated from the dataflow into text format in an Azure Blob Storage account.
 
-### Step 1: Create a new pipeline
+### Create a new pipeline
 
-1. From your workspace, select **New**, and then select **Pipeline**.  
+1. In your workspace, select **New**, then **Pipeline**.
 
-   :::image type="content" source="media/transform-data/create-new-pipeline.png" alt-text="Screenshot showing where to start a new pipeline.":::
+   :::image type="content" source="media/transform-data/create-new-pipeline.png" alt-text="Screenshot of creating a new pipeline.":::
 
-1. Name your pipeline then select **Create**.
+1. Name your pipeline and select **Create**.
 
    :::image type="content" source="media/transform-data/name-pipeline.png" alt-text="Screenshot showing the new pipeline creation prompt with a sample pipeline name.":::
 
-### Step 2: Configure your dataflow
+### Configure your dataflow
 
-1. Add a new dataflow activity to your pipeline by selecting **Dataflow** in the **Activities** tab.  
+1. Add a dataflow activity to your pipeline by selecting **Dataflow** in the **Activities** tab.
 
-   :::image type="content" source="media/transform-data/add-dataflow-activity.png" alt-text="Screenshot showing where to select the Dataflow option.":::
+   :::image type="content" source="media/transform-data/add-dataflow-activity.png" alt-text="Screenshot of adding a dataflow activity.":::
 
-1. Select the dataflow on the pipeline canvas, and then the **Settings** tab. Choose the dataflow you created previously from the drop-down list.
+1. Select the dataflow on the pipeline canvas, go to the **Settings** tab, and choose the dataflow you created earlier.
 
-   :::image type="content" source="media/transform-data/choose-dataflow.png" alt-text="Screenshot showing how to choose the dataflow you created.":::
+   :::image type="content" source="media/transform-data/choose-dataflow.png" alt-text="Screenshot of selecting a dataflow.":::
 
-1. Select **Save**, and then **Run** to run the dataflow to initially populate its merged query table you designed in the prior step.
+1. Select **Save**, then **Run** to populate the merged query table.
 
    :::image type="content" source="media/transform-data/save-run-pipeline-dataflow-only.png" alt-text="Screenshot showing where to select Run.":::
 
-### Step 3: Use the copy assistant to add a copy activity
+### Add a copy activity
 
-1. Select **Copy data** on the canvas to open the **Copy Assistant** tool to get started. Or select **Use copy assistant** from the **Copy data** drop down list under the **Activities** tab on the ribbon.
+1. Select **Copy data** on the canvas or use the **Copy Assistant** from the **Activities** tab.
 
    :::image type="content" source="media/transform-data/open-copy-assistant.png" alt-text="Screenshot showing the two ways to access the copy assistant.":::
-1. Choose your data source by selecting a data source type. In this tutorial, you use the Azure SQL Database used previously when you created the dataflow to generate a new merge query. Scroll down below the sample data offerings and select the **Azure** tab, then **Azure SQL Database**. Then select **Next** to continue.
+
+1. Choose **Azure SQL Database** as the data source and select **Next**.
 
    :::image type="content" source="media/transform-data/choose-data-source.png" alt-text="Screenshot showing where to choose a data source.":::
 
@@ -144,33 +148,33 @@ Now that you created a Dataflow Gen2, you can operate on it in a pipeline. In th
 
    :::image type="content" source="media/transform-data/select-folder-filename.png" alt-text="Screenshot showing how to select folder path and file name.":::
 
-1. Select **Next** again to accept the default file format, column delimiter, row delimiter and compression type, optionally including a header. 
+1. Select **Next** again to accept the default file format, column delimiter, row delimiter, and compression type, optionally including a header.
 
    :::image type="content" source="media/transform-data/choose-file-configuration-options.png" alt-text="Screenshot showing the configuration options for the file in Azure Blob Storage.":::
 
-1. Finalize your settings. Then, review and select **Save + Run** to finish the process.  
+1. Finalize your settings. Then, review and select **Save + Run** to finish the process.
 
    :::image type="content" source="media/transform-data/finalize-and-review.png" alt-text="Screenshot showing how to review copy data settings.":::
 
-### Step 5: Design your pipeline and save to run and load data
+### Design your pipeline and save to run and load data
 
-1. To run the **Copy** activity after the **Dataflow** activity, drag from **Succeeded** on the **Dataflow** activity to the **Copy** activity. The **Copy** activity only runs after the **Dataflow** activity succeeds.  
+1. To run the **Copy** activity after the **Dataflow** activity, drag from **Succeeded** on the **Dataflow** activity to the **Copy** activity. The **Copy** activity only runs after the **Dataflow** activity succeeds.
 
    :::image type="content" source="media/transform-data/copy-dataflow-activity.png" alt-text="Screenshot showing how to make the dataflow run take place after the copy activity.":::
 
-1. Select **Save** to save your pipeline. Then select **Run** to run your pipeline and load your data.  
+1. Select **Save** to save your pipeline. Then select **Run** to run your pipeline and load your data.
 
    :::image type="content" source="media/transform-data/save-run-pipeline.png" alt-text="Screenshot showing where to select Save and Run.":::
 
 ## Schedule pipeline execution
 
-Once you finish developing and testing your pipeline, you can schedule it to execute automatically.
+Once you finish developing and testing your pipeline, you can schedule it to run automatically.
 
 1. On the **Home** tab of the pipeline editor window, select **Schedule**.
 
-   :::image type="content" source="media/transform-data/schedule-button.png" alt-text="A screenshot of the Schedule button on the menu of the Home tab in the pipeline editor.":::
+   :::image type="content" source="media/transform-data/schedule-button.png" alt-text="Screenshot of the Schedule button on the menu of the Home tab in the pipeline editor.":::
 
-1. Configure the schedule as required. The example here schedules the pipeline to execute daily at 8:00 PM until the end of the year.
+1. Configure the schedule as required. The example here schedules the pipeline to run daily at 8:00 PM until the end of the year.
 
    :::image type="content" source="media/transform-data/schedule-configuration.png" alt-text="Screenshot showing the schedule configuration for a pipeline to run daily at 8:00 PM until the end of the year.":::
 
