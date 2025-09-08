@@ -28,7 +28,7 @@ A new KQL queryset can be associated with the workspace you're using when you cr
 
     :::image type="content" source="media/kusto-query-set/new-queryset.png" alt-text="Screenshot of adding a new KQL queryset from workspace homepage.":::
 
-    Select **KQL Queryset**. Use the search bar to filter by item type.
+1. Select **KQL Queryset**. Use the search bar to filter by item type.
 
     :::image type="content" source="media/kusto-query-set/new-queryset-box.png" alt-text="Screenshot of adding a new KQL queryset in the New item box.":::
 
