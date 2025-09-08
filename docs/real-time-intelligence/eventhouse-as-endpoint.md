@@ -25,7 +25,7 @@ Enable the Eventhouse endpoint to get:
 * **Fast, scalable queries**: Run analytics in KQL or SQL using advanced external table operators and commands.
 * **Advanced insights**: Run time series analysis, detect anomalies, and use Python for advanced processing.
 
-After you enable the endpoint, it tracks the source lakehouse data and optimizes it for Eventhouse-like performance and flexibility. [Query acceleration policies](query-acceleration-overview.md) optimize the source data, and the endpoint adds [OneLake shortcuts](onelake-shortcuts.md). Eventhouse shortcuts update automatically as the source lakehouse schema changes.
+After you enable the endpoint, it tracks the source lakehouse data and optimizes it for Eventhouse-like performance and flexibility. Each lakehouse table is attached to a [OneLake shortcut](onelake-shortcuts.md) in the Eventhouse endpoint with [Query acceleration policies](query-acceleration-overview.md) that optimize the source data. Eventhouse shortcuts update automatically as the source lakehouse schema changes.
 
 ## Performance
 
