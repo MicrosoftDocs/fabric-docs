@@ -11,7 +11,7 @@ ms.search.form: KQL Queryset
 ---
 # Create a KQL queryset
 
-In this article, you learn how to create a new KQL queryset. The KQL Queryset is the item used to run queries, view, and customize query results on data from different data sources, such as Eventhouse, KQL database, and more.
+In this article, you learn how to create a new KQL queryset. The KQL queryset is the item used to run queries, view, and customize query results on data from different data sources, such as Eventhouse, KQL database, and more.
 
 ## Prerequisites
 
@@ -23,6 +23,7 @@ In this article, you learn how to create a new KQL queryset. The KQL Queryset is
 A new KQL queryset can be associated with the workspace you're using when you create it, or you can change the workspace context when you create it.
 
 1. Go to the desired workspace.
+
 1. Select **+New item**.
 
     :::image type="content" source="media/kusto-query-set/new-queryset.png" alt-text="Screenshot of adding a new KQL queryset from workspace homepage.":::
@@ -36,11 +37,18 @@ A new KQL queryset can be associated with the workspace you're using when you cr
     > [!NOTE]
     > You can create multiple KQL Querysets in a single workspace.
 
-1. (Optional) Set the **Location**. By default, the location is set to the current workspace. To change the location, select **Change** and choose a different workspace from the list.
+1. (Optional) Set the **Location** for the new queryset. By default, the location is set to the current workspace.
 
     :::image type="content" source="media/kusto-query-set/new-queryset-window.png" alt-text="Screenshot of new KQL queryset window with name and location fields highlighted.":::
 
+    To change the location, expand the drop-down to select a different workspace, or use the expand option to see all workspaces that you have access to. You can also create a new folder in the selected workspace.
+
+    :::image type="content" source="media/kusto-query-set/new-queryset-change-workspace.png" alt-text="Screenshot of new KQL queryset window the list of workspaces to select.":::
+
+1. For workspaces with a [task flow](../fundamentals/task-flow-work-with.md), you can **Assign to task**. By default, a new queryset is assigned to the Track data task. You can change the task assignment by expanding the drop-down and selecting a different step in the flow.
+
 1. Select **Create**.
+
 1. In the **Get started...** window, add a data source to the KQL Queryset. You can add a data source from the following options:
 
     Select one of the options to add a data source to the KQL Queryset. For connection details for each option, see [Select a data source](kusto-query-set.md#select-a-data-source).
