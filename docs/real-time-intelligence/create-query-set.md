@@ -6,7 +6,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 08/21/2025
+ms.date: 09/08/2025
 ms.search.form: KQL Queryset
 ---
 # Create a KQL queryset
@@ -20,7 +20,7 @@ In this article, you learn how to create a new KQL queryset. The KQL Queryset is
 
 ## Create a KQL queryset
 
-The KQL Queryset exists within the context of a workspace. A new KQL queryset is always associated with the workspace you're using when you create it.
+A new KQL queryset can be associated with the workspace you're using when you create it, or you can change the workspace context when you create it.
 
 1. Go to the desired workspace.
 1. Select **+New item**.
