@@ -25,7 +25,7 @@ This article shows you how to add an Azure Event Grid Namespace source to an eve
     - If you have Member (or higher) permissions, no extra setup is needed. 
     - If you don’t have Member permissions, ask a colleague with Member access to assign Contributor access to the Event Grid service principal before you add the source:
 
-        1. Open the workspace [Manage access](../../fundamentals/give-access-workspaces) pane.
+        1. Open the workspace [Manage access](../../fundamentals/give-access-workspaces.md) pane.
         1. Select Add people or groups.
         1. Enter the Event Grid namespace name and choose the matching service principal.
         1. Assign the Contributor role and select Add.
