@@ -91,7 +91,7 @@ Remove the Eventhouse endpoint from the workspace or the OneLake catalog. The Ev
 
 1. Browse to the Eventhouse Endpoint branch of the Lakehouse tree, and from the more options menu **...** select **Delete**.
 
-    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-delete.png" alt-text="Screenshot of the KQL queryset with a get external table schema query.":::
+    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-delete.png" alt-text="Screenshot of the Lakehouse tree with the more options menu open and Delete highlighted.":::
 
 1. In the confirmation dialog, select **Delete**.
 
@@ -123,9 +123,9 @@ The Eventhouse endpoint syncs the source Lakehouse tables and schema changes wit
 | workInProgress | Synchronization is underway. Between 20% and 98% of the data is currently synced with the source. Source link: {link} |
 | warmingUp | Synchronization is in progress. Less than 20% of the data is currently synced with the source. Source link: {link} |
 
-## Limitations
+## Considerations and limitations
 
-* You can't enable the Eventhouse endpoint from an open lakehouse.
+* You can't currenlty enable the Eventhouse endpoint from within an open lakehouse.
 * The System overview page of the Eventhouse endpoint doesn't show any statistics.
 * Updates to the Eventhouse endpoint cache policy aren't supported
 
