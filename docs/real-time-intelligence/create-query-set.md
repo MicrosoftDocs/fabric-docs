@@ -36,6 +36,10 @@ A new KQL queryset can be associated with the workspace you're using when you cr
     > [!NOTE]
     > You can create multiple KQL Querysets in a single workspace.
 
+1. (Optional) Set the **Location**. By default, the location is set to the current workspace. To change the location, select **Change** and choose a different workspace from the list.
+
+    :::image type="content" source="media/kusto-query-set/new-queryset-window.png" alt-text="Screenshot of new KQL queryset window with name and location fields highlighted.":::
+
 1. Select **Create**.
 1. In the **Get started...** window, add a data source to the KQL Queryset. You can add a data source from the following options:
 
