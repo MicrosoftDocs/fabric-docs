@@ -24,7 +24,7 @@ The Power BI service that's designed for US government customers differs from th
 
 ## Government cloud instances
 
-If you're a new customer, you have to validate your organization's eligibility before you can sign up for a Microsoft 365 Government plan. Get started by completing the [Microsoft 365 for Government eligibility validation form](https://www.microsoft.com/microsoft-365/government/eligibility-validation). 
+If you're a new customer, you have to validate your organization's eligibility before you can sign up for a Microsoft 365 Government plan. Get started by completing the [Microsoft 365 for Government eligibility validation form](https://go.microsoft.com/fwlink/?linkid=2239727). 
 
 Microsoft 365 provides different environments for government agencies to meet varying compliance requirements. To ensure that you're selecting the right plan for your organization, consult the Microsoft 365 US Government service description for each environment:
 
