@@ -1,6 +1,6 @@
 ---
 title: "Quickstart: Create a Copy job in Data Factory"
-description: "Copy data in Data Factory without creating a Fabric data pipeline."
+description: "Copy data in Data Factory without creating a Fabric pipeline."
 author: KrishnakumarRukmangathan
 ms.author: krirukm
 ms.reviewer: whhender
@@ -14,7 +14,7 @@ ms.custom: copy-job
 
 # Quickstart: Create a Copy job
 
-Copy jobs in Data Factory ingest data without the need to create a Fabric data pipeline. It brings together various copy patterns such as bulk or batch, incremental or continuous copy into a unified experience. If you only need to copy data without transformations, use a Copy job.
+Copy jobs in Data Factory ingest data without the need to create a Fabric pipeline. It brings together various copy patterns such as bulk or batch, incremental or continuous copy into a unified experience. If you only need to copy data without transformations, use a Copy job.
 
 This quickstart guide walks you through how to copy data incrementally from a Fabric Warehouse table to a Fabric Lakehouse table using Copy job.  
 

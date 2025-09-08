@@ -19,11 +19,11 @@ The Lakehouse connector is supported in Data Factory for [!INCLUDE [product-name
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/destination)                                                 | None<br> On-premises<br> Virtual network | Organizational account |
-| **Data pipeline** <br>- [Copy activity](connector-lakehouse-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity  | None<br> On-premises<br> Virtual network | Organizational account |
+| **Pipeline** <br>- [Copy activity](connector-lakehouse-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity  | None<br> On-premises<br> Virtual network | Organizational account |
 | **Copy job** (source/destination) <br>- Full load<br>- Incremental load (only supported for Lakehouse Files) <br>- Append<br>- Override | None<br> On-premises<br> Virtual network | Organizational account |
 
 ## Related content
 
 To learn about how to connect to Lakehouse, go to [Set up your Lakehouse connection](connector-lakehouse.md).
 
-To learn about the copy activity configuration for a Lakehouse in data pipelines, go to [Configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md).
+To learn about the copy activity configuration for a Lakehouse in pipelines, go to [Configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md).

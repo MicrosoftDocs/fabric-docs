@@ -1,6 +1,6 @@
 ---
 title: Azure HDInsight activity
-description: Learn how to transform data by running an Azure HDInsight activity in a data pipeline in Data Factory for Microsoft Fabric.
+description: Learn how to transform data by running an Azure HDInsight activity in a pipeline in Data Factory for Microsoft Fabric.
 ms.reviewer: xupxhou
 ms.author: whhender
 author: whhender
@@ -30,7 +30,7 @@ To get started, you must complete the following prerequisites:
 
 ## Add an Azure HDInsight (HDI) activity to a pipeline with UI
 
-1. Create a new data pipeline in your workspace.
+1. Create a new pipeline in your workspace.
 1. Select the **Pipeline activity** card, or select the **Activities** tab, and select Azure HDInsight.
 
    - Creating the activity from the home screen card:

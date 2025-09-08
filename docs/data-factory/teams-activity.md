@@ -42,7 +42,7 @@ Set up the Teams activity by following these steps:
 
     > [!NOTE]
     > * If you're using user authentication and deploying the pipeline with the Teams activity to another workspace, the activity will be inactive until you create a new user authentication connection in the target workspace.
-    > * If you don't have access to the connections used in the Teams activity, the target environment will set those activities to inactive. After that you can edit the target pipeline, change the authorization, and set the activity to active.
+    > * If you don't have access to the connections used in the Teams activity, the initial deployment will fail. To troubleshoot, you can edit the target pipeline and change the authorization or set the activity to inactive.
 
    :::image type="content" source="media/teams-activity/connect-to-teams.png" alt-text="Screenshot showing the Settings tab of the Teams activity highlighting where to create a new connection or use an existing connection.":::
 
@@ -59,6 +59,10 @@ Set up the Teams activity by following these steps:
 1. If you're posting to a channel, you can add a subject for the message in the **Subject** text box.
 
    :::image type="content" source="media/teams-activity/select-a-subject.png" alt-text="Screenshot showing the Settings tab of the Teams activity highlighting boxes to add the subject.":::
+
+## Known limitations
+
+- The Teams activity will be inactive when using CI/CD.
 
 ## Related content
 

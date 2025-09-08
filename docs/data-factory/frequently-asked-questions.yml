@@ -21,7 +21,7 @@ sections:
       - question: |
           How do I track and monitor the capacity of Fabric used with the pipelines?
         answer: |
-          Microsoft Fabric capacity admins can use [Microsoft Fabric Capacity Metrics](../enterprise/metrics-app-install.md?tabs=1st) app, also known as the metrics app, to gain visibility into capacity resources. This app enables admins to see how much CPU utilization, processing time, and memory are utilized by data pipelines, dataflows, and other items in their Fabric capacity-enabled workspaces. Gain visibility into overload causes, peak demand times, resource consumption and more and easily identify the most demanding or most popular items.
+          Microsoft Fabric capacity admins can use [Microsoft Fabric Capacity Metrics](../enterprise/metrics-app-install.md?tabs=1st) app, also known as the metrics app, to gain visibility into capacity resources. This app enables admins to see how much CPU utilization, processing time, and memory are utilized by pipelines, dataflows, and other items in their Fabric capacity-enabled workspaces. Gain visibility into overload causes, peak demand times, resource consumption and more and easily identify the most demanding or most popular items.
       - question: |
           What approach is recommended for assigning roles within Data Factory in Fabric?
         answer: |
@@ -33,7 +33,7 @@ sections:
       - question: |
           How can I connect to on-premises data sources in Fabric Data Factory?
         answer: |
-          When you use the on-premises data gateway, you can now [connect to on-premises data sources using dataflows and data pipelines (preview) with Data Factory in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/integrating-on-premises-data-into-microsoft-fabric-using-data-pipelines-in-data-factory/). To learn more, refer [How to access on-premises data sources in Data Factory](https://learn.microsoft.com/fabric/data-factory/how-to-access-on-premises-data#using-on-premises-data-in-a-pipeline-preview).
+          When you use the on-premises data gateway, you can now [connect to on-premises data sources using dataflows and pipelines (preview) with Data Factory in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/integrating-on-premises-data-into-microsoft-fabric-using-data-pipelines-in-data-factory/). To learn more, refer [How to access on-premises data sources in Data Factory](https://learn.microsoft.com/fabric/data-factory/how-to-access-on-premises-data#using-on-premises-data-in-a-pipeline-preview).
 
 
   - name: Release updates and pricing
@@ -45,16 +45,16 @@ sections:
       - question: |
           What is Fabric Data Factory Pricing / billing model?
         answer: |
-          [Data Factory pricing in Microsoft Fabric](https://learn.microsoft.com/fabric/data-factory/pricing-overview) provides a comprehensive guide to how costs are calculated for Data pipelines and Dataflow Gen2. It includes several pricing examples scenarios to help you understand the pricing model better. 
+          [Data Factory pricing in Microsoft Fabric](https://learn.microsoft.com/fabric/data-factory/pricing-overview) provides a comprehensive guide to how costs are calculated for pipelines and Dataflow Gen2. It includes several pricing examples scenarios to help you understand the pricing model better. 
       - question: |
           Where can I find more information about upcoming features planned for the Data Factory in Microsoft Fabric?
         answer: |
           [What's new and planned for Data Factory in Microsoft Fabric](https://aka.ms/fabricrm) provides insights into upcoming features and their estimated release timelines over the next few months.
 
-  - name: Data pipelines
+  - name: Pipelines
     questions:
       - question: |
-          How fast can I ingest data in Fabric Data Pipelines?
+          How fast can I ingest data in Fabric pipelines?
         answer: |
           Fabric Data Factory allows you to develop pipelines that maximize data movement throughput for your environment. These pipelines fully utilize the following resources: 
           - Network bandwidth between the source and destination data stores 
@@ -93,19 +93,19 @@ sections:
       - question: |
           Given the functionality gaps in Data Factory for Fabric, what are the reasons for choosing it over ADF / Synapse pipelines? 
         answer: |
-          As we strive to bridge functionality gaps and incorporate the robust data pipeline orchestration and workflow capabilities found in ADF / Azure Synapse pipelines into Fabric Data Factory, we acknowledge that certain features present in ADF / Synapse pipelines might be essential for your needs. While you're encouraged to continue utilizing ADF / Synapse pipelines if these features are necessary, we encourage you to first explore your new data integration possibilities in Fabric. Your feedback on which features are pivotal for your success is invaluable. To facilitate this, we're actively working on introducing a new capability, enabling the migration of your existing data factories from Azure into Fabric workspaces as well.
+          As we strive to bridge functionality gaps and incorporate the robust pipeline orchestration and workflow capabilities found in ADF / Azure Synapse pipelines into Fabric Data Factory, we acknowledge that certain features present in ADF / Synapse pipelines might be essential for your needs. While you're encouraged to continue utilizing ADF / Synapse pipelines if these features are necessary, we encourage you to first explore your new data integration possibilities in Fabric. Your feedback on which features are pivotal for your success is invaluable. To facilitate this, we're actively working on introducing a new capability, enabling the migration of your existing data factories from Azure into Fabric workspaces as well.
       - question: |
           Are new features in Fabric Data Factory also available in ADF/Synapse?
         answer: |
           We don't backport new features from Fabric pipelines into ADF / Synapse pipelines. We maintain two separate roadmaps for Fabric Data Factory and ADF/ Synapse. We evaluate backport requests in response to incoming feedback.
       - question: |
-          Are Fabric data pipelines the same as Azure Synapse pipelines?
+          Are Fabric pipelines the same as Azure Synapse pipelines?
         answer: |
           The main function of Fabric pipeline is similar to Azure Synapse pipeline, but by using Fabric pipeline, users can apply all the data analytics capabilities in the Fabric platform. Notable differences and feature mappings between Fabric pipeline and Azure Synapse pipeline can be found here: [Differences between Data Factory in Fabric and Azure](compare-fabric-data-factory-and-azure-data-factory.md).
       - question: |
           How do I migrate existing pipelines from Azure Data Factory (or) Azure Synapse workspace to Fabric Data Factory? 
         answer: |
-          To facilitate customers' transition to Microsoft Fabric from Azure Data Factory (ADF), we offer a range of essential features and support mechanisms. Firstly, we provide comprehensive support for most activities used in ADF within Fabric, along with the addition of new activities tailored for notifications, such as Teams and Outlook functionalities. Customers can access a [detailed list of available activities in Data Factory within Fabric](https://learn.microsoft.com/fabric/data-factory/activity-overview). Additionally, we introduced the Fabric Lakehouse / Warehouse connectors in Azure Data Factory, enabling seamless data integration into Fabric's OneLake environment for ADF customers. We also provide a [guide for ADF customers](https://learn.microsoft.com/fabric/data-factory/guide-to-dataflows-for-mapping-data-flow-users) which helps to map your existing mapping data flow transformations to new Dataflow Gen2 transformations. As we look ahead, we're including the capability to mount ADF resources into Fabric in our roadmap, which will allow customers to retain the functionality of their existing ADF pipelines on Azure while exploring Fabric and planning comprehensive upgrade strategies. We're collaborating closely with customers and the community to determine the most effective ways to support the migration of data pipelines from ADF to Fabric. As part of this effort, we'll provide an upgrade experience that empowers you to test your current data pipelines in Fabric through the process of mounting and upgrading them.       
+          To facilitate customers' transition to Microsoft Fabric from Azure Data Factory (ADF), we offer a range of essential features and support mechanisms. Firstly, we provide comprehensive support for most activities used in ADF within Fabric, along with the addition of new activities tailored for notifications, such as Teams and Outlook functionalities. Customers can access a [detailed list of available activities in Data Factory within Fabric](https://learn.microsoft.com/fabric/data-factory/activity-overview). Additionally, we introduced the Fabric Lakehouse / Warehouse connectors in Azure Data Factory, enabling seamless data integration into Fabric's OneLake environment for ADF customers. We also provide a [guide for ADF customers](https://learn.microsoft.com/fabric/data-factory/guide-to-dataflows-for-mapping-data-flow-users) which helps to map your existing mapping data flow transformations to new Dataflow Gen2 transformations. As we look ahead, we're including the capability to mount ADF resources into Fabric in our roadmap, which will allow customers to retain the functionality of their existing ADF pipelines on Azure while exploring Fabric and planning comprehensive upgrade strategies. We're collaborating closely with customers and the community to determine the most effective ways to support the migration of pipelines from ADF to Fabric. As part of this effort, we'll provide an upgrade experience that empowers you to test your current pipelines in Fabric through the process of mounting and upgrading them.       
 additionalContent: |
 
   ## Related content

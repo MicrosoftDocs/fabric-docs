@@ -19,6 +19,6 @@ The Palantir Foundry connector is supported in Data Factory for [!INCLUDE [produ
 
 For information on how to connect to Palantir Foundry in Dataflow Gen2, go to [Set up your Palantir Foundry connection](connector-palantir-foundry.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Palantir Foundry in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Palantir Foundry in pipelines.

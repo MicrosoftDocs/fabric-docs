@@ -64,7 +64,7 @@ You can start pipeline runs in three ways:
 
     :::image type="content" source="media/pipeline-runs/event-based-run.png" alt-text="Screenshot showing where to select Trigger to add event-based run triggers on the home tab.":::
 
-For more information, see [Run, schedule, or trigger a data pipeline](pipeline-runs.md).
+For more information, see [Run, schedule, or trigger a pipeline](pipeline-runs.md).
 
 ### Parameters and variables
 
