@@ -69,6 +69,7 @@ The following items currently support Git integration:
 * Data Science items:
   * [Machine learning experiments](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-git-integration) *(preview)*
   * [Machine learning models](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-git-integration) *(preview)*
+  * [Data Agents](../../data-science/how-to-create-data-agent.md) *(preview)*
 
 * Data Factory items:
 
@@ -87,6 +88,9 @@ The following items currently support Git integration:
   * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)
   * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md)
+  * [Maps](/azure/azure-maps/)
+  * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md)
 
 * Data Warehouse items:
 
@@ -104,7 +108,7 @@ The following items currently support Git integration:
 * Database items:
 
   * [SQL database](../../database/sql/source-control.md) *(preview)*
-
+  * [Cosmos database](../../database/cosmos-db/overview.md) *(preview)*
 * Industry solutions:
 
   * [Healthcare](/industry/healthcare/healthcare-data-solutions/application-lifecycle-management) *(preview)*
