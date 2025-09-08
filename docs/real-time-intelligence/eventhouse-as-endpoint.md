@@ -10,7 +10,7 @@ ms.date: 09/01/2025
 
 # Enable Eventhouse endpoint for lakehouse
 
-The Eventhouse endpoint for Lakehouse is a powerful capability in Microsoft Fabric that enables users to query Lakehouse tables with exceptional speed and ease.
+The Eventhouse endpoint for lakehouse is a powerful capability in Microsoft Fabric that enables users to query Lakehouse tables with exceptional speed and ease.
 
 Use the Eventhouse endpoint to query lakehouse data, discover real-time insights across your data estate, and streamline analysis of structured, semi-structured, and unstructured data.
 
@@ -29,7 +29,7 @@ After you enable the endpoint, it tracks the source lakehouse data and optimizes
 
 ## Performance
 
-Use the Eventhouse endpoint immediately after you create it. The first queries can run more slowly while the service caches data.  Within 10 seconds, the endpoint is fully synced.As more data is cached, the query performance improves. You can check the sync status on the **System Overview** or **Databases** page, and check the status for each **Shortcut**. See [sync statuses](#sync-statuses).
+Use the Eventhouse endpoint immediately after you create it. The first queries can run more slowly while the service caches data. Within 10 seconds, the endpoint is fully synced. As more data is cached, the query performance improves. You can check the sync status on the **System Overview** or **Databases** page, and check the status for each **Shortcut**. See [sync statuses](#sync-statuses).
 
 ## Permissions
 
@@ -52,7 +52,7 @@ You can enable the Eventhouse endpoint from your Fabric workspace, your OneLake 
 
     * From your Fabric **Workspace**, browse to the **Lakehouse**, and from the more options menu **...** select **Eventhouse endpoint**.
 
-      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-workspace.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Workspace."::: 
+      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-workspace.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Workspace.":::
 
     * From the **OneLake catalog**, browse to the **Lakehouse**, and from the more options menu **...** select **Eventhouse endpoint**.
     
@@ -83,7 +83,7 @@ From the Eventhouse endpoint, run queries, create [visualizations](dashboard-rea
 
 :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png" alt-text="Screenshot of the KQL queryset with a get external table schema query.":::
 
-## Disable the endpoint
+## Disable the Eventhouse endpoint
 
 Remove the Eventhouse endpoint from the workspace or the OneLake catalog. The Eventhouse endpoint and the KQL database are deleted. The Lakehouse remains unchanged.
 
@@ -91,19 +91,19 @@ Remove the Eventhouse endpoint from the workspace or the OneLake catalog. The Ev
 
 1. Browse to the Eventhouse Endpoint branch of the Lakehouse tree, and from the more options menu **...** select **Delete**.
 
-    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png" alt-text="Screenshot of the KQL queryset with a get external table schema query.":::
+    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-delete.png" alt-text="Screenshot of the KQL queryset with a get external table schema query.":::
 
 1. In the confirmation dialog, select **Delete**.
 
-## Re-enable the endpoint
+## Re-enable the Eventhouse endpoint
 
-If you delete the Eventhouse endpoint, you can re-enable it at any time. The new endpoint creates a new Eventhouse and KQL database. The new database does not retain any previous queries, visualizations, or dashboards. If you try to re-enable the endpoint while the previous endpoint is still being deleted, you see a message to wait a few seconds. After the previous endpoint is deleted, you can re-enable it.
+If you delete the Eventhouse endpoint, you can re-enable it at any time. The new endpoint creates a new Eventhouse and KQL database. The new database doesn't retain any previous queries, visualizations, or dashboards. If you try to re-enable the endpoint while the previous endpoint is still being deleted, you see a message to wait a few seconds. After the previous endpoint is deleted, you can re-enable it.
 
 :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-deleted.png" alt-text="Message stating that the endpoint is being deleted and to wait a few seconds.":::
 
 ## Sync statuses
 
-The Eventhouse endpoint syncs the source Lakehouse tables and schema changes within seconds. The sync status is displayed in the System Overview and databases page, and in each table shortcut. Here is an example of a sync status:
+The Eventhouse endpoint syncs the source Lakehouse tables and schema changes within seconds. The sync status is displayed in the System Overview and databases page, and in each table shortcut. Here's an example of a sync status:
 
 :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-sync-status.png" alt-text="Screenshot showing the sync status in the System Overview and databases page.":::
 
@@ -126,8 +126,8 @@ The Eventhouse endpoint syncs the source Lakehouse tables and schema changes wit
 ## Limitations
 
 * You can't enable the Eventhouse endpoint from an open lakehouse.
-* The System overview page of the Eventhouse endpoint does not show any statistics.
-* Updates to the Eventhouse endpoint cache policy are not supported
+* The System overview page of the Eventhouse endpoint doesn't show any statistics.
+* Updates to the Eventhouse endpoint cache policy aren't supported
 
 ## Related content
 
