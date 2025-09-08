@@ -10,7 +10,9 @@ ms.date: 09/01/2025
 
 # Enable Eventhouse endpoint for lakehouse
 
-Use the Eventhouse endpoint to query lakehouse data, discover real-time insights across your data estate, and streamline analysis of structured, semi-structured, and unstructured data. After you enable the endpoint, it tracks the source lakehouse data and optimizes it for Eventhouse-like performance and flexibility. [Query acceleration policies](query-acceleration-overview.md) optimize the source data, and the endpoint adds OneLake shortcuts that you query as external tables. Eventhouse shortcuts update automatically as the source lakehouse schema changes.
+The Eventhouse endpoint for Lakehouse is a powerful capability in Microsoft Fabric that enables users to query Lakehouse tables with exceptional speed and ease.
+
+Use the Eventhouse endpoint to query lakehouse data, discover real-time insights across your data estate, and streamline analysis of structured, semi-structured, and unstructured data.
 
 ## Benefits
 
@@ -23,9 +25,11 @@ Enable the Eventhouse endpoint to get:
 * **Fast, scalable queries**: Run analytics in KQL or SQL using advanced external table operators and commands.
 * **Advanced insights**: Run time series analysis, detect anomalies, and use Python for advanced processing.
 
+After you enable the endpoint, it tracks the source lakehouse data and optimizes it for Eventhouse-like performance and flexibility. [Query acceleration policies](query-acceleration-overview.md) optimize the source data, and the endpoint adds [OneLake shortcuts](onelake-shortcuts.md). Eventhouse shortcuts update automatically as the source lakehouse schema changes.
+
 ## Performance
 
-Use the Eventhouse endpoint immediately after you create it. Within 10 seconds, the data is fully synced. The first queries can run more slowly while the service caches data. After the data is fully synced, later queries run faster. Check the sync status on the **System Overview** or **Databases** page, and check the status for each shortcut. See [sync statuses](#sync-statuses).
+Use the Eventhouse endpoint immediately after you create it. The first queries can run more slowly while the service caches data.  Within 10 seconds, the endpoint is fully synced.As more data is cached, the query performance improves. You can check the sync status on the **System Overview** or **Databases** page, and check the status for each **Shortcut**. See [sync statuses](#sync-statuses).
 
 ## Permissions
 
@@ -33,7 +37,7 @@ Users with contributor or owner permission on the parent data source get contrib
 
 ## Sharing
 
-To be able to share the endpoint, configure sharing settings for both the KQL database and the Lakehouse source data.
+To be able to share the endpoint, configure share settings for both the Eventhouse endpoint, the KQL database, and the Lakehouse source data.
 
 ## Prerequisites
 
@@ -42,15 +46,23 @@ To be able to share the endpoint, configure sharing settings for both the KQL da
 
 ## Enable the Eventhouse endpoint
 
-Enable the Eventhouse endpoint from your Fabric workspace or your OneLake catalog.
+You can enable the Eventhouse endpoint from your Fabric workspace, your OneLake catalog, or from the Lakehouse ribbon. After you enable the endpoint, it appears as a child item of the Lakehouse in both the workspace and the OneLake catalog.
 
-1. Go to your **Fabric workspace** or **OneLake catalog**, then open the Lakehouse you want to query in an Eventhouse.
+1. Select the Lakehouse you want to query:
 
-1. Open the more options menu **...** and select **Eventhouse endpoint**.
+    * From your Fabric **Workspace**, browse to the **Lakehouse**, and from the more options menu **...** select **Eventhouse endpoint**.
 
-    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-workspace.png" alt-text="Screenshot of enabling the Eventhouse endpoint from a Lakehouse listed in the workspace.":::
+      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-workspace.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Workspace."::: 
 
-1. A new **Eventhouse Endpoint** opens with a welcome message. Select **Close** to view the Eventhouse.
+    * From the **OneLake catalog**, browse to the **Lakehouse**, and from the more options menu **...** select **Eventhouse endpoint**.
+    
+      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-catalog.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the OneLake catalog."::: 
+
+    * From the **OneLake catalog**, select the **Lakehouse**, and from the Lakehouse toolbar select **Analyze Data** > **Eventhouse endpoint**.
+
+      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Lakehouse ribbon.":::
+
+1. The **Eventhouse Endpoint** opens with a welcome message. Select **Close** to view and start querying the Eventhouse.
 
     :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome-small.png" alt-text="Screenshot of the welcome message for the Eventhouse endpoint." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome.png":::
 
@@ -73,17 +85,19 @@ From the Eventhouse endpoint, run queries, create [visualizations](dashboard-rea
 
 ## Disable the endpoint
 
-Remove the Eventhouse endpoint from the workspace or the OneLake catalog.
+Remove the Eventhouse endpoint from the workspace or the OneLake catalog. The Eventhouse endpoint and the KQL database are deleted. The Lakehouse remains unchanged.
 
-1. Go to your Fabric workspace.
+1. Open the Fabric workspace.
 
-1. Go to the Lakehouse that has the Eventhouse endpoint enabled.
+1. Browse to the Eventhouse Endpoint branch of the Lakehouse tree, and from the more options menu **...** select **Delete**.
 
-1. Open the shortcut menu for the Eventhouse endpoint item, and select **Delete**.
+    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png" alt-text="Screenshot of the KQL queryset with a get external table schema query.":::
+
+1. In the confirmation dialog, select **Delete**.
 
 ## Re-enable the endpoint
 
-[Enable the eventhouse endpoint](#enable-the-eventhouse-endpoint)
+If you delete the Eventhouse endpoint, you can re-enable it at any time. The new endpoint creates a new Eventhouse and KQL database. The new database does not retain any previous queries, visualizations, or dashboards. If you try to re-enable the endpoint while the previous endpoint is still being deleted, you see a message to wait a few seconds. After the previous endpoint is deleted, you can re-enable it.
 
 :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-deleted.png" alt-text="Message stating that the endpoint is being deleted and to wait a few seconds.":::
 
@@ -93,20 +107,27 @@ The Eventhouse endpoint syncs the source Lakehouse tables and schema changes wit
 
 :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-sync-status.png" alt-text="Screenshot showing the sync status in the System Overview and databases page.":::
 
-**Sync statuses for the eventhouse endpoint**:
+**Sync statuses for the Eventhouse endpoint**:
 
 | Sync status | Desription |
 |--|--|
 | synced | All OneLake shortcuts are synchronized. Source link: {link} |
 | workInProgress | Synchronization in progress. ${syncing} of ${total} OneLake shortcuts are currently syncing. Some OneLake shortcuts are still warming up. Source link: {link} |
+| warmingUp | Eventhouse endpoint is warming up. More than 50% of some OneLake shortcuts are warming up. The system is aligning with the source engine. Source link: {link} |
 
-**Sync statuses for shortcuts**:
+**Sync statuses for shortcut**:
 
 | Sync status | Desription |
 |--|--|
 | synced | This shortcut is fully synchronized. Over 98% of the data is in sync with the source. Source link: {link} |
 | workInProgress | Synchronization is underway. Between 20% and 98% of the data is currently synced with the source. Source link: {link} |
 | warmingUp | Synchronization is in progress. Less than 20% of the data is currently synced with the source. Source link: {link} |
+
+## Limitations
+
+* You can't enable the Eventhouse endpoint from an open lakehouse.
+* The System overview page of the Eventhouse endpoint does not show any statistics.
+* Updates to the Eventhouse endpoint cache policy are not supported
 
 ## Related content
 
