@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 # Plan your Microsoft Fabric capacity: Strategic guide overview
 
-This four-part series provides Fabric capacity planning guidance for administrators and Center of Excellence (COE) leads. Learn how to allocate and manage Fabric capacity effectively, from initial adoption to enterprise-scale governance, ensuring your analytics solutions are scalable and well governed.
+This four-part series provides Fabric capacity planning guidance for administrators and Center of Excellence (COE) leads. Learn how to allocate and manage Fabric capacity effectively, from initial adoption to enterprise-scale governance, ensuring your analytics solutions are scalable and well governed. You can also estimate your capacity needs with the [Microsoft Fabric SKU estimator (preview)](https://www.microsoft.com/en-us/microsoft-fabric/capacity-estimator). Enter details such as data size and workloads etc. and the tool will suggest an approximate SKU and storage. This tool only gives an estimate, actual SKUs, and costs may vary by region, usage, and number of users.
 
 ## Series objectives
 
