@@ -20,8 +20,8 @@ This article shows you how to add an Azure Event Grid Namespace source to an eve
 
 ## Prerequisites
 
-- Eventstream created in My workspace do not support adding an Azure Event Grid namespace as a source. 
-- A workspace in Fabric capacity or Trial license mode is required, along with the following access:
+- Create or have an Azure Event Grid namespace with [managed identity](/azure/event-grid/event-grid-namespace-managed-identity) enabled. 
+- A workspace that is not ‘My workspace’, operating in Fabric capacity or Trial license mode, is required, together with the following access.:
     - If you have Member (or higher) permissions, no extra setup is needed. 
     - If you don’t have Member permissions, ask a colleague with Member access to assign Contributor access to the Event Grid service principal before you add the source:
 
@@ -30,8 +30,6 @@ This article shows you how to add an Azure Event Grid Namespace source to an eve
         1. Enter the Event Grid namespace name and choose the matching service principal.
         1. Assign the Contributor role and select Add.
     
-- Enable [managed identity](/azure/event-grid/event-grid-namespace-managed-identity) on the Event Grid namespace. 
-- Create or have an Azure Event Grid namespace with [managed identity](/azure/event-grid/event-grid-namespace-managed-identity) enabled. 
 - Enable [MQTT](/azure/event-grid/mqtt-publish-and-subscribe-portal) and [routing](/azure/event-grid/mqtt-routing) on the Event Grid namespace, if you want to receive Message Queuing Telemetry Transport (MQTT) data. 
 - [Create an eventstream](create-manage-an-eventstream.md) if you don't have one. 
 
