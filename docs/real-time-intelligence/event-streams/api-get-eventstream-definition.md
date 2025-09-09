@@ -6,7 +6,7 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-ms.date: 12/16/2024
+ms.date: 09/08/2025
 ms.search.form: Eventstream REST API
 ---
 
@@ -162,7 +162,7 @@ Below is the decoded payload content of the Base64 string for reference.
       }
     }
   ],
-  "compatibilityLevel": "1.0"
+  "compatibilityLevel": "1.1"
 }
 ```
 
