@@ -3,8 +3,8 @@ title: Query Using the Visual Query Editor
 description: Learn how to use the visual query editor for a no-code experience to create your queries.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: prlangad, jacindaeng
-ms.date: 09/20/2024
+ms.reviewer: prlangad, jacindaeng, fresantos
+ms.date: 09/08/2025
 ms.topic: how-to
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
@@ -84,8 +84,7 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 - Visualize Results currently does not support SQL queries with an `ORDER BY` clause.
 - When viewing SQL script joining two or more tables, only the table with load enabled selected will show the corresponding SQL script.
 - There are certain steps that the View SQL feature does not support in which a banner in the visual query editor indicates stating "The query is not supported as a warehouse view, since it cannot be fully translated to SQL". For more information, see [Query folding indicators in Power Query](/power-query/step-folding-indicators).
-- Warehouses with very large schemas (more than 750,000 combined objects—tables, views, and columns) are not supported for modeling.
-- In addition to the above, Warehouses with very large schemas  will take significantly longer because schema information is not cached and must be computed on demand.
+- Warehouses with very large schemas  will take significantly longer because schema information is not cached and must be computed on demand. Warehouses with more than 750,000 combined objects—tables, views, and columns) are not supported for modeling.
 
 ## Related content
 
