@@ -209,6 +209,20 @@ These APIs are supported in following scenarios:
 > * Copy to Eventhouse isn't supported.
 > * OneLake staging isn't currently supported.
 
+### Eventstream support
+
+* [Items - REST API (Eventstream)](/rest/api/fabric/eventstream/items)
+
+Eventstream APIs use a graph-like structure to define an Eventstream item, which consists of four components: source, destination, operator, and stream. 
+
+Currently, Eventstream only supports Workspace Private Link for a limited set of sources and destinations. If you include an unsupported component in the Eventstream API payload, the request may fail.
+
+Unsupported scenarios:
+* Custom Endpoint as a source is not supported.
+* Custom Endpoint as a destination is not supported.
+* Eventhouse as a destination (with direct ingestion mode) is not supported.
+* Activator as a destination is not supported.
+
 ### Eventhouse support
 
 [Items - REST API (Eventhouse)](/rest/api/fabric/eventhouse/items)
