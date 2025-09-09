@@ -4,7 +4,7 @@ description: T-SQL surface area of the SQL analytics endpoint and warehouse in M
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo, jovanpop, twinklecyril
-ms.date: 04/06/2025
+ms.date: 09/08/2025
 ms.topic: conceptual
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
@@ -30,6 +30,7 @@ For SQL database in Fabric, see [Features comparison: Azure SQL Database and SQL
 - To change the name of the column in a user table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], use the `sp_rename` stored procedure. 
 - A subset of query and join hints are supported. For more information, see [Hints (Transact-SQL)](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true).
 - Session-scoped distributed #temp tables are supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+- `MERGE` syntax is supported as a preview feature. For more information, see [MERGE T-SQL syntax](/sql/t-sql/statements/merge-transact-sql?view=fabric&preserve-view=true).
 
 ### Limitations
 
@@ -47,7 +48,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - IDENTITY Columns
 - Manually created multi-column stats
 - Materialized views
-- `MERGE`
 - `PREDICT`
 - Queries targeting system and user tables
 - Recursive queries
