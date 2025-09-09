@@ -46,9 +46,9 @@ In GQL, you use labeled property graphs. A graph has nodes and edges, which are 
 
 ### Nodes and edges represent your domain
 
-Nodes usually model the entities (the "nouns") in your system, like people, organizations, posts, or comments on a social media site. They are things that exist independently in your domain.
+Nodes usually model the entities (the "nouns") in your system, like people, organizations, posts, or comments on a social media site. They are things that exist independently in your domain. Nodes are sometimes also called vertices.
 
-Graph edges model relationships between entities (the "verbs"), like which people know each other, which organization is in which country or region, or who commented on which post. They show how your entities connect and interact.
+Graph edges model relationships between entities (the "verbs"), like which people know each other, which organization is in which country or region, or who commented on which post. They show how your entities connect and interact. Edges are sometimes also called relationships.
 
 Every graph element has these characteristics:
 
@@ -88,9 +88,9 @@ The example social network domain includes:
 Notable features of this graph are:
 
 - **Inheritance hierarchies** for places (City → Country → Continent) and organizations (University, Company → Organization)
-- **Abstract types** for Message and Organization to define shared properties
-- **Graph edge families** for relationships like `isPartOf` and `likes` that connect different types of nodes
-- **Comprehensive constraints** to ensure data integrity
+- **Abstract node types** for Message and Organization to define shared properties
+- **Graph edge type families** for relationships like `isPartOf` and `likes` that connect different types of nodes
+- **Key constraints** to ensure data integrity
 
 Here is the complete technical specification of this graph type:
 
@@ -98,7 +98,7 @@ Here is the complete technical specification of this graph type:
 (:TagClass => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
 
 CONSTRAINT tag_class_pk
-FOR (n:TagClass) REQUIRE (n.id) IS PRIMARY KEY,
+FOR (n:TagClass) REQUIRE (n.id) IS KEY,
 
 (:TagClass)-[:isSubclassOf]->(:TagClass),
 
@@ -107,7 +107,7 @@ FOR (n:TagClass) REQUIRE (n.id) IS PRIMARY KEY,
 (:Tag)-[:hasType]->(:TagClass),
 
 CONSTRAINT tag_pk
-FOR (n:Tag) REQUIRE (n.id) IS PRIMARY KEY,
+FOR (n:Tag) REQUIRE (n.id) IS KEY,
 
 ABSTRACT
 (:Place => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
@@ -117,7 +117,7 @@ ABSTRACT
 (:Continent => :Place),
 
 CONSTRAINT place_pk
-FOR (n:Place) REQUIRE (n.id) IS PRIMARY KEY,
+FOR (n:Place) REQUIRE (n.id) IS KEY,
 
 (:City)-[:isPartOf]->(:Country),
 (:Country)-[:isPartOf]->(:Continent),
@@ -146,7 +146,7 @@ FOR (n:Organisation) REQUIRE (n.id) IS KEY,
 }),
 
 CONSTRAINT person_pk
-FOR (n:Person) REQUIRE (n.id) IS PRIMARY KEY,
+FOR (n:Person) REQUIRE (n.id) IS KEY,
 
 (:Person)-[:hasInterest]->(:Tag),
 (:Person)-[:isLocatedIn]->(:City),
@@ -161,7 +161,7 @@ FOR (n:Person) REQUIRE (n.id) IS PRIMARY KEY,
 }),
 
 CONSTRAINT forum_pk
-FOR (n:Forum) REQUIRE (n.id) IS PRIMARY KEY,
+FOR (n:Forum) REQUIRE (n.id) IS KEY,
 
 (:Forum)-[:hasTag]->(:Tag),
 (:Forum)-[:hasMember { creationDate :: ZONED DATETIME, joinDate :: UINT64 }]->(:Person),
@@ -177,7 +177,7 @@ ABSTRACT (:Message => {
 }),
 
 CONSTRAINT message_pk
-FOR (n:Message) REQUIRE (n.id) IS PRIMARY KEY,
+FOR (n:Message) REQUIRE (n.id) IS KEY,
 
 (:Post => :Message += {
     language :: STRING,
@@ -288,7 +288,7 @@ Each match creates a row with columns for each path, node, or edge variable boun
 
 - If columns from a previous statement overlap with columns from matched nodes and edges, they're joined automatically using equality.
 - Input rows without matching graph patterns are discarded (like an inner join in SQL).
-- If you use a predicate, only rows where the predicate is `TRUE` are kept.
+- If you use a predicate, only rows where the predicate evaluates to `TRUE` are kept.
 
 For complete details about graph pattern syntax, see the [Work with graph patterns](#work-with-graph-patterns) section.
 
@@ -328,11 +328,11 @@ FILTER [ WHERE ] <predicate>
 
 **Description:**
 
-Use the `FILTER` statement to keep only rows where the predicate is `TRUE`. The `FILTER` statement works like the `WHERE` clause in SQL and helps you narrow your results based on specific conditions.
+Use the `FILTER` statement to keep only rows where the predicate evaluates to `TRUE`. The `FILTER` statement works like the `WHERE` clause in SQL and helps you narrow your results based on specific conditions.
 
 **Key behaviors:**
 
-- Rows where the predicate is `FALSE` or `UNKNOWN` (null) are removed.
+- Rows where the predicate evaluates to `FALSE` or `UNKNOWN` (null) are removed.
 - The `WHERE` keyword is optional—`FILTER predicate` and `FILTER WHERE predicate` mean the same thing.
 - Build complex predicates using logical operators (`AND`, `OR`, `NOT`).
 
@@ -359,7 +359,6 @@ Use the `ORDER BY` statement to sort input rows by the specified expressions. So
 - Use `ASC` for ascending order (the default) or `DESC` for descending order.
 - The null value is always considered the "smallest" value in sorting operations.
 
-
 ### `OFFSET` and `LIMIT` statements
 
 **Syntax:**
@@ -381,8 +380,8 @@ Use the `OFFSET` and `LIMIT` statements to control which part of the input rows 
 **Usage patterns:**
 
 - When you use both together, `OFFSET` is applied first, then `LIMIT` is applied to the remaining rows.
-- You can use `LIMIT` alone to get the first N rows (like "TOP N" in SQL).
-- Combine both to extract a specific slice of rows from the result. This is useful for pagination.
+- You can use `LIMIT` alone to get the first N rows (like "TOP N").
+- Combine both to extract a specific slice of rows from the result. This can be useful for result pagination.
 
 > [!IMPORTANT]
 > For predictable pagination results, always use `ORDER BY` before `OFFSET` and `LIMIT` to ensure consistent row ordering across queries.
@@ -464,7 +463,7 @@ Graph edge patterns are more complex than node patterns because they not only sp
 (:Person)-[:likes { creationDate: ZONED_DATETIME("2000-01-01T18:00:00Z") }]->(:Comment)
 ```
 
-The arrow direction `-[...]->` is important—it determines `(:Person)` as the source node pattern and `(:Comment)` as the destination node pattern. Understanding edge direction is crucial for modeling your domain correctly.
+The arrow direction `-[...]->` is important—it determines `(:Person)` as the source node pattern and `(:Comment)` as the destination node pattern. Understanding edge direction is crucial for querying your graph correctly.
 
 **Equivalent mirrored pattern:**
 
@@ -478,13 +477,13 @@ This pattern finds the same relationships but from the opposite perspective.
 
 #### Any-directed edge patterns
 
-When the direction of a relationship doesn't matter for your query, you can leave it unspecified by creating an any-directed edge pattern:
+When the direction of a graph edge doesn't matter for your query, you can leave it unspecified by creating an any-directed edge pattern:
 
 ```gql
 (:Song)-[:inspired]-(:Movie)
 ```
 
-This pattern matches the same relationships as `(:Song)-[:inspired]->(:Movie)` and `(:Movie)-[:inspired]->(:Song)` combined, regardless of which node is the source and which is the destination (this example isn't from the social network graph type).
+This pattern matches the same edges as `(:Song)-[:inspired]->(:Movie)` and `(:Movie)-[:inspired]->(:Song)` combined, regardless of which node is the source and which is the destination (this example isn't from the social network graph type).
 
 #### Graph edge pattern shortcuts
 
@@ -494,7 +493,7 @@ GQL provides convenient shortcuts for common edge patterns to make your queries 
 - `()<-()` stands for `()<-[]-()`  (directed edge in reverse with any label)  
 - `()-()` stands for `()-[]-()`    (any-directed edge with any label)
 
-These shortcuts can be useful when you care about connectivity but not about the specific relationship type.
+These shortcuts can be useful when you care about connectivity but not about the specific graph edge type.
 
 ### Label expressions
 
@@ -511,11 +510,11 @@ This counts the number of `isLocatedIn` edges connecting `Person` nodes or not-`
 
 **Syntax:**
 
-| Syntax | Meaning                                       |
-|--------|-----------------------------------------------|
-| `A&B`  | Labels need to include both A and B.           |
-| `A\|B` | Labels need to include at least one of A or B. |
-| `!A`   | Labels need to exclude A.                      |
+| Syntax    | Meaning                                        |
+|-----------|------------------------------------------------|
+| `A&B`     | Labels need to include both A and B.           |
+| `A \| B`  | Labels need to include at least one of A or B. |
+| `!A`      | Labels need to exclude A.                      |
 
 Additionally, use parenthesis to control the order of label expression evaluation. By default, `!` has the highest precedence and `&` has higher precedence than `\|`. Therefore `!A&B|C|!D` is the same as `(!A)&(B|C|(!D))`.
 
@@ -562,7 +561,6 @@ p=(c:Company)<-[:workAt]-(x:Person)-[:knows]-(y:Person)-[:workAt]->(c:Company)
 ```
 
 Here, `p` is bound to a path value representing the complete matched path structure, including all nodes and edges in sequence.
-
 
 ### Compose patterns
 
@@ -1096,10 +1094,13 @@ All numbers are compared by their numeric value.
 
 **How to write integer literals:**
 
-| Description          | Example   | Value  |
-|----------------------|-----------|--------|
-| Integer              | 123456    | 123456 |
-| Integer w. grouping  | 123_456   | 123456 |
+| Description                 | Example    |  Value  |
+|-----------------------------|------------|---------|
+| Integer                     |  123456    |  123456 |
+| Integer w. grouping         |  123_456   |  123456 |
+| Explicitly positive integer | +123456    |  123456 |
+| Zero                        |       0    |       0 |
+| Negative integer            | -123456    | -123456 |
 
 **Type syntax:**
 
@@ -1356,7 +1357,7 @@ Predicates are boolean expressions, which are commonly used to filter results in
 Compare values using these operators:
 
 - `=` (equal)
-- `<>` or `!=` (not equal)
+- `<>` (not equal)
 - `<` (less than)
 - `>` (greater than)
 - `<=` (less than or equal)
@@ -1506,7 +1507,7 @@ Aggregate functions are used in three different ways:
 
 - For computing (vertical) aggregates over whole tables
 - For computing (vertical) aggregates over subtables determined by a grouping key
-- For computing (horizontal) aggregates over the elements of a group list.
+- For computing (horizontal) aggregates over the elements of a group list
 
 **Vertical aggregates:**
 
@@ -1536,7 +1537,9 @@ LET average_friend_creationDate = avg(e.creationDate)
 RETURN p.firstName || ' ' || p.lastName AS name, average_friend_creationDate
 ```
 
-Horizontal aggregation always takes precedence over vertical aggregation. To convert a group list into a regular list, use `collect_list(e)`.
+> [!TIP]
+> Horizontal aggregation always takes precedence over vertical aggregation. 
+> To convert a group list into a regular list, use `collect_list(e)`.
 
 #### String functions
 
@@ -1607,8 +1610,8 @@ GQL reserves certain keywords that you can't use as identifiers like variables, 
 
 If you need to use reserved words as identifiers, escape them with backticks: `` `match` ``, `` `return` ``.
 
-Alternatively, to avoid escaping reserved words, use these naming conventions:
-- When you use single-word identifiers, append an underscore as in `:Product_`. Microsoft Fabric intends to never add single reserved words that end in an underscore.
+Alternatively, to avoid having to escape reserved words, use these naming conventions:
+- When you use single-word identifiers, append an underscore as in `:Product_`. Graph in Microsoft Fabric intends to never add single reserved words that end in an underscore.
 - When you use multi-word identifiers, either do the same or, alternatively, don't join them with underscores. Use camelCase or PascalCase conventions instead, like `:MyEntity`, `:hasAttribute`, or `textColor`. Graph in Microsoft Fabric intends to never add compound reserved words in which the compounds aren't separated by underscores.
 
 ## Related content
