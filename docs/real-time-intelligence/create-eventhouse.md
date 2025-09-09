@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 05/11/2025
+ms.date: 07/29/2025
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to create an eventhouse for data storage in Real-Time Intelligence so that I can effectively manage my data.
 ---
@@ -57,11 +57,26 @@ To learn more about creating KQL databases, see [Create a KQL database](create-d
 
 ## Rename an eventhouse
 
-1. Browse to the eventhouse item in your workspace.
+1. Browse to the eventhouse in your workspace.
 1. Click on the name of the eventhouse in the top left corner.
 1. Enter a new name for the eventhouse.
 
     :::image type="content" source="media/eventhouse/rename.png" alt-text="Screenshot of renaming an eventhouse.":::
+
+## Share an Eventhouse link
+
+Sharing a direct link to an Eventhouse enables users to access the Eventhouse and its components, such as KQL databases and embedded querysets, with the same permissions as the sharer. For more information see [Share an Eventhouse](eventhouse.md#share-an-eventhouse).
+
+1. Browse to the Eventhouse in your workspace.
+1. Select **Share** in the top right corner.
+1. Select the Eventhouse items to share.
+1. Send the links to the intended recipients.
+
+// screenshot of options after you click on the Share button. //
+
+> [!NOTE]
+>
+> To share a single database, use the [Share a KQL Database link](access-database-copy-uri.md#share-a-kql-database-link) option.
 
 ## Delete an eventhouse
 
