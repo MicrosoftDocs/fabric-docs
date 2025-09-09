@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sngun
-ms.date: 08/20/2025
+ms.date: 09/08/2025
 ms.update-cycle: 30-days
 ms.topic: whats-new
 ms.collection:
