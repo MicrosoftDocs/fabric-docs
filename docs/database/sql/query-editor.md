@@ -93,4 +93,3 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 ## Related Content
 
 - [Connect to your SQL database in Microsoft Fabric](connect.md)
-- [Features comparison: Azure SQL Database and SQL database in Fabric (preview)](feature-comparison-sql-database-fabric.md)
