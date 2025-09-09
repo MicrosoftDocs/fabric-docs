@@ -211,6 +211,7 @@ These APIs are supported in following scenarios:
 
 ### Eventstream support
 
+You can use these APIs in workspaces with Private Link enabled to create Eventstream items and view their topology.
 * [Items - REST API (Eventstream)](/rest/api/fabric/eventstream/items)
 
 Eventstream APIs use a graph-like structure to define an Eventstream item, which consists of four components: source, destination, operator, and stream. 
