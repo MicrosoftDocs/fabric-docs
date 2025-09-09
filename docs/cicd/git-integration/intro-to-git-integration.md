@@ -60,11 +60,11 @@ The following items currently support Git integration:
 * Data Engineering items:
 
   * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#integrate-git-for-fabric-environments)
-  * [GraphQL](../../data-engineering/graphql-source-control-and-deployment.md#api-for-graphql-git-integration) *(preview)*
+  * [GraphQL](../../data-engineering/graphql-source-control-and-deployment.md#api-for-graphql-git-integration)
   * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#lakehouse-git-integration) *(preview)*
   * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
-  * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
-  * User Data Functions *(preview)*
+  * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md)
+  * [User Data Functions](../../data-engineering/user-data-functions/user-data-functions-overview.md)
 
 * Data Science items:
   * [Machine learning experiments](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-git-integration) *(preview)*
@@ -73,12 +73,12 @@ The following items currently support Git integration:
 
 * Data Factory items:
 
-  * [Copy Job](../../data-factory/cicd-copy-job.md#git-integration-for-copy-job) *(preview)*
+  * [Copy Job](../../data-factory/cicd-copy-job.md#git-integration-for-copy-job)
   * [Dataflow gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
   * [Data pipeline](../../data-factory/cicd-pipelines.md)
   * [Mirrored database](../../mirroring/mirrored-database-cicd.md#mirrored-database-git-integration)
-  * Mount ADF *(preview)*
-
+  * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric)
+  * [Mirrored snowflake](../../mirroring/snowflake.md)*(preview)*
 
 * Real-time Intelligence items:
 
@@ -88,9 +88,9 @@ The following items currently support Git integration:
   * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)
   * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
-  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md)
-  * [Maps](/azure/azure-maps/)
-  * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md)
+  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md)*(preview)*
+  * [Maps](/azure/azure-maps/)*(preview)*
+  * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md)*(preview)*
 
 * Data Warehouse items:
 
