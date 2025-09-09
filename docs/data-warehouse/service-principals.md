@@ -47,7 +47,7 @@ Warehouses created by an SPN using REST APIs will be displayed in the Workspace 
 You can connect to Fabric warehouses by using service principals with tools like SQL Server Management Studio (SSMS) 19 or higher versions.
 
 - **Authentication**: **Microsoft Entra Service Principal**
-- **User name**: Spplication (client) ID of the service principal (created through Azure)
+- **User name**: Application (client) ID of the service principal (created through Azure)
 - **Password**: Secret (created through Azure)
 
 :::image type="content" source="media/service-principals/microsoft-entra-service-principal-sign-in.png" alt-text="Screenshot of signing into Fabric with an SPN in SQL Server Management Studio (SSMS)." lightbox="media/service-principals/microsoft-entra-service-principal-sign-in.png":::
