@@ -55,12 +55,12 @@ After you enable the endpoint, it appears as a child item of the Lakehouse in bo
       :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-workspace.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Workspace.":::
 
     * From the **OneLake catalog**, browse to the **Lakehouse**, and from the more options menu **...** select **Eventhouse endpoint**.
-    
+
       :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-catalog.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the OneLake catalog."::: 
 
     * From the **OneLake catalog**, select the **Lakehouse**, and from the Lakehouse toolbar select **Analyze Data** > **Eventhouse endpoint**.
 
-      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Lakehouse ribbon. lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png"":::
+      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Lakehouse ribbon." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png":::
 
 1. The **Eventhouse Endpoint** opens with a welcome message. Select **Close** to view and start querying the Eventhouse.
 
