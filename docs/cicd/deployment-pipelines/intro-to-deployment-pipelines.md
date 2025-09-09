@@ -57,7 +57,7 @@ When you deploy content from one pipeline stage to another, the copied content c
   * [Data pipeline](../../data-factory/cicd-pipelines.md)
   * [Mirrored database](../../mirroring/mirrored-database-cicd.md#mirrored-database-in-deployment-pipelines)
   * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric.md)
-  * [Mirrored snowflake](../../mirroring/snowflake.md)*(preview)*
+  * [Mirrored snowflake](../../mirroring/snowflake.md) *(preview)*
   
 
 * Real-time Intelligence items:
@@ -69,9 +69,9 @@ When you deploy content from one pipeline stage to another, the copied content c
   * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)
   * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md)
   * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
-  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md)*(preview)*
-  * [Maps](/azure/azure-maps/)*(preview)*
-  * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md)*(preview)*
+  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md) *(preview)*
+  * [Maps](/azure/azure-maps/) *(preview)*
+  * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md) *(preview)*
 
 * Data Warehouse items:
 
