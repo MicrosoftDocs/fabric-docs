@@ -125,7 +125,7 @@ The Eventhouse endpoint syncs the source Lakehouse tables and schema changes wit
 
 ## Considerations and limitations
 
-* You can't currentlty enable the Eventhouse endpoint from within an open lakehouse.
+* You can't currently enable the Eventhouse endpoint from within an open lakehouse.
 * The System overview page of the Eventhouse endpoint doesn't show any statistics.
 * Updates to the Eventhouse endpoint cache policy aren't supported
 
