@@ -110,7 +110,7 @@ For interactive users, the Fabric portal automatically initializes the Control P
 
 #### Initial token requirement for new SPNs
 
-For newly created service principals, you must generate the initial Fabric security token by signing in through the Fabric REST API.
+For newly created service principals, you must generate the initial Fabric security token by signing in through the Fabric REST API. Until the security token is generated, you will receive error messages related to files not existing or permissions are not granted, even though the service principal does have permissions to the file.
 
 Connecting to Warehouse through the SQL analytics endpoint connection string doesn't generate Fabric tokens for the SPN. The first successful API call with the SPN establishes the token in Fabric.
 
