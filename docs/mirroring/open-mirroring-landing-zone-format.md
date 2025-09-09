@@ -4,7 +4,7 @@ description: Review the requirements for files in the landing for open mirroring
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur, marakiketema
-ms.date: 07/17/2025
+ms.date: 09/09/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -19,7 +19,7 @@ Once you have created your open mirrored database via the Fabric portal or publi
 
 ## Landing zone
 
-For every mirrored database, there is a unique storage location in OneLake for metadata and delta tables. Open mirroring provides a landing zone folder for application to create a metadata file and push data into OneLake. Mirroring monitors these files in the landing zone and read the folder for new tables and data added.
+For every mirrored database, there's a unique storage location in OneLake for metadata and delta tables. Open mirroring provides a landing zone folder for application to create a metadata file and push data into OneLake. Mirroring monitors these files in the landing zone and read the folder for new tables and data added.
 
 For example, if you have tables (`Table A`, `Table B`, `Table C`) to be created in the landing zone, create folders like the following URLs:
 
@@ -41,11 +41,11 @@ For example, to declare columns `C1` and `C2` as a compound unique key for the t
 }
 ```
 
-If `keyColumns` or `_metadata.json` is not specified, then update/deletes are not possible. This file can be added anytime, but once added `keyColumns` can't be changed.
+If `keyColumns` or `_metadata.json` isn't specified, then update/deletes aren't possible. This file can be added anytime, but once added `keyColumns` can't be changed.
 
 ### Events file in the landing zone
 
-If you are a partner implementing an open mirroring solution or a customer who'd like to provide additional details to us about the type of source you're mirroring into OneLake, we've added a new `_partnerEvents.json` file. This is not required but strongly recommended. 
+If you're a partner implementing an open mirroring solution or a customer who would like to provide more details to us about the type of source you're mirroring into OneLake, we've added a new `_partnerEvents.json` file. This isn't required, but is strongly recommended.
 
 Example: 
 
@@ -89,7 +89,7 @@ Open mirroring supports data intake in Parquet or delimited text formats. Files 
    | `EscapeCharacter`    | Used to escape quotes inside quoted values.   | Default is `\`. Can also be `/`, `"`, or empty.                       |
    | `NullValue`          | String representation of null values.         | Can be `""`, `"N/A"`, `"null"`, etc.                                  |
    | `Encoding`           | Character encoding of the file.               | Default is `UTF-8`. Supports a wide range of encodings including `ascii`, `utf-16`, `windows-1252`, etc. |
-   | `SchemaDefinition`   | Defines column names, types, and nullability. | Schema evolution is not supported.                                    |
+   | `SchemaDefinition`   | Defines column names, types, and nullability. | Schema evolution isn't supported.                                    |
    | `FileFormat`         | Format of the data file.                      | Defaults to `CSV` if not specified. Must be `"DelimitedText"` for formats other than CSV. |
    | `FileExtension`      | Specifies file extension like `.tsv`, `.psv`. | Required when using `DelimitedText`.                                  |
 
@@ -98,29 +98,28 @@ Open mirroring supports data intake in Parquet or delimited text formats. Files 
    ```json
    {
    "KeyColumns": [ "id" ],
-   "ConditionalUpdateColumn": "seqNum",
    "SchemaDefinition": {
-                "Columns": [
-                            {
-                            "Name": "id",
-                            "DataType": "Int32"
-                            },
-                            {
-                            "Name": "name",
-                            "DataType": "String",
-                            "IsNullable": true
-                            },
-                            {
-                            "Name": "age",
-                            "DataType": "Int32",
-                            "IsNullable": true
-                            },
-                            {
-                            "Name": "seqNum",
-                            "DataType": "Int64",
-                            "IsNullable": false
-                            }
-                           ]
+      "Columns": [
+                    {
+                    "Name": "id",
+                    "DataType": "Int32"
+                    },
+                    {
+                    "Name": "name",
+                    "DataType": "String",
+                    "IsNullable": true
+                    },
+                    {
+                    "Name": "age",
+                    "DataType": "Int32",
+                    "IsNullable": true
+                    },
+                    {
+                    "Name": "seqNum",
+                    "DataType": "Int64",
+                    "IsNullable": false
+                    }
+                  ]
                 },
    "FileFormat": "DelimitedText",
    "FileExtension": "tsv",
@@ -134,9 +133,9 @@ Open mirroring supports data intake in Parquet or delimited text formats. Files 
                               "Encoding": "UTF-8"
                            }
    }
-   ```
-   
-- Only delimited text formats are expected to have a data type in the file `_metadata.json`. Parquet files do not need to specify column type information. The data types currently supported:
+  ```
+
+- Only delimited text formats are expected to have a data type in the file `_metadata.json`. Parquet files don't need to specify column type information. The data types currently supported:
 
 | Supported data type | Description                                                                         |
 |---------------------|------------------------------------------------------------------------------------|
@@ -176,6 +175,25 @@ All files written to the landing zone have the following format:
  > [!IMPORTANT]
  > The `__rowMarker__` column needs to be the final column in the list
 
+### Nonsequential files
+
+Nonsequential files are also supported; files will be read based on their timestamp. To specify this and default to upsert changes rather than inserts, update the _metadata.json file like this:
+
+```json
+{
+   "keyColumns" : ["id"],
+   "fileDetectionStrategy": LastUpdateTimeFileDetection,
+   "isUpsertDefaultRowMarker": true
+}
+```
+
+The 'default to upsert' doesn't depend on nonsequential files. All the following combinations are supported:
+
+- Have both **fileDetectionStrategy** as LastUpdateTimeFileDetection and **isUpsertDefaultRowMarker** as true.
+- Only have **isUpsertDefaultRowMarker** as true.
+- Only have **fileDetectionStrategy** as LastUpdateTimeFileDetection.
+- Default
+
 ### Initial load
 
 For the initial load of data into an open mirrored database, `__rowMarker__` in the initial data file is optional and not recommended. Mirroring treats the entire file as an INSERT when `__rowMarker__` doesn't exist.
@@ -190,7 +208,7 @@ Data changes are considered as incremental changes once the `__rowMarker__` colu
 
 Updated rows must contain the full row data, with all columns. 
 
-Here is some sample parquet data of the row history to change the `EmployeeLocation` for `EmployeeID` E0001 from Redmond to Bellevue. In this scenario, the `EmployeeID` column has been marked as a key column in the [metadata file in the landing zone](#metadata-file-in-the-landing-zone).
+Here's some sample parquet data of the row history to change the `EmployeeLocation` for `EmployeeID` E0001 from Redmond to Bellevue. In this scenario, the `EmployeeID` column has been marked as a key column in the [metadata file in the landing zone](#metadata-file-in-the-landing-zone).
 
 ```parquet
 EmployeeID,EmployeeLocation,__rowMarker__
