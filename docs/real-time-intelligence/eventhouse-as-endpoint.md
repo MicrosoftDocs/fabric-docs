@@ -46,9 +46,9 @@ To be able to share the endpoint, configure share settings for both the Eventhou
 
 ## Enable the Eventhouse endpoint
 
-You can enable the Eventhouse endpoint from your Fabric workspace, your OneLake catalog, or from the Lakehouse ribbon. After you enable the endpoint, it appears as a child item of the Lakehouse in both the workspace and the OneLake catalog.
+After you enable the endpoint, it appears as a child item of the Lakehouse in both the workspace and the OneLake catalog.
 
-1. Select the Lakehouse you want to query:
+1. Select the Lakehouse you want to query. You can enable the Eventhouse endpoint from your Fabric workspace, your OneLake catalog, or from the Lakehouse ribbon.
 
     * From your Fabric **Workspace**, browse to the **Lakehouse**, and from the more options menu **...** select **Eventhouse endpoint**.
 
@@ -60,7 +60,7 @@ You can enable the Eventhouse endpoint from your Fabric workspace, your OneLake 
 
     * From the **OneLake catalog**, select the **Lakehouse**, and from the Lakehouse toolbar select **Analyze Data** > **Eventhouse endpoint**.
 
-      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Lakehouse ribbon.":::
+      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Lakehouse ribbon. lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png"":::
 
 1. The **Eventhouse Endpoint** opens with a welcome message. Select **Close** to view and start querying the Eventhouse.
 
@@ -81,7 +81,7 @@ The workspace and the OneLake catalog show the endpoint and the KQL database as 
 
 From the Eventhouse endpoint, run queries, create [visualizations](dashboard-real-time-create.md), and perform advanced analytics using KQL or SQL. In the KQL queryset, use the [external_table()](/kusto/query/external-table-function?view=azure-data-explorer&preserve-view=true) function.
 
-:::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png" alt-text="Screenshot of the KQL queryset with a get external table schema query.":::
+:::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png" alt-text="Screenshot of the KQL queryset with a get external table schema query." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png":::
 
 ## Disable the Eventhouse endpoint
 
@@ -125,7 +125,7 @@ The Eventhouse endpoint syncs the source Lakehouse tables and schema changes wit
 
 ## Considerations and limitations
 
-* You can't currenlty enable the Eventhouse endpoint from within an open lakehouse.
+* You can't currentlty enable the Eventhouse endpoint from within an open lakehouse.
 * The System overview page of the Eventhouse endpoint doesn't show any statistics.
 * Updates to the Eventhouse endpoint cache policy aren't supported
 
