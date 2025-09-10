@@ -170,6 +170,20 @@ Defines your item categories for integrating with the Fabric [Task Flow Framewor
 
 If no category is specified, `"others"` is used as the default.
 
+### Item OneLake Catalog Categories
+
+Defines categories in which your item is shown in OneLake catalog.
+
+- **oneLakeCatalogCategory** (array): Specifies the categories in which the item is shown in OneLake catalog. Each item can have up to two categories. Supported categories are:
+  - `"Data"`
+  - `"Insight"`
+  - `"Process"`
+  - `"Solution"`
+  - `"Configuration"`
+  - `"Other"`
+
+If no category is specified, the item won't be shown in OneLake catalog.
+
 > [!NOTE]
 > When developing and testing new attributes added to the manifest, ensure you have synced the latest [validation scripts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/validation) and [tools](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/tools) from our sample repository.
 >

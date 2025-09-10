@@ -229,6 +229,8 @@ items:
             href: executor-log.md
           - name: Resource usage APIs
             href: resource-usage-apis.md
+          - name: Spark Advisor API
+            href: spark-advisor-api.md
       - name: Collecting Spark Logs & Metrics
         items: 
           - name: Collect Logs & Metrics with Azure Log Analytics
