@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 Data Factory in Microsoft Fabric helps you solve one of business's toughest challenges: turning scattered data into useful insights.
 
-Your organization's data lives in many different places: databases, files, cloud services, and legacy systems. This makes it hard to get a complete picture of your business. Data Factory connects to over 170 data sources, including multi-cloud environments and hybrid setups with on-premises gateways. It helps you move and transform your data at scale, turning it into formats that work well for analytics and decision-making.
+Your organization's data lives in many different places: databases, files, cloud services, and legacy systems. This makes it hard to get a complete picture of your business. Data Factory connects to over 170 data sources, including multicloud environments and hybrid setups with on-premises gateways. It helps you move and transform your data at scale, turning it into formats that work well for analytics and decision-making.
 
 :::image type="complex" source="media/data-factory-overview/data-integration-stack.png" alt-text="Diagram of the data integration stack in Microsoft Fabric.":::
    Diagram of Data Factory in Microsoft Fabric that shows a selection of connectors linked to analytics and data development tools in Fabric through data movement, orchestration, and transformation. This all sits on top of Fabric OneLake, and the entire stack is woven through with AI-powered intelligence.
@@ -42,7 +42,7 @@ Here's what each phase does:
 
 ## ETL or ELT?
 
-When you work with data, how you move and transform it matters, and every organization is going to have different needs. for example: ETL (Extract, Transform, Load) and ELT (Extract, Load, Transform). Each has strengths, depending on your needs for performance, scalability, and cost.
+When you work with data, how you move and transform it matters, and every organization is going to have different needs. For example: ETL (Extract, Transform, Load) and ELT (Extract, Load, Transform). Each has strengths, depending on your needs for performance, scalability, and cost.
 
 **ETL**: Transform your data before loading it into its destination. This works well when you need to clean, standardize, or enrich data as it moves. For example, use Data Factory's Dataflow Gen 2 to apply transformations at scale before loading data into a warehouse or Lakehouse.
 
@@ -58,7 +58,7 @@ Fabric Data Factory supports both. You can:
 
 Data Factory connects to your data, moves it, transforms it, and orchestrates your data movement and transformation tasks from one place. You decide what strategy works best for your business, and Data Factory provides the tools to get it done.
 
-**Connect to your data**: Whether on-premises, in the cloud, or across multi-cloud environments, Data Factory connects to your data sources and destinations. It supports a wide range of data sources, including databases, data lakes, file systems, APIs, and more. See [available connectors](connector-overview.md) for a complete list of supported data sources and destinations.
+**Connect to your data**: Whether on-premises, in the cloud, or across multicloud environments, Data Factory connects to your data sources and destinations. It supports a wide range of data sources, including databases, data lakes, file systems, APIs, and more. See [available connectors](connector-overview.md) for a complete list of supported data sources and destinations.
 
 **Move data**: Data Factory provides several methods to move data from source to destination, or provide easy access to existing data, depending on your needs.
 
