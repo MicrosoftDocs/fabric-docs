@@ -72,7 +72,7 @@ We recommend that you create a schema in the warehouse, possibly named `staging`
 
 You can also consider data virtualization alternatives as part of your staging strategy. You can use:
 
-- [Mirroring](../database/mirrored-database/overview.md), which is a low-cost and low-latency turnkey solution that allows you to create a replica of your data in OneLake. For more information, see [Why use Mirroring in Fabric?](../database/mirrored-database/overview.md#why-use-mirroring-in-fabric).
+- [Mirroring](../mirroring/overview.md), which is a low-cost and low-latency turnkey solution that allows you to create a replica of your data in OneLake. For more information, see [Why use Mirroring in Fabric?](../mirroring/overview.md#why-use-mirroring-in-fabric).
 - [OneLake shortcuts](../onelake/onelake-shortcuts.md), which point to other storage locations that could contain your source data. Shortcuts can be [used as tables in T-SQL queries](../onelake/onelake-shortcuts.md#sql).
 - [PolyBase in SQL Server](/sql/relational-databases/polybase/polybase-guide?view=sql-server-ver16&preserve-view=true), which is a data virtualization feature for SQL Server. PolyBase allows T-SQL queries to join data from external sources to relational tables in an instance of SQL Server.
 - [Data virtualization with Azure SQL Managed Instance](/azure/azure-sql/managed-instance/data-virtualization-overview?view=azuresql&tabs=managed-identity&preserve-view=true), which allows you to execute T-SQL queries on files storing data in common data formats in [Azure Data Lake Storage (ADLS) Gen2](/azure/storage/blobs/data-lake-storage-introduction) or [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction), and combine it with locally stored relational data by using joins.

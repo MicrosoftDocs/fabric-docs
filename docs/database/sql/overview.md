@@ -28,7 +28,7 @@ SQL database in Fabric is:
 - Easy to configure and manage
 - Set up for analytics by automatically replicating the data into OneLake near real time
 - Integrated with development frameworks and analytics
-- Based on the underlying technology of [Mirroring in Fabric](../mirrored-database/overview.md)
+- Based on the underlying technology of [Mirroring in Fabric](../../mirroring/overview.md)
 - Queried in all the same ways as [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), plus a [web-based editor in the Fabric portal](query-editor.md).
 
 Intelligent performance features from Azure SQL Database are enabled by default in SQL database in Fabric, including:
@@ -126,7 +126,7 @@ For more information, see [Billing and utilization reporting for SQL database in
 
 ## Mirroring for Azure SQL Database
 
-Do you already have an external database and want to leverage Fabric's integration? You can use Mirroring in Fabric as a low-cost and low-latency solution to bring data from various systems together. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from an existing [Azure SQL Database](../mirrored-database/azure-sql-database.md).
+Do you already have an external database and want to leverage Fabric's integration? You can use Mirroring in Fabric as a low-cost and low-latency solution to bring data from various systems together. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from an existing [Azure SQL Database](../../mirroring/azure-sql-database.md).
 
 ## Elastic pools
 

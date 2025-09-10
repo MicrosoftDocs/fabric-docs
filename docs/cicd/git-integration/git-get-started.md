@@ -50,8 +50,6 @@ If you select Azure DevOps, select **Connect** to automatically sign into the Az
 
 If you have already signed in to Azure from Fabric using a different account, select your account from the list and select **Connect**.
 
-:::image type="content" source="./media/git-get-started/devops-connect-2.png" alt-text="Screenshot of workspace settings window with Git integration selected.":::
-
 If it's your first time signing in from Fabric, or you want to add a new account, select **Add account**.
 
 If it's the first time connecting, you need to Authorize your user. Provide the following information:

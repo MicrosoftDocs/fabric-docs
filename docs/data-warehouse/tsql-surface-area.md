@@ -14,7 +14,7 @@ ms.search.form: T-SQL Surface area # This article's title should not change. If 
 
 This article covers the T-SQL language syntax capabilities of [!INCLUDE [product-name](../includes/product-name.md)], when querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
-For SQL database in Fabric, see [Features comparison: Azure SQL Database and SQL database in Microsoft Fabric (preview)](../database/sql/feature-comparison-sql-database-fabric.md) and [Limitations in SQL database (preview)](../database/sql/limitations.md).
+For SQL database in Fabric, see [Limitations in SQL database (preview)](../database/sql/limitations.md).
 
 > [!NOTE]
 > For more information on upcoming feature development for Fabric Data Warehouse, see the [Fabric Data Warehouse release plan](https://aka.ms/fabricrm).
@@ -51,7 +51,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - `PREDICT`
 - Queries targeting system and user tables
 - Recursive queries
-- Result Set Caching
 - Schema and table names can't contain `/` or `\`
 - `SELECT` - `FOR XML`
 - `SET ROWCOUNT`

@@ -1,12 +1,12 @@
----
+﻿---
 title: Machine learning permissions
 description: Understand the permissions required for machine learning models and experiments in [!INCLUDE [product-name](../includes/product-name.md)] and how to assign these permissions to users.
-ms.author: larryfr
-author: Blackmist
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: midesa
 reviewer: midesa
 ms.topic: conceptual
-ms.custom:
+ms.custom: 
 ms.date: 01/10/2025
 ---
 

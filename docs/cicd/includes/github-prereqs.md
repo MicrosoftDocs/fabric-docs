@@ -1,8 +1,8 @@
 ---
 title: Include file for GitHub prereqs
 description: Include file for the GitHub prereqs. This file is referenced in this repo and also in an article in the Power BI repo.
-author: paulinbar
-ms.author: painbar
+author: billmath
+ms.author: billmath
 ms.topic: include
 ms.custom: 
 ms.date: 12/20/2023

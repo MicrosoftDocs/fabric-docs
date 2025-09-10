@@ -1,9 +1,9 @@
----
+﻿---
 title: Fabric data agent creation (preview)
 titleSuffix: Learn how to create a Fabric data agent
 description: Learn how to create a Fabric data agent that can answer questions about data.
-author: s-polly
-ms.author: scottpolly
+author: jonburchel
+ms.author: jburchel
 ms.reviewer: amjafari
 reviewer: amjafari
 ms.service: fabric
@@ -13,9 +13,7 @@ ms.date: 03/25/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Fabric data agent Concepts
-
 #customer intent: As a Data Analyst, I want to create a Fabric data agent so that I can make it easier for me and my colleagues to get answers from data.
-
 ---
 
 # Fabric data agent concepts (preview)

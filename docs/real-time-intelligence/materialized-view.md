@@ -51,7 +51,9 @@ To view, edit, or delete an existing materialized view, follow these steps:
    1. **Show materialized view script** to view the materialized view script.
    1. **Edit with code** to edit the materialized view script in the **Explore your data** window.
    1. **Delete**
+
     :::image type="content" source="media/materialized-view/drop-down-menu-materialized.png" alt-text="Screenshot of dropdown menu." lightbox="media/materialized-view/drop-down-menu-materialized.png":::
+
 1. If you modified the materialized view script, select **Run** to apply the changes.
 
 ## Related content

@@ -14,17 +14,15 @@ ms.custom:
 
 This Azure Data Explorer connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-To learn about how to connect to Azure Data Explorer in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-azure-data-explorer.md#set-up-your-connection-in-dataflow-gen2).
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/destination)|None<br> On-premises<br> Virtual network |Organizational account<br> Workspace identity |
+| **Data pipeline**<br>- [Copy activity](connector-azure-data-explorer-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Organizational account<br>Workspace identity |
+| **Copy job** (source/destination) <br>- Full load<br>- Append |None<br> On-premises<br> Virtual network |Organizational account<br>Workspace identity |
 
-## Support in data pipeline
-
-The Azure Data Explorer connector supports the following capabilities in data pipelines:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | User Auth |
-| **Lookup activity** | None <br> On-premises | User Auth |
+## Related content
+To learn about how to connect to Azure Data Explorer, go to [Set up your connection](connector-azure-data-explorer.md).
 
 To learn more about the copy activity configuration for Azure Data Explorer in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-data-explorer-copy-activity.md).

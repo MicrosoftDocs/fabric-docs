@@ -29,6 +29,8 @@ landingContent:
             url: fabric-terminology.md
           - text: What's New
             url: whats-new.md
+          - text: Migration to Microsoft Fabric
+            url: migration.md
       - linkListType: get-started
         links:
           - text: Start a Fabric trial 

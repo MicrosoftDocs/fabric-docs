@@ -6,7 +6,7 @@ ms.author: mimart
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: 05/05/2025
+ms.date: 09/04/2025
 
 #customer intent: As a Fabric admin, I want to create and manage a set of tags so that data creators and data consumers can use them to better manage and find data.
 
@@ -20,7 +20,7 @@ For more information about tags, see [Tags in Microsoft Fabric](./tags-overview.
 
 As a Fabric or domain administrator, you can:
 
-  * **Create a set of tags** that users in your organization or domain can use to categorize their Fabric items.
+* **Create a set of tags** that users in your organization or domain can use to categorize their Fabric items.
   * **Rename tags.** If desired or necessary, you can rename a tag. When you rename a tag, its name changes wherever the tag is applied.
   * **Delete a tag.** If you decide that a tag isn't needed, you can delete it from the set of tags you defined. When you delete a tag from the set of defined tags, the tag is removed from all items where it was previously applied.
 
@@ -50,18 +50,18 @@ This section shows how Fabric administrators create a set of tenant-level tags. 
 
 This section shows how [domain](./domains.md) administrators create and manage tags specific to their assigned domains. These tags are only available for items within workspaces assigned to that domain and subdomains under it.
 
-### Tag Uniqueness Rules
+### Tag uniqueness rules
 
 When creating domain-level tags, consider the following uniqueness rules:
 
-  * A tag created at the tenant level can't be duplicated at the domain level and vice-versa. If you attempt to create a tag that duplicates an existing one at a different scope (tenant or domain), an error message indicates the existing tag and its scope.
+* A tag created at the tenant level can't be duplicated at the domain level and vice-versa. If you attempt to create a tag that duplicates an existing one at a different scope (tenant or domain), an error message indicates the existing tag and its scope.
 
     :::image type="content" source="./media/tags-define/duplicate-tags.png" alt-text="Screenshot showing the error that appears when a tag already exists.":::
 
-  * You can create the same tag name in different domains. For example, you can add a tag named "FY2025" separately in both the "Sales" and "Marketing" domains.
-  * If you reassign a workspace from one domain to another, any domain-specific tags already applied to items in that workspace remain on those items. This approach maintains continuity and helps prevent confusion about previous tagging. However, you can't reapply tags from a previous domain to items if the workspace is no longer associated with that domain.
+* You can create the same tag name in different domains. For example, you can add a tag named "FY2025" separately in both the "Sales" and "Marketing" domains.
+* If you reassign a workspace from one domain to another, any domain-specific tags already applied to items in that workspace remain on those items. This approach maintains continuity and helps prevent confusion about previous tagging. However, you can't reapply tags from a previous domain to items if the workspace is no longer associated with that domain.
     
-### Steps to Create Domain-Level Tags
+### Steps to create domain-level tags
 
 1.  Open the [admin portal](../admin/admin-center.md%23how-to-get-to-the-admin-portal).
 2.  In the admin portal, select **Domains**.
@@ -97,10 +97,20 @@ You can delete both tenant-level and domain-level tags.
 
     The tag is deleted from the set of defined tags and is removed from all items where it was previously applied.
 
+## Create and manage tags programmatically
 
-## Create and manage tags programmatically using APIs
+All actions related to creating and managing tags can be performed programmatically via APIs. In addition, tags are included in Metadata Scanning (Scanner) APIs so that governance and discovery solutions can harvest tag assignments at scale.
 
-All of the actions described in this article for creating and managing tags in the UI can be performed programmatically via APIs. For more information, see [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags).
+### Tags REST APIs
+
+Use the Fabric REST Admin APIs for tags to programmatically create, list, rename and delete tenant and domain-level tags, allowing you to automate tag lifecycle and governance workflows.
+For more information, see [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags).  
+
+### Tags in metadata scanning (scanner) APIs
+
+The Scanner APIs include applied tags for each scanned item. For every applicable item returned in a scan, the payload includes a `tags` field containing a list of applied tag UUIDs. To resolve tag IDs to tag names, use the [List Tags Admin REST API](/rest/api/fabric/admin/tags/list-tags).
+
+For more information, see [Metadata scanning overview](./metadata-scanning-overview.md).
 
 
 ## Related content

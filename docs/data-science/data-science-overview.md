@@ -1,13 +1,14 @@
----
+﻿---
 title: Data science in Microsoft Fabric
 description: Learn about the Data science machine learning resources, including models, experiments, and notebooks.
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: negust
 ms.topic: overview
-ms.custom:
+ms.custom: 
 ms.date: 04/22/2025
 ms.search.form: Data Science Overview
+reviewer: s-polly
 ---
 
 # What is Data Science in Microsoft Fabric?
@@ -106,4 +107,4 @@ For more information about semantic link, visit the [What is semantic link?](sem
 - Visit [Machine learning experiment](machine-learning-experiment.md) to learn more about tracking experiments
 - Visit [Machine learning model](machine-learning-model.md) to learn more about model management
 - Visit [Score models with PREDICT](model-scoring-predict.md) to learn more about batch scoring with Predict
-- Serve Lakehouse predictions to Power BI with [Direct lake Mode](../fundamentals/lakehouse-power-bi-reporting.md)
+- Serve Lakehouse predictions to Power BI with [Direct Lake](../fundamentals/building-reports.md)

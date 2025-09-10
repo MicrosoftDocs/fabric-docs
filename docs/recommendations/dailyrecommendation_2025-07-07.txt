@@ -1,4 +1,0 @@
-An error occurred while running GitHub Copilot CLI:
-
-✗ Error: invalid argument "markdown" for "-t, --target" flag: invalid target choice: markdown is not one of shell, gh, git
-

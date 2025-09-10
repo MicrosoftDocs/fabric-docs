@@ -27,8 +27,6 @@
         href: pricing-copy-job.md
       - name: Pricing Apache Airflow job
         href: pricing-apache-airflow-job.md
-      - name: Cost estimation from Azure Data Factory to Fabric
-        href: cost-estimation-from-azure-data-factory-to-fabric-pipeline.md
       - name: Pricing examples
         items:
         - name: Data pipelines
@@ -71,12 +69,18 @@
       href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
       href: transform-data.md
+    - name: Decide - Data integration strategy
+      href: decision-guide-data-integration.md
+    - name: Decide - Data movement strategy
+      href: decision-guide-data-movement.md
     - name: Decide - Copy activity, Copy job, dataflow, or Spark?
       href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md
     - name: How to access on-premises Data
       href: how-to-access-on-premises-data.md
     - name: Monitoring activity in Data Factory
       href: monitor-data-factory.md
+    - name: Create Alerts for Pipelines
+      href: create-alerts-for-pipeline-runs.md
     - name: Bring Azure Data Factory to Fabric
       href: tutorial-bring-azure-data-factory-to-fabric.md      
   - name: Migrate to Fabric
@@ -98,7 +102,7 @@
       - name: Fabric Dataflows for Mapping Data Flow users
         href: guide-to-dataflows-for-mapping-data-flow-users.md
       - name: How to ingest data from Azure Data Factory to Fabric
-        href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
+        href: /azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory?toc=/fabric/data-factory/toc.json
     - name: Dataflows
       items:    
       - name: Migrate from Dataflow Gen1 to Dataflow Gen2
@@ -120,11 +124,7 @@
       - name: Module 2 - Transform data with a dataflow
         href: tutorial-end-to-end-dataflow.md
       - name: Module 3 - Automate and send notification
-        href: tutorial-end-to-end-integration.md
-    - name: SAP CDC to Fabric OneLake using ADF
-      href: change-data-capture-from-sap-to-onelake-with-azure-data-factory.md
-    - name: How to ingest data from ADF to Fabric
-      href: how-to-ingest-data-into-fabric-from-azure-data-factory.md      
+        href: tutorial-end-to-end-integration.md    
   - name: Connectors
     items:
     - name: Connector overview
@@ -137,6 +137,12 @@
         href: connector-access-database-overview.md
       - name: Set up your connection
         href: connector-access-database.md
+    - name: Amazon RDS For Oracle
+      items:
+      - name: Amazon RDS For Oracle - Overview
+        href: connector-amazon-rds-for-oracle-overview.md
+      - name: Configure in data pipeline Copy activity
+        href: connector-amazon-rds-for-oracle-copy-activity.md
     - name: Amazon RDS for SQL Server
       items:
       - name: Amazon RDS for SQL Server - Overview
@@ -241,12 +247,6 @@
         href: connector-azure-files-overview.md 
       - name: Configure in a data pipeline Copy activity 
         href: connector-azure-files-copy-activity.md 
-    - name: Azure HDInsight on AKS Trino
-      items:
-      - name: Azure HDInsight on AKS Trino - Overview
-        href: connector-azure-hdinsight-on-aks-trino-overview.md
-      - name: Set up your connection
-        href: connector-azure-hdinsight-on-aks-trino.md
     - name: Azure SQL database
       items:
       - name: Azure SQL database - Overview
@@ -277,6 +277,12 @@
         href: connector-azure-table-storage.md
       - name: Configure in a data pipeline Copy activity
         href: connector-azure-table-storage-copy-activity.md
+    - name: Cassandra
+      items:
+      - name: Cassandra - Overview
+        href: connector-cassandra-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-cassandra-copy-activity.md 
     - name: CloudBluePSA
       items:
       - name: CloudBluePSA - Overview
@@ -445,12 +451,20 @@
         href: connector-ibm-db2-database-overview.md
       - name: Set up your connection
         href: connector-ibm-db2-database.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-ibm-db2-database-copy-activity.md
     - name: Impala
       items:
       - name: Impala - Overview
         href: connector-impala-overview.md
       - name: Set up your connection
         href: connector-impala.md
+    - name: Informix For Pipeline
+      items:
+      - name: Informix For Pipeline - Overview
+        href: connector-informix-for-pipeline-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-informix-for-pipeline-copy-activity.md
     - name: KQL database
       items:
       - name: KQL database - Overview
@@ -481,6 +495,12 @@
         href: connector-microsoft-365.md
       - name: Configure in a data pipeline Copy activity
         href: connector-microsoft-365-copy-activity.md
+    - name: Microsoft Access
+      items:
+      - name: Microsoft Access - Overview
+        href: connector-microsoft-access-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-microsoft-access-copy-activity.md
     - name: Microsoft Exchange Online
       items:
       - name: Microsoft Exchange Online - Overview
@@ -555,6 +575,12 @@
         href: connector-postgresql.md
       - name: Configure in a data pipeline Copy activity
         href: connector-postgresql-copy-activity.md
+    - name: Presto
+      items:
+      - name: Presto - Overview
+        href: connector-presto-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-presto-copy-activity.md    
     - name: REST
       items:
       - name: REST - Overview
@@ -595,12 +621,28 @@
         href: connector-sap-bw-message-server-overview.md
       - name: Set up your connection
         href: connector-sap-bw-message-server.md
+    - name: SAP BW Open Hub Application Server
+      items:
+      - name: SAP BW Open Hub Application Server - Overview
+        href: connector-sap-bw-open-hub-application-server-overview.md
+    - name: SAP BW Open Hub Message Server
+      items:
+      - name: SAP BW Open Hub Message Server - Overview
+        href: connector-sap-bw-open-hub-message-server-overview.md
     - name: SAP HANA database
       items:
       - name: SAP HANA database - Overview
         href: connector-sap-hana-overview.md
       - name: Set up your connection
         href: connector-sap-hana.md
+    - name: SAP Table Application Server
+      items:
+      - name: SAP Table Application Server - Overview
+        href: connector-sap-table-application-server-overview.md
+    - name: SAP Table Message Server
+      items:
+      - name: SAP Table Message Server - Overview
+        href: connector-sap-table-message-server-overview.md      
     - name: ServiceNow
       items:
       - name: ServiceNow - Overview
@@ -695,6 +737,8 @@
         href: azure-machine-learning-activity.md
       - name: Copy activity
         href: copy-data-activity.md
+      - name: Copy job activity
+        href: copy-job-activity.md
       - name: Dataflow activity
         href: dataflow-activity.md
       - name: Deactivate an activity
@@ -759,8 +803,10 @@
           href: parameters.md
         - name: Expression language
           href: expression-language.md
-      - name: Data pipeline runs
+      - name: Run or schedule pipelines
         href: pipeline-runs.md
+      - name: Schedule pipeline
+        href: schedule-pipeline.md
       - name: Storage event triggers
         href: pipeline-storage-event-triggers.md
       - name: Variable library integration (Preview)
@@ -815,6 +861,8 @@
         href: dataflows-gen2-overview.md
       - name: Data source management
         href: data-source-management.md
+      - name: Using cloud connections through gateways
+        href: dataflow-gen2-cloud-connection-gateway-use.md
       - name: Dataflow Gen2 destinations and managed settings
         href: dataflow-gen2-data-destinations-and-managed-settings.md
       - name: Dataflow Gen2 default destination
@@ -833,6 +881,8 @@
         href: dataflow-gen2-incremental-refresh.md
       - name: Dataflow Gen2 with CICD and Git integration
         href: dataflow-gen2-cicd-and-git-integration.md
+      - name: Copilot explainer skill in Dataflow Gen2 
+        href: dataflow-gen2-copilot-explain.md
       - name: Dataflow Gen2 public APIs
         href: dataflow-gen2-public-apis.md
     - name: How-to
@@ -866,9 +916,13 @@
     - name: CI/CD for Copy job
       href: cicd-copy-job.md
     - name: REST API Capabilities
-      href: copy-job-rest-api-capabilities.md    
+      href: copy-job-rest-api-capabilities.md
+    - name: Secure your data movement with Copy Job and Virtual Network Data Gateway
+      href: copy-job-with-virtual-network-data-gateway.md
   - name: Data gateway
     items:
+    - name: "Business continuity and disaster recovery (BCDR) for gateways"
+      href: /data-integration/gateways-business-continuity-disaster-recovery?toc=/fabric/data-factory/toc.json
     - name: On-premises data gateways docs
       items:
       - name: "What is an on-premises data gateway?"
@@ -957,6 +1011,8 @@
           href: /data-integration/vnet/manage-data-gateways?toc=/fabric/data-factory/toc.json 
         - name: Use virtual network data gateway in Fabric with Dataflows Gen 2
           href: /data-integration/vnet/use-data-gateways-dfgen2-fabric?toc=/fabric/data-factory/toc.json 
+        - name: Use virtual network data gateway in Fabric with Pipeline
+          href: /data-integration/vnet/use-data-gateways-pipeline-fabric?toc=/fabric/data-factory/toc.json
         - name: Use virtual network data gateway in Power BI
           href: /data-integration/vnet/use-data-gateways-sources-power-bi?toc=/fabric/data-factory/toc.json 
         - name: Use virtual network data gateway in Power Platform dataflows
@@ -981,6 +1037,8 @@
         items:
           - name: Synchronize your code from an existing Git repo
             href: apache-airflow-jobs-sync-git-repo.md
+          - name: CI/CD in Apache Airflow
+            href: cicd-apache-airflow-jobs.md
           - name: Apache Airflow Job workspace settings
             href: apache-airflow-jobs-workspace-settings.md
           - name: Install a private package

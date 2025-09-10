@@ -41,7 +41,7 @@ After creating our application and the service principal, we need to add it to o
  3. Select to add the service principal 
 
  
- :::image type="content" source="media/git-integration-with-service-principal/dev-ops-1.png" alt-text="Screenshot of the Azure DevOps portal." lightbox="media/git-integration-with-service-principal/dev-ops-1.png":::
+ :::image type="content" source="media/git-integration-with-service-principal/devops-1.png" alt-text="Screenshot of the Azure DevOps portal." lightbox="media/git-integration-with-service-principal/devops-1.png":::
 
  4. Navigate to relevant Azure DevOps **project settings** -> **Teams** 
  5. Add the service principal to relevant team
@@ -143,8 +143,6 @@ When you need to update your service principal details, for example, update serv
 )
 1. In [Fabric settings](../../fundamentals/fabric-settings.md), navigate to **Manage Connections and Gateways**. Locate the cloud connection that you previously created.
 2. Edit the connection with the updated settings.
-
- :::image type="content" source="media/git-integration-with-service-principal/edit-connection-1.png" alt-text="Screenshot of editing the connection details." lightbox="media/git-integration-with-service-principal/edit-connection-1.png":::
 
  >[!NOTE]
  > If you want to create a new connection instead of editing an existing one, do this by selecting **+New** in the top left corner to add a new cloud connection.

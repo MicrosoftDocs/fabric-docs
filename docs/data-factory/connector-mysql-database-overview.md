@@ -14,17 +14,14 @@ ms.custom:
 
 The MySQL database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-For information on how to connect to a MySQL database in Dataflow Gen2, go to [Set up your MySQL database connection](connector-mysql-database.md).
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Basic |
+| **Data pipeline**<br>- [Copy activity](connector-mysql-database-copy-activity.md) (source/-) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Basic |
+| **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Basic |
 
-## Support in Data pipeline
-
-The MySQL database connector supports the following capabilities in Data pipeline:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/-)** | None <br>On-premises | Basic |
-| **Lookup activity** | None <br>On-premises | Basic |
+## Related content
 
 To learn more about the copy activity configuration for MySQL database in Data pipeline, go to [Configure in a Data pipeline copy activity](connector-mysql-database-copy-activity.md).
