@@ -245,6 +245,8 @@ Delta table's column mapping capability allows for more flexible schema evolutio
 [Deletion vectors](https://docs.delta.io/latest/delta-deletion-vectors.html) is supported 
 when you apply reader version 3 with `deletionVectors` in `readerFeatures` in your Lakehouse table. Rows that are soft deleted are marked in deletion vector files and skipped when reading the delta lake table. 
 
+[Change Data Feed](https://docs.delta.io/delta-change-data-feed/) is supported.
+
 ### Destination
 
 [Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) is supported. This capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can:
@@ -253,7 +255,9 @@ when you apply reader version 3 with `deletionVectors` in `readerFeatures` in yo
 - Auto-create a table with `delta.columnMapping.mode` set to `name` when the destination table does not exist and the source columns include special characters and whitespaces.
 - Auto-create a table with `delta.columnMapping.mode` set to `name` when the table action is overwrite and the source dataset columns include special characters and whitespaces.
 
-[Change Data Feed](https://docs.delta.io/delta-change-data-feed/) is supported. 
+[Deletion vectors](https://docs.delta.io/latest/delta-deletion-vectors.html) is supported.
+
+[Change Data Feed](https://docs.delta.io/delta-change-data-feed/) is supported.
 
 ## Table summary
 
