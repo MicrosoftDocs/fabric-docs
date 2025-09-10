@@ -18,7 +18,7 @@ The caller must have "read" permission on the item.
 
 ## Required delegated scopes
 
-Item.Read.All or Item.ReadWrite.All or one of the following 3 groups (according to the item which triggered the Spark application):
+Item.Read.All or Item.ReadWrite.All or one of the following three groups (according to the item, which triggered the Spark application):
 
 - Notebook.Read.All or Notebook.ReadWrite.All
 - SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All
@@ -144,7 +144,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 | livyId | path | True | string uuid | The Livy session ID. |
 | appId | path | True | string | The Spark application ID, like application_1111111111111_0001. |
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |
-| filter | path | True | string | The filter name, could be any of the followings: <br> - stages <br> - jobs <br> - executions (i.e., SQL query) <br> - jobGroups (i.e., statement) <br> - executors |
+| filter | path | True | string | The filter name could be any of the followings: <br> - stages <br> - jobs <br> - executions (that is, SQL query) <br> - jobGroups (that is, statement) <br> - executors |
 | byId | path | True | long or string | The specific ID to filter <br> - long if it follows the filter of "stages", "jobs" or "executions".  <br> - string if it follows the filter of "jobGroups" or "executors".  |
 
 ### Request body
@@ -198,13 +198,13 @@ Object
 | description | string | The description of the advice. |
 | helplink | string | The web page or documentation to reference or help further. |
 | detail | object | More details in rich text format. See [JsonAdviseDetail](#jsonadvisedetail) |
-| source | string | Could be "System", "User" or "Dependency". |
-| level | string | Could be "info", "warn" or "error". |
-| stageId | long | The stage ID which the advice is provided on. Ignore stageId if its value is -1. |
-| jobId | long | The job ID which the advice is provided on. Ignore jobId if its value is -1. |
-| executionId | long | The execution (SQL query) ID which the advice is provided on. Ignore executionId if its value is -1. |
-| jobGroupId | string | The job group (statement) ID which the advice is provided on. |
-| executorId | string | The executor ID which the advice is provided on. |
+| source | string | Could be "System," "User" or "Dependency". |
+| level | string | Could be "info," "warn" or "error". |
+| stageId | long | The stage ID, which the advice is provided on. Ignore stageId if its value is -1. |
+| jobId | long | The job ID, which the advice is provided on. Ignore jobId if its value is -1. |
+| executionId | long | The execution (SQL query) ID, which the advice is provided on. Ignore executionId if its value is -1. |
+| jobGroupId | string | The job group (statement) ID, which the advice is provided on. |
+| executorId | string | The executor ID, which the advice is provided on. |
 
 ### *JsonAdviseDetail*
 
@@ -222,7 +222,7 @@ Object
 | --- | --- | --- |
 | name | string | The name of the error or exception. |
 | tsg | string | The trouble shooting guide to follow. |
-| taskTypes | string | The types of Spark tasks, could be "ResultTask", "ShuffleMapTask"... |
+| taskTypes | string | The types of Spark tasks, could be "ResultTask," "ShuffleMapTask"... |
 | helplink | string | The web page or documentation to reference or help further. |
 | executorIds | string | The executor IDs. |
 | stageIds | string | The stage IDs. |
