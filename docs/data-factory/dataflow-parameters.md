@@ -82,7 +82,7 @@ The following table showcases the currently supported parameter types and the li
 |DateTime|[DataflowDateTimeParameter](/rest/api/fabric/dataflow/items)|
 |Time|[DataflowTimeParameter](/rest/api/fabric/dataflow/items)|
 |DateTimeZone|[DataflowDateTimeZoneParameter](/rest/api/fabric/dataflow/items)|
-|Duration|[DataflowDurationParameter](/rest/api/fabric/dataflow/itemsr)|
+|Duration|[DataflowDurationParameter](/rest/api/fabric/dataflow/items)|
 |True/False|[DataflowBooleanParameter](/rest/api/fabric/dataflow/items)|
 
  
