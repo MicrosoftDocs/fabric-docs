@@ -20,9 +20,6 @@ With [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis), 
 
 This article describes how to use the [Git integration REST APIs](/rest/api/fabric/core/git) to automate Git integration in Microsoft Fabric.
 
-<!--- 
-To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Power BI automation tools](#use-the-power-bi-automation-tools-extension) extension, which supports many of the Git integration API operations.
---->
 
 ## Prerequisites
 
@@ -69,16 +66,9 @@ Use the following PowerShell scripts to understand how to perform several common
 
 This section describes the steps involved in connecting and updating a workspace with Git.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-For the complete script, see [Connect and update from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1).
-=======
-For the complete script, see [Connect and update from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1). (The script compatibility is PowerShell 5.1)
->>>>>>> ce9d16f552d468e17209e63d6027ed23e281b91a
-=======
-For the complete script, see [Connect and update from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1). (The script compatibility is PowerShell 5.1)
 
->>>>>>> 5e14ef3616e39939c3299921044a4272451ba2d7
+
+For the complete script, see [Connect and update from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1). (The script compatibility is PowerShell 5.1)
 
 1. **Connect to Azure account and get access token** - Sign in to Fabric as a user or a service principal. Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to connect.
 To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command, and [convert the secure string token to plain text](/powershell/azure/faq#how-can-i-convert-a-securestring-to-plain-text-in-powershell-)
@@ -153,16 +143,10 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
     ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
-=======
-1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch. (you might need to [create a connection](#get-or-create-git-provider-credentials-connection) first)
->>>>>>> ce9d16f552d468e17209e63d6027ed23e281b91a
-=======
+
 
 1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch. (you might need to [create a connection](#get-or-create-git-provider-credentials-connection) first)
->>>>>>> 5e14ef3616e39939c3299921044a4272451ba2d7
+
 
      For information on how to obtain the Connection details (ID, Name), refer to [Get or create Git provider credentials connection](#get-or-create-git-provider-credentials-connection).
 
@@ -219,20 +203,12 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
     ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   ### [GitHub](#tab/github)
 
-=======
-   ### [GitHub (User or service principal)](#tab/github)
-    For information on how to obtain the Connection ID, refer to [Get or create Git provider credentials connection](#get-or-create-git-provider-credentials-connection).
->>>>>>> ce9d16f552d468e17209e63d6027ed23e281b91a
-=======
 
    ### [GitHub (User or service principal)](#tab/github)
     For information on how to obtain the Connection ID, refer to [Get or create Git provider credentials connection](#get-or-create-git-provider-credentials-connection).
 
->>>>>>> 5e14ef3616e39939c3299921044a4272451ba2d7
+
     ```powershell
     $global:baseUrl = "https://api.fabric.microsoft.com/v1"
     $workspaceName = "<WORKSPACE NAME>"
