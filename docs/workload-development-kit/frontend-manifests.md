@@ -56,6 +56,12 @@ Configurations for creating new items in the product, specifying options for use
     - **onClick** (object): Action triggered when the card is clicked.
     - **availableIn** (array): Locations where the card is available.
     - **itemType** (string): Type of item linked to the created card.
+    - **createItemDialogConfig** (object): Create item dialog configuration.
+      - **onCreationFailure** (object): Action triggered when item creation failed.
+      - **onCreationSuccess** (object): Action triggered when item creation succeeded.
+
+> [!NOTE]
+> `createItemDialogConfig` usage requires to add `onCreationFailure` and `onCreationSuccess` action handlers in `index.worker.ts`. Example can be found in [our sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/023e346e4d2353a7f755d50affc70b40b99a0b82/Frontend/src/index.worker.ts#L46C14-L62C24).
 
 ### Workspace Settings and Product Details
 
@@ -184,7 +190,13 @@ Defines categories in which your item is shown in OneLake catalog.
 
 If no category is specified, the item won't be shown in OneLake catalog.
 
+### Create item dialog configuration
+
+Defines create item dialog configuration, which is used to show the dialog from the workload hub on item type click.
+
+- **createItemDialogConfig** (object): Create item dialog configuration.
+  - **onCreationFailure** (object): Action triggered when item creation failed.
+  - **onCreationSuccess** (object): Action triggered when item creation succeeded.
+
 > [!NOTE]
-> When developing and testing new attributes added to the manifest, ensure you have synced the latest [validation scripts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/validation) and [tools](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/tools) from our sample repository.
->
-> This step is only necessary for local development and is not required for cloud mode.
+> `createItemDialogConfig` usage requires to add `onCreationFailure` and `onCreationSuccess` action handlers in `index.worker.ts`. Example can be found in [our sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/023e346e4d2353a7f755d50affc70b40b99a0b82/Frontend/src/index.worker.ts#L46C14-L62C24).
