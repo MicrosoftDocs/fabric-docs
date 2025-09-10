@@ -52,8 +52,8 @@ The following code cells include all the necessary installation commands.
 # [pandas (PySpark environment)](#tab/pandas-pyspark)
 
 ```python
-# The pandas AI functions package requires OpenAI version 1.30 or later.
-%pip install -q --force-reinstall openai==1.30 2>/dev/null
+# The pandas AI functions package requires OpenAI version 1.99.5 or later.
+%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
 
 # AI functions are preinstalled on the Fabric PySpark runtime.
 ```
@@ -62,7 +62,7 @@ The following code cells include all the necessary installation commands.
 
 ```python
 # Install the fixed version of packages.
-%pip install -q --force-reinstall openai==1.30 2>/dev/null
+%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
 
 # Install the latest version of SynapseML-core.
 %pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12-spark3.5/synapseml_core-1.0.12.dev1-py2.py3-none-any.whl 2>/dev/null
