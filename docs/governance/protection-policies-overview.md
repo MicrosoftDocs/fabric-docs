@@ -73,6 +73,8 @@ Additionally, protection policies are supported for Power BI semantic models. Ot
 
 * ALM pipelines won't work in scenarios where a user creates an ALM pipeline in a workspace that contains an item protected by a protection policy that doesn't include the user.
 
+* Git integration isn't supported for items protected by a protection policy. If a workspace contains items protected by a policy that doesn't include the user, Git operations (such as syncing or publishing) don't work for those items.
+
 * After a policy has been created, it may take up to 24 hours for it to start detecting and protecting items labeled with the sensitivity label that was associated with the policy.
 
 ## Related content

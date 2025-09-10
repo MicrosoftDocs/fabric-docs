@@ -82,9 +82,9 @@ To create a protection policy, the following requirements must be met:
   
     :::image type="content" source="./media/protection-policies-create/review-policy-settings.png" alt-text="Screenshot of review and finish page in protection policy configuration.":::
 
-1. You'll be informed that your new protection policy has been created and that it can take up to 24 hours for the new policy to start detecting and protecting items labeled with the sensitivity label you chose.
+1. You'll be informed that your new protection policy has been created. It can take up to 24 hours for the new policy to start detecting and protecting items labeled with the sensitivity label you chose.
 
-<!-- TODO: NEED NEW SCREENSHOT OR NOTE ABOUT 24 HRS IN UI -->    :::image type="content" source="./media/protection-policies-create/policy-created-notice.png" alt-text="Screenshot showing the policy created notice.":::
+<!-- TODO: NEED NEW SCREENSHOT OR NOTE ABOUT 24 HRS IN UI :::image type="content" source="./media/protection-policies-create/policy-created-notice.png" alt-text="Screenshot showing the policy created notice."::: --> 
 
 Your new policy now appears in the list of protection policies. Select it to confirm that all the details are correct.
 
