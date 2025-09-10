@@ -31,7 +31,7 @@ The view users page allows you to see all users with access to selected workspac
 
 ## View security roles
 
-The view security roles page give a view of all the OneLake security roles across the selected workspaces. Each item with OneLake security roles in those workspaces will be shown in the list. You can view existing roles, edit roles, delete roles, or create new ones from this page.
+The view security roles page gives a view of all the OneLake security roles across the selected workspaces. Each item with OneLake security roles in those workspaces will be shown in the list. You can view existing roles, edit roles, delete roles, or create new ones from this page.
 
 ### View and edit an existing role
 
