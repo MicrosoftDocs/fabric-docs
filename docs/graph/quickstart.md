@@ -29,7 +29,7 @@ To get started with graph in Microsoft Fabric, you need the following prerequisi
 - You are a member of a workspace or have permission to create items in the workspace. For more information, see [Workspaces in Microsoft Fabric](/fabric/admin/portal-workspaces).
 
     > [!IMPORTANT]
-    > Access management of the graph is restricted to the workspace where it's hosted. The graph isn't accessible to users outside of the workspace. Users within the workspace who have access to the underlying data in Lake house will be able to model and query the graph.
+    > Access management of the graph is restricted to the workspace where it's hosted. The graph isn't accessible to users outside of the workspace. Users within the workspace who have access to the underlying data in the lakehouse will be able to model and query the graph.
 
 
 ## Create a graph model
@@ -47,11 +47,11 @@ To create a graph model in Microsoft Fabric, follow these steps:
 
 1. Enter a name for your graph model and select **Create**.
 
-## Build a graph
+## Create a graph
 
 In graph view, you should see **Save**, **Add node**, and **Add edge**, and **Get data** buttons.
 
-To build a graph in Microsoft Fabric, follow these steps:
+To create a graph in Microsoft Fabric, follow these steps:
 
 1. In your graph model, select **Get data**.
 1. From the OneLake catalog, select data from Fabric to use in your graph. 
@@ -70,7 +70,7 @@ To build a graph in Microsoft Fabric, follow these steps:
 
 ## Start modeling
 
-Now you can start modeling. We use the Adventure Works data model as an example.
+Now you can start modeling by adding nodes and edges to the graph. We use the Adventure Works data model as an example.
 
 ### Add nodes
 
@@ -124,6 +124,22 @@ To add the edges to your graph, follow these steps:
 1. Repeat the process for all other edges. You should see all the edges represented in your graph.
 
     :::image type="content" source="./media/quickstart/edge-add-completed.png" alt-text="Screenshot showing all of the edges added to the graph." lightbox="./media/quickstart/edge-add-completed.png":::
+
+By this point, you created all the nodes and edges for your graph. This is the basic structure of your graph model.
+
+## Query the graph
+
+In the next sections, we query the graph by selecting specific nodes and relationships. All queries are based on the graph structure that [we built in the previous section.](#start-modeling)
+
+Follow these steps to switch to query mode and start querying your graph:
+
+1. Select **Modes** > **Query** from your graph's home page.
+1. Select **Add node** to see the available nodes for querying.
+1. Select a node to add it to your query. In this example, we add the **Customer** node.
+
+    :::image type="content" source="./media/quickstart/query-add-node-customer.png" alt-text="Screenshot showing the query mode selection." lightbox="./media/quickstart/query-add-node-customer.png":::
+
+1. From here you can build your query by adding nodes and edges, applying filters, and selecting properties to return in the results.
 
 ## Related content
 
