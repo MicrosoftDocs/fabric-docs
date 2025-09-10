@@ -14,11 +14,11 @@ This article explains how to get real-time advice for a Spark application.
 
 ## Permissions
 
-The caller must have "read" permission on the item
+The caller must have "read" permission on the item.
 
 ## Required delegated scopes
 
-Item.Read.All or Item.ReadWrite.All or one of the following 3 groups (according to the item which triggered the Spark application)
+Item.Read.All or Item.ReadWrite.All or one of the following 3 groups (according to the item which triggered the Spark application):
 
 - Notebook.Read.All or Notebook.ReadWrite.All
 - SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All
@@ -90,13 +90,13 @@ None
 
 ### Examples
 
-#### Sampe request
+#### Sample request
 
 ```
 GET https://api.fabric.microsoft.com/v1/workspaces/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advice  
 ```
 
-#### Sampe response
+#### Sample response
 
 Status code: 200
 
@@ -145,7 +145,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 | appId | path | True | string | The Spark application ID, like application_1111111111111_0001. |
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |
 | filter | path | True | string | The filter name, could be any of the followings: <br> - stages <br> - jobs <br> - executions (i.e., SQL query) <br> - jobGroups (i.e., statement) <br> - executors |
-| byId | path | True | long or string | The specific ID to filter <br> - long if it follows the filter of "stages", "jobs" or "exeuctions".  <br> - string if it follows the filter of "jobGroups" or "executors".  |
+| byId | path | True | long or string | The specific ID to filter <br> - long if it follows the filter of "stages", "jobs" or "executions".  <br> - string if it follows the filter of "jobGroups" or "executors".  |
 
 ### Request body
 
@@ -159,7 +159,7 @@ None
 
 ### Examples
 
-#### Sampe request
+#### Sample request
 
 ```HTTP
 GET https://api.fabric.microsoft.com/v1/workspaces/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advice/jobGroups/6
@@ -251,5 +251,5 @@ Object
 | stageId | string | The stage ID. |
 | skewedTaskPercentage | string | The percentage of skewed tasks. |
 | maxTaskDuration | string | Max duration, in second. |
-| meanTaskDuration | string | Mean duration, in second . |
+| meanTaskDuration | string | Mean duration, in second. |
 | taskDurationSkewness | double | The duration skewness of tasks within the stage, measured by "Pearson's Second Coefficient of Skewness". |
