@@ -203,7 +203,7 @@ The access mode determines how data access is authenticated and enforced when qu
   * RLS (Row-Level Security) misconfiguration
 
     * Some expressions for RLS filtering aren't supported in OneLake and it might allow unauthorized data access.
-
+  
     * Dropping the column used on the filter expression invalidates the RLS and Metadata Sync will be stale until the RLS is fixed on OneLake Security Panel.
 
     * For Public Preview, we only support single expression tables. Dynamic RLS and Multi-Table RLS aren't supported at the moment.
@@ -219,6 +219,16 @@ The access mode determines how data access is authenticated and enforced when qu
     * If there are changes to the table, like renaming a column, security isn't replicated on the new object, and you receive UI errors showing that the column doesn't exist.
 
 * **Table renames do not preserve security policies**: If OneLake Security (OLS) roles are defined on Schema level, those roles remain in effect only as long as the table name is unchanged. Renaming the table breaks the association, and security policies won't be migrated automatically. This can result in unintended data exposure until policies are reapplied.
+
+* OneLake Security Role can cannot have a name over 124 chars, otherwise Security Sync will not be able to synchronize the roles.
+ 
+* OneLake Security roles are propagated on the SQL analytics endpoint with the OLS_ prefix.
+
+* User changes on the OLS_ roles are not supported, and can cause unexpected behaviors.
+ 
+* Mail Enabled Security Groups and Distribution Lists are not supported.
+  
+* The owner of the Lakehouse must be member of Admin, Member or Contributor workspace roles, otherwise Security will not be applied to SQL analytics endpoint. 
 
 ## Related content
 
