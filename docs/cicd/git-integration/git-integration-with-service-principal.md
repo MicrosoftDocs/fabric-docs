@@ -41,7 +41,7 @@ After creating our application and the service principal, we need to add it to o
  3. Select to add the service principal 
 
  
- :::image type="content" source="media/git-integration-with-service-principal/dev'ops-1.png" alt-text="Screenshot of the Azure DevOps portal." lightbox="media/git-integration-with-service-principal/devops-1.png":::
+ :::image type="content" source="media/git-integration-with-service-principal/devops-1.png" alt-text="Screenshot of the Azure DevOps portal." lightbox="media/git-integration-with-service-principal/devops-1.png":::
 
  4. Navigate to relevant Azure DevOps **project settings** -> **Teams** 
  5. Add the service principal to relevant team
