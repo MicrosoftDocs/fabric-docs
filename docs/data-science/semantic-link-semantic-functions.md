@@ -1,12 +1,12 @@
----
+﻿---
 title: Semantic functions
 description: Learn about semantic functions that you can apply to FabricDataFrames and FabricSeries.
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: marcozo
 reviewer: eisber
 ms.topic: conceptual
-ms.custom:
+ms.custom: 
 ms.date: 06/17/2024
 ms.search.form: semantic link
 ---

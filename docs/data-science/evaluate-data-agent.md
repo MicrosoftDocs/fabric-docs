@@ -1,11 +1,13 @@
----
-title: Evaluate your data agent 
+﻿---
+title: Evaluate your data agent
 description: Learn how to use the Python data agent SDK to evaluate your data agent.
-ms.author: midesa
-author: midesa
+ms.author: jburchel
+author: jonburchel
 ms.topic: how-to
 ms.custom: 
 ms.date: 05/06/2025
+reviewer: midesa
+ms.reviewer: midesa
 ---
 
 # Evaluate your data agent (preview)
@@ -224,4 +226,4 @@ This feature is especially useful when:
 ## Next steps
 
 - [Use the Fabric data agent SDK](./fabric-data-agent-sdk.md)
-- [Access sample notebooks on how to use the data agent SDK](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/Fabric-Data-Agent-SDK/Samples)
+- [Access sample notebooks on how to use the data agent SDK](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-agent-sdk)

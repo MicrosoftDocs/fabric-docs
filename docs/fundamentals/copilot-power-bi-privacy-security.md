@@ -6,7 +6,7 @@ ms.author: sngun
 ms.reviewer: 'guptamaya'
 ms.custom:
 ms.topic: conceptual
-ms.date: 06/17/2024
+ms.date: 08/21/2025
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot

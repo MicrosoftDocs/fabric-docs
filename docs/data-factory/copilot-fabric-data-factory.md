@@ -1,16 +1,17 @@
 ---
-title: Microsoft Copilot in Fabric in the Data Factory workload overview
+title: Microsoft Copilot in Fabric in the Data Factory Workload Overview
 description: Learn how Microsoft Copilot in Fabric
- in the Data Factory workload empowers customers to use natural language to articulate their requirements for creating data integration solutions.
 author: whhender
 ms.author: whhender
 ms.reviewer: maghan, sngun
-ms.date: 07/15/2025
+ms.date: 09/02/2025
 ms.service: fabric
 ms.subservice: data-factory
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
+ms.update-cycle: 180-days
+ms.devlang: copilot-prompt
 ai-usage: ai-assisted
 ---
 
@@ -76,7 +77,7 @@ Here are some example prompts you can use with Copilot in the Data Factory workl
 - Explain what this pipeline does
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
 ## Responsible AI use of Copilot

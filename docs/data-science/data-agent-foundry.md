@@ -1,8 +1,8 @@
----
+﻿---
 title: Consume a data agent in Azure AI foundry (preview)
 description: Learn how to consume a data agent in Azure AI foundry (preview).
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: scottpolly
 reviewer: midesa
 ms.service: fabric
@@ -11,9 +11,7 @@ ms.topic: how-to #Don't change
 ms.date: 03/25/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
-
 #customer intent: As an Analyst, I want to consume Fabric data agent within Azure AI Agent Services in Azure AI Foundry.
-
 ---
 
 # Consume Fabric data agent from Azure AI Foundry Services (preview)

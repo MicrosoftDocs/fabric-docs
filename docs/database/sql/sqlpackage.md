@@ -4,7 +4,7 @@ description: Learn how to work with SqlPackage in your SQL database with Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: drskwier, antho, sukkaur
-ms.date: 05/28/2025
+ms.date: 08/08/2025
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
 ms.search.form:
@@ -27,7 +27,6 @@ SqlPackage can also enable easy database deployments of incremental changes to d
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
-- Make sure that you [Enable SQL database in Fabric tenant settings](enable.md).
 - Create a new workspace or use an existing Fabric workspace.
 - Create or use an existing SQL database in Fabric. If you don't have one already, [create a new SQL database in Fabric](create.md).
 - Install the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0).
@@ -44,12 +43,12 @@ As a global dotnet tool, SqlPackage is available in your terminal as `sqlpackage
 
 ## Import a database with SqlPackage
 
-A `.bacpac` is a portable copy of a database, useful for some migration and testing scenarios. You can **import** that `.bacpac` into an empty SQL database.
+A `.bacpac` is a portable copy of a database, useful for some migration and testing scenarios. You can **import** that `.bacpac` into an empty SQL database with [SqlPackage import](/sql/tools/sqlpackage/sqlpackage-import).
 
 > [!NOTE]
 > A `.bacpac` isn't a backup or a replacement for backup/restore capabilities. For more information about backups for SQL database in Fabric, see [Automatic backups in SQL database in Microsoft Fabric](backup.md) and [Restore from a backup in SQL database in Microsoft Fabric](restore.md).
 
-1. If using a `.bacpac` from an Azure or SQL Server environment, you might need to alter the source database to meet the [SQL database in Fabric T-SQL surface area](feature-comparison-sql-database-fabric.md). See [extract and publish portability](#extract-and-publish-portability) for an alternative method that enables SqlPackage properties to skip some unsupported objects.
+1. If using a `.bacpac` from an Azure or SQL Server environment, you might need to alter the source database to meet the [SQL database in Fabric T-SQL surface area](limitations.md). See [extract and publish portability](#extract-and-publish-portability) for an alternative method that enables SqlPackage properties to skip some unsupported objects.
 1. [Create your new SQL database in Fabric](create.md) as usual through the Fabric interface.
 1. Copy the connection string from settings.
 
@@ -64,7 +63,7 @@ A `.bacpac` is a portable copy of a database, useful for some migration and test
     - Replace your connection string from the SQL database settings dialog.
     - Replace the `sourcefile` value with the `.bacpac` name (`DatabaseName`) and `location` on your local machine.
 
-For more information on import, see [SqlPackage import](/sql/tools/sqlpackage/sqlpackage-import).
+1. Follow the import with a [Copy job](../../data-factory/what-is-copy-job.md) in Data Factory in Microsoft Fabric. To get started, see [Quickstart: Create a Copy job](../../data-factory/quickstart-copy-job.md).
 
 ## Export a database with SqlPackage
 
@@ -121,3 +120,4 @@ sqlpackage /action:publish /sourcefile:"C:\extracted.dacpac" /targetconnectionst
 - [Tutorial: Lifecycle management in Fabric](../../cicd/cicd-tutorial.md)
 - [SQL projects overview](/sql/tools/sql-database-projects/sql-database-projects)
 - [SQL database source control integration](source-control.md)
+- [Microsoft Fabric Migration Overview](../../fundamentals/migration.md)

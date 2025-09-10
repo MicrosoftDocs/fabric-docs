@@ -30,7 +30,7 @@ A user data functions item contains one or many functions you can invoke from th
   udf = fn.UserDataFunctions()
   ```
 
-- Every function is identified with a `@udf.function()` decorator. This decorator defines if your function can be invoked individually from the portal or an external invoker.
+- Every function is identified with a `@udf.function()` decorator. This decorator defines if your function can be invoked individually from the portal or an external invoker. Using this decorator will also require the function to have a return value. Functions with this decorator can access the connection objects denoted by the `@udf.connection` decorator. 
 
   **Invokable function example**
   ```python

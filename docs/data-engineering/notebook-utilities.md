@@ -248,6 +248,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 
 - The cross-workspace reference notebook is supported by **runtime version 1.2 and above**.
 - If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), use `notebookutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
+- Reference run allows child notebooks to run only if they use the same lakehouse as the parent, inherit the parent's lakehouse, or neither defines one. The execution is blocked if the child specifies a different lakehouse to parent notebook. To bypass this check, set `useRootDefaultLakehouse: True`.
 
 ### Reference run multiple notebooks in parallel
 
@@ -582,11 +583,11 @@ notebookutils.credentials.getToken('audience Key')
 
 **Considerations:**
 
-- Token scopes with 'pbi' as audience are may change over time. The scopes listed below are currently supported.
+- Token scopes with 'pbi' as audience may change over time. The following scopes are currently supported.
 
-- When calling *notebookutils.credentials.getToken("pbi")*, the returned token has limited scope if the notebook is running under a service principal. The token will not have the full Fabric service scope. If the notebook is running under the user identity, the token still has the full Fabric service scope, but this may change with security improvements. To ensure that the token has the full Fabric service scope, use MSAL authentication instead of the *notebookutils.credentials.getToken* API. For more information, see [Authenticate with Microsoft Entra ID](/entra/msal/python/).
+- When you call *notebookutils.credentials.getToken("pbi")*, the returned token has limited scope if the notebook is running under a service principal. The token does not have the full Fabric service scope. If the notebook is running under the user identity, the token still has the full Fabric service scope, but this may change with security improvements. To ensure that the token has the full Fabric service scope, use MSAL authentication instead of the *notebookutils.credentials.getToken* API. For more information, see [Authenticate with Microsoft Entra ID](/entra/msal/python/).
 
-- The Following are the list of scopes that the token will have when calling *notebookutils.credentials.getToken* with the audience key *pbi* under the service principal identity:
+- The Following are the list of scopes that the token has when calling *notebookutils.credentials.getToken* with the audience key *pbi* under the service principal identity:
   - Lakehouse.ReadWrite.All
   - MLExperiment.ReadWrite.All
   - MLModel.ReadWrite.All
@@ -852,7 +853,7 @@ With ``` notebookutils.runtime.context ``` you can get the context information o
 notebookutils.runtime.context
 ```
 
-The table below outlines the properties.
+The following table outlines the properties.
 
 | **Parameter** | **Explanation** | 
 |---|---|
@@ -865,8 +866,8 @@ The table below outlines the properties.
 | `defaultLakehouseWorkspaceName` | The workspace name of the default lakehouse, if defined |
 | `defaultLakehouseWorkspaceId` | The workspace ID of the default lakehouse, if defined |
 | `currentRunId` | In a reference run, the current run ID |
-| `parentRunId` | In a reference run with nested runs, this is the parent run ID |
-| `rootRunId` | In a reference run with nested runs, this is the root run ID |
+| `parentRunId` | In a reference run with nested runs, this ID is the parent run ID |
+| `rootRunId` | In a reference run with nested runs, this ID is the root run ID |
 | `isForPipeline` | Whether the run is for a pipeline |
 | `isReferenceRun` | Whether the current run is a reference run |
 | `referenceTreePath` | The tree structure of nested reference runs, used only for the snapshot hierarchy in the monitoring L2 page |
@@ -1007,6 +1008,8 @@ notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
 - When using runtime version above 1.2 and run ``` notebookutils.help() ```, the listed **fabricClient**, **PBIClient** APIs are not supported for now, will be available in the further. Additionally, the **Credentials** API isn't supported in Scala notebooks for now.
 
 - The Python notebook doesn't support the **stop**, **restartPython** APIs when using notebookutils.session utility for session management.
+
+- Currently SPN is not supported for variable library utilities.
 
 ## Related content
 

@@ -1,11 +1,13 @@
----
+﻿---
 title: Use AutoML (interface)
 description: Use the low-code AutoML interface in Fabric to automate the ML workflow (preview)
 ms.topic: overview
 ms.custom: sfi-image-nochange
-ms.author: midesa
-author: midesa
+ms.author: scottpolly
+author: s-polly
 ms.date: 11/18/2024
+reviewer: midesa
+ms.reviewer: midesa
 ---
 
 # Use the low-code AutoML interface in Fabric (preview)
