@@ -110,6 +110,17 @@ ML Model, Experiment, and Data agent supports private link.
 
 * Copilot isn't currently supported for Private Link or closed network environments.
 
+### Eventstream
+
+Eventstream supports Private Link, enabling secure, real-time data ingestion from multiple sources without exposing traffic to the public internet. It also supports real-time data transformation, such as filtering and enrichment of incoming data streams, before routing them to destinations within Fabric.
+
+Unsupported scenarios:
+
+* Custom Endpoint as a source is not supported.
+* Custom Endpoint as a destination is not supported.
+* Eventhouse as a destination (with direct ingestion mode) is not supported.
+* Activator as a destination is not supported.
+
 ### Eventhouse
 
 Eventhouse supports Private Link, allowing secure data ingestion and querying from your Azure Virtual Network via a private link. You can ingest data from various sources, including Azure Storage accounts, local files, and Dataflow Gen2. Streaming ingestion ensures immediate data availability. Additionally, you can utilize KQL queries or Spark to access data within an Eventhouse.
@@ -126,8 +137,6 @@ Limitations:
 ### Healthcare data solutions (preview)
 
 Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. In a tenant where private link is enabled, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. Also included is the ability to ingest healthcare data from various sources, such as Azure Storage accounts, and more.
-
-Other Fabric items, such as Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 
 <!--### Other Fabric items
 
