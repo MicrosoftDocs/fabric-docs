@@ -200,7 +200,3 @@ Defines create item dialog configuration, which is used to show the dialog from 
 
 > [!NOTE]
 > `createItemDialogConfig` usage requires to add `onCreationFailure` and `onCreationSuccess` action handlers in `index.worker.ts`. Example can be found in [our sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/023e346e4d2353a7f755d50affc70b40b99a0b82/Frontend/src/index.worker.ts#L46C14-L62C24).
->
-> When developing and testing new attributes added to the manifest, ensure you have synced the latest [validation scripts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/validation) and [tools](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/tools) from our sample repository.
->
-> This step is only necessary for local development and is not required for cloud mode.
