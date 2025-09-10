@@ -58,7 +58,7 @@ The view security roles page give a view of all the OneLake security roles acros
 
 ## Related content
 
-- [Fabric and OneLake security overview](./fabric-onelake-security.md)
-- [OneLake data access roles (preview)](./get-started-onelake-security.md)
+- [Fabric and OneLake security overview](../security/security-overview.md)
+- [OneLake data access roles (preview)](../onelake/security/get-started-onelake-security.md)
 - [OneLake catalog overview](./onelake-catalog-overview.md)
 - [Govern your data](./onelake-catalog-govern.md)
