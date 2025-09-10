@@ -33,6 +33,8 @@ items:
     items:
     - name: Automate Git integration using REST APIs
       href: git-integration/git-automation.md
+    - name: Git integration with a service principal in Azure DevOps
+      href: git-integration/git-integration-with-service-principal.md
 - name: Continuous Deployment with deployment pipelines
   items:
   - name: Introduction to deployment pipelines
