@@ -146,7 +146,7 @@ Open mirroring supports data intake in Parquet or delimited text formats. Files 
 | `Int32`             | A standard whole number, commonly used for counting or indexing.                   |
 | `DateTime`          | A full date and time value (for example, 2025-06-17 14:30:00).                     |
 | `IDate`             | A calendar date without time (for example, 2025-06-17).                            |
-| `ITime`             | A time of day without a date (for example, 14:30:00).                              |
+| `ITime`             | A full date and time value (for example, 2025-06-17 14:30:00)                      |
 | `String`            | Text data like names, labels, or descriptions.                                     |
 | `Boolean`           | A true or false value, often used for toggles or yes/no choices.                   |
 | `ByteArray`         | Raw binary data, such as files, images, or encoded content.                        |
