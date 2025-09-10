@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: concept-article #Don't change
-ms.date: 08/06/2025
+ms.date: 09/10/2025
 
 #customer intent: As a security admin, Fabric admin, Fabric user, or business decision maker, I want to learn about how protection policies control access to items in Fabric. 
 
@@ -75,7 +75,15 @@ Additionally, protection policies are supported for Power BI semantic models. Ot
 
 * Git integration isn't supported for items protected by a protection policy. If a workspace contains items protected by a policy that doesn't include the user, Git operations (such as syncing or publishing) don't work for those items.
 
-* After a policy has been created, it may take up to 24 hours for it to start detecting and protecting items labeled with the sensitivity label that was associated with the policy.
+* After a policy has been created, it can take up to 24 hours for it to start detecting and protecting items labeled with the sensitivity label that was associated with the policy.
+
+* In Fabric, users who apply sensitivity labels to items retain access to those items, even if they're not listed in the protection policy. However, users who create items may lose access to those items if another user applies a label with a protection policy and they're not included in that policy. This limitation also applies when [labels are inherited](service-security-sensitivity-label-downstream-inheritance.md). The following examples illustrate this limitation:
+
+   * If a user creates a Notebook item and another user applies a sensitivity label with a protection policy to that item, the creator will be restricted from accessing the Notebook unless they are included in the protection policy.
+
+   * If a user creates a Notebook that is linked to a Lakehouse, and a sensitivity label with a protection policy is applied to the Lakehouse, label inheritance occurs. In this case, the user who applied the label will retain access to the Lakehouse, but the Notebook creator may be restricted from accessing the linked Notebook if they aren't included in the protection policy.
+
+   This limitation for users who create artifacts is temporary and will be addressed in a future update.
 
 ## Related content
 
