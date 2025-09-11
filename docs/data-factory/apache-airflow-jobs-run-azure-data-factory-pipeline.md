@@ -24,7 +24,7 @@ To get started, you must complete the following prerequisites:
 
 - [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md).
 
-- [Create the data pipeline in Azure Data Factory](/azure/data-factory/tutorial-copy-data-portal).
+- [Create the pipeline in Azure Data Factory](/azure/data-factory/tutorial-copy-data-portal).
 
 - [Create the Service Principal](/entra/identity-platform/howto-create-service-principal-portal).
 
