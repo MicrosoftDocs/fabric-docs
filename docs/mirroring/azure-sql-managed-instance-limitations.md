@@ -1,5 +1,5 @@
 ---
-title: "Limitations in Mirrored Databases From Azure SQL Managed Instance"
+title: "Limitations in Mirrored Databases From Azure SQL Managed Instance (Preview)"
 description: A detailed list of limitations for mirrored databases from Azure SQL Managed Instance in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.custom:
   - references_regions
 ---
-# Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance
+# Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)
 
 Current limitations in the [Microsoft Fabric mirrored databases](../mirroring/overview.md) from Azure SQL Managed Instance are listed in this page. This page is subject to change.
 
 For troubleshooting, see:
 
 - [Troubleshoot Fabric mirrored databases](../mirroring/troubleshooting.md)
-- [Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance ](../mirroring/azure-sql-managed-instance-troubleshoot.md)
+- [Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-troubleshoot.md)
 
 ## Feature availability
 
@@ -132,7 +132,7 @@ The feature availability also depends on Fabric regions. For a complete list of 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-tutorial.md)
 
 ## Related content
 

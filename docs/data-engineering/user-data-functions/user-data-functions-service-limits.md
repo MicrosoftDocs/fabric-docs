@@ -21,7 +21,7 @@ In order for Fabric User Data Functions to work correctly, your network must all
 
 ## Limitations
 
-The following are current limitations for Fabric User Data Functions:
+The following are current limitations for Fabric User Data Functions (preview):
 
 - **Regional limitations for User Data Functions**: User Data Functions is not available in a subset of Fabric regions. For an updated list of regions where Fabric User Data Functions is available, see [Fabric region availability](../../admin/region-availability.md). If your Home Tenant is in an unsupported region, you can create a Capacity in a supported region to use User Data Functions. For more information, see [Manage your Fabric capacity](../../admin/capacity-settings.md).
 

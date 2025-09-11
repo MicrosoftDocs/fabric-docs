@@ -4,7 +4,7 @@ description: Learn how to browse the contents of files and discover their schema
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: jovanpop
-ms.date: 09/08/2025
+ms.date: 07/30/2025
 ms.topic: how-to
 ms.search.form: Ingesting data
 ---
@@ -68,6 +68,9 @@ FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/cura
 If the file contains line-delimited text where each line represents a valid JSON document, the `OPENROWSET` function can be used to read it directly.
 
 You don't need to specify the `FORMAT` option explicitly. The `OPENROWSET` will automatically infer the JSONL format based on common file extensions such as `.jsonl`, `.ldjson`, or `.ndjson` in the URI. However, if you're using a different file extension for this format, you must specify `FORMAT = 'jsonl'` to ensure correct parsing.
+
+> [!Note]
+> The the `JSONL` format is currently in [preview](../fundamentals/preview.md).
 
 ## Read files in Fabric OneLake
 
