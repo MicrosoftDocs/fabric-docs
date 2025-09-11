@@ -1,5 +1,13 @@
 {
     "redirections": [
+      { "source_path_from_root": "/docs/data-factory/providing-user-documentation.md",
+        "redirect_url": "https://aka.ms/DataFactoryConnectorCertification",
+        "redirect_document_id": true
+      },
+      { "source_path_from_root": "/docs/data-factory/connector-certification.md",
+        "redirect_url": "https://aka.ms/DataFactoryConnectorCertification",
+        "redirect_document_id": true
+      },
       {
         "source_path_from_root": "/docs/data-factory/connector-troubleshoot-postgresql.md",
         "redirect_url": "/fabric/data-factory/connector-troubleshoot-azure-database-for-postgresql",
