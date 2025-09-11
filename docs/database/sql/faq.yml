@@ -142,11 +142,7 @@ sections:
 
   - name: Troubleshooting
     questions:
-      - question: |
-          I tried to create a database but got the error message "SQL database failed to create." What should I do?
-        answer:
-          Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md). If you don't, users who try to create a new SQL database will receive an error message "SQL database failed to create."
- 
+
       - question: |
           Where can I ask questions to the community about SQL database in Fabric?
         answer:
