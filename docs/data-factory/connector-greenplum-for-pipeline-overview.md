@@ -13,17 +13,13 @@ ms.custom:
 
 The Greenplum for Pipeline connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-Data Factory in Microsoft Fabric doesn't currently support Greenplum for Pipeline in Dataflow Gen2.
 
-## Support in Data pipeline
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Data pipeline**<br>- [Copy activity](connector-greenplum-for-pipeline-copy-activity.md) (source/-) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Basic |
 
-The Greenplum for Pipeline connector supports the following capabilities in Data pipeline:
+## Related content
 
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/-)** | None <br>On-premises| Basic |
-| **Lookup activity** | None <br>On-premises | Basic |
-
-To learn more about the copy activity configuration for Greenplum for Pipeline in Data pipeline, go to [Configure in a Data pipeline copy activity](connector-greenplum-for-pipeline-copy-activity.md).
+To learn more about the copy activity configuration for Greenplum for Pipeline in data pipelines, go to [Configure in a Data pipeline copy activity](connector-greenplum-for-pipeline-copy-activity.md).
