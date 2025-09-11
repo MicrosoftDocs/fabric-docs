@@ -25,6 +25,8 @@ The social network domain models a comprehensive social platform with the follow
 
 For a more detailed introduction to the entities of this domain, see [GQL language guide](gql-language-guide.md#a-practical-example-social-network).
 
+![Social network schema diagram](media/gql-schema-example/ldbc_snb.png)
+
 ## Schema features demonstrated
 
 This graph type showcases advanced GQL capabilities:
