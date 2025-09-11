@@ -260,10 +260,14 @@ items:
       href: lakehouse-and-delta-tables.md
     - name: Load to tables
       href: load-to-tables.md
+    - name: Table compaction
+      href: table-compaction.md
     - name: Lakehouse table maintenance
       href: lakehouse-table-maintenance.md
     - name: Delta optimization and V-Order
       href: delta-optimization-and-v-order.md
+    - name: Tune file size
+      href: tune-file-size.md
     - name: Automated Statistics for Delta Tables
       href: automated-table-statistics.md	
     - name: Delta Driver Mode Snapshot
