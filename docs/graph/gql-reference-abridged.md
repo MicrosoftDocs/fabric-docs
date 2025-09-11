@@ -1,6 +1,6 @@
 ---
 title: GQL Quick Reference
-description: Quick reference guide for GQL syntax, statements, patterns, and functions in graph in Microsoft Fabric.
+description: Quick reference for GQL syntax, statements, patterns, and expressions in graph in Microsoft Fabric.
 ms.topic: reference
 ms.date: 09/15/2025
 author: spmsft

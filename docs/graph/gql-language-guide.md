@@ -6,6 +6,8 @@ ms.date: 09/15/2025
 author: spmsft
 ms.author: splantikow
 ms.reviewer: eur
+ms.service: fabric
+#ms.subservice: graph
 ---
 
 # GQL language guide
@@ -192,12 +194,18 @@ This pipeline:
 
 ### Variables connect your data
 
-Variables (like `p`, `c`, and `fullName` above) carry data between statements. When you reuse a variable name, GQL automatically ensures it refers to the same data, creating powerful join conditions.
+Variables (like `p`, `c`, and `fullName` above) carry data between statements. When you reuse a variable name, GQL automatically ensures it refers to the same data, creating powerful join conditions. Variables are sometimes also called binding variables.
 
-**Variable types:**
-- **Node/edge variables** - bind to individual graph elements
-- **Property variables** - bind to computed values  
-- **Group list variables** - bind to collections from variable-length patterns (see [Advanced Aggregation Techniques](#advanced-aggregation-techniques))
+Variables can be categorized in different ways.
+
+As **pattern variables:**
+- Always bound by matching [graph patterns](gql-graph-patterns.md).
+- **Element variables** - **Node variables** or **edge variables** that bind to individual graph element reference values
+- **Path variables** - bind to path values representing matched paths
+
+According to their **degree of reference:**
+- **Regular variables** - default case
+- **Group list variables** - bind to lists of element reference values matched by variable-length patterns (see [Advanced Aggregation Techniques](#advanced-aggregation-techniques))
 
 ### Understanding query results
 

@@ -6,11 +6,15 @@ ms.date: 09/15/2025
 author: spmsft
 ms.author: splantikow
 ms.reviewer: eur
+ms.service: fabric
+#ms.subservice: graph
 ---
 
 # GQL schema example: Social network
 
 This article provides the complete technical specification for the social network graph type used throughout the GQL documentation. This schema demonstrates many common features of complex graphs and serves as the foundation for all query examples in the GQL language documentation.
+
+![Social network schema diagram](media/gql-schema-example/ldbc_snb.png)
 
 ## Domain specification
 
@@ -24,8 +28,6 @@ The social network domain models a comprehensive social platform with the follow
 - **Social and professional relationships** between people and organizations
 
 For a more detailed introduction to the entities of this domain, see [GQL language guide](gql-language-guide.md#a-practical-example-social-network).
-
-![Social network schema diagram](media/gql-schema-example/ldbc_snb.png)
 
 ## Schema features demonstrated
 
