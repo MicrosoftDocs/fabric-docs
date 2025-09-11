@@ -220,15 +220,15 @@ The access mode determines how data access is authenticated and enforced when qu
 
 * **Table renames do not preserve security policies**: If OneLake Security (OLS) roles are defined on Schema level, those roles remain in effect only as long as the table name is unchanged. Renaming the table breaks the association, and security policies won't be migrated automatically. This can result in unintended data exposure until policies are reapplied.
 
-* OneLake Security Role can cannot have a name over 124 chars, otherwise Security Sync will not be able to synchronize the roles.
+* OneLake security roles can't have names longer than 124 characters; otherwise, security sync can't synchronize the roles.
  
-* OneLake Security roles are propagated on the SQL analytics endpoint with the OLS_ prefix.
+* OneLake security roles are propagated on the SQL analytics endpoint with the OLS_ prefix.
 
 * User changes on the OLS_ roles are not supported, and can cause unexpected behaviors.
  
-* Mail Enabled Security Groups and Distribution Lists are not supported.
+* Mail enabled security groups and distribution lists are not supported.
   
-* The owner of the Lakehouse must be member of Admin, Member or Contributor workspace roles, otherwise Security will not be applied to SQL analytics endpoint. 
+* The owner of the lakehouse must be a member of the admin, member, or contributor workspace roles; otherwise, security isn't applied to the SQL analytics endpoint.
 
 ## Related content
 
