@@ -8,7 +8,7 @@ ms.date: 04/21/2025
 ms.search.form: Fabric User Data Functions
 ---
 
-# Manage your libraries for your Fabric user data functions
+# Manage your libraries for your Fabric user data functions (Preview)
 
 When developing custom business logic, you can use public libraries from PyPI or incorporate your own private libraries for data processing or transformation. User data functions enable the addition of two types of libraries necessary for writing functions:
 - Public libraries: Include any public library available on PyPI in the user data functions item.

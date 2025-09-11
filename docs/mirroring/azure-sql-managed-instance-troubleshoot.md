@@ -1,5 +1,5 @@
 ---
-title: "Troubleshoot Fabric Mirrored Databases From Azure SQL Managed Instance"
+title: "Troubleshoot Fabric Mirrored Databases From Azure SQL Managed Instance (Preview)"
 description: Troubleshooting for mirrored databases from Azure SQL Managed Instance in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -7,7 +7,7 @@ ms.reviewer: lazartimotic, jingwang, nzagorac
 ms.date: 03/14/2025
 ms.topic: troubleshooting
 ---
-# Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance
+# Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance (Preview)
 
 This article covers troubleshooting steps troubleshooting for mirroring Azure SQL Managed Instance.
 
@@ -79,5 +79,5 @@ If you remove Azure SQL Managed Instance SAMI permissions or permissions aren't 
 
 ## Related content
 
-- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-limitations.md)
-- [Frequently asked questions for Mirroring Azure SQL Managed Instance in Microsoft Fabric](../mirroring/azure-sql-managed-instance-faq.yml)
+- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-limitations.md)
+- [Frequently asked questions for Mirroring Azure SQL Managed Instance in Microsoft Fabric (Preview)](../mirroring/azure-sql-managed-instance-faq.yml)

@@ -1,5 +1,5 @@
 ---
-title: Quickstart - Create a Fabric User data functions item
+title: Quickstart - Create a Fabric User data functions item (Preview)
 description: Learn how to create a Fabric User data functions item in the portal.
 ms.author: sumuth
 author: mksuni
@@ -8,7 +8,7 @@ ms.date: 03/31/2025
 ms.search.form: Create Fabric User data functions
 ---
 
-# Create a Fabric User data functions item
+# Create a Fabric User data functions item (Preview)
 
 In this guide, we will create a new User Data Functions item and write new functions in it. Each User Data Functions item contains code that defines one or many functions that you can run individually.
 

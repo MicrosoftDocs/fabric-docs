@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure SQL Managed Instance"
+title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure SQL Managed Instance (Preview)"
 description: Learn how to configure a mirrored database from Azure SQL Managed Instance in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -8,7 +8,7 @@ ms.date: 05/19/2025
 ms.topic: tutorial
 ---
 
-# Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance
+# Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)
 
 [Mirroring in Fabric](../mirroring/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored Azure SQL Managed Instance database, which represents a read-only, continuously replicated copy of chosen database from your Azure SQL Managed Instance in OneLake.
 
@@ -18,6 +18,7 @@ ms.topic: tutorial
   - [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql&tabs=azure-portal&preserve-view=true) for source Azure SQL Managed Instance needs to be configured to "[Always up to date](/azure/azure-sql/managed-instance/update-policy?view=azuresql&preserve-view=true&tabs=azure-portal#always-up-to-date-update-policy)"
   - The source Azure SQL Managed Instance can be either a single SQL managed instance or a SQL managed instance belonging to an instance pool.
   - If you don't have an Azure SQL Managed Instance, [you can create a new SQL managed instance](/azure/azure-sql/managed-instance/instance-create-quickstart?view=azuresql&tabs=azure-portal&preserve-view=true). You can use the [Azure SQL Managed Instance free offer](/azure/azure-sql/managed-instance/free-offer?view=azuresql&preserve-view=true) if you like.
+  - During the current preview, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Managed Instance](/azure/azure-sql/managed-instance/restore-sample-database-quickstart?view=azuresql&preserve-view=true).
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../fundamentals/fabric-trial.md).
   - The Fabric capacity needs to be active and running. A paused or deleted capacity impacts Mirroring and no data are replicated.
 - Fabric tenant settings are required. Ensure the following two [Fabric Tenant settings](../admin/about-tenant-settings.md) are enabled:
@@ -85,7 +86,7 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
 1. Navigate to the **Create** pane. Select the **Create** icon.  
-1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure SQL Managed Instance**.
+1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure SQL Managed Instance (preview)**.
 
 ## Connect to your Azure SQL Managed Instance
 
@@ -153,5 +154,5 @@ The **Monitor replication** screen also reflects any errors and warnings with ta
 
 ## Related content
 
-- [Mirroring Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance.md)
+- [Mirroring Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance.md)
 - [What is Mirroring in Fabric?](../mirroring/overview.md)

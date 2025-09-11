@@ -60,7 +60,7 @@ Microsoft Fabric provides a unified analytics platform, and migrating your data 
 
 | Article | Description |
 |:--|:--|
-| **[Migration Assistant for Fabric Data Warehouse](../data-warehouse/migration-assistant.md)** | Learn how to use the Migration Assistant to move data and objects from Azure Synapse Analytics SQL Data Warehouse to Fabric Data Warehouse, including supported scenarios and limitations. |
+| **[Migration Assistant for Fabric Data Warehouse (preview)](../data-warehouse/migration-assistant.md)** | Learn how to use the Migration Assistant to move data and objects from Azure Synapse Analytics SQL Data Warehouse to Fabric Data Warehouse, including supported scenarios and limitations. |
 | **[Migration​ methods: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](../data-warehouse/migration-synapse-dedicated-sql-pool-methods.md)**|Learn the methods of migration of data warehousing in Azure Synapse dedicated SQL pools to Fabric.|
 | **[Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](../data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md)**|Plan for migration of data warehousing in Azure Synapse dedicated SQL pools to Fabric.|
 

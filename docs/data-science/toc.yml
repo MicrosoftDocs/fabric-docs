@@ -80,9 +80,7 @@ items:
         - name: Consume a data agent from Copilot in Power BI (preview)
           href: data-agent-copilot-powerbi.md
         - name: Consume a data agent from Microsoft Copilot Studio (preview)
-          href: data-agent-microsoft-copilot-studio.md     
-        - name: Consume a data agent using Python SDK (preview)
-          href: consume-data-agent-python.md     
+          href: data-agent-microsoft-copilot-studio.md          
     - name: Fabric data agent end-to-end tutorial
       href: data-agent-end-to-end-tutorial.md        
     - name: Fabric data agent sharing
@@ -165,8 +163,6 @@ items:
     href: ./ai-functions/overview.md
   - name: Accelerate data prep with Data Wrangler
     href: data-wrangler.md
-  - name: Use AI in Data Wrangler
-    href: data-wrangler-ai.md
   - name: Explore and transform Spark data with Data Wrangler
     href: data-wrangler-spark.md
   - name: Read from Power BI and write data usable by Power BI

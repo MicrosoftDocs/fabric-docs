@@ -4,7 +4,7 @@ description: Learn about the features and methods to ingest data into your wareh
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha
-ms.date: 09/08/2025
+ms.date: 04/06/2025
 ms.topic: conceptual
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
@@ -39,6 +39,9 @@ To decide which data ingestion option to use, you can use the following criteria
 Data ingestion for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers a vast number of data formats and sources you can use. Each of the options outlined includes its own list of supported data connector types and data formats. 
 
 For **T-SQL ingestion**, table data sources must be within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace and file data sources must be in Azure Data Lake or Azure Blob storage. Queries can be performed using three-part naming or OPENROWSET function for the source data. Table data sources can reference Delta Lake data sets, while OPENROWSET() can reference Parquet, CSV, or JSONL files in Azure Data Lake or Azure Blob storage.
+
+> [!NOTE]
+> The JSONL format for OPENROWSET is in **Public Preview**.
 
 As an example, suppose there's two warehouses named Inventory and Sales in a workspace. A query such as the following one creates a new table in the Inventory warehouse with the content of a table in the Inventory warehouse, joined with a table in the Sales warehouse, and with external files containing customer information:
 
