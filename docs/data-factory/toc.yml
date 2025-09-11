@@ -1085,14 +1085,6 @@
       href: copy-performance-sql-databases.md  
     - name: Dataflow Gen2 performance and scalability
       href: dataflow-gen2-performance-best-practices.md  
-  - name: Extensibility
-    items:
-      - name: Connector certification
-        items:
-        - name: Data Factory connector certification
-          href: connector-certification.md
-        - name: Provide connector documentation
-          href: providing-user-documentation.md   
   - name: FAQ and Troubleshooting
     items:
     - name: Frequently asked questions
