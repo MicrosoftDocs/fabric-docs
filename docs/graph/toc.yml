@@ -9,6 +9,10 @@ items:
         href: graph-relational-databases.md
       - name: Graph in Microsoft Fabric data models
         href: graph-data-models.md
+  - name: Get started
+    items:
+      - name: Quickstart guide for Graph in Microsoft Fabric
+        href: quickstart.md
   - name: Graph Query Language (GQL)
     items:
       - name: GQL language reference

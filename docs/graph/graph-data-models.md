@@ -2,10 +2,12 @@
 title: Graph in Microsoft Fabric Data Models
 description: Understand why the Labeled Property Graph (LPG) is the recommended and only supported model in Graph in Microsoft Fabric, and how it compares to RDF.
 ms.topic: concept-article
-ms.date: 08/18/2025
+ms.date: 09/15/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: eur
+ms.service: fabric
+#ms.subservice: graph
 ---
 
 # Graph in Microsoft Fabric data models
