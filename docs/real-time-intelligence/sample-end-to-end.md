@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 09/07/2025
+ms.date: 07/13/2025
 #customer intent: As a data analyst, I want to create an end-to-end real-time solution so that I can understand how Real-Time Intelligence components work together.
 ---
 
@@ -21,15 +21,6 @@ The sample data sets help you understand how to use Real-Time Intelligence compo
 
 * **Bike rental data**: Contains London-based bike movements, occupancies, and tracks user patterns.
 * **Stock ticker data**: Contains sample S&P 500 stock ticker data.
-* **Workspace monitoring**: Contains sample data for monitoring workspace performance and usage.
-
-> [!IMPORTANT]
-> The Eventhouse generated through the Workspace Monitoring sample is a standard Eventhouse populated with sample monitoring data. This sample is intended solely for exploration and learning. It differs from a production Workspace Monitoring Eventhouse in the following ways:
-> - It is not read-only.
-> - It is not an exact representation of a real monitoring database.
-> - It does not include full raw log tables or update policies.
-> - Some data is static and represents a one-time snapshot, only Semantic Model Logs are streamed continuously.
-> See [Workspace Monitoring](../fundamentals/sample-gallery-workspace-monitoring.md) for more information.
 
 ## Components of the end-to-end sample
 
