@@ -631,8 +631,6 @@ items:
           href: query-acceleration-overview.md
         - name: Accelerate queries over OneLake shortcuts
           href: query-acceleration.md
-      - name: Eventhouse endpoint for Lakehouse
-        href: eventhouse-as-endpoint.md
       - name: External tools
         items: 
         - name: Query Fabric OneLake Delta tables from Snowflake
@@ -753,17 +751,9 @@ items:
       href: vector-database-eventhouse.md
   - name: Time series anomaly detection
     items:
-    - name: Anomaly detection using Real-Time Intelligence
-      items:
-      - name: Overview of anomaly detection
-        href: anomaly-detection.md
-      - name: Anomaly detection models
-        href: anomaly-detection-models.md
-      - name: Troubleshoot anomaly detection
-        href: troubleshoot-anomaly-detection.md
-    - name: Univariate anomaly detection using KQL
+    - name: Univariate anomaly detection and forecasting
       href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
-    - name: Multivariate anomaly detection using Spark
+    - name: Multivariate anomaly detection
       items:
       - name: Multivariate anomaly detection overview
         href: multivariate-anomaly-overview.md
@@ -806,18 +796,6 @@ items:
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
       href: power-bi-data-connector.md
-  - name: Map
-    items:
-    - name: Create a map
-      href: map/create-map.md
-    - name: Customize a map
-      href: map/customize-map.md
-    - name: Share Map
-      href: map/share-map.md
-    - name: Create a tileset
-      href: map/spatial-job-create-tile-sets.md
-    - name: Manage Map permissions
-      href: map/manage-map-permissions.md
 - name: Track data
   items:
   - name: What is Activator?

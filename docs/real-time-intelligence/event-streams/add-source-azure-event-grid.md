@@ -13,7 +13,7 @@ ms.date: 09/08/2025
 #customer intent: As a user planning IoT telemetry monitoring, I want to connect Azure Event Grid Namespace to Microsoft Fabric Eventstream so that I can process MQTT messages and standard events for real-time analytics.
 ---
 
-# Add Azure Event Grid namespace to an eventstream for real-time event and MQTT data ingestion
+# Add Azure Event Grid namespace to an eventstream for real-time event and MQTT data ingestion (preview)
 In today’s connected world, organizations rely on streaming event data and IoT telemetry for real-time analytics, monitoring, and decision-making. With the new capability to add an Azure Event Grid Namespace as a source to Eventstream, you can seamlessly bring both standard events and MQTT messages into Microsoft Fabric. This integration enables scenarios like industrial IoT monitoring, connected vehicle telemetry, and enterprise system integration without complex custom pipelines. By bridging Azure Event Grid and Fabric Eventstream, you gain a powerful, scalable foundation to process millions of events per second and unlock insights instantly across your data estate.
 
 This article shows you how to add an Azure Event Grid Namespace source to an eventstream. 

@@ -5,7 +5,7 @@ author: SnehaGunda
 ms.author: sngun
 ms.topic: overview
 ms.custom:
-ms.date: 09/07/2025
+ms.date: 03/23/2025
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
 
@@ -49,7 +49,7 @@ Workload monitoring sample queries are available from [workspace-monitoring](htt
 
 ## Templates
 
-You can create and explore workspace monitoring using Power BI reports and Real-time dashboards by following the [Visualize workspace monitoring](sample-gallery-workspace-monitoring.md) guide or via the templates available from [workspace-monitoring-dashboards](https://github.com/microsoft/fabric-toolbox/tree/main/monitoring/workspace-monitoring-dashboards).
+You can explore workspace monitoring using Power BI reports and Real-time dashboard templates available from [workspace-monitoring-dashboards](https://github.com/microsoft/fabric-toolbox/tree/main/monitoring/workspace-monitoring-dashboards).
 
 ## Considerations and limitations
 

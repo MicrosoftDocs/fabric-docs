@@ -78,9 +78,7 @@ items:
       - name: What is workspace monitoring?
         href: workspace-monitoring-overview.md
       - name: Enable monitoring in your workspace
-        href: enable-workspace-monitoring.md    
-      - name: Visualize workspace monitoring
-        href: sample-gallery-workspace-monitoring.md
+        href: enable-workspace-monitoring.md      
 - name: Copilot and AI in Fabric
   items:
   - name: 1 - Copilot in Fabric overview

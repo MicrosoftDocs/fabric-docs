@@ -21,8 +21,6 @@ items:
     href: onelake-catalog-item-details.md
   - name: Govern your data
     href: onelake-catalog-govern.md
-  - name: Secure your data
-    href: secure-your-data.md
 - name: Microsoft Purview
   items:
   - name: Microsoft Purview and Fabric
