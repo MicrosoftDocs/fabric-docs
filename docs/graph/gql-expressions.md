@@ -87,7 +87,7 @@ Combine conditions with logical operators:
 
 ```gql
 MATCH (p:Person)
-FILTER WHERE p.age >= 18 AND p.country = 'USA'
+FILTER WHERE p.age >= 18 AND p.first = 'John'
 RETURN p.name
 ```
 

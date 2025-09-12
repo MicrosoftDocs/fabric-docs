@@ -56,7 +56,7 @@ In GQL, you work with labeled property graphs. A graph consists of two types of 
 
 **Nodes** typically represent the entities (the "nouns") in your system—things like people, organizations, posts, or products. They're independent objects that exist in your domain. Nodes are sometimes also called vertices.
 
-**Edges** represent relationships between entities (the "verbs")—how your entities connect and interact. For example, which people know each other, which organization operates in which country, or who purchased which product. Edges are sometimes also called relationships.
+**Edges** represent relationships between entities (the "verbs")—how your entities connect and interact. For example, which people know each other, which organization operates in which country/region, or who purchased which product. Edges are sometimes also called relationships.
 
 Every graph element has these characteristics:
 
@@ -237,7 +237,7 @@ Graph patterns are the heart of GQL queries. They let you describe the data stru
 
 ```gql
 (p:Person)-[:knows]->(f:Person)  -- Person knows another person
-(:City)-[:isPartOf]->(:Country)  -- City is part of a country  
+(:City)-[:isPartOf]->(:Country)  -- City is part of a country/region 
 ```
 
 **Bounded variable-length patterns:**

@@ -171,8 +171,8 @@ The schema defines three inheritance hierarchies:
 Several edge labels form type families connecting different node combinations:
 
 **Location relationships (`isPartOf`):**
-- Cities belong to countries: `(:City)-[:isPartOf]->(:Country)`
-- Countries belong to continents: `(:Country)-[:isPartOf]->(:Continent)`
+- Cities belong to countries/regions: `(:City)-[:isPartOf]->(:Country)`
+- Countries/regions belong to continents: `(:Country)-[:isPartOf]->(:Continent)`
 
 **Content interactions (`likes`):**
 - People like posts: `(:Person)-[:likes]->(:Post)`
@@ -182,8 +182,8 @@ Several edge labels form type families connecting different node combinations:
 **Geographic location (`isLocatedIn`):**
 - People live in cities: `(:Person)-[:isLocatedIn]->(:City)`
 - Universities located in cities: `(:University)-[:isLocatedIn]->(:City)`
-- Companies located in countries: `(:Company)-[:isLocatedIn]->(:Country)`
-- Posts/comments located in countries: `(:Post|Comment)-[:isLocatedIn]->(:Country)`
+- Companies located in countries/regions: `(:Company)-[:isLocatedIn]->(:Country)`
+- Posts/comments located in countries/regions: `(:Post|Comment)-[:isLocatedIn]->(:Country)`
 
 ### Key constraints
 
