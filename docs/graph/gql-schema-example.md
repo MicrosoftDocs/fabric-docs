@@ -14,7 +14,7 @@ ms.service: fabric
 
 This article provides the complete technical specification for the social network graph type used throughout the GQL documentation. This schema demonstrates many common features of complex graphs and serves as the foundation for all query examples in the GQL language documentation.
 
-![Social network schema diagram](media/gql-schema-example/ldbc_snb.png)
+![Social network schema diagram](media/gql/gql-schema-example.png)
 
 ## Domain specification
 
