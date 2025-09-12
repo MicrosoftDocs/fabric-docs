@@ -3,7 +3,6 @@ title: Secure your Data Factory in Microsoft Fabric deployment
 description: Learn how to secure Data Factory in Microsoft Fabric, with best practices for protecting your deployment.
 author: whhender
 ms.author: whhender
-ms.service: data-factory
 ms.topic: concept-article
 ms.custom: horz-security
 ms.date: 08/12/2025
@@ -20,9 +19,9 @@ This article provides guidance on how to best secure your Data Factory in Micros
 
 Data Factory in Microsoft Fabric requires secure network configurations to protect your data as it moves between various sources and destinations.
 
-- **Configure on-premises data gateway**: Set up the on-premises data gateway to securely connect Data Factory to your on-premises data sources, enabling encrypted communication through firewalls without exposing your network. See [On-premises data gateway](/data-integration/gateway/service-gateway-onprem).
+- **Configure on-premises data gateway**: Set up the on-premises data gateway to securely connect Data Factory to your on-premises data sources, enabling encrypted communication through firewalls without exposing your network. See [connect to on-premises data](how-to-access-on-premises-data.md) or the [on-premises data gateway documentation](/data-integration/gateway/service-gateway-install?toc=/fabric/data-factory/toc.json).
 
-- **Implement VNet data gateway**: For Azure data sources behind private endpoints, use the VNet data gateway to securely connect without the overhead of managing gateway infrastructure. See [Virtual network data gateway](/data-integration/vnet/overview).
+- **Implement VNet data gateway**: For Azure data sources behind private endpoints, use the VNet data gateway to securely connect without the overhead of managing gateway infrastructure. See [Virtual network data gateway](/data-integration/vnet/overview?toc=/fabric/data-factory/toc.json).
 
 - **Use managed private endpoints**: Create managed private endpoints in your Fabric workspace to securely connect to Azure data sources that have public network access disabled. This eliminates exposure to the public internet when accessing protected resources. See [Managed private endpoints](/fabric/security/security-managed-private-endpoints-overview).
 
