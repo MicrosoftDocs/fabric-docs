@@ -29,5 +29,7 @@ items:
         href: gql-graph-types.md
       - name: GQL quick reference
         href: gql-reference-abridged.md
+      - name: GQL status codes
+        href: gql-status-codes.md
       - name: GQL reserved words
         href: gql-reference-reserved-terms.md

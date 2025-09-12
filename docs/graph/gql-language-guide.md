@@ -12,16 +12,41 @@ ms.service: fabric
 
 # GQL language guide
 
-GQL (Graph Query Language) is the ISO-standardized query language for graph databases. It helps you query and work with graph data efficiently. The same international working group that oversees SQL develops GQL, so you see familiar syntax if you already know SQL.
+The GQL Graph Query Language is the ISO-standardized query language for graph databases. It helps you query and work with graph data efficiently. 
+
+The same international working group that oversees SQL develops GQL. If you already know SQL, you'll see familiar syntax in GQL.
 
 This guide serves both newcomers learning GQL fundamentals and experienced users seeking advanced techniques and comprehensive reference information.
 
 > [!NOTE]
 > The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
 
+## Prerequisites
+
+Before diving into GQL, you should be familiar with these concepts:
+
+- **Basic understanding of databases** - Experience with any database system (SQL, NoSQL, or graph) is helpful
+- **Graph concepts** - Understanding of nodes, edges, and relationships in connected data
+- **Query fundamentals** - Knowledge of basic query concepts like filtering, sorting, and aggregation
+
+**Recommended background:**
+- Experience with SQL or openCypher makes learning GQL syntax easier (they share similar roots)
+- Familiarity with data modeling helps with graph schema design
+- Understanding of your specific use case for graph data
+
+**What you'll need:**
+- Access to Microsoft Fabric with graph capabilities
+- Sample data or willingness to work with our social network examples
+- Basic text editor for writing queries
+
+> [!TIP]
+> If you're new to graph databases, start with the [graph data models overview](graph-data-models.md) before continuing with this guide.
+
 ## What makes GQL special
 
-GQL is designed specifically for graph data, making it natural and intuitive to work with connected information. Unlike SQL, which works with tables and joins, GQL lets you describe the shape of data relationships using visual patterns that mirror how you think about connected data.
+GQL is designed specifically for graph data. This makes it natural and intuitive to work with connected information. 
+
+Unlike SQL, which works with tables and joins, GQL lets you describe relationships using visual patterns. These patterns mirror how you think about connected data.
 
 Here's a simple query that shows GQL's visual approach:
 
@@ -131,6 +156,31 @@ Graph edges represent domain relationships. This rich network creates many oppor
 
 Now that you understand graph basics, let's see how to query graph data using GQL. These examples build from simple to complex, showing you how GQL's approach makes graph queries intuitive and powerful.
 
+### Start simple: find all people
+
+Let's begin with the most basic query possible:
+
+```gql
+MATCH (p:Person)
+RETURN p.firstName, p.lastName
+```
+
+This query:
+1. **`MATCH`** finds all nodes labeled `Person`
+2. **`RETURN`** shows their first and last names
+
+### Add filtering: find specific people
+
+Now let's find people with specific characteristics:
+
+```gql
+MATCH (p:Person)
+FILTER p.firstName = 'Alice'
+RETURN p.firstName, p.lastName, p.birthday
+```
+
+This query finds everyone named Alice and shows their names and birthdays.
+
 ### Basic query structure
 
 Basic GQL queries all follow a consistent pattern: a sequence of statements that work together to find, filter, and return data. Most queries start with `MATCH` to find patterns in the graph and end with `RETURN` to specify what data you want back.
@@ -161,7 +211,9 @@ Statements in GQL work like a pipeline—each statement transforms the data from
 
 **Linear statement composition:**
 
-In GQL, statements execute sequentially, where each statement processes the output from the previous statement. This composition creates a clear data flow that's easy to understand and debug:
+In GQL, statements execute sequentially. Each statement processes the output from the previous statement. This composition creates a clear data flow that's easy to understand and debug.
+
+The pipeline works like this: each statement transforms data and passes it to the next statement. This approach makes queries readable because execution order matches reading order.
 
 ```gql
 -- Data flows: Match → Let → Filter → Order → Limit → Return
@@ -202,10 +254,19 @@ Variables (like `p`, `c`, and `fullName` in the previous examples) carry data be
 
 Variables can be categorized in different ways:
 
-- Generally as either **pattern variables** that are bound by matching [graph patterns](gql-graph-patterns.md) or
-as **regular variables**, which are bound by other language constructs.
-- Pattern variables are either **element variables** (**node variables** or **edge variables**) that bind to graph element reference values or **path variables** that bind to path values representing matched paths.
-- Element variables are further distinguished depending on their degree of reference as **singleton variables** that bind to individual element reference values matched by patterns or as **group variables** that bind to lists of element reference values matched by variable-length patterns (see [Advanced Aggregation Techniques](#advanced-aggregation-techniques)). 
+**By binding source:**
+- **Pattern variables** - bound by matching [graph patterns](gql-graph-patterns.md)  
+- **Regular variables** - bound by other language constructs
+
+**Pattern variable types:**
+- **Element variables** - bind to graph element reference values
+  - **Node variables** - bind to individual nodes
+  - **Edge variables** - bind to individual edges
+- **Path variables** - bind to path values representing matched paths
+
+**By reference degree:**
+- **Singleton variables** - bind to individual element reference values from patterns
+- **Group variables** - bind to lists of element reference values from variable-length patterns (see [Advanced Aggregation Techniques](#advanced-aggregation-techniques)) 
 
 ### Understanding query results
 
@@ -223,7 +284,9 @@ When you run a query, you get back:
 | 02000     | note: no data                                | Success with an empty table              |
 
 Other status codes indicate errors or warnings that prevented the query from completing successfully.
-See the [list of GQLSTATUS codes](#gqlstatus-codes) for details.
+
+> [!div class="nextstepaction"]
+> [View complete GQLSTATUS codes reference](gql-reference-status-codes.md)
 
 ## Essential concepts and statements
 
@@ -235,9 +298,29 @@ Graph patterns are the heart of GQL queries. They let you describe the data stru
 
 **Simple patterns:**
 
+Start with basic relationship patterns:
+
 ```gql
-(p:Person)-[:knows]->(f:Person)  -- Person knows another person
-(:City)-[:isPartOf]->(:Country)  -- City is part of a country/region 
+-- Find direct friendships
+(p:Person)-[:knows]->(f:Person)
+
+-- Find people working at any company
+(:Person)-[:workAt]->(:Company)
+
+-- Find cities in any country
+(:City)-[:isPartOf]->(:Country)  
+```
+
+**Patterns with specific data:**
+
+```gql
+-- Find who works at Microsoft specifically
+(p:Person)-[:workAt]->(c:Company)
+WHERE c.name = 'Microsoft'
+
+-- Find friends who are both young
+(p:Person)-[:knows]-(f:Person)  
+WHERE p.birthday > 19950101 AND f.birthday > 19950101
 ```
 
 **Label expressions for flexible entity selection:**
@@ -371,10 +454,13 @@ MATCH (p:Person)-[r:workAt]->(targetCompany)
 
 **Key joining behaviors:**
 
-- Input variables join with pattern variables using equality
-- Input rows without pattern matches are discarded (inner join)  
-- Statement-level `WHERE` filters after pattern matching
-- Multiple patterns must share at least one variable
+How `MATCH` handles data joining:
+
+- **Variable equality**: Input variables join with pattern variables using equality matching
+- **Inner join**: Input rows without pattern matches are discarded (no left/right joins)
+- **Filtering order**: Statement-level `WHERE` filters after pattern matching completes
+- **Pattern connectivity**: Multiple patterns must share at least one variable for proper joining
+- **Performance**: Shared variables create efficient join constraints
 
 > [!IMPORTANT]
 > **Restriction**: If this `MATCH` isn't the first statement, at least one input variable must join with a pattern variable. Multiple patterns must have one variable in common.
@@ -452,13 +538,12 @@ RETURN *
 
 **Null-aware filtering patterns:**
 
-```gql
-MATCH (p:Person)
-FILTER p.firstName IS NOT NULL                                       -- Has a first name
-  AND p.id > 0                                                       -- Valid ID
-  AND NOT coalesce(p.locationIP, '127.0.0.1') STARTS WITH '127.0.0'  -- Did not connect from local network
-RETURN *
-```
+Use these patterns to handle null values safely:
+
+- **Check for values**: `p.firstName IS NOT NULL` - has a first name
+- **Validate data**: `p.id > 0` - valid ID  
+- **Handle missing data**: `NOT coalesce(p.locationIP, '127.0.0.1') STARTS WITH '127.0.0'` - didn't connect from local network
+- **Combine conditions**: Use `AND`/`OR` with explicit null checks for complex logic
 
 > [!CAUTION]
 > Remember that conditions involving null values return `UNKNOWN`, which filters out those rows. Use explicit `IS NULL` checks when you need null-inclusive logic.
@@ -489,10 +574,13 @@ ORDER BY coalesce(p.gender, 'not specified') DESC -- Treat NULL as 'not specifie
 
 **Sorting behavior details:**
 
-- Expressions are evaluated for each row, then results determine the row order
-- Multiple sort keys create hierarchical ordering
-- `NULL` is always treated as the smallest value in comparisons
-- `ASC` (ascending) is the default order, `DESC` (descending) needs to be specified explicitly
+Understanding how `ORDER BY` works:
+
+- **Expression evaluation**: Expressions are evaluated for each row, then results determine row order
+- **Multiple sort keys**: Create hierarchical ordering (primary, secondary, tertiary, etc.)
+- **Null handling**: `NULL` is always treated as the smallest value in comparisons
+- **Default order**: `ASC` (ascending) is default, `DESC` (descending) must be specified explicitly
+- **Computed sorting**: You can sort by calculated values, not just stored properties
 
 > [!CAUTION]
 > The sort order established by `ORDER BY` is only visible to the *immediately* following statement.
@@ -717,10 +805,12 @@ upper(p.firstName) = 'ALICE'         -- Convert to uppercase for comparison
 
 **Built-in functions by category:**
 
-- **Aggregate**: `count()`, `sum()`, `avg()`, `min()`, `max()` for summarizing data
-- **String**: `char_length()`, `upper()`, `lower()`, `trim()` for text processing  
-- **Graph**: `nodes()`, `edges()`, `labels()` for analyzing graph structures
-- **General**: `coalesce()` for handling null values gracefully
+GQL provides these function categories for different data processing needs:
+
+- **Aggregate functions**: `count()`, `sum()`, `avg()`, `min()`, `max()` for summarizing data
+- **String functions**: `char_length()`, `upper()`, `lower()`, `trim()` for text processing  
+- **Graph functions**: `nodes()`, `edges()`, `labels()` for analyzing graph structures
+- **General functions**: `coalesce()` for handling null values gracefully
 
 **Operator precedence for complex expressions:**
 
@@ -936,28 +1026,56 @@ RETURN *
 
 ## Additional information
 
-### GQLSTATUS codes
-
-The following GQLSTATUS codes are used by graph in Microsoft Fabric:
-
-| GQLSTATUS | Message                                                       |
-|-----------|---------------------------------------------------------------|
-| 00000     | note: successful completion                                   |
-| 00001     | note: successful completion - omitted result                  |
-| 02000     | note: no data                                                 |
-| 22000     | error: data exception                                         |
-| 42000     | error: syntax error or access rule violation                  |
-| G2000     | error: graph type violation                                   |
-
 ### Reserved words
 
 GQL reserves certain keywords that you can't use as identifiers like variables, property names, or label names. See [GQL reserved words](gql-reference-reserved-terms.md) for the complete list.
 
 If you need to use reserved words as identifiers, escape them with backticks: `` `match` ``, `` `return` ``.
 
-To avoid escaping reserved words, use these naming conventions:
+To avoid escaping reserved words, use this naming convention:
 - For single-word identifiers, append an underscore: `:Product_`
 - For multi-word identifiers, use camelCase or PascalCase: `:MyEntity`, `:hasAttribute`, `textColor`
+
+## Next steps
+
+Now that you understand GQL fundamentals, here's your recommended learning path:
+
+### Continue building your GQL skills
+
+**For beginners:**
+1. **Try the quickstart** - Follow our [hands-on tutorial](quickstart.md) for practical experience
+2. **Practice basic queries** - Try the examples from this guide with your own data
+3. **Learn graph patterns** - Master the [comprehensive pattern syntax](gql-graph-patterns.md)
+4. **Explore data types** - Understand [GQL values and value types](gql-values-and-value-types.md)
+
+**For experienced users:**
+1. **Advanced expressions** - Master [GQL expressions and functions](gql-expressions.md)
+2. **Schema design** - Learn [GQL graph types](gql-graph-types.md) and constraints
+3. **Explore data types** - Understand [GQL values and value types](gql-values-and-value-types.md)
+
+### Reference materials
+
+Keep these references handy for quick lookups:
+- **[GQL abridged reference](gql-reference-abridged.md)** - Syntax quick reference
+- **[GQL status codes](gql-reference-status-codes.md)** - Complete error code reference  
+- **[GQL reserved words](gql-reference-reserved-terms.md)** - Complete list of reserved keywords
+
+### Explore Microsoft Fabric
+
+**Learn the platform:**
+- **[Graph data models](graph-data-models.md)** - Understanding graph concepts and modeling
+- **[Graph vs relational databases](graph-relational-databases.md)** - Choose the right approach
+- **[Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)** - Get hands-on experience
+- **[End-to-end tutorials](/fabric/fundamentals/end-to-end-tutorials)** - Complete learning scenarios
+
+### Get involved
+
+- **Share feedback** - Help improve our documentation and tools
+- **Join the community** - Connect with other graph database practitioners
+- **Stay updated** - Follow Microsoft Fabric announcements for new features
+
+> [!TIP]
+> Start with the [quickstart tutorial](quickstart.md) if you prefer learning by doing, or dive into [graph patterns](gql-graph-patterns.md) if you want to master the query language first.
 
 ## Related content
 
