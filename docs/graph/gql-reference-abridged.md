@@ -25,11 +25,11 @@ A GQL query usually starts by specifying the graph pattern to match, then uses o
 ```gql
 MATCH (n:Person)-[:knows]->(m:Person) 
 LET fullName = n.firstName || ' ' || n.lastName 
-FILTER m.city = 'Seattle' 
+FILTER m.gender = 'female' 
 ORDER BY fullName ASC 
 OFFSET 10
 LIMIT 5 
-RETURN fullName, m.city
+RETURN fullName, m.firstName
 ```
 
 **Statement order:**  
@@ -56,7 +56,7 @@ MATCH <graph pattern> [ WHERE <predicate> ]
 ```
 **Example:**
 ```gql
-MATCH (n:Person)-[:knows]-(m:Person) WHERE n.age > 25
+MATCH (n:Person)-[:knows]-(m:Person) WHERE n.birthday > 20000101
 ```
 
 For more information about the `MATCH` statement, see the [Graph patterns](gql-graph-patterns.md).
@@ -86,11 +86,10 @@ FILTER [ WHERE ] <predicate>
 ```
 **Example:**
 ```gql
-FILTER WHERE n.age > m.age
+FILTER WHERE n.birthday > m.birthday
 ```
 
 For more information about the `FILTER` statement, see the [GQL language guide](gql-language-guide.md#filter-statement).
-
 
 ### ORDER BY
 
@@ -133,7 +132,7 @@ RETURN [ DISTINCT ] <expression> [ AS <alias> ], ...
 ```
 **Example:**
 ```gql
-RETURN n.name, m.age
+RETURN n.firstName, m.lastName
 ```
 
 For more information about the `RETURN` statement, see the [GQL language guide](gql-language-guide.md#return-basic-results).
@@ -157,7 +156,6 @@ For more information about node patterns, see the [Graph patterns](gql-graph-pat
 
 ### Edge patterns
 
-
 Edge patterns specify relationships between nodes, including direction and edge type.
 
 ```gql
@@ -167,7 +165,6 @@ Edge patterns specify relationships between nodes, including direction and edge 
 For more information about edge patterns, see the [Graph patterns](gql-graph-patterns.md).
 
 ### Label expressions
-
 
 Label expressions let you match nodes with specific label combinations using logical operators.
 
@@ -182,24 +179,16 @@ For more information about label expressions, see the [Graph patterns](gql-graph
 
 ### Path patterns  
 
-
 Path patterns describe traversals through the graph, including hop counts and variable bindings.
 
 ```gql
-(a)-[e1]->(b)-[e2]->(c)           -- 2-hop path
-(a)-[e]->{2,4}(b)                 -- 2 to 4 hops
-(a)-[e]->{,3}(b)                  -- Up to 3 hops
-(a)-[e]->{1,}(b)                  -- 1 or more hops (needs additional restriction)
-(a)-[e]->+(b)                     -- 1 or more hops (needs additional restriction)
-(a)-[e]->*(b)                     -- 0, 1, or more hops (needs additional restriction)
-(a)-[:knows|likes]->{1,3}(b)      -- 1-3 hops via knows/follows
+(a)-[:knows|likes]->{1,3}(b)      -- 1-3 hops via knows/likes
 p=()-[:knows]->()                 -- Binding a path variable
 ```
 
 For more information about path patterns, see the [Graph patterns](gql-graph-patterns.md).
 
 ### Multiple patterns
-
 
 Multiple patterns let you match complex, non-linear graph structures in a single query.
 
@@ -256,6 +245,7 @@ STRING NOT NULL  -- Nonnullable string
 INT64            -- Nullable int (default)
 ```
 
+<!--
 ## Graph types
 
 Graph types define the structure of nodes, edges, and constraints in the graph.
@@ -290,11 +280,11 @@ CONSTRAINT compound_key
 ```
 
 Learn more about [graph types](gql-graph-types.md).
+-->
 
 ## Expressions & operators
 
 ### Comparison
-
 
 Comparison operators compare values and check for equality, ordering, or nulls.
 
@@ -307,7 +297,6 @@ For more information about comparison predicates, see the [GQL expressions and f
 
 ### Logical
 
-
 Logical operators combine or negate boolean conditions in queries.
 
 ```gql
@@ -318,36 +307,32 @@ For more information about logical expressions, see the [GQL expressions and fun
 
 ### Arithmetic  
 
-
 Arithmetic operators perform calculations on numbers.
 
 ```gql
-+, -, *, /                       -- Basic math
++, -, *, /                       -- Basic arithmetic operations
 ```
 
 For more information about arithmetic expressions, see the [GQL expressions and functions](gql-expressions.md).
 
-
 ### String patterns
-
 
 String pattern predicates match substrings, prefixes, or suffixes in strings.
 
 ```gql
-n.name CONTAINS 'John'           -- Has substring
-n.email STARTS WITH 'admin'     -- Starts with prefix
-n.phone ENDS WITH '1234'        -- Ends with suffix
+n.firstName CONTAINS 'John'          -- Has substring
+n.browserUsed STARTS WITH 'Chrome'   -- Starts with prefix
+n.locationIP ENDS WITH '.1'          -- Ends with suffix
 ```
 
 For more information about string pattern predicates, see the [GQL expressions and functions](gql-expressions.md).
 
 ### List operations
 
-
 List operations test membership, access elements, and measure list length.
 
 ```gql
-n.age IN [25, 30, 35]            -- Membership test
+n.gender IN ['male', 'female']    -- Membership test
 n.tags[0]                        -- First element
 size(n.tags)                     -- List length
 ```
@@ -355,7 +340,6 @@ size(n.tags)                     -- List length
 For more information about list membership predicates, see the [GQL expressions and functions](gql-expressions.md).
 
 ### Property access
-
 
 Property access gets the value of a property from a node or edge.
 
@@ -369,22 +353,20 @@ For more information about property access, see the [GQL expressions and functio
 
 ### Aggregate functions
 
-
-Aggregate functions compute summary values for groups of rows.
+Aggregate functions compute summary values for groups of rows (vertical aggregation) or over the elements of a group list (horizontal aggregation).
 
 ```gql
 count(*)                         -- Count all rows
 count(expr)                      -- Count non-null values
-sum(n.age)                       -- Sum values
-avg(n.age)                       -- Average
-min(n.age), max(n.age)           -- Minimum and maximum values
-collect_list(n.name)             -- Collect values into a list
+sum(p.birthday)                  -- Sum values
+avg(p.birthday)                  -- Average
+min(p.birthday), max(p.birthday) -- Minimum and maximum values
+collect_list(p.firstName)        -- Collect values into a list
 ```
 
 Learn more about aggregate functions in the [GQL expressions and functions](gql-expressions.md).
 
 ### String functions  
-
 
 String functions let you work with and analyze string values.
 
@@ -399,7 +381,6 @@ Learn more about string functions in the [GQL expressions and functions](gql-exp
 
 ### List functions
 
-
 List functions let you work with lists, like checking length or trimming size.
 
 ```gql
@@ -410,7 +391,6 @@ trim(list, n)                    -- Trim a list to be at most size `n`
 Learn more about list functions in the [GQL expressions and functions](gql-expressions.md).
 
 ### Graph functions
-
 
 Graph functions let you get information from nodes, paths, and edges.
 
@@ -448,17 +428,17 @@ Learn more about generic functions in the [GQL expressions and functions](gql-ex
 
 ```gql
 -- Friends of friends  
-MATCH (me:Person {name: 'Alice'})-[:knows]->{2}(fof:Person)
+MATCH (me:Person {firstName: 'Alice'})-[:knows]->{2}(fof:Person)
 WHERE fof <> me
-RETURN DISTINCT fof.name
+RETURN DISTINCT fof.firstName
 ```
 
 ### Aggregation
 
 ```gql
 -- Count by group
-MATCH (p:Person)
-RETURN p.city, count(*) AS population
+MATCH (p:Person)-[:isLocatedIn]->(c:City)
+RETURN c.name, count(*) AS population
 ORDER BY population DESC
 ```
 
@@ -466,8 +446,8 @@ ORDER BY population DESC
 
 ```gql
 -- Top 10
-MATCH (p:Person)-[:posted]->(m:Message)
-RETURN p.name, count(m) AS posts
+MATCH (p:Person)-[:hasCreator]-(m:Post)
+RETURN p.firstName, count(m) AS posts
 ORDER BY posts DESC
 LIMIT 10
 ```
@@ -476,19 +456,19 @@ LIMIT 10
 
 ```gql
 -- Complex conditions
-MATCH (p:Person)
-WHERE p.age >= 25 AND p.age <= 65
-  AND p.city IN ['Seattle', 'Portland']
-  AND p.name IS NOT NULL
-RETURN p.name, p.age
+MATCH (p:Person)-[:isLocatedIn]->(c:City)
+WHERE p.birthday >= 19800101 AND p.birthday <= 20000101
+  AND c.name IN ['Seattle', 'Portland']
+  AND p.firstName IS NOT NULL
+RETURN p.firstName, p.birthday
 ```
 
 ### Path traversal
 
 ```gql
 -- Variable length paths
-MATCH path = (start:Person {name: 'Alice'})-[:knows]->{1,3}(end:Person)
-WHERE end.name = 'Bob'
+MATCH path = (start:Person {firstName: 'Alice'})-[:knows]->{1,3}(end:Person)
+WHERE end.firstName = 'Bob'
 RETURN path
 ```
 

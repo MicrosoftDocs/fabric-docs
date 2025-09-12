@@ -36,7 +36,7 @@ For detailed literal syntax for each data type, see [GQL values and value types]
 Predicates are boolean expressions, which are commonly used to filter results in GQL queries. They evaluate to `TRUE`, `FALSE`, or `UNKNOWN` (null). 
 
 > [!CAUTION]
-> When used as a filter, predicates retain only those items, which the predicate evaluates to `TRUE`.
+> When used as a filter, predicates retain only those items, for which the predicate evaluates to `TRUE`.
 
 ## Comparison predicates
 
@@ -64,11 +64,11 @@ For specific comparison behavior, see the documentation for each value type in [
 
 ```gql
 MATCH (p:Person)
-FILTER WHERE p.age >= 18
-RETURN p.name
+FILTER WHERE p.birthday <= 20050915
+RETURN p.firstName
 ```
 
-**Coercion rules:**
+**Number coercion rules:**
 
 In order of precedence:
 
@@ -87,17 +87,17 @@ Combine conditions with logical operators:
 
 ```gql
 MATCH (p:Person)
-FILTER WHERE p.age >= 18 AND p.first = 'John'
-RETURN p.name
+FILTER WHERE p.birthday <= 20050915 AND p.firstName = 'John'
+RETURN p.firstName || ' ' || p.lastName AS fullName
 ```
 
 ## Property existence predicates
 
-Check if properties exist:
+Non-existing properties always evaluate to `NULL`. Hence, to check if properties exist, you can use:
 
 ```gql
-p.phone IS NOT NULL
-p.middle_name IS NULL
+p.locationIP IS NOT NULL
+p.browserUsed IS NULL
 ```
 
 ## List membership predicates
@@ -105,8 +105,8 @@ p.middle_name IS NULL
 Test if values are in lists:
 
 ```gql
-p.name IN ['Alice', 'Bob', 'Charlie']
-p.age NOT IN [25, 30, 35]
+p.firstName IN ['Alice', 'Bob', 'Charlie']
+p.gender NOT IN ['male', 'female']
 ```
 
 ## String pattern predicates
@@ -114,9 +114,9 @@ p.age NOT IN [25, 30, 35]
 Match strings using pattern matching:
 
 ```gql
-p.name CONTAINS 'John'
-p.email STARTS WITH 'admin'
-p.phone ENDS WITH '1234'
+p.firstName CONTAINS 'John'
+p.browserUsed STARTS WITH 'Chrome'
+p.locationIP ENDS WITH '.1'
 ```
 
 ## Arithmetic expressions
@@ -137,7 +137,7 @@ Generally operators follow established operator precedence rules, such as `*` be
 **Example:**
 
 ```gql
-(p.age < 25 OR p.age > 65) AND p.active = TRUE
+(p.birthday < 20050915 OR p.birthday > 19651231) AND p.gender = 'male'
 ```
 
 **Coercion rules:**
@@ -150,8 +150,8 @@ In order of precedence:
 **Example:**
 
 ```gql
-LET age_in_months = p.age * 12
-RETURN age_in_months
+LET birth_year = p.birthday / 10000
+RETURN birth_year
 ```
 
 ## Property access
@@ -159,8 +159,8 @@ RETURN age_in_months
 Access properties using dot notation:
 
 ```gql
-p.name
-edge.weight
+p.firstName
+edge.creationDate
 ```
 
 ## List access
@@ -168,8 +168,8 @@ edge.weight
 Access list elements using 0-based indexing:
 
 ```gql
-friends[0]    -- first element
-friends[1]    -- second element
+interests[0]    -- first element
+interests[1]    -- second element
 ```
 
 ## Built-in functions
@@ -200,14 +200,14 @@ Aggregate functions are used in three different ways:
 ```gql
 -- Vertical aggregate over whole table
 MATCH (p:Person)
-RETURN count(*) AS total_people, avg(p.age) AS average_age
+RETURN count(*) AS total_people, avg(p.birthday) AS average_birth_year
 ```
 
 ```gql
 -- Vertical aggregate with grouping
-MATCH (p:Person)
-RETURN p.city, count(*) AS population, avg(p.age) AS average_age
-GROUP BY p.city
+MATCH (p:Person)-[:isLocatedIn]->(c:City)
+RETURN c.name, count(*) AS population, avg(p.birthday) AS average_birth_year
+GROUP BY c.name
 ```
 
 **Horizontal aggregates:**
@@ -217,15 +217,14 @@ Horizontal aggregation computes aggregates over the elements of group list varia
 ```gql
 -- Horizontal aggregate over a group list variable
 MATCH (p:Person)-[edges:knows]->{1,3}(:Person)
-RETURN p.name, avg(edges.creationDate) AS avg_connection_date
+RETURN p.firstName, avg(edges.creationDate) AS avg_connection_date
 ```
+
+Horizontal aggregation always takes precedence over vertical aggregation. 
+To convert a group list into a regular list, use `collect_list(edges)`.
 
 > [!NOTE]
 > For comprehensive coverage of aggregation techniques including variable-length edge binding and combining horizontal/vertical aggregation, see [Advanced Aggregation Techniques](gql-language-guide.md#advanced-aggregation-techniques).
-
-> [!TIP]
-> Horizontal aggregation always takes precedence over vertical aggregation. 
-> To convert a group list into a regular list, use `collect_list(edges)`.
 
 ### String functions
 
@@ -239,8 +238,8 @@ RETURN p.name, avg(edges.creationDate) AS avg_connection_date
 
 ```gql
 MATCH (p:Person)
-WHERE char_length(p.name) > 5
-RETURN upper(p.name) AS name_upper
+WHERE char_length(p.firstName) > 5
+RETURN upper(p.firstName) AS name_upper
 ```
 
 ### Graph functions
@@ -253,7 +252,7 @@ RETURN upper(p.name) AS name_upper
 
 ```gql
 MATCH p=(:Company)<-[:workAt]-(:Person)-[:knows]-{1,3}(:Person)-[:workAt]->(:Company)
-RETURN nodes(p) AS chain_of_friends
+RETURN nodes(p) AS chain_of_colleagues
 ```
 
 ### List functions
@@ -264,14 +263,15 @@ RETURN nodes(p) AS chain_of_friends
 **Example:**
 
 ```gql
-MATCH (p:Person)
-WHERE size(p.hobbies) > 3
-RETURN p.name, trim(p.hobbies, 5) AS top_hobbies
+MATCH (p:Person)-[:hasInterest]->(t:Tag)
+WHERE size(collect_list(t)) > 3
+RETURN p.firstName, collect_list(t.name) AS interests
 ```
 
 ### Temporal functions
 
 - `zoned_datetime()` - returns current zoned datetime
+- `zoned_datetime("2025-09-12T10:10:52Z")` - returns zoned datetime given by the argument in ISO 8601 format
 
 **Example:**
 
@@ -287,7 +287,7 @@ RETURN zoned_datetime() AS now
 
 ```gql
 MATCH (p:Person)
-RETURN coalesce(p.nickname, p.firstName, 'Unknown') AS display_name
+RETURN coalesce(p.firstName, 'Unknown') AS display_name
 ```
 
 ## Related content
