@@ -135,7 +135,7 @@ RETURN [ DISTINCT ] <expression> [ AS <alias> ], ...
 RETURN n.firstName, m.lastName
 ```
 
-For more information about the `RETURN` statement, see the [GQL language guide](gql-language-guide.md#return-basic-results).
+For more information about the `RETURN` statement, see the [GQL language guide](gql-language-guide.md#return-basic-result-projection).
 
 ## Graph patterns
 

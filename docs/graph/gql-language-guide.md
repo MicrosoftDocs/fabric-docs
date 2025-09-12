@@ -114,7 +114,7 @@ Graph models also ensure data integrity through constraints, especially **node k
 
 Throughout this documentation, we use a social network example to illustrate GQL concepts. Understanding this domain helps you follow the examples and apply similar patterns to your own data.
 
-![Social network schema diagram](media/gql/gql-schema-example.png)
+![Social network schema diagram](media/gql/schema-example.png)
 
 ### The social network entities
 
@@ -926,7 +926,7 @@ GQL supports two distinct types of aggregation for analyzing data across groups 
 
 #### Vertical aggregation with GROUP BY
 
-Vertical aggregation (covered in [`RETURN` with `GROUP BY`](#return-with-group-by-grouped-results)) groups rows by shared values and computes aggregates within each group:
+Vertical aggregation (covered in [`RETURN` with `GROUP BY`](#return-with-group-by-grouped-result-projection)) groups rows by shared values and computes aggregates within each group:
 
 ```gql
 MATCH (p:Person)-[:workAt]->(c:Company)
