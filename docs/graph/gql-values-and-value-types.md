@@ -12,7 +12,7 @@ ms.service: fabric
 
 # GQL values and value types
 
-GQL supports various kinds of values like numbers, strings, and graph elements. These values are organized into sets called value types, which define what operations you can perform and how values behave in different contexts. Understanding the type system is essential for writing correct queries and avoiding runtime errors.
+The GQL language supports various kinds of values like numbers, strings, and graph elements. These values are organized into sets called value types, which define what operations you can perform and how values behave in different contexts. Understanding the type system is essential for writing correct queries and avoiding runtime errors.
 
 **Key concepts:**
 
@@ -49,7 +49,7 @@ Understanding how GQL compares values is crucial for writing effective queries, 
 
 ### Null handling in comparisons
 
-When you compare any value with null, the result is always `UNKNOWN`. This follows three-valued logic principles. However, the `ORDER BY` statement treats `NULL` as the smallest value when sorting, providing predictable ordering behavior.
+When you compare any value with null, the result is always `UNKNOWN`. Null handling follows three-valued logic principles. However, the `ORDER BY` statement treats `NULL` as the smallest value when sorting, providing predictable ordering behavior.
 
 ### Test if values are distinct
 
@@ -57,7 +57,7 @@ Certain statements don't test for equality but rather for distinctness. Understa
 
 ### Distinctness vs. equality
 
-Distinctness testing follows the same rules as equality with one crucial exception: `NULL` isn't distinct from `NULL`. This differs from equality tests involving `NULL`, which always result in `UNKNOWN`.
+Distinctness testing follows the same rules as equality with one crucial exception: `NULL` isn't distinct from `NULL`. Distinctness differs from equality tests involving `NULL`, which always result in `UNKNOWN`.
 
 Distinctness testing is used by:
 
@@ -109,7 +109,7 @@ Character strings are sequences of Unicode codepoints (they can be zero-length).
 
 **How comparison works:**
 
-Character strings are compared by comparing the Unicode scalar values of their codepoints (this is sometimes called the `UCS_BASIC` collation).
+Character strings are compared by comparing the Unicode scalar values of their codepoints (the comparison method is sometimes called the `UCS_BASIC` collation).
 
 **How to write string literals:**
 
@@ -136,7 +136,7 @@ disallowed. Instead, use C-style `\`-escapes:
 | `\r`         | U+000D              |
 | `\f`         | U+000C              |
 | `\uabcd`     | U+ABCD              |
-| `\UABCDEF`   | U+ABCDEF            |
+| `\UABCDEF01` | U+ABCDEF01          |
 
 GQL also supports SQL-style escaping by doubling the surrounding `"` and `'` characters:
 
@@ -162,7 +162,7 @@ Graph in Microsoft Fabric supports exact numbers that are negative or positive i
 
 **How comparison works:**
 
-All numbers are compared by their numeric value.
+The system compares all numbers by their numeric value.
 
 **How to write integer literals:**
 
@@ -185,20 +185,29 @@ UINT64 [ NOT NULL ]
 
 ### Approximate numeric types
 
-Graph in Microsoft Fabric supports approximate numbers that are IEEE 754-compatible floating point numbers.
+Graph in Microsoft Fabric supports approximate numbers that are IEEE (Institute of Electrical and Electronics Engineers) 754-compatible floating point numbers.
 
 **How comparison works:**
 
-All numbers are compared by their numeric value.
+The system compares all numbers by their numeric value.
 
 **How to write floating-point literals:**
 
 | Description                     | Example       | Value      |
 |---------------------------------|---------------|------------|
-| Common notation                 | 123.456d      | 123.456    |
-| Common notation w. grouping     | 123_456.789d  | 123456.789 |
+| Common notation                 | 123.456       | 123.456    |
+| Common notation w. grouping     | 123_456.789   | 123456.789 |
 | Scientific notation             | 1.23456e2     | 123.456    |
 | Scientific notation (uppercase) | 1.23456E2     | 123.456    |
+| Floating-point with suffix      | 123.456f      | 123.456    |
+| Floating-point with suffix      | 123.456f      | 123.456    |
+| Double precision with suffix    | 123.456d      | 123.456    |
+
+**Additional numeric considerations:**
+
+- **Overflow and underflow**: Integer operations that exceed the supported range may result in runtime errors or wrap-around behavior depending on the implementation.
+- **Precision**: Floating-point operations may lose precision due to IEEE 754 representation limitations.
+- **Special float values**: `NaN` (Not a Number), positive infinity (`+∞`), and negative infinity (`-∞`) may be supported in floating-point contexts.
 
 **Type syntax:**
 
@@ -218,7 +227,7 @@ A zoned datetime value represents an ISO 8601-compatible datetime with a timezon
 
 **How comparison works:**
 
-Zoned datetime values are compared chronologically by their absolute time points.
+The system compares zoned datetime values chronologically by their absolute time points.
 
 **How to write datetime literals:**
 
@@ -260,7 +269,7 @@ node_var.property_name
 
 **Abstract node types in graph schemas:**
 
-When working with graph types, you can define abstract node types that serve as base types for inheritance but cannot be instantiated directly. This enables polymorphic querying patterns:
+When working with graph types, you can define abstract node types that serve as base types for inheritance but can't be instantiated directly. Abstract types enable polymorphic querying patterns:
 
 ```gql
 -- Abstract base type (cannot be instantiated)
@@ -363,7 +372,7 @@ NULL
 
 The nothing type is a value type that contains no values. 
 
-This might seem like a technicality, but the nothing type lets you assign a precise type to values like empty list values. This allows you to pass empty lists wherever a list value type is expected (regardless of the required list element type).
+Although it might seem like a technicality, the nothing type lets you assign a precise type to values like empty list values. The nothing type allows you to pass empty lists wherever a list value type is expected (regardless of the required list element type).
 
 **Type syntax:**
 
@@ -385,11 +394,11 @@ List values are sequences of elements. Lists can contain elements of the same ty
 Lists are compared first by size, then element by element in order. Two lists are equal if they have the same size and all corresponding elements are equal.
 
 > [!TIP]
-> Comparisons involving null element values always result in `UNKNOWN`. This can lead to surprising results when comparing list values!
+> Comparisons involving null element values always result in `UNKNOWN`. Null comparisons can lead to surprising results when comparing list values!
 
 **Group lists:**
 
-Group lists are lists bound by matching variable-length edge patterns. Their status as group lists is tracked by graph in Microsoft Fabric.
+Group lists are lists bound by matching variable-length edge patterns. Graph in Microsoft Fabric tracks their status as group lists.
 
 Group lists can be used in horizontal aggregation. For more information, see [GQL expressions and functions](gql-expressions.md).
 
@@ -406,11 +415,28 @@ Use square bracket notation to create lists:
 
 **How to access elements:**
 
-Use square brackets with 0-based indexing to access list elements:
+Use square brackets with zero-based indexing to access list elements:
 
 ```gql
 list_var[0]  -- first element
 list_var[1]  -- second element
+list_var[-1] -- last element (if supported)
+```
+
+**Common list operations:**
+
+```gql
+-- Check if list contains a value
+WHERE 'Engineering' IN employee.departments
+
+-- List concatenation
+RETURN [1, 2] + [3, 4]  -- [1, 2, 3, 4]
+
+-- List slicing (if supported)
+list_var[1:3]  -- elements from index 1 to 2
+
+-- List size
+size(list_var)
 ```
 
 **Type syntax:**
@@ -424,7 +450,7 @@ Where `element_type` can be any supported type, such as STRING, INT64, DOUBLE, B
 
 ### Path values
 
-Path values represent paths matched in your graph. A path value contains a non-empty sequence of alternating node and edge reference values that always starts and ends with a node reference value. These reference values identify the nodes and edges of the originally matched path in your graph.
+Path values represent paths matched in your graph. A path value contains a nonempty sequence of alternating node and edge reference values that always starts and ends with a node reference value. These reference values identify the nodes and edges of the originally matched path in your graph.
 
 **How paths are structured:**
 
@@ -443,6 +469,41 @@ Paths are compared by comparing their constituent nodes and edges in sequence.
 ```gql
 PATH [ NOT NULL ]
 ```
+
+## Type conversions and casting
+
+GQL supports both implicit and explicit type conversions to enable flexible operations while maintaining type safety.
+
+### Implicit conversions
+
+Certain value types can be implicitly converted when the conversion is safe and doesn't lose information:
+
+- **Numeric widening**: Integer values can be implicitly converted to floating-point types when used in mixed arithmetic operations.
+- **String contexts**: Values may be implicitly converted to strings in certain contexts like concatenation operations.
+
+### Explicit casting
+
+Use the `CAST` function to explicitly convert values between compatible types:
+
+```gql
+CAST(value AS target_type)
+```
+
+**Examples:**
+
+```gql
+CAST(123 AS STRING)           -- "123"
+CAST('456' AS INT64)          -- 456
+CAST(3.14 AS STRING)          -- "3.14"
+CAST('true' AS BOOL)          -- TRUE
+```
+
+**Casting rules:**
+
+- **To STRING**: Most value types can be cast to STRING with their literal representation.
+- **To numeric types**: Strings containing valid numeric literals can be cast to appropriate numeric types.
+- **To BOOL**: Strings 'true'/'false' (case-insensitive) can be cast to boolean values.
+- **Invalid casts**: Attempting to cast incompatible values results in runtime errors.
 
 ## Related content
 

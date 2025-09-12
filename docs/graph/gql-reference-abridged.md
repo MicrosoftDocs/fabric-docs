@@ -16,7 +16,7 @@ This article is a quick reference for GQL (Graph Query Language) syntax in graph
 
 ## Query structure
 
-GQL queries use a sequence of statements that define what data to get from the graph, how to process it, and how to show the results. Each statement has a specific purpose, and together they form a linear pipeline that transforms graph data step by step.
+GQL queries use a sequence of statements that define what data to get from the graph, how to process it, and how to show the results. Each statement has a specific purpose, and together they create a linear pipeline that matches data from the graph and transforms it step by step.
 
 **Typical query flow:**  
 A GQL query usually starts by specifying the graph pattern to match, then uses optional statements for variable creation, filtering, sorting, pagination, and result output.
@@ -38,11 +38,11 @@ Statements must appear in the following order within a query:
 1. `LET` – Define variables from expressions.
 1. `FILTER` – Keep rows matching conditions.
 1. `ORDER BY` – Sort results.
-1. `OFFSET` – Skip a number of rows.
+1. `OFFSET` – Skip many rows.
 1. `LIMIT` – Restrict the number of rows.
 1. `RETURN` – Output the final results.
 
-Each statement builds on the previous one, so you incrementally refine and shape the query output. For more details on each statement, see the sections below.
+Each statement builds on the previous one, so you incrementally refine and shape the query output. For more information on each statement, see the following sections.
 
 ## Query statements
 
@@ -156,10 +156,14 @@ For more information about node patterns, see the [Graph patterns](gql-graph-pat
 
 ### Edge patterns
 
-Edge patterns specify relationships between nodes, including direction and edge type.
+Edge patterns specify relationships between nodes, including direction and edge type. In graph databases, an edge represents a connection or relationship between two nodes.
 
 ```gql
 <-[e]-             -- Incoming edge
+-[e]->             -- Outgoing edge
+-[e]-              -- Undirected edge
+-[:knows]->        -- Edge with type
+-[e:knows|likes]-> -- Multiple edge types
 ```
 
 For more information about edge patterns, see the [Graph patterns](gql-graph-patterns.md).
@@ -190,11 +194,11 @@ For more information about path patterns, see the [Graph patterns](gql-graph-pat
 
 ### Multiple patterns
 
-Multiple patterns let you match complex, non-linear graph structures in a single query.
+Multiple patterns let you match complex, nonlinear graph structures in a single query.
 
 ```gql
 (a)->(b), (a)->(c)               -- Multiple edges from same node
-(a)->(b)<-(c), (b)->(d)          -- Non-linear structures
+(a)->(b)<-(c), (b)->(d)          -- Nonlinear structures
 ```
 
 For more information about multiple patterns, see the [Graph patterns](gql-graph-patterns.md).

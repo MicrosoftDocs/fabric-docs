@@ -12,41 +12,11 @@ ms.service: fabric
 
 # GQL graph patterns
 
-Graph patterns are fundamental components of GQL queries that provide the visual syntax to describe the structures you're looking for in your graph. While the `MATCH` statement uses these patterns to find data, understanding graph patterns themselves is essential for writing effective queries.
-
-## MATCH statement
-
-**Syntax:**
-
-```gql
-MATCH <graph pattern>, <graph pattern>, ... [ WHERE <predicate> ]
-```
-
-**Description:**
-
-Use the `MATCH` statement to find matches for your graph pattern in the graph. The `MATCH` statement usually starts most queries because it identifies the data you want to use.
-
-Each match creates a row with columns for each path, node, or edge variable bound by the graph pattern. `MATCH` lets you describe complex graph structures using intuitive visual patterns.
-
-**How matching works:**
-
-- If columns from a previous statement overlap with columns from matched nodes and edges, they're joined automatically using equality.
-- Input rows without matching graph patterns are discarded (like an inner join in SQL).
-- If you use a predicate, only rows where the predicate evaluates to `TRUE` are kept.
-
-> [!IMPORTANT]
-> The following restrictions currently apply to `MATCH` statement graph patterns:
->
-> - If this `MATCH` statement isn't the first linear query statement, at least one input variable must join with at least one graph pattern variable.
-> - If you specify multiple graph patterns, all graph patterns must have one variable in common.
-
-## Work with graph patterns
-
-Graph patterns are the core building blocks of your GQL queries. They describe the structure you're looking for in the graph using nodes and edges in an intuitive, visual way. Think of graph patterns as templates that the query engine tries to match against the actual data in your graph.
+Graph patterns are core building blocks of your GQL queries. They describe the structures you're looking for in the graph using nodes and edges in an intuitive, visual way. Think of graph patterns as templates that the query engine tries to match against the actual data in your graph.
 
 ### Simple element patterns
 
-Simple element patterns help you match individual nodes and edges from your graph that fulfill specific requirements. These form the foundation for more complex pattern matching.
+Simple element patterns help you match individual nodes and edges from your graph that fulfill specific requirements. These patterns form the foundation for more complex pattern matching.
 
 #### Simple node patterns
 
@@ -56,17 +26,17 @@ A node pattern specifies the labels and properties that a node must have to matc
 (:Place&City { name: "New York, USA" })
 ```
 
-This matches all nodes that have **both** the `Place` and `City` labels (indicated by the `&` operator) and whose `name` property equals `"New York, USA"`. This specification of required labels and properties is called the *filler* of the node pattern.
+This pattern matches all nodes that have **both** the `Place` and `City` labels (indicated by the `&` operator) and whose `name` property equals `"New York, USA"`. This specification of required labels and properties is called the *filler* of the node pattern.
 
 **Key concepts:**
 
 - **Label matching**: Use `&` to require multiple labels.
 - **Property filtering**: Specify exact values that properties must match.
-- **Flexible ("covariant") matching**: Matched nodes can have more labels and properties beyond those specified.
+- **Flexible ("covariant") matching**: Matched nodes can have more labels and properties beyond the ones specified.
 
 #### Simple edge patterns
 
-Graph edge patterns are more complex than node patterns because they not only specify a filler but also connect a source node pattern to a destination node pattern. This describes requirements on both the edge and its endpoints:
+Edge patterns are more complex than node patterns. They not only specify a filler but also connect a source node pattern to a destination node pattern. Edge patterns describe requirements on both the edge and its endpoints:
 
 ```gql
 (:Person)-[:likes { creationDate: ZONED_DATETIME("2000-01-01T18:00:00Z") }]->(:Comment)
@@ -143,13 +113,13 @@ In this pattern, `p` is bound to matching `Person` nodes, `w` to matching `workA
 
 **Variable reuse for structural constraints:**
 
-Re-using the same variable in a pattern multiple times expresses a restriction on the structure of matches. Every occurrence of the same variable must always bind to the same graph element in a valid match. This is powerful for expressing complex structural requirements.
+Reusing the same variable in a pattern multiple times expresses a restriction on the structure of matches. Every occurrence of the same variable must always bind to the same graph element in a valid match. Variable reuse is powerful for expressing complex structural requirements.
 
 ```gql
 (c:Company)<-[:workAt]-(x:Person)-[:knows]-(y:Person)-[:workAt]->(c:Company)
 ```
 
-This pattern finds `Person` nodes `x` and `y` that know each other and work at the same `Company`, which is bound to the variable `c`. The reuse of `c` ensures that both people work at the same company.
+The pattern finds `Person` nodes `x` and `y` that know each other and work at the same `Company`, which is bound to the variable `c`. The reuse of `c` ensures that both people work at the same company.
 
 **Pattern predicates with element variables:**
 
@@ -159,7 +129,7 @@ Binding element variables enables you to specify node and edge pattern predicate
 (p:Person)-[e:knows WHERE e.creationDate >= ZONED_DATETIME("2000-01-01T18:00:00Z")]-(o:Person)
 ```
 
-This finds people who have known each other since January 1, 2000, using a flexible condition rather than an exact match.
+The edge pattern finds people who knew each other since January 1, 2000, using a flexible condition rather than an exact match.
 
 **Advanced pattern predicate techniques:**
 
@@ -227,7 +197,7 @@ Path patterns can be composed by concatenating simple node and edge patterns to 
 (:Person)-[:knows]->(:Person)-[:workAt]->(:Company)-[:locatedIn]->(:City)-[:isPartOf]->(:Country)
 ```
 
-This pattern traverses from a person through their social and professional connections to find the country/region where their colleague's company is located.
+The pattern traverses from a person through their social and professional connections to find where their colleague's company is located.
 
 **Piecewise pattern construction:**
 You can also build path patterns more incrementally, which can make complex patterns easier to read and understand:
@@ -240,7 +210,7 @@ You can also build path patterns more incrementally, which can make complex patt
 
 This approach breaks down the same traversal into logical steps, making it easier to understand and debug.
 
-#### Compose non-linear patterns
+#### Compose nonlinear patterns
 
 The resulting shape of a pattern doesn't have to be a linear path. You can match more complex structures like "star-shaped" patterns that radiate from a central node:
 
@@ -251,21 +221,21 @@ The resulting shape of a pattern doesn't have to be a linear path. You can match
 (p)-[:likes]-(m:Message)
 ```
 
-This pattern finds a person along with their education, employment, and content preferences all at once—a comprehensive profile query.
+The pattern finds a person along with their education, employment, and content preferences all at once—a comprehensive profile query.
 
 #### Match trails
 
-In complex patterns, it's often undesirable to traverse the same edge multiple times. This becomes important when the actual graph contains cycles that could lead to infinite or overly long paths. To handle this, graph in Microsoft Fabric supports the `TRAIL` match mode. 
+In complex patterns, it's often undesirable to traverse the same edge multiple times. Edge reuse becomes important when the actual graph contains cycles that could lead to infinite or overly long paths. To handle edge reuse, graph in Microsoft Fabric supports the `TRAIL` match mode. 
 
 Prefixing a path pattern with the keyword `TRAIL` discards all matches that bind the same edge multiple times:
 
 ```gql
-MATCH TRAIL (a)-[e1:knows]->(b)-[e2:knows]->(c)-[e3:knows]->(d)
+TRAIL (a)-[e1:knows]->(b)-[e2:knows]->(c)-[e3:knows]->(d)
 ```
 
-By using `TRAIL`, this only produces matches in which all edges are different. Therefore, even if `c = a` such that the path forms a cycle in a given match , `e3` will never bind to the same edge as `e1`.
+By using `TRAIL`, the pattern only produces matches in which all edges are different. Therefore, even if `c = a` such that the path forms a cycle in a given match, `e3` never binds to the same edge as `e1`.
 
-This is essential for preventing infinite loops and ensuring that your queries return meaningful, non-redundant paths.
+The `TRAIL` mode is essential for preventing infinite loops and ensuring that your queries return meaningful, nonredundant paths.
 
 ### Use variable-length patterns
 
@@ -304,7 +274,7 @@ Variable-length patterns can be part of larger, more complex patterns:
 (c1:Comment)-[:replyOf]-{1,5}(m:Message)<-[:replyOf]->{1,5}(c2:Comment)
 ```
 
-This finds pairs of comments where people who know each other liked different comments, and those comments are connected through reply chains of 1-5 levels each.
+The pattern finds pairs of comments where people who know each other liked different comments, and those comments are connected through reply chains of 1-5 levels each.
 
 #### Bind variable-length pattern edge variables
 
@@ -326,11 +296,11 @@ The evaluation of the edge variable `e` occurs in two contexts:
 
 - **In the `MATCH` statement**: The query finds chains of friends-of-friends-of-friends where each friendship was established since the year 2000. During pattern matching, the edge pattern predicate `e.creationDate >= ZONED_DATETIME("2000-01-01T00:00:00Z")` is evaluated once for each candidate edge. In this context, `e` is bound to a single edge reference value.
 
-- **In the `RETURN` statement**: Here `e` is bound to a (group) list of edge reference values in the order they occur in the matched chain. The result of `e[0]` is the first edge reference value in each matched chain.
+- **In the `RETURN` statement**: Here, `e` is bound to a (group) list of edge reference values in the order they occur in the matched chain. The result of `e[0]` is the first edge reference value in each matched chain.
 
 #### Unbounded variable-length patterns
 
-You can also match arbitrarily long chains of edge patterns by specifying no upper bound. This creates an unbounded variable-length pattern, useful for traversing hierarchies or networks of unknown depth:
+You can also match arbitrarily long chains of edge patterns by specifying no upper bound. Unbounded patterns create an unbounded variable-length pattern, useful for traversing hierarchies or networks of unknown depth:
 
 ```gql
 // 2 or more
@@ -339,7 +309,7 @@ TRAIL (:Person)-[:knows]->{2,}(:Person)
 
 **Alternative syntax:**
 
-You can also specify one of the following two shorthands:
+You can also specify one of the following two shortcuts:
 
 ```gql
 // 0, 1, or more

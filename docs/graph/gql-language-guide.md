@@ -12,7 +12,7 @@ ms.service: fabric
 
 # GQL language guide
 
-GQL (Graph Query Language) is the ISO-standardized query language for graph databases. It helps you query and work with graph data efficiently. The same international working group that oversees SQL develops GQL, so you'll see familiar syntax if you already know SQL.
+GQL (Graph Query Language) is the ISO-standardized query language for graph databases. It helps you query and work with graph data efficiently. The same international working group that oversees SQL develops GQL, so you see familiar syntax if you already know SQL.
 
 This guide serves both newcomers learning GQL fundamentals and experienced users seeking advanced techniques and comprehensive reference information.
 
@@ -41,7 +41,7 @@ Before diving into queries, understand these core concepts that form the foundat
 
 - **Graphs** store your data as nodes (entities) and edges (relationships) with labels and properties
 - **Graph types** act like schemas, defining what nodes and edges can exist in your graph
-- **Constraints** are additional restrictions imposed by graph types on graphs
+- **Constraints** are extra restrictions imposed by graph types on graphs
 - **Queries** use statements like `MATCH`, `FILTER`, and `RETURN` to process data and show results
 - **Patterns** describe the graph structures you want to find using intuitive visual syntax
 - **Expressions** perform calculations and comparisons on your data, similar to SQL expressions
@@ -50,7 +50,7 @@ Before diving into queries, understand these core concepts that form the foundat
 
 ## Understanding graph data
 
-To work effectively with GQL, you need to understand how graph data is structured. This foundation will help you write better queries and model your data effectively.
+To work effectively with GQL, you need to understand how graph data is structured. This foundation helps you write better queries and model your data effectively.
 
 ### Nodes and edges: the building blocks
 
@@ -58,7 +58,7 @@ In GQL, you work with labeled property graphs. A graph consists of two types of 
 
 **Nodes** typically represent the entities (the "nouns") in your system—things like people, organizations, posts, or products. They're independent objects that exist in your domain. Nodes are sometimes also called vertices.
 
-**Edges** represent relationships between entities (the "verbs")—how your entities connect and interact. For example, which people know each other, which organization operates in which country/region, or who purchased which product. Edges are sometimes also called relationships.
+**Edges** represent relationships between entities (the "verbs")—how your entities connect and interact. For example, which people know each other, which organization operates where, or who purchased which product. Edges are sometimes also called relationships.
 
 Every graph element has these characteristics:
 
@@ -68,7 +68,7 @@ Every graph element has these characteristics:
 
 ### How graphs are structured
 
-Each edge connects exactly two nodes: a source and a destination. This creates the graph's structure and shows how entities relate to each other. Edge direction matters—a `Person` who `follows` another `Person` creates a directed relationship.
+Each edge connects exactly two nodes: a source and a destination. This connection creates the graph's structure and shows how entities relate to each other. The direction of edges matters—a `Person` who `follows` another `Person` creates a directed relationship.
 
 GQL graphs are always well-formed, meaning every edge connects two valid nodes. If you see an edge in a graph, both its endpoints exist in the same graph.
 
@@ -87,7 +87,7 @@ Graph models also ensure data integrity through constraints, especially **node k
 
 ## A practical example: social network
 
-Throughout this documentation, we use a social network example to illustrate GQL concepts. Understanding this domain will help you follow the examples and apply similar patterns to your own data.
+Throughout this documentation, we use a social network example to illustrate GQL concepts. Understanding this domain helps you follow the examples and apply similar patterns to your own data.
 
 ![Social network schema diagram](media/gql/gql-schema-example.png)
 
@@ -122,7 +122,7 @@ The connections between entities make the network interesting:
 - People have interests in specific tags
 - Forums contain posts and have members and moderators
 
-Domain relationships are represented by graph edges. This rich network creates many opportunities for interesting queries and analysis.
+Graph edges represent domain relationships. This rich network creates many opportunities for interesting queries and analysis.
 
 > [!div class="nextstepaction"]
 > [View complete schema specification](gql-schema-example.md)
@@ -133,7 +133,7 @@ Now that you understand graph basics, let's see how to query graph data using GQ
 
 ### Basic query structure
 
-Basic GQL queries all follow a simple pattern: a sequence of statements that work together to find, filter, and return data. Most queries start with `MATCH` to find patterns in the graph and end with `RETURN` to specify what data you want back.
+Basic GQL queries all follow a consistent pattern: a sequence of statements that work together to find, filter, and return data. Most queries start with `MATCH` to find patterns in the graph and end with `RETURN` to specify what data you want back.
 
 Here's a simple query:
 
@@ -150,18 +150,18 @@ This query works step by step:
 3. **`RETURN`** counts how many such friend pairs exist
 
 > [!TIP]
-> Filtering can also be performed directly as part of a pattern (e.g., in `MATCH`) by appending a `WHERE` clause
+> Filtering can also be performed directly as part of a pattern (for example, in `MATCH`) by appending a `WHERE` clause
 
 > [!NOTE]
 > GQL supports C-style `//` line comments, SQL-style `--` line comments, and C-style `/* */` block comments.
 
 ### How statements work together
 
-Statements in GQL work like a pipeline—each statement transforms the data from the previous statement. This makes queries easy to read because the execution order matches the reading order.
+Statements in GQL work like a pipeline—each statement transforms the data from the previous statement. This approach makes queries easy to read because the execution order matches the reading order.
 
 **Linear statement composition:**
 
-In GQL, statements execute sequentially, where each statement processes the output from the previous statement. This creates a clear data flow that's easy to understand and debug:
+In GQL, statements execute sequentially, where each statement processes the output from the previous statement. This composition creates a clear data flow that's easy to understand and debug:
 
 ```gql
 -- Data flows: Match → Let → Filter → Order → Limit → Return
@@ -190,7 +190,7 @@ RETURN fullName, c.name AS company_name
 
 This pipeline:
 1. Finds people who work at companies
-2. Creates full names by combining first and last names
+2. Creates full names by combining first and family names
 3. Keeps only Contoso employees  
 4. Sorts by full name
 5. Takes the first 10 results
@@ -198,7 +198,7 @@ This pipeline:
 
 ### Variables connect your data
 
-Variables (like `p`, `c`, and `fullName` above) carry data between statements. When you reuse a variable name, GQL automatically ensures it refers to the same data, creating powerful join conditions. Variables are sometimes also called binding variables.
+Variables (like `p`, `c`, and `fullName` in the previous examples) carry data between statements. When you reuse a variable name, GQL automatically ensures it refers to the same data, creating powerful join conditions. Variables are sometimes also called binding variables.
 
 Variables can be categorized in different ways:
 
@@ -257,10 +257,10 @@ Label expressions let you match different kinds of nodes in a single pattern, ma
 (c:Company)<-[:workAt]-(x:Person)-[:knows]-(y:Person)-[:workAt]->(c)
 ```
 
-The reuse of variable `c` ensures both people work at the **same** company, creating an automatic join constraint. This is a key pattern for expressing "same entity" relationships.
+The reuse of variable `c` ensures both people work at the **same** company, creating an automatic join constraint. This pattern is a key pattern for expressing "same entity" relationships.
 
 > [!IMPORTANT]
-> **Critical insight**: Variable reuse in patterns creates structural constraints. This is how you express complex graph relationships like "friends who work at the same company" or "people in the same city."
+> **Critical insight**: Variable reuse in patterns creates structural constraints. This technique is how you express complex graph relationships like "friends who work at the same company" or "people in the same city."
 
 **Pattern-level filtering with WHERE:**
 
@@ -489,14 +489,14 @@ ORDER BY coalesce(p.gender, 'not specified') DESC -- Treat NULL as 'not specifie
 
 **Sorting behavior details:**
 
-- Expressions are evaluated for each row, then rows are ordered by results
+- Expressions are evaluated for each row, then results determine the row order
 - Multiple sort keys create hierarchical ordering
 - `NULL` is always treated as the smallest value in comparisons
 - `ASC` (ascending) is the default order, `DESC` (descending) needs to be specified explicitly
 
 > [!CAUTION]
 > The sort order established by `ORDER BY` is only visible to the *immediately* following statement.
-> Hence, `ORDER BY` followed by `RETURN *` will NOT produce a sorted result. 
+> Hence, `ORDER BY` followed by `RETURN *` does NOT produce a sorted result. 
 
 #### `OFFSET` and `LIMIT` statements
 
@@ -673,14 +673,14 @@ FILTER p.birthday < 19980101 OR p.birthday IS NULL -- Includes null birthdays
 ```
 
 > [!CAUTION]
-> Three-valued logic means `NULL = NULL` returns `UNKNOWN`, not `TRUE`. This affects filtering and joins. Always use `IS NULL` for null tests.
+> Three-valued logic means `NULL = NULL` returns `UNKNOWN`, not `TRUE`. This behavior affects filtering and joins. Always use `IS NULL` for null tests.
 
 > [!div class="nextstepaction"]
 > [Learn comprehensive type system details](gql-values-and-value-types.md)
 
 ### Expressions: transforming and analyzing data
 
-Expressions let you calculate, compare, and transform data within your queries. They're similar to expressions in SQL but have been extended with additional features for the handling of graph data.
+Expressions let you calculate, compare, and transform data within your queries. They're similar to expressions in SQL but have extra features for the handling of graph data.
 
 **Common expression types:**
 
@@ -846,7 +846,7 @@ RETURN c.name,
 GROUP BY c.name
 ```
 
-This creates one result row per company, aggregating all employees within each group.
+This approach creates one result row per company, aggregating all employees within each group.
 
 #### Horizontal aggregation with group list variables
 
@@ -971,7 +971,6 @@ To avoid escaping reserved words, use these naming conventions:
 **Quick references:**
 - [GQL abridged reference](gql-reference-abridged.md) - Syntax quick reference
 - [GQL reserved words](gql-reference-reserved-terms.md) - Complete list of reserved keywords
-
 
 **Graph for Microsoft Fabric:**
 - [Graph data models](graph-data-models.md) - Understanding graph concepts and modeling

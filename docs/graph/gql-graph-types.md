@@ -12,7 +12,7 @@ ms.service: fabric
 
 # GQL graph types
 
-A graph type describes your graph's structure by defining which nodes and edges can exist. Think of it like a blueprint or schema—it specifies the shape of nodes and edges in the graph in terms of their labels and properties. For edges, it also specifies which kinds of edges can connect which kinds of nodes. If you're familiar with relational databases, graph types work similarly to how ER diagrams describe tables and foreign key relationships.
+A graph type describes your graph's structure by defining which nodes and edges can exist. Think of it like a blueprint or schema—it specifies the shape of nodes and edges in the graph in terms of their labels and properties. For edges (the connections between nodes), it also specifies which kinds of edges can connect which kinds of nodes. If you're familiar with relational databases, graph types work similarly to how ER diagrams describe tables and foreign key relationships.
 
 Graph types provide several key benefits:
 
@@ -44,7 +44,7 @@ This example creates a node type that defines nodes with:
 - A `name` property that holds string values (can be null).
 - A `url` property that holds string values (can be null).
 
-The `::` operator specifies the data type for each property, while `NOT NULL` indicates that the property must always have a value
+The `::` operator specifies the data type for each property, while `NOT NULL` indicates that the property must always have a value.
 
 > [!NOTE]
 > `NOT NULL` is considered part of the type in GQL, which differs from SQL.
@@ -73,14 +73,14 @@ Nodes can have multiple labels to support inheritance and categorization. You ca
 (:Company => :Organisation)
 ```
 
-Here, `University` and `Company` are the key labels of the two node types defined, while `Organisation` is a secondary label shared by both types. Notice how the key label and secondary labels are separated by `=>` in each node type. This creates a type hierarchy where both universities and companies are types of organizations.
+Here, `University` and `Company` are the key labels of the two node types defined, while `Organisation` is a secondary label shared by both types. Notice how the key label and secondary labels are separated by `=>` in each node type. This approach creates a type hierarchy where both universities and companies are types of organizations.
 
 > [!NOTE]
 > Key labels are essential when you're defining node type hierarchies. They help the system understand which node type you're referring to when multiple types share the same labels.
 
 ## Define edge types and families
 
-An edge type defines the key label, property types, and endpoint node types for edges. This tells the system what relationships are allowed in your graph:
+An edge type defines the key label, property types, and endpoint node types for edges. In graph databases, edges represent connections between nodes. The edge definition tells the system what relationships are allowed in your graph:
 
 ```gql
 (:Person)-[:knows { creationDate :: ZONED DATETIME }]->(:Person)
@@ -94,7 +94,7 @@ This edge type defines all edges with:
 
 The arrow `->` indicates the direction of the edge, from source to destination. This directional information is crucial for understanding your graph's semantics.
 
-Here are more examples of relationship types:
+Here are more examples of edge types:
 
 ```gql
 (:Person)-[:studyAt { classYear :: UINT64 }]->(:University)
@@ -165,7 +165,7 @@ This inheritance ensures that all messages, whether posts or comments, share com
 
 ### Save time with inheritance shortcuts
 
-Repeating labels and properties from parent node types gets tedious and error-prone. Graph in Microsoft Fabric provides the `+=` operator so you can specify only the extra (non-inherited) labels and property types:
+Repeating labels and properties from parent node types gets tedious and error-prone. Graph in Microsoft Fabric provides the `+=` operator so you can specify only the extra (noninherited) labels and property types:
 
 ```gql
 (:Post => :Message += {
@@ -182,7 +182,7 @@ When no extra properties are specified, the graph inherits all required properti
 
 ### Use abstract node types
 
-You can define node types purely for building hierarchies, even when your graph doesn't contain concrete nodes of that type. This is useful for creating conceptual groupings and shared property sets. For this purpose, you can define a node type as `ABSTRACT` in graph in Microsoft Fabric:
+You can define node types purely for building hierarchies, even when your graph doesn't contain concrete nodes of that type. Abstract node types are useful for creating conceptual groupings and shared property sets. For this purpose, you can define a node type as `ABSTRACT` in graph in Microsoft Fabric:
 
 ```gql
 ABSTRACT (:Message => {
@@ -211,14 +211,14 @@ Here are the data types you can use for property values:
 - `T NOT NULL`, where `T` is any of the preceding data types.
 - `LIST<T>` and `LIST<T> NOT NULL`, where `T` is any of the preceding data types.
 
-For complete details about value types, see [GQL values and value types](gql-values-and-value-types.md).
+For complete information about value types, see [GQL values and value types](gql-values-and-value-types.md).
 
 > [!IMPORTANT]
 > All property types with the same name in a node type or edge type must specify the same property value type. The only exception: they can differ in whether they include the null value.
 
 ## Set up node key constraints
 
-Node key constraints define how each node in your graph gets uniquely identified by one or more of its property values. This works like primary key constraints in relational databases and ensures data integrity. A node key constraint can target nodes across multiple node types, which let you define node keys for entire conceptual hierarchies.
+Node key constraints define how each node in your graph gets uniquely identified by one or more of its property values. Key constraints work like primary key constraints in relational databases and ensure data integrity. A node key constraint can target nodes across multiple node types, which let you define node keys for entire conceptual hierarchies.
 
 Understanding key constraints is crucial because they:
 
@@ -227,7 +227,7 @@ Understanding key constraints is crucial because they:
 - **Support data integration**: Provide a stable way to reference nodes across different data sources.
 
 > [!IMPORTANT]
-> For graph in Microsoft Fabric, every node must be constrained by exactly one key constraint.
+> For graph in Microsoft Fabric, exactly one key constraint must constrain every node.
 
 ### How node key constraints work
 

@@ -12,7 +12,7 @@ ms.service: fabric
 
 # GQL expressions, predicates, and functions
 
-GQL expressions let you perform calculations, comparisons, and transformations on data within your queries. Combined with built-in functions, expressions provide powerful tools for data processing, filtering, and analysis in graph queries.
+GQL expressions let you perform calculations, comparisons, and transformations on data within your queries. In combination with built-in functions, expressions provide powerful tools for data processing, filtering, and analysis in graph queries.
 
 ## Literals
 
@@ -93,7 +93,7 @@ RETURN p.firstName || ' ' || p.lastName AS fullName
 
 ## Property existence predicates
 
-Non-existing properties always evaluate to `NULL`. Hence, to check if properties exist, you can use:
+Nonexisting properties always evaluate to `NULL`. Hence, to check if properties exist, you can use:
 
 ```gql
 p.locationIP IS NOT NULL
@@ -165,7 +165,7 @@ edge.creationDate
 
 ## List access
 
-Access list elements using 0-based indexing:
+Access list elements using zero-based indexing:
 
 ```gql
 interests[0]    -- first element
