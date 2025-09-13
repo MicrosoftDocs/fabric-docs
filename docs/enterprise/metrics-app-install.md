@@ -62,7 +62,10 @@ To upgrade a previous installation of the *Microsoft Fabric Capacity Metrics* ap
 
 To complete the installation, configure the Microsoft Fabric Capacity Metrics app by running it for the first time.
 
-1. In Microsoft Fabric, select **Apps**.
+   >[!NOTE]
+   >If you are doing this just after installing the app following the steps above, you will redirected to the **Apps** page and you can skip to the step 2 bellow. Otherwise, in order to see the **Apps** blade on the left side you need to change the experience selector at the bottom left as Power BI instead of Fabric.
+
+1. In Microsoft Fabric, in the Power BI experience, select **Apps**.
 1. Select the **Microsoft Fabric Capacity Metrics** app.
 1. When you see the message *You have to connect to your own data to view this report*, select **Connect**.
 1. In the **Connect to Microsoft Fabric Capacity Metrics** first window, fill in the fields according to the table:
