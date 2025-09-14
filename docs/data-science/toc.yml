@@ -217,6 +217,8 @@ items:
     href: machine-learning-model.md
   - name: Fabric autologging
     href: mlflow-autologging.md
+  - name: Git and deployment pipelines 
+    href: machine-learning-artifacts-git-deployment-pipelines.md
 - name: Model scoring
   items:
     - name: Score models with PREDICT
@@ -361,6 +363,10 @@ items:
       href: tutorial-relationships-detection.md
     - name: Validate data with Great Expectations (GX)
       href: tutorial-great-expectations.md
+    - name: Classification of Natural Language Text with Generative AI
+      href: tutorial-text-classification.md
+  - name: Service principal support
+    href: semantic-link-service-principal-support.md
   - name: Power BI connectivity
     href: semantic-link-power-bi.md
   - name: Semantic propagation
