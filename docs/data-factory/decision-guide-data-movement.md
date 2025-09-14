@@ -15,6 +15,8 @@ Microsoft Fabric gives you several ways to bring data into Fabric, based on what
 
 Mirroring is designed to be simple and free, but it won't cover every advanced scenario. Copy activities in pipelines give you powerful data ingestion features, but they require you to build and manage pipelines. Copy job fills the gap between these options. It gives you more flexibility and control than Mirroring, plus native support for both batch and incremental copying, without the complexity of building pipelines.
 
+For real-time streaming ingestion and event-driven scenarios, consider using Fabric Eventstreams, which offer low-latency data movement with no-code or SQL transformation and content-based, multi-destination routing.
+
 :::image type="content" source="media/decision-guide-data-movement/decision-guide-data-movement.svg" alt-text="Screenshot of a data movement strategy decision tree, comparing mirroring, copy job, and copy activity." lightbox="media/decision-guide-data-movement/decision-guide-data-movement.svg":::
 
 ## Key concepts
@@ -25,32 +27,34 @@ Mirroring is designed to be simple and free, but it won't cover every advanced s
 
 - **Copy Job** gives you a complete data ingestion experience from any source to any destination. It **makes data ingestion easier with native support for both batch and incremental copying, so you don't need to build pipelines**, while still giving you access to many advanced options. It supports many sources and destinations and works well when you want more control than Mirroring but less complexity than managing pipelines with Copy activity.
 
+- **Eventstreams**: Designed for real-time ingestion, transformation and processing of streaming data. Supports low-latency pipelines, schema management, and routing to destinations like Eventhouse, Lakehouse, Activator and Custom Endpoints supporting (AMQP, Kafka and HTTP endpoints).
+
 ## Data movement decision guide
 
-| | **Mirroring** | **Copy job** | **Copy Activity (Pipeline)** |
-| --- | --- | --- | --- |
-| **Sources** | Databases + third-party integration into Open Mirroring | All supported data sources and formats | All supported data sources and formats |
-| **Destinations** | Tabular format in Fabric OneLake (read-only) | All supported destinations and formats | All supported destinations and formats |
-| **Flexibility** | Simple setup with fixed behavior | Easy to use + Advanced options | Advanced and fully customizable options |
+| | **Mirroring** | **Copy job** | **Copy Activity (Pipeline)** | **Eventstreams** |
+| --- | --- | --- | --- | --- |
+| **Sources** | Databases + third-party integration into Open Mirroring | All supported data sources and formats | All supported data sources and formats | 25+ sources and all formats |
+| **Destinations** | Tabular format in Fabric OneLake (read-only) | All supported destinations and formats | All supported destinations and formats | 4+ destinations |
+| **Flexibility** | Simple setup with fixed behavior | Easy to use + Advanced options | Advanced and fully customizable options | Simple and customizable options |
 
-| **Capability** | **Mirroring** | **Copy job** | **Copy Activity (Pipeline)** |
-| --- | :---: | :---: | :---: |
-| Custom scheduling |  | Yes | Yes |
-| Table and Column management |  | Yes | Yes |
-| Copy behavior: Append, Upsert, Override |  | Yes | Yes |
-| Advanced observability + auditing |  | Yes | Yes |
-| Copy modes |  |  |  |
-| CDC-based continuous replication | Yes | Yes |  |
-| Batch or bulk copy |  | Yes | Yes |
-| Native support for Incremental copy (watermark-based) |  | Yes |  |
-| Copy using user defined query |  | Yes | Yes |
-| Use cases |  |  |  |
-| Continuous Replication for analytics and reporting | Yes | Yes |  |
-| Metadata driven ELT/ETL for data warehousing |  | Yes | Yes |
-| Data consolidation |  | Yes | Yes |
-| Data migration / Data backup / Data sharing |  | Yes | Yes |
-| Free of cost | Yes |  |  |
-| Predictable performance |  | Yes | Yes |
+| **Capability** | **Mirroring** | **Copy job** | **Copy Activity (Pipeline)** | **Eventstreams** |
+| --- | :---: | :---: | :---: | :---: |
+| Custom scheduling |  | Yes | Yes | Continous |
+| Table and Column management |  | Yes | Yes | Yes (schema, event & field management) |
+| Copy behavior: Append, Upsert, Override |  | Yes | Yes | Append |
+| Advanced observability + auditing |  | Yes | Yes | |
+| **Copy modes** |  |  |  |   |
+| CDC-based continuous replication | Yes | Yes |  | Yes |
+| Batch or bulk copy |  | Yes | Yes | Yes (CDC initial snapshot replication) |
+| Native support for Incremental copy (watermark-based) |  | Yes |  |  |
+| Copy using user defined query |  | Yes | Yes |  | 
+| **Use cases** |  |  |  |
+| Continuous Replication for analytics and reporting | Yes | Yes |  | Yes |
+| Metadata driven ELT/ETL for data warehousing |  | Yes | Yes |  |
+| Data consolidation |  | Yes | Yes | Yes |
+| Data migration / Data backup / Data sharing |  | Yes | Yes | Yes |
+| Free of cost | Yes |  |  |  |
+| Predictable performance |  | Yes | Yes |  Yes |
 
 ## Scenarios
 
@@ -80,10 +84,18 @@ David needs full control over the copy process, including the ability to use use
 
 David reviews the available options and chooses **Copy Activities in Pipelines**. This approach gives him the advanced and fully customizable configuration he needs, supports user-defined queries for complex data extraction, and provides the pipeline-based orchestration required for his workflow. The advanced monitoring and auditing capabilities help him track the complex process, while the pipeline framework lets him coordinate copy activities with other data processing steps.
 
+### Scenario 4
+Ash is a product manager at a telecom company. Her team needs to monitor customer support metrics in real time—such as call volumes, wait times, and agent performance—to ensure SLA compliance and improve customer satisfaction. The data originates from multiple operational systems including CRM platforms, call center logs, and agent assignment databases, and arrives at high frequency throughout the day.
+
+Ash uses **Fabric Eventstreams** to ingest and transform this data in motion. She configures streaming connectors to pull data from various sources, applies transformations using the no-code experience or SQL operator, and routes the processed events to **Eventhouse** for real-time analytics. To enable proactive operations, she integrates **Data Activator** to trigger alerts and automated workflows when SLA thresholds are breached—such as sending notifications to supervisors or adjusting staffing levels dynamically.
+
+The result is a real-time dashboard that updates within seconds, giving Ash’s team visibility into live performance metrics and enabling fast, data-driven decisions. This streaming architecture eliminates the latency of batch pipelines and empowers the business to respond instantly to customer needs.
+
 ## Get started
 
 Now that you have an idea of which data movement strategy to use, you can get started with these resources:
 
 - [Get started with Mirroring](/fabric/mirroring/overview)
+- [Get started with Fabric Eventstreams](fabric/real-time-intelligence/event-streams/overview)
 - [Create a Copy Job](/fabric/data-factory/create-copy-job)
 - [Create a Copy Activity](/fabric/data-factory/copy-data-activity)
