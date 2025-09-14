@@ -295,6 +295,21 @@
       "source_path_from_root": "/docs/database/mirrored-database/sql-server-performance.md",
       "redirect_url": "/fabric/mirroring/sql-server-performance",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/database/sql/decision-guide.md",
+      "redirect_url": "/fabric/database/sql/limitations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/database/sql/feature-comparison-sql-database-fabric.md",
+      "redirect_url": "/fabric/database/sql/limitations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/database/sql/enable.md",
+      "redirect_url": "/fabric/database/sql/create",
+      "redirect_document_id": false
     }
   ]
 }

@@ -73,11 +73,12 @@ You can start a trial capacity several different ways. The first two methods mak
 - [**Method 3**](#other-ways-to-start-a-microsoft-fabric-trial): Join an existing trial capacity.
 
 <a id="method-1"></a>
+
 ### Method 1: Start a new trial capacity from the Account manager
 
 You can sign up for a trial capacity. You manage who else can use your trial by giving coworkers permission to create workspaces in your trial capacity. Every user in the tenant has contributor permissions by default unless you explicitly manage who has access. Assigning workspaces to the trial capacity automatically adds coworkers (with roles in those workspaces) to the trial capacity. To start your Fabric trial capacity and become the Capacity administrator of that trial, follow these steps:
 
-1. To open your Account manager, select the tiny photo from the upper-right corner of the [Fabric homepage](https://app.fabric.microsoft.com/home?pbi_source=learn-get-started-fabric-trial). 
+1. To open your Account manager, select the tiny photo from the upper-right corner of the [Fabric homepage](https://app.fabric.microsoft.com/home?pbi_source=learn-get-started-fabric-trial).
 
     :::image type="content" source="media/fabric-trial/fabric-home-page.png" lightbox="media/fabric-trial/fabric-home-page.png" alt-text="Screenshot of the Microsoft Fabric homepage with the Account manager outlined in red.":::
 
@@ -101,6 +102,7 @@ You can sign up for a trial capacity. You manage who else can use your trial by 
 Congratulations. You now have a Fabric trial capacity and a complementary Power BI individual trial (if you didn't already have a Power BI *paid* license). To share your capacity, see [Share trial capacities.](#share-trial-capacities).
 
 <a id="method-2"></a>
+
 ### Method 2: Trigger a Fabric trial by trying to use a Fabric feature
 
 If your organization enabled Fabric and Power BI trials, attempting to use a Fabric feature launches a Fabric trial capacity. If your Fabric administrator enabled Microsoft Fabric for the tenant but you still don't have access to a Fabric-enabled capacity, follow these steps:
@@ -205,8 +207,8 @@ If you don't move the workspaces and their contents to a new capacity that suppo
 
 - **Cancel the Fabric trial capacity using the Admin portal**: As a Capacity or Fabric administrator, you can use the Admin portal to cancel a Fabric trial capacity:
 
-  1. Select **Settings** > **Admin portal** > **Capacity settings**. 
-  1. Then choose the **Trials** tab. 
+  1. Select **Settings** > **Admin portal** > **Capacity settings**.
+  1. Then choose the **Trials** tab.
   1. Select the cog icon for the trial capacity that you want to delete.
 
   :::image type="content" source="media/fabric-trial/fabric-delete-trial.png" lightbox="media/fabric-trial/fabric-delete-trial.png" alt-text="Screenshot of the Trial tab in the Admin portal.":::
@@ -250,7 +252,7 @@ If you do see the **Start trial** button in your Account manager but can't start
 
 To request access to a trial capacity or to check whether your organization has the Fabric tenant setting enabled, you can contact your Capacity administrator. Ask your Fabric administrator to use the Admin portal to look up your Capacity administrator. You can find your Fabric administrator as the service administrator in the Workspace Settings of your workspace.
 
-If you're the Capacity or Fabric administrator, from the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select **Capacity settings** and then choose the **Trial** tab. 
+If you're the Capacity or Fabric administrator, from the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select **Capacity settings** and then choose the **Trial** tab.
 
 :::image type="content" source="media/fabric-trial/fabric-admin.png" lightbox="media/fabric-trial/fabric-admin.png" alt-text="Screenshot of Admin center showing the Capacity settings screen.":::
 

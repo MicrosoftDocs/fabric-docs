@@ -49,7 +49,7 @@ Before you enable Git integration, make sure you review the following privacy st
 
 The following Git providers are supported:
 
-* [Azure DevOps](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant
+* [Azure DevOps](/en-us/azure/devops/user-guide/code-with-git) within the *same* Fabric tenant (cross tenant support is in *preview*)
 * [GitHub](https://github.com/) (cloud versions only)
 * [GitHub Enterprise](https://github.com/enterprise) (cloud versions only)
 
@@ -65,6 +65,10 @@ The following items currently support Git integration:
   * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
   * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
   * User Data Functions *(preview)*
+
+* Data Science items:
+  * [Machine learning experiments](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-git-integration) *(preview)*
+  * [Machine learning models](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-git-integration) *(preview)*
 
 * Data Factory items:
 
