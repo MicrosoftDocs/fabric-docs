@@ -9,12 +9,6 @@
             "source_path_from_root": "/docs/cicd/deployment-pipelines/manage-deployment-pipelines.md",
             "redirect_url": "/fabric/cicd/manage-deployment",
             "redirect_document_id": false
-        },
-        {
-            "source_path_from_root": "/docs/cicd/git-integration/git-integration-with-service-principal.md",
-            "redirect_url": "/fabric/cicd/git-integration/git-automation",
-            "redirect_document_id": false
-        }         
+        }       
     ]
 }
-
