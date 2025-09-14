@@ -141,7 +141,7 @@ Fabric administrators have the rights to [manage workload](../../workload-develo
 
 - **[Power Designer](https://app.fabric.microsoft.com/workloadhub/detail/tips.tools.Product?experience=fabric-developer)**: A tool for company-wide styling and report template creation, improving Power BI report designs.
 
-  :::image type="content" source="media/partner-integration/power-bi-tips-workload-tile.png" alt-text="Screenshot showing PBI Tips's workload." lightbox="media/partner-integration/pbitips-workload-tile.png":::
+  :::image type="content" source="media/partner-integration/power-bi-tips-workload-tile.png" alt-text="Screenshot showing PBI Tips's workload." lightbox="media/partner-integration/power-bi-tips-workload-tile.png":::
   
   
 - **[Celonis Process Intelligence](https://app.fabric.microsoft.com/workloadhub/detail/celonis.fabric-integration.Product?experience=fabric-developer)**: Allows organizations to expose Celonis’ unique class of data and context in Microsoft Fabric.
