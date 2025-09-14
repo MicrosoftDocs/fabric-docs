@@ -40,6 +40,7 @@ The following table describes the resource limitations for pipelines in Data Fac
 | Concurrent authoring operations, including test connection, browse folder list and table list, preview data, and so on per workspace | 50 | 50 |
 | Maximum activities per pipeline, which includes inner activities for containers | 120 | 120 |
 | Maximum parameters per pipeline | 50 | 50 |
+|Maximum schedules per pipeline|20|20|
 | ForEach items | 100,000 | 100,000 |
 | ForEach parallelism | 20 | 50 |
 | Lookup Activity item count | 5000 | 5000 |

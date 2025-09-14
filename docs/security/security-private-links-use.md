@@ -14,7 +14,7 @@ ms.date: 08/13/2025
 
 Microsoft Fabric supports secure data access through private links, which use Azure Private Link and private endpoints to route traffic over Microsoft’s private network backbone rather than the public internet. You can configure private links at both the tenant and the workspace level. This article explains how to set up private links for a Fabric tenant. 
 
-To configure private endpoints, you must be a Fabric administrator and have permissions in Azure to create and configure resources such as virtual machines (VMs) and virtual networks (VNets).
+Before you begin, review the information in [Private links for Fabric tenants](security-private-links-overview.md). To configure private endpoints, you must be a Fabric administrator and have permissions in Azure to create and configure resources such as virtual machines (VMs) and virtual networks (VNets).
 
 ## Step 1. Set up private endpoints for Fabric
 

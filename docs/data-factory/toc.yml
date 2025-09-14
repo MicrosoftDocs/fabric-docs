@@ -137,6 +137,12 @@
         href: connector-access-database-overview.md
       - name: Set up your connection
         href: connector-access-database.md
+    - name: Amazon RDS For Oracle
+      items:
+      - name: Amazon RDS For Oracle - Overview
+        href: connector-amazon-rds-for-oracle-overview.md
+      - name: Configure in data pipeline Copy activity
+        href: connector-amazon-rds-for-oracle-copy-activity.md
     - name: Amazon RDS for SQL Server
       items:
       - name: Amazon RDS for SQL Server - Overview
@@ -453,6 +459,12 @@
         href: connector-impala-overview.md
       - name: Set up your connection
         href: connector-impala.md
+    - name: Informix For Pipeline
+      items:
+      - name: Informix For Pipeline - Overview
+        href: connector-informix-for-pipeline-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-informix-for-pipeline-copy-activity.md
     - name: KQL database
       items:
       - name: KQL database - Overview
@@ -483,6 +495,12 @@
         href: connector-microsoft-365.md
       - name: Configure in a data pipeline Copy activity
         href: connector-microsoft-365-copy-activity.md
+    - name: Microsoft Access
+      items:
+      - name: Microsoft Access - Overview
+        href: connector-microsoft-access-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-microsoft-access-copy-activity.md
     - name: Microsoft Exchange Online
       items:
       - name: Microsoft Exchange Online - Overview
@@ -557,6 +575,12 @@
         href: connector-postgresql.md
       - name: Configure in a data pipeline Copy activity
         href: connector-postgresql-copy-activity.md
+    - name: Presto
+      items:
+      - name: Presto - Overview
+        href: connector-presto-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-presto-copy-activity.md    
     - name: REST
       items:
       - name: REST - Overview
@@ -779,7 +803,7 @@
           href: parameters.md
         - name: Expression language
           href: expression-language.md
-      - name: Data pipeline runs
+      - name: Run or schedule pipelines
         href: pipeline-runs.md
       - name: Schedule pipeline
         href: schedule-pipeline.md
@@ -892,7 +916,9 @@
     - name: CI/CD for Copy job
       href: cicd-copy-job.md
     - name: REST API Capabilities
-      href: copy-job-rest-api-capabilities.md    
+      href: copy-job-rest-api-capabilities.md
+    - name: Secure your data movement with Copy Job and Virtual Network Data Gateway
+      href: copy-job-with-virtual-network-data-gateway.md
   - name: Data gateway
     items:
     - name: "Business continuity and disaster recovery (BCDR) for gateways"

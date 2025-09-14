@@ -103,7 +103,7 @@ items:
         href: event-streams/edit-publish.md
       - name: Route events based on content
         href: event-streams/route-events-based-on-content.md
-    - name: Add sources to eventstreams
+    - name: Add source connectors to eventstreams
       items:
       - name: Add and manage an event source
         href: event-streams/add-manage-eventstream-sources.md
@@ -771,10 +771,10 @@ items:
   items:
   - name: Real-Time Dashboards
     items:
-    - name: Generate Real-Time Dashboard Using Copilot
-      href: copilot-generate-dashboard.md      
     - name: Create a Real-Time Dashboard
       href: dashboard-real-time-create.md
+    - name: Generate Real-Time Dashboard Using Copilot
+      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
     - name: Real-Time Dashboard permissions
       href: dashboard-permissions.md
     - name: Explore data in Real-Time Dashboard tiles
@@ -790,8 +790,6 @@ items:
     - name: Create alerts from a Real-Time Dashboard
       displayName: trigger, activator, reflex
       href: ./data-activator/activator-get-data-real-time-dashboard.md
-    - name: Copy your Data Explorer dashboard to Fabric
-      href: dashboard-copy-from-data-explorer.md 
   - name: Power BI
     items:
     - name: Visualize data in a Power BI report

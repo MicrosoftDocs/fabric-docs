@@ -197,12 +197,16 @@ items:
            href: monitor-spark-job-definitions.md
          - name: Leverage the Apache Spark Advisor
            href: spark-advisor-introduction.md
+         - name: Job insights diagnostic library (Preview)
+           href: job-insight-library.md    
       - name: Spark Application Run Series Analysis
         items: 
          - name: Run series analysis Overview
            href: run-series-analyisis-overview.md
          - name: Monitor run series
            href: apache-spark-monitor-run-series.md
+         - name: Apache Spark applications comparison
+           href: spark-comparison-runs.md
       - name: Single Spark Application Monitoring
         items: 
          - name: Monitor a Single Spark Application
@@ -225,6 +229,8 @@ items:
             href: executor-log.md
           - name: Resource usage APIs
             href: resource-usage-apis.md
+          - name: Spark Advisor API
+            href: spark-advisor-api.md
       - name: Collecting Spark Logs & Metrics
         items: 
           - name: Collect Logs & Metrics with Azure Log Analytics
@@ -421,6 +427,8 @@ items:
      href: ./user-data-functions/user-data-functions-overview.md
    - name: Create a User data functions item
      href: ./user-data-functions/create-user-data-functions-portal.md
+   - name: Use the functions portal editor
+     href: ./user-data-functions/user-data-functions-portal-editor.md
    - name: Test your User data functions
      href: ./user-data-functions/test-user-data-functions.md
    - name: Connect to data sources

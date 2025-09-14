@@ -21,7 +21,6 @@ This article and sample scripts demonstrate the basic Fabric CLI commands that c
 Before you begin:
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
-    - Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md). If you don't, you receive an error message "SQL database failed to create."
 - You can use an existing workspace or [create a new Fabric workspace](../../fundamentals/workspaces.md).
 - You must be a member of the [Admin or Member roles for the workspace](../../fundamentals/give-access-workspaces.md) to create a SQL database.
 - Make sure [Python version 3.10, 3.11, or 3.12](https://www.python.org/downloads/) is installed on your machine. Python should be accessible from your terminal, via the `PATH` environment variable.
