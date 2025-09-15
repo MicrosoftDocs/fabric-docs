@@ -43,32 +43,34 @@ You can incorporate these functions as part of data-science and data-engineering
 
 ## Getting started with AI functions
 
-When you use pandas, the OpenAI package must be installed. In the Python environment, the AI functions package must also be installed.
+- Pandas AI Functions:
+  - pandas AI functions require `openai` package to be installed regardless of the runtime.
+  - In Python only runtime, you need to install the `synapseml_internal` and `synapseml_core` whl files using the installation commands provided below.
+  - In PySpark runtime, AI functions are preinstalled.
 
-No installation is required when you use PySpark, because AI functions are preinstalled in the PySpark environment.
+- PySpark AI Functions
+  - No package installation is required for PySpark AI functions.
 
 The following code cells include all the necessary installation commands.
 
 # [pandas (PySpark environment)](#tab/pandas-pyspark)
 
 ```python
-# The pandas AI functions package requires OpenAI version 1.99.5 or later.
+# The pandas AI functions package requires OpenAI version 1.99.5 or later
 %pip install -q --force-reinstall openai==1.99.5 2>/dev/null
 
-# AI functions are preinstalled on the Fabric PySpark runtime.
+# AI functions are preinstalled on the Fabric PySpark runtime
 ```
 
 # [pandas (Python environment)](#tab/pandas-python)
 
 ```python
-# Install the fixed version of packages.
-%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
+# The pandas AI functions package requires OpenAI version 1.99.5 or later
+%pip install -q --force-reinstall openai==1.99.5 synapseml_internal-latest-py3-none-any.whl synapseml_core-latest-py3-none-any.whl
 
-# Install the latest version of SynapseML-core.
-%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12-spark3.5/synapseml_core-1.0.12.dev1-py2.py3-none-any.whl 2>/dev/null
-
-# Install SynapseML-Internal .whl with the AI functions library from blob storage:
-%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12.2-spark3.5/synapseml_internal-1.0.12.2.dev1-py2.py3-none-any.whl 2>/dev/null
+# Get latest versions of AI functions library whl to install
+!wget -q https://aka.ms/fabric-aifunctions-whl -O synapseml_internal-latest-py3-none-any.whl
+!wget -q https://aka.ms/fabric-synapseml-core-whl -O synapseml_core-latest-py3-none-any.whl
 ```
 
 ---
@@ -81,9 +83,9 @@ This code cell imports the AI functions library and its dependencies. The pandas
 # Required imports
 import synapse.ml.aifunc as aifunc
 import pandas as pd
-import openai
 
-# Optional import for progress bars
+# Optional import for progress bars. In future versions, this import will be included by default
+# Controlled by aifunc.default_conf.use_progress_bar and conf parameter of AI functions
 from tqdm.auto import tqdm
 tqdm.pandas()
 ```
@@ -91,7 +93,9 @@ tqdm.pandas()
 # [PySpark](#tab/pyspark)
 
 ```python
-from synapse.ml.spark.aifunc.DataFrameExtensions import AIFunctions
+import synapse.ml.spark.aifunc as aifunc
+
+# SparkSession with accessor `spark` in PySpark environments is pre-setup and available for use
 ```
 
 ---
