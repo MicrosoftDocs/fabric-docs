@@ -20,7 +20,7 @@ To view the list of preinstalled packages and their versions for each runtime, s
 
 > [!IMPORTANT]
 > Fabric supports different ways of managing packages. For more options and **best practices** for managing libraries in Fabric, see [Manage Apache Spark libraries in Fabric](library-management.md)
-> When your workspace has networking features such as **Workspace outbound access protection** or **Managed VNets**, the access of public repositories like PyPI will be blocked. Follow the instruction in [Manage libraries with limited network access in Fabric](environment-manage-library-with-OAP.md) to seamlessly managing the libraries in Environment.
+> When your workspace has networking features such as **Workspace outbound access protection** or **Managed VNets**, the access of public repositories like PyPI will be blocked. Follow the instruction in [Manage libraries with limited network access in Fabric](environment-manage-library-with-outbound-access-protection.md) to seamlessly managing the libraries in Environment.
 
 ## Public libraries
 

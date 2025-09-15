@@ -121,7 +121,7 @@ bandersnatch --config <path-to-bandersnatch.conf> mirror
 
 After the commands are executed successfully, the sub folders in your mirror directory on local filesystem will be created.
 
-:::image type="content" source="media\environment-lm\outbound-access-protection-PyPI-mirror.png" alt-text="Screenshot that shows the PyPI mirror created by bandersnatch." lightbox="media\environment-lm\outbound-access-protection-PyPI-mirror.png":::
+:::image type="content" source="media\environment-lm\outbound-access-protection-mirror.png" alt-text="Screenshot that shows the PyPI mirror created by bandersnatch." lightbox="media\environment-lm\outbound-access-protection-mirror.png":::
 
 ### Step 3: Verify local mirror setup (optional)
 
