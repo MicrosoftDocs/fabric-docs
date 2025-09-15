@@ -17,7 +17,7 @@ To proceed, you’ll need **PowerShell 7.4.2 or higher installed on your machine
 1. Open **PowerShell 7 (x64)**  
    Click the Start menu and search for **PowerShell 7**. Look for this icon:
 
-![image](https://github.com/microsoft/FabricUpgrade/assets/85350198/8744d3fb-40d6-4e2c-88ac-563ab32ea4c9)
+:::image type="content" source="media/migrate-pipeline-powershell-upgrade/powershell-icon.png" alt-text="Screenshot showing the powershell icon.":::
 
  Right-click and choose **Run as administrator** for elevated permissions.
 
