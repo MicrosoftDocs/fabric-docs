@@ -884,7 +884,7 @@
       - name: Copilot explainer skill in Dataflow Gen2 
         href: dataflow-gen2-copilot-explain.md
       - name: Copilot in Modern Get Data
-        href: copilot-in-modern-get-data.md
+        href: copilot-modern-get-data.md
       - name: Dataflow Gen2 public APIs
         href: dataflow-gen2-public-apis.md
     - name: How-to
