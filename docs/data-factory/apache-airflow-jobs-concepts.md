@@ -61,6 +61,7 @@ Microsoft Fabric's hosted Apache Airflow job comes with a variety of helpful fea
 - Malaysia West (Coming soon)
 - Mexico Central
 - New Zealand North (Coming soon)
+- North Central US
 - North Europe
 - Norway East
 - Poland Central
