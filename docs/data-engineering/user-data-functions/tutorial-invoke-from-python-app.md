@@ -30,7 +30,7 @@ The following steps explain how to configure support for a ReactJS application i
 
 3. Under the *Manage* list, select **API permissions**, then **Add permission**.
 
-4. Add the **PowerBI Service**, select **Delegated permissions**, and select **GraphQLApi.Execute.All** permissions. Confirm that admin consent isn't required.
+4. Add the **PowerBI Service**, select **Delegated permissions**, and select **UserDataFunction.Execute.All** or **item.Execute.All** permissions. Confirm that admin consent isn't required.
 
 5. Go back to the *Manage* setting and select **Authentication** > **Add a platform** > **Single-page application**.
 
@@ -72,7 +72,7 @@ The following steps explain how to configure support for a ReactJS application i
     # DO NOT USE IN PRODUCTION.
     # Below code to acquire token is to test the User data function endpoint and is for the purpose of development only.
     # For production, always register an application in a Microsoft Entra ID tenant and use the appropriate client_id and scopes.
-    # https://learn.microsoft.com/fabric/data-engineering/connect-apps-api-graphql#create-a-microsoft-entra-app
+    
 
     app = InteractiveBrowserCredential()
     scp = 'https://analysis.windows.net/powerbi/api/user_impersonation'
