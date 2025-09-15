@@ -85,7 +85,7 @@ For more information, see [Striim integration into open mirroring in Microsoft F
 
 ## Tessell
 
-Tessell is a multi-cloud DBaaS unifying operational and analytical data within a seamless data ecosystem. Leveraging open mirroring in Microsoft Fabric Tessell enables customers to stream changes from Tessell managed Oracledatabases directly into Microsoft OneLake.
+Tessell is a multicloud DBaaS unifying operational and analytical data within a seamless data ecosystem. Leveraging open mirroring in Microsoft Fabric Tessell enables customers to stream changes from Tessell managed Oracle databases directly into Microsoft OneLake.
 
 ## Theobald
 
