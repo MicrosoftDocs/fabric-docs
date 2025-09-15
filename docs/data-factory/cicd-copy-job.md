@@ -18,6 +18,8 @@ In Microsoft Fabric, you get two main tools for this: Git integration and deploy
 
 With Git integration and deployment pipelines, you can connect your own Git repositories in Azure DevOps or GitHub and use Fabric’s built-in deployment tools. This makes it easy to set up smooth CI/CD workflows, so you can build, test, and deploy your data projects with confidence.
 
+Additionally, with Variable library support, you can parameterize connections in Copy Job. This powerful capability streamlines CI/CD by externalizing connection values, enabling you to deploy the same Copy Job across multiple environments while the Variable library injects the correct connection for each stage.
+
 ## Git integration for Copy job
 
 Follow these steps to connect your Copy job in Data Factory to Git. This helps you track changes, work with your team, and keep your work safe:
@@ -148,6 +150,36 @@ After you choose your deployment option, you can [review the details and leave a
 1. You can also review the deployment history to see the last time content was deployed to each stage. To examine the differences between the two pipelines before you deploy, see [Compare content in different deployment stages](../cicd/deployment-pipelines/compare-pipeline-content.md).
 
    :::image type="content" source="media/cicd-copy-job/deployment-pipeline.png" alt-text="Screenshot of deployment pipeline for Copy job.":::
+
+## Connection parameterization with Variable Library for Copy Job
+
+You can do the following to parameterize the connection for Copy Job using Variable Library.
+
+### Step 1: Create a Variable library
+
+1. Select **+ New item** to create a Variable library.
+1. When the **New Variable library** window opens, enter a name  for your Variable library, then select **Create**.
+1. Create new variables for your source and destination connections.
+1. Add value sets to your variables for different environments, such as development, test, and production.
+
+   :::image type="content" source="media/cicd-copy-job/create-Variable-library.png" alt-text="Screenshot of creating Variable library for Copy job.":::
+
+### Step 2: Use the Variable library in Copy job
+
+1. Open your Copy Job.
+1. Navigate to your source and destination connections, and link them to your created Variable Library.
+
+   :::image type="content" source="media/cicd-copy-job/select-Variable-library.png" alt-text="Screenshot of selecting Variable library for Copy job.":::
+   
+### Step 3: Activate different Connection values in each Workspace 
+
+After deploying your Copy Job from the development workspace to test or production, you can activate different connection values by selecting the appropriate value set for each workspace.
+
+1. Go to the target workspace and open the Variable Library.
+1. Activate the corresponding connection value set for that workspace in the Variable Library.
+
+   :::image type="content" source="media/cicd-copy-job/set-Variable-library.png" alt-text="Screenshot of setting Variable library for Copy job.":::
+
 
 ## Known limitations
 
