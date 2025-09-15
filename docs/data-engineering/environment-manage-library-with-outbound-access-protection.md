@@ -22,14 +22,14 @@ In an internet restricted environment, the service will not be able to connect t
 
 To get started, you need to prepare your libraries specification as`requirement.txt`, a compute resource that can used to build a Python virtual environment, and the setup file for Fabric runtime.
 
-- Compute resources: Linux system, Windows Subsystem for Linux, or an [Azure VM](https://learn.microsoft.com/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu)
+- Compute resources: Linux system, Windows Subsystem for Linux, or an [Azure VM](/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu)
 
 - Download the Fabric Runtime setup files from the [Fabric Runtime release note Github repo](https://github.com/microsoft/synapse-spark-runtime/tree/main/Fabric) with corresponding Runtime version.
 
 > [!IMPORTANT]
 > The Runtime setup file contains a few Microsoft hosted private libraries, which cannot be recognize. Make sure to remove any libraries with names containing 'synapse' from the YAML file.
 
-:::image type="content" source="media\environment-lm\OAP-runtime-setup.png" alt-text="Screenshot that shows the example of Runtime setup file." lightbox="media\environment-lm\OAP-runtime-setup.png":::
+:::image type="content" source="media\environment-lm\outbound-access-protection-runtime-setup.png" alt-text="Screenshot that shows the example of Runtime setup file." lightbox="media\environment-lm\outbound-access-protection-runtime-setup.png":::
 
 ### Step 2: Setup the Virtual Python Environment in your compute resource
 
@@ -66,8 +66,8 @@ A PyPI mirror is a replica of the official PyPI repository. This can either be a
 
 ### Step 1: Pre-requisites
 
-- Compute resources: Linux system, Windows Subsystem for Linux, or an [Azure VM](https://learn.microsoft.com/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu)
-- [Azure Storage Account](https://learn.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal): To store the mirrored packages.
+- Compute resources: Linux system, Windows Subsystem for Linux, or an [Azure VM](/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu)
+- [Azure Storage Account](/azure/storage/common/storage-account-create?tabs=azure-portal): To store the mirrored packages.
 - Other utilities: [Bandersnatch](https://bandersnatch.readthedocs.io/en/latest/), i,e., the PyPI mirroring tool that handles synchronization. Az CLI or Blobefuse2 or Azcopy, i.e., the utility for efficient file synchronization
 
 #### Initial Setup
@@ -103,7 +103,7 @@ export PATH="/usr/lib/miniforge3/bin:$PATH"
 
 Bandersnatch is a PyPI mirroring tool which downloads all of PyPI and associated index files on **local filesystem**. You can refer to [this article](https://github.com/pypa/bandersnatch/blob/main/src/bandersnatch/example.conf) to create a `bandersnatch.conf` file.
 
-Run the following script to setup Bandersnatch. The command will perform a one-time synchronization with the PyPI master server. The initial sync will take time to run.
+Run the following script to setup Bandersnatch. The command will perform a one-time synchronization with PyPI. The initial sync will take time to run.
 
 ```shell
 # Install Bandersnatch
@@ -114,14 +114,14 @@ bandersnatch --config <path-to-bandersnatch.conf> mirror
 ```
 
 > [!NOTE]
-> The [Mirror filtering tool](https://bandersnatch.readthedocs.io/en/latest/filtering_configuration.html) supports partial mirroring through allowlist and blacklist plugins, enabling more efficient management of dependencies. 
+> The [Mirror filtering tool](https://bandersnatch.readthedocs.io/en/latest/filtering_configuration.html) supports partial mirroring through plugins like allowlist, enabling more efficient management of dependencies.
 > By filtering unnecessary packages, it helps reduce the size of the full mirror, minimizing both cost and maintenance effort.
 >For example, if the mirror is intended solely for Fabric, you can exclude Windows binaries to optimize storage. We recommend evaluating these filtering options based on your specific use case.
 >
 
 After the commands are executed successfully, the sub folders in your mirror directory on local filesystem will be created.
 
-:::image type="content" source="media\environment-lm\OAP-PyPI-mirror.png" alt-text="Screenshot that shows the PyPI mirror created by bandersnatch." lightbox="media\environment-lm\OAP-PyPI-mirror.png":::
+:::image type="content" source="media\environment-lm\outbound-access-protection-PyPI-mirror.png" alt-text="Screenshot that shows the PyPI mirror created by bandersnatch." lightbox="media\environment-lm\outbound-access-protection-PyPI-mirror.png":::
 
 ### Step 3: Verify local mirror setup (optional)
 
@@ -139,7 +139,7 @@ pip install <package> -index-url http://localhost:8000/simple
 
 Enable Static Website on your Azure storage account. This will allow you to host static content like PyPI index page in this case. Enabling this will automatically generate a container named $web
 
-:::image type="content" source="media\environment-lm\OAP-storage-account.png" alt-text="Screenshot that shows the storage account example." lightbox="media\environment-lm\OAP-storage-account.png":::
+:::image type="content" source="media\environment-lm\outbound-access-protection-storage-account.png" alt-text="Screenshot that shows the storage account example." lightbox="media\environment-lm\outbound-access-protection-storage-account.png":::
 
 And then, you can use either az CLI or azcopy of blobfuse2 to upload the local mirror from your devbox to your Azure storage account.\
 
@@ -150,7 +150,7 @@ And then, you can use either az CLI or azcopy of blobfuse2 to upload the local m
 
 In order to access the Azure Storage account, add two private managed endpoint in the Fabric workspace.
 
-:::image type="content" source="media\environment-lm\OAP-private-endpoints.png" alt-text="Screenshot that shows the private endpoints example." lightbox="media\environment-lm\OAP-private-endpoints.png":::
+:::image type="content" source="media\environment-lm\outbound-access-protection-private-endpoints.png" alt-text="Screenshot that shows the private endpoints example." lightbox="media\environment-lm\outbound-access-protection-private-endpoints.png":::
 
 And then, you can install the library from the Azure storage account by providing the YAML file in Environment or use inline %pip install in Notebook session.
 
