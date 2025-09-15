@@ -151,34 +151,34 @@ After you choose your deployment option, you can [review the details and leave a
 
    :::image type="content" source="media/cicd-copy-job/deployment-pipeline.png" alt-text="Screenshot of deployment pipeline for Copy job.":::
 
-## Connection parameterization with Variable Library for Copy Job
+## Connection parameterization with Variable library for Copy job
 
-You can do the following to parameterize the connection for Copy Job using Variable library. Learn more about [Variable library](../cicd/variable-library/variable-library-overview.md).
+You can do the followings to parameterize the connections in Copy job using Variable library. Learn more about [Variable library](../cicd/variable-library/variable-library-overview.md).
 
 ### Step 1: Create a Variable library
 
-1. Select **+ New item** to create a Variable library.
+1. Select **+ New item** in Fabric to create a Variable library.
 1. When the **New Variable library** window opens, enter a name for your Variable library, then select **Create**.
 1. Select **+ New variable** to create new variables for both source and destination connections.
-1. Add your different connection GUID as value sets to your variables for different environments, such as development, test, and production.
+1. Add your different connection ID as value sets to your variables for different environments, such as development, test, and production. You can look up the ID for your connection from **Settings | Manage connections and gateways**. There you will find the ID for your connection by clicking **Settings** next to your connection name.
 
-   :::image type="content" source="media/cicd-copy-job/create-Variable-library.png" alt-text="Screenshot of creating Variable library for Copy job.":::
+   :::image type="content" source="media/cicd-copy-job/create-variable-library.png" alt-text="Screenshot of creating Variable library for Copy job.":::
 
 ### Step 2: Use the Variable library in Copy job
 
 1. Open your Copy job.
 1. Navigate to your source and destination connections, and link them to your created Variable library.
 
-   :::image type="content" source="media/cicd-copy-job/select-Variable-library.png" alt-text="Screenshot of selecting Variable library for Copy job.":::
+   :::image type="content" source="media/cicd-copy-job/select-variable-library.png" alt-text="Screenshot of selecting Variable library for Copy job.":::
    
 ### Step 3: Activate different Connection values in each Workspace 
 
-After deploying your Copy job from the development workspace to test or production, you can activate different connection GUID by selecting the appropriate value set for each workspace.
+After deploying your Copy job from the development workspace to test or production, you can activate different connection ID by selecting the appropriate value set for each workspace.
 
 1. Go to the target workspace and open the Variable library.
-1. Activate the corresponding connection GUI for that workspace in the Variable library.
+1. Activate the corresponding connection ID for that workspace in the Variable library.
 
-   :::image type="content" source="media/cicd-copy-job/set-Variable-library.png" alt-text="Screenshot of setting Variable library for Copy job.":::
+   :::image type="content" source="media/cicd-copy-job/set-variable-library.png" alt-text="Screenshot of setting Variable library for Copy job.":::
 
 
 ## Known limitations
