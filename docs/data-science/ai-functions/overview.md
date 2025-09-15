@@ -68,7 +68,7 @@ The following code cells include all the necessary installation commands.
 # The pandas AI functions package requires OpenAI version 1.99.5 or later
 %pip install -q --force-reinstall openai==1.99.5 synapseml_internal-latest-py3-none-any.whl synapseml_core-latest-py3-none-any.whl
 
-# Get latest versions of AI functions library whl to install
+# Install latest versions of AI functions library whl
 !wget -q https://aka.ms/fabric-aifunctions-whl -O synapseml_internal-latest-py3-none-any.whl
 !wget -q https://aka.ms/fabric-synapseml-core-whl -O synapseml_core-latest-py3-none-any.whl
 ```
