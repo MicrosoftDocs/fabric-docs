@@ -1,6 +1,6 @@
 ---
 title: How to Use Azure Data Factory item (Mount) in Microsoft Fabric
-description: The Azure Data Factory item in Microsoft Fabric allows you to bring in your ADF artifacts to Fabric instantly.
+description: The Azure Data Factory item in Microsoft Fabric allows you to bring in your ADF items to Fabric instantly.
 author: ssindhub
 ms.author: ssrinivasara
 ms.reviewer: whhender
@@ -81,7 +81,7 @@ You can now mount your Azure Data Factory to Fabric from ADF UX.
 
 :::image type="content" source="media/migrate-planning-azure-data-factory/mount-from-azure-data-factory.png" alt-text="Screenshot showing mounting experience from ADF.":::
 
-:::image type="content" source="media/migrate-planning-azure-data-factory/view-azure-data-factory-artifacts.png" alt-text="Screenshot showing pipeline artifacts ADF.":::
+:::image type="content" source="media/migrate-planning-azure-data-factory/view-azure-data-factory-artifacts.png" alt-text="Screenshot showing pipeline items ADF.":::
 
 And just like that you will start to see your ADF in the Fabric workspace you chose!
 

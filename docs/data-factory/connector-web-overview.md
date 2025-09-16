@@ -19,6 +19,6 @@ Both the Web API and Web page connectors are supported in Data Factory for [!INC
 
 For information on how to connect to the Web API or a Web page in Dataflow Gen2, go to [Set up your Web connection](connector-web.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support a Web API or Web page connector in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support a Web API or Web page connector in pipelines.

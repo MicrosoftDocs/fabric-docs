@@ -18,6 +18,6 @@ The Azure Analysis Services connector is supported in Data Factory for [!INCLUDE
 
 To learn about how to connect to Azure Analysis Services in Dataflow Gen2, go to [Set up your Azure Analysis Services connection](connector-azure-analysis-services.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Azure Analysis Services in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Azure Analysis Services in pipelines.

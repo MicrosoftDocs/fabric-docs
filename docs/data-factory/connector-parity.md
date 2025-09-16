@@ -16,7 +16,7 @@ This documentation provides an in-depth comparison of connector availability bet
 
 ## Connector Overview
 
-With Data Factory in Microsoft Fabric, data pipelines provide connectivity to a rich set of data sources. See below for the list of connectors available in Azure Data Factory and Data Factory in Fabric.
+With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich set of data sources. See below for the list of connectors available in Azure Data Factory and Data Factory in Fabric.
 
 |Connector Type |ADF (Source/Sink)|Fabric Data Factory (Source/Sink)|
 |:---|:---|:---|

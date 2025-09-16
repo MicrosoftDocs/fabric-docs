@@ -5,7 +5,7 @@ ms.reviewer: guregini
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
-ms.date: 11/04/2024
+ms.date: 08/05/2025
 ms.search.form: KQL Database
 #Customer intent: Learn how to use the entity diagram in KQL database to manage and optimize database relationships and dependencies.
 ---
@@ -21,6 +21,10 @@ For information about workspace lineage in Fabric, see [Lineage](../governance/l
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with view permissions
+
+For users who want to turn on the ingestion details:
+* Database Admin or Database Monitor permissions to view ingestion details in the entity diagram. For more information, see [Role-based access control](/kusto/access-control/role-based-access-control?view=microsoft-fabric&preserve-view=true).
+
 
 ## Open entity diagram view
 
@@ -41,6 +45,7 @@ The entity diagram view displays the following information:
 * Functions
 * Continuous exports
 * [Cross-database entities](/kusto/query/cross-cluster-or-database-queries?view=microsoft-fabric&preserve-view=true)
+* [Eventstreams](event-streams/overview.md)
 
 You can select an item to view its relationships with other items in the database. The entity diagram highlights all the items related to that item, and dims the rest.
 
@@ -49,6 +54,19 @@ You can select an item to view its relationships with other items in the databas
 You can also view the ingestion details of each table and materialized view. To view ingestion details, on the right side of the ribbon, select **Show details** and under **Ingestion**, select the desired time range. The information is added to the relevant entity's card.
 
 :::image type="content" source="media/database-entity-diagram/entity-diagram-ingestion-details.gif" alt-text="Screenshot of an entity diagram, showing the ingestion details view." lightbox="media/database-entity-diagram/entity-diagram-ingestion-details.gif":::
+
+**View ingestion from Eventstreams details**
+
+You can also view ingestion details for each table originating from [Eventstream](event-streams/overview.md).
+
+:::image type="content" source="media/database-entity-diagram/entity-diagram-event-stream.png" alt-text="Screenshot of an entity diagram, showing the ingestion from Eventstream details view." lightbox="media/database-entity-diagram/entity-diagram-event-stream.png":::
+
+In addition to the name of the eventstream, you can see additional information by selecting the green stream icon, which reveals the name of the [derived stream](event-streams/add-destination-derived-stream.md) and the name of the [ingestion mapping](/kusto/management/mappings?view=microsoft-fabric&preserve-view=true). If no mapping is displayed, the [default (identity) mapping](/kusto/management/mappings?view=microsoft-fabric#identity-mapping&preserve-view=true) is being used. When you enable **Ingestion** details under **Show details**, you'll see the number of records ingested into each table from all sources, including Eventstreams.
+
+:::image type="content" source="media/database-entity-diagram/diagram-click-icon.png" alt-text="Screenshot of an entity diagram, with the details revealed after clicking the green icon." lightbox="media/database-entity-diagram/diagram-click-icon.png":::
+
+>[!NOTE]
+> Only Eventstreams appear as external sources in the entity diagram view. Other external sources are not displayed in the entity diagram.
 
 ## What scenarios can you use an entity diagrams for?
 

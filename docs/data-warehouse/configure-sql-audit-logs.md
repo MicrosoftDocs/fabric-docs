@@ -14,7 +14,10 @@ ms.search.form: Warehouse SQL Audit Logs # This article's title should not chang
 
 Auditing in Fabric Data Warehouse provides enhanced security and compliance capabilities by tracking and recording database events. 
 
-You can configure SQL audit logs in the Fabric portal or via REST API. The SQL audit logs feature is currently in preview.
+You can configure [SQL audit logs in Fabric Data Warehouse](sql-audit-logs.md) in the Fabric portal or via REST API. 
+
+> [!NOTE]
+> The SQL audit logs feature is currently in preview. 
 
 ## Prerequisites
 
@@ -164,5 +167,5 @@ FROM sys.fn_get_audit_file_v2
 ## Related content
 
 - [Security in Microsoft Fabric](../security/security-overview.md)
-- [SQL audit logs in Fabric Data Warehouse](sql-audit-logs.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
+- [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md)

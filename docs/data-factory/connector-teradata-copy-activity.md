@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Teradata in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to Teradata.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Teradata.
 
 ## Supported configuration
 

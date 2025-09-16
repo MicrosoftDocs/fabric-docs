@@ -24,4 +24,4 @@ The Teradata database connector is supported in Data Factory for [!INCLUDE [prod
 
 To learn about how to connect to Teradata, go to [Set up your Teradata database connection](connector-teradata-database.md).
 
-To learn more about the copy activity configuration for Teradata database in data pipelines, go to [Configure in a data pipeline copy activity](connector-teradata-copy-activity.md).
+To learn more about the copy activity configuration for Teradata database in pipelines, go to [Configure in a pipeline copy activity](connector-teradata-copy-activity.md).

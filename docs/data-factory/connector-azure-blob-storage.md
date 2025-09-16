@@ -37,7 +37,7 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
 Browse to the **New connection page** for the data factory pipeline to configure the connection details and create the connection.
 
@@ -129,7 +129,7 @@ Select **Create** to create your connection. Your creation is successfully teste
 
 ### Table summary
 
-The following table contains the properties for data pipeline connection creation.
+The following table contains the properties for pipeline connection creation.
 
 | Name | Description | Required | Property | Copy |
 | --- | --- | :---: | --- | :---: |
