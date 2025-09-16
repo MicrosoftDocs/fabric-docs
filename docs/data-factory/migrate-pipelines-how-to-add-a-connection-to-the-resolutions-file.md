@@ -1,5 +1,5 @@
 ---
-title: How to Add a Connection to the Resolutions File
+title: How to Add Connections to the Resolutions File
 description: Map your Azure Data Factory Linked Service to your Fabric Connection
 author: ssindhub
 ms.author: ssrinivasara
@@ -198,7 +198,7 @@ https://contoso.com/admin/organize → Connection to https://contoso.com + relat
 - Fill in the Hostname and authorization
 - Select Create
 
-:::image type="content" source="media/migrate-pipeline-powershell-upgrade/create-webv2-connection.png" alt-text="Screenshot for adding a new Web v2 connection.":::
+:::image type="content" source="media/migrate-pipeline-powershell-upgrade/create-web-connection.png" alt-text="Screenshot for adding a new Web v2 connection.":::
 
 1. The Settings pane appears. Copy the Connection ID.
 1. Copy the Connection ID and add it to your Resolutions file:
