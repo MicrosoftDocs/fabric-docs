@@ -211,7 +211,7 @@ You should see a response like this:
 This means it worked! The exportedFabricResources section shows your new pipeline and its ID.
 Now, open your Fabric workspace in Fabric UX. Refresh the page, and you’ll see pipeline1 in the list. Open it—you’ll find exactly what you expect!
 
-# Your second Upgrade: Copy Some Data
+# Your second upgrade: Copy some data
 This second Upgrade will introduce a few new concepts:
 1) Datasets and LinkedServices
 2) Resolutions
@@ -231,7 +231,7 @@ Run the same command as before:
 Import-AdfFactory -SubscriptionId <your Subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Data Factory Name> -PipelineName  "pipeline1" -AdfToken $adfSecureToken | ConvertTo-FabricResources
 ```
 
-What’s New in the Output?
+### What’s New in the Output?
 
 You’ll notice two exportableFabricResources:
 
@@ -290,14 +290,14 @@ The Pipeline section has similar steps:
 ],
 ```
 
-### What Do These Steps Do?  
+### What do these steps do?  
 They tell the exporter to:  
 > Insert the Fabric Connection ID into the Copy Activity’s **source** and **sink**.  
 
 If you check those paths in the JSON, you’ll see empty GUIDs where the IDs will go.  
 
 
-### Why Does This Happen?  
+### Why does this happen?  
 The upgrader can’t know the Fabric resource ID for a connection or pipeline until those resources exist. So, it gives the exporter instructions on how to finish the exportable resources.  
 
 For this to work, the exporter creates resources in the right order: if A depends on B, B gets created first. Good news—these resources are already in that order!  
@@ -339,7 +339,7 @@ The error says we need to **“add a connection’s ID to your resolutions.”**
 
 ---
 
-## What Went Wrong?  
+## What went wrong?  
 The Fabric Upgrader can’t create Fabric connections on its own. You need to help by creating a Fabric connection manually and then telling the upgrader when to use it.  
 
 First, create a **Resolutions file**. You can name it anything, but this tutorial uses `D:\Resolutions.json`.  
