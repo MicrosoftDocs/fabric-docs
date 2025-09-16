@@ -57,7 +57,7 @@ In the PowerShell window, run:
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName <your Pipeline Name> -AdfToken $adfSecureToken
 ```
 
-This command unpacks the pipeline into JSON and creates the first "Upgrade Progress".
+This command loads the pipeline and associated artifacts from your Azure Data Factory and creates the JSON for the first "Upgrade Progress".
 ```
 {
   "state": "Succeeded",
