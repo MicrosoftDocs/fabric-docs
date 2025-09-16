@@ -24,26 +24,28 @@ To proceed, you’ll need **PowerShell 7.4.2 or higher installed on your machine
 
 ## Install and Import the `FabricPipelineUpgrade` Module
 
-1. Open **PowerShell 7 (x64)**  
+- Open **PowerShell 7 (x64)**  
    Click the Start menu and search for **PowerShell 7**. Look for this icon:
 
 :::image type="content" source="media/migrate-pipeline-powershell-upgrade/verify-installation-module-icon.png" alt-text="Screenshot showing the pipeline upgrade icon.":::
 
- Right-click and choose **Run as administrator** for elevated permissions.
+ - Right-click and choose **Run as administrator** for elevated permissions.
+ 
 
-1. In the PowerShell window, run the following command to install the module:
+- In the PowerShell window, run the following command to install the module:
 
 ```
 Install-Module Microsoft.FabricPipelineUpgrade -Repository PSGallery -SkipPublisherCheck
 ```
-1. Once installed, import the module:
+- Once installed, import the module:
 ```
 Import-Module Microsoft.FabricPipelineUpgrade
 ```
-If you encounter a signing or execution policy error, run the below command and try importing the module again.
+- If you encounter a signing or execution policy error, run the below command and try importing the module again.
 ```
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
+
 ## Verify Your Installation
 To confirm everything is set up correctly, run:
 ```
