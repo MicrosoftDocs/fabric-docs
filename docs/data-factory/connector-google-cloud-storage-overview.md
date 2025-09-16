@@ -18,11 +18,11 @@ This Google Cloud Storage connector is supported in Data Factory for [!INCLUDE [
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
-| **Data pipeline**<br>- [Copy activity](connector-google-cloud-storage-copy-activity.md) (source/destination) <br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity  |None<br> On-premises<br> Virtual network |Basic |
+| **Pipeline**<br>- [Copy activity](connector-google-cloud-storage-copy-activity.md) (source/destination) <br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity  |None<br> On-premises<br> Virtual network |Basic |
 | **Copy job** (source/destination) <br>- Full load<br>- Append<br>- Override |None<br> On-premises<br> Virtual network |Basic |
 
 ## Related content
 
 To learn about how to connect to Google Cloud Storage data, go to [Set up your Google Cloud Storage connection](connector-google-cloud-storage.md).
 
-To learn about the copy activity configuration for Google Cloud Storage in data pipelines, go to [Configure Google Cloud Storage in a copy activity](connector-google-cloud-storage-copy-activity.md).
+To learn about the copy activity configuration for Google Cloud Storage in pipelines, go to [Configure Google Cloud Storage in a copy activity](connector-google-cloud-storage-copy-activity.md).

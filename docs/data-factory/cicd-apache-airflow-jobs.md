@@ -148,8 +148,8 @@ After you choose your deployment option, you can [review the details and leave a
 
 Here are some of the current limitations when using CI/CD for Airflow in Data Factory in Microsoft Fabric.
 
-- Git integration does not support Airflow Git-Sync (exporting with Git Sync will not export Git Sync properties. If you import onto an artifact with Git Sync enabled, Git Sync will be removed) 
-- Secrets are not supported. (Exporting with secrets will not export Git Sync properties. If you import onto an artifact with existing secrets they will NOT be removed). 
+- Git integration does not support Airflow Git-Sync (exporting with Git Sync will not export Git Sync properties. If you import onto an item with Git Sync enabled, Git Sync will be removed) 
+- Secrets are not supported. (Exporting with secrets will not export Git Sync properties. If you import onto an item with existing secrets they will NOT be removed). 
 - Importing/creating a customPool with files in the same operation is not currently supported.
 - Soft limitation: We support up to 50 DAGS for now. ALM operations might potentially fail if you have more than 50 DAGs. 
 

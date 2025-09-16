@@ -80,6 +80,6 @@ Utilized CU seconds = 0.2 * 3600 = 720
 ## Related content
 
 - [Copy job pricing for Data Factory in Microsoft Fabric](pricing-copy-job.md)
-- [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
+- [Pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)

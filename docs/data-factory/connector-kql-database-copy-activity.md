@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure KQL Database in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to KQL Database.
+This article outlines how to use the copy activity in a pipeline to copy data from and to KQL Database.
 
 ## Supported configuration
 

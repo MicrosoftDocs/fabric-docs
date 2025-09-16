@@ -1,5 +1,5 @@
 ---
-title: Overview - Fabric User data functions (preview)
+title: Overview - Fabric User data functions
 description: Learn about Fabric User data functions.
 ms.author: luisbosquez
 author: luisbosquez
@@ -8,7 +8,7 @@ ms.date: 06/17/2025
 ms.search.form: User data functions overview
 ---
 
-# What is Fabric User data functions (Preview)?
+# What is Fabric User data functions?
 
 User data functions is a feature that allows you to host and run your own code on Fabric. This empowers data developers to write their business logic and embed it into their Fabric ecosystem. This feature supports the [Python 3.11.9 runtime](https://www.python.org/downloads/release/python-3119/) and allows you to use [public libraries from PyPI](https://pypi.org/), [Fabric data connections](./connect-to-data-sources.md) and much more.
 
@@ -26,11 +26,6 @@ The following are some of the benefits for logic using user data functions:
 - **Customization**: Use Python and public libraries from PyPI to create powerful applications that are tailored to your needs.
 - **Encapsulation**: Create functions that perform several tasks to build sophisticated workflows.
 - **External connectivity**: Invoke your user data functions from external client applications using a REST endpoint, opening up possibilities for integrations with external systems.
-
-## Enable User data functions
-To get started with using this feature, simply navigate to the admin portal and turn on User data functions (preview). Make sure that your tenant is in a [region](../../admin/region-availability.md) that supports Fabric User Data Functions.
-
-:::image type="content" source="../media/user-data-functions-overview/enable-functions-admin-portal.png" alt-text="Screenshot of enabling user data functions in admin settings.":::
 
 ## Fabric integrations
 Fabric User Data Functions can seamlessly connect with other Fabric items to create rich end-to-end experiences. There are two kinds of integrations:
