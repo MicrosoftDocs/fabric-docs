@@ -1,5 +1,5 @@
 ---
-title: How To: Add a Connection to the Resolutions File
+title: How to Add a Connection to the Resolutions File
 description: Map your Azure Data Factory Linked Service to your Fabric Connection
 author: ssindhub
 ms.author: ssrinivasara
