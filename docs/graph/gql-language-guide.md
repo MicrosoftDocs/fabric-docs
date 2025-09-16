@@ -1026,9 +1026,16 @@ RETURN *
 
 ## Additional information
 
+### GQLSTATUS codes
+
+As explained in the section on [query results](gql-language-guide.md#understanding-query-results),
+GQL reports rich status information related to the success or potential failure of execution.
+See the [GQL status codes reference](gql-reference-status-codes.md) for the complete list.
+
 ### Reserved words
 
-GQL reserves certain keywords that you can't use as identifiers like variables, property names, or label names. See [GQL reserved words](gql-reference-reserved-terms.md) for the complete list.
+GQL reserves certain keywords that you can't use as identifiers like variables, property names, or label names. 
+See the [GQL reserved words reference](gql-reference-reserved-terms.md) for the complete list.
 
 If you need to use reserved words as identifiers, escape them with backticks: `` `match` ``, `` `return` ``.
 
@@ -1056,7 +1063,7 @@ Now that you understand GQL fundamentals, here's your recommended learning path:
 ### Reference materials
 
 Keep these references handy for quick lookups:
-- **[GQL abridged reference](gql-reference-abridged.md)** - Syntax quick reference
+- **[GQL quick reference](gql-reference-abridged.md)** - Syntax quick reference
 - **[GQL status codes](gql-reference-status-codes.md)** - Complete error code reference  
 - **[GQL reserved words](gql-reference-reserved-terms.md)** - Complete list of reserved keywords
 
@@ -1080,14 +1087,15 @@ Keep these references handy for quick lookups:
 ## Related content
 
 **Further details on key topics:**
+- [Social network schema example](gql-schema-example.md) - Complete working example of graph schema
 - [GQL graph patterns](gql-graph-patterns.md) - Comprehensive pattern syntax and advanced matching techniques
-- [GQL values and value types](gql-values-and-value-types.md) - Complete type system reference and value handling
 - [GQL expressions and functions](gql-expressions.md) - All expression types and built-in functions
 - [GQL graph types](gql-graph-types.md) - Graph types and constraints
-- [Social network schema example](gql-schema-example.md) - Complete working example of graph schema
+- [GQL values and value types](gql-values-and-value-types.md) - Complete type system reference and value handling
 
 **Quick references:**
 - [GQL abridged reference](gql-reference-abridged.md) - Syntax quick reference
+- [GQL status codes](gql-reference-status-codes.md) - Complete error code reference  
 - [GQL reserved words](gql-reference-reserved-terms.md) - Complete list of reserved keywords
 
 **Graph for Microsoft Fabric:**

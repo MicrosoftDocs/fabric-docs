@@ -37,4 +37,3 @@ items:
           href: gql-reference-status-codes.md
         - name: GQL reserved words reference
           href: gql-reference-reserved-terms.md
-        - name: GQL functions reference
