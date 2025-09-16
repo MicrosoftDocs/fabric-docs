@@ -30,6 +30,9 @@ The autocomplete feature for library names when you add them is limited to the m
 
 Instead, search for the library directly in PyPI or Conda by entering its full name. If the library name is valid, you see the available versions. If the library name isn't valid, you get a warning that the library doesn't exist.
 
+> [!NOTE]
+> Adding a public library will not override the version for an existing built-in library.
+
 ### Add public libraries in a batch
 
 Environments support uploading a .yml file to manage multiple public libraries in a batch. The contents of the .yml file are extracted and appended in the public library list.
