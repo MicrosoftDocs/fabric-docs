@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 06/05/2025
 ---
 
-# Configure Autoscale Billing for Spark in Microsoft Fabric (Preview)
+# Configure Autoscale Billing for Spark in Microsoft Fabric
 
 Autoscale Billing for Spark enables serverless, pay-as-you-go compute for Spark workloads in Microsoft Fabric. Once enabled, Spark jobs no longer consume the shared capacity, giving you the flexibility to scale Spark workloads independently and optimize costs.
 
