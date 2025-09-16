@@ -18,7 +18,7 @@ Before you begin upgrading pipelines, make sure your environment is ready with t
 
 To proceed, you’ll need **PowerShell 7.4.2 or higher installed on your machine. 
 
-[Download PowerShell](https://learn.microsoft.com/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4)
+[Download PowerShell](https://learn.microsoft.com/powershell/scripting/install/installing-powershell-on-windows)
 
 ---
 
