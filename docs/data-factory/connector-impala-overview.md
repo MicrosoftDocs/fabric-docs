@@ -25,3 +25,4 @@ This Impala connector is supported for the following capabilities:
 ## Related content
 
 For information on how to connect to an Impala database, go to [Set up your Impala database connection](connector-impala.md).
+

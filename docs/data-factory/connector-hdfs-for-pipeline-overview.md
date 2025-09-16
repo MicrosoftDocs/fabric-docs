@@ -17,8 +17,8 @@ The Hdfs for Pipeline connector is supported in Data Factory for [!INCLUDE [prod
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-hdfs-for-pipeline-copy-activity.md) (source/-)<br>- Lookup activity<br>- Delete activity| None<br> On-premises<br> Virtual network | Anonymous        |
+| **Pipeline** <br>- [Copy activity](connector-hdfs-for-pipeline-copy-activity.md) (source/-)<br>- Lookup activity<br>- Delete activity| None<br> On-premises<br> Virtual network | Anonymous        |
 
 ## Related content
 
-To learn more about the copy activity configuration for Hdfs for Pipeline in Data pipeline, go to [Configure in a Data pipeline copy activity](connector-hdfs-for-pipeline-copy-activity.md).
+To learn more about the copy activity configuration for Hdfs for Pipeline in a pipeline, go to [Configure in a pipeline copy activity](connector-hdfs-for-pipeline-copy-activity.md).

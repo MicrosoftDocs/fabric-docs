@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure Files in a copy activity
 
-This article outlines how to use the copy activity in Data pipeline to copy data from and to Azure Files.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure Files.
 
 ## Supported format
 
