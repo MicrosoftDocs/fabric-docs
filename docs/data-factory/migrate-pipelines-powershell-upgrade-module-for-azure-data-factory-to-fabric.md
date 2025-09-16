@@ -87,7 +87,7 @@ If the upgrade fails, the PowerShell response will show the reason in the detail
 (For Resolutions failure, see the section below).
 
 ## The Resolutions file
-See [How To: Add a Connection to the Resolutions File](migrate-pipelines-powershell-upgrade-module-how-to-add-a-connection-to-the-resolutions-file).
+See [How To: Add a Connection to the Resolutions File](migrate-pipelines-how-to-add-a-connection-to-the-resolutions-file.md).
 
 ### Validate the results on Fabric:
 
