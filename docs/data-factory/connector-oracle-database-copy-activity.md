@@ -58,7 +58,7 @@ The following properties are **required**:
         :::image type="content" source="./media/connector-oracle-database/use-query-table.png" alt-text="Screenshot showing Use query - Table." :::
 
     - If you select **Query**:
-      - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`. Note that the query should end with a semicolon (;).
+      - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`. Note that the query should not end with a semicolon (;).
         
         When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section.
 
