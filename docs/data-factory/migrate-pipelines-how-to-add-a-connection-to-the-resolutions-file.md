@@ -1,3 +1,4 @@
+---
 title: How To: Add a Connection to the Resolutions File
 description: Map your Azure Data Factory Linked Service to your Fabric Connection
 author: ssindhub
@@ -7,6 +8,7 @@ ms.topic: how-to
 ms.custom: pipelines
 ms.date: 09/16/2025
 ai-usage: ai-assisted
+---
 
 # How To: Add a Connection to the Resolutions File
 The FabricUpgrader can’t upgrade an ADF **LinkedService** to a Fabric **Connection** on its own.  
@@ -16,11 +18,10 @@ You’ll need to:
 1. Tell FabricUpgrader which Connection replaces each LinkedService.
 1. Make sure the Fabric Connection can access the expected resources before you run the upgrade.
 
----
-
 For this mapping, let's create a file named **Resolutions.json.**
 
-## Steps:
+## Steps
+
 1. Add an array of **Resolution** objects.
 1. Each object must include:
    - `type`: Usually LinkedServiceToConnectionId
