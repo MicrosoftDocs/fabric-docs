@@ -351,7 +351,7 @@ Initialize the file with:
 ]
 ```
 
-Next, add your missing resolution. See, [How To: Add a Connection to the Resolutions File](https://github.com/microsoft/FabricUpgrade/wiki/How-To:-Add-a-Connection-to-the-Resolutions-File) for instructions.
+Next, add your missing resolution. See, [How To: Add a Connection to the Resolutions File](migrate-pipelines-how-to-add-a-connection-to-the-resolutions-file.md) for instructions.
 
 When you’re done, your Resolutions file should look something like this (your `value` will be different):  
 ```
