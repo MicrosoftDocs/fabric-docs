@@ -11,12 +11,15 @@ ai-usage: ai-assisted
 # Upgrade Azure Data Factory pipelines to Microsoft Fabric using PowerShell
 > [!TIP]
 > New to migration options? Start with the **Microsoft Fabric migration overview** for the full landscape and ADF‑to‑Fabric migration guidance. [Fabric migration guidance](../fundamentals/migration.md)
+
 ## What you’ll do
 
 - **Install** the **Microsoft.FabricPipelineUpgrade** module.
 - **Prepare** your source ADF workspace and target Fabric workspace.
 - **Run the upgrade scripts** in a test workspace first.
 - **Validate** and promote.
+  
+---
 
 ## Prerequisites
 
@@ -29,28 +32,29 @@ To get started, you must complete the following prerequisites:
 - **Environment**: prepare your environment for upgrade - [Prepare your environment for upgrade](migrate-pipelines-prepare-your-environment-for-upgrade.md).
 - **Network and auth**: Make sure you can sign in to both Azure and Fabric from your machine (interactive or service principal).
 
-### Collect useful information from your Fabric workspace
+---
+
+## Collect useful information from your Fabric workspace
 
 You’ll need some details from your workspace. Open a blank text file—you’ll copy the info there.
 
 Open Microsoft Fabric and go to your Data Factory Workspace.
-
-### Note your region
-Your workspace is in a region like daily, dxt, msit, or prod. Write it down—you’ll need it later.
-
-If you’re not sure, your region is prod. That’s the default, so you can skip adding it if it’s prod.
 
 ### Find your workspace ID
 See [How To: Find your Fabric Workspace ID](migrate-pipelines-how-to-find-your-fabric-workspace-id.md).
 
 Add the ID to your text file.
 
-## Sign In to Azure and Set Context
+---
+
+## Sign In to Azure and set context
 Run these commands in PowerShell to sign in and set your subscription and tenant for subsequent Az cmdlets:
 ```
 Add-AzAccount 
 Select-AzSubscription -SubscriptionId <your subscription ID>
 ```
+
+---
 
 ## Get Access Tokens
 Run:
@@ -61,22 +65,29 @@ $fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.n
 
 Tokens expire in about an hour. If they do, repeat this step.
 
-## Upgrade your factory resources
-### Upgrade All Resources
+---
+
+## Upgrade your Factory Resources
+
+### Upgrade all factory resources
 ```
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -AdfToken $adfSecureToken
 ```
-### Upgrade a single Pipeline
+### Upgrade a single pipeline
 Add -PipelineName:
 ```
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName <your Pipeline Name> -AdfToken $adfSecureToken
 ```
-## Complete your Upgrade
+---
+
+## Complete your upgrade
 
 ```
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName  <your Pipeline Name> -AdfToken $adfSecureToken| ConvertTo-FabricResources | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
 ```
-If your region is prod, you can skip the -Region parameter
+you can either use prod, or skip the -Region parameter
+
+---
 
 ## Map your ADF Linked Services to Fabric Connections
 
@@ -88,6 +99,8 @@ Refer to the [Tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md)
 If the upgrade fails, the PowerShell response will show the reason in the details section.
 (For Resolutions failure, see the section below).
 
+
+---
 ## The Resolutions file
 See [How To: Add a Connection to the Resolutions File](migrate-pipelines-how-to-add-a-connection-to-the-resolutions-file.md).
 
@@ -103,6 +116,8 @@ For broader context on Fabric migration validation, see the Fabric migration ove
 
 For a detailed, click‑through tutorial with screenshots and examples, see:
 [Tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
+
+---
 
 ## Which activities are supported?
 Support depends on the module version and the target Fabric capabilities. Check the [Supported functionality](migrate-pipelines-powershell-upgrade-module-supported-functionality.md) for the latest.
