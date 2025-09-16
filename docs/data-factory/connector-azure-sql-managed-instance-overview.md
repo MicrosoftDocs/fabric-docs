@@ -18,9 +18,9 @@ The Azure SQL Managed Instance connector is supported in Data Factory for [!INCL
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
-| **Data pipeline**<br>- [Copy activity](connector-azure-sql-managed-instance-copy-activity.md) (source/destination) <br>- Lookup activity<br>- Get Metadata activity <br>- Script activity<br>- Stored procedure activity |None<br> On-premises<br> Virtual network |Basic<br> Organizational account<br> Service principal |
+| **Pipeline**<br>- [Copy activity](connector-azure-sql-managed-instance-copy-activity.md) (source/destination) <br>- Lookup activity<br>- Get Metadata activity <br>- Script activity<br>- Stored procedure activity |None<br> On-premises<br> Virtual network |Basic<br> Organizational account<br> Service principal |
 | **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- CDC<br>- Append<br>- Merge |None<br> On-premises<br> Virtual network |Basic<br> Organizational account<br> Service principal |
 
 ## Related content
 
-To learn more about the copy activity configuration for Azure SQL Managed Instance in Data pipeline, go to [Configure in a data pipeline copy activity](connector-azure-sql-managed-instance-copy-activity.md).
+To learn more about the copy activity configuration for Azure SQL Managed Instance in a pipeline, go to [Configure in a pipeline copy activity](connector-azure-sql-managed-instance-copy-activity.md).

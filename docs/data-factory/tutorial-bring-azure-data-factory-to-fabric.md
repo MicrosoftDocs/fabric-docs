@@ -37,7 +37,7 @@ To get started, you must complete the following prerequisites:
 
     :::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/choose-azure-data-factory-in-fabric.png" alt-text="Screenshot with the Azure data factory in fabric list.":::
 
-1. In the workspace artifact list page, you can see a new artifact is created.
+1. In the workspace item list page, you can see a new item is created.
 
     :::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/mounted-data-factory-artifact.png" alt-text="Screenshot with the Azure data factory in fabric workspace.":::
 
