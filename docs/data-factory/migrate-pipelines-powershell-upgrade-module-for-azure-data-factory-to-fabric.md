@@ -22,11 +22,11 @@ ai-usage: ai-assisted
 
 To get started, you must complete the following prerequisites:
 
-- **Fabric**: A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
+- **Fabric**: A tenant account with an active subscription - [Create an account for free](../fundamentals/fabric-trial.md).
 - **Permissions**: Read access to the ADF workspace and artifacts you’ll migrate and Contributor or higher rights in the Fabric workspace you’ll write to.
 - **Tenant**: Your ADF and Fabric workspace must be in the same Azure AD tenant.
 - **Region** (Recommended): For best performance, keep your Fabric workspace in the same region as your ADF.
-- **Environment**: prepare your environment for upgrade. [Prepare your environment for upgrade](migrate-pipelines-prepare-your-environment-for-upgrade.md).
+- **Environment**: prepare your environment for upgrade - [Prepare your environment for upgrade](migrate-pipelines-prepare-your-environment-for-upgrade.md).
 - **Network and auth**: Make sure you can sign in to both Azure and Fabric from your machine (interactive or service principal).
 
 ### Collect useful information from your Fabric workspace
