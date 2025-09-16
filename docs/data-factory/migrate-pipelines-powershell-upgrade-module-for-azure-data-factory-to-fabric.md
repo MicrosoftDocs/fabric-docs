@@ -81,7 +81,7 @@ If your region is prod, you can skip the -Region parameter
 ```
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName  <your Pipeline Name> -AdfToken $adfSecureToken | ConvertTo-FabricResources | Import-FabricResolutions -ResolutionsFilename "<path to your resolutions file>" | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
 ```
-Refer to the [Tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md) for further details.
+Refer to the [Tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md)) for further details.
 
 If the upgrade fails, the PowerShell response will show the reason in the details section.
 (For Resolutions failure, see the section below).
@@ -100,8 +100,7 @@ For broader context on Fabric migration validation, see the Fabric migration ove
 ### Step‑by‑step tutorial
 
 For a detailed, click‑through tutorial with screenshots and examples, see:
-
-[FabricPipelineUpgrade tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
+[Tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
 ## Frequently asked questions (FAQ)
 
