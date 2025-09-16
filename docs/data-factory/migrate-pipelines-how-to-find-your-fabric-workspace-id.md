@@ -1,4 +1,16 @@
-# Upgrading a Pipeline? You’ll Need Your Fabric Workspace ID
+---
+title: Upgrading a Pipeline? You Need Your Fabric Workspace ID
+description: This article outlines the stpes to find you Fabric Workspace ID
+author: ssindhub
+ms.author: ssrinivasara
+ms.reviewer: whhender
+ms.topic: how-to
+ms.custom: pipelines
+ms.date: 09/16/2025
+ai-usage: ai-assisted
+---
+
+# Upgrading a Pipeline? You Need Your Fabric Workspace ID
 
 Before upgrading a pipeline in Microsoft Fabric, make sure you have your **Workspace ID** ready. The steps vary depending on whether you're using **My Workspace** or another workspace.
 
