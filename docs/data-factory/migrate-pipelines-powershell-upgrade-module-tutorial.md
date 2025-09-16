@@ -1,3 +1,13 @@
+title: Detailed tutorial for PowerShell-based migration of Azure Data Factory pipelines to Fabric
+description: Using the **Microsoft.FabricPipelineUpgrade** PowerShell module to upgrade Azure Data Factory pipeline to Fabric pipeline
+author: ssindhub
+ms.author: ssrinivasara
+ms.reviewer: whhender
+ms.topic: how-to
+ms.custom: pipelines
+ms.date: 09/20/2025
+ai-usage: ai-assisted
+
 # FabricPipelineUpgrade Tutorial.
 
 In this Tutorial, you will learn:
