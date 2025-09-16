@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
-ms.date: 09/15/2025
+ms.date: 09/16/2025
 ---
 
 # Enable Eventhouse endpoint for lakehouse
@@ -22,7 +22,7 @@ Enable the Eventhouse endpoint to get:
 * **Mirrored schema**: Access current and future Lakehouse data through a mirrored schema in a dedicated KQL database view.
 * **Rich consumption and visualization options**: Use Copilot, NL2KQL, dashboards, embedded queries, and visual data exploration.
 * **Reflected in Workspace and OneLake catalog trees**: The endpoint eventhouse and database appear as new branches in your lakehouse tree.
-* **Fast, scalable queries**: Run analytics in KQL or SQL using advanced external table operators and commands.
+* **Fast, scalable queries**: Run analytics in KQL or SQL using advanced table operators and commands.
 * **Advanced insights**: Run time series analysis, detect anomalies, and use Python for advanced processing.
 
 After you enable the endpoint, it tracks the source lakehouse data and optimizes it for Eventhouse-like performance and flexibility. Each lakehouse table is attached to a [OneLake shortcut](onelake-shortcuts.md) in the Eventhouse endpoint with [Query acceleration policies](query-acceleration-overview.md) that optimize the source data. <!-- Eventhouse shortcuts update automatically as the source lakehouse schema changes.-->
@@ -71,7 +71,7 @@ The new Eventhouse endpoint has these characteristics:
 * The Eventhouse is named **Eventhouse Endpoint** and is read-only.
 * The KQL database is named **<Lakehouse_Name>_EventhouseEndpoint**.
 * The embedded KQL queryset is named **<Lakehouse_Name>_EventhouseEndpoint_queryset**.
-* Shortcuts reference OneLake external tables. Query each shortcut directly by using the external_table function.
+* Shortcuts reference OneLake tables. Query each shortcut directly by using the table function. If the Lakehouse has multiple schemas, the schema name is part of the shortcut name. For example, if the Lakehouse has two schemas named "sales" and "marketing" with a table named "customers" in each schema, the shortcuts are named "sales_customers" and "marketing_customers".
 
 The workspace and the OneLake catalog show the endpoint and the KQL database as child items of the Lakehouse.
 
@@ -79,9 +79,9 @@ The workspace and the OneLake catalog show the endpoint and the KQL database as 
 
 ## Query the Eventhouse endpoint
 
-From the Eventhouse endpoint, run queries, create [visualizations](dashboard-real-time-create.md), and perform advanced analytics using KQL or SQL. In the KQL queryset, use the [external_table()](/kusto/query/external-table-function?view=azure-data-explorer&preserve-view=true) function.
+From the Eventhouse endpoint, run queries, create [visualizations](dashboard-real-time-create.md), and perform advanced analytics using KQL or SQL.
 
-:::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png" alt-text="Screenshot of the KQL queryset with a get external table schema query." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png":::
+:::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png" alt-text="Screenshot of the KQL queryset with a get table schema query." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png":::
 
 ## Disable the Eventhouse endpoint
 
