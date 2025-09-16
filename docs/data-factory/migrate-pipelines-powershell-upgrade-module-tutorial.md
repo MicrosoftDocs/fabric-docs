@@ -24,7 +24,7 @@ You’ll need:
 - A Fabric workspace you can open in Fabric UX
 
 # Prepare to Upgrade
-See [Preparing your environment for upgrade](migrate-pipelines-prepare-your-environment-for-upgrade.md)..
+See [Preparing your environment for upgrade](migrate-pipelines-prepare-your-environment-for-upgrade.md).
 
 Keep your PowerShell window open; you’ll use it for the upgrade.
 
@@ -64,6 +64,7 @@ This command unpacks the pipeline into JSON and creates the first "Upgrade Progr
       "pipelines": {
         "pipeline1": {
           "name": "pipeline1",
+          "type": "Microsoft.DataFactory/factories/pipelines",
           "properties": {
             "activities": [
               {
@@ -103,8 +104,11 @@ This command unpacks the pipeline into JSON and creates the first "Upgrade Progr
 
 ## Convert your ADF Pipeline to a Fabric Pipeline
 In your Powershell window, press the Up-Arrow until you see the Import-AdfFactory command that worked earlier.
+
 Now, add the ConvertTo-FabricResources command to the end of that line. Make sure to include the | symbol to chain the commands. 
+
 Your full command should look like this:
+
 ```
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName  <your Pipeline Name> -AdfToken $adfSecureToken | ConvertTo-FabricResources
 ```
@@ -145,7 +149,7 @@ Press **Enter**. You should see something like:
 ```
 You’ll still see the standard Upgrade Progress, but now the result field includes exportableFabricResources. That's expected —you’re getting the Fabric resources ready to export.
 
-You’ll learn about the resolutions field later. For now, note that the export field shows a Fabric pipeline with a Wait activity. If you created a Fabric pipeline with Wait by hand, its JSON would look the same.
+You’ll learn about the resolutions field later. For now, note that the export field shows a Fabric pipeline with a Wait activity. If you created a pipeline with a Wait activity in Fabric Data Factory manually, its JSON would look the same.
 
 If you stop here, this acts like a What-If: it shows what the upgrade would create.
 
@@ -159,7 +163,7 @@ Open Microsoft Fabric UX and navigate to your Data Factory Workspace.
 Your workspace is in a **region** like `daily`, `dxt`, `msit`, or `prod`.
 Do make a note this region; you'll need it later.
 
-If you don't know what this means, use `prod`. Since `prod` is the default value, you won’t need to pass this parameter if you’re on prod.
+If you don't know what this means, use `prod`. Since `prod` is the default, you won’t need to pass this parameter if you’re in prod region.
 
 ### Find your workspace ID
 See [How To: Find your Fabric Workspace ID](migrate-pipelines-find-your-fabric-workspace-id.md).
@@ -399,7 +403,7 @@ This is another Upgrade Progress object, but now the `resolutions` field is popu
 
 You can run `Import-FabricResolutions` at any point in the command chain **before** `Export-FabricResources`. The resolutions will carry forward to later steps.  
 
-## Export the Fabric Pipeline (this one will work)
+## Export the Fabric Pipeline (attempt 2)
 If you’re keeping your command in a text file, update it by adding `Import-FabricResolutions` between `Convert` and `Export`:
 ```
 Import-AdfFactory -SubscriptionId <your Subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Data Factory Name> -PipelineName  "pipeline1" -AdfToken $adfSecureToken | ConvertTo-FabricResources | Import-FabricResolutions -ResolutionsFilename "<path to your resolutions file>" | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
