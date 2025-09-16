@@ -5,7 +5,7 @@ ms.author: ssrinivasara
 ms.reviewer: whhender
 ms.topic: how-to
 ms.custom: pipelines
-ms.date: 09/20/2025
+ms.date: 09/16/2025
 ai-usage: ai-assisted
 
 # FabricPipelineUpgrade Tutorial.
