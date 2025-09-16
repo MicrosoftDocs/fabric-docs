@@ -4,7 +4,7 @@ description: This article explains how to copy data using Oracle database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 06/21/2024
+ms.date: 09/08/2025
 ms.custom: 
   - pipelines
   - template-how-to
@@ -14,6 +14,19 @@ ms.custom:
 # Configure Oracle database in a copy activity
 
 This article outlines how to use the copy activity in a pipeline to copy data from and to Oracle database.
+
+Specifically, this Oracle database connector supports:
+
+- The following versions of an Oracle database:
+    - Oracle database 19c and higher
+    - Oracle database 18c and higher
+    - Oracle database 12c and higher
+    - Oracle database 11g and higher
+
+- Parallel copying from an Oracle database source. See the [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section for details.
+
+> [!Note]
+> Oracle proxy server isn't supported.
 
 ## Supported configuration
 
@@ -45,7 +58,7 @@ The following properties are **required**:
         :::image type="content" source="./media/connector-oracle-database/use-query-table.png" alt-text="Screenshot showing Use query - Table." :::
 
     - If you select **Query**:
-      - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`.
+      - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`. Note that the query should not end with a semicolon (;).
         
         When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section.
 
@@ -141,7 +154,7 @@ The following tables contain more information about the copy activity in Oracle 
 | **schema name** | Name of the schema. |< your schema name >  | No | schema |
 | **table name** | Name of the table. | < your table name > | No |table |
 | *For **Query*** |  |  |  |  |
-| **Query** | Use the custom SQL query to read data. An example is `SELECT * FROM MyTable`. <br>When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section. |  < SQL queries > |No | oracleReaderQuery|
+| **Query** | Use the custom SQL query to read data. An example is `SELECT * FROM MyTable`. Note that the query should not end with a semicolon (;). <br>When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section. |  < SQL queries > |No | oracleReaderQuery|
 |  |  |  |  |  |
 |**Partition option** |The data partitioning options used to load data from Oracle database. |• **None** (default)<br>• **Physical partitions of table**<br>• **Dynamic range** |No |/|
 | *For **Physical partitions of table*** |  |  |  |  |
