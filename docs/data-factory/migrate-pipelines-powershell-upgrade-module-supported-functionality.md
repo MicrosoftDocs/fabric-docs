@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.custom: pipelines
 ms.date: 09/20/2025
 ai-usage: ai-assisted
-# Unsupported Functionality
+
+# Supported Functionality
 If an Activity isn’t available in Fabric, the Fabric Upgrader can’t upgrade it.
 
 Global configuration and parameters aren’t supported.
-
 `pipeline().Pipeline` isn’t supported yet.
 
 # Supported Datasets and Linked Services
