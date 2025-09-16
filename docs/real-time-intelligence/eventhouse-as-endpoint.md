@@ -71,7 +71,9 @@ The new Eventhouse endpoint has these characteristics:
 * The Eventhouse is named **Eventhouse Endpoint** and is read-only.
 * The KQL database is named **<Lakehouse_Name>_EventhouseEndpoint**.
 * The embedded KQL queryset is named **<Lakehouse_Name>_EventhouseEndpoint_queryset**.
-* Shortcuts reference OneLake tables. Query each shortcut directly by using the table function. If the Lakehouse has multiple schemas, the schema name is part of the shortcut name. For example, if the Lakehouse has two schemas named "sales" and "marketing" with a table named "customers" in each schema, the shortcuts are named "sales_customers" and "marketing_customers".
+* Shortcuts reference OneLake tables.
+  * Query each shortcut directly by using the table function.
+  * If the lakehouse has multiple schemas, the schema name shows in each shortcut name. For example, if the schemas are `sales` and `marketing` and each has a table named `customers`, the shortcuts are `sales_customers` and `marketing_customers`.
 
 The workspace and the OneLake catalog show the endpoint and the KQL database as child items of the Lakehouse.
 
