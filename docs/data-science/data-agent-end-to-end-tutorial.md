@@ -15,11 +15,14 @@ ms.collection: ce-skilling-ai-copilot
 
 # Fabric data agent example with the AdventureWorks dataset (preview)
 
-This article describes how to set up a data agent in Microsoft Fabric, using a lakehouse as a data source. To illustrate the process, we first create a lakehouse, and then add data to it. Then, we create a Fabric data agent and configure the lakehouse as its data source. If you already have a Power BI semantic model (with the necessary read/write permissions), a warehouse, or a KQL database, you can follow the same steps after you create the Fabric data agent to add your data sources. While the steps shown here focus on the lakehouse, the process is similar for other data sources—you just need to make adjustments based on your specific selection.
+This article shows how to set up a data agent in Microsoft Fabric using a lakehouse as the example data source. We first create and populate a lakehouse, then create a Fabric data agent and add the lakehouse to it. If you already have a Power BI semantic model (with the necessary read/write permissions), a warehouse, or a KQL database, follow the same steps and select that source instead. Although this walkthrough uses a lakehouse, the pattern is the same for other sources—only the data source selection differs.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
+
+> [!IMPORTANT]
+> Ensure the standalone Copilot experience is enabled in the Power BI admin portal (Tenant settings > Copilot > Standalone Copilot experience). If it isn't enabled, you won't be able to use the data agent inside Copilot scenarios even if other Copilot tenant switches are on. For details, see [Copilot in Power BI tenant settings](../admin/service-admin-portal-copilot.md).
 
 ## Create a lakehouse with AdventureWorksLH
 
@@ -92,7 +95,7 @@ Once the lakehouse is added as a data source, the **Explorer** pane on the left 
 
 ## Provide instructions
 
-To add Fabric data agent instructions, select the **Data agent instructions** button to open the Fabric data agent instructions pane on the right. You can add the following instructions.
+To add instructions, select the **Data agent instructions** button to open the instructions pane on the right. You can add the following instructions.
 
 The `AdventureWorksLH` data source contains information from three tables:
 
