@@ -11,7 +11,7 @@ ms.date: 06/16/2025
 
 # Transform data by running a notebook
 
-Use the Notebook activity to run [notebooks](../data-engineering/how-to-use-notebook.md) you create in [!INCLUDE [product-name](../includes/product-name.md)] as part of your Data Factory pipelines. [Notebooks](../data-engineering/how-to-use-notebook.md) let you run Apache Spark jobs to bring in, clean up, or transform your data as part of your data workflows. It’s easy to add a Notebook activity to your data pipelines in Fabric, and this guide walks you through each step.
+Use the Notebook activity to run [notebooks](../data-engineering/how-to-use-notebook.md) you create in [!INCLUDE [product-name](../includes/product-name.md)] as part of your Data Factory pipelines. [Notebooks](../data-engineering/how-to-use-notebook.md) let you run Apache Spark jobs to bring in, clean up, or transform your data as part of your data workflows. It’s easy to add a Notebook activity to your pipelines in Fabric, and this guide walks you through each step.
 
 ## Prerequisites
 

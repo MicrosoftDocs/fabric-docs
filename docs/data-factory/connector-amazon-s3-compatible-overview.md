@@ -18,9 +18,9 @@ This Amazon S3 Compatible connector is supported in Data Factory for [!INCLUDE [
 
 Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Amazon S3 Compatible connectors in Dataflow Gen2.
 
-## Support in Data pipeline
+## Support in a pipeline
 
-The Amazon S3 Compatible connector supports the following capabilities in Data pipeline:
+The Amazon S3 Compatible connector supports the following capabilities in a pipeline:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
@@ -29,4 +29,4 @@ The Amazon S3 Compatible connector supports the following capabilities in Data p
 | **GetMetadata activity** | None <br> On-premises | Access Key |
 | **Delete activity** | None <br> On-premises | Access Key |
 
-To learn more about the copy activity configuration for Amazon S3 Compatible in Data pipeline, go to [Configure in a data pipeline copy activity](connector-amazon-s3-compatible-copy-activity.md).
+To learn more about the copy activity configuration for Amazon S3 Compatible in a pipeline, go to [Configure in a pipeline copy activity](connector-amazon-s3-compatible-copy-activity.md).
