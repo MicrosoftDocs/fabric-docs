@@ -102,12 +102,6 @@ For broader context on Fabric migration validation, see the Fabric migration ove
 For a detailed, click‑through tutorial with screenshots and examples, see:
 [Tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
-## Frequently asked questions (FAQ)
-
-### Is this module supported by Microsoft?
-
-The code is open‑source in the microsoft organization on GitHub. Review the repo’s README and issue tracker for support information and known limitations. 
-
 ## Which activities are supported?
 Support depends on the module version and the target Fabric capabilities. Check the [Supported functionality](migrate-pipelines-powershell-upgrade-module-supported-functionality) for the latest.
 
