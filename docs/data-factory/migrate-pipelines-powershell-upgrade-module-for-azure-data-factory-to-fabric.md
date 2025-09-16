@@ -103,7 +103,7 @@ For a detailed, click‑through tutorial with screenshots and examples, see:
 [Tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
 ## Which activities are supported?
-Support depends on the module version and the target Fabric capabilities. Check the [Supported functionality](migrate-pipelines-powershell-upgrade-module-supported-functionality) for the latest.
+Support depends on the module version and the target Fabric capabilities. Check the [Supported functionality](migrate-pipelines-powershell-upgrade-module-supported-functionality.md) for the latest.
 
 ## Next steps
 
