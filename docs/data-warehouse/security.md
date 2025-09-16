@@ -95,6 +95,10 @@ To track user activity in warehouse and SQL analytics endpoint for meeting regul
 - To get started, learn [how to configure SQL audit logs in Fabric Data Warehouse (Preview)](configure-sql-audit-logs.md). 
 - You can [track user activities across Microsoft Fabric](../admin/track-user-activities.md). For more information, see the [Operation list](../admin/operation-list.md).
 
+## SQL analytics endpoint security
+
+For more about security in the SQL anlaytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
+
 ## Related content
 
 - [Warehouse connectivity in Microsoft Fabric](connectivity.md)

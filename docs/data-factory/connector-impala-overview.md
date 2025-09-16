@@ -19,6 +19,6 @@ The Impala connector is supported in Data Factory for [!INCLUDE [product-name](.
 
 For information on how to connect to an Impala database in Dataflow Gen2, go to [Set up your Impala database connection](connector-impala.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support an Impala database in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support an Impala database in pipelines.
