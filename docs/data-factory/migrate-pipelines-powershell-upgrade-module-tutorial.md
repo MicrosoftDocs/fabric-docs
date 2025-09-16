@@ -106,7 +106,7 @@ This command loads the pipeline and associated artifacts from your Azure Data Fa
 - alerts: Lists any issues or extra info.
 - result: Shows the outcome. Here, importedResources lists the ADF artifacts.
 - resolutions: Used for mapping ADF Linked Services to Fabric Connections (later section).
-- 
+
 ---
 
 ### Convert your ADF Pipeline to a Fabric Pipeline
@@ -430,6 +430,6 @@ If your access token expired, refresh it now.
 
 As mentioned earlier, you can place `Import-FabricResolutions` anywhere in the chain **before** `Export-FabricResources`. The resolutions will flow through all later steps.  
 
-Run this command in PowerShell.
+Run the above command in PowerShell.
 
 This time, it works!
