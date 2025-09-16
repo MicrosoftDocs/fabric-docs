@@ -77,17 +77,11 @@ You can find more information in these articles:
 
 * [Object-level security (OLS)](service-admin-object-level-security.md)
 
-## OneLake permissions (data access roles)
+## OneLake security
 
-OneLake has its own permissions for governing access to files and folders in OneLake through [OneLake data access roles.](../onelake/security/get-started-data-access-roles.md) OneLake data access roles allow users to create custom roles within a lakehouse and to grant read permissions only to the specified folders when accessing OneLake. For each OneLake role, users can assign users, security groups or grant an automatic assignment based on the workspace role.
+OneLake has its own permissions for governing access to tables and folders in OneLake through [OneLake security.](../onelake/security/get-started-onelake-security.md) OneLake security allows users to create custom roles within a lakehouse and to grant read permissions only to the specified tables and folders when accessing OneLake. For each OneLake role, users can assign users, security groups or grant an automatic assignment based on the workspace role.
 
 Learn more about [OneLake Data Access Control Model](../onelake/security/data-access-control-model.md) and view the how-to guides.
-
-* [How to secure a lakehouse for Data Science teams](../onelake/security/how-to-secure-data-onelake-for-data-science.md)
-
-* [How to secure a lakehouse for Data Warehousing teams](../onelake/security/how-to-secure-data-onelake-for-data-warehousing.md)
-
-* [How to secure data for common data architectures](../onelake/security/how-to-common-data-architectures.md)
 
 ## Order of operation
 

@@ -49,7 +49,7 @@ You use the sample dataset **NYC-Taxi** as the data source for the tutorial. Aft
 
 ## Next step
 
-Continue to the next section to create your data pipeline.
+Continue to the next section to create your pipeline.
 
 > [!div class="nextstepaction"]
 > [Module 1: Create a pipeline with Data Factory](tutorial-end-to-end-pipeline.md)

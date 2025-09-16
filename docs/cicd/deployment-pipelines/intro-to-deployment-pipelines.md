@@ -45,6 +45,10 @@ When you deploy content from one pipeline stage to another, the copied content c
   * Spark Job Definitions *(preview)*
   * User Data Functions *(preview)*
 
+* Data Science items:
+  * [Machine learning experiments](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-in-deployment-pipelines) *(preview)*
+  * [Machine learning models](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-in-deployment-pipelines) *(preview)*
+
 * Data Factory items:
 
   * [Copy Job](../../data-factory/cicd-copy-job.md#deployment-pipelines-for-git) *(preview)*

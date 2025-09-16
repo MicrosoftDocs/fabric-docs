@@ -197,12 +197,16 @@ items:
            href: monitor-spark-job-definitions.md
          - name: Leverage the Apache Spark Advisor
            href: spark-advisor-introduction.md
+         - name: Job insights diagnostic library (Preview)
+           href: job-insight-library.md    
       - name: Spark Application Run Series Analysis
         items: 
          - name: Run series analysis Overview
            href: run-series-analyisis-overview.md
          - name: Monitor run series
            href: apache-spark-monitor-run-series.md
+         - name: Apache Spark applications comparison
+           href: spark-comparison-runs.md
       - name: Single Spark Application Monitoring
         items: 
          - name: Monitor a Single Spark Application
@@ -225,6 +229,8 @@ items:
             href: executor-log.md
           - name: Resource usage APIs
             href: resource-usage-apis.md
+          - name: Spark Advisor API
+            href: spark-advisor-api.md
       - name: Collecting Spark Logs & Metrics
         items: 
           - name: Collect Logs & Metrics with Azure Log Analytics
@@ -254,10 +260,14 @@ items:
       href: lakehouse-and-delta-tables.md
     - name: Load to tables
       href: load-to-tables.md
+    - name: Table compaction
+      href: table-compaction.md
     - name: Lakehouse table maintenance
       href: lakehouse-table-maintenance.md
     - name: Delta optimization and V-Order
       href: delta-optimization-and-v-order.md
+    - name: Tune file size
+      href: tune-file-size.md
     - name: Automated Statistics for Delta Tables
       href: automated-table-statistics.md	
     - name: Delta Driver Mode Snapshot
@@ -415,7 +425,7 @@ items:
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)
      href: spark-arcgis-geoanalytics.md
-- name: User data functions (preview)
+- name: User data functions
   items:
    - name: Overview
      href: ./user-data-functions/user-data-functions-overview.md

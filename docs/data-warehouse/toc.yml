@@ -56,6 +56,8 @@ items:
   items: 
   - name: Connectivity
     href: connectivity.md
+  - name: How to Connect
+    href: how-to-connect.md
 - name: Copilot in Fabric in Data Warehouse
   items:
   - name: What is Copilot in Fabric in Data Warehouse?
@@ -415,18 +417,22 @@ items:
     displayName: Smoothing, throttling
   - name: Workload Management
     href: workload-management.md
+
 - name: Migrate
   items:
   - name: Migration Assistant
     href: migration-assistant.md
-  - name: Migration Assistant guide for Azure Synapse Analytics
-    href: migrate-with-migration-assistant.md
-  - name: Extract DAC from a dedicated SQL pool
-    href: extract-data-tier-application-synapse-dedicated-sql-pool.md
   - name: Planning for migration from Azure Synapse Analytics
     href: migration-synapse-dedicated-sql-pool-warehouse.md
   - name: Methods for migration from Azure Synapse Analytics
     href: migration-synapse-dedicated-sql-pool-methods.md
+  - name: How to
+    items:    
+    - name: Extract DAC from a dedicated SQL pool
+      href: extract-data-tier-application-synapse-dedicated-sql-pool.md
+    - name: Migration Assistant guide for Azure Synapse Analytics
+      href: migrate-with-migration-assistant.md
+
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse

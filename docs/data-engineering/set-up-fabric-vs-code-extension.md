@@ -14,12 +14,12 @@ ms.search.form: VS Code extension
 
 Microsoft Fabric has two extensions for Visual Studio (VS) Code that help you manage your Fabric artifacts in VS Code and develop user data functions:
 
-- [Microsoft Fabric (Preview)](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric)
-- [Fabric User data functions (Preview)](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-functions)
+- [Microsoft Fabric](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric)
+- [Fabric User data functions](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-functions)
 
-## Microsoft Fabric (Preview)
+## Microsoft Fabric 
 
-The [Microsoft Fabric (Preview)](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric) extension for VS Code allows you to access, view, and manage a Fabric workspace within VS Code. The Fabric extension is the core extension that enables other Fabric extensions to support more features and enhance your developer productivity.
+The [Microsoft Fabric](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric) extension for VS Code allows you to access, view, and manage a Fabric workspace within VS Code. The Fabric extension is the core extension that enables other Fabric extensions to support more features and enhance your developer productivity.
 
 ### Features
 
@@ -28,42 +28,45 @@ The supported features are:
 - Sign in and manage access to a Fabric account with VS Code accounts.
 - Create and open workspaces in your Fabric account.
 - View the items in your workspace and open, rename, or edit them in Fabric. You can group them by item type or view them as a list.
-- Open and edit notebooks.
+- Open and edit items in your workspace ([supported items](/rest/api/fabric/articles/item-management/definitions/item-definition-overview)).
+- Clone Git enabled workspaces.
+- Support for version control for your items.
+- Open Fabric SQL Databases in [MSSQL extension](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql).
 
 ### Sign in
 
 To sign in to your Fabric account, press F1 and type `Fabric: Sign in`. You're prompted for access to your computer's secure credential storage service so you don't need to sign in every time you start VS Code. Once signed in, select a workspace to view the list of items in the Fabric explorer.
 
+## Manage your workspaces and item
+View all your workspaces in Fabric explorer. You can filter the workspaces you want to work with in VS Code. 
+
+:::image type="content" source="media\vscode\manage-workspace.png" alt-text="Screenshot of viewing workspaces and filter them." lightbox="media\vscode\manage-workspace.png" :::
 
 ### Switch tenants
 
 You can enable Microsoft Fabric for your tenant  such that everyone in the tenant has access to Microsoft Fabric. You may have access to more than one tenant; you can switch between tenants using the tenant switcher.
 
 1. Sign in to Microsoft Fabric.
-2. Select **Workspace actions**.
+2. Select **Switch tenant** and  then choose the tenant you want to navigate to.
 
-  :::image type="content" source="media\vscode\view-workspace-actions.png" alt-text="Screenshot of the viewing workspace actions.":::
-  
-3. Select **Switch tenant** and  then choose the tenant you want to navigate to.
+  :::image type="content" source="media\vscode\switch-tenant.png" alt-text="Screenshot of selecting switch tenant to change the default tenant.":::
 
-  :::image type="content" source="media\vscode\switch-tenants.png" alt-text="Screenshot of selecting switch tenant to change the default tenant.":::
-
-### Create any Fabric item in VS Code
+### Create a Fabric item in VS Code
 
 With the Microsoft Fabric Extension, you can now create, delete, and rename any Fabric item directly within VS Code, streamlining your workflow without ever leaving VS Code. You can also view the newly created items in [Fabric portal](https://app.fabric.microsoft.com).
 
-1. Select Create item.
-   :::image type="content" source="media\vscode\create-item.png" alt-text="Screenshot of creating an item in Fabric.":::
-2. Select the item type and provide a name to create the item in Fabric. 
+1. Select the workspace of your choice.
+2. Select **+** to create an item in the workspace.   
+3. Select the item type and provide a name to create the item in Fabric. 
    :::image type="content" source="media\vscode\select-item-type.png" alt-text="Screenshot of selecting the item type to create in Fabric.":::
-
-### Command palette
-
+3. Select **Open in Explorer** to open an item definition to edit in Visual Studio Code. Here is a list of ([supported items](/rest/api/fabric/articles/item-management/definitions/item-definition-overview)).
+   :::image type="content" source="media\vscode\open-pbi-report.png" alt-text="Screenshot showing how to open a Power BI report.":::
+   
 You can access almost all Azure services provided by these extensions through the Command palette in VS Code. Press **F1**, then type in `Fabric` to find the available commands.
 
-## Fabric User data functions (Preview)
+## Fabric User data functions
 
-The [Fabric User data functions (Preview)](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-functions) extension supplies additional functionality for authoring, testing, and deploying user data functions in Fabric.
+The [Fabric User data functions](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-functions) extension supplies additional functionality for authoring, testing, and deploying user data functions in Fabric.
 
 ### Requirements
 
@@ -89,6 +92,7 @@ The supported features are:
 - Refresh connections, and libraries for your user data functions item.
 - Publish local changes to Fabric.
 - Work with workspaces in different tenant
+- Support for Git enabled User data functions 
 
 
 ## Next steps

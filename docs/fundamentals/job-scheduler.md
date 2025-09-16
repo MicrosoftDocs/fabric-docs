@@ -81,7 +81,7 @@ The job scheduler supports CI/CD integration, so you can deploy and manage sched
 When you deploy an item, its schedules are automatically included, so you don't need to recreate them manually. For step-by-step instructions, see [CI/CD workflow options in Fabric](../cicd/manage-deployment.md).
 
 > [!IMPORTANT]
-> Existing items and schedules don't update automatically. To include them in deployments, make a minor change to the item or its schedules to trigger an update.
+> All items that had a scheduler configured prior to CI/CD being enabled appear as "uncommitted" when running `git status`. Carefully review and confirm the changes that need to be committed to avoid unintended actions. Items without prior scheduler configuration aren't affected. We apologize for any inconvenience this may cause.
 
 ## Summary
 

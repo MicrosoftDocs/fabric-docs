@@ -14,7 +14,7 @@ There are certain limitations to the current Data Factory in Microsoft Fabric fe
 
 For service level outages or degradation notifications, check [Microsoft Fabric support](https://support.fabric.microsoft.com/).  
 
-## Data pipeline limitations in Microsoft Fabric
+## Pipeline limitations in Microsoft Fabric
 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
@@ -27,7 +27,7 @@ The following list describes the current limitations of pipelines in Data Factor
 -	Web activity doesn't support service principal based authentication.
 -	Background sync of authentication doesn't happen for pipelines. Recommendation is to do minor description like updates to pipelines and save them. That way, new token is obtained and cached so pipeline can run again with updated password of entra id. 
 
-## Data pipeline resource limits
+## Pipeline resource limits
 
 The following table describes the resource limitations for pipelines in Data Factory in Microsoft Fabric.
 
@@ -40,6 +40,7 @@ The following table describes the resource limitations for pipelines in Data Fac
 | Concurrent authoring operations, including test connection, browse folder list and table list, preview data, and so on per workspace | 50 | 50 |
 | Maximum activities per pipeline, which includes inner activities for containers | 120 | 120 |
 | Maximum parameters per pipeline | 50 | 50 |
+|Maximum schedules per pipeline|20|20|
 | ForEach items | 100,000 | 100,000 |
 | ForEach parallelism | 20 | 50 |
 | Lookup Activity item count | 5000 | 5000 |

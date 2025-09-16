@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
-ms.date: 09/01/2025
+ms.date: 09/15/2025
 ---
 
 # Enable Eventhouse endpoint for lakehouse
@@ -25,7 +25,7 @@ Enable the Eventhouse endpoint to get:
 * **Fast, scalable queries**: Run analytics in KQL or SQL using advanced external table operators and commands.
 * **Advanced insights**: Run time series analysis, detect anomalies, and use Python for advanced processing.
 
-After you enable the endpoint, it tracks the source lakehouse data and optimizes it for Eventhouse-like performance and flexibility. Each lakehouse table is attached to a [OneLake shortcut](onelake-shortcuts.md) in the Eventhouse endpoint with [Query acceleration policies](query-acceleration-overview.md) that optimize the source data. Eventhouse shortcuts update automatically as the source lakehouse schema changes.
+After you enable the endpoint, it tracks the source lakehouse data and optimizes it for Eventhouse-like performance and flexibility. Each lakehouse table is attached to a [OneLake shortcut](onelake-shortcuts.md) in the Eventhouse endpoint with [Query acceleration policies](query-acceleration-overview.md) that optimize the source data. <!-- Eventhouse shortcuts update automatically as the source lakehouse schema changes.-->
 
 ## Performance
 
@@ -128,6 +128,7 @@ The Eventhouse endpoint syncs the source Lakehouse tables and schema changes wit
 * You can't currently enable the Eventhouse endpoint from within an open lakehouse.
 * The System overview page of the Eventhouse endpoint doesn't show any statistics.
 * Updates to the Eventhouse endpoint cache policy aren't supported
+* Changing the source table schema won't be reflected at the Eventhouse endpoint.
 
 ## Related content
 

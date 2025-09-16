@@ -4,7 +4,8 @@ description: Learn how to manage your Microsoft Fabric capacity and understand t
 author: julcsc
 ms.author: juliacawthra
 ms.topic: how-to
-ms.date: 03/20/2025
+ms.date: 09/02/2025
+ai-usage: ai-assisted
 ---
 
 # Manage your Fabric capacity
@@ -334,7 +335,7 @@ This table summarizes the actions you can take in the details section.
 | Data Engineering/Science Settings    | Allow workspace admins to set the size of their spark [pools](../data-engineering/workspace-admin-settings.md#pool) |
 | Workspaces assigned to this capacity | <sup>*</sup>Add or remove workspaces assigned to the capacity |
 
-<sup>*</sup> To assign a workspace to a Fabric capacity or a capacity with an A SKU, you need to have a capacity contributor role, and a workspace admin role.
+<sup>*</sup> To assign a workspace to a Fabric capacity or a capacity with an A SKU, you need to have a capacity **contributor** role, and a workspace admin role. A **contributor** on a capacity can assign workspaces to that capacity but can't modify capacity settings or delete the capacity. This role is typically used to allow workspace admins to move their workspaces into a managed capacity without giving them full administrative control.
 
 ### Delegated tenant settings
 
@@ -355,6 +356,19 @@ By default, delegated tenant settings inherit their configuration from the tenan
     To exclude specific security groups from the setting, select **Except specific security groups** and enter the security groups you want to exclude. This setting is optional and can be used with together with the *Apply to* setting.
    
 1. Select **Apply**.
+
+## Manage max memory for semantic models
+
+To optimize performance and prevent memory-related errors, administrators can adjust the **Max memory (%)** setting for semantic models within the Power BI Premium and Power BI Embedded capacity settings.
+
+1. Go to the **Admin portal**.
+2. Select **Capacity settings**.
+3. Choose the relevant capacity and click on the **Workloads** tab.
+4. Locate the **Semantic models** section.
+5. Adjust the **Max memory (%)** slider to allocate more memory as needed.
+
+> [NOTE]
+> Increasing memory allocation may help resolve issues such as model loading failures or performance bottlenecks. For more context on SKU limitations, see [Semantic model SKU limitation](../enterprise/powerbi/service-premium-what-is.md#semantic-model-sku-limitation).
 
 ## Related content
 

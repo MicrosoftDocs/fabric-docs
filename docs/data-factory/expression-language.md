@@ -101,8 +101,9 @@ These system variables can be referenced anywhere in the pipeline.
 
 | Variable Name | Description |
 | --- | --- |
-| @pipeline().DataFactory |Name of the data  or Synapse workspace the pipeline run is running in |
-| @pipeline().Pipeline |Name of the pipeline |
+| @pipeline().DataFactory |ID of the workspace the pipeline run is running within |
+| @pipeline().Pipeline |ID of the pipeline |
+| @pipeline().PipelineName |Name of the pipeline |
 | @pipeline().RunId |ID of the specific pipeline run |
 | @pipeline().TriggerId|ID of the trigger that invoked the pipeline |
 | @pipeline().TriggerName|Name of the trigger that invoked the pipeline |

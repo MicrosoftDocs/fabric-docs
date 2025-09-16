@@ -1,23 +1,23 @@
 ---
-title: Microsoft Copilot in Fabric in the Data Factory workload overview
+title: Microsoft Copilot in Fabric in the Data Factory Workload Overview
 description: Learn how Microsoft Copilot in Fabric
- in the Data Factory workload empowers customers to use natural language to articulate their requirements for creating data integration solutions.
 author: whhender
 ms.author: whhender
 ms.reviewer: maghan, sngun
-ms.date: 07/15/2025
+ms.date: 09/02/2025
 ms.service: fabric
 ms.subservice: data-factory
-ms.update-cycle: 180-days
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
+ms.update-cycle: 180-days
+ms.devlang: copilot-prompt
 ai-usage: ai-assisted
 ---
 
 # What is Copilot in Fabric in the Data Factory workload?
 
-This article provides an overview of Copilot in the Data Factory workload, including its features and benefits. Microsoft Copilot in the Data Factory workload is an AI-enhanced toolset that empowers customers to use natural language to articulate their requirements for creating data integration solutions using [Dataflow Gen2](../data-factory/data-factory-overview.md#dataflows). The Copilot in the Data Factory workload operates like a subject-matter expert (SME) collaborating with you to design your data flows, supporting both citizen and professional data wranglers in streamlining their workflows.
+This article provides an overview of Copilot in the Data Factory workload, including its features and benefits. Microsoft Copilot in the Data Factory workload is an AI-enhanced toolset that empowers customers to use natural language to articulate their requirements for creating data integration solutions using [Dataflow Gen2](../data-factory/dataflows-gen2-overview.md). The Copilot in the Data Factory workload operates like a subject-matter expert (SME) collaborating with you to design your data flows, supporting both citizen and professional data wranglers in streamlining their workflows.
 
 Before your business can start using Copilot capabilities in Fabric, your administrator must enable Copilot in Microsoft Fabric (see [Copilot Fabric Overview](../fundamentals/copilot-fabric-overview.md#enable-copilot).
 
@@ -37,10 +37,10 @@ Copilot in the Data Factory workload offers different capabilities depending on 
 - Provide a summary of the query and the applied steps
 - Generate a new query that might include sample data or a reference to an existing query
 
-**With Data pipelines, you can:**
+**With pipelines, you can:**
 
-- **Pipeline Generation**: Using natural language, you can describe your desired pipeline, and Copilot understands the intent and generates the necessary Data pipeline activities
-- **Error message assistant**: Troubleshoot Data pipeline issues with clear error explanation capability and actionable troubleshooting guidance
+- **Pipeline Generation**: Using natural language, you can describe your desired pipeline, and Copilot understands the intent and generates the necessary pipeline activities
+- **Error message assistant**: Troubleshoot pipeline issues with clear error explanation capability and actionable troubleshooting guidance
 - **Summarize Pipeline**: Explain your complex pipeline with a summary of content and relations of activities within the Pipeline
 
 ## Best practices for using Copilot in the Data Factory workload
@@ -68,7 +68,7 @@ Here are some example prompts you can use with Copilot in the Data Factory workl
 - Explain my current query
 ```
 
-### Data pipeline prompts
+### Pipeline prompts
 
 ```copilot-prompt
 - Create a pipeline to copy data from SQL Server to Azure Data Lake
@@ -77,7 +77,7 @@ Here are some example prompts you can use with Copilot in the Data Factory workl
 - Explain what this pipeline does
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
 ## Responsible AI use of Copilot
@@ -99,5 +99,5 @@ Here are the current limitations of Copilot in the Data Factory workload:
 ## Related content
 
 - [Privacy, security, and responsible use of Copilot in Fabric in the Data Factory workload](../fundamentals/copilot-data-factory-privacy-security.md)
-- [Tutorial: Create an end-to-end data pipeline](../data-factory/tutorial-end-to-end-pipeline.md)
+- [Tutorial: Create an end-to-end pipeline](../data-factory/tutorial-end-to-end-pipeline.md)
 - [Tutorial: Create an end-to-end dataflow](../data-factory/tutorial-end-to-end-dataflow.md)

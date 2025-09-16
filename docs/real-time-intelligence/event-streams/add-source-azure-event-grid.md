@@ -9,7 +9,7 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:07/24/2025
   - ai-gen-description
-ms.date: 07/24/2025
+ms.date: 09/08/2025
 #customer intent: As a user planning IoT telemetry monitoring, I want to connect Azure Event Grid Namespace to Microsoft Fabric Eventstream so that I can process MQTT messages and standard events for real-time analytics.
 ---
 
@@ -20,9 +20,16 @@ This article shows you how to add an Azure Event Grid Namespace source to an eve
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Member or higher permissions. 
-- Enable [managed identity]() on the Event Grid namespace. 
 - Create or have an Azure Event Grid namespace with [managed identity](/azure/event-grid/event-grid-namespace-managed-identity) enabled. 
+- A workspace that is not ‘My workspace’, operating in Fabric capacity or Trial license mode, is required, together with the following access.:
+    - If you have Member (or higher) permissions, no extra setup is needed. 
+    - If you don’t have Member permissions, ask a colleague with Member access to assign Contributor access to the Event Grid service principal before you add the source:
+
+        1. Open the workspace [Manage access](../../fundamentals/give-access-workspaces.md) pane.
+        1. Select Add people or groups.
+        1. Enter the Event Grid namespace name and choose the matching service principal.
+        1. Assign the Contributor role and select Add.
+    
 - Enable [MQTT](/azure/event-grid/mqtt-publish-and-subscribe-portal) and [routing](/azure/event-grid/mqtt-routing) on the Event Grid namespace, if you want to receive Message Queuing Telemetry Transport (MQTT) data. 
 - [Create an eventstream](create-manage-an-eventstream.md) if you don't have one. 
 
