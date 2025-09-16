@@ -19,11 +19,11 @@ The Data Warehouse connector is supported in Data Factory for [!INCLUDE [product
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/destination)                                                 | None<br> On-premises<br> Virtual network | Organizational account |
-| **Data pipeline** <br>- [Copy activity](connector-data-warehouse-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Organizational account |
+| **Pipeline** <br>- [Copy activity](connector-data-warehouse-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Organizational account |
 | **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- Append | None<br> On-premises<br> Virtual network | Organizational account |
 
 ## Related content
 
 To learn about how to connect to Data Warehouse, go to [Set up your Data Warehouse connection](connector-data-warehouse.md).
 
-To learn more about the copy activity configuration for Data Warehouse in data pipelines, go to [Configure in a data pipeline copy activity](connector-data-warehouse-copy-activity.md).
+To learn more about the copy activity configuration for Data Warehouse in pipelines, go to [Configure in a pipeline copy activity](connector-data-warehouse-copy-activity.md).

@@ -39,6 +39,6 @@ The following Power Query Web connector articles supply more useful information 
 - [Get webpage data by providing examples](/power-query/connectors/web/web-by-example)
 - [Troubleshooting the Web connector](/power-query/connectors/web/web-troubleshoot)
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support the Web API or Web page connector in data pipelines.
+Data Factory in Microsoft Fabric doesn't currently support the Web API or Web page connector in pipelines.

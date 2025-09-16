@@ -19,10 +19,10 @@ The SQL database connector is supported in Data Factory for [!INCLUDE [product-n
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/destination)                                                 | None<br> On-premises<br> Virtual network | Organizational account |
-| **Data pipeline** <br>- [Copy activity](connector-sql-database-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Organizational account |
+| **Pipeline** <br>- [Copy activity](connector-sql-database-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Organizational account |
 
 ## Related content
 
-To learn about how to connect to SQL Database in data pipelines, go to [Set up your SQL Database connection](connector-sql-database.md).
+To learn about how to connect to SQL Database in pipelines, go to [Set up your SQL Database connection](connector-sql-database.md).
 
-To learn about the copy activity configuration for SQL database in data pipelines, go to [Configure SQL database in a copy activity](connector-sql-database-copy-activity.md).
+To learn about the copy activity configuration for SQL database in pipelines, go to [Configure SQL database in a copy activity](connector-sql-database-copy-activity.md).

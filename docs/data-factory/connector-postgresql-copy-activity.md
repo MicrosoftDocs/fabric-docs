@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure PostgreSQL in a copy activity
 
-This article outlines how to use the copy activity in data pipelines to copy data from PostgreSQL.
+This article outlines how to use the copy activity in pipelines to copy data from PostgreSQL.
 
 
 ## Supported configuration
