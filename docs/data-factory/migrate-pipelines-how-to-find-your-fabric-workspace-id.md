@@ -1,6 +1,6 @@
 ---
-title: Upgrading a Pipeline? You Need Your Fabric Workspace ID
-description: This article outlines the stpes to find you Fabric Workspace ID
+title: Find your Microsoft Fabric workspace ID
+description: This article outlines the stpes to find you Fabric Workspace ID.
 author: ssindhub
 ms.author: ssrinivasara
 ms.reviewer: whhender
@@ -10,33 +10,42 @@ ms.date: 09/16/2025
 ai-usage: ai-assisted
 ---
 
-# Upgrading a Pipeline? You Need Your Fabric Workspace ID
+# Find your Microsoft Fabric workspace ID
 
-Before upgrading a pipeline in Microsoft Fabric, make sure you have your **Workspace ID** ready. The steps vary depending on whether you're using **My Workspace** or another workspace.
+Before you upgrade a pipeline in Microsoft Fabric, have your **Workspace ID** ready. To find your **Workspace ID** steps differ depending on whether you're in **My Workspace** or another workspace.
 
+## Find your workspace ID (not "My Workspace")
 
-## Find Your Workspace ID (Not "My Workspace")
-
-If you're working in a Fabric Workspace other than "My Workspace":
+If you're in a Fabric workspace other than "My Workspace":
 
 1. Open **Fabric UX** in your browser and navigate to the **Data Factory** experience for your workspace.
-1. Your browser URL will include a segment like `/groups/{GUID}/`.
+1. Look at the browser URL for a segment like `/groups/{GUID}/`.
 1. That **GUID** is your **Workspace ID**.
----
-## Find Your Workspace ID for "My Workspace"
 
-If you're using **My Workspace**, follow these steps:
+For example:
+
+`https://msit.powerbi.com/groups/d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4/list?ctid=00001111-aaaa-2222-bbbb-3333cccc4444&experience=fabric-developer`
+
+The **Workspace ID** in this example is `d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4`.
+
+## Find the workspace ID for "My Workspace"
+
+If you're in **My Workspace**, use the browser's developer tools to get the workspace ID from a network response.
 
 1. Open **Fabric UX** and go to the **Data Factory** experience.
-1. Press **F12** to open the browser’s developer tools.
+1. Press **F12**, or in your browser select **Settings** and then **Developer tools** (may be under **More tools**) to open the browser's developer tools.
 1. Select the **Network** tab.
-1. In the filter field, enter:  
-   `metadata/artifacts`  
-   *(Make sure the method is GET)*
-1. Click on one of your pipelines.
-1. Once the pipeline loads, you’ll see a few network entries—mostly GUIDs.
-1. Select one of those entries and open the **Response** tab.
-1. Look for the property named `folderObjectId`.
-1. That’s your **Workspace ID**.  
+1. In the filter field, enter:
 
-:::image type="content" source="media/migrate-pipeline-powershell-upgrade/my-workspace-get-workspace-id.png" alt-text="Screenshot on how to get the workspace id for My Workspace.":::
+   `metadata/artifacts`
+
+   > [!IMPORTANT]
+   > Make sure the method is GET.
+
+1. Select one of your pipelines.
+1. When the pipeline loads, you see a few network entries, mostly GUIDs.
+1. Select one of those entries and open the **Response** tab.
+1. Find the property named `folderObjectId`.
+1. That value is your **Workspace ID**.
+
+    :::image type="content" source="media/migrate-pipeline-powershell-upgrade/my-workspace-get-workspace-id.png" alt-text="Screenshot of the network response that shows folderObjectId for My Workspace.":::
