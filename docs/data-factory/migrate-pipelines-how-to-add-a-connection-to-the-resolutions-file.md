@@ -8,6 +8,7 @@ ms.custom: pipelines
 ms.date: 09/20/2025
 ai-usage: ai-assisted
 
+# How To: Add a Connection to the Resolutions File
 The FabricUpgrader can’t upgrade an ADF **LinkedService** to a Fabric **Connection** on its own.  
 You’ll need to:
 
