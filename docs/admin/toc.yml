@@ -115,6 +115,8 @@ items:
       href: portal-workspace.md
     - name: Information protection
       href: service-admin-portal-information-protection.md
+    - name: Map settings
+      href: map-settings.md
     - name: Export and sharing settings
       href: service-admin-portal-export-sharing.md
     - name: Discovery settings

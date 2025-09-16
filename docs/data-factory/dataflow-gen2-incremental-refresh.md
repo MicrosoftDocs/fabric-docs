@@ -32,7 +32,7 @@ To use incremental refresh in Dataflow Gen2, you need:
 
 These data destinations support incremental refresh:
 
-- Fabric Lakehouse (preview)
+- Fabric Lakehouse
 - Fabric Warehouse
 - Azure SQL Database
 - Azure Synapse Analytics
@@ -162,6 +162,7 @@ When working with lakehouse as a data destination, be aware of these limitations
   But here's the catch: if other tools (like Spark) or processes also write to the same table, they can interfere with incremental refresh. We recommend avoiding other writers while using incremental refresh.
 
   If you must use other writers, make sure they don't conflict with the incremental refresh process. Also, table maintenance like OPTIMIZE or REORG TABLE operations aren't supported for tables that use incremental refresh.
+- If you leverage a data gateway to connect to your data sources, ensure that the gateway is updated to at least version May 2025 update (3000.270) or later. This is crucial for maintaining compatibility and ensuring that incremental refresh functions correctly with lakehouse destinations.
 
 ### The data destination must be set to a fixed schema
 

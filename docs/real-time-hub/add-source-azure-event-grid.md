@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 07/16/2025
 ---
 
-# Get events from Azure Event Grid namespace into Fabric Real-Time hub (Preview)
+# Get events from Azure Event Grid namespace into Fabric Real-Time hub
 This article describes how to get events from an Azure Event Grid namespace into Fabric Real-Time hub.
 
 ## Prerequisites

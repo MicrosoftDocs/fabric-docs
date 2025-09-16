@@ -16,6 +16,20 @@ Continue reading for information on major updates to OneLake file explorer.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
+## September 2025 Update (v 1.0.14.0)
+
+### .NET 8 Migration
+
+OneLake File Explorer has been migrated to .NET 8, ensuring the application remains aligned with Microsoft’s latest supported frameworks. This upgrade enhances security and ensures continued eligibility for long-term support. 
+
+### Smarter sync on temporary files
+Temporary files (.tmp) created during file edits— often created during edits in applications like Microsoft Excel —will no longer get stuck in the sync pending state. This issue typically occurred when there were network connectivity problems, preventing .tmp files from uploading and causing conflicts with the server. These files are now cleaned up automatically once the network connection is restored, eliminating persistent sync indicators on temporary files. 
+
+### Stability improvements
+
+We’ve resolved a memory access violation that previously caused crashes when syncing files that had not been opened before. This fix improves reliability and prevents unexpected shutdowns during background sync operations.
+
+
 ## April 2024 Update
 
 ### v 1.0.13.0 - Update Notifications

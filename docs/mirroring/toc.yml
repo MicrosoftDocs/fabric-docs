@@ -1,0 +1,217 @@
+items:
+- name: Mirroring documentation
+  href: index.yml
+- name: Overview
+  href: overview.md
+- name: How to
+  items:
+  - name: Monitor mirrored databases
+    displayName: Monitor mirroring
+    href: monitor.md
+  - name: Mirrored database logs
+    href: monitor-logs.md
+  - name: Share and manage permissions
+    href: share-and-manage-permissions.md
+- name: Explore mirrored data
+  items:
+  - name: Explore your mirrored database
+    href: explore.md
+  - name: Explore directly in OneLake
+    displayName: Explore mirrored data directly in OneLake
+    href: explore-data-directly.md
+  - name: Explore with notebooks
+    displayName: Explore mirrored data with notebooks
+    href: explore-onelake-shortcut.md
+- name: Mirroring Azure SQL Database
+  items:
+    - name: Mirrored database from Azure SQL Database
+      href: azure-sql-database.md
+    - name: Azure SQL Database tutorial
+      href: azure-sql-database-tutorial.md
+    - name: FAQ about mirrored Azure SQL Database
+      displayName: Frequently asked questions about Mirroring Azure SQL Database
+      href: azure-sql-database-mirroring-faq.yml
+    - name: Secure data 
+      displayName: Securing data in mirrored Azure SQL Database
+      href: azure-sql-database-how-to-data-security.md
+    - name: Troubleshoot
+      displayName: Troubleshoot mirrored Azure SQL Database
+      href: azure-sql-database-troubleshoot.md
+    - name: Limitations
+      displayName: Limitations in mirrored Azure SQL Database
+      href: azure-sql-database-limitations.md
+- name: Mirroring Azure SQL Managed Instance
+  items:
+    - name: Mirrored database from Azure SQL Managed Instance
+      href: azure-sql-managed-instance.md
+    - name: Azure SQL Managed Instance tutorial
+      href: azure-sql-managed-instance-tutorial.md
+    - name: FAQ about mirrored Azure SQL Managed Instance
+      displayName: Frequently asked questions about Mirroring Azure SQL Managed Instance
+      href: azure-sql-managed-instance-faq.yml
+    - name: Secure data 
+      displayName: Securing data in mirrored Azure SQL Managed Instance
+      href: azure-sql-managed-instance-how-to-data-security.md
+    - name: Troubleshoot
+      displayName: Troubleshoot mirrored Azure SQL Managed Instance
+      href: azure-sql-managed-instance-troubleshoot.md
+    - name: Limitations
+      displayName: Limitations in mirrored Azure SQL Managed Instance
+      href: azure-sql-managed-instance-limitations.md
+- name: Mirroring Azure Cosmos DB
+  items: 
+    - name: Mirrored databases from Azure Cosmos DB
+      href: azure-cosmos-db.md        
+    - name: Azure Cosmos DB tutorial
+      href: azure-cosmos-db-tutorial.md
+    - name: FAQ about mirrored Azure Cosmos DB 
+      displayName: Frequently asked questions about mirrored Azure Cosmos DB
+      href: azure-cosmos-db-faq.yml
+    - name: Limitations
+      displayName: Limitations in mirrored Azure Cosmos DB
+      href: azure-cosmos-db-limitations.md
+    - name: Troubleshoot 
+      displayName: Troubleshoot mirrored Azure Cosmos DB
+      href: azure-cosmos-db-troubleshooting.yml
+    - name: How to
+      items:
+        - name: Join data
+          href: azure-cosmos-db-how-to-join-multiple.md
+        - name: Query nested data
+          href: azure-cosmos-db-how-to-query-nested.md
+        - name: Access data using Lakehouse and notebooks
+          href: azure-cosmos-db-lakehouse-notebooks.md
+- name: Mirroring Azure Databricks
+  items:
+    - name: Mirroring Azure Databricks
+      href: azure-databricks.md
+    - name: Tutorial
+      displayName: Mirroring Azure Databricks tutorial
+      href: azure-databricks-tutorial.md
+    - name: Secure data
+      displayName: Mirroring Azure Databricks security
+      href: azure-databricks-security.md
+    - name: Limitations
+      displayName: Mirroring Azure Databricks limitations
+      href: azure-databricks-limitations.md
+    - name: FAQ about Mirroring Azure Databricks
+      displayName: Frequently asked questions about mirroring Azure Databricks
+      href: azure-databricks-faq.yml
+- name: Mirroring Google BigQuery
+  items: 
+    - name: Mirrored databases from Google BigQuery
+      href: google-bigquery.md
+    - name: Mirroring Google BigQuery tutorial
+      href: google-bigquery-tutorial.md
+    - name: Mirroring Google BigQuery pricing
+      href: google-bigquery-cost.md
+    - name: Secure data in mirrored Google BigQuery
+      href: google-bigquery-security.md
+    - name: Limitations in mirroring Google BigQuery
+      href: google-bigquery-limitations.md
+    - name: Frequently asked questions about mirroring Google BigQuery
+      href: google-bigquery-faq.yml
+- name: Mirroring Oracle
+  items:
+    - name: Mirrored databases from Oracle
+      href: oracle.md
+    - name: Oracle tutorial
+      href: oracle-tutorial.md
+    - name: Secure oracle data
+      href: oracle-security.md
+    - name: Limitations in mirrored Oracle
+      href: oracle-limitations.md
+- name: Mirroring PostgreSQL
+  items: 
+    - name: Mirrored databases from PostgreSQL
+      href: azure-database-postgresql.md
+    - name: PostgreSQL tutorial
+      href: azure-database-postgresql-tutorial.md
+    - name: FAQ about mirrored PostgreSQL
+      displayName: Frequently asked questions about mirrored PostgreSQL
+      href: azure-database-postgresql-mirroring-faq.yml
+    - name: Secure data
+      displayName: Secure data in mirrored PostgreSQL
+      href: azure-database-postgresql-how-to-data-security.md
+    - name: Limitations
+      displayName: Limitations in mirrored PostgreSQL
+      href: azure-database-postgresql-limitations.md
+    - name: Troubleshoot
+      displayName: Troubleshoot mirrored PostgreSQL
+      href: azure-database-postgresql-troubleshoot.md
+- name: Mirroring Snowflake
+  items: 
+    - name: Mirrored warehouses from Snowflake
+      href: snowflake.md
+    - name: Snowflake tutorial
+      href: snowflake-tutorial.md
+    - name: FAQ about mirrored Snowflake
+      displayName: Frequently asked questions about mirrored Snowflake
+      href: snowflake-mirroring-faq.yml
+    - name: Secure data
+      displayName: Secure data in mirrored Snowflake
+      href: snowflake-how-to-data-security.md
+    - name: Limitations 
+      displayName: Limitations in mirrored Snowflake
+      href: snowflake-limitations.md
+- name: Mirroring SQL Server
+  items: 
+    - name: Mirrored databases from SQL Server
+      href: sql-server.md
+    - name: SQL Server tutorial
+      href: sql-server-tutorial.md
+    - name: FAQ about mirrored SQL Server
+      displayName: Frequently asked questions about mirrored SQL Server
+      href: sql-server-faq.yml
+    - name: Secure data 
+      displayName: Securing data in mirrored SQL Server
+      href: sql-server-security.md
+    - name: Limitations 
+      displayName: Limitations in mirrored SQL Server
+      href: sql-server-limitations.md
+    - name: Troubleshoot 
+      displayName: Troubleshoot mirrored SQL Server
+      href: sql-server-troubleshoot.md
+- name: Open mirroring 
+  items:
+    - name: Open mirroring overview
+      href: open-mirroring.md
+    - name: Tutorial
+      displayName: Open mirroring tutorial
+      href: open-mirroring-tutorial.md
+    - name: Open mirroring landing zone
+      displayName: Open mirroring landing zone requirements and format
+      href: open-mirroring-landing-zone-format.md
+    - name: Open mirroring FAQ
+      displayName: Frequently asked questions about Open Mirroring
+      href: open-mirroring-faq.yml
+    - name: Open mirroring Partners Ecosystem
+      href: open-mirroring-partners-ecosystem.md
+- name: Mirroring REST API
+  href: mirrored-database-rest-api.md 
+- name: CI/CD for mirrored databases
+  href: mirrored-database-cicd.md 
+- name: Troubleshoot Mirroring
+  href: troubleshooting.md           
+- name: Resources
+  items: 
+  - name: Contribute to Fabric docs
+    href: /contribute/
+  - name: Help
+    items:
+    - name: Microsoft Q & A >>
+      href: /answers/
+    - name: Submit feedback >>
+      href: https://feedback.azure.com/    
+  - name: Ideas
+    href: https://ideas.fabric.microsoft.com/
+  - name: Community
+    href: https://community.fabric.microsoft.com/
+  - name: Service updates
+    href: https://azure.microsoft.com/updates/    
+  - name: Azure Status
+    href: https://azure.status.microsoft/
+  - name: Learn
+    items:
+    - name: Microsoft Learn training >>
+      href: /training/

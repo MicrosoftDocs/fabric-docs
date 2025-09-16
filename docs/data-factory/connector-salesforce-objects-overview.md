@@ -19,11 +19,11 @@ The Salesforce objects connector is supported in Data Factory for [!INCLUDE [pro
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/-)                                                 | None<br> On-premises<br> Virtual network | Organizational account |
-| **Data pipeline** <br>- [Copy activity](connector-salesforce-copy-activity.md) (source/destination)<br>- Lookup activity        | None<br> On-premises<br> Virtual network | Organizational account |
+| **Pipeline** <br>- [Copy activity](connector-salesforce-copy-activity.md) (source/destination)<br>- Lookup activity        | None<br> On-premises<br> Virtual network | Organizational account |
 | **Copy job** (source/destination) <br>- Full load<br>- Append | None<br> On-premises<br> Virtual network | Organizational account |
 
 ## Related content
 
 To learn about how to connect to Salesforce objects, go to [Set up your Salesforce objects connection](connector-salesforce-objects.md).
 
-To learn more about the copy activity configuration for Salesforce objects in data pipelines, go to [Configure in a data pipeline copy activity](connector-salesforce-copy-activity.md).
+To learn more about the copy activity configuration for Salesforce objects in pipelines, go to [Configure in a pipeline copy activity](connector-salesforce-copy-activity.md).

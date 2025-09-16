@@ -19,6 +19,6 @@ The Dataflows connector is supported in Data Factory for [!INCLUDE [product-name
 
 For information on how to connect to Dataflows data in Dataflow Gen2, go to [Set up your Dataflows (Power Platform) connection](connector-dataflows.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Dataflows (Power Platform) in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Dataflows (Power Platform) in pipelines.

@@ -44,7 +44,7 @@ There are two options available to connect data sources to your API for GraphQL:
 
     :::image type="content" source="media\graphql-source-control-and-deployment\graphql-connection-options.png" alt-text="Screenshot of options for GraphQL connection to data sources.":::
 
-The first option, **Single Sign-On (SSO)**, enables connections to data sources within Fabric. In this case, when you connect a data source to GraphQL using Single sign-on method in the original workspace (for example, Dev stage), the data source and GraphQL item will be deployed to the target workspace (for example, Test stage) in the pipeline, and GraphQL in the target workspace will be automatically connected to the deployed local data source in the target workspace (see the diagram below).
+The first option, **Single Sign-On (SSO)**, enables connections to data sources within Fabric. In this case, when you connect a data source to GraphQL using Single sign-on method in the original workspace (for example, Dev stage), the data source and GraphQL item will be deployed to the target workspace (for example, Test stage) in the pipeline, and GraphQL in the target workspace will be automatically connected to the deployed local data source in the target workspace (see the diagram below). There are specific limitations when using SSO and connecting to a data source via SQL Analytics Endpoint, for more details refer to [**Current Limitations](#current-limitations).
 
 The second option, **Saved Credential**, enables connections to external data sources outside Fabric and data sources within Fabric. However, [**autobinding**](..\cicd\deployment-pipelines\understand-the-deployment-process.md) isn't supported for the Saved Credential approach. This means that if you connect a data source to GraphQL using Saved Credential in the original workspace (Dev stage), the data source will be deployed to the target workspace (Test stage) in the pipeline. However, the GraphQL item in the target workspace will remain connected to the data source in the original workspace (Dev stage) through the Saved Credentials, rather than autobinding to a local data source in the target workspace. (**see the diagram below**)
 
@@ -76,6 +76,12 @@ The following image is an example of the file structure of each API for GraphQL 
 When you commit the API for GraphQL item to the Git repo, the API for GraphQL definition is stored. This approach supports a precise recovery when you sync back to a Fabric workspace:  
 
 :::image type="content" source="media\graphql-source-control-and-deployment\graphql-source-control-graphql-definition.png" alt-text="Screenshot of API for GraphQL definitions stored in Git.":::
+
+You can find more information about the GraphQL API definition format, syntax and examples on the Fabric control plane APIs documentation:
+
+* [GraphQL API definition](/rest/api/fabric/articles/item-management/definitions/graphql-api-definition)
+* [Create a GraphQLApi with public definition example](/rest/api/fabric/graphqlapi/items/create-graphqlapi?tabs=HTTP#create-a-graphqlapi-with-public-definition-example)
+
 
 ## API for GraphQL in deployment pipeline
 

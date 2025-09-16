@@ -566,7 +566,7 @@ items:
       - name: Splunk Universal Forwarder
         href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
       - name: Telegraf
-        href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rti&pivots=fabric
+        href: get-data-telegraf.md
 - name: Store data
   items:
   - name: Eventhouse
@@ -579,6 +579,8 @@ items:
       href: eventhouse-deploy-with-fabric-api.md
     - name: Manage and monitor an eventhouse
       href: manage-monitor-eventhouse.md
+    - name: Query cold data with hot windows
+      href: query-cold-data-hot-windows.md
   - name: KQL Database
     items:
     - name: Create a KQL database
@@ -629,6 +631,8 @@ items:
           href: query-acceleration-overview.md
         - name: Accelerate queries over OneLake shortcuts
           href: query-acceleration.md
+      - name: Eventhouse endpoint for Lakehouse
+        href: eventhouse-as-endpoint.md
       - name: External tools
         items: 
         - name: Query Fabric OneLake Delta tables from Snowflake
@@ -719,8 +723,7 @@ items:
 - name: Analyze and train data
   items:
   - name: Copilot for Writing KQL Queries
-    displayName: KQL queryset, kusto query language, natural language
-    href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
+    href: copilot-writing-queries.md
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
@@ -750,9 +753,17 @@ items:
       href: vector-database-eventhouse.md
   - name: Time series anomaly detection
     items:
-    - name: Univariate anomaly detection and forecasting
+    - name: Anomaly detection using Real-Time Intelligence
+      items:
+      - name: Overview of anomaly detection
+        href: anomaly-detection.md
+      - name: Anomaly detection models
+        href: anomaly-detection-models.md
+      - name: Troubleshoot anomaly detection
+        href: troubleshoot-anomaly-detection.md
+    - name: Univariate anomaly detection using KQL
       href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
-    - name: Multivariate anomaly detection
+    - name: Multivariate anomaly detection using Spark
       items:
       - name: Multivariate anomaly detection overview
         href: multivariate-anomaly-overview.md
@@ -770,10 +781,10 @@ items:
   items:
   - name: Real-Time Dashboards
     items:
-    - name: Generate Real-Time Dashboard Using Copilot
-      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
     - name: Create a Real-Time Dashboard
       href: dashboard-real-time-create.md
+    - name: Generate Real-Time Dashboard Using Copilot
+      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
     - name: Real-Time Dashboard permissions
       href: dashboard-permissions.md
     - name: Explore data in Real-Time Dashboard tiles
@@ -795,6 +806,18 @@ items:
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
       href: power-bi-data-connector.md
+  - name: Map
+    items:
+    - name: Create a map
+      href: map/create-map.md
+    - name: Customize a map
+      href: map/customize-map.md
+    - name: Share Map
+      href: map/share-map.md
+    - name: Create a tileset
+      href: map/spatial-job-create-tile-sets.md
+    - name: Manage Map permissions
+      href: map/manage-map-permissions.md
 - name: Track data
   items:
   - name: What is Activator?

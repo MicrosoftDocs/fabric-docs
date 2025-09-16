@@ -78,7 +78,9 @@ items:
       - name: What is workspace monitoring?
         href: workspace-monitoring-overview.md
       - name: Enable monitoring in your workspace
-        href: enable-workspace-monitoring.md      
+        href: enable-workspace-monitoring.md    
+      - name: Visualize workspace monitoring
+        href: sample-gallery-workspace-monitoring.md
 - name: Copilot and AI in Fabric
   items:
   - name: 1 - Copilot in Fabric overview
@@ -126,9 +128,9 @@ items:
     - name: Copilot for Real-Time Intelligence
       items:
         - name: Copilot for Writing KQL Queries
-          href: copilot-for-writing-queries.md
+          href: ../real-time-intelligence/copilot-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
         - name: Generate Real-Time Dashboard Using Copilot
-          href: copilot-generate-dashboard.md
+          href: ../real-time-intelligence/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
     - name: Copilot for Data Science and Data Engineering
       items:
       - name: Copilot for Data Science and Data Engineering

@@ -6,6 +6,7 @@ ms.author: jessicamo
 ms.topic: troubleshooting    
 ms.date: 07/21/2025
 ms.collection: ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ---
 
 # Fabric known issues
