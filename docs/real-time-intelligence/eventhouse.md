@@ -58,15 +58,13 @@ As part of the Always-On feature, you can additionally configure your minimum co
 
 For instructions on how to enable always-on, see [Enable always-on](manage-monitor-eventhouse.md#enable-always-on).
 
-## Share an Eventhouse
+## Share an eventhouse
 
-Shared links streamline access and collaboration between Evenhouse users, ensuring consistent access throughout the Eventhouse structure.
-
-When you [share a direct link to an Eventhouse](create-eventhouse.md#share-an-eventhouse), the recipient inherits the permission level of all Eventhouse items including KQL databases and tables, and all related Eventhouse components including dashboards, functions, materialized views, and embedded querysets.
+When you [share a direct link to an Eventhouse](create-eventhouse.md#share-an-eventhouse), the recipient inherits the sender's permission level to all Eventhouse items including KQL databases and tables, and all related Eventhouse components including dashboards, functions, materialized views, and embedded querysets.
 
 Individual KQL databases can be shared independently, although users with database-only access don't gain access to Eventhouse-level navigation elements like System overview or the list of KQL databases in the Eventhouse. To share an individual database, see [Share a KQL database link](access-database-copy-uri.md#share-a-kql-database-link).
 
 ## Related content
 
-* [Create an eventhouse](create-eventhouse.md)
-* [Manage and monitor an eventhouse](manage-monitor-eventhouse.md)
+> [Create an eventhouse](create-eventhouse.md)
+> [Manage and monitor an eventhouse](manage-monitor-eventhouse.md)

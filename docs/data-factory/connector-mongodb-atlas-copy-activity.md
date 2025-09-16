@@ -4,7 +4,7 @@ description: This article explains how to copy data using MongoDB Atlas.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/20/2025
+ms.date: 09/08/2025
 ms.custom: 
   - pipelines
   - template-how-to
@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure MongoDB Atlas in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to MongoDB Atlas.
+This article outlines how to use the copy activity in a pipeline to copy data from and to MongoDB Atlas.
 
 
 ## Supported configuration
@@ -38,8 +38,7 @@ Go to **Source** tab to configure your copy activity source. See the following c
 
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
-- **Connection**: Select a MongoDB Atlas connection from the connection list. If no connection exists, then create a new MongoDB Atlas connection by selecting **New**.
+- **Connection**: Select a MongoDB Atlas connection from the connection list. If no connection exists, then create a new MongoDB Atlas connection.
 - **Database**: Select your database from the drop-down list.
 - **Collection name**: Specify the name of the collection in MongoDB Atlas database. You can select the collection from the drop-down list or select **Edit** to enter it manually. 
 - **Version**: The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. To learn the difference between various versions, go to this [section](#differences-between-mongodb-atlas-versions).
@@ -64,8 +63,7 @@ Go to **Destination** tab to configure your copy activity destination. See the f
 
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
-- **Connection**: Select a MongoDB Atlas connection from the connection list. If no connection exists, then create a new MongoDB Atlas connection by selecting **New**.
+- **Connection**: Select a MongoDB Atlas connection from the connection list. If no connection exists, then create a new MongoDB Atlas connection.
 - **Database**: Select your database from the drop-down list.
 - **Collection name**: Specify the name of the collection in MongoDB Atlas database. You can select the collection from the drop-down list or select **Edit** to enter it manually. 
 
@@ -128,7 +126,6 @@ The following table contains more information about the copy activity in MongoDB
 
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the source data store.|< your MongoDB Atlas connection >|Yes|connection|
 |**Database**|Your database that you use as source.|< your database >|Yes|database|
 |**Collection name**|Name of the collection in MongoDB Atlas database.|< your collection >|Yes|collection|
@@ -142,7 +139,6 @@ The following table contains more information about the copy activity in MongoDB
 
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the destination data store.|< your MongoDB Atlas connection >|Yes|connection|
 |**Database**|Your database that you use as destination.|< your database >|Yes|database|
 |**Collection name**|Name of the collection in MongoDB Atlas database.|< your collection >|Yes|collection|

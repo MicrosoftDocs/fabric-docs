@@ -4,7 +4,7 @@ description: Learn about the mirrored databases from Snowflake in Microsoft Fabr
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, sbahadur 
-ms.date: 04/24/2025
+ms.date: 09/16/2025
 ms.topic: conceptual
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -57,7 +57,7 @@ For more information, see Snowflake documentation on [Access Control Privileges 
 > Any granular security established in the source Snowflake warehouse must be re-configured in the mirrored database in Microsoft Fabric.
 > For more information, see [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md).
 
-## Mirroring Snowflake behind firewall (preview)
+## Mirroring Snowflake behind firewall
 
 Check the networking requirements to access your Snowflake data source. If your Snowflake data source is not publicly accessible and is within a private network, [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. The Azure Virtual Network or the gateway machine's network must connect to the Snowflake instance via a private endpoint or be allowed by the firewall rule. To get started, see [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../mirroring/snowflake-tutorial.md).
 

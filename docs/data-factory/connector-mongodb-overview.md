@@ -18,8 +18,8 @@ The MongoDB connector is supported in Data Factory for [!INCLUDE [product-name](
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-mongodb-copy-activity.md) (source/destination)                            | None<br> On-premises<br> Virtual network | Basic           |
+| **Pipeline** <br>- [Copy activity](connector-mongodb-copy-activity.md) (source/destination)                            | None<br> On-premises<br> Virtual network | Basic           |
 
 ## Related content
 
-To learn more about the copy activity configuration for MongoDB in data pipelines, go to [Configure in a data pipeline copy activity](connector-mongodb-copy-activity.md).
+To learn more about the copy activity configuration for MongoDB in pipelines, go to [Configure in a pipeline copy activity](connector-mongodb-copy-activity.md).
