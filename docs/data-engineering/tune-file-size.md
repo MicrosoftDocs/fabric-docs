@@ -52,17 +52,6 @@ For selective application on specific tables, unset the session configuration an
     SET TBLPROPERTIES ('delta.autoOptimize.optimizeWrite' = 'true')
     ```
 
-1. Unset optimize write
-    ```python
-    spark.conf.unset("spark.databricks.delta.optimizeWrite.enabled")
-    ```
-
-1. Enable on individual table
-    ```sql
-    ALTER TABLE dbo.table_name
-    SET TBLPROPERTIES ('delta.autoOptimize.optimizeWrite' = 'true')
-    ```
-
 To enable on writes to all partitioned tables in the Spark session, ensure the session configuration is unset and then enable the session configuration `spark.microsoft.delta.optimizeWrite.partitioned.enabled`:
 
 # [Spark SQL](#tab/sparksql)
