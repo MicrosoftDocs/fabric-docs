@@ -203,32 +203,32 @@ Before you publish the Fabric data agent, it doesn't have a published URL value,
 
 If you haven't published the Fabric data agent before, you can publish it following the instructions in the previous steps. You can then copy the published URL and use it in the Fabric notebook. This way, you can query the Fabric data agent by making calls to the Fabric data agent API in a Fabric notebook. Paste the copied URL in this code snippet. Then, replace the question with any query relevant to your Fabric data agent. This example uses `\<generic published URL value\>` as the URL.
 
+> Note: Adjust version pins (`openai`, `synapseml`, `pandas`, `tqdm`) to the latest validated versions for your Fabric runtime if these exact versions become outdated.
+
 ```python
 %pip install "openai==1.70.0"
+%pip install "synapseml==1.0.5"  # Required for synapse.ml.mlflow (update version as needed)
+%pip install pandas tqdm  # Skip if already available in the Fabric runtime
 ```
 
 ```python
-%pip install httpx==0.27.2
-```
-
-```python
-import requests
-import json
-import pprint
 import typing as t
 import time
 import uuid
 
+# OpenAI SDK internals
 from openai import OpenAI
-from openai._exceptions import APIStatusError
 from openai._models import FinalRequestOptions
 from openai._types import Omit
 from openai._utils import is_given
+
+# SynapseML helper for env config
 from synapse.ml.mlflow import get_mlflow_env_config
-from sempy.fabric._token_provider import SynapseTokenProvider
+
+# Removed unused imports: requests, json, pprint, APIStatusError, SynapseTokenProvider
  
 base_url = "https://<generic published base URL value>"
-question = "What datasources do you have access to?"
+question = "What data sources do you have access to?"
 
 configs = get_mlflow_env_config()
 
