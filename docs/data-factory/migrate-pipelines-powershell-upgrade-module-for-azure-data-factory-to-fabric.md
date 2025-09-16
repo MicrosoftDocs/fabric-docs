@@ -104,8 +104,3 @@ For a detailed, click‑through tutorial with screenshots and examples, see:
 
 ## Which activities are supported?
 Support depends on the module version and the target Fabric capabilities. Check the [Supported functionality](migrate-pipelines-powershell-upgrade-module-supported-functionality.md) for the latest.
-
-## Next steps
-
-Try a pilot migration of a low‑risk pipeline.
-Open issues or feature requests in the GitHub repo if you hit blockers.
