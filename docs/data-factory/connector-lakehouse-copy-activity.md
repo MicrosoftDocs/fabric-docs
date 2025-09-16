@@ -4,7 +4,7 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 07/15/2025
+ms.date: 09/09/2025
 ms.custom:
   - pipelines
   - template-how-to
@@ -238,8 +238,6 @@ In the sections below, you will find detailed information on Delta Lake table su
 
 ### Source
 
-Reader version 1 is supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
-
 [Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) is supported when you apply reader version 2 or reader version 3 with `columnMapping` in `readerFeatures` in your Lakehouse table. 
 
 Delta table's column mapping capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can read data from an existing delta Lake table with `delta.columnMapping.mode` set to `name` or `id`.
@@ -247,15 +245,19 @@ Delta table's column mapping capability allows for more flexible schema evolutio
 [Deletion vectors](https://docs.delta.io/latest/delta-deletion-vectors.html) is supported 
 when you apply reader version 3 with `deletionVectors` in `readerFeatures` in your Lakehouse table. Rows that are soft deleted are marked in deletion vector files and skipped when reading the delta lake table. 
 
-### Destination
+[Change Data Feed](https://docs.delta.io/delta-change-data-feed/) is supported.
 
-Writer version 2 is supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
+### Destination
 
 [Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) is supported. This capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can:
 
-- Write data to an existing delta lake table with `delta.columnMapping.mode` set to `name` or `id`.
+- Write data to an existing delta lake table with `delta.columnMapping.mode` set to `name`.
 - Auto-create a table with `delta.columnMapping.mode` set to `name` when the destination table does not exist and the source columns include special characters and whitespaces.
 - Auto-create a table with `delta.columnMapping.mode` set to `name` when the table action is overwrite and the source dataset columns include special characters and whitespaces.
+
+[Deletion vectors](https://docs.delta.io/latest/delta-deletion-vectors.html) is supported.
+
+[Change Data Feed](https://docs.delta.io/delta-change-data-feed/) is supported.
 
 ## Table summary
 
