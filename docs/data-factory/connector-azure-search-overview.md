@@ -18,12 +18,12 @@ The Azure AI Search connector is supported in Data Factory for [!INCLUDE [produc
 
 Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support the Azure AI Search connector in Dataflow Gen2.
 
-## Support in Data pipeline
+## Support in a pipeline
 
-The Azure AI Search connector supports the following capabilities in Data pipeline:
+The Azure AI Search connector supports the following capabilities in a pipeline:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
 | **Copy activity (-/destination)** | None <br>On-premises| Service admin key |
 
-To learn more about the copy activity configuration for Azure AI Search in Data pipeline, go to [Configure in a Data pipeline copy activity](connector-azure-search-copy-activity.md).
+To learn more about the copy activity configuration for Azure AI Search in a pipeline, go to [Configure in a pipeline copy activity](connector-azure-search-copy-activity.md).
