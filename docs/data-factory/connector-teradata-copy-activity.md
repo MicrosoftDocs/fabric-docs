@@ -1,17 +1,17 @@
 ---
-title: Configure Teradata in a copy activity (Preview)
+title: Configure Teradata in a copy activity
 description: This article explains how to copy data using Teradata.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/10/2025
+ms.date: 09/12/2025
 ms.custom: 
   - pipelines
   - template-how-to
   - connectors
 ---
 
-# Configure Teradata in a copy activity (Preview)
+# Configure Teradata in a copy activity
 
 This article outlines how to use the copy activity in a pipeline to copy data from and to Teradata.
 

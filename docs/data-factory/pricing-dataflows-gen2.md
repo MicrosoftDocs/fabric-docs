@@ -120,14 +120,17 @@ Aggregate the Capacity Consumption in CU seconds and validate the consumption in
 
 If your dataflow uses staging, to find out how much High Scale compute you used, open the Fabric Capacity Metrics App and filter by your Dataflow’s name. Right-click the name, look for High Scale compute in the list of operations, and check the duration.
 
-<code>HighScaleComputeCapacityConsumptionInCUSeconds = QueryDurationInSeconds x 6 </code>
+```
+HighScaleComputeCapacityConsumptionInCUSeconds = QueryDurationInSeconds x 6
+```
 
 ### Exercise 4: Understanding Fast Copy Compute Consumption (both CI/CD and non-CI/CD Dataflows)
 
 If your dataflow uses fast copy, to find out how much Data Movement compute you used, open the Fabric Capacity Metrics App and filter by your Dataflow’s name. Right-click the name, look for Data Movement in the list of operations, and check the duration.
 
-<code>HighScaleComputeCapacityConsumptionInCUSeconds = QueryDurationInSeconds x 1.5 </code>
-
+```
+FastCopyComputeCapacityConsumptionInCUSeconds = QueryDurationInSeconds x 1.5
+```
 
 ## Related content
 

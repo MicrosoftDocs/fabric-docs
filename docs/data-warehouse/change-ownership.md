@@ -105,3 +105,4 @@ Invoke-PowerBIRestMethod -Url $url -Method Post -Body ""
 ## Related content
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
+- [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md)
