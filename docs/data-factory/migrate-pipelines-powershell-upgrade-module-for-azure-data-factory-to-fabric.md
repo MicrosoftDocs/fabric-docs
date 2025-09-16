@@ -41,7 +41,9 @@ Your workspace is in a region like daily, dxt, msit, or prod. Write it down—yo
 If you’re not sure, your region is prod. That’s the default, so you can skip adding it if it’s prod.
 
 ### Find your workspace ID
-See How To: Find your Fabric Workspace ID. Add the ID to your text file.
+See [How To: Find your Fabric Workspace ID](migrate-pipelines-how-to-find-your-fabric-workspace-id.md).
+
+Add the ID to your text file.
 
 ## Sign In to Azure and Set Context
 Run these commands in PowerShell to sign in and set your subscription and tenant for subsequent Az cmdlets:
