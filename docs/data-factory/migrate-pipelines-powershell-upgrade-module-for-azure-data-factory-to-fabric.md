@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # Upgrade Azure Data Factory pipelines to Microsoft Fabric using PowerShell
 > [!TIP]
-> New to migration options? Start with the **Microsoft Fabric migration overview** for the full landscape and ADF‑to‑Fabric migration guidance. [Fabric migration guidance](fabric/fundamentals/migration.md)
+> New to migration options? Start with the **Microsoft Fabric migration overview** for the full landscape and ADF‑to‑Fabric migration guidance. [Fabric migration guidance](../fundamentals/migration.md)
 ## What you’ll do
 
 - **Install** the **Microsoft.FabricPipelineUpgrade** module.
