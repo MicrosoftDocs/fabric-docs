@@ -155,12 +155,13 @@ If you plan to upgrade an ADF ExecutePipeline Activity, you’ll need to add a *
 
 1. The **New Connection** pane now looks like this:
 
-:::image type="content" source="media/migrate-pipeline-powershell-upgrade/edit-credential-connection-authenticate.png" alt-text="Screenshot for editing credential connection authentication."::: 
+:::image type="content" source="media/migrate-pipeline-powershell-upgrade/copy-credential-connection-id.png" alt-text="Screenshot for editing credential connection authentication."::: 
 
 1. Select **Create**.
 
 1. The **Settings** pane appears. Copy the **Connection ID**:
-:::image type="content" source="media/migrate-pipeline-powershell-upgrade/copy-credential-connection-id.png" alt-text="Screenshot for copying credential connection ID .":::
+:::image type="content" source="media/migrate-pipeline-powershell-upgrade/edit-credential-connection-authenticate.png" alt-text="Screenshot for copying credential connection ID .":::
+
 
 1. Paste that Connection GUID into your Resolutions file like this:
 
