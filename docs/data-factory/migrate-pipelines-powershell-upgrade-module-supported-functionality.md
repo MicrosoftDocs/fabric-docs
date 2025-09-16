@@ -1,3 +1,4 @@
+---
 title: Supported Functionality
 description: What functionality is supported by the **Microsoft.FabricPipelineUpgrade** PowerShell module
 author: ssindhub
@@ -7,6 +8,7 @@ ms.topic: how-to
 ms.custom: pipelines
 ms.date: 09/16/2025
 ai-usage: ai-assisted
+---
 
 # Supported Functionality
 If an Activity isn’t available in Fabric, the Fabric Upgrader can’t upgrade it.
