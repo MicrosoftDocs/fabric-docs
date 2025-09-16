@@ -114,7 +114,7 @@ Graph models also ensure data integrity through constraints, especially **node k
 
 Throughout this documentation, we use a social network example to illustrate GQL concepts. Understanding this domain helps you follow the examples and apply similar patterns to your own data.
 
-![Social network schema diagram](media/gql/schema-example.png)
+:::image type="content" source="./media/gql/schema-example.png" alt-text="Diagram showing the social network schema." lightbox="./media/gql/schema-example.png":::
 
 ### The social network entities
 
