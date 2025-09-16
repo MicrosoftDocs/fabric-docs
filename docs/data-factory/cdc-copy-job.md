@@ -37,12 +37,14 @@ Supported source store:
    - Azure SQL DB
    - On-premises SQL Server
    - Azure SQL Managed Instance
+   - Fabric Lakehouse table
 
 Supported destination store:
    - Azure SQL DB
    - On-premises SQL Server
    - Azure SQL Managed Instance
    - SQL Database in Fabric (Preview)
+   - Snowflake
 
 ## How to get started:
 
