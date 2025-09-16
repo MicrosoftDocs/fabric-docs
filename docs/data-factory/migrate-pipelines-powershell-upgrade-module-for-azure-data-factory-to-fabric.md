@@ -87,9 +87,9 @@ If the upgrade fails, the PowerShell response will show the reason in the detail
 (For Resolutions failure, see the section below).
 
 ## The Resolutions file
-See [How To: Add a Connection to the Resolutions File](https://github.com/microsoft/FabricUpgrade/wiki/How-To%3A-Add-a-Connection-to-the-Resolutions-File).
+See [How To: Add a Connection to the Resolutions File](migrate-pipelines-powershell-upgrade-module-how-to-add-a-connection-to-the-resolutions-file).
 
-Validate the results on Fabric:
+### Validate the results on Fabric:
 
 Open each pipeline and verify activities, parameters, and dataset connections.
 Run test executions with safe sample inputs.
@@ -97,11 +97,11 @@ Compare outputs to your source ADF runs to confirm parity.
 Fix gaps (for example, activities that don’t have a direct Fabric equivalent yet).
 For broader context on Fabric migration validation, see the Fabric migration overview. 
 
-### Step‑by‑step tutorial (GitHub)
+### Step‑by‑step tutorial
 
 For a detailed, click‑through tutorial with screenshots and examples, see:
 
-[FabricPipelineUpgrade tutorial (GitHub Wiki)](https://github.com/microsoft/FabricPipelineUpgrade/wiki/The-FabricPipelineUpgrade-Tutorial)
+[FabricPipelineUpgrade tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
 ## Frequently asked questions (FAQ)
 
@@ -110,7 +110,7 @@ For a detailed, click‑through tutorial with screenshots and examples, see:
 The code is open‑source in the microsoft organization on GitHub. Review the repo’s README and issue tracker for support information and known limitations. 
 
 ## Which activities are supported?
-Support depends on the module version and the target Fabric capabilities. Check the [Supported functionality (GitHub Wiki)](https://github.com/microsoft/FabricPipelineUpgrade/wiki/Supported-Functionality) for the latest.
+Support depends on the module version and the target Fabric capabilities. Check the [Supported functionality](migrate-pipelines-powershell-upgrade-module-supported-functionality) for the latest.
 
 ## Next steps
 
