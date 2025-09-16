@@ -18,7 +18,7 @@ Before you begin upgrading pipelines, make sure your environment is ready with t
 
 To proceed, you’ll need **PowerShell 7.4.2 or higher installed on your machine. 
 
-[Download PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4)
+[Download PowerShell](https://learn.microsoft.com/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4)
 
 ---
 
@@ -27,7 +27,7 @@ To proceed, you’ll need **PowerShell 7.4.2 or higher installed on your machine
 - Open **PowerShell 7 (x64)**  
    Click the Start menu and search for **PowerShell 7**. Look for this icon:
 
-:::image type="content" source="media/migrate-pipeline-powershell-upgrade/verify-installation-module-icon.png" alt-text="Screenshot showing the pipeline upgrade icon.":::
+:::image type="content" source="media/migrate-pipeline-powershell-upgrade/verify-installation-module.png" alt-text="Screenshot showing the pipeline upgrade icon.":::
 
  - Right-click and choose **Run as administrator** for elevated permissions.
  
