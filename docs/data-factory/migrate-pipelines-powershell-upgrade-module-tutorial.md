@@ -166,7 +166,7 @@ Do make a note this region; you'll need it later.
 If you don't know what this means, use `prod`. Since `prod` is the default, you won’t need to pass this parameter if you’re in prod region.
 
 ### Find your workspace ID
-See [How To: Find your Fabric Workspace ID](migrate-pipelines-find-your-fabric-workspace-id.md).
+See [How To: Find your Fabric Workspace ID](migrate-pipelines-how-to-find-your-fabric-workspace-id.md).
 
 Copy your Fabric Workspace ID into your text file.
 
