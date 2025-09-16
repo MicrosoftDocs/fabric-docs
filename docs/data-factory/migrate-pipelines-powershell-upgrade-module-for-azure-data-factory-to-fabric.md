@@ -69,11 +69,11 @@ Tokens expire in about an hour. If they do, repeat this step.
 
 ## Upgrade your Factory Resources
 
-### Upgrade all factory resources
+### Import all factory resources
 ```
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -AdfToken $adfSecureToken
 ```
-### Upgrade a single pipeline
+### Import a single pipeline
 Add -PipelineName:
 ```
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName <your Pipeline Name> -AdfToken $adfSecureToken
