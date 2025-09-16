@@ -27,7 +27,7 @@ To proceed, you’ll need **PowerShell 7.4.2 or higher installed on your machine
 - Open **PowerShell 7 (x64)**  
    Click the Start menu and search for **PowerShell 7**. Look for this icon:
 
-:::image type="content" source="media/migrate-pipeline-powershell-upgrade/verify-installation-module.png" alt-text="Screenshot showing the pipeline upgrade icon.":::
+:::image type="content" source="media/migrate-pipeline-powershell-upgrade/powershell-icon.png" alt-text="Screenshot showing the powershell icon.":::
 
  - Right-click and choose **Run as administrator** for elevated permissions.
  
@@ -53,5 +53,7 @@ Get-Command -Module Microsoft.FabricPipelineUpgrade
 ```
 You should see output similar to this. Version number would be based on the latest published version:
 
-:::image type="content" source="media/migrate-pipeline-powershell-upgrade/powershell-icon.png" alt-text="Screenshot showing the powershell upgrade module version.":::
+:::image type="content" source="media/migrate-pipeline-powershell-upgrade/verify-installation-module.png" alt-text="Screenshot showing the pipeline upgrade icon.":::
+
+
 
