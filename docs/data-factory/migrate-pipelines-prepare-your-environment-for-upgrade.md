@@ -1,3 +1,4 @@
+---
 title: Preparing the environment for Fabric Pipeline Upgrade
 description: Steps to prepare the environment for pipeline upgrade
 author: ssindhub
@@ -7,12 +8,11 @@ ms.topic: how-to
 ms.custom: pipelines
 ms.date: 09/16/2025
 ai-usage: ai-assisted
+---
 
 # Prepare Your Environment for Fabric Pipeline Upgrade
 
 Before you begin upgrading pipelines, make sure your environment is ready with the right tools and modules.
-
----
 
 ## Install PowerShell 7.4.2 (x64) or Later
 
