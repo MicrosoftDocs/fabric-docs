@@ -16,8 +16,8 @@ If an Activity isn’t available in Fabric, the Fabric Upgrader can’t upgrade 
 Global configuration and parameters aren’t supported.
 `pipeline().Pipeline` isn’t supported yet.
 
-# Supported Datasets and Linked Services
-## Currently Supported
+## Supported Datasets and Linked Services
+### Currently Supported
 - Blob: JSON, Delimited Text, and Binary formats
 - Azure SQL Database
 - ADLS Gen2: JSON, Delimited Text, and Binary formats
@@ -27,8 +27,8 @@ Global configuration and parameters aren’t supported.
 - Other Blob file formats (Avro, etc.)
 - SQL Server (non-Azure)
 
-# Supported Activities
-## Currently Supported
+## Supported Activities
+### Currently Supported
 - CopyActivity for supported datasets
 - ExecutePipeline (converted to Fabric InvokePipeline Activity)
 - IfCondition
