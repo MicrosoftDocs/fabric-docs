@@ -10,7 +10,7 @@ ms.date: 09/16/2025
 ai-usage: ai-assisted
 ---
 
-# How To: Add a Connection to the Resolutions File
+# How To: Add Connections to the Resolutions File
 The FabricUpgrader can’t upgrade an ADF **LinkedService** to a Fabric **Connection** on its own.  
 You’ll need to:
 
@@ -82,7 +82,7 @@ You likely found this page because an Alert asked you to add a Resolution. That 
 Create or find a Fabric Connection of type AzureSqlDatabase that points to
 * my-sql-server.database.windows.net.
 * Copy that Connection’s ID.
-* Add a Resolution to your Resolutions.json using the template, replacing <Fabric Connection ID> with the actual GUID.
+* Add a Resolution to your Resolutions.json using the template, replacing "Fabric Connection ID" with the actual GUID.
 
 
 ## Get the GUID for your connection
@@ -119,7 +119,7 @@ Your alert includes a template property like this:
 Do this:
 
 1. Copy everything inside the braces (not the word template).
-1. Replace <Fabric Connection ID> with your actual GUID.
+1. Replace "Fabric Connection ID" with your actual GUID.
 1. Add the object to your Resolutions.json file.
 ```
 [
@@ -132,7 +132,7 @@ Do this:
 ]
 ```
 
- # Credential Connection
+ ## Credential Connection
 
 If you plan to upgrade an ADF ExecutePipeline Activity, you’ll need to add a **CredentialConnectionId** to your Resolutions. Use the Fabric interface to create or find a Credential Connection:
 
@@ -160,7 +160,7 @@ If you plan to upgrade an ADF ExecutePipeline Activity, you’ll need to add a *
 1. Select **Create**.
 
 1. The **Settings** pane appears. Copy the **Connection ID**:
-:::image type="content" source="media/migrate-pipeline-powershell-upgrade/copy-credential-connection-id" alt-text="Screenshot for copying credential connection ID .":::
+:::image type="content" source="media/migrate-pipeline-powershell-upgrade/copy-credential-connection-id.png" alt-text="Screenshot for copying credential connection ID .":::
 
 1. Paste that Connection GUID into your Resolutions file like this:
 
@@ -172,7 +172,7 @@ If you plan to upgrade an ADF ExecutePipeline Activity, you’ll need to add a *
 }
 ```
 
-# A Web v2 Connection
+## A Web v2 Connection
 
 ADF Web and WebHook Activities include the full URL in the Activity. Fabric works differently—it uses a Fabric Connection and a relative URL.
 
