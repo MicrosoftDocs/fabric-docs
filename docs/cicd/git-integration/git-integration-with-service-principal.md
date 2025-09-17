@@ -141,7 +141,7 @@ For more information, see [How and why applications are added to Microsoft Entra
 ## Appendix: Edit service principal connection details
 When you need to update your service principal details, for example, update service principal key, use the following instructions:
 )
-1. In [Fabric settings](../../fundamentals/fabric-settings.md), navigate to **Manage Connections and Gateways**. Locate the cloud connection that you previously created.
+1. In [Fabric settings](../../fundamentals/fabric-home.md), navigate to **Manage Connections and Gateways**. Locate the cloud connection that you previously created.
 2. Edit the connection with the updated settings.
 
  >[!NOTE]
