@@ -35,7 +35,7 @@ To get started, you must complete the following prerequisites:
 - **Fabric workspace recommendations** (Optional): We recommend using a new [Fabric workspace](../fundamentals/workspaces.md) in the same region as your ADF for upgrades for best performance.
 - **Permissions**: [Read access to the ADF workspace and items](/azure/data-factory/concepts-roles-permissions#scope-of-the-data-factory-contributor-role) you’ll migrate and [Contributor or higher rights in the Fabric workspace](../security/permission-model.md#workspace-roles) you’ll write to.
 - **Network and auth**: Make sure you can sign in to both Azure and Fabric from your machine (interactive or service principal).
-- **Environment**: [Prepare your PowerShell environment to perform upgrades](#prepare-your-environment-for-fabric-pipeline-upgrade).
+- **Environment**: [Prepare your PowerShell environment to perform upgrades](#prepare-your-environment-for-fabric-pipeline-upgrades).
 
 ## Supported functionality
 
@@ -68,52 +68,7 @@ Alongside the [currently supported datasets and linked services](#currently-supp
 
 ## Prepare your environment for Fabric pipeline upgrades
 
-Before you start upgrading pipelines, [verify](#verify-your-installation) your environment has the required tools and modules:
-
-- [PowerShell 7.4.2 (x64) or later](#install-powershell-742-x64-or-later)
-- [FabricPipelineUpgrade module](#install-and-import-the-fabricpipelineupgrade-module)
-
-### Install PowerShell 7.4.2 (x64) or later
-
-You need **PowerShell 7.4.2** or later on your machine.
-
-[Download PowerShell](/powershell/scripting/install/installing-powershell-on-windows)
-
-### Install and import the FabricPipelineUpgrade module
-
-1. Open PowerShell 7 (x64).
-
-1. Select the Start menu, search for **PowerShell 7**, open the app's context menu, and select **Run as administrator**.
-
-    :::image type="content" source="media/migrate-pipeline-powershell-upgrade/powershell-icon.png" alt-text="Screenshot of the PowerShell icon.":::
-
-1. In the elevated PowerShell window, install the module from the PowerShell Gallery:
-
-    ```PowerShell
-    Install-Module Microsoft.FabricPipelineUpgrade -Repository PSGallery -SkipPublisherCheck
-    ```
-
-1. Import the module into your session:
-
-    ```PowerShell
-    Import-Module Microsoft.FabricPipelineUpgrade
-    ```
-
-1. If you see a signing or execution policy error, run this command and then import the module again:
-
-    ```PowerShell
-    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-    ```
-
-### Verify your installation
-
-1. Run this command to confirm the module loaded correctly:
-
-    ```PowerShell
-    Get-Command -Module Microsoft.FabricPipelineUpgrade
-    ```
-
-    :::image type="content" source="media/migrate-pipeline-powershell-upgrade/verify-installation-module.png" alt-text="Screenshot of the module command output.":::
+[!INCLUDE [migrate-pipelines-prepare-your-environment-for-upgrade](includes/migrate-pipelines-prepare-your-environment-for-upgrade.md)]
 
 ## Connect PowerShell to your Azure and Fabric environments
 
