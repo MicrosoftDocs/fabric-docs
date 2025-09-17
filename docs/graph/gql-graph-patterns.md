@@ -14,11 +14,11 @@ ms.service: fabric
 
 Graph patterns are core building blocks of your GQL queries. They describe the structures you're looking for in the graph using nodes and edges in an intuitive, visual way. Think of graph patterns as templates that the query engine tries to match against the actual data in your graph.
 
-### Simple element patterns
+## Simple element patterns
 
 Simple element patterns help you match individual nodes and edges from your graph that fulfill specific requirements. These patterns form the foundation for more complex pattern matching.
 
-#### Simple node patterns
+### Simple node patterns
 
 A node pattern specifies the labels and properties that a node must have to match:
 
@@ -34,12 +34,12 @@ This pattern matches all nodes that have **both** the `Place` and `City` labels 
 - **Property filtering**: Specify exact values that properties must match.
 - **Flexible ("covariant") matching**: Matched nodes can have more labels and properties beyond the ones specified.
 
-#### Simple edge patterns
+### Simple edge patterns
 
 Edge patterns are more complex than node patterns. They not only specify a filler but also connect a source node pattern to a destination node pattern. Edge patterns describe requirements on both the edge and its endpoints:
 
 ```gql
-(:Person)-[:likes { creationDate: ZONED_DATETIME("2000-01-01T18:00:00Z") }]->(:Comment)
+(:Person)-[:likes|loves { creationDate: ZONED_DATETIME("2000-01-01T18:00:00Z") }]->(:Comment)
 ```
 
 The arrow direction `-[...]->` is important—it determines `(:Person)` as the source node pattern and `(:Comment)` as the destination node pattern. Understanding edge direction is crucial for querying your graph correctly.
@@ -54,7 +54,7 @@ You can flip the arrow and swap the node patterns to create the equivalent, mirr
 
 This pattern finds the same relationships but from the opposite perspective.
 
-#### Any-directed edge patterns
+### Any-directed edge patterns
 
 When the direction of a graph edge doesn't matter for your query, you can leave it unspecified by creating an any-directed edge pattern:
 
@@ -64,7 +64,7 @@ When the direction of a graph edge doesn't matter for your query, you can leave 
 
 This pattern matches the same edges as `(:Song)-[:inspired]->(:Movie)` and `(:Movie)-[:inspired]->(:Song)` combined, regardless of which node is the source and which is the destination (this example isn't from the social network graph type).
 
-#### Graph edge pattern shortcuts
+### Graph edge pattern shortcuts
 
 GQL provides convenient shortcuts for common edge patterns to make your queries more concise:
 
@@ -97,11 +97,11 @@ This counts the number of `isLocatedIn` edges connecting `Person` nodes or not-`
 
 Additionally, use parenthesis to control the order of label expression evaluation. By default, `!` has the highest precedence and `&` has higher precedence than `|`. Therefore `!A&B|C|!D` is the same as `((!A)&B)|C|(!D)`.
 
-### Binding variables
+## Binding variables
 
 Variables allow you to refer to matched graph elements in other parts of your query. Understanding how to bind and use variables is essential for building powerful queries.
 
-#### Binding element variables
+### Binding element variables
 
 Both node and edge patterns can bind matched nodes and edges to variables for later reference.
 
@@ -131,9 +131,14 @@ Binding element variables enables you to specify node and edge pattern predicate
 
 The edge pattern finds people who knew each other since January 1, 2000, using a flexible condition rather than an exact match.
 
+> [!NOTE]
+> Edge pattern variables always bind to the individual edge in the edge pattern predicate, even when using variable-length patterns.
+> This can help with not having to unnest edge group list variables to perform a post-filter.
+> See [Bind variable-length pattern edge variables](gql-graph-patterns.md#bind-variable-length-pattern-edge-variables).
+
 **Advanced pattern predicate techniques:**
 
-Pattern predicates provide powerful inline filtering capabilities that can improve query performance and readability:
+Pattern predicates provide powerful inline filtering capabilities that can improve query readability:
 
 ```gql
 -- Multiple conditions in node predicates
@@ -143,39 +148,21 @@ MATCH (p:Person WHERE p.age > 30 AND p.department = 'Engineering')
 
 -- Complex edge predicates with calculations
 MATCH (p1:Person)-[w:workAt WHERE w.start_date < ZONED_DATETIME('2020-01-01T00:00:00Z') 
-                                AND w.salary > 75000]-(c:Company)
+                              AND w.salary > 75000]-(c:Company)
 
--- Predicate with subqueries (if supported)
-MATCH (p:Person WHERE p.followers > (SELECT avg(followers) FROM Person))
-      -[:posts]->
-      (m:Message WHERE m.likes > 100)
-
--- Combining exact values and predicates
-MATCH (p:Person { role: 'Manager' } WHERE p.team_size > 5)
-      -[:manages]->
-      (e:Person WHERE e.performance_rating > 3.5)
-```
-
-**Pattern predicates vs statement WHERE clauses:**
-
-Understanding when to use pattern predicates versus statement-level WHERE clauses affects both performance and readability:
-
-```gql
--- Pattern predicates: evaluated during pattern matching (potentially more efficient)
-MATCH (p:Person WHERE p.active = TRUE)-[:workAt]->(c:Company WHERE c.public = TRUE)
-
--- Statement WHERE: evaluated after pattern matching
+-- MATCH WHERE: evaluated after pattern matching
 MATCH (p:Person)-[:workAt]->(c:Company)
 WHERE p.active = TRUE AND c.public = TRUE
 
--- Hybrid approach: filter during matching and after
+-- Filter during matching and after
 MATCH (p:Person WHERE p.department = 'Sales')-[:workAt]->(c:Company)
 WHERE p.quota_achievement > 1.2 AND c.revenue > c.revenue_target
 ```
 
-Choose pattern predicates when the conditions are highly selective and can reduce the intermediate result set size.
+> [!TIP]
+> Use pattern predicates when the conditions are highly selective to reduce the intermediate result set size.
 
-#### Binding path variables
+### Binding path variables
 
 You can also bind a matched path to a path variable for further processing or to return the complete path structure to the user:
 
@@ -185,11 +172,11 @@ p=(c:Company)<-[:workAt]-(x:Person)-[:knows]-(y:Person)-[:workAt]->(c:Company)
 
 Here, `p` is bound to a path value representing the complete matched path structure, including reference values for all nodes and edges in the order given.
 
-### Compose patterns
+## Compose patterns
 
 Real-world queries often require more complex patterns than simple node-edge-node structures. GQL provides several ways to compose patterns for sophisticated graph traversals.
 
-#### Compose path patterns
+### Compose path patterns
 
 Path patterns can be composed by concatenating simple node and edge patterns to create longer traversals.
 
@@ -210,7 +197,7 @@ You can also build path patterns more incrementally, which can make complex patt
 
 This approach breaks down the same traversal into logical steps, making it easier to understand and debug.
 
-#### Compose nonlinear patterns
+### Compose nonlinear patterns
 
 The resulting shape of a pattern doesn't have to be a linear path. You can match more complex structures like "star-shaped" patterns that radiate from a central node:
 
@@ -223,7 +210,7 @@ The resulting shape of a pattern doesn't have to be a linear path. You can match
 
 The pattern finds a person along with their education, employment, and content preferences all at once—a comprehensive profile query.
 
-#### Match trails
+### Match trails
 
 In complex patterns, it's often undesirable to traverse the same edge multiple times. Edge reuse becomes important when the actual graph contains cycles that could lead to infinite or overly long paths. To handle edge reuse, graph in Microsoft Fabric supports the `TRAIL` match mode. 
 
@@ -237,11 +224,11 @@ By using `TRAIL`, the pattern only produces matches in which all edges are diffe
 
 The `TRAIL` mode is essential for preventing infinite loops and ensuring that your queries return meaningful, nonredundant paths.
 
-### Use variable-length patterns
+## Use variable-length patterns
 
 Variable-length patterns are powerful constructs that let you find paths of varying lengths without writing repetitive pattern specifications. They're essential for traversing hierarchies, social networks, and other structures where the optimal path length isn't known in advance.
 
-#### Bounded variable-length patterns
+### Bounded variable-length patterns
 
 Many common graph queries require repeating the same edge pattern multiple times. Instead of writing verbose patterns like:
 
@@ -266,6 +253,10 @@ For more flexibility, you can specify both a lower bound and an upper bound for 
 
 This pattern finds direct friends, friends-of-friends, and friends-of-friends-of-friends all in a single query.
 
+> [!NOTE]
+> The lower bound can also be `0`. In this case, no edges are matched and the whole pattern only matches
+> if the two endpoint node patterns match the same node.
+
 **Complex variable-length compositions:**
 Variable-length patterns can be part of larger, more complex patterns:
 
@@ -276,14 +267,14 @@ Variable-length patterns can be part of larger, more complex patterns:
 
 The pattern finds pairs of comments where people who know each other liked different comments, and those comments are connected through reply chains of 1-5 levels each.
 
-#### Bind variable-length pattern edge variables
+### Bind variable-length pattern edge variables
 
 When you bind a variable-length edge pattern, the value and type of the edge variable change depending on the reference context. Understanding this behavior is crucial for correctly processing variable-length matches:
 
 **Two degrees of reference:**
 
-- **Inside a variable-length edge pattern**: Graph edge variables bind to each individual edge along the matched path (singleton degree of reference)
-- **Outside a variable-length pattern**: Graph edge variables bind to the sequence of all edges along the matched path (group degree of reference)
+- **Inside a variable-length pattern**: Graph edge variables bind to each individual edge along the matched path (also called "singleton degree of reference")
+- **Outside a variable-length pattern**: Graph edge variables bind to the sequence of all edges along the matched path (also called "group degree of reference")
 
 **Example demonstrating both contexts:**
   
@@ -298,7 +289,7 @@ The evaluation of the edge variable `e` occurs in two contexts:
 
 - **In the `RETURN` statement**: Here, `e` is bound to a (group) list of edge reference values in the order they occur in the matched chain. The result of `e[0]` is the first edge reference value in each matched chain.
 
-#### Unbounded variable-length patterns
+### Unbounded variable-length patterns
 
 You can also match arbitrarily long chains of edge patterns by specifying no upper bound. Unbounded patterns create an unbounded variable-length pattern, useful for traversing hierarchies or networks of unknown depth:
 
@@ -322,7 +313,8 @@ TRAIL (:Person)-[:knows]->+(:Person)
 Both forms are equivalent and match chains of at least 2 `knows` relationships.
 
 > [!IMPORTANT]
-> The set of matches for unbounded variable-length patterns can be infinite due to the presence of cycles in the graph. Therefore, unbounded variable-length patterns must always be used with the `TRAIL` match mode to ensure termination and avoid infinite results.
+> The set of matches for unbounded variable-length patterns can be infinite due to the presence of cycles in the graph. Therefore, unbounded variable-length patterns must always be used with 
+> the `TRAIL` match mode to ensure termination and avoid infinite results.
 
 ## Related content
 
