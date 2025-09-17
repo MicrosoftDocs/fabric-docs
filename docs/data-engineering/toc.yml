@@ -260,14 +260,10 @@ items:
       href: lakehouse-and-delta-tables.md
     - name: Load to tables
       href: load-to-tables.md
-    - name: Table compaction
-      href: table-compaction.md
     - name: Lakehouse table maintenance
       href: lakehouse-table-maintenance.md
     - name: Delta optimization and V-Order
       href: delta-optimization-and-v-order.md
-    - name: Tune file size
-      href: tune-file-size.md
     - name: Automated Statistics for Delta Tables
       href: automated-table-statistics.md	
     - name: Delta Driver Mode Snapshot
@@ -307,6 +303,8 @@ items:
     href: fabric-notebook-selection-guide.md
   - name: T-SQL magic command in Python Notebook
     href: tsql-magic-command-notebook.md
+  - name: Fabric Connection with Notebook
+    href: Fabric-Connection-with-Notebook.md  
   - name: Fabric Notebook known limitation
     href: notebook-limitation.md
 - name: Environments
@@ -425,7 +423,7 @@ items:
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)
      href: spark-arcgis-geoanalytics.md
-- name: User data functions
+- name: User data functions (preview)
   items:
    - name: Overview
      href: ./user-data-functions/user-data-functions-overview.md
