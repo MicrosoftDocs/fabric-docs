@@ -53,7 +53,8 @@ Before you migrate, consider the following key points:
 | Cluster-level policies | :x: | |
 | System-assigned managed identities | :x: | Not supported in Eventhouse. |
 | Cluster Azure RBAC roles | :heavy_check_mark: |  |
-| Data connections, such as Event Hubs, IoT Hub, Event Grid | :x: | Not all data connections available in Synapse Data Explorer are supported in Eventhouse. You must manually create supported data connections in the new eventhouse. |
+| Data connections, such as Event Hubs, IoT Hub, Event Grid | :x: | Not all data connections available in Synapse Data Explorer are supported in Eventhouse. 
+You must remove them before migration and re-create supported data connections in the new eventhouse. |
 | Data export operations | :x: | Data export operations, such as `.export` commands and continous export, aren't migrated automatically. You must manaully add them in the new eventhouse.|
 | Follower and leader clusters | :x: | You must manually remove them before migration. |
 | Database pretty names | :x: | You must manually add them in the new eventhouse. |
