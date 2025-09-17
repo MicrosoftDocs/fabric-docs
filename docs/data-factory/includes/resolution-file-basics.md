@@ -18,7 +18,7 @@ ms.date: 09/17/2025
 ]
 ```
 
-- The `type` is the type of mapping to perform. It's usually `LinkedServiceToConnectionId`, but you might also use [other types in special cases.](../migrate-pipelines-how-to-add-connections-to-resolutions-file.md#when-to-use-other-resolution-types)
+- The `type` is the type of mapping to perform. It's usually `LinkedServiceToConnectionId`, but you might also use [other types in special cases.](../migrate-pipelines-how-to-add-connections-to-resolutions-file.md#resolution-types)
 - The `key` depends on the `type` you're using. For `LinkedServiceToConnectionId`, the `key` is the name of the [ADF linked service](/azure/data-factory/concepts-linked-services) that you want to map.
 - The `value` is the GUID of the Fabric connection you want to map to. You can [find the GUID in settings of the Fabric connection](../migrate-pipelines-how-to-add-connections-to-resolutions-file.md#get-the-guid-for-your-connection).
 
