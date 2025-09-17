@@ -21,7 +21,7 @@ To migrate your ADF pipelines to Fabric using PowerShell, you:
 
 1. [Prepare your environment for Fabric pipeline upgrades.](#prepare-your-environment-for-fabric-pipeline-upgrades)
 1. [Connect PowerShell to your Azure and Fabric environments.](#connect-powershell-to-your-azure-and-fabric-environments)
-1. [Upgrade your factory pipelines](#upgrade-your-factory-resources)
+1. [Upgrade your factory pipelines](#import-and-map-your-factory-resources)
 1. [Create a resolution file and map linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections).
 1. Validate your results.
 
@@ -89,11 +89,11 @@ $fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.n
 
 ## Upgrade your factory resources
 
-First, [upgrade your Azure Data Factory pipelines](#upgrade-your-azure-data-factory-pipelines), then [map your ADF linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections).
+First, [import your Azure Data Factory pipelines](#import-your-azure-data-factory-pipelines), then [map your ADF linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections), and finally [upgrade your pipelines](#upgrade-your-pipelines).
 
-## Upgrade your Azure Data Factory pipelines
+### Import your Azure Data Factory pipelines
 
-The following PowerShell will upgrade your data factory resources. Update the Import-AdfFactory command before the first `|` to either import [all supported resources in your ADF](#import-all-factory-resources), or [a single pipeline](#import-a-single-pipeline).
+The following PowerShell will import your data factory resources. Update the Import-AdfFactory command before the first `|` to either import [all supported resources in your ADF](#import-all-factory-resources), or [a single pipeline](#import-a-single-pipeline).
 
 ```PowerShell
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName <your Pipeline Name> -AdfToken $adfSecureToken| ConvertTo-FabricResources | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
@@ -118,9 +118,8 @@ Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <you
 
 ## Map your ADF linked services to Fabric connections
 
-1. If your Fabric instance doesn't already have connections to the data sources used in your ADF linked services, [create those connections in Fabric](connector-overview.md).
+1. If your Fabric instance doesn't already have connections to the data sources used in your ADF linked services, [create those connections in Fabric](migrate-pipelines-how-to-add-connections-to-resolutions-file.md#get-the-guid-for-your-connection).
 1. [Create your resolution file](#create-your-resolution-file) to tell FabricUpgrader how to map your ADF linked services to Fabric connections.
-1. [Run the PowerShell command](#powershell-command-to-map-adf-linked-services-to-fabric-connections) to perform the mapping.
 
 ### Create your resolution file
 
@@ -130,9 +129,9 @@ A resolution file is a JSON file that maps your ADF linked services to Fabric co
 
 For more information about the resolution file, see [How to add a connection to the resolutions file](migrate-pipelines-how-to-add-connections-to-resolutions-file.md).
 
-### PowerShell command to map ADF linked services to Fabric connections
+### PowerShell command to upgrade your pipelines
 
-Now that you have your resolution file, you can run this PowerShell command to perform the mapping. Update the ResolutionFilename parameter to point to your resolution file. Also, update the Import-AdfFactory command before the first `|` to either import [all supported resources in your ADF](#import-all-factory-resources), or [a single pipeline](#import-a-single-pipeline).
+Now that you have your resolution file, you can run this PowerShell command to perform the upgrade. Update the ResolutionFilename parameter to point to your resolution file. Also, update the Import-AdfFactory command before the first `|` to either import [all supported resources in your ADF](#import-all-factory-resources), or [a single pipeline](#import-a-single-pipeline).
 
 ```
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName <your Pipeline Name> -AdfToken $adfSecureToken | ConvertTo-FabricResources | Import-FabricResolutions -ResolutionsFilename "<path to your resolutions file>" | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
