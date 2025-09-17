@@ -26,7 +26,7 @@ This article is a guide to creating and troubleshooting your resolutions file an
 
 The basic structure of the resolution file is:
 
-[!INCLUDE [resolution-file-basics](/includes/resolution-file-basics.md)]
+[!INCLUDE [resolution-file-basics](includes/resolution-file-basics.md)]
 
 ## Resolution types
 
