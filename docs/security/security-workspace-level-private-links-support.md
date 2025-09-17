@@ -276,7 +276,7 @@ A virtual network data gateway must be used for every dataflow connector. The vi
 - You could run into Spark issues in the following regions when outbound access protection is enabled for the workspace: Mexico Central, Israel Central, and Spain Central.
 <!-- [Needs rewrite/review] Dataflows aren't supported with a Fabric Warehouse or Fabric Lakehouse in the current workspace as either a dataflow source or output destination. -->
 - Current limitations for Private Link with Eventhouse:
-   - Copilot features: Machine learning workloads may experience limited functionality due to a known regression.
+   - Copilot features: Machine learning workloads might experience limited functionality due to a known regression.
    - Eventstream pull: Eventstream workloads don't currently support full polling functionality.
    - Fabric doesn't currently support Event Hub integration.
    - Queued ingestion via OneLake isn't currently available.
