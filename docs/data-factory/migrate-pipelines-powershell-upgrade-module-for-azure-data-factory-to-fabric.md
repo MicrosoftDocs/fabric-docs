@@ -165,7 +165,7 @@ Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <you
 
 ## Map your ADF linked services to Fabric connections
 
-1. If your Fabric instance doesn't already have connections to the data sources used in your ADF linked services, [create those connections in Fabric](connector-overview).
+1. If your Fabric instance doesn't already have connections to the data sources used in your ADF linked services, [create those connections in Fabric](connector-overview.md).
 1. [Create your resolution file](#create-your-resolution-file) to tell FabricUpgrader how to map your ADF linked services to Fabric connections.
 1. [Run the PowerShell command](#powershell-command-to-map-adf-linked-services-to-fabric-connections) to perform the mapping.
 
@@ -173,7 +173,7 @@ Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <you
 
 A resolution file is a JSON file that maps your ADF linked services to Fabric connections:
 
-[!INCLUDE [resolution-file-basics](/includes/resolution-file-basics.md)]
+[!INCLUDE [resolution-file-basics](includes/resolution-file-basics.md)]
 
 For more information about the resolution file, see [How to add a connection to the resolutions file](migrate-pipelines-how-to-add-connections-to-resolutions-file.md).
 
