@@ -11,7 +11,7 @@ ms.date: 09/17/2025
 
 # How to add connections to your resolutions file
 
-To migrate your Azure Data Factory (ADF) pipelines to [Microsoft Fabric](../overview/what-is-fabric.md), you can use the [PowerShell-based FabricUpgrader tool](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md). The tool automates much of the migration, but uses a JSON file called a resolution file to make the mappings between Azure Data Factory linked services and Microsoft Fabric connections.
+To migrate your Azure Data Factory (ADF) pipelines to Microsoft Fabric you can use the [PowerShell-based FabricUpgrader tool](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md). The tool automates much of the migration, but uses a JSON file called a resolution file to make the mappings between Azure Data Factory linked services and Microsoft Fabric connections.
 
 This article is a guide to creating and troubleshooting your resolutions file and covers:
 
@@ -238,6 +238,6 @@ What to do with that alert:
     ]
     ```
 
-# Related content
+## Related content
 
 - [Migrate pipelines: PowerShell upgrade module for Azure Data Factory to Fabric](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md)
