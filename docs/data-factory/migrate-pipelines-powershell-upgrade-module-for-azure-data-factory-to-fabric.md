@@ -6,120 +6,230 @@ ms.author: ssrinivasara
 ms.reviewer: whhender
 ms.topic: how-to
 ms.custom: pipelines
-ms.date: 09/20/2025
+ms.date: 09/17/2025
 ai-usage: ai-assisted
 ---
 
 # Upgrade Azure Data Factory pipelines to Microsoft Fabric using PowerShell
+
 > [!TIP]
 > New to migration options? Start with the **Microsoft Fabric migration overview** for the full landscape and ADF‑to‑Fabric migration guidance. [Fabric migration guidance](../fundamentals/migration.md)
 
-## What you’ll do
+You can migrate your Azure Data Factory (ADF) pipelines to Microsoft Fabric using the **Microsoft.FabricPipelineUpgrade** PowerShell module. This guide outlines all the steps to perform the migration. For a detailed tutorial with screenshots, examples, and troubleshooting see [the PowerShell migration tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
-- **Install** the **Microsoft.FabricPipelineUpgrade** module.
-- **Prepare** your source ADF workspace and target Fabric workspace.
-- **Run the upgrade scripts** in a test workspace first.
-- **Validate** and promote.
-  
----
+To migrate your ADF pipelines to Fabric using PowerShell, you:
+
+1. [Prepare your environment for Fabric pipeline upgrades.](#prepare-your-environment-for-fabric-pipeline-upgrades)
+1. [Connect PowerShell to your Azure and Fabric environments.](#connect-powershell-to-your-azure-and-fabric-environments)
+1. [Upgrade your factory pipelines and triggers](#upgrade-your-factory-resources)
+1. [Create a resolution file and map linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections).
+1. Validate your results.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
-- **Fabric**: A tenant account with an active subscription - [Create an account for free](../fundamentals/fabric-trial.md). Recommend using a new workspace for upgrades.
-- **Permissions**: Read access to the ADF workspace and artifacts you’ll migrate and Contributor or higher rights in the Fabric workspace you’ll write to.
-- **Tenant**: Your ADF and Fabric workspace must be in the same Azure AD tenant.
-- **Region** (Recommended): For best performance, keep your Fabric workspace in the same region as your ADF.
-- **Environment**: prepare your environment for upgrade - [Prepare your environment for upgrade](migrate-pipelines-prepare-your-environment-for-upgrade.md).
+- Check the [Supported functionality](migrate-pipelines-powershell-upgrade-module-supported-functionality.md) to ensure your ADF pipelines and triggers are supported.
+- **Tenant**: Your ADF and Fabric workspace must be in the same Microsoft Entra ID tenant.
+- **Fabric**: A tenant account with an active Fabric subscription - [Create an account for free](../fundamentals/fabric-trial.md).
+- **Fabric workspace recommendations** (Optional): We recommend using a new [Fabric workspace](../fundamentals/workspaces.md) in the same region as your ADF for upgrades for best performance.
+- **Permissions**: [Read access to the ADF workspace and items](/azure/data-factory/concepts-roles-permissions#scope-of-the-data-factory-contributor-role) you’ll migrate and [Contributor or higher rights in the Fabric workspace](../security/permission-model.md#workspace-roles) you’ll write to.
 - **Network and auth**: Make sure you can sign in to both Azure and Fabric from your machine (interactive or service principal).
+- **Environment**: [Prepare your PowerShell environment to perform upgrades](#prepare-your-environment-for-fabric-pipeline-upgrade).
 
----
+## Supported functionality
 
-## Collect useful information from your Fabric workspace
+Alongside the [currently supported datasets and linked services](#currently-supported-datasets-and-linked-services) and [currently supported activities](#currently-supported-activities), the following limitations apply:
 
-You’ll need some details from your workspace. Open a blank text file—you’ll copy the info there.
+- If an Activity isn’t [available in Fabric](compare-fabric-data-factory-and-azure-data-factory.md), the Fabric Upgrader can’t upgrade it.
+- Global configuration and parameters aren’t supported.
+- `pipeline().Pipeline` isn’t currently supported.
 
-Open Microsoft Fabric and go to your Data Factory Workspace.
+### Currently supported datasets and linked services
 
-### Find your workspace ID
-See [How To: Find your Fabric Workspace ID](migrate-pipelines-how-to-find-your-fabric-workspace-id.md).
+- Blob: JSON, Delimited Text, and Binary formats
+- Azure SQL Database
+- ADLS Gen2: JSON, Delimited Text, and Binary formats
+- Azure Function: Function app URL
 
-Add the ID to your text file.
+### Currently supported activities
 
----
+- CopyActivity for supported datasets
+- ExecutePipeline (converted to Fabric InvokePipeline Activity)
+- IfCondition
+- Wait
+- Web
+- SetVariable
+- Azure Function
+- ForEach
+- Lookup
+- Switch
+- SqlServerStoredProcedure
 
-## Sign In to Azure and set context
+## Prepare your environment for Fabric pipeline upgrades
+
+Before you start upgrading pipelines, [verify](#verify-your-installation) your environment has the required tools and modules:
+
+- [PowerShell 7.4.2 (x64) or later](#install-powershell-742-x64-or-later)
+- [FabricPipelineUpgrade module](#install-and-import-the-fabricpipelineupgrade-module)
+
+### Install PowerShell 7.4.2 (x64) or later
+
+You need **PowerShell 7.4.2** or later on your machine.
+
+[Download PowerShell](/powershell/scripting/install/installing-powershell-on-windows)
+
+### Install and import the FabricPipelineUpgrade module
+
+1. Open PowerShell 7 (x64).
+
+1. Select the Start menu, search for **PowerShell 7**, open the app's context menu, and select **Run as administrator**.
+
+    :::image type="content" source="media/migrate-pipeline-powershell-upgrade/powershell-icon.png" alt-text="Screenshot of the PowerShell icon.":::
+
+1. In the elevated PowerShell window, install the module from the PowerShell Gallery:
+
+    ```PowerShell
+    Install-Module Microsoft.FabricPipelineUpgrade -Repository PSGallery -SkipPublisherCheck
+    ```
+
+1. Import the module into your session:
+
+    ```PowerShell
+    Import-Module Microsoft.FabricPipelineUpgrade
+    ```
+
+1. If you see a signing or execution policy error, run this command and then import the module again:
+
+    ```PowerShell
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+    ```
+
+### Verify your installation
+
+1. Run this command to confirm the module loaded correctly:
+
+    ```PowerShell
+    Get-Command -Module Microsoft.FabricPipelineUpgrade
+    ```
+
+    :::image type="content" source="media/migrate-pipeline-powershell-upgrade/verify-installation-module.png" alt-text="Screenshot of the module command output.":::
+
+## Connect PowerShell to your Azure and Fabric environments
+
 Run these commands in PowerShell to sign in and set your subscription and tenant for subsequent Az cmdlets:
-```
-Add-AzAccount 
+
+```PowerShell
+Add-AzAccount
 Select-AzSubscription -SubscriptionId <your subscription ID>
 ```
 
----
+Run these commands to get access tokens for ADF and Fabric:
 
-## Get Access Tokens
-Run:
-```
+```PowerShell
 $adfSecureToken = (Get-AzAccessToken -ResourceUrl "https://management.azure.com/").Token
 $fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.net/powerbi/api").Token
 ```
 
-Tokens expire in about an hour. If they do, repeat this step.
+> [!TIP]
+> Tokens expire in about an hour. If your tokens expire, repeat this step.
 
----
+## Upgrade your factory resources
 
-## Upgrade your Factory Resources
+First, [upgrade your Azure Data Factory pipelines and triggers](#upgrade-your-azure-data-factory-pipelines-and-triggers), then [map your ADF linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections).
+
+## Upgrade your Azure Data Factory pipelines and triggers
+
+The following PowerShell will upgrade your data factory resources. Update the Import-AdfFactory command before the first `|` to either import [all supported resources in your ADF](#import-all-factory-resources), or [a single pipeline](#import-a-single-pipeline).
+
+```PowerShell
+Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName <your Pipeline Name> -AdfToken $adfSecureToken| ConvertTo-FabricResources | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
+```
+
+> ![TIP]
+> The region parameter is optional. If your Fabric workspace is in the same region as your ADF, you can either use that region or skip the -Region parameter.
 
 ### Import all factory resources
-```
+
+```PowerShell
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -AdfToken $adfSecureToken
 ```
+
 ### Import a single pipeline
-Add -PipelineName:
-```
+
+It's the same command you used to import all factory resources, but you add -PipelineName:
+
+```PowerShell
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName <your Pipeline Name> -AdfToken $adfSecureToken
 ```
----
 
-## Complete your upgrade
+## Map your ADF linked services to Fabric connections
+
+1. If your Fabric instance doesn't already have connections to the data sources used in your ADF linked services, [create those connections in Fabric](connector-overview).
+1. [Create your resolution file](#create-your-resolution-file) to tell FabricUpgrader how to map your ADF linked services to Fabric connections.
+1. [Run the PowerShell command](#powershell-command-to-map-adf-linked-services-to-fabric-connections) to perform the mapping.
+
+### Create your resolution file
+
+A resolution file is a JSON file that maps your ADF linked services to Fabric connections:
+
+```json
+[
+  {
+    "type": "LinkedServiceToConnectionId",
+    "key": "<ADF LinkedService Name>",
+    "value": "<Fabric Connection ID>"
+  }
+]
+```
+
+- The `type` is the type of mapping to perform. It's usually `LinkedServiceToConnectionId`, but you might also use [other types in special cases.](migrate-pipelines-how-to-add-connections-to-resolutions-file.md#when-to-use-other-resolution-types)
+- The `key` is the name of the [ADF linked service](/azure/data-factory/concepts-linked-services) that you want to map.
+- The `value` is the GUID of the Fabric connection you want to map to. You can [find the GUID in settings of the Fabric connection](migrate-pipelines-how-to-add-connections-to-resolutions-file.md#get-the-guid-for-your-connection).
+
+So, for example, if you have two ADF linked services named `MyAzureBlobStorage` and `MySQLServer` that you want to map to Fabric connections, your file would look like this:
+
+```json
+[
+  {
+    "type": "LinkedServiceToConnectionId",
+    "key": "MyAzureBlobStorage",
+    "value": "aaaa0000-bb11-2222-33cc-444444dddddd"
+  },
+  {
+    "type": "LinkedServiceToConnectionId",
+    "key": "MySQLServer",
+    "value": "bbbb1111-cc22-3333-44dd-555555eeeeee"
+  }
+]
+```
+
+Create your .json resolution file, and save it somewhere on your machine so that PowerShell can access it.
+For more information about the resolution file, see [How to add a connection to the resolutions file](migrate-pipelines-how-to-add-connections-to-resolutions-file.md).
+
+### PowerShell command to map ADF linked services to Fabric connections
+
+Now that you have your resolution file, you can run this PowerShell command to perform the mapping. Update the ResolutionFilename parameter to point to your resolution file. Also, update the Import-AdfFactory command before the first `|` to either import [all supported resources in your ADF](#import-all-factory-resources), or [a single pipeline](#import-a-single-pipeline).
 
 ```
-Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName  <your Pipeline Name> -AdfToken $adfSecureToken| ConvertTo-FabricResources | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
+Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName <your Pipeline Name> -AdfToken $adfSecureToken | ConvertTo-FabricResources | Import-FabricResolutions -ResolutionsFilename "<path to your resolutions file>" | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
 ```
-you can either use prod, or skip the -Region parameter
 
----
+>![TIP]
+> If the upgrade fails, PowerShell will display the reason in the details section. For some examples and troubleshooting, see the [Tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
-## Map your ADF Linked Services to Fabric Connections
+## Validate the results in Microsoft Fabric
 
-```
-Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName  <your Pipeline Name> -AdfToken $adfSecureToken | ConvertTo-FabricResources | Import-FabricResolutions -ResolutionsFilename "<path to your resolutions file>" | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
-```
-Refer to the [Tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md) for further details.
+Once your migration completes, open each pipeline in Microsoft Fabric and verify activities, parameters, and dataset connections.
 
-If the upgrade fails, the PowerShell response will show the reason in the details section.
-(For Resolutions failure, see the section below).
+Run test executions with safe sample inputs and compare outputs to your source ADF runs to confirm parity.
 
+Fix any gaps (for example, [activities that don’t have a direct Fabric equivalent yet](compare-fabric-data-factory-and-azure-data-factory.md)).
 
----
-## The Resolutions file
-See [How To: Add a Connection to the Resolutions File](migrate-pipelines-how-to-add-connections-to-resolutions-file.md).
+## Step‑by‑step tutorial
 
-### Validate the results on Fabric:
+For a detailed tutorial with screenshots, examples, and troubleshooting see [the PowerShell migration tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
-Open each pipeline and verify activities, parameters, and dataset connections.
-Run test executions with safe sample inputs.
-Compare outputs to your source ADF runs to confirm parity.
-Fix gaps (for example, activities that don’t have a direct Fabric equivalent yet).
-For broader context on Fabric migration validation, see the Fabric migration overview. 
+## Related content
 
-### Step‑by‑step tutorial
-
-For a detailed, click‑through tutorial with screenshots and examples, see:
-[Tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
-
----
-
-## Which activities are supported?
-Support depends on the module version and the target Fabric capabilities. Check the [Supported functionality](migrate-pipelines-powershell-upgrade-module-supported-functionality.md) for the latest.
+- [Step-by-step tutorial for PowerShell-based migration of Azure Data Factory pipelines to Fabric](migrate-pipelines-powershell-upgrade-module-tutorial.md)
