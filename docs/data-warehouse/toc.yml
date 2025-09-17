@@ -200,13 +200,6 @@ items:
     href: clone-table.md
   - name: Clone tables in the Fabric portal
     href: tutorial-clone-table-portal.md
-  - name: Mirroring databases
-    items:
-      - name: Mirroring overview
-        href: /fabric/mirroring/overview?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
-      - name: Mirroring documentation
-        href: /fabric/mirroring/
-
 - name: Manage performance
   items:
   - name: In-memory and disk caching
@@ -218,6 +211,12 @@ items:
     href: statistics.md
   - name: V-Order 
     href: v-order.md
+- name: Mirroring databases
+  items:
+    - name: Mirroring overview
+      href: /fabric/mirroring/overview?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+    - name: Mirroring documentation
+      href: /fabric/mirroring/
 - name: Monitor the warehouse
   items:
   - name: Monitoring overview
