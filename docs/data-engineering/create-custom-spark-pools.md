@@ -46,7 +46,7 @@ These custom pools have a default autopause duration of 2 minutes. Once the auto
 
 When configuring a custom Spark pool, you can choose from the following different node sizes:
 
-| Node size | Compute Units (CU) | Memory (GB) | Description |
+| Node size | vCore | Memory (GB) | Description |
 |--|--|--|--|
 | Small | 4 | 32 | Lightweight development and testing jobs. |
 | Medium | 8 | 64 | Most general workloads and typical operations. |
