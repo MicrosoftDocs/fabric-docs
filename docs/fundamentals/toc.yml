@@ -1,57 +1,40 @@
 items:
-- name: Microsoft Fabric fundamentals documentation
+- name: Microsoft Fabric fundamentals documentation 
   href: index.yml
-- name: Overview
+
+- name: Get started with Fabric
   items:
-  - name: What is Microsoft Fabric?
+  - name: Understand Microsoft Fabric
     href: microsoft-fabric-overview.md
+  - name: See what's new
+    href: whats-new.md
+  - name: Learn Fabric terminology
+    href: fabric-terminology.md
+  - name: Migrate to Microsoft Fabric
+    href: migration.md
   - name: Start a Fabric trial
     href: fabric-trial.md
-  - name: Microsoft Fabric preview information
-    href: preview.md    
-  - name: Fabric terminology
-    href: fabric-terminology.md
-  - name: What's New
-    href: whats-new.md
-  - name: Migration to Microsoft Fabric
-    href: migration.md
-- name: Get started
-  items:
-  - name: End-to-end tutorials
-    href: end-to-end-tutorials.md
-- name: Task flows
-  items:
-  - name: Task flow overview
-    href: task-flow-overview.md
-  - name: Set up a task flow
-    href: task-flow-create.md
-  - name: Work with task flows
-    href: task-flow-work-with.md
-- name: Decision guides
-  items:
-  - name: Decision guide - copy activity, copy job, dataflow, or Spark
-    href: decision-guide-pipeline-dataflow-spark.md
-  - name: Decision guide - data integration strategy
-    href: ../data-factory/decision-guide-data-integration.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
-  - name: Decision guide - data movement strategy
-    href: ../data-factory/decision-guide-data-movement.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
-  - name: Decision guide - choose a data store
-    href: decision-guide-data-store.md
-  - name: Decision guide - Warehouse and Lakehouse
-    href: ../fundamentals/decision-guide-lakehouse-warehouse.md
-- name: Find your items and content
+  - name: Connect to the Fabric release plan
+    href: service-connect-fabric-release-plan.md
+  - name: Review Fabric preview information
+    href: preview.md
+  
+- name: Navigate and find content
   items:
   - name: Find items with Fabric Home
     href: fabric-home.md
   - name: Find items with OneLake catalog
     href: ../governance/onelake-catalog.md
-- name: Workspaces
+  - name: Complete end-to-end tutorials
+    href: end-to-end-tutorials.md
+
+- name: Manage workspaces
   items:
-  - name: Workspaces
+  - name: Understand workspaces
     href: workspaces.md
   - name: Create a workspace
     href: create-workspaces.md
-  - name: Roles in workspaces
+  - name: Assign workspace roles
     href: roles-workspaces.md
   - name: Reassign a workspace to a different capacity
     href: workspace-license-mode.md
@@ -65,95 +48,45 @@ items:
     href: ../cicd/git-integration/git-get-started.md
   - name: Take ownership of Fabric items
     href: item-ownership-take-over.md
-  - name: Workspace identity
+  - name: Use workspace identity
     href: ../security/workspace-identity.md
-  - name: Workspace monitoring
+  - name: Monitor workspace activity
     items:
-      - name: What is workspace monitoring?
+      - name: Understand workspace monitoring
         href: workspace-monitoring-overview.md
-      - name: Enable monitoring in your workspace
-        href: enable-workspace-monitoring.md    
+      - name: Enable workspace monitoring
+        href: enable-workspace-monitoring.md
       - name: Visualize workspace monitoring
         href: sample-gallery-workspace-monitoring.md
-- name: Copilot and AI in Fabric
+
+- name: Manage and govern content
   items:
-  - name: 1 - Copilot in Fabric overview
-    href: copilot-fabric-overview.md
-  - name: 2 - How Copilot works in Microsoft Fabric
-    href: how-copilot-works.md
-  - name: 3 - Copilot glossary and terms
-    href: copilot-fabric-glossary.md
-  - name: 4 - Enable Copilot in Fabric
-    href: copilot-enable-fabric.md
-  - name: 5 - Copilot in Power BI integration
-    href: /power-bi/create-reports/copilot-integration?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
-  - name: 6 - Use Copilot with semantic models
-    href: /power-bi/create-reports/copilot-semantic-models?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
-  - name: 7 - Use Copilot with Power BI reports
-    href: /power-bi/create-reports/copilot-reports-overview?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
-  - name: Copilot in Fabric FAQ
-    href: copilot-faq-fabric.yml
-  - name: Status of Copilot and AI features
-    href: copilot-ai-feature-state.md
-  - name: Privacy, security, and responsible use for Copilot in Fabric
-    items:
-    - name: Privacy, security, and responsible use
-      href: copilot-privacy-security.md
-    - name: Responsible use in SQL database
-      href: copilot-database-privacy-security.md
-    - name: Responsible use in Data Factory
-      href: copilot-data-factory-privacy-security.md
-    - name: Responsible use in Data Science
-      href: copilot-data-science-privacy-security.md
-    - name: Responsible use in Data Warehouse
-      href: copilot-data-warehouse-privacy-security.md
-    - name: Responsible use in Power BI
-      href: copilot-power-bi-privacy-security.md
-    - name: Responsible use in Real-Time Intelligence
-      href: copilot-real-time-intelligence-privacy-security.md
-    - name: Manage data security & compliance with Purview 
-      href: /purview/ai-copilot-fabric?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
-  - name: Copilot in Fabric experiences
-    items:
-    - name: Copilot for Data Factory
-      href: copilot-fabric-data-factory.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
-    - name: Copilot for Data Warehouse
-      href: ../data-warehouse/copilot.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
-    - name: Copilot for Real-Time Intelligence
-      items:
-        - name: Copilot for Writing KQL Queries
-          href: ../real-time-intelligence/copilot-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
-        - name: Generate Real-Time Dashboard Using Copilot
-          href: ../real-time-intelligence/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
-    - name: Copilot for Data Science and Data Engineering
-      items:
-      - name: Copilot for Data Science and Data Engineering
-        href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
-      - name: Overview of Chat-magics in Notebooks (preview)
-        href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
-      - name: Use the Copilot chat panel (preview)
-        href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
-  - name: Copilot consumption
-    items:
-    - name: Copilot in Fabric - usage and billing
-      href: copilot-fabric-consumption.md
-    - name: Data agent in Fabric Consumption
-      href: data-agent-consumption.md
-- name: Direct Lake
+  - name: Promote or certify items
+    href: endorsement-promote-certify.md
+  - name: Share items
+    href: share-items.md
+  - name: Apply sensitivity labels
+    href: apply-sensitivity-labels.md
+  - name: Schedule recurring jobs
+    href: job-scheduler.md
+  - name: Use Delta Lake interoperability
+    href: delta-lake-interoperability.md
+
+- name: Use Direct Lake
   items:
-  - name: Direct Lake overview
+  - name: Understand Direct Lake
     href: direct-lake-overview.md
   - name: Understand Direct Lake query performance
     href: direct-lake-understand-storage.md
-  - name: Direct Lake in Power BI Desktop (preview)
-    href: direct-lake-power-bi-desktop.md 
-  - name: Direct Lake in Power BI Project (PBIP) (preview)
-    href: direct-lake-power-bi-project.md     
-  - name: Direct Lake in Power BI web modeling (preview)
-    href: direct-lake-web-modeling.md     
+  - name: Use Direct Lake in Power BI Desktop (preview)
+    href: direct-lake-power-bi-desktop.md
+  - name: Use Direct Lake in Power BI Project (PBIP) (preview)
+    href: direct-lake-power-bi-project.md
+  - name: Use Direct Lake in Power BI web modeling (preview)
+    href: direct-lake-web-modeling.md
   - name: Edit tables for Direct Lake semantic models
     href: direct-lake-edit-tables.md
-  - name: Create a Lakehouse for Direct Lake
+  - name: Create a lakehouse for Direct Lake
     href: direct-lake-create-lakehouse.md
   - name: Develop Direct Lake models
     href: direct-lake-develop.md
@@ -161,65 +94,149 @@ items:
     href: direct-lake-manage.md
   - name: Specify a fixed identity
     href: direct-lake-fixed-identity.md
-  - name: Analyze query processing
+  - name: Analyze Direct Lake query processing
     href: direct-lake-analyze-query-processing.md
-  - name: Building reports
+  - name: Build reports
     href: building-reports.md
-- name: Promote or certify items
-  href: endorsement-promote-certify.md
-- name: Share items
-  href: share-items.md
-- name: Apply sensitivity labels
-  href: apply-sensitivity-labels.md
-- name: Schedule recurring jobs
-  href: job-scheduler.md
-- name: Delta Lake interoperability
-  href: delta-lake-interoperability.md
-- name: Learn about Microsoft Fabric feedback
-  href: feedback.md  
-- name: Fabric adoption roadmap
-  items: 
-  - name: Introduction
-    href: /power-bi/guidance/fabric-adoption-roadmap?context=/fabric/context/context&bc=/fabric/breadcrumb/toc.json
-  - name: Maturity levels
-    href: /power-bi/guidance/fabric-adoption-roadmap-maturity-levels?context=/fabric/context/context
-  - name: Data culture
-    href: /power-bi/guidance/fabric-adoption-roadmap-data-culture?context=/fabric/context/context
-  - name: Executive sponsorship
-    href: /power-bi/guidance/fabric-adoption-roadmap-executive-sponsorship?context=/fabric/context/context
-  - name: Business alignment
-    href: /power-bi/guidance/fabric-adoption-roadmap-business-alignment?context=/fabric/context/context
-  - name: Content ownership
-    href: /power-bi/guidance/fabric-adoption-roadmap-content-ownership-and-management?context=/fabric/context/context
-  - name: Content delivery scope
-    href: /power-bi/guidance/fabric-adoption-roadmap-content-delivery-scope?context=/fabric/context/context
-  - name: Center of Excellence
-    href: /power-bi/guidance/fabric-adoption-roadmap-center-of-excellence?context=/fabric/context/context
-  - name: Governance
-    href: /power-bi/guidance/fabric-adoption-roadmap-governance?context=/fabric/context/context
-  - name: Mentoring and user enablement
-    href: /power-bi/guidance/fabric-adoption-roadmap-mentoring-and-user-enablement?context=/fabric/context/context
-  - name: Community of practice
-    href: /power-bi/guidance/fabric-adoption-roadmap-community-of-practice?context=/fabric/context/context
-  - name: User support
-    href: /power-bi/guidance/fabric-adoption-roadmap-user-support?context=/fabric/context/context
-  - name: System oversight
-    href: /power-bi/guidance/fabric-adoption-roadmap-system-oversight?context=/fabric/context/context
-  - name: Change management
-    href: /power-bi/guidance/fabric-adoption-roadmap-change-management?context=/fabric/context/context
-  - name: Conclusion
-    href: /power-bi/guidance/fabric-adoption-roadmap-conclusion?context=/fabric/context/context
-  - name: IDEAS journey with Fabric
-    href: ideas-data-platform-integration.md
-- name: Connect to the Fabric Release Plan
-  href: service-connect-fabric-release-plan.md
-- name: Known issues
+
+- name: Use Copilot and AI
   items:
-    - name: Active known issues for Fabric + Power BI
-      href: ../known-issues/fabric-known-issues.md
-- name: Resources
+  - name: Understand Copilot in Fabric
+    href: copilot-fabric-overview.md
+  - name: Learn how Copilot works in Fabric
+    href: how-copilot-works.md
+  - name: Review Copilot glossary and terms
+    href: copilot-fabric-glossary.md
+  - name: Enable Copilot in Fabric
+    href: copilot-enable-fabric.md
+  - name: Integrate Copilot in Power BI
+    href: /power-bi/create-reports/copilot-integration?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+  - name: Use Copilot with semantic models
+    href: /power-bi/create-reports/copilot-semantic-models?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+  - name: Use Copilot with Power BI reports
+    href: /power-bi/create-reports/copilot-reports-overview?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+  - name: Get answers to Copilot in Fabric FAQs
+    href: copilot-faq-fabric.yml
+  - name: Check status of Copilot and AI features
+    href: copilot-ai-feature-state.md
+  - name: Apply privacy, security, and responsible use
+    items:
+    - name: Learn privacy, security, and responsible use
+      href: copilot-privacy-security.md
+    - name: Ensure responsible use in SQL database
+      href: copilot-database-privacy-security.md
+    - name: Ensure responsible use in Data Factory
+      href: copilot-data-factory-privacy-security.md
+    - name: Ensure responsible use in Data Science
+      href: copilot-data-science-privacy-security.md
+    - name: Ensure responsible use in Data Warehouse
+      href: copilot-data-warehouse-privacy-security.md
+    - name: Ensure responsible use in Power BI
+      href: copilot-power-bi-privacy-security.md
+    - name: Ensure responsible use in Real-Time Intelligence
+      href: copilot-real-time-intelligence-privacy-security.md
+    - name: Manage data security and compliance with Purview
+      href: /purview/ai-copilot-fabric?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+  - name: Use Copilot across experiences
+    items:
+    - name: Use Copilot for Data Factory
+      href: copilot-fabric-data-factory.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+    - name: Use Copilot for Data Warehouse
+      href: ../data-warehouse/copilot.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+    - name: Use Copilot for Real-Time Intelligence
+      items:
+        - name: Use Copilot to write KQL queries
+          href: ../real-time-intelligence/copilot-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
+        - name: Generate a real-time dashboard with Copilot
+          href: ../real-time-intelligence/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
+    - name: Use Copilot for Data Science and Data Engineering
+      items:
+      - name: Explore Chat magics in notebooks (preview)
+        href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
+      - name: Use the Copilot chat panel (preview)
+        href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
+      - name: Use Copilot for Data Science and Data Engineering overview
+        href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
+  - name: Monitor Copilot consumption
+    items:
+    - name: Review Copilot usage and billing
+      href: copilot-fabric-consumption.md
+    - name: Review Data agent usage and billing
+      href: data-agent-consumption.md
+
+- name: Implement task flows
   items:
-    - name: Icons
+  - name: Understand task flows
+    href: task-flow-overview.md
+  - name: Set up a task flow
+    href: task-flow-create.md
+  - name: Work with task flows
+    href: task-flow-work-with.md
+
+- name: Use decision guides
+  items:
+  - name: Choose copy activity, copy job, dataflow, or Spark
+    href: decision-guide-pipeline-dataflow-spark.md
+  - name: Decide your data integration strategy
+    href: ../data-factory/decision-guide-data-integration.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+  - name: Decide your data movement strategy
+    href: ../data-factory/decision-guide-data-movement.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+  - name: Choose a data store
+    href: decision-guide-data-store.md
+  - name: Decide between warehouse and lakehouse
+    href: ../fundamentals/decision-guide-lakehouse-warehouse.md
+
+- name: Drive adoption and manage change
+  items:
+  - name: Use the Fabric adoption roadmap
+    items:
+      - name: Start the adoption roadmap
+        href: /power-bi/guidance/fabric-adoption-roadmap?context=/fabric/context/context&bc=/fabric/breadcrumb/toc.json
+      - name: Assess maturity levels
+        href: /power-bi/guidance/fabric-adoption-roadmap-maturity-levels?context=/fabric/context/context
+      - name: Foster a data culture
+        href: /power-bi/guidance/fabric-adoption-roadmap-data-culture?context=/fabric/context/context
+      - name: Secure executive sponsorship
+        href: /power-bi/guidance/fabric-adoption-roadmap-executive-sponsorship?context=/fabric/context/context
+      - name: Align business goals
+        href: /power-bi/guidance/fabric-adoption-roadmap-business-alignment?context=/fabric/context/context
+      - name: Define content ownership
+        href: /power-bi/guidance/fabric-adoption-roadmap-content-ownership-and-management?context=/fabric/context/context
+      - name: Define content delivery scope
+        href: /power-bi/guidance/fabric-adoption-roadmap-content-delivery-scope?context=/fabric/context/context
+      - name: Establish a Center of Excellence
+        href: /power-bi/guidance/fabric-adoption-roadmap-center-of-excellence?context=/fabric/context/context
+      - name: Implement governance
+        href: /power-bi/guidance/fabric-adoption-roadmap-governance?context=/fabric/context/context
+      - name: Enable users with mentoring
+        href: /power-bi/guidance/fabric-adoption-roadmap-mentoring-and-user-enablement?context=/fabric/context/context
+      - name: Build a community of practice
+        href: /power-bi/guidance/fabric-adoption-roadmap-community-of-practice?context=/fabric/context/context
+      - name: Provide user support
+        href: /power-bi/guidance/fabric-adoption-roadmap-user-support?context=/fabric/context/context
+      - name: Maintain system oversight
+        href: /power-bi/guidance/fabric-adoption-roadmap-system-oversight?context=/fabric/context/context
+      - name: Manage change
+        href: /power-bi/guidance/fabric-adoption-roadmap-change-management?context=/fabric/context/context
+      - name: Review adoption roadmap conclusion
+        href: /power-bi/guidance/fabric-adoption-roadmap-conclusion?context=/fabric/context/context
+      - name: Follow the IDEAS journey with Fabric
+        href: ideas-data-platform-integration.md
+  - name: Provide and review Fabric feedback
+    href: feedback.md
+
+- name: Stay current
+  items:
+
+
+  - name: Resolve known issues
+    items:
+      - name: View active known issues for Fabric + Power BI
+        href: ../known-issues/fabric-known-issues.md
+
+- name: Use resources
+  items:
+    - name: Use icons
       href: icons.md
-    - name: What's new? archive
+    - name: Browse what's new archive
       href: whats-new-archive.md
