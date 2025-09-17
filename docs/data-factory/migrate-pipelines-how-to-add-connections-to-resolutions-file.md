@@ -33,8 +33,11 @@ The basic structure of the resolution file is:
 There are three `type` entries you can use in your resolution entries, depending on your pipelines and connections:
 
 - **LinkedServiceToConnectionId**- The most common mapping, used to map an ADF LinkedService to a Fabric Connection. Follow the steps in [Get the GUID for your connection](#get-the-guid-for-your-connection) to create the mapping.
+    - The `key` value for this type is the name of your Azure Data Factory linked service.
 - **CredentialConnectionId** - Used for ADF ExecutePipeline activities that call other pipelines. Follow our [guide for CredentialConnectionId entries](#credentialconnectionid-entries) to create the credentials for adding those activities.
+    - The `key` value for this type is "user".
 - **UrlHostToConnectionId** - Used for ADF Web and WebHook activities. Follow our [guide for UrlHostToConnectionId entries](#urlhosttoconnectionid-entries) to create the correct connection and update your resolution entry.
+    - The `key` value for this type is the hostname for your connection.
 
 ## Get the GUID for your connection
 
