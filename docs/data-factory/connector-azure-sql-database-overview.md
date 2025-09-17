@@ -19,11 +19,11 @@ The Azure SQL Database connector is supported in Data Factory for [!INCLUDE [pro
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/destination)                                                 | None<br> On-premises<br> Virtual network | Basic<br> Organizational account |
-| **Data pipeline** <br>- [Copy activity](connector-azure-sql-database-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal<br>Workspace identity |
+| **Pipeline** <br>- [Copy activity](connector-azure-sql-database-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal<br>Workspace identity |
 | **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- CDC<br>- Append<br>- Merge | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal<br>Workspace identity |
 
 ## Related content
 
 To learn about how to connect to Azure SQL Database, go to [Set up your Azure SQL Database connection](connector-azure-sql-database.md).
 
-To learn about the copy activity configuration for Azure SQL Database in data pipelines, go to [Configure Azure SQL Database in a copy activity](connector-azure-sql-database-copy-activity.md).
+To learn about the copy activity configuration for Azure SQL Database in pipelines, go to [Configure Azure SQL Database in a copy activity](connector-azure-sql-database-copy-activity.md).

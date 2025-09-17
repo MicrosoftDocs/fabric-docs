@@ -64,6 +64,6 @@ The High Scale Dataflow Compute Meter recorded negligible activity. Standard Com
 
 ## Related content
 
-- [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
+- [Pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)

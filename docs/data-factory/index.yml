@@ -47,7 +47,7 @@ landingContent:
         links:
         - text: Dataflow Gen2 connectors
           url: dataflow-support.md
-        - text: Data pipeline connectors
+        - text: Pipeline connectors
           url: pipeline-support.md
 
   # Card
@@ -79,15 +79,15 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Create your first data pipeline
+          - text: Create your first pipeline
             url: create-first-pipeline-with-sample-data.md
           - text: Move and transform data
             url: transform-data.md
       - linkListType: how-to-guide
         links:
-          - text: Data pipeline runs
+          - text: Pipeline runs
             url: pipeline-runs.md
-          - text: Copy activity in data pipelines
+          - text: Copy activity in pipelines
             url: copy-data-activity.md
           - text: Copy job
             url: copy-job.md
@@ -104,7 +104,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: Schedule pipelines
-            url: pipeline-runs.md#scheduled-data-pipeline-runs
+            url: pipeline-runs.md#scheduled-pipeline-runs
           - text: Orchestrate with Apache Airflow
             url: apache-airflow-jobs-concepts.md
       - linkListType: how-to-guide

@@ -1,6 +1,6 @@
 ---
-title: Move data from Azure SQL DB to Lakehouse via data pipeline
-description: Learn steps to move data as files or tables into Lakehouse via data pipeline.
+title: Move data from Azure SQL DB to Lakehouse via pipeline
+description: Learn steps to move data as files or tables into Lakehouse via pipeline.
 ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
@@ -10,9 +10,9 @@ ms.date: 12/18/2024
 ms.search.form: Pipeline Copy Assistant
 ---
 
-# Move data from Azure SQL DB to Lakehouse via data pipeline
+# Move data from Azure SQL DB to Lakehouse via pipeline
 
-In this tutorial, you build a data pipeline to move data in Azure SQL Database to Lakehouse. This experience shows you a quick demo about how to use data pipeline copy activity and how to load data into Lakehouse.
+In this tutorial, you build a pipeline to move data in Azure SQL Database to Lakehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Lakehouse.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ To get started, you must complete the following prerequisites:
 - A Microsoft Fabric tenant account with an active subscription. Create an account for free.
 - Make sure you have a Microsoft Fabric enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
-## Create a data pipeline
+## Create a pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
 1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
@@ -29,19 +29,19 @@ To get started, you must complete the following prerequisites:
 
    :::image type="content" source="media/copy-data-activity/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
 
-1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
+1. Select **Pipeline** and then input a pipeline name to create a new pipeline.
 
-   :::image type="content" source="media/copy-data-activity/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+   :::image type="content" source="media/copy-data-activity/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
 
    :::image type="content" source="media/copy-data-activity/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
-## Copy data using data pipeline
+## Copy data using a pipeline
 
-In this session, you start to build your data pipeline by following below steps about copying data from Azure SQL Database to Lakehouse.
+In this session, you start to build your pipeline by following below steps about copying data from Azure SQL Database to Lakehouse.
 
 ### Add a copy activity
 
-1. Open an existing data pipeline or create a new data pipeline.
+1. Open an existing pipeline or create a new pipeline.
 1. Add a copy activity either by selecting **Add pipeline activity** > **Copy activity** or by selecting **Copy data** > **Add to canvas** under the **Activities** tab.
 
    :::image type="content" source="media/copy-data-activity/add-copy-activity-to-pipeline-canvas.png" alt-text="Screenshot showing two ways to add a copy activity." lightbox="media/copy-data-activity/add-copy-activity-to-pipeline-canvas.png":::
@@ -56,7 +56,7 @@ In this session, you start to build your data pipeline by following below steps 
 
    1. It navigates to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-connectors-in-fabric).
 
-   1. Once your connection is created successfully, it takes you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Azure SQL Database connection from the drop-down directly if you already created it before. The capabilities of **Test connection** and **Edit** are available to each selected connection. Then select **Azure SQL Database** in **Connection** type.
+   1. Once your connection is created successfully, it takes you back to the pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Azure SQL Database connection from the drop-down directly if you already created it before. The capabilities of **Test connection** and **Edit** are available to each selected connection. Then select **Azure SQL Database** in **Connection** type.
 
 1. Specify a table to be copied. Select **Preview data** to preview your source table. You can also use **Query** and **Stored procedure** to read data from your source.
 
@@ -68,35 +68,35 @@ In this session, you start to build your data pipeline by following below steps 
 
 1. In **Connection** select an existing connection, or select **More** and then search for your lakehouse.
 
-1. Once your connection is created successfully, it takes you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Lakehouse connection from the drop-down directly if you already created it before.
+1. Once your connection is created successfully, it takes you back to the pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Lakehouse connection from the drop-down directly if you already created it before.
 
 1. Specify a table or set up the file path to define the file or folder as the destination. Here select **Tables** and specify a table to write data.
 
 1. Expand **Advanced** for more advanced settings.
 
-Now you can either save your data pipeline with this single copy activity or continue to design your data pipeline.
+Now you can either save your pipeline with this single copy activity or continue to design your pipeline.
 
-## Run and schedule your data pipeline
+## Run and schedule your pipeline
 
-After completing the configuration of your data pipeline, run the data pipeline to trigger the copy activity. You can also schedule your data pipeline run if needed.
+After completing the configuration of your pipeline, run the pipeline to trigger the copy activity. You can also schedule your pipeline run if needed.
 
 1. Switch to the **Home** tab and select **Run**. A confirmation dialog is displayed. Then select **Save and run** to start the activity.
 
     :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/save-and-run.png" alt-text="Screenshot of saving and running activity.":::
 
-1. You can monitor the running process and check the results on the **Output** tab below the data pipeline canvas. Select the run details button (with the glasses icon highlighted) to view the run details.
+1. You can monitor the running process and check the results on the **Output** tab below the pipeline canvas. Select the run details button (with the glasses icon highlighted) to view the run details.
 
-    :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/output.png" alt-text="Screenshot of the output of the data pipeline.":::
+    :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/output.png" alt-text="Screenshot of the output of the pipeline.":::
 
 1. The run details show how much data was read and written and various other details about the run.
 
     :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/copy-details.png" alt-text="Screenshot of the details of the copy activity.":::
 
-1. You can also schedule the data pipeline to run with a specific frequency as required. Below is an example scheduling the data pipeline to run every 15 minutes. You can also specify the **Start** time and **End** time for your schedule. If you don't specify a start time, the start time is the time your schedule applies. If you don't specify an end time, your data pipeline run will keep recurring every 15 minutes.
+1. You can also schedule the pipeline to run with a specific frequency as required. Below is an example scheduling the pipeline to run every 15 minutes. You can also specify the **Start** time and **End** time for your schedule. If you don't specify a start time, the start time is the time your schedule applies. If you don't specify an end time, your pipeline run will keep recurring every 15 minutes.
 
-    :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/schedule.png" alt-text="Screenshot of scheduling the data pipeline.":::
+    :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/schedule.png" alt-text="Screenshot of scheduling the pipeline.":::
 
 ## Related content
 
 - [Connector overview](connector-overview.md)
-- [How to monitor data pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)
