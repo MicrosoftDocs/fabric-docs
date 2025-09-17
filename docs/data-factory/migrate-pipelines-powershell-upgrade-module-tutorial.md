@@ -1,64 +1,76 @@
 ---
-title: Detailed tutorial for PowerShell-based migration of Azure Data Factory pipelines to Fabric
-description: Using the **Microsoft.FabricPipelineUpgrade** PowerShell module to upgrade Azure Data Factory pipeline to Fabric pipeline
+title: Detailed Tutorial for PowerShell-based Migration of Azure Data Factory Pipelines to Fabric
+description: Use the Microsoft.FabricPipelineUpgrade PowerShell module to upgrade Azure Data Factory pipelines to Fabric pipelines.
 author: ssindhub
 ms.author: ssrinivasara
 ms.reviewer: whhender
-ms.topic: how-to
+ms.topic: tutorial
 ms.custom: pipelines
-ms.date: 09/16/2025
+ms.date: 09/17/2025
 ai-usage: ai-assisted
 ---
 
-# FabricPipelineUpgrade Tutorial.
+# Tutorial: Upgrade your Azure Data Factory pipelines to Fabric pipelines using PowerShell
 
-In this Tutorial, you will learn:
-1. How to prepare for an Upgrade;
-1. How to Upgrade an ADF Pipeline to a Fabric Pipeline;
-1. Understand what each of the Upgrade step does;
-1. Read and handle Alerts.
+You can migrate your Azure Data Factory (ADF) pipelines to Microsoft Fabric using the Microsoft.FabricPipelineUpgrade PowerShell module. This tutorial provides an example of all the steps to perform the migration with specific instructions, screenshots, and troubleshooting steps. For a more general, concise guide, see [the overview](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md).
+
+> [!div class="checklist"]
+> * [How to prepare for an upgrade]
+> * [How to upgrade an ADF pipeline to a Fabric pipeline]
+> * [Understand what each of the upgrade step does]
+> * [Read and handle alerts]
 
 ## Prerequisites
-Before you start, make sure you have the right workspaces. This guide doesn’t cover how to create or find them.
-You’ll need:
 
-- An ADF workspace you can open in ADF Studio
-- A Fabric workspace you can open in Fabric UX
+To get started, be sure you have the following prerequisites:
 
-## Prepare to Upgrade
-See [Preparing your environment for upgrade](migrate-pipelines-prepare-your-environment-for-upgrade.md).
+- **Tenant**: Your ADF and Fabric workspace must be in the same Microsoft Entra ID tenant.
+- **Fabric**: A tenant account with an active Fabric subscription - [Create an account for free](../fundamentals/fabric-trial.md).
+- **Fabric workspace recommendations** (Optional): We recommend using a new [Fabric workspace](../fundamentals/workspaces.md) in the same region as your ADF for upgrades for best performance.
+- **Permissions**: [Read access to the ADF workspace and items](/azure/data-factory/concepts-roles-permissions#scope-of-the-data-factory-contributor-role) you’ll migrate and [Contributor or higher rights in the Fabric workspace](../security/permission-model.md#workspace-roles) you’ll write to.
+- **Network and auth**: Make sure you can sign in to both Azure and Fabric from your machine (interactive or service principal).
+
+## Prepare to upgrade
+
+[!INCLUDE [migrate-pipelines-prepare-your-environment-for-upgrade](includes/migrate-pipelines-prepare-your-environment-for-upgrade.md)]
 
 Keep your PowerShell window open; you’ll use it for the upgrade.
 
----
-
 ## Your first Upgrade
+
+We'll create a sample pipeline and upgrade it to Fabric as a walkthrough of the process.
+
 ### Create a simple ADF Pipeline
-In ADF Studio, create a pipeline and add a Wait activity. You can name it anything, this tutorial uses pipeline1.
 
-> NOTE: If your Fabric Workspace already has a Pipeline named "pipeline1", then you'll need to use a different name.
+In the Azure Data Factory Studio, [create a pipeline](/azure/data-factory/concepts-pipelines-activities#creating-a-pipeline-with-ui) and add a [Wait activity](/azure/data-factory/control-flow-wait-activity). You can name it anything, but this tutorial uses **pipeline1**.
 
-### Sign in to Azure and set context
-If you’re not signed in, run these commands in PowerShell to sign in and set your subscription:
-```
-Add-AzAccount 
-Select-AzSubscription -SubscriptionId <your subscription ID>
-```
-### Get the ADF Azure Resource Manager Token
-Run this command to store the secure ADF token for your session:
-``` 
-$adfSecureToken = (Get-AzAccessToken -ResourceUrl "https://management.azure.com/").Token
-```
----
-### Import the ADF Pipeline 
-If your factory has multiple pipelines, you can import them all by leaving out the -PipelineName parameter.
-In the PowerShell window, run:
-```
-Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName <your Pipeline Name> -AdfToken $adfSecureToken
-```
+### Prepare your PowerShell environment
+
+1. In your PowerShell window, replace the values for `<your subscription ID>` and run these commands in PowerShell to sign in and set your subscription:
+
+    ```powershell
+    Add-AzAccount 
+    Select-AzSubscription -SubscriptionId <your subscription ID>
+    ```
+
+1. Run this command to store the secure ADF token for your session:
+
+    ``` powershell
+    $adfSecureToken = (Get-AzAccessToken -ResourceUrl "https://management.azure.com/").Token
+    ```
+
+1. In the PowerShell window, replace the values for `<your subscription ID>`, `<your Resource Group Name>`, and `<your Factory Name>`, and run:
+
+    ```powershell
+    Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName "pipeline1" -AdfToken $adfSecureToken
+    ```
+
+    >[!TIP]
+    > For Data Factories with multiple pipelines, you can import all the pipelines at once by leaving out the `-PipelineName` parameter.
 
 This command loads the pipeline and associated artifacts from your Azure Data Factory and creates the JSON for the first "Upgrade Progress".
-```
+
+```json
 {
   "state": "Succeeded",
   "alerts": [],
@@ -89,7 +101,7 @@ This command loads the pipeline and associated artifacts from your Azure Data Fa
             "annotations": [],
             "lastPublishTime": "2025-09-09T02:46:36Z"
           },
-          "etag": "0d029ff9-0000-0100-0000-68bf950c0000"
+          "etag": "aaaaaaaa-bbbb-cccc-1111-222222222222"
         }
       },
       "datasets": {},
@@ -100,195 +112,172 @@ This command loads the pipeline and associated artifacts from your Azure Data Fa
   "resolutions": []
 }
 ```
-### What these fields mean:
 
-- state: Shows the status. If it says Succeeded, you’re good.
-- alerts: Lists any issues or extra info.
-- result: Shows the outcome. Here, importedResources lists the ADF artifacts.
-- resolutions: Used for mapping ADF Linked Services to Fabric Connections (later section).
+### What these fields mean
 
----
+- **state**: Shows the status. If it says Succeeded, you’re good.
+- **alerts**: Lists any issues or extra info.
+- **result**: Shows the outcome. Here, importedResources lists the ADF artifacts.
+- **resolutions**: Used for mapping ADF Linked Services to Fabric Connections (later section).
 
 ### Convert your ADF Pipeline to a Fabric Pipeline
-In your Powershell window, press the Up-Arrow until you see the Import-AdfFactory command that worked earlier.
 
-Now, add the ConvertTo-FabricResources command to the end of that line. Make sure to include the | symbol to chain the commands. 
+1. In your PowerShell window, take the Import-AdfFactory command that you just ran, and add `|` and then the ConvertTo-FabricResources command to the end of the line.
 
-Your full command should look like this:
+    Your full command should look like this:
 
-```
-Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName  <your Pipeline Name> -AdfToken $adfSecureToken | ConvertTo-FabricResources
-```
-Press **Enter**. You should see something like:
-```
-{
-  "state": "Succeeded",
-  "alerts": [],
-  "result": {
-    "exportableFabricResources": [
-      {
-        "resourceType": "DataPipeline",
-        "resourceName": "pipeline1",
-        "resolve": [],
-        "export": {
-          "name": "pipeline1",
-          "properties": {
-            "activities": [
-              {
-                "name": "Wait1",
-                "type": "Wait",
-                "dependsOn": [],
-                "userProperties": [],
-                "description": null,
-                "typeProperties": {
-                  "waitTimeInSeconds": 1
-                }
-              }
-            ]
-          },
-          "annotations": []
-        }
-      }
-    ]
-  },
-  "resolutions": []
-}
-```
-You’ll still see the standard Upgrade Progress, but now the result field includes exportableFabricResources. That's expected —you’re getting the Fabric resources ready to export.
+    ```powershell
+    Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName  "pipeline1" -AdfToken $adfSecureToken | ConvertTo-FabricResources
+    ```
 
-You’ll learn about the resolutions field later. For now, note that the export field shows a Fabric pipeline with a Wait activity. If you created a pipeline with a Wait activity in Fabric Data Factory manually, its JSON would look the same.
+1. Run the command. You should see a response like this:
 
-If you stop here, this acts like a What-If: it shows what the upgrade would create.
+    ```json
+    {
+      "state": "Succeeded",
+      "alerts": [],
+      "result": {
+        "exportableFabricResources": [
+          {
+            "resourceType": "DataPipeline",
+            "resourceName": "pipeline1",
+            "resolve": [],
+            "export": {
+              "name": "pipeline1",
+              "properties": {
+                "activities": [
+                  {
+                    "name": "Wait1",
+                    "type": "Wait",
+                    "dependsOn": [],
+                    "userProperties": [],
+                    "description": null,
+                    "typeProperties": {
+                      "waitTimeInSeconds": 1
+                    }
+                  }
+                ]
+              },
+              "annotations": []
+            }
+          }
+        ]
+      },
+      "resolutions": []
+    }
+    ```
 
----
+You’ll still see the standard Upgrade Progress, but now the result field includes exportableFabricResources. That's expected; you’re getting the Fabric resources ready to export.
+
+You’ll learn about the resolutions field later. For now, the export field shows a Fabric pipeline with a Wait activity.
+
+If you stop here, this command acts like a What-If: it shows what the upgrade would create, and is a good way to validate the upgrade before making any changes.
 
 ### Collect information from your Fabric workspace
-Before exporting your Fabric pipeline, you'll need a few details from your Fabric workspace.
-Open a blank text file to copy the values you’ll need later.
 
-Open Microsoft Fabric UX and navigate to your Data Factory Workspace.
+Before exporting your Fabric pipeline, you'll need a few details from your Fabric workspace. Open a blank text file to copy the values you’ll need later.
 
-#### Note your region
-Your workspace is in a **region** like `daily`, `dxt`, `msit`, or `prod`.
-Do make a note this region; you'll need it later.
+1. Open Microsoft Fabric UX and navigate to your Data Factory Workspace.
+1. Your workspace is in a **region** like `daily`, `dxt`, `msit`, or `prod`. Note this region; you'll need it later. If you aren't sure, use `prod`.
+1. Find your [Workspace ID](migrate-pipelines-how-to-find-your-fabric-workspace-id.md) and copy it into your text file.
+1. Run this PowerShell command to get your Fabric Access Token and store it for your session:
 
-If you don't know what this means, use `prod`. Since `prod` is the default, you won’t need to pass this parameter if you’re in prod region.
+    ```PowerShell
+    $fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.net/powerbi/api").Token
+    ```
 
-#### Find your workspace ID
-See [How To: Find your Fabric Workspace ID](migrate-pipelines-how-to-find-your-fabric-workspace-id.md).
-
-Copy your Fabric Workspace ID into your text file.
-
-> As long as you keep using this Fabric workspace, its ID stays the same, so you don't need to do this again.
-
-#### Acquire your Fabric Access Token
-```
-$fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.net/powerbi/api").Token
-```
-> Access tokens expire after about an hour. When that happens, run the command again. You’ll know the token expired if Export-FabricResources returns a token expiry error
-
----
+    > [!TIP]
+    > Access tokens expire after about an hour. When that happens, run the command again. You’ll know the token expired if Export-FabricResources returns a token expiry error.
 
 ### Export the Fabric Pipeline
-It’s handy to keep your full command in a text file so you can copy and paste it later.
-Combine all your details into this command:
 
-```
-Import-AdfFactory -SubscriptionId <your Subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Data Factory Name> -PipelineName  "pipeline1" -AdfToken $adfSecureToken | ConvertTo-FabricResources | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
-```
+1. Combine all the details you gathered into this command:
 
-Now, copy your command from the text document into your PowerShell window, and hit Enter.
+    ```powershell
+    Import-AdfFactory -SubscriptionId <your Subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Data Factory Name> -PipelineName  "pipeline1" -AdfToken $adfSecureToken | ConvertTo-FabricResources | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
+    ```
 
-Wait a few seconds.
+1. Now, copy your command from the text document into your PowerShell window, and run the command.
 
-You should see a response like this:
-```
-{
-    "state": "Succeeded",
-    "alerts": [],
-    "result": {
-      "exportedFabricResources": {
-        "pipeline1": {
-          "type": "DataPipeline",
-          "workspaceId": "<your Workspace ID>",
-          "id": "<The GUID of your new Pipeline>,
-          "displayName": "pipeline1",
-          "description": null
+    You should see a response like this:
+
+    ```json
+    {
+        "state": "Succeeded",
+        "alerts": [],
+        "result": {
+          "exportedFabricResources": {
+            "pipeline1": {
+              "type": "DataPipeline",
+              "workspaceId": "<your Workspace ID>",
+              "id": "<The GUID of your new Pipeline>,
+              "displayName": "pipeline1",
+              "description": null
+            }
+          }
         }
       }
-    }
-  }
-``` 
-This means it worked! The exportedFabricResources section shows your new pipeline and its ID.
-Now, open your Fabric workspace in Fabric UX. Refresh the page, and you’ll see pipeline1 in the list. Open it—you’ll find exactly what you expect!
+    ```
 
----
+This means it worked! The exportedFabricResources section shows your new pipeline and its ID.
+Now, open your Fabric workspace in Fabric UX. Refresh the page, and you’ll see pipeline1 in the list. Open it and you’ll find exactly what you expect!
 
 ## Your second upgrade: Copy some data
-This second Upgrade will introduce a few new concepts:
-1) Datasets and LinkedServices
-2) Resolutions
 
-Let's dive in.
+This second upgrade is much like the first, but introduces a couple new concepts:
 
-### Create a Json Blob Copy Pipeline.
-The Fabric Pipeline Upgrader currently supports a limited set of datasets, so we’ll use Azure Blob Storage connections and JSON datasets.
+- Datasets and LinkedServices
+- Resolutions
 
-In ADF Studio, create a pipeline that copies a JSON file from one folder in your Azure Blob Storage to another. The details don’t matter for this tutorial.
-We’ll call this pipeline pipeline2 and the Azure Blob Storage connection BlobStore1, but you can use any names you like.
+The Fabric Pipeline Upgrader currently supports a [limited set of datasets](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md#supported-functionality), so we’ll use Azure Blob Storage connections and JSON datasets. Let's dive in.
 
+1. In ADF Studio, create a pipeline that [copies](/azure/data-factory/copy-activity-overview) a JSON file from one folder in your Azure Blob Storage to another. We’ll call this pipeline "pipeline2" and the Azure Blob Storage connection "BlobStore1", but again, you can use any names you like.
 
-### Convert your ADF Pipeline to a Fabric Pipeline
-Run the same command as before: 
-```
-Import-AdfFactory -SubscriptionId <your Subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Data Factory Name> -PipelineName  "pipeline1" -AdfToken $adfSecureToken | ConvertTo-FabricResources
-```
+1. Run the same What-If command as before to import your pipeline and check what the migration outcome would be. Be sure to update the pipeline name.
 
-### What’s New in the Output?
+    ```powershell
+    Import-AdfFactory -SubscriptionId <your Subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Data Factory Name> -PipelineName  "pipeline2" -AdfToken $adfSecureToken | ConvertTo-FabricResources
+    ```
 
-You’ll notice two exportableFabricResources:
+In the output, the pipeline looks similar to before, but now there’s more detail, including two exportableFabricResources:
 
 - One for a Connection
 - One for a Pipeline
 
-The pipeline looks similar to before, but now there’s more detail.
-Here’s an example of the Connection section:
+Here’s an example of the **Connection** section of the output:
 
-```
+```json
 {
-  "resourceName": "BlobStore1",
-  "resourceType": "Connection",
-  "resolve": [
+    "resourceName": "BlobStore1",
+    "resourceType": "Connection",
+    "resolve": [
     {
-      "type": "LinkedServiceToConnectionId",
-      "key": "BlobStore1",
-      "targetPath": "id",
-      "hint": {
+        "type": "LinkedServiceToConnectionId",
+        "key": "BlobStore1",
+        "targetPath": "id",
+        "hint": {
         "linkedServiceName": "BlobStore1",
         "connectionType": "AzureBlobStorage",
         "datasource": "...",
         "template": {
-          "type": "LinkedServiceToConnectionId",
-          "key": "BlobStore1",
-          "value": "<Fabric Connection ID>"
+            "type": "LinkedServiceToConnectionId",
+            "key": "BlobStore1",
+            "value": "<Fabric Connection ID>"
         }
-      }
+        }
     }
-  ],
-  "export": {
+    ],
+    "export": {
     "id": "00000000-0000-0000-0000-000000000000"
-  }
+    }
 }
 ```
 
-The resolve step says:
+The resolve step says: `Find the correct GUID and insert it into the id field of this resource.` For now, the ID is all zeros (an empty GUID). Since the exporter can’t resolve it, the hint provides guidance on how to resolve the problem.
 
-> Find the correct GUID and insert it into the id field of this resource.
+The **Pipeline** section has similar steps:
 
-For now, the id is all zeros (an empty GUID). If the exporter can’t resolve it, the hint provides guidance.
-
-The Pipeline section has similar steps:
-```
+```json
 "resolve": [
   {
     "type": "AdfResourceNameToFabricResourceId",
@@ -303,103 +292,121 @@ The Pipeline section has similar steps:
 ],
 ```
 
-### What do these steps do?  
-They tell the exporter to:  
-> Insert the Fabric Connection ID into the Copy Activity’s **source** and **sink**.  
+### What do these steps do?
 
-If you check those paths in the JSON, you’ll see empty GUIDs where the IDs will go.  
-
+These `resolve` steps are instructions for you to insert the Fabric Connection ID into the Copy Activity’s **source** and **sink**.  
 
 ### Why does this happen?  
-The upgrader can’t know the Fabric resource ID for a connection or pipeline until those resources exist. So, it gives the exporter instructions on how to finish the exportable resources.  
 
-For this to work, the exporter creates resources in the right order: if A depends on B, B gets created first. Good news—these resources are already in that order!  
-
----
+The upgrader can’t know the Fabric resource ID for a connection or pipeline until those resources exist. So, it gives you the instructions on how to finish the exportable resources.  
 
 ## Now let's export the Fabric Pipeline (attempt 1)
-If your access tokens expired, refresh them now.
 
-Run the same steps you used in the previous lesson.
+1. If your access tokens expired, refresh them now.
 
-Oh. That didn't work! This time, the `Import | Convert | Export` command returned:
-```
-{
-    "state": "Failed",
-    "alerts": [
-      {
-        "severity": "RequiresUserAction",
-        "details": "Please use the hint and template to create/find a new connection and add its ID to your resolutions.",
-        "connectionHint": {
-          "linkedServiceName": "BlobStore1",
-          "connectionType": "AzureBlobStorage",
-          "datasource": "...",
-          "template": {
-            "type": "LinkedServiceToConnectionId",
-            "key": "BlobStore1",
-            "value": "<Fabric Connection ID>"
+1. Run the same steps you used in the previous lesson, but for "pipeline2" this time.
+
+    ```powershell
+    Import-AdfFactory -SubscriptionId <your Subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Data Factory Name> -PipelineName  "pipeline2" -AdfToken $adfSecureToken | ConvertTo-FabricResources | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
+    ```
+
+1. This fails. This time, the `Import | Convert | Export` command returned:
+
+    ```json
+    {
+        "state": "Failed",
+        "alerts": [
+          {
+            "severity": "RequiresUserAction",
+            "details": "Please use the hint and template to create/find a new connection and add its ID to your resolutions.",
+            "connectionHint": {
+              "linkedServiceName": "BlobStore1",
+              "connectionType": "AzureBlobStorage",
+              "datasource": "...",
+              "template": {
+                "type": "LinkedServiceToConnectionId",
+                "key": "BlobStore1",
+                "value": "<Fabric Connection ID>"
+              }
+            }
           }
-        }
+        ],
+        "resolutions": [],
+        "result": {}
       }
-    ],
-    "resolutions": [],
-    "result": {}
-  }
-```
+    ```
 
 (If you read the end of the last step, you might recognize `connectionHint`.)  
 
-The error says we need to **“add a connection’s ID to your resolutions.”** 
-
----
+The error says we need to **“add a connection’s ID to your resolutions.”**
 
 ### What went wrong?  
-The Fabric Upgrader can’t create Fabric connections on its own. You need to help by creating a Fabric connection manually and then telling the upgrader when to use it.  
 
-First, create a **Resolutions file**. You can name it anything, but this tutorial uses `D:\Resolutions.json`.  
+The Fabric Upgrader can’t create Fabric connections on its own. You need to help by creating a Fabric connection manually and then telling the upgrader when to use it.
 
-Initialize the file with:  
+## Create a resolutions file
 
-```
-[
-]
-```
+1. First, create a **Resolutions file**. You can name it anything and save it wherever you like on your machine (as long as PowerShell can access it), but this tutorial uses `D:\Resolutions.json`.  
 
-Next, add your missing resolution. See, [How To: Add a Connection to the Resolutions File](migrate-pipelines-how-to-add-connections-to-resolutions-file.md) for instructions.
+1. Initialize the file with:  
 
-When you’re done, your Resolutions file should look something like this (your `value` will be different):  
-```
-[
-   {
-      "type": "LinkedServiceToConnectionId",
-      "key": "BlobStore1",
-      "value": "fce6a58f-c151-487f-9612-b908039e7eea"
-   }
-]
-```
-While you’re at it, you can add a comment to your resolution, like this
-```
-[
-   {
-      "comment": "Resolve the ADF 'BlobStore1' LinkedService to the Fabric 'myblob' Connection",
-      "type": "LinkedServiceToConnectionId",
-      "key": "BlobStore1",
-      "value": "fce6a58f-c151-487f-9612-b908039e7eea"
-   }
-]
-```
+    ```json
+    [
+    ]
+    ```
 
-## The Import-FabricResolutions cmdlet
-You can import this Resolutions file to check what it does.  
+1. Next, add your missing resolution from the hint your upgrader gave you. You can find it under 'template' in the `connectionHint` section of the error message.
+
+    ```json
+    [
+        "type": "LinkedServiceToConnectionId",
+        "key": "BlobStore1",
+        "value": "<Fabric Connection ID>"
+    ]
+    ```
+
+1. Next, we need to find that `<Fabric Connection ID>`. To do that, go to your Fabric workspace in Fabric UX, select the gear icon in the upper-right corner, then select **Manage connections and gateways**.
+1. If the connection doesn't exist in Fabric yet, create a new Connection to the same Azure Blob Storage account that your ADF pipeline uses. You can name it anything, but this tutorial uses "myblob".
+1. After creating the connection, hover over the ellipsis button next to the connection name to show the menu.
+1. Select **Settings** from the menu, then copy the **Connection ID** and paste it into your Resolutions file in place of `<Fabric Connection ID>`.
+1. Your resolutions file should look something like this (your `value` will be different):
+
+    ```json
+    [
+        {
+            "type": "LinkedServiceToConnectionId",
+            "key": "BlobStore1",
+            "value": "dddddddd-9999-0000-1111-eeeeeeeeeeee"
+        }
+    ]
+    ```
+
+1. While you’re at it, you can add a comment to your resolution like this:
+
+    ```json
+    [
+       {
+          "comment": "Resolve the ADF 'BlobStore1' LinkedService to the Fabric 'myblob' Connection",
+          "type": "LinkedServiceToConnectionId",
+          "key": "BlobStore1",
+          "value": "dddddddd-9999-0000-1111-eeeeeeeeeeee"
+       }
+    ]
+    ```
+
+### The Import-FabricResolutions cmdlet
+
+You can import this resolutions file to check what it does.  
 
 In PowerShell, run:
-```
+
+```powershell
 Import-FabricResolutions -rf "D:\Resolutions.json"
 ```
-and press **Enter**.
 
 You should see:
-```
+
+```powershell
 {
   "state": "Succeeded",
   "alerts": [],
@@ -408,28 +415,36 @@ You should see:
     {
       "type": "LinkedServiceToConnectionId",
       "key": "BlobStore1",
-      "value": "fce6a58f-c151-487f-9612-b908039e7eea"
+      "value": "dddddddd-9999-0000-1111-eeeeeeeeeeee"
     }
   ]
 }
 ```
-This is another Upgrade Progress object, but now the `resolutions` field is populated.  
+
+This is another upgrade progress object, but now the `resolutions` field is populated.  
 
 You can run `Import-FabricResolutions` at any point in the command chain **before** `Export-FabricResources`. The resolutions will carry forward to later steps.  
 
----
-
 ## Export the Fabric Pipeline (attempt 2)
-If you’re keeping your command in a text file, update it by adding `Import-FabricResolutions` between `Convert` and `Export`:
-```
-Import-AdfFactory -SubscriptionId <your Subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Data Factory Name> -PipelineName  "pipeline1" -AdfToken $adfSecureToken | ConvertTo-FabricResources | Import-FabricResolutions -ResolutionsFilename "<path to your resolutions file>" | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
 
-```
+Now that we have a resolutions file, we can try the export again after adding the `Import-FabricResolutions` step.
 
-If your access token expired, refresh it now. 
+1. Update your command by adding `Import-FabricResolutions` between `Convert` and `Export`:
 
-As mentioned earlier, you can place `Import-FabricResolutions` anywhere in the chain **before** `Export-FabricResources`. The resolutions will flow through all later steps.  
+    ```powershell
+    Import-AdfFactory -SubscriptionId <your Subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Data Factory Name> -PipelineName  "pipeline2" -AdfToken $adfSecureToken | ConvertTo-FabricResources | Import-FabricResolutions -ResolutionsFilename "<path to your resolutions file>" | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
+    ```
 
-Run the above command in PowerShell.
+1. Run the command in PowerShell.
 
-This time, it works!
+This time, it works! Again, the exportedFabricResources section shows your new pipeline and its ID.
+
+Now open your Fabric workspace in Fabric UX. Refresh the page, and you’ll see pipeline1 in the list. Open it and you’ll find exactly what you expect!
+
+## Next steps
+
+Now that you’ve successfully upgraded two pipelines, you can use what you learned to upgrade more pipelines. 
+
+- For more information about the types of activities and datasets that are supported, see [the supported functionality](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md#supported-functionality).
+- For more information about how to create the resolutions file for different kinds of pipelines, see [how to add connections to your resolutions file](migrate-pipelines-how-to-add-connections-to-resolutions-file.md).
+- For general steps on performing this migration using PowerShell, see: [Migrate pipelines from Azure Data Factory to Fabric using PowerShell](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md).
