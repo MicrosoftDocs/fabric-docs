@@ -1,6 +1,6 @@
 ---
 title: GQL Quick Reference
-description: Quick reference guide for GQL syntax, statements, patterns, and functions in graph in Microsoft Fabric.
+description: Quick reference for GQL syntax, statements, patterns, and expressions in graph in Microsoft Fabric.
 ms.topic: reference
 ms.date: 09/15/2025
 author: spmsft
@@ -12,11 +12,11 @@ ms.service: fabric
 
 # GQL quick reference
 
-This article is a quick reference for GQL (Graph Query Language) syntax in graph in Microsoft Fabric. For detailed explanations, see the [GQL language reference](gql-how-to.md).
+This article is a quick reference for GQL (Graph Query Language) syntax in graph in Microsoft Fabric. For detailed explanations, see the [GQL language guide](gql-language-guide.md).
 
 ## Query structure
 
-GQL queries use a sequence of statements that define what data to get from the graph, how to process it, and how to show the results. Each statement has a specific purpose, and together they form a linear pipeline that transforms graph data step by step.
+GQL queries use a sequence of statements that define what data to get from the graph, how to process it, and how to show the results. Each statement has a specific purpose, and together they create a linear pipeline that matches data from the graph and transforms it step by step.
 
 **Typical query flow:**  
 A GQL query usually starts by specifying the graph pattern to match, then uses optional statements for variable creation, filtering, sorting, pagination, and result output.
@@ -25,11 +25,11 @@ A GQL query usually starts by specifying the graph pattern to match, then uses o
 ```gql
 MATCH (n:Person)-[:knows]->(m:Person) 
 LET fullName = n.firstName || ' ' || n.lastName 
-FILTER m.city = 'Seattle' 
+FILTER m.gender = 'female' 
 ORDER BY fullName ASC 
 OFFSET 10
 LIMIT 5 
-RETURN fullName, m.city
+RETURN fullName, m.firstName
 ```
 
 **Statement order:**  
@@ -38,11 +38,11 @@ Statements must appear in the following order within a query:
 1. `LET` – Define variables from expressions.
 1. `FILTER` – Keep rows matching conditions.
 1. `ORDER BY` – Sort results.
-1. `OFFSET` – Skip a number of rows.
+1. `OFFSET` – Skip many rows.
 1. `LIMIT` – Restrict the number of rows.
 1. `RETURN` – Output the final results.
 
-Each statement builds on the previous one, so you incrementally refine and shape the query output. For more details on each statement, see the sections below.
+Each statement builds on the previous one, so you incrementally refine and shape the query output. For more information on each statement, see the following sections.
 
 ## Query statements
 
@@ -56,10 +56,10 @@ MATCH <graph pattern> [ WHERE <predicate> ]
 ```
 **Example:**
 ```gql
-MATCH (n:Person)-[:knows]-(m:Person) WHERE n.age > 25
+MATCH (n:Person)-[:knows]-(m:Person) WHERE n.birthday > 20000101
 ```
 
-For more information about the `MATCH` statement, see the [comprehensive guide](gql-how-to.md#match-statement).
+For more information about the `MATCH` statement, see the [Graph patterns](gql-graph-patterns.md).
 
 ### LET  
 
@@ -74,7 +74,7 @@ LET <variable> = <expression>, <variable> = <expression>, ...
 LET fullName = n.firstName || ' ' || n.lastName
 ```
 
-For more information about the `LET` statement, see the [comprehensive guide](gql-how-to.md#let-statement).
+For more information about the `LET` statement, see the [GQL language guide](gql-language-guide.md#let-statement).
 
 ### FILTER
 
@@ -86,11 +86,10 @@ FILTER [ WHERE ] <predicate>
 ```
 **Example:**
 ```gql
-FILTER WHERE n.age > m.age
+FILTER WHERE n.birthday > m.birthday
 ```
 
-For more information about the `FILTER` statement, see the [comprehensive guide](gql-how-to.md#filter-statement).
-
+For more information about the `FILTER` statement, see the [GQL language guide](gql-language-guide.md#filter-statement).
 
 ### ORDER BY
 
@@ -105,7 +104,7 @@ ORDER BY <expression> [ ASC | DESC ], ...
 ORDER BY n.lastName ASC, n.firstName ASC
 ```
 
-For more information about the `ORDER BY` statement, see the [comprehensive guide](gql-how-to.md#order-by-statement).
+For more information about the `ORDER BY` statement, see the [GQL language guide](gql-language-guide.md#order-by-statement).
 
 ### OFFSET/LIMIT
 
@@ -121,7 +120,7 @@ LIMIT <limit>
 OFFSET 10 LIMIT 20
 ```
 
-For more information about the `OFFSET` and `LIMIT` statements, see the [comprehensive guide](gql-how-to.md#offset-and-limit-statements).
+For more information about the `OFFSET` and `LIMIT` statements, see the [GQL language guide](gql-language-guide.md#offset-and-limit-statements).
 
 ### RETURN
 
@@ -133,10 +132,10 @@ RETURN [ DISTINCT ] <expression> [ AS <alias> ], ...
 ```
 **Example:**
 ```gql
-RETURN n.name, m.age
+RETURN n.firstName, m.lastName
 ```
 
-For more information about the `RETURN` statement, see the [comprehensive guide](gql-how-to.md#return-statement).
+For more information about the `RETURN` statement, see the [GQL language guide](gql-language-guide.md#return-basic-result-projection).
 
 ## Graph patterns
 
@@ -153,21 +152,23 @@ Node patterns describe how to match nodes in the graph. You can filter by label 
 (:Person)        -- Person node, don't bind variable
 ```
 
-For more information about node patterns, see the [comprehensive guide](gql-how-to.md#simple-node-patterns).
+For more information about node patterns, see the [Graph patterns](gql-graph-patterns.md).
 
 ### Edge patterns
 
-
-Edge patterns specify relationships between nodes, including direction and edge type.
+Edge patterns specify relationships between nodes, including direction and edge type. In graph databases, an edge represents a connection or relationship between two nodes.
 
 ```gql
 <-[e]-             -- Incoming edge
+-[e]->             -- Outgoing edge
+-[e]-              -- Undirected edge
+-[:knows]->        -- Edge with type
+-[e:knows|likes]-> -- Multiple edge types
 ```
 
-For more information about edge patterns, see the [comprehensive guide](gql-how-to.md#simple-edge-patterns).
+For more information about edge patterns, see the [Graph patterns](gql-graph-patterns.md).
 
 ### Label expressions
-
 
 Label expressions let you match nodes with specific label combinations using logical operators.
 
@@ -178,36 +179,31 @@ Label expressions let you match nodes with specific label combinations using log
 :(Person|!Company)&Active        -- Complex expressions with parentheses
 ```
 
-For more information about label expressions, see the [comprehensive guide](gql-how-to.md#label-expressions).
+For more information about label expressions, see the [Graph patterns](gql-graph-patterns.md).
 
 ### Path patterns  
-
 
 Path patterns describe traversals through the graph, including hop counts and variable bindings.
 
 ```gql
-(a)-[e1]->(b)-[e2]->(c)           -- 2-hop path
-(a)-[e]->{2,4}(b)                 -- 2 to 4 hops
-(a)-[e]->{1,}(b)                  -- 1 or more hops
-(a)-[:knows|likes]->{1,3}(b)      -- 1-3 hops via knows/follows
+(a)-[:knows|likes]->{1,3}(b)      -- 1-3 hops via knows/likes
 p=()-[:knows]->()                 -- Binding a path variable
 ```
 
-For more information about path patterns, see the [comprehensive guide](gql-how-to.md#compose-path-patterns).
+For more information about path patterns, see the [Graph patterns](gql-graph-patterns.md).
 
 ### Multiple patterns
 
-
-Multiple patterns let you match complex, non-linear graph structures in a single query.
+Multiple patterns let you match complex, nonlinear graph structures in a single query.
 
 ```gql
 (a)->(b), (a)->(c)               -- Multiple edges from same node
-(a)->(b)<-(c), (b)->(d)          -- Non-linear structures
+(a)->(b)<-(c), (b)->(d)          -- Nonlinear structures
 ```
 
-For more information about multiple patterns, see the [comprehensive guide](gql-how-to.md#compose-non-linear-patterns).
+For more information about multiple patterns, see the [Graph patterns](gql-graph-patterns.md).
 
-## Data types
+## Values and value types
 
 ### Basic types
 
@@ -221,7 +217,7 @@ BOOL             -- TRUE, FALSE, UNKNOWN
 ZONED DATETIME   -- ZONED_DATETIME('2023-01-15T10:30:00Z')
 ```
 
-Learn more about basic types in the [comprehensive guide](gql-how-to.md#understand-values-and-value-types).
+Learn more about basic types in the [GQL values and value types](gql-values-and-value-types.md).
 
 ### Reference value types
 
@@ -232,7 +228,7 @@ NODE             -- Node reference values
 EDGE             -- Edge reference values
 ```
 
-Learn more about reference value types in the [comprehensive guide](gql-how-to.md#reference-value-types).
+Learn more about reference value types in the [GQL values and value types](gql-values-and-value-types.md).
 
 ### Collection types
 
@@ -244,7 +240,7 @@ LIST<STRING>     -- ['a', 'b', 'c']
 PATH             -- Path values
 ```
 
-Learn more about collection types in the [comprehensive guide](gql-how-to.md#constructed-value-types).
+Learn more about collection types in the [GQL values and value types](gql-values-and-value-types.md).
 
 ### Nullable types
 
@@ -253,9 +249,10 @@ STRING NOT NULL  -- Nonnullable string
 INT64            -- Nullable int (default)
 ```
 
-## Graph types & schema
+<!--
+## Graph types
 
-Graph types and schema define the structure of nodes, edges, and constraints in the graph.
+Graph types define the structure of nodes, edges, and constraints in the graph.
 
 ### Node types
 
@@ -286,12 +283,12 @@ CONSTRAINT compound_key
   FOR (n:Node) REQUIRE (n.prop1, n.prop2) IS KEY
 ```
 
-Learn more about graph types and schema in the [comprehensive guide](gql-how-to.md#graph-types--schema).
+Learn more about [graph types](gql-graph-types.md).
+-->
 
 ## Expressions & operators
 
 ### Comparison
-
 
 Comparison operators compare values and check for equality, ordering, or nulls.
 
@@ -300,10 +297,9 @@ Comparison operators compare values and check for equality, ordering, or nulls.
 IS NULL, IS NOT NULL             -- Null checks
 ```
 
-For more information about comparison predicates, see the [comprehensive guide](gql-how-to.md#comparison-predicates).
+For more information about comparison predicates, see the [GQL expressions and functions](gql-expressions.md).
 
 ### Logical
-
 
 Logical operators combine or negate boolean conditions in queries.
 
@@ -311,48 +307,43 @@ Logical operators combine or negate boolean conditions in queries.
 AND, OR, NOT                     -- Boolean logic
 ```
 
-For more information about logical expressions, see the [comprehensive guide](gql-how-to.md#logical-expressions).
+For more information about logical expressions, see the [GQL expressions and functions](gql-expressions.md).
 
 ### Arithmetic  
-
 
 Arithmetic operators perform calculations on numbers.
 
 ```gql
-+, -, *, /                       -- Basic math
++, -, *, /                       -- Basic arithmetic operations
 ```
 
-For more information about arithmetic expressions, see the [comprehensive guide](gql-how-to.md#arithmetic-expressions).
-
+For more information about arithmetic expressions, see the [GQL expressions and functions](gql-expressions.md).
 
 ### String patterns
-
 
 String pattern predicates match substrings, prefixes, or suffixes in strings.
 
 ```gql
-n.name CONTAINS 'John'           -- Has substring
-n.email STARTS WITH 'admin'     -- Starts with prefix
-n.phone ENDS WITH '1234'        -- Ends with suffix
+n.firstName CONTAINS 'John'          -- Has substring
+n.browserUsed STARTS WITH 'Chrome'   -- Starts with prefix
+n.locationIP ENDS WITH '.1'          -- Ends with suffix
 ```
 
-For more information about string pattern predicates, see the [comprehensive guide](gql-how-to.md#string-pattern-predicates).
+For more information about string pattern predicates, see the [GQL expressions and functions](gql-expressions.md).
 
 ### List operations
-
 
 List operations test membership, access elements, and measure list length.
 
 ```gql
-n.age IN [25, 30, 35]            -- Membership test
+n.gender IN ['male', 'female']    -- Membership test
 n.tags[0]                        -- First element
 size(n.tags)                     -- List length
 ```
 
-For more information about list membership predicates, see the [comprehensive guide](gql-how-to.md#list-membership-predicates).
+For more information about list membership predicates, see the [GQL expressions and functions](gql-expressions.md).
 
 ### Property access
-
 
 Property access gets the value of a property from a node or edge.
 
@@ -360,28 +351,26 @@ Property access gets the value of a property from a node or edge.
 n.firstName                      -- Property access
 ```
 
-For more information about property access, see the [comprehensive guide](gql-how-to.md#property-access).
+For more information about property access, see the [GQL expressions and functions](gql-expressions.md).
 
 ## Functions
 
 ### Aggregate functions
 
-
-Aggregate functions compute summary values for groups of rows.
+Aggregate functions compute summary values for groups of rows (vertical aggregation) or over the elements of a group list (horizontal aggregation).
 
 ```gql
 count(*)                         -- Count all rows
 count(expr)                      -- Count non-null values
-sum(n.age)                       -- Sum values
-avg(n.age)                       -- Average
-min(n.age), max(n.age)           -- Minimum and maximum values
-collect_list(n.name)             -- Collect values into a list
+sum(p.birthday)                  -- Sum values
+avg(p.birthday)                  -- Average
+min(p.birthday), max(p.birthday) -- Minimum and maximum values
+collect_list(p.firstName)        -- Collect values into a list
 ```
 
-Learn more about aggregate functions in the [comprehensive guide](gql-how-to.md#aggregate-functions).
+Learn more about aggregate functions in the [GQL expressions and functions](gql-expressions.md).
 
 ### String functions  
-
 
 String functions let you work with and analyze string values.
 
@@ -392,10 +381,9 @@ trim(s)                          -- Remove leading and trailing whitespace
 string_join(list, separator)     -- Join list elements with a separator
 ```
 
-Learn more about string functions in the [comprehensive guide](gql-how-to.md#string-functions).
+Learn more about string functions in the [GQL expressions and functions](gql-expressions.md).
 
 ### List functions
-
 
 List functions let you work with lists, like checking length or trimming size.
 
@@ -404,10 +392,9 @@ size(list)                       -- List length
 trim(list, n)                    -- Trim a list to be at most size `n`
 ```
 
-Learn more about list functions in the [comprehensive guide](gql-how-to.md#list-functions).
+Learn more about list functions in the [GQL expressions and functions](gql-expressions.md).
 
 ### Graph functions
-
 
 Graph functions let you get information from nodes, paths, and edges.
 
@@ -417,7 +404,7 @@ nodes(path)                      -- Get path nodes
 edges(path)                      -- Get path edges
 ```
 
-Learn more about graph functions in the [comprehensive guide](gql-how-to.md#graph-functions).
+Learn more about graph functions in the [GQL expressions and functions](gql-expressions.md).
 
 ### Temporal functions
 
@@ -427,7 +414,7 @@ Temporal functions let you work with date and time values.
 zoned_datetime()               -- Get the current timestamp
 ```
 
-Learn more about temporal functions in the [comprehensive guide](gql-how-to.md#temporal-functions).
+Learn more about temporal functions in the [GQL expressions and functions](gql-expressions.md).
 
 ### Generic functions
 
@@ -437,7 +424,7 @@ Generic functions let you work with data in common ways.
 coalesce(expr1, expr2, ...)    -- Get the first non-null value
 ```
 
-Learn more about generic functions in the [comprehensive guide](gql-how-to.md#generic-functions).
+Learn more about generic functions in the [GQL expressions and functions](gql-expressions.md).
 
 ## Common patterns
 
@@ -445,17 +432,17 @@ Learn more about generic functions in the [comprehensive guide](gql-how-to.md#ge
 
 ```gql
 -- Friends of friends  
-MATCH (me:Person {name: 'Alice'})-[:knows]->{2}(fof:Person)
+MATCH (me:Person {firstName: 'Alice'})-[:knows]->{2}(fof:Person)
 WHERE fof <> me
-RETURN DISTINCT fof.name
+RETURN DISTINCT fof.firstName
 ```
 
 ### Aggregation
 
 ```gql
 -- Count by group
-MATCH (p:Person)
-RETURN p.city, count(*) AS population
+MATCH (p:Person)-[:isLocatedIn]->(c:City)
+RETURN c.name, count(*) AS population
 ORDER BY population DESC
 ```
 
@@ -463,8 +450,8 @@ ORDER BY population DESC
 
 ```gql
 -- Top 10
-MATCH (p:Person)-[:posted]->(m:Message)
-RETURN p.name, count(m) AS posts
+MATCH (p:Person)-[:hasCreator]-(m:Post)
+RETURN p.firstName, count(m) AS posts
 ORDER BY posts DESC
 LIMIT 10
 ```
@@ -473,19 +460,19 @@ LIMIT 10
 
 ```gql
 -- Complex conditions
-MATCH (p:Person)
-WHERE p.age >= 25 AND p.age <= 65
-  AND p.city IN ['Seattle', 'Portland']
-  AND p.name IS NOT NULL
-RETURN p.name, p.age
+MATCH (p:Person)-[:isLocatedIn]->(c:City)
+WHERE p.birthday >= 19800101 AND p.birthday <= 20000101
+  AND c.name IN ['Seattle', 'Portland']
+  AND p.firstName IS NOT NULL
+RETURN p.firstName, p.birthday
 ```
 
 ### Path traversal
 
 ```gql
 -- Variable length paths
-MATCH path = (start:Person {name: 'Alice'})-[:knows]->{1,3}(end:Person)
-WHERE end.name = 'Bob'
+MATCH path = (start:Person {firstName: 'Alice'})-[:knows]->{1,3}(end:Person)
+WHERE end.firstName = 'Bob'
 RETURN path
 ```
 

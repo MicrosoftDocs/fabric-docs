@@ -15,9 +15,25 @@ items:
         href: quickstart.md
   - name: Graph Query Language (GQL)
     items:
-      - name: GQL language reference
-        href: gql-how-to.md
-      - name: GQL quick reference
-        href: gql-reference-abridged.md
-      - name: GQL reserved words
-        href: gql-reference-reserved-terms.md
+      - name: GQL manual
+        items:
+        - name: GQL language guide
+          href: gql-language-guide.md
+        - name: 'GQL schema example: Social network'
+          href: gql-schema-example.md
+        - name: GQL graph patterns
+          href: gql-graph-patterns.md
+        - name: GQL expressions, predicates, and functions
+          href: gql-expressions.md
+        - name: GQL graph types
+          href: gql-graph-types.md
+        - name: GQL values and value types
+          href: gql-values-and-value-types.md
+      - name: GQL reference material
+        items:
+        - name: GQL quick reference
+          href: gql-reference-abridged.md
+        - name: GQL status codes reference
+          href: gql-reference-status-codes.md
+        - name: GQL reserved words reference
+          href: gql-reference-reserved-terms.md
