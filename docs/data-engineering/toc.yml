@@ -149,6 +149,8 @@ items:
       href: runtime-1-1.md
   - name: Native Execution Engine
     href: native-execution-engine-overview.md
+  - name: Row and Column Level Security
+    href: spark-row-column-level-security.md
   - name: Spark job definition (SJD)
     items:
     - name: What is a Spark job definition?
