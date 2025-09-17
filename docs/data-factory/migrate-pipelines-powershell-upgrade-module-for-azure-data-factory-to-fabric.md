@@ -21,7 +21,7 @@ To migrate your ADF pipelines to Fabric using PowerShell, you:
 
 1. [Prepare your environment for Fabric pipeline upgrades.](#prepare-your-environment-for-fabric-pipeline-upgrades)
 1. [Connect PowerShell to your Azure and Fabric environments.](#connect-powershell-to-your-azure-and-fabric-environments)
-1. [Upgrade your factory pipelines](#import-and-map-your-factory-resources)
+1. [Upgrade your factory pipelines](#upgrade-your-factory-resources)
 1. [Create a resolution file and map linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections).
 1. Validate your results.
 
@@ -89,7 +89,7 @@ $fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.n
 
 ## Upgrade your factory resources
 
-First, [import your Azure Data Factory pipelines](#import-your-azure-data-factory-pipelines), then [map your ADF linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections), and finally [upgrade your pipelines](#upgrade-your-pipelines).
+First, [import your Azure Data Factory pipelines](#import-your-azure-data-factory-pipelines), then [map your ADF linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections), and finally [upgrade your pipelines](#powerShell-command-to-upgrade-your-pipelines).
 
 ### Import your Azure Data Factory pipelines
 
