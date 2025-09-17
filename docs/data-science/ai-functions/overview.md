@@ -6,8 +6,9 @@ author: jonburchel
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.date: 05/18/2025
+ms.date: 09/17/2025
 ms.search.form: AI functions
+ai-usage: ai-assisted
 ---
 
 # Transform and enrich data with AI functions (preview)
