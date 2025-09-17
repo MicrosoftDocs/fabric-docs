@@ -45,7 +45,7 @@ To get the GUID for your Fabric connection to add to your **LinkedServiceToConne
 
     :::image type="content" source="media/migrate-pipeline-powershell-upgrade/workspace-settings.png" alt-text="Screenshot of the Manage connections and gateways.":::
 
-1. If the connection doesn't exist in Fabric yet, [create a new one using the connector's documentation](connector-overview.md).
+1. If the connection doesn't exist in Fabric yet, create a new one.
 
     :::image type="content" source="media/migrate-pipeline-powershell-upgrade/add-new-connection.png" alt-text="Screenshot of adding a new cloud connection.":::
 
