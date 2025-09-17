@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure Blob Storage in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Blob Storage.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure Blob Storage.
 
 ## Supported format
 

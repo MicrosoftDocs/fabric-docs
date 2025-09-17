@@ -18,9 +18,9 @@ The Amazon RDS for SQL Server connector is supported in Data Factory for [!INCLU
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
-| **Data pipeline**<br>- [Copy activity](connector-amazon-rds-for-sql-server-copy-activity.md) (source/-) <br>- Lookup activity<br>- Get Metadata activity  <br>- Stored procedure activity |None<br> On-premises<br> Virtual network |Basic |
+| **Pipeline**<br>- [Copy activity](connector-amazon-rds-for-sql-server-copy-activity.md) (source/-) <br>- Lookup activity<br>- Get Metadata activity  <br>- Stored procedure activity |None<br> On-premises<br> Virtual network |Basic |
 | **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Basic |
 
 ## Related content
 
-To learn more about the copy activity configuration for Amazon RDS for SQL Server in Data pipeline, go to [Configure in a data pipeline copy activity](connector-amazon-rds-for-sql-server-copy-activity.md).
+To learn more about the copy activity configuration for Amazon RDS for SQL Server in a pipeline, go to [Configure in a pipeline copy activity](connector-amazon-rds-for-sql-server-copy-activity.md).

@@ -11,7 +11,7 @@ ms.custom:
 
 # Configure Hdfs for Pipeline in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Hdfs for Pipeline.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Hdfs for Pipeline.
 
 ## Supported format
 

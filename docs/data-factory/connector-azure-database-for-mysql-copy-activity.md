@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure Database for MySQL in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Database for MySQL.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure Database for MySQL.
 
 This connector is specialized for
 
