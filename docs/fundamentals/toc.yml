@@ -225,18 +225,14 @@ items:
   - name: Provide and review Fabric feedback
     href: feedback.md
 
-- name: Stay current
+- name: Resolve known issues
   items:
+    - name: View active known issues
+      href: ../known-issues/fabric-known-issues.md
 
-
-  - name: Resolve known issues
-    items:
-      - name: View active known issues for Fabric + Power BI
-        href: ../known-issues/fabric-known-issues.md
-
-- name: Use resources
+- name: Find resources
   items:
-    - name: Use icons
+    - name: Use official Fabric icons
       href: icons.md
-    - name: Browse what's new archive
+    - name: Browse the what's new archive
       href: whats-new-archive.md
