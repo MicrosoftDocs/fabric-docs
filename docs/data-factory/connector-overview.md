@@ -219,7 +219,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Topcon Aptix Insights | ✓/− |  |  |
 | [Usercube (Beta)](/power-query/connectors/usercube) | ✓/− |  |  |
 | Vena | ✓/− |  |  |
-| [Vertica](connector-vertica-overview.md) | ✓/− | ✓/✓ | ✓/− |
+| [Vertica](connector-vertica-overview.md) | ✓/− | ✓/- | ✓/− |
 | [Vessel Insight](/power-query/connectors/vessel-insight) | ✓/− |  |  |
 | Viva Insights | ✓/− |  |  |
 | [Warehouse](/power-query/connectors/warehouse) | ✓/− |  |  |
