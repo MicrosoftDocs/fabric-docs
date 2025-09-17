@@ -8,9 +8,10 @@ reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "how-to".
-ms.date: 03/25/2025
+ms.date: 09/17/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 ---
 
 # Fabric data agent example with the AdventureWorks dataset (preview)
