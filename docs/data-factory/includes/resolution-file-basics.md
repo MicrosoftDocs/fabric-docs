@@ -19,7 +19,7 @@ ms.date: 09/17/2025
 ```
 
 - The `type` is the type of mapping to perform. It's usually `LinkedServiceToConnectionId`, but you might also use [other types in special cases.](../migrate-pipelines-how-to-add-connections-to-resolutions-file.md#when-to-use-other-resolution-types)
-- The `key` is the name of the [ADF linked service](/azure/data-factory/concepts-linked-services) that you want to map, or if using a URLHostConnectionID type it's the value "user".
+- The `key` depends on the `type` you're using. For `LinkedServiceToConnectionId`, the `key` is the name of the [ADF linked service](/azure/data-factory/concepts-linked-services) that you want to map.
 - The `value` is the GUID of the Fabric connection you want to map to. You can [find the GUID in settings of the Fabric connection](../migrate-pipelines-how-to-add-connections-to-resolutions-file.md#get-the-guid-for-your-connection).
 
 So, for example, if you have two ADF linked services named `MyAzureBlobStorage` and `MySQLServer` that you want to map to Fabric connections, your file would look like this:
