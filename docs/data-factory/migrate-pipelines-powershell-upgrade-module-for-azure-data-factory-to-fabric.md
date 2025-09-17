@@ -21,7 +21,7 @@ To migrate your ADF pipelines to Fabric using PowerShell, you:
 
 1. [Prepare your environment for Fabric pipeline upgrades.](#prepare-your-environment-for-fabric-pipeline-upgrades)
 1. [Connect PowerShell to your Azure and Fabric environments.](#connect-powershell-to-your-azure-and-fabric-environments)
-1. [Upgrade your factory pipelines and triggers](#upgrade-your-factory-resources)
+1. [Upgrade your factory pipelines](#upgrade-your-factory-resources)
 1. [Create a resolution file and map linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections).
 1. Validate your results.
 
@@ -29,13 +29,11 @@ To migrate your ADF pipelines to Fabric using PowerShell, you:
 
 To get started, you must complete the following prerequisites:
 
-- Check the [Supported functionality](migrate-pipelines-powershell-upgrade-module-supported-functionality.md) to ensure your ADF pipelines and triggers are supported.
 - **Tenant**: Your ADF and Fabric workspace must be in the same Microsoft Entra ID tenant.
 - **Fabric**: A tenant account with an active Fabric subscription - [Create an account for free](../fundamentals/fabric-trial.md).
 - **Fabric workspace recommendations** (Optional): We recommend using a new [Fabric workspace](../fundamentals/workspaces.md) in the same region as your ADF for upgrades for best performance.
 - **Permissions**: [Read access to the ADF workspace and items](/azure/data-factory/concepts-roles-permissions#scope-of-the-data-factory-contributor-role) you’ll migrate and [Contributor or higher rights in the Fabric workspace](../security/permission-model.md#workspace-roles) you’ll write to.
 - **Network and auth**: Make sure you can sign in to both Azure and Fabric from your machine (interactive or service principal).
-- **Environment**: [Prepare your PowerShell environment to perform upgrades](#prepare-your-environment-for-fabric-pipeline-upgrades).
 
 ## Supported functionality
 
@@ -91,9 +89,9 @@ $fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.n
 
 ## Upgrade your factory resources
 
-First, [upgrade your Azure Data Factory pipelines and triggers](#upgrade-your-azure-data-factory-pipelines-and-triggers), then [map your ADF linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections).
+First, [upgrade your Azure Data Factory pipelines](#upgrade-your-azure-data-factory-pipelines), then [map your ADF linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections).
 
-## Upgrade your Azure Data Factory pipelines and triggers
+## Upgrade your Azure Data Factory pipelines
 
 The following PowerShell will upgrade your data factory resources. Update the Import-AdfFactory command before the first `|` to either import [all supported resources in your ADF](#import-all-factory-resources), or [a single pipeline](#import-a-single-pipeline).
 
