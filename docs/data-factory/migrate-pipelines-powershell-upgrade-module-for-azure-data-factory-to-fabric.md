@@ -85,11 +85,11 @@ $fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.n
 ```
 
 > [!TIP]
-> Tokens expire in about an hour. If your tokens expire, repeat this step.
+> Access tokens expire after about an hour. When that happens, run the command again. You’ll know the token expired if Export-FabricResources returns a token expiry error.
 
 ## Upgrade your factory resources
 
-First, [import your Azure Data Factory pipelines](#import-your-azure-data-factory-pipelines), then [map your ADF linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections), and finally [upgrade your pipelines](#powerShell-command-to-upgrade-your-pipelines).
+First, [import your Azure Data Factory pipelines](#import-your-azure-data-factory-pipelines), then [map your ADF linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections), and finally [upgrade your pipelines](#powershell-command-to-upgrade-your-pipelines).
 
 ### Import your Azure Data Factory pipelines
 
