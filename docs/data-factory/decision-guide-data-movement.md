@@ -13,17 +13,17 @@ ai-usage: ai-assisted
 
 Microsoft Fabric gives you several ways to bring data into Fabric, based on what you need. Today, you can use **Mirroring**, **Copy activities in Pipelines**, or **Copy job**. Each option offers a different level of control and complexity, so you can pick what fits your scenario best.
 
-Mirroring is designed to be simple and free, but it won't cover every advanced scenario. Copy activities in pipelines give you powerful data ingestion features, but they require you to build and manage pipelines. Copy job fills the gap between these options. It gives you more flexibility and control than Mirroring, plus native support for both batch and incremental copying, without the complexity of building pipelines.
+Mirroring is designed to be simple and free solution to mirror database to Fabric, but it won't cover every advanced scenario. Copy activities in pipelines give you fully customizable data ingestion features, but they require you to build and manage pipeline by yourself. Copy job fills the gap between these 2 options. It gives you more flexibility and control than Mirroring, plus native support for both batch and incremental copying, without the complexity of building pipelines.
 
 :::image type="content" source="media/decision-guide-data-movement/decision-guide-data-movement.svg" alt-text="Screenshot of a data movement strategy decision tree, comparing mirroring, copy job, and copy activity." lightbox="media/decision-guide-data-movement/decision-guide-data-movement.svg":::
 
 ## Key concepts
 
-- **Mirroring** gives you a **simple and free** way to copy operational data into Fabric for analytics. It's optimized for ease of use with minimal setup, and it writes to a single, read-only destination in OneLake.
+- **Mirroring** gives you a **simple and free** way to mirror operational data into Fabric for analytics. It's optimized for ease of use with minimal setup, and it writes to a single, read-only destination in OneLake.
 
-- **Copy activities in Pipelines** is built for users who need **orchestrated, pipeline-based data ingestion workflows**. You can customize it extensively and add transformation logic, but you need to define and manage pipeline components.
+- **Copy activities in Pipelines** is built for users who need **orchestrated, pipeline-based data ingestion workflows**. You can customize it extensively and add transformation logic, but you need to define and manage pipeline components yourself, including tracking the state of the last run for incremental copy.
 
-- **Copy Job** gives you a complete data ingestion experience from any source to any destination. It **makes data ingestion easier with native support for both batch and incremental copying, so you don't need to build pipelines**, while still giving you access to many advanced options. It supports many sources and destinations and works well when you want more control than Mirroring but less complexity than managing pipelines with Copy activity.
+- **Copy Job** gives you a complete data ingestion experience from any source to any destination. It **makes data ingestion easier with native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication, and you don't need to build pipelines**, while still giving you access to many advanced options. It supports many sources and destinations and works well when you want more control than Mirroring but less complexity than managing pipelines with Copy activity.
 
 ## Data movement decision guide
 
