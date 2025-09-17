@@ -39,11 +39,11 @@ items:
     href: decision-guide-data-store.md
   - name: Decision guide - Warehouse and Lakehouse
     href: ../fundamentals/decision-guide-lakehouse-warehouse.md
-- name: Find your way around Fabric
+- name: Find your items and content
   items:
-  - name: Find your items from Fabric Home
+  - name: Find items with Fabric Home
     href: fabric-home.md
-  - name: Find Fabric items with the OneLake catalog
+  - name: Find items with OneLake catalog
     href: ../governance/onelake-catalog.md
 - name: Workspaces
   items:
