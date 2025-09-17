@@ -76,13 +76,13 @@ More about workloads: [Workloads in Fabric](../workload-development-kit/more-wor
 
 In Power BI view (left switcher), tabs aren't available.
 
-## Find content fast: search, filter, sort
+## Find content fast: Search, filter, sort
 
 Use the following table to compare Fabric’s search and filtering tools. Use global search for broad, cross-workspace discovery (names, creators, tags), the local keyword filter to narrow the current view, sorting to quickly order columns, and the Filters panel for precise refinements by type, time, or owner.
 
 | Feature | How to use | Notes / examples |
 |---------|------------|------------------|
-| Global search | Use the search box in the top bar to find items by name, title, creator, tag, or workspace. Results show only content you can access. | Examples: part of a report name; a colleague’s name to see items they shared; a tag (if tagging is enabled)—see [Tags overview](/fabric/governance/tags-overview). Tag results appear only if your organization enables tagging. |
+| Global search | Use the search box in the top bar to find items by name, title, creator, tag, or workspace. Results show only content you can access. | Examples: part of a report name; a colleague’s name to see items they shared; a tag (if tagging is enabled)—see [Tags overview](../governance/tags-overview.md). Tag results appear only if your organization enables tagging. |
 | Local keyword filtering | Use the **Filter by keyword** field on canvases (for example, Browse) to narrow the current list without leaving the page. | Applies only to the current view. |
 | Sorting | Select a column header (for example, Name or Refreshed) to sort; select again to toggle direction. | Not all columns are sortable—hover to confirm. |
 | Filters panel | Select **Filter** (upper-right of a content list) to refine results by type, time, and owner. | Examples: Type (report, notebook), Time (recently accessed or modified), Owner (creator). |
@@ -91,8 +91,6 @@ Use the following table to compare Fabric’s search and filtering tools. Use gl
 
 > [!NOTE]
 > Global search uses Azure AI Search. It isn’t available in sovereign clouds or regions where Azure AI Search isn’t supported. Tag and community content visibility depend on feature enablement. See [Azure AI Search regions](/azure/search/search-region-support).
-
-Learn more: [Search and find your content](fabric-search.md).
 
 ## Use the help pane effectively
 
@@ -104,8 +102,6 @@ Select the **?** icon to open the contextual Help pane:
 - Search box: Enter keywords to search documentation and forums; use the dropdown to refine.
 
 Keep it docked as you work or close it to reclaim space. Use the back arrow to return to the default view.
-
-Learn more: [Get in-product help](fabric-help-pane.md).
 
 ## Personalize via settings
 
@@ -149,7 +145,6 @@ If self-help doesn't solve your problem:
 
 - [Workspaces](workspaces.md)  
 - [Task flows in Microsoft Fabric](task-flow-overview.md)  
-- [Search and find your content](fabric-search.md)  
 - [Get in-product help](fabric-help-pane.md)  
 - [Workloads in Fabric](../workload-development-kit/more-workloads-add.md)  
 - [Start a Fabric trial](fabric-trial.md)  

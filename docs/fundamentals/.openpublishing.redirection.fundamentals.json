@@ -197,12 +197,12 @@
     },
     {
       "source_path_from_root": "/docs/get-started/fabric-search.md",
-      "redirect_url": "/fabric/fundamentals/fabric-search",
+      "redirect_url": "/fabric/fundamentals/fabric-home",
       "redirect_document_id": true
     },
     {
       "source_path_from_root": "/docs/get-started/fabric-settings.md",
-      "redirect_url": "/fabric/fundamentals/fabric-settings",
+      "redirect_url": "/fabric/fundamentals/fabric-home",
       "redirect_document_id": true
     },
     {
