@@ -1050,15 +1050,15 @@ Now that you understand GQL fundamentals, here's your recommended learning path:
 ### Continue building your GQL skills
 
 **For beginners:**
-1. **Try the quickstart** - Follow our [hands-on tutorial](quickstart.md) for practical experience
-2. **Practice basic queries** - Try the examples from this guide with your own data
-3. **Learn graph patterns** - Master the [comprehensive pattern syntax](gql-graph-patterns.md)
-4. **Explore data types** - Understand [GQL values and value types](gql-values-and-value-types.md)
+- **Try the quickstart** - Follow our [hands-on tutorial](quickstart.md) for practical experience
+- **Practice basic queries** - Try the examples from this guide with your own data
+- **Learn graph patterns** - Master the [comprehensive pattern syntax](gql-graph-patterns.md)
+- **Explore data types** - Understand [GQL values and value types](gql-values-and-value-types.md)
 
 **For experienced users:**
-1. **Advanced expressions** - Master [GQL expressions and functions](gql-expressions.md)
-2. **Schema design** - Learn [GQL graph types](gql-graph-types.md) and constraints
-3. **Explore data types** - Understand [GQL values and value types](gql-values-and-value-types.md)
+- **Advanced expressions** - Master [GQL expressions and functions](gql-expressions.md)
+- **Schema design** - Learn [GQL graph types](gql-graph-types.md) and constraints
+- **Explore data types** - Understand [GQL values and value types](gql-values-and-value-types.md)
 
 ### Reference materials
 
