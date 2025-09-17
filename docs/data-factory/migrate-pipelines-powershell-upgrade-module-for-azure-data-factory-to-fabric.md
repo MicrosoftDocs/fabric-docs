@@ -173,38 +173,8 @@ Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <you
 
 A resolution file is a JSON file that maps your ADF linked services to Fabric connections:
 
-```json
-[
-  {
-    "type": "LinkedServiceToConnectionId",
-    "key": "<ADF LinkedService Name>",
-    "value": "<Fabric Connection ID>"
-  }
-]
-```
+[!INCLUDE [resolution-file-basics](/includes/resolution-file-basics.md)]
 
-- The `type` is the type of mapping to perform. It's usually `LinkedServiceToConnectionId`, but you might also use [other types in special cases.](migrate-pipelines-how-to-add-connections-to-resolutions-file.md#when-to-use-other-resolution-types)
-- The `key` is the name of the [ADF linked service](/azure/data-factory/concepts-linked-services) that you want to map.
-- The `value` is the GUID of the Fabric connection you want to map to. You can [find the GUID in settings of the Fabric connection](migrate-pipelines-how-to-add-connections-to-resolutions-file.md#get-the-guid-for-your-connection).
-
-So, for example, if you have two ADF linked services named `MyAzureBlobStorage` and `MySQLServer` that you want to map to Fabric connections, your file would look like this:
-
-```json
-[
-  {
-    "type": "LinkedServiceToConnectionId",
-    "key": "MyAzureBlobStorage",
-    "value": "aaaa0000-bb11-2222-33cc-444444dddddd"
-  },
-  {
-    "type": "LinkedServiceToConnectionId",
-    "key": "MySQLServer",
-    "value": "bbbb1111-cc22-3333-44dd-555555eeeeee"
-  }
-]
-```
-
-Create your .json resolution file, and save it somewhere on your machine so that PowerShell can access it.
 For more information about the resolution file, see [How to add a connection to the resolutions file](migrate-pipelines-how-to-add-connections-to-resolutions-file.md).
 
 ### PowerShell command to map ADF linked services to Fabric connections
