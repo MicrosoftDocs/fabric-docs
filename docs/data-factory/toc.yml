@@ -973,7 +973,7 @@
           - name: Copilot explainer skill in Dataflow Gen2 
             href: dataflow-gen2-copilot-explain.md
           - name: Copilot in Modern Get Data
-            href: copilot-in-modern-get-data.md
+            href: copilot-modern-get-data.md
   - name: Orchestrate your pipelines
     items:
       - name: What is a pipeline?
