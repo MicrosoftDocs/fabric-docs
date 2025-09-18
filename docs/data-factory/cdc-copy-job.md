@@ -85,6 +85,9 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 
    :::image type="content" source="media/copy-job/select-cdc-tables.png" alt-text="Screenshot showing where to select cdc tables for the Copy job.":::
 
+   > [!NOTE]
+   > - Fabric Lakehouse tables cannot currently be detected for whether their CDF is enabled. 
+
 1. Select your destination store. In this example, choose another **Azure SQL DB**.
 
    :::image type="content" source="media/copy-job/select-destination-store.png" alt-text="Screenshot showing where to select the destination store for the Copy job.":::
