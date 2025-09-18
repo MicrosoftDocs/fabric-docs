@@ -41,6 +41,8 @@ For the list of supported connectors across Copy job, Copy activity, and Dataflo
 | **Coding Level** | No code | No code / Low code | No code / Low code |
 | **Transformation Support** | None | Low | Low |
 
+For more details, see the [data movement strategy](/fabric/data-factory/decision-guide-data-movement).
+
 ## Orchestration strategies
 
 | | [**Pipeline**](pipeline-overview.md) | [**Apache Airflow Job**](/fabric/data-factory/apache-airflow-jobs-concepts) |
