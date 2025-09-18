@@ -100,6 +100,9 @@ Possible custom pool configurations for F64 based on the previous example. Small
 
 An Apache Spark pool instance consists of one head node and worker nodes, could start a minimum of one node in a Spark instance. The head node runs extra management services such as Livy, Yarn Resource Manager, Zookeeper, and the Apache Spark driver. All nodes run services such as Node Agent and Yarn Node Manager. All worker nodes run the Apache Spark Executor service.
 
+> [!NOTE]
+> In Fabric, the ratio of nodes to executors is always 1:1. When you set up a pool, one node is dedicated to the driver, and the remaining nodes are used for the executors. The only exception is in a single-node configuration, where the resources for both the driver and the executor are halved.
+
 ## Node sizes
 
 A Spark pool can be defined with node sizes that range from a small compute node (with 4 vCore and 32 GB of memory) to a double extra large compute node (with 64 vCore and 512 GB of memory per node). Node sizes can be altered after pool creation, although the active session would have to be restarted.
