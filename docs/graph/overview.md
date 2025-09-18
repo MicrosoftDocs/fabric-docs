@@ -17,7 +17,7 @@ ms.custom: references_regions
 
 Graph in Microsoft Fabric is an intelligent, scalable solution that transforms disconnected data into AI-powered insights. 
 
-Unlike relational databases that often require expensive joins and complex queries, graph in Microsoft Fabric implements a labeled property graph model. The entities (nodes) and relationships (edges) can have labels and properties. This flexible approach enables powerful graph analysis and advanced analytics directly from OneLake—without requiring ETL (extract, transform, load) or data replication.
+Unlike relational databases that often require expensive joins and complex queries, graph in Microsoft Fabric implements a [labeled property graph](graph-data-models.md) model. The entities (nodes) and relationships (edges) can have labels and properties. This flexible approach enables powerful graph analysis and advanced analytics directly from OneLake—without requiring ETL (extract, transform, load) or data replication.
 
 ## Why graph analytics matter
 
