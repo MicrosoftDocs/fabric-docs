@@ -1,8 +1,8 @@
 ---
 title: "Secure Data in Mirrored Databases From Azure SQL Managed Instance"
 description: Learn about how to secure data in mirrored databases from Azure SQL Managed Instance in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+author: whhender
+ms.author: whhender
 ms.reviewer: lazartimotic, jingwang, nzagorac
 ms.date: 11/19/2024
 ms.topic: how-to
