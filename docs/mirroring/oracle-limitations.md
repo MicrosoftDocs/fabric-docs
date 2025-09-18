@@ -78,7 +78,7 @@ For schema (DDL) changes, we currently support:
 > [!NOTE]
 > Column data type updates aren't supported
 
-Currently, tables that have a Primary Key (PK) are not supported.
+Currently, tables that do not have a Primary Key (PK) are not supported.
 
 ## Required Permissions
 
