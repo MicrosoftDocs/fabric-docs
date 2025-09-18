@@ -18,7 +18,7 @@ Fabric Data Warehouse is more scalable, more secure, more enterprise-ready, and 
 Beginning June 1, 2025, creating a new Power BI datamart will redirect to creating a new Fabric Warehouse.
 
 > [!IMPORTANT]
-> Beginning October 1, 2025, Power BI datamarts will not be supported and datamarts will be cleaned up from workspaces. To avoid losing your data and breaking reports built on top of datamarts, migrate your datamart to warehouse. To upgrade existing datamarts to Fabric Data Warehouse, follow the steps in this guide.
+> Beginning November 1, 2025, Power BI datamarts will not be supported and datamarts will be cleaned up from workspaces. To avoid losing your data and breaking reports built on top of datamarts, migrate your datamart to warehouse. To upgrade existing datamarts to Fabric Data Warehouse, follow the steps in this guide.
 
 ## Prerequisites
 
