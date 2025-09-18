@@ -4,7 +4,7 @@ description: This article explains how to configure Parquet format in the pipeli
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/12/2025
+ms.date: 09/18/2025
 ms.custom:
   - template-how-to
 ---
@@ -66,7 +66,17 @@ Under **Advanced** settings in the **Destination** tab, the following Parquet fo
 - **Max rows per file**: When writing data into a folder, you can choose to write to multiple files and specify the maximum rows per file. Specify the maximum rows that you want to write per file.
 - **File name prefix**: Applicable when **Max rows per file** is configured. Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>_00000.<fileExtension>`. If not specified, the file name prefix is auto generated. This property doesn't apply when the source is a file based store or a partition option enabled data store.
 
-### Data type mapping for Parquet
+### Mapping
+
+For the **Mapping** tab configuration, if you don't apply Parquet format as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab). 
+
+If you apply Parquet format as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas** and enabling **Advanced parquet type settings**, you can specify the column type in your destination. You can also set the **isNullable** option to specify whether each Parquet destination column can contain null values. The default value of **isNullable** is `true`.
+
+For example, the type for *dateData* column in source is INT96, and you can change it to INT96 or INT64 type when mapping to destination column.
+
+   :::image type="content" source="media/format-parquet/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
+
+#### Data type mapping for Parquet
 
 When copying data from the source connector in Parquet format, the following mappings are used from Parquet data types to interim data types used by the service internally.
 
@@ -107,14 +117,14 @@ When copying data to the destination connector in Parquet format, the following 
 | UInt64               | INT                 | INT64                         |
 | Single               | null                | FLOAT                         |
 | Double               | null                | DOUBLE                        |
-| DateTime             | null                | INT96                         |
-| DateTimeOffset       | null                | INT96                         |
+| DateTime             |  Option 1: null <br> Option 2: TIMESTAMP           | Option 1: INT96 (default) <br> Option 2: INT64 (Unit: MILLIS, MICROS, NANOS (default) ) |
+| DateTimeOffset       | Option 1: null <br> Option 2: TIMESTAMP | Option 1: INT96 (default) <br> Option 2: INT64 (Unit: MILLIS, MICROS, NANOS (default) ) |
 | Date                 | DATE                | INT32                         |
-| TimeSpan             | TIME                | INT64                         |
-| Decimal              | DECIMAL             | INT32, INT64 or FIXED_LEN_BYTE_ARRAY |
-| GUID                 | STRING              | BYTE_ARRAY                    |
+| TimeSpan             | TIME                | INT32 (Unit: MILLIS) <br> INT64 (Unit: MICROS, NANOS (default) ) |
+| Decimal              | DECIMAL             | INT32 (1 <= precision <= 9) <br> INT64 (9 < precision <= 18) <br> FIXED_LEN_BYTE_ARRAY (precision > 18) (default) |
+| GUID                 | Option 1: STRING <br> Option 2: UUID | Option 1: BYTE_ARRAY (default) <br> Option 2: FIXED_LEN_BYTE_ARRAY |
 | String               | STRING              | BYTE_ARRAY                    |
-| Byte array           | null                | BYTE_ARRAY                    |
+| Byte array           | null                | BYTE_ARRAY (default) or FIXED_LEN_BYTE_ARRAY                   |
 
 ## Table summary
 
