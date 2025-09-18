@@ -90,10 +90,8 @@ items:
     href: direct-lake-create-lakehouse.md
   - name: Develop Direct Lake models
     href: direct-lake-develop.md
-  - name: Manage Direct Lake models
-    href: direct-lake-manage.md
-  - name: Specify a fixed identity
-    href: direct-lake-fixed-identity.md
+  - name: Integrate Direct Lake security
+    href: direct-lake-security-integration.md
   - name: Analyze Direct Lake query processing
     href: direct-lake-analyze-query-processing.md
   - name: Build reports
