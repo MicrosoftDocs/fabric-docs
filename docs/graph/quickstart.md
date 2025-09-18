@@ -47,14 +47,6 @@ To create a graph model in Microsoft Fabric, follow these steps:
 
 1. Enter a name for your graph model and select **Create**.
 
-    > [!NOTE]
-    > Graph in Microsoft Fabric currently supports the following date types:
-    > - Boolean
-    > - Integer
-    > - Float
-    > - String
-    > - ZoneDateTime
-
 ## Create a graph
 
 In graph view, you should see **Save**, **Add node**, and **Add edge**, and **Get data** buttons.
@@ -75,6 +67,14 @@ To create a graph in Microsoft Fabric, follow these steps:
 
    :::image type="content" source="./media/quickstart/graph-data-view.png" alt-text="Screenshot showing the data view in the graph model." lightbox="./media/quickstart/graph-data-view.png":::
 
+
+    > [!NOTE]
+    > Graph in Microsoft Fabric currently supports the following date types:
+    > - Boolean
+    > - Integer
+    > - Float
+    > - String
+    > - ZoneDateTime
 
 ## Start modeling
 
