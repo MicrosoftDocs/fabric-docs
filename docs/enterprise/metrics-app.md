@@ -5,7 +5,7 @@ author: julcsc
 ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
-ms.date: 09/12/2025
+ms.date: 09/18/2025
 ---
 
 # What is the Microsoft Fabric Capacity Metrics app?
