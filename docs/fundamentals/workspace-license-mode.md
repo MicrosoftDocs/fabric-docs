@@ -5,12 +5,12 @@ ms.reviewer: liud
 author: JulCsc
 ms.author: juliacawthra
 ms.topic: overview
-ms.date: 05/12/2025
+ms.date: 09/18/2025
 #customer intent: As workspace admin, I want to understand what the workspace license mode options are and how to reassign the workspace to a different capacity.
 ---
 # Reassign a workspace to a different capacity
 
-When you create a workspace, it's assigned to a [capacity](../enterprise/licenses.md#capacity). The capacity that new workspaces are assigned to by default is determined by the capacity type and/or by the configuration of Fabric or capacity administrators. After you create a workspace, you can reassign it to a different capacity, if any are available, and if you have sufficient permissions to do so. You [reassign workspaces](#reassign-a-workspace-to-a-different-capacity) to different capacities using workspace license modes.
+When you create a workspace, it's assigned to a [capacity](../enterprise/licenses.md#capacity). The capacity that new workspaces are assigned to by default is determined by the capacity type and/or by the configuration of Fabric or capacity administrators. After you create a workspace, you can reassign it to a different capacity if any are available. To do so, you need a capacity admin or capacity contributor role and a [workspace admin role](roles-workspaces.md). ([Learn more](https://learn.microsoft.com/en-us/fabric/admin/capacity-settings?tabs=power-bi-premium#details).) You [reassign workspaces](#reassign-a-workspace-to-a-different-capacity) to different capacities using workspace license modes.
 
 ## License modes and capacity types
 
