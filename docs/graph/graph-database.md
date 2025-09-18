@@ -57,5 +57,5 @@ Representing your data as a graph and storing it in a separate, standalone graph
 
 ## Related content
 
-- [Compare graph and relational databases]([graph-relational-databases.md]
+- [Compare graph and relational databases](graph-relational-databases.md)
 - [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
