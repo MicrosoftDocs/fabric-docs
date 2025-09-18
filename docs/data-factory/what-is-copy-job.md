@@ -30,7 +30,7 @@ You can also visit the [data movement strategy](/fabric/data-factory/decision-gu
 
 ## Concepts
 
-### Copy Modes (Full copy, Incremental copy)
+### Copy modes (Full copy, Incremental copy)
 
 You can choose how your data is copied from source to destination:
 
@@ -51,7 +51,7 @@ See more details for [Change data capture (CDC) in Copy Job](/fabric/data-factor
 
 When a copy job fails, you don’t need to worry about data loss. Copy job always resumes from the state of the last successful run. A failure does not change the state managed by copy job. 
 
-### Update Methods (Append, Overwrite, Merge) 
+### Update methods (Append, Overwrite, Merge) 
 
 You can also decide how data is written to your destination:
 
@@ -109,7 +109,7 @@ Copy job has the same [regional availability as Fabric](../admin/region-availabi
 
 You can get the details in [**pricing Copy job**](pricing-copy-job.md).
 
-## Supported-connectors
+## Supported connectors
 
 With Copy job, you can move your data between cloud data stores or from on-premises sources that are behind a firewall or inside a virtual network using a gateway. Copy job supports the following data stores as sources or destinations:
 
