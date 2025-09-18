@@ -197,6 +197,12 @@ After creating a pipeline, you need to add content you want to manage to the pip
 1. Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. [Paired items](../cicd/deployment-pipelines/assign-pipeline.md#item-pairing) are overwritten. You can learn more about this process, in the [Deploy content to an existing workspace](../cicd/deployment-pipelines/understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
 1. You can review the deployment history to see the last time content was deployed to each stage. To examine the differences between the two pipelines before you deploy, see [Compare content in different deployment stages](../cicd/deployment-pipelines/compare-pipeline-content.md).
 
+## Scheduled pipeline CI/CD integration
+
+When you create a schedule for a pipeline, it is automatically added to the Git repository connected to your workspace and store in a *.schedules* file in the pipeline definition.
+
+:::image type="content" source="media/pipeline-runs/pipeline-job-scheduler-git.png" alt-text="Screenshot of the .schedules file for a scheduled pipeline in Fabric Data Factory." lightbox="media/pipeline-runs/pipeline-job-scheduler-git.png":::
+
 ## Known limitations
 
 The following known limitations apply to CI/CD for pipelines in Data Factory in Microsoft Fabric:

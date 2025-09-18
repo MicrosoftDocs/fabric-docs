@@ -19,6 +19,6 @@ The Fast Healthcare Interoperability Resources ([FHIR&reg;](https://hl7.org/fhir
 
 For information on how to connect to FHIR data in Dataflow Gen2, go to [Set up your FHIR data connection](connector-fhir.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support FHIR data in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support FHIR data in pipelines.

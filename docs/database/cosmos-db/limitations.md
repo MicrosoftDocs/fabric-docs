@@ -66,6 +66,8 @@ This article lists current limitations for Cosmos DB in Fabric.
 
 - Once vector indexing and vector search are enabled on a container, they can't be disabled.
 
+- Customer managed key (CMK) encryption can't be enabled after vector search is enabled in a workspace. If your intent is to use CMK in your workspace with Cosmos DB for Fabric vector search, enable CMK first, then apply vector search. You can enable vector search after creating a new Cosmos DB artifact by selecting "Sample vector data" in the explorer, or by enabling the feature in the workspace's settings.
+
 ## Full text indexing
 
 - Multi-language support is only supported with the following languages:

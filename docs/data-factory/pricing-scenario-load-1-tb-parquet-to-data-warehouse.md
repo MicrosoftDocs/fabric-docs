@@ -1,17 +1,17 @@
 ---
-title: Pricing scenario - Data pipelines load 1 TB of Parquet data to data warehouse
+title: Pricing scenario - Pipelines load 1 TB of Parquet data to data warehouse
 description: This article provides an example pricing scenario for loading 1 TB of Parquet data to a data warehouse using Data Factory in Microsoft Fabric.
 ms.reviewer: whhender
-ms.author: adija
-author: adityajain2408
+ms.author: whhender
+author: whhender
 ms.topic: conceptual
 ms.custom: configuration
 ms.date: 06/16/2025
 ---
 
-# Pricing scenario using a data pipeline to load 1 TB of Parquet data to a data warehouse
+# Pricing scenario using a pipeline to load 1 TB of Parquet data to a data warehouse
 
-In this scenario, a Copy activity was used in a data pipeline to load 1 TB of Parquet table data stored in Azure Data Lake Storage (ADLS) Gen2 to a data warehouse in Microsoft Fabric.
+In this scenario, a Copy activity was used in a pipeline to load 1 TB of Parquet table data stored in Azure Data Lake Storage (ADLS) Gen2 to a data warehouse in Microsoft Fabric.
 
 The prices used in the following example are hypothetical and don’t intend to imply exact actual pricing. These are just to demonstrate how you can estimate, plan, and manage cost for Data Factory projects in Microsoft Fabric. Also, since Fabric capacities are priced uniquely across regions, we use the pay-as-you-go pricing for a Fabric capacity at US West 2 (a typical Azure region), at $0.18 per CU per hour. Refer here to [Microsoft Fabric - Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/) to explore other Fabric capacity pricing options.
 
@@ -31,7 +31,7 @@ The pricing is based on the used intelligent throughput optimization, which depe
 
 The utilized CU seconds can be derived using the following calculation:
 
-According to [data pipeline pricing model](pricing-pipelines.md#pricing-model), each unit of intelligent optimization throughput consumes 1.5 CU hours. Given the intelligent throughput optimization used is 4, and the data movement operation duration is 662.64 seconds (approximately 11 minutes), the total CU hours utilized will be:
+According to [pipeline pricing model](pricing-pipelines.md#pricing-model), each unit of intelligent optimization throughput consumes 1.5 CU hours. Given the intelligent throughput optimization used is 4, and the data movement operation duration is 662.64 seconds (approximately 11 minutes), the total CU hours utilized will be:
 
 Utilized CU hours = 4 * 1.5 * (11/60) = 1.1
 
@@ -51,6 +51,6 @@ Utilized CU seconds = 1.1 * 3600 = 3960
 
 ## Related content
 
-- [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
+- [Pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)

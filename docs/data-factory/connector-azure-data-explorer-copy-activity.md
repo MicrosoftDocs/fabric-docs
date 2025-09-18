@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure Data Explorer in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Data Explorer.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure Data Explorer.
 
 
 ## Supported configuration

@@ -1,6 +1,6 @@
 ---
 title: Module 1 - Create a pipeline with Data Factory
-description: This tutorial module covers creating a data pipeline, as part of an end-to-end data integration tutorial to complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
+description: This tutorial module covers creating a pipeline, as part of an end-to-end data integration tutorial to complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
 ms.author: whhender
 ms.reviewer: xupzhou
 author: whhender
@@ -15,7 +15,7 @@ This module takes about 10 minutes to complete. You will ingest raw data from th
 
 The high-level steps in module 1 are:
 
-1. [Create a data pipeline.](#create-a-data-pipeline)
+1. [Create a pipeline.](#create-a-pipeline)
 1. [Create Copy Activity in the pipeline to load sample data into a data Lakehouse.](#create-a-copy-activity-in-the-pipeline-to-load-sample-data-to-a-data-lakehouse)
 1. [Run and view the results of the the copy activity](#run-and-view-the-results-of-your-copy-activity)
 
@@ -25,7 +25,7 @@ The high-level steps in module 1 are:
 - A [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace. [Learn how to create a workspace.](../fundamentals/create-workspaces.md)
 - Access to [Power BI](https://app.powerbi.com/).
 
-## Create a data pipeline
+## Create a pipeline
 
 1. Sign into Power BI.
 
@@ -33,9 +33,9 @@ The high-level steps in module 1 are:
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/switch-data-factory.png" alt-text="Screenshot showing the selection of the Data Factory experience.":::
 
-1. Select a workspace from the **Workspaces** tab, then select **+ New item**, and choose **Data pipeline**.
+1. Select a workspace from the **Workspaces** tab, then select **+ New item**, and choose **Pipeline**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-pipeline.png" alt-text="Screenshot of the Data Factory start page with the button to create a new data pipeline selected.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-pipeline.png" alt-text="Screenshot of the Data Factory start page with the button to create a new pipeline selected.":::
 
 1. Provide a pipeline name. Then select **Create**.
 

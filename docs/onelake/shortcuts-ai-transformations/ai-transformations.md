@@ -61,5 +61,5 @@ Customer feedback stored in a data lake may contain sensitive details (names, em
 
 ## Regional availability
 
-AI-powered transforms are currently available in these regions: [Azure AI Language regional support](/ai-services/speech-service/regions?tabs=geographies)
+AI-powered transforms are currently available in these regions: [Azure AI Language regional support](/azure/ai-services/language-service/concepts/regional-support)
 

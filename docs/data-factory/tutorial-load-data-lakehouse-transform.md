@@ -17,13 +17,13 @@ In this tutorial, we provide end-to-end steps to a common scenario that uses the
 
 A Microsoft Fabric enabled workspace. If you don't already have one, refer to the article [Create a workspace](../fundamentals/create-workspaces.md).
 
-## Create a data pipeline 
+## Create a pipeline 
 
 1. Switch to the **Data Factory** experience.
 
-1. Select **New** and then **Data pipeline**, and then input a name for your pipeline.
+1. Select **New** and then **Pipeline**, and then input a name for your pipeline.
 
-   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new Data pipeline button.":::
+   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new pipeline button.":::
 
    :::image type="content" source="media/tutorial-load-data-lakehouse-transform/pipeline-name.png" alt-text="Screenshot showing the pipeline name dialog.":::
 
@@ -67,7 +67,7 @@ Select **Copy data assistant** on the canvas to open the **copy assistant** tool
 
    :::image type="content" source="media/tutorial-load-data-lakehouse-transform/review-settings.png" alt-text="Screenshot showing the Review + save window of the copy data assistant with the Start data transfer immediately checkbox checked.":::
 
-1. Once finished, the copy activity is added to your new data pipeline canvas, and the pipeline automatically runs to load data into Lakehouse.
+1. Once finished, the copy activity is added to your new pipeline canvas, and the pipeline automatically runs to load data into Lakehouse.
 
    :::image type="content" source="media/tutorial-load-data-lakehouse-transform/pipeline-runs-after-creation.png" alt-text="Screenshot showing the created pipeline with Copy activity and the current run in progress.":::
 
@@ -142,7 +142,7 @@ After the refresh is complete, you can view the data in the Lakehouse table. You
 This sample shows you how to copy sample data to Lakehouse and transform the data with a dataflow using Data Factory in Microsoft Fabric.  You learned how to:
 
 > [!div class="checklist"]
-> - Create a data pipeline.
+> - Create a pipeline.
 > - Use the pipeline to load sample data into Lakehouse.
 > - Use dataflow to transform data in the Lakehouse.
 

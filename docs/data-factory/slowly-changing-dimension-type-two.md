@@ -247,7 +247,7 @@ Rename this new query as **StagingTableForUpdates** and it should contain 3 rows
 
 The solution so far provides a query with all records for an upsert operation into the destination. From this point, you can define the logic you want to use to load your data to the Dimension table. You typically have two options:
 
-* **Upsert operation**: Store the results of the **StagingTableForUpdates** query in a staging table, then run a stored procedure or use a notebook to update your Dimension table. You can automate this process with a Data Pipeline that triggers the notebook or stored procedure after Dataflow Gen2 completes, and schedule it for future runs.
+* **Upsert operation**: Store the results of the **StagingTableForUpdates** query in a staging table, then run a stored procedure or use a notebook to update your Dimension table. You can automate this process with a pipeline that triggers the notebook or stored procedure after Dataflow Gen2 completes, and schedule it for future runs.
 * **Delete and recreate the table**: You can use Dataflow Gen2 to remove all existing data and rebuild the Dimension table from scratch. This tutorial demonstrates this method.
 
 ### Using Dataflow Gen2 to load data to your Dimension destination table

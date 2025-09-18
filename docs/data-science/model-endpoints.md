@@ -1,13 +1,12 @@
----
+﻿---
 title: Serve real-time predictions with ML model endpoints (Preview)
 description: Learn how to serve real-time predictions seamlessly from ML models with secure, scalable, and fully managed online endpoints.
-ms.author: erenorbey
-author: orbey
+ms.author: lagayhar
+author: lgayhardt
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.date: 07/16/2025
-
 ms.search.form: ML model endpoints
 ---
 
@@ -113,6 +112,31 @@ A toast message shows that Fabric is dismantling your active deployment, and the
 You can deactivate endpoints for multiple versions at once from the model’s settings pane. Select "Manage endpoints" from the ribbon in the interface and choose one or more active endpoints to deactivate.
 
 :::image type="content" source="media/model-endpoints/deactivate-multiple.jpg" alt-text="Screenshot showing how to deactivate multiple ML model endpoints at once from the Fabric interface." lightbox="media/model-endpoints/deactivate-multiple.jpg":::
+
+## Consumption rate
+
+Hosting active model endpoints consumes Fabric Capacity Units (CUs). Endpoints run on compute nodes and can automatically scale up to three nodes based on incoming traffic. Billing is calculated per node while an endpoint is active. The table below shows the CU consumption for an active Machine Learning model endpoint.
+
+| **Operation** | **Operation Unit of Measure** | **Consumption rate** |
+|---|---|---|
+|model endpoint | 1 model endpoint (version) per second per node| 5 CU seconds|
+
+The table below shows example scenarios and their corresponding consumption rates and hourly costs.
+
+|**Scenario**|**Description**|**Consumption rate**|**Hourly Cost**|
+|---|---|---|---|
+|Models with Inactive Endpoints|These models have no active version endpoints and no associated resource utilization. They involve no additional cost.| 0 CU seconds| 0 CU Hour|
+|Models with Active but Idle Endpoints|These models have one or more active version endpoints, but, without regular traffic, all have scaled to zero, reducing costs automatically.|5 CU seconds|0.42 CU Hours|
+|Models with 1 Active Endpoint and Constant Low Traffic|These models have only 1 active version endpoint serving predictions, but without enough traffic to trigger a full scale-out. One node can serve all the traffic. Other version endpoints may be inactive or idle.| 5 CU seconds|5 CU Hours|
+|Models with 1 Active Endpoint and Constant High Traffic|These models have only 1 active version endpoint serving predictions, with enough traffic to trigger a full scale-out. Other version endpoints may be inactive or idle.|15 CU seconds|15 CU Hours|
+|Models with 5 Active Endpoints and Constant High Traffic|These models have 5 active version endpoints (the current limit) serving predictions, each with enough traffic to trigger a full scale-out.|75 CU seconds |75 CU Hours|
+
+[The Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for model endpoint operations under the name "Model Endpoint". Additionally, users are able to view a summary of their billing charges for Model Endpoint usage under the invoicing item "ML Model Endpoint Capacity Usage CU".
+
+Model endpoint operation is classified as [background operations](../enterprise/fabric-operations.md#background-operations).
+
+Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in the Microsoft Release Notes or the Microsoft Fabric Blog. If any change to the model endpoint in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use, customers can use the cancellation options available for the chosen payment method.
+
 
 ## Related content
 

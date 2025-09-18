@@ -1,18 +1,18 @@
 ---
 title: How to copy data using copy activity
-description: Learn how to use copy activities in Data Pipeline to move data between cloud data stores. Includes steps for using the copy assistant and adding activities directly.
+description: Learn how to use copy activities in a pipeline to move data between cloud data stores. Includes steps for using the copy assistant and adding activities directly.
 ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
-ms.date: 07/28/2025
+ms.date: 09/01/2025
 ai-usage: ai-assisted
 ---
 
 # How to copy data using copy activity
 
-In a Data Pipeline, you can use the Copy activity to copy data between data stores in the cloud. After you copy the data, you can use other activities in your pipeline to transform and analyze it.
+In a pipeline, you can use the Copy activity to copy data between data stores in the cloud. After you copy the data, you can use other activities in your pipeline to transform and analyze it.
 
 The Copy activity connects to your data sources and destinations, then moves data efficiently between them. Here's how the service handles the copy process:
 
@@ -22,7 +22,7 @@ The Copy activity connects to your data sources and destinations, then moves dat
 1. **Provides monitoring**: Tracks the copy operation and provides detailed logs and metrics for troubleshooting and optimization.
 
 > [!TIP]
-> If you only need to copy your data and don't need transformations, a **Copy job** might be a better option for you. Copy jobs provide a simplified experience for data movement scenarios that don't require creating a full data pipeline. See: [the Copy jobs overview](what-is-copy-job.md) or [use our decision table to compare Copy activity and Copy job](../fundamentals/decision-guide-pipeline-dataflow-spark.md#copy-activity-copy-job-dataflow-eventstream-and-spark-properties).
+> If you only need to copy your data and don't need transformations, a **Copy job** might be a better option for you. Copy jobs provide a simplified experience for data movement scenarios that don't require creating a full pipeline. See: [the Copy jobs overview](what-is-copy-job.md) or [use our decision table to compare Copy activity and Copy job](../fundamentals/decision-guide-pipeline-dataflow-spark.md#copy-activity-copy-job-dataflow-eventstream-and-spark-properties).
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ Follow these steps to set up your copy activity using copy assistant.
 
 ### Start with copy assistant
 
-1. Open an existing data pipeline or create a new data pipeline.
+1. Open an existing pipeline or create a new pipeline.
 1. Select **Copy data** on the canvas to open the **Copy Assistant** tool to get started. Or select **Use copy assistant** from the **Copy data** drop down list under the **Activities** tab on the ribbon.
 
    :::image type="content" source="media/copy-data-activity/use-copy-assistant.png" alt-text="Screenshot showing options for opening the copy assistant." lightbox="media/copy-data-activity/use-copy-assistant.png":::
@@ -84,11 +84,11 @@ Follow these steps to set up your copy activity using copy assistant.
 
    :::image type="content" source="media/copy-data-activity/review-and-create-copy-activity.png" alt-text="Screenshot showing the Review and create screen." lightbox="media/copy-data-activity/review-and-create-copy-activity.png":::
 
-Once finished, the copy activity will then be added to your data pipeline canvas. All settings, including advanced settings to this copy activity, are available under the tabs when it’s selected.
+Once finished, the copy activity will then be added to your pipeline canvas. All settings, including advanced settings to this copy activity, are available under the tabs when it’s selected.
 
-:::image type="content" source="media/copy-data-activity/pipeline-with-copy-activity.png" alt-text="Screenshot showing a copy activity on the data pipeline canvas." lightbox="media/copy-data-activity/pipeline-with-copy-activity.png":::
+:::image type="content" source="media/copy-data-activity/pipeline-with-copy-activity.png" alt-text="Screenshot showing a copy activity on the pipeline canvas." lightbox="media/copy-data-activity/pipeline-with-copy-activity.png":::
 
-Now you can either save your data pipeline with this single copy activity or continue to design your data pipeline.
+Now you can either save your pipeline with this single copy activity or continue to design your pipeline.
 
 ## Add a copy activity directly
 
@@ -96,7 +96,7 @@ Follow these steps to add a copy activity directly.
 
 ### Add a copy activity
 
-1. Open an existing data pipeline or create a new data pipeline.
+1. Open an existing pipeline or create a new pipeline.
 1. Add a copy activity either by selecting **Add pipeline activity** > **Copy activity** or by selecting **Copy data** > **Add to canvas** under the **Activities** tab.
 
    :::image type="content" source="media/copy-data-activity/add-copy-activity-to-pipeline-canvas.png" alt-text="Screenshot showing two ways to add a copy activity." lightbox="media/copy-data-activity/add-copy-activity-to-pipeline-canvas.png":::
@@ -119,7 +119,7 @@ To learn how to configure your general settings, see [General](activity-overview
 
       :::image type="content" source="media/copy-data-activity/configure-connection-details-new.png" alt-text="Screenshot showing New connection page." lightbox="media/copy-data-activity/configure-connection-details-new.png":::
 
-   1. Once your connection is created, it takes you back to the data pipeline page. Then select **Refresh** to get the connection that you created from the drop-down list. You can also choose an existing Azure SQL Database connection from the drop-down directly if you already created it before. The **Test connection** and **Edit** capabilities are available for each selected connection. Then select **Azure SQL Database** in **Connection** type.
+   1. Once your connection is created, it takes you back to the pipeline page. Then select **Refresh** to get the connection that you created from the drop-down list. You can also choose an existing Azure SQL Database connection from the drop-down directly if you already created it before. The **Test connection** and **Edit** capabilities are available for each selected connection. Then select **Azure SQL Database** in **Connection** type.
 
 1. Specify a table to be copied. Select **Preview data** to preview your source table. You can also use **Query** and **Stored procedure** to read data from your source.
 
@@ -129,13 +129,13 @@ To learn how to configure your general settings, see [General](activity-overview
 
 1. In **Connection** select an existing connection, or select **More** to create a new connection. It can be either your internal first class data store from your workspace, such as Lakehouse, or your external data stores. In this example, we use Lakehouse.
 
-1. Once your connection is created, it takes you back to the data pipeline page. Then select **Refresh** to get the connection that you created from the drop-down list. You can also choose an existing Lakehouse connection from the drop-down directly if you already created it before.
+1. Once your connection is created, it takes you back to the pipeline page. Then select **Refresh** to get the connection that you created from the drop-down list. You can also choose an existing Lakehouse connection from the drop-down directly if you already created it before.
 
 1. Specify a table or set up the file path to define the file or folder as the destination. Here select **Tables** and specify a table to write data.
 
 1. Expand **Advanced** for more advanced settings, like max rows per file, or table action. (Advanced settings vary by connector.)
 
-Now you can either save your data pipeline with this copy activity or continue to design your data pipeline.
+Now you can either save your pipeline with this copy activity or continue to design your pipeline.
 
 ### Configure your mappings under mapping tab
 
@@ -181,34 +181,34 @@ See the following table for the description of each setting.
 
 ### Configure parameters in a copy activity
 
-Parameters can be used to control the behavior of a pipeline and its activities. You can use **Add dynamic content** to specify parameters for your copy activity properties. Let's take specifying Lakehouse/Data Warehouse/KQL Database as an example to see how to use it.
+Parameters can be used to control the behavior of a pipeline and its activities. You can use **Add dynamic content** to specify parameters for your copy activity properties. Let's take specifying Lakehouse/Data Warehouse as an example to see how to use it.
 
-1. In your source or destination, after selecting **Workspace** as data store type and specifying **Lakehouse**/**Data Warehouse**/**KQL Database** as workspace data store type, select **Add dynamic content** in the drop-down list of **Lakehouse** or **Data Warehouse** or **KQL Database**.
+1. In your source or destination, select **Use dynamic content** in the drop-down list of **Connection**.
 1. In the pop-up **Add dynamic content** pane, under **Parameters** tab, select **+**.
 
     :::image type="content" source="./media/copy-data-activity/add-dynamic-content-page.png" alt-text="Screenshot showing the Add dynamic content page.":::
 
-1. Specify the name for your parameter and give it a default value if you want, or you can specify the value for the parameter after selecting **Run** in the pipeline.
+1. Specify the name for your parameter and give it a default value if you want, or you can specify the value for the parameter when it is triggered in the pipeline.
 
     :::image type="content" source="./media/copy-data-activity/new-parameter.png" alt-text="Screenshot shows creating a new parameter.":::
 
-    The parameter value should be Lakehouse/Data Warehouse/KQL Database object ID. To get your Lakehouse/Data Warehouse/KQL Database object ID, open your Lakehouse/Data Warehouse/KQL Database in your workspace, and the ID is after `/lakehouses/` or `/datawarehouses/` or `/databases/` in your URL.
+    The parameter value should be Lakehouse/Data Warehouse connection ID. To get it, open your **Manage Connections and Gateways**, choose the Lakehouse/Data Warehouse connection that you want to use, and open **Settings** to get your connection ID. If you want to create a new connection, you can select **+ New** on this page or go to get data page through **Connection** drop-down list.
 
-    - **Lakehouse object ID**:
+1. Select **Save** to go back to the **Add dynamic content** pane. Then select your parameter so it appears in the expression box. Then select **OK**. You'll go back to the pipeline page and can see the parameter expression is specified after **Connection**.
+
+    :::image type="content" source="./media/copy-data-activity/select-parameter.png" alt-text="Screenshot showing selecting parameter.":::
+
+1. Specify the ID of your Lakehouse or Data Warehouse. To find the ID, go to your Lakehouse or Data Warehouse in your workspace. The ID appears in the URL after `/lakehouses/` or `/datawarehouses/`.
+
+    - **Lakehouse ID**:
 
         :::image type="content" source="./media/copy-data-activity/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
 
-    - **Data Warehouse object ID**:
+    - **Warehouse ID**:
 
         :::image type="content" source="./media/copy-data-activity/data-warehouse-object-id.png" alt-text="Screenshot showing the Data Warehouse object ID.":::
 
-    - **KQL Database object ID**:
-
-        :::image type="content" source="./media/copy-data-activity/kql-database-object-id.png" alt-text="Screenshot showing the KQL Database object ID.":::
-
-1. Select **Save** to go back to the **Add dynamic content** pane. Then select your parameter so it appears in the expression box. Then select **OK**. You'll go back to the pipeline page and can see the parameter expression is specified after **Lakehouse object ID**/**Data Warehouse object ID**/**KQL Database object ID**.
-
-    :::image type="content" source="./media/copy-data-activity/select-parameter.png" alt-text="Screenshot showing selecting parameter.":::
+1. Specify the [SQL connection string for your Data Warehouse](../data-warehouse/how-to-connect.md#find-the-warehouse-connection-string).
 
 ## Related content
 

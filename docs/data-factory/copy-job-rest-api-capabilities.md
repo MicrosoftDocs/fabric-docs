@@ -106,7 +106,7 @@ Create a Copy job in a specified workspace.
   "description": "My Copy job description.",
   "type": "CopyJob", 
   "workspaceId": "<workspaceId>", 
-  "id": "<artifactId>" 
+  "id": "<itemId>" 
 }
 ```
 
@@ -158,7 +158,7 @@ Create a Copy job with a base64 definition in a specified workspace.
   "description": "A Copy job description.",
   "type": "CopyJob", 
   "workspaceId": "<workspaceId>", 
-  "id": "<artifactId>" 
+  "id": "<itemId>" 
 }
 ```
 
@@ -182,7 +182,7 @@ Returns properties of specified Copy job.
 
 ```
 {
-    "id": "<Your artifactId>",
+    "id": "<Your itemId>",
     "displayName": "CopyJob 1",
     "description": "A Copy job description.",
     "type": "CopyJob",
@@ -249,14 +249,14 @@ List all Copy job from the specified workspace.
 {
   "value": [
     {
-      "id": "<Your artifactId>",
+      "id": "<Your itemId>",
       "displayName": "CopyJob Name 1",
       "description": "A Copy job description.",
       "type": "CopyJob",
       "workspaceId": "<Your workspaceId>"
     },
     {
-      "id": "<Your artifactId>",
+      "id": "<Your itemId>",
       "displayName": "CopyJob Name 2",
       "description": "A Copy job description.",
       "type": "CopyJob",
@@ -300,7 +300,7 @@ Updates the properties of the Copy job.
   "description": "CopyJob's New description",
   "type": "CopyJob",
   "workspaceId": "<Your workspaceId>",
-  "id": "<Your artifactId>"
+  "id": "<Your itemId>"
 }
 ```
 

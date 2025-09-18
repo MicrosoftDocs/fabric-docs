@@ -42,7 +42,6 @@ The scenarios in this article are covered in an episode of Data Exposed. Watch t
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
-- Make sure that you [Enable SQL database in Fabric tenant settings](enable.md).
 - Make sure that you [Enable Git integration tenant settings](../../admin/git-integration-admin-settings.md).
 - Create a new workspace or use an existing Fabric workspace.
 - Create or use an existing SQL database in Fabric. If you don't have one already, [create a new SQL database in Fabric](create.md).

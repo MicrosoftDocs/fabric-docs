@@ -14,13 +14,13 @@ ms.custom:
 
 This Dynamics CRM connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Data pipeline
+## Supported capabilities
 
-The Dynamics CRM connector supports the following capabilities in Data pipeline:
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Pipeline**<br>- [Copy activity](connector-dynamics-crm-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Service principal<br> Workspace identity |
+| **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Merge|None<br> On-premises<br> Virtual network |Service principal<br> Workspace identity |
 
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | Service principal |
-| **Lookup activity** | None <br> On-premises | Service principal|
+## Related content
 
-To learn more about the copy activity configuration for Dynamics CRM in Data pipeline, go to [Configure in a data pipeline copy activity](connector-dynamics-crm-copy-activity.md).
+To learn more about the copy activity configuration for Dynamics CRM in a pipeline, go to [Configure in a pipeline copy activity](connector-dynamics-crm-copy-activity.md).

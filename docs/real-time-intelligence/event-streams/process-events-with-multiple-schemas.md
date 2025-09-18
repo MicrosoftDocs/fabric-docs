@@ -6,7 +6,7 @@ ms.author: xujiang1
 author: wenyang
 ms.topic: how-to
 ms.custom:
-ms.date: 06/25/2025
+ms.date: 09/08/2025
 ms.search.form: Enhancing events processing with multiple-schema inferencing
 ---
 
@@ -34,7 +34,7 @@ This feature is useful for the following scenarios:
 
 To use this feature, you need to enable multiple-schema inferencing in your eventstream. You can enable it in both new and existing eventstream. 
 1. Open your eventstream and go to **Settings**, and then select **Schema**.
-1. Turn on **Multiple schema support** and select **Apply**.
+1. Turn on **Multiple schema inferencing** and select **Apply**.
 
 :::image type="content" source="./media/process-events-with-multiple-schemas/enable-multiple-schema.png" alt-text="Screenshot showing how to enable multiple schema feature." lightbox="./media/process-events-with-multiple-schemas/enable-multiple-schema.png":::
 
@@ -144,10 +144,6 @@ A: If the schema inferred from the source isn't used in any operator or destinat
 **Q: Why do I see an extra schema after enabling this feature on an existing eventstream?**  
 
 A: When this feature is enabled in an existing eventstream and you switch to Edit mode, an extra schema containing mixed fields appear in certain cases. This schema originates from the existing eventstream, which used for operator configurations in existing eventstream. By default, it's mapped to all sources because Eventstream can't determine its origin. This safeguards the continuity of your current setup without errors.
-
-## Limitations
-
-- Currently, when an eventstream has multiple-schema inferencing enabled, CI/CD and REST APIs for this eventstream may not function as expected. 
 
 ## Related content
 

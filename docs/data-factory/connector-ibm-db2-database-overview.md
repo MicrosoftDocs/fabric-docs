@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 12/06/2024
+ms.date: 08/12/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -14,17 +14,16 @@ ms.custom:
 
 The IBM Db2 database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|On-premises |Basic<br> Windows |
+| **Pipeline**<br>- [Copy activity](connector-ibm-db2-database-copy-activity.md) (source/-) <br>- Lookup activity    |On-premises |Basic |
+| **Copy job** (source/-) <br>- Full load | On-premises |Basic |
 
-For information on how to connect to an IBM Db2 database in Dataflow Gen2, go to [Set up your IBM Db2 database connection](connector-ibm-db2-database.md).
+## Related content
 
+To learn about how to connect to IBM Db2 database, go to [Set up your IBM Db2 database connection](connector-ibm-db2-database.md).
 
-## Support in data pipelines
-
-The IBM Db2 database connector supports the following capabilities in data pipelines:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/-)** | On-premises | Basic |
-| **Lookup activity** | On-premises | Basic |
+To learn about the copy activity configuration for IBM Db2 database in pipelines, go to [Configure IBM Db2 database in a copy activity](connector-ibm-db2-database-copy-activity.md).

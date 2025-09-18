@@ -1,8 +1,8 @@
 ---
 title: Include file for GitHub prereqs
 description: Include file for the GitHub prereqs. This file is referenced in this repo and also in an article in the Power BI repo.
-author: paulinbar
-ms.author: painbar
+author: billmath
+ms.author: billmath
 ms.topic: include
 ms.custom: 
 ms.date: 12/20/2023
@@ -29,7 +29,8 @@ Git integration is currently supported for Azure DevOps and GitHub. To use Git i
 
 ### [Azure DevOps](#tab/azure-devops)
 
-- An active Azure account registered to the same user that is using the Fabric workspace. <a href="https://azure.microsoft.com/products/devops/" target="_blank">Create a free account</a>.
+- An Active **Azure DevOps account** registered to the same user and tenant that is using the Fabric workspace (cross-tenant support is currently in preview). <a href="https://azure.microsoft.com/products/devops/" target="_blank">Create a free account</a>.
+- Access to an existing repository.
 
 ### [GitHub](#tab/github)
 

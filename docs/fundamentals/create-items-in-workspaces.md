@@ -3,7 +3,7 @@ title: Create items in workspaces
 description: "Learn how to create an item inside a workspace to build your data solution."
 author: yicw16322
 ms.author: yicw
-ms.reviewer: painbar
+ms.reviewer: sngun
 ms.service: fabric
 ms.topic: how-to
 ms.date: 02/10/2025
@@ -65,6 +65,12 @@ You can also import files from outside Fabric to create Fabric items in a worksp
 4. Check if new items are created in workspace and the import process is completed successfully.
 
     :::image type="content" source="media/create-items-in-workspaces/create-notebook-by-importing.png" alt-text="Screenshots showing a Notebook is successfully created by importing.":::
+
+## Rename items
+1. In the workspace list, go to the item and click on 'More options'.
+2. Select 'Settings' and go to the 'About' tab.
+3. Change the name of the item. When renaming items, you can reuse the name of a previously deleted item of the same type within 30 seconds of deletion. You cannot reuse the name of an existing item of the same type in the workspace.
+
 
 ## Related content
 

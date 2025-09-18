@@ -27,7 +27,6 @@ For SQL database in Fabric specifically, the movement of changes between workspa
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
-- Make sure that you [Enable SQL database in Fabric tenant settings](enable.md).
 - Create a new workspace or use an existing Fabric workspace.
 - Create or use an existing SQL database in Fabric. If you don't have one already, [create a new SQL database in Fabric](create.md).
 
