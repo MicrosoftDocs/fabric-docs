@@ -195,19 +195,7 @@ In addition to Fabric item permissions, you must also grant permissions to users
 
 ### Permission requirements
 
-Consider the following scenarios and permission requirements.
-
-|Scenario  |Required permissions  |Comments  |
-|---------|---------|---------|
-|**Users can view reports**     |- *Read* permission on the semantic model<br>- If using Direct Lake on SQL endpoints with SSO, grant *Read* and *ReadData* on the lakehouse or warehouse<br>- If using Direct Lake on OneLake with SSO, grant *Read* and *ReadAll* on the Delta tables|Applies to interactive scenarios. Reports can be in a different workspace than the semantic model.For more information, see [Strategy for read-only consumers](/power-bi/guidance/powerbi-implementation-planning-security-report-consumer-planning). | 
-|**Users can create reports** | - *Build* permission on the semantic model<br>- Same source-level permissions as above depending on Direct Lake mode and auth method | Required for content creators. For more information, see [Strategy for content creators](/power-bi/guidance/powerbi-implementation-planning-security-content-creator-planning).   |
-| **Users can view reports but are denied querying the lakehouse, SQL endpoint, or Delta tables** | - *Read* permission on the report<br>- *Read* permission on the semantic model<br>- **No source-level permissions** | Only valid when using **fixed identity** via SCC with **SSO disabled**. |
-| **Manage the semantic model, including refresh settings** | - Must be the **semantic model owner** | Ownership is required to configure refresh and other model settings. For more information, see [Semantic model ownership](/power-bi/guidance/powerbi-implementation-planning-security-content-creator-planning).        |
-| **Use Direct Lake with Power BI Embedded** | - *Read* or *Build* permission depending on scenario<br>- **Fixed identity SCC** required<br>- **V2 embed token** required | Applies to embedded scenarios. |
-| **Create composite models using Direct Lake + Import/DirectQuery** | - *Build* permission on the semantic model<br>- Source-level permissions for all sources involved | Only supported via XMLA for Direct Lake on OneLake. |
-| **Use Direct Lake with SQL-based RLS** | - *Read* and *ReadData* on SQL endpoint<br>- Validate fallback behavior | Queries may fall back to DirectQuery if RLS is enforced. |
-| **Use Direct Lake with semantic model RLS or OLS** | - *Read* permission on the semantic model<br>- RLS/OLS defined in the semantic model<br>- Recommended: use **fixed identity** cloud connection | Applies to both Direct Lake modes. |
-| **Use Direct Lake with shortcuts in lakehouse** | - *Read* and *ReadAll* on shortcut target tables<br>- *Read* on lakehouse containing the shortcut | Only supported for Direct Lake on SQL endpoints. |
+For scenarios and permission requirements, see [Direct Lake users](direct-lake-security-integration.md#direct-lake-users).
 
 > [!IMPORTANT]
 > You should always thoroughly test permissions before releasing your semantic model and reports into production.
