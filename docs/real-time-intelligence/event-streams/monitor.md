@@ -99,7 +99,7 @@ The following metrics are available on the **Data insights** tab for streaming c
 | Metric                        | Unit  | Description                                                                      |
 |-------------------------------|-------|----------------------------------------------------------------------------------|
 | **Source Outgoing Events**        | Count | Number of records sent from the transformations (if any) and written to an eventstream for the task that belongs to the named source connector in the worker (since the task was last restarted). |
-| **Source Incoming Events**        | Count | Before transformations are applied, this is the number of records produced or polled by the task that belongs to the named source connector in the worker (since the task was last restarted). |
+| **Source Incoming Events**        | Count | Number of records produced or polled by the task that belongs to the named source connector in the worker (since the task was last restarted), before transformations are applied. |
 | **Connector Errors Logged**       | Count | Number of errors that were logged for these connector tasks.                |
 | **Connector Processing Errors**   | Count | Number of record processing errors in these connector tasks.                |
 | **Connector Processing Failures** | Count | Number of record processing failures in these connector tasks, including retry failures. |
