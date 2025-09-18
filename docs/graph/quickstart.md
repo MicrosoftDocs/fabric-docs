@@ -2,7 +2,7 @@
 title: Get Started with Graph in Microsoft Fabric
 description: Learn how to get started with Graph in Microsoft Fabric, including key concepts, setup instructions, and first steps.
 ms.topic: quickstart
-ms.date: 09/15/2025
+ms.date: 10/01/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: eur
@@ -79,7 +79,7 @@ In this section, we create nodes for each entity in the Adventure Works data mod
 | Node label | Mapping table | Mapping column |
 |------------------|--------------------|-----------------------|
 | Customer | customers | CustomerID_K |
-| Order | orders | SalesOrderID_K |
+| Order | orders | SalesOrderDetailID_K |
 | Employee | employees | EmployeeID_K |
 | Product | products | ProductID_K |
 | ProductCategory | productCategories | CategoryID_K |
