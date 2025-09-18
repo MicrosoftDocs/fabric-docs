@@ -21,7 +21,7 @@ Eventstreams can route event data to various destinations, including Microsoft F
 
 ## Get data from an eventstream and add it to a KQL database
 
-To get data from an eventstream into a KQL table inside a KQL database, select **Get data** on the ribbon of your KQL database. Two options are available: **Existing Eventstream** and **New Eventstream**.
+To get data from an eventstream and add it to a KQL table inside a KQL database, select **Get data** on the ribbon of your KQL database. Two options are available: **Existing Eventstream** and **New Eventstream**.
 
 :::image type="content" source="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database.png" alt-text="Screenshot that shows options for getting data from an eventstream." lightbox="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database.png" :::
 

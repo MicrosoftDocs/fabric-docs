@@ -23,11 +23,11 @@ In Microsoft Fabric, a data preview gives you a snapshot of your event data in y
 
 To preview the source data of an event hub or sample data in the eventstream:
 
-1. In the main editor canvas, select one of the source nodes in your eventstream.
+1. On the main editor canvas, select one of the source nodes in your eventstream.
 
-1. In the lower pane, select the **Data preview** tab.
+1. On the lower pane, select the **Data preview** tab.
 
-   Source data appears on the tab if data is inside the source. For example, the following image shows a preview of sample Yellow Taxi data.
+   Source data appears on the tab if data is inside the source. For example, the following image shows a preview of sample **Yellow Taxi** data.
 
    :::image type="content" source="./media/preview-data/preview-data-source.png" alt-text="Screenshot that shows a sample Yellow Taxi data preview for a source node." lightbox="./media/preview-data/preview-data-source.png" :::
 
@@ -35,11 +35,11 @@ To preview the source data of an event hub or sample data in the eventstream:
 
 To preview the destination data of an eventhouse, lakehouse, derived stream, or Fabric activator in the eventstream:
 
-1. In the main editor canvas, select one of the destination nodes in your eventstream.
+1. On the main editor canvas, select one of the destination nodes in your eventstream.
 
-1. In the lower pane, select the **Data preview** tab.
+1. On the lower pane, select the **Data preview** tab.
 
-   Destination data appears on the tab if data is within the destination. For example, the following image shows the preview of an eventhouse.
+   Destination data appears on the tab if data is inside the destination. For example, the following image shows the preview of an eventhouse.
 
    :::image type="content" source="./media/preview-data/preview-data-destination.png" alt-text="Screenshot that shows the data preview of an eventhouse destination." lightbox="./media/preview-data/preview-data-destination.png" :::
 
@@ -47,11 +47,11 @@ To preview the destination data of an eventhouse, lakehouse, derived stream, or 
 
 You can preview the data in your eventstream and see how different data sources are routed within your eventstream:
 
-1. In the main editor canvas, select the eventstream node.
+1. On the main editor canvas, select the eventstream node.
 
-1. In the lower pane, select the **Data preview** tab.
+1. On the lower pane, select the **Data preview** tab.
 
-   Eventstream data appears on the tab if data is within the eventstream.
+   Eventstream data appears on the tab if data is inside the eventstream.
 
 1. To preview data that has a different format, select the correct format on the **Data format** dropdown menu.
 
@@ -63,4 +63,4 @@ You can preview the data in your eventstream and see how different data sources 
 
 ## Related content
 
-- [Monitor status and performance of an eventstream](monitor.md)
+- [Monitor the status and performance of an eventstream](monitor.md)

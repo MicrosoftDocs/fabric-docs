@@ -10,7 +10,7 @@ ms.search.form: Monitor eventstreams capacity consumption
 
 # Capacity consumption for Microsoft Fabric eventstreams
 
-This article contains information on how Microsoft Fabric eventstreams usage is billed and reported.
+This article contains information on how usage of Microsoft Fabric eventstreams is billed and reported.
 
 ## Operation types
 
@@ -63,10 +63,10 @@ You can pause and resume your capacity in Microsoft Fabric. When your capacity i
 
 The following table describes what happens to an eventstream when you pause or resume a capacity.
 
-| Eventstream status | Capacity gets paused | Capacity gets resumed |
+| Eventstream status | Capacity is paused | Capacity is resumed |
 | --- | -------------- | -------------- |
 | Active | All eventstream sources and destinations are paused. In 1 to 2 minutes, ingested data is paused. <p>If your destination nodes are in a different capacity that isn't paused, those destination nodes are also paused.</p> | All eventstream sources and destinations start data ingestion after you activate them, followed by the data flowing into the rest of the eventstream. |
-| Inactive | No effect | No effect. The eventstream has to be resumed or activated manually. |
+| Inactive | No effect. | No effect. The eventstream has to be resumed or activated manually. |
 
 For more information, see the following articles:
 

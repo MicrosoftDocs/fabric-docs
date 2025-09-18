@@ -14,7 +14,7 @@ ms.search.form: Data Preview and Insights
 
 You can use the Microsoft Fabric eventstreams feature to monitor streaming event data, ingestion status, and ingestion performance. This article explains how to use metrics to monitor the eventstream status and check logs, errors, and data insights.
 
-An eventstream has two types of monitoring experiences: **Data insights** and **Runtime logs**. You see one or both views, depending on the source or destination that you select.
+An eventstream has two types of monitoring experiences: **Data insights** and **Runtime logs**. One or both views are available, depending on the source or destination that you select.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ An eventstream has two types of monitoring experiences: **Data insights** and **
 
 The **Data insights** tab appears on the lower pane of the main editor. The tab provides metrics that you can use to monitor the status and performance of the eventstream, sources, and destinations. Different sources and destinations have different metrics.
 
-When you select a node in the main editor canvas, the metrics for that specific node appear on the **Data insights** tab.
+When you select a node on the main editor canvas, the metrics for that specific node appear on the **Data insights** tab.
 
 ### Data insights for an eventstream node
 
@@ -65,9 +65,9 @@ The following metrics are available on the **Data insights** tab for Azure Event
 | **Deserialization errors** | Count | Number of input events that couldn't be deserialized inside the eventstream engine. |
 | **Watermark delay** | Second | Maximum watermark delay across all partitions of all outputs for this source or destination. It's computed as the wall clock time minus the largest watermark. |
 
-To view the data insights for an Azure event hub, Azure IoT hub, lakehouse, eventhouse (**Event processing before ingestion** mode), derived stream, and Fabric activator:
+To view the data insights for an Azure event hub, Azure IoT hub, lakehouse, eventhouse (**Event processing before ingestion** mode), derived stream, or Fabric activator:
 
-1. In the main editor canvas, select the Azure Event Hubs, Azure IoT Hub, lakehouse, eventhouse, derived stream, or Fabric Activator node.
+1. On the main editor canvas, select the Azure Event Hubs, Azure IoT Hub, lakehouse, eventhouse, derived stream, or Fabric Activator node.
 
 1. On the lower pane, select the **Data insights** tab.
 
@@ -83,8 +83,8 @@ Streaming connector source nodes include the following sources:
 
 - Azure SQL Database Change Data Capture (CDC)
 - Azure Service Bus
-- PostgreSQL database CDC
-- MySQL database CDC
+- Azure Database for PostgreSQL CDC
+- Azure Database for MySQL CDC
 - Azure Cosmos DB CDC
 - SQL Server on virtual machine (VM) database (DB) CDC
 - Azure SQL Managed Instance CDC
@@ -125,7 +125,7 @@ Use the **Runtime logs** tab to check the detailed logs that occur in the events
 
 To view the runtime logs for an Azure event hub, Azure IoT hub, streaming connector source, lakehouse, eventhouse (**Event processing before ingestion** mode), or Fabric activator:
 
-1. In the main editor canvas, select the node.
+1. On the main editor canvas, select the node.
 
 1. On the lower pane, select the **Runtime logs** tab.
 

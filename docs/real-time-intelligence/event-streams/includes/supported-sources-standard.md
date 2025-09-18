@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-| Sources          | Description |
+| Source          | Description |
 | --------------- | ---------- |
 | [Azure Event Hubs](../add-source-azure-event-hubs.md) | If you have an Azure event hub, you can ingest event hub data into Microsoft Fabric by using an eventstream.  |
 | [Azure IoT Hub](../add-source-azure-iot-hub.md) | If you have an Azure IoT hub, you can ingest IoT data into Fabric by using an eventstream.  |

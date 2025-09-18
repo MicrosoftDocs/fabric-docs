@@ -58,7 +58,7 @@ With [Eventstream](../real-time-intelligence/event-streams/overview.md), you can
 
 :::image type="content" source="media/load-data-lakehouse/get-data-eventstream.png" alt-text="Screenshot of getting data into a lakehouse from Eventstream.":::
 
-To see how to add lakehouse as a destination for Eventstream, see [Get data from Eventstream in a lakehouse](../real-time-intelligence/event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-eventstream-in-a-lakehouse).
+To see how to add lakehouse as a destination for Eventstream, see [Get data from Eventstream in a lakehouse](../real-time-intelligence/event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-an-eventstream-and-add-it-to-a-lakehouse).
 
 For optimal streaming performance, you can stream data from Eventstream into an Eventhouse and then [enable OneLake availability](#get-data-from-eventhouse).
 
