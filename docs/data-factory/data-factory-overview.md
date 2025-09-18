@@ -62,8 +62,8 @@ Data Factory connects to your data, moves it, transforms it, and orchestrates yo
 
 **Move data**: Data Factory provides several methods to move data from source to destination, or provide easy access to existing data, depending on your needs.
 
-- [Copy activity](copy-data-activity.md) - Move data from one place to another using Data Factory pipelines at any scale. It supports a wide range of data sources and destinations, and lets you copy data in parallel for better performance.
-- [Copy job](what-is-copy-job.md) - A way to copy data from one place to another without creating a pipeline.
+- [Copy job](what-is-copy-job.md) - Preferred solution for simplified data movement with native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication. It also offers the flexibility to handle a wide range of scenarios from any sources to any destinations — all through an intuitive, easy-to-use experience.
+- [Copy activity](copy-data-activity.md) - Moves data from one place to another at any scale, with extensive customization, support for a wide range of sources and destinations, and manual control of parallel copying for improved performance.
 - [Mirroring](/fabric/database/mirrored-database/overview) - Create a near real-time replica of your operational database within OneLake in Microsoft Fabric to make your analytics and reporting easier.
 
 See our [data movement decision guide](decision-guide-data-movement.md) to help you choose the right data movement method for your scenario.
