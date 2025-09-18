@@ -21,9 +21,9 @@ To migrate your ADF pipelines to Fabric using PowerShell, you:
 
 1. [Prepare your environment for Fabric pipeline upgrades.](#prepare-your-environment-for-fabric-pipeline-upgrades)
 1. [Connect PowerShell to your Azure and Fabric environments.](#connect-powershell-to-your-azure-and-fabric-environments)
-1. [Upgrade your factory pipelines](#upgrade-your-factory-resources)
-1. [Create a resolution file and map linked services to Fabric connections](#map-your-adf-linked-services-to-fabric-connections).
-1. Validate your results.
+1. [Upgrade your factory pipelines.](#upgrade-your-factory-resources)
+1. [Create a resolution file and map linked services to Fabric connections.](#map-your-adf-linked-services-to-fabric-connections)
+1. [Validate your results.](#validate-your-results-in-mircosoft-fabric)
 
 ## Prerequisites
 
@@ -99,7 +99,7 @@ The following PowerShell will import your data factory resources. Update the Imp
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName <your Pipeline Name> -AdfToken $adfSecureToken| ConvertTo-FabricResources | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
 ```
 
-> ![TIP]
+> [!TIP]
 > The region parameter is optional. If your Fabric workspace is in the same region as your ADF, you can either use that region or skip the -Region parameter.
 
 ### Import all factory resources
@@ -137,7 +137,7 @@ Now that you have your resolution file, you can run this PowerShell command to p
 Import-AdfFactory -SubscriptionId <your subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Factory Name> -PipelineName <your Pipeline Name> -AdfToken $adfSecureToken | ConvertTo-FabricResources | Import-FabricResolutions -ResolutionsFilename "<path to your resolutions file>" | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
 ```
 
->![TIP]
+>[!TIP]
 > If the upgrade fails, PowerShell will display the reason in the details section. For some examples and troubleshooting, see the [Tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
 ## Validate the results in Microsoft Fabric
