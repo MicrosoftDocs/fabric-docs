@@ -36,7 +36,7 @@ This pattern reads as: starting at the Person node for Alice, follow FRIENDS_WIT
 
 ## Modeling and schema
 
-Graph data models are schema-optional: you can work with a fixed schema when you need strong governance, or evolve the model as new node types, relationships, or properties appear. In Microsoft Fabric, data engineers can define node and edge schemas and materialize graph views over structured data in OneLake. This approach reduces the need for data duplication and lets teams unify data from multiple sources without heavy upfront redesign.
+Graph data models are schema-optional: you can work with a fixed schema when you need strong governance, or evolve the model as new node types, relationships, or properties appear. This approach reduces the need for data duplication and lets teams unify data from multiple sources without heavy upfront redesign.
 
 ## Common uses for graph databases
 
