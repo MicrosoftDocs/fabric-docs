@@ -25,7 +25,7 @@ This article assumes you're familiar with these concepts:
 
 ## Connection configuration
 
-Configure data connections for a Direct Lake model the same way as other semantic model types. See [Connect to cloud data sources in the Power BI service](../power-bi/connect-data/service-connect-cloud-data-sources) for details.
+Configure data connections for a Direct Lake model the same way as other semantic model types. See [Connect to cloud data sources in the Power BI service](/power-bi/connect-data/service-connect-cloud-data-sources) for details.
 
 Because Direct Lake connects only to Fabric data sources, the default SSO (Microsoft Entra ID) configuration usually works, so you don't need to bind semantic models to explicit data connections. This approach reduces configuration complexity and lowers management overhead.
 
