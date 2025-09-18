@@ -95,7 +95,7 @@ You can use source control, continuous integration, continuous deployment, and a
 
 Additionally, with Variable library support, you can parameterize connections in Copy Job. This powerful capability streamlines CI/CD by externalizing connection values, enabling you to deploy the same Copy Job across multiple environments while the Variable library injects the correct connection for each stage. 
 
-See more details in [CI/CD for Copy job](/fabric/data-factory/data-factory/cicd-copy-job).
+See more details in [CI/CD for Copy job](/fabric/data-factory/cicd-copy-job).
 
 ### Observability
 
@@ -109,7 +109,7 @@ Copy job has the same [regional availability as Fabric](../admin/region-availabi
 
 You can get the details in [**pricing Copy job**](pricing-copy-job.md).
 
-## Support matrix
+## Supported-connectors
 
 With Copy job, you can move your data between cloud data stores or from on-premises sources that are behind a firewall or inside a virtual network using a gateway. Copy job supports the following data stores as sources or destinations:
 
