@@ -55,3 +55,7 @@ Representing your data as a graph and storing it in a separate, standalone graph
 - **Tooling & skills**: Vendor-specific graph systems can require specialized languages and separate analytics frameworks. Graph in Microsoft Fabric provides unified modeling, standards-based querying (GQL), built-in graph analytics algorithms, BI and AI integration, and low/no-code exploratory tools so a broader set of users can work with connected data.
 - **Governance & security**: Separate graph deployments need independent governance and security setups. Graph in Microsoft Fabric uses OneLake governance, lineage, and workspace role-based access control (RBAC) so compliance, auditing, and permissions remain consistent with the rest of your Fabric environment.
 
+## Related content
+
+- [Compare graph and relational databases]([graph-relational-databases.md]
+- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
