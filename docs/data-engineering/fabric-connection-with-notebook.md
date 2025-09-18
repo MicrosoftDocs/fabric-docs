@@ -17,7 +17,7 @@ ms.search.form: Fabric Connection
 
 The integration with Fabric Connection enables consistent Get Data experiences from external data sources directly from notebooks with Fabric Connection. It allows users to reuse existing connections and credentials, simplifying the process of working with diverse data sources with smooth coding experience inside notebooks.
 
-For a fabric connection being able to be used in notebooks, user need to explicitly enable the connection to be used in notebooks from the Fabric data source management page. There is a specific toggle to enable the connection to be used in notebooks, named **"Allow this connection to be used in Code-First Artifact"**. This toggle can only be set during the creation of the connection, and cannot be modified later.
+For a fabric connection being able to be used in notebooks, user need to explicitly enable the connection to be used in notebooks from the Fabric data source management page. There's a specific toggle to enable the connection to be used in notebooks, named **"Allow this connection to be used in Code-First Artifact"**. This toggle can only be set during the creation of the connection, and can't be modified later.
 
 Following are the supported authentication methods for Fabric Connection in notebooks:
 
@@ -32,9 +32,9 @@ Following are the supported authentication methods for Fabric Connection in note
 - **Workspace Identity Authentication**: Support for Fabric Workspace identity authentication.
 
 > [!IMPORTANT]
-> OAuth2.0 is not supported for Fabric Connection in notebooks. If you choose SPN or workspace identity authentication, make sure to grant the necessary permissions to the SPN or Fabric workspace identity to access the data source.
+> OAuth2.0 isn't supported for Fabric Connection in notebooks. If you choose SPN or workspace identity authentication, make sure to grant the necessary permissions to the SPN or Fabric workspace identity to access the data source.
 
-There is a tenant level setting which allows tenant admin to control whether this feature is enabled for the entire tenant. If the setting is disabled, users will not be able to use Fabric Connection in notebooks.By default, this feature is enabled.
+There's a tenant level setting that allows tenant admin to control whether this feature is enabled for the entire tenant. If the setting is disabled, users can't use Fabric Connection in notebooks. By default, this feature is enabled.
 
    :::image type="content" source="media\fabric-connection-notebook\tenant-setting-connection.png" alt-text="Screenshot of tenant setting for Fabric Connection in notebooks.":::
 
@@ -48,7 +48,7 @@ Inside notebook, user can create a Fabric Connection by clicking the **"Add conn
 
 :::image type="content" source="media\fabric-connection-notebook\add-connection-notebook.png" alt-text="Screenshot of adding connection within notebook.":::
 
-This will open the **"Add connection"** pane, where user can select the data source type, provide connection details, and choose the authentication method.
+This opens the **"Add connection"** pane, where user can select the data source type, provide connection details, and choose the authentication method.
 
 For the connection created within notebook, the state of **"Allow this connection to be used in Code-First Artifact"** toggle is enabled by default, after the connection is created, it would be automatically bound to the current notebook and appears in the **"Current Notebook"** node in the **"Connections"** pane.
 
@@ -56,9 +56,9 @@ For the connection created within notebook, the state of **"Allow this connectio
 
 ### Create Fabric Connection from Data Source Management page
 
-User can create a Fabric Connection from the existing Data Source Management page. To do this, navigate to the **"Data Source Management"** page, and click the **"New"** button. please check more details about how to create Fabric Connection from Data Source Management page in[Data source management](../data-factory/data-source-management.md) article.
+User can create a Fabric Connection from the existing Data Source Management page. To do this, navigate to the **"Data Source Management"** page, and click the **"New"** button. You can find more details about how to create Fabric Connection from Data Source Management page in[Data source management](../data-factory/data-source-management.md) article.
 
-When creating the connection, make sure to enable the **"Allow this connection to be used in Code-First Artifact"** toggle, so that the connection can be used in notebooks.After the connection is created, it will appear in the **"Global Permissions"** node in the **"Connections"** pane inside notebook.
+When creating the connection, make sure to enable the **"Allow this connection to be used in Code-First Artifact"** toggle, so that the connection can be used in notebooks. After the connection is created, it appears in the **"Global Permissions"** node in the **"Connections"** pane inside notebook.
 
 :::image type="content" source="media\fabric-connection-notebook\global-permission-connection.png" alt-text="Screenshot of global permission connection.":::
 
@@ -70,13 +70,13 @@ After the connection is bound to the current notebook, it will appear in the **"
 
 ## How to use Fabric Connection in notebook code
 
-Once the Fabric Connection is created and bound to the current notebook, user can generate code snippets to access the data source directly from the notebook.To do this, right-click on the connection in the **"Current Notebook"** node, and select **"Add as code cell"** from the context menu.
+Once the Fabric Connection is created and bound to the current notebook, user can generate code snippets to access the data source directly from the notebook. To do this, right-click on the connection in the **"Current Notebook"** node, and select **"Add as code cell"** from the context menu.
 
 :::image type="content" source="media\fabric-connection-notebook\add-as-code-cell.png" alt-text="Screenshot of adding connection as code cell.":::
 
-In the code, it firstly get the credential detail from the connection, then use the credential information to create a connection to the data source, and finally execute a query to fetch data from the data source. The generated code snippet can be modified as needed to fit the specific query requirements.If the required packages are not already installed in the default runtime, a seperate code cell with pip install command will be generated to install the required packages.
+In the code, it firstly gets the credential detail from the connection, then use the credential information to create a connection to the data source, and finally execute a query to fetch data from the data source. The generated code snippet can be modified as needed to fit the specific query requirements. If the required packages aren't already installed in the default runtime, a code cell with pip install command is generated to install the required packages.
 
-the following is an example of code snippet generated for an Azure SQL Cosmos DB connection:
+The following is an example of code snippet generated for an Azure SQL Cosmos DB connection:
 
 ```python
 from azure.cosmos import CosmosClient
@@ -109,25 +109,25 @@ Make sure to execute the code cell with pip install command first to install the
 
 ### Connection Permission requirements
 
-During the execution of the notebook, there will be a permission check to ensure the current user who trigger the execution has the necessary permissions to access the connection. If the user does not have permission, the execution will fail with an error message indicating the lack of permission.
+During the execution of the notebook, there is a permission check to ensure the current user who triggers the execution has the necessary permissions to access the connection. If the user doesn't have permission, the execution fails with an error message indicating the lack of permission.
 
-If the notebook is shared with other users, those users will also need to have the necessary permissions to access the connection in order to successfully execute the code cell. Please find more details about managing connection permissions in the [Data source management](../data-factory/data-source-management.md) article.
+If the notebook is shared with other users, those users also need to have the necessary permissions to access the connection in order to successfully execute the code cell. Find more details about managing connection permissions in the [Data source management](../data-factory/data-source-management.md) article.
 
 > [!IMPORTANT]
-> All the credential details will be redacted with some following updates.
+> All the credential details are redacted with some following updates.
 
 ## Connect or disconnect Fabric Connection from notebook
 
 To connect or disconnect a Fabric Connection from the current notebook, right-click on the connection in the **"Current Notebook"** node, and select **"Disconnect"** or **"Connect"** from the context menu.
 
-If the same connection is disconnected and reconnected, the connection id will change. For any existing code cells that reference the connection, user need to update the connection id in the code cell to the new connection id. You can find the connection id with context menu of the connection by selecting **"Copy ID"**.
+If the same connection is disconnected and reconnected, the connection ID will change. For any existing code cells that reference the connection, user need to update the connection ID in the code cell to the new connection ID. You can find the connection ID with context menu of the connection by selecting **"Copy ID"**.
 
-:::image type="content" source="media\fabric-connection-notebook\copy-connection-id.png" alt-text="Screenshot of copying connection id.":::
+:::image type="content" source="media\fabric-connection-notebook\copy-connection-id.png" alt-text="Screenshot of copying connection ID.":::
 
 ## Known issues and limitations
 
-- OAuth2.0 authentication is not supported for Fabric Connection in notebooks.
-- For the SPN authentication, you may notice some issue when creating the connection, this is a known issue and we are working on fixing it.
+- OAuth2.0 authentication isn't supported for Fabric Connection in notebooks.
+- For the SPN authentication, you might notice some issue when creating the connection, it is a known issue and we're working on fixing it.
 
 ## Related content
 
