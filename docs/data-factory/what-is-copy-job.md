@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 ## Overview 
 
-Copy Job is the go-to solution in Microsoft Fabric Data Factory for simplified data movement from many sources to many destinations --no pipelines required. With native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication, Copy job offers the flexibility to handle a wide range of data movement scenarios — all through an intuitive, easy-to-use experience. Whether you’re new to data integration or just want a faster way to get your data where it needs to go, Copy job offers a flexible and user-friendly solution. 
+Copy Job is the go-to solution in Microsoft Fabric Data Factory for simplified data movement from many sources to many destinations — no pipelines required. With native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication, Copy job offers the flexibility to handle a wide range of data movement scenarios — all through an intuitive, easy-to-use experience. Whether you’re new to data integration or just want a faster way to get your data where it needs to go, Copy job offers a flexible and user-friendly solution. 
 
 ### Advantages 
 Some advantages of the Copy job over other data movement methods include:
@@ -71,7 +71,7 @@ You can reset incremental copy either per entire job or per table, giving you fi
 In some cases, when you edit a copy job — for example, updating the incremental column in your source table — Copy job will reset the incremental copy to a full copy on the next run. This ensures data consistency between the source and the destination.  
 
 
-### Run options (Run, schedule, Event trigger) 
+### Run options (Run, Schedule, Event Trigger) 
 
 You have full flexibility to decide when a copy job runs — it can **run once** or on a **schedule**. Even if a job is scheduled, you can still click **Run** at any time to trigger it manually. In incremental copy, the manually triggered job will still only transfer changes since the last run. 
 
@@ -82,7 +82,7 @@ If you use the copy job activity in a pipeline, you can also take advantage of t
 See more details for [copy job activity](/fabric/data-factory/copy-job-activity).
 
 
-### Hosting options (Vnet, On Prem, Cloud)
+### Hosting options (VNet, On-Premises, Cloud)
 
 You can use Copy job to move data from any source to any destination, whether your data is on-premises, in the cloud, or within a virtual network. On the connection page of Copy job, you can choose from multiple host options, including an on-premises gateway or a VNet gateway, to securely access data behind a firewall or within a VNet. 
 
