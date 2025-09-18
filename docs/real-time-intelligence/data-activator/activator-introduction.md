@@ -37,7 +37,8 @@ It fits into a reactive, event-driven architecture where data flows continuously
 - **Actions** 
 
     When a rule condition is satisfied, Activator can trigger:
-    - Data pipelines or notebooks in Fabric.
+  - pipelines, notebooks, or spark job definition in Fabric.
+    
     - External actions via Power Automate.
     - Send Teams message to an individual, group, or channel 
     - Send e-mail
