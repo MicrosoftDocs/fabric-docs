@@ -3,7 +3,7 @@ title: Fast copy in Dataflow Gen2
 description: Learn about the fast copy feature in Dataflow Gen2 in Data Factory for Microsoft Fabric.
 author: dearandyxu
 ms.topic: article
-ms.date: 07/23/2025
+ms.date: 09/15/2025
 ms.author: yexu
 ms.custom: dataflows, sfi-image-nochange
 ai-usage: ai-assisted
@@ -45,7 +45,7 @@ Fast copy works with these Dataflow Gen2 connectors:
 - Warehouse
 - Oracle
 - Snowflake
-- Fabric SQL database
+- SQL database in Fabric
 
 ### Transformation limitations
 
@@ -162,6 +162,7 @@ Here are the current limitations for fast copy:
 
 - You need an on-premises data gateway version 3000.214.2 or newer to support fast copy.
 - Fixed schema isn't supported.
+- Schema-based destination isn't supported 
 
 ## Related content
 

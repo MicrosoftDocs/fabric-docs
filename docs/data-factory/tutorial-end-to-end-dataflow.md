@@ -242,7 +242,7 @@ With the output query now fully prepared and with data ready to output, we can d
 
 ## Next step
 
-Continue to the next section to integrate your data pipeline.
+Continue to the next section to integrate your pipeline.
 
 > [!div class="nextstepaction"]
 > [Module 3: Automate and send notifications with Data Factory](tutorial-end-to-end-integration.md) 

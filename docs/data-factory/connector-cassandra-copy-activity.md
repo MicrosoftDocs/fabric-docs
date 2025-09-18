@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Cassandra in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from Cassandra.
+This article outlines how to use the copy activity in a pipeline to copy data from Cassandra.
 
 ## Supported configuration
 
