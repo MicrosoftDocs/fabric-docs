@@ -274,7 +274,7 @@ A virtual network data gateway must be used for every dataflow connector. The vi
    - To query Lakehouse files or tables from a workspace that has workspace-level private link enabled, you must create a cross-workspace managed private endpoint connection to access resources in the other workspace. <!--For instructions, see [Cross workspace communication](security-cross-workspace-communication.md).-->
    - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace.
 - You could run into Spark issues in the following regions when outbound access protection is enabled for the workspace: Mexico Central, Israel Central, and Spain Central.
-<!-- [Needs rewrite/review] Dataflows aren't supported with a Fabric Warehouse or Fabric Lakehouse in the current workspace as either a dataflow source or output destination. -->
+- Dataflows currently don't support using a Fabric Warehouse or Fabric Lakehouse in the same workspace as either a data source or an output destination.
 - Current limitations for Private Link with Eventhouse:
    - Copilot features: Machine learning workloads might experience limited functionality due to a known regression.
    - Eventstream pull: Eventstream workloads don't currently support full polling functionality.
