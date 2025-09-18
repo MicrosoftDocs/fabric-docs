@@ -11,7 +11,7 @@ ms.search.form: Data Activator Fabric Item
 
 # Trigger Fabric items
 
-Fabric Data Pipelines and Notebooks can be used to load or transform data in Microsoft Fabric. Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules can take an action that starts jobs on Fabric items, which can be used in the following scenarios:
+Fabric Pipelines, Notebooks, and Spark Job Definition can be used to load or transform data in Microsoft Fabric. Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules can take an action that starts jobs on Fabric items, which can be used in the following scenarios:
 
 * Run Data Pipelines when new files are loaded to Azure storage accounts, to load files into OneLake. You can learn more about [Azure Storage events](/azure/storage/blobs/storage-blob-event-overview).
 
@@ -32,6 +32,8 @@ Once you enter all of the required information, select **Save** to save the [!IN
 You can now pass values to the parameters defined in the activated Fabric item. To pass parameter values in Activator portal, select **Edit action**, enter the parameter name and type exactly as how they are defined in the Fabric item. The parameter values can be entered manually or by selecting dynamic properties from the data source.
 
 :::image type="content" border="true" source="media/activator-trigger-fabric-items/pass-parameter.png" alt-text="Screenshot showing Activator card with a parameter.":::
+
+For Spark Job Definition, Activator support passing parameter values to [command line arguments, executable main file, and main class](https://aka.ms/sparkjobdefinitionparameters). 
 
 ### Pass parameter values via rules created outside of Activator portal
 
