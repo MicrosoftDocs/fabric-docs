@@ -2,7 +2,7 @@
 title: GQL Graph Patterns
 description: Complete reference for graph pattern syntax in GQL for graph in Microsoft Fabric.
 ms.topic: reference
-ms.date: 09/15/2025
+ms.date: 10/01/2025
 author: spmsft
 ms.author: splantikow
 ms.reviewer: eur
