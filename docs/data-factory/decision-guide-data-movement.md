@@ -23,7 +23,7 @@ Mirroring is designed to be simple and free solution to mirror database to Fabri
 
 - **Copy activities in Pipelines** is built for users who need **orchestrated, pipeline-based data ingestion workflows**. You can customize it extensively and add transformation logic, but you need to define and manage pipeline components yourself, including tracking the state of the last run for incremental copy.
 
-- **Copy Job** gives you a complete data ingestion experience from any source to any destination. It **makes data ingestion easier with native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication, and you don't need to build pipelines**, while still giving you access to many advanced options. It supports many sources and destinations and works well when you want more control than Mirroring but less complexity than managing pipelines with Copy activity.
+- **Copy Job** makes data ingestion easier with **native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication, and you don't need to build pipelines**, while still giving you access to many advanced options. It supports many sources and destinations, and works well when you want more control than Mirroring but less complexity than managing pipelines with Copy activity.
 
 ## Data movement decision guide
 
