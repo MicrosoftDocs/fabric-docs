@@ -31,11 +31,11 @@ Because Direct Lake connects only to Fabric data sources, the default SSO (Micro
 
 With SSO (Microsoft Entra ID), Direct Lake checks that the current user querying the semantic model has read access to the data. Only users with read access can query the data. The following screenshot shows a Direct Lake model using the default SSO configuration.
 
-:::image type="content" source="media/direct-lake-security-integration/image1.png" alt-text="Screenshot of Direct Lake model connection settings showing default Microsoft Entra ID SSO enabled for data access.":::
+:::image type="content" source="media/direct-lake-security-integration/direct-lake-model-connection-settings-enabled.png" lightbox="media/direct-lake-security-integration/direct-lake-model-connection-settings-enabled.png" alt-text="Screenshot of Direct Lake model connection settings showing default Microsoft Entra ID SSO enabled for data access.":::
 
 When you use an explicit data connection with a fixed identity instead of SSO, Direct Lake doesn't require every user to have read permission on the underlying data. If Microsoft Entra SSO remains disabled in the data connection, the fixed identity's permissions determine what data Direct Lake can access.
 
-:::image type="content" source="media/direct-lake-security-integration/image2.png" alt-text="Screenshot of Direct Lake model connection settings with Microsoft Entra ID SSO disabled and a fixed identity selected.":::
+:::image type="content" source="media/direct-lake-security-integration/direct-lake-model-connection-settings-disabled.png" lightbox="media/direct-lake-security-integration/direct-lake-model-connection-settings-disabled.png" alt-text="Screenshot of Direct Lake model connection settings with Microsoft Entra ID SSO disabled and a fixed identity selected.":::
 
 > [!NOTE]
 > You can configure a data connection to use both SSO and a fixed identity. Direct Lake checks the current user's permissions at query time and uses the fixed identity for framing and transcoding at refresh time. To use a fixed identity for both queries and refreshes, make sure SSO is disabled in the data connection configuration.
@@ -88,7 +88,7 @@ Shortcuts are OneLake objects that you add to a Fabric lakehouse or other Fabric
 
 When you access shortcuts through Direct Lake over SQL endpoints, Direct Lake first validates that the effective identity (current user or fixed identity) can access the table in the semantic model's data source. For internal shortcuts, after that check passes, Direct Lake uses the data source owner's identity to read the Delta table through the shortcut at the table's Fabric artifact. The data source owner must have access permission in the target OneLake location. For external shortcuts, the data source owner also needs Use permission on the cloud connection to the external system that hosts the Delta table. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
-:::image type="content" source="media/direct-lake-security-integration/image3.png" alt-text="Screenshot of diagram showing Direct Lake validating effective identity then using data source owner identity to access internal or external shortcut target.":::
+:::image type="content" source="media/direct-lake-security-integration/direct-lake-diagram.png" lightbox="media/direct-lake-security-integration/direct-lake-diagram.png" alt-text="Screenshot of diagram showing Direct Lake validating effective identity then using data source owner identity to access internal or external shortcut target.":::
 
 Direct Lake over OneLake has different permission requirements because the SQL Analytics Endpoint isn't involved. When a user accesses data through an internal shortcut to another OneLake location, the effective identity (current user or fixed identity) must have permission in the target location. The effective identity must be a Contributor (or higher), have Read and ReadAll permissions, or be in a OneLake security role that grants read access.
 
