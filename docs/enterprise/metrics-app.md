@@ -5,7 +5,7 @@ author: julcsc
 ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
-ms.date: 09/12/2025
+ms.date: 09/18/2025
 ---
 
 # What is the Microsoft Fabric Capacity Metrics app?
@@ -60,7 +60,7 @@ You can choose to share with *users in your organization* or with *business-to-b
 
 When using the Microsoft Fabric Capacity Metrics app, consider the following considerations and limitations:
 
-- Data for new capacities, workspaces and items is not visible in metrics app till next scheduled refresh of semantic model. To view the data before the next scheduled refresh, initiate a manual refresh of the semantic model.
+- Data for new capacities, workspaces, and items isn't visible in the Fabric Capacity Metrics app until the next scheduled refresh of the semantic model. To view the data before the next scheduled refresh, initiate a manual refresh of the semantic model.
 - To hide user emails in the app, disable the [Show user data in the Fabric Capacity Metrics app and reports](../admin/service-admin-portal-audit-usage.md#show-user-data-in-the-fabric-capacity-metrics-app-and-reports) setting in the Admin portal.
 - Billable items and operations consume CU units from your capacity and are paid for by your organization. Non-billable items and operations reflect preview features that don't count towards your capacity limit, and aren't paid for. They provide an indication of possible future impact on your capacity. When preview features become generally available, your organization starts paying for them and their impact on your capacity is taking into account.
 - In the [Capacity utilization and throttling](metrics-app-compute-page.md#capacity-utilization-and-throttling) visual logarithmic's view, the primary axis seen on the left of the visual, isn't aligned with the secondary axis seen on the right of the visual.
