@@ -1,8 +1,9 @@
 ---
 title: Spark connector for Microsoft Fabric Data Warehouse
 description: Learn how to use a Spark connector to access and work with data from a Microsoft Fabric warehouse and the SQL analytics endpoint of a lakehouse.
-author: ms-arali
-ms.author: arali
+author: eric-urban
+ms.author: eur
+ms.reviewer: arali
 ms.topic: how-to
 ms.custom:
   - ignite-2024

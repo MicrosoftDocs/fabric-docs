@@ -1,9 +1,9 @@
 ---
 title: Delta Lake table optimization and V-Order
 description: Learn how to keep your Delta Lake tables optimized across multiple scenarios, and how V-Order helps with optimization.
-ms.reviewer: snehagunda
-ms.author: dacoelho
-author: DaniBunny
+ms.reviewer: dacoelho
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 07/22/2025

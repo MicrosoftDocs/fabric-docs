@@ -1,8 +1,9 @@
 ---
 title: User data functions activity in data pipelines
 description: Learn how to add user data functions activity to a data pipeline and run it in Fabric.
-ms.author: sumuth
-author: mksuni
+ms.author: eur
+ms.reviewer: sumuth
+author: eric-urban
 ms.topic: how-to
 ms.date: 03/31/2025
 ---

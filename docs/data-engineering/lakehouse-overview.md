@@ -1,9 +1,9 @@
 ---
 title: What is a lakehouse?
 description: A lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by Apache Spark and SQL for big data processing.
-ms.reviewer: snehagunda
-ms.author: avinandac
-author: avinandaMS
+ms.reviewer: avinandac
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom:
 ms.date: 07/20/2025

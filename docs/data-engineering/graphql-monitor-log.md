@@ -1,8 +1,9 @@
 ---
 title: GraphQL monitoring dashboard and logging (preview) 
 description: Learn about GraphQL Monitoring dashboard and Logging and how it's being used, which enable developers to monitor API activities and troubleshoot errors and inefficiencies. 
-author: HHPHTTP
-ms.author: hhosseinpour
+author: eric-urban
+ms.author: eur
+ms.reviewer: hhosseinpour
 ms.topic: how-to 
 ms.date: 11/19/2024
 

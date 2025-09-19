@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: ''
 ms.custom:
 ms.topic: how-to
-ms.date: 07/31/2025
+ms.date: 09/19/2025
 LocalizationGroup: Premium
 ---
 
@@ -134,6 +134,8 @@ Large-storage format semantic models shouldn't be moved from the region where th
 * Multi-Geo doesn't support [Metrics in Power BI](/power-bi/create-reports/service-goals-introduction).
 
 * Workspaces with non-Power BI Fabric items can't be moved between regions. You must delete all the non-Power BI Fabric items before moving a workspace to a different region. Once the workspace is moved, it can take up to 30 minutes before non-Power BI items can be created.
+
+For more details, see [Moving data around](portal-workspaces.md#moving-data-around).
 
 ## Related content
 

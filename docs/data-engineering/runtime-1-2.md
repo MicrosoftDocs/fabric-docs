@@ -1,9 +1,9 @@
 ---
 title: Runtime 1.2 in Fabric
 description: Gain a deep understanding of the Apache Spark-based Runtime 1.2 available in Fabric. Understand its unique features, capabilities, and best practices.
-ms.reviewer: snehagunda
-ms.author: sngun
-author: SnehaGunda
+ms.reviewer: sngun
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom:
 ms.date: 10/14/2024
@@ -69,15 +69,15 @@ Here are the visible changes:
 When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, powered by Apache Spark 3.4, review [the official migration guide](https://archive.apache.org/dist/spark/docs/3.4.0/migration-guide.html).
 
 ## New features and improvements of Delta Lake 2.4
-[Delta Lake](https://delta.io/) is an [open source project](https://github.com/delta-io/delta) that enables building a lakehouse architecture on top of data lakes. Delta Lake provides [ACID transactions](https://docs.delta.io/2.4.0/concurrency-control.html), scalable metadata handling, and unifies [streaming](https://docs.delta.io/2.4.0/delta-streaming.html) and [batch](https://docs.delta.io/2.4.0/delta-batch.html) data processing on top of existing data lakes.
+[Delta Lake](https://delta.io/) is an [open source project](https://github.com/delta-io/delta) that enables building a lakehouse architecture on top of data lakes. Delta Lake provides [ACID transactions](https://docs.delta.io/concurrency-control.html), scalable metadata handling, and unifies [streaming](https://docs.delta.io/delta-streaming.html) and [batch](https://docs.delta.io/delta-batch.html) data processing on top of existing data lakes.
 
 Specifically, Delta Lake offers:
-*   [ACID transactions](https://docs.delta.io/2.4.0/concurrency-control.html) on Spark: Serializable isolation levels ensure that readers never see inconsistent data.
+*   [ACID transactions](https://docs.delta.io/concurrency-control.html) on Spark: Serializable isolation levels ensure that readers never see inconsistent data.
 *   Scalable metadata handling: Uses Spark distributed processing power to handle all the metadata for petabyte-scale tables with billions of files at ease.
-*   [Streaming](https://docs.delta.io/2.4.0/delta-streaming.html) and [batch](https://docs.delta.io/2.4.0/delta-batch.html) unification: A table in Delta Lake is a batch table and a streaming source and sink. Streaming data ingest, batch historic backfill, interactive queries all just work out of the box.
+*   [Streaming](https://docs.delta.io/delta-streaming.html) and [batch](https://docs.delta.io/delta-batch.html) unification: A table in Delta Lake is a batch table and a streaming source and sink. Streaming data ingest, batch historic backfill, interactive queries all just work out of the box.
 *   Schema enforcement: Automatically handles schema variations to prevent insertion of bad records during ingestion.
-*   [Time travel](https://docs.delta.io/2.4.0/delta-batch.html#-deltatimetravel): Data versioning enables rollbacks, full historical audit trails, and reproducible machine learning experiments.
-*   [Upserts](https://docs.delta.io/2.4.0/delta-update.html#-delta-merge) and [deletes](https://docs.delta.io/2.4.0/delta-update.html#-delta-delete): Supports merge, update, and delete operations to enable complex use cases like change-data-capture, slowly changing dimension (SCD) operations, streaming upserts, and so on.
+*   [Time travel](https://docs.delta.io/delta-batch.html#-deltatimetravel): Data versioning enables rollbacks, full historical audit trails, and reproducible machine learning experiments.
+*   [Upserts](https://docs.delta.io/delta-update.html#-delta-merge) and [deletes](https://docs.delta.io/delta-update.html#-delta-delete): Supports merge, update, and delete operations to enable complex use cases like change-data-capture, slowly changing dimension (SCD) operations, streaming upserts, and so on.
 
 Read the full version of the release notes for [Delta Lake 2.4](https://github.com/delta-io/delta/releases/tag/v2.4.0).
 
