@@ -12,6 +12,9 @@ ms.date: 05/21/2024
 
 The Microsoft Fabric Workload Development Kit is a robust set of tools designed to enhance the existing Fabric experience by integrating custom capabilities into Fabric. Using the development kit you can integrate your applications into the Microsoft Fabric framework. The development kit is useful for enterprise-level applications that require comprehensive analytics solutions.
 
+>[!NOTE]
+> The Extensibility Toolkit is the modern evolution of the Workload Development Kit, designed to make extending Microsoft Fabric with custom functionality easier and faster than ever. It offers a streamlined development environment allowing developers to focus on innovation rather than infrastructure. This evolution reflects Microsoft’s commitment to empowering developers with intuitive, scalable, and intelligent tools that accelerate productivity and unlock new possibilities within Fabric. For more information, see the [Extensibility Toolkit](../extensibility-toolkit/extensibility-toolkit-overview.md)
+
 ## What are Workloads?
 
 In [Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md), workloads signify different components that are integrated into the Fabric framework. Workloads enhance the usability of your service within the familiar Fabric workspace, eliminating the need to leave the Fabric environment for different services. [Data Factory](../data-factory/data-factory-overview.md), [Data Warehouse](../data-warehouse/data-warehousing.md), [Power BI](/power-bi/enterprise/service-premium-what-is) and [Fabric [!INCLUDE [fabric-activator](../real-time-intelligence//includes/fabric-activator.md)]](../real-time-intelligence/data-activator/activator-introduction.md) are some of the Fabric workloads.

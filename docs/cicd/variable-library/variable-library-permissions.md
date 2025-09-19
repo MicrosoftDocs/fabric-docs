@@ -13,7 +13,7 @@ ms.search.form: Introduction to variable libraries, manage variable libraries, v
 #customer intent: As a developer, I want to learn how to use variable libraries and who has permission to view and edit them.
 ---
 
-# Variable library permissions (preview)
+# Variable library permissions 
 
 This article explains who can access variable libraries and their values.
 
