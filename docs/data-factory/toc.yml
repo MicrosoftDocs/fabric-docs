@@ -852,6 +852,8 @@
         items:
           - name: Copy activity performance and scalability guide
             href: copy-activity-performance-and-scalability-guide.md
+          - name: Monitor Copy activity
+            href: monitor-copy-activity.md
           - name: Copy activity tutorials
             items: 
               - name: Copy from Azure Blob Storage to Lakehouse
