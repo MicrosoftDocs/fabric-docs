@@ -57,7 +57,7 @@ You can check the full list and detailed changes here: [Spark Release 3.5.0](htt
 
 Delta Lake 3.2 marks a collective commitment to making Delta Lake interoperable across formats, easier to work with, and more performant. Delta Spark 3.2 is built on top of [Apache Spark™ 3.5](https://spark.apache.org/releases/spark-release-3-5-0.html). The Delta Spark maven artifact is renamed from **delta-core** to **delta-spark**.
 
-You can check the full list and detailed changes here: [https://docs.delta.io/3.2.0/index.html](https://docs.delta.io/3.2.0/index.html).
+You can check the full list and detailed changes here: [https://docs.delta.io/index.html](https://docs.delta.io/index.html).
 
 ### Components and Libraries
 
