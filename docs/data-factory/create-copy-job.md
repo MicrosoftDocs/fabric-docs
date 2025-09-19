@@ -74,7 +74,7 @@ Follow these steps to set up a Copy job that moves data from a database:
 
     :::image type="content" source="media/copy-job/edit-copy-job.png" lightbox="media/copy-job/edit-copy-job.png" alt-text="Screenshot showing how to edit Copy job.":::
 
-## Create a Copy job to ingest files from a storage
+## Create a Copy job to ingest files from storage
 
 Follow these steps to set up a Copy job that moves data from file storage:
 
