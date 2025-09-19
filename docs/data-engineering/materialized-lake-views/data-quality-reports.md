@@ -3,7 +3,7 @@ title: "Power BI Reports for Data Quality"
 description: Learn about data quality reports and alerts in materialized lake views within lakehouse in Microsoft Fabric
 author: eric-urban
 ms.author: eur
-ms.reviewer: anujsharda
+ms.reviewer: sngun
 ms.topic: conceptual
 ms.date: 09/12/2025
 # customer-intent: As a data engineer, I want to view data quality metrics in Power BI reports and set up alerts on them so that I can monitor data quality trends and receive notifications for significant changes.
