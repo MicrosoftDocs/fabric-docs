@@ -1,9 +1,9 @@
 ---
 title: VS Code extension overview
 description: Explore lakehouses, Fabric notebooks, Spark job definitions with the Fabric Data Engineering VS Code extension. Learn about the prerequisites and installation.
-ms.reviewer: sngun
-ms.author: qixwang
-author: qixwang
+ms.reviewer: qixwang
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom:
 ms.date: 05/13/2024

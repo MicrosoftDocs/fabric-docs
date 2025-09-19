@@ -1,9 +1,9 @@
 ---
 title: Lakehouse tutorial - Build a report
 description: After ingesting data, and using notebooks to transform and prepare the data, you create a Power BI data model and create a report.
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
+ms.reviewer: arali
+ms.author: eur
+author: eric-urban
 ms.topic: tutorial
 ms.custom:
 ms.date: 07/19/2024

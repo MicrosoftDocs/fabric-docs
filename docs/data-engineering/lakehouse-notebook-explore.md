@@ -1,9 +1,9 @@
 ---
 title: Explore the lakehouse data with a notebook
 description: Learn how to use a notebook to explore lakehouse data, connect a lakehouse and a notebook, and generate code cells in a notebook.
-ms.reviewer: snehagunda
-ms.author: qixwang
-author: qixwang
+ms.reviewer: qixwang
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 05/23/2023

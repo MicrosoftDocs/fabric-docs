@@ -1,8 +1,9 @@
 ---
 title: Test your User Data Functions
 description: Learn how to test your User Data Functions to validate your code changes
-ms.author: luisbosquez
-author: luisbosquez
+ms.author: eur
+ms.reviewer: luisbosquez
+author: eric-urban
 ms.topic: overview
 ms.date: 07/31/2025
 ms.search.form: Test your User Data Functions

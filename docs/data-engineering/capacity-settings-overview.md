@@ -1,9 +1,9 @@
 ---
 title: Data engineering and science capacity admin settings
 description: Learn about the capacity administration settings for the data engineering and data science experiences.
-ms.reviewer: snehagunda
-ms.author: saravi
-author: santhoshravindran7
+ms.reviewer: saravi
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 05/23/2023

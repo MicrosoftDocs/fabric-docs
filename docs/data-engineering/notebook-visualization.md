@@ -1,9 +1,9 @@
 ---
 title: Notebook visualization
 description: Apache Spark in Fabric provides various built-in options for visualizing your data, including notebook charts and access to popular open-source libraries.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.search.form: Notebook visualization

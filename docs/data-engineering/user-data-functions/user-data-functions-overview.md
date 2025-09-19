@@ -1,8 +1,9 @@
 ---
 title: Overview - Fabric User data functions
 description: Learn about Fabric User data functions.
-ms.author: luisbosquez
-author: luisbosquez
+ms.author: eur
+ms.reviewer: luisbosquez
+author: eric-urban
 ms.topic: overview
 ms.date: 06/17/2025
 ms.search.form: User data functions overview
