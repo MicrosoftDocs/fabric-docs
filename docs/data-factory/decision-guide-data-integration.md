@@ -29,7 +29,7 @@ For the list of supported connectors across Copy job, Copy activity, and Dataflo
 
 ## Data movement strategies
 
-| | [**Mirroring**](/fabric/mirroring/overview) | [**Copy Job**](/fabric/data-factory/create-copy-job) | [**Copy Activity (Pipeline)**](/fabric/data-factory/copy-data-activity) | [**Fabric Eventstreams**](/fabric/real-time-intelligence/event-streams/overview.md) |
+| | [**Mirroring**](/fabric/mirroring/overview) | [**Copy Job**](/fabric/data-factory/create-copy-job) | [**Copy Activity (Pipeline)**](/fabric/data-factory/copy-data-activity) | [**Eventstreams**](/fabric/real-time-intelligence/event-streams/overview) |
 |---|---|---|---|---|
 | **Use Case** | Data Replication | Data Ingestion & Replication | Data Ingestion | Streaming Data Ingestion & Processing |
 | **Flagship Scenarios** | Near real-time sync with turn-key setup. Replication | Incremental Copy / Replication (water-mark + Native CDC), Data Lake / Storage Data Migration, Medallion Ingestion, Out-of-the-box multi-table copy. | Data Lake / Storage Data Migration, Medallion Ingestion, Incremental copy via pipeline expressions & control tables (water-mark only)| Incremental Processing, event-driven and real-time AI applications |
@@ -57,7 +57,7 @@ For the list of supported connectors across Copy job, Copy activity, and Dataflo
 
 ## Transformation strategies
 
-| | [**Notebooks**](/fabric/data-engineering/how-to-use-notebook) | [**Dataflow Gen 2**](/fabric/data-factory/dataflows-gen2-overview) | [**Fabric Eventstreams**](/fabric/real-time-intelligence/event-streams/overview.md) |
+| | [**Notebooks**](/fabric/data-engineering/how-to-use-notebook) | [**Dataflow Gen 2**](/fabric/data-factory/dataflows-gen2-overview) | [**Eventstreams**](/fabric/real-time-intelligence/event-streams/overview) |
 |---|---|---|---|
 | **Use Case** | Code-first Data Prep / Transform | Code-free Data Prep / Transform | Code-free Transformation / SQL-based Stream Analytics |
 | **Flagship Scenarios** | Complex Transformations | Transformation & Profiling | Stream Processing & Analytics | 
@@ -147,7 +147,7 @@ Now that you understand which service to use, you can start building your data i
 - [Create a Copy Job](/fabric/data-factory/create-copy-job)
 - [Create a Copy Activity](/fabric/data-factory/copy-data-activity)
 - [Get started with Pipelines](data-factory-overview.md#data-pipelines)
-- [Get started with Fabric Eventstreams](/fabric/real-time-intelligence/event-streams/overview.md)
+- [Get started with Eventstreams](/fabric/real-time-intelligence/event-streams/overview.md)
 - [Get started with Apache Airflow Jobs](/fabric/data-factory/apache-airflow-jobs-concepts)
 - [Create and use Notebooks](/fabric/data-engineering/how-to-use-notebook)
 - [Create a dataflow](/fabric/data-factory/tutorial-dataflows-gen2-pipeline-activity#create-a-dataflow)
