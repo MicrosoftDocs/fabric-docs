@@ -496,6 +496,8 @@ This section summarizes recent improvements and features for [Real-Time Intellig
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|September 2025|**Azure Diagnostics source in Real-Time hub**| Using Fabric Real-Time hub, you can stream diagnostic logs and metrics from Azure resources into Microsoft Fabric for real-time data processing and analysis. |
+|September 2025|**Eventhouse endpoint for a Lakehouse**| Use the [Eventhouse endpoint for a Lakehouse](../Real-time-intelligence/eventhouse-as-endpoint.md) to query lakehouse data, discover real-time insights across your data estate, and streamline analysis of structured, semi-structured, and unstructured data. |
 |September 2025|**Maps in Fabric**|You can now easily [Create a map](../real-time-intelligence/map/create-map.md) to bring geospatial insights. Users can ingest location data from a Lakehouse or Eventhouse, visualize it instantly, and build map-centric applications without specialized knowledge or writing code.|
 |September 2025|**Anomaly detection (Preview)**|With a no-code interface, automatic model selection, and flexible alerts, tracking changes and unexpected events is easy with [Anomaly detection in Real-Time Intelligence (Preview)](../real-time-intelligence/anomaly-detection.md).|
 |September 2025|**Schema Registry (Preview)**|[Event Schema Registry (preview)](https://blog.fabric.microsoft.com/blog/schema-registry-creating-type-safe-pipelines-using-schemas-and-eventstreams-preview) provides a contract-based way to define and validate event schemas in Fabric Eventstreams for type-safe, reliable real-time pipelines. For more information, see [Schema Registry overview](../real-time-intelligence/schema-sets/schema-registry-overview.md).|
