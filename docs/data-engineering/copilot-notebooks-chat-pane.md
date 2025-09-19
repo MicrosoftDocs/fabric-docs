@@ -79,7 +79,7 @@ Follow this procedure:
 
 - The more specifically you describe your goals in your chat panel entries, the more accurate the Copilot responses.
 - You can "copy" or "insert" code from the chat panel. At the top of each code block, two buttons allow input of items directly into the notebook.
-- To clear your conversation, select the :::image type="content" source="media/copilot-notebooks-chat-pane/broom-icon.png" alt-text="Screenshot showing the Copilot clean up prompt."::: icon at the top to remove your conversation from the pane. It clears the pane of any input or output, but the context remains in the session until it ends.
+- To clear your conversation, select the :::image type="content" source="media/copilot-notebooks-chat-pane/broom-icon.png" alt-text="Screenshot showing the Copilot clean up prompt." lightbox="media/copilot-notebooks-chat-pane/broom-icon.png"::: icon at the top to remove your conversation from the pane. It clears the pane of any input or output, but the context remains in the session until it ends.
 - Configure the Copilot privacy settings with the %configure_privacy_settings command, or the %set_sharing_level command in the Chat-magics library.
 - Transparency: Read our Transparency Note for details on data and algorithm use.
 
