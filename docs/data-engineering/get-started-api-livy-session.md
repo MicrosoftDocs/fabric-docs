@@ -300,7 +300,7 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
 1. When the session is in progress or in completed state, you can view the session status by navigating to Monitor.
 
-    :::image type="content" source="media\livy-api\livy-monitoring-hub.png" alt-text="Screenshot showing previous Livy API submissions in the Monitoring hub." :::
+    :::image type="content" source="media\livy-api\livy-monitoring-hub.png" alt-text="Screenshot showing previous Livy API submissions in the Monitoring hub." lightbox="media\livy-api\livy-monitoring-hub.png":::
 
 1. Select and open most recent activity name.
 
