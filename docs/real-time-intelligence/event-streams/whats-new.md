@@ -16,25 +16,25 @@ Fabric Eventstream is continuously improved with new features and updates. This 
 Here are the latest features announced over the past year:
 
 - **New connectors**
-    - [MQTT](/event-streams/add-source-mqtt.md)
-    - [Real-time Weather](/fabric/event-streams/add-source-real-time-weather.md)
-    - [Azure Data Explorer](/fabric/event-streams/add-source-azure-data-explorer-database.md)
-    - [Azure Event Grid](/fabric/event-streams/add-source-azure-event-grid.md)
-    - [Solace PubSub+](/fabric/event-streams/add-source-solace-pub-sub.md)
+    - [MQTT](add-source-mqtt.md)
+    - [Real-time Weather](add-source-real-time-weather.md)
+    - [Azure Data Explorer](add-source-azure-data-explorer-database.md)
+    - [Azure Event Grid](add-source-azure-event-grid.md)
+    - [Solace PubSub+](add-source-solace-pub-sub.md)
 - **New operators**
-    - [SQL Operator](/fabric/event-streams/process-events-using-sql-code-editor.md)
+    - [SQL Operator](process-events-using-sql-code-editor.md)
 - **Security features**
-    - [Tenant & Workspace Private Links support](/fabric/event-streams/set-up-tenant-workspace-private-links.md)
-    - [Entra ID authentication for Custom Endpoint](/fabric/event-streams/custom-endpoint-entra-id-auth.md)
-    - [Seamlessly connect Azure Logic Apps using Managed Identity](/fabric/event-streams/connect-using-managed-identity.md)
+    - [Tenant & Workspace Private Links support](set-up-tenant-workspace-private-links.md)
+    - [Entra ID authentication for Custom Endpoint](custom-endpoint-entra-id-auth.md)
+    - [Seamlessly connect Azure Logic Apps using Managed Identity](connect-using-managed-identity.md)
 - **New capabilities**
-    - [Enhance data transformation with Multi-schema inference](/fabric/event-streams/process-events-with-multiple-schemas.md)
-    - [Decode data with Confluent Schema Registry](/fabric/real-time-intelligence/event-streams/add-source-confluent-kafka.md)
-    - [Create type-safe pipelines using Event schema registry in Eventstream](/fabric/real-time-intelligence/schema-sets/schema-registry-overview.md)
+    - [Enhance data transformation with Multi-schema inference](process-events-with-multiple-schemas.md)
+    - [Decode data with Confluent Schema Registry](add-source-confluent-kafka.md)
+    - [Create type-safe pipelines using Event schema registry in Eventstream](schema-sets/schema-registry-overview.md)
 - **Public APIs**
-    - [Get Topology APIs](/fabric/rest/api/fabric/eventstream/topology/get-eventstream-topology.md)
-    - [Pause Eventstream](/fabric/rest/api/fabric/eventstream/topology/pause-eventstream.md)
-    - [Resume Eventstream](/fabric/rest/api/fabric/eventstream/topology/resume-eventstream.md)
+    - [Get Topology APIs](rest/api/fabric/eventstream/topology/get-eventstream-topology.md)
+    - [Pause Eventstream](rest/api/fabric/eventstream/topology/pause-eventstream.md)
+    - [Resume Eventstream](rest/api/fabric/eventstream/topology/resume-eventstream.md)
 
 ## November 2024
 
