@@ -1,7 +1,7 @@
 ---
 title: Livy API overview
 description: Learn about the Microsoft Fabric Livy API for submitting jobs to Spark
-ms.reviewer: guyhay
+ms.reviewer: sngun
 ms.author: eur
 author: eric-urban
 ms.topic: overview
