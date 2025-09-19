@@ -53,7 +53,7 @@ Follow these steps to set up a Copy job that moves data from a database:
 
    :::image type="content" source="media/copy-job/specify-column-mappings.png" lightbox ="media/copy-job/specify-column-mappings.png" alt-text="Screenshot showing where to specify column mappings.":::
 
-1. Choose a copy mode: Full data copy or Incremental copy. In this example, we use **Incremental copy**. Choose an Incremental column for each table, to track which rows have changed. You can use the preview button to find the right column. For more information about that column, see: [Incremental column](what-is-copy-job.md#incremental-column).
+1. Choose a copy mode: Full data copy or Incremental copy. In this example, we use **Incremental copy**. Choose an Incremental column for each table, to track which rows have changed. You can use the preview button to find the right column. 
 
    > [!NOTE]
    > When you choose incremental copy mode, Copy job initially performs a full load and performs incremental copies in the next runs.
@@ -74,7 +74,7 @@ Follow these steps to set up a Copy job that moves data from a database:
 
     :::image type="content" source="media/copy-job/edit-copy-job.png" lightbox="media/copy-job/edit-copy-job.png" alt-text="Screenshot showing how to edit Copy job.":::
 
-## Create a Copy job to ingest files from a storage
+## Create a Copy job to ingest files from storage
 
 Follow these steps to set up a Copy job that moves data from file storage:
 
