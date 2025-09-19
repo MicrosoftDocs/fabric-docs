@@ -96,6 +96,6 @@ The result is a real-time dashboard that updates within seconds, giving Ash’s 
 Now that you have an idea of which data movement strategy to use, you can get started with these resources:
 
 - [Get started with Mirroring](/fabric/mirroring/overview)
-- [Get started with Fabric Eventstreams](fabric/real-time-intelligence/event-streams/overview)
+- [Get started with Fabric Eventstreams](/fabric/real-time-intelligence/event-streams/overview)
 - [Create a Copy Job](/fabric/data-factory/create-copy-job)
 - [Create a Copy Activity](/fabric/data-factory/copy-data-activity)
