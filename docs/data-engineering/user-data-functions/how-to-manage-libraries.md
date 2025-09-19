@@ -1,8 +1,9 @@
 ---
 title: How to manage libraries for your Fabric User Data Functions
 description: Manage adding, deleting, and updating libraries with User data functions in Fabric.
-ms.author: sumuth
-author: mksuni
+ms.author: eur
+ms.reviewer: sumuth
+author: eric-urban
 ms.topic: how-to
 ms.date: 04/21/2025
 ms.search.form: Fabric User Data Functions

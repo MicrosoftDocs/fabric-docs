@@ -3,8 +3,8 @@ title: Connect applications to Fabric API for GraphQL
 description: Learn how to find and copy your API endpoint so you can connect your applications to the API for GraphQL.
 #customer intent: As a developer, I want to connect my application to the Fabric API for GraphQL so that I can query data efficiently.  
 ms.reviewer: sngun
-ms.author: sngun
-author: snehagunda
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Connecting applications to GraphQL
@@ -151,7 +151,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
     * Scopes you add here will be prompted for user consent during sign-in. 
     * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
     * For more information about OIDC scopes, visit: 
-    * https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+    * [OpenID Connect scopes](/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes)
     */
    export const loginRequest = {
        scopes: ["https://analysis.windows.net/powerbi/api/GraphQLApi.Execute.All"]

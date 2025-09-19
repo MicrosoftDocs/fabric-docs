@@ -1,9 +1,9 @@
 ---
 title: Workspace roles and permissions in lakehouse
 description: Learn how workspace roles and permissions work in your Microsoft Fabric lakehouse, including what roles are available.
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 05/23/2023

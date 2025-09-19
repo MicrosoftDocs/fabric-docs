@@ -1,8 +1,9 @@
 ---
 title: Migrate Libraries and Properties to a Default Environment
 description: Learn how to migrate your existing workspace libraries and Apache Spark properties to a default Fabric environment.
-ms.author: shuaijunye
-author: shuaijunye
+ms.author: eur
+ms.reviewer: shuaijunye
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 11/15/2023

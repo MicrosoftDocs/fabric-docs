@@ -1,9 +1,9 @@
 ---
 title: "Author and run T-SQL notebooks in Microsoft Fabric"
 description: Learn how to author and run T-SQL code in a notebook within the data engineering workload. Also learn how to run cross warehouse queries.
-author: qixwang
-ms.author: qixwang
-ms.reviewer: sngun
+author: eric-urban
+ms.author: eur
+ms.reviewer: qixwang
 ms.topic: how-to
 ms.date: 06/03/2025
 ms.custom: FY25Q1-Linter, sfi-image-nochange

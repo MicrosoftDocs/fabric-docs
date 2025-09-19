@@ -1,9 +1,9 @@
 ---
 title: Microsoft Spark Utilities (MSSparkUtils) for Fabric
 description: Use Microsoft Spark Utilities, a built-in package, to work with file systems, get environment variables, chain notebooks together, and work with secrets.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.search.form: Microsoft Spark utilities

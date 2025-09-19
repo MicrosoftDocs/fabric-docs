@@ -90,7 +90,7 @@ You can sign up for a trial capacity. You manage who else can use your trial by 
     :::image type="content" source="media/fabric-trial/me-control.png" lightbox="media/fabric-trial/me-control.png" alt-text="Screenshot of the Microsoft Fabric Account manager.":::
 
 1. If prompted, agree to the terms and then select **Start trial**.
-1. Within the **Activate your 60-day free Fabric trial** capacity prompt, review the **Trial capacity region**. You can either accept the default home region or update it to a new region location that best suits your needs. Once you make your selection, agree to the terms and conditions, then select **Activate**.
+1. Within the **Activate your 60-day free Fabric trial** capacity prompt, please review the drop down selection of available **Trial capacity regions**. You can either accept the default home region or update it to a new region location that best suits your needs. Once you make your selection, agree to the terms and conditions, then select **Activate**.
 
    > [!IMPORTANT]
    > When planning your region deployment for Fabric capacities, it's important to make the appropriate selection from the outset. If you decide to move a workspace containing Fabric items to a different region after your trial is created, you need to delete all existing Fabric items before proceeding. For detailed instructions, see [Moving your data around](../admin/portal-workspaces.md#moving-data-around).
@@ -274,6 +274,10 @@ If you start the trial using the Account manager and didn't change the default r
 
 > [!NOTE]
 > In most cases, the default trial Capacity region matches your home region. However, in some cases, Fabric trials are created by default in a similar but different region (for example, East US instead of Central US).
+
+#### How do I select a different region for my Fabric trial capacity? 
+
+The easiest way to select a non-default region for your Fabric trial capacity is at the point of [initiating the trial from the Account Manager](#method-1). The list of available regions for selection will be available during this step.  
 
 #### What effect does region have on my Fabric trial capacity?
 

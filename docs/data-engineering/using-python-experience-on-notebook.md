@@ -1,9 +1,9 @@
 ---
 title: Use Python experience on Notebook
 description: Learn how to work with pure Python notebooks for data exploration, visualization, and machine learning.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.search.form: Create and use notebooks

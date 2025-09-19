@@ -1,9 +1,9 @@
 ---
 title: Spark Job Definition deployment pipeline support
 description: Learn about Spark job definition deployment pipeline integration, including how to set up and deploy SJDs across different stages.
-ms.reviewer: snehagunda
-ms.author: qixwang
-author: qixwang
+ms.reviewer: qixwang
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.date: 03/31/2025
 ms.search.form: Spark job definition deployment pipeline
