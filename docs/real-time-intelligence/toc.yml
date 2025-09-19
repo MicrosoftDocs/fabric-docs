@@ -218,7 +218,7 @@ items:
       - name: Connect to streaming sources in private network 
         href: event-streams/connect-connecots-in-virtual-network-on-premises.md
       - name: Secure inbound connections with private links
-        href: event-streams/set-up-tenant-workspace-private-links
+        href: event-streams/set-up-tenant-workspace-private-links.md
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream

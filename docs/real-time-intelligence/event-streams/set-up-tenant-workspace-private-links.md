@@ -14,17 +14,21 @@ ms.search.form: fabric's private links
 Private Link is a network security feature of the Fabric platform that provides secure access for data traffic in Fabric. By integrating Eventstream with the Private Links, it enables secure, private connectivity between your data sources and Microsoft Fabric—without exposure to the public internet.
 
 Fabric supports private links at both the tenant level and the workspace level:
-* [Tenant-level private links](/fabric/security/security-private-links-overview) provide network policy to the entire tenant.
-* [Workspace-level private links](/fabric/security/security-workspace-level-private-links-overview) provide granular control, making it possible to restrict access to certain workspaces while allowing the rest of the workspaces to remain open for public access.
+* [Tenant-level private links](/fabric/security/security-private-links-overview.md) provide network policy to the entire tenant.
+* [Workspace-level private links](/fabric/security/security-workspace-level-private-links-overview.md) provide granular control, making it possible to restrict access to certain workspaces while allowing the rest of the workspaces to remain open for public access.
 
 ## Tenant private link
 
 There are two tenant settings in the Fabric admin portal involved in Private Link configuration:
 
 * **Azure Private Links**
+
     :::image type="content" source="/media/set-up-private-links/enable-azure-private-link.png" alt-text="A screenshot of enabling Azure Private Link at tenant-level." lightbox="/media/set-up-private-links/enable-azure-private-link.png":::
+
 * **Block Public Internet Access**
+
     :::image type="content" source="/media/set-up-private-links/block-public-internet-access-tenant-setting.png" alt-text="A screenshot of blocking public internet access at tenant-level." lightbox="/media/set-up-private-links/block-public-internet-access-tenant-setting.png":::
+
 
 If **Azure Private Link** is **enabled** and **Block Public Internet Access** is **enabled**:
 * Supported Fabric items are only accessible for your organization from private endpoints, and aren't accessible from the public Internet.
@@ -38,7 +42,7 @@ If **Azure Private Link** is **enabled** and **Block Public Internet Access** is
 * Traffic from the virtual network targeting endpoints and scenarios that don't support private links is transported through the public Internet, and is allowed by Fabric services.
 * If the virtual network is configured to block public Internet access, scenarios that don't support private links are blocked by the virtual network.
 
-To set up and use a tenant-level private link, see [Set up and use tenant-level private links](/fabric/security/security-private-links-use)
+To set up and use a tenant-level private link, see [Set up and use tenant-level private links](/fabric/security/security-private-links-use.md)
 
 ## Workspace Private Link
 
@@ -51,7 +55,7 @@ The diagram demonstrates a typical Eventstream setup operating under Workspace P
 * Contoso App1 securely streams data to Eventstream via Private Links.
 * Contoso App2 is blocked from connecting because public access to the workspace is disabled.
 
-To set up and use a workspace-level private link, see [Set up and use workspace-level private links](/fabric/security/security-workspace-level-private-links-set-up).
+To set up and use a workspace-level private link, see [Set up and use workspace-level private links](/fabric/security/security-workspace-level-private-links-set-up.md).
 
 ## Supported scenarios
 
@@ -93,6 +97,6 @@ Currently, when tenant or workspace level private link is enabled, you can only 
 
 ## Related content
 
-* [Network security in Fabric](/fabric/security/security-overview)
-* [Tenant-level private links](/fabric/security/security-private-links-overview)
-* [Workspace-level private links](/fabric/security/security-workspace-level-private-links-overview)
+* [Network security in Fabric](/fabric/security/security-overview.md)
+* [Tenant-level private links](/fabric/security/security-private-links-overview.md)
+* [Workspace-level private links](/fabric/security/security-workspace-level-private-links-overview.md)

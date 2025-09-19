@@ -16,27 +16,25 @@ Fabric Eventstream is continuously improved with new features and updates. This 
 Here are the latest features announced over the past year:
 
 - **New connectors**
-    - [MQTT](/event-streams/add-source-mqtt)
-    - [Real-time Weather](/fabric/event-streams/add-source-real-time-weather)
-    - [Azure Data Explorer](/fabric/event-streams/add-source-azure-data-explorer-database)
-    - [Azure Event Grid](/fabric/event-streams/add-source-azure-event-grid)
-    - [Solace PubSub+](/fabric/event-streams/add-source-solace-pub-sub)
+    - [MQTT](/event-streams/add-source-mqtt.md)
+    - [Real-time Weather](/fabric/event-streams/add-source-real-time-weather.md)
+    - [Azure Data Explorer](/fabric/event-streams/add-source-azure-data-explorer-database.md)
+    - [Azure Event Grid](/fabric/event-streams/add-source-azure-event-grid.md)
+    - [Solace PubSub+](/fabric/event-streams/add-source-solace-pub-sub.md)
 - **New operators**
-    - [SQL Operator](/fabric/event-streams/process-events-using-sql-code-editor)
+    - [SQL Operator](/fabric/event-streams/process-events-using-sql-code-editor.md)
 - **Security features**
-    - [Tenant & Workspace Private Links support](/fabric/event-streams/set-up-tenant-workspace-private-links)
-    - [Entra ID authentication for Custom Endpoint](/fabric/event-streams/custom-endpoint-entra-id-auth)
-    - [Seamlessly connect Azure Logic Apps using Managed Identity](/fabric/event-streams/connect-using-managed-identity)
+    - [Tenant & Workspace Private Links support](/fabric/event-streams/set-up-tenant-workspace-private-links.md)
+    - [Entra ID authentication for Custom Endpoint](/fabric/event-streams/custom-endpoint-entra-id-auth.md)
+    - [Seamlessly connect Azure Logic Apps using Managed Identity](/fabric/event-streams/connect-using-managed-identity.md)
 - **New capabilities**
-    - [Enhance data transformation with Multi-schema inference](/fabric/event-streams/process-events-with-multiple-schemas)
-    - Create type-safe pipelines using Event schema registry in Eventstream
-    - Decode data with Confluent Schema Registry
-    - Eventhouse supports direct ingestion from Eventstream derived streams
+    - [Enhance data transformation with Multi-schema inference](/fabric/event-streams/process-events-with-multiple-schemas.md)
+    - [Decode data with Confluent Schema Registry](/fabric/real-time-intelligence/event-streams/add-source-confluent-kafka.md)
+    - [Create type-safe pipelines using Event schema registry in Eventstream](/fabric/real-time-intelligence/schema-sets/schema-registry-overview.md)
 - **Public APIs**
-    - Get Event Item Definition
-    - [Get Topology APIs](/fabric/rest/api/fabric/eventstream/topology/get-eventstream-topology)
-    - [Pause Eventstream](/fabric/rest/api/fabric/eventstream/topology/pause-eventstream)
-    - [Resume Eventstream](/fabric/rest/api/fabric/eventstream/topology/resume-eventstream)
+    - [Get Topology APIs](/fabric/rest/api/fabric/eventstream/topology/get-eventstream-topology.md)
+    - [Pause Eventstream](/fabric/rest/api/fabric/eventstream/topology/pause-eventstream.md)
+    - [Resume Eventstream](/fabric/rest/api/fabric/eventstream/topology/resume-eventstream.md)
 
 ## November 2024
 
