@@ -6,8 +6,7 @@ author: jonburchel
 ms.reviewer: marcozo
 reviewer: eisber
 ms.topic: tutorial
-ms.custom: 
-ms.date: 08/29/2024
+ms.date: 08/15/2025
 #Customer intent: As a data scientist, I want to validate my data to ensure it meets my expectations.
 ---
 

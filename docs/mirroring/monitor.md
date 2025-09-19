@@ -1,8 +1,8 @@
 ---
 title: "Monitor Mirrored Database Replication"
 description: Learn about monitoring mirrored database replication in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+author: whhender
+ms.author: whhender
 ms.reviewer: imotiwala, maprycem, cynotebo
 ms.date: 09/05/2025
 ms.topic: conceptual

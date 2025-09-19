@@ -49,6 +49,6 @@ The load operation consumed about 2 minutes with 970.6228 CU seconds on Dataflow
 **Total run cost at $0.18/CU hour** = (970.6228 + 7480.6466) / (60 * 60) CU-hours * ($0.18/CU hour) ~= **$0.42**
 
 ## Related content
-- [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
+- [Pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)

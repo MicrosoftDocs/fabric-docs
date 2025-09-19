@@ -5,7 +5,7 @@ author: conxu-ms
 ms.author: conxu
 ms.topic: conceptual
 ms.custom: pipelines
-ms.date: 10/24/2024
+ms.date: 08/28/2025
 ---
 
 # REST API capabilities for pipelines in Fabric Data Factory
@@ -16,10 +16,10 @@ Fabric Data Factory offers a powerful set of APIs that make it easy to automate 
 
 The APIs for pipelines in Fabric Data Factory can be used in various scenarios:
 
-- **Automated deployment**: Automate the deployment of data pipelines across different environments (development, testing, production) using CI/CD practices.
-- **Monitoring and alerts**: Set up automated monitoring and alerting systems to track the status of data pipelines and receive notifications if failures or performance issues occur.
-- **Data integration**: Integrate data from multiple sources, such as databases, data lakes, and cloud services, into a unified data pipeline for processing and analysis.
-- **Error handling**: Implement custom error handling and retry mechanisms to ensure data pipelines run smoothly and recover from failures.
+- **Automated deployment**: Automate the deployment of pipelines across different environments (development, testing, production) using CI/CD practices.
+- **Monitoring and alerts**: Set up automated monitoring and alerting systems to track the status of pipelines and receive notifications if failures or performance issues occur.
+- **Data integration**: Integrate data from multiple sources, such as databases, data lakes, and cloud services, into a unified pipeline for processing and analysis.
+- **Error handling**: Implement custom error handling and retry mechanisms to ensure pipelines run smoothly and recover from failures.
 
 ## Understanding APIs
 
@@ -41,7 +41,7 @@ CRUD stands for Create, Read, Update, and Delete, which are the four basic opera
 
 The primary online reference documentation for Microsoft Fabric REST APIs can be found in the [Microsoft Fabric REST API documentation](/rest/api/fabric/articles/).
 
-## Get started with REST APIs for data pipelines
+## Get started with REST APIs for pipelines
 
 The following examples show how to to create, update, and manage pipelines using the Fabric Data Factory APIs.
 
@@ -101,8 +101,8 @@ Create a pipeline in a specified workspace.
 
 ```rest
 {
-    "id": "<artifactId>",
-    "type": "DataPipeline",
+    "id": "<itemId>",
+    "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
     "workspaceId": "<workspaceId>"
@@ -150,8 +150,8 @@ Create a pipeline with a base64 definition in a specified workspace.
 
 ```rest
 {
-    "id": "<Your artifactId>",
-    "type": "DataPipeline",
+    "id": "<Your itemId>",
+    "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
     "workspaceId": "<Your workspaceId>"
@@ -178,8 +178,8 @@ Returns properties of specified pipeline.
 
 ```rest
 {
-    "id": "<Your artifactId>",
-    "type": "DataPipeline",
+    "id": "<Your itemId>",
+    "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
     "workspaceId": "<Your workspaceId>"
@@ -254,8 +254,8 @@ Updates the properties of the pipeline.
 
 ```rest
 {
-    "id": "<Your artifactId>",
-    "type": "DataPipeline",
+    "id": "<Your itemId>",
+    "type": "pipeline",
     "displayName": "My pipeline updated",
     "description": "My pipeline description updated",
     "workspaceId": "<Your workspaceId>"
@@ -550,11 +550,11 @@ For more detailed information on how to set up and use SPNs in Fabric Data Facto
 
 ## Related content
 
-Refer to the following content for more information on REST APIs for data pipelines in Fabric Data Factory:
+Refer to the following content for more information on REST APIs for pipelines in Fabric Data Factory:
 
 ### Documentation
 
-- [Fabric data pipeline public REST API](pipeline-rest-api-capabilities.md)
+- [Fabric pipeline public REST API](pipeline-rest-api-capabilities.md)
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [CRUD Items APIs in Fabric](/rest/api/fabric/core/items)
 

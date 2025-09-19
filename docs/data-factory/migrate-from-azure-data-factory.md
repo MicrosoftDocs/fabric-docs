@@ -55,7 +55,7 @@ Here’s a comparison of features in Azure Data Factory and Fabric Data Factory:
 | Execute [SQL Server Integration Services (SSIS)](/azure/data-factory/how-to-invoke-ssis-package-ssis-activity) packages for data integration | Yes | Planned |
 | **Data transformation** |||
 | Visual data transformations with Apache Spark clusters using [Mapping Dataflows](/azure/data-factory/concepts-data-flow-overview) | Yes | No<sup>2</sup> |
-| Visual data transformations with the Fabric compute engine using Power Query in [Dataflow Gen2](data-factory-overview.md#dataflows) | No | Yes |
+| Visual data transformations with the Fabric compute engine using Power Query in [Dataflow Gen2](dataflows-gen2-overview.md) | No | Yes |
 | **Connectivity** |||
 | Support for all [Data Factory data sources](/power-query/connectors) | Yes | In progress<sup>3</sup> |
 | **Scalability** |||

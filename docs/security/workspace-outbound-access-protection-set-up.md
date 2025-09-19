@@ -25,7 +25,7 @@ This article explains how to set up outbound access protection for your Fabric w
 
 * A Fabric tenant administrator must enable the tenant setting **Configure workspace-level outbound network rules**. See [Manage admin access to outbound access protection settings](workspace-outbound-access-protection-tenant-setting.md).
 
-* Re-register the `Microsoft.Network` feature for the subscription. From the Azure portal home page, go to **Subscriptions** > **Settings** > **Resource providers**. Select **Microsoft.Fabric** and select **Re-register**.
+* Re-register the `Microsoft.Network` feature for the subscription. From the Azure portal home page, go to **Subscriptions** > **Settings** > **Resource providers**. Select **Microsoft.Network** and select **Re-register**.
 
 ## Enable workspace outbound access protection 
 

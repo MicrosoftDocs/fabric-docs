@@ -8,7 +8,7 @@ ms.date: 07/31/2025
 ms.search.form: Test your User Data Functions
 ---
 
-# Test your User Data Functions in the Fabric portal (preview)
+# Test your User Data Functions in the Fabric portal
 
 Fabric User data functions provide capabilities to test and validate your code changes in the Fabric portal or by using the [VS Code extension](./create-user-data-functions-vs-code.md). These features are helpful to ensure that your functions can run successfully without the need to publish them. 
 

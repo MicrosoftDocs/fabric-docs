@@ -10,7 +10,7 @@ ms.search.form: Fabric User data functions
 
 # Tutorial: Invoke user data functions from a Python console application
 
-To invoke Fabric User data function items (Preview) from a console application in Python, you can send HTTP requests to the function endpoint that needs to be executed. In this quickstart, you learn how to set up a Python app using Visual Studio Code.
+To invoke Fabric User data function items from a console application in Python, you can send HTTP requests to the function endpoint that needs to be executed. In this quickstart, you learn how to set up a Python app using Visual Studio Code.
 
 ## Prerequisites
 

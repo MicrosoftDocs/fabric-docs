@@ -61,10 +61,10 @@ The following table presents features supported in Power BI dataflow and/or Fabr
 | Connect to, and load data from, dataflows in Power BI Desktop, Excel, or Power Apps | Yes | Yes |
 | [DirectQuery via dataflows](/power-bi/transform-model/dataflows/dataflows-directquery) to connect directly to a dataflow, bypassing data import into a semantic model | Yes | No <sup>1</sup> |
 | **Scalability** |||
-| [Fast copy](dataflows-gen2-fast-copy.md), which supports large-scale data ingestion, utilizing the data pipeline [Copy activity](copy-data-activity.md) within dataflows | No | Yes |
+| [Fast copy](dataflows-gen2-fast-copy.md), which supports large-scale data ingestion, utilizing the pipeline [Copy activity](copy-data-activity.md) within dataflows | No | Yes |
 | [Scheduled refresh](dataflow-gen2-refresh.md), which keeps data current | Yes | Yes |
 | [Incremental refresh](dataflow-gen2-incremental-refresh.md), which uses policies to automate incremental data load and can help deliver near real-time reporting | Yes | Yes |
-| [Data pipeline orchestration](dataflow-activity.md), which allows you to add a [Dataflow activity](dataflow-activity.md) to a data pipeline and create orchestrated conditional events | No | Yes |
+| [Pipeline orchestration](dataflow-activity.md), which allows you to add a [Dataflow activity](dataflow-activity.md) to a pipeline and create orchestrated conditional events | No | Yes |
 | **Artificial intelligence** |||
 | [Copilot for Data Factory](../fundamentals/copilot-fabric-data-factory.md), which provides intelligent code generation to transform data with ease, and generates code explanations to help better understand complex tasks | No | Yes |
 | [Cognitive Services](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration), which use artificial intelligence (AI) to apply different algorithms from Azure Cognitive Services to enrich self-service data preparation | Yes | No <sup>2</sup> |

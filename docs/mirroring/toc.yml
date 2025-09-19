@@ -92,11 +92,35 @@ items:
       displayName: Mirroring Azure Databricks security
       href: azure-databricks-security.md
     - name: Limitations
-      displayName: Mirroring Azure Databricks Limitations
+      displayName: Mirroring Azure Databricks limitations
       href: azure-databricks-limitations.md
     - name: FAQ about Mirroring Azure Databricks
-      displayName: Frequently asked questions about Mirroring Azure Databricks
+      displayName: Frequently asked questions about mirroring Azure Databricks
       href: azure-databricks-faq.yml
+- name: Mirroring Google BigQuery
+  items: 
+    - name: Mirrored databases from Google BigQuery
+      href: google-bigquery.md
+    - name: Mirroring Google BigQuery tutorial
+      href: google-bigquery-tutorial.md
+    - name: Mirroring Google BigQuery pricing
+      href: google-bigquery-cost.md
+    - name: Secure data in mirrored Google BigQuery
+      href: google-bigquery-security.md
+    - name: Limitations in mirroring Google BigQuery
+      href: google-bigquery-limitations.md
+    - name: Frequently asked questions about mirroring Google BigQuery
+      href: google-bigquery-faq.yml
+- name: Mirroring Oracle
+  items:
+    - name: Mirrored databases from Oracle
+      href: oracle.md
+    - name: Oracle tutorial
+      href: oracle-tutorial.md
+    - name: Secure oracle data
+      href: oracle-security.md
+    - name: Limitations in mirrored Oracle
+      href: oracle-limitations.md
 - name: Mirroring PostgreSQL
   items: 
     - name: Mirrored databases from PostgreSQL
@@ -142,12 +166,19 @@ items:
     - name: Secure data 
       displayName: Securing data in mirrored SQL Server
       href: sql-server-security.md
+    - name: Performance
+      displayName: Performance in mirrored SQL Server
+      href: sql-server-performance.md
     - name: Limitations 
       displayName: Limitations in mirrored SQL Server
       href: sql-server-limitations.md
     - name: Troubleshoot 
-      displayName: Troubleshoot mirrored SQL Server
-      href: sql-server-troubleshoot.md
+      items:
+        - name: Troubleshoot mirrored SQL Server
+          displayName: Troubleshoot mirrored SQL Server
+          href: sql-server-troubleshoot.md
+        - name: Automatic reseed
+          href: sql-server-configure-automatic-reseed.md
 - name: Open mirroring 
   items:
     - name: Open mirroring overview

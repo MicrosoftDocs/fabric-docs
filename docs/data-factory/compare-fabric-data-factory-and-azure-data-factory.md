@@ -27,7 +27,7 @@ Here's how the core features stack up between Azure Data Factory and Fabric Data
 
 |[Azure Data Factory](/azure/data-factory/introduction) |[Data Factory in Fabric](data-factory-overview.md) |What's different |
 |:---|:---|:---|
-|Pipeline |Data pipeline | **Better integration**: Data pipelines in Fabric work seamlessly with Lakehouse, Data Warehouse, and other Fabric services right out of the box. |
+|Pipeline |Pipeline | **Better integration**: Pipelines in Fabric work seamlessly with Lakehouse, Data Warehouse, and other Fabric services right out of the box. |
 |Mapping data flow  |Dataflow Gen2 | **Easier to use**: Dataflow Gen2 gives you a simpler experience for building transformations. We're adding more mapping dataflow features to Gen2 all the time. |
 |Activities |Activities|**More activities coming**: We're working to bring all your favorite ADF activities to Fabric. Plus, you get new ones like the Office 365 Outlook activity that aren't available in ADF. See our [Activity overview](activity-overview.md) for details.|
 |Dataset |Connections only|**Simpler approach**: No more complex dataset configurations. For Data Factory in Fabric you use connections to link to your data sources and start working. |

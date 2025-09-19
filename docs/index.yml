@@ -415,14 +415,17 @@ conceptualContent:
               itemType: reference
               text: Terraform provider for Fabric            
         # Card
-        - title: Solutions for ISVs
+        - title: Fabric extensibility
           links:
-            - url: cicd/partners/partner-integration.md
-              itemType: overview
-              text: Fabric for ISVs
+            - url: extensibility-toolkit/extensibility-toolkit-overview.md
+              itemType: concept
+              text: Extensibility toolkit
             - url: workload-development-kit/development-kit-overview.md
               itemType: concept
               text: Workload development kit
+            - url: cicd/partners/partner-integration.md
+              itemType: overview
+              text: Fabric for ISVs
           footerLink:
               url: cicd/partners/partner-integration.md
               text: See more

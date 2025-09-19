@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 02/25/2025
+ms.date: 07/29/2025
 ms.search.form: product-kusto
 ---
 
@@ -54,7 +54,8 @@ To share your KQL database, follow these steps:
 1. Send the link to the authorized users.
 
 > [!NOTE]
-> The shared link provides access to a single database. There is no bulk sharing option for multiple databases, and an Eventhouse can't be shared.
+> The shared link provides access to a single database.
+> To share all the databases in an eventhouse, use the [share an Eventhouse](create-eventhouse.md#share-an-eventhouse) option.
 
 :::image type="content" source="media/create-database/database-share.png" alt-text="Screenshot that shows the Share button on the top right of the screen.":::
 
