@@ -4,17 +4,20 @@ description: Step-by-step instructions to enable and configure SQL audit logs on
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: fresantos
-ms.date: 07/15/2025
+ms.date: 08/01/2025
 ms.topic: how-to
 ms.search.form: Warehouse SQL Audit Logs # This article's title should not change. If so, contact engineering.
 ---
 # How to configure SQL audit logs in Fabric Data Warehouse (Preview)
 
-**Applies to:** [!INCLUDE [fabric-dw.md](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw.md](includes/applies-to-version/fabric-dw.md)]
 
 Auditing in Fabric Data Warehouse provides enhanced security and compliance capabilities by tracking and recording database events. 
 
-You can configure SQL audit logs in the Fabric portal or via REST API. The SQL audit logs feature is currently in preview.
+You can configure [SQL audit logs in Fabric Data Warehouse](sql-audit-logs.md) in the Fabric portal or via REST API. 
+
+> [!NOTE]
+> The SQL audit logs feature is currently in preview. 
 
 ## Prerequisites
 
@@ -87,6 +90,7 @@ Your warehouse will now record the selected audit events and store the logs secu
     PATCH https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/warehouses/<warehouseId>/settings/sqlAudit
     content-type: application/json
     Authorization: Bearer <BEARER_TOKEN>
+    
     {
         "state": "Enabled",
         "retentionDays": "0"
@@ -99,6 +103,10 @@ Your warehouse will now record the selected audit events and store the logs secu
     - Replace `<BEARER_TOKEN>` with your [bearer token](#obtain-your-power-bi-bearer-token).
     - Setting `state` to "Enabled" activates auditing (use "Disabled" to turn it off).
     - The `retentionDays` parameter is set to `0` by default for unlimited retention.
+    
+   > [!IMPORTANT]
+   > In the extension example code, you must include an empty line immediately after providing the bearer token. This empty line signals the extension where the HTTP headers end and the API command body begins, allowing it to correctly distinguish between the two.
+    
 1. Select **Send Request**.
 
 #### Check audit log status with the REST API
@@ -159,5 +167,5 @@ FROM sys.fn_get_audit_file_v2
 ## Related content
 
 - [Security in Microsoft Fabric](../security/security-overview.md)
-- [SQL audit logs in Fabric Data Warehouse](sql-audit-logs.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
+- [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md)

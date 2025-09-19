@@ -1,9 +1,9 @@
 ---
 title: Apache Spark compute for Data Engineering and Data Science
 description: Learn about the starter pools, custom Apache Spark pools, and pool configurations for data Engineering and Science experiences in Fabric.
-ms.reviewer: snehagunda
-ms.author: saravi
-author: santhoshravindran7
+ms.reviewer: saravi
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 07/03/2025
@@ -99,6 +99,9 @@ Possible custom pool configurations for F64 based on the previous example. Small
 ## Nodes
 
 An Apache Spark pool instance consists of one head node and worker nodes, could start a minimum of one node in a Spark instance. The head node runs extra management services such as Livy, Yarn Resource Manager, Zookeeper, and the Apache Spark driver. All nodes run services such as Node Agent and Yarn Node Manager. All worker nodes run the Apache Spark Executor service.
+
+> [!NOTE]
+> In Fabric, the ratio of nodes to executors is always 1:1. When you set up a pool, one node is dedicated to the driver, and the remaining nodes are used for the executors. The only exception is in a single-node configuration, where the resources for both the driver and the executor are halved.
 
 ## Node sizes
 

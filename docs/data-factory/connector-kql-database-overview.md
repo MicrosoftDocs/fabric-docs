@@ -19,10 +19,10 @@ The KQL Database connector is supported in Data Factory for [!INCLUDE [product-n
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/destination)                                                 | None<br> On-premises<br> Virtual network | Organizational account |
-| **Data pipeline** <br>- [Copy activity](connector-kql-database-copy-activity.md) (source/destination)<br>- Lookup activity        | None<br> On-premises<br> Virtual network | Organizational account |
+| **Pipeline** <br>- [Copy activity](connector-kql-database-copy-activity.md) (source/destination)<br>- Lookup activity        | None<br> On-premises<br> Virtual network | Organizational account |
 
 ## Related content
 
 To learn about how to connect to KQL Database, go to [Set up your KQL Database connection](connector-kql-database.md).
 
-To learn about the copy activity configuration for KQL Database in data pipelines, go to [Configure KQL Database in a copy activity](connector-kql-database-copy-activity.md).
+To learn about the copy activity configuration for KQL Database in pipelines, go to [Configure KQL Database in a copy activity](connector-kql-database-copy-activity.md).

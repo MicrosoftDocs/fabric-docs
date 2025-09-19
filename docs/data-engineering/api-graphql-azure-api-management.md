@@ -1,9 +1,9 @@
 ---
 title: Integrate Azure API Management (APIM) with Fabric API for GraphQL
 description: This article contains information about API for GraphQL integration with APIM
-author: KoldBrewEd 
-ms.author: edlima
-ms.reviewer: 
+author: eric-urban
+ms.author: eur
+ms.reviewer: edlima
 ms.date: 06/05/2025
 ms.topic: conceptual
 ms.custom:

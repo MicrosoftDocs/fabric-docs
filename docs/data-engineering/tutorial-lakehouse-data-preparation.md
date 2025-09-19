@@ -1,12 +1,12 @@
 ---
 title: Lakehouse tutorial - Prepare and transform lakehouse data
 description: After ingesting raw data into your new lakehouse, you can transform it using notebooks and Spark runtime.
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
+ms.reviewer: arali
+ms.author: eur
+author: eric-urban
 ms.topic: tutorial
 ms.custom:
-ms.date: 12/25/2024
+ms.date: 08/29/2025
 ---
 
 # Lakehouse tutorial: Prepare and transform data in the lakehouse
@@ -26,7 +26,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. Download the notebooks from the [Lakehouse Tutorial Source Code](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/Lakehouse%20Tutorial%20Source%20Code) folder.
 
-1. From the workspace, select **Import** > **Notebook** > **From this computer**.
+1. Open your workspace, select **Import** > **Notebook** > **From this computer**.
 
 1. Select **Import notebook** from the **New** section at the top of the landing page.
 
@@ -70,7 +70,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    
    table_name = 'fact_sale'
    
-   df = spark.read.format("parquet").load('Files/wwi-raw-data/WideWorldImportersDW/parquet/full/fact_sale_1y_full')
+   df = spark.read.format("parquet").load('Files/wwi-raw-data/full/fact_sale_1y_full')
    df = df.withColumn('Year', year(col("InvoiceDateKey")))
    df = df.withColumn('Quarter', quarter(col("InvoiceDateKey")))
    df = df.withColumn('Month', month(col("InvoiceDateKey")))
@@ -83,7 +83,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    ```python
    from pyspark.sql.types import *
    def loadFullDataFromSource(table_name):
-       df = spark.read.format("parquet").load('Files/wwi-raw-data/WideWorldImportersDW/parquet/full/' + table_name)
+       df = spark.read.format("parquet").load('Files/wwi-raw-data/full/' + table_name)
        df = df.drop("Photo")
        df.write.mode("overwrite").format("delta").save("Tables/" + table_name)
     

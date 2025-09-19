@@ -4,7 +4,7 @@ description: Learn how to create a Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 04/06/2025
+ms.date: 09/18/2025
 ms.topic: how-to
 ms.search.form: Create a warehouse # This article's title should not change. If so, contact engineering.
 ---
@@ -33,6 +33,8 @@ Another option available to create your warehouse is through the **Create** butt
 
 Once initialized, you can load data into your warehouse. For more information about getting data into a warehouse, see [Ingest data into the Warehouse](ingest-data.md).
 
+Your warehouse data is located in the region of your Fabric workspace. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **License info** page. 
+
 <a id="how-to-create-a-warehouse-sample"></a>
 
 ## Create a warehouse with sample data
@@ -53,7 +55,7 @@ In this section, we walk you through creating a sample [!INCLUDE [fabric-dw](inc
 
    :::image type="content" source="media/create-warehouse/warehouse-with-sample-table-view.png" alt-text="Screenshot showing the Warehouse loaded with sample data." lightbox="media/create-warehouse/warehouse-with-sample-table-view.png":::
 
-If you have an existing warehouse created that's empty, the following steps will show how to load sample data.
+If you have an existing warehouse created that's empty, the following steps show how to load sample data.
 
 1. Once you have created your warehouse, you can load sample data into warehouse from **Use sample database** card on the home page of the warehouse.
 
@@ -64,7 +66,7 @@ If you have an existing warehouse created that's empty, the following steps will
 1. The following sample T-SQL scripts can be used on the sample data in your new warehouse.
 
     > [!NOTE]
-    > It is important to note that much of the functionality described in this section is also available to users via a TDS end-point connection and tools such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true) (for users who prefer to use T-SQL for the majority of their data processing needs). For more information, see [Connectivity](connectivity.md) or [Query the SQL analytics endpoint or Warehouse](query-warehouse.md).
+    > It's important to note that much of the functionality described in this section is also available to users via a TDS end-point connection and tools such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true) (for users who prefer to use T-SQL for most their data processing needs). For more information, see [Connectivity](connectivity.md) or [Query the SQL analytics endpoint or Warehouse](query-warehouse.md).
 
     ```sql
     

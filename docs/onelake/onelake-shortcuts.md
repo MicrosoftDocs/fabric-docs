@@ -243,10 +243,7 @@ Fabric users can also create shortcuts to Dataverse. When users create shortcuts
 
 #### Authorization
 
-Dataverse shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut, and all access to that shortcut is authorized using that credential. The supported delegated credential type is organizational account (OAuth2). The organizational account must have the system administrator permission to access data in Dataverse Managed Lake.
-
-> [!NOTE]
-> Dataverse shortcuts don't currently support Service Principals as an authenticaion type.
+Dataverse shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut, and all access to that shortcut is authorized using that credential. The supported delegated credential types are organizational account (OAuth2) and Service Principal. The account must have the system administrator permission to access data in Dataverse Managed Lake.
 
 ## Caching
 
@@ -277,7 +274,7 @@ For example, consider a lakehouse with the following path in it: `MyLakehouse\Fi
 
 You can perform a delete operation on the following path: `MyLakehouse\Files\MyShortcut`. In this case, the **MyShortcut** shortcut is deleted from the lakehouse but the files and directories in the ADLS Gen2 account *Foo\Bar* remain unaffected.
 
-You can also perform a delete operation on the following path: `MyLakehouse\Files\MyShortcut\Foo\Bar`. In this case, if you write permissions in the ADLS Gen2 account, the **Bar** directory is deleted from the ADLS Gen2 account.
+You can also perform a delete operation on the following path: `MyLakehouse\Files\MyShortcut\Foo\Bar`. In this case, if you have write permissions in the ADLS Gen2 account, the **Bar** directory is deleted from the ADLS Gen2 account.
 
 ## Workspace lineage view
 

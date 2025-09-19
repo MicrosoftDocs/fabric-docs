@@ -54,4 +54,6 @@ For more information, see [Prevent My workspace owners from reassigning their My
 
 ## Related content
 
-[About tenant settings](tenant-settings-index.md)
+* [About tenant settings](tenant-settings-index.md)
+
+* [CI/CD workflow options in Fabric](../cicd/manage-deployment.md)

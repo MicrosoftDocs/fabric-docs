@@ -1,8 +1,9 @@
 ---
 title: Create, Configure, and Use an Environment in Fabric
 description: Learn how to create, configure, and use a Microsoft Fabric environment in your notebooks and Spark job definitions.
-ms.author: shuaijunye
-author: ShuaijunYe
+ms.author: eur
+ms.reviewer: shuaijunye
+author: eric-urban
 ms.topic: how-to
 ms.date: 03/31/2025
 ms.search.form: Create and use Environment
@@ -57,6 +58,10 @@ The **Resources** section in an environment facilitates the ability to manage sm
 On the **Home** tab, you can easily find **Save** and **Publish**. They're activated when there are unsaved or unpublished pending changes in the **Libraries** and **Spark compute** sections.
 
 :::image type="content" source="media\environment-introduction\env-save-and-publish.png" alt-text="Screenshot that shows where to select Save and Publish.":::
+
+> [!IMPORTANT]
+>
+> - If Private Link is enabled, the first Spark job in the workspace need to trigger VNet provisioning, which can take approximately 10–15 minutes. Since environment publishing also runs as a Spark job, it may experience an additional delay if it happens to be the first Spark job executed after Private Link is enabled.
 
 When pending changes are in the **Libraries** and **Spark compute** sections, you also see a banner that prompts you with **Save** and **Publish**. The functionalities are the same as for the buttons:
 

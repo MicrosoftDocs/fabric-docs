@@ -20,9 +20,6 @@ With [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis), 
 
 This article describes how to use the [Git integration REST APIs](/rest/api/fabric/core/git) to automate Git integration in Microsoft Fabric.
 
-<!--- 
-To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Power BI automation tools](#use-the-power-bi-automation-tools-extension) extension, which supports many of the Git integration API operations.
---->
 
 ## Prerequisites
 
@@ -32,7 +29,7 @@ To work with Fabric Git APIs, you need:
 
 * A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
 
-* If you're using a service principal, it needs the same permissions as a user principal.
+* If you're using a service principal, it needs the same permissions as a user principal. To set up a service principal for Azure DevOps, see [Git integration with service principal](git-integration-with-service-principal.md).
 
 You can use the REST APIs without [PowerShell](/powershell/scripting/overview), but the scripts in this article use PowerShell. To run the scripts, take the following steps:
 
@@ -69,7 +66,9 @@ Use the following PowerShell scripts to understand how to perform several common
 
 This section describes the steps involved in connecting and updating a workspace with Git.
 
-For the complete script, see [Connect and update from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1).
+
+
+For the complete script, see [Connect and update from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1). (The script compatibility is PowerShell 5.1)
 
 1. **Connect to Azure account and get access token** - Sign in to Fabric as a user or a service principal. Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to connect.
 To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command, and [convert the secure string token to plain text](/powershell/azure/faq#how-can-i-convert-a-securestring-to-plain-text-in-powershell-)
@@ -144,7 +143,10 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
     ---
 
-1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
+
+
+1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch. (you might need to [create a connection](#get-or-create-git-provider-credentials-connection) first)
+
 
      For information on how to obtain the Connection details (ID, Name), refer to [Get or create Git provider credentials connection](#get-or-create-git-provider-credentials-connection).
 
@@ -201,7 +203,11 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
     ```
 
-   ### [GitHub](#tab/github)
+
+
+   ### [GitHub (User or service principal)](#tab/github)
+    For information on how to obtain the Connection ID, refer to [Get or create Git provider credentials connection](#get-or-create-git-provider-credentials-connection).
+
 
     ```powershell
     $global:baseUrl = "https://api.fabric.microsoft.com/v1"
@@ -559,7 +565,6 @@ Copy the ID of the connection you want and use it in the [Git - Connect](/rest/a
 * Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git *diff* after each refresh.
 
 ## Related content
-
 * [Git integration - get started](git-get-started.md)
 * [Fabric APIs](/rest/api/fabric/articles/using-fabric-apis)
 * [Git best practices](../best-practices-cicd.md)

@@ -2,8 +2,8 @@
 title: Create and run Spark Session jobs using the Livy API
 description: Learn how to submit and run Spark session jobs in Fabric using the Livy API.
 ms.reviewer: sngun
-ms.author: guyhay
-author: GuyHay
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.search.form: Get started with the Livy API for Data Engineering
 ms.date: 04/30/2025
@@ -101,7 +101,7 @@ A Lakehouse artifact is required to access the Livy endpoint. Once the Lakehouse
 
 The endpoint of the Livy API would follow this pattern:
 
-<https://api.fabric.microsoft.com/v1/workspaces/><ws_id>/lakehouses/<lakehouse_id>/livyapi/versions/2023-12-01/
+`https://api.fabric.microsoft.com/v1/workspaces/><ws_id>/lakehouses/<lakehouse_id>/livyapi/versions/2023-12-01/`
 
 The URL is appended with either \<sessions> or \<batches> depending on what you choose.
 

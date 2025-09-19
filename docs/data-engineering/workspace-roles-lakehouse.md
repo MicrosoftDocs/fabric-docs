@@ -1,9 +1,9 @@
 ---
 title: Workspace roles and permissions in lakehouse
 description: Learn how workspace roles and permissions work in your Microsoft Fabric lakehouse, including what roles are available.
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 05/23/2023
@@ -29,5 +29,5 @@ In a lakehouse, the users with Admin, Member, and Contributor roles can perform 
 ## Related content
 
 - [Roles in workspaces](../fundamentals/roles-workspaces.md)
-- [OneLake data access permissions](../onelake/security/get-started-data-access-roles.md)
+- [OneLake data access permissions](../onelake/security/get-started-onelake-security.md)
 - [Fabric and OneLake Security](../onelake/security/fabric-onelake-security.md)

@@ -1,8 +1,8 @@
 ---
 title: Differences between Data Factory in Fabric and Azure
 description: Compare Azure Data Factory and Fabric Data Factory features to choose the right data integration solution for your enterprise.
-author: pennyzhou-msft
-ms.author: xupzhou
+author: kromerm
+ms.author: makromer
 ms.topic: concept-article
 ms.date: 07/02/2025
 ms.custom:
@@ -27,7 +27,7 @@ Here's how the core features stack up between Azure Data Factory and Fabric Data
 
 |[Azure Data Factory](/azure/data-factory/introduction) |[Data Factory in Fabric](data-factory-overview.md) |What's different |
 |:---|:---|:---|
-|Pipeline |Data pipeline | **Better integration**: Data pipelines in Fabric work seamlessly with Lakehouse, Data Warehouse, and other Fabric services right out of the box. |
+|Pipeline |Pipeline | **Better integration**: Pipelines in Fabric work seamlessly with Lakehouse, Data Warehouse, and other Fabric services right out of the box. |
 |Mapping data flow  |Dataflow Gen2 | **Easier to use**: Dataflow Gen2 gives you a simpler experience for building transformations. We're adding more mapping dataflow features to Gen2 all the time. |
 |Activities |Activities|**More activities coming**: We're working to bring all your favorite ADF activities to Fabric. Plus, you get new ones like the Office 365 Outlook activity that aren't available in ADF. See our [Activity overview](activity-overview.md) for details.|
 |Dataset |Connections only|**Simpler approach**: No more complex dataset configurations. For Data Factory in Fabric you use connections to link to your data sources and start working. |
@@ -47,6 +47,10 @@ Here's how the core features stack up between Azure Data Factory and Fabric Data
 ## What makes Fabric Data Factory special
 
 Data Factory in Microsoft Fabric isn't just an upgrade—it's a whole new way to think about data integration. Here are some of the standout features that make Fabric Data Factory a game changer:
+
+### Built-in AI Co-pilot features
+
+In Fabric Data Factory, building your pipeline, dataflows, and other Data Factory items is incredibly easy and fast thanks for native integration with Microsoft's game-changing AI feature Co-Pilot. With Co-pilot for Data Factory, you can use natural language to easily define your data integration projects.
 
 ### Native Lakehouse and Data Warehouse integration
 
@@ -69,6 +73,10 @@ Fabric's modern **Get data** experience makes it quick to set up copy pipelines 
 :::image type="content" source="media/connector-differences/copy-data-source.png" alt-text="Screenshot showing that A modern and easy Get Data experience.":::
 
 :::image type="content" source="media/connector-differences/create-new-connection.png" alt-text="Screenshot showing that how to create a new connection.":::
+
+### Ease-of-use improvements in CI/CD experience
+
+In Fabric, the CI/CD experience is much easier and more flexible than in Azure Data Factory or Synapse. There is no connection between CI/CD and ARM templates in Fabric making it super-easy to cherry-pick individual parts of your Fabric workspace for check-in, check-out, validation, and collaboration. In ADF and Synapse, your only option for CI/CD is to use your own Git repo. However, in Fabric, you can optionally use the built-in deployment pipelines feature which does not require bringing your own external Git repo.
 
 ### Next-level monitoring and insights
 

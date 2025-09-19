@@ -1,9 +1,9 @@
 ---
 title: Create and manage Apache Spark job definitions in VS Code
 description: Learn about the VS Code extension for Fabric Data Engineering, which supports a pro-developer experience for creating, running, and debugging Spark job definitions.
-ms.reviewer: sngun
-ms.author: qixwang
-author: qixwang
+ms.reviewer: qixwang
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom:
 ms.date: 11/11/2024

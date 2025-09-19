@@ -1,9 +1,9 @@
 ---
 title: Lakehouse schemas (Preview)
 description: What lakehouse schemas are and how to use it
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.date: 01/16/2025
 ms.search.form: Lakehouse schemas
@@ -89,7 +89,6 @@ Below listed unsupported features/functionalities are for current release of pub
 | Spark.catalog API | Not supported. Use Spark SQL instead. |
 | `USE <schemaName>` | Doesn't work cross workspaces, but supported within same workspace. |
 | Migration	| Migration of existing non-schema Lakehouses to schema-based Lakehouses isn't supported. |
-| Dataflow Gen2 | Not supported. |
 
 ## Related content
 

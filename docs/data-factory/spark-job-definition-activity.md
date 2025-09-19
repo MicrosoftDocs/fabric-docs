@@ -1,6 +1,6 @@
 ---
 title: Spark Job Definition activity
-description: Learn how to transform data by running a Spark Job Definition activity in a data pipeline in Data Factory for Microsoft Fabric.
+description: Learn how to transform data by running a Spark Job Definition activity in a pipeline in Data Factory for Microsoft Fabric.
 ms.reviewer: xupxhou
 ms.author: whhender
 author: whhender
@@ -11,7 +11,7 @@ ms.date: 03/10/2025
 
 # Transform data by running a Spark Job Definition activity
 
-The Spark Job Definition activity in Data Factory for Microsoft Fabric allows you to create connections to your Spark Job Definitions and run them from a data pipeline.
+The Spark Job Definition activity in Data Factory for Microsoft Fabric allows you to create connections to your Spark Job Definitions and run them from a pipeline.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ To get started, you must complete the following prerequisites:
 
 ## Add a Spark Job Definition activity to a pipeline with UI
 
-1. Create a new data pipeline in your workspace.
+1. Create a new pipeline in your workspace.
 1. Search for Spark Job Definition from the home screen card and select it or select the activity from the Activities bar to add it to the pipeline canvas.
 
    - Creating the activity from the home screen card:

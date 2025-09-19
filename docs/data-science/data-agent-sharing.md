@@ -1,13 +1,15 @@
----
+﻿---
 title: Fabric data agent sharing and permission management (preview)
 description: Learn how to share a Fabric data agent, and manage Fabric data agent permissions.
-author: s-polly
-ms.author: scottpolly
+author: jonburchel
+ms.author: jburchel
 ms.reviewer: amjafari
 ms.topic: concept-article
-ms.date: 03/25/2025
+ms.date: 09/17/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
+reviewer: s-polly
+ai-usage: ai-assisted
 ---
 
 # Fabric data agent sharing and permission management (preview)
@@ -18,11 +20,11 @@ ms.collection: ce-skilling-ai-copilot
 
 ## Publishing and versioning
 
-Creation of a data agent in Microsoft Fabric is an iterative process. It involves refinement of various configurations, for example
+Creation of a data agent in Microsoft Fabric is an iterative process. It involves refinement of various configurations, for example:
 
-- selection of relevant tables
-- Fabric data agent instruction definition
-- production of example queries for each data source
+- Selecting relevant tables
+- Defining Fabric data agent instructions
+- Creating example queries for each data source
 
 As you make adjustments to enhance the performance of the Fabric data agent, you can eventually publish that Fabric data agent. Once published, a read-only version is generated, which you can share with others.
 
@@ -45,7 +47,7 @@ To update the Fabric data agent description without making any other changes, na
 
 <!-- <img src="./media/data-agent-sharing/update-description.png" alt="Screenshot showing how to update the Fabric data agent description.." width="700"/> -->
 
-## Permission models for sharing the Fabric data agent
+## Sharing permission models and required source access
 
 The **Fabric data agent sharing** feature allows you to share your Fabric data agents with others, with a range of permission models, as shown in this screenshot:
 
@@ -54,6 +56,25 @@ The **Fabric data agent sharing** feature allows you to share your Fabric data a
 :::image type="content" source="./media/data-agent-sharing/sharing-main.png" alt-text="Screenshot showing how to share a Fabric data agent link." lightbox="./media/data-agent-sharing/sharing-main.png":::
 
 You have complete control over access to your Fabric data agent, and complete control of its use. Additionally, when you share the Fabric data agent, you must also share access to the underlying data it uses. The Fabric data agent honors all user permissions to the data, including Row-Level Security (RLS) and Column-Level Security (CLS).
+
+### Underlying data source permissions
+
+For a user to successfully query through a Fabric data agent, they need the minimum effective permissions shown below for each connected data source type. If they have less than the listed permission, queries fail or return empty results.
+
+| Data source type | Minimum permission to query via data agent | Notes |
+| ---------------- | ------------------------------------------- | ----- |
+| Power BI semantic model | Build (includes Read) | Read alone is not sufficient because the agent generates model queries that require Build. |
+| Lakehouse | Read on the lakehouse item (and table access if enforced) | Write not required unless modifying data. |
+| Warehouse | Read (SELECT on relevant tables) | Higher permissions only for DML/DDL operations. |
+| KQL database | Reader role on the database | Higher roles only for management commands. |
+| Other supported sources | Query/read-level access | Must allow metadata + data retrieval. |
+
+> [!IMPORTANT]
+> If a user only has Read permission on a semantic model (no Build), the Fabric data agent can't run its generated queries. Grant Build to enable interactive querying.
+
+Follow least privilege: grant only the data source permissions required (for semantic models this typically means Build without assigning broader workspace roles unless needed).
+
+If a user can open the Fabric data agent but lacks the minimum permission on one or more underlying sources, queries that touch those sources fail with an authorization error or return empty results, depending on the source’s security model.
 
 <!-- <img src="./media/data-agent-sharing/sharing-main.png" alt="Screenshot showing how to share a Fabric data agent link." width="300"/> -->
 

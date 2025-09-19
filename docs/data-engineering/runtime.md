@@ -1,9 +1,9 @@
 ---
 title: Apache Spark runtime in Fabric
 description: Learn about the Apache Spark-based runtimes available in Fabric, including Fabric optimizations and support.
-ms.reviewer: snehagunda
-ms.author: arali
-author: ekote
+ms.reviewer: arali
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom: sfi-image-nochange
 ms.date: 01/08/2025
@@ -88,7 +88,7 @@ Delta Lake features are always backwards compatible, ensuring tables created in 
 
 Each Delta table is associated with a protocol specification, defining the features it supports. Applications that interact with the table, either for reading or writing, rely on this protocol specification to determine if they are compatible with the table's feature set. If an application lacks the capability to handle a feature listed as supported in the table's protocol, It's unable to read from or write to that table.
 
-The protocol specification is divided into two distinct components: the read protocol and the write protocol. Visit the page ["How does Delta Lake manage feature compatibility?"](https://docs.delta.io/2.4.0/versioning.html#language-python) to read details about it.
+The protocol specification is divided into two distinct components: the read protocol and the write protocol. Visit the page ["How does Delta Lake manage feature compatibility?"](https://docs.delta.io/versioning.html#language-python) to read details about it.
 
 :::image type="content" source="media\mrs\delta-upgrade-table-protocol.gif" alt-text="GIF showing the immediate warning when upgradeTableProtocol method is used." lightbox="media\mrs\delta-upgrade-table-protocol.gif":::
 

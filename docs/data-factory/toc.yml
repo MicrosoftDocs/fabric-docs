@@ -2,85 +2,95 @@
   - name: Data factory documentation
     href: index.yml
   - name: Overview
-    items:
-    - name: What is Data Factory?
-      href: data-factory-overview.md
-    - name: What's new in Data Factory
-      href: ../fundamentals/whats-new.md?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric
-    - name: What is Copilot in Fabric in the Data Factory workload? 
-      href: copilot-fabric-data-factory.md
-    - name: Get started with Copilot in Fabric in the Data Factory workload
-      href: copilot-fabric-data-factory-get-started.md
-    - name: Guided Data Factory lab
-      href: guided-lab-experience.md
-    - name: Data Factory training
-      href: /training/paths/get-started-fabric
-    - name: Pricing in Data Factory
-      items:
-      - name: Pricing overview
-        href: pricing-overview.md
-      - name: Pricing data pipelines
-        href: pricing-pipelines.md
-      - name: Pricing Dataflow Gen2
-        href: pricing-dataflows-gen2.md
-      - name: Pricing Copy job
-        href: pricing-copy-job.md
-      - name: Pricing Apache Airflow job
-        href: pricing-apache-airflow-job.md
-      - name: Cost estimation from Azure Data Factory to Fabric
-        href: cost-estimation-from-azure-data-factory-to-fabric-pipeline.md
-      - name: Pricing examples
-        items:
-        - name: Data pipelines
-          items:
-          - name: Load 1 TB of Parquet data to a data Warehouse
-            href: pricing-scenario-load-1-tb-parquet-to-data-warehouse.md
-          - name: Load 1 TB of Parquet data to a data warehouse with staging
-            href: pricing-scenario-load-1-tb-parquet-to-data-warehouse-stage.md
-          - name: Load 1 TB of CSV data to Lakehouse tables
-            href: pricing-scenario-load-1-tb-csv-to-lakehouse-table.md
-          - name: Load 1 TB of CSV data to Lakehouse files
-            href: pricing-scenario-load-1-tb-csv-to-lakehouse-files.md
-          - name: Load 1 TB of Parquet data to a Lakehouse table
-            href: pricing-scenario-load-1-tb-parquet-to-lakehouse-table.md
-        - name: Dataflow Gen2
-          items:
-          - name: Load 2 GB of on-premises CSV data to a Lakehouse table
-            href: pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md
-          - name: Load 2 GB of Parquet data to a Lakehouse table
-            href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md
-          - name: Load 6 GB of CSV data to a Lakehouse table with Fast Copy enabled
-            href: pricing-scenario-dataflows-gen2-load-6-gb-csv-to-lakehouse-table-fastcopy.md
-          - name: Load 2 GB of Parquet data to a Lakehouse table through Virtual Network Data Gateway
-            href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-vnet-gateway.md
-        - name: Copy job
-          items:
-          - name: Load 1 TB of CSV data to a Lakehouse table
-            href: pricing-scenario-copy-job.md
-    - name: Keyboard shortcuts
-      href: keyboard-shortcuts.md
+    items: 
+      - name: What is Data Factory?
+        href: data-factory-overview.md
+      - name: What's new in Data Factory
+        href: ../fundamentals/whats-new.md?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric
+      - name: Guided Data Factory lab
+        href: guided-lab-experience.md
+      - name: Data Factory training
+        href: /training/paths/get-started-fabric
+      - name: Copilot in Fabric in the Data Factory workload
+        items: 
+          - name: What is Copilot in Fabric in the Data Factory workload? 
+            href: copilot-fabric-data-factory.md
+          - name: Get started with Copilot in Fabric in the Data Factory workload
+            href: copilot-fabric-data-factory-get-started.md
+      - name: Pricing in Data Factory
+        items: 
+          - name: Pricing overview
+            href: pricing-overview.md
+          - name: Pricing pipelines
+            href: pricing-pipelines.md
+          - name: Pricing Dataflow Gen2
+            href: pricing-dataflows-gen2.md
+          - name: Pricing Copy job
+            href: pricing-copy-job.md
+          - name: Pricing Apache Airflow job
+            href: pricing-apache-airflow-job.md
+          - name: Pricing examples
+            items: 
+              - name: Pipelines
+                items: 
+                  - name: Load 1 TB of Parquet data to a data Warehouse
+                    href: pricing-scenario-load-1-tb-parquet-to-data-warehouse.md
+                  - name: Load 1 TB of Parquet data to a data warehouse with staging
+                    href: pricing-scenario-load-1-tb-parquet-to-data-warehouse-stage.md
+                  - name: Load 1 TB of CSV data to Lakehouse tables
+                    href: pricing-scenario-load-1-tb-csv-to-lakehouse-table.md
+                  - name: Load 1 TB of CSV data to Lakehouse files
+                    href: pricing-scenario-load-1-tb-csv-to-lakehouse-files.md
+                  - name: Load 1 TB of Parquet data to a Lakehouse table
+                    href: pricing-scenario-load-1-tb-parquet-to-lakehouse-table.md
+              - name: Dataflow Gen2
+                items: 
+                  - name: Load 2 GB of on-premises CSV data to a Lakehouse table
+                    href: pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md
+                  - name: Load 2 GB of Parquet data to a Lakehouse table
+                    href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md
+                  - name: Load 6 GB of CSV data to a Lakehouse table with Fast Copy enabled
+                    href: pricing-scenario-dataflows-gen2-load-6-gb-csv-to-lakehouse-table-fastcopy.md
+                  - name: Load 2 GB of Parquet data to a Lakehouse table through Virtual Network Data Gateway
+                    href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-vnet-gateway.md
+              - name: Copy job
+                items:
+                  - name: Load 1 TB of CSV data to a Lakehouse table
+                    href: pricing-scenario-copy-job.md
+      - name: Keyboard shortcuts
+        href: keyboard-shortcuts.md
   - name: Get started
     items:
-    - name: Create a dataflow
-      href: create-first-dataflow-gen2.md
-    - name: Create a data pipeline
-      href: create-first-pipeline-with-sample-data.md
-    - name: Create a Copy job
-      href: quickstart-copy-job.md
-    - name: Create an Apache Airflow Job
-      href: create-apache-airflow-jobs.md
-    - name: Operationalize Data Factory
-      href: transform-data.md
-    - name: Decide - Copy activity, Copy job, dataflow, or Spark?
-      href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md
-    - name: How to access on-premises Data
-      href: how-to-access-on-premises-data.md
-    - name: Monitoring activity in Data Factory
-      href: monitor-data-factory.md
-    - name: Create Alerts for Pipelines
-      href: create-alerts-for-pipeline-runs.md
-    - name: Bring Azure Data Factory to Fabric
-      href: tutorial-bring-azure-data-factory-to-fabric.md      
+      - name: Bring Azure Data Factory to Fabric
+        href: tutorial-bring-azure-data-factory-to-fabric.md
+      - name: End-to-end Data Factory tutorial
+        items: 
+          - name: Introduction
+            href: tutorial-end-to-end-introduction.md
+          - name: Module 1 - Create a pipeline
+            href: tutorial-end-to-end-pipeline.md
+          - name: Module 2 - Transform data with a dataflow
+            href: tutorial-end-to-end-dataflow.md
+          - name: Module 3 - Automate and send notification
+            href: tutorial-end-to-end-integration.md
+      - name: Decide - Data integration strategy
+        href: decision-guide-data-integration.md
+      - name: Decide - Data movement strategy
+        href: decision-guide-data-movement.md
+      - name: Decide - Copy activity, Copy job, dataflow, or Spark?
+        href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md 
+      - name: Create a Copy job
+        href: quickstart-copy-job.md
+      - name: Create a pipeline
+        href: create-first-pipeline-with-sample-data.md
+      - name: Create a dataflow
+        href: create-first-dataflow-gen2.md
+      - name: Create an Apache Airflow Job
+        href: create-apache-airflow-jobs.md
+      - name: Monitoring activity in Data Factory
+        href: monitor-data-factory.md
+      - name: Operationalize Data Factory
+        href: transform-data.md
   - name: Migrate to Fabric
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
@@ -111,1003 +121,1057 @@
         href: move-dataflow-gen1-to-dataflow-gen2.md
       - name: Migrate to Dataflow Gen2 using Save As
         href: migrate-to-dataflow-gen2-using-save-as.md
-  - name: Tutorials
+      - name: How to ingest data from ADF to Fabric
+        href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
+  - name: Connect to your data
     items:
-    - name: End-to-end Data Factory tutorial
-      items:
-      - name: Introduction
-        href: tutorial-end-to-end-introduction.md
-      - name: Module 1 - Create a pipeline
-        href: tutorial-end-to-end-pipeline.md
-      - name: Module 2 - Transform data with a dataflow
-        href: tutorial-end-to-end-dataflow.md
-      - name: Module 3 - Automate and send notification
-        href: tutorial-end-to-end-integration.md    
-  - name: Connectors
+      - name: Azure Key Vault Reference
+        href: azure-key-vault-reference-overview.md
+      - name: Configure AKV references
+        href: azure-key-vault-reference-configure.md
+      - name: Connectors
+        href: connector-overview.md
+        items:
+          - name: Service principal support
+            href: service-principals.md
+          - name: Access database
+            items: 
+              - name: Access database - Overview
+                href: connector-access-database-overview.md
+              - name: Set up your connection
+                href: connector-access-database.md
+          - name: Amazon RDS for Oracle
+            items:
+            - name: Amazon RDS for Oracle - Overview
+              href: connector-amazon-rds-for-oracle-overview.md
+            - name: Configure in data pipeline copy activity
+              href: connector-amazon-rds-for-oracle-copy-activity.md
+          - name: Amazon RDS for SQL Server
+            items: 
+              - name: Amazon RDS for SQL Server - Overview
+                href: connector-amazon-rds-for-sql-server-overview.md
+              - name: Configure in pipeline Copy activity
+                href: connector-amazon-rds-for-sql-server-copy-activity.md
+          - name: Amazon Redshift
+            items: 
+              - name: Amazon Redshift - Overview
+                href: connector-amazon-redshift-overview.md
+              - name: Set up your connection
+                href: connector-amazon-redshift.md
+              - name: Configure in a pipeline copy activity
+                href: connector-amazon-redshift-copy-activity.md
+          - name: Amazon S3
+            items: 
+              - name: Amazon S3 - Overview
+                href: connector-amazon-s3-overview.md
+              - name: Set up your connection
+                href: connector-amazon-s3.md
+              - name: Configure in a pipeline copy activity
+                href: connector-amazon-s3-copy-activity.md
+          - name: Amazon S3 Compatible
+            items: 
+              - name: Amazon S3 Compatible - Overview
+                href: connector-amazon-s3-compatible-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-amazon-s3-compatible-copy-activity.md
+          - name: Azure Analysis Services
+            items: 
+              - name: Azure Analysis Services - Overview
+                href: connector-azure-analysis-services-overview.md
+              - name: Set up your connection
+                href: connector-azure-analysis-services.md
+          - name: Azure Blob Storage
+            items: 
+              - name: Azure Blob Storage - Overview
+                href: connector-azure-blob-storage-overview.md
+              - name: Set up your connection
+                href: connector-azure-blob-storage.md
+              - name: Configure in a pipeline copy activity
+                href: connector-azure-blob-storage-copy-activity.md
+          - name: Azure AI Search
+            items: 
+              - name: Azure AI Search - Overview
+                href: connector-azure-search-overview.md
+              - name: Configure in a pipeline copy activity
+                href: connector-azure-search-copy-activity.md
+          - name: Azure Cosmos DB for NoSQL
+            items: 
+              - name: Azure Cosmos DB for NoSQL - Overview
+                href: connector-azure-cosmosdb-for-nosql-overview.md
+              - name: Set up your connection
+                href: connector-azure-cosmosdb-for-nosql.md
+              - name: Configure in a pipeline copy activity
+                href: connector-azure-cosmosdb-for-nosql-copy-activity.md
+          - name: Azure Cosmos DB for MongoDB
+            items: 
+              - name: Azure Cosmos DB for MongoDB - Overview
+                href: connector-azure-cosmos-db-for-mongodb-overview.md
+              - name: Configure in a pipeline copy activity
+                href: connector-azure-cosmos-db-for-mongodb-copy-activity.md
+          - name: Azure Data Explorer (Kusto)
+            items: 
+              - name: Azure Data Explorer (Kusto) - Overview
+                href: connector-azure-data-explorer-overview.md
+              - name: Set up your connection
+                href: connector-azure-data-explorer.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-azure-data-explorer-copy-activity.md
+          - name: Azure Data Lake Storage Gen2
+            items: 
+              - name: Azure Data Lake Storage Gen2 - Overview
+                href: connector-azure-data-lake-storage-gen2-overview.md
+              - name: Set up your connection
+                href: connector-azure-data-lake-storage-gen2.md
+              - name: Configure in pipeline copy activity
+                href: connector-azure-data-lake-storage-gen2-copy-activity.md
+          - name: Azure Database for MySQL
+            items: 
+              - name: Azure Database for MySQL - Overview
+                href: connector-azure-database-for-mysql-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-azure-database-for-mysql-copy-activity.md
+          - name: Azure Database for PostgreSQL
+            items: 
+              - name: Azure Database for PostgreSQL - Overview
+                href: connector-azure-database-for-postgresql-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-azure-database-for-postgresql-copy-activity.md
+          - name: Azure Databricks
+            items: 
+              - name: Azure Databricks - Overview
+                href: connector-azure-databricks-overview.md
+              - name: Set up your connection
+                href: connector-azure-databricks.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-azure-databricks-copy-activity.md
+          - name: Azure Files
+            items: 
+              - name: Azure Files - Overview
+                href: connector-azure-files-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-azure-files-copy-activity.md
+          - name: Azure SQL database
+            items: 
+              - name: Azure SQL database - Overview
+                href: connector-azure-sql-database-overview.md
+              - name: Set up your connection
+                href: connector-azure-sql-database.md
+              - name: Configure in a pipeline copy activity
+                href: connector-azure-sql-database-copy-activity.md
+              - name: Copy performance for SQL databases
+                href: copy-performance-sql-databases.md
+          - name: Azure SQL Managed Instance
+            items: 
+              - name: Azure SQL Managed Instance - Overview
+                href: connector-azure-sql-managed-instance-overview.md
+              - name: Configure in pipeline Copy activity
+                href: connector-azure-sql-managed-instance-copy-activity.md
+          - name: Azure Synapse Analytics
+            items: 
+              - name: Azure Synapse Analytics - Overview
+                href: connector-azure-synapse-analytics-overview.md
+              - name: Set up your connection
+                href: connector-azure-synapse-analytics.md
+              - name: Configure in  pipeline Copy activity
+                href: connector-azure-synapse-analytics-copy-activity.md
+          - name: Azure Table Storage
+            items: 
+              - name: Azure Table Storage - Overview
+                href: connector-azure-table-storage-overview.md
+              - name: Set up your connection
+                href: connector-azure-table-storage.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-azure-table-storage-copy-activity.md
+          - name: Cassandra
+            items:
+            - name: Cassandra - Overview
+              href: connector-cassandra-overview.md
+            - name: Configure in a pipeline Copy activity
+              href: connector-cassandra-copy-activity.md 
+          - name: CloudBluePSA
+            items: 
+              - name: CloudBluePSA - Overview
+                href: connector-cloudbluepsa-overview.md
+              - name: Set up your connection
+                href: connector-cloudbluepsa.md
+          - name: Common Data Service (Legacy)
+            items: 
+              - name: Common Data Service (Legacy) - Overview
+                href: connector-common-data-service-legacy-overview.md
+              - name: Set up your connection
+                href: connector-common-data-service-legacy.md
+          - name: Databricks
+            items: 
+              - name: Databricks - Overview
+                href: connector-databricks-overview.md
+              - name: Set up your connection
+                href: connector-databricks.md
+          - name: Dataflows (Power Platform)
+            items: 
+              - name: Dataflows (Power Platform) - Overview
+                href: connector-dataflows-overview.md
+              - name: Set up your connection
+                href: connector-dataflows.md
+          - name: Dataverse
+            items: 
+              - name: Dataverse - Overview
+                href: connector-dataverse-overview.md
+              - name: Set up your connection
+                href: connector-dataverse.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-dataverse-copy-activity.md
+          - name: Data Warehouse
+            items: 
+              - name: Data Warehouse - Overview
+                href: connector-data-warehouse-overview.md
+              - name: Set up your connection
+                href: connector-data-warehouse.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-data-warehouse-copy-activity.md
+          - name: Dynamics AX
+            items: 
+              - name: Dynamics AX - Overview
+                href: connector-dynamics-ax-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-dynamics-ax-copy-activity.md
+          - name: Dynamics CRM
+            items: 
+              - name: Dynamics CRM - Overview
+                href: connector-dynamics-crm-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-dynamics-crm-copy-activity.md
+          - name: FHIR
+            items: 
+              - name: FHIR - Overview
+                href: connector-fhir-overview.md
+              - name: Set up your connection
+                href: connector-fhir.md
+          - name: Folder
+            items: 
+              - name: Folder - Overview
+                href: connector-folder-overview.md
+              - name: Set up your connection
+                href: connector-folder.md
+          - name: Format
+            items: 
+              - name: Avro
+                items: 
+                  - name: Configure in a pipeline
+                    href: format-avro.md
+              - name: Binary
+                items: 
+                  - name: Configure in a pipeline
+                    href: format-binary.md
+                  - name: Configure in Dataflow Gen2
+                    href: connector-binary-dataflows.md
+              - name: Delimited text
+                items: 
+                  - name: Configure in a pipeline
+                    href: format-delimited-text.md
+              - name: Excel
+                items: 
+                  - name: Configure in a pipeline
+                    href: format-excel.md
+                  - name: Configure in Dataflow Gen2
+                    href: connector-excel-dataflows.md
+              - name: Iceberg
+                items: 
+                  - name: Configure in a pipeline
+                    href: format-iceberg.md
+              - name: JSON
+                items: 
+                  - name: Configure in a pipeline
+                    href: format-json.md
+              - name: ORC
+                items: 
+                  - name: Configure in a pipeline
+                    href: format-orc.md
+              - name: Parquet
+                items: 
+                  - name: Configure in a pipeline
+                    href: format-parquet.md
+                  - name: Configure in Dataflow Gen2
+                    href: connector-parquet-dataflows.md
+              - name: XML
+                items: 
+                  - name: Configure in a pipeline
+                    href: format-xml.md
+          - name: FTP
+            items: 
+              - name: FTP - Overview
+                href: connector-ftp-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-ftp-copy-activity.md
+          - name: Google Analytics
+            items: 
+              - name: Google Analytics - Overview
+                href: connector-google-analytics-overview.md
+              - name: Set up your connection
+                href: connector-google-analytics.md
+          - name: Google BigQuery
+            items: 
+              - name: Google BigQuery - Overview
+                href: connector-google-bigquery-overview.md
+              - name: Set up your connection
+                href: connector-google-bigquery.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-google-bigquery-copy-activity.md
+          - name: Google Cloud Storage
+            items: 
+              - name: Google Cloud Storage - Overview
+                href: connector-google-cloud-storage-overview.md
+              - name: Set up your connection
+                href: connector-google-cloud-storage.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-google-cloud-storage-copy-activity.md
+          - name: Greenplum for Pipeline
+            items: 
+              - name: Greenplum for Pipeline - Overview
+                href: connector-greenplum-for-pipeline-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-greenplum-for-pipeline-copy-activity.md
+          - name: Hdfs for Pipeline
+            items: 
+              - name: Hdfs for Pipeline - Overview
+                href: connector-hdfs-for-pipeline-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-hdfs-for-pipeline-copy-activity.md
+          - name: Hive LLAP
+            items: 
+              - name: Hive LLAP - Overview
+                href: connector-hive-llap-overview.md
+              - name: Set up your connection
+                href: connector-hive-llap.md
+          - name: HTTP
+            items: 
+              - name: HTTP - Overview
+                href: connector-http-overview.md
+              - name: Set up your connection
+                href: connector-http.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-http-copy-activity.md
+          - name: IBM DB2 database
+            items:
+            - name: IBM DB2 database - Overview
+              href: connector-ibm-db2-database-overview.md
+            - name: Set up your connection
+              href: connector-ibm-db2-database.md
+            - name: Configure in a pipeline Copy activity
+              href: connector-ibm-db2-database-copy-activity.md
+          - name: Impala
+            items: 
+              - name: Impala - Overview
+                href: connector-impala-overview.md
+              - name: Set up your connection
+                href: connector-impala.md
+          - name: Informix For Pipeline
+            items:
+            - name: Informix For Pipeline - Overview
+              href: connector-informix-for-pipeline-overview.md
+            - name: Configure in a pipeline Copy activity
+              href: connector-informix-for-pipeline-copy-activity.md          
+          - name: KQL database
+            items: 
+              - name: KQL database - Overview
+                href: connector-kql-database-overview.md
+              - name: Set up your connection
+                href: connector-kql-database.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-kql-database-copy-activity.md
+          - name: Lakehouse
+            items: 
+              - name: Lakehouse - Overview
+                href: connector-lakehouse-overview.md
+              - name: Set up your connection
+                href: connector-lakehouse.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-lakehouse-copy-activity.md
+          - name: MariaDB
+            items: 
+              - name: MariaDB - Overview
+                href: connector-mariadb-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-mariadb-copy-activity.md
+          - name: Microsoft 365
+            items: 
+              - name: Microsoft 365 - Overview
+                href: connector-microsoft-365-overview.md
+              - name: Set up your connection
+                href: connector-microsoft-365.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-microsoft-365-copy-activity.md
+          - name: Microsoft Access
+            items:
+            - name: Microsoft Access - Overview
+              href: connector-microsoft-access-overview.md
+            - name: Configure in a data pipeline copy activity
+              href: connector-microsoft-access-copy-activity.md
+          - name: Microsoft Exchange Online
+            items: 
+              - name: Microsoft Exchange Online - Overview
+                href: connector-microsoft-exchange-online-overview.md
+              - name: Set up your connection
+                href: connector-microsoft-exchange-online.md
+          - name: MongoDB
+            items: 
+              - name: MongoDB - Overview
+                href: connector-mongodb-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-mongodb-copy-activity.md
+          - name: MongoDB Atlas
+            items: 
+              - name: MongoDB Atlas - Overview
+                href: connector-mongodb-atlas-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-mongodb-atlas-copy-activity.md
+          - name: MongoDB Atlas SQL (Beta)
+            items: 
+              - name: MongoDB Atlas SQL (Beta) - Overview
+                href: connector-mongodb-atlas-sql-overview.md
+              - name: Set up your connection
+                href: connector-mongodb-atlas-sql.md
+          - name: MySQL database
+            items: 
+              - name: MySQL database - Overview
+                href: connector-mysql-database-overview.md
+              - name: Set up your connection
+                href: connector-mysql-database.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-mysql-database-copy-activity.md
+          - name: OData
+            items: 
+              - name: OData - Overview
+                href: connector-odata-overview.md
+              - name: Set up your connection
+                href: connector-odata.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-odata-copy-activity.md
+          - name: Odbc
+            items: 
+              - name: Odbc - Overview
+                href: connector-odbc-overview.md
+              - name: Set up your connection
+                href: connector-odbc.md
+          - name: Oracle database
+            items: 
+              - name: Oracle database - Overview
+                href: connector-oracle-database-overview.md
+              - name: Set up your connection
+                href: connector-oracle-database.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-oracle-database-copy-activity.md
+          - name: Oracle Cloud Storage
+            items: 
+              - name: Oracle Cloud Storage - Overview
+                href: connector-oracle-cloud-storage-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-oracle-cloud-storage-copy-activity.md
+          - name: Palantir Foundry
+            items: 
+              - name: Palantir Foundry - Overview
+                href: connector-palantir-foundry-overview.md
+              - name: Set up your connection
+                href: connector-palantir-foundry.md
+          - name: PostgreSQL database
+            items: 
+              - name: PostgreSQL database - Overview
+                href: connector-postgresql-overview.md
+              - name: Set up your connection
+                href: connector-postgresql.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-postgresql-copy-activity.md
+          - name: Presto
+            items:
+            - name: Presto - Overview
+              href: connector-presto-overview.md
+            - name: Configure in a pipeline Copy activity
+              href: connector-presto-copy-activity.md    
+          - name: REST
+            items: 
+              - name: REST - Overview
+                href: connector-rest-overview.md
+              - name: Set up your connection
+                href: connector-rest.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-rest-copy-activity.md
+          - name: Salesforce objects
+            items: 
+              - name: Salesforce objects - Overview
+                href: connector-salesforce-objects-overview.md
+              - name: Set up your connection
+                href: connector-salesforce-objects.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-salesforce-copy-activity.md
+          - name: Salesforce reports
+            items: 
+              - name: Salesforce reports - Overview
+                href: connector-salesforce-reports-overview.md
+              - name: Set up your connection
+                href: connector-salesforce-reports.md
+          - name: Salesforce Service Cloud
+            items: 
+              - name: Salesforce Service Cloud - Overview
+                href: connector-salesforce-service-cloud-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-salesforce-service-cloud-copy-activity.md
+          - name: SAP BW Application Server
+            expanded: true
+            items: 
+              - name: SAP BW Application Server - Overview
+                href: connector-sap-bw-application-server-overview.md
+              - name: Set up your connection
+                href: connector-sap-bw-application-server.md
+          - name: SAP BW Message Server
+            items: 
+              - name: SAP BW Message Server - Overview
+                href: connector-sap-bw-message-server-overview.md
+              - name: Set up your connection
+                href: connector-sap-bw-message-server.md
+          - name: SAP BW Open Hub Application Server
+            items:
+            - name: SAP BW Open Hub Application Server - Overview
+              href: connector-sap-bw-open-hub-application-server-overview.md
+          - name: SAP BW Open Hub Message Server
+            items:
+            - name: SAP BW Open Hub Message Server - Overview
+              href: connector-sap-bw-open-hub-message-server-overview.md
+          - name: SAP HANA database
+            items: 
+              - name: SAP HANA database - Overview
+                href: connector-sap-hana-overview.md
+              - name: Set up your connection
+                href: connector-sap-hana.md
+          - name: SAP Table Application Server
+            items:
+            - name: SAP Table Application Server - Overview
+              href: connector-sap-table-application-server-overview.md
+          - name: SAP Table Message Server
+            items:
+            - name: SAP Table Message Server - Overview
+              href: connector-sap-table-message-server-overview.md   
+          - name: ServiceNow
+            items: 
+              - name: ServiceNow - Overview
+                href: connector-servicenow-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-servicenow-copy-activity.md
+          - name: SFTP
+            items: 
+              - name: SFTP - Overview
+                href: connector-sftp-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-sftp-copy-activity.md
+          - name: SharePoint folder
+            items: 
+              - name: SharePoint folder - Overview
+                href: connector-sharepoint-folder-overview.md
+              - name: Set up your connection
+                href: connector-sharepoint-folder.md
+          - name: SharePoint list
+            items: 
+              - name: SharePoint list - Overview
+                href: connector-sharepoint-list-overview.md
+              - name: Set up your connection
+                href: connector-sharepoint-list.md
+          - name: SharePoint online list
+            items: 
+              - name: SharePoint online list - Overview
+                href: connector-sharepoint-online-list-overview.md
+              - name: Set up your connection
+                href: connector-sharepoint-online-list.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-sharepoint-online-list-copy-activity.md
+          - name: Snowflake
+            items: 
+              - name: Snowflake - Overview
+                href: connector-snowflake-overview.md
+              - name: Set up your connection
+                href: connector-snowflake.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-snowflake-copy-activity.md
+          - name: SQL database
+            items: 
+              - name: SQL database - Overview
+                href: connector-sql-database-overview.md
+              - name: Set up your connection
+                href: connector-sql-database.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-sql-database-copy-activity.md
+              - name: Copy performance for SQL databases
+                href: copy-performance-sql-databases.md
+          - name: SQL Server database
+            items: 
+              - name: SQL Server database - Overview
+                href: connector-sql-server-database-overview.md
+              - name: Set up your connection
+                href: connector-sql-server-database.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-sql-server-copy-activity.md
+          - name: Teradata database
+            items: 
+              - name: Teradata database - Overview
+                href: connector-teradata-database-overview.md
+              - name: Set up your connection
+                href: connector-teradata-database.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-teradata-copy-activity.md
+          - name: Vertica
+            items: 
+              - name: Vertica - Overview
+                href: connector-vertica-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-vertica-copy-activity.md
+          - name: Web API/Web page
+            items: 
+              - name: Web API/Web page - Overview
+                href: connector-web-overview.md
+              - name: Set up your connection
+                href: connector-web.md
+          - name: Connector certification
+            items: 
+              - name: Data Factory connector certification
+                href: connector-certification.md
+              - name: Provide connector documentation
+                href: providing-user-documentation.md
+      - name: Connect on-premises from the cloud
+        items:
+          - name: Access on-premises data
+            href: how-to-access-on-premises-data.md 
+          - name: On-premises data gateways docs
+            items: 
+              - name: What is an on-premises data gateway?
+                href: /data-integration/gateway/service-gateway-onprem?toc=/fabric/data-factory/toc.json
+              - name: Concepts
+                items: 
+                  - name: On-premises data gateway architecture
+                    href: /data-integration/gateway/service-gateway-onprem-indepth?toc=/fabric/data-factory/toc.json
+                  - name: On-premises data gateway FAQ
+                    href: /data-integration/gateway/service-gateway-onprem-faq?toc=/fabric/data-factory/toc.json
+              - name: How to
+                items: 
+                  - name: Install gateways
+                    href: /data-integration/gateway/service-gateway-install?toc=/fabric/data-factory/toc.json
+                  - name: Configure gateways
+                    items: 
+                      - name: Use the on-premises data gateway app
+                        href: /data-integration/gateway/service-gateway-app?toc=/fabric/data-factory/toc.json
+                      - name: Configure proxy settings
+                        href: /data-integration/gateway/service-gateway-proxy?toc=/fabric/data-factory/toc.json
+                      - name: Step by step guide on configuring your proxy settings
+                        href: /data-integration/gateway/service-gateway-proxy-setup-guide?toc=/fabric/data-factory/toc.json
+                      - name: Change the gateway service account
+                        href: /data-integration/gateway/service-gateway-service-account?toc=/fabric/data-factory/toc.json
+                      - name: Set the data center region
+                        href: /data-integration/gateway/service-gateway-data-region?toc=/fabric/data-factory/toc.json
+                      - name: Set the Azure Relay
+                        href: /data-integration/gateway/service-gateway-azure-relay?toc=/fabric/data-factory/toc.json
+                      - name: Adjust communication settings
+                        href: /data-integration/gateway/service-gateway-communication?toc=/fabric/data-factory/toc.json
+                      - name: Configure the gateway log file
+                        href: /data-integration/gateway/service-gateway-log-files?toc=/fabric/data-factory/toc.json
+                      - name: Adjust performance based on CPU
+                        href: /data-integration/gateway/service-gateway-performance-cpu?toc=/fabric/data-factory/toc.json
+                      - name: Configure gateway disk space
+                        href: /data-integration/gateway/service-gateway-configure-disk-space?toc=/fabric/data-factory/toc.json
+                      - name: Configure tenant registration settings
+                        href: /data-integration/gateway/service-gateway-tenant-registration?toc=/fabric/data-factory/toc.json
+                  - name: Manage gateways
+                    items: 
+                      - name: Manage in a service
+                        href: /data-integration/gateway/service-gateway-manage?toc=/fabric/data-factory/toc.json
+                      - name: Manage security roles
+                        href: /data-integration/gateway/manage-security-roles?toc=/fabric/data-factory/toc.json
+                      - name: Manage high availability clusters and load balancing
+                        href: /data-integration/gateway/service-gateway-high-availability-clusters?toc=/fabric/data-factory/toc.json
+                      - name: Update an on-premises data gateway
+                        href: /data-integration/gateway/service-gateway-update?toc=/fabric/data-factory/toc.json
+                      - name: Migrate, restore, or take over a gateway
+                        href: /data-integration/gateway/service-gateway-migrate?toc=/fabric/data-factory/toc.json
+                      - name: Restart a gateway
+                        href: /data-integration/gateway/service-gateway-restart?toc=/fabric/data-factory/toc.json
+                      - name: Change a recovery key
+                        href: /data-integration/gateway/service-gateway-recovery-key?toc=/fabric/data-factory/toc.json
+                  - name: Plan, scale, and maintain business-critical gateway clusters
+                    href: /data-integration/gateway/plan-scale-maintain?toc=/fabric/data-factory/toc.json
+                  - name: Troubleshoot the on-premises data gateway
+                    href: /data-integration/gateway/service-gateway-tshoot?toc=/fabric/data-factory/toc.json
+                  - name: Monitor and optimize gateway performance
+                    href: /data-integration/gateway/service-gateway-performance?toc=/fabric/data-factory/toc.json
+                  - name: Gateway considerations for data destinations in Dataflow Gen2
+                    href: gateway-considerations-output-destinations.md
+              - name: Reference
+                items: 
+                  - name: PowerShell support for gateway clusters
+                    href: /data-integration/gateway/service-gateway-powershell-support?toc=/fabric/data-factory/toc.json
+              - name: Resources
+                items: 
+                  - name: Supported monthly updates
+                    href: /data-integration/gateway/service-gateway-monthly-updates?toc=/fabric/data-factory/toc.json
+          - name: Virtual network data gateways docs
+            items: 
+              - name: What is a virtual network data gateway?
+                href: /data-integration/vnet/overview?toc=/fabric/data-factory/toc.json
+              - name: Concepts
+                items: 
+                  - name: What is a virtual network?
+                    href: /data-integration/vnet/what-is?toc=/fabric/data-factory/toc.json
+                  - name: Virtual network data gateway architecture
+                    href: /data-integration/vnet/data-gateway-architecture?toc=/fabric/data-factory/toc.json
+                  - name: Virtual network data gateways business model
+                    href: /data-integration/vnet/data-gateway-business-model?toc=/fabric/data-factory/toc.json
+              - name: How to
+                items: 
+                  - name: Create virtual network data gateways
+                    href: /data-integration/vnet/create-data-gateways?toc=/fabric/data-factory/toc.json
+                  - name: Manage virtual network data gateways
+                    href: /data-integration/vnet/manage-data-gateways?toc=/fabric/data-factory/toc.json
+                  - name: Use virtual network data gateway in Fabric with Dataflows Gen 2
+                    href: /data-integration/vnet/use-data-gateways-dfgen2-fabric?toc=/fabric/data-factory/toc.json
+                  - name: Use virtual network data gateway in Power BI
+                    href: /data-integration/vnet/use-data-gateways-sources-power-bi?toc=/fabric/data-factory/toc.json
+                  - name: Use virtual network data gateway in Power Platform dataflows
+                    href: /data-integration/vnet/data-gateway-power-platform-dataflows?toc=/fabric/data-factory/toc.json
+                  - name: Manage virtual network data gateway high availability and load balancing
+                    href: /data-integration/vnet/high-availability-load-balancing?toc=/fabric/data-factory/toc.json
+                  - name: Manage virtual network security roles
+                    href: /data-integration/vnet/manage-vnet-security-roles?toc=/fabric/data-factory/toc.json
+                  - name: Troubleshoot a virtual network data gateway network
+                    href: /data-integration/vnet/troubleshoot-data-gateway?toc=/fabric/data-factory/toc.json
+                  - name: Virtual network data gateway best practices
+                    href: /data-integration/vnet/vnet-best-practices?toc=/fabric/data-factory/toc.json
+                  - name: Virtual network data gateway FAQs
+                    href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json
+                  - name: Download diagnostics logs
+                    href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json  
+  - name: Move data
     items:
-    - name: Connector overview
-      href: connector-overview.md
-    - name: Service principal support
-      href: service-principals.md
-    - name: Access database
-      items:
-      - name: Access database - Overview
-        href: connector-access-database-overview.md
-      - name: Set up your connection
-        href: connector-access-database.md
-    - name: Amazon RDS for SQL Server
-      items:
-      - name: Amazon RDS for SQL Server - Overview
-        href: connector-amazon-rds-for-sql-server-overview.md
-      - name: Configure in data pipeline Copy activity
-        href: connector-amazon-rds-for-sql-server-copy-activity.md
-    - name: Amazon Redshift
-      items:
-      - name: Amazon Redshift - Overview
-        href: connector-amazon-redshift-overview.md
-      - name: Set up your connection
-        href: connector-amazon-redshift.md
-      - name: Configure in a data pipeline copy activity
-        href: connector-amazon-redshift-copy-activity.md
-    - name: Amazon S3
-      items:
-      - name: Amazon S3 - Overview
-        href: connector-amazon-s3-overview.md
-      - name: Set up your connection
-        href: connector-amazon-s3.md
-      - name: Configure in a data pipeline copy activity
-        href: connector-amazon-s3-copy-activity.md
-    - name: Amazon S3 Compatible
-      items:
-      - name: Amazon S3 Compatible - Overview
-        href: connector-amazon-s3-compatible-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-amazon-s3-compatible-copy-activity.md
-    - name: Azure Analysis Services
-      items:
-      - name: Azure Analysis Services - Overview
-        href: connector-azure-analysis-services-overview.md
-      - name: Set up your connection
-        href: connector-azure-analysis-services.md
-    - name: Azure Blob Storage
-      items:
-      - name: Azure Blob Storage - Overview
-        href: connector-azure-blob-storage-overview.md
-      - name: Set up your connection
-        href: connector-azure-blob-storage.md
-      - name: Configure in a data pipeline copy activity
-        href: connector-azure-blob-storage-copy-activity.md
-    - name: Azure AI Search
-      items:
-      - name: Azure AI Search - Overview
-        href: connector-azure-search-overview.md
-      - name: Configure in a data pipeline copy activity
-        href: connector-azure-search-copy-activity.md
-    - name: Azure Cosmos DB for NoSQL
-      items:
-      - name: Azure Cosmos DB for NoSQL - Overview
-        href: connector-azure-cosmosdb-for-nosql-overview.md
-      - name: Set up your connection
-        href: connector-azure-cosmosdb-for-nosql.md
-      - name: Configure in a data pipeline copy activity
-        href: connector-azure-cosmosdb-for-nosql-copy-activity.md
-    - name: Azure Cosmos DB for MongoDB
-      items:
-      - name: Azure Cosmos DB for MongoDB - Overview
-        href: connector-azure-cosmos-db-for-mongodb-overview.md
-      - name: Configure in a data pipeline copy activity
-        href: connector-azure-cosmos-db-for-mongodb-copy-activity.md
-    - name: Azure Data Explorer (Kusto)
-      items:
-      - name: Azure Data Explorer (Kusto) - Overview
-        href: connector-azure-data-explorer-overview.md
-      - name: Set up your connection
-        href: connector-azure-data-explorer.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-azure-data-explorer-copy-activity.md
-    - name: Azure Data Lake Storage Gen2
-      items:
-      - name: Azure Data Lake Storage Gen2 - Overview
-        href: connector-azure-data-lake-storage-gen2-overview.md
-      - name: Set up your connection
-        href: connector-azure-data-lake-storage-gen2.md
-      - name: Configure in data pipeline copy activity
-        href: connector-azure-data-lake-storage-gen2-copy-activity.md
-    - name: Azure Database for MySQL
-      items:
-      - name: Azure Database for MySQL - Overview
-        href: connector-azure-database-for-mysql-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-azure-database-for-mysql-copy-activity.md
-    - name: Azure Database for PostgreSQL
-      items:
-      - name: Azure Database for PostgreSQL - Overview
-        href: connector-azure-database-for-postgresql-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-azure-database-for-postgresql-copy-activity.md
-    - name: Azure Databricks
-      items:
-      - name: Azure Databricks - Overview
-        href: connector-azure-databricks-overview.md
-      - name: Set up your connection
-        href: connector-azure-databricks.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-azure-databricks-copy-activity.md
-    - name: Azure Files 
-      items: 
-      - name: Azure Files - Overview 
-        href: connector-azure-files-overview.md 
-      - name: Configure in a data pipeline Copy activity 
-        href: connector-azure-files-copy-activity.md 
-    - name: Azure HDInsight on AKS Trino
-      items:
-      - name: Azure HDInsight on AKS Trino - Overview
-        href: connector-azure-hdinsight-on-aks-trino-overview.md
-      - name: Set up your connection
-        href: connector-azure-hdinsight-on-aks-trino.md
-    - name: Azure SQL database
-      items:
-      - name: Azure SQL database - Overview
-        href: connector-azure-sql-database-overview.md
-      - name: Set up your connection
-        href: connector-azure-sql-database.md
-      - name: Configure in a data pipeline copy activity
-        href: connector-azure-sql-database-copy-activity.md
-    - name: Azure SQL Managed Instance
-      items:
-      - name: Azure SQL Managed Instance - Overview
-        href: connector-azure-sql-managed-instance-overview.md
-      - name: Configure in data pipeline Copy activity
-        href: connector-azure-sql-managed-instance-copy-activity.md
-    - name: Azure Synapse Analytics
-      items:
-      - name: Azure Synapse Analytics - Overview
-        href: connector-azure-synapse-analytics-overview.md
-      - name: Set up your connection
-        href: connector-azure-synapse-analytics.md
-      - name: Configure in  data pipeline Copy activity
-        href: connector-azure-synapse-analytics-copy-activity.md
-    - name: Azure Table Storage
-      items:
-      - name: Azure Table Storage - Overview
-        href: connector-azure-table-storage-overview.md
-      - name: Set up your connection
-        href: connector-azure-table-storage.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-azure-table-storage-copy-activity.md
-    - name: CloudBluePSA
-      items:
-      - name: CloudBluePSA - Overview
-        href: connector-cloudbluepsa-overview.md
-      - name: Set up your connection
-        href: connector-cloudbluepsa.md
-    - name: Common Data Service (Legacy)
-      items:
-      - name: Common Data Service (Legacy) - Overview
-        href: connector-common-data-service-legacy-overview.md
-      - name: Set up your connection
-        href: connector-common-data-service-legacy.md
-    - name: Databricks
-      items:
-      - name: Databricks - Overview
-        href: connector-databricks-overview.md
-      - name: Set up your connection
-        href: connector-databricks.md
-    - name: Dataflows (Power Platform)
-      items:
-      - name: Dataflows (Power Platform) - Overview
-        href: connector-dataflows-overview.md
-      - name: Set up your connection
-        href: connector-dataflows.md
-    - name: Dataverse
-      items:
-      - name: Dataverse - Overview
-        href: connector-dataverse-overview.md
-      - name: Set up your connection
-        href: connector-dataverse.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-dataverse-copy-activity.md
-    - name: Data Warehouse
-      items:
-      - name: Data Warehouse - Overview
-        href: connector-data-warehouse-overview.md
-      - name: Set up your connection
-        href: connector-data-warehouse.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-data-warehouse-copy-activity.md 
-    - name: Dynamics AX
-      items: 
-      - name: Dynamics AX - Overview 
-        href: connector-dynamics-ax-overview.md 
-      - name: Configure in a data pipeline Copy activity 
-        href: connector-dynamics-ax-copy-activity.md 
-    - name: Dynamics CRM
-      items:
-      - name: Dynamics CRM - Overview
-        href: connector-dynamics-crm-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-dynamics-crm-copy-activity.md
-    - name: FHIR
-      items:
-      - name: FHIR - Overview
-        href: connector-fhir-overview.md
-      - name: Set up your connection
-        href: connector-fhir.md
-    - name: Folder
-      items:
-      - name: Folder - Overview
-        href: connector-folder-overview.md
-      - name: Set up your connection
-        href: connector-folder.md
-    - name: Format
-      items:
-      - name: Avro
-        items:
-        - name: Configure in Data pipeline
-          href: format-avro.md
-      - name: Binary
-        items:
-        - name: Configure in Data pipeline
-          href: format-binary.md
-        - name: Configure in Dataflow Gen2
-          href: connector-binary-dataflows.md
-      - name: Delimited text
-        items:
-        - name: Configure in Data pipeline
-          href: format-delimited-text.md
-      - name: Excel
-        items:
-        - name: Configure in Data pipeline
-          href: format-excel.md
-        - name: Configure in Dataflow Gen2
-          href: connector-excel-dataflows.md
-      - name: Iceberg
-        items:
-        - name: Configure in Data pipeline
-          href: format-iceberg.md      
-      - name: JSON
-        items:
-        - name: Configure in Data pipeline
-          href: format-json.md
-      - name: ORC
-        items:
-        - name: Configure in Data pipeline
-          href: format-orc.md
-      - name: Parquet
-        items:
-        - name: Configure in Data pipeline
-          href: format-parquet.md
-        - name: Configure in Dataflow Gen2
-          href: connector-parquet-dataflows.md
-      - name: XML
-        items:
-        - name: Configure in Data pipeline
-          href: format-xml.md
-    - name: FTP
-      items:
-      - name: FTP - Overview
-        href: connector-ftp-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-ftp-copy-activity.md
-    - name: Google Analytics
-      items:
-      - name: Google Analytics - Overview
-        href: connector-google-analytics-overview.md
-      - name: Set up your connection
-        href: connector-google-analytics.md
-    - name: Google BigQuery
-      items:
-      - name: Google BigQuery - Overview
-        href: connector-google-bigquery-overview.md
-      - name: Set up your connection
-        href: connector-google-bigquery.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-google-bigquery-copy-activity.md        
-    - name: Google Cloud Storage
-      items:
-      - name: Google Cloud Storage - Overview
-        href: connector-google-cloud-storage-overview.md
-      - name: Set up your connection
-        href: connector-google-cloud-storage.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-google-cloud-storage-copy-activity.md
-    - name: Greenplum for Pipeline
-      items:
-      - name: Greenplum for Pipeline - Overview
-        href: connector-greenplum-for-pipeline-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-greenplum-for-pipeline-copy-activity.md
-    - name: Hdfs for Pipeline
-      items:
-      - name: Hdfs for Pipeline - Overview
-        href: connector-hdfs-for-pipeline-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-hdfs-for-pipeline-copy-activity.md        
-    - name: Hive LLAP
-      items:
-      - name: Hive LLAP - Overview
-        href: connector-hive-llap-overview.md
-      - name: Set up your connection
-        href: connector-hive-llap.md
-    - name: HTTP
-      items:
-      - name: HTTP - Overview
-        href: connector-http-overview.md
-      - name: Set up your connection
-        href: connector-http.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-http-copy-activity.md
-    - name: IBM DB2 database
-      items:
-      - name: IBM DB2 database - Overview
-        href: connector-ibm-db2-database-overview.md
-      - name: Set up your connection
-        href: connector-ibm-db2-database.md
-    - name: Impala
-      items:
-      - name: Impala - Overview
-        href: connector-impala-overview.md
-      - name: Set up your connection
-        href: connector-impala.md
-    - name: KQL database
-      items:
-      - name: KQL database - Overview
-        href: connector-kql-database-overview.md
-      - name: Set up your connection
-        href: connector-kql-database.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-kql-database-copy-activity.md
-    - name: Lakehouse
-      items:
-      - name: Lakehouse - Overview
-        href: connector-lakehouse-overview.md
-      - name: Set up your connection
-        href: connector-lakehouse.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-lakehouse-copy-activity.md
-    - name: MariaDB
-      items:
-      - name: MariaDB - Overview
-        href: connector-mariadb-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-mariadb-copy-activity.md
-    - name: Microsoft 365
-      items:
-      - name: Microsoft 365 - Overview
-        href: connector-microsoft-365-overview.md
-      - name: Set up your connection
-        href: connector-microsoft-365.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-microsoft-365-copy-activity.md
-    - name: Microsoft Exchange Online
-      items:
-      - name: Microsoft Exchange Online - Overview
-        href: connector-microsoft-exchange-online-overview.md
-      - name: Set up your connection
-        href: connector-microsoft-exchange-online.md
-    - name: MongoDB
-      items:
-      - name: MongoDB - Overview
-        href: connector-mongodb-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-mongodb-copy-activity.md
-    - name: MongoDB Atlas
-      items:
-      - name: MongoDB Atlas - Overview
-        href: connector-mongodb-atlas-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-mongodb-atlas-copy-activity.md
-    - name: MongoDB Atlas SQL (Beta)
-      items:
-      - name: MongoDB Atlas SQL (Beta) - Overview
-        href: connector-mongodb-atlas-sql-overview.md
-      - name: Set up your connection
-        href: connector-mongodb-atlas-sql.md
-    - name: MySQL database
-      items:
-      - name: MySQL database - Overview
-        href: connector-mysql-database-overview.md
-      - name: Set up your connection
-        href: connector-mysql-database.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-mysql-database-copy-activity.md
-    - name: OData
-      items:
-      - name: OData - Overview
-        href: connector-odata-overview.md
-      - name: Set up your connection
-        href: connector-odata.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-odata-copy-activity.md
-    - name: Odbc
-      items:
-      - name: Odbc - Overview
-        href: connector-odbc-overview.md
-      - name: Set up your connection
-        href: connector-odbc.md
-    - name: Oracle database
-      items:
-      - name: Oracle database - Overview
-        href: connector-oracle-database-overview.md
-      - name: Set up your connection
-        href: connector-oracle-database.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-oracle-database-copy-activity.md
-    - name: Oracle Cloud Storage
-      items:
-      - name: Oracle Cloud Storage - Overview
-        href: connector-oracle-cloud-storage-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-oracle-cloud-storage-copy-activity.md
-    - name: Palantir Foundry
-      items:
-      - name: Palantir Foundry - Overview
-        href: connector-palantir-foundry-overview.md
-      - name: Set up your connection
-        href: connector-palantir-foundry.md
-    - name: PostgreSQL database
-      items:
-      - name: PostgreSQL database - Overview
-        href: connector-postgresql-overview.md
-      - name: Set up your connection
-        href: connector-postgresql.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-postgresql-copy-activity.md
-    - name: REST
-      items:
-      - name: REST - Overview
-        href: connector-rest-overview.md
-      - name: Set up your connection
-        href: connector-rest.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-rest-copy-activity.md
-    - name: Salesforce objects
-      items:
-      - name: Salesforce objects - Overview
-        href: connector-salesforce-objects-overview.md
-      - name: Set up your connection
-        href: connector-salesforce-objects.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-salesforce-copy-activity.md  
-    - name: Salesforce reports
-      items:
-      - name: Salesforce reports - Overview
-        href: connector-salesforce-reports-overview.md
-      - name: Set up your connection
-        href: connector-salesforce-reports.md
-    - name: Salesforce Service Cloud
-      items:
-      - name: Salesforce Service Cloud - Overview
-        href: connector-salesforce-service-cloud-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-salesforce-service-cloud-copy-activity.md
-    - name: SAP BW Application Server
-      items:
-      - name: SAP BW Application Server - Overview
-        href: connector-sap-bw-application-server-overview.md
-      - name: Set up your connection
-        href: connector-sap-bw-application-server.md
-    - name: SAP BW Message Server
-      items:
-      - name: SAP BW Message Server - Overview
-        href: connector-sap-bw-message-server-overview.md
-      - name: Set up your connection
-        href: connector-sap-bw-message-server.md
-    - name: SAP BW Open Hub Application Server
-      items:
-      - name: SAP BW Open Hub Application Server - Overview
-        href: connector-sap-bw-open-hub-application-server-overview.md
-    - name: SAP BW Open Hub Message Server
-      items:
-      - name: SAP BW Open Hub Message Server - Overview
-        href: connector-sap-bw-open-hub-message-server-overview.md
-    - name: SAP HANA database
-      items:
-      - name: SAP HANA database - Overview
-        href: connector-sap-hana-overview.md
-      - name: Set up your connection
-        href: connector-sap-hana.md
-    - name: SAP Table Application Server
-      items:
-      - name: SAP Table Application Server - Overview
-        href: connector-sap-table-application-server-overview.md
-    - name: SAP Table Message Server
-      items:
-      - name: SAP Table Message Server - Overview
-        href: connector-sap-table-message-server-overview.md      
-    - name: ServiceNow
-      items:
-      - name: ServiceNow - Overview
-        href: connector-servicenow-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-servicenow-copy-activity.md        
-    - name: SFTP
-      items:
-      - name: SFTP - Overview
-        href: connector-sftp-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-sftp-copy-activity.md
-    - name: SharePoint folder
-      items:
-      - name: SharePoint folder - Overview
-        href: connector-sharepoint-folder-overview.md
-      - name: Set up your connection
-        href: connector-sharepoint-folder.md
-    - name: SharePoint list
-      items:
-      - name: SharePoint list - Overview
-        href: connector-sharepoint-list-overview.md
-      - name: Set up your connection
-        href: connector-sharepoint-list.md
-    - name: SharePoint online list
-      items:
-      - name: SharePoint online list - Overview
-        href: connector-sharepoint-online-list-overview.md
-      - name: Set up your connection
-        href: connector-sharepoint-online-list.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-sharepoint-online-list-copy-activity.md
-    - name: Snowflake
-      items:
-      - name: Snowflake - Overview
-        href: connector-snowflake-overview.md
-      - name: Set up your connection
-        href: connector-snowflake.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-snowflake-copy-activity.md
-    - name: SQL database
-      items:
-      - name: SQL database - Overview
-        href: connector-sql-database-overview.md
-      - name: Set up your connection
-        href: connector-sql-database.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-sql-database-copy-activity.md    
-    - name: SQL Server database
-      items:
-      - name: SQL Server database - Overview
-        href: connector-sql-server-database-overview.md
-      - name: Set up your connection
-        href: connector-sql-server-database.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-sql-server-copy-activity.md
-    - name: Teradata database
-      items:
-      - name: Teradata database - Overview
-        href: connector-teradata-database-overview.md
-      - name: Set up your connection
-        href: connector-teradata-database.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-teradata-copy-activity.md
-    - name: Vertica
-      items:
-      - name: Vertica - Overview
-        href: connector-vertica-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-vertica-copy-activity.md        
-    - name: Web API/Web page
-      items:
-      - name: Web API/Web page - Overview
-        href: connector-web-overview.md
-      - name: Set up your connection
-        href: connector-web.md
-  - name: Data pipelines
-    items:
-    - name: Activities
-      items:
-      - name: Activity overview
-        href: activity-overview.md
-      - name: Append Variable activity
-        href: append-variable-activity.md
-      - name: Azure Batch activity
-        href: azure-batch-activity.md
-      - name: Azure Databricks activity
-        href: azure-databricks-activity.md
-      - name: Azure HDInsight activity
-        href: azure-hdinsight-activity.md
-      - name: Azure Machine Learning activity
-        href: azure-machine-learning-activity.md
+      - name: Decide - Data movement strategy
+        href: decision-guide-data-movement.md
       - name: Copy activity
         href: copy-data-activity.md
-      - name: Dataflow activity
-        href: dataflow-activity.md
-      - name: Deactivate an activity
-        href: deactivate-activity.md
-      - name: Delete data activity
-        href: delete-data-activity.md
-      - name: Fail activity
-        href: fail-activity.md
-      - name: Filter activity
-        href: filter-activity.md
-      - name: For-each activity
-        href: foreach-activity.md
-      - name: Functions activity
-        href: functions-activity.md
-      - name: Get Metadata activity
-        href: get-metadata-activity.md
-      - name: If Condition activity
-        href: if-condition-activity.md
-      - name: Invoke Pipeline activity
-        href: invoke-pipeline-activity.md
-      - name: KQL activity
-        href: kql-activity.md
-      - name: Lookup activity
-        href: lookup-activity.md
-      - name: Notebook activity
-        href: notebook-activity.md
-      - name: Office 365 Outlook activity
-        href: outlook-activity.md
-      - name: Script activity
-        href: script-activity.md
-      - name: Semantic model refresh activity
-        href: semantic-model-refresh-activity.md
-      - name: Set Variable activity
-        href: set-variable-activity.md
-      - name: Spark Job Definition activity
-        href: spark-job-definition-activity.md
-      - name: Stored Procedure activity
-        href: stored-procedure-activity.md
-      - name: Switch activity
-        href: switch-activity.md
-      - name: Teams activity
-        href: teams-activity.md
-      - name: Until activity
-        href: until-activity.md
-      - name: Wait activity
-        href: wait-activity.md
-      - name: Web activity
-        href: web-activity.md
-      - name: WebHook activity
-        href: webhook-activity.md
-    - name: Concepts
-      items:
-      - name: REST API capabilities
-        href: pipeline-rest-api-capabilities.md
-      - name: CI/CD for data pipelines
-        href: cicd-pipelines.md
-      - name: Monitor data pipeline runs
-        href: monitor-pipeline-runs.md
-      - name: Parameterization
         items:
-        - name: Parameter usage
-          href: parameters.md
-        - name: Expression language
-          href: expression-language.md
-      - name: Data pipeline runs
+          - name: Copy activity performance and scalability guide
+            href: copy-activity-performance-and-scalability-guide.md
+          - name: Monitor Copy activity
+            href: monitor-copy-activity.md
+          - name: Copy activity tutorials
+            items: 
+              - name: Copy from Azure Blob Storage to Lakehouse
+                href: tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse.md
+              - name: Copy sample data into Lakehouse and transform with a dataflow
+                href: tutorial-load-data-lakehouse-transform.md
+              - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
+                href: tutorial-preprocess-data-with-stored-procedure-load-into-lakehouse.md
+              - name: Move data from Azure SQL DB into Lakehouse via copy assistant
+                href: tutorial-move-data-lakehouse-copy-assistant.md
+              - name: Move data from Azure SQL DB to Lakehouse via pipeline
+                href: tutorial-move-data-lakehouse-pipeline.md
+              - name: Load sample data to Data Warehouse
+                href: tutorial-load-sample-data-to-data-warehouse.md
+              - name: Incrementally load data from Data Warehouse to Lakehouse
+                href: tutorial-incremental-copy-data-warehouse-lakehouse.md
+              - name: Incrementally copy files by the last modified date
+                href: tutorial-incremental-copy-files-last-modified-date.md
+              - name: Load data to Lakehouse using partition
+                href: tutorial-lakehouse-partition.md
+              - name: Move data from Oracle to Fabric Lakehouse via pipeline and on-premises data gateway
+                href: tutorial-move-data-from-oracle-to-lakehouse-pipeline.md
+      - name: Copy job
+        items: 
+          - name: What is the Copy job in Data Factory?
+            href: what-is-copy-job.md
+          - name: How to create a Copy job
+            href: create-copy-job.md
+          - name: How to monitor a Copy job
+            href: monitor-copy-job.md
+          - name: Copy job activity
+            href: copy-job-activity.md
+          - name: Change data capture (CDC) in Copy job
+            href: cdc-copy-job.md
+          - name: CI/CD for Copy job
+            href: cicd-copy-job.md
+          - name: REST API Capabilities
+            href: copy-job-rest-api-capabilities.md
+          - name: Copy job with virtual network data gateway
+            href: copy-job-with-virtual-network-data-gateway.md
+      - name: Mirroring
+        items:
+          - name: Mirroring overview
+            href: /fabric/mirroring/overview?toc=/fabric/data-factory/toc.json
+          - name: Mirroring documentation
+            href: /fabric/mirroring/
+  - name: Transform data
+    items: 
+      - name: Data transformation pipeline activities
+        items: 
+          - name: Dataflow activity
+            href: dataflow-activity.md
+          - name: Delete data activity
+            href: delete-data-activity.md
+          - name: Notebook activity
+            href: notebook-activity.md
+          - name: Azure HDInsight activity
+            href: azure-hdinsight-activity.md
+          - name: Spark Job Definition activity
+            href: spark-job-definition-activity.md
+          - name: Stored Procedure activity
+            href: stored-procedure-activity.md
+          - name: SQL script activity
+            href: script-activity.md
+      - name: Dataflows
+        items:
+          - name: What are dataflows?
+            href: dataflows-gen2-overview.md
+          - name: Tutorials
+            items: 
+              - name: Use a dataflow in a pipeline
+                href: tutorial-dataflows-gen2-pipeline-activity.md
+              - name: Pattern to incrementally amass data with Dataflow Gen2
+                href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
+              - name: Slowly changing dimension type 1
+                href: slowly-changing-dimension-type-one.md
+              - name: Slowly changing dimension type 2
+                href: slowly-changing-dimension-type-two.md
+          - name: Dataflow Gen2 performance and scalability
+            href: dataflow-gen2-performance-best-practices.md  
+          - name: Data in Dataflow Gen2 staging
+            href: data-in-staging-artifacts.md
+          - name: Data source management
+            href: data-source-management.md
+          - name: Dataflow Gen2 default destination
+            href: default-destination.md
+          - name: Dataflow Gen2 destinations and managed settings
+            href: dataflow-gen2-data-destinations-and-managed-settings.md
+          - name: Dataflow Gen2 incremental refresh
+            href: dataflow-gen2-incremental-refresh.md
+          - name: Dataflow Gen2 public APIs
+            href: dataflow-gen2-public-apis.md 
+          - name: Dataflow Gen2 refresh
+            href: dataflow-gen2-refresh.md
+          - name: Dataflow Gen2 with CICD and Git integration
+            href: dataflow-gen2-cicd-and-git-integration.md
+          - name: Fast copy at scale
+            href: dataflows-gen2-fast-copy.md
+          - name: Modern query evaluator (Preview)
+            href: dataflow-gen2-modern-evaluator.md
+          - name: Preview only step (Preview)
+            href: dataflow-gen2-preview-only-step.md
+          - name: Partitioned compute (Preview)
+            href: dataflow-gen2-partitioned-compute.md
+          - name: How to handle schema drift
+            href: how-to-handle-schema-drift.md
+          - name: How to obfuscate data
+            href: data-obfuscation-with-delphix.md
+          - name: Monitoring your Dataflows in Fabric
+            href: dataflows-gen2-monitor.md
+          - name: Public parameters in Dataflow Gen2
+            href: dataflow-parameters.md
+          - name: Variable libraries in Dataflow Gen2
+            href: dataflow-gen2-variable-library-integration.md
+          - name: Saving a draft of your dataflow
+            href: dataflows-gen2-save-draft.md
+          - name: Use cloud connections through gateways
+            href: dataflow-gen2-cloud-connection-gateway-use.md
+          - name: Copilot explainer skill in Dataflow Gen2 
+            href: dataflow-gen2-copilot-explain.md
+          - name: Copilot in Modern Get Data
+            href: copilot-modern-get-data.md
+  - name: Orchestrate your pipelines
+    items:
+      - name: What is a pipeline?
+        href: pipeline-overview.md
+      - name: Pipeline activity overview
+        href: activity-overview.md 
+      - name: Apache Airflow Job
+        items: 
+          - name: Concepts
+            href: apache-airflow-jobs-concepts.md
+          - name: How-to
+            items: 
+              - name: Synchronize your code from an existing Git repo
+                href: apache-airflow-jobs-sync-git-repo.md
+              - name: APIs in Apache Airflow Jobs
+                href: apache-airflow-jobs-api-capabilities.md
+              - name: Apache Airflow Job workspace settings
+                href: apache-airflow-jobs-workspace-settings.md
+              - name: Install a private package
+                href: apache-airflow-jobs-install-private-package.md
+              - name: Enable Azure Key Vault as Secret Backend
+                href: apache-airflow-jobs-enable-azure-key-vault.md
+              - name: Set up SMTP Server
+                href: apache-airflow-jobs-set-smtp-server.md
+              - name: Add a Kubernetes secret
+                href: apache-airflow-jobs-access-private-container-registry.md
+              - name: Apache Airflow configurations
+                href: apache-airflow-jobs-supported-apache-airflow-configurations.md
+              - name: Migrate from Azure Workflow Orchestration Manager
+                href: apache-airflow-jobs-migrate-azure-workflow-orchestration-manager.md
+              - name: Access logs
+                href: access-apache-airflow-job-logs.md
+              - name: CI/CD for Apache Airflow Jobs
+                href: cicd-apache-airflow-jobs.md
+          - name: Tutorials
+            items: 
+              - name: Hello World
+                href: apache-airflow-jobs-hello-world.md
+              - name: Run Fabric pipelines and notebooks
+                href: apache-airflow-jobs-run-fabric-item-job.md
+              - name: Use AI to build DAGs from an image
+                href: apache-airflow-job-build-dags-using-azure-openai.md
+              - name: Run ADF pipeline
+                href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
+              - name: Run Azure Databricks job
+                href: apache-airflow-jobs-run-databricks-job.md
+              - name: Refresh Power BI Semantic Model
+                href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
+              - name: Transform data using dbt
+                href: apache-airflow-jobs-dbt-fabric.md
+      - name: CI/CD for pipelines
+        href: cicd-pipelines.md
+      - name: Control flow activities
+        items: 
+          - name: Append Variable activity
+            href: append-variable-activity.md
+          - name: Azure Batch activity
+            href: azure-batch-activity.md
+          - name: Azure Databricks activity
+            href: azure-databricks-activity.md
+          - name: Azure Machine Learning activity
+            href: azure-machine-learning-activity.md
+          - name: Deactivate an activity
+            href: deactivate-activity.md
+          - name: Fail activity
+            href: fail-activity.md
+          - name: Filter activity
+            href: filter-activity.md
+          - name: For-each activity
+            href: foreach-activity.md
+          - name: Functions activity
+            href: functions-activity.md
+          - name: Get Metadata activity
+            href: get-metadata-activity.md
+          - name: If Condition activity
+            href: if-condition-activity.md
+          - name: Invoke Pipeline activity
+            href: invoke-pipeline-activity.md
+          - name: KQL activity
+            href: kql-activity.md
+          - name: Lookup activity
+            href: lookup-activity.md
+          - name: Office 365 Outlook activity
+            href: outlook-activity.md
+          - name: Semantic model refresh activity
+            href: semantic-model-refresh-activity.md
+          - name: Set Variable activity
+            href: set-variable-activity.md
+          - name: Switch activity
+            href: switch-activity.md
+          - name: Teams activity
+            href: teams-activity.md
+          - name: Until activity
+            href: until-activity.md
+          - name: Wait activity
+            href: wait-activity.md
+          - name: Web activity
+            href: web-activity.md
+          - name: WebHook activity
+            href: webhook-activity.md
+      - name: Run, schedule, or trigger pipelines
         href: pipeline-runs.md
-      - name: Storage event triggers
-        href: pipeline-storage-event-triggers.md
-      - name: Variable library integration (Preview)
-        href: variable-library-integration-with-data-pipelines.md
-    - name: How-to
-      items:
-      - name: Use the pipeline landing page
-        href: pipeline-landing-page.md
-      - name: How to use pipeline sample templates
-        href: templates.md
-      - name: Monitor data pipeline runs
-        href: monitor-pipeline-runs.md
-      - name: Browse pipeline runs in the Monitoring Hub
-        href: monitoring-hub-pipeline-runs.md
-      - name: Run a Script activity and send output by email
-        href: script-activity-email-output.md
-      - name: Copy activity performance and scalability guide
-        href: copy-activity-performance-and-scalability-guide.md
-      - name: Use the modern get data experience for pipelines
-        href: modern-get-data-experience-pipeline.md
+      - name: Pipeline run alerts
+        href: create-alerts-for-pipeline-runs.md
+      - name: Evaluate pipeline expressions
+        href: evaluate-pipeline-expression.md
       - name: Data type mapping
         href: data-type-mapping.md
-      - name: Use AI to turn sketches into pipelines
-        href: image-to-pipeline-with-ai.md        
-    - name: Tutorials
-      items:
-      - name: Copy from Azure Blob Storage to Lakehouse
-        href: tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse.md
-      - name: Copy sample data into Lakehouse and transform with a dataflow
-        href: tutorial-load-data-lakehouse-transform.md
-      - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
-        href: tutorial-preprocess-data-with-stored-procedure-load-into-lakehouse.md
-      - name: Move data from Azure SQL DB into Lakehouse via copy assistant
-        href: tutorial-move-data-lakehouse-copy-assistant.md
-      - name: Move data from Azure SQL DB to Lakehouse via pipeline
-        href: tutorial-move-data-lakehouse-pipeline.md
-      - name: Load sample data to Data Warehouse
-        href: tutorial-load-sample-data-to-data-warehouse.md
-      - name: Incrementally load data from Data Warehouse to Lakehouse
-        href: tutorial-incremental-copy-data-warehouse-lakehouse.md
-      - name: Incrementally copy files by the last modified date
-        href: tutorial-incremental-copy-files-last-modified-date.md        
-      - name: Load data to Lakehouse using partition
-        href: tutorial-lakehouse-partition.md  
-      - name: Move data from Oracle to Fabric Lakehouse via pipeline and on-premises data gateway
-        href: tutorial-move-data-from-oracle-to-lakehouse-pipeline.md
-  - name: Dataflows
-    items:
-    - name: Concepts
-      items:
-      - name: What are Dataflows Gen2
-        href: dataflows-gen2-overview.md
-      - name: Data source management
-        href: data-source-management.md
-      - name: Dataflow Gen2 destinations and managed settings
-        href: dataflow-gen2-data-destinations-and-managed-settings.md
-      - name: Dataflow Gen2 default destination
-        href: default-destination.md
-      - name: Fast copy at scale
-        href: dataflows-gen2-fast-copy.md
-      - name: Monitoring your Dataflows in Fabric
-        href: dataflows-gen2-monitor.md
-      - name: Dataflow Gen2 refresh
-        href: dataflow-gen2-refresh.md
-      - name: Public parameters in Dataflow Gen2 (Preview)
-        href: dataflow-parameters.md
-      - name: Data in Dataflow Gen2 staging
-        href: data-in-staging-artifacts.md
-      - name: Dataflow Gen2 incremental refresh
-        href: dataflow-gen2-incremental-refresh.md
-      - name: Dataflow Gen2 with CICD and Git integration
-        href: dataflow-gen2-cicd-and-git-integration.md
-      - name: Dataflow Gen2 public APIs
-        href: dataflow-gen2-public-apis.md
-    - name: How-to
-      items:
-      - name: Saving a draft of your dataflow
-        href: dataflows-gen2-save-draft.md
-      - name: How to obfuscate data
-        href: data-obfuscation-with-delphix.md
-      - name: How to handle schema drift
-        href: how-to-handle-schema-drift.md
-    - name: Tutorials
-      items:
-      - name: Use a dataflow in a pipeline
-        href: tutorial-dataflows-gen2-pipeline-activity.md
-      - name: Pattern to incrementally amass data with Dataflow Gen2
-        href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
-      - name: Slowly changing dimension type 1
-        href: slowly-changing-dimension-type-one.md
-      - name: Slowly changing dimension type 2 
-        href: slowly-changing-dimension-type-two.md        
-  - name: Copy job
-    items:
-    - name: What is the Copy job in Data Factory?
-      href: what-is-copy-job.md
-    - name: How to create a Copy job
-      href: create-copy-job.md
-    - name: How to monitor a Copy job
-      href: monitor-copy-job.md
-    - name: Change data capture (CDC) in Copy job
-      href: cdc-copy-job.md
-    - name: CI/CD for Copy job
-      href: cicd-copy-job.md
-    - name: REST API Capabilities
-      href: copy-job-rest-api-capabilities.md    
-  - name: Data gateway
-    items:
-    - name: "Business continuity and disaster recovery (BCDR) for gateways"
-      href: /data-integration/gateways-business-continuity-disaster-recovery?toc=/fabric/data-factory/toc.json
-    - name: On-premises data gateways docs
-      items:
-      - name: "What is an on-premises data gateway?"
-        href: /data-integration/gateway/service-gateway-onprem?toc=/fabric/data-factory/toc.json
-      - name: Concepts
+      - name: Pipeline sample templates
+        href: templates.md
+      - name: Monitor pipeline runs
+        href: monitor-pipeline-runs.md
         items:
-        - name: "On-premises data gateway architecture"
-          href: /data-integration/gateway/service-gateway-onprem-indepth?toc=/fabric/data-factory/toc.json         
-        - name: "On-premises data gateway FAQ"
-          href: /data-integration/gateway/service-gateway-onprem-faq?toc=/fabric/data-factory/toc.json
-      - name: How to
-        items:
-        - name: "Install gateways"
-          href: /data-integration/gateway/service-gateway-install?toc=/fabric/data-factory/toc.json 
-        - name: "Configure gateways"
-          items:
-          - name: "Use the on-premises data gateway app"
-            href: /data-integration/gateway/service-gateway-app?toc=/fabric/data-factory/toc.json 
-          - name: "Configure proxy settings"
-            href: /data-integration/gateway/service-gateway-proxy?toc=/fabric/data-factory/toc.json 
-          - name: "Step by step guide on configuring your proxy settings"
-            href: /data-integration/gateway/service-gateway-proxy-setup-guide?toc=/fabric/data-factory/toc.json 
-          - name: "Change the gateway service account"
-            href: /data-integration/gateway/service-gateway-service-account?toc=/fabric/data-factory/toc.json 
-          - name: "Set the data center region"
-            href: /data-integration/gateway/service-gateway-data-region?toc=/fabric/data-factory/toc.json 
-          - name: "Set the Azure Relay"
-            href: /data-integration/gateway/service-gateway-azure-relay?toc=/fabric/data-factory/toc.json 
-          - name: "Adjust communication settings"
-            href: /data-integration/gateway/service-gateway-communication?toc=/fabric/data-factory/toc.json 
-          - name: "Configure the gateway log file"
-            href: /data-integration/gateway/service-gateway-log-files?toc=/fabric/data-factory/toc.json 
-          - name: "Adjust performance based on CPU"
-            href: /data-integration/gateway/service-gateway-performance-cpu?toc=/fabric/data-factory/toc.json 
-          - name: "Configure gateway disk space"
-            href: /data-integration/gateway/service-gateway-configure-disk-space?toc=/fabric/data-factory/toc.json 
-          - name: "Configure tenant registration settings"
-            href: /data-integration/gateway/service-gateway-tenant-registration?toc=/fabric/data-factory/toc.json 
-        - name: "Manage gateways"
-          items:
-          - name: "Manage in a service"
-            href: /data-integration/gateway/service-gateway-manage?toc=/fabric/data-factory/toc.json 
-          - name: "Manage security roles"
-            href: /data-integration/gateway/manage-security-roles?toc=/fabric/data-factory/toc.json 
-          - name: "Manage high availability clusters and load balancing"
-            href: /data-integration/gateway/service-gateway-high-availability-clusters?toc=/fabric/data-factory/toc.json 
-          - name: "Update an on-premises data gateway"
-            href: /data-integration/gateway/service-gateway-update?toc=/fabric/data-factory/toc.json 
-          - name: "Migrate, restore, or take over a gateway"
-            href: /data-integration/gateway/service-gateway-migrate?toc=/fabric/data-factory/toc.json 
-          - name: "Restart a gateway"
-            href: /data-integration/gateway/service-gateway-restart?toc=/fabric/data-factory/toc.json 
-          - name: "Change a recovery key"
-            href: /data-integration/gateway/service-gateway-recovery-key?toc=/fabric/data-factory/toc.json 
-        - name: "Plan, scale, and maintain business-critical gateway clusters"
-          href: /data-integration/gateway/plan-scale-maintain?toc=/fabric/data-factory/toc.json 
-        - name: "Troubleshoot the on-premises data gateway"
-          href: /data-integration/gateway/service-gateway-tshoot?toc=/fabric/data-factory/toc.json 
-        - name: "Monitor and optimize gateway performance"
-          href: /data-integration/gateway/service-gateway-performance?toc=/fabric/data-factory/toc.json 
-      - name: Reference
-        items:
-        - name: "PowerShell support for gateway clusters"
-          href: /data-integration/gateway/service-gateway-powershell-support?toc=/fabric/data-factory/toc.json 
-      - name: Resources
-        items:
-        - name: "Supported monthly updates"
-          href: /data-integration/gateway/service-gateway-monthly-updates?toc=/fabric/data-factory/toc.json 
-    - name: Virtual network data gateways docs
-      items:
-      - name: "What is a virtual network data gateway?"
-        href: /data-integration/vnet/overview?toc=/fabric/data-factory/toc.json 
-      - name: Concepts
-        items:
-        - name: "What is a virtual network?"
-          href: /data-integration/vnet/what-is?toc=/fabric/data-factory/toc.json 
-        - name: Virtual network data gateway architecture
-          href: /data-integration/vnet/data-gateway-architecture?toc=/fabric/data-factory/toc.json 
-        - name: "Virtual network data gateways business model"
-          href: /data-integration/vnet/data-gateway-business-model?toc=/fabric/data-factory/toc.json 
-      - name: How to
-        items:
-        - name: Create virtual network data gateways
-          href: /data-integration/vnet/create-data-gateways?toc=/fabric/data-factory/toc.json 
-        - name: Manage virtual network data gateways
-          href: /data-integration/vnet/manage-data-gateways?toc=/fabric/data-factory/toc.json 
-        - name: Use virtual network data gateway in Fabric with Dataflows Gen 2
-          href: /data-integration/vnet/use-data-gateways-dfgen2-fabric?toc=/fabric/data-factory/toc.json 
-        - name: Use virtual network data gateway in Fabric with Pipeline
-          href: /data-integration/vnet/use-data-gateways-pipeline-fabric?toc=/fabric/data-factory/toc.json
-        - name: Use virtual network data gateway in Power BI
-          href: /data-integration/vnet/use-data-gateways-sources-power-bi?toc=/fabric/data-factory/toc.json 
-        - name: Use virtual network data gateway in Power Platform dataflows
-          href: /data-integration/vnet/data-gateway-power-platform-dataflows?toc=/fabric/data-factory/toc.json 
-        - name: Manage virtual network data gateway high availability and load balancing
-          href: /data-integration/vnet/high-availability-load-balancing?toc=/fabric/data-factory/toc.json 
-        - name: Manage virtual network security roles
-          href: /data-integration/vnet/manage-vnet-security-roles?toc=/fabric/data-factory/toc.json 
-        - name: Troubleshoot a virtual network data gateway network
-          href: /data-integration/vnet/troubleshoot-data-gateway?toc=/fabric/data-factory/toc.json
-        - name: Virtual network data gateway best practices
-          href: /data-integration/vnet/vnet-best-practices?toc=/fabric/data-factory/toc.json
-        - name: Virtual network data gateway FAQs
-          href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json 
-        - name: Download diagnostics logs
-          href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json 
-  - name: Apache Airflow Job
-    items:
-      - name: Concepts
-        href: apache-airflow-jobs-concepts.md
-      - name: How-to
-        items:
-          - name: Synchronize your code from an existing Git repo
-            href: apache-airflow-jobs-sync-git-repo.md
-          - name: Apache Airflow Job workspace settings
-            href: apache-airflow-jobs-workspace-settings.md
-          - name: Install a private package
-            href: apache-airflow-jobs-install-private-package.md
-          - name: Enable Azure Key Vault as Secret Backend
-            href: apache-airflow-jobs-enable-azure-key-vault.md
-          - name: Set up SMTP Server
-            href: apache-airflow-jobs-set-smtp-server.md
-          - name: Add a Kubernetes secret
-            href: apache-airflow-jobs-access-private-container-registry.md
-          - name: Apache Airflow configurations
-            href: apache-airflow-jobs-supported-apache-airflow-configurations.md
-          - name: Migrate from Azure Workflow Orchestration Manager
-            href: apache-airflow-jobs-migrate-azure-workflow-orchestration-manager.md
-          - name: Access logs 
-            href: access-apache-airflow-job-logs.md
+          - name: Browse pipeline runs in the Monitoring Hub
+            href: monitoring-hub-pipeline-runs.md
+      - name: Parameterization
+        items: 
+          - name: Parameter usage
+            href: parameters.md
+          - name: Expression language
+            href: expression-language.md
+      - name: REST API capabilities
+        href: pipeline-rest-api-capabilities.md
       - name: Tutorials
         items:
-          - name: Hello World
-            href: apache-airflow-jobs-hello-world.md
-          - name: Run Fabric data pipelines and notebooks
-            href: apache-airflow-jobs-run-fabric-item-job.md
-          - name: Use AI to build DAGs from an image
-            href: apache-airflow-job-build-dags-using-azure-openai.md
-          - name: Run ADF pipeline
-            href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
-          - name: Run Azure Databricks job
-            href: apache-airflow-jobs-run-databricks-job.md
-          - name: Refresh Power BI Semantic Model
-            href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
-          - name: Transform data using dbt
-            href: apache-airflow-jobs-dbt-fabric.md
-  - name: Azure Key Vault Reference (Preview)
-    items:
-      - name: Overview
-        href: azure-key-vault-reference-overview.md
-      - name: How to
-        items:
-          - name: Configure AKV references
-            href: azure-key-vault-reference-configure.md
-  - name: Best practices
-    items:
-    - name: Copy performance for SQL databases
-      href: copy-performance-sql-databases.md  
-    - name: Dataflow Gen2 performance and scalability
-      href: dataflow-gen2-performance-best-practices.md  
-  - name: Extensibility
-    items:
-      - name: Connector certification
-        items:
-        - name: Data Factory connector certification
-          href: connector-certification.md
-        - name: Provide connector documentation
-          href: providing-user-documentation.md   
+          - name: Run a Script activity and send output by email
+            href: script-activity-email-output.md
+          - name: Use AI to turn sketches into pipelines
+            href: image-to-pipeline-with-ai.md
+      - name: Get data for pipelines
+        href: modern-get-data-experience-pipeline.md
+      - name: Fabric pipeline landing page
+        href: pipeline-landing-page.md
+      - name: Variable library integration (Preview)
+        href: variable-library-integration-with-data-pipelines.md
   - name: FAQ and Troubleshooting
+    items: 
+      - name: Frequently asked questions
+        href: frequently-asked-questions.yml
+      - name: Pipeline activities troubleshooting guide
+        href: pipeline-troubleshoot-guide.md
+      - name: Troubleshoot connectors
+        items: 
+          - name: Connector troubleshooting overview
+            href: connector-troubleshoot-overview.md
+          - name: Azure Blob Storage
+            href: connector-troubleshoot-azure-blob-storage.md
+          - name: Azure Cosmos DB
+            href: connector-troubleshoot-azure-cosmos-db.md
+          - name: DB2
+            href: connector-troubleshoot-db2.md
+          - name: Azure Data Explorer
+            href: connector-troubleshoot-azure-data-explorer.md
+          - name: Azure Data Lake Storage
+            href: connector-troubleshoot-azure-data-lake-storage.md
+          - name: Azure Database for PostgreSQL
+            href: connector-troubleshoot-azure-database-for-postgresql.md
+          - name: Azure Files
+            href: connector-troubleshoot-azure-files.md
+          - name: Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server
+            href: connector-troubleshoot-synapse-sql.md
+          - name: Azure Table Storage
+            href: connector-troubleshoot-azure-table-storage.md
+          - name: Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM
+            href: connector-troubleshoot-dynamics-dataverse.md
+          - name: MongoDB
+            href: connector-troubleshoot-mongodb.md
+          - name: Oracle
+            href: connector-troubleshoot-oracle.md
+          - name: Snowflake
+            href: connector-troubleshoot-snowflake.md
+          - name: FTP-SFTP-HTTP
+            href: connector-troubleshoot-ftp-sftp-http.md
+          - name: REST
+            href: connector-troubleshoot-rest.md
+          - name: Sharepoint Online list
+            href: connector-troubleshoot-sharepoint-online-list.md
+          - name: Format
+            items: 
+              - name: Delimited text
+                href: connector-troubleshoot-delimited-text.md
+              - name: ORC
+                href: connector-troubleshoot-orc-format.md
+              - name: Parquet
+                href: connector-troubleshoot-parquet-format.md
+              - name: XML
+                href: connector-troubleshoot-xml.md
+      - name: Data Factory limitations
+        href: data-factory-limitations.md
+      - name: Fabric known issues
+        href: ../get-started/fabric-known-issues.md?toc=/fabric/data-factory/toc.json
+  - name: Community
     items:
-    - name: Frequently asked questions
-      href: frequently-asked-questions.yml
-    - name: Gateway considerations for data destinations in Dataflow Gen2
-      href: gateway-considerations-output-destinations.md
-    - name: Pipeline activities troubleshooting guide
-      href: pipeline-troubleshoot-guide.md
-    - name: Connectors
-      items:
-      - name: Connector troubleshooting overview
-        href: connector-troubleshoot-overview.md
-      - name: Azure Blob Storage
-        href: connector-troubleshoot-azure-blob-storage.md
-      - name: Azure Cosmos DB
-        href: connector-troubleshoot-azure-cosmos-db.md
-      - name: DB2
-        href: connector-troubleshoot-db2.md
-      - name: Azure Data Explorer
-        href: connector-troubleshoot-azure-data-explorer.md
-      - name: Azure Data Lake Storage
-        href: connector-troubleshoot-azure-data-lake-storage.md
-      - name: Azure Database for PostgreSQL
-        href: connector-troubleshoot-azure-database-for-postgresql.md
-      - name: Azure Files
-        href: connector-troubleshoot-azure-files.md
-      - name: Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server
-        href: connector-troubleshoot-synapse-sql.md
-      - name: Azure Table Storage
-        href: connector-troubleshoot-azure-table-storage.md     
-      - name: Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM
-        href: connector-troubleshoot-dynamics-dataverse.md
-      - name: MongoDB
-        href: connector-troubleshoot-mongodb.md
-      - name: Oracle
-        href: connector-troubleshoot-oracle.md
-      - name: Snowflake
-        href: connector-troubleshoot-snowflake.md
-      - name: FTP-SFTP-HTTP
-        href: connector-troubleshoot-ftp-sftp-http.md
-      - name: REST
-        href: connector-troubleshoot-rest.md
-      - name: Sharepoint Online list
-        href: connector-troubleshoot-sharepoint-online-list.md        
-      - name: Format
-        items:
-        - name: Delimited text
-          href: connector-troubleshoot-delimited-text.md          
-        - name: ORC
-          href: connector-troubleshoot-orc-format.md
-        - name: Parquet
-          href: connector-troubleshoot-parquet-format.md          
-        - name: XML
-          href: connector-troubleshoot-xml.md
-    - name: Data Factory limitations
-      href: data-factory-limitations.md
-    - name: Fabric known issues
-      href: https://support.fabric.microsoft.com/known-issues/
+    - name: Data factory blog
+      href: https://blog.fabric.microsoft.com/blog/category/data-factory
+    - name: Data factory forums
+      href: https://community.fabric.microsoft.com/t5/Data-Factory-forums/ct-p/datafactory
+    - name: Data factory video channel
+      href: https://www.youtube.com/@MSDataFactory

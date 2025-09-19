@@ -132,9 +132,9 @@ END
 
 1. Select **My workspace** to open your Fabric workspace.
 
-1. Select **+ New Item**, then select **Data pipeline**, and then enter a pipeline name to create a new pipeline.
+1. Select **+ New Item**, then select **Pipeline**, and then enter a pipeline name to create a new pipeline.
 
-   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
 
    :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 

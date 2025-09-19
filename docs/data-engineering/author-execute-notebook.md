@@ -1,9 +1,9 @@
 ---
 title: Develop, execute, and manage notebooks
 description: Learn how to author, execute, and manage Microsoft Fabric notebook jobs with rich built-in features.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Develop and run notebooks
@@ -92,9 +92,6 @@ The IntelliSense features are at different levels of maturity for different lang
 
 #### Enhance Python Development with Pylance
 
-> [!NOTE]
-> Currently, the feature is in preview.
-
 Pylance, a powerful and feature-rich language server, is now available in Fabric notebook. Pylance makes Python development easier with smart completions, better error detection, and improved code insights. Key improvements include smarter autocompletion, enhanced lambda support, parameter suggestions, improved hover information, better docstring rendering, and error highlighting. With Pylance, writing Python and PySpark code becomes faster, more accurate, and more efficient.
 
 ### Code snippets
@@ -170,7 +167,7 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide outpu
 
 ### Cell output security
 
-Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
+Using [OneLake data access roles (preview)](../onelake/security/get-started-onelake-security.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
 
 > [!IMPORTANT]
 > Security only applies during query execution and any notebook cells containing query results can be viewed by users that aren't authorized to run queries against the data directly.
@@ -227,7 +224,7 @@ Enable inline code suggestions using the toggle at the bottom of your notebook. 
 :::image type="content" source="media\author-execute-notebook\copilot-code-suggestion.png" alt-text="Screenshot showing automatic code suggestion with Copilot code completion.":::
 
 > [!NOTE]
-> Enabling Copilot inline code completion will consume additional [capacity units](../enterprise/fabric-copilot-capacity.md).
+> Enabling Copilot inline code completion consumes more [capacity units](../enterprise/fabric-copilot-capacity.md).
 
 ### Current limitations
 
@@ -352,15 +349,15 @@ You can also set timeout as described in:
 - [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
 - [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command)
 
-**Stay signed in:** During login, if you see the **Stay signed in** dialog, select **Yes** to deactivate the idle session timeout for your current session.
+**Stay signed in:** During sign in, if you see the **Stay signed in** dialog, select **Yes** to deactivate the idle session timeout for your current session.
 
 > [!IMPORTANT]
-> Do not select the **Don’t show this again** checkbox, as this will lock in your sign-in settings permanently. Note that this option might not appear if your tenant admin has disabled the Keep Me Signed In (KMSI) setting.
+> Don't select the **Don’t show this again** checkbox, as this will lock in your sign-in settings permanently. This option might not appear if your tenant admin has disabled the Keep Me Signed In (KMSI) setting.
 
-**Request a policy change:** If you need a longer session duration, ask your tenant admin to extend the idle session timeout duration policy. They can do this by navigating to Org Settings > Security & Privacy > Idle Session Timeout within the M365 Admin Center.
+**Request a policy change:** If you need a longer session duration, ask your tenant admin to extend the idle session timeout duration policy. They can do this by navigating to Org Settings > Security & Privacy > Idle Session Timeout within the Microsoft 365 Admin Center.
 
 > [!NOTE]
-> Selecting KMSI and/or extending the idle session timeout duration time will extend the risk of an unlocked machine being accessed.
+> Selecting KMSI and/or extending the idle session timeout duration time extends the risk of an unlocked machine being accessed.
 
 **How do ABT and idle session timeout impact long-running Fabric Notebook executions?**
 
@@ -491,7 +488,7 @@ IPython Widgets are eventful Python objects that have a representation in the br
 
 - If you close a notebook that contains an IPython widget, you can't see or interact with it until you execute the corresponding cell again.
   
-- The interact function (ipywidgets.interact) is not supported.
+- The interact function (ipywidgets.interact) isn't supported.
 
 ## Integrate a notebook
 
@@ -510,6 +507,25 @@ After you create a notebook with parameters, you can execute it from a pipeline 
 :::image type="content" source="media\author-execute-notebook\assign-parameter.png" alt-text="Screenshot showing where to assign parameters values from a pipeline." lightbox="media\author-execute-notebook\assign-parameter.png":::
 
 When assigning parameter values, you can use the [pipeline expression language](..\data-factory\expression-language.md) or [functions and variables](..\data-factory\parameters.md).
+
+Notebook parameters support simple types such as `int`, `float`, `bool`, and `string`. Complex types such as `list` and `dict` aren't yet supported. To pass a complex type, consider serializing it to a string format (for example, JSON) and then deserializing it within the notebook. The following sample shows how to pass a JSON string from pipeline to notebook and deserialize it:
+
+:::image type="content" source="media\author-execute-notebook\notebook-parameter-json-pipeline.png" alt-text="Screenshot showing how to pass json string from a pipeline." lightbox="media\author-execute-notebook\notebook-parameter-json-pipeline.png":::
+
+The following python code demonstrates how to deserialize the JSON string into a Python dictionary:
+
+```python
+import json
+
+# Deserialize the JSON string into a Python dictionary
+params = json.loads(json_string)
+
+# Access the individual parameters
+param1 = params.get("param1")
+param2 = params.get("param2")
+```
+
+Make sure that the parameter name in the parameter code cell matches the parameter name in the pipeline.
 
 ## Spark session configuration magic command
 
@@ -584,7 +600,7 @@ You can also use `%%configure` magic command to dynamically inject configuration
 In this example:
 - `myVL` is the name of your Variable Library.
 - `LHname` and `LHid` are variable keys defined in the library.
-- These values are resolved at runtime depending on the active environment (e.g. Dev, Test, Prod).
+- These values are resolved at runtime depending on the active environment (for example, Dev, Test, Prod).
 
 This allows you to switch configurations like default lakehouse without modifying your notebook code.
 
@@ -734,7 +750,7 @@ Using the following keystroke shortcuts, you can easily navigate and run code in
 | Dedent | Ctrl + [ |
 | Switch to command mode | Esc |
 
-To find all shortcut keys, select **View** on the notebook ribbon, and then select **Keybindings**.
+To find all shortcut keys, select **View** on the notebook ribbon, and then select **Key bindings**.
 
 ## Related content
 
