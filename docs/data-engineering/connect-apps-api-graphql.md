@@ -3,8 +3,8 @@ title: Connect applications to Fabric API for GraphQL
 description: Learn how to find and copy your API endpoint so you can connect your applications to the API for GraphQL.
 #customer intent: As a developer, I want to connect my application to the Fabric API for GraphQL so that I can query data efficiently.  
 ms.reviewer: sngun
-ms.author: sngun
-author: snehagunda
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Connecting applications to GraphQL

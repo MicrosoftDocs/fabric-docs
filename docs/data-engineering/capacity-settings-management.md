@@ -1,9 +1,9 @@
 ---
 title: Manage settings for data engineering and science capacity
 description: Learn how to configure and manage the capacity administration settings for data engineering and science experiences.
-ms.reviewer: snehagunda
-ms.author: saravi
-author: santhoshravindran7
+ms.reviewer: saravi
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 06/19/2025

@@ -1,8 +1,9 @@
 ---
 title: Quickstart - Create a Fabric User data functions item in Visual Studio Code
 description: Add a Fabric User data functions item in VS Code 
-ms.author: sumuth
-author: mksuni
+ms.author: eur
+ms.reviewer: sumuth
+author: eric-urban
 ms.topic: quickstart
 ms.date: 03/31/2025
 ms.search.form: Fabric User data functions, VS Code

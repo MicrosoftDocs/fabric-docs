@@ -1,9 +1,9 @@
 ---
 title: Lakehouse tutorial - Prepare and transform lakehouse data
 description: After ingesting raw data into your new lakehouse, you can transform it using notebooks and Spark runtime.
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
+ms.reviewer: arali
+ms.author: eur
+author: eric-urban
 ms.topic: tutorial
 ms.custom:
 ms.date: 08/29/2025

@@ -1,9 +1,9 @@
 ---
 title: Lakehouse sharing and permission management
 description: Learn how to share a lakehouse and manage permissions, including how to remove permissions and create data access roles.
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/19/2024

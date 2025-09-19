@@ -1,8 +1,9 @@
 ---
 title: Manage the Environment Through Public APIs
 description: This article gives an overview of the public APIs of the environment. It also describes the best practice of using the environment APIs.
-ms.author: shuaijunye
-author: ShuaijunYe
+ms.author: eur
+ms.reviewer: shuaijunye
+author: eric-urban
 ms.topic: how-to
 ms.date: 03/15/2025
 ms.search.form: Manage the environment through public APIs

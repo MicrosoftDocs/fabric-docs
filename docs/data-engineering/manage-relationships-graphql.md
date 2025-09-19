@@ -3,8 +3,8 @@ title: Manage relationships in Fabric API for GraphQL
 description: Learn how to manage relationships in Fabric API for GraphQL, including how to create and delete relationships.
 #customer intent: As a developer, I want to create one-to-one relationships in Fabric API for GraphQL so that I can link types based on specific fields.  
 ms.reviewer: sngun
-ms.author: sngun
-author: snehagunda
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom: null
 ms.search.form: GraphQL manage relationships

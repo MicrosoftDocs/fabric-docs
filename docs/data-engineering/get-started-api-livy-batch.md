@@ -1,9 +1,9 @@
 ---
 title: Submit Spark batch jobs using the Livy API
 description: Learn how to submit Spark batch jobs using the Livy API.
-ms.reviewer: sngun
-ms.author: guyhay
-author: GuyHay
+ms.reviewer: guyhay
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.search.form: Get started with batch jobs with the Livy API for Data Engineering
 ms.date: 03/14/2025

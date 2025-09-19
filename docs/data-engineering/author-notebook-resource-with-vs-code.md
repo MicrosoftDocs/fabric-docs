@@ -1,9 +1,9 @@
 ---
 title: Work with notebook resources in Visual Studio Code
 description: Learn about the VS Code extension for Fabric Data Engineering, which enables a pro-developer authoring experience, including editing file in the notebook resource folder.
-ms.reviewer: sngun
-ms.author: qixwang
-author: qixwang
+ms.reviewer: qixwang
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom:
 ms.date: 05/13/2024

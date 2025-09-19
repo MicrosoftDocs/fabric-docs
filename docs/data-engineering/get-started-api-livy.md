@@ -1,9 +1,9 @@
 ---
 title: Create and run Spark Session jobs using the Livy API
 description: Learn how to submit and run Spark session jobs in Fabric using the Livy API.
-ms.reviewer: sngun
-ms.author: guyhay
-author: GuyHay
+ms.reviewer: guyhay
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.search.form: Get started with the Livy API for Data Engineering
 ms.date: 04/30/2025

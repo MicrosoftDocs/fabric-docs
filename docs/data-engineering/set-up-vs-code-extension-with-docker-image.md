@@ -1,9 +1,9 @@
 ---
 title: VS Code extension with Docker support
 description: Learn how Docker integration works with Data Engineering VS Code extension. It gives a containerized environment with all dependencies installed, configured.
-ms.reviewer: sngun
-ms.author: qixwang
-author: qixwang
+ms.reviewer: qixwang
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom:
 ms.date: 07/03/2025

@@ -1,9 +1,9 @@
 ---
 title: Lakehouse schemas (Preview)
 description: What lakehouse schemas are and how to use it
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.date: 01/16/2025
 ms.search.form: Lakehouse schemas

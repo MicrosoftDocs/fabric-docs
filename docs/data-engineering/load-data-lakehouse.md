@@ -1,9 +1,9 @@
 ---
 title: Options to get data into the Lakehouse
 description: Learn how to load data into a lakehouse via a file upload, Apache Spark libraries in notebook code, and the copy tool in pipelines.
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 08/22/2024

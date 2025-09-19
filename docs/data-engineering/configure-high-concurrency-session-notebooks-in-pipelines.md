@@ -1,9 +1,9 @@
 ---
 title: Configure high concurrency mode for notebooks in pipelines
 description: Discover how to set up and execute high concurrency mode to share sessions across multiple notebooks within pipelines, optimizing Data Engineering and Data Science tasks in Fabric.
-ms.reviewer: snehagunda
-ms.author: saravi
-author: santhoshravindran7
+ms.reviewer: saravi
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 - fabcon-2024

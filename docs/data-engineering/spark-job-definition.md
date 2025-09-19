@@ -1,9 +1,9 @@
 ---
 title: Apache Spark job definition
 description: An Apache Spark job definition is a Fabric code item that allows you to submit batch or streaming jobs to a Spark cluster.
-ms.reviewer: snehagunda
-ms.author: qixwang
-author: qixwang
+ms.reviewer: qixwang
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom:
 ms.date: 10/20/2023

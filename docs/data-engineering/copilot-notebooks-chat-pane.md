@@ -1,8 +1,9 @@
 ---
 title: Use the Copilot for Data Science and Data Engineering chat panel (preview)
 description: Interact with the chat panel in Copilot for Data Science and Data Engineering.
-author: SnehaGunda
-ms.author: sngun
+author: eric-urban
+ms.author: eur
+ms.reviewer: sngun
 ms.topic: how-to
 ms:custom:
 ms.date: 06/10/2025

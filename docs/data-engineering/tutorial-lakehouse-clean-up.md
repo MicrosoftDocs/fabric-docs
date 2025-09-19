@@ -1,9 +1,9 @@
 ---
 title: Lakehouse tutorial - clean up resources
 description: As a final step in the tutorial, clean up your resources. Learn how to delete individual reports, pipelines, warehouses, or remove the entire workspace.
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
+ms.reviewer: arali
+ms.author: eur
+author: eric-urban
 ms.topic: tutorial
 ms.custom:
 ms.date: 07/19/2024
