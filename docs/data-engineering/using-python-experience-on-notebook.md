@@ -15,8 +15,6 @@ ms.date: 03/31/2025
 
 The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This capability makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that don't require big data and distributed computing.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 With a Python notebook, you can get:
 
 - **Multiple built-in python kernels**: Python notebooks offer a pure Python coding environment without Spark, with two versions of Python kernel - Python 3.10 and 3.11 available by default, and the native ipython features supported such as iPyWidget, magic commands.

@@ -36,7 +36,7 @@ notebookutils.fs provides utilities for working with various FileSystems.
 Below is overview about the available methods:
 
 cp(from: String, to: String, recurse: Boolean = false): Boolean -> Copies a file or directory, possibly across FileSystems
-fastcp(from: String, to: String, recurse: Boolean = true): Boolean -> [Preview] Copies a file or directory via azcopy, possibly across FileSystems
+fastcp(from: String, to: String, recurse: Boolean = true): Boolean -> Copies a file or directory via azcopy, possibly across FileSystems
 mv(from: String, to: String, createPath: Boolean = false, overwrite: Boolean = false): Boolean -> Moves a file or directory, possibly across FileSystems
 ls(dir: String): Array -> Lists the contents of a directory
 mkdirs(dir: String): Boolean -> Creates the given directory if it does not exist, also creating any necessary parent directories
@@ -201,10 +201,10 @@ The notebook module.
 
 exit(value: String): void -> This method lets you exit a notebook with a value.
 run(path: String, timeoutSeconds: int, arguments: Map, workspace: String): String -> This method runs a notebook and returns its exit value.
-runMultiple(DAG: Any): Map[String, MsNotebookRunResult] -> [Preview] Runs multiple notebooks concurrently with support for dependency relationships.
-validateDAG(DAG: Any): Boolean -> [Preview] This method check if the DAG is correctly defined.
+runMultiple(DAG: Any): Map[String, MsNotebookRunResult] -> Runs multiple notebooks concurrently with support for dependency relationships.
+validateDAG(DAG: Any): Boolean -> This method check if the DAG is correctly defined.
 
-[Preview] Below methods are only support Fabric Notebook.
+Below methods are only support Fabric Notebook.
 create(name: String, description: String = "", content: String = "", defaultLakehouse: String = "", defaultLakehouseWorkspace: String = "", workspaceId: String = ""): Artifact -> Create a new Notebook.
 get(name: String, workspaceId: String = ""): Artifact -> Get a Notebook by name or id.
 update(name: String, newName: String, description: String = "", workspaceId: String = ""): Artifact -> Update a Artifact by name.
@@ -251,9 +251,6 @@ You can open the snapshot link of the reference run in the cell output. The snap
 - Reference run allows child notebooks to run only if they use the same lakehouse as the parent, inherit the parent's lakehouse, or neither defines one. The execution is blocked if the child specifies a different lakehouse to parent notebook. To bypass this check, set `useRootDefaultLakehouse: True`.
 
 ### Reference run multiple notebooks in parallel
-
-> [!IMPORTANT]
-> This feature is currently in [preview](../fundamentals/preview.md).
 
 The method `notebookutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the reference notebook runs share the compute resources.
 
@@ -910,9 +907,6 @@ notebookutils.session.restartPython()
 - In rare case, the command may fail due to the Spark reflection mechanism, adding retry can mitigate the problem.
 
 ## Variable library utilities
-
-> [!NOTE]
-> "Variable Library utilities" in Notebooks is in Preview.
 
 Variable libraries allow you to avoid hardcoding values in your notebook code. You can update the values in the library instead of modifying the code. The notebook references the variable library to retrieve those values. This approach simplifies the reuse of code across teams and projects by utilizing a centrally managed library. 
 
