@@ -217,8 +217,8 @@ items:
         href: event-streams/connect-using-managed-identity.md
       - name: Connect to streaming sources in private network 
         href: event-streams/connect-connecots-in-virtual-network-on-premises.md
-      - name: Enable secure connection with Private Links
-        href: event-streams/tenant-and-workspace-private-link
+      - name: Secure inbound connections with private links
+        href: event-streams/set-up-tenant-workspace-private-links
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
