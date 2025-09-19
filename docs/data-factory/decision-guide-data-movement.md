@@ -15,7 +15,7 @@ Microsoft Fabric gives you several ways to bring data into Fabric, based on what
 
 Mirroring is designed to be simple and free, but it won't cover every advanced scenario. Copy activities in pipelines give you powerful data ingestion features, but they require you to build and manage pipelines. Copy job fills the gap between these options. It gives you more flexibility and control than Mirroring, plus native support for both batch and incremental copying, without the complexity of building pipelines.
 
-For real-time streaming ingestion and event-driven scenarios, consider using Fabric Eventstreams, which offer low-latency data movement with no-code or SQL transformation and content-based, multi-destination routing.
+For real-time streaming ingestion and event-driven scenarios, try Fabric Eventstreams. They provide low-latency data movement, let you transform data with no code or SQL transformations, and support content-based routing to multiple destinations.
 
 :::image type="content" source="media/decision-guide-data-movement/decision-guide-data-movement.svg" alt-text="Screenshot of a data movement strategy decision tree, comparing mirroring, copy job, and copy activity." lightbox="media/decision-guide-data-movement/decision-guide-data-movement.svg":::
 
