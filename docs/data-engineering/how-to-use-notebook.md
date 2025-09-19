@@ -209,7 +209,7 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
  
 1. Select a section of code in a cell and new a comment thread.
  
-1. Input user name and choose the correct one on the suggestion list if you want to mention someone for discussion about a certain section.
+1. Enter the user name and choose the correct one from the suggestion list if you want to mention someone in a discussion about a certain section.
  
 1. Share your insights and **Post** them.
  
@@ -251,7 +251,7 @@ Version history allows you to easily version your live notebook changes. It supp
 
 > [!NOTE]
 >
-> - Known limitation: After clicking on the **Restore** button and navigate **Back to notebook**, the notebook won't be immediately recovered from the checkpoint. A message bar prompts you to view the changes. You need to click the **View changes** button and select keeping the *Saved version* to finish the restore.
+> - Known limitation: When multiple collaborators are editing, if one of them clicks the **Restore** button and then navigates **Back to notebook**, the notebook won't be immediately recovered from the checkpoint. A message bar prompts you to view the changes. You need to click the **View changes** button and select keeping the *Saved version* to finish the restore.
    :::image type="content" source="media\how-to-use-notebook\view-changes-messagebar.png" alt-text="Screenshot showing view changes after restore." lightbox="media\how-to-use-notebook\view-changes-messagebar.png":::
 > - System checkpoints will expire after **1** year.
 
