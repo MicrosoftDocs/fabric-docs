@@ -69,21 +69,21 @@ You can select the refresh button to request the latest parameter information fr
 ## Supported parameter types
 
 >[!TIP]
->Read and use the [discover Dataflow parameter REST API](/rest/api/fabric/dataflow/items). The documentation provides all available parameter types and their expected values, and the REST API provides a way to get the parameter information from your dataflow.
+>Read and use the [discover Dataflow parameter REST API](/rest/api/fabric/dataflow/items/discover-dataflow-parameters). The documentation provides all available parameter types and their expected values, and the REST API provides a way to get the parameter information from your dataflow.
 
 The following table showcases the currently supported parameter types and the link to the REST API definition for it to understand what are the values expected by the REST API. 
 
 |Dataflow parameter type| REST API definition|
 |----|---|
-|Text|[DataflowStringParameter](/rest/api/fabric/dataflow/items)|
-|Integer (int64)|[DataflowIntegerParameter](/rest/api/fabric/dataflow/items)|
-|Decimal number|[DataflowNumberParameter](/rest/api/fabric/dataflow/items)|
-|Date|[DataflowDateParameter](/rest/api/fabric/dataflow/items)|
-|DateTime|[DataflowDateTimeParameter](/rest/api/fabric/dataflow/items)|
-|Time|[DataflowTimeParameter](/rest/api/fabric/dataflow/items)|
-|DateTimeZone|[DataflowDateTimeZoneParameter](/rest/api/fabric/dataflow/items)|
-|Duration|[DataflowDurationParameter](/rest/api/fabric/dataflow/items)|
-|True/False|[DataflowBooleanParameter](/rest/api/fabric/dataflow/items)|
+|Text|[DataflowStringParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowstringparameter)|
+|Integer (int64)|[DataflowIntegerParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowintegerparameter)|
+|Decimal number|[DataflowNumberParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflownumberparameter)|
+|Date|[DataflowDateParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowdateparameter)|
+|DateTime|[DataflowDateTimeParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowdatetimeparameter)|
+|Time|[DataflowTimeParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowtimeparameter)|
+|DateTimeZone|[DataflowDateTimeZoneParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowdatetimezoneparameter)|
+|Duration|[DataflowDurationParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowdurationparameter)|
+|True/False|[DataflowBooleanParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowbooleanparameter)|
 
  
 ## Considerations and limitations
