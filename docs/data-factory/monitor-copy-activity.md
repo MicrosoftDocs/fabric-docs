@@ -30,6 +30,8 @@ At this level, you can see links to copy activity input, output, and errors (if 
 
 In this graphical monitoring view, the service presents you the copy activity execution information, including data read/written volume, number of files/rows of data copied from source to destination, throughput, the configurations applied for your copy scenario, steps the copy activity goes through with corresponding durations and details, and more. Refer to this [table](#monitor-copy-activity-programmatically) on each possible metric and its detailed description.
 
+In some scenarios, when you run a Copy activity, you'll see "Performance tuning tips" at the top of the copy activity monitoring view as shown in the example. The tips tell you the bottleneck identified by the service for the specific copy run, along with suggestion on what to change to boost copy throughput.
+
 The bottom execution details and durations describes the key steps your copy activity goes through, which is especially useful for troubleshooting the copy performance. The bottleneck of your copy run is the one with the longest duration. For how to improve the performance, go to [Copy activity performance and scalability guide](copy-activity-performance-and-scalability-guide.md).
 
 **Example: Copy from Lakehouse to Data Warehouse**
@@ -50,8 +52,8 @@ Copy activity execution details and performance characteristics are also returne
 | dataConsistencyVerification | Details of data consistency verification where you can see if your copied data has been verified to be consistent between source and destination store. | Array |
 | sourcePeakConnections | Peak number of concurrent connections established to the source data store during the Copy activity run. | Int64 value (no unit) |
 | sinkPeakConnections | Peak number of concurrent connections established to the destination data store during the Copy activity run. | Int64 value (no unit) |
-| rowsRead | Number of rows read from the source. This metric does not apply when copying files as-is without parsing them, for example, when source and destination are binary format type, or other format type with identical settings. | Int64 value (no unit) |
-| rowsCopied | Number of rows copied to destination. This metric does not apply when copying files as-is without parsing them, for example, when source and destination are binary format type, or other format type with identical settings.  | Int64 value (no unit) |
+| rowsRead | Number of rows read from the source. This metric does not apply when copying files as-is without parsing them due to the performance optimization that the service applies to. | Int64 value (no unit) |
+| rowsCopied | Number of rows copied to destination. This metric does not apply when copying files as-is without parsing them due to the performance optimization that the service applies to.  | Int64 value (no unit) |
 | rowsSkipped | Number of incompatible rows that were skipped. You can enable incompatible rows to be skipped by setting `enableSkipIncompatibleRow` to true. | Int64 value (no unit) |
 | copyDuration | Duration of the copy run. | Int32 value, in seconds |
 | throughput | Rate of data transfer, calculated by `dataRead` divided by `copyDuration`. | Floating point number, in KBps |
@@ -60,14 +62,11 @@ Copy activity execution details and performance characteristics are also returne
 | sqlDwPolyBase | Whether PolyBase is used when data is copied into Azure Synapse Analytics. | Boolean |
 | redshiftUnload | Whether UNLOAD is used when data is copied from Redshift. | Boolean |
 | hdfsDistcp | Whether DistCp is used when data is copied from HDFS. | Boolean |
-| effectiveIntegrationRuntime| The integration runtime (IR) or runtimes used to power the activity run, in the format `<IR name> (<region if it's Azure IR>)`. | Text (string) |
 | usedDataIntegrationUnits | The effective Data Integration Units during copy. | Int32 value |
 | usedParallelCopies | The effective parallelCopies during copy. | Int32 value |
 | logPath | Path to the session log of skipped data in the blob storage. | Text (string) |
 | executionDetails | More details on the stages the Copy activity goes through and the corresponding steps, durations, configurations, and so on. We don't recommend that you parse this section because it might change. To better understand how it helps you understand and troubleshoot copy performance, refer to [Monitor visually](#monitor-visually) section. | Array |
 | perfRecommendation | Copy performance tuning tips. | Array |
-| billingReference | The billing consumption for the given run. | Object |
-| durationInQueue | Queueing duration in second before the copy activity starts to execute. | Object |
 
 ## Related content
 
