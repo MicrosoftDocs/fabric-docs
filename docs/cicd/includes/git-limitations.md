@@ -22,6 +22,7 @@ ms.date: 02/26/2025
 - If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 - If your organization configured [conditional access](/appcenter/general/configuring-aad-conditional-access), make sure the **Power BI Service** has the same [conditions set](/fabric/security/security-conditional-access) for authentication to function as expected.
 - The commit size is limited to 125 MB.
+- When using the Azure DevOps connector the commit size is limited to 25 MB. For SSO,  the limit is 125 MB
 
 #### [GitHub limitations](#tab/github)
 
