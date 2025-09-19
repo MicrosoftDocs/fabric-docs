@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # Microsoft Fabric decision guide: Choose a data integration strategy
 
-Microsoft Fabric has a comprehensive suite of tools to handle data and analytics workloads efficiently. With so many options available, including batch, pipeline and real-time streaming capabilities, it can be challenging to pick the right tool for your specific needs. This decision guide provides a roadmap to help you select the right strategy.
+Microsoft Fabric has a comprehensive suite of tools to handle data and analytics workloads efficiently. With so many options available, including batch, pipeline, and real-time streaming capabilities, it can be challenging to pick the right tool for your specific needs. This decision guide provides a roadmap to help you select the right strategy.
 
 :::image type="content" source="media/decision-guide-data-integration/decision-guide.svg" alt-text="Screenshot of data integration workflow diagram showing columns for data movement, orchestration, and transformation." lightbox="media/decision-guide-data-integration/decision-guide.svg":::
 
@@ -25,21 +25,21 @@ To choose the right data integration service in Microsoft Fabric, consider these
 
 - **What kind of data transformation do you need?** Are you doing light transformations or complex ones?
 
-For the list of supported connectors across Copy job, Copy activity, and Dataflow Gen 2, see the [connector overview](/fabric/data-factory/connector-overview). For the list of supported Eventstream sources, see the [sources list](/fabric/real-time-intelligence/event-streams/add-manage-eventstream-sources) 
+For the list of supported connectors across Copy job, Copy activity, and Dataflow Gen 2, see the [connector overview](/fabric/data-factory/connector-overview). For the list of supported Eventstream sources, see the [sources list](/fabric/real-time-intelligence/event-streams/add-manage-eventstream-sources).
 
 ## Data movement strategies
 
 | | [**Mirroring**](/fabric/mirroring/overview) | [**Copy Job**](/fabric/data-factory/create-copy-job) | [**Copy Activity (Pipeline)**](/fabric/data-factory/copy-data-activity) | [**Eventstreams**](/fabric/real-time-intelligence/event-streams/overview) |
 |---|---|---|---|---|
 | **Use Case** | Data Replication | Data Ingestion & Replication | Data Ingestion | Streaming Data Ingestion & Processing |
-| **Flagship Scenarios** | Near real-time sync with turn-key setup. Replication | Incremental Copy / Replication (water-mark + Native CDC), Data Lake / Storage Data Migration, Medallion Ingestion, Out-of-the-box multi-table copy. | Data Lake / Storage Data Migration, Medallion Ingestion, Incremental copy via pipeline expressions & control tables (water-mark only)| Incremental Processing, event-driven and real-time AI applications |
+| **Flagship Scenarios** | Near real-time sync with turn-key setup. Replication | Incremental Copy / Replication (water-mark + Native CDC), Data Lake / Storage Data Migration, Medallion Ingestion, Out-of-the-box multi-table copy. | Data Lake / Storage Data Migration, Medallion Ingestion, Incremental copy via pipeline expressions & control tables (water-mark only)| Incremental processing, event-driven, and real-time AI applications |
 | **Source** | 6+ [connectors](../mirroring/overview.md#types-of-mirroring) | 50+ [connectors](/fabric/data-factory/connector-overview) | 50+ [connectors](/fabric/data-factory/connector-overview) | 25+ [sources](/fabric/real-time-intelligence/event-streams/add-manage-eventstream-sources) |
 | **Destination** | Mirrored database (stored as read-only Delta table in Fabric OneLake) | 40+ [connectors](/fabric/data-factory/connector-overview) | 40+ [connectors](/fabric/data-factory/connector-overview) | 4+ [destinations](/fabric/real-time-intelligence/event-streams/add-manage-eventstream-destinations) |
 | **Type of Incoming Data** | Near Real-time | Batch / Incremental Copy (water-mark based & change data capture) / Near Real-time | Batch / Bulk / Manual Watermark-based incremental copy | Real-time streaming data, Change Data Capture/Feeds |
 | **Persona** | Business Analyst, Database Administrator | Business Analyst, Data Integrator, Data Engineer | Data Integrator, Business Analyst, Data Engineer | Data Engineer & Integrator, Data Analyst |
 | **Skillset** | None | ETL, SQL | ETL, SQL | ETL, SQL, KQL |
 | **Coding Level** | No code | No code / Low code | No code / Low code | No code / Low code |
-| **Transformation Support** | None | Low | Low | Medium (/w stream analytics) |
+| **Transformation Support** | None | Low | Low | Medium (stream analytics) |
 
 ## Orchestration strategies
 
@@ -131,13 +131,13 @@ Ako reviews the available options and selects **Dataflow Gen 2** as her preferre
 
 ### Scenario 8
 
-Ash is a product manager at a telecom company. Her team needs to monitor customer support metrics in real time—such as call volumes, wait times, and agent performance—to ensure service-level agreements (SLAs) are met. The data comes from multiple operational systems including CRM, call center logs, and agent assignment databases.
+Ash is a product manager at a telecom company. Her team needs to monitor customer support metrics, like call volumes, wait times, and agent performance, in real time to ensure service-level agreements (SLAs) are met. The data comes from multiple operational systems including CRM, call center logs, and agent assignment databases.
 
-Ash  wants to build real-time dashboards and trigger automated workflows when thresholds are breached (e.g., wait times exceed SLA limits). She also wants to avoid building complex ETL pipelines or managing infrastructure.
+Ash wants to build real-time dashboards and trigger automated workflows when thresholds are breached (for example, when wait times exceed SLA limits). She also wants to avoid building complex ETL pipelines or managing infrastructure.
 
 Ash evaluates the options and selects Fabric Eventstreams. With Eventstreams, she can ingest data from multiple sources using streaming connectors, apply lightweight transformations, and route events to destinations like Eventhouse and Data Activator. She sets up alerts and dashboards that update in seconds, enabling her team to respond quickly to operational issues.
 
-Fabric Eventstreams and Real-Time Intelligence provides the low-latency, no-code/low-code experience Ash needs to build event-driven applications without disrupting existing systems.
+Fabric Eventstreams and Real-Time Intelligence provides the low-latency, low-code experience Ash needs to build event-driven applications without disrupting existing systems.
 
 ## Get started
 
