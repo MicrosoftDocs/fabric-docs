@@ -48,7 +48,7 @@ Graph in Microsoft Fabric enables you to:
 
 - Enrich your graph with scores and communities for downstream BI (business intelligence) and AI (artificial intelligence) workflows. Run built-in graph algorithms such as shortest path, page rank, weakly connected components (WCC), and Louvain, using a vertex-centric, bulk synchronous parallel (BSP) algorithm executor. 
 
-- Benefit from role-based experiences:  
+- Benefit from job function-based experiences:  
     - Data engineers can model and ingest data.  
     - Analysts can run low/no-code queries and curate view sets.  
     - Business users can explore visually or use natural language to interact with the data.  
