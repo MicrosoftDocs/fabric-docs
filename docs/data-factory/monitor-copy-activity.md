@@ -20,7 +20,7 @@ To monitor the Copy activity run, go to the Data Factory UI for your service ins
 
 :::image type="content" source="media/monitor-copy-activity/monitor-tab.png" alt-text="Screenshot of Data Factory monitor tab.":::
 
-Besides, you can select **View run history** under **Run** tab in your data pipeline, and click the pipeline name link to access the list of activity runs.
+Besides, you can select **View run history** under **Run** tab in your data pipeline, and select the pipeline name link to access the list of activity runs.
 
 :::image type="content" source="media/monitor-copy-activity/view-run-history-pipeline.png" alt-text="Screenshot of pipeline view run history.":::
 
@@ -32,7 +32,7 @@ In this graphical monitoring view, the service presents you the copy activity ex
 
 In some scenarios, when you run a Copy activity, you'll see "Performance tuning tips" at the top of the copy activity monitoring view as shown in the example. The tips tell you the bottleneck identified by the service for the specific copy run, along with suggestion on what to change to boost copy throughput.
 
-The bottom execution details and durations describes the key steps your copy activity goes through, which is especially useful for troubleshooting the copy performance. The bottleneck of your copy run is the one with the longest duration. For how to improve the performance, go to [Copy activity performance and scalability guide](copy-activity-performance-and-scalability-guide.md).
+The bottom execution details and durations describe the key steps your copy activity goes through, which is especially useful for troubleshooting the copy performance. The bottleneck of your copy run is the one with the longest duration. For how to improve the performance, go to [Copy activity performance and scalability guide](copy-activity-performance-and-scalability-guide.md).
 
 **Example: Copy from Lakehouse to Data Warehouse**
 
@@ -45,7 +45,7 @@ Copy activity execution details and performance characteristics are also returne
 | Property name  | Description | Unit in output |
 |:--- |:--- |:--- |
 | dataRead | The actual amount of data read from the source. | Int64 value, in bytes |
-| dataWritten | The actual mount of data written/committed to the destination. The size may be different from `dataRead` size, as it relates how each data store stores the data. | Int64 value, in bytes |
+| dataWritten | The actual mount of data written/committed to the destination. The size might be different from `dataRead` size, as it relates how each data store stores the data. | Int64 value, in bytes |
 | filesRead | The number of files read from the file-based source. | Int64 value (no unit) |
 | filesWritten | The number of files written/committed to the file-based destination. | Int64 value (no unit) |
 | filesSkipped | The number of files skipped from the file-based source. | Int64 value (no unit) |
