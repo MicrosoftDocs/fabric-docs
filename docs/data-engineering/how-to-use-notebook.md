@@ -236,8 +236,7 @@ Version history allows you to easily version your live notebook changes. It supp
 
    - Manual checkpoint: You can manually **create new version** to record your development milestones, providing flexibility for managing your notebook versions.
 
-      :::image type="content" source="media\how-to-use-notebook\create-new-version.png" alt-text="Screenshot showing how to create new version.":::
-   :::image type="content" source="media\how-to-use-notebook\create-new-version.png" alt-text="Screenshot showing how to create new version." lightbox="media\how-to-use-notebook\create-new-version.png":::
+      :::image type="content" source="media\how-to-use-notebook\create-new-version.png" alt-text="Screenshot showing how to create new version." lightbox="media\how-to-use-notebook\create-new-version.png":::
 
    - System checkpoint: These checkpoints are created automatically every 5 minutes based on editing time interval by Notebook system, ensuring that your work is consistently saved and versioned. You can find the modification records from all the contributors in the system checkpoint timeline list.
    :::image type="content" source="media\how-to-use-notebook\expand-system-checkpoint.png" alt-text="Screenshot showing expand checkpoint list." lightbox="media\how-to-use-notebook\expand-system-checkpoint.png":::
@@ -260,7 +259,7 @@ Version history allows you to easily version your live notebook changes. It supp
 
 Fabric notebooks support four modes that you can easily switch: **Develop** mode，**Run only** mode, **Edit** mode, and **View** mode. Each mode maps to a specific permission combination. When sharing the notebook to other team members, you can grant proper permissions to the recipients. They can see the best available notebook mode according to their permission, and they are able to switch between the mode they have permission to.
 
-:::image type="content" source="media\how-to-use-notebook\switch-mode.png" alt-text="Screenshot showing where switch modes." lightbox="media\how-to-use-notebook\switch-mode.png":::
+:::image type="content" source="media\how-to-use-notebook\switch-mode.png" alt-text="Screenshot showing where to switch modes." lightbox="media\how-to-use-notebook\switch-mode.png":::
 
 - **Develop mode**: Read, execute, write permission needed.
 - **Run only mode**: Read, execute permission needed.
