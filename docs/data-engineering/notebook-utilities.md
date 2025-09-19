@@ -908,6 +908,9 @@ notebookutils.session.restartPython()
 
 ## Variable library utilities
 
+> [!NOTE]
+> "Variable Library utilities" in Notebooks is in Preview.
+
 Variable libraries allow you to avoid hardcoding values in your notebook code. You can update the values in the library instead of modifying the code. The notebook references the variable library to retrieve those values. This approach simplifies the reuse of code across teams and projects by utilizing a centrally managed library. 
 
 Run the following commands for an overview of the available methods:
