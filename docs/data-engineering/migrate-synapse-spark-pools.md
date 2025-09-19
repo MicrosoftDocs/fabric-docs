@@ -1,9 +1,9 @@
 ---
 title: Migrate Spark pools
 description: Learn about migrating Apache Spark pools from Azure Synapse Spark to Fabric, including migration prerequisites and options.
-ms.reviewer: snehagunda
-ms.author: aimurg
-author: murggu
+ms.reviewer: aimurg
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
   - fabric-cat

@@ -1,8 +1,9 @@
 ---
 title: Python programming model for Fabric User data functions
 description: Overview of the Fabric User data functions programming model for Python.
-ms.author: sumuth
-author: mksuni
+ms.author: eur
+ms.reviewer: sumuth
+author: eric-urban
 ms.topic: overview
 ms.date: 07/7/2025
 ms.search.form: Write new user data functions items

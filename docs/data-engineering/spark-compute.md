@@ -1,9 +1,9 @@
 ---
 title: Apache Spark compute for Data Engineering and Data Science
 description: Learn about the starter pools, custom Apache Spark pools, and pool configurations for data Engineering and Science experiences in Fabric.
-ms.reviewer: snehagunda
-ms.author: saravi
-author: santhoshravindran7
+ms.reviewer: saravi
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 07/03/2025

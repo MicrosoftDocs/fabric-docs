@@ -1,8 +1,9 @@
 ---
 title: Apache Spark advisor for real-time advice on notebooks
 description: The Apache Spark advisor analyzes commands and code run by Apache Spark and displays real-time advice for notebook runs.
-author: jejiang
-ms.author: jejiang
+author: eric-urban
+ms.author: eur
+ms.reviewer: jejiang
 ms.topic: overview
 ms.date: 02/25/2023
 ms.custom:

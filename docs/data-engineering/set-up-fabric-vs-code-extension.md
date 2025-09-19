@@ -1,9 +1,9 @@
 ---
 title: Microsoft Fabric VS Code extensions
 description: Learn about the Microsoft Fabric and Fabric User data functions extensions for Visual Studio Code to support local development and debugging. 
-ms.reviewer: sngun
-ms.author: sumuth
-author: mksuni
+ms.reviewer: sumuth
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom:
 ms.date: 06/17/2025
