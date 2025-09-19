@@ -4,7 +4,7 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 09/09/2025
+ms.date: 09/19/2025
 ms.custom:
   - pipelines
   - template-how-to
@@ -16,6 +16,8 @@ ms.custom:
 # Configure Lakehouse in a copy activity
 
 This article outlines how to use the copy activity in a pipeline to copy data from and to the Fabric Lakehouse. By default, data is written to Lakehouse Table in V-Order, and you can go to [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md#what-is-v-order) for more information.
+
+This connector supports Lakehouse in the workspace enabling a private link. For more information on configuration, see [Set up and use private links](../security/security-workspace-level-private-links-set-up.md).
 
 ## Supported format
 
