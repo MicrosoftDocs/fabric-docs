@@ -17,7 +17,7 @@ Mirroring is designed to be simple and free, but it won't cover every advanced s
 
 For real-time streaming ingestion and event-driven scenarios, try Fabric Eventstreams. They provide low-latency data movement, let you transform data with no code or SQL transformations, and support content-based routing to multiple destinations.
 
-:::image type="content" source="media/decision-guide-data-movement/decision-guide-data-movement.svg" alt-text="Screenshot of a data movement strategy decision tree, comparing mirroring, evenstream, copy job, and copy activity." lightbox="media/decision-guide-data-movement/decision-guide-data-movement.svg":::
+:::image type="content" source="media/decision-guide-data-movement/decision-guide-data-movement.svg" alt-text="Screenshot of a data movement strategy decision tree, comparing mirroring, eventstream, copy job, and copy activity." lightbox="media/decision-guide-data-movement/decision-guide-data-movement.svg":::
 
 ## Key concepts
 
