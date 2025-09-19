@@ -64,7 +64,7 @@ You can check the full list and detailed changes here: [https://docs.delta.io/3.
 For up-to-date information, a detailed list of changes, and specific release notes for Fabric runtimes, check and subscribe [Spark Runtimes Releases and Updates](https://github.com/microsoft/synapse-spark-runtime/tree/main/Fabric/Runtime%201.3%20(Spark%203.5)).
 
 > [!NOTE]
-> EventHubConnector is deprecated in Fabric Runtime 1.3 (Spark 3.5) and will be removed from future Fabric Runtime versions. Customers are encouraged to use Kafa Spark Connector instead as Event Hubs is Kafka compatible already. You can find more information about using Kafa Spark Connector with Event Hubs here: [https://learn.microsoft.com/azure/event-hubs/event-hubs-kafka-spark-tutorial](https://learn.microsoft.com/azure/event-hubs/event-hubs-kafka-spark-tutorial)
+> EventHubConnector is deprecated in Fabric Runtime 1.3 (Spark 3.5) and will be removed from future Fabric Runtime versions. Customers are encouraged to use Kafa Spark Connector instead as Event Hubs is Kafka compatible already. You can find more information about using Kafa Spark Connector with Event Hubs here: [Event Hubs Kafka Spark Tutorial](/azure/event-hubs/event-hubs-kafka-spark-tutorial)
 
 ### Related content
 

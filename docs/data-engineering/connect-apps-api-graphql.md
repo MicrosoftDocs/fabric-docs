@@ -151,7 +151,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
     * Scopes you add here will be prompted for user consent during sign-in. 
     * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
     * For more information about OIDC scopes, visit: 
-    * https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+    * [OpenID Connect scopes](/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes)
     */
    export const loginRequest = {
        scopes: ["https://analysis.windows.net/powerbi/api/GraphQLApi.Execute.All"]
