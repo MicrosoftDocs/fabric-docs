@@ -19,6 +19,6 @@ The MongoDB Atlas SQL connector is supported in Data Factory for [!INCLUDE [prod
 
 For information on how to connect to a MongoDB Atlas SQL database in Dataflow Gen2, go to [Set up your MongoDB Atlas SQL (Beta) connection](connector-mongodb-atlas-sql.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support a MongoDB Atlas SQL database in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support a MongoDB Atlas SQL database in pipelines.

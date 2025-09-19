@@ -5,7 +5,7 @@ author: anuj1905
 ms.author: anujsharda
 ms.reviewer: nijelsf
 ms.topic: conceptual
-ms.date: 06/10/2025
+ms.date: 09/12/2025
 # customer-intent: As a data engineer, I want to view data quality metrics in Power BI reports and set up alerts on them so that I can monitor data quality trends and receive notifications for significant changes.
 ---
  
@@ -85,6 +85,9 @@ You can set up alerts on the data quality report in the Fabric MLV using the **D
 1. Select a trigger for the alert, such as value or percent change, or a specific condition (for example, >, <, =). It could also be when the measure becomes a value (such as greater than, greater than or equal to, less than, less than or equal to, equal to, not equal to, within range, outside of range). Choose the preferred alert communication method, such as Teams or Outlook email.
 
 1. Select the **Apply** to apply the rule for the alerts.
+
+## Known issues
+1. The presence of special characters or spaces in the workspace or lakehouse names results in data quality report failures.
 
 ## Related articles
 

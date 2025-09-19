@@ -14,14 +14,14 @@ ms.custom:
 
 The Microsoft 365 connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in data pipelines
+## Support in pipelines
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
-| **Data pipeline**<br>- [Copy activity](connector-microsoft-365-copy-activity.md) (source/-)      |None<br> Virtual network |Service principal |
+| **Pipeline**<br>- [Copy activity](connector-microsoft-365-copy-activity.md) (source/-)      |None<br> Virtual network |Service principal |
 
 ## Related content
 
 To learn about how to connect to Microsoft 365, go to [Set up your Microsoft 365 connection](connector-microsoft-365.md).
 
-To learn about the copy activity configuration for Microsoft 365 in data pipelines, go to [Configure Microsoft 365 in a copy activity](connector-microsoft-365-copy-activity.md).
+To learn about the copy activity configuration for Microsoft 365 in pipelines, go to [Configure Microsoft 365 in a copy activity](connector-microsoft-365-copy-activity.md).

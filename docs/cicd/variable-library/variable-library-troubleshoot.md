@@ -11,7 +11,7 @@ ms.date: 02/16/2025
 
 ---
 
-# Troubleshoot variable libraries (preview)
+# Troubleshoot variable libraries 
 
 This article provides solutions for common errors and problems that you might encounter when you work with Microsoft Fabric variable libraries.
 

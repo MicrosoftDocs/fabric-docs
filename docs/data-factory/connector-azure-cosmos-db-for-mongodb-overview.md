@@ -18,9 +18,9 @@ The Azure Cosmos DB for MongoDB connector is supported in Data Factory for [!INC
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
-| **Data pipeline**<br>- [Copy activity](connector-azure-cosmos-db-for-mongodb-copy-activity.md) (source/destination)      |None<br> On-premises<br> Virtual network |Basic |
+| **Pipeline**<br>- [Copy activity](connector-azure-cosmos-db-for-mongodb-copy-activity.md) (source/destination)      |None<br> On-premises<br> Virtual network |Basic |
 | **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Merge|None<br> On-premises<br> Virtual network |Basic |
 
 ## Related content
 
-To learn more about the copy activity configuration for Azure Cosmos DB for MongoDB in data pipelines, go to [Configure Azure Cosmos DB for MongoDB in a copy activity](connector-azure-cosmos-db-for-mongodb-copy-activity.md).
+To learn more about the copy activity configuration for Azure Cosmos DB for MongoDB in pipelines, go to [Configure Azure Cosmos DB for MongoDB in a copy activity](connector-azure-cosmos-db-for-mongodb-copy-activity.md).

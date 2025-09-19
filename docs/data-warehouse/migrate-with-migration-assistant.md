@@ -4,7 +4,7 @@ description: This tutorial provides a step-by-step guide for the Migration Assis
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: anphil, pvenkat, prlangad, chweb
-ms.date: 08/19/2025
+ms.date: 09/09/2025
 ms.topic: how-to
 ms.search.form: Migration Assistant
 ---
@@ -37,13 +37,13 @@ The AI-assisted migration features of the Migration Assistant to fix migration i
 
 ### Copy metadata
 
-1. Select the **Migrate** button on the item action deck.
+1. In your Fabric workspace, select the **Migrate** button on the item action deck.
 
    :::image type="content" source="media/migrate-with-migration-assistant/migrate-button.png" alt-text="Screenshot from the Fabric portal of the Migrate button in the item action deck.":::
 
-1. Select the **DACPAC file** card from the **Migrate to Fabric** source menu.
+1. In the **Migrate to Fabric** source menu, under **Migrate to a warehouse**, select the **Analytical T-SQL warehouse or database** tile.
 
-   :::image type="content" source="media/migrate-with-migration-assistant/dacpac-tile.png" alt-text="Screenshot from the Fabric portal of the DACPAC file in the Migrate to Fabric source menu.":::
+   :::image type="content" source="media/migrate-with-migration-assistant/dacpac-tile.png" alt-text="Screenshot from the Fabric portal of the Analytical T-SQL warehouse or database tile..":::
 
 1. On the **Overview**, review the information and select **Next**.
 
@@ -51,7 +51,7 @@ The AI-assisted migration features of the Migration Assistant to fix migration i
 
    :::image type="content" source="media/migrate-with-migration-assistant/upload-dacpac-choose-file.png" alt-text="Screenshot from the Fabric portal of the Upload DACPAC file step in the Migration Assistant." lightbox="media/migrate-with-migration-assistant/upload-dacpac-choose-file.png":::
 
-1. Provide the name of the new Fabric warehouse item you would like to migrate into. Select **Next**.
+1. In the **Set the destination** page, provide the name of the new Fabric workspace and new warehouse item you would like to migrate into. Select **Next**.
 
 1. Review your inputs and select **Migrate**. A new warehouse item will be created, and the metadata migration begins.
 

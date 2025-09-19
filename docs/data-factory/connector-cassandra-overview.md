@@ -18,8 +18,8 @@ The Cassandra connector is supported in Data Factory for [!INCLUDE [product-name
 
 | Supported capabilities                                                                 | Gateway                        | Authentication                                                                                                 |
 |----------------------------------------------------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------|
-| **Data pipeline** <br>- [Copy activity](connector-cassandra-copy-activity.md) (source/-)<br>- Lookup activity | None<br>On-premises (version 3000.274.3 or above) <br>Virtual network | Anonymous<br> Basic |
+| **Pipeline** <br>- [Copy activity](connector-cassandra-copy-activity.md) (source/-)<br>- Lookup activity | None<br>On-premises (version 3000.274.3 or above) <br>Virtual network | Anonymous<br> Basic |
 
 ## Related content
 
-To learn about the copy activity configuration for Cassandra in data pipelines, go to [Configure Cassandra in a copy activity](connector-cassandra-copy-activity.md).
+To learn about the copy activity configuration for Cassandra in pipelines, go to [Configure Cassandra in a copy activity](connector-cassandra-copy-activity.md).

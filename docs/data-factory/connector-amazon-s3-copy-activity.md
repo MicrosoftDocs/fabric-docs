@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Amazon S3 in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to Amazon S3.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Amazon S3.
 
 ## Required permissions
 

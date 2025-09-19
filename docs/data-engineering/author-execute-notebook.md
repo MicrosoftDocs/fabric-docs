@@ -92,9 +92,6 @@ The IntelliSense features are at different levels of maturity for different lang
 
 #### Enhance Python Development with Pylance
 
-> [!NOTE]
-> Currently, the feature is in preview.
-
 Pylance, a powerful and feature-rich language server, is now available in Fabric notebook. Pylance makes Python development easier with smart completions, better error detection, and improved code insights. Key improvements include smarter autocompletion, enhanced lambda support, parameter suggestions, improved hover information, better docstring rendering, and error highlighting. With Pylance, writing Python and PySpark code becomes faster, more accurate, and more efficient.
 
 ### Code snippets

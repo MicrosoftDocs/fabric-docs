@@ -41,9 +41,11 @@ For the list of supported connectors across Copy job, Copy activity, and Dataflo
 | **Coding Level** | No code | No code / Low code | No code / Low code | No code / Low code |
 | **Transformation Support** | None | Low | Low | Medium (stream analytics) |
 
+For more details, see the [data movement strategy](/fabric/data-factory/decision-guide-data-movement).
+
 ## Orchestration strategies
 
-| | [**Pipeline**](data-factory-overview.md#data-pipelines) | [**Apache Airflow Job**](/fabric/data-factory/apache-airflow-jobs-concepts) |
+| | [**Pipeline**](pipeline-overview.md) | [**Apache Airflow Job**](/fabric/data-factory/apache-airflow-jobs-concepts) |
 |---|---|---|
 | **Use Case** | Low Code Orchestration | Code-first Orchestration |
 | **Flagship Scenarios** | Logical grouping of several activities together to perform a task. | Python Code-Centric Authoring |
@@ -150,4 +152,4 @@ Now that you understand which service to use, you can start building your data i
 - [Get started with Eventstreams](/fabric/real-time-intelligence/event-streams/overview.md)
 - [Get started with Apache Airflow Jobs](/fabric/data-factory/apache-airflow-jobs-concepts)
 - [Create and use Notebooks](/fabric/data-engineering/how-to-use-notebook)
-- [Create a dataflow](/fabric/data-factory/tutorial-dataflows-gen2-pipeline-activity#create-a-dataflow)
+- [Get started with dataflows](dataflows-gen2-overview.md)

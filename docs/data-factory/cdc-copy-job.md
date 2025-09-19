@@ -37,12 +37,14 @@ Supported source store:
    - Azure SQL DB
    - On-premises SQL Server
    - Azure SQL Managed Instance
+   - Fabric Lakehouse table
 
 Supported destination store:
    - Azure SQL DB
    - On-premises SQL Server
    - Azure SQL Managed Instance
    - SQL Database in Fabric (Preview)
+   - Snowflake
 
 ## How to get started:
 
@@ -82,6 +84,9 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
    :::image type="content" source="media/copy-job/none-cdc-table-icon.png" alt-text="Screenshot showing none cdc table icon.":::
 
    :::image type="content" source="media/copy-job/select-cdc-tables.png" alt-text="Screenshot showing where to select cdc tables for the Copy job.":::
+
+   > [!NOTE]
+   > - Fabric Lakehouse tables cannot currently be detected for whether their CDF is enabled. 
 
 1. Select your destination store. In this example, choose another **Azure SQL DB**.
 
