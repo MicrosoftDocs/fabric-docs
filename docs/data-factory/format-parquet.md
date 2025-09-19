@@ -70,7 +70,7 @@ Under **Advanced** settings in the **Destination** tab, the following Parquet fo
 
 For the **Mapping** tab configuration, if you don't apply Parquet format as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab). 
 
-If you apply Parquet format as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas** and enabling **Advanced parquet type settings**, you can specify the column type in your destination. You can also set the **isNullable** option to specify whether each Parquet destination column can contain null values. The default value of **isNullable** is `true`.
+If you apply Parquet format as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After enabling Advanced parquet type settings, you can specify the column type in your destination. You can also set the IsNullable option to specify whether each Parquet destination column can contain null values. The default value of IsNullable is `true`. For more details aboout editing Parquet data types, go to [Data type mapping for Parquet](#data-type-mapping-for-parquet).
 
 For example, the type for *dateData* column in source is INT96, and you can change it to INT96 or INT64 type when mapping to destination column.
 
