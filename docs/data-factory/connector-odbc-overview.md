@@ -19,7 +19,7 @@ The open database connectivity (Odbc) connector is supported in Data Factory for
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|On-premises |Anonymous<br> Basic<br> Windows |
-| **Data pipeline**<br>- Copy activity (source/destination) <br>- Lookup activity    |On-premises |Anonymous<br> Basic |
+| **Pipeline**<br>- Copy activity (source/destination) <br>- Lookup activity    |On-premises |Anonymous<br> Basic |
 | **Copy job** (source/destination) <br>- Full load<br>- Append |On-premises |Anonymous<br> Basic |
 
 ## Related content

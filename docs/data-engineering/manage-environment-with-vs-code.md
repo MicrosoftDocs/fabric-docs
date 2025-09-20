@@ -1,9 +1,9 @@
 ---
 title: Manage Spark environments with Visual Studio Code
 description: Use the VS Code extension for Synapse and explore Fabric Spark environments with Visual Studio Code.
-ms.reviewer: sngun
-ms.author: qixwang
-author: qixwang
+ms.reviewer: qixwang
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.date: 07/29/2024
 ms.search.form: VSCodeExtension

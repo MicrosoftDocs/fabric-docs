@@ -1,9 +1,9 @@
 ---
 title: Develop, execute, and manage notebooks
 description: Learn how to author, execute, and manage Microsoft Fabric notebook jobs with rich built-in features.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Develop and run notebooks
@@ -92,9 +92,6 @@ The IntelliSense features are at different levels of maturity for different lang
 
 #### Enhance Python Development with Pylance
 
-> [!NOTE]
-> Currently, the feature is in preview.
-
 Pylance, a powerful and feature-rich language server, is now available in Fabric notebook. Pylance makes Python development easier with smart completions, better error detection, and improved code insights. Key improvements include smarter autocompletion, enhanced lambda support, parameter suggestions, improved hover information, better docstring rendering, and error highlighting. With Pylance, writing Python and PySpark code becomes faster, more accurate, and more efficient.
 
 ### Code snippets
@@ -170,10 +167,10 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide outpu
 
 ### Cell output security
 
-Using [OneLake data access roles (preview)](../onelake/security/get-started-onelake-security.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
+You can use [OneLake data access roles (preview)](../onelake/security/get-started-onelake-security.md) to configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
 
 > [!IMPORTANT]
-> Security only applies during query execution and any notebook cells containing query results can be viewed by users that aren't authorized to run queries against the data directly.
+> Security only applies during query execution. Notebook cells that contain query results can be viewed by users that aren't authorized to run queries against the data directly.
 
 ### Lock or freeze a cell
 
@@ -207,7 +204,7 @@ The find and replace option can help you match and locate the keywords or expres
 
 :::image type="content" source="media\author-execute-notebook\find-replace.png" alt-text="Screenshot showing find and replace pane." lightbox="media\author-execute-notebook\find-replace.png":::
 
-## Copilot inline code completion (Preview)
+## Copilot inline code completion (preview)
 
 Copilot inline code completion is an AI-powered feature that helps you to write Python code faster and more efficiently in Fabric Notebooks. This feature provides intelligent, context-aware code suggestions as you type code. It reduces repetitive tasks, minimizes syntax errors, and accelerates development by integrating seamlessly into your notebook workflow.
 
@@ -216,7 +213,7 @@ Copilot inline code completion is an AI-powered feature that helps you to write 
 * **AI-driven completions:** Generates suggestions based on your notebook's context using a model trained on millions of lines of code.
 * **Boosts productivity:** Helps write complex functions, reduces repetitive coding, and speeds up exploration of unfamiliar libraries.
 * **Reduces errors:** Minimizes typos and syntax mistakes with intelligent, context-aware completions.
-* **Minimal setup:** Built into Fabric notebooks, doesn't require any installation. You can just enable it and start coding.
+* **Minimal setup:** Built into Fabric notebooks and doesn't require any installation. You can just enable it and start coding.
 
 ### How it works
 
@@ -364,7 +361,7 @@ You can also set timeout as described in:
 
 **How do ABT and idle session timeout impact long-running Fabric Notebook executions?**
 
-If your tenant uses activity-based timeout (ABT), long-running interactive jobs in Fabric notebooks may be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, nonmanaged devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
+If your tenant uses activity-based timeout (ABT), long-running interactive jobs in Fabric notebooks might be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, nonmanaged devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
 
 **Why are users signed out even when a notebook job is still running?**
 
@@ -372,7 +369,7 @@ Idle session timeout prioritizes security by ending sessions on inactive devices
 
 ### Inline Apache Spark job indicator
 
-The Fabric notebook is Apache Spark based. Code cells are executed on the Apache Spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar that appears to help you understand the job execution status. The number of tasks per each job or stage helps you to identify the parallel level of your Spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
+Fabric notebooks are Apache Spark based. Code cells are executed on the Apache Spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar that appears to help you understand the job execution status. The number of tasks per each job or stage helps you to identify the parallel level of your Spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
 
 You can also find the **Cell level real-time log** next to the progress indicator, and **Diagnostics** can provide you with useful suggestions to help refine and debug the code.
 
@@ -579,7 +576,7 @@ You can personalize your Spark session with the magic command **%%configure**. F
 > - We recommend that you set the same value for "DriverMemory" and "ExecutorMemory" in %%configure. The "driverCores" and "executorCores" values should also be the same.
 > - The "defaultLakehouse" will overwrite your pinned lakehouse in Lakehouse explorer, but that only works in your current notebook session.
 > - You can use %%configure in Fabric pipelines, but if it's not set in the first code cell, the pipeline run fails due to can't restart session.
-> - The %%configure used in notebookutils.notebook.run will be ignored but used in %run notebook will continue executing.
+> - The %%configure used in notebookutils.notebook.run is ignored but used in %run notebook continues executing.
 > - The standard Spark configuration properties must be used in the "conf" body. Fabric doesn't support first level reference for the Spark configuration properties.
 > - Some special Spark properties, including "spark.driver.cores", "spark.executor.cores", "spark.driver.memory", "spark.executor.memory", and "spark.executor.instances" don't take effect in "conf" body.
 

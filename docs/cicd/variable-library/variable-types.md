@@ -13,7 +13,7 @@ ms.search.form: Introduction to variable libraries, variable library types, vari
 #customer intent: As a developer, I want to learn how to use variable libraries and which variable types exist, so that I can manage my content lifecycle.
 ---
 
-# Variable names and types (preview)
+# Variable names and types 
 
 A variable library item in Microsoft Fabric contains a list of variables and their default values. It can also contain other value sets that hold alternative values.
 

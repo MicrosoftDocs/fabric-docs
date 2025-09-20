@@ -1,9 +1,9 @@
 ---
 title: Referencing data to a Lakehouse using shortcuts
 description: Learn how to set up shortcuts in your Fabric lakehouse, which allows you to reference data from other locations without copying it.
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: concept-article
 ms.custom:
 ms.date: 05/23/2023
@@ -19,7 +19,7 @@ Shortcuts in a lakehouse allow users to reference data without copying it. It un
 
 To create a shortcut, open lakehouse **Explorer**. Select the **...** symbol next to the **Tables** or **Files** section and select **New shortcut**. Creating a shortcut to a Delta formatted table in the **Tables** section of lakehouse explorer automatically registers it as a table enabling data access through Spark, SQL analytics endpoint, and default semantic model. Spark can access shortcuts in the **Files** section for data science projects or for transformation into structured data. 
 
-:::image type="content" source="media\lakehouse-shortcuts\create-lakehouse-schortcut.png" alt-text="Screenshot showing how to create a shortcut for a table or file from the lakehouse explorer.":::
+:::image type="content" source="media\lakehouse-shortcuts\create-lakehouse-schortcut.png" alt-text="Screenshot showing how to create a shortcut for a table or file from the lakehouse explorer." lightbox="media\lakehouse-shortcuts\create-lakehouse-schortcut.png":::
 
 After a shortcut is created, you can differentiate a regular file or table from the shortcut from its properties. The properties have a **Shortcut Type** parameter that indicates the item is a shortcut.
 

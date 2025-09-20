@@ -18,8 +18,8 @@ The Azure Files connector is supported in Data Factory for [!INCLUDE [product-na
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-azure-files-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity| None<br> On-premises<br> Virtual network | Account key     |
+| **Pipeline** <br>- [Copy activity](connector-azure-files-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity| None<br> On-premises<br> Virtual network | Account key     |
 
 ## Related content
 
-To learn more about the copy activity configuration for Azure Files in Data pipeline, go to [Configure in a Data pipeline copy activity](connector-azure-files-copy-activity.md).
+To learn more about the copy activity configuration for Azure Files in a pipeline, go to [Configure in a pipeline copy activity](connector-azure-files-copy-activity.md).
