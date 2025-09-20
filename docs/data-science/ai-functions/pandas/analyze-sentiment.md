@@ -22,8 +22,6 @@ The `ai.analyze_sentiment` function uses generative AI to detect the emotional s
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with the built-in AI endpoint in Fabric.
 
-## Use ai.analyze_sentiment with pandas
-
 The `ai.analyze_sentiment` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. To detect the sentiment of each input row, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column.
 
 The function returns a pandas Series that contains sentiment labels, which can be stored in a new column of the DataFrame.
