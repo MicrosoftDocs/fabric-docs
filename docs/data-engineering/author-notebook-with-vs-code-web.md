@@ -30,9 +30,12 @@ The Fabric Data Engineering VS Code extension can also be used in the VS Code fo
 
 ## Open a notebook with the Fabric Data Engineering VS Code extension for the Web
 
-You can open a notebook in the VS Code for the Web experience by selecting the **Open in VS Code (Web)** button on the notebook authoring page in the Fabric portal. After you select the button, a separate browser tab is opened with the VS Code for the web experience. If you haven't already installed the extension, it is automatically installed, and activated, and the notebook is opened.
+To open a notebook in the VS Code for the Web experience:
+1. Select the **Open in VS Code (Web)** button on the notebook authoring page in the Fabric portal. 
 
-:::image type="content" source="media\vscode\open-notebook-in-vs-code-web.png" alt-text="Screenshot showing how to open notebook in VS Code for the Web." lightbox="media\vscode\open-notebook-in-vs-code-web.png":::
+    :::image type="content" source="media\vscode\open-notebook-in-vs-code-web.png" alt-text="Screenshot showing how to open notebook in VS Code for the Web." lightbox="media\vscode\open-notebook-in-vs-code-web.png":::
+
+1. After you select the button, a separate browser tab is opened with the VS Code for the web experience. The extension is automatically installed and activated, and the notebook is opened.
 
 ## Manage notebooks and notebook file system
 
@@ -49,13 +52,15 @@ You can also delete any existing file/folder in the notebook file system.
 
 ## Run and debug notebooks in the VS Code web experience
 
-You can run a notebook in the VS Code for the web experience by selecting the **Run** button in the notebook editor. Before you run the notebook, make sure to select the **Microsoft Fabric Runtime** as the kernel. You can select it at the top right corner of the notebook editor.
+You can run a notebook in the VS Code for the web experience by selecting the **Run** button in the notebook editor. 
 
-Depending on the compute you are using, you can select the **PySpark** for Spark Notebook and **Python** for Python Notebook.
+Before you run the notebook, make sure you select the correct kernel and language environment for the notebook.
 
-:::image type="content" source="media\vscode\select-microsoft-fabric-runtime.png" alt-text="Screenshot showing how to select Microsoft Fabric Runtime.":::
-:::image type="content" source="media\vscode\select-microsoft-fabric-spark.png" alt-text="Screenshot showing how to select PySpark.":::
-:::image type="content" source="media\vscode\select-microsoft-fabric-python.png" alt-text="Screenshot showing how to select Python.":::
+1. **Select the kernel:** In the notebook interface, choose the kernel option. Select Microsoft Fabric Runtime as your kernel to enable Fabric-specific features.
+    :::image type="content" source="media\vscode\select-microsoft-fabric-runtime.png" alt-text="Screenshot showing how to select Microsoft Fabric Runtime.":::
+
+1. **Choose your language environment:** Next, select either Spark / Python 3 or Python as your language environment, depending on your requirements and the compute you're using.
+    :::image type="content" source="media\vscode\select-microsoft-fabric-spark.png" alt-text="Screenshot showing how to select PySpark.":::
 
 Besides running the notebook, you can also debug the notebook in the VS Code web experience. Before you start the debug session, run the following code in the notebook to enable this feature.
 
@@ -69,7 +74,7 @@ Besides running the notebook, you can also debug the notebook in the VS Code web
 ```
 
 > [!NOTE]
-> * It might take 2-5 minutes to finish the configuration. For each live session, you only need to run this setup once. This feature only available for Spark notebooks.
+> It might take 2-5 minutes to finish the configuration. For each live session, you only need to run this setup once. This feature only available for Spark notebooks.
 
 After you run this configuration, you can set breakpoints in the notebook editor and run the notebook in debug mode. When the debug session starts, a notification is shown in bottom right corner of the editor to indicate that the debug session is initiated.
 
@@ -84,9 +89,10 @@ This debug session runs on the remote compute, requiring network traffic to sync
 
 ## Update Python Version from VS Code side
 
-For Python Notebook, you can check and update the Python version from the VS Code side. You can find the python version in the bottom right corner of the status bar. If you want to update the Python version, you can click the version number in the status bar. You can pick the Python version from the list of available Python versions. The selected Python version is used for the following notebook run.
+For Python Notebook, you can check and update the Python version from the VS Code side. You can find the python version in the bottom right corner of the status bar. If you want to update the Python version, you can select the version number in the status bar. You can pick the Python version from the list of available Python versions. The selected Python version is used for the following notebook run.
 
 :::image type="content" source="media\vscode\python-version-status-bar.png" alt-text="Screenshot showing Python version in the status bar.":::
+
 :::image type="content" source="media\vscode\select-python-version.png" alt-text="Screenshot showing how to select Python version.":::
 
 > [!IMPORTANT]
