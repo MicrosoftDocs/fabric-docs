@@ -14,7 +14,7 @@ ms.date: 09/21/2025
 
 # Lakehouse tutorial: Create a lakehouse, ingest sample data, and build a report
 
-In this tutorial, you build a lakehouse, ingest sample data into the Delta table, apply transformation where required, and then create reports. Here's a checklist of the steps you'll complete:
+In this tutorial, you build a lakehouse, ingest sample data into the Delta table, apply transformation where required, and then create reports. Here's a checklist of the steps you complete:
 
 > [!div class="checklist"]
 > * [Create a lakehouse in Microsoft Fabric](#create-a-lakehouse)
@@ -32,12 +32,12 @@ If you don’t have Microsoft Fabric, sign up for a free [trial capacity](../fun
 
 ### Why do I need OneDrive for this tutorial?
 
-You need OneDrive for this tutorial because the data ingestion process uses the "Upload file" option in Fabric, which relies on OneDrive as the underlying storage mechanism for file uploads. When you upload a CSV file to Fabric, it is temporarily stored in your OneDrive account before being ingested into the lakehouse. This integration ensures secure and seamless file transfer within the Microsoft 365 ecosystem.
+You need OneDrive for this tutorial because the data ingestion process relies on OneDrive as the underlying storage mechanism for file uploads. When you upload a CSV file to Fabric, it's temporarily stored in your OneDrive account before being ingested into the lakehouse. This integration ensures secure and seamless file transfer within the Microsoft 365 ecosystem.
 
-If you do not have OneDrive configured, Fabric cannot access the uploaded file, so the ingestion step will not work. If you already have the data available in your lakehouse or another supported location, OneDrive is not required.
+The ingestion step doesn't work if you don't have OneDrive configured, because Fabric can't access the uploaded file. If you already have the data available in your lakehouse or another supported location, OneDrive isn't required.
 
 > [!NOTE]
-> If you already have data in your lakehouse, you can use that instead of the sample CSV file. To check if data is already associated with your lakehouse, use the Lakehouse Explorer or the SQL analytics endpoint to browse tables, files, and folders. For more details, see [Lakehouse overview](lakehouse-overview.md) and [Query lakehouse tables with SQL analytics endpoint](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md).
+> If you already have data in your lakehouse, you can use that instead of the sample CSV file. To check if data is already associated with your lakehouse, use the Lakehouse Explorer or the SQL analytics endpoint to browse tables, files, and folders. For more information about how to check, see [Lakehouse overview](lakehouse-overview.md) and [Query lakehouse tables with SQL analytics endpoint](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md).
 
 ## Create a lakehouse
 
@@ -83,7 +83,7 @@ In this section, you transform the data based on your business requirements and 
 1. In the **Query settings** pane, update the **Name** field to **dimension_customer**.
 
    > [!NOTE]
-   > Fabric adds a space and number at the end of the table name by default. Table names must be lower case and must not contain spaces. Please rename it appropriately and remove any spaces from the table name.
+   > Fabric adds a space and number at the end of the table name by default. Table names must be lower case and must not contain spaces. Rename it appropriately and remove any spaces from the table name.
 
    :::image type="content" source="media\tutorial-build-lakehouse\query-settings-add-destination.png" alt-text="Screenshot of the query settings pane, showing where to enter the name and select the data destination." lightbox="media\tutorial-build-lakehouse\query-settings-add-destination.png":::
 
@@ -149,15 +149,17 @@ In this section, you add the tables to the semantic model so that you can use th
 
 ## Build a report
 
-In this section, you'll build a report from the ingested data.
+In this section, you build a report from the ingested data.
 
 1. From the semantic model pane, you can view all the tables. You have options to create reports either from scratch, paginated reports, or let Power BI automatically create a report based on your data. For this tutorial, under **Explore this data**, select **Auto-create a report**. In the next tutorial, we create a report from scratch.
 
    :::image type="content" source="media\tutorial-build-lakehouse\dataset-details-create-report.png" alt-text="Screenshot of the semantic model details page, showing where to select Create a report." lightbox="media\tutorial-build-lakehouse\dataset-details-create-report.png":::
 
-1. Because the table is a dimension and there are no measures in it, Power BI creates a measure for the row count and aggregates it across different columns, and creates different charts as shown in the following image. You can save this report for the future by selecting **Save** from the top ribbon. You can make more changes to this report to meet your requirements by including or excluding other tables or columns.
+1. The table is a dimension and there are no measures in it. Power BI creates a measure for the row count, aggregates it across different columns, and creates different charts as shown in the following image. 
 
    :::image type="content" source="media\tutorial-build-lakehouse\quick-summary-report.png" alt-text="Screenshot of a Quick summary page displaying four different bar charts." lightbox="media\tutorial-build-lakehouse\quick-summary-report.png":::
+
+1. You can save this report for the future by selecting **Save** from the top ribbon. You can make more changes to this report to meet your requirements by including or excluding other tables or columns.
 
 ## Next step
 
