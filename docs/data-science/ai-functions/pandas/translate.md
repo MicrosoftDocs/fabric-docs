@@ -3,10 +3,10 @@ title: Translate Text with the ai.translate Function
 description: Learn how to use the ai.translate function to translate input text into a new language of your choice.
 ms.author: jburchel
 author: jonburchel
-ms.reviewer: erenorbey
-reviewer: orbey
+ms.reviewer: vimeland
+reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 02/26/2025
+ms.date: 09/19/2025
 ms.search.form: AI functions
 ---
 
@@ -23,6 +23,8 @@ AI functions improve data engineering by using the power of large language model
 > - By default, the *gpt-4o-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with the built-in AI endpoint in Fabric.
+
+### Overview
 
 ## Use ai.translate with pandas
 
