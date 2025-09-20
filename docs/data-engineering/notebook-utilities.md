@@ -113,21 +113,21 @@ notebookutils.fs.ls("file:/<new_dir>")  # based on local file system of driver n
 
 ### Copy file
 
-This method copies a file or directory, and supports copy activity across file systems.
+This method copies a file or directory, and supports copy activity across file systems. We set `recurse=True` to copy all files and directories recursively.
 
 ```python
-notebookutils.fs.cp('source file or directory', 'destination file or directory', True)# Set the third parameter as True to copy all files and directories recursively
+notebookutils.fs.cp('source file or directory', 'destination file or directory', recurse=True)
 ```
 
 > [!NOTE]
-> Due to the [limitations of OneLake shortcut](../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use ```notebookutils.fs.cp()``` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
+> Due to the [limitations of OneLake shortcut](../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use `notebookutils.fs.cp()` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
 
 ### Performant copy file
 
 This method offers a more efficient approach to copying or moving files, particularly when dealing with large data volumes. For enhanced performance on Fabric, it is advisable to utilize `fastcp` as a substitute for the traditional `cp` method.
 
 ```python
-notebookutils.fs.fastcp('source file or directory', 'destination file or directory', True)# Set the third parameter as True to copy all files and directories recursively
+notebookutils.fs.fastcp('source file or directory', 'destination file or directory', recurse=True)
 ```
 
 **Considerations:**
@@ -175,10 +175,10 @@ notebookutils.fs.append("file path", "content to append", True) # Set the last p
 
 ### Delete file or directory
 
-This method removes a file or directory.
+This method removes a file or directory. We set `recurse=True` to remove all files and directories recursively.
 
 ```python
-notebookutils.fs.rm('file path', True) # Set the last parameter as True to remove all files and directories recursively
+notebookutils.fs.rm('file path', recurse=True) 
 ```
 
 ### Mount/unmount directory
@@ -443,20 +443,22 @@ artifacts_list = notebookutils.notebook.list("optional_workspace_id")
 
 ```notebookutils.udf``` provides utilities designed for integrating Notebook code with User Data Functions (UDFs). These utilities allow you to access functions from a UDF item within the same workspace or across different workspaces. You can then invoke functions within a UDF item as needed.
 
-Here is an overview of the available methods:
+Here are some examples of how to use the UDF utilities:
 
 ```python
-# Get functions
-myFunctions = notebookutils.udf.getFunctions('UDFItemName') # Get functions from UDF within the same workspace
-myFunctions = notebookutils.udf.getFunctions('UDFItemName', 'workspaceId') # Get functions from UDF across different workspace
+# Get functions from a UDF item
+myFunctions = notebookutils.udf.getFunctions('UDFItemName')
+# Or from another workspace
+myFunctions = notebookutils.udf.getFunctions('UDFItemName', 'workspaceId')
 
-# Additional helper method to return all functions, their respective parameters, and types.
+# Display function and item details
 display(myFunctions.functionDetails)
 display(myFunctions.itemDetails)
 
-# Invoke the function
+# Invoke a function
 myFunctions.functionName('value1', 'value2')
-myFunctions.functionName(parameter1='value1', parameter2='value2'...) # Another way to invoke the function
+# Or with named parameters
+myFunctions.functionName(parameter1='value1', parameter2='value2')
 ```
 
 ### Retrieve functions from a UDF
@@ -1000,7 +1002,7 @@ notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
 > - The notebook code references the variables defined in the active value set of the Variable Library. 
 
 
-## Known issue 
+## Known issues
 
 - When using runtime version above 1.2 and run ``` notebookutils.help() ```, the listed **fabricClient**, **PBIClient** APIs are not supported for now, will be available in the further. Additionally, the **Credentials** API isn't supported in Scala notebooks for now.
 
