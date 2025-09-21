@@ -45,7 +45,7 @@ Complete the following steps to deploy SJDs using deployment pipelines:
 
   :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-options.png" alt-text="Screenshot of deployment rule options." lightbox="media/spark-job-definition-deployment-pipeline/spark-job-definition-deployment-rule-options.png":::
 
-    * To overwrite the default binding, provide the **LakehouseId**, **LakehouseName**, and the **WorkspaceId** for the target lakehouse. Make sure the LakehouseId, LakehouseName, and LakehouseWorksapceId values correspond to each other. You can get the LakehouseId and LakehouseWorkspaceId values from the item URL link.
+  * To overwrite the default binding, provide the **LakehouseId**, **LakehouseName**, and the **WorkspaceId** for the target lakehouse. Make sure the LakehouseId, LakehouseName, and LakehouseWorksapceId values correspond to each other. You can get the LakehouseId and LakehouseWorkspaceId values from the item URL link.
 
   :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-detail.png" alt-text="Screenshot of deployment rule detail." lightbox="media/spark-job-definition-deployment-pipeline/spark-job-definition-deployment-rule-detail.png":::
 
