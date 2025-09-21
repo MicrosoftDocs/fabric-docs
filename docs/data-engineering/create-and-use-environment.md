@@ -36,7 +36,7 @@ The Spark compute and library configurations are required for publishing to be e
 
 For an environment, you can choose from various [Spark runtimes](runtime.md) with their own default settings and preinstalled packages. To view the available runtimes, go to the **Home** tab of the environment and select **Runtime**. Select the runtime that best suits your needs.
 
-:::image type="content" source="media\environment-introduction\env-runtime-dropdown.png" alt-text="Screenshot that shows choosing a runtime in an environment.":::
+:::image type="content" source="media\environment-introduction\env-runtime-dropdown.png" alt-text="Screenshot that shows choosing a runtime in an environment." lightbox="media\environment-introduction\env-runtime-dropdown.png":::
 
 > [!IMPORTANT]
 >
@@ -57,7 +57,7 @@ The **Resources** section in an environment facilitates the ability to manage sm
 
 On the **Home** tab, you can easily find **Save** and **Publish**. They're activated when there are unsaved or unpublished pending changes in the **Libraries** and **Spark compute** sections.
 
-:::image type="content" source="media\environment-introduction\env-save-and-publish.png" alt-text="Screenshot that shows where to select Save and Publish.":::
+:::image type="content" source="media\environment-introduction\env-save-and-publish.png" alt-text="Screenshot that shows where to select Save and Publish." lightbox="media\environment-introduction\env-save-and-publish.png":::
 
 > [!IMPORTANT]
 >
@@ -95,7 +95,7 @@ You can attach a Fabric environment to your **Data Engineering/Science** workspa
 
 Select **Workspace settings** > **Data Engineering/Science** > **Spark settings** to see the **Environment** tab.
 
-:::image type="content" source="media\environment-introduction\env-workspace-setting-default.png" alt-text="Screenshot that shows the Workspace settings Set default environment pane.":::
+:::image type="content" source="media\environment-introduction\env-workspace-setting-default.png" alt-text="Screenshot that shows the Workspace settings Set default environment pane." lightbox="media\environment-introduction\env-workspace-setting-default.png":::
 
 Workspace admins can define the default workload for entire workspaces. The values configured here are effective for notebooks and Spark job definitions that attach to **Workspace settings**.
 
@@ -103,7 +103,7 @@ Workspace admins can define the default workload for entire workspaces. The valu
 
 The **Set default environment** toggle can enhance the user experience. By default, this toggle is set to **Off**. If there's no default Spark property or library required as the workspace default, you can define the Spark runtime in this circumstance. If you want to prepare a default Spark compute and libraries for the workspace, you can switch the toggle to **On** and easily attach an environment as the workspace default. This option makes all configurations in the environment effective as the **Workspace settings**.
 
-:::image type="content" source="media\environment-introduction\env-workspace-toggle-on.png" alt-text="Screenshot that shows default environment selection.":::
+:::image type="content" source="media\environment-introduction\env-workspace-toggle-on.png" alt-text="Screenshot that shows default environment selection." lightbox="media\environment-introduction\env-workspace-toggle-on.png":::
 
 ### Attach an environment to a notebook or a Spark job definition
 

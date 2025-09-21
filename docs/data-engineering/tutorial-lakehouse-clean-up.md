@@ -23,7 +23,7 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
 1. Select your workspace, the **Fabric Lakehouse Tutorial**, from the navigation menu to open the workspace item view.  
 
-   :::image type="content" source="media\tutorial-lakehouse-clean-up\select-workspace-item.png" alt-text="Screenshot of the left navigation menu, showing where to select your workspace.":::
+   :::image type="content" source="media\tutorial-lakehouse-clean-up\select-workspace-item.png" alt-text="Screenshot of the left navigation menu, showing where to select your workspace." lightbox="media/tutorial-lakehouse-clean-up/select-workspace-item.png":::
 
 1. Select **Workspace settings**.
 
