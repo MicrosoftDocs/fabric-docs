@@ -61,7 +61,7 @@ The focus of Step 1 is on exporting the metadata from source HMS to the Files se
 
 * **1.3) Run all notebook commands** to export catalog objects to OneLake. Once cells are completed, this folder structure under the intermediate output directory is created.
 
-  :::image type="content" source="media\migrate-synapse\migrate-hms-metadata-export-api.png" alt-text="Screenshot showing HMS export in OneLake.":::
+  :::image type="content" source="media\migrate-synapse\migrate-hms-metadata-export-api.png" alt-text="Screenshot showing HMS export in OneLake." lightbox="media/migrate-synapse/migrate-hms-metadata-export-api.png":::
 
 ### Step 2: Import metadata into Fabric lakehouse
 
@@ -135,7 +135,7 @@ DESCRIBE EXTENDED <lakehouse_name>.<table_name>
 
 Alternatively, all imported tables are visible within the Lakehouse explorer UI Tables section for each lakehouse. 
 
-:::image type="content" source="media\migrate-synapse\migrate-hms-metadata-import-lakehouse.png" alt-text="Screenshot showing HMS metadata imported in the lakehouse.":::
+:::image type="content" source="media\migrate-synapse\migrate-hms-metadata-import-lakehouse.png" alt-text="Screenshot showing HMS metadata imported in the lakehouse." lightbox="media/migrate-synapse/migrate-hms-metadata-import-lakehouse.png":::
 
 ### Other considerations
 

@@ -70,7 +70,7 @@ The system restarts the Python interpreter to apply the change of libraries. Any
 
 The inline commands for managing Python libraries are disabled in notebook pipeline run by default. If you want to enable `%pip install` for pipeline, add "_inlineInstallationEnabled" as bool parameter equals True in the notebook activity parameters.
 
-:::image type="content" source="media\environment-lm\library-management-enable-pip-in-pipeline.png" alt-text="Screenshot showing the the configuration of enabling pip install for notebook pipeline run.":::
+:::image type="content" source="media\environment-lm\library-management-enable-pip-in-pipeline.png" alt-text="Screenshot showing the the configuration of enabling pip install for notebook pipeline run." lightbox="media/environment-lm/library-management-enable-pip-in-pipeline.png":::
 
 > [!NOTE]
 >

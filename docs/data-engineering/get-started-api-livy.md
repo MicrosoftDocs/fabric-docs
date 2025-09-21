@@ -2,7 +2,6 @@
 title: Create and run Spark Session jobs using the Livy API
 description: Learn how to submit and run Spark session jobs in Fabric using the Livy API.
 ms.reviewer: sngun
-ms.author: eur
 author: eric-urban
 ms.topic: conceptual
 ms.search.form: Get started with the Livy API for Data Engineering
@@ -89,7 +88,7 @@ Some customers want more granular permissions than the prior list. You could rem
 
 When you register your application, you will need both the Application (client) ID and the Directory (tenant) ID.
 
-:::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center.":::
+:::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-overview.png":::
 
 The authenticated user calling the Livy API needs to be a workspace member where both the API and data source items are located with a Contributor role. For more information, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
 

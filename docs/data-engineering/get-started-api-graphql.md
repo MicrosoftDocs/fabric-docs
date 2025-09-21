@@ -28,7 +28,7 @@ To create an API for GraphQL:
 
 1. Enter a **Name** for your item and select **Create**.
 
-   :::image type="content" source="media/get-started-api-graphql/api-graphql-name.png" alt-text="Screenshot of the New API for GraphQL dialog box, showing where to enter the Name and select Create.":::
+   :::image type="content" source="media/get-started-api-graphql/api-graphql-name.png" alt-text="Screenshot of the New API for GraphQL dialog box, showing where to enter the Name and select Create." lightbox="media/get-started-api-graphql/api-graphql-name.png":::
 
 You now have a fully functional API to access your data in Fabric.
 
@@ -38,11 +38,11 @@ At this point, the API is ready but it's not exposing any data. APIs for GraphQL
 
 1. In your new API, choose a data source to expose by choosing **Select data source**.
 
-   :::image type="content" source="media/get-started-api-graphql/add-data.png" alt-text="Screenshot of the Select data source option.":::
+   :::image type="content" source="media/get-started-api-graphql/add-data.png" alt-text="Screenshot of the Select data source option." lightbox="media/get-started-api-graphql/add-data.png":::
 
 2. Next select the connectivity option for your API:
 
-   :::image type="content" source="media/get-started-api-graphql/get-data-connectivity.png" alt-text="Screenshot of the Choose connectivity option.":::
+   :::image type="content" source="media/get-started-api-graphql/get-data-connectivity.png" alt-text="Screenshot of the Choose connectivity option." lightbox="media/get-started-api-graphql/get-data-connectivity.png":::
 
    Here you can define how API clients can access the API to execute GraphQL requests based on two distinct options: 
    * **Single sign-on (SSO)**: use client credentials to connect to data sources, which means the authenticated API user must have access to the underlying data source. For example, if you're exposing Lakehouse data to your API clients, the authenticated user needs to have access to both the API and the Lakehouse. More specifically, *Execute* permissions to the GraphQL API (*Run Queries and Mutations* option when adding direct access permissions) and read or write permissions required in the data source of choice, accordingly. Alternatively, the user can be added as workspace member with a *contributor role* where both the API and data source items are located, which will give the required access to both items from a single location. For more information, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).

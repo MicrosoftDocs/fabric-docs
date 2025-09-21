@@ -37,17 +37,17 @@ Complete the following steps to deploy SJDs using deployment pipelines:
 
    * If all the items are deployed, the bindings between the SJD and other items are automatically created in the target stage. However, if the lakehouse isn't deployed, the SJD links to the source stage lakehouse. To modify this behavior, create a new deployment rule. Select **Deployment rules**, then select the SJD item to create a rule.
 
-      :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule.png" lightbox="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule.png" alt-text="Screenshot of deployment rule.":::
+      :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule.png" alt-text="Screenshot of deployment rule." lightbox="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule.png":::
 
     * You can create separate deployment rules for the default lakehouse and additional lakehouses. Choose from the three options: **Same as source Lakehouse**, **N/A (No lakehouse)**, or **other** to manually enter the lakehouse information.
 
-      :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-type.png" alt-text="Screenshot of deployment rule type.":::
+  :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-type.png" alt-text="Screenshot of deployment rule type." lightbox="media/spark-job-definition-deployment-pipeline/spark-job-definition-deployment-rule-type.png":::
 
-      :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-options.png" alt-text="Screenshot of deployment rule options.":::
+  :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-options.png" alt-text="Screenshot of deployment rule options." lightbox="media/spark-job-definition-deployment-pipeline/spark-job-definition-deployment-rule-options.png":::
 
     * To overwrite the default binding, provide the **LakehouseId**, **LakehouseName**, and the **WorkspaceId** for the target lakehouse. Make sure the LakehouseId, LakehouseName, and LakehouseWorksapceId values correspond to each other. You can get the LakehouseId and LakehouseWorkspaceId values from the item URL link.
 
-      :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-detail.png" alt-text="Screenshot of deployment rule detail.":::
+  :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-detail.png" alt-text="Screenshot of deployment rule detail." lightbox="media/spark-job-definition-deployment-pipeline/spark-job-definition-deployment-rule-detail.png":::
 
 1. Once the deployment rule is updated, rerun the deployment to apply the changes.
 

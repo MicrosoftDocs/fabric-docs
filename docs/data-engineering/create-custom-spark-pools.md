@@ -30,13 +30,13 @@ To create or manage the Spark pool associated with your workspace:
 
 1. Select the **New Pool** option. In the **Create Pool** screen, name your Spark pool. Also choose the **Node family**, and select a **Node size** from the available sizes (**Small**, **Medium**, **Large**, **X-Large**, and **XX-Large**) based on compute requirements for your workloads.
 
-   :::image type="content" source="media\workspace-admin-settings\custom-pool-creation.png" alt-text="Screenshot showing custom pool creation options.":::
+   :::image type="content" source="media\workspace-admin-settings\custom-pool-creation.png" alt-text="Screenshot showing custom pool creation options." lightbox="media/workspace-admin-settings/custom-pool-creation.png":::
 
 1. You can set the minimum node configuration for your custom pools to **1**. Because Fabric Spark provides restorable availability for clusters with a single node, you don't have to worry about job failures, loss of session during failures, or over paying on compute for smaller Spark jobs.
 
 1. You can enable or disable autoscaling for your custom Spark pools. When autoscaling is enabled, the pool will dynamically acquire new nodes up to the maximum node limit specified by the user, and then retire them after job execution. This feature ensures better performance by adjusting resources based on the job requirements. You're allowed to size the nodes, which fit within the capacity units purchased as part of the Fabric capacity SKU.
 
-   :::image type="content" source="media\workspace-admin-settings\custom-pool-auto-scale.png" alt-text="Screenshot showing custom pool creation options for autoscaling and dynamic allocation.":::
+   :::image type="content" source="media\workspace-admin-settings\custom-pool-auto-scale.png" alt-text="Screenshot showing custom pool creation options for autoscaling and dynamic allocation." lightbox="media/workspace-admin-settings/custom-pool-auto-scale.png":::
 
 1. You can adjust the number of executors using a slider. Each executor is a Spark process that runs tasks and holds data in memory. Increasing executors can improve parallelism, but it also increases the size and startup time of the cluster. You can also choose to enable dynamic executor allocation for your Spark pool, which automatically determines the optimal number of executors within the user-specified maximum bound. This feature adjusts the number of executors based on data volume, resulting in improved performance and resource utilization.
 

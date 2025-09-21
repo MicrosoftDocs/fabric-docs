@@ -29,7 +29,7 @@ If you determine that Fabric Data Engineering is the right choice for migrating 
 * **Metadata**: Metadata migration involves moving Spark catalog metadata (databases, tables, and partitions) from an existing Hive MetaStore (HMS) in Azure Synapse to Fabric lakehouse. Learn more about [HMS metadata migration](migrate-synapse-hms-metadata.md).
 * **Workspace**: Users can migrate an existing Azure Synapse workspace by creating a new workspace in Microsoft Fabric, including metadata. Workspace migration isn't covered in this guidance, assumption is that users need to [create a new workspace](../fundamentals/create-workspaces.md) or have an existing Fabric workspace. Learn more about [workspace roles](../fundamentals/roles-workspaces.md) in Fabric.
 
-:::image type="content" source="media\migrate-synapse\migration-scenarios.png" alt-text="Screenshot showing the migration scenarios.":::
+:::image type="content" source="media\migrate-synapse\migration-scenarios.png" alt-text="Screenshot showing the migration scenarios." lightbox="media/migrate-synapse/migration-scenarios.png":::
 
 Transitioning from Azure Synapse Spark to Fabric Spark requires a deep understanding of your current architecture and the differences between Azure Synapse Spark and Fabric. The first crucial step is an assessment, followed by the creation of a detailed migration plan. This plan can be customized to match your system's unique traits, phase dependencies, and workload complexities.
 
