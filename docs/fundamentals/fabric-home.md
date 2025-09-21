@@ -4,7 +4,7 @@ description: Learn how to quickly find content, search, filter, multitask with t
 author: julcsc
 ms.author: juliacawthra
 ms.topic: overview
-ms.date: 09/17/2025
+ms.date: 09/21/2025
 ai-usage: ai-assisted
 #customer intent: As a new Fabric user, I want to quickly find my content, understand navigation, personalize settings, and get help.
 ---
@@ -65,6 +65,7 @@ To explore:
 
 More about workloads: [Workloads in Fabric](../workload-development-kit/more-workloads-add.md).
 
+<a id="multitask-with-tabs-and-object-explorer"></a>
 ## Multitask with tabbed navigation to access resources (preview)
 
 The tabbed navigation allows you to work with multiple items and workspaces at the same time. It enhances navigation and reduces the need to switch context.
@@ -74,7 +75,7 @@ The tabbed navigation allows you to work with multiple items and workspaces at t
 When you create or open an item, it appears in a tab horizontally across the top of the Fabric portal and shows the item name, icon for the item type (for example, notebook, pipeline, semantic model, and so on). You can hover over the tab to view the workspace it's created in. You can drag a tab to the required position. Tabs make it easier to identify and switch between open items without losing focus.
 
 > [!NOTE]
-> The tabbed navigation is available only in Fabric view and not in Power BI view i.e when you switch to the Power BI view from the left nav switcher, the tabbed experience is not available.
+> The tabbed navigation is only available in the Fabric view, not in Power BI view. For instance, when you switch to the Power BI view from the left nav switcher, the tabbed experience isn't available.
 
 ### Multiple open workspaces
 
@@ -92,7 +93,6 @@ The previous limit of 10 open items has been increased. You can keep more resour
 
 > [!NOTE]
 > These multitasking features are rolling out in phases starting mid September 2025. Availability might vary across tenants as the rollout progresses.
-
 
 ## Find content fast: Search, filter, sort
 
