@@ -32,13 +32,13 @@ The lakehouse creation process is quick and simple; there are several ways to ge
 
    - You can also create a lakehouse through the workspace view in **Data Engineering** by using the **New** dropdown menu.
 
-   :::image type="content" source="media\create-lakehouse\new-lakehouse-menu.png" alt-text="Screenshot showing the Lakehouse option in the New menu.":::
+   :::image type="content" source="media\create-lakehouse\new-lakehouse-menu.png" alt-text="Screenshot showing the Lakehouse option in the New menu." lightbox="media/create-lakehouse/new-lakehouse-menu.png":::
 
 1. **Create** page
 
    - An entry point to create a lakehouse is available in the **Create** page under **Data Engineering**.
 
-   :::image type="content" source="media\create-lakehouse\lakehouse-create-hub.png" alt-text="Screenshot showing the Lakehouse option in the Data Engineering Create page.":::
+   :::image type="content" source="media\create-lakehouse\lakehouse-create-hub.png" alt-text="Screenshot showing the Lakehouse option in the Data Engineering Create page." lightbox="media/create-lakehouse/lakehouse-create-hub.png":::
 
 ### Creating a lakehouse from the Data Engineering homepage
 

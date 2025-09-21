@@ -27,7 +27,7 @@ After you successfully commit the user data functions items to the Git repo, you
 
 The following image shows an example of the file structure of each user data functions item in the repo:
 
-:::image type="content" source="..\media\user-data-functions-git-deployment\udf-folder-structure.png" alt-text="Screenshot showing folder structure for a user data functions item in the repository.":::
+:::image type="content" source="..\media\user-data-functions-git-deployment\udf-folder-structure.png" alt-text="Screenshot showing folder structure for a user data functions item in the repository." lightbox="..\media\user-data-functions-git-deployment\udf-folder-structure.png":::
 
 The folder structure includes the following elements:
 

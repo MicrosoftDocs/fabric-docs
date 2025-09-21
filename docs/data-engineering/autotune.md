@@ -35,7 +35,7 @@ Autotune configures three Apache Spark settings for each of your queries separat
 > - Apache Spark SQL API queries (excluding queries written in the RDD API, which are rare), but we optimize all queries regardless the language (Scala, PySpark, R, Spark SQL)
 > This feature is compatible with notebooks, Apache Spark job definitions, and pipelines. The benefits vary based on the complexity of the query, the methods used, and the structure. Extensive testing has shown that the greatest advantages are realized with queries related to exploratory data analysis, such as reading data, running joins, aggregations, and sorting.
 
-:::image type="content" source="media\autotune\execution-over-time.png" alt-text="Screenshot of execution time with autotune Enabled.":::
+:::image type="content" source="media\autotune\execution-over-time.png" alt-text="Screenshot of execution time with autotune Enabled." lightbox="media\autotune\execution-over-time.png":::
 
 ### AI-based intuition behind the autotune
 

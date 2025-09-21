@@ -22,13 +22,13 @@ The Fabric API for GraphQL provides two mechanisms to retrieve information about
 
 By default, introspection is disabled on your API for GraphQL items. This setting can only be toggled by Workspace Admins. All other users will see a disabled slider. To enable it, click on the API **Settings** gear icon in the top menu and choose **Introspection** from the available settings. You'll see a toggle to enable or disable introspection:
 
-![Screenshot that shows the portal bar showing the settings gear button.](media/api-graphql-introspection-schema-export/portal-bar-settings.png)
+:::image type="content" source="media/api-graphql-introspection-schema-export/portal-bar-settings.png" alt-text="Screenshot that shows the portal bar showing the settings gear button." lightbox="media/api-graphql-introspection-schema-export/portal-bar-settings.png":::
 
-![Screenshot that shows the introspection setting slider.](media/api-graphql-introspection-schema-export/introspection-settings.png)
+:::image type="content" source="media/api-graphql-introspection-schema-export/introspection-settings.png" alt-text="Screenshot that shows the introspection setting slider." lightbox="media/api-graphql-introspection-schema-export/introspection-settings.png":::
 
 If you enable introspection, the following confirmation dialog is displayed:
 
-![Screenshot that shows the enable introspection confirmation dialog.](media/api-graphql-introspection-schema-export/enable-introspection-confirmation.png)
+:::image type="content" source="media/api-graphql-introspection-schema-export/enable-introspection-confirmation.png" alt-text="Screenshot that shows the enable introspection confirmation dialog." lightbox="media/api-graphql-introspection-schema-export/enable-introspection-confirmation.png":::
 
 Select **confirm** to enable introspection or **cancel** to leave it disabled.
 
@@ -46,7 +46,7 @@ query {
 }
 ```
 
-![Screenshot that shows the introspection query example.](media/api-graphql-introspection-schema-export/introspection-query-example.png)
+:::image type="content" source="media/api-graphql-introspection-schema-export/introspection-query-example.png" alt-text="Screenshot that shows the introspection query example." lightbox="media/api-graphql-introspection-schema-export/introspection-query-example.png":::
 
 The information retrieved by introspection queries is verbose. You can use query filters to narrow the scope of the query.
 
@@ -56,7 +56,7 @@ To learn more about introspection, see the [GraphQL Foundation's official docume
 
 Another way to retrieve schema information is using the GraphQL schema export. It works directly from the Fabric portal. Open your API for GraphQL and select **Export schema**. And your browser will download an SDL (Schema Definition Language) file with full schema. You can then use this SDL file in any development tool or service such as, for example, integrating with [Azure API Management](api-graphql-azure-api-management.md). 
 
-![Screenshot that shows the export schema button.](media/api-graphql-introspection-schema-export/export-schema.png)
+:::image type="content" source="media/api-graphql-introspection-schema-export/export-schema.png" alt-text="Screenshot that shows the export schema button." lightbox="media/api-graphql-introspection-schema-export/export-schema.png":::
 
 ## Related content
 

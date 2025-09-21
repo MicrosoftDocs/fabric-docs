@@ -23,7 +23,7 @@ Microsoft Fabric provides various data engineering capabilities to ensure that y
 
 - Use notebooks to write code for data ingestion, preparation, and transformation
 
-  :::image type="content" source="media\data-engineering-overview\data-engineering-artifacts.png" alt-text="Screenshot showing Data Engineering objects.":::
+  :::image type="content" source="media\data-engineering-overview\data-engineering-artifacts.png" alt-text="Screenshot showing Data Engineering objects." lightbox="media/data-engineering-overview/data-engineering-artifacts.png":::
 
 ## Lakehouse
 

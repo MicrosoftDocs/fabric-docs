@@ -20,7 +20,7 @@ To share a lakehouse, navigate to your workspace, and select the **Share** icon 
 
 To edit or remove permissions, see [Managing permissions](#managing-permissions).
 
-:::image type="content" source="media\lakehouse-sharing\lakehouse-share-access.png" alt-text="Screenshot showing the commands to share lakehouse access with other users.":::
+:::image type="content" source="media\lakehouse-sharing\lakehouse-share-access.png" alt-text="Screenshot showing the commands to share lakehouse access with other users." lightbox="media/lakehouse-sharing/lakehouse-share-access.png":::
 
 ## Sharing and permissions
 

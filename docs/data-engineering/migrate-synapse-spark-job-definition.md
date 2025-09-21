@@ -42,7 +42,7 @@ To create a new Spark job definition (SJD) based on the exported SJD information
     * Configure the job using the information you exported from Synapse, including script location, dependencies, parameters, and cluster settings.
 1.	**Adapt and test**: Make any necessary adaptation to the script or configuration to suit the Fabric environment. Test the job in Fabric to ensure it runs correctly.
 
-:::image type="content" source="media\migrate-synapse\migrate-sjd-create.png" alt-text="Screenshot showing Spark job definition creation.":::
+:::image type="content" source="media\migrate-synapse\migrate-sjd-create.png" alt-text="Screenshot showing Spark job definition creation." lightbox="media/migrate-synapse/migrate-sjd-create.png":::
 
 Once the Spark job definition is created, validate dependencies:
 * Ensure using the same Spark version.
@@ -92,7 +92,7 @@ output_folder = f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{lakeh
 
 * **1.3) Run the first two cells** of the export/import notebook to export Spark job definition metadata to OneLake. Once cells are completed, this folder structure under the intermediate output directory is created.
 
-:::image type="content" source="media\migrate-synapse\migrate-sjd-export-api.png" alt-text="Screenshot showing Spark job definition export in OneLake.":::
+:::image type="content" source="media\migrate-synapse\migrate-sjd-export-api.png" alt-text="Screenshot showing Spark job definition export in OneLake." lightbox="media/migrate-synapse/migrate-sjd-export-api.png":::
 
 ### Step 2: Import Spark job definition into Fabric
 

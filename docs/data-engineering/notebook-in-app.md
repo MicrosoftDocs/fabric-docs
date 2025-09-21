@@ -22,23 +22,23 @@ You can now easily embed the Fabric Notebook in the Org app. With rich content l
 
 The operations applied to the embedded Notebook in Org app by consumers won't be saved, after refreshing the page, all the settings will be reset to default view.
 
-:::image type="content" border="true" source="media/notebook-in-app/notebook-in-app.gif" alt-text="Animated GIF of notebook in app.":::
+:::image type="content" border="true" source="media/notebook-in-app/notebook-in-app.gif" alt-text="Animated GIF of notebook in app." lightbox="media/notebook-in-app/notebook-in-app.gif":::
 
 1. Create an **Org app** in the workspace new item panel with your APP name.
 
 1. **Add workspace content** on navigation pane or **add contents** straightly -> add notebooks into the app.
 
-    :::image type="content" source="media\notebook-in-app\add-workspace-content.png" alt-text="Screenshot showing add workspace content.":::
+    :::image type="content" source="media\notebook-in-app\add-workspace-content.png" alt-text="Screenshot showing add workspace content." lightbox="media/notebook-in-app/add-workspace-content.png":::
 
 1. **Preview app** to check contents. **Close preview** and back to **save** your changes if everything is well.
 
-    :::image type="content" source="media\notebook-in-app\save-changes-and-preview-app.png" alt-text="Screenshot showing where to save changes and preview app.":::
+    :::image type="content" source="media\notebook-in-app\save-changes-and-preview-app.png" alt-text="Screenshot showing where to save changes and preview app." lightbox="media/notebook-in-app/save-changes-and-preview-app.png":::
 
 1. After notebooks are integrated into the app, you are entering into a read-only mode but you can also manage visualization in the cell output.
 
 1. **Share** the app link will help collaborators find your app conveniently.
 
-    :::image type="content" source="media\notebook-in-app\manage-access.png" alt-text="Screenshot showing where to manage access.":::
+    :::image type="content" source="media\notebook-in-app\manage-access.png" alt-text="Screenshot showing where to manage access." lightbox="media/notebook-in-app/manage-access.png":::
 
 ## Related content
 
