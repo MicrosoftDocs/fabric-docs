@@ -35,7 +35,7 @@ To export a notebook from Azure Synapse:
     * Choose a destination folder and provide a name for the exported notebook file. 
 4.	Once the export is complete, you should have the notebook file available for upload.
 
-:::image type="content" source="media\migrate-synapse\migrate-notebooks-export.png" alt-text="Screenshot showing Synapse Notebook export.":::
+:::image type="content" source="media\migrate-synapse\migrate-notebooks-export.png" alt-text="Screenshot showing Synapse Notebook export." lightbox="media/migrate-synapse/migrate-notebooks-export.png":::
 
 To import the exported notebook in Fabric:
 
@@ -93,7 +93,7 @@ output_folder = f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{lakeh
 
 * **1.3) Run the first two cells** of the export/import notebook to export notebooks to OneLake. Once cells are completed, this folder structure under the intermediate output directory is created.
 
-:::image type="content" source="media\migrate-synapse\migrate-notebooks-export-api.png" alt-text="Screenshot showing Notebook export in OneLake.":::
+:::image type="content" source="media\migrate-synapse\migrate-notebooks-export-api.png" alt-text="Screenshot showing Notebook export in OneLake." lightbox="media/migrate-synapse/migrate-notebooks-export-api.png":::
 
 ### Step 2: Import notebooks into Fabric
 

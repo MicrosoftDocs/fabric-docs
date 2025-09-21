@@ -32,7 +32,7 @@ You can find your tenant region with the following steps:
 1. From **Workspace settings**, go to **License info**.
 1. You can find your capacity region information under **License capacity**.
 
-   :::image type="content" source="./media/api-graphql-performance/capacity-region.png" alt-text="Screenshot showing how to get the capacity region for your workspace.":::
+   :::image type="content" source="./media/api-graphql-performance/capacity-region.png" alt-text="Screenshot showing how to get the capacity region for your workspace." lightbox="media/api-graphql-performance/capacity-region.png":::
 
 ### Data source region
 

@@ -35,7 +35,7 @@ You can move Spark pool libraries to an environment as follows:
     * From **Custom Libraries,** you can install libraries by using .jar/.whl/.tar.gz files.
 1.	Click on **Save** and **Publish** changes.
 
-:::image type="content" source="media\migrate-synapse\migrate-spark-libraries.png" alt-text="Screenshot showing Spark libraries.":::
+:::image type="content" source="media\migrate-synapse\migrate-spark-libraries.png" alt-text="Screenshot showing Spark libraries." lightbox="media/migrate-synapse/migrate-spark-libraries.png":::
 
 Learn more on adding Spark libraries to an [Environment](environment-manage-library.md).
 

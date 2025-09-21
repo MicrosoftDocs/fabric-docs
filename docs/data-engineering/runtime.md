@@ -64,7 +64,7 @@ Fabric supports multiple runtimes, offering users the flexibility to seamlessly 
 
 To change the runtime version at the workspace level, go to **Workspace Settings** > **Data Engineering/Science** > **Spark settings**. From the **Environment** tab, select your desired runtime version from the available options. Select **Save** to confirm your selection.
 
-:::image type="content" source="media\runtime\runtime-change.png" alt-text="Screenshot showing how to change the runtime version in the workspace settings.":::
+:::image type="content" source="media\runtime\runtime-change.png" alt-text="Screenshot showing how to change the runtime version in the workspace settings." lightbox="media/runtime/runtime-change.png":::
 
 Once you make this change, all system-created items within the workspace, including Lakehouses, SJDs, and Notebooks, will operate using the newly selected workspace-level runtime version starting from the next Spark Session. If you're currently using a notebook with an existing session for a job or any lakehouse-related activity, that Spark session continue as is. However, starting from the next session or job, the selected runtime version will be applied.
 
@@ -72,7 +72,7 @@ Once you make this change, all system-created items within the workspace, includ
 
 In general, we aim to migrate all Spark settings. However, if we identify that the Spark setting isn't compatible with Runtime B, we issue a warning message and refrain from implementing the setting.
 
-:::image type="content" source="media\mrs\spark-settings-runtime-change.png" alt-text="Spark Settings Runtime Change.":::
+:::image type="content" source="media\mrs\spark-settings-runtime-change.png" alt-text="Spark Settings Runtime Change." lightbox="media/mrs/spark-settings-runtime-change.png":::
 
 ### Consequences of runtime changes on library management
 
@@ -80,7 +80,7 @@ In general, our approach is to migrate all libraries from Runtime A to Runtime B
 
 The user is responsible for updating or replacing any libraries that don't work with Runtime B. If there's a conflict, which means that Runtime B includes a library originally defined in Runtime A, our library management system will try to create the necessary dependency for Runtime B based on the user's settings. However, the building process will fail if a conflict occurs. In the error log, users can see which libraries are causing conflicts and make adjustments to their versions or specifications.
 
-:::image type="content" source="media\mrs\lm-runtime-change.png" alt-text="Library Management Runtime Change.":::
+:::image type="content" source="media\mrs\lm-runtime-change.png" alt-text="Library Management Runtime Change." lightbox="media/mrs/lm-runtime-change.png":::
 
 ## Upgrade Delta Lake protocol
 
@@ -98,7 +98,7 @@ It's essential to note that when performing this upgrade, users receive a warnin
 
 Protocol version upgrades can potentially impact the compatibility of existing Delta Lake table readers, writers, or both. Therefore, it's advisable to proceed with caution and upgrade the protocol version only when necessary, such as when adopting new features in Delta Lake.
 
-:::image type="content" source="media\mrs\delta-upgrade-warning.png" alt-text="Screenshot showing the warning when upgrading the delta lake protocol.":::
+:::image type="content" source="media\mrs\delta-upgrade-warning.png" alt-text="Screenshot showing the warning when upgrading the delta lake protocol." lightbox="media/mrs/delta-upgrade-warning.png":::
 
 Additionally, users should verify that all current and future production workloads and processes are compatible with Delta Lake tables using the new protocol version to ensure a seamless transition and prevent any potential disruptions.
 
