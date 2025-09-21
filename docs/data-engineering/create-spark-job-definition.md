@@ -69,7 +69,7 @@ To create a Spark job definition for PySpark:
 
    Multiple lakehouse references are supported. Find the non-default lakehouse name and full OneLake URL in the **Spark Settings** page.
 
-   :::image type="content" source="media\create-spark-job-definition\main-definition-file-example.png" alt-text="Screenshot showing an example of a populated main definition file screen.":::
+   :::image type="content" source="media\create-spark-job-definition\main-definition-file-example.png" alt-text="Screenshot showing an example of a populated main definition file screen." lightbox="media/create-spark-job-definition/main-definition-file-example.png":::
 
 ### Create a Spark job definition for Scala/Java
 
@@ -117,7 +117,7 @@ There are a few options to further customize the execution of Spark job definiti
 
 - **Optimization**: On the **Optimization** tab, you can enable and set up the **Retry Policy** for the job. When enabled, the job is retried if it fails. You can also set the maximum number of retries and the interval between retries. For each retry attempt, the job is restarted. Make sure the job is **idempotent**.
 
-   :::image type="content" source="media\create-spark-job-definition\retry-policy.png" alt-text="Screenshot showing where to set up retry policy.":::
+   :::image type="content" source="media\create-spark-job-definition\retry-policy.png" alt-text="Screenshot showing where to set up retry policy." lightbox="media/create-spark-job-definition/retry-policy.png":::
 
 ## Related content
 

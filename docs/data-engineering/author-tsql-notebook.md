@@ -32,11 +32,11 @@ To get started with this experience, you can create a T-SQL notebook in the foll
 
 1. Create a T-SQL notebook from the Fabric workspace: select **New item**, then choose **Notebook** from the panel that opens.
 
-   :::image type="content" source="media\tsql-notebook\create-tsql-notebook-homepage.png" alt-text="Screenshot of creating a new notebook from within a workspace.":::
+   :::image type="content" source="media\tsql-notebook\create-tsql-notebook-homepage.png" alt-text="Screenshot of creating a new notebook from within a workspace." lightbox="media\tsql-notebook\create-tsql-notebook-homepage.png":::
 
 2. Create a T-SQL notebook from an existing warehouse editor: navigate to an existing warehouse and, from the top navigation ribbon, select **New SQL query**, then **New T-SQL query notebook**.
 
-   :::image type="content" source="media\tsql-notebook\create-tsql-notebook-from-editor.png" alt-text="Screenshot of open notebook from DW SQL editor.":::
+   :::image type="content" source="media\tsql-notebook\create-tsql-notebook-from-editor.png" alt-text="Screenshot of open notebook from DW SQL editor." lightbox="media\tsql-notebook\create-tsql-notebook-from-editor.png":::
 
 Once the notebook is created, T-SQL is set as the default language. You can add data warehouse or SQL analytics endpoints from the current workspace into your notebook.
 
@@ -50,7 +50,7 @@ To add a Data Warehouse or SQL analytics endpoint into a notebook, from the note
 
 You can add multiple warehouses or SQL analytics endpoints into the notebook, with one of them is set as the primary. The primary warehouse runs the T-SQL code. To set it, go to the object explorer, select **...** next to the warehouse, and choose **Set as primary**.
 
-:::image type="content" source="media\tsql-notebook\set-primary-warehouse.png" alt-text="Screenshot of setting primary warehouse.":::
+:::image type="content" source="media\tsql-notebook\set-primary-warehouse.png" alt-text="Screenshot of setting primary warehouse." lightbox="media\tsql-notebook\set-primary-warehouse.png":::
 
 For any T-SQL command which supports three-part naming, primary warehouse is used as the default warehouse if no warehouse is specified.
 
@@ -58,7 +58,7 @@ For any T-SQL command which supports three-part naming, primary warehouse is use
 
 To create and run T-SQL code in a notebook, add a new cell and set **T-SQL** as the cell language.
 
-:::image type="content" source="media\tsql-notebook\tsql-code-cell.png" alt-text="Screenshot showing how to create a t-sql code cell.":::
+:::image type="content" source="media\tsql-notebook\tsql-code-cell.png" alt-text="Screenshot showing how to create a t-sql code cell." lightbox="media\tsql-notebook\tsql-code-cell.png":::
 
 You can autogenerate T-SQL code using the code template from the object explorer's context menu. The following templates are available for T-SQL notebooks:
 
@@ -68,7 +68,7 @@ You can autogenerate T-SQL code using the code template from the object explorer
 - Drop
 - Drop and create
 
-:::image type="content" source="media\tsql-notebook\tsql-code-template.png" alt-text="Screenshot of showing the t-sql code template.":::
+:::image type="content" source="media\tsql-notebook\tsql-code-template.png" alt-text="Screenshot of showing the t-sql code template." lightbox="media\tsql-notebook\tsql-code-template.png":::
 
 You can run one T-SQL code cell by selecting the **Run** button in the cell toolbar or run all cells by selecting the **Run all** button in the toolbar.
 
@@ -77,35 +77,35 @@ You can run one T-SQL code cell by selecting the **Run** button in the cell tool
 
 Within the same code cell, it might contain multiple lines of code. User can select part of these code and only run the selected ones. Each execution also generates a new session.
 
-:::image type="content" source="media\tsql-notebook\tsql-run-selected-code.png" alt-text="Screenshot showing how to run selected code cell.":::
+:::image type="content" source="media\tsql-notebook\tsql-run-selected-code.png" alt-text="Screenshot showing how to run selected code cell." lightbox="media\tsql-notebook\tsql-run-selected-code.png":::
 
 After the code is executed, expand the message panel to check the execution summary.
 
-:::image type="content" source="media\tsql-notebook\tsql-execution-summary.png" alt-text="Screenshot showing the execution summary.":::
+:::image type="content" source="media\tsql-notebook\tsql-execution-summary.png" alt-text="Screenshot showing the execution summary." lightbox="media\tsql-notebook\tsql-execution-summary.png":::
 
 The **Table** tab list the records from the returned result set. If the execution contains multiple result set, you can switch from one to another via the dropdown menu.
 
-:::image type="content" source="media\tsql-notebook\tsql-switch-result.png" alt-text="Screenshot showing how to switch in the result tab.":::
+:::image type="content" source="media\tsql-notebook\tsql-switch-result.png" alt-text="Screenshot showing how to switch in the result tab." lightbox="media\tsql-notebook\tsql-switch-result.png":::
 
 ### Use the charting features to graphically represent query outcomes
 
 By clicking on the **Inspect**, you can see the charts which represent the data quality and distribution of each column
 
-:::image type="content" source="media\tsql-notebook\tsql-inspect-result.png" alt-text="Screenshot showing inspect the result in a chart form.":::
+:::image type="content" source="media\tsql-notebook\tsql-inspect-result.png" alt-text="Screenshot showing inspect the result in a chart form." lightbox="media\tsql-notebook\tsql-inspect-result.png":::
 
 ### Save the query as a view or table
 
 You can use **Save as table** menu to save the results of the query into the table using [CTAS](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-develop-ctas) command. To use this menu, select the query text from the code cell and select **Save as table** menu.
 
-:::image type="content" source="media\tsql-notebook\tsql-save-as-table.png" alt-text="Screenshot showing how to save the query as  a table.":::
+:::image type="content" source="media\tsql-notebook\tsql-save-as-table.png" alt-text="Screenshot showing how to save the query as  a table." lightbox="media\tsql-notebook\tsql-save-as-table.png":::
 
-:::image type="content" source="media\tsql-notebook\tsql-save-as-table-dialog.png" alt-text="Screenshot on how to save a table as dialog.":::
+:::image type="content" source="media\tsql-notebook\tsql-save-as-table-dialog.png" alt-text="Screenshot on how to save a table as dialog." lightbox="media\tsql-notebook\tsql-save-as-table-dialog.png":::
 
 Similarly, you can create a view from your selected query text using **Save as view** menu in the cell command bar.
 
-:::image type="content" source="media\tsql-notebook\tsql-save-as-view.png" alt-text="Screenshot showing how to create a view.":::
+:::image type="content" source="media\tsql-notebook\tsql-save-as-view.png" alt-text="Screenshot showing how to create a view." lightbox="media\tsql-notebook\tsql-save-as-view.png":::
 
-:::image type="content" source="media\tsql-notebook\tsql-save-as-view-dialog.png" alt-text="Screenshot showing save as a view dialog.":::
+:::image type="content" source="media\tsql-notebook\tsql-save-as-view-dialog.png" alt-text="Screenshot showing save as a view dialog." lightbox="media\tsql-notebook\tsql-save-as-view-dialog.png":::
 
 > [!NOTE]
 > * Because the **Save as table** and **Save as view** menu are only available for the selected query text, you need to select the query text before using these menus.
@@ -116,20 +116,20 @@ Similarly, you can create a view from your selected query text using **Save as v
 
 You can run cross warehouse query by using three-part naming.  The three-part naming consists of the database name, schema name, and table name. The database name is the name of the warehouse or SQL analytics endpoint, the schema name is the name of the schema, and the table name is the name of the table.
 
-:::image type="content" source="media\tsql-notebook\tsql-cross-warehouse-query.png" alt-text="Screenshot showing how to run a cross warehouse query.":::
+:::image type="content" source="media\tsql-notebook\tsql-cross-warehouse-query.png" alt-text="Screenshot showing how to run a cross warehouse query." lightbox="media\tsql-notebook\tsql-cross-warehouse-query.png":::
 
 ### Skip the execution of non-T-SQL code
 
 Within the same notebook, it's possible to create code cells that use different languages. For instance, a PySpark code cell can precede a T-SQL code cell. In such case, user can choose to skip the run of any PySpark code for T-SQL notebook.
 This dialog appears when you run all the code cells by clicking the **Run all** button in the toolbar.
 
-:::image type="content" source="media\tsql-notebook\skip-non-tsql-code.png" alt-text="Screenshot showing how to skip non-TSQL code.":::
+:::image type="content" source="media\tsql-notebook\skip-non-tsql-code.png" alt-text="Screenshot showing how to skip non-TSQL code." lightbox="media\tsql-notebook\skip-non-tsql-code.png":::
 
 ### Monitoring T-SQL notebook execution
 
 You can monitor the execution of T-SQL notebooks in the **T-SQL** tab of the Recent Run view. You can find the Recent Run view by selecting the **Run** menu inside the notebook.
 
-:::image type="content" source="media\tsql-notebook\recent-run-view.png" alt-text="Screenshot showing the recent run view.":::
+:::image type="content" source="media\tsql-notebook\recent-run-view.png" alt-text="Screenshot showing the recent run view." lightbox="media\tsql-notebook\recent-run-view.png":::
 
 In the T-SQL history run view, you can see a list of running, succeeded, canceled, and failed queries up to the past 30 days.
 

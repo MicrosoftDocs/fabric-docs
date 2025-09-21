@@ -25,7 +25,7 @@ To manage the Spark settings for the pool associated with your workspace:
 
 2. You see the **Spark Compute** option in your left-hand menu:
 
-   :::image type="content" source="media/workspace-admin-settings/workspace-settings.gif" alt-text="Gif showing different sections of the Apache Spark compute in workspace settings.":::
+   :::image type="content" source="media/workspace-admin-settings/workspace-settings.gif" alt-text="Gif showing different sections of the Apache Spark compute in workspace settings." lightbox="media/workspace-admin-settings/workspace-settings.gif":::
 
    > [!NOTE]
    > If you change the default pool from Starter Pool to a Custom Spark pool you may see longer session start (~3 minutes).
@@ -56,7 +56,7 @@ Learn more about [Apache Spark compute for Fabric](spark-compute.md).
 
 * **Customize compute configuration for items**: As a workspace admin, you can allow users to adjust compute configurations (session level properties which include Driver/Executor Core, Driver/Executor Memory) for individual items such as notebooks, Spark job definitions using Environment.
 
-:::image type="content" source="media/workspace-admin-settings/customize-compute-items.png" alt-text="Screenshot showing switch to customize compute for items.":::
+:::image type="content" source="media/workspace-admin-settings/customize-compute-items.png" alt-text="Screenshot showing switch to customize compute for items." lightbox="media/workspace-admin-settings/customize-compute-items.png":::
 
 If the setting is turned off by the workspace admin, the Default pool and its compute configurations are used for all environments in the workspace.
 

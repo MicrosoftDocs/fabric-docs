@@ -49,7 +49,7 @@ You can enable Microsoft Fabric for your tenant  such that everyone in the tenan
 1. Sign in to Microsoft Fabric.
 2. Select **Switch tenant** and  then choose the tenant you want to navigate to.
 
-  :::image type="content" source="media\vscode\switch-tenant.png" alt-text="Screenshot of selecting switch tenant to change the default tenant.":::
+   :::image type="content" source="media\vscode\switch-tenant.png" alt-text="Screenshot of selecting switch tenant to change the default tenant." lightbox="media/vscode/switch-tenant.png":::
 
 ### Create a Fabric item in VS Code
 
@@ -58,9 +58,9 @@ With the Microsoft Fabric Extension, you can now create, delete, and rename any 
 1. Select the workspace of your choice.
 2. Select **+** to create an item in the workspace.   
 3. Select the item type and provide a name to create the item in Fabric. 
-   :::image type="content" source="media\vscode\select-item-type.png" alt-text="Screenshot of selecting the item type to create in Fabric.":::
+   :::image type="content" source="media\vscode\select-item-type.png" alt-text="Screenshot of selecting the item type to create in Fabric." lightbox="media/vscode/select-item-type.png":::
 3. Select **Open in Explorer** to open an item definition to edit in Visual Studio Code. Here is a list of ([supported items](/rest/api/fabric/articles/item-management/definitions/item-definition-overview)).
-   :::image type="content" source="media\vscode\open-pbi-report.png" alt-text="Screenshot showing how to open a Power BI report.":::
+   :::image type="content" source="media\vscode\open-pbi-report.png" alt-text="Screenshot showing how to open a Power BI report." lightbox="media/vscode/open-pbi-report.png":::
    
 You can access almost all Azure services provided by these extensions through the Command palette in VS Code. Press **F1**, then type in `Fabric` to find the available commands.
 
