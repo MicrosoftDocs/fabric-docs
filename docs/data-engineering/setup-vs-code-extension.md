@@ -67,7 +67,7 @@ To edit a notebook, you must have a local copy of the notebook content. The loca
 
 To validate the setup, open the extension settings and check the details there:
 
- :::image type="content" source="media\vscode\local-working-dir.png" alt-text="Screenshot of the Settings screen, showing the selected local working directory.":::
+ :::image type="content" source="media\vscode\local-working-dir.png" alt-text="Screenshot of the Settings screen, showing the selected local working directory." lightbox="media/vscode/local-working-dir.png":::
 
 ### Sign in and out of your account
 
@@ -77,7 +77,7 @@ To validate the setup, open the extension settings and check the details there:
 
 1. After you successfully sign in, your username will be displayed in the VS Code status bar to indicate that you're signed in.
 
-   :::image type="content" source="media\vscode\signin-status.png" alt-text="Screenshot of the VS Code status bar, showing where to find your sign-in status.":::
+   :::image type="content" source="media\vscode\signin-status.png" alt-text="Screenshot of the VS Code status bar, showing where to find your sign-in status." lightbox="media/vscode/signin-status.png":::
 
 1. To sign out of the extension, enter the command `Fabric Data Engineering: Sign Out`.
 
@@ -87,7 +87,7 @@ To select a Fabric workspace, you must have a workspace created. If you don't ha
 
 Once you have a workspace, choose it by selecting the **Select Workspace** option. A list appears of all workspaces that you have access to; select the one you want from the list.
 
-:::image type="content" source="media\vscode\select-workspace.png" alt-text="Screenshot of VS Code Explorer, showing where to find the Select Workspace option.":::
+:::image type="content" source="media\vscode\select-workspace.png" alt-text="Screenshot of VS Code Explorer, showing where to find the Select Workspace option." lightbox="media/vscode/select-workspace.png":::
 
 ### Current Limitations
 

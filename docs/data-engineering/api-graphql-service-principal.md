@@ -21,7 +21,7 @@ Follow the steps in the [connect applications](connect-apps-api-graphql.md) sect
 
 1. The service principal needs access to both the GraphQL API and the data source, more specifically *Execute* permission to the GraphQL API and read or write access required in the data source of choice accordingly. In the Fabric Portal, open the workspace and select the ellipsis next to API. Select *Manage permissions* for the API then *Add user*. Add the application and select *Run Queries and Mutations*, which provides the required *Execute* permissions to the service principal.  For testing purposes, the easiest way to implement the required permissions for both the API and data source is by adding the application as a workspace member with a contributor role where both the GraphQL API and data source items are located.
 
-:::image type="content" source="media/connect-apps-api-graphql/add-spn-permissions.png" alt-text="Screenshot of GraphQL API permissions.":::
+:::image type="content" source="media/connect-apps-api-graphql/add-spn-permissions.png" alt-text="Screenshot of GraphQL API permissions." lightbox="media/connect-apps-api-graphql/add-spn-permissions.png":::
 
 Because a service principal requires either a certificate or a client secret, it isn't supported by the Microsoft Authentication Library (MSAL) in single-page applications (SPAs) like the React app built in the last step. You can use a backend service properly secured with well defined authorization logic depending on your requirements and use cases.
 
