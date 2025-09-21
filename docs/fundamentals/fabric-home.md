@@ -65,16 +65,34 @@ To explore:
 
 More about workloads: [Workloads in Fabric](../workload-development-kit/more-workloads-add.md).
 
-## Multitask with tabs and object explorer
+## Multitask with tabbed navigation to access resources (preview)
+
+The tabbed navigation allows you to work with multiple items and workspaces at the same time. It enhances navigation and reduces the need to switch context.
+
+### Tabs for open items
+
+When you create or open an item, it appears in a tab horizontally across the top of the Fabric portal and shows the item name, icon for the item type (for example, notebook, pipeline, semantic model, and so on). You can hover over the tab to view the workspace it's created in. You can drag a tab to the required position. Tabs make it easier to identify and switch between open items without losing focus.
 
 > [!NOTE]
-> Tabs, multiple open workspaces, and the object explorer are in phased rollout (preview). Availability varies by tenant.
+> The tabbed navigation is available only in Fabric view and not in Power BI view i.e when you switch to the Power BI view from the left nav switcher, the tabbed experience is not available.
 
-- Tabs: Each open or new item appears as a tab at the top. Drag to reorder. Hover to see its workspace.
-- Multiple open workspaces: Fabric color codes and numbers items by workspace to help you tell them apart (preview experience).
-- Object explorer (preview): Hierarchical panel showing items in your open workspaces. Filter by type or search. Pin it for quick access.
+### Multiple open workspaces
 
-In Power BI view (left switcher), tabs aren't available.
+You can open and work across multiple workspaces side by side. Items are color-coded and numbered to indicate which workspace they belong to. This feature helps reduce confusion and improves context when working in multiple environments.
+
+### Object explorer
+
+The object explorer provides a structured view of items across all your currently open workspaces. Use it to quickly locate and open resources without having to switch between pages. You can pin the object explorer for easy access. Use the filter option to view items of a specific type or search for an item by a keyword. The items are organized by the hierarchy they belong to.
+
+:::image type="content" source="media/fabric-home/tabs-object-explorer.png" alt-text="Screenshot showing the object explorer & multiple tabs to quickly locate and open resources.":::
+
+### More open items
+
+The previous limit of 10 open items has been increased. You can keep more resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
+
+> [!NOTE]
+> These multitasking features are rolling out in phases starting mid September 2025. Availability might vary across tenants as the rollout progresses.
+
 
 ## Find content fast: Search, filter, sort
 
