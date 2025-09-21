@@ -335,11 +335,11 @@ A step-by-step cell execution status is displayed beneath the cell to help you s
 
 In the bottom left corner, you can select on the session status to get more information about the current session:
 
-![Screenshot that shows Session Information.](./media/author-execute-notebook/session-info.png)
+:::image type="content" source="media/author-execute-notebook/session-info.png" alt-text="Screenshot that shows Session Information." lightbox="media/author-execute-notebook/session-info.png":::
 
 In the pop-up, there's an option to reset the timeout to x minutes or hours.
 
-![Screenshot that shows Session timeout.](./media/author-execute-notebook/session-timeout.png)
+:::image type="content" source="media/author-execute-notebook/session-timeout.png" alt-text="Screenshot that shows Session timeout." lightbox="media/author-execute-notebook/session-timeout.png":::
 
 Take your pick in how long you want an uninterrupted session, and hit apply. The session timeout resets itself with the new value and you're good to go!
 
