@@ -60,7 +60,7 @@ Now you're live editing the semantic model.
 :::image type="content" source="media/direct-lake-power-bi-desktop/power-bi-desktop-direct-lake-edit.png" alt-text="Screenshot of Power BI Desktop when editing a semantic model with tables in Direct Lake storage mode later." lightbox="media/direct-lake-power-bi-desktop/power-bi-desktop-direct-lake-edit.png":::
 
 > [!NOTE]
-> Semantic models with Direct Lake or impot table storage modes are supported. *Edit tables*, *OneLake catalog*, and *Transform data* are only available in web modeling. [Use Direct Lake in Power BI web modeling](direct-lake-web-modeling.md).
+> Semantic models with Direct Lake or impot table storage modes are supported. **Edit tables**, **OneLake catalog**, and **Transform data** are only available in web modeling. [Use Direct Lake in Power BI web modeling](direct-lake-web-modeling.md).
 
 Alternatively, if you have [exported the semantic model to a Power BI Project (PBIP)](direct-lake-power-bi-project.md), take the following steps.
 
