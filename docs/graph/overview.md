@@ -56,7 +56,7 @@ Graph in Microsoft Fabric is deeply integrated with the Microsoft Fabric platfor
 
 You can incorporate graph analytics into your existing workflows, eliminating the need for data duplication and specialized skills. This makes insights accessible to a broader audience compared to traditional standalone [graph databases](graph-database.md).
 
-### How graph in Microsoft Fabric differs from standalone graph databases
+#### How graph in Microsoft Fabric differs from standalone graph databases
 
 | Area | Graph in Microsoft Fabric | Standalone graph database |
 |---|---|---|
@@ -68,11 +68,11 @@ You can incorporate graph analytics into your existing workflows, eliminating th
 | Governance & security | Microsoft Fabric provides native OneLake governance, lineage tracking, and workspace role-based access control (RBAC), and integrates with Fabric compliance standards for security and auditing. | Standalone graph databases have separate security and governance models that must be configured and audited independently, which can increase risk and administrative burden. |
 
 
-### Workspace roles
+#### Workspace roles
 
 Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following table summarizes the permissions associated with each Microsoft Fabric workspace role's capability on graph models and QuerySet items.
 
-#### Graph models
+##### Graph models
 | Capability | Admin | Member | Contributor | Viewer |
 |---|---|---|---|---|
 | Create or modify graph QuerySet item | ✔ | ✔ | ✔ | ✖ |
@@ -81,7 +81,7 @@ Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabri
 | Connect to graph instance | ✔ | ✔ | ✔ | ✖ |
 | Share QuerySet | ✔ | ✔ | ✖ | ✖ |
 
-#### Graph QuerySet
+##### Graph QuerySet
 | Capability | Admin | Member | Contributor | Viewer |
 |---|---|---|---|---|
 | Create or modify graph QuerySet item | ✔ | ✔ | ✔ | ✖ |
@@ -93,7 +93,7 @@ Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabri
 > All users need read access to the underlying graph instance item to execute queries against the referenced graph instance from the graph QuerySet item.
 > Only read, write, and reshare permissions are supported for QuerySet item.
 
-### Pricing and capacity units
+#### Pricing and capacity units
 
 Graph uses the same capacity units (CUs) as other workloads in Microsoft Fabric. You don't need to purchase a separate graph-specific license or SKU. All graph operations, including data ingestion, querying, and running algorithms, consume your organization's reserved or pay-as-you-go Fabric capacity.
 
@@ -106,7 +106,7 @@ Usage is measured in minutes of CPU uptime. You can monitor your graph workload'
 
 For more information on pricing and capacity units, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
-### Region availability
+#### Region availability
 
 Graph in Microsoft Fabric is currently available in the following Azure regions:
 
