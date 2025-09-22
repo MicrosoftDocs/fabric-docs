@@ -23,7 +23,7 @@ The following image shows the Edit tables initial dialog:
 
 :::image type="content" source="media/direct-lake-edit-tables/direct-lake-edit-tables-01.png" alt-text="Screenshot of edit semantic model dialog.":::
 
-The Edit tables dialog have the following sections:
+The Edit tables dialog has the following sections:
 
 * **Title** displays whether you're editing or creating.
 * **Information** text and **learn more** link to the Direct Lake documentation.
@@ -79,7 +79,7 @@ Tables with measures can be unselected but remain in model view showing measures
 
 ## Creating a new semantic model
 
-A dialog shows to pick Direct Lake tables when creating a new semantic model from **OneLake catalog** in web create page and in Power BI Desktop.
+A dialog shows how to pick Direct Lake tables when creating a new semantic model from **OneLake catalog** in web create page and in Power BI Desktop.
 
 When creating a semantic model, you must specify two properties:
 
@@ -90,7 +90,7 @@ The following image shows the dialog when creating a new semantic model.
 
 :::image type="content" source="media/direct-lake-edit-tables/direct-lake-edit-tables-choose-tables-from-onelake.png" alt-text="Screenshot of create new semantic model." lightbox="media/direct-lake-edit-tables/direct-lake-edit-tables-choose-tables-from-onelake.png":::
 
-## Relationships between tables
+## Create and edit relationships between tables
 
 In other storage modes, there are data previews and relationship validation to populate the cardinality and cross-filter direction based on column profiling queries automatically. Direct Lake tables don't run queries to show data previews. Many to one (*:1) cardinality is determined based on table row count DAX queries. The table with more rows is considered the many side. Single cross-filter direction is always pre-populated. These properties may need to be changed manually to reflect the relationship correctly. 
 
@@ -98,7 +98,7 @@ To further validate your relationship properties, run a DAX query in **DAX query
 
 Refer to the [create relationships in Power BI](/power-bi/transform-model/desktop-create-and-manage-relationships) article for more information about table relationships.
 
-### Creating new relationships
+### Create new relationships
 
 Now you have tables in your semantic model you can create relationships between them. Row counts are used to help determine the cardinality. There are many ways to create the relationship.
 
@@ -110,7 +110,7 @@ Now you have tables in your semantic model you can create relationships between 
 
 :::image type="content" source="media/direct-lake-edit-tables/direct-lake-relationship-editor-in-Power-BI-Desktop.png" alt-text="Screenshot of a relationship between Direct Lake storage mode tables in Power BI Desktop." lightbox="media/direct-lake-edit-tables/direct-lake-relationship-editor-in-power-bi-desktop.png":::
 
-### Editing existing relationships
+### Edit existing relationships
 
 To edit an existing relationship, select any created relationship line in the diagram view to show the relationship in the **Properties** pane, and double-clicking opens the **relationship editor**.
 
