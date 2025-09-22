@@ -49,7 +49,7 @@ You need **PowerShell 7.4.2** or later on your machine.
 
 Run this command to confirm the module loaded correctly:
 
-    ```PowerShell
+```PowerShell
     Get-Command -Module Microsoft.FabricPipelineUpgrade
     ```
 
