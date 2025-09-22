@@ -1,5 +1,5 @@
 ---
-title: Basics to create a resolution file
+title: Basics to Create a Resolution File
 description: Map your Azure Data Factory Linked Service to your Fabric Connection
 author: whhender
 ms.author: whhender
