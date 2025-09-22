@@ -51,7 +51,7 @@ Run this command to confirm the module loaded correctly:
 
 ```PowerShell
 Get-Command -Module Microsoft.FabricPipelineUpgrade
-
+```
 :::image type="content" source="../media/migrate-pipeline-powershell-upgrade/verify-installation-module.png" alt-text="Screenshot of the module command output.":::
 
 
