@@ -63,11 +63,6 @@ When a Map is shared using a share link or through direct access, the recipient 
 
 To ensure the Map functions correctly, recipients must also have appropriate permissions on the underlying data sources such as Lakehouse and KQL Database.
 
-When a Map is shared via **Direct Access**, the following permissions are automatically granted:
-
-- **Lakehouse**: Read access is required to retrieve spatial files (for example, GeoJSON) used in tile generation.
-- **KQL Database**: Both Read and ReadData permissions are needed to access metadata and run queries that support map visualization.
-
 :::image type="content" source="media/share-map/grant-direct-access.png" alt-text="A screenshot showing the Grant people access pane.":::
 
 > [!IMPORTANT]
