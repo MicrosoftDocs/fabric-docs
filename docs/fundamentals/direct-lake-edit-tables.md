@@ -49,7 +49,7 @@ The following sections describe the multiple ways to get to **Edit tables**.
 
 ### Editing a semantic model with Direct Lake tables in web modeling
 
-When editing a semantic model in the browser, there's a ribbon button to launch **Edit tables**. Alternatively, select the context menu of a table and choose **Edit tables**, as shown in the following image.
+When you're editing a semantic model in the browser, there's a ribbon button to launch **Edit tables**. Alternatively, select the context menu of a table and choose **Edit tables**, as shown in the following image.
 
 :::image type="content" source="media/direct-lake-edit-tables/direct-lake-edit-tables-web-modeling.png" alt-text="Screenshot of edit tables button in the browser." lightbox="media/direct-lake-edit-tables/direct-lake-edit-tables-web-modeling.png":::
 
@@ -92,7 +92,7 @@ The following image shows the dialog when creating a new semantic model.
 
 ## Create and edit relationships between tables
 
-In other storage modes, there are data previews and relationship validation to populate the cardinality and cross-filter direction based on column profiling queries automatically. Direct Lake tables don't run queries to show data previews. Many to one (*:1) cardinality is determined based on table row count DAX queries. The table with more rows is considered the many side. Single cross-filter direction is always pre-populated. These properties may need to be changed manually to reflect the relationship correctly. 
+In other storage modes, there are data previews and relationship validation to populate the cardinality and cross-filter direction based on column profiling queries automatically. Direct Lake tables don't run queries to show data previews. Many to one (*:1) cardinality is determined based on table row count DAX queries. The table with more rows is considered as the many side. Single cross-filter direction is always pre-populated. These properties may need to be changed manually to reflect the relationship correctly. 
 
 To further validate your relationship properties, run a DAX query in **DAX query view** or create a visual in **Report view** using these two tables together.
 
@@ -115,8 +115,8 @@ Now you have tables in your semantic model you can create relationships between 
 To edit an existing relationship, select any created relationship line in the diagram view to show the relationship in the **Properties** pane, and double-clicking opens the **relationship editor**.
 
 ## Limitations
-- Tables in Direct Lake storage mode do not show data previews in the relationship dialog.
-- Tables in Direct Lake storage mode do not have relationship validation for cardinality and cross-filter direction.
+- Tables in Direct Lake storage mode don't show data previews in the relationship dialog.
+- Tables in Direct Lake storage mode don't have relationship validation for cardinality and cross-filter direction.
 
 ## Related content
 
