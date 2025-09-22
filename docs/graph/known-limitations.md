@@ -29,87 +29,87 @@ Up to 10 graph instances are allowed per Fabric Workspace.
 
 As of Oct 1, 2025, we support GQL standards on the following:
 
-•	FILTER statement
-•	LET statement
-•	Basic linear statement chaining
-•	MATCH statement
-•	Simple RETURN statement
-•	Conjunction and Disjunction
-•	Negation
-•	Local pattern predicates
-•	Pattern property specifications
-•	Simple anonymous patterns
-•	Simple named edge patterns
-•	Path patterns
-•	Case mapping
-•	STRING_JOIN function
-•	COALESCE function
-•	Property reference
-•	Variable reference
-•	Approximate numbers
-•	Booleans
-•	Character strings with escaping
-•	Exact numbers
-•	Arithmetic operators
-•	Boolean conjunction
-•	Boolean disjunction
-•	Boolean negation
-•	STARTS WITH predicate
-•	Value comparison
-•	Value equality
-•	BOOL value type
-•	EDGE reference value type
-•	INT value type
-•	INT64 value type
-•	FLOAT value type
-•	FLOAT64 value type
-•	NODE reference value type
-•	STRING value type
-•	UINT value type
-•	UINT64 value type
-•	Character string concatenation
-•	COUNT agg. function
-•	MAX agg.function
-•	MIN agg. function
-•	OFFSET and LIMIT statements
-•	CREATE GRAPH statement
-•	Closed graph type support
-•	ORDER BY statement
-•	RETURN statement with GROUP BY
-•	RETURN statement with GROUP BY and slicing
-•	List indexing
-•	List value TRIM function
-•	Character string length function
-•	SIZE
-•	Collection membership
-•	Simple LIST value type
-•	Null type and empty type
-•	AVG agg. function
-•	COLLECT_LIST agg. function
-•	SUM agg. function
-•	CURRENT_DATETIME function
-•	ZONED DATETIME value type
-•	UNION ALL statement
-•	Bounded graph pattern quantifiers
-•	Group variables
-•	Horizontal aggregation
-•	LABELS function
-•	Basic GQL status codes
-•	Formatting and parsing of GQL values
-•	Statements with DISTINCT
-•	Grouping
-•	TRAIL path mode
-•	Abbreviated edge patterns
-•	Path binding
-•	Simple TRIM function
-•	EDGES function
-•	NODES function
-•	Null
-•	Path length function
-•	CONTAINS predicate
-•	ENDS WITH predicate
-•	Null test predicate
-•	PATH value type
+-	Orderedness
+-	Return type
+-	Correct GQL status codes
+-	Unicode validation
+-	CALL inline procedure statement
+-	FOR statement with index
+-	OPTIONAL MATCH statement
+-	Regular FOR statement
+-	NEXT
+-	UNION DISTINCT statement
+-	Disconnected path patterns
+-	Joined path patterns
+-	Unbounded graph pattern quantifiers
+-	ACYCLIC path mode
+-	SIMPLE path mode
+-	ALL SHORTEST path search
+-	ANY path search
+-	ANY SHORTEST path search
+-	Substring functions
+-	Unicode normalization functions
+-	Data conversion
+-	Scalar subqueries
+-	PROPERTIES function
+-	RANGE function
+-	Path value constructor
+-	Record constructor
+-	Enhanced numeric functions
+-	Logarithmic functions
+-	Trigonometric functions
+-	Path value concatenation
+-	Boolean strict disjunction
+-	Label test predicate
+-	Normalized predicate
+-	Source/destination predicate
+-	Value type predicate
+-	INT32 value type
+-	FLOAT32 value type
+-	RECORD value type
+-	UINT32 value type
+-	DURATION
+-	ZONED TIME value type
+-	DATE value type
+-	Parameter passing
+-	Undirected edges
+-	GQL-preamble
+-	Non-local pattern predicates
+-	Undirected edge patterns
+-	IS DIRECTED predicate
+-	REGEXP_CONTAINS predicate
+-	Dynamic parameter specification
+-	Session user
+-	ANY value type
+-	BYTES value type
+-	DECIMAL value type
+-	LOCAL DATETIME value type
+-	LOCAL TIME value type
+-	CALL named procedure statement
+-	ORDER BY with explict NULL ordering
+-	Tabular FOR statement
+-	EXCEPT ALL statement
+-	EXCEPT DISTINCT statement
+-	INTERSECT ALL statement
+-	INTERSECT DISTINCT statement
+-	OTHERWISE statement
+-	Wildcards
+-	Relaxed topological consistency
+-	PERCENTILE_CONT agg. function
+-	PERCENTILE_DISC agg. function.
+-	PRODUCT agg. function
+-	STDDEV_POP agg. function
+-	STDDEV_SAMP agg. function
+-	Byte string concatenation
+-	Byte string TRIM function
+-	Simple TRIM function with TRIM specification
+-	Multi-character TRIM function
+-	Byte string length function
+-	CARDINALITY
+-	ALL_DIFFERENT predicate
+-	IS DISTINCT predicate
+-	SAME predicate
+
 
 We are still working on conformance to GQL standards for the following:
 
