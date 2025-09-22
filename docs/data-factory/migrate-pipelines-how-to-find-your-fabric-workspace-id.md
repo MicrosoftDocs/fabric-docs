@@ -1,6 +1,6 @@
 ---
-title: Find your Microsoft Fabric workspace ID
-description: This article outlines the stpes to find you Fabric Workspace ID.
+title: Find your Microsoft Fabric Workspace ID
+description: This article outlines the steps to find you Fabric Workspace ID.
 author: ssindhub
 ms.author: ssrinivasara
 ms.reviewer: whhender
