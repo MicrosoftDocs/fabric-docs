@@ -6,7 +6,8 @@ ms.author: abnarain
 author: abnarain
 ms.topic: how-to
 ms.custom: airflows
-ms.date: 05/24/2024
+ms.date: 09/08/2025
+ai-usage: ai-assisted
 ---
 
 # Transform data using dbt
@@ -14,45 +15,47 @@ ms.date: 05/24/2024
 > [!NOTE]
 > Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
-[dbt(Data Build Tool)](https://www.getdbt.com/product/what-is-dbt) is an open-source command-line interface (CLI) that simplifies data transformation and modeling within data warehouses by managing complex SQL code in a structured, maintainable way. It enables data teams to create reliable, testable transformations at the core of their analytical pipelines.
+[dbt (Data Build Tool)](https://www.getdbt.com/product/what-is-dbt) is an open-source command-line interface (CLI) that helps you transform and model data in data warehouses. It manages complex SQL code in a structured, maintainable way, so data teams can create reliable, testable transformations for their analytical pipelines.
 
-When paired with Apache Airflow, dbt's transformation capabilities are enhanced by Airflow's scheduling, orchestration, and task management features. This combined approach, using dbt's transformation expertise alongside Airflow's workflow management, delivers efficient and robust data pipelines, ultimately leading to faster and more insightful data-driven decisions.
+When you combine dbt with Apache Airflow, you get the best of both worlds. dbt handles the transformations while Airflow manages scheduling, orchestration, and task management. This approach creates efficient and robust pipelines that lead to faster, more insightful data-driven decisions.
 
-This tutorial illustrates how to create an Apache Airflow DAG that uses dbt to transform data stored in the Microsoft Fabric Data Warehouse.
+This tutorial shows you how to create an Apache Airflow DAG that uses dbt to transform data stored in Microsoft Fabric Data Warehouse.
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+Before you begin, complete these prerequisites:
 
 - [Create the Service Principal](/entra/identity-platform/howto-create-service-principal-portal). Add the service principal as the `Contributor` in the workspace where you create data warehouse.
 
-- If you don't have one, [Create a Fabric warehouse](../data-warehouse/create-warehouse.md). Ingest the sample data into the warehouse using data pipeline. For this tutorial, we use the <strong>NYC Taxi-Green</strong> sample.
+- If you don't have one, [Create a Fabric warehouse](../data-warehouse/create-warehouse.md). Ingest the sample data into the warehouse using a pipeline. For this tutorial, we use the **NYC Taxi-Green** sample.
 
 - [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
 
-## Transform the data stored in Fabric warehouse using dbt
+## Transform data in Fabric warehouse using dbt
 
-This section walks you through the following steps:
+Follow these steps to set up your dbt transformation:
 
-1. [Specify the requirements.](#specify-the-requirements)
-2. [Create a dbt project in the Fabric managed storage provided by the Apache Airflow job.](#create-a-dbt-project-in-the-fabric-managed-storage-provided-by-the-apache-airflow-job).
-3. [Create an Apache Airflow DAG to orchestrate dbt jobs](#create-an-apache-airflow-dag-to-orchestrate-dbt-jobs)
+1. [Specify the requirements](#specify-the-requirements)
+1. [Create a dbt project in the Fabric managed storage provided by the Apache Airflow job](#create-a-dbt-project-in-the-fabric-managed-storage-provided-by-the-apache-airflow-job)
+1. [Create an Apache Airflow DAG for orchestration](#create-an-apache-airflow-dag-for-orchestration)
 
-### [Specify the requirements](#specify-the-requirements)
+### Specify the requirements
 
-Create a file `requirements.txt` in the `dags` folder. Add the following packages as Apache Airflow requirements.
+1. Create a file called `requirements.txt` in the `dags` folder.
 
-- [astronomer-cosmos](https://www.astronomer.io/cosmos/): This package is used to run your dbt core projects as Apache Airflow dags and Task groups.
-- [dbt-fabric](https://pypi.org/project/dbt-fabric/): This package is used to create dbt project, which can then be deployed to a [Fabric Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup)
+1. Add the following packages as Apache Airflow requirements:
 
-  ```bash
-  astronomer-cosmos==1.10.1
-  dbt-fabric==1.9.5   
-  ```
+   - [astronomer-cosmos](https://www.astronomer.io/cosmos/): This package runs your dbt core projects as Apache Airflow dags and Task groups.
+   - [dbt-fabric](https://pypi.org/project/dbt-fabric/): This package creates dbt projects that you can deploy to a [Fabric Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup).
 
-### [Create a dbt project in the Fabric managed storage provided by the Apache Airflow job.](#create-a-dbt-project-in-the-fabric-managed-storage-provided-by-the-apache-airflow-job)
+   ```bash
+   astronomer-cosmos==1.10.1
+   dbt-fabric==1.9.5   
+   ```
 
-1. In this section, we create a sample dbt project in the Apache Airflow Job for the dataset `nyc_taxi_green` with the following directory structure.
+### Create a dbt project in the Fabric managed storage provided by the Apache Airflow job
+
+1. Create a sample dbt project in the Apache Airflow Job for the dataset `nyc_taxi_green` with this directory structure:
 
    ```bash
       dags
@@ -65,11 +68,10 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
       |  |-- target
    ```
 
-2. Create the folder named `nyc_taxi_green` in the `dags` folder with `profiles.yml` file. This folder contains all the files required for dbt project.
-   :::image type="content" source="media/apache-airflow-jobs/dbt-profiles.png" lightbox="media/apache-airflow-jobs/dbt-profiles.png" alt-text="Screenshot shows create files for the dbt project.":::
+1. Create a folder named `nyc_taxi_green` in the `dags` folder with a `profiles.yml` file. This folder contains all the files you need for your dbt project.
+   :::image type="content" source="media/apache-airflow-jobs/dbt-profiles.png" lightbox="media/apache-airflow-jobs/dbt-profiles.png" alt-text="Screenshot of creating files for the dbt project.":::
 
-3. Copy the following contents into the `profiles.yml`. This configuration file contains database connection details and profiles used by dbt.
-   Update the placeholder values and save the file.
+1. Copy the following contents into the `profiles.yml` file. This configuration file contains database connection details and profiles that dbt uses. Update the placeholder values and save the file.
 
    ```yaml
    config:
@@ -91,7 +93,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
          client_secret: <Client Secret of your service principal>
    ```
 
-4. Create the `dbt_project.yml` file and copy the following contents. This file specifies the project-level configuration.
+1. Create the `dbt_project.yml` file and copy the following contents. This file specifies the project-level configuration.
 
    ```yaml
    name: "nyc_taxi_green"
@@ -120,7 +122,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
        materialized: table
    ```
 
-5. Create the `models` folder in the `nyc_taxi_green` folder. For this tutorial, we create the sample model in the file named `nyc_trip_count.sql` that creates the table showing number of trips per day per vendor. Copy the following contents in the file.
+1. Create the `models` folder in the `nyc_taxi_green` folder. For this tutorial, create a sample model in a file named `nyc_trip_count.sql` that creates a table showing the number of trips per day per vendor. Copy the following contents into the file.
 
    ```SQL
       with new_york_taxis as (
@@ -143,51 +145,49 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
       select * from final
    ```
 
-   :::image type="content" source="media/apache-airflow-jobs/dbt-models.png" lightbox="media/apache-airflow-jobs/dbt-models.png" alt-text="Screenshot shows models for the dbt project.":::
+   :::image type="content" source="media/apache-airflow-jobs/dbt-models.png" lightbox="media/apache-airflow-jobs/dbt-models.png" alt-text="Screenshot of models for the dbt project.":::
 
-### [Create an Apache Airflow DAG to orchestrate dbt jobs](#create-an-apache-airflow-dag-to-orchestrate-dbt-jobs)
+### Create an Apache Airflow DAG for orchestration
 
-- Create the file named `my_cosmos_dag.py` in `dags` folder and paste the following contents in it.
+1. Create a file named `my_cosmos_dag.py` in the `dags` folder and paste the following contents into it:
 
-  ```python
-   import os
-   from pathlib import Path
-   from datetime import datetime
-   from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
-   from airflow import DAG
+   ```python
+    import os
+    from pathlib import Path
+    from datetime import datetime
+    from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
+    from airflow import DAG
 
-   DEFAULT_DBT_ROOT_PATH = Path(__file__).parent.parent / "dags" / "nyc_taxi_green"
-   DBT_ROOT_PATH = Path(os.getenv("DBT_ROOT_PATH", DEFAULT_DBT_ROOT_PATH))
-   profile_config = ProfileConfig(
-       profile_name="nyc_taxi_green",
-       target_name="fabric-dev",
-       profiles_yml_filepath=DBT_ROOT_PATH / "profiles.yml",
-   )
+    DEFAULT_DBT_ROOT_PATH = Path(__file__).parent.parent / "dags" / "nyc_taxi_green"
+    DBT_ROOT_PATH = Path(os.getenv("DBT_ROOT_PATH", DEFAULT_DBT_ROOT_PATH))
+    profile_config = ProfileConfig(
+        profile_name="nyc_taxi_green",
+        target_name="fabric-dev",
+        profiles_yml_filepath=DBT_ROOT_PATH / "profiles.yml",
+    )
 
-   dbt_fabric_dag = DbtDag(
-       project_config=ProjectConfig(DBT_ROOT_PATH,),
-       operator_args={"install_deps": True},
-       profile_config=profile_config,
-       schedule_interval="@daily",
-       start_date=datetime(2023, 9, 10),
-       catchup=False,
-       dag_id="dbt_fabric_dag",
-   )
-  ```
+    dbt_fabric_dag = DbtDag(
+        project_config=ProjectConfig(DBT_ROOT_PATH,),
+        operator_args={"install_deps": True},
+        profile_config=profile_config,
+        schedule_interval="@daily",
+        start_date=datetime(2023, 9, 10),
+        catchup=False,
+        dag_id="dbt_fabric_dag",
+    )
+   ```
 
 ## Run your DAG
 
 1. Run the DAG within Apache Airflow Job.
-   :::image type="content" source="media/apache-airflow-jobs/run-directed-acyclic-graph.png" lightbox="media/apache-airflow-jobs/run-directed-acyclic-graph.png" alt-text="Screenshot shows run dag.":::
+   :::image type="content" source="media/apache-airflow-jobs/run-directed-acyclic-graph.png" lightbox="media/apache-airflow-jobs/run-directed-acyclic-graph.png" alt-text="Screenshot of running the dag.":::
 
-1. To see your dag loaded in the Apache Airflow UI, Click on `Monitor in Apache Airflow.`
-   :::image type="content" source="media/apache-airflow-jobs/monitor-directed-acyclic-graph.png" lightbox="media/apache-airflow-jobs/monitor-directed-acyclic-graph.png" alt-text="Screenshot shows how to monitor dbt dag.":::
-   :::image type="content" source="media/apache-airflow-jobs/dag-run-success.png" lightbox="media/apache-airflow-jobs/dag-run-success.png" alt-text="Screenshot shows successful dag run.":::
+1. To see your dag loaded in the Apache Airflow UI, select **Monitor in Apache Airflow**.
+   :::image type="content" source="media/apache-airflow-jobs/monitor-directed-acyclic-graph.png" lightbox="media/apache-airflow-jobs/monitor-directed-acyclic-graph.png" alt-text="Screenshot of monitoring the dbt dag.":::
+   :::image type="content" source="media/apache-airflow-jobs/dag-run-success.png" lightbox="media/apache-airflow-jobs/dag-run-success.png" alt-text="Screenshot of a successful dag run.":::
 
-## Validate your data
-
-- After a successful run, to validate your data, you can see the new table named 'nyc_trip_count.sql' created in your Fabric data warehouse.
-  :::image type="content" source="media/apache-airflow-jobs/dbt-successful.png" lightbox="media/apache-airflow-jobs/dbt-successful.png" alt-text="Screenshot shows successful dbt dag.":::
+1. After a successful run, validate your data by checking the new table named 'nyc_trip_count.sql' in your Fabric data warehouse.
+   :::image type="content" source="media/apache-airflow-jobs/dbt-successful.png" lightbox="media/apache-airflow-jobs/dbt-successful.png" alt-text="Screenshot of a successful dbt dag.":::
 
 ## Related content
 

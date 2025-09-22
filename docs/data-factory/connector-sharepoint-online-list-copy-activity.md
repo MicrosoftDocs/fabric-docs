@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 # Configure SharePoint Online List in a copy activity
 
-This article shows you how to use the copy activity in a data pipeline to copy data from SharePoint Online List.
+This article shows you how to use the copy activity in a pipeline to copy data from SharePoint Online List.
 
 ## Prerequisites
 

@@ -3,7 +3,7 @@ title: "Microsoft Fabric Mirrored Databases From Azure Cosmos DB (Preview)"
 description: Learn about the mirrored databases from Azure Cosmos DB in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: anithaa, wiassaf
+ms.reviewer: anithaa, whhender
 ms.date: 05/07/2025
 ms.topic: overview
 ms.custom:

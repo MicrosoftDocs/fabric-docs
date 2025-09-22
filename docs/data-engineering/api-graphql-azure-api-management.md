@@ -1,9 +1,9 @@
 ---
 title: Integrate Azure API Management (APIM) with Fabric API for GraphQL
 description: This article contains information about API for GraphQL integration with APIM
-author: KoldBrewEd 
-ms.author: edlima
-ms.reviewer: 
+author: eric-urban
+ms.author: eur
+ms.reviewer: edlima
 ms.date: 06/05/2025
 ms.topic: conceptual
 ms.custom:
@@ -22,13 +22,13 @@ For this section, we assume that you have a GraphQL API in Fabric and APIM insta
 
 To get started retrieve your API endpoint from the Fabric portal by going in your GraphQL item and clicking on the **Copy endpoint** button in the ribbon. You will also need to save your GraphQL schema to a file, which you can accomplish by clicking on the **Export schema** button and saving it to a file in your local device:
 
-![Screenshot of API for GraphQL ribbon.](media/api-graphql-apim/api-graphql-apim-ribbon.png)
+:::image type="content" source="media/api-graphql-apim/api-graphql-apim-ribbon.png" alt-text="Screenshot of API for GraphQL ribbon." lightbox="media/api-graphql-apim/api-graphql-apim-ribbon.png":::
 
 Now navigate to your API Management instance in the Azure portal and select **APIs** > **+ Add API**.
 
 Choose the GraphQL icon and, in the APIM **Create from GraphQL schema** screen, fill in the required fields such as Display name, Name, and GraphQL API endpoint. Select **Upload schema** and use the schema file you downloaded previously:
 
-[![Screenshot from APIM create from GraphQL schema screen.](media/api-graphql-apim/api-graphql-apim-create.png)](media/api-graphql-apim/api-graphql-apim-create.png)
+:::image type="content" source="media/api-graphql-apim/api-graphql-apim-create.png" alt-text="Screenshot from APIM create from GraphQL schema screen." lightbox="media/api-graphql-apim/api-graphql-apim-create.png":::
 
 ## Using managed identities with APIM and API for GraphQL in Fabric
 
@@ -36,7 +36,7 @@ Next, we need to configure a policy for authentication using a managed identity 
 
 Now we have a managed identity credential we can use for authentication, we need grant it permissions to the GraphQL item in Fabric. For the sake of simplicity, we add the managed identity (in this example, **apim-id**) as a member of the workspace where both the GraphQL API and its data source are located:
 
-![Screenshot of workspace permissions.](media/api-graphql-apim/api-graphql-apim-permissions.png)
+:::image type="content" source="media/api-graphql-apim/api-graphql-apim-permissions.png" alt-text="Screenshot of workspace permissions." lightbox="media/api-graphql-apim/api-graphql-apim-permissions.png":::
 
 If you prefer to enable access directly to the Fabric items such as the API itself and the data sources attached to the API such as a LakeHouse or SQL database, you need to grant the appropriate permissions for the managed identity on each item, especially in case they were attached to the API using Single Sign-On (SSO) authentication. You can find more information in the [permissions summary](get-started-api-graphql.md#permissions-summary).
 
@@ -58,7 +58,7 @@ Make sure to replace the client ID in the snippet above with your managed identi
 
 Now, back to the API, head to the **Test** tab and confirm you can issue queries and/or mutations to your Fabric data via GraphQL:
 
-[![Screenshot of successful test in the APIM portal.](media/api-graphql-apim/api-graphql-apim-test.png)](media/api-graphql-apim/api-graphql-apim-test.png)
+:::image type="content" source="media/api-graphql-apim/api-graphql-apim-test.png" alt-text="Screenshot of successful test in the APIM portal." lightbox="media/api-graphql-apim/api-graphql-apim-test.png":::
 
 Testing the successful connection between APIM and Fabric GraphQL
 
@@ -112,7 +112,7 @@ APIs and operations in API Management can be configured with response caching. R
 
 You can confirm the requests are getting cached by [tracing a GraphQL API query or mutation](/azure/api-management/api-management-howto-api-inspector#trace-a-call-in-the-portal) in the APIM portal: 
 
-[![Screenshot of cache hit in the APIM portal.](media/api-graphql-apim/api-graphql-apim-cache.png)](media/api-graphql-apim/api-graphql-apim-cache.png)
+:::image type="content" source="media/api-graphql-apim/api-graphql-apim-cache.png" alt-text="Screenshot of cache hit in the APIM portal." lightbox="media/api-graphql-apim/api-graphql-apim-cache.png":::
 
 For advanced caching scenarios, please refer to the [APIM documentation](/azure/api-management/api-management-howto-cache) on caching.
 

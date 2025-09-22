@@ -2,9 +2,9 @@
 title: Get Started with Materialized Lake Views in a Lakehouse
 description: Learn how to create your first materialized lake view in a lakehouse.
 ms.topic: quickstart
-author: abhishjain002 
-ms.author: abhishjain
-ms.reviewer: nijelsf
+author: eric-urban
+ms.author: eur
+ms.reviewer: abhishjain
 ms.date: 06/27/2025
 #customer intent: As a data engineer, I want to create materialized lake views in a lakehouse so that I can optimize query performance and manage data quality.
 ---

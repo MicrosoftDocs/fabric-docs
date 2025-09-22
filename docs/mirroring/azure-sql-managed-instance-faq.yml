@@ -1,15 +1,15 @@
 ### YamlMime:FAQ
 metadata:
-  title: "Frequently Asked Questions for Mirroring Azure SQL Managed Instance (Preview)"
-  description: This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric (Preview).
-  author: WilliamDAssafMSFT
-  ms.author: wiassaf
+  title: "Frequently Asked Questions for Mirroring Azure SQL Managed Instance"
+  description: This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric.
+  author: whhender
+  ms.author: whhender
   ms.reviewer: lazartimotic, jingwang, nzagorac 
   ms.service: fabric
   ms.subservice: data-warehouse
   ms.topic: faq
   ms.date: 08/11/2025
-title: "Frequently asked questions for Mirroring Azure SQL Managed Instance in Microsoft Fabric (Preview)"
+title: "Frequently asked questions for Mirroring Azure SQL Managed Instance in Microsoft Fabric"
 summary: |
   This article answers frequently asked questions about Mirroring Azure SQL Managed Instance in Microsoft Fabric.
 
@@ -155,4 +155,4 @@ additionalContent: |
 
   - [What is Mirroring in Fabric?](overview.md)
   - [Mirroring Azure SQL Managed Instance in Microsoft Fabric](azure-sql-managed-instance.md)
-  - [Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance (Preview)](azure-sql-managed-instance-troubleshoot.md)
+  - [Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance-troubleshoot.md)

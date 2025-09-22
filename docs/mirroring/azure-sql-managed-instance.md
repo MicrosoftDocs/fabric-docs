@@ -1,8 +1,8 @@
 ---
-title: "Microsoft Fabric Mirrored Databases From Azure SQL Managed Instance (Preview)"
+title: "Microsoft Fabric Mirrored Databases From Azure SQL Managed Instance"
 description: Learn about the mirrored databases from Azure SQL Managed Instance in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+author: whhender
+ms.author: whhender
 ms.reviewer: lazartimotic, jingwang, nzagorac
 ms.date: 05/08/2025
 ms.topic: conceptual
@@ -10,11 +10,11 @@ ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
 
-# Mirroring Azure SQL Managed Instance (Preview)
+# Mirroring Azure SQL Managed Instance
 
 [Mirroring in Fabric](../mirroring/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Azure SQL Managed Instance estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing SQL Managed Instance databases directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
-For a tutorial on configuring your Azure SQL Managed Instance for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-tutorial.md).
+For a tutorial on configuring your Azure SQL Managed Instance for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-tutorial.md).
 
 ## Why use Mirroring in Fabric?
 
@@ -60,16 +60,16 @@ The source Azure SQL Managed Instance can be either a single SQL managed instanc
 
 ## Pricing
 
-Fabric compute used to replicate your data into Fabric OneLake is free. Storage in OneLake is free of cost based the capacity size. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring) and [OneLake pricing for mirroring](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute usage for querying data via SQL, Power BI, or Spark is still charged based on the Fabric Capacity. 
+Fabric compute used to replicate your data into Fabric OneLake is free. Storage in OneLake is free of cost based the capacity size. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring) and [OneLake pricing for mirroring](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute usage for querying data via SQL, Power BI, or Spark is still charged based on the Fabric Capacity.
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-tutorial.md)
 
 ## Related content
 
-- [How to: Secure data Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-how-to-data-security.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-limitations.md)
+- [How to: Secure data Microsoft Fabric mirrored databases from Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-how-to-data-security.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-limitations.md)
 - [Monitor Fabric mirrored Managed Instance database replication](../mirroring/monitor.md)
-- [Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-troubleshoot.md)
+- [Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-troubleshoot.md)
