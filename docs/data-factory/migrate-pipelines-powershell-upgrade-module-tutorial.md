@@ -293,11 +293,11 @@ The **Pipeline** section has similar steps:
 
 ### What do these steps do?
 
-These `resolve` steps are instructions for you to insert the Fabric Connection ID into the Copy Activity’s **source** and **sink**.  
+These `resolve` steps are instructions for you to map your ADF Linked services to the activitie's **source** and **sink** with the corresponding Fabric Connection ID.
 
 ### Why does this happen?  
 
-The upgrader can’t know the Fabric resource ID for a connection or pipeline until those resources exist. So, it gives you the instructions on how to finish the exportable resources.  
+The upgrader can’t know the Fabric resource ID for a connection or pipeline until those resources exist. So, it provides a tip on how to create the necessary resources and fill out your resolution file.
 
 ## Now let's export the Fabric Pipeline (attempt 1)
 
@@ -309,7 +309,7 @@ The upgrader can’t know the Fabric resource ID for a connection or pipeline un
     Import-AdfFactory -SubscriptionId <your Subscription ID> -ResourceGroupName <your Resource Group Name> -FactoryName <your Data Factory Name> -PipelineName  "pipeline2" -AdfToken $adfSecureToken | ConvertTo-FabricResources | Export-FabricResources -Region <region> -Workspace <workspaceId> -Token $fabricSecureToken
     ```
 
-1. This fails. This time, the `Import | Convert | Export` command returned:
+1. This fails. This time, the `Import | Convert | Export` command returns something like:
 
     ```json
     {
