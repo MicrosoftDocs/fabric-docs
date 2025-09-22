@@ -209,14 +209,16 @@ items:
           href: event-streams/api-update-eventstream-definition.md
     - name: Security
       items:
-      - name: Use managed private endpoints
+      - name: Secure outbound via managed private endpoints
         href: event-streams/set-up-private-endpoint.md
+      - name: Secure inbound via tenant and workspace private links
+        href: event-streams/set-up-tenant-workspace-private-links.md
       - name: Authenticate an application using Entra ID
         href: event-streams/custom-endpoint-entra-id-auth.md
       - name: Authenticate with a managed identity
         href: event-streams/connect-using-managed-identity.md
       - name: Connect to streaming sources in private network 
-        href: event-streams/connect-connecots-in-virtual-network-on-premises.md        
+        href: event-streams/connect-connecots-in-virtual-network-on-premises.md
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
