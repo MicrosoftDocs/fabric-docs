@@ -46,7 +46,7 @@ To get the GUID for your Fabric connection to add to your **LinkedServiceToConne
 1. Open your Data Factory workspace in Fabric.
 1. Select the gear icon in the upper-right corner, then select **Manage connections and gateways**.
 
-    :::image type="content" source="media/migrate-pipeline-powershell-upgrade/workspace-settings.png" alt-text="Screenshot of the Manage connections and gateways.":::
+    :::image type="content" source="media/migrate-pipeline-powershell-upgrade/workspace-settings.png" alt-text="Screenshot of the Manage connections and gateways link under the settings menu.":::
 
 1. If the connection doesn't exist in Fabric yet, create a new one.
 
@@ -94,9 +94,9 @@ To get the GUID for your Fabric connection to add to your **LinkedServiceToConne
 
 If you plan to upgrade an ADF ExecutePipeline activity, add a **CredentialConnectionId** to your Resolutions.
 
-1. In your fabric workspace, select the gear icon in the upper-right corner and select **Manage connections and gateways**.
+1. In your Fabric workspace, select the gear icon in the upper-right corner and select **Manage connections and gateways**.
 
-    :::image type="content" source="media/migrate-pipeline-powershell-upgrade/workspace-settings.png" alt-text="Screenshot of the Manage connections and gateways.":::
+    :::image type="content" source="media/migrate-pipeline-powershell-upgrade/workspace-settings.png" alt-text="Screenshot of the Manage connections and gateways link under the settings menu.":::
 
 1. Go to the **Connections** tab and select **+ New** at the top of the screen:
 
@@ -149,7 +149,7 @@ In Azure Data Factory, Web and WebHook activities include the full URL. Fabric w
 
 1. Select the gear icon in the upper-right corner and select **Manage connections and gateways**.
 
-    :::image type="content" source="media/migrate-pipeline-powershell-upgrade/workspace-settings.png" alt-text="Screenshot of the Manage connections and gateways.":::
+    :::image type="content" source="media/migrate-pipeline-powershell-upgrade/workspace-settings.png" alt-text="Screenshot of the Manage connections and gateways link highlighed in the Settings menu.":::
 
 1. Go to the **Connections** tab and select **+ New**.
 
