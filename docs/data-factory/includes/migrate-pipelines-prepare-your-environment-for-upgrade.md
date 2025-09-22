@@ -1,10 +1,10 @@
 ---
-title: Preparing the environment for Fabric Pipeline Upgrade
+title: Prepare the Environment for Fabric Pipeline Upgrade
 description: Steps to prepare the environment for pipeline upgrade
 author: whhender
 ms.author: whhender
 ms.reviewer: ssrinivasara
-ms.topic: includ
+ms.topic: include
 ms.date: 09/16/2025
 ---
 
