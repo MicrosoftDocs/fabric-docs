@@ -3,7 +3,7 @@ title: "Direct Lake overview"
 description: "Learn about Direct Lake storage mode in Microsoft Fabric and when you should use it."
 author: JulCsc
 ms.author: juliacawthra
-ms.date: 04/25/2025
+ms.date: 09/22/2025
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -186,8 +186,7 @@ Operational guidance:
 - Apply least-privilege principles at both the source and workspace levels.
 - Test and validate behavior for both authentication modes—especially for SQL-based RLS and any cases that might trigger DirectQuery fallback—before production deployment.
 
-> [!NOTE]
-> Permission names and evaluation details can vary depending on OneLake configuration and SQL analytics endpoint behavior. Always validate requirements with your tenant admin and the lakehouse or warehouse owner.
+For more information, see [Integrate Direct Lake security](direct-lake-security-integration.md).
 
 ### Semantic model permissions
 
