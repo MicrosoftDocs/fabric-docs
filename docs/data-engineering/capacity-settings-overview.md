@@ -19,7 +19,7 @@ Microsoft Fabric capacity admins can now manage and govern their Data Engineerin
 
 From the Admin portal, navigate to the **Data Engineering/Science Settings** section and select a specific capacity as shown in the following animation:
 
-:::image type="content" source="media\capacity-settings\capacity-settings-without-user-defined-pools.gif" alt-text="A gif showing the  configuration of capacity settings for Data Engineering/Science.":::
+:::image type="content" source="media\capacity-settings\capacity-settings-without-user-defined-pools.gif" alt-text="A gif showing the  configuration of capacity settings for Data Engineering/Science." lightbox="media\capacity-settings\capacity-settings-without-user-defined-pools.gif":::
 
 ## Related content
 

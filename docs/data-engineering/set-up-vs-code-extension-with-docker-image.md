@@ -34,7 +34,7 @@ The following prerequisites should be met to use the Docker containers with the 
 1. The VS Code Remote Development extension starts building the Docker image and container. This may take a few minutes to complete.
 
 1. Once the container is up and running, the **Extensions** view will have a separate section for the extensions running in the container. You can see the **Fabric Data Engineering VS Code extension** running in the container. You can now start working with the extension as you would on your local machine.
-   :::image type="content" source="media\vscode\extension-list-with-dev-container.png" alt-text="Screenshot of extension list with Dev Container running.":::
+   :::image type="content" source="media\vscode\extension-list-with-dev-container.png" alt-text="Screenshot of extension list with Dev Container running." lightbox="media/vscode/extension-list-with-dev-container.png":::
 
 1. You can either create a new notebook or open an existing one to start running code cells. The notebook operates within a containerized environment, separate from your local machine. You can install other Python packages using the Conda package manager, which will only affect the container environment and not your local system. To check the current runtime environment, open a terminal in VS Code and run the command `cat /etc/os-release`. The output displays the OS version and other relevant information.
 

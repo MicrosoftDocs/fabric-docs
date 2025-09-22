@@ -60,7 +60,7 @@ def hello_fabric(name: str) -> str:
 
 You can view the user data functions item in the Fabric explorer in VS Code within the currently opened workspace.
 
-:::image type="content" source="..\media\user-data-functions-create-in-vs-code\fabric-explorer-local-folder-views.png" alt-text="Screenshot showing fabric explorer view and local folder view.":::
+:::image type="content" source="..\media\user-data-functions-create-in-vs-code\fabric-explorer-local-folder-views.png" alt-text="Screenshot showing fabric explorer view and local folder view." lightbox="..\media\user-data-functions-create-in-vs-code\fabric-explorer-local-folder-views.png":::
 
 All the functions in the Fabric workspace can be opened in the Explorer in VS Code to start editing. Choose the function you want to open, then select **Open in Explorer**. You can see connections, libraries, and all the functions written within the user data functions item.
 

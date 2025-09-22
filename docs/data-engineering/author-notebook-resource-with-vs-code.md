@@ -22,11 +22,11 @@ For information about the extension, including how to install it, see [What is t
 
 1. Select the **Open Notebook Folder** button to open the notebook folder in the VS Code Explorer. The notebook folder contains the notebook file and the resource folder, where you find all the resource files that you uploaded to the notebook resource.
 
-   :::image type="content" source="media\vscode\open-nb-folder.png" alt-text="Screenshot of open notebook folder in VS Code.":::
+   :::image type="content" source="media\vscode\open-nb-folder.png" alt-text="Screenshot of open notebook folder in VS Code." lightbox="media\vscode\open-nb-folder.png":::
 
 1. You can now edit the notebook file and the resource files. The resource files appear under the predefined **builtin** folder. If you need to create a new file or subfolder, you must create them under the **builtin** folder. (Any files or folders created outside the **builtin** folder aren't uploaded to the notebook resource.)
 
-   :::image type="content" source="media\vscode\nb-folder-sample.png" alt-text="Screenshot of notebook resource folder in VS Code.":::
+   :::image type="content" source="media\vscode\nb-folder-sample.png" alt-text="Screenshot of notebook resource folder in VS Code." lightbox="media\vscode\nb-folder-sample.png":::
 
 The previous screenshot shows a **localLib** folder created under the **builtin** folder. This folder contains a **util.py** file. You can import this file into the notebook file as a local module, as shown in the following sample code. Once imported, you can call the functions defined in the **util.py** file from within the notebook file.
 
@@ -39,17 +39,17 @@ util.func1()
 
 After you edit the notebook file and the resource files, you can upload the notebook resource to the remote workspace by selecting the **Publish Resource Folder** option. The upload process uploads all the files and subfolders under the **builtin** folder to the notebook resource. The upload process overwrites the version of the resource files in the remote workspace, including deleting the resource files that you deleted locally.
 
-:::image type="content" source="media\vscode\publish-nb-resource.png" alt-text="Screenshot of upload notebook resource in VS Code.":::
+:::image type="content" source="media\vscode\publish-nb-resource.png" alt-text="Screenshot of upload notebook resource in VS Code." lightbox="media\vscode\publish-nb-resource.png":::
 
 ## Download notebook resource files
 
 To download the notebook resource from the remote workspace, select the **Update Resource Folder** option. The download process downloads all the files and subfolders under the **builtin** folder to the local notebook folder. The download process overwrites the local version of the resource files. For any files that no longer exist in the remote workspace, the download process moves them to a **_backup** subfolder under its original parent folder.
 
-:::image type="content" source="media\vscode\update-nb-resource.png" alt-text="Screenshot of download notebook resource in VS Code.":::
+:::image type="content" source="media\vscode\update-nb-resource.png" alt-text="Screenshot of download notebook resource in VS Code." lightbox="media\vscode\update-nb-resource.png":::
 
 The following screenshot shows the **util.py** file moved to the **_backup** subfolder under the **localLib** folder because someone deleted it in the remote workspace.
 
-:::image type="content" source="media\vscode\update-nb-resource-sample.png" alt-text="Screenshot showing a deleted file moved into a backup subfolder.":::
+:::image type="content" source="media\vscode\update-nb-resource-sample.png" alt-text="Screenshot showing a deleted file moved into a backup subfolder." lightbox="media\vscode\update-nb-resource-sample.png":::
 
 ## Related content
 

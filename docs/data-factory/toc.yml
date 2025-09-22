@@ -847,6 +847,26 @@
     items:
       - name: Decide - Data movement strategy
         href: decision-guide-data-movement.md
+      - name: Copy job
+        items: 
+          - name: What is the Copy job in Data Factory?
+            href: what-is-copy-job.md
+          - name: Copy job activity
+            href: copy-job-activity.md
+          - name: Change data capture (CDC) in Copy job
+            href: cdc-copy-job.md
+          - name: CI/CD for Copy job
+            href: cicd-copy-job.md
+          - name: REST API Capabilities
+            href: copy-job-rest-api-capabilities.md
+          - name: Copy job with virtual network data gateway
+            href: copy-job-with-virtual-network-data-gateway.md
+          - name: Copy job tutorials
+            items: 
+              - name: How to create a Copy job
+                href: create-copy-job.md
+              - name: How to monitor a Copy job
+                href: monitor-copy-job.md
       - name: Copy activity
         href: copy-data-activity.md
         items:
@@ -876,24 +896,6 @@
                 href: tutorial-lakehouse-partition.md
               - name: Move data from Oracle to Fabric Lakehouse via pipeline and on-premises data gateway
                 href: tutorial-move-data-from-oracle-to-lakehouse-pipeline.md
-      - name: Copy job
-        items: 
-          - name: What is the Copy job in Data Factory?
-            href: what-is-copy-job.md
-          - name: How to create a Copy job
-            href: create-copy-job.md
-          - name: How to monitor a Copy job
-            href: monitor-copy-job.md
-          - name: Copy job activity
-            href: copy-job-activity.md
-          - name: Change data capture (CDC) in Copy job
-            href: cdc-copy-job.md
-          - name: CI/CD for Copy job
-            href: cicd-copy-job.md
-          - name: REST API Capabilities
-            href: copy-job-rest-api-capabilities.md
-          - name: Copy job with virtual network data gateway
-            href: copy-job-with-virtual-network-data-gateway.md
       - name: Mirroring
         items:
           - name: Mirroring overview
@@ -968,6 +970,8 @@
             href: dataflow-parameters.md
           - name: Variable libraries in Dataflow Gen2
             href: dataflow-gen2-variable-library-integration.md
+          - name: Dataflow Gen2 and deployment pipelines
+            href: dataflow-gen2-deployment-pipelines.md
           - name: Saving a draft of your dataflow
             href: dataflows-gen2-save-draft.md
           - name: Use cloud connections through gateways
