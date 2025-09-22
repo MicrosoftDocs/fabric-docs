@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: overview
 ms.custom:
-ms.date: 08/21/2025
+ms.date: 09/22/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -275,7 +275,7 @@ A virtual network data gateway must be used for every dataflow connector. The vi
    - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace.
 - You could run into Spark issues in the following regions when outbound access protection is enabled for the workspace: Mexico Central, Israel Central, and Spain Central.
 - Dataflows currently don't support using a Fabric Warehouse or Fabric Lakehouse in the same workspace as either a data source or an output destination.
-- Current limitations for Private Link with Eventhouse:
+- Current limitations for Private Link with an eventhouse:
    - Copilot features: Machine learning workloads might experience limited functionality due to a known regression.
    - Eventstream pull: Eventstream workloads don't currently support full polling functionality.
    - Fabric doesn't currently support Event Hub integration.
