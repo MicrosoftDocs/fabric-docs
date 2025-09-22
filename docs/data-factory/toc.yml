@@ -103,6 +103,16 @@
         href: migrate-pipelines-azure-data-factory-item.md 
       - name: Planning your migration from Azure Data Factory to Fabric
         href: migrate-planning-azure-data-factory.md
+      - name: Migrate pipelines with PowerShell
+        items: 
+        - name: Pipeline migration with PowerShell overview
+          href: migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md
+        - name: Tutorial PowerShell pipeline migration
+          href: migrate-pipelines-powershell-upgrade-module-tutorial.md
+        - name: Build your resolutions file
+          href: migrate-pipelines-how-to-add-connections-to-resolutions-file.md
+        - name: Find your Fabric workspace ID
+          href: migrate-pipelines-how-to-find-your-fabric-workspace-id.md
       - name: Activity Continuity
         href: activity-parity.md
       - name: Connector Continuity
