@@ -92,19 +92,19 @@ Usage is measured in minutes of CPU uptime. You can monitor your graph workload'
 | Fabric operation name | Azure billing meter | Unit of measure | Fabric CU consumption rate |
 |---|---|---|---|
 | Graph general operations | Graph capacity usage CU | Minute | 0.16667 CUs per minute |
-| Graph algorithm operations| Graph capacity usage CU | Minute | 0.26667 CUs per minute |
 | Graph cache storage | OneLakeCache | Per GB per month | - |
-| Graph standard storage | OneLakeStorage | Per GB per month | - |
 
 For more information on pricing and capacity units, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
 ## Region availability
 
-Graph in Microsoft Fabric is available in the following Azure regions:
+Graph in Microsoft Fabric is currently available in the following Azure regions:
 
 - East US 2
 - North Central US
 - West Europe
+
+If you would like to be notified when the service is available in your region, please fill out this [form](https://forms.office.com/r/zkFLe8M8gP).
 
 ## Related content
 
