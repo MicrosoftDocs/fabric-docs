@@ -47,7 +47,7 @@ You need **PowerShell 7.4.2** or later on your machine.
 
 ### Verify your installation
 
-1. Run this command to confirm the module loaded correctly:
+Run this command to confirm the module loaded correctly:
 
     ```PowerShell
     Get-Command -Module Microsoft.FabricPipelineUpgrade

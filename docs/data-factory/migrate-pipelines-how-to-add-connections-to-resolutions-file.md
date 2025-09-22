@@ -149,7 +149,7 @@ In Azure Data Factory, Web and WebHook activities include the full URL. Fabric w
 
 1. Select the gear icon in the upper-right corner and select **Manage connections and gateways**.
 
-    :::image type="content" source="media/migrate-pipeline-powershell-upgrade/workspace-settings.png" alt-text="Screenshot of the Manage connections and gateways link highlighed in the Settings menu.":::
+    :::image type="content" source="media/migrate-pipeline-powershell-upgrade/workspace-settings.png" alt-text="Screenshot of the Manage connections and gateways link highlighted in the Settings menu.":::
 
 1. Go to the **Connections** tab and select **+ New**.
 
