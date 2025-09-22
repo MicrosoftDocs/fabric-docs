@@ -27,6 +27,90 @@ Up to 10 graph instances are allowed per Fabric Workspace.
 
 ## GQL conformance
 
+As of Oct 1, 2025, we support GQL standards on the following:
+
+•	FILTER statement
+•	LET statement
+•	Basic linear statement chaining
+•	MATCH statement
+•	Simple RETURN statement
+•	Conjunction and Disjunction
+•	Negation
+•	Local pattern predicates
+•	Pattern property specifications
+•	Simple anonymous patterns
+•	Simple named edge patterns
+•	Path patterns
+•	Case mapping
+•	STRING_JOIN function
+•	COALESCE function
+•	Property reference
+•	Variable reference
+•	Approximate numbers
+•	Booleans
+•	Character strings with escaping
+•	Exact numbers
+•	Arithmetic operators
+•	Boolean conjunction
+•	Boolean disjunction
+•	Boolean negation
+•	STARTS WITH predicate
+•	Value comparison
+•	Value equality
+•	BOOL value type
+•	EDGE reference value type
+•	INT value type
+•	INT64 value type
+•	FLOAT value type
+•	FLOAT64 value type
+•	NODE reference value type
+•	STRING value type
+•	UINT value type
+•	UINT64 value type
+•	Character string concatenation
+•	COUNT agg. function
+•	MAX agg.function
+•	MIN agg. function
+•	OFFSET and LIMIT statements
+•	CREATE GRAPH statement
+•	Closed graph type support
+•	ORDER BY statement
+•	RETURN statement with GROUP BY
+•	RETURN statement with GROUP BY and slicing
+•	List indexing
+•	List value TRIM function
+•	Character string length function
+•	SIZE
+•	Collection membership
+•	Simple LIST value type
+•	Null type and empty type
+•	AVG agg. function
+•	COLLECT_LIST agg. function
+•	SUM agg. function
+•	CURRENT_DATETIME function
+•	ZONED DATETIME value type
+•	UNION ALL statement
+•	Bounded graph pattern quantifiers
+•	Group variables
+•	Horizontal aggregation
+•	LABELS function
+•	Basic GQL status codes
+•	Formatting and parsing of GQL values
+•	Statements with DISTINCT
+•	Grouping
+•	TRAIL path mode
+•	Abbreviated edge patterns
+•	Path binding
+•	Simple TRIM function
+•	EDGES function
+•	NODES function
+•	Null
+•	Path length function
+•	CONTAINS predicate
+•	ENDS WITH predicate
+•	Null test predicate
+•	PATH value type
+
 We are still working on conformance to GQL standards for the following:
 
 -	Orderedness
