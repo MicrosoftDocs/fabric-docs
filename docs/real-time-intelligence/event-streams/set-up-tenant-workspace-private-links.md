@@ -14,8 +14,8 @@ ms.search.form: fabric's private links
 Private Link is a network security feature of the Fabric platform that provides secure access for data traffic in Fabric. By integrating Eventstream with the Private Links, it enables secure, private connectivity between your data sources and Microsoft Fabric—without exposure to the public internet.
 
 Fabric supports private links at both the tenant level and the workspace level:
-* [Tenant-level private links](security/security-private-links-overview.md) provide network policy to the entire tenant.
-* [Workspace-level private links](security/security-workspace-level-private-links-overview.md) provide granular control, making it possible to restrict access to certain workspaces while allowing the rest of the workspaces to remain open for public access.
+* [Tenant-level private links](../../security/security-private-links-overview.md) provide network policy to the entire tenant.
+* [Workspace-level private links](../../security/security-workspace-level-private-links-overview.md) provide granular control, making it possible to restrict access to certain workspaces while allowing the rest of the workspaces to remain open for public access.
 
 ## Tenant private link
 
@@ -42,7 +42,7 @@ If **Azure Private Link** is **enabled** and **Block Public Internet Access** is
 * Traffic from the virtual network targeting endpoints and scenarios that don't support private links is transported through the public Internet, and is allowed by Fabric services.
 * If the virtual network is configured to block public Internet access, scenarios that don't support private links are blocked by the virtual network.
 
-To set up and use a tenant-level private link, see [Set up and use tenant-level private links](security/security-private-links-use.md)
+To set up and use a tenant-level private link, see [Set up and use tenant-level private links](../../security/security-private-links-use.md)
 
 ## Workspace Private Link
 
@@ -50,12 +50,12 @@ A workspace-level private link maps a workspace to a specific virtual network us
 
 The diagram demonstrates a typical Eventstream setup operating under Workspace Private Link.
 
-:::image type="content" source="media/tenant-and-workspace-private-link/workspace-private-link-scenario.png" alt-text="A screenshot of the Eventstream workspace private link architecture." lightbox="media/tenant-and-workspace-private-link/workspace-private-link-scenario.png":::
+:::image type="content" source="media/set-up-private-links/workspace-private-link-scenario.png" alt-text="A screenshot of the Eventstream workspace private link architecture." lightbox="media/set-up-private-links/workspace-private-link-scenario.png":::
 
 * Contoso App1 securely streams data to Eventstream via Private Links.
 * Contoso App2 is blocked from connecting because public access to the workspace is disabled.
 
-To set up and use a workspace-level private link, see [Set up and use workspace-level private links](security/security-workspace-level-private-links-set-up.md).
+To set up and use a workspace-level private link, see [Set up and use workspace-level private links](../../security/security-workspace-level-private-links-set-up.md).
 
 ## Supported scenarios
 
@@ -97,6 +97,6 @@ Currently, when tenant or workspace level private link is enabled, you can only 
 
 ## Related content
 
-* [Network security in Fabric](security/security-overview.md)
-* [Tenant-level private links](security/security-private-links-overview.md)
-* [Workspace-level private links](security/security-workspace-level-private-links-overview.md)
+* [Network security in Fabric](../../security/security-overview.md)
+* [Tenant-level private links](../../security/security-private-links-overview.md)
+* [Workspace-level private links](../../security/security-workspace-level-private-links-overview.md)
