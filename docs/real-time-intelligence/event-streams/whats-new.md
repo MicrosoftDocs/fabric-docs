@@ -30,11 +30,11 @@ Here are the latest features announced over the past year:
 - **New capabilities**
     - [Enhance data transformation with Multi-schema inference](process-events-with-multiple-schemas.md)
     - [Decode data with Confluent Schema Registry](add-source-confluent-kafka.md)
-    - [Create type-safe pipelines using Event schema registry in Eventstream](schema-sets/schema-registry-overview.md)
+    - [Create type-safe pipelines using Event schema registry in Eventstream](../schema-sets/schema-registry-overview.md)
 - **Public APIs**
-    - [Get Topology APIs](rest/api/fabric/eventstream/topology/get-eventstream-topology.md)
-    - [Pause Eventstream](rest/api/fabric/eventstream/topology/pause-eventstream.md)
-    - [Resume Eventstream](rest/api/fabric/eventstream/topology/resume-eventstream.md)
+    - [Get Topology APIs](rest/api/fabric/eventstream/topology/get-eventstream-topology)
+    - [Pause Eventstream](rest/api/fabric/eventstream/topology/pause-eventstream)
+    - [Resume Eventstream](rest/api/fabric/eventstream/topology/resume-eventstream)
 
 ## November 2024
 
