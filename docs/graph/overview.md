@@ -72,14 +72,13 @@ You can incorporate graph analytics into your existing workflows, eliminating th
 
 Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following table summarizes the permissions associated with each Microsoft Fabric workspace role's capability on graph models and QuerySet items.
 
-##### Graph models
+##### Graph Model
 | Capability | Admin | Member | Contributor | Viewer |
 |---|---|---|---|---|
-| Create or modify graph QuerySet item | ✔ | ✔ | ✔ | ✖ |
-| Delete QuerySet item | ✔ | ✔ | ✔ | ✖ |
-| View and read content of QuerySet item | ✔ | ✔ | ✔ | ✔ |
-| Connect to graph instance | ✔ | ✔ | ✔ | ✖ |
-| Share QuerySet | ✔ | ✔ | ✖ | ✖ |
+| Create or modify graph model | ✔ | ✔ | ✔ | ✖ |
+| Delete graph model | ✔ | ✔ | ✔ | ✖ |
+| View and read content of graph model | ✔ | ✔ | ✔ | ✔ |
+| Share graph model | ✔ | ✔ | ✖ | ✖ |
 
 ##### Graph QuerySet
 | Capability | Admin | Member | Contributor | Viewer |
@@ -87,6 +86,7 @@ Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabri
 | Create or modify graph QuerySet item | ✔ | ✔ | ✔ | ✖ |
 | Delete QuerySet item | ✔ | ✔ | ✔ | ✖ |
 | View and read content of QuerySet item | ✔ | ✔ | ✔ | ✔ |
+| Connect to graph instance | ✔ | ✔ | ✔ | ✖ |
 | Share QuerySet | ✔ | ✔ | ✖ | ✖ |
 
 > [!NOTE]
