@@ -1,6 +1,6 @@
 ---
 title: Learn about editing semantic models in Direct Lake storage mode in the web
-description: Describes using Power BI web modeling to edit semantic models in Power BI Desktop.
+description: Describes using Power BI web modeling to edit semantic models in Power BI web modeling.
 author: datazoems
 ms.author: zoedouglas
 ms.reviewer: ''
@@ -16,16 +16,23 @@ LocalizationGroup: Admin
 
 | Scenario | Direct Lake on OneLake | Direct Lake on SQL |
 |:-----------|:------------|:  ------------|
-| Creating in the web       | Not yet available       | Select **New semantic model** from Lakehouse, SQL analytics endpoints, or Warehouses.       |
-| Editing in the web       | Select **Open data model** from the semantic model details page or context menu. There are some limitations during public preview | Select **Open data model** from the semantic model details page or context menu.        |
+| Creating in the web       | Select **Create** in the left navigation, then **OneLake catalog**. Select **New semantic model** from Lakehouse. Select **OneLake catalog** from web modeling. Select **New item** from a workspace and choosing **Semantic model**, then **OneLake catalog** | Select **New semantic model** from SQL analytics endpoints or Warehouses.       |
+| Editing in the web       | Select **Open data model** from the semantic model details page or context menu. | Select **Open data model** from the semantic model details page or context menu.        |
 
 **Edit in Desktop** is available when web modeling to continue [live editing any Direct Lake semantic model in Power BI Desktop](direct-lake-power-bi-desktop.md). 
 
-## Create a semantic model in Direct Lake mode
+## Create a semantic model with Direct Lake tables
 
-To create a semantic model with Direct Lake on SQL tables, take the following steps.
+To create a semantic model with **Direct Lake on OneLake tables**, take the following steps.
 
-1.	Open the Lakehouse and select **New semantic model**. For SQL analytics endpoint or warehouse, go to **Reporting** and then select **New semantic model**.
+1. Select **Create** from the left navigation bar, then select **OneLake catalog** and choose a Fabric item. Alternatively, open the Lakehouse and select **New semantic model**.
+2.	Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press **OK**.
+   
+The semantic model is created and now you are live editing the modeling in the browser.
+
+To create a semantic model with **Direct Lake on SQL tables**, take the following steps.
+
+1.	Open the SQL analytics endpoint or warehouse, go to **Reporting** and then select **New semantic model**.
 2.	Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press **OK**.
    
 The semantic model is created and now you are live editing the modeling in the browser.
@@ -33,7 +40,7 @@ The semantic model is created and now you are live editing the modeling in the b
 > [!NOTE]
 > Check your pop-up blocker if web modeling doesn’t appear after clicking OK.
 
-Semantic models with Direct Lake tables created in the web  use Direct Lake on SQL storage mode. The differences between Direct Lake on OneLake and Direct Lake on SQL are explained in the [Overview](direct-lake-overview.md).
+The differences between Direct Lake on OneLake and Direct Lake on SQL are explained in the [Overview](direct-lake-overview.md).
 
 ## Edit a semantic model in Direct Lake mode
 
