@@ -293,7 +293,7 @@ The **Pipeline** section has similar steps:
 
 ### What do these steps do?
 
-These `resolve` steps are instructions for you to map your ADF Linked services to the activitie's **source** and **sink** with the corresponding Fabric Connection ID.
+These `resolve` steps are instructions for you to map your ADF Linked services to the activities' **source** and **sink** with the corresponding Fabric Connection ID.
 
 ### Why does this happen?  
 
