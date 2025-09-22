@@ -10,7 +10,7 @@ ms.custom: fabric-cat
 
 # Direct Lake overview
 
-Direct Lake is a storage mode option for tables in a Power BI semantic model that's stored in a Microsoft Fabric workspace. It's optimized for large volumes of data that can be quickly loaded into memory from [Delta tables](../data-engineering/lakehouse-and-delta-tables.md) stored in [OneLake](../onelake/onelake-overview.md)—the single store for all analytics data. Once loaded into memory, the semantic model enables high performance interactive analysis.
+Direct Lake is a table storage mode option in a Power BI semantic model that's stored in a Microsoft Fabric workspace. It's optimized for large volumes of data that can be quickly loaded into memory from [Delta tables](../data-engineering/lakehouse-and-delta-tables.md) stored in [OneLake](../onelake/onelake-overview.md)—the single store for all analytics data. Once loaded into memory, the semantic model enables high performance interactive analysis.
 
 :::image type="content" source="media/direct-lake-overview/direct-lake-overview.svg" alt-text="Diagram shows a Direct Lake semantic model and how it connects to Delta tables in OneLake as described in the previous paragraphs." border="false":::
 
@@ -30,8 +30,10 @@ Direct Lake storage mode offers the following key benefits:
 The primary use case for Direct Lake storage mode is typically for IT-driven analytics projects that use lake-centric architectures. In such scenarios, you have, or expect to accumulate, large volumes of data in OneLake. The fast loading of that data into memory, frequent and fast refresh operations, efficient use of capacity resources, and fast query performance are all important for this use case.
 
 > [!NOTE]
-> Import and DirectQuery semantic models are still relevant in Fabric, and they're the right choice of semantic model for some scenarios. For example, Import storage mode often works well for a self-service analyst who needs the freedom and agility to act quickly, and without dependency on IT to add new data elements.
+> Import and DirectQuery tables in semantic models are still relevant in Fabric, and they're the right choice of semantic model for some scenarios. For example, Import storage mode often works well for a self-service analyst who needs the freedom and agility to act quickly, and without dependency on IT to add new data elements.
 >
+> A semantic model with import tables and Direct Lake tables offers flexiblity with scale needed for many BI scenarios too.
+> 
 > Also, [OneLake integration](/power-bi/enterprise/onelake-integration-overview) automatically writes data for tables in Import storage mode to [Delta tables](/azure/databricks/introduction/delta-comparison) in OneLake without involving any migration effort, which lets you realize many of the benefits of Fabric that are made available to Import semantic model users, such as integration with lakehouses through shortcuts, SQL queries, notebooks, and more. We recommend this option as a quick way to reap the benefits of Fabric without necessarily or immediately redesigning your existing data warehouse and/or analytics system.
 
 Direct Lake depends on data preparation being done in the data lake. Data preparation can be done by using various tools, such as Spark jobs for Fabric lakehouses, T-SQL DML statements for Fabric warehouses, dataflows, pipelines, and others, which helps ensure data preparation logic is performed upstream in the architecture to maximize reusability. However, if the semantic model author doesn't have the ability to modify the source item, for example if a self-service analyst doesn't have write permissions on a lakehouse that is managed by IT, then augmenting the model with Import storage mode tables might be a good choice, since Import mode supports data preparation by using Power Query, which is defined as part of semantic model.
@@ -47,7 +49,7 @@ Be sure to consider your current [Fabric capacity license](../enterprise/license
 This article assumes familiarity with the following concepts:
 
 * Users interact with visuals in Power BI reports, which generate DAX queries to the semantic model.
-* **Storage mode**: The semantic model processes the DAX queries differently depending on the storage mode employed. For example:
+* **Storage mode**: The semantic model processes the DAX queries differently depending on the table storage mode used. For example:
     * Import and Direct Lake storage modes use the VertiPaq engine to process DAX queries and return results to the Power BI report and user.
     * DirectQuery, on the other hand, translates DAX queries to the query syntax of the data source (typically a form of SQL) and federates them to the underlying database. Source database query processors are often not geared to BI-style, aggregated queries and therefore result in slower performance and reduced user interactivity when compared to Import and Direct Lake modes.
 
@@ -71,10 +73,10 @@ The following table compares Direct Lake storage mode to Import and DirectQuery 
 | Licensing | Fabric capacity subscription (SKUs) only |Fabric capacity subscription (SKUs) only |  Any Fabric or Power BI license (including Microsoft Fabric Free licenses) | Any Fabric or Power BI license (including Microsoft Fabric Free licenses) |
 | Data source | Tables of any Fabric data source backed by Delta tables | Only lakehouse or warehouse tables (or views) | Any connector | Any connector that supports DirectQuery mode |
 | Connect to SQL analytics endpoint views |No | Yes – but will automatically fall back to DirectQuery mode | Yes | Yes |
-| Composite models | No <sup>1</sup> |No <sup>1</sup> | Yes – can combine with DirectQuery or Dual storage mode tables | Yes – can combine with Import or Dual storage mode tables |
+| Composite models | Yes - can combine with import storage mode tables in Power BI web modeling and DirectQuery tables with XMLA tools. |No <sup>1</sup> | Yes – can combine with DirectQuery or Dual storage mode tables | Yes – can combine with Import or Dual storage mode tables |
 | Single sign-on (SSO) | Yes |Yes | Not applicable | Yes |
 | Calculated tables |Yes – but calculations can't refer to columns of tables in Direct Lake mode. |No – except [calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters), which implicitly create calculated tables | Yes | No – calculated tables use Import storage mode even when they refer to other tables in DirectQuery mode |
-| Calculated columns |Yes – but calculations can't refer to columns of tables in Direct Lake mode.| No  | Yes | Yes |
+| Calculated columns |No | No  | Yes | Yes |
 | Hybrid tables | No |No | Yes | Yes |
 | Model table partitions | No – however partitioning can be done at the Delta table level | No – however partitioning can be done at the Delta table level | Yes – either automatically created by incremental refresh, or [manually created](/power-bi/connect-data/incremental-refresh-xmla#partitions) by using the XMLA endpoint | No  |
 | User-defined aggregations | No |No  | Yes – Import aggregation tables on DirectQuery tables are supported | Yes |
@@ -253,7 +255,7 @@ Direct Lake semantic models present some considerations and limitations.
 |---------|---------|---------|
 |When the SQL analytics endpoint enforces row-level security, DAX queries are processed differently depending on the type of Direct Lake mode employed. <br><br>When Direct Lake on OneLake is employed, queries will succeed, and SQL based RLS is not applied. Direct Lake on OneLake requires the user has access to the files in OneLake, which doesn’t observe SQL based RLS. |Queries will succeed.         |Yes, unless fallback is disabled in which case queries will fail.         |
 |If a table in the semantic model is based on a (non-materialized) SQL view, DAX queries are processed differently depending on the type of Direct Lake mode employed.<br><br>Direct Lake on SQL endpoints will fallback to DirectQuery in this case.<br><br>It isn't supported to create a Direct Lake on OneLake table based on a non-materialized SQL view. You can instead use a lakehouse materialized view because Delta tables are created. Alternatively, use a different storage mode such as Import or DirectLake for tables based on non-materialized SQL views. |Not applicable         |Yes, unless fallback is disabled in which case queries will fail.         |
-|Composite modeling, which means Direct Lake semantic model tables can be mixed with tables in other storage modes, such as Import, DirectQuery, or Dual (except for special cases, including [calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters)).     |Supported, via XMLA only         |Not supported         |
+|Composite modeling, which means Direct Lake semantic model tables can be mixed with tables in other storage modes, such as Import, DirectQuery, or Dual (except for special cases, including [calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters)).     |Supported        |Not supported         |
 |Calculated columns and calculated tables that reference columns or tables in Direct Lake storage mode. [Calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters), which implicitly create calculated tables, and calculated tables that don't reference Direct Lake columns or tables are supported in all scenarios.     |Not supported         |Not supported         |
 |Direct Lake storage mode tables don't support complex Delta table column types. Binary and GUID semantic types are also unsupported. You must convert these data types into strings or other supported data types.     |Not supported         |Not supported         |
 |Table relationships require the data types of related columns to match.     |Yes |Yes|
@@ -271,14 +273,14 @@ Direct Lake semantic models present some considerations and limitations.
 |Power BI Direct Lake semantic models can be created and queried by Service Principals and Viewer role membership with Service Principals is supported, but the default Direct Lake semantic models on lakehouse/warehouse don't support this scenario.     |Yes         |Yes         |
 |Shortcuts in a lakehouse can be used as data sources for semantic model tables.     |Not supported during public preview         |Supported         |
 |Create Direct Lake models in personal workspaces (My Workspace).     |Not supported         |Not supported         |
-|Deployment pipeline rules to rebind data source.   |Not supported   |Supported   |
+|Deployment pipeline rules to rebind data source.   |Not supported directly - can create a parameter expression to use in the connection string.   |Supported   |
 
 
 - Analyze in Excel pivot tables (and other MDX clients) have the same limitations as DirectQuery with Direct Lake tables in the semantic model. Session-scoped MDX statements, such as named sets, calculated members, default members, etc. are not supported. Query-scoped MDX statements, such as the 'WITH' clause, are supported. Direct Lake table user-defined hierarchies are not supported. Import table user-defined hierarchies are supported even with Direct Lake tables in the semantic model.
 
-- Power BI Desktop can live edit a semantic model with Direct Lake tables only. [Calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters), which implicitly create calculated tables, and calculated tables that don't reference Direct Lake columns or tables can also be included.
+- Power BI Desktop can live edit a semantic model with Direct Lake tables and import tables. [Calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters), which implicitly create calculated tables, and calculated tables that don't reference Direct Lake columns or tables can also be included.
   
-- Power BI web modeling can open any semantic model, including Direct Lake tables with other storage mode tables. Edit tables and adding additional tables in Direct Lake or import is not yet supported for Direct Lake on OneLake. Edit tables is available for Direct Lake on SQL.
+- Power BI web modeling can open any semantic model, including Direct Lake tables with other storage mode tables.
 
 - DAX query view when live editing or live connected, and writing DAX queries in the web, are supported for Direct Lake on SQL, Direct Lake on OneLake, and true composite (Direct Lake on OneLake + import from any data source) semantic models.
 
