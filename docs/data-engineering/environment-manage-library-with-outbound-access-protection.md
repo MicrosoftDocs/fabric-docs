@@ -1,33 +1,35 @@
 ---
-title: Manage libraries with limited network access in Fabric
-description: Learn about adding libraries in Fabric with the network limitation.
+title: Managing libraries in environment secured by outbound access protection
+description: Learn how to add and manage libraries in Fabric when outbound network access is restricted.
 ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
 ms.date: 09/15/2025
-ms.search.form: Manage libraries when private links and DEP enabled.
+ms.search.form: Manage libraries when private links and OAP enabled.
 ---
 
-# Manage libraries with limited network access in Fabric
+# Managing libraries in environment secured by outbound access protection
 
-Microsoft Fabric allows admins to control and restrict outbound connections from workspace items to external resources. When outbound network security features are enabled, access to public repositories, like PyPI is blocked, which includes the ability to install public libraries or download dependencies required for custom packages.
+Microsoft Fabric allows admins to control and restrict outbound connections from workspace items to external resources. When outbound network security features are enabled, access to public repositories, like PyPI and conda, is blocked, which includes the ability to install public libraries or download dependencies required for custom packages.
 
 This article will cover how to install libraries from PyPI the when the outbound access protection is enabled for your workspace.
 
 ## Manage the packages as custom libraries (recommended)
 
-In an internet restricted environment, the service will not be able to connect to public repo to download additional customer libraries and its dependencies. We recommend you to **directly upload the packages and their dependencies as custom packages** in the environment.
+In an environment with restricted outbound access, the service will not be able to connect to public repo to download additional customer libraries and its dependencies. We recommend you to **directly upload the packages and their dependencies as custom packages** in the environment.
 
 ### Step 1: Pre-requisites
 
-To get started, you need to prepare your libraries specification as`requirement.txt`, a compute resource that can used to build a Python virtual environment, and the setup file for Fabric runtime.
+To get started, you need to prepare your libraries specification as`requirement.txt`, a compute resource that can be used to build a Python virtual environment, and the setup file for Fabric runtime.
 
 - Compute resources: Linux system, Windows Subsystem for Linux, or an [Azure VM](/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu)
 
 - Download the Fabric Runtime setup files from the [Fabric Runtime release note Github repo](https://github.com/microsoft/synapse-spark-runtime/tree/main/Fabric) with corresponding Runtime version.
 
 > [!IMPORTANT]
-> The Runtime setup file contains a few Microsoft hosted private libraries, which cannot be recognize. Make sure to remove any libraries with names containing 'synapse' from the YAML file.
+>
+> - The Runtime setup file contains a few Microsoft hosted private libraries, which cannot be recognized. Make sure to **remove them from the setup file**.
+> - **Libraries hosted by Microsoft**: "library-metadata-cooker", "mmlspark", "azureml-synapse", "notebookutils", "flt-python" "synapse-jupyter-notebook", "synapse-jupyter-proxy", "azure-synapse-ml-predict", "fsspec_wrapper", "horovod", "sqlanalyticsconnectorpy", "synapseml", "control-script", "impulse-python-handler", "chat-magics", "ds-copilot", "fabric-connection", "chat-magics-fabric", "dscopilot-installer", "sqlanalyticsfabricconnectorpy", "geoanalytics-fabric", "spark-mssql-connector-fabric35", "flaml", "semantic-link-sempy", "synapseml-*", "prose-pandas2pyspark", "prose-suggestions kqlmagiccustom"
 
 :::image type="content" source="media\environment-lm\outbound-access-protection-runtime-setup.png" alt-text="Screenshot that shows the example of Runtime setup file." lightbox="media\environment-lm\outbound-access-protection-runtime-setup.png":::
 
