@@ -13,11 +13,9 @@ ms.service: fabric
 
 While Graph in Microsoft Fabric is in preview, the service has certain limitations that users may not have expected. The following highlights some key limitations but does not constitute an exhaustive list. Please check back regularly for updates.
 
-## Graph size
+## Creating graph models
 
-Creating graphs with more than 500 million nodes and edges may result in unstable performance.
-
-## Data types
+### Data types
 
 Graph in Microsoft Fabric currently only exposes support for the following date types:
 
@@ -27,19 +25,42 @@ Graph in Microsoft Fabric currently only exposes support for the following date 
 - String
 - ZonedDateTime
 
-## Data sources
+### Data sources
 
 - OneLake parquet files are the only data sources currently supported.
 - Power BI semantic model support is under development.
 - LakeHouses with schema enabled is not supported.
 
-## Number of graph instances
+### Edge creation
+
+During graph modeling, different edge types should be named differently.
+
+### Graph creation time
+
+Once per week, a graph model will encounter a timeout if the graph creation or update takes longer than 20 minutes. Such an operation will be marked as failed. However, users may re-initiate graph creation or update.
+
+### Graph instance total number
 
 Up to 10 graph instances are allowed per Fabric Workspace.
 
-## Graph creation time
+### Size of graph
 
-Once per week, a graph model will encounter a timeout if the graph creation or update takes longer than 20 minutes. Such an operation will be marked as failed. However, users may re-initiate graph creation or update.
+Creating graphs with more than 500 million nodes and edges may result in unstable performance.
+
+## Querying
+
+### Number of hops in multi-hop queries
+
+Graph in Microsoft Fabric currently supports up to 8 hops on variable length patterns.
+
+### Size of results
+
+Aggregation performance may be unstable when results exceed 128 MB in size.
+Responses that are larger than 64 MB are currently truncated.
+
+### Timeout
+
+Queries taking more than 20 minutes will timeout.
 
 ## GQL conformance
 
