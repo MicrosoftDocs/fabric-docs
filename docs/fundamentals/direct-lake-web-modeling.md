@@ -16,8 +16,14 @@ LocalizationGroup: Admin
 
 | Scenario | Direct Lake on OneLake | Direct Lake on SQL |
 |:-----------|:------------|:  ------------|
-| Creating in the web       | Select **Create** in the left navigation, then **OneLake catalog**. Select **New semantic model** from Lakehouse. Select **OneLake catalog** from web modeling. Select **New item** from a workspace and choosing **Semantic model**, then **OneLake catalog** | Select **New semantic model** from SQL analytics endpoints or Warehouses.       |
-| Editing in the web       | Select **Open data model** from the semantic model details page or context menu. | Select **Open data model** from the semantic model details page or context menu.        |
+| Creating in the web       | 
+- Select **Create** in the left navigation, then **OneLake catalog**. 
+- Select **New semantic model** from Lakehouse.
+- Select **OneLake catalog** from web modeling. Select **New item** from a workspace and choosing **Semantic model**, then **OneLake catalog**    |
+- Select **New semantic model** from SQL analytics endpoints or Warehouses.       |
+| Editing in the web       |
+- Select **Open data model** from the semantic model details page or context menu.    |
+- Select **Open data model** from the semantic model details page or context menu.    |
 
 **Edit in Desktop** is available when web modeling to continue [live editing any Direct Lake semantic model in Power BI Desktop](direct-lake-power-bi-desktop.md). 
 
