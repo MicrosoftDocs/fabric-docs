@@ -13,9 +13,9 @@ ms.topic: concept-article
 
 Workspace Outbound Access Protection (OAP) is a security feature in Microsoft Fabric that enables workspace administrators to control and restrict outbound data connections from their workspaces. By configuring OAP, workspace admins can block outbound connections from the workspace and only allow connections to the destinations connected via managed private endpoints. Workspace
 admins can choose to create [Cross WS Managed private
-endpoints](https://learn.microsoft.com/en-us/fabric/security/security-cross-workspace-communication)
+endpoints](security-cross-workspace-communication.md)
 within Fabric or they can create [Managed Private
-Endpoints](https://learn.microsoft.com/en-us/fabric/security/security-managed-private-endpoints-overview#limitations-and-considerations)
+Endpoints](security-managed-private-endpoints-overview.md)
 to external destinations that support it.
 
 This article explains how to enable and manage OAP for Data Factory artifacts, including Data Flows Gen2 (with CICD), Data Pipelines, and CopyJobs, which rely on Data Connection policies for allowlisting outbound connections to allowed targets. It outlines supported scenarios and provides guidance on best practices and limitations.
@@ -25,7 +25,7 @@ This article explains how to enable and manage OAP for Data Factory artifacts, i
 **Step 1**: OAP is turned On (all outbound connections blocked for
 Dataflow)
 
-:::image type="content" source="media/ws-oap-for-di-private-preview/image1.png" alt-text="":::
+:::image type="content" source="media/workspace-outbound-access-protection-data-factory/image1.png" alt-text="Diagram showing the OAP configuration process for Dataflow.":::
 
 **Step 2**: Workspace Admin Configures Data connection policies under
 OAP to
@@ -34,12 +34,12 @@ OAP to
 
 - ADLS G2 Storage: **Allowed**
 
-:::image type="content" source="media/ws-oap-for-di-private-preview/image2.png" alt-text="":::
+:::image type="content" source="media/workspace-outbound-access-protection-data-factory/image2.png" alt-text="Screenshot of data connection policies configuration showing ADLS G2 Storage allowed. ":::
 
 **Step 3**: Dataflow is now able to connect with SQL sever and ADLS G2
 storage, all other connections still remain blocked
 
-:::image type="content" source="media/ws-oap-for-di-private-preview/image3.png" alt-text="":::
+:::image type="content" source="media/workspace-outbound-access-protection-data-factory/image3.png" alt-text="Screenshot of Dataflow connections showing allowed connections to SQL Server and ADLS G2 Storage.":::
 
 ## Setup
 
@@ -53,7 +53,7 @@ storage, all other connections still remain blocked
 - Workspace needs to use Fabric capacity. Trial is not supported.
 
 - Ensure the [Workspace OAP tenant
-  switch](https://learn.microsoft.com/en-us/fabric/security/workspace-outbound-access-protection-tenant-setting)
+  switch](workspace-outbound-access-protection-tenant-setting.md)
   is enabled
 
 - You can only configure OAP on the workspace if you are the workspace
@@ -71,12 +71,12 @@ storage, all other connections still remain blocked
 1.  Go to Workspace->Workspace setting->Network Security, and turn on
     Block Outbound Access under Outbound access protection
 
-:::image type="content" source="media/ws-oap-for-di-private-preview/image4.png" alt-text="Screenshot of workspace network security settings showing the Block Outbound Access toggle enabled.":::
+:::image type="content" source="media/workspace-outbound-access-protection-data-factory/image4.png" alt-text="Screenshot of workspace network security settings showing the Block Outbound Access toggle enabled.":::
 
 1.  Add the data connection rules to allow/block different types of
     sources that the workspace can connect to.
 
-:::image type="content" source="media/ws-oap-for-di-private-preview/image5.png" alt-text="Screenshot of data connection rules configuration listing allowed and blocked connection types.":::
+:::image type="content" source="media/workspace-outbound-access-protection-data-factory/image5.png" alt-text="Screenshot of data connection rules configuration listing allowed and blocked connection types.":::
 
 1.  You can also add Gateway connection policies to allow/block certain
     gateways.
@@ -128,7 +128,7 @@ PUT https://api.fabric.microsoft.com/v1/workspaces/{workspace-id}/networking/com
 
 \<TBA\>
 
-# 3. Supported List of artifacts
+# 3. Supported artifacts
 
 You can use WS OAP only for the following artifacts:
 
@@ -152,7 +152,7 @@ You can use WS OAP only for the following artifacts:
 
 #### Non-Fabric data sources
 
-### Fabric connectors with workspace allowlist (Lakehouse, Warehouse, Fabric SQL DB, and Dataflows)
+#### Fabric connectors with workspace allowlist (Lakehouse, Warehouse, Fabric SQL DB, and Dataflows)
 
 Some Fabric connectors have workspace-level granularity.
 Workspace admins select which destination workspace they want to allow for a connector.
@@ -164,7 +164,7 @@ Workspace admins select which destination workspace they want to allow for a con
 | A | B | Lakehouse | Connector blocked (only workspace B is allowed) | Connection is allowed only to lakehouses in workspace B |
 | A | B | Lakehouse | Connector blocked (only workspace C) | Connection to workspace B is blocked |
 
-### 4.1.2 Fabric connectors without granularity (all Fabric connectors except those in 4.1) (example: data pipeline triggering a notebook)
+#### 4.1.2 Fabric connectors without granularity (all Fabric connectors except those in 4.1) (example: data pipeline triggering a notebook)
 
 Some Fabric connectors don't have workspace-level granularity.
 For these connectors, the allowlist either allows all item types or blocks all item types.
@@ -174,9 +174,9 @@ For these connectors, the allowlist either allows all item types or blocks all i
 | A | Any (including A) | Notebook | Allowed | The data pipeline can connect to the notebook because it's within the workspace boundary |
 | A | Any | Notebook | Blocked | The data pipeline can't connect to the notebook because it's outside the workspace boundary |
 
-## 4.2 For non-Fabric data sources 
+### 4.2 For non-Fabric data sources 
 
-### 4.2.1: External connector with granular endpoints exception (for example, ADLS Gen2 storage)
+#### 4.2.1: External connector with granular endpoints exception (for example, ADLS Gen2 storage)
 
 Some external connectors have endpoint-level granularity, so
 workspace admins can select which destination endpoints act
@@ -188,18 +188,15 @@ as exceptions.
 | A | SQL Server 1 | SQL Server | Blocked at connector level with exception for SQL Server 1 | Connection is allowed to SQL Server 1 |
 | A | SQL Server 1 | SQL Server | Allowed at connector level | Connection is allowed to all SQL Server instances |
 
-### 4.2.2: External data source connectivity using granular endpoints exception
+#### 4.2.2: External data source connectivity using granular endpoints exception
 
 | Dataflow WS | Azure Cosmos DB destination | Connector Type | Connector Setting (Allowed/Blocked) | Result |
 |----|----|----|----|----|
 | A | Any | Azure Cosmos DB | Allowed | Dataflow can connect to any Azure Cosmos DB |
 | A | Any | Azure Cosmos DB | Blocked | Dataflow cannot connect to any Azure Cosmos DB |
 
-## 
 
-## 
-
-## 4.2 For VNet and on-premises data gateway connections
+### 4.2 For VNet and on-premises data gateway connections
 
 Allow list gateways to let dataflows use all data sources behind the gateway (all gateway connections are allowed).
 
@@ -210,9 +207,9 @@ Allow list gateways to let dataflows use all data sources behind the gateway (al
 | A | VNet/OPDG | VNet V1 | Blocked; only VNet V1 is an exception | Dataflow connects only to sources behind VNet V1 |
 | A | VNet/OPDG | OPDG O1 | Blocked; only OPDG O1 is an exception | Dataflow connects only to sources behind OPDG O1 |
 
-## 4.4 Mirrored DBs
+### 4.4 Mirrored DBs
 
-# 5. Limitations and Considerations
+## 5. Limitations and Considerations
 
 - Only the following Fabric Connector support workspace level
   granularity:
