@@ -101,10 +101,15 @@ items:
             href: workspace-outbound-access-protection-tenant-setting.md
           - name: Set up workspace outbound access protection
             href: workspace-outbound-access-protection-set-up.md
-          - name: Workspace outbound access protection scenarios
-            href: workspace-outbound-access-protection-scenarios.md
-          - name: Workspace outbound access protection for data engineering
-            href: workspace-outbound-access-protection-data-engineering.md
+          - name: Scenarios by Fabric workload
+            items: 
+              - name: Data Engineering
+                href: workspace-outbound-access-protection-data-engineering.md
+                items:
+                - name: Supported item types
+                  href: workspace-outbound-access-protection-scenarios.md
+              - name: Data Factory
+                href: workspace-outbound-access-protection-data-factory.md
       - name: Trusted workspace access
         href: security-trusted-workspace-access.md
 - name: Data security

@@ -36,6 +36,14 @@ Workspace level outbound access protection makes it possible to control what the
 
 * Multiple workspaces can connect to the same source by setting up managed private endpoints. For example, in the diagram, both Workspace A and Workspace B can connect to the SQL server because managed private endpoints are set up for each of them for this SQL server.
 
+## Managed private endpoints allowlist    
+
+To enhance security, admins can configure a allowlist for managed private endpoints. This allowlist specifies which managed private endpoints are permitted to connect to the workspace. By default, all managed private endpoints are blocked until they are explicitly allowed through the allowlist.
+
+## Connectors allowlist
+
+Admins can also configure a allowlist for connectors. This allowlist specifies which connectors are permitted to be used within the workspace. By default, all connectors are blocked until they are explicitly allowed through the allowlist.
+
 ## Supported item types
 
 Workspace outbound access protection works with the following item types.

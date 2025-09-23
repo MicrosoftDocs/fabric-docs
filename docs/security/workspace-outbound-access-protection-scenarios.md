@@ -9,7 +9,14 @@ ms.date: 08/20/2025
 
 #customer intent: As a security administrator, I want to understand workspace outbound access protection scenarios so that I can configure secure data access and movement between workspaces and external sources.
 ---
-
+> [!NOTE]
+> **Alternative article titles:**
+>
+> - Workspace outbound access protection by Fabric item type
+> - How outbound access protection affects shortcuts, data copy, and notebooks
+> - Workspace outbound access protection: impact on Fabric resources
+> - Outbound access protection: scenarios and resource types
+> - Understanding outbound access protection for Fabric workspaces
 # Workspace outbound access protection scenarios (preview)
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from your workspace to other workspaces and external sources. This article outlines common scenarios to illustrate how outbound access protection affects shortcuts, data copy operations, and notebook connectivity.
