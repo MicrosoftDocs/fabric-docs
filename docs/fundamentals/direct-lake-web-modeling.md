@@ -46,10 +46,10 @@ The differences between Direct Lake on OneLake and Direct Lake on SQL are explai
 
 To edit a semantic model with Direct Lake tables later, take the following steps.
 
-1.	Navigate to the semantic model in the Fabric Portal. **Home**, **Onelake catalog**, and **search** at the top of the page are available to help you find it.
+1.	Navigate to the semantic model in the Fabric Portal. **Home**, **OneLake catalog**, and **search** at the top of the page are available to help you find it.
 2.	Select the semantic model to open the details page, or use the context-menu, then select **Open data model**.
 
-Now you are live editing the semantic model in the web. The model opens by default in **viewing mode** to avoid accidental edits. Change to **editing mode** in the top right-hand corner of the window. **Edit in Desktop** is also available to change to [live edit in Power BI Desktop](direct-lake-power-bi-desktop.md).
+Now you're live editing the semantic model in the web. The model opens by default in **viewing mode** to avoid accidental edits. Change to **editing mode** in the top right-hand corner of the window. **Edit in Desktop** is also available to change to [live edit in Power BI Desktop](direct-lake-power-bi-desktop.md).
 
 :::image type="content" source="media/direct-lake-web-modeling/web-modeling-mode.png" alt-text="Screenshot of edit in desktop from web modeling option." lightbox="media/direct-lake-web-modeling/web-modeling-mode.png":::
 
