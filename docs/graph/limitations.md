@@ -1,5 +1,5 @@
 ---
-title: Known limitations
+title: Limitations
 description: Functional and performance limitations while the service is in preview.
 ms.topic: reference
 ms.date: 10/01/2025
@@ -9,7 +9,7 @@ ms.reviewer: eur
 ms.service: fabric
 #ms.subservice: graph
 ---
-# Known limitations
+# Limitations
 
 ## Exposed data types
 
