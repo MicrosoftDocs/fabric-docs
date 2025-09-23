@@ -34,14 +34,14 @@ To create a semantic model with **Direct Lake on OneLake tables**, take the foll
 1. Select **Create** from the left navigation bar, then select **OneLake catalog** and choose a Fabric item. Alternatively, open the Lakehouse and select **New semantic model**.
 2.	Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press **OK**.
    
-The semantic model is created and now you are live editing the modeling in the browser.
+The semantic model is created and now you're live editing the modeling in the browser.
 
 To create a semantic model with **Direct Lake on SQL tables**, take the following steps.
 
 1.	Open the SQL analytics endpoint or warehouse, go to **Reporting** and then select **New semantic model**.
 2.	Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press **OK**.
    
-The semantic model is created and now you are live editing the modeling in the browser.
+The semantic model is created and now you're live editing the modeling in the browser.
 
 > [!NOTE]
 > Check your pop-up blocker if web modeling doesn’t appear after clicking OK.
