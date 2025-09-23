@@ -70,6 +70,11 @@ For more information, see [Serve real-time predictions with ML model endpoints](
 
 When this feature is enabled, users who are signed in to Fabric in your org can receive notifications in the Fabric UI about upcoming conferences that feature Microsoft Fabric. This feature has no impact on billing or security. The setting is enabled by default.
 
+## Users can create Maps (preview)
+
+Users can create Map Items to analyze live geospatial data with interactive, real-time visualization, helping uncover location-based insights.
+For more information, see [Create a Map](../real-time-intelligence/map/create-map.md)
+
 ## All Power BI users can see "Set Alert" button to create Fabric Activator alerts
 
 When this setting is enabled, all Power BI users will see the "Set Alert" button in web reports. This button allows users with Fabric permissions to create [Activator alerts](../real-time-intelligence/data-activator/activator-get-data-power-bi.md) on their reports. When the setting is disabled, the "Set Alert" button will be visible only to Power BI users who have tenant-level Fabric Access.
