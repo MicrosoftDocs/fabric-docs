@@ -72,6 +72,9 @@ Alternatively, you can right-click on a GeoJSON file in lakehouse and then selec
 
 :::image type="content" source="media/spatial-job-create-tilesets/new-tile-set-option-lakehouse-files-dropdown.png" lightbox="media/spatial-job-create-tilesets/new-tile-set-option-lakehouse-files-dropdown.png" alt-text="A screenshot showing the new tileset option in the Lakehouse files dropdown menu.":::
 
+> [!NOTE]
+> Map supports only one active job per item at a time.
+
 ### Step 1: Connect to a lakehouse and select source files
 
 Start by connecting to at least one lakehouse that contains GeoJSON files. You can choose multiple files to convert into a vector tileset.
