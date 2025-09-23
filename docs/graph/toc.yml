@@ -15,8 +15,8 @@ items:
     items:
       - name: Quickstart guide for Graph in Microsoft Fabric
         href: quickstart.md
-      - name: Known limitations with Graph in Microsoft Fabric
-        href: known-limitations.md
+      - name: Limitations in Graph in Microsoft Fabric
+        href: limitations.md
   - name: Graph Query Language (GQL)
     items:
       - name: GQL manual
