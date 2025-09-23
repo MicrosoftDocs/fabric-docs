@@ -127,8 +127,8 @@ The following properties are **required**:
 
       :::image type="content" source="./media/connector-lakehouse/table-name-with-schema.png" alt-text="Screenshot showing table name with schema.":::  
     
-      > [!NOTE]
-      > The table name must be at least one character long, without '/' or '\\', no trailing dot, and no leading or trailing spaces.
+    > [!NOTE]
+    > The table name must be at least one character long, without '/' or '\\', no trailing dot, and no leading or trailing spaces.
 
     - **Table actions**: Specify the operation against the selected table.
         - **Append**: Append new values to existing table. Under **Advanced**, you can enable partition on your target table: 
