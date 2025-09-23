@@ -9,21 +9,37 @@ ms.reviewer: eur
 ms.service: fabric
 #ms.subservice: graph
 ---
-# Limitations
+# Select limitations
 
-## Exposed data types
+While Graph in Microsoft Fabric is in preview, the service has certain limitations that users may not have expected. The following highlights some key limitations but does not constitute an exhaustive list. Please check back regularly for updates.
+
+## Graph size
+
+Creating graphs with more than 500 million nodes and edges may result in unstable performance.
+
+## Data types
 
 Graph in Microsoft Fabric currently only exposes support for the following date types:
 
 - Boolean
+- Double (which will be casted to float)
 - Integer
-- Float
 - String
 - ZonedDateTime
 
-## Limit on number of graph instances
+## Data sources
+
+- OneLake parquet files are the only data sources currently supported.
+- Power BI semantic model support is under development.
+- LakeHouses with schema enabled is not supported.
+
+## Number of graph instances
 
 Up to 10 graph instances are allowed per Fabric Workspace.
+
+## Graph creation time
+
+Once per week, a graph model will encounter a timeout if the graph creation or update takes longer than 20 minutes. Such an operation will be marked as failed. However, users may re-initiate graph creation or update.
 
 ## GQL conformance
 
