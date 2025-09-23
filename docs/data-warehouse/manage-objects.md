@@ -23,6 +23,12 @@ This article describes warehouse management tasks you can accomplish in the **Ex
 
 The **Explorer** provides a hierarchical view of the warehouse objects, including schemas, tables, views, stored procedures, and more. The objects are organized by schema then object type.
 
+> [!IMPORTANT]  
+> For very large warehouses with more than **750,000 objects** (for example, tables, views, stored procedures, and functions), metadata is no longer cached by the system. Instead, schema operations query the metadata store directly.  
+>  
+> This ensures system stability and prevents cache starvation in extremely large databases. However, schema refresh operations may take longer compared to smaller warehouses where metadata caching is enabled.
+
+
 :::image type="content" source="media/manage-objects/explorer-new-table.png" alt-text="Screenshot from the Fabric portal of the Explorer window of a warehouse." lightbox="media/manage-objects/explorer-new-table.png":::
 
 ## Search and filter objects in the explorer
