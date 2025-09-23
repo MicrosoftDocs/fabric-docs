@@ -87,8 +87,6 @@ items:
     items:
     - name: Eventstream Overview
       href: event-streams/overview.md
-    - name: What's new in Fabric event streams?
-      href: event-streams/whats-new.md
     - name: Eventstreams capacity consumption
       href: event-streams/monitor-capacity-consumption.md
     - name: Create eventstreams
