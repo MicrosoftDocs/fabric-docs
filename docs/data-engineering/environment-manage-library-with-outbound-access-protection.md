@@ -10,32 +10,32 @@ ms.search.form: Manage libraries when private links and OAP enabled.
 
 # Managing libraries in environment secured by outbound access protection
 
-Microsoft Fabric allows admins to control and restrict outbound connections from workspace items to external resources. When outbound network security features are enabled, access to public repositories, like PyPI and conda, is blocked, which includes the ability to install public libraries or download dependencies required for custom packages.
+Microsoft Fabric allows admins to control and restrict outbound connections from workspace items to external resources. When outbound network security is on, it blocks access to public repositories like PyPI and conda. This prevents installing public libraries or downloading dependencies for custom packages.
 
-This article will cover how to install libraries from PyPI the when the outbound access protection is enabled for your workspace.
+This article covers how to install libraries from PyPI when the outbound access protection is enabled for your workspace.
 
 ## Manage the packages as custom libraries (recommended)
 
-In an environment with restricted outbound access, the service will not be able to connect to public repo to download additional customer libraries and its dependencies. We recommend you to **directly upload the packages and their dependencies as custom packages** in the environment.
+In an environment with restricted outbound access, the service isn't able to connect to public repo to download libraries and its dependencies. We recommend you to **directly upload the packages and their dependencies as custom packages** in the environment.
 
-### Step 1: Pre-requisites
+### Step 1: Prerequisites
 
 To get started, you need to prepare your libraries specification as`requirement.txt`, a compute resource that can be used to build a Python virtual environment, and the setup file for Fabric runtime.
 
-- Compute resources: Linux system, Windows Subsystem for Linux, or an [Azure VM](/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu)
+- Compute resources: Linux system, Windows Subsystem for Linux, or an [Azure Virtual Machine](/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu)
 
 - Download the Fabric Runtime setup files from the [Fabric Runtime release note Github repo](https://github.com/microsoft/synapse-spark-runtime/tree/main/Fabric) with corresponding Runtime version.
 
 > [!IMPORTANT]
 >
-> - The Runtime setup file contains a few Microsoft hosted private libraries, which cannot be recognized. Make sure to **remove them from the setup file**.
-> - **Libraries hosted by Microsoft**: "library-metadata-cooker", "mmlspark", "azureml-synapse", "notebookutils", "flt-python" "synapse-jupyter-notebook", "synapse-jupyter-proxy", "azure-synapse-ml-predict", "fsspec_wrapper", "horovod", "sqlanalyticsconnectorpy", "synapseml", "control-script", "impulse-python-handler", "chat-magics", "ds-copilot", "fabric-connection", "chat-magics-fabric", "dscopilot-installer", "sqlanalyticsfabricconnectorpy", "geoanalytics-fabric", "spark-mssql-connector-fabric35", "flaml", "semantic-link-sempy", "synapseml-*", "prose-pandas2pyspark", "prose-suggestions kqlmagiccustom"
+> - The Runtime setup file contains a few Microsoft hosted private libraries, which can't be recognized. Make sure to **remove them from the setup file**.
+> - **Libraries hosted by Microsoft**: 'library-metadata-cooker', 'mmlspark', 'azureml-synapse', 'notebookutils', 'flt-python', 'synapse-jupyter-notebook', 'synapse-jupyter-proxy', 'azure-synapse-ml-predict', 'fsspec_wrapper', 'horovod', 'sqlanalyticsconnectorpy', 'synapseml', 'control-script', 'impulse-python-handler', 'chat-magics', 'ds-copilot', 'fabric-connection', 'chat-magics-fabric', 'dscopilot-installer', 'sqlanalyticsfabricconnectorpy', 'geoanalytics-fabric', 'spark-mssql-connector-fabric35', 'flaml', 'semantic-link-sempy', 'synapseml-*', 'prose-pandas2pyspark', 'prose-suggestions', 'kqlmagiccustom'
 
 :::image type="content" source="media\environment-lm\outbound-access-protection-runtime-setup.png" alt-text="Screenshot that shows the example of Runtime setup file." lightbox="media\environment-lm\outbound-access-protection-runtime-setup.png":::
 
-### Step 2: Setup the Virtual Python Environment in your compute resource
+### Step 2: Set up the Virtual Python Environment in your compute resource
 
-Create the the Virtual Python Environment, which aligns with the Fabric Runtime's Python version, in your compute resource by running the following script.
+Create the Virtual Python Environment, which aligns with the Fabric Runtime's Python version, in your compute resource by running the following script.
 
 ```shell
 wget https://repo.anaconda.com/miniconda/Miniconda3-py310_24.1.2-0-Linux-x86_64.sh
@@ -50,7 +50,7 @@ source activate <custom-env-name>
 
 ### Step 3: Identify and download the required wheels
 
-The following script can be used to pass your requirements.txt file, which has all the packages and versions that you intend to install in the spark runtime. It will print the names of the new wheel files/dependencies for your input library requirements.
+The following script can be used to pass your requirements.txt file, which has all the packages and versions that you intend to install in the spark runtime. It prints the names of the new wheel files/dependencies for your input library requirements.
 
 ```shell
 pip install -r <input-user-req.txt> > pip_output.txt
@@ -61,20 +61,20 @@ Now, you can download the listed wheels from PyPI and directly upload them to Fa
 
 ## Host PyPI mirror on Azure Storage account
 
-A PyPI mirror is a replica of the official PyPI repository. This can either be a full replica of PyPI or a partial replica and can be hosted in several ways within Azure. PG team recommends to use Azure Storage account.This storage account will be protected behind organization vNet, so that only approved targets/endpoints can access it.
+A PyPI mirror is a replica of the official PyPI repository. The replica can either be a full replica of PyPI or a partial replica and can be hosted in several ways within Azure. We recommend using Azure Storage account. The storage account is protected behind organization vNet, so that only approved targets/endpoints can access it.
 
 > [!IMPORTANT]
-> Host PyPI mirror is ideal for organizations that rely on a large set of PyPI libraries and prefer not to manage individual wheel files manually. This comes with the onus of organizations **bearing the setup costs** and **periodic monitoring and updating** to keep the mirror in sync with PyPI.
+> Host PyPI mirror is ideal for organizations that rely on a large set of PyPI libraries and prefer not to manage individual wheel files manually. This approach comes with the onus of organizations **bearing the setup costs** and **periodic monitoring and updating** to keep the mirror in sync with PyPI.
 
-### Step 1: Pre-requisites
+### Step 1: Prerequisites
 
 - Compute resources: Linux system, Windows Subsystem for Linux, or an [Azure VM](/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu)
 - [Azure Storage Account](/azure/storage/common/storage-account-create?tabs=azure-portal): To store the mirrored packages.
-- Other utilities: [Bandersnatch](https://bandersnatch.readthedocs.io/en/latest/), i,e., the PyPI mirroring tool that handles synchronization. Az CLI or Blobefuse2 or Azcopy, i.e., the utility for efficient file synchronization
+- Other utilities: [Bandersnatch](https://bandersnatch.readthedocs.io/en/latest/), i,e., the PyPI mirroring tool that handles synchronization. Az CLI or Blobefuse2 or Azcopy, that is, the utility for efficient file synchronization
 
 #### Initial Setup
 
-The size of the entire PyPI repository is quite large and constantly growing. There will be a one-time initial effort of setting up the entire PyPI repository. See the [PyPI Statistics](https://pypi.org/stats/).
+The size of the entire PyPI repository is large and constantly growing. There is a one-time initial effort of setting up the entire PyPI repository. See the [PyPI Statistics](https://pypi.org/stats/).
 
 #### Maintenance
 
@@ -84,13 +84,13 @@ To keep the mirror in sync with PyPI, periodic monitoring and updating are requi
 > The followings are various factors of your compute resource that contribute to the setup and maintenance effort:
 >
 > - Network speed
-> - Server resources: CPU, memory, disk I/O of the compute resource running Bandersnatch will impact the synchronization speed
-> - Disk speed: the speed of the storage system (e.g., SSD vs. HDD) can affect how quickly Bandersnatch can write data to disk.
-> - Initial setup vs. Maintenance sync: the initial sync (when you first set up Bandersnatch) will generally take longer as it downloads the entire repository. On a typical setup with decent network and hardware, it might range from 8 to 48 hours. Subsequent syncs, which only update new or changed packages, will be faster.
+> - Server resources: CPU, memory, disk I/O of the compute resource running Bandersnatch impacts the synchronization speed
+> - Disk speed: the speed of the storage system can affect how quickly Bandersnatch can write data to disk.
+> - Initial setup vs. Maintenance sync: the initial sync (when you first set up Bandersnatch) generally takes longer as it downloads the entire repository. On a typical setup with decent network and hardware, it might range from 8 to 48 hours. Subsequent syncs, which only update new or changed packages, are faster.
 
-### Step 2: Setup Python on your compute resource
+### Step 2: Set up Python on your compute resource
 
-Run the following script to setup the corresponding Python version.
+Run the following script to set up the corresponding Python version.
 
 ```shell
 wget https://repo.anaconda.com/miniconda/Miniconda3-py310_24.1.2-0-Linux-x86_64.sh
@@ -101,11 +101,11 @@ chmod 755 -R /usr/lib/miniforge3/
 export PATH="/usr/lib/miniforge3/bin:$PATH"
 ```
 
-### Step 2: Setup Bandersnatch
+### Step 2: Set up Bandersnatch
 
-Bandersnatch is a PyPI mirroring tool which downloads all of PyPI and associated index files on **local filesystem**. You can refer to [this article](https://github.com/pypa/bandersnatch/blob/main/src/bandersnatch/example.conf) to create a `bandersnatch.conf` file.
+Bandersnatch is a PyPI mirroring tool that downloads all of PyPI and associated index files on **local filesystem**. You can refer to [this article](https://github.com/pypa/bandersnatch/blob/main/src/bandersnatch/example.conf) to create a `bandersnatch.conf` file.
 
-Run the following script to setup Bandersnatch. The command will perform a one-time synchronization with PyPI. The initial sync will take time to run.
+Run the following script to setup Bandersnatch. The command performs a one-time synchronization with PyPI. The initial sync takes time to run.
 
 ```shell
 # Install Bandersnatch
@@ -127,7 +127,7 @@ After the commands are executed successfully, the sub folders in your mirror dir
 
 ### Step 3: Verify local mirror setup (optional)
 
-You can use a simple HTTP server to serve your local PyPI mirror. This command starts a simple HTTP server on port 8000 that serves the contents of the mirror directory.
+You can use a HTTP server to serve your local PyPI mirror. This command starts a HTTP server on port 8000 that serves the contents of the mirror directory.
 
 ```shell
 cd <directory-to-mirror>
@@ -139,18 +139,18 @@ pip install <package> -index-url http://localhost:8000/simple
 
 ### Step 4: Upload mirror on storage account
 
-Enable Static Website on your Azure storage account. This will allow you to host static content like PyPI index page in this case. Enabling this will automatically generate a container named $web
+Enable Static Website on your Azure storage account. This step allows you to host static content like PyPI index page in this case. It also automatically generates a container named $web.
 
 :::image type="content" source="media\environment-lm\outbound-access-protection-storage-account.png" alt-text="Screenshot that shows the storage account example." lightbox="media\environment-lm\outbound-access-protection-storage-account.png":::
 
 And then, you can use either az CLI or azcopy of blobfuse2 to upload the local mirror from your devbox to your Azure storage account.\
 
 - Upload packages folder to your **chosen container** on the storage account container
-- Upload simple, pypi, local-stats and json folders to **$web** container of your storage account
+- Upload simple, pypi, local-stats, and json folders to **$web** container of your storage account
 
 ### Step 5: Use this mirror in Fabric Environment
 
-In order to access the Azure Storage account, add two private managed endpoint in the Fabric workspace.
+In order to access the Azure Storage account, add two private managed endpoints in the Fabric workspace.
 
 :::image type="content" source="media\environment-lm\outbound-access-protection-private-endpoints.png" alt-text="Screenshot that shows the private endpoints example." lightbox="media\environment-lm\outbound-access-protection-private-endpoints.png":::
 
