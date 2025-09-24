@@ -19,7 +19,7 @@ In this article, we explore the Labeled Property Graph (LPG) model, which is the
 
 ## Labeled Property Graph (LPG)
 
-**LPG** is a data model used by many popular graph databases, including Graph in Microsoft Fabric. In an LPG:
+**LPG** is a data model used by many popular [graph databases](graph-database.md), including Graph in Microsoft Fabric. In an LPG:
 - Data is represented as nodes (vertices) and edges (relationships).
 - **Labels** classify nodes (such as Person or Product) and edges (such as FRIENDS_WITH or PURCHASED).
 - Both nodes and edges can have **properties**—key-value pairs storing more data (such as `{name: "Alice", age: 30}` for a node, `{since: 2020}` for an edge).

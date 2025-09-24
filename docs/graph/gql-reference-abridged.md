@@ -143,6 +143,8 @@ Graph patterns describe the structure of the graph to match.
 
 ### Node patterns
 
+In [graph databases](graph-database.md), nodes are usually used to represent entities, such as people, products, or places.
+
 Node patterns describe how to match nodes in the graph. You can filter by label or bind variables.
 
 ```gql

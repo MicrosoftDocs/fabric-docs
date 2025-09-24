@@ -12,7 +12,7 @@ ms.service: fabric
 
 #  Compare graph and relational databases
 
-In this article, we compare graph databases and relational databases, highlighting key differences, use cases, and advantages in analytics. You can evaluate whether to use Graph for Microsoft Fabric or a relational database based on your specific needs.
+In this article, we compare graph databases and relational databases, highlighting key differences, use cases, and advantages in analytics. You can evaluate whether to use [Graph for Microsoft Fabric](overview.md) or a relational database based on your specific needs.
 
 A [**graph database**](graph-database.md) stores and queries data as a network of nodes (entities) and edges (relationships), making it fundamentally different from the tables-and-rows format of relational databases. Graph databases excel at modeling and analyzing highly connected data, such as social networks, knowledge graphs, recommendation systems, and fraud detection.
 

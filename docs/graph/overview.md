@@ -17,7 +17,7 @@ ms.custom: references_regions
 
 Graph in Microsoft Fabric is an intelligent, scalable solution that transforms disconnected data into AI-powered insights. 
 
-Unlike relational databases that often require expensive joins and complex queries, graph in Microsoft Fabric implements a labeled property graph model. The entities (nodes) and relationships (edges) can have labels and properties. This flexible approach enables powerful graph analysis and advanced analytics directly from OneLake—without requiring ETL (extract, transform, load) or data replication.
+Unlike relational databases that often require expensive joins and complex queries, graph in Microsoft Fabric implements a [labeled property graph](graph-data-models.md) model. The entities (nodes) and relationships (edges) can have labels and properties. This flexible approach enables powerful graph analysis and advanced analytics directly from OneLake—without requiring ETL (extract, transform, load) or data replication.
 
 ## Why graph analytics matter
 
@@ -32,13 +32,7 @@ Graph in Microsoft Fabric provides an efficient way to model, visualize, and que
 
 Graph in Microsoft Fabric broadens access to graph insights beyond specialized roles. Any user can use connected data in daily decision-making.
 
-## Integration with Microsoft Fabric
-
-Graph in Microsoft Fabric is deeply integrated with the Microsoft Fabric platform, including OneLake for unified data storage and Power BI for visualization. It integrates seamlessly with Microsoft Fabric's governance, security, and operational features.
-
-You can incorporate graph analytics into your existing workflows, eliminating the need for data duplication and specialized skills. This makes insights accessible to a broader audience compared to traditional standalone [graph databases](graph-database.md).
-
-### What you can do with graph
+## What you can do with graph
 
 Graph in Microsoft Fabric enables you to:
 
@@ -48,7 +42,7 @@ Graph in Microsoft Fabric enables you to:
 
 - Enrich your graph with scores and communities for downstream BI (business intelligence) and AI (artificial intelligence) workflows. Run built-in graph algorithms such as shortest path, page rank, weakly connected components (WCC), and Louvain, using a vertex-centric, bulk synchronous parallel (BSP) algorithm executor. 
 
-- Benefit from role-based experiences:  
+- Benefit from job function-based experiences:  
     - Data engineers can model and ingest data.  
     - Analysts can run low/no-code queries and curate view sets.  
     - Business users can explore visually or use natural language to interact with the data.  
@@ -56,7 +50,13 @@ Graph in Microsoft Fabric enables you to:
 
 - Operate within Fabric: Automatically shut down when not in use and monitor usage in the capacity metrics app—all governed by Fabric OneLake security, compliance, and permission model.
 
-### How graph in Microsoft Fabric differs from standalone graph databases
+## Integration with Microsoft Fabric
+
+Graph in Microsoft Fabric is deeply integrated with the Microsoft Fabric platform, including OneLake for unified data storage and Power BI for visualization. It integrates seamlessly with Microsoft Fabric's governance, security, and operational features.
+
+You can incorporate graph analytics into your existing workflows, eliminating the need for data duplication and specialized skills. This makes insights accessible to a broader audience compared to traditional standalone [graph databases](graph-database.md).
+
+#### How graph in Microsoft Fabric differs from standalone graph databases
 
 | Area | Graph in Microsoft Fabric | Standalone graph database |
 |---|---|---|
@@ -66,11 +66,18 @@ Graph in Microsoft Fabric enables you to:
 | User experience | Users benefit from a unified Microsoft Fabric interface for modeling, querying, business intelligence (BI), artificial intelligence (AI) integration, and low/no-code exploration. Specialized graph engineering skills aren't required. | Standalone graph databases are primarily developer-focused, with consoles and SDKs that often require specialized skills. Visualization and low-code tools can be separate and might require extra setup. |
 | Operations & cost | Graph workloads run on pooled Fabric capacity units (CUs) with automatic scale-down and centralized metrics, which helps optimize resource usage and cost. | Standalone graph databases require separate clusters or licenses, custom scaling and monitoring, and often incur idle capacity charges, increasing operational complexity and cost. |
 | Governance & security | Microsoft Fabric provides native OneLake governance, lineage tracking, and workspace role-based access control (RBAC), and integrates with Fabric compliance standards for security and auditing. | Standalone graph databases have separate security and governance models that must be configured and audited independently, which can increase risk and administrative burden. |
-
 ## Workspace roles
+Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following table summarizes the permissions associated with each Microsoft Fabric workspace role's capability on graph models and QuerySet items.
 
-Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following table summarizes the permissions associated with each Microsoft Fabric workspace role's capability on graph QuerySet items.
+### Graph Model
+| Capability | Admin | Member | Contributor | Viewer |
+|---|---|---|---|---|
+| Create or modify graph model | ✔ | ✔ | ✔ | ✖ |
+| Delete graph model | ✔ | ✔ | ✔ | ✖ |
+| View and read content of graph model | ✔ | ✔ | ✔ | ✔ |
+| Share graph model | ✔ | ✔ | ✖ | ✖ |
 
+### Graph QuerySet
 | Capability | Admin | Member | Contributor | Viewer |
 |---|---|---|---|---|
 | Create or modify graph QuerySet item | ✔ | ✔ | ✔ | ✖ |
@@ -92,19 +99,19 @@ Usage is measured in minutes of CPU uptime. You can monitor your graph workload'
 | Fabric operation name | Azure billing meter | Unit of measure | Fabric CU consumption rate |
 |---|---|---|---|
 | Graph general operations | Graph capacity usage CU | Minute | 0.16667 CUs per minute |
-| Graph algorithm operations| Graph capacity usage CU | Minute | 0.26667 CUs per minute |
 | Graph cache storage | OneLakeCache | Per GB per month | - |
-| Graph standard storage | OneLakeStorage | Per GB per month | - |
 
 For more information on pricing and capacity units, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
 ## Region availability
 
-Graph in Microsoft Fabric is available in the following Azure regions:
+Graph in Microsoft Fabric is currently available in the following Azure regions:
 
 - East US 2
 - North Central US
 - West Europe
+
+If you would like to be notified when the service is available in your region, please fill out this [form](https://forms.office.com/r/zkFLe8M8gP).
 
 ## Related content
 
