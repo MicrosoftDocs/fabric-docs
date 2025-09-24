@@ -53,10 +53,21 @@ Now you're live editing the semantic model in the web. The model opens by defaul
 
 :::image type="content" source="media/direct-lake-web-modeling/web-modeling-mode.png" alt-text="Screenshot of edit in desktop from web modeling option." lightbox="media/direct-lake-web-modeling/web-modeling-mode.png":::
 
+## Composite semantic models with Direct Lake and import storage mode tables
+
+A composite semantic model has tables in different storage modes. Direct Lake on OneLake table storage mode already could mix tables from other Fabric data sources, such as lakehouses, warehouses, SQL databases in Fabric, and mirrored databases. And with this update, now that flexibility is extended much further with the ability to add in import tables from any data source, from 100s of connectors in Power Query online. 
+
+Import tables can be added an existing semantic model with Direct Lake on OneLake tables. Edit the semantic model in Power BI web modeling and choose **Get data** or **Transform data** from the ribbon.
+
+> [!Note]
+> If you haven’t set up a credential for this data source before you may be prompted to do that in the Power Query online experience. After that, if the load data fails on saving the transformations, go to the schedule refresh page of the semantic model and set the credentials there as well before returning to web modeling and refreshing.
+
+Direct Lake on OneLake tables can be added to an existing semantic model with import storage mode tables too. Edit the semantic model in Power BI web modeling and choose **OneLake catalog** from the ribbon.
 
 ## Related content
 
 -	[Edit data models in the Power BI service](/power-bi/transform-model/service-edit-data-models)
+-	[Composite semantic models in Power BI](/power-bi/transform-model/desktop-composite-models)
 
 
 
