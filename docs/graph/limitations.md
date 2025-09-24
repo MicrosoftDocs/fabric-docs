@@ -29,11 +29,13 @@ Graph in Microsoft Fabric currently only exposes support for the following date 
 
 - OneLake parquet files are the only data sources currently supported.
 - Power BI semantic model support is under development.
-- LakeHouses with schema enabled is not supported.
+- LakeHouse with schema enabled is not supported.
 
 ### Edge creation
 
-During graph modeling, different edge types should be named differently.
+During graph modeling, different edge types should be given different names.
+
+For example, a social media data set might represent "user likes comment" and "user likes post." If your graph model uses separate node types for *comment* and *post*, then the *user* node type should have two types of "likes" edges to *comment* and *post*; you might name these edges *userLikesComment* and *userLikesPost*.
 
 ### Graph creation time
 
