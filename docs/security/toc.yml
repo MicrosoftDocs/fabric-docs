@@ -95,9 +95,9 @@ items:
         href: security-managed-private-endpoints-create.md
       - name: Workspace outbound access protection
         items: 
-          - name: Overview of workspace outbound access protection
+          - name: About workspace outbound access protection
             href: workspace-outbound-access-protection-overview.md
-          - name: Manage admin access to outbound protection settings
+          - name: Manage admin access to outbound settings
             href: workspace-outbound-access-protection-tenant-setting.md
           - name: Set up workspace outbound access protection
             href: workspace-outbound-access-protection-set-up.md
@@ -105,9 +105,6 @@ items:
             items: 
               - name: Data Engineering
                 href: workspace-outbound-access-protection-data-engineering.md
-                items:
-                - name: Supported item types
-                  href: workspace-outbound-access-protection-scenarios.md
               - name: Data Factory
                 href: workspace-outbound-access-protection-data-factory.md
       - name: Trusted workspace access
