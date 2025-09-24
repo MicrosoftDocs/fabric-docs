@@ -117,6 +117,8 @@ df.write.mode("overwrite").option("url", url).mssql("dbo.tableInDatabase2") // d
 spark.read.mssql("dbo.tableInDatabase2").show // no url option specified and will use database2
 ```
 
+---
+
 You can also select columns, apply filters, and use other options when you read data from the SQL database engine.
 
 ### Authentication Examples
@@ -155,6 +157,8 @@ df = spark.createDataFrame(row_data, column_header)
 df.write.mode("overwrite").option("url", url).option("user", "").option("password", "").mssql("dbo.publicExample")
 spark.read.option("user", "").option("password", "").mssql("dbo.publicExample").show()
 ```
+
+---
 
 ### Supported DataFrame save modes
 
