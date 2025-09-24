@@ -10,27 +10,27 @@ ms.date: 10/01/2025
 
 # Spark connector for SQL databases
 
-The Spark connector for SQL databases is a high-performance library that enables you to read from and write to SQL Server, Azure SQL databases and Fabric SQL databases. The connector offers the following capabilities:
+The Spark connector for SQL databases is a high-performance library that lets you read from and write to SQL Server, Azure SQL databases, and Fabric SQL databases. The connector offers the following capabilities:
 
-* Use Spark to perform large write and read operations on the following SQL products: Azure SQL Database, Azure SQL Managed Instance, SQL Server on Azure VM, Fabric SQL databases
-* The connector comes preinstalled within the Fabric runtime, which eliminates the need for separate installation
-* While you're accessing a table or a view, the connector upholds security models defined at the SQL engine level. These models include object-level security (OLS), row-level security (RLS), and column-level security (CLS).
+* Use Spark to run large write and read operations on Azure SQL Database, Azure SQL Managed Instance, SQL Server on Azure VM, and Fabric SQL databases.
+* The connector is preinstalled in the Fabric runtime, so you don't need to install it separately.
+* When you use a table or a view, the connector supports security models set at the SQL engine level. These models include object-level security (OLS), row-level security (RLS), and column-level security (CLS).
 
 ## Authentication
 
-Microsoft Entra authentication is an integrated authentication approach. Users sign in to the Microsoft Fabric workspace, and their credentials are automatically generated and passed to passed to the SQL engine for authentication and authorization. This assumes that Microsoft Entra ID is setup and enabled on their SQL database engines. The credentials are automatically mapped, and users aren't required to provide specific configuration options when using Microsoft Entra ID for authentication. You can also use SQL authentication method as well as can use Service Principal.
+Microsoft Entra authentication is an integrated authentication approach. Users sign in to the Microsoft Fabric workspace, and their credentials are automatically generated and passed to the SQL engine for authentication and authorization. This assumes that Microsoft Entra ID is set up and enabled on their SQL database engines. The credentials are automatically mapped, so users don't need to provide specific configuration options when using Microsoft Entra ID for authentication. You can also use the SQL authentication method or a service principal.
 
 ### Permissions
 
 > [!IMPORTANT]
-> Service principal app can execute as an "app" (no user) or as the user (if "user_impersonation" is enabled). The underlying identity must have the database permissions.
+> A service principal app can run as an app (no user) or as the user if user impersonation is enabled. The underlying identity needs the required database permissions.
 
-For Azure SQL Database, Azure SQL Managed Instance, SQL Server on Azure VM:
-- Executing user or app must have the relevant **database permissions**, usally `db_datawriter` and `db_datareader`. Optionally `db_owner`.
+For Azure SQL Database, Azure SQL Managed Instance, and SQL Server on Azure VM:
+- The user or app running the operation needs the relevant **database permissions**, usually `db_datawriter` and `db_datareader`, and optionally `db_owner`.
 
 For Fabric SQL databases:
-- Executing user or app must have the relevant  **database permissions**, usally `db_datawriter` and `db_datareader`. Optionally `db_owner`.
-- User or app must have at least Read permission on the Fabric SQL database (item level).
+- The user or app running the operation needs the relevant **database permissions**, usually `db_datawriter` and `db_datareader`, and optionally `db_owner`.
+- The user or app needs at least read permission on the Fabric SQL database at the item level.
 
 ## Usage and code examples
 
@@ -56,11 +56,11 @@ In addition following options are supported
 | tableLock | "false" | Implements an insert with TABLOCK option to improve write performance |
 | schemaCheckEnabled | "true" | Disables strict dataframe and sql table schema check when set to false |
 
-Other [Bulk api options](/sql/connect/jdbc/using-bulk-copy-with-the-jdbc-driver?view=azuresqldb-current#sqlserverbulkcopyoptions&preserve-view=true) can be set as options on the dataframe and will be passed to bulkcopy apis on write.
+Other [Bulk API options](/sql/connect/jdbc/using-bulk-copy-with-the-jdbc-driver?view=azuresqldb-current#sqlserverbulkcopyoptions&preserve-view=true) can be set as options on the DataFrame and are passed to bulkcopy APIs on write.
 
 ### Write and Read example
 
-The following code demonstrates writing and reading using the `mssql("<schema>.<table>")` method with automatic Microsoft Entra ID authentication.
+The following code shows how to write and read data by using the `mssql("<schema>.<table>")` method with automatic Microsoft Entra ID authentication.
 
 # [PySpark](#tab/pyspark)
 
@@ -103,7 +103,7 @@ df.write.mode("overwrite").option("url", url).mssql("dbo.tableInDatabase2") // d
 spark.read.mssql("dbo.tableInDatabase2").show // no url option specified and will use database2
 ```
 
-You can also select required columns, apply filter etc. while reading data from the SQL database engine.
+You can also select columns, apply filters, and use other options when you read data from the SQL database engine.
 
 ### Authentication Examples
 
@@ -140,21 +140,21 @@ spark.read.option("user", "").option("password", "").mssql("dbo.publicExample").
 ### Supported DataFrame save modes
 
 > [!IMPORTANT]
-> The datatypes between Spark SQL and MSSQL do not have a 1 to 1 mapping. When you use the `overwrite` save mode, it will drop the existing table and create a new one, meaning the original table schema (if you have MSSQL exclusive datatypes) will be "lost" and converted to a new type. Use `.option("truncate", true)` to avoid unexpected data loss!
+> The data types between Spark SQL and MSSQL don't have a one-to-one mapping. When you use the `overwrite` save mode, it drops the existing table and creates a new one, so the original table schema (if you use MSSQL-exclusive data types) is lost and converted to a new type. Use `.option("truncate", true)` to avoid unexpected data loss.
 
 > [!IMPORTANT]
-> Table indices will be lost on `overwrite`. Use `.option("truncate", true)` to maintain the existing indexing.
+> Table indices are lost when you use `overwrite`. Use `.option("truncate", true)` to keep the existing indexing.
 
 This connector supports the options defined here: [Spark Save functions](https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html)
 
-* ErrorIfExists (default save mode): If destination table exists, then the write is aborted with an exception returned to the callee. Else, a new table is created with data.
-* Ignore: If the destination table exists, then the write will ignore the write request without returning an error. Else, a new table is created with data.
-* Overwrite: If the destination table exists, **DROP the table**, recreate, and append with new data.
-* Append: If the destination table exists, then the new data is appended to it. Else, a new table is created with data.
+* ErrorIfExists (default save mode): If the destination table exists, the write is aborted and an exception is returned. Otherwise, a new table is created with data.
+* Ignore: If the destination table exists, the write ignores the request and doesn't return an error. Otherwise, a new table is created with data.
+* Overwrite: If the destination table exists, the table is dropped, recreated, and new data is appended.
+* Append: If the destination table exists, new data is appended to it. Otherwise, a new table is created with data.
 
 ## Troubleshoot
 
-Upon completion, the read response snippet appears in the cell's output. Errors originating from `com.microsoft.sqlserver.jdbc.SQLServerException` are directly coming from the SQL Server itself. Detailed error information is available in the Spark application logs.
+When the process finishes, the read response snippet shows in the cell's output. Errors from `com.microsoft.sqlserver.jdbc.SQLServerException` come directly from SQL Server. You can find detailed error information in the Spark application logs.
 
 ## Related content
 
