@@ -37,6 +37,8 @@ You can use workspace-level private links to connect to the following item types
 * Dataflows Gen2 (CI/CD)
 * Variable library
 * Mirrored database
+* Event Streams
+* Event House
 
 ### Notes about unsupported item types
 
