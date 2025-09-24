@@ -1,8 +1,9 @@
 ---
 title: Migrate Libraries and Properties to a Default Environment
 description: Learn how to migrate your existing workspace libraries and Apache Spark properties to a default Fabric environment.
-ms.author: shuaijunye
-author: shuaijunye
+ms.author: eur
+ms.reviewer: shuaijunye
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 11/15/2023
@@ -26,14 +27,14 @@ In this article, you learn how to migrate the existing workspace libraries and S
 
 1. In **Workspace settings**, review your existing configurations.
 
-   :::image type="content" source="media\environment-migration\prepare-file-1.png" alt-text="Screenshot that shows where to find your configuration settings under Current settings on the Environment tab.":::
+    :::image type="content" source="media\environment-migration\prepare-file-1.png" alt-text="Screenshot that shows where to find your configuration settings under Current settings on the Environment tab." lightbox="media\environment-migration\prepare-file-1.png":::
 
 1. Make a note of the current **Runtime** version.
 
 1. Download existing configurations by selecting **Download all files**.
 
     The content is downloaded as different files. The *Sparkproperties.yml* file contains all of the Spark properties key value pairs. The *Publiclibrary.yml* file contains all of the public library definitions. Any custom packages uploaded by you or your organization are downloaded one by one as *files*.
-    :::image type="content" source="media\environment-migration\prepare-file-2.png" alt-text="Screenshot that shows settings are downloaded to different file formats.":::
+    :::image type="content" source="media\environment-migration\prepare-file-2.png" alt-text="Screenshot that shows settings are downloaded to different file formats." lightbox="media\environment-migration\prepare-file-2.png":::
 
 After the files are downloaded, you can migrate.
 
@@ -43,7 +44,7 @@ After the files are downloaded, you can migrate.
 
 1. On the **Home** tab of the environment, make sure that the **Runtime** version is the same as your existing workspace runtime.
 
-    :::image type="content" source="media\environment-migration\create-and-configure-env-runtime.png" alt-text="Screenshot that shows where to check the Runtime version.":::
+    :::image type="content" source="media\environment-migration\create-and-configure-env-runtime.png" alt-text="Screenshot that shows where to check the Runtime version." lightbox="media\environment-migration\create-and-configure-env-runtime.png":::
 
 1. *Skip this step if you don't have any public libraries in your workspace settings.* Go to the **Public Libraries** section and select **Add from .yml**. Upload the *Publiclibrary.yml* file, which you downloaded from the existing workspace settings.
 
@@ -68,19 +69,19 @@ After publishing is complete, you successfully configured your environment.
 
     The following screen appears after you successfully delete the existing configurations.
 
-    :::image type="content" source="media\environment-migration\enable-default-env-new-workspace-setting.png" alt-text="Screenshot that shows new workspace settings.":::
+    :::image type="content" source="media\environment-migration\enable-default-env-new-workspace-setting.png" alt-text="Screenshot that shows new workspace settings." lightbox="media\environment-migration\enable-default-env-new-workspace-setting.png":::
 
 1. Move the **Customize environment** toggle to the **On** position. Now you can attach an environment as a workspace default.
 
-    :::image type="content" source="media\environment-migration\enable-default-env-turn-on-toggle.png" alt-text="Screenshot that shows where to move the Customize environment toggle to the On position.":::
+    :::image type="content" source="media\environment-migration\enable-default-env-turn-on-toggle.png" alt-text="Screenshot that shows where to move the Customize environment toggle to the On position." lightbox="media\environment-migration\enable-default-env-turn-on-toggle.png":::
 
 1. Select the environment that you configured in the previous steps as the workspace default, and then select **Save**.
 
-    :::image type="content" source="media\environment-migration\enable-default-env-attach-default.png" alt-text="Screenshot that shows where to select an environment to attach it as the default environment.":::
+    :::image type="content" source="media\environment-migration\enable-default-env-attach-default.png" alt-text="Screenshot that shows where to select an environment to attach it as the default environment." lightbox="media\environment-migration\enable-default-env-attach-default.png":::
 
 1. Confirm that your new environment now appears under **Default environment for workspace** on the **Spark settings** page.
 
-    :::image type="content" source="media\environment-migration\success.png" alt-text="Screenshot that shows migration succeeds.":::
+    :::image type="content" source="media\environment-migration\success.png" alt-text="Screenshot that shows migration succeeds." lightbox="media\environment-migration\success.png":::
 
 ## Related content
 

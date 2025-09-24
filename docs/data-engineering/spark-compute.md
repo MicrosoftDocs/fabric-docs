@@ -1,9 +1,9 @@
 ---
 title: Apache Spark compute for Data Engineering and Data Science
 description: Learn about the starter pools, custom Apache Spark pools, and pool configurations for data Engineering and Science experiences in Fabric.
-ms.reviewer: snehagunda
-ms.author: saravi
-author: santhoshravindran7
+ms.reviewer: saravi
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 07/03/2025
@@ -20,11 +20,11 @@ Microsoft Fabric Data Engineering and Data Science experiences operate on a full
 
 Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platform within seconds. You can use Spark sessions right away, instead of waiting for Spark to set up the nodes for you, which helps you do more with data and get insights quicker.
 
-:::image type="content" source="media/spark-compute/starter-pool-configuration.png" alt-text="Image of a table showing starter pool configuration.":::
+:::image type="content" source="media/spark-compute/starter-pool-configuration.png" alt-text="Image of a table showing starter pool configuration." lightbox="media/spark-compute/starter-pool-configuration.png":::
 
 Starter pools have Apache Spark clusters with sessions that are always on and ready for your requests. They use medium nodes that dynamically scale up based on your Spark job needs.
 
-:::image type="content" source="media/spark-compute/starter-pool.png" alt-text="Diagram showing the high-level design of starter pools.":::
+:::image type="content" source="media/spark-compute/starter-pool.png" alt-text="Diagram showing the high-level design of starter pools." lightbox="media/spark-compute/starter-pool.png":::
 
 When you use a Starter Pool **without any extra library dependencies or custom Spark properties**, your session typically starts in **5 to 10 seconds**. This fast startup is possible because the cluster is already running and doesn't require  provisioning time.
 

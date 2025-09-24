@@ -1,9 +1,9 @@
 ---
 title: Lakehouse sharing and permission management
 description: Learn how to share a lakehouse and manage permissions, including how to remove permissions and create data access roles.
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/19/2024
@@ -20,7 +20,7 @@ To share a lakehouse, navigate to your workspace, and select the **Share** icon 
 
 To edit or remove permissions, see [Managing permissions](#managing-permissions).
 
-:::image type="content" source="media\lakehouse-sharing\lakehouse-share-access.png" alt-text="Screenshot showing the commands to share lakehouse access with other users.":::
+:::image type="content" source="media\lakehouse-sharing\lakehouse-share-access.png" alt-text="Screenshot showing the commands to share lakehouse access with other users." lightbox="media/lakehouse-sharing/lakehouse-share-access.png":::
 
 ## Sharing and permissions
 

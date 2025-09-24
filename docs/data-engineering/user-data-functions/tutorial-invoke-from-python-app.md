@@ -1,8 +1,9 @@
 ---
 title: Tutorial - Invoke user data functions from a Python application
 description: Learn how to invoke User data functions from a Python web application.
-ms.author: sumuth
-author: mksuni
+ms.author: eur
+ms.reviewer: sumuth
+author: eric-urban
 ms.topic: quickstart
 ms.date: 03/31/2025
 ms.search.form: Fabric User data functions

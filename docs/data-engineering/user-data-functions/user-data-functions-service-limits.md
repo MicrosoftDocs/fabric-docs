@@ -1,8 +1,9 @@
 ---
 title: Service details and limitations 
 description: Overview of service properties and limitations
-ms.author: luisbosquez
-author: luisbosquez
+ms.author: eur
+ms.reviewer: luisbosquez
+author: eric-urban
 ms.topic: overview
 ms.date: 03/31/2025
 ms.search.form: Service limits

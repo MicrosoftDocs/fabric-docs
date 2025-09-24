@@ -19,7 +19,7 @@ summary: |
   >
   > - Your administrator needs to enable the tenant switch before you start using Copilot. See the article [Copilot tenant settings](../admin/service-admin-portal-copilot.md) for details. 
   > - Your F or P capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
-  > - If your tenant or capacity is outside the US or France, Copilot is disabled by default unless your Fabric tenant admin enables the [Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../admin/service-admin-portal-copilot.md) tenant setting in the Fabric Admin portal.
+  > - If your tenant or capacity is outside the US or France, Copilot is disabled by default unless your Fabric tenant admin enables the [Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](../admin/service-admin-portal-copilot.md) tenant setting in the Fabric Admin portal.
   > - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F2 or higher, or P1 or higher) are supported. If you're using an Azure subscription with monthly credits (such as through a Visual Studio/MSDN benefit), you may not have access to the required SKUs unless billing is enabled and the appropriate capacity is provisioned.
   > - For more information, see the article [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md).
 
@@ -44,7 +44,7 @@ sections:
           Copilot prompts can't be saved for future reference. The only experience where it's possible to view your prompts is by using the chat-magic function in notebooks. 
 
       - question: |
-          Does enabling Copilot and agreeing to the setting of "Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance" mean all my data is sent or processed outside my country/region?
+          Does enabling Copilot and agreeing to the setting of "Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance" mean all my data is sent or processed outside my country/region?
         answer: |
           Not exactly. While the prompt itself is sent to Azure OpenAI, it doesn't mean your data is sent or processed outside your country/region. 
           

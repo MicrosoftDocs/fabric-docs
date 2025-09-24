@@ -1,9 +1,9 @@
 ---
 title: Overview of Copilot for Data Science and Data Engineering in Microsoft Fabric (preview)
 description: Learn about Copilot for Data Science and Data Engineering, an AI assistant that helps analyze and visualize data.
-author: SnehaGunda
-ms.author: sngun
-ms.reviewer: jburchel
+author: eric-urban
+ms.author: eur
+ms.reviewer: sngun
 ms.topic: overview
 ms.custom:
   - build-2023

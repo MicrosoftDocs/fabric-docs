@@ -1,9 +1,9 @@
 ---
 title: Lakehouse tutorial - Create your first lakehouse
 description: Learn how to create a lakehouse, ingest data into a table, transform it, and use the data to create reports.
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
+ms.reviewer: arali
+ms.author: eur
+author: eric-urban
 ms.topic: tutorial
 ms.custom:
 - FY25Q1-Linter

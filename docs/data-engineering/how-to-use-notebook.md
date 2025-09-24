@@ -1,9 +1,9 @@
 ---
 title: How to use notebooks
 description: Learn how to create a new notebook, import an existing notebook, connect notebooks to lakehouses, collaborate in notebooks, and comment code cells.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Create and use notebooks
@@ -111,7 +111,7 @@ You can easily copy a path with a different format from the select file or folde
 
 The notebook resource explorer provides a Unix-like file system to help you manage your folders and files. It offers a writeable file system space where you can store small-sized files, such as code modules, semantic models, and images. You can easily access them with code in the notebook as if you were working with your local file system.
 
-![Animated GIF of notebook resources.](media/how-to-use-notebook/notebook-resources-operations.gif)
+:::image type="content" source="media/how-to-use-notebook/notebook-resources-operations.gif" alt-text="Animated GIF of notebook resources." lightbox="media/how-to-use-notebook/notebook-resources-operations.gif":::
 
 > [!NOTE]
 > - The maximum Resource storages for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**. They both allow up to **100** file/folder instances in total.
@@ -217,7 +217,7 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
  
 1. Moreover, authorize and configure the permissions for users when tagging someone who doesn’t have access, ensuring that your code assets are well managed.
 
-![Animated GIF of tagging others in a comment.](media/how-to-use-notebook/tagging-others-in-a-comment.gif)
+:::image type="content" source="media/how-to-use-notebook/tagging-others-in-a-comment.gif" alt-text="Animated GIF of tagging others in a comment." lightbox="media/how-to-use-notebook/tagging-others-in-a-comment.gif":::
 
 > [!NOTE]
 > For a comment item, the tagged user will not receive an Email notification anymore if you update the comment within one hour. But it sends Email notification to the new tagged user.

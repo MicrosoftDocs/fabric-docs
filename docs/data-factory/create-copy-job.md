@@ -11,7 +11,7 @@ ms.custom: copy-job, sfi-image-nochange
 
 # Learn how to create a Copy job in Data Factory for Microsoft Fabric
 
-The Copy job in Data Factory makes it easy to move data from your source to your destination without creating a pipeline. You can set up data transfers using built-in patterns for both batch and incremental copy, and copy once or on a schedule. Follow the steps in this article to start copying your data either from a [database](#create-a-copy-job-to-ingest-data-from-a-database) or from [storage](#create-a-copy-job-to-ingest-files-from-a-storage).
+The Copy job in Data Factory makes it easy to move data from your source to your destination without creating a pipeline. You can set up data transfers using built-in patterns for both batch and incremental copy, and copy once or on a schedule. Follow the steps in this article to start copying your data either from a [database](#create-a-copy-job-to-ingest-data-from-a-database) or from [storage](#create-a-copy-job-to-ingest-files-from-storage).
 
 >[!TIP]
 > [See a list of all supported connectors for Copy job here.](what-is-copy-job.md#supported-connectors)

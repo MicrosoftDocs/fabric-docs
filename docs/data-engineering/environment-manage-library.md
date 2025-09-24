@@ -1,8 +1,9 @@
 ---
 title: Library Management in Fabric Environments
 description: Learn about library management in Microsoft Fabric, including how to add public and custom libraries to your Fabric environments.
-ms.author: shuaijunye
-author: ShuaijunYe
+ms.author: eur
+ms.reviewer: shuaijunye
+author: eric-urban
 ms.topic: how-to
 ms.date: 06/12/2024
 ms.search.form: Manage libraries in Environment

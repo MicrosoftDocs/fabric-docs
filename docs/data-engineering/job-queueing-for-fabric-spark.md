@@ -1,9 +1,9 @@
 ---
 title: Job queueing in Apache Spark for Fabric
 description: Learn about background job queueing for notebooks, Apache Spark job definitions, and lakehouse jobs in Fabric.
-ms.reviewer: snehagunda
-ms.author: saravi
-author: santhoshravindran7
+ms.reviewer: saravi
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom: sfi-image-blocked
 ms.date: 04/10/2024
@@ -33,7 +33,7 @@ When a Spark job is submitted, if the Fabric capacity is already at its maximum 
 
 1. From the pipeline activity, open the **Settings** tab and choose the notebook you want to queue and **Run** the pipeline.
 
-   :::image type="content" source="media\job-queueing-for-fabric-spark\run-notebook-pipeline.png" alt-text="Screenshot showing how to run a notebook from a pipeline.":::
+   :::image type="content" source="media\job-queueing-for-fabric-spark\run-notebook-pipeline.png" alt-text="Screenshot showing how to run a notebook from a pipeline." lightbox="media/job-queueing-for-fabric-spark/run-notebook-pipeline.png":::
 
 1. The Job enters FIFO queue. Navigate to the **Monitor** hub and notice that the job status is **Not Started** indicating it's been queued and awaiting capacity.
 

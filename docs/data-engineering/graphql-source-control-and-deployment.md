@@ -1,8 +1,9 @@
 ---
 title: Source control and deployment pipelines in API for GraphQL (preview)
 description: Learn how Git integration and deployment pipelines work with API for GraphQL. 
-author: HHPHTTP
-ms.author: hhosseinpour
+author: eric-urban
+ms.author: eur
+ms.reviewer: hhosseinpour
 ms.topic: how-to 
 ms.date: 12/19/2024
 
@@ -42,7 +43,7 @@ There are two options available to connect data sources to your API for GraphQL:
 1. Connect to Fabric data sources with single sign-on authentication (SSO)
 2. Connect to Fabric OR external data sources using a Saved Credential  
 
-    :::image type="content" source="media\graphql-source-control-and-deployment\graphql-connection-options.png" alt-text="Screenshot of options for GraphQL connection to data sources.":::
+    :::image type="content" source="media\graphql-source-control-and-deployment\graphql-connection-options.png" alt-text="Screenshot of options for GraphQL connection to data sources." lightbox="media/graphql-source-control-and-deployment/graphql-connection-options.png":::
 
 The first option, **Single Sign-On (SSO)**, enables connections to data sources within Fabric. In this case, when you connect a data source to GraphQL using Single sign-on method in the original workspace (for example, Dev stage), the data source and GraphQL item will be deployed to the target workspace (for example, Test stage) in the pipeline, and GraphQL in the target workspace will be automatically connected to the deployed local data source in the target workspace (see the diagram below). There are specific limitations when using SSO and connecting to a data source via SQL Analytics Endpoint, for more details refer to [**Current Limitations](#current-limitations).
 
@@ -71,11 +72,11 @@ After you successfully commit the API for GraphQL instances to the Git repo, you
 
 The following image is an example of the file structure of each API for GraphQL item in the Git repo:
 
-:::image type="content" source="media\graphql-source-control-and-deployment\graphql-source-control-repo-structure.png" alt-text="Screenshot of file structure representation in Git for GraphQL.":::
+:::image type="content" source="media\graphql-source-control-and-deployment\graphql-source-control-repo-structure.png" alt-text="Screenshot of file structure representation in Git for GraphQL." lightbox="media/graphql-source-control-and-deployment/graphql-source-control-repo-structure.png":::
 
 When you commit the API for GraphQL item to the Git repo, the API for GraphQL definition is stored. This approach supports a precise recovery when you sync back to a Fabric workspace:  
 
-:::image type="content" source="media\graphql-source-control-and-deployment\graphql-source-control-graphql-definition.png" alt-text="Screenshot of API for GraphQL definitions stored in Git.":::
+:::image type="content" source="media\graphql-source-control-and-deployment\graphql-source-control-graphql-definition.png" alt-text="Screenshot of API for GraphQL definitions stored in Git." lightbox="media/graphql-source-control-and-deployment/graphql-source-control-graphql-definition.png":::
 
 You can find more information about the GraphQL API definition format, syntax and examples on the Fabric control plane APIs documentation:
 
@@ -93,7 +94,7 @@ Use the following steps to complete your API for GraphQL deployment using the de
 
 3. Select, **view**, and compare items including API for GraphQL between different stages, as shown in the following example. The highlighted areas indicating changed item count between the previous stage and current stage.
 
-:::image type="content" source="media\graphql-source-control-and-deployment\graphql-pipeline-changed-items.png" alt-text="Screenshot of pipeline illustrating items' status in each development stage." lightbox="media\graphql-source-control-and-deployment\graphql-pipeline-changed-items.png":::
+:::image type="content" source="media\graphql-source-control-and-deployment\graphql-pipeline-changed-items.png" alt-text="Screenshot of pipeline illustrating items' status in each development stage." lightbox="media/graphql-source-control-and-deployment/graphql-pipeline-changed-items.png":::
 
 4. Select the items that need to be deployed. Select **Deploy** to deploy your selected items (API for GraphQL and its Connected Data source) across the Development, Test, and Production stages.
 
@@ -101,7 +102,7 @@ Use the following steps to complete your API for GraphQL deployment using the de
 
 The next message pops up confirming the items that you're about to deploy. Select **Deploy** to confirm and continue the deployment process.
 
-:::image type="content" source="media\graphql-source-control-and-deployment\graphql-pipeline-deploy-confirmation.png" alt-text="Screenshot of pipeline showing deployment confirmation message.":::
+:::image type="content" source="media\graphql-source-control-and-deployment\graphql-pipeline-deploy-confirmation.png" alt-text="Screenshot of pipeline showing deployment confirmation message." lightbox="media/graphql-source-control-and-deployment/graphql-pipeline-deploy-confirmation.png":::
 
 ## Current limitations
 

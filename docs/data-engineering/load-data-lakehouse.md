@@ -1,9 +1,9 @@
 ---
 title: Options to get data into the Lakehouse
 description: Learn how to load data into a lakehouse via a file upload, Apache Spark libraries in notebook code, and the copy tool in pipelines.
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 08/22/2024
@@ -56,7 +56,7 @@ You can use available Spark libraries to connect to a data source directly, load
 
 With [Eventstream](../real-time-intelligence/event-streams/overview.md), you can get, process, and route high volumes real-time events from a wide variety of sources.
 
-:::image type="content" source="media/load-data-lakehouse/get-data-eventstream.png" alt-text="Screenshot of getting data into a lakehouse from Eventstream.":::
+:::image type="content" source="media/load-data-lakehouse/get-data-eventstream.png" alt-text="Screenshot of getting data into a lakehouse from Eventstream." lightbox="media/load-data-lakehouse/get-data-eventstream.png":::
 
 To see how to add lakehouse as a destination for Eventstream, see [Get data from Eventstream in a lakehouse](../real-time-intelligence/event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-eventstream-in-a-lakehouse).
 

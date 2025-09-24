@@ -1,9 +1,9 @@
 ---
 title: Refresh Materialized Lake Views in a Lakehouse
 description: Learn how to refresh a materialized lake view in a lakehouse in Microsoft Fabric.
-author: abhishjain002 
-ms.author: abhishjain 
-ms.reviewer: nijelsf
+author: eric-urban
+ms.author: eur
+ms.reviewer: abhishjain
 ms.topic: how-to
 ms.date: 06/19/2025
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.

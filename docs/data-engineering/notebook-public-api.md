@@ -1,9 +1,9 @@
 ---
 title: Manage and execute Fabric notebooks with public APIs
 description: Learn about the Fabric notebook public APIs, including how to create and get a notebook with definition, and run a notebook on demand.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 01/28/2025

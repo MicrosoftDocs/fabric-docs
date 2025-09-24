@@ -1,9 +1,9 @@
 ---
 title: Lakehouse tutorial - Prepare and transform lakehouse data
 description: After ingesting raw data into your new lakehouse, you can transform it using notebooks and Spark runtime.
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
+ms.reviewer: arali
+ms.author: eur
+author: eric-urban
 ms.topic: tutorial
 ms.custom:
 ms.date: 08/29/2025
@@ -34,17 +34,17 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. Select all the notebooks that you downloaded in first step of this section.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png" alt-text="Screenshot showing where to find the downloaded notebooks and the Open button.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png" alt-text="Screenshot showing where to find the downloaded notebooks and the Open button." lightbox="media/tutorial-lakehouse-data-preparation/select-notebooks-open.png":::
 
 1. Select **Open**. A notification indicating the status of the import appears in the top right corner of the browser window.
 
 1. After the import is successful, go to items view of the workspace and see the newly imported notebooks. Select **wwilakehouse** lakehouse to open it.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\imported-notebooks-lakehouse.png" alt-text="Screenshot showing the list of imported notebooks and where to select the lakehouse.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\imported-notebooks-lakehouse.png" alt-text="Screenshot showing the list of imported notebooks and where to select the lakehouse." lightbox="media/tutorial-lakehouse-data-preparation/imported-notebooks-lakehouse.png":::
 
 1. Once the **wwilakehouse** lakehouse is opened, select **Open notebook** > **Existing notebook** from the top navigation menu.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-notebook-ribbon.png" alt-text="Screenshot showing the list of successfully imported notebooks.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-notebook-ribbon.png" alt-text="Screenshot showing the list of successfully imported notebooks." lightbox="media/tutorial-lakehouse-data-preparation/existing-notebook-ribbon.png":::
 
 1. From the list of existing notebooks, select the **01 - Create Delta Tables** notebook and select **Open**.
 
@@ -59,7 +59,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
    To start the notebook and execute all the cells in sequence, select **Run all** on the top ribbon (under **Home**). Or, to only execute code from a specific cell, select the **Run** icon that appears to the left of the cell upon hover, or press **SHIFT + ENTER** on your keyboard while control is in the cell.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\spark-session-run-execution.png" alt-text="Screenshot of a Spark session configuration screen, including a code cell and Run icon.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\spark-session-run-execution.png" alt-text="Screenshot of a Spark session configuration screen, including a code cell and Run icon." lightbox="media/tutorial-lakehouse-data-preparation/spark-session-run-execution.png":::
 
    When running a cell, you didn't have to specify the underlying Spark pool or cluster details because Fabric provides them through Live Pool. Every Fabric workspace comes with a default Spark pool, called Live Pool. This means when you create notebooks, you don't have to worry about specifying any Spark configurations or cluster details. When you execute the first notebook command, the live pool is up and running in a few seconds. And the Spark session is established and it starts executing the code. Subsequent code execution is almost instantaneous in this notebook while the Spark session is active.
 
@@ -101,7 +101,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. To validate the created tables, right-click and select refresh on the **wwilakehouse** lakehouse. The tables appear.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\tutorial-lakehouse-explorer-tables.png" alt-text="Screenshot showing where to find your created tables in the Lakehouse explorer.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\tutorial-lakehouse-explorer-tables.png" alt-text="Screenshot showing where to find your created tables in the Lakehouse explorer." lightbox="media/tutorial-lakehouse-data-preparation/tutorial-lakehouse-explorer-tables.png":::
 
 1. Go the items view of the workspace again and select the **wwilakehouse** lakehouse to open it.
 
@@ -109,7 +109,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. From the list of existing notebooks, select the **02 - Data Transformation - Business** notebook to open it.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-second-notebook.png" alt-text="Screenshot of the Open existing notebook menu, showing where to select your notebook.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-second-notebook.png" alt-text="Screenshot of the Open existing notebook menu, showing where to select your notebook." lightbox="media/tutorial-lakehouse-data-preparation/existing-second-notebook.png":::
 
 1. In the open notebook in the lakehouse **Explorer**, you see the notebook is already linked to your opened lakehouse.
 
@@ -179,7 +179,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. To validate the created tables, right-click and select **Refresh** on the **wwilakehouse** lakehouse. The aggregate tables appear.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\validate-tables.png" alt-text="Screenshot of the Lakehouse explorer showing where the new tables appear.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\validate-tables.png" alt-text="Screenshot of the Lakehouse explorer showing where the new tables appear." lightbox="media/tutorial-lakehouse-data-preparation/validate-tables.png":::
 
 The two approaches produce a similar outcome. To minimize the need for you to learn a new technology or compromise on performance, choose the approach that best suits your background and preference.
 
