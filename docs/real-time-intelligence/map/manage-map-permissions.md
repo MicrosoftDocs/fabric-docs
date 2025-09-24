@@ -43,8 +43,8 @@ Map items depend on other Fabric items, such as Lakehouse or KQL Database. To bu
 |--------------------|-------------------------|-------------------------------------------------|
 | Builder and Viewer roles access the full GeoJSON data for tile generation. | Lakehouse  | Read |
 | Builder uploads PM Tiles to Lakehouse                                      | Lakehouse  | Write|
-| Builder access KQL DB and query set and read the result. | KQL Database, KQL Queryset  | KQL DB - Read and ReadData<br>KQL Queryset - Read |
-| Users view the content in the Map item    | KQL Queryset | Read and ReadData                   |
+| Builder access KQL DB and query set and read the result. | KQL Database, KQL Queryset  | KQL DB - Read and ReadData<br>KQL Queryset - Write |
+| Users view the content in the Map item    | KQL Queryset | Write                  |
 
 > [!NOTE]
 >
