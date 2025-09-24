@@ -15,7 +15,7 @@ While Graph in Microsoft Fabric is in preview, the service has certain limitatio
 
 ## Creating graph models
 
-### Data types
+#### Data types
 
 Graph in Microsoft Fabric currently only exposes support for the following date types:
 
@@ -25,42 +25,42 @@ Graph in Microsoft Fabric currently only exposes support for the following date 
 - String
 - ZonedDateTime
 
-### Data sources
+#### Data sources
 
 - OneLake parquet files are the only data sources currently supported.
 - Power BI semantic model support is under development.
 - LakeHouse with schema enabled is not supported.
 
-### Edge creation
+#### Edge creation
 
 During graph modeling, different edge types should be given different names.
 
 For example, a social media data set might represent "user likes comment" and "user likes post." If your graph model uses separate node types for *comment* and *post*, then the *user* node type should have two types of "likes" edges to *comment* and *post*; you might name these edges *userLikesComment* and *userLikesPost*.
 
-### Graph creation time
+#### Graph creation time
 
-Once per week, a graph model will encounter a timeout if the graph creation or update takes longer than 20 minutes. Such an operation will be marked as failed. However, users may re-initiate graph creation or update.
+Up to once a week, a graph model may encounter a timeout if the graph creation or update takes longer than 20 minutes. Such an operation would be marked as failed. However, users may re-initiate graph creation or update.
 
-### Graph instance total number
+#### Graph instance total number
 
 Up to 10 graph instances are allowed per Fabric Workspace.
 
-### Size of graph
+#### Size of graph
 
 Creating graphs with more than 500 million nodes and edges may result in unstable performance.
 
 ## Querying
 
-### Number of hops in multi-hop queries
+#### Number of hops in multi-hop queries
 
 Graph in Microsoft Fabric currently supports up to 8 hops on variable length patterns.
 
-### Size of results
+#### Size of results
 
 Aggregation performance may be unstable when results exceed 128 MB in size.
 Responses that are larger than 64 MB are currently truncated.
 
-### Timeout
+#### Timeout
 
 Queries taking more than 20 minutes will timeout.
 
