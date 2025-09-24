@@ -56,7 +56,7 @@ In addition following options are supported
 | tableLock | "false" | Implements an insert with TABLOCK option to improve write performance |
 | schemaCheckEnabled | "true" | Disables strict dataframe and sql table schema check when set to false |
 
-Other [Bulk api options](/sql/connect/jdbc/using-bulk-copy-with-the-jdbc-driver?view=azuresqldb-current#sqlserverbulkcopyoptions) can be set as options on the dataframe and will be passed to bulkcopy apis on write.
+Other [Bulk api options](/sql/connect/jdbc/using-bulk-copy-with-the-jdbc-driver?view=azuresqldb-current#sqlserverbulkcopyoptions&preserve-view=true) can be set as options on the dataframe and will be passed to bulkcopy apis on write.
 
 ### Write and Read example
 
@@ -158,6 +158,6 @@ Upon completion, the read response snippet appears in the cell's output. Errors 
 
 ## Related content
 
-* [Azure SQL Database](https://azure.microsoft.com/en-us/products/azure-sql/database)
+* [Azure SQL Database](https://azure.microsoft.com/products/azure-sql/database)
 * [Fabric SQL databases](/fabric/database/sql/overview)
 * [Azure SQL Database - Authentication and authorization](/azure/azure-sql/database/logins-create-manage)
