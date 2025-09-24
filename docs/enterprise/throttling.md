@@ -38,7 +38,7 @@ Due to smoothing, only a portion of the CU usage for an operation applies to any
 Bursting and smoothing work together to make it easier for capacity users to do their work. For example, users typically spend time scheduling jobs and spreading them out across the day. With smoothing, the compute cost for background jobs is smoothed over 24-hours. This means scheduled jobs can all run simultaneously without causing any spikes that would otherwise block jobs from starting. At the same time, users can enjoy consistently fast performance without waiting for slow jobs to complete or wasting time managing job schedules.
 
 >[!NOTE]
->Bursting and smoothing are not supported when a capacity admin has enabled Autoscale Billing for Spark. In this scenario, Spark usage operates in a Pay-As-You-Go mode, and the concepts of bursting and smoothing do not apply.
+>Bursting and smoothing of Spark workloads are not supported when a capacity admin has enabled Autoscale Billing for Spark. In this scenario, Spark usage operates in a Pay-As-You-Go mode, and the concepts of bursting and smoothing do not apply.
 
 ## Throttle triggers and throttle stages
 
