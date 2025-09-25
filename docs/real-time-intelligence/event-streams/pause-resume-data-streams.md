@@ -126,6 +126,9 @@ You can easily pause or resume all data traffic within Eventstream by selecting 
 
 :::image type="content" source="./media/pause-resume-data-streams/active-deactive-all.png" alt-text="Screenshot showing how to active or deactive all nodes at simultaneously." lightbox="./media/pause-resume-data-streams/active-deactive-all.png" :::
 
+## Limitation
+* After CI/CD (Git integration and deployment pipeline), all resources in the target eventstream become active, unless they fail due to connection or configuration issues. The resources in the original eventstream (exported to Git) and in the eventstream being deployed retain their states.
+
 ## Related content
 
 * [Add and manage destinations in an eventstream](./add-manage-eventstream-destinations.md).

@@ -73,6 +73,19 @@ You can review the deployment history to see the last time content was deployed 
 
 To learn more about deployment pipeline, visit [Get started with deployment pipelines](/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines)
 
+## Resource support for CI/CD
+
+Most Eventstream resources support CI/CD through Git integration and deployment pipelines. Both nodes (sources, destinations and operators) and Eventstream capabilities (such as schema set) are listed below.  
+
+| Full support | Partial support | Not supported |
+|--------------|-----------------|---------------|
+| Most sources and all destinations<br>All standard operators (except custom code)<br>Most capabilities (e.g., multiple-schema inferencing) | Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC)<br> | MongoDB CDC (preview)<br>SQL code editor (custom operator)<br>Pause/resume state |
+
+> [!NOTE]
+> **Partial support** means the resource supports CI/CD, but advanced settings configuration is currently not supported and will revert to defaults after deployment.
+>
+> After CI/CD (Git integration and deployment pipeline), all resources in the target eventstream become active, unless they fail due to connection or configuration issues. The resources in the original eventstream (exported to Git) and in the eventstream being deployed retain their states.
+
 ## Limitation
 
 * **Git Integration** and **Deployment Pipeline** have limited support for cross-workspace scenarios. To avoid issues, make sure all Eventstream destinations within the same workspace. Cross-workspace deployment may not work as expected.
