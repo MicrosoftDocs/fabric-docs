@@ -21,7 +21,7 @@ The MongoDB CDC source connector for Microsoft Fabric event streams captures an 
 ## Prerequisites
 
 - A workspace in Fabric capacity or Trial license mode, with **Contributor** or higher permissions.  
-- A MongoDB cluster that is publicly accessible and not be behind a firewall or secured in a virtual network.  
+- A MongoDB cluster that is accessible from your client IP address.  
 - A database user with the `read` role (or higher) on the target database.  
 - Change Data Capture (CDC) enabled for the collections you want to capture.  
 - An eventstream in Fabric. If you don’t have one, [create an eventstream](create-manage-an-eventstream.md).  
@@ -45,11 +45,11 @@ db.runCommand({
 
 You must also create or use an existing MongoDB user with the `read` role (or higher) on the target database. In MongoDB Atlas on MongoDB Cloud, go to **Database Access** to verify the user’s role.
 
-:::image type="content" source="./media/add-source-mongodb-change-data-capture/database-access.png" alt-text="Screenshot that shows the edit role for MongoDB database." lightbox="./media/add-source-mongodb-change-data-capture/database-access.png":::
+:::image type="content" source="./media/add-source-mongodb-change-data-capture/database-access.png" alt-text="Screenshot that shows how to edit role for MongoDB database." lightbox="./media/add-source-mongodb-change-data-capture/database-access.png":::
 
 In MongoDB Atlas on MongoDB Cloud, go to **Network Access** and add your client IP address to the IP Access List.
 
-:::image type="content" source="./media/add-source-mongodb-change-data-capture/network-configuration.png" alt-text="Screenshot that shows the edit role for MongoDB database." lightbox="./media/add-source-mongodb-change-data-capture/network-configuration.png":::
+:::image type="content" source="./media/add-source-mongodb-change-data-capture/network-configuration.png" alt-text="Screenshot that shows how to add ID list." lightbox="./media/add-source-mongodb-change-data-capture/network-configuration.png":::
 
 ## Add MongoDB (CDC) as a source
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]

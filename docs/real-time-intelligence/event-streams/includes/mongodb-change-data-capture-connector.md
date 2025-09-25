@@ -24,7 +24,7 @@ ms.date: 09/22/2025
         - **Connection name**: Automatically generated, or you can enter a new name for this connection.
         - **Username** and **Password**: Credentials for a user with at least the `read` role. Make sure the user has access to the target database and collections.
 
-        :::image type="content" source="media/mongodb-change-data-capture-connector/connect-atlas.png" alt-text="A screenshot of the connection settings for MongoDB Atlas." lightbox="media/mongodb-change-data-capture-connector/connect-atlas.png":::
+            :::image type="content" source="media/mongodb-change-data-capture-connector/connect-atlas.png" alt-text="A screenshot of the connection settings for MongoDB Atlas." lightbox="media/mongodb-change-data-capture-connector/connect-atlas.png":::
 
     1. If you choose **MongoDB (Self-managed)**:
 
@@ -38,12 +38,12 @@ ms.date: 09/22/2025
         - **Connection name**: Automatically generated, or you can enter a new name for this connection.
         - **Username** and **Password**: Use a user with read or higher permissions to access the target database and collections.
 
-        :::image type="content" source="media/mongodb-change-data-capture-connector/connect.png" alt-text="A screenshot of the connection settings for MongoDB (Self-managed)." lightbox="media/mongodb-change-data-capture-connector/connect.png":::
+            :::image type="content" source="media/mongodb-change-data-capture-connector/connect.png" alt-text="A screenshot of the connection settings for MongoDB (Self-managed)." lightbox="media/mongodb-change-data-capture-connector/connect.png":::
 
 1. Enter the following information to configure the MongoDB CDC data source, and then select **Next**.
 
-    - **Databases**: Choose  **All (Default)** or **Enter database name(s)**. You can also provide an optional comma-separated list of regular expressions that match the database names to monitor.
-    - **Collections**: Select **All (Default)** or **Enter collection name(s)**. If you choose the latter, provide a comma-separated list of regular expressions that match fully qualified namespaces (for example, <dbName>.<collectionName>) of the MongoDB collections to monitor.
+    - **Databases**: Choose  **All (Default)** or **Enter database name(s)**. If you choose the latter, provide an optional comma-separated list of regular expressions that match the database names to monitor.
+    - **Collections**: Select **All (Default)** or **Enter collection name(s)**. If you choose the latter, provide a comma-separated list of regular expressions that match fully qualified namespaces (for example `dbName.collectionName`) of the MongoDB collections to monitor.
 
 1. You may expand **Advanced settings** to access more configuration options for the MongoDB CDC source:
    - **Snapshot mode**: Options are: 
