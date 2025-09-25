@@ -30,7 +30,7 @@ Before you begin, ensure you have the following prerequisites:
 
 * **Workspace access:** A [Microsoft Fabric workspace](../../get-started/create-workspaces.md) with [enabled capacity](../../enterprise/licenses.md#capacity)
 * **Report permissions:** Edit access to a Power BI report published to your workspace
-* **Tenant Setting:** The following setting must be enabled: *All Power BI users can see "Set alert" button to create Fabric Activator alerts*
+* **Tenant setting:** The following setting must be enabled: *All Power BI users can see "Set alert" button to create Fabric Activator alerts*
 
 ## Create an alert for a report
 First, let's see how to set an alert for a report using the **Set alert** button on the ribbon for the report. When you use this option, it shows all the measures associated with the report. You use one of the measures to set an alert. Here are the detailed steps: 
