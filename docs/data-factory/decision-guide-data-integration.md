@@ -148,7 +148,7 @@ Now that you understand which service to use, you can start building your data i
 - [Get started with Mirroring](/fabric/mirroring/overview)
 - [Create a Copy Job](/fabric/data-factory/create-copy-job)
 - [Create a Copy Activity](/fabric/data-factory/copy-data-activity)
-- [Get started with Pipelines](data-factory-overview.md#data-pipelines)
+- [Get started with Pipelines](pipeline-overview.md)
 - [Get started with Eventstreams](/fabric/real-time-intelligence/event-streams/overview)
 - [Get started with Apache Airflow Jobs](/fabric/data-factory/apache-airflow-jobs-concepts)
 - [Create and use Notebooks](/fabric/data-engineering/how-to-use-notebook)
