@@ -39,7 +39,7 @@ For real-time streaming ingestion and event-driven scenarios, try Fabric Eventst
 
 | **Capability** | **Mirroring** | **Copy job** | **Copy Activity (Pipeline)** | **Eventstreams** |
 | --- | :---: | :---: | :---: | :---: |
-| Custom scheduling |  | Yes | Yes | Continous |
+| Custom scheduling |  | Yes | Yes | Continuous |
 | Table and Column management |  | Yes | Yes | Yes (schema, event & field management) |
 | Copy behavior: Append, Upsert, Override |  | Yes | Yes | Append |
 | Advanced observability + auditing |  | Yes | Yes | |
