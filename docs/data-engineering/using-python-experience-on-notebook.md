@@ -128,6 +128,18 @@ To better understand and use similar commands clearly, refer to the table below.
 >   - ```notebookutils.session.restartPython()``` is an official API that wraps ```sys.exit(0)``` , and it is safer and more compatible in notebook environments.
 > - It is **not recommended** to use ```sys.exit(0)``` directly unless necessary.
 
+## Python notebook real-time resource usage monitoring
+ 
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+ 
+With the resource monitor pane, you can track critical runtime information such as session duration, compute type, and real-time resource metrics, including CPU and memory consumption, directly within your notebook. This feature provides an immediate overview of your active session and the resources being used.
+ 
+The resource monitor improves visibility into how Python workloads utilize system resources. It helps you optimize performance, manage costs, and reduce the risk of out-of-memory (OOM) errors. By monitoring metrics in real time, you can identify resource-intensive operations, analyze usage patterns, and make informed decisions about scaling or modifying code.
+ 
+To start using it, set your notebook language to **Python** and start a session. You can then open the monitor either by clicking the compute resources in the notebook status bar or by selecting **View resource usage** from the toolbar. The resource monitor pane will appear automatically, providing an integrated monitoring experience for Python code in Fabric notebooks.
+ 
+   :::image type="content" source="media\use-python-experience-on-notebook\python-resource-usage-monitoring.gif" alt-text="Screenshot showing Python notebook real-time resource usage monitoring." lightbox="media\use-python-experience-on-notebook\python-resource-usage-monitoring.gif":::
+
 ## Session configuration magic command
 
 Similar with personalizing a [Spark session configuration](author-execute-notebook.md#spark-session-configuration-magic-command) in notebook, you can also use **%%configure** in Python notebook too. Python notebook supports customizing compute node size, mount points and default lakehouse of the notebook session. They can be used in both interactive notebook and pipeline notebook activities. We recommend using %%configure command at the beginning of your notebook, or you must restart the notebook session to make the settings take effect.
