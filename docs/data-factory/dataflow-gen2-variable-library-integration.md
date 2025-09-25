@@ -116,3 +116,5 @@ The following list outlines important constraints and behaviors to keep in mind 
 - **Gateway support**: Dataflows that rely on a gateway can't resolve variable libraries.
 
 - **Variable limit**: Dataflows can only retrieve a maximum of 50 variables.
+
+- **SPN support**: Dataflows can only successfully refresh if the refresh is not using an SPN for authentication.
