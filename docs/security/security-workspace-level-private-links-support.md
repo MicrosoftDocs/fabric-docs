@@ -84,7 +84,7 @@ Review the following considerations when working with unsupported item types.
 
 * The OneLake Catalog - Govern tab isn't available when Private Link is activated.
   
-* Workspace monitoring is not currently supportly when a workspace-level private link is enabled for a workspace.
+* Workspace monitoring is not currently supported when a workspace-level private link is enabled for a workspace.
 
 ## Supported APIs
 
