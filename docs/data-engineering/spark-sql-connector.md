@@ -62,10 +62,10 @@ The connector also supports the following options:
 
 | Option | Default value | Description |
 | ----- | ----- | ----- |
-| `reliabilityLevel` | "BEST_EFFORT" | "BEST_EFFORT" or "NO_DUPLICATES". "NO_DUPLICATES" implements a reliable insert in executor restart scenarios. |
-| `isolationLevel` | "READ_COMMITTED" | Specifies the isolation level. |
-| `tableLock` | "false" | Implements an insert with TABLOCK option to improve write performance. |
-| `schemaCheckEnabled` | "true" | Disables strict `DataFrame` and sql table schema check when set to false. |
+| `reliabilityLevel` | "BEST_EFFORT" | Controls the reliability of insert operations. Possible values: `BEST_EFFORT` (default, fastest, might result in duplicate rows if an executor restarts), `NO_DUPLICATES` (slower, ensures no duplicate rows are inserted even if an executor restarts). Choose based on your tolerance for duplicates and performance needs. |
+| `isolationLevel` | "READ_COMMITTED" | Sets the transaction isolation level for SQL operations. Possible values: `READ_COMMITTED` (default, prevents reading uncommitted data), `READ_UNCOMMITTED`, `REPEATABLE_READ`, `SNAPSHOT`, `SERIALIZABLE`. Higher isolation levels can reduce concurrency but improve data consistency. |
+| `tableLock` | "false" | Controls whether the SQL Server TABLOCK table-level lock hint is used during insert operations. Possible values: `true` (enables TABLOCK, which can improve bulk write performance), `false` (default, doesn't use TABLOCK). Setting to `true` might increase throughput for large inserts but can reduce concurrency for other operations on the table. |
+| `schemaCheckEnabled` | "true" | Controls whether strict schema validation is enforced between your Spark `DataFrame` and the SQL table. Possible values: `true` (default, enforces strict schema matching), `false` (allows more flexibility and might skip some schema checks). Setting to `false` can help with schema mismatches but might lead to unexpected results if the structures differ significantly. |
 
 Other [Bulk API options](/sql/connect/jdbc/using-bulk-copy-with-the-jdbc-driver?view=azuresqldb-current#sqlserverbulkcopyoptions&preserve-view=true) can be set as options on the `DataFrame` and are passed to bulk copy APIs on write.
 
@@ -162,18 +162,18 @@ spark.read.option("user", "").option("password", "").mssql("dbo.publicExample").
 
 ### Supported DataFrame save modes
 
-> [!IMPORTANT]
-> The data types between Spark SQL and MSSQL don't have a one-to-one mapping. When you use the `overwrite` save mode, it drops the existing table and creates a new one, so the original table schema (if you use MSSQL-exclusive data types) is lost and converted to a new type. Use `.option("truncate", true)` to avoid unexpected data loss.
-
-> [!IMPORTANT]
-> Table indices are lost when you use `overwrite`. Use `.option("truncate", true)` to keep the existing indexing.
+When you write data from Spark to SQL databases, you can choose from several save modes. Save modes control how data is written when the destination table already exists, and can affect schema, data, and indexing. Understanding these modes helps you avoid unexpected data loss or changes.
 
 This connector supports the options defined here: [Spark Save functions](https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html)
 
-* ErrorIfExists (default save mode): If the destination table exists, the write is aborted and an exception is returned. Otherwise, a new table is created with data.
-* Ignore: If the destination table exists, the write ignores the request and doesn't return an error. Otherwise, a new table is created with data.
-* Overwrite: If the destination table exists, the table is dropped, recreated, and new data is appended.
-* Append: If the destination table exists, new data is appended to it. Otherwise, a new table is created with data.
+* **ErrorIfExists** (default save mode): If the destination table exists, the write is aborted and an exception is returned. Otherwise, a new table is created with data.
+* **Ignore**: If the destination table exists, the write ignores the request and doesn't return an error. Otherwise, a new table is created with data.
+* **Overwrite**: If the destination table exists, the table is dropped, recreated, and new data is appended. 
+  
+    > [!NOTE]
+    > When you use `overwrite`, the original table schema (especially MSSQL-exclusive data types) and table indices are lost and replaced by the schema inferred from your Spark DataFrame. To avoid losing schema and indices, use `.option("truncate", true)` instead of `overwrite`.
+
+* **Append**: If the destination table exists, new data is appended to it. Otherwise, a new table is created with data.
 
 ## Troubleshoot
 
