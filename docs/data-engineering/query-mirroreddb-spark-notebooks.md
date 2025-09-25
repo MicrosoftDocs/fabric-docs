@@ -1,12 +1,11 @@
 ---
 title: Query Mirrored Databases in Spark Notebook
-description: Connect and query mirrored databases (MirrorDBs) directly from your Spark notebooks
+description: Connect and query mirrored databases (MirrorDBs) directly from your Spark notebooks.
 ms.reviewer: avinandac
-ms.author: 
-author:
+ms.author: avinandac
 ms.topic: how-to
 ms.custom:
-ms.date: 04/12/2023
+ms.date: 09/25/2025
 ms.search.form: Query Mirrored Databases with Spark Notebook
 ---
 
