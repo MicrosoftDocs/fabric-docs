@@ -13,7 +13,7 @@ ms.custom:
 
 # How to configure Dynamics CRM in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to Dynamics CRM.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Dynamics CRM.
 
 ## Prerequisites
 

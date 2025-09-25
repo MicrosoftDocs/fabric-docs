@@ -1,9 +1,9 @@
 ---
 title: Lakehouse sharing and permission management
 description: Learn how to share a lakehouse and manage permissions, including how to remove permissions and create data access roles.
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/19/2024
@@ -20,7 +20,7 @@ To share a lakehouse, navigate to your workspace, and select the **Share** icon 
 
 To edit or remove permissions, see [Managing permissions](#managing-permissions).
 
-:::image type="content" source="media\lakehouse-sharing\lakehouse-share-access.png" alt-text="Screenshot showing the commands to share lakehouse access with other users.":::
+:::image type="content" source="media\lakehouse-sharing\lakehouse-share-access.png" alt-text="Screenshot showing the commands to share lakehouse access with other users." lightbox="media/lakehouse-sharing/lakehouse-share-access.png":::
 
 ## Sharing and permissions
 
@@ -56,7 +56,7 @@ To create a new data access role:
 1. Choose the permissions you would like to assign, enter names or email addresses in the **Add people or groups** field and select **Add**.
 1. Review the assignee list under **Assigned people and groups**, remove any that you don't want on the list, and select **Save**.
 
-For more information, see [Get started with OneLake data access roles](../onelake/security/get-started-data-access-roles.md).
+For more information, see [Get started with OneLake data access roles](../onelake/security/get-started-onelake-security.md).
 
 ## Known issues
 * The sharing dialog for lakehouse shows an option to subscribe to OneLake events. Permission to subscribe to this event is granted along with the *Read All* Apache Spark permission. This is a temporary limitation.

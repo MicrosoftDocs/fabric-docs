@@ -12,9 +12,9 @@ ms.date: 05/19/2025
 
 # Customer-managed keys for Fabric workspaces
 
-Microsoft Fabric encrypts all data-at-rest using Microsoft managed keys. With customer-managed keys for Fabric workspaces, you can use your [Azure Key Vault](/azure/key-vault/general/overview) keys to add another layer of protection to the data in your Microsoft Fabric workspaces. A customer-managed key provides greater flexibility, allowing you to manage its rotation, control access, and usage auditing. It also helps organizations meet data governance needs and comply with data protection and encryption standards.
+Microsoft Fabric encrypts all data-at-rest using Microsoft managed keys. With customer-managed keys for Fabric workspaces, you can use your [Azure Key Vault](/azure/key-vault/general/overview) keys to add another layer of protection to the data in your Microsoft Fabric workspaces - including all data in OneLake. A customer-managed key provides greater flexibility, allowing you to manage its rotation, control access, and usage auditing. It also helps organizations meet data governance needs and comply with data protection and encryption standards.
 
-All Fabric data stores are encrypted at rest with Microsoft-managed keys. Customer-managed keys use envelope encryption, where a Key Encryption Key (KEK) encrypts a Data Encryption Key (DEK). When using customer-managed keys, the Microsoft managed DEK encrypts your data, and then the DEK is encrypted using your customer-managed KEK. Use of a KEK that never leaves Key Vault allows the data encryption keys themselves to be encrypted and controlled.
+All Fabric data stores are encrypted at rest with Microsoft-managed keys. Customer-managed keys use envelope encryption, where a Key Encryption Key (KEK) encrypts a Data Encryption Key (DEK). When using customer-managed keys, the Microsoft managed DEK encrypts your data, and then the DEK is encrypted using your customer-managed KEK. Use of a KEK that never leaves Key Vault allows the data encryption keys themselves to be encrypted and controlled. This ensures that all data in OneLake in CMK enabled workspace is encrypted using your customer-managed keys.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
@@ -88,7 +88,7 @@ After completing the prerequisites, follow the steps in this section to enable c
 
 1. Select **Apply**.
 
-Once you complete these steps, your workspace is encrypted with a customer-managed key. This means existing and future items in the workspace will be encrypted by the customer-managed key you used for the setup. You can review the encryption status *Active, In progress or Failed* in the **Encryption** tab in workspace settings. Items for which encryption is in progress or failed are listed categorically too. The key needs to remain active in the Key Vault while encryption is in progress *(Status: In progress)*. Refresh the page to view the latest encryption status. If encryption has failed for some items in the workspace, you can retry using a different key.
+Once you complete these steps, your workspace is encrypted with a customer-managed key. This means that all data in Onelake is encrypted and that existing and future items in the workspace will be encrypted by the customer-managed key you used for the setup. You can review the encryption status *Active, In progress or Failed* in the **Encryption** tab in workspace settings. Items for which encryption is in progress or failed are listed categorically too. The key needs to remain active in the Key Vault while encryption is in progress *(Status: In progress)*. Refresh the page to view the latest encryption status. If encryption has failed for some items in the workspace, you can retry using a different key.
 
 ## Revoke access
 

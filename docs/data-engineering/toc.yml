@@ -205,6 +205,8 @@ items:
            href: run-series-analyisis-overview.md
          - name: Monitor run series
            href: apache-spark-monitor-run-series.md
+         - name: Apache Spark applications comparison
+           href: spark-comparison-runs.md
       - name: Single Spark Application Monitoring
         items: 
          - name: Monitor a Single Spark Application
@@ -227,6 +229,8 @@ items:
             href: executor-log.md
           - name: Resource usage APIs
             href: resource-usage-apis.md
+          - name: Spark Advisor API
+            href: spark-advisor-api.md
       - name: Collecting Spark Logs & Metrics
         items: 
           - name: Collect Logs & Metrics with Azure Log Analytics
@@ -256,10 +260,14 @@ items:
       href: lakehouse-and-delta-tables.md
     - name: Load to tables
       href: load-to-tables.md
+    - name: Table compaction
+      href: table-compaction.md
     - name: Lakehouse table maintenance
       href: lakehouse-table-maintenance.md
     - name: Delta optimization and V-Order
       href: delta-optimization-and-v-order.md
+    - name: Tune file size
+      href: tune-file-size.md
     - name: Automated Statistics for Delta Tables
       href: automated-table-statistics.md	
     - name: Delta Driver Mode Snapshot
@@ -317,6 +325,8 @@ items:
     href: environment-manage-resources.md
   - name: Migrate the existing workspace libraries and Spark properties
     href: environment-workspace-migration.md
+  - name: Managing libraries in environment secured by outbound access protection
+    href: environment-manage-library-with-outbound-access-protection.md
 - name: VS Code integration 
   items:
   - name: Fabric extensions for VS Code  
@@ -417,7 +427,7 @@ items:
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)
      href: spark-arcgis-geoanalytics.md
-- name: User data functions (preview)
+- name: User data functions
   items:
    - name: Overview
      href: ./user-data-functions/user-data-functions-overview.md

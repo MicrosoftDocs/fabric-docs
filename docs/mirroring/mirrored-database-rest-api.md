@@ -3,8 +3,8 @@ title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 author: xuyangit1
 ms.author: xuyan
-ms.reviewer: wiassaf
-ms.date: 07/28/2025
+ms.reviewer: whhender
+ms.date: 09/05/2025
 ms.topic: conceptual
 ms.custom: sfi-ropc-nochange
 ---
@@ -46,7 +46,7 @@ Body:
 
 The `payload` property in previous JSON body is Base64 encoded. You can use [Base64 Encode and Decode](https://www.base64encode.org/) to encode. 
 
-The original JSON definition examples are as follows. For more information about the mirrored database item definition, including a breakdown of the definition structure, see [Mirrored database item definition](/rest/api/fabric/articles/item-management/definitions/mirrored-database-definition).
+The original JSON definition examples are as follows. For more information about the mirrored database item definition, including a breakdown of the definition structure, see [Mirrored database item definition](/rest/api/fabric/articles/item-management/definitions/mirrored-database-definition). You can also refer to your existing mirrored database's definition by calling [Get mirrored database definition API](#get-mirrored-database-definition).
 
 - [JSON definition example of replicating entire database](#json-definition-example-of-replicating-entire-database)
 - [JSON definition example of replicating specified tables](#json-definition-example-of-replicating-specified-tables)

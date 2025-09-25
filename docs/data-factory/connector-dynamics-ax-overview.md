@@ -18,13 +18,13 @@ The Dynamics AX connector is supported in Data Factory for [!INCLUDE [product-na
 
 Data Factory in Microsoft Fabric doesn't currently support Dynamics AX in Dataflow Gen2.
 
-## Support in Data pipeline
+## Support in a pipeline
 
-The Dynamics AX connector supports the following capabilities in Data pipeline:
+The Dynamics AX connector supports the following capabilities in a pipeline:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
 | **Copy activity (source/-)** | None <br>On-premises| Service principal<br> Workspace identity |
 | **Lookup activity** | None <br>On-premises | Service principal<br> Workspace identity |
 
-To learn more about the copy activity configuration for Dynamics AX in Data pipeline, go to [Configure in a Data pipeline copy activity](connector-dynamics-ax-copy-activity.md).
+To learn more about the copy activity configuration for Dynamics AX in a pipeline, go to [Configure in a pipeline copy activity](connector-dynamics-ax-copy-activity.md).

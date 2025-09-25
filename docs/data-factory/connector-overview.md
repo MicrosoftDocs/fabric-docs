@@ -12,7 +12,7 @@ ms.custom: connectors
 
 # Connector overview
 
-Data Factory in Microsoft Fabric connects to many types of data stores using built-in connectors. These connectors help you bring in or transform data with Dataflow Gen2, data pipelines, or Copy job. Select the connector you need to get started.
+Data Factory in Microsoft Fabric connects to many types of data stores using built-in connectors. These connectors help you bring in or transform data with Dataflow Gen2, pipelines, or Copy job. Select the connector you need to get started.
 
 ## Prerequisites
 
@@ -23,9 +23,9 @@ Before setting up a connection, ensure you have:
 
 ## Supported connectors in Fabric
 
-Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job. Select a data store to see what it can do and how to set it up.
+Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Select a data store to see what it can do and how to set it up.
 
-| Connector | Dataflow gen2 (source/destination) | Data pipeline<br>(copy activity source/destination) | Copy job (source/destination) |
+| Connector | Dataflow gen2 (source/destination) | Pipeline<br>(copy activity source/destination) | Copy job (source/destination) |
 |:-- | :-:| :-: |:-: |
 | [Access](connector-access-database-overview.md) | ✓/− |  |  |
 | Acterys: Model Automation & Planning (Beta) | ✓/− |  |  |
@@ -35,6 +35,7 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | [ADPAnalytics (Beta)](/power-query/connectors/adp-analytics) | ✓/− |  |  |
 | [Amazon Athena](/power-query/connectors/amazon-athena) | ✓/− |  |  |
 | [Amazon OpenSearch Service (Beta)](/power-query/connectors/amazon-opensearch-service)  | ✓/− |  |  |
+| [Amazon RDS For Oracle](connector-amazon-rds-for-oracle-overview.md) |  | ✓/− | ✓/− |
 | [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) |  | ✓/− | ✓/− |
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/− | ✓/− |  |
 | [Amazon S3](connector-amazon-s3-overview.md) |  | ✓/✓ | ✓/✓ |
@@ -145,6 +146,7 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | [MariaDB](connector-mariadb-overview.md)| ✓/− | ✓/− |✓/−   |
 | MarkLogic | ✓/− |  |  |
 | [Microsoft 365](connector-microsoft-365-overview.md) |  | ✓/− |  |
+| [Microsoft Access](connector-microsoft-access-overview.md) |  | ✓/✓ | ✓/✓ |
 | Microsoft Azure Data Manager for Energy | ✓/− |  |  |
 | [Microsoft Exchange Online](connector-microsoft-exchange-online-overview.md) | ✓/− |  |  |
 | Strategy for Power BI | ✓/− |  |  |
@@ -217,7 +219,7 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | Topcon Aptix Insights | ✓/− |  |  |
 | [Usercube (Beta)](/power-query/connectors/usercube) | ✓/− |  |  |
 | Vena | ✓/− |  |  |
-| [Vertica](connector-vertica-overview.md) | ✓/− | ✓/✓ | ✓/− |
+| [Vertica](connector-vertica-overview.md) | ✓/− | ✓/- | ✓/− |
 | [Vessel Insight](/power-query/connectors/vessel-insight) | ✓/− |  |  |
 | Viva Insights | ✓/− |  |  |
 | [Warehouse](/power-query/connectors/warehouse) | ✓/− |  |  |

@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: overview
 ms.custom:
-ms.date: 08/21/2025
+ms.date: 09/22/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -209,6 +209,22 @@ These APIs are supported in following scenarios:
 > * Copy to Eventhouse isn't supported.
 > * OneLake staging isn't currently supported.
 
+### Eventstream support
+
+You can use these APIs in workspaces with Private Link enabled to create Eventstream items and view their topology.
+* [Items - REST API (Eventstream)](/rest/api/fabric/eventstream/items)
+* [Topology - Get Eventstream Topology](/rest/api/fabric/eventstream/topology/get-eventstream-topology)
+
+Eventstream APIs use a graph-like structure to define an Eventstream item, which consists of four components: source, destination, operator, and stream. 
+
+Currently, Eventstream only supports Workspace Private Link for a limited set of sources and destinations. If you include an unsupported component in the Eventstream API payload, the request may fail.
+
+Unsupported scenarios:
+* Custom Endpoint as a source is not supported.
+* Custom Endpoint as a destination is not supported.
+* Eventhouse as a destination (with direct ingestion mode) is not supported.
+* Activator as a destination is not supported.
+
 ### Eventhouse support
 
 [Items - REST API (Eventhouse)](/rest/api/fabric/eventhouse/items)
@@ -239,9 +255,9 @@ A virtual network data gateway must be used for every dataflow connector. The vi
 
 ## Supported and unsupported tools
 
-- Workspace-level private link connections are supported via REST API.
-- The Fabric portal doesn't currently support workspace-level private links. If a workspace allows public access, the Fabric portal continues to function using public connectivity. If a workspace is configured to deny inbound public access, the Fabric portal displays an **Access restricted** page.
-- SQL Server Management Studio is supported for connecting to warehouses via private link.
+- You can use either the Fabric portal or the REST API to manage all [supported item types](#supported-item-types-for-workspace-level-private-link) in workspaces with private links enabled. If a workspace allows public access, the Fabric portal continues to function using public connectivity. If a workspace is configured to deny inbound public access, the Fabric portal displays an **Access restricted** page.
+- Direct deeplinks to a Monitoring hub Level 2 (L2) page might not work as expected when using workspace-level private links. You can access the L2 page by first navigating to the Monitoring hub's Level 1 (L1) page in the Fabric portal.
+- SQL Server Management Studio (SSMS) is supported for connecting to warehouses via workspace-level private link.
 - Storage Explorer can be used with workspace-level private links.
 - Azure Storage Explorer, PowerShell, AzCopy, and other Azure Storage tools can connect to OneLake via a private link.
 - To use OneLake File Explorer, you must have access to your tenant, either via public access or a tenant private link.  
@@ -258,6 +274,12 @@ A virtual network data gateway must be used for every dataflow connector. The vi
    - To query Lakehouse files or tables from a workspace that has workspace-level private link enabled, you must create a cross-workspace managed private endpoint connection to access resources in the other workspace. <!--For instructions, see [Cross workspace communication](security-cross-workspace-communication.md).-->
    - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace.
 - You could run into Spark issues in the following regions when outbound access protection is enabled for the workspace: Mexico Central, Israel Central, and Spain Central.
+- Dataflows currently don't support using a Fabric Warehouse or Fabric Lakehouse in the same workspace as either a data source or an output destination.
+- Current limitations for Private Link with an eventhouse:
+   - Copilot features: Machine learning workloads might experience limited functionality due to a known regression.
+   - Eventstream pull: Eventstream workloads don't currently support full polling functionality.
+   - Fabric doesn't currently support Event Hub integration.
+   - Queued ingestion via OneLake isn't currently available.
 
 ## Common errors and troubleshooting
 

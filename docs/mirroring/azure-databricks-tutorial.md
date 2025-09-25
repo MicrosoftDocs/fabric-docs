@@ -1,8 +1,8 @@
 ---
 title: "Microsoft Fabric Mirrored Databases From Azure Databricks Tutorial"
 description: Learn how to create a mirrored database from Azure Databricks in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+author: whhender
+ms.author: whhender
 ms.reviewer: sheppardshep, mspreshah
 ms.date: 07/31/2025
 ms.topic: tutorial

@@ -1,9 +1,9 @@
 ---
 title: Manage Apache Spark libraries
 description: Learn how to manage and use libraries following best practices. A library is a collection of prewritten code that can provide extra functionality.
-ms.reviewer: snehagunda
-ms.author: shuaijunye
-author: shuaijunye
+ms.reviewer: shuaijunye
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 04/16/2024
@@ -70,7 +70,7 @@ The system restarts the Python interpreter to apply the change of libraries. Any
 
 The inline commands for managing Python libraries are disabled in notebook pipeline run by default. If you want to enable `%pip install` for pipeline, add "_inlineInstallationEnabled" as bool parameter equals True in the notebook activity parameters.
 
-:::image type="content" source="media\environment-lm\library-management-enable-pip-in-pipeline.png" alt-text="Screenshot showing the the configuration of enabling pip install for notebook pipeline run.":::
+:::image type="content" source="media\environment-lm\library-management-enable-pip-in-pipeline.png" alt-text="Screenshot showing the the configuration of enabling pip install for notebook pipeline run." lightbox="media/environment-lm/library-management-enable-pip-in-pipeline.png":::
 
 > [!NOTE]
 >

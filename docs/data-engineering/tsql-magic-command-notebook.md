@@ -1,9 +1,9 @@
 ---
 title: "Run T-SQL code in Fabric Python notebooks"
 description: Learn how to use T-SQL magic command inside Fabric Notebook to for achieve the mix-programming experience between T-SQL and Python.
-author: qixwang
-ms.author: qixwang
-ms.reviewer: sngun
+author: eric-urban
+ms.author: eur
+ms.reviewer: qixwang
 ms.topic: how-to
 ms.date: 07/28/2025
 ms.custom: 

@@ -52,5 +52,5 @@ Perhaps you'd rather actively monitor the entirety of your pipeline (create, del
 
 ## Related content
 
-- [How to monitor data pipeline runs in Fabric Monitor Hub](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs in Fabric Monitor Hub](monitor-pipeline-runs.md)
 - [Tutorial: Create pipeline alerts in Activator](../real-time-intelligence/data-activator/activator-tutorial.md)

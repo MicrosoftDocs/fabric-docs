@@ -177,6 +177,8 @@ landingContent:
             url: environment-git-and-deployment-pipeline.md
           - text: Migrate libraries and Spark properties to an environment
             url: environment-workspace-migration.md   
+          - text: Managing libraries in environment secured by outbound access protection
+            url: environment-manage-library-with-outbound-access-protection.md
 # Card 
   - title: Fabric Livy API
     linkLists:

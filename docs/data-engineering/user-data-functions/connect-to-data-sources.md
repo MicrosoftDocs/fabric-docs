@@ -1,14 +1,15 @@
 ---
-title: Connect to data sources - Fabric User data functions (Preview)
+title: Connect to data sources - Fabric User data functions
 description: Learn how to connect your Fabric User data function items to data sources.
-ms.author: luisbosquez
-author: luisbosquez
+ms.author: eur
+ms.reviewer: luisbosquez
+author: eric-urban
 ms.topic: overview
 ms.date: 03/31/2025
 ms.search.form: Add new data connections to user data functions items
 ---
 
-# Connect to data sources from your Fabric User data functions item (Preview)
+# Connect to data sources from your Fabric User data functions item
 
 Fabric User data functions provides native data source connections by using the Manage connections feature in the Fabric portal. This feature allows you to connect to your Fabric data sources without having to create connection strings or manage access credentials.
 

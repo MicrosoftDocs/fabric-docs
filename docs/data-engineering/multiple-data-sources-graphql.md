@@ -2,8 +2,8 @@
 title: Query multiple data sources in Fabric API for GraphQL
 description: Learn about API for GraphQL support for multiple data sources, and see an example of a query that spans two sources.
 ms.reviewer: sngun
-ms.author: sngun
-author: snehagunda
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.search.form: GraphQL multiple data sources

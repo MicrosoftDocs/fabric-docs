@@ -1,9 +1,9 @@
 ---
 title: Use Python experience on Notebook
 description: Learn how to work with pure Python notebooks for data exploration, visualization, and machine learning.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.search.form: Create and use notebooks
@@ -14,8 +14,6 @@ ms.date: 03/31/2025
 
 
 The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This capability makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that don't require big data and distributed computing.
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 With a Python notebook, you can get:
 
@@ -129,6 +127,18 @@ To better understand and use similar commands clearly, refer to the table below.
 > - If you need to restart the kernel (for example, after installing certain packages), it is **recommended** to use ```notebookutils.session.restartPython()``` instead of ```import sys; sys.exit(0)```.
 >   - ```notebookutils.session.restartPython()``` is an official API that wraps ```sys.exit(0)``` , and it is safer and more compatible in notebook environments.
 > - It is **not recommended** to use ```sys.exit(0)``` directly unless necessary.
+
+## Python notebook real-time resource usage monitoring
+ 
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+ 
+With the resource monitor pane, you can track critical runtime information such as session duration, compute type, and real-time resource metrics, including CPU and memory consumption, directly within your notebook. This feature provides an immediate overview of your active session and the resources being used.
+ 
+The resource monitor improves visibility into how Python workloads utilize system resources. It helps you optimize performance, manage costs, and reduce the risk of out-of-memory (OOM) errors. By monitoring metrics in real time, you can identify resource-intensive operations, analyze usage patterns, and make informed decisions about scaling or modifying code.
+ 
+To start using it, set your notebook language to **Python** and start a session. You can then open the monitor either by clicking the compute resources in the notebook status bar or by selecting **View resource usage** from the toolbar. The resource monitor pane will appear automatically, providing an integrated monitoring experience for Python code in Fabric notebooks.
+ 
+   :::image type="content" source="media\use-python-experience-on-notebook\python-resource-usage-monitoring.gif" alt-text="Screenshot showing Python notebook real-time resource usage monitoring." lightbox="media\use-python-experience-on-notebook\python-resource-usage-monitoring.gif":::
 
 ## Session configuration magic command
 

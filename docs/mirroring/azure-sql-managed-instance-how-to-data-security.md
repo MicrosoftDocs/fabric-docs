@@ -1,14 +1,14 @@
 ---
-title: "Secure Data in Mirrored Databases From Azure SQL Managed Instance (Preview)"
+title: "Secure Data in Mirrored Databases From Azure SQL Managed Instance"
 description: Learn about how to secure data in mirrored databases from Azure SQL Managed Instance in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+author: whhender
+ms.author: whhender
 ms.reviewer: lazartimotic, jingwang, nzagorac
 ms.date: 11/19/2024
 ms.topic: how-to
 ---
 
-# How to: Secure data in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)
+# How to: Secure data in Microsoft Fabric mirrored databases from Azure SQL Managed Instance
 
 This guide helps you establish data security in your mirrored Azure SQL Managed Instance database in Microsoft Fabric.
 
@@ -19,7 +19,7 @@ This guide helps you establish data security in your mirrored Azure SQL Managed 
    - After enabling the SAMI, if the SAMI is disabled or removed, the mirroring of Azure SQL Managed Instance to Fabric OneLake will fail.
    - After enabling the SAMI, if you add a user assigned managed identity (UAMI), it will become the primary identity, replacing the SAMI as primary. This will cause replication to fail. To resolve, remove the UAMI.
 
-1. Fabric needs to connect to the Azure SQL Managed Instance. For this purpose, create a dedicated database user with limited permissions, to follow the principle of least privilege. For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-tutorial.md).
+1. Fabric needs to connect to the Azure SQL Managed Instance. For this purpose, create a dedicated database user with limited permissions, to follow the principle of least privilege. For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-tutorial.md).
 
 > [!IMPORTANT]
 > Any granular security established in the source database must be reconfigured in the mirrored database in Microsoft Fabric.
