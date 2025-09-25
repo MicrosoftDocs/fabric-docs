@@ -177,7 +177,6 @@ If you stop here, this command acts like a What-If: it shows what the upgrade wo
 Before exporting your Fabric pipeline, you'll need a few details from your Fabric workspace. Open a blank text file to copy the values you’ll need later.
 
 1. Open Microsoft Fabric UX and navigate to your Data Factory Workspace.
-1. Your workspace is in a **region** like `daily`, `dxt`, `msit`, or `prod`. Note this region; you'll need it later. If you aren't sure, use `prod`.
 1. Find your [Workspace ID](migrate-pipelines-how-to-find-your-fabric-workspace-id.md) and copy it into your text file.
 1. Run this PowerShell command to get your Fabric Access Token and store it for your session:
 
