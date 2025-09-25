@@ -37,7 +37,7 @@ Properly managing identities and access controls is essential for securing your 
 
 - **Enforce multi-factor authentication**: Using Microsoft Entra condiditional access, require multifactor authentication for all users accessing Data Factory in Microsoft Fabric to prevent unauthorized access through compromised credentials. See [Microsoft Entra conditional access](/fabric/security/security-conditional-access) and [plan a conditional access deployment](/entra/identity/conditional-access/plan-conditional-access).
 
-- **Use workspace identities for trusted access**: Configure workspace identities to establish secure connections between Data Factory and Azure Data Lake Storage Gen2 (ADLS Gen2) resources with firewall rules. This enables access to firewall-protected data sources without compromising security. See [Trusted workspace access](/fabric/security/security-trusted-workspace-access).
+- **Use workspace identities for trusted access**: Configure workspace identities to establish secure connections between Data Factory and its connections with firewall rules. This enables access to firewall-protected data sources without compromising security. See the [workspace identity overview](../security/workspace-identity.md) and [trusted workspace access](/fabric/security/security-trusted-workspace-access) for more information.
 
 - **Manage data-source access**: After you add a cloud data source, the access list for the data source controls only who is allowed to use the data source in items that include data from the data source. See [Data source management](/fabric/data-factory/data-source-management#manage-users)
 
