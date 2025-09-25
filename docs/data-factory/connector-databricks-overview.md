@@ -14,11 +14,12 @@ ms.custom:
 
 The Databricks connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Databricks Client Credentials<br> Personal Access Token<br> OAuth (OIDC) |
 
-To learn about how to connect to Databricks in Dataflow Gen2, go to [Set up your Databricks connection](connector-databricks.md).
+## Related content
 
-## Support in pipelines
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Databricks in pipelines.
+For information on how to connect to a Databricks, go to [Set up your Databricks connection](connector-databricks.md).
