@@ -82,7 +82,7 @@ To read data from semantic models, follow these steps:
     df_table
     ```
 
-        > [!NOTE]
+    > [!NOTE]
     >- Data is retrieved using XMLA, which requires at least [XMLA read-only](/power-bi/enterprise/service-premium-connect-tools) to be enabled.
     >- The amount of retrievable data is limited by:
        - The [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU that hosts the semantic model.
@@ -99,7 +99,7 @@ To read data from semantic models, follow these steps:
     df_measure
     ```
 
-        > [!NOTE]
+    > [!NOTE]
     >- By default, data is **not** retrieved using XMLA, so XMLA read-only doesn't need to be enabled.
     >- The data isn't subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
     >- The amount of retrievable data is limited by:
