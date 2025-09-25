@@ -213,6 +213,9 @@ If you already have a warehouse as a destination and try to disable staging, a w
 
 ### Schema support for Lakehouse, Warehouse and SQL databases (preview)
 
+> [!NOTE]
+>This feature is currently being rolled out and availability may vary by region. You might not see it yet depending on your location.
+
 Lakehouse, Warehouse, and SQL databases in Microsoft Fabric all support the ability to create a schema for your data. This means you can structure your data in a way that makes it easier to manage and query. In order to be able to write to schemas in these destinations you need to enable the **Navigate using full hierarchy** option under **advanced options** when you set up your connection. If you don't enable this option, you won't be able to select or view the schemas in the destination. A preview limitation for enabling Navigate using full hierarchy is that fast copy may not work properly.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-schema-support.png" alt-text="Screenshot highlighting the Enable schema support option.":::

@@ -327,6 +327,8 @@ items:
     href: environment-manage-resources.md
   - name: Migrate the existing workspace libraries and Spark properties
     href: environment-workspace-migration.md
+  - name: Managing libraries in environment secured by outbound access protection
+    href: environment-manage-library-with-outbound-access-protection.md
 - name: VS Code integration 
   items:
   - name: Fabric extensions for VS Code  
