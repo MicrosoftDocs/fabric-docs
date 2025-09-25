@@ -37,6 +37,8 @@ You can use workspace-level private links to connect to the following item types
 * Dataflows Gen2 (CI/CD)
 * Variable library
 * Mirrored database
+* Eventstream
+* Eventhouse
 
 ### Notes about unsupported item types
 
@@ -81,6 +83,8 @@ Review the following considerations when working with unsupported item types.
    * **Gateway-based connections:** Data Pipelines and Copy Jobs can't use connections that rely on an on-premises data gateway or a virtual network (VNet) data gateway infrastructure. This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
 
 * The OneLake Catalog - Govern tab isn't available when Private Link is activated.
+  
+* Workspace monitoring is not currently supported when a workspace-level private link is enabled for a workspace.
 
 ## Supported APIs
 
