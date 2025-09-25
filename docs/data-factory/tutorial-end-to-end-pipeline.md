@@ -31,7 +31,7 @@ The high-level steps in module 1 are:
 
 1. Select the default Power BI icon at the bottom left of the screen, and select **Fabric**.
 
-1. Select a workspace from the **Workspaces** tab, then select **+ New item**, and choose **Pipeline**.
+1. Select a workspace from the **Workspaces** tab, then select **+ New item**, then search for and choose **Pipeline**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-pipeline.png" alt-text="Screenshot of the Data Factory start page with the button to create a new pipeline selected.":::
 
