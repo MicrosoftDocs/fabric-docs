@@ -33,7 +33,7 @@ The high-level steps in module 1 are:
 
 1. Select a workspace from the **Workspaces** tab, then select **+ New item**, then search for and choose **Pipeline**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-pipeline.png" alt-text="Screenshot of the Data Factory start page with the button to create a new pipeline selected.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-pipeline.png" alt-text="Screenshot of the Data Factory start page with the button to create a new pipeline selected." lightbox="media/tutorial-end-to-end-pipeline/new-data-pipeline.png":::
 
 1. Provide a pipeline name. Then select **Create**.
 
@@ -41,31 +41,29 @@ The high-level steps in module 1 are:
 
 1. Select **Copy data assistant** to open the copy assistant tool.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/open-copy-assistant.png" alt-text="Screenshot showing the selection of the Copy data activity from the new pipeline start page.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/open-copy-assistant.png" alt-text="Screenshot showing the selection of the Copy data activity from the new pipeline start page." lightbox="media/tutorial-end-to-end-pipeline/open-copy-assistant.png":::
 
 1. On the **Choose data source** page, select **Sample data** from the options at the top of the dialog, and then select **NYC Taxi - Green**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/select-sample-data-source.png" alt-text="Screenshot showing the selection of the NYC Taxi - Green data in the copy assistant on the Choose data source tab.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/select-sample-data-source.png" alt-text="Screenshot showing the selection of the NYC Taxi - Green data in the copy assistant on the Choose data source tab." lightbox="media/tutorial-end-to-end-pipeline/select-sample-data-source.png":::
 
 1. The data source preview appears next on the **Connect to data source** page. Review, and then select **Next**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/preview-data.png" alt-text="Screenshot showing the preview data for the NYC Taxi - Green sample dataset.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/preview-data.png" alt-text="Screenshot showing the preview data for the NYC Taxi - Green sample dataset." lightbox="media/tutorial-end-to-end-pipeline/preview-data.png":::
 
 1. For the **Choose data destination** step of the copy assistant, select **Lakehouse**.
 
 1. Enter a Lakehouse name, then select **Create and connect**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/new-lakehouse-name.png" alt-text="Screenshot showing the data destination configuration page of the Copy assistant, choosing the Create new Lakehouse option and providing a Lakehouse name.":::
-
 1. Select **Connect**.
 
 1. Select **Tables** for the **Root folder** and **Load to new table** for **Load settings**. Provide a **Table** name (in our example we've named it Bronze) and select **Next**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-destination-table-details.png" alt-text="Screenshot showing the Connect to data destination tab of the Copy data assistant, on the Select and map to folder path or table step.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-destination-table-details.png" alt-text="Screenshot showing the Connect to data destination tab of the Copy data assistant, on the Select and map to folder path or table step." lightbox="media/tutorial-end-to-end-pipeline/choose-destination-table-details.png":::
 
 1. Finally, on the **Review + save** page of the copy data assistant, review the configuration. For this tutorial, uncheck the **Start data transfer immediately** checkbox, since we run the activity manually in the next step. Then select **OK**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/review-save-copy-configuration.png" alt-text="Screenshot showing the Copy data assistant on the Review + save page.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/review-save-copy-configuration.png" alt-text="Screenshot showing the Copy data assistant on the Review + save page." lightbox="media/tutorial-end-to-end-pipeline/review-save-copy-configuration.png":::
 
 ## Run and view the results of your Copy activity
 
@@ -73,11 +71,9 @@ The high-level steps in module 1 are:
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/run-button.png" alt-text="Screenshot showing the pipeline Run tab with the Run button highlighted.":::
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/save-and-run.png" alt-text="Screenshot showing the Save and run dialog with the Save and run button highlighted.":::
-
 1. You can monitor the run and check the results on the **Output** tab below the pipeline canvas. Select name of the pipeline to view the run details.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/run-details-button.png" alt-text="Screenshot showing the run details button in the pipeline Output tab.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/run-details-button.png" alt-text="Screenshot showing the run details button in the pipeline Output tab." lightbox="media/tutorial-end-to-end-pipeline/run-details-button.png":::
 
 1. Expand the **Duration breakdown** section to see the duration of each stage of the Copy activity. After reviewing the copy details, select **Close**.
 
