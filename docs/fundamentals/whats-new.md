@@ -411,6 +411,7 @@ This section summarizes recent improvements and features for [SQL databases in M
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|September 2025|**Configure backup retention (Preview)**|The ability to change the retention period of backups on a SQL database from the default of 7 days is currently a preview feature. For more information, see [Automatic backups in SQL database in Microsoft Fabric](../database/sql/backup.md).|
 |September 2025|**Performance Dashboard enhancements**|The [Performance dashboard](../database/sql/performance-dashboard.md) now includes memory consumption metrics in the performance monitoring capability, among other enhancements. To access, select **Performance summary** on your SQL database. For more information on the new features, see [Memory consumption metrics: Now available for Fabric SQL Database](https://aka.ms/FabricSQLDB-MemoryUtilizationBlog). |
 |July 2025|**DOP Feedback generally available**|[Degrees of Parallelism (DOP) feedback](/sql/relational-databases/performance/intelligent-query-processing-degree-parallelism-feedback?view=fabric&preserve-view=true) is now generally available in SQL database in Fabric. For more information, see [Smarter Parallelism: Degree of parallelism feedback in SQL Server 2025](https://techcommunity.microsoft.com/blog/sqlserver/smarter-parallelism-degree-of-parallelism-feedback-in-sql-server-2025/4431318). |
 |July 2025|**Deploy SQL database with Fabric CLI**|You can now [create a SQL database with the Fabric CLI](../database/sql/deploy-cli.md).|

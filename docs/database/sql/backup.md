@@ -48,7 +48,7 @@ ZRS is currently available in only certain regions. When ZRS-based Azure storage
 
 ### Backup storage retention
 
-The default retention period for the backups in a backup chain is 7 days, but this can be extended up to 35 days.
+The default retention period for the backups in a backup chain is 7 days, but this can be extended up to 35 days (as a preview feature).
 
 SQL database in Microsoft Fabric schedules one full backup every week. To provide PITR within the entire retention period, the system stores a complete set of full, differential, and transaction log backups for up to a week longer than the configured retention period.
 
@@ -59,6 +59,9 @@ For all databases, full and differential backups are compressed to reduce backup
 A longer retention duration of SQL database backups increases the storage used for backups in your Fabric capacity. 
 
 #### Change backup storage retention policy
+
+> [!NOTE]
+> The ability to change the retention period from the default of 7 days is currently a preview feature.
 
 To change the backup storage retention from the default 7 days to up to 35 days:
 
