@@ -5,13 +5,13 @@ ms.author: whhender
 ms.reviewer: xupzhou
 author: whhender
 ms.topic: tutorial
-ms.date: 05/19/2025
+ms.date: 09/25/2025
 ms.custom: pipelines, sfi-image-nochange
 ---
 
 # Module 1: Create a pipeline with Data Factory
 
-This module takes about 10 minutes to complete. You will ingest raw data from the source store into a table in the [bronze](/azure/databricks/lakehouse/medallion#bronze) data layer of a data Lakehouse using the Copy activity in a pipeline.
+This module takes about 10 minutes to complete. You'll ingest raw data from the source store into a table in the [bronze](/azure/databricks/lakehouse/medallion#bronze) data layer of a data Lakehouse using the Copy activity in a pipeline.
 
 The high-level steps in module 1 are:
 
@@ -31,15 +31,11 @@ The high-level steps in module 1 are:
 
 1. Select the default Power BI icon at the bottom left of the screen, and select **Fabric**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/switch-data-factory.png" alt-text="Screenshot showing the selection of the Data Factory experience.":::
-
 1. Select a workspace from the **Workspaces** tab, then select **+ New item**, and choose **Pipeline**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-pipeline.png" alt-text="Screenshot of the Data Factory start page with the button to create a new pipeline selected.":::
 
 1. Provide a pipeline name. Then select **Create**.
-
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/new-pipeline-name.png" alt-text="Screenshot showing the dialog to give the new pipeline a name.":::
 
 ## Create a Copy activity in the pipeline to load sample data to a data Lakehouse
 
@@ -57,11 +53,11 @@ The high-level steps in module 1 are:
 
 1. For the **Choose data destination** step of the copy assistant, select **Lakehouse**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-lakehouse-destination.png" alt-text="Screenshot showing the selection of the Lakehouse destination on the Choose data destination tab of the Copy data assistant.":::
-
 1. Enter a Lakehouse name, then select **Create and connect**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/new-lakehouse-name.png" alt-text="Screenshot showing the data destination configuration page of the Copy assistant, choosing the Create new Lakehouse option and providing a Lakehouse name.":::
+
+1. Select **Connect**.
 
 1. Select **Tables** for the **Root folder** and **Load to new table** for **Load settings**. Provide a **Table** name (in our example we've named it Bronze) and select **Next**.
 
@@ -83,13 +79,7 @@ The high-level steps in module 1 are:
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/run-details-button.png" alt-text="Screenshot showing the run details button in the pipeline Output tab.":::
 
-1. The run details show 1,508,501 rows read and written.
-
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/run-details.png" alt-text="Screenshot of the Copy data details for the pipeline run.":::
-
 1. Expand the **Duration breakdown** section to see the duration of each stage of the Copy activity. After reviewing the copy details, select **Close**.
-
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/copy-duration-breakdown.png" alt-text="Screenshot showing the duration breakdown of the Copy activity run.":::
 
 ## Next step
 
