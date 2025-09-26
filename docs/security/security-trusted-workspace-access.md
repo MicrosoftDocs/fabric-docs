@@ -25,7 +25,7 @@ This article shows you how to:
 
 * [Create a OneLake shortcut](#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access) in a Fabric Lakehouse that connects to a trusted-workspace-access enabled ADLS Gen2 storage account.
 
-* [Create a pipeline](#create-a-data-pipeline-to-a-storage-account-with-trusted-workspace-access) to connect directly to a firewall-enabled ADLS Gen2 account that has trusted workspace access enabled.
+* [Create a pipeline](#create-a-pipeline-to-a-storage-account-with-trusted-workspace-access) to connect directly to a firewall-enabled ADLS Gen2 account that has trusted workspace access enabled.
   
 * [Use the T-SQL COPY statement](#use-the-t-sql-copy-statement-to-ingest-data-into-a-warehouse) to ingest data into your Warehouse from a firewall-enabled ADLS Gen2 account that has trusted workspace access enabled.
 
@@ -98,7 +98,7 @@ There are several ways to use trusted workspace access to access your data from 
 
 * You can [create a new ADLS shortcut](#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access) in a Fabric Lakehouse to start analyzing your data with Spark, SQL, and Power BI.
 
-* You can [create a pipeline](#create-a-data-pipeline-to-a-storage-account-with-trusted-workspace-access) that uses trusted workspace access to directly access a firewall-enabled ADLS Gen2 account.
+* You can [create a pipeline](#create-a-pipeline-to-a-storage-account-with-trusted-workspace-access) that uses trusted workspace access to directly access a firewall-enabled ADLS Gen2 account.
 
 * You can use a T-SQL Copy statement that leverages trusted workspace access to ingest data into a Fabric warehouse.
 
