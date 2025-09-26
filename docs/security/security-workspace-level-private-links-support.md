@@ -30,7 +30,7 @@ You can use workspace-level private links to connect to the following item types
 * Direct connection via OneLake endpoint
 * Notebook, Spark Job Definition, Environment
 * Machine learning experiment, machine learning model
-* Data pipeline
+* Pipeline
 * Copy Job
 * Mounted Data Factory
 * Warehouse 
@@ -78,9 +78,9 @@ Review the following considerations when working with unsupported item types.
 
 * Spark connector for SQL DW isn't currently supported when a workspace-level private link is enabled for a workspace.
 
-* Data Pipelines and Copy Jobs are generally supported. However, the following scenario isn't currently supported:
+* Pipelines and Copy Jobs are generally supported. However, the following scenario isn't currently supported:
 
-   * **Gateway-based connections:** Data Pipelines and Copy Jobs can't use connections that rely on an on-premises data gateway or a virtual network (VNet) data gateway infrastructure. This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
+   * **Gateway-based connections:** Pipelines and Copy Jobs can't use connections that rely on an on-premises data gateway or a virtual network (VNet) data gateway infrastructure. This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
 
 * The OneLake Catalog - Govern tab isn't available when Private Link is activated.
   
@@ -199,14 +199,14 @@ To run batch jobs in a workspace, refer to the following documentation:
 
 * [Items - REST API (MLModel)](/rest/api/fabric/mlmodel/items)
 
-### Data pipeline, Copy job, and Mounted Data Factory support
+### Pipeline, Copy job, and Mounted Data Factory support
 
 These APIs are supported in following scenarios: 
 
 * [Items - REST API (DataPipeline)](/rest/api/fabric/datapipeline/items)
 * [Items - REST API (CopyJob)](/rest/api/fabric/copyjob/items)
 * [Items - REST API (MountedDataFactory)](/rest/api/fabric/mounteddatafactory/items)
-* [Data pipelines - REST API (Power BI Power BI REST APIs)](/rest/api/power-bi/pipelines) 
+* [Pipelines - REST API (Power BI Power BI REST APIs)](/rest/api/power-bi/pipelines) 
 
 > [!NOTE]
 > * Copy to warehouse isn't supported.
