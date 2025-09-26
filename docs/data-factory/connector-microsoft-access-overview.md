@@ -25,4 +25,4 @@ The Microsoft Access connector is supported in Data Factory for [!INCLUDE [produ
 
 ## Related content
 
-To learn more about the copy activity configuration for Microsoft Access in Pipeline, go to [Configure in a Pipeline copy activity](connector-microsoft-access-copy-activity.md).
+To learn more about the copy activity configuration for Microsoft Access in Pipeline, go to [Configure in a pipeline copy activity](connector-microsoft-access-copy-activity.md).
