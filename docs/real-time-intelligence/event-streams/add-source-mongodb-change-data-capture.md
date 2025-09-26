@@ -14,7 +14,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to add a MongoDB Change Data Capture(CDC) source to an eventstream.
 
-The MongoDB CDC source connector for Microsoft Fabric event streams captures an initial snapshot of data from MongoDB, whether hosted on MongoDB Atlas or deployed in a self-managed environment. After the snapshot, the connector continuously tracks and records real-time changes to documents in selected databases and collections. These changes are ingested into Fabric event streams, where you can process, analyze, and route them to various destinations for transformation or analytics.
+The MongoDB CDC Connector for Eventstream allows you to stream Change Data Capture (CDC) events from MongoDB into Fabric Eventstream. It supports multiple MongoDB deployment types, including on-premises, cloud-hosted, and MongoDB Atlas, enabling a wide range of CDC scenarios. With this connector, you can capture real-time database changes and stream them directly into Eventstream for immediate processing and analytics.
 
 [!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 
@@ -22,13 +22,12 @@ The MongoDB CDC source connector for Microsoft Fabric event streams captures an 
 
 - A workspace in Fabric capacity or Trial license mode, with **Contributor** or higher permissions.  
 - A MongoDB cluster that is accessible from your client IP address.  
-- A database user with the `read` role (or higher) on the target database.  
 - Change Data Capture (CDC) enabled for the collections you want to capture.  
 - An eventstream in Fabric. If you don’t have one, [create an eventstream](create-manage-an-eventstream.md).  
 
-## Set up MongoDB
+## Set up a MongoDB instance
 
-This example uses **MongoDB Atlas**, the managed MongoDB service on MongoDB Cloud. If you're using a self-managed MongoDB deployment, make sure to apply the equivalent configurations.
+This example uses **MongoDB Atlas**, the managed MongoDB service on MongoDB Cloud. 
 
 To capture changes, you must enable Change Data Capture (CDC) for the target collections.
 
@@ -71,7 +70,7 @@ On the **Select a data source** page, search for and select **Connect** on the *
     :::image type="content" source="media/add-source-mongodb-change-data-capture/live-view.png" alt-text="A screenshot of the added MongoDB CDC source in Live mode." lightbox="media/add-source-mongodb-change-data-capture/live-view.png":::
 
 ## Limitation
-*  CI/CD (Git integration and deployment pipeline) for the MongoDB CDC Source is currently experiencing limitations and may not perform as expected.    
+* The MongoDB CDC source currently does not support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Attempting to export or import an Eventstream item with this source to a Git repository may result in errors.    
 
 
 ## Related content
