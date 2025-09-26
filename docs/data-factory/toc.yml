@@ -906,6 +906,8 @@
                 href: tutorial-lakehouse-partition.md
               - name: Move data from Oracle to Fabric Lakehouse via pipeline and on-premises data gateway
                 href: tutorial-move-data-from-oracle-to-lakehouse-pipeline.md
+              - name: Copy data across workspaces
+                href: tutorial-copy-data-across-workspaces.md
       - name: Mirroring
         items:
           - name: Mirroring overview

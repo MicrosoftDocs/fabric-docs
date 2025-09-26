@@ -210,6 +210,29 @@ Parameters can be used to control the behavior of a pipeline and its activities.
 
 1. Specify the [SQL connection string for your Data Warehouse](../data-warehouse/how-to-connect.md#find-the-warehouse-connection-string).
 
+## Copy data across workspaces
+ 
+You can copy data across workspaces through UI or parameters. For example, the following guidance states how to select Lakehouse in other workspaces as a source or destination in Copy assistant or data pipelines.
+ 
+### Copy data across workspaces using UI
+ 
+To copy data across workspaces, you can select source or destination data stores in other workspaces directyly on UI. The following steps show how to select a Lakehouse in other workspaces:
+ 
+1. Go to copy assistant - choose data source/destination page, or go to the connection drop-down list in Copy activity in the data pipeline to browse to all connections. 
+1. On the **OneLake catalog** tab, select **Explorer** and select the workspace where your Lakehouse is located. Then select the Lakehouse. 
+ 
+ [Screenshot]
+
+ [Screenshot]
+ 
+1. For other steps, you can follow [Add a copy activity using copy assistant](#add-a-copy-activity-using-copy-assistant) or [Add a copy activity directly](#add-a-copy-activity-directly).
+ 
+### Copy data across workspaces using parameter
+ 
+For how to use parameters to specify connection in copy activity, go to [Configure parameters in a copy activity](#configure-parameters-in-a-copy-activity). For copying data from or to Lakehouse in other workspaces, you can specify the target workspace ID and Lakehouse ID after specifying the expression. 
+
+ [Screenshot]
+
 ## Related content
 
 - [Connector overview](connector-overview.md)
