@@ -124,4 +124,4 @@ For more possibilities to query your data with T-SQL inside Python Notebooks, se
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
 - [SQL database in Microsoft Fabric](overview.md)
 - [Private links in Microsoft Fabric](../../security/security-private-links-overview.md)
-- [Ingest data into SQL database via data pipelines](load-data-pipelines.md)
+- [Ingest data into SQL database via pipelines](load-data-pipelines.md)
