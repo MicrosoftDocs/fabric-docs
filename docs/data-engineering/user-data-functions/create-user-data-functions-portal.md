@@ -72,7 +72,7 @@ This is an example of how to add a new function from the `Insert sample` menu. I
    
    :::image type="content" source="..\media\user-data-functions-create-in-portal\sample-added-to-function-editor.png" alt-text="Screenshot showing code snippet of the sample in the editor." lightbox="..\media\user-data-functions-create-in-portal\sample-added-to-function-editor.png":::
 
-6. After the publish is completed, you will see the new function in the Functions explorer list. This function is now ready to be run from the portal, or invoked from another application or Fabric item, such as a data pipeline. 
+6. After the publish is completed, you will see the new function in the Functions explorer list. This function is now ready to be run from the portal, or invoked from another application or Fabric item, such as a pipeline. 
 
    :::image type="content" source="..\media\user-data-functions-create-in-portal\sample-added-to-function-editor.png" alt-text="Screenshot showing code snippet of the sample in the editor." lightbox="..\media\user-data-functions-create-in-portal\test-data-function-2.png":::
 

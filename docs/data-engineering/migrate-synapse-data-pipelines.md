@@ -44,11 +44,11 @@ To move the existing data to OneLake, you have several options:
 
 ## Pipelines migration (Spark-related activities)
 
-If your Azure Synapse data pipelines include notebook and/or Spark job definition activities, you will need to move those pipelines from Azure Synapse to Data Factory data pipelines in Fabric, and reference the target notebooks. The [notebook activity](../data-factory/notebook-activity.md) is available in Data Factory data pipelines. See all  supported data pipeline activities in Fabric [here](../data-factory/activity-overview.md).
+If your Azure Synapse pipelines include notebook and/or Spark job definition activities, you will need to move those pipelines from Azure Synapse to Data Factory pipelines in Fabric, and reference the target notebooks. The [notebook activity](../data-factory/notebook-activity.md) is available in Data Factory pipelines. See all  supported pipeline activities in Fabric [here](../data-factory/activity-overview.md).
 
-- For Spark-related data pipeline activity considerations, refer to [differences between Azure Synapse Spark and Fabric](comparison-between-fabric-and-azure-synapse-spark.md).
+- For Spark-related pipeline activity considerations, refer to [differences between Azure Synapse Spark and Fabric](comparison-between-fabric-and-azure-synapse-spark.md).
 - For notebook migration, refer to [migrate notebooks from Azure Synapse to Fabric](migrate-synapse-notebooks.md).
-- For data pipeline migration, see [migrate to Data Factory in Fabric](../data-factory/upgrade-paths.md).
+- For pipeline migration, see [migrate to Data Factory in Fabric](../data-factory/upgrade-paths.md).
 
 ## Related content
 

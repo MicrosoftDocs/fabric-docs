@@ -31,4 +31,4 @@ To learn more about supported table creation in Warehouse in Microsoft Fabric, s
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Ingest data into your Warehouse using data pipelines](ingest-data-pipelines.md)
+> [Ingest data into your Warehouse using pipelines](ingest-data-pipelines.md)

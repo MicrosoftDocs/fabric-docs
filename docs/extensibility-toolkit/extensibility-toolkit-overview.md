@@ -27,7 +27,7 @@ The Extensibility Toolkit provides customers and partners with an easy way to ex
 
 ## Who should use it
 
-The toolkit is for any organization that wants to extend Fabric to adapt it to their needs. Developers can easily embed data apps and UI experiences into Fabric workspaces. Typical scenarios include: data pipelines, custom data stores, visualization apps, and operational apps that act on Fabric items.
+The toolkit is for any organization that wants to extend Fabric to adapt it to their needs. Developers can easily embed data apps and UI experiences into Fabric workspaces. Typical scenarios include: pipelines, custom data stores, visualization apps, and operational apps that act on Fabric items.
 
 ## Publish to the Workload Hub
 
