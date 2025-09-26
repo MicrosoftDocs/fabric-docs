@@ -4,23 +4,23 @@ items:
       topicHref: /fabric/index
       items:
       - name: Data Factory
-        tocHref: /fabric/data-factory/
+        tocHref: /fabric/data-factory
         topicHref: /fabric/data-factory/index
       - name: Data Factory
-        tocHref: /fabric/fundamentals/
+        tocHref: /fabric/fundamentals
         topicHref: /fabric/data-factory/index
       - name: Data Factory
-        tocHref: /fabric/mirroring/
+        tocHref: /fabric/mirroring
         topicHref: /fabric/data-factory/index
       - name: Data Factory
-        tocHref: /fabric/get-started/
+        tocHref: /fabric/get-started
         topicHref: /fabric/data-factory/index
       - name: Data Factory
         tocHref: /azure/data-factory/
         topicHref: /fabric/data-factory/index
       - name: Data Factory
-        tocHref: /data-integration/gateway/
+        tocHref: /data-integration/gateway
         topicHref: /fabric/data-factory/index
       - name: Data Factory
-        tocHref: /data-integration/vnet/
+        tocHref: /data-integration/vnet
         topicHref: /fabric/data-factory/index
