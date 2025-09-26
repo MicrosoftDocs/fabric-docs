@@ -106,6 +106,6 @@ If you ran both examples without deleting the rows in between runs, you'll see t
 
 ## Related content
 
-- [Ingest data using Data pipelines](ingest-data-pipelines.md)
+- [Ingest data using Pipelines](ingest-data-pipelines.md)
 - [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md)
 - [Ingesting data into the Warehouse](ingest-data.md)
