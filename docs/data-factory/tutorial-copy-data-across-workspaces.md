@@ -12,7 +12,7 @@ ms.search.form: Pipeline Tutorials
 
 # Copy data across workspaces
 
-In this tutorial, you learn how to copy data across workspaces. This experience shows you a quick demo about copying data from a Lakehouse in one workspace to a Lakehouse in another workspace using a data pipeline. 
+In this tutorial, you learn how to copy data across workspaces. This experience shows you a quick demo about copying data from a Lakehouse in one workspace to a Lakehouse in another workspace using a pipeline. 
 
 ## Prerequisites
 
@@ -29,13 +29,13 @@ In this tutorial, you learn how to copy data across workspaces. This experience 
 
    :::image type="content" source="media/tutorial-load-data-lakehouse-transform/pipeline-name.png" alt-text="Screenshot showing the pipeline name dialog.":::
 
-## Copy data across workspaces using a data pipeline
+## Copy data across workspaces using a pipeline
 
-You can copy data across workspaces either directly through the UI or by using parameters in a data pipeline. This section focuses on how to connect to the destination Lakehouse located in different workspaces. For details on how to use copy activity in a data pipeline and how to configure Lakehouse in a copy activity, go to [Add a copy activity directly](copy-data-activity.md#add-a-copy-activity-directly) and [Configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md). 
+You can copy data across workspaces either directly through the UI or by using parameters in a pipeline. This section focuses on how to connect to the destination Lakehouse located in different workspaces. For details on how to use copy activity in a pipeline and how to configure Lakehouse in a copy activity, go to [Add a copy activity directly](copy-data-activity.md#add-a-copy-activity-directly) and [Configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md). 
 
 ### Option 1: Through UI
 
-1. In the source configuration for the copy activity in your data pipeline, select your source Lakehouse and the data that you want to copy, and configure the source properties.
+1. In the source configuration for the copy activity in your pipeline, select your source Lakehouse and the data that you want to copy, and configure the source properties.
 1. In the destination configuration, go to the connection drop-down list to browse to all connections. 
     
     :::image type="content" source="./media/tutorial-copy-data-across-workspaces/browse-all-connection.png" alt-text="Screenshot showing browse all connection.":::
@@ -58,7 +58,7 @@ You can copy data across workspaces either directly through the UI or by using p
 
 ### Option 2: Using parameters
 
-1. In the source configuration for your copy activity in the data pipeline, select your source Lakehouse and the data you want to copy, and configure the source properties.
+1. In the source configuration for your copy activity in the pipeline, select your source Lakehouse and the data you want to copy, and configure the source properties.
 
 1. In the destination configuration, follow [Configure parameters in a copy activity](copy-data-activity.md#configure-parameters-in-a-copy-activity) to add parameter for your destination Lakehouse connection. If you need to create a new connection, follow the step 3 in this [section](#option-1-through-ui).
 1. Specify the destination workspace ID and Lakehouse ID after specifying the expression.
