@@ -9,7 +9,7 @@ ms.subservice: powerbi-premium
 ms.topic: conceptual
 LocalizationGroup: Admin
 ---
-# Direct Lake in Power BI Desktop (preview)
+# Direct Lake in Power BI Desktop
 
 Power BI Desktop can create and edit Power BI semantic models with Direct Lake tables. Semantic models with Direct Lake tables are created in, and edited from, the Fabric workspace, not on your local machine, so when using Power BI Desktop, you **live edit** the semantic model where it is. There's no publish action as changes made in Power BI Desktop happen to the semantic model in the Fabric workspace. This experience is the same as when you're editing the semantic model in the web, or in the Fabric workspace, by choosing the **Open data model** action. 
 
@@ -161,8 +161,6 @@ Now the semantic model is using Direct Lake on OneLake. If there are issues, you
 * This feature is unavailable for users with a free license.
 
 ## Considerations and limitations
-
-Live edit of semantic models in Direct Lake mode in Power BI Desktop is currently in preview.
 
 * You can't have multiple data sources when using Direct Lake on SQL. Add data to the Fabric data source used by semantic model. Multiple data sources are supported for Direct Lake on OneLake storage mode.
 * You can't publish the Power BI Project (PBIP) from Power BI Desktop. You can use Fabric Deployment mechanisms such as Fabric Git Integration or Fabric Item APIs to publish your local PBIP files to a Fabric workspace.

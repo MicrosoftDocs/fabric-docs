@@ -46,6 +46,15 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 1. Connect to your Azure SQL Managed Instance using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/azure-data-studio/download-azure-data-studio). Connect to the `master` database.
 1. Create a server login and assign the appropriate permissions.
+
+    The permissions required for the Fabric login are:
+    
+    - Membership in the server role `##MS_ServerStateReader##`
+    - The following permissions in the user database:
+        - SELECT
+        - ALTER ANY EXTERNAL MIRROR
+    
+
     - Create a SQL Authenticated login. You can choose any name for this login, substitute it in the following script for `<fabric_login>`. Provide your own strong password. Run the following T-SQL script in the `master` database:
 
     ```sql
@@ -70,14 +79,14 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
     ```sql
     CREATE USER <fabric_user> FOR LOGIN <fabric_login>;
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO <fabric_user>;
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO <fabric_user>;
     ```
 
     Or, for Microsoft Entra logins,
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO [bob@contoso.com];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO [bob@contoso.com];
     ```
 
 ## Create a mirrored Azure SQL Managed Instance database
