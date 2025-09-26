@@ -41,16 +41,16 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 1. You see that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. Select **Refresh** in the bottom pane, which shows you preview of the data in the event hub. To implement this newly added Azure event hub, select **Publish** on the ribbon. 
 
-    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/publish.png" alt-text="Screenshot that shows the editor with Publish button selected.":::
+    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/publish.png" alt-text="Screenshot that shows the editor with Publish button selected." lightbox="./media/add-source-azure-event-hubs-enhanced/publish.png":::
 1. After you complete these steps, the Azure event hub is available for visualization in the **Live view**. Select the **Event hub** tile in the diagram to see the page similar to the following one.
 
-    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
+    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view." lightbox="./media/add-source-azure-event-hubs-enhanced/live-view.png":::
 ::: zone-end
 
 ::: zone pivot="extended-features"
 1. You see that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. Select **Refresh** in the bottom pane, which shows you preview of the data in the event hub. To implement this newly added Azure event hub, select **Publish** on the ribbon. 
 
-    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/extended-publish.png" alt-text="Screenshot that shows the editor with Publish button selected.":::
+    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/extended-publish.png" alt-text="Screenshot that shows the editor with Publish button selected." lightbox="./media/add-source-azure-event-hubs-enhanced/extended-publish.png":::
 
 ## Configure schemas for eventstream destinations 
 Currently, only the Eventhouse and custom endpoints destinations are supported for eventstreams with extended features (like schema support) enabled. This section shows you how to add and configure an Eventhouse destination when extended features (like schema support) are enabled for the eventstream. 
@@ -61,7 +61,7 @@ Currently, only the Eventhouse and custom endpoints destinations are supported f
 1. In the **Custom endpoint** pane, specify a name for the destination as usual. 
 1. For **Input schema**, specify the schema for events. This field is the extra field you fill when you enable the schema support for an eventstream. 
 
-    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/extended-custom-endpoint-schema.png" alt-text="Screenshot that shows the Custom endpoint configuration page.":::
+    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/extended-custom-endpoint-schema.png" alt-text="Screenshot that shows the Custom endpoint configuration page." lightbox="./media/add-source-azure-event-hubs-enhanced/extended-custom-endpoint-schema.png":::
     
 
 ### Configure schemas for an eventhouse destination
@@ -71,7 +71,7 @@ Currently, only the Eventhouse and custom endpoints destinations are supported f
     1. For **Input schema**, select one or more schemas from the drop-down list.     
     1. For **Table creation method**, select one of the options depending on your requirements: **A single table with all schemas combined** or **Separate tables for each schema**. 
 
-        :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/extended-eventhouse-input-schema.png" alt-text="Screenshot that shows the Eventhouse configuration page with an input schema selected.":::
+        :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/extended-eventhouse-input-schema.png" alt-text="Screenshot that shows the Eventhouse configuration page with an input schema selected." lightbox="./media/add-source-azure-event-hubs-enhanced/extended-eventhouse-input-schema.png":::
 
         > [!NOTE]
         > If you selected **Dynamic schema via headers** option when configuring an Event Hubs source, you might have configured multiple schemas for the source and map them to different properties and their values. 
