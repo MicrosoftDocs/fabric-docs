@@ -309,6 +309,8 @@ items:
     href: tsql-magic-command-notebook.md
   - name: Fabric Notebook known limitation
     href: notebook-limitation.md
+  - name: Query Mirrored Databases in Spark Notebook
+    href: query-mirrored-database-spark-notebooks.md
 - name: Environments
   items:
   - name: Create, configure and use an environment
