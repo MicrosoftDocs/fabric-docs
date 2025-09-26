@@ -48,10 +48,10 @@ You can copy data across workspaces either directly through the UI or by using p
 
     In the pop-up connect to data source page, select an existing connection or create a new Lakehouse connection from the drop-down list.
 
-    :::image type="content" source="./media/tutorial-copy-data-across-workspaces/connect-to-lakehouse.png" alt-text="Screenshot showing select destination Lakehouse.":::
+    :::image type="content" source="./media/tutorial-copy-data-across-workspaces/connect-to-lakehouse.png" alt-text="Screenshot showing connect to Lakehouse.":::
 
     > [!TIP]
-    > If you use copy assitant, on choose data destination page, you can also utilize this step to select your destination Lakehouse.
+    > If you use copy assitant, on choose data source/destination page, you can also utilize this step to connect to your destination Lakehouse.
 
 1. Configure other destination properties and run your pipeline.
 
@@ -60,7 +60,7 @@ You can copy data across workspaces either directly through the UI or by using p
 
 1. In the source configuration for your copy activity in the data pipeline, select your source Lakehouse and the data you want to copy, and configure the source properties.
 
-1. In the destination configuration, follow [Configure parameters in a copy activity](copy-data-activity.md#configure-parameters-in-a-copy-activity) to add parameter for your destination Lakehouse connection. If you need to create a new connection, follow the step 3 in this [section](#copy-data-across-workspaces-using-ui).
+1. In the destination configuration, follow [Configure parameters in a copy activity](copy-data-activity.md#configure-parameters-in-a-copy-activity) to add parameter for your destination Lakehouse connection. If you need to create a new connection, follow the step 3 in this [section](#option-1-through-ui).
 1. Specify the destination workspace ID and Lakehouse ID after specifying the expression.
 
     :::image type="content" source="./media/tutorial-copy-data-across-workspaces/parameter-workspace-lakehouse-id.png" alt-text="Screenshot showing specify the destination workspace ID and Lakehouse ID.":::
@@ -71,4 +71,4 @@ You can copy data across workspaces either directly through the UI or by using p
 ## Related content
 
 - [Copy data activity](copy-data-activity.md)
-- [Configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.mdmd)
+- [Configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md)
