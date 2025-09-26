@@ -8,6 +8,17 @@ ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
 ---
 
+::: zone pivot="enhanced-event-hubs-capabilities"
+1. On the **Connect** page, select **New connection**.
+
+    :::image type="content" source="./media/azure-event-hubs-source-connector/new-connection-button.png" alt-text="Screenshot that shows the Connect page the New connection link highlighted." lightbox="./media/azure-event-hubs-source-connector/new-connection-button.png":::     
+
+    If there's an existing connection to your Azure event hub, you select that existing connection as shown in the following image, and then move on to the step to configure **Data format** in the following steps.
+
+    :::image type="content" source="./media/azure-event-hubs-source-connector/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure event hub." lightbox="./media/azure-event-hubs-source-connector/existing-connection.png":::    
+::: zone-end
+
+::: zone pivot="standard-event-hubs-capabilities"  
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/new-connection-button.png" alt-text="Screenshot that shows the Connect page the New connection link highlighted." lightbox="./media/azure-event-hubs-source-connector/new-connection-button.png":::     
@@ -47,3 +58,5 @@ ms.date: 11/18/2024
 1. On the **Review and create** page, review settings, and select **Add**. 
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page for Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/review-create-page.png":::        
+
+::: zone-end
