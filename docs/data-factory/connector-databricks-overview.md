@@ -22,4 +22,4 @@ The Databricks connector is supported in Data Factory for [!INCLUDE [product-nam
 
 ## Related content
 
-For information on how to connect to a Databricks, go to [Set up your Databricks connection](connector-databricks.md).
+For information on how to connect to Databricks, go to [Set up your Databricks connection](connector-databricks.md).

@@ -22,4 +22,4 @@ The Hive LLAP connector is supported in Data Factory for [!INCLUDE [product-name
 
 ## Related content
 
-For information on how to connect to a Hive LLAP, go to [Set up your Hive LLAP connection](connector-hive-llap.md).
+For information on how to connect to Hive LLAP, go to [Set up your Hive LLAP connection](connector-hive-llap.md).

@@ -22,4 +22,4 @@ Both the Web API and Web page connectors are supported in Data Factory for [!INC
 
 ## Related content
 
-To learn about how to connect to Web API or Web page, go to [Set up your Web connection](connector-web.md).
+To learn about how to connect to a Web API or a Web page, go to [Set up your Web connection](connector-web.md).

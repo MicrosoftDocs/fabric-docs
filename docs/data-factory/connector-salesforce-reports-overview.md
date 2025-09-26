@@ -22,4 +22,4 @@ The Salesforce reports connector is supported in Data Factory for [!INCLUDE [pro
 
 ## Related content
 
-To learn about how to connect to a Salesforce reports, go to [Set up your Salesforce reports connection](connector-salesforce-reports.md).
+To learn about how to connect to Salesforce reports, go to [Set up your Salesforce reports connection](connector-salesforce-reports.md).

@@ -22,4 +22,4 @@ The Palantir Foundry connector is supported in Data Factory for [!INCLUDE [produ
 
 ## Related content
 
-For information on how to connect to a Palantir Foundry, go to [Set up your Palantir Foundry connection](connector-palantir-foundry.md).
+For information on how to connect to Palantir Foundry, go to [Set up your Palantir Foundry connection](connector-palantir-foundry.md).

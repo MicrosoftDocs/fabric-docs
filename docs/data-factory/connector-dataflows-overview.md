@@ -22,4 +22,4 @@ The Dataflows connector is supported in Data Factory for [!INCLUDE [product-name
 
 ## Related content
 
-For information on how to connect to a Dataflows, go to [Set up your Dataflows connection](connector-dataflows.md).
+For information on how to connect to Dataflows, go to [Set up your Dataflows connection](connector-dataflows.md).

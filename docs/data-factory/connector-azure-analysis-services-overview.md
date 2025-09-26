@@ -22,4 +22,4 @@ The Azure Analysis Services connector is supported in Data Factory for [!INCLUDE
 
 ## Related content
 
-For information on how to connect to an Azure Analysis Services, go to [Set up your Azure Analysis Services connection](connector-azure-analysis-services.md).
+For information on how to connect to Azure Analysis Services, go to [Set up your Azure Analysis Services connection](connector-azure-analysis-services.md).

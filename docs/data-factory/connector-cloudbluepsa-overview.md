@@ -22,4 +22,4 @@ The CloudBluePSA connector is supported in Data Factory for [!INCLUDE [product-n
 
 ## Related content
 
-For information on how to connect to a CloudBluePSA, go to [Set up your CloudBluePSA connection](connector-cloudbluepsa.md).
+For information on how to connect to CloudBluePSA, go to [Set up your CloudBluePSA connection](connector-cloudbluepsa.md).
