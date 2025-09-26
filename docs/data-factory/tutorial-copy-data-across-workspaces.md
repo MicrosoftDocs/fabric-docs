@@ -35,23 +35,23 @@ You can copy data across workspaces either directly through the UI or by using p
 
 ### Option 1: Through UI
 
-1. In the source configuration for copy activity in the data pipeline, select your source Lakehouse and the data that you want to copy, and configure the source properties.
+1. In the source configuration for the copy activity in your data pipeline, select your source Lakehouse and the data that you want to copy, and configure the source properties.
 1. In the destination configuration, go to the connection drop-down list to browse to all connections. 
     
     :::image type="content" source="./media/tutorial-copy-data-across-workspaces/browse-all-connection.png" alt-text="Screenshot showing browse all connection.":::
 
-1. On the **OneLake catalog** tab, select **Explorer** and choose the workspace where your destionation Lakehouse is located. Then select the Lakehouse. 
+1. On the **OneLake catalog** tab, select **Explorer** and choose the workspace where your destination Lakehouse is located. Then select the Lakehouse. 
 
     :::image type="content" source="./media/tutorial-copy-data-across-workspaces/onelake-catalog-explorer.png" alt-text="Screenshot showing the Explorer tab.":::
     
     :::image type="content" source="./media/tutorial-copy-data-across-workspaces/select-destination-lakehouse.png" alt-text="Screenshot showing select destination Lakehouse.":::
 
-    In the pop-up connect to data source page, select an existing connection or create a new Lakehouse connection from the drop-down list.
+    In the Connect to data source page, select an existing connection or create a new Lakehouse connection from the drop-down list.
 
     :::image type="content" source="./media/tutorial-copy-data-across-workspaces/connect-to-lakehouse.png" alt-text="Screenshot showing connect to Lakehouse.":::
 
     > [!TIP]
-    > If you use copy assitant, on choose data source/destination page, you can also utilize this step to connect to your destination Lakehouse.
+    > If you use copy assistant, on choose data source/destination page, you can also utilize this step to connect to your Lakehouse.
 
 1. Configure other destination properties and run your pipeline.
 
@@ -66,7 +66,6 @@ You can copy data across workspaces either directly through the UI or by using p
     :::image type="content" source="./media/tutorial-copy-data-across-workspaces/parameter-workspace-lakehouse-id.png" alt-text="Screenshot showing specify the destination workspace ID and Lakehouse ID.":::
 
 1. Configure other destination properties and run your pipeline.
-
 
 ## Related content
 
