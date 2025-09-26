@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Amazon RDS For Oracle in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from Amazon RDS For Oracle.
+This article outlines how to use the copy activity in pipeline to copy data from Amazon RDS For Oracle.
 
 Specifically, this Amazon RDS For Oracle connector supports:
 

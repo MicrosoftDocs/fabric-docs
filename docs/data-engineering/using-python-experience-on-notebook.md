@@ -51,7 +51,7 @@ Python notebook supports multiple job execution ways:
 
 - **Interactive run**: You can run a Python notebook interactively like a native Jupyter notebook.
 - **Schedule run**: You can use the light-weighted scheduler experience on the notebook settings page to run Python notebook as a batch job.
-- **Pipeline run**: You can orchestrate Python notebooks as notebook activities in [Data pipeline](../data-factory/notebook-activity.md). Snapshot will be generated after the job execution.
+- **Pipeline run**: You can orchestrate Python notebooks as notebook activities in [Pipeline](../data-factory/notebook-activity.md). Snapshot will be generated after the job execution.
 - **Reference run**: You can use `notebookutils.notebook.run()` or `notebookutils.notebook.runMultiple()` to reference run Python notebooks in another Python notebook as batch job. Snapshot will be generated after the reference run finished.
 - **Public API run**: You can schedule your python notebook run with the [notebook run public API](notebook-public-api.md#run-a-notebook-on-demand), make sure the language and kernel properties in notebook metadata of the public API payload are set properly.
 
