@@ -1,26 +1,34 @@
 items:
-    - name: Microsoft Fabric
-      tocHref: /fabric/
-      topicHref: /fabric/index
-      items:
-      - name: Data Factory
-        tocHref: /fabric/data-factory
-        topicHref: /fabric/data-factory/index
-      - name: Data Factory
-        tocHref: /fabric/fundamentals
-        topicHref: /fabric/data-factory/index
-      - name: Data Factory
-        tocHref: /fabric/mirroring
-        topicHref: /fabric/data-factory/index
-      - name: Data Factory
-        tocHref: /fabric/get-started
-        topicHref: /fabric/data-factory/index
-      - name: Data Factory
-        tocHref: /azure/data-factory/
-        topicHref: /fabric/data-factory/index
-      - name: Data Factory
-        tocHref: /data-integration/gateway
-        topicHref: /fabric/data-factory/index
-      - name: Data Factory
-        tocHref: /data-integration/vnet
-        topicHref: /fabric/data-factory/index
+- name: Microsoft Fabric
+  tocHref: /fabric/
+  topicHref: /fabric/index
+  items:
+  - name: Data Factory
+    tocHref: /fabric/data-factory
+    topicHref: /fabric/data-factory/index
+  - name: Data Factory
+    tocHref: /fabric/fundamentals
+    topicHref: /fabric/data-factory/index
+  - name: Data Factory
+    tocHref: /fabric/mirroring
+    topicHref: /fabric/data-factory/index
+  - name: Data Factory
+    tocHref: /fabric/get-started
+    topicHref: /fabric/data-factory/index
+- name: Microsoft Fabric
+  tocHref: /azure
+  topicHref: /fabric/index
+  items:
+    - name: Data Factory
+      tocHref: /azure/data-factory
+      topicHref: /fabric/data-factory/index
+- name: Microsoft Fabric
+  tocHref: /data-integration
+  topicHref: /fabric/index
+  items:
+    - name: Data Factory
+      tocHref: /data-integration/gateway
+      topicHref: /fabric/data-factory/index
+    - name: Data Factory
+      tocHref: /data-integration/vnet
+      topicHref: /fabric/data-factory/index
