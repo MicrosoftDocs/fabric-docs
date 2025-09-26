@@ -10,7 +10,7 @@ ms.topic: conceptual
 ms.date: 05/01/2025
 LocalizationGroup: Admin
 ---
-# Direct Lake in web modeling (preview)
+# Direct Lake in web modeling
 
 **Open data model**, or web modeling, works with semantic models with Direct Lake tables. Direct Lake tables can be **Direct Lake on SQL** or **Direct Lake on OneLake**, which have different considerations when creating and editing in the web.
 

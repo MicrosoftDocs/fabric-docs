@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database From SQL Server in Micro
 author: whhender
 ms.author: whhender
 ms.reviewer: ajayj, rajpo
-ms.date: 08/18/2025
+ms.date: 09/25/2025
 ms.topic: tutorial
 ms.custom:
 ---
@@ -100,9 +100,9 @@ In SQL Server 2025, the permissions required for the Fabric login are:
 
 ## [SQL Server 2016-2022](#tab/sql201622)
 
-For SQL Server versions 2016-2022, membership in the sysadmin server role or db_owner database role is only needed to initially setup CDC. 
+For SQL Server versions 2016-2022, an admin needs membership in the sysadmin server role or db_owner database role to initially setup CDC. Any future CDC maintenance will require membership in the sysadmin server role or db_owner database role.
 
-Once CDC is setup, only SELECT and CONNECT permissions are needed to replicate the data.
+Once CDC is setup, enabling Mirroring only requires CONNECT at the server level, and SELECT and CONNECT permissions at the database level to replicate the data.
 
 1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
