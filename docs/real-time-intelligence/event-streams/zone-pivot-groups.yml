@@ -12,7 +12,7 @@ groups:
   title: Event Hubs integration capabilities
   prompt: Choose the capabilities
   pivots:
-  - id: extended-features
-    title: Enhanced Event Hubs capabilities
   - id: basic-features
-    title: Standard Event Hubs capabilities
+    title: Basic features
+  - id: extended-features
+    title: Extended features (Schema support)
