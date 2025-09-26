@@ -87,7 +87,7 @@ ms.date: 11/18/2024
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-source-name.png" alt-text="Screenshot that shows the source name in the Stream details section with the Extended features option selected." lightbox="./media/azure-event-hubs-source-connector/extended-source-name.png":::
 1. On the **Schema handling** page, you can match all events from a source to one **fixed schema**, or define a schema dynamically based on **header values to match multiple schemas**. 
-1. Select **Add more schemas** drop-down, and select **New event schema** to define an event schema using the schema editor, or choose an existing schema from the event schema registry. To learn how to define a new event schema, see [Create and manage event schemas in schema sets](create-manage-event-schemas.md). 
+1. Select **Add more schemas** drop-down, and select **New event schema** to define an event schema using the schema editor, or choose an existing schema from the event schema registry. To learn how to define a new event schema, see [Create and manage event schemas in schema sets](../../schema-sets/create-manage-event-schemas.md). 
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-fixed-schema-option.png" alt-text="Screenshot that shows the fixed schema option selected." lightbox="./media/azure-event-hubs-source-connector/extended-fixed-schema-option.png":::
 
