@@ -68,9 +68,23 @@ Under **Advanced** settings in the **Destination** tab, the following Parquet fo
 
 ### Mapping
 
-For the **Mapping** tab configuration, if you don't apply Parquet format as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab). 
+For the **Mapping** tab configuration, if you don't apply Parquet format as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
 
-If you apply Parquet format as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After enabling Advanced parquet type settings, you can specify certain destination column types. For more details about Parquet data type mapping, go to this [section](#data-type-mapping-for-parquet). You can also set the IsNullable option to specify whether each Parquet destination column can contain null values. The default value of IsNullable is `true`.
+#### Edit destination data types
+
+When copying data to the destination connector in Parquet format, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can specify certain destination column types after enabling Advanced Parquet type settings. You can also configure the IsNullable option to specify whether each Parquet destination column allows null values. The default value for IsNullable is `true`.
+
+The following mappings are used from interim data types supported for editing by the service internally to Parquet data types.
+
+| Interim service data type | Parquet logical type | Parquet physical type         |
+|----------------------|---------------------|-------------------------------|
+| DateTime             |  Option 1: null <br> Option 2: TIMESTAMP           | Option 1: INT96 (default) <br> Option 2: INT64 (Unit: MILLIS, MICROS, NANOS (default) ) |
+| DateTimeOffset       | Option 1: null <br> Option 2: TIMESTAMP | Option 1: INT96 (default) <br> Option 2: INT64 (Unit: MILLIS, MICROS, NANOS (default) ) |
+| TimeSpan             | TIME                | INT32 (Unit: MILLIS) <br> INT64 (Unit: MICROS, NANOS (default) ) |
+| Decimal              | DECIMAL             | INT32 (1 <= precision <= 9) <br> INT64 (9 < precision <= 18) <br> FIXED_LEN_BYTE_ARRAY (precision > 18) (default) |
+| GUID                 | Option 1: STRING <br> Option 2: UUID | Option 1: BYTE_ARRAY (default) <br> Option 2: FIXED_LEN_BYTE_ARRAY |
+| String               | STRING              | BYTE_ARRAY                    |
+| Byte array           | null                | BYTE_ARRAY (default) or FIXED_LEN_BYTE_ARRAY                   |
 
 For example, the type for *dateData* column in source is INT96, and you can change it to INT96 or INT64 type when mapping to destination column.
 
@@ -117,14 +131,14 @@ When copying data to the destination connector in Parquet format, the following 
 | UInt64               | INT                 | INT64                         |
 | Single               | null                | FLOAT                         |
 | Double               | null                | DOUBLE                        |
-| DateTime             |  Option 1: null <br> Option 2: TIMESTAMP           | Option 1: INT96 (default) <br> Option 2: INT64 (Unit: MILLIS, MICROS, NANOS (default) ) |
-| DateTimeOffset       | Option 1: null <br> Option 2: TIMESTAMP | Option 1: INT96 (default) <br> Option 2: INT64 (Unit: MILLIS, MICROS, NANOS (default) ) |
+| DateTime             | null                | INT96                         |
+| DateTimeOffset       | null                | INT96                         |
 | Date                 | DATE                | INT32                         |
-| TimeSpan             | TIME                | INT32 (Unit: MILLIS) <br> INT64 (Unit: MICROS, NANOS (default) ) |
-| Decimal              | DECIMAL             | INT32 (1 <= precision <= 9) <br> INT64 (9 < precision <= 18) <br> FIXED_LEN_BYTE_ARRAY (precision > 18) (default) |
-| GUID                 | Option 1: STRING <br> Option 2: UUID | Option 1: BYTE_ARRAY (default) <br> Option 2: FIXED_LEN_BYTE_ARRAY |
+| TimeSpan             | TIME                | INT64                         |
+| Decimal              | DECIMAL             | INT32, INT64 or FIXED_LEN_BYTE_ARRAY |
+| GUID                 | STRING              | BYTE_ARRAY                    |
 | String               | STRING              | BYTE_ARRAY                    |
-| Byte array           | null                | BYTE_ARRAY (default) or FIXED_LEN_BYTE_ARRAY                   |
+| Byte array           | null                | BYTE_ARRAY                    |
 
 ## Table summary
 
