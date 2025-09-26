@@ -21,5 +21,5 @@ The Greenplum for Pipeline connector is supported in Data Factory for [!INCLUDE 
 
 ## Related content
 
-To learn more about the copy activity configuration for Greenplum for Pipeline in pipelines, go to [Configure in a Pipeline copy activity](connector-greenplum-for-pipeline-copy-activity.md).
+To learn more about the copy activity configuration for Greenplum for Pipeline in pipelines, go to [Configure in a pipeline copy activity](connector-greenplum-for-pipeline-copy-activity.md).
 

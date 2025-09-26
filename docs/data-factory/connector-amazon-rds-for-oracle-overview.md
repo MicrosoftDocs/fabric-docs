@@ -22,4 +22,4 @@ The Amazon RDS For Oracle connector is supported in Data Factory for [!INCLUDE [
 
 ## Related content
 
-To learn more about the copy activity configuration for Amazon RDS For Oracle in pipelines, go to [Configure in a Pipeline copy activity](connector-amazon-rds-for-oracle-copy-activity.md).
+To learn more about the copy activity configuration for Amazon RDS For Oracle in pipelines, go to [Configure in a pipeline copy activity](connector-amazon-rds-for-oracle-copy-activity.md).
