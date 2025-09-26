@@ -29,7 +29,7 @@ Accessing and working with this data today requires complex ETL (Extract Transfo
 
 - Restricted and limited access to important, ever changing, data
 - Friction between people, process, and technology
-- Long wait times to create data pipelines and processes to critically important data
+- Long wait times to create pipelines and processes to critically important data
 - No freedom to use the tools you need to analyze and share insights comfortably
 - Lack of a proper foundation for folks to share and collaborate on data
 - No common, open data formats for all analytical scenarios - BI, AI, Integration, Engineering, and even Apps

@@ -91,7 +91,7 @@ You can use Dataflow gen2 to get data, transform data, and publish dataflow via 
 
 ### Pipeline
 
-When you connect to Pipeline via private link, you can use the data pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize data pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
+When you connect to Pipeline via private link, you can use the pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
 
 ### ML Model, Experiment, and Data agent
 ML Model, Experiment, and Data agent supports private link. 
@@ -129,7 +129,7 @@ Limitations:
 
 * Ingesting data from OneLake isn't supported.
 * Creating a shortcut to an Eventhouse isn't possible.
-* Connecting to an Eventhouse in a data pipeline isn't possible.
+* Connecting to an Eventhouse in a pipeline isn't possible.
 * Ingesting data using queued ingestion isn't supported.
 * Data connectors relying on queued ingestion aren't supported.
 * Querying an Eventhouse using T-SQL isn't possible.
