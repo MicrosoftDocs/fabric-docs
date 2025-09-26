@@ -9,7 +9,7 @@ ms.custom: sfi-image-nochange
 ms.date: 09/25/2025
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
-zone_pivot_groups: event-streams-standard-enhanced
+zone_pivot_groups: event-hubs-capabilities
 ---
 
 # Add Azure Event Hubs source to an eventstream
