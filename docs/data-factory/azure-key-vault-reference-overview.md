@@ -20,7 +20,11 @@ ms.custom: configuration
 When you configure an Azure Key Vault reference in Fabric, you're creating a secure pointer to your secret rather than storing the secret itself. Here's how the process works:
 
 **Initial Setup:**
-Fabric records only the vault URI, secret name from your Key Vault and user auth / OAuth2.0 credential for connecting to the Azure Key Vault (AKV). You must grant your the user identity **Get** and **List** permissions in the specified AKV. Importantly, the actual secret values are never stored within Fabric.
+Fabric only stores the **Key Vault URI** and **secret name**, along with the user’s authentication context (OAuth 2.0 credentials) for connecting to Azure Key Vault (AKV).
+When using **access policy–based authorization**, you must grant the user’s identity the **Get** and **List** permissions on **secrets** in the specified Key Vault.
+Alternatively, if you are using **Azure RBAC**, you can assign the **Key Vault Secrets User** role, which provides equivalent permissions.
+Importantly, Fabric never stores or caches the actual secret values — they are always retrieved directly from AKV at runtime.
+
 
 **Runtime Secret Retrieval:**
 When Fabric needs to establish a data connection, it dynamically retrieves the secret from your Key Vault using the stored reference. The secret is used immediately to authenticate the connection and is held in memory only for the duration needed to establish that connection.
