@@ -87,7 +87,7 @@ You can find the consumption rates for Dataflows Gen2 in [Dataflow Gen2 pricing 
 
 #### Pipelines
 
-You can find the consumption rates for Pipelines in [Pipelines pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-pipelines.md).
+You can find the consumption rates for Pipelines in [Pipeline pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-pipelines.md).
 
 | Operation    | Description                                                                                                              | Item     | Azure billing meter | Type       |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------- | ---------- |
