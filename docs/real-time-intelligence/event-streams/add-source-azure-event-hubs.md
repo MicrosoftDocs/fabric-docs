@@ -15,8 +15,6 @@ zone_pivot_groups: event-hubs-capabilities
 # Add Azure Event Hubs source to an eventstream
 This article shows you how to add an Azure Event Hubs source to an eventstream. 
 
-[!INCLUDE [select-view](./includes/select-view.md)]
-
 ## Prerequisites 
 Before you start, you must complete the following prerequisites: 
 

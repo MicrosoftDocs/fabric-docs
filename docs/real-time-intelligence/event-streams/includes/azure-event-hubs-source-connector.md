@@ -8,18 +8,8 @@ ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
 ---
 
-::: zone pivot="enhanced-event-hubs-capabilities"
-1. On the **Connect** page, select **New connection**.
-
-    :::image type="content" source="./media/azure-event-hubs-source-connector/new-connection-button.png" alt-text="Screenshot that shows the Connect page the New connection link highlighted." lightbox="./media/azure-event-hubs-source-connector/new-connection-button.png":::     
-
-    If there's an existing connection to your Azure event hub, you select that existing connection as shown in the following image, and then move on to the step to configure **Data format** in the following steps.
-
-    :::image type="content" source="./media/azure-event-hubs-source-connector/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure event hub." lightbox="./media/azure-event-hubs-source-connector/existing-connection.png":::    
-::: zone-end
-
-::: zone pivot="standard-event-hubs-capabilities"  
-1. On the **Connect** page, select **New connection**.
+::: zone pivot="basic-features"  
+1. On the **Connect** page, confirm that **Basic** is selected for the **feature level**, and then select **New connection**.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/new-connection-button.png" alt-text="Screenshot that shows the Connect page the New connection link highlighted." lightbox="./media/azure-event-hubs-source-connector/new-connection-button.png":::     
 
@@ -49,14 +39,24 @@ ms.date: 11/18/2024
             :::image type="content" source="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png" alt-text="Screenshot that shows the access key for an Azure Event Hubs namespace." lightbox="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png":::            
 1. Now, on the **Connect** page of wizard, for **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the event hub. 
 1. For **Data format**, select a data format of the incoming real-time events that you want to get from your Azure event hub. You can select from JSON, Avro, and CSV (with header) data formats.  
+
+    :::image type="content" source="./media/azure-event-hubs-source-connector/consumer-group.png" alt-text="Screenshot that shows the consumer group and data format in the Stream details section." lightbox="./media/azure-event-hubs-source-connector/consumer-group.png":::
 1. In the **Stream details** pane to the right, select **Pencil** icon next to the source name, and enter a name for the source. This step is optional. 
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/source-name.png" alt-text="Screenshot that shows the source name in the Stream details section." lightbox="./media/azure-event-hubs-source-connector/source-name.png":::
 1. Select **Next** at the bottom of the page. 
    
     :::image type="content" source="./media/azure-event-hubs-source-connector/connect-page-2.png" alt-text="Screenshot that shows the Connect page two for Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-page-2.png":::        
-1. On the **Review and create** page, review settings, and select **Add**. 
+1. On the **Review + connect** page, review settings, and select **Add**. 
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page for Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/review-create-page.png":::        
 
 ::: zone-end
+
+::: zone pivot="extended-features"
+1. On the **Connect** page, select **New connection**.
+
+    If there's an existing connection to your Azure event hub, you select that existing connection as shown in the following image, and then move on to the step to configure **Data format** in the following steps.
+
+::: zone-end
+
