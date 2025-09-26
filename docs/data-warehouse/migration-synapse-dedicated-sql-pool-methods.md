@@ -121,11 +121,11 @@ You can use Fabric Pipelines to easily migrate over your DDL (schemas) for table
 
 ##### Pipeline design: parameters
 
-This Pipeline accepts a parameter `SchemaName`, which allows you to specify which schemas to migrate over. The `dbo` schema is the default. 
+This pipeline accepts a parameter `SchemaName`, which allows you to specify which schemas to migrate over. The `dbo` schema is the default. 
 
 In the **Default value** field, enter  a comma-delimited list of table schema indicating which schemas to migrate: `'dbo','tpch'` to provide two schemas, `dbo` and `tpch`.
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a Pipeline. In the Name field, 'SchemaName'. In the Default value field, 'dbo','tpch', indicating these two schemas should be migrated.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a pipeline. In the Name field, 'SchemaName'. In the Default value field, 'dbo','tpch', indicating these two schemas should be migrated.":::
 
 ##### Pipeline design: Lookup activity
 
@@ -154,7 +154,7 @@ In the **Settings** tab:
     ')
     ```
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-query-dynamic-content.png" alt-text="Screenshot from Data Factory showing the Settings tab of a Pipeline. The 'Query' button is selected and code is pasted into the 'Query' field.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-query-dynamic-content.png" alt-text="Screenshot from Data Factory showing the Settings tab of a pipeline. The 'Query' button is selected and code is pasted into the 'Query' field.":::
 
 ##### Pipeline design: ForEach Loop
 
@@ -168,7 +168,7 @@ For the ForEach Loop, configure the following options in the **Settings** tab:
  
 ##### Pipeline design: Copy Activity inside the ForEach Loop
 
-Inside the ForEach Activity, add a Copy Activity. This method uses the Dynamic Expression Language within Pipelines to build a `SELECT TOP 0 * FROM <TABLE>` to migrate only the schema without data into a Fabric Warehouse.
+Inside the ForEach Activity, add a Copy Activity. This method uses the Dynamic Expression Language within pipelines to build a `SELECT TOP 0 * FROM <TABLE>` to migrate only the schema without data into a Fabric Warehouse.
 
 In the **Source** tab:
 
