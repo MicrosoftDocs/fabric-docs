@@ -19,22 +19,26 @@ ms.search.form: Schema Registry
 
 
 # Use schemas in eventstreams (Fabric Real-Time intelligence)
+You can use a schema registered with Schema Registry in eventstreams so that only the events that confirm to the schema are ingested into Fabric. 
 
-You can use schema registered with Schema Registry in eventstreams with the following event sources:
+> [!IMPORTANT]
+> You can't enable schema support for existing eventstreams. You must enable schema support when you create an eventstream.
 
+
+## Supported sources
 - Custom app or endpoint
 - Azure SQL Database Change Data Capture (CDC)
 
+
+## Supported destinations
 When you use event schemas in an eventstream, only the following destinations are supported:
 
 - Custom endpoint
 - Eventhouse
 - Derived stream
 
-> [!IMPORTANT]
-> You can't enable schema support for existing eventstreams. You must enable schema support when you create an eventstream.
 
-## Custom endpoint
+### Custom endpoint
 
 Let's see how to associate schemas with a custom endpoint source in an eventstream.
 
@@ -70,7 +74,7 @@ Let's see how to associate schemas with a custom endpoint source in an eventstre
         :::image type="content" source="./media/create-manage-event-schemas/code-editor-schema-json.png" alt-text="Screenshot that shows the JSON code in the code editor to build a schema." lightbox="./media/create-manage-event-schemas/code-editor-schema-json.png":::                    
 
 
-## Azure SQL Database (CDC)
+### Azure SQL Database (CDC)
 
 Ingest change data from Azure SQL databases with automatic table schema registration via CDC into Eventstream.
 
