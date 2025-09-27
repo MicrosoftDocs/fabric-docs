@@ -74,19 +74,19 @@ If you're using **Entra ID authentication**, you also need to make sure the mana
    :::image type="content" border="true" source="media\add-source-custom-app-enhanced\select-custom-endpoint.png" alt-text="Screenshot of the option to use a custom endpoint.":::
 1. When adding a custom endpoint source to an eventstream, enable schema association.
 
-    :::image type="content" source="./media/use-event-schemas/enable-schema-custom-endpoint.png" alt-text="Screenshot of Custom endpoint source with an option to associate schemas." lightbox="./media/use-event-schemas/enable-schema-custom-endpoint.png":::
+    :::image type="content" source="../schema-sets/media/use-event-schemas/enable-schema-custom-endpoint.png" alt-text="Screenshot of Custom endpoint source with an option to associate schemas." lightbox="../schema-sets/media/use-event-schemas/enable-schema-custom-endpoint.png":::
 
 1. To associate with a new schema or an existing schema from a schema registry, select **Associate event schema** on the ribbon.
 
-    :::image type="content" source="./media/use-event-schemas/associate-event-schema-button.png" alt-text="Screenshot of eventstream editor with Associate event schema button on the ribbon selected." lightbox="./media/use-event-schemas/associate-event-schema-button.png":::
+    :::image type="content" source="../schema-sets/media/use-event-schemas/associate-event-schema-button.png" alt-text="Screenshot of eventstream editor with Associate event schema button on the ribbon selected." lightbox="../schema-sets/media/use-event-schemas/associate-event-schema-button.png":::
 1. To use an existing schema, select **Choose from event schema registry**, and follow these steps:
     1. On the **Associate an event schema** window, select a schema from the schema registry. You see the event data schema in the right pane. 
     1. Select **Choose** to associate the event schema with the custom endpoint. 
     
-        :::image type="content" source="./media/use-event-schemas/associate-event-schema-custom-endpoint.png" alt-text="Screenshot of the Associate event schema window with a schema selected from the schema registry." lightbox="./media/use-event-schemas/associate-event-schema-custom-endpoint.png":::
+        :::image type="content" source="../schema-sets/media/use-event-schemas/associate-event-schema-custom-endpoint.png" alt-text="Screenshot of the Associate event schema window with a schema selected from the schema registry." lightbox="../schema-sets/media/use-event-schemas/associate-event-schema-custom-endpoint.png":::
     1. In the Eventstream editor, select the **eventstream** tile. In the bottom pane, switch to the **Associate schema** tab. Confirm that you see the schema associated with the eventstream.
     
-        :::image type="content" source="./media/use-event-schemas/confirm-schema-association-custom-endpoint.png" alt-text="Screenshot of the Eventstream editor with eventstream selected and the Associated schema tab highlighted." lightbox="./media/use-event-schemas/confirm-schema-association-custom-endpoint.png":::        
+        :::image type="content" source="../schema-sets/media/use-event-schemas/confirm-schema-association-custom-endpoint.png" alt-text="Screenshot of the Eventstream editor with eventstream selected and the Associated schema tab highlighted." lightbox="../schema-sets/media/use-event-schemas/confirm-schema-association-custom-endpoint.png":::        
 1. Use one of the following options to create a schema. 
     - If you have a schema JSON file, select **Upload** to upload the file. For a sample file, see the [Sample schema file](create-manage-event-schemas.md#download-an-event-schema) section. 
 
