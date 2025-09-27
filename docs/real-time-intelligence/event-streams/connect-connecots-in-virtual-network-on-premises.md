@@ -12,11 +12,11 @@ ms.search.form: Eventstreams Tutorials
 
 # Connect to Streaming Sources in Virtual Network or On Premises with Eventstream
 
-Eventstream’s streaming connector enables seamless connection of external real-time data streams to Fabric, allowing for an optimal out-of-the-box experience and more choices for real-time insights from various sources. It supports well-known cloud services like Google Cloud and Amazon Kinesis, and database change data capture (CDC) streams through our new messaging connectors.
+Eventstream's streaming connector enables seamless connection of external real-time data streams to Fabric, allowing for an optimal out-of-the-box experience and more choices for real-time insights from various sources. It supports well-known cloud services like Google Cloud and Amazon Kinesis, and database change data capture (CDC) streams through our new messaging connectors.
 
 ## The Challenge
 
-Due to data protection requirements, the streaming source may be in a private network, such as cloud virtual networks or on-premises networks. At the moment, many of Eventstream’s streaming connectors can't directly access sources within these network environments, except the Azure Event Hubs and IoT Hub sources (refer to [Connect to Azure resources securely using managed private endpoints](./set-up-private-endpoint.md)). Before Eventstream supports private connectivity for more sources, the following workarounds can help bring real-time data from the private network to Fabric to unblock your streaming and real-time needs for now.
+Due to data protection requirements, the streaming source may be in a private network, such as cloud virtual networks or on-premises networks. At the moment, many of Eventstream's streaming connectors can't directly access sources within these network environments, except the Azure Event Hubs and IoT Hub sources (refer to [Connect to Azure resources securely using managed private endpoints](./set-up-private-endpoint.md)). Before Eventstream supports private connectivity for more sources, the following workarounds can help bring real-time data from the private network to Fabric to unblock your streaming and real-time needs for now.
 
 ## Workarounds
 
@@ -24,7 +24,7 @@ Below are the approaches that can help with this purpose before the native priva
 
 ### IP allowlist
 
-Eventstream's streaming connector in each region has a single outbound IP address. If your company’s network policy permits allowlisting this IP address and your source has a publicly resolvable address, Eventstream’s connector can bring real-time data into Fabric, though the transmission occurs over a public network.
+Eventstream's streaming connector in each region has a single outbound IP address. If your company's network policy permits allowlisting this IP address and your source has a publicly resolvable address, Eventstream's connector can bring real-time data into Fabric, though the transmission occurs over a public network.
 
 This solution is applicable to all streaming connector sources. If you're interested in implementing this solution, kindly reach out to the product team by completing the following form: [RTI Eventstream Streaming Connector IP allowlist Request](https://aka.ms/EventStreamsConnIPWhitelistRequest) 
 
@@ -32,7 +32,7 @@ This solution is applicable to all streaming connector sources. If you're intere
 
 The Fabric event streams feature is Apache Kafka-compatible and offers an Apache Kafka topic on the Eventstream item. If your real-time data resides in a Kafka cluster within on-premises networks or third-party cloud virtual networks, you can utilize Kafka MirrorMaker to replicate your data to the Kafka endpoint in [Eventstream’s source custom endpoint](add-source-custom-app.md#kafka). 
 
-Currently, one Eventstream offers one Kafka topic inside. If you have multiple topics in your cluster, you may replicate them to Azure Event Hubs, which is also Apache Kafka-compatible. Once the data arrives at Azure Event Hubs, it can be securely transferred into Eventstream through the Managed Private Endpoint (MPE) over the private network integrated with Eventstream’s Azure Event Hubs source.
+Currently, one Eventstream offers one Kafka topic inside. If you have multiple topics in your cluster, you may replicate them to Azure Event Hubs, which is also Apache Kafka-compatible. Once the data arrives at Azure Event Hubs, it can be securely transferred into Eventstream through the Managed Private Endpoint (MPE) over the private network integrated with Eventstream's Azure Event Hubs source.
 
 Learn more about the MPE, see [Connect to Azure resources securely using managed private endpoints](set-up-private-endpoint.md). 
 
