@@ -90,20 +90,20 @@ If you're using **Entra ID authentication**, you also need to make sure the mana
     
         :::image type="content" source="../schema-sets/media/use-event-schemas/confirm-schema-association-custom-endpoint.png" alt-text="Screenshot of the Eventstream editor with eventstream selected and the Associated schema tab highlighted." lightbox="../schema-sets/media/use-event-schemas/confirm-schema-association-custom-endpoint.png":::        
 1. Use one of the following options to create a schema. 
-    - If you have a schema JSON file, select **Upload** to upload the file. For a sample file, see the [Sample schema file](create-manage-event-schemas.md#download-an-event-schema) section. 
+    - If you have a schema JSON file, select **Upload** to upload the file. For a sample file, see the [Sample schema file](../schema-sets/create-manage-event-schemas.md#download-an-event-schema) section. 
 
-        :::image type="content" source="./media/create-manage-event-schemas/upload-button.png" alt-text="Screenshot that shows the upload option to create a schema." lightbox="./media/create-manage-event-schemas/upload-button.png" :::
+        :::image type="content" source="../schema-sets/media/create-manage-event-schemas/upload-button.png" alt-text="Screenshot that shows the upload option to create a schema." lightbox="../schema-sets/media/create-manage-event-schemas/upload-button.png" :::
     - Start building a schema manually by selecting **Add row**. For each row, select the **field type**, **field name**, and optionally enter a **description**. 
     
-        :::image type="content" source="./media/create-manage-event-schemas/build-schema.png" alt-text="Screenshot that shows the manual way of building a schema." lightbox="./media/create-manage-event-schemas/build-schema.png":::            
+        :::image type="content" source="../schema-sets/media/create-manage-event-schemas/build-schema.png" alt-text="Screenshot that shows the manual way of building a schema." lightbox="../schema-sets/media/create-manage-event-schemas/build-schema.png":::            
     
     - To build a schema by entering JSON code, select **Code editor** option as shown in the following image. If you see the message: **If you choose to use the code editor to create your schema, note that you won’t be able to switch back to the UI builder**, select **Edit**. 
 
-        :::image type="content" source="./media/create-manage-event-schemas/code-editor-schema.png" alt-text="Screenshot that shows the code editor to build a schema." lightbox="./media/create-manage-event-schemas/code-editor-schema.png":::   
+        :::image type="content" source="../schema-sets/media/create-manage-event-schemas/code-editor-schema.png" alt-text="Screenshot that shows the code editor to build a schema." lightbox="../schema-sets/media/create-manage-event-schemas/code-editor-schema.png":::   
 
         Enter the JSON code into the editor. 
 
-        :::image type="content" source="./media/create-manage-event-schemas/code-editor-schema-json.png" alt-text="Screenshot that shows the JSON code in the code editor to build a schema." lightbox="./media/create-manage-event-schemas/code-editor-schema-json.png":::                  
+        :::image type="content" source="../schema-sets/media/create-manage-event-schemas/code-editor-schema-json.png" alt-text="Screenshot that shows the JSON code in the code editor to build a schema." lightbox="../schema-sets/media/create-manage-event-schemas/code-editor-schema-json.png":::                  
 
 
 ::: zone-end
