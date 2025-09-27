@@ -30,14 +30,6 @@ You can use a schema registered with Schema Registry in eventstreams so that onl
 - Azure SQL Database Change Data Capture (CDC)
 
 
-## Supported destinations
-When you use event schemas in an eventstream, only the following destinations are supported:
-
-- Custom endpoint
-- Eventhouse
-- Derived stream
-
-
 ### Custom endpoint
 
 Let's see how to associate schemas with a custom endpoint source in an eventstream.
@@ -119,6 +111,7 @@ Ingest change data from Azure SQL databases with automatic table schema registra
     :::image type="content" source="./media/use-event-schemas/json-schema.png" alt-text="Screenshot that shows the JSON schema view." lightbox="./media/use-event-schemas/json-schema.png":::
 
     Don't change these discovered schemas using this editor as it becomes non-confirmant with the schema of tables in the Azure SQL database source.
+
 
 
 ## Supported destinations

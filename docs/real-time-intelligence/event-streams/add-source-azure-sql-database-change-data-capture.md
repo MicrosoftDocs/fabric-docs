@@ -8,6 +8,8 @@ ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-hubs-capabilities
 ---
 
 # Add Azure SQL Database CDC source to an eventstream
