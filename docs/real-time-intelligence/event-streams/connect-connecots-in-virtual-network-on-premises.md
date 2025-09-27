@@ -44,7 +44,7 @@ Learn more about how to run an ASA job in VNET, see [Run Azure Stream Analytics 
 
 ### Leverage Kafka Sink Connector
 
-Kafka sink connector is a Kafka Connect connector that reads data from Apache Kafka and sends it to another Kafka topic. Fabric Eventstream provides an [Apache Kafka endpoint](overview.md#apache-kafka-on-fabric-event-streams) for receiving data via the Kafka protocol. By deploying a Kafka sink connector in the Kafka cluster and pointing it to [Eventstream’s source custom endpoint](add-source-custom-app.md#kafka), data can be read from the Kafka cluster and written to the Eventstream endpoint. It's necessary to ensure that outbound communication is allowed in your private network for the data to be written to Eventstream.
+Kafka sink connector is a Kafka Connect connector that reads data from Apache Kafka and sends it to another Kafka topic. Fabric Eventstream provides an [Apache Kafka endpoint](overview.md#apache-kafka-on-fabric-eventstreams) for receiving data via the Kafka protocol. By deploying a Kafka sink connector in the Kafka cluster and pointing it to [Eventstream’s source custom endpoint](add-source-custom-app.md#kafka), data can be read from the Kafka cluster and written to the Eventstream endpoint. It's necessary to ensure that outbound communication is allowed in your private network for the data to be written to Eventstream.
 
 ### Leverage Azure Functions
 
