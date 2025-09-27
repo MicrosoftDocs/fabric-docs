@@ -71,6 +71,15 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
     :::image type="content" source="media/add-source-azure-sql-database-change-data-capture/live-view.png"     alt-text="Screenshot of streaming Azure SQL Database CDC source in Live view." lightbox="media/add-source-azure-sql-database-change-data-capture/live-view.png":::
 
+::: zone pivot="basic-features"
+
+::: zone-end
+
+::: zone pivot="extended-features"
+
+[!INCLUDE [configure-destintions-schema-enabled-sources](./includes/configure-destinations-schema-enabled-sources.md)]
+
+::: zone-end
 ## Related content
 
 Other connectors:
