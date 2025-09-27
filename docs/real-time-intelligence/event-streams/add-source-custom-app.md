@@ -105,7 +105,6 @@ If you're using **Entra ID authentication**, you also need to make sure the mana
 
         :::image type="content" source="../schema-sets/media/create-manage-event-schemas/code-editor-schema-json.png" alt-text="Screenshot that shows the JSON code in the code editor to build a schema." lightbox="../schema-sets/media/create-manage-event-schemas/code-editor-schema-json.png":::                  
 
-
 ::: zone-end
 
 ## Get endpoint details on the Details pane
@@ -166,6 +165,16 @@ For a clear guide on using the custom endpoint with the Kafka protocol, refer to
 > - You can choose the protocol format that suits your application needs and preferences, and then copy and paste the connection string into your application. You can also refer to or copy the **sample code**, which shows how to send or receive events by using various protocols. 
 - To exit out of the sample code view, select **Hide sample code**. 
 
+::: zone pivot="basic-features"
+
+::: zone-end
+
+::: zone pivot="extended-features"
+
+
+[!INCLUDE [configure-destintions-schema-enabled-sources](./includes/configure-destinations-schema-enabled-sources.md)]
+
+::: zone-end
 
 ## Related content
 For a list of supported sources, see [Add an event source in an eventstream](add-manage-eventstream-sources.md)
