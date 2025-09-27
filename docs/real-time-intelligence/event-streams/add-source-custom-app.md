@@ -69,6 +69,8 @@ If you're using **Entra ID authentication**, you also need to make sure the mana
 
 ::: zone pivot="extended-features"
 
+## Add custom endpoint data as a source
+
 1. To add a custom endpoint source, on the get-started page, select **Use custom endpoint**. Or, if you already have a published eventstream and you want to add custom endpoint data as a source, switch to edit mode. On the ribbon, select **Add source** > **Custom endpoint**.   
 
    :::image type="content" border="true" source="media\add-source-custom-app-enhanced\select-custom-endpoint.png" alt-text="Screenshot of the option to use a custom endpoint.":::
