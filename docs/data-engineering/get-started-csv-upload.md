@@ -1,9 +1,9 @@
 ---
 title: CSV file upload to Delta table for Power BI reporting
 description: Learn how to upload a CSV file to a lakehouse, convert it to a Delta table, and generate a semantic model and Power BI report.
-ms.reviewer: snehagunda
-ms.author: dacoelho
-author: DaniBunny
+ms.reviewer: dacoelho
+ms.author: eur
+author: eric-urban
 ms.topic: get-started
 ms.custom: sfi-image-nochange
 ms.date: 11/11/2024

@@ -7,12 +7,12 @@ items:
     href: sql/overview.md
   - name: Frequently asked questions
     href: sql/faq.yml
-  - name: Feature comparison
-    href: sql/feature-comparison-sql-database-fabric.md
-  - name: "Decision guide: Which SQL database?"
-    href: sql/decision-guide.md
   - name: "Decision guide: Choose a data store"
     href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
+  - name: "Decision guide: Choose a data integration strategy"
+    href: ../data-factory/decision-guide-data-integration.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
+  - name: "Decision guide: Choose a data movement strategy"
+    href: ../data-factory/decision-guide-data-movement.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
   - name: Copilot
     items:
     - name: What is Copilot in Fabric SQL database? 
@@ -27,23 +27,21 @@ items:
       href: sql/copilot-faq.yml
   - name: Get started
     items: 
-    - name: 1. Enable SQL database in Fabric
-      href: sql/enable.md
-    - name: 2. Create a SQL database
+    - name: 1. Create a SQL database
       href: sql/create.md
-    - name: 3. Load AdventureWorks sample Data
+    - name: 2. Load AdventureWorks sample Data
       href: sql/load-adventureworks-sample-data.md
-    - name: 4. Create a table
+    - name: 3. Create a table
       href: sql/create-table.md
-    - name: 5. Query the database
+    - name: 4. Query the database
       href: sql/query.md
-    - name: 6. Query the SQL analytics endpoint
+    - name: 5. Query the SQL analytics endpoint
       href: sql/query-sql-analytics-endpoint.md
-    - name: 7. Create GraphQL API in your database
+    - name: 6. Create GraphQL API in your database
       href: sql/graphql-api.md
-    - name: 8. Create reports
+    - name: 7. Create reports
       href: sql/create-reports.md
-    - name: 9. Share data
+    - name: 8. Share data
       href: sql/share-data.md
   - name: Tutorial
     items: 
@@ -93,11 +91,21 @@ items:
       href: sql/deployment-pipelines.md
     - name: SqlPackage
       href: sql/sqlpackage.md
-    - name: Connect App Service to SQL database in Fabric
+    - name: Connect App Service
       href: sql/tutorial-service-connector.md
+    - name: Connect .NET Aspire application 
+      href: sql/connect-your-dotnet-aspire-application-to-fabric-sql-database.md
+  - name: Integrate with Fabric services
+    items: 
+    - name: Fabric User data functions
+      href: ../data-engineering/user-data-functions/connect-to-data-sources.md
+    - name: SQL analytics endpoint
+      href: sql/sql-analytics-endpoint.md
+    - name: Translytical task flows
+      href: /power-bi/create-reports/translytical-task-flow-overview
   - name: Load data into a SQL database
     items:
-    - name: Load data with data pipelines
+    - name: Load data with pipelines
       href: sql/load-data-pipelines.md
     - name: Load data with Fabric Dataflow Gen2
       href: sql/dataflows.md
@@ -106,8 +114,6 @@ items:
     - name: Mirroring to OneLake Overview
       displayName: Mirroring to OneLake
       href: sql/mirroring-overview.md
-    - name: SQL analytics endpoint
-      href: sql/sql-analytics-endpoint.md
     - name: Mirroring limitations
       displayName: Limitations of Mirroring SQL database to OneLake
       href: sql/mirroring-limitations.md

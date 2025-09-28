@@ -1,16 +1,17 @@
 ---
-title: Quickstart - View invocation logs for a Fabric User data functions item (Preview)
+title: Quickstart - View invocation logs for a Fabric User data functions item
 description: Learn how to view and understand the invocation logs for a Fabric User data functions item.
-ms.author: sumuth
-author: mksuni
+ms.author: eur
+ms.reviewer: sumuth
+author: eric-urban
 ms.topic: quickstart
 ms.date: 03/31/2025
 ms.search.form: Fabric User data functions
 ---
 
-# User data functions invocation logs (Preview)
+# User data functions invocation logs
 
-While invoking a data function, you want to see the logs for a particular invocation so that you can check the status or perform debugging. You can view the logs related to the most recent function invocations. In this view, you can see up to 50 entries for a given function in your Function set. In this article, we walk you through how to use this feature to gather more information about each invocation of a function and use it to troubleshoot any issues.
+When invoking a User data function, it is important to check the logs to view the invocation status or to debug your functionality. You can view the logs related to the most recent function invocations from the Functions portal. In this view, you can see up to 50 entries for a given function in your User Data Functions item. In this article, we walk you through how to use this feature to gather more information about each invocation of a function and use it to troubleshoot any issues.
 
 ## Limitations
 
@@ -23,9 +24,9 @@ There are some limitations to keep in mind when using user data functions invoca
 
 ## View the function invocation logs
 
-In the Functions explorer, hover over the name of the function and select the ellipses icon (...) that appears, then select **View historical log** to view the logs.
+In **Run only mode**, hover over the name of the function in the Functions explorer and select the ellipses icon (...), then select **View historical log** to view the logs.
 
-:::image type="content" source="..\media\user-data-functions-view-logs\select-view-historical-logs.png" alt-text="Screenshot showing how to view historical logs for a function." lightbox="..\media\user-data-functions-view-logs\select-view-historical-logs.png":::
+:::image type="content" source="..\media\user-data-functions-view-logs\select-view-historical-logs-1.png" alt-text="Screenshot showing how to view historical logs for a function." lightbox="..\media\user-data-functions-view-logs\select-view-historical-logs-1.png":::
 
 ## View all invocation logs
 

@@ -55,7 +55,7 @@ Fabric offers the following workloads, each customized for a specific role and t
 
 * **Power BI** - Power BI lets you easily connect to your data sources, visualize, and discover what's important, and share that with anyone or everyone you want. This integrated experience allows business owners to access all data in Fabric quickly and intuitively and to make better decisions with data. For more information, see [What is Power BI?](/power-bi/fundamentals/power-bi-overview)
 
-* **Databases** - Databases in Microsoft Fabric are a developer-friendly transactional database such as Azure SQL Database, which allows you to easily create your operational database in Fabric. Using the mirroring capability, you can bring data from various systems together into OneLake. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from Azure SQL Database, Azure Cosmos DB, Azure Databricks, Snowflake, and Fabric SQL database. For more information, see [SQL database in Microsoft Fabric](../database/sql/overview.md) and [What is Mirroring in Fabric?](../database/mirrored-database/overview.md)
+* **Databases** - Databases in Microsoft Fabric are a developer-friendly transactional database such as Azure SQL Database, which allows you to easily create your operational database in Fabric. Using the mirroring capability, you can bring data from various systems together into OneLake. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from Azure SQL Database, Azure Cosmos DB, Azure Databricks, Snowflake, and Fabric SQL database. For more information, see [SQL database in Microsoft Fabric](../database/sql/overview.md) and [What is Mirroring in Fabric?](../mirroring/overview.md)
 
 * **Data Factory** - Data Factory provides a modern data integration experience to ingest, prepare, and transform data from a rich set of data sources. It incorporates the simplicity of Power Query, and you can use more than 200 native connectors to connect to data sources on-premises and in the cloud. For more information, see [What is Data Factory in Microsoft Fabric?](../data-factory/data-factory-overview.md)
 
@@ -77,7 +77,7 @@ The Microsoft Fabric platform unifies the OneLake and lakehouse architecture acr
 
 ### OneLake
 
-A data lake is the foundation for all Fabric workloads. In Microsoft Fabric, this lake is called[OneLake](../onelake/onelake-overview.md). It's built into the platform and serves as a single store for all organizational data.
+A data lake is the foundation for all Fabric workloads. In Microsoft Fabric, this lake is called [OneLake](../onelake/onelake-overview.md). It's built into the platform and serves as a single store for all organizational data.
 
 OneLake is built on ADLS (Azure Data Lake Storage) Gen2. It provides a single SaaS experience and a tenant-wide store for data that serves both professional and citizen developers. It simplifies the user experience by removing the need to understand complex infrastructure details like resource groups, RBAC, Azure Resource Manager, redundancy, or regions. You don't need an Azure account to use Fabric.
 
@@ -106,7 +106,7 @@ OneLake lets you instantly mount your existing PaaS storage accounts using the [
 The Real-Time hub is a foundational location for data in motion. It provides a unified SaaS experience and tenant-wide logical place for streaming data. It lists data from every source, allowing users to discover, ingest, manage, and react to it. It contains both [streams](../real-time-intelligence/event-streams/overview.md) and [KQL database](../real-time-intelligence/create-database.md) tables. Streams include [**Data streams**](../real-time-intelligence/event-streams/create-manage-an-eventstream.md), **Microsoft sources** (such as [Azure Event Hubs](../real-time-hub/add-source-azure-event-hubs.md), [Azure IoT Hub](../real-time-hub/add-source-azure-iot-hub.md), [Azure SQL DB Change Data Capture (CDC)](../real-time-hub/add-source-azure-sql-database-cdc.md), [Azure Cosmos DB CDC](../real-time-hub/add-source-azure-cosmos-db-cdc.md), [Azure Data Explorer](../real-time-hub/add-source-azure-data-explorer.md), and [PostgreSQL DB CDC](../real-time-hub/add-source-postgresql-database-cdc.md)), **Fabric events** ([workspace item events](../real-time-hub/create-streams-fabric-workspace-item-events.md), [OneLake events](../real-time-hub/create-streams-fabric-onelake-events.md), and [Job events](../real-time-hub/create-streams-fabric-job-events.md)), and **Azure events**, including [Azure Blob Storage events](../real-time-hub/get-azure-blob-storage-events.md) and external events from Microsoft 365 or other clouds services.
 
 
-The Real-Time hub makes it easy discover, ingest, manage, and consume data-in-motion from a wide variety of sources to collaborate and develop streaming applications in one place. For more information, see [What is the Real-Time hub?](../real-time-hub/real-time-hub-overview.md)
+The Real-Time hub makes it easy to discover, ingest, manage, and consume data-in-motion from a wide variety of sources to collaborate and develop streaming applications in one place. For more information, see [What is the Real-Time hub?](../real-time-hub/real-time-hub-overview.md)
 
 ## Fabric solutions for ISVs
 

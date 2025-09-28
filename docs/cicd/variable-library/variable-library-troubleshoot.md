@@ -1,97 +1,96 @@
 ---
-title: Troubleshoot Variable libraries
-description: Troubleshoot common errors and issues when working with Variable libraries in Microsoft Fabric.
+title: Troubleshoot Variable Libraries
+description: Troubleshoot common errors and problems when you work with variable libraries in Microsoft Fabric.
 author: billmath
 ms.author: billmath
 ms.service: fabric
-ms.topic: troubleshooting-problem-resolution #Don't change.
+ms.topic: troubleshooting-problem-resolution
 ms.date: 02/16/2025
 
-#customer intent: As a developer, I want to learn how to troubleshoot Variable libraries, so that I can manage my content lifecycle.
+#customer intent: As a developer, I want to learn how to troubleshoot variable libraries so that I can manage my content lifecycle.
 
 ---
 
-# Troubleshoot Variable libraries
+# Troubleshoot variable libraries 
 
-This article describes common errors and issues that you might encounter when working with Variable libraries and provides solutions to help you resolve them.
+This article provides solutions for common errors and problems that you might encounter when you work with Microsoft Fabric variable libraries.
 
-## Failure to manage Variable library
+> [!NOTE]
+> The Fabric variable library item is currently in preview.
 
-### I can't find the *Create Variable library* icon
+## Failure to manage a variable library
 
-**Description of problem**: I want to create a Variable library, but I can't find the *Create Variable library* icon.
+### I can't find the icon for creating a variable library
 
-**Cause**: The *Create Variable library* icon is only available if the *Users can create Variable libraries* tenant switch is enabled in the Admin portal.
+**Description of the problem**: I want to create a variable library, but I can't find the **Create** icon.
 
-**Solution**: If you're an admin, go to the Admin portal, and enable the *Users can create Variable libraries* [tenant switch](../../admin/service-admin-portal-microsoft-fabric-tenant-settings.md). If you're not an admin, contact your admin. Wait an while, refresh the browser and clean the cache, and check again. Note that it can take up to an hour for the change to take effect.
+**Cause**: The **Create** icon is available only if the **Users can create variable libraries** [tenant switch](../../admin/service-admin-portal-microsoft-fabric-tenant-settings.md) is enabled in the admin portal.
 
-:::image type="content" source="./media/variable-library-troubleshoot/create-variable-library-enabled.png" alt-text="Screenshot of Users can create Variable library tenant switch.":::
+**Solution**: If you're an admin, go to the admin portal and enable the **Users can create variable libraries** tenant switch. If you're not an admin, contact your admin. Wait awhile, refresh the browser, clean the cache, and check again. Note that the change can take up to an hour to take effect.
 
-### I can't create a Variable Library item
+:::image type="content" source="./media/variable-library-troubleshoot/create-variable-library-enabled.png" alt-text="Screenshot of the tenant switch that enables users to create variable libraries.":::
 
-**Description of problem**: I tried to create a Variable library, but it failed.
+### I can't create a variable library item
 
-**Cause**: The name of the Variable library is invalid.
+**Description of the problem**: I tried to create a variable library, but it failed.
 
-**Solution**: Rename the Variable library according to [naming conventions](./variable-types.md#variable-library-item-name).
+**Cause**: The name of the variable library isn't valid.
 
-### I can't save my Variable library
+**Solution**: Rename the variable library according to [naming conventions](./variable-types.md#variable-library-name).
 
-**Description of problem**: I tried to save my Variable library, but it failed.
+### I can't save my variable library
 
-**Cause**: There can be several reasons for this failure. Some reasons might include:
+**Description of the problem**: I tried to save my variable library, but it failed.
 
-- The name of the variable or value-set is invalid.
-- the value isn't the correct type.
+**Cause**: Reasons for this failure might include:
+
+- The name of the variable or the value set isn't valid.
+- The value isn't the correct type.
 - The value is empty.
-- The Variable library size is greater than 1 MB.
+- The variable library size is greater than 1 MB.
 
 **Solution**: Depending on the cause, you can try the following solutions:
 
-- Review the errors in the validation pane and fix them so no required value is missing or mismatched with the variable type.
-- Ensure that all variables and value-sets are named according to the [naming conventions](./variable-types.md#variable-library-item-name).
-- Reduce the size of the Variable library item to less than 1 MB by removing unused variables or splitting the variables list into several Variable Libraries.
+- Review the errors on the validation pane and fix them so that no required value is missing or mismatched with the variable type.
+- Ensure that all variables and value sets are named according to the [naming conventions](./variable-types.md#variable-library-name).
+- Reduce the size of the variable library item to less than 1 MB by removing unused variables or by splitting the variable list into several variable libraries.
 
 ## Deployment pipeline failure
 
 ### I can't deploy my variable library in my deployment pipeline
 
-**Description of problem**: I tried to deploy the Variable library, but I got a message that says *Can't start deployment*.
+**Description of the problem**: I tried to deploy the variable library, but I got a message that says "Can't start the deployment."
 
-:::image type="content" source="./media/variable-library-troubleshoot/cant-start-deployment.png" alt-text="Screenshot of error message that says Can't start deployment.":::
+:::image type="content" source="./media/variable-library-troubleshoot/cant-start-deployment.png" alt-text="Screenshot of the error message that says the deployment can't be started.":::
 
-**Cause**: The active value set in the target stage is missing in the deployed Variable library. This could happen if you removed or renamed the active value set in the source or target stage.
+**Cause**: The active value set in the target stage is missing in the deployed variable library. A possible reason is that you removed or renamed the active value set in the source or target stage.
 
-**Solution**: Change  the active value set in the target stage, or rename the current one to one that exists in the source.
+**Solution**: Change the active value set in the target stage, or rename the current value set to one that exists in the source.
 
 ## Variable reference failure
 
-### Error message: I can't reference added variable
+### I can't reference an added variable
 
-<!---
-:::image type="content" source="./media/variable-library-troubleshoot/variable-not-found.png" alt-text="Screenshot of error message that says Variable not found.":::
---->
+**Description of the problem**: I can't find the variable that I want to refer to in the pipeline.
 
-**Description of problem**: I can't find the variable I want to refer to in the data pipeline.  
-**Cause**: Some reasons a variable might not appear in the data pipeline include:
+**Cause**: Reasons why a variable might not appear in the pipeline include:
 
-- The variable wasn't saved
+- The variable wasn't saved.
 - The variable was deleted or renamed.
-- The Variable library was moved to another Variable library
+- The variable was moved to another variable library.
 
-**Solution**: Go back to the variable library, and check the names of the existing variables.
+**Solution**: Go back to the variable library and check the names of the existing variables. If the variable that you want exists but wasn't saved, save it. If it doesn't exist, create it.
 
-If the variable you want exists but wasn't saved, save it.
-If it doesn't exist, create it.
-
-After you find and fix the problem, remove the current reference and replace it with the correct name in the data pipeline.
+After you find and fix the problem, remove the current reference and replace it with the correct name in the pipeline.
 
 ### Active value set not changed
 
-**Description of problem**: I changed the active value set in the Variable library, but I still get the value from the previous active value set.  
-**Cause**: You might have forgotten to save your changes in the Variable library.  
-**Solution**: Go back to the Variable library, ensure the correct value set is set to active, and save.  
+**Description of the problem**: I changed the active value set in the variable library, but I still get the value from the previous active value set.
+
+**Cause**: You might have forgotten to save your changes in the variable library.
+  
+**Solution**: Go back to the variable library, ensure that the correct value set is active, and save.  
 
 ## Related content
 
-- [Get started with Variable libraries](./get-started-variable-libraries.md)
+- [Create and manage variable libraries](./get-started-variable-libraries.md)

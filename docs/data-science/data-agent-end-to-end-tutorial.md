@@ -1,26 +1,29 @@
----
+﻿---
 title: Fabric data agent scenario (preview)
 description: Learn how to configure a Fabric data agent on the AdventureWorks dataset.
 author: jonburchel
-ms.author: amjafari
-ms.reviewer: jburchel
+ms.author: jburchel
+ms.reviewer: amjafari
 reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
-ms.topic: concept-article #Don't change; maybe should change to "how-to".
-ms.date: 03/25/2025
+ms.topic: tutorial
+ms.date: 09/24/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
-
+ai-usage: ai-assisted
 ---
 
 # Fabric data agent example with the AdventureWorks dataset (preview)
 
-This article describes how to set up a data agent in Microsoft Fabric, using a lakehouse as a data source. To illustrate the process, we first create a lakehouse, and then add data to it. Then, we create a Fabric data agent and configure the lakehouse as its data source. If you already have a Power BI semantic model (with the necessary read/write permissions), a warehouse, or a KQL database, you can follow the same steps after you create the Fabric data agent to add your data sources. While the steps shown here focus on the lakehouse, the process is similar for other data sources—you just need to make adjustments based on your specific selection.
+This article shows how to set up a data agent in Microsoft Fabric using a lakehouse as the example data source. We first create and populate a lakehouse, then create a Fabric data agent and add the lakehouse to it. If you already have a Power BI semantic model (with the necessary read/write permissions), a warehouse, or a KQL database, follow the same steps and select that source instead. Although this walkthrough uses a lakehouse, the pattern is the same for other sources—only the data source selection differs.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
+
+> [!IMPORTANT]
+> Ensure the standalone Copilot experience is enabled in the Power BI admin portal (Tenant settings > Copilot > Standalone Copilot experience). If it isn't enabled, you won't be able to use the data agent inside Copilot scenarios even if other Copilot tenant switches are on. For details, see [Copilot in Power BI tenant settings](../admin/service-admin-portal-copilot.md).
 
 ## Create a lakehouse with AdventureWorksLH
 
@@ -58,6 +61,9 @@ If you already have an instance of AdventureWorksLH in a lakehouse (or a warehou
 
 After a few minutes, the lakehouse populates with the necessary data.
 
+> [!CAUTION]
+> Notebooks that continue running (for example, due to accidental infinite loops or constant polling) can consume Fabric capacity indefinitely. After the data finishes loading, stop any active cells and end the notebook session (Notebook toolbar > Stop session) if you no longer need it. Avoid adding long-running loops without a timeout.
+
 ## Create a Fabric data agent
 
 To create a new Fabric data agent, navigate to your workspace and select the **+ New Item** button, as shown in this screenshot:
@@ -93,7 +99,7 @@ Once the lakehouse is added as a data source, the **Explorer** pane on the left 
 
 ## Provide instructions
 
-To add Fabric data agent instructions, select the **Data agent instructions** button to open the Fabric data agent instructions pane on the right. You can add the following instructions.
+To add instructions, select the **Data agent instructions** button to open the instructions pane on the right. You can add the following instructions.
 
 The `AdventureWorksLH` data source contains information from three tables:
 
@@ -121,16 +127,16 @@ FROM factinternetsales s
 INNER JOIN dimcustomer c ON s.CustomerKey = c.CustomerKey
 INNER JOIN dimgeography g ON c.GeographyKey = g.GeographyKey
 INNER JOIN (
-	SELECT *
-	FROM (
-		SELECT
-			CustomerKey,
-			SalesAmount,
+    SELECT *
+    FROM (
+        SELECT
+            CustomerKey,
+            SalesAmount,
             OrderDate,
-			ROW_NUMBER() OVER (PARTITION BY CustomerKey ORDER BY OrderDate) AS RowNumber
-		FROM factinternetsales
-	) AS t
-	WHERE RowNumber = 1
+            ROW_NUMBER() OVER (PARTITION BY CustomerKey ORDER BY OrderDate) AS RowNumber
+        FROM factinternetsales
+    ) AS t
+    WHERE RowNumber = 1
 ) first_purchase ON s.CustomerKey = first_purchase.CustomerKey
 WHERE s.OrderDate > first_purchase.OrderDate
 GROUP BY g.PostalCode;
@@ -141,16 +147,16 @@ GROUP BY g.PostalCode;
 ```SQL
 SELECT
     Year,
-	Month,
-	MonthlySales,
-	SUM(MonthlySales) OVER (PARTITION BY Year ORDER BY Year, Month ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS CumulativeTotal
+    Month,
+    MonthlySales,
+    SUM(MonthlySales) OVER (PARTITION BY Year ORDER BY Year, Month ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS CumulativeTotal
 FROM (
-	SELECT
-	   YEAR(OrderDate) AS Year,
-	   MONTH(OrderDate) AS Month,
-	   SUM(SalesAmount) AS MonthlySales
-	FROM factinternetsales
-	GROUP BY YEAR(OrderDate), MONTH(OrderDate)
+    SELECT
+       YEAR(OrderDate) AS Year,
+       MONTH(OrderDate) AS Month,
+       SUM(SalesAmount) AS MonthlySales
+    FROM factinternetsales
+    GROUP BY YEAR(OrderDate), MONTH(OrderDate)
 ) AS t
 ```
 
@@ -201,32 +207,41 @@ Before you publish the Fabric data agent, it doesn't have a published URL value,
 
 If you haven't published the Fabric data agent before, you can publish it following the instructions in the previous steps. You can then copy the published URL and use it in the Fabric notebook. This way, you can query the Fabric data agent by making calls to the Fabric data agent API in a Fabric notebook. Paste the copied URL in this code snippet. Then, replace the question with any query relevant to your Fabric data agent. This example uses `\<generic published URL value\>` as the URL.
 
+> [!IMPORTANT]
+> When calling a data agent programmatically, implement:
+>
+> 1. A polling timeout (see example below) to avoid indefinite loops.
+> 1. Minimal polling frequency (start at 2–5 seconds; increase only if needed).
+> 1. Cleanup of created threads or resources after completion.
+> 1. Notebook session shutdown when finished to release Fabric capacity.
+
+> [!NOTE]
+> Adjust version pins (`openai`, `synapseml`, `pandas`, `tqdm`) to the latest validated versions for your Fabric runtime if these exact versions become outdated.
+
 ```python
 %pip install "openai==1.70.0"
+%pip install "synapseml==1.0.5"  # Required for synapse.ml.mlflow (update version as needed)
+%pip install pandas tqdm  # Skip if already available in the Fabric runtime
 ```
 
 ```python
-%pip install httpx==0.27.2
-```
-
-```python
-import requests
-import json
-import pprint
 import typing as t
 import time
 import uuid
 
+# OpenAI SDK internals
 from openai import OpenAI
-from openai._exceptions import APIStatusError
 from openai._models import FinalRequestOptions
 from openai._types import Omit
 from openai._utils import is_given
+
+# SynapseML helper for env config
 from synapse.ml.mlflow import get_mlflow_env_config
-from sempy.fabric._token_provider import SynapseTokenProvider
+
+# Removed unused imports: requests, json, pprint, APIStatusError, SynapseTokenProvider
  
 base_url = "https://<generic published base URL value>"
-question = "What datasources do you have access to?"
+question = "What data sources do you have access to?"
 
 configs = get_mlflow_env_config()
 
@@ -278,14 +293,24 @@ message = fabric_client.beta.threads.messages.create(thread_id=thread.id, role="
 # Create run
 run = fabric_client.beta.threads.runs.create(thread_id=thread.id, assistant_id=assistant.id)
 
-# Wait for run to complete
-while run.status == "queued" or run.status == "in_progress":
+# Wait for run to complete (avoid indefinite loop)
+terminal_states = {"completed", "failed", "cancelled", "requires_action"}
+poll_interval = 2
+timeout_seconds = 300  # Adjust based on expected workload
+start_time = time.time()
+
+while run.status not in terminal_states:
+    if time.time() - start_time > timeout_seconds:
+        raise TimeoutError(f"Run polling exceeded {timeout_seconds} seconds (last status={run.status})")
     run = fabric_client.beta.threads.runs.retrieve(
         thread_id=thread.id,
         run_id=run.id,
     )
     print(run.status)
-    time.sleep(2)
+    time.sleep(poll_interval)
+
+if run.status != "completed":
+    print(f"Run finished with status: {run.status}")
 
 # Print messages
 response = fabric_client.beta.threads.messages.list(thread_id=thread.id, order="asc")

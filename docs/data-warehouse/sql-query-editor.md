@@ -4,12 +4,13 @@ description: Learn how to use the SQL query editor.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad, jacindaeng
-ms.date: 04/06/2025
+ms.date: 09/24/2025
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: how-to
+ms.custom:
+  - sfi-image-nochange
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
-ms.custom: sfi-image-nochange
 ---
 # Query using the SQL query editor
 
@@ -27,7 +28,7 @@ The SQL query editor provides support for IntelliSense, code completion, syntax 
 
 The SQL query editor provides a text editor to write queries using T-SQL. To access the built-in SQL query editor:
 
-- Create a new query using the **New SQL query** button in the ribbon. 
+- Create a new query using the **New SQL query** button in the ribbon.
 
    :::image type="content" source="media/sql-query-editor/home-ribbon-select-new.png" alt-text="Screenshot showing where to find the New query menu in the ribbon." lightbox="media/sql-query-editor/home-ribbon-select-new.png":::
 
@@ -91,13 +92,13 @@ Once you have successfully signed in, you'll see the data presented in the sprea
 
 #### Visualize results
 
-**Visualize results** allows you to create reports from your query results within the SQL query editor.
+**Visualize results** allows you to create reports from your query results within the SQL query editor.
 
    :::image type="content" source="media/sql-query-editor/visualize-results-query.png" alt-text="Screenshot showing how to use Visualize results menu." lightbox="media/sql-query-editor/visualize-results-query.png":::
 
 #### Copy
 
-The **Copy** dropdown list allows you to copy the results and/or column names in the data grid. You can choose to copy results with column names, just copy the results only, or just copy the column names only. 
+The **Copy** dropdown list allows you to copy the results and/or column names in the data grid. You can choose to copy results with column names, just copy the results only, or just copy the column names only.
 
    :::image type="content" source="media/sql-query-editor/copy-dropdown.png" alt-text="Screenshot showing the options in the Copy dropdown menu." lightbox="media/sql-query-editor/copy-dropdown.png":::
 
@@ -114,7 +115,7 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 You can write a T-SQL query with three-part naming convention to refer to objects and join them across warehouses, for example:
 
 ```sql
-SELECT 
+SELECT
    emp.Employee
    ,SUM(Profit) AS TotalProfit
    ,SUM(Quantity) AS TotalQuantitySold
@@ -124,7 +125,7 @@ JOIN
    [WWI_Sample].[dbo].[FactSale] as sale
 ON
    emp.EmployeeKey = sale.SalespersonKey
-WHERE  
+WHERE
    emp.IsSalesperson = 'TRUE'
 GROUP BY
    emp.Employee
@@ -162,19 +163,19 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 - You can run Data Definition Language (DDL), Data Manipulation Language (DML), and Data Control Language (DCL) statements, but there are limitations for Transaction Control Language (TCL) statements. In the SQL query editor, when you select the **Run** button, you're submitting an independent batch request to execute. Each **Run** action in the SQL query editor is a batch request, and a session only exists per batch. Each execution of code in the same query window runs in a different batch and session.
 
-   - For example, when independently executing transaction statements, session context is not retained. In the following screenshot, `BEGIN TRAN` was executed in the first request, but since the second request was executed in a different session, there is no transaction to commit, resulting into the failure of commit/rollback operation. If the SQL batch submitted does not include a `COMMIT TRAN`, the changes applied after `BEGIN TRAN` will not commit.
+  - For example, when independently executing transaction statements, session context is not retained. In the following screenshot, `BEGIN TRAN` was executed in the first request, but since the second request was executed in a different session, there is no transaction to commit, resulting into the failure of commit/rollback operation. If the SQL batch submitted does not include a `COMMIT TRAN`, the changes applied after `BEGIN TRAN` will not commit.
 
    :::image type="content" source="media/sql-query-editor/transaction-run-error.png" alt-text="Screenshot showing independent run of transactions failed in SQL query editor." lightbox="media/sql-query-editor/transaction-run-error.png":::
 
-   - The SQL query editor does not support `sp_set_session_context`.
+  - The SQL query editor does not support `sp_set_session_context`.
 
-   - In the SQL query editor, the `GO` SQL command creates a new independent batch in a new session.
+  - In the SQL query editor, the `GO` SQL command creates a new independent batch in a new session.
 
 - When you are running a SQL query with [USE](/sql/t-sql/language-elements/use-transact-sql?view=fabric&preserve-view=true), you need to submit the SQL query with `USE` as one single request.
 
 - **Visualize results** currently does not support SQL queries with an `ORDER BY` clause.
 
-- T-SQL statements that use the T-SQL `OPTION` syntax are not currently supported in the **Explore this data** or **Visualize results** options with DirectQuery mode. The workaround is to create visualizations in Power BI Desktop using **Import** mode. 
+- T-SQL statements that use the T-SQL `OPTION` syntax are not currently supported in the **Explore this data** or **Visualize results** options with DirectQuery mode. The workaround is to create visualizations in Power BI Desktop using **Import** mode.
 
 - The following table summarizes the expected behavior will not match with [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true):
 
@@ -186,6 +187,7 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 ## Related content
 
+- [Manage objects in your data warehouse](manage-objects.md)
 - [Query using the Visual Query editor](visual-query-editor.md)
 - [Tutorial: Create cross-warehouse queries with the SQL query editor](tutorial-sql-cross-warehouse-query-editor.md)
 

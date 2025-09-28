@@ -1,8 +1,9 @@
 ---
 title: Library Management in Fabric Environments
 description: Learn about library management in Microsoft Fabric, including how to add public and custom libraries to your Fabric environments.
-ms.author: shuaijunye
-author: ShuaijunYe
+ms.author: eur
+ms.reviewer: shuaijunye
+author: eric-urban
 ms.topic: how-to
 ms.date: 06/12/2024
 ms.search.form: Manage libraries in Environment
@@ -12,9 +13,15 @@ ms.search.form: Manage libraries in Environment
 
 Microsoft Fabric environments provide flexible configurations for running your Spark jobs. Libraries provide reusable code that developers want to include in their work. Except for the built-in libraries that come with each Spark runtime, you can install public and custom libraries in your Fabric environments. You can easily attach environments to your notebooks and Spark job definitions.
 
-Modifying the version of a specific package might break other packages that depend on it. For instance, downgrading `azure-storage-blob` might cause problems with `pandas` and other libraries that rely on `pandas`, such as `mssparkutils`, `fsspec_wrapper`, and `notebookutils`.
+## Built-in libraries
 
-To view the list of preinstalled packages and their versions for each runtime, see [Apache Spark runtimes in Fabric](runtime.md). For more options and best practices for using libraries in Fabric, see [Manage Apache Spark libraries in Fabric](library-management.md).
+In Fabric, each runtime version comes preloaded with a curated set of built-in libraries that are optimized for performance, compatibility, and security across Python, R, Java, and Scala. The Built-in Libraries section within the environment allows you to browse and search these pre-installed libraries based on the selected runtime.
+
+To view the list of preinstalled packages and their versions for each runtime, see [Apache Spark runtimes in Fabric](runtime.md).
+
+> [!IMPORTANT]
+> Fabric supports different ways of managing packages. For more options and **best practices** for managing libraries in Fabric, see [Manage Apache Spark libraries in Fabric](library-management.md)
+> When your workspace has networking features such as **Workspace outbound access protection** or **Managed VNets**, the access of public repositories like PyPI will be blocked. Follow the instruction in [Manage libraries with limited network access in Fabric](environment-manage-library-with-outbound-access-protection.md) to seamlessly managing the libraries in Environment.
 
 ## Public libraries
 

@@ -7,9 +7,10 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: conceptual
-ms.date: 11/21/2024
+ms.date: 09/02/2025
 ms.custom: licensing support, intro-overview
 LocalizationGroup: Premium
+ai-usage: ai-assisted
 ---
 
 # What is Power BI Premium?
@@ -75,6 +76,9 @@ With *Power BI Premium* and [Power BI Embedded](/power-bi/developer/embedded/emb
 <sup>3</sup> [DirectQuery parallelism](https://powerbi.microsoft.com/blog/query-parallelization-helps-to-boost-power-bi-dataset-performance-in-directquery-mode/) can improve your query response times. The lower number indicates the default maximum number of queries that can be processed at the same time. The higher number indicates the maximum number of queries that can be processed at the same time. To change the default use the [Model.MaxParallelismPerQuery](/dotnet/api/microsoft.analysisservices.tabular.model.maxparallelismperquery) property.
 
 <sup>4</sup> These limits apply to Direct Lake tables and models, and are guardrails that affect fallback to DirectQuery. Direct Lake semantic models have additional constraints that are based on SKUs, as listed in [fallback](/fabric/get-started/direct-lake-overview#fallback).
+
+> [!NOTE]
+> While SKU limitations define the maximum memory available for semantic models, administrators can manage memory allocation through capacity settings in the Power BI admin portal. For details on adjusting memory settings, see [Configure workloads in Power BI Premium](service-admin-premium-workloads.md).
 
 ### Semantic model memory usage
 

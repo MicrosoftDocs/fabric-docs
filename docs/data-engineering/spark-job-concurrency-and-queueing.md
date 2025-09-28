@@ -1,9 +1,9 @@
 ---
 title: Concurrency limits and queueing in Apache Spark for Fabric
 description: Learn about the job concurrency limits and queueing for notebooks, Apache Spark job definitions, and lakehouse jobs in Fabric.
-ms.reviewer: snehagunda
-ms.author: saravi
-author: santhoshravindran7
+ms.reviewer: saravi
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 10/20/2023
@@ -34,7 +34,7 @@ HTTP Response code 430: This Spark job can't be run because you have hit a Spark
 With **queueing enabled**, notebook jobs triggered from **pipelines**, **job scheduler**, and **Spark job definitions** are added to the queue and automatically retried when capacity becomes available.
 
 > [!NOTE]
-> The queue expiration is set to **24 hours** from job submission time. After this period, jobs are **removed from the queue** and must be **resubmitted manually**.
+> The queue expiration is set to **24 hours** from job submission time. After this period, jobs are removed from the queue and must be resubmitted manually.
 
 Fabric capacities are also enabled with **bursting**, allowing you to consume **up to 3×** the number of Spark VCores you've purchased. This burst helps improve concurrency by allowing more jobs to run in parallel.
 

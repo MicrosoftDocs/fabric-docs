@@ -14,11 +14,12 @@ ms.custom:
 
 The Palantir Foundry connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|On-premises |Foundry Client Credentials<br> Foundry Token<br> Foundry Oauth |
 
-For information on how to connect to Palantir Foundry in Dataflow Gen2, go to [Set up your Palantir Foundry connection](connector-palantir-foundry.md).
+## Related content
 
-## Support in data pipelines
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Palantir Foundry in data pipelines.
+For information on how to connect to Palantir Foundry, go to [Set up your Palantir Foundry connection](connector-palantir-foundry.md).

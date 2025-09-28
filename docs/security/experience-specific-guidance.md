@@ -14,7 +14,7 @@ This document provides experience-specific guidance for recovering your Fabric d
 
 ## Sample scenario
 
-A number of the guidance sections in this document use the following sample scenario for purposes of explanation and illustration. Refer back to this scenario as necessary.
+Many guidance sections in this document use the following sample scenario for purposes of explanation and illustration. Refer back to this scenario as necessary.
 
 Let's say you have a capacity C1 in region A that has a workspace W1. If you've [turned on disaster recovery](./disaster-recovery-guide.md#disaster-recovery-capacity-setting) for capacity C1, OneLake data will be replicated to a backup in region B. If region A faces disruptions, the Fabric service in C1 fails over to region B.
 
@@ -53,7 +53,7 @@ Customers can recreate lakehouses by using a custom Scala script.
 
 1. Create a new notebook in the workspace C2.W2.
 
-1. To recover the tables and files from the original lakehouse, refer to the data with OneLake paths such as abfss (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the code example below (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
+1. To recover the tables and files from the original lakehouse, refer to the data with OneLake paths such as abfss (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the following code example (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
 
     ```
     mssparkutils.fs.ls('abfs[s]://<C1.W1>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
@@ -85,18 +85,18 @@ Customers can recreate lakehouses by using a custom Scala script.
     mssparkutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
     ```
 
-1. Once you run the script, the tables will appear in the new lakehouse.
+1. Once you run the script, the tables appear in the new lakehouse.
 
 #### Approach 2: Use Azure Storage Explorer to copy files and tables
 
 To recover only specific Lakehouse files or tables from the original lakehouse, use Azure Storage Explorer. Refer to [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md) for detailed steps. For large data sizes, use [Approach 1](#approach-1-using-custom-script-to-copy-lakehouse-delta-tables-and-files).
 
 > [!NOTE]
-> The two approaches described above recover both the metadata and data for Delta-formatted tables, because the metadata is co-located and stored with the data in OneLake. For non-Delta formatted tables (e.g. CSV, Parquet, etc.) that are created using Spark Data Definition Language (DDL) scripts/commands, the user is responsible for maintaining and re-running the Spark DDL scripts/commands to recover them.
+> The two approaches described above recover both the metadata and data for Delta-formatted tables, because the metadata is co-located and stored with the data in OneLake. For non-Delta formatted tables (for example, CSV, Parquet, etc.) that are created using Spark Data Definition Language (DDL) scripts/commands, the user is responsible for maintaining and re-running the Spark DDL scripts/commands to recover them.
 
 ### Notebook
 
-Notebooks from the primary region remain unavailable to customers and the code in notebooks won't be replicated to the secondary region. To recover Notebook code in the new region, there are two approaches to recovering Notebook code content.
+Notebooks from the primary region remain unavailable to customers and the code in notebooks aren't replicated to the secondary region. To recover Notebook code in the new region, there are two approaches to recovering Notebook code content.
 
 #### Approach 1: User-managed redundancy with Git integration (in public preview)
 
@@ -116,7 +116,7 @@ The best way to make this easy and quick is to use Fabric Git integration, then 
 
         :::image type="content" source="./media/experience-specific-guidance/notebook-reconnect-to-ado-repo.png" alt-text="Screenshot showing notebook reconnected to ADO repo.":::
 
-    1. Select the Source control button. Then select the relevant branch of the repo. Then select **Update all**. The original notebook will appear.
+    1. Select the Source control button. Then select the relevant branch of the repo. Then select **Update all**. The original notebook appears.
 
         :::image type="content" source="./media/experience-specific-guidance/notebook-source-control-update-all.png" alt-text="Screenshot showing how to update all notebooks on a branch.":::
 
@@ -158,7 +158,7 @@ If you don't take the Git integration approach, you can save the latest version 
 
 ### Spark Job Definition
 
-Spark job definitions (SJD) from the primary region remain unavailable to customers, and the main definition file and reference file in the notebook will be replicated to the secondary region via OneLake. If you want to recover the SJD in the new region, you can follow the manual steps described below to recover the SJD. Note that historical runs of the SJD won't be recovered.
+Spark job definitions (SJD) from the primary region remain unavailable to customers, and the main definition file and reference file in the notebook will be replicated to the secondary region via OneLake. If you want to recover the SJD in the new region, you can follow the manual steps described below to recover the SJD. Historical runs of the SJD won't be recovered.
 
 You can recover the SJD items by copying the code from the original region by using Azure Storage Explorer and manually reconnecting Lakehouse references after the disaster.
 
@@ -238,7 +238,7 @@ Mirrored databases from the primary region remain unavailable to customers and t
 
 ## Data Factory
 
-Data Factory items from the primary region remain unavailable to customers and the settings and configuration in data pipelines or dataflow gen2 items won't be replicated to the secondary region. To recover these items in the event of a regional failure, you'll need to recreate your Data Integration items in another workspace from a different region. The following sections outline the details.
+Data Factory items from the primary region remain unavailable to customers and the settings and configuration in pipelines or dataflow gen2 items won't be replicated to the secondary region. To recover these items in the event of a regional failure, you'll need to recreate your Data Integration items in another workspace from a different region. The following sections outline the details.
 
 ### Dataflows Gen2
 
@@ -262,9 +262,11 @@ If you want to recover a Dataflow Gen2 item in the new region, you need to expor
 
 1. The template is then imported into your new Dataflow Gen2 item.
 
-### Data Pipelines
+Dataflows Save As feature is not supported in the event of disaster recovery.
 
-Customers can't access data pipelines in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical data pipelines in multiple workspaces across different regions.
+### Pipelines
+
+Customers can't access pipelines in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical pipelines in multiple workspaces across different regions.
 
 ### Copy Job
 
@@ -343,6 +345,43 @@ Customers can also achieve geo-redundancy by deploying identical Eventstream wor
 1. Connect these new items to the identical data sources.
 
 1. Add identical destinations for each eventstream in different regions.
+
+## Transactional database
+
+This guide describes the recovery procedures for the transactional database experience. 
+
+### SQL database
+
+To protect against a regional failure, users of SQL databases can take proactive measures to periodically export their data and use the exported data to recreate the database in a new workspace when needed.
+
+This can be achieved by using the [SqlPackage](../database/sql/sqlpackage.md) CLI tool that provides database portability and facilitates database deployments.
+
+1. Use the SqlPackage tool to export the database to a `.bacpac` file.  See [Export a database with SqlPackage](../database/sql/sqlpackage.md#export-a-database-with-sqlpackage) for more details.
+1. Store the `.bacpac` file in a secure location that is in a different region than the database.  Examples include storing the `.bacpac` file in a Lakehouse that is in a different region, using a geo-redundant Azure Storage Account, or using another secure storage medium that is in a different region.
+3. If the SQL database and region are unavailable, you can use the `.bacpac` file with SqlPackage to recreate the database in a workspace in a new region – Workspace C2.W2 in Region B as described in the scenario above.  Follow the steps detailed in [Import a database with SqlPackage](../database/sql/sqlpackage.md#import-a-database-with-sqlpackage) to recreate the database with your `.bacpac` file.
+
+The recreated database is an independent database from the original database and reflects the state of the data at the time of the export operation.
+
+#### Failback considerations
+
+The recreated database is an independent database.  Data added to the recreated database would not be reflected in the original database.  If you plan to failback to the original database when the home region becomes available, you will need to consider manually reconciling data from the recreated database to the original database.
+
+## Platform
+
+Platform refers to the underlying shared services and architecture that apply to all workloads. This section walks you through the recovery procedures for shared experiences. It covers variable libraries.
+
+### Variable library
+Microsoft Fabric Variable libraries enable developers to customize and share item configurations within a workspace, streamlining content lifecycle management. From a disaster recovery standpoint, variable library users must proactively protect against a regional disaster. This can be done through Fabric Git integration, which ensures that after a regional disaster, a user's Variable library remains available.  To recover a variable library, we recommend the following:
+
+ - Use Fabric Git integration to synchronize your Variable library with your ADO repo. In case of disaster, you can use the repository to rebuild the Variable library in the new workspace you created. Use the following steps:
+
+     1. Connect your workspace to Git repo as described in [here](../cicd/git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo).
+     2. Make sure to keep the WS and the repo synched with [Commit](../cicd/git-integration/git-get-started.md#commit-changes-to-git) and [Update](../cicd/git-integration/git-get-started.md#update-workspace-from-git).
+     3. Recovery - In case of disaster, use the repository to rebuild the Variable library in a new workspace:
+
+ - In the newly created workspace, connect and sync to your Azure ADO repo again.
+ - All Fabric items in this repository are automatically downloaded to your new Workspace.
+ - After syncing your items from Git, open your Variable Libraries in the new workspace and manually select the desired [active value set](../cicd/variable-library/get-started-variable-libraries.md#add-a-value-set).
 
 ## Related information
 

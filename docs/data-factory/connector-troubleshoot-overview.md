@@ -3,18 +3,19 @@ title: Troubleshoot connectors
 description: Learn how to troubleshoot connector issues with Data Factory in Fabric.
 author: jianleishen
 ms.topic: troubleshooting
-ms.date: 11/26/2024
+ms.date: 08/21/2025
 ms.author: jianleishen
 ms.custom: connectors
+ai-usage: ai-assisted
 ---
 
 # Troubleshoot connector issues with Data Factory in Fabric
 
-This article describes how to troubleshoot connector issues with Data Factory in Fabric.  
+Need help with connector issues in Data Factory? You're in the right place. Let's walk through common problems and their solutions.
 
 ## Connector specific problems
 
-You can refer to the troubleshooting pages for each connector to see problems specific to it with explanations of their causes and recommendations to resolve them.
+Each connector has its own troubleshooting guide with specific issues, causes, and fixes. Find your connector below:
 
 - [Azure Blob Storage](connector-troubleshoot-azure-blob-storage.md)
 - [Azure Cosmos DB](connector-troubleshoot-azure-cosmos-db.md)
@@ -33,18 +34,18 @@ You can refer to the troubleshooting pages for each connector to see problems sp
 - [REST](connector-troubleshoot-rest.md)
 - [Sharepoint Online list](connector-troubleshoot-sharepoint-online-list.md)
 
-Supported file formats also have troubleshooting pages.
+We also have guides for different file formats:
 
 - [Delimited text](connector-troubleshoot-delimited-text.md)
 - [ORC](connector-troubleshoot-orc-format.md)
 - [Parquet](connector-troubleshoot-parquet-format.md)
 - [XML](connector-troubleshoot-xml.md)
 
-The [Data Factory limitations](data-factory-limitations.md) and [Known issues](data-factory-known-issues.md) pages can also be useful to help troubleshoot issues with connectors that aren't resolved by the troubleshooting pages.
+Can't find what you need in the guides above? Check out the [Data Factory limitations](data-factory-limitations.md) and [Known issues](data-factory-known-issues.md) pages for more help.
 
 ## General copy activity errors
 
-The following errors are general to the Copy activity and could occur with any connector.
+Here are common errors you might see when using Copy activity with any connector:
 
 #### Error code: 20000
 
@@ -71,7 +72,6 @@ The following errors are general to the Copy activity and could occur with any c
 
 - **Recommendation**:  Check the sink dataset, and rewrite the path without using a wildcard value.
 
-
 ### FIPS issue
 
 - **Symptoms**: Copy activity fails on a FIPS-enabled gateway machine with the following error message: `This implementation is not part of the Windows Platform FIPS validated cryptographic algorithms.` 
@@ -80,15 +80,15 @@ The following errors are general to the Copy activity and could occur with any c
 
 - **Resolution**: Learn [why we’re not recommending "FIPS Mode" anymore](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/why-we-8217-re-not-recommending-8220-fips-mode-8221-anymore/ba-p/701037), and evaluate whether you can disable FIPS on your gateway machine.
 
-    Alternatively, if you only want to bypass FIPS and make the activity runs succeed, take the following steps:
+    To bypass FIPS and make the activity work, follow these steps:
 
-    1. Open the folder where the gateway is installed. The path is usually *"C:\Program Files\on-premises data gateway\FabricIntegrationRuntime\5.0\Shared\"*.
+    1. Find the gateway installation folder at *"C:\Program Files\on-premises data gateway\FabricIntegrationRuntime\5.0\Shared\"*
 
-    2. Open the *fabricworker.exe.config* file and then, at the end of the `<runtime>` section, add `<enforceFIPSPolicy enabled="false"/>`, as shown here:
+    1. Open *fabricworker.exe.config* and add this line at the end of the `<runtime>` section: `<enforceFIPSPolicy enabled="false"/>`
 
         :::image type="content" source="/azure/data-factory/media/connector-troubleshoot-guide/disable-fips-policy.png" alt-text="Screenshot of a section of the fabricworker.exe.config file showing FIPS disabled.":::
 
-    3. Save the file, and then restart the gateway machine.
+    1. Save the file and restart the gateway machine
 
 #### Error code: 20150
 
@@ -260,8 +260,8 @@ The following errors are general to the Copy activity and could occur with any c
 
 ## Related content
 
-For more troubleshooting help, try these resources:
+Check out these other resources:
 
-- [Data Factory blog](https://blog.fabric.microsoft.com/en-us/blog/category/data-factory)
+- [Data Factory blog](https://blog.fabric.microsoft.com/blog/category/data-factory)
 - [Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
-- [Data Factory feature requests ideas](https://ideas.fabric.microsoft.com/)
+- [Share your feature ideas](https://ideas.fabric.microsoft.com/)

@@ -1,15 +1,15 @@
----
+﻿---
 title: Use Azure OpenAI with Python SDK
 description: How to use prebuilt Azure OpenAI in Fabric with Python library
-ms.author: scottpolly
-author: s-polly
+ms.author: lagayhar
+author: lgayhardt
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
-ms.custom:
+ms.custom: 
 ms.date: 05/07/2025
 ms.update-cycle: 180-days
-ms.search.form:
+ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
 ---
 # Use Azure OpenAI in Fabric with Python SDK and Synapse ML (preview)
@@ -114,6 +114,7 @@ Create a new cell in your Fabric notebook to use this code, separate from the ce
 
 ```Python
 import openai
+import os
 
 os.environ["OPENAI_API_VERSION"] = "2023-05-15"
 

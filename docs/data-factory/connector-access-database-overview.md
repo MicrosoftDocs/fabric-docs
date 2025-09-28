@@ -14,10 +14,12 @@ ms.custom:
 
 The Access database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-To learn about how to connect to an Access database in Dataflow Gen2, go to [Set up your Access database connection](connector-access-database.md).
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|On-premises |Service principal<br> Workspace identity |
 
-## Support in data pipelines
+## Related content
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support an Access database in data pipelines.
+For information on how to connect to an Access database, go to [Set up your Access database connection](connector-access-database.md).

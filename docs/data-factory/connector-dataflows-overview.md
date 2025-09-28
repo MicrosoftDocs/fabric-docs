@@ -14,11 +14,12 @@ ms.custom:
 
 The Dataflows connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Organizational account |
 
-For information on how to connect to Dataflows data in Dataflow Gen2, go to [Set up your Dataflows (Power Platform) connection](connector-dataflows.md).
+## Related content
 
-## Support in data pipelines
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Dataflows (Power Platform) in data pipelines.
+For information on how to connect to Dataflows, go to [Set up your Dataflows connection](connector-dataflows.md).

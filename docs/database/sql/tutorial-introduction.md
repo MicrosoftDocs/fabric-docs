@@ -23,11 +23,6 @@ This tutorial isn't intended to serve as a reference architecture, nor does it c
 
 ## SQL database in Fabric end-to-end scenario
 
-As prerequisites to this tutorial, complete the following steps:
-
-1. Sign into your [Power BI online account](https://powerbi.com/), or if you don't have an account yet, sign up for a free trial.
-1. [Enable Microsoft Fabric for your organization](enable.md) in your tenant.
-
 In this tutorial, you take on the role of a database developer, working at the Contoso Group. Your organization wants to evaluate Supply Chain information for the AdventureWorks and Northwind Traders subsidiaries based on past sales and current on-hand components for various products used in manufacturing.
 
 You'll use sample data along with data and views that you create to Your goal is to create a visualization of this data and to enable real-time analysis of the data available to an application. You have chosen GraphQL as the primary data API for the solution. Here are the steps in this tutorial:
