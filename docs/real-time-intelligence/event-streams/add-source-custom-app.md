@@ -163,7 +163,7 @@ For a clear guide on using the custom endpoint with the Kafka protocol, refer to
 
 > [!NOTE]
 > - You can choose the protocol format that suits your application needs and preferences, and then copy and paste the connection string into your application. You can also refer to or copy the **sample code**, which shows how to send or receive events by using various protocols. 
-- To exit out of the sample code view, select **Hide sample code**. 
+> - To exit out of the sample code view, select **Hide sample code**. 
 
 ::: zone pivot="basic-features"
 
