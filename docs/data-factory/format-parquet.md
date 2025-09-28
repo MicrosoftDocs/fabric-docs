@@ -78,15 +78,14 @@ The following mappings are used from interim data types supported for editing by
 
 | Interim service data type | Parquet logical type | Parquet physical type         |
 |----------------------|---------------------|-------------------------------|
-| DateTime             |  Option 1: null <br> Option 2: TIMESTAMP           | Option 1: INT96 (default) <br> Option 2: INT64 (Unit: MILLIS, MICROS, NANOS (default) ) |
-| DateTimeOffset       | Option 1: null <br> Option 2: TIMESTAMP | Option 1: INT96 (default) <br> Option 2: INT64 (Unit: MILLIS, MICROS, NANOS (default) ) |
-| TimeSpan             | TIME                | INT32 (Unit: MILLIS) <br> INT64 (Unit: MICROS, NANOS (default) ) |
+| DateTime             |  Option 1: null <br> Option 2: TIMESTAMP           | Option 1: INT96 (default) <br> Option 2: INT64 (Unit: MILLIS, MICROS, NANOS (default)) |
+| DateTimeOffset       | Option 1: null <br> Option 2: TIMESTAMP | Option 1: INT96 (default) <br> Option 2: INT64 (Unit: MILLIS, MICROS, NANOS (default)) |
+| TimeSpan             | TIME                | INT32 (Unit: MILLIS) <br> INT64 (Unit: MICROS, NANOS (default)) |
 | Decimal              | DECIMAL             | INT32 (1 <= precision <= 9) <br> INT64 (9 < precision <= 18) <br> FIXED_LEN_BYTE_ARRAY (precision > 18) (default) |
 | GUID                 | Option 1: STRING <br> Option 2: UUID | Option 1: BYTE_ARRAY (default) <br> Option 2: FIXED_LEN_BYTE_ARRAY |
-| String               | STRING              | BYTE_ARRAY                    |
 | Byte array           | null                | BYTE_ARRAY (default) or FIXED_LEN_BYTE_ARRAY                   |
 
-For example, the type for *dateData* column in source is INT96, and you can change it to INT96 or INT64 type when mapping to destination column.
+For example, the type for *decimalData* column in the source is converted to an interim service type: Decimal. According to the mapping table above, the mapped type for the destination column is automatically determined according to the specified precision. If the precision is 9 or less, it is mapped to INT32. For precision values above 9 and up to 18, it is mapped to INT64. If the precision exceeds 18, it is mapped to FIXED_LEN_BYTE_ARRAY.
 
    :::image type="content" source="media/format-parquet/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
 
