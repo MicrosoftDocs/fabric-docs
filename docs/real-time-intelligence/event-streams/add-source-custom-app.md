@@ -74,11 +74,11 @@ If you're using **Entra ID authentication**, you also need to make sure the mana
 1. To add a custom endpoint source, on the get-started page, select **Use custom endpoint**. Or, if you already have a published eventstream and you want to add custom endpoint data as a source, switch to edit mode. On the ribbon, select **Add source** > **Custom endpoint**.   
 
    :::image type="content" border="true" source="media\add-source-custom-app-enhanced\select-custom-endpoint.png" alt-text="Screenshot of the option to use a custom endpoint.":::
-1. When adding a custom endpoint source to an eventstream, enable schema association.
+1. On the **Add source** page, select **Activate** for **Schema association**, and then select **Add**. 
 
     :::image type="content" source="../schema-sets/media/use-event-schemas/enable-schema-custom-endpoint.png" alt-text="Screenshot of Custom endpoint source with an option to associate schemas." lightbox="../schema-sets/media/use-event-schemas/enable-schema-custom-endpoint.png":::
 
-1. To associate with a new schema or an existing schema from a schema registry, select **Associate event schema** on the ribbon.
+1. In the editor, to associate with a new schema or an existing schema from a schema registry, select **Associate event schema** on the ribbon.
 
     :::image type="content" source="../schema-sets/media/use-event-schemas/associate-event-schema-button.png" alt-text="Screenshot of eventstream editor with Associate event schema button on the ribbon selected." lightbox="../schema-sets/media/use-event-schemas/associate-event-schema-button.png":::
 1. To use an existing schema, select **Choose from event schema registry**, and follow these steps:
