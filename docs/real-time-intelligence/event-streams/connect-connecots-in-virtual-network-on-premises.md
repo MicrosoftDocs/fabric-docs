@@ -26,8 +26,6 @@ Here are the approaches that can help with this purpose before the native privat
 
 Eventstream's streaming connector in each region has a single outbound IP address. If your company's network policy permits allowlisting this IP address and your source has a publicly resolvable address, Eventstream's connector can bring real-time data into Fabric, though the transmission occurs over a public network.
 
-This solution is applicable to all streaming connector sources. If you're interested in implementing this solution, kindly reach out to the product team by completing the following form: [Real-Time Intelligence Eventstream Streaming Connector IP allowlist Request](https://aka.ms/EventStreamsConnIPWhitelistRequest) 
-
 ### Mirror Kafka Topics to Eventstream or Azure Event Hubs
 
 The Fabric event streams feature is Apache Kafka-compatible and offers an Apache Kafka topic on the Eventstream item. If your real-time data resides in a Kafka cluster within on-premises networks or third-party cloud virtual networks, you can utilize Kafka MirrorMaker to replicate your data to the Kafka endpoint in [Eventstream’s source custom endpoint](add-source-custom-app.md#kafka). 
