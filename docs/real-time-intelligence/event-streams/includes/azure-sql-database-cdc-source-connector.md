@@ -85,15 +85,15 @@ Ingest change data from Azure SQL databases with automatic table schema registra
 1. For **Schema set**, **+ Create** is selected by default, which creates a new schema set. You can change it to select an existing event schema set.
 1. If you selected the **+ Create** option in the previous step, enter a name for the schema set.
 
-    :::image type="content" source="../../schema-sets/media/use-event-schemas/azure-sql-database-enable-schema.png" alt-text="Screenshot that shows the schema setting for an Azure SQL Database CDC source." lightbox="../../schema-sets/media/use-event-schemas/azure-sql-database-enable-schema.png":::
+    :::image type="content" source="./media/azure-sql-database-cdc-source-connector/azure-sql-database-enable-schema.png" alt-text="Screenshot that shows the schema setting for an Azure SQL Database CDC source." lightbox="./media/azure-sql-database-cdc-source-connector/azure-sql-database-enable-schema.png":::
 1. On the **Review + connect** page, select **Add**.
 
-    :::image type="content" source="../../schema-sets/media/use-event-schemas/sql-database-review-connect.png" alt-text="Screenshot that shows the review + connect page for the Azure SQL Database CDC source." lightbox="../../schema-sets/media/use-event-schemas/sql-database-review-connect.png":::
+    :::image type="content" source="./media/azure-sql-database-cdc-source-connector/sql-database-review-connect.png" alt-text="Screenshot that shows the review + connect page for the Azure SQL Database CDC source." lightbox="./media/azure-sql-database-cdc-source-connector/sql-database-review-connect.png":::
 
     For all tables or selected tables in the Azure SQL database, the connector autodiscovers and creates schemas, and registers them with the schema registry.
 1. Select the **eventstream** node in the middle, and switch to the **Associated schemas** tab in the bottom pane. 
 
-    :::image type="content" source="../../schema-sets/media/use-event-schemas/generated-schemas.png" alt-text="Screenshot that shows the Associated schema window in the bottom pane." lightbox="../../schema-sets/media/use-event-schemas/generated-schemas.png":::
+    :::image type="content" source="./media/azure-sql-database-cdc-source-connector/generated-schemas.png" alt-text="Screenshot that shows the Associated schema window in the bottom pane." lightbox="./media/azure-sql-database-cdc-source-connector/generated-schemas.png":::
 
 ### Schema set
 
@@ -101,13 +101,13 @@ Ingest change data from Azure SQL databases with automatic table schema registra
 
 1. Select the schema set that the Azure SQL Database (CDC) connector created.
 
-    :::image type="content" source="../../schema-sets/media/use-event-schemas/schema-set.png" alt-text="Screenshot that shows the generated schema set in the My workspace page." lightbox="../../schema-sets/media/use-event-schemas/schema-set.png":::
+    :::image type="content" source="./media/azure-sql-database-cdc-source-connector/schema-set.png" alt-text="Screenshot that shows the generated schema set in the My workspace page." lightbox="./media/azure-sql-database-cdc-source-connector/schema-set.png":::
 1. You see the schemas in the schema set as shown in the following image.
 
-    :::image type="content" source="../../schema-sets/media/use-event-schemas/schemas.png" alt-text="Screenshot that shows schemas in the generated schema set." lightbox="../../schema-sets/media/use-event-schemas/schemas.png":::
+    :::image type="content" source="./media/azure-sql-database-cdc-source-connector/schemas.png" alt-text="Screenshot that shows schemas in the generated schema set." lightbox="./media/azure-sql-database-cdc-source-connector/schemas.png":::
 1. To see the JSON version of the schema, switch to the **JSON schema** view.
 
-    :::image type="content" source="../../schema-sets/media/use-event-schemas/json-schema.png" alt-text="Screenshot that shows the JSON schema view." lightbox="../../schema-sets/media/use-event-schemas/json-schema.png":::
+    :::image type="content" source="./media/azure-sql-database-cdc-source-connector/json-schema.png" alt-text="Screenshot that shows the JSON schema view." lightbox="./media/azure-sql-database-cdc-source-connector/json-schema.png":::
 
     Don't change these discovered schemas using this editor as it becomes nonconfirmant with the schema of tables in the Azure SQL database source.
 ::: zone-end
