@@ -65,7 +65,7 @@ The following instructions show you how to explore tile data using Copilot, usin
 
     If the tile data was tabular, when you go to the Visual tab, select the format you want to use. For this example, select **Pie chart**.
 
-    :::image type="content" source="media/dashboard-explore-data/dashboard-select-visual-format.png" alt-text="Screenshot of Create a visual":::
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-select-visual-format.png" alt-text="Screenshot of Create a visual":::
 
     The visual tab shows the pie chart for Texas data only.
 
