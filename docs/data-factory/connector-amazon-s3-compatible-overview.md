@@ -18,10 +18,10 @@ This Amazon S3 Compatible connector is supported in Data Factory for [!INCLUDE [
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
-| **Data pipeline**<br>- [Copy activity](connector-amazon-s3-compatible-copy-activity.md) (source/destination) <br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity  |None<br> On-premises<br> Virtual network |Access Key |
+| **Pipeline**<br>- [Copy activity](connector-amazon-s3-compatible-copy-activity.md) (source/destination) <br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity  |None<br> On-premises<br> Virtual network |Access Key |
 | **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Access Key |
 
 ## Related content
 
-To learn more about the copy activity configuration for Amazon S3 Compatible in data pipelines, go to [Configure in a data pipeline copy activity](connector-amazon-s3-compatible-copy-activity.md).
+To learn more about the copy activity configuration for Amazon S3 Compatible in pipelines, go to [Configure in a pipeline copy activity](connector-amazon-s3-compatible-copy-activity.md).
 

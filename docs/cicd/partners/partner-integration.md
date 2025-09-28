@@ -52,7 +52,7 @@ The following sections describe some of the ways you can get started with this m
 
 ### Data Factory in Fabric
 
-- Data Pipelines boast an [extensive set of connectors](../../data-factory/pipeline-support.md), enabling ISVs to effortlessly connect to a myriad of data stores. Whether you're interfacing traditional databases or modern cloud-based solutions, our connectors ensure a smooth integration process. [Connector overview](../../data-factory/connector-overview.md).
+- Pipelines boast an [extensive set of connectors](../../data-factory/pipeline-support.md), enabling ISVs to effortlessly connect to a myriad of data stores. Whether you're interfacing traditional databases or modern cloud-based solutions, our connectors ensure a smooth integration process. [Connector overview](../../data-factory/connector-overview.md).
 - With our supported Dataflow Gen2 connectors, ISVs can harness the power of Fabric Data Factory to manage complex data workflows. This feature is especially beneficial for ISVs looking to streamline data processing and transformation tasks. [Dataflow Gen2 connectors in Microsoft Fabric](../../data-factory/dataflow-support.md).
 - For a full list of capabilities supported by Data Factory in Fabric, check out this [Data Factory in Fabric Blog](https://blog.fabric.microsoft.com/blog/introducing-data-factory-in-microsoft-fabric?ft=All).
 

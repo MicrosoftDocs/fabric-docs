@@ -13,7 +13,7 @@ The Microsoft Fabric *Monitor* hub enables users to monitor Microsoft Fabric act
 
 The monitor hub displays activities for these Fabric items:
 
-* Data pipelines
+* Pipelines
 
 * Dataflows
 
