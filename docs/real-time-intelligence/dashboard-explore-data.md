@@ -79,7 +79,7 @@ The following instructions show you how to explore tile data using Copilot, usin
 
     # [Query](#tab/query)
 
-    :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-query-texas.png" alt-text="Screenshot of the visual tab showing the KQL query that is run to display the visual and table results.":::
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-query-texas.png" alt-text="Screenshot of the query tab showing the KQL query for Texas data that is run to display the visual and table results.":::
 
     ---
 
