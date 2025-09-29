@@ -148,4 +148,4 @@ Migration paths depend on your ADF assets and their feature parity. Options incl
 
 ## Related content
 
-[Migration planning](migration-planning.md)
+[Compare Azure Data Factory to Data Factory in Fabric](compare-fabric-data-factory-and-azure-data-factory.md)
