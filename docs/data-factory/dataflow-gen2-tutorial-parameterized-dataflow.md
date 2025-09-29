@@ -50,6 +50,43 @@ To create parameters, go to the *Home* tab in the ribbon, select *Manage paramet
 
 ![Screenshot of the entry in the Home tab to create a new parameter](media/dataflow-gen2-tutorial-parameterized-dataflow/new-parameter.png)
 
-As you create the parameters, make sure both are marked as **required** and set to the **text** type. For their current values, use the ones that match your specific environment.
+As you create the parameters, make sure both are marked as **required** and set to the **text** type. For their current values, use the ones that match the corresponding values from your specific environment.
 
 ![Screenshot of the LakehouseId parameter created inside the Manage parameters dialog](media/dataflow-gen2-tutorial-parameterized-dataflow/lakehouseid-parameter.png)
+
+Once both parameters are created, you can update the query script to use them instead of hardcoded values. This involves manually replacing the original values in the formula bar with references to the Workspace ID and Lakehouse ID parameters.
+The original query script looks like this:
+
+```M code 
+let
+  Source = Lakehouse.Contents([]),
+  #"Navigation 1" = Source{[workspaceId = "8b325b2b-ad69-4103-93ae-d6880d9f87c6"]}[Data],
+  #"Navigation 2" = #"Navigation 1"{[lakehouseId = "2455f240-7345-4c8b-8524-c1abbf107d07"]}[Data],
+  #"Navigation 3" = #"Navigation 2"{[Id = "dimension_city", ItemKind = "Table"]}[Data],
+  #"Filtered rows" = Table.SelectRows(#"Navigation 3", each ([SalesTerritory] = "Southeast")),
+  #"Removed columns" = Table.RemoveColumns(#"Filtered rows", {"ValidFrom", "ValidTo", "LineageKey"})
+in
+  #"Removed columns"
+```
+Once you update the references in the navigation steps, your new updated script might look like this:
+
+```M code 
+let
+  Source = Lakehouse.Contents([]),
+  #"Navigation 1" = Source{[workspaceId = WorkspaceId]}[Data],
+  #"Navigation 2" = #"Navigation 1"{[lakehouseId = LakehouseId]}[Data],
+  #"Navigation 3" = #"Navigation 2"{[Id = "dimension_city", ItemKind = "Table"]}[Data],
+  #"Filtered rows" = Table.SelectRows(#"Navigation 3", each ([SalesTerritory] = "Southeast")),
+  #"Removed columns" = Table.RemoveColumns(#"Filtered rows", {"ValidFrom", "ValidTo", "LineageKey"})
+in
+  #"Removed columns"
+```
+
+And you’ll notice that it still correctly evaluates the data preview in the Dataflow editor.
+
+## Parameterize logic
+
+Now that the source is using parameters, you can focus on parameterizing the transformation logic of the dataflow. In this scenario, the filter step is where the logic is applied, and the value being filtered, currently hardcoded as *Southeast*, should be replaced with a parameter.
+To do this, create a new parameter named **Territory**, set its data type to *text*, mark it as not *required*, and set its current value to **Mideast**.
+
+![Screenshot of the Territory parameter created inside the Manage parameters dialog](media/dataflow-gen2-tutorial-parameterized-dataflow/territory-parameter.png)
