@@ -47,13 +47,27 @@ Git integration in Fabric lets a workspace sync its content (like notebooks, dat
 By default, Workspace OAP will completely block Git integration, because contacting an external Git endpoint would violate the “no outbound” rule. To resolve this, Fabric introduces an admin-controlled consent setting for Git. 
 
 #### How Git integration works with OAP
-Each workspace with OAP enabled has an explicit toggle (a checkbox in the workspace’s network settings) labeled to allow Git integration for that workspace. Initially, when OAP is turned on, this checkbox is off by default – meaning no Git connectivity is allowed. In that state, if a user opens the workspace’s Git panel in Fabric, they will see the Git features disabled (greyed out) with an explanation that "Outbound access is restricted". Similarly, any attempt to call Git APIs (e.g. via automation or PowerShell) for that workspace will fail with an error as long as Git is disallowed. This ensures that, by default, a secured workspace can’t quietly sync its content to an external repository without awareness. 
+Each workspace with OAP enabled has an explicit toggle (a checkbox in the workspace’s network settings) labeled to allow Git integration for that workspace. Initially, when OAP is turned on, this checkbox is off by default – meaning no Git connectivity is allowed. In that state, if a user opens the workspace’s Git panel in Fabric, they will see the Git features disabled (greyed out) with an explanation that "Outbound access is restricted". 
+
+Similarly, any attempt to call Git APIs (e.g. via automation or PowerShell) for that workspace will fail with an error as long as Git is disallowed. This ensures that, by default, a secured workspace can’t quietly sync its content to an external repository without awareness. 
 
  :::image type="content" source="media/cicd-security/outbound-1.png" alt-text="Screenshot of outbound access protection." lightbox="media/cicd-security/outbound-1.png":::
 
 To enable Git integration, an administrator can go to the workspace’s **Outbound security settings** and clicks the **Allow Git integration** toggle. (This box can only be checked after OAP itself is enabled; it’s a sub-option under outbound settings.) Checking **Allow Git integration** is effectively the admin giving consent that this workspace is permitted to communicate with Git.
 
+>[!NOTE]
+>When OAP is not enabled, the toggle will not impact git integration and can't be turned on or off.
+
 Once enabled, Fabric immediately lifts the restrictions on Git for that workspace: the Git UI becomes active and all operations – connecting a repo, syncing (pull/push), committing changes, and branch management – are now allowed for users in that workspace. 
+
+The following table summarizes how git integration works with OAP.
+
+|OAP state|Allow Git integration toggle|Git integration state|
+|-----|-----|-----|
+|Enabled|Off|Git integration will not work|
+|Enabled|On|Git integration will work|
+|Disabled|Greyed out|Git integration not impacted|
+
 
 ##### Enable Git Integration
 To use workspace outbound access protection and enable git integration, do the following:
