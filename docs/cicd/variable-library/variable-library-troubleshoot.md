@@ -15,8 +15,6 @@ ms.date: 02/16/2025
 
 This article provides solutions for common errors and problems that you might encounter when you work with Microsoft Fabric variable libraries.
 
-> [!NOTE]
-> The Fabric variable library item is currently in preview.
 
 ## Failure to manage a variable library
 
