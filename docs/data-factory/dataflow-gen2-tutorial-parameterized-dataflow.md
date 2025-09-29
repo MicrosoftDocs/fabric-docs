@@ -29,7 +29,7 @@ This tutorial walks you through an example that shows you how to:
 
 ## The scenario
 
-:::image type="content" source="media/dataflow-gen2-tutorial-parameterized-dataflow/query-scenario-diagram.png" alt-text="Diagram representation of the query for the scenario inside of Dataflow Gen2." lightbox="media/dataflow-gen2-tutorial-parameterized-dataflow/query-scenario-diagram.png":::
+:::image type="content" source="media/dataflow-gen2-tutorial-parameterized-dataflow/query-scenario-diagram.png" alt-text="Screenshot of the query with the name dimension_city for the scenario inside of Dataflow Gen2." lightbox="media/dataflow-gen2-tutorial-parameterized-dataflow/query-scenario-diagram.png":::
 
 The dataflow used in this scenario is simple, but the core principles described apply to all types of dataflows. It connects to the table named dimension_city from the Wide World Importers sample dataset stored in a Lakehouse. It filters rows where the SalesTerritory column equals Southeast, and loads the result into a new table called City in a Warehouse. All components—the Lakehouse, Warehouse, and Dataflow—are located in the same Workspace.
 To make the dataflow dynamic, you parameterize the source table, the filter value, and the destination table. These changes allow the dataflow to run with specific values instead of hardcoded ones. 
@@ -43,7 +43,7 @@ Before continuing, enable public parameters mode by going to the *Home* tab, sel
 When using any of the Fabric connectors—such as Lakehouse, Warehouse, or Fabric SQL—they all follow the same navigation structure and use the same input format. In this scenario, none of the connectors require manual input to establish a connection. However, each one shows which workspace and item it connects to through the navigation steps in your query.
 For example, the first navigation step includes the workspaceId that the query connects to.
 
-:::image type="content" source="media/dataflow-gen2-tutorial-parameterized-dataflow/navigation-workspaceid-reference.png" alt-text="Diagram representation of the query for the scenario inside of Dataflow Gen2." lightbox="media/dataflow-gen2-tutorial-parameterized-dataflow/navigation-workspaceid-reference.png":::
+:::image type="content" source="media/dataflow-gen2-tutorial-parameterized-dataflow/navigation-workspaceid-reference.png" alt-text="Screenshot of the Navigation 1 step with the workspaceId value in the formula bar for the dimension_city query" lightbox="media/dataflow-gen2-tutorial-parameterized-dataflow/navigation-workspaceid-reference.png":::
 
 The goal is to replace the hardcoded values in the formula bar with parameters. Specifically, you need to create one parameter for the **WorkspaceId** and another for the **LakehouseId**.
 To create parameters, go to the *Home* tab in the ribbon, select *Manage parameters*, and then choose *New parameter* from the dropdown menu.
