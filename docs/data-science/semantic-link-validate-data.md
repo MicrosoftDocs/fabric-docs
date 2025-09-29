@@ -35,10 +35,9 @@ In this article, you use semantic link to:
 For Spark 3.4 and above, Semantic link is available in the default runtime when using Fabric, and there's no need to install it. If you use Spark 3.3 or below, or if you want to update to the most recent version of Semantic Link, run this command:
 
 ```python
-
 %pip install -U semantic-link
+```
 
-``` 
 
 ## Find functional dependencies in data
 
