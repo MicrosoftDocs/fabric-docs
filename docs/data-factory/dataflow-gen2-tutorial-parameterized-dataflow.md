@@ -156,7 +156,7 @@ This finalizes all the parameterization of your Dataflow and you can now move on
 
 You can use the [Fabric REST API](/rest/api/fabric/dataflow/background-jobs/run-on-demand-execute) to send a run request with a custom payload that contains   your parameter values for that specific run operation and you can also use the [REST API to discover dataflow parameters](/rest/api/fabric/dataflow/items/discover-dataflow-parameters?tabs=HTTP) and understand what the Dataflow expects so it can trigger a run.
 In this tutorial, you'll use the experience found within the Dataflow activity for Fabric pipelines.
-Start by creating a Pipeline and add a new dataflow activity to the canvas. In the settings of the activity, find the workspace where your Dataflow is located and then select the Dataflow from the dropdown.
+Start by creating a Pipeline and add a new [dataflow activity](dataflow-activity.md) to the canvas. In the settings of the activity, find the workspace where your Dataflow is located and then select the Dataflow from the dropdown.
 
 ![Screenshot of the Dataflow activity with parameters inside a pipeline](media/dataflow-gen2-tutorial-parameterized-dataflow/pipeline-dataflow-activity.png)
 
