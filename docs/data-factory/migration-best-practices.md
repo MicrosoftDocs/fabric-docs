@@ -142,7 +142,7 @@ For more information, see [Use Copilot in Data Factory](copilot-fabric-data-fact
 
 Migration paths depend on your ADF assets and their feature parity. Options include:
 
-- [Mounting ADF items in Fabric for continuity.](migration-planning.md#mounting-an-azure-data-factory-item-in-your-fabric-workspace)
+- [Mounting ADF items in Fabric for continuity.](migrate-pipelines-azure-data-factory-item.md)
 - [Using the PowerShell conversion tool for pipelines with high parity.](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md)
 - Replatforming to adopt native Fabric patterns.
 
