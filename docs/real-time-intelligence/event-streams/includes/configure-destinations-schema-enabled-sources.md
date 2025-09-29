@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 09/27/2025
 ---
 
-## Configure schemas for eventstream destinations 
+## Configure eventstream destinations to use schemas
 Currently, only the Eventhouse, custom endpoint, and derived stream destinations are supported for eventstreams with extended features (like schema support) enabled. This section shows you how to add and configure an Eventhouse destination when extended features (like schema support) are enabled for the eventstream. 
 
 ### Configure schema for a custom endpoint destination
