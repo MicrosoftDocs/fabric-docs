@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Parameterized Dataflow Gen2"
-description: Overview on how to use Fabric variable libraries inside of a Dataflow Gen2 with CI/CD.
+description: Learn how to parameterize sources, logic, and destinations in Dataflow Gen2 using public parameters mode for dynamic, reusable dataflows in Microsoft Fabric.
 author: ptyx507x
 ms.author: miescobar
 ms.reviewer: whhender
