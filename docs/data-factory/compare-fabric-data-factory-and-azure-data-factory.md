@@ -4,7 +4,7 @@ description: Compare Azure Data Factory and Fabric Data Factory features to choo
 author: kromerm
 ms.author: makromer
 ms.topic: concept-article
-ms.date: 07/02/2025
+ms.date: 09/29/2025
 ms.custom:
   - template-concept
   - build-2023
