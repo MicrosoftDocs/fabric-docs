@@ -13,7 +13,7 @@ ms.date: 01/12/2025
 
 # Network security for continuous integration/continuous deployment
 
-Microsoft Fabric is a software as a service (SaaS) platform that lets users get, create, share, and visualize data. As a SaaS service, Fabric offers a complete security package for the entire platform. For more information, see [Network Security](https://learn.microsoft.com/en-us/fabric/security/security-overview)
+Microsoft Fabric is a software as a service (SaaS) platform that lets users get, create, share, and visualize data. As a SaaS service, Fabric offers a complete security package for the entire platform. For more information, see [Network Security](../security/security-overview.md)
 
 
 ## Workspace level security
@@ -33,18 +33,29 @@ Git integration in Fabric lets a workspace sync its content (like notebooks, dat
 >[!NOTE]
 >The Git integration consent is per workspace.
 
+### Workspace inbound access and Git integration
+ When Private Link is enabled for a workspace, users must connect through a designated virtual network (VNet), effectively isolating the workspace from public internet exposure. 
+ 
+ This restriction directly impacts Git integration: users attempting to access Git features (such as syncing or committing changes) must do so from within the approved VNet. If a user tries to open the Git pane or perform Git operations from an unapproved network, Fabric blocks access to the workspace UI entirely, including Git functionality. This enforcement ensures that Git-related actions—like connecting to a repository or branching out—are only performed in secure, controlled environments, reducing the risk of data leakage through source control channels.
+
+ Git integraton with inbound access protection is enabled by default. There is no toggle to disable this.
+
+ :::image type="content" source="media/cicd-security/inbound-1.png" alt-text="Screenshot of workspace inbound access protection." lightbox="media/cicd-security/inbound-1.png":::
+
+
+### Workspace outbound access and Git integration
 By default, Workspace OAP will completely block Git integration, because contacting an external Git endpoint would violate the “no outbound” rule. To resolve this, Fabric introduces an admin-controlled consent setting for Git. 
 
-### How Git integration works with OAP
+#### How Git integration works with OAP
 Each workspace with OAP enabled has an explicit toggle (a checkbox in the workspace’s network settings) labeled to allow Git integration for that workspace. Initially, when OAP is turned on, this checkbox is off by default – meaning no Git connectivity is allowed. In that state, if a user opens the workspace’s Git panel in Fabric, they will see the Git features disabled (greyed out) with an explanation that "Outbound access is restricted". Similarly, any attempt to call Git APIs (e.g. via automation or PowerShell) for that workspace will fail with an error as long as Git is disallowed. This ensures that, by default, a secured workspace can’t quietly sync its content to an external repository without awareness. 
 
- :::image type="content" source="media/cicd-security/outbound-1.png" alt-text="Conceptual digaram of cicd security." lightbox="media/cicd-security/outbound-1.png":::
+ :::image type="content" source="media/cicd-security/outbound-1.png" alt-text="Screenshot of outbound access protection." lightbox="media/cicd-security/outbound-1.png":::
 
 To enable Git integration, an administrator can go to the workspace’s **Outbound security settings** and clicks the **Allow Git integration** toggle. (This box can only be checked after OAP itself is enabled; it’s a sub-option under outbound settings.) Checking **Allow Git integration** is effectively the admin giving consent that this workspace is permitted to communicate with Git.
 
 Once enabled, Fabric immediately lifts the restrictions on Git for that workspace: the Git UI becomes active and all operations – connecting a repo, syncing (pull/push), committing changes, and branch management – are now allowed for users in that workspace. 
 
-#### Enable Git Integration
+##### Enable Git Integration
 To use workspace outbound access protection and enable git integration, do the following:
 
 1. Sign-in to the fabric portal
@@ -53,7 +64,7 @@ To use workspace outbound access protection and enable git integration, do the f
 4. On the right, click **Outbound networking**.
 5. Under **Outbound access protection (preview)**, make sure **Allow Git Integration** is toggled to on.
 
-### Branch out considerations
+#### Branch out considerations
 
 The **Branch Out** feature creates a new workspace from the current Git branch, or links to an existing workspace, and is a special case under OAP. When Git integration is allowed via admin consent, branching out is also allowed. Fabric provides a clear warning in the branch-out dialog if you attempt to branch into a workspace that does not have OAP enabled. 
 
@@ -61,13 +72,13 @@ For example, if you’re branching out from a locked-down dev workspace to creat
 
 New workspaces start with OAP off by default and the administrator should manually enable OAP on the new workspace after it’s created via branch-out to maintain the same security level. If branching out to an existing workspace, the warning will appear if that target workspace isn’t OAP-protected. This is to prevent an unaware user from pushing content into an environment that undermines security. 
 
-### Removing Git integraton
+#### Removing Git integraton from OAP
 
 Once Git is allowed, the workspace will operate normally with respect to source control. If at any point an administrator decides to disable Git integration, they can simply click the **Allow Git integration** toggle. Fabric will then immediately cut off the Git connectivity for that workspace. Any subsequent Git operations (pull, push, etc.) will fail, and the UI will revert to a disabled state requiring re-approval. 
 
  To prevent accidental disruption, Fabric provides a confirmation/warning to the administrator when turning off Git access, explaining that all Git sync for that workspace will stop. It’s worth noting that disabling Git does not delete the repository or any history – it simply severs the connection from the workspace side. 
 
- ### REST APIs
+ #### REST API support
 
  Administrators can use REST APIs to programmatically query the network settings of workspaces. This can be done to indicate if outbound protection is enabled or if you want to set the outbound policy. These allow scripting of audits – you could retrieve all workspaces and check which ones have gitAllowed: true under OAP. Using such APIs, a security team could, for instance, nightly confirm that no additional workspaces have Git allowed without approval.  Microsoft has introduced the following endpoints to get or set the Git outbound policy for a workspace 
 
