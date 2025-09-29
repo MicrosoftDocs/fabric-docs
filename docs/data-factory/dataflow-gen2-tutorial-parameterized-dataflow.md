@@ -90,3 +90,11 @@ Now that the source is using parameters, you can focus on parameterizing the tra
 To do this, create a new parameter named **Territory**, set its data type to *text*, mark it as not *required*, and set its current value to **Mideast**.
 
 ![Screenshot of the Territory parameter created inside the Manage parameters dialog](media/dataflow-gen2-tutorial-parameterized-dataflow/territory-parameter.png)
+
+Given that your filter step was created using the user interface, you can head over to the Filtered rows step, double click it and get the settings dialog for the filter step. This dialog allows you to select, through the input widget, if you wish to use a parameter instead of a static value:
+
+![Screenshot of the input widget in the filter rows dialog with the option to reference a parameter](media/dataflow-gen2-tutorial-parameterized-dataflow/input-widget.png)
+
+After selecting the option to *Select a parameter*, a dropdown will appear showing all available parameters that match the required data type. From this list, you can select the newly created Territory parameter.
+
+![Screenshot of the Territory parameter selected inside the input widget from the filter rows dialog](media/dataflow-gen2-tutorial-parameterized-dataflow/territory-parameter-input-widget.png)
