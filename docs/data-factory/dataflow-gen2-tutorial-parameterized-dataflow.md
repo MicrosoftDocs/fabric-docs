@@ -37,3 +37,19 @@ To make the dataflow dynamic, you parameterize the source table, the filter valu
 Before continuing, enable public parameters mode by going to the *Home* tab, selecting *Options*, and in the *Parameters* section, checking the box labeled **Enable parameters to be discovered and overridden for execution** and allow your dataflow to accept parameters during execution.
 
 ![Screenshot of the options dialog in Dataflow Gen2 with the Parameters section showing the "Enable to be discovered and overriden for execution" setting](media/dataflow-gen2-tutorial-parameterized-dataflow/parameters-options.png)
+
+## Parameterize source
+
+When using any of the Fabric connectors—such as Lakehouse, Warehouse, or Fabric SQL—they all follow the same navigation structure and use the same input format. In this scenario, none of the connectors require manual input to establish a connection. However, each one shows which workspace and item it connects to through the navigation steps in your query.
+For example, the first navigation step includes the workspaceId that the query connects to.
+
+:::image type="content" source="media/dataflow-gen2-tutorial-parameterized-dataflow/navigation-workspaceid-reference.png" alt-text="Diagram representation of the query for the scenario inside of Dataflow Gen2." lightbox="media/dataflow-gen2-tutorial-parameterized-dataflow/navigation-workspaceid-reference.png":::
+
+The goal is to replace the hardcoded values in the formula bar with parameters. Specifically, you need to create one parameter for the **WorkspaceId** and another for the **LakehouseId**.
+To create parameters, go to the *Home* tab in the ribbon, select *Manage parameters*, and then choose *New parameter* from the dropdown menu.
+
+![Screenshot of the entry in the Home tab to create a new parameter](media/dataflow-gen2-tutorial-parameterized-dataflow/new-parameter.png)
+
+As you create the parameters, make sure both are marked as **required** and set to the **text** type. For their current values, use the ones that match your specific environment.
+
+![Screenshot of the LakehouseId parameter created inside the Manage parameters dialog](media/dataflow-gen2-tutorial-parameterized-dataflow/lakehouseid-parameter.png)
