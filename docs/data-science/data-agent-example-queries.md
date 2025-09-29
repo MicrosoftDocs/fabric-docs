@@ -1,6 +1,6 @@
 ---
-title: Data agent example queries
-description: Overview of data agent exampe queries
+title: Data Agent Example Queries
+description: Overview of data agent example queries.
 ms.author: jburchel
 author: jonburchel
 ms.reviewer: midesa
@@ -15,9 +15,9 @@ Example queries (also called “few-shot examples”) give the Data Agent concre
 
 ## Provide example queries
 
-When providing example queries, you must include both a natural language question and its corresponding query answer. Each question should be unique to give the Data Agent a diverse set of reference points. Every example query is validated against the schema of the selected data source—queries that do not pass validation are not sent to the agent. To ensure your examples are actually used, it’s essential to confirm they pass this validation step.
+When providing example queries, you must include both a natural language question and its corresponding query answer. Each question should be unique to give the Data Agent a diverse set of reference points. Every example query is validated against the schema of the selected data source—queries that don't pass validation aren't sent to the agent. To ensure your examples are actually used, it’s essential to confirm they pass this validation step.
 
-:::image type="content" source="media/how-to-create-data-agent/data-agent-adding-examples-sql.png" alt-text="Screenshot of adding example queries to the data agent" lightbox="media/how-to-create-data-agent/data-agent-adding-examples-sql.png":::
+:::image type="content" source="media/how-to-create-data-agent/data-agent-adding-examples-sql.png" alt-text="Screenshot of adding example queries to the data agent." lightbox="media/how-to-create-data-agent/data-agent-adding-examples-sql.png":::
 
 The table below shows which data sources currently support example queries in the Data Agent. These examples help guide the agent’s query generation process by providing patterns and context.
 
@@ -30,7 +30,7 @@ The table below shows which data sources currently support example queries in th
 
 You can also use the **run steps** view to debug which example queries were actually retrieved and applied to a user’s question. This is especially useful for confirming that the right examples are being used and for diagnosing why certain results are being generated. If the wrong examples appear, try refining your questions or adding clearer, more targeted examples.  
 
-:::image type="content" source="media/how-to-evaluate-data-agent/example-queries-run-steps.png" alt-text="Screenshot of the referenced example queries in the run steps" lightbox="media/how-to-evaluate-data-agent/example-queries-run-steps.png":::
+:::image type="content" source="media/how-to-evaluate-data-agent/example-queries-run-steps.png" alt-text="Screenshot of the referenced example queries in the run steps." lightbox="media/how-to-evaluate-data-agent/example-queries-run-steps.png":::
 
 ### Best practices for writing example queries  
 
@@ -42,12 +42,12 @@ When creating example queries for the Data Agent, following best practices ensur
 | 2 | **Include comments in the query to guide the agent** | Comments (e.g., `-- substitute customer_id here`) help the agent understand where to substitute values or apply important logic. |
 | 3 | **Highlight join logic or complex patterns** | Use example queries to show how to handle multi-table joins, aggregations, or other advanced logic that’s hard to describe in plain instructions. |
 | 4 | **Avoid overlap or contradictions** | Each example should be distinct and non-conflicting to give the agent a clean signal of how to behave. |
-| 5 | **Use run steps to debug which examples are passed** | Run steps let you see which examples were retrieved for a given user question—if the wrong ones show up, adjust your questions or add more specific examples. |
+| 5 | **Use run steps to debug which examples are passed** | Run steps let you see which examples were retrieved for a given user question — if the wrong ones show up, adjust your questions or add more specific examples. |
 | 6 | **Reflect real user behavior** | Add example queries that represent the kinds of questions your users will actually ask to maximize relevance and accuracy. |
 
 ## Validate example queries
 
-The Fabric Data Agent SDK provides built-in tools to **evaluate and improve the quality of your example queries**. Using the `evaluate_few_shot_examples` function, you can validate each natural-language/SQL pair to confirm it is clear, correct, and aligned with your data source schema. The SDK runs each example through the Data Agent’s evaluation process, returning a detailed summary of which examples passed and which need refinement. By reviewing the success rate and feedback, you can iteratively adjust your examples—clarifying questions, improving SQL logic, or adding comments—so the Data Agent learns from higher-quality patterns and produces more accurate results for new questions.
+The Fabric Data Agent SDK provides built-in tools to **evaluate and improve the quality of your example queries**. Using the `evaluate_few_shot_examples` function, you can validate each natural-language/SQL pair to confirm it's clear, correct, and aligned with your data source schema. The SDK runs each example through the Data Agent’s evaluation process, returning a detailed summary of which examples passed and which need refinement. By reviewing the success rate and feedback, you can iteratively adjust your examples—clarifying questions, improving SQL logic, or adding comments—so the Data Agent learns from higher-quality patterns and produces more accurate results for new questions.
 
 ```python
 # Evaluate few-shot examples using the Data Agent SDK.
@@ -83,12 +83,12 @@ display(failure_df)
 
 Use this feedback to **iterate and improve** your example queries. Regularly strengthening weaker examples will help the Data Agent produce more accurate SQL and answers over time.
 
-:::image type="content" source="media/how-to-evaluate-data-agent/fabric-data-agent-sdk-validator.png" alt-text="Screenshot of example query validator results" lightbox="media/how-to-evaluate-data-agent/fabric-data-agent-sdk-validator.png":::
+:::image type="content" source="media/how-to-evaluate-data-agent/fabric-data-agent-sdk-validator.png" alt-text="Screenshot of example query validator results." lightbox="media/how-to-evaluate-data-agent/fabric-data-agent-sdk-validator.png":::
 
 To explore a full working example, you can check out the sample notebook in the [Fabric Data Agent SDK GitHub repository](https://aka.ms/fabric-data-agent-example-query-validator):
 
 > [!NOTE]
-> This evaluation utility is currently available **only for SQL-based example queries**. KQL or other query types are not yet supported.
+> This evaluation utility is currently available **only for SQL-based example queries**. KQL or other query types aren't yet supported.
 
 ## Understand validator scores  
 
