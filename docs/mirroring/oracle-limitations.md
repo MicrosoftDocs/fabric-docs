@@ -80,6 +80,8 @@ For schema (DDL) changes, we currently support:
 
 Currently, tables that do not have a Primary Key (PK) are not supported.
 
+We cannot support table names that have a length greater than or equal to 30.
+
 ## Required Permissions
 
 Your sync user needs these permissions:
