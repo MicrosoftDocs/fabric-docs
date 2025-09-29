@@ -10,7 +10,7 @@ groups:
     title: Standard capabilities
 - id: event-hubs-capabilities
   title: Event Hubs integration capabilities
-  prompt: Choose the capabilities
+  prompt: Select Extended Features when using schemas; otherwise, choose Basic Features.
   pivots:
   - id: basic-features
     title: Basic features
