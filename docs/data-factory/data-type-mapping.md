@@ -45,7 +45,7 @@ The following data type conversions are supported between the interim types from
 To learn the detailed data type conversions for a particular connector, go to the copy activity configuration article for that connector from [here](connector-overview.md).
 
 > [!NOTE]
-> Currently such data type conversion is supported when copying between tabular data. Hierarchical sources/sinks are not supported, which means there is no system-defined data type conversion between source and sink interim types.
+> Currently such data type conversion is supported when copying between tabular data. Hierarchical sources/destinations are not supported, which means there is no system-defined data type conversion between source and destination interim types.
 
 ## Configure your type conversion
 
