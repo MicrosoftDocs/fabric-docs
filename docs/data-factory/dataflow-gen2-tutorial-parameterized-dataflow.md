@@ -82,7 +82,7 @@ in
   #"Removed columns"
 ```
 
-And you’ll notice that it still correctly evaluates the data preview in the Dataflow editor.
+And you notice that it still correctly evaluates the data preview in the Dataflow editor.
 
 ## Parameterize logic
 
@@ -91,10 +91,17 @@ To do this, create a new parameter named **Territory**, set its data type to *te
 
 ![Screenshot of the Territory parameter created inside the Manage parameters dialog](media/dataflow-gen2-tutorial-parameterized-dataflow/territory-parameter.png)
 
-Given that your filter step was created using the user interface, you can head over to the Filtered rows step, double click it and get the settings dialog for the filter step. This dialog allows you to select, through the input widget, if you wish to use a parameter instead of a static value:
+Given that your filter step was created using the user interface, you can head over to the Filtered rows step, double select it and get the settings dialog for the filter step. This dialog allows you to select, through the input widget, if you wish to use a parameter instead of a static value:
 
 ![Screenshot of the input widget in the filter rows dialog with the option to reference a parameter](media/dataflow-gen2-tutorial-parameterized-dataflow/input-widget.png)
 
-After selecting the option to *Select a parameter*, a dropdown will appear showing all available parameters that match the required data type. From this list, you can select the newly created Territory parameter.
+After selecting the option to *Select a parameter*, a dropdown will appear to show all available parameters that match the required data type. From this list, you can select the newly created Territory parameter.
 
 ![Screenshot of the Territory parameter selected inside the input widget from the filter rows dialog](media/dataflow-gen2-tutorial-parameterized-dataflow/territory-parameter-input-widget.png)
+
+Once you select OK, notice that the diagram view has already created the link between the newly created parameter and the query in use. Not only that, but the data preview now shows you information for the **Mideast** territory.
+
+:::image type="content" source="media/dataflow-gen2-tutorial-parameterized-dataflow/mideast-territory-data-preview.png" alt-text="Screenshot of the Diagram view, Query settings, and Data preview for the dimension_city query showing data for the Mideast SalesTerritory." lightbox="media/dataflow-gen2-tutorial-parameterized-dataflow/mideast-territory-data-preview.png":::
+
+## Parameterize destination
+
