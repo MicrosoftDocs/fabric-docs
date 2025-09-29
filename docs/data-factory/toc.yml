@@ -984,8 +984,8 @@
             href: dataflow-parameters.md
           - name: Variable libraries in Dataflow Gen2
             href: dataflow-gen2-variable-library-integration.md
-          - name: Dataflow Gen2 and deployment pipelines
-            href: dataflow-gen2-deployment-pipelines.md
+          - name: CI/CD and ALM solution architectures for Dataflow Gen2
+            href: dataflow-gen2-cicd-alm-solution-architecture.md
           - name: Saving a draft of your dataflow
             href: dataflows-gen2-save-draft.md
           - name: Use cloud connections through gateways
