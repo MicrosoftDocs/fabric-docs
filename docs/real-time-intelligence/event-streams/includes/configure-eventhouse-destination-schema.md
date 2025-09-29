@@ -8,8 +8,6 @@ ms.custom:
 ms.date: 09/27/2025
 ---
 
-### Configure schemas for an eventhouse destination
-
 1. Select **Transform events or add destination**, and then select **Eventhouse**.
 1. On the **Eventhouse** page, configure the following schema-related settings:
     1. For **Input schema**, select one or more schemas from the drop-down list.

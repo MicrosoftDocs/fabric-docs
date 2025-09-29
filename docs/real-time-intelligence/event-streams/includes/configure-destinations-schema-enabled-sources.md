@@ -21,5 +21,5 @@ Currently, only the Eventhouse, custom endpoint, and derived stream destinations
 
     For detailed steps on configuring a custom endpoint destination, see [Add a custom endpoint or custom app destination to an eventstream](../add-destination-custom-app.md).
     
-
+### Configure schemas for an eventhouse destination
 [!INCLUDE [configure-eventhouse-destination-schema](configure-eventhouse-destination-schema.md)]

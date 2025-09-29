@@ -142,6 +142,7 @@ With this update, you can now:
 >    :::image type="content" source="media/add-destination-kql-database/resume-kusto.png" alt-text="A screenshot of resuming the KQL Database." lightbox="media/add-destination-kql-database/resume-kusto.png":::
 > For more information, see [Pause, and resume data streams](pause-resume-data-streams.md)
 
+## Configure schemas for an eventhouse destination
 [!INCLUDE [configure-eventhouse-destination-schema](./includes/configure-eventhouse-destination-schema.md)]
 
 
