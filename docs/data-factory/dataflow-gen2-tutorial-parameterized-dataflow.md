@@ -104,4 +104,52 @@ Once you select OK, notice that the diagram view has already created the link be
 :::image type="content" source="media/dataflow-gen2-tutorial-parameterized-dataflow/mideast-territory-data-preview.png" alt-text="Screenshot of the Diagram view, Query settings, and Data preview for the dimension_city query showing data for the Mideast SalesTerritory." lightbox="media/dataflow-gen2-tutorial-parameterized-dataflow/mideast-territory-data-preview.png":::
 
 ## Parameterize destination
+>[!NOTE]
+>It's recommended that you get acquainted with the concept of data destinations in Dataflow Gen2 and how its mashup script gets created from the article on [data destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md#mashup-script-for-data-destination-queries) 
 
+The last component to parameterize in this scenario is the destination. While the information about what the data destination is can be found in the Dataflow editor, to parameterize this part of the dataflow you’ll need to use Git or the REST API.
+
+![Screenshot of the flyout that contains the data destination settings for the dimension_city query](media/dataflow-gen2-tutorial-parameterized-dataflow/destination-settings-flyout.png)
+
+This tutorial will show you how to make the changes through Git. Before you can make changes through git make sure to:
+* **Create a parameter with the name WarehouseId**: make sure to use the corresponding Id of your Warehouse as the current value, set it as required and of the text data type.
+* **Save the Dataflow**: use the Save button in the home tab of the ribbon.
+
+![Screenshot of the dataflow save button](media/dataflow-gen2-tutorial-parameterized-dataflow/dataflow-save.png)
+
+Once your Dataflow is saved, make sure to commit the changes to your Git repository and head over to your repository to see the *mashup.pq* file of your Dataflow.
+When looking at the *mashup.pq* file, look for the query that you associated the data destination with. In this scenario, the name of that query is dimension_city. You see a record attribute above this query name:
+
+```M code 
+[DataDestinations = {[Definition = [Kind = "Reference", QueryName = "dimension_city_DataDestination", IsNewTarget = true], Settings = [Kind = "Manual", AllowCreation = true, ColumnSettings = [Mappings = {[SourceColumnName = "CityKey", DestinationColumnName = "CityKey"], [SourceColumnName = "WWICityID", DestinationColumnName = "WWICityID"], [SourceColumnName = "City", DestinationColumnName = "City"], [SourceColumnName = "StateProvince", DestinationColumnName = "StateProvince"], [SourceColumnName = "Country", DestinationColumnName = "Country"], [SourceColumnName = "Continent", DestinationColumnName = "Continent"], [SourceColumnName = "SalesTerritory", DestinationColumnName = "SalesTerritory"], [SourceColumnName = "Region", DestinationColumnName = "Region"], [SourceColumnName = "Subregion", DestinationColumnName = "Subregion"], [SourceColumnName = "Location", DestinationColumnName = "Location"], [SourceColumnName = "LatestRecordedPopulation", DestinationColumnName = "LatestRecordedPopulation"]}], DynamicSchema = false, UpdateMethod = [Kind = "Replace"], TypeSettings = [Kind = "Table"]]]}]
+shared dimension_city = let
+```
+This attribute record has a field with the name QueryName, which holds the name of the query that has all the data destination logic associated for this query. This query looks as follows:
+
+```M code    
+shared dimension_city_DataDestination = let
+  Pattern = Fabric.Warehouse([HierarchicalNavigation = null, CreateNavigationProperties = false]),
+  Navigation_1 = Pattern{[workspaceId = "8b325b2b-ad69-4103-93ae-d6880d9f87c6"]}[Data],
+  Navigation_2 = Navigation_1{[warehouseId = "527ba9c1-4077-433f-a491-9ef370e9230a"]}[Data],
+  TableNavigation = Navigation_2{[Item = "City", Schema = "dbo"]}?[Data]?
+in
+  TableNavigation
+```
+
+You notice that, similarly to the script of the source for the Lakehouse, this script for the destination has a similar pattern where it hardcodes the workspaceid that needs to be used and also the warehouseId. Replace those fixed values with the identifiers of the parameters and your script shall look as follows:
+
+```M code 
+shared dimension_city_DataDestination = let
+  Pattern = Fabric.Warehouse([HierarchicalNavigation = null, CreateNavigationProperties = false]),
+  Navigation_1 = Pattern{[workspaceId = WorkspaceId]}[Data],
+  Navigation_2 = Navigation_1{[warehouseId = WarehouseId]}[Data],
+  TableNavigation = Navigation_2{[Item = "City", Schema = "dbo"]}?[Data]?
+in
+  TableNavigation
+```
+
+You can now commit this change and update your dataflow using the changes from your Dataflow through the source control feature in your workspace.
+You can verify that all changes are in place by opening your Dataflow and reviewing the data destination and any previous parameter references that were added.
+This finalizes all the parameterization of your Dataflow and you can now move on to run your Dataflow by passing parameter values for execution.
+
+## Run request with parameter values
