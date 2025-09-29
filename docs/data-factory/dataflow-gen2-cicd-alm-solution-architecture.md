@@ -32,8 +32,8 @@ The following table covers the available solution architectures when using a Dat
 
 |Type|Description|Diagram|
 |---|---|---|
-|**Parameterized Dataflow Gen2**| Using the [public parameters mode](dataflow-parameters.md), you can parameterize Dataflow components—such as logic, sources, or destinations—and pass runtime values to dynamically adapt the Dataflow based on the pipeline stage.|mmm|
-| **Variable libraries inside a Dataflow Gen2** | Using the [variable libraries integration with Dataflow Gen2](dataflow-gen2-variable-library-integration.md), you can reference variables throughout your Dataflow. These variables are evaluated at runtime based on values stored in the library, enabling dynamic behavior aligned with the pipeline stage.| mm|
+|**Parameterized Dataflow Gen2**| Using the [public parameters mode](dataflow-parameters.md), you can parameterize Dataflow components—such as logic, sources, or destinations—and pass runtime values to dynamically adapt the Dataflow based on the pipeline stage.|![Diagram of the public parameters mode inside a Dataflow Gen2 high level solution architecture](media/dataflow-gen2-cicd-alm-solution-architecture/diagram-public-parameters-mode-architecture.png)|
+| **Variable libraries inside a Dataflow Gen2** | Using the [variable libraries integration with Dataflow Gen2](dataflow-gen2-variable-library-integration.md), you can reference variables throughout your Dataflow. These variables are evaluated at runtime based on values stored in the library, enabling dynamic behavior aligned with the pipeline stage.| ![Diagram of the variable libraries inside a Dataflow Gen2 high level solution architecture](media/dataflow-gen2-cicd-alm-solution-architecture/diagram-variable-libraries-references-architecture.png)|
 
 The main difference between these two approaches is how they pass values at runtime. A parameterized Dataflow requires a process through either the REST API or the [Fabric pipeline Dataflow activity](dataflow-activity.md) to pass values. The variable libraries integration with Dataflow Gen2 requires a variable library at the workspace level and the correct variables referenced inside the Dataflow.
 
