@@ -33,8 +33,6 @@ The following diagram shows the workspace layout for this tutorial.
 
 :::image type="content" source="media/tutorial-variable-library/conceptual-variable-library-1.png" alt-text="Diagram of a workspace layout." lightbox="media/tutorial-variable-library/conceptual-variable-library-1.png":::
 
-> [!NOTE]
-> The Fabric variable library item is currently in preview.
 
 ## Prerequisites
 
