@@ -151,6 +151,8 @@ If the connector that you use supports mapping, you can go to **Mapping** tab to
 
 You can also select **+ New mapping** to add new mapping, select **Clear** to clear all mapping settings, and select **Reset** to reset all mapping **Source** column.
 
+For more information about data type mapping, see [Data type mapping in a copy activity](data-type-mapping.md).
+
 ### Configure your other settings under settings tab
 
 The **Settings** tab contains the settings of performance, staging, and so on.
