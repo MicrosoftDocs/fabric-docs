@@ -1,5 +1,5 @@
 ---
-title: Secure your Data Factory in Microsoft Fabric deployment
+title: Secure Your Data Factory in Microsoft Fabric Deployment
 description: Learn how to secure Data Factory in Microsoft Fabric, with best practices for protecting your deployment.
 author: whhender
 ms.author: whhender
