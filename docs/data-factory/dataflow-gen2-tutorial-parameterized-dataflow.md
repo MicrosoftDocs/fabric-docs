@@ -107,12 +107,12 @@ Once you select OK, notice that the diagram view has already created the link be
 >[!NOTE]
 >It's recommended that you get acquainted with the concept of data destinations in Dataflow Gen2 and how its mashup script gets created from the article on [data destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md#mashup-script-for-data-destination-queries) 
 
-The last component to parameterize in this scenario is the destination. While the information about what the data destination is can be found in the Dataflow editor, to parameterize this part of the dataflow you’ll need to use Git or the REST API.
+The last component to parameterize in this scenario is the destination. While the information about what the data destination is can be found in the Dataflow editor, to parameterize this part of the dataflow you need to use Git or the REST API.
 
 ![Screenshot of the flyout that contains the data destination settings for the dimension_city query](media/dataflow-gen2-tutorial-parameterized-dataflow/destination-settings-flyout.png)
 
-This tutorial will show you how to make the changes through Git. Before you can make changes through git make sure to:
-* **Create a parameter with the name WarehouseId**: make sure to use the corresponding Id of your Warehouse as the current value, set it as required and of the text data type.
+This tutorial shows you how to make the changes through Git. Before you can make changes through git make sure to:
+* **Create a parameter with the name WarehouseId**: make sure to use the corresponding ID of your Warehouse as the current value, set it as required and of the text data type.
 * **Save the Dataflow**: use the Save button in the home tab of the ribbon.
 
 ![Screenshot of the dataflow save button](media/dataflow-gen2-tutorial-parameterized-dataflow/dataflow-save.png)
@@ -153,3 +153,12 @@ You can verify that all changes are in place by opening your Dataflow and review
 This finalizes all the parameterization of your Dataflow and you can now move on to run your Dataflow by passing parameter values for execution.
 
 ## Run request with parameter values
+
+You can use the [Fabric REST API](/rest/api/fabric/dataflow/background-jobs/run-on-demand-execute) to send a run request with a custom payload that contains   your parameter values for that specific run operation and you can also use the [REST API to discover dataflow parameters](/rest/api/fabric/dataflow/items/discover-dataflow-parameters?tabs=HTTP) and understand what the Dataflow expects so it can trigger a run.
+In this tutorial, you'll use the experience found within the Dataflow activity for Fabric pipelines.
+Start by creating a Pipeline and add a new dataflow activity to the canvas. In the settings of the activity, find the workspace where your Dataflow is located and then select the Dataflow from the dropdown.
+
+![Screenshot of the Dataflow activity with parameters inside a pipeline](media/dataflow-gen2-tutorial-parameterized-dataflow/pipeline-dataflow-activity.png)
+
+A Dataflow parameters section can be expanded to show you all the available parameters in the Dataflow and their default values. You can replace any values in here and the values passed will be used to define what sources, logic and destination should be used to evaluate your dataflow run.
+You can also give new scenarios a try by creating a new Warehouse and changing the WarehouseId for the evaluation or using this pattern in a deployment pipeline where the WorkspaceId and other parameters need to be passed to point to the correct items in the corresponding environment.
