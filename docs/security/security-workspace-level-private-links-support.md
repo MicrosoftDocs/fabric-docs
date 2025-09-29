@@ -131,7 +131,7 @@ Manage notebooks in workspaces enabled with private links by using the Fabric po
 
 |Fabric portal  |REST APIs  |
 |---------|---------|
-|[Fabric portal](/fabric/data-engineering/how-to-use-notebook)<br>|[Items - REST API (Notebook)](/rest/api/fabric/notebook/items)<br>[Manage and run notebooks in a workspace](/fabric/data-engineering/notebook-public-api)|
+|[How to use notebooks](/fabric/data-engineering/how-to-use-notebook)<br>|[Items - REST API (Notebook)](/rest/api/fabric/notebook/items)<br>[Manage and run notebooks in a workspace](/fabric/data-engineering/notebook-public-api)|
 
 ### Livy endpoint support
 
@@ -170,7 +170,7 @@ Manage machine learning experiments in workspaces enabled with private links by 
 
 |Fabric portal  |REST APIs  |
 |---------|---------|
-|[Machine learning experiments](/fabric/data-engineering/machine-learning-experiment)  |[Items (MLExperiment)](/rest/api/fabric/mlexperiment/items)|
+|[Machine learning experiments](/fabric/data-science/machine-learning-experiment)  |[Items (MLExperiment)](/rest/api/fabric/mlexperiment/items)|
 
 ### Machine learning model support
 
@@ -181,7 +181,7 @@ Manage pipelines, copy jobs, and mounted data factories in workspaces enabled wi
 
 |Fabric portal  |REST APIs  |
 |---------|---------|
-|[Fabric portal](/fabric/data-pipelines/create-data-pipeline)  | [Items (DataPipeline)](/rest/api/fabric/datapipeline/items)<br>[Items (CopyJob)](/rest/api/fabric/copyjob/items)<br> [Items (MountedDataFactory)](/rest/api/fabric/mounteddatafactory/items)<br>[Pipelines (Power BI Power BI REST APIs)](/rest/api/power-bi/pipelines) |
+|[Data pipeline](/fabric/data-factory/default-destination)<br>[Copy job activity](/fabric/data-factory/copy-job-activity)  | [Items (DataPipeline)](/rest/api/fabric/datapipeline/items)<br>[Items (CopyJob)](/rest/api/fabric/copyjob/items)<br> [Items (MountedDataFactory)](/rest/api/fabric/mounteddatafactory/items)<br>[Pipelines (Power BI Power BI REST APIs)](/rest/api/power-bi/pipelines) |
 
 > [!NOTE]
 > * Copy to warehouse isn't supported.
@@ -194,7 +194,7 @@ Manage eventstreams in workspaces enabled with private links by using the Fabric
 
 |Fabric portal  |REST APIs  |
 |---------|---------|
-|[Create and manage an eventstream](fabric/real-time-intelligence/event-streams/create-manage-an-eventstream)         |     [Items - REST API (Eventstream)](/rest/api/fabric/eventstream/items)<br>[Topology - Get Eventstream Topology](/rest/api/fabric/eventstream/topology/get-eventstream-topology) |
+|[Create and manage an eventstream](/fabric/real-time-intelligence/event-streams/create-manage-an-eventstream)         |     [Items - REST API (Eventstream)](/rest/api/fabric/eventstream/items)<br>[Topology - Get Eventstream Topology](/rest/api/fabric/eventstream/topology/get-eventstream-topology) |
 
 Eventstream APIs use a graph-like structure to define an Eventstream item, which consists of four components: source, destination, operator, and stream. 
 
@@ -212,7 +212,7 @@ Manage eventhouses in workspaces enabled with private links by using the Fabric 
 
 |Fabric portal  |REST APIs  |
 |---------|---------|
-|[Create an eventhouse](fabric/real-time-intelligence/event-houses/create-eventhouse)  | [Items (Eventhouse)](/rest/api/fabric/eventhouse/items) |
+|[Create an eventhouse](/fabric/real-time-intelligence/event-houses/create-eventhouse)  | [Items (Eventhouse)](/rest/api/fabric/eventhouse/items) |
 
 Unsupported scenarios:
 
@@ -225,7 +225,7 @@ Manage Dataflows Gen2 in workspaces enabled with private links by using the Fabr
 
 |Fabric portal  |REST APIs  |
 |---------|---------|
-|[Dataflow Gen2 default destination](/fabric/data-pipelines/default-destination)         |[Public APIs capabilities for Dataflows Gen2 in Fabric Data Factory (Preview)](/fabric/data-factory/dataflow-gen2-public-apis)         |
+|[Dataflow Gen2 default destination](/fabric/data-factory/default-destination)         |[Public APIs capabilities for Dataflows Gen2 in Fabric Data Factory (Preview)](/fabric/data-factory/dataflow-gen2-public-apis)         |
 
 A virtual network data gateway must be used for every dataflow connector. The virtual network data gateway must reside in the same virtual network as the workspace-level private link endpoint used by the workspace. 
 
@@ -235,7 +235,7 @@ Manage variable libraries in workspaces enabled with private links by using the 
 
 |Fabric portal  |REST APIs  |
 |---------|---------|
-|[Fabric portal](/fabric/cicd/variable-library/get-started-variable-libraries)         |[Items (VariableLibrary)](/rest/api/fabric/variablelibrary/items)         |
+|[Create and manage variable libraries](/fabric/cicd/variable-library/get-started-variable-libraries)         |[Items (VariableLibrary)](/rest/api/fabric/variablelibrary/items)         |
 
 
 
