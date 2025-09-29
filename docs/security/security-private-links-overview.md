@@ -18,7 +18,7 @@ Fabric supports private links at both the tenant level and the workspace level:
 
 * **Tenant-level private links** provide network policy to the entire tenant. This article focuses on tenant-level private links. 
 
-* **Workspace-level private links (preview)** provide granular control, making it possible to restrict access to certain workspaces while allowing the rest of the workspaces to remain open for public access. To learn more, see [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md).
+* **Workspace-level private links** provide granular control, making it possible to restrict access to certain workspaces while allowing the rest of the workspaces to remain open for public access. To learn more, see [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md).
 
 Enabling private endpoints affects many items, so you should review this entire article before enabling private endpoints for your tenant.
 
