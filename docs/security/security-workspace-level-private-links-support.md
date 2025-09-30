@@ -96,15 +96,15 @@ Create and manage Lakehouses in workspaces enabled with private links by using t
 
 #### [Fabric portal](#tab/fabric-portal)
 
-[Create a Lakehouse](/fabric/data-engineering/create-lakehouse)
+* [Create a Lakehouse](/fabric/data-engineering/create-lakehouse)
 
-#### [REST APIs](#tab/rest-apis)
+#### [REST API](#tab/rest-apis)
 
 * [Lakehouse REST API](../data-engineering/lakehouse-api.md)
-* [Items (Lakehouse)](/rest/api/fabric/lakehouse/items)
-* [Livy Sessions (Lakehouse)](/rest/api/fabric/lakehouse/livy-sessions)
-* [Tables (Lakehouse)](/rest/api/fabric/lakehouse/tables)
-* [Background Jobs (Lakehouse)](/rest/api/fabric/lakehouse/background-jobs)
+* [Items - REST API (Lakehouse)](/rest/api/fabric/lakehouse/items)
+* [Livy Sessions - REST API (Lakehouse)](/rest/api/fabric/lakehouse/livy-sessions)
+* [Tables - REST API (Lakehouse)](/rest/api/fabric/lakehouse/tables)
+* [Background Jobs - REST API (Lakehouse)](/rest/api/fabric/lakehouse/background-jobs)
 
 ---
 
@@ -116,15 +116,12 @@ Create and manage warehouses in workspaces enabled with private links by using t
 
 [Create a Warehouse](/fabric/data-warehouse/create-warehouse)
 
-#### [REST APIs](#tab/rest-apis)
+#### [REST API](#tab/rest-apis)
 
 * [Warehouse REST API](/rest/api/fabric/warehouse/items)
-
-* [Items (WarehouseSnapshot)](/rest/api/fabric/warehousesnapshot/items)
-
+* [Items - REST API (WarehouseSnapshot)](/rest/api/fabric/warehousesnapshot/items)
 * To get the workspace private link service connection string for a warehouse:
-
-   [Get Connection String (Warehouse)](/rest/api/fabric/warehouse/items/get-connection-string)
+   [Get Connection String - REST API (Warehouse)](/rest/api/fabric/warehouse/items/get-connection-string)
 
 ---
 
@@ -140,25 +137,45 @@ Using the warehouse connection string, you can also access a warehouse via the S
 
 Find the workspace private link service connection string for a SQL Endpoint by using the Fabric portal or REST API.
 
-|Fabric portal  |REST APIs  |
-|---------|---------|
-|[Find the Connection String (SQL Endpoint)](/fabric/data-warehouse/how-to-connect#find-the-warehouse-connection-string) | [Get Connection String (SQL Endpoint)](/rest/api/fabric/sqlendpoint/items/get-connection-string)<br> [List SQL Endpoints](/rest/api/fabric/sqlendpoint/items/list-sql-endpoints)<br>[Get Connection String - REST API (SQL Endpoint)](/rest/api/fabric/sqlendpoint/items/get-connection-string) |
+#### [Fabric portal](#tab/fabric-portal)
+
+* [Find the Connection String (SQL Endpoint)](/fabric/data-warehouse/how-to-connect#find-the-warehouse-connection-string)
+
+#### [REST API](#tab/rest-apis)
+
+* [Items - List SQL Endpoints](/rest/api/fabric/sqlendpoint/items/list-sql-endpoints)
+* [Items - Get Connection String (SQL Endpoint)](/rest/api/fabric/sqlendpoint/items/get-connection-string)
+
+---
 
 ### Notebook support
 
 Manage notebooks in workspaces enabled with private links by using the Fabric portal or REST APIs.
 
-|Fabric portal  |REST APIs  |
-|---------|---------|
-|[How to use notebooks](/fabric/data-engineering/how-to-use-notebook)<br>|[Items - REST API (Notebook)](/rest/api/fabric/notebook/items)<br>[Manage and run notebooks in a workspace](/fabric/data-engineering/notebook-public-api)|
+#### [Fabric portal](#tab/fabric-portal)
+
+* [How to use notebooks](/fabric/data-engineering/how-to-use-notebook)
+
+#### [REST API](#tab/rest-apis)
+
+* [Items - REST API (Notebook)](/rest/api/fabric/notebook/items)
+* [Manage and run notebooks in a workspace](/fabric/data-engineering/notebook-public-api)
+
+---
 
 ### Livy endpoint support
 
 Use the Fabric portal or APIs in workspaces enabled with private links to create and execute statements or run batch jobs using Livy endpoints.
 
-|Fabric portal  |REST APIs  |
-|---------|---------|
-|[Manage Livy API endpoints](/fabric/data-engineering/get-started-api-livy)         | [Livy Sessions (Notebook)](/fabric/data-engineering/get-started-api-livy)
+#### [Fabric portal](#tab/fabric-portal)
+
+* [Manage Livy API endpoints](/fabric/data-engineering/get-started-api-livy)
+
+#### [REST API](#tab/rest-apis)
+
+* [Livy Sessions - REST API (Notebook)](/fabric/data-engineering/get-started-api-livy)
+
+---
 
 A *Livy session job* establishes a Spark session that remains active for the duration of your interaction with the Livy API. Livy sessions are ideal for interactive workloads. The session starts when you submit a job and remains available until you explicitly end it or the system terminates it after 20 minutes of inactivity. Multiple jobs can run within the same session, sharing state and cached data.
 
@@ -168,17 +185,35 @@ A *Livy batch job* involves submitting a Spark application for a single executio
 
 Use the Fabric portal or the APIs in workspaces enabled with private links to create, read, update, and delete Spark job definition items.
 
-|Fabric portal  |REST APIs  |
-|---------|---------|
-|[Create Spark Job Definition](/fabric/data-engineering/create-spark-job-definition)         | [Items (SparkJobDefinition)](/rest/api/fabric/sparkjobdefinition/items)<br></br>To run batch jobs in a workspace:<br>[Background Jobs - REST API (SparkJobDefinition)](/rest/api/fabric/sparkjobdefinition/background-jobs)        |
+#### [Fabric portal](#tab/fabric-portal)
+
+* [Create Spark Job Definition](/fabric/data-engineering/create-spark-job-definition) 
+
+#### [REST API](#tab/rest-apis)
+        
+* [Items - REST API (SparkJobDefinition)](/rest/api/fabric/sparkjobdefinition/items)
+* Run batch jobs in a workspace with [Background Jobs - REST API (SparkJobDefinition)](/rest/api/fabric/sparkjobdefinition/background-jobs)
+
+---
 
 ### Environment support
 
 Manage environments in workspaces enabled with private links by using the Fabric portal, or use Environment REST APIs to create, read, update, and delete Environment items.
 
-|Fabric portal  |REST APIs  |
-|---------|---------|
-|[Create, configure, and use an environment](/fabric/data-engineering/create-and-use-environment)         | [Items (Environment)](/rest/api/fabric/environment/items)<br>[Spark Compute (Environment)](/rest/api/fabric/environment/spark-compute)<br>[Spark Libraries (Environment)](/rest/api/fabric/environment/spark-libraries)<br>[Custom Pools (Spark)](/rest/api/fabric/spark/custom-pools)<br>[Livy Sessions (Spark)](/rest/api/fabric/spark/livy-sessions)<br>[Workspace Settings (Spark)](/rest/api/fabric/spark/workspace-settings) |
+#### [Fabric portal](#tab/fabric-portal)
+
+* [Create, configure, and use an environment](/fabric/data-engineering/create-and-use-environment)
+
+#### [REST API](#tab/rest-apis)
+
+* [Items - REST API (Environment)](/rest/api/fabric/environment/items)
+* [Spark Compute - REST API (Environment)](/rest/api/fabric/environment/spark-compute)
+* [Spark Libraries - REST API (Environment)](/rest/api/fabric/environment/spark-libraries)
+* [Custom Pools - REST API (Spark)](/rest/api/fabric/spark/custom-pools)
+* [Livy Sessions - REST API (Spark)](/rest/api/fabric/spark/livy-sessions)
+* [Workspace Settings - REST API (Spark)](/rest/api/fabric/spark/workspace-settings)
+
+---
 
 > [!NOTE]
 > For Spark, workspace-level private links that use friendly names don't work.
@@ -187,20 +222,38 @@ Manage environments in workspaces enabled with private links by using the Fabric
 
 Manage machine learning experiments in workspaces enabled with private links by using the Fabric portal or REST API.
 
-|Fabric portal  |REST APIs  |
-|---------|---------|
-|[Machine learning experiments](/fabric/data-science/machine-learning-experiment)  |[Items (MLExperiment)](/rest/api/fabric/mlexperiment/items)|
+#### [Fabric portal](#tab/fabric-portal)
+
+* [Machine learning experiments](/fabric/data-science/machine-learning-experiment)
+
+#### [REST API](#tab/rest-apis)
+
+* [Items - REST API (MLExperiment)](/rest/api/fabric/mlexperiment/items)
+
+---
 
 ### Machine learning model support
 
 Manage machine learning models in workspaces enabled with private links by using the [Items - REST API (MLModel)](/rest/api/fabric/mlmodel/items).
 
+
 ### Pipeline, Copy job, and Mounted Data Factory support
+
 Manage pipelines, copy jobs, and mounted data factories in workspaces enabled with private links by using the Fabric portal or the following REST APIs.
 
-|Fabric portal  |REST APIs  |
-|---------|---------|
-|[Data pipeline](/fabric/data-factory/default-destination)<br>[Copy job activity](/fabric/data-factory/copy-job-activity)  | [Items (DataPipeline)](/rest/api/fabric/datapipeline/items)<br>[Items (CopyJob)](/rest/api/fabric/copyjob/items)<br> [Items (MountedDataFactory)](/rest/api/fabric/mounteddatafactory/items)<br>[Pipelines (Power BI Power BI REST APIs)](/rest/api/power-bi/pipelines) |
+#### [Fabric portal](#tab/fabric-portal)
+
+* [Data pipeline](/fabric/data-factory/default-destination)
+* [Copy job activity](/fabric/data-factory/copy-job-activity)
+
+#### [REST API](#tab/rest-apis)
+
+* [Items - REST API (DataPipeline)](/rest/api/fabric/datapipeline/items)
+* [Items - REST API (CopyJob)](/rest/api/fabric/copyjob/items)
+* [Items - REST API (MountedDataFactory)](/rest/api/fabric/mounteddatafactory/items)
+* [Pipelines - REST API (Power BI Power BI REST APIs)](/rest/api/power-bi/pipelines)
+
+---
 
 > [!NOTE]
 > * Copy to warehouse isn't supported.
@@ -211,9 +264,16 @@ Manage pipelines, copy jobs, and mounted data factories in workspaces enabled wi
 
 Manage eventstreams in workspaces enabled with private links by using the Fabric portal or REST APIs to create eventstream items and view their topology.
 
-|Fabric portal  |REST APIs  |
-|---------|---------|
-|[Create and manage an eventstream](/fabric/real-time-intelligence/event-streams/create-manage-an-eventstream)         |     [Items - REST API (Eventstream)](/rest/api/fabric/eventstream/items)<br>[Topology - Get Eventstream Topology](/rest/api/fabric/eventstream/topology/get-eventstream-topology) |
+#### [Fabric portal](#tab/fabric-portal)
+
+* [Create and manage an eventstream](/fabric/real-time-intelligence/event-streams/create-manage-an-eventstream)
+
+#### [REST API](#tab/rest-apis)
+
+* [Items - REST API (Eventstream)](/rest/api/fabric/eventstream/items)
+* [Topology - Get Eventstream Topology](/rest/api/fabric/eventstream/topology/get-eventstream-topology)
+
+---
 
 Eventstream APIs use a graph-like structure to define an Eventstream item, which consists of four components: source, destination, operator, and stream. 
 
@@ -229,9 +289,15 @@ Unsupported scenarios:
 
 Manage eventhouses in workspaces enabled with private links by using the Fabric portal or REST API.
 
-|Fabric portal  |REST APIs  |
-|---------|---------|
-|[Create an eventhouse](/fabric/real-time-intelligence/create-eventhouse)  | [Items (Eventhouse)](/rest/api/fabric/eventhouse/items) |
+#### [Fabric portal](#tab/fabric-portal)
+
+[Create an eventhouse](/fabric/real-time-intelligence/create-eventhouse)
+
+#### [REST API](#tab/rest-apis)
+
+[Items - REST API (Eventhouse)](/rest/api/fabric/eventhouse/items)
+
+---
 
 Unsupported scenarios:
 
@@ -242,9 +308,15 @@ Unsupported scenarios:
 
 Manage Dataflows Gen2 in workspaces enabled with private links by using the Fabric portal or REST API.
 
-|Fabric portal  |REST APIs  |
-|---------|---------|
-|[Dataflow Gen2 default destination](/fabric/data-factory/default-destination)         |[Public APIs capabilities for Dataflows Gen2 in Fabric Data Factory (Preview)](/fabric/data-factory/dataflow-gen2-public-apis)         |
+#### [Fabric portal](#tab/fabric-portal)
+
+[Dataflow Gen2 default destination](/fabric/data-factory/default-destination)
+
+#### [REST API](#tab/rest-apis)
+
+[Public APIs capabilities for Dataflows Gen2 in Fabric Data Factory (Preview)](/fabric/data-factory/dataflow-gen2-public-apis) 
+
+---
 
 A virtual network data gateway must be used for every dataflow connector. The virtual network data gateway must reside in the same virtual network as the workspace-level private link endpoint used by the workspace. 
 
@@ -252,11 +324,15 @@ A virtual network data gateway must be used for every dataflow connector. The vi
 
 Manage variable libraries in workspaces enabled with private links by using the Fabric portal or REST API.
 
-|Fabric portal  |REST APIs  |
-|---------|---------|
-|[Create and manage variable libraries](/fabric/cicd/variable-library/get-started-variable-libraries)         |[Items (VariableLibrary)](/rest/api/fabric/variablelibrary/items)         |
+#### [Fabric portal](#tab/fabric-portal)
 
+[Create and manage variable libraries](/fabric/cicd/variable-library/get-started-variable-libraries)
 
+#### [REST API](#tab/rest-apis)
+
+[Items - REST API (VariableLibrary)](/rest/api/fabric/variablelibrary/items)
+
+---
 
 ### Mirrored database support
 
