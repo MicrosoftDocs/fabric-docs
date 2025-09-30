@@ -28,6 +28,14 @@ The first time you open the govern tab, it might take a few moments for the insi
 
 To get to the govern tab, select the [OneLake catalog icon in the Fabric navigation pane](./onelake-catalog-overview.md) and then select the govern tab.
 
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png" alt-text="Screenshot showing how to open govern tab in the OneLake catalog." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png":::
+
+## Scope the insights and recommended actions by domain
+
+If your organization has defined domains, you can use the OneLake catalog's [domain selector](./onelake-catalog-explore.md#scope-the-catalog-to-a-particular-domain) to choose a specific domain or subdomain. This will scope the insights and recommended actions to items that reside within the selected domain.
+
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-domains-selector.png" alt-text="Screenshot showing how to select a domain in the OneLake catalog." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-domains-selector.png":::
+
 ## Get insights about the governance status of your data
 
 The govern tab gives you basic, high-level insights about the content you've created in Fabric, and provides a link to a page with [more insights](#all-insights). The data in the insights is based on the last successful refresh of the OneLake catalog governance report that was automatically generated in your My workspace the first time you opened the govern tab. The data refreshes automatically every time you open the govern tab. You can also select the Refresh button if you want to make sure that you've got the latest data.
@@ -42,11 +50,20 @@ This section provides basic high-level insights about the content you've created
 
 | Insight | What does it show and why is it important |
 |:--------|:--------|
-| **Summary** | Shows you at a glance how many items you own, how many workspaces they're spread over, and how many domains you have items associated with. |
+| **Summary** | Shows you at a glance how many items you own, how many workspaces they're spread over, and how many domains and subdomains you have items associated with. |
 | **Items you own by type** | Shows you at a glance how your data is distributed over different item types. |
 | **Items you own by last refresh date** | Shows you at a glance how current your data is. Regularly refreshing items ensures that data remains current and relevant, and reduces the risk of outdated or unused items cluttering up the system. Review the list of items that haven’t been refreshed recently to identify outdated items and reduce maintenance costs. |
 | **Items with description** | Descriptions provide essential context for users to understand and effectively use your data. Lack of an informative description can lead to misunderstandings and/or limit data usability, and hinder reuse. |
 | **Items by your last access date** | Reviewing rarely visited items helps you identify outdated or unused data. This can help you reduce the number of unnecessary items and free up resources for more relevant content. |
+
+## Take actions to improve the governance posture of your data
+
+The recommended actions section displays cards suggesting actions you can take to improve the governance posture of the data you own. When you select a card, you see an insight about your data, an explanation of why the issue revealed by the insight matters, and a list of steps about how to address the issue.
+The recommended actions vary depending on what the insights reveal about your data.
+
+Examples of recommended actions include refreshing potentially outdated items, improving metadata curation by adding tags or descriptions to enhance visibility and reuse across your organization, and protecting items with sensitivity labels if your organization has sensitivity labeling enabled but your coverage is low.
+
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions.png" alt-text="Screenshot showing the recommended action guidance tool-tip.":::
 
 ### All insights
 
@@ -58,14 +75,14 @@ The Your data estate insights provide an overview of the content you've created 
 
 | Insight | What does it show and why is it important |
 |:--------|:--------|
-| **Domains, Workspaces, Items** | Shows you how many items you own, how many domains your items are associated with, and how many workspaces they're spread across. |
+| **Domains, Subdomains, Workspaces, Items** | Shows you how many items you own, how many domains your items are associated with, and how many workspaces they're spread across. |
 | **Data hierarchy** | Shows you where your data is located. The visual is interactive, and enables you to drill down through the hierarchy from the domain level to the level of the individual items. |
 | **Workspace assignment to domains** | Shows you how many workspaces are assigned to a domain. |
 | **Items by type** | Shows you how many items you own by type. |
 | **Items by last refresh** | Shows you how current your data is. Regularly refreshing items ensures that data remains current and relevant, and reduces the risk of outdated or unused items cluttering up the system. Review the list of items that haven’t been refreshed recently to identify outdated items and reduce maintenance costs.|
 | **Items last refreshed more than 4 months ago** | Data that hasn't been refreshed in over four months is likely to be stale and could indicate a refresh problem. |
 | **Items by your last access date** | Reviewing rarely visited items helps you identify outdated or unused data. This can help you reduce the number of unnecessary items and free up resources for more relevant content. |
-| **Items you last visited more than 4 months ago** | Shows you the number and type of items that you should review to make sure that they're still current and needed. |
+| **Items that failed last refresh by type** | Shows you the number and type of your data items that failed to successfully refresh on their most recent refresh attempt. |
 
 #### Sensitivity label coverage
 
@@ -124,13 +141,12 @@ If the data isn't refreshing as expected, check the notifications pane and the [
 
 ## Considerations and limitations
 
-* The govern tab currently supports reports, dashboards, and [data-type items](./onelake-catalog-explore.md#find-items-by-item-type-category), such as lakehouses and semantic models.
-
-* Sub-items, such as tables, are not supported and don't figure into the insights. 
+* Sub-items, such as tables, are not supported and don't figure into the insights.
 
 * The govern tab doesn't support cross-tenant scenarios.
 
-* Currently, OneLake catalog's [domain selector](./onelake-catalog-explore.md#scope-the-catalog-to-a-particular-domain) only filters insights. This means that if you set the selector to a given domain, the insights you'll see will be based only on items that are associated with the selected domain. However, the recommended actions that are displayed might include actions related to items that associated with other domains.
+* The govern tab isn't available when Private Link is activated.
+
 
 ## Related content
 

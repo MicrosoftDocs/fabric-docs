@@ -17,6 +17,8 @@ Cosmos DB in Microsoft Fabric compute usage is encapsulated within your Fabric c
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal within your subscription's context. For more information, see [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). For more information on Fabric billing, see [understand your Azure bill on a Fabric capacity](../../enterprise/azure-billing.md).
 
+At this time, compute and data storage for Cosmos DB do not incur charges against your Fabric capacity.
+
 ## Capacity units
 
 In Fabric you're entitled to a set of **capacity units** (CUs) that are shared across all Fabric workloads based on the capacity purchased. For more information on licenses supported, see [Microsoft Fabric concepts and licenses](../../enterprise/licenses.md).

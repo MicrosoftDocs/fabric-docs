@@ -1,13 +1,15 @@
 ---
-title: "How To Use the Copilot Chat Pane in Microsoft Fabric in the Data Warehouse Workload (Preview)"
+title: "How to Use the Copilot Chat Pane in Microsoft Fabric in the Data Warehouse Workload (Preview)"
 description: Learn more about Copilot chat pane in Microsoft Fabric in the Data Warehouse workload, to ask questions specific to your warehouse.
 author: markingmyname
 ms.author: maghan
 ms.reviewer: salilkanade, wiassaf
-ms.date: 04/09/2025
+ms.date: 09/02/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
+ms.update-cycle: 180-days
+ms.devlang: copilot-prompt
 ---
 
 # How to use the Copilot chat pane in Fabric in Data Warehouse (Preview)
@@ -45,7 +47,7 @@ The supported capabilities of interacting through chat include:
 
 1. To open the Copilot chat pane, select the **Copilot** button.
 
-    :::image type="content" source="media/copilot-chat-pane/copilot-button.png" alt-text="Screenshot from the Fabric portal showing the Copilot button in the ribbon." lightbox="media/copilot-chat-pane/copilot-button.png":::
+   :::image type="content" source="media/copilot-chat-pane/copilot-button.png" alt-text="Screenshot from the Fabric portal showing the Copilot button in the ribbon." lightbox="media/copilot-chat-pane/copilot-button.png":::
 
 1. The chat pane offers helpful starter prompts to get started and familiar with Copilot. Select any option to ask Copilot a question. The **Ask a question** button provides example questions that are tailored specifically to your warehouse.
 
@@ -53,7 +55,7 @@ The supported capabilities of interacting through chat include:
 
 1. To find documentation related to your request, select the **Help** button.
 
-    :::image type="content" source="media/copilot-chat-pane/copilot-chat.png" alt-text="Screenshot from the Fabric portal showing the Copilot chat.":::
+   :::image type="content" source="media/copilot-chat-pane/copilot-chat.png" alt-text="Screenshot from the Fabric portal showing the Copilot chat.":::
 
 ## More powerful use cases
 

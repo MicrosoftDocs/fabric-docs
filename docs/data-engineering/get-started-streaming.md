@@ -1,12 +1,12 @@
 ---
 title: Get started with streaming data in lakehouse
 description: Learn how to use an Apache Spark job definition to stream data into your lakehouse and then serve it through a SQL analytics endpoint.
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
-ms.date: 11/11/2024
+ms.date: 07/20/2025
 ms.search.form: Get Started Lakehouse Streaming SQL Endpoint
 ---
 
@@ -16,22 +16,41 @@ This quickstart explains how to create a Spark Job Definition that contains Pyth
 
 ## Create a Python script
 
+Use the following Python script to create a streaming Delta table in a lakehouse using Apache Spark. The script reads a stream of generated data (one row per second) and writes it in append mode to a Delta table named `streamingtable`. It stores the data and checkpoint info in the specified lakehouse.
+
 1. Use the following Python code that uses Spark structured streaming to get data in a lakehouse table.
 
    ```python
-   import sys
    from pyspark.sql import SparkSession
-   
-   if __name__ == "__main__":
-       spark = SparkSession.builder.appName("MyApp").getOrCreate()
-   
-       tableName = "streamingtable"
-       deltaTablePath = "Tables/" + tableName
-   
-       df = spark.readStream.format("rate").option("rowsPerSecond", 1).load()
 
-       query = df.writeStream.outputMode("append").format("delta").option("path", deltaTablePath).option("checkpointLocation", deltaTablePath + "/checkpoint").start()
-       query.awaitTermination()
+   if __name__ == "__main__":
+    # Start Spark session
+    spark = SparkSession.builder \
+        .appName("RateStreamToDelta") \
+        .getOrCreate()
+
+    # Table name used for logging
+    tableName = "streamingtable"
+
+    # Define Delta Lake storage path
+    deltaTablePath = f"Tables/{tableName}"
+
+    # Create a streaming DataFrame using the rate source
+    df = spark.readStream \
+        .format("rate") \
+        .option("rowsPerSecond", 1) \
+        .load()
+
+    # Write the streaming data to Delta
+    query = df.writeStream \
+        .format("delta") \
+        .outputMode("append") \
+        .option("path", deltaTablePath) \
+        .option("checkpointLocation", f"{deltaTablePath}/_checkpoint") \
+        .start()
+
+    # Keep the stream running
+    query.awaitTermination()
    ```
 
 1. Save your script as Python file (.py) in your local computer.
@@ -70,11 +89,11 @@ Use the following steps to set the retry policy for your Spark job definition:
 
 1. From the top menu, select the **Setting** icon.
 
-   :::image type="content" source="media\get-started-streaming\sjd-settings.png" alt-text="Screenshot showing Spark Job Definition settings icon.":::
+   :::image type="content" source="media\get-started-streaming\sjd-settings.png" alt-text="Screenshot showing Spark Job Definition settings icon." lightbox="media\get-started-streaming\sjd-settings.png":::
 
 1. Open the **Optimization** tab and set **Retry Policy** trigger **On**.
 
-   :::image type="content" source="media\get-started-streaming\sjd-retry-on.png" alt-text="Screenshot showing Spark Job Definition optimization tab.":::
+   :::image type="content" source="media\get-started-streaming\sjd-retry-on.png" alt-text="Screenshot showing Spark Job Definition optimization tab." lightbox="media\get-started-streaming\sjd-retry-on.png":::
 
 1. Define maximum retry attempts or check **Allow unlimited attempts**.
 
@@ -87,17 +106,19 @@ Use the following steps to set the retry policy for your Spark job definition:
 
 1. From the top menu, select the **Run** icon.
 
-   :::image type="content" source="media\get-started-streaming\sjd-run.png" alt-text="Screenshot showing Spark Job Definition run icon.":::
+   :::image type="content" source="media\get-started-streaming\sjd-run.png" alt-text="Screenshot showing Spark Job Definition run icon." lightbox="media\get-started-streaming\sjd-run.png":::
 
 1. Verify if the **Spark Job definition** was submitted successfully and running.
 
 ## View data using a SQL analytics endpoint
 
-1. In workspace view, select your Lakehouse.
+After the script runs, a table named *streamingtable* with *timestamp* and *value* columns is created in the lakehouse. You can view the data using the SQL analytics endpoint:
 
-1. From the right corner, select **Lakehouse** and select **SQL analytics endpoint**.
+1. From the workspace, open your Lakehouse.
 
-1. In the SQL analytics endpoint view under **Tables**, select the table that your script uses to land data. You can then preview your data from the SQL analytics endpoint.
+1. Switch to **SQL analytics endpoint** from the top-right corner.
+
+1. From the left-navigation pane, expand **Schemas > dbo >Tables**, select *streamingtable* to preview the data.
 
 ## Related content
 

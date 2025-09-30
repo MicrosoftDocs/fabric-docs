@@ -1,6 +1,6 @@
 ---
-title: "Load data with data pipelines into SQL database"
-description: Learn how to load data with data pipelines into SQL database in Fabric.
+title: "Load data with pipelines into SQL database"
+description: Learn how to load data with pipelines into SQL database in Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur, dlevy
@@ -8,13 +8,13 @@ ms.date: 01/02/2025
 ms.topic: how-to
 ms.search.form: Ingesting data into SQL database
 ---
-# Load data with data pipelines into SQL database in Microsoft Fabric
+# Load data with pipelines into SQL database in Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
 In this tutorial, you create a new pipeline that loads sample data from an Azure SQL Database into a [SQL database in Fabric](overview.md).
 
-A data pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allow you to manage extract, transform, and load (ETL) activities instead of managing each one individually.
+A pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allow you to manage extract, transform, and load (ETL) activities instead of managing each one individually.
 
 ## Prerequisites
 
@@ -27,11 +27,11 @@ A data pipeline is a logical grouping of activities that together perform a data
 - For this walkthrough, we rely on opening ports on the source Azure SQL Database using the "Allow Azure services and resources to access this server" setting.
    - For heightened security, consider a gateway to transfer your data. For more information, see [How to access on-premises data sources in Data Factory](../../data-factory/how-to-access-on-premises-data.md).
 
-## Create data pipeline
+## Create pipeline
 
 1. In your workspace, select **+ New**, then **More options**.
-1. Under **Data Factory**, select **Data pipeline**.
-1. Once the data pipeline is created, under **Start with guidance**, choose **Copy data assistant**.
+1. Under **Data Factory**, select **Pipeline**.
+1. Once the pipeline is created, under **Start with guidance**, choose **Copy data assistant**.
 1. In the **Choose data source** page, select **Azure SQL Database**.
 1. Provide authentication for the connection to the source Azure SQL Database.
 1. For the destination, choose **Fabric SQL database** from the list in the **OneLake catalog**.

@@ -1,45 +1,44 @@
 ---
-title: Summarize text with the `ai.summarize` function
-description: Learn how to use the `ai.summarize` function to produce summaries of input text (either values from a single column of a DataFrame or values across all the columns).
-ms.author: scottpolly
-author: s-polly
+title: Summarize Text with the ai.summarize Function
+description: Learn how to to produce summaries of input text by using the ai.summarize function.
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.date: 02/26/2025
-
 ms.search.form: AI functions
 ---
 
-# Summarize text with the `ai.summarize` function
+# Summarize text with the ai.summarize function
 
-The `ai.summarize` function uses Generative AI to product summaries of input text—either values from one column of a DataFrame or values across all the columns—with a single line of code.
+The `ai.summarize` function uses generative AI to produce summaries of input text. It uses only a single line of code. The function can either summarize values from one column of a DataFrame or values across all the columns.
 
-AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
+AI functions improve data engineering by using the power of large language models in Microsoft Fabric. To learn more, see [this overview article](./overview.md).
 
 > [!IMPORTANT]
-> This feature is in [preview](../../get-started/preview.md), for use in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
+> This feature is in [preview](../../get-started/preview.md), for use in the [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
-> - By default, AI functions are currently powered by the **gpt-3.5-turbo (0125)** model. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
+> - By default, the *gpt-4o-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
+> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with the built-in AI endpoint in Fabric.
 
-## Use `ai.summarize` with pandas
+## Use ai.summarize with pandas
 
-The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column to summarize each row value from that column alone. Alternatively, you can call the `ai.summarize` function on an entire DataFrame, to summarize values across all the columns.
+The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. To summarize each row value from that column alone, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column. You can also call the `ai.summarize` function on an entire DataFrame to summarize values across all the columns.
 
 The function returns a pandas Series that contains summaries, which can be stored in a new DataFrame column.
 
 ### Syntax
 
-# [Summarizing values from a single column](#tab/column-summary)
+# [Summarize values from a single column](#tab/column-summary)
 
 ```python
 df["summaries"] = df["text"].ai.summarize()
 ```
 
-# [Summarizing values across all columns](#tab/dataframe-summary)
+# [Summarize values across all columns](#tab/dataframe-summary)
 
 ```python
 df["summaries"] = df.ai.summarize()
@@ -53,15 +52,15 @@ None
 
 ### Returns
 
-A [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains summaries for each input text row. If the input text is `null`, the result is `null`.
+The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains summaries for each input text row. If the input text is `null`, the result is `null`.
 
 ### Example
 
-# [Summarizing values from a single column](#tab/column-summary)
+# [Summarize values from a single column](#tab/column-summary)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df= pd.DataFrame([
         ("Microsoft Teams", "2017",
@@ -82,11 +81,11 @@ df["summaries"] = df["description"].ai.summarize()
 display(df)
 ```
 
-# [Summarizing values across all columns](#tab/dataframe-summary)
+# [Summarize values across all columns](#tab/dataframe-summary)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df= pd.DataFrame([
         ("Microsoft Teams", "2017",
@@ -109,7 +108,7 @@ display(df)
 
 ---
 
-## Use `ai.summarize` with PySpark
+## Use ai.summarize with PySpark
 
 The `ai.summarize` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). If you specify the name of an existing input column as a parameter, the function summarizes each value from that column alone. Otherwise, the function summarizes values across all columns of the DataFrame, row by row.
 
@@ -117,13 +116,13 @@ The function returns a new DataFrame with summaries for each input text row, fro
 
 ### Syntax
 
-# [Summarizing values from a single column](#tab/column-summary)
+# [Summarize values from a single column](#tab/column-summary)
 
 ```python
 df.ai.summarize(input_col="text", output_col="summaries")
 ```
 
-# [Summarizing values across all columns](#tab/dataframe-summary)
+# [Summarize values across all columns](#tab/dataframe-summary)
 
 ```python
 df.ai.summarize(output_col="summaries")
@@ -133,23 +132,23 @@ df.ai.summarize(output_col="summaries")
 
 ### Parameters
 
-| **Name** | **Description** |
+| Name | Description |
 |---|---|
-| **`input_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column with input text values to summarize. If this parameter isn't set, the function summarizes values across all columns in the DataFrame, instead of values from a specific column. |
-| **`output_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store summaries for each input text row. If this parameter isn't set, a default name is generated for the output column. |
-| **`error_col`** <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each input text row. If this parameter isn't set, a default name is generated for the error column. If an input row has no errors, the value in this column is `null`. |
+| `input_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column with input text values to summarize. If you don't set this parameter, the function summarizes values across all columns in the DataFrame, instead of values from a specific column. |
+| `output_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store summaries for each input text row. If you don't set this parameter, a default name generates for the output column. |
+| `error_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each input text row. If you don't set this parameter, a default name generates for the error column. If an input row has no errors, the value in this column is `null`. |
 
 ### Returns
 
-A [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column that contains summarized text for each input text row. If the input text is `null`, the result is `null`. If no input column is specified, the function summarizes values across all columns in the DataFrame.
+The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) that includes a new column that contains summarized text for each input text row. If the input text is `null`, the result is `null`. If no input column is specified, the function summarizes values across all columns in the DataFrame.
 
 ### Example
 
-# [Summarizing values from a single column](#tab/column-summary)
+# [Summarize values from a single column](#tab/column-summary)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("Microsoft Teams", "2017",
@@ -170,11 +169,11 @@ summaries = df.ai.summarize(input_col="description", output_col="summaries")
 display(summaries)
 ```
 
-# [Summarizing values across all columns](#tab/dataframe-summary)
+# [Summarize values across all columns](#tab/dataframe-summary)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("Microsoft Teams", "2017",
@@ -206,6 +205,6 @@ display(summaries)
 - Fix grammar with [`ai.fix_grammar`](./fix-grammar.md).
 - Translate text with [`ai.translate`](./translate.md).
 - Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
-- To learn more about the full set of AI functions, visit [this overview article](./overview.md).
-- Learn how to customize the configuration of AI functions [here](./configuration.md).
+- Learn more about the [full set of AI functions](./overview.md).
+- Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

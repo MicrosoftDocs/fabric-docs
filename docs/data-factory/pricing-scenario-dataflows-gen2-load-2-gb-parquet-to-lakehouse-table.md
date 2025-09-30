@@ -2,8 +2,8 @@
 title: Pricing scenario - Dataflow Gen2 loads 2 GB of Parquet data to a Lakehouse table
 description: This article provides an example pricing scenario for loading 2 GB of Parquet data to a Lakehouse Table using Dataflow Gen2 for Data Factory in Microsoft Fabric.
 ms.reviewer: whhender
-ms.author: adija
-author: adityajain2408
+ms.author: whhender
+author: whhender
 ms.topic: conceptual
 ms.date: 11/15/2023
 ms.custom: 
@@ -64,6 +64,6 @@ The High Scale Dataflow Compute Meter recorded negligible activity. Standard Com
 
 ## Related content
 
-- [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
+- [Pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)

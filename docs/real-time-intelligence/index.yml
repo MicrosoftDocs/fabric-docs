@@ -62,14 +62,10 @@ landingContent:
         links:
           - text: Visualize data in a Real-Time dashboard
             url: dashboard-real-time-create.md
-          - text: Explore data in Real-Time Dashboard tiles
-            url: dashboard-explore-data.md
-          - text: Customize Real-Time Dashboard visuals
-            url: dashboard-visuals-customize.md
-      - linkListType: how-to-guide
-        links:
           - text: Visualize data in a Power BI report
             url: create-powerbi-report.md
+          - text: Visualize spatial data on a map
+            url: ./map/create-map.md
 
   # Card
   - title: Get data
@@ -211,3 +207,16 @@ landingContent:
               url: monitor-logs-ingestion-results.md
             - text: Query logs
               url: monitor-logs-query.md
+  
+  # Card
+  - title: Build AI agents
+    linkLists:
+        - linkListType: overview
+          links:
+            - text: Fabric RTI MCP Server (preview)
+              url: mcp-overview.md 
+        - linkListType: how-to-guide
+          links:
+          - text: Use MCP with Eventhouse
+            url:  mcp-eventhouse.md
+              

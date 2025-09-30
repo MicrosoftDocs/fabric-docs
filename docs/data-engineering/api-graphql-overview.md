@@ -1,38 +1,39 @@
 ---
-title: Microsoft Fabric API for GraphQL overview
-description: Learn about the Microsoft Fabric API for GraphQL, including supported data sources and how to expose them to a GraphQL item.
+title: What is Microsoft Fabric API for GraphQL?  
+description: Discover how the Microsoft Fabric API for GraphQL simplifies querying multiple data sources using a familiar API technology, enabling faster application development.
 ms.reviewer: sngun
-ms.author: sngun
-author: snehagunda
+ms.author: eur
+author: eric-urban
 ms.topic: overview
-ms.custom:
+ms.custom: null
 ms.search.form: GraphQL API Overview
-ms.date: 05/21/2024
+ms.date: 08/20/2025
+#customer intent: As a developer, I want to understand the Microsoft Fabric API for GraphQL so that I can efficiently query multiple data sources using a familiar API technology.
 ---
 
 # What is Microsoft Fabric API for GraphQL?
 
-Microsoft Fabric API for GraphQL is a data access layer that enables quick and efficient querying of multiple data sources with a widely adopted and familiar API technology. The API allows you to abstract the specifics of backend data sources so you can concentrate on your application's logic, and provide all the data a client needs in a single call. GraphQL uses a simple query language and easily manipulated result sets, which minimizes the time it takes for applications to access your data in Fabric.
+Microsoft Fabric API for GraphQL is a data access layer that lets you query multiple data sources quickly and efficiently using a widely adopted and familiar API technology. The API abstracts the specifics of backend data sources so you focus on your application's logic and provide all the data a client needs in a single call. GraphQL uses a simple query language and easily manipulates result sets, minimizing the time applications take to access your data in Fabric.
 
 ## Expose data through the API for GraphQL
 
-Exposing data sources to a GraphQL item in Microsoft Fabric is quick and easy. Select the data source you would like to expose and then indicate which objects within that data source you want to present through the API. Optionally, define any relationships between the fields that you choose. After you complete these steps, your API endpoint is ready to accept queries.
+Exposing data sources to a GraphQL item in Microsoft Fabric is simple. Select the data source you want to expose, and indicate which objects within that data source you want to present through the API. Optionally, define relationships between the fields you choose. After completing these steps, your API endpoint is ready to accept queries.
 
 ## Supported data sources
 
-Currently, the following supported data sources can be exposed through the Fabric API for GraphQL:
+Currently the following supported data sources are exposed through the Fabric API for GraphQL:
 
 - Microsoft Fabric Data Warehouse
 - Microsoft Fabric SQL database
 - Microsoft Fabric Lakehouse via SQL Analytics Endpoint
 - Microsoft Fabric Mirrored Databases via SQL Analytics Endpoint, including:
-    - Mirrored databases from Azure SQL Database
-    - Mirrored databases from Azure SQL Managed Instance
-    - Mirrored databases from Azure Cosmos DB
-    - Mirrored databases from Microsoft Fabric SQL Database
-    - Mirrored databases from Azure Databricks
-    - Mirrored databases from Snowflake
-    - Open mirrored databases
+  - Azure SQL Database
+  - Azure SQL Managed Instance
+  - Azure Cosmos DB
+  - Microsoft Fabric SQL Database
+  - Azure Databricks
+  - Snowflake
+  - Open mirrored databases
 - Azure SQL database
 - Datamart
 
@@ -40,29 +41,29 @@ Currently, the following supported data sources can be exposed through the Fabri
 
 The Fabric API for GraphQL includes:
 
-- Automatic data source schema discovery.
+- Automatic discovery of data source schemas.
 - Automatic generation of queries and mutations.
 - Automatic generation of resolvers.
 - Automatic generation of local testing code.
-- Support for views for SQL databases and data warehouses.
-- Support for stored procedures for SQL databases and data warehouses.
+- Support for views in SQL databases and data warehouses.
+- Support for stored procedures in SQL databases and data warehouses.
 - Support for multiple data sources with corresponding fan-out queries.
-- Ability to create one-to-one, one-to-many, and many-to-many relationships.
-- Ability to select individual objects to be exposed from a data source.
-- Ability to expose specific columns from data source tables.
-- Ability to monitor API behavior with a dashboard and request logging.
+- Tools to create one-to-one, one-to-many, and many-to-many relationships.
+- Options to select individual objects to expose from a data source.
+- Options to expose specific columns from data source tables.
+- Tools to monitor API behavior with a dashboard and request logging.
 
 ## Interactive editing experience
 
-API for GraphQL includes an editor where you can easily develop and test your queries or mutations. Some of the capabilities of the editor include:
+The API for GraphQL includes an editor that lets you develop and test your queries and mutations easily. The editor's capabilities include:
 
-- A results pane to visualize the output of queries or mutations
-- Support for query or mutation parameters
-- Intellisense with support for GraphQL syntax and schema object names
- 
+- A results pane to visualize the output of queries and mutations
+- Support for query and mutation parameters
+- Intellisense that supports GraphQL syntax and schema object names
+
 ## Limitations
 
-Please refer to [ API for GraphQL Limitations](api-graphql-limits.md) for more information.
+Refer to [API for GraphQL limitations](api-graphql-limits.md) for more information.
 
 ## Related content
 

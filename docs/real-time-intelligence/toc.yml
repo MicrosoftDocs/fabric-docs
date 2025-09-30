@@ -31,7 +31,7 @@ items:
     href: sample-end-to-end.md
 - name: Tutorials
   items:
-  - name: End to end tutorial - Real-Time-Intelligence
+  - name: End to end tutorial
     items:
     - name: End to end tutorial - Introduction
       href: tutorial-introduction.md
@@ -51,9 +51,9 @@ items:
       href: tutorial-7-set-alert.md
     - name: 8- Clean up resources
       href: tutorial-8-clean-up-resources.md
-  - name: Digital twin builder in Real-Time Intelligence tutorial
+  - name: Digital twin builder tutorial
     items: 
-      - name: Digital twin builder in Real-Time Intelligence tutorial - Introduction
+      - name: Digital twin builder tutorial - Introduction
         href: digital-twin-builder/tutorial-rti-0-introduction.md
       - name: 1- Upload contextual data
         href: digital-twin-builder/tutorial-rti-1-upload-contextual-data.md
@@ -87,8 +87,6 @@ items:
     items:
     - name: Eventstream Overview
       href: event-streams/overview.md
-    - name: What's new in Fabric event streams?
-      href: event-streams/whats-new.md
     - name: Eventstreams capacity consumption
       href: event-streams/monitor-capacity-consumption.md
     - name: Create eventstreams
@@ -103,7 +101,7 @@ items:
         href: event-streams/edit-publish.md
       - name: Route events based on content
         href: event-streams/route-events-based-on-content.md
-    - name: Add sources to eventstreams
+    - name: Add source connectors to eventstreams
       items:
       - name: Add and manage an event source
         href: event-streams/add-manage-eventstream-sources.md
@@ -157,7 +155,7 @@ items:
         href: event-streams/add-source-mqtt.md
       - name: Solace PubSub+
         href: event-streams/add-source-solace-pub-sub.md
-    - name: Add destinations to eventstreams
+    - name: Add destination connectors to eventstreams
       items:
       - name: Add and manage a destination
         href: event-streams/add-manage-eventstream-destinations.md
@@ -209,14 +207,16 @@ items:
           href: event-streams/api-update-eventstream-definition.md
     - name: Security
       items:
-      - name: Use managed private endpoints
+      - name: Secure outbound via managed private endpoints
         href: event-streams/set-up-private-endpoint.md
+      - name: Secure inbound via tenant and workspace private links
+        href: event-streams/set-up-tenant-workspace-private-links.md
       - name: Authenticate an application using Entra ID
         href: event-streams/custom-endpoint-entra-id-auth.md
       - name: Authenticate with a managed identity
         href: event-streams/connect-using-managed-identity.md
       - name: Connect to streaming sources in private network 
-        href: event-streams/connect-connecots-in-virtual-network-on-premises.md        
+        href: event-streams/connect-connecots-in-virtual-network-on-premises.md
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
@@ -499,18 +499,6 @@ items:
             href: /stream-analytics-query/where-azure-stream-analytics
           - name: WITH
             href: /stream-analytics-query/with-azure-stream-analytics
-      - name: Time Management
-        items:
-          - name: Time Management Overview
-            href: /stream-analytics-query/time-management-azure-stream-analytics
-          - name: System.Timestamp
-            href: /stream-analytics-query/system-timestamp-stream-analytics
-          - name: TIMESTAMP BY
-            href: /stream-analytics-query/timestamp-by-azure-stream-analytics
-          - name: Time Skew Policies
-            href: /stream-analytics-query/time-skew-policies-azure-stream-analytics
-      - name: Event Delivery Guarantees
-        href: /stream-analytics-query/event-delivery-guarantees-azure-stream-analytics
   - name: Get data in an Eventhouse
     items:
     - name: Get data overview
@@ -533,7 +521,7 @@ items:
       href: get-data-eventstream.md
     - name: Get data from Real-Time hub
       href: get-data-real-time-hub.md
-    - name: Configure KQL Database in a data pipeline
+    - name: Configure KQL Database in a pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
     - name: Connect to KQL Database in dataflows
       href: ../data-factory/connector-kusto-dataflows.md
@@ -578,7 +566,7 @@ items:
       - name: Splunk Universal Forwarder
         href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
       - name: Telegraf
-        href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rti&pivots=fabric
+        href: get-data-telegraf.md
 - name: Store data
   items:
   - name: Eventhouse
@@ -591,6 +579,8 @@ items:
       href: eventhouse-deploy-with-fabric-api.md
     - name: Manage and monitor an eventhouse
       href: manage-monitor-eventhouse.md
+    - name: Query cold data with hot windows
+      href: query-cold-data-hot-windows.md
   - name: KQL Database
     items:
     - name: Create a KQL database
@@ -641,6 +631,12 @@ items:
           href: query-acceleration-overview.md
         - name: Accelerate queries over OneLake shortcuts
           href: query-acceleration.md
+      - name: Eventhouse endpoint for Lakehouse
+        href: eventhouse-as-endpoint.md
+      - name: External tools
+        items: 
+        - name: Query Fabric OneLake Delta tables from Snowflake
+          href: query-onelake-from-snowflake.md
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
     href: real-time-intelligence-consumption.md
@@ -648,71 +644,86 @@ items:
     href: eventhouse-compute-observability.md
 - name: Model data
   items:
-  - name: Get started with digital twin builder
+  - name: Digital twin builder
     items:
-    - name: What is digital twin builder?
-      href: digital-twin-builder/overview.md
-    - name: Digital twin builder tutorial
+    - name: Get started with digital twin builder
       items:
-      - name: Tutorial introduction
-        href: digital-twin-builder/tutorial-0-introduction.md
-      - name: 1- Set up resources
-        href: digital-twin-builder/tutorial-1-set-up-resources.md
-      - name: 2- Add entity types and map data
-        href: digital-twin-builder/tutorial-2-add-entities-map-data.md
-      - name: 3- Define relationship types
-        href: digital-twin-builder/tutorial-3-define-relationships.md
-      - name: 4- Explore your ontology
-        href: digital-twin-builder/tutorial-4-explore-ontology.md
-      - name: 5- Create a Power BI report
-        href: digital-twin-builder/tutorial-5-power-bi-report.md
-      - name: 6- Clean up resources
-        href: digital-twin-builder/tutorial-6-clean-up-resources.md
-    - name: Role-based access control
-      href: digital-twin-builder/overview-rbac.md
-  - name: Concepts
+      - name: What is digital twin builder?
+        href: digital-twin-builder/overview.md
+      - name: Digital twin builder tutorial
+        items:
+        - name: Tutorial introduction
+          href: digital-twin-builder/tutorial-0-introduction.md
+        - name: 1- Set up resources
+          href: digital-twin-builder/tutorial-1-set-up-resources.md
+        - name: 2- Add entity types and map data
+          href: digital-twin-builder/tutorial-2-add-entities-map-data.md
+        - name: 3- Define relationship types
+          href: digital-twin-builder/tutorial-3-define-relationships.md
+        - name: 4- Explore your ontology
+          href: digital-twin-builder/tutorial-4-explore-ontology.md
+        - name: 5- Create a Power BI report
+          href: digital-twin-builder/tutorial-5-power-bi-report.md
+        - name: 6- Clean up resources
+          href: digital-twin-builder/tutorial-6-clean-up-resources.md
+      - name: Role-based access control
+        href: digital-twin-builder/overview-rbac.md
+    - name: Concepts
+      items:
+      - name: Using the semantic canvas
+        href: digital-twin-builder/concept-semantic-canvas.md
+      - name: Modeling
+        href: digital-twin-builder/concept-modeling.md
+      - name: Mapping data to entity types
+        href: digital-twin-builder/concept-mapping.md
+      - name: Flows
+        href: digital-twin-builder/concept-flows.md
+      - name: Integrating with Fabric tools
+        href: digital-twin-builder/concept-integrating-fabric.md
+      - name: Integrating with machine learning
+        href: digital-twin-builder/concept-integrating-machine-learning.md
+    - name: Build and explore models
+      items:
+      - name: Manage entity types and mappings
+        href: digital-twin-builder/model-manage-mappings.md
+      - name: Perform contextualization
+        href: digital-twin-builder/model-perform-contextualization.md
+      - name: Search and visualize
+        href: digital-twin-builder/explore-search-visualize.md
+      - name: Connect to a Real-Time Dashboard
+        href: digital-twin-builder/explore-connect-dashboard.md
+    - name: Digital twin builder resources
+      items:
+      - name: Glossary
+        href: digital-twin-builder/resources-glossary.md
+      - name: Troubleshooting
+        href: digital-twin-builder/resources-troubleshooting.md
+      - name: Capacity usage
+        href: digital-twin-builder/resources-capacity-usage.md
+      - name: FAQ
+        href: digital-twin-builder/resources-faq.md
+      - name: Digital twin builder REST API
+        href: /rest/api/fabric/digitaltwinbuilder/items
+      - name: Digital twin builder flow REST API
+        href: /rest/api/fabric/digitaltwinbuilderflow/items
+  - name: Event schema sets
     items:
-    - name: Using the semantic canvas
-      href: digital-twin-builder/concept-semantic-canvas.md
-    - name: Modeling
-      href: digital-twin-builder/concept-modeling.md
-    - name: Mapping data to entity types
-      href: digital-twin-builder/concept-mapping.md
-    - name: Flows
-      href: digital-twin-builder/concept-flows.md
-    - name: Integrating with Fabric tools
-      href: digital-twin-builder/concept-integrating-fabric.md
-    - name: Integrating with machine learning
-      href: digital-twin-builder/concept-integrating-machine-learning.md
-  - name: Build and explore models
-    items:
-    - name: Manage entity types and mappings
-      href: digital-twin-builder/model-manage-mappings.md
-    - name: Perform contextualization
-      href: digital-twin-builder/model-perform-contextualization.md
-    - name: Search and visualize
-      href: digital-twin-builder/explore-search-visualize.md
-    - name: Connect to a Real-Time Dashboard
-      href: digital-twin-builder/explore-connect-dashboard.md
-  - name: Digital twin builder resources
-    items:
-    - name: Glossary
-      href: digital-twin-builder/resources-glossary.md
-    - name: Troubleshooting
-      href: digital-twin-builder/resources-troubleshooting.md
-    - name: Capacity usage
-      href: digital-twin-builder/resources-capacity-usage.md
-    - name: FAQ
-      href: digital-twin-builder/resources-faq.md
-    - name: Digital twin builder REST API
-      href: /rest/api/fabric/digitaltwinbuilder/items
-    - name: Digital twin builder flow REST API
-      href: /rest/api/fabric/digitaltwinbuilderflow/items
+    - name: Schema Registry in Real-Time hub
+      href: schema-sets/schema-registry-overview.md
+    - name: Create and manage event schema sets
+      href: schema-sets/create-manage-event-schema-sets.md
+    - name: Create and manage schemas in schema sets
+      href: schema-sets/create-manage-event-schemas.md
+    - name: Create and manage schemas in Real-Time hub
+      href: schema-sets/create-manage-event-schemas-real-time-hub.md
+    - name: Use schemas in eventstreams
+      href: schema-sets/use-event-schemas.md
+    - name: Known limitations
+      href: schema-sets/schema-registry-limitations.md      
 - name: Analyze and train data
   items:
   - name: Copilot for Writing KQL Queries
-    displayName: KQL queryset, kusto query language, natural language
-    href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
+    href: copilot-writing-queries.md
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
@@ -742,9 +753,17 @@ items:
       href: vector-database-eventhouse.md
   - name: Time series anomaly detection
     items:
-    - name: Univariate anomaly detection and forecasting
+    - name: Anomaly detection using Real-Time Intelligence
+      items:
+      - name: Overview of anomaly detection
+        href: anomaly-detection.md
+      - name: Anomaly detection models
+        href: anomaly-detection-models.md
+      - name: Troubleshoot anomaly detection
+        href: troubleshoot-anomaly-detection.md
+    - name: Univariate anomaly detection using KQL
       href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
-    - name: Multivariate anomaly detection
+    - name: Multivariate anomaly detection using Spark
       items:
       - name: Multivariate anomaly detection overview
         href: multivariate-anomaly-overview.md
@@ -764,10 +783,10 @@ items:
     items:
     - name: Real-Time Dashboards Overview
       href: real-time-dashboards-overview.md
-    - name: Generate Real-Time Dashboard Using Copilot
-      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
     - name: Create a Real-Time Dashboard
       href: dashboard-real-time-create.md
+    - name: Generate Real-Time Dashboard Using Copilot
+      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
     - name: Real-Time Dashboard permissions
       href: dashboard-permissions.md
     - name: Explore data in Real-Time Dashboard tiles
@@ -789,6 +808,18 @@ items:
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
       href: power-bi-data-connector.md
+  - name: Map
+    items:
+    - name: Create a map
+      href: map/create-map.md
+    - name: Customize a map
+      href: map/customize-map.md
+    - name: Share Map
+      href: map/share-map.md
+    - name: Create a tileset
+      href: map/spatial-job-create-tile-sets.md
+    - name: Manage Map permissions
+      href: map/manage-map-permissions.md
 - name: Track data
   items:
   - name: What is Activator?
@@ -797,6 +828,24 @@ items:
     items: 
     - name: Create and activate an Activator rule
       href: data-activator/activator-tutorial.md
+  - name: Concepts
+    items:
+    - name: Activator rules
+      href: data-activator/activator-rules-overview.md
+    - name: Detection conditions for Activator
+      href: data-activator/activator-detection-conditions.md
+    - name: Activator rule latency
+      href: data-activator/activator-latency.md
+    - name: Activator limitations
+      href: data-activator/activator-limitations.md
+    - name: Activator capacity usage
+      href: data-activator/activator-capacity-usage.md
+      displayName: capacity, usage, consumption, billing
+    - name: Activator throttling
+      href: data-activator/activator-throttling-effects.md
+    - name: Activator query frequency
+      href: data-activator/activator-query-frequency.md      
+      displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
   - name: Create alerts
     items:
     - name: Create alerts from a Real-Time Dashboard
@@ -825,30 +874,8 @@ items:
       href: data-activator/activator-trigger-fabric-items.md
     - name: Use custom actions to trigger Power Automate flows
       href: data-activator/activator-trigger-power-automate-flows.md
-  - name: Concepts
-    items:
-    - name: Activator rules
-      href: data-activator/activator-rules-overview.md
-    - name: Detection conditions for Activator
-      href: data-activator/activator-detection-conditions.md
-    - name: Activator rule latency
-      href: data-activator/activator-latency.md
-    - name: Activator limitations
-      href: data-activator/activator-limitations.md
-    - name: Activator capacity usage
-      href: data-activator/activator-capacity-usage.md
-      displayName: capacity, usage, consumption, billing
-    - name: Activator throttling
-      href: data-activator/activator-throttling-effects.md
-      displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
   - name: Troubleshoot errors
     href: data-activator/activator-troubleshooting.md
-- name: Analyze data with Copilot
-  items:
-    - name: Copilot for Writing KQL Queries
-      href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Generate Real-Time Dashboard Using Copilot
-      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
 - name: Monitor
   items:
     - name: Eventhouse monitoring
@@ -863,13 +890,21 @@ items:
       href: monitor-logs-ingestion-results.md
     - name: Query logs
       href: monitor-logs-query.md
+- name: Build AI agents
+  displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
+  items: 
+    - name: Fabric RTI MCP Server (preview)
+      href: mcp-overview.md 
+    - name: Use MCP with Eventhouse
+      href: mcp-eventhouse.md
 - name: Migrate
   items:
-  - name: From Azure Synapse Data Explorer
+  - name: Migrate from Azure Data Explorer
+    href: migrate-azure-data-explorer.md
+  - name: Migrate from Azure Synapse Data Explorer
     href: migrate-synapse-data-explorer.md
-  - name: API endpoints
-    items:
-    - name: Validate migration
+    items: 
+    - name: Validate migration using REST API endpoints
       href: migrate-api-validate-synapse-data-explorer.md
     - name: Migrate to Eventhouse
       href: migrate-api-to-eventhouse.md

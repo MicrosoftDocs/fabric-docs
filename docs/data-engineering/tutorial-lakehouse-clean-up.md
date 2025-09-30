@@ -1,9 +1,9 @@
 ---
 title: Lakehouse tutorial - clean up resources
 description: As a final step in the tutorial, clean up your resources. Learn how to delete individual reports, pipelines, warehouses, or remove the entire workspace.
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
+ms.reviewer: arali
+ms.author: eur
+author: eric-urban
 ms.topic: tutorial
 ms.custom:
 ms.date: 07/19/2024
@@ -23,7 +23,7 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
 1. Select your workspace, the **Fabric Lakehouse Tutorial**, from the navigation menu to open the workspace item view.  
 
-   :::image type="content" source="media\tutorial-lakehouse-clean-up\select-workspace-item.png" alt-text="Screenshot of the left navigation menu, showing where to select your workspace.":::
+   :::image type="content" source="media\tutorial-lakehouse-clean-up\select-workspace-item.png" alt-text="Screenshot of the left navigation menu, showing where to select your workspace." lightbox="media/tutorial-lakehouse-clean-up/select-workspace-item.png":::
 
 1. Select **Workspace settings**.
 

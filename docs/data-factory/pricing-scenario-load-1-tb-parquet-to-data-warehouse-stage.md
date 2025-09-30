@@ -1,17 +1,17 @@
 ---
-title: Pricing scenario - Data pipelines load 1 TB of Parquet data to data warehouse with staging
+title: Pricing scenario - Pipelines load 1 TB of Parquet data to data warehouse with staging
 description: This article provides an example pricing scenario for loading 1 TB of Parquet data to a data warehouse with staging using Data Factory in Microsoft Fabric.
 ms.reviewer: whhender
-ms.author: adija
-author: adityajain2408
+ms.author: whhender
+author: whhender
 ms.topic: conceptual
 ms.custom: configuration
 ms.date: 06/16/2025
 ---
 
-# Pricing scenario using a data pipeline to load 1 TB of Parquet data to a data warehouse with staging
+# Pricing scenario using a pipeline to load 1 TB of Parquet data to a data warehouse with staging
 
-In this scenario, a Copy activity was used in a data pipeline to load 1 TB of Parquet table data stored in Azure Data Lake Storage (ADLS) Gen2 to a data warehouse with staging in Microsoft Fabric.
+In this scenario, a Copy activity was used in a pipeline to load 1 TB of Parquet table data stored in Azure Data Lake Storage (ADLS) Gen2 to a data warehouse with staging in Microsoft Fabric.
 
 The prices used in the following example are hypothetical and don’t intend to imply exact actual pricing. These are just to demonstrate how you can estimate, plan, and manage cost for Data Factory projects in Microsoft Fabric. Also, since Fabric capacities are priced uniquely across regions, we use the pay-as-you-go pricing for a Fabric capacity at US West 2 (a typical Azure region), at $0.18 per CU per hour. Refer here to [Microsoft Fabric - Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/) to explore other Fabric capacity pricing options.
 
@@ -39,6 +39,6 @@ The data movement operation utilized 267,480 CU seconds with a 1504.42 second (2
 
 ## Related content
 
-- [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
+- [Pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)

@@ -1,12 +1,13 @@
----
+﻿---
 title: Data science tutorial - get started
 description: Learn about the Data science tutorial, including an overview of the steps you follow through the series and details about the end-to-end scenario.
-ms.reviewer: None
-ms.author: scottpolly
-author: s-polly
+ms.reviewer: amjafari
+ms.author: lagayhar
+author: lgayhardt
 ms.topic: tutorial
-ms.custom:
+ms.custom: 
 ms.date: 04/21/2025
+reviewer: s-polly
 ---
 
 # Data science end-to-end scenario: introduction and architecture

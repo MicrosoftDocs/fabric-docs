@@ -2,15 +2,15 @@
 title: Reassign a workspace to a different capacity
 description: This article explains the meanings of the workspace license modes and how to reassign the workspace to a different capacity.
 ms.reviewer: liud
-ms.author: painbar
-author: paulinbar
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: overview
-ms.date: 05/12/2025
+ms.date: 09/18/2025
 #customer intent: As workspace admin, I want to understand what the workspace license mode options are and how to reassign the workspace to a different capacity.
 ---
 # Reassign a workspace to a different capacity
 
-When you create a workspace, it's assigned to a [capacity](../enterprise/licenses.md#capacity). The capacity that new workspaces are assigned to by default is determined by the capacity type and/or by the configuration of Fabric or capacity administrators. After you create a workspace, you can reassign it to a different capacity, if any are available, and if you have sufficient permissions to do so. You [reassign workspaces](#reassign-a-workspace-to-a-different-capacity) to different capacities using workspace license modes.
+When you create a workspace, it's assigned to a [capacity](../enterprise/licenses.md#capacity). The capacity that new workspaces are assigned to by default is determined by the capacity type and/or by the configuration of Fabric or capacity administrators. After a workspace is created, you can reassign it to another available capacity if you have the [workspace admin role](roles-workspaces.md) and the capacity admin or capacity contributor role. You reassign workspaces to other capacities by changing the workspace license mode.
 
 ## License modes and capacity types
 
@@ -53,3 +53,4 @@ You can reassign a workspace to a different capacity via workspace license modes
 
 * [Fabric licenses](/power-bi/enterprise/service-admin-licensing-organization#fabric-licenses)
 * [Moving data around](../admin/portal-workspaces.md#moving-data-around)
+* [Manage your Fabric capacity settings](../admin/capacity-settings.md?tabs=power-bi-premium#capacity-settings)

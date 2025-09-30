@@ -73,8 +73,10 @@
                 "data-science/**/*.yml": "data-science",
                 "data-warehouse/**/*.md": "data-warehouse",
                 "data-warehouse/**/*.yml": "data-warehouse",
-                "enterprise/**/*.md": "enterprise",
-                "enterprise/**/*.yml": "enterprise",
+                "database/cosmos-db/**/*.yml": "database-cosmos-db",
+                "database/cosmos-db/**/*.md": "database-cosmos-db",
+                "database/sql/**/*.yml": "database-sql",
+                "database/sql/**/*.md": "database-sql",                  
                 "get-started/**/*.yml": "get-started",
                 "get-started/**/*.md": "get-started",
                 "fundamentals/**/*.yml": "get-started",
@@ -165,10 +167,10 @@
                 "security/**/*.yml": "https://community.fabric.microsoft.com/powerbi"
             },
             "search.app": {
-                "get-started/**/*.md": [ 
+                "get-started/**/*.md": [
                     "fabric-powerbi-docs"
                 ],
-                "fundamentals/**/*.md": [ 
+                "fundamentals/**/*.md": [
                     "fabric-powerbi-docs"
                 ],
                 "admin/**/*.md": [
@@ -198,15 +200,19 @@
                 "databases/**/*.md": [
                     "ppac-fabric-databases"
                 ]
+            },
+            "zone_pivot_group_filename": {
+                "database/cosmos-db/**/*.md": "database/cosmos-db/zone-pivot-groups.json",
+                "database/cosmos-db/**/*.yml": "database/cosmos-db/zone-pivot-groups.json"
             }
         },
         "template": [],
         "dest": "fabric-docs",
         "rules": {
             "sensitive-language-sl": {
-                          "exclude": [
-                              "real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md"
-                          ]
+                "exclude": [
+                    "real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md"
+                ]
             }
         }
     }

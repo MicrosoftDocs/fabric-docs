@@ -33,25 +33,23 @@ Use **Rules** to specify the values you want to monitor in your events, the cond
 
 ### Select your rule data
 
-In the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] Explorer, select the property or eventstream to monitor in your rule. See [Create properties](#create-properties) later in this article for information on properties.
+In the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] Explorer, select the property or eventstream to monitor in your rule. See [Create properties](#create-properties) section for information on properties.
 
 Once you select a property or eventstream, you see a preview of the values for a sample of the instances of the object.
 
 ### Make a new Activator rule
 
-To create a new rule, from the ribbon, select **New rule**. Give it a new name by selecting the default rule name and editing it. The **Monitor** section of the rule is prepopulated with the data that you selected in Step 1.
-
-:::image type="content" source="media/activator-create-activators/activator-create-triggers-design-mode-01.png" alt-text="Screenshot of creating a new rule.":::
+To create a new rule, select the stream you just added and you should see a "Create rule" pane on the right hand side. The **Monitor** section of the rule is prepopulated with the data stream that you selected.
 
 ### Define the condition to detect
 
 Next, choose the type of condition that you want to detect. You can use conditions that check:
 
-- when a numeric value goes over or below a threshold (for example, temperature is greater than 30),
-- when a logical true/false value changes (for example, HasFault becomes True), or 
-- when a string value changes (for example, Status changes from InCompliance).
+- on each event, do an action
+- on each event when a value is met, do an action
+- on each event grouped by a field, do an action (for example, on each PackageId event when Temperature is greater than 30)
 
-:::image type="content" source="media/activator-create-activators/activator-create-triggers-design-mode-04.png" alt-text="Screenshot of choosing the alert condition.":::
+Finally, select whether you want the action performed to send you an email or send you a Teams message and select **Create**. The conditions and actions selected can be modified later on.
 
 The charts in the Definition tab updates to show a sample of the events that meet the conditions that you set.
 
@@ -65,7 +63,21 @@ Finally, use the **Action** section to choose what to do when the condition is d
 
 :::image type="content" source="media/activator-create-activators/data-activator-create-triggers-design-mode-06.png" alt-text="Screenshot of selecting an action when a condition is detected.":::
 
-Different action types have different parameters. Some of those parameters are: the email address you want to send to, the workflow you want to start, subject line, or additional information. You can also tag properties to add context to the actions you send. Note that if you summarize on the property in the Monitor card, the original value of the property will be sent in the action rather than the summarized value.
+Here are the supported action types:
+
+- **Email** - An email is sent to the specified recipients. 
+- **Teams** - A Teams message is sent to specified recipients, group chat, or channel. 
+- **Fabric item** - Executes the selected Fabric pipeline, Fabric notebook, Fabric Spark Job Definition.
+
+- **Custom action** - Activates a Power Automate flow. 
+
+:::image type="content" source="media/activator-create-activators/actions.png" alt-text="Screenshot of the Action section in the Activator user interface." lightbox="media/activator-create-activators/actions.png":::
+
+Different action types have different parameters. Some of those parameters are: the email address you want to send to, the Teams channel or group chat, the workflow you want to start, subject line, or additional information (**context**). For **Context**, you can select the additional properties to be included in the alert message. 
+
+You can also tag properties by entering `@` to add context to the actions you send. For example: `@bikeId`. 
+
+Note that if you summarize on the property in the Monitor card, the original value of the property will be sent in the action rather than the summarized value.
 
 You can also select **Edit action** to see an editor with a preview of the message that the action sends and options to add more information to the action.
 
@@ -98,7 +110,7 @@ To create a property, select the stream added to the object that you're interest
 
 Once you define a property, you can reference it from one or more rules. Here we reference the *Temperature* property *Too hot for medicine*.
 
-:::image type="content" source="media/activator-create-activators/activator-create-triggers-design-mode-11.png" alt-text="Screenshot of package too warm property for an alert."  lightbox="media/activator-create-activators/activator-create-triggers-design-mode-11.png":::
+:::image type="content" source="media/activator-create-activators/activator-create-triggers-design-mode-11.png" alt-text="Screenshot of package too warm property for an alert." lightbox="media/activator-create-activators/activator-create-triggers-design-mode-11.png":::
 
 ## Clean up resources
 

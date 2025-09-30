@@ -1,9 +1,9 @@
 ---
 title: Fabric API for GraphQL Performance Best Practices
 description: This article contains a list of performance best practices
-author: KoldBrewEd 
-ms.author: edlima
-ms.reviewer: snehagunda
+author: eric-urban
+ms.author: eur
+ms.reviewer: edlima
 ms.date: 05/16/2025
 ms.topic: conceptual
 ms.custom:
@@ -12,7 +12,7 @@ ms.search.form: Fabric API for GraphQL Performance Best Practices  # This value 
 
 # Fabric API for GraphQL performance best practices
 
-Microsoft Fabric’s API for GraphQL offers a powerful way to query data efficiently, but performance optimization is key to ensuring smooth and scalable performance. Whether you’re handling complex queries or optimizing response times, the following best practices help you get the best performance out of your GraphQL implementation and maximize your API efficiency in Fabric.
+Microsoft Fabric's API for GraphQL offers a powerful way to query data efficiently, but performance optimization is key to ensuring smooth and scalable performance. Whether you're handling complex queries or optimizing response times, the following best practices help you get the best performance out of your GraphQL implementation and maximize your API efficiency in Fabric.
 
 ## Regions
 
@@ -28,15 +28,15 @@ You can find your tenant region with the following steps:
 
 ### Capacity region
 
-1. Go to Microsoft Fabric portal, open the workspace which hosts your Fabric’s API for GraphQL.
+1. Go to Microsoft Fabric portal, open the workspace which hosts your Fabric's API for GraphQL.
 1. From **Workspace settings**, go to **License info**.
 1. You can find your capacity region information under **License capacity**.
 
-   :::image type="content" source="./media/api-graphql-performance/capacity-region.png" alt-text="Screenshot showing how to get the capacity region for your workspace.":::
+   :::image type="content" source="./media/api-graphql-performance/capacity-region.png" alt-text="Screenshot showing how to get the capacity region for your workspace." lightbox="media/api-graphql-performance/capacity-region.png":::
 
 ### Data source region
 
-1. If your data source is hosted in the Fabric platform, the workspace’s capacity region would be the data source region.
+1. If your data source is hosted in the Fabric platform, the workspace's capacity region would be the data source region.
 
 1. If your data source is outside the Fabric platform, for example an Azure SQL database, you should be able to find the regional information in the Azure portal.
 
@@ -75,7 +75,7 @@ Here's list of common issues that can impact API latency and performance.
 
 * Data source and Fabric capacity related setup.
   * You can think of API for GraphQL as a wrapper on top of your data sources. If your data source itself has performance issues due to the nature of its complexity, it's expected that API latencies can be high. When such cases happen, it's recommended to test querying your data sources directly for a more effective performance comparison with that of API for GraphQL.
-    * Follow this guide regarding how to choose a suitable data store for your business needs: [Fabric decision guide – choose a data store](../fundamentals/decision-guide-data-store.md#data-store-properties)
+    * Follow this guide regarding how to choose a suitable data store for your business needs: [Fabric decision guide – choose a data store](../fundamentals/decision-guide-data-store.md)
 
   * When accessing API for GraphQL, performance is going to be bound by the Fabric capacity SKU you have selected.
     * Refer to this general guidance about Fabric capacity SKU and its compute power: [Microsoft Fabric concepts](../enterprise/licenses.md#capacity)

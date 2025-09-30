@@ -2,8 +2,8 @@
 title: Learn how to create a lakehouse for Direct Lake in Microsoft Fabric
 
 description: Describes how to create a lakehouse for Direct Lake in Microsoft Fabric.
-author: davidiseminger 
-ms.author: davidi
+author: SnehaGunda 
+ms.author: sngun
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
@@ -36,7 +36,7 @@ Before getting started creating a lakehouse for Direct Lake, be sure to read [Di
 
 After creating a new lakehouse, you must then create at least one Delta table so Direct Lake can access some data. Direct Lake can read parquet-formatted files, but for the best performance, it's best to compress the data by using the VORDER compression method. VORDER compresses the data using the Power BI engine’s native compression algorithm. This way the engine can load the data into memory as quickly as possible.
 
-There are multiple options to load data into a lakehouse, including data pipelines and scripts. The following steps use PySpark to add a Delta table to a lakehouse based on an [Azure Open Dataset](/azure/open-datasets/dataset-catalog):
+There are multiple options to load data into a lakehouse, including pipelines and scripts. The following steps use PySpark to add a Delta table to a lakehouse based on an [Azure Open Dataset](/azure/open-datasets/dataset-catalog):
 
 1. In the newly created lakehouse, select **Open notebook**, and then select **New notebook**.
 

@@ -1,6 +1,6 @@
 ---
-title: Run a Fabric data pipeline and notebook using Apache Airflow DAG.
-description: Learn to run Microsoft Fabric data pipelines and notebooks using Apache Airflow DAG.
+title: Run a Fabric pipeline and notebook using Apache Airflow DAG.
+description: Learn to run Microsoft Fabric pipelines and notebooks using Apache Airflow DAG.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
@@ -9,12 +9,12 @@ ms.date: 12/18/2024
 ms.custom: airflows, sfi-image-nochange
 ---
 
-# Tutorial: Run a Fabric data pipeline and notebook using Apache Airflow DAGs
+# Tutorial: Run a Fabric pipeline and notebook using Apache Airflow DAGs
 
 > [!NOTE]
 > Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
-In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric item such as data pipelines and notebooks.
+In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric item such as pipelines and notebooks.
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ To get started, you must complete the following prerequisites:
 
    For more information, Refer to: [Configure user consent](/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
 
-- Ensure that the account used for generating the refresh tokens has contributor permissions on the workspace that contains the data pipeline and notebook.
+- Ensure that the account used for generating the refresh tokens has contributor permissions on the workspace that contains the pipeline and notebook.
 
 - Enable the Triggers in data workflows to allow the usage of deferrable operators.
    :::image type="content" source="media/apache-airflow-jobs/enable-triggerers.png" lightbox="media/apache-airflow-jobs/enable-triggerers.png" alt-text="Screenshot to enable triggers.":::
@@ -70,8 +70,8 @@ Before proceeding with the steps in this article, Save the following values from
 The first step in the authorization code flow is for the user to authorize the app to act on their behalf. By sending the 'GET' request to '/authorize' endpoint, Microsoft Entra ID signs the user in and requests their consent for the permissions that the app requests. Replace the placeholders with your values and paste the following URL in your browser. 
 
 The plugin requires the following scopes for authentication:
--  **itemType.Execute.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all artifacts of '\<itemtype\>' that the user has access to.
--  **itemType.Read.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all artifacts of type '\<itemType\>' that the user has access to.
+-  **itemType.Execute.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all items of '\<itemtype\>' that the user has access to.
+-  **itemType.Read.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all items of type '\<itemType\>' that the user has access to.
 -  **offline_access**: Standard OIDC scope requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
 ```http
 // Line breaks for legibility only
@@ -150,7 +150,7 @@ Content-type: application/json
 
 Apache Airflow connection is used to store the credentials required to authenticate with Microsoft Fabric APIs.
 
-1. Navigate to "View Airflow connections" to add a new Apace Airflow connection.
+1. Navigate to "View Airflow connections" to add a new Apache Airflow connection.
    :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-connection.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
 2. Add a new connection and fill the following details:

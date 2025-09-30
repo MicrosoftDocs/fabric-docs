@@ -6,6 +6,7 @@ ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
 ms.date: 06/17/2025
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -86,12 +87,12 @@ You can find the consumption rates for Dataflows Gen2 in [Dataflow Gen2 pricing 
 
 #### Pipelines
 
-You can find the consumption rates for Pipelines in [Data pipelines pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-pipelines.md).
+You can find the consumption rates for Pipelines in [Pipeline pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-pipelines.md).
 
 | Operation    | Description                                                                                                              | Item     | Azure billing meter | Type       |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------- | ---------- |
 | DataMovement | The amount of time used by the copy activity in a Data Factory pipeline divided by the number of data integration units  | Pipeline | Data Movement Capacity Usage CU | Background |
-| ActivityRun  | A Data Factory data pipeline activity execution                                                                          | Pipeline | Data Orchestration Capacity Usage CU | Background |
+| ActivityRun  | A Data Factory pipeline activity execution                                                                          | Pipeline | Data Orchestration Capacity Usage CU | Background |
 
 ### Databases
 
@@ -121,16 +122,25 @@ GraphQL operations are made up of requests performed on API for GraphQL items by
 
 ### Fabric User Data Functions
 
-[Fabric User Data Functions](https://aka.ms/ms-fabric-functions-docs) operations are made up of requests initiated by the Fabric portal, other Fabric artifacts, or client applications. Each request and response operation incurs a charge for the function execution, internal storage of the function metadata in OneLake, and associated read and write operations in OneLake.
+[Fabric User Data Functions](https://aka.ms/ms-fabric-functions-docs) operations are made up of requests initiated by the Fabric portal, other Fabric artifacts, or client applications. Each operation incurs a charge for the function execution, internal storage of the function metadata in OneLake, and associated read and write operations in OneLake.
 
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
-| User Data Functions Execution    | Compute charge for the execution of the function inside of the User Data Functions artifact. Memory consumption is allocated with a fixed 2GB used every second.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
+| User Data Functions Execution    | Compute charge for the execution of the function inside of the User Data Functions item. This operation results from running a function after a request from the Fabric portal, another Fabric item, or an external application.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
+| User Data Functions Portal Test    | Compute charge for the test execution of a function inside of the User Data Functions item. This operation results from testing a function in “Develop mode” during a test session. The test session has a minimum duration of 15 minutes.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
 | User Data Functions Static Storage | Static storage of internal function metadata in a service-managed OneLake account. This is calculated with the compressed size of the User Data Functions item metadata. This is the cost of creating User Data Functions items even if they’re not used.  | OneLake Storage | OneLake Storage | Background |
 | User Data Functions Static Storage Read | Read operation of internal function metadata stored in a service-managed OneLake account. This operation is executed every time a function is executed after a period of inactivity. | OneLake Read Operations | OneLake Read Operations | Background |
 | User Data Functions Static Storage Write | Writes and updates of internal function metadata stored in a system-managed OneLake account. This operation is executed every time the User Data Functions item is published. | OneLake Write Operations | OneLake Write Operations | Background |
 | User Data Functions Static Storage Iterative Read | Read operations for internal function metadata stored in a service-managed OneLake account. This operation is executed every time the User Data Functions are listed. | OneLake Iterative Read Operations | OneLake Iterative Read Operations | Background |
 | User Data Functions Static Storage Other Operations | Storage operations for related to various function metadata in a service-managed OneLake account. | OneLake Other Operations | OneLake Other Operations | Background |
+
+### ML Model Endpoint
+
+[ML Model endpoint docs](../data-science/model-endpoints.md) allow you to serve real-time predictions seamlessly. Behind the scenes, Fabric spins up and manages the underlying container infrastructure to host your model.
+
+| Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
+| ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
+| Model Endpoint                            | TBD      | ML model | ML Model Endpoint Capacity Usage CU | Background |
 
 ### OneLake
 

@@ -1,12 +1,12 @@
 ---
 title: Lakehouse management API
 description: Learn how to manage your lakehouses in Microsoft Fabric with the Fabric REST API, including how to create, update, and delete a lakehouse.
-ms.reviewer: snehagunda
-ms.author: dacoelho
-author: DaniBunny
+ms.reviewer: dacoelho
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
-ms.date: 01/16/2025
+ms.date: 07/18/2025
 ms.search.form: lakehouse api
 ---
 
@@ -32,7 +32,7 @@ The Microsoft Fabric Rest API provides service endpoint for the CRUD operation o
 
 ## Lakehouse CRUD
 
-Use the following API to perform creation, modifications, and removal of the lakehouse inside a workspace.
+Use the following API to perform creation, modifications, and removal of the lakehouse inside a workspace. For detailed API parameters and request examples, see the [Create Lakehouse REST API documentation](/rest/api/fabric/lakehouse/items).
 
 ### Create a lakehouse
 

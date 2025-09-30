@@ -6,7 +6,7 @@ ms.author: mimart
 ms.custom:
   - references_regions
 ms.topic: overview
-ms.date: 07/15/2025
+ms.date: 09/18/2025
 ---
 
 # Fabric region availability
@@ -17,32 +17,31 @@ For details about purchasing a Fabric subscription, see [Buy a Microsoft Fabric 
 
 ## Home region
 
-Your [home region](find-fabric-home-region.md) is associated with your tenant. If your home region doesn't reside in the regions listed below, you won’t be able to access all the Fabric functionalities. In such cases, to access all the Fabric features, you can create a capacity in a region where Fabric is available. For more information, see [Multi-Geo support for Fabric](service-admin-premium-multi-geo.md).
-
-[!INCLUDE [tenant-region-availability-note](../includes/tenant-region-availability-note.md)]
+Your [home region](find-fabric-home-region.md) is associated with your tenant. If your home region doesn't reside in the following regions, you won't be able to access all the Fabric functionalities. In such cases, to access all the Fabric features, you can create a capacity in a region where Fabric is available. For more information, see [Multi-Geo support for Fabric](service-admin-premium-multi-geo.md).
 
 ## Workload and feature availability
 
-The tables below list the availability of Fabric workloads according to the region your tenant is in.
+The following tables list the availability of Fabric workloads according to the region of your tenant.
 
 ### All workloads
 
 This table lists regions where all Fabric workloads are available.
 
-| Americas                       | Europe                       | Middle East | Africa             | Asia Pacific           |
-|:-------------------------------|:-----------------------------|:------------|:-------------------|:-----------------------|
-| Brazil South                   | North Europe <sup>4</sup>     | UAE North   | South Africa North | Australia East         |
-| Canada Central                 | West Europe                  |             |                    | Australia Southeast    |
-| Canada East <sup>3</sup>        | France Central               |             |                    | Central India          |
-| Central US                     | Germany West Central         |             |                    | East Asia              |
-| East US                        | Italy North                  |             |                    | Israel Central <sup>4</sup>         |
-| East US 2                      | Norway East                  |             |                    | Japan East             |
-| North Central US               | Poland Central <sup>3</sup>  |             |                    | Japan West <sup>4</sup>|
-| South Central US <sup>2,4</sup> | Sweden Central               |             |                    | Southeast Asia         |
-| West US                        | Switzerland North            |             |                    | South India            |
-| West US 2                      | Switzerland West <sup>3</sup> |             |                    | Korea Central          |
-| West US 3                      | UK South                     |             |                    |                        |
-|                                | UK West <sup>1</sup>          |             |                    |                        |
+| Americas                        | Europe                       | Middle East | Africa             | Asia Pacific                  | 
+|:--------------------------------|:-----------------------------|:------------|:-------------------|:------------------------------|
+| Brazil South                    | North Europe <sup>4</sup>    | UAE North   | South Africa North | Australia East                |
+| Canada Central                  | West Europe                  |             |                    | Australia Southeast           |
+| Canada East <sup>3</sup>        | France Central               |             |                    | Central India                 | 
+| Central US                      | Germany West Central         |             |                    | East Asia                     |
+| East US                         | Italy North                  |             |                    | Israel Central <sup>4</sup>   |
+| East US 2                       | Norway East                  |             |                    | Japan East                    |
+| Mexico Central                  | Poland Central               |             |                    | Japan West <sup>4</sup>       |
+| North Central US                | Spain Central                |             |                    | Southeast Asia                |
+| South Central US <sup>2, 4</sup>| Sweden Central               |             |                    | South India                   |
+| West US                         | Switzerland North            |             |                    | Korea Central                 |
+| West US 2                       | Switzerland West <sup>3</sup>|             |                    |                               |
+| West US 3                       | UK South                     |             |                    |                               |
+|                                 | UK West <sup>1</sup>         |             |                    |                               |
 
 
   <sup>1</sup> [Fabric SQL database](../database/sql/overview.md) isn't  available in this region.
@@ -54,12 +53,15 @@ This table lists regions where all Fabric workloads are available.
 
 This table lists regions where the only available Fabric workload is Power BI.
 
-| Americas       | Europe        | Middle East    | Africa            | Asia Pacific     |
-|:---------------|:--------------|:---------------|:------------------|:-----------------|
-| Mexico Central | France South  | Qatar Central  | South Africa West | India West       |
-|                | Germany North | UAE Central    |                   | Korea South      |
-|                | Norway West   |                |                   | Taiwan North     |
-|                | Spain Central |                |                   | Taiwan Northwest |
+ | Europe        | Middle East    | Africa            | Asia Pacific     |
+ |:--------------|:---------------|:------------------|:-----------------|
+ | France South  | Qatar Central  | South Africa West | India West       |
+ | Germany North | UAE Central    |                   | Korea South      |
+ | Norway West   |                |                   | New Zealand North|
+ |               |                |                   | Taiwan North     |
+ |               |                |                   | Taiwan Northwest |
+ |               |                |                   | Indonesia Central |
+ |               |                |                   | Malaysia West |
 
 ** Copilot is not supported for regions listed in this section. 
 

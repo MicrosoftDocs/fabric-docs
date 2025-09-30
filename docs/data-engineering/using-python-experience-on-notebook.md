@@ -1,9 +1,9 @@
 ---
 title: Use Python experience on Notebook
 description: Learn how to work with pure Python notebooks for data exploration, visualization, and machine learning.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.search.form: Create and use notebooks
@@ -14,8 +14,6 @@ ms.date: 03/31/2025
 
 
 The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This capability makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that don't require big data and distributed computing.
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 With a Python notebook, you can get:
 
@@ -53,7 +51,7 @@ Python notebook supports multiple job execution ways:
 
 - **Interactive run**: You can run a Python notebook interactively like a native Jupyter notebook.
 - **Schedule run**: You can use the light-weighted scheduler experience on the notebook settings page to run Python notebook as a batch job.
-- **Pipeline run**: You can orchestrate Python notebooks as notebook activities in [Data pipeline](../data-factory/notebook-activity.md). Snapshot will be generated after the job execution.
+- **Pipeline run**: You can orchestrate Python notebooks as notebook activities in [Pipeline](../data-factory/notebook-activity.md). Snapshot will be generated after the job execution.
 - **Reference run**: You can use `notebookutils.notebook.run()` or `notebookutils.notebook.runMultiple()` to reference run Python notebooks in another Python notebook as batch job. Snapshot will be generated after the reference run finished.
 - **Public API run**: You can schedule your python notebook run with the [notebook run public API](notebook-public-api.md#run-a-notebook-on-demand), make sure the language and kernel properties in notebook metadata of the public API payload are set properly.
 
@@ -64,7 +62,8 @@ You can monitor the Python notebook job run details on the ribbon tab **Run** ->
 You can interact with Lakehouse, Warehouses, SQL endpoints, and built-in resources folders on Python notebook.
 
  > [!NOTE]
- > The Python Notebook runtime comes pre-installed with [delta‑rs](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries to support both reading and writing Delta Lake data. However, please note that some Delta Lake features may not be fully supported at this time. For more details and the latest updates, kindly refer to the official [delta‑rs](https://github.com/delta-io/delta-rs) and [duckdb](https://duckdb.org/docs/stable/extensions/delta.html) websites.
+ > - The Python Notebook runtime comes pre-installed with [delta‑rs](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries to support both reading and writing Delta Lake data. However, note that some Delta Lake features may not be fully supported at this time. For more details and the latest updates, kindly refer to the official [delta‑rs](https://github.com/delta-io/delta-rs) and [duckdb](https://duckdb.org/docs/stable/extensions/delta.html) websites.
+ > - We currently do not support deltalake(delta-rs) version 1.0.0 or above. Stay tuned.
 
 ### Lakehouse interaction
 
@@ -108,11 +107,12 @@ There are commands that can lead to kernel died. For example, *quit()*, *exit()*
 
 You can use *%pip* and *%conda* commands for inline installations, the commands support both public libraries and customized libraries.  
 
-For customized libraries, you can upload the lib files to the [**Built-in resources**](#notebook-resources-folder) folder. We support multiple types of libraries like *.whl*, *.jar*, *.dll*, *.py*, etc., just try drag&drop to the file and the code snippet is generated automatically.
+For customized libraries, you can upload the lib files to the [**Built-in resources**](#notebook-resources-folder) folder. We support multiple types of libraries, including formats such as Wheel (*.whl*), JAR (*.jar*), DLL (*.dll*), and Python (*.py*). Just try drag&drop to the file and the code snippet is generated automatically.
 
 You may need to restart the kernel to use the updated packages.
 
-To better understand and use similar commands clearly, please refer to the table below.
+
+To better understand and use similar commands clearly, refer to the table below.
 
 | **Command/Syntax** | **Main purpose** | **How it works in Jupyter Notebook** | **Typical use case** | **Notes**|
 |---|---|---|---|---|
@@ -124,9 +124,21 @@ To better understand and use similar commands clearly, please refer to the table
 
 > [!NOTE]
 > - In Python Notebook, ```%pip``` and ```!pip``` have the **same behavior**: both install packages into the current kernel’s environment, and neither will automatically restart the kernel after installation.
-> - If you need to restart the kernel (eg., after installing certain packages), it is **recommended** to use ```notebookutils.session.restartPython()``` instead of ```import sys; sys.exit(0)```.
+> - If you need to restart the kernel (for example, after installing certain packages), it is **recommended** to use ```notebookutils.session.restartPython()``` instead of ```import sys; sys.exit(0)```.
 >   - ```notebookutils.session.restartPython()``` is an official API that wraps ```sys.exit(0)``` , and it is safer and more compatible in notebook environments.
 > - It is **not recommended** to use ```sys.exit(0)``` directly unless necessary.
+
+## Python notebook real-time resource usage monitoring
+ 
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+ 
+With the resource monitor pane, you can track critical runtime information such as session duration, compute type, and real-time resource metrics, including CPU and memory consumption, directly within your notebook. This feature provides an immediate overview of your active session and the resources being used.
+ 
+The resource monitor improves visibility into how Python workloads utilize system resources. It helps you optimize performance, manage costs, and reduce the risk of out-of-memory (OOM) errors. By monitoring metrics in real time, you can identify resource-intensive operations, analyze usage patterns, and make informed decisions about scaling or modifying code.
+ 
+To start using it, set your notebook language to **Python** and start a session. You can then open the monitor either by clicking the compute resources in the notebook status bar or by selecting **View resource usage** from the toolbar. The resource monitor pane will appear automatically, providing an integrated monitoring experience for Python code in Fabric notebooks.
+ 
+   :::image type="content" source="media\use-python-experience-on-notebook\python-resource-usage-monitoring.gif" alt-text="Screenshot showing Python notebook real-time resource usage monitoring." lightbox="media\use-python-experience-on-notebook\python-resource-usage-monitoring.gif":::
 
 ## Session configuration magic command
 

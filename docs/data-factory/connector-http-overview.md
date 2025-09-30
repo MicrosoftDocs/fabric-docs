@@ -14,19 +14,15 @@ ms.custom:
 
 The HTTP connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support the HTTP connector in Dataflow Gen2.
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Pipeline**<br>- [Copy activity](connector-http-copy-activity.md) (source/-) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Basic |
+| **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Basic |
 
-## Support in data pipelines
+## Related content
 
-The HTTP connector supports the following capabilities in data pipelines:
+To learn about how to connect to HTTP, go to [Set up your HTTP connection](connector-http.md).
 
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/-)** | None <br> On-premises | Basic |
-| **Lookup activity** | None <br> On-premises | Basic |
-
-To learn about how to connect to HTTP data in data pipelines, go to [Set up your HTTP connection](connector-http.md#set-up-your-connection-in-a-data-pipeline).
-
-To learn about the copy activity configuration for HTTP in data pipelines, go to [Configure HTTP in a copy activity](connector-http-copy-activity.md).
+To learn about the copy activity configuration for HTTP in pipelines, go to [Configure HTTP in a copy activity](connector-http-copy-activity.md).

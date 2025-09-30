@@ -11,9 +11,9 @@ ms.search.form: Data Activator Fabric Item
 
 # Trigger Fabric items
 
-Fabric Data Pipelines and Notebooks can be used to load or transform data in Microsoft Fabric. Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules can take an action that starts jobs on Fabric items, which can be used in the following scenarios:
+Fabric Pipelines, Notebooks, and Spark Job Definition can be used to load or transform data in Microsoft Fabric. Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules can take an action that starts jobs on Fabric items, which can be used in the following scenarios:
 
-* Run Data Pipelines when new files are loaded to Azure storage accounts, to load files into OneLake. You can learn more about [Azure Storage events](/azure/storage/blobs/storage-blob-event-overview).
+* Run Pipelines when new files are loaded to Azure storage accounts, to load files into OneLake. You can learn more about [Azure Storage events](/azure/storage/blobs/storage-blob-event-overview).
 
 * Run Fabric Notebooks when issues with data quality are found using Power BI reports. You can learn more about [getting data from Power BI](activator-get-data-power-bi.md).
 
@@ -22,10 +22,6 @@ Fabric Data Pipelines and Notebooks can be used to load or transform data in Mic
 Start by selecting an existing Activator rule or [creating a rule](activator-create-activators.md).
 
 In the rule definition pane on the right side of the screen, find **Action** section to define the action when chosen condition is met. Select **Fabric item** as the action type and select a specific item from the [OneLake Data Hub](../../governance/onelake-catalog-overview.md) pop-up window.
-
-:::image type="content" source="media/activator-trigger-fabric-items/data-activator-fabric-item.png" alt-text="Screenshot showing Fabric item selected from the Type dropdown.":::
-
-:::image type="content" border="true" source="media/activator-trigger-fabric-items/data-activator-fabric-item-select-item.png" alt-text="Screenshot showing Activator Action card with a notebook being selected.":::
 
 ## Test, start, or stop an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule
 
@@ -37,11 +33,14 @@ You can now pass values to the parameters defined in the activated Fabric item. 
 
 :::image type="content" border="true" source="media/activator-trigger-fabric-items/pass-parameter.png" alt-text="Screenshot showing Activator card with a parameter.":::
 
+For Spark Job Definition, Activator support passing parameter values to [command line arguments, executable main file, and main class](https://aka.ms/sparkjobdefinitionparameters). 
+
 ### Pass parameter values via rules created outside of Activator portal
 
-If you are setting up an Activator rule from one of the embedded experiences such as Power BI, Real-Time Hub, or Data Pipeline, you can create the rule first. After the rule is created, you can click **Open** Activator to edit the parameter values:
+If you are setting up an Activator rule from one of the embedded experiences such as Power BI, Real-Time Hub, or Pipeline, you can create the rule first. After the rule is created, you can click **Open** Activator to edit the parameter values:
 
-* **[Set up the rule from data pipeline](/fabric/data-factory/pipeline-storage-event-triggers)**
+* [Set up the rule from pipeline](/fabric/data-factory/pipeline-storage-event-triggers)
+
 * **Set up the rule from Real-Time hub**: To set a rule from an Azure event (as an example) in Real-Time hub, select **Azure events** on the left navigation menu, and then select **Set alert**.
 
 :::image type="content" source="media/activator-trigger-fabric-items/pass-parameters-from-real-time-hub.png" alt-text="Screenshot showing creating storage event trigger from Real Time hub." lightbox="media/activator-trigger-fabric-items/pass-parameters-from-real-time-hub.png":::
@@ -61,7 +60,7 @@ Activator enables passing parameters in string, boolean, and number (float). Fol
 | `123,45` | 0 | No | Invalid in en-US (comma not decimal) |	
 | null or whitespace | 0 | No |  |	
 | any other string | 0 | No |  |	
-			
+
 **Boolean**
 
 | Input Value | Result | Valid value? | Notes |

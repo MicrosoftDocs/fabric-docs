@@ -4,7 +4,7 @@ description: This article shows how to explore OneLake events in Fabric Real-Tim
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 11/17/2024
+ms.date: 07/22/2025
 ---
 
 # Explore OneLake events in Fabric Real-Time hub
@@ -56,7 +56,7 @@ Here are the supported OneLake events:
 
 | Event type name | Description |
 | --------------- | ----------- |
-| Microsoft.Fabric.OneLake.FileCreated | Raised when a file is created or replaced in OneLake. |
+| Microsoft.Fabric.OneLake.FileCreated | Raised when a file is created or updated in OneLake. |
 | Microsoft. Fabric.OneLake.FileDeleted | Raised when a file is deleted in OneLake. |
 | Microsoft. Fabric.OneLake.FileRenamed | Raised when a file is renamed in OneLake. | 
 | Microsoft.Fabric.OneLake.FolderCreated | Raised created when a folder is created in OneLake. | 

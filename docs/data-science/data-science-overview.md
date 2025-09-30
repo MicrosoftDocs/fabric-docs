@@ -1,13 +1,14 @@
----
+﻿---
 title: Data science in Microsoft Fabric
 description: Learn about the Data science machine learning resources, including models, experiments, and notebooks.
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: negust
 ms.topic: overview
-ms.custom:
+ms.custom: 
 ms.date: 04/22/2025
 ms.search.form: Data Science Overview
+reviewer: s-polly
 ---
 
 # What is Data Science in Microsoft Fabric?
@@ -46,7 +47,7 @@ Data Science users in [!INCLUDE [product-name](../includes/product-name.md)] wor
 
 [!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in OneLake using the Lakehouse resource. To browse and interact with data, Lakehouse easily attaches to a notebook. Users can easily read data from a Lakehouse directly into a Pandas dataframe. For exploration, seamless data reads from OneLake then become possible.
 
-A powerful set of tools is available for data ingestion and data orchestration pipelines with data integration pipelines - a natively integrated part of [!INCLUDE [product-name](../includes/product-name.md)]. Easy-to-build data pipelines can access and transform the data into a format that machine learning can consume.
+A powerful set of tools is available for data ingestion and data orchestration pipelines with data integration pipelines - a natively integrated part of [!INCLUDE [product-name](../includes/product-name.md)]. Easy-to-build pipelines can access and transform the data into a format that machine learning can consume.
 
 ### Data exploration
 
@@ -80,7 +81,7 @@ Notebooks can handle machine learning model batch scoring with open-source libra
 
 In [!INCLUDE [product-name](../includes/product-name.md)], you can easily write predicted values to OneLake. From there, Power BI reports can seamlessly consume them with the Power BI Direct Lake mode. Data science practitioners can then easily share the results of their work with stakeholders - and it simplifies operationalization.
 
-You can use notebook scheduling features to schedule runs of notebooks that contain batch scoring. You can also schedule batch scoring as part of data pipeline activities or Spark jobs. With the Direct lake mode in [!INCLUDE [product-name](../includes/product-name.md)], Power BI automatically gets the latest predictions without need for data loads or refreshes.
+You can use notebook scheduling features to schedule runs of notebooks that contain batch scoring. You can also schedule batch scoring as part of pipeline activities or Spark jobs. With the Direct lake mode in [!INCLUDE [product-name](../includes/product-name.md)], Power BI automatically gets the latest predictions without need for data loads or refreshes.
 
 ## Data exploration with semantic link
 
@@ -106,4 +107,4 @@ For more information about semantic link, visit the [What is semantic link?](sem
 - Visit [Machine learning experiment](machine-learning-experiment.md) to learn more about tracking experiments
 - Visit [Machine learning model](machine-learning-model.md) to learn more about model management
 - Visit [Score models with PREDICT](model-scoring-predict.md) to learn more about batch scoring with Predict
-- Serve Lakehouse predictions to Power BI with [Direct lake Mode](../fundamentals/lakehouse-power-bi-reporting.md)
+- Serve Lakehouse predictions to Power BI with [Direct Lake](../fundamentals/building-reports.md)

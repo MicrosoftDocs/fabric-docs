@@ -4,7 +4,7 @@ description: Learn about options to connect to your SQL database in Microsoft Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaurk, imotiwala, maghan
-ms.date: 04/18/2025
+ms.date: 08/06/2025
 ms.topic: how-to
 ms.search.form: product-databases, Connect to SQL database
 ---
@@ -45,8 +45,8 @@ To find the SQL connection string for your **Fabric SQL database**:
 
 To find the SQL connection string for the **SQL analytics endpoint** of your Fabric SQL database:
 
-- Go to the settings of your SQL database item, then select **SQL endpoint**.
-- Or, select the `...` menu, then select **Copy SQL connection string**.
+- Go to the settings of your SQL database item, then select **Connection strings**.
+- Or, select the `...` menu, then select **SQL endpoint**, then copy the **SQL connection string**.
 
 ## Open in button to connect
 
@@ -91,10 +91,37 @@ In the following example, replace `<server name>` with the long string of unique
 bcp bcptest in "c:\temp\sample.dat" -S <your_server>.database.fabric.microsoft.com;1433 -d testdb -G -c
 ```
 
+## Connect with Python Notebook
+
+[Fabric Python Notebooks](../../data-engineering/using-python-experience-on-notebook.md) (preview) offer the [ability to run T-SQL code with the T-SQL magic command](../../data-engineering/tsql-magic-command-notebook.md). In the following steps, connect to a SQL database in Fabric using the `%%tsql` magic command:
+
+1. Create a notebook in your workspace with the language set to Python.
+1. In a cell, use the `%%tsql` magic command. The cell type automatically changes to `T-SQL`. 
+
+   In the following sample, replace `<databasename>` with the name of your SQL database in Fabric. The `-type` parameter should be `SQLDatabase`.
+   
+   ```python
+   %%tsql -artifact <databasename> -type SQLDatabase
+   ```
+
+   Then include your T-SQL command. For example, to run a query from a database named `Contoso`:
+
+   ```python
+   %%tsql -artifact Contoso -type SQLDatabase
+   SELECT * FROM SalesLT.Customer;
+   ```
+1. You can also bind the results to a dataframe with the `-bind` argument:
+
+   ```python
+   %%tsql -artifact Contoso -type SQLDatabase -bind df2
+   ```
+
+For more possibilities to query your data with T-SQL inside Python Notebooks, see [Run T-SQL code in Fabric Python notebooks](../../data-engineering/tsql-magic-command-notebook.md). To see the full syntax, use the `%tsql?` command. This command displays the help information for the T-SQL magic command, including the available parameters and their descriptions.
+
 ## Related content
 
 - [Authentication in SQL database in Microsoft Fabric](authentication.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
 - [SQL database in Microsoft Fabric](overview.md)
 - [Private links in Microsoft Fabric](../../security/security-private-links-overview.md)
-- [Ingest data into SQL database via data pipelines](load-data-pipelines.md)
+- [Ingest data into SQL database via pipelines](load-data-pipelines.md)

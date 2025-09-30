@@ -21,12 +21,12 @@ In this tutorial section, you import digital twin builder domain layer data from
 
 In this section, access your digital twin builder (preview) data through the domain layer in SQL, and import it into a new Power BI report.
 
-1. In Fabric, open the SQL analytics endpoint for the lakehouse associated with your digital twin builder item. The SQL endpoint has the same name as your digital twin builder item with a *dtdm* extension, so for this tutorial it's called *Contoso_Energydtdm*.
+1. In Fabric, open the SQL analytics endpoint for the lakehouse associated with your digital twin builder item. The SQL endpoint has the same name as your digital twin builder item with a *dtdm* extension, so for this tutorial it's called *TutorialDTBdtdm*.
 
     :::image type="content" source="media/tutorial/sql-endpoint.png" alt-text="Screenshot of selecting the SQL endpoint.":::
 1. In the SQL endpoint explorer, select the settings icon (shaped like a gear) from the left side of the ribbon across the top, and open the **SQL endpoint** tab.
 
-    Copy the **SQL connection string** and the name of the SQL endpoint, *Contoso_Energydtdm*. You need these values to connect to the SQL endpoint in Power BI Desktop.
+    Copy the **SQL connection string** and the name of the SQL endpoint, *TutorialDTBdtdm*. You need these values to connect to the SQL endpoint in Power BI Desktop.
 
     :::image type="content" source="media/tutorial/sql-copy.png" alt-text="Screenshot of copying the SQL values.":::
 
@@ -46,6 +46,7 @@ In this section, access your digital twin builder (preview) data through the dom
 1. In the **Server** field, paste the SQL connection string. In the **Database** field, paste the SQL endpoint name. Select **Import** and then **OK**.
 
     :::image type="content" source="media/tutorial/power-bi-connect.png" alt-text="Screenshot of entering the SQL values in Power BI Desktop." lightbox="media/tutorial/power-bi-connect.png":::
+
 1. In the **Navigator** pane that opens, select these tables: **dom.Condenser_property**, **dom.Condenser_timeseries**, **dom.Distiller_property**, **dom.MaintenanceRequest_property**, **dom.relationships**, and **dom.Technician_property**. Then select **Load**. This action creates connections to your lakehouse SQL endpoint.
 
     :::image type="content" source="media/tutorial/power-bi-navigator.png" alt-text="Screenshot of selecting the properties in the Navigator." lightbox="media/tutorial/power-bi-navigator-crop.png":::

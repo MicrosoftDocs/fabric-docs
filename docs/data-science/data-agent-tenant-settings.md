@@ -2,15 +2,15 @@
 title: Fabric data agent tenant settings (preview)
 description: Learn how to configure Fabric data agent tenant settings for Power BI Semantic Models.
 author: jonburchel
-ms.author: amjafari
-ms.reviewer: jburchel
+ms.author: jburchel
+ms.reviewer: amjafari
 reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "how-to".
-ms.date: 03/14/2025
+ms.date: 07/21/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
-
 ---
 
 # Configure Fabric data agent tenant setting

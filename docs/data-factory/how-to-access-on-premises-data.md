@@ -16,7 +16,7 @@ Data Factory for Microsoft Fabric is a cloud service that helps you move, transf
 
 ## Available connection types
 
-For a complete list of connectors supported for on-premises data types and details on how to connect to each type, see [Data pipeline connectors in Microsoft Fabric](pipeline-support.md) and your source's specific connector page.
+For a complete list of connectors supported for on-premises data types and details on how to connect to each type, see [pipeline connectors in Microsoft Fabric](pipeline-support.md) and your source's specific connector page.
 
 Some available connections include:
 
@@ -75,7 +75,7 @@ To set up your gateway:
    :::image type="content" source="media/how-to-access-on-premises-data/new-connection-details.png" alt-text="Screenshot showing the New connection dialog with On-premises selected.":::
 
    >[!TIP]
-   >Check out the [data pipeline connectors in Microsoft Fabric article](pipeline-support.md) and specific connector articles for details like supported authentication types for your source or troubleshooting information.
+   >Check out the [pipeline connectors in Microsoft Fabric article](pipeline-support.md) and specific connector articles for details like supported authentication types for your source or troubleshooting information.
 
 ## Connect your on-premises data source to a Dataflow Gen2 in Data Factory for Microsoft Fabric
 
@@ -113,9 +113,9 @@ In this example, you'll create and run a [pipeline](pipeline-runs.md) to load da
 
 1. [Create a connection to your on-premises data source.](#create-a-connection-for-your-on-premises-data-source)
 
-1. Go to your workspace and create a data pipeline.
+1. Go to your workspace and create a pipeline.
 
-   :::image type="content" source="media/how-to-access-on-premises-data/create-pipeline.png" alt-text="Screenshot showing how to create a new data pipeline.":::
+   :::image type="content" source="media/how-to-access-on-premises-data/create-pipeline.png" alt-text="Screenshot showing how to create a new pipeline.":::
 
    > [!NOTE]
    > You need to configure your firewall to allow outbound connections to ***.frontend.clouddatahub.net** from the gateway for Fabric pipeline capabilities.
@@ -133,7 +133,7 @@ In this example, you'll create and run a [pipeline](pipeline-runs.md) to load da
    :::image type="content" source="media/how-to-access-on-premises-data/run-pipeline.png" lightbox="media/how-to-access-on-premises-data/run-pipeline.png" alt-text="Screenshot showing where to run the pipeline in the pipeline editor window.":::
 
 > [!NOTE]
-> Local access to the machine with the on-premises data gateway installed isn't allowed in data pipelines.
+> Local access to the machine with the on-premises data gateway installed isn't allowed in pipelines.
 
 ## Use on-premises data in a Copy job
 
@@ -166,4 +166,4 @@ In this example, we'll show you how to connect a [Copy job](what-is-copy-job.md#
 
 - [Connector overview](connector-overview.md)
 - [On-premises data gateway considerations for output destinations](gateway-considerations-output-destinations.md)
-- [Known issues in Fabric - including the on-premises data gateway](../known-issues/fabric-known-issues.md)
+- [Known issues in Fabric - including the on-premises data gateway](https://support.fabric.microsoft.com/known-issues/)

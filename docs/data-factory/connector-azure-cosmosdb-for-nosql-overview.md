@@ -19,10 +19,11 @@ The Azure Cosmos DB for NoSQL connector is supported in Data Factory for [!INCLU
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/-)                                                           | None<br> On-premises<br> Virtual network | Account key<br> Organizational account |
-| **Data pipeline** <br>- [Copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md) (source/destination)<br>- Lookup activity        | None<br> On-premises<br> Virtual network | Account key<br> Organizational account|
+| **Pipeline** <br>- [Copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md) (source/destination)<br>- Lookup activity        | None<br> On-premises<br> Virtual network | Account key<br> Organizational account<br> Workspace identity|
+| **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Merge|None<br> On-premises<br> Virtual network |Account key<br> Organizational account<br> Workspace identity|
 
 ## Related content
 
-To learn about how to connect to Azure Cosmos DB for NoSQL in data pipelines, go to [Set up your Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md).
+To learn about how to connect to Azure Cosmos DB for NoSQL in pipelines, go to [Set up your Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md).
 
-To learn about the copy activity configuration for Azure Cosmos DB for NoSQL in data pipelines, go to [Configure Azure Cosmos DB for NoSQL in a copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md).
+To learn about the copy activity configuration for Azure Cosmos DB for NoSQL in pipelines, go to [Configure Azure Cosmos DB for NoSQL in a copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md).

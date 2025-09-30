@@ -1,12 +1,13 @@
----
+﻿---
 title: "Tutorial: Ingest data into a lakehouse"
 description: In this first part of the tutorial series, learn how to ingest a dataset into a Fabric lakehouse in delta lake format.
-ms.reviewer: None
-ms.author: scottpolly
-author: s-polly
+ms.reviewer: amjafari
+ms.author: lagayhar
+author: lgayhardt
 ms.topic: tutorial
-ms.custom:
-ms.date: 04/25/2025
+ms.custom: 
+ms.date: 07/11/2025
+reviewer: s-polly
 ---
 
 # Tutorial Part 1: Use Apache Spark to ingest data into a Microsoft Fabric lakehouse

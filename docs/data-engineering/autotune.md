@@ -1,12 +1,12 @@
 ---
 title: Configure autotune for Apache Spark
 description: Learn how autotune automatically adjusts Apache Spark configurations, minimizing workload execution time and optimizing performance.
-ms.reviewer: snehagunda
-ms.author: sngun
-author: SnehaGunda
+ms.reviewer: sngun
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom: sfi-image-nochange
-ms.date: 06/10/2025
+ms.date: 07/18/2025
 # customer intent: As a Microsoft Fabric user I want to learn how to use autotune to automatically ajust Apache Spark configurataions.
 ---
 
@@ -35,7 +35,7 @@ Autotune configures three Apache Spark settings for each of your queries separat
 > - Apache Spark SQL API queries (excluding queries written in the RDD API, which are rare), but we optimize all queries regardless the language (Scala, PySpark, R, Spark SQL)
 > This feature is compatible with notebooks, Apache Spark job definitions, and pipelines. The benefits vary based on the complexity of the query, the methods used, and the structure. Extensive testing has shown that the greatest advantages are realized with queries related to exploratory data analysis, such as reading data, running joins, aggregations, and sorting.
 
-:::image type="content" source="media\autotune\execution-over-time.png" alt-text="Screenshot of execution time with autotune Enabled.":::
+:::image type="content" source="media\autotune\execution-over-time.png" alt-text="Screenshot of execution time with autotune Enabled." lightbox="media\autotune\execution-over-time.png":::
 
 ### AI-based intuition behind the autotune
 
@@ -54,7 +54,7 @@ Autotune is available across all production regions but **is disabled by default
 Autotune includes a built-in mechanism for monitoring performance and detecting performance regressions. For instance, if a query processes an unusually large amount of data, autotune automatically deactivates. It typically requires 20 to 25 iterations to learn and identify the optimal configuration.
 
 > [!NOTE]
-> The autotune is compatible with [Fabric Runtime 1.1](./runtime-1-1.md) and [Runtime 1.2](./runtime-1-2.md). Autotune doesn't function when [the high concurrency mode](./high-concurrency-overview.md) or when the [private endpoint](./../security/security-managed-private-endpoints-overview.md) is enabled. However, autotune seamlessly integrates with autoscaling, regardless of its configuration.
+> The autotune is compatible with [Fabric Runtime 1.1](./runtime-1-1.md) and [Runtime 1.2](./runtime-1-2.md). It can't be enabled on runtime versions higher than 1.2. Autotune doesn't function when [the high concurrency mode](./high-concurrency-overview.md) or when the [private endpoint](./../security/security-managed-private-endpoints-overview.md) is enabled. However, autotune seamlessly integrates with autoscaling, regardless of its configuration.
 
 You can enable autotune within a single session by including the respective Spark setting in your Spark notebook or Spark Job Definition code.
 

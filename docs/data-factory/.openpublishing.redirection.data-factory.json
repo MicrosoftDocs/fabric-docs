@@ -1,6 +1,11 @@
 {
     "redirections": [
       {
+        "source_path_from_root": "/docs/data-factory/dataflow-gen2-deployment-pipelines.md",
+        "redirect_url": "/fabric/data-factory/dataflow-gen2-cicd-alm-solution-architecture",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/connector-troubleshoot-postgresql.md",
         "redirect_url": "/fabric/data-factory/connector-troubleshoot-azure-database-for-postgresql",
         "redirect_document_id": true
@@ -31,6 +36,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/pipeline-storage-event-triggers.md",
+        "redirect_url": "/fabric/data-factory/pipeline-runs",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/pipeline-copy-from-azure-blob-storage-to-lakehouse.md",
         "redirect_url": "/fabric/data-factory/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse",
         "redirect_document_id": false
@@ -40,7 +50,7 @@
         "redirect_url": "/fabric/data-factory/pipeline-rest-api-capabilities",
         "redirect_document_id": false
       },
-            {
+      {
         "source_path_from_root": "/docs/data-factory/git-integration-deployment-pipelines.md",
         "redirect_url": "/fabric/data-factory/cicd-pipelines",
         "redirect_document_id": false
@@ -63,6 +73,11 @@
       {
         "source_path_from_root": "/docs/data-factory/connector-azure-blob-storage-dataflows.md",
         "redirect_url": "/fabric/data-factory/connector-azure-blob-storage",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/schedule-pipeline.md",
+        "redirect_url": "/fabric/data-factory/pipeline-runs",
         "redirect_document_id": false
       },
       {
@@ -108,6 +123,11 @@
       {
         "source_path_from_root": "/docs/data-factory/connector-http-dataflows.md",
         "redirect_url": "/fabric/data-factory/connector-http",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/cost-estimation-from-azure-data-factory-to-fabric-pipeline.md",
+        "redirect_url": "/fabric/data-factory/pricing-overview",
         "redirect_document_id": false
       },
       {
@@ -275,6 +295,16 @@
         "redirect_url": "/fabric/data-factory/apache-airflow-workspace-settings",
         "redirect_document_id": false
       },
+      {
+        "source_path_from_root": "/docs/data-factory/change-data-capture-from-sap-to-onelake-with-azure-data-factory.md",
+        "redirect_url": "/azure/data-factory/change-data-capture-from-sap-to-onelake-with-azure-data-factory",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory.md",
+        "redirect_url": "/azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory",
+        "redirect_document_id": false
+      }, 
       {
         "source_path_from_root": "/docs/data-factory/certification-submission.md",
         "redirect_url": "/fabric/data-factory/connector-certification",

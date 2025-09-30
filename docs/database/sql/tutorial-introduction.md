@@ -23,11 +23,6 @@ This tutorial isn't intended to serve as a reference architecture, nor does it c
 
 ## SQL database in Fabric end-to-end scenario
 
-As prerequisites to this tutorial, complete the following steps:
-
-1. Sign into your [Power BI online account](https://powerbi.com/), or if you don't have an account yet, sign up for a free trial.
-1. [Enable Microsoft Fabric for your organization](enable.md) in your tenant.
-
 In this tutorial, you take on the role of a database developer, working at the Contoso Group. Your organization wants to evaluate Supply Chain information for the AdventureWorks and Northwind Traders subsidiaries based on past sales and current on-hand components for various products used in manufacturing.
 
 You'll use sample data along with data and views that you create to Your goal is to create a visualization of this data and to enable real-time analysis of the data available to an application. You have chosen GraphQL as the primary data API for the solution. Here are the steps in this tutorial:
@@ -54,7 +49,12 @@ Here's a summary of the architecture this tutorial introduces.
 
 **Store, Query and Enrich** – SQL database in Fabric works with industry standard Transact-SQL commands to create, read, update, and delete data and data objects, as well as the GraphQL API.
 
-**Expose** - Data from SQL database in Fabric and the SQL analytics endpoint can be consumed by Power BI, the industry leading business intelligence tool, for reporting and visualization. Each SQL database in Fabric connection and SQL analytics endpoint comes with a built-in TDS endpoint for easily connecting to and querying data from other reporting tools, when needed. When a SQL database is created, a secondary item called a default semantic model is generated at the same time with the same name. You can use the default semantic model through the SQL analytics endpoint of the SQL database. With a semantic model, you can visualize data with just a couple of steps. The SQL database and the SQL analytics endpoint can be exposed through the GraphQL API.
+**Expose** - Data from your SQL database in Fabric can be consumed in a variety of ways:
+
+   - Data from SQL database in Fabric and the SQL analytics endpoint can be consumed by Power BI, the industry leading business intelligence tool, for reporting and visualization. 
+   - Each SQL database in Fabric connection and SQL analytics endpoint comes with a built-in TDS endpoint for easily connecting to and querying data from other reporting tools, when needed. 
+   - You can also create a semantic model through the SQL analytics endpoint of the SQL database. With a semantic model, you can visualize data with just a couple of steps. 
+   - The SQL database and the SQL analytics endpoint can also be exposed through the GraphQL API.
 
 ## Sample data
 

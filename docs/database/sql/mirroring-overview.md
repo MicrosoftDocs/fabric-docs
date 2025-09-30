@@ -4,7 +4,7 @@ description: "Learn more about automatic mirroring to OneLake for SQL database i
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac
-ms.date: 01/16/2025
+ms.date: 07/02/2025
 ms.topic: conceptual
 ms.search.form: SQL database replication to OneLake, Databases replication to OneLake
 ---
@@ -14,13 +14,12 @@ Database mirroring is a feature of Microsoft Fabric to continuously replicate da
 
 ## Overview of mirroring for SQL database in Fabric
 
-SQL database in Microsoft Fabric, which uses the same SQL Database Engine as Microsoft SQL Server and is similar to Azure SQL Database, inherits most of the Fabric mirroring capabilities from Azure SQL Database. For more information, see [Mirroring Azure SQL Database to Fabric](../mirrored-database/azure-sql-database.md), but this page focuses on mirroring data from SQL database in Fabric and **differences from** Azure SQL Database mirroring.
+SQL database in Microsoft Fabric, which uses the same SQL Database Engine as Microsoft SQL Server and is similar to Azure SQL Database, inherits most of the Fabric mirroring capabilities from Azure SQL Database. For more information, see [Mirroring Azure SQL Database to Fabric](../../mirroring/azure-sql-database.md), but this page focuses on mirroring data from SQL database in Fabric and **differences from** Azure SQL Database mirroring.
 
-When you create a SQL database in Microsoft Fabric, three artifacts get provisioned in your Fabric workspace:
+When you create a SQL database in Microsoft Fabric, these are provisioned in your Fabric workspace:
 
 - The SQL database itself
 - The SQL analytics endpoint
-- The default semantic model
 
 To facilitate analytics scenarios, SQL database in Fabric automatically mirrors its data into Fabric OneLake, to the same workspace where the database itself resides. Mirroring starts upon creation of your SQL database in Fabric with **no user action required**. There are no settings to configure mirroring: **all** supported tables and their supported columns are mirrored as soon as they're created.
 
@@ -35,7 +34,7 @@ You can create views in your SQL analytics endpoint to shape the data presentati
 
 ## Differences between mirroring for SQL database in Fabric and Azure SQL Database
 
-Mirroring largely remains the same between [mirroring Azure SQL Database](../mirrored-database/azure-sql-database.md) and mirroring a SQL database in Fabric.
+Mirroring largely remains the same between [mirroring Azure SQL Database](../../mirroring/azure-sql-database.md) and mirroring a SQL database in Fabric.
 
 | Function | Azure SQL Database | SQL database in Fabric |
 |:--|:--|:--|
@@ -46,7 +45,7 @@ Mirroring largely remains the same between [mirroring Azure SQL Database](../mir
 | Point in time restore (PITR) | PITR creates a new database and mirroring must be manually reconfigured. | PITR creates a new database in Fabric. Continuous mirroring is automatically started with a snapshot. |
 | [Stored procedures for control and monitoring](/sql/relational-databases/system-stored-procedures/sp-change-feed-enable-db?view=fabric&preserve-view=true) | Allowed | Only allowed for monitoring, not for configuration |
 | [Fabric Capacity pausing / resuming / deletion / deletion of workspace](/sql/relational-databases/system-stored-procedures/sp-change-feed-enable-db?view=fabric&preserve-view=true) | Manual intervention to remove or resume mirroring | Automatic. Fabric will pause/resume/delete the mirror and data. |
-| Drop table | If "automatically mirror all data" is selected, Fabric replica of the table will be dropped.<br/>If tables manually chosen, table won't be dropped from Fabric, and the missing source table shows an error on the [monitor mirroring screen](../mirrored-database/monitor.md). | Drops the mirrored table data from Fabric OneLake. |
+| Drop table | If "automatically mirror all data" is selected, Fabric replica of the table will be dropped.<br/>If tables manually chosen, table won't be dropped from Fabric, and the missing source table shows an error on the [monitor mirroring screen](../../mirroring/monitor.md). | Drops the mirrored table data from Fabric OneLake. |
 
 ### Effects of mirroring on transactions and workloads
 

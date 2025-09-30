@@ -19,7 +19,6 @@ SQL database in Fabric enables you to get started quickly with sample data by lo
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
-- Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
 - [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - [Create a new SQL database](create.md) or use an existing SQL database.
 
@@ -42,4 +41,4 @@ Here are the steps to load the AdventureWorks sample data:
 ## Related content
 
 - [Connect to your SQL database in Microsoft Fabric](connect.md)
-- [Ingest data into SQL database via data pipelines](load-data-pipelines.md)
+- [Ingest data into SQL database via pipelines](load-data-pipelines.md)

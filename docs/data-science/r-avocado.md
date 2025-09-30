@@ -1,14 +1,15 @@
----
+﻿---
 title: 'Tutorial: Use R to predict avocado prices'
 description: This tutorial shows an end-to-end example of using R to analyze and visualize avocado prices in the United States to predict future prices.
-ms.reviewer: None
-author: sdgilley
-ms.author: sgilley
+ms.reviewer: amjafari
+author: lgayhardt
+ms.author: lagayhar
 ms.topic: tutorial
-ms.custom:
-ms.date: 01/22/2024
+ms.custom: 
+ms.date: 07/11/2025
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to create a machine learning model by using R so I can predict prices.
+reviewer: jonburchel
 ---
 
 # Tutorial: use R to predict avocado prices
@@ -47,7 +48,7 @@ library(hms)
 Read avocado prices from a .CSV file, downloaded from the internet:
 
 ```r
-df <- read.csv('https://synapseaisolutionsa.blob.core.windows.net/public/AvocadoPrice/avocado.csv', header = TRUE)
+df <- read.csv('https://synapseaisolutionsa.z13.web.core.windows.net/data/AvocadoPrice/avocado.csv', header = TRUE)
 head(df,5)
 ```
 
