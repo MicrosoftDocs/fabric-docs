@@ -87,8 +87,6 @@ items:
     items:
     - name: Eventstream Overview
       href: event-streams/overview.md
-    - name: What's new in Fabric event streams?
-      href: event-streams/whats-new.md
     - name: Eventstreams capacity consumption
       href: event-streams/monitor-capacity-consumption.md
     - name: Create eventstreams
@@ -523,7 +521,7 @@ items:
       href: get-data-eventstream.md
     - name: Get data from Real-Time hub
       href: get-data-real-time-hub.md
-    - name: Configure KQL Database in a data pipeline
+    - name: Configure KQL Database in a pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
     - name: Connect to KQL Database in dataflows
       href: ../data-factory/connector-kusto-dataflows.md

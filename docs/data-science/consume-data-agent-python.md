@@ -114,7 +114,7 @@ After you authenticate, interact with the data agent by using the Python client.
 
 ```python
 response = client.ask("What were the total sales last quarter?")
-print(response.answer)
+print(f"Response: {response}")
 ```
 
 The `client.ask` method sends your question to the data agent and returns an object with the answer. You can view the steps the data agent performed and the corresponding queries it generated to get the answer.

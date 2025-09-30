@@ -1,39 +1,39 @@
 ---
-title: Dataflow Gen2 and deployment pipelines
-description: Overview of Dataflow Gen2 solution architectures using Fabric deployment pipelines, including guidance on selecting the right approach based on requirements and best practices.
+title: CI/CD and ALM solution architectures for Dataflow Gen2
+description: Overview of Dataflow Gen2 solution architectures for CI/CD and ALM that apply to Fabric deployment pipelines, including guidance on selecting the right approach based on requirements and best practices.
 ms.reviewer: whhender
 ms.author: miescobar
 author: ptyx507x
 ms.topic: conceptual
-ms.date: 09/22/2025
+ms.date: 09/29/2025
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
 
-# Dataflow Gen2 and deployment pipelines
+# CI/CD and ALM solution architectures for Dataflow Gen2
 
 >[!NOTE]
->Fabric deployment pipelines support [Dataflow Gen2 with CI/CD support](dataflow-gen2-cicd-and-git-integration.md). This article provides guidance on how to use Dataflow Gen2 with deployment pipelines.
+>The contents of this article applies to [Dataflow Gen2 with CI/CD support](dataflow-gen2-cicd-and-git-integration.md). 
 
 Microsoft Fabric provides tools for Continuous Integration/Continuous Deployment (CI/CD) and Application Lifecycle Management (ALM). These tools help teams build, test, and deploy data solutions with consistency and governance.
 
 Dataflow Gen2 with CI/CD support integrates dataflows into [Fabric deployment pipelines](/fabric/cicd/deployment-pipelines/intro-to-deployment-pipelines). This integration automates build, test, and deployment stages. It provides consistent, version-controlled delivery of dataflows and improves reliability by embedding Dataflow Gen2 into Fabric's pipeline orchestration.
 
-This article provides guidance on solution architectures for your Dataflow and related Fabric items. You can use this guidance to build a deployment pipeline that fits your needs.
+This article provides guidance on solution architectures for your Dataflow and related Fabric items with CI/CD and ALM in mind. You can use this guidance to build a solution that fits your needs. This article focuses on two specific goals:
 
-While there are many goals with deployment pipelines, this article focuses on two specific goals:
-
-- **Consistency**: Keep your Dataflow's mashup script unchanged across all deployment stages.
+- **Consistency**: Keep your Dataflow's mashup script unchanged across your whole application lifecycle (or deployment stages in a deployment pipeline).
 - **Stage-specific configuration**: Use dynamic references for data sources and destinations that adapt to each stage (Dev, Test, Prod).
 
 ## Solution architectures
 
 A good solution architecture works for your Dataflow Gen2 and extends through your overall Fabric solution.
 
-The following list covers the available solution architectures when using a Dataflow Gen2:
+The following table covers the available solution architectures when using a Dataflow Gen2:
 
-- **Parameterized Dataflow Gen2**: Using the [public parameters mode](dataflow-parameters.md), you can parameterize Dataflow components—such as logic, sources, or destinations—and pass runtime values to dynamically adapt the Dataflow based on the pipeline stage.
-- **Variable libraries inside a Dataflow Gen2**: Using the [variable libraries integration with Dataflow Gen2](dataflow-gen2-variable-library-integration.md), you can reference variables throughout your Dataflow. These variables are evaluated at runtime based on values stored in the library, enabling dynamic behavior aligned with the pipeline stage.
+|Type|Description|Diagram|Tutorial|
+|---|---|---|--|
+|**Parameterized Dataflow Gen2**| Using the [public parameters mode](dataflow-parameters.md), you can parameterize Dataflow components—such as logic, sources, or destinations—and pass runtime values to dynamically adapt the Dataflow based on the pipeline stage.|:::image type="content" source="media/dataflow-gen2-cicd-alm-solution-architecture/diagram-public-parameters-mode-architecture.png" alt-text="Diagram of the public parameters mode inside a Dataflow Gen2 high level solution architecture." lightbox="media/dataflow-gen2-cicd-alm-solution-architecture/diagram-public-parameters-mode-architecture.png":::| [Link to Tutorial](dataflow-gen2-parameterized-dataflow.md)|
+| **Variable libraries inside a Dataflow Gen2** | Using the [variable libraries integration with Dataflow Gen2](dataflow-gen2-variable-library-integration.md), you can reference variables throughout your Dataflow. These variables are evaluated at runtime based on values stored in the library, enabling dynamic behavior aligned with the pipeline stage.|  :::image type="content" source="media/dataflow-gen2-cicd-alm-solution-architecture/diagram-variable-libraries-references-architecture.png" alt-text="Diagram of the variable libraries inside a Dataflow Gen2 high level solution architecture." lightbox="media/dataflow-gen2-cicd-alm-solution-architecture/diagram-variable-libraries-references-architecture.png":::|--|
 
 The main difference between these two approaches is how they pass values at runtime. A parameterized Dataflow requires a process through either the REST API or the [Fabric pipeline Dataflow activity](dataflow-activity.md) to pass values. The variable libraries integration with Dataflow Gen2 requires a variable library at the workspace level and the correct variables referenced inside the Dataflow.
 
@@ -41,7 +41,7 @@ Both options are valid, and each has its own considerations and limitations. We 
 
 ## General considerations
 
-Here are things to consider when using a Dataflow Gen2 inside a Fabric deployment pipeline:
+Here are things to consider when choosing a solution architecture with CI/CD and ALM in mind:
 
 - **Default references**: Dataflow Gen2 creates absolute references to Fabric items (for example, Lakehouses, Warehouses) by default. Review your Dataflow to identify which references should remain fixed and which should be adapted dynamically across environments.
 - **Connection behavior**: Dataflow Gen2 doesn't support dynamic reconfiguration of data source connections. If your Dataflow connects to sources like SQL databases using parameters (for example, server name, database name), those connections are statically bound and can't be altered using workspace variables or parameterization.

@@ -15,8 +15,6 @@ ms.date: 02/16/2025
 
 This article provides solutions for common errors and problems that you might encounter when you work with Microsoft Fabric variable libraries.
 
-> [!NOTE]
-> The Fabric variable library item is currently in preview.
 
 ## Failure to manage a variable library
 
@@ -71,9 +69,9 @@ This article provides solutions for common errors and problems that you might en
 
 ### I can't reference an added variable
 
-**Description of the problem**: I can't find the variable that I want to refer to in the data pipeline.
+**Description of the problem**: I can't find the variable that I want to refer to in the pipeline.
 
-**Cause**: Reasons why a variable might not appear in the data pipeline include:
+**Cause**: Reasons why a variable might not appear in the pipeline include:
 
 - The variable wasn't saved.
 - The variable was deleted or renamed.
@@ -81,7 +79,7 @@ This article provides solutions for common errors and problems that you might en
 
 **Solution**: Go back to the variable library and check the names of the existing variables. If the variable that you want exists but wasn't saved, save it. If it doesn't exist, create it.
 
-After you find and fix the problem, remove the current reference and replace it with the correct name in the data pipeline.
+After you find and fix the problem, remove the current reference and replace it with the correct name in the pipeline.
 
 ### Active value set not changed
 

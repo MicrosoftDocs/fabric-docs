@@ -5,13 +5,13 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview #Don't change
-ms.date: 08/20/2025
+ms.date: 09/24/2025
 
 #customer intent: As a data engineer, I want to control and secure outbound network access from my Fabric workspace so that I can prevent unauthorized data exfiltration and comply with organizational security policies.
 
 ---
 
-# Workspace outbound access protection for data engineering workloads (preview)
+# Workspace outbound access protection for data engineering workloads
 
 Workspace outbound access protection enables precise control over external communications from Microsoft Fabric workspaces. When this feature is enabled, all workspace items, such as notebooks, Spark job definitions, and lakehouses, are restricted from making outbound connections to public endpoints unless access is explicitly granted through approved managed private endpoints. This capability is crucial for organizations in secure or regulated environments, as it helps prevent data exfiltration and enforces organizational network boundaries.
 
@@ -20,7 +20,7 @@ Workspace outbound access protection enables precise control over external commu
 To configure outbound access protection for a workspace, you can enable the setting using the Fabric portal. 
 
 * Open the workspace settings and select **Network Security**.
-* Under **Outbound access protection (preview)**, switch the **Block outbound public access** toggle to **On**.
+* Under **Outbound access protection**, switch the **Block outbound public access** toggle to **On**.
 
 For detailed instructions, refer to [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md).
 

@@ -69,6 +69,8 @@ items:
       items:
         - name: Data agent configurations
           href: data-agent-configurations.md
+        - name: Example queries
+          href: data-agent-example-queries.md
         - name: Best practices for configuring data agents 
           href: data-agent-configuration-best-practices.md
         - name: How to configure a data agent
