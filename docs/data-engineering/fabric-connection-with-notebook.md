@@ -23,16 +23,11 @@ Here are the supported authentication methods for Fabric Connection in notebooks
 
 - **Basic Authentication**: Supported for Azure SQL Database and other databases that support basic authentication.
 - **Account Key Authentication**: Supported for REST API data sources that require Account key authentication.
-- **Service Principal Authentication**: Supported for Azure services that support Service Principal authentication.
-
-> [!NOTE]
-> You might notice some issues when you create the connection with SPN. This is a known issue, and we're working to fix it.
-
 - **Token Authentication**: Supported for data sources that require token-based authentication.
 - **Workspace Identity Authentication**: Supported for Fabric workspace identity authentication.
 
 > [!IMPORTANT]
-> OAuth2.0 isn't supported for Fabric Connection in notebooks. If you choose SPN or workspace identity authentication, make sure to grant the necessary permissions to the SPN or Fabric workspace identity to access the data source.
+> OAuth2.0 isn't supported for Fabric Connection in notebooks. If you choose workspace identity authentication, make sure to grant the necessary permissions to the Fabric workspace identity to access the data source. Service Principal Authentication(SPN) authentication support will be added in a future update.
 
 There's a tenant level setting that allows the tenant admin to control whether this feature is enabled for the entire tenant. If the setting is disabled, users can't use Fabric Connection in notebooks. By default, this feature is enabled.
 
@@ -132,7 +127,7 @@ If the same connection is disconnected and reconnected, the connection ID will c
 ## Known issues and limitations
 
 - OAuth2.0 authentication isn't supported for Fabric Connection in notebooks.
-- SPN authentication can cause issues when you create the connection. We're working on fixing this known issue.
+- Service Principal Authentication(SPN) authentication support will be added in a future update.
 
 ## Related content
 
