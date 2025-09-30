@@ -38,6 +38,8 @@ landingContent:
             url: sql/create.md
           - text: Connect
             url: sql/connect.md
+          - text: Connect with Python
+            url: sql/connect-python.md
           - text: Load data
             url: sql/load-data-pipelines.md
   # Card 

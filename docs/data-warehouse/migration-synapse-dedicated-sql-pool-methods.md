@@ -72,6 +72,8 @@ Using the Copy Wizard to generate a ForEach provides simple UI to convert DDL an
 
 However, it isn't optimal with the overall throughput. The requirement to use staging, the need to parallelize read and write for the "Source to Stage" step are the major factors for the performance latency. It's recommended to use this option for dimension tables only.
 
+<a id="option-2-ddldata-migration---data-pipeline-using-partition-option"></a>
+
 ### Option 2. DDL/Data migration - Pipeline using partition option
 
 To address improving the throughput to load larger fact tables using Fabric pipeline, it's recommended to use Copy Activity for each Fact table with partition option. This provides the best performance with Copy activity. 
@@ -123,9 +125,9 @@ You can use Fabric Pipelines to easily migrate over your DDL (schemas) for table
 
 This pipeline accepts a parameter `SchemaName`, which allows you to specify which schemas to migrate over. The `dbo` schema is the default. 
 
-In the **Default value** field, enter  a comma-delimited list of table schema indicating which schemas to migrate: `'dbo','tpch'` to provide two schemas, `dbo` and `tpch`.
+In the **Default value** field, enter a comma-delimited list of table schema indicating which schemas to migrate: `'dbo','tpch'` to provide two schemas, `dbo` and `tpch`.
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a pipeline. In the Name field, 'SchemaName'. In the Default value field, 'dbo','tpch', indicating these two schemas should be migrated.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a Pipeline. In the Name field, 'SchemaName'. In the Default value field, 'dbo','tpch', indicating these two schemas should be migrated.":::
 
 ##### Pipeline design: Lookup activity
 
@@ -154,7 +156,7 @@ In the **Settings** tab:
     ')
     ```
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-query-dynamic-content.png" alt-text="Screenshot from Data Factory showing the Settings tab of a pipeline. The 'Query' button is selected and code is pasted into the 'Query' field.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-query-dynamic-content.png" alt-text="Screenshot from Data Factory showing the Settings tab of a Pipeline. The 'Query' button is selected and code is pasted into the 'Query' field.":::
 
 ##### Pipeline design: ForEach Loop
 
