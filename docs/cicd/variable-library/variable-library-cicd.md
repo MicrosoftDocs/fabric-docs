@@ -17,9 +17,6 @@ ms.search.form: CICD and variable library
 
 You can use Microsoft Fabric variable libraries to manage configurations across stages of the release pipeline and to save values in Git. This article explains how to use variable libraries in the context of lifecycle management and continuous integration and continuous delivery (CI/CD).
 
-> [!NOTE]
-> The Fabric variable library item is currently in preview.
-
 ## Variable libraries and deployment pipelines
 
 You can deploy variable libraries and their values in deployment pipelines to manage variable values across stages.
