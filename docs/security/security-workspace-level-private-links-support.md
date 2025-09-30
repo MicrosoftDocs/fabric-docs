@@ -42,33 +42,30 @@ You can use workspace-level private links to connect to the following item types
 
 ### Notes about unsupported item types
 
-Review the following considerations when working with unsupported item types.
+The following item types aren't currently supported in workspaces enabled with workspace-level private links:
 
-* Inbound Public access can't be restricted for a workspace if it contains unsupported items, even if workspace-level private link is set up.
+* Deployment pipelines
+* Default semantic models
+* Lakehouses with schemas
+* Spark connectors for SQL Data Warehouse
+* Gateway-based connections in Data Pipelines and Copy Jobs
 
-* Unsupported item types can't be created in workspaces where inbound public access is restricted.
+If a workspace contains any unsupported item types, inbound public access can't be restricted for the workspace, even if workspace-level private link is set up. Similarly, if a workspace is already configured to restrict inbound public access, unsupported item types can't be created in that workspace.
 
-* When a workspace is assigned to a deployment pipeline, it can't be configured to block public access, as deployment pipelines don't currently support workspace-level private link.
+Review the following additional considerations when working with unsupported item types.
 
-* Existing lakehouses, warehouses and mirrored databases use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse, warehouse or mirrored database.
+* **Deployment pipelines:** When a workspace is assigned to a deployment pipeline, it can't be configured to block public access, as deployment pipelines don't currently support workspace-level private links.
 
-* Lakehouses with schemas aren't supported when a workspace-level private link is enabled for a workspace.
+* **Default semantic models:** Existing lakehouses, warehouses and mirrored databases use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse, warehouse or mirrored database.
 
-* To read files in a Lakehouse located in another workspace, use a fully qualified path that includes the workspace ID and lakehouse ID (not their display names). This approach ensures the Spark session can resolve the path correctly and avoids socket timeout errors. [Learn more](workspace-outbound-access-protection-data-engineering.md#understanding-the-behavior-of-file-paths)
 
-* Spark connector for SQL DW isn't currently supported when a workspace-level private link is enabled for a workspace.
+* **Data Pipelines and Copy Jobs:** Data Pipelines and Copy Jobs are generally supported in workspaces enabled with private links. However, the following scenario isn't currently supported:
 
-* Pipelines and Copy Jobs are generally supported. However, the following scenario isn't currently supported:
+   * *Gateway-based connections:* Data Pipelines and Copy Jobs can't use connections that rely on an on-premises data gateway or a virtual network (VNet) data gateway infrastructure. This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
 
-   * **Gateway-based connections:** Pipelines and Copy Jobs can't use connections that rely on an on-premises data gateway or a virtual network (VNet) data gateway infrastructure. This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
+## Management options for supported item types
 
-* The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
-  
-* Workspace monitoring is not currently supported when a workspace-level private link is enabled for a workspace.
-
-## Supported APIs
-
-This section lists the APIs that support workspace-level private links.
+This section describes how you can manage supported item types in workspaces enabled with private links, using either the Fabric portal or REST APIs. It lists available management endpoints and portal experiences for each item type, along with relevant notes and limitations.
 
 ### Fabric Core support
 
@@ -89,7 +86,7 @@ APIs with endpoints containing `v1/workspaces/{workspaceId}` support workspace-l
 * [External Data Shares Provider - REST API (Core)](/rest/api/fabric/core/external-data-shares-provider): The recipient needs to use the workspace fully qualified domain name (FQDN) to access the shared OneLake URL.
 
 > [!NOTE]
-> * The [workspaces network communication policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy) isn't restricted by workspace-level network settings. This API remains accessible from public networks, even if public access to the workspace is blocked. Tenant-level network restrictions still apply. See also [Table 1. Access to workspace communication policy API based on tenant and private link settings](security-workspace-level-private-links-set-up.md#step-8-deny-public-access-to-the-workspace).
+> * **Network communication policy API:** The [workspaces network communication policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy) isn't restricted by workspace-level network settings. This API remains accessible from public networks, even if public access to the workspace is blocked. Tenant-level network restrictions still apply. See also [Table 1. Access to workspace communication policy API based on tenant and private link settings](security-workspace-level-private-links-set-up.md#step-8-deny-public-access-to-the-workspace).
 > * **Deployment pipelines:** If any workspace in a deployment pipeline is set to deny public access (restricted), deployment pipelines can't connect to that workspace. Configuring inbound restriction is blocked for any workspace that is assigned to a pipeline.
 > * **Item sharing:** Item sharing isn't supported. If items are already shared with users, those users can no longer access the items using the shared links.
 
@@ -119,7 +116,7 @@ Using the warehouse connection string, you can also access a warehouse via the S
 
 ### SQL Endpoint support
 
-Obtain the workspace private link service connection string for a SQL Endpoint by using the Fabric portal or REST API.
+Find the workspace private link service connection string for a SQL Endpoint by using the Fabric portal or REST API.
 
 |Fabric portal  |REST APIs  |
 |---------|---------|
@@ -141,9 +138,9 @@ Use the Fabric portal or APIs in workspaces enabled with private links to create
 |---------|---------|
 |[Manage Livy API endpoints](/fabric/data-engineering/get-started-api-livy)         | [Livy Sessions (Notebook)](/fabric/data-engineering/get-started-api-livy)
 
-A Livy session job establishes a Spark session that remains active for the duration of your interaction with the Livy API. Livy sessions are ideal for interactive workloads. The session starts when you submit a job and remains available until you explicitly end it or the system terminates it after 20 minutes of inactivity. Multiple jobs can run within the same session, sharing state and cached data.
+A *Livy session job* establishes a Spark session that remains active for the duration of your interaction with the Livy API. Livy sessions are ideal for interactive workloads. The session starts when you submit a job and remains available until you explicitly end it or the system terminates it after 20 minutes of inactivity. Multiple jobs can run within the same session, sharing state and cached data.
 
-A Livy batch job involves submitting a Spark application for a single execution. Unlike a Livy session job, a batch job doesn't maintain a persistent Spark session. Each Livy batch job starts a new Spark session that ends when the job completes. This method is suitable for tasks that don't depend on cached data or require state to be maintained between jobs.
+A *Livy batch job* involves submitting a Spark application for a single execution. Unlike a Livy session job, a batch job doesn't maintain a persistent Spark session. Each Livy batch job starts a new Spark session that ends when the job completes. This method is suitable for tasks that don't depend on cached data or require state to be maintained between jobs.
 
 ### Spark job definition support
 
@@ -155,7 +152,7 @@ Use the Fabric portal or the APIs in workspaces enabled with private links to cr
 
 ### Environment support
 
-Manage environments in workspaces enabled with private links by using the Fabric portal or use Environment REST APIs to create, read, update, and delete Environment items.
+Manage environments in workspaces enabled with private links by using the Fabric portal, or use Environment REST APIs to create, read, update, and delete Environment items.
 
 |Fabric portal  |REST APIs  |
 |---------|---------|
@@ -212,7 +209,7 @@ Manage eventhouses in workspaces enabled with private links by using the Fabric 
 
 |Fabric portal  |REST APIs  |
 |---------|---------|
-|[Create an eventhouse](/fabric/real-time-intelligence/event-houses/create-eventhouse)  | [Items (Eventhouse)](/rest/api/fabric/eventhouse/items) |
+|[Create an eventhouse](/fabric/real-time-intelligence/create-eventhouse)  | [Items (Eventhouse)](/rest/api/fabric/eventhouse/items) |
 
 Unsupported scenarios:
 
@@ -269,7 +266,8 @@ You can manage mirrored databases in workspaces enabled with private links by us
 - Up to 10 workspace private link services can be created per minute.
 - For Data Engineering workloads:
    - To query Lakehouse files or tables from a workspace that has workspace-level private link enabled, you must create a cross-workspace managed private endpoint connection to access resources in the other workspace. <!--For instructions, see [Cross workspace communication](security-cross-workspace-communication.md).-->
-   - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace.
+   - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace. To read files in a Lakehouse located in another workspace, use a fully qualified path that includes the workspace ID and lakehouse ID (not their display names). This approach ensures the Spark session can resolve the path correctly and avoids socket timeout errors. [Learn more](workspace-outbound-access-protection-data-engineering.md#understanding-the-behavior-of-file-paths)
+
 - You could run into Spark issues in the following regions when outbound access protection is enabled for the workspace: Mexico Central, Israel Central, and Spain Central.
 - Dataflows currently don't support using a Fabric Warehouse or Fabric Lakehouse in the same workspace as either a data source or an output destination.
 - Current limitations for Private Link with an eventhouse:
@@ -277,6 +275,8 @@ You can manage mirrored databases in workspaces enabled with private links by us
    - Eventstream pull: Eventstream workloads don't currently support full polling functionality.
    - Fabric doesn't currently support Event Hub integration.
    - Queued ingestion via OneLake isn't currently available.
+* The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
+* Workspace monitoring is not currently supported when a workspace-level private link is enabled for a workspace.
 
 ## Common errors and troubleshooting
 
