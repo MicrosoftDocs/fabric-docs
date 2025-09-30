@@ -1,52 +1,62 @@
 ---
 title: What is Real-Time Dashboards?
-description: Learn about Real-Time Dashboards in Microsoft Fabric.
+description: Learn about Real-Time Dashboard in Microsoft Fabric.
 ms.reviewer: mibar
 ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: overview
 ms.custom:
-ms.date: 07/17/2025
+ms.date: 09/30/2025
 ms.search.form: Overview
 ---
 
 # What is Real-Time Dashboard?
 
 Real-Time Dashboard in Microsoft Fabric provides a dynamic way to visualize and monitor data as it changes. This overview explains how Real-Time Dashboard works, its key features, and how you can use it to gain timely insights from your data. Whether you generate a dashboard manually or use Copilot, an AI-powered assistant, for automation, Real-Time Dashboards help you build data illustrations quickly and efficiently.
-Each Real-Time Dashboard organizes tiles into pages, with each tile displaying data from a query and a visual. By [exploring the dashboard's data](dashboard-explore-data.md) using slice and dice features and advanced exploration tools, Real-Time Dashboard provides dynamic, up-to-the-minute insights so you can make informed decisions instantly.
+By using [slice and dice features](dashboard-parameters.md) and [advanced exploration tools](dashboard-explore-data.md), Real-Time Dashboard provides dynamic, up-to-the-minute insights so you can make informed decisions instantly.
 
 :::image type="content" source="media/tutorial/final-dashboard.png" alt-text="Screenshot of a real-time dashboard in Fabric displaying sample bike data." lightbox="media/tutorial/final-dashboard.png":::
 
-Key capabilities of Real-Time Dashboard include:
+## Use cases and benefits of Real-Time Dashboard
 
-* **Lifecycle management**: Support for continuous integration and continuous deployment, along with [Git integration](git-deployment-pipelines.md), lets you streamline development and version control.
+Real-Time Dashboard can be used across industries to provide immediate insights and enable faster decision-making. For example, in finance, Real-Time Dashboard can help monitor stock prices and market trends in real time. In healthcare, it can track patient vitals and alert medical staff to critical changes. In manufacturing, Real-Time Dashboard can optimize production lines by identifying bottlenecks as they occur. By leveraging Real-Time Dashboard, industries can improve efficiency, enhance customer experiences, and respond proactively to dynamic situations.
 
-* **Secure collaboration**: Share dashboards without giving access to the underlying database.
+The benefits of Real-Time Dashboard include increased agility, improved accuracy in decision-making, and the ability to respond proactively to changes or issues as they arise.
 
-* **Data source management**: Connect Real-Time Dashboard to different data sources, like Azure Data Explorer clusters, Eventhouses, and other data stores, for seamless integration of real-time data into dashboards.
+## Getting started
 
-## How do I use Real-Time Dashboard?
+### How do I create a Real-Time Dashboard?
 
 Create a Real-Time Dashboard to visualize and explore insights quickly with real-time changing data, in two ways:
 1. [Manually create a dashboard:](dashboard-real-time-create.md)
-    * You set up the Real-Time Dashboard step by step yourself.
-    * You manually select and configure data sources.
-    * You write Kusto Query Language (KQL) queries to retrieve and visualize data in dashboard tiles.
-    * You design and organize the layout of your dashboard.
+    * Set up the Real-Time Dashboard step by step.
+    * Manually select and configure data sources.
+    * Write Kusto Query Language (KQL) queries to retrieve and visualize data in dashboard tiles.
+    * Design and organize the layout of your dashboard.
 
 1. Use [Copilot to automate dashboard creation:](../fundamentals/copilot-generate-dashboard.md)
-    * You use Copilot to automatically generate a Real-Time Dashboard.
-    * Copilot can suggest and set up data sources for you.
-    * Copilot can help write KQL queries or [generate](../fundamentals/copilot-for-writing-queries.md) them based on your natural language prompts.
-    * Copilot simplifies and accelerates dashboard creation, requiring less technical effort and allowing you to focus on the insights.
+    * Select a data source and Copilot automatically generates a Real-Time Dashboard.
 
-## Managing a Real-Time Dashboard:
+### Supported data sources
 
-- [Use parameters in a Real-Time Dashboard](dashboard-parameters.md) to filter data dynamically.
-- [Real-Time Dashboard permissions](dashboard-permissions.md) to control who can view or edit your dashboards.
-- [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md) to suit your needs, including charts, graphs, and tables. The tiles are interactive, so you can drill down into data and explore specific data points in detail.
-- [Apply conditional formatting](dashboard-conditional-formatting.md) to highlight important data trends or anomalies.
-- [Create alerts for Real-Time Dashboard](data-activator/activator-get-data-real-time-dashboard.md) to trigger notifications when specific rule conditions are met.
+Real-Time Dashboard can connect to various data sources, including:
+
+* [Azure Data Explorer](dashboard-real-time-create.md#add-data-source#tab/azure-data-explorer-cluster)
+* [Azure Monitor - Application Insights](dashboard-real-time-create.md#add-data-source#tab/azure-data-monitor)
+* [Azure Monitor - Log Analytics](dashboard-real-time-create.md#add-data-source#tab/azure-data-monitor)
+* [Eventhouse](dashboard-real-time-create.md#add-data-source#tab/kql-database)
+* [KQL Database](dashboard-real-time-create.md#add-data-source#tab/kql-database)
+
+## Key features
+
+Key features and capabilities of Real-Time Dashboard include:
+
+* **Live data monitoring:** dashboards update in real time with [autorefresh](dashboard-real-time-create.md#enable-auto-refresh) rates as low as 10 seconds or continuous updates.
+* **No-code data exploration:** explore underlying data without writing queries using the [Explorer Data](dashboard-explore-data.md) feature.
+* **Real-time alerts:** set [alerts](data-activator/activator-get-data-real-time-dashboard.md) on key metrics using Data Activator to trigger actions such as data changes.
+* **Dynamic interactions:** support for [cross-filtering](dashboard-parameters.md#interact-with-your-data-using-cross-filter), [drill-through](dashboard-parameters.md#use-drillthroughs-as-dashboard-parameters), and [parameters](dashboard-parameters.md) for deeper insights.
+* **Git integration:** sync dashboards with GitHub or Azure DevOps for version control and parallel development.
+* **Permission separation:** dashboard access can be granted without exposing the underlying data, supporting [secure collaboration](dashboard-permissions.md).
 
 ## Related content
 
