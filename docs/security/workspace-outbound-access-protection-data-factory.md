@@ -86,11 +86,11 @@ Add the body with **outbound** set as deny/allow. Make sure you're setting the i
 
 Call the following APIs to view/update the Data Connection rules (Cloud Connections).
 
-TODO
+**TODO**
 
 Call the following APIs to view/update the Data Connection rules (Gateways).
 
-TODO
+**TODO**
 ---
 
 ## Supported Fabric items
