@@ -36,23 +36,23 @@ To make the dataflow dynamic, you parameterize the source table, the filter valu
 
 Before continuing, enable public parameters mode by going to the *Home* tab, selecting *Options*, and in the *Parameters* section, checking the box labeled **Enable parameters to be discovered and overridden for execution** and allow your dataflow to accept parameters during execution.
 
-![Screenshot of the options dialog in Dataflow Gen2 with the Parameters section showing the "Enable to be discovered and overriden for execution" setting](media/dataflow-gen2-tutorial-parameterized-dataflow/parameters-options.png)
+![Screenshot of the options dialog in Dataflow Gen2 with the Parameters section showing the "Enable to be discovered and overriden for execution" setting.](media/dataflow-gen2-tutorial-parameterized-dataflow/parameters-options.png)
 
 ## Parameterize source
 
 When using any of the Fabric connectors—such as Lakehouse, Warehouse, or Fabric SQL—they all follow the same navigation structure and use the same input format. In this scenario, none of the connectors require manual input to establish a connection. However, each one shows which workspace and item it connects to through the navigation steps in your query.
 For example, the first navigation step includes the workspaceId that the query connects to.
 
-:::image type="content" source="media/dataflow-gen2-tutorial-parameterized-dataflow/navigation-workspaceid-reference.png" alt-text="Screenshot of the Navigation 1 step with the workspaceId value in the formula bar for the dimension_city query" lightbox="media/dataflow-gen2-tutorial-parameterized-dataflow/navigation-workspaceid-reference.png":::
+:::image type="content" source="media/dataflow-gen2-tutorial-parameterized-dataflow/navigation-workspaceid-reference.png" alt-text="Screenshot of the Navigation 1 step with the workspaceId value in the formula bar for the dimension_city query." lightbox="media/dataflow-gen2-tutorial-parameterized-dataflow/navigation-workspaceid-reference.png":::
 
 The goal is to replace the hardcoded values in the formula bar with parameters. Specifically, you need to create one parameter for the **WorkspaceId** and another for the **LakehouseId**.
 To create parameters, go to the *Home* tab in the ribbon, select *Manage parameters*, and then choose *New parameter* from the dropdown menu.
 
-![Screenshot of the entry in the Home tab to create a new parameter](media/dataflow-gen2-tutorial-parameterized-dataflow/new-parameter.png)
+![Screenshot of the entry in the Home tab to create a new parameter.](media/dataflow-gen2-tutorial-parameterized-dataflow/new-parameter.png)
 
 As you create the parameters, make sure both are marked as **required** and set to the **text** type. For their current values, use the ones that match the corresponding values from your specific environment.
 
-![Screenshot of the LakehouseId parameter created inside the Manage parameters dialog](media/dataflow-gen2-tutorial-parameterized-dataflow/lakehouseid-parameter.png)
+![Screenshot of the LakehouseId parameter created inside the Manage parameters dialog.](media/dataflow-gen2-tutorial-parameterized-dataflow/lakehouseid-parameter.png)
 
 Once both parameters are created, you can update the query script to use them instead of hardcoded values. This involves manually replacing the original values in the formula bar with references to the Workspace ID and Lakehouse ID parameters.
 The original query script looks like this:
@@ -89,15 +89,15 @@ And you notice that it still correctly evaluates the data preview in the Dataflo
 Now that the source is using parameters, you can focus on parameterizing the transformation logic of the dataflow. In this scenario, the filter step is where the logic is applied, and the value being filtered, currently hardcoded as *Southeast*, should be replaced with a parameter.
 To do this, create a new parameter named **Territory**, set its data type to *text*, mark it as not *required*, and set its current value to **Mideast**.
 
-![Screenshot of the Territory parameter created inside the Manage parameters dialog](media/dataflow-gen2-tutorial-parameterized-dataflow/territory-parameter.png)
+![Screenshot of the Territory parameter created inside the Manage parameters dialog.](media/dataflow-gen2-tutorial-parameterized-dataflow/territory-parameter.png)
 
 Given that your filter step was created using the user interface, you can head over to the Filtered rows step, double select it and get the settings dialog for the filter step. This dialog allows you to select, through the input widget, if you wish to use a parameter instead of a static value:
 
-![Screenshot of the input widget in the filter rows dialog with the option to reference a parameter](media/dataflow-gen2-tutorial-parameterized-dataflow/input-widget.png)
+![Screenshot of the input widget in the filter rows dialog with the option to reference a parameter.](media/dataflow-gen2-tutorial-parameterized-dataflow/input-widget.png)
 
 After selecting the option to *Select a parameter*, a dropdown will appear to show all available parameters that match the required data type. From this list, you can select the newly created Territory parameter.
 
-![Screenshot of the Territory parameter selected inside the input widget from the filter rows dialog](media/dataflow-gen2-tutorial-parameterized-dataflow/territory-parameter-input-widget.png)
+![Screenshot of the Territory parameter selected inside the input widget from the filter rows dialog.](media/dataflow-gen2-tutorial-parameterized-dataflow/territory-parameter-input-widget.png)
 
 Once you select OK, notice that the diagram view has already created the link between the newly created parameter and the query in use. Not only that, but the data preview now shows you information for the **Mideast** territory.
 
@@ -109,13 +109,13 @@ Once you select OK, notice that the diagram view has already created the link be
 
 The last component to parameterize in this scenario is the destination. While the information about what the data destination is can be found in the Dataflow editor, to parameterize this part of the dataflow you need to use Git or the REST API.
 
-![Screenshot of the flyout that contains the data destination settings for the dimension_city query](media/dataflow-gen2-tutorial-parameterized-dataflow/destination-settings-flyout.png)
+![Screenshot of the flyout that contains the data destination settings for the dimension_city query.](media/dataflow-gen2-tutorial-parameterized-dataflow/destination-settings-flyout.png)
 
 This tutorial shows you how to make the changes through Git. Before you can make changes through git make sure to:
 * **Create a parameter with the name WarehouseId**: make sure to use the corresponding ID of your Warehouse as the current value, set it as required and of the text data type.
 * **Save the Dataflow**: use the Save button in the home tab of the ribbon.
 
-![Screenshot of the dataflow save button](media/dataflow-gen2-tutorial-parameterized-dataflow/dataflow-save.png)
+![Screenshot of the dataflow save button.](media/dataflow-gen2-tutorial-parameterized-dataflow/dataflow-save.png)
 
 Once your Dataflow is saved, make sure to commit the changes to your Git repository and head over to your repository to see the *mashup.pq* file of your Dataflow.
 When looking at the *mashup.pq* file, look for the query that you associated the data destination with. In this scenario, the name of that query is dimension_city. You see a record attribute above this query name:
@@ -158,7 +158,7 @@ You can use the [Fabric REST API](/rest/api/fabric/dataflow/background-jobs/run-
 In this tutorial, you'll use the experience found within the Dataflow activity for Fabric pipelines.
 Start by creating a Pipeline and add a new [dataflow activity](dataflow-activity.md) to the canvas. In the settings of the activity, find the workspace where your Dataflow is located and then select the Dataflow from the dropdown.
 
-![Screenshot of the Dataflow activity with parameters inside a pipeline](media/dataflow-gen2-tutorial-parameterized-dataflow/pipeline-dataflow-activity.png)
+![Screenshot of the Dataflow activity with parameters inside a pipeline.](media/dataflow-gen2-tutorial-parameterized-dataflow/pipeline-dataflow-activity.png)
 
 A Dataflow parameters section can be expanded to show you all the available parameters in the Dataflow and their default values. You can replace any values in here and the values passed will be used to define what sources, logic and destination should be used to evaluate your dataflow run.
 You can also give new scenarios a try by creating a new Warehouse and changing the WarehouseId for the evaluation or using this pattern in a deployment pipeline where the WorkspaceId and other parameters need to be passed to point to the correct items in the corresponding environment.

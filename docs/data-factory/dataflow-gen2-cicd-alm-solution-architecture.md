@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 # CI/CD and ALM solution architectures for Dataflow Gen2
 
 >[!NOTE]
->The contents of this article applies to [Dataflow Gen2 with CI/CD support](dataflow-gen2-cicd-and-git-integration.md). Contents 
+>The contents of this article applies to [Dataflow Gen2 with CI/CD support](dataflow-gen2-cicd-and-git-integration.md). 
 
 Microsoft Fabric provides tools for Continuous Integration/Continuous Deployment (CI/CD) and Application Lifecycle Management (ALM). These tools help teams build, test, and deploy data solutions with consistency and governance.
 
