@@ -1,5 +1,5 @@
 ---
-title: What is Real-Time Dashboards?
+title: What is Real-Time Dashboard?
 description: Learn about Real-Time Dashboard in Microsoft Fabric.
 ms.reviewer: mibar
 ms.author: v-hzargari
@@ -12,7 +12,7 @@ ms.search.form: Overview
 
 # What is Real-Time Dashboard?
 
-Real-Time Dashboard in Microsoft Fabric provides a dynamic way to visualize and monitor data as it changes. This overview explains how Real-Time Dashboard works, its key features, and how you can use it to gain timely insights from your data. Whether you generate a dashboard manually or use Copilot, an AI-powered assistant, for automation, Real-Time Dashboards help you build data illustrations quickly and efficiently.
+Real-Time Dashboard in Microsoft Fabric provides a dynamic way to visualize and monitor data as it changes. This overview explains how Real-Time Dashboard works, its key features, and how you can use it to gain timely insights from your data. Whether you generate a dashboard manually or use Copilot, an AI-powered assistant, for automation, Real-Time Dashboard helps you build data illustrations quickly and efficiently.
 By using [slice and dice features](dashboard-parameters.md) and [advanced exploration tools](dashboard-explore-data.md), Real-Time Dashboard provides dynamic, up-to-the-minute insights so you can make informed decisions instantly.
 
 :::image type="content" source="media/tutorial/final-dashboard.png" alt-text="Screenshot of a real-time dashboard in Fabric displaying sample bike data." lightbox="media/tutorial/final-dashboard.png":::
