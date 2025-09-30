@@ -1,6 +1,6 @@
 ---
 title: Semantic model refresh activity in Data Factory for Microsoft Fabric
-description: This article describes how to use the Semantic model refresh activity to refresh a Power BI dataset from a data pipeline in Microsoft Fabric.
+description: This article describes how to use the Semantic model refresh activity to refresh a Power BI dataset from a pipeline in Microsoft Fabric.
 author: n0elleli
 ms.author: noelleli
 ms.topic: how-to
@@ -10,7 +10,7 @@ ms.date: 07/09/2025
 
 # Use the Semantic model refresh activity to refresh a Power BI Dataset
 
-This guide shows you how to use the Semantic model refresh activity to connect to your Power BI semantic model datasets and refresh them from a data pipeline in Data Factory for Microsoft Fabric.
+This guide shows you how to use the Semantic model refresh activity to connect to your Power BI semantic model datasets and refresh them from a pipeline in Data Factory for Microsoft Fabric.
 
    > [!NOTE]
    > This activity works only with semantic models you create yourself. 

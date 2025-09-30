@@ -19,6 +19,6 @@ The Microsoft Exchange Online connector is supported in Data Factory for [!INCLU
 
 For information on how to connect to Microsoft Exchange Online in Dataflow Gen2, go to [Set up your Microsoft Exchange Online connection](connector-microsoft-exchange-online.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Microsoft Exchange Online in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Microsoft Exchange Online in pipelines.

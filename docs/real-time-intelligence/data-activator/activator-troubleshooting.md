@@ -73,6 +73,10 @@ This error code means that your rule definition is invalid. It indicates an inte
 
 The error code means that Fabric Activator is unable to receive incoming data for your rule for the past seven days, and isn't evaluating your rule. It indicates an internal problem with Fabric Activator. If you receive this error code, ask for assistance on the [Fabric Activator community site](https://community.fabric.microsoft.com/t5/Data-Activator-forums/ct-p/dataactivator).
 
+### PreviewActivatorMigrationRequired
+
+This error code means that this Fabric Activator item was created during the preview period and now needs to be manually migrated. If you receive this error code, reference [the blog post on migration timelines and next steps](https://blog.fabric.microsoft.com/blog/manual-migration-needed-for-activator-preview-items).
+
 ## Exceeded capacity error codes
 
 The following error codes represent Fabric Activator problems that can occur when your account runs out of Fabric capacity.
@@ -141,6 +145,10 @@ This error code means that Fabric Activator couldn't locate the Fabric item you 
 ### FabricItemExecutionUnauthorized
 
 This error code means that there was an unauthorized error while executing the Fabric item. To resolve this problem, reselect the Fabric item and save the rule again.
+
+### FabricItemExecutionNoPermissions
+
+This error code means that there was a permission error while executing the Fabric Item. To resolve this problem, verify your access rights to the Fabric item or contact the Fabric item’s creator to request the necessary permissions.
 
 ## Common issues, symptoms, and remediations
 While Activator abstracts away much of the complexity behind real-time event processing, implementations at scale might encounter data, configuration, or orchestration-related issues that require systematic troubleshooting. This section provides a deep dive into how to identify, analyze, and resolve common operational problems in Activator.

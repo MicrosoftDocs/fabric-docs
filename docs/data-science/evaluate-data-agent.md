@@ -1,11 +1,13 @@
----
-title: Evaluate your data agent 
+﻿---
+title: Evaluate your data agent
 description: Learn how to use the Python data agent SDK to evaluate your data agent.
-ms.author: midesa
-author: midesa
+ms.author: jburchel
+author: jonburchel
 ms.topic: how-to
 ms.custom: 
 ms.date: 05/06/2025
+reviewer: midesa
+ms.reviewer: midesa
 ---
 
 # Evaluate your data agent (preview)
@@ -220,6 +222,14 @@ This feature is especially useful when:
 - You want to apply for more lenient or stricter criteria what counts as a match.
 - Your expected and actual answers may vary in format but still be semantically equivalent.
 - You need to capture domain-specific nuances in how answers should be judged.
+
+## Diagnostics Button  
+
+The **Diagnostics** button allows you to **download a full snapshot of your Data Agent’s configuration and execution steps**. This export includes details such as data source settings, applied instructions, example queries used, and the underlying steps the Data Agent took to generate its response.  
+
+Use this feature when working with Microsoft Support or troubleshooting unexpected behavior. By reviewing the downloaded file, you can see exactly how the Data Agent processed your request, which configurations were applied, and where potential issues may have occurred. This level of transparency makes it easier to debug and optimize your Data Agent’s performance.  
+
+:::image type="content" source="media/how-to-create-data-agent/data-agent-diagnostics.png" alt-text="Screenshot of diagnostics button in the Data Agent" lightbox="media/how-to-create-data-agent/data-agent-diagnostics.png":::
 
 ## Next steps
 

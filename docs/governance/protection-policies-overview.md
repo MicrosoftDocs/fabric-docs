@@ -11,11 +11,11 @@ ms.date: 11/21/2024
 
 ---
 
-# Protection policies in Microsoft Fabric (preview)
+# Protection policies in Microsoft Fabric 
 
 Microsoft Purview protection access control policies (protection policies) enable organizations to control access to items in Fabric using sensitivity labels.
 
-The target audience for this article is security and compliance admins, Fabric admins and users, and anyone else who wants to learn about how protection policies control access to items in Fabric. If you want to see how to create a protection policy for Fabric, see [Create and manage protection policies for Fabric (preview)](./protection-policies-create.md).
+The target audience for this article is security and compliance admins, Fabric admins and users, and anyone else who wants to learn about how protection policies control access to items in Fabric. If you want to see how to create a protection policy for Fabric, see [Create and manage protection policies for Fabric](./protection-policies-create.md).
 
 ## How do protection policies for Fabric work?
 
@@ -41,7 +41,7 @@ The following are examples of where protection policies could be useful:
 
 ## Who creates protection policies for Fabric?
 
-Protection policies for Fabric are generally configured by an organization's Purview security and compliance teams. The protection policy creator must have role of [Information Protection Admin](/defender-office-365/scc-permissions#role-groups-in-microsoft-defender-for-office-365-and-microsoft-purview) or higher. For more information, see [Create and manage protection policies for Fabric (preview)](./protection-policies-create.md).
+Protection policies for Fabric are generally configured by an organization's Purview security and compliance teams. The protection policy creator must have role of [Information Protection Admin](/defender-office-365/scc-permissions#role-groups-in-microsoft-defender-for-office-365-and-microsoft-purview) or higher. For more information, see [Create and manage protection policies for Fabric](./protection-policies-create.md).
 
 ## Requirements
 
@@ -69,5 +69,5 @@ Protection policies are supported for all native Fabric items types, and for Pow
 
 ## Related content
 
-* [Create and manage protection policies for Fabric (preview)](./protection-policies-create.md)
-* [Authoring and publishing protection policies (preview)](/purview/how-to-create-protection-policy)
+* [Create and manage protection policies for Fabric](./protection-policies-create.md)
+* [Authoring and publishing protection policies](/purview/how-to-create-protection-policy)

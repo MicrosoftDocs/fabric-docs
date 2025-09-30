@@ -60,7 +60,7 @@ The following items are currently supported in Microsoft Fabric:
 
 Mirrored database folders contain a *.json* file defining the mirrored database.
 
-For instructions on using Git integration with mirrored databases, see [CI/CD for mirrored databases](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-git-integration).
+For instructions on using Git integration with mirrored databases, see [CI/CD for mirrored databases](../../mirroring/mirrored-database-cicd.md#mirrored-database-git-integration).
 
 #### Notebook files
 

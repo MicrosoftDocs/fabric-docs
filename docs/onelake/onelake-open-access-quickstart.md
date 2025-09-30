@@ -30,9 +30,9 @@ Before you start, you must have:
 
 ## Ingest data and modify the Delta table
 
-1. Navigate to your lakehouse in the Power BI service and select **Get data** and then select **New data pipeline**.
+1. Navigate to your lakehouse in the Power BI service and select **Get data** and then select **New pipeline**.
 
-   :::image type="content" source="media\onelake-open-access-quickstart\onelake-new-pipeline.png" alt-text="Screenshot showing how to navigate to new data pipeline option from within the UI.":::
+   :::image type="content" source="media\onelake-open-access-quickstart\onelake-new-pipeline.png" alt-text="Screenshot showing how to navigate to new pipeline option from within the UI.":::
 
 1. In the **New Pipeline** prompt, enter a name for the new pipeline and then select **Create**.
 

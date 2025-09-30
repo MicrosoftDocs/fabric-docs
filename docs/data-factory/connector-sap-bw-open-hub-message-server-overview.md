@@ -18,4 +18,4 @@ The SAP BW Open Hub Message Server connector is supported in Data Factory for [!
 
 | Supported capabilities                                                                 | Gateway                        | Authentication                                                                                                 |
 |----------------------------------------------------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------|
-| **Data pipeline** <br>- Copy activity (source/-)<br>- Lookup activity | None<br> On-premises<br>Virtual network | Basic |
+| **Pipeline** <br>- Copy activity (source/-)<br>- Lookup activity | None<br> On-premises<br>Virtual network | Basic |

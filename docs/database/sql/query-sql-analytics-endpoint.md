@@ -4,7 +4,7 @@ description: Learn how to query the SQL analytics endpoint of your SQL database 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: dlevy
-ms.date: 11/01/2024
+ms.date: 09/09/2025
 ms.topic: how-to
 ms.search.form: Develop and run queries in SQL editor
 ms.custom: sfi-image-nochange
@@ -18,7 +18,6 @@ Every Fabric SQL database is created with a paired SQL analytics endpoint. This 
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
-- Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
 - [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - [Create a new SQL database](create.md) or use an existing SQL database.
 - Consider loading the [AdventureWorks sample data](load-adventureworks-sample-data.md) in a new SQL database.
@@ -27,7 +26,7 @@ Every Fabric SQL database is created with a paired SQL analytics endpoint. This 
 
 The SQL analytics endpoint can be queried with T-SQL multiple ways:
 
-- The first is via the workspace. Every SQL database is paired with a SQL analytics endpoint. The SQL analytics endpoint always display under the SQL database in item in the workspace list. You can access any of them by selecting them by name from the list.
+- The first is via the workspace. Every SQL database is paired with a SQL analytics endpoint. The SQL analytics endpoint always displays under the SQL database item in the workspace list. You can access any of them by selecting them by name from the list.
         :::image type="content" source="media/query-sql-analytics-endpoint/workspace-item-list.png" alt-text="Screenshot from the Fabric portal showing the workspace item list, and the three objects created with a SQL database.":::
 - The SQL analytics endpoint can also be accessed from within the SQL query editor. This can be especially useful when toggling between the database and the SQL analytics endpoint. Use the pulldown in the upper right corner to change from the editor to the analytics endpoint.  
         :::image type="content" source="media/query-sql-analytics-endpoint/sql-database-sql-analytics-endpoint-dropdown.png" alt-text="Screenshot from the Fabric portal showing the query editor's dropdown list containing the SQL database and SQL analytics endpoint options.":::

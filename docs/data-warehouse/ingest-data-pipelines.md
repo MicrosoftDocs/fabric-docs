@@ -4,7 +4,7 @@ description: Follow steps to ingest data into a Warehouse with pipelines in Micr
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha
-ms.date: 04/06/2025
+ms.date: 09/30/2025
 ms.topic: how-to
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange

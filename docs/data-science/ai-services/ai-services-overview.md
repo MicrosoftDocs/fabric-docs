@@ -1,16 +1,16 @@
----
+﻿---
 title: Use Azure AI services in Fabric
 description: Overview of using Azure AI services in Fabric.
-ms.author: scottpolly
-author: s-polly
+ms.author: lagayhar
+author: lgayhardt
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: overview
-ms.custom:
+ms.custom: 
   - references_regions
 ms.date: 11/29/2024
 ms.update-cycle: 180-days
-ms.search.form:
+ms.search.form: 
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -39,10 +39,10 @@ Fabric provides two options to use Azure AI services:
 
 ### [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/)
 
-[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md). [SynapseML](how-to-use-openai-sdk-synapse.md)
+[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md), [SynapseML](how-to-use-openai-sdk-synapse.md)
 
-- gpt-4 family: `gpt-4o` and `gpt-4o-mini` are supported.
-- text-embedding-ada-002 (version 2), embedding model that can be used with embedding API requests. The maximum accepted request token is 8,191, and the returned vector has dimensions of 1,536.
+- Language Models: `gpt-4.1`, `gpt-4o`, `gpt-4o-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
+- Text Embedding Model: `text-embedding-ada-002` is hosted. [See table for details](#consumption-rate-for-openai-embedding-models)
 
 ### [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) 
 [REST API](how-to-use-text-analytics.md), [SynapseML](how-to-use-text-analytics.md)
@@ -85,10 +85,12 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 
 ### Consumption rate for OpenAI language models
 
-| **Models** | **Deployment Name** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
-|---|---|---|---|---|
-|GPT-4o-2024-05-13 Global | `gpt-4o` | 128 K | 84.03 CU seconds | 336.13 CU seconds |
-|GPT-4o-mini-0718 Global | `gpt-4o-mini` | 128 K| 5.04 CU seconds | 20.17 CU seconds |
+| **Model** | **Deployment Name** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** | **Retirement Date** |
+|---|---|---|---|---|---|
+| gpt-4.1-2025-04-14 | `gpt-4.1` | 1,047,576 | 67.20 CU seconds | 268.80 CU seconds | TBD |
+| gpt-4o-mini-2024-07-18 | `gpt-4o-mini`| 128,000 | 5.04 CU seconds | 20.17 CU seconds | 2025-10-30 |
+| gpt-4o-2024-05-13 | `gpt-4o`  | 128,000 | 84.03 CU seconds | 336.13 CU seconds | 2025-09-30 |
+
 
 
 ### Consumption rate for OpenAI embedding models

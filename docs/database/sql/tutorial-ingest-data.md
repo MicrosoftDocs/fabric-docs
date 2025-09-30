@@ -111,7 +111,7 @@ The following steps use a T-SQL script to create a schema, table, and data for t
 
 ## Insert data using a Microsoft Fabric Pipeline
 
-Another way you can import data into and export data out of your SQL database in Fabric is to use a pipeline. Pipelines offer an alternative to using commands, instead using a graphical user interface. A pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allow you to manage extract, transform, and load (ETL) activities instead of managing each one individually.
+Another way you can import data into and export data out of your SQL database in Fabric is to use a Microsoft Fabric Pipeline. Pipelines offer an alternative to using commands, instead using a graphical user interface. A pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allow you to manage extract, transform, and load (ETL) activities instead of managing each one individually.
 
 Microsoft Fabric Pipelines can contain a Dataflow. [Dataflow Gen2](../../data-factory/create-first-dataflow-gen2.md) uses a Power Query interface that allows you to perform transformations and other operations on the data. You'll use this interface to bring in data from the *Northwind Traders* company, which Contoso partners with. They're currently using the same suppliers, so you'll import their data and show the names of these suppliers using a view that you'll create in another step in this tutorial.
 

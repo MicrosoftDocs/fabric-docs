@@ -4,13 +4,13 @@ description: Overview of migration options for moving data and workloads to Fabr
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sngun
-ms.date: 08/06/2025
+ms.date: 08/19/2025
 ms.topic: overview
 ms.custom:
 - migration
 ai-usage: ai-assisted
 ---
-# Microsoft Fabric Migration overview
+# Microsoft Fabric migration overview
 
 Microsoft Fabric provides a unified analytics platform, and migrating your data and workloads to Fabric can help you take advantage of its integrated capabilities. This page summarizes all migration-related articles in the documentation, grouped by migration source.
 
@@ -43,6 +43,12 @@ Microsoft Fabric provides a unified analytics platform, and migrating your data 
 | **[SqlPackage and Copy job](../database/sql/sqlpackage.md#import-a-database-with-sqlpackage)** | You can migrate from Azure SQL Database or on-premises SQL Server to SQL database in Fabric with minimal downtime using a `.bacpac` file and SqlPackage, then a [Copy job](../data-factory/what-is-copy-job.md). |
 
 
+## Migrate from Azure Data Explorer
+
+| Article | Description |
+|:--|:--|
+| **[Migrate from Azure Data Explorer to Fabric Real-Time intelligence (Eventhouse)](../real-time-intelligence/migrate-azure-data-explorer.md)** | Step-by-step guidance for migrating your Azure Data Explorer workloads to Fabric Eventhouse.|
+
 
 ## Migrate from Azure Synapse Analytics Data Explorer
 
@@ -54,7 +60,7 @@ Microsoft Fabric provides a unified analytics platform, and migrating your data 
 
 | Article | Description |
 |:--|:--|
-| **[Migration Assistant for Fabric Data Warehouse (preview)](../data-warehouse/migration-assistant.md)** | Learn how to use the Migration Assistant to move data and objects from Azure Synapse Analytics SQL Data Warehouse to Fabric Data Warehouse, including supported scenarios and limitations. |
+| **[Migration Assistant for Fabric Data Warehouse](../data-warehouse/migration-assistant.md)** | Learn how to use the Migration Assistant to move data and objects from Azure Synapse Analytics SQL Data Warehouse to Fabric Data Warehouse, including supported scenarios and limitations. |
 | **[Migration​ methods: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](../data-warehouse/migration-synapse-dedicated-sql-pool-methods.md)**|Learn the methods of migration of data warehousing in Azure Synapse dedicated SQL pools to Fabric.|
 | **[Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](../data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md)**|Plan for migration of data warehousing in Azure Synapse dedicated SQL pools to Fabric.|
 
@@ -94,6 +100,13 @@ Microsoft Fabric provides a unified analytics platform, and migrating your data 
 | Article | Description |
 |:--|:--|
 | **[SqlPackage and Copy job](../database/sql/sqlpackage.md#import-a-database-with-sqlpackage)** | You can migrate from Azure SQL Database or on-premises SQL Server to SQL database in Fabric with minimal downtime using a `.bacpac` file and SqlPackage, then a [Copy job](../data-factory/what-is-copy-job.md). |
+
+## Migration resources
+
+- [Azure Architectures for Microsoft Fabric](/azure/architecture/browse/?terms=Fabric)
+- [Migration to Fabric - IFS customer case story](https://www.microsoft.com/customers/story/24678-ifs-microsoft-fabric)
+- [Enable Microsoft Fabric for your organization](../admin/fabric-switch.md)
+- [Microsoft Fabric security fundamentals](../security/security-fundamentals.md)
 
 ## Related content
 
