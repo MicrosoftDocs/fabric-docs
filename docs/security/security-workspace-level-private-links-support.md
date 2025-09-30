@@ -28,7 +28,7 @@ You can use workspace-level private links to connect to the following item types
 
 * Lakehouse, SQL Endpoint, Shortcut
 * Direct connection via OneLake endpoint
-* Notebook, Spark Job Definition, Environment
+* Notebook, Spark job definition, Environment
 * Machine learning experiment, machine learning model
 * Pipeline
 * Copy Job
