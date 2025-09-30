@@ -268,13 +268,13 @@ The following scenarios are unsupported:
 
 Manage Dataflows Gen2 in workspaces enabled with private links by using the Fabric portal or REST API.
 
+A virtual network data gateway must be used for every dataflow connector. The virtual network data gateway must reside in the same virtual network as the workspace-level private link endpoint used by the workspace. 
+
 #### [Fabric portal](#tab/fabric-portal-12)
 * [Dataflow Gen2 default destination](/fabric/data-factory/default-destination)
 #### [REST API](#tab/rest-apis-12)
-[Public APIs capabilities for Dataflows Gen2 in Fabric Data Factory (Preview)](/fabric/data-factory/dataflow-gen2-public-apis) 
+* [Public APIs capabilities for Dataflows Gen2 in Fabric Data Factory (Preview)](/fabric/data-factory/dataflow-gen2-public-apis) 
 ---
-
-A virtual network data gateway must be used for every dataflow connector. The virtual network data gateway must reside in the same virtual network as the workspace-level private link endpoint used by the workspace. 
 
 ### Variable library support
 
