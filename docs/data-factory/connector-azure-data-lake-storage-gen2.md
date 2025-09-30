@@ -63,7 +63,7 @@ To create a connection in a pipeline:
 
 1. Select whether you want to use the file system view or the Common Data Model folder view.
 
-1. If needed, select the on-premises data gateway in **Data gateway** (only supported in Dataflows, Dataflows Gen2, Datamarts, and Semantic Models). 
+1. If needed, select the on-premises data gateway in **Data gateway** (only supported in Dataflow Gen1, Dataflow Gen2, Datamarts, and Semantic Models). 
 
 1. Select **Sign in** to sign into the Azure Data Lake Storage Gen2 account. You'll be redirected to your organization's sign-in page. Follow the prompts to sign in to the account.
 
