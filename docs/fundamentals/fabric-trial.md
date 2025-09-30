@@ -167,8 +167,9 @@ For more information, see [Use Workspace settings](workspaces.md#license-mode).
 If you're the Capacity administrator or Tenant administrator, you might be eligible to increase the trial capacity by following these steps:
 
 1. From the upper right corner of Fabric, select the gear icon, then select **Admin portal**.
-1. Select **Capacity settings**, and then choose the **Trial** tab.
-1. Your current trial size is displayed here. Select the **Change size** button to increase from 4 capacity units to 64 capacity units.
+1. Select **Capacity settings**, and then choose the **Trial** tab. Your current trial size is displayed here against your Trial.
+1. Click on the **Name of the trial** to access the Trial properties
+2. Select the **Change size** button and the select **64 capacity units** in the capacity size drop down, to increase from 4 capacity units to 64 capacity units.
 1. Select **Apply**. If you're eligible to change the size, you see a success message and receive a notification.
 
 You can also downgrade from 64 capacity units to 4 capacity units using these same steps.
