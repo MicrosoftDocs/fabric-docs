@@ -988,8 +988,8 @@
             items:
               - name: Overview
                 href: dataflow-gen2-cicd-alm-solution-architecture.md
-              - name: "Tutorial: Parameterized Dataflow"
-                href: dataflow-gen2-tutorial-parameterized-dataflow.md
+              - name: Parameterized Dataflow
+                href: dataflow-gen2-parameterized-dataflow.md
           - name: Saving a draft of your dataflow
             href: dataflows-gen2-save-draft.md
           - name: Use cloud connections through gateways
