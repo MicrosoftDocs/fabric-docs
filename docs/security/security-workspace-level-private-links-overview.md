@@ -6,13 +6,13 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: overview
 ms.custom:
-ms.date: 08/13/2025
+ms.date: 09/29/2025
 
 #customer intent: As a workspace admin, I want to configure Private Link on my workspace to prevent access to the workspace from the public internet.
 
 ---
 
-# Private links for Fabric workspaces (preview)
+# Private links for Fabric workspaces
 
 Private links provide a secure, private connection between your virtual network and Microsoft Fabric, blocking public internet access to your data and reducing the risk of unauthorized access or data breaches. Azure Private Link and Azure Networking private endpoints are used to send data traffic privately using Microsoft's backbone network infrastructure instead of going across the internet.
 

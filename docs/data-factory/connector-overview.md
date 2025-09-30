@@ -84,7 +84,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Common Data Service (legacy)](connector-common-data-service-legacy-overview.md) | ✓/− |  |  |
 | Data Virtuality LDW | ✓/− |  |  |
 | [Databricks](connector-databricks-overview.md) | ✓/− |  |  |
-| [Dataflows](connector-dataflows-overview.md) | ✓/− |  |  |
+| [Dataflow](connector-dataflows-overview.md) | ✓/− |  |  |
 | Datamarts (Beta) | ✓/− |  |  |
 | [Dataverse](connector-dataverse-overview.md) | ✓/− | ✓/✓ |  |
 | [Delta Sharing](/power-query/connectors/delta-sharing) | ✓/− |  |  |

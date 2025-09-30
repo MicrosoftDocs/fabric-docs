@@ -4,7 +4,7 @@ description: Follow steps to ingest data into a Warehouse with pipelines in Micr
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha
-ms.date: 04/06/2025
+ms.date: 09/30/2025
 ms.topic: how-to
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
@@ -20,19 +20,15 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 > [!NOTE]
 > Some features from Azure Data Factory are not available in [!INCLUDE [product-name](../includes/product-name.md)], but the concepts are interchangeable. You can learn more about Azure Data Factory and Pipelines on [Pipelines and activities in Azure Data Factory and Azure Synapse Analytics](/azure/data-factory/concepts-pipelines-activities). For a quickstart, visit [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md).
 
+<a id="create-a-data-pipeline"></a>
+
 ## Create a pipeline
 
-1. To create a new pipeline navigate to your workspace, select the **+New** button, and select **Pipeline**.
-    :::image type="content" source="media/ingest-data-pipelines/new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New Item button, under the Get data section. The Pipeline button is highlighted." lightbox="media/ingest-data-pipelines/new-data-pipeline.png":::
-1. To create a new pipeline navigate to your workspace, select the **+ New item** button, and select **Pipeline**.
-    - In your workspace, select **+ New Item** and look for the **Pipeline** card in the **Get data** section. 
-    - Or, select **Create** in the navigation pane. Look for the **Pipeline** card in the **Data Factory** section.
-
+1. To create a new pipeline navigate to your workspace, select the **+ New item** button, and in the **Get data** section, select **Pipeline**.
 1. In the **New pipeline** dialog, provide a name for your new pipeline and select **Create**.
-
 1. You'll land in the pipeline canvas area, where you see options to get started.
 
-    :::image type="content" source="media/ingest-data-pipelines/start-building-data-pipeline.png" alt-text="Screenshot showing the three options to select for starting ingestion." lightbox="media/ingest-data-pipelines/start-building-data-pipeline.png":::
+    :::image type="content" source="media/ingest-data-pipelines/start-building-pipeline.png" alt-text="Screenshot showing the three options to select for starting ingestion." lightbox="media/ingest-data-pipelines/start-building-pipeline.png":::
 
     Pick the **Copy data assistant** option to launch the **Copy assistant**.
 
