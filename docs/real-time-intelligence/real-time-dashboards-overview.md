@@ -41,11 +41,11 @@ Create a Real-Time Dashboard to visualize and explore insights quickly with real
 
 Real-Time Dashboard can connect to various data sources, including:
 
-* [Azure Data Explorer](dashboard-real-time-create.md#add-data-source?tab=azure-data-explorer-cluster)
-* [Azure Monitor - Application Insights](dashboard-real-time-create.md#add-data-source?tab=azure-data-monitor)
-* [Azure Monitor - Log Analytics](dashboard-real-time-create.md#add-data-source?tab=azure-data-monitor)
-* [Eventhouse](dashboard-real-time-create.md#add-data-source?tab=kql-database)
-* [KQL Database](dashboard-real-time-create.md#add-data-source?tab=kql-database)
+* [Azure Data Explorer](dashboard-real-time-create&tabs=create-manual%2Cazure-data-explorer-cluster#add-data-source)
+* [Azure Monitor - Application Insights](dashboard-real-time-create&tabs=create-manual%2Cazure-data-explorer-cluster#add-data-source)
+* [Azure Monitor - Log Analytics](dashboard-real-time-create&tabs=create-manual%2Cazure-data-monitor#add-data-source)
+* [Eventhouse](dashboard-real-time-create&tabs=create-manual%2Ckql-database#add-data-source)
+* [KQL Database](dashboard-real-time-create&tabs=create-manual%2Ckql-database#add-data-source)
 
 ## Key features
 
