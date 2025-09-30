@@ -22,9 +22,20 @@ To configure outbound access protection for a workspace, you can enable the sett
 * Open the workspace settings and select **Network Security**.
 * Under **Outbound access protection (preview)**, switch the **Block outbound public access** toggle to **On**.
 
-For detailed instructions, refer to [Set up workspace outbound access protection (preview)](workspace-outbound-access-protection-set-up.md).
+For detailed instructions, refer to [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md).
 
-## Running Spark Jobs with Outbound Access Protection Enabled 
+## Notebooks with outbound access protection enabled
+
+When outbound access protection is enabled on a workspace, notebooks can reference a destination only if a managed private endpoint is set up from the workspace to the destination.
+
+| Source | Destination | Is a managed private endpoint set up? | Can the notebook/Spark job connect to the destination? |
+|:--|:--|:--|:--|
+| Notebook (Workspace A) | Lakehouse (Workspace B) | Yes, a cross-workspace managed private endpoint from A to B is set up in A | Yes |
+| Notebook (Workspace A) | Lakehouse (Workspace B) | No | No |
+| Notebook (Workspace A) | External ADLS G2/other data source | Yes, a managed private endpoint is set up from A to the external data source | Yes |
+| Notebook (Workspace A) | External ADLS G2/other data source | No | No | 
+
+## Running Spark Jobs with outbound access protection Enabled 
 
 Once workspace outbound access protection is enabled, all public internet access from Spark clusters is blocked, including:
 

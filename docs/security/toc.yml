@@ -103,6 +103,8 @@ items:
             href: workspace-outbound-access-protection-set-up.md
           - name: Scenarios by Fabric workload
             items: 
+              - name: OneLake
+                href: workspace-outbound-access-protection-onelake.md
               - name: Data Engineering
                 href: workspace-outbound-access-protection-data-engineering.md
               - name: Data Factory

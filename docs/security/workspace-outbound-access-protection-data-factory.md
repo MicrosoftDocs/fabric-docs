@@ -11,10 +11,10 @@ ms.topic: how-to
 
 # Workspace outbound access protection for Data Factory
 
-Workspace Outbound Access Protection (OAP) is a security feature in Microsoft Fabric that lets workspace administrators control and restrict outbound data connections from their workspaces. By configuring OAP, workspace admins block outbound connections from the workspace and allow connections only to destinations connected via managed private endpoints. Workspace admins can choose to create [Cross WS Managed private endpoints](security-cross-workspace-communication.md)
-within Fabric or they can create [Managed Private Endpoints](security-managed-private-endpoints-overview.md) to external destinations that support it.
+Workspace Outbound Access Protection (OAP) is a security feature in Microsoft Fabric that lets workspace administrators control and restrict outbound data connections from their workspaces. By configuring OAP, workspace admins block outbound connections from the workspace and allow connections only to destinations connected via managed private endpoints. Then workspace admins can create [cross-workspace managed private endpoints](security-cross-workspace-communication.md)
+in Fabric or [Managed Private Endpoints](security-managed-private-endpoints-overview.md) to external destinations that support it.
 
-This article explains how to enable and manage OAP for Data Factory artifacts, including Data Flows Gen2 (with CICD), Data Pipelines, and CopyJobs, which rely on Data Connection policies to allow outbound connections to approved targets. It describes supported scenarios and offers guidance on best practices and limitations.
+This article describes how to enable and manage Workspace Outbound Access Protection (OAP) for Data Factory artifacts, such as Dataflow Gen2 (with CICD), Data Pipelines, and CopyJobs. It explains how these artifacts use data connection policies to restrict outbound connections to only approved targets. The article also outlines supported scenarios, best practices, and important limitations.
 
 ## How OAP works with Data Factory items
 
@@ -30,28 +30,32 @@ Once policies are set, Dataflow can connect only to the approved destinations (i
 
 :::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-and-allow.png" alt-text="Screenshot of Dataflow connections showing allowed connections to SQL Server and ADLS G2 Storage.":::
 
-## Setting up workspace OAP
+## Configuring outbound access protection for Data Factory
 
-Before you begin setting up workspace OAP, review the steps below to ensure your workspace is properly configured and meets all prerequisites.
+### Enable outbound access protection
 
-### Prerequisites
-- To configure workspace OAP settings in the Fabric portal or via API, you must be a workspace admin.
-- For subscriptions using workspace private link resources and private endpoints, ensure the Microsoft.Fabric resource provider is re-registered in Azure.
-- The workspace must be assigned to Fabric capacity; trial capacities aren't supported.
-- The [Workspace OAP tenant switch](workspace-outbound-access-protection-tenant-setting.md) must be enabled.
+To configure outbound access protection for a workspace, you can enable the setting using the Fabric portal. 
+
+* Open the workspace settings and select **Network Security**.
+* Under **Outbound access protection (preview)**, switch the **Block outbound public access** toggle to **On**.
+
+For detailed instructions, refer to [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md).
+
+### Add policies to allow/block data connections
+
+You can use the Fabric portal or API to add policies to allow or block data connections with external sources.
 
 ### [Fabric portal](#tab/fabric-portal)
 
 1. Sign in to the Fabric as a workspace admin.
 
 1. Go to **Workspace** > **Workspace settings** > **Network security**.
-1. Under **Outbound access protection**, turn the **Block Outbound public access** toggle to **On**. 
 
-   :::image type="content" source="media/workspace-outbound-access-protection-data-factory/network-security-block-outbound.png" alt-text="Screenshot of workspace network security settings showing the Block Outbound Access toggle enabled.":::
-
-1. Add the data connection rules to allow/block different types of sources that the workspace can connect to.
+1. Scroll to the **Data connection rules (preview)** section.
 
    :::image type="content" source="media/workspace-outbound-access-protection-data-factory/data-connection-rules.png" alt-text="Screenshot of data connection rules configuration listing allowed and blocked connection types.":::
+
+1. Add the data connection rules to allow/block different types of sources that the workspace can connect to.
 
 1. You can also use the **Gateway connection policies** settings to allow or block specific gateways.
 
@@ -87,6 +91,7 @@ TODO
 Call the following APIs to view/update the Data Connection rules (Gateways).
 
 TODO
+---
 
 ## Supported Fabric items
 
