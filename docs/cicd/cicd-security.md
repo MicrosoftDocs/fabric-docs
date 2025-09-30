@@ -15,6 +15,9 @@ ms.date: 01/12/2025
 
 Microsoft Fabric is a software as a service (SaaS) platform that lets users get, create, share, and visualize data. As a SaaS service, Fabric offers a complete security package for the entire platform. For more information, see [Network Security](../security/security-overview.md)
 
+>[!IMPORTANT]
+>Deployment pipelines are currently not supported with workspace inbound and outbound access protection.
+
 
 ## Workspace level security
 Workspaces represent the primary security boundary for data stored in OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. Workspace-level security in Microsoft Fabric provides granular control over data access and network connectivity by allowing administrators to configure both inbound and outbound protections for individual workspaces. 
@@ -27,18 +30,15 @@ Workspace level security is comprised of two main features.
 
 - **Workspace Outbound Access Protection (OAP)** - allows administrators to control and restrict outbound connections from workspace artifacts to external resources. For outbound security, Fabric supports workspace outbound access protection. This network security feature ensures that connections outside the workspace go through a secure connection between Fabric and a virtual network. It prevents items from establishing unsecure connections to sources outside the workspace boundary unless allowed by the workspace admins. This granular control makes it possible to restrict outbound connectivity for some workspaces while allowing the rest of the workspaces to remain open. For more information, see [Workspace outbound access protection (preview)](../security/workspace-outbound-access-protection-overview.md)
 
-## GitHub integraton and network security
+## Git integraton and network security
 Git integration in Fabric lets a workspace sync its content (like notebooks, dataflows, Power BI reports, etc.) with an external Git repository (GitHub or Azure DevOps). Because the workspace must pull from or push to a Git service outside of Fabric, it involves outbound communication. 
 
 ### Workspace inbound access and Git integration
  When Private Link is enabled for a workspace, users must connect through a designated virtual network (VNet), effectively isolating the workspace from public internet exposure. 
  
- This restriction directly impacts Git integration: users attempting to access Git features (such as syncing or committing changes) must do so from within the approved VNet. If a user tries to open the Git pane or perform Git operations from an unapproved network, Fabric blocks access to the workspace UI entirely, including Git functionality. This enforcement ensures that Git-related actions—like connecting to a repository or branching out—are only performed in secure, controlled environments, reducing the risk of data leakage through source control channels.
+ This restriction directly impacts Git integration: users attempting to access Git features (such as syncing or committing changes) must do so from within the approved VNet. If a user tries to open the Git pane or perform Git operations from an unapproved network, Fabric blocks access to the workspace UI entirely, including Git functionality. This also applies to the Git APIs. This enforcement ensures that Git-related actions—like connecting to a repository or branching out—are only performed in secure, controlled environments, reducing the risk of data leakage through source control channels.
 
  Git integraton with inbound access protection is enabled by default. There is no toggle to disable this.
-
- :::image type="content" source="media/cicd-security/inbound-1.png" alt-text="Screenshot of workspace inbound access protection." lightbox="media/cicd-security/inbound-1.png":::
-
 
 ### Workspace outbound access and Git integration
 By default, Workspace OAP will completely block Git integration, because contacting an external Git endpoint would violate the "no outbound" rule. To resolve this, Fabric introduces an admin-controlled consent setting for Git. 
@@ -86,6 +86,9 @@ The **Branch Out** feature creates a new workspace from the current Git branch, 
 
 For example, if you’re branching out from a locked-down dev workspace to create a new test workspace, a warning will state that the new workspace will not automatically have outbound protection. 
 
+>[!NOTE]
+>When branching out, workspace settings are not copied over to other workspaces through git, or directly. OAP and Git integration will need to enabled after the new workspace is created.
+
 New workspaces start with OAP off by default and the administrator should manually enable OAP on the new workspace after it’s created via branch-out to maintain the same security level. If branching out to an existing workspace, the warning will appear if that target workspace isn’t OAP-protected. This is to prevent an unaware user from pushing content into an environment that undermines security. 
 
 #### Removing Git integraton from OAP
@@ -108,9 +111,7 @@ Once Git is allowed, the workspace will operate normally with respect to source 
 ### Limitations and consideratiosn
 The following is information you need be keep in mind when using OAP and Git integration.
 
-- Outbound access protection defends against services or automated processes within Fabric initiating outbound data transfers. It **does not** prevent a legitimate, authenticated user from exfiltrating data manually.
-- Outbound access protection is only available in regions where Fabric Data Engineering workloads are supported.
-- Outbound access protection only supports workspaces hosted on Fabric SKUs. Other capacity types and F SKU trials aren't supported.
+- Not all items support inbound and outbond access protection. This is important for us as syncing those items into the workspace from git will fail. For a list of supported items, see [Private link supported items](../security/security-workspace-level-private-links-support.md#supported-item-types-for-workspace-level-private-link) and [Outbound acccess protection supported items.](../security/workspace-outbound-access-protection-overview.md#supported-item-types)
 - If the workspace is part of Deployment Pipelines, workspace admins can't enable outbound access protection because Deployment Pipelines are unsupported. Similarly, if outbound access protection is enabled, the workspace can't be added to Deployment Pipelines.
 
 For more information, see [OAP and workspace considerations](../security/workspace-outbound-access-protection-overview.md#considerations-and-limitations)
