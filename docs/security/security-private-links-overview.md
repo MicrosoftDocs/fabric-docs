@@ -91,7 +91,7 @@ You can use Dataflow gen2 to get data, transform data, and publish dataflow via 
 
 ### Pipeline
 
-When you connect to Pipeline via private link, you can use the data pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize data pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
+When you connect to Pipeline via private link, you can use the pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
 
 ### ML Model, Experiment, and Data agent
 ML Model, Experiment, and Data agent supports private link. 
@@ -129,7 +129,7 @@ Limitations:
 
 * Ingesting data from OneLake isn't supported.
 * Creating a shortcut to an Eventhouse isn't possible.
-* Connecting to an Eventhouse in a data pipeline isn't possible.
+* Connecting to an Eventhouse in a pipeline isn't possible.
 * Ingesting data using queued ingestion isn't supported.
 * Data connectors relying on queued ingestion aren't supported.
 * Querying an Eventhouse using T-SQL isn't possible.
@@ -138,6 +138,16 @@ Limitations:
 
 Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. In a tenant where private link is enabled, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. Also included is the ability to ingest healthcare data from various sources, such as Azure Storage accounts, and more.
 
+### Fabric Events
+
+Fabric Events support Private Link without affecting event delivery, because the events originate from within the tenan
+
+### Azure Events
+
+Azure Events support Private Link with the following behavior when the Block Public Internet Access tenant setting is enabled: 
+* New configurations to consume Azure events (e.g., Azure Blob Storage events) will be blocked from being delivered. 
+* Existing configurations consuming Azure events will stop new events from being delivered.
+  
 <!--### Other Fabric items
 
 Other Fabric items, such as KQL Database, API for GraphQL(TM), and Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.

@@ -62,7 +62,7 @@ This section shows the artifacts using Job events. Here are the columns and thei
 ### Supported item types
 | Item type |
 | --------------- | 
-| Data Pipeline |
+| Pipeline |
 | Notebook |
 | Lakehouse |
 | Warehouse |
