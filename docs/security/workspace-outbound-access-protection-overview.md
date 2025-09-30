@@ -5,13 +5,13 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview
-ms.date: 08/20/2025
+ms.date: 09/24/2025
 
 #customer intent: As a Fabric administrator, I want to control and secure outbound connections from workspace artifacts so that I can protect organizational data and ensure compliance with security policies.
 
 ---
 
-# Workspace outbound access protection (preview)
+# Workspace outbound access protection
 
 Workspace outbound access protection in Microsoft Fabric allows admins to control and restrict outbound connections from workspace artifacts to external resources. Security can be viewed from two perspectives:
 
@@ -45,6 +45,7 @@ Workspace outbound access protection works with the following item types.
 * Notebooks
 * Spark Job Definitions
 * Environments
+* Warehouses
 
 For information about workspace outbound access protection scenarios across the various supported item types, see [Workspace outbound access - scenarios](./workspace-outbound-access-protection-scenarios.md).
 
@@ -53,22 +54,18 @@ For information about workspace outbound access protection scenarios across the 
 
 The following limitations apply when using workspace outbound access protection:
 
-* Workspace outbound access protection isn't supported for semantic models and SQL Endpoints. However, there are special considerations for lakehouses:
-   * We recommend enabling outbound access protection on the workspace before creating a lakehouse to ensure compatibility.
-   * Enabling outbound access protection on an existing workspace that already contains a lakehouse (and its associated semantic model and SQL Endpoint) will fail.
+* Workspace outbound access protection isn't supported for existing workspaces that already contain a semantic model in a lakehouse.
 * Outbound access protection is only available in regions where Fabric Data Engineering workloads are supported. For more information, see [Overview of managed private endpoints for Microsoft Fabric](security-managed-private-endpoints-overview.md#limitations-and-considerations).
 * Outbound access protection only supports workspaces hosted on Fabric SKUs. Other capacity types and F SKU trials aren't supported.
 * If a workspace contains unsupported artifacts, workspace admins can't enable outbound access protection until those artifacts are removed.
 * If outbound access protection is enabled on a workspace, workspace admins can't add unsupported artifacts. Outbound access protection must be disabled first, and then workspace admins can add unsupported artifacts.
 * If the workspace is part of Deployment Pipelines, workspace admins can't enable outbound access protection because Deployment Pipelines are unsupported. Similarly, if outbound access protection is enabled, the workspace can't be added to Deployment Pipelines.
 * If your workspace has outbound access protection enabled, it uses managed virtual networks (VNETs) for Spark. In this case, Starter pools are disabled, and you should expect Spark sessions to take 3 to 5 minutes to start.
-* With outbound access protection, all public access from Spark is blocked. This restriction prevents users from downloading libraries directly from public channels like PyPI using pip.
-To install libraries for their Data Engineering jobs, users have two options:
-Reference library packages from a data source connected to the Fabric workspace via a managed private endpoint.
-Upload wheel files for their required libraries and dependencies (that aren’t already included in the prebaked runtime).
+* With outbound access protection, all public access from Spark is blocked. This restriction prevents users from downloading libraries directly from public channels like PyPI using pip. To install libraries for their Data Engineering jobs, users have two options:
+   * Reference library packages from a data source connected to the Fabric workspace via a managed private endpoint.
+   * Upload wheel files for their required libraries and dependencies (that aren’t already included in the prebaked runtime).
 * Enabling outbound access protection blocks all public access from your workspace. Therefore, to query a Lakehouse from another workspace, you must create a cross-workspace managed private endpoint to allow the Spark jobs to establish a connection.
 * Using fully qualified paths with workspace and Lakehouse names can cause a socket timeout exception. To access files, use relative paths for the current Lakehouse or use a fully qualified path with the Workspace and Lakehouse GUIDs.
-* You could run into Spark issues in the following regions when outbound access protection is enabled for the workspace: Mexico Central, Israel Central, and Spain Central.
 * Use the correct file path formats when referencing files in a lakehouse.
    * For files within the current lakehouse, use *relative paths*, for example:
 

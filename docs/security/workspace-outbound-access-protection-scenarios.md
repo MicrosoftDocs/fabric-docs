@@ -5,12 +5,12 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview #Don't change
-ms.date: 08/20/2025
+ms.date: 09/24/2025
 
 #customer intent: As a security administrator, I want to understand workspace outbound access protection scenarios so that I can configure secure data access and movement between workspaces and external sources.
 ---
 
-# Workspace outbound access protection scenarios (preview)
+# Workspace outbound access protection scenarios
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from your workspace to other workspaces and external sources. This article outlines common scenarios to illustrate how outbound access protection affects shortcuts, data copy operations, and notebook connectivity.
 
