@@ -1,6 +1,6 @@
 ---
-title: Build Event-Driven Data Pipelines in Microsoft Fabric
-description: Build real-time, event-driven data pipelines in Microsoft Fabric to process data instantly from OneLake or Azure Blob Storage. Learn how to automate workflows.
+title: Build Event-Driven Pipelines in Microsoft Fabric
+description: Build real-time, event-driven pipelines in Microsoft Fabric using Azure and Fabric events to process data instantly from OneLake or Azure Blob Storage. Learn how to automate workflows.
 author: spelluru
 ms.author: spelluru
 ms.reviewer: george-guirguis
@@ -8,16 +8,16 @@ ms.date: 08/13/2025
 ms.topic: tutorial
 ---
 
-# Build event-driven data pipelines in Microsoft Fabric 
+# Build event-driven pipelines in Microsoft Fabric using Azure and Fabric events
 
 Today’s organizations demand real-time responsiveness from their analytics platforms. When data processing relies on scheduled job runs, insights and actions are delayed, and decisions are based on stale data. Whether your data lands in Azure Blob Storage or Fabric OneLake, it should be processed the moment it arrives to ensure timely decisions and continuous data freshness. Fabric events and Azure events make that possible by enabling event-driven data workflows that react in real-time to new data, without manual triggers or schedules.  
  
-In this article, you learn how to configure an event-driven data pipeline that automatically gets triggered when a new file lands in OneLake or Azure Blob Storage, to ingest and transform the new file. 
+In this article, you learn how to configure an event-driven pipeline that automatically gets triggered when a new file lands in OneLake or Azure Blob Storage, to ingest and transform the new file. 
 
 
 ## Why event-driven workflows? 
 
-Fabric jobs, like data pipelines and notebooks, can be scheduled to run at fixed intervals, but data doesn’t always arrive on a predictable schedule. This mismatch can lead to stale data and delayed insights. Fabric events and Azure events solve this problem by emitting events when a file is created, updated, or deleted in OneLake or Azure blob storage. These events can be consumed by Activator that can trigger Fabric items (for example, data pipelines or notebooks) or Power Automate workflows. 
+Fabric jobs, like pipelines and notebooks, can be scheduled to run at fixed intervals, but data doesn’t always arrive on a predictable schedule. This mismatch can lead to stale data and delayed insights. Fabric events and Azure events solve this problem by emitting events when a file is created, updated, or deleted in OneLake or Azure blob storage. These events can be consumed by Activator that can trigger Fabric items (for example, pipelines or notebooks) or Power Automate workflows. 
 
 This event-driven workflow enables:
 
@@ -51,14 +51,14 @@ First, Let’s create a lakehouse where you can upload the CSV files and have th
     :::image type="content" source="media/tutorial-build-event-driven-data-pipelines/new-sub-folder-menu.png" alt-text="Screenshot of the lakehouse page with the New subfolder menu highlighted." lightbox="media/tutorial-build-event-driven-data-pipelines/new-sub-folder-menu.png":::
 1. Name the subfolder **Source** and select **Create** 
 
-## Build your data pipeline 
+## Build your pipeline 
 
-Next, configure a data pipeline to ingest, transform, and deliver the data in your Lakehouse. 
+Next, configure a pipeline to ingest, transform, and deliver the data in your Lakehouse. 
 
 1. Open another web browser tab, sign in to [Microsoft Fabric](https://fabric.microsoft.com/) using the same account.
 1. Select **My workspace** on the left navigation bar.
 1. On the workspace page, select **New item**.
-1. In the **New item** pane, select **Data pipeline** in the **Get data** section.
+1. In the **New item** pane, select **Pipeline** in the **Get data** section.
 1. Name it **TutorialPipeline** and select **Create** 
 1. In the Pipeline, select **Pipeline activity**, and then select **Copy data**. 
 

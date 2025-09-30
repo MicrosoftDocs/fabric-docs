@@ -1,9 +1,9 @@
 ---
 title: "Manage Fabric Materialized Lake Views Lineage"
 description: Learn how to Manage Fabric materialized lake views lineage.
-ms.author: apsinhar
-author: apurbasroy
-ms.reviewer: nijelsf
+ms.author: eur
+author: eric-urban
+ms.reviewer: apsinhar
 ms.topic: how-to
 ms.date: 06/26/2025
 # customer intent: As a data engineer, I want to manage Fabric materialized lake views lineage in Microsoft Fabric so that I can efficiently handle large datasets and optimize query performance.

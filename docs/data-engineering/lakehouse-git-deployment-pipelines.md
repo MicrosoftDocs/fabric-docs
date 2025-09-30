@@ -1,9 +1,9 @@
 ---
 title: Lakehouse deployment pipelines and git integration
 description: Learn about the Microsoft Fabric lakehouse deployment pipelines and git integration, including what is tracked in a git-connected workspace.
-ms.reviewer: snehagunda
-ms.author: dacoelho
-author: DaniBunny
+ms.reviewer: dacoelho
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 4/29/2025
@@ -20,7 +20,7 @@ The [Lakehouse](lakehouse-overview.md) integrates with the lifecycle management 
 
 The Lakehouse is an item that contains both metadata and data that is referenced in multiple objects in the workspace. Lakehouse contains tables, folders, and shortcuts as primary manageable data container items. From a development workflow perspective, the following dependent objects might reference a Lakehouse:
 
-* [Dataflows](../data-factory/create-first-dataflow-gen2.md) and [Data Pipelines](../data-factory/create-first-pipeline-with-sample-data.md)
+* [Dataflows](../data-factory/create-first-dataflow-gen2.md) and [Pipelines](../data-factory/create-first-pipeline-with-sample-data.md)
 * [Spark Job Definitions](spark-job-definition.md)
 * [Notebooks](how-to-use-notebook.md)
 * Semantic models and Power BI

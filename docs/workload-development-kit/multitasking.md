@@ -4,7 +4,7 @@ description: Learn how to format multitasking tabs on the left pane of Microsoft
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.date: 11/06/2024
+ms.date: 08/22/2025
 ---
 
 # Format multitasking tabs
@@ -23,11 +23,11 @@ Define the `editorTab` section inside the item manifest for editing tab properti
 
 ## Enable opening more than one item at the same time
 
-Define the `maxInstanceCount` property and assign the number of items that you want to open at the same time (up to 10 items):
+Define the `maxInstanceCount` property and assign the number of items that you want to open at the same time (up to 20 items):
 
 ```json
     "editorTab": {
-      "maxInstanceCount": "10"
+      "maxInstanceCount": "20"
     }
 ```
 

@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: conceptual
 ms.custom:
-ms.date: 08/13/2025
+ms.date: 08/21/2025
 ---
 
 # Private links for Fabric tenants
@@ -18,7 +18,7 @@ Fabric supports private links at both the tenant level and the workspace level:
 
 * **Tenant-level private links** provide network policy to the entire tenant. This article focuses on tenant-level private links. 
 
-* **Workspace-level private links (preview)** provide granular control, making it possible to restrict access to certain workspaces while allowing the rest of the workspaces to remain open for public access. To learn more, see [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md).
+* **Workspace-level private links** provide granular control, making it possible to restrict access to certain workspaces while allowing the rest of the workspaces to remain open for public access. To learn more, see [Private links for Fabric workspaces](security-workspace-level-private-links-overview.md).
 
 Enabling private endpoints affects many items, so you should review this entire article before enabling private endpoints for your tenant.
 
@@ -81,7 +81,7 @@ Once you enable the **Azure Private Link** tenant setting, running the first Spa
 
 Once the managed virtual network is provisioned, the starter pools (default Compute option) for Spark are disabled, because they're prewarmed clusters hosted in a shared virtual network. Spark jobs run on custom pools that are created on-demand at the time of job submission within the dedicated managed virtual network of the workspace. Workspace migration across capacities in different regions isn't supported when a managed virtual network is allocated to your workspace.
 
-When the private link setting is enabled, Spark jobs won't work for tenants whose home region doesn't support Fabric Data Engineering, even if they use Fabric capacities from other regions that do.
+When the private link setting is enabled, Spark jobs don't work for tenants whose home region doesn't support Fabric Data Engineering, even if they use Fabric capacities from other regions that do.
 
 For more information, see [Managed VNet for Fabric](./security-managed-vnets-fabric-overview.md).
 
@@ -91,7 +91,7 @@ You can use Dataflow gen2 to get data, transform data, and publish dataflow via 
 
 ### Pipeline
 
-When you connect to Pipeline via private link, you can use the data pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize data pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
+When you connect to Pipeline via private link, you can use the pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
 
 ### ML Model, Experiment, and Data agent
 ML Model, Experiment, and Data agent supports private link. 
@@ -110,6 +110,17 @@ ML Model, Experiment, and Data agent supports private link.
 
 * Copilot isn't currently supported for Private Link or closed network environments.
 
+### Eventstream
+
+Eventstream supports Private Link, enabling secure, real-time data ingestion from multiple sources without exposing traffic to the public internet. It also supports real-time data transformation, such as filtering and enrichment of incoming data streams, before routing them to destinations within Fabric.
+
+Unsupported scenarios:
+
+* Custom Endpoint as a source is not supported.
+* Custom Endpoint as a destination is not supported.
+* Eventhouse as a destination (with direct ingestion mode) is not supported.
+* Activator as a destination is not supported.
+
 ### Eventhouse
 
 Eventhouse supports Private Link, allowing secure data ingestion and querying from your Azure Virtual Network via a private link. You can ingest data from various sources, including Azure Storage accounts, local files, and Dataflow Gen2. Streaming ingestion ensures immediate data availability. Additionally, you can utilize KQL queries or Spark to access data within an Eventhouse.
@@ -118,18 +129,25 @@ Limitations:
 
 * Ingesting data from OneLake isn't supported.
 * Creating a shortcut to an Eventhouse isn't possible.
-* Connecting to an Eventhouse in a data pipeline isn't possible.
+* Connecting to an Eventhouse in a pipeline isn't possible.
 * Ingesting data using queued ingestion isn't supported.
 * Data connectors relying on queued ingestion aren't supported.
 * Querying an Eventhouse using T-SQL isn't possible.
 
 ### Healthcare data solutions (preview)
 
-Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. In a tenant where private link is enabled, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. This includes the ability to ingest healthcare data form various sources, such as Azure Storage accounts, and more.
+Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. In a tenant where private link is enabled, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. Also included is the ability to ingest healthcare data from various sources, such as Azure Storage accounts, and more.
 
+### Fabric Events
 
-Other Fabric items, such as Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+Fabric Events support Private Link without affecting event delivery, because the events originate from within the tenan
 
+### Azure Events
+
+Azure Events support Private Link with the following behavior when the Block Public Internet Access tenant setting is enabled: 
+* New configurations to consume Azure events (e.g., Azure Blob Storage events) will be blocked from being delivered. 
+* Existing configurations consuming Azure events will stop new events from being delivered.
+  
 <!--### Other Fabric items
 
 Other Fabric items, such as KQL Database, API for GraphQL(TM), and Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
@@ -137,9 +155,15 @@ Other Fabric items, such as KQL Database, API for GraphQL(TM), and Eventstream, 
 
 ### Microsoft Purview Information Protection
 
-Microsoft Purview Information Protection doesn't currently support Private Link. This means that in Power BI Desktop running in an isolated network, the **Sensitivity** button is grayed out, label information won't appear, and decryption of *.pbix* files fail.
+Microsoft Purview Information Protection doesn't currently support Private Link. This means that in Power BI Desktop running in an isolated network, the **Sensitivity** button is grayed out, label information doesn't appear, and decryption of *.pbix* files fail.
 
 To enable these capabilities in Desktop, admins can configure [service tags](/azure/virtual-network/service-tags-overview) for the underlying services that support Microsoft Purview Information Protection, Exchange Online Protection (EOP), and Azure Information Protection (AIP). Make sure you understand the implications of using service tags in a private links isolated network.
+
+### Mirrored database
+
+Private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring) and [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db). For other types of database mirroring, if the **Block public Internet access** tenant setting is **enabled**, active mirrored databases enter a paused state, and mirroring can't be started. 
+
+For open mirroring, when the **Block public Internet access** tenant setting is **enabled**, ensure the publisher writes data into the OneLake landing zone via a private link. 
 
 ## Other considerations and limitations
 
@@ -158,6 +182,8 @@ There are several considerations to keep in mind while working with private endp
 
 * Each private endpoint can be connected to one tenant only. You can't set up a private link to be used by more than one tenant.
 
+* Cross-tenant scenarios aren't supported. This means that setting up a tenant-level private endpoint in one Azure tenant to connect directly to a Private Link service in another tenant isn't supported.
+
 * **For Fabric users**: On-premises data gateways aren't supported and fail to register when Private Link is enabled. To run the gateway configurator successfully, Private Link must be disabled. [Learn more about this scenario](/data-integration/gateway/service-gateway-install#related-considerations). Virtual network data gateways work. For more information, see [these considerations](/data-integration/gateway/service-gateway-install#related-considerations).
 
 * **For non-PowerBI (PowerApps or LogicApps) Gateway users**: The on-premises data gateway isn't supported when Private Link is enabled. We recommend exploring the use of the [virtual network data gateway](/data-integration/vnet/overview), which can be used with private links.
@@ -166,7 +192,7 @@ There are several considerations to keep in mind while working with private endp
 
 * The Microsoft Fabric Capacity Metrics app doesn't support Private Link.
   
-* The OneLake Catalog - Govern tab won't be available when Private Link is activated.
+* The OneLake Catalog - Govern tab isn't available when Private Link is activated.
   
 * Private links resource REST APIs don't support tags.
 

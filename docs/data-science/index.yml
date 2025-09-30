@@ -81,6 +81,16 @@ landingContent:
             url: customer-churn.md 
 
 # Card 
+  - title: Model scoring
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Model scoring with PREDICT
+            url: model-scoring-predict.md
+          - text: Serve real-time predictions
+            url: model-endpoints.md
+
+# Card 
   - title: Prepare data
     linkLists:
       - linkListType: how-to-guide

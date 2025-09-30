@@ -1,6 +1,11 @@
 {
     "redirections": [
       {
+        "source_path_from_root": "/docs/data-factory/dataflow-gen2-deployment-pipelines.md",
+        "redirect_url": "/fabric/data-factory/dataflow-gen2-cicd-alm-solution-architecture",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/connector-troubleshoot-postgresql.md",
         "redirect_url": "/fabric/data-factory/connector-troubleshoot-azure-database-for-postgresql",
         "redirect_document_id": true
@@ -28,6 +33,11 @@
       {
         "source_path_from_root": "/docs/data-factory/copy-job.md",
         "redirect_url": "/fabric/data-factory/copy-data-activity",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/pipeline-storage-event-triggers.md",
+        "redirect_url": "/fabric/data-factory/pipeline-runs",
         "redirect_document_id": false
       },
       {
@@ -63,6 +73,11 @@
       {
         "source_path_from_root": "/docs/data-factory/connector-azure-blob-storage-dataflows.md",
         "redirect_url": "/fabric/data-factory/connector-azure-blob-storage",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/schedule-pipeline.md",
+        "redirect_url": "/fabric/data-factory/pipeline-runs",
         "redirect_document_id": false
       },
       {

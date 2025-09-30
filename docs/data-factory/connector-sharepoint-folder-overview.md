@@ -19,6 +19,6 @@ The SharePoint folder connector is supported in Data Factory for [!INCLUDE [prod
 
 For information on how to connect to a SharePoint folder in Dataflow Gen2, go to [Set up your SharePoint folder connection](connector-sharepoint-folder.md).
 
-## Support in data pipelines
+## Support in pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support a SharePoint folder in data pipelines.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support a SharePoint folder in pipelines.

@@ -56,6 +56,8 @@ items:
   items: 
   - name: Connectivity
     href: connectivity.md
+  - name: How to Connect
+    href: how-to-connect.md
 - name: Copilot in Fabric in Data Warehouse
   items:
   - name: What is Copilot in Fabric in Data Warehouse?
@@ -122,7 +124,7 @@ items:
     href: browse-file-content-with-openrowset.md
   - name: Ingesting data into the warehouse
     href: ingest-data.md
-  - name: Ingest data with data pipelines
+  - name: Ingest data with pipelines
     href: ingest-data-pipelines.md
   - name: Ingest data with the COPY statement
     href: ingest-data-copy.md
@@ -198,176 +200,6 @@ items:
     href: clone-table.md
   - name: Clone tables in the Fabric portal
     href: tutorial-clone-table-portal.md
-- name: Mirroring databases
-  items: 
-  - name: Mirroring overview
-    href: ../database/mirrored-database/overview.md
-  - name: How to
-    items:
-    - name: Monitor mirrored databases
-      displayName: Monitor mirroring
-      href: ../database/mirrored-database/monitor.md
-    - name: Mirrored database logs
-      href: ../database/mirrored-database/monitor-logs.md
-    - name: Share and manage permissions
-      href: ../database/mirrored-database/share-and-manage-permissions.md
-  - name: Explore mirrored data
-    items:
-    - name: Explore your mirrored database
-      href: ../database/mirrored-database/explore.md
-    - name: Explore directly in OneLake
-      displayName: Explore mirrored data directly in OneLake
-      href: ../database/mirrored-database/explore-data-directly.md
-    - name: Explore with notebooks
-      displayName: Explore mirrored data with notebooks
-      href: ../database/mirrored-database/explore-onelake-shortcut.md
-  - name: Mirroring Azure SQL Database
-    items:
-      - name: Mirrored database from Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database.md
-      - name: Azure SQL Database tutorial
-        href: ../database/mirrored-database/azure-sql-database-tutorial.md
-      - name: FAQ about mirrored Azure SQL Database
-        displayName: Frequently asked questions about Mirroring Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database-mirroring-faq.yml
-      - name: Secure data 
-        displayName: Securing data in mirrored Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database-how-to-data-security.md
-      - name: Troubleshoot
-        displayName: Troubleshoot mirrored Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database-troubleshoot.md
-      - name: Limitations
-        displayName: Limitations in mirrored Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database-limitations.md
-  - name: Mirroring Azure SQL Managed Instance
-    items:
-      - name: Mirrored database from Azure SQL Managed Instance
-        href: ../database/mirrored-database/azure-sql-managed-instance.md
-      - name: Azure SQL Managed Instance tutorial
-        href: ../database/mirrored-database/azure-sql-managed-instance-tutorial.md
-      - name: FAQ about mirrored Azure SQL Managed Instance
-        displayName: Frequently asked questions about Mirroring Azure SQL Managed Instance
-        href: ../database/mirrored-database/azure-sql-managed-instance-faq.yml
-      - name: Secure data 
-        displayName: Securing data in mirrored Azure SQL Managed Instance
-        href: ../database/mirrored-database/azure-sql-managed-instance-how-to-data-security.md
-      - name: Troubleshoot
-        displayName: Troubleshoot mirrored Azure SQL Managed Instance
-        href: ../database/mirrored-database/azure-sql-managed-instance-troubleshoot.md
-      - name: Limitations
-        displayName: Limitations in mirrored Azure SQL Managed Instance
-        href: ../database/mirrored-database/azure-sql-managed-instance-limitations.md
-  - name: Mirroring Azure Cosmos DB
-    items: 
-      - name: Mirrored databases from Azure Cosmos DB
-        href: ../database/mirrored-database/azure-cosmos-db.md        
-      - name: Azure Cosmos DB tutorial
-        href: ../database/mirrored-database/azure-cosmos-db-tutorial.md
-      - name: FAQ about mirrored Azure Cosmos DB 
-        displayName: Frequently asked questions about mirrored Azure Cosmos DB
-        href: ../database/mirrored-database/azure-cosmos-db-faq.yml
-      - name: Limitations
-        displayName: Limitations in mirrored Azure Cosmos DB
-        href: ../database/mirrored-database/azure-cosmos-db-limitations.md
-      - name: Troubleshoot 
-        displayName: Troubleshoot mirrored Azure Cosmos DB
-        href: ../database/mirrored-database/azure-cosmos-db-troubleshooting.yml
-      - name: How to
-        items:
-          - name: Join data
-            href: ../database/mirrored-database/azure-cosmos-db-how-to-join-multiple.md
-          - name: Query nested data
-            href: ../database/mirrored-database/azure-cosmos-db-how-to-query-nested.md
-          - name: Access data using Lakehouse and notebooks
-            href: ../database/mirrored-database/azure-cosmos-db-lakehouse-notebooks.md
-  - name: Mirroring Azure Databricks
-    items:
-      - name: Mirroring Azure Databricks
-        href: ../database/mirrored-database/azure-databricks.md
-      - name: Tutorial
-        displayName: Mirroring Azure Databricks tutorial
-        href: ../database/mirrored-database/azure-databricks-tutorial.md
-      - name: Secure data
-        displayName: Mirroring Azure Databricks security
-        href: ../database/mirrored-database/azure-databricks-security.md
-      - name: Limitations
-        displayName: Mirroring Azure Databricks Limitations
-        href: ../database/mirrored-database/azure-databricks-limitations.md
-      - name: FAQ about Mirroring Azure Databricks
-        displayName: Frequently asked questions about Mirroring Azure Databricks
-        href: ../database/mirrored-database/azure-databricks-faq.yml
-  - name: Mirroring PostgreSQL
-    items: 
-      - name: Mirrored databases from PostgreSQL
-        href: ../database/mirrored-database/azure-database-postgresql.md
-      - name: PostgreSQL tutorial
-        href: ../database/mirrored-database/azure-database-postgresql-tutorial.md
-      - name: FAQ about mirrored PostgreSQL
-        displayName: Frequently asked questions about mirrored PostgreSQL
-        href: ../database/mirrored-database/azure-database-postgresql-mirroring-faq.yml
-      - name: Secure data
-        displayName: Secure data in mirrored PostgreSQL
-        href: ../database/mirrored-database/azure-database-postgresql-how-to-data-security.md
-      - name: Limitations
-        displayName: Limitations in mirrored PostgreSQL
-        href: ../database/mirrored-database/azure-database-postgresql-limitations.md
-      - name: Troubleshoot
-        displayName: Troubleshoot mirrored PostgreSQL
-        href: ../database/mirrored-database/azure-database-postgresql-troubleshoot.md
-  - name: Mirroring Snowflake
-    items: 
-      - name: Mirrored warehouses from Snowflake
-        href: ../database/mirrored-database/snowflake.md
-      - name: Snowflake tutorial
-        href: ../database/mirrored-database/snowflake-tutorial.md
-      - name: FAQ about mirrored Snowflake
-        displayName: Frequently asked questions about mirrored Snowflake
-        href: ../database/mirrored-database/snowflake-mirroring-faq.yml
-      - name: Secure data
-        displayName: Secure data in mirrored Snowflake
-        href: ../database/mirrored-database/snowflake-how-to-data-security.md
-      - name: Limitations 
-        displayName: Limitations in mirrored Snowflake
-        href: ../database/mirrored-database/snowflake-limitations.md
-  - name: Mirroring SQL Server
-    items: 
-      - name: Mirrored databases from SQL Server
-        href: ../database/mirrored-database/sql-server.md
-      - name: SQL Server tutorial
-        href: ../database/mirrored-database/sql-server-tutorial.md
-      - name: FAQ about mirrored SQL Server
-        displayName: Frequently asked questions about mirrored SQL Server
-        href: ../database/mirrored-database/sql-server-faq.yml
-      - name: Secure data 
-        displayName: Securing data in mirrored SQL Server
-        href: ../database/mirrored-database/sql-server-security.md
-      - name: Limitations 
-        displayName: Limitations in mirrored SQL Server
-        href: ../database/mirrored-database/sql-server-limitations.md
-      - name: Troubleshoot 
-        displayName: Troubleshoot mirrored SQL Server
-        href: ../database/mirrored-database/sql-server-troubleshoot.md
-  - name: Open mirroring 
-    items:
-      - name: Open mirroring overview
-        href: ../database/mirrored-database/open-mirroring.md
-      - name: Tutorial
-        displayName: Open mirroring tutorial
-        href: ../database/mirrored-database/open-mirroring-tutorial.md
-      - name: Open mirroring landing zone
-        displayName: Open mirroring landing zone requirements and format
-        href: ../database/mirrored-database/open-mirroring-landing-zone-format.md
-      - name: Open mirroring FAQ
-        displayName: Frequently asked questions about Open Mirroring
-        href: ../database/mirrored-database/open-mirroring-faq.yml
-      - name: Open mirroring Partners Ecosystem
-        href: ../database/mirrored-database/open-mirroring-partners-ecosystem.md
-  - name: Mirroring REST API
-    href: ../database/mirrored-database/mirrored-database-rest-api.md 
-  - name: CI/CD for mirrored databases
-    href: ../database/mirrored-database/mirrored-database-cicd.md 
-  - name: Troubleshoot Mirroring
-    href: ../database/mirrored-database/troubleshooting.md           
 - name: Manage performance
   items:
   - name: In-memory and disk caching
@@ -379,6 +211,12 @@ items:
     href: statistics.md
   - name: V-Order 
     href: v-order.md
+- name: Mirroring databases
+  items:
+    - name: Mirroring overview
+      href: /fabric/mirroring/overview?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+    - name: Mirroring documentation
+      href: /fabric/mirroring/
 - name: Monitor the warehouse
   items:
   - name: Monitoring overview
@@ -408,18 +246,22 @@ items:
     displayName: Smoothing, throttling
   - name: Workload Management
     href: workload-management.md
+
 - name: Migrate
   items:
   - name: Migration Assistant
     href: migration-assistant.md
-  - name: Migration Assistant guide for Azure Synapse Analytics
-    href: migrate-with-migration-assistant.md
-  - name: Extract DAC from a dedicated SQL pool
-    href: extract-data-tier-application-synapse-dedicated-sql-pool.md
   - name: Planning for migration from Azure Synapse Analytics
     href: migration-synapse-dedicated-sql-pool-warehouse.md
   - name: Methods for migration from Azure Synapse Analytics
     href: migration-synapse-dedicated-sql-pool-methods.md
+  - name: How to
+    items:    
+    - name: Extract DAC from a dedicated SQL pool
+      href: extract-data-tier-application-synapse-dedicated-sql-pool.md
+    - name: Migration Assistant guide for Azure Synapse Analytics
+      href: migrate-with-migration-assistant.md
+
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse
