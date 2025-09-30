@@ -221,10 +221,11 @@ Manage pipelines, copy jobs, and mounted data factories in workspaces enabled wi
 * [Pipelines - REST API (Power BI Power BI REST APIs)](/rest/api/power-bi/pipelines)
 ---
 
-> [!NOTE]
-> * Copy to warehouse isn't supported.
-> * Copy to Eventhouse isn't supported.
-> * OneLake staging isn't currently supported.
+The following scenarios are unsupported:
+
+* Copy to warehouse isn't supported.
+* Copy to Eventhouse isn't supported.
+* OneLake staging isn't currently supported.
 
 ### Eventstream support
 
@@ -255,7 +256,7 @@ Manage eventhouses in workspaces enabled with private links by using the Fabric 
 #### [Fabric portal](#tab/fabric-portal)
 * [Create an eventhouse](/fabric/real-time-intelligence/create-eventhouse)
 #### [REST API](#tab/rest-apis)
-[Items - REST API (Eventhouse)](/rest/api/fabric/eventhouse/items)
+* [Items - REST API (Eventhouse)](/rest/api/fabric/eventhouse/items)
 ---
 
 The following scenarios are unsupported:
