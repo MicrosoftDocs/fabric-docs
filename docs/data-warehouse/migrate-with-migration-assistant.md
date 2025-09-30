@@ -4,7 +4,7 @@ description: This tutorial provides a step-by-step guide for the Migration Assis
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: anphil, pvenkat, prlangad, chweb
-ms.date: 09/25/2025
+ms.date: 09/30/2025
 ms.topic: how-to
 ms.search.form: Migration Assistant
 ---
@@ -53,7 +53,10 @@ The AI-assisted migration features of the Migration Assistant to fix migration i
 
 1. In the **Set the destination** page, provide the name of the new Fabric workspace and new warehouse item you would like to migrate into. Select **Next**.
 
-1. Review your inputs and select **Migrate**. A new warehouse item with Case insensitive collation will be created, and the metadata migration begins. To create a warehouse with Case sensitive collation, update settings as per instructions on [collation](/collation.md) and restart migration.
+1. Review your inputs and select **Migrate**. A new warehouse item is created and the metadata migration begins.
+
+   > [!NOTE]
+   > When using the Migration Assistant, the new warehouse has **case insensitive collation**, regardless of the [default warehouse collation setting](collation.md).
 
    :::image type="content" source="media/migrate-with-migration-assistant/review.png" alt-text="Screenshot from the Fabric portal of the Review page of the Migration Assistant. The source is a DACPAC file and the Destination is a new warehouse item named AdventureWorks." lightbox="media/migrate-with-migration-assistant/review.png":::
 
