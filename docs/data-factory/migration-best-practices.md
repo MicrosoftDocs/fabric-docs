@@ -91,7 +91,7 @@ For more information, see [Activity continuity between Azure Data Factory and Fa
 
 Azure Data Factory (ADF) **Mapping Data Flows** don’t directly map to Fabric. Instead, you’ll typically rework them using one of the following options:
 
-- **Dataflows Gen2** for rowset transformations and governed, low-code transformations.
+- **Dataflow Gen2** for rowset transformations and governed, low-code transformations.
 - **Fabric Warehouse SQL** for set-based ELT tasks, like MERGE or ELT operations close to the data.
 - **Spark notebooks** for advanced transformations, complex logic, or large-scale processing.
 

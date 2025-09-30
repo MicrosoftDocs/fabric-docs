@@ -7,7 +7,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
-ms.date: 06/25/2024
+ms.date: 09/29/2025
 ---
 # Overview of LightGBM in SynapseML
 
@@ -24,21 +24,21 @@ many other machine learning tasks. LightGBM is part of Microsoft's
     SparkML pipelines and used for batch, streaming, and serving
     workloads.
 -   **Performance**: LightGBM on Spark is 10-30% faster than SparkML on
-    the [Higgs dataset](https://archive.ics.uci.edu/dataset/280/higgs) and achieves a 15% increase in AUC.  [Parallel
+    the [Higgs dataset](https://archive.ics.uci.edu/dataset/280/higgs) and achieves a 15% increase in AUC. [Parallel
     experiments](https://github.com/Microsoft/LightGBM/blob/master/docs/Experiments.rst#parallel-experiment)
     have verified that LightGBM can achieve a linear speed-up by using
     multiple machines for training in specific settings.
 -   **Functionality**: LightGBM offers a wide array of [tunable
-    parameters](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst),
+    parameters](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst)
     that one can use to customize their decision tree system. LightGBM on
     Spark also supports new types of problems such as quantile regression.
 -   **Cross platform**: LightGBM on Spark is available on Spark, PySpark, and SparklyR.
 
 ### LightGBM Usage
 
-- **LightGBMClassifier**: used for building classification models. For example, to predict whether a company bankrupts or not, we could build a binary classification model with `LightGBMClassifier`.
-- **LightGBMRegressor**: used for building regression models. For example, to predict housing price, we could build a regression model with `LightGBMRegressor`.
-- **LightGBMRanker**: used for building ranking models. For example, to predict the relevance of website search results, we could build a ranking model with `LightGBMRanker`.
+- **LightGBMClassifier**: Used for building classification models. For example, to predict whether a company will go bankrupt or not, we could build a binary classification model with `LightGBMClassifier`.
+- **LightGBMRegressor**: Used for building regression models. For example, to predict housing prices, we could build a regression model with `LightGBMRegressor`.
+- **LightGBMRanker**: Used for building ranking models. For example, to predict the relevance of website search results, we could build a ranking model with `LightGBMRanker`.
 
 
 ## Related content

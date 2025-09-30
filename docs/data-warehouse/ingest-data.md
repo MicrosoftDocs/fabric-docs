@@ -29,7 +29,7 @@ To decide which data ingestion option to use, you can use the following criteria
 
 - Use the **COPY (Transact-SQL)** statement for code-rich data ingestion operations, for the highest data ingestion throughput possible, or when you need to add data ingestion as part of a Transact-SQL logic. For syntax, see [COPY INTO (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
 - Use **pipelines** for code-free or low-code, robust data ingestion workflows that run repeatedly, at a schedule, or that involves large volumes of data. For more information, see [Ingest data into your Warehouse using pipelines](ingest-data-pipelines.md).
-- Use **dataflows** for a code-free experience that allow custom transformations to source data before it's ingested. These transformations include (but aren't limited to) changing data types, adding or removing columns, or using functions to produce calculated columns. For more information, see [Dataflows Gen2](../data-factory/dataflows-gen2-overview.md).
+- Use **dataflows** for a code-free experience that allow custom transformations to source data before it's ingested. These transformations include (but aren't limited to) changing data types, adding or removing columns, or using functions to produce calculated columns. For more information, see [Dataflow Gen2 dataflows](../data-factory/dataflows-gen2-overview.md).
 - Use **T-SQL ingestion** for code-rich experiences to create new tables or update existing ones with source data within the same workspace or external storage. For more information, see [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md) and [Write a cross-database query](query-warehouse.md#write-a-cross-database-query).
 
 > [!NOTE]

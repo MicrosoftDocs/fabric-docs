@@ -98,11 +98,11 @@ You transform the data in the Power Query editor. You can find a detailed overvi
 
 1. Now there's a new query with all columns from the Customers table and one column with nested data from the Orders table.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/new-merge-query.png" alt-text="Screenshot of the dataflows editor with the new Merge query added to the right of the Customers and Orders tables." lightbox="media/create-first-dataflow-gen2/new-merge-query.png":::
+   :::image type="content" source="media/create-first-dataflow-gen2/new-merge-query.png" alt-text="Screenshot of the dataflow editor with the new Merge query added to the right of the Customers and Orders tables." lightbox="media/create-first-dataflow-gen2/new-merge-query.png":::
 
-1. Let's focus on just a few columns from the Customers table. To do this, turn on schema view by selecting the schema view button in the bottom-right corner of the dataflows editor.
+1. Let's focus on just a few columns from the Customers table. To do this, turn on schema view by selecting the schema view button in the bottom-right corner of the dataflow editor.
 
-    :::image type="content" source="media/create-first-dataflow-gen2/enable-schema-view.png" alt-text="Screenshot of the dataflows editor with the schema view button emphasized in the bottom-right corner." lightbox="media/create-first-dataflow-gen2/enable-schema-view.png":::
+    :::image type="content" source="media/create-first-dataflow-gen2/enable-schema-view.png" alt-text="Screenshot of the dataflow editor with the schema view button emphasized in the bottom-right corner." lightbox="media/create-first-dataflow-gen2/enable-schema-view.png":::
 
 1. In schema view, you'll see all the columns in your table. Select **CustomerID**, **CompanyName**, and **Orders (2)**. Then, go to the **Schema tools** tab, select **Remove columns**, and choose **Remove other columns**. This keeps only the columns you want.
 
@@ -113,12 +113,12 @@ You transform the data in the Power Query editor. You can find a detailed overvi
 1. The **Orders (2)** column holds extra details from the merge step. To see and use this data, select the **Show data view** button in the bottom-right corner, next to **Show schema view**. Then, in the **Orders (2)** column header, select the **Expand Column** icon and pick the **Count** column. This adds the order count for each customer to your table.
 
     :::image type="complex" source="media/create-first-dataflow-gen2/select-count-column.png" alt-text="Screenshot for using data view." lightbox="media/create-first-dataflow-gen2/select-count-column.png":::
-    Screenshot of the dataflows editor with the Show data view button in the bottom-right corner, the expand column icon in the Orders (2) column, and the Count column selected in the expand column window.
+    Screenshot of the dataflow editor with the Show data view button in the bottom-right corner, the expand column icon in the Orders (2) column, and the Count column selected in the expand column window.
     :::image-end:::
 
 1. Now let's rank your customers by how many orders they've made. Select the **Count** column, then go to the **Add Column** tab and select **[Rank column](/power-query/rank-column)**. This adds a new column showing each customer's rank based on their order count.
 
-    :::image type="content" source="media/create-first-dataflow-gen2/select-rank-column.png" alt-text="Screenshot of the dataflows editor with the Count column selected." lightbox="media/create-first-dataflow-gen2/select-rank-column.png":::
+    :::image type="content" source="media/create-first-dataflow-gen2/select-rank-column.png" alt-text="Screenshot of the dataflow editor with the Count column selected." lightbox="media/create-first-dataflow-gen2/select-rank-column.png":::
 
 1. Keep the default settings in **Rank Column**. Then select **OK** to apply this transformation.
 
@@ -126,11 +126,11 @@ You transform the data in the Power Query editor. You can find a detailed overvi
 
 1. Now rename the resulting query as **Ranked Customers** using the **Query settings** pane on the right side of the screen.
 
-    :::image type="content" source="media/create-first-dataflow-gen2/rename-query.png" alt-text="Screenshot of the dataflows editor with the Ranked Customers name emphasized under the query settings properties." lightbox="media/create-first-dataflow-gen2/rename-query.png":::
+    :::image type="content" source="media/create-first-dataflow-gen2/rename-query.png" alt-text="Screenshot of the dataflow editor with the Ranked Customers name emphasized under the query settings properties." lightbox="media/create-first-dataflow-gen2/rename-query.png":::
 
 1. You're ready to set where your data goes. In the **Query settings** pane, scroll to the bottom and select **Choose data destination**.
 
-    :::image type="content" source="media/create-first-dataflow-gen2/choose-data-destination.png" alt-text="Screenshot of the dataflows editor with the location of the Data destination selection emphasized." lightbox="media/create-first-dataflow-gen2/choose-data-destination.png":::
+    :::image type="content" source="media/create-first-dataflow-gen2/choose-data-destination.png" alt-text="Screenshot of the dataflow editor with the location of the Data destination selection emphasized." lightbox="media/create-first-dataflow-gen2/choose-data-destination.png":::
 
 1. You can send your results to a lakehouse if you have one, or skip this step if you don't. Here, you can pick which lakehouse and table to use for your data, and choose whether to add new data (Append) or replace what's there (Replace).
 
@@ -140,12 +140,12 @@ You transform the data in the Power Query editor. You can find a detailed overvi
 
 1. Your dataflow is now ready to be published. Review the queries in the diagram view, and then select **Publish**.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/publish-dataflow.png" alt-text="Screenshot of the dataflows editor with the Publish button on the lower-right side emphasized." lightbox="media/create-first-dataflow-gen2/publish-dataflow.png":::
+   :::image type="content" source="media/create-first-dataflow-gen2/publish-dataflow.png" alt-text="Screenshot of the dataflow editor with the Publish button on the lower-right side emphasized." lightbox="media/create-first-dataflow-gen2/publish-dataflow.png":::
 
    Select **Publish** in the lower-right corner to save your dataflow. You'll go back to your workspace, where a spinner icon next to your dataflow name shows it's publishing. When the spinner disappears, your dataflow's ready to refresh!
 
    > [!IMPORTANT]
-   > The first time you create a Dataflow Gen2 in a workspace, Fabric sets up some background items (Lakehouse and Warehouse) that help your dataflow run. These items are shared by all dataflows in the workspace, and you shouldn't delete them. They're not meant to be used directly and usually aren't visible in your workspace, but you might see them in other places like Notebooks or SQL analytics. Look for names that start with `DataflowsStaging` to spot them.
+   > The first time you create a Dataflow Gen2 in a workspace, Fabric sets up some background items (Lakehouse and Warehouse) that help your dataflow run. These items are shared by all dataflows in the workspace, and you shouldn't delete them. They're not meant to be used directly and usually aren't visible in your workspace, but you might see them in other places like Notebooks or SQL analytics. Look for names that start with `DataflowStaging` to spot them.
 
 1. In your workspace, select the **Schedule Refresh** icon.
 

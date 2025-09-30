@@ -36,7 +36,8 @@ For Spark 3.4 and above, Semantic link is available in the default runtime when 
 
 ```python
 %pip install -U semantic-link
-``` 
+```
+
 
 ## Find functional dependencies in data
 
