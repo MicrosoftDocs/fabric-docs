@@ -94,17 +94,39 @@ APIs with endpoints containing `v1/workspaces/{workspaceId}` support workspace-l
 
 Create and manage Lakehouses in workspaces enabled with private links by using the Fabric portal or REST APIs.
 
-|Fabric portal  |REST APIs  |
-|---------|---------|
-|[Create a Lakehouse](/fabric/data-engineering/create-lakehouse) |[Lakehouse REST API](../data-engineering/lakehouse-api.md)<br>[Items (Lakehouse)](/rest/api/fabric/lakehouse/items)<br>[Livy Sessions (Lakehouse)](/rest/api/fabric/lakehouse/livy-sessions)<br>[Tables (Lakehouse)](/rest/api/fabric/lakehouse/tables)<br>[Background Jobs (Lakehouse)](/rest/api/fabric/lakehouse/background-jobs)      |
+#### [Fabric portal](#tab/fabric-portal)
+
+[Create a Lakehouse](/fabric/data-engineering/create-lakehouse)
+
+#### [REST APIs](#tab/rest-apis)
+
+* [Lakehouse REST API](../data-engineering/lakehouse-api.md)
+* [Items (Lakehouse)](/rest/api/fabric/lakehouse/items)
+* [Livy Sessions (Lakehouse)](/rest/api/fabric/lakehouse/livy-sessions)
+* [Tables (Lakehouse)](/rest/api/fabric/lakehouse/tables)
+* [Background Jobs (Lakehouse)](/rest/api/fabric/lakehouse/background-jobs)
+
+---
 
 ### Warehouse support
 
 Create and manage warehouses in workspaces enabled with private links by using the Fabric portal or REST APIs.
 
-|Fabric portal  |REST APIs  |
-|---------|---------|
-|[Create a Warehouse](/fabric/data-warehouse/create-warehouse) |[Warehouse REST API](/rest/api/fabric/warehouse/items)<br>[Items (WarehouseSnapshot)](/rest/api/fabric/warehousesnapshot/items)<br></br>To get the workspace private link service connection string for a warehouse:<br>[Get Connection String (Warehouse)](/rest/api/fabric/warehouse/items/get-connection-string) |
+#### [Fabric portal](#tab/fabric-portal)
+
+[Create a Warehouse](/fabric/data-warehouse/create-warehouse)
+
+#### [REST APIs](#tab/rest-apis)
+
+* [Warehouse REST API](/rest/api/fabric/warehouse/items)
+
+* [Items (WarehouseSnapshot)](/rest/api/fabric/warehousesnapshot/items)
+
+* To get the workspace private link service connection string for a warehouse:
+
+   [Get Connection String (Warehouse)](/rest/api/fabric/warehouse/items/get-connection-string)
+
+---
 
 To use the warehouse connection string with a workspace-level private link, add z{xy} to the regular warehouse connection string. For example:
 
