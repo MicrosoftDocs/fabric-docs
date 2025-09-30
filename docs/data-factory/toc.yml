@@ -59,6 +59,8 @@
                     href: pricing-scenario-copy-job.md
       - name: Keyboard shortcuts
         href: keyboard-shortcuts.md
+      - name: Secure Data Factory in Microsoft Fabric
+        href: secure-data-factory-in-microsoft-fabric.md
   - name: Get started
     items:
       - name: Bring Azure Data Factory to Fabric
@@ -984,8 +986,12 @@
             href: dataflow-parameters.md
           - name: Variable libraries in Dataflow Gen2
             href: dataflow-gen2-variable-library-integration.md
-          - name: Dataflow Gen2 and deployment pipelines
-            href: dataflow-gen2-deployment-pipelines.md
+          - name: CI/CD and ALM solution architectures for Dataflow Gen2
+            items:
+              - name: Overview
+                href: dataflow-gen2-cicd-alm-solution-architecture.md
+              - name: Parameterized Dataflow
+                href: dataflow-gen2-parameterized-dataflow.md
           - name: Saving a draft of your dataflow
             href: dataflows-gen2-save-draft.md
           - name: Use cloud connections through gateways
