@@ -1,6 +1,6 @@
 ---
-title: "Public APIs Capabilities for Dataflows Gen2 in Fabric Data Factory"
-description: "Use the Dataflows public APIs to manage your data integration through operations including dataflows CRUD (Create, Read, Update, and Delete), scheduling, and monitoring."
+title: "Public APIs Capabilities for Dataflow Gen2 in Fabric Data Factory"
+description: "Use the dataflow public APIs to manage your data integration through operations including dataflow CRUD (Create, Read, Update, and Delete), scheduling, and monitoring."
 author: conxu-ms
 ms.author: conxu
 ms.reviewer: whhender
@@ -9,11 +9,11 @@ ms.date: 05/01/2025
 ms.custom: dataflows
 ---
 
-# Public APIs capabilities for Dataflows Gen2 in Fabric Data Factory
+# Public APIs capabilities for Dataflow Gen2 in Fabric Data Factory
 
 Fabric Data Factory provides a robust set of APIs that enable users to automate and manage their dataflows efficiently. These APIs allow for seamless integration with various data sources and services, enabling users to create, update, and monitor their data workflows programmatically. The APIs support a wide range of operations including dataflows CRUD (Create, Read, Update, and Delete), scheduling, and monitoring, making it easier for users to manage their data integration processes.
 
-## APIs use cases for Dataflows
+## APIs use cases for dataflows
 
 The APIs for dataflows in Fabric Data Factory can be used in various scenarios:
 
