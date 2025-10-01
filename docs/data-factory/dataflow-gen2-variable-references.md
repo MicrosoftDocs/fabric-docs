@@ -14,9 +14,9 @@ ms.custom: dataflows
 >[!NOTE]
 >This article focuses on a solution architecture from [CI/CD and ALM (Application Lifecycle Management) solution architectures for Dataflow Gen2](dataflow-gen2-cicd-alm-solution-architecture.md) that relies on the [variable libraries integration](dataflow-gen2-variable-library-integration.md) and is only applicable to Dataflow Gen2 with CI/CD support.
 
-Fabric variable libraries in Dataflow Gen2 enable centralized, reusable configuration management across environments. By referencing variables directly in your dataflow scripts, you can dynamically adjust behavior without hardcoding values which is ideal for CI/CD workflows. This integration simplifies deployment across stages by allowing workspace-specific values (like Lakehouse or Workspace IDs) to be injected at runtime, making your dataflows more adaptable and maintainable.
+Fabric variable libraries in Dataflow Gen2 enable centralized, reusable configuration management across environments. By referencing variables directly in your dataflow scripts, you can dynamically adjust behavior without hardcoding values, which is ideal for CI/CD workflows. This integration simplifies deployment across stages by allowing workspace-specific values (like Lakehouse or Workspace IDs) to be injected at runtime, making your dataflows more adaptable and maintainable.
 
-This tutorial walks you through a example solution which use variable references in a Dataflow and shows you how to:
+This tutorial walks you through an example solution that use variable references in a Dataflow and shows you how to:
 * **Set variables**: Using the Fabric variable libraries and their distinct data types
 * **Parameterize a source**: Using a Lakehouse with the WideWorldImpoters sample dataset as the source
 * **Parameterize logic**: Using the input widgets available throughout the Dataflow experience
@@ -31,7 +31,7 @@ This tutorial walks you through a example solution which use variable references
 
 :::image type="content" source="media/dataflow-gen2-parameterized-dataflow/query-scenario-diagram.png" alt-text="Screenshot of the query with the name dimension_city for the scenario inside of Dataflow Gen2." lightbox="media/dataflow-gen2-parameterized-dataflow/query-scenario-diagram.png":::
 
-The dataflow used in this scenario is simple, but the core principles described apply to all types of dataflows. It connects to the table named dimension_city from the Wide World Importers sample dataset stored in a Lakehouse. It filters rows where the SalesTerritory column equals Southeast, and loads the result into a new table called City in a Warehouse. All components—the Lakehouse, Warehouse, and Dataflow—are located in the same Workspace. To make the dataflow dynamic, you use variables to drive the the source table, the filter value, and the destination table. These changes allow the dataflow to run with values stored in Fabric variable libraries instead of hardcoded ones. 
+The dataflow used in this scenario is simple, but the core principles described apply to all types of dataflows. It connects to the table named dimension_city from the Wide World Importers sample dataset stored in a Lakehouse. It filters rows where the SalesTerritory column equals Southeast, and loads the result into a new table called City in a Warehouse. All components—the Lakehouse, Warehouse, and Dataflow—are located in the same Workspace. To make the dataflow dynamic, you use variables to drive the source table, the filter value, and the destination table. These changes allow the dataflow to run with values stored in Fabric variable libraries instead of hardcoded ones. 
 
 ## Set variables
 
