@@ -1,9 +1,8 @@
 ---
 title: Service details and limitations 
 description: Overview of service properties and limitations
-ms.author: eur
-ms.reviewer: luisbosquez
-author: eric-urban
+ms.author: luisbosquez
+author: luisbosquez
 ms.topic: overview
 ms.date: 03/31/2025
 ms.search.form: Service limits
@@ -41,6 +40,8 @@ The following are current limitations for Fabric User Data Functions:
     ```
 
 - **"Manage connections" only supports Fabric data sources**: The "Manage connections" feature only supports connecting to Fabric-native data sources at this moment. To learn more, visit [Connect to data sources](./connect-to-data-sources.md).
+
+- **"Manage connections" cannot connect to resources that have special characters in their names**: Fabric resources, such as databases, that have special characters in their names, such as curly braces or non-ASCII characters, are not compatible with the Manage Connections experience in User Data Functions. To learn more, visit [Connect to data sources](./connect-to-data-sources.md).
 
 - **Service principals**: Using Fabric User Data Functions as a service principal to access other items and resources is not currently supported. For example, you cannot use Fabric User Data Functions as a managed identity or workspace identity.
 
