@@ -34,7 +34,7 @@ Fabric User Data Functions can seamlessly connect with other Fabric items to cre
 - Fabric items that invoke User Data Functions:
     - [Fabric Pipelines](./create-functions-activity-data-pipelines.md)
     - [Fabric Notebooks](../notebook-utilities.md)
-- [Tranlytical app with Power BI](/power-bi/create-reports/translytical-task-flow-overview)
+- [Translytical apps with Power BI](/power-bi/create-reports/translytical-task-flow-overview)
 
 
 ## Next steps
