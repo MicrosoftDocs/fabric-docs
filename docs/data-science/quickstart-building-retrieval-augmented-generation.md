@@ -62,9 +62,7 @@ aisearch_endpoint = "https://<YOUR_AI_SEARCH_SERVICE_NAME>.search.windows.net" #
 
 **Cell output:**
 
-```text
-*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 5, Finished, Available, Finished)*
-```
+`*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 5, Finished, Available, Finished)*`
 
 After you set up Azure OpenAI and Azure AI Search keys, import the required libraries from [Spark](https://spark.apache.org/), [SynapseML](https://aka.ms/AboutSynapseML), [Azure Search](https://aka.ms/azure-search-libraries), and OpenAI.
 
@@ -117,9 +115,7 @@ import openai
 
 **Cell output:**
 
-```text
-*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 7, Finished, Available, Finished)*
-```
+`*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 7, Finished, Available, Finished)*`
 
 ## Step 2: Load data into the lakehouse and Spark
 
@@ -143,30 +139,19 @@ The dataset used for this notebook requires the following citation:
 
 **Cell output:**
 
-```text
-*CMU Question/Answer Dataset, Release 1.2*
-
-*8/23/2013*
-
-*Noah A. Smith, Michael Heilman, and Rebecca Hwa*
-
-***Question Generation as a Competitive Undergraduate Course Project***
-
-*In Proceedings of the NSF Workshop on the Question Generation Shared Task and Evaluation Challenge, Arlington, VA, September 2008.*
-*Available at: http://www.cs.cmu.edu/~nasmith/papers/smith+heilman+hwa.nsf08.pdf*
-
-*Original dataset acknowledgments:*
-*This research project was supported by NSF IIS-0713265 (to Smith), an NSF Graduate Research Fellowship (to Heilman), NSF IIS-0712810 and IIS-0745914 (to Hwa), and Institute of Education Sciences, U.S. Department of Education R305B040063 (to Carnegie Mellon).*
-
-*cmu-qa-08-09 (modified version)*
-
-*6/12/2024*
-
-*Amir Jafari, Alexandra Savelieva, Brice Chung, Hossein Khadivi Heris, Journey McDowell*
-
-*Released under the same GFDL license (http://www.gnu.org/licenses/fdl.html).*
-*All GNU license terms apply to the dataset in all copies.*
-```
+`*CMU Question/Answer Dataset, Release 1.2*`
+`*8/23/2013*`
+`*Noah A. Smith, Michael Heilman, and Rebecca Hwa*`
+`***Question Generation as a Competitive Undergraduate Course Project***`
+`*In Proceedings of the NSF Workshop on the Question Generation Shared Task and Evaluation Challenge, Arlington, VA, September 2008.*`
+`*Available at: http://www.cs.cmu.edu/~nasmith/papers/smith+heilman+hwa.nsf08.pdf*`
+`*Original dataset acknowledgments:*`
+`*This research project was supported by NSF IIS-0713265 (to Smith), an NSF Graduate Research Fellowship (to Heilman), NSF IIS-0712810 and IIS-0745914 (to Hwa), and Institute of Education Sciences, U.S. Department of Education R305B040063 (to Carnegie Mellon).*`
+`*cmu-qa-08-09 (modified version)*`
+`*6/12/2024*`
+`*Amir Jafari, Alexandra Savelieva, Brice Chung, Hossein Khadivi Heris, Journey McDowell*`
+`*Released under the same GFDL license (http://www.gnu.org/licenses/fdl.html).*`
+`*All GNU license terms apply to the dataset in all copies.*`
 
 ```python
 import requests
