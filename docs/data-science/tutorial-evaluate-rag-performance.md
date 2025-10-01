@@ -12,41 +12,38 @@ ai.usage: ai-assisted
 ---
 # Evaluation of RAG performance basics
 
-This tutorial is a quickstart guide for using Fabric to evaluate RAG application performance. Performance evaluation focuses on two main components of RAG: the retriever (in our scenario, it uses Azure AI Search) and the response generator (an LLM that uses the user's query, retrieved context, and a prompt to generate a reply). The main steps in this tutorial are as follows:
+This tutorial shows how to use Fabric to evaluate RAG application performance. The evaluation focuses on two main RAG components: the retriever (Azure AI Search) and the response generator (an LLM that uses the user's query, retrieved context, and a prompt to generate a reply). Here are the main steps:
 
-1. Set up Azure OpenAI and Azure AI Search Services
-1. Load and manipulate the data from CMU's QA dataset of Wikipedia articles to curate a benchmark
-1. Run a "smoke" test with one query to confirm that the RAG system works end-to-end
-1. Define deterministic and AI-Assisted metrics that will be used for evaluation
-1. Check-in #1 - evaluate the performance of retriever using "top-N accuracy score"
-1. Check-in #2 - evaluate the performance of response generator using Groundedness, Relevance, and Similarity metrics
-1. Visualize results and preserve evaluation results in OneLake for future reference and continuous evaluation
+1. Set up Azure OpenAI and Azure AI Search services
+1. Load data from CMU's QA dataset of Wikipedia articles to build a benchmark
+1. Run a smoke test with one query to confirm the RAG system works end to end
+1. Define deterministic and AI-assisted metrics for evaluation
+1. Check-in 1: Evaluate retriever performance using top-N accuracy
+1. Check-in 2: Evaluate response generator performance using groundedness, relevance, and similarity metrics
+1. Visualize and store evaluation results in OneLake for future reference and ongoing evaluation
 
 ## Prerequisites
 
-Before you start this tutorial, complete "Building Retrieval Augmented Generation in Fabric: A step-by-step guide" [here](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-bring-your-own-keys/quickstart-genai-guidance.ipynb).
+Before you start this tutorial, complete the [Building Retrieval Augmented Generation in Fabric step-by-step guide](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-bring-your-own-keys/quickstart-genai-guidance.ipynb).
 
-You need the following services to run this notebook:
+You need these services to run the notebook:
 
 - [Microsoft Fabric](https://aka.ms/fabric/getting-started)
-- [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to this notebook (it should have data populated with steps from previous tutorial).
+- [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to this notebook (it contains the data you added in the previous tutorial).
 - [Azure AI Studio for OpenAI](https://aka.ms/what-is-ai-studio)
-- [Azure AI Search](https://aka.ms/azure-ai-search) (it should have data populated with steps from previous tutorial).
+- [Azure AI Search](https://aka.ms/azure-ai-search) (it contains the data you indexed in the previous tutorial).
 
-In the previous tutorial, you have uploaded data to your lakehouse and built an index of documents that is in the backend of RAG. The index will be used here as part of an exercise to learn the main techniques for evaluation of RAG performance and identification of potential problems. If you haven't done this yet, or removed previously created index, please follow [here](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-bring-your-own-keys/quickstart-genai-guidance.ipynb) to complete that prerequisite.
+In the previous tutorial, you uploaded data to your lakehouse and built a document index used by the RAG system. Use the index in this exercise to learn core techniques to evaluate RAG performance and identify potential problems. If you didn't create an index or removed it, follow the [quickstart guide](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-bring-your-own-keys/quickstart-genai-guidance.ipynb) to complete the prerequisite.
 
-
-:::image type="content" source="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png" alt-text="Screenshot of diagram showing the flow of a user conversation with the RAG system." lightbox="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png":::
-
+:::image type="content" source="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png" alt-text="Diagram that shows the flow of a user conversation through the RAG system." lightbox="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png":::
 
 ## Set up access to Azure OpenAI and Azure AI Search
 
-Define the endpoints and the required keys. Then import required libraries and functions. Instantiate clients for Azure OpenAI and Azure AI Search. Finally, define a function wrapper with a prompt for querying RAG system.
-
+Define endpoints and required keys. Import required libraries and functions. Instantiate clients for Azure OpenAI and Azure AI Search. Define a function wrapper with a prompt to query the RAG system.
 
 ```python
-# Fill in the following lines with your Azure OpenAI service information
-aoai_endpoint = "https://.openai.azure.com" # TODO: Provide the URL endpoint for your created Azure OpenAI
+# Enter your Azure OpenAI service values
+aoai_endpoint = "https://<your-resource-name>.openai.azure.com" # TODO: Provide the Azure OpenAI resource endpoint (replace <your-resource-name>)
 aoai_key = "" # TODO: Fill in your API key from Azure OpenAI 
 aoai_deployment_name_embeddings = "text-embedding-ada-002"
 aoai_model_name_query = "gpt-4-32k"  
@@ -59,19 +56,18 @@ aisearch_api_key = "" # TODO: Fill in your API key from Azure AI Search
 aisearch_endpoint = "https://.search.windows.net" # TODO: Provide the url endpoint for your created Azure AI Search 
 ```
 
-
 ```python
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
-import os, requests, json, warnings
+import os, requests, json
 
 from datetime import datetime, timedelta
 from azure.core.credentials import AzureKeyCredential
 from azure.search.documents import SearchClient
 
 from pyspark.sql import functions as F
-from pyspark.sql.functions import to_timestamp, current_timestamp, concat, col, split, explode, udf, monotonically_increasing_id, when, rand, coalesce, lit, input_file_name, regexp_extract, concat_ws, length, ceil, lit, current_timestamp
+from pyspark.sql.functions import to_timestamp, current_timestamp, concat, col, split, explode, udf, monotonically_increasing_id, when, rand, coalesce, lit, input_file_name, regexp_extract, concat_ws, length, ceil
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, TimestampType, ArrayType, FloatType
 from pyspark.sql import Row
 import pandas as pd
@@ -106,9 +102,8 @@ import ipywidgets as widgets
 from IPython.display import display as w_display
 ```
 
-
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 6, Finished, Available, Finished)
-
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 6, Finished, Available, Finished)`
 
 ```python
 # Configure access to OpenAI endpoint
@@ -139,12 +134,13 @@ search_client = SearchClient(
 )
 ```
 
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 7, Finished, Available, Finished)
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 7, Finished, Available, Finished)`
 
-Definitions of the functions below implement the two main components of RAG—retriever (`get_context_source`) and response generator (`get_answer`). This code should be familiar from the previous tutorial. Note the `topN` parameter—it lets you configure how many relevant resources to fetch from the index (we use 3 in this tutorial, but the optimal value can vary by dataset):
+The following functions implement the two main RAG components - retriever (`get_context_source`) and response generator (`get_answer`). The code is similar to the previous tutorial. The `topN` parameter lets you set how many relevant resources to retrieve (this tutorial uses 3, but the optimal value can vary by dataset):
 
 ```python
-# implementation of retriever
+# Implement retriever
 def get_context_source(question, topN=3):
     """
     Retrieves contextual information and sources related to a given question using embeddings and a vector search.  
@@ -180,7 +176,7 @@ def get_context_source(question, topN=3):
 
     return [retrieved_context, retrieved_sources]
 
-# Implementation of response generator
+# Implement response generator
 def get_answer(question, context):
     """  
     Generates a response to a given question using provided context and an Azure OpenAI model.  
@@ -195,7 +191,7 @@ def get_answer(question, context):
     messages = [
         {
             "role": "system",
-            "content": "You are a chat assistant who will be provided text information for grounding your response. Give a one-word answer whenever possible ('yes'/'no' is ok where appropriate, no details). For every word in the response that's not critical, you'll be penalized $500."
+            "content": "You are a chat assistant. Use provided text to ground your response. Give a one-word answer when possible ('yes'/'no' is OK where appropriate, no details). Unnecessary words incur a $500 penalty."
         }
     ]
 
@@ -219,67 +215,59 @@ def get_answer(question, context):
 
     return chat_completion.choices[0].message.content
 ```
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 8, Finished, Available, Finished)
+
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 8, Finished, Available, Finished)`
 
 ## Dataset
 
-The Carnegie Mellon University Question-Answer dataset, version 1.2, is a corpus of Wikipedia articles with manually written factual questions and answers. The data is hosted in Azure Blob Storage under the GFDL license. For simplicity, the dataset uses a single structured table with the following fields.
+Version 1.2 of the Carnegie Mellon University Question-Answer dataset is a corpus of Wikipedia articles with factual questions and answers written manually. It's hosted in Azure Blob Storage under the GFDL. The dataset uses one table with these fields:
 
-* `ArticleTitle`: the name of the Wikipedia article the questions and answers come from.
-* `Question`: a manually generated question about the article.
-* `Answer`: a manually generated answer to the question based on the article.
-* `DifficultyFromQuestioner`: the difficulty rating the question writer assigns.
-* `DifficultyFromAnswerer`: the difficulty rating the evaluator assigns, which can differ from `DifficultyFromQuestioner`.
-* `ExtractedPath`: the path to the original article. There can be more than one question-answer pair per article.
-* `text`: the cleaned Wikipedia article text.
+* `ArticleTitle`: Name of the Wikipedia article the questions and answers come from
+* `Question`: Manually written question about the article
+* `Answer`: Manually written answer based on the article
+* `DifficultyFromQuestioner`: Difficulty rating the question author assigns
+* `DifficultyFromAnswerer`: Difficulty rating the evaluator assigns; can differ from `DifficultyFromQuestioner`
+* `ExtractedPath`: Path to the original article (an article can have multiple question-answer pairs)
+* `text`: Cleaned Wikipedia article text
 
-To learn about the license, download the LICENSE-S08,S09 file from the same location.
+Download the LICENSE-S08 and LICENSE-S09 files from the same location for license details.
 
 ## History and citation
 
-Use the following citation for this dataset:
+Use this citation for the dataset:
 
 ```
 CMU Question/Answer Dataset, Release 1.2
-
 August 23, 2013
-
 Noah A. Smith, Michael Heilman, and Rebecca Hwa
-
 Question Generation as a Competitive Undergraduate Course Project
-
 In Proceedings of the NSF Workshop on the Question Generation Shared Task and Evaluation Challenge, Arlington, VA, September 2008. 
 Available at http://www.cs.cmu.edu/~nasmith/papers/smith+heilman+hwa.nsf08.pdf.
-
 Original dataset acknowledgments:
 This research project was supported by NSF IIS-0713265 (to Smith), an NSF Graduate Research Fellowship (to Heilman), NSF IIS-0712810 and IIS-0745914 (to Hwa), and Institute of Education Sciences, U.S. Department of Education R305B040063 (to Carnegie Mellon).
-
 cmu-qa-08-09 (modified version)
-
 June 12, 2024
-
 Amir Jafari, Alexandra Savelieva, Brice Chung, Hossein Khadivi Heris, Journey McDowell
-
 This release uses the GNU Free Documentation License (GFDL) (http://www.gnu.org/licenses/fdl.html).
-The GNU license applies to the dataset in all copies.
+The GNU license applies to all copies of the dataset.
 ```
 
 ## Create benchmark
 
-Import the benchmark. For this demo, use a subset of questions prepared by CMU students in the `S08/set1` and `S08/set2` buckets. To limit to one question per article, apply `df.dropDuplicates(["ExtractedPath"])` to the data. There are also duplicate questions, so drop duplicates. Labels on the complexity of questions are provided as part of the curation process: in the example below they're limited to `medium`. 
-
+Import the benchmark. For this demo, use a subset of questions from the `S08/set1` and `S08/set2` buckets. To keep one question per article, apply `df.dropDuplicates(["ExtractedPath"])`. Drop duplicate questions. The curation process adds difficulty labels; this example limits them to `medium`.
 
 ```python
 df = spark.sql("SELECT * FROM data_load_tests.cmu_qa")
 
-# Filter the DataFrame to include only the specified paths
+# Filter the DataFrame to include the specified paths
 df = df.filter((col("ExtractedPath").like("S08/data/set1/%")) | (col("ExtractedPath").like("S08/data/set2/%")))
 
-# Choose questions 
+# Keep only medium-difficulty questions.
 df = df.filter(col("DifficultyFromQuestioner") == "medium")
 
 
-# Drop duplicate questions
+# Drop duplicate questions and source paths.
 df = df.dropDuplicates(["Question"])
 df = df.dropDuplicates(["ExtractedPath"])
 
@@ -292,15 +280,16 @@ df.persist()
 display(df)
 ```
 
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 9, Finished, Available, Finished)
-Number of rows: 20, Number of columns: 7
-SynapseWidget(Synapse.DataFrame, 47aff8cb-72f8-4a36-885c-f4f3bb830a91)
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 9, Finished, Available, Finished)`
+`Number of rows: 20, Number of columns: 7`
+`SynapseWidget(Synapse.DataFrame, 47aff8cb-72f8-4a36-885c-f4f3bb830a91)`
 
-The result is a DataFrame with 20 rows—this is the demo benchmark. Important fields are `Question`, `Answer` (human-curated 'ground truth' answer), and `ExtractedPath` (the source document where information is found). Change the filtering criteria to include other questions and vary complexity for a more realistic example. Try this exercise.
+The result is a DataFrame with 20 rows - the demo benchmark. Key fields are `Question`, `Answer` (human-curated ground truth answer), and `ExtractedPath` (the source document). Adjust the filters to include other questions and vary difficulty for a more realistic example. Try it.
 
 ## Run a simple end-to-end test
 
-Start with a simple end-to-end smoke test of retrieval-augmented generation (RAG).
+Start with an end-to-end smoke test of retrieval-augmented generation (RAG).
 
 ```python
 question = "How many suborders are turtles divided into?"
@@ -309,16 +298,15 @@ answer = get_answer(question, retrieved_context)
 print(answer)
 ```
 
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 10, Finished, Available, Finished)`
+`Three`
 
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 10, Finished, Available, Finished)
-Three
-
-This quick smoke test helps you find issues in the RAG implementation, such as incorrect credentials, a missing or empty vector index, or incompatible function interfaces. If the test fails, pause and check for issues. The expected output is `Three`. If the smoke test passes, go to the next section to evaluate RAG in more detail.
+This smoke test helps you find issues in the RAG implementation, such as incorrect credentials, a missing or empty vector index, or incompatible function interfaces. If the test fails, check for issues. Expected output: `Three`. If the smoke test passes, go to the next section to evaluate RAG further.
 
 ## Establish metrics
 
-Define a deterministic metric to evaluate the retriever. It's inspired by search engines and is familiar to people with that background. It checks whether the list of retrieved sources includes the ground truth source. This metric is often called a top N accuracy score because the `topN` parameter controls the number of retrieved sources.
-
+Define a deterministic metric to evaluate the retriever. It's inspired by search engines. It checks whether the retrieved sources list includes the ground truth source. This metric is a top-N accuracy score because the `topN` parameter sets the number of retrieved sources.
 
 ```python
 def get_retrieval_score(target_source, retrieved_sources):
@@ -328,25 +316,26 @@ def get_retrieval_score(target_source, retrieved_sources):
         return 0
 ```
 
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 11, Finished, Available, Finished)
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 11, Finished, Available, Finished)`
 
-According to the benchmark, the answer is contained in the source with ID `"S08/data/set1/a9"`. Testing the function on the example we ran above returns `1`, as expected, because it's returned in the top 3 relevant text chunks (in fact, it's the first in the list!).
+According to the benchmark, the answer is contained in the source with ID `"S08/data/set1/a9"`. Testing the function on the example we ran above returns `1`, as expected, because it was in the top three relevant text chunks.
 
 ```python
-print("Retrieved sources: ", retrieved_sources)
+print("Retrieved sources:", retrieved_sources)
 get_retrieval_score("S08/data/set1/a9", retrieved_sources)
 ```
 
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 12, Finished, Available, Finished)
-Retrieved sources:  ['S08/data/set1/a9', 'S08/data/set1/a9', 'S08/data/set1/a5']
-1
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 12, Finished, Available, Finished)`
+`Retrieved sources:  ['S08/data/set1/a9', 'S08/data/set1/a9', 'S08/data/set1/a5']`
+`1`
 
-This section defines AI-assisted metrics. The prompt template includes a few examples of input (CONTEXT and ANSWER) and suggested output; this is called a few-shot model. It's the same prompt that's used in Azure AI Studio. Learn more in [Built-in evaluation metrics](/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=warning#ai-assisted-relevance). This demo uses the `groundedness` and `relevance` metrics—these are usually the most useful and reliable for evaluating GPT models. Other metrics can be useful but provide less intuition—for example, answers don't have to be similar to be correct, so `similarity` scores can be misleading. The scale for all metrics is 1 to 5. Higher is better. Groundedness takes only two inputs (context and generated answer), while the other two metrics also use ground truth for evaluation. 
-
+This section defines AI-assisted metrics. The prompt template includes a few examples of input (CONTEXT and ANSWER) and suggested output - also known as a few-shot model. It's the same prompt that's used in Azure AI Studio. Learn more in [Built-in evaluation metrics](/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=warning#ai-assisted-relevance). This demo uses the `groundedness` and `relevance` metrics - these are usually the most useful and reliable for evaluating GPT models. Other metrics can be useful but provide less intuition - for example, answers don't have to be similar to be correct, so `similarity` scores can be misleading. The scale for all metrics is 1 to 5. Higher is better. Groundedness takes only two inputs (context and generated answer), while the other two metrics also use ground truth for evaluation. 
 
 ```python
 def get_groundedness_metric(context, answer):
-    """ Using context and answer, get groundedness score with the help of LLM"""
+    """Get the groundedness score from the LLM using the context and answer."""
 
     groundedness_prompt_template = """
     You are presented with a CONTEXT and an ANSWER about that CONTEXT. Decide whether the ANSWER is entailed by the CONTEXT by choosing one of the following ratings:
@@ -401,7 +390,9 @@ def get_groundedness_metric(context, answer):
     return metric_completion.choices[0].message.content
 
 ```
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 13, Finished, Available, Finished)
+
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 13, Finished, Available, Finished)`
 
 ```python
 def get_relevance_metric(context, question, answer):    
@@ -458,7 +449,7 @@ def get_relevance_metric(context, question, answer):
     messages = [
         {
             "role": "system",
-            "content": " You are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric."
+            "content": "You are an AI assistant. You are given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Compute an accurate evaluation score using the provided evaluation metric."
         }, 
         {
             "role": "user",
@@ -476,7 +467,8 @@ def get_relevance_metric(context, question, answer):
 
 ```
 
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 14, Finished, Available, Finished)
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 14, Finished, Available, Finished)`
 
 ```python
 def get_similarity_metric(question, ground_truth, answer):
@@ -549,34 +541,36 @@ def get_similarity_metric(question, ground_truth, answer):
     )
 
     return metric_completion.choices[0].message.content
-
 ```
 
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 15, Finished, Available, Finished)
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 15, Finished, Available, Finished)`
+
 Test the relevance metric:
 
 ```python
 get_relevance_metric(retrieved_context, question, answer)
 ```
 
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 16, Finished, Available, Finished)
-'2'
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 16, Finished, Available, Finished)`
+`'2'`
 
-A score of 5 means the answer is very relevant to the question. Here's the similarity metric:
+A score of 5 means the answer is relevant. The following code gets the similarity metric:
 
 ```python
 get_similarity_metric(question, 'three', answer)
 ```
 
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 17, Finished, Available, Finished)
-'5'
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 17, Finished, Available, Finished)`
+`'5'`
 
-A score of 5 means the answer is completely similar to the ground truth answer curated by a human expert. Keep in mind that AI-assisted metrics can fluctuate for the same input. Using them is usually faster than involving human judges.
+A score of 5 means the answer matches the ground truth answer curated by a human expert. AI-assisted metric scores can fluctuate with the same input. They're faster than using human judges.
 
 ## Evaluate RAG performance on benchmark Q&A
 
-To run at scale, create wrappers for functions. It's important to create a wrapper for each function that ends with `_udf` (short for `user-defined function`), conforms to Spark framework requirements (`@udf(returnType=StructType([ ... ]))`), and lets you run calculations on large data faster in a distributed manner.
-
+Create function wrappers to run at scale. Wrap each function that ends with `_udf` (short for `user-defined function`) so it conforms to Spark requirements (`@udf(returnType=StructType([ ... ]))`) and runs calculations on large data faster across the cluster.
 
 ```python
 # UDF wrappers for RAG components
@@ -612,14 +606,12 @@ def get_similarity_metric_udf(question, ground_truth, answer):
     return get_similarity_metric(question, ground_truth, answer)
 ```
 
-
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 18, Finished, Available, Finished)
-
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 18, Finished, Available, Finished)`
 
 ### Check-in #1: performance of the retriever
 
 The following code creates the `result` and `retrieval_score` columns in the benchmark DataFrame. These columns include the RAG-generated answer and an indicator of whether the context provided to the LLM includes the article the question is based on.
-
 
 ```python
 df = df.withColumn("result", get_context_source_udf(df.Question)).select(df.columns+["result.*"])
@@ -628,23 +620,25 @@ print("Aggregate Retrieval score: {:.2f}%".format((df.where(df["retrieval_score"
 display(df.select(["question", "retrieval_score",  "ExtractedPath", "retrieved_sources"]))
 ```
 
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 19, Finished, Available, Finished)
-Aggregate Retrieval score: 100.00%
-SynapseWidget(Synapse.DataFrame, 14efe386-836a-4765-bd88-b121f32c7cfc)
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 19, Finished, Available, Finished)`
+`Aggregate Retrieval score: 100.00%`
+`SynapseWidget(Synapse.DataFrame, 14efe386-836a-4765-bd88-b121f32c7cfc)`
 
-For all questions, the retriever fetches the correct context, and in most cases it's the first entry in the list. Azure AI Search does a great job. You might wonder why, in some cases, the context has two or three identical values. That's not an error—it means the retriever fetches fragments of the same article that don't fit into one chunk during splitting.
+For all questions, the retriever fetches the correct context, and in most cases it's the first entry. Azure AI Search performs well. You might wonder why, in some cases, the context has two or three identical values. That's not an error - it means the retriever fetches fragments of the same article that don't fit into one chunk during splitting.
 
 ### Check-in #2: performance of the response generator
 
-Pass the question and context to the LLM to generate an answer, and store it in the `generated_answer` column in the DataFrame:
+Pass the question and context to the LLM to generate an answer. Store it in the `generated_answer` column in the DataFrame:
 
 ```python
 df = df.withColumn('generated_answer', get_answer_udf(df.Question, df.retrieved_context))
 ```
 
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 20, Finished, Available, Finished)
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 20, Finished, Available, Finished)`
 
-Use the generated answer, ground-truth answer, question, and context to calculate metrics and display evaluation results for each question-answer pair:
+Use the generated answer, ground-truth answer, question, and context to calculate metrics. Display evaluation results for each question-answer pair:
 
 ```python
 df = df.withColumn('gpt_groundedness', get_groundedness_metric_udf(df.retrieved_context, df.generated_answer))
@@ -652,12 +646,12 @@ df = df.withColumn('gpt_relevance', get_relevance_metric_udf(df.retrieved_contex
 df = df.withColumn('gpt_similarity', get_similarity_metric_udf(df.Question, df.Answer, df.generated_answer))
 display(df.select(["question", "answer", "generated_answer", "retrieval_score", "gpt_groundedness","gpt_relevance", "gpt_similarity"]))
 ```
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 21, Finished, Available, Finished)
-SynapseWidget(Synapse.DataFrame, 22b97d27-91e1-40f3-b888-3a3399de9d6b)
 
-What do these values show? To make them easier to interpret, plot histograms of groundedness, relevance, and similarity. The LLM is more verbose than human ground-truth answers, which lowers the similarity metric—about half the answers are semantically correct but receive four stars as mostly similar. Most values for all three metrics are 4 or 5, which suggests RAG performance is good. There are a few outliers—for example, for the question `How many species of otter are there?`, the model generated `There are 13 species of otter`, which is correct with high relevance and similarity (5). For some reason, GPT considered it poorly grounded in the provided context and gave it 1 star. In the other three cases with at least one AI-assisted metric of 1 star, the low score points to a bad answer. Like humans, the LLM is occasionally wrong in evaluation, but in most cases it does a good job.
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 21, Finished, Available, Finished)`
+`SynapseWidget(Synapse.DataFrame, 22b97d27-91e1-40f3-b888-3a3399de9d6b)`
 
-
+What do these values show? To make them easier to interpret, plot histograms of groundedness, relevance, and similarity. The LLM is more verbose than human ground-truth answers, which lowers the similarity metric - about half the answers are semantically correct but receive four stars as mostly similar. Most values for all three metrics are 4 or 5, which suggests RAG performance is good. There are a few outliers - for example, for the question `How many species of otter are there?`, the model generated `There are 13 species of otter`, which is correct with high relevance and similarity (5). For some reason, GPT considered it poorly grounded in the provided context and gave it one star. In the other three cases with at least one AI-assisted metric of one star, the low score points to a bad answer. The LLM occasionally mis-scores but usually scores accurately.
 
 ```python
 # Convert Spark DataFrame to Pandas DataFrame
@@ -690,12 +684,12 @@ plt.tight_layout()
 plt.show()
 ```
 
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 24, Finished, Available, Finished)
-    
-:::image type="content" source="media/tutorial-evaluate-rag-performance/evaluate-rag-gpt-scores-histogram.png" alt-text="Screenshot of histograms that show the distribution of GPT relevance and similarity scores for the evaluated questions." lightbox="media/tutorial-evaluate-rag-performance/evaluate-rag-gpt-scores-histogram.png":::
- 
-As a final step, save the benchmark results to a table in your lakehouse. This step is optional but highly recommended—it makes your findings more useful. When you change something in the RAG (for example, modify the prompt, update the index, or use a different GPT model in the response generator), you can measure the impact, quantify improvements, and detect regressions.
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 24, Finished, Available, Finished)`
 
+:::image type="content" source="media/tutorial-evaluate-rag-performance/evaluate-rag-gpt-scores-histogram.png" alt-text="Screenshot of histograms that show the distribution of GPT relevance and similarity scores for the evaluated questions." lightbox="media/tutorial-evaluate-rag-performance/evaluate-rag-gpt-scores-histogram.png":::
+
+As a final step, save the benchmark results to a table in your lakehouse. This step is optional but highly recommended - it makes your findings more useful. When you change something in the RAG (for example, modify the prompt, update the index, or use a different GPT model in the response generator), measure the impact, quantify improvements, and detect regressions.
 
 ```python
 # create name of experiment that is easy to refer to
@@ -717,14 +711,11 @@ table_name = "rag_experiment_run_demo1"
 updated_df.write.format("parquet").mode("append").saveAsTable(table_name)
 ```
 
+**Cell output:**
+`StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 28, Finished, Available, Finished)`
 
-StatementMeta(, 21cb8cd3-7742-4c1f-8339-265e2846df1d, 28, Finished, Available, Finished)
-
-
-You can return to your experiment results at any time to review them, compare with new experiments, and choose the configuration that works best for your production release. 
+Return to the experiment results anytime to review them, compare with new experiments, and choose the configuration that works best for production. 
 
 ## Summary
 
-You're comfortable using AI-assisted metrics and top N retrieval rate to build your retrieval-augmented generation (RAG) solution.
-
-In the upcoming tutorials, you continue your generative AI (GenAI) journey with Microsoft Fabric. The next steps show how to change your RAG configuration to fit your scenario.
+Use AI-assisted metrics and top-N retrieval rate to build your retrieval-augmented generation (RAG) solution.
