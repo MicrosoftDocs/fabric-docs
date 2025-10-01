@@ -4,74 +4,75 @@ description: Learn how to build a Retrieval Augmented Generation (RAG) applicati
 author: jonburchel
 ms.author: jburchel
 ms.reviewer: alsavelv
-ms.date: 08/28/2025
+ms.date: 10/01/2025
 ms.topic: concept-article
 ms.service: fabric
 ms.subservice: data-science
 ai.usage: ai-assisted
 ---
-# Building Retrieval Augmented Generation in Fabric: A Step-by-Step Guide
+# Build retrieval augmented generation in Fabric
 
 ## Introduction
 
-Large Language Models (LLMs) such as OpenAI's ChatGPT are powerful tools, but their effectiveness for business applications and meeting customer needs greatly improves when customized with specific data using Generative AI (GenAI) solutions. Without this customization, LLMs may not deliver optimal results tailored to the requirements and expectations of businesses and their customers. 
+Large language models (LLMs) such as OpenAI's ChatGPT are powerful, but they work better for business needs when you customize them with specific data using generative AI (GenAI) solutions. Without this customization, LLMs might not deliver results tailored to business and customer requirements.
 
-One straightforward approach to enhance the results is to manually integrate specific information into prompts. For more advanced improvements, fine-tuning LLMs with custom data proves effective. This notebook demonstrates the Retrieval Augmented Generation (RAG) strategy, which supplements LLMs with dynamically retrieved and relevant information (e.g., business-specific data) to enrich their knowledge.
+One simple way to improve results is to add specific information to prompts. For deeper gains, fine-tune the LLM with custom data. This notebook shows retrieval-augmented generation (RAG), which adds retrieved business-specific context to the LLM to improve its answers.
 
-Implementing RAG involves methods such as web searching or utilizing specific APIs. An effective approach is utilizing a Vector Search Index to efficiently explore unstructured text data. The Vector Index searches through a database of text chunks and ranks them based on how closely they match the meaning of the user's question or query. Since full documents or articles are usually too large to embed directly into a vector, they are typically split into smaller chunks. These smaller chunks are then indexed in systems like Azure AI Search, making it easier to retrieve relevant information efficiently.
+Implement RAG by using web search or specific APIs. A useful method is to use a vector search index to explore unstructured text. The index searches a collection of text chunks and ranks them by how closely they match the user's question. Because full documents are often too large to embed as a single vector, they're split into smaller chunks. The chunks are indexed in services like Azure AI Search, which makes retrieval efficient.
 
-:::image type="content" source="media/quickstart-building-retrieval-augmented-generation/fabric-notebook-architecture-diagram.png" alt-text="Diagram of Fabric Notebook architecture and related services it uses.":::
+:::image type="content" source="media/quickstart-building-retrieval-augmented-generation/fabric-notebook-architecture-diagram.png" alt-text="Diagram that shows Fabric notebook architecture and the services it uses.":::
 
-This tutorial provides a quickstart guide to use Fabric for building RAG applications. The main steps in this tutorial are as following:
+This tutorial is a quickstart that shows how to use Fabric to build RAG applications. The main steps in this tutorial are:
 
-1. Set up Azure AI Search Services
-1. Load and manipulate the data from [CMU's QA dataset](https://www.cs.cmu.edu/~ark/QA-data/) of Wikipedia articles
-1. Chunk the data by leveraging Spark pooling for efficient processing
-1. Create embeddings using fabric's built-in [Azure OpenAI Services through Synapse ML](/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=synapseml)
-1. Create a Vector Index using [Azure AI Search](https://aka.ms/what-is-azure-search)
-1. Generate answers based on the retrieved context using fabrics built-in [Azure OpenAI through python SDK](/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=python)
+1. Set up Azure AI Search.
+1. Load and prepare data from the [CMU QA dataset](https://www.cs.cmu.edu/~ark/QA-data/).
+1. Chunk the data by using Spark pools for efficient processing.
+1. Create embeddings by using Fabric's built-in [Azure OpenAI services through Synapse ML](/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=synapseml).
+1. Create a vector index by using [Azure AI Search](https://aka.ms/what-is-azure-search).
+1. Generate answers from the retrieved context by using Fabric's built-in [Azure OpenAI through Python SDK](/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=python).
 
 ## Prerequisites
 
-You need the following services to run this notebook.
+Set up the following services to run this notebook.
 
-- [Microsoft Fabric](https://aka.ms/fabric/getting-started) with F64 Capacity
-- [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to this notebook. You will download data from a public blob, then store the data in the lakehouse resource.
+- [Microsoft Fabric](https://aka.ms/fabric/getting-started) with F64 capacity.
+- [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to this notebook. Download data from a public blob, then store it in the lakehouse.
 - [Azure AI Search](https://aka.ms/azure-ai-search)
 
+## Step 1: Overview of Azure setup
 
-## Step 1: Overview of Azure Setup
+In this tutorial, you use Fabric's built-in Azure OpenAI Service that doesn't need keys. Run the cell that follows to apply the required SynapseML configuration.
 
-In this tutorial, we will benefit from Fabric's built-in Azure Openai Service that requires no keys. You only need to run the cell below to enforce required synapse ml configuration.
+#### Set up Azure AI Search keys
 
-#### Set up Azure AI Search Keys
+After you get an Azure subscription, create an Azure AI Search service by following the instructions [here](https://aka.ms/azure-ai-search).
 
-Once you have an Azure subscription, you can create an Azure AI Search Service by following the instructions [here](https://aka.ms/azure-ai-search).
+You can choose the free tier, which lets you create three indexes and use 50MB of storage. It's enough for this tutorial. Select a subscription, set up a resource group, and name the service. After you configure it, get the key and set `aisearch_api_key`. Enter values for `aisearch_index_name` and the other variables shown here:
 
-You may choose a free tier for the Azure AI Search Service, which allows you to have 3 indexes and 50 MB of storage. The free tier is sufficient for this tutorial. You will need to select a subscription, set up a resource group, and name the service. Once configured, obtain the keys to specify as `aisearch_api_key`. Please complete the details for `aisearch_index_name`, etc in the following.
+:::image type="content" source="media/quickstart-building-retrieval-augmented-generation/azure-ai-search-free-tier.png" alt-text="Screenshot of Azure portal showing the Azure AI Search service creation page with free tier selected, allowing 3 indexes, and 50 MB of storage.":::
 
-:::image type="content" source="media/quickstart-building-retrieval-augmented-generation/azure-ai-search-free-tier.png" alt-text="Screenshot of Azure portal showing the Azure AI Search Service creation page with free tier selected, allowing 3 indexes and 50 MB storage.":::
-
-%pip install openai==0.28.1
+`%pip install openai==0.28.1`
 
 ```python
-# Setup key accesses to Azure AI Search
+# Set up Azure AI Search credentials
 aisearch_index_name = "" # TODO: Create a new index name: must only contain lowercase, numbers, and dashes
 aisearch_api_key = "" # TODO: Fill in your API key from Azure AI Search
-aisearch_endpoint = "https://<CHANGE_ME>.search.windows.net" # TODO: Provide the url endpoint for your created Azure AI Search 
+aisearch_endpoint = "https://<YOUR_AI_SEARCH_SERVICE_NAME>.search.windows.net" # TODO: Provide the URL endpoint for your Azure AI Search service
 ```
+
+```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 5, Finished, Available, Finished)*
+```
 
-After setting up your Azure OpenAI and Azure AI Search Keys, you must import required libraries from [Spark](https://spark.apache.org/), [SynapseML](https://aka.ms/AboutSynapseML), [Azure Search](https://aka.ms/azure-search-libraries), and OpenAI. 
+After you set up Azure OpenAI and Azure AI Search keys, import the required libraries from [Spark](https://spark.apache.org/), [SynapseML](https://aka.ms/AboutSynapseML), [Azure Search](https://aka.ms/azure-search-libraries), and OpenAI.
 
-Make sure to use the `environment.yaml` from the same location as this notebook file to upload into Fabric to create, save, and publish a [Fabric environment](https://aka.ms/fabric/create-environment). Then select the newly created environment before running the cell below for imports.
-
+Use the `environment.yaml` in the same folder as this notebook to create, save, and publish a [Fabric environment](https://aka.ms/fabric/create-environment). Select the new environment before running the import cell.
 
 ```python
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
-import os, requests, json, warnings
+import os, requests, json
 
 from datetime import datetime, timedelta
 from azure.core.credentials import AzureKeyCredential
@@ -111,50 +112,55 @@ import ipywidgets as widgets
 from IPython.display import display as w_display
 import openai
 ```
+
+```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 7, Finished, Available, Finished)*
+```
 
-## Step 2: Load the data into the Lakehouse and Spark
+## Step 2: Load data into the lakehouse and Spark
 
-#### Dataset
+### Dataset
 
-The Carnegie Mellon University Question-Answer dataset version 1.2 is a corpus of Wikipedia articles, manually-generated factual questions based on the articles, and manually-generated answers. The data is hosted on an Azure blob storage under the same license [GFDL](http://www.gnu.org/licenses/fdl.html). For simplicity, the data is cleaned up and refined into a single structured table with the following fields.
+The Carnegie Mellon University Question-Answer dataset version 1.2 is a corpus of Wikipedia articles, manually generated factual questions based on the articles, and manually generated answers. The data is hosted on an Azure blob storage under the same license [GFDL](http://www.gnu.org/licenses/fdl.html). For simplicity, the data is cleaned up and refined into a single structured table with the following fields.
 
-- ArticleTitle: the name of the Wikipedia article from which questions and answers initially came.
-- Question: manually generated question based on article
-- Answer: manually generated answer based on question and article
-- DifficultyFromQuestioner: prescribed difficulty rating for the question as given to the question-writer
-- DiffuctlyFromAnswerer: Difficulty rating assigned by the individual who evaluated and answered the question, which may differ from the difficulty from DifficultyFromQuestioner
-- ExtractedPath: path to original article. There may be more than one Question-Answer pair per article
-- text: cleaned wikipedia artices
+- ArticleTitle: The name of the Wikipedia article from which the questions and answers come.
+- Question: Manually generated question based on the article.
+- Answer: Manually generated answer based on the question and article.
+- DifficultyFromQuestioner: Prescribed difficulty rating for the question as given to the question writer.
+- DifficultyFromAnswerer: Difficulty rating assigned by the individual who evaluated and answered the question, which can differ from the difficulty from DifficultyFromQuestioner.
+- ExtractedPath: Path to the original article. There can be more than one question and answer pair per article.
+- text: Cleaned Wikipedia articles.
 
-For more information about the license, please download a copy of the license named `LICENSE-S08,S09` from the same location.
+For more information about the license, download the file named `LICENSE-S08,S09` from the same location.
 
-##### History and Citation
+#### History and citation
 
 The dataset used for this notebook requires the following citation:
 
+```text
 *CMU Question/Answer Dataset, Release 1.2*
 
 *8/23/2013*
 
-*Noah A. Smith, Michael Heilman, and Rebecca Hw*
+*Noah A. Smith, Michael Heilman, and Rebecca Hwa*
 
 ***Question Generation as a Competitive Undergraduate Course Project***
 
 *In Proceedings of the NSF Workshop on the Question Generation Shared Task and Evaluation Challenge, Arlington, VA, September 2008.*
 *Available at: http://www.cs.cmu.edu/~nasmith/papers/smith+heilman+hwa.nsf08.pdf*
 
-*Original dataset acknowledgements:*
+*Original dataset acknowledgments:*
 *This research project was supported by NSF IIS-0713265 (to Smith), an NSF Graduate Research Fellowship (to Heilman), NSF IIS-0712810 and IIS-0745914 (to Hwa), and Institute of Education Sciences, U.S. Department of Education R305B040063 (to Carnegie Mellon).*
 
-*cmu-qa-08-09 (modified verison)*
+*cmu-qa-08-09 (modified version)*
 
 *6/12/2024*
 
 *Amir Jafari, Alexandra Savelieva, Brice Chung, Hossein Khadivi Heris, Journey McDowell*
 
-*Released under same license GFDL (http://www.gnu.org/licenses/fdl.html)*
-*All the GNU license applies to the dataset in all copies.*
+*Released under the same GFDL license (http://www.gnu.org/licenses/fdl.html).*
+*All GNU license terms apply to the dataset in all copies.*
+```
 
 ```python
 import requests
@@ -179,10 +185,13 @@ print(f"Blob content successfully stored at {fabric_lakehouse_path}")
 spark.read.parquet(location).write.mode("overwrite").format("delta").saveAsTable("cmu_qa_08_09_refresh")
 
 ```
+
+```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 8, Finished, Available, Finished)*
 *Blob content successfully stored at /lakehouse/default/Files/cmu_qa.parquet*
+```
 
-The original dataset is divided into student Semesters S08, S09, and S10. Each semester contains multiple sets, and each set comprises approximately 10 Wikipedia articles. As illustrated earlier, due to varying licenses, the entire datasets are consolidated into a single table encompassing S08 and S09, omitting S10. For sake of simplicity in demonstration, this tutorial will specifically highlight sets 1 and 2 within S08. The primary focus areas will be `wildlife` and `countries`.
+The original dataset includes student semesters S08, S09, and S10. Each semester contains multiple sets, and each set comprises approximately 10 Wikipedia articles. Due to varying licenses, the datasets are consolidated into a single table that includes S08 and S09 and omits S10. For simplicity, this article highlights sets 1 and 2 within S08. The primary focus areas are `wildlife` and `countries`.
 
 ```python
 # Read parquet table from default lakehouse into spark dataframe
@@ -201,16 +210,18 @@ df_wiki = filtered_df.dropDuplicates(['ExtractedPath', 'ArticleTitle', 'text'])
 # Show the result
 display(df_wiki)
 ```
+
+```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 9, Finished, Available, Finished)*
 *SynapseWidget(Synapse.DataFrame, eb3e3dac-90fb-4fd7-9574-e5eba6335aad)*
 *SynapseWidget(Synapse.DataFrame, 29a22160-4fb3-437c-a4c9-afa46e6510f1)*
+```
 
-## Step 3: Chunk the Text 
+## Step 3: Chunk the text
 
-When large documents are inputted into the LLMs, it needs to extract the most important information to answer user queries. Chunking involves breaking down large text into smaller segments or chunks. In the RAG context, embedding smaller chunks rather than entire documents for the knowledge base means retrieving only the most relevant chunks in response to a user's query. This approach reduces input tokens and provides more focused context for the LLM to process.
+When you input large documents into an LLM, it extracts the most important information to answer user queries. Chunking breaks large text into smaller chunks. In a RAG setup, embedding smaller chunks instead of whole documents lets retrieval return only the most relevant chunks for a query. This approach reduces tokens and gives the model focused context.
 
-To perform chunking, you should use the `PageSplitter` implementation from the `SynapseML` library for distributed processing. Adjusting the page length parameters (in characters) is crucial for optimizing performance based on the text size supported by the language model and the number of chunks selected as context for the conversational bot. For demonstration, a page length of 4000 characters is recommended.
-
+Use the `PageSplitter` class from the `SynapseML` library for distributed processing. Tune page length (in characters) to balance model limits, retrieval quality, and total context size. For example, set the maximum page length to 4,000 characters.
 
 ```python
 ps = (
@@ -224,58 +235,70 @@ ps = (
 df_splitted = ps.transform(df_wiki) 
 display(df_splitted.limit(10)) 
 ```
+
+```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 10, Finished, Available, Finished)*
 *SynapseWidget(Synapse.DataFrame, 8353f865-eadd-4edf-bcbb-2a3980f06cf6)*
+```
 
-Note that each row can contain multiple chunks from the same document represented as a vector. The function `explode` distributes and duplicates the vector's content across several rows.
+Each row can contain multiple chunks from the same document in a vector. The `explode` function expands the vector into separate rows.
 
 ```python
 df_chunks = df_splitted.select('ExtractedPath', 'ArticleTitle', 'text', explode(col("chunks")).alias("chunk"))
 display(df_chunks)
 ```
+
+```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 11, Finished, Available, Finished)*
 *SynapseWidget(Synapse.DataFrame, d1459c26-9eb4-4996-8fdd-a996c9b30777)*
+```
 
-Now, you will add a unique id for each row. 
+Now add a unique ID for each row.
 
 ```python
 df_chunks_id = df_chunks.withColumn("Id", monotonically_increasing_id())
 display(df_chunks_id)
 ```
-*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 12, Finished, Available, Finished)*
-*SynapseWidget(Synapse.DataFrame, 5cc2055a-96e9-4c7d-8ad6-558b04d847fd)*
 
-## Step 4: Create Embeddings
+```text
+StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 12, Finished, Available, Finished)
+SynapseWidget(Synapse.DataFrame, 5cc2055a-96e9-4c7d-8ad6-558b04d847fd)
+```
 
-In RAG, embedding refers to incorporating relevant chunks of information from documents into the model's knowledge base. These chunks are chosen based on their relevance to potential user queries, allowing the model to retrieve specific and targeted information rather than entire documents. Embedding helps optimize the retrieval process by providing concise and pertinent context for generating accurate responses to user inputs. In this section, we will use SynapseML Library to obtain embeddings for each chunk of text.
+## Step 4: Create embeddings
+
+In RAG, embedding means adding relevant document chunks to the model's knowledge base. The system selects chunks that match likely user queries so it retrieves precise information instead of whole documents. Embeddings improve retrieval by giving focused context for accurate answers. In this section, we use the SynapseML library to get embeddings for each text chunk.
 
 ```python
-Embd = (In this section, we use SynapseML Library to obtain embeddings for each chunk of text.
+# Generate embeddings for each chunk.
+Embd = (
     OpenAIEmbedding()
-    .setDeploymentName('text-embedding-ada-002') # set deployment_name as text-embedding-ada-002
+    .setDeploymentName('text-embedding-ada-002')  # Set deployment name.
     .setTextCol("chunk")
-    .setErrorCol("error")    
+    .setErrorCol("error")
     .setOutputCol("Embedding")
 )
 df_embeddings = Embd.transform(df_chunks_id)
 display(df_embeddings)
 ```
+
+```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 13, Finished, Available, Finished)*
 *SynapseWidget(Synapse.DataFrame, b3dcfce1-7bd9-419b-b233-d848f5fddb06)*
+```
 
-## Step 5: Create Vector Index with Azure AI Search 
+## Step 5: Create vector index with Azure AI Search
 
-In RAG, creating a vector index helps quickly retrieve the most relevant information for user queries. By organizing document chunks into a vector space, RAG can match and generate responses based on similar content rather than just keywords. This makes the responses more accurate and meaningful, improving how well the system understands and responds to user inputs.
+In RAG, creating a vector index helps quickly retrieve the most relevant information for user queries. By organizing document chunks into a vector space, RAG can match and generate responses based on similar content rather than just keywords. This similarity matching makes the responses more accurate and meaningful, improving how well the system understands and responds to user inputs.
 
-In the next steps, you will set up a search index in Azure AI Search that integrates both semantic and vector search capabilities. You can begin by initializing the `SearchIndexClient` with the required endpoint and API key. Then, define the data structure using a list of fields, specifying their types and attributes. The `Chunk` field will hold the text to be retrieved, while the `Embedding` field will facilitate vector-based searches. Additional fields like `ArticleTitle` and `ExtractedPath` can be included for filtering purposes. For custom datasets, you can adjust the fields as necessary.
+Set up a search index in Azure AI Search that integrates semantic and vector search. Initialize the `SearchIndexClient` with the endpoint and API key. Define the fields and their attributes. The `Chunk` field stores retrievable text. The `Embedding` field enables vector search. Include fields like `ArticleTitle` and `ExtractedPath` for filtering. Adjust fields for your dataset.
 
-For vector search, configure the Hierarchical Navigable Small Worlds (HNSW) algorithm by specifying its parameters and creating a usage profile. You can also set up semantic search by defining a configuration that emphasizes specific fields for improved relevance. Finally, create the search index with these configurations and utilize the client to create or update the index, ensuring it supports advanced search operations. 
+Configure the HNSW algorithm parameters and create a vector profile. Set up semantic search by defining a configuration that prioritizes key fields. Create or update the index with these settings by using the client.
 
-Note that while this tutorial focuses on vector search, Azure Search offers text search, filtering, and semantic ranking capabilities that are beneficial for various applications.
-
+Although this tutorial focuses on vector search, Azure AI Search also offers text search, filtering, and semantic ranking.
 
 > [!TIP]
-> You can skip the following details. You will use the Python SDK for Azure AI Search to create a new Vector Index. This index will include fields for `Chunk`, which holds the text to be retrieved, and `Embedding`, generated from the OpenAI embedding model. Additional searchable fields like `ArticleTitle` and `ExtractedPath` are useful in this dataset, but you can customize your own dataset by adding or removing fields as needed.
+> Skip these details if you want. Use the Python SDK for Azure AI Search to create a new vector index. This index includes `Chunk` for retrievable text and `Embedding` generated from the OpenAI embedding model. Add or remove searchable fields like `ArticleTitle` and `ExtractedPath` to fit your dataset.
 
 ```python
 index_client = SearchIndexClient(
@@ -340,12 +363,13 @@ print(f' {result.name} created')
 
 ```
 
+```text
 StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 14, Finished, Available, Finished)
-prioritized_content_fields is not a known attribute of class <class 'azure.search.documents.indexes._generated.models._models_py3.SemanticPrioritizedFields'> and will be ignored
+prioritized_content_fields isn't a known attribute of class <class 'azure.search.documents.indexes._generated.models._models_py3.SemanticPrioritizedFields'> and will be ignored
 demo-portland-tutorial created
-    
+```
 
-The following code defines a User Defined Function (UDF) named `insertToAISearch` that inserts data into an Azure AI Search index. The integration between Azure and Spark offers a significant advantage for handling large datasets efficiently. Although the current dataset is not particularly large, employing Spark User-Defined Functions (UDFs) ensures readiness for future scalability. UDFs enable the creation of custom functions that can process Spark DataFrames, enhancing Spark's capabilities. This UDF, annotated with `@udf(returnType=StringType())`, specifies the return type as a string. The function takes five parameters: `Id`, `ArticleTitle`, `ExtractedPath`, `Chunk`, and `Embedding`. It constructs a URL for the Azure AI Search API, incorporating the search service name and index name. The function then creates a payload in JSON format, including the document fields and specifying the search action as `upload`. The headers are set to include the content type and the API key for authentication. A POST request is sent to the constructed URL with the headers and payload, and the response from the server is printed. This function facilitates the uploading of documents to the Azure AI Search index. Please make sure to include the fields specified in the previous section for your own dataset.
+The following code defines a user-defined function (UDF) named `insertToAISearch` that inserts data into an Azure AI Search index. Spark UDFs help you scale to large datasets. The function takes five parameters: `Id`, `ArticleTitle`, `ExtractedPath`, `Chunk`, and `Embedding`. It builds the Azure AI Search API URL, creates a JSON payload with an `upload` action, sets headers with the API key, sends a POST request, prints the response, and returns "Success" or the error text. Include the fields described earlier in your dataset.
 
 ```python
 @udf(returnType=StringType())
@@ -380,14 +404,16 @@ def insertToAISearch(Id, ArticleTitle, ExtractedPath, Chunk, Embedding):
     else:
         return response.text
 ```
-*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 15, Finished, Available, Finished)*
 
-In the following, you will be using the previously defined UDF `insertToAISearch` to upload data from a DataFrame to the Azure AI Search index. The DataFrame `df_embeddings` contains fields such as `Id`, `ArticleTitle`, `ExtractedPath`, `Chunk`, and `Embedding`.
+```text
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 15, Finished, Available, Finished)*
+```
+
+Next, use the UDF `insertToAISearch` to upload rows from the `df_embeddings` DataFrame to the Azure AI Search index. The DataFrame has `Id`, `ArticleTitle`, `ExtractedPath`, `Chunk`, and `Embedding`.
 
 You apply the `insertToAISearch` function to each row to add a new column named `errorAISearch` to `df_embeddings`. This column captures responses from the Azure AI Search API, allowing you to check for any upload errors. This error checking ensures that each document is successfully uploaded to the search index.
 
-Finally, you use the `display` function to examine the modified DataFrame `df_embeddings_ingested` visually and verify the processing accuracy.
-
+Use the `display` function to review `df_embeddings_ingested` and verify the results.
 
 ```python
 df_embeddings_ingested = df_embeddings.withColumn(
@@ -403,11 +429,13 @@ df_embeddings_ingested = df_embeddings.withColumn(
 
 display(df_embeddings_ingested)
 ```
+
+```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 16, Finished, Available, Finished)*
 *SynapseWidget(Synapse.DataFrame, 5be010aa-4b2a-47b5-8008-978031e0795a)*
+```
 
-You can now proceed to perform sanity checks to ensure the data has been correctly uploaded to the Azure AI Search index. First, count the number of successful uploads by filtering the DataFrame for rows where `errorAISearch` is "Success" and using the count method to determine the total. Next, identify unsuccessful uploads by filtering for rows containing errors in `errorAISearch` and count these occurrences. Print the counts of successful and unsuccessful uploads to summarize the results. If there are any unsuccessful uploads, use the show method to display details of those rows. This allows you to inspect and address any issues, ensuring the upload process is validated and any necessary corrective actions are taken.
-
+Run basic validation checks to confirm the data uploads to the Azure AI Search index. Count successful uploads where `errorAISearch` equals `Success`. Count and review any failures. If failures exist, display those rows to diagnose and fix issues.
 
 ```python
 # Count the number of successful uploads
@@ -425,15 +453,18 @@ print(f"Number of unsuccessful uploads: {unsuccessful_uploads_count}")
 if unsuccessful_uploads_count > 0:
     unsuccessful_uploads.show()
 ```
+
+```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 17, Finished, Available, Finished)*
 *Number of successful uploads: 172*
 *Number of unsuccessful uploads: 0*
+```
    
-## Step 6: Demonstrate Retrieval Augmented Generation
+## Step 6: Demonstrate retrieval augmented generation
 
-After you chunk, embed, and create a vector index, the final step is to use this indexed data to find and retrieve the most relevant information based on user queries. This allows the system to generate accurate responses or recommendations by leveraging the indexed data's organization and similarity scores from the embeddings. 
+After you chunk, embed, and create a vector index, the final step is to use this indexed data to find and retrieve the most relevant information based on user queries. This information allows the system to generate accurate responses or recommendations by applying the indexed data's organization and similarity scores from the embeddings. 
 
-In the following, you create a function for retrieving chunks of relevant Wikipedia articles from the vector index named Azure AI Search. Whenever someone asks a new question, the system procedurally
+In the following example, you create a function that retrieves relevant Wikipedia article chunks from a vector index in Azure AI Search. Whenever someone asks a new question, the system:
 
 - embed the question into a vector
 - retrieve the top N chunks from Azure AI Search using the vector
@@ -446,7 +477,7 @@ import copy, json, os, requests, warnings
 # implementation of retriever
 def get_context_source(retrieve_results, question, topN=3, filter=''):
     """
-    Retrieves contextual information and sources related to a given question using embeddings and a vector search.  
+    Retrieve context and source metadata for a question by running a vector search.
     Parameters:
     retrieve_results (function): implements one of retrieval methods with Azure AI search.
     question (str): The question for which the context and sources are to be retrieved.  
@@ -494,16 +525,22 @@ def vector_search(question, filter = '', topN = 3):
 
     return results
 ```
+
+```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 18, Finished, Available, Finished)*
+```
 
 ```python
 question = "How do elephants communicate over long distances?"
 retrieved_context, retrieved_sources, df_chunks = get_context_source(vector_search, question)
 df_chunks
 ```
-*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 19, Finished, Available, Finished)*
 
-| Chunk Ordinal  | Embedding | ExtractedPath | ArticleTitle | Chunk | Id | @search.score | @search.reranker_score | @search.highlights | @search.captions |
+```text
+*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 19, Finished, Available, Finished)*
+```
+
+| Chunk Ordinal  | Embedding | ExtractedPath | ArticleTitle | Chunk | ID | @search.score | @search.reranker_score | @search.highlights | @search.captions |
 |---|-----------|---------------|--------------|-------|----|--------------|-----------------------|-------------------|------------------|
 | 0 | [-0.03276262, -0.006002287, 0.009044814, -0.02...] | S08/data/set1/a5 | elephant | hand, live mostly solitary lives.\n\nThe socia... | 131 | 0.888358 | None | None | None |
 | 1 | [-0.011676712, -0.0079745, 0.001480885, -0.021...] | S08/data/set1/a5 | elephant | farther north, in slightly cooler climates, an... | 130 | 0.877915 | None | None | None |
@@ -514,7 +551,7 @@ You need another function to get the response from the OpenAI Chat model. This f
 ```python
 def get_answer(question, context):
     """  
-    Generates a response to a given question using provided context and an Azure OpenAI model.  
+    Generate an answer to a question by using supplied context and an Azure OpenAI model.
     
     Parameters:  
         question (str): The question that needs to be answered.  
@@ -526,7 +563,7 @@ def get_answer(question, context):
     messages = [
         {
             "role": "system",
-            "content": "You are a helpful chat assistant who will be provided text information for you to refer to in response."
+            "content": "You are a helpful chat assistant who is given reference text to answer the question."
         }
     ]
 
@@ -545,29 +582,34 @@ def get_answer(question, context):
     return response.choices[0].message.content
 
 ```
+
+```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 20, Finished, Available, Finished)*
+```
 
-Note: please consult the [documentation for python SDK](/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=python) for the other available deployment_ids. 
-
+Note: For other available deployment_ids, see the [documentation for Python SDK](/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=python).
 
 ```python
 answer = get_answer(question, retrieved_context)
 print(answer)
 ```
+
+```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 21, Finished, Available, Finished)*
 
-*Elephants communicate over long distances by producing and receiving low-frequency sounds known as infrasound. This sub-sonic rumbling can travel through the ground farther than sound travels through the air. Elephants can feel these vibrations through the sensitive skin of their feet and trunks. They use this method of communication to stay connected with other elephants over large distances. This ability to communicate through infrasound plays a crucial role in their social lives and helps them coordinate movements and interactions within their groups.*
+*Elephants communicate over long distances by producing and receiving low-frequency sounds known as infrasound. This subsonic rumbling can travel through the ground farther than sound travels through the air. Elephants can feel these vibrations through the sensitive skin of their feet and trunks. They use this method of communication to stay connected with other elephants over large distances. This ability to communicate through infrasound plays a crucial role in their social lives and helps them coordinate movements and interactions within their groups.*
     
  *The ability of elephants to recognize themselves in a mirror test demonstrates their self-awareness and cognitive abilities. This test involves marking an elephant and observing its reaction to its reflection in a mirror. Elephants have shown the capacity to understand that the image in the mirror is their own reflection, indicating a level of self-awareness similar to that seen in humans, apes, and dolphins.*
     
  *In addition to infrasound communication, elephants also use other forms of communication such as visual displays and olfactory cues. For example, during the mating period, male elephants emit a specific odor from a gland behind their eyes. They may fan their ears to help disperse this scent over long distances, a behavior theorized by researcher Joyce Poole as a way to attract potential mates.*
     
  *Overall, elephants have complex social structures and behaviors that involve various forms of communication to maintain relationships, coordinate movements, and express emotions within their groups.*
+```
 
-You learn how to use the tools mentioned above to embed and chunk the CMU QA dataset for your RAG application. Now that you see the retrieval and answering functions in action, you can create a basic ipywidget to serve as a chatbot interface.  After running the cell below, enter your question and select `Enter` to get a response from the RAG solution. Modify the text to ask a new question and select `Enter` again.
+This quickstart shows how to embed and chunk the CMU QA dataset for your RAG application. Now that you see the retrieval and answer functions in action, create a basic ipywidgets-based chatbot interface.  Run the cell below, enter your question, then select <kbd>Enter</kbd> to get a response from the RAG solution. Change the text to ask a new question, then select <kbd>Enter</kbd> again.
 
 > [!Tip]
-> This RAG solution can make mistakes. Feel free to change the OpenAI model to gpt-4 or modify the system content prompt. 
+> This RAG solution can make mistakes. You can change the OpenAI model to GPT-4 or modify the system prompt.
 
 ```python
 # Create a text box for input  
@@ -597,12 +639,13 @@ text.observe(on_text_change)
 # Display the text box and label  
 w_display(text, label)
 ```
+
+```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 37, Finished, Available, Finished)*
 *Text(value='', continuous_update=False, description='Question:', layout=Layout(width='800px'), placeholder='Ty…*
 *HTML(value='', layout=Layout(width='800px'))*
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 38, Finished, Available, Finished)*
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 39, Finished, Available, Finished)*
+```
 
-This concludes the Quickstart tutorial on creating a RAG application in Fabric using Fabric's built-in OpenAI endpoint.
-
-Fabric is a platform for unifying your company's data, empowering you to leverage knowledge for your GenAI applications effectively.
+This quickstart concludes the tutorial on creating a RAG application in Fabric by using the built-in OpenAI endpoint. It shows how Fabric unifies your company data so you can build effective generative AI applications.
