@@ -1,4 +1,3 @@
-=======
 ---
 title: "Manage Fabric Materialized Lake Views Lineage"
 description: Learn how to Manage Fabric materialized lake views lineage.
@@ -73,4 +72,5 @@ The ability to attach a custom Spark environment to  MLV lineage in Microsoft Fa
 ## Related articles
 
 * [Microsoft Fabric materialized lake views overview](overview-materialized-lake-view.md)
+
 * [Microsoft Fabric materialized lake view tutorial](tutorial.md)
