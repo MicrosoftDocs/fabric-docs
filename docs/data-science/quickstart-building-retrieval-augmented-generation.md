@@ -601,7 +601,7 @@ Elephants communicate over long distances by producing and receiving low-frequen
  Overall, elephants have complex social structures and behaviors that involve various forms of communication to maintain relationships, coordinate movements, and express emotions within their groups.
 ```
 
-This quickstart shows how to embed and chunk the CMU QA dataset for your RAG application. Now that you see the retrieval and answer functions in action, create a basic ipywidgets-based chatbot interface.  Run the cell below, enter your question, then select <kbd>Enter</kbd> to get a response from the RAG solution. Change the text to ask a new question, then select <kbd>Enter</kbd> again.
+Now you know how to embed and chunk the CMU QA dataset for your RAG application, perform retrieval, and answer functions in action. Using this, you can create a basic ipywidgets-based chatbot interface.  Run the cell below, enter your question, then select <kbd>Enter</kbd> to get a response from the RAG solution. Change the text to ask a new question, then select <kbd>Enter</kbd> again.
 
 > [!Tip]
 > This RAG solution can make mistakes. You can change the OpenAI model to GPT-4 or modify the system prompt.
@@ -643,4 +643,4 @@ w_display(text, label)
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 38, Finished, Available, Finished)*`
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 39, Finished, Available, Finished)*`
 
-This quickstart concludes the tutorial on creating a RAG application in Fabric by using the built-in OpenAI endpoint. It shows how Fabric unifies your company data so you can build effective generative AI applications.
+This concludes the tutorial on creating a RAG application in Fabric by using the built-in OpenAI endpoint. It shows how Fabric unifies your company data so you can build effective generative AI applications.
