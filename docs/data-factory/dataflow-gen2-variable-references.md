@@ -139,7 +139,7 @@ After selecting the option to *Use a query*, a dropdown will appear to show all 
 
 ![Screenshot of the Territory parameter selected inside the input widget from the filter rows dialog.](media/dataflow-gen2-parameterized-dataflow/territory-parameter-input-widget.png)
 
-Once you select OK, notice that the diagram view has already created the link between the newly created parameter and the query in use. Not only that, but the data preview now shows you information for the **Mideast** territory.
+Once you select OK, notice that the diagram view already created the link between the newly created parameter and the query in use. Not only that, but the data preview now shows you information for the **Mideast** territory.
 
 :::image type="content" source="media/dataflow-gen2-parameterized-dataflow/mideast-territory-data-preview.png" alt-text="Screenshot of the Diagram view, Query settings, and Data preview for the dimension_city query showing data for the Mideast SalesTerritory." lightbox="media/dataflow-gen2-parameterized-dataflow/mideast-territory-data-preview.png":::
 
@@ -152,7 +152,7 @@ The last component to modify in this scenario is the destination. While the info
 ![Screenshot of the flyout that contains the data destination settings for the dimension_city query.](media/dataflow-gen2-parameterized-dataflow/destination-settings-flyout.png)
 
 This tutorial shows you how to make the changes through Git. Before you can make changes through git make sure to:
-* **Create a query for the WarehouseId variable**: follow the same process described in earlire sections to create a new blank query and replace the formula for the Source step to be:
+* **Create a query for the WarehouseId variable**: follow the same process described in earlier sections to create a new blank query and replace the formula for the Source step to be:
 ```M code
 Variable.ValueOrDefault("$(/**/My Library/WarehouseId)", "Your Warehouse ID")
 ``` 
@@ -202,4 +202,4 @@ in
 
 You can now commit this change and update your dataflow using the changes from your Dataflow through the source control feature in your workspace.
 
-You can now run your Dataflow which uses values from variable libraries.
+You can now run your Dataflow, which uses values from variable libraries.
