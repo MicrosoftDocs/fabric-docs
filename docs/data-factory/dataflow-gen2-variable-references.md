@@ -131,11 +131,11 @@ Variable.ValueOrDefault("$(/**/My Library/Territory)", "Mideast")
 
 ![Screenshot of the Territory query created in the dataflow.](media/dataflow-gen2-variable-references/territory-variable-query.png)
 
-Given that your filter step was created using the user interface, you can head over to the Filtered rows step, double select it and get the settings dialog for the filter step. This dialog allows you to select, through the input widget, if you wish to use a parameter instead of a static value:
+Given that your filter step was created using the user interface, you can head over to the Filtered rows step, double select it and get the settings dialog for the filter step. This dialog allows you to select, through the input widget, if you wish to use a query instead of a static value:
 
 ![Screenshot of the input widget in the filter rows dialog with the option to reference a parameter.](media/dataflow-gen2-parameterized-dataflow/input-widget.png)
 
-After selecting the option to *Select a parameter*, a dropdown will appear to show all available parameters that match the required data type. From this list, you can select the newly created Territory parameter.
+After selecting the option to *Use a query*, a dropdown will appear to show all queries that you can choose from. From this list, you can select the newly created Territory query.
 
 ![Screenshot of the Territory parameter selected inside the input widget from the filter rows dialog.](media/dataflow-gen2-parameterized-dataflow/territory-parameter-input-widget.png)
 
