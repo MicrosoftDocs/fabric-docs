@@ -7,7 +7,7 @@ author: spmsft
 ms.author: splantikow
 ms.reviewer: eur
 ms.service: fabric
-#ms.subservice: graph
+ms.subservice: graph
 ---
 
 # GQL expressions, predicates, and functions

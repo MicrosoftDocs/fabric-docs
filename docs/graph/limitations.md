@@ -7,7 +7,7 @@ author: wmwxwa
 ms.author: wangwilliam
 ms.reviewer: eur
 ms.service: fabric
-#ms.subservice: graph
+ms.subservice: graph
 ---
 # Select limitations
 

@@ -7,7 +7,7 @@ author: eric-urban
 ms.author: eur
 reviewer: wmwxwa
 ms.service: fabric
-#ms.subservice: graph
+ms.subservice: graph
 ---
 
 # What is a graph database?

@@ -7,7 +7,7 @@ author: eric-urban
 ms.author: eur
 ms.reviewer: eur
 ms.service: fabric
-#ms.subservice: graph
+ms.subservice: graph
 ms.search.form: Getting started with Graph
 ---
 
