@@ -161,6 +161,10 @@ Variable.ValueOrDefault("$(/**/My Library/WarehouseId)", "Your Warehouse ID")
 
 ![Screenshot of all queries in the dataflow including the newly created WarehouseId query.](media/dataflow-gen2-variable-references/workspaceid-lakehouseid-territory-warehouseid-variable-references-query.png)
 
+>[!IMPORTANT]
+>Make sure that all your queries that hold a variable have staging disabled.
+>![Screenshot of the staging option for a query in its contextual menu.](media/dataflow-gen2-variable-references/disable-staging-query.png)
+
 * **Save the Dataflow**: use the Save button in the home tab of the ribbon.
 
 ![Screenshot of the dataflow save button.](media/dataflow-gen2-parameterized-dataflow/dataflow-save.png)
