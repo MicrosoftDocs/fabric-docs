@@ -30,12 +30,12 @@ With mirrored databases in Spark notebooks, you can:
 
 1. **Add a mirrored database as a data source.**
 
-        a. Open a notebook and make sure the language is set to SparkSQL or PySpark.
+    a. Open a notebook and make sure the language is set to SparkSQL or PySpark.
     b. Go to object explorer and select **Add Data Source** > **Existing data sources**, then select the mirrored databases to add to your notebook.
     c. After connecting, you see all added mirrored databases in object explorer.
     d. Browse schemas, tables, and table details like you do with Lakehouses.
 
-    :::image type="content" source="media\query-mirrored-database-spark-notebooks\select-mirrored-db-oe.png" alt-text="Screenshot of adding a mirrored database in object explorer." lightbox="media\query-mirrored-database-spark-notebooks\select-mirrored-db-oe.png":::
+    :::image type="content" source="media\query-mirrored-database-spark-notebooks\select-mirrored-db-object-explorer.png" alt-text="Screenshot of adding a mirrored database in object explorer." lightbox="media\query-mirrored-database-spark-notebooks\select-mirrored-db-object-explorer.png":::
 
 2. **Query your mirrored database tables.**
 
