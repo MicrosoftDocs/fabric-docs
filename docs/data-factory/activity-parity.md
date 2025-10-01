@@ -55,6 +55,31 @@ With Data Factory in Microsoft Fabric, we continue to maintain a high degree of 
 |Power Query (ADF only - Wrangling Dataflow)|Deprecated|N/A|
 |USQL|Deprecated|N/A|
 
+## Activity name comparison
+
+| **ADF Activity** | **Fabric Activity** |
+|------------------|--------------------|
+| Copy Data | Copy Activity |
+| Mapping Data Flow | Dataflow Gen2 |
+| Wrangling Data Flow | Dataflow Gen2 |
+| Execute Pipeline | Invoke Pipeline |
+| Stored Procedure | Stored Procedure |
+| Lookup | Lookup |
+| ForEach | ForEach |
+| If Condition | If Condition |
+| Until | Until |
+| Web | Web |
+| Azure Function | Function Activity |
+| Azure Databricks Notebook / Jar / Python / Jobs Activities | Azure Databricks combined activity |
+| Synapse Notebook and SJD activities | NA |
+| NA | Fabric Notebooks |
+| Get Metadata | Get Metadata |
+| Delete | Delete |
+| Wait | Wait |
+| Script | Script |
+| HDInsight individual activities (Hive, Pig, MapReduce, Spark, Streaming) | HDInsight single activity |
+
+
 ## New activities in Fabric Data Factory
 
 In addition to maintaining activity continuity, Data Factory in Fabric introduces some new activities to meet your richer orchestration needs. These new activities are:
