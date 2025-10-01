@@ -63,7 +63,7 @@ First, you need to bring those variables into the Dataflow Gen2. A recommended a
 
 ![Screenshot of the entry in the Get data in the Home tab to create a blank query.](media/dataflow-gen2-variable-references/create-blank-query.png)
 
-Selecting this option will bring a new dialog where you can see the blank query that will be created. You can select OK to bring this new blank query.
+Selecting this option brings a new dialog where you can see the blank query that is created. You can select OK to bring this new blank query.
 
 ![Screenshot of the blank query dialog.](media/dataflow-gen2-variable-references/blank-query-dialog.png)
 
@@ -72,7 +72,7 @@ Once your query has been created and appears in the dataflow, rename it to Works
 ```M code 
 Variable.ValueOrDefault("$(/**/My Library/WorkspaceId)", "Your Workspace ID")
 ```
-This script is fundamentally the one that is able to determine what library and variable to fetch. The second argument of the ```Variable.ValueOrDefault``` function determines what value to provide when a variable cannot be fetched.
+This script is fundamentally the one that's able to determine what library and variable to fetch. The second argument of the ```Variable.ValueOrDefault``` function determines what value to provide when a variable can't be fetched.
 
 >[!NOTE]
 >Make sure to replace the string of **"Your Workspace ID"**, the second argument of the function, with your own corresponding value in your environment and save the query.
