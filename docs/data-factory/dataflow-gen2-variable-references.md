@@ -122,10 +122,14 @@ And you notice that it still correctly evaluates the data preview in the Dataflo
 
 ## Variable-driven logic
 
-Now that the source is using parameters, you can focus on parameterizing the transformation logic of the dataflow. In this scenario, the filter step is where the logic is applied, and the value being filtered, currently hardcoded as *Southeast*, should be replaced with a parameter.
-To do this, create a new parameter named **Territory**, set its data type to *text*, mark it as not *required*, and set its current value to **Mideast**.
+Now that the source is using variables, you can focus on modifying the transformation logic of the dataflow. In this scenario, the filter step is where the logic is applied, and the value being filtered, currently hardcoded as *Southeast*, should be replaced with a query that references a variable.
+To do this, you repeat the same process of creating a new blank query and repurpose the formula of its Source step to hold the variable for **Territory** and change the name of the query to the variable name as well. Use the script below:
 
-![Screenshot of the Territory parameter created inside the Manage parameters dialog.](media/dataflow-gen2-parameterized-dataflow/territory-parameter.png)
+```M code 
+Variable.ValueOrDefault("$(/**/My Library/Territory)", "Mideast")
+```
+
+![Screenshot of the Territory query created in the dataflow.](media/dataflow-gen2-variable-references/territory-variable-query.png)
 
 Given that your filter step was created using the user interface, you can head over to the Filtered rows step, double select it and get the settings dialog for the filter step. This dialog allows you to select, through the input widget, if you wish to use a parameter instead of a static value:
 
