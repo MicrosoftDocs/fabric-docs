@@ -14,11 +14,12 @@ ms.custom:
 
 The Salesforce reports connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-) |None<br> On-premises<br> Virtual network |Organizational account |
 
-For information on how to connect to Salesforce reports in Dataflow Gen2, go to [Set up your Salesforce reports connection](connector-salesforce-reports.md).
+## Related content
 
-## Support in data pipelines
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Salesforce reports in data pipelines.
+To learn about how to connect to Salesforce reports, go to [Set up your Salesforce reports connection](connector-salesforce-reports.md).

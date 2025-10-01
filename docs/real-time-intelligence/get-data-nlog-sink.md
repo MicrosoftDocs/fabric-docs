@@ -35,3 +35,4 @@ Create an [empty table](create-empty-table.md) as the target table for the incom
 ## Related content
 
 * [Kusto Query Language (KQL) overview](/azure/data-explorer/kusto/query/index)
+

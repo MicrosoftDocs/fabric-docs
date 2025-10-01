@@ -1,8 +1,9 @@
 ---
 title: Service details and limitations 
 description: Overview of service properties and limitations
-ms.author: luisbosquez
-author: luisbosquez
+ms.author: eur
+ms.reviewer: luisbosquez
+author: eric-urban
 ms.topic: overview
 ms.date: 03/31/2025
 ms.search.form: Service limits
@@ -21,7 +22,7 @@ In order for Fabric User Data Functions to work correctly, your network must all
 
 ## Limitations
 
-The following are current limitations for Fabric User Data Functions (preview):
+The following are current limitations for Fabric User Data Functions:
 
 - **Regional limitations for User Data Functions**: User Data Functions is not available in a subset of Fabric regions. For an updated list of regions where Fabric User Data Functions is available, see [Fabric region availability](../../admin/region-availability.md). If your Home Tenant is in an unsupported region, you can create a Capacity in a supported region to use User Data Functions. For more information, see [Manage your Fabric capacity](../../admin/capacity-settings.md).
 
@@ -53,7 +54,9 @@ The following list details the service limits for User Data Functions items.
 | Response size limit | 30 MB | The maximum size of the response's return value of a function. | 
 | Log retention | 30 days | The number of days that historical invocation logs are retained for by default. | 
 | Private library max size | 28.6 MB | The maximum size of a `.whl` file uploaded to the Library Management experience as a private library. | 
-| Test in portal timeout | 15 minutes | The amount of time the test session is active for until a new request is processed. The session is extended by 15 minutes when a new request is received within the timeout period. | 
+| Test in portal timeout | 15 minutes | The amount of time the test session is active for until a new request is processed. The session is extended by 15 minutes when a new request is received within the timeout period. |
+| Python version (Run capability) | 3.11 | The Python version used for published functions in Run only mode. | 
+| Python version (Test capability) | 3.12 | The Python version used for the [test capability](./test-user-data-functions.md#use-develop-mode-to-test-your-changes-in-the-fabric-portal) in Develop mode. |
 
 ## Next steps
 - [Create a new User Data Functions item from the Fabric portal](./create-user-data-functions-portal.md) or by using [the VS Code extension](./create-user-data-functions-vs-code.md).

@@ -6,7 +6,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
 reviewer: midesa
-ms.date: 07/21/2025
+ms.date: 09/10/2025
 ---
 
 # AutoML in Fabric (preview) concepts

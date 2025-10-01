@@ -6,8 +6,9 @@ author: jonburchel
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.date: 05/18/2025
+ms.date: 09/17/2025
 ms.search.form: AI functions
+ai-usage: ai-assisted
 ---
 
 # Transform and enrich data with AI functions (preview)
@@ -33,42 +34,48 @@ You can incorporate these functions as part of data-science and data-engineering
 
 - To use AI functions with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
 - Depending on your location, you might need to enable a tenant setting for cross-geo processing. Learn more about [available regions for Azure OpenAI Service](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
-- You also need an F2 or later edition or a P edition. If you use a trial edition, you can bring your own Azure Open AI resource.
+- You need a paid Fabric capacity (F2 or higher, or any P edition). Bring-your-own Azure OpenAI resources aren't supported on the Fabric trial edition.
+
+> [!IMPORTANT]
+>
+> The Fabric trial edition doesn't support bring-your-own Azure OpenAI resources for AI functions. To connect a custom Azure OpenAI endpoint, upgrade to an F2 (or higher) or P capacity.
 
 > [!NOTE]
 >
 > - AI functions are supported in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
-> - AI functions use the *gpt-4o-mini (2024-07-18)* model by default. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
+> - Unless you configure a different model, AI functions default to *gpt-4o-mini (2024-07-18)*. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Most of the AI functions are optimized for use on English-language texts.
 
 ## Getting started with AI functions
 
-When you use pandas, the OpenAI package must be installed. In the Python environment, the AI functions package must also be installed.
+- Pandas AI Functions:
+  - pandas AI functions require `openai` package to be installed regardless of the runtime.
+  - In Python only runtime, you need to install the `synapseml_internal` and `synapseml_core` whl files using the installation commands provided below.
+  - In PySpark runtime, AI functions are preinstalled.
 
-No installation is required when you use PySpark, because AI functions are preinstalled in the PySpark environment.
+- PySpark AI Functions
+  - No package installation is required for PySpark AI functions.
 
 The following code cells include all the necessary installation commands.
 
 # [pandas (PySpark environment)](#tab/pandas-pyspark)
 
 ```python
-# The pandas AI functions package requires OpenAI version 1.30 or later.
-%pip install -q --force-reinstall openai==1.30 2>/dev/null
+# The pandas AI functions package requires OpenAI version 1.99.5 or later
+%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
 
-# AI functions are preinstalled on the Fabric PySpark runtime.
+# AI functions are preinstalled on the Fabric PySpark runtime
 ```
 
 # [pandas (Python environment)](#tab/pandas-python)
 
 ```python
-# Install the fixed version of packages.
-%pip install -q --force-reinstall openai==1.30 2>/dev/null
+# The pandas AI functions package requires OpenAI version 1.99.5 or later
+%pip install -q --force-reinstall openai==1.99.5 synapseml_internal-latest-py3-none-any.whl synapseml_core-latest-py3-none-any.whl
 
-# Install the latest version of SynapseML-core.
-%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12-spark3.5/synapseml_core-1.0.12.dev1-py2.py3-none-any.whl 2>/dev/null
-
-# Install SynapseML-Internal .whl with the AI functions library from blob storage:
-%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12.2-spark3.5/synapseml_internal-1.0.12.2.dev1-py2.py3-none-any.whl 2>/dev/null
+# Install latest versions of AI functions library whl
+!wget -q https://aka.ms/fabric-aifunctions-whl -O synapseml_internal-latest-py3-none-any.whl
+!wget -q https://aka.ms/fabric-synapseml-core-whl -O synapseml_core-latest-py3-none-any.whl
 ```
 
 ---
@@ -81,9 +88,9 @@ This code cell imports the AI functions library and its dependencies. The pandas
 # Required imports
 import synapse.ml.aifunc as aifunc
 import pandas as pd
-import openai
 
-# Optional import for progress bars
+# Optional import for progress bars. In future versions, this import will be included by default
+# Controlled by aifunc.default_conf.use_progress_bar and conf parameter of AI functions
 from tqdm.auto import tqdm
 tqdm.pandas()
 ```
@@ -91,7 +98,9 @@ tqdm.pandas()
 # [PySpark](#tab/pyspark)
 
 ```python
-from synapse.ml.spark.aifunc.DataFrameExtensions import AIFunctions
+import synapse.ml.spark.aifunc as aifunc
+
+# SparkSession with accessor `spark` in PySpark environments is pre-setup and available for use
 ```
 
 ---
@@ -105,7 +114,7 @@ Each of the following functions allows you to invoke the built-in AI endpoint in
 
 ### Calculate similarity with ai.similarity
 
-The `ai.similarity` function invokes AI to compare input text values with a single common text value, or with pairwise text values in another column. The output similarity score values are relative, and they can range from `-1` (opposites) to `1` (identical). A score of `0` indicates that the values are unrelated in meaning. Get [detailed instructions](./similarity.md) about the use of `ai.similarity`.
+The `ai.similarity` function compares each input text value either to one common reference text or to the corresponding value in another column (pairwise mode). The output similarity score values are relative, and they can range from `-1` (opposites) to `1` (identical). A score of `0` indicates that the values are unrelated in meaning. Get [detailed instructions](./similarity.md) about the use of `ai.similarity`.
 
 #### Sample usage
 
@@ -238,7 +247,7 @@ The `ai.extract` function invokes AI to scan input text and extract specific typ
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
-        "MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",
+        "MJ Lee lives in Tucson, AZ, and works as a software engineer for Microsoft.",
         "Kris Turner, a nurse at NYU Langone, is a resident of Jersey City, New Jersey."
     ], columns=["descriptions"])
 
@@ -253,7 +262,7 @@ display(df_entities)
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
-        ("MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",),
+        ("MJ Lee lives in Tucson, AZ, and works as a software engineer for Microsoft.",),
         ("Kris Turner, a nurse at NYU Langone, is a resident of Jersey City, New Jersey.",)
     ], ["descriptions"])
 
@@ -446,7 +455,7 @@ display(responses)
 - Calculate similarity with [`ai.similarity`](./similarity.md).
 - Detect sentiment with [`ai.analyze_sentiment`](./analyze-sentiment.md).
 - Categorize text with [`ai.classify`](./classify.md).
-- Extract entities with [`ai_extract`](./extract.md).
+- Extract entities with [`ai.extract`](./extract.md).
 - Fix grammar with [`ai.fix_grammar`](./fix-grammar.md).
 - Summarize text with [`ai.summarize`](./summarize.md).
 - Translate text with [`ai.translate`](./translate.md).

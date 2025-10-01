@@ -1,9 +1,9 @@
 ---
 title: Get started for referencing data
 description: Learn how to create shortcuts to ADLS accounts in your lakehouse, and reference that data in your data science projects.
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 11/11/2024

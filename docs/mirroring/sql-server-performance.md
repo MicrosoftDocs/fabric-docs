@@ -1,8 +1,8 @@
 ---
 title: "Optimize Performance of Mirrored Databases from SQL Server"
 description: Learn how to optimize performance of the source database and mirrored database from SQL Server in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+author: whhender
+ms.author: whhender
 ms.reviewer: ajayj, anagha-todalbagi
 ms.date: 08/19/2025
 ms.topic: troubleshooting
@@ -69,10 +69,11 @@ To get started configure workload groups in SQL Server 2025 for Fabric mirroring
 CREATE RESOURCE POOL [ChangeFeedPool] WITH (MAX_CPU_PERCENT = 50);
 
 --Create workload groups for Fabric mirroring. Do not modify.
-CREATE WORKLOAD GROUP [ChangeFeedSnapshotGroup] USING [ChangeFeedPool];
-CREATE WORKLOAD GROUP [ChangeFeedCaptureGroup] USING [ChangeFeedPool];
-CREATE WORKLOAD GROUP [ChangeFeedPublishGroup] USING [ChangeFeedPool];
-CREATE WORKLOAD GROUP [ChangeFeedCommitGroup] USING [ChangeFeedPool];
+CREATE WORKLOAD GROUP [x_ms_reserved_changefeed_snapshot_group] USING [ChangeFeedPool];
+CREATE WORKLOAD GROUP [x_ms_reserved_changefeed_capture_group] USING [ChangeFeedPool];
+CREATE WORKLOAD GROUP [x_ms_reserved_changefeed_publish_group] USING [ChangeFeedPool];
+CREATE WORKLOAD GROUP [x_ms_reserved_changefeed_commit_group] USING [ChangeFeedPool];
+CREATE WORKLOAD GROUP [x_ms_reserved_changefeed_notification_group] USING [ChangeFeedPool];
 ```
 
 To apply the changes and enable the resource governor, as usual:

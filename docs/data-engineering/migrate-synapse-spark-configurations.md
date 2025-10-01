@@ -1,9 +1,9 @@
 ---
 title: Migrate Spark configurations
 description: Learn about migrating Spark configurations from Azure Synapse Spark to Fabric, including prerequisites and migration options.
-ms.reviewer: snehagunda
-ms.author: aimurg
-author: murggu
+ms.reviewer: aimurg
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
   - fabric-cat
@@ -36,7 +36,7 @@ Within an environment, you can set Spark properties and those configurations are
     * Add Spark configurations. You can either add each manually or import from .yml.
 1.	Click on **Save** and **Publish** changes.
 
-:::image type="content" source="media\migrate-synapse\migrate-spark-configurations.png" alt-text="Screenshot showing Spark configurations.":::
+:::image type="content" source="media\migrate-synapse\migrate-spark-configurations.png" alt-text="Screenshot showing Spark configurations." lightbox="media/migrate-synapse/migrate-spark-configurations.png":::
 
 Learn more on adding Spark configurations to an [Environment](create-and-use-environment.md).
 

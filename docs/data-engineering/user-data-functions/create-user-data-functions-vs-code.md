@@ -1,14 +1,15 @@
 ---
 title: Quickstart - Create a Fabric User data functions item in Visual Studio Code
 description: Add a Fabric User data functions item in VS Code 
-ms.author: sumuth
-author: mksuni
+ms.author: eur
+ms.reviewer: sumuth
+author: eric-urban
 ms.topic: quickstart
 ms.date: 03/31/2025
 ms.search.form: Fabric User data functions, VS Code
 ---
 
-# Create a Fabric User data functions item in Visual Studio Code (Preview)
+# Create a Fabric User data functions item in Visual Studio Code
 
 Fabric User data functions is a serverless solution that enables you to quickly and easily develop applications on top of Fabric-native data sources. The advantages are increased flexibility and cost-effectiveness of serverless computing in Fabric. User data functions are invoked as HTTP requests to a service-provided endpoint and they operate on your Fabric-native data sources.
 
@@ -59,7 +60,7 @@ def hello_fabric(name: str) -> str:
 
 You can view the user data functions item in the Fabric explorer in VS Code within the currently opened workspace.
 
-:::image type="content" source="..\media\user-data-functions-create-in-vs-code\fabric-explorer-local-folder-views.png" alt-text="Screenshot showing fabric explorer view and local folder view.":::
+:::image type="content" source="..\media\user-data-functions-create-in-vs-code\fabric-explorer-local-folder-views.png" alt-text="Screenshot showing fabric explorer view and local folder view." lightbox="..\media\user-data-functions-create-in-vs-code\fabric-explorer-local-folder-views.png":::
 
 All the functions in the Fabric workspace can be opened in the Explorer in VS Code to start editing. Choose the function you want to open, then select **Open in Explorer**. You can see connections, libraries, and all the functions written within the user data functions item.
 

@@ -238,7 +238,7 @@ Mirrored databases from the primary region remain unavailable to customers and t
 
 ## Data Factory
 
-Data Factory items from the primary region remain unavailable to customers and the settings and configuration in data pipelines or dataflow gen2 items won't be replicated to the secondary region. To recover these items in the event of a regional failure, you'll need to recreate your Data Integration items in another workspace from a different region. The following sections outline the details.
+Data Factory items from the primary region remain unavailable to customers and the settings and configuration in pipelines or dataflow gen2 items won't be replicated to the secondary region. To recover these items in the event of a regional failure, you'll need to recreate your Data Integration items in another workspace from a different region. The following sections outline the details.
 
 ### Dataflows Gen2
 
@@ -264,9 +264,9 @@ If you want to recover a Dataflow Gen2 item in the new region, you need to expor
 
 Dataflows Save As feature is not supported in the event of disaster recovery.
 
-### Data Pipelines
+### Pipelines
 
-Customers can't access data pipelines in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical data pipelines in multiple workspaces across different regions.
+Customers can't access pipelines in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical pipelines in multiple workspaces across different regions.
 
 ### Copy Job
 

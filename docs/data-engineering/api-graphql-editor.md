@@ -3,8 +3,8 @@ title: Microsoft Fabric API for GraphQL editor
 description: Learn about the Fabric API for GraphQL editor, including where to find the editor and what the editor screen looks like.
 #customer intent: As a developer, I want to learn how to use the Fabric API for GraphQL editor so that I can compose and test GraphQL queries interactively.  
 ms.reviewer: sngun
-ms.author: sngun
-author: snehagunda
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom: null
 ms.search.form: GraphQL query editor

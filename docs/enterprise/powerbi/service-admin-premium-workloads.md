@@ -7,7 +7,7 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: how-to
-ms.date: 09/25/2024
+ms.date: 09/25/2025
 LocalizationGroup: Premium
 ---
 
@@ -42,15 +42,10 @@ You can tune the behavior of the workloads, by configuring workload settings for
 #### To configure workloads in the Power BI admin portal
 
 1. Sign in to [Power BI](https://app.powerbi.com) using your admin account credentials.
-
 2. From the page header, select **...** > **Settings** > **Admin portal**.
-
 3. Go to **Capacity settings** and from the **Power BI Premium** tab, select a capacity.
-
 4. Expand **Workloads**.
-
 5. Set the values for each workload according to your specifications.
-
 6. Select **Apply**.
 
 ### Monitor workloads
@@ -78,7 +73,6 @@ The AI workload lets you use cognitive services and Automated Machine Learning i
 This section describes the following semantic models workload settings:
 
 * [Power BI settings](#power-bi-settings)
-
 * [Analysis Services server properties](#analysis-services-server-properties)
 
 ### Power BI settings
@@ -100,6 +94,11 @@ Use the settings in the table below to control workload behavior. Settings with 
 | **Minimum execution interval** | If change detection measure is on, the minimum execution interval allowed to poll for data changes. The default value is five seconds, and the minimum allowed is one second. |
 
 <sup>1</sup> *Premium* doesn't require memory settings to be changed. Memory in Premium is automatically managed by the underlying system.
+
+> [!TIP]
+> **Troubleshooting**: The **Max Memory (%)** setting controls how much memory is allocated to semantic models within a Premium capacity. Adjusting this setting can improve performance and reduce the likelihood of memory-related errors. If semantic models fail to load or experience slow performance, consider increasing the Max memory (%) allocation.
+> 
+> For more information on SKU-based memory limits, see [Semantic model SKU limitation](service-premium-what-is.md#semantic-model-sku-limitation).
 
 #### Max Intermediate Row Set Count
 

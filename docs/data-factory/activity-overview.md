@@ -31,9 +31,14 @@ Grouping your activities into a pipeline lets you manage all these steps as one 
 
 ## Data movement activities
 
-The copy activity moves data from one location to another. You can copy data from any supported source to any supported destination. Fabric supports many different data stores - check out the [Connector overview](connector-overview.md) to see what's available.
+These activities help you move data from one place to another in your pipeline.
 
-For more information, see [How to copy data using the copy activity](copy-data-activity.md).
+Movement activity | Description
+---------------- | -----------
+[Copy data](copy-data-activity.md) | You can copy data from any supported source to any supported destination. See the [Connector overview](connector-overview.md) to see what's available.
+[Copy job](copy-job-activity.md) | Copy jobs are a simplified method for moving data quickly.
+
+If you need to choose between different data movement options, see the [data movement decision guide](decision-guide-data-movement.md) article.
 
 ## Data transformation activities
 

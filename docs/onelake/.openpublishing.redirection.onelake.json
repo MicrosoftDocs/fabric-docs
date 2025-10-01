@@ -21,6 +21,26 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/onelake/security/how-to-common-data-architectures.md",
+            "redirect_url": "/fabric/onelake/security/get-started-onelake-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/security/how-to-secure-data-onelake-for-data-science.md",
+            "redirect_url": "/fabric/onelake/security/get-started-onelake-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/security/how-to-secure-data-onelake-for-data-warehousing.md",
+            "redirect_url": "/fabric/onelake/security/get-started-onelake-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/security/get-started-data-access-roles.md",
+            "redirect_url": "/fabric/onelake/security/get-started-onelake-security",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/onelake/security/fabric-onelake-security.md",
             "redirect_url": "/fabric/onelake/security/get-started-security",
             "redirect_document_id": false
