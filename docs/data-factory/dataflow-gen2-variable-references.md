@@ -16,7 +16,7 @@ ms.custom: dataflows
 
 Fabric variable libraries in Dataflow Gen2 enable centralized, reusable configuration management across environments. By referencing variables directly in your dataflow scripts, you can dynamically adjust behavior without hardcoding values, which is ideal for CI/CD workflows. This integration simplifies deployment across stages by allowing workspace-specific values (like Lakehouse or Workspace IDs) to be injected at runtime, making your dataflows more adaptable and maintainable.
 
-This tutorial walks you through an example solution that use variable references in a Dataflow and shows you how to:
+This tutorial walks you through an example solution that uses variable references in a Dataflow and shows you how to:
 * **Set variables**: Using the Fabric variable libraries and their distinct data types
 * **Parameterize a source**: Using a Lakehouse with the WideWorldImpoters sample dataset as the source
 * **Parameterize logic**: Using the input widgets available throughout the Dataflow experience
@@ -38,7 +38,7 @@ The dataflow used in this scenario is simple, but the core principles described 
 >[!NOTE]
 > Make sure to have Fabric variable libraries enabled for your organization or security group. Learn more on [how to get started with variable libraries](/fabric/cicd/variable-library/get-started-variable-libraries).
 
-As a best practice, it is always recommended to have a design in mind before creating a solution and what components will from your Dataflow will be dynamically sourced from a variable library. While you can create multiple libraries within a workspace, this example will use a single library named **My Library** that holds the variables that the Dataflow Gen2 will use:
+As a best practice, it's always recommended to have a design in mind before creating a solution and what components from your Dataflow are dynamically sourced from a variable library. While you can create multiple libraries within a workspace, this example uses a single library named **My Library** that holds the variables that the Dataflow Gen2 uses:
 
 |Variable name|Type|Purpose|
 |----|---|---|
