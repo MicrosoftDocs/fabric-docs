@@ -44,7 +44,7 @@ For Fabric SQL databases:
 
 In this section, we provide code examples to demonstrate how to use the Spark connector for SQL databases effectively. These examples cover various scenarios, including reading from and writing to SQL tables, and configuring the connector options.
 
-### Supported Options
+### Supported options
 
 The minimal required option is `url` as `"jdbc:sqlserver://<server>:<port>;database=<database>;"` or set `spark.mssql.connector.default.url`.
 
@@ -69,7 +69,7 @@ The connector also supports the following options:
 
 Other [Bulk API options](/sql/connect/jdbc/using-bulk-copy-with-the-jdbc-driver?view=azuresqldb-current#sqlserverbulkcopyoptions&preserve-view=true) can be set as options on the `DataFrame` and are passed to bulk copy APIs on write.
 
-### Write and Read example
+### Write and read example
 
 The following code shows how to write and read data by using the `mssql("<schema>.<table>")` method with automatic Microsoft Entra ID authentication.
 
@@ -121,7 +121,7 @@ spark.read.mssql("dbo.tableInDatabase2").show // no url option specified and wil
 
 You can also select columns, apply filters, and use other options when you read data from the SQL database engine.
 
-### Authentication Examples
+### Authentication examples
 
 The following examples show how to use authentication methods other than Microsoft Entra ID, such as service principal (access token) and SQL authentication. 
 
