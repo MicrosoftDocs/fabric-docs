@@ -147,12 +147,20 @@ Once you select OK, notice that the diagram view has already created the link be
 >[!NOTE]
 >It's recommended that you get acquainted with the concept of data destinations in Dataflow Gen2 and how its mashup script gets created from the article on [data destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md#mashup-script-for-data-destination-queries) 
 
-The last component to parameterize in this scenario is the destination. While the information about what the data destination is can be found in the Dataflow editor, to parameterize this part of the dataflow you need to use Git or the REST API.
+The last component to modify in this scenario is the destination. While the information about what the data destination is can be found in the Dataflow editor, to modify this part of the dataflow you need to use Git or the REST API.
 
 ![Screenshot of the flyout that contains the data destination settings for the dimension_city query.](media/dataflow-gen2-parameterized-dataflow/destination-settings-flyout.png)
 
 This tutorial shows you how to make the changes through Git. Before you can make changes through git make sure to:
-* **Create a parameter with the name WarehouseId**: make sure to use the corresponding ID of your Warehouse as the current value, set it as required and of the text data type.
+* **Create a query for the WarehouseId variable**: follow the same process described in earlire sections to create a new blank query and replace the formula for the Source step to be:
+```M code
+Variable.ValueOrDefault("$(/**/My Library/WarehouseId)", "Your Warehouse ID")
+``` 
+>[!NOTE]
+>Make sure to replace the string of **"Your Warehouse ID"**, the second argument of the function, with your own corresponding value in your environment and save the query.
+
+![Screenshot of all queries in the dataflow including the newly created WarehouseId query.](media/dataflow-gen2-variable-references/workspaceid-lakehouseid-territory-warehouseid-variable-references-query.png)
+
 * **Save the Dataflow**: use the Save button in the home tab of the ribbon.
 
 ![Screenshot of the dataflow save button.](media/dataflow-gen2-parameterized-dataflow/dataflow-save.png)
@@ -176,7 +184,7 @@ in
   TableNavigation
 ```
 
-You notice that, similarly to the script of the source for the Lakehouse, this script for the destination has a similar pattern where it hardcodes the workspaceid that needs to be used and also the warehouseId. Replace those fixed values with the identifiers of the parameters and your script shall look as follows:
+You notice that, similarly to the script of the source for the Lakehouse, this script for the destination has a similar pattern where it hardcodes the workspaceid that needs to be used and also the warehouseId. Replace those fixed values with the identifiers of the queries that you created and your script shall look as follows:
 
 ```M code 
 shared dimension_city_DataDestination = let
@@ -189,5 +197,5 @@ in
 ```
 
 You can now commit this change and update your dataflow using the changes from your Dataflow through the source control feature in your workspace.
-You can verify that all changes are in place by opening your Dataflow and reviewing the data destination and any previous parameter references that were added.
-This finalizes all the parameterization of your Dataflow and you can now move on to run your Dataflow by passing parameter values for execution.
+
+You can now run your Dataflow which uses values from variable libraries.
