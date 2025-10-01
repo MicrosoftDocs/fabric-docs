@@ -77,7 +77,7 @@ This script is fundamentally the one that's able to determine what library and v
 >[!NOTE]
 >Make sure to replace the string of **"Your Workspace ID"**, the second argument of the function, with your own corresponding value in your environment and save the query.
 
-Repeat this process for the **LakehouseId** variable and create a query with the same name as the variable but use the formula below for the Source step:
+Repeat this process for the **LakehouseId** variable and create a query with the same name as the variable but use the following formula for the Source step:
 
 ```M code 
 Variable.ValueOrDefault("$(/**/My Library/LakehouseId)", "Your Lakehouse ID")
@@ -123,7 +123,7 @@ And you notice that it still correctly evaluates the data preview in the Dataflo
 ## Variable-driven logic
 
 Now that the source is using variables, you can focus on modifying the transformation logic of the dataflow. In this scenario, the filter step is where the logic is applied, and the value being filtered, currently hardcoded as *Southeast*, should be replaced with a query that references a variable.
-To do this, you repeat the same process of creating a new blank query and repurpose the formula of its Source step to hold the variable for **Territory** and change the name of the query to the variable name as well. Use the script below:
+To do this, you repeat the same process of creating a new blank query and repurpose the formula of its Source step to hold the variable for **Territory** and change the name of the query to the variable name as well. Use the following script:
 
 ```M code 
 Variable.ValueOrDefault("$(/**/My Library/Territory)", "Mideast")
@@ -133,13 +133,13 @@ Variable.ValueOrDefault("$(/**/My Library/Territory)", "Mideast")
 
 Given that your filter step was created using the user interface, you can head over to the Filtered rows step, double select it and get the settings dialog for the filter step. This dialog allows you to select, through the input widget, if you wish to use a query instead of a static value:
 
-![Screenshot of the input widget in the filter rows dialog with the option to reference a parameter.](media/dataflow-gen2-parameterized-dataflow/input-widget.png)
+![Screenshot of the input widget in the filter rows dialog with the option to reference a query.](media/dataflow-gen2-variable-references/query-input-widget.png)
 
-After selecting the option to *Use a query*, a dropdown will appear to show all queries that you can choose from. From this list, you can select the newly created Territory query.
+After selecting the option to *Select a query*, a dropdown will appear to show all queries that you can choose from. From this list, you can select the newly created **Territory** query.
 
-![Screenshot of the Territory parameter selected inside the input widget from the filter rows dialog.](media/dataflow-gen2-parameterized-dataflow/territory-parameter-input-widget.png)
+![Screenshot of the Territory query selected inside the input widget from the filter rows dialog.](media/dataflow-gen2-variable-references/territory-query-input-widget.png)
 
-Once you select OK, notice that the diagram view already created the link between the newly created parameter and the query in use. Not only that, but the data preview now shows you information for the **Mideast** territory.
+Once you select OK, notice that the diagram view already created the link between the Territory query and the query in use. Not only that, but the data preview now shows you information for the **Mideast** territory.
 
 :::image type="content" source="media/dataflow-gen2-parameterized-dataflow/mideast-territory-data-preview.png" alt-text="Screenshot of the Diagram view, Query settings, and Data preview for the dimension_city query showing data for the Mideast SalesTerritory." lightbox="media/dataflow-gen2-parameterized-dataflow/mideast-territory-data-preview.png":::
 
