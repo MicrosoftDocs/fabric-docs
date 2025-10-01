@@ -35,6 +35,20 @@ The dataflow used in this scenario is simple, but the core principles described 
 
 ## Set variables
 
+>[!NOTE]
+> Make sure to have Fabric variable libraries enabled for your organization or security group. Learn more on [how to get started with variable libraries](/fabric/cicd/variable-library/get-started-variable-libraries).
+
+As a best practice, it is always recommended to have a design in mind before creating a solution and what components will from your Dataflow will be dynamically sourced from a variable library. While you can create multiple libraries within a workspace, this example will use a single library named **My Library** that holds the variables that the Dataflow Gen2 will use:
+
+|Variable name|Type|Purpose|
+|----|---|---|
+|**WorkspaceId**|Guid|Used for the data source and destination scripts in the Dataflow|
+|**LakehouseId**|Guid|Determines the ID of the Lakehouse being used as the source|
+|**WarehouseId**|Guid| Determines the ID of the Warehouse being used as the destination|
+|**Territory**|String|Sets what value should be used to drive the filter logic in the Dataflow|
+
+Make sure to set the default values that correspond to your own environment and then save the variable library.
+
 ![Screenshot of the newly created Fabric variable libraries with variables WorkspaceId, LakehouseId, WarehouseId and Territory.](media/dataflow-gen2-variable-references/variable-library.png)
 
 ## Parameterize source
