@@ -576,15 +576,13 @@ print(answer)
 **Cell output:**
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 21, Finished, Available, Finished)*`
 
-```
-Elephants communicate over long distances by producing and receiving low-frequency sounds known as infrasound. This subsonic rumbling can travel through the ground farther than sound travels through the air. Elephants can feel these vibrations through the sensitive skin of their feet and trunks. They use this method of communication to stay connected with other elephants over large distances. This ability to communicate through infrasound plays a crucial role in their social lives and helps them coordinate movements and interactions within their groups.
+_Elephants communicate over long distances by producing and receiving low-frequency sounds known as infrasound. This subsonic rumbling can travel through the ground farther than sound travels through the air. Elephants can feel these vibrations through the sensitive skin of their feet and trunks. They use this method of communication to stay connected with other elephants over large distances. This ability to communicate through infrasound plays a crucial role in their social lives and helps them coordinate movements and interactions within their groups._
     
- The ability of elephants to recognize themselves in a mirror test demonstrates their self-awareness and cognitive abilities. This test involves marking an elephant and observing its reaction to its reflection in a mirror. Elephants have shown the capacity to understand that the image in the mirror is their own reflection, indicating a level of self-awareness similar to that seen in humans, apes, and dolphins.
+_The ability of elephants to recognize themselves in a mirror test demonstrates their self-awareness and cognitive abilities. This test involves marking an elephant and observing its reaction to its reflection in a mirror. Elephants have shown the capacity to understand that the image in the mirror is their own reflection, indicating a level of self-awareness similar to that seen in humans, apes, and dolphins._
     
- In addition to infrasound communication, elephants also use other forms of communication such as visual displays and olfactory cues. For example, during the mating period, male elephants emit a specific odor from a gland behind their eyes. They may fan their ears to help disperse this scent over long distances, a behavior theorized by researcher Joyce Poole as a way to attract potential mates.
+_In addition to infrasound communication, elephants also use other forms of communication such as visual displays and olfactory cues. For example, during the mating period, male elephants emit a specific odor from a gland behind their eyes. They may fan their ears to help disperse this scent over long distances, a behavior theorized by researcher Joyce Poole as a way to attract potential mates._
     
- Overall, elephants have complex social structures and behaviors that involve various forms of communication to maintain relationships, coordinate movements, and express emotions within their groups.
-```
+_Overall, elephants have complex social structures and behaviors that involve various forms of communication to maintain relationships, coordinate movements, and express emotions within their groups._
 
 Now you know how to prepare (chunk and embed) the CMU QA dataset, build a vector index, retrieve relevant chunks, and generate answers. Use this foundation to create a basic ipywidgets chatbot interface. Run the cell below, enter your question, then select <kbd>Enter</kbd> to get a response. Change the text to ask a new question, then select <kbd>Enter</kbd> again.
 
