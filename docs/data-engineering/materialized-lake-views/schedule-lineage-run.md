@@ -44,6 +44,7 @@ Select **Apply** to set the schedule for the particular MLV run.
 > [!NOTE]
 > * The scheduler reflects the user's local time.
 > * A materialized lake view fails if it runs beyond 24 hours.
+> * Materialized lake view runs use High Concurrency Sessions by default.
 
 ## Related articles
 
