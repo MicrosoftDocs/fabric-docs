@@ -116,7 +116,9 @@ in
   #"Removed columns"
 ```
 
-And you notice that it still correctly evaluates the data preview in the Dataflow editor.
+And you notice that it still correctly evaluates the data preview in the Dataflow editor with the direct references created in the diagram view between all the queries involved:
+
+![Screenshot with WorkspaceId and LakehouseId queries being referenced in the dimension_city query.](media/dataflow-gen2-variable-references/workspaceid-lakehouseid-variable-references-query.png)
 
 ## Variable-driven logic
 
