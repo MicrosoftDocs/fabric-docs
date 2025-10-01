@@ -18,9 +18,9 @@ Fabric variable libraries in Dataflow Gen2 enable centralized, reusable configur
 
 This tutorial walks you through an example solution that uses variable references in a Dataflow and shows you how to:
 * **Set variables**: Using the Fabric variable libraries and their distinct data types
-* **Parameterize a source**: Using a Lakehouse with the WideWorldImpoters sample dataset as the source
-* **Parameterize logic**: Using the input widgets available throughout the Dataflow experience
-* **Parameterize destination**: Using a Warehouse as a destination 
+* **Variable-driven source**: Using a Lakehouse with the WideWorldImpoters sample dataset as the source
+* **Variable-driven logic**: Using the input widgets available throughout the Dataflow experience
+* **Variable-driven destination**: Using a Warehouse as a destination 
 
 :::image type="content" source="media/dataflow-gen2-variable-references/diagram-dataflow-gen2-variable-references.png" alt-text="Diagram of a solution architecture that uses variable references in Dataflow Gen2." lightbox="media/dataflow-gen2-variable-references/diagram-dataflow-gen2-variable-references.png":::
 
@@ -51,23 +51,44 @@ Make sure to set the default values that correspond to your own environment and 
 
 ![Screenshot of the newly created Fabric variable libraries with variables WorkspaceId, LakehouseId, WarehouseId and Territory.](media/dataflow-gen2-variable-references/variable-library.png)
 
-## Parameterize source
+## Variable-driven source
 
 When using any of the Fabric connectors—such as Lakehouse, Warehouse, or Fabric SQL—they all follow the same navigation structure and use the same input format. In this scenario, none of the connectors require manual input to establish a connection. However, each one shows which workspace and item it connects to through the navigation steps in your query.
 For example, the first navigation step includes the workspaceId that the query connects to.
 
 :::image type="content" source="media/dataflow-gen2-parameterized-dataflow/navigation-workspaceid-reference.png" alt-text="Screenshot of the Navigation 1 step with the workspaceId value in the formula bar for the dimension_city query." lightbox="media/dataflow-gen2-parameterized-dataflow/navigation-workspaceid-reference.png":::
 
-The goal is to replace the hardcoded values in the formula bar with parameters. Specifically, you need to create one parameter for the **WorkspaceId** and another for the **LakehouseId**.
-To create parameters, go to the *Home* tab in the ribbon, select *Manage parameters*, and then choose *New parameter* from the dropdown menu.
+The goal is to replace the hardcoded values in the formula bar with variables. Specifically, you want to use the variables **WorkspaceId** and **LakehouseId** to drive this logic.
+First, you need to bring those variables into the Dataflow Gen2. A recommended approach is to create queries for each distinct variable to centralize and easily manage any variables that you plan to use. To do that, create a blank query by going into the *Get data* entry in the ribbon and selecting the Blank query option from the dropdown menu. 
 
-![Screenshot of the entry in the Home tab to create a new parameter.](media/dataflow-gen2-parameterized-dataflow/new-parameter.png)
+![Screenshot of the entry in the Get data in the Home tab to create a blank query.](media/dataflow-gen2-variable-references/create-blank-query.png)
 
-As you create the parameters, make sure both are marked as **required** and set to the **text** type. For their current values, use the ones that match the corresponding values from your specific environment.
+Selecting this option will bring a new dialog where you can see the blank query that will be created. You can select OK to bring this new blank query.
 
-![Screenshot of the LakehouseId parameter created inside the Manage parameters dialog.](media/dataflow-gen2-parameterized-dataflow/lakehouseid-parameter.png)
+![Screenshot of the blank query dialog.](media/dataflow-gen2-variable-references/blank-query-dialog.png)
 
-Once both parameters are created, you can update the query script to use them instead of hardcoded values. This involves manually replacing the original values in the formula bar with references to the Workspace ID and Lakehouse ID parameters.
+Once your query has been created and appears in the dataflow, rename it to WorkspaceId and replace the formula in the Source step to be:
+
+```M code 
+Variable.ValueOrDefault("$(/**/My Library/WorkspaceId)", "Your Workspace ID")
+```
+This script is fundamentally the one that is able to determine what library and variable to fetch. The second argument of the ```Variable.ValueOrDefault``` function determines what value to provide when a variable cannot be fetched.
+
+>[!NOTE]
+>Make sure to replace the string of **"Your Workspace ID"**, the second argument of the function, with your own corresponding value in your environment and save the query.
+
+Repeat this process for the **LakehouseId** variable and create a query with the same name as the variable but use the formula below for the Source step:
+
+```M code 
+Variable.ValueOrDefault("$(/**/My Library/LakehouseId)", "Your Lakehouse ID")
+```
+
+>[!NOTE]
+>Make sure to replace the string of **"Your Lakehouse ID"**, the second argument of the function, with your own corresponding value in your environment and save the query.
+
+![Screenshot showing a newly created queries named LakehouseId and WorkspaceId.](media/dataflow-gen2-variable-references/lakehouseid-variable-query.png)
+
+Once both queries are created, you can update the query script to use them instead of hardcoded values. This involves manually replacing the original values in the formula bar with references to the WorkspaceId and LakehouseId queries.
 The original query script looks like this:
 
 ```M code 
@@ -97,7 +118,7 @@ in
 
 And you notice that it still correctly evaluates the data preview in the Dataflow editor.
 
-## Parameterize logic
+## Variable-driven logic
 
 Now that the source is using parameters, you can focus on parameterizing the transformation logic of the dataflow. In this scenario, the filter step is where the logic is applied, and the value being filtered, currently hardcoded as *Southeast*, should be replaced with a parameter.
 To do this, create a new parameter named **Territory**, set its data type to *text*, mark it as not *required*, and set its current value to **Mideast**.
@@ -116,7 +137,7 @@ Once you select OK, notice that the diagram view has already created the link be
 
 :::image type="content" source="media/dataflow-gen2-parameterized-dataflow/mideast-territory-data-preview.png" alt-text="Screenshot of the Diagram view, Query settings, and Data preview for the dimension_city query showing data for the Mideast SalesTerritory." lightbox="media/dataflow-gen2-parameterized-dataflow/mideast-territory-data-preview.png":::
 
-## Parameterize destination
+## Variable-driven destination
 >[!NOTE]
 >It's recommended that you get acquainted with the concept of data destinations in Dataflow Gen2 and how its mashup script gets created from the article on [data destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md#mashup-script-for-data-destination-queries) 
 
