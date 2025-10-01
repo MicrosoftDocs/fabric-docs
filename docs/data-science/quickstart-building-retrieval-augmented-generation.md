@@ -60,6 +60,8 @@ aisearch_api_key = "" # TODO: Fill in your API key from Azure AI Search
 aisearch_endpoint = "https://<YOUR_AI_SEARCH_SERVICE_NAME>.search.windows.net" # TODO: Provide the URL endpoint for your Azure AI Search service
 ```
 
+**Cell output:**
+
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 5, Finished, Available, Finished)*
 ```
@@ -113,6 +115,8 @@ from IPython.display import display as w_display
 import openai
 ```
 
+**Cell output:**
+
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 7, Finished, Available, Finished)*
 ```
@@ -136,6 +140,8 @@ For more information about the license, download the file named `LICENSE-S08,S09
 #### History and citation
 
 The dataset used for this notebook requires the following citation:
+
+**Cell output:**
 
 ```text
 *CMU Question/Answer Dataset, Release 1.2*
@@ -186,6 +192,8 @@ spark.read.parquet(location).write.mode("overwrite").format("delta").saveAsTable
 
 ```
 
+**Cell output:**
+
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 8, Finished, Available, Finished)*
 *Blob content successfully stored at /lakehouse/default/Files/cmu_qa.parquet*
@@ -210,6 +218,8 @@ df_wiki = filtered_df.dropDuplicates(['ExtractedPath', 'ArticleTitle', 'text'])
 # Show the result
 display(df_wiki)
 ```
+
+**Cell output:**
 
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 9, Finished, Available, Finished)*
@@ -236,6 +246,8 @@ df_splitted = ps.transform(df_wiki)
 display(df_splitted.limit(10)) 
 ```
 
+**Cell output:**
+
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 10, Finished, Available, Finished)*
 *SynapseWidget(Synapse.DataFrame, 8353f865-eadd-4edf-bcbb-2a3980f06cf6)*
@@ -248,6 +260,8 @@ df_chunks = df_splitted.select('ExtractedPath', 'ArticleTitle', 'text', explode(
 display(df_chunks)
 ```
 
+**Cell output:**
+
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 11, Finished, Available, Finished)*
 *SynapseWidget(Synapse.DataFrame, d1459c26-9eb4-4996-8fdd-a996c9b30777)*
@@ -259,6 +273,8 @@ Now add a unique ID for each row.
 df_chunks_id = df_chunks.withColumn("Id", monotonically_increasing_id())
 display(df_chunks_id)
 ```
+
+**Cell output:**
 
 ```text
 StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 12, Finished, Available, Finished)
@@ -281,6 +297,8 @@ Embd = (
 df_embeddings = Embd.transform(df_chunks_id)
 display(df_embeddings)
 ```
+
+**Cell output:**
 
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 13, Finished, Available, Finished)*
@@ -363,6 +381,8 @@ print(f' {result.name} created')
 
 ```
 
+**Cell output:**
+
 ```text
 StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 14, Finished, Available, Finished)
 prioritized_content_fields isn't a known attribute of class <class 'azure.search.documents.indexes._generated.models._models_py3.SemanticPrioritizedFields'> and will be ignored
@@ -405,6 +425,8 @@ def insertToAISearch(Id, ArticleTitle, ExtractedPath, Chunk, Embedding):
         return response.text
 ```
 
+**Cell output:**
+
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 15, Finished, Available, Finished)*
 ```
@@ -430,6 +452,8 @@ df_embeddings_ingested = df_embeddings.withColumn(
 display(df_embeddings_ingested)
 ```
 
+**Cell output:**
+
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 16, Finished, Available, Finished)*
 *SynapseWidget(Synapse.DataFrame, 5be010aa-4b2a-47b5-8008-978031e0795a)*
@@ -453,6 +477,8 @@ print(f"Number of unsuccessful uploads: {unsuccessful_uploads_count}")
 if unsuccessful_uploads_count > 0:
     unsuccessful_uploads.show()
 ```
+
+**Cell output:**
 
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 17, Finished, Available, Finished)*
@@ -526,6 +552,8 @@ def vector_search(question, filter = '', topN = 3):
     return results
 ```
 
+**Cell output:**
+
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 18, Finished, Available, Finished)*
 ```
@@ -535,6 +563,8 @@ question = "How do elephants communicate over long distances?"
 retrieved_context, retrieved_sources, df_chunks = get_context_source(vector_search, question)
 df_chunks
 ```
+
+**Cell output:**
 
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 19, Finished, Available, Finished)*
@@ -583,6 +613,8 @@ def get_answer(question, context):
 
 ```
 
+**Cell output:**
+
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 20, Finished, Available, Finished)*
 ```
@@ -593,6 +625,8 @@ Note: For other available deployment_ids, see the [documentation for Python SDK]
 answer = get_answer(question, retrieved_context)
 print(answer)
 ```
+
+**Cell output:**
 
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 21, Finished, Available, Finished)*
@@ -639,6 +673,8 @@ text.observe(on_text_change)
 # Display the text box and label  
 w_display(text, label)
 ```
+
+**Cell output:**
 
 ```text
 *StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 37, Finished, Available, Finished)*
