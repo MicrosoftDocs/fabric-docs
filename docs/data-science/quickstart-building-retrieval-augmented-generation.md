@@ -12,8 +12,6 @@ ai.usage: ai-assisted
 ---
 # Build retrieval augmented generation in Fabric
 
-## Introduction
-
 Large language models (LLMs) like OpenAI's ChatGPT are powerful, but they work better for business needs when you customize them with specific business data by using generative AI (GenAI) solutions. Without this customization, LLMs might not deliver results tailored to business and customer requirements.
 
 Add specific information to prompts to improve results. For deeper gains, fine-tune the LLM with custom data. This notebook shows retrieval-augmented generation (RAG). It adds retrieved business-specific context to the LLM to improve answers.
@@ -522,7 +520,7 @@ df_chunks
 
 | Chunk Ordinal  | Embedding | ExtractedPath | ArticleTitle | Chunk | ID | @search.score | @search.reranker_score | @search.highlights | @search.captions |
 |---|-----------|---------------|--------------|-------|----|--------------|-----------------------|-------------------|------------------|
-| 0 | [-0.03276262, -0.006002287, 0.009044814, -0.02...] | S08/data/set1/a5 | elephant | hand, live mostly solitary lives.\n\nThe socia... | 131 | 0.888358 | None | None | None |
+| 0 | [-0.03276262, -0.006002287, 0.009044814, -0.02...] | S08/data/set1/a5 | elephant | hand, live mostly solitary lives. The socia... | 131 | 0.888358 | None | None | None |
 | 1 | [-0.011676712, -0.0079745, 0.001480885, -0.021...] | S08/data/set1/a5 | elephant | farther north, in slightly cooler climates, an... | 130 | 0.877915 | None | None | None |
 | 2 | [-0.018319938, -0.013896506, 0.014269567, -0.0...] | S08/data/set1/a5 | elephant | trunk, which pick up the resonant vibrations m... | 132 | 0.867543 | None | None | None |
 
@@ -567,7 +565,8 @@ def get_answer(question, context):
 **Cell output:**
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 20, Finished, Available, Finished)*`
 
-Note: For other available deployment_ids, see the [documentation for Python SDK](/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=python).
+> [!NOTE]
+> For other available deployment_ids, see the [documentation for Python SDK](/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=python).
 
 ```python
 answer = get_answer(question, retrieved_context)
