@@ -29,7 +29,7 @@ Here's how the core features stack up between Azure Data Factory and Fabric Data
 
 |[Azure Data Factory](/azure/data-factory/introduction) |[Data Factory in Fabric](data-factory-overview.md) |What's different |
 |:---|:---|:---|
-|Pipeline |Pipeline | **Better integration**: Pipelines in Fabric work seamlessly with Lakehouse, Data Warehouse, and other Fabric services right out of the box. Fabric pipelines include more SaaS-based activities and differ in JSON definitions. |
+|Pipeline |Pipeline | **Better integration**: Pipelines in Fabric work seamlessly with Lakehouse, Data Warehouse, and other Fabric services right out of the box. Fabric pipelines include more SaaS-based activities and differ in JSON definitions. See our [pipeline feature comparison](#pipeline-feature-comparison) for more details.|
 |Mapping data flow  |Dataflow Gen2 | **Easier to use**: Dataflow Gen2 gives you a simpler experience for building transformations. We're adding more mapping dataflow features to Gen2 all the time. |
 |Activities |Activities|**More activities coming**: We're working to bring all your favorite ADF activities to Fabric. Plus, you get new ones like the Office 365 Outlook activity that aren't available in ADF. See our [activity comparison](compare-fabric-data-factory-and-azure-data-factory.md#activity-comparison) for details. |
 |Dataset |Connections only|**Simpler approach**: No more complex dataset configurations. For Data Factory in Fabric you use connections to link to your data sources and start working. Fabric eliminates datasets, defining data properties inline within activities. |
@@ -124,71 +124,48 @@ For a list of all available Fabric Data Factory activities, see the [Activity ov
 
 ## Connector comparison
 
+For a comparison of all connectors and their availability in Azure Data Factory and Fabric Data Factory, see the [Connector comparison article](connector-parity.md).
+
 ## Self-hosted Integration Runtime (SHIR) vs. On-premises Data Gateway (OPDG)
+
+>[!NOTE]
+> The services supported by the SHIR and ODPG are different:
+>
+> - Self-hosted Integration Runtime (SHIR) : Supports Azure Data Factory, Azure Synapse Analytics, Azure Machine Learning Studio, and Azure Purview.
+> - On-premises Data Gateway (OPDG) : Supports Power BI, Power Apps, Power Automate, Azure Analysis Services, Logic Apps, Fabric Dataflow Gen2, Fabric Pipeline, Fabric Copy Job, and Fabric Mirroring.
 
 | **Category**                  | **Self-hosted Integration Runtime (SHIR)**                                                                 | **On-premises Data Gateway (OPDG)**                                                                 |
 |-------------------------------|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | **Supported Services**        | - Azure Data Factory<br>- Azure Machine Learning Studio<br>- Azure Synapse Analytics<br>- Azure Purview | - Power BI<br>- Power Apps<br>- Power Automate<br>- Azure Analysis Services<br>- Logic Apps<br>- Fabric Dataflow Gen2<br>- Fabric Pipeline<br>- Fabric Copy Job<br>- Fabric Mirroring |
-| **Installation & Registration** | - Registered by key  
-- Runs in service mode                                                         | - Registered with Azure AD account  
-- Supports user mode                                      |
-| **Platform**                  | - Windows  
-- Container image supported                                                               | - Windows only  
-- No container support                                                       |
+| **Installation & Registration** | - Registered by key<br>- Runs in service mode | - Registered with Azure AD account<br>- Supports user mode                                      |
+| **Platform**                  | - Windows<br>- Container image supported                                                               | - Windows only<br>- No container support                                                       |
 | **Proxy Support**             | - Support both system and custom proxy                                                                    | - Support custom proxy                                                                             |
-| **Region Binding**            | - Fixed to Data Factory region  
-- Cannot change default region                                       | - Region can be changed                                                                           |
+| **Region Binding**            | - Fixed to Data Factory region<br>- Cannot change default region                                       | - Region can be changed                                                                           |
 | **Custom Relay**              | - Not supported                                                                                           | - Supported; customers can bring their own relay                                                  |
-| **Sharing Across Services**   | - Shared with up to 120 Data Factories  
-- Cannot be shared across ADF, Synapse, Purview, or Synapse workspaces | - Available to all supported services within a tenant                                             |
+| **Sharing Across Services**   | - Shared with up to 120 Data Factories <br> - Cannot be shared across ADF, Synapse, Purview, or Synapse workspaces | - Available to all supported services within a tenant                                             |
 | **High Availability (HA)**    | - Up to 8 nodes (4 default)                                                                               | - Up to 10 nodes                                                                                  |
 | **Recovery**                  | - Requires reinstallation                                                                                 | - Recovery key supported                                                                          |
-| **Load Balancing**            | - Task-level load balancing based on available worker count (CPU + memory)                                | - Query-level load balancing  
-- Round robin or Random distribution options                   |
-| **Credential Store**          | - Stored locally on SHIR nodes  
-- Azure Key Vault supported                                          | - Stored centrally in Gateway cloud service  
-- No Key Vault integration                      |
+| **Load Balancing**            | - Task-level load balancing based on available worker count (CPU + memory)                                | - Query-level load balancing <br> - Round robin or Random distribution options                   |
+| **Credential Store**          | - Stored locally on SHIR nodes<br>- Azure Key Vault supported                                          | - Stored centrally in Gateway cloud service <br> - No Key Vault integration                      |
 | **Auto-update**               | - Supported                                                                                               | - Not supported                                                                                   |
 | **Connector Extensibility**   | - Not supported                                                                                           | - Supported                                                                                       |
 | **Interactive Authoring**     | - Supported                                                                                               | - Supported                                                                                       |
 | **Private Link for Control Flow** | - Supported                                                                                               | - Not supported                                                                                   |
-| **Versioning**                | - Two releases per month; one pushed as auto-update  
-- Supports last 12 months of releases           | - One release per month  
-- Supports last 6 releases                                          |
+| **Versioning**                | - Two releases per month; one pushed as auto-update<br>- Supports last 12 months of releases           | - One release per month <br>- Supports last 6 releases                                          |
 | **CPU & Memory Throttling**   | - Not supported                                                                                           | - Supported                                                                                       |
-| **Throughput Limits**         | - No hard limit; dependent on network bandwidth                                                           | - Service-specific limits:  
-  Power Apps / Power Automate / Logic Apps:  
-  • Write: 2 MB payload limit  
-  • Read: 2 MB request limit, 8 MB compressed response limit  
-  • GET request URL limit: 2048 characters  
-  Power BI Direct Query: 16 MB uncompressed response limit |
-
-### Supported services
-
-#### SHIR supports
-
-- Azure Data Factory
-- Azure Machine Learning Studio
-- Azure Synapse Analytics
-- Azure Purview
-
-#### OPDG supports
-
-- Power BI
-- Power Apps
-- Power Automate
-- Azure Analysis Services
-- Logic Apps
-- Fabric Dataflow Gen2
-- Fabric Pipeline
-- Fabric Copy Job
-- Fabric Mirroring
+| **Throughput Limits**         | - No hard limit; dependent on network bandwidth                                                           | Service-specific limits:<br>Power Apps / Power Automate / Logic Apps:<br> - Write: 2 MB payload limit<br>- Read: 2 MB request limit, 8 MB compressed response limit<br>- GET request URL limit: 2048 characters<br>Power BI Direct Query: 16 MB uncompressed response limit |
 
 ## ADF Managed Virtual Network vs. Fabric Virtual Network Data Gateway
 
-Azure Data Factory (ADF) Managed Virtual Network and Microsoft Fabric Virtual Network (VNET) Data Gateway both provide secure network isolation for accessing data sources without exposing them to the public internet. While they share the common goal of enabling private connectivity for cloud workloads, they differ fundamentally in ownership, deployment model, and scope of supported services. ADF Managed VNET offers a fully Microsoft-managed environment with simplified setup but limited customer control, whereas Fabric VNET Data Gateway operates within a customer-managed VNET, giving customers full control over networking, firewall, and scaling configurations. The table below outlines the key differences to help determine the appropriate solution based on workload and governance requirements.
+Azure Data Factory (ADF) Managed Virtual Network and Microsoft Fabric Virtual Network (VNET) Data Gateway both help you connect to data sources securely, without exposing them to the public internet. While both options support private connectivity for cloud workloads, they differ in how they're set up, who manages them, and which services they support.
 
-Overall Feature Comparison
+- **ADF Managed VNET**  
+  Microsoft owns and manages the network environment. You get a simple setup, but you can't control the network settings or firewall rules.
+
+- **Fabric VNET Data Gateway**  
+  You deploy the gateway inside your own Azure VNET. This gives you full control over networking, firewall, and scaling. You decide how the gateway connects to your resources and manage all network settings.
+
+Use the table below to compare the main differences and choose the option that fits your workload and governance needs.
 
 | **Category**                  | **ADF Managed Virtual Network**                                                                 | **Fabric Virtual Network Data Gateway**                                                                 |
 |-------------------------------|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
