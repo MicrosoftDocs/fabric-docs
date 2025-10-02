@@ -29,57 +29,57 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Sink** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|------------------------|------------------------|------------------------|--------------------------|--------------------------|
-| Azure Blob Storage | ✓/✓                | Anonymous             | Delete activity        | ✓/✓                   | Anonymous               | Delete activity         |
+| [Azure Blob Storage](connector-azure-blob-storage-overview.md) | ✓/✓                | Anonymous             | Delete activity        | ✓/✓                   | Anonymous               | Delete activity         |
 |                    |                     | Account key           | Lookup activity        |                        | Account key             | Lookup activity         |
 |                    |                     | Shared Access Signature (SAS) | Get Metadata activity |                        | Shared Access Signature (SAS) | Get Metadata activity |
 |                    |                     | Service principal     |                        |                        | Service principal       |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
 |                    |                     |                        |                        |                        | Organizational account  |                          |
-| Azure AI Search index | -/✓              | Basic                 |                        | -/✓                   | Service admin key       |                          |
-| Azure Cosmos DB for NoSQL | ✓/✓         | Key                   |                        | ✓/✓                   | Account key             |                          |
+| [Azure AI Search index](connector-azure-ai-search-index-overview.md) | -/✓              | Basic                 |                        | -/✓                   | Service admin key       |                          |
+| [Azure Cosmos DB for NoSQL](connector-azure-cosmos-db-for-nosql-overview.md) | ✓/✓         | Key                   |                        | ✓/✓                   | Account key             |                          |
 |                    |                     | Service principal     |                        |                        |                          |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
 |                    |                     |                        |                        |                        | Organizational account  |                          |
-| Azure Cosmos DB for MongoDB | ✓/✓         | Basic                 |                        | ✓/✓                   | Basic                   |                          |
-| Azure Data Explorer | ✓/✓                | Service principal     |                        | ✓/✓                   |                          |                          |
+| [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-overview.md) | ✓/✓         | Basic                 |                        | ✓/✓                   | Basic                   |                          |
+| [Azure Data Explorer](connector-azure-data-explorer-overview.md) | ✓/✓                | Service principal     |                        | ✓/✓                   |                          |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
 |                    |                     |                        |                        |                        | Organizational account  |                          |
-| ADLS Gen2         | ✓/✓                | Account key           | Delete activity        | ✓/✓                   | Account key             | Delete activity         |
+| [ADLS Gen2](connector-adls-gen2-overview.md) | ✓/✓                | Account key           | Delete activity        | ✓/✓                   | Account key             | Delete activity         |
 |                    |                     | Service principal     | Lookup activity        |                        | Service principal       | Lookup activity         |
 |                    |                     | Shared Access Signature (SAS) | Get Metadata activity |                        | Shared Access Signature (SAS) | Get Metadata activity |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
 |                    |                     |                        |                        |                        | Organizational account  |                          |
-| Azure Database for MySQL | ✓/✓         | Basic                 |                        | ✓/✓                   | Basic                   |                          |
-| Azure Databricks Delta Lake | ✓/✓         | Access token          |                        | ✓/✓                   | Personal Access Token   |                          |
+| [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) | ✓/✓         | Basic                 |                        | ✓/✓                   | Basic                   |                          |
+| [Azure Databricks Delta Lake](connector-azure-databricks-delta-lake-overview.md) | ✓/✓         | Access token          |                        | ✓/✓                   | Personal Access Token   |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        |                          |                          |
-| Azure File Storage | ✓/✓                | Account key           |                        | ✓/✓                   | Account key             |                          |
+| [Azure File Storage](connector-azure-file-storage-overview.md) | ✓/✓                | Account key           |                        | ✓/✓                   | Account key             |                          |
 |                    |                     | Shared access signature |                        |                        |                          |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        |                          |                          |
-| Azure Database for PostgreSQL | ✓/✓         | Basic                 |                        | ✓/✓                   | Basic                   |                          |
+| [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) | ✓/✓         | Basic                 |                        | ✓/✓                   | Basic                   |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | Service principal     |                        |                        |                          |                          |
-| Azure Table Storage | ✓/✓                | Account key           |                        | ✓/✓                   | Account key             |                          |
+| [Azure Table Storage](connector-azure-table-storage-overview.md) | ✓/✓                | Account key           |                        | ✓/✓                   | Account key             |                          |
 |                    |                     | Shared access signature |                        |                        |                          |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
-| Azure SQL Database | ✓/✓                | SQL                   | Lookup activity        | ✓/✓                   | Basic                   | Lookup activity         |
+| [Azure SQL Database](connector-azure-sql-database-overview.md) | ✓/✓                | SQL                   | Lookup activity        | ✓/✓                   | Basic                   | Lookup activity         |
 |                    |                     | Service principal     | Get Metadata activity  |                        | Service principal       | Get Metadata activity   |
 |                    |                     | System-assigned managed identity | Script activity        |                        |                          | Script activity         |
 |                    |                     | User-assigned managed identity | Stored procedure activity |                        | Workspace identity      | Stored procedure activity |
 |                    |                     |                        |                        |                        | Organizational account  |                          |
-| Azure SQL Managed Instance | ✓/✓         | SQL                   |                        | ✓/✓                   | Basic                   |                          |
+| [Azure SQL Managed Instance](connector-azure-sql-managed-instance-overview.md) | ✓/✓         | SQL                   |                        | ✓/✓                   | Basic                   |                          |
 |                    |                     | Service principal     |                        |                        | Service principal       |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        |                          |                          |
 |                    |                     |                        |                        |                        | Organizational account  |                          |
-| Azure Synapse Analytics | ✓/✓         | SQL                   |                        | ✓/✓                   | Basic                   |                          |
+| [Azure Synapse Analytics](connector-azure-synapse-analytics-overview.md) | ✓/✓         | SQL                   |                        | ✓/✓                   | Basic                   |                          |
 |                    |                     | Service principal     |                        |                        | Service principal       |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
