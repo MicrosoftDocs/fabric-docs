@@ -1,9 +1,9 @@
 ---
 title: "Lakehouse end-to-end scenario: overview and architecture"
 description: This article provides an overview of the lakehouse, including its architecture, the components involved in its implementation, and the semantic model.
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
+ms.reviewer: arali
+ms.author: eur
+author: eric-urban
 ms.topic: tutorial
 ms.custom:
 ms.date: 08/21/2024
@@ -41,7 +41,7 @@ This tutorial explains how a developer at the fictional Wide World Importers com
 
 The following image shows the lakehouse end-to-end architecture. The components involved are described in the following list.
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\lakehouse-end-to-end-architecture.png" alt-text="Diagram of the end-to-end architecture of a lakehouse in Microsoft Fabric.":::
+:::image type="content" source="media\tutorial-lakehouse-introduction\lakehouse-end-to-end-architecture.png" alt-text="Diagram of the end-to-end architecture of a lakehouse in Microsoft Fabric." lightbox="media/tutorial-lakehouse-introduction/lakehouse-end-to-end-architecture.png":::
 
 * **Data sources**: Fabric makes it quick and easy to connect to Azure Data Services, as well as other cloud-based platforms and on-premises data sources, for streamlined data ingestion.
 
@@ -63,7 +63,7 @@ In general, data is brought from transactional systems or line-of-business appli
 
 While the WWI dimensional model contains numerous [fact tables](../data-warehouse/dimensional-modeling-fact-tables.md), for this tutorial, we use the *Sale* fact table and its correlated dimensions. The following example illustrates the WWI data model:
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\model-sale-fact-table.png" alt-text="Diagram of the Sale Fact table and related dimensions for this tutorial's data model.":::
+:::image type="content" source="media\tutorial-lakehouse-introduction\model-sale-fact-table.png" alt-text="Diagram of the Sale Fact table and related dimensions for this tutorial's data model." lightbox="media/tutorial-lakehouse-introduction/model-sale-fact-table.png":::
 
 ## Data and transformation flow
 
@@ -71,13 +71,13 @@ As described earlier, we're using the sample data from [Wide World Importers (WW
 
 The following image shows the source, destination and data transformation:
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\data-transformation-flow.png" alt-text="Diagram of how data flows and transforms in Microsoft Fabric.":::
+:::image type="content" source="media\tutorial-lakehouse-introduction\data-transformation-flow.png" alt-text="Diagram of how data flows and transforms in Microsoft Fabric." lightbox="media/tutorial-lakehouse-introduction/data-transformation-flow.png":::
 
 * **Data Source**: The source data is in Parquet file format and in an unpartitioned structure. It's stored in a folder for each table. In this tutorial, we set up a pipeline to ingest the complete historical or onetime data to the lakehouse.
 
   In this tutorial, we use the *Sale* fact table, which has one parent folder with historical data for 11 months (with one subfolder for each month) and another folder containing incremental data for three months (one subfolder for each month). During the initial data ingestion, 11 months of data are ingested into the lakehouse table. However, when the incremental data arrives, it includes updated data for Oct and Nov, and new data for Dec. Oct and Nov data is merged with the existing data and the new Dec data is written into lakehouse table as shown in the following image:
 
-  :::image type="content" source="media\tutorial-lakehouse-introduction\incremental-data-load.png" alt-text="Diagram showing how changed data can be incrementally merged into initially ingested data in a lakehouse.":::
+  :::image type="content" source="media\tutorial-lakehouse-introduction\incremental-data-load.png" alt-text="Diagram showing how changed data can be incrementally merged into initially ingested data in a lakehouse." lightbox="media/tutorial-lakehouse-introduction/incremental-data-load.png":::
 
 * **Lakehouse**: In this tutorial, you create a lakehouse, ingest data into the files section of the lakehouse, and then create delta lake tables in the Tables section of the lakehouse.
 

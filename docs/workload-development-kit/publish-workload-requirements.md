@@ -80,7 +80,7 @@ Fabric users expect a fast loading UX. Independent of the technical implementati
 | Samples | Partners can use samples that are creating preconfigured items of their type to help customers get started more easily. | Attestation | Optional | Optional | |
 | Custom Item actions | Partners can implement custom actions as part of their item editor. | Attestation | Optional | Optional | |
 | Workspace settings | Workspace settings provide a way that workloads can be configured on a workspace level. | Attestation | Not supported | Not supported | [Workspace](../fundamentals/workspaces.md) |
-| Global Search | Searching for items in Fabric is supported through the top search bar. | Attestation | Not supported | Not supported | [Fabric Search](../fundamentals/fabric-search.md) |
+| Global Search | Searching for items in Fabric is supported through the top search bar. | Attestation | Not supported | Not supported | [Fabric Search](../fundamentals/fabric-home.md) |
 
 ## Security & Compliance requirements
 

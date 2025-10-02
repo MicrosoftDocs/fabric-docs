@@ -69,6 +69,8 @@ items:
       items:
         - name: Data agent configurations
           href: data-agent-configurations.md
+        - name: Example queries
+          href: data-agent-example-queries.md
         - name: Best practices for configuring data agents 
           href: data-agent-configuration-best-practices.md
         - name: How to configure a data agent
@@ -80,7 +82,9 @@ items:
         - name: Consume a data agent from Copilot in Power BI (preview)
           href: data-agent-copilot-powerbi.md
         - name: Consume a data agent from Microsoft Copilot Studio (preview)
-          href: data-agent-microsoft-copilot-studio.md          
+          href: data-agent-microsoft-copilot-studio.md     
+        - name: Consume a data agent using Python SDK (preview)
+          href: consume-data-agent-python.md     
     - name: Fabric data agent end-to-end tutorial
       href: data-agent-end-to-end-tutorial.md        
     - name: Fabric data agent sharing
@@ -127,8 +131,12 @@ items:
       href: use-ai-samples.md
     - name: Book recommendation
       href: retail-recommend-model.md
+    - name: Building Retrieval Augmented Generation
+      href: quickstart-building-retrieval-augmented-generation.md
     - name: Customer churn prediction
       href: customer-churn.md
+    - name: Evaluate RAG performance
+      href: tutorial-evaluate-rag-performance.md
     - name: Fraud detection
       href: fraud-detection.md
     - name: Machine failure prediction
@@ -163,6 +171,8 @@ items:
     href: ./ai-functions/overview.md
   - name: Accelerate data prep with Data Wrangler
     href: data-wrangler.md
+  - name: Use AI in Data Wrangler
+    href: data-wrangler-ai.md
   - name: Explore and transform Spark data with Data Wrangler
     href: data-wrangler-spark.md
   - name: Read from Power BI and write data usable by Power BI

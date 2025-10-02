@@ -14,7 +14,7 @@ ms.date: 03/25/2024
 > [!NOTE]
 > Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
-Data Workflows, a transformative capability within Microsoft Fabric, redefines your approach to constructing and managing data pipelines. Powered by the Apache Airflow runtime, Data Workflows provides an integrated, cloud-based platform for developing, scheduling, and monitoring Python-based data workflows, articulated as Directed Acyclic Graphs (DAGs). It delivers a Software-as-a-Service (SaaS) experience for data pipeline development and management using Apache Airflow, making the runtime easily accessible and enabling the creation and operation of your data workflows.<br>
+Data Workflows, a transformative capability within Microsoft Fabric, redefines your approach to constructing and managing pipelines. Powered by the Apache Airflow runtime, Data Workflows provides an integrated, cloud-based platform for developing, scheduling, and monitoring Python-based data workflows, articulated as Directed Acyclic Graphs (DAGs). It delivers a Software-as-a-Service (SaaS) experience for pipeline development and management using Apache Airflow, making the runtime easily accessible and enabling the creation and operation of your data workflows.<br>
 With data workflows, you have two options for storing your workflow files: Fabric-managed storage and GitHub-managed storage. In this article, you'll learn how to synchronize your code from an existing GitHub repository.
 
 ## Create an Apache Airflow Job

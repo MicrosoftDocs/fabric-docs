@@ -1,9 +1,9 @@
 ---
 title: Notebook visualization
 description: Apache Spark in Fabric provides various built-in options for visualizing your data, including notebook charts and access to popular open-source libraries.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.search.form: Notebook visualization
@@ -56,11 +56,11 @@ By default, the **Table View** is rendered when using the _display()_ command in
 
 - **Copying Selected Content**: In all selection cases, you can quickly copy the selected content using the 'Ctrl + C' shortcut. The selected data is copied in CSV format, making it easy to process in other applications.
 
-  ![Animated GIF of free selection support.](media\notebook-visualization\free-selection.gif)
+  :::image type="content" source="media/notebook-visualization/free-selection.gif" alt-text="Animated GIF of free selection support." lightbox="media/notebook-visualization/free-selection.gif":::
 
 #### Data profiling support via Inspect pane
 
-![Animated GIF of rich dataframe preview.](media\notebook-visualization\rich-dataframe-preview.gif)
+:::image type="content" source="media/notebook-visualization/rich-dataframe-preview.gif" alt-text="Animated GIF of rich dataframe preview." lightbox="media/notebook-visualization/rich-dataframe-preview.gif":::
 
 1. You can profile your dataframe by clicking on **Inspect** button. It provides the summarized data distribution and showing statistics of each column.
 
@@ -78,7 +78,7 @@ Key Enhancements:
 
 1. **Smart Chart Recommendations**: Get a list of suggested charts based on your DataFrame. Choose to edit a recommended visualization or create a custom chart from scratch.
 
-    ![Animated GIF of suggested charts.](media\notebook-visualization\suggested-charts.gif)
+  :::image type="content" source="media/notebook-visualization/suggested-charts.gif" alt-text="Animated GIF of suggested charts." lightbox="media/notebook-visualization/suggested-charts.gif":::
 
 1. **Flexible Customization**: Personalize your visualizations with adjustable settings that adapt based on the selected chart type. 
 
@@ -130,7 +130,7 @@ Key Enhancements:
 
 Use _display(df, summary = true)_ to check the statistics summary of a given Apache Spark DataFrame. The summary includes the column name, column type, unique values, and missing values for each column. You can also select a specific column to see its minimum value, maximum value, mean value, and standard deviation.
 
-![Animated GIF of summary view.](media\notebook-visualization\summary-view.gif)
+:::image type="content" source="media/notebook-visualization/summary-view.gif" alt-text="Animated GIF of summary view." lightbox="media/notebook-visualization/summary-view.gif":::
 
 ## displayHTML() option
 

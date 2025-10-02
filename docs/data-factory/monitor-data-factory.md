@@ -13,9 +13,9 @@ ms.date: 11/15/2023
 
 There are two ways to monitor activity in Data Factory for Microsoft Fabric. The service supports monitoring for both pipeline runs and dataflows.
 
-## Monitor data pipeline runs
+## Monitor pipeline runs
 
-Refer to [How to monitor data pipeline runs](monitor-pipeline-runs.md) for details on how to monitor your data pipelines.
+Refer to [How to monitor pipeline runs](monitor-pipeline-runs.md) for details on how to monitor your pipelines.
 
 ## Monitor dataflows
 

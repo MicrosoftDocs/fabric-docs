@@ -4,7 +4,7 @@ description: This article explains how to copy data using Amazon RDS For Oracle.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/28/2025
+ms.date: 09/08/2025
 ms.custom: 
   - pipelines
   - template-how-to
@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Amazon RDS For Oracle in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from Amazon RDS For Oracle.
+This article outlines how to use the copy activity in a pipeline to copy data from Amazon RDS For Oracle.
 
 Specifically, this Amazon RDS For Oracle connector supports:
 
@@ -58,7 +58,9 @@ The following properties are **required**:
 
   - If you select **Query**:
 
-    - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`.
+    - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`. Note that the query should not end with a semicolon (;).
+    
+      When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Amazon RDS For Oracle](#parallel-copy-from-amazon-rds-for-oracle) section.
 
       :::image type="content" source="./media/connector-amazon-rds-for-oracle/query.png" alt-text="Screenshot showing query." lightbox="./media/connector-amazon-rds-for-oracle/query.png":::
 
@@ -169,7 +171,7 @@ The following tables contain more information about the copy activity in Amazon 
 |**schema name** |Name of the schema.|< your schema name >| No |schema|
 |**table name** |Name of the table.|< your table name >| No |table|
 | For ***Query*** | | | | |
-| **Query** | Use the custom SQL query to read data. | < SQL queries > | No | oracleReaderQuery |
+| **Query** | Use the custom SQL query to read data. An example is `SELECT * FROM MyTable`. Note that the query should not end with a semicolon (;). <br>When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Amazon RDS For Oracle](#parallel-copy-from-amazon-rds-for-oracle) section.| < SQL queries > | No | oracleReaderQuery |
 | | | | | |
 | **Partition names** | The list of physical partitions that needs to be copied. If you use a query to retrieve the source data, hook `?AdfTabularPartitionName` in the WHERE clause.  | < your partition names > | No | partitionNames | 
 | **Partition column name** | The name of the source column **in integer type** that will be used by range partitioning for parallel copy. If not specified, the primary key of the table is auto-detected and used as the partition column. | < your partition column names > | No | partitionColumnName | 

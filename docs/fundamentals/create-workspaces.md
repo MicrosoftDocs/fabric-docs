@@ -31,7 +31,7 @@ To create a workspace:
 
 1. When done, either continue to the advanced settings, or select **Apply**.
 
-You can open and work across multiple workspaces side by side. Items are color-coded and numbered to indicate which workspace they belong to. To learn more see, [object explorer and tabbed navigation in Fabric portal](./fabric-home.md#tabbed-navigation-to-access-resources-preview).
+You can open and work across multiple workspaces side by side. Items are color-coded and numbered to indicate which workspace they belong to. To learn more see, [object explorer and tabbed navigation in Fabric portal](./fabric-home.md#multitask-with-tabs-and-object-explorer).
 
 ## Advanced settings
 

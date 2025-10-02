@@ -6,13 +6,13 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: how-to
 ms.custom:
-ms.date: 08/18/2025
+ms.date: 09/22/2025
 
 #customer intent: As a workspace admin, I want to configure workspace-level Private Link on my workspace to prevent access to the workspace from the public internet.
 
 ---
 
-# Set up and use workspace-level private links (preview)
+# Set up and use workspace-level private links
 
 Private links improve security by routing traffic through Azure Private Link and private endpoints, ensuring data stays on Microsoft’s private network rather than the public internet. Microsoft Fabric offers private links at two scopes: tenant-level and workspace-level. [Tenant-level private links](./security-private-links-overview.md) secure all workspaces within a tenant, while [workspace-level private links](./security-workspace-level-private-links-overview.md) allow you to manage network access for specific workspaces individually. 
 
@@ -162,10 +162,23 @@ Next, access Fabric privately from the virtual machine you created in the previo
 
 ## Step 8. Deny public access to the workspace
 
-You can optionally deny public access to the workspace. When the workspace is set to deny public access, it means the workspace can only be accessed via workspace-level private link. You create the access rule to deny public access using an API. Currently, the Fabric portal UI doesn't contain a setting for creating the deny public access rule. You must use the API to set the rule.
+You can optionally deny public access to the workspace. When the workspace is set to deny public access, it means the workspace can only be accessed via workspace-level private link. You can use either the Fabric portal or the Microsoft Graph API to create the access rule for denying public access.
 
 > [!NOTE]
 > The workspace-level setting to deny public access can take up to 30 minutes to take effect.
+
+### [Fabric portal](#tab/fabric-portal)
+
+1. In the Fabric portal, select the workspace you want to configure.
+1. Select **Workspace settings**.
+1. Select **Inbound networking**.
+1. Under **Workspace connection settings**, select **Allow connections only from workspace level private links**.
+
+   :::image type="content" source="media/security-workspace-level-private-links-set-up/workspace-connection-settings.png" alt-text="Screenshot showing the Workspace connection settings with the radio button selected for the option Allow connections only from workspace level private links." lightbox="media/security-workspace-level-private-links-set-up/workspace-connection-settings.png":::
+
+1. Select **Apply**.
+
+### [API](#tab/api)
 
 Use the [Workspaces - Set Network Communication Policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy) to set the workspace public access rule:  
 

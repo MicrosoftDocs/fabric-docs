@@ -83,6 +83,8 @@ items:
     items:
     - name: Connect to your SQL database
       href: sql/connect.md
+    - name: Connect with Python
+      href: sql/connect-python.md
     - name: SQL Query editor
       href: ./sql/query-editor.md
     - name: Source control
@@ -105,7 +107,7 @@ items:
       href: /power-bi/create-reports/translytical-task-flow-overview
   - name: Load data into a SQL database
     items:
-    - name: Load data with data pipelines
+    - name: Load data with pipelines
       href: sql/load-data-pipelines.md
     - name: Load data with Fabric Dataflow Gen2
       href: sql/dataflows.md

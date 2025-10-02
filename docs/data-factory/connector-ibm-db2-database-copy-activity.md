@@ -12,7 +12,7 @@ ms.custom:
 
 # Configure IBM Db2 database in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from IBM Db2 database.
+This article outlines how to use the copy activity in a pipeline to copy data from IBM Db2 database.
 
 ## Supported configuration
 
