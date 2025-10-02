@@ -23,7 +23,7 @@ This article outlines the current limits when mirroring [Oracle databases in Mic
 
 Here's what you can expect for database scale:
 
-* Currently, mirrored database supports up to **50 tables**
+* Currently, mirrored database supports up to **500 tables**
 * In each workspace, you can have:
   * One Oracle server
   * One On-Premises Data Gateway (OPDG) instance
