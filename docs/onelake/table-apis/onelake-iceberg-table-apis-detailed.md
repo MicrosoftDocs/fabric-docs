@@ -27,7 +27,7 @@ Review these samples to learn how to set up existing Iceberg REST Catalog (IRC) 
 
 Use the following sample Python code to configure [PyIceberg](https://py.iceberg.apache.org/) to use the OneLake table API endpoint. Then, list schemas and tables within a data item.
 
-This code assumes there is a default AzureCredential available for a currently signed-in user. Alternatively, you can use the [MSAL Python library](../../entra/msal/python/) to obtain a token.
+This code assumes there is a default AzureCredential available for a currently signed-in user. Alternatively, you can use the [MSAL Python library](../../../entra/msal/python/) to obtain a token.
 
 ```python
 from pyiceberg.catalog import load_catalog
@@ -128,7 +128,7 @@ SELECT * FROM IRC_CATALOG_LINKED."dbo"."sentiment";
 
 Use the following sample Python code to configure [DuckDB](https://duckdb.org/docs/stable/clients/python/overview.html) to list schemas and tables within a data item.
 
-This code assumes there is a default `AzureCredential` available for a currently signed-in user. Alternatively, you can use the [MSAL Python library](../../entra/msal/python/) to obtain a token.
+This code assumes there is a default `AzureCredential` available for a currently signed-in user. Alternatively, you can use the [MSAL Python library](../../../entra/msal/python/) to obtain a token.
 
 ```python
 import duckdb
