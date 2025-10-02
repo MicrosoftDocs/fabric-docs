@@ -2,10 +2,10 @@
 title: GQL Graph Types
 description: Complete reference for defining graph types in GQL for graph in Microsoft Fabric, including node types, edge types, constraints, and inheritance.
 ms.topic: reference
-ms.date: 10/01/2025
-author: spmsft
-ms.author: splantikow
-ms.reviewer: eur
+ms.date: 10/07/2025
+author: eric-urban
+ms.author: eur
+ms.reviewer: splantikow
 ms.service: fabric
 ms.subservice: graph
 ---

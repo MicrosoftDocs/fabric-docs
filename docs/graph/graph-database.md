@@ -2,10 +2,10 @@
 title: What is a graph database?
 description: Learn about the benefits of using a graph database.
 ms.topic: concept-article
-ms.date: 10/01/2025
+ms.date: 10/07/2025
 author: eric-urban
 ms.author: eur
-reviewer: wmwxwa
+ms.reviewer: wawng
 ms.service: fabric
 ms.subservice: graph
 ---
