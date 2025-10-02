@@ -34,7 +34,7 @@ The following sections explain these options in more detail.
 
 ## Using managed private endpoints to allow outbound access 
 
-In a workspace with outbound access protection enabled, admins can set up managed private endpoints to connect workspace items to external resources through a specific virtual network. By default, all managed private endpoints are blocked until they are explicitly allowed through the allowlist. The following diagram illustrates workspace-level outbound access protection from the perspective of the end customer.
+In a workspace with outbound access protection enabled, admins can set up managed private endpoints to connect workspace items to external resources through a specific virtual network. By default, all outbound access is blocked, but admins can configure managed private endpoints to explicitly allow connections resources outside of the workspace. The following diagram illustrates workspace-level outbound access protection from the perspective of the end customer.
 
 :::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-endpoints.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection." border="false":::
 
@@ -48,7 +48,7 @@ In the diagram:
 
 ## Using connectors to allow outbound access
 
-Another method for allowing outbound access is through connectors. Admins can configure an allowlist to specify which connectors are permitted to be used within the workspace. By default, all connectors are blocked until they are explicitly allowed through the allowlist.
+In a workspace with outbound access protection enabled, another method for allowing outbound access is through connectors. Admins can configure an allowlist to specify which connectors are permitted to be used within the workspace. By default, all connectors are blocked until they are explicitly allowed through the allowlist.
 
 :::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-connectors.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection." border="false":::
 

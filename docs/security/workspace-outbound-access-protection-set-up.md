@@ -19,7 +19,7 @@ This article explains how to set up outbound access protection for your Fabric w
 
 ## Prerequisites
 
-* The workspace where you want to set up outbound access protection must reside on a Fabric capacity. No other capacity types are supported.
+* The workspace where you want to set up outbound access protection must reside on a Fabric capacity. <!--TODO, FROM WS PL: * The workspace must be assigned to a Fabric capacity (F SKUs). Other capacities, such as premium (P SKU) and trial capacities, aren't supported. --> No other capacity types are supported. You can check assignment by going to the workspace settings and selecting **License info**, as described in Step 1 of [Reassign a workspace to a different capacity](/fabric/fundamentals/workspace-license-mode#reassign-a-workspace-to-a-different-capacity-1).
 
 * You must have an Admin role in the workspace.
 
@@ -64,7 +64,7 @@ In the request body, set `outbound` to `Deny`. Also specify the `inbound` value 
 
 ---
 
-## Add policies to allow/block data connections
+## Use connectors to allow outbound access
 
 To add policies that allow or block data connections with external sources, you can use the Fabric portal or REST API.
 
@@ -94,21 +94,18 @@ Call the following APIs to view/update the Data Connection rules (Gateways).
 
 ---
 
-## Connect to a workspace in the same tenant
+## Use managed private endpoints to allow outbound access
 
-To connect artifacts in a workspace with outbound access protection to an artifact in a target workspace in the same tenant, you need to set up a cross-workspace managed private endpoint from the source to the target workspace. For example, to connect a notebook in an outbound protected workspace to a lakehouse in another workspace in the tenant, the Private Link service must be set up on the target workspace first.
+In a workspace with outbound access protection enabled, admins can allow access to resources outside the workspace by setting up managed private endpoints. First, create a Private Link service in the target workspace. Then, establish a managed private endpoint from the protected workspace to the target workspace. This enables secure, cross-workspace connections through a virtual network. 
 
 :::image type="content" source="media/workspace-outbound-access-protection-set-up/private-link-service-diagram.png" alt-text="Diagram showing a connection from an outbound access protection enabled workspace to another workspace." lightbox="media/workspace-outbound-access-protection-set-up/private-link-service-diagram.png" border="false":::
 
-This section describes how to create a target workspace if one doesn't already exist. It then explains how to set up a Private Link service in the target workspace (Workspace 2) and establish a managed private endpoint from the outbound access protected workspace (Workspace 1) to the target workspace (Workspace 2).
+> [!NOTE]
+> If a target workspace doesn't already exist, you can [create a workspace in Fabric](/fabric/fundamentals/create-workspaces) and assign it to a Fabric capacity. 
 
-### Create a workspace in Fabric
+### Create the Private Link service for the target workspace
 
-[Create a workspace in Fabric](/fabric/fundamentals/create-workspaces). Make sure the workspace is assigned to a Fabric capacity. You can check assignment by going to the workspace settings and selecting **License info**, as described in Step 1 of [Reassign a workspace to a different capacity](/fabric/fundamentals/workspace-license-mode#reassign-a-workspace-to-a-different-capacity-1).
-
-### Create the Private Link service in Azure
-
-Create a Private Link service for the target workspace (Workspace 2 in the diagram) by deploying an ARM template.
+In Azure, create a Private Link service for the target workspace (Workspace 2 in the diagram) by deploying an ARM template.
 
 1. In a web browser, go to the [Azure portal](https://portal.azure.com/) and sign in.
 
@@ -191,6 +188,7 @@ A tenant admin must approve the managed private endpoint connection by completin
    :::image type="content" source="media/workspace-outbound-access-protection-set-up/activation-succeeded.png" alt-text="Screenshot showing the activated and approved connection." lightbox="media/workspace-outbound-access-protection-set-up/activation-succeeded.png":::
 
 The cross-workspace managed private endpoint is now set up between the outbound access protected workspace and the target workspace. Workspace admins and contributors can now connect to artifacts in the target workspace from the outbound access protected workspace.
+
 
 ## Connect the outbound access protected workspace to other data sources
 
