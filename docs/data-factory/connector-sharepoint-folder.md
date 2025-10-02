@@ -23,6 +23,7 @@ The SharePoint folder connector supports the following authentication types for 
 |:---|:---|:---|
 |Anonymous| n/a | √ |
 |Windows| n/a | √ |
+|OAuth 2.0| n/a | √ |
 
 ## Set up your connection in Dataflow Gen2
 
