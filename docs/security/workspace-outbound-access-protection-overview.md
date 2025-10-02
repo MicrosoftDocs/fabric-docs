@@ -13,26 +13,32 @@ ms.date: 09/24/2025
 
 # Workspace outbound access protection
 
-Workspace outbound access protection in Microsoft Fabric lets you control how your resources connect to external resources. With this feature, you can restrict or allow outbound connections at the individual workspace level based on your organization's security policies.
+Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. With this feature, admins can block all outbound connections, and then allow only approved connections to external resources through secure links between Fabric and virtual networks. 
 
-For outbound security, Microsoft Fabric supports workspace outbound access protection. This network security feature ensures that connections outside the workspace go through a secure connection between Fabric and a virtual network. It prevents items from establishing unsecure connections to sources outside the workspace boundary unless allowed by the workspace admins. This granular control makes it possible to restrict outbound connectivity for some workspaces while allowing the rest of the workspaces to remain open. This article provides an overview of workspace outbound access protection.
+With workspace outbound access protection, you can enforce security policies at the workspace level rather than only at the tenant level. You have more granular control over your organization's data security because you can restrict outbound connectivity for specific workspaces while allowing others to maintain open access.
 
-Microsoft Fabric offers outbound access protection that can be implemented at the workspace level. For outbound protection, workspace admins can control and restrict outbound data connections from their workspaces, ensuring that data is shared securely outside a boundary.
+This article provides an overview of workspace outbound access protection and its configuration options.
 
 > [!NOTE]
-> For inbound security, Fabric supports private links at the [tenant level](security-private-links-overview.md) and the [workspace level](security-workspace-level-private-links-overview.md).
+> For inbound security, Fabric supports private links at the [tenant level](security-private-links-overview.md) and at the [workspace level](security-workspace-level-private-links-overview.md).
 
 ## Restricting outbound access at the workspace level
 
-Workspace admins can enable outbound access protection, which blocks all outbound connections from the workspace. Then, using either managed private endpoints or connectors, they can configure exceptions to allow access to specific destinations. Then workspace admins can create [cross-workspace managed private endpoints](security-cross-workspace-communication.md)
+Workspace-level outbound access protection lets you control which external resources items in the workspace can access. When outbound access protection is enabled, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to grant access only to approved destinations. These exceptions can be configured using either:
+
+* **Managed private endpoints**: Managed private endpoints are secure connections that link the workspace to specific resources in a virtual network. By setting up managed private endpoints, workspace admins can allow items in the workspace to connect to these resources while blocking all other outbound connections.
+
+* **Connectors**: Connectors are pre-configured integrations that enable items in the workspace to connect to various external services and data sources. By configuring an allowlist of approved connectors, workspace admins can control which external services items in the workspace can access.
+
+The following sections explain these options in more detail.
 
 ## Using managed private endpoints to allow outbound access 
 
-To enhance security, admins can configure an allowlist for managed private endpoints. This allowlist specifies which managed private endpoints are permitted to connect to the workspace. By default, all managed private endpoints are blocked until they are explicitly allowed through the allowlist. The following diagram illustrates workspace-level outbound access protection from the perspective of the end customer.
+In a workspace with outbound access protection enabled, admins can set up managed private endpoints to connect workspace items to external resources through a specific virtual network. By default, all managed private endpoints are blocked until they are explicitly allowed through the allowlist. The following diagram illustrates workspace-level outbound access protection from the perspective of the end customer.
 
-:::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection." border="false":::
+:::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-endpoints.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection." border="false":::
 
-Workspace level outbound access protection makes it possible to control what the items in the workspace can access outside the workspace boundary. Customers can set up private endpoints to connect the workspace items to different resources from a specific virtual network.
+In the diagram:
 
 * The outbound access protection enabled workspace can connect to all the resources that support private endpoints by setting up a managed private endpoint from the workspace to the destination. For example, in the preceding diagram, Workspace A (outbound access protection enabled) can connect to the SQL server because it has a managed private endpoint set up to the SQL server.
 
@@ -42,7 +48,13 @@ Workspace level outbound access protection makes it possible to control what the
 
 ## Using connectors to allow outbound access
 
-Admins can also configure an allowlist for connectors. This allowlist specifies which connectors are permitted to be used within the workspace. By default, all connectors are blocked until they are explicitly allowed through the allowlist.
+Another method for allowing outbound access is through connectors. Admins can configure an allowlist to specify which connectors are permitted to be used within the workspace. By default, all connectors are blocked until they are explicitly allowed through the allowlist.
+
+:::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-connectors.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection." border="false":::
+
+In the preceding diagram:
+
+* Workspace A (outbound access protection enabled) can connect to the SQL server because the SQL connector is allowed in the connector allowlist. However, Workspace A cannot connect to the Cosmos DB because the Cosmos DB connector is not in the allowlist.
 
 ## Supported item types
 
