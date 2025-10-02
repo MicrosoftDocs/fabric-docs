@@ -5,7 +5,7 @@ ms.author: eur
 ms.reviewer: shuaijunye
 author: eric-urban
 ms.topic: how-to
-ms.date: 06/12/2024
+ms.date: 10/01/2025
 ms.search.form: Manage libraries in Environment
 ---
 
@@ -72,7 +72,7 @@ Fabric provides the option to export the full public library list to an ```.yml`
 Custom libraries refer to code built by you or your organization. Fabric supports custom library files in ```.whl```, ```.py```, ```.jar```, and ```.tar.gz``` formats.
 
 > [!NOTE]
-> Fabric supports only .tar.gz files for R language. Use the ```.whl``` and ```.py``` file format for Python language.
+> Fabric supports only ```.tar.gz``` files for R language. Use the ```.whl``` and ```.py``` file format for Python language.
 
 :::image type="content" source="media\environment-lm\env-library-management-custom-library.png" alt-text="Screenshot that shows the environment Custom Libraries screen." lightbox="media\environment-lm\env-library-management-custom-library.png":::
 
