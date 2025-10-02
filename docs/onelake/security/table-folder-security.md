@@ -14,6 +14,8 @@ ms.date: 09/05/2025
 
 Table-level and folder-level security, or object level security (OLS), is a feature of OneLake security (preview) that lets you grant access to specific tables or folders in a data item. Using OLS you create permissions for both structured and unstructured data at the folder level.
 
+[!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
+
 ## Prerequisites
 
 * An item in Fabric with OneLake security turned on. For more information, see [Get started with OneLake security](get-started-onelake-security.md).
