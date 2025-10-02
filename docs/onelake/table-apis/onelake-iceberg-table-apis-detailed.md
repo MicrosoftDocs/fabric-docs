@@ -9,7 +9,7 @@ ms.topic: how-to
 #customer intent: As a OneLake user, I want to learn how to quickly configure my tools and applications to connect to OneLake table APIs using the Apache Iceberg REST Catalog standard, so that I can access, explore, and interact with my Fabric data using familiar open-source clients and libraries.
 ---
 
-# Getting started with OneLake table APIs for Iceberg (Preview)
+# Getting started with OneLake table APIs for Iceberg
 
 OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This endpoint supports read-only metadata operations for Apache Iceberg tables in Fabric. These operations are compatible with [the Iceberg REST Catalog (IRC) API open standard](https://iceberg.apache.org/rest-catalog-spec/).
 
@@ -17,7 +17,7 @@ OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabr
 
 ## Prerequisites
 
-[Learn more about OneLake table APIs for Iceberg](./onelake-iceberg-table-apis.md) and make sure you've reviewed the [prerequisite information](./onelake-table-apis.md#prerequisites). 
+Learn more about [OneLake table APIs for Iceberg](./onelake-iceberg-table-apis.md) and make sure to review the [prerequisite information](./onelake-table-apis.md#prerequisites). 
 
 ## Client quickstart examples
 
@@ -106,9 +106,9 @@ CREATE OR REPLACE EXTERNAL VOLUME IRC_EXVOL
 DESC EXTERNAL VOLUME IRC_EXVOL;
 ```
 
-The response of DESC EXTERNAL VOLUME will return metadata about the external volume, including:
-- AZURE_CONSENT_URL, which is the permissions request page that needs to be followed if it hasn’t yet been done for your tenant.
-- AZURE_MULTI_TENANT_APP_NAME, which is the name of the Snowflake client application that needs access to the data item. Make sure to grant it access to the table(s) in order for Snowflake to be able to read table contents.
+The response of `DESC EXTERNAL VOLUME` will return metadata about the external volume, including:
+- `AZURE_CONSENT_URL`, which is the permissions request page that needs to be followed if it hasn’t yet been done for your tenant.
+- `AZURE_MULTI_TENANT_APP_NAME`, which is the name of the Snowflake client application that needs access to the data item. Make sure to grant it access to the data item in order for Snowflake to be able to read table contents.
 
 ```sql
 -- Create a Snowflake catalog linked database
@@ -189,14 +189,14 @@ display(con.execute("SHOW ALL TABLES").fetchdf())
 
 ## Example requests and responses
 
-These are example requests and responses for the Iceberg REST Catalog (IRC) operations currently supported at the OneLake table API endpoint. For more information about IRC, see [the open standard specification](https://iceberg.apache.org/rest-catalog-spec/).
+These example requests and responses illustrate the use of the Iceberg REST Catalog (IRC) operations currently supported at the OneLake table API endpoint. For more information about IRC, see [the open standard specification](https://iceberg.apache.org/rest-catalog-spec/).
 
 For each of these operations:
 - `<BaseUrl>` is `https://onelake.table.fabric.microsoft.com/iceberg`
 - `<Warehouse>` is `<Workspace>/<DataItem>`, which can be:
     - `<WorkspaceID>/<DataItemID>`, such as `12345678-abcd-4fbd-9e50-3937d8eb1915/98765432-dcba-4209-8ac2-0821c7f8bd91`
     - `<WorkspaceName>/<DataItemName>.<DataItemType>`, such as `MyWorkspace/MyItem.Lakehouse`, as long as both names do not contain special characters.
-- `<Prefix>` is returned by the Get configuration call, but its value is usually the same as `<Warehouse>`.
+- `<Prefix>` is returned by the Get configuration call, and its value is usually the same as `<Warehouse>`.
 - `<Token>` is the access token value returned by Entra ID upon successful authentication.
 
 ### Get configuration

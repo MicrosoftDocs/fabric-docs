@@ -9,7 +9,7 @@ ms.topic: concept-article
 #customer intent: As a OneLake user, I want to learn what the Iceberg table APIs are, what operations they support, and any current limitations or considerations, so that I can understand how to interact with my Fabric data using the Iceberg REST Catalog standard.
 ---
 
-# OneLake table APIs for Iceberg (Preview)
+# OneLake table APIs for Iceberg
 
 OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This article describes how to get started using this endpoint to interact with Apache Iceberg REST Catalog (IRC) APIs available at this endpoint for metadata read operations.
 

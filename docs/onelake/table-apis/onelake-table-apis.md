@@ -9,7 +9,7 @@ ms.topic: overview
 #customer intent: As a OneLake user, I want to learn what the OneLake table APIs are, what prerequisites and authentication steps are required, and which table formats are supported, so that I can prepare to connect and work with my data programmatically in Microsoft Fabric.
 ---
 
-# Overview of OneLake table APIs (Preview)
+# Overview of OneLake table APIs
 
 OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This endpoint can be used with clients and libraries that are compatible with [the Iceberg REST Catalog (IRC) API open standard](https://iceberg.apache.org/rest-catalog-spec/). Soon, this endpoint will support Delta Lake REST API operations.
 
