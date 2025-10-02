@@ -41,57 +41,7 @@ To configure outbound access protection for a workspace, you can enable the sett
 
 For detailed instructions, refer to [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md).
 
-### Add policies to allow/block data connections
 
-You can use the Fabric portal or API to add policies to allow or block data connections with external sources.
-
-### [Fabric portal](#tab/fabric-portal)
-
-1. Sign in to the Fabric as a workspace admin.
-
-1. Go to **Workspace** > **Workspace settings** > **Network security**.
-
-1. Scroll to the **Data connection rules (preview)** section.
-
-   :::image type="content" source="media/workspace-outbound-access-protection-data-factory/data-connection-rules.png" alt-text="Screenshot of data connection rules configuration listing allowed and blocked connection types.":::
-
-1. Add the data connection rules to allow/block different types of sources that the workspace can connect to.
-
-1. You can also use the **Gateway connection policies** settings to allow or block specific gateways.
-
-### [API](#tab/api)
-
-Use the following PUT API to configure WS OAP:
-
-`PUT https://api.fabric.microsoft.com/v1/workspaces/{workspace-id}/networking/communicationPolicy`
-
-Pass the authentication code with Bearer Token (Power BI Access Token).
-
-Add the body with **outbound** set as deny/allow. Make sure you're setting the inbound setting as well to the past choice so that it doesn’t set to default value (allow).
-
-```json
-{
-  "inbound": {
-    "publicAccessRules": {
-      "defaultAction": "Allow"
-    }
-  },
-  "outbound": {
-    "publicAccessRules": {
-      "defaultAction": "Deny"
-    }
-  }
-}
-```
-
-Call the following APIs to view/update the Data Connection rules (Cloud Connections).
-
-**TODO**
-
-Call the following APIs to view/update the Data Connection rules (Gateways).
-
-**TODO**
----
 
 ## Supported Fabric items
 
