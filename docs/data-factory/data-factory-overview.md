@@ -98,7 +98,7 @@ Data Factory in Microsoft Fabric is the next generation of Azure Data Factory, b
 
 [See our comparison guide](compare-fabric-data-factory-and-azure-data-factory.md) for the key differences between these two services, so you can make the right choice for your enterprise.
 
-When you're ready to migrate, follow our [migration guide.](migrate-from-azure-data-factory.md)
+When you're ready to migrate, follow our [migration guide.](migrate-planning-azure-data-factory.md)
 
 ## Related content
 

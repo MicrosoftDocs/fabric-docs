@@ -26,6 +26,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/migrate-from-azure-data-factory.md",
+        "redirect_url": "/fabric/data-factory/migrate-planning-azure-data-factory",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/pipeline-resource-limits.md",
         "redirect_url": "/fabric/data-factory/data-factory-limitations",
         "redirect_document_id": false

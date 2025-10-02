@@ -1,113 +1,79 @@
 ---
-title: Plan your migration from Azure Data Factory
-description: Learn how to plan your migration from Azure Data Factory to Fabric Data Factory.
-ms.reviewer: jburchel
-ms.author: makromer
+title: Migration Planning for Azure Data Factory to Fabric Data Factory
+description: Plan your ADF-to-Fabric migrations with steps to evaulate the correct tools and execute your migration.
+#customer intent: As an Azure Data Factory customer I want to choose the right migration path to Fabric Data Factory, so I can quickly and easily migrate all my items.
 author: kromerm
-ms.topic: conceptual
-ms.date: 08/26/2025
-ms.custom: configuration, ai-assisted
+ms.author: makromer
+ms.reviewer: whhender
+ms.date: 09/22/2025
+ms.topic: concept-article
+ai-usage: ai-assisted
 ---
 
-# Plan your migration from Azure Data Factory
+# Migration planning for Azure Data Factory to Fabric Data Factory
 
-Microsoft Fabric is a data analytics SaaS product that combines Microsoft’s analytics tools into one experience. Fabric Data Factory offers workflow orchestration, data movement, replication, and transformation at scale, similar to Azure Data Factory (ADF). If you’re looking to modernize your ADF investments, this guide will help you understand migration considerations, strategies, and approaches.
+Microsoft Fabric unifies Microsoft’s analytics tools into a single SaaS platform, offering robust capabilities for workflow orchestration, data movement, replication, and transformation at scale. Fabric Data Factory builds on Azure Data Factory (ADF), making it an ideal choice for modernizing data integration solutions.
 
-Migrating from ADF and Synapse pipelines to Fabric Data Factory offers several benefits:
+This guide explores migration strategies, considerations, and approaches to help you transition from Azure Data Factory to Fabric Data Factory.
 
-- Integrated pipeline features like [email](outlook-activity.md) and [Teams activities](teams-activity.md) for message routing during pipeline execution.
-- Built-in CI/CD features ([deployment pipelines](cicd-pipelines.md)) without needing external Git integration.
-- Workspace integration with OneLake for streamlined analytics management.
-- Easy [semantic data model refreshes](semantic-model-refresh-activity.md) with integrated pipeline activities.
+## Why migrate?
 
-Fabric is designed for both self-service and IT-managed enterprise data. It scales to meet the needs of large organizations, offering secure, manageable, and accessible solutions.
+Migrating from ADF and Synapse pipelines to Fabric Data Factory is more than a lift-and-shift: it’s an opportunity to simplify governance, standardize patterns, and use Fabric Data Factory's advanced features to improve your data integration strategy.
 
-With the growth of data volumes and complexity, Fabric empowers data integration developers and solutions with advanced features. Many customers are exploring whether to consolidate their data integration solutions within Fabric. Common questions include:
+Fabric offers many new features, including:
 
-- Does Fabric support all the functionality we rely on?
-- What unique capabilities does Fabric offer?
-- How do we migrate existing pipelines to Fabric?
-- What’s Microsoft’s roadmap for enterprise data ingestion?
+- Integrated pipeline activities like [email](outlook-activity.md) and [Teams](teams-activity.md) for message routing.
+- Built-in CI/CD ([deployment pipelines](cicd-pipelines.md)) without external Git dependencies.
+- Seamless workspace integration with [OneLake](../onelake/onelake-overview.md), [Warehouse](../data-warehouse/data-warehousing.md), and [Lakehouse](../data-engineering/lakehouse-overview.md) for unified analytics.
+- Streamlined [semantic data model refreshes](semantic-model-refresh-activity.md) and scales to meet both self-service and enterprise data needs.
+- Built-in AI capabilities with [Copilot](copilot-fabric-data-factory.md) to assist in pipeline creation and management.
 
-## Platform differences
+For a detailed comparison, see [the Azure Data Factory and Fabric Data Factory comparison guide](compare-fabric-data-factory-and-azure-data-factory.md).
 
-Migrating an entire ADF instance involves understanding key differences between ADF and Fabric Data Factory. This section highlights those differences.
+## Considerations before migrating
 
-For a detailed comparison of features, see [Compare Data Factory in Fabric and Azure Data Factory](compare-fabric-data-factory-and-azure-data-factory.md).
+Migrating from Azure Data Factory (ADF) to Fabric Data Factory involves several key considerations. Here’s what to keep in mind:
 
-This section covers the following key differences:
+- **Complex pipelines and custom connectors**: These may require manual adjustments to work in the new environment.
+- **Integration runtimes**: Legacy runtimes might need refactoring to align with Fabric’s architecture.
+- **Dataflow differences**: ADF Mapping Data Flows use Spark-based transformations, while Fabric Dataflow Gen2 operates differently and may need rework.
+- **Security and networking**: Review managed identity, private endpoints, and gateway configurations. Re-test these settings and update permissions as needed.
+- **Testing and validation**: Ensure migrated pipelines produce accurate outputs, meet SLAs, and comply with requirements. Use robust test harnesses for objective comparisons.
 
-- [Integration runtimes](#integration-runtimes): Fabric uses cloud-based compute by default, while ADF requires configuring integration runtimes. Fabric also supports the [on-premises Data Gateway](how-to-access-on-premises-data.md) for local data access and the [Virtual Network Data Gateway](/data-integration/vnet/overview?toc=%2Ffabric%2Fdata-factory%2Ftoc.json) for secure network connectivity.
-- [Pipelines](#pipelines): Fabric pipelines include additional SaaS-based activities and differ in JSON definitions.
-- [Linked services](#linked-services): Fabric replaces Linked Services with Connections defined within activities.
-- [Datasets](#datasets): Fabric eliminates datasets, defining data properties inline within activities.
-- [Dataflows](#dataflows): Fabric dataflows use Power Query, while ADF data flows rely on a different execution engine and language.
-- [Triggers](#triggers): Fabric integrates triggers into its Activator framework, unlike ADF’s standalone triggers.
-- [Debugging](#debugging): Fabric simplifies debugging by removing the need for a separate debug mode.
-- [Change Data Capture](#change-data-capture): Fabric manages incremental data movement through Copy jobs instead of CDC artifacts.
-- [Azure Synapse Link](#azure-synapse-link): Fabric replaces Synapse Link with mirroring features for data replication.
-- [SQL Server Integration Services (SSIS)](#sql-server-integration-services-ssis): Fabric doesn’t currently support SSIS IRs but allows invoking ADF pipelines for SSIS execution.
-- [Invoke pipeline activity](#invoke-pipeline-activity): Fabric enhances ADF’s Execute pipeline activity with cross-platform invocation.
+To address these challenges, follow these best practices:
 
-### Integration runtimes
+1. Conduct a thorough asset inventory. Identify duplicates, unused items, and dependencies.
+1. Review [connector parity](connector-parity.md) to and [activity parity](activity-parity.md) to identify and map feature gaps early.
+1. Use automated scripts and partner tools for bulk migration.
+1. Maintain detailed documentation and rollback plans.
+1. Engage stakeholders throughout the process.
+1. Run incremental migrations to minimize risk.
+1. Use AI-powered validation scripts to speed up issue resolution.
 
-In ADF, integration runtimes (IRs) are configuration objects that define compute resources for data processing. These include cloud compute, self-hosted IRs (SHIRs) for on-premises connectivity, SSIS IRs for SQL Server Integration Services, and VNet-enabled cloud IRs.
+## Migration paths
 
-:::image type="content" source="media/migrate-planning-azure-data-factory/integration-runtimes.png" alt-text="Screenshot of the Integration runtimes tab in Azure Data Factory.":::
+Migration paths depend on your ADF assets and their feature parity. Options include:
 
-Fabric, as a SaaS product, simplifies this by using cloud-based compute in the region of your Fabric capacities. SSIS IRs aren’t available in Fabric. For on-premises connectivity, use the [on-premises Data Gateway](how-to-access-on-premises-data.md) (OPDG). For secured network connectivity, use the Virtual Network Data Gateway.
+- [Mounting ADF items in Fabric for continuity.](#mounting-an-azure-data-factory-item-in-your-fabric-workspace) - A live view of your existing Azure Data Factory instance within Fabric, enabling gradual migration and testing. This is also a good first step before using conversion tools or replatforming.
+- [Use the powershell conversion tool to migrate pipelines with high parity.](#use-powershell-upgrade-tool) - Automate the migration of pipelines, activities, and parameters at scale. Ideal for standard patterns like Copy, Lookup, and Stored Procedure.
+- Re-platforming to adopt native Fabric patterns.
 
-When migrating, you don’t need to move public network Azure IRs. Recreate SHIRs as OPDGs and VNet-enabled Azure IRs as [Virtual Network Data Gateways](/data-integration/vnet/overview).
+## Mounting an Azure Data Factory item in your Fabric workspace
 
-:::image type="content" source="media/migrate-planning-azure-data-factory/manage-gateways.png" alt-text="Screenshot of the Manage connections and gateways option on the Fabric Admin page.":::
+**Mounting** lets you bring an existing ADF into your Fabric workspace for immediate visibility and governance while you migrate incrementally. It’s ideal for discovery, ownership assignment, and side-by-side testing because teams can see pipelines, organize them under Fabric workspaces, and plan cutovers per domain. Use mounting to catalog what exists, prioritize the highest-value/lowest-risk pipelines first, and establish conventions (naming, folders, connection reuse) that your conversion scripts and partner tools can follow consistently.
 
-### Pipelines
+Mounting in Fabric is achieved via the Azure Data Factory item type: [Bring your Azure Data Factory to Fabric](/fabric/data-factory/migrate-pipelines-azure-data-factory-item).
 
-Pipelines in ADF handle workflows for data movement, transformation, and orchestration. Fabric pipelines are similar but include additional components like native activities for emails, Teams, and semantic model refreshes.
+## Use the PowerShell upgrade tool
 
-The JSON definitions for Fabric pipelines differ slightly from ADF, so you can’t directly copy/paste or import/export pipeline JSON. Rebuild ADF pipelines in Fabric using the same workflow models and skills, but note that Linked Services and Datasets from ADF don’t exist in Fabric.
+Microsoft offers an ADF-to-Fabric migration utility in the Azure PowerShell module. By using the module, you can translate a large subset of ADF JSON (pipelines, activities, parameters) into Fabric-native definitions, giving you a fast starting point. Expect strong coverage for **Copy/Lookup/Stored Procedure** patterns and control flow, with manual follow-up for edge cases (custom connectors, complex expressions, certain data flow constructs). Treat the script output as a **scaffold**: run it in batches, enforce code-style/lint checks, then attach connections and fix any property mismatches. Bake this into a repeatable CI run so you can iterate as you learn, instead of hand-editing every pipeline.
 
-### Linked services
+For full guide, see [PowerShell migration](migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md).
+For a detailed tutorial with examples, see [the PowerShell migration tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
-In ADF, Linked Services define connectivity properties for data stores. In Fabric, recreate these as Connections within activities like Copy and Dataflows.
+## Replatform to Fabric-native patterns
 
-### Datasets
-
-Datasets in ADF define data properties like type, columns, and location. In Fabric, these properties are defined inline within pipeline activities and Connection objects.
-
-### Dataflows
-
-Fabric Data Factory uses _dataflows_ for code-free data transformation, built on Power Query. In ADF, similar functionality is called _data flows_, which use a different interface and execution engine. Recreate ADF _data flows_ as Fabric _dataflows_ when migrating.
-
-### Triggers
-
-Triggers in ADF execute pipelines based on schedules, events, or custom triggers. Fabric uses a similar concept but integrates triggers into its Real-time Intelligence framework, called _Activator_.
-
-Fabric schedules are platform-level entities, not specific to pipelines. Rebuild ADF schedule triggers as Fabric schedules and use Activator for other trigger types.
-
-:::image type="content" source="media/migrate-planning-azure-data-factory/add-trigger.png" alt-text="Screenshot of the Add trigger button in the Fabric pipeline editor.":::
-
-### Debugging
-
-Fabric simplifies debugging by eliminating ADF’s _debug mode_. You’re always in interactive mode. To test pipelines, select the play button in the editor. Use activity states to activate or deactivate specific activities for testing.
-
-> [!VIDEO https://www.youtube.com/embed/bqq8HZM2b1Q?feature=oembed]
-
-### Change Data Capture
-
-ADF’s Change Data Capture (CDC) feature enables incremental data movement. In Fabric, recreate CDC artifacts as _Copy job_ items for similar functionality. See [Copy job](what-is-copy-job.md) for details.
-
-### Azure Synapse Link
-
-Synapse Link, used in Synapse pipelines, replicates data from SQL databases to data lakes. In Fabric, recreate these as Mirroring items. See [mirroring in Fabric](../mirroring/overview.md).
-
-### SQL Server Integration Services (SSIS)
-
-Fabric doesn’t support SSIS IRs. Currently, to execute SSIS packages, use an ADF pipeline and call it from Fabric using the Invoke pipeline activity. See [Invoke pipeline activity](invoke-pipeline-activity.md).
-
-### Invoke pipeline activity
-
-Fabric’s _Invoke pipeline activity_ enhances ADF’s _Execute pipeline activity_. Use it to call ADF pipelines inline from Fabric pipelines, maintaining ADF-specific features like Mapping Data Flows or SSIS.
+Recreate all your pipelines, dataflows, and datasets by hand.
 
 ## Sample migration scenarios
 
@@ -115,7 +81,8 @@ Migrating from ADF to Fabric can involve different strategies depending on your 
 
 - [Scenario 1: ADF pipelines and data flows](#scenario-1-adf-pipelines-and-data-flows)
 - [Scenario 2: ADF with CDC, SSIS, and Airflow](#scenario-2-adf-with-cdc-ssis-and-airflow)
-- [Scenario 3: Git-enabled Data Factory migration](#scenario-3-git-enabled-data-factory-migration)
+- [Scenario 3: PowerShell Migration](#scenario-3-powershell-migration)
+- [Scenario 4: Mount ADF instances in a Fabric workspace](#scenario-4-mount-adf-instances-in-a-fabric-workspace)
 
 ### Scenario 1: ADF pipelines and data flows
 
@@ -132,34 +99,32 @@ Modernize your ETL environment by migrating pipelines and data flows to Fabric. 
   - Hive, Pig, MapReduce, Spark, and Streaming activities can be replaced with the HDInsight activity in Fabric.
 
 As an example, here's ADF dataset configuration page, with its file path and compression settings:
+
 :::image type="content" source="media/migrate-planning-azure-data-factory/azure-data-factory-dataset-configuration.png" alt-text="Screenshot of the ADF dataset configuration page.":::
 
 And here's a Copy activity for Data Factory in Fabric, where compression and file path are inline in the activity:
+
 :::image type="content" source="media/migrate-planning-azure-data-factory/fabric-data-compression-configuration.png" alt-text="Screenshot of the Fabric Copy activity compression configuration.":::
 
 ### Scenario 2: ADF with CDC, SSIS, and Airflow
 
 Recreate CDC as [Copy job](create-copy-job.md) items. For Airflow, copy your DAGs into [Fabric’s Apache Airflow offering](cicd-apache-airflow-jobs.md). Execute SSIS packages using ADF pipelines and call them from Fabric.
 
-### Scenario 3: Git-enabled Data Factory migration
+### Scenario 3: PowerShell Migration
 
-If your ADF or Synapse factories are connected to an external Git provider like Azure DevOps (ADO) or GitHub, you’ll need to migrate these items to a Fabric workspace. This involves setting up Git integration in Fabric and aligning your workflows with Fabric’s CI/CD capabilities. See [Git integration in Fabric](../cicd/git-integration/intro-to-git-integration.md).
+Use the **Microsoft.FabricPipelineUpgrade** PowerShell module to migrate your Azure Data Factory pipelines to Fabric. This approach is ideal for automating the migration of pipelines, activities, and parameters at scale. The PowerShell module translates a large subset of ADF JSON into Fabric-native definitions, providing a fast starting point for migration.
 
-Fabric offers two primary CI/CD options:
+For detailed guidance, see the [PowerShell migration tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
-* **Git integration**: Link your Fabric workspace to an external Git repository, such as ADO or GitHub, for version control and code management.
-* **Built-in deployment pipelines**: Use Fabric’s native pipelines to promote code across environments without needing an external Git repository.
-
-In both cases, your existing Git repo from ADF doesn't work with Fabric. Instead, you need to point to a new repo, or start a new [deployment pipeline](cicd-pipelines.md) in Fabric, and rebuild your pipeline items in Fabric.
-
-## Mount ADF instances in a Fabric workspace
+#### Scenario 4: Mount ADF instances in a Fabric workspace
 
 You can mount an entire ADF factory in a Fabric workspace as a native item. This lets you manage ADF factories alongside Fabric artifacts within the same interface. The ADF UI remains fully accessible, allowing you to monitor, manage, and edit your ADF factory items directly from the Fabric workspace. However, execution of pipelines, activities, and integration runtimes still occurs within your Azure resources.
 
 This feature is particularly useful for organizations transitioning to Fabric, as it provides a unified view of both ADF and Fabric resources, simplifying management and planning for migration.
 
-> [!VIDEO https://www.youtube.com/embed/urQQ67ahkkU?feature=oembed]
+For more information, see [Bring your Azure Data Factory into Fabric](migrate-pipelines-azure-data-factory-item.md).
 
 ## Related content
 
-[Migration considerations from ADF to Data Factory in Fabric](migrate-from-azure-data-factory.md)
+- [Migration best practices](migration-best-practices.md)
+- [Connector comparison between ADF and Fabric Data Factory](connector-parity.md)

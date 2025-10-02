@@ -48,4 +48,4 @@ To get started, you must complete the following prerequisites:
 
 ## Related content
 
-When you're ready to fully migrate your Azure Data Factory to Fabric Data Factory, you can follow the steps in the [Migrate your Azure Data Factory to Fabric Data Factory](migrate-from-azure-data-factory.md) article.
+When you're ready to fully migrate your Azure Data Factory to Fabric Data Factory, you can follow the steps in the [Migrate your Azure Data Factory to Fabric Data Factory](migrate-planning-azure-data-factory.md) article.
