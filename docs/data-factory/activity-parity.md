@@ -4,7 +4,7 @@ description: This documentation provides an overview of the activity continuity 
 author: lrtoyou1223 
 ms.author: lle
 ms.topic: how-to 
-ms.date: 12/18/2024
+ms.date: 10/02/2025
 ms.custom: pipelines
 ---
 
@@ -12,73 +12,50 @@ ms.custom: pipelines
 
 This documentation provides an overview of the activity continuity between Azure Data Factory (ADF) and Data Factory in Fabric. As you plan your data integration and orchestration workflows, it's essential to understand which activities are available on each platform. Data Factory in Fabric aims to offer comprehensive capabilities while maintaining compatibility with ADF.
 
-## Activity parity overview
+## Activity comparison
 
 With Data Factory in Microsoft Fabric, we continue to maintain a high degree of continuity with Azure Data Factory. Approximately 90% of activities accessible in ADF are already available under Data Factory in Fabric. Here's a breakdown of the activities and their availability in both ADF and Data Factory in Fabric:
 
-|Activity|ADF| Data Factory in Fabric|
+|**Activity**|**ADF**|**Data Factory in Fabric**|
 |:---|:---|:---|
+|ADX/KQL|Y|Y|
 |Append Variable|Y|Y|
-|Copy|Y|Y|
+|Azure Batch|Y|Y|
+|Azure Databricks|Notebook activity<br>Jar activity<br>Python activity<br> Job activity |Azure databricks activity|
+|Azure Machine Learning|Y|Y|
+|Azure Machine Learning Batch Execution|Deprecated|N/A|
+|Azure Machine Learning Update Resource|Deprecated|N/A|
+|Copy|Copy data|Copy activity|
+|Dataflow Gen2|N/A|Y|
 |Delete|Y|Y|
-|Execute/Invoke Pipeline|Y|Y|
+|Execute/Invoke Pipeline|Execute pipeline|Invoke pipeline|
+|Fabric Notebooks|N/A|Y|
 |Fail|Y|Y|
 |Filter|Y|Y|
 |For Each|Y|Y|
-|GetMetadata|Y|Y|
-|If|Y|Y|
+|Functions|Azure function|Function activity|
+|Get Metadata|Y|Y|
+|HDInsight|Hive activity<br>Pig activity<br>MapReduce activity<br>Spark activity<br>Streaming activity|HDInsight activity|
+|If condition|Y|Y|
 |Lookup|Y|Y|
+|Mapping Data Flow|Y|Dataflow Gen2|
+|Office 365 Outlook|N/A|Y|
+|Power Query (ADF only - Wrangling Dataflow)|Deprecated|N/A|
 |Script|Y|Y|
+|Semantic model refresh|N/A|Y|
 |Set Variable|Y|Y|
 |Sproc|Y|Y|
+|SSIS|Y|N|
+|Stored procedure|Y|Y|
 |Switch|Y|Y|
+|Synapse Notebook and SJD activities|Y|N/A|
+|Teams|N/A|Y|
 |Until|Y|Y|
+|Validation|Y|N|
 |Wait|Y|Y|
 |Web|Y|Y|
 |Webhook|Y|Y|
-|Synapse Notebook|Y|Y|
-|Azure Function/Functions|Y|Y|
-|ADX/KQL|Y|Y|
-|Azure Machine Learning|Y|Y|
-|Azure Batch|Y|Y|
-|Azure Databricks (3 activities in ADF)|Y|Y|
-|Validation|Y|N|
-|HDInsight (5 activities in ADF)|Y|N|
-|SSIS|Y|N|
-|Mapping Dataflow|Y|N|
-|Dataflow Gen2|N/A|Y|
-|Office 365 Outlook|N/A|Y|
-|Teams|N/A|Y|
-|Semantic model refresh|N/A|Y|
-|Azure Machine Learning Batch Execution|Deprecated|N/A|
-|Azure Machine Learning Update Resource|Deprecated|N/A|
-|Power Query (ADF only - Wrangling Dataflow)|Deprecated|N/A|
-|USQL|Deprecated|N/A|
-
-## Activity name comparison
-
-| **ADF Activity** | **Fabric Activity** |
-|------------------|--------------------|
-| Copy Data | Copy Activity |
-| Mapping Data Flow | Dataflow Gen2 |
-| Wrangling Data Flow | Dataflow Gen2 |
-| Execute Pipeline | Invoke Pipeline |
-| Stored Procedure | Stored Procedure |
-| Lookup | Lookup |
-| ForEach | ForEach |
-| If Condition | If Condition |
-| Until | Until |
-| Web | Web |
-| Azure Function | Function Activity |
-| Azure Databricks Notebook / Jar / Python / Jobs Activities | Azure Databricks combined activity |
-| Synapse Notebook and SJD activities | NA |
-| NA | Fabric Notebooks |
-| Get Metadata | Get Metadata |
-| Delete | Delete |
-| Wait | Wait |
-| Script | Script |
-| HDInsight individual activities (Hive, Pig, MapReduce, Spark, Streaming) | HDInsight single activity |
-
+|Wrangling Data Flow|Y|Dataflow Gen2|
 
 ## New activities in Fabric Data Factory
 
