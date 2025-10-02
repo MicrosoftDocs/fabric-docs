@@ -4,7 +4,7 @@ description: "Quickstart and client configuration for using the OneLake REST API
 ms.reviewer: mahi
 ms.author: mahi
 author: matt1883
-ms.date: 2025-10-01
+ms.date: 10/01/2025
 ms.topic: how-to
 #customer intent: As a OneLake user, I want to learn how to quickly configure my tools and applications to connect to OneLake table APIs using the Apache Iceberg REST Catalog standard, so that I can access, explore, and interact with my Fabric data using familiar open-source clients and libraries.
 ---
@@ -13,7 +13,7 @@ ms.topic: how-to
 
 OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This endpoint supports read-only metadata operations for Apache Iceberg tables in Fabric. These operations are compatible with [the Iceberg REST Catalog (IRC) API open standard](https://iceberg.apache.org/rest-catalog-spec/).
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ Review these samples to learn how to set up existing Iceberg REST Catalog (IRC) 
 
 Use the following sample Python code to configure [PyIceberg](https://py.iceberg.apache.org/) to use the OneLake table API endpoint. Then, list schemas and tables within a data item.
 
-This code assumes there is a default AzureCredential available for a currently signed-in user. Alternatively, you can use the [MSAL Python library](https://learn.microsoft.com/en-us/entra/msal/python/) to obtain a token.
+This code assumes there is a default AzureCredential available for a currently signed-in user. Alternatively, you can use the [MSAL Python library](../../entra/msal/python/) to obtain a token.
 
 ```python
 from pyiceberg.catalog import load_catalog
@@ -128,7 +128,7 @@ SELECT * FROM IRC_CATALOG_LINKED."dbo"."sentiment";
 
 Use the following sample Python code to configure [DuckDB](https://duckdb.org/docs/stable/clients/python/overview.html) to list schemas and tables within a data item.
 
-This code assumes there is a default `AzureCredential` available for a currently signed-in user. Alternatively, you can use the [MSAL Python library](https://learn.microsoft.com/en-us/entra/msal/python/) to obtain a token.
+This code assumes there is a default `AzureCredential` available for a currently signed-in user. Alternatively, you can use the [MSAL Python library](../../entra/msal/python/) to obtain a token.
 
 ```python
 import duckdb

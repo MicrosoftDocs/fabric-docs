@@ -1,8 +1,10 @@
 ---
 title: "OneLake table APIs for Iceberg"
 description: "Overview of the OneLake REST API endpoint for Apache Iceberg REST Catalog (IRC) APIs in Microsoft Fabric."
-ms.date: 2025-10-01
-ms.service: fabric
+ms.reviewer: mahi
+ms.author: mahi
+author: matt1883
+ms.date: 10/01/2025
 ms.topic: concept-article
 #customer intent: As a OneLake user, I want to learn what the Iceberg table APIs are, what operations they support, and any current limitations or considerations, so that I can understand how to interact with my Fabric data using the Iceberg REST Catalog standard.
 ---
@@ -15,17 +17,21 @@ For overall OneLake table API guidance and prerequisite guidance, see the [OneLa
 
 For detailed API documentation, see the [Getting started guide](./onelake-iceberg-table-apis-detailed.md#client-quickstart-examples). 
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Iceberg table API endpoint
 
 The OneLake table API endpoint is:
 
-    https://onelake.table.fabric.microsoft.com
+```
+https://onelake.table.fabric.microsoft.com
+```
 
 At the OneLake table API endpoint, the Iceberg REST Catalog (IRC) APIs are available under the following `<BaseUrl>`. You can generally provide this path when initializing existing IRC clients or libraries.
 
-    https://onelake.table.fabric.microsoft.com/iceberg
+```
+https://onelake.table.fabric.microsoft.com/iceberg
+```
 
 Examples of IRC client configuration with the OneLake table endpoint are covered in the [Getting started guide](./onelake-iceberg-table-apis-detailed.md#client-quickstart-examples).
 
@@ -34,7 +40,7 @@ Examples of IRC client configuration with the OneLake table endpoint are covered
 
 ## Iceberg table API operations
 
-The following IRC operations are currently supported at this endpoint. Detailed guidance for these operations is available in the [Getting started guide](./onelake-iceberg-apis.md).
+The following IRC operations are currently supported at this endpoint. Detailed guidance for these operations is available in the [Getting started guide](./onelake-iceberg-table-apis-detailed.md#example-requests-and-responses).
 
 - **Get configuration**
     
