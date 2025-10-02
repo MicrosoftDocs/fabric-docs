@@ -11,13 +11,13 @@ ms.topic: overview
 
 # Overview of OneLake table APIs (Preview)
 
-OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This endpoint can be used with clients and libraries that are compatible with [the Iceberg REST Catalog (IRC) API open standard](https://iceberg.apache.org/rest-catalog-spec/). Soon, this endpoint will also support Delta Lake REST API operations.
+OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This endpoint can be used with clients and libraries that are compatible with [the Iceberg REST Catalog (IRC) API open standard](https://iceberg.apache.org/rest-catalog-spec/). Soon, this endpoint will support Delta Lake REST API operations.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
-Using these APIs is straightforward once you’ve identified a few pieces of information and decided how you will authenticate with Microsoft Entra ID.
+Using these APIs is straightforward once you identify a few pieces of information and select your preferred Microsoft Entra ID authentication flow.
 
 ### Gathering basic information
 
@@ -25,11 +25,11 @@ To use these APIs, you first need to gather the following pieces of information:
 
 - Your Fabric tenant ID.
     
-    This is a GUID, and it can be found in the **Profile** card or the ****Help**, **About Fabric** menu in Fabric.
+    The tenant ID is a GUID, and it can be found in the **Profile** card or the ****Help**, **About Fabric** menu in Fabric.
 
 - The workspace and data item ID of the data item (such as a lakehouse) with a top-level Tables directory.
 
-    These IDs are GUIDs, and they can be found within the OneLake URL for any table in OneLake, or within the URL seen in your browser when you have a data item open in Fabric.
+    These IDs are GUIDs. They can be found within the OneLake URL of any table in OneLake. They can alternatively be found within the URL seen in your browser when you have a data item open in Fabric.
 
 - The user or service principal identity in Entra ID that has permissions to read tables in your chosen data item.
 
@@ -41,21 +41,23 @@ To use these APIs, you first need to gather the following pieces of information:
 
 1. If you are developing a new application that will either allow users to sign in or sign in as a standalone application, [register your application with Entra ID](https://learn.microsoft.com/entra/identity-platform/quickstart-register-app).
 
-1. To the application that will be used with Entra ID, [grant API permission](https://learn.microsoft.com/entra/identity-platform/howto-update-permissions?pivots=portal#option-1-add-permissions-in-the-api-permissions-pane) for the Azure Storage (`https://storage.azure.com/`) token audience. This will make sure that the application can obtain tokens that can be used with the OneLake table endpoint.
+1. [Grant API permission](https://learn.microsoft.com/entra/identity-platform/howto-update-permissions?pivots=portal#option-1-add-permissions-in-the-api-permissions-pane) for the Azure Storage (`https://storage.azure.com/`) token audience, to your Entra ID application. Granting this permission ensures that your application can obtain tokens for use with the OneLake table endpoint.
 
     > [!NOTE]
-    > The OneLake table API endpoint accepts the same token audience as the OneLake filesystem endpoints. If you are developing an application and already know how to authenticate with Entra ID to interact with OneLake filesystem REST APIs, you can use the same approach with the new OneLake table endpoint.
+    > The OneLake table API endpoint accepts the same token audience as the OneLake filesystem endpoints.
+    > 
+    > If you are developing an application, you might already know how to authenticate with Entra ID to interact with OneLake filesystem REST APIs. If so, you can use the same approach to authenticate with the new OneLake table endpoint.
 
 ## Iceberg REST Catalog (IRC) API operations on OneLake
 
-Learn [how to get started with the OneLake table API endpoint to interact with Iceberg tables in OneLake](./onelake-iceberg-table-apis.md). Initially, read-only metadata table operations are supported, and more operations will be added soon.
+Learn [how to get started with the OneLake table API endpoint to interact with Iceberg tables in OneLake](./onelake-iceberg-table-apis.md). Initially, read-only metadata table operations are supported, and we plan to add more operations soon.
 
 > [!NOTE]
-> Before using the Iceberg APIs, be sure you have Delta Lake to Iceberg metadata conversion enabled for your tenant or workspace. Review the[instructions to learn how to enable this](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
+> Before using the Iceberg APIs, be sure you have Delta Lake to Iceberg metadata conversion enabled for your tenant or workspace. Review the[instructions to learn how to enable automatic Delta Lake to Iceberg table format conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
 
 ## Delta Lake REST API operations on OneLake
 
-Coming soon, the OneLake table endpoint will offer support for Delta Lake REST API operations, similar to the open-source Unity Catalog standard. Stay tuned!
+Soon, the OneLake table API endpoint will offer support for Delta Lake REST API operations, similar to the open-source Unity Catalog standard. Stay tuned!
 
 ## Related content
 
