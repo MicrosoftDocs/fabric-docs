@@ -97,6 +97,8 @@
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
       href: compare-fabric-data-factory-and-azure-data-factory.md
+    - name: Connector Continuity
+      href: connector-parity.md
     - name: Migration best practices
       href: migration-best-practices.md
     - name: Pipelines
@@ -117,10 +119,6 @@
           href: migrate-pipelines-how-to-add-connections-to-resolutions-file.md
         - name: Find your Fabric workspace ID
           href: migrate-pipelines-how-to-find-your-fabric-workspace-id.md
-      - name: Activity Continuity
-        href: activity-parity.md
-      - name: Connector Continuity
-        href: connector-parity.md
       - name: Fabric dataflows for mapping data flow users
         href: guide-to-dataflows-for-mapping-data-flow-users.md
       - name: How to ingest data from Azure Data Factory to Fabric

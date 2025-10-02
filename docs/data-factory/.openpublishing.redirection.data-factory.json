@@ -156,6 +156,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/activity-parity.md",
+        "redirect_url": "/fabric/data-factory/compare-fabric-data-factory-and-azure-data-factory#activity-comparison",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/known-issue-inprogress-refresh-history.md",
         "redirect_url": "/fabric/get-started/known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables",
         "redirect_document_id": false

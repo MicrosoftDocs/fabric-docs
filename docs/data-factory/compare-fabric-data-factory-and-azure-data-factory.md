@@ -31,7 +31,7 @@ Here's how the core features stack up between Azure Data Factory and Fabric Data
 |:---|:---|:---|
 |Pipeline |Pipeline | **Better integration**: Pipelines in Fabric work seamlessly with Lakehouse, Data Warehouse, and other Fabric services right out of the box. Fabric pipelines include more SaaS-based activities and differ in JSON definitions. |
 |Mapping data flow  |Dataflow Gen2 | **Easier to use**: Dataflow Gen2 gives you a simpler experience for building transformations. We're adding more mapping dataflow features to Gen2 all the time. |
-|Activities |Activities|**More activities coming**: We're working to bring all your favorite ADF activities to Fabric. Plus, you get new ones like the Office 365 Outlook activity that aren't available in ADF. See our [Activity overview](activity-overview.md) for details.|
+|Activities |Activities|**More activities coming**: We're working to bring all your favorite ADF activities to Fabric. Plus, you get new ones like the Office 365 Outlook activity that aren't available in ADF. See our [activity comparison](compare-fabric-data-factory-and-azure-data-factory.md#activity-comparison) for details. |
 |Dataset |Connections only|**Simpler approach**: No more complex dataset configurations. For Data Factory in Fabric you use connections to link to your data sources and start working. Fabric eliminates datasets, defining data properties inline within activities. |
 |Linked Service |Connections |**More intuitive**: Connections work like linked services but are easier to set up and manage. |
 |Triggers |Schedule and file event triggers |**Built-in scheduling**: Use Fabric's scheduler and Reflex events to automatically run your pipelines. File event triggers work natively in Fabric without extra setup. Fabric integrates triggers into its Activator framework, unlike ADF’s standalone triggers. |
@@ -67,6 +67,60 @@ Here's how the core features stack up between Azure Data Factory and Fabric Data
 | Pricing | Azure utilization-based Pay-as-you-go (per activity run, data movement, and compute) | Capacity-based (Fabric F SKU) with no charges for external or pipeline activities, only activity runs and pipeline data movement |
 
 ## Activity comparison
+
+With Data Factory in Microsoft Fabric, we continue to maintain a high degree of continuity with Azure Data Factory. Approximately 90% of activities accessible in ADF are already available under Data Factory in Fabric. Here's a breakdown of the activities and their availability in both ADF and Data Factory in Fabric:
+
+|**Activity**|**ADF**|**Data Factory in Fabric**|
+|:---|:---|:---|
+|ADX/KQL|Y|Y|
+|Append Variable|Y|Y|
+|Azure Batch|Y|Y|
+|Azure Databricks|Notebook activity<br>Jar activity<br>Python activity<br> Job activity |Azure databricks activity|
+|Azure Machine Learning|Y|Y|
+|Azure Machine Learning Batch Execution|Deprecated|N/A|
+|Azure Machine Learning Update Resource|Deprecated|N/A|
+|Copy|Copy data|Copy activity|
+|Dataflow Gen2|N/A|Y|
+|Delete|Y|Y|
+|Execute/Invoke Pipeline|Execute pipeline|Invoke pipeline|
+|Fabric Notebooks|N/A|Y|
+|Fail|Y|Y|
+|Filter|Y|Y|
+|For Each|Y|Y|
+|Functions|Azure function|Function activity|
+|Get Metadata|Y|Y|
+|HDInsight|Hive activity<br>Pig activity<br>MapReduce activity<br>Spark activity<br>Streaming activity|HDInsight activity|
+|If condition|Y|Y|
+|Lookup|Y|Y|
+|Mapping Data Flow|Y|Dataflow Gen2|
+|Office 365 Outlook|N/A|Y|
+|Power Query (ADF only - Wrangling Dataflow)|Deprecated|N/A|
+|Script|Y|Y|
+|Semantic model refresh|N/A|Y|
+|Set Variable|Y|Y|
+|Sproc|Y|Y|
+|SSIS|Y|N|
+|Stored procedure|Y|Y|
+|Switch|Y|Y|
+|Synapse Notebook and SJD activities|Y|N/A|
+|Teams|N/A|Y|
+|Until|Y|Y|
+|Validation|Y|N|
+|Wait|Y|Y|
+|Web|Y|Y|
+|Webhook|Y|Y|
+|Wrangling Data Flow|Y|Dataflow Gen2|
+
+### New activities in Fabric Data Factory
+
+In addition to maintaining activity continuity, Data Factory in Fabric introduces some new activities to meet your richer orchestration needs. These new activities are:
+
+1. **Outlook**: Available in Fabric Data Factory to facilitate integration with Outlook services.
+1. **Teams**: Available in Fabric Data Factory to enable orchestration of Microsoft Teams activities.
+1. **Semantic model refresh**: Available in Fabric Data Factory to enhance Power BI semantic model refresh capabilities.
+1. **Dataflow Gen2**: Available in Fabric Data Factory to empower data orchestration with advanced dataflow capabilities.
+
+For a list of all available Fabric Data Factory activities, see the [Activity overview](activity-overview.md).
 
 ## Connector comparison
 
