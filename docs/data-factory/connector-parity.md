@@ -36,18 +36,18 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
 |                    |                     |                        |                        |                        | Organizational account  |                          |
-| [Azure AI Search index](connector-azure-ai-search-index-overview.md) | -/✓              | Basic                 |                        | -/✓                   | Service admin key       |                          |
-| [Azure Cosmos DB for NoSQL](connector-azure-cosmos-db-for-nosql-overview.md) | ✓/✓         | Key                   |                        | ✓/✓                   | Account key             |                          |
+| Azure AI Search index | -/✓              | Basic                 |                        | -/✓                   | Service admin key       |                          |
+| [Azure Cosmos DB for NoSQL](connector-azure-cosmosdb-for-nosql-overview.md) | ✓/✓         | Key                   |                        | ✓/✓                   | Account key             |                          |
 |                    |                     | Service principal     |                        |                        |                          |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
 |                    |                     |                        |                        |                        | Organizational account  |                          |
-| [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-overview.md) | ✓/✓         | Basic                 |                        | ✓/✓                   | Basic                   |                          |
+| [Azure Cosmos DB for MongoDB](connector-azure-cosmosdb-for-mongodb-overview.md) | ✓/✓         | Basic                 |                        | ✓/✓                   | Basic                   |                          |
 | [Azure Data Explorer](connector-azure-data-explorer-overview.md) | ✓/✓                | Service principal     |                        | ✓/✓                   |                          |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
 |                    |                     |                        |                        |                        | Organizational account  |                          |
-| [ADLS Gen2](connector-adls-gen2-overview.md) | ✓/✓                | Account key           | Delete activity        | ✓/✓                   | Account key             | Delete activity         |
+| [ADLS Gen2](connector-azure-data-lake-storage-gen2-overview.md) | ✓/✓                | Account key           | Delete activity        | ✓/✓                   | Account key             | Delete activity         |
 |                    |                     | Service principal     | Lookup activity        |                        | Service principal       | Lookup activity         |
 |                    |                     | Shared Access Signature (SAS) | Get Metadata activity |                        | Shared Access Signature (SAS) | Get Metadata activity |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
@@ -57,7 +57,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | [Azure Databricks Delta Lake](connector-azure-databricks-delta-lake-overview.md) | ✓/✓         | Access token          |                        | ✓/✓                   | Personal Access Token   |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        |                          |                          |
-| [Azure File Storage](connector-azure-file-storage-overview.md) | ✓/✓                | Account key           |                        | ✓/✓                   | Account key             |                          |
+| [Azure File Storage](connector-azure-files-overview.md) | ✓/✓                | Account key           |                        | ✓/✓                   | Account key             |                          |
 |                    |                     | Shared access signature |                        |                        |                          |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        |                          |                          |
@@ -105,76 +105,76 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 ## Database connectors
 
-| **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **Fabric Source/Sink** | **Fabric Authentication** | **Fabric Other Settings** |
-|--------------------|---------------------|------------------------|------------------------|--------------------------|--------------------------|
-| Amazon Redshift    | ✓/-                | Basic                 | ✓/-                   | Amazon Redshift         |                          |
-| DB2                 | ✓/-                | Basic                 | ✓/-                   | Basic                   |                          |
-| Google Big Query   | ✓/-                | UserAuthentication    | ✓/-                   |                          |                          |
-|                    |                     | ServiceAuthentication |                        | Service Account Login   |                          |
-|                    |                     |                        |                        |                          |                          |
-| Greenplum          | ✓/-                | Basic                 | ✓/-                   | Basic                   |                          |
-| Hive               | ✓/-                | Anonymous             | N                      |                          |                          |
-|                    |                     | UsernameAndPassword   |                        |                          |                          |
-|                    |                     | WindowsAzureHDInsightService |                        |                          |                          |
-| Impala             | ✓/-                | Anonymous             | ✓/-                   |                          |                          |
-|                    |                     | UsernameAndPassword   |                        |                          |                          |
-| Informix           | ✓/✓                | Anonymous             | ✓/✓                   | Anonymous               |                          |
-|                    |                     | Basic                 |                        | Basic                   |                          |
-| MariaDB            | ✓/-                | Basic                 | ✓/-                   | Basic                   |                          |
-| Microsoft Access   | ✓/✓                | Anonymous             | ✓/✓                   | Anonymous               |                          |
-|                    |                     | Basic                 |                        | Basic                   |                          |
-| MySQL              | ✓/-                | Basic                 | ✓/-                   | Basic                   |                          |
-| Netezza            | ✓/-                | Basic                 | N                      |                          |                          |
-| Oracle             | ✓/✓                | Basic                 | ✓/✓                   | Basic                   |                          |
-| Amazon RDS for Oracle | ✓/-                | Basic                 | ✓/−                   | Basic                   |                          |
-| PostgreSQL         | ✓/-                | Basic                 | ✓/-                   | Basic                   |                          |
-| Presto             | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |                          |
-|                    |                     | LDAP                  |                        | LDAP                    |                          |
-| SAP BW Open Hub    | ✓/-                | Basic                 | ✓/-                   | Basic                   |                          |
-| SAP BW MDX         | ✓/-                | Basic                 | N                      |                          |                          |
-| SAP HANA           | ✓/✓                | Basic                 | ✓/-                   | Basic                   |                          |
-|                    |                     | Windows                |                        | Windows                 |                          |
-| SAP Table          | ✓/-                | Basic                 | ✓/−                   | Basic                   |                          |
-|                    |                     | Secure Network Communications (SNC) |                        |                          |                          |
-| Snowflake          | ✓/✓                | Basic                 | ✓/✓                   |                          |                          |
-|                    |                     | KeyPair               |                        |                          |                          |
-|                    |                     |                        |                        |                        | Snowflake               |                          |
-|                    |                     |                        |                        |                        | Microsoft Account       |                          |
-|                    |                     |                        |                        |                        | Organizational account  |                          |
-| Amazon RDS for SQL Server | ✓/-                | SQL                   | ✓/-                   | Basic                   |                          |
-|                    |                     | Windows                |                        |                          |                          |
-|                    |                     |                        |                        |                        |                          |                          |
-| SQL Server         | ✓/✓                | SQL                   | ✓/✓                   | Basic                   |                          |
-|                    |                     | Windows                |                        | Windows (Only for on-premises gateway) |                          |
-|                    |                     |                        |                        |                        | Organizational account  |                          |
-|                    |                     |                        |                        |                        | Service principal       |                          |
-| Spark              | ✓/-                | Anonymous             | N                      |                          |                          |
-|                    |                     | UsernameAndPassword   |                        |                          |                          |
-|                    |                     | WindowsAzureHDInsightService |                        |                          |                          |
-| Sybase             | ✓/-                | Basic                 | N                      |                          |                          |
-|                    |                     | Windows                |                        |                          |                          |
-| Teradata           | ✓/-                | Basic                 | ✓/✓                   | Basic                   |                          |
-|                    |                     | Windows                |                        | Windows                 |                          |
-|                    |                     | LDAP                  |                        |                          |                          |
-| Vertica            | ✓/-                | Basic                 | ✓/−                   | Basic                   |                          |
+| **Connector Type**        | **ADF Source/Sink** | **ADF Authentication**              | **Fabric Source/Sink** | **Fabric Authentication**              | **Fabric Other Settings** |
+|---------------------------|---------------------|-------------------------------------|------------------------|----------------------------------------|---------------------------|
+| Amazon Redshift           | ✓/-                | Basic                               | ✓/-                   | Amazon Redshift                        |                           |
+| DB2                       | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
+| Google Big Query          | ✓/-                | UserAuthentication                  | ✓/-                   |                                        |                           |
+|                           |                     | ServiceAuthentication               |                        | Service Account Login                  |                           |
+|                           |                     |                                     |                        |                                        |                           |
+| Greenplum                 | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
+| Hive                      | ✓/-                | Anonymous                           | N                      |                                        |                           |
+|                           |                     | UsernameAndPassword                 |                        |                                        |                           |
+|                           |                     | WindowsAzureHDInsightService        |                        |                                        |                           |
+| Impala                    | ✓/-                | Anonymous                           | ✓/-                   |                                        |                           |
+|                           |                     | UsernameAndPassword                 |                        |                                        |                           |
+| Informix                  | ✓/✓                | Anonymous                           | ✓/✓                   | Anonymous                              |                           |
+|                           |                     | Basic                               |                        | Basic                                  |                           |
+| MariaDB                   | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
+| Microsoft Access          | ✓/✓                | Anonymous                           | ✓/✓                   | Anonymous                              |                           |
+|                           |                     | Basic                               |                        | Basic                                  |                           |
+| MySQL                     | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
+| Netezza                   | ✓/-                | Basic                               | N                      |                                        |                           |
+| Oracle                    | ✓/✓                | Basic                               | ✓/✓                   | Basic                                  |                           |
+| Amazon RDS for Oracle     | ✓/-                | Basic                               | ✓/−                   | Basic                                  |                           |
+| PostgreSQL                | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
+| Presto                    | ✓/-                | Anonymous                           | ✓/-                   | Anonymous                              |                           |
+|                           |                     | LDAP                                |                        | LDAP                                   |                           |
+| SAP BW Open Hub           | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
+| SAP BW MDX                | ✓/-                | Basic                               | N                      |                                        |                           |
+| SAP HANA                  | ✓/✓                | Basic                               | ✓/-                   | Basic                                  |                           |
+|                           |                     | Windows                             |                        | Windows                                |                           |
+| SAP Table                 | ✓/-                | Basic                               | ✓/−                   | Basic                                  |                           |
+|                           |                     | Secure Network Communications (SNC) |                        |                                        |                           |
+| Snowflake                 | ✓/✓                | Basic                               | ✓/✓                   |                                        |                           |
+|                           |                     | KeyPair                             |                        |                                        |                           |
+|                           |                     |                                     |                        |                                        | Snowflake                 |
+|                           |                     |                                     |                        |                                        | Microsoft Account         |
+|                           |                     |                                     |                        |                                        | Organizational account    |
+| Amazon RDS for SQL Server | ✓/-                | SQL                                 | ✓/-                   | Basic                                  |                           |
+|                           |                     | Windows                             |                        |                                        |                           |
+|                           |                     |                                     |                        |                                        |                           |
+| SQL Server                | ✓/✓                | SQL                                 | ✓/✓                   | Basic                                  |                           |
+|                           |                     | Windows                             |                        | Windows (Only for on-premises gateway) |                           |
+|                           |                     |                                     |                        |                                        | Organizational account    |
+|                           |                     |                                     |                        |                                        | Service principal         |
+| Spark                     | ✓/-                | Anonymous                           | N                      |                                        |                           |
+|                           |                     | UsernameAndPassword                 |                        |                                        |                           |
+|                           |                     | WindowsAzureHDInsightService        |                        |                                        |                           |
+| Sybase                    | ✓/-                | Basic                               | N                      |                                        |                           |
+|                           |                     | Windows                             |                        |                                        |                           |
+| Teradata                  | ✓/-                | Basic                               | ✓/✓                   | Basic                                  |                           |
+|                           |                     | Windows                             |                        | Windows                                |                           |
+|                           |                     | LDAP                                |                        |                                        |                           |
+| Vertica                   | ✓/-                | Basic                               | ✓/−                   | Basic                                  |                           |
 
 ## File connectors
 
-| **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **Fabric Source/Sink** | **Fabric Authentication** |
-|--|--|--|--|--|
-| Amazon S3 | ✓/- | Access key |  | ✓/✓ | Access Key |
-|  |  | Temporary security credential  |  |
-| Amazon S3 Compatible | ✓/- | Access key | ✓/✓ | Access Key |
-| File System | ✓/✓ | Windows | ✓/✓ | Windows |
-| FTP | ✓/- | Basic | ✓/- | Basic |
-|  |  | Anonymous |  | Anonymous |
-| Google Cloud Storage | ✓/- | Access key | ✓/✓ | Basic |
-| HDFS | ✓/- | Windows | ✓/- |  |
-|  |  | Anonymous |  | Anonymous |
-| Oracle Cloud Storage | ✓/- | Access key | ✓/- | Access Key |
-| SFTP | ✓/✓ | Basic | ✓/✓ | Basic |
-|  |  | SSH public key |  |  |
-|  |  | multifactor |  |  |
+| **Connector Type**   | **ADF Source/Sink** | **ADF Authentication**        | **Fabric Source/Sink** | **Fabric Authentication** |
+|----------------------|---------------------|-------------------------------|------------------------|---------------------------|
+| Amazon S3            | ✓/-                | Access key                    |✓/✓                      | Access Key |
+|                      |                     | Temporary security credential |                        |
+| Amazon S3 Compatible | ✓/-                | Access key                    | ✓/✓                   | Access Key                |
+| File System          | ✓/✓                | Windows                       | ✓/✓                   | Windows                   |
+| FTP                  | ✓/-                | Basic                         | ✓/-                   | Basic                     |
+|                      |                     | Anonymous                     |                        | Anonymous                 |
+| Google Cloud Storage | ✓/-                | Access key                    | ✓/✓                   | Basic                     |
+| HDFS                 | ✓/-                | Windows                       | ✓/-                   |                           |
+|                      |                     | Anonymous                     |                        | Anonymous                 |
+| Oracle Cloud Storage | ✓/-                | Access key                    | ✓/-                   | Access Key                |
+| SFTP                 | ✓/✓                | Basic                         | ✓/✓                   | Basic                     |
+|                      |                     | SSH public key                |                        |                           |
+|                      |                     | multifactor                   |                        |                           |
 
 ## File format connectors
 
