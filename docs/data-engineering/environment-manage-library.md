@@ -13,15 +13,18 @@ ms.search.form: Manage libraries in Environment
 
 Microsoft Fabric environments provide flexible configurations for running your Spark jobs. Libraries provide reusable code that developers want to include in their work. Except for the built-in libraries that come with each Spark runtime, you can install public and custom libraries in your Fabric environments. You can easily attach environments to your notebooks and Spark job definitions.
 
+> [!NOTE]
+> Navigate to the workspace where your environment is located, select your environment and library management options are located under the **Libraries** tab. If you don't have an environment created, see [Create, configure, and use an environment in Fabric](create-and-use-environment.md).
+
 ## Built-in libraries
 
-In Fabric, each runtime version comes preloaded with a curated set of built-in libraries that are optimized for performance, compatibility, and security across Python, R, Java, and Scala. The Built-in Libraries section within the environment allows you to browse and search these pre-installed libraries based on the selected runtime.
+In Fabric, each runtime version comes preloaded with a curated set of built-in libraries that are optimized for performance, compatibility, and security across Python, R, Java, and Scala. The Built-in Libraries section within the environment allows you to browse and search these preinstalled libraries based on the selected runtime.
 
 To view the list of preinstalled packages and their versions for each runtime, see [Apache Spark runtimes in Fabric](runtime.md).
 
 > [!IMPORTANT]
 > Fabric supports different ways of managing packages. For more options and **best practices** for managing libraries in Fabric, see [Manage Apache Spark libraries in Fabric](library-management.md)
-> When your workspace has networking features such as **Workspace outbound access protection** or **Managed VNets**, the access of public repositories like PyPI will be blocked. Follow the instruction in [Manage libraries with limited network access in Fabric](environment-manage-library-with-outbound-access-protection.md) to seamlessly managing the libraries in Environment.
+> When your workspace has networking features such as **Workspace outbound access protection** or **Managed VNets**, the access of public repositories like PyPI are blocked. Follow the instruction in [Manage libraries with limited network access in Fabric](environment-manage-library-with-outbound-access-protection.md) to seamlessly managing the libraries in Environment.
 
 ## Public libraries
 
@@ -31,7 +34,7 @@ Public libraries are sourced from repositories such as PyPI and Conda, which Fab
 
 ### Add a new public library
 
-To add a new public library, select a source and specify the name and version of the library. You can also upload a Conda environment specification .yml file to specify the public libraries. The content of the uploaded .yml file is extracted and appended to the list.
+To add a new public library, select a source and specify the name and version of the library. You can also upload a Conda environment specification ```.yml``` file to specify the public libraries. The content of the uploaded ```.yml``` file is extracted and appended to the list.
 
 The autocomplete feature for library names when you add them is limited to the most popular libraries. If the library you want to install isn't on the list, you don't receive an autocomplete prompt.
 
@@ -39,10 +42,10 @@ Instead, search for the library directly in PyPI or Conda by entering its full n
 
 ### Add public libraries in a batch
 
-Environments support uploading a .yml file to manage multiple public libraries in a batch. The contents of the .yml file are extracted and appended in the public library list.
+Environments support uploading an ```.yml``` file to manage multiple public libraries in a batch. The contents of the ```.yml``` file are extracted and appended in the public library list.
 
 > [!NOTE]
-> The custom Conda channels in .yml files currently aren't supported. Only the libraries from PyPI and Conda are recognized.
+> The custom Conda channels in ```.yml``` files currently aren't supported. Only the libraries from PyPI and Conda are recognized.
 
 ### Filter public libraries
 
@@ -62,14 +65,14 @@ Each public library has various dependencies. The view dependency option appears
 
 ### Export to .yml
 
-Fabric provides the option to export the full public library list to a .yml file and download it to your local directory.
+Fabric provides the option to export the full public library list to an ```.yml``` file and download it to your local directory.
 
 ## Custom libraries
 
-Custom libraries refer to code built by you or your organization. Fabric supports custom library files in .whl, .py, .jar, and .tar.gz formats.
+Custom libraries refer to code built by you or your organization. Fabric supports custom library files in ```.whl```, ```.py```, ```.jar```, and ```.tar.gz``` formats.
 
 > [!NOTE]
-> Fabric supports only .tar.gz files for R language. Use the .whl and .py file format for Python language.
+> Fabric supports only .tar.gz files for R language. Use the ```.whl``` and ```.py``` file format for Python language.
 
 :::image type="content" source="media\environment-lm\env-library-management-custom-library.png" alt-text="Screenshot that shows the environment Custom Libraries screen." lightbox="media\environment-lm\env-library-management-custom-library.png":::
 
