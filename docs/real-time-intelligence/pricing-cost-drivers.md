@@ -37,9 +37,9 @@ In this scenario, the customer continues to pay for the storage cost but only ha
 ### Scenario: Continuous Ingestion with continuous queries
 In this scenario, a customer is ingesting around 2.5TB/day and running around 10,500 queries. This scenario can result in higher cost per GB ingested so lets first outline some of the decisions made that drove down their cost in this scenario:
 
-1. Because the cluster is continuously ingesting data the UpTime for the cluster is going to be 100%. If you don't enable always-on in these scenarios, you continue to pay for hot cache storage, which can drive up your cost. So enabling Always-on means that even if you don't have activity, you're charged for the compute capacity but it also means you aren't charged for the hot cache storage. So, you should enable Always-on for a very active Eventhouse.
-2. One of the factors that affect the size of your Eventhouse compute is how much hot cache you store. So only keeping the data you need for most your queries in hot cache can optimize the size of compute that you're charged for.
-3. With Always-On, you have the option to also set the minimum capacity. This setting is intended for handling unexpected load where you still need high performance at that moment. For steady workloads, allow our autoscale mechanism to run compute at the most optimal size by just enabling Always-On but not enabling Minimum Capacity.
+- Because the cluster is continuously ingesting data the UpTime for the cluster is going to be 100%. If you don't enable always-on in these scenarios, you continue to pay for hot cache storage, which can drive up your cost. So enabling Always-on means that even if you don't have activity, you're charged for the compute capacity but it also means you aren't charged for the hot cache storage. So, you should enable Always-on for a very active Eventhouse.
+- One of the factors that affect the size of your Eventhouse compute is how much hot cache you store. So only keeping the data you need for most your queries in hot cache can optimize the size of compute that you're charged for.
+- With Always-On, you have the option to also set the minimum capacity. This setting is intended for handling unexpected load where you still need high performance at that moment. For steady workloads, allow our autoscale mechanism to run compute at the most optimal size by just enabling Always-On but not enabling Minimum Capacity.
 
 For this scenario, these are the major factors that helped drive a very efficient workload in Eventhouse. For this Eventhouse, ingesting 2.5TB/day and running 10,500 queries, resulted in 817 CU hours on that day. Adding in standard storage cost of 100 SCUs for that day the cost per GB ingested ends up being around 6 SCUs per GB ingested.
 
@@ -108,5 +108,6 @@ Each ingestion method has different cost, latency, and functionality characteris
 >
 > Check the configurations of the [key cost drivers](#a-closer-look-at-key-cost-drivers) to ensure they fit your cluster’s needs and service requirements for efficiency. In particular:
 >
-> 1. To reduce read transactions, minimize queries over cold data 
-> 2. Enable autoscale to dynamically match cluster size to demand.
+> - To reduce read transactions, minimize queries over cold data 
+> - Enable autoscale to dynamically match cluster size to demand.
+
