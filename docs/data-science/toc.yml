@@ -131,6 +131,8 @@ items:
       href: use-ai-samples.md
     - name: Book recommendation
       href: retail-recommend-model.md
+    - name: Building Retrieval Augmented Generation
+      href: quickstart-building-retrieval-augmented-generation.md
     - name: Customer churn prediction
       href: customer-churn.md
     - name: Evaluate RAG performance
