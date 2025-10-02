@@ -42,7 +42,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
 |                    |                     |                        |                        |                        | Organizational account  |                          |
-| [Azure Cosmos DB for MongoDB](connector-azure-cosmosdb-for-mongodb-overview.md) | ✓/✓         | Basic                 |                        | ✓/✓                   | Basic                   |                          |
+| [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-overview.md) | ✓/✓         | Basic                 |                        | ✓/✓                   | Basic                   |                          |
 | [Azure Data Explorer](connector-azure-data-explorer-overview.md) | ✓/✓                | Service principal     |                        | ✓/✓                   |                          |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
@@ -54,7 +54,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
 |                    |                     |                        |                        |                        | Organizational account  |                          |
 | [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) | ✓/✓         | Basic                 |                        | ✓/✓                   | Basic                   |                          |
-| [Azure Databricks Delta Lake](connector-azure-databricks-delta-lake-overview.md) | ✓/✓         | Access token          |                        | ✓/✓                   | Personal Access Token   |                          |
+| Azure Databricks Delta Lake | ✓/✓         | Access token          |                        | ✓/✓                   | Personal Access Token   |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        |                          |                          |
 | [Azure File Storage](connector-azure-files-overview.md) | ✓/✓                | Account key           |                        | ✓/✓                   | Account key             |                          |
