@@ -2,12 +2,12 @@
 title: Limitations
 description: Functional and performance limitations while the service is in preview.
 ms.topic: reference
-ms.date: 10/01/2025
-author: wmwxwa
-ms.author: wangwilliam
-ms.reviewer: eur
+ms.date: 10/07/2025
+author: eric-urban
+ms.author: eur
+ms.reviewer: wawng
 ms.service: fabric
-#ms.subservice: graph
+ms.subservice: graph
 ---
 # Select limitations
 

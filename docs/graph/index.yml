@@ -7,11 +7,12 @@ metadata:
   title: Graph in Microsoft Fabric documentation
   description: Graph in Microsoft Fabric is a unified graph database for analytics and modeling. Find resources, guides, and API references here.
   ms.service: fabric  #Required; use either service or product per approved list.
-  #ms.subservice: graph
+  ms.subservice: graph
   ms.topic: landing-page
   author: eric-urban
   ms.author: eur
-  ms.date: 10/01/2025
+  ms.reviewer: wawng
+  ms.date: 10/07/2025
 
 landingContent:
   # Card: About Graph in Microsoft Fabric
