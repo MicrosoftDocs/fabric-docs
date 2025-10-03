@@ -83,21 +83,26 @@ ms.date: 11/18/2024
 1. Now, on the **Connect** page of wizard, for **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the event hub. 
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-consumer-group.png" alt-text="Screenshot that shows the consumer group in the Stream details section." lightbox="./media/azure-event-hubs-source-connector/extended-consumer-group.png":::
-1. In the **Stream details** pane to the right, select **Pencil** icon next to the source name, and enter a name for the source. This step is optional. Then, select **Next** at the bottom of the page.
+1. (Optional) To customize the source's name, select **Pencil** icon next to the source name in the **Stream details** pane to the right, and enter a name for the source. Then, select **Next** at the bottom of the page.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-source-name.png" alt-text="Screenshot that shows the source name in the Stream details section with the Extended features option selected." lightbox="./media/azure-event-hubs-source-connector/extended-source-name.png":::
-1. On the **Schema handling** page, you can match all events from a source to one **fixed schema**, or define a schema dynamically based on **header values to match multiple schemas**. 
-1. Select **Add more schemas** drop-down, and select **New event schema** to define an event schema using the schema editor, or choose an existing schema from the event schema registry. To learn how to define a new event schema, see [Create and manage event schemas in schema sets](../../schema-sets/create-manage-event-schemas.md). 
+1. In the **Schema handling** page, you must provide rules to handle events received from the selected Eventhub, so that Eventstream can apply them  correctly. The mapping rules depend on how you model the events. If you have one schema that governs all of the events, you choose **fixed schema**. Alternatively, if you have multiple schemas that represent the different incoming events, you can define matching rules to apply your schemas. To choose this mode, select "Dynamic schema via header" option, and then specify the rules, using header and value pairs, to select each schema. The header is a custom Kafka header property that is part of the event metadata. The value is the expected value for that property. 
+
+    :::image type="content" source="./media/azure-event-hubs-source-connector/extended-schema-handling-page.png" alt-text="Screenshot that shows the Schema handling page with Extended features option selected." lightbox="./media/azure-event-hubs-source-connector/extended-schema-handling-page.png"::: 
+1. For both modes, you can choose the schemas by clicking on **Add more schemas** drop-down, and choosing one or more existing schemas from the event schema registry. If you don't have schemas to choose from, you can create new schemas from this view. To learn how to define a new event schema, see [Create and manage event schemas in schema sets](../../schema-sets/create-manage-event-schemas.md). 
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-fixed-schema-option.png" alt-text="Screenshot that shows the fixed schema option selected." lightbox="./media/azure-event-hubs-source-connector/extended-fixed-schema-option.png":::
 
-    If you select **Choose from event schema registry** option, you see the **Associate an event schema** page. Select a schema from the registry, and then select **Choose** at the bottom of the page.
+    If you select **Choose from event schema registry** option, you see the **Associate an event schema** page. Select one or more schemas from the registry, depending on your schema matching mode, and then select **Choose** at the bottom of the page.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-associate-event-schema.png" alt-text="Screenshot that shows the Associate an event schema page." lightbox="./media/azure-event-hubs-source-connector/extended-associate-event-schema.png":::        
-1. If you selected the **Fixed schema** option, continue to the next step. If you selected the **Dynamic schema via headers** option, specify the **Kafka header property** and **expected value** that maps to the schema. Add more schemas and specify different header properties and/or different values to map to those schemas. 
+1. If you selected the **Fixed schema** option, you don't need to provide any more rules to match the schema. You can continue to the next step. If you selected the **Dynamic schema via headers** option, specify the **Kafka header property** and **expected value** that maps to the schema. Add more schemas and specify different header properties and/or different values to map to those schemas. 
+
+> [!NOTE]
+> When you define the mapping rules, each value of the header MUST be unique. If you try to reuse a schema, you see a warning message indicating that you might break existing streams. As long as the mapping rules are the same, you can reuse a schema. If this limitation affects your use, do reach out to your Microsoft representative to share your feedback. We're actively working on removing this limitation.
     
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-dynamic-schema-property-value.png" alt-text="Screenshot that shows a property and a value mapped to a schema." lightbox="./media/azure-event-hubs-source-connector/extended-dynamic-schema-property-value.png":::        
-1. On the **Schema handling** page, select **Next** at the bottom of the page.
+1. Once schemas for all expected events are mapped, select **Next** at the bottom of the **Schema handling** page.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-schema-handling.png" alt-text="Screenshot that shows the Schema handling page." lightbox="./media/azure-event-hubs-source-connector/extended-schema-handling.png":::       
 1. On the **Review + connect** page, review settings, and select **Connect**. 
