@@ -14,6 +14,8 @@ ms.topic: how-to
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from your workspace to other workspaces and external sources. This article describes how outbound access protection affects OneLake items, including shortcuts and data copy operations within OneLake or between OneLake and Azure Storage.
 
+## OneLake item types affected by outbound access protection
+
 ### Shortcuts
 
 When outbound access protection is enabled on a workspace, lakehouses in the workspace can only have shortcuts to lakehouses in another workspace if a cross-workspace managed private endpoint is set up between the workspaces.
@@ -56,3 +58,9 @@ Syntax
 ```azcopy
 azcopy copy "https://onelake.dfs.fabric.microsoft.com/WorkspaceA/LakehouseA.Lakehouse/Files/sales.csv" "https://source.blob.core.windows.net/myContainer/sales.csv"  --trusted-microsoft-suffixes "fabric.microsoft.com"
 ```
+
+## Configuring outbound access protection for OneLake
+
+*TODO - Add links to relevant sections in the "Set up workspace outbound access protection" article.*
+
+To configure outbound access protection for OneLake, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up managed private endpoints to allow outbound access to other workspaces or external resources as needed.

@@ -64,37 +64,12 @@ In the request body, set `outbound` to `Deny`. Also specify the `inbound` value 
 
 ---
 
-## Use connectors to allow outbound access
+## Allow Git integration with outbound access protection
 
-To add policies that allow or block data connections with external sources, you can use the Fabric portal or REST API.
+*TODO - ADD OR LINK TO CONTENT*
+When outbound access protection is enabled, Git integration is blocked by default. To allow Git integration, you must add an allow rule for the Git service in the workspace settings.
 
-### [Fabric portal](#tab/fabric-portal-2)
-
-1. Sign in to the Fabric as a workspace admin.
-
-1. Go to **Workspace** > **Workspace settings** > **Network security**.
-
-1. Scroll to the **Data connection rules (preview)** section.
-
-   :::image type="content" source="media/workspace-outbound-access-protection-data-factory/data-connection-rules.png" alt-text="Screenshot of data connection rules configuration listing allowed and blocked connection types.":::
-
-1. Add the data connection rules to allow/block different types of sources that the workspace can connect to.
-
-1. You can also use the **Gateway connection policies** settings to allow or block specific gateways.
-
-### [API](#tab/api-2)
-
-Call the following APIs to view/update the Data Connection rules (Cloud Connections).
-
-**TODO**
-
-Call the following APIs to view/update the Data Connection rules (Gateways).
-
-**TODO**
-
----
-
-## Use managed private endpoints to allow outbound access
+## Set up managed private endpoints to allow outbound access
 
 In a workspace with outbound access protection enabled, admins can allow access to resources outside the workspace by setting up managed private endpoints. First, create a Private Link service in the target workspace. Then, establish a managed private endpoint from the protected workspace to the target workspace. This enables secure, cross-workspace connections through a virtual network. 
 
@@ -189,6 +164,36 @@ A tenant admin must approve the managed private endpoint connection by completin
 
 The cross-workspace managed private endpoint is now set up between the outbound access protected workspace and the target workspace. Workspace admins and contributors can now connect to artifacts in the target workspace from the outbound access protected workspace.
 
+## Add data connection rules to allow outbound access
+
+*TODO - REVIEW AND UPDATE CONTENT*
+When outbound access protection is enabled, connectors are blocked by default. You can add policies that allow or block data connections with external sources by using the Fabric portal or REST API.
+
+### [Fabric portal](#tab/fabric-portal-2)
+
+1. Sign in to the Fabric as a workspace admin.
+
+1. Go to **Workspace** > **Workspace settings** > **Network security**.
+
+1. Scroll to the **Data connection rules (preview)** section.
+
+   :::image type="content" source="media/workspace-outbound-access-protection-data-factory/data-connection-rules.png" alt-text="Screenshot of data connection rules configuration listing allowed and blocked connection types.":::
+
+1. Add the data connection rules to allow/block different types of sources that the workspace can connect to.
+
+1. You can also use the **Gateway connection policies** settings to allow or block specific gateways.
+
+### [API](#tab/api-2)
+
+Call the following APIs to view/update the Data Connection rules (Cloud Connections).
+
+**TODO**
+
+Call the following APIs to view/update the Data Connection rules (Gateways).
+
+**TODO**
+
+---
 
 ## Connect the outbound access protected workspace to other data sources
 

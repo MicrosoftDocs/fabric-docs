@@ -1,6 +1,6 @@
 ---
 title: Workspace outbound access protection for Data Factory
-description: Learn how to configure Workspace Outbound Access Protection (OAP) to secure your data engineering and integration artifacts in Microsoft Fabric.
+description: Learn how to configure Workspace Outbound Access Protection (outbound access protection) to secure your data engineering and integration artifacts in Microsoft Fabric.
 #customer intent: As a workspace admin, I want to enable outbound access protection for my workspace so that I can secure data connections to only approved destinations.
 author: msmimart
 ms.author: mimart
@@ -11,16 +11,22 @@ ms.topic: how-to
 
 # Workspace outbound access protection for Data Factory
 
-Workspace Outbound Access Protection (OAP) is a security feature in Microsoft Fabric that lets workspace administrators control and restrict outbound data connections from their workspaces. By configuring OAP, workspace admins block outbound connections from the workspace and allow connections only to destinations connected via managed private endpoints. Then workspace admins can create [cross-workspace managed private endpoints](security-cross-workspace-communication.md)
+Workspace Outbound Access Protection is a security feature in Microsoft Fabric that lets workspace administrators control and restrict outbound data connections from their workspaces. By configuring outbound access protection, workspace admins block outbound connections from the workspace and allow connections only to destinations connected via managed private endpoints. Then workspace admins can create [cross-workspace managed private endpoints](security-cross-workspace-communication.md)
 in Fabric or [Managed Private Endpoints](security-managed-private-endpoints-overview.md) to external destinations that support it.
 
-This article describes how to enable and manage Workspace Outbound Access Protection (OAP) for Data Factory artifacts, such as Dataflow Gen2 (with CICD), Data Pipelines, and CopyJobs. It explains how these artifacts use data connection policies to restrict outbound connections to only approved targets. The article also outlines supported scenarios, best practices, and important limitations.
+This article describes how to enable and manage Workspace Outbound Access Protection (outbound access protection) for Data Factory artifacts, such as Dataflow Gen2 (with CICD), Data Pipelines, and CopyJobs. It explains how these artifacts use data connection policies to restrict outbound connections to only approved targets. The article also outlines supported scenarios, best practices, and important limitations.
 
-## How OAP works with Data Factory items
+## Data Factory workloads affected by outbound access protection
 
-When configuring workspace OAP, the workspace admin first enables OAP, which blocks all outbound connections from Dataflow by default.  
+The following data engineering workloads are affected by outbound access protection:
 
-:::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-by-default.png" alt-text="Diagram showing the OAP configuration process for Dataflow.":::
+- Data Flows Gen2 (with CICD)
+- Data Pipelines
+- Copy Jobs
+
+When configuring workspace outbound access protection, the workspace admin first enables outbound access protection, which blocks all outbound connections from Dataflow by default.  
+
+:::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-by-default.png" alt-text="Diagram showing the outbound access protection configuration process for Dataflow.":::
 
 Next, the workspace admin configures data connection policies to specify which external sources are allowed, such as SQL Server and ADLS Gen2 Storage.  
 
@@ -30,33 +36,9 @@ Once policies are set, Dataflow can connect only to the approved destinations (i
 
 :::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-and-allow.png" alt-text="Screenshot of Dataflow connections showing allowed connections to SQL Server and ADLS G2 Storage.":::
 
-## Configuring outbound access protection for Data Factory
-
-### Enable outbound access protection
-
-To configure outbound access protection for a workspace, you can enable the setting using the Fabric portal. 
-
-* Open the workspace settings and select **Network Security**.
-* Under **Outbound access protection (preview)**, switch the **Block outbound public access** toggle to **On**.
-
-For detailed instructions, refer to [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md).
-
-
-
-## Supported Fabric items
-
-You can use workspace OAP for the following items only:
-
-- Data Engineering items
-
-- Data Factory items
-  - Dataflow Gen2 (with CICD)
-  - Data pipelines
-  - CopyJob
-
 ## Common Scenarios
 
-Workspace outbound access protection affects how Data Factory items connect to other workspaces and external data sources. Below are common scenarios illustrating how OAP impacts these connections.
+Workspace outbound access protection affects how Data Factory items connect to other workspaces and external data sources. Below are common scenarios illustrating how outbound access protection impacts these connections.
 
 ### Internal Fabric connectors
 
@@ -122,11 +104,16 @@ When you allowlist a gateway, dataflows can connect to any data source accessibl
 
 ### Mirrored databases
 
-TODO
+*TODO - ADD CONTENT*
+
+## Configuring outbound access protection for Data Factory
+
+*TODO - REVIEW*
+To configure outbound access protection for Data Factory, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up managed private endpoints to allow outbound access to other workspaces or external resources as needed.
 
 ## Limitations and Considerations
 
-- Only the following Fabric Connector support workspace level granularity:
+- Only the following Fabric connectors support workspace level granularity:
 
   - Lakehouse
   - Warehouse
@@ -145,9 +132,9 @@ TODO
 
 - For Dataflows, cross-workspace Data Warehouse destinations aren't supported.
 
-- Workspace outbound access protection (WS OAP) isn't supported for Lakehouse with default Semantic models. To ensure the Lakehouse is compatible with OAP:
+- Workspace outbound access protection (WS outbound access protection) isn't supported for Lakehouse with default Semantic models. To ensure the Lakehouse is compatible with outbound access protection:
 
-  - We recommend enabling OAP on the workspace before creating a Lakehouse to ensure compatibility.
-  - Enabling OAP on an existing workspace that already contains a Lakehouse (and its associated Semantic model) isn't supported.
+  - We recommend enabling outbound access protection on the workspace before creating a Lakehouse to ensure compatibility.
+  - Enabling outbound access protection on an existing workspace that already contains a Lakehouse (and its associated Semantic model) isn't supported.
 
 - For other limitations, refer to [Workspace outbound access protection overview - Microsoft Fabric](/fabric/security/workspace-outbound-access-protection-overview#considerations-and-limitations).

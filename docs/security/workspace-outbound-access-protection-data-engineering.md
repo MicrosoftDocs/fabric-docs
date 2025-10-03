@@ -15,16 +15,17 @@ ms.date: 09/24/2025
 
 Workspace outbound access protection enables precise control over external communications from Microsoft Fabric workspaces. When this feature is enabled, all workspace items, such as notebooks, Spark job definitions, and lakehouses, are restricted from making outbound connections to public endpoints unless access is explicitly granted through approved managed private endpoints. This capability is crucial for organizations in secure or regulated environments, as it helps prevent data exfiltration and enforces organizational network boundaries.
 
-## Configuring outbound access protection for Data Engineering workloads
+## Data engineering workloads affected by outbound access protection
 
-To configure outbound access protection for a workspace, you can enable the setting using the Fabric portal. 
+The following data engineering workloads are affected by outbound access protection:
 
-* Open the workspace settings and select **Network Security**.
-* Under **Outbound access protection**, switch the **Block outbound public access** toggle to **On**.
+- Lakehouses
+- Notebooks
+- Spark Job Definitions
+- Environments
+- Warehouses
 
-For detailed instructions, refer to [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md).
-
-## Notebooks with outbound access protection enabled
+### Notebooks with outbound access protection enabled
 
 When outbound access protection is enabled on a workspace, notebooks can reference a destination only if a managed private endpoint is set up from the workspace to the destination.
 
@@ -35,7 +36,7 @@ When outbound access protection is enabled on a workspace, notebooks can referen
 | Notebook (Workspace A) | External ADLS G2/other data source | Yes, a managed private endpoint is set up from A to the external data source | Yes |
 | Notebook (Workspace A) | External ADLS G2/other data source | No | No | 
 
-## Running Spark Jobs with outbound access protection Enabled 
+### Running Spark Jobs with outbound access protection Enabled 
 
 Once workspace outbound access protection is enabled, all public internet access from Spark clusters is blocked, including:
 
@@ -45,7 +46,7 @@ Once workspace outbound access protection is enabled, all public internet access
 
 This restriction is enforced through Managed Virtual Networks (Managed VNETs) provisioned by Microsoft Fabric. These secure networking environments are isolated unless explicitly connected to external resources via approved endpoints. 
 
-## Connecting securely using managed private endpoints 
+### Connecting securely using managed private endpoints 
 
 When outbound access is restricted, only approved managed private endpoints can facilitate connections from Spark clusters to:
 
@@ -53,6 +54,11 @@ When outbound access is restricted, only approved managed private endpoints can 
 * Other Fabric workspaces within the same tenant
 
 Once a managed private endpoint is created and approved, it becomes the only allowed channel for outbound data access.
+
+## Configuring outbound access protection for Data Engineering workloads
+
+*TODO - REVIEW*
+To configure outbound access protection for Data Factory, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up managed private endpoints to allow outbound access to other workspaces or external resources as needed.
 
 ## Installing libraries securely in outbound access protected Workspaces 
 
