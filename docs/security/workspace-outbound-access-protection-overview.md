@@ -13,9 +13,12 @@ ms.date: 09/24/2025
 
 # Workspace outbound access protection
 
-Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. With this feature, admins can block all outbound connections, and then allow only approved connections to external resources through secure links between Fabric and virtual networks. 
+Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. With this feature, admins can block all outbound connections, and then allow only approved connections to external resources through secure links between Fabric and virtual networks. Because you can enforce security policies at the workspace level rather than only at the tenant level. You have more granular control over your organization's data security because you can restrict outbound connectivity for specific workspaces while allowing others to maintain open access.
 
-With workspace outbound access protection, you can enforce security policies at the workspace level rather than only at the tenant level. You have more granular control over your organization's data security because you can restrict outbound connectivity for specific workspaces while allowing others to maintain open access.
+You can apply security policies at the workspace level rather than only at the tenant level, giving you more granular control over 
+
+You have more granular control over 
+Because you can restrict outbound access for individual workspaces while allowing open access for other workspaces in the tenant, you can enforce security policies in a more granular manner. have more granular enforcement of your organization's security policies. to maintain open at the workspace level rather than only at the tenant level, you connectivity for specific workspaces while allowing others to maintain open access, can enforce security policies at the workspace level rather than only at the tenant level. You have more granular control over your organization's data security because you can .
 
 This article provides an overview of workspace outbound access protection and its configuration options.
 
@@ -24,7 +27,7 @@ This article provides an overview of workspace outbound access protection and it
 
 ## Restricting outbound access at the workspace level
 
-Workspace-level outbound access protection lets you control which external resources items in the workspace can access. When outbound access protection is enabled, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to grant access only to approved destinations. These exceptions can be configured using either:
+Workspace-level outbound access protection lets you control which external resources items in the workspace can access. When outbound access protection is enabled, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to grant access only to approved destinations by configuring managed private endpoints or connectors. These exceptions can be configured using the following methods:
 
 * **Managed private endpoints**: Managed private endpoints are secure connections that link the workspace to specific resources in a virtual network. By setting up managed private endpoints, workspace admins can allow items in the workspace to connect to these resources while blocking all other outbound connections.
 
@@ -34,11 +37,11 @@ The following sections explain these options in more detail.
 
 ## Using managed private endpoints to allow outbound access 
 
-In a workspace with outbound access protection enabled, admins can set up managed private endpoints to connect workspace items to external resources through a specific virtual network. By default, all outbound access is blocked, but admins can configure managed private endpoints to explicitly allow connections resources outside of the workspace. The following diagram illustrates workspace-level outbound access protection from the perspective of the end customer.
+In a workspace with outbound access protection enabled, admins can set up managed private endpoints to allow access to external resources through a virtual network. By default, all outbound access is blocked, but admins can configure managed private endpoints to explicitly allow connections to resources outside of the workspace.
 
 :::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-endpoints.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection." border="false":::
 
-In the diagram:
+In the preceding diagram:
 
 * The outbound access protection enabled workspace can connect to all the resources that support private endpoints by setting up a managed private endpoint from the workspace to the destination. For example, in the preceding diagram, Workspace A (outbound access protection enabled) can connect to the SQL server because it has a managed private endpoint set up to the SQL server.
 
@@ -48,7 +51,7 @@ In the diagram:
 
 ## Using connectors to allow outbound access
 
-In a workspace with outbound access protection enabled, another method for allowing outbound access is through connectors. Admins can configure an allowlist to specify which connectors are permitted to be used within the workspace. By default, all connectors are blocked until they are explicitly allowed through the allowlist.
+In a workspace with outbound access protection enabled, another method for allowing outbound access is through connectors. Admins can specify which connectors are permitted to be used within the workspace. By default, all connectors are blocked until they are explicitly allowed.
 
 :::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-connectors.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection." border="false":::
 
