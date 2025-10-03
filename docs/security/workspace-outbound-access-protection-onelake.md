@@ -9,12 +9,27 @@ ms.date: 09/23/2025
 ms.topic: how-to
 ---
 
-# Workspace outbound access protection for OneLake
-
+# Workspace outbound access protection for OneLake (preview)
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from your workspace to other workspaces and external sources. This article describes how outbound access protection affects OneLake items, including shortcuts and data copy operations within OneLake or between OneLake and Azure Storage.
 
-## OneLake item types affected by outbound access protection
+## How outbound access protection works for OneLake
+
+When outbound access protection is enabled, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to grant access only to approved destinations by configuring managed private endpoints:
+
+*TODO - ADD A DIAGRAM*
+
+## Configuring outbound access protection for OneLake
+
+To configure outbound access protection for OneLake, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up managed private endpoints to allow outbound access to other workspaces or external resources as needed.
+
+## Supported OneLake item types
+
+The following OneLake item types are supported with outbound access protection: 
+
+- OneLake shortcuts
+
+The following sections explain how outbound access protection affects shortcuts and data copy operations in your workspace.
 
 ### Shortcuts
 
@@ -28,7 +43,7 @@ When outbound access protection is enabled on a workspace, lakehouses in the wor
 
 If your shortcut links directly to another shortcut or contains another shortcut, outbound restrictions are evaluated sequentially at each shortcut. For example, suppose a shortcut in Workspace A points to a shortcut in Workspace B, which points to a shortcut in Workspace C. You must have a managed private endpoint from Workspace A to Workspace B and Workspace B to Workspace C for the entire shortcut chain to resolve. A managed private endpoint from Workspace A to Workspace C isn't required. 
 
-### Copying data within OneLake 
+## Copying data within OneLake
 
 During data copy operations between two OneLake workspaces using Azure Storage copy APIs, OneLake makes an outbound call from the source workspace to the target workspace. If outbound access protection is enabled on the source workspace, this outbound call is blocked and the copy operation fails. To allow data movement, you must create a managed private endpoint from the source workspace to the target workspace. 
 
@@ -39,7 +54,7 @@ Syntax
 azcopy copy "https://onelake.dfs.fabric.microsoft.com/WorkspaceA/LakehouseA.Lakehouse/Files/sales.csv" "https://onelake.dfs.fabric.microsoft.com/WorkspaceB/LakehouseB.Lakehouse/Files/sales.csv" --trusted-microsoft-suffixes "fabric.microsoft.com"
 ```
 
-### Copying data between Azure Storage and OneLake
+## Copying data between Azure Storage and OneLake
 
 During copy operations between Azure Storage and OneLake, the direction of the outbound requests is *reversed*. The destination account makes an *outbound call* to the source account. This behavior applies to copy operations made directly with Azure Storage [Copy Blob from URL](/rest/api/storageservices/copy-blob-from-url) and [Put Block from URL](/rest/api/storageservices/put-block-from-url) APIs. It also applies to operations managed through copy experiences like [AzCopy](/azure/storage/common/storage-use-azcopy-v10) and Azure Storage Explorer. 
 
@@ -58,9 +73,3 @@ Syntax
 ```azcopy
 azcopy copy "https://onelake.dfs.fabric.microsoft.com/WorkspaceA/LakehouseA.Lakehouse/Files/sales.csv" "https://source.blob.core.windows.net/myContainer/sales.csv"  --trusted-microsoft-suffixes "fabric.microsoft.com"
 ```
-
-## Configuring outbound access protection for OneLake
-
-*TODO - Add links to relevant sections in the "Set up workspace outbound access protection" article.*
-
-To configure outbound access protection for OneLake, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up managed private endpoints to allow outbound access to other workspaces or external resources as needed.

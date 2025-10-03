@@ -15,9 +15,19 @@ ms.date: 09/24/2025
 
 Workspace outbound access protection enables precise control over external communications from Microsoft Fabric workspaces. When this feature is enabled, all workspace items, such as notebooks, Spark job definitions, and lakehouses, are restricted from making outbound connections to public endpoints unless access is explicitly granted through approved managed private endpoints. This capability is crucial for organizations in secure or regulated environments, as it helps prevent data exfiltration and enforces organizational network boundaries.
 
-## Data engineering workloads affected by outbound access protection
+## How outbound access protection works for data engineering
 
-The following data engineering workloads are affected by outbound access protection:
+When outbound access protection is enabled, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to grant access only to approved destinations by configuring managed private endpoints:
+
+*TODO - ADD A DIAGRAM*
+
+## Configuring outbound access protection for data engineering
+
+To configure outbound access protection for data engineering, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up managed private endpoints to allow outbound access to other workspaces or external resources as needed.
+
+## Supported data engineering item types
+
+The following data engineering item types are supported with outbound access protection: 
 
 - Lakehouses
 - Notebooks
@@ -25,7 +35,9 @@ The following data engineering workloads are affected by outbound access protect
 - Environments
 - Warehouses
 
-### Notebooks with outbound access protection enabled
+The following sections explain how outbound access protection affects specific data engineering item types in your workspace.
+
+### Notebooks
 
 When outbound access protection is enabled on a workspace, notebooks can reference a destination only if a managed private endpoint is set up from the workspace to the destination.
 
@@ -36,29 +48,73 @@ When outbound access protection is enabled on a workspace, notebooks can referen
 | Notebook (Workspace A) | External ADLS G2/other data source | Yes, a managed private endpoint is set up from A to the external data source | Yes |
 | Notebook (Workspace A) | External ADLS G2/other data source | No | No | 
 
-### Running Spark Jobs with outbound access protection Enabled 
+### Understanding file path behavior in Fabric notebooks
 
-Once workspace outbound access protection is enabled, all public internet access from Spark clusters is blocked, including:
+When accessing data in your Lakehouse from a Fabric notebook, you can reference files using either relative or fully qualified (absolute) paths. Understanding the differences is important for successful data access, especially when working across workspaces.
 
-* `pip install` commands fetching from Python Package Index (PyPI)
-* Access to public domains like `https://login.microsoftonline.com` 
-* Any attempts to access external APIs or websites 
+#### Relative paths
 
-This restriction is enforced through Managed Virtual Networks (Managed VNETs) provisioned by Microsoft Fabric. These secure networking environments are isolated unless explicitly connected to external resources via approved endpoints. 
+Relative paths are the simplest and most common way to reference files within your current Lakehouse. When you drag and drop a file from the Lakehouse explorer into a notebook cell, a relative path is used automatically.
 
-### Connecting securely using managed private endpoints 
+**Example:**  
+`Files/people.csv`
 
-When outbound access is restricted, only approved managed private endpoints can facilitate connections from Spark clusters to:
+**Spark code:**  
+```python
+df = spark.read.format("csv").option("header", "true").load("Files/people.csv")
+```
 
-* External services (for example, Azure SQL, Blob Storage)
-* Other Fabric workspaces within the same tenant
+Relative paths work out of the box and require no additional configuration.
 
-Once a managed private endpoint is created and approved, it becomes the only allowed channel for outbound data access.
+#### Fully qualified (absolute) paths
 
-## Configuring outbound access protection for Data Engineering workloads
+Fully qualified paths specify the complete location of a file, including workspace and Lakehouse information. However, using display names in these paths can cause errors, such as socket timeouts, because the Spark session cannot resolve them by default.
 
-*TODO - REVIEW*
-To configure outbound access protection for Data Factory, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up managed private endpoints to allow outbound access to other workspaces or external resources as needed.
+**Incorrect example (will fail):**  
+`abfss://your_workspace@onelake.dfs.fabric.microsoft.com/your_lakehouse.Lakehouse/Files/people.csv`
+
+#### Accessing data across workspaces
+
+To access files in a Lakehouse located in a different workspace, use a fully qualified path that includes the Workspace ID and Lakehouse ID (not their display names). This ensures Spark can resolve the path and access the data.
+
+**Correct URI format:**  
+`abfss://<workspace_id>@onelake.dfs.fabric.microsoft.com/<lakehouse_id>/Files/people.csv`
+
+**Example Spark code:**  
+```python
+df = spark.read.format("csv").option("header", "true").load("abfss://4c8efb42-7d2a-4a87-b1b1-e7e98bea053d@onelake.dfs.fabric.microsoft.com/5a0ffa3d-80b9-49ce-acd2-2c9302cce6b8/Files/people.csv")
+```
+
+#### How to find Workspace and Lakehouse IDs
+
+- **Workspace ID:** The GUID after `/groups/` in your Fabric workspace URL.
+- **Lakehouse ID:** The GUID after `/lakehouses/` in the URL.
+
+**Example URL:**  
+`https://app.fabric.microsoft.com/groups/4c8efb42-7d2a-4a87-b1b1-e7e98bea053d/lakehouses/5a0ffa3d-80b9-49ce-acd2-2c9302cce6b8/...`
+
+> [!NOTE]
+> Always use Workspace ID and Lakehouse ID in the URI when accessing data across workspaces.
+
+
+### Spark Jobs
+
+When workspace outbound access protection is enabled, Spark clusters are prevented from making outbound connections to the public internet. This includes:
+
+- Installing Python packages directly from PyPI using `pip install`
+- Accessing public domains such as `https://login.microsoftonline.com`
+- Connecting to any external APIs or websites
+
+This restriction is enforced by Microsoft Fabric through Managed Virtual Networks (Managed VNETs), which isolate Spark clusters from external networks unless explicit access is granted.
+
+#### Secure connectivity with managed private endpoints
+
+To enable Spark clusters to connect to external resources while maintaining security, you must use managed private endpoints. These endpoints allow secure, approved connections to:
+
+- External services (for example, Azure SQL Database, Azure Blob Storage)
+- Other Fabric workspaces within the same tenant
+
+Only connections established through approved managed private endpoints are permitted. All other outbound access attempts are blocked by default.
 
 ## Installing libraries securely in outbound access protected Workspaces 
 
@@ -202,44 +258,7 @@ Periodic monitoring and updates are required to keep the mirror in sync. The fol
    %pip install pytest --index-url https://<storage-account-name>.z5.web.core.windows.net/simple
 ```
 
-### Understanding the behavior of file paths
 
-When working with data in your Lakehouse using a Fabric notebook, you can reference files in two primary ways:
-
-* **Relative Path**: This method is the easiest and most common method. When you drag and drop a file from the Lakehouse explorer into a notebook cell, it uses a relative path that points to the file within your current Lakehouse. This format works without any more configuration.
-
-   Example: Files/people.csv
-
-   Spark code: `df = spark.read.format("csv").option("header", "true").load("Files/people.csv")`
-
-* **Fully qualified path** (absolute path): This path provides the complete location of the file, including the workspace and Lakehouse names. The Spark session's default configuration isn't set up to resolve these paths, which can cause a socket timeout exception when trying to access data.
-
-   Example (throws a socket timeout error): `abfss://your_workspace@onelake.dfs.fabric.microsoft.com/your_lakehouse**.Lakehouse/Files/people.csv`
-
-#### Recommended solution
-
-To read files using a fully qualified path, especially when connecting to a Lakehouse in another workspace, you must use a different URI format. This format uses the Workspace ID and Lakehouse ID instead of their display names. This ensures the Spark session can correctly resolve the path and access the data.
-
-* Correct URI format: `abfss://your_workspace_id@onelake.dfs.fabric.microsoft.com/your_lakehouse_id/Files/people.csv`
-
-### How to Find Your Workspace and Lakehouse IDs
-
-You can find these unique identifiers in the URL of your Fabric workspace and Lakehouse.
-
-* **Workspace ID**: The GUID that appears after /groups/ in the URL.
-
-* **Lakehouse ID**: The GUID that appears after /lakehouses/ in the URL.
-
-Example: If your URL is `https://app.fabric.microsoft.com/groups/**4c8efb42-7d2a-4a87-b1b1-e7e98bea053d**/lakehouses/**5a0ffa3d-80b9-49ce-acd2-2c9302cce6b8**/...`
-
-Correct Spark code:
-
-Python
-
-`df = spark.read.format("csv").option("header", "true").load("abfss://4c8efb42-7d2a-4a87-b1b1-e7e98bea053d@onelake.dfs.fabric.microsoft.com/5a0ffa3d-80b9-49ce-acd2-2c9302cce6b8/Files/people.csv")`
-
-> [!NOTE]
-> Use this same approach when you need to access data in a different workspace.
 
 ## Related content
 

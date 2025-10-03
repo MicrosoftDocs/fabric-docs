@@ -11,30 +11,31 @@ ms.topic: how-to
 
 # Workspace outbound access protection for Data Factory
 
-Workspace Outbound Access Protection is a security feature in Microsoft Fabric that lets workspace administrators control and restrict outbound data connections from their workspaces. By configuring outbound access protection, workspace admins block outbound connections from the workspace and allow connections only to destinations connected via managed private endpoints. Then workspace admins can create [cross-workspace managed private endpoints](security-cross-workspace-communication.md)
-in Fabric or [Managed Private Endpoints](security-managed-private-endpoints-overview.md) to external destinations that support it.
+Workspace outbound access protection helps safeguard your data by controlling outbound connections from your workspace to other workspaces and external sources. When this feature is enabled, Data Factory items are restricted from making outbound connections to public endpoints unless access is explicitly granted through approved managed private endpoints. This capability is crucial for organizations in secure or regulated environments, as it helps prevent data exfiltration and enforces organizational network boundaries.
 
-This article describes how to enable and manage Workspace Outbound Access Protection (outbound access protection) for Data Factory artifacts, such as Dataflow Gen2 (with CICD), Data Pipelines, and CopyJobs. It explains how these artifacts use data connection policies to restrict outbound connections to only approved targets. The article also outlines supported scenarios, best practices, and important limitations.
-
-## Data Factory workloads affected by outbound access protection
-
-The following data engineering workloads are affected by outbound access protection:
-
-- Data Flows Gen2 (with CICD)
-- Data Pipelines
-- Copy Jobs
+## How outbound access protection works for Data Factory
 
 When configuring workspace outbound access protection, the workspace admin first enables outbound access protection, which blocks all outbound connections from Dataflow by default.  
 
 :::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-by-default.png" alt-text="Diagram showing the outbound access protection configuration process for Dataflow.":::
 
-Next, the workspace admin configures data connection policies to specify which external sources are allowed, such as SQL Server and ADLS Gen2 Storage.  
-
-:::image type="content" source="media/workspace-outbound-access-protection-data-factory/data-connection-rules.png" alt-text="Screenshot of data connection policies configuration showing ADLS G2 Storage allowed.":::
-
-Once policies are set, Dataflow can connect only to the approved destinations (in this example, SQL Server and ADLS Gen2 Storage), while all other outbound connections remain blocked.
+Next, the workspace admin configures [data connection rules for cloud or gateway connection policies](workspace-outbound-access-protection-set-up.md#add-data-connection-rules-to-allow-outbound-access) to specify which external sources are allowed, such as SQL Server and ADLS Gen2 Storage. Once policies are set, Dataflow can connect only to the approved destinations (in this example, SQL Server and ADLS Gen2 Storage), while all other outbound connections remain blocked.
 
 :::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-and-allow.png" alt-text="Screenshot of Dataflow connections showing allowed connections to SQL Server and ADLS G2 Storage.":::
+
+## Configuring outbound access protection for Data Factory
+
+To configure outbound access protection for Data Factory, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up <!--TOD - REVIEW-->managed private endpoints or data connection rules to allow outbound access to other workspaces or external resources as needed.
+
+## Supported Data Factory item types
+
+The following Data Factory item types are supported with outbound access protection:
+
+- Data Flows Gen2 (with CICD)
+- Data Pipelines
+- Copy Jobs
+
+The next section explains how outbound access protection affects several common Data Factory scenarios.
 
 ## Common Scenarios
 
@@ -105,11 +106,6 @@ When you allowlist a gateway, dataflows can connect to any data source accessibl
 ### Mirrored databases
 
 *TODO - ADD CONTENT*
-
-## Configuring outbound access protection for Data Factory
-
-*TODO - REVIEW*
-To configure outbound access protection for Data Factory, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up managed private endpoints to allow outbound access to other workspaces or external resources as needed.
 
 ## Limitations and Considerations
 
