@@ -87,12 +87,12 @@ You can find the consumption rates for Dataflows Gen2 in [Dataflow Gen2 pricing 
 
 #### Pipelines
 
-You can find the consumption rates for Pipelines in [Data pipelines pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-pipelines.md).
+You can find the consumption rates for Pipelines in [Pipeline pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-pipelines.md).
 
 | Operation    | Description                                                                                                              | Item     | Azure billing meter | Type       |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------- | ---------- |
 | DataMovement | The amount of time used by the copy activity in a Data Factory pipeline divided by the number of data integration units  | Pipeline | Data Movement Capacity Usage CU | Background |
-| ActivityRun  | A Data Factory data pipeline activity execution                                                                          | Pipeline | Data Orchestration Capacity Usage CU | Background |
+| ActivityRun  | A Data Factory pipeline activity execution                                                                          | Pipeline | Data Orchestration Capacity Usage CU | Background |
 
 ### Databases
 

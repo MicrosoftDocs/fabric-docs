@@ -36,7 +36,7 @@ Within an environment, you can set Spark properties and those configurations are
     * Add Spark configurations. You can either add each manually or import from .yml.
 1.	Click on **Save** and **Publish** changes.
 
-:::image type="content" source="media\migrate-synapse\migrate-spark-configurations.png" alt-text="Screenshot showing Spark configurations.":::
+:::image type="content" source="media\migrate-synapse\migrate-spark-configurations.png" alt-text="Screenshot showing Spark configurations." lightbox="media/migrate-synapse/migrate-spark-configurations.png":::
 
 Learn more on adding Spark configurations to an [Environment](create-and-use-environment.md).
 

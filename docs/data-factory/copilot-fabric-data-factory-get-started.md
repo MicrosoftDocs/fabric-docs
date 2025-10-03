@@ -40,9 +40,9 @@ To use Copilot in the Data Factory workload, you need:
 
 Use the following steps to get started with Copilot for Dataflow Gen2:
 
-1. Create a new [Dataflows Gen2](../data-factory/tutorial-end-to-end-dataflow.md).
+1. Create a new [Dataflow Gen2](../data-factory/tutorial-end-to-end-dataflow.md).
 
-1. On the Home tab in Dataflows Gen2, select the **Copilot** button.
+1. On the Home tab in Dataflow Gen2, select the **Copilot** button.
 
 1. In the bottom left of the Copilot pane, select the starter prompt icon, then the **Get data from** option.
 

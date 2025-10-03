@@ -21,11 +21,11 @@ Use the following steps to manage the Data Engineering/Science settings for Micr
 
 1. Select the **Settings** option to open the setting pane for your Fabric account. Select **Admin portal** under Governance and insights section.
 
-   :::image type="content" source="media\capacity-settings-management\admin-portal.png" alt-text="Screenshot showing where to select Admin Portal settings.":::
+   :::image type="content" source="media\capacity-settings-management\admin-portal.png" alt-text="Screenshot showing where to select Admin Portal settings." lightbox="media\capacity-settings-management\admin-portal.png":::
 
 2. Choose the **Capacity settings** option to expand the menu and select the **Fabric capacity** tab. Here you should see the capacities that you have created in your tenant. Choose the capacity that you want to configure.
 
-   :::image type="content" source="media\capacity-settings-management\capacity-settings.png" alt-text="Screenshot showing where to select Capacity settings.":::
+   :::image type="content" source="media\capacity-settings-management\capacity-settings.png" alt-text="Screenshot showing where to select Capacity settings." lightbox="media\capacity-settings-management\capacity-settings.png":::
 
 3. You're navigated to the capacity detail pane, where you can view the usage and other admin controls for your capacity. Navigate to the **Data Engineering/Science Settings** section and select **Open Spark Compute**. Configure the following parameters:
 
@@ -92,11 +92,11 @@ As a capacity admin, you can now control this behavior by using the **"Disable j
    - Set **Min and Max nodes**
    - Enable/disable **autoscale** and **dynamic allocation of executors**
 
-   :::image type="content" source="media\capacity-settings-management\capacity-pools-creation.png" alt-text="Screenshot showing the pool creation section in Admin Portal settings.":::
+   :::image type="content" source="media\capacity-settings-management\capacity-pools-creation.png" alt-text="Screenshot showing the pool creation section in Admin Portal settings." lightbox="media\capacity-settings-management\capacity-pools-creation.png":::
 
 2. Select **Create** to save your settings.
 
-   :::image type="content" source="media\capacity-settings-management\capacity-settings-pool-creation.png" alt-text="Screenshot showing the capacity pools saved in Admin Portal settings.":::
+   :::image type="content" source="media\capacity-settings-management\capacity-settings-pool-creation.png" alt-text="Screenshot showing the capacity pools saved in Admin Portal settings." lightbox="media\capacity-settings-management\capacity-settings-pool-creation.png":::
 
 > [!NOTE]
 > Capacity-level custom pools have a startup latency of 2–3 minutes. For faster Spark session startup (<5 seconds), use Starter Pools if enabled.
@@ -105,9 +105,9 @@ As a capacity admin, you can now control this behavior by using the **"Disable j
    - The **Pool Selection** dropdown in workspace settings
    - The **Environment Compute Settings** page in workspaces
 
-   :::image type="content" source="media\capacity-settings-management\capacity-pools-workspace-pool-options.png" alt-text="Screenshot showing the capacity pools listed in Workspace settings.":::
+   :::image type="content" source="media\capacity-settings-management\capacity-pools-workspace-pool-options.png" alt-text="Screenshot showing the capacity pools listed in Workspace settings." lightbox="media\capacity-settings-management\capacity-pools-workspace-pool-options.png":::
 
-   :::image type="content" source="media\capacity-settings-management\capacity-pools-environment-compute-options.png" alt-text="Screenshot showing the capacity pools listed in Environment settings.":::
+   :::image type="content" source="media\capacity-settings-management\capacity-pools-environment-compute-options.png" alt-text="Screenshot showing the capacity pools listed in Environment settings." lightbox="media\capacity-settings-management\capacity-pools-environment-compute-options.png":::
 
 4. This enables centralized compute governance. Admins can create standardized pools, and optionally **disable workspace-level customization**, preventing admins in workspaces from modifying pool settings or creating their own.
 

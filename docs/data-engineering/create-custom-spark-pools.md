@@ -6,17 +6,21 @@ ms.author: eur
 author: eric-urban
 ms.topic: how-to
 ms.custom:
-ms.date: 07/03/2025
+ms.date: 09/22/2025
 ---
 
 # How to create custom Spark pools in Microsoft Fabric
 
-In this document, we explain how to create custom Apache Spark pools in Microsoft Fabric for your analytics workloads. Apache Spark pools enable users to create tailored compute environments based on their specific requirements, ensuring optimal performance and resource utilization.
+This article shows you how to create custom Apache Spark pools in Microsoft Fabric for your analytics workloads. Apache Spark pools let you create tailored compute environments based on your requirements, so you get optimal performance and resource use.
 
-You specify the minimum and maximum nodes for autoscaling. Based on those values, the system dynamically acquires and retires nodes as the job's compute requirements change, which results in efficient scaling and improved performance. The dynamic allocation of executors in Spark pools also alleviates the need for manual executor configuration. Instead, the system adjusts the number of executors depending on the data volume and job-level compute needs. This process enables you to focus on your workloads without worrying about performance optimization and resource management.
+Specify the minimum and maximum nodes for autoscaling. The system gets and retires nodes as your job's compute needs change, so scaling is efficient and performance improves. Spark pools adjust the number of executors automatically, so you don't need to set them manually. The system changes executor counts based on data volume and job compute needs, so you can focus on your workloads instead of performance tuning and resource management.
 
-> [!NOTE]
-> To create a custom Spark pool, you need admin access to the workspace. The capacity admin must enable the **Customized workspace pools** option in the **Spark Compute** section of **Capacity Admin settings**. To learn more, see [Spark Compute Settings for Fabric Capacities](capacity-settings-management.md).
+> [!TIP]
+> When you configure Spark pools, node size is determined by **Capacity Units (CU)**, which represent the compute capacity assigned to each node. For more information about node sizes and CU, see [Node size options](#node-size-options) section in this guide.
+
+## Prerequisites
+
+To create a custom Spark pool, make sure you have admin access to the workspace. The capacity admin enables the **Customized workspace pools** option in the **Spark Compute** section of **Capacity Admin settings**. For more information, see [Spark Compute Settings for Fabric Capacities](capacity-settings-management.md).
 
 ## Create custom Spark pools
 
@@ -30,13 +34,13 @@ To create or manage the Spark pool associated with your workspace:
 
 1. Select the **New Pool** option. In the **Create Pool** screen, name your Spark pool. Also choose the **Node family**, and select a **Node size** from the available sizes (**Small**, **Medium**, **Large**, **X-Large**, and **XX-Large**) based on compute requirements for your workloads.
 
-   :::image type="content" source="media\workspace-admin-settings\custom-pool-creation.png" alt-text="Screenshot showing custom pool creation options.":::
+   :::image type="content" source="media\workspace-admin-settings\custom-pool-creation.png" alt-text="Screenshot showing custom pool creation options." lightbox="media/workspace-admin-settings/custom-pool-creation.png":::
 
 1. You can set the minimum node configuration for your custom pools to **1**. Because Fabric Spark provides restorable availability for clusters with a single node, you don't have to worry about job failures, loss of session during failures, or over paying on compute for smaller Spark jobs.
 
 1. You can enable or disable autoscaling for your custom Spark pools. When autoscaling is enabled, the pool will dynamically acquire new nodes up to the maximum node limit specified by the user, and then retire them after job execution. This feature ensures better performance by adjusting resources based on the job requirements. You're allowed to size the nodes, which fit within the capacity units purchased as part of the Fabric capacity SKU.
 
-   :::image type="content" source="media\workspace-admin-settings\custom-pool-auto-scale.png" alt-text="Screenshot showing custom pool creation options for autoscaling and dynamic allocation.":::
+   :::image type="content" source="media\workspace-admin-settings\custom-pool-auto-scale.png" alt-text="Screenshot showing custom pool creation options for autoscaling and dynamic allocation." lightbox="media/workspace-admin-settings/custom-pool-auto-scale.png":::
 
 1. You can adjust the number of executors using a slider. Each executor is a Spark process that runs tasks and holds data in memory. Increasing executors can improve parallelism, but it also increases the size and startup time of the cluster. You can also choose to enable dynamic executor allocation for your Spark pool, which automatically determines the optimal number of executors within the user-specified maximum bound. This feature adjusts the number of executors based on data volume, resulting in improved performance and resource utilization.
 
@@ -44,14 +48,17 @@ These custom pools have a default autopause duration of 2 minutes. Once the auto
 
 ## Node size options
 
-When configuring a custom Spark pool, you can choose from the following different node sizes:
+When you set up a custom Spark pool, you choose from the following node sizes:
 
-| Node size | Compute Units (CU) | Memory (GB) | Description |
+| Node size | Capacity Units (CU) | Memory (GB) | Description |
 |--|--|--|--|
-| Small | 4 | 32 | Lightweight development and testing jobs. |
-| Medium | 8 | 64 | Most general workloads and typical operations. |
-| Large | 16 | 128 | Memory-intensive tasks or larger data processing jobs. |
-| X-Large | 32 | 256 | The most demanding Spark workloads requiring significant resources. |
+| Small | 4 | 32 | For lightweight development and testing jobs. |
+| Medium | 8 | 64 | For general workloads and typical operations. |
+| Large | 16 | 128 | For memory-intensive tasks or large data processing jobs. |
+| X-Large | 32 | 256 | For the most demanding Spark workloads that need significant resources. |
+
+> [!NOTE] 
+> A capacity unit (CU) in Microsoft Fabric Spark pools represents the compute capacity assigned to each node, not the actual consumption. Capacity units differ from VCore (Virtual Core), which is used in SQL-based Azure resources. CU is the standard term for Spark pools in Fabric, while VCore is more common for SQL pools. When sizing nodes, use CU to determine the assigned capacity for your Spark workloads.
 
 ## Related content
 

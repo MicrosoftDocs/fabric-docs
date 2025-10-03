@@ -14,7 +14,7 @@ ms.search.form: Variable library tutorial
 
 # Tutorial: Use variable libraries to customize and share item configurations
 
-This tutorial shows you how to use dynamic content in Microsoft Fabric data pipelines. When you create a variable library item and add variables to it, you can automate values for various stages of your deployment pipeline. In this tutorial, you copy data from one lakehouse to another. Then you use the variable library to set the source and destination values for the copy activity.
+This tutorial shows you how to use dynamic content in Microsoft Fabric pipelines. When you create a variable library item and add variables to it, you can automate values for various stages of your deployment pipeline. In this tutorial, you copy data from one lakehouse to another. Then you use the variable library to set the source and destination values for the copy activity.
 
 In this tutorial, you:
 
@@ -23,7 +23,7 @@ In this tutorial, you:
 > * Create a variable library.
 > * Add variables to the library.
 > * Define additional value sets for the variables.
-> * Consume the variables in another item in the workspace (a data pipeline).
+> * Consume the variables in another item in the workspace (a pipeline).
 > * Edit the variables in a Git repository.
 > * Create a deployment pipeline and deploy the variable library.
 > * Change the active value set in the target stage of the deployment pipeline.
@@ -33,8 +33,6 @@ The following diagram shows the workspace layout for this tutorial.
 
 :::image type="content" source="media/tutorial-variable-library/conceptual-variable-library-1.png" alt-text="Diagram of a workspace layout." lightbox="media/tutorial-variable-library/conceptual-variable-library-1.png":::
 
-> [!NOTE]
-> The Fabric variable library item is currently in preview.
 
 ## Prerequisites
 
@@ -69,9 +67,9 @@ First, create a workspace and lakehouse to use as your initial staging data:
 
 1. Create a pipeline:
 
-   1. In the lakehouse, select **New data pipeline**.
+   1. In the lakehouse, select **New pipeline**.
 
-      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-1.png" alt-text="Screenshot of the tile for creating a new data pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-1.png":::
+      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-1.png" alt-text="Screenshot of the tile for creating a new pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-1.png":::
 
    1. Enter the name **Pipeline_Stage**, and then select **Create**.
 
@@ -218,9 +216,9 @@ In these steps, you create your pipeline and declare your variables:
 
 1. In the **Source LHs with Variables** workspace, select **New item**.
 
-1. Under **Get data**, select **Data pipeline**.
+1. Under **Get data**, select **Pipeline**.
 
-   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-6.png" alt-text="Screenshot of the tile for a data pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-6.png":::
+   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-6.png" alt-text="Screenshot of the tile for a pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-6.png":::
 
 1. Enter the name **Pipeline_Deploy**, and then select **Create**.
 

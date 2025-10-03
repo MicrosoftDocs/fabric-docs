@@ -46,7 +46,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Navigate to [Microsoft Entra admin center](https://entra.microsoft.com/) and copy both the Application (client) ID and Directory (tenant) ID to your code.
 
-    :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center." lightbox = "media/livy-api/entra-app-overview.png" :::
+    :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-overview.png":::
 
 ## Authenticate a Livy API Spark session using either an Entra user token or an Entra SPN token
 
@@ -304,7 +304,7 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
 1. Select and open most recent activity name.
 
-    :::image type="content" source="media\livy-api\livy-monitoring-hub-last-run.png" alt-text="Screenshot showing most recent Livy API activity in the Monitoring hub." :::
+    :::image type="content" source="media\livy-api\livy-monitoring-hub-last-run.png" alt-text="Screenshot showing most recent Livy API activity in the Monitoring hub." lightbox="media/livy-api/livy-monitoring-hub-last-run.png":::
 
 1. In this Livy API session case, you can see your previous sessions submissions, run details, Spark versions, and configuration. Notice the stopped status on the top right.
 

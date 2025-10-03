@@ -64,6 +64,8 @@ The feature availability also depends on Fabric regions. For a complete list of 
     - Columns of SQL type **datetime2**, with precision of 7 fractional second digits, do not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss happens if columns of this type are mirrored and seventh decimal second digit will be trimmed.
     - The **datetimeoffset(7)** data type does not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss (loss of time zone and seventh time decimal) occurs if columns of this type are mirrored.   
   - Clustered columnstore indexes aren't currently supported.
+- Tables with clustered index on unsupported types cannot be mirrored - **computed columns**, **user-defined types**, **geometry**, **geography**, **hierarchy ID**, **SQL variant**, **timestamp**, **datetime2(7)**, **datetimeoffset(7**) or **time(7).**
+
 - If one or more columns in the table is of type Large Binary Object (LOB) with a **size > 1 MB**, the column data is **truncated** to size of 1 MB in Fabric OneLake. [Configure the max text repl size](/sql/database-engine/configure-windows/configure-the-max-text-repl-size-server-configuration-option) server configuration option to allow more than 65,536 bytes if you want to allow large inserts.
 - Source tables that have any of the following features in use can't be mirrored:
   - Temporal history tables and ledger history tables  

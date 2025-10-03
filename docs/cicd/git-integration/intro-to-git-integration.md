@@ -75,7 +75,7 @@ The following items currently support Git integration:
 
   * [Copy Job](../../data-factory/cicd-copy-job.md#git-integration-for-copy-job)
   * [Dataflow gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
-  * [Data pipeline](../../data-factory/cicd-pipelines.md)
+  * [Pipeline](../../data-factory/cicd-pipelines.md)
   * [Mirrored database](../../mirroring/mirrored-database-cicd.md#mirrored-database-git-integration)
   * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric.md)
   * [Mirrored snowflake](../../mirroring/snowflake.md) *(preview)*

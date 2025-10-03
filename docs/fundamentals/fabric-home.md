@@ -4,7 +4,7 @@ description: Learn how to quickly find content, search, filter, multitask with t
 author: julcsc
 ms.author: juliacawthra
 ms.topic: overview
-ms.date: 09/17/2025
+ms.date: 10/01/2025
 ai-usage: ai-assisted
 #customer intent: As a new Fabric user, I want to quickly find my content, understand navigation, personalize settings, and get help.
 ---
@@ -65,16 +65,62 @@ To explore:
 
 More about workloads: [Workloads in Fabric](../workload-development-kit/more-workloads-add.md).
 
-## Multitask with tabs and object explorer
+<a id="multitask-with-tabs-and-object-explorer"></a>
+## Multitask with tabbed navigation to access resources (preview)
+
+The tabbed navigation allows you to work with multiple items and workspaces at the same time. It enhances navigation and reduces the need to switch context.
+
+### Tabs for open items
+
+When you create or open an item, it appears in a tab horizontally across the top of the Fabric portal and shows the item name, icon for the item type (for example, notebook, pipeline, semantic model, and so on). You can hover over the tab to view the workspace it's created in. You can drag a tab to the required position. Tabs make it easier to identify and switch between open items without losing focus.
 
 > [!NOTE]
-> Tabs, multiple open workspaces, and the object explorer are in phased rollout (preview). Availability varies by tenant.
+> The tabbed navigation is only available in the Fabric view, not in Power BI view. For instance, when you switch to the Power BI view from the left nav switcher, the tabbed experience isn't available.
 
-- Tabs: Each open or new item appears as a tab at the top. Drag to reorder. Hover to see its workspace.
-- Multiple open workspaces: Fabric color codes and numbers items by workspace to help you tell them apart (preview experience).
-- Object explorer (preview): Hierarchical panel showing items in your open workspaces. Filter by type or search. Pin it for quick access.
+### Multiple open workspaces
 
-In Power BI view (left switcher), tabs aren't available.
+You can open and work across multiple workspaces side by side. Items are color-coded and numbered to indicate which workspace they belong to. This feature helps reduce confusion and improves context when working in multiple environments.
+
+### Object explorer
+
+The object explorer provides a structured view of items across all your currently open workspaces. Use it to quickly locate and open resources without having to switch between pages. You can pin the object explorer for easy access. Use the filter option to view items of a specific type or search for an item by a keyword. The items are organized by the hierarchy they belong to.
+
+:::image type="content" source="media/fabric-home/tabs-object-explorer.png" alt-text="Screenshot showing the object explorer & multiple tabs to quickly locate and open resources.":::
+
+### Keyboard shortcuts for Object Explorer and Horizontal Tabs
+
+Use keyboard shortcuts in horizontal tabs and object explorer to switch between items, expand or collapse folders, and jump to a specific tabs. This functionality is similar to an IDE environment.
+
+**Prerequisites:**
+
+- Switch to the Fabric view using the lower-left experience switcher.
+- Enable the multitasking (horizontal tabs and object explorer) feature.
+
+**Keyboard shortcuts in Object Explorer**
+
+Object explorer helps you browse workspaces, folders, and items. You can use the following shortcuts to quickly navigate:
+
+| Action | Shortcut |
+|--------|----------|
+| Expand workspace or subfolder | → Right arrow |
+| Collapse workspace or subfolder | ← Left arrow |
+| Navigate to the previous object | ↑ Up arrow<br>(If the object is a collapsed workspace/subfolder, Left arrow functions the same as Up arrow) |
+| Navigate to the next object | ↓ Down arrow<br>(If the object is an expanded workspace/subfolder, Right arrow functions the same as Down arrow) |
+
+**Use keyboard shortcuts in horizontal tabs**
+
+Horizontal tabbing lets you switch between multiple open items. Use these shortcuts to move efficiently across tabs:
+
+| Action | Shortcut |
+|--------|----------|
+| Navigate to the Nth tab | * Windows: Alt + Number (1–9)<br>* MacOS: Control + Number (1–9) |
+
+### More open items
+
+The previous limit of 10 open items has been increased. You can keep more resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
+
+> [!NOTE]
+> These multitasking features are rolling out in phases starting mid September 2025. Availability might vary across tenants as the rollout progresses.
 
 ## Find content fast: Search, filter, sort
 

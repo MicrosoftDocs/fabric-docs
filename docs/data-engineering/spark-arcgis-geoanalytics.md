@@ -17,7 +17,7 @@ Microsoft and [Esri](https://www.esri.com/) have partnered to integrate spatial 
 
 Tenant administrators can enable or disable the ArcGIS GeoAnalytics library in the Fabric Runtime for all users. To do so, sign in to the Fabric portal and navigate to **Settings** > **Admin Portal**. In the **Tenant settings**, enable **ArcGIS GeoAnalytics in Fabric Runtime (preview)**. When disabled, it won't be available in Spark notebooks or Spark job definitions.
 
-:::image type="content" source="media\spark-arcgis-geoanalytics\enable-arcgis.png" alt-text="Screenshot showing how to enable ArcGIS geo analytics from tenant settings.":::
+:::image type="content" source="media\spark-arcgis-geoanalytics\enable-arcgis.png" alt-text="Screenshot showing how to enable ArcGIS geo analytics from tenant settings." lightbox="media/spark-arcgis-geoanalytics/enable-arcgis.png":::
 
 ## Licensing and cost
 
@@ -64,25 +64,25 @@ ArcGIS provides extensive geospatial capabilities for various applications. Esri
 
 * **Data engineering and transformations** – Automate data cleaning, transformation, and loading using notebooks in Data Science and Data Engineering or pipelines in Data Factory:
 
-  :::image type="content" source="media\spark-arcgis-geoanalytics\spatial-analytics-pipelines.png" alt-text="Screenshot showing spatial analytics in pipelines.":::
+  :::image type="content" source="media\spark-arcgis-geoanalytics\spatial-analytics-pipelines.png" alt-text="Screenshot showing spatial analytics in pipelines." lightbox="media/spark-arcgis-geoanalytics/spatial-analytics-pipelines.png":::
 
 * **Hotspot and clustering analysis** – Identify significant spatial clusters of [high (hot spots) and low values (cold spots)](https://developers.arcgis.com/geoanalytics-fabric/tools/find-hot-spots/), [spatial outliers](https://developers.arcgis.com/geoanalytics-fabric/tools/find-point-clusters/), or similar feature groupings:
   
-  :::image type="content" source="media\spark-arcgis-geoanalytics\cluster-analysis.jpg" alt-text="Screenshot showing hotspot and clustering analysis.":::
+  :::image type="content" source="media\spark-arcgis-geoanalytics\cluster-analysis.jpg" alt-text="Screenshot showing hotspot and clustering analysis." lightbox="media/spark-arcgis-geoanalytics/cluster-analysis.jpg":::
 
 * **Spatial pattern identification and analysis** – Gain insights into the distribution and [patterns](https://developers.arcgis.com/geoanalytics-fabric/tools/aggregate-points/) of features and data trends across areas or time periods:
 
-  :::image type="content" source="media\spark-arcgis-geoanalytics\pattern-identification.png" alt-text="Screenshot showing spatial pattern identification and analysis.":::
+  :::image type="content" source="media\spark-arcgis-geoanalytics\pattern-identification.png" alt-text="Screenshot showing spatial pattern identification and analysis." lightbox="media/spark-arcgis-geoanalytics/pattern-identification.png":::
 
 * **[Spatial joins](https://developers.arcgis.com/geoanalytics-fabric/core-concepts/spatial-joins/) for data enrichment and location analytics** – Add location-based context based on spatial proximity or proximity across both space and time.
 
 * **[Track and movement analysis](https://developers.arcgis.com/geoanalytics-fabric/trk-functions/)** – Analyze patterns in GPS or other types of tracking data to [detect incidents](https://developers.arcgis.com/geoanalytics-fabric/tools/detect-incidents/), [calculate motion statistics](https://developers.arcgis.com/geoanalytics-fabric/tools/calculate-motion-statistics/), and understand change in location over time:
 
-  :::image type="content" source="media\spark-arcgis-geoanalytics\movement-analysis.png" alt-text="Screenshot showing track and movement analysis.":::
+  :::image type="content" source="media\spark-arcgis-geoanalytics\movement-analysis.png" alt-text="Screenshot showing track and movement analysis." lightbox="media/spark-arcgis-geoanalytics/movement-analysis.png":::
 
 * **[Aggregation](https://developers.arcgis.com/geoanalytics-fabric/tools/aggregate-points/) and enrichment for use in Power BI dashboards** – Write results back into OneLake for use in Power BI.  Schedule your workflows to drive automated updates:
 
-  :::image type="content" source="media\spark-arcgis-geoanalytics\aggregation-power-bi.png" alt-text="Screenshot showing spatial data aggregation in Power BI.":::
+  :::image type="content" source="media\spark-arcgis-geoanalytics\aggregation-power-bi.png" alt-text="Screenshot showing spatial data aggregation in Power BI." lightbox="media/spark-arcgis-geoanalytics/aggregation-power-bi.png":::
 
 For more information on all functions and tools, see [ArcGIS GeoAnalytics Developer Documentation](https://developers.arcgis.com/geoanalytics-fabric).
 
@@ -109,7 +109,7 @@ result_service_calls = FindHotSpots() \
 
 The results can be further analyzed and visualized as shown below:
 
-:::image type="content" source="media\spark-arcgis-geoanalytics\hot-spot-analysis.png" alt-text="Screenshot showing hot spot analysis to evaluate the data.":::
+:::image type="content" source="media\spark-arcgis-geoanalytics\hot-spot-analysis.png" alt-text="Screenshot showing hot spot analysis to evaluate the data." lightbox="media/spark-arcgis-geoanalytics/hot-spot-analysis.png":::
 
 ### Get started with spatial data from ArcGIS
 
@@ -137,7 +137,7 @@ df.st.plot(basemap="light", geometry="shape", facecolor="yellow", edgecolor="bla
 
 ```
 
-:::image type="content" source="media\spark-arcgis-geoanalytics\dataframe-analysis.png" alt-text="Screenshot showing how to plot a dataframe with geometry.":::
+:::image type="content" source="media\spark-arcgis-geoanalytics\dataframe-analysis.png" alt-text="Screenshot showing how to plot a dataframe with geometry." lightbox="media/spark-arcgis-geoanalytics/dataframe-analysis.png":::
 
 ### Supportability
 

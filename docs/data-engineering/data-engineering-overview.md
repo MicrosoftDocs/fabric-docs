@@ -23,7 +23,7 @@ Microsoft Fabric provides various data engineering capabilities to ensure that y
 
 - Use notebooks to write code for data ingestion, preparation, and transformation
 
-  :::image type="content" source="media\data-engineering-overview\data-engineering-artifacts.png" alt-text="Screenshot showing Data Engineering objects.":::
+  :::image type="content" source="media\data-engineering-overview\data-engineering-artifacts.png" alt-text="Screenshot showing Data Engineering objects." lightbox="media/data-engineering-overview/data-engineering-artifacts.png":::
 
 ## Lakehouse
 
@@ -37,9 +37,9 @@ Spark job definitions are a set of instructions that define how to execute a job
 
 Notebooks are an interactive computing environment that allows users to create and share documents that contain live code, equations, visualizations, and narrative text. They allow users to write and execute code in various programming languages, including Python, R, and Scala. You can use notebooks for data ingestion, preparation, analysis, and other data-related tasks.
 
-## Data pipeline
+## Pipeline
 
-Data pipelines are a series of steps that can collect, process, and transform data from its raw form to a format that you can use for analysis and decision-making. They're a critical component of data engineering, as they provide a way to move data from its source to its destination in a reliable, scalable, and efficient way.
+Pipelines are a series of steps that can collect, process, and transform data from its raw form to a format that you can use for analysis and decision-making. They're a critical component of data engineering, as they provide a way to move data from its source to its destination in a reliable, scalable, and efficient way.
 
 You can use Data Engineering in Microsoft Fabric free of charge when you sign up for the [Fabric trial](../fundamentals/fabric-trial.md). You can also buy a [Microsoft Fabric capacity](../enterprise/buy-subscription.md) or a [Fabric reserved capacity](/azure/cost-management-billing/reservations/fabric-capacity)
 
