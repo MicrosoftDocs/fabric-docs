@@ -42,7 +42,7 @@ Here's how the core features stack up between Azure Data Factory and Fabric Data
 |Managed virtual networks and private endpoints |To be determined. |**Future capability in Fabric**: We're still working on integration for managed virtual networks and private endpoints in Fabric. |
 |Expression language |Expression language |**Same expressions**: Your existing expression knowledge transfers directly. The syntax is nearly identical. |
 |Authentication types |Authentication kinds |**More options**: All your popular ADF authentication methods work in Fabric, plus we've added new authentication types. |
-|CI/CD |CI/CD |**Coming soon**: Full CI/CD capabilities are on the way for Fabric Data Factory. |
+|CI/CD |CI/CD |Enhanced capabilities beyond ADF include easy cherry-picking, individual item promotion, Git repo enablement, and built-in SaaS CI/CD options.|
 |ARM template export/import |Save as |**Quick duplication**: In Fabric, use "Save as" to quickly duplicate pipelines for development or testing. |
 |Monitoring |Monitoring hub + Run history |**Advanced monitoring**: The monitoring hub offers a modern experience with cross-workspace insights and better drill-down capabilities. |
 |Debugging |Interactive mode |**Simplified debugging**: Fabric eliminates ADF’s debug mode. You’re always in interactive mode. |
@@ -105,7 +105,7 @@ With Data Factory in Microsoft Fabric, we continue to maintain a high degree of 
 |Synapse Notebook and SJD activities|Y|N/A|
 |Teams|N/A|Y|
 |Until|Y|Y|
-|Validation|Y|N|
+|Validation|Y|Y(get metadata and if condition)|
 |Wait|Y|Y|
 |Web|Y|Y|
 |Webhook|Y|Y|
