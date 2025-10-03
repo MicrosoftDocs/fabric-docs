@@ -642,6 +642,8 @@ items:
     href: real-time-intelligence-consumption.md
   - name: Understand Eventhouse compute usage
     href: eventhouse-compute-observability.md
+  - name: Eventhouse Cost per GB Ingested
+    href: pricing-cost-drivers.md
 - name: Model data
   items:
   - name: Digital twin builder
