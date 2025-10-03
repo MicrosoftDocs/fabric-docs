@@ -15,11 +15,6 @@ ms.date: 09/24/2025
 
 Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. With this feature, admins can block all outbound connections, and then allow only approved connections to external resources through secure links between Fabric and virtual networks. Because you can enforce security policies at the workspace level rather than only at the tenant level. You have more granular control over your organization's data security because you can restrict outbound connectivity for specific workspaces while allowing others to maintain open access.
 
-You can apply security policies at the workspace level rather than only at the tenant level, giving you more granular control over 
-
-You have more granular control over 
-Because you can restrict outbound access for individual workspaces while allowing open access for other workspaces in the tenant, you can enforce security policies in a more granular manner. have more granular enforcement of your organization's security policies. to maintain open at the workspace level rather than only at the tenant level, you connectivity for specific workspaces while allowing others to maintain open access, can enforce security policies at the workspace level rather than only at the tenant level. You have more granular control over your organization's data security because you can .
-
 This article provides an overview of workspace outbound access protection and its configuration options.
 
 > [!NOTE]
