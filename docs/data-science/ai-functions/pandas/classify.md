@@ -12,19 +12,22 @@ ms.search.form: AI functions
 
 # Use ai.classify with pandas
 
-The `ai.classify` function uses generative AI to categorize input text according to custom labels you choose, with a single line of code.
 
-See additional AI functions in [this overview article](../overview.md).
+The `ai.classify` function uses generative AI to categorize input text according to custom labels you choose, with a single line of code.
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
-> - By default, the *gpt-4o-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
+ > - By default, the *gpt-4.1-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with the built-in AI endpoint in Fabric.
 
-### Overview
+> [!NOTE]
+> - This article covers using *ai.classify* with pandas. To use *ai.classify* with PySpark, see [this article](../pyspark/classify.md).
+> - See additional AI functions in [this overview article](../overview.md).
+
+## Overview
 
 The `ai.classify` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. To assign user-provided labels to each input row, call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html).
 
@@ -33,23 +36,23 @@ The function returns a pandas Series that contains classification labels, which 
 > [!TIP]
 > We recommend using the `ai.classify` function with at least two input labels.
 
-### Syntax
+## Syntax
 
 ```python
 df["classification"] = df["input"].ai.classify("category1", "category2", "category3")
 ```
 
-### Parameters
+## Parameters
 
 | Name | Description |
 |---|---|
 | **`labels`** <br> Required | One or more [strings](https://docs.python.org/3/library/stdtypes.html#str) that represent the set of classification labels to match to input text values. |
 
-### Returns
+## Returns
 
 The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains a classification label for each input text row. If a text value can't be classified, the corresponding label is `null`.
 
-### Example
+## Example
 
 ```python
 # This code uses AI. Always review output for mistakes. 

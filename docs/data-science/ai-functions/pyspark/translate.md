@@ -1,6 +1,6 @@
 ---
-title: Translate Text with the ai.translate Function
-description: Learn how to use the ai.translate function to translate input text into a new language of your choice.
+title: Use ai.translate with PySpark
+description: Learn how to use the ai.translate function to translate input text into a new language of your choice with PySpark.
 ms.author: jburchel
 author: jonburchel
 ms.reviewer: vimeland
@@ -10,76 +10,35 @@ ms.date: 09/19/2025
 ms.search.form: AI functions
 ---
 
-# Translate text with the ai.translate function
+# Use ai.translate with PySpark
 
-The `ai.translate` function uses generative AI to translate input text into a new language (of your choice). It uses only a single line of code.
 
-AI functions improve data engineering by using the power of large language models in Microsoft Fabric. To learn more, see [this overview article](./overview.md).
+The `ai.translate` function uses generative AI to translate input text into a new language (of your choice), with a single line of code.
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
-> - By default, the *gpt-4o-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
+ > - By default, the *gpt-4.1-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with the built-in AI endpoint in Fabric.
 
-### Overview
+> [!NOTE]
+> - This article covers using *ai.translate* with PySpark. To use *ai.translate* with pandas, see [this article](../pandas/translate.md).
+> - See additional AI functions in [this overview article](../overview.md).
+## Overview
 
-## Use ai.translate with pandas
-
-The `ai.translate` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. To translate each input row into a target language of your choice, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column.
-
-The function returns a pandas Series that contains translations, which you can store in a new DataFrame column.
-
-> [!TIP]
-> The `ai.translate` function was tested with 10 languages: Czech, English, Finnish, French, German, Greek, Italian, Polish, Spanish, and Swedish. Your results with other languages might vary.
-
-### Syntax
-
-```python
-df["translations"] = df["text"].ai.translate("target_language")
-```
-
-### Parameters
-
-| Name | Description |
-|---|---|
-| `to_lang` <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) representing the target language for text translations. |
-
-### Returns
-
-The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains translations for each row of input text. If the input text is `null`, the result is `null`.
-
-### Example
-
-```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
-
-df = pd.DataFrame([
-        "Hello! How are you doing today?", 
-        "Tell me what you'd like to know, and I'll do my best to help.", 
-        "The only thing we have to fear is fear itself."
-    ], columns=["text"])
-
-df["translations"] = df["text"].ai.translate("spanish")
-display(df)
-```
-
-## Use ai.translate with PySpark
-
-The `ai.translate` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify an existing input column name as a parameter, along with a target language.
+The `ai.translate` function is available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify an existing input column name as a parameter, along with a target language.
 
 The function returns a new DataFrame with translations for each input text row, stored in an output column.
 
-### Syntax
+## Syntax
 
 ```python
 df.ai.translate(to_lang="spanish", input_col="text", output_col="translations")
 ```
 
-### Parameters
+## Parameters
 
 | Name | Description |
 |---|---|
@@ -88,11 +47,11 @@ df.ai.translate(to_lang="spanish", input_col="text", output_col="translations")
 | `output_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column that stores translations for each input text row. If you don't set this parameter, a default name generates for the output column. |
 | `error_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column that stores any OpenAI errors that result from processing each input text row. If you don't set this parameter, a default name generates for the error column. If an input row has no errors, the value in this column is `null`. |
 
-### Returns
+## Returns
 
 The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) that includes a new column that contains translations for the text in the input column row. If the input text is `null`, the result is `null`.
 
-### Example
+## Example
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -108,9 +67,12 @@ translations = df.ai.translate(to_lang="spanish", input_col="text", output_col="
 display(translations)
 ```
 
+This example code cell provides the following output:
+:::image type="content" source="../../media/ai-functions/translate-example-output.png" alt-text="Screenshot showing a data frame with a 'text' column and a 'translations' column. The 'translations' column contains the English text in the 'text' column, translated in Spanish." lightbox="../../media/ai-functions/translate-example-output.png":::
+
 ## Related content
 
-- Calculate similarity with [`ai.similarity`](./similarity.md).
+- Use [`ai.translate` with pandas](../pandas/translate.md).
 - Categorize text with [`ai.classify`](./classify.md).
 - Detect sentiment with [`ai.analyze_sentiment`](./analyze-sentiment.md).
 - Extract entities with [`ai_extract`](./extract.md).

@@ -12,17 +12,20 @@ ms.search.form: AI functions
 
 # Use ai.extract with PySpark
 
-The `ai.extract` function uses generative AI to scan input text and extract specific types of information designated by labels you choose (for example, locations or names). It uses only a single line of code.
 
-See additional AI functions in [this overview article](../overview.md).
+The `ai.extract` function uses generative AI to scan input text and extract specific types of information designated by labels you choose (for example, locations or names). It uses only a single line of code.
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
-> - By default, the *gpt-4o-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
+ > - By default, the *gpt-4.1-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with the built-in AI endpoint in Fabric.
+
+> [!NOTE]
+> - This article covers using *ai.extract* with PySpark. To use *ai.extract* with pandas, see [this article](../pandas/extract.md).
+> - See additional AI functions in [this overview article](../overview.md).
 
 ## Overview
 The `ai.extract` function is available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify the name of an existing input column as a parameter, along with a list of entity types to extract from each row of text.

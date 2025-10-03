@@ -19,31 +19,31 @@ See additional AI functions in [this overview article](../overview.md).
 > This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
-> - By default, the *gpt-4o-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
+ > - By default, the *gpt-4.1-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with the built-in AI endpoint in Fabric.
 
-### Overview
+## Overview
 
 The `ai.analyze_sentiment` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. To detect the sentiment of each input row, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column.
 
 The function returns a pandas Series that contains sentiment labels, which can be stored in a new column of the DataFrame.
 
-### Syntax
+## Syntax
 
 ```python
 df["sentiment"] = df["input"].ai.analyze_sentiment()
 ```
 
-### Parameters
+## Parameters
 
 None
 
-### Returns
+## Returns
 
 The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains sentiment labels for each input text row. The sentiment labels include `positive`, `negative`, `neutral`, or `mixed`. If a sentiment can't be determined, the return value is `null`.
 
-### Example
+## Example
 
 ```python
 # This code uses AI. Always review output for mistakes. 
