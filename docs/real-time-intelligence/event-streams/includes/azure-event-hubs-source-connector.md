@@ -98,8 +98,8 @@ ms.date: 11/18/2024
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-associate-event-schema.png" alt-text="Screenshot that shows the Associate an event schema page." lightbox="./media/azure-event-hubs-source-connector/extended-associate-event-schema.png":::        
 1. If you selected the **Fixed schema** option, you don't need to provide any more rules to match the schema. You can continue to the next step. If you selected the **Dynamic schema via headers** option, specify the **Kafka header property** and **expected value** that maps to the schema. Add more schemas and specify different header properties and/or different values to map to those schemas. 
 
-> [!NOTE]
-> When you define the mapping rules, each value of the header MUST be unique. If you try to reuse a schema, you see a warning message indicating that you might break existing streams. As long as the mapping rules are the same, you can reuse a schema. If this limitation affects your use, do reach out to your Microsoft representative to share your feedback. We're actively working on removing this limitation.
+    > [!NOTE]
+    > When you define the mapping rules, each value of the header MUST be unique. If you try to reuse a schema, you see a warning message indicating that you might break existing streams. As long as the mapping rules are the same, you can reuse a schema. If this limitation affects your use, do reach out to your Microsoft representative to share your feedback. We're actively working on removing this limitation.
     
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-dynamic-schema-property-value.png" alt-text="Screenshot that shows a property and a value mapped to a schema." lightbox="./media/azure-event-hubs-source-connector/extended-dynamic-schema-property-value.png":::        
 1. Once schemas for all expected events are mapped, select **Next** at the bottom of the **Schema handling** page.
