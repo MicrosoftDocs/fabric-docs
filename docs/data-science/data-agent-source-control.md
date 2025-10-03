@@ -1,5 +1,5 @@
 ---
-title: "Source Control, CI/CD, and ALM for Fabric data agent (preview)"
+title: "Source Control, CI/CD, and ALM for Fabric Data Agent (Preview)"
 description: "Learn how to use source control, CI/CD, and ALM with Microsoft Fabric data agent."
 ms.author: amjafari
 author: amjafari
@@ -65,7 +65,7 @@ Any change—whether functional or descriptive—causes the data agent to become
 
 :::image type="content" source="./media/data-agent-cicd/source-control-data-agent.png" alt-text="Screenshot showing the data agent in the source control." lightbox="./media/data-agent-cicd/source-control-data-agent.png":::
 
-5. When updates are made directly in the linked Git repository (Azure DevOps or GitHub), they can include actions such as modifying AI instructions, changing example queries, or editing publishing descriptions. You can then commit and push those changes to the repository. Once the updates are pushed and available in the repository, your Fabric workspace detects them and display an Updates available notification in the Source control pane. The updated items such as data agent appear under the Updates tab, where you can review and accept them. Accepting these updates applies the repository changes to your workspace items, ensuring the workspace reflects the latest committed version in Git.
+5. When updates are made directly in the linked Git repository (Azure DevOps or GitHub), they can include actions such as modifying AI instructions, changing example queries, or editing publishing descriptions. You can then commit and push those changes to the repository. Once the updates are pushed and available in the repository, your Fabric workspace detects them and displays an Updates available notification in the Source control pane. The updated items such as data agent appear under the Updates tab, where you can review and accept them. Accepting these updates applies the repository changes to your workspace items, ensuring the workspace reflects the latest committed version in Git.
 
 :::image type="content" source="./media/data-agent-cicd/source-control-updates.png" alt-text="Screenshot showing the updates from Git in the source control." lightbox="./media/data-agent-cicd/source-control-updates.png":::
 
@@ -156,7 +156,7 @@ You can review a deployment plan before applying changes, ensuring that only int
 > [!NOTE]
 > Service principals are supported in the Fabric data agent **only** as part of ALM scenarios. This support is limited to enabling ALM operations (such as Git integration and deployment pipelines) and doesn't extend to other Fabric data agent features. If you need to interact with a data agent outside of ALM workflows, service principal isn't supported.
 
-### Publishing a Fabric data agent for the deployment pipelines
+### Publish a Fabric data agent for the deployment pipelines
 
 Publishing a Fabric data agent makes it available for use across all different consumption channels, including Copilot for Power BI, Microsoft Copilot Studio, and Azure AI Foundry Services. To assess and consume the data agent across these channels, the data agent must be published; unpublished data agents are not accessible for consumption even if they are in production workspace. In order to follow the best practices in accordance with deployment pipeline, note that: 
 
