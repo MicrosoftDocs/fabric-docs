@@ -1,5 +1,5 @@
 ---
-title: "Connect to a SQL database in Fabric from a Jupyter Notebook in Visual Studio Code"
+title: "Connect to a SQL Database in Fabric from a Jupyter Notebook in Visual Studio Code"
 description: This quickstart describes connect to your SQL database in Fabric from a Jupyter Notebook in Visual Studio Code.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
