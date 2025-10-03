@@ -14,6 +14,8 @@ ms.date: 09/05/2025
 
 Column-level security (CLS) is a feature of [OneLake security (preview)](get-started-security.md?#onelake-security-preview) that allows you to have access to selected columns in a table instead of full access to the table. CLS lets you specify a subset of tables that users can access. Any columns that are removed from the list aren't visible to users.
 
+[!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
+
 ## Prerequisites
 
 * An item in OneLake with OneLake security turned on. For more information, see [Get started with OneLake data access roles](get-started-onelake-security.md).

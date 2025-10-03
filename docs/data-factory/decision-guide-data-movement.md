@@ -1,6 +1,6 @@
 ---
-title: Comparing Copy Job, Mirroring, and Copy Activity in Microsoft Fabric
-description: Compare Mirroring, Copy Job, and Copy Activity in Microsoft Fabric to find the best data movement method for your needs. Learn their features and use cases.
+title: Comparing Copy Job, Mirroring, Copy Activity, and Eventstreams in Microsoft Fabric
+description: Compare Mirroring, Copy Job, and Copy Activity and Eventstreams in Microsoft Fabric to find the best data movement method for your needs. Learn their features and use cases.
 author: whhender
 ms.author: whhender
 ms.reviewer: whhender
@@ -11,11 +11,11 @@ ai-usage: ai-assisted
 
 # Microsoft Fabric decision guide: Choose a data movement strategy
 
-Microsoft Fabric gives you several ways to bring data into Fabric, based on what you need. Today, you can use **Mirroring**, **Copy activities in Pipelines**, or **Copy job**. Each option offers a different level of control and complexity, so you can pick what fits your scenario best.
+Microsoft Fabric gives you several ways to bring data into Fabric, based on what you need. Today, you can use **Mirroring**, **Copy activities in Pipelines**, **Copy job**, or **Eventstreams**. Each option offers a different level of control and complexity, so you can pick what fits your scenario best.
 
 Mirroring is designed to be simple and free solution to mirror database to Fabric, but it won't cover every advanced scenario. Copy activities in pipelines give you fully customizable data ingestion features, but they require you to build and manage pipeline by yourself. Copy job fills the gap between these 2 options. It gives you more flexibility and control than Mirroring, plus native support for both batch and incremental copying, without the complexity of building pipelines.
 
-For real-time streaming ingestion and event-driven scenarios, try Fabric Eventstreams. They provide low-latency data movement, let you transform data with no code or SQL transformations, and support content-based routing to multiple destinations.
+For real-time streaming ingestion and event-driven scenarios, try Eventstreams in Real-Time Intelligence. They provide low-latency data movement, let you transform data with no code or SQL transformations, and support content-based routing to multiple destinations including Eventhouse, Lakehouse and Activator.
 
 :::image type="content" source="media/decision-guide-data-movement/decision-guide-data-movement.svg" alt-text="Screenshot of a data movement strategy decision tree, comparing mirroring, eventstream, copy job, and copy activity." lightbox="media/decision-guide-data-movement/decision-guide-data-movement.svg":::
 
