@@ -138,14 +138,14 @@ If the Lakehouse selected for diagnostics is deleted:
 
 ### 5. Can you audit workspace monitoring?
 
-- Yes. When workspace monitoring is enabled, disabled, or the Lakehouse is updated, a **ModifyOneLakeDiagnosticSettings** event is captured in the [Microsoft 365 security logs](../admin/track-user-activities), allowing you to audit changes to diagnostic settings.
+- Yes. When workspace monitoring is enabled, disabled, or the Lakehouse is updated, a **ModifyOneLakeDiagnosticSettings** event is captured in the [Microsoft 365 security logs](../admin/track-user-activities.md), allowing you to audit changes to diagnostic settings.
 
 ### 6. How much consumption does OneLake diagnostics generate?
 
-- OneLake diagnostics is comparable in cost to Azure Storage diagnostics when emitting to a storage account. For the latest details, see the official pricing page: [OneLake consumption – Microsoft Fabric | Microsoft Learn](onelake-consumption).
+- OneLake diagnostics is comparable in cost to Azure Storage diagnostics when emitting to a storage account. For the latest details, see the official pricing page: [OneLake consumption – Microsoft Fabric | Microsoft Learn](onelake-consumption.md).
 
 ## Limitations
 
-OneLake diagnostics isn't currently compatible with [Workspace outbound access protection (OAP)](../security/workspace-outbound-access-protection-overview)
+OneLake diagnostics isn't currently compatible with [Workspace outbound access protection (OAP)](../security/workspace-outbound-access-protection-overview.md)
 
 When OneLake diagnostics is configured, the selection of the workspace honors workspace private link configuration by limiting your selection to workspaces within the same private network. However, OneLake diagnostics doesn't automatically respond to networking changes.
