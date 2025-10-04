@@ -19,7 +19,7 @@ This article explains how to configure outbound access protection for your Fabri
 
 ## Prerequisites
 
-* The workspace where you want to set up outbound access protection must reside on a Fabric capacity. <!--TODO, FROM WS PL: * The workspace must be assigned to a Fabric capacity (F SKUs). Other capacities, such as premium (P SKU) and trial capacities, aren't supported. --> No other capacity types are supported. You can check assignment by going to the workspace settings and selecting **License info**, as described in Step 1 of [Reassign a workspace to a different capacity](/fabric/fundamentals/workspace-license-mode#reassign-a-workspace-to-a-different-capacity-1).
+* The workspace where you want to set up outbound access protection must reside on a Fabric capacity. No other capacity types are supported. <!--TODO - SHOULD WE USE THE SAME PREREQ AS WS PL: * "The workspace must be assigned to a Fabric capacity (F SKUs). Other capacities, such as premium (P SKU) and trial capacities, aren't supported." --> You can check assignment by going to the workspace settings and selecting **License info**, as described in Step 1 of [Reassign a workspace to a different capacity](/fabric/fundamentals/workspace-license-mode#reassign-a-workspace-to-a-different-capacity-1).
 
 * You must have an Admin role in the workspace.
 
@@ -66,7 +66,7 @@ In the request body, set `outbound` to `Deny`. Also specify the `inbound` value 
 
 ## Allow Git integration with outbound access protection
 
-*TODO - ADD OR LINK TO CONTENT*
+*TODO - ADD OR LINK TO CONTENT ABOUT GIT INTEGRATION*
 When outbound access protection is enabled, Git integration is blocked by default. To allow Git integration, you must add an allow rule for the Git service in the workspace settings.
 
 ## Set up managed private endpoints to allow outbound access
@@ -92,7 +92,7 @@ In Azure, create a Private Link service for the target workspace (Workspace 2 in
 
     * `<resource-name>` is the name you choose for the Fabric resource.
     * `<tenant-object-id>` is your Microsoft Entra tenant ID. See [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
-    * `<workspace-id>` is the workspace ID<!--(TODO-confirm) for the target workspace. Find it in the workspaceURL after `group`.-->.
+    * `<workspace-id>` is the workspace ID for the target workspace. Find it in the workspace URL after `group`.<!--(TODO - CONFIRM THIS DESCRIPTION OF THE WORKSPACE ID IN THE ARM TEMPLATE)-->
 
     ```json
     {
@@ -187,11 +187,11 @@ When outbound access protection is enabled, connectors are blocked by default. Y
 
 Call the following APIs to view/update the Data Connection rules (Cloud Connections).
 
-**TODO**
+**TODO - ADD API DETAILS FOR CLOUD CONNECTIONS**
 
 Call the following APIs to view/update the Data Connection rules (Gateways).
 
-**TODO**
+**TODO - ADD API DETAILS FOR GATEWAY CONNECTIONS**
 
 ---
 

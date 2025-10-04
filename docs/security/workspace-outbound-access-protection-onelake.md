@@ -13,11 +13,11 @@ ms.topic: how-to
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from your workspace to other workspaces and external sources. This article describes how outbound access protection affects OneLake items, including shortcuts and data copy operations within OneLake or between OneLake and Azure Storage.
 
-## How outbound access protection works for OneLake
+## Understanding outbound access protection with OneLake
 
 When outbound access protection is enabled, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to grant access only to approved destinations by configuring managed private endpoints:
 
-*TODO - ADD A DIAGRAM*
+*TODO - ADD A DIAGRAM DEPICTING OUTBOUND ACCESS PROTECTION WITH ONELAKE*
 
 ## Configuring outbound access protection for OneLake
 

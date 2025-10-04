@@ -13,7 +13,7 @@ ms.topic: how-to
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from your workspace to other workspaces and external sources. When this feature is enabled, Data Factory items are restricted from making outbound connections to public endpoints unless access is explicitly granted through approved managed private endpoints. This capability is crucial for organizations in secure or regulated environments, as it helps prevent data exfiltration and enforces organizational network boundaries.
 
-## How outbound access protection works for Data Factory
+## Understanding outbound access protection with Data Factory
 
 When configuring workspace outbound access protection, the workspace admin first enables outbound access protection, which blocks all outbound connections from Dataflow by default.  
 
@@ -105,7 +105,7 @@ When you allowlist a gateway, dataflows can connect to any data source accessibl
 
 ### Mirrored databases
 
-*TODO - ADD CONTENT*
+*TODO - ADD CONTENT ABOUT MIRRORED DATABASES*
 
 ## Limitations and Considerations
 
