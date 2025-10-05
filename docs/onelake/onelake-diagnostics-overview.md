@@ -24,7 +24,7 @@ As all data in Fabric is unified in OneLake, diagnostics at the workspace level 
 
 This unified logging approach ensures that even when data is accessed through shortcuts or across workspaces, visibility is preserved.
 
-Diagnostic events are captured for both internal and external data access. For external access—such as through the Fabric UI, Powershell, Blob or Azure Data Lake Storage (ADLS) APIs detailed Azure Blob operations. For internal Fabric workloads, it records that temporary access was granted. This ensures efficient logging while maintaining visibility into how data is consumed across your organization.
+Diagnostic events are captured for both Fabric and non-Fabric sources. For external access—such as through the Fabric UI, Powershell, Blob or Azure Data Lake Storage (ADLS) APIs detailed Azure Blob operations. For Fabric workloads, it records that temporary access was granted, so you can look further in the engine specific logs. This ensures efficient logging while maintaining visibility into how data is consumed across your organization.
 
 ## Example scenarios supported by OneLake diagnostics:
 
@@ -88,7 +88,7 @@ The JSON event contains the following attributes:
 | -------- | ----------- |
 | workspaceId | The GUID of the workspace with diagnostics enabled.  |
 | itemId  | The GUID of the fabric item, for example the Lakehouse, which is performing the OneLake operation |
-| itemType | The kind of artifact that performed the OneLake operation |
+| itemType | The kind of item that performed the OneLake operation |
 | tenantId |	The tenant identifier that performed the OneLake operation |
 | executingPrincipalId |	The GUID of the Microsoft Entra principle performing the OneLake operation |
 | correlationId |	A GUID correlation identifier for the OneLake operation |
@@ -118,8 +118,7 @@ OneLake diagnostic events includes end user identifiable information, such as `e
 If the Lakehouse selected for diagnostics is deleted:
 
 - **Diagnostics will be automatically disabled** for all workspaces that were pointing to it.
-- **Previously captured diagnostic data is not deleted**—it remains in the deleted Lakehouse's storage until the workspace itself is deleted.
-- To **resume diagnostics**, select a new Lakehouse. OneLake will enable diagnostics, and all previously captured logs remain accessible.
+- **Previously captured diagnostic data is not deleted**—it remains in the deleted Lakehouse's storage until the workspace itself is deleted. To **resume diagnostics**, select a new Lakehouse in the same workspace. OneLake will enable diagnostics, and all previously captured logs remain accessible.
 
 ### 2. What happens if the workspace is deleted?
 
@@ -146,6 +145,6 @@ If the Lakehouse selected for diagnostics is deleted:
 
 ## Limitations
 
-OneLake diagnostics isn't currently compatible with [Workspace outbound access protection (OAP)](../security/workspace-outbound-access-protection-overview.md)
+OneLake diagnostics isn't currently compatible with [Workspace outbound access protection (OAP)](../security/workspace-outbound-access-protection-overview.md) across workspaces. If you require OneLake diagnostics and OAP to work together, you must select a Lakehouse in the same Workspace.
 
 When OneLake diagnostics is configured, the selection of the workspace honors workspace private link configuration by limiting your selection to workspaces within the same private network. However, OneLake diagnostics doesn't automatically respond to networking changes.
