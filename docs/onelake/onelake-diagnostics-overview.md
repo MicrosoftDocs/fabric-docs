@@ -35,8 +35,6 @@ Diagnostic events are captured for both Fabric and non-Fabric sources. For exter
 
 ## Configuring OneLake diagnostics
 
-:::image type="content" source="./media/onelake-diagnostics/enable-onelake-diagnostics.png" alt-text="Screenshot that shows OneLake diagnostics having been configured":::
-
 ### Best practice recommendations
 
 To simplify management and improve access control, consider using a dedicated workspace to store diagnostic events. If you're enabling diagnostics across multiple workspaces in the same capacity, consider centralizing logs in a single Lakehouse to make analysis easier.
@@ -49,6 +47,8 @@ To simplify management and improve access control, consider using a dedicated wo
 - You must be a workspace admin for the workspace where you're enabling OneLake diagnostics, and a contributor to the destination Lakehouse.
 
 ### Enabling OneLake diagnostics
+
+:::image type="content" source="./media/onelake-diagnostics/enable-onelake-diagnostics.png" alt-text="Screenshot that shows OneLake diagnostics having been configured":::
 
 Use the following steps to enable OneLake diagnostics:
 
