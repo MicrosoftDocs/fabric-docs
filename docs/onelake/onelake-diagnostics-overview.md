@@ -24,7 +24,7 @@ As all data in Fabric is unified in OneLake, diagnostics at the workspace level 
 
 This unified logging approach ensures that even when data is accessed through shortcuts or across workspaces, visibility is preserved.
 
-Diagnostic events are captured for both Fabric and non-Fabric sources. For external access—such as through the Fabric UI, Powershell, Blob or Azure Data Lake Storage (ADLS) APIs detailed Azure Blob operations. For Fabric workloads, it records that temporary access was granted, so you can look further in the engine specific logs. This ensures efficient logging while maintaining visibility into how data is consumed across your organization.
+Diagnostic events are captured for both Fabric and non-Fabric sources. For access through the Fabric UI and the Blob or Azure Data Lake Storage (ADLS) APIs, every operation is logged. For Fabric workloads access, it records that temporary access was granted, so you can look further in the engine specific logs. This ensures efficient logging while maintaining visibility into how data is consumed across your organization.
 
 ## Example scenarios supported by OneLake diagnostics:
 
