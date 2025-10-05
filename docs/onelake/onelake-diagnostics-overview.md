@@ -41,7 +41,7 @@ Diagnostic events are captured for both Fabric and non-Fabric sources. For exter
 
 To simplify management and improve access control, consider using a dedicated workspace to store diagnostic events. If you're enabling diagnostics across multiple workspaces in the same capacity, consider centralizing logs in a single Lakehouse to make analysis easier.
 
-### Perquisites
+### Prerequisites
 
 - Create a Lakehouse to store OneLake diagnostic events.
 - The Lakehouse must reside in the same capacity as the workspaces you want to enable diagnostics for.
