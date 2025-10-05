@@ -166,12 +166,12 @@ Dashboard tiles use Kusto Query Language (KQL) queries to fetch data and generat
 
     :::image type="content" source="media/real-time-dashboard/query.png" alt-text="Screenshot of dashboard query in Real-Time Dashboards in Real-Time Intelligence in Microsoft Fabric.":::
 1. In the **Visual formatting** tab, select **Visual type** to choose the type of visual. For more information on how to customize the visual, see [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md).
-1. Select **Apply changes** to pin the visual to the dashboard.
+1. Select **Apply changes** to save the visual to the dashboard.
 
     :::image type="content" source="media/real-time-dashboard/visual-formatting.png" alt-text="Screenshot of visual formatting pane in Real-Time Dashboards." lightbox="media/real-time-dashboard/visual-formatting.png":::
 1. Select the **Save** icon.
 
-    :::image type="content" source="media/real-time-dashboard/save-button.png" alt-text="Screenshot showing the selection of the Save button on the ribbon." lightbox="media/real-time-dashboard/visual-formatting.png":::
+    :::image type="content" source="media/real-time-dashboard/save-button.png" alt-text="Screenshot showing the selection of the Save button on the ribbon." lightbox="media/real-time-dashboard/save-button.png":::
 
 ## Add tile from a queryset
 
@@ -179,12 +179,12 @@ You can add tiles to your dashboard directly from queries written in a KQL query
 
 1. [Open an existing KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 1. [Write a query](kusto-query-set.md#write-a-query).
-1. Select **Pin to dashboard**.
+1. Select **Save to Dashboard**.
 
-    :::image type="content" source="media/real-time-dashboard/pin-to-dashboard.png" alt-text="Screenshot of the pin query to dashboard button in a queryset query."  lightbox="media/real-time-dashboard/queryset-pin-query.png":::
+    :::image type="content" source="media/real-time-dashboard/pin-to-dashboard.png" alt-text="Screenshot of the save query to dashboard button in a queryset query."  lightbox="media/real-time-dashboard/pin-to-dashboard.png":::
 1. In the **Pin query to dashboard** window, do the following:
 
-    :::image type="content" source="media/real-time-dashboard/query-to-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
+    :::image type="content" source="media/real-time-dashboard/query-to-dashboard.png" alt-text="Screenshot of the Save query to dashboard window.":::
 
     1. Select an existing dashboard or create a new dashboard.
     1. Name your dashboard tile.
