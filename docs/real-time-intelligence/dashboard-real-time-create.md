@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 author: spelluru
 ms.author: spelluru
 ms.topic: how-to
-ms.date: 08/11/2025
+ms.date: 10/05/2025
 ms.search.form: product-kusto, Real-Time Dashboard
 ---
 # Create a Real-Time Dashboard
@@ -184,7 +184,7 @@ You can add tiles to your dashboard directly from queries written in a KQL query
     :::image type="content" source="media/real-time-dashboard/pin-to-dashboard.png" alt-text="Screenshot of the save query to dashboard button in a queryset query."  lightbox="media/real-time-dashboard/pin-to-dashboard.png":::
 1. In the **Pin query to dashboard** window, do the following:
 
-    :::image type="content" source="media/real-time-dashboard/query-to-dashboard.png" alt-text="Screenshot of the Save query to dashboard window.":::
+    :::image type="content" source="media/real-time-dashboard/query-to-dashboard.png" alt-text="Screenshot of the pin to dashboard dialog box.":::
 
     1. Select an existing dashboard or create a new dashboard.
     1. Name your dashboard tile.
