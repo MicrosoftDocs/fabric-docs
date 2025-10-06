@@ -239,23 +239,23 @@ This `UserThrownError` method takes two parameters:
 
 ## Create generic connections 
 
-User Data Functions allows you to create connection parameters for your functions with custom connectivity logic. This will give you a similar programming experience to using managed connections objects from the [Manage Connections feature](./connect-to-data-sources.md). 
+User Data Functions allows you to create connection parameters for your functions with custom connectivity logic. Generic connections handle the identity assignment steps required to authenticate with your Fabric items based on a provided audience type. This process will give you a similar programming experience to using managed connections objects from the [Manage Connections feature](./connect-to-data-sources.md).
 
-This feature uses the `@udf.generic_connection()` decorator to define an argument name, `argName`, and audience type, `audienceType`. These details are used to define the properties of a new function argument that represents the connection. The argument must be added to the list of parameters with the name defined in the decorator as `argName`, and a type of `fn.FabricItem`.  
+This feature uses the `@udf.generic_connection()` decorator to define an argument name, `argName`, and audience type, `audienceType`. These details are used to define the properties of a new function argument that represents the connection. The argument must be added to the list of parameters with the name defined in the decorator as `argName` with a type of `fn.FabricItem`.
 
 ### Connect to Fabric Cosmos DB container using a generic connection
 You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.md) using a generic connection by following these steps:
-1. In your Fabric User Data Functions item, install the `azure-cosmos` library version `4.9.0` using the [Library Management experience](./how-to-manage-libraries.md).
+1. In your Fabric User Data Functions item, install the `azure-cosmos` library using the [Library Management experience](./how-to-manage-libraries.md).
 
-1. Go to your Fabric Cosmos DB item settings.
+1. Go to your **Fabric Cosmos DB item** settings.
 
     :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos-db-connection-1.png" alt-text="Screenshot showing the Fabric Cosmos DB settings button location." lightbox="..\media\user-data-functions-python-programming-model\cosmos-db-connection-1.png":::
 
-1. Retrieve your Fabric Cosmos DB endpoint URL.
+1. Retrieve your **Fabric Cosmos DB endpoint URL**.
 
     :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos-db-connection-2.png" alt-text="Screenshot showing the Fabric Cosmos DB endpoint URL." lightbox="..\media\user-data-functions-python-programming-model\cosmos-db-connection-2.png":::
 
-1. Use the following sample code to connect to your Fabric Cosmos DB container and run a read query using the Cosmos DB sample dataset. Replace the values of the following variables:
+1. Go to your **User Data Functions item**. Use the following sample code to connect to your Fabric Cosmos DB container and run a read query using the Cosmos DB sample dataset. Replace the values of the following variables:
     - `COSMOS_DB_URI` with your Fabric Cosmos DB endpoint.
     - `DB_NAME` with the name of your Fabric Cosmos DB item.
 
@@ -291,7 +291,7 @@ You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.m
         return json.dumps(items)
     ```
 
-1. Test or run this function by providing a category name, such as `Accessory` in the invocation parameters.
+1. **Test or run this function** by providing a category name, such as `Accessory` in the invocation parameters.
 
 ## Next steps
 - [Reference API documentation](/python/api/fabric-user-data-functions/fabric.functions)
