@@ -22,7 +22,7 @@ This article gives an overview of workspace-level private links in Microsoft Fab
 
 ## Workspace-level private link overview
 
-A workspace-level private link maps a workspace to a specific virtual network using the Azure Private Link service. When a private link is enabled, public internet access to the workspace can be restricted, ensuring that only resources within an approved virtual network (via a managed private endpoint) can access the workspace. The following diagram illustrates various implementations of workspace-level private links.
+A workspace-level private link maps a workspace to a specific virtual network using the Azure Private Link service. When a private link is enabled, public internet access to the workspace can be restricted, ensuring that only resources within an approved virtual network (via a private endpoint) can access the workspace. The following diagram illustrates various implementations of workspace-level private links.
 
 :::image type="content" source="./media/security-workspace-level-private-links-overview/workspace-level-private-links-scenario-intro-diagram.png" alt-text="Diagram illustrating workspace-level private link scenarios." lightbox="./media/security-workspace-level-private-links-overview/workspace-level-private-links-scenario-intro-diagram.png" border="false":::
 
