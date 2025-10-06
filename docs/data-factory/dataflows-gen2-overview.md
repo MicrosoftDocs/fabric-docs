@@ -38,8 +38,8 @@ Here's the features that are available between Dataflow Gen2 and Gen1:
 | Better monitoring and refresh tracking       | ✓ |   |
 | Works with pipelines     | ✓  |   |
 | High-performance computing     | ✓ |   |
-| Connect via Dataflows connector | ✓ | ✓ |
-| Direct Query via Dataflows connector |  | ✓ |
+| Connect via the dataflow connector | ✓ | ✓ |
+| Direct Query via the dataflow connector |  | ✓ |
 | Refresh only changed data       | ✓ | ✓ |
 | AI-powered insights |  | ✓ |
 

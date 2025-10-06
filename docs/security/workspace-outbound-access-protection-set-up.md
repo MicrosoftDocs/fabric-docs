@@ -5,13 +5,13 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to
-ms.date: 08/20/2025
+ms.date: 09/24/2025
 
 #customer intent: As a data platform administrator, I want to set up outbound access protection for my workspace so that I can control and secure how my workspace resources connect to external networks.
 
 ---
 
-# Set up workspace outbound access protection (preview)
+# Set up workspace outbound access protection
 
 Workspace outbound access protection in Microsoft Fabric enables you to control and secure how your workspace resources connect to external networks. With this feature, you can restrict or allow outbound connections based on your organization's security policies. [Learn more](./workspace-outbound-access-protection-overview.md).
 
@@ -33,7 +33,7 @@ This article explains how to set up outbound access protection for your Fabric w
 
 1. Sign in to Fabric with an account that has the Admin role in the workspace where you want to set up outbound access protection.
 
-1. In the workspace where you want to set up outbound access protection, go to **Workspace settings** -> **Network Security**. Under **Outbound access protection (preview)**, turn on **Block outbound public access**.
+1. In the workspace where you want to set up outbound access protection, go to **Workspace settings** -> **Network Security**. Under **Outbound access protection**, turn on **Block outbound public access**.
  
    :::image type="content" source="media/workspace-outbound-access-protection-set-up/network-security-settings.png" alt-text="Screenshot showing outbound access protection settings." lightbox="media/workspace-outbound-access-protection-set-up/network-security-settings.png":::
 

@@ -69,7 +69,7 @@ sections:
         answer: |
           Our current focus involves the active development of CDC capability within Data Factory In Fabric. This forthcoming capability empowers you to move data across multiple data sources combining different copy patterns including bulk/batch copy pattern, incremental/continuous copy pattern (CDC) and real time copy pattern into one 5x5 experience.
 
-  - name: Dataflows Gen2
+  - name: Dataflow Gen2
     questions:
       - question: |
           Is Fabric Dataflow Gen2 similar to Power Query embedded in Azure Data Factory?

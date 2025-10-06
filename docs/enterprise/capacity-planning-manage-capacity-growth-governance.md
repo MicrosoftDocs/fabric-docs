@@ -67,7 +67,7 @@ Some governance practices apply universally, whether content is self-service or 
   - Each Microsoft Fabric workload has specific thresholds determined by capacity SKU size and license type. Ensure your chosen [SKU meets these requirements](sku-considerations.md). For instance, review [Fabric capacity requirements](../fundamentals/direct-lake-overview.md) when implementing semantic model. If the semantic model demands F128 capacity, begin with the F128 SKU.
 - **Optimize before scaling:** Always [optimize workloads](optimize-capacity.md) before increasing capacity. Inefficiencies result in unnecessary costs, so ensure operations run efficiently. Performance tuning might be supported by central IT or the COE. For instance:
   - Optimize slow Power BI measures or SQL queries, seeking COE best-practice advice.
-  - Reschedule consecutive data pipelines to avoid resource peaks.
+  - Reschedule consecutive pipelines to avoid resource peaks.
   - Use incremental refresh for large semantic models when possible.
   - Train report authors to use precise filters and limit large ad-hoc data pulls.
 

@@ -187,7 +187,7 @@ When working with data types such as currency or percentage, we typically conver
 
 ### Using staging before loading to a destination
 
-To improve performance of query processing, staging can be used within Dataflows Gen2 to use Fabric compute to execute your queries.
+To improve performance of query processing, staging can be used within Dataflow Gen2 to use Fabric compute to execute your queries.
 
 When staging gets enabled on your queries (the default behavior), your data gets loaded into the staging location, which is an internal Lakehouse only accessible by dataflows itself.
 

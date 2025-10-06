@@ -521,7 +521,7 @@ items:
       href: get-data-eventstream.md
     - name: Get data from Real-Time hub
       href: get-data-real-time-hub.md
-    - name: Configure KQL Database in a data pipeline
+    - name: Configure KQL Database in a pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
     - name: Connect to KQL Database in dataflows
       href: ../data-factory/connector-kusto-dataflows.md
@@ -642,6 +642,8 @@ items:
     href: real-time-intelligence-consumption.md
   - name: Understand Eventhouse compute usage
     href: eventhouse-compute-observability.md
+  - name: Eventhouse Cost per GB Ingested
+    href: pricing-cost-drivers.md
 - name: Model data
   items:
   - name: Digital twin builder
