@@ -246,17 +246,18 @@ This feature uses the `@udf.generic_connection()` decorator to define an argumen
 ### Connect to Fabric Cosmos DB container using a generic connection
 You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.md) using a generic connection by following these steps:
 1. In your Fabric User Data Functions item, install the `azure-cosmos` library version `4.9.0` using the [Library Management experience](./how-to-manage-libraries.md).
+
 1. Go to your Fabric Cosmos DB item settings.
 
-  :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos_db_connection_1.png" alt-text="Screenshot showing the Fabric Cosmos DB settings button location." lightbox="..\media\user-data-functions-python-programming-model\cosmos_db_connection_1.png":::
+    :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos-db-connection-1.png" alt-text="Screenshot showing the Fabric Cosmos DB settings button location." lightbox="..\media\user-data-functions-python-programming-model\cosmos-db-connection-1.png":::
 
 1. Retrieve your Fabric Cosmos DB endpoint URL.
 
-  :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos_db_connection_2.png" alt-text="Screenshot showing the Fabric Cosmos DB endpoint URL." lightbox="..\media\user-data-functions-python-programming-model\cosmos_db_connection_2.png":::
+    :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos-db-connection-2.png" alt-text="Screenshot showing the Fabric Cosmos DB endpoint URL." lightbox="..\media\user-data-functions-python-programming-model\cosmos-db-connection-2.png":::
 
 1. Use the following sample code to connect to your Fabric Cosmos DB container and run a read query using the Cosmos DB sample dataset. Replace the values of the following variables:
-  - `COSMOS_DB_URI` with your Fabric Cosmos DB endpoint.
-  - `DB_NAME` with the name of your Fabric Cosmos DB item.
+    - `COSMOS_DB_URI` with your Fabric Cosmos DB endpoint.
+    - `DB_NAME` with the name of your Fabric Cosmos DB item.
 
 ```python
 from fabric.functions.cosmosdb import get_cosmos_client
