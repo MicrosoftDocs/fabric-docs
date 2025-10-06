@@ -12,6 +12,8 @@ ms.subservice: graph
 
 # What is a graph database?
 
+[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
+
 A graph database models data as a network of connected entities and relationships. The most commonly used type of graph database implements the [labeled property graph](graph-data-models.md#labeled-property-graph-lpg) model: entities (nodes) and relationships (edges) can have labels and properties (key–value pairs). This flexible model enables both schema-optional and schema-driven designs, and it lets you express rich semantics. Because connections are stored explicitly as edges, queries traverse relationships by following edges instead of computing expensive joins at query time.
 
 ## Graph database core concepts

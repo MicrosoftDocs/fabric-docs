@@ -12,6 +12,8 @@ ms.subservice: graph
 
 # GQL quick reference
 
+[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
+
 This article is a quick reference for GQL (Graph Query Language) syntax in graph in Microsoft Fabric. For detailed explanations, see the [GQL language guide](gql-language-guide.md).
 
 ## Query structure

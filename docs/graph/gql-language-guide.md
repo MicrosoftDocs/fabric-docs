@@ -12,6 +12,8 @@ ms.subservice: graph
 
 # GQL language guide
 
+[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
+
 The GQL Graph Query Language is the ISO-standardized query language for graph databases. It helps you query and work with graph data efficiently. 
 
 The same international working group that oversees SQL develops GQL. If you already know SQL, you'll see familiar syntax in GQL.
