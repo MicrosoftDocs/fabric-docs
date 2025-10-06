@@ -151,14 +151,15 @@ The following properties are returned:
 ## Response codes
 The function will return the following HTTP codes as a result of the execution.
 
-| **Response code** | **Description** |
-| ------------------- | ------------------------ |
-| 200 OK (Success)| The request was successful|
-| 403 (Forbidden) | The response was too large and the invocation failed.|
-| 408 (Request Timeout) | The request failed due to the execution taking more than 200 seconds. |
-| 409 (Conflict) | The request threw an exception during the execution. |
-| 400 (Bad Request)| The request failed due to invalid or missing input parameters.|
-| 500 (Internal Server Error)| The request failed due to an internal error.|
+| **Response code**| **Message** | **Description** |
+| ------------------- | ------------------------ |--|
+| 200 | Success | The request was successful. |
+| 400 | Bad Request | The request was not valid. This response could be due to missing or incorrect input parameter values, data types or names. This response could also be caused by public access being turned off for a function. |
+| 403 | Forbidden | The response was too large and the invocation failed.|
+| 408 | Request Timeout | The request failed due to the execution taking more than 200 seconds. |
+| 409 | Conflict | The request could not be completed due to a conflicting state. This could be caused by an unhandled exception or an error with user credentials. |
+| 422 | Bad Request | The request failed due to a UserThrownError raised in the function.|
+| 500 | Internal Server Error | The request failed due to an internal error in the service.|
 
 ## Debugging and testing 
 Debug the application in Visual Studio Code using python debugger. Add breakpoints if needed to debug if any issues. [Learn more](https://code.visualstudio.com/docs/languages/python#_debugging)

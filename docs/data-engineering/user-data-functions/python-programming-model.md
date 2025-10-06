@@ -237,6 +237,59 @@ This `UserThrownError` method takes two parameters:
 - `Message`: This string is returned as the error message to the application that is invoking this function.
 - A dictionary of properties is returned to the application that is invoking this function.
 
+## Create generic connections 
+
+User Data Functions allows you to create connection parameters for your functions with custom connectivity logic. This will give you a similar programming experience to using managed connections objects from the [Manage Connections feature](./connect-to-data-sources.md). 
+
+### Connect to Fabric Cosmos DB container using a generic connection
+You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.md) using a generic connection by following these steps:
+1. In your Fabric User Data Functions item, install the `azure-cosmos` library version `4.9.0` using the [Library Management experience](./how-to-manage-libraries.md).
+1. Go to your Fabric Cosmos DB item settings.
+
+  :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos_db_connection_1.png" alt-text="Screenshot showing the Fabric Cosmos DB settings button location." lightbox="..\media\user-data-functions-python-programming-model\cosmos_db_connection_1.png":::
+
+1. Retrieve your Fabric Cosmos DB endpoint URL.
+
+  :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos_db_connection_2.png" alt-text="Screenshot showing the Fabric Cosmos DB endpoint URL." lightbox="..\media\user-data-functions-python-programming-model\cosmos_db_connection_2.png":::
+
+1. Use the following sample code to connect to your Fabric Cosmos DB container and run a read query using the Cosmos DB sample dataset. Replace the values of the following variables:
+  - `COSMOS_DB_URI` with your Fabric Cosmos DB endpoint.
+  - `DB_NAME` with the name of your Fabric Cosmos DB item.
+
+```python
+from fabric.functions.cosmosdb import get_cosmos_client
+import json
+
+@udf.generic_connection(argName="cosmosDb", audienceType="CosmosDB")
+@udf.function()
+def get_product_by_category(cosmosDb: fn.FabricItem, category: str) -> list:
+
+    COSMOS_DB_URI = "YOUR_COSMOS_DB_URL"
+    DB_NAME = "YOUR_COSMOS_DB_NAME" # Note: This is the Fabric item name
+    CONTAINER_NAME = "SampleData" # Note: This is your container name. In this example, we are using the SampleData container.
+
+    cosmosClient = get_cosmos_client(cosmosDb, COSMOS_DB_URI)
+
+    # Get the database and container
+    database = cosmosClient.get_database_client(DB_NAME)
+    container = database.get_container_client(CONTAINER_NAME)
+
+    query = 'select * from c WHERE c.category=@category' #"select * from c where c.category=@category"
+    parameters = [
+        {
+            "name": "@category", "value": category
+        }
+    ]
+    results = container.query_items(query=query, parameters=parameters)
+    items = [item for item in results]
+
+    logging.info(f"Found {len(items)} products in {category}")
+
+    return json.dumps(items)
+```
+
+1. Test or run this function by providing a category name, such as `Accessory` in the invocation parameters.
+
 ## Next steps
 - [Reference API documentation](/python/api/fabric-user-data-functions/fabric.functions)
 - [Create a Fabric User data functions item](./create-user-data-functions-portal.md)
