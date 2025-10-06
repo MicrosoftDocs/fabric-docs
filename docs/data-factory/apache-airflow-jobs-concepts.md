@@ -5,13 +5,13 @@ ms.topic: conceptual
 ms.custom: airflows
 author: n0elleli
 ms.author: noelleli
-ms.date: 07/03/2025
+ms.date: 10/06/2025
 ---
 
 # What is Apache Airflow Job?
 
 > [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/). At this current time, private networks and Vnet are not supported with Fabric Airflow jobs. This feature is under development and will be updated soon.
+> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/). Currently, private networks and Vnet are not supported with Fabric Apache Airflow jobs. This feature is under development and will be updated soon.
 
 Apache Airflow job is the next generation of Azure Data Factory's Workflow Orchestration Manager.
 It makes it easy to create and manage [Apache Airflow](https://airflow.apache.org) jobs, so you can run Directed Acyclic Graphs (DAGs) at scale without hassle.  As part of Microsoft Fabric's Data Factory, it gives you a modern way to bring in, prepare, and transform data from all kinds of data sources — like databases, data warehouses, Lakehouse, real-time data, and more.
