@@ -36,7 +36,6 @@ Fabric User Data Functions can seamlessly connect with other Fabric items to cre
     - [Fabric Notebooks](../notebook-utilities.md)
 - [Translytical apps with Power BI](/power-bi/create-reports/translytical-task-flow-overview)
 
-
 ## Next steps
 
 - [Create a Fabric User data functions item](./create-user-data-functions-portal.md) or [use the VS Code extension](./create-user-data-functions-vs-code.md)
