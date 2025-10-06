@@ -1135,7 +1135,7 @@
         href: modern-get-data-experience-pipeline.md
       - name: Fabric pipeline landing page
         href: pipeline-landing-page.md
-      - name: Variable library integration (Preview)
+      - name: Variable library integration
         href: variable-library-integration-with-data-pipelines.md
   - name: FAQ and Troubleshooting
     items: 
