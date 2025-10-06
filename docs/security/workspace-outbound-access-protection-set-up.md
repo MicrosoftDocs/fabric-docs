@@ -66,8 +66,10 @@ In the request body, set `outbound` to `Deny`. Also specify the `inbound` value 
 
 ## Allow Git integration with outbound access protection
 
-*TODO - ADD OR LINK TO CONTENT ABOUT GIT INTEGRATION*
-When outbound access protection is enabled, Git integration is blocked by default. To allow Git integration, you must add an allow rule for the Git service in the workspace settings.
+<!--TODO - VERIFY THIS SECTION AND UPDATE THE LEARN MORE LINK WHEN PUBLISHED -->
+Git integration in Fabric lets a workspace sync its content (like notebooks, dataflows, Power BI reports, etc.) with an external Git repository (GitHub or Azure DevOps). Because the workspace must pull from or push to a Git service outside of Fabric, it involves outbound communication.
+
+When outbound access protection is enabled, Git integration is blocked by default. To allow Git integration, you must add an allow rule for the Git service in the workspace settings. [Learn more](https://review.learn.microsoft.com/en-us/fabric/cicd/cicd-security?branch=pr-en-us-10624)
 
 ## Set up managed private endpoints to allow outbound access
 

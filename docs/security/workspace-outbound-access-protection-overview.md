@@ -20,7 +20,7 @@ This article provides an overview of workspace outbound access protection and it
 > [!NOTE]
 > For *inbound* security, Fabric supports private links at the [tenant level](security-private-links-overview.md) and at the [workspace level](security-workspace-level-private-links-overview.md).
 
-## Restricting outbound access at the workspace level
+### How is outbound access restricted at the workspace level?
 
 Workspace-level outbound access protection lets you control which external resources items in the workspace can access. When outbound access protection is enabled, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to grant access only to approved destinations by configuring managed private endpoints or connectors:
 

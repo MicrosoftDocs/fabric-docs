@@ -19,7 +19,7 @@ Workspace outbound access protection enables precise control over external commu
 
 When outbound access protection is enabled, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to grant access only to approved destinations by configuring managed private endpoints:
 
-*TODO - ADD A DIAGRAM DEPICTING OUTBOUND ACCESS PROTECTION WITH DATA ENGINEERING*
+*TODO - ADD A DIAGRAM SHOWING OUTBOUND ACCESS PROTECTION WITH DATA ENGINEERING*
 
 ## Configuring outbound access protection for data engineering
 
