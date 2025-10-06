@@ -55,7 +55,7 @@ To address these challenges, follow these best practices:
 Migration paths depend on your ADF assets and their feature parity. Options include:
 
 - [Mounting ADF items in Fabric for continuity.](#mounting-an-azure-data-factory-item-in-your-fabric-workspace) - A live view of your existing Azure Data Factory instance within Fabric, enabling gradual migration and testing. This is also a good first step before using conversion tools or replatforming.
-- [Use the powershell conversion tool to migrate pipelines with high parity.](#use-powershell-upgrade-tool) - Automate the migration of pipelines, activities, and parameters at scale. Ideal for standard patterns like Copy, Lookup, and Stored Procedure.
+- [Use the powershell conversion tool to migrate pipelines with high parity.](#use-the-powershell-upgrade-tool) - Automate the migration of pipelines, activities, and parameters at scale. Ideal for standard patterns like Copy, Lookup, and Stored Procedure.
 - [Manual migration for complex environments](#manual-migration) - Rebuild pipelines in Fabric to leverage new features and optimize performance. This is necessary for pipelines with low parity or custom logic, but it’s also an opportunity to modernize your architecture.
 
 ## Mounting an Azure Data Factory item in your Fabric workspace
@@ -86,12 +86,12 @@ To migrate effectively, consider these steps:
 1. **Prioritize**: Rank your pipelines based on business impact, complexity, and ease of migration.
 1. **Automate where you can**: For all low-complexity pipelines, consider using the [PowerShell upgrade tool](#use-the-powershell-upgrade-tool) to automate some migration.
 1. **Consider tooling**: Use these tools to make recreation easier:
-   - Use [Fabric templates](create-pipeline-from-template.md) to standardize common patterns
-   - Use [parameterization](parameterize-fabric-pipelines.md) to create reusable pipelines
+   - Use [Fabric templates](templates.md) as a starting place for pipelines with common data integration scenarios.
+   - Use [parameterization](parameters.md) to create reusable pipelines
    - Use [Copilot in Fabric Data Factory](copilot-fabric-data-factory.md) to help with pipeline creation
    - Use [deployment pipelines](cicd-pipelines.md) for CI/CD and version control
 1. **Manual migration**: For high-complexity pipelines, rebuild them in Fabric:
-    1. **Recreate connections**: Set up [Connections](create-connection.md) in Fabric to replace Linked Services in ADF
+    1. **Recreate connections**: Set up [Connections](connector-overview.md) in Fabric to replace Linked Services in ADF
     1. **Recreate activities**: Set up your [activities](activity-overview.md) in your pipelines, replacing [unsupported activities](activity-parity.md) with Fabric alternatives or using the Invoke pipeline activity
     1. **Schedule and set triggers**: [Rebuild schedules and event triggers in Fabric](pipeline-runs.md) to match your ADF schedules
 1. **Test thoroughly**: Validate migrated pipelines against expected outputs, performance benchmarks, and compliance requirements.
