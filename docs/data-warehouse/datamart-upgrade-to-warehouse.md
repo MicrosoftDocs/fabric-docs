@@ -18,7 +18,7 @@ Fabric Data Warehouse is more scalable, more secure, more enterprise-ready, and 
 Beginning June 1, 2025, creating a new Power BI datamart will redirect to creating a new Fabric Warehouse.
 
 > [!IMPORTANT]
-> Beginning October 1, 2025, Power BI datamarts will not be supported and datamarts will be cleaned up from workspaces. To avoid losing your data and breaking reports built on top of datamarts, migrate your datamart to warehouse. To upgrade existing datamarts to Fabric Data Warehouse, follow the steps in this guide.
+> Beginning November 1, 2025, Power BI datamarts will not be supported and datamarts will be cleaned up from workspaces. To avoid losing your data and breaking reports built on top of datamarts, migrate your datamart to warehouse. To upgrade existing datamarts to Fabric Data Warehouse, follow the steps in this guide.
 
 ## Prerequisites
 
@@ -82,7 +82,7 @@ Fabric warehouse supports more security and governance controls than Power BI da
 - In datamart, the data was ingestion into tables in `dbo` schema but users were provided with corresponding views on these tables in `model` schema. Every object in datamarts is accessible via a view in the `model` schema.
 - In a warehouse, to reproduce the same objects, create a new schema named `model` and create views in the `model` schema on each table. You can enforce SQL security in a view, and/or provide any custom T-SQL security as required, with more capabilities than in the datamart interface in Power BI. For more information, see [Row-level security in Fabric data warehousing](row-level-security.md).
 
-### Incremental refresh with Dataflows Gen2
+### Incremental refresh with Dataflow Gen2 dataflows
 
 Incremental refresh is a feature that allows you to refresh only the data that has changed since the last refresh, instead of refreshing the entirety of the data. 
 

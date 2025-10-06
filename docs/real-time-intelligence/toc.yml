@@ -87,8 +87,6 @@ items:
     items:
     - name: Eventstream Overview
       href: event-streams/overview.md
-    - name: What's new in Fabric event streams?
-      href: event-streams/whats-new.md
     - name: Eventstreams capacity consumption
       href: event-streams/monitor-capacity-consumption.md
     - name: Create eventstreams
@@ -209,14 +207,16 @@ items:
           href: event-streams/api-update-eventstream-definition.md
     - name: Security
       items:
-      - name: Use managed private endpoints
+      - name: Secure outbound via managed private endpoints
         href: event-streams/set-up-private-endpoint.md
+      - name: Secure inbound via tenant and workspace private links
+        href: event-streams/set-up-tenant-workspace-private-links.md
       - name: Authenticate an application using Entra ID
         href: event-streams/custom-endpoint-entra-id-auth.md
       - name: Authenticate with a managed identity
         href: event-streams/connect-using-managed-identity.md
       - name: Connect to streaming sources in private network 
-        href: event-streams/connect-connecots-in-virtual-network-on-premises.md        
+        href: event-streams/connect-connecots-in-virtual-network-on-premises.md
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
@@ -521,7 +521,7 @@ items:
       href: get-data-eventstream.md
     - name: Get data from Real-Time hub
       href: get-data-real-time-hub.md
-    - name: Configure KQL Database in a data pipeline
+    - name: Configure KQL Database in a pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
     - name: Connect to KQL Database in dataflows
       href: ../data-factory/connector-kusto-dataflows.md
@@ -566,7 +566,7 @@ items:
       - name: Splunk Universal Forwarder
         href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
       - name: Telegraf
-        href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rti&pivots=fabric
+        href: get-data-telegraf.md
 - name: Store data
   items:
   - name: Eventhouse
@@ -631,6 +631,8 @@ items:
           href: query-acceleration-overview.md
         - name: Accelerate queries over OneLake shortcuts
           href: query-acceleration.md
+      - name: Eventhouse endpoint for Lakehouse
+        href: eventhouse-as-endpoint.md
       - name: External tools
         items: 
         - name: Query Fabric OneLake Delta tables from Snowflake
@@ -640,6 +642,8 @@ items:
     href: real-time-intelligence-consumption.md
   - name: Understand Eventhouse compute usage
     href: eventhouse-compute-observability.md
+  - name: Eventhouse Cost per GB Ingested
+    href: pricing-cost-drivers.md
 - name: Model data
   items:
   - name: Digital twin builder
@@ -751,9 +755,17 @@ items:
       href: vector-database-eventhouse.md
   - name: Time series anomaly detection
     items:
-    - name: Univariate anomaly detection and forecasting
+    - name: Anomaly detection using Real-Time Intelligence
+      items:
+      - name: Overview of anomaly detection
+        href: anomaly-detection.md
+      - name: Anomaly detection models
+        href: anomaly-detection-models.md
+      - name: Troubleshoot anomaly detection
+        href: troubleshoot-anomaly-detection.md
+    - name: Univariate anomaly detection using KQL
       href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
-    - name: Multivariate anomaly detection
+    - name: Multivariate anomaly detection using Spark
       items:
       - name: Multivariate anomaly detection overview
         href: multivariate-anomaly-overview.md
@@ -796,6 +808,18 @@ items:
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
       href: power-bi-data-connector.md
+  - name: Map
+    items:
+    - name: Create a map
+      href: map/create-map.md
+    - name: Customize a map
+      href: map/customize-map.md
+    - name: Share Map
+      href: map/share-map.md
+    - name: Create a tileset
+      href: map/spatial-job-create-tile-sets.md
+    - name: Manage Map permissions
+      href: map/manage-map-permissions.md
 - name: Track data
   items:
   - name: What is Activator?

@@ -235,5 +235,5 @@ To learn more about cross-warehouse queries, see [Write a cross-database SQL Que
 
 - [Ingest data into the Warehouse](ingest-data.md)
 - [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)
-- [Ingest data into your Warehouse using data pipelines](ingest-data-pipelines.md)
+- [Ingest data into your Warehouse using pipelines](ingest-data-pipelines.md)
 - [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-query)

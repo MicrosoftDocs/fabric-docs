@@ -14,10 +14,12 @@ ms.custom:
 
 The CloudBluePSA connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-For information on how to connect to CloudBluePSA in Dataflow Gen2, go to [Set up your CloudBluePSA connection](connector-cloudbluepsa.md).
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Account key |
 
-## Support in data pipelines
+## Related content
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support CloudBluePSA in data pipelines.
+For information on how to connect to CloudBluePSA, go to [Set up your CloudBluePSA connection](connector-cloudbluepsa.md).

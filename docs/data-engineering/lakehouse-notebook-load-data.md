@@ -1,9 +1,9 @@
 ---
 title: Load data into your lakehouse with a notebook
 description: Learn how to use a notebook to load data into your lakehouse with either an existing notebook or a new one.
-ms.reviewer: snehagunda
-ms.author: qixwang
-author: qixwang
+ms.reviewer: qixwang
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 05/24/2024
@@ -19,7 +19,7 @@ In this tutorial, learn how to read/write data into your Fabric lakehouse with a
 
 To specify the location to read from, you can use the relative path if the data is from the default lakehouse of your current notebook. Or, if the data is from a different lakehouse, you can use the absolute Azure Blob File System (ABFS) path. Copy this path from the context menu of the data.
 
-:::image type="content" source="media\lakehouse-notebook-explore\copy-path-menu.png" alt-text="Screenshot showing menu option of copy action.":::
+:::image type="content" source="media\lakehouse-notebook-explore\copy-path-menu.png" alt-text="Screenshot showing menu option of copy action." lightbox="media\lakehouse-notebook-explore\copy-path-menu.png":::
 
 **Copy ABFS path**: This option returns the absolute path of the file.
 
@@ -50,7 +50,7 @@ df.write.mode("append").format("delta").saveAsTable(delta_table_name)
 
 To support Pandas API, the default lakehouse is automatically mounted to the notebook. The mount point is '/lakehouse/default/'. You can use this mount point to read/write data from/to the default lakehouse. The "Copy File API Path" option from the context menu returns the File API path from that mount point. The path returned from the option **Copy ABFS path** also works for Pandas API.
 
-:::image type="content" source="media\lakehouse-notebook-explore\copy-path-menu-file-path.png" alt-text="Screenshot showing the menu option of the copy File API path.":::
+:::image type="content" source="media\lakehouse-notebook-explore\copy-path-menu-file-path.png" alt-text="Screenshot showing the menu option of the copy File API path." lightbox="media\lakehouse-notebook-explore\copy-path-menu-file-path.png":::
 
 **Copy File API Path**: This option returns the path under the mount point of the default lakehouse.
 

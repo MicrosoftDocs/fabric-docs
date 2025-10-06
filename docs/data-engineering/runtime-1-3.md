@@ -1,9 +1,9 @@
 ---
 title: Runtime 1.3 in Fabric
 description: Learn about Apache Spark-based runtime 1.3 in Fabric, including the unique features, capabilities, and best practices.
-ms.reviewer: snehagunda
-ms.author: sngun
-author: SnehaGunda
+ms.reviewer: sngun
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom:
 ms.date: 06/10/2025
@@ -57,14 +57,14 @@ You can check the full list and detailed changes here: [Spark Release 3.5.0](htt
 
 Delta Lake 3.2 marks a collective commitment to making Delta Lake interoperable across formats, easier to work with, and more performant. Delta Spark 3.2 is built on top of [Apache Spark™ 3.5](https://spark.apache.org/releases/spark-release-3-5-0.html). The Delta Spark maven artifact is renamed from **delta-core** to **delta-spark**.
 
-You can check the full list and detailed changes here: [https://docs.delta.io/3.2.0/index.html](https://docs.delta.io/3.2.0/index.html).
+You can check the full list and detailed changes here: [https://docs.delta.io/index.html](https://docs.delta.io/index.html).
 
 ### Components and Libraries
 
 For up-to-date information, a detailed list of changes, and specific release notes for Fabric runtimes, check and subscribe [Spark Runtimes Releases and Updates](https://github.com/microsoft/synapse-spark-runtime/tree/main/Fabric/Runtime%201.3%20(Spark%203.5)).
 
 > [!NOTE]
-> EventHubConnector is deprecated in Fabric Runtime 1.3 (Spark 3.5) and will be removed from future Fabric Runtime versions. Customers are encouraged to use Kafa Spark Connector instead as Event Hubs is Kafka compatible already. You can find more information about using Kafa Spark Connector with Event Hubs here: [https://learn.microsoft.com/azure/event-hubs/event-hubs-kafka-spark-tutorial](https://learn.microsoft.com/azure/event-hubs/event-hubs-kafka-spark-tutorial)
+> EventHubConnector is deprecated in Fabric Runtime 1.3 (Spark 3.5) and will be removed from future Fabric Runtime versions. Customers are encouraged to use Kafa Spark Connector instead as Event Hubs is Kafka compatible already. You can find more information about using Kafa Spark Connector with Event Hubs here: [Event Hubs Kafka Spark Tutorial](/azure/event-hubs/event-hubs-kafka-spark-tutorial)
 
 ### Related content
 

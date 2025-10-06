@@ -18,4 +18,4 @@ The SAP Table Application Server connector is supported in Data Factory for [!IN
 
 | Supported capabilities                                                                 | Gateway                        | Authentication                                                                                                 |
 |----------------------------------------------------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------|
-| **Data pipeline** <br>- Copy activity (source/-)<br>- Lookup activity | None<br> On-premises | Basic |
+| **Pipeline** <br>- Copy activity (source/-)<br>- Lookup activity | None<br> On-premises | Basic |

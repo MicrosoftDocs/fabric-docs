@@ -34,7 +34,7 @@ Orchestrating data movement in Data Factory involves coordinating various activi
 
 ## Transforming and copying data
 
-Transforming and copying data involves using various tools and activities within Data Factory to prepare and move data. Dataflows Gen 2, for example, allows you to ingest and prepare data at higher scales and land it into the OneLake through different storage solutions. You can also use a Copy job item to move data seamlessly from any source to any destination, with multiple delivery styles such as batch, incremental (CDC), and real-time data copying.
+Transforming and copying data involves using various tools and activities within Data Factory to prepare and move data. Dataflow Gen 2, for example, allows you to ingest and prepare data at higher scales and land it into the OneLake through different storage solutions. You can also use a Copy job item to move data seamlessly from any source to any destination, with multiple delivery styles such as batch, incremental (CDC), and real-time data copying.
 
 ## Related content
 

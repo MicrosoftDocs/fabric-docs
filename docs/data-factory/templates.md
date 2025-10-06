@@ -27,9 +27,9 @@ You can build a Data Factory pipeline from a template in two ways:
 There are two ways to access the Pipeline template gallery. You can either start by using a template or choose to add a template to your pipeline solution. 
 
 #### Get started with a template
-1. To get started with a template, start by selecting **New** and then **Data pipeline**.
+1. To get started with a template, start by selecting **New** and then **Pipeline**.
 
-   :::image type="content" source="media/templates/new-data-pipeline.png" alt-text="Screenshot showing the new data pipeline button.":::
+   :::image type="content" source="media/templates/new-data-pipeline.png" alt-text="Screenshot showing the new pipeline button.":::
 
 2. Set a name for your new pipeline and select **Create**. The pipeline editor window opens.
 3. Select **Templates**.
@@ -116,7 +116,7 @@ In addition to the traditional pipeline templates, Data Factory also offers Sema
 * **Refreshing a semantic model after a dataflow runs**: trigger a semantic model refresh after each [data flow activity](/fabric/data-factory/dataflow-activity). 
 * **Scheduled refreshes**: Create a [schedule](/fabric/data-factory/pipeline-runs) to trigger a semantic model refresh, such as on a monthly or quarterly basis. 
 * **Sequencing multiple semantic model refreshes**: trigger refreshes sequentially for different semantic models. 
-Each template provides a guided setup to help you configure the refresh process within Data Pipelines.
+Each template provides a guided setup to help you configure the refresh process within pipelines.
 
 :::image type="content" source="media/templates/datapipeline-template-gallery.png" alt-text="Screen shot of the power bi semantic model refresh template gallery." lightbox="media/templates/datapipeline-template-gallery.png":::
 

@@ -60,7 +60,7 @@ With the SQL analytics endpoint, T-SQL commands can define and query data object
 
 - Query the tables that reference data in your Delta Lake folders in the lake.
 - Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
-- Manage permissions on the objects.
+- Manage permissions on the objects. For more about security in the SQL anlaytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
 
 To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see:
 
@@ -93,3 +93,4 @@ For migration guidance across Microsoft Fabric, review the tools and links in [M
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
 - [Create reports on data warehousing in Microsoft Fabric](create-reports.md)
 - [Source control with Warehouse (preview)](source-control.md)
+- [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md)

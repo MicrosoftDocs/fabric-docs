@@ -1,9 +1,9 @@
 ---
 title: Lakehouse schemas (Preview)
 description: What lakehouse schemas are and how to use it
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.date: 01/16/2025
 ms.search.form: Lakehouse schemas
@@ -17,14 +17,14 @@ Lakehouse supports the creation of custom schemas. Schemas allow you to group yo
 
 To enable schema support for your lakehouse, check the box next to **Lakehouse schemas (Public Preview)** when you create it.
 
-:::image type="content" source="media\lakehouse-schemas\new-lakehouse.png" alt-text="Screenshot showing the new lakehouse dialog.":::
+:::image type="content" source="media\lakehouse-schemas\new-lakehouse.png" alt-text="Screenshot showing the new lakehouse dialog." lightbox="media/lakehouse-schemas/new-lakehouse.png":::
 
 > [!IMPORTANT]
 > Workspace names must only contain alphanumeric characters due to preview limitations. If special characters are used in workspace names some of Lakehouse features won't work.
 
 Once you create the lakehouse, you can find a default schema named **dbo** under **Tables**. This schema is always there and can't be changed or removed. To create a new schema, hover over **Tables**, select **…**, and choose **New schema**. Enter your schema name and select **Create**. You'll see your schema listed under **Tables** in alphabetical order.
 
-:::image type="content" source="media\lakehouse-schemas\new-schema.png" alt-text="Screenshot showing the new lakehouse schema dialog.":::
+:::image type="content" source="media\lakehouse-schemas\new-schema.png" alt-text="Screenshot showing the new lakehouse schema dialog." lightbox="media/lakehouse-schemas/new-schema.png":::
 
 ## Store tables in lakehouse schemas
 
@@ -36,7 +36,7 @@ df.write.mode("Overwrite").saveAsTable("contoso.sales")
 
 You can use Lakehouse Explorer to arrange your tables and drag and drop table names to different schemas.
 
-:::image type="content" source="media\lakehouse-schemas\move-tables.gif" alt-text="Animation of moving tables between schemas.":::
+:::image type="content" source="media\lakehouse-schemas\move-tables.gif" alt-text="Animation of moving tables between schemas." lightbox="media/lakehouse-schemas/move-tables.gif":::
 
 > [!CAUTION]
 > If you modify the table, you must also update related items like notebook code or dataflows to ensure they are aligned with the correct schema.
@@ -45,7 +45,7 @@ You can use Lakehouse Explorer to arrange your tables and drag and drop table na
 
 To reference multiple Delta tables from other Fabric lakehouse or external storage, use schema shortcut that displays all tables under the chosen schema or folder. Any changes to the tables in the source location also appear in the schema. To create a schema shortcut, hover over **Tables**, select on **…**, and choose **New schema shortcut**. Then select a schema on another lakehouse, or a folder with Delta tables on your external storage like Azure Data Lake Storage (ADLS) Gen2. That creates a new schema with your referenced tables.
 
-:::image type="content" source="media\lakehouse-schemas\schema-shortcut.png" alt-text="Screenshot showing the new lakehouse schema shortcut.":::
+:::image type="content" source="media\lakehouse-schemas\schema-shortcut.png" alt-text="Screenshot showing the new lakehouse schema shortcut." lightbox="media/lakehouse-schemas/schema-shortcut.png":::
 
 ## Access lakehouse schemas for Power BI reporting
 
@@ -89,7 +89,6 @@ Below listed unsupported features/functionalities are for current release of pub
 | Spark.catalog API | Not supported. Use Spark SQL instead. |
 | `USE <schemaName>` | Doesn't work cross workspaces, but supported within same workspace. |
 | Migration	| Migration of existing non-schema Lakehouses to schema-based Lakehouses isn't supported. |
-| Dataflow Gen2 | Not supported. |
 
 ## Related content
 

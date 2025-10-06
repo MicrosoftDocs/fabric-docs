@@ -1,8 +1,9 @@
 ---
 title: Manage the Resources in a Fabric environment
 description: The Resources section in a Fabric environment enables small resources management. Learn how to use the resources folder in the development lifecycle.
-ms.author: shuaijunye
-author: ShuaijunYe
+ms.author: eur
+ms.reviewer: shuaijunye
+author: eric-urban
 ms.topic: how-to
 ms.date: 05/01/2024
 ms.search.form: Manage the resources in Fabric environment
@@ -12,7 +13,7 @@ ms.search.form: Manage the resources in Fabric environment
 
 Resources in a Microsoft Fabric environment provide a file system that you can use to manage your files and folders. You can easily access the environment resources from notebooks and collaborate with others if the notebooks are attached to the same environment.
 
-:::image type="content" source="media\environment-resources\environment-resources-overview.gif" alt-text="Screen recording of the environment Resources section.":::
+:::image type="content" source="media\environment-resources\environment-resources-overview.gif" alt-text="Screen recording of the environment Resources section." lightbox="media/environment-resources/environment-resources-overview.gif":::
 
 ## Interact with resources in a notebook
 

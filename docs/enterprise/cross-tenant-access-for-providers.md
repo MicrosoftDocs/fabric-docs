@@ -52,6 +52,7 @@ Unlike the external data sharing feature in Fabric, which allows providers to sh
 
 | Name | In | Required | Type | Description |
 |--|--|--|--|--|
+| denyUserAccess| Path | No | String | Disable cross-tenant access for a guest user |
 | ID | Body | Yes | String | Object ID of guest application or group |
 | tenantId | Body | Yes | String | Guest tenant ID |
 | type | Body | Yes | String | User or Group |
@@ -222,6 +223,7 @@ Permitted users from the provider tenant can call this API to get the SQL connec
    * Revoke Consent Cross Tenant Auth
 
  - **Govern the service principals and groups created in Microsoft Entra** (Global Admin, App admin, or other high privilege users only) - You can also review the service principals and groups created in Microsoft Entra to enable guest tenant principals to access cross tenant data. Other Azure experiences such as Sign-in logs (Service principal sign-ins) will show the service principal sign-in details corresponding to guest tenant users’ sign-in activities. Microsoft Entra Audit logs will also provide information about group creation activity performed by Fabric. The Fabric Identity applications and app-registrations created by Fabric for cross-tenant access shouldn't be modified or deleted. Providers should delete the mappings if they want to remove a FabricIdentity created for cross-tenant access.
+ - **Disable access for a guest user** - You can disable cross-tenant access for a guest user that has been granted access through a group by calling the `POST https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings` API with the query parameter denyUserAccess set to true. The guest user will be unable to login to cross-tenant data warehouses within an hour, however existing sessions will be unaffected. You can reenable access for a user that was previously denied access by calling the `POST https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings` API with the query parameter denyUserAccess set to false. The guest user will be able to login to cross-tenant data warehouses within an hour.
 
 ## Responsibilities of the guest
 

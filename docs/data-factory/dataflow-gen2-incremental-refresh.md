@@ -32,7 +32,7 @@ To use incremental refresh in Dataflow Gen2, you need:
 
 These data destinations support incremental refresh:
 
-- Fabric Lakehouse (preview)
+- Fabric Lakehouse
 - Fabric Warehouse
 - Azure SQL Database
 - Azure Synapse Analytics
@@ -147,7 +147,9 @@ This setting controls whether your incremental refresh query must "fully fold." 
 
 If you enable this setting, your query must fully fold. If you disable it, the query can be partially processed by the dataflow instead of your source system.
 
-We recommend enabling this setting. It improves performance and prevents your dataflow from pulling unnecessary, unfiltered data.
+We strongly recommend keeping this setting enabled. It ensures that, after saving the dataflow, we validate whether query folding to the source is possible. If this validation fails, your dataflow may suffer from reduced performance and could end up retrieving unnecessary, unfiltered data.
+
+In some cases, you might see a green folding indicator during authoring. However, when we validate the final dataflow definition, folding may no longer be possible; For example, if a step like Table.SelectRows breaks folding. This can lead to a validation error.
 
 ## Limitations
 

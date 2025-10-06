@@ -3,8 +3,8 @@ title: Connect applications to Fabric API for GraphQL
 description: Learn how to find and copy your API endpoint so you can connect your applications to the API for GraphQL.
 #customer intent: As a developer, I want to connect my application to the Fabric API for GraphQL so that I can query data efficiently.  
 ms.reviewer: sngun
-ms.author: sngun
-author: snehagunda
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Connecting applications to GraphQL
@@ -53,11 +53,11 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
 1. In the Data Engineering experience, select **Use a sample**, and under **Lakehouse**, select **Public holidays** to automatically create a new Lakehouse with public holidays data.
 
-   :::image type="content" source="media/connect-apps-api-graphql/sample-lakehouse.png" alt-text="Screenshot on selecting the sample data Lakehouse option.":::
+    :::image type="content" source="media/connect-apps-api-graphql/sample-lakehouse.png" alt-text="Screenshot on selecting the sample data Lakehouse option." lightbox="media/connect-apps-api-graphql/sample-lakehouse.png":::
 
 1. Follow the steps from [Create an API for GraphQL](get-started-api-graphql.md) to create a new GraphQL API and select the Lakehouse you created. Add the public holidays table so clients can access this data.
 
-   :::image type="content" source="media/connect-apps-api-graphql/add-data-to-graphql.png" alt-text="Screenshot of adding the sample Lakehouse as GraphQL data source.":::
+    :::image type="content" source="media/connect-apps-api-graphql/add-data-to-graphql.png" alt-text="Screenshot of adding the sample Lakehouse as GraphQL data source." lightbox="media/connect-apps-api-graphql/add-data-to-graphql.png":::
 
 1. Test the GraphQL API in the [API editor](api-graphql-editor.md) using the following sample query. It's the same query used in the React client application:
 
@@ -75,11 +75,11 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
 1. Select **Copy endpoint** on the API item's toolbar.
 
-   :::image type="content" source="media/connect-apps-api-graphql/copy-endpoint.png" alt-text="Screenshot of the toolbar options for an API item.":::
+    :::image type="content" source="media/connect-apps-api-graphql/copy-endpoint.png" alt-text="Screenshot of the toolbar options for an API item." lightbox="media/connect-apps-api-graphql/copy-endpoint.png":::
 
 1. In the **Copy link** screen, select **Copy**.
 
-   :::image type="content" source="media/connect-apps-api-graphql/copy-endpoint-link.png" alt-text="Screenshot of the Copy link dialog screen, showing where to select Copy.":::
+    :::image type="content" source="media/connect-apps-api-graphql/copy-endpoint-link.png" alt-text="Screenshot of the Copy link dialog screen, showing where to select Copy." lightbox="media/connect-apps-api-graphql/copy-endpoint-link.png":::
 
 1. Use the **Client ID** and **Tenant ID** from the Microsoft Entra app recorded earlier, and copy the endpoint URI because it's required later.
 
@@ -151,7 +151,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
     * Scopes you add here will be prompted for user consent during sign-in. 
     * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
     * For more information about OIDC scopes, visit: 
-    * https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+    * [OpenID Connect scopes](/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes)
     */
    export const loginRequest = {
        scopes: ["https://analysis.windows.net/powerbi/api/GraphQLApi.Execute.All"]
@@ -339,11 +339,11 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
 1. After signing in, select on the button **Query Fabric API for GraphQL Data**.
 
-   :::image type="content" source="media/connect-apps-api-graphql/test-react-app.png" alt-text="Screenshot of the React sample app after sign in.":::
+    :::image type="content" source="media/connect-apps-api-graphql/test-react-app.png" alt-text="Screenshot of the React sample app after sign in." lightbox="media/connect-apps-api-graphql/test-react-app.png":::
 
 1. A successful authenticated request to the GraphQL API in Fabric returns data from the GraphQL query to the Lakehouse in the React client application:
 
-   :::image type="content" source="media/connect-apps-api-graphql/react-app-results.png" alt-text="Screenshot of the React sample app after receiving the GraphQL request.":::
+    :::image type="content" source="media/connect-apps-api-graphql/react-app-results.png" alt-text="Screenshot of the React sample app after receiving the GraphQL request." lightbox="media/connect-apps-api-graphql/react-app-results.png":::
 
 ## Related content
 
