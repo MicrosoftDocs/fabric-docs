@@ -259,37 +259,37 @@ You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.m
     - `COSMOS_DB_URI` with your Fabric Cosmos DB endpoint.
     - `DB_NAME` with the name of your Fabric Cosmos DB item.
 
-```python
-from fabric.functions.cosmosdb import get_cosmos_client
-import json
+    ```python
+    from fabric.functions.cosmosdb import get_cosmos_client
+    import json
 
-@udf.generic_connection(argName="cosmosDb", audienceType="CosmosDB")
-@udf.function()
-def get_product_by_category(cosmosDb: fn.FabricItem, category: str) -> list:
+    @udf.generic_connection(argName="cosmosDb", audienceType="CosmosDB")
+    @udf.function()
+    def get_product_by_category(cosmosDb: fn.FabricItem, category: str) -> list:
 
-    COSMOS_DB_URI = "YOUR_COSMOS_DB_URL"
-    DB_NAME = "YOUR_COSMOS_DB_NAME" # Note: This is the Fabric item name
-    CONTAINER_NAME = "SampleData" # Note: This is your container name. In this example, we are using the SampleData container.
+        COSMOS_DB_URI = "YOUR_COSMOS_DB_URL"
+        DB_NAME = "YOUR_COSMOS_DB_NAME" # Note: This is the Fabric item name
+        CONTAINER_NAME = "SampleData" # Note: This is your container name. In this example, we are using the SampleData container.
 
-    cosmosClient = get_cosmos_client(cosmosDb, COSMOS_DB_URI)
+        cosmosClient = get_cosmos_client(cosmosDb, COSMOS_DB_URI)
 
-    # Get the database and container
-    database = cosmosClient.get_database_client(DB_NAME)
-    container = database.get_container_client(CONTAINER_NAME)
+        # Get the database and container
+        database = cosmosClient.get_database_client(DB_NAME)
+        container = database.get_container_client(CONTAINER_NAME)
 
-    query = 'select * from c WHERE c.category=@category' #"select * from c where c.category=@category"
-    parameters = [
-        {
-            "name": "@category", "value": category
-        }
-    ]
-    results = container.query_items(query=query, parameters=parameters)
-    items = [item for item in results]
+        query = 'select * from c WHERE c.category=@category' #"select * from c where c.category=@category"
+        parameters = [
+            {
+                "name": "@category", "value": category
+            }
+        ]
+        results = container.query_items(query=query, parameters=parameters)
+        items = [item for item in results]
 
-    logging.info(f"Found {len(items)} products in {category}")
+        logging.info(f"Found {len(items)} products in {category}")
 
-    return json.dumps(items)
-```
+        return json.dumps(items)
+    ```
 
 1. Test or run this function by providing a category name, such as `Accessory` in the invocation parameters.
 
