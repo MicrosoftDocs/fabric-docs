@@ -241,6 +241,8 @@ This `UserThrownError` method takes two parameters:
 
 User Data Functions allows you to create connection parameters for your functions with custom connectivity logic. This will give you a similar programming experience to using managed connections objects from the [Manage Connections feature](./connect-to-data-sources.md). 
 
+This feature uses the `@udf.generic_connection()` decorator to define an argument name, `argName`, and audience type, `audienceType`. These details are used to define the properties of a new function argument that represents the connection. The argument must be added to the list of parameters with the name defined in the decorator as `argName`, and a type of `fn.FabricItem`.  
+
 ### Connect to Fabric Cosmos DB container using a generic connection
 You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.md) using a generic connection by following these steps:
 1. In your Fabric User Data Functions item, install the `azure-cosmos` library version `4.9.0` using the [Library Management experience](./how-to-manage-libraries.md).
