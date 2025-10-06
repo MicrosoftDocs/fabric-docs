@@ -19,7 +19,7 @@ The Folder connector is supported in Data Factory for [!INCLUDE [product-name](.
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/-)                                                 | On-premises                    | Windows          |
-| **Data pipeline** <br>- Copy activity (source/destination)<br>- Lookup activity<br>- Get Metadata activity <br>- Delete activity | On-premises                    | Windows          |
+| **Pipeline** <br>- Copy activity (source/destination)<br>- Lookup activity<br>- Get Metadata activity <br>- Delete activity | On-premises                    | Windows          |
 
 ## Related content
 

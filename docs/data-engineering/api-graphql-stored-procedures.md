@@ -1,9 +1,9 @@
 ---
 title: Use Stored Procedures with Fabric API for GraphQL
 description: Learn how to expose stored procedures data via GraphQL in Fabric
-author: KoldBrewEd 
-ms.author: edlima
-ms.reviewer: 
+author: eric-urban
+ms.author: eur
+ms.reviewer: edlima
 ms.date: 06/5/2025
 ms.topic: conceptual
 ms.custom:
@@ -121,7 +121,7 @@ Creating an API from your SQL table is fast, easy, and straightforward. You just
 
 Next select the **SalesLT** tables in your database and the stored procedure we just created, then click **Load**:
 
-![Get data screen to select tables and procedures in API for GraphQL](media/api-graphql-stored-procedures/api-graphql-stored-procedures.png)
+:::image type="content" source="media/api-graphql-stored-procedures/api-graphql-stored-procedures.png" alt-text="Get data screen to select tables and procedures in API for GraphQL." lightbox="media/api-graphql-stored-procedures/api-graphql-stored-procedures.png":::
 
 The GraphQL API, schema, and all resolvers are automatically generated in seconds based on the SQL tables and stored procedure.
 
@@ -148,7 +148,7 @@ ProductID
 }
 ```
 
-![Mutation in the GraphQL API portal displaying the results](media/api-graphql-stored-procedures/api-graphql-stored-procedures-mutation.png)
+:::image type="content" source="media/api-graphql-stored-procedures/api-graphql-stored-procedures-mutation.png" alt-text="Mutation in the GraphQL API portal displaying the results." lightbox="media/api-graphql-stored-procedures/api-graphql-stored-procedures-mutation.png":::
 
 **Tips**
 

@@ -18,7 +18,7 @@ It makes it easy to create and manage [Apache Airflow](https://airflow.apache.or
 
 ## When to use Apache Airflow job?
 
-Apache Airflow jobs give you a managed service where you can build and run Python-based DAGs (Directed Acyclic Graphs) for workflow orchestration, without worrying about the setup behind the scenes. If you like working with Apache Airflow or prefer writing code, this option is a great fit. If you’d rather not write code, data pipelines offer a simple, no-code way to handle data orchestration.
+Apache Airflow jobs give you a managed service where you can build and run Python-based DAGs (Directed Acyclic Graphs) for workflow orchestration, without worrying about the setup behind the scenes. If you like working with Apache Airflow or prefer writing code, this option is a great fit. If you’d rather not write code, pipelines offer a simple, no-code way to handle data orchestration.
 
 ## Key Features
 

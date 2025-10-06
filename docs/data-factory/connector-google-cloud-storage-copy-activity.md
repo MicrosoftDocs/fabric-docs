@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Google Cloud Storage in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Google Cloud Storage.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Google Cloud Storage.
 
 ## Prerequisites
 

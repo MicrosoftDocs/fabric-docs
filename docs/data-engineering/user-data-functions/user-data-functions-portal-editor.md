@@ -1,14 +1,15 @@
 ---
 title: Using the portal editor - User Data Functions
 description: Learn how to use the portal editor in User Data Functions
-ms.author: luisbosquez
-author: luisbosquez
+ms.author: eur
+ms.reviewer: luisbosquez
+author: eric-urban
 ms.topic: overview
 ms.date: 08/21/2025
 ms.search.form: Use the portal editor
 ---
 
-# Use the portal editor to write and publish your User Data Functions (preview)
+# Use the portal editor to write and publish your User Data Functions
 
 You can develop your Fabric User data functions directly from your browser using the portal editor. The portal allows you to create, modify, test, and publish your functions from your browser. In this article, you'll learn the following topics:
 - Overview of the portal editor.

@@ -274,7 +274,7 @@ For example, consider a lakehouse with the following path in it: `MyLakehouse\Fi
 
 You can perform a delete operation on the following path: `MyLakehouse\Files\MyShortcut`. In this case, the **MyShortcut** shortcut is deleted from the lakehouse but the files and directories in the ADLS Gen2 account *Foo\Bar* remain unaffected.
 
-You can also perform a delete operation on the following path: `MyLakehouse\Files\MyShortcut\Foo\Bar`. In this case, if you write permissions in the ADLS Gen2 account, the **Bar** directory is deleted from the ADLS Gen2 account.
+You can also perform a delete operation on the following path: `MyLakehouse\Files\MyShortcut\Foo\Bar`. In this case, if you have write permissions in the ADLS Gen2 account, the **Bar** directory is deleted from the ADLS Gen2 account.
 
 ## Workspace lineage view
 

@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 [!INCLUDE [product-name](../includes/product-name.md)] works with many data sources, both on-premises and in the cloud. Each data source has specific setup requirements. This article shows you how to add an Azure SQL Server as a cloud data source as an example - and the process is similar for other sources. If you need help with on-premises data sources, see [Add or remove a gateway data source](/power-bi/connect-data/service-gateway-data-sources).
 
 > [!NOTE]
-> Right now, cloud connections work with data pipelines and Kusto. For datasets, datamarts, and dataflows, you need to use Power Query Online's "get data" experience to create personal cloud connections.
+> Right now, cloud connections work with pipelines and Kusto. For datasets, datamarts, and dataflows, you need to use Power Query Online's "get data" experience to create personal cloud connections.
 
 ## Add a data source
 

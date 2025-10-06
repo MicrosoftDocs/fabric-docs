@@ -1,10 +1,10 @@
 ---
 title: "Mirroring"
 description: Learn about mirrored databases in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+author: whhender
+ms.author: whhender
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, tinglee, sbahadur
-ms.date: 06/18/2025
+ms.date: 09/05/2025
 ms.topic: overview
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -29,7 +29,7 @@ Accessing and working with this data today requires complex ETL (Extract Transfo
 
 - Restricted and limited access to important, ever changing, data
 - Friction between people, process, and technology
-- Long wait times to create data pipelines and processes to critically important data
+- Long wait times to create pipelines and processes to critically important data
 - No freedom to use the tools you need to analyze and share insights comfortably
 - Lack of a proper foundation for folks to share and collaborate on data
 - No common, open data formats for all analytical scenarios - BI, AI, Integration, Engineering, and even Apps
@@ -61,14 +61,16 @@ Currently, the following external databases are available:
 
 | Platform | Near real-time replication | Type of mirroring | End-to-end tutorial |
 |:--|:--|:--|
-| [Microsoft Fabric mirrored databases from Azure Cosmos DB (preview)](../mirroring/azure-cosmos-db.md) | Yes | Database mirroring | [Tutorial: Azure Cosmos DB](../mirroring/azure-cosmos-db-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks.md) | Yes | Metadata mirroring | [Tutorial: Azure Databricks](../mirroring/azure-databricks-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server (preview)](../mirroring/azure-database-postgresql.md) | Yes | Database mirroring | [Tutorial: Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database.md) | Yes | Database mirroring | [Tutorial: Azure SQL Database](../mirroring/azure-sql-database-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure SQL Managed Instance (preview)](../mirroring/azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Snowflake](../mirroring/snowflake.md) | Yes | Database mirroring | [Tutorial: Snowflake](../mirroring/snowflake-tutorial.md) |
-| [Microsoft Fabric mirrored databases from SQL Server (preview)](../mirroring/sql-server.md) | Yes | Database mirroring | [Tutorial: SQL Server](../mirroring/sql-server-tutorial.md) |
-| [Open mirrored databases](../mirroring/open-mirroring.md) | Yes | Open mirroring | [Tutorial: Open mirroring](../mirroring/open-mirroring-tutorial.md)|
+| [Microsoft Fabric mirrored databases from Azure Cosmos DB (preview)](azure-cosmos-db.md) | Yes | Database mirroring | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks.md) | Yes | Metadata mirroring | [Tutorial: Azure Databricks](azure-databricks-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server (preview)](azure-database-postgresql.md) | Yes | Database mirroring | [Tutorial: Azure Database for PostgreSQL flexible server](azure-database-postgresql-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | Database mirroring | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Google BigQuery (preview)](google-bigquery.md) | Yes | Database mirroring | [Tutorial: Google BigQuery](google-bigquery-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Oracle (preview)](oracle.md) | Yes | Database mirroring | [Tutorial: Oracle](oracle-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes | Database mirroring | [Tutorial: Snowflake](snowflake-tutorial.md) |
+| [Microsoft Fabric mirrored databases from SQL Server (preview)](sql-server.md) | Yes | Database mirroring | [Tutorial: SQL Server](sql-server-tutorial.md) |
+| [Open mirrored databases](open-mirroring.md) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md)|
 | [Microsoft Fabric mirrored databases from Fabric SQL database](../database/sql/overview.md) (preview) | Yes | Database mirroring | [Automatically configured](../database/sql/mirroring-overview.md) |
 
 ## How does the near real time replication of database mirroring work?
@@ -85,11 +87,11 @@ The following are core tenets of Mirroring:
 
 Mirroring not only enables data replication but can also be achieved through shortcuts or metadata mirroring rather than full data replication, allowing data to be available without physically moving or duplicating it. Mirroring in this context refers to replicating only metadata—such as catalog names, schemas, and tables—rather than the actual data itself. This approach enables Fabric to make data from different sources accessible without duplicating it, simplifying data management and minimizing storage needs. 
 
-For example, when accessing [data registered in Unity Catalog, Fabric mirrors only the catalog structure from Azure Databricks](../mirroring/azure-databricks.md), allowing the underlying data to be accessed through shortcuts. This method ensures that any changes in the source data are instantly reflected in Fabric without requiring data movement, maintaining real-time synchronization and enhancing efficiency in accessing up-to-date information.
+For example, when accessing [data registered in Unity Catalog, Fabric mirrors only the catalog structure from Azure Databricks](azure-databricks.md), allowing the underlying data to be accessed through shortcuts. This method ensures that any changes in the source data are instantly reflected in Fabric without requiring data movement, maintaining real-time synchronization and enhancing efficiency in accessing up-to-date information.
 
 ## How does open mirroring work?
 
-In addition to mirroring enabling data replication by creating a secure connection to your data source, you can also select an existing data provider or write your own application to land data into mirrored database. Once you create an [open mirrored database](../mirroring/open-mirroring.md) via public API or via the Fabric portal, you will be able to obtain a landing zone URL in OneLake, where you can land change data per open mirroring specification. 
+In addition to mirroring enabling data replication by creating a secure connection to your data source, you can also select an existing data provider or write your own application to land data into mirrored database. Once you create an [open mirrored database](open-mirroring.md) via public API or via the Fabric portal, you will be able to obtain a landing zone URL in OneLake, where you can land change data per open mirroring specification. 
 
 Once data is in the landing zone with the proper format, replication will start running and manage the complexity of merging the changes with updates, insert, and delete to be reflected into delta tables. This method ensures that any data written into the landing zone will be immediately and keeping the data in Fabric up-to-date. 
 
@@ -99,7 +101,7 @@ Sharing enables ease of access control and management, while security controls l
 
 By sharing, users grant other users or a group of users access to a mirrored database without giving access to the workspace and the rest of its items. When someone shares a mirrored database, they also grant access to the SQL analytics endpoint.
 
-For more information, see [Share your mirrored database and manage permissions](../mirroring/share-and-manage-permissions.md).
+For more information, see [Share your mirrored database and manage permissions](share-and-manage-permissions.md).
 
 ## Cross-database queries
 

@@ -138,9 +138,9 @@ It's simple move the dbt project between different warehouses. A dbt project on 
 
 ## dbt in Fabric Data Factory
 
-When integrated with Apache Airflow, a popular workflow management system, dbt becomes a powerful tool for orchestrating data transformations. Airflow's scheduling and task management capabilities allow data teams to automate dbt runs. It ensures regular data updates and maintains a consistent flow of high-quality data for analysis and reporting. This combined approach, using dbt's transformation expertise with Airflow's workflow management, delivers efficient and robust data pipelines, ultimately leading to faster and more insightful data-driven decisions.
+When integrated with Apache Airflow, a popular workflow management system, dbt becomes a powerful tool for orchestrating data transformations. Airflow's scheduling and task management capabilities allow data teams to automate dbt runs. It ensures regular data updates and maintains a consistent flow of high-quality data for analysis and reporting. This combined approach, using dbt's transformation expertise with Airflow's workflow management, delivers efficient and robust pipelines, ultimately leading to faster and more insightful data-driven decisions.
 
-[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent pipelines.
 
 For more information to operationalize dbt with your warehouse, see [Transform data using dbt with Data Factory in Microsoft Fabric](../data-factory/apache-airflow-jobs-dbt-fabric.md).
 

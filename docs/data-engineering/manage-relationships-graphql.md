@@ -3,8 +3,8 @@ title: Manage relationships in Fabric API for GraphQL
 description: Learn how to manage relationships in Fabric API for GraphQL, including how to create and delete relationships.
 #customer intent: As a developer, I want to create one-to-one relationships in Fabric API for GraphQL so that I can link types based on specific fields.  
 ms.reviewer: sngun
-ms.author: sngun
-author: snehagunda
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom: null
 ms.search.form: GraphQL manage relationships
@@ -19,18 +19,18 @@ GraphQL lets you establish relationships across types, including one-to-one (1:1
 
 1. From the **Schema explorer** pane, select the ellipsis next to a type, and then select the **Manage relationships** option. The **Manage relationships** screen appears.
 
-   :::image type="content" source="media/manage-relationships-graphql/manage-relationships-start.png" alt-text="Screenshot showing where to select new relationship in manage relationships pane.":::
+   :::image type="content" source="media/manage-relationships-graphql/manage-relationships-start.png" alt-text="Screenshot showing where to select new relationship in manage relationships pane." lightbox="media/manage-relationships-graphql/manage-relationships-start.png":::
 
 1. Select **New relationship**. For this example, we create a new one-to-one relationship between the **Product** type and the **ProductModel** type, based on the **ProductModelID** field that exists in both types. We select **One to one** for **Cardinality**, select the **From** and **To** types, and then select the From and To fields for this relationship.
 
-   :::image type="content" source="media/manage-relationships-graphql/create-relationship-one-to-one.png" alt-text="Screenshot showing examples of selections for the five required fields for a new relationship.":::
+   :::image type="content" source="media/manage-relationships-graphql/create-relationship-one-to-one.png" alt-text="Screenshot showing examples of selections for the five required fields for a new relationship." lightbox="media/manage-relationships-graphql/create-relationship-one-to-one.png":::
 
 > [!NOTE]
 > You can select multiple fields in the From and To field pickers. This feature lets you create relationships that include multiple fields.
 
 1. Select **Create relationship**. Your list of relationships now shows the newly created relationship.
 
-   :::image type="content" source="media/manage-relationships-graphql/create-relationship-result.png" alt-text="Screenshot showing the newly created relationship in the manage relationships pane.":::
+   :::image type="content" source="media/manage-relationships-graphql/create-relationship-result.png" alt-text="Screenshot showing the newly created relationship in the manage relationships pane." lightbox="media/manage-relationships-graphql/create-relationship-result.png":::
 
 1. Select the X in the upper-right corner to close the **Manage relationships** screen.
 
@@ -42,7 +42,7 @@ For a many-to-many (M:N) relationship, such as between **Books** and **Authors**
 
 The **New relationship** dialog shows another set of pickers when you select **Many-to-many** as the cardinality. For example, in **Books** and **Authors**, select a linking type like **BooksAuthors**, and fields such as **BookId** and **AuthorId** as the linking from and to fields.
 
-:::image type="content" border="true" source="media/manage-relationships-graphql/many-to-many-linking.png" alt-text="Screenshot of the new relationship dialog for a many-to-many relationship.":::
+:::image type="content" border="true" source="media/manage-relationships-graphql/many-to-many-linking.png" alt-text="Screenshot of the new relationship dialog for a many-to-many relationship." lightbox="media/manage-relationships-graphql/many-to-many-linking.png":::
 
 ## Considerations for many-to-many relationships
 

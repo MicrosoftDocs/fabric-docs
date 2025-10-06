@@ -13,7 +13,7 @@ items:
     href: get-started-real-time-hub.md
 - name: Tutorials
   items:
-  - name: Build event-driven data pipelines 
+  - name: Build event-driven pipelines 
     href: tutorial-build-event-driven-data-pipelines.md
 - name: Get events and create data streams
   items:
@@ -21,6 +21,8 @@ items:
     href: supported-sources.md
   - name: Sample data source
     href: add-source-sample-data.md
+  - name: Azure diagnostic logs and metrics
+    href: add-source-azure-diagnostic-logs-metrics.md
   - name: Microsoft sources
     items:
     - name: Azure Event Grid
@@ -102,7 +104,9 @@ items:
   - name: Explore Fabric events
     items:
     - name: Fabric events page
-      href: explore-fabric-events.md    
+      href: explore-fabric-events.md
+    - name: Explore anomaly detection events
+      href: explore-anomaly-detection.md
     - name: Explore Fabric workspace item events
       href: explore-fabric-workspace-item-events.md
     - name: Explore Fabric OneLake events
@@ -121,6 +125,8 @@ items:
       href: set-alerts-data-streams.md
   - name: Consume Fabric events
     items:
+    - name: Set alerts on anomaly detection events
+      href: set-alerts-anomaly-detection.md
     - name: Set alerts on Fabric workspace item events
       href: set-alerts-fabric-workspace-item-events.md
     - name: Set alerts on Fabric OneLake item events
