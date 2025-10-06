@@ -57,8 +57,8 @@ Use the following steps to enable OneLake diagnostics:
 3. Toggle "Add diagnostic events to a Lakehouse" to On.
 4. Select the Lakehouse where you want to store the diagnostic events.
 
-[!NOTE]
-It takes up to 1 hour for diagnostic events to begin flowing into the Lakehouse.
+> [!NOTE]
+> It takes up to 1 hour for diagnostic events to begin flowing into the Lakehouse.
 
 ### Changing the OneLake diagnostic Lakehouse
 
@@ -67,8 +67,8 @@ It takes up to 1 hour for diagnostic events to begin flowing into the Lakehouse.
 3. Select Replace Lakehouse.
 4. Choose a new Lakehouse.
 
-[!NOTE] 
-Previously captured diagnostic events remain in the original Lakehouse. New events are stored in the newly selected Lakehouse.
+> [!NOTE] 
+> Previously captured diagnostic events remain in the original Lakehouse. New events are stored in the newly selected Lakehouse.
 
 ### Disabling OneLake diagnostics
 
@@ -76,8 +76,8 @@ Previously captured diagnostic events remain in the original Lakehouse. New even
 2. Navigate to the OneLake settings tab.
 3. Toggle "Add diagnostic events to a Lakehouse" to Off.
 
-[!NOTE] 
-The previously selected Lakehouse is retained. If you re-enable diagnostics, it uses the same Lakehouse as before.
+> [!NOTE] 
+> The previously selected Lakehouse is retained. If you re-enable diagnostics, it uses the same Lakehouse as before.
 
 ## OneLake diagnostic events
 
