@@ -239,9 +239,11 @@ This `UserThrownError` method takes two parameters:
 
 ## Create generic connections 
 
-User Data Functions allows you to create connection parameters for your functions with custom connectivity logic. Generic connections handle the identity assignment steps required to authenticate with your Fabric items based on a provided audience type. This process will give you a similar programming experience to using managed connections objects from the [Manage Connections feature](./connect-to-data-sources.md).
+User Data Functions allows you to create connections to Fabric items using the item owner's identity by using the generic connections feature. 
 
-This feature uses the `@udf.generic_connection()` decorator to define an argument name, `argName`, and audience type, `audienceType`. These details are used to define the properties of a new function argument that represents the connection. The argument must be added to the list of parameters with the name defined in the decorator as `argName` with a type of `fn.FabricItem`.
+Generic connections generate an Entra ID token for the item owner's identity with a provided audience type. This token is used to connect to Fabric items that support that audience type. This process will give you a similar programming experience to using managed connections objects from the [Manage Connections feature](./connect-to-data-sources.md) but only for the provided audience type in the connection. 
+
+This feature uses the `@udf.generic_connection()` decorator to define an argument name, `argName`, and audience type, `audienceType`. These details are used to define the properties of a new function argument that represents the connection. The argument must be added to the list of parameters with the name defined in the decorator as `argName` with a a type of `fn.FabricItem`.
 
 ### Connect to Fabric Cosmos DB container using a generic connection
 You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.md) using a generic connection by following these steps:
