@@ -52,7 +52,7 @@ Ingest change data from Azure SQL databases with automatic table schema registra
 
 1. On the **Connect** page, select **New connection**.
 
-    :::image type="content" source="./media/azure-sql-database-cdc-source-connector/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Get events wizard with the **New connection** link highlighted." lightbox="./media/azure-sql-database-cdc-source-connector/new-connection-link.png"::: 
+    :::image type="content" source="./media/azure-sql-database-cdc-source-connector/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Get events wizard with the New connection link highlighted." lightbox="./media/azure-sql-database-cdc-source-connector/new-connection-link.png"::: 
 1. In the **Connection settings** section, enter the following values for your Azure SQL database:
 
    - **Server:** Enter the Azure SQL server name from the Azure portal. It's in this form: `mysqlservername.database.windows.net`. 
