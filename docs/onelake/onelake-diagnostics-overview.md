@@ -83,7 +83,7 @@ The previously selected Lakehouse is retained. If you re-enable diagnostics, it 
 
 :::image type="content" source="./media/onelake-diagnostics/onelake-diagnostic-lakehouse.png" lightbox="./media/onelake-diagnostics/onelake-diagnostic-lakehouse.png" alt-text="Screenshot that shows OneLake a Lakehouse containing diagnostics events as JSON.":::
 
-OneLake diagnostic events are stored in the DiagnosticLogs folder within the Files section of a Lakehouse. JSON files are written to a folder with the following path: `Workspaces\WorkspaceId\y=YYYY\m=MM\d=DD\h=HH\m=00\PT1H.json`
+OneLake diagnostic events are stored in the DiagnosticLogs folder within the Files section of a Lakehouse. JSON files are written to a folder with the following path: `Files/DiagnosticLogs/OneLake/Workspaces/WorkspaceId/y=YYYY/m=MM/d=DD/h=HH/m=00/PT1H.json`
 
 The JSON event contains the following attributes:
 
@@ -138,7 +138,7 @@ If the Lakehouse selected for diagnostics is deleted:
 
 - When **Business Continuity and Disaster Recovery (BCDR)** is enabled, **OneLake diagnostics data is replicated to the secondary region**, and is accessible via the OneLake APIs if a failover occurs.
 
-### Can you audit workspace monitoring?
+### Can you audit OneLake diagnostics?
 
 - Yes. When workspace monitoring is enabled, disabled, or the Lakehouse is updated, a **ModifyOneLakeDiagnosticSettings** event is captured in the [Microsoft 365 security logs](../admin/track-user-activities.md), allowing you to audit changes to diagnostic settings.
 
