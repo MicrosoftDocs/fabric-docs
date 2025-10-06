@@ -1,8 +1,8 @@
 ---
 title: OneLake diagnostics
 description: OneLake diagnostics makes it simple to answer "who accessed what, when, and how" across your Fabric workspaces
-ms.reviewer: tpeplow
-ms.author: tpeplow
+ms.reviewer: eloldag
+ms.author: tompeplow
 author: tpeplow
 ms.topic: overview
 ms.custom:
@@ -26,7 +26,7 @@ This unified logging approach ensures that even when data is accessed through sh
 
 Diagnostic events are captured for both Fabric and non-Fabric sources. For access through the Fabric UI and the Blob or Azure Data Lake Storage (ADLS) APIs, every operation is logged. For Fabric workloads access, it records that temporary access was granted, so you can look further in the engine specific logs. This ensures efficient logging while maintaining visibility into how data is consumed across your organization.
 
-## Example scenarios supported by OneLake diagnostics:
+## Example scenarios supported by OneLake diagnostics
 
 - Security investigation: Track which users accessed sensitive datasets, when, and from where. Helps identify unauthorized access attempts or unusual patterns.
 - Performance troubleshooting: Diagnose latency or failure issues by correlating diagnostic events with user actions or system interactions.
@@ -48,7 +48,7 @@ To simplify management and improve access control, consider using a dedicated wo
 
 ### Enabling OneLake diagnostics
 
-:::image type="content" source="./media/onelake-diagnostics/enable-onelake-diagnostics.png" alt-text="Screenshot that shows OneLake diagnostics having been configured":::
+:::image type="content" source="./media/onelake-diagnostics/enable-onelake-diagnostics.png" lightbox="./media/onelake-diagnostics/enable-onelake-diagnostics.png" alt-text="Screenshot that shows OneLake diagnostics having been configured.":::
 
 Use the following steps to enable OneLake diagnostics:
 
@@ -57,7 +57,8 @@ Use the following steps to enable OneLake diagnostics:
 3. Toggle "Add diagnostic events to a Lakehouse" to On.
 4. Select the Lakehouse where you want to store the diagnostic events.
 
-**Note** It takes up to 1 hour for diagnostic events to begin flowing into the Lakehouse.
+[!NOTE]
+It takes up to 1 hour for diagnostic events to begin flowing into the Lakehouse.
 
 ### Changing the OneLake diagnostic Lakehouse
 
@@ -66,7 +67,8 @@ Use the following steps to enable OneLake diagnostics:
 3. Select Replace Lakehouse.
 4. Choose a new Lakehouse.
 
-**Note** Previously captured diagnostic events remain in the original Lakehouse. New events are stored in the newly selected Lakehouse.
+[!NOTE] 
+Previously captured diagnostic events remain in the original Lakehouse. New events are stored in the newly selected Lakehouse.
 
 ### Disabling OneLake diagnostics
 
@@ -74,11 +76,12 @@ Use the following steps to enable OneLake diagnostics:
 2. Navigate to the OneLake settings tab.
 3. Toggle "Add diagnostic events to a Lakehouse" to Off.
 
-**Note** The previously selected Lakehouse is retained. If you re-enable diagnostics, it uses the same Lakehouse as before.
+[!NOTE] 
+The previously selected Lakehouse is retained. If you re-enable diagnostics, it uses the same Lakehouse as before.
 
 ## OneLake diagnostic events
 
-:::image type="content" source="./media/onelake-diagnostics/onelake-diagnostic-lakehouse.png" alt-text="Screenshot that shows OneLake a Lakehouse containing diagnostics events as JSON":::
+:::image type="content" source="./media/onelake-diagnostics/onelake-diagnostic-lakehouse.png" lightbox="./media/onelake-diagnostics/onelake-diagnostic-lakehouse.png" alt-text="Screenshot that shows OneLake a Lakehouse containing diagnostics events as JSON.":::
 
 OneLake diagnostic events are stored in the DiagnosticLogs folder within the Files section of a Lakehouse. JSON files are written to a folder with the following path: `Workspaces\WorkspaceId\y=YYYY\m=MM\d=DD\h=HH\m=00\PT1H.json`
 
@@ -109,37 +112,37 @@ The JSON event contains the following attributes:
 
 ### End user identifiable information (EUII)
 
-OneLake diagnostic events includes end user identifiable information, such as `executingUPN` and `callerIpAddress`. To redact this data, tenant admins can disable the setting “Include end-user identifiers in OneLake diagnostic logs” in the Fabric Admin Portal. When disabled, these fields are excluded from new diagnostic events.
+OneLake diagnostic events include end user identifiable information, such as `executingUPN` and `callerIpAddress`. To redact this data, tenant admins can disable the setting "Include end-user identifiers in OneLake diagnostic logs" in the Fabric Admin Portal. When disabled, these fields are excluded from new diagnostic events.
 
 ## Frequently Asked Questions (FAQ)
 
-### 1. What happens if the destination Lakehouse is deleted?
+### What happens if the destination Lakehouse is deleted?
 
 If the Lakehouse selected for diagnostics is deleted:
 
 - **Diagnostics will be automatically disabled** for all workspaces that were pointing to it.
 - **Previously captured diagnostic data is not deleted**—it remains in the deleted Lakehouse's storage until the workspace itself is deleted. To **resume diagnostics**, select a new Lakehouse in the same workspace. OneLake will enable diagnostics, and all previously captured logs remain accessible.
 
-### 2. What happens if the workspace is deleted?
+### What happens if the workspace is deleted?
 
 - If a workspace is deleted, **OneLake diagnostics for that workspace are also deleted**.
 - If the workspace is **restored**, the diagnostic data is restored.
 - Once the workspace is **permanently deleted**, the associated diagnostic events are also permanently removed.
 
-### 3. What happens when you change capacities?
+### What happens when you change capacities?
 
 - When a workspace is moved to a different capacity, **diagnostic logging is disabled**.
 - You must **select a new Lakehouse within the new capacity** to re-enable diagnostics.
 
-### 4. What happens when BCDR is enabled for the workspace?
+### What happens when BCDR is enabled for the workspace?
 
 - When **Business Continuity and Disaster Recovery (BCDR)** is enabled, **OneLake diagnostics data is replicated to the secondary region**, and is accessible via the OneLake APIs if a failover occurs.
 
-### 5. Can you audit workspace monitoring?
+### Can you audit workspace monitoring?
 
 - Yes. When workspace monitoring is enabled, disabled, or the Lakehouse is updated, a **ModifyOneLakeDiagnosticSettings** event is captured in the [Microsoft 365 security logs](../admin/track-user-activities.md), allowing you to audit changes to diagnostic settings.
 
-### 6. How much consumption does OneLake diagnostics generate?
+### How much consumption does OneLake diagnostics generate?
 
 - OneLake diagnostics is comparable in cost to Azure Storage diagnostics when emitting to a storage account. For the latest details, see the official pricing page: [OneLake consumption – Microsoft Fabric | Microsoft Learn](onelake-consumption.md).
 
