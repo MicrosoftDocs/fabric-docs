@@ -24,19 +24,11 @@ ms.date: 11/18/2024
 1. In the **Connection credentials** section, do these steps:
     1. For **Connection name**, enter a name for the connection to the event hub.
     1. For **Authentication kind**, confirm that **Shared Access Key** is selected.
-    1. For **Shared Access Key Name**, enter the name of the shared access key.
+    1. For **Shared Access Key Name**, enter the name of the shared access key. For instructions on getting an access key, see [Get connection string](/azure/event-hubs/event-hubs-get-connection-string#azure-portal).
     1. For **Shared Access Key**, enter the value of the shared access key.                  
     1. Select **Connect** at the bottom of the page.
         
         :::image type="content" source="./media/azure-event-hubs-source-connector/connect-page-1.png" alt-text="Screenshot that shows the Connect page one for Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-page-1.png":::
-
-        To get the access key name and value, follow these steps: 
-        1. Navigate to your Azure Event Hubs namespace page in the Azure portal.
-        1. On the **Event Hubs namespace** page, select **Shared access policies** on the left navigation menu.
-        1. Select the **access key** from the list. Note down the access key name.
-        1. Select the copy button next to the **Primary key**. 
-
-            :::image type="content" source="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png" alt-text="Screenshot that shows the access key for an Azure Event Hubs namespace." lightbox="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png":::            
 1. Now, on the **Connect** page of wizard, for **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the event hub. 
 1. For **Data format**, select a data format of the incoming real-time events that you want to get from your Azure event hub. You can select from JSON, Avro, and CSV (with header) data formats.  
 
