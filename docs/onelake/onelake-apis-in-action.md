@@ -13,16 +13,16 @@ ms.date: 10/07/2025
 
 # OneLake Deep Dive: ADLS and Blob APIs in Action
 
-If you’re working with an existing application built on Azure Storage (Azure Data Lake Storage or Azure Blobs), and want to connect it to OneLake—good news! You can stick with the APIs you’re already using. Whether it’s [Azure Data Lake Storage (ADLS)](https://learn.microsoft.com/rest/api/storageservices/data-lake-storage-gen2) or [Blob Storage APIs](https://learn.microsoft.com/rest/api/storageservices/blob-service-rest-api), [both are fully supported in OneLake](onelake-api-parity.md). No need to rewrite your app—just point it at OneLake and go.
+If you’re working with an existing application built on Azure Storage (Azure Data Lake Storage or Azure Blobs), and want to connect it to OneLake—good news! You can stick with the APIs you’re already using. Whether it’s [Azure Data Lake Storage (ADLS)](/rest/api/storageservices/data-lake-storage-gen2) or [Blob Storage APIs](/rest/api/storageservices/blob-service-rest-api), [both are fully supported in OneLake](onelake-api-parity.md). No need to rewrite your app—just point it at OneLake and go.
 
 We demonstrate how Blob and ADLS APIs are useful through a real-world mirroring example and share developer insights from OneLake. We explore when and why you might choose one API over another, and how to get the most out of each. All the patterns we cover apply to Azure Storage storage as well.
 
 In this scenario, we cover:
-1.	What is [open mirroring](https://learn.microsoft.com/fabric/database/mirrored-database/open-mirroring-landing-zone-format)
-2.	How to use the .NET [Azure Blob Storage](https://learn.microsoft.com/azure/storage/blobs/storage-blob-dotnet-get-started) and [Distributed File System (DFS)](https://learn.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet) clients to write data into the open mirror landing zone.
+1.	What is [open mirroring](/fabric/database/mirrored-database/open-mirroring-landing-zone-format)
+2.	How to use the .NET [Azure Blob Storage](/azure/storage/blobs/storage-blob-dotnet-get-started) and [Distributed File System (DFS)](/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet) clients to write data into the open mirror landing zone.
 3.	How to combine the Blob Storage and DFS clients for uploading data and managing folders in OneLake, especially when performance matters
 4.	How to handle scenarios that crop up with block blobs when writing parquet data to blob storage from .NET
-5.	How to test everything locally using the [Azurite emulator](https://learn.microsoft.com/azure/storage/common/storage-use-azurite). (Yes—code you write against OneLake works with the storage emulator too!)
+5.	How to test everything locally using the [Azurite emulator](/azure/storage/common/storage-use-azurite). (Yes—code you write against OneLake works with the storage emulator too!)
 
 ## Streaming Parquet into OneLake with Blob APIs
 In this section, we demonstrate how to efficiently stream parquet data into OneLake, particularly the open mirroring landing zone. Open mirroring is a powerful way to bring data from proprietary systems, where shortcuts [shortcuts](onelake-shortcuts) can't be used, into Microsoft Fabric. It handles the heavy lifting, converting raw data into [Delta Lake format](https://delta.io/), managing [upserts, delete vectors](https://docs.delta.io/latest/delta-update.html), [optimize](https://delta.io/blog/delta-lake-optimize/), [vacuum](https://docs.delta.io/latest/delta-utility.html#remove-files-no-longer-referenced-by-a-delta-table), and more. All you need to do is upload your data into the landing zone, include a row marker, and mirroring takes it from there.
@@ -43,7 +43,7 @@ This approach keeps your Azure Function lightweight, fast, and cost-efficient, n
 
 ## Open mirroring landing zone summary
 
-The [open mirroring landing zone](https://learn.microsoft.com/fabric/database/mirrored-database/open-mirroring-landing-zone-format) acts like an inbox for your mirrored tables, add files then Fabric takes care of the ingestion. But behind that simplicity is a clear protocol your application needs to follow to ensure data is correctly discovered and processed.
+The [open mirroring landing zone](/fabric/database/mirrored-database/open-mirroring-landing-zone-format) acts like an inbox for your mirrored tables, add files then Fabric takes care of the ingestion. But behind that simplicity is a clear protocol your application needs to follow to ensure data is correctly discovered and processed.
 
 ### Folder structure
 
@@ -72,7 +72,7 @@ This metadata file tells Fabric how to uniquely identify rows. Without it, Fabri
 
 Once the metadata is in place, you can start writing data. Files must be named sequentially using zero-padded numbers like `00000000000000000001.parquet`, `00000000000000000002.parquet`, etc. This ensures deterministic ordering and avoids collisions.
 
-List APIs return blobs alphabetically, so our logic can quickly find the next sequence number by processing the landing zone folder with a flat listing. Open mirroring moves processed files to folders prefixed with _, which are sorted below numeric values. Exiting the loop after seeing all parquet files improves performance when you’re using the [Azure Storage List Blob API](https://learn.microsoft.com/rest/api/storageservices/list-blobs) – which would enumerate blobs in sub folders as it matches the prefix. If you’re using the [ADLS Path List API](https://learn.microsoft.com/rest/api/storageservices/datalakestoragegen2/path/list?view=rest-storageservices-datalakestoragegen2-2019-12-12), you can choose to perform a recursive list, which allows control over whether or not to list the contents of sub folders – this is a clear advantage of the hierarchical namespace.
+List APIs return blobs alphabetically, so our logic can quickly find the next sequence number by processing the landing zone folder with a flat listing. Open mirroring moves processed files to folders prefixed with _, which are sorted below numeric values. Exiting the loop after seeing all parquet files improves performance when you’re using the [Azure Storage List Blob API](/rest/api/storageservices/list-blobs) – which would enumerate blobs in sub folders as it matches the prefix. If you’re using the [ADLS Path List API](/rest/api/storageservices/datalakestoragegen2/path/list?view=rest-storageservices-datalakestoragegen2-2019-12-12), you can choose to perform a recursive list, which allows control over whether or not to list the contents of sub folders – this is a clear advantage of the hierarchical namespace.
 
 The logic to determine the next file name looks like this:
 
@@ -135,7 +135,7 @@ private async Task<Stream> OpenWriteAsync(OpenMirroredTableId table, string file
 ```
 
 > [!NOTE]
-> Mirrored databases support schemas, so the landing zone can contain an [optional schema folder](../mirroring/open-mirroring-landing-zone-format.md#schema) to denote that the table is within a schema. Also, in OneLake, Fabric [workspaces](../fundamentals/workspaces.md) are mapped to storage [Containers](https://learn.microsoft.com/azure/storage/blobs/storage-blobs-introduction#containers) and [ADLS Filesystems](https://learn.microsoft.com/azure/storage/blobs/data-lake-storage-abfs-driver).
+> Mirrored databases support schemas, so the landing zone can contain an [optional schema folder](../mirroring/open-mirroring-landing-zone-format.md#schema) to denote that the table is within a schema. Also, in OneLake, Fabric [workspaces](../fundamentals/workspaces.md) are mapped to storage [Containers](/azure/storage/blobs/storage-blobs-introduction#containers) and [ADLS Filesystems](/azure/storage/blobs/data-lake-storage-abfs-driver).
 
 ```csharp
 public record OpenMirroredTableId(string WorkspaceName, string MirroredDatabaseName, string TableName)
@@ -310,7 +310,7 @@ In Parquet.NET, each time a row group is completed, the library calls `Flush()` 
 Blob Storage, and therefore OneLake, uses a block blob model, which works like this:
 1. You upload blocks: Each block can be up to 4,000 MiB in size (default is 4 MiB). You can upload blocks in parallel to maximize throughput—and the .NET Blob client does this for you automatically, which is great. This is one reason to use the Blob client (not the DFS client) for uploads. The DFS client doesn’t support parallel block uploads, which can be a performance bottleneck. That said, the DFS client can still read the resulting files just fine.
 2.	You commit the blocks: Once all blocks are uploaded, you call CommitBlockList() to finalize the blob. You can upload up to 50,000 blocks per blob, which means—if you’re using 4,000-MiB blocks—you could theoretically write a single 190.7-TiB file. (Not that I’d recommend it.) 
-If you’d like to learn more, read this article [Understanding block blobs, append blobs, and page blobs](https://learn.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs).
+If you’d like to learn more, read this article [Understanding block blobs, append blobs, and page blobs](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs).
 
 **Here's the catch**
 
@@ -325,7 +325,7 @@ Doing something expensive 250 times instead of once increases the chance of this
 
 To bridge the gap between Parquet.NET and the nuances of Blob Storage, don't implement the `Flush()` call in the `BlobFile.BlobStream` implementation. That way, even though Parquet.NET calls Flush after each row group, the underlying stream doesn’t flush to storage.
 
-The storage clients (DFS and Blob) will create an empty file when calling OpenWrite. The open mirroring processor logs an error when encountering a 0-byte file, which is possible if the replicator process interleaves with file creation. To avoid this write a file to another location and move it to the correct path, which the ADLS APIs supports through a [rename operation](https://learn.microsoft.com/rest/api/storageservices/rename-file), like so:
+The storage clients (DFS and Blob) will create an empty file when calling OpenWrite. The open mirroring processor logs an error when encountering a 0-byte file, which is possible if the replicator process interleaves with file creation. To avoid this write a file to another location and move it to the correct path, which the ADLS APIs supports through a [rename operation](/rest/api/storageservices/rename-file), like so:
 
 ```csharp
 public async Task<BlobFile> CreateFileAsync(string filePath)
