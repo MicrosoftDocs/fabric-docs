@@ -1,5 +1,5 @@
 ---
-title: OneLake Deep Dive ADLS and Blob APIs in Action
+title: Use OneLake APIs to mirror data into OneLake
 description: This explains how developers can use Azure Data Lake Storage (ADLS) and Blob Storage APIs to efficiently connect existing applications to OneLake, especially for streaming Parquet data into Microsoft Fabric’s open mirroring landing zone, without needing to rewrite their apps. It covers practical implementation details, performance tips, and robust testing strategies using the Azurite emulator
 ms.reviewer: eloldag
 ms.author: tompeplow
@@ -11,11 +11,11 @@ ms.date: 10/07/2025
 ---
 
 
-# OneLake Deep Dive: ADLS and Blob APIs in Action
+# Use OneLake APIs to mirror data into OneLake
 
-If you’re working with an existing application built on Azure Storage (Azure Data Lake Storage or Azure Blobs), and want to connect it to OneLake—good news! You can stick with the APIs you’re already using. Whether it’s [Azure Data Lake Storage (ADLS)](/rest/api/storageservices/data-lake-storage-gen2) or [Blob Storage APIs](/rest/api/storageservices/blob-service-rest-api), [both are fully supported in OneLake](onelake-api-parity.md). No need to rewrite your app—just point it at OneLake and go.
+If your application uses [Azure Data Lake Storage (ADLS)](/rest/api/storageservices/data-lake-storage-gen2) or [Blob Storage APIs](/rest/api/storageservices/blob-service-rest-api) and needs to connect to OneLake, you can continue using the existing APIs.
 
-We demonstrate how Blob and ADLS APIs are useful through a real-world mirroring example and share developer insights from OneLake. We explore when and why you might choose one API over another, and how to get the most out of each. All the patterns we cover apply to Azure Storage storage as well.
+We demonstrate how Blob and ADLS APIs are used with OneLake through a real-world mirroring example and share developer insights from OneLake. We explore when and why you might choose one API over another, and how to get the most out of each. All the patterns we cover apply to Azure Storage storage as well.
 
 In this scenario, we cover:
 1.	What is [open mirroring](/fabric/database/mirrored-database/open-mirroring-landing-zone-format)
