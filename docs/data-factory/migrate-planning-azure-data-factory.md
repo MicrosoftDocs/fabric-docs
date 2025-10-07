@@ -58,7 +58,7 @@ Migration paths depend on your ADF assets and their feature parity. Options incl
 - [Use the powershell conversion tool to migrate pipelines with high parity.](#use-the-powershell-upgrade-tool) - Automate the migration of pipelines, activities, and parameters at scale. Ideal for standard patterns like Copy, Lookup, and Stored Procedure.
 - [Manual migration for complex environments](#manual-migration) - Rebuild pipelines in Fabric to leverage new features and optimize performance. This is necessary for pipelines with low parity or custom logic, but it’s also an opportunity to modernize your architecture.
 
-## Mounting an Azure Data Factory item in your Fabric workspace
+## Mount an Azure Data Factory item in your Fabric workspace
 
 **Mounting** lets you bring an existing ADF into your Fabric workspace for immediate visibility and governance while you migrate incrementally. It’s ideal for discovery, ownership assignment, and side-by-side testing because teams can see pipelines, organize them under Fabric workspaces, and plan cutovers per domain. Use mounting to catalog what exists, prioritize the highest-value/lowest-risk pipelines first, and establish conventions (naming, folders, connection reuse) that your conversion scripts and partner tools can follow consistently.
 

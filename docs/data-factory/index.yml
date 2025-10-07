@@ -42,7 +42,7 @@ landingContent:
             url: /training/browse/?terms=data%20factory%20fabric
   - title: Migrate to Data Factory in Fabric
     linkLists:
-      - linkListType: how-to
+      - linkListType: how-to-guide
         links:
           - text: Plan your migration
             url: migrate-planning-azure-data-factory.md
