@@ -19,8 +19,29 @@ This article presents an overview of how to create, configure, and use an enviro
 
 You can create new environments from multiple entry points:
 
-- **Standard entry point:** In the creation hub, or the **New** section of your workspace, you can find the option to create new environments like other Fabric items.
-- **Create during selection:** When you select the environment for your notebook, Spark job definition, and the workspace default, you can find the option to create a new environment.
+**Standard entry point:**
+
+1. In Fabric, navigate to the desired workspace.
+
+1. Select **New item** and locate **Environment**.
+
+    :::image type="content" source="media\environment-introduction\new-item-environment.png" alt-text="Screenshot showing how to create a new environment in the Fabric portal." lightbox="media\native\new-item-environment.png":::
+
+1. Name your environment and select **Create**.
+
+**Create during selection:**
+
+1. Open a notebook or Spark job definition.
+
+1. Select the **Environment** dropdown and then select **New environment**.
+
+    :::image type="content" source="media\environment-introduction\env-create-during-selection.png" alt-text="Screenshot that shows how to create a new environment during environment selection in a notebook." lightbox="media\environment-introduction\env-create-during-selection.png":::
+
+1. Name your environment and select **Create**.
+
+Once the environment is created, select the runtime version. Choose **Runtime 1.3 (Spark 3.5, Delta 3.2)** from the dropdown menu.
+
+:::image type="content" source="media\environment-introduction\select-runtime.png" alt-text="Screenshot showing how to select the runtime version for the environment." lightbox="media\native\select-runtime.png":::
 
 ## Configure an environment
 
