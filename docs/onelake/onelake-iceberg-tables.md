@@ -17,6 +17,8 @@ This flexibility is enabled through **metadata virtualization**, a feature that 
 
 When you write or create a shortcut to an Iceberg table folder, OneLake automatically generates virtual Delta Lake metadata (Delta log) for the table, enabling its use with Fabric workloads. Conversely, Delta Lake tables now include virtual Iceberg metadata, allowing compatibility with Iceberg readers.
 
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
 :::image type="content" source="media\onelake-iceberg-table-shortcut\iceberg-shortcut-diagram.png" alt-text="Diagram showing table virtualization from Iceberg to Delta Lake.":::
 
 While this article includes guidance for using Iceberg tables with Snowflake, this feature is intended to work with any Iceberg tables with Parquet-formatted data files in storage.
@@ -24,8 +26,6 @@ While this article includes guidance for using Iceberg tables with Snowflake, th
 ## Virtualize Delta Lake tables as Iceberg
 
 To set up the automatic conversion and virtualization of tables from Delta Lake format to Iceberg format, follow these steps.
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 1.  Enable automatic table virtualization of Delta Lake tables to the Iceberg format by turning on the delegated OneLake setting named **Enable Delta Lake to Apache Iceberg table format virtualization** in your workspace settings.
 
