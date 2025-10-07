@@ -49,16 +49,6 @@ This table shows the permissions needed for each shortcut action.
 > [!IMPORTANT]
 > <sup>2</sup> **Exception to identity passthrough:** While OneLake security typically passes through the calling user's identity to enforce permissions, certain query engines operate differently. When accessing shortcut data through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines configured for Delegated identity mode**, these engines don't pass through the calling user's identity to the shortcut target. Instead, they use the **item owner's identity** to access the data, and then apply OneLake security roles to filter what the calling user can see.
 >
-> This means:
-> - The shortcut target is accessed using the item owner's permissions (not the end user's)
-> - OneLake security roles still determine what data the end user can read
-> - Any permissions configured directly at the shortcut target path for the end user are bypassed
->
-> **To ensure true user identity passthrough to shortcut targets**, use one of these alternatives:
-> - **Power BI semantic models in DirectLake over OneLake mode** - passes through the calling user's identity
-> - **T-SQL in User's identity mode** - passes through the calling user's identity
->
-> With these modes, the calling user's own permissions on both the shortcut path and target path are evaluated, consistent with OneLake's passthrough authentication model.
 
 ## OneLake security
 
