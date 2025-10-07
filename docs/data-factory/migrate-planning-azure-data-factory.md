@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # Migration planning for Azure Data Factory to Fabric Data Factory
 
-Microsoft Fabric brings together Microsoft's analytics tools into a single SaaS platform. It offers strong capabilities for workflow orchestration, data movement, replication, and transformation at scale. Fabric Data Factory builds on Azure Data Factory (ADF), which makes it a great choice for modernizing your data integration solutions.
+Microsoft Fabric brings together Microsoft's analytics tools into a single SaaS platform. It offers strong capabilities for workflow orchestration, data movement, replication, and transformation at scale. Fabric Data Factory provides a SaaS environment that builds on Azure Data Factory (ADF) PaaS through ease-of-use improvements and extra functionality, making Fabric Data Factory the perfect modernization of your existing data integration solutions.
 
 This guide shows you migration strategies, considerations, and approaches to help you move from Azure Data Factory to Fabric Data Factory.
 
