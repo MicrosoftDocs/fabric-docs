@@ -98,7 +98,7 @@ Use keyboard shortcuts in horizontal tabs and object explorer to switch between 
 
 **Keyboard shortcuts in Object Explorer**
 
-Object explorer helps you browse workspaces, folders, and items. You can use the following shortcuts to quickly navigate:
+Object explorer helps you browse workspaces, folders, and items. Use the following shortcuts to quickly navigate:
 
 | Action | Shortcut |
 |--------|----------|
@@ -109,7 +109,7 @@ Object explorer helps you browse workspaces, folders, and items. You can use the
 
 **Use keyboard shortcuts in horizontal tabs**
 
-Horizontal tabbing lets you switch between multiple open items. Use these shortcuts to move efficiently across tabs:
+Horizontal tabs lets you switch between multiple open items. Use the following shortcuts to move efficiently across tabs:
 
 | Action | Shortcut |
 |--------|----------|
