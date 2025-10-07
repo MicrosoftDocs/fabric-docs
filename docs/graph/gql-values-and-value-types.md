@@ -12,6 +12,8 @@ ms.subservice: graph
 
 # GQL values and value types
 
+[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
+
 The GQL language supports various kinds of values like numbers, strings, and graph elements. These values are organized into sets called value types, which define what operations you can perform and how values behave in different contexts. Understanding the type system is essential for writing correct queries and avoiding runtime errors.
 
 **Key concepts:**

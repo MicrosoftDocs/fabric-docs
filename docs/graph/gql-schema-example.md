@@ -12,6 +12,8 @@ ms.subservice: graph
 
 # GQL schema example: Social network
 
+[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
+
 This article provides the complete technical specification for the social network graph type used throughout the GQL documentation. This schema demonstrates many common features of complex graphs and serves as the foundation for all query examples in the GQL language documentation.
 
 <!-- Image source in graphviz dot format

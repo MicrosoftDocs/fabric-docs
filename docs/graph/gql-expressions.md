@@ -12,6 +12,8 @@ ms.subservice: graph
 
 # GQL expressions, predicates, and functions
 
+[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
+
 GQL expressions let you perform calculations, comparisons, and transformations on data within your queries. In combination with built-in functions, expressions provide powerful tools for data processing, filtering, and analysis in graph queries.
 
 ## Literals

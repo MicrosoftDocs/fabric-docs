@@ -12,6 +12,8 @@ ms.subservice: graph
 
 # GQL status codes reference
 
+[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
+
 When you run GQL queries in Microsoft Fabric, you receive status information along with your results. This reference lists all GQLSTATUS codes used by graph in Microsoft Fabric.
 
 ## Success codes

@@ -12,6 +12,8 @@ ms.subservice: graph
 
 # GQL graph types
 
+[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
+
 A graph type describes your graph's structure by defining which nodes and edges can exist. Think of it like a blueprint or schema—it specifies the shape of nodes and edges in the graph in terms of their labels and properties. For edges (the connections between nodes), it also specifies which kinds of edges can connect which kinds of nodes. If you're familiar with relational databases, graph types work similarly to how ER diagrams describe tables and foreign key relationships.
 
 Graph types provide several key benefits:

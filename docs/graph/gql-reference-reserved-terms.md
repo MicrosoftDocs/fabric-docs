@@ -12,6 +12,8 @@ ms.subservice: graph
 
 # GQL reserved words reference
 
+[!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
+
 This article provides a comprehensive reference of GQL (Graph Query Language) reserved words for [graph in Microsoft Fabric](overview.md). Reserved words are keywords that have special meaning in GQL and can't be used as identifiers, such as names for variables or properties.
 
 The alphabetical list includes both standard GQL reserved words and those specific to graph in Microsoft Fabric. 
