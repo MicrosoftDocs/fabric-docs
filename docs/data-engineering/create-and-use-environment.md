@@ -25,7 +25,7 @@ You can create new environments from multiple entry points:
 
 1. Select **New item** and locate **Environment**.
 
-    :::image type="content" source="media\environment-introduction\new-item-environment.png" alt-text="Screenshot showing how to create a new environment in the Fabric portal." lightbox="media\native\new-item-environment.png":::
+    :::image type="content" source="media\environment-introduction\new-item-environment.png" alt-text="Screenshot showing how to create a new environment in the Fabric portal." lightbox="media\environment-introduction\new-item-environment.png":::
 
 1. Name your environment and select **Create**.
 
@@ -41,7 +41,7 @@ You can create new environments from multiple entry points:
 
 Once the environment is created, select the runtime version. Choose **Runtime 1.3 (Spark 3.5, Delta 3.2)** from the dropdown menu.
 
-:::image type="content" source="media\environment-introduction\select-runtime.png" alt-text="Screenshot showing how to select the runtime version for the environment." lightbox="media\native\select-runtime.png":::
+:::image type="content" source="media\environment-introduction\select-runtime.png" alt-text="Screenshot showing how to select the runtime version for the environment." lightbox="media\environment-introduction\select-runtime.png":::
 
 ## Configure an environment
 
