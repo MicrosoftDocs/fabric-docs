@@ -18,13 +18,13 @@ If your application uses [Azure Data Lake Storage (ADLS)](/rest/api/storageservi
 We demonstrate how Blob and ADLS APIs are used with OneLake through a real-world mirroring example and share developer insights from OneLake. We explore when and why you might choose one API over another, and how to get the most out of each. All the patterns we cover apply to Azure Storage storage as well.
 
 In this scenario, we cover:
-1.	What is [open mirroring](/fabric/database/mirrored-database/open-mirroring-landing-zone-format)
-2.	How to use the .NET [Azure Blob Storage](/azure/storage/blobs/storage-blob-dotnet-get-started) and [Distributed File System (DFS)](/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet) clients to write data into the open mirror landing zone.
-3.	How to combine the Blob Storage and DFS clients for uploading data and managing folders in OneLake, especially when performance matters
-4.	How to handle scenarios that crop up with block blobs when writing parquet data to blob storage from .NET
-5.	How to test everything locally using the [Azurite emulator](/azure/storage/common/storage-use-azurite). (Yes—code you write against OneLake works with the storage emulator too!)
+- What is [open mirroring](/fabric/database/mirrored-database/open-mirroring-landing-zone-format)
+- How to use the .NET [Azure Blob Storage](/azure/storage/blobs/storage-blob-dotnet-get-started) and [Distributed File System (DFS)](/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet) clients to write data into the open mirror landing zone.
+- How to combine the Blob Storage and DFS clients for uploading data and managing folders in OneLake, especially when performance matters
+- How to handle scenarios that crop up with block blobs when writing parquet data to blob storage from .NET
+- How to test everything locally using the [Azurite emulator](/azure/storage/common/storage-use-azurite). (Yes—code you write against OneLake works with the storage emulator too!)
 
-## Streaming Parquet into OneLake with Blob APIs
+## Streaming parquet into OneLake with Blob APIs
 In this section, we demonstrate how to efficiently stream parquet data into OneLake, particularly the open mirroring landing zone. Open mirroring is a powerful way to bring data from proprietary systems, where shortcuts [shortcuts](onelake-shortcuts.md) can't be used, into Microsoft Fabric. It handles the heavy lifting, converting raw data into [Delta Lake format](https://delta.io/), managing [upserts, delete vectors](https://docs.delta.io/latest/delta-update.html), [optimize](https://delta.io/blog/delta-lake-optimize/), [vacuum](https://docs.delta.io/latest/delta-utility.html#remove-files-no-longer-referenced-by-a-delta-table), and more. All you need to do is upload your data into the landing zone, include a row marker, and mirroring takes it from there.
 
 It's common that teams write custom code to extract data from proprietary systems and output it in an open format. While open mirroring ingests both CSV and Parquet into Delta tables, if you’re already writing code, you might as well go with Parquet, it’s more efficient to upload and process.
@@ -211,7 +211,7 @@ public static PricePaidMirroredDataFormat Create(PricePaid pricePaid)
 ```
 This protocol is simple and deterministic. It avoids unnecessary API calls, works seamlessly with both batch and streaming pipelines, and integrates smoothly with serverless environments like Azure Functions. Uploading a blob to a prefix automatically creates the parent folders and remains compatible with the storage emulator—more on that in the testing section.
 
-### Step 4: Cleanup after yourself
+### Step 4: Clean up after yourself
 
 Once open mirroring has successfully processed your data, it moves the original files into special folders, `_ProcessedFiles` and `_FilesReadyToDelete`, and adds a `_FilesReadyToDelete.json` file. While Fabric will automatically delete these files after seven days, that retention window can lead to significant storage costs if you're mirroring large volumes of data.
 
@@ -297,7 +297,7 @@ But here’s the catch: Blob Storage isn’t the same as a local file system.
 ### Calling flush – commits the blocks
 To understand why the `Flush()` call in Parquet.NET matters, we need to take a quick detour into how Parquet files are structured—and how that interacts with the Blob Storage block blob API.
 
-#### Parquet File Basics
+#### Parquet file basics
 
 Parquet is a columnar storage format designed for efficient analytics. A Parquet file is made up of:
 - Row groups: These are the core building blocks. Each row group contains a chunk of rows, organized by column. Row groups are written sequentially and independently.
@@ -305,23 +305,23 @@ Parquet is a columnar storage format designed for efficient analytics. A Parquet
 - Metadata: At the end of the file, Parquet writes a footer that includes schema and offset information for fast reads.
 In Parquet.NET, each time a row group is completed, the library calls `Flush()` on the output stream. This is where things get interesting when you're writing to Blob Storage.
 
-#### Block Blob Model
+#### Block blob model
 
 Blob Storage, and therefore OneLake, uses a block blob model, which works like this:
-1. You upload blocks: Each block can be up to 4,000 MiB in size (default is 4 MiB). You can upload blocks in parallel to maximize throughput—and the .NET Blob client does this for you automatically, which is great. This is one reason to use the Blob client (not the DFS client) for uploads. The DFS client doesn’t support parallel block uploads, which can be a performance bottleneck. That said, the DFS client can still read the resulting files just fine.
-2.	You commit the blocks: Once all blocks are uploaded, you call CommitBlockList() to finalize the blob. You can upload up to 50,000 blocks per blob, which means—if you’re using 4,000-MiB blocks—you could theoretically write a single 190.7-TiB file. (Not that I’d recommend it.) 
+- You upload blocks: Each block can be up to 4,000 MiB in size (default is 4 MiB). You can upload blocks in parallel to maximize throughput—and the .NET Blob client does this for you automatically, which is great. This is one reason to use the Blob client (not the DFS client) for uploads. The DFS client doesn’t support parallel block uploads, which can be a performance bottleneck. That said, the DFS client can still read the resulting files just fine.
+- You commit the blocks: Once all blocks are uploaded, you call CommitBlockList() to finalize the blob. You can upload up to 50,000 blocks per blob, which means—if you’re using 4,000-MiB blocks—you could theoretically write a single 190.7-TiB file. (Not that I’d recommend it.) 
 If you’d like to learn more, read this article [Understanding block blobs, append blobs, and page blobs](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs).
 
 **Here's the catch**
 
-When Parquet.NET calls `Flush()` after each row group, and you're writing to a stream backed by Blob Storage, that flushes triggers a block list commit. As the file grows, each new row group causes the library to recommit all previously uploaded blocks.
+When Parquet.NET calls `Flush()` after each row group, and you're writing to a stream backed by Blob Storage, that flushes triggers a BlockList commit. As the file grows, each new row group causes the library to recommit all previously uploaded blocks.
 
 Let’s say you’re writing a 1-GB file with 100MB row groups, using 4MB blocks. That gives you 250 blocks in total. On the first flush, you commit 25 blocks. On the second, 50. By the final flush, you’re committing all 250 blocks. Add that up across all 10 row groups, and you’ve committed a total of 1,375 blocks—even though the final file only needs one commit.
 
 This is inefficient, and it introduces two key problems:
-1.	**Timeouts and retries.** Large block lists can lead to timeouts. Remember, Blob Storage is built on HTTP. It’s reliable—but not perfect. A timeout might succeed on the server, but your client doesn’t know that, so it retries. That retry can result in a 409 Conflict.
+- **Timeouts and retries.** Large BlockLists can lead to timeouts. Remember, Blob Storage is built on HTTP. It’s reliable—but not perfect. A timeout might succeed on the server, but your client doesn’t know that, so it retries. That retry can result in a 409 Conflict.
 Doing something expensive 250 times instead of once increases the chance of this happening. Fewer commits = fewer retries = fewer headaches.
-2.	**Premature blob visibility.** One of the nice things about the Blob API is that the blocks don't become visible until you explicitly commit the block list. This aligns well for scenarios like Parquet, where the file isn’t valid until the footer metadata is written. It means downstream processes won’t accidentally pick up a half-written file. But here’s the twist: because Parquet.NET calls `Flush()` after each row group, and that flush triggers a commit, the blob becomes visible before the file is complete. So even though the Blob API is designed to help you avoid this problem, the way Parquet.NET works with a Stream introduces an issue—unless you take steps to prevent it. 
+- **Premature blob visibility.** One of the nice things about the Blob API is that the blocks don't become visible until you explicitly commit the BlockList. This aligns well for scenarios like Parquet, where the file isn’t valid until the footer metadata is written. It means downstream processes won’t accidentally pick up a half-written file. But here’s the twist: because Parquet.NET calls `Flush()` after each row group, and that flush triggers a commit, the blob becomes visible before the file is complete. So even though the Blob API is designed to help you avoid this problem, the way Parquet.NET works with a Stream introduces an issue—unless you take steps to prevent it. 
 
 To bridge the gap between Parquet.NET and the nuances of Blob Storage, don't implement the `Flush()` call in the `BlobFile.BlobStream` implementation. That way, even though Parquet.NET calls Flush after each row group, the underlying stream doesn’t flush to storage.
 
@@ -599,7 +599,7 @@ public static TestSetup UsingFabric()
 }
 ```
 
-:::image type="content" source="./media/onelake-open-access-quickstart/onelake-open-mirror-house-price-data.png" lightbox="./media/onelake-open-access-quickstart/onelake-open-mirror-house-price-data.png" alt-text="Screenshot that shows house price data mirrored into an open mirrored table":::
+:::image type="content" source="./media/onelake-open-access-quickstart/onelake-open-mirror-house-price-data.png" lightbox="./media/onelake-open-access-quickstart/onelake-open-mirror-house-price-data.png" alt-text="Screenshot that shows house price data mirrored into an open mirrored table.":::
 
 ## Wrapping up
 
