@@ -62,7 +62,7 @@ items:
   - name: Use Python to manage OneLake
     href: onelake-access-python.md
   - name: OneLake Deep Dive ADLS and Blob APIs in Action
-    href: onelake-adls-blob-apis-in-action.md
+    href: onelake-apis-in-action.md
 - name: Integrate with Azure services
   items:
   - name: Azure Synapse Analytics
