@@ -1,5 +1,5 @@
 ---
-title: OneLake Deep Dive: ADLS and Blob APIs in Action
+title: OneLake Deep Dive ADLS and Blob APIs in Action
 description: This explains how developers can use Azure Data Lake Storage (ADLS) and Blob Storage APIs to efficiently connect existing applications to OneLake, especially for streaming Parquet data into Microsoft Fabric’s open mirroring landing zone, without needing to rewrite their apps. It covers practical implementation details, performance tips, and robust testing strategies using the Azurite emulator
 ms.reviewer: eloldag
 ms.author: tompeplow
