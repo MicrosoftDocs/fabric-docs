@@ -20,7 +20,7 @@ While Graph in Microsoft Fabric is in preview, the service has certain functiona
 
 ### Data types
 
-Graph in Microsoft Fabric currently only exposes support for the following date types:
+Graph in Microsoft Fabric currently only exposes support for the following data types:
 
 - Boolean
 - Double (casted to float)
