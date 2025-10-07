@@ -110,9 +110,9 @@ The JSON event contains the following attributes:
 | accessedViaResource |	The resource the data was accessed via. When a shortcut is used, this is the location of the shortcut |
 | callerIPAddress |	The IP address of the caller |
 
-### End user identifiable information (EUII)
+### Personal Data
 
-OneLake diagnostic events include end user identifiable information, such as `executingUPN` and `callerIpAddress`. To redact this data, tenant admins can disable the setting "Include end-user identifiers in OneLake diagnostic logs" in the Fabric Admin Portal. When disabled, these fields are excluded from new diagnostic events.
+OneLake diagnostic events include `executingUPN` and `callerIpAddress`. To redact this data, tenant admins can disable the setting "Include end-user identifiers in OneLake diagnostic logs" in the Fabric Admin Portal. When disabled, these fields are excluded from new diagnostic events.
 
 ## Frequently Asked Questions (FAQ)
 
