@@ -80,6 +80,9 @@ The Data Factory experience contains operations for [Dataflows Gen2](#dataflows-
 
 You can find the consumption rates for Dataflows Gen2 in [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-dataflows-gen2.md).
 
+>[!NOTE]
+>As of October 2025, the operation name **Dataflow Gen2 Refresh** has been renamed to **Dataflow Gen2 Run Queries**.
+
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
 | Dataflow Gen2 Run Queries                           | Compute cost associated with dataflow Gen2 evaluation operation       | Dataflow Gen2 | Dataflows Standard Compute Capacity Usage CU | Background |
