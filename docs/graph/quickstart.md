@@ -141,7 +141,7 @@ In the next sections, we query the graph by selecting specific nodes and relatio
 
 Follow these steps to switch to query mode and start querying your graph:
 
-1. Select **Modes** > **Query** from your graph's home page.
+1. Select **Modes** > **Query** from your graph's home page. From this view you can also create a read-only QuerySet, which has the same functionalities as below and allows you to share your query results.
 1. Select **Add node** to see the available nodes for querying.
 1. Select a node to add it to your query. In this example, we add the **Customer** node.
 
