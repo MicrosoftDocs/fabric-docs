@@ -44,6 +44,21 @@
             "source_path_from_root": "/docs/onelake/security/fabric-onelake-security.md",
             "redirect_url": "/fabric/onelake/security/get-started-security",
             "redirect_document_id": false
-        }   
+        },
+        {
+            "source_path_from_root": "/docs/onelake/onelake-iceberg-tables.md",
+            "redirect_url": "/fabric/onelake/table-apis/onelake-iceberg-table-apis-detailed",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/onelake-iceberg-tables.md",
+            "redirect_url": "/fabric/onelake/table-apis/onelake-iceberg-table-apis",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/onelake-iceberg-tables.md",
+            "redirect_url": "/fabric/onelake/table-apis/onelake-table-apis",
+            "redirect_document_id": false
+        }
     ]
 }
