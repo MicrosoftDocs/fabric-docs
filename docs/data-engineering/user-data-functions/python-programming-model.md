@@ -187,63 +187,18 @@ def read_from_sql_db(demosqldatabase: fn.FabricSqlConnection)-> list:
   return results
 ```
 
-## Get invocation properties using `UserDataFunctionContext`
+## Generic connections for Fabric items or Azure resources
 
-The programming model also includes the `UserDataFunctionContext` object. This object contains the function invocation metadata and can be used to create specific app logic for certain invocation mechanisms.
+Generic connections allow you to create connections to Fabric items or Azure resources using your User Data Functions item owner identity. This feature generates an Entra ID token with the item owner's identity and a provided audience type. This token is used to authenticate with Fabric items or Azure resources that support that audience type. This process will give you a similar programming experience to using managed connections objects from the [Manage Connections feature](./connect-to-data-sources.md) but only for the provided audience type in the connection. 
 
-The following table shows the properties for the `UserDataFunctionContext` object:
+This feature uses the `@udf.generic_connection()` decorator with the following parameters:
 
-|Property Name|Data Type|Description|
-|---------------|-------------|------------------------------------|
-| Invocation ID | string| The unique GUID tied to the invocation of the user data functions item. |
-| ExecutingUser | object | Metadata of the user's information used to authorize the invocation. |
+| Parameter | Description | Value |
+|---|---|---|
+| `argName` | The name of the variable that is passed to the function. The user needs to specify this variable in the arguments of their function and use the type of `fn.FabricItem` for it  | For example, if the `argName=CosmosDb`, then the function should contain this argument `cosmosDb: fn.FabricItem`|
+| `audienceType` | The type of audience that the connection is created for. This parameter is associated with the type of Fabric item or Azure service and determines the client used for the connection.  | The allowed values for this parameter are `CosmosDb` or `KeyVault`. |
 
-The `ExecutingUser` object contains the following information:
 
-| Property Name| Data Type| Description|
-|----------------| ----------------|-----------------------------------------|
-| Oid | string (GUID) | The user's object ID, which is an immutable identifier for the requestor. This is the verified identity of the user or service principal used to invoke this function across applications. |
-| TenantId | string (GUID) | The ID of the tenant that the user is signed into. |
-| PreferredUsername | string | The preferred username of the invoking user, as set by the user. This value is mutable. |
-
-To access the `UserDataFunctionContext` parameter, you must use the following decorator at the top of the function definition: `@udf.context(argName="<parameter name>")`
-
-**Example**
-```python
-@udf.context(argName="myContext")
-@udf.function()
-def getContext(myContext: fabric.functions.UserDataFunctionContext)-> str:
-    logging.info('Python UDF trigger function processed a request.')
-    return f"Hello oid = {context.executing_user['Oid']}, TenantId = {context.executing_user['TenantId']}, PreferredUsername = {context.executing_user['PreferredUsername']}, InvocationId = {context.invocation_id}"
-```
-
-## Throw a handled error with `UserThrownError`
-
-When developing your function, you can throw an expected error response by using the `UserThrownError` method available in the Python programming model. One use of this method is managing cases where the user-provided inputs fail to pass business validation rules.
-
-**Example**
-```python
-import datetime
-
-@udf.function()
-def raise_userthrownerror(age: int)-> str:
-    if age < 18:
-        raise fn.UserThrownError("You must be 18 years or older to use this service.", {"age": age})
-
-    return f"Welcome to Fabric Functions at {datetime.datetime.now()}!"
-```
-
-This `UserThrownError` method takes two parameters:
-- `Message`: This string is returned as the error message to the application that is invoking this function.
-- A dictionary of properties is returned to the application that is invoking this function.
-
-## Create generic connections 
-
-User Data Functions allows you to create connections to Fabric items using the item owner's identity by using the generic connections feature. 
-
-Generic connections generate an Entra ID token for the item owner's identity with a provided audience type. This token is used to connect to Fabric items that support that audience type. This process will give you a similar programming experience to using managed connections objects from the [Manage Connections feature](./connect-to-data-sources.md) but only for the provided audience type in the connection. 
-
-This feature uses the `@udf.generic_connection()` decorator to define an argument name, `argName`, and audience type, `audienceType`. These details are used to define the properties of a new function argument that represents the connection. The argument must be added to the list of parameters with the name defined in the decorator as `argName` with a a type of `fn.FabricItem`.
 
 ### Connect to Fabric Cosmos DB container using a generic connection
 You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.md) using a generic connection by following these steps:
@@ -294,6 +249,110 @@ You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.m
     ```
 
 1. **Test or run this function** by providing a category name, such as `Accessory` in the invocation parameters.
+
+### Connect to Azure Key Vault using a generic connection
+You can connect to [Azure Key Vault](https://learn.microsoft.com/azure/key-vault/general/basic-concepts) to retrieve a client secret to call an API using a generic connection by following these steps:
+
+1. In your **Fabric User Data Functions item**, install the `requests` and the `azure-keyvault-secrets` libraries using the [Library Management experience](./how-to-manage-libraries.md).
+
+1. Go to your **Azure Key Vault resource** and retrieve the `Vault URI` and the name of your key, secret or certificate. 
+
+    :::image type="content" source="..\media\user-data-functions-python-programming-model\key-vault-connection-1.png" alt-text="Screenshot showing the Fabric Cosmos DB endpoint URL." lightbox="..\media\user-data-functions-python-programming-model\key-vault-connection-1.png":::
+
+1. Go back to your **Fabric User Data Functions item** and use this sample. In this sample, we will retrieve a secret from Azure Key Vault to connect to a public API. Replace the value of the following variables:
+    - `KEY_VAULT_URL` with the `Vault URI` you retrieved in the previous step. 
+    - `KEY_VAULT_SECRET_NAME` with the name of your secret.
+    - `API_URL` variable with the URL of the API you'd like to connect to. This sample assumes that you are connecting to a public API that accepts GET requests and takes the following parameters `api-key` and `request-body`. 
+ 
+    ```python
+    from azure.keyvault.secrets import SecretClient
+    from azure.identity import DefaultAzureCredential
+    import requests
+
+    @udf.generic_connection(argName="keyVaultClient", audienceType="KeyVault")
+    @udf.function()
+    def retrieveNews(keyVaultClient: fn.FabricItem, requestBody:str) -> str:
+        KEY_VAULT_URL = 'YOUR_KEY_VAULT_URL'
+        KEY_VAULT_SECRET_NAME= 'YOUR_SECRET'
+        API_URL = 'YOUR_API_URL'
+
+        credential = keyVaultClient.get_access_token()
+
+        client = SecretClient(vault_url=KEY_VAULT_URL, credential=credential)
+
+        api_key = client.get_secret(KEY_VAULT_SECRET_NAME).value
+
+        api_url = API_URL
+        params = {
+            "api-key": api_key,
+            "request-body": requestBody
+        }
+
+        response = requests.get(api_url, params=params)
+
+        data = "" 
+
+        if response.status_code == 200:
+            data = response.json()
+        else:
+            print(f"Error {response.status_code}: {response.text}")
+
+        return f"Response: {data}"
+    ```
+
+1. **Test or run this function** by providing a request body in your code.
+
+## Get invocation properties using `UserDataFunctionContext`
+
+The programming model also includes the `UserDataFunctionContext` object. This object contains the function invocation metadata and can be used to create specific app logic for certain invocation mechanisms.
+
+The following table shows the properties for the `UserDataFunctionContext` object:
+
+|Property Name|Data Type|Description|
+|---------------|-------------|------------------------------------|
+| Invocation ID | string| The unique GUID tied to the invocation of the user data functions item. |
+| ExecutingUser | object | Metadata of the user's information used to authorize the invocation. |
+
+The `ExecutingUser` object contains the following information:
+
+| Property Name| Data Type| Description|
+|----------------| ----------------|-----------------------------------------|
+| Oid | string (GUID) | The user's object ID, which is an immutable identifier for the requestor. This is the verified identity of the user or service principal used to invoke this function across applications. |
+| TenantId | string (GUID) | The ID of the tenant that the user is signed into. |
+| PreferredUsername | string | The preferred username of the invoking user, as set by the user. This value is mutable. |
+
+To access the `UserDataFunctionContext` parameter, you must use the following decorator at the top of the function definition: `@udf.context(argName="<parameter name>")`
+
+**Example**
+```python
+@udf.context(argName="myContext")
+@udf.function()
+def getContext(myContext: fabric.functions.UserDataFunctionContext)-> str:
+    logging.info('Python UDF trigger function processed a request.')
+    return f"Hello oid = {context.executing_user['Oid']}, TenantId = {context.executing_user['TenantId']}, PreferredUsername = {context.executing_user['PreferredUsername']}, InvocationId = {context.invocation_id}"
+```
+
+## Throw a handled error with `UserThrownError`
+
+When developing your function, you can throw an expected error response by using the `UserThrownError` method available in the Python programming model. One use of this method is managing cases where the user-provided inputs fail to pass business validation rules.
+
+**Example**
+```python
+import datetime
+
+@udf.function()
+def raise_userthrownerror(age: int)-> str:
+    if age < 18:
+        raise fn.UserThrownError("You must be 18 years or older to use this service.", {"age": age})
+
+    return f"Welcome to Fabric Functions at {datetime.datetime.now()}!"
+```
+
+This `UserThrownError` method takes two parameters:
+- `Message`: This string is returned as the error message to the application that is invoking this function.
+- A dictionary of properties is returned to the application that is invoking this function.
+
+
 
 ## Next steps
 - [Reference API documentation](/python/api/fabric-user-data-functions/fabric.functions)
