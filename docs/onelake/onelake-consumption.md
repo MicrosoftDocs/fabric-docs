@@ -104,6 +104,15 @@ OneLake security consumes capacity for row level security (RLS) transactions bas
 |---|---|---|---|
 | **OneLake security RLS** | OneLake security RLS | Million rows in the table | 0.1 CU seconds |
 
+## OneLake diagnostics
+OneLake diagnostics consumes capacity when diagnostic events are captured and written to a destination Lakehouse according to the table below.
+
+| **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
+|---|---|---|---|
+| **OneLake Diagnostics Event Operation** | OneLake diagnostic write operations | Every 4 MB, per 10,000 | 1626 CU seconds |
+| **OneLake BCDR Diagnostics Event Operation** | OneLake diagnostic write operations when BCDR is enabled | Every 4 MB, per 10,000 | 3056 CU seconds |
+| **OneLake Diagnostics Data Transfer** | OneLake diagnostic data transfer | Per GB | 1.389 CU Hours |
+
 ## Changes to Microsoft Fabric workload consumption rate
 
 Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft's Release Notes or Microsoft Fabric Blog. If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers may use the cancellation options available for the chosen payment method.
