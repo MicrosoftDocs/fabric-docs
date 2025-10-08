@@ -77,14 +77,6 @@ items:
     href: onelake-powershell.md
   - name: AzCopy
     href: onelake-azcopy.md
-- name: OneLake table APIs
-  items:
-  - name: OneLake table APIs overview
-    href: ./table-apis/onelake-table-apis.md
-  - name: OneLake table APIs for Iceberg
-    href: ./table-apis/onelake-iceberg-table-apis.md
-  - name: Getting started with OneLake table APIs for Iceberg
-    href: ./table-apis/onelake-iceberg-table-apis-detailed.md
 - name: Secure and manage data access
   items:
   - name: OneLake security overview
