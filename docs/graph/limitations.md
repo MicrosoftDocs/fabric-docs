@@ -23,7 +23,7 @@ While Graph in Microsoft Fabric is in preview, the service has certain functiona
 Graph in Microsoft Fabric currently only exposes support for the following data types:
 
 - Boolean
-- Double (cast to float)
+- Double
 - Integer
 - String
 - ZonedDateTime
