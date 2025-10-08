@@ -201,6 +201,8 @@ This feature uses the `@udf.generic_connection()` decorator with the following p
 
 
 ### Connect to Fabric Cosmos DB container using a generic connection
+Generic connections support native Fabric Cosmos DB items by using the `CosmosDB` audience type. The SDK also provides a helper method called `get_cosmos_client` to instantiate a new Cosmos DB client for every invocation.
+
 You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.md) using a generic connection by following these steps:
 1. In your Fabric User Data Functions item, install the `azure-cosmos` library using the [Library Management experience](./how-to-manage-libraries.md).
 
@@ -251,6 +253,8 @@ You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.m
 1. **Test or run this function** by providing a category name, such as `Accessory` in the invocation parameters.
 
 ### Connect to Azure Key Vault using a generic connection
+Generic connections support connecting to a Azure Key Vault by using the `KeyVault` audience type. This type of connection requires that the UserID of the Fabric User Data Functions owner has suffient permissions to connect to the Azure Key Vault. You can use this connection to retrieve keys, secrets, or certificates by name.
+
 You can connect to [Azure Key Vault](https://learn.microsoft.com/azure/key-vault/general/basic-concepts) to retrieve a client secret to call an API using a generic connection by following these steps:
 
 1. In your **Fabric User Data Functions item**, install the `requests` and the `azure-keyvault-secrets` libraries using the [Library Management experience](./how-to-manage-libraries.md).
