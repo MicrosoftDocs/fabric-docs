@@ -261,7 +261,7 @@ You can connect to [Azure Key Vault](https://learn.microsoft.com/azure/key-vault
 
 1. Go to your **Azure Key Vault resource** and retrieve the `Vault URI` and the name of your key, secret or certificate. 
 
-    :::image type="content" source="..\media\user-data-functions-python-programming-model\key-vault-connection-1.png" alt-text="Screenshot showing the Fabric Cosmos DB endpoint URL." lightbox="..\media\user-data-functions-python-programming-model\key-vault-connection-1.png":::
+    :::image type="content" source="..\media\user-data-functions-python-programming-model\key-vault-connection-1.png" alt-text="Screenshot showing the Azure Key Vault endpoint URL and values." lightbox="..\media\user-data-functions-python-programming-model\key-vault-connection-1.png":::
 
 1. Go back to your **Fabric User Data Functions item** and use this sample. In this sample, we will retrieve a secret from Azure Key Vault to connect to a public API. Replace the value of the following variables:
     - `KEY_VAULT_URL` with the `Vault URI` you retrieved in the previous step. 
