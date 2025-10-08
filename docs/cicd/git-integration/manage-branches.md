@@ -70,7 +70,7 @@ For a developer who works in the web, the flow would be as follows:
 
 For an existing workspace, you will see the screenshot below which warns that connecting to an existing workspace may result in some items being deleted.
    
-   :::image type="content" source="./media/manage-branches/branch-out-existing-workspace.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
+   :::image type="content" source="./media/manage-branches/branch-out-existing-workspace.png" alt-text="Screenshot of branch out specifying existing branch and workspace.":::
 
 1. Select **Branch out**.
 
