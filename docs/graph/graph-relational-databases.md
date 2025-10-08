@@ -5,7 +5,7 @@ ms.topic: concept-article
 ms.date: 10/07/2025
 author: eric-urban
 ms.author: eur
-ms.reviewer: wawng
+ms.reviewer: wangwilliam
 ms.service: fabric
 ms.subservice: graph
 ---
