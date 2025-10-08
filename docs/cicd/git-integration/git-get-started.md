@@ -160,12 +160,14 @@ After saving changes to the workspace, if you decide that you don’t want to co
 1. Select **Changes** from the **Source control** panel.
    A list appears with all the items you changed, and an icon indicating if the changed item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, *conflict* :::image type="icon" source="./media/git-get-started/conflict-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
 1. Select the changes you want to undo.
-1. Select **Undo**.
+1. Place a check in the **I understand that workspace items may be deleted and can't be restored** box and select **Undo**.
 
    :::image type="content" source="./media/git-get-started/undo-changes.png" alt-text="Screenshot of source control window with two changes selected to undo.":::
-1. Select **Undo** again to confirm.
+1. Select **Undo** again to confirm. The dialog you see may vary depending on whether or not items that will be deleted are detected.  The first screenshot shows no deletes.  The second, if deletes are detected.
 
-   :::image type="content" source="./media/git-get-started/undo-confirm.png" alt-text="Screenshot of source control window asking if you're sure you want to undo changes.":::
+   :::image type="content" source="./media/git-get-started/undo-confirm-2.png" alt-text="Screenshot of source control window asking if you're sure you want to undo changes.":::
+
+      :::image type="content" source="./media/git-get-started/undo-confirm-3.png" alt-text="Screenshot of source control window asking if you're sure you want to undo changes when items that will be deleted are detected.":::
 
 The selected items in your workspace revert to how they were when the workspace was last synced.
 
@@ -185,7 +187,11 @@ To update a workspace, follow these steps:
 1. Select **Updates** from the Source control panel. A list appears with all the items that were changed in the branch since the last update.
 1. Select **Update all**.
 
-:::image type="content" source="./media/git-get-started/source-control-update.png" alt-text="Screenshot of source control panel with the update tab open and the updating all button selected.":::
+ :::image type="content" source="./media/git-get-started/update-1.png" alt-text="Screenshot of source control panel with the update tab open and the updating all button selected.":::
+
+5. On the confirmation diaglog, select **Update**.
+
+ :::image type="content" source="./media/git-get-started/update-2.png" alt-text="Screenshot of confirmation diaglog.":::
 
 After it updates successfully, the list of items is removed, and the workspace points to the new workspace that it's synced to.
 

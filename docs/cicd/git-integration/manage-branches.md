@@ -61,9 +61,12 @@ For a developer who works in the web, the flow would be as follows:
 
     :::image type="content" source="./media/manage-branches/branch-out.png" alt-text="Screenshot of source control branch out option.":::
 
-1. Specify if you want to create a new workspace or switch to an existing one. Specify the names of the new branch and workspace, or select the existing workspace from the dropdown list. **When you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you commit any items you want to keep before branching out.**
+1. Specify if you want to create a new workspace or switch to an existing one. Specify the names of the new branch and workspace, or select the existing workspace from the dropdown list.
 
-   :::image type="content" source="./media/manage-branches/branch-out-details.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
+>[!IMPORTANT]
+>When you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you commit any items you want to keep before branching out.**
+
+   :::image type="content" source="./media/manage-branches/branch-out-details-2.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
 
 1. Select **Branch out**.
 
@@ -88,6 +91,11 @@ The release process begins once new updates complete a Pull Request process and 
 
 If your workspace is connected to a Git branch and you want to switch to another branch, you can do so quickly from the **Source control** pane without disconnecting and reconnecting.  
 When you switch branches, the workspace syncs with the new branch and all items in the workspace are overridden. If there are different versions of the same item in each branch, the item is replaced. If an item is in the old branch, but not the new one, it gets deleted.
+
+>[!IMPORTANT]
+>When switching branches, if the workspace contains an item in the old branch but not the new one, the item is deleted.
+
+
 To switch between branches, follow these steps:
 
 1. From the *Branches* tab of the **Source control** menu, select **Switch branch**.
@@ -96,7 +104,9 @@ To switch between branches, follow these steps:
 
 1. Specify the branch you want to connect to or create a new branch. This branch must contain the same directory as the current branch.
 
-1. Select **Switch branch**.
+1. Place a check in **I understand workspace items may be deleted and can't be restored.** and select **Switch branch**.
+    
+    :::image type="content" source="media/manage-branches/switch-branch-component.png" alt-text="Screenshot of switching branches.":::
 
 You can't switch branches if you have any uncommitted changes in the workspace. Select **Cancel** to go back and commit your changes before switching branches.
 
