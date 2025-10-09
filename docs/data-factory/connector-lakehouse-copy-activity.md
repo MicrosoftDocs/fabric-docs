@@ -4,7 +4,7 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 09/23/2025
+ms.date: 10/09/2025
 ms.custom:
   - pipelines
   - template-how-to
@@ -52,28 +52,55 @@ The following properties are supported for Lakehouse under the **Source** tab of
 
 The following properties are **required**:
 
-- **Connection**: Select a Lakehouse connection from the connection list. If no connection exists, then create a new Lakehouse connection by selecting **More** at the bottom of the connection list. If you apply **Use dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
+- **Connection**: Select a Lakehouse connection from the connection list. If no connection exists, then create a new Lakehouse connection. If you apply **Use dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
 
     :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
+
+- **Lakehouse**: Select an existing Lakehouse that you want to use.
 
 - **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
 
   - If you select **Tables**:
-      
-    - **Table name**: Choose an existing table from the table list or specify a table name as the source. Or you can select **New** to create a new table. 
+    - **Use query**: Select from **Table** or **T-SQL Query**.
+      - If you select **Table**:
+        - **Table**: Choose an existing table from the table list or specify a table name as the source. Or you can select **New** to create a new table.
 
-      :::image type="content" source="./media/connector-lakehouse/table-name.png" alt-text="Screenshot showing table name.":::
+          :::image type="content" source="./media/connector-lakehouse/table-name.png" alt-text="Screenshot showing table name.":::
 
+          When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the source. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default schema.
 
+          :::image type="content" source="./media/connector-lakehouse/table-name-with-schema.png" alt-text="Screenshot showing table name with schema.":::  
+          
+        - Under **Advanced**, you can specify the following fields:
+          - **Timestamp**: Specify to query an older snapshot by timestamp.
+          - **Version**: Specify to query an older snapshot by version.
+          - **Additional columns**: Add additional data columns to the store source files' relative path or static value. Expression is supported for the latter.
 
-    - **Table**: When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the source. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default schema.
+      - If you select **T-SQL Query**:
+        - **T-SQL Query**: Specify the custom query to read data through the [Lakehouse SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md). For example: `SELECT * FROM MyTable`. T-SQL Query are usying Lakehouse SQL analytics endpoint.
+        Note that Lakehouse table query mode does not support workspace private link.
 
-      :::image type="content" source="./media/connector-lakehouse/table-name-with-schema.png" alt-text="Screenshot showing table name with schema.":::  
+          :::image type="content" source="./media/connector-lakehouse/use-query-t-sql-query.png" alt-text="Screenshot showing Use query - T-SQL Query." :::
 
-    - Under **Advanced**, you can specify the following fields:
-      - **Timestamp**: Specify to query an older snapshot by timestamp.
-      - **Version**: Specify to query an older snapshot by version.
-      - **Additional columns**: Add additional data columns to the store source files' relative path or static value. Expression is supported for the latter.
+        - Under **Advanced**, you can specify the following fields:
+          - **Query timeout (minutes)**: Specify the timeout for query command execution, default is 120 minutes.
+          - **Partition option**: Specifies the data partitioning options used to load data from Lakehouse table query mode. You can select **None** (default) or **Dynamic range**.
+
+            If you select **None**, you choose not to use partition.
+
+            If you select **Dynamic range**, when using query with parallel enabled, range partition parameter(`?DfDynamicRangePartitionCondition`) is needed. Sample query: `SELECT * FROM <TableName> WHERE ?DfDynamicRangePartitionCondition`.
+              - **Partition column name**: Specify the name of the source column in **integer** type that's used by range partitioning for parallel copy. If not specified, the index or the primary key of the table is auto-detected and used as the partition column.
+                  If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Lakehouse table](#parallel-copy-from-lakehouse-table) section.
+            
+              - **Partition upper bound**: Specify the maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Lakehouse table](#parallel-copy-from-lakehouse-table) section.
+            
+              - **Partition lower bound**: Specify the minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Lakehouse table](#parallel-copy-from-lakehouse-table) section.
+              
+            
+                  :::image type="content" source="./media/connector-lakehouse/dynamic-range.png" alt-text="Screenshot showing the configuration when you select Dynamic range." lightbox="./media/connector-lakehouse/dynamic-range.png":::        
+
+          - **Additional columns**: Add additional data columns to the store source files' relative path or static value. Expression is supported for the latter.
+
 
   - If you select **Files**:
     - **File path type**: You can choose **File path**, **Wildcard file path**, or **List of files** as your file path type. The following list describes the configuration of each setting：
@@ -232,6 +259,22 @@ When copying data to Lakehouse table, the following mappings are used from inter
 
 For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
+## Parallel copy from Lakehouse table
+
+The Lakehouse table connector in copy activity provides built-in data partitioning to copy data in parallel. You can find data partitioning options on the **Source** tab of the copy activity.
+
+When you enable partitioned copy, copy activity runs parallel queries against your Lakehouse table source to load data by partitions. The parallel degree is controlled by the **Degree of copy parallelism** in the copy activity settings tab. For example, if you set **Degree of copy parallelism** to four, the service concurrently generates and runs four queries based on your specified partition option and settings, and each query retrieves a portion of data from your Lakehouse table.
+
+You are suggested to enable parallel copy with data partitioning especially when you load large amount of data from your Lakehouse table. The following are suggested configurations for different scenarios. When copying data into file-based data store, it's recommended to write to a folder as multiple files (only specify folder name), in which case the performance is better than writing to a single file.
+
+| Scenario                                                     | Suggested settings                                           |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Full load from large table, without physical partitions, while with an integer or datetime column for data partitioning. | **Partition options**: Dynamic range partition.<br>**Partition column** (optional): Specify the column used to partition data. If not specified, the index or primary key column is used.<br/>**Partition upper bound** and **partition lower bound** (optional): Specify if you want to determine the partition stride. This is not for filtering the rows in table, all rows in the table will be partitioned and copied. If not specified, copy activity auto detects the values and it can take long time depending on MIN and MAX values. It is recommended to provide upper bound and lower bound. <br><br>For example, if your partition column "ID" has values range from 1 to 100, and you set the lower bound as 20 and the upper bound as 80, with parallel copy as 4, the service retrieves data by 4 partitions - IDs in range <=20, [21, 50], [51, 80], and >=81, respectively. |
+| Load a large amount of data by using a custom query, without physical partitions, while with an integer or date/datetime column for data partitioning. | **Partition options**: Dynamic range partition.<br>**Query**: `SELECT * FROM <TableName> WHERE ?DfDynamicRangePartitionCondition AND <your_additional_where_clause>`.<br>**Partition column**: Specify the column used to partition data.<br>**Partition upper bound** and **partition lower bound** (optional): Specify if you want to determine the partition stride. This is not for filtering the rows in table, all rows in the query result will be partitioned and copied. If not specified, copy activity auto detect the value.<br><br>For example, if your partition column "ID" has values range from 1 to 100, and you set the lower bound as 20 and the upper bound as 80, with parallel copy as 4, the service retrieves data by 4 partitions- IDs in range <=20, [21, 50], [51, 80], and >=81, respectively. <br><br>Here are more sample queries for different scenarios:<br> •  Query the whole table: <br>`SELECT * FROM <TableName> WHERE ?DfDynamicRangePartitionCondition`<br> • Query from a table with column selection and additional where-clause filters: <br>`SELECT <column_list> FROM <TableName> WHERE ?DfDynamicRangePartitionCondition AND <your_additional_where_clause>`<br> • Query with subqueries: <br>`SELECT <column_list> FROM (<your_sub_query>) AS T WHERE ?DfDynamicRangePartitionCondition AND <your_additional_where_clause>`<br> • Query with partition in subquery: <br>`SELECT <column_list> FROM (SELECT <your_sub_query_column_list> FROM <TableName> WHERE ?DfDynamicRangePartitionCondition) AS T`
+|
+
+
+
 ## Delta Lake table support
 
 In the sections below, you will find detailed information on Delta Lake table support for both the source and destination.
@@ -268,15 +311,22 @@ The following tables contain more information about a copy activity in Lakehouse
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>itemId|
-|**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |No|rootFolder:<br>Table or Files|
-|**Table name** |The name of the table that you want to read data. |\<your table name> |Yes when you select **Tables** in **Root folder** | table  |
-|**Table** |The name of the table with a schema that you want to read data when you apply Lakehouse with schemas as the connection. |\<your table with a schema> |Yes when you select **Tables** in **Root folder** | / |
+|**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |No|rootFolder:<br>Tables or Files|
+|**Use query** |The way to read data from Lakehouse. Apply **Table** to read data from the specified table or apply **T-SQL Query** to read data using query.|• **Table** <br>• **T-SQL Query** |Yes |/|
 | *For **Table*** |  |  |  |  |
-|**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*) |No | *(under `source` -> `datasetSettings` -> `typeProperties`)*<br>schema |
-|**table name** |The name of the table. |\<your table name> |Yes | table |
+|**Table** |The name of the table that you want to read data, or the name of the table with a schema that you want to read data when you apply Lakehouse with schemas as the connection. |\<your table name> |Yes when you select **Tables** in **Root folder** | table  |
+| **schema name** | Name of the schema. |< your schema name >  | No | schema |
+| **table name** | Name of the table. | < your table name > | No |table |
+| *For **T-SQL Query*** |  |  |  |  |
+| **T-SQL Query** | Use the custom query to read data. An example is `SELECT * FROM MyTable`. | < query > |No | sqlReaderQuery|
 |  |  |  |  |  |
 |**Timestamp** | The timestamp to query an older snapshot.| \<timestamp>|No |timestampAsOf |
 |**Version** |The version to query an older snapshot.| \<version>|No |versionAsOf|
+|**Query timeout (minutes)**|The timeout for query command execution, default is 120 minutes.|timespan |No |queryTimeout|
+|**Partition option**|The data partitioning options used to load data from Lakehouse table query mode. |• None<br>• Dynamic range|No|partitionOption|
+|**Partition column name**|The name of the source column in **integer type** that will be used by range partitioning for parallel copy. If not specified, the primary key of the table is auto-detected and used as the partition column.|\<partition column name>|No|partitionColumnName|
+|**Partition upper bound**|The maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied.|\<partition upper bound>|No|partitionUpperBound|
+|**Partition lower bound**|The minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied.|\<partition lower bound>|No|partitionLowerBound|
 |**Additional columns** | Additional data columns to store source files' relative path or static value. Expression is supported for the latter.| • Name<br>• Value|No |additionalColumns:<br>• name<br>• value |
 |**File path type** |The type of the file path that you use. |• **File path**<br>• **Wildcard file path**<br> • **List of files** |Yes when you select **Files** in **Root folder**|/ |
 |**File path** |Copy from the path to a folder/file under source data store.| \<file path>|Yes when choosing **File path**|• folderPath<br>• fileName |
