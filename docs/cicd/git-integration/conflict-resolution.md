@@ -37,6 +37,9 @@ Select **Update all** to see a list of all the items that have conflicts. You ca
 
 - Choose **Accept incoming changes** to override the changes in the workspace. The workspace changes are lost and the Git status changes to *synced* if the import succeeds.
 
+>[!NOTE]
+> Accepting incoming changes will override the current item in the workspace.
+
 - Choose **Keep current content** to keep the version currently in the workspace. After the update is complete, the Git status becomes *uncommitted changes* as the changes in the workspace aren't yet committed to the branch.
 
 ## Revert to a previous state

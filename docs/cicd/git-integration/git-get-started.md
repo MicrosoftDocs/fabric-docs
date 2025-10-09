@@ -172,7 +172,9 @@ After saving changes to the workspace, if you decide that you don’t want to co
 The selected items in your workspace revert to how they were when the workspace was last synced.
 
 > [!IMPORTANT]
-> If you delete an item and then undo the changes, the item is created anew and some of the metadata might be lost. For example, the sensitivity labels aren’t kept and should be reset, and the owner of the item is set to the current user.
+> If you delete an item and then undo the changes, the item is created a new and some of the metadata might be lost. For example, the sensitivity labels aren’t kept and should be reset, and the owner of the item is set to the current user.
+>
+>Undoing added items will permanently delete the item. 
 
 ---
 
