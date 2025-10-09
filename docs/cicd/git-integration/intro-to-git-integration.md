@@ -112,6 +112,9 @@ The following items currently support Git integration:
 
   * [SQL database](../../database/sql/source-control.md) *(preview)*
   * [Cosmos database](../../database/cosmos-db/overview.md) *(preview)*
+
+* Graph:
+  * [Graph in Microsoft Fabric (preview)](../../graph/overview.md)
 * Industry solutions:
 
   * [Healthcare](/industry/healthcare/healthcare-data-solutions/application-lifecycle-management) *(preview)*
