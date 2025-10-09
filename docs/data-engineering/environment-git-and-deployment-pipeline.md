@@ -17,8 +17,6 @@ This article describes how to use Git integration and deployment pipelines for e
 
 Fabric supports Git integration. Developers can use Git to back up, control versions, revert to previous stages, and collaborate on their work by using Git branches.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 - Currently, Git supports only libraries and Spark compute, including Spark runtime.
 - Git integration manages the staging state of the environment. To apply changes made in Git to the environment, they must be published. We recommend that you publish after you update the environment from Git to ensure the effectiveness of the configuration. You can use the [Publish API of the environment](environment-public-api.md#make-the-changes-effective) to publish changes through the REST API if you prefer the code-first experience.
 - The attached custom pool persists in an environment when you sync from a repo to a Fabric workspace. The pool definition is in the workspace setting. Cross-workspace referencing of the pool isn't supported. You must manually update *instance_pool_id* to an existing custom pool in your destination workspace space or revert to a starter pool by removing this property. For the full list of available pools in the destination workspace by the REST API, see [Custom Pools - List Workspace Custom Pools](/rest/api/fabric/spark/custom-pools/list-workspace-custom-pools). To create a new custom pool, see [Custom Pools - Create Workspace Custom Pool](/rest/api/fabric/spark/custom-pools/create-workspace-custom-pool).
@@ -71,8 +69,7 @@ You can find the deploying status after you set up the pipeline successfully. Af
 
 > [!IMPORTANT]
 > Currently, the custom pool isn't supported in deployment pipelines. If the environment selects the custom pool, the configurations of the **Compute** section in the destination environment are set with default values. In this case, the environments keep showing diff in the deployment pipeline even if the deployment is done successfully.
-> 
-> Using deployment rules to specify different pools in a new workspace will be included in an upcoming release.
+>
 
 ## Related content
 

@@ -35,6 +35,13 @@ This article shows you how to:
 
 ## Configure trusted workspace access in ADLS Gen2
 
+### Prerequisites
+
+* A Fabric workspace associated with a Fabric capacity. 
+* Create a workspace identity associated with the Fabric workspace. See [Workspace identity](./workspace-identity.md). Ensure that the workspace identity has Contributor access to the workspace by going to **Manage Access** (next to **Workspace settings**) and adding the workspace identity to the list as contributor.
+* The principal used for authentication in the shortcut should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope, or a Storage Blob Delegator role at the storage account scope together with access at the folder level within the container. Access at the folder level can be provided through an RBAC role at the container level or through specific folder-level access.
+* Configure a [resource instance rule](#configure-trusted-workspace-access-in-adls-gen2) for the storage account.
+
 ### Resource instance rule via ARM template
 
 You can configure specific Fabric workspaces to access your storage account based on their workspace identity. You can create a resource instance rule by deploying an ARM template with a resource instance rule. To create a resource instance rule:
@@ -111,13 +118,6 @@ The following sections show you how to use these methods.
 ### Create a OneLake shortcut to storage account with trusted workspace access
 
  With the workspace identity configured in Fabric, and trusted workspace access enabled in your ADLS Gen2 storage account, you can create OneLake shortcuts to access your data from Fabric. You just create a new ADLS shortcut in a Fabric Lakehouse and you can start analyzing your data with Spark, SQL, and Power BI.
-
-#### Prerequisites
-
-* A Fabric workspace associated with a Fabric capacity. See [Workspace identity](./workspace-identity.md).
-* Create a workspace identity associated with the Fabric workspace.
-* The principal used for authentication in the shortcut should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope, or a Storage Blob Delegator role at the storage account scope together with access at the folder level within the container. Access at the folder level can be provided through an RBAC role at the container level or through specific folder-level access.
-* Configure a [resource instance rule](#configure-trusted-workspace-access-in-adls-gen2) for the storage account.
 
 > [!NOTE]
 >- Preexisting shortcuts in a workspace that meets the prerequisites automatically start to support trusted service access.

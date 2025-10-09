@@ -77,14 +77,6 @@ items:
     href: onelake-powershell.md
   - name: AzCopy
     href: onelake-azcopy.md
-- name: OneLake table APIs
-  items:
-  - name: OneLake table APIs overview
-    href: ./table-apis/onelake-table-apis.md
-  - name: OneLake table APIs for Iceberg
-    href: ./table-apis/onelake-iceberg-table-apis.md
-  - name: Getting started with OneLake table APIs for Iceberg
-    href: ./table-apis/onelake-iceberg-table-apis-detailed.md
 - name: Secure and manage data access
   items:
   - name: OneLake security overview
@@ -113,6 +105,8 @@ items:
       href: onelake-shared-access-signature-overview.md
     - name: Create a OneLake SAS
       href: how-to-create-a-onelake-shared-access-signature.md
+  - name: OneLake diagnostics
+    href: onelake-diagnostics-overview.md
   - name: Network security
     items:
     - name: Manage inbound access to OneLake

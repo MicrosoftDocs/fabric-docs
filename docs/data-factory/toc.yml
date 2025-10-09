@@ -992,6 +992,8 @@
                 href: dataflow-gen2-cicd-alm-solution-architecture.md
               - name: Parameterized Dataflow
                 href: dataflow-gen2-parameterized-dataflow.md
+              - name: Variable references in Dataflow
+                href: dataflow-gen2-variable-references.md
           - name: Saving a draft of your dataflow
             href: dataflows-gen2-save-draft.md
           - name: Use cloud connections through gateways
@@ -1133,7 +1135,7 @@
         href: modern-get-data-experience-pipeline.md
       - name: Fabric pipeline landing page
         href: pipeline-landing-page.md
-      - name: Variable library integration (Preview)
+      - name: Variable library integration
         href: variable-library-integration-with-data-pipelines.md
   - name: FAQ and Troubleshooting
     items: 
