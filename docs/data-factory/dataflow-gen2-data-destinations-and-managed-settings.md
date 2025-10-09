@@ -243,15 +243,11 @@ To vacuum your Delta tables in Lakehouse, follow these steps:
 
 * **Retention period**: Set a retention interval of at least seven days to make sure that old snapshots and uncommitted files aren't prematurely removed, which could disrupt concurrent table readers and writers.
 * **Regular maintenance**: Schedule regular vacuuming as part of your data maintenance routine to keep your Delta tables optimized and ready for analytics.
-* **Incremental refreshes**: If you're using incremental refreshes, ensure that vacuuming is turned off as it can interfere with the incremental refresh process. 
+* **Incremental refreshes**: If you're using incremental refreshes, ensure that vacuuming is turned off as it can interfere with the incremental refresh process.
 
 By incorporating vacuuming into your data maintenance strategy, you can make sure that your Lakehouse destination remains efficient, cost-effective, and reliable for your dataflow operations.
 
 For more detailed information on table maintenance in Lakehouse, refer to the [Delta table maintenance documentation](/fabric/data-engineering/lakehouse-table-maintenance).
-
-### Lakehouse MDSync
-
-When using Lakehouse as a data destination, we automatically perform a metadata sync operation when finished writing data to the Lakehouse. This operation ensures that the metadata of the Delta table is up-to-date and reflects the latest changes made during the dataflow refresh. This sync operation is crucial for maintaining the integrity and consistency of the data in the Lakehouse, especially when multiple dataflows or processes are writing and reading from the same Delta table. This operation is performed in the background and is typically quick, allowing for seamless data updates without significant delays. The metadata sync operation is part of the overall dataflow refresh process.
 
 ### Nullable
 
