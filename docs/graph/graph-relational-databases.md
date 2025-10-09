@@ -34,6 +34,7 @@ A [**graph database**](graph-database.md) stores and queries data as a network o
 GQL:
 ```gql
 MATCH (p:Person)-[:FRIENDS_WITH]->(friend)-[:PURCHASED]->(o:Order)
+WHERE p.name = 'Alice';
 RETURN o
 ```
 SQL (equivalent):
