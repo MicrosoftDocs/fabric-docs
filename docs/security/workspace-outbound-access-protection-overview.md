@@ -84,29 +84,30 @@ The following limitations apply when using workspace outbound access protection:
 
 * If outbound access protection is enabled on a workspace, workspace admins can't add unsupported artifacts. Outbound access protection must be disabled first, and then workspace admins can add unsupported artifacts.
 
-* If the workspace is part of Deployment Pipelines, workspace admins can't enable outbound access protection because Deployment Pipelines are unsupported. Similarly, if outbound access protection is enabled, the workspace can't be added to Deployment Pipelines.<!--TODO - CHECK WITH PM-->
+* If the workspace is part of Deployment Pipelines, workspace admins can't enable outbound access protection because Deployment Pipelines are unsupported. Similarly, if outbound access protection is enabled, the workspace can't be added to Deployment Pipelines.
 
-### Data engineering workloads
-<!--TODO - MOVE THIS SECTION TO THE DATA ENGINEERING WORKLOADS PAGE?-->
+### General limitations
 
 * Workspace outbound access protection isn't supported for existing workspaces that already contain a semantic model in a lakehouse.
 
-* If your workspace has outbound access protection enabled, it uses managed virtual networks (VNETs) for Spark. In this case, Starter pools are disabled, and you should expect Spark sessions to take 3 to 5 minutes to start.
-
-* With outbound access protection, all public access from Spark is blocked. This restriction prevents users from downloading libraries directly from public channels like PyPI using pip. To install libraries for their Data Engineering jobs, users have two options (for details, see [Installing libraries securely in outbound access protected workspaces](workspace-outbound-access-protection-data-engineering.md#installing-libraries-securely-in-outbound-access-protected-workspaces)):
-
-   * Reference library packages from a data source connected to the Fabric workspace via a managed private endpoint.
-
-   * Upload wheel files for their required libraries and dependencies (that aren’t already included in the prebaked runtime).
-
-* Enabling outbound access protection blocks all public access from your workspace. Therefore, to query a Lakehouse from another workspace, you must create a cross-workspace managed private endpoint to allow the Spark jobs to establish a connection.
-
-* Using fully qualified paths with workspace and lakehouse names can cause a socket timeout exception. To access files, use relative paths for the current Lakehouse or use a fully qualified path that includes the workspace ID and lakehouse ID (not their display names). This approach ensures the Spark session can resolve the path correctly and avoids socket timeout errors. [Learn more](workspace-outbound-access-protection-data-engineering.md#understanding-the-behavior-of-file-paths).
-
 * Outbound access protection isn't supported for schema enabled lakehouses.
 
-* Outbound access protection doesn't protect from data exfiltration via inbound requests, such as GET requests made as part of external AzCopy operations to move data out of a workspace. To protect your data from unauthorized inbound requests, see [Protect inbound traffic](protect-inbound-traffic.md).
+#### Data connection rule limitations
 
+##### Internal (Fabric) connection types with workspace-level granularity: 
+
+Workspace admins can specify which workspaces are allowed as destinations for certain item types. For example, under the Lakehouse connection type, admins can add specific workspaces to the allowlist, enabling Lakehouses in those workspaces to be accessed. The following Fabric connection types support workspace-level granularity in the allowlist:
+
+   * Lakehouse
+   * Warehouse
+   * Dataflows
+   * Fabric SQL Database
+
+Other Fabric connection types, such as Datamarts, KQL Database, Fabric Data Pipelines, and CopyJob, do not support workspace-level granularity. For these connection types, admins cannot specify individual workspaces in the allowlist.
+
+##### External connection type endpoint granularity
+
+Some external connection types support endpoint-level granularity, such as SQL Server, Azure Data Lake Gen2, Azure Databricks, and Web. When configuring these connection types, workspace admins can add specific endpoint exceptions in the exception box if the connection type supports endpoint granularity. This allows admins to permit outbound connections only to approved endpoints.
 
 ## Related content
 

@@ -101,14 +101,21 @@ items:
             href: workspace-outbound-access-protection-tenant-setting.md
           - name: Set up workspace outbound access protection
             href: workspace-outbound-access-protection-set-up.md
+            items: 
+              - name: Enable workspace outbound access protection
+                href: workspace-outbound-access-protection-data-engineering.md
+              - name: Create a data connector allowlist
+                href: workspace-outbound-access-protection-data-engineering.md
+              - name: Create a managed private endpoint allowlist
+                href: workspace-outbound-access-protection-data-engineering.md
           - name: Scenarios by Fabric workload
             items: 
-              - name: OneLake
-                href: workspace-outbound-access-protection-onelake.md
               - name: Data Engineering
                 href: workspace-outbound-access-protection-data-engineering.md
               - name: Data Factory
                 href: workspace-outbound-access-protection-data-factory.md
+              - name: OneLake (preview)
+                href: workspace-outbound-access-protection-onelake.md
       - name: Trusted workspace access
         href: security-trusted-workspace-access.md
 - name: Data security

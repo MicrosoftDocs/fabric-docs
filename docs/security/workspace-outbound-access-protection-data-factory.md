@@ -25,7 +25,7 @@ Next, the workspace admin configures [data connection rules for cloud or gateway
 
 ## Configuring outbound access protection for Data Factory
 
-To configure outbound access protection for Data Factory, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up <!--TOD - REVIEW-->managed private endpoints or data connection rules to allow outbound access to other workspaces or external resources as needed.
+To configure outbound access protection for Data Factory, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up data connection rules to allow outbound access to other workspaces or external resources as needed. You can only create an allowlist using data connection rules; managed private endpoints aren't supported for Data Factory workloads.
 
 ## Supported Data Factory item types
 
@@ -103,11 +103,7 @@ When you allowlist a gateway, dataflows can connect to any data source accessibl
 | A | VNet/OPDG | VNet V1 | Blocked; only VNet V1 is an exception | Dataflow connects only to sources behind VNet V1 |
 | A | VNet/OPDG | OPDG O1 | Blocked; only OPDG O1 is an exception | Dataflow connects only to sources behind OPDG O1 |
 
-### Mirrored databases
-
-*TODO - ADD CONTENT ABOUT MIRRORED DATABASES*
-
-## Limitations and Considerations
+## Considerations and limitations
 
 - Only the following Fabric connectors support workspace level granularity:
 

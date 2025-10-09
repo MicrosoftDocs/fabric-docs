@@ -19,11 +19,11 @@ Workspace outbound access protection enables precise control over external commu
 
 When outbound access protection is enabled, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to grant access only to approved destinations by configuring managed private endpoints:
 
-*TODO - ADD A DIAGRAM SHOWING OUTBOUND ACCESS PROTECTION WITH DATA ENGINEERING*
+:::image type="content" source="media/workspace-outbound-access-protection-data-engineering/workspace-outbound-access-protection-data-engineering.png" lightbox="media/workspace-outbound-access-protection-data-engineering/workspace-outbound-access-protection-data-engineering.png" alt-text="Diagram of workspace outbound access protection in a data engineering scenario." border="false":::
 
 ## Configuring outbound access protection for data engineering
 
-To configure outbound access protection for data engineering, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up managed private endpoints to allow outbound access to other workspaces or external resources as needed.
+To configure outbound access protection for data engineering, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up managed private endpoints to allow outbound access to other workspaces or external resources as needed. You can only create an allowlist using managed private endpoints; data connection rules aren't supported for data engineering workloads.
 
 ## Supported data engineering item types
 
@@ -258,6 +258,19 @@ Periodic monitoring and updates are required to keep the mirror in sync. The fol
    %pip install pytest --index-url https://<storage-account-name>.z5.web.core.windows.net/simple
 ```
 
+## Considerations and limitations
+
+* If your workspace has outbound access protection enabled, it uses managed virtual networks (VNETs) for Spark. In this case, Starter pools are disabled, and you should expect Spark sessions to take 3 to 5 minutes to start.
+
+* With outbound access protection, all public access from Spark is blocked. This restriction prevents users from downloading libraries directly from public channels like PyPI using pip. To install libraries for their Data Engineering jobs, users have two options (for details, see [Installing libraries securely in outbound access protected workspaces](workspace-outbound-access-protection-data-engineering.md#installing-libraries-securely-in-outbound-access-protected-workspaces)):
+
+   * Reference library packages from a data source connected to the Fabric workspace via a managed private endpoint.
+
+   * Upload wheel files for their required libraries and dependencies (that aren’t already included in the prebaked runtime).
+
+* Enabling outbound access protection blocks all public access from your workspace. Therefore, to query a Lakehouse from another workspace, you must create a cross-workspace managed private endpoint to allow the Spark jobs to establish a connection.
+
+* Using fully qualified paths with workspace and lakehouse names can cause a socket timeout exception. To access files, use relative paths for the current Lakehouse or use a fully qualified path that includes the workspace ID and lakehouse ID (not their display names). This approach ensures the Spark session can resolve the path correctly and avoids socket timeout errors. [Learn more](workspace-outbound-access-protection-data-engineering.md#understanding-the-behavior-of-file-paths).
 
 
 ## Related content
