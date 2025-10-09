@@ -37,6 +37,9 @@ See the list of [supported items](#supported-items).
 
 * Read about the best way to manage your [Git branches](./manage-branches.md).
 
+## Network security for Git integration
+Workspace-level security in Microsoft Fabric provides granular control over data access and network connectivity by allowing administrators to configure both inbound and outbound protections for individual workspaces. These controls ensure that sensitive data remains within trusted network boundaries, and they integrate with CI/CD tools like Git integration.  For more information, see [Network security for continuous integration/continuous deployment](../cicd-security.md)
+
 ## Privacy information
 
 Before you enable Git integration, make sure you review the following privacy statements:
