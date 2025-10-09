@@ -1,11 +1,10 @@
 ---
 title: Manage the Environment Through Public APIs
 description: This article gives an overview of the public APIs of the environment. It also describes the best practice of using the environment APIs.
-ms.author: eur
-ms.reviewer: shuaijunye
-author: eric-urban
+ms.author: shuaijunye
+author: ShuaijunYe
 ms.topic: how-to
-ms.date: 03/15/2025
+ms.date: 10/09/2025
 ms.search.form: Manage the environment through public APIs
 ---
 
@@ -13,175 +12,40 @@ ms.search.form: Manage the environment through public APIs
 
 The Microsoft Fabric REST API provides a service endpoint for the create, read, update, and delete (CRUD) operations of a Fabric item. This article describes the available environment REST APIs and their usage.
 
+## Migrate the environment APIs to their stable GA version
+
 > [!IMPORTANT]
-> The new release includes new APIs, API deprecations, and changes of API response/request contract. The table in the following section summarizes all API changes.
-
-## Summary of environment APIs
-
-|Category|API|Description|Note|
-|---------|---------|---------|---------|
-|Item operation|Create environment |Create a new empty environment in the workspace.|No change.|
-|Item operation|Create environment with definition |Create a new environment with definition.|New API.|
-|Item operation|Delete environment |Delete an existing environment.|No change.|
-|Item operation|List environment|Get the list of environments in a workspace.|No change.|
-|Item operation|Get environment|Get the metadata of an environment. The response includes the status of the environment.|Response contract update.|
-|Item operation|Get environment definition|Get the definition of an environment. |New API.|
-|Item operation|Update environment|Update the metadata of an environment, like name and description.|No change.|
-|Item operation|Update environment definition|Update the definition of an environment.|New API.|
-|Item operation|Publish environment|Trigger the publish operation of the environment with current pending changes.|Response contract update.|
-|Item operation|Cancel publish environment|Cancel an ongoing publish operation of the environment.|No change.|
-|Staging|List staging libraries|Get the full staging library list. This list includes the published and pending libraries.|Response contract update.|
-|Staging|Import external libraries|Upload external libraries as an *environment.yml* file into environment. It overrides the list of existing external libraries in an environment.|New API.|
-|Staging|Export external libraries|Get the full external libraries as an *environment.yml* file.|New API.|
-|Staging|Remove external library|Delete an external library from an environment. This API accepts one library at a time.|New API.|
-|Staging|Upload custom library|Upload a custom package in environment. This API allows one file upload at a time. The supported file formats are .jar, .py, .whl, and .tar.gz.|New API.|
-|Staging|Delete custom library|Delete a custom package from the environment. Put the custom package full name with the extension in the API request to get it removed.|New API.|
-|Staging|Upload staging libraries|Add one custom library or one/multiple public library in the environment.|To be no longer supported.|
-|Staging|Delete staging libraries|Delete one staging custom library or all public libraries.|To be no longer supported.|
-|Staging|List staging Spark settings|Get the full staging compute configurations. The staging configurations include the published and pending compute configurations.|Response contract update.|
-|Staging|Update Spark settings|Update the compute configurations and Spark properties for an environment.|Request/response contract update.|
-|Published|List published libraries|Get the libraries that are published and effective in Spark sessions.|Response contract update.|
-|Published|List published Spark setting|Get the Spark compute configurations and Spark properties that are published and effective in Spark sessions.|Response contract update.|
-|Published|Export external libraries|Get the published external libraries as an *environment.yml* file.|New API.|
-
-To learn more about the existing environment public APIs, see [Item APIs - Environment](/rest/api/fabric/environment/items).
-
-## Environment public API update details
-
-This section describes the upcoming updates for existing APIs.
-
-### Get Environment
-
-In the response of the Get Environment API, `startTime` changes to `startDateTime` and `endTime` changes to `endDateTime`. The properties represent the start and end times of the publish operation.
-
-> [!NOTE]
-> The `startTime` and `endTime` properties use the *Date-Time* format. The `startDateTime` and `endDateTime` properties change to `String`, which is in UTC and uses the *YYYY-MM-DDTHH:mm:ssZ* format.
 >
+> - The GA release includes updates in the request/response contract of existing APIs, API deprecations, and new APIs. You can find the details in the following sections.
+> - A new query parameter `preview` is introduced to facilitate the transition of request/response contract changes. The `preview` query parameter defaults to `True` until **March 31, 2026**, making the preview contracts still available. Set the value to `False` to start using the stable Release version of the contracts.
+> - The to-be-deprecated APIs will continue to be supported until **March 31, 2026**, please use the newly introduced APIs to replace them as soon as possible.
 
-- Interface
+### APIs with request/response contract update
+
+|Category|API|Description|Notes|Preview version swagger|Release version swagger|
+|---------|---------|---------|---------|---------|---------|
+|Item operation|Publish environment|Trigger the publish operation of the environment with current pending changes.|Update in response contract.|[Publish environment (Preview)](/rest/api/fabric/environment/items/publish-environment(preview))|[Publish environment](/rest/api/fabric/environment/items/publish-environment)|
+|Staging|List staging libraries|Get the full staging library list. This list includes the published and pending libraries.|Update in response contract.|[List staging libraries (Preview)](/rest/api/fabric/environment/staging/list-libraries(preview))|[List staging libraries](/rest/api/fabric/environment/staging/list-libraries)|
+|Staging|List staging Spark compute|Get the full staging compute configurations. The staging configurations include the published and pending compute configurations.|Update in response contract.|[List staging Spark compute (Preview)](/rest/api/fabric/environment/staging/get-spark-compute(preview))|[List staging Spark compute](/rest/api/fabric/environment/staging/get-spark-compute)|
+|Staging|Update Spark compute|Update the compute configurations and Spark properties for an environment.|Update in request and response contracts.|[Update Spark compute (Preview)](/rest/api/fabric/environment/staging/update-spark-compute(preview))|[Update Spark compute](/rest/api/fabric/environment/staging/update-spark-compute)|
+|Published|List published libraries|Get the libraries that are published and effective in Spark sessions.|Update in response contract.|[List published libraries (Preview)](/rest/api/fabric/environment/published/list-libraries(preview))|[List published libraries](/rest/api/fabric/environment/published/list-libraries)|
+|Published|List published Spark compute|Get the Spark compute configurations and Spark properties that are published and effective in Spark sessions.|Update in response contract.|[List published libraries (Preview)](/rest/api/fabric/environment/published/get-spark-compute(preview))|[List published libraries](/rest/api/fabric/environment/published/get-spark-compute)|
+
+The `preview` parameter defaults to `True` until **March 31, 2026**, i.e., the system considers the parameter as `True` if the request is sending without specifying this parameter until the deprecation date. We highly recommend migrating your implementations to the stable version by explicitly set the `preview` parameter to `False` as soon as possible.
+
+Using `List staging libraries` API as an example, which has an update in the API response.
+
+- When sending the request with `preview` parameter as `True`
+  
+  Sample equest:
 
     ```HTTP
-    GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}
+    GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}/libraries?preview=True
     ```
 
-- Original sample response
+  Sample response:
 
     ```JSON
-    {
-      "displayName": "Environment_1",
-      "description": "An Environment description",
-      "type": "Environment",
-      "workspaceId": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
-      "id": "5b218778-e7a5-4d73-8187-f10824047715",
-      "properties": {
-        "publishDetails": {
-          "state": "Success",
-          "targetVersion": "46838a80-5450-4414-bea0-40fb6f3e0c0d",
-          "startTime": "2024-03-29T14:17:09.0697022Z",
-          "endTime": "2024-03-29T14:48:09.0697022Z",
-          "componentPublishInfo": {
-            "sparkLibraries": {
-              "state": "Success"
-            },
-            "sparkSettings": {
-              "state": "Success"
-            }
-          }
-        }
-      }
-    }
-    ```
-
-- New sample response
-
-    ```JSON
-    {
-      "displayName": "Environment_1",
-      "description": "An Environment description",
-      "type": "Environment",
-      "workspaceId": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
-      "id": "5b218778-e7a5-4d73-8187-f10824047715",
-      "properties": {
-        "publishDetails": {
-          "state": "Success",
-          "targetVersion": "46838a80-5450-4414-bea0-40fb6f3e0c0d",
-          "startDateTime": "2024-03-29T14:17:09Z",
-          "endDateTime": "2024-03-29T14:48:09Z",
-          "componentPublishInfo": {
-            "sparkLibraries": {
-              "state": "Success"
-            },
-            "sparkSettings": {
-              "state": "Success"
-            }
-          }
-        }
-      }
-    }
-    ```
-
-### Publish environment
-
-The Publish Environment API supports long-running operations starting from the release, but the response contract changes. The endpoint remains the same for sending requests.
-
-- Interface
-
-    ```HTTP
-    POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}/staging/publish
-    ```
-
-- Original sample response
-
-    ```JSON
-    {
-      "publishDetails": {
-        "state": "Running",
-        "targetVersion": "46838a80-5450-4414-bea0-40fb6f3e0c0d",
-        "startTime": "2024-03-29T14:17:09.0697022Z",
-        "componentPublishInfo": {
-          "sparkLibraries": {
-            "state": "Running"
-          },
-          "sparkSettings": {
-            "state": "Running"
-          }
-        }
-      }
-    }
-    ```
-
-- New sample response
-
-    ```HTTP
-
-    Location: https://api.fabric.microsoft.com/v1/operations/aaaabbbb-0000-cccc-1111-dddd2222eeee
-    x-ms-operation-id: aaaabbbb-0000-cccc-1111-dddd2222eeee
-    Retry-After: 60
-
-    ```
-
-### List staging/published libraries
-
-These two APIs can get the full list of staging/published libraries of the environment. The endpoints remain the same for sending requests. The libraries return with different structures.
-
-- Interfaces
-
-    Get staging libraries
-
-    ```HTTP
-    GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}/staging/libraries
-    ```
-
-    Get published libraries
-
-    ```HTTP
-    GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}/libraries
-    ```
-
-- Original sample response
-
-    ```JSON
-
     {
       "customLibraries": {
         "wheelFiles": [
@@ -197,12 +61,19 @@ These two APIs can get the full list of staging/published libraries of the envir
           "sampleR.tar.gz"
         ]
       },
-      "environmentYml": "dependencies:\r\n- pip:\r\n  - matplotlib==3.4.3"
+      "environmentYml": "name: sample-environment\ndependencies:\n  - fuzzywuzzy==0.0.1\n  - matplotlib==0.0.1"
     }
-
     ```
 
-- New sample response
+- When sending the request with `preview` parameter as `False`
+
+  Sample request:
+  
+  ```HTTP
+    GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}/libraries?preview=False
+    ```
+
+  Sample response:
 
     ```JSON
     {
@@ -212,24 +83,7 @@ These two APIs can get the full list of staging/published libraries of the envir
           "libraryType": "Custom"
         },
         {
-          "name": "samplepython.py",
-          "libraryType": "Custom"
-        },
-        {
-          "name": "samplejar.jar",
-          "libraryType": "Custom"
-        },
-        {
-          "name": "sampleR.tar.gz",
-          "libraryType": "Custom"
-        },
-        {
           "name": "fuzzywuzzy",
-          "libraryType": "External",
-          "version": "0.0.1"
-        },
-        {
-          "name": "matplotlib",
           "libraryType": "External",
           "version": "0.0.1"
         }
@@ -237,203 +91,66 @@ These two APIs can get the full list of staging/published libraries of the envir
       "continuationToken": "null",
       "continuationUri": "null"
     }
-
     ```
 
-### List staging/published Spark settings
+### To-be-deprecated APIs
 
-These two APIs can get the Spark compute configurations and properties of the environment. The endpoints remain the same for sending requests. The configurations return with different structures. The Spark properties change to a list.
+> [!IMPORTANT]
+>
+> - The to-be-deprecated APIs will continue to be supported until **March 31, 2026**. We highly recommend to use newly introduced APIs to replace your implementations as soon as possible.
 
-- Interfaces
+|Category|API|Description|Note|
+|---------|---------|---------|---------|
+|Staging|[Upload staging libraries](/rest/api/fabric/environment/staging/upload-custom-library(preview))|Add one custom library or one/multiple public library in the environment.|Support until **March 31, 2026**, please use the newly introduced `Import external libraries`/`Upload custom library` APIs to replace.|
+|Staging|[Delete staging libraries](/rest/api/fabric/environment/staging/delete-custom-library(preview))|Delete one staging custom library or all public libraries.|Support until **March 31, 2026**, please use the newly introduced `Remove external library`/`Delete custom library` APIs to replace.|
 
-    Get staging Spark settings
+Belows are a few examples covering the scenarios when managing staging libraries.
 
-    ```HTTP
-    GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}/staging/sparkcompute
-    ```
+- Add the public libraries in your environment
 
-    Get published Spark settings
+    Previously, you can use `Upload staging libraries` API to upload the updated YAML file, and now you can use `Import external libraries` API to import the updated YAML.
 
-    ```HTTP
-    GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}/sparkcompute
-    ```
+- Delete one public library in your environment
 
-- Original sample response
+    Previously, you can use `Upload staging libraries` API to upload the updated YAML file, and now you can use `Remove external library` API to remove it.
 
-    ```JSON
-    {
-      "instancePool": {
-        "name": "MyWorkspacePool",
-        "type": "Workspace",
-        "id": "78942136-106c-4f3e-80fc-7ff4eae11603"
-      },
-      "driverCores": 4,
-      "driverMemory": "56g",
-      "executorCores": 4,
-      "executorMemory": "56g",
-      "dynamicExecutorAllocation": {
-        "enabled": false,
-        "minExecutors": 1,
-        "maxExecutors": 1
-      },
-      "sparkProperties": {
-        "spark.acls.enable": "false"
-      },
-      "runtimeVersion": "1.2"
-    }
-    ```
+- Delete all public library in your environment
 
-- New sample response
+    Previously, you can use `Delete staging libraries` API to delete all the public libraries, and now you can use `Remove external library` API to remove the public libraries one by one or use `Import external libraries` to upload an empty YAML file to achieve the same functionalities.
 
-    ```JSON
-    {
-      "instancePool": {
-        "name": "MyWorkspacePool",
-        "type": "Workspace",
-        "id": "78942136-106c-4f3e-80fc-7ff4eae11603"
-      },
-      "driverCores": "4",
-          "driverMemory": "56G",
-      "executorCores": "4",
-      "executorMemory": "56G",
-      "dynamicExecutorAllocation": {
-        "enabled": false,
-        "minExecutors": 1,
-        "maxExecutors": 1
-      },
-      "sparkProperties": [
-        {
-          "key": "spark.acls.enable",
-          "value": "false"
-        }
-      ],
-      "runtimeVersion": "1.2"
-    }
-    ```
+### New APIs
 
-### Update Spark settings
+|Category|API|Description|Note|
+|---------|---------|---------|---------|
+|Item operation|[Create environment with definition](/rest/api/fabric/environment/items/create-environment)|Create a new environment with definition.|New API.|
+|Item operation|[Get environment definition](/rest/api/fabric/environment/items/get-environment-definition)|Get the definition of an environment. |New API.|
+|Item operation|[Update environment definition](/rest/api/fabric/environment/items/update-environment-definition)|Update the definition of an environment.|New API.|
+|Staging|[Import external libraries](/rest/api/fabric/environment/staging/import-external-libraries)|Upload external libraries as an *environment.yml* file into environment. It overrides the list of existing external libraries in an environment.|New API.|
+|Staging|[Export external libraries](/rest/api/fabric/environment/staging/export-external-libraries)|Get the full external libraries as an *environment.yml* file.|New API.|
+|Staging|[Remove external library](/rest/api/fabric/environment/staging/remove-external-library)|Delete an external library from an environment. This API accepts one library at a time.|New API.|
+|Staging|[Upload custom library](/rest/api/fabric/environment/staging/upload-custom-library)|Upload a custom package in environment. This API allows one file upload at a time. The supported file formats are .jar, .py, .whl, and .tar.gz.|New API.|
+|Staging|[Delete custom library](/rest/api/fabric/environment/staging/delete-custom-library)|Delete a custom package from the environment. Put the custom package full name with the extension in the API request to get it removed.|New API.|
+|Published|[Export external libraries](/rest/api/fabric/environment/published/export-external-libraries)|Get the published external libraries as an *environment.yml* file.|New API.|
 
-This API is used for updating the Spark compute and properties of an environment. The contract of the Spark property in request and response updates after the release is available.
+### APIs without update
 
-- Original sample request
+|Category|API|Description|
+|---------|---------|---------|
+|Item operation|[Create environment](/rest/api/fabric/environment/items/create-environment)|Create a new empty environment in the workspace.|
+|Item operation|[Get environment](/rest/api/fabric/environment/items/get-environment)|Get the metadata of an environment. The response includes the status of the environment.|
+|Item operation|[Delete environment](/rest/api/fabric/environment/items/delete-environment)|Delete an existing environment.|
+|Item operation|[List environment](/rest/api/fabric/environment/items/list-environments)|Get the list of environments in a workspace.|
+|Item operation|[Update environment](/rest/api/fabric/environment/items/update-environment)|Update the metadata of an environment, like name and description.|
+|Item operation|[Cancel publish environment](/rest/api/fabric/environment/items/cancel-publish-environment)|Cancel an ongoing publish operation of the environment.|
 
-    ```HTTP
-    PATCH https://api.fabric.microsoft.com/v1/workspaces/bbbbcccc-1111-dddd-2222-eeee3333ffff/environments/ccccdddd-2222-eeee-3333-ffff4444aaaa/staging/sparkcompute
-
-    {
-      "instancePool": {
-        "name": "MyWorkspacePool",
-        "type": "Workspace"
-      },
-      "driverCores": 4,
-      "driverMemory": "56g",
-      "executorCores": 4,
-      "executorMemory": "56g",
-      "dynamicExecutorAllocation": {
-        "enabled": false,
-        "minExecutors": 1,
-        "maxExecutors": 1
-      },
-      "sparkProperties": {
-        "spark.acls.enable": "false",
-        "spark.admin.acls": null
-      },
-      "runtimeVersion": "1.2"
-    }
-    ```
-
-- New sample request
-
-    ```HTTP
-    PATCH https://api.fabric.microsoft.com/v1/workspaces/bbbbcccc-1111-dddd-2222-eeee3333ffff/environments/ccccdddd-2222-eeee-3333-ffff4444aaaa/staging/sparkcompute
-
-    {
-      "instancePool": {
-        "name": "MyWorkspacePool",
-        "type": "Workspace"
-      },
-      "driverCores": "4",
-      "driverMemory": "56G",
-      "executorCores": "4",
-      "executorMemory": "56G",
-      "dynamicExecutorAllocation": {
-        "enabled": false,
-        "minExecutors": 1,
-        "maxExecutors": 1
-      },
-      "sparkProperties": [
-        {
-          "key": "spark.acls.enable",
-          "value": "false"
-        },
-        {
-          "key": "spark.admin.acls",
-          "value": null
-        }
-      ],
-      "runtimeVersion": "1.2"
-    }
-    ```
-
-- Original sample response
-
-    ```JSON
-    {
-      "instancePool": {
-        "name": "MyWorkspacePool",
-        "type": "Workspace",
-        "id": "78942136-106c-4f3e-80fc-7ff4eae11603"
-      },
-      "driverCores": 4,
-      "driverMemory": "56g",
-      "executorCores": 4,
-      "executorMemory": "56g",
-      "dynamicExecutorAllocation": {
-        "enabled": false,
-        "minExecutors": 1,
-        "maxExecutors": 1
-      },
-      "sparkProperties": {
-        "spark.acls.enable": "false"
-      },
-      "runtimeVersion": "1.2"
-    }
-    ```
-
-- New sample response
-
-    ```JSON
-    {
-      "instancePool": {
-        "name": "MyWorkspacePool",
-        "type": "Workspace",
-        "id": "78942136-106c-4f3e-80fc-7ff4eae11603"
-      },
-      "driverCores": "4",
-      "driverMemory": "56G",
-      "executorCores": "4",
-      "executorMemory": "56G",
-      "dynamicExecutorAllocation": {
-        "enabled": false,
-        "minExecutors": 1,
-        "maxExecutors": 1
-      },
-      "sparkProperties": [
-        {
-          "key": "spark.acls.enable",
-          "value": "false"
-        }
-      ],
-      "runtimeVersion": "1.2"
-    }
-    ```
+To learn more about the environment public APIs, see [Item APIs - Environment](/rest/api/fabric/environment/items).
 
 ## Environment public API use cases
 
 > [!IMPORTANT]
-> The new APIs and contract changes aren't included in this section.
+> This section is demonstrated with the stable Release version of the APIs.
 
-This section demonstrates how to use the currently available APIs to achieve specific goals. You can replace the `{WORKSPACE_ID}` and `{ARTIFACT_ID}` properties in the following examples with appropriate values.
+This section demonstrates how to use the APIs to achieve specific scenarios when managing Environment. You can replace the `{WORKSPACE_ID}` and `{ARTIFACT_ID}` properties in the following examples with appropriate values.
 
 ### Create a new environment
 
@@ -461,34 +178,32 @@ Before you add or delete a library, use the Get Published Libraries API to check
 - Sample request
 
     ```http
-    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/libraries
+    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/libraries?preview=False
     ```
 
 - Sample response
 
-    ```http
+    ```JSON
     {
-        "customLibraries": {
-            "wheelFiles": [
-                "samplewheel-0.18.0-py2.py3-none-any.whl"
-            ],
-            "pyFiles": [
-                "samplepython.py"
-            ],
-            "jarFiles": [
-                "samplejar.jar"
-            ],
-            "rTarFiles": [
-                "sampleR.tar.gz"
-            ]
+      "libraries": [
+        {
+          "name": "samplewheel-0.18.0-py2.py3-none-any.whl",
+          "libraryType": "Custom"
         },
-        "environmentYml": "dependencies:\r\n- pip:\r\n  - matplotlib==3.4.3"
+        {
+          "name": "fuzzywuzzy",
+          "libraryType": "External",
+          "version": "0.0.1"
+        }
+      ],
+      "continuationToken": "null",
+      "continuationUri": "null"
     }
     ```
 
-#### Upload the libraries
+#### Import public libraries or upload custom library
 
-The API for uploading staging libraries accepts one file at a time. The supported file types are *.whl*, *.jar*, *.tar.gz*, *.py*, and *environment.yml* for public libraries. You can specify the file via the multipart/form-data content type.
+You can use [Import external libraries](/rest/api/fabric/environment/staging/import-external-libraries) and [Upload custom library](/rest/api/fabric/environment/staging/upload-custom-library) APIs to add new public/custom libraries to your environment. The import external libraries API accepts *environment.yml* file while the supported file types are *.whl*, *.jar*, *.tar.gz*, *.py* for upload custom library API.
 
 > [!NOTE]
 > To manipulate the public library more efficiently, we recommend that you compose all the expected libraries from PyPI and Conda in an *environment.yml* file.
@@ -498,22 +213,25 @@ The API for uploading staging libraries accepts one file at a time. The supporte
 - Sample requests
 
     ```http
-    POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/libraries
+    POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/libraries/importExternalLibraries
     ```
 
-#### Delete the libraries
+    ```http
+    POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/libraries/samplelibrary.jar
+    ```
 
-By specifying the full library file name with the type suffix, you can delete one library at a time.
+#### Delete the custom library
+
+By specifying the full library file name with the type suffix, you can delete one custom library at a time.
 
 > [!NOTE]
-> If you specify *environment.yml* as the file to delete, you remove all public libraries.
+> If you want to remove a subset of the existing public libraries or all of them, please import an updated YAML file through `Import public libraries` API.
 >
-> If you want to remove a subset of an existing public library, use [upload library](environment-public-api.md#upload-the-libraries) instead and upload an *environment.yml* file that contains only the expected libraries. The uploaded *environment.yml* file replaces the existing public library section entirely.
 
 - Sample requests
 
     ```http
-    DELETE https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/libraries?libraryToDelete=fuzzywuzzy-0.18.0-py2.py3-none-any.whl
+    DELETE https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/libraries/samplelibrary.jar
     ```
 
 ### Manage staging Spark compute
@@ -527,30 +245,34 @@ Before you change the configurations for the environment, use the Get Published 
 - Sample request
 
     ```http
-    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/sparkcompute
+    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/sparkcompute?preview=False
     ```
 
 - Sample response
 
     ```http
     {
-        "instancePool": {
-            "name": "Starter Pool",
-            "type": "Workspace"
-        },
-        "driverCores": 4,
-        "driverMemory": "56g",
-        "executorCores": 4,
-        "executorMemory": "56g",
-        "dynamicExecutorAllocation": {
-            "enabled": false,
-            "minExecutors": 1,
-            "maxExecutors": 1
-        },
-        "sparkProperties": {
-            "spark.acls.enable": "false"
-        },
-        "runtimeVersion": "1.2"
+      "instancePool": {
+        "name": "MyWorkspacePool",
+        "type": "Workspace",
+        "id": "78942136-106c-4f3e-80fc-7ff4eae11603"
+      },
+      "driverCores": 4,
+      "driverMemory": "56g",
+      "executorCores": 4,
+      "executorMemory": "56g",
+      "dynamicExecutorAllocation": {
+        "enabled": false,
+        "minExecutors": 1,
+        "maxExecutors": 1
+      },
+      "sparkProperties": [
+        {
+          "key": "spark.acls.enable",
+          "value": "false"
+        }
+      ],
+      "runtimeVersion": "1.2"
     }
     ```
 
@@ -565,26 +287,33 @@ If you want to remove an existing Spark property, specify the value as `null` wi
 - Sample request
 
     ```http
-    PATCH https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/sparkcompute
+    PATCH https://api.fabric.microsoft.com/v1/workspaces/f089354e-8366-4e18-aea3-4cb4a3a50b48/environments/707cfd07-cbf1-41da-aad7-dd157ddb8c11/staging/sparkcompute?preview=False
 
     {
-        "instancePool": {
-            "name": "Starter Pool",
-            "type": "Workspace"
+      "instancePool": {
+        "name": "MyWorkspacePool",
+        "type": "Workspace"
+      },
+      "driverCores": 4,
+      "driverMemory": "56g",
+      "executorCores": 4,
+      "executorMemory": "56g",
+      "dynamicExecutorAllocation": {
+        "enabled": false,
+        "minExecutors": 1,
+        "maxExecutors": 1
+      },
+      "sparkProperties": [
+        {
+          "key": "spark.acls.enable",
+          "value": "false"
         },
-        "driverCores": 4,
-        "driverMemory": "56g",
-        "executorCores": 4,
-        "executorMemory": "56g",
-        "dynamicExecutorAllocation": {
-            "enabled": false,
-            "minExecutors": 1,
-            "maxExecutors": 1
-        },
-        "sparkProperties": {
-            "spark.acls.enable": null
-        },
-        "runtimeVersion": "1.2"
+        {
+          "key": "spark.admin.acls",
+          "value": null
+        }
+      ],
+      "runtimeVersion": "1.2"
     }
     ```
 
@@ -607,40 +336,27 @@ The environment can accept one publish operation at a time. Before you publish y
 - **Step 2:** Get the staging libraries/Spark compute to have a final review.
 
     ```http
-    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/libraries
+    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/libraries?preview=False
     
-    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/sparkcompute
+    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/sparkcompute?preview=False
     ```
 
 #### Trigger the publish operation of the environment
 
-The changes that you made for the staging libraries and Spark compute are cached, but they require publishing to become effective. Use the next example to trigger the publish operation.
+The changes that you made for the staging libraries and Spark compute are cached, but they require publishing to become effective. Use the next example to trigger the publish operation. Response is following [long running operations (LRO)](/rest/api/fabric/articles/long-running-operation) pattern and HTTP response code 202 may be returned.
 
 - Sample request
 
     ```http
-    POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/publish
+    POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/publish?preview=False
     ```
 
 - Sample response
 
     ```http
-    {
-        "publishDetails":
-        {
-            "state": "Running",
-            "targetVersion": "46838a80-5450-4414-bea0-40fb6f3e0c0d",
-            "startTime": "2024-03-29T14:17:09.0697022Z",
-            "componentPublishInfo": {
-                "sparkLibraries": {
-                    "state": "Running"
-                },
-                "sparkSettings": {
-                    "state": "Running"
-                }
-            }
-        }
-    }   
+    Location: https://api.fabric.microsoft.com/v1/operations/abcdef00-9d7e-469a-abf1-fca847a0ea69
+    x-ms-operation-id: abcdef00-9d7e-469a-abf1-fca847a0ea69
+    Retry-After: 120  
     ```
 
 During the publish operation, you can also call the following API to cancel it.
