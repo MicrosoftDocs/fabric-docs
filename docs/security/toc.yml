@@ -103,9 +103,9 @@ items:
             items: 
               - name: Enable workspace outbound access protection
                 href: workspace-outbound-access-protection-set-up.md
-              - name: Allowlist using data connection rules
+              - name: Create allowlist using data connection rules
                 href: workspace-outbound-access-protection-allow-list-connector.md
-              - name: Allowlist using managed private endpoints
+              - name: Create allowlist using managed private endpoints
                 href: workspace-outbound-access-protection-allow-list-endpoint.md
           - name: Scenarios by Fabric workload
             items: 
