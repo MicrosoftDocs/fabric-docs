@@ -105,11 +105,13 @@ For more information on pricing and capacity units, see [Microsoft Fabric pricin
 
 ## Region availability
 
-Graph in Microsoft Fabric is currently available in the following Azure regions:
+Graph in Microsoft Fabric is rolling out to new Fabric regions every week. It is currently available in the following regions:
 
 - East US 2
 - North Central US
+- North Europe
 - West Europe
+- UK South
 
 If you would like to be notified when the service is available in your region, please fill out this [form](https://forms.office.com/r/zkFLe8M8gP).
 
