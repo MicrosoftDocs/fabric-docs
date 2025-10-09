@@ -22,7 +22,7 @@ Microsoft Fabric is a software as a service (SaaS) platform that lets users get,
 ## Workspace level security
 Workspaces represent the primary security boundary for data stored in OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. Workspace-level security in Microsoft Fabric provides granular control over data access and network connectivity by allowing administrators to configure both inbound and outbound protections for individual workspaces. 
 
- :::image type="content" source="media/cicd-security/overview-1.png" alt-text="Conceptual digaram of cicd security." lightbox="media/cicd-security/overview-1.png":::
+ :::image type="content" source="media/cicd-security/overview-1.png" alt-text="Diagram that shows cicd security." lightbox="media/cicd-security/overview-1.png":::
 
 Workspace level security is composed of two main features.
 
