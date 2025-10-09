@@ -109,7 +109,6 @@ Graph in Microsoft Fabric is rolling out to new Fabric regions every week. It is
 
 - East US 2
 - North Central US
-- North Europe
 - West Europe
 - UK South
 
