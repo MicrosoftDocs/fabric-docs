@@ -1,6 +1,6 @@
 ---
-title: Create an allowlist with data connection rules
-description: "Learn how to create an allowlist with data connection rules on Microsoft Fabric workspaces."
+title: Create an allowlist using data connection rules
+description: "Learn how to create an allowlist using data connection rules on Microsoft Fabric workspaces."
 author: msmimart
 ms.author: mimart
 ms.service: fabric
@@ -11,7 +11,7 @@ ms.date: 09/24/2025
 
 ---
 
-# Create an allowlist with data connection rules
+# Create an allowlist using data connection rules
 
 In Microsoft Fabric, [workspace outbound access protection](./workspace-outbound-access-protection-overview.md) enables administrators to control outbound data connections from workspace resources to external networks. By default, all outbound connections can be blocked, and administrators can then create an allowlist to permit only specific data connections as needed.
 
