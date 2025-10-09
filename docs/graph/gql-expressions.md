@@ -180,7 +180,8 @@ GQL supports various built-in functions for data processing and analysis.
 
 ### Aggregate functions
 
-Aggregate functions are used to evaluate an expression over a set of rows and obtain a final result value by combining the values computed for each row. The following aggregate functions are supported in graph in Microsoft Fabric:
+Aggregate functions are used to evaluate an expression over a set of rows and obtain a final result value by combining the values computed for each row. The following aggregate functions are supported for graph in
+Microsoft Fabric:
 
 - `count(*)` - counts rows
 - `sum(expression)` - sums numeric values

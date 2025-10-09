@@ -1,8 +1,8 @@
 ---
 title: List of GQL reserved words
-description: Complete list GQL language reserved words in graph in Microsoft Fabric
+description: Complete list GQL language reserved words for graph in Microsoft Fabric
 ms.topic: reference
-ms.date: 10/09/2025
+ms.date: 10/07/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: splantikow

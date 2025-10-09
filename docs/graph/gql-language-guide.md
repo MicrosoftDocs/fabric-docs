@@ -1,6 +1,6 @@
 ---
 title: GQL Language Guide
-description: Complete guide to GQL language support in graph in Microsoft Fabric
+description: Complete guide to GQL language support for graph in Microsoft Fabric
 ms.topic: reference
 ms.date: 10/09/2025
 author: eric-urban
@@ -90,7 +90,7 @@ In GQL, you work with labeled property graphs. A graph consists of two types of 
 Every graph element has these characteristics:
 
 - An **internal ID** that uniquely identifies it
-- **One or more labels**—descriptive names like `Person` or `knows`. Edges always have exactly one label in graph for Microsoft Fabric.
+- **One or more labels**—descriptive names like `Person` or `knows`. Edges always have exactly one label in a graph in Microsoft Fabric.
 - **Properties**—name-value pairs that store data about the element
 
 ### How graphs are structured
@@ -1100,7 +1100,7 @@ Keep these references handy for quick lookups:
 - [GQL status codes](gql-reference-status-codes.md) - Complete error code reference  
 - [GQL reserved words](gql-reference-reserved-terms.md) - Complete list of reserved keywords
 
-**Graph for Microsoft Fabric:**
+**Graph in Microsoft Fabric:**
 - [Graph data models](graph-data-models.md) - Understanding graph concepts and modeling
 - [Graph and relational databases](graph-relational-databases.md) - Differences and when to use each
 - [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)

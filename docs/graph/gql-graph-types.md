@@ -25,7 +25,7 @@ Graph types provide several key benefits:
 > [!NOTE] 
 > This article introduces graph types conceptually and illustrates their definition using 
 > the syntax defined in the GQL standard. However, this syntax is currently not directly
-> supported in graph for Microsoft Fabric.
+> supported for graph in Microsoft Fabric.
 
 ## Define node types
 
