@@ -2,7 +2,7 @@
 title: Labeled Property Graph
 description: Understand why the Labeled Property Graph (LPG) is the recommended and only supported model in Graph in Microsoft Fabric, and how it compares to RDF.
 ms.topic: concept-article
-ms.date: 10/07/2025
+ms.date: 10/09/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam

@@ -2,7 +2,7 @@
 title: GQL Schema Example - Social Network
 description: Complete schema definition for the social network domain used throughout GQL documentation examples in graph for Microsoft Fabric.
 ms.topic: reference
-ms.date: 10/07/2025
+ms.date: 10/09/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: splantikow
