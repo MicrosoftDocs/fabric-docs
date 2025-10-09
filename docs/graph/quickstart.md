@@ -2,10 +2,10 @@
 title: Get Started with Graph in Microsoft Fabric
 description: Learn how to get started with Graph in Microsoft Fabric, including key concepts, setup instructions, and first steps.
 ms.topic: quickstart
-ms.date: 10/07/2025
+ms.date: 10/09/2025
 author: eric-urban
 ms.author: eur
-ms.reviewer: wawng
+ms.reviewer: wangwilliam
 ms.service: fabric
 ms.subservice: graph
 ms.search.form: Getting started with Graph
@@ -104,6 +104,7 @@ To add the nodes to your graph, follow these steps:
 
 1. Select **Confirm** to add the node to your graph.
 1. Repeat the process for all other nodes. You should see all the nodes represented in your graph.
+1. Select **Save** to start generating your graph.
 
     :::image type="content" source="./media/quickstart/node-add-completed.png" alt-text="Screenshot showing all of the nodes added to the graph." lightbox="./media/quickstart/node-add-completed.png":::
 
@@ -141,7 +142,7 @@ In the next sections, we query the graph by selecting specific nodes and relatio
 
 Follow these steps to switch to query mode and start querying your graph:
 
-1. Select **Modes** > **Query** from your graph's home page.
+1. Select **Modes** > **Query** from your graph's home page. From this view you can also create a read-only queryset, which has the same functionalities as below and allows you to share your query results.
 1. Select **Add node** to see the available nodes for querying.
 1. Select a node to add it to your query. In this example, we add the **Customer** node.
 
