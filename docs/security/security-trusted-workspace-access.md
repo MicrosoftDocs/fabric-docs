@@ -38,7 +38,7 @@ This article shows you how to:
 ### Prerequisites
 
 * A Fabric workspace associated with a Fabric capacity. 
-* Create a workspace identity associated with the Fabric workspace.See [Workspace identity](./workspace-identity.md). Ensure that the workspace identity has Contributor access to the workspace by going to Manage Access (next to workspace setting) and adding Workspace identity to the list as contributor.
+* Create a workspace identity associated with the Fabric workspace. See [Workspace identity](./workspace-identity.md). Ensure that the workspace identity has Contributor access to the workspace by going to **Manage Access** (next to **Workspace settings**) and adding the workspace identity to the list as contributor.
 * The principal used for authentication in the shortcut should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope, or a Storage Blob Delegator role at the storage account scope together with access at the folder level within the container. Access at the folder level can be provided through an RBAC role at the container level or through specific folder-level access.
 * Configure a [resource instance rule](#configure-trusted-workspace-access-in-adls-gen2) for the storage account.
 
