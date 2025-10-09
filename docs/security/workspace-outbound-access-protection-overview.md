@@ -34,7 +34,7 @@ The following sections explain these options in more detail.
 
 In a workspace with outbound access protection enabled, admins can set up managed private endpoints to allow access to external resources through a virtual network. By default, all outbound access is blocked, but admins can configure managed private endpoints to explicitly allow connections to resources outside of the workspace.
 
-:::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-endpoints.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection." border="false":::
+:::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-endpoints.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection with managed private endpoints." border="false":::
 
 In the preceding diagram:
 
@@ -48,7 +48,7 @@ In the preceding diagram:
 
 In a workspace with outbound access protection enabled, another method for allowing outbound access is through connectors. Admins can specify which connectors are permitted to be used within the workspace. By default, all connectors are blocked until they are explicitly allowed.
 
-:::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-connectors.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection." border="false":::
+:::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-connectors.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection with data connection rules." border="false":::
 
 In the preceding diagram:
 

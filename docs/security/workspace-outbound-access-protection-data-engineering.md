@@ -23,7 +23,13 @@ When outbound access protection is enabled, all outbound connections from the wo
 
 ## Configuring outbound access protection for data engineering
 
-To configure outbound access protection for data engineering, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up managed private endpoints to allow outbound access to other workspaces or external resources as needed. You can only create an allowlist using managed private endpoints; data connection rules aren't supported for data engineering workloads.
+You can only create an allowlist using managed private endpoints; data connection rules aren't supported for data engineering workloads. To configure outbound access protection for data engineering:
+
+1. Follow the steps to [enable outbound access protection](workspace-outbound-access-protection-set-up.md). 
+
+1. After enabling outbound access protection, you can set up [managed private endpoints](workspace-outbound-access-protection-allow-list-endpoint.md) to allow outbound access to other workspaces or external resources as needed.
+
+Once configured, data engineering items can connect only to the approved managed private endpoints, while all other outbound connections remain blocked.
 
 ## Supported data engineering item types
 
@@ -270,7 +276,7 @@ Periodic monitoring and updates are required to keep the mirror in sync. The fol
 
 * Enabling outbound access protection blocks all public access from your workspace. Therefore, to query a Lakehouse from another workspace, you must create a cross-workspace managed private endpoint to allow the Spark jobs to establish a connection.
 
-* Using fully qualified paths with workspace and lakehouse names can cause a socket timeout exception. To access files, use relative paths for the current Lakehouse or use a fully qualified path that includes the workspace ID and lakehouse ID (not their display names). This approach ensures the Spark session can resolve the path correctly and avoids socket timeout errors. [Learn more](workspace-outbound-access-protection-data-engineering.md#understanding-the-behavior-of-file-paths).
+* Using fully qualified paths with workspace and lakehouse names can cause a socket timeout exception. To access files, use relative paths for the current Lakehouse or use a fully qualified path that includes the workspace ID and lakehouse ID (not their display names). This approach ensures the Spark session can resolve the path correctly and avoids socket timeout errors. [Learn more](workspace-outbound-access-protection-data-engineering.md#understanding-file-path-behavior-in-fabric-notebooks).
 
 
 ## Related content

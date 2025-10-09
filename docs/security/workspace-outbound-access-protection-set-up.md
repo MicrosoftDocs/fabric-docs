@@ -37,7 +37,7 @@ To enable outbound access protection for a workspace, you can use the Fabric por
 
 1. In the workspace where you want to set up outbound access protection, go to **Workspace settings** -> **Network Security**. Under **Outbound access protection**, turn on **Block outbound public access**.
  
-   :::image type="content" source="media/workspace-outbound-access-protection-set-up/network-security-settings1.png" alt-text="Screenshot showing outbound access protection settings." lightbox="media/workspace-outbound-access-protection-set-up/network-security-settings.png":::
+   :::image type="content" source="media/workspace-outbound-access-protection-set-up/network-security-settings.png" alt-text="Screenshot showing outbound access protection settings." lightbox="media/workspace-outbound-access-protection-set-up/network-security-settings1.png":::
 
 ### [API](#tab/api-1)
 
@@ -69,9 +69,9 @@ In the request body, set `outbound` to `Deny`. Also specify the `inbound` value 
 <!--TODO - VERIFY THIS SECTION AND UPDATE THE LEARN MORE LINK WHEN PUBLISHED -->
 Git integration in Fabric lets a workspace sync its content (like notebooks, dataflows, Power BI reports, etc.) with an external Git repository (GitHub or Azure DevOps). Because the workspace must pull from or push to a Git service outside of Fabric, it involves outbound communication.
 
-When outbound access protection is enabled, Git integration is blocked by default. To allow Git integration, you must add an allow rule for the Git service in the workspace settings. [Learn more](https://review.learn.microsoft.com/en-us/fabric/cicd/cicd-security?branch=pr-en-us-10624)
+When outbound access protection is enabled, Git integration is blocked by default. To allow Git integration, you must add an allow rule for the Git service in the workspace settings. [Learn more](https://review.learn.microsoft.com/fabric/cicd/cicd-security?branch=pr-en-us-10624)
 
 ## Next steps
 
-- [Create an allowlist with data connector rules](./workspace-outbound-access-protection-allowlist-connector.md)
-- [Create an allowlist with managed private endpoints](./workspace-outbound-access-protection-allowlist-endpoint.md)
+- [Create an allowlist with data connection rules](./workspace-outbound-access-protection-allow-list-connector.md)
+- [Create an allowlist with managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md)
