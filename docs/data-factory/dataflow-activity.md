@@ -61,7 +61,7 @@ You can select the refresh button to request the latest parameter information fr
 Inside the Dataflow parameters section you're able to enter the name of the parameter that you wish to pass and the type and value that you wish to pass.
 
 >[!NOTE]
->Parameterizing the DataflowId in the dataflow pipeline activity settings will only support the legacy Dataflow Gen2 version without CI/CD support. That is,  you can't invoke Dataflows with CI/CD support using parameterization of the DataflowId.
+>Parameterizing the DataflowId in the dataflow pipeline activity settings will only support the legacy Dataflow Gen2 version without CI/CD support. That is,  you can't invoke dataflows with CI/CD support using parameterization of the DataflowId.
 
 ## Save and run or schedule the pipeline
 

@@ -28,7 +28,7 @@ Before you start, you need:
 
 ## Compare dataflows and pipelines
 
-Dataflows Gen2 provide a low-code interface with 300+ data and AI-based transformations. You can easily clean, prep, and transform data with flexibility. Pipelines offer rich data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.
+Dataflow Gen2 provide a low-code interface with 300+ data and AI-based transformations. You can easily clean, prep, and transform data with flexibility. Pipelines offer rich data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.
 
 In a pipeline, you can create logical groupings of activities that perform a task. This might include calling a dataflow to clean and prep your data. While there's some functionality overlap between the two, your choice depends on whether you need the full capabilities of pipelines or can use the simpler capabilities of dataflows. For more information, see the [Fabric decision guide](../fundamentals/decision-guide-pipeline-dataflow-spark.md).
 

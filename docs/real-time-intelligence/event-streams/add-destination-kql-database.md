@@ -35,8 +35,8 @@ Direct ingestion mode ingests your event data directly into the Eventhouse witho
    :::image type="content" source="media/add-destination-kql-database/add-eventhouse-destination.png" alt-text="A screenshot of selecting Eventhouse in the Added destination dropdown list." lightbox="media/add-destination-kql-database/add-eventhouse-destination.png"::: 
    
 1. On the Eventhouse screen, select **Direct ingestion**.
-
 1. Enter a **Destination name**, a **Workspace**, and an **Eventhouse** from the selected workspace.
+1. If you are using schemas at the source, see [Configure Eventhouse destination to use schemas](#configure-schemas-for-an-eventhouse-destination).
 
 1. Select **Save**.
 
@@ -95,6 +95,8 @@ The event processing before ingestion mode processes your event data before inge
 
 1. On the **Eventhouse** screen, **Event processing before ingestion** should already be selected. Complete the rest of the information about your Eventhouse, and then select **Save**.
 
+    If you are using schemas at the source, see [Configure Eventhouse destination to use schemas](#configure-schemas-for-an-eventhouse-destination).
+
    :::image type="content" border="true" source="media/add-destination-kql-database/eventhouse-event-processing.png" alt-text="A screenshot of the KQL Database configuration screen for Event processing before ingestion.":::
 
 1. To implement the newly added Eventhouse destination, select **Publish**.
@@ -139,6 +141,10 @@ With this update, you can now:
 > 
 >    :::image type="content" source="media/add-destination-kql-database/resume-kusto.png" alt-text="A screenshot of resuming the KQL Database." lightbox="media/add-destination-kql-database/resume-kusto.png":::
 > For more information, see [Pause, and resume data streams](pause-resume-data-streams.md)
+
+## Configure schemas for an eventhouse destination
+[!INCLUDE [configure-eventhouse-destination-schema](./includes/configure-eventhouse-destination-schema.md)]
+
 
 ## Related content
 

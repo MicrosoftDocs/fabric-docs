@@ -1,6 +1,6 @@
 ---
-title: Sources supported by Fabric event streams (enhanced)
-description: The include file has the list of sources supported by Fabric event streams with enhanced capabilities.
+title: Sources Supported by Fabric Eventstreams (Enhanced)
+description: This file has the list of sources supported by Fabric eventstreams with enhanced capabilities.
 ms.author: xujiang1
 author: xujxu
 ms.topic: include
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 08/26/2025
 ---
 
-| Sources          | Description |
+| Source          | Description |
 | --------------- | ---------- |
 | [Azure Data Explorer (preview)](../add-source-azure-data-explorer-database.md) | If you have an Azure Data Explorer database and a table, you can ingest data from the table into Microsoft Fabric using Eventstream.  |
 | [Azure Event Hubs](../add-source-azure-event-hubs.md) | If you have an Azure event hub, you can ingest event hub data into Microsoft Fabric using Eventstream.  |
@@ -37,4 +37,3 @@ ms.date: 08/26/2025
 | [Amazon MSK Kafka](../add-source-amazon-managed-streaming-for-apache-kafka.md) | Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, scaling, and management. By integrating Amazon MSK Kafka as a source within your eventstream, you can seamlessly bring the real-time events from your MSK Kafka and process them before routing them to multiple destinations within Fabric. |
 | [MQTT (preview)](../add-source-mqtt.md) | Microsoft Fabric event streams allow you to connect to an MQTT broker, where messages in MQTT broker to be ingested into Fabric eventstream, and routed to various destinations within Fabric. |
 | [Solace PubSub+ (preview)](../add-source-solace-pub-sub.md) | Microsoft Fabric event streams allow you to connect to Solace PubSub+, enabling messages from Solace PubSub+ to be ingested into Fabric eventstream and routed to various destinations within Fabric. |
-

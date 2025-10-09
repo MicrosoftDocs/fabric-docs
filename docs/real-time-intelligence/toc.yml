@@ -87,8 +87,6 @@ items:
     items:
     - name: Eventstream Overview
       href: event-streams/overview.md
-    - name: What's new in Fabric event streams?
-      href: event-streams/whats-new.md
     - name: Eventstreams capacity consumption
       href: event-streams/monitor-capacity-consumption.md
     - name: Create eventstreams
@@ -211,14 +209,16 @@ items:
           href: event-streams/api-update-eventstream-definition.md
     - name: Security
       items:
-      - name: Use managed private endpoints
+      - name: Secure outbound via managed private endpoints
         href: event-streams/set-up-private-endpoint.md
+      - name: Secure inbound via tenant and workspace private links
+        href: event-streams/set-up-tenant-workspace-private-links.md
       - name: Authenticate an application using Entra ID
         href: event-streams/custom-endpoint-entra-id-auth.md
       - name: Authenticate with a managed identity
         href: event-streams/connect-using-managed-identity.md
       - name: Connect to streaming sources in private network 
-        href: event-streams/connect-connecots-in-virtual-network-on-premises.md        
+        href: event-streams/connect-connecots-in-virtual-network-on-premises.md
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
@@ -523,7 +523,7 @@ items:
       href: get-data-eventstream.md
     - name: Get data from Real-Time hub
       href: get-data-real-time-hub.md
-    - name: Configure KQL Database in a data pipeline
+    - name: Configure KQL Database in a pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
     - name: Connect to KQL Database in dataflows
       href: ../data-factory/connector-kusto-dataflows.md
@@ -644,6 +644,8 @@ items:
     href: real-time-intelligence-consumption.md
   - name: Understand Eventhouse compute usage
     href: eventhouse-compute-observability.md
+  - name: Eventhouse Cost per GB Ingested
+    href: pricing-cost-drivers.md
 - name: Model data
   items:
   - name: Digital twin builder
