@@ -37,7 +37,7 @@ Using `List staging libraries` API as an example, which has an update in the API
 
 - When sending the request with `preview` parameter as `True`
   
-  Sample equest:
+  Sample request:
 
     ```HTTP
     GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}/libraries?preview=True
