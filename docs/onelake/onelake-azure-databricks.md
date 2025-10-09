@@ -79,16 +79,16 @@ This completes the setup and now you can now read and write data in Fabric using
 
 ## Connecting to OneLake using Databricks serverless compute
 
-[Databricks serverless compute]/azure/databricks/compute/serverless/) allows you to run workloads without provisioning a cluster. As per Databricks serverless limitations, to automate the configuration of Spark on serverless compute, Databricks has [removed support for manually setting most Spark configurations](/azure/databricks/spark/conf#configure-spark-properties-for-serverless-notebooks-and-jobs). Supported Spark properties for serverless notebooks and jobs are listed [here](/azure/databricks/spark/conf#configure-spark-properties-for-serverless-notebooks-and-jobs). Job runs on serverless compute will fail if you set an unsupported Spark configuration.
+[Databricks serverless compute]/azure/databricks/compute/serverless/) allows you to run workloads without provisioning a cluster. As per Databricks serverless limitations, to automate the configuration of Spark on serverless compute, Databricks doesn't allow configuring [Spark properties](/azure/databricks/spark/conf#configure-spark-properties-for-serverless-notebooks-and-jobs) outside supported properties that are listed [here](/azure/databricks/spark/conf#configure-spark-properties-for-serverless-notebooks-and-jobs).
 
 > [!NOTE]
-> This limitation is not unique to Azure Databricks. Databricks Serverless implementations on [Amazon Web Services (AWS)](https://docs.databricks.com/aws/release-notes/serverless#supported-spark-configuration-parameters) and [Google Cloud](https://docs.databricks.com/gcp/release-notes/serverless#supported-spark-configuration-parameters) exhibit the same behaviour.
+> This limitation isn't unique to Azure Databricks. Databricks Serverless implementations on [Amazon Web Services (AWS)](https://docs.databricks.com/aws/release-notes/serverless#supported-spark-configuration-parameters) and [Google Cloud](https://docs.databricks.com/gcp/release-notes/serverless#supported-spark-configuration-parameters) exhibit the same behavior.
 
-As a result, if you attempt to configure an unsupported Spark configuration in notebook attached to Databricks serverless compute, you will observe *CONFIG_NOT_AVAILABLE* error as shown in the figure below.
+If you attempt to modify or set an unsupported Spark configuration in a notebook linked to Databricks serverless compute, the system returns a CONFIG_NOT_AVAILABLE error.
 
 :::image type="content" source="media\onelake-azure-databricks\unsupported-config-error.png" alt-text="Screenshot showing error message if a user attempts to modify unsupported Spark config in serverless compute.":::
 
-OneLake supports inbound connectivity from Databricks serverless compute. You can connect to OneLake as provided you have successfully authenticated and there's network path between Databricks serverless compute and OneLake. To access OneLake from a Databricks notebooks using serverless compute, ensure that the code does not attempt to modify any Spark properties which are not supported by serverless compute.  
+OneLake supports inbound connectivity from Databricks serverless compute. You can connect to OneLake as provided you have successfully authenticated and there's network path between Databricks serverless compute and OneLake. With Databricks serverless, you must ensure that your code doesn't modify any unsupported Spark properties.  
 
 ### Prerequisites
 
@@ -97,7 +97,7 @@ Before you connect, you must have:
 - A Fabric workspace and lakehouse.
 - A premium Azure Databricks workspace.
 - A service principal with a minimum of **Contributor** workspace role assignment.
-- Database secrets or Azure Key Vault (AKV) to store and retrieve secrets. In this document, you will use Databricks secrets.
+- Database secrets or Azure Key Vault (AKV) to store and retrieve secrets. This example uses Databricks secrets.
 
 ### Author your notebook
 
@@ -105,11 +105,11 @@ Before you connect, you must have:
 
    :::image type="content" source="media\onelake-azure-databricks\connect-to-serverless.png" alt-text="Screenshot showing how to connect Databricks notebook with serverless compute.":::
 
-1. Import Python modules - in this sample, you will be using three modules:
+1. Import Python modules - in this sample, you're using three modules:
 
    -  **msal** is Microsoft Authentication Library (MSAL) and it is designed to help developers integrate Microsoft identity platform authentication into their applications.
    - **requests** module is used to make HTTP requests using Python.
-   - **deltalake** is used to read and write Delta Lake tables using Python.
+   - **delta lake** is used to read and write Delta Lake tables using Python.
      
    ```python
    from msal import ConfidentialClientApplication
@@ -117,7 +117,7 @@ Before you connect, you must have:
    from deltalake import DeltaTable
    ```
    
-1. Declare variables for Entra tenant including application ID. This is the same tenant where Microsoft Fabric is deployed. 
+1. Declare variables for Microsoft Entra tenant including application ID. Use the tenant ID of the tenant where Microsoft Fabric is deployed.
 
    ```python
    # Fetch from Databricks secrets.
@@ -126,7 +126,7 @@ Before you connect, you must have:
    client_secret = dbutils.secrets.get(scope="<replace-scope-name>",key="<replace value with key value for secret>")
    ```
 
-1. Declare Fabric workspace variable details which you are connecting with using Databricks notebook.
+1. Declare Fabric workspace variables.
 
    ```python
    workspace_id = "<replace with workspace name>"
