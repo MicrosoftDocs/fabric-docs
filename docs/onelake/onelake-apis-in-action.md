@@ -314,7 +314,7 @@ If you’d like to learn more, read this article [Understanding block blobs, app
 
 **Here's the catch**
 
-When Parquet.NET calls `Flush()` after each row group, and you're writing to a stream backed by Blob Storage, that flushes triggers a BlockList commit. As the file grows, each new row group causes the library to recommit all previously uploaded blocks.
+When Parquet.NET calls `Flush()` after each row group, and you're writing to a stream backed by Blob Storage, that flush triggers a BlockList commit. As the file grows, each new row group causes the library to recommit all previously uploaded blocks.
 
 Let’s say you’re writing a 1-GB file with 100MB row groups, using 4MB blocks. That gives you 250 blocks in total. On the first flush, you commit 25 blocks. On the second, 50. By the final flush, you’re committing all 250 blocks. Add that up across all 10 row groups, and you’ve committed a total of 1,375 blocks—even though the final file only needs one commit.
 
