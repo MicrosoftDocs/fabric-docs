@@ -8,7 +8,7 @@ ms.custom:
 ms.topic: concept-article
 ms.service: fabric
 ms.subservice: cicd
-ms.date: 01/12/2025
+ms.date: 10/09/2025
 ---
 
 # Network security for continuous integration/continuous deployment
@@ -38,7 +38,7 @@ Git integration in Fabric lets a workspace sync its content (like notebooks, dat
  
  This restriction directly impacts Git integration: users attempting to access Git features (such as syncing or committing changes) must do so from within the approved VNet. If a user tries to open the Git pane or perform Git operations from an unapproved network, Fabric blocks access to the workspace UI entirely, including Git functionality. This restriction also applies to the Git APIs. This enforcement ensures that Git-related actions—like connecting to a repository or branching out—are only performed in secure, controlled environments, reducing the risk of data leakage through source control channels.
 
- Git integration with inbound access protection is enabled by default. There's no toggle to disable.
+ Git integration with inbound access protection is enabled by default. There's no toggle to disable. Branching out is blocked.
 
 ### Workspace outbound access and Git integration
 By default, Workspace OAP will completely block Git integration, because contacting an external Git endpoint would violate the "no outbound" rule. To resolve this restriction, Fabric introduces an admin-controlled consent setting for Git. 
