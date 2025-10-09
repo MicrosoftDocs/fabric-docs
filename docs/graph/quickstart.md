@@ -104,7 +104,7 @@ To add the nodes to your graph, follow these steps:
 
 1. Select **Confirm** to add the node to your graph.
 1. Repeat the process for all other nodes. You should see all the nodes represented in your graph.
-1. Click on **Save** to start generating your graph.
+1. Select **Save** to start generating your graph.
 
     :::image type="content" source="./media/quickstart/node-add-completed.png" alt-text="Screenshot showing all of the nodes added to the graph." lightbox="./media/quickstart/node-add-completed.png":::
 
