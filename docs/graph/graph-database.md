@@ -2,7 +2,7 @@
 title: What is a graph database?
 description: Learn about the benefits of using a graph database.
 ms.topic: concept-article
-ms.date: 10/09/2025
+ms.date: 10/10/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam
@@ -50,7 +50,7 @@ Choose a graph database when your primary questions involve paths, neighborhoods
 
 ## What about ETL
 
-Representing your data as a graph and storing it in a separate, standalone graph database often introduces ETL and governance overhead. By contrast, Graph in Microsoft Fabric operates directly on OneLake, which reduces or eliminates the need for separate ETL pipelines and data duplication. Consider these tradeoffs:
+Representing your data as a graph and storing it in a separate, standalone graph database often introduces ETL and governance overhead. By contrast, graph in Microsoft Fabric operates directly on OneLake, which reduces or eliminates the need for separate ETL pipelines and data duplication. Consider these tradeoffs:
 - **Data movement & duplication**: Standalone graph databases typically require extracting, transforming, and loading (ETL) data into a separate store, which increases complexity and can lead to duplicated datasets. Graph in Microsoft Fabric operates on OneLake so you can model and query connected data without moving it.
 - **Operational costs**: Standalone graph stacks run as separate clusters or services and often carry idle-capacity charges. Graph workloads in Fabric consume pooled capacity units (CUs) with automatic scale-down and centralized metrics, which simplifies operations and can lower cost.
 - **Scalability**: Some standalone graph databases depend on scale-up or vendor-specific clustering. Graph in Microsoft Fabric is designed for large-scale graphs and uses scale-out sharding across multiple workers to handle big-data workloads efficiently.
