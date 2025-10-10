@@ -93,7 +93,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Dremio Software | ✓/− |  |  |
 | Dynamics 365 Business Central | ✓/− |  |  |
 | Dynamics 365 Customer Insights (Beta) | ✓/− |  |  |
-| [Dynamics AX](connector-dynamics-ax-overview.md) | | ✓/− |  |
+| [Dynamics AX](connector-dynamics-ax-overview.md) | | ✓/− | ✓/− |
 | [Dynamics CRM](connector-dynamics-crm-overview.md) |  | ✓/✓ |  |
 | Dynatrace Grail DQL (Beta) | ✓/− |  |  |
 | [Eduframe (Beta)](/power-query/connectors/eduframe) | ✓/− |  |  |
