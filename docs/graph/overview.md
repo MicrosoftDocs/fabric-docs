@@ -18,11 +18,11 @@ ms.custom: references_regions
 Graph in Microsoft Fabric is a scalable, enterprise-grade solution that turns disconnected data into AI-powered insights. 
 
 Unlike traditional relational databases that often require costly joins and complex queries, graph in Microsoft Fabric introduces a scale-out architecture that implements
-the flexible [labelled property graph model](graph-data-models.md) and offers data querying functionality that is compliant with 
+the flexible [labelled property graph model](graph-data-models.md) and offers data querying functionality that's compliant with 
 the [Internal Standard for the graph query language GQL (ISO/IEC 39075)](gql-language-guide.md). Together, these capabilities enable advanced graph analytics directly on OneLake
-without the need to manually setup brittle ETL (extract, transform, load) or data replication workflows.
+without the need to manually set up brittle ETL (extract, transform, load) or data replication workflows.
 
-Fabric Graph’s scale-out design ensures performance and elasticity for enterprise-scale workloads, so you can analyse billions of relationships without bottlenecks. Its labelled property graph model brings flexibility by allowing nodes and edges to carry rich labels and properties, making complex relationships intuitive to model, query and explore. And with native GQL and NL2GQL support, you gain standards-based querying capabilities optimised for graph operations—delivering portability and consistency across graph solutions. By removing the complexity of joins and transformations, graph in Microsoft Fabric unlocks seamless graph analysis and advanced insights at scale, all while leveraging your existing data estate.
+Fabric Graph’s scale-out design ensures performance and elasticity for enterprise-scale workloads, so you can analyze billions of relationships without bottlenecks. Its labeled property graph model brings flexibility by allowing nodes and edges to carry rich labels and properties, making complex relationships intuitive to model, query and explore. And with native GQL and NL2GQL support, you gain standards-based querying capabilities optimized for graph operations—delivering portability and consistency across graph solutions. By removing the complexity of joins and transformations, graph in Microsoft Fabric unlocks seamless graph analysis and advanced insights at scale, all while leveraging your existing data estate.
 
 ## Why graph analytics matter
 
@@ -43,7 +43,7 @@ Graph in Microsoft Fabric enables you to:
 
 - Create a labeled property graph over structured data in OneLake by defining its nodes and edges in terms of underlying tabular data.
 
-- Query using GQL (Graph Query Language), including pattern matching, path constructs, aggregations, and additional features as they are released. The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
+- Query using GQL (Graph Query Language), including pattern matching, path constructs, aggregations, and other features as they're released. The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
 
 - Enrich your graph with scores and communities for downstream BI (business intelligence) and AI (artificial intelligence) workflows. Run built-in graph algorithms such as shortest path, page rank, weakly connected components (WCC), and Louvain.
 
@@ -114,14 +114,14 @@ For more information on pricing and capacity units, see [Microsoft Fabric pricin
 
 ## Region availability
 
-Graph in Microsoft Fabric is rolling out to new Fabric regions every week. It is currently available in the following regions:
+Graph in Microsoft Fabric is rolling out to new Fabric regions every week. It's currently available in the following regions:
 
 - East US 2
 - North Central US
 - West Europe
 - UK South
 
-If you would like to be notified when the service is available in your region, please fill out this [form](https://forms.office.com/r/zkFLe8M8gP).
+If you would like to be notified when the service is available in your region, fill out this [form](https://forms.office.com/r/zkFLe8M8gP).
 
 ## Related content
 
