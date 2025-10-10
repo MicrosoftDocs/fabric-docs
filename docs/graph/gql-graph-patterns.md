@@ -273,8 +273,9 @@ This pattern finds direct friends, friends-of-friends, and friends-of-friends-of
 > This pattern matches pairs of different persons that know each other *but also*
 > matches the same person as both `p1` and `p2` if that person doesn't "know" themselves.
 
-When no lower bound is specified, it generally defaults to 0 (zero) but with the exception that
-when unbounded variable-length patterns with `+`-repetition are used, it defaults to 1 (one) instead.
+When no lower bound is specified, it generally defaults to 0 (zero).
+<!-- but with the exception that
+when unbounded variable-length patterns with `+`-repetition are used, it defaults to 1 (one) instead -->
 
 **Complex variable-length compositions:**
 Variable-length patterns can be part of larger, more complex patterns:
