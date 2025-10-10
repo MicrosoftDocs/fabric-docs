@@ -23,8 +23,7 @@ Graph types provide several key benefits:
 - **Documentation**: Serve as a clear specification of your graph's structure for developers and analysts.
 
 > [!NOTE] 
-> This article introduces graph types conceptually and illustrates their definition using 
-> the syntax defined in the GQL standard. However, this syntax is currently not directly
+> This article introduces graph types conceptually and illustrates their definition using the syntax defined in the GQL standard. However, this syntax is currently not directly
 > supported for graph in Microsoft Fabric.
 
 Structurally, a graph type defines allowed node types and edge types of graphs of the graph type, as well as additional constraints that further restrict those graphs.
