@@ -210,8 +210,7 @@ Here:
 
 > [!TIP]
 > Filtering can also be performed directly as part of a pattern by appending a `WHERE` clause.
-> For example, `MATCH (n:Person WHERE n.age > 23)` will only match `Person` nodes whose `age`
-> property is greater than 23.
+> For example, `MATCH (n:Person WHERE n.age > 23)` will only match `Person` nodes whose `age` property is greater than 23.
 
 > [!NOTE]
 > GQL supports C-style `//` line comments, SQL-style `--` line comments, and C-style `/* */` block comments.
