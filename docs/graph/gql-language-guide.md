@@ -118,6 +118,12 @@ Throughout this documentation, we use a social network example to illustrate GQL
 
 :::image type="content" source="./media/gql/schema-example.png" alt-text="Diagram showing the social network schema." lightbox="./media/gql/schema-example.png":::
 
+> [!NOTE] 
+> The social network is example is derived from 
+> the [LDBC SNB (LDBC Social Network Benchmark)](https://ldbcouncil.org/benchmarks/snb/) published by 
+> the [GDC (Graph Data Council)](https://ldbcouncil.org/).
+> See the article ["The LDBC Social Network Benchmark"](https://arxiv.org/abs/2001.02299) for further details.
+
 ### The social network entities
 
 Our social network includes these main kinds of nodes, representing entities of the domain:
@@ -167,7 +173,8 @@ MATCH (p:Person)
 RETURN p.firstName, p.lastName
 ```
 
-This query:
+In this query:
+
 1. **`MATCH`** finds all nodes labeled `Person`
 2. **`RETURN`** shows their first and last names
 
@@ -195,14 +202,16 @@ FILTER n.birthday = m.birthday
 RETURN count(*) AS same_age_friends
 ```
 
-This query works step by step:
+Here:
 
 1. **`MATCH`** finds all pairs of `Person` nodes that know each other
 2. **`FILTER`** keeps only the pairs where both people have the same birthday
 3. **`RETURN`** counts how many such friend pairs exist
 
 > [!TIP]
-> Filtering can also be performed directly as part of a pattern (for example, in `MATCH`) by appending a `WHERE` clause
+> Filtering can also be performed directly as part of a pattern by appending a `WHERE` clause.
+> For example, `MATCH (n:Person WHERE n.age > 23)` will only match `Person` nodes whose `age`
+> property is greater than 23.
 
 > [!NOTE]
 > GQL supports C-style `//` line comments, SQL-style `--` line comments, and C-style `/* */` block comments.
@@ -221,7 +230,7 @@ The pipeline works like this: each statement transforms data and passes it to th
 -- Data flows: Match → Let → Filter → Order → Limit → Return
 MATCH (p:Person)-[:workAt]->(c:Company)     -- Input: unit table, Output: table with (p, c) columns
 LET companyName = c.name                    -- Input: (p, c), Output: (p, c, companyName) columns
-FILTER c.name CONTAINS 'Tech'               -- Input: (p, c, companyName), Output: filtered rows  
+FILTER c.name CONTAINS 'Tech'               -- Input: (p, c, companyName), Output: filtered table  
 ORDER BY p.firstName DESC                   -- Input: filtered table, Output: sorted table
 LIMIT 5                                     -- Input: sorted table, Output: table with top 5 rows
 RETURN                                      -- Input: top 5 rows, Output: result table
@@ -438,7 +447,7 @@ MATCH (p:Person)-[:workAt]->(c:Company)
 
 ```gql
 -- Filter pattern matches
-MATCH p=(p:Person)-[:workAt]->(c:Company) WHERE p.lastName = c.name
+MATCH (p:Person)-[:workAt]->(c:Company) WHERE p.lastName = c.name
 ```
 
 All matches can be post-filtered using `WHERE`, avoiding a separate `FILTER` statement.
@@ -448,11 +457,17 @@ All matches can be post-filtered using `WHERE`, avoiding a separate `FILTER` sta
 When `MATCH` isn't the first statement, it joins input data with pattern matches:
 
 ```gql
+...
 -- Input: table with 'targetCompany' column
--- Implicit Join: targetCompany (equality join)
+-- Implicit join: targetCompany (equality join)
 -- Output: table with (targetCompany, p, r) columns
 MATCH (p:Person)-[r:workAt]->(targetCompany)
+...
 ```
+
+> [!IMPORTANT]
+> Graph in Microsoft Fabric does not yet support arbitrary statement composition.
+> See the article on [current limitations](limitations.md). 
 
 **Key joining behaviors:**
 
@@ -825,7 +840,8 @@ GQL provides these function categories for different data processing needs:
 7. Logical disjunction (`OR`)
 
 > [!TIP]
-> **Performance tip**: Use parentheses to make precedence explicit. Complex expressions are easier to read and debug when grouping is clear.
+> Use parentheses to make precedence explicit. Complex expressions are easier to read and debug 
+> when grouping is clear.
 
 > [!div class="nextstepaction"]
 > [Learn comprehensive expression syntax and all built-in functions](gql-expressions.md)
@@ -835,6 +851,10 @@ GQL provides these function categories for different data processing needs:
 This section covers sophisticated patterns and techniques for building complex, efficient graph queries. These patterns go beyond basic statement usage to help you compose powerful analytical queries.
 
 ### Complex multi-statement composition
+
+> [!IMPORTANT]
+> Graph in Microsoft Fabric does not yet support arbitrary statement composition.
+> See the article on [current limitations](limitations.md). 
 
 Understanding how to compose complex queries efficiently is crucial for advanced graph querying.
 

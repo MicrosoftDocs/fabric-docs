@@ -27,7 +27,7 @@ The GQL language supports various kinds of values like numbers, strings, and gra
 
 All value types fall into two major categories that serve different purposes in your queries:
 
-- **Predefined value types** - Built into the language (numbers, strings, booleans, etc.).
+- **Predefined value types** - Built into the language (such as numbers, strings, and booleans).
 - **Constructed value types** - Composed from other types (lists, paths).
 
 Predefined value types are further organized into specialized categories:
@@ -46,7 +46,7 @@ Understanding how GQL compares values is crucial for writing effective queries, 
 ### Basic comparison rules
 
 - You can generally compare values of the same kind.
-- All numbers can be compared with each other (integers with floats, etc.).
+- All numbers can be compared with each other (for example, integers with floats).
 - Only reference values referencing the same kind of object can be compared (node references with node references, edge references with edge references).
 
 ### Null handling in comparisons
@@ -185,6 +185,9 @@ UINT [ NOT NULL ]
 UINT64 [ NOT NULL ]
 ```
 
+`INT` and `INT64` specify the same numeric type.
+So do `UINT` and `UINT64`.
+
 ### Approximate numeric types
 
 Graph in Microsoft Fabric supports approximate numbers that are IEEE (Institute of Electrical and Electronics Engineers) 754-compatible floating point numbers.
@@ -219,7 +222,7 @@ DOUBLE [ NOT NULL ]
 FLOAT64 [ NOT NULL ]
 ```
 
-(`DOUBLE`, `FLOAT`, and `FLOAT64` all specify the same type)
+`DOUBLE`, `FLOAT`, and `FLOAT64` all specify the same type.
 
 ## Temporal value types
 
@@ -389,8 +392,11 @@ NULL NOT NULL
 
 ### List values
 
-List values are sequences of elements. Lists can contain elements of the same type or mixed types, and can include null values.
+List values are sequences of elements. Lists can contain elements of the same type, and can include null values.
 
+> [!IMPORTANT]
+> Currently, lists in graph in Microsoft Fabric cannot contain elements of mixed types.
+ 
 **How comparison works:**
 
 Lists are compared first by size, then element by element in order. Two lists are equal if they have the same size and all corresponding elements are equal.
