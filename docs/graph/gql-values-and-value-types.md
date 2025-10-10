@@ -18,10 +18,14 @@ The GQL language supports various kinds of values like numbers, strings, and gra
 
 **Key concepts:**
 
-- **Value types** can be nullable or non-nullable (material), depending on whether they include or exclude the null value.
+- **Value types** can be _nullable_ or _material_ (non-nullable), depending on whether they include or exclude the null value.
 - **Non-nullable value types** are specified syntactically as `NOT NULL`.
 - **The same value** can belong to multiple value types (polymorphism).
 - **The null value** is a member of every nullable value type.
+
+> [!NOTE]
+> All value types are nullable by default, unless explicitly declared as `NOT NULL`.
+> For example,  `INT` specifies the nullable integer type, while `INT NOT NULL` specifies the material integer type.
 
 ## How value types are organized
 
@@ -467,6 +471,10 @@ A path consists of:
 - A sequence of nodes and edges: `node₁ - edge₁ - node₂ - edge₂ - ... - nodeₙ`
 - Always starts and ends with a node.
 - Contains at least one node (minimum path length is zero edges).
+
+> [!NOTE]
+> Currently literal syntax for paths is not yet supported.
+> Instead, paths can be bound using `MATCH pathVar=...path pattern...`.
 
 **How comparison works:**
 

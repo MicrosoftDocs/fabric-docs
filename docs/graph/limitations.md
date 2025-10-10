@@ -1,5 +1,5 @@
 ---
-title: Limitations of Graph in Microsoft Fabric
+title: Current Limitations of Graph in Microsoft Fabric
 description: Understand the current limitations of Graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL (Graph Query Language) conformance.
 ms.topic: reference
 ms.date: 10/10/2025
@@ -10,7 +10,7 @@ ms.service: fabric
 ms.subservice: graph
 ---
 
-# Select limitations of Graph in Microsoft Fabric
+# Current Limitations of Graph in Microsoft Fabric
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 

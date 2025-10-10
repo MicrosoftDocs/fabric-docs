@@ -228,14 +228,15 @@ The pipeline works like this: each statement transforms data and passes it to th
 
 ```gql
 -- Data flows: Match → Let → Filter → Order → Limit → Return
-MATCH (p:Person)-[:workAt]->(c:Company)     -- Input: unit table, Output: table with (p, c) columns
-LET companyName = c.name                    -- Input: (p, c), Output: (p, c, companyName) columns
-FILTER c.name CONTAINS 'Tech'               -- Input: (p, c, companyName), Output: filtered table  
-ORDER BY p.firstName DESC                   -- Input: filtered table, Output: sorted table
-LIMIT 5                                     -- Input: sorted table, Output: table with top 5 rows
-RETURN                                      -- Input: top 5 rows, Output: result table
-  p.firstName || ' ' || p.lastName AS name, 
-  companyName
+MATCH (p:Person)-[:workAt]->(c:Company) -- Input: unit table, Output: (p, c) table
+LET companyName = c.name                -- Input: (p, c) table, Output: (p, c, companyName) table
+FILTER companyName CONTAINS 'Tech'      -- Input: (p, c, companyName) table, Output: filtered table  
+ORDER BY p.firstName DESC               -- Input: filtered table, Output: sorted table
+LIMIT 5                                 -- Input: sorted table, Output: top 5 rows table
+RETURN                                  -- Input: top 5 rows table, 
+  p.firstName                              Output: (companyName, name) result table
+  || ' ' || p.lastName AS name,
+  companyName                        
 ```
 
 This linear composition ensures predictable execution and makes complex queries easier to understand step-by-step.
@@ -330,7 +331,7 @@ Start with basic relationship patterns:
 WHERE c.name = 'Microsoft'
 
 -- Find friends who are both young
-(p:Person)-[:knows]-(f:Person)  
+(p:Person)-[:knows]->(f:Person)  
 WHERE p.birthday > 19950101 AND f.birthday > 19950101
 ```
 
@@ -601,7 +602,31 @@ Understanding how `ORDER BY` works:
 
 > [!CAUTION]
 > The sort order established by `ORDER BY` is only visible to the *immediately* following statement.
-> Hence, `ORDER BY` followed by `RETURN *` does NOT produce a sorted result. 
+> Hence, `ORDER BY` followed by `RETURN *` does NOT produce an ordered result. 
+>
+> Compare:
+>
+> ```gql
+> MATCH (a:Person)-[r:knows]->(b:Person)
+> ORDER BY r.since DESC
+> /* intermediary result _IS_ guaranteed to be ordered here */
+> RETURN a.name AS aName, b.name AS bName, r.since AS since
+> /* final result _IS_ _NOT_ guaranteed to be ordered here  */
+> ```
+>
+> with:
+>
+> ```gql
+> MATCH (a:Person)-[r:knows]->(b:Person)
+> /* intermediary result _IS_ _NOT_ guaranteed to be ordered here */
+> RETURN a.name AS aName, b.name AS bName, r.since AS since
+> ORDER BY since DESC
+> /* final result _IS_ guaranteed to be ordered here              */
+> ```
+>
+> This has immediate consequences for "Top-k" queries:
+> `LIMIT` must always follow the `ORDER BY` statement that established
+> the intended sort order.
 
 #### `OFFSET` and `LIMIT` statements
 

@@ -35,14 +35,20 @@ RETURN fullName, m.firstName
 ```
 
 **Statement order:**  
-Statements must appear in the following order within a query:
-1. `MATCH` – Specify graph patterns to find.
-1. `LET` – Define variables from expressions.
-1. `FILTER` – Keep rows matching conditions.
-1. `ORDER BY` – Sort results.
-1. `OFFSET` – Skip many rows.
-1. `LIMIT` – Restrict the number of rows.
-1. `RETURN` – Output the final results.
+
+> [!IMPORTANT]
+> Graph in Microsoft Fabric does not yet support arbitrary statement composition.
+> See the article on [current limitations](limitations.md). 
+
+Statements generally can appear in any order within a query:
+
+- `MATCH` – Specify graph patterns to find.
+- `LET` – Define variables from expressions.
+- `FILTER` – Keep rows matching conditions.
+- `ORDER BY` – Sort results.
+- `OFFSET` – Skip many rows.
+- `LIMIT` – Restrict the number of rows.
+- `RETURN` – Output the final results.
 
 Each statement builds on the previous one, so you incrementally refine and shape the query output. For more information on each statement, see the following sections.
 
