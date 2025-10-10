@@ -119,9 +119,7 @@ Throughout this documentation, we use a social network example to illustrate GQL
 :::image type="content" source="./media/gql/schema-example.png" alt-text="Diagram showing the social network schema." lightbox="./media/gql/schema-example.png":::
 
 > [!NOTE] 
-> The social network is example is derived from 
-> the [LDBC SNB (LDBC Social Network Benchmark)](https://ldbcouncil.org/benchmarks/snb/) published by 
-> the [GDC (Graph Data Council)](https://ldbcouncil.org/).
+> The social network is example is derived from the [LDBC SNB (LDBC Social Network Benchmark)](https://ldbcouncil.org/benchmarks/snb/) published by the [GDC (Graph Data Council)](https://ldbcouncil.org/).
 > See the article ["The LDBC Social Network Benchmark"](https://arxiv.org/abs/2001.02299) for further details.
 
 ### The social network entities
