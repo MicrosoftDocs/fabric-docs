@@ -17,7 +17,7 @@ ms.custom:
 
 This article outlines how to use the copy activity in a pipeline to copy data from and to the Fabric Lakehouse. By default, data is written to Lakehouse Table in V-Order, and you can go to [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md#what-is-v-order) for more information.
 
-This connector supports Lakehouse in the workspace enabling a private link. For more information on configuration, see [Set up and use private links](../security/security-workspace-level-private-links-set-up.md).
+This connector supports Lakehouse in the workspace with a private link enabled. For more information on configuration, see [Set up and use private links](../security/security-workspace-level-private-links-set-up.md).
 
 To support workspace-level private link in the on-premises data gateway (version 3000.286.12 or above), you need to add `*.dfs.fabric.microsoft.com` to the allowlist to ensure Lakehouse connector can access Onelake APIs through the network.
 
