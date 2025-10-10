@@ -21,6 +21,9 @@ In this quickstart, you learn how to create a graph model in Microsoft Fabric.
 
 To get started with graph in Microsoft Fabric, you need the following prerequisites:
 
+- Graph is enabled in your Fabric tenant.
+
+  
 - A lakehouse in OneLake with data that you want to analyze. This quickstart uses Adventure Works data as an example. Your data and results might differ. If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md).
 
     > [!IMPORTANT]
