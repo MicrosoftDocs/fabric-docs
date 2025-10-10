@@ -110,7 +110,7 @@ The following items currently support Git integration:
 
 * Database items:
 
-  * [SQL database](../../database/sql/source-control.md) *(preview)*
+  * [SQL database](../../database/sql/source-control.md)
   * [Cosmos database](../../database/cosmos-db/overview.md) *(preview)*
 
 * Graph:
