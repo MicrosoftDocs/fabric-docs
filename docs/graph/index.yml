@@ -22,10 +22,10 @@ landingContent:
         links:
           - text: Graph in Microsoft Fabric Overview
             url: overview.md
-          - text: Graph in Microsoft Fabric Data Models
-            url: graph-data-models.md
           - text: What is a graph database?
             url: graph-relational-databases.md
+          - text: Labeled property graph
+            url: graph-data-models.md
 
   # Card: Get started
   - title: Get started with Microsoft Fabric
