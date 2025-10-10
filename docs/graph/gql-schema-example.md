@@ -1,8 +1,8 @@
 ---
 title: GQL Schema Example - Social Network
-description: Complete schema definition for the social network domain used throughout GQL documentation examples in graph for Microsoft Fabric.
+description: Complete schema definition for the social network domain used throughout GQL documentation examples for graph in Microsoft Fabric.
 ms.topic: reference
-ms.date: 10/09/2025
+ms.date: 10/10/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: splantikow
@@ -15,6 +15,12 @@ ms.subservice: graph
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 This article provides the complete technical specification for the social network graph type used throughout the GQL documentation. This schema demonstrates many common features of complex graphs and serves as the foundation for all query examples in the GQL language documentation.
+
+> [!NOTE] 
+> The social network is example is derived from 
+> the [LDBC SNB (LDBC Social Network Benchmark)](https://ldbcouncil.org/benchmarks/snb/) published by 
+> the [GDC (Graph Data Council)](https://ldbcouncil.org/).
+> See the article ["The LDBC Social Network Benchmark"](https://arxiv.org/abs/2001.02299) for further details.
 
 <!-- Image source in graphviz dot format
 //// CREATE GRAPH ldbc_snb {

@@ -33,16 +33,19 @@ A [**graph database**](graph-database.md) stores and queries data as a network o
 
 GQL:
 ```gql
-MATCH (p:Person)-[:FRIENDS_WITH]->(friend)-[:PURCHASED]->(o:Order)
+MATCH (p:Person)-[:friendsWith]->(friend)-[:purchased]->(o:Order)
 WHERE p.name = 'Alice';
 RETURN o
 ```
 SQL (equivalent):
 ```sql
-SELECT o.* FROM Users u
-JOIN Friendships f ON u.id = f.user_id
-JOIN Orders o ON f.friend_id = o.user_id
-WHERE u.name = 'Alice';
+SELECT o.*
+FROM Person AS p
+JOIN Friends_With AS fw ON p.id = fw.person_id
+JOIN Person AS friend ON fw.friend_id = friend.id
+JOIN Purchased AS pur ON friend.id = pur.person_id
+JOIN "Order" AS o ON pur.order_id = o.id
+WHERE p.name = 'Alice';
 ```
 
 > [!NOTE]
