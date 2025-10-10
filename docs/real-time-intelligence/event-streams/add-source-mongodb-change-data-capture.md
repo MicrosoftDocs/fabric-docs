@@ -62,12 +62,13 @@ On the **Select a data source** page, search for and select **Connect** on the *
 [!INCLUDE [mysql-database-cdc-connector](./includes/mongodb-change-data-capture-connector.md)]
 
 ## View updated eventstream
-1. You see the MongoDB (CDC) source added to your eventstream in **Edit mode**.
+You see the MongoDB (CDC) source added to your eventstream in **Edit mode**.
 
-    :::image type="content" source="media/add-source-mongodb-change-data-capture/edit-mode.png" alt-text="A screenshot of the added MongoDB CDC source in Edit mode with the Publish button highlighted." lightbox="media/add-source-mongodb-change-data-capture/edit-mode.png":::
-1. You see the eventstream in Live mode. Select **Edit** on the ribbon to get back to the Edit mode to update the eventstream.
+:::image type="content" source="media/add-source-mongodb-change-data-capture/edit-mode.png" alt-text="A screenshot of the added MongoDB CDC source in Edit mode with the Publish button highlighted." lightbox="media/add-source-mongodb-change-data-capture/edit-mode.png":::
 
-    :::image type="content" source="media/add-source-mongodb-change-data-capture/live-view.png" alt-text="A screenshot of the added MongoDB CDC source in Live mode." lightbox="media/add-source-mongodb-change-data-capture/live-view.png":::
+You see the eventstream in Live mode. Select **Edit** on the ribbon to get back to the Edit mode to update the eventstream.
+
+:::image type="content" source="media/add-source-mongodb-change-data-capture/live-view.png" alt-text="A screenshot of the added MongoDB CDC source in Live mode." lightbox="media/add-source-mongodb-change-data-capture/live-view.png":::
 
 ## Limitation
 * The MongoDB CDC source currently does not support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Attempting to export or import an Eventstream item with this source to a Git repository may result in errors.    
