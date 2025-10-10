@@ -137,21 +137,21 @@ The following properties are supported for Lakehouse under the **Destination** t
 
 The following properties are **required**:
 
-- **Connection**: Select a Lakehouse connection from the connection list. If no connection exists, then create a new Lakehouse connection by selecting **More** at the bottom of the connection list. If you apply **Use dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
+- **Connection**: Select a Lakehouse connection from the connection list. If no connection exists, then create a new Lakehouse connection. If you apply **Use dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
 
     :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
 
 - **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
 
   - If you select **Tables**:
-    - **Table name**: Choose an existing table from the table list or specify a table name as the destination. Or you can select **New** to create a new table. 
+    - **Table**: Choose an existing table from the table list or specify a table name as the destination. Or you can select **New** to create a new table. 
 
-      :::image type="content" source="./media/connector-lakehouse/table-name.png" alt-text="Screenshot showing table name.":::
+      :::image type="content" source="./media/connector-lakehouse/table-name-destination.png" alt-text="Screenshot showing table name.":::
 
 
-    - **Table**: When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the destination. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default schema.
+      When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the destination. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default schema.
 
-      :::image type="content" source="./media/connector-lakehouse/table-name-with-schema.png" alt-text="Screenshot showing table name with schema.":::  
+      :::image type="content" source="./media/connector-lakehouse/table-name-with-schema-destination.png" alt-text="Screenshot showing table name with schema.":::  
     
     > [!NOTE]
     > The table name must be at least one character long, without '/' or '\\', no trailing dot, and no leading or trailing spaces.
@@ -311,13 +311,10 @@ The following tables contain more information about a copy activity in Lakehouse
 |**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>itemId|
 |**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |No|rootFolder:<br>Tables or Files|
 |**Use query** |The way to read data from Lakehouse. Apply **Table** to read data from the specified table or apply **T-SQL Query** to read data using query.|• **Table** <br>• **T-SQL Query** |Yes |/|
-| *For **Table*** |  |  |  |  |
 |**Table** |The name of the table that you want to read data, or the name of the table with a schema that you want to read data when you apply Lakehouse with schemas as the connection. |\<your table name> |Yes when you select **Tables** in **Root folder** | table  |
 | **schema name** | Name of the schema. |< your schema name >  | No | schema |
 | **table name** | Name of the table. | < your table name > | No |table |
-| *For **T-SQL Query*** |  |  |  |  |
 | **T-SQL Query** | Use the custom query to read data. An example is `SELECT * FROM MyTable`. | < query > |No | sqlReaderQuery|
-|  |  |  |  |  |
 |**Timestamp** | The timestamp to query an older snapshot.| \<timestamp>|No |timestampAsOf |
 |**Version** |The version to query an older snapshot.| \<version>|No |versionAsOf|
 |**Query timeout (minutes)**|The timeout for query command execution, default is 120 minutes.|timespan |No |queryTimeout|
@@ -344,12 +341,9 @@ The following tables contain more information about a copy activity in Lakehouse
 |:---|:---|:---|:---|:---|
 |**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>itemId|
 |**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |Yes | rootFolder:<br>Table or Files|
-|**Table name** |The name of the table that you want to write data to. |\<your table name> |Yes when you select **Tables** in **Root folder** | table |
-|**Table** |The name of the table with a schema that you want to write data to when you apply Lakehouse with schemas as the connection. |\<your table with a schema> |Yes when you select **Tables** in **Root folder** | / |
-| *For **Table*** |  |  |  |  |
-|**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*) |No | *(under `sink` -> `datasetSettings` -> `typeProperties`)*<br>schema |
+|**Table** |The name of the table that you want to write data to. Or the name of the table with a schema that you want to write data to when you apply Lakehouse with schemas as the connection.  |\<your table name> |Yes when you select **Tables** in **Root folder** | table |
+|**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*) |No | schema |
 |**table name** |The name of the table. |\<your table name> |Yes | table |
-|  |  |  |  |  |
 |**Table action**| Append new values to an existing table, overwrite the existing data and schema in the table using the new values or insert new values to existing table and update existing values.|• **Append**<br>• **Overwrite**<br>• **Upsert**|No|tableActionOption:<br>• Append<br> • OverwriteSchema <br>• Upsert|
 |**Apply V-Order**| Apply V-Order via copy. Disabling it preserves the original parquet files without applying additional V-Order optimization. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).|Selected (default) or unselected|No|applyVOrder|
 |**Enable partitions**|This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".| Selected or unselected |No| partitionOption: <br> PartitionByKey or None|
