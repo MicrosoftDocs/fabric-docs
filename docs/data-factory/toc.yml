@@ -741,12 +741,6 @@
                 href: connector-web-overview.md
               - name: Set up your connection
                 href: connector-web.md
-          - name: Connector certification
-            items: 
-              - name: Data Factory connector certification
-                href: connector-certification.md
-              - name: Provide connector documentation
-                href: providing-user-documentation.md
       - name: Connect on-premises from the cloud
         items:
           - name: Access on-premises data
