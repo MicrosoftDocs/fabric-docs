@@ -11,7 +11,7 @@ ms.search.form: Connecting applications to GraphQL
 ms.date: 08/21/2025
 ---
 
-# Use service p with Fabric API for GraphQL
+# Use Service Principals with Fabric API for GraphQL
 
 Follow the steps in the [connect applications](connect-apps-api-graphql.md) section to provide access to user principals. You can also access the GraphQL API with a service principal:
 
