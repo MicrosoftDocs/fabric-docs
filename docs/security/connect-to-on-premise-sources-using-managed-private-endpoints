@@ -1,0 +1,123 @@
+---
+title: Connect on-premises data sources to Microsoft Fabric using managed private endpoints
+description: Learn how to securely connect on-premises or custom-hosted data sources to Microsoft Fabric using managed private endpoints and private link services.
+author: santhoshr
+ms.author: santhoshr
+ms.topic: how-to
+ms.custom: sfi-image-nochange, sfi-ropc-nochange
+ms.date: 10/07/2025
+---
+
+# Connect on-premises data sources to Microsoft Fabric using managed private endpoints
+
+With managed private endpoints, you can securely connect Microsoft Fabric workloads such as Spark or Data Pipelines to your **on-premises** or **custom-hosted data sources** through an approved private link setup.  
+This approach ensures that traffic flows through the Microsoft backbone network instead of the public internet — maintaining end-to-end data privacy and compliance.
+
+Common use cases include accessing:
+- SQL Server or Oracle databases hosted in on-premise environments.
+- Custom APIs or services hosted in virtual networks or self-managed data centers.
+- Secure corporate data stores without exposing public endpoints.
+
+---
+
+## Overview
+
+Fabric Managed Private Endpoints (MPEs) allow Fabric to establish **outbound** connections to approved data sources using **Private Link Services (PLS)**.  
+The setup involves three main steps:
+
+1. The on-premises administrator exposes the data source through a **Private Link Service (PLS)** or Azure Private Endpoint-enabled resource.
+2. A Fabric workspace admin creates a **Managed Private Endpoint (MPE)** referencing the fully qualified domain name (FQDN) or Azure resource ID.
+3. The on-premises network admin reviews and approves the connection request in Azure.
+
+Once approved, all Fabric workloads (like Spark, Notebooks, or Data Pipelines) can securely connect to the approved resource.
+
+---
+
+## Prerequisites
+
+Before you begin:
+
+- A Microsoft Fabric workspace with admin permissions.
+- The Azure subscription must have the **Microsoft.Network** resource provider registered.
+- The on-premises resource must be reachable via a Private Link Service endpoint or through a connected Azure Virtual Network.
+- Ensure DNS resolution for your data source FQDN is configured to route via the private endpoint.
+
+---
+
+## Step 1: Create a Private Link Service for your on-premises resource
+
+To expose your on-premises or custom-hosted data source (like SQL Server) to Fabric, you must first create a **Private Link Service (PLS)** in Azure.
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+2. In the search bar, enter **Private Link Service** and select **Create**.
+3. Specify:
+   - **Subscription** and **Resource group**
+   - **Region**
+   - **Name** of your private link service
+4. Under **Frontend IP configuration**, associate the load balancer that routes traffic to your on-premises or virtual machine.
+5. Define **Auto-approval subscription IDs** if you want to automatically approve connection requests from trusted Fabric tenants.
+
+> [!TIP]
+> If your data source is hosted on-premises, use Azure VPN Gateway or Azure ExpressRoute to connect your local network to Azure before configuring your PLS.
+
+---
+
+## Step 2: Add your on-premises FQDN in Microsoft Fabric
+
+Once your private link service is ready, you can configure Fabric to connect to your on-premises resource using a Fully Qualified Domain Name (FQDN).
+
+1. In your Fabric workspace, navigate to **Settings** → **Network security**.
+2. Under **Managed private endpoints**, select **Create**.
+3. In the creation dialog:
+   - Enter a **Name** for your endpoint.
+   - For **Connection Type**, choose **Custom FQDN**.
+   - Enter the **FQDN** that maps to your private link service endpoint (for example: `sqlserver.corp.contoso.com`).
+
+   :::image type="content" source="./media/security-managed-private-endpoints-onpremise/create-managed-private-endpoint-fqdn.png" alt-text="Screenshot showing the Create managed private endpoint dialog with FQDN entry.":::
+
+4. Select **Create**.
+
+Fabric will attempt to initiate a private connection request.  
+Your network administrator will see this pending request in the Azure portal under the associated **Private Link Service → Private endpoint connections** blade.
+
+---
+
+## Step 3: Approve the private endpoint connection request
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+2. Navigate to your **Private Link Service** resource.
+3. Select **Private endpoint connections** under the **Networking** section.
+4. Review the pending connection request from Microsoft Fabric.
+5. Choose **Approve** and provide an optional justification.
+
+   :::image type="content" source="./media/security-managed-private-endpoints-onpremise/private-endpoint-approval.png" alt-text="Screenshot showing approval of a private endpoint request in Azure portal.":::
+
+Once approved, the connection status in Fabric changes to **Approved**. You can now securely connect to your on-premises data source.
+
+---
+
+## Step 4: Access your on-premises SQL Server from Fabric notebooks
+
+After approval, your managed private endpoint becomes active and can be used from Spark notebooks or Data Pipelines.
+
+Example using PySpark to connect to an on-premises SQL Server:
+
+```pyspark
+serverName = "sqlserver.corp.contoso.com"
+database = "SalesDB"
+dbPort = 1433
+dbUserName = "<username>"
+dbPassword = "<password or Key Vault reference>"
+
+jdbcURL = f"jdbc:sqlserver://{serverName}:{dbPort};database={database}"
+connectionProps = {
+    "user": dbUserName,
+    "password": dbPassword,
+    "driver": "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+}
+
+df = spark.read.jdbc(url=jdbcURL, table="dbo.Customers", properties=connectionProps)
+display(df)
+
+# Write back to your Fabric Lakehouse
+df.write.mode("overwrite").format("delta").saveAsTable("Customers")
