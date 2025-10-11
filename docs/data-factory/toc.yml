@@ -884,6 +884,8 @@
             href: copy-activity-performance-and-scalability-guide.md
           - name: Monitor Copy activity
             href: monitor-copy-activity.md
+          - name: Data type mapping in Copy activity
+            href: data-type-mapping-copy-activity.md
           - name: Copy activity tutorials
             items: 
               - name: Copy from Azure Blob Storage to Lakehouse
@@ -908,8 +910,6 @@
                 href: tutorial-move-data-from-oracle-to-lakehouse-pipeline.md
               - name: Copy data across workspaces
                 href: tutorial-copy-data-across-workspaces.md
-          - name: Data type mapping in Copy activity
-            href: data-type-mapping-copy-activity.md
       - name: Mirroring
         items:
           - name: Mirroring overview
