@@ -1,8 +1,8 @@
 ---
-title: Limitations of Graph in Microsoft Fabric
+title: Current Limitations of Graph in Microsoft Fabric
 description: Understand the current limitations of Graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL (Graph Query Language) conformance.
 ms.topic: reference
-ms.date: 10/09/2025
+ms.date: 10/10/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam
@@ -10,11 +10,11 @@ ms.service: fabric
 ms.subservice: graph
 ---
 
-# Select limitations of Graph in Microsoft Fabric
+# Current Limitations of Graph in Microsoft Fabric
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-While Graph in Microsoft Fabric is in preview, the service has certain functional and performance limitations. The following highlights some key limitations but doesn't constitute an exhaustive list. You should check back regularly for updates.
+While graph in Microsoft Fabric is in preview, the service has certain functional and performance limitations. The following highlights some key limitations but doesn't constitute an exhaustive list. You should check back regularly for updates.
 
 ## Creating graph models
 
@@ -22,11 +22,11 @@ While Graph in Microsoft Fabric is in preview, the service has certain functiona
 
 Graph in Microsoft Fabric currently only exposes support for the following data types:
 
-- Boolean
-- Double
-- Integer
-- String
-- ZonedDateTime
+- Boolean (values are `true` and `false`)
+- Double (values are 64-bit floating point numbers)
+- Integer (values are 64-bit signed integers)
+- String (values are Unicode character strings)
+- Zoned DateTime (values are timestamps together with a timeshift for the time zone)
 
 ### Data sources
 
