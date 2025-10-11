@@ -908,8 +908,8 @@
                 href: tutorial-move-data-from-oracle-to-lakehouse-pipeline.md
               - name: Copy data across workspaces
                 href: tutorial-copy-data-across-workspaces.md
-              - name: Data type mapping
-                href: data-type-mapping-copy-activity.md
+          - name: Data type mapping in Copy activity
+            href: data-type-mapping-copy-activity.md
       - name: Mirroring
         items:
           - name: Mirroring overview
