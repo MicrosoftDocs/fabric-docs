@@ -908,12 +908,16 @@
                 href: tutorial-move-data-from-oracle-to-lakehouse-pipeline.md
               - name: Copy data across workspaces
                 href: tutorial-copy-data-across-workspaces.md
+              - name: Data type mapping
+                href: data-type-mapping-copy-activity.md
       - name: Mirroring
         items:
           - name: Mirroring overview
             href: /fabric/mirroring/overview?toc=/fabric/data-factory/toc.json
           - name: Mirroring documentation
             href: /fabric/mirroring/
+      - name: Data type mapping
+        href: data-type-mapping-data-movement.md
   - name: Transform data
     items: 
       - name: Data transformation pipeline activities
@@ -1098,8 +1102,6 @@
         href: create-alerts-for-pipeline-runs.md
       - name: Evaluate pipeline expressions
         href: evaluate-pipeline-expression.md
-      - name: Data type mapping
-        href: data-type-mapping.md
       - name: Pipeline sample templates
         href: templates.md
       - name: Monitor pipeline runs
