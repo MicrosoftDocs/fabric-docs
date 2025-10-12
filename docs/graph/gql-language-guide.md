@@ -277,12 +277,35 @@ Variables can be categorized in different ways:
 - **Singleton variables** - bind to individual element reference values from patterns
 - **Group variables** - bind to lists of element reference values from variable-length patterns (see [Advanced Aggregation Techniques](#advanced-aggregation-techniques)) 
 
-### Understanding query results
+## Execution outcomes and results
 
-When you run a query, you get back:
+When you run a query, you get back an *execution outcome* that consists of:
 
-- **A result table** with the data from your `RETURN` statement
-- **Status information** showing whether the query succeeded
+- **An (optional) result table** with the data from your `RETURN` statement.
+- **Status information** showing whether the query succeeded or not.
+
+### Result tables
+
+The result table - if present - is the actual result of query execution.
+
+A result table includes information about the name and type of its columns,
+a preferred column name sequence to be used for displaying results,
+whether the table is ordered, <!-- whether the table contains duplicate rows -->
+and the actual rows themselves.
+
+> [!NOTE]
+> In case of execution failure, no result table is included in the execution outcome.
+
+### Status information
+
+Various noteworthy conditions (such as errors or warnings) are detected during the execution of the query. 
+Each such condition is recorded by a status object in the status information of the execution outcome.
+
+The status information consists of a primary status object and a (possibly empty) list of additional status objects.
+The primary status object is always present and indicates whether query execution was successful or failed.
+
+Every status object includes a 5-digit status code (called GQLSTATUS) that identifies the recorded condition
+as well as a message that describes it.
 
 **Success status codes:**
 
@@ -290,12 +313,21 @@ When you run a query, you get back:
 |-----------|----------------------------------------------|------------------------------------------|
 | 00000     | note: successful completion                  | Success with at least one row            |
 | 00001     | note: successful completion - omitted result | Success with no table (currently unused) |
-| 02000     | note: no data                                | Success with an empty table              |
+| 02000     | note: no data                                | Success with zero rows                   |
 
-Other status codes indicate errors or warnings that prevented the query from completing successfully.
+Other status codes indicate further errors or warnings that were detected during query execution.
 
 > [!div class="nextstepaction"]
 > [View complete GQLSTATUS codes reference](gql-reference-status-codes.md)
+
+> [!IMPORTANT] 
+> In application code, always rely on status codes to test for certain conditions.
+> Status codes are guaranteed to be stable and their general meaning will not change in the future.
+> Do not test for the contents of messages, as the concrete message reported for a status code can change 
+> from query to query.
+
+Additionally, status objects can contain an underlying cause status object and a diagnostic record
+with further information characterizing the recorded condition.
 
 ## Essential concepts and statements
 
@@ -1072,7 +1104,7 @@ RETURN *
 
 ### GQLSTATUS codes
 
-As explained in the section on [query results](gql-language-guide.md#understanding-query-results),
+As explained in the section on [query results](gql-language-guide.md#execution-outcomes-and-results),
 GQL reports rich status information related to the success or potential failure of execution.
 See the [GQL status codes reference](gql-reference-status-codes.md) for the complete list.
 

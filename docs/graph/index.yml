@@ -12,7 +12,7 @@ metadata:
   author: eric-urban
   ms.author: eur
   ms.reviewer: wawng
-  ms.date: 10/09/2025
+  ms.date: 10/11/2025
 
 landingContent:
   # Card: About Graph in Microsoft Fabric
@@ -46,5 +46,7 @@ landingContent:
         links:
           - text: Graph Query Language (GQL) documentation
             url: /fabric/graph/gql-reference-abridged
+          - text: GQL Query API reference
+            url: gql-query-api.md
           - text: Microsoft Fabric REST API reference
             url: /rest/api/fabric/articles
