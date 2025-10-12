@@ -82,7 +82,7 @@ On the **Home** tab, you can easily find **Save** and **Publish**. They're activ
 
 > [!IMPORTANT]
 >
-> - If Private Link is enabled, the first Spark job in the workspace need to trigger VNet provisioning, which can take approximately 10–15 minutes. Since environment publishing also runs as a Spark job, it may experience an additional delay if it happens to be the first Spark job executed after Private Link is enabled.
+> - If Private Link is enabled, the first Spark job in the workspace needs to trigger VNet provisioning, which can take approximately 10–15 minutes. Since environment publishing also runs as a Spark job, it may experience an additional delay if it happens to be the first Spark job executed after Private Link is enabled.
 
 When pending changes are in the **Libraries** and **Spark compute** sections, you also see a banner that prompts you with **Save** and **Publish**. The functionalities are the same as for the buttons:
 
