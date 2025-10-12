@@ -1,8 +1,8 @@
 ---
 title: Connect on-premises data sources to Microsoft Fabric using managed private endpoints
 description: Learn how to securely connect on-premises or custom-hosted data sources to Microsoft Fabric using managed private endpoints and private link services.
-author: santhoshr
-ms.author: santhoshr
+author: saravi
+ms.author: saravi
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
 ms.date: 10/07/2025
@@ -62,20 +62,89 @@ To expose your on-premises or custom-hosted data source (like SQL Server) to Fab
 
 ---
 
-## Step 2: Add your on-premises FQDN in Microsoft Fabric
+## Step 2: Create a Managed Private Endpoint using the Fabric REST API
 
-Once your private link service is ready, you can configure Fabric to connect to your on-premises resource using a Fully Qualified Domain Name (FQDN).
+Once your private link service is ready, you can configure Fabric to connect to your on-premises resource using a Fully Qualified Domain Name (FQDN) by invoking the **Fabric REST API**.
 
-1. In your Fabric workspace, navigate to **Settings** → **Network security**.
-2. Under **Managed private endpoints**, select **Create**.
-3. In the creation dialog:
-   - Enter a **Name** for your endpoint.
-   - For **Connection Type**, choose **Custom FQDN**.
-   - Enter the **FQDN** that maps to your private link service endpoint (for example: `sqlserver.corp.contoso.com`).
+You can use any REST API client such as **Bruno**, **Insomnia**, or **Postman** to send the request.
 
-   :::image type="content" source="./media/security-managed-private-endpoints-onpremise/create-managed-private-endpoint-fqdn.png" alt-text="Screenshot showing the Create managed private endpoint dialog with FQDN entry.":::
+### Step 2.1: Get an authentication token
 
-4. Select **Create**.
+Before calling the Fabric REST API, obtain a **Bearer token** using your Azure Active Directory (Entra ID) credentials.
+
+You can do this using Azure CLI:
+
+```bash
+az login
+az account get-access-token --resource https://api.fabric.microsoft.com
+This command returns a JSON object containing the access token.
+Copy the value of "accessToken" to use as your Authorization header.
+
+Step 2.2: Construct the API request
+Use the following endpoint and payload to create a managed private endpoint:
+
+Request
+
+bash
+Copy code
+POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/network/privateEndpoints
+Headers
+
+Key	Value
+Authorization	Bearer <access_token>
+Content-Type	application/json
+
+Body
+
+json
+Copy code
+{
+  "name": "onprem-sql-endpoint",
+  "type": "CustomFQDN",
+  "fqdn": "sqlserver.corp.contoso.com",
+  "description": "Private connection to on-prem SQL via Azure Private Link Service"
+}
+You can test this call directly from Bruno, Postman, or Insomnia:
+
+Open your preferred REST API client.
+
+Create a new POST request.
+
+Paste the endpoint URL, replacing {workspaceId} with your Fabric workspace ID.
+
+Add the headers and JSON body shown above.
+
+Send the request.
+
+Step 2.3: Verify the connection request
+A successful API response returns the following JSON:
+
+json
+{
+  "id": "f2cbd8d1-23f1-4b9a-9db2-23ad1e7b5129",
+  "name": "onprem-sql-endpoint",
+  "type": "CustomFQDN",
+  "fqdn": "sqlserver.corp.contoso.com",
+  "provisioningState": "PendingApproval",
+  "createdBy": "user@contoso.com"
+}
+At this point, the private connection request has been sent to the target data source administrator (for example, the owner of your Private Link Service in Azure).
+Once they approve the connection, the provisioning state updates to Approved, and you can begin accessing your on-premises data securely from Fabric.
+
+Example: Using Bruno or Insomnia
+You can also create and test the endpoint directly in Bruno or Insomnia:
+
+Set the Request type to POST.
+
+Paste the Fabric REST API endpoint.
+
+In Auth, select Bearer Token, and paste the token retrieved earlier.
+
+In Body, paste the JSON payload.
+
+Click Send.
+
+The API will respond with the managed private endpoint details and connection status.
 
 Fabric will attempt to initiate a private connection request.  
 Your network administrator will see this pending request in the Azure portal under the associated **Private Link Service → Private endpoint connections** blade.
