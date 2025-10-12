@@ -1,5 +1,5 @@
 ---
-title: Graph in Microsoft Fabric Overview
+title: Graph Overview
 description: Learn about the core purpose, architecture, and benefits of graph in Microsoft Fabric, including integration and feature highlights.
 ms.topic: concept-article
 ms.date: 10/10/2025
