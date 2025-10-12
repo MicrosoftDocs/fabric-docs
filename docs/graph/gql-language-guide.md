@@ -290,7 +290,7 @@ The result table - if present - is the actual result of query execution.
 
 A result table includes information about the name and type of its columns,
 a preferred column name sequence to be used for displaying results,
-whether the table is ordered, <!-- whether the table contains duplicate rows -->,
+whether the table is ordered, <!-- whether the table contains duplicate rows -->
 and the actual rows themselves.
 
 > [!NOTE]
@@ -302,7 +302,7 @@ Various noteworthy conditions (such as errors or warnings) are detected during t
 Each such condition is recorded by a status object in the status information of the execution outcome.
 
 The status information consists of a primary status object and a (possibly empty) list of additional status objects.
-The primary status object is always present and indicates whether query execution was successfull or failed.
+The primary status object is always present and indicates whether query execution was successful or failed.
 
 Every status object includes a 5-digit status code (called GQLSTATUS) that identifies the recorded condition
 as well as a message that describes it.
@@ -323,11 +323,11 @@ Other status codes indicate further errors or warnings that were detected during
 > [!IMPORTANT] 
 > In application code, always rely on status codes to test for certain conditions.
 > Status codes are guaranteed to be stable and their general meaning will not change in the future.
-> Do not test for the contents of messages, as the cocnrete message reported for a status code can change 
+> Do not test for the contents of messages, as the concrete message reported for a status code can change 
 > from query to query.
 
 Additionally, status objects can contain an underlying cause status object and a diagnostic record
-with futher information characterizing the recorded condition.
+with further information characterizing the recorded condition.
 
 ## Essential concepts and statements
 
