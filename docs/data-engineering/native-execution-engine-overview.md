@@ -36,28 +36,11 @@ To use the full capabilities of the native execution engine during the preview p
 > [!IMPORTANT]
 > The native execution engine supports the latest GA runtime version, which is [Runtime 1.3 (Apache Spark 3.5, Delta Lake 3.2)](./runtime-1-3.md). With the release of the native execution engine in Runtime 1.3, support for the previous version—[Runtime 1.2 (Apache Spark 3.4, Delta Lake 2.4)](./runtime-1-2.md)—is discontinued. We encourage all customers to upgrade to the latest Runtime 1.3. If you're using the Native Execution Engine on Runtime 1.2, native acceleration will be disabled.
 
-### Create an environment
-
-1. In the Fabric portal, navigate to the desired workspace.
-
-1. Select **New item** and locate **Environment**.
-
-    :::image type="content" source="media\native\new-item-environment.png" alt-text="Screenshot showing how to create a new environment in the Fabric portal." lightbox="media\native\new-item-environment.png":::
-
-1. Name your environment and select **Create**.
-
-1. Once the environment is created, select the runtime version. Choose **Runtime 1.3 (Spark 3.5, Delta 3.2)** from the dropdown menu.
-
-    :::image type="content" source="media\native\select-runtime.png" alt-text="Screenshot showing how to select the runtime version for the environment." lightbox="media\native\select-runtime.png":::
-
-> [!IMPORTANT]
-> Ensure you change the Environment within notebooks and Spark job definitions to the newly created environment. If you don't change the environment, then the Workspace default is used.
-
 ### Enable at the environment level
 
 To ensure uniform performance enhancement, enable the native execution engine across all jobs and notebooks associated with your environment:
 
-1. Navigate to the workspace containing your environment and select the environment.
+1. Navigate to the workspace containing your environment and select the environment. If you don't have environment created, see [Create, configure, and use an environment in Fabric](./create-and-use-environment.md).
 
 1. Under **Spark compute** select **Acceleration**.
 
