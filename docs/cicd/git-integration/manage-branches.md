@@ -69,7 +69,7 @@ For a developer who works in the web, the flow would be as follows:
    :::image type="content" source="./media/manage-branches/branch-out-details.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
 
  >[!IMPORTANT]
- >When you branch out to an exisiting workspace some items may be deleted.
+ >When you branch out to an existing workspace some items may be deleted.
 
  For an existing workspace, you will see the screenshot below which warns that connecting to an existing workspace may result in some items being deleted.
    
