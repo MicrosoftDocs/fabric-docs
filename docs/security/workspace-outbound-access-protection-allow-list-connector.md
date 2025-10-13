@@ -38,10 +38,16 @@ In the **Data connection rules** settings, you can enable or block existing data
 
    :::image type="content" source="media/workspace-outbound-access-protection-data-factory/data-connection-rules.png" alt-text="Screenshot of data connection rules configuration listing allowed and blocked connection types.":::
 
-1. If there are existing cloud connection policies you want to enable, under **Cloud connection policies**, switch the toggle to **Blocked**. Then expand **All other connection kinds** and select the cloud connections you want to allow. 
+1. If there are existing cloud connection policies you want to enable, under **Cloud connection policies**, switch the toggle to **Blocked**. Then expand **All other connection kinds** and select the cloud connections you want to allow.
 
-1. If there are existing gateway connection policies you want to enable, under **Gateway connection policies** expand **Virtual network and On-premises data gateways**.
-   * To block all gateway connections, switch the toggle to **Blocked**.
+1. If you want to add a new cloud connection policy:
+   1. Select **Add newcloud connection rule**.
+   1. Select the type of connection to add.
+   1. connection details and select **Allow**.
+
+1. If there are existing gateway connection policies:
+   1. To turn off all gateway connections, switch the toggle to **Blocked**.
+   1. To selectively allow or block connections, under **Gateway connection policies** expand **Virtual network and On-premises data gateways**. Under **Add allowed gateway**, select the connection from the list, and select **Add**. Then turn the toggle on or off to allow or block the connection.
 
 ### [API](#tab/api-2)
 
