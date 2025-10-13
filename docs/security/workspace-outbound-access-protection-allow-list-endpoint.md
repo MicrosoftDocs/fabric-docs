@@ -22,6 +22,10 @@ You can use manage private endpoints for Data Engineering and OneLake workloads.
 
 This article describes how to create an allowlist using managed private endpoints to connect to another workspace.
 
+## Prerequisites
+
+Outbound access protection must be enabled for the workspace. See [Enable workspace outbound access protection](workspace-outbound-access-protection-set-up.md).
+
 ## Allow outbound access to an external source 
 
 You can connect the outbound access protected workspace to external data sources that support managed private endpoints.
@@ -29,6 +33,8 @@ You can connect the outbound access protected workspace to external data sources
 :::image type="content" source="media/workspace-outbound-access-protection-set-up/connect-workspace-data-source-diagram.png" alt-text="Diagram showing a connection from a workspace to a data source." lightbox="media/workspace-outbound-access-protection-set-up/connect-workspace-data-source-diagram.png" border="false":::
 
 To connect to external sources that support managed private endpoints:
+
+1. Sign in to Fabric as a workspace admin.
 
 1. Create a managed private endpoint from the source workspace by going to **Workspace settings** > **Network Security** > **Managed Private Endpoints** > **Create**.
 

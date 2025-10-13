@@ -17,23 +17,31 @@ In Microsoft Fabric, [workspace outbound access protection](./workspace-outbound
 
 This article describes how to use data connection rules to allow cloud or gateway connections once you have [enabled outbound access protection](workspace-outbound-access-protection-set-up.md) for your workspace.
 
+## Prerequisites
+
+Outbound access protection must be enabled for the workspace. See [Enable workspace outbound access protection](workspace-outbound-access-protection-set-up.md).
+
+
 ## Allow data connection rules
 
 When outbound access protection is enabled, connectors are blocked by default. You can add policies that allow or block data connections with external sources by using the Fabric portal or REST API.
 
 ### [Fabric portal](#tab/fabric-portal-2)
 
-1. Sign in to the Fabric as a workspace admin.
+In the **Data connection rules** settings, you can enable or block existing data connections or gateways, for example, those that have been created in the Manage connections and gateways experience for [Data Factory](/fabric/data-factory/data-source-management) or [Power BI](/power-bi/connect-data/service-gateway-data-sources). You can also add new cloud connection rules.
 
-1. Go to **Workspace** > **Workspace settings** > **Network security**.
+1. Sign in to Fabric as a workspace admin.
+
+1. Go to **Workspace** > **Workspace settings** > **Outbound networking**.
 
 1. Scroll to the **Data connection rules (preview)** section.
 
    :::image type="content" source="media/workspace-outbound-access-protection-data-factory/data-connection-rules.png" alt-text="Screenshot of data connection rules configuration listing allowed and blocked connection types.":::
 
-1. Add the data connection rules to allow/block different types of sources that the workspace can connect to.
+1. If there are existing cloud connection policies you want to enable, under **Cloud connection policies**, switch the toggle to **Blocked**. Then expand **All other connection kinds** and select the cloud connections you want to allow. 
 
-1. You can also use the **Gateway connection policies** settings to allow or block specific gateways.
+1. If there are existing gateway connection policies you want to enable, under **Gateway connection policies** expand **Virtual network and On-premises data gateways**.
+   * To block all gateway connections, switch the toggle to **Blocked**.
 
 ### [API](#tab/api-2)
 
