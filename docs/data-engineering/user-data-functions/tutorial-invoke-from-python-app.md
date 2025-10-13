@@ -47,7 +47,7 @@ The following steps explain how to configure support for a ReactJS application i
 1. Create a new folder for your Python app, for example **my-data-app**. Open the folder in Visual Studio Code.
 
 1. Set up the Python virtual environment in Visual Studio Code. To create local environments in Visual Studio Code, open the **Command palette** with **Ctrl+Shift+P**, then search for and select the Python: Create Environment command.
-   - The command presents a list of environment types and selects **Venv**.
+   - The command presents a list of environment types and selects **venv**.
    - Select the Python interpreter version **Python 3.11**.
 
 1. Run the following command to activate the virtual environment in the Visual Studio Code terminal.

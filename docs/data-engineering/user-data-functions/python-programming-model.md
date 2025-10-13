@@ -256,7 +256,7 @@ You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.m
 > You can also use these steps to connect to an Azure Cosmos DB database using the account URL and database names. The User Data Functions owner account would need access permissions to that Azure Cosmos DB account.
 
 ### Connect to Azure Key Vault using a generic connection
-Generic connections support connecting to a Azure Key Vault by using the `KeyVault` audience type. This type of connection requires that the Fabric User Data Functions owner has permissions to connect to the Azure Key Vault. You can use this connection to retrieve keys, secrets, or certificates by name.
+Generic connections support connecting to an Azure Key Vault by using the `KeyVault` audience type. This type of connection requires that the Fabric User Data Functions owner has permissions to connect to the Azure Key Vault. You can use this connection to retrieve keys, secrets, or certificates by name.
 
 You can connect to [Azure Key Vault](https://learn.microsoft.com/azure/key-vault/general/basic-concepts) to retrieve a client secret to call an API using a generic connection by following these steps:
 
