@@ -190,3 +190,77 @@ display(df)
 
 # Write back to your Fabric Lakehouse
 df.write.mode("overwrite").format("delta").saveAsTable("Customers")
+
+---
+
+## Step 5: Validate and troubleshoot your private connection
+
+Once the connection is approved, it’s important to confirm that Fabric traffic flows privately and that no public endpoint is used.
+
+### Verify the endpoint status in Fabric
+
+1. In your Fabric workspace, navigate to **Settings → Network security**.  
+2. Under **Managed private endpoints**, verify that the connection **Status** shows **Approved**.  
+3. Select the endpoint name to view details such as:
+   - **FQDN**
+   - **Connection state**
+   - **Approval date**
+   - **Private link resource ID**
+
+If the status shows **Pending** or **Failed**, check that:
+- The Azure administrator has approved the request in the linked Private Link Service.  
+- DNS resolution for the FQDN points to the private endpoint IP address.  
+- The private link and Fabric region are within the same Azure geography.
+
+### Validate DNS routing
+
+Run the following command from a Fabric Notebook or a connected VM within the same virtual network:
+
+```bash
+nslookup sqlserver.corp.contoso.com
+Confirm that the IP address returned is a 10.x.x.x or 172.x.x.x private IP, not a public IP.
+This confirms that Fabric is resolving the FQDN through the private link route.
+
+[!TIP]
+If the DNS still resolves to a public IP, update your private DNS zone in Azure to include an A record for the FQDN that maps to the private endpoint.
+
+### Common issues and resolutions
+
+| **Issue** | **Possible cause** | **Resolution** |
+|------------|--------------------|----------------|
+| `ProvisioningState = Failed` | The on-premises administrator rejected or deleted the Private Link Service (PLS). | Re-create the Managed Private Endpoint (MPE) and verify that the PLS still exists and is reachable. |
+| DNS resolves to a public IP address | The DNS zone isn't linked to the Fabric private DNS zone. | Add or link a private DNS zone to your workspace virtual network and create an **A record** for the FQDN pointing to the private IP. |
+| Connection timeout from Spark or Data Pipelines | Network ACLs or firewalls are blocking the Fabric subnet. | Open required ports (for example, **1433** for SQL Server, **1521** for Oracle) and ensure outbound access to the Private Link endpoint is allowed. |
+| Approval request not visible in Azure | The Private Link Service owner didn’t enable **“auto-approval”** or the Fabric tenant ID isn’t listed. | Ask the network admin to review pending connections under **Private Link Service → Private endpoint connections** in the Azure portal. |
+| Endpoint deleted unexpectedly | The Fabric workspace or capacity was reassigned, or permissions changed. | Recreate the MPE and verify Fabric workspace ownership and network settings. |
+| Data connection still failing after approval | DNS or routing mismatch between Azure and on-premises network. | Validate routing tables and use `nslookup` or `Test-NetConnection` to confirm the private IP path. |
+
+
+To maintain secure and compliant access:
+
+Use Azure Key Vault for storing credentials and connection secrets instead of hardcoding passwords.
+
+Limit network exposure by approving only required endpoints in the Private Link Service.
+
+Monitor Fabric audit logs for endpoint creation, approval, or deletion activities.
+
+Enable Customer-Managed Keys (CMK) for encryption-at-rest when connecting from Spark workloads.
+
+Restrict outbound access using Fabric’s Outbound Access Protection (OAP) to ensure workloads can reach only approved private endpoints.
+
+Rotate credentials and review endpoint approvals periodically.
+
+[!NOTE]
+When a managed private endpoint is deleted in Fabric, the connection entry remains visible in Azure until manually cleaned up by the network administrator.
+
+---
+
+## Learn more
+
+- [Managed private endpoints in Microsoft Fabric](https://learn.microsoft.com/fabric/security/managed-private-endpoints-overview)  
+- [Create a Private Link Service in Azure](https://learn.microsoft.com/azure/private-link/private-link-service-overview)  
+- [Azure Private Endpoint DNS configuration](https://learn.microsoft.com/azure/private-link/private-endpoint-dns)  
+- [Outbound Access Protection (OAP) for Fabric Data Engineering](https://learn.microsoft.com/fabric/security/outbound-access-protection-overview)  
+- [Use Azure Key Vault with Fabric Spark notebooks](https://learn.microsoft.com/fabric/data-engineering/use-key-vault-secrets)  
+- [Customer-Managed Keys (CMK) for Fabric Data Engineering](https://learn.microsoft.com/fabric/security/customer-managed-keys-overview)
+
