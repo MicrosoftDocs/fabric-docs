@@ -60,7 +60,7 @@ To perform processing operations on your data streams by using a no-code editor,
 1. If your test result looks correct, select **Publish** to save the event processing logic and return to **Live** view.
 
    :::image type="content" source="./media/process-events-using-event-processor-editor/publish.png" alt-text="Screenshot that shows the Publish button on the ribbon." lightbox="./media/process-events-using-event-processor-editor/publish.png":::
-1. After you complete these steps, you can visualize how your eventstream starts streaming and processing data in **Live** view.
+1. After you complete the preceding steps, you can visualize how your eventstream starts streaming and processing data in **Live** view.
 
    :::image type="content" source="./media/process-events-using-event-processor-editor/live-view.png" alt-text="Screenshot that shows the Live view." lightbox="./media/process-events-using-event-processor-editor/live-view.png":::
 
@@ -164,7 +164,7 @@ The event processor in a lakehouse and a KQL database allows you to process your
 
 ## Transform data by using the editor
 
-You can use the event processing editor to transform the data that you're ingesting into a lakehouse destination. When you configure your lakehouse destination, you find the **Open event processor** option in the middle of the pane for configuring a **Lakehouse** destination.
+You can use the event processing editor to transform the data that you're ingesting into a lakehouse destination. When you configure your lakehouse destination, you find the **Open event processor** button on the pane for configuring a **Lakehouse** destination.
 
 :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-entrypoint.png" alt-text="Screenshot that shows the button for opening the event processor on the pane for configuring a lakehouse destination." lightbox="./media/event-processor-editor/event-processor-editor-entrypoint.png" :::
 
@@ -190,7 +190,7 @@ The pane's layout is like the main editor. It consists of three sections numbere
 
 Authoring errors are errors that occur in the event processing editor due to incomplete or incorrect configuration of the operation nodes. They help you find and fix potential problems.
 
-You can view authoring errors on the lower pane of the event processing editor. Each authoring error has four columns:
+Each authoring error has four columns:
 
 - **Node ID**: Indicates the ID of the operation node where the authoring error occurred.
 - **Node type**: Indicates the type of the operation node where the authoring error occurred.
@@ -236,7 +236,7 @@ If you select this operator type, enter the following information:
 
 - **Operator name**: Specify the name of the aggregation operation.
 - **Add aggregate function**: Add one or more aggregations in the aggregate operation.
-- **Type**: Select an aggregation type: **Sum**, **Minimum**, **Maximum**, or **Average**.
+- **Type**: Select an aggregation type. The choices are **Sum**, **Minimum**, **Maximum**, and **Average**.
 - **Field**: Select the column to process.
 - **Name**: Define a name for this aggregation function.
 - **Partition by**: Select a column to group the aggregation.
@@ -283,7 +283,7 @@ You can also add a new field by using the built-in functions to aggregate the da
 
 :::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field-build-in-functions.png" alt-text="Screenshot that shows the Manage field operator's built-in functions." :::
 
-The following table shows the results of changing the data type by using **Manage fields**. The columns represent original data types, and the rows represent target data types.
+The following table shows the results of changing the data type by using **Manage fields**. The columns represent original data types, and the rows represent target data types. In the table:
 
 - ✔️ Means that the data type can be converted directly. The option for the target data type appears in the dropdown list.
 - ❌ Means that the data type can't be converted. The option for the target data type doesn't appear in the dropdown list.

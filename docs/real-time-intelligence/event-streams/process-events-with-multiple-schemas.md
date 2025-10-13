@@ -12,7 +12,7 @@ ms.search.form: Enhancing events processing with multiple schema inferencing
 
 # Enhance event processing by using multiple schema inferencing (preview)
 
-The feature of multiple schema inferencing in Microsoft Fabric eventstreams supports inferring multiple schemas from various sources and the eventstream itself. You can use the feature to design various data transformation paths by picking up one of the inferred schemas with rich flexibility. This ability allows for seamless data integration and processing that caters to environments with complex and multiple data shapes. It addresses the challenges previously encountered with single-schema inferencing.
+The feature of multiple schema inferencing in Microsoft Fabric eventstreams supports inferring multiple schemas from various sources and the eventstream itself. You can use the feature to design various data transformation paths by picking up one of the inferred schemas with rich flexibility. This ability allows for seamless data integration and processing that caters to environments with complex and multiple data shapes. It addresses the challenges that users previously encountered with single-schema inferencing.
 
 This feature is useful for the following scenarios:
 
@@ -20,15 +20,15 @@ This feature is useful for the following scenarios:
 - **Use various inferred schemas for diverse transformation paths**: When you're configuring the first operator node after the middle default stream, it's necessary to select one of the inferred schemas. This selection allows the transformation path to be designed with event columns from the chosen schema.
 
   Different transformation paths can use different schemas for data transformation within a single eventstream. This ability increases flexibility in data transformation.
-- **Get a well-organized data preview and test results**: Multiple schema inferencing allows for a well-organized display of previewed data and test results. Previously, data with multiple schemas appeared with mixed columns during data previewing or test results, leading to confusion. Now, you can select an inferred schema to filter the previewed or tested data. Only the data that matches the selected schema appears on the tab for data preview or test results.
+- **Get a well-organized data preview and test result**: Multiple schema inferencing allows for a well-organized display of previewed data and test results. Previously, data with multiple schemas appeared with mixed columns during data previewing or test results. This kind of display led to confusion. Now, you can select an inferred schema to filter the previewed or tested data. Only the data that matches the selected schema appears on the tab for data preview or test results.
 - **Eliminate the authoring errors on transformation paths when you reenter Edit mode**: This feature preserves the schema applied in transformation paths (for example, operators) after the eventstream is published. This capability eliminates authoring errors that previously appeared on transformation paths in single-schema inferencing eventstreams, when no matching schema was present in **Edit** mode.
 
-  You can now continue adjusting operator configurations in transformation paths and publish the eventstream, even if the newly inferred schema doesn't align with the one used in operator configurations or if no schema is inferred upon reentry into **Edit** mode.
+  You can now continue adjusting operator configurations in transformation paths and publish the eventstream even if the newly inferred schema doesn't align with the one used in operator configurations, or if no schema is inferred upon reentry into **Edit** mode.
 - **Map each schema to a source**: When you're inferring multiple schemas, an eventstream helps map each schema to a source. If the eventstream can't identify the source of data with the inferred schema, you're prompted to manually map the schema to an appropriate source. This mapping ensures that each schema has an associated source for transformation design. It provides visibility into where the schema originates.
 
 ## How it works
 
-Schemas are inferred based on the data previewed from both sources and the eventstream within a time range. If there's no data in the source or eventstream, or the source doesn't support a data preview, no schema is inferred. If the previewed data changes (for example, new fields added or the data type changes), a new schema is inferred.
+Schemas are inferred based on the data previewed from both sources and the eventstream within a time range. If there's no data in the source or eventstream, or the source doesn't support a data preview, no schema is inferred. If the previewed data changes (for example, new fields are added or the data type changes), a new schema is inferred.
 
 If operators are configured in your eventstream, the schema that you used for operator configurations is retained when you publish the eventstream. When you reenter **Edit** mode, this retained schema remains applied to the operators. This approach addresses authoring errors that arise when the inferred schema differs from the one used in operator configurations, or if no schema is inferred.
 
@@ -54,7 +54,7 @@ If your eventstream's source supports data preview or your eventstream contains 
 
 :::image type="content" source="./media/process-events-with-multiple-schemas/inferred-schema.png" alt-text="Screenshot that shows automatically inferred schemas." lightbox="./media/process-events-with-multiple-schemas/inferred-schema.png":::
 
-Select the schema name to view all columns (that is, fields) in the schema. If any fields are incorrectly inferred, you can correct them. For example, you can correct column (field) names, correct data types, or add and remove columns. Select **Apply** to save changes.
+Select the schema name to view all columns (that is, fields) in the schema. If any fields are incorrectly inferred, you can correct them. For example, you can correct field names, correct data types, or add and remove fields. Select **Update** to save changes.
 
 :::image type="content" source="./media/process-events-with-multiple-schemas/edit-schema.png" alt-text="Screenshot that shows selections for editing an inferred schema." lightbox="./media/process-events-with-multiple-schemas/edit-schema.png":::
 
@@ -77,7 +77,7 @@ An eventhouse destination doesn't receive any data in this case.
 
 :::image type="content" source="./media/process-events-with-multiple-schemas/event-house-result.png" alt-text="Screenshot that shows the result of dispatching a schema for an eventhouse." lightbox="./media/process-events-with-multiple-schemas/event-house-result.png":::
 
-Each transformation path in an eventstream can use a different schema. In the first operator of each path after the default stream, you can select the schema that best matches the expected data transformation requirement for that path.
+Each transformation path in an eventstream can use a different schema. In the first operator of each path after the default stream, you can select the schema that best matches that path's expected requirement for data transformation.
 
 If a transformation path doesn't include any operators, you can select the input schema directly in the destination configuration. The input schema doesn't act as a filter. It acts as a schema input for back-end query generation.
 
@@ -89,7 +89,7 @@ After you add a preview-supported source or after data begins flowing into a pub
 
 You can select an inferred schema in **Edit** mode to view the test result if the source supports data preview, or if it doesn't but the eventstream is published and data flows into the default stream.
 
-:::image type="content" source="./media/process-events-with-multiple-schemas/test-result.png" alt-text="Screenshot that shows test results in Edit mode." lightbox="./media/process-events-with-multiple-schemas/test-result.png":::
+:::image type="content" source="./media/process-events-with-multiple-schemas/test-result.png" alt-text="Screenshot that shows a test result in Edit mode." lightbox="./media/process-events-with-multiple-schemas/test-result.png":::
 
 To view the schema details that are used in the nodes (operators or destination) in the transformation path, select the operator or destination node, and then select **View schema**.
 
@@ -98,7 +98,7 @@ To view the schema details that are used in the nodes (operators or destination)
 You can also select an inferred schema to filter the previewed data in **Live** view. This filtering can ensure that only the data that matches the selected schema appears on the **Data preview** tab.
 
 > [!NOTE]
-> The schema in **Live** view is used to organize the previewed data. These schemas are inferred from the previewed live data from the supported sources and the eventstream. If no data is being previewed, no schema is shown. If there's data with a new schema, the schema displayed in **Live** view differs from the schema previously shown in **Edit** view.
+> You use the schema in **Live** view to organize the previewed data. These schemas are inferred from the previewed live data from the supported sources and the eventstream. If you're not previewing any data, no schema appears. If there's data with a new schema, the schema displayed in **Live** view differs from the schema previously shown in **Edit** view.
 
 :::image type="content" source="./media/process-events-with-multiple-schemas/data-preview-in-live-view.png" alt-text="Screenshot that shows a preview in Live view." lightbox="./media/process-events-with-multiple-schemas/data-preview-in-live-view.png":::
 
@@ -126,9 +126,9 @@ You can also map the schema during its first use in the transformation path. Whe
 
 ## FAQ
 
-### Why is no schema inferred after I add a source and refresh test results?
+### Why is no schema inferred after I add a source and refresh the test result?
 
-When you're creating a new eventstream and adding a source that doesn't support data preview, no schema is inferred immediately, even after you refresh the test results.
+When you're creating a new eventstream and adding a source that doesn't support data preview, no schema is inferred immediately, even after you refresh the test result.
 
 For example, assume that you're using Azure Service Bus as the custom endpoint source. To generate inferred schemas in this case, you need to publish the eventstream first and wait for data to arrive in your eventstream. After data starts flowing into your eventstream, switch back to **Edit** mode to view the inferred schemas. These actions are necessary because the schemas are inferred based on the data previewed from both the source and the eventstream.
 
@@ -150,7 +150,7 @@ You can review and use the new schema in **Edit** mode. Or you can use the new s
 
 ### What are the consequences of publishing an eventstream if a schema isn't mapped to any source?
 
-The schema won't be retained in the eventstream because it's a temporary schema, and no operator or destination configurations use it.
+The schema isn't retained in the eventstream because it's a temporary schema, and no operator or destination configurations use it.
 
 ### What happens if I delete an existing source that has a mapped schema?
 

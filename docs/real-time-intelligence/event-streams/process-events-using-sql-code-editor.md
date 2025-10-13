@@ -43,11 +43,11 @@ To perform stream processing operations on your data streams by using a SQL oper
 
       :::image type="content" source="./media/process-events-using-sql-code-editor/operation-name-edit-query.png" alt-text="Screenshot that shows the box for entering an operation name and the button for editing a query on the SQL Code pane." lightbox="./media/process-events-using-sql-code-editor/operation-name-edit-query.png":::
 
-1. The full-screen code editor mode features an input/output explorer pane on the left side. The code editor section is adjustable, so you can resize it according to your preferences. The preview section at the bottom enables you to view both your input data and your query's test results.
+1. The full-screen code editor mode features an input/output explorer pane on the left side. The code editor section is adjustable, so you can resize it according to your preferences. The preview section at the bottom enables you to view both your input data and your query's test result.
 
       :::image type="content" source="./media/process-events-using-sql-code-editor/sql-full-editor.png" alt-text="Screenshot that shows the SQL full editor." lightbox="./media/process-events-using-sql-code-editor/sql-full-editor.png":::
 
-1. Select the text in the **Outputs** section, and then enter a name for the destination node. The SQL operator supports all real-time intelligence destinations, including an eventhouse, lakehouse, activator, or stream.
+1. Select the text in the **Outputs** section, and then enter a name for the destination node. The SQL operator supports all Real-Time Intelligence destinations, including an eventhouse, lakehouse, activator, or stream.
 
     :::image type="content" source="./media/process-events-using-sql-code-editor/select-destination.png" alt-text="Screenshot that shows the Outputs area with the plus button selected." lightbox="./media/process-events-using-sql-code-editor/select-destination.png":::
 
@@ -111,9 +111,9 @@ To perform stream processing operations on your data streams by using a SQL oper
         SensorInput 
     ````
 
-1. On the ribbon, use the **Test query** to validate the transformation logic. Test query results appear on the **Test result** tab.
+1. On the ribbon, use the **Test query** command to validate the transformation logic. Test query results appear on the **Test result** tab.
 
-    :::image type="content" source="./media/process-events-using-sql-code-editor/test-results.png" alt-text="Screenshot that shows test results." lightbox="./media/process-events-using-sql-code-editor/test-results.png":::
+    :::image type="content" source="./media/process-events-using-sql-code-editor/test-results.png" alt-text="Screenshot that shows a test result." lightbox="./media/process-events-using-sql-code-editor/test-results.png":::
 
 1. When you finish testing, select **Save** on the ribbon  to get back to the eventstream canvas.  
 
@@ -131,7 +131,7 @@ To perform stream processing operations on your data streams by using a SQL oper
 
 - The SQL operator is designed to centralize all your transformation logic. As a result, you can't use it alongside other built-in operators within the same processing path. Chaining multiple SQL operators in a single path is also not supported. Additionally, the SQL operator can send output data to only the destination node in the topology.
 
-- Currently, authoring eventstream topologies is supported only through the user interface (UX). REST API support for the SQL operator isn't available yet.
+- Currently, authoring eventstream topologies is supported only through the user interface. REST API support for the SQL operator isn't available yet.
 
 ## Related content
 
