@@ -91,7 +91,7 @@ The following screenshot shows you how to get the application/client ID and obje
 
 * Select *Provider type* as **Open ID Connect**
 
-* Provider URL: `https://sts.windows.net/<your-tenant-id>`
+* Provider URL: `https://sts.windows.net/<your-tenant-id>/` 
 
 * Audience: `https://analysis.windows.net/powerbi/connector/AmazonS3`
 
