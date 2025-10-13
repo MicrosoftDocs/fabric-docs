@@ -12,7 +12,7 @@ ms.date: 09/22/2025
 
 ---
 
-# Set up and use workspace-level private links (preview)
+# Set up and use workspace-level private links
 
 Private links improve security by routing traffic through Azure Private Link and private endpoints, ensuring data stays on Microsoft’s private network rather than the public internet. Microsoft Fabric offers private links at two scopes: tenant-level and workspace-level. [Tenant-level private links](./security-private-links-overview.md) secure all workspaces within a tenant, while [workspace-level private links](./security-workspace-level-private-links-overview.md) allow you to manage network access for specific workspaces individually. 
 

@@ -102,7 +102,7 @@ If both the workspace and Git branch have content, you have to decide which dire
 - If you commit your workspace to the Git branch, all supported workspace content is exported to Git and overwrites the current Git content.
 - If you update the workspace with the Git content, the workspace content is overwritten, and you lose your workspace content. Since a Git branch can always be restored to a previous stage while a workspace can’t, if you choose this option, you're asked to confirm.
 
-:::image type="content" source="./media/git-integration-process/git-sync-direction.png" alt-text="Screenshot of dialog asking which direction to sync if both Git and the workspace have content.":::
+:::image type="content" source="./media/git-integration-process/git-sync-direction-2.png" alt-text="Screenshot of dialog asking which direction to sync if both Git and the workspace have content.":::
 
 If you don’t select which content to sync, you can’t continue to work.
 

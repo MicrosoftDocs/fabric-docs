@@ -60,3 +60,4 @@ Before you begin:
 
 - [Fabric CLI](https://microsoft.github.io/fabric-cli/)
 - [Options to create a SQL database in the Fabric portal](create-options.md)
+- [Quickstart: Connect to a SQL database in Fabric with the Microsoft Python Driver for SQL Server](connect-python.md)

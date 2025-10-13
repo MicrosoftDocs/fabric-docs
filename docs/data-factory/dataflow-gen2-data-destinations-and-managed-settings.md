@@ -187,7 +187,7 @@ When working with data types such as currency or percentage, we typically conver
 
 ### Using staging before loading to a destination
 
-To improve performance of query processing, staging can be used within Dataflows Gen2 to use Fabric compute to execute your queries.
+To improve performance of query processing, staging can be used within Dataflow Gen2 to use Fabric compute to execute your queries.
 
 When staging gets enabled on your queries (the default behavior), your data gets loaded into the staging location, which is an internal Lakehouse only accessible by dataflows itself.
 
@@ -212,6 +212,9 @@ If you already have a warehouse as a destination and try to disable staging, a w
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-staging.png" alt-text="Screenshot of the Enable staging warning.":::
 
 ### Schema support for Lakehouse, Warehouse and SQL databases (preview)
+
+> [!NOTE]
+>This feature is currently being rolled out and availability may vary by region. You might not see it yet depending on your location.
 
 Lakehouse, Warehouse, and SQL databases in Microsoft Fabric all support the ability to create a schema for your data. This means you can structure your data in a way that makes it easier to manage and query. In order to be able to write to schemas in these destinations you need to enable the **Navigate using full hierarchy** option under **advanced options** when you set up your connection. If you don't enable this option, you won't be able to select or view the schemas in the destination. A preview limitation for enabling Navigate using full hierarchy is that fast copy may not work properly.
 
@@ -240,15 +243,11 @@ To vacuum your Delta tables in Lakehouse, follow these steps:
 
 * **Retention period**: Set a retention interval of at least seven days to make sure that old snapshots and uncommitted files aren't prematurely removed, which could disrupt concurrent table readers and writers.
 * **Regular maintenance**: Schedule regular vacuuming as part of your data maintenance routine to keep your Delta tables optimized and ready for analytics.
-* **Incremental refreshes**: If you're using incremental refreshes, ensure that vacuuming is turned off as it can interfere with the incremental refresh process. 
+* **Incremental refreshes**: If you're using incremental refreshes, ensure that vacuuming is turned off as it can interfere with the incremental refresh process.
 
 By incorporating vacuuming into your data maintenance strategy, you can make sure that your Lakehouse destination remains efficient, cost-effective, and reliable for your dataflow operations.
 
 For more detailed information on table maintenance in Lakehouse, refer to the [Delta table maintenance documentation](/fabric/data-engineering/lakehouse-table-maintenance).
-
-### Lakehouse MDSync
-
-When using Lakehouse as a data destination, we automatically perform a metadata sync operation when finished writing data to the Lakehouse. This operation ensures that the metadata of the Delta table is up-to-date and reflects the latest changes made during the dataflow refresh. This sync operation is crucial for maintaining the integrity and consistency of the data in the Lakehouse, especially when multiple dataflows or processes are writing and reading from the same Delta table. This operation is performed in the background and is typically quick, allowing for seamless data updates without significant delays. The metadata sync operation is part of the overall dataflow refresh process.
 
 ### Nullable
 

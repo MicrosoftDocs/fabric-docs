@@ -7,7 +7,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
-ms.date: 08/26/2025
+ms.date: 09/29/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ai.usage: ai-assisted
@@ -392,7 +392,7 @@ display(
 
 ## Get information from arbitrary web APIs
 
-Use any web service in your big data pipeline with HTTP on Spark. The following code sample uses the [World Bank API](http://api.worldbank.org/v2/country/) to get information about different countries and regions around the world.
+Use any web service in your big pipeline with HTTP on Spark. The following code sample uses the [World Bank API](http://api.worldbank.org/v2/country/) to get information about different countries and regions around the world.
 
 ```python
 # Use any request from the Python requests library.

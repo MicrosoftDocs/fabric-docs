@@ -7,7 +7,7 @@ author: aamerril
 ms.search.form: Shortcuts
 ms.topic: concept-article
 ms.custom:
-ms.date: 05/09/2024
+ms.date: 10/01/2025
 #customer intent: As a security engineer, I want to understand security for OneLake shortcuts so that I can secure access to my data using roles and permissions.
 ---
 
@@ -22,21 +22,21 @@ To ensure clarity around the components of a shortcut this document uses the fol
 
 ## Create and delete shortcuts
 
-To create a shortcut a user needs to have Write permission on the Fabric Item where the shortcut is being created. In addition, the user needs Read access to the data the shortcut is pointing to. Shortcuts to external sources may require certain permissions in the external system. The [What are shortcuts?](./onelake-shortcuts.md) article has the full list of shortcut types and required permissions.
+To create a shortcut a user needs to have Write permission on the Fabric Item where the shortcut is being created. In addition, the user needs Read access to the data the shortcut is pointing to. Shortcuts to external sources might require certain permissions in the external system. The [What are shortcuts?](./onelake-shortcuts.md) article has the full list of shortcut types and required permissions.
 
 | **Capability** | **Permission on shortcut path** | **Permission on target path** |
 |---|---|---|---|---|
 | **Create a shortcut** | Write<sup>2</sup> | ReadAll<sup>1</sup> |
 | **Delete a shortcut** | Write<sup>2</sup>| N/A |
 
-<sup>1</sup> If [OneLake security](./security/get-started-onelake-security.md) is enabled the user needs to be in a role that grants access to the target path.
-<sup>2</sup> If [OneLake data access roles](./security/get-started-onelake-security.md) is enabled the user needs to be in a role that grants access to the target path.
+<sup>1</sup> If [OneLake security](./security/get-started-onelake-security.md) is enabled, the user needs to be in a role that grants access to the target path.
+<sup>2</sup> If [OneLake data access roles](./security/get-started-onelake-security.md) is enabled, the user needs to be in a role that grants access to the target path.
 
 ## Accessing shortcuts
 
 A combination of the permissions in the shortcut path and the target path governs the permissions for shortcuts. When a user accesses a shortcut, the most restrictive permission of the two locations is applied. Therefore, a user that has read/write permissions in the lakehouse but only read permissions in the target path can't write to the target path. Likewise, a user that only has read permissions in the lakehouse but read/write in the target path also can't write to the target path.
 
-The following table shows the shortcut-related permissions for each shortcut action.
+This table shows the permissions needed for each shortcut action.
 
 | **Capability** | **Permission on shortcut path** | **Permission on target path** |
 |---|---|---|---|---|
@@ -47,7 +47,13 @@ The following table shows the shortcut-related permissions for each shortcut act
 <sup>1</sup> If [OneLake security](./security/get-started-onelake-security.md) is enabled the user needs to be in a role that grants access to the target path.
 
 > [!IMPORTANT]
-> <sup>2</sup> When accessing shortcuts through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines in Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user. To resolve this, use **Power BI semantic models in DirectLake over OneLake mode** or **T-SQL in User's identity mode**.
+> <sup>2</sup> **Exception to identity passthrough:** While OneLake security typically passes through the calling user's identity to enforce permissions, certain query engines operate differently. When accessing shortcut data through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines configured for Delegated identity mode**, these engines don't pass through the calling user's identity to the shortcut target. Instead, they use the **item owner's identity** to access the data, and then apply OneLake security roles to filter what the calling user can see.
+>
+> This means:
+> - The shortcut target is accessed using the item owner's permissions (not the end user's)
+> - OneLake security roles still determine what data the end user can read
+> - Any permissions configured directly at the shortcut target path for the end user are bypassed
+>
 
 ## OneLake security
 
@@ -59,15 +65,15 @@ Users in the Viewer role or that had a lakehouse shared with them directly have 
 
 ### Shortcut auth models
 
-Shortcuts follow one of two different authentication models when working with OneLake security: passthrough and delegated.
+Shortcuts use two authentication models with OneLake security: passthrough and delegated.
 
-In the passthrough model, the shortcut accesses data in the target location by ‘passing’ the user’s identity to the target system. This ensures that any user accessing the shortcut is only able to see whatever they have access to in the target.
+In the passthrough model, the shortcut accesses data in the target location by 'passing' the user’s identity to the target system. This ensures that any user accessing the shortcut is only able to see whatever they have access to in the target.
 
-With OneLake to OneLake shortcuts, only passthrough mode is supported. This design ensures that the source system retains full control over its data. Organizations benefit from enhanced security because there’s no need to replicate or redefine access controls for the shortcut. However, it’s important to understand that security for OneLake shortcuts cannot be modified directly from the downstream item. Any changes to access permissions must be made at the source location.
+With OneLake to OneLake shortcuts, only passthrough mode is supported. This design ensures that the source system retains full control over its data. Organizations benefit from enhanced security because there’s no need to replicate or redefine access controls for the shortcut. However, it’s important to understand that security for OneLake shortcuts can't be modified directly from the downstream item. Any changes to access permissions must be made at the source location.
 
 :::image type="content" source=".\media\onelake-shortcut-security\passthrough-mode.png" alt-text="Diagram showing the user identity getting passed along the shortcut to the target path." lightbox=".\media\onelake-shortcut-security\passthrough-mode.png":::
 
-Delegated shortcuts access data by using some intermediate credential, such as another user or an account key. These shortcuts allow for permission management to be separated or ‘delegated’ to another team or downstream user to manage. Delegated shortcuts always break the flow of security from one system to another. All delegated shortcuts in OneLake can have OneLake security roles defined for them.
+Delegated shortcuts access data by using some intermediate credential, such as another user or an account key. These shortcuts allow for permission management to be separated or 'delegated' to another team or downstream user to manage. Delegated shortcuts always break the flow of security from one system to another. All delegated shortcuts in OneLake can have OneLake security roles defined for them.
 
 All shortcuts from OneLake to external systems (multicloud shortcuts) like AWS S3 or Google Cloud Storage are delegated. This allows users to connect to the external system without being given direct access. OneLake security can then be configured on the shortcut to limit what data in the external system can be accessed
 

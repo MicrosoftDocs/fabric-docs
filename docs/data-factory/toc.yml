@@ -6,7 +6,7 @@
       - name: What is Data Factory?
         href: data-factory-overview.md
       - name: What's new in Data Factory
-        href: ../fundamentals/whats-new.md?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric
+        href: ../fundamentals/whats-new.md?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json#data-factory-in-microsoft-fabric
       - name: Guided Data Factory lab
         href: guided-lab-experience.md
       - name: Data Factory training
@@ -59,6 +59,8 @@
                     href: pricing-scenario-copy-job.md
       - name: Keyboard shortcuts
         href: keyboard-shortcuts.md
+      - name: Secure Data Factory in Microsoft Fabric
+        href: secure-data-factory-in-microsoft-fabric.md
   - name: Get started
     items:
       - name: Bring Azure Data Factory to Fabric
@@ -95,6 +97,8 @@
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
       href: compare-fabric-data-factory-and-azure-data-factory.md
+    - name: Migration best practices
+      href: migration-best-practices.md
     - name: Pipelines
       items:
       - name: Migrate from Azure Data Factory to Data Factory in Microsoft Fabric
@@ -117,10 +121,10 @@
         href: activity-parity.md
       - name: Connector Continuity
         href: connector-parity.md
-      - name: Fabric Dataflows for Mapping Data Flow users
+      - name: Fabric dataflows for mapping data flow users
         href: guide-to-dataflows-for-mapping-data-flow-users.md
       - name: How to ingest data from Azure Data Factory to Fabric
-        href: /azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory?toc=/fabric/data-factory/toc.json
+        href: /azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
     - name: Dataflows
       items:    
       - name: Migrate from Dataflow Gen1 to Dataflow Gen2
@@ -154,7 +158,7 @@
             items:
             - name: Amazon RDS for Oracle - Overview
               href: connector-amazon-rds-for-oracle-overview.md
-            - name: Configure in data pipeline copy activity
+            - name: Configure in pipeline copy activity
               href: connector-amazon-rds-for-oracle-copy-activity.md
           - name: Amazon RDS for SQL Server
             items: 
@@ -514,7 +518,7 @@
             items:
             - name: Microsoft Access - Overview
               href: connector-microsoft-access-overview.md
-            - name: Configure in a data pipeline copy activity
+            - name: Configure in a pipeline copy activity
               href: connector-microsoft-access-copy-activity.md
           - name: Microsoft Exchange Online
             items: 
@@ -737,12 +741,6 @@
                 href: connector-web-overview.md
               - name: Set up your connection
                 href: connector-web.md
-          - name: Connector certification
-            items: 
-              - name: Data Factory connector certification
-                href: connector-certification.md
-              - name: Provide connector documentation
-                href: providing-user-documentation.md
       - name: Connect on-premises from the cloud
         items:
           - name: Access on-premises data
@@ -750,109 +748,109 @@
           - name: On-premises data gateways docs
             items: 
               - name: What is an on-premises data gateway?
-                href: /data-integration/gateway/service-gateway-onprem?toc=/fabric/data-factory/toc.json
+                href: /data-integration/gateway/service-gateway-onprem?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
               - name: Concepts
                 items: 
                   - name: On-premises data gateway architecture
-                    href: /data-integration/gateway/service-gateway-onprem-indepth?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/gateway/service-gateway-onprem-indepth?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: On-premises data gateway FAQ
-                    href: /data-integration/gateway/service-gateway-onprem-faq?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/gateway/service-gateway-onprem-faq?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
               - name: How to
                 items: 
                   - name: Install gateways
-                    href: /data-integration/gateway/service-gateway-install?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/gateway/service-gateway-install?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Configure gateways
                     items: 
                       - name: Use the on-premises data gateway app
-                        href: /data-integration/gateway/service-gateway-app?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-app?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Configure proxy settings
-                        href: /data-integration/gateway/service-gateway-proxy?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-proxy?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Step by step guide on configuring your proxy settings
-                        href: /data-integration/gateway/service-gateway-proxy-setup-guide?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-proxy-setup-guide?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Change the gateway service account
-                        href: /data-integration/gateway/service-gateway-service-account?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-service-account?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Set the data center region
-                        href: /data-integration/gateway/service-gateway-data-region?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-data-region?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Set the Azure Relay
-                        href: /data-integration/gateway/service-gateway-azure-relay?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-azure-relay?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Adjust communication settings
-                        href: /data-integration/gateway/service-gateway-communication?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-communication?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Configure the gateway log file
-                        href: /data-integration/gateway/service-gateway-log-files?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-log-files?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Adjust performance based on CPU
-                        href: /data-integration/gateway/service-gateway-performance-cpu?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-performance-cpu?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Configure gateway disk space
-                        href: /data-integration/gateway/service-gateway-configure-disk-space?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-configure-disk-space?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Configure tenant registration settings
-                        href: /data-integration/gateway/service-gateway-tenant-registration?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-tenant-registration?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Manage gateways
                     items: 
                       - name: Manage in a service
-                        href: /data-integration/gateway/service-gateway-manage?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-manage?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Manage security roles
-                        href: /data-integration/gateway/manage-security-roles?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/manage-security-roles?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Manage high availability clusters and load balancing
-                        href: /data-integration/gateway/service-gateway-high-availability-clusters?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-high-availability-clusters?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Update an on-premises data gateway
-                        href: /data-integration/gateway/service-gateway-update?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-update?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Migrate, restore, or take over a gateway
-                        href: /data-integration/gateway/service-gateway-migrate?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-migrate?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Restart a gateway
-                        href: /data-integration/gateway/service-gateway-restart?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-restart?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                       - name: Change a recovery key
-                        href: /data-integration/gateway/service-gateway-recovery-key?toc=/fabric/data-factory/toc.json
+                        href: /data-integration/gateway/service-gateway-recovery-key?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Plan, scale, and maintain business-critical gateway clusters
-                    href: /data-integration/gateway/plan-scale-maintain?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/gateway/plan-scale-maintain?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Troubleshoot the on-premises data gateway
-                    href: /data-integration/gateway/service-gateway-tshoot?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/gateway/service-gateway-tshoot?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Monitor and optimize gateway performance
-                    href: /data-integration/gateway/service-gateway-performance?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/gateway/service-gateway-performance?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Gateway considerations for data destinations in Dataflow Gen2
                     href: gateway-considerations-output-destinations.md
               - name: Reference
                 items: 
                   - name: PowerShell support for gateway clusters
-                    href: /data-integration/gateway/service-gateway-powershell-support?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/gateway/service-gateway-powershell-support?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
               - name: Resources
                 items: 
                   - name: Supported monthly updates
-                    href: /data-integration/gateway/service-gateway-monthly-updates?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/gateway/service-gateway-monthly-updates?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
           - name: Virtual network data gateways docs
             items: 
               - name: What is a virtual network data gateway?
-                href: /data-integration/vnet/overview?toc=/fabric/data-factory/toc.json
+                href: /data-integration/vnet/overview?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
               - name: Concepts
                 items: 
                   - name: What is a virtual network?
-                    href: /data-integration/vnet/what-is?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/vnet/what-is?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Virtual network data gateway architecture
-                    href: /data-integration/vnet/data-gateway-architecture?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/vnet/data-gateway-architecture?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Virtual network data gateways business model
-                    href: /data-integration/vnet/data-gateway-business-model?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/vnet/data-gateway-business-model?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
               - name: How to
                 items: 
                   - name: Create virtual network data gateways
-                    href: /data-integration/vnet/create-data-gateways?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/vnet/create-data-gateways?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Manage virtual network data gateways
                     href: /data-integration/vnet/manage-data-gateways?toc=/fabric/data-factory/toc.json
-                  - name: Use virtual network data gateway in Fabric with Dataflows Gen 2
-                    href: /data-integration/vnet/use-data-gateways-dfgen2-fabric?toc=/fabric/data-factory/toc.json
+                  - name: Use virtual network data gateway in Fabric with Dataflow Gen 2
+                    href: /data-integration/vnet/use-data-gateways-dfgen2-fabric?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Use virtual network data gateway in Power BI
-                    href: /data-integration/vnet/use-data-gateways-sources-power-bi?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/vnet/use-data-gateways-sources-power-bi?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Use virtual network data gateway in Power Platform dataflows
-                    href: /data-integration/vnet/data-gateway-power-platform-dataflows?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/vnet/data-gateway-power-platform-dataflows?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Manage virtual network data gateway high availability and load balancing
-                    href: /data-integration/vnet/high-availability-load-balancing?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/vnet/high-availability-load-balancing?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Manage virtual network security roles
-                    href: /data-integration/vnet/manage-vnet-security-roles?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/vnet/manage-vnet-security-roles?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Troubleshoot a virtual network data gateway network
-                    href: /data-integration/vnet/troubleshoot-data-gateway?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/vnet/troubleshoot-data-gateway?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Virtual network data gateway best practices
-                    href: /data-integration/vnet/vnet-best-practices?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/vnet/vnet-best-practices?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Virtual network data gateway FAQs
-                    href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json
+                    href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Download diagnostics logs
-                    href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json  
+                    href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json  
   - name: Move data
     items:
       - name: Decide - Data movement strategy
@@ -906,10 +904,12 @@
                 href: tutorial-lakehouse-partition.md
               - name: Move data from Oracle to Fabric Lakehouse via pipeline and on-premises data gateway
                 href: tutorial-move-data-from-oracle-to-lakehouse-pipeline.md
+              - name: Copy data across workspaces
+                href: tutorial-copy-data-across-workspaces.md
       - name: Mirroring
         items:
           - name: Mirroring overview
-            href: /fabric/mirroring/overview?toc=/fabric/data-factory/toc.json
+            href: /fabric/mirroring/overview?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
           - name: Mirroring documentation
             href: /fabric/mirroring/
   - name: Transform data
@@ -974,14 +974,20 @@
             href: how-to-handle-schema-drift.md
           - name: How to obfuscate data
             href: data-obfuscation-with-delphix.md
-          - name: Monitoring your Dataflows in Fabric
+          - name: Monitoring your dataflows in Fabric
             href: dataflows-gen2-monitor.md
           - name: Public parameters in Dataflow Gen2
             href: dataflow-parameters.md
           - name: Variable libraries in Dataflow Gen2
             href: dataflow-gen2-variable-library-integration.md
-          - name: Dataflow Gen2 and deployment pipelines
-            href: dataflow-gen2-deployment-pipelines.md
+          - name: CI/CD and ALM solution architectures for Dataflow Gen2
+            items:
+              - name: Overview
+                href: dataflow-gen2-cicd-alm-solution-architecture.md
+              - name: Parameterized Dataflow
+                href: dataflow-gen2-parameterized-dataflow.md
+              - name: Variable references in Dataflow
+                href: dataflow-gen2-variable-references.md
           - name: Saving a draft of your dataflow
             href: dataflows-gen2-save-draft.md
           - name: Use cloud connections through gateways
@@ -1123,7 +1129,7 @@
         href: modern-get-data-experience-pipeline.md
       - name: Fabric pipeline landing page
         href: pipeline-landing-page.md
-      - name: Variable library integration (Preview)
+      - name: Variable library integration
         href: variable-library-integration-with-data-pipelines.md
   - name: FAQ and Troubleshooting
     items: 
@@ -1180,7 +1186,7 @@
       - name: Data Factory limitations
         href: data-factory-limitations.md
       - name: Fabric known issues
-        href: ../get-started/fabric-known-issues.md?toc=/fabric/data-factory/toc.json
+        href: ../get-started/fabric-known-issues.md?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
   - name: Community
     items:
     - name: Data factory blog

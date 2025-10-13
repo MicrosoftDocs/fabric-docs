@@ -29,6 +29,8 @@ To get started, be sure you have the following prerequisites:
 - **Permissions**: [Read access to the ADF workspace and items](/azure/data-factory/concepts-roles-permissions#scope-of-the-data-factory-contributor-role) you’ll migrate and [Contributor or higher rights in the Fabric workspace](../security/permission-model.md#workspace-roles) you’ll write to.
 - **Network and auth**: Make sure you can sign in to both Azure and Fabric from your machine (interactive or service principal).
 
+> [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=46afe4ed-f186-4937-b09f-326dd63bbf5b]
+
 ## Prepare to upgrade
 
 [!INCLUDE [migrate-pipelines-prepare-your-environment-for-upgrade](includes/migrate-pipelines-prepare-your-environment-for-upgrade.md)]
@@ -177,7 +179,6 @@ If you stop here, this command acts like a What-If: it shows what the upgrade wo
 Before exporting your Fabric pipeline, you'll need a few details from your Fabric workspace. Open a blank text file to copy the values you’ll need later.
 
 1. Open Microsoft Fabric UX and navigate to your Data Factory Workspace.
-1. Your workspace is in a **region** like `daily`, `dxt`, `msit`, or `prod`. Note this region; you'll need it later. If you aren't sure, use `prod`.
 1. Find your [Workspace ID](migrate-pipelines-how-to-find-your-fabric-workspace-id.md) and copy it into your text file.
 1. Run this PowerShell command to get your Fabric Access Token and store it for your session:
 
