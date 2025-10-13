@@ -60,7 +60,7 @@ Storage mode is a property of a table in the semantic model. When a semantic mod
 * **Direct Lake on OneLake** can use data from one or more Fabric data source with delta tables. Direct Lake on OneLake doesn't fall back to DirectQuery mode via the SQL analytics endpoint of the data source. Semantic models with Direct Lake on OneLake tables can also have import tables added from other data sources.
  
  > [!NOTE]
- > Direct Lake on OneLake is currently in public preview. Enable the tenant setting **User can create Direct Lake on OneLake semantic models (preview)** in the admin portal to create semantic models with this table storage mode. Already created semantic models are not impacted by this tenant setting.
+ > Direct Lake on OneLake is currently in public preview. Enable the tenant setting **User can create Direct Lake on OneLake semantic models (preview)** in the admin portal to create semantic models with this table storage mode. Already created semantic models aren't impacted by this tenant setting.
     
 * **Direct Lake on SQL** can use the data from a single Fabric data source with delta tables. The SQL analytics endpoint is used for delta table and SQL view discovery and permission checks. Direct Lake on SQL endpoints fall back to DirectQuery table storage mode when it can’t load the data directly from a delta table, such as when the data source is a SQL view or when the Warehouse uses SQL-based granular access control. The semantic model property, **Direct Lake behavior**, controls the fall back behavior.
 
@@ -241,7 +241,7 @@ Direct Lake semantic models present some considerations and limitations.
 > [!NOTE]
 > The capabilities and features of Direct Lake semantic models are evolving rapidly. Be sure to check back periodically to review the latest list of considerations and limitations.
 
-Direct Lake on OneLake table storage mode is in public preview. Enable the tenant setting **User can create Direct Lake on OneLake semantic models (preview) **in the admin portal to create semantic models with Direct Lake on OneLake tables.
+Direct Lake on OneLake table storage mode is in public preview. Enable the tenant setting **User can create Direct Lake on OneLake semantic models (preview)** in the admin portal to create semantic models with Direct Lake on OneLake tables.
 
 |Consideration / limitation  |Direct Lake on OneLake  |Direct Lake on SQL (analytics endpoint)  |
 |---------|---------|---------|
@@ -266,7 +266,7 @@ Direct Lake on OneLake table storage mode is in public preview. Enable the tenan
 |Shortcuts in a lakehouse can be used as data sources for semantic model tables.     |Not supported during public preview         |Supported         |
 |Create Direct Lake models in personal workspaces (My Workspace).     |Not supported         |Not supported         |
 |Deployment pipeline rules to rebind data source.   |Not supported directly - can create a parameter expression to use in the connection string.   |Supported   |
-
+|Adding a table from the same data source twice.   |Not supported in Power BI Desktop or web modeling. It is possible in XMLA-based external tools.  |Not supported in Power BI Desktop or web modeling. It is possible in XMLA-based external tools. |
 
 - Analyze in Excel pivot tables (and other MDX clients) have the same limitations as DirectQuery with Direct Lake tables in the semantic model. Session-scoped MDX statements, such as named sets, calculated members, default members, etc. are not supported. Query-scoped MDX statements, such as the 'WITH' clause, are supported. Direct Lake table user-defined hierarchies are not supported. Import table user-defined hierarchies are supported even with Direct Lake tables in the semantic model.
 
