@@ -180,7 +180,7 @@ Example: `https://bucketname.s3.region.amazonaws.com/`
 > [!NOTE]
 > You don't need to disable the S3 Block Public Access setting for your S3 account for the S3 shortcut to function.
 >
-> Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud.
+> Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud unless you configure a on-premises data gateway. To set up a data gateway, see [Create shortcuts to on-premises data](create-on-premises-shortcut.md).
 
 #### Authorization
 
