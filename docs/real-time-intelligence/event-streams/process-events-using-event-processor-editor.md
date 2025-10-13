@@ -42,7 +42,7 @@ To perform processing operations on your data streams by using a no-code editor,
 
             Alternatively, you can hover over one of the nodes and then select the **+** button if you deleted the connection line. A dropdown menu appears next to that node, and you can select an operator from this menu.
 
-            :::image type="content" source="./media/process-events-using-event-processor-editor/connection-line-plus.png" alt-text="Screenshot that shows the selection of the plus button on the connection line." lightbox="./media/process-events-using-event-processor-editor/connection-line-plus.png":::
+            :::image type="content" source="./media/process-events-using-event-processor-editor/connection-line-plus.png" alt-text="Screenshot that shows the plus button on the connection line." lightbox="./media/process-events-using-event-processor-editor/connection-line-plus.png":::
         1. After you insert the operator, you need to reconnect these nodes. Hover over the left edge of the stream node, and then drag the green circle to connect it to the **Manage fields** operator node. Follow the same process to connect the **Manage fields** operator node to your destination.
 
             :::image type="content" source="./media/process-events-using-event-processor-editor/connect-manage-fields.png" alt-text="Screenshot that shows how to connect the stream node to the operator node." lightbox="./media/process-events-using-event-processor-editor/connect-manage-fields.png":::
@@ -100,7 +100,7 @@ Here are the destination types that support adding operators before ingestion:
 > [!NOTE]
 > For destinations that don't support the addition of a pre-ingestion operator, you can first add a derived stream as the output of your operator. Then, append your intended destination to this derived stream.
 
-:::image type="content" source="./media/process-events-using-event-processor-editor/unsupported-destination.png" alt-text="Screenshot that shows the layout of the event processing editor with a filter sending output to an unsupported destination." lightbox="./media/process-events-using-event-processor-editor/unsupported-destination.png":::
+:::image type="content" source="./media/process-events-using-event-processor-editor/unsupported-destination.png" alt-text="Screenshot that shows the layout of the event processing editor with a filter that sends output to an unsupported destination." lightbox="./media/process-events-using-event-processor-editor/unsupported-destination.png":::
 
 ::: zone-end
 
