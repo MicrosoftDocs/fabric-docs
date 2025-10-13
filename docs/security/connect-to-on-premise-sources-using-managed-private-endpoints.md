@@ -77,6 +77,8 @@ You can do this using Azure CLI:
 ```bash
 az login
 az account get-access-token --resource https://api.fabric.microsoft.com
+
+
 This command returns a JSON object containing the access token.
 Copy the value of "accessToken" to use as your Authorization header.
 
@@ -86,7 +88,7 @@ Use the following endpoint and payload to create a managed private endpoint:
 Request
 
 bash
-Copy code
+
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/network/privateEndpoints
 Headers
 
@@ -97,7 +99,7 @@ Content-Type	application/json
 Body
 
 json
-Copy code
+
 {
   "name": "onprem-sql-endpoint",
   "type": "CustomFQDN",
@@ -149,7 +151,7 @@ The API will respond with the managed private endpoint details and connection st
 Fabric will attempt to initiate a private connection request.  
 Your network administrator will see this pending request in the Azure portal under the associated **Private Link Service → Private endpoint connections** blade.
 
----
+
 
 ## Step 3: Approve the private endpoint connection request
 
@@ -163,7 +165,7 @@ Your network administrator will see this pending request in the Azure portal und
 
 Once approved, the connection status in Fabric changes to **Approved**. You can now securely connect to your on-premises data source.
 
----
+
 
 ## Step 4: Access your on-premises SQL Server from Fabric notebooks
 
@@ -191,7 +193,7 @@ display(df)
 # Write back to your Fabric Lakehouse
 df.write.mode("overwrite").format("delta").saveAsTable("Customers")
 
----
+
 
 ## Step 5: Validate and troubleshoot your private connection
 
