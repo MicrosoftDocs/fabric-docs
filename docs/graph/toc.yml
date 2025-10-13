@@ -9,7 +9,7 @@ items:
         href: graph-database.md
       - name: Compare graph and relational databases
         href: graph-relational-databases.md
-      - name: Graph in Microsoft Fabric data models
+      - name: Labeled property graph
         href: graph-data-models.md
   - name: Get started
     items:
