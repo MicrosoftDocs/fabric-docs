@@ -48,7 +48,7 @@ The following code sample shows how to override `aifunc.Conf` settings globally,
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 aifunc.default_conf.temperature = 0.5 # Default: 0.0
-aifunc.default_conf.concurrency = 10 # Default: 4
+aifunc.default_conf.concurrency = 300 # Default: 200
 
 df = pd.DataFrame([
         "Hello! How are you doing today?", 
@@ -80,11 +80,45 @@ df["sentiment"] = df["text"].ai.analyze_sentiment()
 display(df)
 ```
 
-### Select a different model
-By default, AI functions uses `gpt-4.1-mini`. To select a different model, you can do one of the following:
-1. Set the `model_deployment_name` parameter to one of the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service)
-2. Bring your own Azure OpenAI resource
-   - To substitute a custom Azure OpenAI LLM resource in place of the native Fabric LLM, you can use the `aifunc.setup` function with your own client, as shown in the following code sample:
+## Custom Models
+
+To use an AI model other than the default, you can choose another model supported by Fabric or configure a custom model endpoint.
+
+### Choose another supported large language model
+
+Select one of the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service) and configure it using the `model_deployment_name` parameter. You can do this in one of two ways:
+
+- Globally in the `aifunc.Conf` class.:
+
+```python
+    aifunc.default_conf.model_deployment_name = "<model deployment name>">
+```
+
+- Individually in each AI function call:
+
+ ```python
+df["translations"] = df["text"].ai.translate("spanish", conf=Conf(model_deployment_name="<model deployment name>"))
+```
+
+### Choose another supported embedding model
+
+Select one of the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service) and configure it using the `embedding_deployment_name` parameter. You can do this in one of two ways:
+
+- Globally in the `aifunc.Conf` class. Example:
+
+```python
+    aifunc.default_conf.embedding_deployment_name = "<embedding deployment name>">
+```
+
+- Individually in each AI function call. Example:
+
+ ```python
+df["similarity"] = df["company"].ai.similarity("Microsoft", conf=Conf(embedding_deployment_name="<embbedding deployment name>"))
+```
+
+### Configure a custom model endpoint
+
+By default, AI functions use the Fabric LLM endpoint. You can also use your own model endpoint by setting up an Azure OpenAI or AsyncOpenAI-compatible client with your endpoint and key. The following example shows how to bring your own Azure OpenAI resource using `aifunc.setup`:
 
 ```python
 from openai import AzureOpenAI

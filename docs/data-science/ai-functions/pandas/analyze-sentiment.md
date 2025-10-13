@@ -14,7 +14,6 @@ ms.search.form: AI functions
 
 The `ai.analyze_sentiment` function uses generative AI to detect the emotional state of the input text, with a single line of code. It can detect whether the emotional state of the input is positive, negative, mixed, or neutral. If the function can't determine the sentiment, it leaves the output blank.
 
-See additional AI functions in [this overview article](../overview.md).
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
 >
@@ -22,6 +21,10 @@ See additional AI functions in [this overview article](../overview.md).
  > - By default, the *gpt-4.1-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with the built-in AI endpoint in Fabric.
+
+> [!NOTE]
+> - This article covers using *ai.analyze_sentiment* with pandas. To use *ai.analyze_sentiment* with PySpark, see [this article](../pyspark/analyze-sentiment.md).
+> - See additional AI functions in [this overview article](../overview.md).
 
 ## Overview
 

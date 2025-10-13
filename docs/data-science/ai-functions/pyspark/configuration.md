@@ -25,9 +25,13 @@ AI functions are designed to work out of the box, with the underlying model and 
 > - This article covers customizing AI functions with PySpark. To customize AI functions with pandas, see [this article](../pandas/configuration.md).
 > - See additional AI functions in [this overview article](../overview.md).
 
-## Configurations
+## Select a different model
+By default, AI functions uses `gpt-4.1-mini`. To select a different model, you can do one of the following: 
 
-If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to modify the underlying language model that powers the functions. As an example, the following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Azure OpenAI LLM deployment:
+1. Set the `deployment_name` parameter to one of the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service) 
+
+2. Bring your own Azure OpenAI resource
+    - With PySpark, you can use the `OpenAIDefaults` class to modify the underlying language model that powers the functions. The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Azure OpenAI LLM deployment:
 
 ```python
 from synapse.ml.services.openai import OpenAIDefaults
@@ -39,7 +43,9 @@ defaults.set_URL("https://your-openai-endpoint.openai.azure.com/")
 defaults.set_temperature(0.05)
 ```
 
-You can substitute your own values for the deployment name, subscription key, endpoint URL, and custom temperature value:
+## Configurations
+
+You can also substitute your own values for the deployment name, subscription key, endpoint URL, and custom temperature value:
 
 | Parameter | Description |
 |---|---|

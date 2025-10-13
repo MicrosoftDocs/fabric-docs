@@ -442,6 +442,12 @@ display(responses)
 
 ---
 
+## FAQs
+<details>
+  <summary>Click to expand</summary>
+  Here is the hidden answer.
+</details>
+
 ## Related content
 
 - Detect sentiment with [`ai.analyze_sentiment in pandas`](./pandas/analyze-sentiment.md) or [`ai.analyze_sentiment in pyspark`](./pyspark/analyze-sentiment.md).
