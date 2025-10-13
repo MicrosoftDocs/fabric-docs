@@ -59,7 +59,7 @@ Storage mode is a property of a table in the semantic model. When a semantic mod
     * **Direct Lake on OneLake** doesn't depend on SQL endpoints and can use data from any Fabric data source with Delta tables. Direct Lake on OneLake doesn't fall back to DirectQuery mode.
 
     > [!NOTE]
-    > Direct Lake on OneLake is currently in public preview. Enable the tenant setting "User can create Direct Lake on OneLake semantic models (preview)" in the admin portal to create semantic models with this table storage mode.
+    > Direct Lake on OneLake is currently in public preview. Enable the tenant setting **User can create Direct Lake on OneLake semantic models (preview)** in the admin portal to create semantic models with this table storage mode.
     > 
     
     * **Direct Lake on SQL endpoints** uses the SQL endpoint of a Fabric lakehouse or warehouse for Delta table discovery and permission checks. Direct Lake on SQL endpoints can fall back to DirectQuery mode when it can’t load the data directly from a Delta table, such as when the data source is a SQL view or when the Warehouse uses SQL-based Row-level Security (RLS). Direct Lake on SQL endpoints is generally available and fully supported in production.
@@ -71,7 +71,7 @@ The following table compares Direct Lake storage mode to Import and DirectQuery 
 
 | Capability | Direct Lake on OneLake | Direct Lake on SQL endpoints | Import | DirectQuery |
 | --- | --- | --- | --- | --- |
-| Tenant setting | Enable the tenant setting "User can create Direct Lake on OneLake semantic models (preview)" in the admin portal.  | Enabled for all tenants. | Enabled for all tenants. | Enabled for all tenants. |
+| Tenant setting | Enable the tenant setting **User can create Direct Lake on OneLake semantic models (preview)** in the admin portal.  | Enabled for all tenants. | Enabled for all tenants. | Enabled for all tenants. |
 | Licensing | Fabric capacity subscription (SKUs) only |Fabric capacity subscription (SKUs) only |  Any Fabric or Power BI license (including Microsoft Fabric Free licenses) | Any Fabric or Power BI license (including Microsoft Fabric Free licenses) |
 | Data source | Tables of any Fabric data source backed by Delta tables | Only lakehouse or warehouse tables (or views) | Any connector | Any connector that supports DirectQuery mode |
 | Connect to SQL analytics endpoint views |No | Yes – but will automatically fall back to DirectQuery mode | Yes | Yes |
@@ -241,7 +241,7 @@ Direct Lake semantic models present some considerations and limitations.
 > [!NOTE]
 > The capabilities and features of Direct Lake semantic models are evolving rapidly. Be sure to check back periodically to review the latest list of considerations and limitations.
 
-Direct Lake on OneLake table storage mode is in public preview. Enable the tenant setting "User can create Direct Lake on OneLake semantic models (preview)" in the admin portal to create semantic models with Direct Lake on OneLake tables.
+Direct Lake on OneLake table storage mode is in public preview. Enable the tenant setting **User can create Direct Lake on OneLake semantic models (preview) **in the admin portal to create semantic models with Direct Lake on OneLake tables.
 
 |Consideration / limitation  |Direct Lake on OneLake  |Direct Lake on SQL (analytics endpoint)  |
 |---------|---------|---------|
