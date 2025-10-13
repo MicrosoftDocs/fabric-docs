@@ -45,7 +45,7 @@ Capacities use stock-keeping units (SKUs). Each SKU provides Fabric resources fo
 
 The table lists the Microsoft Fabric SKUs. Capacity units (CUs) measure the compute power for each SKU. For customers familiar with Power BI, the table also lists Power BI Premium per capacity *P* SKUs and virtual cores (v-cores). Power BI Premium *P* SKUs support Microsoft Fabric. *A* and *EM* SKUs only support Power BI items.
 
-| SKU\* | Capacity Units (CUs) | Power BI SKU | Power BI v-cores |
+| SKU | Capacity Units (CUs) | Power BI SKU | Power BI v-cores |
 |--|--|--|--|
 | F2 | 2 | - | 0.25 |
 | F4 | 4 | - | 0.5 |
@@ -60,8 +60,6 @@ The table lists the Microsoft Fabric SKUs. Capacity units (CUs) measure the comp
 | F1024 | 1024 | P5/A8 | 128 |
 | F2048 | 2048 | - | 256 |
 
-*\* In "Embed for your organization" and embedding in Microsoft 365 apps (SharePoint Online, PowerPoint), F SKUs smaller than F64 require each consuming user to have a Pro, Premium Per User (PPU), or individual trial license to view Power BI content. For "app owns data" (external application / service principal) embedding scenarios, you can use Power BI Embedded A/EM SKUs or Premium per capacity (P) SKUs without an F64 Fabric capacity. An F64 or larger Fabric capacity removes the Pro/PPU viewing requirement for internal users (viewer role) with only a Free license.*
-
 <a id="embedded-scenarios"></a>
 
 #### Power BI embedding scenarios
@@ -72,6 +70,10 @@ The table lists the Microsoft Fabric SKUs. Capacity units (CUs) measure the comp
 | Internal viewing in Fabric capacity ≥ F64 | F64+ | Free (viewer role) | Viewer role on workspace is sufficient. |
 | Embed for your organization (Microsoft Entra users) | F (any) or P, or A/EM (Power BI only) | Depends on SKU & size (see licensing rules) | F64 lifts internal viewer requirement. |
 | App owns data (external users) | A/EM or P SKUs | End users unlicensed | Service principal handles auth; Fabric capacity not required for embedding. |
+
+In "Embed for your organization" and embedding in Microsoft 365 apps (SharePoint Online, PowerPoint), F SKUs smaller than F64 require each consuming user to have a Pro, Premium Per User (PPU), or individual trial license to view Power BI content.
+
+For "app owns data" (external application / service principal) embedding scenarios, you can use Power BI Embedded A/EM SKUs or Premium per capacity (P) SKUs without an F64 Fabric capacity. An F64 or larger Fabric capacity removes the Pro/PPU viewing requirement for internal users (viewer role) with only a Free license.
 
 ### Workspace
 
