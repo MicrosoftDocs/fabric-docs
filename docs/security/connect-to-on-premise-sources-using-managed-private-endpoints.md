@@ -77,7 +77,7 @@ You can do this using Azure CLI:
 ```bash
 az login
 az account get-access-token --resource https://api.fabric.microsoft.com
-
+```
 
 This command returns a JSON object containing the access token.
 Copy the value of "accessToken" to use as your Authorization header.
@@ -87,9 +87,9 @@ Use the following endpoint and payload to create a managed private endpoint:
 
 Request
 
-bash
-
+```bash
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/network/privateEndpoints
+```
 Headers
 
 Key	Value
@@ -98,14 +98,14 @@ Content-Type	application/json
 
 Body
 
-json
-
+```json
 {
   "name": "onprem-sql-endpoint",
   "type": "CustomFQDN",
   "fqdn": "sqlserver.corp.contoso.com",
   "description": "Private connection to on-prem SQL via Azure Private Link Service"
 }
+```
 You can test this call directly from Bruno, Postman, or Insomnia:
 
 Open your preferred REST API client.
@@ -121,7 +121,7 @@ Send the request.
 Step 2.3: Verify the connection request
 A successful API response returns the following JSON:
 
-json
+```json
 {
   "id": "f2cbd8d1-23f1-4b9a-9db2-23ad1e7b5129",
   "name": "onprem-sql-endpoint",
@@ -130,6 +130,7 @@ json
   "provisioningState": "PendingApproval",
   "createdBy": "user@contoso.com"
 }
+```
 At this point, the private connection request has been sent to the target data source administrator (for example, the owner of your Private Link Service in Azure).
 Once they approve the connection, the provisioning state updates to Approved, and you can begin accessing your on-premises data securely from Fabric.
 
@@ -173,7 +174,7 @@ After approval, your managed private endpoint becomes active and can be used fro
 
 Example using PySpark to connect to an on-premises SQL Server:
 
-```pyspark
+```python
 serverName = "sqlserver.corp.contoso.com"
 database = "SalesDB"
 dbPort = 1433
@@ -192,6 +193,7 @@ display(df)
 
 # Write back to your Fabric Lakehouse
 df.write.mode("overwrite").format("delta").saveAsTable("Customers")
+```
 
 
 
@@ -220,6 +222,8 @@ Run the following command from a Fabric Notebook or a connected VM within the sa
 
 ```bash
 nslookup sqlserver.corp.contoso.com
+```
+
 Confirm that the IP address returned is a 10.x.x.x or 172.x.x.x private IP, not a public IP.
 This confirms that Fabric is resolving the FQDN through the private link route.
 
