@@ -74,6 +74,9 @@ Key Vault and Managed HSM must have both soft-delete and purge protection enable
 
 For more information, see [About keys](/azure/key-vault/keys/about-keys).
 
+> [!NOTE]
+> 4,096 bit keys are not supported for SQL Database in Microsoft Fabric.
+
 ## Enable encryption using customer-managed keys
 
 After completing the prerequisites, follow the steps in this section to enable customer-managed keys in your Fabric workspace.
@@ -118,6 +121,7 @@ Before you configure your Fabric workspace with a customer-managed key, consider
   * Pipeline
   * Dataflow
   * Industry solutions
+  * SQL database (Preview)
 
 * This feature can't be enabled for a workspace that contains unsupported items. 
 

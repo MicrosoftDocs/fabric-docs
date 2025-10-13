@@ -154,7 +154,9 @@ items:
     - name: Configure granular access control for a SQL database
       href: sql/configure-sql-access-controls.md     
     - name: Protect sensitive data with Microsoft Purview protection policies
-      href: sql/protect-databases-with-protection-policies.md  
+      href: sql/protect-databases-with-protection-policies.md 
+    - name: Encryption-at-rest in SQL database
+      href: sql/security-cmk.md  
   - name: Troubleshoot
     items: 
     - name: Limitations

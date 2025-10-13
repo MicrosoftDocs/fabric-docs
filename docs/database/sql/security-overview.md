@@ -49,14 +49,15 @@ You can use [private links](../../security/security-private-links-overview.md) t
 For more information about private links, see: [Set up and use private links](../../security/security-private-links-use.md).
 
 ## Encryption
+### Transport Layer Security
 
 All database connections use Transport Layer Security (TLS) 1.2 to protect your data in transit.
 
-All your data is encrypted at rest by using Microsoft-managed keys.
+### Encryption-at-rest using a customer-managed keys
 
-## Limitations
+Microsoft Fabric encrypts all data-at-rest using Microsoft managed keys. With [customer-managed keys for Fabric workspaces](../../security/workspace-customer-managed-keys.md), you can use your Azure Key Vault keys to add another layer of protection to the data in your Microsoft Fabric workspaces - including all data in SQL database in Microsoft Fabric. A customer-managed key provides greater flexibility, allowing you to manage its rotation, control access, and usage auditing. It also helps organizations meet data governance needs and comply with data protection and encryption standards.
 
-- Auditing and encryption using customer-managed keys are currently not supported in SQL database in Microsoft Fabric.
+For more information about customer-managed keys for a SQL database in Microsoft Fabric, see [Customer-managed keys in SQL database in Microsoft Fabric](security-cmk.md).
 
 ## Related content
 
