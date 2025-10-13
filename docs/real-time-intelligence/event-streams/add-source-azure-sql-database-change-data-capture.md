@@ -8,6 +8,8 @@ ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-hubs-capabilities
 ---
 
 # Add Azure SQL Database CDC source to an eventstream
@@ -69,6 +71,15 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
     :::image type="content" source="media/add-source-azure-sql-database-change-data-capture/live-view.png"     alt-text="Screenshot of streaming Azure SQL Database CDC source in Live view." lightbox="media/add-source-azure-sql-database-change-data-capture/live-view.png":::
 
+::: zone pivot="basic-features"
+
+::: zone-end
+
+::: zone pivot="extended-features"
+
+[!INCLUDE [configure-destintions-schema-enabled-sources](./includes/configure-destinations-schema-enabled-sources.md)]
+
+::: zone-end
 ## Related content
 
 Other connectors:

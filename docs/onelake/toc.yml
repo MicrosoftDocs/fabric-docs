@@ -61,6 +61,8 @@ items:
     href: onelake-api-parity.md
   - name: Use Python to manage OneLake
     href: onelake-access-python.md
+  - name: OneLake Deep Dive ADLS and Blob APIs in Action
+    href: onelake-apis-in-action.md
 - name: Integrate with Azure services
   items:
   - name: Azure Synapse Analytics
@@ -113,6 +115,8 @@ items:
       href: onelake-shared-access-signature-overview.md
     - name: Create a OneLake SAS
       href: how-to-create-a-onelake-shared-access-signature.md
+  - name: OneLake diagnostics
+    href: onelake-diagnostics-overview.md
   - name: Network security
     items:
     - name: Manage inbound access to OneLake
