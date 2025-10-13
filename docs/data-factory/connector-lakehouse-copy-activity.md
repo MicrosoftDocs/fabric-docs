@@ -89,11 +89,11 @@ The following properties are **required**:
 
             If you select **Dynamic range**, when using query with parallel enabled, range partition parameter(`?DfDynamicRangePartitionCondition`) is needed. Sample query: `SELECT * FROM <TableName> WHERE ?DfDynamicRangePartitionCondition`.
               - **Partition column name**: Specify the name of the source column in **integer** type that's used by range partitioning for parallel copy. If not specified, the index or the primary key of the table is auto-detected and used as the partition column.
-                  If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Lakehouse table](#parallel-copy-from-lakehouse-table) section.
+                  If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Lakehouse table for T-SQL Query](#parallel-copy-from-lakehouse-table-for-t-sql-query) section.
             
-              - **Partition upper bound**: Specify the maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Lakehouse table](#parallel-copy-from-lakehouse-table) section.
+              - **Partition upper bound**: Specify the maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Lakehouse table for T-SQL Query](#parallel-copy-from-lakehouse-table-for-t-sql-query) section.
             
-              - **Partition lower bound**: Specify the minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Lakehouse table](#parallel-copy-from-lakehouse-table) section.
+              - **Partition lower bound**: Specify the minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Lakehouse table for T-SQL Query](#parallel-copy-from-lakehouse-table-for-t-sql-query) section.
               
             
                   :::image type="content" source="./media/connector-lakehouse/dynamic-range.png" alt-text="Screenshot showing the configuration when you select Dynamic range." lightbox="./media/connector-lakehouse/dynamic-range.png":::        
@@ -146,12 +146,12 @@ The following properties are **required**:
   - If you select **Tables**:
     - **Table**: Choose an existing table from the table list or specify a table name as the destination. Or you can select **New** to create a new table. 
 
-      :::image type="content" source="./media/connector-lakehouse/table-name-destination.png" alt-text="Screenshot showing table name.":::
+      :::image type="content" source="./media/connector-lakehouse/table-name-destination.png" alt-text="Screenshot showing table name in destination.":::
 
 
       When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the destination. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default schema.
 
-      :::image type="content" source="./media/connector-lakehouse/table-name-with-schema-destination.png" alt-text="Screenshot showing table name with schema.":::  
+      :::image type="content" source="./media/connector-lakehouse/table-name-with-schema-destination.png" alt-text="Screenshot showing table name with schema in destination.":::  
     
     > [!NOTE]
     > The table name must be at least one character long, without '/' or '\\', no trailing dot, and no leading or trailing spaces.
@@ -254,17 +254,35 @@ When copying data to Lakehouse table, the following mappings are used from inter
 | Byte array       | binary              |
 | Decimal          | decimal             |
 
+#### Data type mapping for Lakehouse T-SQL Query
+
+When copying data from Lakehouse table for T-SQL Query, the following mappings are used from Lakehouse table for T-SQL Query data types to interim data types used by the service internally.
+
+| Lakehouse table for T-SQL Query data type | Interim service data type |
+|---------------------|------------------|
+| int                 | Int32            |
+| varchar             | String           |
+| bigint              | Int64            |
+| smallint            | Int16, SByte     |
+| real                | Single           |
+| float               | Double           |
+| decimal             | Decimal          |
+| bit                 | Boolean          |
+| varbinary           | Byte[]           |
+| date                | DateTime         |
+| datetime2           | DateTime         |
+
 ### Settings
 
 For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
-## Parallel copy from Lakehouse table
+## Parallel copy from Lakehouse table for T-SQL Query
 
-The Lakehouse table connector in copy activity provides built-in data partitioning to copy data in parallel. You can find data partitioning options on the **Source** tab of the copy activity.
+The Lakehouse table connector for T-SQL Query in copy activity provides built-in data partitioning to copy data in parallel. You can find data partitioning options on the **Source** tab of the copy activity.
 
-When you enable partitioned copy, copy activity runs parallel queries against your Lakehouse table source to load data by partitions. The parallel degree is controlled by the **Degree of copy parallelism** in the copy activity settings tab. For example, if you set **Degree of copy parallelism** to four, the service concurrently generates and runs four queries based on your specified partition option and settings, and each query retrieves a portion of data from your Lakehouse table.
+When you enable partitioned copy, copy activity runs parallel queries against your Lakehouse table for T-SQL Query source to load data by partitions. The parallel degree is controlled by the **Degree of copy parallelism** in the copy activity settings tab. For example, if you set **Degree of copy parallelism** to four, the service concurrently generates and runs four queries based on your specified partition option and settings, and each query retrieves a portion of data from your Lakehouse table for T-SQL Query.
 
-You are suggested to enable parallel copy with data partitioning especially when you load large amount of data from your Lakehouse table. The following are suggested configurations for different scenarios. When copying data into file-based data store, it's recommended to write to a folder as multiple files (only specify folder name), in which case the performance is better than writing to a single file.
+You are suggested to enable parallel copy with data partitioning especially when you load large amount of data from your Lakehouse table for T-SQL Query. The following are suggested configurations for different scenarios. When copying data into file-based data store, it's recommended to write to a folder as multiple files (only specify folder name), in which case the performance is better than writing to a single file.
 
 | Scenario                                                     | Suggested settings                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
