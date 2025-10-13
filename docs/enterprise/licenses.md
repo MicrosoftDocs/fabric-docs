@@ -6,6 +6,7 @@ ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
 ms.date: 10/13/2025
+ai-usage: ai-assisted
 ---
 
 # Understand Microsoft Fabric licenses
