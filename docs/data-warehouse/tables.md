@@ -107,13 +107,13 @@ For [!INCLUDE [fabric-dw](includes/fabric-dw.md)], `PRIMARY KEY` and `UNIQUE` co
 
 ## #temp tables
 
-Session-scoped temporary (#temp) tables can be created in Fabric Data Warehouse.
+Session-scoped temporary (`#temp`) tables can be created in Fabric Data Warehouse.
 
 These tables exist only within the session in which they are created and last for the duration of that session. They are not visible to other users or sessions and are automatically dropped from the system once the session ends or the #temp table is dropped. These tables are accessible to all users without requiring specific item-level permission.
 
 Two types of #temp tables can be created based on specific use cases, non-distributed and distributed.
 
-- Non-distributed #temp Table (mdf-backed) is the default type. The syntax for creating and using non-distributed #temp tables in Fabric Data Warehouse is similar to user tables, but you need to prefix the temp table name with `#`.
+- A non-distributed #temp table (mdf-backed) is the default type. The syntax for creating and using non-distributed #temp tables in Fabric Data Warehouse is similar to user tables, but you need to prefix the temp table name with `#`.
 
     ```sql
      CREATE TABLE #table_name (
@@ -135,11 +135,13 @@ In the previous script, `data_type1` and `data_type2` are placeholders for suppo
 
 Distributed #temp tables are recommended, as they align with normal user tables; they have unlimited storage, data type support, and T-SQL operations. The syntax for data manipulation and definition is identical to user tables in Fabric Data Warehouse, with prefix `#` added to the table name.
 
+In Fabric Data Warehouse, temp tables are not affected by [time travel](time-travel.md) query hints and always return the latest information.
+
 ## Align source data with the data warehouse
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables are populated by loading data from another data source. To achieve a successful load, the number and data types of the columns in the source data must align with the table definition in the warehouse.
 
-If data is coming from multiple data stores, you can port the data into the  warehouse and store it in an integration table. Once data is in the integration table, you can use the power of warehouse to implement transformation operations. Once the data is prepared, you can insert it into production tables.
+If data is coming from multiple data stores, you can port the data into the warehouse and store it in an integration table. Once data is in the integration table, you can use the power of warehouse to implement transformation operations. Once the data is prepared, you can insert it into production tables.
 
 ## Limitations
 
