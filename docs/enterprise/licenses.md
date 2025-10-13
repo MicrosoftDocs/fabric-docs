@@ -11,11 +11,9 @@ ai-usage: ai-assisted
 
 # Understand Microsoft Fabric licenses
 
-[Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md) is a platform that lets users get, create, share, and visualize data using a set of tools. To share content and collaborate in Microsoft Fabric, your organization needs an [F or P capacity](#capacity) and at least one [per-user license](#per-user-licenses).
+Microsoft Fabric licenses and capacities determine how users create, share, and view items across your organization. To collaborate, you need an [F or P capacity](#capacity) and at least one [per-user license](#per-user-licenses). This article explains tenants, capacities, workspaces, license modes, and scenarios so you can plan a scalable deployment.
 
-Microsoft Fabric licenses and capacities determine how users create, share, and view items across your organization. To collaborate, you need an F or P capacity and at least one per-user license. This article explains tenants, capacities, workspaces, license modes, and scenarios so you can plan a scalable deployment.
-
-The following diagram illustrates two ways to deploy Fabric in an organization. Retail company A has a single Microsoft Entra tenant for the entire company. Retail company B has two separate Microsoft Entra tenants: one for military products and one for commercial products. Both companies deploy Fabric capacities based on their geographic location.
+The following diagram illustrates two common ways organizations can structure their Microsoft Fabric deployment using tenants and capacities. For example, a company can use a single Microsoft Entra tenant for all business units, or separate tenants for different divisions or compliance needs. Each tenant can have one or more Fabric capacities, often aligned to geographic or business requirements.
 
 :::image type="content" source="media/licenses/tenants-capacities.png" alt-text="Screenshot of two organizational deployment examples: Org A with one tenant and three capacities; Org B with two tenants each containing several capacities and workspaces." lightbox="media/licenses/tenants-capacities.png":::
 
