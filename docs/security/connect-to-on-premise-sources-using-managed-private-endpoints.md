@@ -263,10 +263,7 @@ When a managed private endpoint is deleted in Fabric, the connection entry remai
 
 ## Learn more
 
-- [Managed private endpoints in Microsoft Fabric](https://learn.microsoft.com/fabric/security/managed-private-endpoints-overview)  
-- [Create a Private Link Service in Azure](https://learn.microsoft.com/azure/private-link/private-link-service-overview)  
-- [Azure Private Endpoint DNS configuration](https://learn.microsoft.com/azure/private-link/private-endpoint-dns)  
-- [Outbound Access Protection (OAP) for Fabric Data Engineering](https://learn.microsoft.com/fabric/security/outbound-access-protection-overview)  
-- [Use Azure Key Vault with Fabric Spark notebooks](https://learn.microsoft.com/fabric/data-engineering/use-key-vault-secrets)  
-- [Customer-Managed Keys (CMK) for Fabric Data Engineering](https://learn.microsoft.com/fabric/security/customer-managed-keys-overview)
+* [About managed private endpoints in Fabric](./security-managed-private-endpoints-overview.md)
+* [About private links in Fabric](./security-private-links-overview.md)
+* [Overview of managed virtual networks in Fabric](./security-managed-vnets-fabric-overview.md)
 
