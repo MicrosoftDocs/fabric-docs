@@ -18,13 +18,10 @@ ms.custom: references_regions
 Graph in Microsoft Fabric is a scalable, enterprise-grade solution that turns disconnected data into AI-powered insights. 
 
 Unlike traditional relational databases that often require costly joins and complex queries, graph in Microsoft Fabric:
-- Introduces a scale-out architecture that implements
-the flexible [labeled property graph model](graph-data-models.md).
-- Offers data querying functionality that's compliant with
-the [international standard for the graph query language GQL (ISO/IEC 39075)](gql-language-guide.md). 
+- Introduces a scale-out architecture that implements the flexible [labeled property graph model](graph-data-models.md).
+- Offers data querying functionality that's compliant with the [international standard for the graph query language GQL (ISO/IEC 39075)](gql-language-guide.md). 
 
-Together, these capabilities enable advanced graph analytics directly on OneLake
-without the need to manually set up brittle ETL (extract, transform, load) or data replication workflows.
+Together, these capabilities enable advanced graph analytics directly on OneLake without the need to manually set up brittle ETL (extract, transform, load) or data replication workflows.
 
 Graph in Microsoft Fabric's scale-out design ensures performance and elasticity for enterprise-scale workloads, so you can analyze billions of relationships without bottlenecks. Its labeled property graph model lets nodes and edges carry labels and properties that make complex relationships easy to model, query, and explore.
 
