@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: how-to
 ms.custom:
-ms.date: 08/13/2025
+ms.date: 10/13/2025
 
 #customer intent: As a workspace admin, I want to understand how to securely access a lakehouse in a workspace with public access restriction from an open workspace without public access restriction, including setup steps and best practices.
 
@@ -116,7 +116,7 @@ Create a notebook and connect it to the restricted lakehouse as follows:
    from pyspark.sql import SparkSession
    # Read Delta table from the restricted lakehouse using Workspace DNS-based ABFSS URI
    df = spark.read.format("delta").load(
-      "abfss://{LakehouseName}@{WorkspaceFQDN}/{LakehouseID}/Tables/customers"
+      "abfss://{WorkspaceID}@{WorkspaceFQDN}/{LakehouseID}/Tables/customers"
    )
    ```
 
