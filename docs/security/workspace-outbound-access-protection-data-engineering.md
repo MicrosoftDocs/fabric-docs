@@ -39,7 +39,7 @@ The following data engineering item types are supported with outbound access pro
 - Notebooks
 - Spark Job Definitions
 - Environments
-- Warehouses
+- Data Warehouse
 
 The following sections explain how outbound access protection affects specific data engineering item types in your workspace.
 

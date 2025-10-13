@@ -18,19 +18,9 @@ The [workspace outbound access protection](./workspace-outbound-access-protectio
 
 * For connections to another workspace, <!-- https://review.learn.microsoft.com/en-us/fabric/security/security-workspace-level-private-links-set-up -->use managed private endpoints and the Private Link service to enable secure outbound connections.
 
+You can use manage private endpoints for Data Engineering and OneLake workloads. Managed private endpoints aren't supported for Data Factory workloads, so you must use data connection rules instead.
+
 This article describes how to create an allowlist using managed private endpoints to connect to another workspace.
-
-## Prerequisites
-
-* You must have an admin role in the workspace.
-
-* The workspace where you want to set up outbound access protection must reside on a Fabric capacity (F SKUs). No other capacity types are supported. You can check assignment by going to the workspace settings and selecting **License info**, as described in Step 1 of [Reassign a workspace to a different capacity](/fabric/fundamentals/workspace-license-mode#reassign-a-workspace-to-a-different-capacity-1).
-
-* The tenant setting **Configure workspace-level outbound network rules** must be enabled by a Fabric tenant administrator. See [Manage admin access to outbound access protection settings](workspace-outbound-access-protection-tenant-setting.md).
-
-* The `Microsoft.Network` feature must be re-registered for the subscription. From the Azure portal home page, go to **Subscriptions** > **Settings** > **Resource providers**. Select **Microsoft.Network** and select **Re-register**.
-
-* Outbound access protection must be enabled for the workspace. See [Enable workspace outbound access protection](workspace-outbound-access-protection-set-up.md).
 
 ## Allow outbound access to an external source 
 

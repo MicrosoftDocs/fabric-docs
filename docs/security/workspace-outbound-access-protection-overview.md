@@ -61,8 +61,9 @@ The following table summarizes the supported workloads and item types that can b
 |Workload  |Supported items  |More information  |
 |---------|---------|---------|
 |OneLake     |<ul><li>OneLake shortcuts</li></ul>         |[Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md)         |
-|Data Engineering     |<ul><li>Lakehouses</li><li>Notebooks</li><li>Spark Job Definitions</li><li>Environments</li><li>Warehouses</li></ul>         |[Workspace outbound access protection for data engineering workloads](workspace-outbound-access-protection-data-engineering.md)         |
-|Data Factory     |<ul><li>Data Flows Gen2 (with CICD)</li><li>Data Pipelines</li><li>Copy Jobs</li></ul>         |[Workspace outbound access protection for Data Factory](workspace-outbound-access-protection-data-factory.md)         |
+|Data Engineering     |<ul><li>Lakehouses</li><li>Notebooks</li><li>Spark Job Definitions</li><li>Environments</li></ul>         |[Workspace outbound access protection for data engineering workloads](workspace-outbound-access-protection-data-engineering.md)         |
+|Data Warehouse     |<ul><li>Data Warehouse</li></ul>         |[Workspace outbound access protection for data engineering workloads](workspace-outbound-access-protection-data-engineering.md)         |
+|Data Factory     |<ul><li>Data Flows Gen2 (with CICD)</li><li>Pipelines</li><li>Copy Jobs</li></ul>         |[Workspace outbound access protection for Data Factory](workspace-outbound-access-protection-data-factory.md)         |
 
 ## Considerations and limitations
 
