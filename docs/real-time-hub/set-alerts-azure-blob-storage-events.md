@@ -5,7 +5,7 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 07/22/2025
+ms.date: 10/13/2025
 ---
 
 # Set alerts on Azure Blob Storage events in Real-Time hub
@@ -42,41 +42,41 @@ Do steps from one of the following sections, which opens a side panel where you 
 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert-from-detail-page.png" alt-text="Screenshot that shows the Azure blob storage events detail page with Set alert button selected." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert-from-detail-page.png":::
 
-## Set alert for Azure blob storage events
+## Monitor for Azure Blob Storage events
 
-On the **Set alert** page, follow these steps:
+1. In the **Monitor** section of the **Add rule** pange to the right, for **Source**, select **Source source events**.
 
-1. In the **Monitor** section, choose **Select events**.
-1. In the **Get events** wizard, do these steps:
-    1. On the **Connect** page, if you're connecting to the Azure storage account for the first time, do these steps:
-        1. Select the **Azure subscription** that has the Azure storage account.
-        1. Select the **Azure storage account**.
-        1. In the **Stream details** section, select the **Workspace** where you want to save the alert, and enter a name for the **eventstream**.
-        1. Select **Next**.
+    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/select-source-events.png" alt-text="Screenshot that shows the Add rule pane." lightbox="./media/set-alerts-azure-blob-storage-events/select-source-events.png":::        
+1. On the **Configure** page of the **Connect data source** wizard, select **Connect to existing Azure Blob Storage account** if you haven't connected this storage account before. If you had already connected the storage account, chose **Select a connected Azure Blob Storage account**, and then select the storage account from the drop-down list. 
+1. Select the **Azure subscription** that has the Azure storage account.
+1. Select the **Azure storage account**.
+1. In the **Stream details** section to the right, select the **Workspace** where you want to save the alert, and enter a name for the **eventstream**.
+1. Select **Next**.
         
-            :::image type="content" source="./media/set-alerts-azure-blob-storage-events/connect-azure-storage-account.png" alt-text="Screenshot that shows the Add source wizard Connect page for an Azure storage account." lightbox="./media/set-alerts-azure-blob-storage-events/connect-azure-storage-account.png":::
-    1. On the **Configure event types and source** page, do these steps:
-        1. For **Event types**, select the events that you want to monitor.
+    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/connect-azure-storage-account.png" alt-text="Screenshot that shows the Add source wizard Connect page for an Azure storage account." lightbox="./media/set-alerts-azure-blob-storage-events/connect-azure-storage-account.png"::: 
+1. On the **Configure event types and source** page, follow these steps: 
+    1. For **Event types**, select the events that you want to monitor.
 
-            :::image type="content" source="./media/set-alerts-azure-blob-storage-events/select-event-types.png" alt-text="Screenshot that shows the available event types for an Azure storage account." lightbox="./media/set-alerts-azure-blob-storage-events/select-event-types.png":::        
-        1. In the **Set filters** section, select **+ Filter** to a filter based on a field.
-        
-            :::image type="content" source="./media/set-alerts-azure-blob-storage-events/add-filter.png" alt-text="Screenshot that shows a sample filter for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/add-filter.png":::        
-        1. Select **Next**.
-    1. On the **Review + connect** page, review the settings, and select **Create source**.
+        :::image type="content" source="./media/set-alerts-azure-blob-storage-events/select-event-types.png" alt-text="Screenshot that shows the available event types for an Azure storage account." lightbox="./media/set-alerts-azure-blob-storage-events/select-event-types.png":::        
+    1. In the **Set filters** section, select **+ Filter** to a filter based on a field.
     
-        :::image type="content" source="./media/set-alerts-azure-blob-storage-events/review-create.png" alt-text="Screenshot that shows the Add source wizard Review + connect page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/review-create.png":::                
-1. For **Condition**, confirm that **On each event** is selected.
-1. For **Action**, select one of the following options:
-    1. To receive an email when the event occurs and the condition is met, select **Send me an email**.
-    1. To receive notification via Teams, select **Message me in Teams**.
-    1. To run a Fabric item, select **Run a Fabric item**.
-1. In the **Save location** section, do these steps:
-    1. For **Workspace**, select the workspace where you want to save the alert.
-    1. For **Item**, select an existing [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] item or create a new [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] item for this alert. 
-1. Select **Create** at the bottom of the page to create the alert.
+        :::image type="content" source="./media/set-alerts-azure-blob-storage-events/add-filter.png" alt-text="Screenshot that shows a sample filter for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/add-filter.png":::        
+    1. Select **Next**.
+1. On the **Review + connect** page, review the settings, and select **Connect** or **Create source**.
+    
+    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/review-create.png" alt-text="Screenshot that shows the Add source wizard Review + connect page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/review-create.png":::                
+1. Once it's successful, select **Save** at the bottom of the wizard. You can also select **Open Eventstream** to view the eventstream that's created by the wizard. 
 
-    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert.png" alt-text="Screenshot that shows the Set alert page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert.png":::                
+    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/save-eventstream.png" alt-text="Screenshot that shows the review + connect page after the eventstream is successfully created." lightbox="./media/set-alerts-azure-blob-storage-events/save-eventstream.png":::                    
+
+
+[!INCLUDE [set-details-conditions-actions-rule](./includes/set-details-conditions-actions-rule.md)]
+
+## Create the alert
+
+Select **Create** at the bottom of the page to create the alert.
+
+:::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert.png" alt-text="Screenshot that shows the Set alert page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert.png":::                
 
 ## Related content
 
