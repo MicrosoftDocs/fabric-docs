@@ -1,6 +1,6 @@
 ---
 title: GQL Values and Value Types
-description: Complete reference for GQL values, value types, literals, comparison rules, and the type system in graph in Microsoft Fabric.
+description: Complete reference for GQL values, value types, literals, comparison rules, and the type system for graph in Microsoft Fabric.
 ms.topic: reference
 ms.date: 10/09/2025
 author: eric-urban
@@ -18,16 +18,20 @@ The GQL language supports various kinds of values like numbers, strings, and gra
 
 **Key concepts:**
 
-- **Value types** can be nullable or non-nullable (material), depending on whether they include or exclude the null value.
+- **Value types** can be _nullable_ or _material_ (non-nullable), depending on whether they include or exclude the null value.
 - **Non-nullable value types** are specified syntactically as `NOT NULL`.
 - **The same value** can belong to multiple value types (polymorphism).
 - **The null value** is a member of every nullable value type.
+
+> [!NOTE]
+> All value types are nullable by default, unless explicitly declared as `NOT NULL`.
+> For example,  `INT` specifies the nullable integer type, while `INT NOT NULL` specifies the material integer type.
 
 ## How value types are organized
 
 All value types fall into two major categories that serve different purposes in your queries:
 
-- **Predefined value types** - Built into the language (numbers, strings, booleans, etc.).
+- **Predefined value types** - Built into the language (such as numbers, strings, and booleans).
 - **Constructed value types** - Composed from other types (lists, paths).
 
 Predefined value types are further organized into specialized categories:
@@ -46,7 +50,7 @@ Understanding how GQL compares values is crucial for writing effective queries, 
 ### Basic comparison rules
 
 - You can generally compare values of the same kind.
-- All numbers can be compared with each other (integers with floats, etc.).
+- All numbers can be compared with each other (for example, integers with floats).
 - Only reference values referencing the same kind of object can be compared (node references with node references, edge references with edge references).
 
 ### Null handling in comparisons
@@ -185,6 +189,9 @@ UINT [ NOT NULL ]
 UINT64 [ NOT NULL ]
 ```
 
+`INT` and `INT64` specify the same numeric type.
+So do `UINT` and `UINT64`.
+
 ### Approximate numeric types
 
 Graph in Microsoft Fabric supports approximate numbers that are IEEE (Institute of Electrical and Electronics Engineers) 754-compatible floating point numbers.
@@ -219,7 +226,7 @@ DOUBLE [ NOT NULL ]
 FLOAT64 [ NOT NULL ]
 ```
 
-(`DOUBLE`, `FLOAT`, and `FLOAT64` all specify the same type)
+`DOUBLE`, `FLOAT`, and `FLOAT64` all specify the same type.
 
 ## Temporal value types
 
@@ -389,8 +396,11 @@ NULL NOT NULL
 
 ### List values
 
-List values are sequences of elements. Lists can contain elements of the same type or mixed types, and can include null values.
+List values are sequences of elements. Lists can contain elements of the same type, and can include null values.
 
+> [!IMPORTANT]
+> Currently, lists in graph in Microsoft Fabric cannot contain elements of mixed types.
+ 
 **How comparison works:**
 
 Lists are compared first by size, then element by element in order. Two lists are equal if they have the same size and all corresponding elements are equal.
@@ -461,6 +471,10 @@ A path consists of:
 - A sequence of nodes and edges: `node₁ - edge₁ - node₂ - edge₂ - ... - nodeₙ`
 - Always starts and ends with a node.
 - Contains at least one node (minimum path length is zero edges).
+
+> [!NOTE]
+> Currently literal syntax for paths is not yet supported.
+> Instead, paths can be bound using `MATCH pathVar=...path pattern...`.
 
 **How comparison works:**
 

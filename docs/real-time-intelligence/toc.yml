@@ -125,6 +125,8 @@ items:
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
       - name: PostgreSQL Database CDC
         href: event-streams/add-source-postgresql-database-change-data-capture.md
+      - name: MongoDB CDC
+        href: event-streams/add-source-mongodb-change-data-capture.md
       - name: MySQL Database CDC
         href: event-streams/add-source-mysql-database-change-data-capture.md
       - name: Azure Cosmos DB CDC

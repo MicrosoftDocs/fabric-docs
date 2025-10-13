@@ -29,9 +29,10 @@ This article explains how to configure outbound access protection for your Fabri
 
 ## Enable workspace outbound access protection 
 
-To enable outbound access protection for a workspace, you can use the Fabric portal or REST API.
+> [!NOTE]
+> The workspace-level setting to block outbound public access can take up to 15 mins to take effect.
 
-### [Fabric portal](#tab/fabric-portal-1)
+ ### Using the Fabric portal
 
 1. Sign in to Fabric with an account that has the Admin role in the workspace where you want to set up outbound access protection.
 
@@ -65,6 +66,8 @@ In the request body, set `outbound` to `Deny`. Also specify the `inbound` value 
 ```
 
 ---
+
+Now that outbound public access is blocked, you can create an allowlist of approved connections to external resources using either data connection rules or managed private endpoints.
 
 ## Next steps
 

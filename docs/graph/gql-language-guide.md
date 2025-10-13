@@ -1,6 +1,6 @@
 ---
 title: GQL Language Guide
-description: Complete guide to GQL language support in graph in Microsoft Fabric
+description: Complete guide to GQL language support for graph in Microsoft Fabric
 ms.topic: reference
 ms.date: 10/09/2025
 author: eric-urban
@@ -90,7 +90,7 @@ In GQL, you work with labeled property graphs. A graph consists of two types of 
 Every graph element has these characteristics:
 
 - An **internal ID** that uniquely identifies it
-- **One or more labels**—descriptive names like `Person` or `knows`. Edges always have exactly one label in graph for Microsoft Fabric.
+- **One or more labels**—descriptive names like `Person` or `knows`. Edges always have exactly one label in a graph in Microsoft Fabric.
 - **Properties**—name-value pairs that store data about the element
 
 ### How graphs are structured
@@ -117,6 +117,10 @@ Graph models also ensure data integrity through constraints, especially **node k
 Throughout this documentation, we use a social network example to illustrate GQL concepts. Understanding this domain helps you follow the examples and apply similar patterns to your own data.
 
 :::image type="content" source="./media/gql/schema-example.png" alt-text="Diagram showing the social network schema." lightbox="./media/gql/schema-example.png":::
+
+> [!NOTE] 
+> The social network is example is derived from the [LDBC SNB (LDBC Social Network Benchmark)](https://ldbcouncil.org/benchmarks/snb/) published by the [GDC (Graph Data Council)](https://ldbcouncil.org/).
+> See the article ["The LDBC Social Network Benchmark"](https://arxiv.org/abs/2001.02299) for further details.
 
 ### The social network entities
 
@@ -167,7 +171,8 @@ MATCH (p:Person)
 RETURN p.firstName, p.lastName
 ```
 
-This query:
+In this query:
+
 1. **`MATCH`** finds all nodes labeled `Person`
 2. **`RETURN`** shows their first and last names
 
@@ -195,14 +200,15 @@ FILTER n.birthday = m.birthday
 RETURN count(*) AS same_age_friends
 ```
 
-This query works step by step:
+Here:
 
 1. **`MATCH`** finds all pairs of `Person` nodes that know each other
 2. **`FILTER`** keeps only the pairs where both people have the same birthday
 3. **`RETURN`** counts how many such friend pairs exist
 
 > [!TIP]
-> Filtering can also be performed directly as part of a pattern (for example, in `MATCH`) by appending a `WHERE` clause
+> Filtering can also be performed directly as part of a pattern by appending a `WHERE` clause.
+> For example, `MATCH (n:Person WHERE n.age > 23)` will only match `Person` nodes whose `age` property is greater than 23.
 
 > [!NOTE]
 > GQL supports C-style `//` line comments, SQL-style `--` line comments, and C-style `/* */` block comments.
@@ -219,14 +225,15 @@ The pipeline works like this: each statement transforms data and passes it to th
 
 ```gql
 -- Data flows: Match → Let → Filter → Order → Limit → Return
-MATCH (p:Person)-[:workAt]->(c:Company)     -- Input: unit table, Output: table with (p, c) columns
-LET companyName = c.name                    -- Input: (p, c), Output: (p, c, companyName) columns
-FILTER c.name CONTAINS 'Tech'               -- Input: (p, c, companyName), Output: filtered rows  
-ORDER BY p.firstName DESC                   -- Input: filtered table, Output: sorted table
-LIMIT 5                                     -- Input: sorted table, Output: table with top 5 rows
-RETURN                                      -- Input: top 5 rows, Output: result table
-  p.firstName || ' ' || p.lastName AS name, 
-  companyName
+MATCH (p:Person)-[:workAt]->(c:Company) -- Input: unit table, Output: (p, c) table
+LET companyName = c.name                -- Input: (p, c) table, Output: (p, c, companyName) table
+FILTER companyName CONTAINS 'Tech'      -- Input: (p, c, companyName) table, Output: filtered table  
+ORDER BY p.firstName DESC               -- Input: filtered table, Output: sorted table
+LIMIT 5                                 -- Input: sorted table, Output: top 5 rows table
+RETURN                                  -- Input: top 5 rows table, 
+  p.firstName                              Output: (companyName, name) result table
+  || ' ' || p.lastName AS name,
+  companyName                        
 ```
 
 This linear composition ensures predictable execution and makes complex queries easier to understand step-by-step.
@@ -270,12 +277,35 @@ Variables can be categorized in different ways:
 - **Singleton variables** - bind to individual element reference values from patterns
 - **Group variables** - bind to lists of element reference values from variable-length patterns (see [Advanced Aggregation Techniques](#advanced-aggregation-techniques)) 
 
-### Understanding query results
+## Execution outcomes and results
 
-When you run a query, you get back:
+When you run a query, you get back an *execution outcome* that consists of:
 
-- **A result table** with the data from your `RETURN` statement
-- **Status information** showing whether the query succeeded
+- **An (optional) result table** with the data from your `RETURN` statement.
+- **Status information** showing whether the query succeeded or not.
+
+### Result tables
+
+The result table - if present - is the actual result of query execution.
+
+A result table includes information about the name and type of its columns,
+a preferred column name sequence to be used for displaying results,
+whether the table is ordered, <!-- whether the table contains duplicate rows -->
+and the actual rows themselves.
+
+> [!NOTE]
+> In case of execution failure, no result table is included in the execution outcome.
+
+### Status information
+
+Various noteworthy conditions (such as errors or warnings) are detected during the execution of the query. 
+Each such condition is recorded by a status object in the status information of the execution outcome.
+
+The status information consists of a primary status object and a (possibly empty) list of additional status objects.
+The primary status object is always present and indicates whether query execution was successful or failed.
+
+Every status object includes a 5-digit status code (called GQLSTATUS) that identifies the recorded condition
+as well as a message that describes it.
 
 **Success status codes:**
 
@@ -283,12 +313,21 @@ When you run a query, you get back:
 |-----------|----------------------------------------------|------------------------------------------|
 | 00000     | note: successful completion                  | Success with at least one row            |
 | 00001     | note: successful completion - omitted result | Success with no table (currently unused) |
-| 02000     | note: no data                                | Success with an empty table              |
+| 02000     | note: no data                                | Success with zero rows                   |
 
-Other status codes indicate errors or warnings that prevented the query from completing successfully.
+Other status codes indicate further errors or warnings that were detected during query execution.
 
 > [!div class="nextstepaction"]
 > [View complete GQLSTATUS codes reference](gql-reference-status-codes.md)
+
+> [!IMPORTANT] 
+> In application code, always rely on status codes to test for certain conditions.
+> Status codes are guaranteed to be stable and their general meaning will not change in the future.
+> Do not test for the contents of messages, as the concrete message reported for a status code can change 
+> from query to query.
+
+Additionally, status objects can contain an underlying cause status object and a diagnostic record
+with further information characterizing the recorded condition.
 
 ## Essential concepts and statements
 
@@ -321,7 +360,7 @@ Start with basic relationship patterns:
 WHERE c.name = 'Microsoft'
 
 -- Find friends who are both young
-(p:Person)-[:knows]-(f:Person)  
+(p:Person)-[:knows]->(f:Person)  
 WHERE p.birthday > 19950101 AND f.birthday > 19950101
 ```
 
@@ -438,7 +477,7 @@ MATCH (p:Person)-[:workAt]->(c:Company)
 
 ```gql
 -- Filter pattern matches
-MATCH p=(p:Person)-[:workAt]->(c:Company) WHERE p.lastName = c.name
+MATCH (p:Person)-[:workAt]->(c:Company) WHERE p.lastName = c.name
 ```
 
 All matches can be post-filtered using `WHERE`, avoiding a separate `FILTER` statement.
@@ -448,11 +487,17 @@ All matches can be post-filtered using `WHERE`, avoiding a separate `FILTER` sta
 When `MATCH` isn't the first statement, it joins input data with pattern matches:
 
 ```gql
+...
 -- Input: table with 'targetCompany' column
--- Implicit Join: targetCompany (equality join)
+-- Implicit join: targetCompany (equality join)
 -- Output: table with (targetCompany, p, r) columns
 MATCH (p:Person)-[r:workAt]->(targetCompany)
+...
 ```
+
+> [!IMPORTANT]
+> Graph in Microsoft Fabric does not yet support arbitrary statement composition.
+> See the article on [current limitations](limitations.md). 
 
 **Key joining behaviors:**
 
@@ -586,7 +631,31 @@ Understanding how `ORDER BY` works:
 
 > [!CAUTION]
 > The sort order established by `ORDER BY` is only visible to the *immediately* following statement.
-> Hence, `ORDER BY` followed by `RETURN *` does NOT produce a sorted result. 
+> Hence, `ORDER BY` followed by `RETURN *` does NOT produce an ordered result. 
+>
+> Compare:
+>
+> ```gql
+> MATCH (a:Person)-[r:knows]->(b:Person)
+> ORDER BY r.since DESC
+> /* intermediary result _IS_ guaranteed to be ordered here */
+> RETURN a.name AS aName, b.name AS bName, r.since AS since
+> /* final result _IS_ _NOT_ guaranteed to be ordered here  */
+> ```
+>
+> with:
+>
+> ```gql
+> MATCH (a:Person)-[r:knows]->(b:Person)
+> /* intermediary result _IS_ _NOT_ guaranteed to be ordered here */
+> RETURN a.name AS aName, b.name AS bName, r.since AS since
+> ORDER BY since DESC
+> /* final result _IS_ guaranteed to be ordered here              */
+> ```
+>
+> This has immediate consequences for "Top-k" queries:
+> `LIMIT` must always follow the `ORDER BY` statement that established
+> the intended sort order.
 
 #### `OFFSET` and `LIMIT` statements
 
@@ -825,7 +894,8 @@ GQL provides these function categories for different data processing needs:
 7. Logical disjunction (`OR`)
 
 > [!TIP]
-> **Performance tip**: Use parentheses to make precedence explicit. Complex expressions are easier to read and debug when grouping is clear.
+> Use parentheses to make precedence explicit. Complex expressions are easier to read and debug 
+> when grouping is clear.
 
 > [!div class="nextstepaction"]
 > [Learn comprehensive expression syntax and all built-in functions](gql-expressions.md)
@@ -835,6 +905,10 @@ GQL provides these function categories for different data processing needs:
 This section covers sophisticated patterns and techniques for building complex, efficient graph queries. These patterns go beyond basic statement usage to help you compose powerful analytical queries.
 
 ### Complex multi-statement composition
+
+> [!IMPORTANT]
+> Graph in Microsoft Fabric does not yet support arbitrary statement composition.
+> See the article on [current limitations](limitations.md). 
 
 Understanding how to compose complex queries efficiently is crucial for advanced graph querying.
 
@@ -1030,7 +1104,7 @@ RETURN *
 
 ### GQLSTATUS codes
 
-As explained in the section on [query results](gql-language-guide.md#understanding-query-results),
+As explained in the section on [query results](gql-language-guide.md#execution-outcomes-and-results),
 GQL reports rich status information related to the success or potential failure of execution.
 See the [GQL status codes reference](gql-reference-status-codes.md) for the complete list.
 
@@ -1100,7 +1174,7 @@ Keep these references handy for quick lookups:
 - [GQL status codes](gql-reference-status-codes.md) - Complete error code reference  
 - [GQL reserved words](gql-reference-reserved-terms.md) - Complete list of reserved keywords
 
-**Graph for Microsoft Fabric:**
+**Graph in Microsoft Fabric:**
 - [Graph data models](graph-data-models.md) - Understanding graph concepts and modeling
 - [Graph and relational databases](graph-relational-databases.md) - Differences and when to use each
 - [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)

@@ -25,7 +25,7 @@ To get data from Event Hubs using Eventstream, see [Add Azure Event Hubs source 
 
 ## Prerequisites
 
-* An Azure subscription. [Create a free Azure account](https://azure.microsoft.com/free/)
+* An Azure subscription. [Create a free Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * An [event hub](/azure/event-hubs/event-hubs-create?context=/fabric/context/context)
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions

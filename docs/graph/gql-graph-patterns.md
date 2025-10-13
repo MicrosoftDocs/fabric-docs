@@ -83,19 +83,19 @@ Patterns can express complex requirements on the labels of matched nodes and edg
 **Example:**
 
 ```gql
-MATCH (:Person|!Company)-[:isLocatedIn]->(p:City|Country)
-RETURN count(*)
+MATCH (:Person|(Organisation&!Company))-[:isLocatedIn]->(p:City|Country)
+RETURN count(*) AS num_matches
 ```
 
-This counts the number of `isLocatedIn` edges connecting `Person` nodes or not-`Company` nodes (`University` nodes in the social network schema) to `City` or `Country` nodes.
+This counts the number of `isLocatedIn` edges connecting `Person` nodes or `Organisation`-but-not-`Company` nodes (which are always `University` nodes in the social network schema) to `City` or `Country` nodes.
 
 **Syntax:**
 
-| Syntax    | Meaning                                        |
-|-----------|------------------------------------------------|
-| `A&B`     | Labels need to include both A and B.           |
-| `A\|B`    | Labels need to include at least one of A or B. |
-| `!A`      | Labels need to exclude A.                      |
+| Syntax                | Meaning                                        |
+|-----------------------|------------------------------------------------|
+| <code>A&B</code>      | Labels need to include both A and B.           |
+| <code>A&#124;B</code> | Labels need to include at least one of A or B. |
+| <code>!A</code>       | Labels need to exclude A.                      |
 
 Additionally, use parenthesis to control the order of label expression evaluation. By default, `!` has the highest precedence and `&` has higher precedence than `|`. Therefore `!A&B|C|!D` is the same as `((!A)&B)|C|(!D)`.
 
@@ -162,7 +162,7 @@ WHERE p.quota_achievement > 1.2 AND c.revenue > c.revenue_target
 ```
 
 > [!TIP]
-> Use pattern predicates when the conditions are highly selective to reduce the intermediate result set size.
+> Using pattern predicates when the conditions are highly selective can reduce the size of intermediary results.
 
 ### Binding path variables
 
@@ -232,6 +232,11 @@ Variable-length patterns are powerful constructs that let you find paths of vary
 
 ### Bounded variable-length patterns
 
+> [!IMPORTANT]
+>
+> Bounded variable-length patterns currently only support a maximum upper bound of 8.
+> See the article on current [limitations](limitations.md).
+
 Many common graph queries require repeating the same edge pattern multiple times. Instead of writing verbose patterns like:
 
 ```gql
@@ -257,7 +262,20 @@ This pattern finds direct friends, friends-of-friends, and friends-of-friends-of
 
 > [!NOTE]
 > The lower bound can also be `0`. In this case, no edges are matched and the whole pattern only matches
-> if the two endpoint node patterns match the same node.
+> if and only if the two endpoint node patterns match the same node.
+>
+> Example:
+>
+> ```gql
+> (p1:Person)-[r:knows WHERE NOT p1=p2]->{0,1}(p2:Person)
+> ```
+>
+> This pattern matches pairs of different persons that know each other *but also*
+> matches the same person as both `p1` and `p2` if that person doesn't "know" themselves.
+
+When no lower bound is specified, it generally defaults to 0 (zero).
+<!-- but with the exception that
+when unbounded variable-length patterns with `+`-repetition are used, it defaults to 1 (one) instead -->
 
 **Complex variable-length compositions:**
 Variable-length patterns can be part of larger, more complex patterns:
@@ -291,6 +309,8 @@ The evaluation of the edge variable `e` occurs in two contexts:
 
 - **In the `RETURN` statement**: Here, `e` is bound to a (group) list of edge reference values in the order they occur in the matched chain. The result of `e[0]` is the first edge reference value in each matched chain.
 
+<!-- Commented out intentionally
+
 ### Unbounded variable-length patterns
 
 You can also match arbitrarily long chains of edge patterns by specifying no upper bound. Unbounded patterns create an unbounded variable-length pattern, useful for traversing hierarchies or networks of unknown depth:
@@ -305,18 +325,21 @@ TRAIL (:Person)-[:knows]->{2,}(:Person)
 You can also specify one of the following two shortcuts:
 
 ```gql
-// 0, 1, or more
+// 0, 1, or more (default lower bound is 0)
 TRAIL (:Person)-[:knows]->*(:Person)
 
-// 1 or more
+// 1 or more (default lower bound is 1)
 TRAIL (:Person)-[:knows]->+(:Person)
 ```
 
 Both forms are equivalent and match chains of at least 2 `knows` relationships.
 
 > [!IMPORTANT]
-> The set of matches for unbounded variable-length patterns can be infinite due to the presence of cycles in the graph. Therefore, unbounded variable-length patterns must always be used with 
-> the `TRAIL` match mode to ensure termination and avoid infinite results.
+> The set of matches for unbounded variable-length patterns can be infinite due to the presence of cycles in
+> the graph. Therefore, unbounded variable-length patterns must always be used with the `TRAIL` match mode 
+> to ensure termination and avoid infinite results.
+
+-->
 
 ## Related content
 

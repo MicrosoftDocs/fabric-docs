@@ -21,7 +21,7 @@ In this quickstart, you learn how dataflows and pipelines work together to creat
 
 Before you start, you need:
 
-- A tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/free/).
+- A tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A [!INCLUDE [product-name](../includes/product-name.md)] enabled workspace: [Set up a workspace](../fundamentals/create-workspaces.md) that isn’t the default My Workspace.
 - [An Azure SQL database with table data](/azure/azure-sql/database/single-database-create-quickstart).
 - [A Blob Storage account](/azure/storage/common/storage-account-create).
