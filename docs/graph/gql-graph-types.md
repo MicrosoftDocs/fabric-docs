@@ -14,7 +14,7 @@ ms.subservice: graph
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-A graph type describes your graph's structure by defining which nodes and edges can exist. Think of it like a blueprint or schema—it specifies the shape of nodes and edges in the graph in terms of their labels and properties. For edges (the connections between nodes), it also specifies which kinds of edges can connect which kinds of nodes. If you're familiar with relational databases, graph types work similarly to how ER diagrams describe tables and foreign key relationships.
+A graph type describes your graph's structure by defining which nodes and edges can exist. Think of it like a blueprint or schema—it specifies the shape of nodes and edges in the graph in terms of their labels and properties. For edges (the connections between nodes), it also specifies which kinds of edges can connect which kinds of nodes. If you're familiar with relational databases, graph types work similarly to how ER diagrams describe tables and foreign key relationships. 
 
 Graph types provide several key benefits:
 
@@ -23,9 +23,14 @@ Graph types provide several key benefits:
 - **Documentation**: Serve as a clear specification of your graph's structure for developers and analysts.
 
 > [!NOTE] 
-> This article introduces graph types conceptually and illustrates their definition using 
-> the syntax defined in the GQL standard. However, this syntax is currently not directly
-> supported in graph for Microsoft Fabric.
+> This article introduces graph types conceptually and illustrates their definition using the syntax defined in the GQL standard. However, this syntax is currently not directly
+> supported for graph in Microsoft Fabric.
+
+Structurally, a graph type defines allowed node types and edge types of graphs of the graph type, as well as additional constraints that further restrict those graphs.
+
+> [!NOTE]
+> Graph types are defined by giving a set of node type, edge type, and constraint definitions. 
+> Changing the order of these definitions does not change the graph type that is being defined.
 
 ## Define node types
 
@@ -66,9 +71,12 @@ Node types can also be more complex, with more properties and data types:
 })
 ```
 
-### Multiple labels
+### Node types with multiple labels
 
-Nodes can have multiple labels to support inheritance and categorization. You can specify multiple labels for a node type, but one label (the "key label") must uniquely identify the node type:
+Nodes can have multiple labels to support inheritance and categorization. You can specify multiple labels for a node type, but one label (the "key label") *must* uniquely identify the node type
+(If only one label is specified, this is taken to be the key label of the node type).
+
+As an example, consider:
 
 ```gql
 (:University => :Organisation),
@@ -77,8 +85,58 @@ Nodes can have multiple labels to support inheritance and categorization. You ca
 
 Here, `University` and `Company` are the key labels of the two node types defined, while `Organisation` is a secondary label shared by both types. Notice how the key label and secondary labels are separated by `=>` in each node type. This approach creates a type hierarchy where both universities and companies are types of organizations.
 
+Since key labels identify node types, the properties of node types identified by secondary labels are automatically inherited when using this syntax.
+Therefore the previous syntax can be understood to effectively define the following node types:
+
+```gql
+(:University => :Organisation {
+  id :: UINT64 NOT NULL, 
+  name :: STRING, 
+  url :: STRING 
+}),
+(:Company => :Organisation {
+  id :: UINT64 NOT NULL, 
+  name :: STRING, 
+  url :: STRING 
+})
+```
+
 > [!NOTE]
 > Key labels are essential when you're defining node type hierarchies. They help the system understand which node type you're referring to when multiple types share the same labels.
+
+### Save time with inheritance shortcuts
+
+Repeating labels and properties from parent node types gets tedious and error-prone. Graph in Microsoft Fabric provides the `+=` operator so you can specify only the extra (noninherited) labels and property types:
+
+```gql
+(:Post => :Message += {
+    language :: STRING,
+    imageFile :: STRING
+})
+```
+
+When no extra properties are specified, the graph inherits all required properties from the parent type:
+
+```gql
+(:Comment => :Message)  -- Same as: (:Comment => :Message += {})
+```
+
+### Use abstract node types
+
+You can define node types purely for building hierarchies, even when your graph doesn't contain concrete nodes of that type. Abstract node types are useful for creating conceptual groupings and shared property sets. For this purpose, you can define a node type as `ABSTRACT` in graph in Microsoft Fabric:
+
+```gql
+ABSTRACT (:Message => {
+    id :: UINT64 NOT NULL,
+    creationDate :: ZONED DATETIME,
+    browserUsed :: STRING,
+    locationIP :: STRING,
+    content :: STRING,
+    length :: UINT64
+})
+```
+
+Abstract node types aren't available for direct graph loading—they exist only to structure your hierarchy and define shared properties. Concrete node types that inherit from abstract types can be loaded with data.
 
 ## Define edge types and families
 
@@ -120,85 +178,6 @@ This concept allows you to model the same type of relationship between different
 
 Both edge types use the `isPartOf` label, but they connect different types of nodes, forming an edge type family that represents hierarchical containment relationships.
 
-## Build node type hierarchies
-
-Node type hierarchies allow you to model complex domain relationships and support inheritance-like behavior. You can use key labels to create node type hierarchies with this simple rule: If a node type has a label that's a key label of another node type, it must also have all the labels and property types of that other node type.
-
-This approach lets you model complex node type hierarchies and taxonomies, even with multiple inheritance patterns. It's useful for creating abstract categories that group related entity types.
-
-**Example:**
-
-Here's how to create a hierarchy for different types of messages:
-
-```gql
-(:Message => {
-    id :: UINT64 NOT NULL,
-    creationDate :: ZONED DATETIME,
-    browserUsed :: STRING,
-    locationIP :: STRING,
-    content :: STRING,
-    length :: UINT64
-}),
-
-(:Post => :Message {
-    id :: UINT64 NOT NULL,
-    creationDate :: ZONED DATETIME,
-    browserUsed :: STRING,
-    locationIP :: STRING,
-    content :: STRING,
-    length :: UINT64,
-    language :: STRING,
-    imageFile :: STRING
-}),
-
-(:Comment => :Message {
-    id :: UINT64 NOT NULL,
-    creationDate :: ZONED DATETIME,
-    browserUsed :: STRING,
-    locationIP :: STRING,
-    content :: STRING,
-    length :: UINT64
-})
-```
-
-Both `Post` and `Comment` node types have the extra `Message` label, so they must include the same labels and property types as the `Message` node type (such as `creationDate` or `browserUsed`). If they didn't include all required properties, graph in Microsoft Fabric rejects the graph type as invalid during deployment.
-
-This inheritance ensures that all messages, whether posts or comments, share common properties while still allowing each type to have its own specific properties.
-
-### Save time with inheritance shortcuts
-
-Repeating labels and properties from parent node types gets tedious and error-prone. Graph in Microsoft Fabric provides the `+=` operator so you can specify only the extra (noninherited) labels and property types:
-
-```gql
-(:Post => :Message += {
-    language :: STRING,
-    imageFile :: STRING
-})
-```
-
-When no extra properties are specified, the graph inherits all required properties from the parent type:
-
-```gql
-(:Comment => :Message)  -- Same as: (:Comment => :Message += {})
-```
-
-### Use abstract node types
-
-You can define node types purely for building hierarchies, even when your graph doesn't contain concrete nodes of that type. Abstract node types are useful for creating conceptual groupings and shared property sets. For this purpose, you can define a node type as `ABSTRACT` in graph in Microsoft Fabric:
-
-```gql
-ABSTRACT (:Message => {
-    id :: UINT64 NOT NULL,
-    creationDate :: ZONED DATETIME,
-    browserUsed :: STRING,
-    locationIP :: STRING,
-    content :: STRING,
-    length :: UINT64
-})
-```
-
-Abstract node types aren't available for direct graph loading—they exist only to structure your hierarchy and define shared properties. Concrete node types that inherit from abstract types can be loaded with data.
-
 ## Supported property types
 
 When you're defining a property type, the property value type must be one that graph in Microsoft Fabric supports. Choosing the right data types is important for storage efficiency and query performance.
@@ -216,7 +195,10 @@ Here are the data types you can use for property values:
 For complete information about value types, see [GQL values and value types](gql-values-and-value-types.md).
 
 > [!IMPORTANT]
-> All property types with the same name in a node type or edge type must specify the same property value type. The only exception: they can differ in whether they include the null value.
+> All property types with the same name that occur in a node type or edge type of a given graph type must specify the same property value type. 
+> The only exception: they can differ in whether they include the null value.
+> For example, according to this rule, a graph type with `(:A { id :: STRING }), (:B { id :: STRING NOT NULL})` would be valid, 
+> while a graph type with `(:A { id :: STRING }), (:B { id :: INT})` would be invalid.
 
 ## Set up node key constraints
 

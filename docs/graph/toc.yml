@@ -33,6 +33,8 @@ items:
           href: gql-graph-types.md
         - name: GQL values and value types
           href: gql-values-and-value-types.md
+        - name: GQL query API    
+          href: gql-query-api.md
       - name: GQL reference material
         items:
         - name: GQL quick reference
