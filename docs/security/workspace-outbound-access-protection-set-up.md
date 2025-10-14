@@ -13,9 +13,9 @@ ms.date: 09/24/2025
 
 # Enable workspace outbound access protection
 
-Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. With this feature, admins can block all outbound connections, and then allow only approved connections to external resources through secure links between Fabric and virtual networks. [Learn more](./workspace-outbound-access-protection-overview.md).
+Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. Admins can block all outbound connections, and then allow only approved connections to external resources through secure links between Fabric and virtual networks. [Learn more](./workspace-outbound-access-protection-overview.md).
 
-This article explains how to configure outbound access protection for your Fabric workspaces to block all outbound connections by default. Then it describes how to enable outbound access through managed private endpoints or approved connections.
+This article explains how to configure outbound access protection for your Fabric workspaces to block all outbound connections by default. After completing the steps in this article, you can enable outbound access through managed private endpoints or data connection rules.
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ This article explains how to configure outbound access protection for your Fabri
  
    :::image type="content" source="media/workspace-outbound-access-protection-set-up/network-security-settings.png" alt-text="Screenshot showing outbound access protection settings." lightbox="media/workspace-outbound-access-protection-set-up/network-security-settings.png":::
 
-1. If you want to allow Git integration, turn the **Allow Git integration** toggle to **On**. Git integration is blocked by default when **Block outbound public access** is enabled, but you can enable Git integration for the workspace so its content (like notebooks, dataflows, Power BI reports, etc.) can sync with an external Git repository (GitHub or Azure DevOps). [Learn more](https://review.learn.microsoft.com/fabric/cicd/cicd-security?branch=pr-en-us-10624)
+1. If you want to allow Git integration, turn the **Allow Git integration** toggle to **On**. Git integration is blocked by default when **Block outbound public access** is enabled, but you can enable Git integration for the workspace so its content (like notebooks, dataflows, Power BI reports, etc.) can sync with an external Git repository (GitHub or Azure DevOps). [Learn more](/fabric/cicd/cicd-security)
 
 ### [API](#tab/api-1)
 
@@ -71,5 +71,5 @@ Now that outbound public access is blocked, you can create an allowlist of appro
 
 ## Next steps
 
-- [Create an allowlist with data connection rules](./workspace-outbound-access-protection-allow-list-connector.md)
 - [Create an allowlist with managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md)
+- [Create an allowlist with data connection rules](./workspace-outbound-access-protection-allow-list-connector.md)

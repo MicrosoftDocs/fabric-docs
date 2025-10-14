@@ -12,15 +12,14 @@ ms.date: 09/24/2025
 ---
 # Create an allowlist using managed private endpoints
 
-The [workspace outbound access protection](./workspace-outbound-access-protection-overview.md) setting blocks all outbound connections from a workspace. After [enabling this setting](workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to resources in other workspaces or external destinations. One way to allow outbound access is by creating an allowlist using managed private endpoints.
+The workspace outbound access protection setting blocks all outbound connections from a workspace. After [enabling this setting](./workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to resources in other workspaces or external destinations. For Data Engineering and OneLake workloads, you can allow outbound access by creating an allowlist using [managed private endpoints](security-managed-private-endpoints-overview) with or without the Private Link service:
 
-* For connections to [external sources](security-managed-private-endpoints-create.md), use managed private endpoints to connect to an external source from your workspace while blocking all other outbound connections.
+- Use managed private endpoints for connections to external sources.
+- For connections to other workspaces, use managed private endpoints together with the Private Link service.
 
-* For connections to another workspace, <!-- https://review.learn.microsoft.com/en-us/fabric/security/security-workspace-level-private-links-set-up -->use managed private endpoints and the Private Link service to enable secure outbound connections.
+Managed private links aren't supported for Data Factory workloads; use [data connection rules](./workspace-outbound-access-protection-allow-list-connector.md) instead.
 
-You can use manage private endpoints for Data Engineering and OneLake workloads. Managed private endpoints aren't supported for Data Factory workloads, so you must use data connection rules instead.
-
-This article describes how to create an allowlist using managed private endpoints to connect to another workspace.
+This article explains how to create an allowlist using managed private endpoints to connect your workspace to an external source or another workspace.
 
 ## Prerequisites
 
@@ -135,4 +134,3 @@ The cross-workspace managed private endpoint is now set up between the outbound 
 ## Related content
 
 - [Workspace outbound access protection overview](./workspace-outbound-access-protection-overview.md)
-- [Workspace outbound access protection - scenarios](./workspace-outbound-access-protection-scenarios.md)

@@ -13,9 +13,11 @@ ms.date: 09/24/2025
 
 # Create an allowlist using data connection rules
 
-In Microsoft Fabric, [workspace outbound access protection](./workspace-outbound-access-protection-overview.md) enables administrators to control outbound data connections from workspace resources to external networks. By default, all outbound connections can be blocked, and administrators can then create an allowlist to permit only specific data connections as needed. Data connection rules are supported for Data Factory workloads.
+The workspace outbound access protection setting blocks all outbound connections from a workspace. After [enabling this setting](./workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to external resources. For Data Factory workloads, you can allow outbound access by creating an allowlist using data connection rules.
 
-This article describes how to use data connection rules to allow cloud or gateway connections once you have [enabled outbound access protection](workspace-outbound-access-protection-set-up.md) for your workspace.
+Data connection rules aren't supported for Data Engineering or OneLake     workloads; use [managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md) instead.
+
+This article describes how to use data connection rules to allow cloud or gateway connections.
 
 ## Prerequisites
 
@@ -64,4 +66,3 @@ Refer to the [Workspaces - Get Gateway Connection Policy](/rest/api/fabric/core/
 ## Related content
 
 - [Workspace outbound access protection overview](./workspace-outbound-access-protection-overview.md)
-- [Workspace outbound access protection - scenarios](./workspace-outbound-access-protection-scenarios.md)

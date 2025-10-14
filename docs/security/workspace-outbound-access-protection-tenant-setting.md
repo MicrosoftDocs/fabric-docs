@@ -13,9 +13,9 @@ ms.date: 09/24/2025
 
 # Manage admin access to workspace outbound access protection settings
 
-Workspace outbound access protection is a network security feature that ensures that connections outside the workspace go through a secure connection between Fabric and a virtual network. It prevents the items from establishing unsecure connections to sources outside the workspace boundary unless allowed by the workspace admins.
+Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. Admins can block all outbound connections, and then allow only approved connections to external resources through secure links between Fabric and virtual networks. [Learn more](./workspace-outbound-access-protection-overview.md).
 
-The **Configure workspace-level outbound network rules** tenant setting in the Fabric admin center allows tenant admins to enable or disable the ability for workspace admins to configure outbound access protection for their workspaces. This setting is disabled by default. A Fabric administrator must enable this tenant setting as described in this article before a workspace admin can configure outbound access protection for their workspace.
+To allow workspace admins to manage outbound access protection, a Fabric administrator must first enable the **Configure workspace-level outbound network rules** tenant setting in the Fabric admin center. This setting is off by default and must be enabled before workspace admins can configure outbound access protection.
 
 ## Prerequisites
 
@@ -33,7 +33,6 @@ The **Configure workspace-level outbound network rules** tenant setting in the F
 
 1. Select **Apply**.
 
-## Related content
+## Next steps
 
-- [Workspace outbound access protection overview](./workspace-outbound-access-protection-overview.md)
-- [Workspace outbound access protection - scenarios](./workspace-outbound-access-protection-scenarios.md)
+- [Set up workspace outbound access protection](./workspace-outbound-access-protection-set-up.md)
