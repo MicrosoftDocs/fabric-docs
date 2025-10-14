@@ -19,6 +19,18 @@ To get started, you must complete the following prerequisites:
 
 For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], see [Connectivity](connectivity.md). 
 
+### Create a new table in the SQL query editor from a file
+
+1. In the query editor, paste and run the following T-SQL code:
+
+```sql
+CREATE TABLE dbo.bing_covid AS
+SELECT *
+FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet')
+```
+
+The **CTAS** (Create Table As Select) statement creates a new table and populates it with data retrieved from the specified source file, streamlining the process of both defining and loading the table in a single step. You can find more ingestion options in [Ingest data with T-SQL](ingest-data-tsql.md) page.
+
 ### Create a new table in the SQL query editor with templates
 
 1. In the warehouse editor ribbon, locate the **SQL templates** dropdown list. 
