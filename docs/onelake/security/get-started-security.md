@@ -36,12 +36,12 @@ This section describes the security model based on generally available OneLake f
 
 Workspace permissions define what actions users can take within a workspace and its items. These permissions are managed at the workspace level and are primarily control plane permissions; they determine administrative and item management capabilities, not direct data access. However, workspace permissions will generally inherit down to the item and folder level to grant data access by default. Workspace permissions allow for defining access to all items within that workspace. There are four different workspace roles, each of which grants different types of access. Below are the default behaviors of each workspace role.
 
-| Role | Can add admins? | Can add members? | Can edit OneLake security? | Can write data and create items? | Can read data in OneLake? |
-|--|--|--|--|--|
-| Admin | Yes | Yes | Yes | Yes | Yes |
-| Member | No | Yes | Yes | Yes | Yes |
-| Contributor | No | No | No | Yes | Yes |
-| Viewer | No | No | No | No | No* |
+| Role | Can add admins? | Can add members? | Can edit OneLake security? | Can write data and create items? | Can read data in OneLake? | Can manage workspace? | Can assign roles? |
+|--|--|--|--|--|--|--|--|
+| Admin | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Member | No | Yes | Yes | Yes | Yes | No | No |
+| Contributor | No | No | No | Yes | Yes | No | No |
+| Viewer | No | No | No | No | No* | No | No |
 
 > [!NOTE]
 > *Viewers can be given access to data through OneLake security roles.
