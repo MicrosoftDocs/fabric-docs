@@ -63,7 +63,7 @@ In the **first section** at the top, you see **cards or tiles** that provide a q
 
 
 - **Subscribe to OneLake events** - Provides a shortcut to create streams based on Fabric OneLake events. For details, see [Subscribe to OneLake events](create-streams-fabric-onelake-events.md#configure-and-create-an-eventstream). 
-- **Act on Job events** - Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for OneLake](set-alerts-fabric-onelake-events.md#set-alert-for-onelake-events). 
+- **Act on Job events** - Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for Job events](set-alerts-fabric-job-events.md) . 
 - **Visualize data** - Provides a shortcut to create a dashboard based on data in a KQL table. 
 - **Explore data in motion** - Provides a shortcut to preview data in a data source. For more information, see [Preview data streams](preview-data-streams.md).
 - **Connect weather data** - Provides a shortcut to create a data streams based on real-time weather data. For more information, see [Real-Time weather source](add-source-real-time-weather.md) 
