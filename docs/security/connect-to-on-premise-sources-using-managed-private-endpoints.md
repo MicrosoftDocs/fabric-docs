@@ -26,10 +26,10 @@ Fabric Managed Private Endpoints (MPEs) allow Fabric to establish **outbound** c
 The setup involves three main steps:
 
 1. The on-premises administrator exposes the data source through a **Private Link Service (PLS)** or Azure Private Endpoint-enabled resource.
-2. A Fabric workspace admin creates a **Managed Private Endpoint (MPE)** referencing the fully qualified domain name (FQDN) or Azure resource ID.
+2. A Fabric workspace admin creates a **Managed Private Endpoint (MPE)** referencing the fully qualified domain name (FQDN) with the Azure resource ID.
 3. The on-premises network admin reviews and approves the connection request in Azure.
 
-Once approved, all Fabric workloads (like Spark, Notebooks, or Data Pipelines) can securely connect to the approved resource.
+Once approved, all Fabric Data Engineering workloads (like Notebooks, Spark Job Definitions, Materialized Lakeviews, Livy Endpoints) can securely connect to the approved resource.
 
 ---
 
@@ -64,7 +64,13 @@ To expose your on-premises or custom-hosted data source (like SQL Server) to Fab
 
 ## Step 2: Create a Managed Private Endpoint using the Fabric REST API
 
-Once your private link service is ready, you can configure Fabric to connect to your on-premises resource using a Fully Qualified Domain Name (FQDN) by invoking the **Fabric REST API**.
+Once your private link service is ready, create a Managed Private Endpoint (MPE) in Fabric by calling the **Managed Private Endpoints REST API**. The current supported endpoint shape uses the path:
+
+`POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/managedPrivateEndpoints`
+
+Use this when you are targeting either:
+- A Private Link Service (use `targetPrivateLinkResourceId` + optionally `targetSubresourceType`), and/or
+- One or more fully qualified domain names (`targetFQDNs`) you want Fabric to resolve privately after approval.
 
 You can use any REST API client such as **Bruno**, **Insomnia**, or **Postman** to send the request.
 
@@ -83,54 +89,64 @@ This command returns a JSON object containing the access token.
 Copy the value of "accessToken" to use as your Authorization header.
 
 Step 2.2: Construct the API request
-Use the following endpoint and payload to create a managed private endpoint:
+Use the following endpoint and payload structure to create a managed private endpoint. Adjust fields based on whether you are binding to a Private Link Service, providing FQDNs, or both.
 
 Request
 
-```bash
-POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/network/privateEndpoints
+```http
+POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/managedPrivateEndpoints
 ```
 Headers
 
-Key	Value
-Authorization	Bearer <access_token>
-Content-Type	application/json
+Key | Value
+--- | ---
+Authorization | Bearer <access_token>
+Content-Type | application/json
 
-Body
+Body (example targeting a Private Link Service + FQDN)
 
 ```json
 {
-  "name": "onprem-sql-endpoint",
-  "type": "CustomFQDN",
-  "fqdn": "sqlserver.corp.contoso.com",
-  "description": "Private connection to on-prem SQL via Azure Private Link Service"
+   "name": "onprem-sql-endpoint",
+   "targetPrivateLinkResourceId": "/subscriptions/<subId>/resourceGroups/<rg>/providers/Microsoft.Network/privateLinkServices/<plsName>",
+   "targetSubresourceType": "sql", 
+   "targetFQDNs": ["sqlserver.corp.contoso.com"],
+   "requestMessage": "Private connection request from Fabric to on-prem SQL"
 }
 ```
-You can test this call directly from Bruno, Postman, or Insomnia:
+Body field reference:
 
-Open your preferred REST API client.
+| Field | Required | Type | Notes |
+|-------|----------|------|-------|
+| name | Yes | string | <= 64 chars. Unique within workspace. |
+| targetPrivateLinkResourceId | Yes* | string | Resource ID of Private Link Service or other supported private-link resource (*required unless only FQDN workflow is supported in future variants—consult current docs). |
+| requestMessage | No | string | <= 140 chars. Shown to approver. |
+| targetFQDNs | No | string[] | Up to 20 FQDNs to associate for private resolution. |
+| targetSubresourceType | No | string | Sub-resource group (e.g., `sql`, `blob`, service-specific). |
 
-Create a new POST request.
-
-Paste the endpoint URL, replacing {workspaceId} with your Fabric workspace ID.
-
-Add the headers and JSON body shown above.
-
-Send the request.
+Execution steps:
+1. Open your REST client.
+2. Set method to POST and paste the endpoint URL (replace `{workspaceId}`).
+3. Add Authorization header with the bearer token from Step 2.1.
+4. Paste the JSON body and adjust values.
+5. Send the request.
 
 Step 2.3: Verify the connection request
-A successful API response returns the following JSON:
+An example (simplified) successful response payload may look like:
 
 ```json
 {
-  "id": "f2cbd8d1-23f1-4b9a-9db2-23ad1e7b5129",
-  "name": "onprem-sql-endpoint",
-  "type": "CustomFQDN",
-  "fqdn": "sqlserver.corp.contoso.com",
-  "provisioningState": "PendingApproval",
-  "createdBy": "user@contoso.com"
+   "id": "f2cbd8d1-23f1-4b9a-9db2-23ad1e7b5129",
+   "name": "onprem-sql-endpoint",
+   "targetPrivateLinkResourceId": "/subscriptions/<subId>/resourceGroups/<rg>/providers/Microsoft.Network/privateLinkServices/<plsName>",
+   "targetFQDNs": ["sqlserver.corp.contoso.com"],
+   "targetSubresourceType": "sql",
+   "provisioningState": "PendingApproval",
+   "createdBy": "user@contoso.com",
+   "createdDateTime": "2025-10-14T10:12:37Z"
 }
 ```
+Field names can evolve; if a field you expect is missing, re-check the latest official documentation.
 At this point, the private connection request has been sent to the target data source administrator (for example, the owner of your Private Link Service in Azure).
 Once they approve the connection, the provisioning state updates to Approved, and you can begin accessing your on-premises data securely from Fabric.
 
@@ -163,11 +179,6 @@ Your network administrator will see this pending request in the Azure portal und
 5. Choose **Approve** and provide an optional justification.
 
    :::image type="content" source="./media/security-managed-private-endpoints-onpremise/private-endpoint-approval.png" alt-text="Screenshot showing approval of a private endpoint request in Azure portal.":::
-
-Once approved, the connection status in Fabric changes to **Approved**. You can now securely connect to your on-premises data source.
-
-
-
 ## Step 4: Access your on-premises SQL Server from Fabric notebooks
 
 After approval, your managed private endpoint becomes active and can be used from Spark notebooks or Data Pipelines.
@@ -256,10 +267,107 @@ Restrict outbound access using Fabric’s Outbound Access Protection (OAP) to en
 
 Rotate credentials and review endpoint approvals periodically.
 
-[!NOTE]
-When a managed private endpoint is deleted in Fabric, the connection entry remains visible in Azure until manually cleaned up by the network administrator.
 
----
+## Advanced scenario: Private Link Service pattern (on-prem SQL)
+
+The following advanced steps cover a full network path for reaching an on-premises SQL Server via an IP forwarder, internal Standard Load Balancer, and Private Link Service (PLS). This pattern is useful when the SQL host isn’t directly exposable or you need a consistent abstraction layer.
+
+### Step 1 – Create three subnets in your Virtual Network
+
+| Subnet | Purpose | Example CIDR |
+|--------|---------|--------------|
+| Backend Subnet | Hosts the IP forwarder VM | 192.168.1.0/24 |
+| Frontend Subnet | Hosts the Load Balancer | 192.168.2.0/24 |
+| PLS Subnet | Hosts the Private Link Service | 192.168.3.0/24 |
+
+Example (illustrative) VNet definition:
+
+```yaml
+# network-topology.yaml
+resources:
+   - type: Microsoft.Network/virtualNetworks
+      apiVersion: 2023-09-01
+      name: fabric-onprem-vnet
+      location: eastus
+      properties:
+         addressSpace:
+            addressPrefixes: ["192.168.0.0/16"]
+         subnets:
+            - name: backend-subnet
+               properties:
+                  addressPrefix: "192.168.1.0/24"
+            - name: frontend-subnet
+               properties:
+                  addressPrefix: "192.168.2.0/24"
+            - name: pls-subnet
+               properties:
+                  addressPrefix: "192.168.3.0/24"
+```
+
+### Step 2 – Deploy and configure IP forwarder
+
+Create a lightweight Ubuntu VM in the backend subnet. Enable IP forwarding and NAT to the on-prem SQL Server (example on-prem IP: `10.0.0.47`).
+
+Enable IP forwarding:
+
+```bash
+sudo su -
+sysctl -w net.ipv4.ip_forward=1
+```
+
+Configure TCP port forwarding to the SQL Server:
+
+```bash
+eth_if="eth0"
+fe_port=1433
+dest_ip="10.0.0.47"
+dest_port=1433
+
+iptables -t nat -A PREROUTING -i $eth_if -p tcp --dport $fe_port -j DNAT --to-destination $dest_ip:$dest_port
+iptables -t nat -A POSTROUTING -j MASQUERADE
+iptables-save
+```
+
+Verify rules:
+
+```bash
+iptables -t nat -L -n -v
+```
+
+> This simply forwards packets — it does not act as a protocol gateway.
+
+### Step 3 – Configure an internal Standard Load Balancer
+
+Deploy a Standard SKU, Internal Load Balancer in the frontend subnet.
+
+Add / configure:
+- Frontend IP (static) in `frontend-subnet`
+- Backend pool → IP forwarder VM NIC
+- Health probe → TCP 22 (every 5 seconds) or a custom port you expose
+- Load balancing rule → Protocol: TCP, Port: 1433, Backend Port: 1433
+- No outbound rule required
+
+### Step 4 – Create the Private Link Service (PLS)
+
+Create a PLS that references the Load Balancer frontend configuration and place it in the `pls-subnet`. Record the PLS **resource ID** for use in the Managed Private Endpoint request.
+
+### Step 5 – Create the Managed Private Endpoint
+
+Use the REST API already documented in Step 2 of the main guide. In the JSON body, set `targetPrivateLinkResourceId` to the PLS resource ID and (optionally) include an FQDN in `targetFQDNs` that you’ll use in Spark code.
+
+### Step 6 – Approve and test
+
+Approve the pending connection in the PLS (Azure portal → Private endpoint connections). Then run a Spark JDBC read using the FQDN to confirm private connectivity.
+
+### Common advanced pattern notes
+
+| Consideration | Guidance |
+|---------------|----------|
+| Health probe port | Use a consistently reachable port (22 or a lightweight TCP listener) so LB sees backend healthy. |
+| NAT VM sizing | A small VM is usually enough; monitor if high concurrent sessions are expected. |
+| High availability | For production, use multiple forwarder VMs in an availability set / zone with LB distributing. |
+| DNS | Ensure your private DNS zone resolves the chosen FQDN to the private endpoint IP after approval. |
+| Security | Restrict NSGs to only required inbound (1433 to forwarder) and management ports (22) from trusted ranges. |
 
 ## Learn more
 
