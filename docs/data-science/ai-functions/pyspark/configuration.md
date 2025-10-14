@@ -25,35 +25,17 @@ AI functions are designed to work out of the box, with the underlying model and 
 > - This article covers customizing AI functions with PySpark. To customize AI functions with pandas, see [this article](../pandas/configuration.md).
 > - See additional AI functions in [this overview article](../overview.md).
 
-## Select a different model
-By default, AI functions uses `gpt-4.1-mini`. To select a different model, you can do one of the following: 
-
-1. Set the `deployment_name` parameter to one of the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service) 
-
-2. Bring your own Azure OpenAI resource
-    - With PySpark, you can use the `OpenAIDefaults` class to modify the underlying language model that powers the functions. The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Azure OpenAI LLM deployment:
-
-```python
-from synapse.ml.services.openai import OpenAIDefaults
-defaults = OpenAIDefaults()
-
-defaults.set_deployment_name("your-deployment-name")
-defaults.set_subscription_key("your-subscription-key")
-defaults.set_URL("https://your-openai-endpoint.openai.azure.com/")
-defaults.set_temperature(0.05)
-```
-
 ## Configurations
 
-You can also substitute your own values for the deployment name, subscription key, endpoint URL, and custom temperature value:
+If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to configure the underlying AI model used by all functions. Settings that can  only be applied per function call are specified below.
 
-| Parameter | Description |
-|---|---|
-| `deployment_name` | A string value that designates the custom name of your model deployment in Azure OpenAI or Azure AI Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Azure AI Foundry portal, the value appears on the **Deployments** page. You can choose from the [models that Fabric supports](../ai-services/ai-services-overview.md#azure-openai-service). By default, the native Fabric LLM endpoint deployment is set to `gpt-4.1-mini`. |
-| `subscription_key` | An API key used for authentication with your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. |
-| `URL`| A URL that designates the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: `https://your-openai-endpoint.openai.azure.com/`. |
-| `temperature` | A numeric value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. By default, the Fabric LLM endpoint's temperature is set to `0.0`. |
-| `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. | `200` |
+| Parameter | Description | Default |
+|---|---|---|
+| `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. This value must be set per individual AI function call. | `200` |
+| `deployment_name` | A string value that designates the name of the underlying model. You can choose from [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). This can also be set to a custom model deployment in Azure OpenAI or Azure AI Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Azure AI Foundry portal, the value appears on the **Deployments** page.  | `gpt-4.1-mini` |
+| `temperature` | A numeric value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. | `0.0` |
+| `subscription_key` | An API key used for authentication with your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. | N/A |
+| `URL`| A URL that designates the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: `https://your-openai-endpoint.openai.azure.com/`. | N/A |
 
 You can retrieve and print each of the `OpenAIDefaults` parameters with the following code sample:
 
@@ -71,6 +53,33 @@ defaults.reset_deployment_name()
 defaults.reset_subscription_key()
 defaults.reset_URL()
 defaults.reset_temperature()
+```
+
+## Custom models
+
+### Choose another supported AI model
+
+Set the `deployment_name` to one of the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). For example:
+
+```python
+from synapse.ml.services.openai import OpenAIDefaults
+defaults = OpenAIDefaults()
+
+defaults.set_deployment_name("deployment-name")
+```
+
+### Configure a custom model endpoint
+
+By default, AI functions use the Fabric LLM endpoint. You can also use your own model endpoint by setting up an Azure OpenAI or AsyncOpenAI-compatible client with your endpoint and key. The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Azure OpenAI LLM deployment:
+
+```python
+from synapse.ml.services.openai import OpenAIDefaults
+defaults = OpenAIDefaults()
+
+defaults.set_deployment_name("your-deployment-name")
+defaults.set_subscription_key("your-subscription-key")
+defaults.set_URL("https://your-openai-endpoint.openai.azure.com/")
+defaults.set_temperature(0.05)
 ```
 
 > [!NOTE]
