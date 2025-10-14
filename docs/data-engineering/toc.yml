@@ -215,7 +215,7 @@ items:
            href: monitor-spark-resource-utilization.md       
          - name: Navigate the Apache Spark History Server
            href: apache-spark-history-server.md   
-      - name: Single Spark Application Monitoring APIs
+      - name: Spark Application Monitoring APIs
         items: 
           - name: Overview
             href: spark-monitoring-api-overview.md
