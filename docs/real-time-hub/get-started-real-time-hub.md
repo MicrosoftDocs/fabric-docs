@@ -34,7 +34,7 @@ The **first section** at the top has the following cards that provides shortcuts
 
 - **Subscribe to OneLake events** - Provides a shortcut to create streams based on Fabric OneLake events. For details, see [Subscribe to OneLake events](create-streams-fabric-onelake-events.
 md#configure-and-create-an-eventstream). 
-- **Act on Job events** - Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for OneLake](set-alerts-fabric-onelake-events.md#set-alert-for-onelake-events) 
+- **Act on Job events** - Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for Job events](set-alerts-fabric-job-events.md) 
 - **Connect weather data** - Provides a shortcut to create a data streams based on real-time weather data. For more information, see [Real-Time weather source](add-source-real-time-weather.md) 
 - **Learn from a tutorial** - Links to the [Fabric Real-Time intelligence tutorial](/fabric/real-time-intelligence/tutorial-introduction) that has a module on using the Real-Time hub. 
 - **Case study** - Links to a [case study](https://www.microsoft.com/customers/story/1770346240728000716-elcome-microsoft-copilot-consumer-goods-en-united-arab-emirates). 
