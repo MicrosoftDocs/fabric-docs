@@ -103,7 +103,7 @@ Create a notebook that reads from the table and writes to a new table. To do so,
 1. Retrieve the Notebook Definition via API and get the location result 
 
    ```
-   Get Notebook Definition API: GET https://{WorkspaceID w/o (-)}.zxy.w.dailyapi.fabric.microsoft.com/{WorkspaceID}/notebooks/getDefinition
+   Get Notebook Definition API: GET https://{WorkspaceID w/o (-)}.zxy.w.api.fabric.microsoft.com/{WorkspaceID}/notebooks/getDefinition
 
    Get location API: GET {location}/result
    ```
@@ -113,7 +113,7 @@ Create a notebook that reads from the table and writes to a new table. To do so,
 1. Create a notebook with the definition using the updated request body.
   
 ```
-   Create Notebook API: GET https://{WorkspaceID w/o (-)}.zxy.w.dailyapi.fabric.microsoft.com/{WorkspaceID}/notebooks
+   Create Notebook API: GET https://{WorkspaceID w/o (-)}.zxy.w.api.fabric.microsoft.com/{WorkspaceID}/notebooks
 
    Get location API: GET {location}/result
 ```

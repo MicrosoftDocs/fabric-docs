@@ -1,5 +1,5 @@
 ---
-title: "Create and manage protection policies for Fabric (preview)"
+title: "Create and manage protection policies for Fabric"
 description: "This article describes how to create, edit, or delete a Microsoft Purview protection policy for Microsoft Fabric."
 author: msmimart
 ms.author: mimart
@@ -11,11 +11,11 @@ ms.date: 11/21/2024
 
 ---
 
-# Create and manage protection policies for Fabric (preview)
+# Create and manage protection policies for Fabric
 
 This article describes how to create, edit, and delete Microsoft Purview protection policies for Microsoft Fabric. Its target audience is security and compliance admins who need to create protection policies for Fabric.
 
-For an overview of how protection policies for Fabric work, see [Protection policies in Fabric (preview)](./protection-policies-overview.md).
+For an overview of how protection policies for Fabric work, see [Protection policies in Fabric](./protection-policies-overview.md).
 
 ## Prerequisites
 
@@ -106,5 +106,5 @@ To edit or delete a protection policy:
 
 ## Related content
 
-* [Protection policies in Fabric (preview)](./protection-policies-overview.md)
+* [Protection policies in Fabric](./protection-policies-overview.md)
 * [Authoring and publishing protection policies (preview)](/purview/how-to-create-protection-policy)
