@@ -41,7 +41,7 @@ Fabric provides two options to use Azure AI services:
 
 [REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md), [SynapseML](how-to-use-openai-sdk-synapse.md)
 
-- Language Models: `gpt-4.1`, `gpt-4o`, `gpt-4o-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
+- Language Models: `gpt-5`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4o`, `gpt-4o-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
 - Text Embedding Model: `text-embedding-ada-002` is hosted. [See table for details](#consumption-rate-for-openai-embedding-models)
 
 ### [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) 
