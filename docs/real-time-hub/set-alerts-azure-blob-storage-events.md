@@ -84,11 +84,10 @@ Do steps from one of the following sections, which opens a side panel where you 
 1. In the **Add rule** pane, select **Create** at the bottom of the page to create the alert.
 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert.png" alt-text="Screenshot that shows the Set alert page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert.png":::                
-1. You see the **Alert created** page with a link to **open** the rule in the Fabric activator user interface in a separate tab. 
+1. You see the **Alert created** page with a link to **open** the rule in the Fabric activator user interface in a separate tab. Select **Done** to close the **Alert created** page. 
 
-    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/alert-created-page.png" alt-text="Screenshot that shows the Alert created page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/alert-created-page.png":::          
-1. Select **Done** to close the **Alert created** page. 
-1. If you select **Azure Blob Storage event** on the **Azure events** page, you see a page with the eventstream and activator items created by the **Add rule** wizard. 
+    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/alert-created-page.png" alt-text="Screenshot that shows the Alert created page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/alert-created-page.png":::          1. 
+1. You see a page with the eventstream and activator items created by the **Add rule** wizard. 
 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/items-created-wizard.png" alt-text="Screenshot that shows the Azure Blob Storage events page with the eventstream and activator items created." lightbox="./media/set-alerts-azure-blob-storage-events/items-created-wizard.png":::      
 1. Move the mouse over the **Eventstream** item in the list, and select **Open** link
