@@ -96,9 +96,9 @@ Under **Advanced**, you can specify the following fields:
 
 - **NUMBER settings**: Specify the precision and scale for NUMBER. This applies only to NUMBER types that do not have precision and scale explicitly defined in the Oracle database.
 
-- **Precision**: Specify the maximum number of significant decimal digits. Allowed values range from 1 to 256. Defaults to 256 if not specified.
+  - **Precision**: Specify the maximum number of significant decimal digits. Allowed values range from 1 to 256. Defaults to 256 if not specified.
 
-- **Scale**: Specify the number of digits after the decimal point. Allowed values range from 0 to 130 and must be less than or equal to the precision. Defaults to 130 if not specified.
+  - **Scale**: Specify the number of digits after the decimal point. Allowed values range from 0 to 130 and must be less than or equal to the precision. Defaults to 130 if not specified.
 
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
