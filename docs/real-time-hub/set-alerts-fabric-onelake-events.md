@@ -97,13 +97,13 @@ Do steps from one of the following sections, which opens a side panel where you 
     :::image type="content" source="./media/set-alerts-fabric-onelake-events/alert-created-page.png" alt-text="Screenshot that shows the Alert created page for Fabric OneLake item events." lightbox="./media/set-alerts-fabric-onelake-events/alert-created-page.png":::
 1. You see a page with the activator item created by the **Add rule** wizard. If you are on the **Fabric events** page, select **Job events** to see this page. 
 
-    :::image type="content" source="./media/set-alerts-fabric-job-events/items-created-wizard.png" alt-text="Screenshot that shows the Fabric Job items events page with the activator item created." lightbox="./media/set-alerts-fabric-job-events/items-created-wizard.png":::      
+    :::image type="content" source="./media/set-alerts-fabric-onelake-events/items-created-wizard.png" alt-text="Screenshot that shows the Fabric OneLake items events page with the activator items created." lightbox="./media/set-alerts-fabric-onelake-events/items-created-wizard.png":::      
 1. Move the mouse over the **Activator** item, and select **Open**. 
 
-    :::image type="content" source="./media/set-alerts-fabric-job-events/activator-menu.png" alt-text="Screenshot that shows the activator menu." lightbox="./media/set-alerts-fabric-job-events/activator-menu.png"::: 
+    :::image type="content" source="./media/set-alerts-fabric-onelake-events/activator-menu.png" alt-text="Screenshot that shows the activator menu." lightbox="./media/set-alerts-fabric-onelake-events/activator-menu.png"::: 
 1. You see the Activator item in the Fabric Activator editor user interface. Select the rule if it's not already selected. You can update the activator item in this user interface. For example, update the subject, headline, or change the action from email to Teams message. 
 
-    :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/activator-editor.png" alt-text="Screenshot that shows the activator in an editor." lightbox="./media/set-alerts-fabric-workspace-item-events/activator-editor.png"::: 
+    :::image type="content" source="./media/set-alerts-fabric-onelake-events/activator-editor.png" alt-text="Screenshot that shows the activator in an editor." lightbox="./media/set-alerts-fabric-onelake-events/activator-editor.png"::: 
 
 ## Related content
 
