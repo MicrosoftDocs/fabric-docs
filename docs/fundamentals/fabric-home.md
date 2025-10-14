@@ -130,7 +130,7 @@ To enable focus mode, open the item you want to edit and select **Focus Mode** f
 
 :::image type="content" source="media/fabric-home/focus-mode.png" alt-text="Screenshot showing how to enable the focus mode.":::
 
-To exit, select **Exit Focus Mode** (or toggle it off).
+To exit, select **Exit Focus Mode**, the same toggle control turns it off.
 
 ## Find content fast: Search, filter, sort
 
