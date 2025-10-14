@@ -128,7 +128,7 @@ Focus mode helps developers create a distraction-free workspace by hiding the na
 
 To enable focus mode, open the item you want to edit and select **Focus Mode** from the global header. The navigation sidebar and object explorer are collapsed, maximizing the editor pane.
 
-:::image type="content" source="media/fabric-home/focus-mode.png" alt-text="Screenshot showing how to enable the focus mode.":::
+:::image type="content" source="media/fabric-home/focus-mode.png" alt-text="Screenshot showing how to enable the focus mode." lightbox="media/fabric-home/focus-mode.png":::
 
 To exit, select **Exit Focus Mode**, the same toggle control turns it off.
 
