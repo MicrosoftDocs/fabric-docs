@@ -49,7 +49,7 @@ For **Condition**, select one of the following options:
     :::image type="content" source="./media/set-alerts-data-streams/alert-created.png" alt-text="Screenshot that shows Alert created page.":::        
 1. You see the Activator item in the Fabric Activator editor user interface. Select the rule if it's not already selected. You can update the activator item in this user interface. For example, update the subject, headline, or change the action from email to Teams message. 
 
-    :::image type="content" source="./media/set-alerts-data-streams/activator-editor.png" alt-text="Screenshot that shows the activator in an editor." lightbox="./media/set-alerts-fabric-job-events/activator-editor.png"::: 
+    :::image type="content" source="./media/set-alerts-data-streams/activator-editor.png" alt-text="Screenshot that shows the activator in an editor." lightbox="./media/set-alerts-data-streams/activator-editor.png"::: 
 
 ## Related content
 

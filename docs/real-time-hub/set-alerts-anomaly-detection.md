@@ -6,7 +6,7 @@ ms.author: v-hzargari
 ms.reviewer: tessahurr
 ms.topic: how-to
 ms.custom:
-ms.date: 09/15/2025
+ms.date: 10/14/2025
 ms.search.form: Set Alerts, Anomaly Detection Alerts, Anomaly Detection Set Alerts
 ---
 
@@ -38,13 +38,13 @@ This article walks you through how to configure alerts for anomaly detection eve
 
 In the **Add rule** side panel, configure the following settings:
 
-1. **Monitor:** Choose which anomaly detection events you want to track.
+1. In the **Monitor** section, choose **Select source events**. 
 
     :::image type="content" source="media/set-alerts-anomaly-detection/select-events.png" alt-text="Screenshot of the Set alert side panel.":::
 
-    1. In the **Configure connection settings** dialog, choose your Fabric workspace. This workspace should contain the anomaly detection events you want to monitor.
+1. In the **Configure connection settings** page, choose your Fabric workspace. This workspace should contain the anomaly detection events you want to monitor.
 
-        :::image type="content" source="media/set-alerts-anomaly-detection/select-workspace.png" alt-text="Screenshot of the Configure connection settings dialog.":::
+    :::image type="content" source="media/set-alerts-anomaly-detection/select-workspace.png" alt-text="Screenshot of the Configure connection settings dialog.":::
 
     1. Select the **Item** that you want to monitor. This item should be a Fabric workspace item that contains the anomaly detection events you want to track.
 
@@ -70,8 +70,16 @@ In the **Add rule** side panel, configure the following settings:
 
 
 ## Create alert
- 
-1. Select **Create** to finalize the alert setup.
+
+1. Select **Create** at the bottom of the page to create the alert.
+
+    :::image type="content" source="./media/set-alerts-anomaly-detection/create-alert.png" alt-text="Screenshot that shows the Set alert page with all fields selected.":::        
+1. You see the **Alert created** page with a link to **open** the rule in the Fabric activator user interface in a separate tab.
+
+    :::image type="content" source="./media/set-alerts-anomaly-detection/alert-created.png" alt-text="Screenshot that shows Alert created page.":::        
+1. You see the Activator item in the Fabric Activator editor user interface. Select the rule if it's not already selected. You can update the activator item in this user interface. For example, update the subject, headline, or change the action from email to Teams message. 
+
+    :::image type="content" source="./media/set-alerts-anomaly-detection/activator-editor.png" alt-text="Screenshot that shows the activator in an editor." lightbox="./media/set-alerts-anomaly-detection/activator-editor.png"::: 
 
 ## Related content
 
