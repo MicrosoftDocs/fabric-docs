@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: ''
 ms.service: fabric
 ms.topic: conceptual
-ms.date: 06/10/2025
+ms.date: 10/14/2025
 ---
 
 # Add Fabric URLs to your allowlist
@@ -123,6 +123,12 @@ The **Endpoint** column lists domain names and links to external sites, which co
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 ||https://*.z[0-9].kusto.fabric.microsoft.com||
+
+## Cosmos DB Database
+
+|Purpose   |Endpoint  |Port      |
+|:---------|:---------|:---------|
+|Inbound connections|https://sql.cosmos.fabric.microsoft.com|TCP 443|
 
 ## Eventstream
 
