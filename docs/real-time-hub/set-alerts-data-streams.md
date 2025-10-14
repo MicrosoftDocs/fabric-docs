@@ -25,26 +25,22 @@ This article describes how to set alerts on streams in Real-Time hub.
 
     :::image type="content" source="./media/set-alerts-data-streams/set-alert-button.png" alt-text="Screenshot that shows the selection of the Set alert button on the data stream detail page." lightbox="./media/set-alerts-data-streams/set-alert-button.png":::
     
-## Set alert
+[!INCLUDE [rule-details](./includes/rule-details.md)]
 
-On the **Set alert** page, follow these steps:
+## Monitor section
 
-1. Confirm that **Source** set to the name of your eventstream.
-1. For **Condition**, select one of the following options:
-    1. To monitor each event with no condition, select **On each event**.
-    1. To monitor events that satisfy a condition, select **On each event when**, select a field, select a condition, and a value. 
+For **Condition**, select one of the following options:
 
-        :::image type="content" source="./media/set-alerts-data-streams/event-condition.png" alt-text="Screenshot that shows the condition for an alert." lightbox="./media/set-alerts-data-streams/event-condition.png":::
-    1. To monitor events grouped by, select **On each event grouped by**, select a grouping field, a field for filtering, condition, and a value to be checked against. 
-1. For **Action**, select one of the following options:
-    1. To receive an email when the event occurs and the condition is met, select **Send me an email**. 
-    1. To receive notification via Teams, select **Message me in Teams**.
-    1. To run a Fabric item, select **Run a Fabric item**. 
-1. In the **Save location** section, do these steps: 
-    1. For **Workspace**, select the workspace where you want to save the alert. 
-    1. For **Item**, select an existing Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] item or create a new [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] item for this alert. 
-    
-        :::image type="content" source="./media/set-alerts-data-streams/save-location.png" alt-text="Screenshot that shows the location details of an alert." lightbox="./media/set-alerts-data-streams/save-location.png":::
+- To monitor each event with no condition, select **On each event**.
+- To monitor events that satisfy a condition, select **On each event when**, select a field, select a condition, and a value. 
+
+    :::image type="content" source="./media/set-alerts-data-streams/event-condition.png" alt-text="Screenshot that shows the condition for an alert." lightbox="./media/set-alerts-data-streams/event-condition.png":::
+- To monitor events grouped by, select **On each event grouped by**, select a grouping field, a field for filtering, condition, and a value to be checked against. 
+
+[!INCLUDE [rule-action](./includes/rule-action.md)]
+
+[!INCLUDE [rule-save-location](./includes/rule-save-location.md)]
+
 
 ## Related content
 

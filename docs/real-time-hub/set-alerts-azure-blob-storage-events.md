@@ -42,7 +42,10 @@ Do steps from one of the following sections, which opens a side panel where you 
 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert-from-detail-page.png" alt-text="Screenshot that shows the Azure blob storage events detail page with Set alert button selected." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert-from-detail-page.png":::
 
-## Monitor Azure Blob Storage events
+
+[!INCLUDE [rule-details](./includes/rule-details.md)]
+
+## Monitor section
 
 1. In the **Monitor** section of the **Add rule** pane, for **Source**, choose **Source source events**.
 
@@ -70,9 +73,13 @@ Do steps from one of the following sections, which opens a side panel where you 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/save-event-stream.png" alt-text="Screenshot that shows the review + connect page after the eventstream is successfully created." lightbox="./media/set-alerts-azure-blob-storage-events/save-event-stream.png":::                    
 
 
-[!INCLUDE [set-details-conditions-actions-rule](./includes/set-details-conditions-actions-rule.md)]
+[!INCLUDE [rule-condition-events](./includes/rule-condition-events.md)]
 
-## Create the alert
+[!INCLUDE [rule-action](./includes/rule-action.md)]
+
+[!INCLUDE [rule-save-location](./includes/rule-save-location.md)]
+
+## Create alert
 
 1. In the **Add rule** pane, select **Create** at the bottom of the page to create the alert.
 
