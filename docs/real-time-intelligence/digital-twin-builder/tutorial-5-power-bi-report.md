@@ -266,11 +266,11 @@ Experiment with selecting different distillers and technicians from the slicers,
 
 ## Conclusion
 
-Now you have a Power BI report with two pages, each showing a different type of data for Contoso Energy. If you want to share your report with others, you can publish the report from Power BI Desktop to your Fabric workspace. Once a report is in your Fabric workspace, it's available to share.
+Now you have a Power BI report with two pages, each showing a different type of data for Contoso, Ltd. If you want to share your report with others, you can publish the report from Power BI Desktop to your Fabric workspace. Once a report is in your Fabric workspace, it's available to share.
 
-In the tutorial scenario, the fictional Contoso Energy company can use and continue to expand on this report to relate data from multiple sources, and make data-driven decisions across sites.
+In the tutorial scenario, the fictional Contoso, Ltd. company can use and continue to expand on this report to relate data from multiple sources, and make data-driven decisions across sites.
 
-This Power BI report completes the tutorial of creating a digital twin builder solution for Contoso Energy.
+This Power BI report completes the tutorial of creating a digital twin builder solution for Contoso, Ltd.
 
 ## Next step
 

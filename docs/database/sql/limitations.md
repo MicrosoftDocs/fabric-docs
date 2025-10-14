@@ -4,7 +4,7 @@ description: A detailed list of limitations for SQL database in Microsoft Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier
-ms.date: 09/08/2025
+ms.date: 10/13/2025
 ms.topic: conceptual
 ms.update-cycle: 180-days
 ms.search.form: Databases Limitations for SQL, Databases Limitations
@@ -30,8 +30,7 @@ This article applies to SQL database in Fabric only. For the warehouse and SQL a
 ## Table level
 
 - A table primary key cannot be one of these data types: **hierarchyid**, **sql_variant**, **timestamp**.
-- If one or more columns in the table is of type Large Binary Object (LOB) with a size > 1 MB, the column data is truncated to size of 1 MB in Fabric OneLake.
-- Currently, tables cannot be in-memory tables.
+- Currently, in-memory, ledger, ledger history, and Always Encrypted tables cannot be created in SQL database in Microsoft Fabric.
 - Full-text indexing is not supported and cannot be created in SQL database in Microsoft Fabric.
 - The following table-level data definition language (DDL) operations aren't allowed:
     - Switch/Split/Merge partition
