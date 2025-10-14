@@ -25,7 +25,7 @@ Common use cases include accessing:
 Fabric Managed Private Endpoints (MPEs) allow Fabric to establish **outbound** connections to approved data sources using **Private Link Services (PLS)**.  
 The setup involves three main steps:
 
-1. The on-premises administrator exposes the data source through a **Private Link Service (PLS)** or Azure Private Endpoint-enabled resource.
+1. The administrator exposes the data source through a **Private Link Service (PLS)** or Azure Private Endpoint-enabled resource.
 2. A Fabric workspace admin creates a **Managed Private Endpoint (MPE)** referencing the fully qualified domain name (FQDN) with the Azure resource ID.
 3. The on-premises network admin reviews and approves the connection request in Azure.
 
@@ -39,12 +39,11 @@ Before you begin:
 
 - A Microsoft Fabric workspace with admin permissions.
 - The Azure subscription must have the **Microsoft.Network** resource provider registered.
-- The on-premises resource must be reachable via a Private Link Service endpoint or through a connected Azure Virtual Network.
-- Ensure DNS resolution for your data source FQDN is configured to route via the private endpoint.
+- Have data sources or services running behind a Standard Load Balancer which is reachable by a Private Link Service. [Learn more on about Private Link Service](https://learn.microsoft.com/en-us/azure/private-link/private-link-service-overview)
 
 ---
 
-## Step 1: Create a Private Link Service for your on-premises resource
+## Step 1: [Optional if your load balancer doesnt have a Private Link Service Setup] Create a Private Link Service for your on-premises resource
 
 To expose your on-premises or custom-hosted data source (like SQL Server) to Fabric, you must first create a **Private Link Service (PLS)** in Azure.
 
