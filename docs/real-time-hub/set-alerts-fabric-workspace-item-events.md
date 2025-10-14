@@ -79,8 +79,8 @@ Do steps from one of the following sections, which opens a side panel where you 
     :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/create-alert.png" alt-text="Screenshot that shows the Set alert page with all fields selected.":::        
 1. You see the **Alert created** page with a link to **open** the rule in the Fabric activator user interface in a separate tab. Select **Done** to close the **Alert created** page. 
 
-    :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/alert-created-page.png" alt-text="Screenshot that shows the Alert created page for Fabric workspace item events." lightbox="./media/set-alerts-fabric-workspace-item-events/alert-created-page.png":::          1. 
-1. You see a page with the activator item created by the **Add rule** wizard. 
+    :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/alert-created-page.png" alt-text="Screenshot that shows the Alert created page for Fabric workspace item events." lightbox="./media/set-alerts-fabric-workspace-item-events/alert-created-page.png":::
+1. You see a page with the activator item created by the **Add rule** wizard. If you are on the **Fabric events** page, select **Workspace item events** to see this page. 
 
     :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/items-created-wizard.png" alt-text="Screenshot that shows the Fabric Workspace items events page with the activator items created." lightbox="./media/set-alerts-fabric-workspace-item-events/items-created-wizard.png":::      
 1. Move the mouse over the **Activator** item, and select **Open**. 

@@ -4,7 +4,7 @@ description: This article describes how to set alerts on Job events in Real-Time
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 07/22/2025
+ms.date: 10/14/2025
 ---
 
 # Set alerts on Job events in Real-Time hub
@@ -49,7 +49,7 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 On the **Set alert** page, follow these steps:
 
-1. In the **Monitor** section, choose **Select events**.
+1. In the **Monitor** section, for **Source**, choose **Select source events**.
 
     :::image type="content" source="./media/set-alerts-fabric-job-events/select-events-link.png" alt-text="Screenshot that shows the Set alert page." lightbox="./media/set-alerts-fabric-job-events/select-events-link.png":::    
 1. In the **Connect data source** wizard, do these steps:
@@ -86,7 +86,7 @@ On the **Set alert** page, follow these steps:
 1. Select **Create** at the bottom of the page to create the alert.
 
     :::image type="content" source="./media/set-alerts-fabric-job-events/create-alert.png" alt-text="Screenshot that shows the Set alert page with all fields selected.":::        
-1. After the alert is created, select **Open** to navigate to Activator item.
+1. You see the **Alert created** page with a link to **open** the rule in the Fabric activator user interface in a separate tab. Select **Done** to close the **Alert created** page. 
 
     :::image type="content" source="./media/set-alerts-fabric-job-events/alert-created.png" alt-text="Screenshot that shows Alert created page.":::        
 
