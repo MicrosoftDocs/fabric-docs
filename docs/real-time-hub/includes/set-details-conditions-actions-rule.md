@@ -9,7 +9,7 @@ ms.date: 10/13/2025
 
 ## Set details, conditions, and actions for the rule
 
-On the **Add rule** page, follow these steps:
+In the **Add rule** pane, follow these steps:
 
 1. In the **Details** section, for **Rule name**, enter a name for the rule. 
 
@@ -23,6 +23,6 @@ On the **Add rule** page, follow these steps:
     - **Run a Fabric item** - If you want to run a Fabric item such as a notebook when the condition is met. 
 
         :::image type="content" source="./media/set-details-conditions-actions-rule/action.png" alt-text="Screenshot that shows the Add rule pane with the action selected.":::            
-1. In the **Save location** section, for **Workspace**, select the workspace where you want to Fabric activator item to be created or that already exists. If you are creating a new activator item, enter a **name** for the activator item. 
+1. In the **Save location** section, for **Workspace**, select the workspace where you want to Fabric activator item to be created or that already exists. If you're creating a new activator item, enter a **name** for the activator item. 
 
     :::image type="content" source="./media/set-details-conditions-actions-rule/save-location.png" alt-text="Screenshot that shows the Add rule pane with the location for the Fabric activator item selected.":::   
