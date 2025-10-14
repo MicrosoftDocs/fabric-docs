@@ -112,4 +112,4 @@ Some external connection types support endpoint-level granularity, such as SQL S
 ## Next steps
 
 - [Manage admin access to outbound access protection settings](./workspace-outbound-access-protection-tenant-setting.md)
-- [Set up workspace outbound access protection](./workspace-outbound-access-protection-set-up.md)
+- [Enable workspace outbound access protection](./workspace-outbound-access-protection-set-up.md)
