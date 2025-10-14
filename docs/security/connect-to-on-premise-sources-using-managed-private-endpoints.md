@@ -363,9 +363,10 @@ Approve the pending connection in the PLS (Azure portal → Private endpoint con
 | Consideration | Guidance |
 |---------------|----------|
 | Health probe port | Use a consistently reachable port (22 or a lightweight TCP listener) so LB sees backend healthy. |
+| Windows Firewall | Ensure there there is no Windows Firewall blocking the ports where the traffic is being forwarded to | 
 | NAT VM sizing | A small VM is usually enough; monitor if high concurrent sessions are expected. |
 | High availability | For production, use multiple forwarder VMs in an availability set / zone with LB distributing. |
-| DNS | Ensure your private DNS zone resolves the chosen FQDN to the private endpoint IP after approval. |
+| Connectivity | Ensure your have established the connnectivity between the IP fowarding VM and the data source using a name or the ip address. |
 | Security | Restrict NSGs to only required inbound (1433 to forwarder) and management ports (22) from trusted ranges. |
 
 ## Learn more
