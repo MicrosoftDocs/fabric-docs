@@ -311,7 +311,7 @@ Deployment pipelines supports [incremental refresh](/power-bi/connect-data/incre
 
 With deployment pipelines, you can make updates to a semantic model with incremental refresh while retaining both data and partitions. When you deploy the semantic model, the policy is copied along.
 
-To understand how incremental refresh behaves with dataflows, see [why do I see two data sources connected to my dataflow after using dataflow rules?](/power-bi/create-reports/deployment-pipelines-troubleshooting#why-do-i-see-two-data-sources-connected-to-my-dataflow-after-using-dataflow-rules-)
+To understand how incremental refresh behaves with dataflows, see [why do I see two data sources connected to my dataflow after using dataflow rules?](/fabric/cicd/troubleshoot-cicd#i-see-two-data-sources-connected-to-my-dataflow-after-using-dataflow-rules)
 
 > [!NOTE]
 > Incremental refresh settings aren't copied in Gen 1.
