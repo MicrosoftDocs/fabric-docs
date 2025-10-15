@@ -89,7 +89,7 @@ The object explorer provides a structured view of items across all your currentl
 
 ### Keyboard shortcuts for Object Explorer and Horizontal Tabs
 
-Use keyboard shortcuts in horizontal tabs and object explorer to switch between items, expand or collapse folders, and jump to a specific tabs. This functionality is similar to an IDE environment.
+Use keyboard shortcuts in horizontal tabs and object explorer to switch between items, expand or collapse folders, and jump to specific tabs. This functionality is similar to an IDE environment.
 
 **Prerequisites:**
 
