@@ -16,8 +16,6 @@ ms.date: 09/05/2025
 
 This document provides a detailed guide to how the OneLake security access control model works. It contains details on how the roles are structured, how they apply to data, and what the integration is with other structures within Microsoft Fabric.
 
-[!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
-
 ## OneLake security roles
 OneLake security uses a role based access control (RBAC) model for managing access to data in OneLake. Each role is made up of several key components.
 
