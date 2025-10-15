@@ -324,7 +324,7 @@ notebookutils.notebook.validateDAG(DAG)
 **Considerations:**
 
 - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
-- The upper limit for notebook activities or concurrent notebooks is **50**. Exceeding this limit may lead to stability and performance issues due to high compute resource usage. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
+- The default number of concurrent notebooks is **50**. You can customize this value, but excessive parallelism may lead to stability and performance issues due to high compute resource usage. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
 - The default time-out for entire DAG is 12 hours, and the default time-out for each cell in child notebook is 90 seconds. You can change the time-out by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter.
 
 ### Exit a notebook
