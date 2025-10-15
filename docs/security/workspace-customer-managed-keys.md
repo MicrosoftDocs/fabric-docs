@@ -142,8 +142,6 @@ Before you configure your Fabric workspace with a customer-managed key, consider
   * Metadata of ML model and experiment, like the model name, version, metrics
   * Warehouse queries on Object Explored and backend cache, which is evicted after each use
 
-* CMK is only supported in all public regions.
-
 * CMK is supported on all [F SKUs](../enterprise/licenses.md). Trial capacities cannot be used for encryption using CMK. CMK cannot be enabled for workspaces that have BYOK enabled and CMK workspaces cannot be moved to capacities for which BYOK is enabled either.
 
 * CMK can be enabled using the Fabric portal and does not have API support.
