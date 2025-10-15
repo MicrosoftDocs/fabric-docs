@@ -235,11 +235,8 @@ Permitted users from the provider tenant can call this API to get the SQL connec
 
 ## Restrictions and considerations
 
- - To ensure that a service principal can create, list, and delete any cross-tenant mappings that are created in a provider tenant, the Fabric application must have the Group. Create Graph permission. See the following documents to grant the Group. Create permission to Fabric application.
-
-   * [Grant or revoke API permissions programmatically](/graph/permissions-grant-via-msgraph?tabs=http)
-   * [Microsoft Graph permissions reference](/graph/permissions-reference)
-
+ - The Fabric application has the the Group.Create Graph permission to ensure it can create, list, and delete any cross-tenant mappings that are created in a provider tenant. If you remove this permission, cross-tenant access will stop working.
+   
  - The guest tenants' conditional access or MFA policies are enforced upon sign in by guest users.
 
  - The guest tenant is responsible for creating and managing Microsoft Entra groups that are configured for cross-tenant access.
