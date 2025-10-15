@@ -202,7 +202,7 @@ The workspace content is shown in Deployment pipelines as a flat list of items. 
 
 In Deployment pipelines, folders are considered part of an item’s name (an item name includes its full path). When an item is deployed, after its path was changed (moved from folder A to folder B, for example), then Deployment pipelines applies this change to its paired item during deployment - the paired item will be moved as well to folder B. If folder B doesn't exist in the stage we're deploying to, it's created in its workspace first. Folders can be seen and managed only on the workspace page.
 
-With the current view of the folders hierarchy, you can select for deployment, only items in the same folder level. You cannot select items across folders.
+With the current view of the folders hierarchy, you can select for deployment only items in the same folder level. You cannot select items across folders.
  
 Flat list view of deployment pipelines allows you to select items regardless of its location. With the flat list view, you can select items across folders, regarding their location in the workspace. For more information, see [flat list view](deploy-content.md#flat-list-view).
 
