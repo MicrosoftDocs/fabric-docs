@@ -70,7 +70,7 @@ Like other Microsoft Fabric item types, SQL databases rely on [Microsoft Entra a
 
 To successfully authenticate to a SQL database, a Microsoft Entra user, a [service principal](/entra/identity-platform/app-objects-and-service-principals), or their [group](/entra/fundamentals/concept-learn-about-groups), must have the Read item permission for the database in Fabric. For more information, see [Authentication in SQL database in Microsoft Fabric](authentication.md).
 
-Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. For more information, see [Connection policy](limitations.md#connection-policy) and [Connectivity architecture](/azure/azure-sql/database/connectivity-architecture#connection-policy). Refer to the [Azure IP Ranges and Service Tags - Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) for a list of your region's IP addresses to allow.
+Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Default**. For more information, see [Connection policy](limitations.md#connection-policy) and [Connectivity architecture](/azure/azure-sql/database/connectivity-architecture?view=fabric&preserve-view=true#connection-policy). Refer to the [Azure IP Ranges and Service Tags - Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) for a list of your region's IP addresses to allow.
 
 For information on how to grant a Microsoft Entra identity access to a Fabric workspace or a specific database, see [Fabric access controls](authorization.md#fabric-access-controls).
 
