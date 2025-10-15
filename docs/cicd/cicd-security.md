@@ -112,7 +112,6 @@ Once Git is allowed, the workspace will operate normally with respect to source 
 The following is information you need to keep in mind when using OAP and Git integration.
 
 - Not all items support inbound and outbound access protection. Syncing unsupported items into the workspace from git integration will fail. For a list of supported items, see [Private link supported items](../security/security-workspace-level-private-links-support.md#supported-item-types-for-workspace-level-private-link) and [Outbound access protection supported items.](../security/workspace-outbound-access-protection-overview.md#supported-item-types)
-- If the workspace is part of Deployment Pipelines, workspace admins can't enable inbound access protection because Deployment Pipelines are currently unsupported. 
 - If the workspace is part of Deployment Pipelines, workspace admins can't enable outbound access protection because Deployment Pipelines are unsupported. Similarly, if outbound access protection is enabled, the workspace can't be added to Deployment Pipelines.
 
 For more information, see [OAP and workspace considerations](../security/workspace-outbound-access-protection-overview.md#considerations-and-limitations)
