@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.topic: conceptual
 ms.custom:
-ms.date: 11/07/2024
+ms.date: 10/15/2025
 ---
 
 # Experience-specific disaster recovery guidance
@@ -382,6 +382,10 @@ Microsoft Fabric Variable libraries enable developers to customize and share ite
  - In the newly created workspace, connect and sync to your Azure ADO repo again.
  - All Fabric items in this repository are automatically downloaded to your new Workspace.
  - After syncing your items from Git, open your Variable Libraries in the new workspace and manually select the desired [active value set](../cicd/variable-library/get-started-variable-libraries.md#add-a-value-set).
+
+### Customer-managed keys for Fabric workspaces
+
+You can use customer-managed keys (CMK) stored in Azure Key Vault to add an additional layer of encryption on top of Microsoft-managed keys for data at rest. In the event that Fabric becomes inaccessible or inoperable in a region, its components will fail over to a backup instance. During failover, the CMK feature supports read-only operations. As long as the Azure Key Vault service remains healthy and permissions to the vault are intact, Fabric will continue to connect to your key and allow you to read data normally. This means the following operations aren't supported during failover: enabling and disabling the workspace CMK setting and updating the key. 
 
 ## Related information
 
