@@ -139,7 +139,7 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 
 * The data listed below isn't protected with customer-managed keys:
  
-  * Lakehouse column names, table format, table compression, SQL endpoint. Once you enable CMK, no SQL endpoint is created for the Lakehouse created within that workspace.
+  * Lakehouse column names, table format, table compression.
   * All data stored in the Spark Clusters (data stored in temp discs as part of  shuffle or data spills or RDD caches in a spark application) are not protected. This includes all the Spark Jobs from Notebooks, Lakehouses, Spark Job Definitions, Lakehouse Table Load and Maintenance jobs, Shortcut Transforms, Fabric Materialized View Refresh.
   * The job logs stored in the history server
   * Libraries attached as part of environments or added as part of the Spark session customization using magic commands are not protected
