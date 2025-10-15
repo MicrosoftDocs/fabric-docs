@@ -232,7 +232,7 @@ Unless there's also a schema change, the option next to the label to open a *Cha
 
 ## Parent-child item representation
 
-Parent child relationships only appear in the new UI. They looks the same as in the workspace. The child isn't deployed but recreated on the target stage
+Parent child relationships only appear in the new UI. They look the same as in the workspace. The child isn't deployed but recreated on the target stage
 
 :::image type="content" source="media/understand-the-deployment-process/parent-child.png" alt-text="Screenshot showing the depiction of a parent child relationship in the new UI.":::
 
