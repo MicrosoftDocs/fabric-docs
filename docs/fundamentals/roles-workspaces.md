@@ -32,18 +32,18 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 | Create or modify database items.                                                                                                                            | &#x2705; | &#x2705; | &#x2705;    |          |
 | Create or modify database mirroring items.                                                                                                                      | &#x2705; | &#x2705; | &#x2705;    |          |
 | Create or modify warehouse items.                                                                                                                               | &#x2705; | &#x2705; | &#x2705;    |          |
-| View and read content of data pipelines, notebooks, Spark job definitions, ML models and experiments, and eventstreams.                                        | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
+| View and read content of pipelines, notebooks, Spark job definitions, ML models and experiments, and eventstreams.                                        | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | View and read content of KQL databases, KQL query-sets, digital twin builder items, and real-time dashboards.                                                                               | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | Connect to SQL analytics endpoint of Lakehouse or the Warehouse                                                                                                 | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> with T-SQL through TDS endpoint (ReadData).                                                               | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> through OneLake APIs and Spark (ReadAll).                                                                | &#x2705; | &#x2705; | &#x2705;    |          |
 | Read Lakehouse data through Lakehouse explorer (ReadAll).                                                                                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
 | Subscribe to OneLake events.                                                                                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
-| Write or delete data pipelines, notebooks, Spark job definitions, ML models, and experiments, and eventstreams.                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
+| Write or delete pipelines, notebooks, Spark job definitions, ML models, and experiments, and eventstreams.                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
 | Write or delete Eventhouses<sup>3</sup>, KQL Querysets, Real-Time Dashboards, digital twin builder data, and schema and data of KQL Databases, Lakehouses, data warehouses, and shortcuts. | &#x2705; | &#x2705; | &#x2705;    |          |
 | Execute or cancel execution of notebooks, Spark job definitions, ML models, and experiments.                                                                     | &#x2705; | &#x2705; | &#x2705;    |          |
-| Execute or cancel execution of data pipelines.                                                                                                                  | &#x2705; | &#x2705; | &#x2705;    |          |
-| View execution output of data pipelines, notebooks, ML models and experiments.                                                                                  | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
+| Execute or cancel execution of pipelines.                                                                                                                  | &#x2705; | &#x2705; | &#x2705;    |          |
+| View execution output of pipelines, notebooks, ML models and experiments.                                                                                  | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | Schedule data refreshes via the on-premises gateway.<sup>4</sup>                                                                                                | &#x2705; | &#x2705; | &#x2705;    |          |
 | Modify gateway connection settings.<sup>4</sup>                                                                                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
 

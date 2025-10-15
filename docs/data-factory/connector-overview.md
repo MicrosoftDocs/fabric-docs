@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: overview
-ms.date: 08/26/2025
+ms.date: 10/09/2025
 ms.search.form: product-data-factory
 ms.custom: connectors
 ---
@@ -84,7 +84,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Common Data Service (legacy)](connector-common-data-service-legacy-overview.md) | ✓/− |  |  |
 | Data Virtuality LDW | ✓/− |  |  |
 | [Databricks](connector-databricks-overview.md) | ✓/− |  |  |
-| [Dataflows](connector-dataflows-overview.md) | ✓/− |  |  |
+| [Dataflow](connector-dataflows-overview.md) | ✓/− |  |  |
 | Datamarts (Beta) | ✓/− |  |  |
 | [Dataverse](connector-dataverse-overview.md) | ✓/− | ✓/✓ |  |
 | [Delta Sharing](/power-query/connectors/delta-sharing) | ✓/− |  |  |
@@ -93,7 +93,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Dremio Software | ✓/− |  |  |
 | Dynamics 365 Business Central | ✓/− |  |  |
 | Dynamics 365 Customer Insights (Beta) | ✓/− |  |  |
-| [Dynamics AX](connector-dynamics-ax-overview.md) | | ✓/✓ |  |
+| [Dynamics AX](connector-dynamics-ax-overview.md) | | ✓/− | ✓/− |
 | [Dynamics CRM](connector-dynamics-crm-overview.md) |  | ✓/✓ |  |
 | Dynatrace Grail DQL (Beta) | ✓/− |  |  |
 | [Eduframe (Beta)](/power-query/connectors/eduframe) | ✓/− |  |  |
@@ -107,7 +107,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Fabric Data Warehouse](connector-data-warehouse-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | [Fabric KQL Database](connector-kql-database-overview.md) | ✓/✓ | ✓/✓ |  |
 | [Fabric Lakehouse](connector-lakehouse-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
-| Fabric SQL database (Beta) | ✓/✓ | ✓/✓ | ✓/✓ |
+| [Fabric SQL database (Beta)](connector-sql-database-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | FactSet Analytics | ✓/− |  |  |
 | [FactSet RMS (Beta)](/power-query/connectors/factset-rms) | ✓/− |  |  |
 | [FHIR](connector-fhir-overview.md) | ✓/− |  |  |
@@ -115,14 +115,14 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [FTP](connector-ftp-overview.md) |  | ✓/- | ✓/- |
 | [Funnel](/power-query/connectors/funnel) | ✓/− |  |  |
 | [Google Analytics](connector-google-analytics-overview.md) | ✓/− |  |  |
-| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/− | ✓/✓ | ✓/− |
+| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/− | ✓/− | ✓/− |
 | [Google BigQuery(Microsoft Entra ID)](/power-query/connectors/google-bigquery-aad)  | ✓/− |  |  |
 | [Google Cloud Storage](connector-google-cloud-storage-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Google Sheets](/power-query/connectors/google-sheets) | ✓/− |  |  |
 | HDInsight Interactive Query | ✓/− |  |  |
 | Hexagon PPM Smart API | ✓/− |  |  |
 | [Hive LLAP](connector-hive-llap-overview.md) | ✓/− |  |  |
-| [HTTP](connector-http-overview.md) |  | ✓/✓ |  |
+| [HTTP](connector-http-overview.md) |  | ✓/− | ✓/− |
 | [IBM Db2 database](connector-ibm-db2-database-overview.md) | ✓/− | ✓/− |✓/−  |
 | IBM Netezza | ✓/− |  |  |
 | [Impala](connector-impala-overview.md) | ✓/− |  |  |
@@ -169,7 +169,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Planview OKR (Beta)](/power-query/connectors/planview-okr) | ✓/− |  |  |
 | Planview Portfolios | ✓/− |  |  |
 | Planview ProjectPlace | ✓/− |  |  |
-| [PostgreSQL database](connector-postgresql-overview.md) | ✓/− | ✓/✓ | ✓/− |
+| [PostgreSQL database](connector-postgresql-overview.md) | ✓/− | ✓/− | ✓/− |
 | Power BI dataflows (Legacy) | ✓/− |  |  |
 | [Presto](connector-presto-overview.md) |  | ✓/− | ✓/− |
 | Product Insights (Beta)| ✓/− |  |  |
@@ -186,7 +186,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [SAP BW Message Server](connector-sap-bw-message-server-overview.md) | ✓/− |  |  |
 | [SAP BW Open Hub Application Server](connector-sap-bw-open-hub-application-server-overview.md) |  | ✓/− |  |
 | [SAP BW Open Hub Message Server](connector-sap-bw-open-hub-message-server-overview.md) |  | ✓/− |  |
-| [SAP HANA database](connector-sap-hana-overview.md) | ✓/− | ✓/✓ | ✓/− |
+| [SAP HANA database](connector-sap-hana-overview.md) | ✓/− | ✓/− | ✓/− |
 | [SAP Table Application Server](connector-sap-table-application-server-overview.md) |  | ✓/− |  |
 | [SAP Table Message Server](connector-sap-table-message-server-overview.md) |  | ✓/− |  |
 | [ServiceNow](connector-servicenow-overview.md) |  | ✓/− |  |
@@ -219,7 +219,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Topcon Aptix Insights | ✓/− |  |  |
 | [Usercube (Beta)](/power-query/connectors/usercube) | ✓/− |  |  |
 | Vena | ✓/− |  |  |
-| [Vertica](connector-vertica-overview.md) | ✓/− | ✓/✓ | ✓/− |
+| [Vertica](connector-vertica-overview.md) | ✓/− | ✓/- | ✓/− |
 | [Vessel Insight](/power-query/connectors/vessel-insight) | ✓/− |  |  |
 | Viva Insights | ✓/− |  |  |
 | [Warehouse](/power-query/connectors/warehouse) | ✓/− |  |  |

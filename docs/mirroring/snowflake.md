@@ -1,8 +1,8 @@
 ---
 title: "Microsoft Fabric Mirrored Databases From Snowflake"
 description: Learn about the mirrored databases from Snowflake in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+author: whhender
+ms.author: whhender
 ms.reviewer: imotiwala, maprycem, sbahadur 
 ms.date: 09/16/2025
 ms.topic: conceptual

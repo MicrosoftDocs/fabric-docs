@@ -3,8 +3,8 @@ title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 author: xuyangit1
 ms.author: xuyan
-ms.reviewer: wiassaf
-ms.date: 09/05/2025
+ms.reviewer: whhender
+ms.date: 09/26/2025
 ms.topic: conceptual
 ms.custom: sfi-ropc-nochange
 ---
@@ -58,7 +58,7 @@ The original JSON definition examples are as follows. For more information about
 > 2. [Grant the SAMI **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternatively, you can grant SAMI workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
 
 > [!NOTE]
-> `defaultSchema` property indicates whether to replicate the schema hierarchy from the source database.
+> Set the `deafultSchema` property to preserve the source schema hierarchy in the mirrored database.
 
 ### JSON definition example of replicating entire database
 

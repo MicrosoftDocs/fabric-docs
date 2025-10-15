@@ -1,0 +1,8 @@
+items:
+- name: Microsoft Fabric
+  tocHref: /fabric/
+  topicHref: /fabric/index
+  items:
+  - name: Graph
+    tocHref: /fabric/graph
+    topicHref: /fabric/graph/index   

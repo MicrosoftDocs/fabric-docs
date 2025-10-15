@@ -215,7 +215,7 @@ items:
            href: monitor-spark-resource-utilization.md       
          - name: Navigate the Apache Spark History Server
            href: apache-spark-history-server.md   
-      - name: Single Spark Application Monitoring APIs
+      - name: Spark Application Monitoring APIs
         items: 
           - name: Overview
             href: spark-monitoring-api-overview.md
@@ -243,6 +243,8 @@ items:
     items:
     - name: Data warehouse and lakehouse connector
       href: spark-data-warehouse-connector.md
+    - name: Spark connector for SQL databases
+      href: spark-sql-connector.md
   - name: Intelligent cache
     href: intelligent-cache.md
   - name: What is the Livy API?
@@ -325,6 +327,8 @@ items:
     href: environment-manage-resources.md
   - name: Migrate the existing workspace libraries and Spark properties
     href: environment-workspace-migration.md
+  - name: Managing libraries in environment secured by outbound access protection
+    href: environment-manage-library-with-outbound-access-protection.md
 - name: VS Code integration 
   items:
   - name: Fabric extensions for VS Code  
@@ -437,7 +441,7 @@ items:
      href: ./user-data-functions/test-user-data-functions.md
    - name: Connect to data sources
      href: ./user-data-functions/connect-to-data-sources.md
-   - name: Integration with Fabric data pipelines
+   - name: Integration with Fabric pipelines
      href: ./user-data-functions/create-functions-activity-data-pipelines.md
    - name: Integration with Fabric notebooks
      href: ./notebook-utilities.md#user-data-function-udf-utilities

@@ -1,9 +1,9 @@
 ---
 title: Tune file size
 description: Learn how you can tune the size of Delta table files.
-ms.reviewer: snehagunda
-ms.author: milescole
-author: mwc360
+ms.reviewer: milescole
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 09/15/2025
@@ -40,17 +40,6 @@ Optimize write is commonly beneficial for:
 - Operations that are likely to touch many files (`MERGE`, `UPDATE`, and `DELETE`)
 
 For selective application on specific tables, unset the session configuration and enable the table property individually. Unsetting the session-level configuration allows Spark sessions to defer to each table as to whether optimize write should be applied.
-
-1. Unset optimize write
-    ```python
-    spark.conf.unset("spark.databricks.delta.optimizeWrite.enabled")
-    ```
-
-1. Enable on individual table
-    ```sql
-    ALTER TABLE dbo.table_name
-    SET TBLPROPERTIES ('delta.autoOptimize.optimizeWrite' = 'true')
-    ```
 
 1. Unset optimize write
     ```python

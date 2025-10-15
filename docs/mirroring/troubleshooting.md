@@ -1,8 +1,8 @@
 ---
 title: "Troubleshoot Fabric Mirrored Databases"
 description: Troubleshooting scenarios, workarounds, and links for mirrored databases in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+author: whhender
+ms.author: whhender
 ms.reviewer: imotiwala, maprycem, cynotebo
 ms.date: 07/30/2025
 ms.topic: troubleshooting
@@ -43,7 +43,7 @@ Review limitations documentation for each data source:
 | Scenario                      | Description                                                  |
 | ----------------------------- | ------------------------------------------------------------ |
 | Fabric capacity paused        | Mirroring is stopped and you can't list or access the mirrored database item. Resume or reassign the capacity to your workspace. |
-| Fabric capacity resumed       | When capacity is resumed from a paused state, the mirrored database status appears as **Paused**. As a result, changes made in the source aren't replicated to OneLake.<br>To resume mirroring, go to the mirrored database in the Fabric portal, select **Resume replication**. Mirroring continues from where it was paused. <br>Note if the capacity remains paused for a long time, mirroring may not resume from its stopping point and will reseed data from the beginning. This situation may arise, for example, if the database transaction log becomes full. |
+| Fabric capacity resumed       |When capacity is resumed from a paused state, the mirrored database status appears as **Paused**. As a result, changes made in the source aren't replicated to OneLake.<br>To resume mirroring, go to the mirrored database in the Fabric portal, select **Resume replication**. Mirroring continues from where it was paused. <br>Note if the capacity remains paused for a long time, mirroring may not resume from its stopping point and will reseed data from the beginning. This is because pausing mirroring for a long time can cause the source database transaction log usage to grow and hold up log truncation. To minimize impact to the database, if the log space used is close to being full, when mirroring is resumed a reseed of the database will be initiated to release the held up log space.|
 | Fabric capacity scaling       | Mirroring continues. If you scale down the capacity, be aware that the OneLake storage for the mirrored data is free up to a limit based on the capacity size, thus scaling down the capacity may incur additional storage charge. Learn more from [Cost of mirroring](overview.md#cost-of-mirroring). |
 | Fabric capacity throttled     | Wait until the overload state is over or update your capacity. Mirroring will continue once the capacity is restored. Learn more from [Actions you can take to recover from overload situations](../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs). |
 | Fabric trial capacity expired | Mirroring is stopped. To retain your mirrored database, purchase Fabric capacity. Learn more from [Fabric trial capacity expires](../fundamentals/fabric-trial.md#the-trial-expires). |

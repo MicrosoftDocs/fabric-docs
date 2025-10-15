@@ -14,17 +14,13 @@ ms.custom:
 
 The Salesforce Service Cloud connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-Data Factory in Microsoft Fabric doesn't currently support Salesforce reports in Dataflow Gen2.
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Pipeline**<br>- [Copy activity](connector-salesforce-service-cloud-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Organizational account |
+| **Copy job** (source/destination) <br>- Full load<br>- Append<br>- Merge |None<br> On-premises<br> Virtual network |Organizational account |
 
-## Support in pipelines
-
-The Salesforce Service Cloud connector supports the following capabilities in pipelines:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | Organizational account |
-| **Lookup activity** | None <br> On-premises | Organizational account |
+## Related content
 
 To learn more about the copy activity configuration for Salesforce Service Cloud in pipelines, go to [Configure in a pipeline copy activity](connector-salesforce-service-cloud-copy-activity.md).

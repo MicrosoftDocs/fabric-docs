@@ -13,7 +13,7 @@ ms.date: 09/04/2025
 The Extensibility Toolkit provides customers and partners with an easy way to extend Fabric to their needs. You can add more capabilities that feel, behave, and integrate like native Fabric components. The Extensibility Toolkit lets developers get started in minutes by using the [Starter-Kit](https://aka.ms/fabric-extensibility-starter-kit). Local and cloud development environments are supported, reducing the entry barrier. The AI-enabled repository also allows rapid development and helps the developer along its journey to extend Fabric.
 
 > [!NOTE]
-> The Extensibility Toolkit is an evolution of the [Workload Development Kit](../workload-development-kit/development-kit-overview.md) (WDK). Existing WDK concepts carry forward with improved tooling, manifests, and a faster developer workflow.
+> The Extensibility Toolkit is the modern evolution of the [Workload Development Kit](../workload-development-kit/development-kit-overview.md) designed to make extending Microsoft Fabric with custom functionality easier and faster than ever. It offers a streamlined development environment allowing developers to focus on innovation rather than infrastructure. This evolution reflects Microsoft’s commitment to empowering developers with intuitive, scalable, and intelligent tools that accelerate productivity and unlock new possibilities within Fabric.
 
 ## What the Extensibility Toolkit provides
 
@@ -27,7 +27,7 @@ The Extensibility Toolkit provides customers and partners with an easy way to ex
 
 ## Who should use it
 
-The toolkit is for any organization that wants to extend Fabric to adapt it to their needs. Developers can easily embed data apps and UI experiences into Fabric workspaces. Typical scenarios include: data pipelines, custom data stores, visualization apps, and operational apps that act on Fabric items.
+The toolkit is for any organization that wants to extend Fabric to adapt it to their needs. Developers can easily embed data apps and UI experiences into Fabric workspaces. Typical scenarios include: pipelines, custom data stores, visualization apps, and operational apps that act on Fabric items.
 
 ## Publish to the Workload Hub
 

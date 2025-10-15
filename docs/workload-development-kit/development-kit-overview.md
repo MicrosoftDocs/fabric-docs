@@ -12,6 +12,9 @@ ms.date: 05/21/2024
 
 The Microsoft Fabric Workload Development Kit is a robust set of tools designed to enhance the existing Fabric experience by integrating custom capabilities into Fabric. Using the development kit you can integrate your applications into the Microsoft Fabric framework. The development kit is useful for enterprise-level applications that require comprehensive analytics solutions.
 
+>[!NOTE]
+> The Extensibility Toolkit is the modern evolution of the Workload Development Kit, designed to make extending Microsoft Fabric with custom functionality easier and faster than ever. It offers a streamlined development environment allowing developers to focus on innovation rather than infrastructure. This evolution reflects Microsoft’s commitment to empowering developers with intuitive, scalable, and intelligent tools that accelerate productivity and unlock new possibilities within Fabric. For more information, see the [Extensibility Toolkit](../extensibility-toolkit/extensibility-toolkit-overview.md)
+
 ## What are Workloads?
 
 In [Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md), workloads signify different components that are integrated into the Fabric framework. Workloads enhance the usability of your service within the familiar Fabric workspace, eliminating the need to leave the Fabric environment for different services. [Data Factory](../data-factory/data-factory-overview.md), [Data Warehouse](../data-warehouse/data-warehousing.md), [Power BI](/power-bi/enterprise/service-premium-what-is) and [Fabric [!INCLUDE [fabric-activator](../real-time-intelligence//includes/fabric-activator.md)]](../real-time-intelligence/data-activator/activator-introduction.md) are some of the Fabric workloads.
@@ -32,7 +35,7 @@ In essence, workloads offer Microsoft Partners a comprehensive solution for appl
 
 In this section, you can find a few examples of use cases to help you understand the potential applications of Fabric workloads. These examples are just a few of the many unique use cases that can be tailored to meet the specific needs of your organization. The versatility of workloads allows for a wide range of possibilities, enabling you to create solutions that are perfectly suited to your operational requirements. We encourage you to explore and experiment with different configurations to discover the full potential of what workloads can do for your organization.
 
-* **Data Job** - Data jobs are one of the most common scenarios. They involve extracting data from [OneLake](../onelake/onelake-overview.md), performing data operations, and then writing the results back to OneLake. These jobs can be integrated with Fabric’s data scheduling capabilities and executed as background tasks. An example of this type of workload is a data pipelines notebook.
+* **Data Job** - Data jobs are one of the most common scenarios. They involve extracting data from [OneLake](../onelake/onelake-overview.md), performing data operations, and then writing the results back to OneLake. These jobs can be integrated with Fabric’s data scheduling capabilities and executed as background tasks. An example of this type of workload is a pipelines notebook.
 
 * **Data store** - Workloads that manage and store data. They can provide APIs to query and write data, serving as a robust and flexible data management solution. Examples for this kind of workload include Microsoft Fabric [Lakehouse](../data-engineering/lakehouse-overview.md) and [Cosmos DB](/azure/cosmos-db/introduction).
 

@@ -6,8 +6,9 @@ author: jonburchel
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.date: 05/18/2025
+ms.date: 09/17/2025
 ms.search.form: AI functions
+ai-usage: ai-assisted
 ---
 
 # Transform and enrich data with AI functions (preview)
@@ -33,12 +34,16 @@ You can incorporate these functions as part of data-science and data-engineering
 
 - To use AI functions with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
 - Depending on your location, you might need to enable a tenant setting for cross-geo processing. Learn more about [available regions for Azure OpenAI Service](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
-- You also need an F2 or later edition or a P edition. If you use a trial edition, you can bring your own Azure Open AI resource.
+- You need a paid Fabric capacity (F2 or higher, or any P edition). Bring-your-own Azure OpenAI resources aren't supported on the Fabric trial edition.
+
+> [!IMPORTANT]
+>
+> The Fabric trial edition doesn't support bring-your-own Azure OpenAI resources for AI functions. To connect a custom Azure OpenAI endpoint, upgrade to an F2 (or higher) or P capacity.
 
 > [!NOTE]
 >
 > - AI functions are supported in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
-> - AI functions use the *gpt-4o-mini (2024-07-18)* model by default. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
+> - Unless you configure a different model, AI functions default to *gpt-4o-mini (2024-07-18)*. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Most of the AI functions are optimized for use on English-language texts.
 
 ## Getting started with AI functions
@@ -109,7 +114,7 @@ Each of the following functions allows you to invoke the built-in AI endpoint in
 
 ### Calculate similarity with ai.similarity
 
-The `ai.similarity` function invokes AI to compare input text values with a single common text value, or with pairwise text values in another column. The output similarity score values are relative, and they can range from `-1` (opposites) to `1` (identical). A score of `0` indicates that the values are unrelated in meaning. Get [detailed instructions](./similarity.md) about the use of `ai.similarity`.
+The `ai.similarity` function compares each input text value either to one common reference text or to the corresponding value in another column (pairwise mode). The output similarity score values are relative, and they can range from `-1` (opposites) to `1` (identical). A score of `0` indicates that the values are unrelated in meaning. Get [detailed instructions](./similarity.md) about the use of `ai.similarity`.
 
 #### Sample usage
 
@@ -242,7 +247,7 @@ The `ai.extract` function invokes AI to scan input text and extract specific typ
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
-        "MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",
+        "MJ Lee lives in Tucson, AZ, and works as a software engineer for Microsoft.",
         "Kris Turner, a nurse at NYU Langone, is a resident of Jersey City, New Jersey."
     ], columns=["descriptions"])
 
@@ -257,7 +262,7 @@ display(df_entities)
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
-        ("MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",),
+        ("MJ Lee lives in Tucson, AZ, and works as a software engineer for Microsoft.",),
         ("Kris Turner, a nurse at NYU Langone, is a resident of Jersey City, New Jersey.",)
     ], ["descriptions"])
 
@@ -450,7 +455,7 @@ display(responses)
 - Calculate similarity with [`ai.similarity`](./similarity.md).
 - Detect sentiment with [`ai.analyze_sentiment`](./analyze-sentiment.md).
 - Categorize text with [`ai.classify`](./classify.md).
-- Extract entities with [`ai_extract`](./extract.md).
+- Extract entities with [`ai.extract`](./extract.md).
 - Fix grammar with [`ai.fix_grammar`](./fix-grammar.md).
 - Summarize text with [`ai.summarize`](./summarize.md).
 - Translate text with [`ai.translate`](./translate.md).
