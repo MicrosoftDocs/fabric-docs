@@ -34,7 +34,7 @@ LPGs do **not require global identifiers (IRIs/URIs)** for every node or edge; t
 
 If your use case requires semantic web standards, semantic web ontologies, or global data integration, you might need to consider other platforms that support RDF. For most enterprise analytics, operational graph workloads, and business intelligence scenarios, LPG is the recommended and supported model in graph in Microsoft Fabric.
 
-## Key benefits of LPG in Graph in Microsoft Fabric
+## Key benefits of LPG
 
 For most customers, LPG provides the best balance of performance, usability, and integration for connected data analytics in Microsoft Fabric.
 

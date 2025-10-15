@@ -1,6 +1,6 @@
 ---
-title: Set up workspace outbound access protection
-description: "Learn how to set up workspace outbound access protection on Microsoft Fabric workspaces."
+title: Enable workspace outbound access protection
+description: "Learn how to enable the workspace outbound access protection on Microsoft Fabric workspaces."
 author: msmimart
 ms.author: mimart
 ms.service: fabric
