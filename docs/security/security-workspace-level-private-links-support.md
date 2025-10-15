@@ -270,6 +270,8 @@ Manage Dataflows Gen2 in workspaces enabled with private links by using the Fabr
 
 A virtual network data gateway must be used for every dataflow connector. The virtual network data gateway must reside in the same virtual network as the workspace-level private link endpoint used by the workspace. 
 
+Power Platform Dataflow Connector - When a workspace has workspace private links enabled and public access denied, for any two dataflows in that workspace (dataflow A and dataflow B), neither dataflow will be able to connect to the other dataflow (using the Power Platform Dataflow Connector) because the dataflow will not appear in the navigator. This functionality will be rolling out soon.
+
 #### [Fabric portal](#tab/fabric-portal-12)
 * [Dataflow Gen2 default destination](/fabric/data-factory/default-destination)
 #### [REST API](#tab/rest-apis-12)
