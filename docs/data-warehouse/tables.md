@@ -135,7 +135,7 @@ In the previous script, `data_type1` and `data_type2` are placeholders for suppo
 
 Distributed #temp tables are recommended, as they align with normal user tables; they have unlimited storage, data type support, and T-SQL operations. The syntax for data manipulation and definition is identical to user tables in Fabric Data Warehouse, with prefix `#` added to the table name.
 
-In Fabric Data Warehouse, temp tables are not affected by [time travel](time-travel.md) query hints and always return the latest information.
+In Fabric Data Warehouse, temp tables are not affected by [time travel](time-travel.md) query hints and always return the latest data in the table.
 
 ## Align source data with the data warehouse
 
