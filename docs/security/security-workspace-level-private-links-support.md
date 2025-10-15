@@ -299,7 +299,7 @@ You can manage mirrored databases in workspaces enabled with private links by us
 
 ## Supported and unsupported management tools
 
-- You can use either the Fabric portal or the REST API to manage all [supported item types](#supported-item-types-for-workspace-level-private-link) in workspaces with private links enabled. If a workspace allows public access, the Fabric portal continues to function using public connectivity. If a workspace is configured to deny inbound public access, the Fabric portal displays an **Access restricted** page.
+- You can use either the Fabric Portal or REST API to manage all [supported item types](#supported-item-types-for-workspace-level-private-link) in workspaces with workspace private links enabled. When a workspace allows public access, the Fabric portal continues to function using public connectivity. If a workspace is configured to deny inbound public access, you can access it in the Fabric Portal only when the request originates from the workspace's associated private endpoint. If access is attempted from public connectivity or from a different private endppoint, the Fabric portal displays an "Access Restricted" message. 
 - Direct deeplinks to a Monitoring hub Level 2 (L2) page might not work as expected when using workspace-level private links. You can access the L2 page by first navigating to the Monitoring hub's Level 1 (L1) page in the Fabric portal.
 - SQL Server Management Studio (SSMS) is supported for connecting to warehouses via workspace-level private link.
 - Storage Explorer can be used with workspace-level private links.
