@@ -11,6 +11,10 @@ items:
   items:
   - name: Decision guide - copy activity, dataflow, or Spark
     href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+  - name: Decision guide - data integration strategy
+    href: ../data-factory/decision-guide-data-integration.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+  - name: Decision guide - data movement strategy
+    href: ../data-factory/decision-guide-data-movement.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
   - name: Decision guide - choose a data store
     href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
   - name: Decision guide - Warehouse and Lakehouse
@@ -193,12 +197,16 @@ items:
            href: monitor-spark-job-definitions.md
          - name: Leverage the Apache Spark Advisor
            href: spark-advisor-introduction.md
+         - name: Job insights diagnostic library (Preview)
+           href: job-insight-library.md    
       - name: Spark Application Run Series Analysis
         items: 
          - name: Run series analysis Overview
            href: run-series-analyisis-overview.md
          - name: Monitor run series
            href: apache-spark-monitor-run-series.md
+         - name: Apache Spark applications comparison
+           href: spark-comparison-runs.md
       - name: Single Spark Application Monitoring
         items: 
          - name: Monitor a Single Spark Application
@@ -207,7 +215,7 @@ items:
            href: monitor-spark-resource-utilization.md       
          - name: Navigate the Apache Spark History Server
            href: apache-spark-history-server.md   
-      - name: Single Spark Application Monitoring APIs
+      - name: Spark Application Monitoring APIs
         items: 
           - name: Overview
             href: spark-monitoring-api-overview.md
@@ -221,6 +229,8 @@ items:
             href: executor-log.md
           - name: Resource usage APIs
             href: resource-usage-apis.md
+          - name: Spark Advisor API
+            href: spark-advisor-api.md
       - name: Collecting Spark Logs & Metrics
         items: 
           - name: Collect Logs & Metrics with Azure Log Analytics
@@ -233,6 +243,8 @@ items:
     items:
     - name: Data warehouse and lakehouse connector
       href: spark-data-warehouse-connector.md
+    - name: Spark connector for SQL databases
+      href: spark-sql-connector.md
   - name: Intelligent cache
     href: intelligent-cache.md
   - name: What is the Livy API?
@@ -250,10 +262,14 @@ items:
       href: lakehouse-and-delta-tables.md
     - name: Load to tables
       href: load-to-tables.md
+    - name: Table compaction
+      href: table-compaction.md
     - name: Lakehouse table maintenance
       href: lakehouse-table-maintenance.md
     - name: Delta optimization and V-Order
       href: delta-optimization-and-v-order.md
+    - name: Tune file size
+      href: tune-file-size.md
     - name: Automated Statistics for Delta Tables
       href: automated-table-statistics.md	
     - name: Delta Driver Mode Snapshot
@@ -293,6 +309,8 @@ items:
     href: fabric-notebook-selection-guide.md
   - name: T-SQL magic command in Python Notebook
     href: tsql-magic-command-notebook.md
+  - name: Fabric Notebook known limitation
+    href: notebook-limitation.md
 - name: Environments
   items:
   - name: Create, configure and use an environment
@@ -309,6 +327,8 @@ items:
     href: environment-manage-resources.md
   - name: Migrate the existing workspace libraries and Spark properties
     href: environment-workspace-migration.md
+  - name: Managing libraries in environment secured by outbound access protection
+    href: environment-manage-library-with-outbound-access-protection.md
 - name: VS Code integration 
   items:
   - name: Fabric extensions for VS Code  
@@ -381,6 +401,8 @@ items:
         href: multiple-data-sources-graphql.md
       - name: Connect applications
         href: connect-apps-api-graphql.md
+      - name: Develop GraphQL applications on VS Code
+        href: api-graphql-develop-vs-code.md
       - name: Use Service Principals
         href: api-graphql-service-principal.md
       - name: Use Stored procedures
@@ -407,15 +429,19 @@ items:
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)
      href: spark-arcgis-geoanalytics.md
-- name: User data functions (preview)
+- name: User data functions
   items:
    - name: Overview
      href: ./user-data-functions/user-data-functions-overview.md
    - name: Create a User data functions item
      href: ./user-data-functions/create-user-data-functions-portal.md
+   - name: Use the functions portal editor
+     href: ./user-data-functions/user-data-functions-portal-editor.md
+   - name: Test your User data functions
+     href: ./user-data-functions/test-user-data-functions.md
    - name: Connect to data sources
      href: ./user-data-functions/connect-to-data-sources.md
-   - name: Integration with Fabric data pipelines
+   - name: Integration with Fabric pipelines
      href: ./user-data-functions/create-functions-activity-data-pipelines.md
    - name: Integration with Fabric notebooks
      href: ./notebook-utilities.md#user-data-function-udf-utilities

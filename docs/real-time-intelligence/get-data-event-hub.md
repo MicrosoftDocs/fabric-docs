@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 07/31/2025
+ms.date: 08/04/2025
 ms.search.form: Get data in a KQL Database, Data connection
 ---
 # Get data from Azure Event Hubs
@@ -21,11 +21,11 @@ To get data from Event Hubs using Eventstream, see [Add Azure Event Hubs source 
 
 > [!WARNING]
 >
-> Ingestion from an eventstream using a [private link](/azure/private-link/private-link-overview) is not supported.
+> Ingestion from an Event Hub using a [private link](/azure/private-link/private-link-overview) is not supported.
 
 ## Prerequisites
 
-* An Azure subscription. [Create a free Azure account](https://azure.microsoft.com/free/)
+* An Azure subscription. [Create a free Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * An [event hub](/azure/event-hubs/event-hubs-create?context=/fabric/context/context)
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions

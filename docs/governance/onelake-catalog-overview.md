@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 05/29/2025
+ms.date: 08/20/2025
 ms.custom: 
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to learn about the OneLake catelog and the capabilities it offers.
 ---
@@ -14,7 +14,7 @@ ms.custom:
 
 OneLake catalog is a centralized place that helps you find, explore, and use the Fabric items you need, and govern the data you own. It features two tabs:
 
-* **[Explore tab](./onelake-catalog-explore.md)**: The explore tab has an items list with an in-context item details view that makes it possible to browse through and explore items without losing your list context. It also provides selectors and filters to narrow down and focus the list, making it easier to find what you need. By default, the OneLake catalog opens on the Explore tab.
+* **[Explore tab](./onelake-catalog-explore.md)**: The explore tab has an items list with an in-context item details view that makes it possible to browse through and explore items without losing your list context. It also provides selectors and filters to narrow down and focus the list, making it easier to find what you need. By default, the OneLake catalog opens on the Explore tab. Along with the OneLake catalog, you can open and work across multiple workspaces side by side using the [object explorer](../fundamentals/fabric-home.md#multitask-with-tabs-and-object-explorer).
 
 * **[Govern tab](./onelake-catalog-govern.md)**: The govern tab provides insights that help you understand the governance posture of all the data you own in Fabric, and presents recommended actions you can take to improve the governance status of your data.
 

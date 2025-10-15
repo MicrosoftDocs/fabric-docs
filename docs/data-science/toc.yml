@@ -69,6 +69,8 @@ items:
       items:
         - name: Data agent configurations
           href: data-agent-configurations.md
+        - name: Example queries
+          href: data-agent-example-queries.md
         - name: Best practices for configuring data agents 
           href: data-agent-configuration-best-practices.md
         - name: How to configure a data agent
@@ -80,7 +82,11 @@ items:
         - name: Consume a data agent from Copilot in Power BI (preview)
           href: data-agent-copilot-powerbi.md
         - name: Consume a data agent from Microsoft Copilot Studio (preview)
-          href: data-agent-microsoft-copilot-studio.md          
+          href: data-agent-microsoft-copilot-studio.md         
+        - name: Consume a data agent using Python SDK (preview)
+          href: consume-data-agent-python.md   
+    - name: Source Control, CI/CD, and ALM for Fabric data agent
+      href: data-agent-source-control.md 
     - name: Fabric data agent end-to-end tutorial
       href: data-agent-end-to-end-tutorial.md        
     - name: Fabric data agent sharing
@@ -107,6 +113,8 @@ items:
     href: ../data-engineering/notebook-source-control-deployment.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Use Notebook public APIs
     href: ../data-engineering/notebook-public-api.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Notebook troubleshooting guide
+    href: fabric-notebooks-troubleshooting-guide.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: Environments
   items:
   - name: Create, configure and use an environment
@@ -125,8 +133,12 @@ items:
       href: use-ai-samples.md
     - name: Book recommendation
       href: retail-recommend-model.md
+    - name: Building Retrieval Augmented Generation
+      href: quickstart-building-retrieval-augmented-generation.md
     - name: Customer churn prediction
       href: customer-churn.md
+    - name: Evaluate RAG performance
+      href: tutorial-evaluate-rag-performance.md
     - name: Fraud detection
       href: fraud-detection.md
     - name: Machine failure prediction
@@ -161,6 +173,8 @@ items:
     href: ./ai-functions/overview.md
   - name: Accelerate data prep with Data Wrangler
     href: data-wrangler.md
+  - name: Use AI in Data Wrangler
+    href: data-wrangler-ai.md
   - name: Explore and transform Spark data with Data Wrangler
     href: data-wrangler-spark.md
   - name: Read from Power BI and write data usable by Power BI
@@ -215,10 +229,14 @@ items:
     href: machine-learning-model.md
   - name: Fabric autologging
     href: mlflow-autologging.md
+  - name: Git and deployment pipelines 
+    href: machine-learning-artifacts-git-deployment-pipelines.md
 - name: Model scoring
   items:
     - name: Score models with PREDICT
       href: model-scoring-predict.md
+    - name: Serve real-time predictions with ML model endpoints
+      href: model-endpoints.md
 - name: Secure and manage ML items
   items:
     - name: Disaster recovery for ML items
@@ -357,6 +375,10 @@ items:
       href: tutorial-relationships-detection.md
     - name: Validate data with Great Expectations (GX)
       href: tutorial-great-expectations.md
+    - name: Classification of Natural Language Text with Generative AI
+      href: tutorial-text-classification.md
+  - name: Service principal support
+    href: semantic-link-service-principal-support.md
   - name: Power BI connectivity
     href: semantic-link-power-bi.md
   - name: Semantic propagation

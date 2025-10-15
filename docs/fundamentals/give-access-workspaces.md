@@ -39,6 +39,10 @@ After you [create a workspace](create-workspaces.md) in [!INCLUDE [product-name]
 
    :::image type="content" source="media/workspace-access/workspace-manage-access-edit-role.png" alt-text="Screenshot of modify role in a workspace.":::
 
+## Workspace access limits
+
+Each workspace will be limited to a maximum of 1,000 users or groups in workspace roles (Admin, Member, Contributor, Viewer). This change does not affect the number of users within a group itself. For example, if there is a workspace with one group, that group can have over 1,000 users. The limitation also covers external guests. Workspace admins or members attempting to add users or groups after this limit is reached, will get an error in the workspace access flow. 
+
 ## Related content
 
 * Read about [the workspace experience](workspaces.md)

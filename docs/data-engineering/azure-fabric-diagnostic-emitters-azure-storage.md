@@ -1,9 +1,9 @@
 ---
 title: Collect your Apache Spark applications logs and metrics using Azure Storage account
 description: This article shows how to use the Fabric Spark diagnostic emitter extension to collect logs, event logs and metrics.cluster and learn how to integrate the Grafana dashboards.
-author: jejiang
-ms.author: jejiang
-ms.reviewer: whhender
+author: eric-urban
+ms.author: eur
+ms.reviewer: jejiang
 ms.topic: tutorial
 ms.date: 08/22/2024
 ---

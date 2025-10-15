@@ -1,12 +1,13 @@
 ---
-title: "Format code in Microsoft Fabric notebooks"
+title: Format code in Microsoft Fabric notebooks
 description: Learn best practices for formatting code, including how to extend a Microsoft Fabric notebook to use a PEP 8-compliant code formatter.
-author: snehagunda
-ms.author: sngun
-ms.reviewer: arunsethia
+#customer intent: As a Python developer, I want to format code in Microsoft Fabric notebooks so that my scripts are easier to read and maintain.
+author: eric-urban
+ms.author: eur
+ms.reviewer: sngun
 ms.topic: how-to
 ms.custom: fabric-cat
-ms.date: 07/25/2024
+ms.date: 08/21/2025
 ---
 
 # Format code in Microsoft Fabric notebooks
@@ -14,37 +15,41 @@ ms.date: 07/25/2024
 There are many benefits to adopting good style and conventions when you write a Python notebook or Apache Spark job definition. By consistently formatting your code, you can:
 
 - Make it easier to read the code.
+
 - Increases maintainability of the code.
+
 - Conduct faster code reviews.
+
 - Perform more accurate diffs, which detect changes between versions.
 
 Specifically, this article describes how you can extend a Fabric notebook to use a [PEP 8-compliant](https://peps.python.org/pep-0008/) code formatter.
 
 > [!NOTE]
-> _PEP_ is the acronym for Python Enhancement Proposals. PEP 8 is a style guide that describes coding conventions for Python code.
+> _PEP_ stands for Python Enhancement Proposals. PEP 8 is a style guide that describes coding conventions for Python.
 
 ## Extend Fabric notebooks
 
-You can extend a Fabric notebook by using a _notebook extension_. A notebook extension is a software component that adds new functionality to the notebook interface. You install an extension as a library, and then you set it up to meet your specific needs.
+Extend a Fabric notebook by using a _notebook extension_. A notebook extension is a software component that adds functionality to the notebook interface. Install an extension as a library, and then set it up to meet your needs.
 
-This article considers two extensions that you can use to format Python code in a Fabric notebook. Both extensions are freely available from GitHub.
+This article describes two extensions that format Python code in a Fabric notebook. Both extensions are freely available from GitHub:
 
-- The [black](https://github.com/psf/black) Python code formatter extension.
-- The [jupyter-black](https://github.com/n8henrie/jupyter-black) formatter extension, which you can also use to automatically format code in a Jupyter Notebook or Jupyter Lab.
+- [black](https://github.com/psf/black), a Python code formatter extension.
+
+- [jupyter-black](https://github.com/n8henrie/jupyter-black), which also formats code in Jupyter Notebook or Jupyter Lab.
 
 ### Set up a code formatter extension
 
-There are two methods to set up a code formatter extension in a Fabric notebook. The first method involves workspace settings, while the second method involves in-line installation. You enable code formatting after you install the extension.
+Set up a code formatter extension in a Fabric notebook using one of two methods: workspace settings or in-line installation. Enable code formatting after installing the extension.
 
 #### Workspace settings
 
-Use the workspace settings to set up the working environment for a Fabric workspace. To make your libraries available for use in any notebooks and Spark job definitions in the workspace, you can create the environment, install the libraries in it, and then your workspace admin can attach the environment as the default for the workspace. Therefore, when a code formatter extension is installed in the workspace's default environment, all notebooks within the workspace can benefit from it.
+Use workspace settings to set up the environment for a Fabric workspace. To make libraries available in notebooks and Spark job definitions, create the environment, install the libraries, and let the workspace admin attach the environment as the default. When a code formatter extension is installed in the default environment, all notebooks in the workspace use it.
 
 For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
 
 #### In-line installation
 
-Use the in-line installation method when you want to install a library for a specific notebook, rather than all notebooks in a workspace. This approach is convenient when you want a temporary or quick solution that shouldn't affect other notebooks in the workspace.
+Use in-line installation to install a library for a specific notebook instead of all notebooks in a workspace. This method is convenient for temporary or quick solutions that don't affect other notebooks.
 
 To learn how to perform an in-line installation, see [In-line installation](library-management.md#in-line-installation).
 
@@ -58,30 +63,30 @@ In the following example, the %pip command is used to install the latest version
 
 #### Enable code formatting
 
-After you install the code formatting extension, you must enable code formatting for the notebook. You do that by loading the extension, which can be done in one of two ways.
+After installing the code formatting extension, enable code formatting for the notebook by loading the extension. Use one of two methods:
 
-Either use the ```%load_ext``` magic command.
+1. Use the ```%load_ext``` magic command:
 
-```python
-# Load the jupyter-black extension
-%load_ext jupyter_black
-```
+   ```python
+   # Load the jupyter-black extension
+   %load_ext jupyter_black
+   ```
 
-Or, use the load extension by using the programming API.
+1. Use the programming API:
 
-```python
-import jupyter_black
-jupyter_black.load()
-```
+   ```python
+   import jupyter_black
+   jupyter_black.load()
+   ```
 
 > [!TIP]
 > To ensure that all notebooks enable code formatting, which can be helpful in enterprise development scenarios, enable formatting in a template notebook.
 
 ## Format code
 
-To format code, select the lines of code you want to format, and then press **Shift+Enter**.
+To format code, select the lines of code you want to format, and press **Shift+Enter**.
 
-The following 11 lines of code aren't yet properly formatted.
+The following 11 lines of code aren't formatted properly.
 
 ```python
 def unique(list_input):
@@ -97,14 +102,14 @@ def unique(list_input):
         )
 ```
 
-After formatting has been applied, the extension reduced the script to only five lines. The code now adopts good style and conventions.
+After formatting, the extension reduces the script to five lines. The code adopts good style and conventions.
 
 ```python
 def unique(list_input):
     list_set = set(list_input)
     unique_list = list(list_set)
     for x in unique_list:
-        print(x)    
+        print(x)
 ```
 
 ## Related content
@@ -112,5 +117,7 @@ def unique(list_input):
 For more information about Fabric notebooks, see the following articles.
 
 - [Manage Apache Spark libraries in Microsoft Fabric](library-management.md#in-line-installation)
+
 - Questions? Try asking the [Fabric Community](https://community.fabric.microsoft.com/).
+
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).

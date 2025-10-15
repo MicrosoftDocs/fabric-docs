@@ -4,7 +4,7 @@ description: Learn how to design and use tables in Microsoft Fabric Data Warehou
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: xiaoyul, randolphwest
-ms.date: 05/21/2025
+ms.date: 09/24/2025
 ms.topic: how-to
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
@@ -32,7 +32,7 @@ A table stores data in [OneLake](../onelake/onelake-overview.md) as part of the 
 
 ## Tables in the warehouse
 
-To show the organization of the tables, you could use `fact`, `dim`, or `int` as prefixes to the table names. The following table shows some of the schema and table names for [WideWorldImportersDW](/sql/samples/wide-world-importers-dw-database-catalog?view=fabric&preserve-view=true) sample data warehouse. 
+To show the organization of the tables, you could use `fact`, `dim`, or `int` as prefixes to the table names. The following table shows some of the schema and table names for [WideWorldImportersDW](/sql/samples/wide-world-importers-dw-database-catalog?view=fabric&preserve-view=true) sample data warehouse.
 
 | WideWorldImportersDW Source Table Name  | Table Type | Data Warehouse Table Name |
 |:-----|:-----|:------|:-----|
@@ -43,7 +43,7 @@ To show the organization of the tables, you could use `fact`, `dim`, or `int` as
 
 ## Create a table
 
-For [!INCLUDE [fabric-dw](includes/fabric-dw.md)], you can create a table as a new empty table. You can also create and populate a table with the results of a select statement. The following are the T-SQL commands for creating a table. 
+For [!INCLUDE [fabric-dw](includes/fabric-dw.md)], you can create a table as a new empty table. You can also create and populate a table with the results of a select statement. The following are the T-SQL commands for creating a table.  
 
 | T-SQL statement | Description |
 |:----------------|:------------|
@@ -53,14 +53,14 @@ For [!INCLUDE [fabric-dw](includes/fabric-dw.md)], you can create a table as a n
 This example creates a table with two columns:
 
 ```sql
-CREATE TABLE MyTable (col1 int, col2 int );  
+CREATE TABLE MyTable (col1 int, col2 int );
 ```
 
 ### Schema names
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports the creation of custom schemas. Like in SQL Server, schemas are a good way to group together objects that are used in a similar fashion. The following code creates a [user-defined schema](/sql/t-sql/statements/create-schema-transact-sql?view=fabric&preserve-view=true) called `wwi`.
 
-- Schema names are case sensitive. 
+- Schema names are case sensitive.
 - Schema names can't contain `/` or `\` or end with a `.`.
 
 ```sql
@@ -69,45 +69,45 @@ CREATE SCHEMA wwi;
 
 ## Data types
 
-[!INCLUDE [product-name](../includes/product-name.md)] supports the most commonly used T-SQL data types. 
+[!INCLUDE [product-name](../includes/product-name.md)] supports the most commonly used T-SQL data types.
 
 - For more about data types, see [Data types in Fabric Data Warehouse](data-types.md).
-- When you create a table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], review the [data types reference in CREATE TABLE (Transact-SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric). 
+- When you create a table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], review the [data types reference in CREATE TABLE (Transact-SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric).
 - For a guide to create a table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Create tables](create-table.md).
 
 ## Collation
 
-`Latin1_General_100_BIN2_UTF8` is the default collation for both tables and metadata.
+Fabric warehouses are configured based on the workspace's collation setting, which by default are the case-sensitive (CS) collation `Latin1_General_100_BIN2_UTF8`. When creating a [new warehouse](create-warehouse.md), the collation of the workspace will be used. For more information, see [Data Warehouse collation](collation.md).
 
-You can create a warehouse with the case-insensitive (CI) collation `Latin1_General_100_CI_AS_KS_WS_SC_UTF8`. For more information, see [How to: Create a warehouse with case-insensitive (CI) collation](collation.md).
-
-Supported collations in the API are:
+Supported warehouse collations are:
 
 - `Latin1_General_100_BIN2_UTF8` (default)
 - `Latin1_General_100_CI_AS_KS_WS_SC_UTF8`
 
-Once the collation is set during database creation, all subsequent objects (tables, columns, etc.) will inherit this default collation.
+You can create a warehouse with a non-default collation using the REST API. For more information, see [How to: Create a warehouse with case-insensitive (CI) collation](collation.md#create-a-warehouse-with-a-non-default-collation-with-rest-api).
+
+Once the collation is set during database creation, all subsequent objects (tables, columns, etc.) will inherit this default collation. Once a warehouse is created, the collation setting cannot be changed.
 
 ## Statistics
 
-The query optimizer uses column-level statistics when it creates the plan for executing a query. To improve query performance, it's important to have statistics on individual columns, especially columns used in query joins. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports automatic creation of statistics. 
+The query optimizer uses column-level statistics when it creates the plan for executing a query. To improve query performance, it's important to have statistics on individual columns, especially columns used in query joins. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports automatic creation of statistics.
 
 Statistical updating doesn't happen automatically. Update statistics after a significant number of rows are added or changed. For instance, update statistics after a load. For more information, see [Statistics in Fabric Data Warehouse](statistics.md).
 
 ## Primary key, foreign key, and unique key
 
-For [!INCLUDE [fabric-dw](includes/fabric-dw.md)], PRIMARY KEY and UNIQUE constraint are only supported when NONCLUSTERED and NOT ENFORCED are both used.
+For [!INCLUDE [fabric-dw](includes/fabric-dw.md)], `PRIMARY KEY` and `UNIQUE` constraints are only supported when `NONCLUSTERED` and `NOT ENFORCED` are both used.
 
-FOREIGN KEY is only supported when NOT ENFORCED is used.  
+`FOREIGN KEY` is only supported when `NOT ENFORCED` is used.
 
-- For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true). 
+- For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
 - For more information, see [Primary keys, foreign keys, and unique keys](table-constraints.md).
 
 <a id="temp-tables-in-fabric-data-warehouse"></a>
 
 ## #temp tables
 
-Session-scoped temporary (#temp) tables can be created in Fabric Data Warehouse. 
+Session-scoped temporary (#temp) tables can be created in Fabric Data Warehouse.
 
 These tables exist only within the session in which they are created and last for the duration of that session. They are not visible to other users or sessions and are automatically dropped from the system once the session ends or the #temp table is dropped. These tables are accessible to all users without requiring specific item-level permission.
 
@@ -125,8 +125,8 @@ Two types of #temp tables can be created based on specific use cases, non-distri
 - Distributed temp tables (Parquet-backed) can be created with the `DISTRIBUTION=ROUND_ROBIN` keyword:
 
     ```sql
-    CREATE TABLE #table_name ( 
-    Col1 data_type1, 
+    CREATE TABLE #table_name (
+    Col1 data_type1,
     Col2 data_type2
     ) WITH (DISTRIBUTION=ROUND_ROBIN);
     ```
@@ -147,9 +147,9 @@ If data is coming from multiple data stores, you can port the data into the  war
 
 - Global temporary tables are currently not supported.
 
-The following list shows some of the table features that aren't currently supported.  
+The following list shows some of the table features that aren't currently supported.
 
-- 1024 maximum columns per table
+- 1,024 maximum columns per table
 - Computed columns
 - Indexed views
 - Partitioned tables
@@ -161,6 +161,8 @@ The following list shows some of the table features that aren't currently suppor
 - Unique indexes
 - User-defined types
 - External tables
+
+- Warehouse object metadata is cached by Fabric Data Warehouse to provide fast access to objects and their definitions. For very large warehouses with more than 750,000 objects (for example, tables, views, stored procedures, and functions), metadata is no longer cached by the system. Instead, schema operations query the metadata store directly. This ensures system stability and prevents cache starvation in extremely large databases. However, schema refresh operations can take longer compared to smaller warehouses where metadata caching is enabled.
 
 > [!IMPORTANT]
 > There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).

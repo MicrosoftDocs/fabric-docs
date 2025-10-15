@@ -121,21 +121,17 @@ For Teams group chats, only recently active chats are enabled for selection. If 
 |custom action |Power Automate flow executions/rule/hour      |10000      |
 |Fabric item |Activations/user/minute| 50   |
 
-## Maximum number of [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items
 
-Your organization might have up to 500 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items per region. If you try to create more than this number of items, you receive an error message. To resolve the error, either:
+## Lifecycle management limitations
 
-* Use an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item instead of creating a new item, or
-* Delete some of your existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items.
+Activator items do not currently work with Microsoft Fabric’s lifecycle management tools if they use either of these data sources:
 
-## Application Lifecycle limitations
-
-The following components are currently not supported in Activator ALM:
-* Eventstream  (rolling out)
-* Real Time Hub Fabric Events (rolling out)
-* Real-Time Hub Azure Storage events - not supported
-* Data Pipelines (as target action) 
+* Azure Blob Storage Events
 * Power BI
+  
+If you include an Activator item with one of these sources in a deployment pipeline or a Git-integrated workspace, you will see an error when you try to deploy or commit the Activator item.
+
+Support for these data sources is planned for a future release.
 
 ## Related content
 

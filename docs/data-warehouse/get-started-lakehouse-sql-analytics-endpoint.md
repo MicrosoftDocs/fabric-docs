@@ -122,6 +122,8 @@ Use the following steps to enable cross-workspace data analytics:
 1. Switch to the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse and find the SQL table that has a name that matches the shortcut name. This SQL table references the folder in another workspace.
 1. Query the SQL table that references data in another workspace. The table can be used as any other table in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. You can join the tables that reference data in different workspaces.
 
+For more about security in the SQL anlaytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
+
 > [!NOTE]
 > If the SQL table is not immediately shown in the [!INCLUDE [fabric-se](includes/fabric-se.md)], you might need to wait a few minutes. The SQL table that references data in another workspace is created with a delay.
 

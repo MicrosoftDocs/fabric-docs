@@ -4,20 +4,22 @@ description: Learn how to get started with Microsoft Copilot in Fabric in the Da
 author: whhender
 ms.author: whhender
 ms.reviewer: maghan, sngun
-ms.date: 07/15/2025
+ms.date: 09/02/2025
 ms.service: fabric
 ms.subservice: data-factory
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ms.custom:
   - copilot-scenario-highlight
+ms.devlang: copilot-prompt
 ai-usage: ai-assisted
 ---
 
 # Get started with Copilot in Fabric in the Data Factory workload
 
-This article shows you how to get started with Microsoft Copilot in Fabric in the Data Factory workload. You can use Copilot to create data integration solutions using natural language prompts in both Dataflow Gen2 and Data pipelines.
+This article shows you how to get started with Microsoft Copilot in Fabric in the Data Factory workload. You can use Copilot to create data integration solutions using natural language prompts in both Dataflow Gen2 and pipelines.
 
 > [!TIP]  
 > To learn more about Copilot features and capabilities, see [What is Copilot in Fabric in the Data Factory workload?](copilot-fabric-data-factory.md)
@@ -38,9 +40,9 @@ To use Copilot in the Data Factory workload, you need:
 
 Use the following steps to get started with Copilot for Dataflow Gen2:
 
-1. Create a new [Dataflows Gen2](../data-factory/tutorial-end-to-end-dataflow.md).
+1. Create a new [Dataflow Gen2](../data-factory/tutorial-end-to-end-dataflow.md).
 
-1. On the Home tab in Dataflows Gen2, select the **Copilot** button.
+1. On the Home tab in Dataflow Gen2, select the **Copilot** button.
 
 1. In the bottom left of the Copilot pane, select the starter prompt icon, then the **Get data from** option.
 
@@ -80,19 +82,19 @@ You can use AI tools, such as Copilot, to generate custom transformation queries
 Take my current data and create a transformation that filters for customers in Europe, groups employees by city with counts, and removes orders below the median quantity value.
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
-## Get started with Copilot for Data pipelines
+## Get started with Copilot for pipelines
 
-You can use Copilot to generate, summarize, or even troubleshoot your Data pipelines.
+You can use Copilot to generate, summarize, or even troubleshoot your pipelines.
 
-### Generate a Data pipeline with Copilot
+### Generate a pipeline with Copilot
 
 Use these steps to generate a new pipeline with Copilot for Data Factory:
 
-1. Create a new [Data pipeline](../data-factory/tutorial-end-to-end-pipeline.md).
-1. On the **Home** tab of the Data pipeline editor, select the **Copilot** button.
+1. Create a new [pipeline](../data-factory/tutorial-end-to-end-pipeline.md).
+1. On the **Home** tab of the pipeline editor, select the **Copilot** button.
 
 1. Then you can get started with Copilot to build your pipeline with the **Ingest data** option.
 
@@ -100,24 +102,24 @@ Use these steps to generate a new pipeline with Copilot for Data Factory:
 
 1. After everything is set up, select **Run this pipeline** to execute the new pipeline and ingest the data.
 
-1. If you're already familiar with Data pipelines, you can complete everything with one prompt command, too.
+1. If you're already familiar with pipelines, you can complete everything with one prompt command, too.
 
-## Use AI to generate data pipeline workflows
+## Use AI to generate pipeline workflows
 
-You can use AI tools, such as Copilot, to generate complete data pipeline workflows from natural language descriptions. Instead of manually creating and configuring pipeline activities, describe your data integration needs and let Copilot generate the pipeline structure.
+You can use AI tools, such as Copilot, to generate complete pipeline workflows from natural language descriptions. Instead of manually creating and configuring pipeline activities, describe your data integration needs and let Copilot generate the pipeline structure.
 
 ```copilot-prompt
-Create a data pipeline that copies data from a SQL Server database table called "Orders" to an Azure Data Lake Storage Gen2 container, with error handling and logging enabled.
+Create a pipeline that copies data from a SQL Server database table called "Orders" to an Azure Data Lake Storage Gen2 container, with error handling and logging enabled.
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
-### Summarize a Data pipeline with Copilot
+### Summarize a pipeline with Copilot
 
 Use these steps to summarize a pipeline with Copilot for Data Factory:
 
-1. Open an existing Data pipeline.
+1. Open an existing pipeline.
 
 1. On the **Home** tab of the pipeline editor window, select the **Copilot** button.
 
@@ -143,11 +145,11 @@ You can use AI tools, such as Copilot, to help diagnose and resolve pipeline err
 Explain this pipeline error and provide troubleshooting steps: "The pipeline failed with a timeout error when connecting to the SQL Server database. Connection string: Server=myserver;Database=mydb;Integrated Security=true"
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
 ## Related content
 
 - [What is Copilot in the Data Factory workload?](copilot-fabric-data-factory.md)
-- [Tutorial: Create an end-to-end data pipeline](../data-factory/tutorial-end-to-end-pipeline.md)
+- [Tutorial: Create an end-to-end pipeline](../data-factory/tutorial-end-to-end-pipeline.md)
 - [Tutorial: Create an end-to-end dataflow](../data-factory/tutorial-end-to-end-dataflow.md)

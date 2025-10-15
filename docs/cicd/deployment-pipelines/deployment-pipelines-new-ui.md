@@ -10,7 +10,7 @@ ms.search.form: Deployment pipelines UI
 #customer intent: As a developer, I want to learn about the new user interface for deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
 
-# New deployment pipelines user interface (preview)
+# New deployment pipelines user interface
 
 The user interface for Microsoft Fabric's Deployment pipelines is undergoing a change to improve the user experience. The new UI is designed to be more focused, easier to navigate, and have a smoother flow. The functionality has stayed the same, and anything you can do with the original UI you can do with the new UI.
 

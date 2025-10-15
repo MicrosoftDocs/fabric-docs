@@ -3,6 +3,8 @@ items:
   href: index.yml
 - name: What is lifecycle management? 
   href: cicd-overview.md
+- name: Network security and CI/CD
+  href: cicd-security.md
 - name: "Tutorial: End to end lifecycle management"
   href: cicd-tutorial.md
 - name: "CI/CD workflow options in Fabric"
@@ -33,6 +35,8 @@ items:
     items:
     - name: Automate Git integration using REST APIs
       href: git-integration/git-automation.md
+    - name: Git integration with a service principal in Azure DevOps
+      href: git-integration/git-integration-with-service-principal.md
 - name: Continuous Deployment with deployment pipelines
   items:
   - name: Introduction to deployment pipelines

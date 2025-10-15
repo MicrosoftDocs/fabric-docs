@@ -6,7 +6,7 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: how-to
 ms.custom:
-ms.date: 05/29/2025
+ms.date: 08/12/2025
 #customer intent: As a data engineer, I want to understand how I can use AzCopy to copy data in or out of OneLake easily and with the best performance, from a variety of sources.
 ---
 
@@ -17,6 +17,10 @@ AzCopy is a powerful command-line utility designed to facilitate the transfer of
 ## Why use AzCopy and OneLake?
 
 AzCopy is optimized for data plane operations at scale and large scale data movement. When you copy data between storage accounts (including OneLake), data moves directly from storage server to storage server, minimizing performance bottlenecks. AzCopy is also easy-to-use and reliable, with built-in mechanisms to handle network interruptions and retries. With AzCopy, it's easy to upload data to OneLake, or load data from existing sources directly into your items in Fabric!  
+
+## Trusted workspace access and AzCopy
+
+Trusted workspace access lets you access firewall-enabled Azure Storage accounts securely by configuring a resource instance rule on an Azure Storage account. This rule lets your specific Fabric workspace access the storage account's firewall from select Fabric experiences, like shortcuts, pipelines, and AzCopy. By configuring trusted workspace access, AzCopy can copy data from a firewall-enabled Azure Storage account into OneLake without affecting the firewall protections. Learn more at [trusted workspace access](/fabric/security/security-trusted-workspace-access).  
 
 ## Getting Started
 
@@ -66,6 +70,10 @@ azcopy copy "https://<account-name>.blob.core.windows.net/<source-container-name
 ## Limitations
 
 Since OneLake is a managed data lake, some operations aren't supported with AzCopy. For example, you can't use AzCopy to move or copy entire items or workspaces. Instead, create the new item in your destination location using a Fabric experience (like the portal), and then use AzCopy to move the contents of the existing item into the new item.  
+
+### Cross-tenant operations
+
+When attempting to perform operations directly between two Fabric tenants, you must use [external data sharing](/fabric/governance/external-data-sharing-overview).  This means you cannot currently use AzCopy to directly load data between two Fabric tenants, as that results in a direct cross-tenant operation.  Other methods to load data, such as downloading the data locally or to a Spark cluster and then re-uploading the data to the new tenant, will function.  
 
 ## Related content
 

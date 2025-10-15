@@ -1,0 +1,70 @@
+### YamlMime:Landing
+
+title: Microsoft Fabric Extensibility Toolkit documentation
+summary: Learn to use the Microsoft Fabric Extensibility Toolkit to develop your own Fabric workload.
+
+metadata:
+  title: Microsoft Fabric Extensibility Toolkit
+  description: A landing page for Microsoft Fabric Extensibility Toolkit documentation
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.topic: landing-page # Required
+  author: gsaurer
+  ms.author: billmath
+  ms.date: 12/25/2023
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+
+  # Card 
+  - title: About Microsoft Fabric Extensibility Toolkit
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Microsoft Fabric Extensibility Toolkit?
+            url: extensibility-toolkit-overview.md        
+
+  # Card 
+  - title: Get started
+    linkLists:
+      - linkListType: quickstart
+        links:
+        - text: Build your workload
+          url: build-your-workload.md
+        - text: QuickStart
+          url: quickstart.md
+
+  # Card 
+  - title: Tutorials
+    linkLists:
+      - linkListType: get-started
+        links:
+        - text: Add a workload
+          url: publishing-overview.md
+        - text: Publish your workload
+          url: publish-workload-flow.md 
+
+  # Card 
+  - title: Concepts
+    linkLists:
+      - linkListType: architecture
+        links:
+        - text: Key concepts
+          url: key-concepts.md
+        - text: Architecture
+          url: architecture.md
+
+  # Card 
+  - title: APIs and samples
+    linkLists:
+      - linkListType: reference
+        links:  
+        - text: Starter Kit
+          url: https://aka.ms/fabric-extensibility-starter-kit
+        - text: Samples
+          url: https://aka.ms/fabric-extensibility-toolkit-samples       
+        - text: REST APIs
+          url: https://go.microsoft.com/fwlink/?linkid=2271986
+        - text: Client-side APIs
+          url: https://go.microsoft.com/fwlink/?linkid=2271989
+         

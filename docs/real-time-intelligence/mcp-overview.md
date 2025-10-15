@@ -5,7 +5,7 @@ ms.reviewer: sharmaanshul
 author: spelluru
 ms.author: spelluru
 ms.topic: overview 
-ms.date: 07/28/2025
+ms.date: 09/14/2025
 ms.search.form: MCP, RTI, AI
 
 #CustomerIntent: As a Fabric RTI AI developer, I want to use the RTI MCP server to create AI agents and AI applications.
@@ -31,7 +31,7 @@ The most common scenario for using the RTI MCP Server is to connect to it from a
 
 The RTI MCP Server is at the core of the system and acts as a bridge between AI agents and data sources. Agents send requests to the MCP server, which translates them into Eventhouse queries.
 
-:::image type="content" source="media/mcp/mcp-architecture.png" alt-text="Diagram that shows the MCP architecture.":::
+:::image type="content" source="media/mcp/model-context-protocol-server-architecture.png" alt-text="Diagram that shows the MCP architecture.":::
 
 This architecture lets you build modular, scalable, and secure intelligent applications that respond to real-time signals. MCP uses a client-server architecture, so AI applications can interact with external tools efficiently. The architecture includes the following components:
 

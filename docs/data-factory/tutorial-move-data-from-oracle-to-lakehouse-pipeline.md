@@ -12,7 +12,7 @@ ms.search.form: Pipeline Tutorials
 
 # Move data from Oracle to Fabric Lakehouse via Pipeline and On-premises Data Gateway
 
-In this tutorial, you build a data pipeline to move data from an on-premises Oracle database to a Lakehouse destination.
+In this tutorial, you build a pipeline to move data from an on-premises Oracle database to a Lakehouse destination.
 
 ## Prerequisites
 
@@ -25,23 +25,23 @@ To start, you must complete the following prerequisites:
 
 - Install 64-bit Oracle Client for Microsoft Tools (OCMT) on the computer running on-premises data gateway. You can download OCMT from the [Oracle Client for Microsoft Tools page](https://www.oracle.com/database/technologies/appdev/ocmt.html).
 
-## Create a data pipeline
+## Create a pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
 1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
-1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
+1. Select **Pipeline** and then input a pipeline name to create a new pipeline.
 
-   :::image type="content" source="media/copy-data-activity/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+   :::image type="content" source="media/copy-data-activity/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
 
    :::image type="content" source="media/copy-data-activity/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
-## Copy data using data pipeline
+## Copy data using pipeline
 
-In this session, you start to build your data pipeline by following below steps about copying data from on-premises Oracle database to Lakehouse.
+In this session, you start to build your pipeline by following below steps about copying data from on-premises Oracle database to Lakehouse.
 
 ### Add a copy activity
 
-1. Open an existing data pipeline or create a new data pipeline.
+1. Open an existing pipeline or create a new pipeline.
 1. Add a copy activity either by selecting **Add pipeline activity** > **Copy activity** or by selecting **Copy data** > **Add to canvas** under the **Activities** tab.
 
    :::image type="content" source="media/copy-data-activity/add-copy-activity-to-pipeline-canvas.png" alt-text="Screenshot showing two ways to add a copy activity." lightbox="media/copy-data-activity/add-copy-activity-to-pipeline-canvas.png":::
@@ -72,24 +72,24 @@ In this session, you start to build your data pipeline by following below steps 
 
 1. Specify a table or set up the file path to define the file or folder as the destination. Here select **Tables** and specify a table to write data.
 
-## Run and schedule your data pipeline
+## Run and schedule your pipeline
 
-After completing the configuration of your data pipeline, run the data pipeline to trigger the copy activity. You can also schedule your data pipeline run if needed.
+After completing the configuration of your pipeline, run the pipeline to trigger the copy activity. You can also schedule your pipeline run if needed.
 
 1. Switch to the **Home** tab and select **Run**. A confirmation dialog is displayed. Then select **Save and run** to start the activity.
 
     :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/save-and-run.png" alt-text="Screenshot of saving and running activity." lightbox="media/tutorial-move-data-lakehouse-pipeline/save-and-run.png":::
 
-1. You can monitor the running process and check the results on the **Output** tab below the data pipeline canvas. Select the run details button (with the glasses icon highlighted) to view the run details.
+1. You can monitor the running process and check the results on the **Output** tab below the pipeline canvas. Select the run details button (with the glasses icon highlighted) to view the run details.
 
-    :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/output.png" alt-text="Screenshot of the output of the data pipeline.":::
+    :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/output.png" alt-text="Screenshot of the output of the pipeline.":::
 
 
-1. You can also schedule the data pipeline to run with a specific frequency as required. Below is an example scheduling the data pipeline to run every 15 minutes. You can also specify the **Start** time and **End** time for your schedule. If you don't specify a start time, the start time is the time your schedule applies. If you don't specify an end time, your data pipeline run keeps recurring every 15 minutes.
+1. You can also schedule the pipeline to run with a specific frequency as required. Below is an example scheduling the pipeline to run every 15 minutes. You can also specify the **Start** time and **End** time for your schedule. If you don't specify a start time, the start time is the time your schedule applies. If you don't specify an end time, your pipeline run keeps recurring every 15 minutes.
 
-    :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/schedule.png" alt-text="Screenshot of scheduling the data pipeline.":::
+    :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/schedule.png" alt-text="Screenshot of scheduling the pipeline.":::
 
 ## Related content
 
 - [Connector overview](connector-overview.md)
-- [How to monitor data pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

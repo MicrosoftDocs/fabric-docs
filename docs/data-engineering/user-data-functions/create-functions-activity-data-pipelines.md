@@ -1,15 +1,16 @@
 ---
-title: User data functions activity in data pipelines
-description: Learn how to add user data functions activity to a data pipeline and run it in Fabric.
-ms.author: sumuth
-author: mksuni
+title: User data functions activity in pipelines
+description: Learn how to add user data functions activity to a pipeline and run it in Fabric.
+ms.author: eur
+ms.reviewer: sumuth
+author: eric-urban
 ms.topic: how-to
 ms.date: 03/31/2025
 ---
 
-# Create and run user data functions activity in data pipelines (Preview)
+# Create and run user data functions activity in pipelines
 
-The functions activity in data pipelines for Microsoft Fabric allows you to run user data functions items. You can configure the user data functions item securely and provide the necessary input within the pipeline.
+The functions activity in pipelines for Microsoft Fabric allows you to run user data functions items. You can configure the user data functions item securely and provide the necessary input within the pipeline.
 
 ## Prerequisites
 
@@ -51,5 +52,5 @@ After you configure any other activities required for your pipeline, switch to t
 
 - [Learn about the User data functions programming model](./python-programming-model.md)
 - [Use parameters in pipelines for Data Factory in Fabric](../../data-factory/parameters.md)
-- [Understand the data pipeline run concept](../../data-factory/pipeline-runs.md)
+- [Understand the pipeline run concept](../../data-factory/pipeline-runs.md)
 - [How to monitor pipeline runs in Microsoft Fabric](../../data-factory/monitor-pipeline-runs.md)

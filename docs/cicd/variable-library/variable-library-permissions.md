@@ -1,6 +1,6 @@
 ---
-title: The Microsoft Fabric Variable library permissions
-description: Understand who can access Variable libraries and their values.
+title: Microsoft Fabric Variable Library Permissions
+description: Understand who can access variable libraries and their values.
 author: billmath
 ms.author: billmath
 ms.reviewer: Lee
@@ -9,28 +9,28 @@ ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
 ms.date: 08/15/2024
-ms.search.form: Introduction to Variable libraries, Manage Variable libraries, Variable library permissions, variable types
-#customer intent: As a developer, I want to learn how to use the Variable library item and who has permission to view and edit them.
+ms.search.form: Introduction to variable libraries, manage variable libraries, variable library permissions, variable types
+#customer intent: As a developer, I want to learn how to use variable libraries and who has permission to view and edit them.
 ---
 
-# Variable library permissions (preview)
+# Variable library permissions 
 
-This article explains who can access Variable libraries and their values.
+This article explains who can access variable libraries and their values.
 
-## Variable library item permissions
+## Permissions for a variable library item
 
-The Microsoft Fabric Variable library permissions are aligned with the Fabric workspace model. Permissions are according to your workspace role, or the Variable library can be shared directly.
+The Microsoft Fabric variable library permissions are aligned with the Fabric workspace model. Permissions are according to your workspace role, or the variable library can be shared directly.
 
 Workspace role | Permissions
 ---------------|------------
-Viewer | Can view the Variable library item.
-Contributor | Can view, add, edit, and delete the Variable library item.
-Member | Can view, add, edit, delete, and reshare the Variable library item.
-Admin | Can view, add, edit, delete, and reshare the Variable library item.
+Viewer | Can view the variable library item
+Contributor | Can view, add, edit, and delete the variable library item
+Member | Can view, add, edit, delete, and reshare the variable library item
+Admin | Can view, add, edit, delete, and reshare the variable library item
 
-To share a Variable library item, go to the item menu in the workspace, and select **Share**. If the user you share the item with doesn't have permission to the workspace, but they have permission to one of the variable's consumer items (for example, a Data pipeline), the Variable library isn't visible or available for use in that Data pipeline.
+To share a variable library item, go to the item menu in the workspace, and then select **Share**. If the user that you share the item with doesn't have permission to the workspace, but has permission to one of the variable's consumer items (for example, a pipeline), the variable library isn't visible or available for use in that pipeline.
 
-To set an item as a variable value in a Variable library, you need to have at least read permission for that item. For example, if you want to set the value of a variable to be a lakehouse, you read permission for the lakehouse.
+To set an item as a variable value in a variable library, you need to have at least read permission for that item. For example, if you want to set the value of a variable to be a lakehouse, you need read permission for the lakehouse.
 
 For more information about workspace roles, see [Roles in workspaces in Microsoft Fabric](../../get-started/roles-workspaces.md).
 

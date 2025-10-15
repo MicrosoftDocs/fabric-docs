@@ -5,7 +5,7 @@ author: conxu-ms
 ms.author: conxu
 ms.topic: conceptual
 ms.custom: pipelines
-ms.date: 10/24/2024
+ms.date: 08/28/2025
 ---
 
 # REST API capabilities for pipelines in Fabric Data Factory
@@ -16,10 +16,10 @@ Fabric Data Factory offers a powerful set of APIs that make it easy to automate 
 
 The APIs for pipelines in Fabric Data Factory can be used in various scenarios:
 
-- **Automated deployment**: Automate the deployment of data pipelines across different environments (development, testing, production) using CI/CD practices.
-- **Monitoring and alerts**: Set up automated monitoring and alerting systems to track the status of data pipelines and receive notifications if failures or performance issues occur.
-- **Data integration**: Integrate data from multiple sources, such as databases, data lakes, and cloud services, into a unified data pipeline for processing and analysis.
-- **Error handling**: Implement custom error handling and retry mechanisms to ensure data pipelines run smoothly and recover from failures.
+- **Automated deployment**: Automate the deployment of pipelines across different environments (development, testing, production) using CI/CD practices.
+- **Monitoring and alerts**: Set up automated monitoring and alerting systems to track the status of pipelines and receive notifications if failures or performance issues occur.
+- **Data integration**: Integrate data from multiple sources, such as databases, data lakes, and cloud services, into a unified pipeline for processing and analysis.
+- **Error handling**: Implement custom error handling and retry mechanisms to ensure pipelines run smoothly and recover from failures.
 
 ## Understanding APIs
 
@@ -41,7 +41,7 @@ CRUD stands for Create, Read, Update, and Delete, which are the four basic opera
 
 The primary online reference documentation for Microsoft Fabric REST APIs can be found in the [Microsoft Fabric REST API documentation](/rest/api/fabric/articles/).
 
-## Get started with REST APIs for data pipelines
+## Get started with REST APIs for pipelines
 
 The following examples show how to to create, update, and manage pipelines using the Fabric Data Factory APIs.
 
@@ -93,7 +93,7 @@ Create a pipeline in a specified workspace.
 {
   "displayName": "My pipeline",
   "description": "My pipeline description",
-  "type": "pipeline"
+  "type": "DataPipeline"
 }
 ```
 
@@ -101,7 +101,7 @@ Create a pipeline in a specified workspace.
 
 ```rest
 {
-    "id": "<artifactId>",
+    "id": "<itemId>",
     "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
@@ -133,7 +133,7 @@ Create a pipeline with a base64 definition in a specified workspace.
   "displayName": " My pipeline",
   "description": "My pipeline description",
 
-  "type": "pipeline",
+  "type": "DataPipeline",
   "definition": { 
     "parts": [ 
       { 
@@ -150,7 +150,7 @@ Create a pipeline with a base64 definition in a specified workspace.
 
 ```rest
 {
-    "id": "<Your artifactId>",
+    "id": "<Your itemId>",
     "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
@@ -178,7 +178,7 @@ Returns properties of specified pipeline.
 
 ```rest
 {
-    "id": "<Your artifactId>",
+    "id": "<Your itemId>",
     "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
@@ -246,7 +246,7 @@ Updates the properties of the pipeline.
 {
   "displayName": "My pipeline updated",
   "description": "My pipeline description updated",
-  "type": "pipeline"
+  "type": "DataPipeline"
 }
 ```
 
@@ -254,7 +254,7 @@ Updates the properties of the pipeline.
 
 ```rest
 {
-    "id": "<Your artifactId>",
+    "id": "<Your itemId>",
     "type": "pipeline",
     "displayName": "My pipeline updated",
     "description": "My pipeline description updated",
@@ -284,7 +284,7 @@ Updates the pipeline item definition.
 ```rest
 {
   "displayName": " My pipeline ",
-  "type": "pipeline",
+  "type": "DataPipeline",
   "definition": {
     "parts": [ 
       { 
@@ -331,7 +331,7 @@ Runs on-demand pipeline job instance.
 
 **Sample request**:
 
-**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/jobs/instances?jobType=Refresh```
+**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/jobs/instances?jobType=Pipeline```
 
 **Headers**:
 
@@ -381,7 +381,7 @@ Gets singular pipeline’s job instance.
 {
   "id": "<id>",
   "itemId": "<itemId>",
-  "jobType": "Refresh",
+  "jobType": "Pipeline",
   "invokeType": "Manual",
   "status": "Completed",
   "rootActivityId": "<rootActivityId>",
@@ -390,6 +390,68 @@ Gets singular pipeline’s job instance.
   "failureReason": null
 }
 ```
+
+## Schedule a pipeline
+
+You can also create schedules programatically with the API. Scheduler API supports the following operations:  
+
+- Cancel Pipeline Job Instance  
+- Create Pipeline Schedule  
+- Delete Pipeline Schedule  
+- Get Pipeline Instance  
+- Get Pipeline Schedule  
+- List Pipeline Job Instances  
+- List Pipeline Schedules  
+- Run On Demand Pipeline Job  
+- Update Pipeline Schedule  
+
+For example, you can set up a pipeline that runs every 10 minutes between May 27 and May 31, 2025, in Central Standard Time, and is currently enabled:
+
+```rest
+POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/items/<pipelineId>/jobs/<jobType>/schedules 
+
+{ 
+  "enabled": true, 
+  "configuration": { 
+    "startDateTime": "2025-05-27T00:00:00", 
+    "endDateTime": "2025-05-31T23:59:00", 
+    "localTimeZoneId": " Central Standard Time", 
+    "type": "Cron", 
+    "interval": 10 
+  } 
+} 
+```
+
+|Name|In|Required|Type|Description|Example|
+|---|---|---|---|---|---|
+|pipelineID|Path|True|String(guid)|The pipeline id|aaaa0000-bb11-2222-33cc-444444dddddd|
+|jobType|Path|True|String|The job type|DefaultJob|
+|workspaceId|Path|True|String|The workspace ID|aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb|
+
+**Response:**
+
+Status code: 201
+
+```json
+{ 
+  "id": " eeeeeeee-4444-5555-6666-ffffffffffff", 
+  "enabled": true, 
+  "createdDateTime": "2025-05-27T05:35:20.5366667", 
+  "configuration": { 
+    "startDateTime": "2025-05-27T00:00:00", 
+    "endDateTime": "2025-05-31T23:59:00", 
+    "localTimeZoneId": "Central Standard Time", 
+    "type": "Cron", 
+    "interval": 10 
+  }, 
+  "owner": { 
+    "id": " aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e", 
+    "type": "User" 
+  } 
+} 
+```
+
+For more information on the available operations and their use, see [the Job Scheduler API documentation](/rest/api/fabric/core/job-scheduler).
 
 ## Cancel pipeline job instance
 
@@ -488,11 +550,11 @@ For more detailed information on how to set up and use SPNs in Fabric Data Facto
 
 ## Related content
 
-Refer to the following content for more information on REST APIs for data pipelines in Fabric Data Factory:
+Refer to the following content for more information on REST APIs for pipelines in Fabric Data Factory:
 
 ### Documentation
 
-- [Fabric data pipeline public REST API](pipeline-rest-api-capabilities.md)
+- [Fabric pipeline public REST API](pipeline-rest-api-capabilities.md)
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [CRUD Items APIs in Fabric](/rest/api/fabric/core/items)
 

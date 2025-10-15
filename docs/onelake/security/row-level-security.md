@@ -6,7 +6,7 @@ ms.author: kgremban
 author: kgremban
 ms.topic: how-to
 ms.custom:
-ms.date: 03/24/2025
+ms.date: 09/05/2025
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
 
@@ -18,8 +18,7 @@ Row-level security (RLS) is a feature of OneLake security (preview) that allows 
 
 ## Prerequisites
 
-* A Lakehouse in OneLake with OneLake data access roles turned on. For more information, see [Get started with OneLake data access roles](get-started-data-access-roles.md).
-* A Lakehouse with [schemas enabled](../../data-engineering/lakehouse-schemas.md).
+* An item in OneLake with OneLake security turned on. For more information, see [Get started with OneLake data access roles](get-started-onelake-security.md).
 * Switch the SQL Analytics Endpoint on the lakehouse to "User's identity" mode through the **Security** tab.
 * For creating semantic models, use the steps to create a [DirectLake model](../../fundamentals/direct-lake-power-bi-desktop.md).
 * For a full list of limitations, see the [known limitations section.](./data-access-control-model.md#onelake-security-limitations)
@@ -46,9 +45,11 @@ You can define row-level security rules as part of any OneLake security role tha
 
 RLS rules use SQL syntax to specify the rows that a user can see. This syntax takes the form of a SQL `SELECT` statement with the RLS rules defined in the `WHERE` clause. RLS rules only support a subset of the SQL language as defined in [Syntax rules](#syntax-rules). Queries with invalid RLS syntax or RLS syntax that doesn't match the underlying table result in no rows being shown to users, or query errors in the SQL analytics endpoint. 
 
+As a best practice, avoid using vague or overly complex RLS expressions. Strongly-typed expressions with integer or string lookups with "=" will be the most secure and easy to understand.
+
 Use the following steps to define RLS rules: 
 
-1. Navigate to your Lakehouse and select **Manage OneLake data access (preview)**.
+1. Navigate to your Lakehouse and select **Manage OneLake security (preview)**.
 
 1. Select an existing role that you want to define table or folder security for, or select **New** to create a new role.
 
@@ -62,7 +63,7 @@ Use the following steps to define RLS rules:
 
 ### Enable OneLake security for SQL analytics endpoint
 
-Before you can use OneLake security with SQL analytics endpoint, you must enable its **User's identity mode**. Newly created SQL analytics endpoints in a preview enabled workspace will default to user's identity mode, so these steps must be followed for existing SQL analytics endpoints.
+Before you can use OneLake security with SQL analytics endpoint, you must enable its **User's identity mode**. Newly created SQL analytics endpoints will default to user's identity mode, so these steps must be followed for existing SQL analytics endpoints.
 
 > [!NOTE]
 > Switching to **User's identity** mode only needs to be done once per SQL analytics endpoint. Endpoints that are not switched to user's identity mode will continue to use a delegated identity to evaluate permissions.

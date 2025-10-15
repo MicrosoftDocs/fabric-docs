@@ -12,9 +12,9 @@ ms.date: 02/21/2025
 
 # Connecting to Microsoft OneLake
 
-Microsoft OneLake provides open access to all of your Fabric items through existing Azure Data Lake Storage (ADLS) Gen2 APIs and SDKs. You can access your data in OneLake through any API, SDK, or tool compatible with ADLS Gen2 just by using a OneLake URI instead. You can upload data to a lakehouse through Azure Storage Explorer, or read a delta table through a shortcut from Azure Databricks.
+Microsoft OneLake provides open access to all of your Fabric items through existing Azure Data Lake Storage (ADLS) and Blob APIs and SDKs. You can access your data in OneLake through any API, SDK, or tool compatible with ADLS or Azure Blob Storage just by using a OneLake URI instead. You can upload data to a lakehouse through Azure Storage Explorer, or read a delta table through a shortcut from Azure Databricks.
 
-As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences, and can't be done via ADLS Gen2 APIs. For a full list of changes to these APIs, see [OneLake API parity](onelake-api-parity.md).
+As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences, and can't be done via ADLS APIs. For a full list of changes to these APIs, see [OneLake API parity](onelake-api-parity.md).
 
 ## URI syntax
 
@@ -25,7 +25,7 @@ https://onelake.dfs.fabric.microsoft.com/<workspace>/<item>.<itemtype>/<path>/<f
 ```
 
    > [!NOTE]
-   > Because you can reuse item names across multiple item types, you must specify the item type in the extension. For example, `.lakehouse` for a lakehouse and `.datawarehouse` for a warehouse.
+   > Because you can reuse item names across multiple item types, you must specify the item type in the extension. For example, `.lakehouse` for a lakehouse and `.warehouse` for a warehouse.
 
 OneLake also supports referencing workspaces and items with globally unique identifiers (GUIDs). OneLake assigns GUIDs and GUIDs don't change, even if the workspace or item name changes. You can find the associated GUID for your workspace or item in the URL on the Fabric portal. You must use GUIDs for both the workspace and the item, and don't need the item type.
 
@@ -33,13 +33,13 @@ OneLake also supports referencing workspaces and items with globally unique iden
 https://onelake.dfs.fabric.microsoft.com/<workspaceGUID>/<itemGUID>/<path>/<fileName>
 ```
 
-When adopting a tool for use over OneLake instead of ADLS Gen2, use the following mapping:
+When adopting a tool for use over OneLake instead of ADLS, use the following mapping:
 
 - The account name is always `onelake`.
 - The container name is your workspace name.
 - The data path starts at the item. For example: `/mylakehouse.lakehouse/Files/`.
 
-OneLake also supports the [Azure Blob Filesystem driver](/azure/storage/blobs/data-lake-storage-abfs-driver) (ABFS) for more compatibility with ADLS Gen2 and Azure Blob Storage. The ABFS driver uses its own scheme identifier `abfs` and a different URI format to address files and directories in ADLS Gen2 accounts. To use this URI format over OneLake, swap workspace for filesystem and include the item and item type.
+OneLake also supports the [Azure Blob Filesystem driver](/azure/storage/blobs/data-lake-storage-abfs-driver) (ABFS) for more compatibility with ADLS and Azure Blob Storage. The ABFS driver uses its own scheme identifier `abfs` and a different URI format to address files and directories in ADLS accounts. To use this URI format over OneLake, swap workspace for filesystem and include the item and item type.
 
 ```http
 abfs[s]://<workspace>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<path>/<fileName>
@@ -73,11 +73,11 @@ OneLake regional endpoints all follow the same format: `https://<region>-onelake
 
 ## Common issues
 
-If a tool or package compatible with ADLS Gen2 isn't working over OneLake, the most common issue is URL validation. As OneLake uses a different endpoint (`dfs.fabric.microsoft.com`) than ADLS Gen2 (`dfs.core.windows.net`), some tools don't recognize the OneLake endpoint and block it. Some tools allow you to use custom endpoints (such as PowerShell). Otherwise, it's often a simple fix to add OneLake's endpoint as a supported endpoint. If you find a URL validation issue or have any other issues connecting to OneLake, [let us know](https://ideas.fabric.microsoft.com/).
+If a tool or package compatible with ADLS isn't working over OneLake, the most common issue is URL validation. As OneLake uses a different endpoint (`dfs.fabric.microsoft.com`) than ADLS (`dfs.core.windows.net`), some tools don't recognize the OneLake endpoint and block it. Some tools allow you to use custom endpoints (such as PowerShell). Otherwise, it's often a simple fix to add OneLake's endpoint as a supported endpoint. If you find a URL validation issue or have any other issues connecting to OneLake, [let us know](https://ideas.fabric.microsoft.com/).
 
 ## Resources
 
-OneLake is accessible through the same APIs and SDKs as ADLS Gen2. To learn more about using ADLS Gen2 APIs, please see the following pages:
+OneLake is accessible through the same APIs and SDKs as ADLS. To learn more about using ADLS APIs, please see the following pages:
 - [ADLS Gen2 API Reference](/rest/api/storageservices/data-lake-storage-gen2)
 - ADLS Gen2 Filesystem SDKs
   - [.NET](/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet)

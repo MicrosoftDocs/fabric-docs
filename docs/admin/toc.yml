@@ -46,7 +46,7 @@ items:
     href: track-user-activities.md
   - name: Operation list
     href: operation-list.md
-  - name: Find users who have signed in
+  - name: Find users who signed in
     href: service-admin-access-usage.md
   - name: Customize Fabric branding
     href: service-admin-custom-branding.md
@@ -115,6 +115,8 @@ items:
       href: portal-workspace.md
     - name: Information protection
       href: service-admin-portal-information-protection.md
+    - name: Map settings
+      href: map-settings.md
     - name: Export and sharing settings
       href: service-admin-portal-export-sharing.md
     - name: Discovery settings

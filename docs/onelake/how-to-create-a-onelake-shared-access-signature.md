@@ -51,7 +51,7 @@ The following table summarizes the fields that are supported for a OneLake SAS t
 |`signedPermissions`|`sp`|Required|This field indicates which operations the SAS can perform on the resource. For more information, see the [Specify permissions](#specify-permissions) section.|
 |`signedObjectId`|`skoid`|Required|This field identifies a Microsoft Entra security principal.|
 |`signedtenantId`|`sktid`|Required|This field specifies the Microsoft Entra tenant in which a security principal is defined.|
-|`signedKeyStartTime`|`skt`|Optional|This field specifies the time in UTC when the signing key starts. The `Get User Delegation Key` operation returns it.|
+|`signedKeyStartTime`|`skt`|Required|This field specifies the time in UTC when the signing key starts. The `Get User Delegation Key` operation returns it.|
 |`signedKeyExpiryTime`|`ske`|Required|This field specifies the time in UTC when the signing key ends. The `Get User Delegation Key` operation returns it.|
 |`signedKeyVersion`|`skv`|Required|This field specifies the storage service version that's used to get the user delegation key. The `Get User Delegation Key` operation returns it. OneLake supports version `2020-02-10` and earlier, or version `2020-12-06` and later. |
 |`signedKeyService`|`sks`|Required|This field indicates the valid service for the user delegation key. OneLake supports only Azure Blob Storage (`sks=b`).|
@@ -77,7 +77,7 @@ Permissions can be combined to permit a client to perform multiple operations wi
 
 Examples of valid permission settings include `rw`, `rd`, `rl`, `wd`, `wl`, and `rl`. You can't specify a permission more than once.
 
-To ensure parity with existing Azure Storage tools, OneLake uses the same permission format as Azure Storage. OneLake evaluates the permissions granted to a SAS in `signedPermissions`, the permissions of the signing identity in Fabric, and any [OneLake data access roles](/fabric/onelake/security/get-started-data-access-roles), if applicable.
+To ensure parity with existing Azure Storage tools, OneLake uses the same permission format as Azure Storage. OneLake evaluates the permissions granted to a SAS in `signedPermissions`, the permissions of the signing identity in Fabric, and any [OneLake security roles](./security/get-started-onelake-security.md), if applicable.
 
 Remember that some operations, such as setting permissions or deleting workspaces, generally aren't permitted on OneLake via Azure Storage APIs. Granting that permission (`sp=op`) doesn't allow a OneLake SAS to perform those operations.
 
@@ -228,4 +228,4 @@ https://onelake.blob.fabric.microsoft.com/myWorkspace/myLakehouse.Lakehouse/File
 
 - [Create a user delegation SAS](/rest/api/storageservices/create-user-delegation-sas)
 - [Request a user delegation key](/rest/api/storageservices/get-user-delegation-key)
-- [Get started with OneLake data access roles](security/get-started-data-access-roles.md)
+- [Get started with OneLake data access roles](security/get-started-onelake-security.md)

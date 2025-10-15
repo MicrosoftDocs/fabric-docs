@@ -44,16 +44,30 @@ Only a workspace admin can connect a workspace to a repository, but once connect
 
 1. Select your Git provider. Currently, Azure DevOps and GitHub are supported.
 
-### [Azure DevOps Connect](#tab/Azure)
+#### [Azure DevOps Connect](#tab/Azure)
 
 If you select Azure DevOps, select **Connect** to automatically sign into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
 
-:::image type="content" source="./media/git-get-started/devops-connect.png" alt-text="Screenshot of workspace settings window with Git integration selected.":::
+If you have already signed in to Azure from Fabric using a different account, select your account from the list and select **Connect**.
 
-### [GitHub Connect](#tab/GitHub)
+If it's your first time signing in from Fabric, or you want to add a new account, select **Add account**.
 
-If you select GitHub, you need to sign in to your GitHub account.  
-Select **Add account** if it's your first time signing in from Fabric, or select one of the accounts listed. After you sign in, select **Connect** to allow Fabric to access your GitHub account.
+If it's the first time connecting, you need to Authorize your user. Provide the following information:
+
+- *Display name* - must be unique for each user
+- *Azure DevOps URL* - URL of the Azure DevOps repository. URL must be in the format `https://dev.azure.com/{organization}/{project}/_git/{repository}` or `https://{organization}.visualstudio.com/{project}/_git/{repo}`.
+- *Authentication* - You can authenticate either with *OAuth2* or a *Service Principal*.  For more information see [Azure DevOps - Git Integration with service principal (preview)](git-integration-with-service-principal.md)
+
+:::image type="content" source="./media/git-get-started/devops-add-account.png" alt-text="Screenshot of GitHub integration UI to add an account.":::
+
+After you sign in, select **Connect** to allow Fabric to access your account
+
+#### [GitHub Connect](#tab/GitHub)
+
+If you select GitHub, you need to sign in to your GitHub account.
+If you have already signed in to GitHub, select your account from the list and select **Connect**.
+
+If it's your first time signing in from Fabric, or you want to add a new account, select **Add account**.
 
 :::image type="content" source="./media/git-get-started/github-first-connect.png" alt-text="Screenshot of GitHub integration window without any existing accounts to select.":::
 
@@ -65,11 +79,13 @@ If it's the first time connecting, you need to <a href="https://docs.github.com/
 
 :::image type="content" source="./media/git-get-started/github-add-account.png" alt-text="Screenshot of GitHub integration UI to add an account.":::
 
+After you sign in, select **Connect** to allow Fabric to access your GitHub account.
+
 ---
 
 ### Connect to a workspace
 
-If the workspace is already connected to GitHub, follow the instructions for [Connecting to a shared workspace](./git-integration-process.md#connect-to-a-shared-workspace).
+If the workspace is already connected to Azure DevOps/GitHub, follow the instructions for [Connecting to a shared workspace](./git-integration-process.md#connect-to-a-shared-workspace).
 
 #### [Azure DevOps branch connect](#tab/Azure)
 
@@ -81,7 +97,8 @@ If the workspace is already connected to GitHub, follow the instructions for [Co
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
     - Folder (Type in the name of an existing folder or enter a name to create a new folder. If you leave the folder name blank, content is created in the root folder. You can only connect to one folder at a time.)
 
-:::image type="content" source="./media/git-get-started/azure-connect-branch.png" alt-text="Screenshot to Azure connection.":::
+ :::image type="content" source="media/git-get-started/devops-connect-4.png" alt-text="Screenshot to Azure connection." lightbox="media/git-get-started/devops-connect-4.png":::
+
 
 #### [GitHub branch connect](#tab/GitHub)
 
@@ -143,17 +160,21 @@ After saving changes to the workspace, if you decide that you don’t want to co
 1. Select **Changes** from the **Source control** panel.
    A list appears with all the items you changed, and an icon indicating if the changed item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, *conflict* :::image type="icon" source="./media/git-get-started/conflict-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
 1. Select the changes you want to undo.
-1. Select **Undo**.
+1. Place a check in the **I understand that workspace items may be deleted and can't be restored** box and select **Undo**.
 
    :::image type="content" source="./media/git-get-started/undo-changes.png" alt-text="Screenshot of source control window with two changes selected to undo.":::
-1. Select **Undo** again to confirm.
+1. Select **Undo** again to confirm. The dialog you see may vary depending on whether or not items that will be deleted are detected.  The first screenshot shows no deletes.  The second, if deletes are detected.
 
-   :::image type="content" source="./media/git-get-started/undo-confirm.png" alt-text="Screenshot of source control window asking if you're sure you want to undo changes.":::
+   :::image type="content" source="./media/git-get-started/undo-confirm-2.png" alt-text="Screenshot of source control window asking if you're sure you want to undo changes.":::
+
+      :::image type="content" source="./media/git-get-started/undo-confirm-3.png" alt-text="Screenshot of source control window asking if you're sure you want to undo changes when items that will be deleted are detected.":::
 
 The selected items in your workspace revert to how they were when the workspace was last synced.
 
 > [!IMPORTANT]
-> If you delete an item and then undo the changes, the item is created anew and some of the metadata might be lost. For example, the sensitivity labels aren’t kept and should be reset, and the owner of the item is set to the current user.
+> If you delete an item and then undo the changes, the item is created a new and some of the metadata might be lost. For example, the sensitivity labels aren’t kept and should be reset, and the owner of the item is set to the current user.
+>
+>Undoing added items will permanently delete the item. 
 
 ---
 
@@ -168,7 +189,11 @@ To update a workspace, follow these steps:
 1. Select **Updates** from the Source control panel. A list appears with all the items that were changed in the branch since the last update.
 1. Select **Update all**.
 
-:::image type="content" source="./media/git-get-started/source-control-update.png" alt-text="Screenshot of source control panel with the update tab open and the updating all button selected.":::
+ :::image type="content" source="./media/git-get-started/update-1.png" alt-text="Screenshot of source control panel with the update tab open and the updating all button selected.":::
+
+5. On the confirmation diaglog, select **Update**.
+
+ :::image type="content" source="./media/git-get-started/update-2.png" alt-text="Screenshot of confirmation diaglog.":::
 
 After it updates successfully, the list of items is removed, and the workspace points to the new workspace that it's synced to.
 

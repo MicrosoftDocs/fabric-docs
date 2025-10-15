@@ -4,7 +4,7 @@ description: Learn about options to connect to your SQL database in Microsoft Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaurk, imotiwala, maghan
-ms.date: 07/28/2025
+ms.date: 09/30/2025
 ms.topic: how-to
 ms.search.form: product-databases, Connect to SQL database
 ---
@@ -93,7 +93,12 @@ bcp bcptest in "c:\temp\sample.dat" -S <your_server>.database.fabric.microsoft.c
 
 ## Connect with Python Notebook
 
-[Fabric Python Notebooks](../../data-engineering/using-python-experience-on-notebook.md) (preview) offer the [ability to run T-SQL code with the T-SQL magic command](../../data-engineering/tsql-magic-command-notebook.md). In the following steps, connect to a SQL database in Fabric using the `%%tsql` magic command:
+[Fabric Python Notebooks](../../data-engineering/using-python-experience-on-notebook.md) (preview) offer the [ability to run T-SQL code with the T-SQL magic command](../../data-engineering/tsql-magic-command-notebook.md). 
+
+> [!TIP]
+> You can also [connect your applications to a SQL database in Fabric with the Microsoft Python Driver](connect-python.md).
+
+In the following steps, connect to a SQL database in Fabric using the `%%tsql` magic command:
 
 1. Create a notebook in your workspace with the language set to Python.
 1. In a cell, use the `%%tsql` magic command. The cell type automatically changes to `T-SQL`. 
@@ -110,6 +115,11 @@ bcp bcptest in "c:\temp\sample.dat" -S <your_server>.database.fabric.microsoft.c
    %%tsql -artifact Contoso -type SQLDatabase
    SELECT * FROM SalesLT.Customer;
    ```
+1. You can also bind the results to a dataframe with the `-bind` argument:
+
+   ```python
+   %%tsql -artifact Contoso -type SQLDatabase -bind df2
+   ```
 
 For more possibilities to query your data with T-SQL inside Python Notebooks, see [Run T-SQL code in Fabric Python notebooks](../../data-engineering/tsql-magic-command-notebook.md). To see the full syntax, use the `%tsql?` command. This command displays the help information for the T-SQL magic command, including the available parameters and their descriptions.
 
@@ -117,6 +127,4 @@ For more possibilities to query your data with T-SQL inside Python Notebooks, se
 
 - [Authentication in SQL database in Microsoft Fabric](authentication.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
-- [SQL database in Microsoft Fabric](overview.md)
-- [Private links in Microsoft Fabric](../../security/security-private-links-overview.md)
-- [Ingest data into SQL database via data pipelines](load-data-pipelines.md)
+- [Quickstart: Connect to a SQL database in Fabric with the Microsoft Python Driver for SQL Server](connect-python.md)

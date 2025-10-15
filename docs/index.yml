@@ -13,7 +13,7 @@ metadata:
   ms.collection: collection
   author: SnehaGunda
   ms.author: sngun
-  ms.date: 10/26/2024
+  ms.date: 08/01/2025
 # highlightedContent section (optional)
 # Maximum of 8 items 
 highlightedContent:
@@ -32,17 +32,17 @@ highlightedContent:
       itemType: overview
       url: security/security-overview.md
     # Card
-    - title:  Choose a Fabric data store
+    - title: Migrate to Microsoft Fabric
+      itemType: deploy
+      url: fundamentals/migration.md
+    # Card
+    - title: Choose a Fabric data store
       itemType: concept
       url: fundamentals/decision-guide-data-store.md
     # Card
     - title: Copilot in Microsoft Fabric
       itemType: concept
       url: fundamentals/copilot-fabric-overview.md 
-    # Card
-    - title: Fabric roadmap - What's upcoming
-      itemType: whats-new
-      url: https://aka.ms/fabricrm   
     # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
@@ -107,6 +107,24 @@ conceptualContent:
       summary: Begin your journey with Microsoft Fabric. Import, transform, and visualize data, manage resources, stay updated with product news, explore migration guides, and utilize Copilot in Fabric. # < 160 chars (Optional; Remove if not applicable.)
       items:
         # Card
+        - title: Stay informed with product updates
+          links:
+          - url: fundamentals/whats-new.md
+            itemType: whats-new
+            text: What's new in Microsoft Fabric?
+          - url: https://aka.ms/fabricrm
+            itemType: concept
+            text: Microsoft Fabric roadmap
+          - url: https://blog.fabric.microsoft.com/blog
+            itemType: concept
+            text: Microsoft Fabric updates blog
+          - url: /power-bi/fundamentals/desktop-latest-update
+            itemType: whats-new
+            text: What's new in Power BI
+          footerLink:
+            url: https://aka.ms/fabricrm
+            text: See more      
+        # Card
         - title: "Get started"
           links:
           - url: fundamentals/fabric-home.md
@@ -128,6 +146,9 @@ conceptualContent:
         # Card
         - title: Migrate to Fabric
           links:
+          - url: fundamentals/migration.md
+            itemType: overview
+            text: Migrate to Fabric overview
           - url: data-factory/upgrade-paths.md
             itemType: concept
             text: Migrate to Data Factory
@@ -137,8 +158,11 @@ conceptualContent:
           - url: data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md
             itemType: concept
             text: From Synapse dedicated SQL pools to Fabric
+          - url: real-time-intelligence/migrate-synapse-data-explorer.md
+            itemType: concept
+            text: Migrate from Azure Synapse Data Explorer
           footerLink:
-            url: data-engineering/migrate-synapse-overview.md
+            url: fundamentals/migration.md
             text: See more
         # Card
         - title: Decision guides
@@ -195,7 +219,7 @@ conceptualContent:
             itemType: how-to-guide
             text: Get data with Real-Time hub          
           footerLink:
-            url: onelake/create-onelake-shortcut.md
+            url: fundamentals/migration.md
             text: See more
         # Card
         - title: Store data
@@ -335,24 +359,7 @@ conceptualContent:
           footerLink:
             url: security/index.yml
             text: See more
-        # Card
-        - title: Stay informed with product updates
-          links:
-          - url: fundamentals/whats-new.md
-            itemType: whats-new
-            text: What's new in Microsoft Fabric?
-          - url: https://aka.ms/fabricrm
-            itemType: concept
-            text: Microsoft Fabric roadmap
-          - url: https://blog.fabric.microsoft.com/blog
-            itemType: concept
-            text: Microsoft Fabric updates blog
-          - url: /power-bi/developer/visuals/changelog
-            itemType: how-to-guide
-            text: Custom visuals change log
-          footerLink:
-            url: https://aka.ms/fabricrm
-            text: See more
+
     - title: Develop in Fabric # < 60 chars (Optional; Remove if not applicable.)
       summary: Build your solutions using Fabric, utilize the Workload Development Kit, set up CI/CD pipelines and Git integration, and develop with REST and JavaScript APIs. # < 160 chars (Optional; Remove if not applicable.)
       items:
@@ -411,14 +418,17 @@ conceptualContent:
               itemType: reference
               text: Terraform provider for Fabric            
         # Card
-        - title: Solutions for ISVs
+        - title: Fabric extensibility
           links:
-            - url: cicd/partners/partner-integration.md
-              itemType: overview
-              text: Fabric for ISVs
+            - url: extensibility-toolkit/extensibility-toolkit-overview.md
+              itemType: concept
+              text: Extensibility toolkit
             - url: workload-development-kit/development-kit-overview.md
               itemType: concept
               text: Workload development kit
+            - url: cicd/partners/partner-integration.md
+              itemType: overview
+              text: Fabric for ISVs
           footerLink:
               url: cicd/partners/partner-integration.md
               text: See more

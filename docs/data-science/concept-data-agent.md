@@ -1,9 +1,9 @@
----
+﻿---
 title: Fabric data agent creation (preview)
 titleSuffix: Learn how to create a Fabric data agent
 description: Learn how to create a Fabric data agent that can answer questions about data.
-author: s-polly
-ms.author: scottpolly
+author: jonburchel
+ms.author: jburchel
 ms.reviewer: amjafari
 reviewer: amjafari
 ms.service: fabric
@@ -13,9 +13,7 @@ ms.date: 03/25/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Fabric data agent Concepts
-
 #customer intent: As a Data Analyst, I want to create a Fabric data agent so that I can make it easier for me and my colleagues to get answers from data.
-
 ---
 
 # Fabric data agent concepts (preview)
@@ -99,6 +97,7 @@ The Fabric data agent is currently in public preview and it has limitations. Upd
 - Fabric Data Agent does not support unstructured Data (.pdf, .docx, or .txt). You can't use the Fabric data agent to access unstructured data resources. These resources include .pdf, .docx, or .txt files, for example.
 - The Fabric data agent does not currently support non-English languages. For optimal performance please provide questions, instructions, and example queries in English. 
 - You can't change the LLM that the Fabric data agent uses.
+- Conversation history in Fabric Data Agent may not always persist. In certain cases, such as backend infrastructure changes, service updates, or model upgrades, past conversation history may be reset or lost.
 
 ## Related content
 

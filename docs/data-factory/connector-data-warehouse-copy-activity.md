@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Data Warehouse in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to a Data Warehouse.
+This article outlines how to use the copy activity in a pipeline to copy data from and to a Data Warehouse.
 
 ## Supported configuration
 
@@ -157,7 +157,7 @@ The following tables contain more information about a copy activity in Data Ware
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse** |Yes|type|
-|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
+|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>itemId|
 |**Use query** |The way to read data from Data Warehouse. |• Tables<br>• Query<br>• Stored procedure|No|*(under `typeProperties` -> `source`)*<br>• typeProperties:<br>&emsp;schema<br>&emsp;table<br>• sqlReaderQuery<br>• sqlReaderStoredProcedureName|
 |**Query timeout (minutes)**|Timeout for query command execution, with a default of 120 minutes. If this property is set, the allowed values are in the format of a timespan, such as "02:00:00" (120 minutes).|timespan |No |queryTimeout|
 |**Isolation level** |The transaction locking behavior for source. |• None<br>• Snapshot|No |isolationLevel|
@@ -173,7 +173,7 @@ The following tables contain more information about a copy activity in Data Ware
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse**  |Yes|type|
-|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
+|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>itemId|
 |**Table** |The destination table to write data.|\<name of your destination table>|Yes|schema <br> table|
 |**Copy command settings**|The copy command property settings. Contains the default value settings.|Default value:<br>• Column<br> • Value|No |copyCommandSettings:<br>defaultValues:<br>• columnName<br>• defaultValue|
 |**Table option**|Whether to automatically create the destination table if none exists based on the source schema.|• None<br>• Auto create table|No|tableOption:<br><br>• autoCreate|
@@ -181,6 +181,13 @@ The following tables contain more information about a copy activity in Data Ware
 |**Write batch timeout** |The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).| timespan |No |writeBatchTimeout|
 |**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection:<br> true or false|
 
+### Using Fabric Warehouse as a sink with staging enabled
+If the staging storage location has a firewall enabled, access issues may occur.
+#### Workarounds
+- **Different Regions**:  
+  If the Fabric capacity and staging storage are in different regions, ensure the regional Data Factory and Azure SQL IP addresses are allowed in the storage location firewall to enable connectivity.
+- **Same Region**:  
+  If the Fabric capacity and staging storage are in the same region and access issues persist, choose an alternative staging storage location in a different region than the Fabric capacity.
 ## Related content
 
 - [Data Warehouse connector overview](connector-data-warehouse-overview.md)

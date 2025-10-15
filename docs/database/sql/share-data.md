@@ -17,7 +17,6 @@ Fabric makes it easy to share items via the share button in the workspace. Fabri
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
-- Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
 - [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - [Create a new SQL database with the AdventureWorks sample data](load-adventureworks-sample-data.md) or use an existing database.
 

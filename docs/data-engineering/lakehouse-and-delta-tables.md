@@ -1,9 +1,9 @@
 ---
 title: Lakehouse and Delta Tables
 description: The Delta Lake table format is the unified format of the Lakehouse, which is the data architecture platform for managing data in Microsoft Fabric.
-ms.reviewer: snehagunda
-ms.author: dacoelho
-author: DaniBunny
+ms.reviewer: dacoelho
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 06/13/2025

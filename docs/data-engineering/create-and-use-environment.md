@@ -1,8 +1,9 @@
 ---
 title: Create, Configure, and Use an Environment in Fabric
 description: Learn how to create, configure, and use a Microsoft Fabric environment in your notebooks and Spark job definitions.
-ms.author: shuaijunye
-author: ShuaijunYe
+ms.author: eur
+ms.reviewer: shuaijunye
+author: eric-urban
 ms.topic: how-to
 ms.date: 03/31/2025
 ms.search.form: Create and use Environment
@@ -18,8 +19,29 @@ This article presents an overview of how to create, configure, and use an enviro
 
 You can create new environments from multiple entry points:
 
-- **Standard entry point:** In the creation hub, or the **New** section of your workspace, you can find the option to create new environments like other Fabric items.
-- **Create during selection:** When you select the environment for your notebook, Spark job definition, and the workspace default, you can find the option to create a new environment.
+**Standard entry point:**
+
+1. In Fabric, navigate to the desired workspace.
+
+1. Select **New item** and locate **Environment**.
+
+    :::image type="content" source="media\environment-introduction\new-item-environment.png" alt-text="Screenshot showing how to create a new environment in the Fabric portal." lightbox="media\environment-introduction\new-item-environment.png":::
+
+1. Name your environment and select **Create**.
+
+**Create during selection:**
+
+1. Open a notebook or Spark job definition.
+
+1. Select the **Environment** dropdown and then select **New environment**.
+
+    :::image type="content" source="media\environment-introduction\env-create-during-selection.png" alt-text="Screenshot that shows how to create a new environment during environment selection in a notebook." lightbox="media\environment-introduction\env-create-during-selection.png":::
+
+1. Name your environment and select **Create**.
+
+Once the environment is created, select the runtime version. Choose **Runtime 1.3 (Spark 3.5, Delta 3.2)** from the dropdown menu.
+
+:::image type="content" source="media\environment-introduction\select-runtime.png" alt-text="Screenshot showing how to select the runtime version for the environment." lightbox="media\environment-introduction\select-runtime.png":::
 
 ## Configure an environment
 
@@ -35,7 +57,7 @@ The Spark compute and library configurations are required for publishing to be e
 
 For an environment, you can choose from various [Spark runtimes](runtime.md) with their own default settings and preinstalled packages. To view the available runtimes, go to the **Home** tab of the environment and select **Runtime**. Select the runtime that best suits your needs.
 
-:::image type="content" source="media\environment-introduction\env-runtime-dropdown.png" alt-text="Screenshot that shows choosing a runtime in an environment.":::
+:::image type="content" source="media\environment-introduction\env-runtime-dropdown.png" alt-text="Screenshot that shows choosing a runtime in an environment." lightbox="media\environment-introduction\env-runtime-dropdown.png":::
 
 > [!IMPORTANT]
 >
@@ -56,7 +78,11 @@ The **Resources** section in an environment facilitates the ability to manage sm
 
 On the **Home** tab, you can easily find **Save** and **Publish**. They're activated when there are unsaved or unpublished pending changes in the **Libraries** and **Spark compute** sections.
 
-:::image type="content" source="media\environment-introduction\env-save-and-publish.png" alt-text="Screenshot that shows where to select Save and Publish.":::
+:::image type="content" source="media\environment-introduction\env-save-and-publish.png" alt-text="Screenshot that shows where to select Save and Publish." lightbox="media\environment-introduction\env-save-and-publish.png":::
+
+> [!IMPORTANT]
+>
+> - If Private Link is enabled, the first Spark job in the workspace needs to trigger VNet provisioning, which can take approximately 10–15 minutes. Since environment publishing also runs as a Spark job, it may experience an additional delay if it happens to be the first Spark job executed after Private Link is enabled.
 
 When pending changes are in the **Libraries** and **Spark compute** sections, you also see a banner that prompts you with **Save** and **Publish**. The functionalities are the same as for the buttons:
 
@@ -90,7 +116,7 @@ You can attach a Fabric environment to your **Data Engineering/Science** workspa
 
 Select **Workspace settings** > **Data Engineering/Science** > **Spark settings** to see the **Environment** tab.
 
-:::image type="content" source="media\environment-introduction\env-workspace-setting-default.png" alt-text="Screenshot that shows the Workspace settings Set default environment pane.":::
+:::image type="content" source="media\environment-introduction\env-workspace-setting-default.png" alt-text="Screenshot that shows the Workspace settings Set default environment pane." lightbox="media\environment-introduction\env-workspace-setting-default.png":::
 
 Workspace admins can define the default workload for entire workspaces. The values configured here are effective for notebooks and Spark job definitions that attach to **Workspace settings**.
 
@@ -98,7 +124,7 @@ Workspace admins can define the default workload for entire workspaces. The valu
 
 The **Set default environment** toggle can enhance the user experience. By default, this toggle is set to **Off**. If there's no default Spark property or library required as the workspace default, you can define the Spark runtime in this circumstance. If you want to prepare a default Spark compute and libraries for the workspace, you can switch the toggle to **On** and easily attach an environment as the workspace default. This option makes all configurations in the environment effective as the **Workspace settings**.
 
-:::image type="content" source="media\environment-introduction\env-workspace-toggle-on.png" alt-text="Screenshot that shows default environment selection.":::
+:::image type="content" source="media\environment-introduction\env-workspace-toggle-on.png" alt-text="Screenshot that shows default environment selection." lightbox="media\environment-introduction\env-workspace-toggle-on.png":::
 
 ### Attach an environment to a notebook or a Spark job definition
 

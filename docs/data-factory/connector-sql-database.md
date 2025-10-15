@@ -22,16 +22,16 @@ The SQL database connector supports the following authentication types for copy 
 |:---|:---|:---|
 |Organizational account| √ | √ |
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-To create an SQL database connection in a data pipeline, select an existing SQL database under **OneLake** section. 
+To create an SQL database connection in a pipeline, select an existing SQL database under **OneLake** section. 
 
 :::image type="content" source="media/connector-sql-database/select-sql-database-in-onelake.png" lightbox="media/connector-sql-database/select-sql-database-in-onelake.png" alt-text="Screenshot of selecting SQL database in OneLake section.":::
 
 You have two ways to browse to this page:
 
 - In copy assistant, browse to this page after selecting **OneLake**.
-- In a data pipeline, browse to this page after selecting **More** at the bottom of the connection list.
+- In a pipeline, browse to this page after selecting **More** at the bottom of the connection list.
 
      :::image type="content" source="media/connector-sql-database/more.png" lightbox="media/connector-sql-database/more.png" alt-text="Screenshot of selecting more.":::
 
@@ -43,4 +43,4 @@ If you have multiple Fabric SQL database connections in **Manage Connections and
 
 ## Related content
 
-- [Configure in a data pipeline copy activity](connector-sql-database-copy-activity.md)
+- [Configure in a pipeline copy activity](connector-sql-database-copy-activity.md)

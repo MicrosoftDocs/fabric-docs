@@ -61,11 +61,11 @@ Follow these steps to send an invite in the Azure portal.
 1. Under **Manage**, select **Users** > **All users** > **New guest user**.
 
     ![Screenshot of the Azure portal with the New guest user option called out.](media/service-admin-entra-b2b/entra-portal-new-guest-user.png)
-
+   
 1. Scroll down and enter an **email address** and **personal message**.
 
     ![Screenshot of the New Guest User dialog with the email and message fields called out.](media/service-admin-entra-b2b/entra-portal-invite-message.png)
-
+   
 1. Select **Invite**.
 
 To invite more than one guest user, use PowerShell or create a bulk invite in Microsoft Entra ID. To use PowerShell for the bulk invite, follow the steps in [Tutorial: Use PowerShell to bulk invite Microsoft Entra B2B collaboration users](/azure/active-directory/b2b/bulk-invite-powershell/). To use the Azure portal for the bulk invite, follow the steps in [Tutorial: Bulk invite Microsoft Entra B2B collaboration users](/azure/active-directory/b2b/tutorial-bulk-invite/).
@@ -149,10 +149,10 @@ To help allowed guests sign in to Power BI, provide them with the Tenant URL. To
 
 1. In the Power BI service, in the header menu, select help (**?**), then select **About Power BI**.
 
-2. Look for the value next to **Tenant URL**. Share the tenant URL with your allowed guest users.
+1. Look for the value next to **Tenant URL**. Share the tenant URL with your allowed guest users.
 
     ![Screenshot of the About Power B I dialog with the guest user Tenant U R L called out.](media/service-admin-entra-b2b/power-bi-about-dialog.png)
-
+   
 ## Cross-cloud B2B
 
 You can use Power BI's B2B capabilities across Microsoft Azure clouds by configuring Microsoft cloud settings for B2B collaboration. Read [Microsoft cloud settings](/azure/active-directory/external-identities/cross-tenant-access-overview#microsoft-cloud-settings) to learn how to establish mutual B2B collaboration between the following clouds:
@@ -173,13 +173,13 @@ There are some limitations to the B2B experience that you should be aware of:
 ## Admin Info for B2B Collaboration 
 
 The following tenant level settings in Power BI provide controls to admins. See [Export and sharing admin settings](/fabric/admin/service-admin-portal-export-sharing) for documentation on these settings: 
-  * [Guest users can access Microsoft Fabric](/fabric/admin/service-admin-portal-export-sharing#guest-users-can-access-microsoft-fabric)
+* [Guest users can access Microsoft Fabric](/fabric/admin/service-admin-portal-export-sharing#guest-users-can-access-microsoft-fabric)
   * [Users can invite guest users to collaborate through item sharing and permissions](/fabric/admin/service-admin-portal-export-sharing#users-can-invite-guest-users-to-collaborate-through-item-sharing-and-permissions)
   * [Guest users can browse and access Fabric content](/fabric/admin/service-admin-portal-export-sharing#guest-users-can-browse-and-access-fabric-content)
   * [Users can see guest users in lists of suggested people](/fabric/admin/service-admin-portal-export-sharing#users-can-see-guest-users-in-lists-of-suggested-people) 
 
 There are also Microsoft Entra ID settings that can limit what external guest users can do within your organization. Those settings also apply to your Power BI environment. The following documentation discusses the settings: 
-  * [Manage External Collaboration Settings](/azure/active-directory/external-identities/external-collaboration-settings-configure#configure-b2b-external-collaboration-settings)
+* [Manage External Collaboration Settings](/azure/active-directory/external-identities/external-collaboration-settings-configure#configure-b2b-external-collaboration-settings)
   * [Allow or block invitations to B2B users from specific organizations](/azure/active-directory/external-identities/allow-deny-list)
   * [Use Conditional Access to allow or block access](/azure/active-directory/conditional-access/concept-conditional-access-cloud-apps)
 
@@ -212,7 +212,6 @@ Additionally, to use in-place semantic model sharing, tenant admins need to enab
 
 ## Related content
 
-* For more detailed info, including how row-level security works, check out the whitepaper: [Distribute Power BI content to external guest users using Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
 * For information about Microsoft Entra B2B, see [What is Microsoft Entra B2B collaboration?](/entra/external-id/what-is-b2b)
 * For information about in-place semantic model sharing, see [Power BI in-place semantic model sharing with guest users in external organizations (preview)](/power-bi/collaborate-share/service-dataset-external-org-share-about).
 * For information about government clouds, see [Power BI for US Government](service-government-us-overview.md).

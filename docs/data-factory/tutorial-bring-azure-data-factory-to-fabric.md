@@ -18,7 +18,7 @@ In the quickstart, you learn how to bring your existing Azure Data Factory (ADF)
 
 To get started, you must complete the following prerequisites:
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/free/).
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 - Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
@@ -37,7 +37,7 @@ To get started, you must complete the following prerequisites:
 
     :::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/choose-azure-data-factory-in-fabric.png" alt-text="Screenshot with the Azure data factory in fabric list.":::
 
-1. In the workspace artifact list page, you can see a new artifact is created.
+1. In the workspace item list page, you can see a new item is created.
 
     :::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/mounted-data-factory-artifact.png" alt-text="Screenshot with the Azure data factory in fabric workspace.":::
 
