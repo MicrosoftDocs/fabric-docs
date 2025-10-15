@@ -44,23 +44,23 @@ In the **Add rule** side panel, configure the following settings:
 
 1. In the **Configure connection settings** page, choose your Fabric workspace. This workspace should contain the anomaly detection events you want to monitor.
 
-    :::image type="content" source="media/set-alerts-anomaly-detection/select-workspace.png" alt-text="Screenshot of the Configure connection settings dialog.":::
+    :::image type="content" source="media/set-alerts-anomaly-detection/select-workspace.png" alt-text="Screenshot of the Configure connection settings dialog." lightbox="media/set-alerts-anomaly-detection/select-workspace.png":::
 
     1. Select the **Item** that you want to monitor. This item should be a Fabric workspace item that contains the anomaly detection events you want to track.
 
-        :::image type="content" source="media/set-alerts-anomaly-detection/select-item.png" alt-text="Screenshot of the Item setting.":::
+        :::image type="content" source="media/set-alerts-anomaly-detection/select-item.png" alt-text="Screenshot of the Item setting." lightbox="media/set-alerts-anomaly-detection/select-item.png":::
 
     1. Select the **Configuration** option.
 
     1. Set filters to narrow down the events you want to monitor. You can filter by specific attributes, including **Field**, **Operator**, and **Value**.
         Ideally, set the filter for when `data.ConfidenceScore` is greater than a specified value to ensure that only high-confidence anomaly detection events are tracked.
 
-        :::image type="content" source="media/set-alerts-anomaly-detection/filters.png" alt-text="Screenshot of the Set filters section in the Configure connection settings dialog.":::
+        :::image type="content" source="media/set-alerts-anomaly-detection/filters.png" alt-text="Screenshot of the Set filters section in the Configure connection settings dialog." lightbox="media/set-alerts-anomaly-detection/filters.png":::
 
     1. Select **Next** to proceed to the next step.
     1. Review your selections on the **Review + connect** page. Ensure that the Fabric workspace and item are correct, and that the filters are set as desired. Select **Save** to confirm your selections or **Back** to edit.
 
-        :::image type="content" source="media/set-alerts-anomaly-detection/finish-configure.png" alt-text="Screenshot of the Review + connect page in the Configure connection settings dialog.":::
+        :::image type="content" source="media/set-alerts-anomaly-detection/finish-configure.png" alt-text="Screenshot of the Review + connect page in the Configure connection settings dialog." lightbox="media/set-alerts-anomaly-detection/finish-configure.png":::
 
 [!INCLUDE [rule-condition-events](./includes/rule-condition-events.md)]
 
@@ -77,7 +77,7 @@ In the **Add rule** side panel, configure the following settings:
 1. You see the **Alert created** page with a link to **open** the rule in the Fabric activator user interface in a separate tab.
 
     :::image type="content" source="./media/set-alerts-anomaly-detection/alert-created.png" alt-text="Screenshot that shows Alert created page.":::        
-1. You see the Activator item in the Fabric Activator editor user interface. Select the rule if it's not already selected. You can update the activator item in this user interface. For example, update the subject, headline, or change the action from email to Teams message. 
+1. You see the Activator item in the Fabric Activator editor user interface. Select the rule if it's not already selected. You can update the rule in this user interface. For example, update the subject, headline, or change the action from email to Teams message. 
 
     :::image type="content" source="./media/set-alerts-anomaly-detection/activator-editor.png" alt-text="Screenshot that shows the activator in an editor." lightbox="./media/set-alerts-anomaly-detection/activator-editor.png"::: 
 

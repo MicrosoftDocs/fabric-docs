@@ -1,5 +1,5 @@
 ---
-title: Set deails for a rule
+title: Set details for a rule
 description: Include file with instructions to add details for a rule in a Fabric activator. 
 author: spelluru
 ms.author: spelluru

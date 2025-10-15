@@ -86,17 +86,17 @@ Do steps from one of the following sections, which opens a side panel where you 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert.png" alt-text="Screenshot that shows the Set alert page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert.png":::                
 1. You see the **Alert created** page with a link to **open** the rule in the Fabric activator user interface in a separate tab. Select **Done** to close the **Alert created** page. 
 
-    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/alert-created-page.png" alt-text="Screenshot that shows the Alert created page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/alert-created-page.png":::          1. 
+    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/alert-created-page.png" alt-text="Screenshot that shows the Alert created page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/alert-created-page.png"::: 
 1. You see a page with the eventstream and activator items created by the **Add rule** wizard. 
 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/items-created-wizard.png" alt-text="Screenshot that shows the Azure Blob Storage events page with the eventstream and activator items created." lightbox="./media/set-alerts-azure-blob-storage-events/items-created-wizard.png":::      
-1. Move the mouse over the **Eventstream** item in the list, and select **Open** link
+1. Move the mouse over the **Eventstream** item in the list, and select **Open** link.
 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/open-event-stream-menu.png" alt-text="Screenshot that shows the Open link for an eventstream.":::        
 1. You see the eventstream opened in the Eventstream editor. You can update the eventstream in the **Edit** mode. For example, you could add an Eventhouse destination. 
 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/event-stream.png" alt-text="Screenshot that shows the eventstream in an editor." lightbox="./media/set-alerts-azure-blob-storage-events/event-stream.png":::      
-1. Similarly, you can move the mouse over the **Activator** item, and select **Open**. You see the Activator item in the Fabric Activator editor user interface. You can update the activator item in this user interface. For example, update the subject, headline, or change the action from email to Teams message. 
+1. Similarly, you can move the mouse over the **Activator** item, and select **Open**. You see the Activator item in the Fabric Activator editor user interface. You can update the rule in this user interface. For example, update the subject, headline, or change the action from email to Teams message. 
 
     :::image type="content" source="./media/set-alerts-azure-blob-storage-events/activator-editor.png" alt-text="Screenshot that shows the activator in an editor." lightbox="./media/set-alerts-azure-blob-storage-events/activator-editor.png":::      
 

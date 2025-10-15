@@ -1,6 +1,6 @@
 ---
-title: Set conditions for a rule
-description: Include file with instructions to add conditions for a rule in a Fabric activator. 
+title: Set actions for a rule
+description: Include file with instructions to add actions for a rule in a Fabric activator. 
 author: spelluru
 ms.author: spelluru
 ms.topic: include

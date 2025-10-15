@@ -95,7 +95,7 @@ On the **Set alert** page, follow these steps:
 1. Move the mouse over the **Activator** item, and select **Open**. 
 
     :::image type="content" source="./media/set-alerts-fabric-job-events/activator-menu.png" alt-text="Screenshot that shows the activator menu." lightbox="./media/set-alerts-fabric-job-events/activator-menu.png"::: 
-1. You see the Activator item in the Fabric Activator editor user interface. Select the rule if it's not already selected. You can update the activator item in this user interface. For example, update the subject, headline, or change the action from email to Teams message. 
+1. You see the Activator item in the Fabric Activator editor user interface. Select the rule if it's not already selected. You can update the rule in this user interface. For example, update the subject, headline, or change the action from email to Teams message. 
 
     :::image type="content" source="./media/set-alerts-fabric-job-events/activator-editor.png" alt-text="Screenshot that shows the activator in an editor." lightbox="./media/set-alerts-fabric-job-events/activator-editor.png"::: 
 

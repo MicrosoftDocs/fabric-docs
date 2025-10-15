@@ -32,8 +32,7 @@ If you don't have any streams or tables, the **Real-Time hub** has three section
 
 The **first section** at the top has the following cards that provides shortcuts to the common tasks. 
 
-- **Subscribe to OneLake events** - Provides a shortcut to create streams based on Fabric OneLake events. For details, see [Subscribe to OneLake events](create-streams-fabric-onelake-events.
-md#configure-and-create-an-eventstream). 
+- **Subscribe to OneLake events** - Provides a shortcut to create streams based on Fabric OneLake events. For details, see [Subscribe to OneLake events](create-streams-fabric-onelake-events.md#configure-and-create-an-eventstream). 
 - **Act on Job events** - Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for Job events](set-alerts-fabric-job-events.md) 
 - **Connect weather data** - Provides a shortcut to create a data streams based on real-time weather data. For more information, see [Real-Time weather source](add-source-real-time-weather.md) 
 - **Learn from a tutorial** - Links to the [Fabric Real-Time intelligence tutorial](/fabric/real-time-intelligence/tutorial-introduction) that has a module on using the Real-Time hub. 
@@ -54,8 +53,8 @@ The **third section** has link to learning resources including the following:
 - [Partners list who can help you with implementing Fabric Real-Time intelligence solutions](https://appsource.microsoft.com/marketplace/partner-dir?filter=sort%3D0%3BendorsedProduct%3DMicrosoft%2520Fabric;endorsedWorkloads=Real-Time%20Intelligence)
 - [Blog post on Fabric Real-Time Intelligence updates](https://blog.fabric.microsoft.com/blog/category/real-time-intelligence/) 
 
-### Hub page when you have atleast one stream or a table 
-When you have access to atleast one eventstream or a Kusto Query Language (KQL) table, the **Real-Time hub** page has two sections. 
+### Hub page when you have at least one stream or a table 
+When you have access to at least one eventstream or a Kusto Query Language (KQL) table, the **Real-Time hub** page has two sections. 
 
 In the **first section** at the top, you see **cards or tiles** that provide a quick way to performing the tasks:
 
@@ -63,7 +62,7 @@ In the **first section** at the top, you see **cards or tiles** that provide a q
 
 
 - **Subscribe to OneLake events** - Provides a shortcut to create streams based on Fabric OneLake events. For details, see [Subscribe to OneLake events](create-streams-fabric-onelake-events.md#configure-and-create-an-eventstream). 
-- **Act on Job events** - Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for Job events](set-alerts-fabric-job-events.md) . 
+- **Act on Job events** - Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for Job events](set-alerts-fabric-job-events.md). 
 - **Visualize data** - Provides a shortcut to create a dashboard based on data in a KQL table. 
 - **Explore data in motion** - Provides a shortcut to preview data in a data source. For more information, see [Preview data streams](preview-data-streams.md).
 - **Connect weather data** - Provides a shortcut to create a data streams based on real-time weather data. For more information, see [Real-Time weather source](add-source-real-time-weather.md) 
@@ -164,7 +163,7 @@ The **Fabric events page** shows you the list of system events generated in **Fa
 ## Azure events page
 The **Azure events page** shows you the list of system events generated in **Azure** that you can access. You can **create eventstreams** for events from your Azure blob storage. You can also set up an alert to send notifications via email, Teams, etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Azure Blob Storage events.
 
-See following articles to learn how to **setup alerts** on Fabric events:
+See following articles to learn how to **set up alerts** on Fabric events:
 
 - [Azure Blob Storage events](get-azure-blob-storage-events.md)
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md).

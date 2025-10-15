@@ -20,7 +20,7 @@ This article describes how to set alerts on streams in Real-Time hub.
 
 1. In the **Recent streaming data** section at the bottom, select a data stream whose parent is an eventstream.
 
-    :::image type="content" source="./media/set-alerts-data-streams/select-data-stream.png" alt-text="Screenshot that shows Real-Time hub with a data stream selected.":::
+    :::image type="content" source="./media/set-alerts-data-streams/select-data-stream.png" alt-text="Screenshot that shows Real-Time hub with a data stream selected." lightbox="./media/set-alerts-data-streams/select-data-stream.png":::
 1. On the stream detail page, select **Set alert**. 
 
     :::image type="content" source="./media/set-alerts-data-streams/set-alert-button.png" alt-text="Screenshot that shows the selection of the Set alert button on the data stream detail page." lightbox="./media/set-alerts-data-streams/set-alert-button.png":::
@@ -47,7 +47,7 @@ For **Condition**, select one of the following options:
 1. You see the **Alert created** page with a link to **open** the rule in the Fabric activator user interface in a separate tab.
 
     :::image type="content" source="./media/set-alerts-data-streams/alert-created.png" alt-text="Screenshot that shows Alert created page.":::        
-1. You see the Activator item in the Fabric Activator editor user interface. Select the rule if it's not already selected. You can update the activator item in this user interface. For example, update the subject, headline, or change the action from email to Teams message. 
+1. You see the Activator item in the Fabric Activator editor user interface. Select the rule if it's not already selected. You can update the rule in this user interface. For example, update the subject, headline, or change the action from email to Teams message. 
 
     :::image type="content" source="./media/set-alerts-data-streams/activator-editor.png" alt-text="Screenshot that shows the activator in an editor." lightbox="./media/set-alerts-data-streams/activator-editor.png"::: 
 
