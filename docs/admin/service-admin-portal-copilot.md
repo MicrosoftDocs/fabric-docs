@@ -93,7 +93,7 @@ Copilot capacities enable users' usage and billing to be consolidated under a si
 <a id="stand-alone-experience"></a>
 ## Users can access a standalone, cross-item Power BI Copilot experience (preview)
 
-You can enable copilot as a standalone experience for Fabric. Enabling this setting allows users to access the standalone Copilot experience from the left navigation. The [Azure OpenAI setting](#copilot-with-openai) must be enabled at the tenant level to use the standalone experience. This setting also affects the Power BI agent. Turn ON this setting to enable the Power BI agent in M365. To learn more, see [standalone Copilot experience](/power-bi/create-reports/copilot-enable-power-bi).
+You can enable copilot as a standalone experience for Fabric. Enabling this setting allows users to access the standalone Copilot experience from the left navigation. The [Azure OpenAI setting](#copilot-with-openai) must be enabled at the tenant level to use the standalone experience. This setting also affects the Power BI agent. Turn on this setting to enable the Power BI agent in M365. To learn more, see [standalone Copilot experience](/power-bi/create-reports/copilot-enable-power-bi).
 
 :::image type="content" source="./media/service-admin-portal-copilot/copilot-standalone.png" alt-text="Screenshot showing the tenant setting for standalone Copilot." lightbox="./media/service-admin-portal-copilot/copilot-standalone.png":::
 
@@ -104,7 +104,7 @@ You can enable copilot as a standalone experience for Fabric. Enabling this sett
 
 Tenant admins can default Copilot search to be limited to items that have prepped for AI. This setting is delegated to workspace admins by default, allowing workspace admins to make broader content findable by Copilot search when appropriate. 
 
-Note that this setting is applicable in the standalone Power BI Copilot as well as the Power BI agent. If this setting is turned ON for standalone Copilot, it is also mandatory for the Power BI agent. To learn more, see [standalone Copilot experience](/power-bi/create-reports/copilot-enable-power-bi).
+Note that this setting is applicable in the standalone Power BI Copilot as well as the Power BI agent. If this setting is turned on for standalone Copilot, it is also mandatory for the Power BI agent. To learn more, see [standalone Copilot experience](/power-bi/create-reports/copilot-enable-power-bi).
 ![Screenshot of only show AI-prepped items in the standalone Copilot tenant setting.](media/service-admin-portal-copilot/limit-to-prepped.png)
 
 **Default:** Disabled
