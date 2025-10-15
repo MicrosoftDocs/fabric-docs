@@ -44,8 +44,8 @@ The **Endpoint** column lists domain names and links to external sites, which co
 ## OneLake
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|For OneLake access for DFS APIs (default Onelake endpoint) |*.onelake.dfs.fabric.microsoft.com|TCP 443|
-|Onelake endpoint for calling Blob APIs|*.onelake.blob.fabric.microsoft.com|TCP 443|
+|For OneLake access for DFS APIs (default OneLake endpoint) |*.onelake.dfs.fabric.microsoft.com|TCP 443|
+|OneLake endpoint for calling Blob APIs|*.onelake.blob.fabric.microsoft.com|TCP 443|
 |**Optional**: Regional Endpoints for DFS APIs |*\<region\>-onelake.dfs.fabric.microsoft.com|TCP 443|
 |**Optional**: Regional Endpoints for Blob APIs |*\<region\>-onelake.blob.fabric.microsoft.com|TCP 443|
 
@@ -129,6 +129,15 @@ The **Endpoint** column lists domain names and links to external sites, which co
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 |Customers can send/read events from Eventstream in their custom app |sb://*.servicebus.windows.net|http: 443<br>amqp: 5672/5673<br>kafka: 9093|
+
+## SQL database in Fabric
+
+For complete information on SQL database in Fabric connection policy, see [Default connection policy in Connectivity Architecture](/azure/azure-sql/database/connectivity-architecture?view=azuresql-db&preserve-view=true#connection-policy). Refer to the [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) for a list of your region's IP addresses to allow.
+
+|Purpose   |Endpoint  |Port      |
+|:---------|:---------|:---------|
+|**Required**|*.database.fabric.microsoft.com|1433|
+|**Required** Redirect connection policy ports |*.database.fabric.microsoft.com|11000-11999|
 
 ## Related content
 

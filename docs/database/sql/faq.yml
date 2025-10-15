@@ -25,7 +25,7 @@ sections:
       - question: |
           Which connection policies are supported for SQL database in Fabric?
         answer:
-          Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. For more information, see [Connection policy](limitations.md#connection-policy).
+          Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Default**. For more information, see [Connection policy](limitations.md#connection-policy).
 
   - name: About SQL database data in OneLake
     questions:
