@@ -165,7 +165,7 @@ The deployment process lets you clone content from one stage in the deployment p
 
 Folders enable users to efficiently organize and manage workspace items in a familiar way. When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
 
-With the current view of the folders hierarchy, you can select for deployment, only items in the same folder level. You cannot select items across folders.
+With the current view of the folders hierarchy, you can select for deployment only items in the same folder level. You cannot select items across folders.
  
 Flat list view of deployment pipelines allows you to select items regardless of its location. With the flat list view, you can select items across folders, regarding their location in the workspace. For more information, see [flat list view](deploy-content.md#flat-list-view).
 
