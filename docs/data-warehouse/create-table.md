@@ -3,7 +3,7 @@ title: Create Tables in the Warehouse
 description: Learn how to create tables in your Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 04/06/2025
+ms.date: 10/14/2025
 ms.topic: how-to
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
@@ -18,6 +18,8 @@ To get started, you must complete the following prerequisites:
     - Use the [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md).
 
 For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], see [Connectivity](connectivity.md). 
+
+This article provides two examples on how to create a new table in Fabric Data Warehouse, from a parquet file or through the warehouse editor in the Fabric portal.
 
 ### Create a new table in the SQL query editor from a file
 
