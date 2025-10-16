@@ -17,7 +17,7 @@ ms.custom:
 It's a common requirement in data warehouses to assign a unique identifier to each row of a table. In SQL Server-based environments this is typically done by creating an [identity column](/sql/t-sql/statements/create-table-transact-sql-identity-property?view=sql-server-ver16&preserve-view=true) in a table, however currently this feature isn't supported in a warehouse in Microsoft Fabric. This article describes a workaround to generate unique identifiers in a warehouse table.
 
 > [!IMPORTANT]
-> Considerations should be made for multiple processes inserting data simultaneously as this could lead to duplicate values.
+> If multiple processes insert data at the same time, you may get duplicate values.
 
 1. Create a table that includes a column that stores unique identifier values. The column data type should be set to **int** or **bigint**, depending on the volume of data you expect to store. You should also define the column as `NOT NULL` to ensure that every row is assigned an identifier.
 
