@@ -61,6 +61,17 @@ There are Google BigQuery compute and cloud query costs when data is being mirro
 
 For more information on costs for mirroring Google BigQuery, see [the pricing explained](google-bigquery-cost.md).
 
+## Reseed Limitations 
+
+The CHANGES function, which enables change tracking in BigQuery tables using Google’s CDC technology, is subject to several important reseeding limitations that users should consider when implementing Mirroring solutions:  
+
+- Time Travel Limitation: The CHANGES function only returns data within the table’s configured time travel window. For standard tables, this is typically seven days but may be shorter if configured differently. Any changes outside this window are inaccessible.  
+- Timestamp Limitation: The change history time window for CHANGES TVF exceeds the maximum allowed time. The maximum allowed range between `start_timestamp` and `end_timestamp` is one day. This restricts batch processing of longer historical windows, and multiple queries may be required for broader coverage.  
+-Change History Limitation: The CHANGES function requires that change history tracking be enabled for the table prior to use. If it is not enabled, delta changes cannot be queried.  
+- Multi-statement Limitation: The CHANGES function cannot be used inside multi-statement transactions. It also cannot query tables that had multi-statement transactions committed in the requested time window.  
+
+To learn more, please reference [Google's BigQuery Changes Limitation Documentation](https://cloud.google.com/bigquery/docs/reference/standard-sql/time-series-functions#changes). 
+
 ## Next step
 
 > [!div class="nextstepaction"]
