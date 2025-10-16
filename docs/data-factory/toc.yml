@@ -97,7 +97,7 @@
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
       href: compare-fabric-data-factory-and-azure-data-factory.md
-    - name: Connector Continuity
+    - name: Connector comparison
       href: connector-parity.md
     - name: Migration best practices
       href: migration-best-practices.md

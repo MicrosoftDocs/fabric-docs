@@ -1,5 +1,5 @@
 ---
-title: Connector Continuity between Azure Data Factory (ADF) and Data Factory in Fabric
+title: Connector Comparison Between Azure Data Factory and Data Factory in Fabric
 description: This documentation provides an in-depth comparison of connector availability between Azure Data Factory (ADF) and Data Factory in Fabric.
 author: lrtoyou1223
 ms.author: lle
@@ -10,7 +10,7 @@ ms.custom:
   - connectors
 ---
 
-# Connector continuity between Azure Data Factory (ADF) and Data Factory in Fabric
+# Connector comparison between Azure Data Factory and Data Factory in Fabric
 
 This documentation provides an in-depth comparison of connector availability between Azure Data Factory (ADF) and Data Factory in Fabric. Connectors play a pivotal role in data integration, enabling the seamless flow of data between various data sources and destinations. Understanding the connector continuity between these two platforms is essential for planning your data workflows.
 
