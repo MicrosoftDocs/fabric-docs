@@ -5,7 +5,7 @@ ms.author: eur
 author: eric-urban
 ms.reviewer: nijelsf
 ms.topic: overview
-ms.date: 07/18/2025
+ms.date: 10/16/2025
 # customer intent: As a data engineer, I want to understand what materialized lake views are in Microsoft Fabric so that I can use them for building a medallion architecture.
 ---
 
@@ -22,6 +22,9 @@ Materialized lake views in Microsoft Fabric facilitate the implementation of a m
 * **Visualization and monitoring**: You can visualize lineage across all entities in a lakehouse, view the dependencies, and track execution progress. The processing pipeline is optimized for performance by updating the data in the appropriate sequence, managing optimal parallel paths, and refreshing only the parts of the lineage that changed.
 
   This feature offers an integrated report that highlights data quality trends. You can also configure alerts based on any condition related to violations of a data quality rule.
+
+> [!NOTE]
+> This feature is currently not available in South Central US region.
 
 ## Current limitations
 
