@@ -30,7 +30,8 @@ When outbound access protection is enabled for a workspace, all outbound connect
 
 The following sections explain these options in more detail.
 
-### Using managed private endpoints to allow outbound access 
+### Using managed private endpoints to allow outbound access
+
 For Data Engineering and OneLake workloads, admins can use managed private endpoints to create an allowlist of approved external resources that can be accessed from the workspace. By default, all outbound connections are blocked when outbound access protection is enabled. Admins can then configure managed private endpoints to explicitly allow connections to resources outside of the workspace.
 
 :::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection with managed private endpoints." border="false":::
@@ -49,9 +50,7 @@ For Data Factory workloads, admins can use data connection rules to create an al
 
 :::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-connectors.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection with data connection rules." border="false":::
 
-In this diagram:
-
-* Workspace A has outbound access protection enabled. It can connect to the SQL server because the SQL connector is allowed in the connector allowlist. However, Workspace A can't connect to the Cosmos DB because the Cosmos DB connector isn't in the allowlist.
+In the diagram, outbound access protection is enabled in Workspace A. Data connection rules are also configured in Workspace A, which allow specific cloud or gateway connections. The Dataflow in Workspace A can access SQL Server and ADLS Gen2 Storage through these allowed connectors, while all other outbound connections remain blocked.
 
 ## Supported item types
 

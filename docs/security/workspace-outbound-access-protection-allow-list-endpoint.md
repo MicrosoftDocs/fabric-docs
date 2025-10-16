@@ -12,7 +12,7 @@ ms.date: 09/24/2025
 ---
 # Create an allowlist using managed private endpoints
 
-The workspace outbound access protection setting blocks all outbound connections from a workspace. After [enabling this setting](./workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to resources in other workspaces or external destinations. For Data Engineering and OneLake workloads, you can allow outbound access by creating an allowlist using [managed private endpoints](security-managed-private-endpoints-overview) with or without the Private Link service:
+The workspace outbound access protection setting blocks all outbound connections from a workspace. After [enabling this setting](./workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to resources in other workspaces or external destinations. For Data Engineering and OneLake workloads, you can allow outbound access by creating an allowlist using [managed private endpoints](security-managed-private-endpoints-overview.md) with or without the Private Link service:
 
 - Use managed private endpoints for connections to external sources.
 - For connections to other workspaces, use managed private endpoints together with the Private Link service.
@@ -59,7 +59,7 @@ To connect to another workspace, use managed private endpoints and the Private L
 
     * `<resource-name>` is the name you choose for the Fabric resource.
     * `<tenant-object-id>` is your Microsoft Entra tenant ID. See [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
-    * `<workspace-id>` is the workspace ID for the target workspace. Find it in the workspace URL after `group`.<!--(TODO - CONFIRM THIS DESCRIPTION OF THE WORKSPACE ID IN THE ARM TEMPLATE)-->
+    * `<workspace-id>` is the workspace ID for the target workspace. Find it in the workspace URL after `group`.
 
     ```json
     {
