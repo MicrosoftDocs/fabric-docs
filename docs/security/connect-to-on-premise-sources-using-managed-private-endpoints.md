@@ -14,7 +14,7 @@ With managed private endpoints, you can securely connect Microsoft Fabric worklo
 This approach ensures that traffic flows through the Microsoft backbone network instead of the public internet — maintaining end-to-end data privacy and compliance.
 
 Common use cases include accessing:
-- SAP, Oracle databases, Elastic, Non Native Azure Sources like Confluent Kafka, Elasticsearch or Datasources hosted in on-premise environments.
+- Data sources like SAP, Oracle databases, Elastic, Non Native Azure Sources like Confluent Kafka, Elasticsearch or Datasources hosted in on-premise environments.
 - Data sources on Azure VMs
 - Custom APIs or services hosted in virtual networks or self-managed data centers.
 - Secure corporate data stores without exposing public endpoints.
