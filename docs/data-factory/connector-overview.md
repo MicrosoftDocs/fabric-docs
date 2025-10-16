@@ -139,4 +139,4 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 
 - [How to copy data using copy activity](copy-data-activity.md)
 - [Data source management](data-source-management.md)
-- [Learn more about Workspace Authentication for Connections](https://blog.fabric.microsoft.com/en-US/blog/announcing-support-for-workspace-identity-authentication-in-new-fabric-connectors-and-for-dataflow-gen2//)
+- [Learn more about Workspace Authentication for Connections](https://blog.fabric.microsoft.com/en-US/blog/announcing-support-for-workspace-identity-authentication-in-new-fabric-connectors-and-for-dataflow-gen2/)
