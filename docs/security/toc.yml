@@ -93,6 +93,8 @@ items:
         href: security-managed-private-endpoints-overview.md
       - name: Create managed private endpoints
         href: security-managed-private-endpoints-create.md
+      - name: Connect to on-premise sources using managed private endpoints
+        href: connect-to-on-premise-sources-using-managed-private-endpoints.md
       - name: Workspace outbound access protection
         items: 
           - name: Overview of workspace outbound access protection
