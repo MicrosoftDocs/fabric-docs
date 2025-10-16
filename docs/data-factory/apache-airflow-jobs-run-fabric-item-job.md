@@ -204,7 +204,7 @@ Apache Airflow connection is used to store the credentials required to authentic
 
 On your Apache airflow job canvas, there are 3 tiles. Select **Run Fabric artifact**. This will open a new pop up. 
 
-:::image type="content" source="media/apache-airflow-jobs/run-fabric-artifact.png" lightbox="media/apache-airflow-jobs/run-fabric-artifactpng" alt-text="Screenshot of canvas tile for running Fabric artifacts."::: 
+:::image type="content" source="media/apache-airflow-jobs/run-fabric-artifact.png" lightbox="media/apache-airflow-jobs/run-fabric-artifact.png" alt-text="Screenshot of canvas tile for running Fabric artifacts."::: 
 
 :::image type="content" source="media/apache-airflow-jobs/run-fabric-artifact-pop-up.png" lightbox="media/apache-airflow-jobs/run-fabric-artifact-pop-up.png" alt-text="Screenshot of pop-up to select a Fabric artifact to run."::: 
 
