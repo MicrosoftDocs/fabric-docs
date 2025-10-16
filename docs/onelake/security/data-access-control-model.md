@@ -16,8 +16,6 @@ ms.date: 09/05/2025
 
 This document provides a detailed guide to how the OneLake security access control model works. It contains details on how the roles are structured, how they apply to data, and what the integration is with other structures within Microsoft Fabric.
 
-[!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
-
 ## OneLake security roles
 OneLake security uses a role based access control (RBAC) model for managing access to data in OneLake. Each role is made up of several key components.
 
@@ -334,6 +332,8 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 * OneLake security doesn't work with [private link protection](../../security/security-private-links-overview.md).
 
 * The [external data sharing preview](../../governance/external-data-sharing-overview.md) feature isn't compatible with the data access roles preview. When you enable the data access roles preview on a lakehouse, any existing external data shares might stop working.
+
+* Azure Mirrored Databricks Catalog does not support Manage Catalog functionality if OneLake security is enabled on that item. This functionality is coming in November, 2025.
 
 * The following table provides the limitations of OneLake data access roles.
 
