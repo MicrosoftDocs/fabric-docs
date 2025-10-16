@@ -14,6 +14,9 @@ ms.custom:
 
 The Snowflake connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+> [!NOTE]
+> The Snowflake connector now supports Key Pair Authorization. Please note that When using Key Pair Auth for the Snowflake connector, the ADBC implementation will be used; when choosing connections that are created with KeyPair Auth for a dataset or dataflows, they will automatically start using the ADBC implementation to complete the refresh and the results might be different. 
+
 ## Supported capabilities
 
 | Supported capabilities| Gateway | Authentication|
