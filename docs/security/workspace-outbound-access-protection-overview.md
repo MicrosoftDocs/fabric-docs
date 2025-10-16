@@ -91,7 +91,7 @@ The following limitations apply when using workspace outbound access protection:
 
 * Outbound access protection isn't supported for schema enabled lakehouses.
 
-* In OAP enabled workspace, querying data warehouse file paths from notebooks using dbo is not supported, as accessing schema-based paths is not supported. The recommended method for querying the warehouse is to use the T-SQL option in the notebooks.
+* In workspaces with outbound access protection enabled, querying data warehouse file paths from notebooks using the `dbo` schema isnt supported, because access to schema-based paths isn't supported. To query the warehouse from notebooks, use the T-SQL option instead.
 
 ### Data connection rule limitations
 
