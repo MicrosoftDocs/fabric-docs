@@ -14,7 +14,8 @@ With managed private endpoints, you can securely connect Microsoft Fabric worklo
 This approach ensures that traffic flows through the Microsoft backbone network instead of the public internet — maintaining end-to-end data privacy and compliance.
 
 Common use cases include accessing:
-- SQL Server or Oracle databases hosted in on-premise environments.
+- SAP, Oracle databases, Elastic, Non Native Azure Sources like Confluent Kafka, Elasticsearch or Datasources hosted in on-premise environments.
+- Data sources on Azure VMs
 - Custom APIs or services hosted in virtual networks or self-managed data centers.
 - Secure corporate data stores without exposing public endpoints.
 
@@ -25,9 +26,9 @@ Common use cases include accessing:
 Fabric Managed Private Endpoints (MPEs) allow Fabric to establish **outbound** connections to approved data sources using **Private Link Services (PLS)**.  
 The setup involves three main steps:
 
-1. The administrator exposes the data source through a **Private Link Service (PLS)** or Azure Private Endpoint-enabled resource.
-2. A Fabric workspace admin creates a **Managed Private Endpoint (MPE)** referencing the fully qualified domain name (FQDN) with the Azure resource ID.
-3. The on-premises network admin reviews and approves the connection request in Azure.
+1. The data source owner or administrator configures an Azure Private Link Service (PLS) for the resource that’s fronted by a private IP address.
+2. A Fabric workspace admin creates a **Managed Private Endpoint (MPE)** referencing the fully qualified domain name (FQDN) with the resource ID of the Private Link Service.
+3. The data source owner or administrator reviews and approves the connection request in Azure.
 
 Once approved, all Fabric Data Engineering workloads (like Notebooks, Spark Job Definitions, Materialized Lakeviews, Livy Endpoints) can securely connect to the approved resource.
 
@@ -37,7 +38,7 @@ Once approved, all Fabric Data Engineering workloads (like Notebooks, Spark Job 
 
 Before you begin:
 
-- A Microsoft Fabric workspace with admin permissions.
+- A Microsoft Fabric workspace with workspace admin role.
 - The Azure subscription must have the **Microsoft.Network** resource provider registered.
 - Have data sources or services running behind a Standard Load Balancer which is reachable by a Private Link Service. [Learn more on about Private Link Service](https://learn.microsoft.com/en-us/azure/private-link/private-link-service-overview)
 
@@ -54,7 +55,7 @@ To expose your on-premises or custom-hosted data source (like SQL Server) to Fab
    - **Region**
    - **Name** of your private link service
 4. Under **Frontend IP configuration**, associate the load balancer that routes traffic to your on-premises or virtual machine.
-5. Define **Auto-approval subscription IDs** if you want to automatically approve connection requests from trusted Fabric tenants.
+5. Define **Auto-approval subscription IDs** to automatically approve connection requests from trusted Fabric tenants.
 
 > [!TIP]
 > If your data source is hosted on-premises, use Azure VPN Gateway or Azure ExpressRoute to connect your local network to Azure before configuring your PLS.
