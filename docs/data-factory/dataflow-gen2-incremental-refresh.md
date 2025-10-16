@@ -37,9 +37,9 @@ These data destinations support incremental refresh:
 - Azure SQL Database
 - Azure Synapse Analytics
 
-You can use other destinations with incremental refresh too. Create a second query that references the staged data to update your destination. This approach still lets you use incremental refresh to reduce the data that needs processing from the source system.
+You can use other destinations with incremental refresh too. Create a second query that references the staged data to update your destination. This approach still lets you use incremental refresh to reduce the data that needs processing from the source system. However, you'll need to do a full refresh from the staged data to your final destination. 
 
-However, you'll need to do a full refresh from the staged data to your final destination.
+Additionally, default destination configuration is not supported for incremental refresh. You must explicitly define the destination in your query settings.
 
 ## How to use incremental refresh
 
