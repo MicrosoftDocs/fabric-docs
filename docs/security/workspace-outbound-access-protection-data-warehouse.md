@@ -17,7 +17,7 @@ Workspace outbound access protection controls outbound connections from your wor
 
 ## Understanding outbound access protection with Data Warehouse
 
-When outbound access protection is enabled, the workspace automatically blocks all outbound warehouse and SQL endpoing connections to external networks and other workspaces. This means that any attempt to access data, services, or resources outside the current workspace is denied.
+When outbound access protection is enabled, the workspace automatically blocks all outbound warehouse and SQL endpoint connections to external networks and other workspaces. Any attempt to access data, services, or resources outside the current workspace is denied.
 
 ## Configuring outbound access protection for Data Warehouse
 
@@ -36,7 +36,7 @@ The following sections explain how outbound access protection affects these item
 
 ### Warehouses
 
-With outbound access protection enabled, Fabric warehouses restrict ingestion pipelines and data load operations to trusted sources only. This ensures that data loads through COPY INTO, OPENROWSET, Bulk Insert, and similar commands are blocked from unapproved endpoints, reducing the risk of accidental or unauthorized access and helping safeguard your data.
+With outbound access protection enabled, Fabric warehouses restrict ingestion pipelines and data load operations to trusted sources only. Data loads through COPY INTO, OPENROWSET, Bulk Insert, and similar commands are blocked from unapproved endpoints, reducing the risk of accidental or unauthorized access.
 
 ### SQL analytics endpoints
 
@@ -45,11 +45,11 @@ For SQL analytics endpoints, outbound access protection ensures that all queries
 ## Considerations and limitations
 
 - All outbound connections from warehouses and SQL analytics endpoints are blocked when outbound access protection is enabled. Currently, exceptions can’t be configured through managed private endpoints or data connections rules. 
-- Data import commands (such as COPY INTO, OPENROWSET, Bulk Insert) are restricted to sources within the current workspace, except when using the [COPY INTO](/sql/t-sql/statements/copy-into-transact-sql?view=fabric) feature to ingest data directly from OneLake as a source.
+- Data import commands (such as COPY INTO, OPENROWSET, Bulk Insert) are restricted to sources within the current workspace, except when using the [COPY INTO](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) feature to ingest data directly from OneLake as a source.
 - For other limitations, refer to [Workspace outbound access protection overview - Microsoft Fabric](/fabric/security/workspace-outbound-access-protection-overview#considerations-and-limitations).
 
 ## Related content
 
 * [Workspace outbound access protection overview](workspace-outbound-access-protection-overview.md)    
-* [COPY INTO (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric)
+* [COPY INTO (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true)
 * [Browse File Content Before Ingestion with the OPENROWSET function](/fabric/data-warehouse/browse-file-content-with-openrowset)
