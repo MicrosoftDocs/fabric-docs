@@ -12,8 +12,10 @@ ms.search.form: Overview
 
 # What is Real-Time Dashboard?
 
-Real-Time Dashboard in Microsoft Fabric provides a dynamic way to visualize and monitor data as it changes. This overview explains how Real-Time Dashboard works, its key features, and how you can use it to gain timely insights from your data. Whether you generate a dashboard manually or use Copilot, an AI-powered assistant, for automation, Real-Time Dashboard helps you build data illustrations quickly and efficiently.
-By using [slice and dice features](dashboard-parameters.md) and [advanced exploration tools](dashboard-explore-data.md), Real-Time Dashboard provides dynamic, up-to-the-minute insights so you can make informed decisions instantly.
+Real-Time Dashboard in Microsoft Fabric provides a dynamic way to visualize and monitor data as it changes in real time. You can create a dashboard manually by configuring data sources, writing KQL queries, and designing the layout. Alternatively, you can use Copilot, an AI-powered assistant, to automatically generate a Real-Time Dashboard based on your selected data source.
+With features like [slice and dice functionality](dashboard-parameters.md) and [advanced exploration tools](dashboard-explore-data.md), Real-Time Dashboard delivers up-to-the-minute insights, enabling faster decision-making and proactive responses to changing data.
+
+This overview explains how Real-Time Dashboard works, highlights its key features, and provides guides and helpful references to help you get started and gain timely insights from your data.
 
 :::image type="content" source="media/tutorial/final-dashboard.png" alt-text="Screenshot of a real-time dashboard in Fabric displaying sample bike data." lightbox="media/tutorial/final-dashboard.png":::
 
@@ -35,17 +37,17 @@ Create a Real-Time Dashboard to visualize and explore insights quickly with real
     * Design and organize the layout of your dashboard.
 
 1. Use [Copilot to automate dashboard creation:](../fundamentals/copilot-generate-dashboard.md)
-    * Select a data source and Copilot automatically generates a Real-Time Dashboard.
+    * Select a data source, and Copilot automatically generates a Real-Time Dashboard as a starting point.
+    * Customize the generated dashboard by modifying queries, adding or removing tiles, and adjusting the layout to fit your needs.
 
 ### Supported data sources
 
 Real-Time Dashboard can connect to various data sources, including:
 
+* [Eventhouse](dashboard-real-time-create.md#add-data-source)
 * [Azure Data Explorer](dashboard-real-time-create.md#add-data-source)
 * [Azure Monitor - Application Insights](dashboard-real-time-create.md#add-data-source)
 * [Azure Monitor - Log Analytics](dashboard-real-time-create.md#add-data-source)
-* [Eventhouse](dashboard-real-time-create.md#add-data-source)
-* [KQL Database](dashboard-real-time-create.md#add-data-source)
 
 ## Key features
 
