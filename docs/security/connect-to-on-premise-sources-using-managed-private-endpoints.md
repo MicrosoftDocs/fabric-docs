@@ -40,7 +40,7 @@ Before you begin:
 
 - A Microsoft Fabric workspace with workspace admin role.
 - The Azure subscription must have the **Microsoft.Network** resource provider registered.
-- Have data sources or services running behind a Standard Load Balancer which is reachable by a Private Link Service. [Learn more on about Private Link Service](https://learn.microsoft.com/en-us/azure/private-link/private-link-service-overview)
+- Have data sources or services running behind a Standard Load Balancer which is reachable by a Private Link Service. [Learn more on about Private Link Service](https://learn.microsoft.com/azure/private-link/private-link-service-overview)
 
 ---
 
@@ -178,7 +178,6 @@ Your network administrator will see this pending request in the Azure portal und
 4. Review the pending connection request from Microsoft Fabric.
 5. Choose **Approve** and provide an optional justification.
 
-   :::image type="content" source="./media/security-managed-private-endpoints-onpremise/private-endpoint-approval.png" alt-text="Screenshot showing approval of a private endpoint request in Azure portal.":::
 ## Step 4: Access your on-premises SQL Server from Fabric notebooks
 
 After approval, your managed private endpoint becomes active and can be used from Spark notebooks or Data Pipelines.
@@ -278,9 +277,10 @@ If you **don’t have a Private Link Service setup yet**, follow the steps below
 ### Prerequisites
 
 * **Azure subscription** — [Create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account).
-* **Virtual Network (VNet)** — [Create one](../virtual-network/quick-create-portal.md).
-* **Connectivity between Azure and on-premises** — via [ExpressRoute](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md) or [VPN Gateway](../vpn-gateway/tutorial-site-to-site-portal.md).  
+* **Virtual Network (VNet)** — [Create a virtual network in the Azure portal](https://learn.microsoft.com/azure/virtual-network/quick-create-portal)  
+* **Connectivity between Azure and on-premises** — via [ExpressRoute](https://learn.microsoft.com/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager) or [VPN Gateway](https://learn.microsoft.com/azure/vpn-gateway/tutorial-site-to-site-portal)  
   You can also simulate on-premises using a private subnet with Azure VMs and a Private Link Service.
+
 
 ---
 
@@ -292,7 +292,6 @@ If you **don’t have a Private Link Service setup yet**, follow the steps below
 | **fe-subnet** | Frontend subnet for internal Load Balancer |
 | **pls-subnet** | Subnet for hosting Private Link Service |
 
-:::image type="content" source="./media/tutorial-managed-virtual-network/subnets.png" alt-text="Screenshot showing subnet setup in Azure Portal.":::
 
 ---
 
@@ -306,7 +305,6 @@ If you **don’t have a Private Link Service setup yet**, follow the steps below
    - IP assignment: **Dynamic**
 3. Create backend pool, health probe (TCP 22 or 1433), and rule (TCP 1433 → 1433).
 
-:::image type="content" source="./media/tutorial-managed-virtual-network/create-load-balancer.png" alt-text="Screenshot showing creation of standard internal load balancer.":::
 
 ---
 
@@ -343,9 +341,18 @@ This service now exposes your internal SQL Server through a private link endpoin
 
 ### Step 5: Connect Fabric using REST API
 
-Once your Private Link Service is created and active, return to [Step 2](#step-2-create-a-managed-private-endpoint-using-the-fabric-rest-api-if-pls-is-already-configured) in this guide to create the **Managed Private Endpoint (MPE)** in Fabric.
+Once your Private Link Service is created and active, return to Step 2 in the above guide to create the **Managed Private Endpoint (MPE)** in Fabric.
 
 ---
+
+### Step 6 – Create the Managed Private Endpoint
+
+Use the REST API already documented in Step 2 of the main guide. In the JSON body, set `targetPrivateLinkResourceId` to the PLS resource ID and (optionally) include an FQDN in `targetFQDNs` that you’ll use in Spark code.
+
+### Step 7 – Approve and test
+
+Approve the pending connection in the PLS (Azure portal → Private endpoint connections). Then run a Spark JDBC read using the FQDN to confirm private connectivity.
+
 
 ## ARM Template Example (Optional)
 
@@ -396,14 +403,6 @@ Use the template below as a starting point to deploy your network components.
 ```
 
 You can extend this template to include VM deployment and Private Link Service definitions.
-
-### Step 6 – Create the Managed Private Endpoint
-
-Use the REST API already documented in Step 2 of the main guide. In the JSON body, set `targetPrivateLinkResourceId` to the PLS resource ID and (optionally) include an FQDN in `targetFQDNs` that you’ll use in Spark code.
-
-### Step 7 – Approve and test
-
-Approve the pending connection in the PLS (Azure portal → Private endpoint connections). Then run a Spark JDBC read using the FQDN to confirm private connectivity.
 
 ### Common advanced pattern notes
 
