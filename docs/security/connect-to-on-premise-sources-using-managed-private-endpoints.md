@@ -14,7 +14,7 @@ With managed private endpoints, you can securely connect Microsoft Fabric worklo
 This approach ensures that traffic flows through the Microsoft backbone network instead of the public internet — maintaining end-to-end data privacy and compliance.
 
 Common use cases include accessing:
-- Data sources like SAP, Oracle databases, Elastic, Non Native Azure Sources like Confluent Kafka, Elasticsearch or Datasources hosted in on-premise environments.
+- Data sources like SAP, Oracle databases, Elastic, Non Native Azure Sources like Confluent Kafka, Elasticsearch or Datasources hosted in on-premisesisesisesss environments.
 - Data sources on Azure VMs
 - Custom APIs or services hosted in virtual networks or self-managed data centers.
 - Secure corporate data stores without exposing public endpoints.
@@ -44,7 +44,7 @@ Before you begin:
 
 ---
 
-## Step 1: [Optional if your load balancer doesnt have a Private Link Service Setup] Create a Private Link Service for your on-premises resource
+## Step 1: [Optional if your load balancer doesn't have a Private Link Service Setup] Create a Private Link Service for your on-premises resource
 
 To expose your on-premises or custom-hosted data source (like SQL Server) to Fabric, you must first create a **Private Link Service (PLS)** in Azure.
 
@@ -88,7 +88,7 @@ az account get-access-token --resource https://api.fabric.microsoft.com
 This command returns a JSON object containing the access token.
 Copy the value of "accessToken" to use as your Authorization header.
 
-Step 2.2: Construct the API request
+### Step 2.2: Construct the API request
 Use the following endpoint and payload structure to create a managed private endpoint. Adjust fields based on whether you are binding to a Private Link Service, providing FQDNs, or both.
 
 Request
@@ -111,7 +111,7 @@ Body (example targeting a Private Link Service + FQDN)
    "targetPrivateLinkResourceId": "/subscriptions/<subId>/resourceGroups/<rg>/providers/Microsoft.Network/privateLinkServices/<plsName>",
    "targetSubresourceType": "sql", 
    "targetFQDNs": ["sqlserver.corp.contoso.com"],
-   "requestMessage": "Private connection request from Fabric to on-prem SQL"
+   "requestMessage": "Private connection request from Fabric to on-premisesises SQL"
 }
 ```
 Body field reference:
@@ -150,23 +150,24 @@ Field names can evolve; if a field you expect is missing, re-check the latest of
 At this point, the private connection request has been sent to the target data source administrator (for example, the owner of your Private Link Service in Azure).
 Once they approve the connection, the provisioning state updates to Approved, and you can begin accessing your on-premises data securely from Fabric.
 
-Example: Using Bruno or Insomnia
-You can also create and test the endpoint directly in Bruno or Insomnia:
+> [!EXAMPLE]
+> **Example: Using Bruno or Insomnia**
+>
+> You can also create and test the endpoint directly in **Bruno** or **Insomnia**:
+>
+> 1. Set the request type to **POST**.
+> 2. Paste the **Fabric REST API endpoint**.
+> 3. In **Auth**, select **Bearer Token**, and paste the token retrieved earlier.
+> 4. In **Body**, paste the JSON payload.
+> 5. Click **Send**.
+>
+> The API will respond with the managed private endpoint details and connection status.
 
-Set the Request type to POST.
+After you send the request, Fabric will attempt to initiate a private connection.
 
-Paste the Fabric REST API endpoint.
+Your network administrator will see this **pending connection request** in the Azure portal under:
 
-In Auth, select Bearer Token, and paste the token retrieved earlier.
-
-In Body, paste the JSON payload.
-
-Click Send.
-
-The API will respond with the managed private endpoint details and connection status.
-
-Fabric will attempt to initiate a private connection request.  
-Your network administrator will see this pending request in the Azure portal under the associated **Private Link Service → Private endpoint connections** blade.
+**Private Link Service → Private endpoint connections** blade.
 
 
 
@@ -182,29 +183,29 @@ Your network administrator will see this pending request in the Azure portal und
 
 After approval, your managed private endpoint becomes active and can be used from Spark notebooks or Data Pipelines.
 
-Example using PySpark to connect to an on-premises SQL Server:
-
-```python
-serverName = "sqlserver.corp.contoso.com"
-database = "SalesDB"
-dbPort = 1433
-dbUserName = "<username>"
-dbPassword = "<password or Key Vault reference>"
-
-jdbcURL = f"jdbc:sqlserver://{serverName}:{dbPort};database={database}"
-connectionProps = {
-    "user": dbUserName,
-    "password": dbPassword,
-    "driver": "com.microsoft.sqlserver.jdbc.SQLServerDriver"
-}
-
-df = spark.read.jdbc(url=jdbcURL, table="dbo.Customers", properties=connectionProps)
-display(df)
-
-# Write back to your Fabric Lakehouse
-df.write.mode("overwrite").format("delta").saveAsTable("Customers")
-```
-
+> [!EXAMPLE]
+> Example using PySpark to connect to an on-premises SQL Server:
+>
+> ```python
+> serverName = "sqlserver.corp.contoso.com"
+> database = "SalesDB"
+> dbPort = 1433
+> dbUserName = "<username>"
+> dbPassword = "<password or Key Vault reference>"
+>
+> jdbcURL = f"jdbc:sqlserver://{serverName}:{dbPort};database={database}"
+> connectionProps = {
+>     "user": dbUserName,
+>     "password": dbPassword,
+>     "driver": "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+> }
+>
+> df = spark.read.jdbc(url=jdbcURL, table="dbo.Customers", properties=connectionProps)
+> display(df)
+>
+> # Write back to your Fabric Lakehouse
+> df.write.mode("overwrite").format("delta").saveAsTable("Customers")
+> ```
 
 
 ## Step 5: Validate and troubleshoot your private connection
@@ -254,18 +255,12 @@ If the DNS still resolves to a public IP, update your private DNS zone in Azure 
 
 To maintain secure and compliant access:
 
-Use Azure Key Vault for storing credentials and connection secrets instead of hardcoding passwords.
-
-Limit network exposure by approving only required endpoints in the Private Link Service.
-
-Monitor Fabric audit logs for endpoint creation, approval, or deletion activities.
-
-Enable Customer-Managed Keys (CMK) for encryption-at-rest when connecting from Spark workloads.
-
-Restrict outbound access using Fabric’s Outbound Access Protection (OAP) to ensure workloads can reach only approved private endpoints.
-
-Rotate credentials and review endpoint approvals periodically.
-
+* Use **Azure Key Vault** for storing credentials and connection secrets instead of hardcoding passwords.
+* Limit network exposure by approving only required endpoints in the Private Link Service.
+* Monitor **Fabric audit logs** for endpoint creation, approval, or deletion activities.
+* Enable **Customer-Managed Keys (CMK)** for encryption-at-rest when connecting from Spark workloads.
+* Restrict outbound access using Fabric’s **Outbound Access Protection (OAP)** to ensure workloads can reach only approved private endpoints.
+* Rotate credentials and review endpoint approvals periodically.
 
 
 ## End-to-end setup: Connecting Fabric to an on-premises SQL Server
@@ -310,10 +305,16 @@ If you **don’t have a Private Link Service setup yet**, follow the steps below
 
 ### Step 3: Create backend forwarding VMs
 
-Create one or more lightweight Ubuntu VMs in `be-subnet`.  
+Create one or more lightweight Ubuntu VMs in `be-subnet`.
 During creation, associate them with your Load Balancer backend pool (`myBackendPool`).
 
-Once provisioned, enable IP forwarding and create NAT rules to your on-prem SQL Server IP (e.g., `10.0.0.47`):
+Once provisioned, enable IP forwarding and create NAT rules to your on-premises SQL Server IP (e.g., `10.0.0.47`) by following these steps:
+
+1. Enable IP forwarding on the VM.
+2. Create a DNAT rule to forward traffic from the load balancer on port **1433** to the on-premises SQL Server IP (e.g., **10.0.0.47**) on port **1433**.
+3. Create a **MASQUERADE** rule for NAT.
+
+You can execute the following commands on the VM:
 
 ```bash
 sudo sysctl -w net.ipv4.ip_forward=1
@@ -412,7 +413,7 @@ You can extend this template to include VM deployment and Private Link Service d
 | Windows Firewall | Ensure there there is no Windows Firewall blocking the ports where the traffic is being forwarded to | 
 | NAT VM sizing | A small VM is usually enough; monitor if high concurrent sessions are expected. |
 | High availability | For production, use multiple forwarder VMs in an availability set / zone with LB distributing. |
-| Connectivity | Ensure your have established the connnectivity between the IP fowarding VM and the data source using a name or the ip address. |
+| Connectivity | Ensure your have established the connectivity between the IP fowarding VM and the data source using a name or the ip address. |
 | Security | Restrict NSGs to only required inbound (1433 to forwarder) and management ports (22) from trusted ranges. |
 
 ## Learn more
