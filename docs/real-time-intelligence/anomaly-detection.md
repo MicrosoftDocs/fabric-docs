@@ -62,7 +62,7 @@ You can start anomaly detection in two ways:
         :::image type="content" source="media/anomaly-detection/real-time-hub-create-detector.png" alt-text="Screenshot of the Anomaly Detector page in Real-Time hub.":::
     1. On the **Create anomaly detector** page, select your Fabric **workspace**, enter a **name** for the anomaly detector, and then select **Create**. 
     
-        :::image type="content" source="media/anomaly-detection/real-time-hub-create-anomaly-detector-dialog.png" alt-text="Screenshot of the Anomaly Detector page in Real-Time hub.":::     
+        :::image type="content" source="media/anomaly-detection/real-time-hub-create-anomaly-detector-dialog.png" alt-text="Screenshot of the Create Anomaly Detector page in Real-Time hub.":::     
 
         Now, continue to the [Configure input columns for analysis](#configure-input-columns-for-analysis) section, but skip configuring the **source** as the source is already selected in Real-Time hub. Start with configuring the **Value to watch** section.
 1. From the **Create** button:
