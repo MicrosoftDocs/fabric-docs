@@ -29,7 +29,12 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 |:-- | :-:| :-: |:-: | :-: |
 | [Access](connector-access-database-overview.mdation & Planning (Beta) | ✓/− |  |  |  |
 | Actian (Beta) | ✓/− |  |  |  |
-| [Active Directory](/power-query/connectors/active-directoryr-query/connectPAnalytics (Beta)](/power-query/connectors/adp-analyticser-query/connectazon OpenSearch Service (Beta)](/power-query/connectors/amazon-opensearch-serviceor-amazon-rds-for-oracle-overview.mdver](connector-amazon-rds-for-sql-server-overview.md-amazon-redshift-overview.mdctor-amazon|
+| [Active Directory](https://learn.microsoft.com/power-query/connectors/active-directory) |  |  |  |  |
+| [ADP Analytics (Beta)](https://learn.microsoft.com/power-query/connectors/adp-analytics) |  |  |  |  |
+| [Amazon OpenSearch Service (Beta)](https://learn.microsoft.com/power-query/connectors/amazon-opensearch-service) |  |  |  |  |
+| [Amazon RDS for Oracle](connector-amazon-rds-for-oracle-overview.md) |  |  |  |  |
+| [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) |  |  |  |  |
+| [Amazon Redshift](connector-amazon-redshift-overview.md) |  |  |  |  |
 | [Amazon S3 Compatible](connector-amazon-s3-compatible-overview.mdy/connectors/anaplan |  |  |
 | [AssembleViews | ✓/− |  |  |  |
 | AtScale cubes | ✓/− |  |  |  |
