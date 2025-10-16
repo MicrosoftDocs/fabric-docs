@@ -202,7 +202,7 @@ Apache Airflow connection is used to store the credentials required to authentic
 
 ## Create a DAG to trigger Microsoft Fabric item run
 
-On your Apache airflow job canvas, there are 3 tiles. Select **Run Fabric artifact**. This will open a new pop up. 
+On your Apache airflow job canvas, there are 3 tiles. Select **Run Fabric artifact**. This will open a new pop-up. 
 
 :::image type="content" source="media/apache-airflow-jobs/run-fabric-artifact.png" lightbox="media/apache-airflow-jobs/run-fabric-artifact.png" alt-text="Screenshot of canvas tile for running Fabric artifacts."::: 
 
@@ -210,11 +210,11 @@ On your Apache airflow job canvas, there are 3 tiles. Select **Run Fabric artifa
 
 1. Select your Fabric Connection using the drop-down list. If you haven't created a connection, click **+** to add a new Fabric connection.
 
-   :::image type="content" source="media/apache-airflow-jobs/set-fabric-connection.png" lightbox="media/apache-airflow-jobs/set-fabric-connection.png" alt-text="Screenshot of pop-up to select a Fabric artifact to run with connection drop-dwon highlighted."::: 
+   :::image type="content" source="media/apache-airflow-jobs/set-fabric-connection.png" lightbox="media/apache-airflow-jobs/set-fabric-connection.png" alt-text="Screenshot of pop-up to select a Fabric artifact to run with connection drop-down highlighted."::: 
 
 2. Then, select your workspace using the drop-down list.
 
-   :::image type="content" source="media/apache-airflow-jobs/set-fabric-workspace.png" lightbox="media/apache-airflow-jobs/set-fabric-workspace.png" alt-text="Screenshot to select your workspace in the Dag set-up pop-up."::: 
+   :::image type="content" source="media/apache-airflow-jobs/set-fabric-workspace.png" lightbox="media/apache-airflow-jobs/set-fabric-workspace.png" alt-text="Screenshot to select your workspace in the DAG set-up pop-up."::: 
 
 3. Choose which artifact type you want to run. You can choose from:
   - Notebook
@@ -223,19 +223,19 @@ On your Apache airflow job canvas, there are 3 tiles. Select **Run Fabric artifa
   - Semantic Model
   - User data function
 
-    :::image type="content" source="media/apache-airflow-jobs/set-fabric-artifact-type.png" lightbox="media/apache-airflow-jobs/set-fabric-artifact-type.png" alt-text="Screenshot to select your artifact type in the Dag set-up pop-up."::: 
+    :::image type="content" source="media/apache-airflow-jobs/set-fabric-artifact-type.png" lightbox="media/apache-airflow-jobs/set-fabric-artifact-type.png" alt-text="Screenshot to select your artifact type in the DAG set-up pop-up."::: 
 
 4. Then, select the artifact that you want to run.
 
-   :::image type="content" source="media/apache-airflow-jobs/set-fabric-artifact.png" lightbox="media/apache-airflow-jobs/set-fabric-artifact.png" alt-text="Screenshot to select the artifact you want to run in the Dag set-up pop-up.":::
+   :::image type="content" source="media/apache-airflow-jobs/set-fabric-artifact.png" lightbox="media/apache-airflow-jobs/set-fabric-artifact.png" alt-text="Screenshot to select the artifact you want to run in the DAG set-up pop-up.":::
 
 5. Name your DAG and then configure your max timeout time and whether you want to enable **Deferrable execution**. 
    
-   :::image type="content" source="media/apache-airflow-jobs/set-fabric-dag-name.png" lightbox="media/apache-airflow-jobs/set-fabric-dag-name.png" alt-text="Screenshot to name the Dag you want to run in the Dag set-up pop-up."::: 
+   :::image type="content" source="media/apache-airflow-jobs/set-fabric-dag-name.png" lightbox="media/apache-airflow-jobs/set-fabric-dag-name.png" alt-text="Screenshot to name the DAG you want to run in the DAG set-up pop-up."::: 
 
 6. Click **Create**. This will open a new DAG in the editor for you to review and edit. Then, you can save your changes and run the DAG.
 
-   :::image type="content" source="media/apache-airflow-jobs/set-fabric-provider-dag.png" lightbox="media/apache-airflow-jobs/set-fabric-provider-dag.png" alt-text="Screenshot to create the Dag you want to run Fabric providers using the pop-up."::: 
+   :::image type="content" source="media/apache-airflow-jobs/set-fabric-provider-dag.png" lightbox="media/apache-airflow-jobs/set-fabric-provider-dag.png" alt-text="Screenshot to create the DAG you want to run Fabric providers using the pop-up."::: 
 
 Create a new DAG file in the 'dags' folder in Fabric managed storage with the following code. Replace the following placeholders:
 - `fabric_conn_id`: The connection ID you created in the previous step.
