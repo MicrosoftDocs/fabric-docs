@@ -17,11 +17,11 @@ Workspace outbound access protection helps safeguard your data by controlling ou
 
 When configuring workspace outbound access protection, the workspace admin first enables outbound access protection, which blocks all outbound connections from Dataflow by default.  
 
-:::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-by-default.png" alt-text="Diagram showing the outbound access protection configuration process for Dataflow.":::
+:::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-by-default.png" alt-text="Diagram showing the outbound access protection configuration process for Dataflow." lightbox="media/workspace-outbound-access-protection-data-factory/block-by-default.png" border="false":::
 
 Next, the workspace admin configures data connection rules for cloud or gateway connection policies to specify which external sources are allowed, such as SQL Server and ADLS Gen2 Storage. Once policies are set, Dataflow can connect only to the approved destinations (in this example, SQL Server and ADLS Gen2 Storage), while all other outbound connections remain blocked.
 
-:::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-and-allow.png" alt-text="Screenshot of Dataflow connections showing allowed connections to SQL Server and ADLS G2 Storage.":::
+:::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-and-allow.png" alt-text="Screenshot of Dataflow connections showing allowed connections to SQL Server and ADLS G2 Storage." lightbox="media/workspace-outbound-access-protection-data-factory/block-and-allow.png" border="false":::
 
 ## Configuring outbound access protection for Data Factory
 

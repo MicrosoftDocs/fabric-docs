@@ -12,26 +12,24 @@ ms.date: 09/24/2025
 ---
 # Create an allowlist using managed private endpoints
 
-The workspace outbound access protection setting blocks all outbound connections from a workspace. After [enabling this setting](./workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to resources in other workspaces or external destinations. For Data Engineering and OneLake workloads, you can allow outbound access by creating an allowlist using [managed private endpoints](security-managed-private-endpoints-overview.md) with or without the Private Link service:
+The workspace outbound access protection setting blocks all outbound connections from a workspace. After [enabling this setting](./workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to resources in other workspaces or external destinations. You can allow outbound access by creating an allowlist using [managed private endpoints](security-managed-private-endpoints-overview.md) with or without the Private Link service:
 
 - Use managed private endpoints for connections to external sources.
 - For connections to other workspaces, use managed private endpoints together with the Private Link service.
 
-Managed private links aren't supported for Data Factory workloads; use [data connection rules](./workspace-outbound-access-protection-allow-list-connector.md) instead.
-
-This article explains how to create an allowlist using managed private endpoints to connect your workspace to an external source or another workspace.
+This article explains how to create managed private endpoints for both of these scenarios. Managed private endpoints apply to Data Engineering and OneLake workloads. For Data Factory, use [data connection rules](./workspace-outbound-access-protection-allow-list-connector.md) to allow outbound access.
 
 ## Prerequisites
 
-Outbound access protection must be enabled for the workspace. See [Enable workspace outbound access protection](workspace-outbound-access-protection-set-up.md).
+[Enable outbound access protection](workspace-outbound-access-protection-set-up.md) for the workspace.
 
 ## Allow outbound access to an external source 
 
-You can connect the outbound access protected workspace to external data sources that support managed private endpoints.
+To enable outbound access to external data sources that support managed private endpoints, create a managed private endpoint in your workspace with outbound access protection enabled. The diagram below illustrates Workspace 1, which has outbound access protection turned on, connecting securely to an external data source through a managed private endpoint.
 
-:::image type="content" source="media/workspace-outbound-access-protection-set-up/connect-workspace-data-source-diagram.png" alt-text="Diagram showing a connection from a workspace to a data source." lightbox="media/workspace-outbound-access-protection-set-up/connect-workspace-data-source-diagram.png" border="false":::
+:::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/connect-workspace-data-source-diagram.png" alt-text="Diagram showing a connection from a workspace to a data source." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/connect-workspace-data-source-diagram.png" border="false":::
 
-To connect to external sources that support managed private endpoints:
+To enable this scenario:
 
 1. Sign in to Fabric as a workspace admin.
 
@@ -45,7 +43,7 @@ For detailed steps, see [Create a managed private endpoint](security-managed-pri
 
 To connect to another workspace, use managed private endpoints and the Private Link service to enable secure outbound connections. As described in this section, you create a Private Link service for the target workspace (Workspace 2 in the diagram) by deploying an ARM template, and then you create a managed private endpoint in the outbound access protected workspace (Workspace 1) to connect to the target workspace.
 
-:::image type="content" source="media/workspace-outbound-access-protection-set-up/private-link-service-diagram.png" alt-text="Diagram showing workspaces connected by managed private links and private links service.":::
+:::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/private-link-service-diagram.png" alt-text="Diagram showing workspaces connected by managed private links and private links service." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/private-link-service-diagram.png" border="false":::
 
 ### Create the Private Link service for the target workspace
 
@@ -94,17 +92,17 @@ Create a managed private endpoint in the outbound access protected workspace (Wo
 
 1. On the **Network Security** page, under **Managed Private Endpoints**, select **Create**.
 
-   :::image type="content" source="media/workspace-outbound-access-protection-set-up/create-managed-private-endpoint-button.png" alt-text="Screenshot showing the button for creating a managed private endpoint." lightbox="media/workspace-outbound-access-protection-set-up/create-managed-private-endpoint-button.png":::
+   :::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/create-managed-private-endpoint-button.png" alt-text="Screenshot showing the button for creating a managed private endpoint." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/create-managed-private-endpoint-button.png":::
 
 1. Enter a name for the managed private endpoint.
 
 1. Under **Resource identifier**, paste the resource ID of the Private Link service created in the previous section. You can also find the resource ID in the Azure portal by opening the Private Link service in Resource Manager and selecting **JSON View** to open the resource JSON.
 
-   :::image type="content" source="media/workspace-outbound-access-protection-set-up/copy-paste-resource-id.png" alt-text="Screenshot showing the resource JSON with the resource ID." lightbox="media/workspace-outbound-access-protection-set-up/copy-paste-resource-id.png":::
+   :::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/copy-paste-resource-id.png" alt-text="Screenshot showing the resource JSON with the resource ID." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/copy-paste-resource-id.png":::
     
 1. Under **Target sub-resource**, select **Workspace**. Then select **Create**.
 
-   :::image type="content" source="media/workspace-outbound-access-protection-set-up/create-managed-private-endpoint.png" alt-text="Screenshot showing the page for creating a managed private endpoint." lightbox="media/workspace-outbound-access-protection-set-up/create-managed-private-endpoint.png":::
+   :::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/create-managed-private-endpoint.png" alt-text="Screenshot showing the page for creating a managed private endpoint." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/create-managed-private-endpoint.png":::
 
 > [!IMPORTANT]
 > The activation status displays *Provisioning* and the approval status is blank, meaning the managed private endpoint request is pending approval. A tenant admin must approve the request as described in the next section.
@@ -115,19 +113,19 @@ A tenant admin must approve the managed private endpoint connection by completin
 
 1. In the Azure portal, search for and select **Private Link Services**.
 
-   :::image type="content" source="media/workspace-outbound-access-protection-set-up/private-link-services-list.png" alt-text="Screenshot showing where to select Private Link services." lightbox="media/workspace-outbound-access-protection-set-up/private-link-services-list.png" :::
+   :::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/private-link-services-list.png" alt-text="Screenshot showing where to select Private Link services." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/private-link-services-list.png" :::
 
 1. Under **Pending connections**, locate the pending connection with the name specified in the template.
 
-   :::image type="content" source="media/workspace-outbound-access-protection-set-up/private-link-center-pending-connections.png" alt-text="Screenshot showing the private link center." lightbox="media/workspace-outbound-access-protection-set-up/private-link-center-pending-connections.png":::
+   :::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/private-link-center-pending-connections.png" alt-text="Screenshot showing the private link center." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/private-link-center-pending-connections.png":::
 
 1. Select the connection and approve it.
 
-   :::image type="content" source="media/workspace-outbound-access-protection-set-up/approve-connection.png" alt-text="Screenshot of the button for approving the connection." lightbox="media/workspace-outbound-access-protection-set-up/approve-connection.png":::
+   :::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/approve-connection.png" alt-text="Screenshot of the button for approving the connection." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/approve-connection.png":::
 
 1. After about 15 minutes, check the status of the managed private endpoint: In the Fabric portal, open the outbound access protected workspace and go to **Workspace settings** > **Outbound networking**. On the Network Security page, verify the activation status is **Succeeded** and the approval status is **Approved**.
 
-   :::image type="content" source="media/workspace-outbound-access-protection-set-up/activation-succeeded.png" alt-text="Screenshot showing the activated and approved connection." lightbox="media/workspace-outbound-access-protection-set-up/activation-succeeded.png":::
+   :::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/activation-succeeded.png" alt-text="Screenshot showing the activated and approved connection." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/activation-succeeded.png":::
 
 The cross-workspace managed private endpoint is now set up between the outbound access protected workspace and the target workspace. Workspace admins and contributors can now connect to artifacts in the target workspace from the outbound access protected workspace.
 

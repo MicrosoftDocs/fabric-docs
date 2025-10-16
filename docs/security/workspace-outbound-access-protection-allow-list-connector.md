@@ -13,43 +13,42 @@ ms.date: 09/24/2025
 
 # Create an allowlist using data connection rules
 
-The workspace outbound access protection setting blocks all outbound connections from a workspace. After [enabling this setting](./workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to external resources. For Data Factory workloads, you can allow outbound access by creating an allowlist using data connection rules.
+When outbound access protection is enabled for a workspace, all outbound connections are blocked by default. To permit access to external data sources through specific cloud connections or data gateways, you can create an allowlist by configuring data connection rules. This article describes how to use data connection rules in the workspace settings to allow cloud connections and data gateways.
 
-Data connection rules aren't supported for Data Engineering or OneLake     workloads; use [managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md) instead.
-
-This article describes how to use data connection rules to allow cloud or gateway connections.
+Data connection rules apply to Data Factory workloads. For Data Engineering or OneLake, use [managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md) to allow outbound access.
 
 ## Prerequisites
 
-Outbound access protection must be enabled for the workspace. See [Enable workspace outbound access protection](workspace-outbound-access-protection-set-up.md).
+[Enable outbound access protection](workspace-outbound-access-protection-set-up.md) for the workspace.
 
 
 ## Allow data connection rules
 
-When outbound access protection is enabled, connectors are blocked by default. You can add policies that allow or block data connections with external sources by using the Fabric portal or REST API.
+After you enable outbound access protection, all data connections with external sources are blocked by default. You can allow specific cloud connectors and data gateways by using the Fabric portal or REST API to create data connection rules.
 
 ### [Fabric portal](#tab/fabric-portal-2)
 
-In the **Data connection rules** settings, you can enable or block existing data connections or gateways, for example, those that have been created in the Manage connections and gateways experience for [Data Factory](/fabric/data-factory/data-source-management) or [Power BI](/power-bi/connect-data/service-gateway-data-sources). You can also add new cloud connection rules.
+In the **Data connection rules** settings, you can enable or block cloud connections or data gateways.
 
 1. Sign in to Fabric as a workspace admin.
 
 1. Go to **Workspace** > **Workspace settings** > **Outbound networking**.
 
-1. Scroll to the **Data connection rules (preview)** section.
+1. Scroll to the **Data connection rules (preview)** section. After you enable outbound access protection, all cloud connections and gateway connections are blocked by default.
 
-   :::image type="content" source="media/workspace-outbound-access-protection-data-factory/data-connection-rules.png" alt-text="Screenshot of data connection rules configuration listing allowed and blocked connection types.":::
+   :::image type="content" source="media/workspace-outbound-access-protection-allow-list-connector/data-connection-rules.png" alt-text="Screenshot of data connection rules configuration listing allowed and blocked connection types." lightbox="media/workspace-outbound-access-protection-allow-list-connector/data-connection-rules.png":::
 
-1. If there are existing cloud connection policies you want to enable, under **Cloud connection policies**, switch the toggle to **Blocked**. Then expand **All other connection kinds** and select the cloud connections you want to allow.
+1. To enable a cloud connection:
+   1. Under **Cloud connection policies**, find the connection type you want to enable and switch its toggle to **Allowed**.
+   1. If the connection type isn't listed, select **Add new cloud connection rule**, find the data source type, and select **Add**. When the connection type appears under **Cloud connection policies**, set its toggle to **Allowed**.
+   1. Select **Save**.
 
-1. If you want to add a new cloud connection policy:
-   1. Select **Add newcloud connection rule**.
-   1. Select the type of connection to add.
-   1. connection details and select **Allow**.
+   :::image type="content" source="media/workspace-outbound-access-protection-allow-list-connector/cloud-connection-policies.png" alt-text="Screenshot of cloud connection policies showing two types of allowed connection types." lightbox="media/workspace-outbound-access-protection-allow-list-connector/cloud-connection-policies.png":::
 
-1. If there are existing gateway connection policies:
-   1. To turn off all gateway connections, switch the toggle to **Blocked**.
-   1. To selectively allow or block connections, under **Gateway connection policies** expand **Virtual network and On-premises data gateways**. Under **Add allowed gateway**, select the connection from the list, and select **Add**. Then turn the toggle on or off to allow or block the connection.
+1. To enable a data gateway:
+   1. Expand **Virtual network and On-premises data gateways**. This list contains data gateways that have already been created.
+   1. Find the gateway you want to enable in the list and switch its toggle to **Allowed**.
+   1. If the data gateway isn't listed, create it using the **Manage connections and gateways** experience. For details, see [Data Factory data source management](/fabric/data-factory/data-source-management) or [Add or remove a gateway data source](/power-bi/connect-data/service-gateway-data-sources).
 
 ### [API](#tab/api-2)
 
