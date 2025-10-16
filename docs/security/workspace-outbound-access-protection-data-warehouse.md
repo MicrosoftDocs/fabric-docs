@@ -13,7 +13,7 @@ ms.date: 10/16/2025
 
 # Workspace outbound access protection for Data Warehouse (preview)
 
-Workspace outbound access protection controls outbound connections from your workspace to other workspaces and external sources, helping prevent unauthorized data exfiltration. These protections apply to Data Warehouse workloads, including warehouses and SQL analytics endpoints, just as they do for Spark workloads. When enabled, outbound access is restricted to the current workspace, ensuring consistent governance and reducing risk. This article explains how outbound access protection impacts Data Warehouse items.
+Workspace outbound access protection controls outbound connections from your workspace to other workspaces and external sources, helping prevent unauthorized data exfiltration. These protections apply to Fabric Data Warehouse items, including warehouses and SQL analytics endpoints. When enabled, outbound access is restricted to the current workspace, ensuring consistent governance and reducing risk. This article explains how outbound access protection impacts Data Warehouse items.
 
 ## Understanding outbound access protection with Data Warehouse
 
@@ -27,7 +27,7 @@ At this time, exceptions can’t be configured through managed private endpoints
 
 ## Supported Data Warehouse item types
 
-These data warehouse item types are supported with outbound access protection:
+These Data Warehouse item types are supported with outbound access protection:
 
 * Warehouses
 * SQL analytics endpoints
