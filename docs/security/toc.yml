@@ -107,6 +107,8 @@ items:
             href: workspace-outbound-access-protection-scenarios.md
           - name: Workspace outbound access protection for data engineering
             href: workspace-outbound-access-protection-data-engineering.md
+          - name: Workspace outbound access protection for Data Warehouse
+            href: workspace-outbound-access-protection-data-warehouse.md
       - name: Trusted workspace access
         href: security-trusted-workspace-access.md
 - name: Data security
