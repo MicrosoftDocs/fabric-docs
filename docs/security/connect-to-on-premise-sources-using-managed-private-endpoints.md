@@ -267,94 +267,140 @@ Restrict outbound access using Fabric’s Outbound Access Protection (OAP) to en
 Rotate credentials and review endpoint approvals periodically.
 
 
-## Advanced scenario: Private Link Service pattern (on-prem SQL)
 
-The following advanced steps cover a full network path for reaching an on-premises SQL Server via an IP forwarder, internal Standard Load Balancer, and Private Link Service (PLS). This pattern is useful when the SQL host isn’t directly exposable or you need a consistent abstraction layer.
+## End-to-end setup: Connecting Fabric to an on-premises SQL Server
 
-### Step 1 – Create three subnets in your Virtual Network
+If you **don’t have a Private Link Service setup yet**, follow the steps below to build the entire topology — from the network layer to Fabric integration.
 
-| Subnet | Purpose | Example CIDR |
-|--------|---------|--------------|
-| Backend Subnet | Hosts the IP forwarder VM | 192.168.1.0/24 |
-| Frontend Subnet | Hosts the Load Balancer | 192.168.2.0/24 |
-| PLS Subnet | Hosts the Private Link Service | 192.168.3.0/24 |
+---
 
-Example (illustrative) VNet definition:
+### Prerequisites
 
-```yaml
-# network-topology.yaml
-resources:
-   - type: Microsoft.Network/virtualNetworks
-      apiVersion: 2023-09-01
-      name: fabric-onprem-vnet
-      location: eastus
-      properties:
-         addressSpace:
-            addressPrefixes: ["192.168.0.0/16"]
-         subnets:
-            - name: backend-subnet
-               properties:
-                  addressPrefix: "192.168.1.0/24"
-            - name: frontend-subnet
-               properties:
-                  addressPrefix: "192.168.2.0/24"
-            - name: pls-subnet
-               properties:
-                  addressPrefix: "192.168.3.0/24"
-```
+* **Azure subscription** — [Create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account).
+* **Virtual Network (VNet)** — [Create one](../virtual-network/quick-create-portal.md).
+* **Connectivity between Azure and on-premises** — via [ExpressRoute](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md) or [VPN Gateway](../vpn-gateway/tutorial-site-to-site-portal.md).  
+  You can also simulate on-premises using a private subnet with Azure VMs and a Private Link Service.
 
-### Step 2 – Deploy and configure IP forwarder
+---
 
-Create a lightweight Ubuntu VM in the backend subnet. Enable IP forwarding and NAT to the on-prem SQL Server (example on-prem IP: `10.0.0.47`).
+### Step 1: Create subnets for resources
 
-Enable IP forwarding:
+| Subnet | Description |
+|:--- |:--- |
+| **be-subnet** | Backend subnet hosting IP forwarder VMs |
+| **fe-subnet** | Frontend subnet for internal Load Balancer |
+| **pls-subnet** | Subnet for hosting Private Link Service |
 
-```bash
-sudo su -
-sysctl -w net.ipv4.ip_forward=1
-```
+:::image type="content" source="./media/tutorial-managed-virtual-network/subnets.png" alt-text="Screenshot showing subnet setup in Azure Portal.":::
 
-Configure TCP port forwarding to the SQL Server:
+---
 
-```bash
-eth_if="eth0"
-fe_port=1433
-dest_ip="10.0.0.47"
-dest_port=1433
+### Step 2: Create a Standard Internal Load Balancer
 
-iptables -t nat -A PREROUTING -i $eth_if -p tcp --dport $fe_port -j DNAT --to-destination $dest_ip:$dest_port
-iptables -t nat -A POSTROUTING -j MASQUERADE
-iptables-save
-```
+1. Go to **Create a resource > Networking > Load Balancer**.
+2. Configure:
+   - Type: **Internal**
+   - SKU: **Standard**
+   - Subnet: **fe-subnet**
+   - IP assignment: **Dynamic**
+3. Create backend pool, health probe (TCP 22 or 1433), and rule (TCP 1433 → 1433).
 
-Verify rules:
+:::image type="content" source="./media/tutorial-managed-virtual-network/create-load-balancer.png" alt-text="Screenshot showing creation of standard internal load balancer.":::
+
+---
+
+### Step 3: Create backend forwarding VMs
+
+Create one or more lightweight Ubuntu VMs in `be-subnet`.  
+During creation, associate them with your Load Balancer backend pool (`myBackendPool`).
+
+Once provisioned, enable IP forwarding and create NAT rules to your on-prem SQL Server IP (e.g., `10.0.0.47`):
 
 ```bash
-iptables -t nat -L -n -v
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 1433 -j DNAT --to-destination 10.0.0.47:1433
+sudo iptables -t nat -A POSTROUTING -j MASQUERADE
 ```
 
-> This simply forwards packets — it does not act as a protocol gateway.
+> [!TIP]
+> You can automate this using the [ip_fwd.sh](https://github.com/sajitsasi/az-ip-fwd/blob/main/ip_fwd.sh) helper script.
 
-### Step 3 – Configure an internal Standard Load Balancer
+---
 
-Deploy a Standard SKU, Internal Load Balancer in the frontend subnet.
+### Step 4: Create a Private Link Service (PLS)
 
-Add / configure:
-- Frontend IP (static) in `frontend-subnet`
-- Backend pool → IP forwarder VM NIC
-- Health probe → TCP 22 (every 5 seconds) or a custom port you expose
-- Load balancing rule → Protocol: TCP, Port: 1433, Backend Port: 1433
-- No outbound rule required
+1. Go to **Private Link Center → Create private link service**.
+2. Under *Outbound settings*:
+   - **Load balancer:** select your internal load balancer
+   - **Frontend IP:** LoadBalancerFrontEnd
+   - **Source NAT subnet:** `pls-subnet`
+3. Leave defaults and select **Create**.
 
-### Step 4 – Create the Private Link Service (PLS)
+This service now exposes your internal SQL Server through a private link endpoint.
 
-Create a PLS that references the Load Balancer frontend configuration and place it in the `pls-subnet`. Record the PLS **resource ID** for use in the Managed Private Endpoint request.
+---
 
-### Step 5 – Create the Managed Private Endpoint
+### Step 5: Connect Fabric using REST API
+
+Once your Private Link Service is created and active, return to [Step 2](#step-2-create-a-managed-private-endpoint-using-the-fabric-rest-api-if-pls-is-already-configured) in this guide to create the **Managed Private Endpoint (MPE)** in Fabric.
+
+---
+
+## ARM Template Example (Optional)
+
+Use the template below as a starting point to deploy your network components.
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "subscriptionId": { "type": "string", "defaultValue": "<subscriptionId>" },
+    "resourceGroupName": { "type": "string", "defaultValue": "<resourceGroupName>" },
+    "location": { "type": "string", "defaultValue": "eastus" },
+    "vnetName": { "type": "string", "defaultValue": "fabric-onprem-vnet" }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2023-09-01",
+      "name": "[parameters('vnetName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "addressSpace": { "addressPrefixes": ["192.168.0.0/16"] },
+        "subnets": [
+          { "name": "be-subnet", "properties": { "addressPrefix": "192.168.1.0/24" } },
+          { "name": "fe-subnet", "properties": { "addressPrefix": "192.168.2.0/24" } },
+          { "name": "pls-subnet", "properties": { "addressPrefix": "192.168.3.0/24" } }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/loadBalancers",
+      "apiVersion": "2023-09-01",
+      "name": "myLoadBalancer",
+      "location": "[parameters('location')]",
+      "sku": { "name": "Standard" },
+      "properties": {
+        "frontendIPConfigurations": [
+          {
+            "name": "LoadBalancerFrontEnd",
+            "properties": { "subnet": { "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('vnetName')), '/subnets/fe-subnet')]" } }
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+You can extend this template to include VM deployment and Private Link Service definitions.
+
+### Step 6 – Create the Managed Private Endpoint
 
 Use the REST API already documented in Step 2 of the main guide. In the JSON body, set `targetPrivateLinkResourceId` to the PLS resource ID and (optionally) include an FQDN in `targetFQDNs` that you’ll use in Spark code.
 
-### Step 6 – Approve and test
+### Step 7 – Approve and test
 
 Approve the pending connection in the PLS (Azure portal → Private endpoint connections). Then run a Spark JDBC read using the FQDN to confirm private connectivity.
 
