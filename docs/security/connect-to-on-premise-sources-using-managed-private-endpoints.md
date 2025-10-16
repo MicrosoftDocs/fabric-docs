@@ -14,7 +14,7 @@ With managed private endpoints, you can securely connect Microsoft Fabric worklo
 This approach ensures that traffic flows through the Microsoft backbone network instead of the public internet — maintaining end-to-end data privacy and compliance.
 
 Common use cases include accessing:
-- Data sources like SAP, Oracle databases, Elastic, Non Native Azure Sources like Confluent Kafka, Elasticsearch or Datasources hosted in on-premisesisesisesss environments.
+- Data sources like SAP, Oracle databases, Elastic, Non Native Azure Sources like Confluent Kafka, Elasticsearch or Datasources hosted in on-premises environments.
 - Data sources on Azure VMs
 - Custom APIs or services hosted in virtual networks or self-managed data centers.
 - Secure corporate data stores without exposing public endpoints.
@@ -111,7 +111,7 @@ Body (example targeting a Private Link Service + FQDN)
    "targetPrivateLinkResourceId": "/subscriptions/<subId>/resourceGroups/<rg>/providers/Microsoft.Network/privateLinkServices/<plsName>",
    "targetSubresourceType": "sql", 
    "targetFQDNs": ["sqlserver.corp.contoso.com"],
-   "requestMessage": "Private connection request from Fabric to on-premisesises SQL"
+   "requestMessage": "Private connection request from Fabric to on-premises SQL"
 }
 ```
 Body field reference:
@@ -131,7 +131,7 @@ Execution steps:
 4. Paste the JSON body and adjust values.
 5. Send the request.
 
-Step 2.3: Verify the connection request
+### Step 2.3: Verify the connection request
 An example (simplified) successful response payload may look like:
 
 ```json
@@ -150,7 +150,7 @@ Field names can evolve; if a field you expect is missing, re-check the latest of
 At this point, the private connection request has been sent to the target data source administrator (for example, the owner of your Private Link Service in Azure).
 Once they approve the connection, the provisioning state updates to Approved, and you can begin accessing your on-premises data securely from Fabric.
 
-> **Example: Using Bruno or Insomnia**
+> Example: Using Bruno or Insomnia
 >
 > You can also create and test the endpoint directly in **Bruno** or **Insomnia**:
 >
