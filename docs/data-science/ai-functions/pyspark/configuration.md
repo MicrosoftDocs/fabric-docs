@@ -31,7 +31,7 @@ If you're working with AI functions in PySpark, you can use the `OpenAIDefaults`
 
 | Parameter | Description | Default |
 |---|---|---|
-| `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. This value must be set per individual AI function call. | `200` |
+| `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. This value must be set per individual AI function call. | `50` |
 | `deployment_name` | A string value that designates the name of the underlying model. You can choose from [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). This can also be set to a custom model deployment in Azure OpenAI or Azure AI Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Azure AI Foundry portal, the value appears on the **Deployments** page.  | `gpt-4.1-mini` |
 | `temperature` | A numeric value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. | `0.0` |
 | `subscription_key` | An API key used for authentication with your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. | N/A |
