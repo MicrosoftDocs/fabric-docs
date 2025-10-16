@@ -40,7 +40,7 @@ Before you begin:
 
 - A Microsoft Fabric workspace with workspace admin role.
 - The Azure subscription must have the **Microsoft.Network** resource provider registered.
-- Have data sources or services running behind a Standard Load Balancer which is reachable by a Private Link Service. [Learn more on about Private Link Service](https://learn.microsoft.com/azure/private-link/private-link-service-overview)
+- Have data sources or services running behind a Standard Load Balancer which is reachable by a Private Link Service. [Learn more on about Private Link Service](/azure/private-link/private-link-service-overview)
 
 ---
 
@@ -277,8 +277,8 @@ If you **don’t have a Private Link Service setup yet**, follow the steps below
 ### Prerequisites
 
 * **Azure subscription** — [Create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account).
-* **Virtual Network (VNet)** — [Create a virtual network in the Azure portal](https://learn.microsoft.com/azure/virtual-network/quick-create-portal)  
-* **Connectivity between Azure and on-premises** — via [ExpressRoute](https://learn.microsoft.com/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager) or [VPN Gateway](https://learn.microsoft.com/azure/vpn-gateway/tutorial-site-to-site-portal)  
+* **Virtual Network (VNet)** — [Create a virtual network in the Azure portal](/azure/virtual-network/quick-create-portal)  
+* **Connectivity between Azure and on-premises** — via [ExpressRoute](/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager) or [VPN Gateway](/azure/vpn-gateway/tutorial-site-to-site-portal)
   You can also simulate on-premises using a private subnet with Azure VMs and a Private Link Service.
 
 
