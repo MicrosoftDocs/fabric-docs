@@ -150,7 +150,6 @@ Field names can evolve; if a field you expect is missing, re-check the latest of
 At this point, the private connection request has been sent to the target data source administrator (for example, the owner of your Private Link Service in Azure).
 Once they approve the connection, the provisioning state updates to Approved, and you can begin accessing your on-premises data securely from Fabric.
 
-> [!EXAMPLE]
 > **Example: Using Bruno or Insomnia**
 >
 > You can also create and test the endpoint directly in **Bruno** or **Insomnia**:
@@ -183,7 +182,6 @@ Your network administrator will see this **pending connection request** in the A
 
 After approval, your managed private endpoint becomes active and can be used from Spark notebooks or Data Pipelines.
 
-> [!EXAMPLE]
 > Example using PySpark to connect to an on-premises SQL Server:
 >
 > ```python
