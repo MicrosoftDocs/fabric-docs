@@ -27,6 +27,7 @@ Fabric Runtime Version needs to be at least Spark 3.4 Delta 2.4. Verify in Works
 - Mirrored Azure Databricks item doesn't support renaming schema, table, or both when added to the inclusion or exclusion list.
 - Azure Databricks workspaces shouldn't be behind a private endpoint.
 - Azure Data Lake Storage Gen 2 account that is utilized by your Azure Databricks workspace must also be accessible to Fabric.
+- Azure Mirrored Databricks Catalog does not support Manage Catalog functionality if OneLake security is enabled on that item. This functionality is coming in November, 2025.
 
 The following table types are not supported:
 

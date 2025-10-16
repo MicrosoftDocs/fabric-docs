@@ -4,7 +4,7 @@ description: Learn how to quickly find content, search, filter, multitask with t
 author: julcsc
 ms.author: juliacawthra
 ms.topic: overview
-ms.date: 10/01/2025
+ms.date: 10/14/2025
 ai-usage: ai-assisted
 #customer intent: As a new Fabric user, I want to quickly find my content, understand navigation, personalize settings, and get help.
 ---
@@ -89,16 +89,16 @@ The object explorer provides a structured view of items across all your currentl
 
 ### Keyboard shortcuts for Object Explorer and Horizontal Tabs
 
-Use keyboard shortcuts in horizontal tabs and object explorer to switch between items, expand or collapse folders, and jump to a specific tabs. This functionality is similar to an IDE environment.
+Use keyboard shortcuts in horizontal tabs and object explorer to switch between items, expand or collapse folders, and jump to specific tabs. This functionality is similar to an IDE environment.
 
 **Prerequisites:**
 
 - Switch to the Fabric view using the lower-left experience switcher.
 - Enable the multitasking (horizontal tabs and object explorer) feature.
 
-**Keyboard shortcuts in Object Explorer**
+**Keyboard shortcuts in object explorer**
 
-Object explorer helps you browse workspaces, folders, and items. You can use the following shortcuts to quickly navigate:
+Object explorer helps you browse workspaces, folders, and items. Use the following shortcuts to quickly navigate:
 
 | Action | Shortcut |
 |--------|----------|
@@ -109,7 +109,7 @@ Object explorer helps you browse workspaces, folders, and items. You can use the
 
 **Use keyboard shortcuts in horizontal tabs**
 
-Horizontal tabbing lets you switch between multiple open items. Use these shortcuts to move efficiently across tabs:
+Horizontal tabs lets you switch between multiple open items. Use the following shortcuts to move efficiently across tabs:
 
 | Action | Shortcut |
 |--------|----------|
@@ -121,6 +121,16 @@ The previous limit of 10 open items has been increased. You can keep more resour
 
 > [!NOTE]
 > These multitasking features are rolling out in phases starting mid September 2025. Availability might vary across tenants as the rollout progresses.
+
+## Maximize editing space with focus mode
+
+Focus mode helps developers create a distraction-free workspace by hiding the navigation sidebar and object explorer. It maximizes the editor pane by expanding it to use the full monitor area, removing side panels and navigation layers to reduce distractions, and enabling writers to focus and work more productively without UI clutter.
+
+To enable focus mode, open the item you want to edit and select **Focus Mode** from the global header. The navigation sidebar and object explorer are collapsed, maximizing the editor pane.
+
+:::image type="content" source="media/fabric-home/focus-mode.png" alt-text="Screenshot showing how to enable the focus mode." lightbox="media/fabric-home/focus-mode.png":::
+
+To exit, select **Exit Focus Mode**, the same toggle control turns it off.
 
 ## Find content fast: Search, filter, sort
 
