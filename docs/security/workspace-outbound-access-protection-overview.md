@@ -80,6 +80,7 @@ The following limitations apply when using workspace outbound access protection:
       `Path: abfss://<YourWorkspace>@onelake.dfs.fabric.microsoft.com/<YourLakehouse>.Lakehouse/Files/people.csv`
 
 * Outbound access protection isn't supported for schema enabled lakehouses.
+* In OAP enabled workspace, querying data warehouse file paths from notebooks using dbo is not supported, as accessing schema-based paths is not supported. The recommended method for querying the warehouse is to use the T-SQL option in the notebooks.
 * Ensure you re-register the `Microsoft.Network` feature on your subscription in the Azure portal.
 * Outbound access protection doesn't protect from data exfiltration via inbound requests, such as GET requests made as part of external AzCopy operations to move data out of a workspace. To protect your data from unauthorized inbound requests, see [Protect inbound traffic](protect-inbound-traffic.md).
 
