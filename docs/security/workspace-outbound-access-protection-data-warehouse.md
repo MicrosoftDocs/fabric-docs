@@ -23,7 +23,7 @@ When outbound access protection is enabled, the workspace automatically blocks a
 
 To configure outbound access protection for Data Warehouse, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up managed private endpoints to allow outbound access to other workspaces or external resources as needed.
 
-At this time, exceptions can’t be configured through managed private endpoints or data connections rules. All outbound connections from warehouses and SQL analytics endpoints are blocked when outbound access protection is enabled.
+At this time, exceptions can’t be configured through managed private endpoints. All outbound connections from warehouses and SQL analytics endpoints are blocked when outbound access protection is enabled.
 
 ## Supported Data Warehouse item types
 
