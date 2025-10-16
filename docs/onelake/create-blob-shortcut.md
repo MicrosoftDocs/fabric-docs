@@ -48,12 +48,12 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
    * To **Create new connection**, provide the following connection settings.
 
 
-     |Field | Description|
-     |-----|-----|
-     | **Account name or URL**| The name of your blob storage account. |
-     |**Connection** | The default value, **Create new connection**. |
-     |**Connection name** | A name for your Azure Blob Storage connection. The service generates a suggested connection name based on the storage account name, but you can overwrite with a preferred name. |
-     |**Authentication kind**| Select the authorization model from the drop-down menu that you want to use to connect to the Storage account. The supported models are: account key, organizational account, Anonymous, Shared Access Signature (SAS), service principal, and workspace identity. Once you select a model, fill in the required credentials. For more information, see [Azure Blob Storage shortcuts authorization](./onelake-shortcuts.md#azure-blob-storage-shortcuts). |
+|Field | Description|
+|-----|-----|
+| **Account name or URL**| The name of your blob storage account. |
+|**Connection** | The default value, **Create new connection**. |
+|**Connection name** | A name for your Azure Blob Storage connection. The service generates a suggested connection name based on the storage account name, but you can overwrite with a preferred name. |
+|**Authentication kind**| Select the authorization model from the drop-down menu that you want to use to connect to the Storage account. The supported models are: account key, organizational account, Anonymous, Shared Access Signature (SAS), service principal, and workspace identity. Once you select a model, fill in the required credentials. For more information, see [Azure Blob Storage shortcuts authorization](./onelake-shortcuts.md#azure-blob-storage-shortcuts). |
 
      
 1. Select **Next**.
