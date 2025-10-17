@@ -16,11 +16,11 @@ ai.usage: ai-assisted
 
 # Add a Power BI semantic model as a data source to Fabric data agent (preview)
 
-You can add a semantic model as a data source to the Fabric data agent. Before doing so, we recommended you prepare the semantic model using [Prep for AI in Power BI](https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-prepare-data-ai).
+You can add a semantic model as a data source to the Fabric data agent. Before doing so, we recommended you prepare the semantic model using [Prep for AI in Power BI](/power-bi/create-reports/copilot-prepare-data-ai).
 
 Prep for AI helps you shape how AI experiences interpret the semantic model. It lets you define which parts of the model to expose, describe how they should be used, and provide extra context to improve the accuracy of generated responses.
 
-In addition to the configurations done via Prep for AI, the Fabric data agent also benefits from following best practices in the semantic model such as meaningful names and descriptions on tables, columns, and measures. Therefore, the data agent uses elements such as table and column descriptions, synonyms, relationships, and data types to better interpret user questions, select relevant fields, and generate accurate responses. Learn more about [optimizing the semantic model](https://learn.microsoft.com/en-us/power-bi/guidance/power-bi-optimization#optimizing-the-data-model).
+In addition to the configurations done via Prep for AI, the Fabric data agent also benefits from following best practices in the semantic model such as meaningful names and descriptions on tables, columns, and measures. Therefore, the data agent uses elements such as table and column descriptions, synonyms, relationships, and data types to better interpret user questions, select relevant fields, and generate accurate responses. Learn more about [optimizing the semantic model](/power-bi/guidance/power-bi-optimization#optimizing-the-data-model).
 
 ## Prep for AI components and Fabric data agent
 
@@ -40,7 +40,7 @@ Prep for AI offers three key configuration components in Power BI:
 
 Use AI Instructions to describe which set of tables and columns should be used to answer which types of questions. This effectively helps you partition the semantic model into logical domains, improving response relevance and reducing ambiguity.
 
-Include example DAX queries in the AI Instructions to help determine which queries are most appropriate for different types of questions. To determine which DAX query should be used for each question, use the [DAX Query View](https://learn.microsoft.com/en-us/dax/best-practices/dax-user-defined-functions) to test and validate which DAX expressions produce the correct results for different types of questions that users might ask about your semantic model.
+Include example DAX queries in the AI Instructions to help determine which queries are most appropriate for different types of questions. To determine which DAX query should be used for each question, use the [DAX Query View](/dax/best-practices/dax-user-defined-functions) to test and validate which DAX expressions produce the correct results for different types of questions that users might ask about your semantic model.
 
 In DAX Query View (available in Power BI Desktop), write and run DAX queries directly against your semantic model. This approach lets you:
 
