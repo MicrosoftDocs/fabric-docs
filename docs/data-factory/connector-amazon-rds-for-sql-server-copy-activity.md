@@ -32,11 +32,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Amazon RDS for SQL Server under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-amazon-rds-for-sql-server/source.png" alt-text="Screenshot showing the source tab and the list of properties.":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Amazon RDS for SQL Server connection from the connection list. If the connection doesn't exist, then create a new Amazon RDS for SQL Server connection by selecting **New**.
 - **Connection type**: Select **Amazon RDS for SQL Server**.
 - **Use query**: Specify the way to read data. You can choose **Table**, **Query**, or **Stored procedure**. The following list describes the configuration of each setting:
@@ -137,7 +134,6 @@ See the following table for the summary and more information for the Amazon RDS 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
 |**Connection type** |Your connection type. Select **Amazon RDS for SQL Server**.|**Amazon RDS for SQL Server** |Yes|/|
 |**Use query** |The custom SQL query to read data.|• Table<br>• Query<br>• Stored procedure |Yes |/|

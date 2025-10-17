@@ -34,11 +34,8 @@ For **General** tab configuration, go to [General](activity-overview.md#general-
 
 The following properties are supported for Azure Data Explorer under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-data-explorer/source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-azure-data-explorer/source.png":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Azure Data Explorer connection from the connection list. If no connection exists, then create a new Azure Data Explorer connection by selecting **New**.
 - **Database**: Select your database from the drop-down list.
 - **Use query**: Select **Table** or **Query**.
@@ -61,11 +58,8 @@ Under **Advanced**, you can specify the following fields:
 
 The following properties are supported for Azure Data Explorer under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-data-explorer/destination.png" alt-text="Screenshot showing destination tab.":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Azure Data Explorer connection from the connection list. If no connection exists, then create a new Azure Data Explorer connection by selecting **New**.
 - **Database**: Select your database from the drop-down list.
 - **Table**: Select a table from the drop-down list or select **Edit** to manually enter it to write data.
@@ -93,7 +87,6 @@ The following tables contain more information about a copy activity in an Azure 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the source data store.|< your Azure Data Explorer connection >|Yes|connection|
 |**Database** | Your database that you use as source.|< your database >|Yes |database|
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.| • **Table**<br>  • **Query** |No| table<br> query|
@@ -105,7 +98,6 @@ The following tables contain more information about a copy activity in an Azure 
 
 |Name |Description |Value |Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the destination data store.|< your Azure Data Explorer connection >|Yes|connection|
 |**Database** | Your database that you use as destination.|< your database >|Yes |database|
 |**Table** |Your destination data table to write data.|\<your table name>|Yes|table|
