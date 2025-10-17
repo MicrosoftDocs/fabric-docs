@@ -16,9 +16,9 @@ ai.usage: ai-assisted
 
 # Add a Power BI semantic model as a data source to Fabric data agent (preview)
 
-You can add a semantic model as a data source to the Fabric data agent. Before doing so, it’s recommended to prepare the semantic model using [Prep for AI in Power BI](https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-prepare-data-ai).
+You can add a semantic model as a data source to the Fabric data agent. Before doing so, we recommended you prepare the semantic model using [Prep for AI in Power BI](https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-prepare-data-ai).
 
-Prep for AI helps you shape how AI experiences interpret the semantic model. It lets you define which parts of the model to expose, describe how they should be used, and provide additional context to improve the accuracy of generated responses.
+Prep for AI helps you shape how AI experiences interpret the semantic model. It lets you define which parts of the model to expose, describe how they should be used, and provide extra context to improve the accuracy of generated responses.
 
 In addition to the configurations done via Prep for AI, the Fabric data agent also benefits from following best practices in the semantic model such as meaningful names and descriptions on tables, columns, and measures. Therefore, the data agent uses elements such as table and column descriptions, synonyms, relationships, and data types to better interpret user questions, select relevant fields, and generate accurate responses. Learn more about [optimizing the semantic model](https://learn.microsoft.com/en-us/power-bi/guidance/power-bi-optimization#optimizing-the-data-model).
 
@@ -36,7 +36,7 @@ Prep for AI offers three key configuration components in Power BI:
 
 ## How Fabric data agent uses Prep for AI components
 
-- **AI Instructions and Verified Answers**: These components only exist via “Prep for AI” on the semantic model side and are not configurable within the Fabric data agent. However, the Fabric data agent fully honors them when present in the semantic model.
+- **AI Instructions and Verified Answers**: These components only exist via “Prep for AI” on the semantic model side and aren't configurable within the Fabric data agent. However, the Fabric data agent fully honors them when present in the semantic model.
 
 Use AI Instructions to describe which set of tables and columns should be used to answer which types of questions. This effectively helps you partition the semantic model into logical domains, improving response relevance and reducing ambiguity.
 
@@ -55,7 +55,7 @@ After you confirm which DAX queries return accurate and meaningful results, incl
 |-----------|-----------|
 | Table selected in both Fabric data agent and Prep for AI | Only the columns defined in Prep for AI are used. |
 | Table selected only in Fabric data agent and not in Prep for AI | All columns in the table are used. |
-| There is no Prep for AI configuration | Fabric data agent uses its own table selections and all columns from the selected table will be used. |
+| There's no Prep for AI configuration | Fabric data agent uses its own table selections and all columns from the selected table are used. |
 | Table selected only in Prep for AI and not selected in Fabric data agent | Fabric data agent ignores the table that is only selected in Prep for AI. |
 
 ## Best practices to configure Power BI semantic models as data sources in Fabric data agent
