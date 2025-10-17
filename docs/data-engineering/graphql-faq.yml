@@ -35,9 +35,6 @@ sections:
       - question: Does API for GraphQL support Private Link?
         answer: API for GraphQL supports [Tenant Level Private Link](../security/security-private-links-overview#api-for-graphql) at this time. We're planning to support Workspace Level Private Link in the future and will provide updates as they become available.
 
-      - question: I enabled Private Link for my Fabric tenant. Why are my GraphQL items not working?
-        answer: If the tenant setting "Block public internet access" is enabled (that is, public access is disabled), any nonsupported artifacts or items are automatically disabled, including API for GraphQL. This means that previously created items can't be accessed, nor can new ones be created. The only way to access these items is to allow public access.
-
       - question: Why does my request perform poorly the first time I issue it, then perform well on subsequent requests?
         answer: There are two main reasons for this behavior. First, the first request might take longer if a data source needs to be warmed up if it's cold. Even if the data source isn't cold, data retrieval might not be as efficient the first time GraphQL issues a query, if the data source doesn't have the necessary data loaded in memory. The second reason is that the first request to an API for GraphQL endpoint might take longer because the system needs to load your schema and configuration to be ready to accept requests. This is a one-time cost, and subsequent requests are faster because the system is already warmed up and ready to serve your requests. You can find more information in the [performance best practices](api-graphql-performance.md).
 
