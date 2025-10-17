@@ -141,7 +141,7 @@ API for GraphQL supports Private Link, allowing secure API access and querying f
 Limitations:
 
 * API monitoring dashboard and logging based on Workspace Monitoring is not supported.
-* Service Principal (SPN) access is not supported.
+* Service Principal (SPN) access with saved credentials is not supported. SPNs can only be used with single sign-on (SSO) [authentication](../data-engineering/get-started-api-graphql#permissions-summary).
 
 ### Healthcare data solutions (preview)
 
