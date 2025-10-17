@@ -33,11 +33,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 Go to **Source** tab to configure your copy activity source. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-amazon-redshift/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
-
 The following three properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an Amazon Redshift connection from the connection list. If no connection exists, then create a new Amazon Redshift connection by selecting **New**.
 - **Use query**: Select from **Table** or **Query**.
 
@@ -74,7 +71,6 @@ See the following table for the summary and more information of the Amazon Redsh
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **Data store type** | Your data store type. | **External** | Yes | / | 
 | **Connection** | Your connection to the source data store. | < your Amazon Redshift connection > | Yes | connection | 
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.|• **Table** <br>• **Query** |Yes |• typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - schema<br>&nbsp; - table<br>• query|
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.| • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |

@@ -77,6 +77,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Real-time weather (preview)                               | Source        | YES                       | - When streaming was last stopped           |
 | Azure SQL Database CDC                                    | Source        | YES                       | - When streaming was last stopped           |
 | PostgreSQL Database CDC                                   | Source        | YES                       | - When streaming was last stopped           |
+| MongoDB CDC (preview)                                     | Source        | YES                       | - When streaming was last stopped           |
 | MySQL Database CDC                                        | Source        | YES                       | - When streaming was last stopped           |
 | Azure Cosmos DB CDC                                       | Source        | YES                       | - When streaming was last stopped           |
 | SQL Server on VM DB CDC                                   | Source        | YES                       | - When streaming was last stopped           |
@@ -125,6 +126,9 @@ Here's a detailed table of the nodes that support pause and resume functionality
 You can easily pause or resume all data traffic within Eventstream by selecting either the **Activate All** or **Deactivate All** option from the menu bar. When selecting **Activate All**, the available resume options may differ based on the sources and destinations configured in your eventstream. Refer to the detailed table in the previous section for specific resume options for each node. This action will either resume or pause all data traffic flowing in or out of Eventstream. It only applies to nodes that support pause and resume functionality. For nodes that don't currently support this feature, data traffic can't be paused.
 
 :::image type="content" source="./media/pause-resume-data-streams/active-deactive-all.png" alt-text="Screenshot showing how to active or deactive all nodes at simultaneously." lightbox="./media/pause-resume-data-streams/active-deactive-all.png" :::
+
+## Limitation
+* After CI/CD (Git integration and deployment pipeline), all resources in the target eventstream become active, unless they fail due to connection or configuration issues. The resources in the original eventstream (exported to Git) and in the eventstream being deployed retain their states.
 
 ## Related content
 

@@ -23,9 +23,11 @@ In addition, note the following table for Azure SQL Database troubleshooting:
 
 | Cause    | Result | Recommended resolution     |
 |:--|:--|:--|
-| Workspace deleted | Mirroring stops automatically and disables the change feed in Azure SQL Database | In case mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
-| Any other resource errors | Mirroring is disabled | To ensure your compute resources aren't affected and to protect on your Azure SQL Database, mirroring can be disabled on any persistent resource errors. |
-| "Users can access data stored in OneLake with apps external to Fabric" setting disabled | "Replicator - Tables Cannot Reach Replicating Status" | Enable the Tenant setting [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings).|
+| Workspace deleted | Mirroring stops automatically and disables the change feed in Azure SQL Database |In case mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
+| Persistent errors | Mirroring is disabled |To ensure your compute resources aren't affected and to protect your source Azure SQL Database, mirroring can be disabled on any persistent errors. Review [sys.dm_change_feed_errors](/sql/relational-databases/system-dynamic-management-views/sys-dm-change-feed-errors/?view=azuresqldb-current&preserve-view=true) and resolve the underlying errors before re-enabling the table for mirroring.|
+| "Users can access data stored in OneLake with apps external to Fabric" setting disabled | "Replicator - Tables Cannot Reach Replicating Status" |Enable the Tenant setting [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings).|
+
+For additional troubleshooting scenarios, see [Troubleshoot Fabric Mirrored Databases - Microsoft Fabric](/fabric/mirroring/troubleshooting).
 
 ## T-SQL queries for troubleshooting
 
@@ -87,7 +89,11 @@ If you remove Azure SQL Database SAMI permissions or permissions are not set up 
 
 Before using Microsoft Entra ID authentication, review the limitations in [Microsoft Entra server principals](/azure//azure-sql/database/authentication-azure-ad-logins?view=azuresql-db&preserve-view=true#limitations-and-remarks). 
 
-Database users created using Microsoft Entra logins can experience delays when being granted roles and permissions. This could result in an error such as the following in the Fabric portal: "The database cannot be mirrored to Fabric due to below error: Unable to retrieve SQL Server managed identities. A database operation failed with the following error: 'VIEW SERVER SECURITY STATE permission was denied on object 'server', database 'master'. The user does not have permission to perform this action.' VIEW SERVER SECURITY STATE permission was denied on object 'server', database 'master'. The user does not have permission to perform this action. SqlErrorNumber=300,Class=14,State=1, Activity ID: ..."
+Database users created using Microsoft Entra logins can experience delays when being granted roles and permissions. This could result in an error such as the following in the Fabric portal:
+
+```output
+"The database cannot be mirrored to Fabric due to below error: Unable to retrieve SQL Server managed identities. A database operation failed with the following error: 'VIEW SERVER SECURITY STATE permission was denied on object 'server', database 'master'. The user does not have permission to perform this action.' VIEW SERVER SECURITY STATE permission was denied on object 'server', database 'master'. The user does not have permission to perform this action. SqlErrorNumber=300,Class=14,State=1, Activity ID: ..."
+```
 
 During the current preview, the following commands should be used to address these issues.
 
@@ -95,6 +101,14 @@ During the current preview, the following commands should be used to address the
 - Execute `DBCC FREESYSTEMCACHE('TokenAndPermUserStore')` to clear security caches on the database.
 - Execute `DBCC FLUSHAUTHCACHE` to clear the federated authentication context cache.
 - In the user database, [re-create the user](/azure/azure-sql/database/authentication-azure-ad-logins?view=azuresql-db&preserve-view=true#create-user-from-login) based on the login.
+
+## Transaction log usage 
+
+Transaction log usage for a database enabled for mirroring can continue to grow and hold up log truncation. Once the transaction log size reaches the max defined limit, writes to the database fail. To safeguard from this, mirroring triggers automatic reseed of the whole database when the log space used exceeds a threshold of total configured log space. To diagnose this and learn about automatic reseeding, see [Automatic reseed for Fabric mirrored databases from Azure SQL Database](azure-sql-database-automatic-reseed.md#diagnose).
+
+## Reseeding has automatically started
+
+Fabric Mirroring from Azure SQL Database can automatically reseed under certain conditions, at the individual table level or for the entire database. To learn more, [Automatic reseed for Fabric mirrored databases from Azure SQL Database](azure-sql-database-automatic-reseed.md).
 
 ## Related content
 

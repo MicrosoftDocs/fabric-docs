@@ -23,7 +23,7 @@ This article describes how to install and configure the Spark connector and move
 
 ## Prerequisites
 
-* An Azure subscription. Create a [free Azure account](https://azure.microsoft.com/free/). This is used for authentication using Microsoft Entra ID.
+* An Azure subscription. Create a [free Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn). This is used for authentication using Microsoft Entra ID.
 * A [KQL database in Microsoft Fabric](create-database.md). Copy the URI of this database using the instructions in [Access an existing KQL database](access-database-copy-uri.md).
 * A Spark cluster
 * Install connector library:

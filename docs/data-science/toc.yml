@@ -84,9 +84,11 @@ items:
         - name: Consume a data agent from Copilot in Power BI (preview)
           href: data-agent-copilot-powerbi.md
         - name: Consume a data agent from Microsoft Copilot Studio (preview)
-          href: data-agent-microsoft-copilot-studio.md     
+          href: data-agent-microsoft-copilot-studio.md         
         - name: Consume a data agent using Python SDK (preview)
-          href: consume-data-agent-python.md     
+          href: consume-data-agent-python.md   
+    - name: Source Control, CI/CD, and ALM for Fabric data agent
+      href: data-agent-source-control.md 
     - name: Fabric data agent end-to-end tutorial
       href: data-agent-end-to-end-tutorial.md        
     - name: Fabric data agent sharing

@@ -18,7 +18,7 @@ In Microsoft Fabric, you can use the service tags listed in the table below. The
 
 | Tag | Purpose | Can use inbound or outbound? | Can be regional? | Can use with Azure Firewall? |
 |--|--|--|--|--|
-| DataFactory | Azure Data Factory | Both | No | Yes |
+| DataFactory | Azure Data Factory | Both | Yes | Yes |
 | DataFactoryManagement| On premises pipeline activity | Outbound | No | Yes |
 | EventHub | Azure Event Hubs | Outbound | Yes | Yes |
 | Power BI | Power BI and Microsoft Fabric | Both | Yes | Yes |

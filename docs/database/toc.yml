@@ -65,6 +65,16 @@ items:
       href: sql/tutorial-create-application.md
     - name: 9. Clean up resources
       href: sql/tutorial-clean-up.md
+  - name: AI
+    items:
+    - name: Intelligent applications and AI
+      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications?context=/fabric/context/context&view=fabric&preserve-view=true
+    - name: Intelligent applications and AI FAQ
+      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications-faq?context=/fabric/context/context&view=fabric&preserve-view=true
+    - name: Vectors and embeddings
+      href: /sql/sql-server/ai/vectors?context=/fabric/context/context&view=fabric&preserve-view=true
+    - name: Vectors and embeddings FAQ
+      href: /sql/sql-server/ai/vectors-faq?context=/fabric/context/context&view=fabric&preserve-view=true
   - name: Data recovery
     items:
     - name: Backups
@@ -85,6 +95,8 @@ items:
       href: sql/connect.md
     - name: Connect with Python
       href: sql/connect-python.md
+    - name: Jupyter Notebooks
+      href: sql/connect-jupyter-notebook.md
     - name: SQL Query editor
       href: ./sql/query-editor.md
     - name: Source control

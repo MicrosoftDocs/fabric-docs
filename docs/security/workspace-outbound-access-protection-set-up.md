@@ -29,6 +29,9 @@ This article explains how to set up outbound access protection for your Fabric w
 
 ## Enable workspace outbound access protection 
 
+> [!NOTE]
+> The workspace-level setting to block outbound public access can take up to 15 mins to take effect.
+
  ### Using the Fabric portal
 
 1. Sign in to Fabric with an account that has the Admin role in the workspace where you want to set up outbound access protection.
@@ -115,9 +118,9 @@ This section describes how to establish connectivity between an outbound access 
 > [!IMPORTANT]
 > The activation status shows as *Provisioning* and approval as blank. A tenant admin must approve this request as described in the following section.
 
-### Tenant admin: Approve the managed private endpoint connection
+### Private Link Service Owner: Approve the managed private endpoint connection
 
-A tenant admin must approve the managed private endpoint connection by completing the following steps. 
+The private link service owner must approve the managed private endpoint connection by completing the following steps. 
 
 1. Go to the Azure portal, search for **Private Link Services**, and open the **Private Link Center**.
 

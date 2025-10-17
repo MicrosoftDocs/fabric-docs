@@ -146,6 +146,9 @@ conceptualContent:
         # Card
         - title: Migrate to Fabric
           links:
+          - url: fundamentals/migration.md
+            itemType: overview
+            text: Migrate to Fabric overview
           - url: data-factory/upgrade-paths.md
             itemType: concept
             text: Migrate to Data Factory
@@ -216,7 +219,7 @@ conceptualContent:
             itemType: how-to-guide
             text: Get data with Real-Time hub          
           footerLink:
-            url: onelake/create-onelake-shortcut.md
+            url: fundamentals/migration.md
             text: See more
         # Card
         - title: Store data

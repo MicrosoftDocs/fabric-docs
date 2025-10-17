@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: overview
 ms.custom:
-ms.date: 09/29/2025
+ms.date: 10/16/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -48,7 +48,6 @@ The following item types aren't currently supported in workspaces enabled with w
 * Default semantic models
 * Lakehouses with schemas
 * Spark connectors for SQL Data Warehouse
-* Gateway-based connections in Data Pipelines and Copy Jobs
 
 If a workspace contains any unsupported item types, inbound public access can't be restricted for the workspace, even if workspace-level private link is set up. 
 
@@ -59,10 +58,6 @@ When working with unsupported item types, be aware of the following consideratio
 * **Deployment pipelines:** When a workspace is assigned to a deployment pipeline, it can't be configured to block public access, as deployment pipelines don't currently support workspace-level private links.
 
 * **Default semantic models:** Existing lakehouses, warehouses, and mirrored databases use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse, warehouse, or mirrored database.
-
-* **Data Pipelines and Copy Jobs:** Data Pipelines and Copy Jobs are supported in workspaces enabled with private links. However, the following scenario isn't currently supported:
-
-   * *Gateway-based connections:* Data Pipelines and Copy Jobs can't use connections that rely on an on-premises data gateway or a virtual network (VNet) data gateway infrastructure. This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
 
 ## Management options for supported item types
 
@@ -299,7 +294,7 @@ You can manage mirrored databases in workspaces enabled with private links by us
 
 ## Supported and unsupported management tools
 
-- You can use either the Fabric portal or the REST API to manage all [supported item types](#supported-item-types-for-workspace-level-private-link) in workspaces with private links enabled. If a workspace allows public access, the Fabric portal continues to function using public connectivity. If a workspace is configured to deny inbound public access, the Fabric portal displays an **Access restricted** page.
+- You can use either the Fabric portal or REST API to manage all [supported item types](#supported-item-types-for-workspace-level-private-link) in workspaces with workspace private links enabled. When a workspace allows public access, the Fabric portal continues to function using public connectivity. If a workspace is configured to deny inbound public access, you can access it in the Fabric portal only when the request originates from the workspace's associated private endpoint. If access is attempted from public connectivity or from a different private endpoint, the Fabric portal displays an "Access Restricted" message. 
 - Direct deeplinks to a Monitoring hub Level 2 (L2) page might not work as expected when using workspace-level private links. You can access the L2 page by first navigating to the Monitoring hub's Level 1 (L1) page in the Fabric portal.
 - SQL Server Management Studio (SSMS) is supported for connecting to warehouses via workspace-level private link.
 - Storage Explorer can be used with workspace-level private links.

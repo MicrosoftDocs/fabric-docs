@@ -5,7 +5,7 @@ ms.topic: concept-article
 author: eric-urban
 ms.author: eur
 ms.reviewer: abhishjain
-ms.date: 08/12/2025
+ms.date: 10/07/2025
 #customer intent: As a data engineer, I want to create materialized lake views in a lakehouse so that I can optimize query performance and manage data quality.
 ---
 
@@ -145,10 +145,6 @@ DROP MATERIALIZED LAKE VIEW customers_enriched;
 * Data Manipulation Language (DML) statements aren't supported with materialized lake views.
 * User-defined functions in `CREATE TABLE AS SELECT` (CTAS) statements aren't supported.
 * You can't use temporary views to define materialized lake views.
-
-## Known issues
-
-* Creating a materialized lake view by using a common table expression (CTE) works, but subsequent refreshes might fail. In such cases, re-create the view without using a CTE.
 
 ## Related content
 

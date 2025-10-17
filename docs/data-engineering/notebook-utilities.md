@@ -2,8 +2,8 @@
 title: NotebookUtils (former MSSparkUtils) for Fabric
 description: Use NotebookUtils, a built-in package for Fabric Notebook, to work with file systems, modularize and chain notebooks together, manage data engineering items, and work with credentials.
 ms.reviewer: jingzh
-ms.author: eur
-author: eric-urban
+ms.author: jingzh
+author: JeneZhang
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
@@ -324,7 +324,7 @@ notebookutils.notebook.validateDAG(DAG)
 **Considerations:**
 
 - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
-- The upper limit for notebook activities or concurrent notebooks is **50**. Exceeding this limit may lead to stability and performance issues due to high compute resource usage. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
+- The default number of concurrent notebooks is **50** for Spark notebook, while it's default to **25** for Python Notebook. You can customize this value, but excessive parallelism may lead to stability and performance issues due to high compute resource usage. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
 - The default time-out for entire DAG is 12 hours, and the default time-out for each cell in child notebook is 90 seconds. You can change the time-out by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter.
 
 ### Exit a notebook

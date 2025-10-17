@@ -46,11 +46,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Azure Files under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-files/source.png" alt-text="Screenshot showing the source tab and the list of properties." lightbox="./media/connector-azure-files/source.png":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an Azure Files connection from the connection list. If no connection exists, then create a new Azure Files connection by selecting **New**.
 - **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, **List of files** as your file path type. The configuration of each setting is:
 
@@ -119,7 +116,6 @@ The following properties are supported for Azure Files under the **Destination**
 
 The following properties are **required**:
 
-- **Data store type:** Select **External**.
 - **Connection:** Select an Azure Files connection from the connection list. If the connection doesn't exist, then create a new Azure Files connection by selecting **New**.
 - **File path**: Select **Browse** to choose the file that you want to copy or fill in the path manually.
 - **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
@@ -154,7 +150,6 @@ The following tables contain more information about the copy activity in Azure F
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|  **External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your Azure Files connection> |Yes|connection|
 |**File path type** |The file path type used to get source data.|• File path <br>• Prefix<br>• Wildcard file path<br>• List of files|Yes |/|
 |*For **File path*** |||||
@@ -180,7 +175,6 @@ The following tables contain more information about the copy activity in Azure F
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External** |Yes|/|
 |**Connection** |Your connection to the destination data store.|\<your connection>|Yes|connection|
 |**File path**|The folder/file path to the destination file.|< folder/file path > |Yes |/|
 | **Directory** |The path to the folder under the specified bucket. | \<your folder name> |No|folderpath|
