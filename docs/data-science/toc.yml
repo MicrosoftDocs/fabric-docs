@@ -74,7 +74,7 @@ items:
         - name: Best practices for configuring data agents 
           href: data-agent-configuration-best-practices.md
         - name: Add Power BI semantic model as data source (preview)
-          href: semantic-model-in-data-agent.md
+          href: data-agent-semantic-model.md
         - name: How to configure a data agent
           href: develop-iterative-process-data-agent.md
     - name: How to consume a Fabric data agent
