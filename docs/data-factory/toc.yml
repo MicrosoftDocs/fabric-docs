@@ -1046,6 +1046,8 @@
                 href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
               - name: Transform data using dbt
                 href: apache-airflow-jobs-dbt-fabric.md
+          - name: Apache Airflow compute
+            href: apache-airflow-compute.md
       - name: CI/CD for pipelines
         href: cicd-pipelines.md
       - name: Control flow activities
