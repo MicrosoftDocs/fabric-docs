@@ -1006,6 +1006,8 @@
         items: 
           - name: Concepts
             href: apache-airflow-jobs-concepts.md
+          - name: Apache Airflow compute
+            href: apache-airflow-compute.md
           - name: How-to
             items: 
               - name: Synchronize your code from an existing Git repo
@@ -1046,8 +1048,6 @@
                 href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
               - name: Transform data using dbt
                 href: apache-airflow-jobs-dbt-fabric.md
-          - name: Apache Airflow compute
-            href: apache-airflow-compute.md
       - name: CI/CD for pipelines
         href: cicd-pipelines.md
       - name: Control flow activities
