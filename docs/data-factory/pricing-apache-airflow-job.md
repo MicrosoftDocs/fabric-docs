@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: abnarain
 author: nabhishek
 ms.topic: conceptual
-ms.date: 07/25/2025
+ms.date: 10/17/2025
 ms.custom: airflows
 ---
 
@@ -19,6 +19,9 @@ Apache Airflow jobs are billed based on pool uptime. Each Apache Airflow job has
 
 - The **Starter pool** provides zero-latency startup and shuts down automatically after 20 minutes of inactivity to help save costs.
 - The **Custom pool** offers more flexibility with pools that stay running all the time, which is great for production scenarios where the Airflow scheduler needs to run 24/7.
+
+>[!TIP]
+> For more details about Apache Airflow pool types, see [Apache Airflow compute in Fabric](apache-airflow-compute.md).
 
 The table below shows how much capacity units (CU) each Apache Ariflow job uses based on its size. By default, both "Starter" and "Custom" pools use the Large size, but you can pick Small, if you use a Custom pool. Each Apache Airflow job runs on a cluster with three nodes, unless you turn on Autoscale or add extra nodes.
 

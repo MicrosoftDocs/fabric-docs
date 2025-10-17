@@ -71,16 +71,11 @@ To run Apache Airflow custom pools, make sure your Fabric capacity is large enou
 
 Microsoft Fabric measures compute usage in **Capacity Units (CUs)**. All workloads, including Apache Airflow, use CUs.
 
-- **Small custom pool (base)**: 5 CUs, always on.
-- **Large custom pool (base)**: 10 CUs, always on.
-- **Each extra small node (when active)**: about 0.6 CUs.
-- **Each extra large node (when active)**: about 1.3 CUs.
-
-CUs are billed per second of runtime. Over time, this adds up to CU-hours. For example, running a small pool for one hour uses 5 CU-hours. If one extra small node runs for that hour, that's 5.6 CU-hours total.
+For specifics about CUs for and the pricing model for Apache Airflow pools, see [Apache Airflow job pricing for Data Factory in Microsoft Fabric](pricing-apache-airflow-job.md).
 
 For pricing specifics in your region, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/)
 
-> [!WARNING]
+> [!TIP]
 > Custom pools don't shut down automatically when idle.
 >
 > You pay for the base nodes (5 CUs for small, 10 CUs for large) as long as the pool is running, even if no jobs are running.
