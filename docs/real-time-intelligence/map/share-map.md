@@ -1,6 +1,6 @@
 ---
-title: How to share a Map 
-description: Learn how to share a Map in Microsoft Fabric Real-Time Intelligence.
+title: How to share a map 
+description: Learn how to share a map in Microsoft Fabric Real-Time Intelligence.
 ms.reviewer: smunk
 author: sinnypan
 ms.author: sipa
@@ -10,7 +10,7 @@ ms.date: 09/15/2025
 ms.search.form: Map
 ---
 
-# How to share a Map (preview)
+# How to share a map (preview)
 
 When you share a Map item in Microsoft Fabric, you grant users or groups permission to view or edit the map created in Map Builder. The map typically references backend data sources such as Lakehouse or KQL Database (Eventhouse) to render real-time or historical spatial insights.
 

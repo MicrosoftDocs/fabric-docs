@@ -1,6 +1,6 @@
 ---
 title: Spatial Job – Create tileset 
-description: Learn how to create a Map tileset in Microsoft Fabric Real-Time Intelligence.
+description: Learn how to create a map tileset in Microsoft Fabric Real-Time Intelligence.
 ms.reviewer: smunk
 author: sipa
 ms.author: sipa

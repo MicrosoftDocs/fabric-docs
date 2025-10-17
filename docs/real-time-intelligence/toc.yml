@@ -808,11 +808,11 @@ items:
       href: power-bi-data-connector.md
   - name: Map
     items:
-    - name: Create a Map
+    - name: Create a map
       href: map/create-map.md
-    - name: Customize a Map
+    - name: Customize a map
       href: map/customize-map.md
-    - name: Share a Map
+    - name: Share a map
       href: map/share-map.md
     - name: Create a tileset
       href: map/spatial-job-create-tile-sets.md

@@ -1,12 +1,12 @@
 ---
 title: Create a map
-description: Learn how to create map in Real-Time Intelligence.
+description: Learn how to create a map in Real-Time Intelligence.
 ms.reviewer: smunk
 author: sipa
 ms.author: sipa
 ms.topic: how-to
 ms.custom:
-ms.date: 09/15/2025
+ms.date: 10/17/2025
 ms.search.form: Create a map
 ---
 
@@ -77,7 +77,7 @@ Currently Map supports the following data types:
 > [!NOTE]
 > GeoJSON files larger than **20MB** must be converted into a tileset in order to be used by Microsoft Fabric Map. For more information on how to convert a GeoJSON file into tileset, see **[Create a tileset](spatial-job-create-tile-sets.md)**.
 
-#### Add data to map - GeoJSON
+#### Add data to a map - GeoJSON
 
 1. Right-click the GeoJSON file you want to render on the map, then select **Show on map**. The map immediately renders the file's spatial data using default settings.
   :::image type="content" source="media/create-map/geo-json-visualization.png" lightbox="media/create-map/geo-json-visualization.png" alt-text="Screenshot with a list of GeoJSON files that can be added to the map.":::

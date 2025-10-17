@@ -1,5 +1,5 @@
 ---
-title: Customize Map
+title: Customize a map
 description: Learn how to customize a map in Microsoft Fabric Real-Time Intelligence.
 ms.reviewer: smunk
 author: sipa
@@ -7,10 +7,10 @@ ms.author: sipa
 ms.topic: how-to
 ms.custom:
 ms.date: 09/15/2025
-ms.search.form: Customize the map
+ms.search.form: Customize a map
 ---
 
-# Customize Map (preview)
+# Customize a map (preview)
 
 The Map (preview) in Microsoft Fabric offers a comprehensive set of options for customizing the map and display. By default, the map style is set to Grayscale Light, but you can easily change the map style, apply a data color theme, and toggle the visibility of various map elements. More customization options include adding interactive controls, setting the initial map view, and selecting a display language that best suits the needs of the map's audience.
 
@@ -22,7 +22,7 @@ The Map (preview) in Microsoft Fabric offers a comprehensive set of options for 
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * A [map](create-map.md) with editing permissions and connected data sources, either geoJson files in lakehouse, or KQL querysets.
 
-## Change map settings
+## Change Map settings
 
 The Map visual in Microsoft Fabric offers a comprehensive set of options for customizing the map and display. By default, the map style is set to Grayscale Light, but you can easily change the map style, apply a data color theme, and toggle the visibility of various map elements. More customization options include adding interactive controls such as zoom, scale, pitch, compass, and world wrap, setting the initial map view, and selecting a display language that best suits the needs of the map's audience.
 
