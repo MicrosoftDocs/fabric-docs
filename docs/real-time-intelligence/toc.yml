@@ -812,7 +812,7 @@ items:
       href: map/create-map.md
     - name: Customize a map
       href: map/customize-map.md
-    - name: Share Map
+    - name: Share a Map
       href: map/share-map.md
     - name: Create a tileset
       href: map/spatial-job-create-tile-sets.md

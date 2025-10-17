@@ -10,9 +10,12 @@ ms.date: 09/15/2025
 ms.search.form: Create a map
 ---
 
-# Create a map
+# Create a map (preview)
 
-Map is a powerful geospatial visualization platform that transforms spatial data, whether static or real-time, into actionable intelligence. By uncovering patterns, relationships, and trends across space and time, Map reveals insights often missed in traditional charts and tables, helping you make informed decisions with greater clarity.
+Map (preview) is a powerful geospatial visualization platform that transforms spatial data, whether static or real-time, into actionable intelligence. By uncovering patterns, relationships, and trends across space and time, Map reveals insights often missed in traditional charts and tables, helping you make informed decisions with greater clarity.
+
+> [!IMPORTANT]
+< This feature is in [preview](../../fundamentals/preview).
 
 Map offers robust customization capabilities that let you tailor visualizations to your audience and data content. Overlay diverse data layers—such as bubbles, heatmaps, lines, polygons, and 3D extrusions—to represent complex spatial relationships. Each layer supports advanced styling options including color schemes, opacity, stroke width, and interactive tooltips. To enhance clarity and emphasize key insights, choose from multiple map styles like Grayscale, Road, Satellite, or Night.
 

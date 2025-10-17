@@ -10,9 +10,12 @@ ms.date: 09/15/2025
 ms.search.form: Create and manage tilesets
 ---
 
-# Spatial job – create tileset
+# Spatial job – create tileset (preview)
 
-Microsoft Fabric Map items enable users to visualize spatial data and derive insights by integrating both static and dynamic data sources. It uses raw data to create meaningful, actionable spatial information.
+Microsoft Fabric Map items (preview) enable users to visualize spatial data and derive insights by integrating both static and dynamic data sources. It uses raw data to create meaningful, actionable spatial information.
+
+> [!IMPORTANT]
+< This feature is in [preview](../../fundamentals/preview).
 
 In certain cases, static spatial datasets can be extremely large, making smooth rendering on the map challenging. To overcome this, Map offers a specialized tool that converts extensive spatial data, such as GeoJSON files, into high-performance **tilesets**. Tilesets are commonly used in mapping platforms to visualize large datasets, such as roads, buildings, or environmental features, without overwhelming the system or the user. This conversion into tilesets enables efficient rendering, resulting in a smoother and more responsive mapping experience.
 

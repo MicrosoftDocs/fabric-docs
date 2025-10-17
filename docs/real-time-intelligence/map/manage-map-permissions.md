@@ -10,9 +10,12 @@ ms.subservice: rti-core
 ms.search.form: Map permissions 
 ---
 
-# Manage Map permissions
+# Manage Map permissions (preview)
 
 Permissions for reading, writing, and sharing Map items follow the standard Fabric workspace roles, ensuring a consistent and secure access model across all Fabric items.
+
+> [!IMPORTANT]
+< This feature is in [preview](../../fundamentals/preview).
 
 ## Workspace roles for Map items
 
