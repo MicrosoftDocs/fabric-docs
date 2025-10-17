@@ -107,6 +107,16 @@ The table below outlines which Microsoft Fabric engines support RLS and CLS filt
 
 This section provides details on how OneLake security roles grant access to specific scopes, how that access operates, and how access is resolved across multiple roles and access types.
 
+### Table level security
+
+All OneLake tables are represented by folders in the lake, but not all folders in the lake are tables from the perspective of OneLake security and query engines in Fabric. To be considered a valid table, the following conditions must be met:
+
+- The folder exists in the Tables/ directory of an item.
+- The folder contains a _delta_log folder with corresponding JSON files for the table metadata.
+- The folder does not contain any child shortcuts.
+
+Any tables that do not meet those criteria will have access denied if table level security is configured on them.
+
 ### Metadata security
 
 OneLake security's Read access to data grants full access to the data and metadata in a table. For users with no access to a table, the data is never exposed and generally the metadata isn't visible. This also applies to column level security and a user's ability to see or not see a column in that table. However, OneLake security doesn't guarantee that the **metadata** for a table won't be accessible, specifically in the following cases:
