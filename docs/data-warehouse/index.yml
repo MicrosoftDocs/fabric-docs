@@ -62,6 +62,8 @@ landingContent:
             url: row-level-security.md
           - text: Column-level security
             url: column-level-security.md
+          - text: Encryption 
+            url: encyption.md
           - text: Share your data
             url: share-warehouse-manage-permissions.md            
   # Card 
