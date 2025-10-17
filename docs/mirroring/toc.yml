@@ -34,12 +34,16 @@ items:
     - name: Secure data 
       displayName: Securing data in mirrored Azure SQL Database
       href: azure-sql-database-how-to-data-security.md
-    - name: Troubleshoot
-      displayName: Troubleshoot mirrored Azure SQL Database
-      href: azure-sql-database-troubleshoot.md
     - name: Limitations
       displayName: Limitations in mirrored Azure SQL Database
       href: azure-sql-database-limitations.md
+    - name: Troubleshoot
+      items:
+        - name: Troubleshoot
+          displayName: Troubleshoot mirrored Azure SQL Database
+          href: azure-sql-database-troubleshoot.md
+        - name: Automatic reseed
+          href: azure-sql-database-automatic-reseed.md
 - name: Mirroring Azure SQL Managed Instance
   items:
     - name: Mirrored database from Azure SQL Managed Instance
@@ -52,12 +56,17 @@ items:
     - name: Secure data 
       displayName: Securing data in mirrored Azure SQL Managed Instance
       href: azure-sql-managed-instance-how-to-data-security.md
-    - name: Troubleshoot
-      displayName: Troubleshoot mirrored Azure SQL Managed Instance
-      href: azure-sql-managed-instance-troubleshoot.md
     - name: Limitations
       displayName: Limitations in mirrored Azure SQL Managed Instance
       href: azure-sql-managed-instance-limitations.md
+    - name: Troubleshoot
+      items:
+      - name: Troubleshoot
+        displayName: Troubleshoot mirrored Azure SQL Managed Instance
+        href: azure-sql-managed-instance-troubleshoot.md
+      - name: Automatic reseed
+        href: azure-sql-managed-instance-automatic-reseed.md
+
 - name: Mirroring Azure Cosmos DB
   items: 
     - name: Mirrored databases from Azure Cosmos DB
