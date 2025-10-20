@@ -68,13 +68,13 @@ items:
   - name: AI
     items:
     - name: Intelligent applications and AI
-      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications?context=/fabric/context/context&view=fabric&preserve-view=true
+      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications?context=/fabric/context/context&view=fabric&toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&preserve-view=true
     - name: Intelligent applications and AI FAQ
-      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications-faq?context=/fabric/context/context&view=fabric&preserve-view=true
+      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications-faq?context=/fabric/context/context&toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric&preserve-view=true
     - name: Vectors and embeddings
-      href: /sql/sql-server/ai/vectors?context=/fabric/context/context&view=fabric&preserve-view=true
+      href: /sql/sql-server/ai/vectors?context=/fabric/context/context&view=fabric&toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&preserve-view=true
     - name: Vectors and embeddings FAQ
-      href: /sql/sql-server/ai/vectors-faq?context=/fabric/context/context&view=fabric&preserve-view=true
+      href: /sql/sql-server/ai/vectors-faq?context=/fabric/context/context&view=fabric&toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&preserve-view=true
   - name: Data recovery
     items:
     - name: Backups
