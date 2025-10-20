@@ -234,7 +234,6 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Zendesk](/power-query/connectors/zendesk) | ✓/− |  |  |  |
 | Zoho Creator | ✓/− |  |  |  |
 | Zucchetti HR Infinity (Beta) | ✓/− |  |  |  |
-```
 
 ## Related content
 
