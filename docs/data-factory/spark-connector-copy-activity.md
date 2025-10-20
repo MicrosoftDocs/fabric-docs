@@ -90,10 +90,10 @@ The Spark connector in Fabric is primarily designed for read operations:
   - For write-back scenarios, use Fabric APIs or Lakehouse write methods outside of copy activity.
 
 ## Mapping
-For Mapping tab configuration, see https://learn.microsoft.com/fabric/data-factory/.
+For Mapping tab configuration, see [our documentation](fabric/data-factory/).
 
 ## Settings
-For Settings tab configuration, go to https://learn.microsoft.com/fabric/data-factory/.
+For Settings tab configuration, go to [our documentation](fabric/data-factory/).
 
 
 ## Security
