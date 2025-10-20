@@ -41,7 +41,7 @@ First, use the **Settings** section for a container to customize and observe the
 
 1. Next, optionally configure the **Time to Live** and **Geospatial Configuration** values.
 
-    :::image source="media/how-to-configure-container/settings.png" lightbox="media/how-to-configure-container/settings-full.png" alt-text="Screenshot of the 'Settings' section for a container within a database in the Fabric portal.":::
+    :::image type="content" source="media/how-to-configure-container/settings.png" lightbox="media/how-to-configure-container/settings-full.png" alt-text="Screenshot of the 'Settings' section for a container within a database in the Fabric portal.":::
 
 1. Select **Save** to persist your changes.
 
@@ -74,7 +74,7 @@ Now, use the **Indexing Policy** section to customize how indexing works for you
     }
     ```
 
-    :::image source="media/how-to-configure-container/indexing-policy.png" lightbox="media/how-to-configure-container/indexing-policy-full.png" alt-text="Screenshot of the 'Indexing Policy' section for a container within a database in the Fabric portal.":::
+    :::image type="content" source="media/how-to-configure-container/indexing-policy.png" lightbox="media/how-to-configure-container/indexing-policy-full.png" alt-text="Screenshot of the 'Indexing Policy' section for a container within a database in the Fabric portal.":::
 
     > [!NOTE]
     > By default, Cosmos DB in Fabric automatically indexes every property for all items in your container. The policy illustrated in this example is the default policy for a new container.
