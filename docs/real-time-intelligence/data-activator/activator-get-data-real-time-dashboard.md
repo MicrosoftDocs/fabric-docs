@@ -6,7 +6,7 @@ ms.author: spelluru
 ms.topic: how-to
 ms.reviewer: guregini
 ms.custom: FY25Q1-Linter
-ms.date: 09/15/2024
+ms.date: 10/20/2025
 ms.search.form: Real-Time Dashboard
 #Customer intent: As a customer, I want to learn how to create Activator alerts from a Real-Time Dashboard so that I can trigger notifications when conditions are met on daa in the dashboard.
 ---
@@ -26,24 +26,38 @@ Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to trigger no
 ## Create an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule using **Set alert**
 
 1. Open a Real-Time Dashboard.
-1. Toggle from **viewing** to **editing** mode in the toolbar.
+1. Toggle from **Viewing** to **Editing** mode in the toolbar.
 1. Choose a tile on the Real-Time Dashboard for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to monitor.
-1. Select the **More menu (...)** at the top-right of the tile, and choose **Set Alert**. You can also use the *Set Alert* button in the Real-Time Dashboard menu bar.
+1. Select **Set Alert** from the tile's toolbar or in the **More menu (...)** at the top-right of the tile. You can also use the *Set Alert* button in the Real-Time Dashboard menu bar.
 
-:::image type="content" source="media/activator-get-data/data-activator-get-data-06.png" alt-text="Screenshot showing how to add an Activator rule from a tile.":::
+:::image type="content" source="media/activator-get-data/set-alerts.png" alt-text="Screenshot showing how to add an Activator rule from a tile." lightbox: true:::
 
 ## Define the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alert conditions
 
-In the **Set alert** pane, define your rule conditions. Rule conditions include deciding which field to monitor and setting the threshold. Select whether to receive your notification in email or in Microsoft Teams. Set the location to save this [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule and select **Create**.
+### Condition
 
-:::image type="content" source="media/activator-get-data/data-activator-get-data-07.png" alt-text="Screenshot of create an alert window in Activator.":::
+In the **Set alert** pane, define your rule conditions. Rule conditions include deciding which field to monitor and setting the threshold.
 
-## Optional: Edit your rule in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
+:::image type="content" source="media/activator-get-data/set-alerts-location.png" alt-text="Screenshot of create an alert window in Activator, save condition highlighted." lightbox: true:::
+
+### Action
+
+Choose the action to take when the alert triggers. You can receive an email or a Teams message when the condition is met or automatically run a Fabric item.
+
+:::image type="content" source="media/activator-get-data/set-alerts-action.png" alt-text="Screenshot of create an alert window in Activator, save location highlighted." lightbox: true:::
+
+### Save location
+
+Set the location to save this [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule and select **Create**.
+
+:::image type="content" source="media/activator-get-data/set-alerts-location.png" alt-text="Screenshot of create an alert window in Activator, save location highlighted." lightbox: true:::
+
+## Modify your rule in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
 When your rule is ready, you receive a notification with a link to your rule. Select the link to edit your rule in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. Editing your rule is useful if you want to do one of the following refinements:
 
 * Add other recipients to your alert.
-* Define a more complex alert condition than is possible in the *Set alert* pane.
+* Define a more complex alert condition than is possible in the **Set alert** pane.
 
 For information on how to edit rules in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], see [Create activators in design mode](activator-create-activators.md).
 
@@ -53,17 +67,17 @@ If you have a chart with a time axis in Power BI or in a Real-Time Dashboard, th
 
 ### Limitation example
 
-The following example illustrates this limitation. In this example, a chart shows the number of items sold over time. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] first reads the chart in the morning of January 3. At this time, the chart shows 10 items sold:
+The following example illustrates this limitation. In this example, a chart shows the number of bikes bikes sold. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] first reads the chart in the morning of January 3. At this time, the chart shows 10 bikes sold:
 
-|Date        | Number of items sold
+|Date        | Number of bikes sold
 |------------|---------------------
 |1 January   |20
 |2 January   |18
 |3 January   |10
 
-Later in the day of January 3, more items are sold. The chart updates to reflect this change, and the number of items sold now reads 15:
+Later in the day of January 3, more bikes are sold. The chart updates to reflect this change, and the number of bikes sold now reads 15:
 
-|Date        | Number of items sold
+|Date        | Number of bikes sold
 |------------|---------------------
 |1 January   |20
 |2 January   |18
