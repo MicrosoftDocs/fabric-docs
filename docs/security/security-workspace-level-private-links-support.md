@@ -283,13 +283,17 @@ Manage variable libraries in workspaces enabled with private links by using the 
 
 ### Mirrored database support
 
-You can manage mirrored databases in workspaces enabled with private links by using the following REST APIs:
+You can manage mirrored databases in workspaces enabled with private links by using the Fabric portal or REST API.
 
-* [Fabric Mirroring Public REST API](/fabric/database/mirrored-database/mirrored-database-rest-api)
+#### [Fabric portal](#tab/fabric-portal-14)
+* [Mirrored database tutorials](/fabric/mirroring/overview)
+#### [REST API](#tab/rest-apis-14)
+* [Fabric Mirroring Public REST API](/fabric/mirroring/mirrored-database-rest-api)
 * [Items - REST API (MirroredDatabase)](/rest/api/fabric/mirroreddatabase/items)
+---
 
 > [!NOTE]
-> * Currently, workspace-level private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring) and [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started. 
+> * Currently, workspace-level private link is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db) and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server) (using SQL Server 2025 CTP 2.0 or higher version). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started. 
 > * For open mirroring, when your workspace is configured to deny inbound public access, ensure the publisher writes data into the OneLake landing zone via a private link with workspace FQDN.
 
 ## Supported and unsupported management tools
