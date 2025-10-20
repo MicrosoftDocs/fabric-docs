@@ -283,8 +283,11 @@ Manage variable libraries in workspaces enabled with private links by using the 
 
 ### Mirrored database support
 
-You can manage mirrored databases in workspaces enabled with private links by using the following REST APIs:
+You can manage mirrored databases in workspaces enabled with private links by using the Fabric portal or REST API.
 
+#### [Fabric portal](#tab/fabric-portal-14)
+* [Mirrored database tutorials](/fabric/mirroring/overview)
+#### [REST API](#tab/rest-apis-14)
 * [Fabric Mirroring Public REST API](/fabric/mirroring/mirrored-database-rest-api)
 * [Items - REST API (MirroredDatabase)](/rest/api/fabric/mirroreddatabase/items)
 
