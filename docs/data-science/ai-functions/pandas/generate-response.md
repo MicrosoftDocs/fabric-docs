@@ -15,25 +15,24 @@ ms.search.form: AI functions
 
 The `ai.generate_response` function uses generative AI to generate custom text responses that are based on your own instructions, with a single line of code.
 
-> [!IMPORTANT]
-> This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
->
-> - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
- > - By default, the *gpt-4.1-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
-> - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
-
 > [!NOTE]
 > - This article covers using *ai.generate_response* with pandas. To use *ai.generate_response* with PySpark, see [this article](../pyspark/generate-response.md).
 > - See additional AI functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI functions](./configuration.md).
 
 ## Overview
 
-The `ai.generate_response` function extends the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) class. The `ai.generate_response` function differs from the other AI functions, because those functions extend the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class.
+The `ai.generate_response` function can extend the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) class and the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class.
 
-To generate custom text responses row by row, call this function on an entire pandas DataFrame. Your prompt can be a literal string, where the function considers all columns of the DataFrame while generating responses. Your prompt can also be a format string, where the function considers only those column values that appear between curly braces in the prompt.
+To generate custom text responses row by row, you can either call this function on a pandas series or an entire pandas DataFrame.
+
+If calling the function on an entire pandas DataFrame, your prompt can be a literal string, and the function will consider all columns of the DataFrame while generating responses. Your prompt can also be a format string, where the function considers only those column values that appear between curly braces in the prompt.
 
 The function returns a pandas Series that contains custom text responses for each row of input. The text responses can be stored in a new DataFrame column.
+
+> [!TIP]
+>
+> Learn how to craft more effective prompts to get higher-quality responses by following [OpenAI's prompting tips for gpt-4.1](https://cookbook.openai.com/examples/gpt4-1_prompting_guide#2-long-context).
 
 ## Syntax
 
@@ -102,16 +101,17 @@ The example code cell with a simple prompt provides the following output:
 The example code cell with a template prompt provides the following output:
 :::image type="content" source="../../media/ai-functions/generate-response-template-example-output.png" alt-text="Screenshot showing a data frame with all the columns specified along with a 'response column'. The 'response' column contains a punchy subject line for the product in the 'product' column." lightbox="../../media/ai-functions/generate-response-template-example-output.png":::
 
+
 ## Related content
 
-- Use [`ai.generate_response` with PySpark](../pyspark/generate-response.md).
-- Detect sentiment with [`ai.analyze_sentiment`](./analyze-sentiment.md).
-- Categorize text with [`ai.classify`](./classify.md).
-- Extract entities with [`ai_extract`](./extract.md).
-- Fix grammar with [`ai.fix_grammar`](./fix-grammar.md).
-- Calculate similarity with [`ai.similarity`](./similarity.md).
-- Summarize text with [`ai.summarize`](./summarize.md).
-- Translate text with [`ai.translate`](./translate.md).
+- Use [ai.generate_response with PySpark](../pyspark/generate-response.md).
+- Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
+- Categorize text with [ai.classify](./classify.md).
+- Extract entities with [ai_extract](./extract.md).
+- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
+- Calculate similarity with [ai.similarity](./similarity.md).
+- Summarize text with [ai.summarize](./summarize.md).
+- Translate text with [ai.translate](./translate.md).
 
 - Learn more about the [full set of AI functions](../overview.md).
 - Customize the [configuration of AI functions](./configuration.md).

@@ -15,17 +15,11 @@ ms.search.form: AI functions
 
 The `ai.translate` function uses generative AI to translate input text into a new language (of your choice), with a single line of code.
 
-> [!IMPORTANT]
-> This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
->
-> - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
- > - By default, the *gpt-4.1-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
-> - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with the built-in AI endpoint in Fabric.
-
 > [!NOTE]
 > - This article covers using *ai.translate* with PySpark. To use *ai.translate* with pandas, see [this article](../pandas/translate.md).
 > - See additional AI functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI functions](./configuration.md).
+
 ## Overview
 
 The `ai.translate` function is available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify an existing input column name as a parameter, along with a target language.
@@ -70,15 +64,16 @@ display(translations)
 This example code cell provides the following output:
 :::image type="content" source="../../media/ai-functions/translate-example-output.png" alt-text="Screenshot showing a data frame with a 'text' column and a 'translations' column. The 'translations' column contains the English text in the 'text' column, translated in Spanish." lightbox="../../media/ai-functions/translate-example-output.png":::
 
+
 ## Related content
 
-- Use [`ai.translate` with pandas](../pandas/translate.md).
-- Categorize text with [`ai.classify`](./classify.md).
-- Detect sentiment with [`ai.analyze_sentiment`](./analyze-sentiment.md).
-- Extract entities with [`ai_extract`](./extract.md).
-- Fix grammar with [`ai.fix_grammar`](./fix-grammar.md).
-- Summarize text with [`ai.summarize`](./summarize.md).
-- Answer custom user prompts with [`ai.generate_response`](./generate-response.md).
+- Use [ai.translate with pandas](../pandas/translate.md).
+- Categorize text with [ai.classify](./classify.md).
+- Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
+- Extract entities with [ai_extract](./extract.md).
+- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
+- Summarize text with [ai.summarize](./summarize.md).
+- Answer custom user prompts with [ai.generate_response](./generate-response.md).
 - Learn more about the [full set of AI functions](./overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

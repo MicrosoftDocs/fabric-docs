@@ -14,16 +14,10 @@ ms.search.form: AI functions
 
 AI functions are designed to work out of the box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
 
-> [!IMPORTANT]
-> This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
->
-> - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
-> - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with the built-in AI endpoint in Fabric.
-
 > [!NOTE]
 > - This article covers customizing AI functions with pandas. To customize AI functions with PySpark, see [this article](../pyspark/configuration.md).
 > - See additional AI functions in [this overview article](../overview.md).
+> - > - Learn how to customize the [configuration of AI functions](./configuration.md).
 
 ## Configurations
 

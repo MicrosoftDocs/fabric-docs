@@ -12,19 +12,12 @@ ms.search.form: AI functions
 
 # Use ai.analyze_sentiment with PySpark
 
-The `ai.analyze_sentiment` function uses generative AI to detect the emotional state of the input text, with a single line of code. It can detect whether the emotional state of the input is positive, negative, mixed, or neutral. If the function can't determine the sentiment, it leaves the output blank.
-
-> [!IMPORTANT]
-> This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
->
-> - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
- > - By default, the *gpt-4.1-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
-> - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with the built-in AI endpoint in Fabric.
+The `ai.analyze_sentiment` function uses generative AI to detect the emotional state of the input text, with a single line of code. It can detect whether the emotional state of the input is positive, negative, mixed, or neutral. It can also detect the emotional state according to your specified labels. If the function can't determine the sentiment, it leaves the output blank.
 
 > [!NOTE]
 > - This article covers using *ai.analyze_sentiment* with PySpark. To use *ai.analyze_sentiment* with pandas, see [this article](../pandas/analyze-sentiment.md).
 > - See additional AI functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI functions](./configuration.md).
 
 ## Overview
 
@@ -35,7 +28,11 @@ The function returns a new DataFrame, with sentiment labels for each input text 
 ## Syntax
 
 ```python
+# Default sentiment labels
 df.ai.analyze_sentiment(input_col="input", output_col="sentiment")
+
+# Custom sentiment labels
+df.ai.analyze_sentiment(input_col="input", output_col="sentiment", labels=["happy", "angry", "indifferent"])
 ```
 
 ## Parameters
@@ -44,11 +41,12 @@ df.ai.analyze_sentiment(input_col="input", output_col="sentiment")
 |---|---|
 | `input_col` <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column with input text values to analyze for sentiment. |
 | `output_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store the sentiment label for each row of input text. If you don't set this parameter, a default name generates for the output column. |
+| `labels` <br> Optional | One or more [strings](https://docs.python.org/3/library/stdtypes.html#str) that represent the set of sentiment labels to match to input text values. |
 | `error_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each row of input text. If you don't set this parameter, a default name generates for the error column. If an input row has no errors, the value in this column is `null`. |
 
 ## Returns
 
-The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) that includes a new column that contains sentiment labels that match each row of text in the input column. The sentiment labels include `positive`, `negative`, `neutral`, or `mixed`. If a sentiment can't be determined, the return value is `null`.
+The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) that includes a new column that contains sentiment labels that match each row of text in the input column. The default sentiment labels include `positive`, `negative`, `neutral`, or `mixed`. If custom labels are specified, those labels will be used instead. If a sentiment can't be determined, the return value is `null`.
 
 ## Example
 

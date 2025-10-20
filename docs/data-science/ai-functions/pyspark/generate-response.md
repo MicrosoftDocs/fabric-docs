@@ -15,23 +15,20 @@ ms.search.form: AI functions
 
 The `ai.generate_response` function uses generative AI to generate custom text responses that are based on your own instructions, with a single line of code.
 
-> [!IMPORTANT]
-> This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
->
-> - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
- > - By default, the *gpt-4.1-mini* model currently powers AI functions. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
-> - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
-
 > [!NOTE]
 > - This article covers using *ai.generate_response* with PySpark. To use *ai.generate_response* with pandas, see [this article](../pandas/generate-response.md).
 > - See additional AI functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI functions](./configuration.md).
 
 ## Overview
 
 The `ai.generate_response` function is available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify the name of an existing input column as a parameter. You must also specify a string-based prompt, and a Boolean that indicates whether that prompt should be treated as a format string.
 
 The function returns a new DataFrame, with custom responses for each input text row stored in an output column.
+
+> [!TIP]
+>
+> Learn how to craft more effective prompts to get higher-quality responses by following [OpenAI's prompting tips for gpt-4.1](https://cookbook.openai.com/examples/gpt4-1_prompting_guide#2-long-context).
 
 ## Syntax
 
@@ -102,16 +99,17 @@ The example code cell with a simple prompt provides the following output:
 The example code cell with a template prompt provides the following output:
 :::image type="content" source="../../media/ai-functions/generate-response-template-example-output.png" alt-text="Screenshot showing a data frame with all the columns specified along with a 'response column'. The 'response' column contains a punchy subject line for the product in the 'product' column." lightbox="../../media/ai-functions/generate-response-template-example-output.png":::
 
+
 ## Related content
 
-- Use [`ai.generate_response` with pandas](../pandas/generate-response.md).
-- Calculate similarity with [`ai.similarity`](./similarity.md).
-- Categorize text with [`ai.classify`](./classify.md).
-- Detect sentiment with [`ai.analyze_sentiment`](./analyze-sentiment.md).
-- Extract entities with [`ai_extract`](./extract.md).
-- Fix grammar with [`ai.fix_grammar`](./fix-grammar.md).
-- Summarize text with [`ai.summarize`](./summarize.md).
-- Translate text with [`ai.translate`](./translate.md).
+- Use [ai.generate_response with pandas](../pandas/generate-response.md).
+- Calculate similarity with [ai.similarity](./similarity.md).
+- Categorize text with [ai.classify](./classify.md).
+- Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
+- Extract entities with [ai_extract](./extract.md).
+- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
+- Summarize text with [ai.summarize](./summarize.md).
+- Translate text with [ai.translate](./translate.md).
 - Learn more about the [full set of AI functions](./overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
