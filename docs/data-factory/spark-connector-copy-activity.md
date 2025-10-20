@@ -61,36 +61,39 @@ Also consider the Synapsesql Method signature. The following command shows the s
 
 synapsesql(tableName: String = "<Part1.Part2.Part3>") => org.apache.spark.sql.DataFrame
 
-  In addition to reading from a table or view directly, this connector also allows you to specify a custom or passthrough query, which gets passed to SQL engine and result is returned back to Spark:
-spark.read.option(Constants.DatabaseName, "<warehouse/lakehouse name>").synapsesql("<T-SQL Query>") => org.apache.spark.sql.DataFrame
-
+  In addition to reading from a table or view directly, this connector also allows you to specify a custom or passthrough query. This gets passed to SQL engine and result is returned back in Spark:
+```spark.read.option(Constants.DatabaseName, "{warehouse/lakehouse name}").synapsesql("{T-SQL Query}")
+```
 
 ## Specify SQL Endpoint Explicitly 
   // For warehouse
-spark.conf.set("spark.datawarehouse.<warehouse name>.sqlendpoint", "<sql endpoint,port>")
+```spark.conf.set("spark.datawarehouse.{warehouse name}.sqlendpoint", "{sql endpoint,port}")
+```
 // For lakehouse
-spark.conf.set("spark.lakehouse.<lakehouse name>.sqlendpoint", "<sql endpoint,port>")
+```spark.conf.set("spark.lakehouse.[lakehouse name].sqlendpoint", "[sql endpoint,port]")
+```
 // Read from table
-spark.read.synapsesql("<warehouse/lakehouse name>.<schema name>.<table or view name>")
+```spark.read.synapsesql("[lakehouse name].[schema name].[table or view name]")
+```
 
 ## Version 
 Use Spark connector v2.0 for improved native Spark support. We suggest upgrading from v1.0.
 
 ## Advanced Options 
-**Query timeout (minutes)**: Default is 120 minutes. Specify timespan format, e.g., "02:00:00".
-**Partitioning**: The Fabric Spark connector does not provide built-in partition options like PostgreSQL. Use Spark’s native DataFrame partitioning for performance tuning.
+**Query timeout (minutes)**: Default is 120 minutes. Specify timespan format, for example, "02:00:00".
+**Partitioning**: The Fabric Spark connector doesn't provide built-in partition options like PostgreSQL. Use Spark’s native DataFrame partitioning for performance tuning.
 
 
 ## Destination 
 The Spark connector in Fabric is primarily designed for read operations:
-  - Bulk write or upsert operations are not supported in copy activity.
+  - Bulk write or upsert operations aren't supported in copy activity.
   - For write-back scenarios, use Fabric APIs or Lakehouse write methods outside of copy activity.
 
 ## Mapping
-For Mapping tab configuration, see https://learn.microsoft.com/en-us/fabric/data-factory/.
+For Mapping tab configuration, see https://learn.microsoft.com/fabric/data-factory/.
 
 ## Settings
-For Settings tab configuration, go to https://learn.microsoft.com/en-us/fabric/data-factory/.
+For Settings tab configuration, go to https://learn.microsoft.com/fabric/data-factory/.
 
 
 ## Security
@@ -99,10 +102,10 @@ Enforces **object-level, row-level**, and **column-level** security as defined i
 
 ## Best Practices
 Use custom queries for selective data retrieval.
-Leverage Spark DataFrame partitioning for large datasets.
+Use Spark DataFrame partitioning for large datasets.
 Upgrade to v2.0 for enhanced performance and SSL support.
 
 ## Related Content 
-  - [https://learn.microsoft.com/en-us/fabric/data-factory/](https://learn.microsoft.com/en-us/fabric/data-factory/)
+  - [https://learn.microsoft.com/en-us/fabric/data-factory/](fabric/data-factory/.md)
   - [https://spark.apache.org/docs/latest/sql-programming-guide.html](https://spark.apache.org/docs/latest/sql-programming-guide.html)
-  - [https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-overview](https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-overview)
+  - [https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-overview](pipeline-overview.md)
