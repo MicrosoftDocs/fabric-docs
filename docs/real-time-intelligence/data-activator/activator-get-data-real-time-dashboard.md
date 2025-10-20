@@ -44,7 +44,7 @@ In the **Set alert** pane, define your rule conditions. Rule conditions include 
 
 Choose the action to take when the alert triggers. You can receive an email or a Teams message when the condition is met or automatically run a Fabric item.
 
-:::image type="content" source="media/activator-get-data/set-alerts-action.png" alt-text="Screenshot of create an alert window in Activator, save location highlighted." lightbox="media/activator-get-data/set-alerts-action.png":::
+:::image type="content" source="media/activator-get-data/set-alerts-action.png" alt-text="Screenshot of create an alert window in Activator, save action highlighted." lightbox="media/activator-get-data/set-alerts-action.png":::
 
 ### Save location
 
