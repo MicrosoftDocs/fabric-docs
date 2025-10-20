@@ -1,8 +1,10 @@
-description: This article explains the overview of using the Spark Connector.
+---
+title: Spark Connector in Microsoft Fabric
+description: Learn how to use the Spark Connector in Microsoft Fabric.
 author: misaacs
 ms.author: misaacs
 ms.topic: how-to
-ms.date: 10/16/2025
+ms.date: 06/10/2024
 ms.custom:
   - template-how-to
   - connectors
@@ -49,7 +51,7 @@ Before you use the Spark connector, make sure you have:
 Example for reading a table:
 ```scala
 synapsesql(tableName: String = "<Warehouse.Schema.Table>")
-
+```
 
 Example for running a custom query:
 spark.read.option(Constants.DatabaseName, "<warehouse>").synapsesql("<T-SQL Query>")

@@ -26,7 +26,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 ## General
 
-Refer to [this page](https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-overview) to configure the **General** tab.
+Refer to [this page](pipeline-overview.md) to configure the **General** tab.
 
 
 ## Source
@@ -47,7 +47,7 @@ Go to the **Source** tab to configure your copy activity source.
 **Table:**
 ```scala
 synapsesql(tableName: String = "<Warehouse.Schema.Table>")
-``
+```
 
 ``
 **Query:**
