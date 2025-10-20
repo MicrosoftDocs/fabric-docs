@@ -290,6 +290,7 @@ You can manage mirrored databases in workspaces enabled with private links by us
 #### [REST API](#tab/rest-apis-14)
 * [Fabric Mirroring Public REST API](/fabric/mirroring/mirrored-database-rest-api)
 * [Items - REST API (MirroredDatabase)](/rest/api/fabric/mirroreddatabase/items)
+---
 
 > [!NOTE]
 > * Currently, workspace-level private link is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db) and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server) (using SQL Server 2025 CTP 2.0 or higher version). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started. 
