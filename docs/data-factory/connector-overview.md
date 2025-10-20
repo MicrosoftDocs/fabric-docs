@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: overview
-ms.date: 10/09/2025
+ms.date: 10/20/2025
 ms.search.form: product-data-factory
 ms.custom: connectors
 ---

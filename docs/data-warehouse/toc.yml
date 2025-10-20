@@ -145,10 +145,13 @@ items:
   - name: Service principals
     href: service-principals.md
     displayName: SPN
+  - name: Encryption
+    displayName: CMK encryption
+    href: encryption.md
+  - name: Entra ID authentication
+    href: entra-id-authentication.md
   - name: SQL Audit Logs
     href: sql-audit-logs.md
-  - name: Microsoft Entra ID authentication
-    href: entra-id-authentication.md
   - name: Workspace roles
     href: workspace-roles.md
   - name: Column-level security

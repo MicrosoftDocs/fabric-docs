@@ -16,8 +16,6 @@ ms.date: 09/05/2025
 
 This document provides a detailed guide to how the OneLake security access control model works. It contains details on how the roles are structured, how they apply to data, and what the integration is with other structures within Microsoft Fabric.
 
-[!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
-
 ## OneLake security roles
 OneLake security uses a role based access control (RBAC) model for managing access to data in OneLake. Each role is made up of several key components.
 
@@ -108,6 +106,16 @@ The table below outlines which Microsoft Fabric engines support RLS and CLS filt
 ## OneLake security access control model details
 
 This section provides details on how OneLake security roles grant access to specific scopes, how that access operates, and how access is resolved across multiple roles and access types.
+
+### Table level security
+
+All OneLake tables are represented by folders in the lake, but not all folders in the lake are tables from the perspective of OneLake security and query engines in Fabric. To be considered a valid table, the following conditions must be met:
+
+- The folder exists in the Tables/ directory of an item.
+- The folder contains a _delta_log folder with corresponding JSON files for the table metadata.
+- The folder does not contain any child shortcuts.
+
+Any tables that do not meet those criteria will have access denied if table level security is configured on them.
 
 ### Metadata security
 
@@ -334,6 +342,8 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 * OneLake security doesn't work with [private link protection](../../security/security-private-links-overview.md).
 
 * The [external data sharing preview](../../governance/external-data-sharing-overview.md) feature isn't compatible with the data access roles preview. When you enable the data access roles preview on a lakehouse, any existing external data shares might stop working.
+
+* Azure Mirrored Databricks Catalog does not support Manage Catalog functionality if OneLake security is enabled on that item. This functionality is coming in November, 2025.
 
 * The following table provides the limitations of OneLake data access roles.
 
