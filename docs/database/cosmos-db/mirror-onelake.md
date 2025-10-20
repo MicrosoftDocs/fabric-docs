@@ -28,7 +28,7 @@ This automatic mirror support enables scenarios including, but not limited to:
 
 You can check the status of replication by navigating to the replication section for the database in the Fabric portal. This section includes metadata about replication including the status of the last sync.
 
-:::image source="media/mirror-onelake/mirroring-status.png" lightbox="media/mirror-onelake/mirroring-status-full.png" alt-text="Screenshot of the status dialog for mirroring for a Cosmos DB in Fabric database.":::
+:::image type="content" source="media/mirror-onelake/mirroring-status.png" lightbox="media/mirror-onelake/mirroring-status-full.png" alt-text="Screenshot of the status dialog for mirroring for a Cosmos DB in Fabric database.":::
 
 ## SQL analytics endpoint queries
 
@@ -46,7 +46,7 @@ GROUP BY
   category
 ```
 
-:::image source="media/mirror-onelake/sql-analytics-endpoint-query.png" lightbox="media/mirror-onelake/sql-analytics-endpoint-query-full.png" alt-text="Screenshot of a Transact SQL (T-SQL) query using the query editor in the SQL analytics endpoint.":::
+:::image type="content" source="media/mirror-onelake/sql-analytics-endpoint-query.png" lightbox="media/mirror-onelake/sql-analytics-endpoint-query-full.png" alt-text="Screenshot of a Transact SQL (T-SQL) query using the query editor in the SQL analytics endpoint.":::
 
 ## Related content
 
