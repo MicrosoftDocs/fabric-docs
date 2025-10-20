@@ -17,8 +17,8 @@ In this tutorial, you build a dataflow to move data from a Northwind OData sourc
 
 To get started, you must complete the following prerequisites:
 
-- Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](/fundamentals/create-workspaces.md) that isn't the default My Workspace.
-- Make sure you have a Databricks workspace set up. For more information, see [Create a Databricks workspace in Microsoft Azure](/azure/databricks/getting-started/).
+- Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../fundamentals/create-workspaces.md) that isn't the default My Workspace.
+- Make sure you have a Databricks workspace set up. For more information, see [Create a Databricks workspace in Microsoft Azure](/azure/databricks/getting-started).
 - Make sure you have access to an ADLS Gen2 storage account. For more information, see [Create a storage account](/azure/storage/blobs/create-data-lake-storage-account)
 
 ## Create a new Dataflow Gen2
