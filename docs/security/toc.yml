@@ -113,7 +113,7 @@ items:
             items: 
               - name: Data Engineering
                 href: workspace-outbound-access-protection-data-engineering.md
-              - name: Data Factory
+              - name: Data Factory (preview)
                 href: workspace-outbound-access-protection-data-factory.md
               - name: Data Warehouse
                 href: workspace-outbound-access-protection-data-warehouse.md

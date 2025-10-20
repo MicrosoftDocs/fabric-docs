@@ -5,11 +5,11 @@ description: Learn how to configure Workspace Outbound Access Protection (outbou
 author: msmimart
 ms.author: mimart
 ms.reviewer: mimart
-ms.date: 09/23/2025
+ms.date: 10/20/2025
 ms.topic: how-to
 ---
 
-# Workspace outbound access protection for Data Factory
+# Workspace outbound access protection for Data Factory (preview)
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from your workspace to other workspaces and external sources. When this feature is enabled, Data Factory items are restricted from making outbound connections to public endpoints unless access is explicitly granted. You can only create an allowlist using data connection rules; managed private endpoints aren't supported for Data Factory workloads. This capability is crucial for organizations in secure or regulated environments, as it helps prevent data exfiltration and enforces organizational network boundaries.
 
@@ -55,7 +55,7 @@ The following tables summarize how workspace outbound access protection applies 
 
 For Fabric connectors that support workspace-level granularity, you can specify which destination workspaces are permitted for each connector.
 
-| Source WS | Destination WS | Connector Type | Connector Setting | Result |
+| Source workspace | Destination workspace | Connector Type | Connector Setting | Result |
 |----|----|----|----|----|
 | A | A | Lakehouse | Allowed/Blocked | Connection is allowed to A because it's in the same workspace |
 | A | B | Lakehouse | Connector allowed | Connection is allowed to B and all other lakehouses in the tenant |
@@ -66,7 +66,7 @@ For Fabric connectors that support workspace-level granularity, you can specify 
 
 For Fabric connectors that lack workspace-level granularity, the allowlist applies to all item types and either allows or blocks all connections without workspace-specific exceptions.
 
-| Data Pipeline WS | Notebook WS | Connector Type | Connector Setting (Allowed/Blocked) | Result |
+| Data Pipeline workspace | Notebook workspace | Connector Type | Connector Setting (Allowed/Blocked) | Result |
 |----|----|----|----|----|
 | A | Any (including A) | Notebook | Allowed | The data pipeline can connect to the notebook because it's within the workspace boundary |
 | A | Any | Notebook | Blocked | The data pipeline can't connect to the notebook because it's outside the workspace boundary |
@@ -79,7 +79,7 @@ The following tables show how workspace outbound access protection applies to ex
 
 For external connectors that support endpoint-level granularity, you can specify individual destination endpoints as exceptions to outbound access restrictions.
 
-| Dataflow WS | Destination | Connector Type | Connector Setting | Result |
+| Dataflow workspace | Destination | Connector Type | Connector Setting | Result |
 |----|----|----|----|----|
 | A | SQL Server 1 | SQL Server | Blocked at connector level | Connection is blocked to SQL Server 1 |
 | A | SQL Server 1 | SQL Server | Blocked at connector level with exception for SQL Server 1 | Connection is allowed to SQL Server 1 |
@@ -89,7 +89,7 @@ For external connectors that support endpoint-level granularity, you can specify
 
 For external connectors that support granular endpoint exceptions for Azure Cosmos DB, you can allow or block connections to Azure Cosmos DB destinations.
 
-| Dataflow WS | Azure Cosmos DB destination | Connector Type | Connector Setting (Allowed/Blocked) | Result |
+| Dataflow workspace | Azure Cosmos DB destination | Connector Type | Connector Setting (Allowed/Blocked) | Result |
 |----|----|----|----|----|
 | A | Any | Azure Cosmos DB | Allowed | Dataflow can connect to any Azure Cosmos DB |
 | A | Any | Azure Cosmos DB | Blocked | Dataflow can't connect to any Azure Cosmos DB |
@@ -102,7 +102,7 @@ The following table summarizes how workspace outbound access protection applies 
 
 When you allowlist a gateway, dataflows can connect to any data source accessible through that gateway. All outbound connections made via the allowlisted gateway are allowed.
 
-| Dataflow WS | Connection type | Destination type | Connection Setting (Allowed/Blocked) | Result |
+| Dataflow workspace | Connection type | Destination type | Connection Setting (Allowed/Blocked) | Result |
 |----|----|----|----|----|
 | A | VNet/OPDG | Any | Allowed | Dataflow connects to all VNets and OPDGs |
 | A | VNet/OPDG | Any | Blocked (no exceptions) | Dataflow can't connect to any VNet or OPDG |
@@ -119,7 +119,7 @@ When you allowlist a gateway, dataflows can connect to any data source accessibl
   - Dataflows
 
 > [!NOTE]
-> Other Fabric connectors like Datamarts and KQL Database don’t support WS level granularity.
+> Other Fabric connectors like Datamarts and KQL Database don’t support workspace-level granularity.
 
 - Data Pipelines only support following Fabric connectors:
 
@@ -130,7 +130,7 @@ When you allowlist a gateway, dataflows can connect to any data source accessibl
 
 - For Dataflows, cross-workspace Data Warehouse destinations aren't supported.
 
-- Workspace outbound access protection (WS outbound access protection) isn't supported for Lakehouse with default Semantic models. To ensure the Lakehouse is compatible with outbound access protection:
+- Workspace outbound access protection isn't supported for Lakehouse with default Semantic models. To ensure the Lakehouse is compatible with outbound access protection:
 
   - We recommend enabling outbound access protection on the workspace before creating a Lakehouse to ensure compatibility.
   - Enabling outbound access protection on an existing workspace that already contains a Lakehouse (and its associated Semantic model) isn't supported.
