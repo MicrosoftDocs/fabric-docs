@@ -72,7 +72,7 @@ In SQL Server 2025, the permissions required for the Fabric login are:
    --Run in the master database
    USE [master];
    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
-
+    
    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
    ```
 
@@ -118,6 +118,7 @@ Once CDC is setup, enabling Mirroring only requires CONNECT at the server level,
    --Run in the master database
    USE [master];
    CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
+   GRANT CONNECT SQL TO [fabric_login];
    ALTER SERVER ROLE [sysadmin] ADD MEMBER [fabric_login];
    ```
 
@@ -127,6 +128,7 @@ Once CDC is setup, enabling Mirroring only requires CONNECT at the server level,
    --Run in the master database
    USE [master];
    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
+   GRANT CONNECT SQL TO [fabric_login];
    ALTER SERVER ROLE [sysadmin] ADD MEMBER [bob@contoso.com];
    ```
 1. Membership in the db_owner database role of the source database for mirroring is required to manage CDC.
