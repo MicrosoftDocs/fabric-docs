@@ -54,8 +54,10 @@ synapsesql(tableName: String = "<Warehouse.Schema.Table>")
 ```
 
 Example for running a custom query:
-spark.read.option(Constants.DatabaseName, "<warehouse>").synapsesql("<T-SQL Query>")
-
+```spark.read
+  .option(Constants.DatabaseName, "`<warehouse>`")
+  .synapsesql("`<T-SQL Query>`")
+  ```
 
 ## Security
 - Enforces OLS, RLS, and CLS as defined at the SQL engine level. 
@@ -67,5 +69,4 @@ If you are using Spark connector v1.0, upgrade to v2.0 for improved native Spark
 ## Next Steps
 Feel free to reference:
 - [Spark's SQL programming guide](https://spark.apache.org/docs/latest/sql-programming-guide.html)
-- [Fabrics Data Factor Connector Overview](https://learn.microsoft.com/en-us/fabric/data-factory/connector-overview)
-- [Fabric Data Factory Connector Overview](https://learn.microsoft.com/en-us/fabric/data-factory/connector-overview)
+- [Fabrics Data Factor Connector Overview](connector-overview.md)

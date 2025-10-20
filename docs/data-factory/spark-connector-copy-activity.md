@@ -49,10 +49,10 @@ Go to the **Source** tab to configure your copy activity source.
 synapsesql(tableName: String = "<Warehouse.Schema.Table>")
 ```
 
-``
+```
 **Query:**
 ```spark.read.option(Constants.DatabaseName, "<warehouse>").synapsesql("<T-SQL Query>")
-``
+```
 
 Also consider the Synapsesql Method signature. The following command shows the synapsesql method signature for the read request. The three-part tableName argument is required for accessing tables or views from a warehouse and the SQL analytics endpoint of a lakehouse. Update the argument with the following names, based on your scenario:
   - Part 1: Name of warehouse or lakehouse.
