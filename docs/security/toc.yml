@@ -93,6 +93,8 @@ items:
         href: security-managed-private-endpoints-overview.md
       - name: Create managed private endpoints
         href: security-managed-private-endpoints-create.md
+      - name: Connect to on-premise sources using managed private endpoints
+        href: connect-to-on-premise-sources-using-managed-private-endpoints.md
       - name: Workspace outbound access protection
         items: 
           - name: About workspace outbound access protection
@@ -113,6 +115,8 @@ items:
                 href: workspace-outbound-access-protection-data-engineering.md
               - name: Data Factory
                 href: workspace-outbound-access-protection-data-factory.md
+              - name: Data Warehouse
+                href: workspace-outbound-access-protection-data-warehouse.md
               - name: OneLake (preview)
                 href: workspace-outbound-access-protection-onelake.md
       - name: Trusted workspace access

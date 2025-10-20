@@ -32,11 +32,8 @@ For **General** tab configuration, go to [General](activity-overview.md#general-
 
 The following properties are supported for OData under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-odata/source.png" alt-text="Screenshot showing source tab." lightbox="./media/connector-odata/source.png":::
-
 The following three properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an OData connection from the connection list. If no connection exists, then create a new OData connection by selecting **New**.
 - **Path**: Select the path to the OData resource. Or you can select **Edit** to enter the path manually.
 
@@ -70,7 +67,6 @@ The following table contains more information about the copy activity in OData.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection\> |Yes|connection|
 |**Path** | The path to the OData resource.|\<the path to the OData resource\>|Yes |path|
 |**Use query** |You can choose **Path** or **Query** as your use query.|• **Path** <br>• **Query**|No |query|

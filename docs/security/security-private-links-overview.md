@@ -134,6 +134,15 @@ Limitations:
 * Data connectors relying on queued ingestion aren't supported.
 * Querying an Eventhouse using T-SQL isn't possible.
 
+### API for GraphQL
+
+API for GraphQL supports Private Link, allowing secure API access and querying from your Azure Virtual Network via a private link. 
+
+Limitations:
+
+* API monitoring dashboard and logging based on Workspace Monitoring is not supported.
+* Service Principal (SPN) are supported as clients however access between the API and data source with a SPN and saved credentials is not supported. SPNs can only be used with single sign-on (SSO) authentication to access data sources.
+
 ### Healthcare data solutions (preview)
 
 Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. In a tenant where private link is enabled, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. Also included is the ability to ingest healthcare data from various sources, such as Azure Storage accounts, and more.
@@ -150,7 +159,7 @@ Azure Events support Private Link with the following behavior when the Block Pub
   
 <!--### Other Fabric items
 
-Other Fabric items, such as KQL Database, API for GraphQL(TM), and Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+Other Fabric items, such as KQL Database, and Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 -->
 
 ### Microsoft Purview Information Protection
@@ -161,7 +170,7 @@ To enable these capabilities in Desktop, admins can configure [service tags](/az
 
 ### Mirrored database
 
-Private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring) and [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db). For other types of database mirroring, if the **Block public Internet access** tenant setting is **enabled**, active mirrored databases enter a paused state, and mirroring can't be started. 
+Private link is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db) and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server) (using SQL Server 2025 CTP 2.0 or higher version). For other types of database mirroring, if the **Block public Internet access** tenant setting is **enabled**, active mirrored databases enter a paused state, and mirroring can't be started. 
 
 For open mirroring, when the **Block public Internet access** tenant setting is **enabled**, ensure the publisher writes data into the OneLake landing zone via a private link. 
 
