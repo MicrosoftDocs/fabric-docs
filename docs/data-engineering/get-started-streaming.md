@@ -1,9 +1,9 @@
 ---
 title: Get started with streaming data in lakehouse
 description: Learn how to use an Apache Spark job definition to stream data into your lakehouse and then serve it through a SQL analytics endpoint.
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
 ms.topic: conceptual
 ms.custom:
 ms.date: 07/20/2025
@@ -89,11 +89,11 @@ Use the following steps to set the retry policy for your Spark job definition:
 
 1. From the top menu, select the **Setting** icon.
 
-   :::image type="content" source="media\get-started-streaming\sjd-settings.png" alt-text="Screenshot showing Spark Job Definition settings icon.":::
+   :::image type="content" source="media\get-started-streaming\sjd-settings.png" alt-text="Screenshot showing Spark Job Definition settings icon." lightbox="media\get-started-streaming\sjd-settings.png":::
 
 1. Open the **Optimization** tab and set **Retry Policy** trigger **On**.
 
-   :::image type="content" source="media\get-started-streaming\sjd-retry-on.png" alt-text="Screenshot showing Spark Job Definition optimization tab.":::
+   :::image type="content" source="media\get-started-streaming\sjd-retry-on.png" alt-text="Screenshot showing Spark Job Definition optimization tab." lightbox="media\get-started-streaming\sjd-retry-on.png":::
 
 1. Define maximum retry attempts or check **Allow unlimited attempts**.
 
@@ -106,7 +106,7 @@ Use the following steps to set the retry policy for your Spark job definition:
 
 1. From the top menu, select the **Run** icon.
 
-   :::image type="content" source="media\get-started-streaming\sjd-run.png" alt-text="Screenshot showing Spark Job Definition run icon.":::
+   :::image type="content" source="media\get-started-streaming\sjd-run.png" alt-text="Screenshot showing Spark Job Definition run icon." lightbox="media\get-started-streaming\sjd-run.png":::
 
 1. Verify if the **Spark Job definition** was submitted successfully and running.
 

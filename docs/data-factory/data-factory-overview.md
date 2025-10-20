@@ -62,8 +62,8 @@ Data Factory connects to your data, moves it, transforms it, and orchestrates yo
 
 **Move data**: Data Factory provides several methods to move data from source to destination, or provide easy access to existing data, depending on your needs.
 
-- [Copy activity](copy-data-activity.md) - Move data from one place to another using Data Factory pipelines at any scale. It supports a wide range of data sources and destinations, and lets you copy data in parallel for better performance.
-- [Copy job](what-is-copy-job.md) - A way to copy data from one place to another without creating a pipeline.
+- [Copy job](what-is-copy-job.md) - Preferred solution for simplified data movement with native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication. It also offers the flexibility to handle a wide range of scenarios from many sources to many destinations — all through an intuitive, easy-to-use experience.
+- [Copy activity](copy-data-activity.md) - Moves data from one place to another at any scale, with extensive customization, support for a wide range of sources and destinations, and manual control of parallel copying for improved performance.
 - [Mirroring](/fabric/database/mirrored-database/overview) - Create a near real-time replica of your operational database within OneLake in Microsoft Fabric to make your analytics and reporting easier.
 
 See our [data movement decision guide](decision-guide-data-movement.md) to help you choose the right data movement method for your scenario.
@@ -89,7 +89,7 @@ For details, see [Copilot in Fabric in the Data Factory workload](copilot-fabric
 
 ## What do you need to get started?
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. If you don't have one, you can [create a free account](https://azure.microsoft.com/free/).
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. If you don't have one, you can [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace. [Learn how to create a workspace.](../fundamentals/create-workspaces.md)
 
 ## What if we already use Azure Data Factory?

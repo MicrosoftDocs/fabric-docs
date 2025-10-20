@@ -14,11 +14,12 @@ ms.custom:
 
 The SAP Business Warehouse (BW) Message Server connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|On-premises |Basic <br> Windows |
 
-For information on how to connect to an SAP BW Message Server in Dataflow Gen2, go to [Set up your SAP BW Message Server connection](connector-sap-bw-message-server.md).
+## Related content
 
-## Support in pipelines
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support an SAP BW Message Server connection in pipelines.
+To learn about how to connect to an SAP BW Message Server, go to [Set up your SAP BW Message Server connection](connector-sap-bw-message-server.md).

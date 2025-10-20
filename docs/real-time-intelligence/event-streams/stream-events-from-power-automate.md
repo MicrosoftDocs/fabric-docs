@@ -46,7 +46,7 @@ In this tutorial, you learn how to:
 Before you start, you must complete the following prerequisites:
 
 - Access to a workspace with Contributor or higher permissions where your eventstream is located.
-- For **Logic Apps**, an Azure account with a valid subscription to create logic apps. If you don't have one, [sign up for a free Azure account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- For **Logic Apps**, an Azure account with a valid subscription to create logic apps. If you don't have one, [sign up for a free Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - For **Power Automate**, an active **Power Automate** account.
 
 

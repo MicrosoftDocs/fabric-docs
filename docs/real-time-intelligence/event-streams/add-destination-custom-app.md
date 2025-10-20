@@ -29,7 +29,7 @@ Before you start, make sure you have access to the workspace where your eventstr
 - **Contributor** or higher permissions are required to edit the eventstream to add a **Custom endpoint** destination.
 - If you want to use **Entra ID authentication** to connect your application, you need **Member** or higher permissions.
 
-If you're using **Entra ID authentication**, you also need to make sure the managed identity of the custom endpoint has the required permissions. To do this, configure the necessary settings in the **Admin portal**:
+If you're using **Entra ID authentication**, you also need to make sure the managed identity of the custom endpoint has the required permissions. Configure the necessary settings in the **Admin portal**:
 
 1. Select **Settings** (gear icon) in the top-right corner.
 1. Select **Admin portal** under the **Governance and insights** section.
@@ -73,6 +73,10 @@ If you want to route event data to your app, you can add a custom endpoint as yo
 1. For **Destination name**, enter a name for the custom endpoint. Then select **Save**.
 
     :::image type="content" source="./media/add-destination-custom-app-enhanced/custom-app-name.png" alt-text="Screenshot that shows the pane for entering a name for a custom endpoint." lightbox="./media/add-destination-custom-app-enhanced/custom-app-name.png":::
+
+    If you're using schemas at the source, for **Input schema**, select the schema for events. This field is the extra field you fill when you enable the schema support for an eventstream. 
+
+    :::image type="content" source="./includes/media/configure-destinations-schema-enabled-sources/extended-custom-endpoint-schema.png" alt-text="Screenshot that shows the Custom endpoint configuration page." lightbox="./includes/media/configure-destinations-schema-enabled-sources/extended-custom-endpoint-schema.png":::
 
 1. Connect the default stream tile to the custom endpoint tile if there's no existing connection.
 

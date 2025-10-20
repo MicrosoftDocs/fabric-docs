@@ -32,11 +32,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Dynamics AX under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-dynamics-ax/source.png" alt-text="Screenshot showing source tab.":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select a Dynamics AX connection from the connection list. If no connection exists, then create a new Dynamics AX connection by selecting **New**.
 - **Connection type**: Select **Dynamics AX**.
 - **Use query**: Specify way to read data. Select **Path** to read data from the specified path or select **Query** to read data using queries.
@@ -75,7 +72,6 @@ The following tables contain more information about the copy activity in Dynamic
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **Data store type** |Your data store type.| **External** |Yes|/|
 | **Connection** |Your connection to the source data store.|\<your Dynamics AX connection> |Yes|connection|
 | **Connection type** |Select a type for your connection.|**Dynamics AX**|Yes|/|
 | **Use query** |The way to read data from Dynamics AX. Apply **Path** to read data from the specified path or apply **Query** to read data using queries.|• **Path** <br>• **Query** |Yes |/|

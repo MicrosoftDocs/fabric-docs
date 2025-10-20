@@ -21,8 +21,9 @@ When your Dataflow Gen2 with CI/CD uses a Gateway (on-premises or virtual networ
 
 ## Frequently asked questions
 
-### What Dataflows does this apply to?
-This security feature only applies to Dataflows Gen2 with CI/CD support, which can reference shareable cloud connections.
+### Which dataflows does this apply to?
+
+This security feature only applies to Dataflow Gen2 with CI/CD support, which can reference shareable cloud connections.
 
 ### What type of connections can have this new `allowConnectionUsageInGateway` setting?
   Only shareable cloud connections can have this new setting.
@@ -34,7 +35,7 @@ This security feature only applies to Dataflows Gen2 with CI/CD support, which c
 
 ### How can I tell if my Dataflow Gen2 with CI/CD would be impacted by the enforcement of this security feature?
 
-This enforcement and security feature only applies to Dataflows Gen2 with CI/CD that use a Gateway (on-premises or virtual network) and have at least one shareable cloud connection.
+This enforcement and security feature only applies to Dataflow Gen2 with CI/CD that use a Gateway (on-premises or virtual network) and have at least one shareable cloud connection.
 
 Using the Fabric portal, you can open a Dataflow to check if it uses a Gateway by selecting the *Options* button from the Home tab of the ribbon. Once the *Options* dialog opens, you can select the *Data Load* section inside the Dataflow category. In this section, you can see what gateway is selecting. If no gateway is selected, it appears as (none).
 

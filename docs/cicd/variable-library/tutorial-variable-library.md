@@ -12,9 +12,9 @@ ms.search.form: Variable library tutorial
 #customer intent: As a developer, I want to learn how to use a Microsoft Fabric variable library to customize and share item configurations in a workspace, so that I can manage my content lifecycle.
 ---
 
-# Tutorial: Use variable libraries to customize and share item configurations (preview)
+# Tutorial: Use variable libraries to customize and share item configurations
 
-This tutorial shows you how to use dynamic content in Microsoft Fabric data pipelines. When you create a variable library item and add variables to it, you can automate values for various stages of your deployment pipeline. In this tutorial, you copy data from one lakehouse to another. Then you use the variable library to set the source and destination values for the copy activity.
+This tutorial shows you how to use dynamic content in Microsoft Fabric pipelines. When you create a variable library item and add variables to it, you can automate values for various stages of your deployment pipeline. In this tutorial, you copy data from one lakehouse to another. Then you use the variable library to set the source and destination values for the copy activity.
 
 In this tutorial, you:
 
@@ -23,7 +23,7 @@ In this tutorial, you:
 > * Create a variable library.
 > * Add variables to the library.
 > * Define additional value sets for the variables.
-> * Consume the variables in another item in the workspace (a data pipeline).
+> * Consume the variables in another item in the workspace (a pipeline).
 > * Edit the variables in a Git repository.
 > * Create a deployment pipeline and deploy the variable library.
 > * Change the active value set in the target stage of the deployment pipeline.
@@ -33,8 +33,6 @@ The following diagram shows the workspace layout for this tutorial.
 
 :::image type="content" source="media/tutorial-variable-library/conceptual-variable-library-1.png" alt-text="Diagram of a workspace layout." lightbox="media/tutorial-variable-library/conceptual-variable-library-1.png":::
 
-> [!NOTE]
-> The Fabric variable library item is currently in preview.
 
 ## Prerequisites
 
@@ -69,9 +67,9 @@ First, create a workspace and lakehouse to use as your initial staging data:
 
 1. Create a pipeline:
 
-   1. In the lakehouse, select **New data pipeline**.
+   1. In the lakehouse, select **New pipeline**.
 
-      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-1.png" alt-text="Screenshot of the tile for creating a new data pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-1.png":::
+      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-1.png" alt-text="Screenshot of the tile for creating a new pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-1.png":::
 
    1. Enter the name **Pipeline_Stage**, and then select **Create**.
 
@@ -143,7 +141,7 @@ Now, create the variable library:
 
 1. In the **Source LHs with Variables** workspace, select **New item**.
 
-1. Under **Develop data**, select **Variable library (preview)**.
+1. Under **Develop data**, select **Variable library **.
 
    :::image type="content" source="media/tutorial-variable-library/create-variable-library-1.png" alt-text="Screenshot that shows the tile for creating a variable library." lightbox="media/tutorial-variable-library/create-variable-library-1.png":::
 
@@ -218,9 +216,9 @@ In these steps, you create your pipeline and declare your variables:
 
 1. In the **Source LHs with Variables** workspace, select **New item**.
 
-1. Under **Get data**, select **Data pipeline**.
+1. Under **Get data**, select **Pipeline**.
 
-   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-6.png" alt-text="Screenshot of the tile for a data pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-6.png":::
+   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-6.png" alt-text="Screenshot of the tile for a pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-6.png":::
 
 1. Enter the name **Pipeline_Deploy**, and then select **Create**.
 
@@ -230,7 +228,7 @@ In these steps, you create your pipeline and declare your variables:
 
 1. Select the canvas so that the focus is off **Copy data**.
 
-1. Select **Library variables (preview)**.
+1. Select **Library variables **.
 
    :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-10.png" alt-text="Screenshot of the tab for library variables." lightbox="media/tutorial-variable-library/create-new-pipeline-10.png":::
 
@@ -263,7 +261,7 @@ In these steps, you configure the source connection for your pipeline:
 
    1. Under **Source** > **Connection**, select **Add dynamic content**.
 
-   1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
+   1. Select the ellipsis (**...**), and then select **Library variables **.
 
    1. Select **SourceLH**. It populates the box with `@pipeline().libraryVariables.SourceLH`. Select **OK**.
 
@@ -273,7 +271,7 @@ In these steps, you configure the source connection for your pipeline:
 
    1. Under **Source** > **Workspace ID**, select **Add dynamic content**.
 
-   1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
+   1. Select the ellipsis (**...**), and then select **Library variables **.
 
    1. Select **SourceWSID**. It populates the box with `@pipeline().libraryVariables.SourceWSID`. Select **OK**.
 
@@ -283,7 +281,7 @@ In these steps, you configure the source connection for your pipeline:
 
    1. Under **Source** > **Table**, select **Enter manually**, select **Table name**, and then select **Add dynamic content**.
 
-   1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
+   1. Select the ellipsis (**...**), and then select **Library variables **.
 
    1. Select **SourceTableName**. It populates the box with `@pipeline().libraryVariables.SourceTableName`. Select **OK**.
 
@@ -307,7 +305,7 @@ In these steps, you configure the destination connection for your pipeline:
 
    1. Under **Destination** > **Connection**, select **Add dynamic content**.
 
-   1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
+   1. Select the ellipsis (**...**), and then select **Library variables **.
 
    1. Select **SourceLH**. It populates the box with `@pipeline().libraryVariables.DestinationLH`. Select **OK**.
 
@@ -317,7 +315,7 @@ In these steps, you configure the destination connection for your pipeline:
 
    1. Under **Destination** > **Workspace ID**, select **Add dynamic content**.
 
-   1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
+   1. Select the ellipsis (**...**), and then select **Library variables **.
 
    1. Select **DestinationWSID**. It populates the box with `@pipeline().libraryVariables.DestinationWSID`. Select **OK**.
 
@@ -327,7 +325,7 @@ In these steps, you configure the destination connection for your pipeline:
 
    1. Under **Destination** > **Table**, select **Enter manually**, select **Table name**, and then select **Add dynamic content**.
 
-   1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
+   1. Select the ellipsis (**...**), and then select **Library variables **.
 
    1. Select **DestinationTableName**. It populates the box with `@pipeline().libraryVariables.DestinationTableName`. Select **OK**.
 

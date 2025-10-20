@@ -3,7 +3,7 @@ title: Create Tables in the Warehouse
 description: Learn how to create tables in your Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 04/06/2025
+ms.date: 10/14/2025
 ms.topic: how-to
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
@@ -19,6 +19,20 @@ To get started, you must complete the following prerequisites:
 
 For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], see [Connectivity](connectivity.md). 
 
+This article provides two examples on how to create a new table in Fabric Data Warehouse, from a parquet file or through the warehouse editor in the Fabric portal.
+
+### Create a new table in the SQL query editor from a file
+
+1. In the query editor, paste and run the following T-SQL code:
+
+```sql
+CREATE TABLE dbo.bing_covid AS
+SELECT *
+FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet')
+```
+
+The **CTAS** (Create Table As Select) statement creates a new table and populates it with data retrieved from the specified source file, streamlining the process of both defining and loading the table in a single step. You can find more ingestion options in [Ingest data with T-SQL](ingest-data-tsql.md) page.
+
 ### Create a new table in the SQL query editor with templates
 
 1. In the warehouse editor ribbon, locate the **SQL templates** dropdown list. 
@@ -31,4 +45,4 @@ To learn more about supported table creation in Warehouse in Microsoft Fabric, s
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Ingest data into your Warehouse using data pipelines](ingest-data-pipelines.md)
+> [Ingest data into your Warehouse using pipelines](ingest-data-pipelines.md)

@@ -20,7 +20,7 @@ This powerful feature allows you to make changes to your dataflow without immedi
 
 ## How to save a draft version of your dataflow
 
-Saving a draft of your dataflow is as easy as just closing your browser, closing the dataflows editors, or navigating to another workspace. Anytime you add a new Power Query step to your dataflow, a draft of your changes is saved to the workspace.
+Saving a draft of your dataflow is as easy as just closing your browser, closing the dataflow editors, or navigating to another workspace. Anytime you add a new Power Query step to your dataflow, a draft of your changes is saved to the workspace.
 
 ## How to publish your draft dataflow
 
@@ -41,4 +41,4 @@ Your dataflow starts the publishing process in the background, which is indicate
 ## Related content
 
 - [Compare differences between Dataflow Gen1 and Gen2 in Data Factory](dataflows-gen2-overview.md)
-- [Dataflows refresh history and monitoring](dataflows-gen2-monitor.md)
+- [Dataflow refresh history and monitoring](dataflows-gen2-monitor.md)

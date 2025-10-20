@@ -1,8 +1,9 @@
 ---
 title: Overview - Fabric User data functions
 description: Learn about Fabric User data functions.
-ms.author: luisbosquez
-author: luisbosquez
+ms.author: eur
+ms.reviewer: luisbosquez
+author: eric-urban
 ms.topic: overview
 ms.date: 06/17/2025
 ms.search.form: User data functions overview
@@ -31,10 +32,9 @@ The following are some of the benefits for logic using user data functions:
 Fabric User Data Functions can seamlessly connect with other Fabric items to create rich end-to-end experiences. There are two kinds of integrations:
 - [Fabric data sources](./connect-to-data-sources.md)
 - Fabric items that invoke User Data Functions:
-    - [Fabric Data Pipelines](./create-functions-activity-data-pipelines.md)
+    - [Fabric Pipelines](./create-functions-activity-data-pipelines.md)
     - [Fabric Notebooks](../notebook-utilities.md)
-- [Tranlytical app with Power BI](/power-bi/create-reports/translytical-task-flow-overview)
-
+- [Translytical apps with Power BI](/power-bi/create-reports/translytical-task-flow-overview)
 
 ## Next steps
 

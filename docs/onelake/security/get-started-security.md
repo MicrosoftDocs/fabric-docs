@@ -66,9 +66,6 @@ Another way to configure permissions is via an item's **Manage permissions** pag
 
 OneLake security allows users to define granular role-based security to data stored in OneLake, and enforce that security consistently across all compute engines in Fabric. OneLake security is the **data plane** security model for data in OneLake. 
 
-> [!NOTE]
-> OneLake security replaces the existing OneLake data access roles (preview) feature that was released in April 2024. All data access roles users are seamlessly and automatically upgraded to OneLake security roles when the feature moved to public preview.
-
 Fabric users in the Admin or Member roles can create OneLake security roles to grant users access to data within an item. Each role has four components:
 
 * **Data**: The tables or folders that users can access.
