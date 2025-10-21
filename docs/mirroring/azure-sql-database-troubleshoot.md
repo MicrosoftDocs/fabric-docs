@@ -3,8 +3,8 @@ title: "Troubleshoot Fabric Mirrored Databases From Azure SQL Database"
 description: Troubleshooting mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: whhender
 ms.author: whhender
-ms.reviewer: imotiwala, anagha-todalbagi, ajayj
-ms.date: 07/09/2025
+ms.reviewer: imotiwala, anagha-todalbagi, ajayj, wiassaf
+ms.date: 10/21/2025
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
@@ -17,9 +17,9 @@ For troubleshooting the automatically configured mirroring for Fabric SQL databa
 
 ## Changes to Fabric capacity or workspace
 
-Learn more from [Changes to Fabric capacity](troubleshooting.md#changes-to-fabric-capacity). 
+Changes to the Fabric capacity or workspace can affect mirroring. For more information, review the effects on mirroring from [Changes to Fabric capacity](troubleshooting.md#changes-to-fabric-capacity). 
 
-In addition, note the following table for Azure SQL Database troubleshooting:
+## Azure SQL Database troubleshooting
 
 | Cause    | Result | Recommended resolution     |
 |:--|:--|:--|
