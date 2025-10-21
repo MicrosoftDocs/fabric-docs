@@ -60,11 +60,11 @@ You can also view the ingestion details of each table and materialized view. To 
 
 You can also view ingestion details for each table originating from [Eventstream](event-streams/overview.md).
 
-:::image type="content" source="media/database-entity-diagram/open-eventstream.png" alt-text="Screenshot of an entity diagram, showing the ingestion from Eventstream details view." lightbox="media/database-entity-diagram/open-eventstream.png":::
+:::image type="content" source="media/database-entity-diagram/open-event-stream.png" alt-text="Screenshot of an entity diagram, showing the ingestion from Eventstream details view." lightbox="media/database-entity-diagram/open-event-stream.png":::
 
 In addition to the name of the eventstream, you can see additional information by selecting the green stream icon, which reveals the name of the [derived stream](event-streams/add-destination-derived-stream.md) and the name of the [ingestion mapping](/kusto/management/mappings?view=microsoft-fabric&preserve-view=true). If no mapping is displayed, the [default (identity) mapping](/kusto/management/mappings?view=microsoft-fabric#identity-mapping&preserve-view=true) is being used. When you enable **Ingestion** details under **Show details**, you'll see the number of records ingested into each table from all sources, including Eventstreams.
 
-:::image type="content" source="media/database-entity-diagram/eventstream-details.png" alt-text="Screenshot of an entity diagram, with the details revealed after clicking the green icon." lightbox="media/database-entity-diagram/eventstream-details.png":::
+:::image type="content" source="media/database-entity-diagram/event-stream-details.png" alt-text="Screenshot of an entity diagram, with the details revealed after clicking the green icon." lightbox="media/database-entity-diagram/event-stream-details.png":::
 
 >[!NOTE]
 > Only Eventstreams appear as external sources in the entity diagram view. Other external sources are not displayed in the entity diagram.
