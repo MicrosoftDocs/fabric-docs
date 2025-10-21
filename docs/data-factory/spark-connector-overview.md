@@ -10,7 +10,7 @@ ms.custom:
   - connectors
 ---
 
-# Spark Connector in Microsoft Fabric
+# Spark connector in Microsoft Fabric
 
 The **Spark connector** in Microsoft Fabric enables you to access data from **Fabric Data Warehouse** and the **SQL analytics endpoint of a Lakehouse** directly from Spark. It supports reading tables, views, and executing custom T-SQL queries for advanced analytics and transformations.
 
@@ -24,9 +24,10 @@ Before you use the Spark connector, make sure you have:
 - **Read permissions** on the warehouse or SQL analytics endpoint (similar to `CONNECT` in SQL Server).
 - For SQL databases, permissions such as `db_datareader` and `db_datawriter`; optionally `db_owner` for full control.
 
+>[!TIP]
+> If you are using Spark connector v1.0, upgrade to v2.0 for improved native Spark support. 
 
-
-## Supported Capabilities
+## Supported capabilities
 
 - **Read from tables and views** in Fabric Data Warehouse or Lakehouse.
 - **Run custom T-SQL queries** from Spark.
@@ -42,12 +43,11 @@ Before you use the Spark connector, make sure you have:
 
 
 
-## Configuration Steps
+## Configuration steps
 
-### 1. Use Preinstalled Connector
-- The Spark connector is included in the Fabric runtime; no manual installation is needed.
+The Spark connector is included in the Fabric runtime; no manual installation is needed.
 
-### 2. Connect to Data Warehouse or Lakehouse
+### Connect to Data Warehouse or Lakehouse
 Example for reading a table:
 ```scala
 synapsesql(tableName: String = "<Warehouse.Schema.Table>")
@@ -62,11 +62,9 @@ Example for running a custom query:
 ## Security
 - Enforces OLS, RLS, and CLS as defined at the SQL engine level. 
 
-## Version Note
-If you are using Spark connector v1.0, upgrade to v2.0 for improved native Spark support. 
 
 
-## Next Steps
+## Related content
 Feel free to reference:
 - [Spark's SQL programming guide](https://spark.apache.org/docs/latest/sql-programming-guide.html)
 - [Fabrics Data Factor Connector Overview](connector-overview.md)

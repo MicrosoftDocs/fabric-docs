@@ -9,20 +9,19 @@ ms.custom: connectors
 ms.date: 10/16/2025
 ---
 
-# Configure Spark Connector in a Copy Activity
+# Configure the spark connector in a copy activity
 
-**Date:** 10/16/2025  
 This article outlines how to use the **copy activity in a pipeline** to read data from **Microsoft Fabric Data Warehouse** or **Lakehouse** using the Spark connector.
 
-## Supported Configuration
+## Supported configuration
 
 For the configuration of each tab under copy activity, go to the following sections respectively:
 
-- **General**
-- **Source**
-- **Destination**
-- **Mapping**
-- **Settings**
+- [General](#general)
+- [Source](#source)
+- [Destination](#destination)
+- [Mapping](#mapping)
+- [Settings](#settings)
 
 ## General
 
@@ -33,7 +32,7 @@ Refer to [this page](pipeline-overview.md) to configure the **General** tab.
 
 Go to the **Source** tab to configure your copy activity source.
 
-### Required Properties:
+### Required properties
 
 - **Connection**:  
   Select a Spark connection from the connection list. If no connection exists, create a new Spark connection (preinstalled in Fabric runtime).
@@ -66,7 +65,7 @@ synapsesql(tableName: String = "<Part1.Part2.Part3>") => org.apache.spark.sql.Da
 spark.read.option(Constants.DatabaseName, "{warehouse/lakehouse name}").synapsesql("{T-SQL Query}")
 ```
 
-## Specify SQL Endpoint Explicitly 
+## Specify SQL endpoint explicitly 
 **For warehouse:**
 ```
 spark.conf.set("spark.datawarehouse.{warehouse name}.sqlendpoint", "{sql endpoint,port}")
@@ -83,7 +82,7 @@ spark.read.synapsesql("[lakehouse name].[schema name].[table or view name]")
 ## Version 
 Use Spark connector v2.0 for improved native Spark support. We suggest upgrading from v1.0.
 
-## Advanced Options 
+## Advanced options 
 **Query timeout (minutes)**: Default is 120 minutes. Specify timespan format, for example, "02:00:00".
 **Partitioning**: The Fabric Spark connector doesn't provide built-in partition options like PostgreSQL. Use Spark’s native DataFrame partitioning for performance tuning.
 
@@ -104,12 +103,12 @@ For Settings tab configuration, go to [our documentation](/fabric/data-factory/)
 Authentication uses **Microsoft Entra ID**.
 Enforces **object-level, row-level**, and **column-level** security as defined in the SQL engine.
 
-## Best Practices
-Use custom queries for selective data retrieval.
-Use Spark DataFrame partitioning for large datasets.
-Upgrade to v2.0 for enhanced performance and SSL support.
+## Best practices
+- Use custom queries for selective data retrieval.
+- Use Spark DataFrame partitioning for large datasets.
+- Upgrade to v2.0 for enhanced performance and SSL support.
 
-## Related Content 
-  - [https://learn.microsoft.com/en-us/fabric/data-factory/](/fabric/data-factory/)
-  - [https://spark.apache.org/docs/latest/sql-programming-guide.html](https://spark.apache.org/docs/latest/sql-programming-guide.html)
-  - [https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-overview](pipeline-overview.md)
+## Related content 
+  - [Data Factory documentation](/fabric/data-factory/)
+  - [Spark SQL, DataFrames, and Datasets Guide](https://spark.apache.org/docs/latest/sql-programming-guide.html)
+  - [Data Factory pipelines](pipeline-overview.md)
