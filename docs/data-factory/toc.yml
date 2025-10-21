@@ -703,6 +703,13 @@
                 href: connector-snowflake.md
               - name: Configure in a pipeline Copy activity
                 href: connector-snowflake-copy-activity.md
+          - name: Spark
+            items: 
+              - name: Spark - Overview
+                href: spark-connector-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: spark-connector-copy-activity.md
+
           - name: SQL database
             items: 
               - name: SQL database - Overview
