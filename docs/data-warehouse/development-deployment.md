@@ -8,7 +8,7 @@ ms.reviewer: pvenkat, randolphwest
 ms.date: 10/21/2025
 ms.topic: conceptual
 ---
-# Development and Deployment Workflows
+# Development and deployment workflows
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
