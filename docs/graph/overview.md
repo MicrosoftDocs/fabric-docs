@@ -9,6 +9,7 @@ ms.reviewer: wangwilliam
 ms.service: fabric
 ms.subservice: graph
 ms.custom: references_regions
+ms.search.form: product-graph
 ---
 
 # Graph in Microsoft Fabric overview (preview)

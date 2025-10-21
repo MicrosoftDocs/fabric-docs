@@ -8,6 +8,7 @@ ms.author: eur
 ms.reviewer: splantikow
 ms.service: fabric
 ms.subservice: graph
+ms.search.form: product-graph
 ---
 
 # GQL language guide
