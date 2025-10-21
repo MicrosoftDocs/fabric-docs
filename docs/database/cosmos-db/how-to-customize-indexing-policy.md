@@ -38,7 +38,7 @@ First, use the Fabric portal to set the indexing policy for a container
 
 1. In the **Settings** section, select the **Indexing Policy** tab.
 
-    :::image source="media/how-to-customize-indexing-policy/editor.png" lightbox="media/how-to-customize-indexing-policy/editor-full.png" alt-text="Screenshot of the 'Indexing Policy' section for a container within a database in the Fabric portal.":::
+    :::image type="content" source="media/how-to-customize-indexing-policy/editor.png" lightbox="media/how-to-customize-indexing-policy/editor-full.png" alt-text="Screenshot of the 'Indexing Policy' section for a container within a database in the Fabric portal.":::
 
 1. In the editor, update the setting to a new value. For example, you can set the indexing policy to only index the `name` and `category` properties for items in the container using this policy.
 

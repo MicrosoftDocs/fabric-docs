@@ -26,7 +26,6 @@ The table below outlines which data items support OneLake security.
 | ---- | --- | --- |
 | Lakehouse | Private Preview | Read, ReadWrite |
 | Azure Databricks Mirrored Catalog | Private Preview | Read |
-| Mirrored Databases | Private Preview | Read |
 
 ## How to opt in
 
