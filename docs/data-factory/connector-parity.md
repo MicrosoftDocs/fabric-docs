@@ -93,58 +93,58 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **Fabric Source/Sink** | **Fabric Authentication** |
 |--------------------|---------------------|------------------------|------------------------|--------------------------|
-| Microsoft Fabric Lakehouse | ✓/✓         | Service principal     | ✓/✓                   |                          |
+| [Microsoft Fabric Lakehouse](connector-lakehouse-overview.md) | ✓/✓         | Service principal     | ✓/✓                   |                          |
 |                    |                     | System-assigned managed identity |                        |                          |
 |                    |                     | User-assigned managed identity |                        |                          |
 |                    |                     |                        |                        | Organizational account  |
-| Microsoft Fabric Warehouse | ✓/✓         | Service principal     | ✓/✓                   |                          |
+| [Microsoft Fabric Warehouse](connector-data-warehouse-overview.md) | ✓/✓         | Service principal     | ✓/✓                   |                          |
 |                    |                     | System-assigned managed identity |                        |                          |
 |                    |                     | User-assigned managed identity |                        |                          |
 |                    |                     |                        |                        | Organizational account  |
-| Fabric KQL        | N                  |                        | ✓/✓                   | Organizational account  |
+| [Fabric KQL](connector-kql-database-overview.md)        | N                  |                        | ✓/✓                   | Organizational account  |
 
 ## Database connectors
 
 | **Connector Type**        | **ADF Source/Sink** | **ADF Authentication**              | **Fabric Source/Sink** | **Fabric Authentication**              | **Fabric Other Settings** |
 |---------------------------|---------------------|-------------------------------------|------------------------|----------------------------------------|---------------------------|
-| Amazon Redshift           | ✓/-                | Basic                               | ✓/-                   | Amazon Redshift                        |                           |
-| DB2                       | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
-| Google Big Query          | ✓/-                | UserAuthentication                  | ✓/-                   |                                        |                           |
+| [Amazon Redshift](connector-amazon-redshift-overview.md)           | ✓/-                | Basic                               | ✓/-                   | Amazon Redshift                        |                           |
+| [DB2](connector-ibm-db2-database-overview.md)                       | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
+| [Google Big Query](connector-google-bigquery-overview.md)          | ✓/-                | UserAuthentication                  | ✓/-                   |                                        |                           |
 |                           |                     | ServiceAuthentication               |                        | Service Account Login                  |                           |
 |                           |                     |                                     |                        |                                        |                           |
-| Greenplum                 | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
+| [Greenplum](connector-greenplum-for-pipeline-overview.md)                 | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
 | Hive                      | ✓/-                | Anonymous                           | N                      |                                        |                           |
 |                           |                     | UsernameAndPassword                 |                        |                                        |                           |
 |                           |                     | WindowsAzureHDInsightService        |                        |                                        |                           |
-| Impala                    | ✓/-                | Anonymous                           | ✓/-                   |                                        |                           |
+| [Impala](connector-impala-overview.md)                    | ✓/-                | Anonymous                           | ✓/-                   |                                        |                           |
 |                           |                     | UsernameAndPassword                 |                        |                                        |                           |
-| Informix                  | ✓/✓                | Anonymous                           | ✓/✓                   | Anonymous                              |                           |
+| [Informix](connector-informix-for-pipeline-overview.md)                  | ✓/✓                | Anonymous                           | ✓/✓                   | Anonymous                              |                           |
 |                           |                     | Basic                               |                        | Basic                                  |                           |
-| MariaDB                   | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
-| Microsoft Access          | ✓/✓                | Anonymous                           | ✓/✓                   | Anonymous                              |                           |
+| [MariaDB](connector-mariadb-overview.md)                   | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
+| [Microsoft Access](connector-microsoft-access-overview.md)          | ✓/✓                | Anonymous                           | ✓/✓                   | Anonymous                              |                           |
 |                           |                     | Basic                               |                        | Basic                                  |                           |
-| MySQL                     | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
+| [MySQL](connector-mysql-database-overview.md)                     | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
 | Netezza                   | ✓/-                | Basic                               | N                      |                                        |                           |
-| Oracle                    | ✓/✓                | Basic                               | ✓/✓                   | Basic                                  |                           |
-| Amazon RDS for Oracle     | ✓/-                | Basic                               | ✓/−                   | Basic                                  |                           |
-| PostgreSQL                | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
-| Presto                    | ✓/-                | Anonymous                           | ✓/-                   | Anonymous                              |                           |
+| [Oracle](connector-oracle-database-overview.md)                    | ✓/✓                | Basic                               | ✓/✓                   | Basic                                  |                           |
+| [Amazon RDS for Oracle](connector-amazon-rds-for-oracle-overview.md)     | ✓/-                | Basic                               | ✓/−                   | Basic                                  |                           |
+| [PostgreSQL](connector-postgresql-overview.md)                | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
+| [Presto](connector-presto-overview.md)                    | ✓/-                | Anonymous                           | ✓/-                   | Anonymous                              |                           |
 |                           |                     | LDAP                                |                        | LDAP                                   |                           |
-| SAP BW Open Hub           | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
+| [SAP BW Open Hub](connector-sap-bw-open-hub-application-server-overview.md)           | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
 | SAP BW MDX                | ✓/-                | Basic                               | N                      |                                        |                           |
-| SAP HANA                  | ✓/✓                | Basic                               | ✓/-                   | Basic                                  |                           |
+| [SAP HANA](connector-sap-hana-overview.md)                  | ✓/✓                | Basic                               | ✓/-                   | Basic                                  |                           |
 |                           |                     | Windows                             |                        | Windows                                |                           |
-| SAP Table                 | ✓/-                | Basic                               | ✓/−                   | Basic                                  |                           |
+| [SAP Table](connector-sap-table-application-server-overview.md)                 | ✓/-                | Basic                               | ✓/−                   | Basic                                  |                           |
 |                           |                     | Secure Network Communications (SNC) |                        |                                        |                           |
-| Snowflake                 | ✓/✓                | Basic                               | ✓/✓                   |                                        |                           |
+| [Snowflake](connector-snowflake-overview.md)                 | ✓/✓                | Basic                               | ✓/✓                   |                                        |                           |
 |                           |                     | KeyPair                             |                        |                                        |                           |
 |                           |                     |                                     |                        |                                        | Snowflake                 |
 |                           |                     |                                     |                        |                                        | Microsoft Account         |
 |                           |                     |                                     |                        |                                        | Organizational account    |
-| Amazon RDS for SQL Server | ✓/-                | SQL                                 | ✓/-                   | Basic                                  |                           |
+| [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) | ✓/-                | SQL                                 | ✓/-                   | Basic                                  |                           |
 |                           |                     | Windows                             |                        |                                        |                           |
 |                           |                     |                                     |                        |                                        |                           |
-| SQL Server                | ✓/✓                | SQL                                 | ✓/✓                   | Basic                                  |                           |
+| [SQL Server](connector-sql-server-database-overview.md)                | ✓/✓                | SQL                                 | ✓/✓                   | Basic                                  |                           |
 |                           |                     | Windows                             |                        | Windows (Only for on-premises gateway) |                           |
 |                           |                     |                                     |                        |                                        | Organizational account    |
 |                           |                     |                                     |                        |                                        | Service principal         |
@@ -153,26 +153,26 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |                           |                     | WindowsAzureHDInsightService        |                        |                                        |                           |
 | Sybase                    | ✓/-                | Basic                               | N                      |                                        |                           |
 |                           |                     | Windows                             |                        |                                        |                           |
-| Teradata                  | ✓/-                | Basic                               | ✓/✓                   | Basic                                  |                           |
+| [Teradata](connector-teradata-database-overview.md)                  | ✓/-                | Basic                               | ✓/✓                   | Basic                                  |                           |
 |                           |                     | Windows                             |                        | Windows                                |                           |
 |                           |                     | LDAP                                |                        |                                        |                           |
-| Vertica                   | ✓/-                | Basic                               | ✓/−                   | Basic                                  |                           |
+| [Vertica](connector-vertica-overview.md)                   | ✓/-                | Basic                               | ✓/−                   | Basic                                  |                           |
 
 ## File connectors
 
 | **Connector Type**   | **ADF Source/Sink** | **ADF Authentication**        | **Fabric Source/Sink** | **Fabric Authentication** |
 |----------------------|---------------------|-------------------------------|------------------------|---------------------------|
-| Amazon S3            | ✓/-                | Access key                    |✓/✓                      | Access Key |
+| [Amazon S3](connector-amazon-s3-overview.md)            | ✓/-                | Access key                    |✓/✓                      | Access Key |
 |                      |                     | Temporary security credential |                        |
-| Amazon S3 Compatible | ✓/-                | Access key                    | ✓/✓                   | Access Key                |
+| [Amazon S3 Compatible](connector-amazon-s3-compatible-overview.md) | ✓/-                | Access key                    | ✓/✓                   | Access Key                |
 | File System          | ✓/✓                | Windows                       | ✓/✓                   | Windows                   |
-| FTP                  | ✓/-                | Basic                         | ✓/-                   | Basic                     |
+| [FTP](connector-ftp-overview.md)                  | ✓/-                | Basic                         | ✓/-                   | Basic                     |
 |                      |                     | Anonymous                     |                        | Anonymous                 |
-| Google Cloud Storage | ✓/-                | Access key                    | ✓/✓                   | Basic                     |
-| HDFS                 | ✓/-                | Windows                       | ✓/-                   |                           |
+| [Google Cloud Storage](connector-google-cloud-storage-overview.md) | ✓/-                | Access key                    | ✓/✓                   | Basic                     |
+| [HDFS](connector-hdfs-for-pipeline-overview.md)                 | ✓/-                | Windows                       | ✓/-                   |                           |
 |                      |                     | Anonymous                     |                        | Anonymous                 |
-| Oracle Cloud Storage | ✓/-                | Access key                    | ✓/-                   | Access Key                |
-| SFTP                 | ✓/✓                | Basic                         | ✓/✓                   | Basic                     |
+| [Oracle Cloud Storage](connector-oracle-cloud-storage-overview.md) | ✓/-                | Access key                    | ✓/-                   | Access Key                |
+| [SFTP](connector-sftp-overview.md)                 | ✓/✓                | Basic                         | ✓/✓                   | Basic                     |
 |                      |                     | SSH public key                |                        |                           |
 |                      |                     | multifactor                   |                        |                           |
 
@@ -193,29 +193,29 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **Fabric Source/Sink** | **Fabric Authentication** |
 |--------------------|---------------------|------------------------|------------------------|--------------------------|
-| Cassandra          | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
-| MongoDB            | ✓/✓                | Basic                 | ✓/✓                   | Basic                   |
-| MongoDB Atlas      | ✓/✓                | Basic                 | ✓/✓                   | Basic                   |
+| [Cassandra](connector-cassandra-overview.md)          | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
+| [MongoDB](connector-mongodb-overview.md)            | ✓/✓                | Basic                 | ✓/✓                   | Basic                   |
+| [MongoDB Atlas](connector-mongodb-atlas-overview.md)      | ✓/✓                | Basic                 | ✓/✓                   | Basic                   |
 
 ## Services & apps connectors
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **Fabric Source/Sink** | **Fabric Authentication** |
 |--------------------|---------------------|------------------------|------------------------|--------------------------|
-| Dataverse          | ✓/✓                | Microsoft Entra service principal | ✓/✓                   | Service principal       |
+| [Dataverse](connector-dataverse-overview.md)          | ✓/✓                | Microsoft Entra service principal | ✓/✓                   | Service principal       |
 | Dynamics 365       | ✓/✓                | Microsoft Entra service principal | N                      |                          |
-| Dynamics AX        | ✓/-                | OData protocol with Service Principal | N                      |                          |
-| Dynamics CRM       | ✓/✓                | Microsoft Entra service principal | ✓/✓                   | Service principal       |
+| [Dynamics AX](connector-dynamics-ax-overview.md)        | ✓/-                | OData protocol with Service Principal | N                      |                          |
+| [Dynamics CRM](connector-dynamics-crm-overview.md)       | ✓/✓                | Microsoft Entra service principal | ✓/✓                   | Service principal       |
 | Google AdWords     | ✓/-                | UserAuthentication    | N                      |                          |
 | HubSpot            | ✓/-                | Access token          | N                      |                          |
 | Jira               | ✓/-                | Basic                 | N                      |                          |
-| Microsoft 365      | ✓/-                | Service principal     | ✓/-                   | Service principal       |
+| [Microsoft 365](connector-microsoft-365-overview.md)      | ✓/-                | Service principal     | ✓/-                   | Service principal       |
 | QuickBooks         | ✓/-                | OAuth 2.0             | N                      |                          |
-| Salesforce         | ✓/✓                | OAuth2ClientCredentials | ✓/✓                   | Organizational account  |
-| Salesforce Service Cloud | ✓/✓         | OAuth2ClientCredentials | ✓/✓                   | Organizational account  |
+| [Salesforce](connector-salesforce-objects-overview.md)         | ✓/✓                | OAuth2ClientCredentials | ✓/✓                   | Organizational account  |
+| [Salesforce Service Cloud](connector-salesforce-service-cloud-overview.md) | ✓/✓         | OAuth2ClientCredentials | ✓/✓                   | Organizational account  |
 | SAP Cloud for Customer (C4C) | ✓/✓         | Basic                 | N                      |                          |
 | SAP ECC            | ✓/-                | Basic                 | N                      |                          |
-| ServiceNow         | ✓/-                | Basic                 | ✓/-                   | Basic                   |
-| SharePoint Online List | ✓/-                | Service principal     | ✓/-                   | Service principal       |
+| [ServiceNow](connector-servicenow-overview.md)         | ✓/-                | Basic                 | ✓/-                   | Basic                   |
+| [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | ✓/-                   | Service principal       |
 | Shopify            | ✓/-                | Access token          | N                      |                          |
 | Square             | ✓/-                | Access token          | N                      |                          |
 | Web Table          | ✓/-                | Anonymous             | N                      |                          |
@@ -225,10 +225,10 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **Fabric Source/Sink** | **Fabric Authentication** |
 |--------------------|---------------------|------------------------|------------------------|--------------------------|
-| HTTP               | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
-| OData              | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
-| ODBC               | ✓/✓                | Anonymous             | ✓/✓                   | Anonymous               |
-| REST               | ✓/✓                | Anonymous             | ✓/✓                   | Anonymous               |
+| [HTTP](connector-http-overview.md)               | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
+| [OData](connector-odata-overview.md)              | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
+| [ODBC](connector-odbc-overview.md)               | ✓/✓                | Anonymous             | ✓/✓                   | Anonymous               |
+| [REST](connector-rest-overview.md)               | ✓/✓                | Anonymous             | ✓/✓                   | Anonymous               |
 
 ## Conclusion
 
