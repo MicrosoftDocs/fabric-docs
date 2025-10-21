@@ -72,44 +72,44 @@ With Data Factory in Microsoft Fabric, we continue to maintain a high degree of 
 
 |**Activity**|**ADF**|**Data Factory in Fabric**|
 |:---|:---|:---|
-|ADX/KQL|Y|Y|
-|Append Variable|Y|Y|
-|Azure Batch|Y|Y|
-|Azure Databricks|Notebook activity<br>Jar activity<br>Python activity<br> Job activity |Azure Databricks activity|
-|Azure Machine Learning|Y|Y|
+|ADX/KQL|[Y](/azure/data-factory/connector-azure-data-explorer)|[Y](kql-activity.md)|
+|Append Variable|[Y](/azure/data-factory/control-flow-append-variable-activity)|[Y](append-variable-activity.md)|
+|Azure Batch|[Y](/azure/data-factory/transform-data-using-dotnet-custom-activity)|[Y](azure-batch-activity.md)|
+|Azure Databricks|[Notebook activity](/azure/data-factory/transform-data-databricks-notebook) &bull; [Jar activity](/azure/data-factory/transform-data-databricks-jar) &bull; [Python activity](/azure/data-factory/transform-data-databricks-python) &bull; Job activity |[Azure Databricks activity](azure-databricks-activity.md)|
+|Azure Machine Learning|[Y](/azure/data-factory/transform-data-machine-learning-service)|[Y](azure-machine-learning-activity.md)|
 |Azure Machine Learning Batch Execution|Deprecated|N/A|
 |Azure Machine Learning Update Resource|Deprecated|N/A|
-|Copy|Copy data|Copy activity|
-|Dataflow Gen2|N/A|Y|
-|Delete|Y|Y|
-|Execute/Invoke Pipeline|Execute pipeline|Invoke pipeline|
-|Fabric Notebooks|N/A|Y|
-|Fail|Y|Y|
-|Filter|Y|Y|
-|For Each|Y|Y|
-|Functions|Azure function|Function activity|
-|Get Metadata|Y|Y|
-|HDInsight|Hive activity<br>Pig activity<br>MapReduce activity<br>Spark activity<br>Streaming activity|HDInsight activity|
-|If condition|Y|Y|
-|Lookup|Y|Y|
-|Mapping Data Flow|Y|Dataflow Gen2|
-|Office 365 Outlook|N/A|Y|
+|Copy|[Copy data](/azure/data-factory/copy-activity-overview)|[Copy activity](copy-data-activity.md)|
+|Dataflow Gen2|N/A|[Y](dataflows-gen2-overview.md)|
+|Delete|[Y](/azure/data-factory/delete-activity)|[Y](delete-data-activity.md)|
+|Execute/Invoke Pipeline|[Execute pipeline](/azure/data-factory/control-flow-execute-pipeline-activity)|[Invoke pipeline](invoke-pipeline-activity.md)|
+|Fabric Notebooks|N/A|[Y](notebook-activity.md)|
+|Fail|[Y](/azure/data-factory/control-flow-fail-activity)|[Y](fail-activity.md)|
+|Filter|[Y](/azure/data-factory/control-flow-filter-activity)|[Y](filter-activity.md)|
+|For Each|[Y](/azure/data-factory/control-flow-for-each-activity)|[Y](foreach-activity.md)|
+|Functions|[Azure function](/azure/data-factory/control-flow-azure-function-activity)|[Function activity](functions-activity.md)|
+|Get Metadata|[Y](/azure/data-factory/control-flow-get-metadata-activity)|[Y](get-metadata-activity.md)|
+|HDInsight|[Hive activity](/azure/data-factory/transform-data-using-hadoop-hive) &bull; [Pig activity](/azure/data-factory/transform-data-using-hadoop-pig) &bull; [MapReduce activity](/azure/data-factory/transform-data-using-hadoop-map-reduce) &bull; [Spark activity](/azure/data-factory/transform-data-using-spark) &bull; [Streaming activity](/azure/data-factory/transform-data-using-hadoop-streaming)|[HDInsight activity](azure-hdinsight-activity.md)|
+|If condition|[Y](/azure/data-factory/control-flow-if-condition-activity)|[Y](if-condition-activity.md)|
+|Lookup|[Y](/azure/data-factory/control-flow-lookup-activity)|[Y](lookup-activity.md)|
+|Mapping Data Flow|[Y](/azure/data-factory/control-flow-execute-data-flow-activity)|Dataflow Gen2|
+|Office 365 Outlook|N/A|[Y](outlook-activity.md)|
 |Power Query (ADF only - Wrangling Dataflow)|Deprecated|N/A|
-|Script|Y|Y|
-|Semantic model refresh|N/A|Y|
-|Set Variable|Y|Y|
-|Sproc|Y|Y|
-|SSIS|Y|N|
-|Stored procedure|Y|Y|
-|Switch|Y|Y|
-|Synapse Notebook and SJD activities|Y|N/A|
-|Teams|N/A|Y|
-|Until|Y|Y|
-|Validation|Y|Y(get metadata and if condition)|
-|Wait|Y|Y|
-|Web|Y|Y|
-|Webhook|Y|Y|
-|Wrangling Data Flow|Y|Dataflow Gen2|
+|Script|[Y](/azure/data-factory/transform-data-using-script)|[Y](script-activity.md)|
+|Semantic model refresh|N/A|[Y](semantic-model-refresh-activity.md)|
+|Set Variable|[Y](/azure/data-factory/control-flow-set-variable-activity)|[Y](set-variable-activity.md)|
+|Sproc|[Y](/azure/data-factory/transform-data-using-stored-procedure)|[Y](stored-procedure-activity.md)|
+|SSIS|[Y](/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)|N|
+|Stored procedure|[Y](/azure/data-factory/transform-data-using-stored-procedure)|[Y](stored-procedure-activity.md)|
+|Switch|[Y](/azure/data-factory/control-flow-switch-activity)|[Y](switch-activity.md)|
+|Synapse Notebook and SJD activities|[Y](/azure/data-factory/transform-data-synapse-notebook)|N/A|
+|Teams|N/A|[Y](teams-activity.md)|
+|Until|[Y](/azure/data-factory/control-flow-until-activity)|[Y](until-activity.md)|
+|Validation|[Y](/azure/data-factory/control-flow-validation-activity)|Y (get metadata and if condition)|
+|Wait|[Y](/azure/data-factory/control-flow-wait-activity)|[Y](wait-activity.md)|
+|Web|[Y](/azure/data-factory/control-flow-web-activity)|[Y](web-activity.md)|
+|Webhook|[Y](/azure/data-factory/control-flow-webhook-activity)|[Y](webhook-activity.md)|
+|Wrangling Data Flow|[Y](/azure/data-factory/wrangling-data-flow-overview)|Dataflow Gen2|
 
 ### New activities in Fabric Data Factory
 
