@@ -35,6 +35,10 @@ Use the Eventhouse endpoint immediately after you create it. The first queries c
 
 Users with contributor or owner permission on the parent data source get contributor permission on the Eventhouse endpoint. They can manage cache and retention settings.
 
+## Sharing
+
+To be able to share the endpoint, configure share settings for both the Eventhouse endpoint, the KQL database, and the Lakehouse source data.
+
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) in a [capacity](../enterprise/licenses.md#capacity) with Microsoft Fabric enabled
@@ -80,14 +84,6 @@ The workspace and the OneLake catalog show the endpoint and the KQL database as 
 From the Eventhouse endpoint, run queries, create [visualizations](dashboard-real-time-create.md), and perform advanced analytics using KQL or SQL.
 
 :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png" alt-text="Screenshot of the KQL queryset with a get table schema query." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png":::
-
-## Share the Eventhouse endpoint
-
-To be able to share the Eventhouse endpoint with other users, you need to configure the share settings for both the source data and the endpoint. You can share the Eventhouse endpoint, or the KQL database.
-
-1. Share the data warehouse or the lakehouse. See [Share your data and manage permissions](../data-warehouse/share-warehouse-manage-permissions.md) or [How lakehouse sharing works](../data-engineering/lakehouse-sharing.md).
-
-1. Share the Eventhouse endpoint or the KQL database. See [Share an eventhouse](create-eventhouse.md#share-an-eventhouse) or [Share a KQL database link](access-database-copy-uri.md#share-a-kql-database-link).
 
 ## Disable the Eventhouse endpoint
 
