@@ -25,6 +25,9 @@ The following prerequisites should be met to use the Docker containers with the 
 - Install [Docker Desktop](https://www.docker.com/products/docker-desktop).
 - Install the [VS Code Remote Development pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
 
+> [!NOTE]
+> If you are using Windows Subsystem for Linux (WSL) backend for Docker, Windows manages resources limits such as memory, swap size and processor count. To increase resource limits, open the WSL Settings application or see [Advanced settings configuration in WSL](/windows/wsl/wsl-config#configure-global-options-with-wslconfig).
+
 ## Getting started
 
 1. Clone the [Synapse VS Code Dev Container sample](https://github.com/microsoft/SynapseVSCode/tree/main/samples/.devcontainer).
