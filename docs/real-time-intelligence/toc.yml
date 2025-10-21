@@ -125,6 +125,8 @@ items:
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
       - name: PostgreSQL Database CDC
         href: event-streams/add-source-postgresql-database-change-data-capture.md
+      - name: MongoDB CDC
+        href: event-streams/add-source-mongodb-change-data-capture.md
       - name: MySQL Database CDC
         href: event-streams/add-source-mysql-database-change-data-capture.md
       - name: Azure Cosmos DB CDC
@@ -521,7 +523,7 @@ items:
       href: get-data-eventstream.md
     - name: Get data from Real-Time hub
       href: get-data-real-time-hub.md
-    - name: Configure KQL Database in a data pipeline
+    - name: Configure KQL Database in a pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
     - name: Connect to KQL Database in dataflows
       href: ../data-factory/connector-kusto-dataflows.md
@@ -642,6 +644,8 @@ items:
     href: real-time-intelligence-consumption.md
   - name: Understand Eventhouse compute usage
     href: eventhouse-compute-observability.md
+  - name: Eventhouse Cost per GB Ingested
+    href: pricing-cost-drivers.md
 - name: Model data
   items:
   - name: Digital twin builder
@@ -755,7 +759,7 @@ items:
     items:
     - name: Anomaly detection using Real-Time Intelligence
       items:
-      - name: Overview of anomaly detection
+      - name: Set up anomaly detection
         href: anomaly-detection.md
       - name: Anomaly detection models
         href: anomaly-detection-models.md

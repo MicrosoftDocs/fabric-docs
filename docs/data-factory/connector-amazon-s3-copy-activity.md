@@ -54,11 +54,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Amazon S3 under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-amazon-s3/source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-amazon-s3/source.png":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Amazon S3 connection from the connection list. If no connection exists, then create a new Amazon connection by selecting **New**.
 - **Connection type**: Select **Amazon S3** for your connection type.
 - **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, or **List of files** as your file path type. The configuration for each setting is:
@@ -125,11 +122,8 @@ Under **Advanced**, you can specify the following fields:
 
 The following properties are supported for Amazon S3 under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-amazon-s3/destination.png" alt-text="Screenshot showing destination tab and the list of properties." lightbox="./media/connector-amazon-s3/destination.png":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Amazon S3 connection from the connection list. If no connection exists, then create a new Amazon connection by selecting **New**.
 - **Connection type**: Select **Amazon S3** for your connection type.
 - **File path**: The data can be copied to the given bucket or the given bucket and folder path specified.
@@ -161,7 +155,6 @@ The following tables contain more information about the copy activity in Amazon 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **Data store type** |Your data store type.| **External**|Yes|/|
 | **Connection** |Your connection to the source data store.|\<your Amazon S3 connection> |Yes|connection|
 | **Connection type** |Select a type for your connection.|**Amazon S3**|Yes|/|
 | **File path type** | The file path type used to get source data. | • **File path**<br>• **Prefix**<br>• **Wildcard file path**<br>• **List of files**| Yes |/ |
@@ -193,7 +186,6 @@ The following tables contain more information about the copy activity in Amazon 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **Data store type** |Your data store type.| **External**|Yes|/|
 | **Connection** |Your connection to the destination data store.|\<your Amazon S3 connection> |Yes|connection|
 | **Connection type** |Select a type for your connection.|**Amazon S3**|Yes|/|
 | **File path** | The folder/file path to the destination file. | <folder/file path> | Yes |/ |

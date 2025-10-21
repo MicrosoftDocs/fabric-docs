@@ -124,7 +124,7 @@ items:
     href: browse-file-content-with-openrowset.md
   - name: Ingesting data into the warehouse
     href: ingest-data.md
-  - name: Ingest data with data pipelines
+  - name: Ingest data with pipelines
     href: ingest-data-pipelines.md
   - name: Ingest data with the COPY statement
     href: ingest-data-copy.md
@@ -145,10 +145,13 @@ items:
   - name: Service principals
     href: service-principals.md
     displayName: SPN
+  - name: Encryption
+    displayName: CMK encryption
+    href: encryption.md
+  - name: Entra ID authentication
+    href: entra-id-authentication.md
   - name: SQL Audit Logs
     href: sql-audit-logs.md
-  - name: Microsoft Entra ID authentication
-    href: entra-id-authentication.md
   - name: Workspace roles
     href: workspace-roles.md
   - name: Column-level security

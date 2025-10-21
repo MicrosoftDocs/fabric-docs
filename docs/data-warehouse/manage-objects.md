@@ -3,8 +3,8 @@ title: Manage Objects in Your Fabric Data Warehouse
 description: Learn about the object explorer in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: pvenkat
-ms.date: 04/06/2025
+ms.reviewer: pvenkat, fresantos
+ms.date: 09/24/2025
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: how-to
@@ -14,7 +14,7 @@ ms.search.form: Query editor # This article's title should not change. If so, co
 
 **Applies to:** [!INCLUDE [fabric-se-dw-mirroreddb](includes/applies-to-version/fabric-se-dw-mirroreddb.md)]
 
-This article describes warehouse management tasks you can accomplish in the **Explorer** in the [!INCLUDE [product-name](../includes/product-name.md)] portal. 
+This article describes warehouse management tasks you can accomplish in the **Explorer** in the [!INCLUDE [product-name](../includes/product-name.md)] portal.
 
 - You can organize, explore, and manage warehouse objects in the object explorer, and execute queries in the [SQL query editor](sql-query-editor.md).
 - You can also [query the data](query-warehouse.md) in your warehouse with multiple tools with a [SQL connection string](connectivity.md).
@@ -27,7 +27,7 @@ The **Explorer** provides a hierarchical view of the warehouse objects, includin
 
 ## Search and filter objects in the explorer
 
-The search and filter features in Fabric Data Warehouse are designed for ease of discovery. 
+The search and filter features in Fabric Data Warehouse are designed for ease of discovery.
 
 The search function quickly highlights matching objects and highlights the results within the object explorer for the user.
 
@@ -36,6 +36,10 @@ The search function quickly highlights matching objects and highlights the resul
 When dealing with numerous objects, such as schemas, tables, or stored procedures, finding specific items can be challenging. Use the filter options for object selection based on object type or created date.
 
 :::image type="content" source="media/manage-objects/filter-options.png" alt-text="Screenshot showing how objects are filtered in object explorer.":::
+
+### Metadata caching
+
+Warehouse object metadata is cached by Fabric Data Warehouse to provide fast access to objects and their definitions. For very large warehouses with more than 750,000 objects (for example, tables, views, stored procedures, and functions), metadata is no longer cached by the system. Instead, schema operations query the metadata store directly. This ensures system stability and prevents cache starvation in extremely large databases. However, schema refresh operations can take longer compared to smaller warehouses where metadata caching is enabled.
 
 ## Script out warehouse objects in the explorer
 
@@ -53,7 +57,7 @@ For more information on source control for warehouses in Microsoft Fabric, inclu
 
 Users can manage their queries efficiently under "My Queries" and "Shared Queries" sections.
 
-- **My Queries** is a personal space where users can save and organize their own queries. 
+- **My Queries** is a personal space where users can save and organize their own queries.
 
 - **Shared Queries** is a collaborative space where users can share their queries with team members to access, review, and execute shared queries. Anyone with Contributor and higher permissions at a workspace level can view and edit shared queries.
 

@@ -38,7 +38,6 @@ OneLake security enables users to define data access roles for the following Fab
 | ---- | --- | --- |
 | Lakehouse | Public Preview | Read, ReadWrite |
 | Azure Databricks Mirrored Catalog | Public Preview | Read |
-| Mirrored Databases | Public Preview | Read |
 
 ## OneLake security and workspace permissions
 
@@ -106,6 +105,16 @@ The table below outlines which Microsoft Fabric engines support RLS and CLS filt
 ## OneLake security access control model details
 
 This section provides details on how OneLake security roles grant access to specific scopes, how that access operates, and how access is resolved across multiple roles and access types.
+
+### Table level security
+
+All OneLake tables are represented by folders in the lake, but not all folders in the lake are tables from the perspective of OneLake security and query engines in Fabric. To be considered a valid table, the following conditions must be met:
+
+- The folder exists in the Tables/ directory of an item.
+- The folder contains a _delta_log folder with corresponding JSON files for the table metadata.
+- The folder does not contain any child shortcuts.
+
+Any tables that do not meet those criteria will have access denied if table level security is configured on them.
 
 ### Metadata security
 
@@ -332,6 +341,8 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 * OneLake security doesn't work with [private link protection](../../security/security-private-links-overview.md).
 
 * The [external data sharing preview](../../governance/external-data-sharing-overview.md) feature isn't compatible with the data access roles preview. When you enable the data access roles preview on a lakehouse, any existing external data shares might stop working.
+
+* Azure Mirrored Databricks Catalog does not support Manage Catalog functionality if OneLake security is enabled on that item. This functionality is coming in November, 2025.
 
 * The following table provides the limitations of OneLake data access roles.
 

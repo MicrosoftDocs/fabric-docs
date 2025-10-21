@@ -1,0 +1,45 @@
+items:
+  - name: Graph in Microsoft Fabric documentation
+    href: index.yml
+  - name: Overview
+    items:
+      - name: What is Graph in Microsoft Fabric?
+        href: overview.md
+      - name: What is a graph database?
+        href: graph-database.md
+      - name: Compare graph and relational databases
+        href: graph-relational-databases.md
+      - name: Labeled property graph
+        href: graph-data-models.md
+  - name: Get started
+    items:
+      - name: Quickstart guide for Graph in Microsoft Fabric
+        href: quickstart.md
+      - name: Limitations in Graph in Microsoft Fabric
+        href: limitations.md
+  - name: Graph Query Language (GQL)
+    items:
+      - name: GQL manual
+        items:
+        - name: GQL language guide
+          href: gql-language-guide.md
+        - name: 'GQL schema example: Social network'
+          href: gql-schema-example.md
+        - name: GQL graph patterns
+          href: gql-graph-patterns.md
+        - name: GQL expressions, predicates, and functions
+          href: gql-expressions.md
+        - name: GQL graph types
+          href: gql-graph-types.md
+        - name: GQL values and value types
+          href: gql-values-and-value-types.md
+      - name: GQL query API    
+        href: gql-query-api.md
+      - name: GQL reference material
+        items:
+        - name: GQL quick reference
+          href: gql-reference-abridged.md
+        - name: GQL status codes reference
+          href: gql-reference-status-codes.md
+        - name: GQL reserved words reference
+          href: gql-reference-reserved-terms.md

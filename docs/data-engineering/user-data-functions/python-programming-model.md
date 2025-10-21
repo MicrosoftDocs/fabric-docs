@@ -187,6 +187,128 @@ def read_from_sql_db(demosqldatabase: fn.FabricSqlConnection)-> list:
   return results
 ```
 
+## Generic connections for Fabric items or Azure resources
+
+Generic connections allow you to create connections to Fabric items or Azure resources using your User Data Functions item owner identity. This feature generates an Entra ID token with the item owner's identity and a provided audience type. This token is used to authenticate with Fabric items or Azure resources that support that audience type. This process will give you a similar programming experience to using managed connections objects from the [Manage Connections feature](./connect-to-data-sources.md) but only for the provided audience type in the connection. 
+
+This feature uses the `@udf.generic_connection()` decorator with the following parameters:
+
+| Parameter | Description | Value |
+|---|---|---|
+| `argName` | The name of the variable that is passed to the function. The user needs to specify this variable in the arguments of their function and use the type of `fn.FabricItem` for it  | For example, if the `argName=CosmosDb`, then the function should contain this argument `cosmosDb: fn.FabricItem`|
+| `audienceType` | The type of audience that the connection is created for. This parameter is associated with the type of Fabric item or Azure service and determines the client used for the connection.  | The allowed values for this parameter are `CosmosDb` or `KeyVault`. |
+
+
+
+### Connect to Fabric Cosmos DB container using a generic connection
+Generic connections support native Fabric Cosmos DB items by using the `CosmosDB` audience type. The included User Data Functions SDK provides a helper method called `get_cosmos_client` that fetches a singleton Cosmos DB client for every invocation.
+
+You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.md) using a generic connection by following these steps:
+1. In your Fabric User Data Functions item, install the `azure-cosmos` library using the [Library Management experience](./how-to-manage-libraries.md).
+
+1. Go to your **Fabric Cosmos DB item** settings.
+
+    :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos-db-connection-1.png" alt-text="Screenshot showing the Fabric Cosmos DB settings button location." lightbox="..\media\user-data-functions-python-programming-model\cosmos-db-connection-1.png":::
+
+1. Retrieve your **Fabric Cosmos DB endpoint URL**.
+
+    :::image type="content" source="..\media\user-data-functions-python-programming-model\cosmos-db-connection-2.png" alt-text="Screenshot showing the Fabric Cosmos DB endpoint URL." lightbox="..\media\user-data-functions-python-programming-model\cosmos-db-connection-2.png":::
+
+1. Go to your **User Data Functions item**. Use the following sample code to connect to your Fabric Cosmos DB container and run a read query using the Cosmos DB sample dataset. Replace the values of the following variables:
+    - `COSMOS_DB_URI` with your Fabric Cosmos DB endpoint.
+    - `DB_NAME` with the name of your Fabric Cosmos DB item.
+
+    ```python
+    from fabric.functions.cosmosdb import get_cosmos_client
+    import json
+
+    @udf.generic_connection(argName="cosmosDb", audienceType="CosmosDB")
+    @udf.function()
+    def get_product_by_category(cosmosDb: fn.FabricItem, category: str) -> list:
+
+        COSMOS_DB_URI = "YOUR_COSMOS_DB_URL"
+        DB_NAME = "YOUR_COSMOS_DB_NAME" # Note: This is the Fabric item name
+        CONTAINER_NAME = "SampleData" # Note: This is your container name. In this example, we are using the SampleData container.
+
+        cosmosClient = get_cosmos_client(cosmosDb, COSMOS_DB_URI)
+
+        # Get the database and container
+        database = cosmosClient.get_database_client(DB_NAME)
+        container = database.get_container_client(CONTAINER_NAME)
+
+        query = 'select * from c WHERE c.category=@category' #"select * from c where c.category=@category"
+        parameters = [
+            {
+                "name": "@category", "value": category
+            }
+        ]
+        results = container.query_items(query=query, parameters=parameters)
+        items = [item for item in results]
+
+        logging.info(f"Found {len(items)} products in {category}")
+
+        return json.dumps(items)
+    ```
+
+1. **Test or run this function** by providing a category name, such as `Accessory` in the invocation parameters.
+
+>[!NOTE]
+> You can also use these steps to connect to an Azure Cosmos DB database using the account URL and database names. The User Data Functions owner account would need access permissions to that Azure Cosmos DB account.
+
+### Connect to Azure Key Vault using a generic connection
+Generic connections support connecting to an Azure Key Vault by using the `KeyVault` audience type. This type of connection requires that the Fabric User Data Functions owner has permissions to connect to the Azure Key Vault. You can use this connection to retrieve keys, secrets, or certificates by name.
+
+You can connect to [Azure Key Vault](https://learn.microsoft.com/azure/key-vault/general/basic-concepts) to retrieve a client secret to call an API using a generic connection by following these steps:
+
+1. In your **Fabric User Data Functions item**, install the `requests` and the `azure-keyvault-secrets` libraries using the [Library Management experience](./how-to-manage-libraries.md).
+
+1. Go to your **Azure Key Vault resource** and retrieve the `Vault URI` and the name of your key, secret or certificate. 
+
+    :::image type="content" source="..\media\user-data-functions-python-programming-model\key-vault-connection-1.png" alt-text="Screenshot showing the Azure Key Vault endpoint URL and values." lightbox="..\media\user-data-functions-python-programming-model\key-vault-connection-1.png":::
+
+1. Go back to your **Fabric User Data Functions item** and use this sample. In this sample, we will retrieve a secret from Azure Key Vault to connect to a public API. Replace the value of the following variables:
+    - `KEY_VAULT_URL` with the `Vault URI` you retrieved in the previous step. 
+    - `KEY_VAULT_SECRET_NAME` with the name of your secret.
+    - `API_URL` variable with the URL of the API you'd like to connect to. This sample assumes that you are connecting to a public API that accepts GET requests and takes the following parameters `api-key` and `request-body`. 
+ 
+    ```python
+    from azure.keyvault.secrets import SecretClient
+    from azure.identity import DefaultAzureCredential
+    import requests
+
+    @udf.generic_connection(argName="keyVaultClient", audienceType="KeyVault")
+    @udf.function()
+    def retrieveNews(keyVaultClient: fn.FabricItem, requestBody:str) -> str:
+        KEY_VAULT_URL = 'YOUR_KEY_VAULT_URL'
+        KEY_VAULT_SECRET_NAME= 'YOUR_SECRET'
+        API_URL = 'YOUR_API_URL'
+
+        credential = keyVaultClient.get_access_token()
+
+        client = SecretClient(vault_url=KEY_VAULT_URL, credential=credential)
+
+        api_key = client.get_secret(KEY_VAULT_SECRET_NAME).value
+
+        api_url = API_URL
+        params = {
+            "api-key": api_key,
+            "request-body": requestBody
+        }
+
+        response = requests.get(api_url, params=params)
+
+        data = "" 
+
+        if response.status_code == 200:
+            data = response.json()
+        else:
+            print(f"Error {response.status_code}: {response.text}")
+
+        return f"Response: {data}"
+    ```
+
+1. **Test or run this function** by providing a request body in your code.
+
 ## Get invocation properties using `UserDataFunctionContext`
 
 The programming model also includes the `UserDataFunctionContext` object. This object contains the function invocation metadata and can be used to create specific app logic for certain invocation mechanisms.
@@ -236,6 +358,8 @@ def raise_userthrownerror(age: int)-> str:
 This `UserThrownError` method takes two parameters:
 - `Message`: This string is returned as the error message to the application that is invoking this function.
 - A dictionary of properties is returned to the application that is invoking this function.
+
+
 
 ## Next steps
 - [Reference API documentation](/python/api/fabric-user-data-functions/fabric.functions)

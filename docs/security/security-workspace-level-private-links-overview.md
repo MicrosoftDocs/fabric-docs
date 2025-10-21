@@ -6,13 +6,13 @@ ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: overview
 ms.custom:
-ms.date: 08/13/2025
+ms.date: 09/29/2025
 
 #customer intent: As a workspace admin, I want to configure Private Link on my workspace to prevent access to the workspace from the public internet.
 
 ---
 
-# Private links for Fabric workspaces (preview)
+# Private links for Fabric workspaces
 
 Private links provide a secure, private connection between your virtual network and Microsoft Fabric, blocking public internet access to your data and reducing the risk of unauthorized access or data breaches. Azure Private Link and Azure Networking private endpoints are used to send data traffic privately using Microsoft's backbone network infrastructure instead of going across the internet.
 
@@ -22,7 +22,7 @@ This article gives an overview of workspace-level private links in Microsoft Fab
 
 ## Workspace-level private link overview
 
-A workspace-level private link maps a workspace to a specific virtual network using the Azure Private Link service. When a private link is enabled, public internet access to the workspace can be restricted, ensuring that only resources within an approved virtual network (via a managed private endpoint) can access the workspace. The following diagram illustrates various implementations of workspace-level private links.
+A workspace-level private link maps a workspace to a specific virtual network using the Azure Private Link service. When a private link is enabled, public internet access to the workspace can be restricted, ensuring that only resources within an approved virtual network (via a private endpoint) can access the workspace. The following diagram illustrates various implementations of workspace-level private links.
 
 :::image type="content" source="./media/security-workspace-level-private-links-overview/workspace-level-private-links-scenario-intro-diagram.png" alt-text="Diagram illustrating workspace-level private link scenarios." lightbox="./media/security-workspace-level-private-links-overview/workspace-level-private-links-scenario-intro-diagram.png" border="false":::
 
@@ -58,7 +58,7 @@ When connecting to a workspace, you need to use the workspace fully qualified do
 * `https://{workspaceid}.z{xy}.onelake.fabric.microsoft.com` 
 * `https://{workspaceid}.z{xy}.dfs.fabric.microsoft.com`
 * `https://{workspaceid}.z{xy}.blob.fabric.microsoft.com`
-* `https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com` *that is, add z{xy} to the regular warehouse connection string.
+* `https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com` *that is, add z{xy} to the regular warehouse connection string found under SQL connection string. The GUIDs in the FQDN correspond to Tenant GUID in Base32 and Workspace GUID in Base32 respectively. 
 
 ## How the workspace FQDN resolves in different environments
 

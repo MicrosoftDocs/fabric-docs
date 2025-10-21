@@ -57,13 +57,14 @@ The feature availability also depends on Fabric regions. For a complete list of 
 
 ## Table level
 
-- A table that doesn't have a defined primary key can't be mirrored.
-  - A table can't be mirrored if the primary key is one of the data types: **sql_variant**, **timestamp**/**rowversion**
-  - A table cannot be mirrored if the primary key is one of these data types: **datetime2(7)**, **datetimeoffset(7)**, **time(7)**, where `7` is seven digits of precision.
-  - Delta lake supports only six digits of precision.
-    - Columns of SQL type **datetime2**, with precision of 7 fractional second digits, do not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss happens if columns of this type are mirrored and seventh decimal second digit will be trimmed.
-    - The **datetimeoffset(7)** data type does not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss (loss of time zone and seventh time decimal) occurs if columns of this type are mirrored.   
-  - Clustered columnstore indexes aren't currently supported.
+- A table cannot be mirrored if the primary key is one of the data types: **sql_variant**, **timestamp**/**rowversion, datetime2(7)**, **datetimeoffset(7)**, **time(7)**, where `7` is seven digits of precision.
+
+- Delta lake supports only six digits of precision.
+  - Columns of SQL type **datetime2**, with precision of 7 fractional second digits, do not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss happens if columns of this type are mirrored and seventh decimal second digit will be trimmed.
+  - The **datetimeoffset(7)** data type does not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss (loss of time zone and seventh time decimal) occurs if columns of this type are mirrored.   
+- Clustered columnstore indexes aren't currently supported.
+- Tables with clustered index on unsupported types cannot be mirrored - **computed columns**, **user-defined types**, **geometry**, **geography**, **hierarchy ID**, **SQL variant**, **timestamp**, **datetime2(7)**, **datetimeoffset(7**) or **time(7).**
+
 - If one or more columns in the table is of type Large Binary Object (LOB) with a **size > 1 MB**, the column data is **truncated** to size of 1 MB in Fabric OneLake. [Configure the max text repl size](/sql/database-engine/configure-windows/configure-the-max-text-repl-size-server-configuration-option) server configuration option to allow more than 65,536 bytes if you want to allow large inserts.
 - Source tables that have any of the following features in use can't be mirrored:
   - Temporal history tables and ledger history tables  
@@ -137,3 +138,4 @@ The feature availability also depends on Fabric regions. For a complete list of 
 ## Related content
 
 - [Monitor Fabric mirrored database replication](../mirroring/monitor.md)
+

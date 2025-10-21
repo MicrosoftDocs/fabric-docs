@@ -73,6 +73,10 @@
                 "data-science/**/*.yml": "data-science",
                 "data-warehouse/**/*.md": "data-warehouse",
                 "data-warehouse/**/*.yml": "data-warehouse",
+                "database/cosmos-db/**/*.yml": "database-cosmos-db",
+                "database/cosmos-db/**/*.md": "database-cosmos-db",
+                "database/sql/**/*.yml": "database-sql",
+                "database/sql/**/*.md": "database-sql",                  
                 "get-started/**/*.yml": "get-started",
                 "get-started/**/*.md": "get-started",
                 "fundamentals/**/*.yml": "get-started",
@@ -96,7 +100,9 @@
                 "workload-development-kit/**/*.md": "workload-development-kit",
                 "workload-development-kit/**/*.yml": "workload-development-kit",
                 "database/**/*.md": "database",
-                "database/**/*.yml": "database"
+                "database/**/*.yml": "database",
+                "mirroring/**/*.md": "mirroring",
+                "mirroring/**/*.yml": "mirroring"
             },
             "feedback_product_url": {
                 "admin/**/*.md": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=023c0612-44be-ed11-83ff-00224827e905",
