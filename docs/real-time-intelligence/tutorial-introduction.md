@@ -10,7 +10,7 @@ ms.date: 10/21/2025
 ms.subservice: rti-core
 ms.search.form: Get started//
 ---
-# Tutorial: An introduction to real-time intelligence
+# Real-time intelligence tutorial
 
 Real-time intelligence in Microsoft Fabric helps you extract insights and visualize streaming data in motion. This tutorial provides an end-to-end solution for event-driven scenarios, streaming data, and log analysis.
 
