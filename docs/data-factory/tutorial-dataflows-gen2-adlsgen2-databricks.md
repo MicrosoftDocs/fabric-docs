@@ -66,7 +66,7 @@ Now you'll apply some basic transformations to prepare the data:
    - Country
    - City
 
-2. Right-click on any unselected column and choose **Remove Other Columns**.
+2. Right-click on any of the selected columns and choose **Remove Other Columns**.
 
    :::image type="content" source="media/tutorial-dataflows-gen2-adlsgen2-databricks/remove-other-columns.png" alt-text="Screenshot showing how to remove unnecessary columns from the Customers table.":::
 
@@ -145,7 +145,7 @@ Now you'll configure the destination to write data to your ADLS Gen2 storage acc
 
 Now you'll create a Databricks notebook to read the data from ADLS Gen2:
 
-### Create a new notebook
+### Create a new notebook in Databricks
 
 1. In your Databricks workspace, select **Create** > **Notebook**.
 
