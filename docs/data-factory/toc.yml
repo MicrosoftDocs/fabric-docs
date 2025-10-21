@@ -940,6 +940,8 @@
                 href: tutorial-dataflows-gen2-pipeline-activity.md
               - name: Pattern to incrementally amass data with Dataflow Gen2
                 href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
+              - name: Use a dataflow to bring data into Databricks
+                href: tutorial-dataflows-gen2-adlsgen2-databricks.md
               - name: Slowly changing dimension type 1
                 href: slowly-changing-dimension-type-one.md
               - name: Slowly changing dimension type 2
