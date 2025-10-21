@@ -1,5 +1,5 @@
 ---
-title: "Source Control with Warehouse (Preview)"
+title: "Source Control with Fabric Data Warehouse (Preview)"
 description: "Learn how to use source control with Microsoft Fabric Warehouse."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -8,7 +8,9 @@ ms.date: 07/16/2025
 ms.topic: conceptual
 ---
 
-# Source control with Warehouse (preview)
+# Source control (preview)
+
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 This article explains how Git integration and deployment pipelines work for warehouses in Microsoft Fabric. Learn how to set up a connection to your repository, manage your warehouses, and deploy them across different environments. Source control for Fabric Warehouse is currently a preview feature.
 
@@ -113,7 +115,5 @@ For more information about the Fabric deployment pipelines process, see [Introdu
 
 ## Related content
 
+- [Development and Deployment](development-deployment.md)
 - [Get started with Git integration](../cicd/git-integration/git-get-started.md)
-- [Basic concepts in Git integration](../cicd/git-integration/git-integration-process.md)
-- [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
-- [Tutorial: Set up dbt for Fabric Data Warehouse](tutorial-setup-dbt.md)
