@@ -57,7 +57,7 @@ Once a dataflow refresh is canceled, the dataflow's refresh history status is up
 
 For dataflow refreshes, a couple of limitations are in place:
 
-1. Each dataflow is allowed up to 300 refreshes per 24-hour rolling window. If this limit is exceeded, an error will appear in the refresh history, and refreshes will resume once usage drops below the threshold. For non-CI/CD Dataflows Gen2, the limit is 150 refreshes per 24-hour rolling window.
+1. Each dataflow is allowed up to 300 refreshes per 24-hour rolling window. If this limit is exceeded, an error may appear in the refresh history, and refreshes will resume once usage drops below the threshold. For non-CI/CD Dataflows Gen2, the limit is 150 refreshes per 24-hour rolling window.
 2. In addition to the per-dataflow limits, system-level throttling may apply to protect overall service stability. This means that while 300 refreshes spread across 24 hours is acceptable, attempting 300 refreshes within a short burst (e.g., 60 seconds) may trigger throttling and result in rejected requests. These protections are in place to ensure system reliability.
 3. If your scheduled dataflow refresh fails consecutively, we pause your dataflow refresh schedule and send the owner of the dataflow an email. The following rules apply in this case:
    - 72 hours (3 days)
