@@ -15,7 +15,7 @@ ms.search.form: Map permissions
 Permissions for reading, writing, and sharing Map items follow the standard Fabric workspace roles, ensuring a consistent and secure access model across all Fabric items.
 
 > [!IMPORTANT]
-< This feature is in [preview](../../fundamentals/preview).
+< This feature is in [preview](../../fundamentals/preview.md).
 
 ## Workspace roles for Map items
 

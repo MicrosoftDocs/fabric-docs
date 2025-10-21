@@ -17,7 +17,7 @@ When you share a Map item in Microsoft Fabric, you grant users or groups permiss
 Sharing a Map through [Direct Access](#direct-access) automatically enforces permission checks for both the Map and its underlying data sources. This ensures secure, role-based access without requiring full workspace-level permissions.
 
 > [!IMPORTANT]
-< This feature is in [preview](../../fundamentals/preview).
+< This feature is in [preview](../../fundamentals/preview.md).
 
 ## Accessing Shared Maps
 
