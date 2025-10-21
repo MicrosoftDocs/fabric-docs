@@ -49,7 +49,6 @@ Go to the **Source** tab to configure your copy activity source.
 synapsesql(tableName: String = "<Warehouse.Schema.Table>")
 ```
 
-```
 **Query:**
 ```
 spark.read.option(Constants.DatabaseName, "<warehouse>").synapsesql("<T-SQL Query>")
