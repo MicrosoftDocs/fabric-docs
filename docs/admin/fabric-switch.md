@@ -4,7 +4,7 @@ description: Learn how to enable Microsoft Fabric for your organization.
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.date: 02/05/2025
+ms.date: 10/17/2025
 ---
 
 # Enable Microsoft Fabric for your organization
@@ -31,8 +31,9 @@ To enable Microsoft Fabric, you need to have the *Fabric administrator* role.
 
 When you enable Microsoft Fabric using the tenant setting, users can create Fabric items in that [tenant](../enterprise/licenses.md#tenant), unless capacity admins turned it off for a specific capacity. Depending on the configuration you select, Microsoft Fabric becomes available for everyone in the tenant, or to a selected group of users.
 
->[!Note]
->You, or other admins, can override the Microsoft Fabric setting at the [capacity level](#enable-for-a-capacity).
+> [!Note]
+> * You, or other admins, can override the Microsoft Fabric setting at the [capacity level](#enable-for-a-capacity).
+> * The [Microsoft Fabric trial capacity](/fabric/fundamentals/fabric-trial) gives you free access for 60 days to explore most features across data engineering, data science, real-time analytics, business intelligence, and more.
 
 In your tenant, you can enable Microsoft Fabric for:
 

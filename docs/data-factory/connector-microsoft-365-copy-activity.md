@@ -50,11 +50,8 @@ For the **General** tab configuration, go to [General](activity-overview.md#gene
 
 The following properties are supported for Microsoft 365 under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-microsoft-365/source.png" alt-text="Screenshot showing source tab." lightbox="./media/connector-microsoft-365/source.png":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select a **Microsoft 365** connection from the connection list. If no connection exists, then create a new Microsoft 365 connection by selecting **New**.
 - **Table**: Name of the table to extract from **Microsoft 365**. You can preview the sample data by selecting **Preview sample data**.
 
@@ -94,7 +91,6 @@ The following tables contain more information about the copy activity in Microso
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**Table**|Name of the table to extract from **Microsoft 365**.|\<table>|Yes|table|
 |**Scope**|When the user group isn't specified, you can use a predicate expression that's applied on the entire tenant to filter the specific rows to extract from Microsoft 365. The predicate format should match the query format of Microsoft Graph APIs, for example `https://graph.microsoft.com/v1.0/users?$filter=Department eq 'Finance'`.|\<your scope>|Yes|scope|

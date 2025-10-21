@@ -22,7 +22,7 @@ In this quickstart, you'll build a pipeline that moves a sample dataset into a L
 
 Before you begin, make sure you have the following setup:
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/free/).
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Create a pipeline
@@ -32,9 +32,7 @@ Before you begin, make sure you have the following setup:
 
 1. Go to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you made a new workspace as a prerequisite, use that one.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
-
-1. Select **New item**, pick **Pipeline**, and enter a name for your pipeline.
+1. Select **New item**, search for, and pick **Pipeline**, and enter a name for your pipeline.
 
    :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
    :::image type="content" source="media/create-first-pipeline/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::

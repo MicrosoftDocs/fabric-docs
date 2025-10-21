@@ -4,7 +4,7 @@ description: This article explains how to copy data using Oracle database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 09/08/2025
+ms.date: 10/14/2025
 ms.custom: 
   - pipelines
   - template-how-to
@@ -94,6 +94,12 @@ Under **Advanced**, you can specify the following fields:
 
 - **Query timeout (minutes)**: Specify the timeout for query command execution, default is 120 minutes. If a parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes).
 
+- **NUMBER settings**: Specify the precision and scale for NUMBER. This applies only to NUMBER types that do not have precision and scale explicitly defined in the Oracle database.
+
+  - **Precision**: Specify the maximum number of significant decimal digits. Allowed values range from 1 to 256. Defaults to 256 if not specified.
+
+  - **Scale**: Specify the number of digits after the decimal point. Allowed values range from 0 to 130 and must be less than or equal to the precision. Defaults to 130 if not specified.
+
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 ### Destination
@@ -166,6 +172,8 @@ The following tables contain more information about the copy activity in Oracle 
 | **Partition lower bound** | Specify the minimum value of the partition column to copy data out. If you use a query to retrieve the source data, hook `?DfRangePartitionLowbound` in the WHERE clause. For an example, see the Parallel copy from [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section. | < your partition lower bound > | No | partitionLowerBound |
 |  |  |  |  |  |
 |**Query timeout** |The timeout for query command execution, default is 120 minutes. |timespan |No |queryTimeout|
+| **Precision** | The maximum number of significant decimal digits. Allowed values range from 1 to 256. Defaults to 256 if not specified. | < your precision > | No | numberPrecision |
+| **Scale** | The number of digits after the decimal point. Allowed values range from 0 to 130 and must be less than or equal to the precision. Defaults to 130 if not specified. | < your scale > | No | numberScale |
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
 ### Destination information

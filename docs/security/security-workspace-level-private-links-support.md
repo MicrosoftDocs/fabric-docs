@@ -3,10 +3,10 @@ title: Supported scenarios for workspace private links
 description: Find information and links for supported and unsupported workspace-level private link scenarios.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: overview
 ms.custom:
-ms.date: 09/29/2025
+ms.date: 10/20/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -48,7 +48,6 @@ The following item types aren't currently supported in workspaces enabled with w
 * Default semantic models
 * Lakehouses with schemas
 * Spark connectors for SQL Data Warehouse
-* Gateway-based connections in Data Pipelines and Copy Jobs
 
 If a workspace contains any unsupported item types, inbound public access can't be restricted for the workspace, even if workspace-level private link is set up. 
 
@@ -59,10 +58,6 @@ When working with unsupported item types, be aware of the following consideratio
 * **Deployment pipelines:** When a workspace is assigned to a deployment pipeline, it can't be configured to block public access, as deployment pipelines don't currently support workspace-level private links.
 
 * **Default semantic models:** Existing lakehouses, warehouses, and mirrored databases use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse, warehouse, or mirrored database.
-
-* **Data Pipelines and Copy Jobs:** Data Pipelines and Copy Jobs are supported in workspaces enabled with private links. However, the following scenario isn't currently supported:
-
-   * *Gateway-based connections:* Data Pipelines and Copy Jobs can't use connections that rely on an on-premises data gateway or a virtual network (VNet) data gateway infrastructure. This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
 
 ## Management options for supported item types
 
@@ -182,8 +177,8 @@ Manage environments in workspaces enabled with private links by using the Fabric
 * [Create, configure, and use an environment](/fabric/data-engineering/create-and-use-environment)
 #### [REST API](#tab/rest-apis-7)
 * [Items - REST API (Environment)](/rest/api/fabric/environment/items)
-* [Spark Compute - REST API (Environment)](/rest/api/fabric/environment/spark-compute)
-* [Spark Libraries - REST API (Environment)](/rest/api/fabric/environment/spark-libraries)
+* [Spark Compute - REST API (Environment)](/rest/api/fabric/environment/published/get-spark-compute)
+* [Spark Libraries - REST API (Environment)](/rest/api/fabric/environment/published/list-libraries)
 * [Custom Pools - REST API (Spark)](/rest/api/fabric/spark/custom-pools)
 * [Livy Sessions - REST API (Spark)](/rest/api/fabric/spark/livy-sessions)
 * [Workspace Settings - REST API (Spark)](/rest/api/fabric/spark/workspace-settings)
@@ -288,18 +283,22 @@ Manage variable libraries in workspaces enabled with private links by using the 
 
 ### Mirrored database support
 
-You can manage mirrored databases in workspaces enabled with private links by using the following REST APIs:
+You can manage mirrored databases in workspaces enabled with private links by using the Fabric portal or REST API.
 
-* [Fabric Mirroring Public REST API](/fabric/database/mirrored-database/mirrored-database-rest-api)
+#### [Fabric portal](#tab/fabric-portal-14)
+* [Mirrored database tutorials](/fabric/mirroring/overview)
+#### [REST API](#tab/rest-apis-14)
+* [Fabric Mirroring Public REST API](/fabric/mirroring/mirrored-database-rest-api)
 * [Items - REST API (MirroredDatabase)](/rest/api/fabric/mirroreddatabase/items)
+---
 
 > [!NOTE]
-> * Currently, workspace-level private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring) and [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started. 
+> * Currently, workspace-level private link is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db) and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server) (using SQL Server 2025 CTP 2.0 or higher version). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started. 
 > * For open mirroring, when your workspace is configured to deny inbound public access, ensure the publisher writes data into the OneLake landing zone via a private link with workspace FQDN.
 
 ## Supported and unsupported management tools
 
-- You can use either the Fabric portal or the REST API to manage all [supported item types](#supported-item-types-for-workspace-level-private-link) in workspaces with private links enabled. If a workspace allows public access, the Fabric portal continues to function using public connectivity. If a workspace is configured to deny inbound public access, the Fabric portal displays an **Access restricted** page.
+- You can use either the Fabric portal or REST API to manage all [supported item types](#supported-item-types-for-workspace-level-private-link) in workspaces with workspace private links enabled. When a workspace allows public access, the Fabric portal continues to function using public connectivity. If a workspace is configured to deny inbound public access, you can access it in the Fabric portal only when the request originates from the workspace's associated private endpoint. If access is attempted from public connectivity or from a different private endpoint, the Fabric portal displays an "Access Restricted" message. 
 - Direct deeplinks to a Monitoring hub Level 2 (L2) page might not work as expected when using workspace-level private links. You can access the L2 page by first navigating to the Monitoring hub's Level 1 (L1) page in the Fabric portal.
 - SQL Server Management Studio (SSMS) is supported for connecting to warehouses via workspace-level private link.
 - Storage Explorer can be used with workspace-level private links.
@@ -314,6 +313,7 @@ You can manage mirrored databases in workspaces enabled with private links by us
 - The limit of private endpoints for a workspace is 100. Create a support ticket if you need to increase this limit.
 - Limit of workspace PLS you can create per tenant: 500. Create a support ticket if you need to increase this limit.
 - Up to 10 workspace private link services can be created per minute.
+- The Fabric portal UI doesn't currently support enabling both inbound protection (workspace-level private links) and outbound access protection at the same time for a workspace. To configure both settings together, use the [Workspaces - Set Network Communication Policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy?tabs=HTTP), which allows full management of inbound and outbound protection policies.
 - For Data Engineering workloads:
    - To query Lakehouse files or tables from a workspace that has workspace-level private link enabled, you must create a cross-workspace managed private endpoint connection to access resources in the other workspace. <!--For instructions, see [Cross workspace communication](security-cross-workspace-communication.md).-->
    - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace. To read files in a Lakehouse located in another workspace, use a fully qualified path that includes the workspace ID and lakehouse ID (not their display names). This approach ensures the Spark session can resolve the path correctly and avoids socket timeout errors. [Learn more](workspace-outbound-access-protection-data-engineering.md#understanding-the-behavior-of-file-paths)

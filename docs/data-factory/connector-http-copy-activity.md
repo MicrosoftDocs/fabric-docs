@@ -48,11 +48,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for HTTP under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-http/source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-http/source.png":::
-
 The following three properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an HTTP connection from the connection list. If no connection exists, then create a new HTTP connection by selecting **New**.
 - **Connection type**: Select **HTTP**.
 - **Relative URL**: A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `/[relative URL specified]`.
@@ -86,7 +83,6 @@ The following table contains more information about the copy activity in HTTP.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**Connection type** | The connection of your source data.|\<connection of your source>|Yes |/|
 |**Relative URL** |A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `/[relative URL specified]`.| \<your relative url> |No |relativeUrl|

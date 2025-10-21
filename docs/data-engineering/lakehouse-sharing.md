@@ -24,7 +24,7 @@ To edit or remove permissions, see [Managing permissions](#managing-permissions)
 
 ## Sharing and permissions
 
-By default, sharing a lakehouse grants users read permission to the lakehouse, the associated SQL analytics endpoint, and the default semantic model. In addition to these default permissions, you can grant:
+By default, sharing a lakehouse grants Fabric **Read** permission on the lakehouse, the associated SQL analytics endpoint, and the default semantic model. In addition to these default permissions, you can grant:
 
 - ReadData permission on SQL analytics endpoint to access data without SQL policy.
 - ReadAll permission on the lakehouse to access all data using Apache Spark, and SubscribeOneLakeEvents permission to get OneLake events generated for the lakehouse.
