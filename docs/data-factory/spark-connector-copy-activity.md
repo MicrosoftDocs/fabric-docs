@@ -51,7 +51,8 @@ synapsesql(tableName: String = "<Warehouse.Schema.Table>")
 
 ```
 **Query:**
-```spark.read.option(Constants.DatabaseName, "<warehouse>").synapsesql("<T-SQL Query>")
+```
+spark.read.option(Constants.DatabaseName, "<warehouse>").synapsesql("<T-SQL Query>")
 ```
 
 Also consider the Synapsesql Method signature. The following command shows the synapsesql method signature for the read request. The three-part tableName argument is required for accessing tables or views from a warehouse and the SQL analytics endpoint of a lakehouse. Update the argument with the following names, based on your scenario:
@@ -62,18 +63,22 @@ Also consider the Synapsesql Method signature. The following command shows the s
 synapsesql(tableName: String = "<Part1.Part2.Part3>") => org.apache.spark.sql.DataFrame
 
   In addition to reading from a table or view directly, this connector also allows you to specify a custom or passthrough query. This gets passed to SQL engine and result is returned back in Spark:
-```spark.read.option(Constants.DatabaseName, "{warehouse/lakehouse name}").synapsesql("{T-SQL Query}")
+```
+spark.read.option(Constants.DatabaseName, "{warehouse/lakehouse name}").synapsesql("{T-SQL Query}")
 ```
 
 ## Specify SQL Endpoint Explicitly 
   // For warehouse
-```spark.conf.set("spark.datawarehouse.{warehouse name}.sqlendpoint", "{sql endpoint,port}")
+```
+spark.conf.set("spark.datawarehouse.{warehouse name}.sqlendpoint", "{sql endpoint,port}")
 ```
 // For lakehouse
-```spark.conf.set("spark.lakehouse.[lakehouse name].sqlendpoint", "[sql endpoint,port]")
+```
+spark.conf.set("spark.lakehouse.[lakehouse name].sqlendpoint", "[sql endpoint,port]")
 ```
 // Read from table
-```spark.read.synapsesql("[lakehouse name].[schema name].[table or view name]")
+```
+spark.read.synapsesql("[lakehouse name].[schema name].[table or view name]")
 ```
 
 ## Version 
@@ -90,10 +95,10 @@ The Spark connector in Fabric is primarily designed for read operations:
   - For write-back scenarios, use Fabric APIs or Lakehouse write methods outside of copy activity.
 
 ## Mapping
-For Mapping tab configuration, see [our documentation](fabric/data-factory/).
+For Mapping tab configuration, see [our documentation](/fabric/data-factory/).
 
 ## Settings
-For Settings tab configuration, go to [our documentation](fabric/data-factory/).
+For Settings tab configuration, go to [our documentation](/fabric/data-factory/).
 
 
 ## Security
@@ -106,6 +111,6 @@ Use Spark DataFrame partitioning for large datasets.
 Upgrade to v2.0 for enhanced performance and SSL support.
 
 ## Related Content 
-  - [https://learn.microsoft.com/en-us/fabric/data-factory/](fabric/data-factory/.md)
+  - [https://learn.microsoft.com/en-us/fabric/data-factory/](/fabric/data-factory/)
   - [https://spark.apache.org/docs/latest/sql-programming-guide.html](https://spark.apache.org/docs/latest/sql-programming-guide.html)
   - [https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-overview](pipeline-overview.md)
