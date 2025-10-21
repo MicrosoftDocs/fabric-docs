@@ -75,7 +75,7 @@ You can perform many actions that impact the tables in the semantic model:
 * **Selecting** tables or views previously unselected adds the selected items to the semantic model.
 * **Unselecting** tables or views previously selected removes them from the semantic model.
 
-Tables with measures can be unselected but remain in model view showing measures only without any data columns. The measures can be either deleted or moved to a different table. When all measures are moved or deleted, go back to Edit tables and click Confirm to no longer show the empty table in the model. Learn more about what refresh, including schema sync, does in the [use Direct Lake in Power BI Desktop](fabric/fundamentals/direct-lake-power-bi-desktop) article.
+Tables with measures can be unselected but remain in model view showing measures only without any data columns. The measures can be either deleted or moved to a different table. When all measures are moved or deleted, go back to Edit tables and click Confirm to no longer show the empty table in the model. Learn more about what refresh, including schema sync, does in the [use Direct Lake in Power BI Desktop](direct-lake-power-bi-desktop.md) article.
 
 ## Creating a new semantic model
 
