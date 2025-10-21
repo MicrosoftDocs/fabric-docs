@@ -67,15 +67,15 @@ spark.read.option(Constants.DatabaseName, "{warehouse/lakehouse name}").synapses
 ```
 
 ## Specify SQL Endpoint Explicitly 
-  // For warehouse
+**For warehouse:**
 ```
 spark.conf.set("spark.datawarehouse.{warehouse name}.sqlendpoint", "{sql endpoint,port}")
 ```
-// For lakehouse
+**For lakehouse:**
 ```
 spark.conf.set("spark.lakehouse.[lakehouse name].sqlendpoint", "[sql endpoint,port]")
 ```
-// Read from table
+**Read from table:**
 ```
 spark.read.synapsesql("[lakehouse name].[schema name].[table or view name]")
 ```
