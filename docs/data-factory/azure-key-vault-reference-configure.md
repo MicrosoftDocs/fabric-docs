@@ -9,8 +9,6 @@ ms.search.form: Configure Azure Key Vault references
 ms.custom: configuration
 ---
 # Configure Azure Key Vault references
->[!NOTE]
->Azure Key Vault references in Fabric are available as a preview feature.
 
 ## Create an Azure Key Vault Reference
 
