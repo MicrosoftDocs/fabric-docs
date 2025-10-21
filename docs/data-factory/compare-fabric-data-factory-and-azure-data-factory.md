@@ -75,7 +75,7 @@ With Data Factory in Microsoft Fabric, we continue to maintain a high degree of 
 |ADX/KQL|[Y](/azure/data-factory/connector-azure-data-explorer)|[Y](kql-activity.md)|
 |Append Variable|[Y](/azure/data-factory/control-flow-append-variable-activity)|[Y](append-variable-activity.md)|
 |Azure Batch|[Y](/azure/data-factory/transform-data-using-dotnet-custom-activity)|[Y](azure-batch-activity.md)|
-|Azure Databricks|[Notebook activity](/azure/data-factory/transform-data-databricks-notebook) &bull; [Jar activity](/azure/data-factory/transform-data-databricks-jar) &bull; [Python activity](/azure/data-factory/transform-data-databricks-python) &bull; [Job activity](/azure/data-factory/azure-databricks-activity) |[Azure Databricks activity](azure-databricks-activity.md)|
+|Azure Databricks|[Notebook activity](/azure/data-factory/transform-data-databricks-notebook) &bull; [Jar activity](/azure/data-factory/transform-data-databricks-jar) &bull; [Python activity](/azure/data-factory/transform-data-databricks-python) &bull; [Job activity](/azure/data-factory/transform-data-databricks-job) |[Azure Databricks activity](azure-databricks-activity.md)|
 |Azure Machine Learning|[Y](/azure/data-factory/transform-data-machine-learning-service)|[Y](azure-machine-learning-activity.md)|
 |Azure Machine Learning Batch Execution|Deprecated|N/A|
 |Azure Machine Learning Update Resource|Deprecated|N/A|

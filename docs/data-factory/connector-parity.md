@@ -36,7 +36,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
 |                    |                     |                        |                        |                        | Organizational account  |                          |
-| Azure AI Search index | -/✓              | Basic                 |                        | -/✓                   | Service admin key       |                          |
+| [Azure AI Search index](connector-azure-search-overview.md) | -/✓              | Basic                 |                        | -/✓                   | Service admin key       |                          |
 | [Azure Cosmos DB for NoSQL](connector-azure-cosmosdb-for-nosql-overview.md) | ✓/✓         | Key                   |                        | ✓/✓                   | Account key             |                          |
 |                    |                     | Service principal     |                        |                        |                          |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
@@ -84,7 +84,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        | Workspace identity      |                          |
 |                    |                     |                        |                        |                        | Organizational account  |                          |
-| Azure File Storage | ✓/✓                | Account key           |                        | ✓/✓                   | Account key             |                          |
+| [Azure File Storage](connector-azure-files-overview.md) | ✓/✓                | Account key           |                        | ✓/✓                   | Account key             |                          |
 |                    |                     | Shared access signature |                        |                        |                          |                          |
 |                    |                     | System-assigned managed identity |                        |                        |                          |                          |
 |                    |                     | User-assigned managed identity |                        |                        |                          |                          |
@@ -113,7 +113,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |                           |                     | ServiceAuthentication               |                        | Service Account Login                  |                           |
 |                           |                     |                                     |                        |                                        |                           |
 | [Greenplum](connector-greenplum-for-pipeline-overview.md)                 | ✓/-                | Basic                               | ✓/-                   | Basic                                  |                           |
-| Hive                      | ✓/-                | Anonymous                           | N                      |                                        |                           |
+| [Hive](connector-hive-llap-overview.md)                      | ✓/-                | Anonymous                           | N                      |                                        |                           |
 |                           |                     | UsernameAndPassword                 |                        |                                        |                           |
 |                           |                     | WindowsAzureHDInsightService        |                        |                                        |                           |
 | [Impala](connector-impala-overview.md)                    | ✓/-                | Anonymous                           | ✓/-                   |                                        |                           |
