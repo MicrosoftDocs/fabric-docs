@@ -33,7 +33,7 @@ This article details the current limitations for mirroring for Cosmos DB databas
 
 ## Security limitations
 
-- Authentication to the source Cosmos DB iin Fabric database is limited to:
+- Authentication to the source Cosmos DB in Fabric database is limited to:
   
   - Microsoft Entra ID authentication with appropriate role-based access control permissions
 
@@ -45,7 +45,7 @@ This article details the current limitations for mirroring for Cosmos DB databas
 
 - The Fabric data explorer for Cosmos DB provides read-only access to mirrored data. You can view containers, browse items, and execute queries, but can't create, modify, or delete containers or items.
 
-- Users with only viewer permissions in the Fabric workspace can't preview or query data through the SQL analytics endpoint, but may still access the data explorer depending on their Azure Cosmos DB account permissions.
+- Users with only viewer permissions in the Fabric workspace can't preview or query data through the SQL analytics endpoint, but might still access the data explorer.
 
 [!INCLUDE[Cosmos DB Mirroring Limitations](../../mirroring/cosmos-db/includes/mirroring-limitations.md)]
 
