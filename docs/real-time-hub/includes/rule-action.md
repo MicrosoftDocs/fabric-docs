@@ -53,7 +53,7 @@ To configure the alert to launch a Fabric item (pipeline, notebook, Spark job, e
 1. For **Selection action**, select **Run a Fabric item**.
 
     :::image type="content" source="./media/set-details-conditions-actions-rule/action-fabric-item.png" alt-text="Screenshot that shows the Add rule pane with Run a Fabric item option selected.":::            
-2. Choose **Select Fabric item to run**, and then select the Fabric item from the list. 
+1. Choose **Select Fabric item to run**, and then select the Fabric item from the list. 
 1. Select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter. 
 
-        :::image type="content" source="./media/set-details-conditions-actions-rule/fabric-item-parameters.png" alt-text="Screenshot that shows the Add rule pane with parameters for a Fabric item specified.":::            
+    :::image type="content" source="./media/set-details-conditions-actions-rule/fabric-item-parameters.png" alt-text="Screenshot that shows the Add rule pane with parameters for a Fabric item specified.":::            
