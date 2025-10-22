@@ -68,7 +68,7 @@ items:
     href: copilot-code-completion.md
   - name: Use quick actions
     href: copilot-quick-action.md
-- name: Design and Develop
+- name: Design
   items:
   - name: Better together - the lakehouse and warehouse
     href: get-started-lakehouse-sql-analytics-endpoint.md
@@ -78,14 +78,18 @@ items:
     href: manage-objects.md
   - name: Primary, foreign, and unique keys
     href: table-constraints.md    
-  - name: Source control with Warehouse
-    href: source-control.md
-  - name: SQL analytics endpoint performance
-    href: sql-analytics-endpoint-performance.md
   - name: Tables
     href: tables.md
   - name: T-SQL surface area
     href: tsql-surface-area.md
+- name: Develop
+  items:
+  - name: Development and Deployment
+    href: development-deployment.md
+  - name: Source control with Warehouse
+    href: source-control.md
+  - name: SQL analytics endpoint performance
+    href: sql-analytics-endpoint-performance.md
   - name: Transactions
     href: transactions.md 
   - name: Warehouse collation
@@ -107,7 +111,7 @@ items:
     - name: Datamart upgrade to warehouse
       href: datamart-upgrade-to-warehouse.md
     - name: Generate unique identifiers
-      href: generate-unique-identifiers.md      
+      href: generate-unique-identifiers.md
 - name: Dimensional modeling
   items:
   - name: Overview
