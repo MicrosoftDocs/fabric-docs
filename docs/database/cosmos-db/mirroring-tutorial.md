@@ -5,7 +5,7 @@ description: Learn how to query Microsoft Fabric mirrored databases from Cosmos 
 author: seesharprun
 ms.author: sidandrews
 ms.topic: tutorial
-ms.date: 09/04/2025
+ms.date: 10/22/2025
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---

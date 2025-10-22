@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure Cosmos DB in 
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, whhender
-ms.date: 09/04/2025
+ms.date: 10/22/2025
 ms.topic: tutorial
 no-loc: [Copilot]
 ---

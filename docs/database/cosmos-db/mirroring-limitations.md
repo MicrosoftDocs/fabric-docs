@@ -5,7 +5,7 @@ description: Learn how data is mirrored from Cosmos DB in Microsoft Fabric to On
 author: seesharprun
 ms.author: sidandrews
 ms.topic: limits-and-quotas
-ms.date: 09/04/2025
+ms.date: 10/22/2025
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---

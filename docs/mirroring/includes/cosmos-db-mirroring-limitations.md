@@ -2,7 +2,7 @@
 author: seesharprun
 ms.author: sidandrews
 ms.topic: include
-ms.date: 09/04/2025
+ms.date: 10/22/2025
 ---
 
 ## Schema and data changes limitations
