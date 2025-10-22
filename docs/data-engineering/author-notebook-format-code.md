@@ -2,9 +2,9 @@
 title: Format code in Microsoft Fabric notebooks
 description: Learn best practices for formatting code, including how to extend a Microsoft Fabric notebook to use a PEP 8-compliant code formatter.
 #customer intent: As a Python developer, I want to format code in Microsoft Fabric notebooks so that my scripts are easier to read and maintain.
-author: snehagunda
-ms.author: sngun
-ms.reviewer: arunsethia
+author: eric-urban
+ms.author: eur
+ms.reviewer: sngun
 ms.topic: how-to
 ms.custom: fabric-cat
 ms.date: 08/21/2025

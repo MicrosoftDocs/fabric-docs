@@ -1,6 +1,11 @@
 {
   "redirections": [   
     {
+      "source_path_from_root": "/docs/real-time-intelligence/event-streams/whats-new.md",
+      "redirect_url": "/fabric/fundamentals/whats-new#real-time-intelligence-in-microsoft-fabric",
+      "redirect_document_id": false
+    },        
+    {
       "source_path_from_root": "/docs/real-time-intelligence/data-activator/activator-basic-concepts.md",
       "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-introduction",
       "redirect_document_id": false

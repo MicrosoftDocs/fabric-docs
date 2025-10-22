@@ -1,9 +1,9 @@
 ---
 title: Create and manage Apache Spark job definitions in VS Code
 description: Learn about the VS Code extension for Fabric Data Engineering, which supports a pro-developer experience for creating, running, and debugging Spark job definitions.
-ms.reviewer: sngun
-ms.author: qixwang
-author: qixwang
+ms.reviewer: qixwang
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom:
 ms.date: 11/11/2024
@@ -20,7 +20,7 @@ To create a new Spark job definition:
 
 1. In the VS Code Explorer, select the **Create Spark Job Definition** option.
 
-   :::image type="content" source="media\vscode\create-sjd.png" alt-text="Screenshot of VS Code Explorer, showing where to select the Create Spark Job Definition option.":::
+   :::image type="content" source="media\vscode\create-sjd.png" alt-text="Screenshot of VS Code Explorer, showing where to select the Create Spark Job Definition option." lightbox="media\vscode\create-sjd.png":::
 
 1. Enter the initial required fields: name, referenced lakehouse, and default lakehouse.
 
@@ -34,15 +34,15 @@ To create a new Spark job definition:
 
 To upload or overwrite the main definition file, select the **Add Main File** option.
 
-   :::image type="content" source="media\vscode\upload-main-def.png" alt-text="Screenshot of VS Code Explorer, showing where to select the Add Main File option.":::
+   :::image type="content" source="media\vscode\upload-main-def.png" alt-text="Screenshot of VS Code Explorer, showing where to select the Add Main File option." lightbox="media\vscode\upload-main-def.png":::
 
 To upload the library file that the main definition file references, select the **Add Lib File** option.
 
-   :::image type="content" source="media\vscode\upload-lib.png" alt-text="Screenshot showing upload library button.":::
+   :::image type="content" source="media\vscode\upload-lib.png" alt-text="Screenshot showing upload library button." lightbox="media\vscode\upload-lib.png":::
 
 After you have uploaded a file, you can override it by clicking the **Update File** option and uploading a new file, or you can delete the file via the **Delete** option.
 
-  :::image type="content" source="media\vscode\update-file.png" alt-text="Screenshot of VS Code Explorer, showing where to find the Update File and Delete options.":::
+  :::image type="content" source="media\vscode\update-file.png" alt-text="Screenshot of VS Code Explorer, showing where to find the Update File and Delete options." lightbox="media\vscode\update-file.png":::
 
 ## Submit a run request
 
@@ -50,11 +50,11 @@ To submit a request to run the Spark job definition from VS Code:
 
 1. From the options to the right of the name of the Spark job definition you want to run, select the **Run Spark Job** option.
 
-   :::image type="content" source="media\vscode\submit-sjd-run.png" alt-text="Screenshot of VS Code Explorer, showing where to select Run Spark Job.":::
+   :::image type="content" source="media\vscode\submit-sjd-run.png" alt-text="Screenshot of VS Code Explorer, showing where to select Run Spark Job." lightbox="media\vscode\submit-sjd-run.png":::
 
 1. After you submit the request, a new Apache Spark application appears in the **Runs** node in the Explorer list. You can cancel the running job by selecting the **Cancel Spark Job** option.
 
-   :::image type="content" source="media\vscode\cancel-sjd-run.png" alt-text="Screenshot of VS Code Explorer with the new Spark application listed under the Runs node, and showing where to find the Cancel Spark Job option.":::
+   :::image type="content" source="media\vscode\cancel-sjd-run.png" alt-text="Screenshot of VS Code Explorer with the new Spark application listed under the Runs node, and showing where to find the Cancel Spark Job option." lightbox="media\vscode\cancel-sjd-run.png":::
 
 ## Open a Spark job definition in the Fabric portal
 
@@ -62,7 +62,7 @@ You can open the Spark job definition authoring page in the Fabric portal by sel
 
 You can also select **Open in Browser** next to a completed run to see the detail monitor page of that run.
 
-:::image type="content" source="media\vscode\open-sjd-in-browser.png" alt-text="Screenshot of VS Code Explorer, showing where to select the Open in Browser option.":::
+:::image type="content" source="media\vscode\open-sjd-in-browser.png" alt-text="Screenshot of VS Code Explorer, showing where to select the Open in Browser option." lightbox="media\vscode\open-sjd-in-browser.png":::
 
 ## Debug Spark job definition source code (Python)
 
@@ -70,7 +70,7 @@ If the Spark job definition is created with PySpark (Python), you can download t
 
 1. To download the source code, select the **Debug Spark Job Definition** option to the right of the Spark job definition.
 
-   :::image type="content" source="media\vscode\download-sjd-source.png" alt-text="Screenshot showing download source button.":::
+   :::image type="content" source="media\vscode\download-sjd-source.png" alt-text="Screenshot showing download source button." lightbox="media\vscode\download-sjd-source.png":::
 
 1. After the download completes, the folder of the source code automatically opens.
 
@@ -83,11 +83,11 @@ If the Spark job definition is created with PySpark (Python), you can download t
 
 1. The file named **sparkconf.py** contains a code snippet that you need to add to set up the **SparkConf** object. To enable the remote debug, make sure the **SparkConf** object is set up properly. The following image shows the original version of the source code.
 
-   :::image type="content" source="media\vscode\original-sjd-source.png" alt-text="Screenshot of a code sample, showing the source code before the change.":::
+   :::image type="content" source="media\vscode\original-sjd-source.png" alt-text="Screenshot of a code sample, showing the source code before the change." lightbox="media\vscode\original-sjd-source.png":::
 
    The next image is the updated source code after you copy and paste the snippet.
 
-   :::image type="content" source="media\vscode\updated-sjd-source.png" alt-text="Screenshot of a code sample, showing the source code after the change.":::
+   :::image type="content" source="media\vscode\updated-sjd-source.png" alt-text="Screenshot of a code sample, showing the source code after the change." lightbox="media\vscode\updated-sjd-source.png":::
 
 1. After you have updated the source code with the necessary conf, you must pick the right Python Interpreter. Make sure to select the one installed from the **synapse-spark-kernel** conda environment.
 
@@ -97,13 +97,13 @@ You can edit the detail properties of Spark job definitions, such as command-lin
 
 1. Select the **Update SJD Configuration** option to open a **settings.yml** file. The existing properties populate the contents of this file.
 
-   :::image type="content" source="media\vscode\edit-sjd-property.png" alt-text="Screenshot showing where to select the Update SJD Configuration option for a Spark job definition.":::
+   :::image type="content" source="media\vscode\edit-sjd-property.png" alt-text="Screenshot showing where to select the Update SJD Configuration option for a Spark job definition." lightbox="media\vscode\edit-sjd-property.png":::
 
 1. Update and save the .yml file.
 
 1. Select the **Publish SJD Property** option at the top right corner to sync the change back to the remote workspace.
 
-   :::image type="content" source="media\vscode\push-sjd-property.png" alt-text="Screenshot showing where to select the Publish SJD Property option for a Spark job definition.":::
+   :::image type="content" source="media\vscode\push-sjd-property.png" alt-text="Screenshot showing where to select the Publish SJD Property option for a Spark job definition." lightbox="media\vscode\push-sjd-property.png":::
 
 ## Related content
 

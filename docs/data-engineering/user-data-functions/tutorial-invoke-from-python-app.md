@@ -1,8 +1,9 @@
 ---
 title: Tutorial - Invoke user data functions from a Python application
 description: Learn how to invoke User data functions from a Python web application.
-ms.author: sumuth
-author: mksuni
+ms.author: eur
+ms.reviewer: sumuth
+author: eric-urban
 ms.topic: quickstart
 ms.date: 03/31/2025
 ms.search.form: Fabric User data functions
@@ -10,7 +11,7 @@ ms.search.form: Fabric User data functions
 
 # Tutorial: Invoke user data functions from a Python console application
 
-To invoke Fabric User data function items (Preview) from a console application in Python, you can send HTTP requests to the function endpoint that needs to be executed. In this quickstart, you learn how to set up a Python app using Visual Studio Code.
+To invoke Fabric User data function items from a console application in Python, you can send HTTP requests to the function endpoint that needs to be executed. In this quickstart, you learn how to set up a Python app using Visual Studio Code.
 
 ## Prerequisites
 
@@ -30,7 +31,7 @@ The following steps explain how to configure support for a ReactJS application i
 
 3. Under the *Manage* list, select **API permissions**, then **Add permission**.
 
-4. Add the **PowerBI Service**, select **Delegated permissions**, and select **GraphQLApi.Execute.All** permissions. Confirm that admin consent isn't required.
+4. Add the **PowerBI Service**, select **Delegated permissions**, and select **UserDataFunction.Execute.All** or **item.Execute.All** permissions. Confirm that admin consent isn't required.
 
 5. Go back to the *Manage* setting and select **Authentication** > **Add a platform** > **Single-page application**.
 
@@ -46,7 +47,7 @@ The following steps explain how to configure support for a ReactJS application i
 1. Create a new folder for your Python app, for example **my-data-app**. Open the folder in Visual Studio Code.
 
 1. Set up the Python virtual environment in Visual Studio Code. To create local environments in Visual Studio Code, open the **Command palette** with **Ctrl+Shift+P**, then search for and select the Python: Create Environment command.
-   - The command presents a list of environment types and selects **Venv**.
+   - The command presents a list of environment types and selects **venv**.
    - Select the Python interpreter version **Python 3.11**.
 
 1. Run the following command to activate the virtual environment in the Visual Studio Code terminal.
@@ -72,7 +73,7 @@ The following steps explain how to configure support for a ReactJS application i
     # DO NOT USE IN PRODUCTION.
     # Below code to acquire token is to test the User data function endpoint and is for the purpose of development only.
     # For production, always register an application in a Microsoft Entra ID tenant and use the appropriate client_id and scopes.
-    # https://learn.microsoft.com/fabric/data-engineering/connect-apps-api-graphql#create-a-microsoft-entra-app
+    
 
     app = InteractiveBrowserCredential()
     scp = 'https://analysis.windows.net/powerbi/api/user_impersonation'
@@ -150,14 +151,15 @@ The following properties are returned:
 ## Response codes
 The function will return the following HTTP codes as a result of the execution.
 
-| **Response code** | **Description** |
-| ------------------- | ------------------------ |
-| 200 OK (Success)| The request was successful|
-| 403 (Forbidden) | The response was too large and the invocation failed.|
-| 408 (Request Timeout) | The request failed due to the execution taking more than 200 seconds. |
-| 409 (Conflict) | The request threw an exception during the execution. |
-| 400 (Bad Request)| The request failed due to invalid or missing input parameters.|
-| 500 (Internal Server Error)| The request failed due to an internal error.|
+| **Response code**| **Message** | **Description** |
+| ------------------- | ------------------------ |--|
+| 200 | Success | The request was successful. |
+| 400 | Bad Request | The request was not valid. This response could be due to missing or incorrect input parameter values, data types or names. This response could also be caused by public access being turned off for a function. |
+| 403 | Forbidden | The response was too large and the invocation failed.|
+| 408 | Request Timeout | The request failed due to the execution taking more than 200 seconds. |
+| 409 | Conflict | The request could not be completed due to a conflicting state. This could be caused by an unhandled exception or an error with user credentials. |
+| 422 | Bad Request | The request failed due to a UserThrownError raised in the function.|
+| 500 | Internal Server Error | The request failed due to an internal error in the service.|
 
 ## Debugging and testing 
 Debug the application in Visual Studio Code using python debugger. Add breakpoints if needed to debug if any issues. [Learn more](https://code.visualstudio.com/docs/languages/python#_debugging)

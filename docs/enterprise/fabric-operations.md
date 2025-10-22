@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
-ms.date: 06/17/2025
+ms.date: 10/07/2025
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -80,19 +80,22 @@ The Data Factory experience contains operations for [Dataflows Gen2](#dataflows-
 
 You can find the consumption rates for Dataflows Gen2 in [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-dataflows-gen2.md).
 
+>[!NOTE]
+>As of October 2025, the operation name **Dataflow Gen2 Refresh** has been renamed to **Dataflow Gen2 Run Queries**.
+
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
-| Dataflow Gen2 Refresh                            | Compute cost associated with dataflow Gen2 refresh operation       | Dataflow Gen2 | Dataflows Standard Compute Capacity Usage CU | Background |
+| Dataflow Gen2 Run Queries                           | Compute cost associated with dataflow Gen2 evaluation operation       | Dataflow Gen2 | Dataflows Standard Compute Capacity Usage CU | Background |
 | High Scale Dataflow Compute - SQL Endpoint Query | Usage related to the dataflow Gen2 staging warehouse SQL endpoint  | Warehouse     | High Scale Dataflow Compute Capacity Usage CU | Background |
 
 #### Pipelines
 
-You can find the consumption rates for Pipelines in [Data pipelines pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-pipelines.md).
+You can find the consumption rates for Pipelines in [Pipeline pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-pipelines.md).
 
 | Operation    | Description                                                                                                              | Item     | Azure billing meter | Type       |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------- | ---------- |
 | DataMovement | The amount of time used by the copy activity in a Data Factory pipeline divided by the number of data integration units  | Pipeline | Data Movement Capacity Usage CU | Background |
-| ActivityRun  | A Data Factory data pipeline activity execution                                                                          | Pipeline | Data Orchestration Capacity Usage CU | Background |
+| ActivityRun  | A Data Factory pipeline activity execution                                                                          | Pipeline | Data Orchestration Capacity Usage CU | Background |
 
 ### Databases
 
@@ -127,6 +130,7 @@ GraphQL operations are made up of requests performed on API for GraphQL items by
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
 | User Data Functions Execution    | Compute charge for the execution of the function inside of the User Data Functions item. This operation results from running a function after a request from the Fabric portal, another Fabric item, or an external application.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
+| User Data Functions Portal Test    | Compute charge for the test execution of a function inside of the User Data Functions item. This operation results from testing a function in “Develop mode” during a test session. The test session has a minimum duration of 15 minutes.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
 | User Data Functions Static Storage | Static storage of internal function metadata in a service-managed OneLake account. This is calculated with the compressed size of the User Data Functions item metadata. This is the cost of creating User Data Functions items even if they’re not used.  | OneLake Storage | OneLake Storage | Background |
 | User Data Functions Static Storage Read | Read operation of internal function metadata stored in a service-managed OneLake account. This operation is executed every time a function is executed after a period of inactivity. | OneLake Read Operations | OneLake Read Operations | Background |
 | User Data Functions Static Storage Write | Writes and updates of internal function metadata stored in a system-managed OneLake account. This operation is executed every time the User Data Functions item is published. | OneLake Write Operations | OneLake Write Operations | Background |

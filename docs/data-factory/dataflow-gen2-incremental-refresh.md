@@ -32,14 +32,14 @@ To use incremental refresh in Dataflow Gen2, you need:
 
 These data destinations support incremental refresh:
 
-- Fabric Lakehouse (preview)
+- Fabric Lakehouse
 - Fabric Warehouse
 - Azure SQL Database
 - Azure Synapse Analytics
 
-You can use other destinations with incremental refresh too. Create a second query that references the staged data to update your destination. This approach still lets you use incremental refresh to reduce the data that needs processing from the source system.
+You can use other destinations with incremental refresh too. Create a second query that references the staged data to update your destination. This approach still lets you use incremental refresh to reduce the data that needs processing from the source system. However, you'll need to do a full refresh from the staged data to your final destination. 
 
-However, you'll need to do a full refresh from the staged data to your final destination.
+Additionally, default destination configuration is not supported for incremental refresh. You must explicitly define the destination in your query settings.
 
 ## How to use incremental refresh
 
@@ -147,7 +147,9 @@ This setting controls whether your incremental refresh query must "fully fold." 
 
 If you enable this setting, your query must fully fold. If you disable it, the query can be partially processed by the dataflow instead of your source system.
 
-We recommend enabling this setting. It improves performance and prevents your dataflow from pulling unnecessary, unfiltered data.
+We strongly recommend keeping this setting enabled. It ensures that, after saving the dataflow, we validate whether query folding to the source is possible. If this validation fails, your dataflow may suffer from reduced performance and could end up retrieving unnecessary, unfiltered data.
+
+In some cases, you might see a green folding indicator during authoring. However, when we validate the final dataflow definition, folding may no longer be possible; For example, if a step like Table.SelectRows breaks folding. This can lead to a validation error.
 
 ## Limitations
 
@@ -162,6 +164,7 @@ When working with lakehouse as a data destination, be aware of these limitations
   But here's the catch: if other tools (like Spark) or processes also write to the same table, they can interfere with incremental refresh. We recommend avoiding other writers while using incremental refresh.
 
   If you must use other writers, make sure they don't conflict with the incremental refresh process. Also, table maintenance like OPTIMIZE or REORG TABLE operations aren't supported for tables that use incremental refresh.
+- If you leverage a data gateway to connect to your data sources, ensure that the gateway is updated to at least version May 2025 update (3000.270) or later. This is crucial for maintaining compatibility and ensuring that incremental refresh functions correctly with lakehouse destinations.
 
 ### The data destination must be set to a fixed schema
 

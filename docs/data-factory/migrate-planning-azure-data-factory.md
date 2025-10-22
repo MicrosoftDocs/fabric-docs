@@ -150,7 +150,7 @@ Fabric offers two primary CI/CD options:
 * **Git integration**: Link your Fabric workspace to an external Git repository, such as ADO or GitHub, for version control and code management.
 * **Built-in deployment pipelines**: Use Fabric’s native pipelines to promote code across environments without needing an external Git repository.
 
-Existing Git repositories from ADF or Synapse won’t work directly with Fabric. Create a new repository or use Fabric’s [deployment pipelines](cicd-pipelines.md).
+In both cases, your existing Git repo from ADF doesn't work with Fabric. Instead, you need to point to a new repo, or start a new [deployment pipeline](cicd-pipelines.md) in Fabric, and rebuild your pipeline items in Fabric.
 
 ## Mount ADF instances in a Fabric workspace
 

@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.date: 08/03/2025
+ms.date: 08/26/2025
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -68,15 +68,23 @@ By default, your table name matches your query name. If your table name has any 
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/new-table.png" alt-text="Screenshot of the Choose destination target window with the New table button selected.":::
 
-Next, you need to select the destination container. If you chose any of the Fabric data destinations, you can use the navigator to select the Fabric artifact where you want to load your data. For Azure destinations, you can either specify the database during connection creation, or select the database from the navigator experience.
+Next, you need to select the destination container. If you chose any of the Fabric data destinations, you can use the navigator to select the Fabric item where you want to load your data. For Azure destinations, you can either specify the database during connection creation, or select the database from the navigator experience.
 
 ### Use an existing table
 
-To choose an existing table, use the toggle at the top of the navigator. When choosing an existing table, you need to pick both the Fabric artifact/database and table using the navigator.
+To choose an existing table, use the toggle at the top of the navigator. When choosing an existing table, you need to pick both the Fabric item/database and table using the navigator.
 
 When you use an existing table, the table can't be recreated in any scenario. If you delete the table manually from the data destination, Dataflow Gen2 won't recreate the table on the next refresh.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/existing-table.png" alt-text="Screenshot of the Choose destination target window with the Existing table button selected.":::
+
+## Lakehouse Files or Tables
+
+For Lakehouse you have the option to create either files or tables in your lakehouse. This is unique as most destinations only support one or the other. This allows for more flexibility in how you structure your data in your lakehouse.
+
+To switch between files and tables, you can use the toggle when you browse for your lakehouse.
+
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/switch-to-file-mode.png" alt-text="Screenshot highlighting the switch to file mode toggle.":::
 
 ## Managed settings for new tables
 
@@ -130,7 +138,7 @@ Schema options on publish only apply when the update method is **replace**. When
 > Parameters in the data destination can also be applied directly through the M script created for the queries related to it. You can manually alter the script of your data destination queries to apply the parameters to meet your requirements.
 > However, the user interface currently only supports parameterization for the table or file name field.
 
-##  Mashup script for data destination queries
+## Mashup script for data destination queries
 
 When using the data destination feature, the settings defined to load the data to your destination are defined in the mashup document of your Dataflow. The Dataflow application fundamentally creates two components:
 * **A query that contains the navigation steps to your destination**. It follows the pattern of your initial query name with a suffix of **_DataDestination**. For example:
@@ -179,7 +187,7 @@ When working with data types such as currency or percentage, we typically conver
 
 ### Using staging before loading to a destination
 
-To improve performance of query processing, staging can be used within Dataflows Gen2 to use Fabric compute to execute your queries.
+To improve performance of query processing, staging can be used within Dataflow Gen2 to use Fabric compute to execute your queries.
 
 When staging gets enabled on your queries (the default behavior), your data gets loaded into the staging location, which is an internal Lakehouse only accessible by dataflows itself.
 
@@ -202,6 +210,15 @@ When staging is disabled, and you choose Warehouse as the output destination, yo
 If you already have a warehouse as a destination and try to disable staging, a warning is displayed. You can either remove the warehouse as the destination or dismiss the staging action.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-staging.png" alt-text="Screenshot of the Enable staging warning.":::
+
+### Schema support for Lakehouse, Warehouse and SQL databases (preview)
+
+> [!NOTE]
+>This feature is currently being rolled out and availability may vary by region. You might not see it yet depending on your location.
+
+Lakehouse, Warehouse, and SQL databases in Microsoft Fabric all support the ability to create a schema for your data. This means you can structure your data in a way that makes it easier to manage and query. In order to be able to write to schemas in these destinations you need to enable the **Navigate using full hierarchy** option under **advanced options** when you set up your connection. If you don't enable this option, you won't be able to select or view the schemas in the destination. A preview limitation for enabling Navigate using full hierarchy is that fast copy may not work properly.
+
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-schema-support.png" alt-text="Screenshot highlighting the Enable schema support option.":::
 
 ### Vacuuming your Lakehouse data destination
 
@@ -226,15 +243,11 @@ To vacuum your Delta tables in Lakehouse, follow these steps:
 
 * **Retention period**: Set a retention interval of at least seven days to make sure that old snapshots and uncommitted files aren't prematurely removed, which could disrupt concurrent table readers and writers.
 * **Regular maintenance**: Schedule regular vacuuming as part of your data maintenance routine to keep your Delta tables optimized and ready for analytics.
-* **Incremental refreshes**: If you're using incremental refreshes, ensure that vacuuming is turned off as it can interfere with the incremental refresh process. 
+* **Incremental refreshes**: If you're using incremental refreshes, ensure that vacuuming is turned off as it can interfere with the incremental refresh process.
 
 By incorporating vacuuming into your data maintenance strategy, you can make sure that your Lakehouse destination remains efficient, cost-effective, and reliable for your dataflow operations.
 
 For more detailed information on table maintenance in Lakehouse, refer to the [Delta table maintenance documentation](/fabric/data-engineering/lakehouse-table-maintenance).
-
-### Lakehouse MDSync
-
-When using Lakehouse as a data destination, we automatically perform a metadata sync operation when finished writing data to the Lakehouse. This operation ensures that the metadata of the Delta table is up-to-date and reflects the latest changes made during the dataflow refresh. This sync operation is crucial for maintaining the integrity and consistency of the data in the Lakehouse, especially when multiple dataflows or processes are writing and reading from the same Delta table. This operation is performed in the background and is typically quick, allowing for seamless data updates without significant delays. The metadata sync operation is part of the overall dataflow refresh process.
 
 ### Nullable
 

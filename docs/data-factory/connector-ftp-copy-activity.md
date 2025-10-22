@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure FTP in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from FTP.
+This article outlines how to use the copy activity in a pipeline to copy data from FTP.
 
 ## Supported format
 
@@ -45,11 +45,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 Go to **Source** tab to configure your copy activity source. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-ftp/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
-
 The following three properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an FTP connection from the connection list. If no connection exists, then create a new FTP connection by selecting **New**.
 - **File path type**: Select from **File path**, **Wildcard file path** and **List of files** based on the way that you want to read files.
     - **File path**: If you choose this type, specify your source file path. You can select **Browse** to select your source files or enter your file path manually.
@@ -119,7 +116,6 @@ The following table contains more information about the copy activity in FTP.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **Data store type** | Your data store type. | **External** | Yes | / | 
 | **Connection** | Your FTP connection to the source data store. | < your FTP connection > | Yes | connection | 
 | **File path type** | The file path type used to get source data. | • **File path**<br>• **Wildcard file path**<br>• **List of files**| Yes | / | 
 | **File path** | The path to the source file. | < file path> | Yes | fileName<br>folderpath | 

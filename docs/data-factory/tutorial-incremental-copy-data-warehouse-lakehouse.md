@@ -132,9 +132,9 @@ END
 
 1. Select **My workspace** to open your Fabric workspace.
 
-1. Select **+ New Item**, then select **Data pipeline**, and then enter a pipeline name to create a new pipeline.
+1. Select **+ New Item**, then select **Pipeline**, and then enter a pipeline name to create a new pipeline.
 
-   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
 
    :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
@@ -218,7 +218,6 @@ In this step, you'll add a stored procedure activity to update the last watermar
 1. Connect the green (On success) output of the copy activity to the stored procedure activity.
 
 1. Under the **Settings** tab, configure the following:
-    - **Data store type**: Select **Workspace**.
     - **Data Warehouse**: Select your Data Warehouse.
     - **Stored procedure name**: Choose the stored procedure that you created in your Data Warehouse: *[dbo].[usp_write_watermark]*.
     - Expand **Stored procedure parameters**. To set values for the stored procedure parameters, select **Import**, and enter the following values for the parameters:

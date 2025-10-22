@@ -7,13 +7,13 @@ metadata:
   ms.reviewer: nzagorac, antho, sukkaur, amapatil
   ms.topic: faq
   ms.custom:
-  ms.date: 01/31/2025
+  ms.date: 09/18/2025
   ms.search.form: SQL database Overview
 title: "Frequently asked questions for SQL database in Microsoft Fabric (preview)"
 summary: |
   **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-  This article answers frequently asked questions about SQL database in Microsoft Fabric. For more Q&A, engage with the [Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion).
+  This article answers frequently asked questions about SQL database in Microsoft Fabric. For more answers, engage with the [Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion).
 
 sections:
   - name: Connectivity
@@ -25,8 +25,7 @@ sections:
       - question: |
           Which connection policies are supported for SQL database in Fabric?
         answer:
-          Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. For more information, see [Connection policy](limitations.md#connection-policy).
-
+          Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Default**. For more information, see [Connection policy](limitations.md#connection-policy).
 
   - name: About SQL database data in OneLake
     questions:
@@ -67,7 +66,7 @@ sections:
       - question: |
           How to stop/disable replication of data from SQL database in Fabric to OneLake?  
         answer: |
-          For SQL database in Fabric, the replication of data to OneLake cannot be disabled. 
+          For SQL database in Fabric, the replication of data to OneLake can't be disabled. 
 
       - question: | 
           Are system objects such as system views and dynamic management views the same as Fabric database mirroring?
@@ -129,29 +128,30 @@ sections:
 
   - name: Availability
     questions: 
+      - question: | 
+          What region is my SQL database located in?
+        answer: |
+          The SQL database is located in the region of your Fabric workspace. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **License info** page. 
+
       - question: |
           Where is SQL database in Fabric available?
         answer:
           See [Fabric availability](../../admin/region-availability.md#all-workloads).
 
           Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../../mirroring/azure-sql-database-limitations.md#supported-regions).
+
       - question: |
-          My capacity is in a supported region but I still do not see the option to enable SQL database. What should I do?
+          My capacity is in a supported region but I still don't see the option to enable SQL database. What should I do?
         answer:
-          SQL database in Fabric must be available in the home region of the tenant as well as the capacity region. Check the home region of your tenant to ensure SQL database in Fabric is available in that region. For more information, see [Fabric availability](../../admin/region-availability.md).
+          SQL database in Fabric must be available in the home region of the tenant as well as the capacity region. Check the home region of your tenant. For more information, see [Fabric availability](../../admin/region-availability.md).
 
   - name: Troubleshooting
     questions:
-      - question: |
-          I tried to create a database but got the error message "SQL database failed to create." What should I do?
-        answer:
-          Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md). If you don't, users who try to create a new SQL database will receive an error message "SQL database failed to create."
- 
+
       - question: |
           Where can I ask questions to the community about SQL database in Fabric?
         answer:
           Engage with the [Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion).
-
 
 additionalContent: |
 

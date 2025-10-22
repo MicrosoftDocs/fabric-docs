@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 # Configure SharePoint Online List in a copy activity
 
-This article shows you how to use the copy activity in a data pipeline to copy data from SharePoint Online List.
+This article shows you how to use the copy activity in a pipeline to copy data from SharePoint Online List.
 
 ## Prerequisites
 
@@ -117,7 +117,6 @@ The following table contains more information about a copy activity in SharePoin
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**Use query** |You can choose **List name** or **Query** as your use query.|-**List name** <br>-**Query**|No |type|
 |**List name** |The name of the SharePoint Online list.|\<your connection> |Yes|listName|

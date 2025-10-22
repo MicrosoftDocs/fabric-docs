@@ -1,13 +1,13 @@
 ---
-title: "Troubleshoot Fabric Mirrored Databases From Azure SQL Managed Instance (Preview)"
+title: "Troubleshoot Fabric Mirrored Databases From Azure SQL Managed Instance"
 description: Troubleshooting for mirrored databases from Azure SQL Managed Instance in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+author: whhender
+ms.author: whhender
 ms.reviewer: lazartimotic, jingwang, nzagorac
 ms.date: 03/14/2025
 ms.topic: troubleshooting
 ---
-# Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance (Preview)
+# Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance
 
 This article covers troubleshooting steps troubleshooting for mirroring Azure SQL Managed Instance.
 
@@ -77,7 +77,15 @@ If you remove Azure SQL Managed Instance SAMI permissions or permissions aren't 
 1. Select the **Manage Permissions** option.
 1. Enter the Azure SQL Managed Instance public endpoint. Provide **Read** and **Write** permissions.
 
+## Log usage 
+
+Transaction log usage for a database enabled for mirroring can continue to grow and hold up log truncation. Once the transaction log size reaches the max defined limit, writes to the database fail. To safeguard from this, mirroring triggers automatic reseed of the whole database when the log space used exceeds a threshold of total configured log space. To diagnose this and learn about automatic reseeding, see [Automatic reseed for Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance-automatic-reseed.md#diagnose).
+
+## Reseeding has automatically started
+
+Fabric Mirroring from Azure SQL Managed Instance can automatically reseed under certain conditions, at the individual table level or for the entire database. To learn more, [Automatic reseed for Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance-automatic-reseed.md).
+
 ## Related content
 
-- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](../mirroring/azure-sql-managed-instance-limitations.md)
-- [Frequently asked questions for Mirroring Azure SQL Managed Instance in Microsoft Fabric (Preview)](../mirroring/azure-sql-managed-instance-faq.yml)
+- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-limitations.md)
+- [Frequently asked questions for Mirroring Azure SQL Managed Instance in Microsoft Fabric](../mirroring/azure-sql-managed-instance-faq.yml)

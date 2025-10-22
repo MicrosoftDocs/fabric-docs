@@ -1,10 +1,10 @@
 ---
 title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From SQL Server"
 description: Learn how to configure a mirrored database From SQL Server in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+author: whhender
+ms.author: whhender
 ms.reviewer: ajayj, rajpo
-ms.date: 08/18/2025
+ms.date: 10/20/2025
 ms.topic: tutorial
 ms.custom:
 ---
@@ -72,7 +72,7 @@ In SQL Server 2025, the permissions required for the Fabric login are:
    --Run in the master database
    USE [master];
    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
-
+    
    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
    ```
 
@@ -100,9 +100,9 @@ In SQL Server 2025, the permissions required for the Fabric login are:
 
 ## [SQL Server 2016-2022](#tab/sql201622)
 
-For SQL Server versions 2016-2022, membership in the sysadmin server role or db_owner database role is only needed to initially setup CDC. 
+For SQL Server versions 2016-2022, an admin needs membership in the sysadmin server role to initially setup CDC. Any future CDC maintenance will require membership in the sysadmin server role.
 
-Once CDC is setup, only SELECT and CONNECT permissions are needed to replicate the data.
+Once CDC is setup, enabling Mirroring only requires CONNECT at the server level, and SELECT and CONNECT permissions at the database level to replicate the data.
 
 1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
@@ -118,6 +118,7 @@ Once CDC is setup, only SELECT and CONNECT permissions are needed to replicate t
    --Run in the master database
    USE [master];
    CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
+   GRANT CONNECT SQL TO [fabric_login];
    ALTER SERVER ROLE [sysadmin] ADD MEMBER [fabric_login];
    ```
 
@@ -127,9 +128,9 @@ Once CDC is setup, only SELECT and CONNECT permissions are needed to replicate t
    --Run in the master database
    USE [master];
    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
+   GRANT CONNECT SQL TO [fabric_login];
    ALTER SERVER ROLE [sysadmin] ADD MEMBER [bob@contoso.com];
    ```
-   
 1. Membership in the db_owner database role of the source database for mirroring is required to manage CDC.
 
     Connect to the user database your plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary.
@@ -139,7 +140,7 @@ Once CDC is setup, only SELECT and CONNECT permissions are needed to replicate t
     ```sql
     --Run in the user database
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
-    ALTER ROLE [db_owner] ADD MEMBER [fabric_user];
+    GRANT CONNECT, SELECT TO [fabric_user];
     ```
     
     - Or, for a Microsoft Entra authenticated login (recommended):
@@ -147,10 +148,10 @@ Once CDC is setup, only SELECT and CONNECT permissions are needed to replicate t
     ```sql
     --Run in the user database
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    ALTER ROLE [db_owner] ADD MEMBER [bob@contoso.com];
+    GRANT CONNECT, SELECT TO [fabric_user];
     ```
 
-1. Once CDC is enabled, you can remove `fabric_login` from the sysadmin server role and db_owner database role.
+1. Once CDC is enabled, you can remove `fabric_login` from the sysadmin server role.
 
    - For a SQL Authenticated login:
 
@@ -158,13 +159,6 @@ Once CDC is setup, only SELECT and CONNECT permissions are needed to replicate t
     --Run in the master database
     USE [master];
     ALTER SERVER ROLE [sysadmin] DROP MEMBER [fabric_login];
-    GRANT CONNECT, SELECT to [fabric_login];
-    ```
-
-    ```sql
-    --Run in the user database
-    ALTER ROLE [db_owner] DROP MEMBER [fabric_user];
-    GRANT CONNECT, SELECT to [fabric_user];
     ```
 
    - Or, for a Microsoft Entra authenticated login (recommended):
@@ -173,12 +167,6 @@ Once CDC is setup, only SELECT and CONNECT permissions are needed to replicate t
     --Run in the master database
     USE [master];
     ALTER SERVER ROLE [sysadmin] DROP MEMBER [bob@contoso.com];
-    ```
-
-    ```sql
-    --Run in the user database
-    ALTER ROLE [db_owner] DROP MEMBER [bob@contoso.com];
-    GRANT CONNECT, SELECT to [bob@contoso.com];
     ```
 
 ---
@@ -400,11 +388,11 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
       - **Authentication kind**: Choose the authentication method and provide the principal you set up in [Use a login and mapped database user](#use-a-login-and-mapped-database-user).
 1. Select **Connect**.
 
-### Configure secondary replicas of AlwaysOn availability groups
+### Configure secondary replicas of Always On availability groups
 
-This section is only required if the source database for the SQL Server mirroring to Fabric is a member of an AlwaysOn availability group.
+This section is only required if the source database for the SQL Server mirroring to Fabric is a member of an Always On availability group.
 
-If the source database is in an AlwaysOn availability group, additional steps are required to configure the secondary replicas. Repeat these steps for every secondary replica in order to prepare the entire availability group. Each replica requires SQL agent jobs to be setup so that CDC behaves properly when that replica is primary.
+If the source database is in an Always On availability group, additional steps are required to configure the secondary replicas. Repeat these steps for every secondary replica in order to prepare the entire availability group. Each replica requires SQL agent jobs to be setup so that CDC behaves properly when that replica is primary.
 
 1. Fail over the availability group to a secondary replica. 
 1. Use the provided script to create, if they don't already exist, cleanup and capture jobs in the secondary replica instance's `msdb` system database. These jobs are important to maintain the historical data retained by CDC.
@@ -469,7 +457,7 @@ If the source database is in an AlwaysOn availability group, additional steps ar
 
    The capture and cleanup CDC jobs start immediately and are created with default settings. For more information on the jobs, see [sys.sp_cdc_add_job (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sys-sp-cdc-add-job-transact-sql?view=sql-server-ver17&preserve-view=true).
 
-1. Each job will run on each availability group replica by default, even if it is a secondary replica. This will cause error messages in the logs as the user databases on the secondary replicas are not writeable. Enable the two CDC jobs on primary replicas, and disable them on secondary replicas. Follow guidance in [Change data capture on AlwaysOn availability groups](/sql/database-engine/availability-groups/windows/replicate-track-change-data-capture-always-on-availability?view=sql-server-ver17&preserve-view=true#change-data-capture).
+1. Each job will run on each availability group replica by default, even if it is a secondary replica. This will cause error messages in the logs as the user databases on the secondary replicas are not writeable. Enable the two CDC jobs on primary replicas, and disable them on secondary replicas. Follow guidance in [Change data capture on Always On availability groups](/sql/database-engine/availability-groups/windows/replicate-track-change-data-capture-always-on-availability?view=sql-server-ver17&preserve-view=true#change-data-capture).
 
 ---
 

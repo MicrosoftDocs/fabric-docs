@@ -50,7 +50,8 @@ You can change the ownership to yourself (the user currently in context) by sele
   Import-Module MicrosoftPowerBIMgmt 
   ```
 1. Open Windows PowerShell as an administrator.
-1. Connect to your Power BI Service:
+1. Use [Connect-PowerBIServiceAccount](/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount) to connect to Power BI PowerShell.
+    
   ```powershell
   Connect-PowerBIServiceAccount
   ```
@@ -105,3 +106,5 @@ Invoke-PowerBIRestMethod -Url $url -Method Post -Body ""
 ## Related content
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
+- [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md)
+- [Connect-PowerBIServiceAccount](/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount)

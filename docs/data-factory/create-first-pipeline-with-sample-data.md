@@ -1,6 +1,6 @@
 ---
-title: Create your first data pipeline to copy data
-description: Learn how to build and schedule a new data pipeline to copy sample data to a Lakehouse.
+title: Create your first pipeline to copy data
+description: Learn how to build and schedule a new pipeline to copy sample data to a Lakehouse.
 ms.author: whhender
 ms.reviewer: xupzhou
 author: whhender
@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 # Quickstart: Create your first pipeline to copy data
 
-In this quickstart, you'll build a data pipeline that moves a sample dataset into a Lakehouse. It's a simple way to see how pipeline copy activities work and how to load data into a Lakehouse.
+In this quickstart, you'll build a pipeline that moves a sample dataset into a Lakehouse. It's a simple way to see how pipeline copy activities work and how to load data into a Lakehouse.
 
 >[!TIP]
 >You can also use a [Copy job](quickstart-copy-job.md) to move data from one place to another. Check out [this decision guide](../fundamentals/decision-guide-pipeline-dataflow-spark.md) to help you pick the right tool.
@@ -22,26 +22,24 @@ In this quickstart, you'll build a data pipeline that moves a sample dataset int
 
 Before you begin, make sure you have the following setup:
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/free/).
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
-## Create a data pipeline
+## Create a pipeline
 
 1. Go to [Power BI](https://app.powerbi.com/).
 1. Select the Power BI icon in the lower left, then choose **Fabric** to open the Microsoft Fabric homepage.
 
 1. Go to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you made a new workspace as a prerequisite, use that one.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
+1. Select **New item**, search for, and pick **Pipeline**, and enter a name for your pipeline.
 
-1. Select **New item**, pick **Data pipeline**, and enter a name for your pipeline.
-
-   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
    :::image type="content" source="media/create-first-pipeline/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
-## Copy data with your data pipeline
+## Copy data with your pipeline
 
-1. In your data pipeline, select **Copy data assistant**.
+1. In your pipeline, select **Copy data assistant**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/copy-data-button.png" alt-text="Screenshot showing the Copy data button.":::
 
@@ -74,7 +72,7 @@ Before you begin, make sure you have the following setup:
 
    :::image type="content" source="media/create-first-pipeline/complete-copy-activity.png" alt-text="Screenshot showing the completed Copy activity with the Copy activity settings tabs highlighted.":::
 
-## Run and schedule your data pipeline
+## Run and schedule your pipeline
 
 1. If you didn't choose to **Save + run** on the **Review + save** page of the **Copy data assistant**, switch to the **Home** tab and select **Run**. A confirmation dialog is displayed. Then select **Save and run** to start the activity.
 
@@ -94,7 +92,7 @@ Before you begin, make sure you have the following setup:
 
 ## Related content
 
-This quickstart walked you through copying sample data into a Lakehouse using a data pipeline as a simple way to get hands-on with pipelines and see how easy it is to move data.
+This quickstart walked you through copying sample data into a Lakehouse using a pipeline as a simple way to get hands-on with pipelines and see how easy it is to move data.
 
 Next, learn how to monitor your pipeline runs and keep an eye on your data.
 

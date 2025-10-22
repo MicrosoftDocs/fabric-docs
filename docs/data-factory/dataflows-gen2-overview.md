@@ -36,10 +36,10 @@ Here's the features that are available between Dataflow Gen2 and Gen1:
 | AutoSave and background publishing | ✓ |  |
 | Multiple output destinations  | ✓  |   |
 | Better monitoring and refresh tracking       | ✓ |   |
-| Works with data pipelines     | ✓  |   |
+| Works with pipelines     | ✓  |   |
 | High-performance computing     | ✓ |   |
-| Connect via Dataflows connector | ✓ | ✓ |
-| Direct Query via Dataflows connector |  | ✓ |
+| Connect via the dataflow connector | ✓ | ✓ |
+| Direct Query via the dataflow connector |  | ✓ |
 | Refresh only changed data       | ✓ | ✓ |
 | AI-powered insights |  | ✓ |
 
@@ -68,7 +68,7 @@ While Dataflow Gen1 stores transformed data in its own internal storage (which y
 This flexibility opens up new possibilities. For example, you can:
 
 - Use a dataflow to load data into a lakehouse, then analyze it with a notebook
-- Load data into an Azure SQL database, then use a data pipeline to move it to a data warehouse
+- Load data into an Azure SQL database, then use a pipeline to move it to a data warehouse
 
 Dataflow Gen2 currently supports these destinations:
 
@@ -84,15 +84,15 @@ Dataflow Gen2 gives you a clearer picture of what's happening with your data ref
 
 :::image type="content" source="./media/dataflows-gen2-monitor/refresh-details.png" alt-text="Screenshot showing the details of a refresh status.":::
 
-### Works seamlessly with data pipelines
+### Works seamlessly with pipelines
 
-Data pipelines let you group activities together to complete larger tasks. Think of them as workflows that can copy data, run SQL queries, execute stored procedures, or run Python notebooks.
+Pipelines let you group activities together to complete larger tasks. Think of them as workflows that can copy data, run SQL queries, execute stored procedures, or run Python notebooks.
 
 You can connect multiple activities in a pipeline, and set it to run on a schedule. For example, every Monday you might use a pipeline to pull data from an Azure blob and clean it up, then trigger a Dataflow Gen2 to analyze the log data. Or at the end of the month, you could copy data from an Azure blob to an Azure SQL database, then run a stored procedure on that database.
 
-:::image type="content" source="./media/dataflows-gen2-overview/data-pipelines-integration.png" alt-text="Screenshot showing the integration with data pipelines.":::
+:::image type="content" source="./media/dataflows-gen2-overview/data-pipelines-integration.png" alt-text="Screenshot showing the integration with pipelines.":::
 
-To learn more about connecting dataflows with data pipelines, see [dataflow activities](dataflow-activity.md).
+To learn more about connecting dataflows with pipelines, see [dataflow activities](dataflow-activity.md).
 
 ### High-performance computing
 

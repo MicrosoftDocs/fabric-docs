@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure Synapse Analytics in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Synapse Analytics.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure Synapse Analytics.
 
 ## Supported configuration
 
@@ -33,11 +33,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Azure Synapse Analytics under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-synapse-analytics/source.png" alt-text="Screenshot showing the source tab and the list of properties." lightbox="./media/connector-azure-synapse-analytics/source.png":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an Azure Synapse Analytics connection from the connection list. If the connection doesn't exist, then create a new Azure Synapse Analytics connection by selecting **New**.
 - **Connection type**: Select **Azure Synapse Analytics**.
 - **Use query**: You can choose **Table**, **Query**, or **Stored procedure** to read your source data. The following list describes the configuration of each setting：
@@ -84,11 +81,8 @@ Under **Advanced**, you can specify the following fields:
 
 The following properties are supported for Azure Synapse Analytics under the **Destination** tab of a copy activity.
 
-  :::image type="content" source="./media/connector-azure-synapse-analytics/destination.png" alt-text="Screenshot showing Destination tab.":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an Azure Synapse Analytics connection from the connection list. If the connection doesn't exist, then create a new Azure Synapse Analytics connection by selecting **New**.
 - **Connection type**: Select **Azure Synapse Analytics**.
 - **Table option**: You can choose **Use existing**, **Auto create table**. The following list describes the configuration of each setting：
@@ -227,7 +221,6 @@ The following tables contain more information about the copy activity in Azure S
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
 |**Connection type** |Your source connection type. |**Azure Synapse Analytics** |Yes|/|
 |**Use query** |The way to read data.|• Table <br>• Query<br>• Stored procedure |Yes |• typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - schema<br>&nbsp; - table<br>• sqlReaderQuery <br>• sqlReaderStoredProcedureName<br>&nbsp;  storedProcedureParameters<br>&nbsp; - name<br>&nbsp;  - value<br>|
@@ -240,7 +233,6 @@ The following tables contain more information about the copy activity in Azure S
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the destination data store.|< your connection >|Yes|connection|
 |**Connection type** |Your destination connection type.|**Azure Synapse Analytics** |Yes|/|
 |**Table option**|Your destination data table option.|• Use existing<br> • Auto create table|Yes|• typeProperties (under *`typeProperties`* -> *`sink`*)<br>&nbsp;  - schema<br>&nbsp;  - table<br>• tableOption:<br>&nbsp; - autoCreate<br>&nbsp; typeProperties (under *`typeProperties`* -> *`sink`*)<br>&nbsp;  - schema<br>&nbsp;  - table|

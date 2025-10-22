@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure KQL Database in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to KQL Database.
+This article outlines how to use the copy activity in a pipeline to copy data from and to KQL Database.
 
 ## Supported configuration
 
@@ -37,8 +37,7 @@ The following properties are supported for KQL Database under the **Source** tab
 
 The following properties are **required**:
 
-- **Data store type**: Select **Workspace**.
-- **Workspace data store type**: Select **KQL Database** from the data store type list.
+- **Connection**: Select **KQL Database** from the data store type list.
 - **KQL Database**: Select an existing KQL Database from the workspace.
 - **Use query**: Select **Table** or **Query**.
 
@@ -66,8 +65,7 @@ The following properties are supported for KQL Database under the **Destination*
 
 The following properties are **required**:
 
-- **Data store type**: Select **Workspace**.
-- **Workspace data store type**: Select **KQL Database** from the data store type list.
+- **Connection**: Select a **KQL Database** from the data store type list.
 - **KQL Database**: Select an existing KQL Database from the workspace.
 - **Table**: Select a table from the drop-down list or select **Edit** to manually enter it to write data.
 
@@ -94,7 +92,6 @@ The following tables contain more information about a copy activity in a KQL Dat
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type** |Select **KQL Database** from the data store type list.|**KQL Database**|Yes|/|
 |**KQL Database** | Select an existing KQL Database from the workspace.|\<your KQL Database>|Yes |/|
 |**Use query** |Select **Table** or **Query**.| • **Table**<br>  • **Query** |No| table<br> query|
@@ -106,7 +103,6 @@ The following tables contain more information about a copy activity in a KQL Dat
 
 |Name |Description |Value |Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type** |Select **KQL Database** from the data store type list.|**KQL Database**|Yes|/|
 |**KQL Database** | Select an existing KQL Database from the workspace.|\<your KQL Database>|Yes |/|
 |**Table** |Your destination data table to write data.|\<your table name>|Yes|table|

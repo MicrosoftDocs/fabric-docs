@@ -19,10 +19,10 @@ The Azure Databricks connector is supported in Data Factory for [!INCLUDE [produ
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Databricks Client Credentials<br> Personal Access Token<br> Azure Active Directory |
-| **Data pipeline**<br>- [Copy activity](connector-dataverse-copy-activity.md) (source/destination)      |None<br> On-premises<br> Virtual network |Personal Access Token |
+| **Pipeline**<br>- [Copy activity](connector-dataverse-copy-activity.md) (source/destination)      |None<br> On-premises<br> Virtual network |Personal Access Token |
 
 ## Related content
 
 To learn about how to connect to Azure Databricks, go to [Set up your Azure Databricks connection](connector-azure-databricks.md).
 
-To learn more about the copy activity configuration for Azure Databricks in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-databricks-copy-activity.md).
+To learn more about the copy activity configuration for Azure Databricks in pipelines, go to [Configure in a pipeline copy activity](connector-azure-databricks-copy-activity.md).

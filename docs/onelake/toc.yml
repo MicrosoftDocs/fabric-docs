@@ -61,6 +61,8 @@ items:
     href: onelake-api-parity.md
   - name: Use Python to manage OneLake
     href: onelake-access-python.md
+  - name: OneLake Deep Dive ADLS and Blob APIs in Action
+    href: onelake-apis-in-action.md
 - name: Integrate with Azure services
   items:
   - name: Azure Synapse Analytics
@@ -77,10 +79,26 @@ items:
     href: onelake-powershell.md
   - name: AzCopy
     href: onelake-azcopy.md
+- name: OneLake table APIs
+  items:
+  - name: OneLake table APIs overview
+    href: ./table-apis/onelake-table-apis.md
+  - name: OneLake table APIs for Iceberg
+    href: ./table-apis/onelake-iceberg-table-apis.md
+  - name: Getting started with OneLake table APIs for Iceberg
+    href: ./table-apis/onelake-iceberg-table-apis-detailed.md
 - name: Secure and manage data access
   items:
   - name: OneLake security overview
     href: ./security/get-started-security.md
+  - name: Get started with securing data in OneLake
+    items:
+    - name: Get started with OneLake security
+      href: ./security/get-started-onelake-security.md
+    - name: Best practices
+      href: ./security/best-practices-secure-data-in-onelake.md
+  - name: OneLake data access control model
+    href: ./security/data-access-control-model.md
   - name: OneLake security features
     items:
     - name: Table and folder security
@@ -89,22 +107,6 @@ items:
       href: ./security/column-level-security.md
     - name: Row-level security
       href: ./security/row-level-security.md
-  - name: OneLake data access control model
-    href: ./security/data-access-control-model.md
-  - name: Get started with securing data in OneLake
-    items:
-    - name: Get started with data access roles
-      href: ./security/get-started-data-access-roles.md
-    - name: Best practices
-      href: ./security/best-practices-secure-data-in-onelake.md
-  - name: How to secure data in OneLake
-    items:
-    - name: For data science
-      href: ./security/how-to-secure-data-onelake-for-data-science.md
-    - name: For data warehousing
-      href: ./security/how-to-secure-data-onelake-for-data-warehousing.md
-    - name: For common data architectures
-      href: ./security/how-to-common-data-architectures.md
   - name: How to encrypt data in Onelake?
     href: /fabric/security/workspace-customer-managed-keys?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json    
   - name: Authorize with a OneLake shared access signature (SAS)
@@ -113,6 +115,8 @@ items:
       href: onelake-shared-access-signature-overview.md
     - name: Create a OneLake SAS
       href: how-to-create-a-onelake-shared-access-signature.md
+  - name: OneLake diagnostics
+    href: onelake-diagnostics-overview.md
   - name: Network security
     items:
     - name: Manage inbound access to OneLake
@@ -151,3 +155,7 @@ items:
     href: /rest/api/fabric/core/onelake-shortcuts
   - name: OneLake data access roles REST API
     href: /rest/api/fabric/core/onelake-data-access-security
+- name: SQL analytics endpoint
+  items:
+    - name: SQL analytics endpoint onelake security
+      href: sql-analytics-endpoint-onelake-security.md

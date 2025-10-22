@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure Blob Storage in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Blob Storage.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure Blob Storage.
 
 ## Supported format
 
@@ -46,11 +46,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Azure Blob Storage under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-blob-storage/source.png" alt-text="Screenshot showing the source tab and the list of properties." lightbox="./media/connector-azure-blob-storage/source.png":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an Azure Blob Storage connection from the connection list. If no connection exists, then create a new Azure Blob Storage connection by selecting **New**.
 - **File path**: Select **Browse** to choose the file that you want to copy, or fill in the path manually.
 - **File settings**: Select **File settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
@@ -96,11 +93,9 @@ Under **Advanced**, you can specify the following fields:
 
 The following properties are supported for Azure Blob Storage under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-blob-storage/destination.png" alt-text="Screenshot showing destination tab." lightbox="./media/connector-azure-blob-storage/destination.png":::
 
 The following properties are **required**:
 
-- **Data store type:** Select **External**.
 - **Connection:** Select an Azure Blob Storage connection from the connection list. If the connection doesn't exist, then create a new Azure Blob Storage connection by selecting **New**.
 - **File path:** Select **Browse** to choose the file that you want to copy or fill in the path manually.
 - **File settings**: Select **File settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
@@ -146,7 +141,6 @@ The following tables contain more information about the copy activity in Azure B
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|  **External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**File path** | The file path of your source data.|\<file path of your source>|Yes |container <br> fileName|
 |**File path type** |The file path type that you want to use.|• File path <br>• Prefix<br>• Wildcard folder path, Wildcard file name<br>• List of files|No |<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath|
@@ -158,7 +152,6 @@ The following tables contain more information about the copy activity in Azure B
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External** |Yes|/|
 |**Connection** |Your connection to the destination data store.|\<your connection>|Yes|connection|
 |**File path**|The file path of your destination data.|File path of the source |Yes |container <br> fileName|
 |**Copy behavior** |Defines the behavior when copying files from one file system, like storage, to the other (for example, from one blob storage to another).|• None<br>• Add dynamic content<br>• Flatten hierarchy<br>• Preserve hierarchy|No |copyBehavior|

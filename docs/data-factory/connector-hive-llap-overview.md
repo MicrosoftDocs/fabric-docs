@@ -14,11 +14,12 @@ ms.custom:
 
 The Hive LLAP connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Basic |
 
-For information on how to connect to Hive LLAP data in Dataflow Gen2, go to [Set up your Hive LLAP connection](connector-hive-llap.md).
+## Related content
 
-## Support in data pipelines
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Hive LLAP data in data pipelines.
+For information on how to connect to Hive LLAP, go to [Set up your Hive LLAP connection](connector-hive-llap.md).

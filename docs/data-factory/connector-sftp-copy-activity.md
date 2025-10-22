@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure SFTP in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from SFTP.
+This article outlines how to use the copy activity in a pipeline to copy data from SFTP.
 
 ## Supported format
 
@@ -46,11 +46,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 Go to **Source** tab to configure your copy activity source. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-sftp/source.png" alt-text="Screenshot showing source tab and the list of properties." :::
-
 The following three properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an SFTP connection from the connection list. If no connection exists, then create a new SFTP connection by selecting **New**.
 - **File path type**: Select from **File path**, **Wildcard file path** and **List of files** based on the way that you want to read files.
     - **File path**: If you choose this type, specify your source file path. You can select **Browse** to select your source files or enter your file path manually.
@@ -105,9 +102,6 @@ Under **Advanced**, you can specify the following fields:
 
 Go to **Destination** tab to configure your copy activity destination. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-sftp/destination.png" alt-text="Screenshot showing destination tab and the list of properties.":::
-
-- **Data store type**: Select **External**.
 - **Connection**: Select an SFTP connection from the connection list. If no connection exists, then create a new SFTP connection by selecting **New**.
 - **File path**: Specify the file path to write your data to. You can select **Browse** to select your source files or enter your file path manually.
 - **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
@@ -147,7 +141,6 @@ The following table contains more information about the copy activity in SFTP.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **Data store type** | Your data store type. | **External** | Yes | / | 
 | **Connection** | Your SFTP connection to the source data store. | < your SFTP connection > | Yes | connection | 
 | **File path type** | The file path type used to get source data. |•  **File path**<br>• **Wildcard file path**<br>• **List of files**| Yes | / | 
 | **File path** | The path to the source file. | < file path> | Yes | fileName<br>folderPath | 
@@ -167,7 +160,6 @@ The following table contains more information about the copy activity in SFTP.
 
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|External|Yes|/|
 |**Connection**|Your connection to the source SFTP.|< your connection >|Yes|connection|
 |**File path**|The file path of your destination data.|File path of the destination|Yes|folderPath<br>fileName|
 |**File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes | / | 

@@ -1,9 +1,9 @@
 ---
 title: Aggregations in API for GraphQL
 description: This article contains information about aggregations in API for GraphQL
-author: KoldBrewEd 
-ms.author: edlima
-ms.reviewer: snehagunda
+author: eric-urban
+ms.author: eur
+ms.reviewer: edlima
 ms.date: 05/16/2025
 ms.topic: conceptual
 ms.custom:
@@ -379,7 +379,7 @@ The exact functions available depend on the implementation, but common aggregati
 In our GraphQL API, these are typically requested by specifying the function name and the target field, as shown in the examples `count(field: id)`, `sum(field: price)`, etc. Each function returns an object allowing you to select one or more fields it was applied to. For instance, `sum(field: price)` gives the sum of the price field for that group, and `count(field: id)` gives the count of id which is effectively the count of items.
 
 > [!NOTE]
-> Currently aggregation operations like `count`, `sum`, `avg`, `min`, and `max` work only on **numeric** or quantitative fields. For example, integers, floats, dates. You can't use them on text fields. For example, you can’t take the "average" of a string. Support for performing aggregates on other types (like text for a future possible function such as concatenation or lexicographical min/max) is planned, but not available yet.
+> Currently aggregation operations like `count`, `sum`, `avg`, `min`, and `max` work only on **numeric** or quantitative fields. For example, integers, floats. You can't use them on text or date fields. For example, you can’t take the "average" of a string. Support for performing aggregates on other types (like text for a future possible function such as concatenation or lexicographical min/max) is planned, but not available yet.
 
 ## Restrictions and best practices
 

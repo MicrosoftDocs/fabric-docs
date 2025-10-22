@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure Table Storage in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Table Storage.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure Table Storage.
 
 
 ## Supported configuration
@@ -34,11 +34,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 Go to **Source** tab to configure your copy activity source. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-azure-table-storage/source.png" alt-text="Screenshot showing source tab and the list of properties." :::
-
 The following three properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Azure Table Storage connection from the connection list. If no connection exists, then create a new Azure Table Storage connection by selecting **New**.
 - **Use query**: Specify way to read data. Select **Table** to read data from the specified table or select **Query** to read data using queries.
 
@@ -70,11 +67,8 @@ Under **Advanced**, you can specify the following fields:
 
 Go to **Destination** tab to configure your copy activity destination. See the following content for the detailed configuration. 
 
-:::image type="content" source="./media/connector-azure-table-storage/destination.png" alt-text="Screenshot showing destination tab and the list of properties.":::
-
 The following three properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Azure Table Storage connection from the connection list. If no connection exists, then create a new Azure Table Storage connection by selecting **New**.
 - **Table**: Specify the name of the table in the Azure Table Storage database instance. Select the table from the drop-down list or enter the name manually by selecting **Edit**.
 
@@ -120,7 +114,6 @@ The following table contains more information about the copy activity in Azure T
 
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the source data store.|< your Azure Table Storage connection >|Yes|connection|
 | **Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using queries. | • Table<br>• Query | Yes | / | 
 | **Table** | The name of the table in the Azure Table Storage database instance. | < your table name > | Yes | tableName | 
@@ -132,7 +125,6 @@ The following table contains more information about the copy activity in Azure T
 
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the destination data store.|< your Azure Table Storage connection >|Yes|connection|
 | **Table** | The name of the table in the Azure Table Storage database instance. | < your table name > | Yes | tableName | 
 | **Insert type** | The mode to insert data into Azure Table. This property controls whether existing rows in the output table with matching partition and row keys have their values replaced or merged. | • **Merge**<br>• **Replace** | No |azureTableInsertType:<br>• merge<br>• replace | 

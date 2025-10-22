@@ -1,7 +1,7 @@
 ---
 title: NotebookUtils (former MSSparkUtils) for Fabric
 description: Use NotebookUtils, a built-in package for Fabric Notebook, to work with file systems, modularize and chain notebooks together, manage data engineering items, and work with credentials.
-ms.reviewer: snehagunda
+ms.reviewer: jingzh
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
@@ -36,7 +36,7 @@ notebookutils.fs provides utilities for working with various FileSystems.
 Below is overview about the available methods:
 
 cp(from: String, to: String, recurse: Boolean = false): Boolean -> Copies a file or directory, possibly across FileSystems
-fastcp(from: String, to: String, recurse: Boolean = true): Boolean -> [Preview] Copies a file or directory via azcopy, possibly across FileSystems
+fastcp(from: String, to: String, recurse: Boolean = true): Boolean -> Copies a file or directory via azcopy, possibly across FileSystems
 mv(from: String, to: String, createPath: Boolean = false, overwrite: Boolean = false): Boolean -> Moves a file or directory, possibly across FileSystems
 ls(dir: String): Array -> Lists the contents of a directory
 mkdirs(dir: String): Boolean -> Creates the given directory if it does not exist, also creating any necessary parent directories
@@ -113,21 +113,21 @@ notebookutils.fs.ls("file:/<new_dir>")  # based on local file system of driver n
 
 ### Copy file
 
-This method copies a file or directory, and supports copy activity across file systems.
+This method copies a file or directory, and supports copy activity across file systems. We set `recurse=True` to copy all files and directories recursively.
 
 ```python
-notebookutils.fs.cp('source file or directory', 'destination file or directory', True)# Set the third parameter as True to copy all files and directories recursively
+notebookutils.fs.cp('source file or directory', 'destination file or directory', recurse=True)
 ```
 
 > [!NOTE]
-> Due to the [limitations of OneLake shortcut](../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use ```notebookutils.fs.cp()``` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
+> Due to the [limitations of OneLake shortcut](../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use `notebookutils.fs.cp()` to copy data from S3/GCS type shortcut, it is recommended to use a mounted path instead of an abfss path.
 
 ### Performant copy file
 
 This method offers a more efficient approach to copying or moving files, particularly when dealing with large data volumes. For enhanced performance on Fabric, it is advisable to utilize `fastcp` as a substitute for the traditional `cp` method.
 
 ```python
-notebookutils.fs.fastcp('source file or directory', 'destination file or directory', True)# Set the third parameter as True to copy all files and directories recursively
+notebookutils.fs.fastcp('source file or directory', 'destination file or directory', recurse=True)
 ```
 
 **Considerations:**
@@ -175,10 +175,10 @@ notebookutils.fs.append("file path", "content to append", True) # Set the last p
 
 ### Delete file or directory
 
-This method removes a file or directory.
+This method removes a file or directory. We set `recurse=True` to remove all files and directories recursively.
 
 ```python
-notebookutils.fs.rm('file path', True) # Set the last parameter as True to remove all files and directories recursively
+notebookutils.fs.rm('file path', recurse=True) 
 ```
 
 ### Mount/unmount directory
@@ -201,10 +201,10 @@ The notebook module.
 
 exit(value: String): void -> This method lets you exit a notebook with a value.
 run(path: String, timeoutSeconds: int, arguments: Map, workspace: String): String -> This method runs a notebook and returns its exit value.
-runMultiple(DAG: Any): Map[String, MsNotebookRunResult] -> [Preview] Runs multiple notebooks concurrently with support for dependency relationships.
-validateDAG(DAG: Any): Boolean -> [Preview] This method check if the DAG is correctly defined.
+runMultiple(DAG: Any): Map[String, MsNotebookRunResult] -> Runs multiple notebooks concurrently with support for dependency relationships.
+validateDAG(DAG: Any): Boolean -> This method check if the DAG is correctly defined.
 
-[Preview] Below methods are only support Fabric Notebook.
+Below methods are only support Fabric Notebook.
 create(name: String, description: String = "", content: String = "", defaultLakehouse: String = "", defaultLakehouseWorkspace: String = "", workspaceId: String = ""): Artifact -> Create a new Notebook.
 get(name: String, workspaceId: String = ""): Artifact -> Get a Notebook by name or id.
 update(name: String, newName: String, description: String = "", workspaceId: String = ""): Artifact -> Update a Artifact by name.
@@ -251,9 +251,6 @@ You can open the snapshot link of the reference run in the cell output. The snap
 - Reference run allows child notebooks to run only if they use the same lakehouse as the parent, inherit the parent's lakehouse, or neither defines one. The execution is blocked if the child specifies a different lakehouse to parent notebook. To bypass this check, set `useRootDefaultLakehouse: True`.
 
 ### Reference run multiple notebooks in parallel
-
-> [!IMPORTANT]
-> This feature is currently in [preview](../fundamentals/preview.md).
 
 The method `notebookutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the reference notebook runs share the compute resources.
 
@@ -327,7 +324,7 @@ notebookutils.notebook.validateDAG(DAG)
 **Considerations:**
 
 - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
-- The upper limit for notebook activities or concurrent notebooks is **50**. Exceeding this limit may lead to stability and performance issues due to high compute resource usage. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
+- The default number of concurrent notebooks is **50** for Spark notebook, while it's default to **25** for Python Notebook. You can customize this value, but excessive parallelism may lead to stability and performance issues due to high compute resource usage. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
 - The default time-out for entire DAG is 12 hours, and the default time-out for each cell in child notebook is 90 seconds. You can change the time-out by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter.
 
 ### Exit a notebook
@@ -446,20 +443,22 @@ artifacts_list = notebookutils.notebook.list("optional_workspace_id")
 
 ```notebookutils.udf``` provides utilities designed for integrating Notebook code with User Data Functions (UDFs). These utilities allow you to access functions from a UDF item within the same workspace or across different workspaces. You can then invoke functions within a UDF item as needed.
 
-Here is an overview of the available methods:
+Here are some examples of how to use the UDF utilities:
 
 ```python
-# Get functions
-myFunctions = notebookutils.udf.getFunctions('UDFItemName') # Get functions from UDF within the same workspace
-myFunctions = notebookutils.udf.getFunctions('UDFItemName', 'workspaceId') # Get functions from UDF across different workspace
+# Get functions from a UDF item
+myFunctions = notebookutils.udf.getFunctions('UDFItemName')
+# Or from another workspace
+myFunctions = notebookutils.udf.getFunctions('UDFItemName', 'workspaceId')
 
-# Additional helper method to return all functions, their respective parameters, and types.
+# Display function and item details
 display(myFunctions.functionDetails)
 display(myFunctions.itemDetails)
 
-# Invoke the function
+# Invoke a function
 myFunctions.functionName('value1', 'value2')
-myFunctions.functionName(parameter1='value1', parameter2='value2'...) # Another way to invoke the function
+# Or with named parameters
+myFunctions.functionName(parameter1='value1', parameter2='value2')
 ```
 
 ### Retrieve functions from a UDF
@@ -1003,7 +1002,7 @@ notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
 > - The notebook code references the variables defined in the active value set of the Variable Library. 
 
 
-## Known issue 
+## Known issues
 
 - When using runtime version above 1.2 and run ``` notebookutils.help() ```, the listed **fabricClient**, **PBIClient** APIs are not supported for now, will be available in the further. Additionally, the **Credentials** API isn't supported in Scala notebooks for now.
 

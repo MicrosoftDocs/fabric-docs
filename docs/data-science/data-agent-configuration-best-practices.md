@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: midesa
 reviewer: midesa
 ms.topic: how-to
-ms.date: 06/13/2024
+ms.date: 08/15/2025
 ---
 
 # Best practices for configuring your data agent

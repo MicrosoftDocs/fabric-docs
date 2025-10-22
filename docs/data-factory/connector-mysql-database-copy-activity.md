@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure MySQL in a copy activity
 
-This article outlines how to use the copy activity in Data pipeline to copy data from MySQL.
+This article outlines how to use the copy activity in a pipeline to copy data from MySQL.
 
 This connector supports MySQL version 5.5, 5.6, 5.7, 8.0, 8.1 and 8.2.
 
@@ -34,11 +34,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for MySQL under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-mysql-database/mysql-source.png" alt-text="Screenshot showing source tab.":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select a MySQL connection from the connection list. If no connection exists, then create a new MySQL connection by selecting **New**.
 - **Use query**: Select from **Table** or **Query**.
     - If you select **Table**:
@@ -71,7 +68,6 @@ The following tables contain more information about the copy activity in MySQL.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|\<your MySQL connection> |Yes|connection|
 |**Use query** |The way to read data from MySQL. Apply **Table** to read data from the specified table or apply **Query** to read data using SQL queries.|• **Table** <br>• **Query** |Yes |/|
 | **Table** | Name of the table in the MySQL database. | < table name > | No | tableName |

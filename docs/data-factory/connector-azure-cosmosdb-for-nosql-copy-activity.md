@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure Cosmos DB for NoSQL in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Cosmos DB for NoSQL.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure Cosmos DB for NoSQL.
 
 ## Supported configuration
 
@@ -33,11 +33,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Azure Cosmos DB for NoSQL under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-cosmosdbnosql/source.png" alt-text="Screenshot showing source tab." lightbox="./media/connector-cosmosdbnosql/source.png":::
-
 The following three properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an Azure Cosmos DB for NoSQL connection from the connection list. If no connection exists, then create a new Azure Cosmos DB for NoSQL connection by selecting **New**.
 - **Container**: Select the container that you want to use. Select **Edit** to enter the container name manually.
 
@@ -63,11 +60,8 @@ Under **Advanced**, you can specify the following fields:
 
 The following properties are supported for Azure Cosmos DB for NoSQL under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-cosmosdbnosql/destination.png" alt-text="Screenshot showing destination tab." lightbox="./media/connector-cosmosdbnosql/destination.png":::
-
 The following three properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Azure Cosmos DB for NoSQL connection from the connection list.
 - **Container**: Select **Browse** to choose the file that you want to copy, or fill in the path manually.
 
@@ -107,7 +101,6 @@ The following tables contain more information about the copy activity in Azure C
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection\> |Yes|connection|
 |**Container** | The container of your source data.|\<container of your source\>|Yes |container <br> fileName|
 |**Use query** |You can choose **Table** or **Query** as your use query.|• **Table** <br>• **Query**|No |type|
@@ -120,7 +113,6 @@ The following tables contain more information about the copy activity in Azure C
 
 |Name |Description |Value |Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the destination data store.|\<your connection\>|Yes|connection|
 |**Container**|The container of your destination data.|\<container of source\> |Yes |container <br> fileName|
 |**Write behavior** |Describes how to write data to Azure Cosmos DB. Allowed values: insert and upsert. The behavior of upsert is to replace the document if a document with the same ID already exists; otherwise, insert the document.|• **Add dynamic content**<br>• **Insert**<br>• **Upsert**|No |writeBehavior|

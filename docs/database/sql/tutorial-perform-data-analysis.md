@@ -62,6 +62,9 @@ In our sample tutorial, your organization has asked that you set up a Notebook f
 
 1. Select the **Save As** icon in the ribbon. Enter the text `products_by_suppliers_notebook`. Ensure you set the location to your tutorial Workspace. Select the **Save** button to save the notebook.
 
+> [!TIP]
+> You can also [connect your applications to a SQL database in Fabric with the Microsoft Python Driver](connect-python.md).
+
 ## Next step
 
 > [!div class="nextstepaction"]

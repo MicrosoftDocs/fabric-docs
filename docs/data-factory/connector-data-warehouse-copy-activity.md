@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Data Warehouse in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to a Data Warehouse.
+This article outlines how to use the copy activity in a pipeline to copy data from and to a Data Warehouse.
 
 ## Supported configuration
 
@@ -33,13 +33,9 @@ For the **General** tab configuration, go to [General](activity-overview.md#gene
 
 The following properties are supported for Data Warehouse as **Source** in a copy activity.
 
-:::image type="content" source="./media/connector-data-warehouse/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **Workspace**.
-- **Workspace data store type**: Select **Data Warehouse** from the data store type list.
-- **Data Warehouse**: Select an existing **Data Warehouse** from the workspace.
+- **Connection**: Select a **Data Warehouse** from the data store list.
 - **Use query**: Select **Table**, **Query**, or **Stored procedure**.
 
   - If you select **Table**, choose an existing table from the table list, or specify a table name manually by selecting the **Edit** box.
@@ -80,9 +76,7 @@ The following properties are supported for Data Warehouse as **Destination** in 
 
 The following properties are **required**:
 
-- **Data store type**: Select **Workspace**.
-- **Workspace data store type**: Select **Data Warehouse** from the data store type list.
-- **Data Warehouse**: Select an existing **Data Warehouse** from the workspace.
+- **Connection**: Select a **Data Warehouse** from the data store list.
 - **Table**: Choose an existing table from the table list or specify a table name as destination.
 
 Under **Advanced**, you can specify the following fields:
@@ -155,9 +149,8 @@ The following tables contain more information about a copy activity in Data Ware
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse** |Yes|type|
-|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
+|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>itemId|
 |**Use query** |The way to read data from Data Warehouse. |• Tables<br>• Query<br>• Stored procedure|No|*(under `typeProperties` -> `source`)*<br>• typeProperties:<br>&emsp;schema<br>&emsp;table<br>• sqlReaderQuery<br>• sqlReaderStoredProcedureName|
 |**Query timeout (minutes)**|Timeout for query command execution, with a default of 120 minutes. If this property is set, the allowed values are in the format of a timespan, such as "02:00:00" (120 minutes).|timespan |No |queryTimeout|
 |**Isolation level** |The transaction locking behavior for source. |• None<br>• Snapshot|No |isolationLevel|
@@ -171,9 +164,8 @@ The following tables contain more information about a copy activity in Data Ware
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse**  |Yes|type|
-|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
+|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>itemId|
 |**Table** |The destination table to write data.|\<name of your destination table>|Yes|schema <br> table|
 |**Copy command settings**|The copy command property settings. Contains the default value settings.|Default value:<br>• Column<br> • Value|No |copyCommandSettings:<br>defaultValues:<br>• columnName<br>• defaultValue|
 |**Table option**|Whether to automatically create the destination table if none exists based on the source schema.|• None<br>• Auto create table|No|tableOption:<br><br>• autoCreate|

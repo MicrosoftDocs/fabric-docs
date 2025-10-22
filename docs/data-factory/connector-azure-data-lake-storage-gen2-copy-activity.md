@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure Data Lake Storage Gen2 in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Data Lake Storage Gen2.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure Data Lake Storage Gen2.
 
 ## Supported format
 
@@ -51,7 +51,6 @@ The following properties are supported for Azure Data Lake Storage Gen2 under th
 
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an Azure Data Lake Storage Gen2 connection from the connection list. If no connection exists, then create a new Azure Data Lake Storage Gen2 connection by selecting **New**.
 - **Connection type**: Select **Azure Data Lake Storage Gen2**.
 - **File path type**: You can choose **File path**, **Wildcard file path**, or **List of files** as your file path type. The configuration of each of these settings is：
@@ -115,11 +114,8 @@ Under **Advanced**, you can specify the following fields:
 
 The following properties are supported for Azure Data Lake Storage Gen2 under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-data-lake-storage-gen2/destination.png" alt-text="Screenshot showing destination tab." lightbox="./media/connector-azure-data-lake-storage-gen2/destination.png":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Azure Data Lake Storage Gen2 connection from the connection list. If no connection exists, then create a new Azure Data Lake Storage Gen2 connection by selecting **New**.
 - **Connection type**: Select **Azure Data Lake Storage Gen2**.
 - **File path**: Select **Browse** to choose the file that you want to copy or fill in the path manually.
@@ -167,7 +163,6 @@ The following tables contain more information about the copy activity in Azure D
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|\<your Azure Data Lake Storage Gen2 connection> |Yes|connection|
 |**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen2**.|**Azure Data Lake Storage Gen2**|Yes |/|
 |**File path type** |The file path type that you want to use.|• File path<br>• Wildcard folder path, Wildcard file name<br>•List of files|Yes |• folderPath, fileName, fileSystem<br>• wildcardFolderPath, wildcardFileName, fileSystem<br>• folderPath, fileName, fileListPath|
@@ -182,7 +177,6 @@ The following tables contain more information about the copy activity in Azure D
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the destination data store.|\<your Azure Data Lake Storage Gen2 connection>|Yes|connection|
 |**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen2**.|**Azure Data Lake Storage Gen2**|Yes |/|
 |**File path**|The file path of your destination data.|< your file path > |Yes |folderPath, fileName, fileSystem|

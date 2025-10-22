@@ -51,7 +51,7 @@ The following table summarizes the available connectors and their capabilities:
 
 ## Apache Kafka
 
-[Apache Kafka](https://kafka.apache.org/documentation/) is a distributed streaming platform for building real-time streaming data pipelines that reliably move data between systems or applications. Kafka Connect is a tool for scalable and reliable streaming of data between Apache Kafka and other data systems. The Kafka Sink serves as the connector from Kafka and doesn't require using code. The connector is gold certified by Confluent and went through comprehensive review and testing for quality, feature completeness, compliance with standards, and for performance.
+[Apache Kafka](https://kafka.apache.org/documentation/) is a distributed streaming platform for building real-time streaming pipelines that reliably move data between systems or applications. Kafka Connect is a tool for scalable and reliable streaming of data between Apache Kafka and other data systems. The Kafka Sink serves as the connector from Kafka and doesn't require using code. The connector is gold certified by Confluent and went through comprehensive review and testing for quality, feature completeness, compliance with standards, and for performance.
 
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching, Streaming
@@ -238,5 +238,5 @@ Telegraf is an open source, lightweight, minimal memory foot print agent for col
 * **Use cases:** Telemetry, Logs, Metrics
 * **Underlying SDK:** [Go](/azure/data-explorer/kusto/api/golang/kusto-golang-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** InfluxData - https://github.com/influxdata/telegraf/tree/master/plugins/outputs/azure_data_explorer
-* **Documentation:** [Get data from Telegraf](/azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Ingest data from Telegraf into Microsoft Fabric Eventhouse](../get-data-telegraf.md)
 * **Community Blog:**  [New Azure Data Explorer output plugin for Telegraf enables SQL monitoring at huge scale](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/new-azure-data-explorer-output-plugin-for-telegraf-enables-sql/ba-p/2829444)
