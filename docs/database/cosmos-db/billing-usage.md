@@ -11,7 +11,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Billing and utilization data for Cosmos DB in Microsoft Fabric (preview)
+# Billing and utilization data for Cosmos DB in Microsoft Fabric
 
 Cosmos DB in Microsoft Fabric compute usage is encapsulated within your Fabric capacity. You can review and understand your utilization using similar tools to other Fabric workloads.
 

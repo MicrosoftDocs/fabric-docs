@@ -13,7 +13,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Secure your Cosmos DB in Microsoft Fabric database (preview)
+# Secure your Cosmos DB in Microsoft Fabric database
 
 Cosmos DB in Microsoft Fabric is an AI-optimized NoSQL database automatically configured for typical development needs with a simplified management experience. Fabric provides built-in security, access control, and monitoring for Cosmos DB in Fabric. While Fabric provides built-in security features to protect your data, it's essential to follow best practices to further enhance the security of your account, data, and networking configurations.
 

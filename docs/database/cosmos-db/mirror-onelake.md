@@ -11,7 +11,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Mirror OneLake in Cosmos DB database in Microsoft Fabric (preview)
+# Mirror OneLake in Cosmos DB database in Microsoft Fabric
 
 Every Cosmos DB in Microsoft Fabric database is mirrored into OneLake in the open-source Delta Lake format. This feature doesn't require any extra configuration or setup and is automatically enabled when the database is created. This tight integration eliminates the need for ETL (Extract, Transform, Load) pipelines and ensures that Cosmos DB data is always analytics-ready.
 

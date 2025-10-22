@@ -12,7 +12,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Limitations in Cosmos DB in Microsoft Fabric (preview)
+# Limitations in Cosmos DB in Microsoft Fabric
 
 This article lists current limitations for Cosmos DB in Fabric.
 

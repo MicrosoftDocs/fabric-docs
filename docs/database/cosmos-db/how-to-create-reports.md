@@ -10,7 +10,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Create Power BI reports using Cosmos DB in Microsoft Fabric (preview)
+# Create Power BI reports using Cosmos DB in Microsoft Fabric
 
 With Cosmos DB in Microsoft Fabric, you can build interactive Power BI reports using your NoSQL data. In this guide, you build a report directly in Power BI using a semantic model you configured in Power BI.
 

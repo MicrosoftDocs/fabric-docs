@@ -11,7 +11,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Time to live (TTL) in Cosmos DB in Microsoft Fabric (preview)
+# Time to live (TTL) in Cosmos DB in Microsoft Fabric
 
 The time-to-live (TTL) feature in Cosmos DB helps you manage your data's lifecycle by automatically deleting items after a specified period. TTL is especially useful for scenarios where data is only relevant for a limited time, such as session data, metrics, or logs. By enabling TTL, you can keep your database lean, reduce storage costs, and ensure that only current, relevant data is retained.
 

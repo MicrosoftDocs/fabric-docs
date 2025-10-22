@@ -10,7 +10,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Full text indexing and search in Cosmos DB in Microsoft Fabric (preview)
+# Full text indexing and search in Cosmos DB in Microsoft Fabric
 
 Cosmos DB in Microsoft Fabric offers a powerful Full Text Search feature as generally available. This feature is designed to enhance the native search capabilities of your apps without needing an external search service for basic full text search.
 

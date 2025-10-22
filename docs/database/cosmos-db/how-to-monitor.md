@@ -11,7 +11,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Monitor Cosmos DB in Microsoft Fabric (preview)
+# Monitor Cosmos DB in Microsoft Fabric
 
 Monitoring is key to understanding how your Cosmos DB in Fabric workloads is performing and scaling over time. The summary metrics are a useful tool for quickly assessing the health of your workload as they're updated regularly. In this guide, you use the **Metrics Summary** dialog to review a quick snapshot of key usage indicators.
 

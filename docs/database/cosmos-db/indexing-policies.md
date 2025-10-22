@@ -10,7 +10,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Indexing policies in Cosmos DB in Microsoft Fabric (preview)
+# Indexing policies in Cosmos DB in Microsoft Fabric
 
 
 Cosmos DB is a schema-agnostic database that allows you to iterate on your application without having to deal with schema or index management. Indexing within Cosmos DB in Microsoft Fabric is designed to deliver fast and flexible query performance, no matter how your data evolves. In Cosmos DB in Fabric, every container has an indexing policy that dictates how the container's items should be indexed. The default indexing policy for newly created containers indexes every property of every item and enforces range indexes for any string or number. This default configuration allows you to get good query performance without having to think about indexing and index management upfront.

@@ -10,7 +10,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Request units in Cosmos DB in Microsoft Fabric (preview)
+# Request units in Cosmos DB in Microsoft Fabric
 
 Cosmos DB in Microsoft Fabric normalizes the cost of all database operations using Request Units (or RUs, for short) and measures cost based on throughput (Request Units per second, RU/s).
 

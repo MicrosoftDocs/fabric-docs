@@ -10,7 +10,7 @@ metadata:
   ai-usage: ai-assisted
   appliesto:
   - ✅ Cosmos DB in Fabric
-title: Frequently asked questions for Cosmos DB in Microsoft Fabric (preview)
+title: Frequently asked questions for Cosmos DB in Microsoft Fabric
 summary: |
   [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
   This article answers frequently asked questions about Cosmos DB in Microsoft Fabric.
