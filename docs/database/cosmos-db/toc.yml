@@ -47,6 +47,8 @@ items:
         href: authorization.md
       - name: Authenticate with Microsoft Entra ID
         href: how-to-authenticate.md
+      - name: Customer managed keys
+        href: customer-managed-keys.md
   - name: Manage resources
     items:
       - name: Configure container
@@ -73,3 +75,5 @@ items:
     items:
       - name: Limitations
         href: limitations.md
+      - name: Vector indexing and customer managed keys
+        href: troubleshoot-vector-indexing-customer-managed-keys.md
