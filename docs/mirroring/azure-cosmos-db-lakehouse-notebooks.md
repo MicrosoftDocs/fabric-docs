@@ -1,6 +1,6 @@
 ---
-title: "How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview)"
-description: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview).
+title: "How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric"
+description: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, whhender
@@ -9,12 +9,9 @@ ms.topic: how-to
 ms.custom: sfi-image-nochange
 ---
 
-# How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview)
+# How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric
 
-In this guide, you learn how to Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview).
-
-> [!IMPORTANT]
-> Mirroring for Azure Cosmos DB is currently in [preview](../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+In this guide, you learn how to Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric.
 
 ## Prerequisites
 
@@ -25,7 +22,7 @@ In this guide, you learn how to Access mirrored Azure Cosmos DB data in Lakehous
 - The Azure Cosmos DB for NoSQL account must be configured for Fabric mirroring. For more information, see [account requirements](azure-cosmos-db-limitations.md#account-and-database-limitations).
 
 > [!TIP]
-> During the public preview, it's recommended to use a test or development copy of your existing Azure Cosmos DB data that can be recovered quickly from a backup.
+> It's recommended to use a test or development copy of your existing Azure Cosmos DB data that can be recovered quickly from a backup.
 
 ## Setup mirroring and prerequisites
 
@@ -116,4 +113,4 @@ Finally, you can use Spark and Python code to write data back to your source Azu
 
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
 - [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-troubleshooting.yml)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-limitations.md)

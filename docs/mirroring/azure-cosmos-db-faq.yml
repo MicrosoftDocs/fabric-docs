@@ -1,6 +1,6 @@
 ### YamlMime:FAQ
 metadata:
-  title: Frequently asked questions for Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+  title: Frequently asked questions for Microsoft Fabric mirrored databases from Azure Cosmos DB
   description: This article answers frequently asked questions (FAQ) about mirrored Azure Cosmos DB databases in Microsoft Fabric.
   author: seesharprun
   ms.author: sidandrews
@@ -11,12 +11,9 @@ metadata:
   ms.topic: faq
   ms.date: 05/07/2025
 title: |
-  Frequently asked questions for Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+  Frequently asked questions for Microsoft Fabric mirrored databases from Azure Cosmos DB
 summary: | 
   This article answers frequently asked questions about Mirrored Azure Cosmos DB database in Microsoft Fabric.
-  > [!IMPORTANT]
-  > Mirroring for Azure Cosmos DB is currently in [preview](../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
-
 sections:
   - name: General questions
     questions:
