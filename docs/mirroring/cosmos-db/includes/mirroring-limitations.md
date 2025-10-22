@@ -21,7 +21,7 @@ ms.date: 10/22/2025
 
 - Commands such as `OPENJSON`, `CROSS APPLY`, and `OUTER APPLY` are available to expand JSON string data selectively.
 
-  - Auto schema inference through `OPENJSON` allows you to flatten and explore nested data with unknown or unpredictable nested schemas. For more information, see [how to query nested data](../../mirroring/azure-cosmos-db-how-to-query-nested.md).
+  - Auto schema inference through `OPENJSON` allows you to flatten and explore nested data with unknown or unpredictable nested schemas. For more information, see [how to query nested data](../../azure-cosmos-db-how-to-query-nested.md).
 
 - PowerQuery includes `ToJson` to expand JSON string data selectively.
 

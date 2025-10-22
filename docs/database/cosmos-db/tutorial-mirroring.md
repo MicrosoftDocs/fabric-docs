@@ -6,6 +6,7 @@ author: seesharprun
 ms.author: sidandrews
 ms.topic: tutorial
 ms.date: 10/22/2025
+ai-usage: ai-generated
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---

@@ -6,6 +6,7 @@ author: seesharprun
 ms.author: sidandrews
 ms.topic: limits-and-quotas
 ms.date: 10/22/2025
+ai-usage: ai-generated
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---
@@ -18,27 +19,33 @@ This article details the current limitations for mirroring for Cosmos DB databas
 
 ## Availability limitations
 
-- TODO
-
-- TODO
+- [!INCLUDE [fabric-mirroreddb-supported-regions](../../mirroring/includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Account and database limitations
 
-- TODO
+- Container throughput limitations from Cosmos DB in Fabric apply to mirrored containers:
 
-- TODO
+  - Maximum autoscale throughput of 10,000 RU/s per container
+
+  - Default allocation of 5,000 RU/s for containers created through the Fabric portal
+
+  - Container throughput can't be modified after creation
 
 ## Security limitations
 
-- TODO
+- Authentication to the source Cosmos DB iin Fabric database is limited to:
+  
+  - Microsoft Entra ID authentication with appropriate role-based access control permissions
 
-- TODO
+- Fabric workspace permissions automatically grant access to mirrored Cosmos DB data. Users with workspace access inherit corresponding permissions to query and view mirrored data.
+
+- Setting Fabric [item permissions](../../security/permission-model.md#item-permissions) is currently not supported for Cosmos DB databases.
 
 ## Data explorer limitations
 
-- TODO
+- The Fabric data explorer for Cosmos DB provides read-only access to mirrored data. You can view containers, browse items, and execute queries, but can't create, modify, or delete containers or items.
 
-- TODO
+- Users with only viewer permissions in the Fabric workspace can't preview or query data through the SQL analytics endpoint, but may still access the data explorer depending on their Azure Cosmos DB account permissions.
 
 [!INCLUDE[Cosmos DB Mirroring Limitations](../../mirroring/cosmos-db/includes/mirroring-limitations.md)]
 

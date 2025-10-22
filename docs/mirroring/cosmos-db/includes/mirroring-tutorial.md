@@ -13,7 +13,7 @@ Use the Fabric portal to explore the data that already exists in your Azure Cosm
 
 1. Select **View**, then **Source database**. This action opens the Azure Cosmos DB data explorer with a read-only view of the source database.
 
-    :::image type="content" source="../media/azure-cosmos-db-tutorial/source-explorer-query.png" alt-text="Screenshot of the data explorer with a read-only view of NoSQL data in the Azure Cosmos DB account." lightbox="../media/azure-cosmos-db-tutorial/source-explorer-query.png":::
+    :::image type="content" source="../../media/azure-cosmos-db-tutorial/source-explorer-query.png" alt-text="Screenshot of the data explorer with a read-only view of NoSQL data in the Azure Cosmos DB account." lightbox="../media/azure-cosmos-db-tutorial/source-explorer-query.png":::
 
 1. Select a container, then open the context menu and select **New SQL query**.
 
@@ -30,7 +30,7 @@ Now, use T-SQL to query your NoSQL data that is now stored in Fabric OneLake.
 
 1. Switch from **Mirrored Azure Cosmos DB** to **SQL analytics endpoint**.
 
-    :::image type="content" source="../media/azure-cosmos-db-tutorial/switch-experience.png" alt-text="Screenshot of the selector to switch between items in the Fabric portal." lightbox="../media/azure-cosmos-db-tutorial/switch-experience.png":::
+    :::image type="content" source="../../media/azure-cosmos-db-tutorial/switch-experience.png" alt-text="Screenshot of the selector to switch between items in the Fabric portal." lightbox="../media/azure-cosmos-db-tutorial/switch-experience.png":::
 
 1. Each container in the source database should be represented in the SQL analytics endpoint as a warehouse table.
 
@@ -85,7 +85,7 @@ Now, use T-SQL to query your NoSQL data that is now stored in Fabric OneLake.
 
 1. Select **New visual query**. Use the query editor to build complex queries.
 
-    :::image type="content" source="../media/azure-cosmos-db-tutorial/query-editor.png" alt-text="Screenshot of the query editor for both text-based and visual queries in Fabric." lightbox="../media/azure-cosmos-db-tutorial/query-editor.png":::
+    :::image type="content" source="../../media/azure-cosmos-db-tutorial/query-editor.png" alt-text="Screenshot of the query editor for both text-based and visual queries in Fabric." lightbox="../media/azure-cosmos-db-tutorial/query-editor.png":::
 
 <a id="building-bi-reports-on-the-sql-queries-or-views"></a>
 
