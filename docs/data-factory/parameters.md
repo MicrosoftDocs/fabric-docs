@@ -63,6 +63,18 @@ The **Add dynamic content** window is displayed, allowing you to specify any kin
 
 :::image type="content" source="media/parameters/select-pipeline-parameter.png" alt-text="Screenshot showing the Add dynamic content window with a pipeline parameter selected.":::
 
+### How to parameterize connections
+
+Parameterizing connections in pipelines requires use of the connection GUID that you wish to replace dynamically.
+
+> [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=90a72fa2-6dcd-4e4a-b046-68330ae95a8c]
+
+1. Before you can dynamically modify the connection in your pipeline, you must grab the GUID for the connection that you wish to set
+2. Go to Settings | Manage connections and gateways
+3. Find the name of the connection and click the elipses next to the connection name
+4. Select Settings and copy the Connection ID
+5. Use a string parameter to paste the GUID in that parameter for use in your dynamic expression
+
 ### Complex expression example
 
 The following example shows a complex example that references a deep subfield of activity output. To reference a pipeline parameter that evaluates to a subfield, use [] syntax instead of dot(.) operator (as with subfield1 and subfield2)
