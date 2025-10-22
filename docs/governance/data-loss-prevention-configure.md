@@ -133,7 +133,7 @@ In the condition section, you define the conditions under which the policy will 
  
 ## Actions
 
-If you want the policy to restrict access to items that trigger the policy, expand the **Restrict access or encrypt the content in Microsoft 365 locations** section and select **Block users from receiving email, or accessing shared SharePoint, OneDrive, and Teams files, and Power BI items.**. Then choose whether to block everyone or only people outside your organization.
+If you want the policy to restrict access to items that trigger the policy, expand the **Restrict access or encrypt the content in Microsoft 365 locations** section and select **Block users from receiving email, or accessing shared SharePoint, OneDrive, and Teams files, and Power BI items.** Then choose whether to block everyone or only people outside your organization.
 
 When you enable the restrict access action, [user overrides](#user-overrides) are automatically allowed.
 
