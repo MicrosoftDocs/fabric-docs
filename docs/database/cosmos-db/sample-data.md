@@ -1,23 +1,27 @@
 ---
 title: Sample Data Set Cosmos DB Database (Preview)
 titleSuffix: Microsoft Fabric
-description: Explore the sample data set and schema that is available for use in to the Cosmos DB database workload within Microsoft Fabric during the preview.
+description: Explore the sample data sets and schemas that are available for use in to the Cosmos DB database workload within Microsoft Fabric during the preview.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 10/22/2025
 ai-usage: ai-generated
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Sample data set in Cosmos DB in Microsoft Fabric (preview)
+# Sample data sets in Cosmos DB in Microsoft Fabric (preview)
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
-Microsoft Fabric's Cosmos DB database workload comes with a built-in sample data set designed to help you explore, learn, and experiment. This data set represents a collection of products, each with various properties that reflect real-world e-commerce scenarios.
+Microsoft Fabric's Cosmos DB database workload comes with built-in sample data sets designed to help you explore, learn, and experiment. These data sets represent various entity types with properties that reflect real-world data.
 
-## Data set structure and schema
+## Core sample data set
+
+This data set is a collection of products, each with various properties that reflect real-world e-commerce scenarios.
+
+### Data set structure and schema
 
 Each item in the sample data set represents a product and includes the following properties:
 
@@ -42,7 +46,7 @@ Each item in the sample data set represents a product and includes the following
 > [!NOTE]
 > For more information about the ISO 8601 format, see [international date and time standard](https://en.wikipedia.org/wiki/ISO_8601). For more information about the GUID format, see [universally unique identifiers](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 
-## Example item
+### Example item
 
 Here's an example of a product from the sample data set:
 
@@ -77,11 +81,11 @@ Here's an example of a product from the sample data set:
 }
 ```
 
-## How to use the sample data
+### How to use the sample data
 
 You can use this data set to practice querying, filtering, and aggregating data in Cosmos DB within Microsoft Fabric. Try searching for products by category, analyzing price trends, or exploring customer feedback.
 
-## JSON schema for the sample data set
+### JSON schema for the sample data set
 
 If you want to use this sample data set in your own environment, here's a JSON schema that describes the structure of each product item:
 
@@ -123,6 +127,26 @@ If you want to use this sample data set in your own environment, here's a JSON s
 ```
 
 This schema can help you validate or generate similar data for your own Cosmos DB workloads.
+
+## Vector sample data set
+
+This data set contains vector embeddings and AI-ready sample data. It supports testing artificial intelligence and agent-based workloads. You can use it for semantic search, similarity matching, and machine learning scenarios.
+
+### Data set structure and schema
+
+TODO
+
+### Example items
+
+TODO
+
+### How to use the sample data
+
+TODO
+
+### JSON schema for the sample data set
+
+TODO
 
 ## Related content
 
