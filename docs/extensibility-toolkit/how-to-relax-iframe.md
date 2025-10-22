@@ -53,7 +53,7 @@ Add the `enableSandboxRelaxation` setting to your workload manifest:
 
 ## Development mode
 
-For local development, you can use sandbox relaxation and bypass consent using the dev override. [Add to devParameters](https://github.com/microsoft/fabric-extensibility-toolkit/blob/main/Workload/devServer/webpack.config.js)
+For local development, you can use sandbox relaxation and bypass consent using the dev override. [Add to devParameters](https://github.com/microsoft/fabric-extensibility-toolkit/blob/main/Workload/devServer/webpack.dev.js)
 
 ```typescript
 const devParameters = {

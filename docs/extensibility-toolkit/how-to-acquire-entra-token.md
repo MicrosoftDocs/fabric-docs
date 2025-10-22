@@ -11,7 +11,7 @@ ms.date: 09/04/2025
 
 With the Extensibility Toolkit, you can obtain a Microsoft Entra token directly within your frontend application, enabling secure access to any Entra-protected API. This capability allows you to deeply integrate with Microsoft Fabric services — for example, you can read and store data in OneLake, create and interact with other Fabric items, or use Spark as a processing engine via the Livy APIs. For more information, see the [Microsoft Entra documentation](/entra/), [OneLake documentation](../onelake/onelake-overview.md), [Fabric REST APIs](/rest/api/fabric/), and [Spark in Fabric](../data-engineering/how-to-use-notebook.md).
 
-An example of how to acquire a Token with the right scope and make a call to the API can be found in the [ApiAuthenticationFrontend.tsx](https://github.com/microsoft/fabric-extensibility-toolkit/blob/main/Workload/app/components/ClientSDKPlayground/ApiAuthenticationFrontend.tsx) file. `sendWorkloadServerRequest`shows a generic method to parse the token for Fabric API calls.
+An example of how to acquire a Token with the right scope and make a call to the API can be found in the [ApiAuthenticationFrontend.tsx](https://github.com/microsoft/fabric-extensibility-toolkit/blob/main/Workload/app/playground/ClientSDKPlayground/ApiAuthentication.tsx) file. `sendWorkloadServerRequest`shows a generic method to parse the token for Fabric API calls.
 
 ## callAuthAcquireFrontendAccessToken  
 

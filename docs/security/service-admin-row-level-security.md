@@ -4,7 +4,6 @@ description: How to configure row-level security for imported semantic models, a
 author: billmath
 ms.author: billmath
 ms.reviewer: ''
-
 ms.topic: how-to
 ms.date: 03/08/2025
 ms.update-cycle: 180-days
@@ -20,7 +19,7 @@ Row-level security (RLS) with Power BI can be used to restrict data access for g
 
 You can configure RLS for data models imported into Power BI with Power BI. You can also configure RLS on semantic models that are using DirectQuery, such as SQL Server. For Analysis Services or Azure Analysis Services live connections, you configure row-level security in the model, not in Power BI. The security option doesn't show up for live connection semantic models.
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-desktop-define-roles.md)]
+[!INCLUDE [include-short-name](../includes/rls-desktop-define-roles.md)]
 
 By default, row-level security filtering uses single-directional filters, whether the relationships are set to single direction or bi-directional. You can manually enable bi-directional cross-filtering with row-level security by selecting the relationship and checking the **Apply security filter in both directions** checkbox. Note that if a table takes part in multiple bi-directional relationships you can only select this option for one of those relationships. Select this option when you've also implemented dynamic row-level security at the server level, where row-level security is based on username or login ID.
 
