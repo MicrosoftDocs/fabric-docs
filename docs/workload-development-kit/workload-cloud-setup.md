@@ -101,7 +101,7 @@ To configure your application in Microsoft Entra:
 1. Open *src/Packages/manifest/WorkloadManifest.xml*.
 1. Under `AADApp`, set `AppId`, `redirectUri`, and `ResourceId` (the ID URI).
 
-Note the requirements that are specified in [XSD file](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/dotnet/src/Packages/manifest/WorkloadDefinition.xsd) and the [backend manifest overview](backend-manifest.md).
+Note the requirements that are specified in XSD file and the [backend manifest overview](backend-manifest.md).
 
 ## Configure your frontend app
 
