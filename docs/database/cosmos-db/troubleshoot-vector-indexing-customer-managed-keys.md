@@ -45,6 +45,6 @@ TODO - Include this section if advanced troubleshooting is needed and might requ
 
 ## Related content
 
-- TODO - [Related article title](link.md)
-- TODO - [Related article title](link.md)
-- TODO - [Related article title](link.md)
+- TODO - [Related article title](about:blank)
+- TODO - [Related article title](about:blank)
+- TODO - [Related article title](about:blank)

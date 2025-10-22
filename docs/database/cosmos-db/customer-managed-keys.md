@@ -28,6 +28,6 @@ TODO
 
 ## Related content
 
-- TODO - [Related article title](link.md)
-- TODO - [Related article title](link.md)
-- TODO - [Related article title](link.md)
+- TODO - [Related article title](about:blank)
+- TODO - [Related article title](about:blank)
+- TODO - [Related article title](about:blank)
