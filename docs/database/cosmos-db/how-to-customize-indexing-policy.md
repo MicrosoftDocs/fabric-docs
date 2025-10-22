@@ -14,8 +14,6 @@ appliesto:
 
 # Customize indexing policies in Cosmos DB in Microsoft Fabric (preview)
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
 Indexing in Cosmos DB is designed to deliver fast and flexible query performance, no matter how your data evolves. In this guide, you modify the indexing policy for a container using the Fabric portal or an Azure SDK.
 
 ## Prerequisites

@@ -14,8 +14,6 @@ appliesto:
 
 # Authenticate to Cosmos DB in Microsoft Fabric from Azure host services (preview)
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
 Cosmos DB in Microsoft Fabric primarily relies on Microsoft Entra ID authentication and built-in data plane roles to manage authentication and authorization. In this guide, you use Microsoft Entra ID and your signed-in account to connect to a Cosmos DB in Fabric database.
 
 > [!IMPORTANT]

@@ -13,8 +13,6 @@ appliesto:
 
 # Sample data set in Cosmos DB in Microsoft Fabric (preview)
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
 Microsoft Fabric's Cosmos DB database workload comes with a built-in sample data set designed to help you explore, learn, and experiment. This data set represents a collection of products, each with various properties that reflect real-world e-commerce scenarios.
 
 ## Data set structure and schema

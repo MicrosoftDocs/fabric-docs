@@ -14,8 +14,6 @@ appliesto:
 
 # Index vector data in Cosmos DB in Microsoft Fabric (preview)
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
 Cosmos DB in Microsoft Fabric now offers efficient vector indexing and search. This feature is designed to handle multi-modal, high-dimensional vectors, enabling efficient and accurate vector search at any scale. You can now store vectors directly in the documents alongside your data. Each document in your database can contain not only traditional schema-free data, but also multi-modal high-dimensional vectors as other properties of the documents. This colocation of data and vectors allows for efficient indexing and searching, as the vectors are stored in the same logical unit as the data they represent. Keeping vectors and data together simplifies data management, AI application architectures, and the efficiency of vector-based operations.
 
 Cosmos DB in Fabric offers the flexibility it offers in choosing the vector indexing method:

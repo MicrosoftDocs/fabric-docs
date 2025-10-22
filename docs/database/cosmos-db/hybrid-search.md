@@ -12,8 +12,6 @@ appliesto:
 
 # Hybrid search in Cosmos DB in Microsoft Fabric (preview)
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
 Cosmos DB in Microsoft Fabric supports the hybrid search capability that combines Vector Search with Full Text Search scoring (BM25) using the Reciprocal Rank Fusion (RRF) function.
 
 ## What is hybrid search?

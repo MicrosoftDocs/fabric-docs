@@ -12,8 +12,6 @@ appliesto:
 
 # Query cross-database data in Cosmos DB in Microsoft Fabric (preview)
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
 The mirrored SQL analytics endpoint makes it possible to create queries across two distinct Cosmos DB in Microsoft Fabric containers or databases. In this guide, you create a query that spans two Cosmos DB in Fabric databases.
 
 ## Prerequisites

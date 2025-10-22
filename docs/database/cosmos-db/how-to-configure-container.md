@@ -12,8 +12,6 @@ appliesto:
 
 # Configure a container in Cosmos DB in Microsoft Fabric (preview)
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
 While many features are automatically enabled and built-in to Cosmos DB in Microsoft Fabric, there are still a few places where you can customize the behavior of your container through configuration. In this guide, you walk through the steps to configure the most common customizable settings for a container in your Cosmos DB in Fabric database.
 
 ## Prerequisites

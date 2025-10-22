@@ -13,8 +13,6 @@ appliesto:
 
 # Autoscale throughput in Cosmos DB in Microsoft Fabric (preview)
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
 Autoscale provisioned throughput is well suited for mission-critical workloads that have variable or unpredictable traffic patterns, and require service level agreements (SLAs) on high performance and scale. Autoscale by default scales workloads based on the most active region and partition. For nonuniform workloads that have different workload patterns across regions and partitions, this scaling can cause unnecessary scale-ups. Dynamic scaling or dynamic autoscale is an enhancement to autoscale provisioned throughout that helps scaling of such nonuniform workloads independently based on usage, at per region and per partition level. Dynamic scaling allows you to save cost if you often experience hot partitions and/or have multiple regions.
 
 ## Benefits

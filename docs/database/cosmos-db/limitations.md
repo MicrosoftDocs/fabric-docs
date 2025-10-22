@@ -14,8 +14,6 @@ appliesto:
 
 # Limitations in Cosmos DB in Microsoft Fabric (preview)
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
 This article lists current limitations for Cosmos DB in Fabric.
 
 **The content in this article changes regularly. For the latest limitations, revisit this article periodically.**

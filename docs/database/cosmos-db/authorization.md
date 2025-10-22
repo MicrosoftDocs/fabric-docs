@@ -12,8 +12,6 @@ appliesto:
 
 # Authorization in Cosmos DB in Microsoft Fabric (preview)
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
 Cosmos DB in Microsoft Fabric primarily relies on Microsoft Entra ID authentication and built-in data plane roles to manage authentication and authorization. In this guide, you configure built-in data plane roles for a Cosmos DB in Fabric database. You can configure access to your Cosmos DB using workspace roles in Microsoft Fabric access controls.
 
 The access controls at two different levels work together. For example, to [connect](how-to-authenticate.md) to a database, a user must have at least the **Read** permission on the Fabric database item.
