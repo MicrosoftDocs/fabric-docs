@@ -102,7 +102,7 @@ Now that your data is up and running, there are various analytics scenarios avai
 
 1. Here, monitor the current state of replication. For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../mirroring/monitor.md).
 
-[!INCLUDE[Cosmos DB Mirroring Tutorial](includes/cosmos-db-mirroring-tutorial.md)]
+[!INCLUDE[Cosmos DB Mirroring Tutorial](cosmos-db/includes/mirroring-tutorial.md)]
 
 ## More examples
 

@@ -40,7 +40,7 @@ This article details the current limitations for mirroring for Cosmos DB databas
 
 - TODO
 
-[!INCLUDE[Cosmos DB Mirroring Limitations](../../mirroring/includes/cosmos-db-mirroring-limitations.md)]
+[!INCLUDE[Cosmos DB Mirroring Limitations](../../mirroring/cosmos-db/includes/mirroring-limitations.md)]
 
 ## Related content
 

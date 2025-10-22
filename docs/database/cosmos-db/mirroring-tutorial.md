@@ -44,7 +44,7 @@ TODO
 
 1. TODO
 
-[!INCLUDE[Cosmos DB Mirroring Tutorial](../../mirroring/includes/cosmos-db-mirroring-tutorial.md)]
+[!INCLUDE[Cosmos DB Mirroring Tutorial](../../mirroring/cosmos-db/includes/mirroring-tutorial.md)]
 
 ## Related content
 

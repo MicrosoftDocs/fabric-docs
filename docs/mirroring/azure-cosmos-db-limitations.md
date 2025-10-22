@@ -105,7 +105,7 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
 - Fabric has existing limitations with T-SQL. For more information, see [T-SQL limitations](../data-warehouse/tsql-surface-area.md#limitations).
 
-[!INCLUDE[Cosmos DB Mirroring Limitations](includes/cosmos-db-mirroring-limitations.md)]
+[!INCLUDE[Cosmos DB Mirroring Limitations](cosmos-db/includes/mirroring-limitations.md)]
 
 ## Related content
 
