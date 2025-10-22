@@ -30,7 +30,7 @@ The following table provides an overview of the supported `JobScheduler` definit
 
 ### Implement job workload APIs
 
-To integrate with jobs, a workload must implement the Jobs APIs as defined in the [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Contracts/FabricAPI/Workload/swagger.json).
+To integrate with jobs, a workload must implement the Jobs APIs as defined in the [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/dotnet/src/Contracts/FabricAPI/Workload/swagger.json).
 
 Three Fabric APIs are related to jobs:
 

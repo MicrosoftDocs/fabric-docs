@@ -98,7 +98,7 @@ To add an application ID URI to your app, follow these steps.
 
 ## Step 5: Add scopes
 
-You need to define [scopes](/entra/identity-platform/scopes-oidc) (also known as permissions) for your app. The scopes allow others to use your app's functionality. For example, the [workload sample](quickstart-sample.md) gives four examples of API permissions that other can use. You can see these mock permissions in [scopes.cs](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Constants/WorkloadScopes.cs):
+You need to define [scopes](/entra/identity-platform/scopes-oidc) (also known as permissions) for your app. The scopes allow others to use your app's functionality. For example, the [workload sample](quickstart-sample.md) gives four examples of API permissions that other can use. You can see these mock permissions in [scopes.cs](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/dotnet/src/Constants/WorkloadScopes.cs):
 
 * `Item1.Read.All` - For reading workload items
 
