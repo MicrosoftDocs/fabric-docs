@@ -1,5 +1,5 @@
 ---
-title: "How to: Query nested data in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)"
+title: "How to: Query nested data in Microsoft Fabric mirrored databases from Azure Cosmos DB"
 description: Query nested Azure Cosmos DB JSON data in a mirrored database within Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
@@ -8,12 +8,9 @@ ms.date: 05/07/2025
 ms.topic: how-to
 ---
 
-# How to: Query nested data in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+# How to: Query nested data in Microsoft Fabric mirrored databases from Azure Cosmos DB
 
 Use the mirrored database in Microsoft Fabric to query nested JSON data sourced from Azure Cosmos DB for NoSQL.
-
-> [!IMPORTANT]
-> Mirroring for Azure Cosmos DB is currently in [preview](../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
 ## Prerequisites
 
@@ -24,7 +21,7 @@ Use the mirrored database in Microsoft Fabric to query nested JSON data sourced 
 - The Azure Cosmos DB for NoSQL account must be configured for Fabric mirroring. For more information, see [account requirements](azure-cosmos-db-limitations.md#account-and-database-limitations).
 
 > [!TIP]
-> During the public preview, it's recommended to use a test or development copy of your existing Azure Cosmos DB data that can be recovered quickly from a backup.
+> It's recommended to use a test or development copy of your existing Azure Cosmos DB data that can be recovered quickly from a backup.
 
 ## Create nested data within the source database
 
@@ -367,4 +364,4 @@ Finally, create a T-SQL query that can find data deeply nested in a JSON string.
 
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
 - [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-troubleshooting.yml)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-limitations.md)

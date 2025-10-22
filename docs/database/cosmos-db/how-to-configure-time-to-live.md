@@ -1,7 +1,7 @@
 ---
-title: Configure Time To Live in Cosmos DB Database (Preview)
+title: Configure Time To Live in Cosmos DB Database
 titleSuffix: Microsoft Fabric
-description: Configure a time-to-live (TTL) value that automatically purges items from a Cosmos DB in Microsoft Fabric database during the preview.
+description: Configure a time-to-live (TTL) value that automatically purges items from a Cosmos DB in Microsoft Fabric database.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
@@ -12,9 +12,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Configure time to live (TTL) in Cosmos DB in Microsoft Fabric (preview)
-
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+# Configure time to live (TTL) in Cosmos DB in Microsoft Fabric
 
 The time-to-live (TTL) feature in Cosmos DB helps you manage your data's lifecycle by automatically deleting items after a specified period. In this guide, you modify the TTL value at the container and item level using the Fabric portal or an Azure SDK.
 

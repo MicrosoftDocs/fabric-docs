@@ -1,7 +1,7 @@
 ---
-title: Request Units in Cosmos DB Database (Preview)
+title: Request Units in Cosmos DB Database
 titleSuffix: Microsoft Fabric
-description: Learn how request units function as a currency and how to estimate request unit requirements in your Cosmos DB database within Microsoft Fabric during the preview.
+description: Learn how request units function as a currency and how to estimate request unit requirements in your Cosmos DB database within Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
@@ -10,9 +10,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Request units in Cosmos DB in Microsoft Fabric (preview)
-
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+# Request units in Cosmos DB in Microsoft Fabric
 
 Cosmos DB in Microsoft Fabric normalizes the cost of all database operations using Request Units (or RUs, for short) and measures cost based on throughput (Request Units per second, RU/s).
 

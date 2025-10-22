@@ -1,7 +1,7 @@
 ---
-title: Full Text Indexing And Search in Cosmos DB Database (Preview)
+title: Full Text Indexing And Search in Cosmos DB Database
 titleSuffix: Microsoft Fabric
-description: Query data using "best matching 25" scoring in Cosmos DB in Microsoft Fabric during the preview.
+description: Query data using "best matching 25" scoring in Cosmos DB in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
@@ -10,9 +10,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Full text indexing and search in Cosmos DB in Microsoft Fabric (preview)
-
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+# Full text indexing and search in Cosmos DB in Microsoft Fabric
 
 Cosmos DB in Microsoft Fabric offers a powerful Full Text Search feature as generally available. This feature is designed to enhance the native search capabilities of your apps without needing an external search service for basic full text search.
 

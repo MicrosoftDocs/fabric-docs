@@ -1,8 +1,8 @@
 ### YamlMime:Landing
-title: Cosmos DB in Microsoft Fabric documentation (preview)
+title: Cosmos DB in Microsoft Fabric documentation
 summary: Learn how to use the Cosmos DB database workload in Microsoft Fabric for your NoSQL and AI applications.
 metadata:
-  title: Cosmos DB Database Documentation Preview
+  title: Cosmos DB Database Documentation
   titleSuffix: Microsoft Fabric
   description: Learn how to use the Cosmos DB database workload in Microsoft Fabric for your NoSQL and AI applications.
   author: seesharprun

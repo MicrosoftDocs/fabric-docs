@@ -1,7 +1,7 @@
 ---
-title: Mirror OneLake in Cosmos DB Database (Preview)
+title: Mirror OneLake in Cosmos DB Database
 titleSuffix: Microsoft Fabric
-description: Learn how data is automatically mirrored from Cosmos DB database in Microsoft Fabric to OneLake during the preview.
+description: Learn how data is automatically mirrored from Cosmos DB database in Microsoft Fabric to OneLake.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
@@ -11,9 +11,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Mirror OneLake in Cosmos DB database in Microsoft Fabric (preview)
-
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+# Mirror OneLake in Cosmos DB database in Microsoft Fabric
 
 Every Cosmos DB in Microsoft Fabric database is mirrored into OneLake in the open-source Delta Lake format. This feature doesn't require any extra configuration or setup and is automatically enabled when the database is created. This tight integration eliminates the need for ETL (Extract, Transform, Load) pipelines and ensures that Cosmos DB data is always analytics-ready.
 

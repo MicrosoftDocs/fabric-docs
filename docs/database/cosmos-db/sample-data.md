@@ -1,7 +1,7 @@
 ---
-title: Sample Data Set Cosmos DB Database (Preview)
+title: Sample Data Set Cosmos DB Database
 titleSuffix: Microsoft Fabric
-description: Explore the sample data sets and schemas that are available for use in to the Cosmos DB database workload within Microsoft Fabric during the preview.
+description: Explore the sample data sets and schemas that are available for use in to the Cosmos DB database workload within Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
@@ -11,9 +11,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Sample data sets in Cosmos DB in Microsoft Fabric (preview)
-
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+# Sample data sets in Cosmos DB in Microsoft Fabric
 
 Microsoft Fabric's Cosmos DB database workload comes with built-in sample data sets designed to help you explore, learn, and experiment. These data sets represent various entity types with properties that reflect real-world data.
 

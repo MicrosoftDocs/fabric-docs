@@ -1,7 +1,7 @@
 ---
-title: Configure Continuous Integration and Continuous Deployment (Preview)
+title: Configure Continuous Integration and Continuous Deployment
 titleSuffix: Microsoft Fabric
-description: Understand how to set up continuous integration and deployment for Cosmos DB databases in Microsoft Fabric during the preview phase.
+description: Understand how to set up continuous integration and deployment for Cosmos DB databases in Microsoft Fabric phase.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
@@ -11,9 +11,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Configure continuous integration and continuous deployment for Cosmos DB in Microsoft Fabric (preview)
-
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+# Configure continuous integration and continuous deployment for Cosmos DB in Microsoft Fabric
 
 Cosmos DB in Microsoft Fabric supports robust CI/CD capabilities through deployment pipelines and Git integration. This functionality streamlines development workflows and promotes consistency across environments. In this guide, you configure a deployment pipeline and Git integration for a database in Cosmos DB in Fabric.
 

@@ -1,6 +1,6 @@
 ### YamlMime:FAQ
 metadata:
-  title: Troubleshoot Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+  title: Troubleshoot Microsoft Fabric mirrored databases from Azure Cosmos DB
   description: Learn how to troubleshoot prompts related to mirroring for Azure Cosmos DB databases in Microsoft Fabric.
   author: seesharprun
   ms.author: sidandrews
@@ -10,11 +10,9 @@ metadata:
   ms.topic: faq
   ms.date: 05/07/2025
 title: |
-  Troubleshoot Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+  Troubleshoot Microsoft Fabric mirrored databases from Azure Cosmos DB
 summary: |
   Mirroring in Microsoft Fabric provides a seamless no-ETL experience to integrate your existing Azure Cosmos DB data with the rest of your data in Fabric. Use the tips in this article to help troubleshoot problems that you might experience when you create a mirrored database for Azure Cosmos DB in Fabric.
-  > [!IMPORTANT]
-  > Mirroring for Azure Cosmos DB is currently in [preview](../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
   Here's a list of common issues and relevant troubleshooting steps to follow if mirroring an Azure Cosmos DB database to Microsoft Fabric isn't working as expected.
 sections:

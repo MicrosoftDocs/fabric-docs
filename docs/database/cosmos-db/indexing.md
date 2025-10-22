@@ -1,7 +1,7 @@
 ---
-title: Indexing in Cosmos DB Database (Preview)
+title: Indexing in Cosmos DB Database
 titleSuffix: Microsoft Fabric
-description: Explore how indexing works under the hood within Cosmos DB in Microsoft Fabric during the preview.
+description: Explore how indexing works under the hood within Cosmos DB in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
@@ -10,9 +10,7 @@ appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Indexing in Cosmos DB in Microsoft Fabric (preview)
-
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+# Indexing in Cosmos DB in Microsoft Fabric
 
 Cosmos DB is a schema-agnostic database that allows you to iterate on your application without having to deal with schema or index management. Indexing within Cosmos DB in Microsoft Fabric is designed to deliver fast and flexible query performance, no matter how your data evolves. By default, Cosmos DB automatically indexes every property for all items in your container without having to define any schema or configure secondary indexes.
 

@@ -1,5 +1,5 @@
 ---
-title: "How to: Join mirrored Azure Cosmos DB data with other mirrored databases in Microsoft Fabric (Preview)"
+title: "How to: Join mirrored Azure Cosmos DB data with other mirrored databases in Microsoft Fabric"
 description: Join multiple Azure Cosmos DB databases together using mirrored databases in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
@@ -8,14 +8,11 @@ ms.date: 11/19/2024
 ms.topic: how-to
 ---
 
-# How to: Join mirrored Azure Cosmos DB data with other mirrored databases in Microsoft Fabric (Preview)
+# How to: Join mirrored Azure Cosmos DB data with other mirrored databases in Microsoft Fabric
 
 In this guide, join two Azure Cosmos DB for NoSQL containers from separate databases using Fabric mirroring.
 
 You can join data from Cosmos DB with any other mirrored databases, warehouses, or lakehouses within same Fabric workspace.
-
-> [!IMPORTANT]
-> Mirroring for Azure Cosmos DB is currently in [preview](../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
 ## Prerequisites
 
@@ -26,7 +23,7 @@ You can join data from Cosmos DB with any other mirrored databases, warehouses, 
 - The Azure Cosmos DB for NoSQL account must be configured for Fabric mirroring. For more information, see [account requirements](azure-cosmos-db-limitations.md#account-and-database-limitations).
 
 > [!TIP]
-> During the public preview, it's recommended to use a test or development copy of your existing Azure Cosmos DB data that can be recovered quickly from a backup.
+> It's recommended to use a test or development copy of your existing Azure Cosmos DB data that can be recovered quickly from a backup.
 
 
 ## Setup mirroring and prerequisites
@@ -85,4 +82,4 @@ Now, use the SQL analytics endpoint to create a query across two mirrored databa
 
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
 - [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-troubleshooting.yml)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-limitations.md)
