@@ -96,7 +96,7 @@ https://onelake.dfs.fabric.microsoft.com/MyWorkspace/MyLakhouse/Tables/MyShortcu
 
 ## Types of shortcuts
 
-OneLake shortcuts support multiple filesystem data sources. These include internal OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3, S3 Compatible, Google Cloud Storage(GCS) and Dataverse.
+OneLake shortcuts support multiple filesystem data sources. These include internal OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3, S3 Compatible, Google Cloud Storage(GCS), and Dataverse.
 
 ### Internal OneLake shortcuts
 
@@ -115,7 +115,7 @@ The shortcut can point to a folder location within the same item, across items w
 When a user accesses data through a shortcut to another OneLake location, OneLake uses the identity of the calling user to authorize access to the data in the target path of the shortcut. This user must have permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When users access shortcuts through Power BI semantic models or T-SQL, the calling user’s identity is not passed through to the shortcut target. The calling item owner’s identity is passed instead, delegating access to the calling user.
+> When users access shortcuts through Power BI semantic models or T-SQL, the calling user’s identity isn't passed through to the shortcut target. The calling item owner’s identity is passed instead, delegating access to the calling user.
 
 <a id="adls-shortcuts"></a>
 ### Azure Data Lake Storage shortcuts
@@ -180,7 +180,7 @@ Example: `https://bucketname.s3.region.amazonaws.com/`
 > [!NOTE]
 > You don't need to disable the S3 Block Public Access setting for your S3 account for the S3 shortcut to function.
 >
-> Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud.
+> Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud unless you configure an on-premises data gateway. To set up a data gateway, see [Create shortcuts to on-premises data](create-on-premises-shortcut.md).
 
 #### Authorization
 
@@ -268,7 +268,7 @@ Shortcuts require certain permissions to manage and use. [OneLake shortcut secur
 
 ## How do shortcuts handle deletions?
 
-Shortcuts don't perform cascading deletes. When you delete a shortcut, you only delete the shortcut object. The data in the shortcut target remains unchanged. However, if you delete a file or folder within a shortcut, and you have permissions in the shortcut target to perform the delete operation, the files or folders are deleted in the target.
+Shortcuts don't perform cascading deletes. When you delete a shortcut, you only delete the shortcut object. The data in the shortcut target remains unchanged. However, if you delete a file or folder within a shortcut, and you have permissions in the shortcut target to perform the delete operation, the files, or folders are deleted in the target.
 
 For example, consider a lakehouse with the following path in it: `MyLakehouse\Files\MyShortcut\Foo\Bar`. **MyShortcut** is a shortcut that points to an ADLS Gen2 account that contains the *Foo\Bar* directories.
 
