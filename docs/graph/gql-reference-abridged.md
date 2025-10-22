@@ -2,12 +2,13 @@
 title: GQL Quick Reference
 description: Quick reference for GQL syntax, statements, patterns, and expressions supported by graph in Microsoft Fabric.
 ms.topic: reference
-ms.date: 10/10/2025
+ms.date: 10/21/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: splantikow
 ms.service: fabric
 ms.subservice: graph
+ms.search.form: product-graph
 ---
 
 # GQL quick reference
