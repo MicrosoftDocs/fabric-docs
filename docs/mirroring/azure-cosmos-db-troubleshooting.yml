@@ -4,7 +4,7 @@ metadata:
   description: Learn how to troubleshoot prompts related to mirroring for Azure Cosmos DB databases in Microsoft Fabric.
   author: seesharprun
   ms.author: sidandrews
-  ms.reviewer: jilmal
+  ms.reviewer: jmaldonado
   ms.service: fabric
   ms.subservice: data-warehouse
   ms.topic: faq

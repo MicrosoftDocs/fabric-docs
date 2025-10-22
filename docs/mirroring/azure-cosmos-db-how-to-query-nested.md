@@ -3,7 +3,7 @@ title: "How to: Query nested data in Microsoft Fabric mirrored databases from Az
 description: Query nested Azure Cosmos DB JSON data in a mirrored database within Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: jilmal
+ms.reviewer: jmaldonado
 ms.date: 05/07/2025
 ms.topic: how-to
 ---

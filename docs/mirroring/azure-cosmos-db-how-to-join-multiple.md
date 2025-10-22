@@ -3,7 +3,7 @@ title: "How to: Join mirrored Azure Cosmos DB data with other mirrored databases
 description: Join multiple Azure Cosmos DB databases together using mirrored databases in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: jilmal
+ms.reviewer: jmaldonado
 ms.date: 11/19/2024
 ms.topic: how-to
 ---
