@@ -12,7 +12,6 @@ metadata:
   - ✅ Cosmos DB in Fabric
 title: Frequently asked questions for Cosmos DB in Microsoft Fabric
 summary: |
-  [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
   This article answers frequently asked questions about Cosmos DB in Microsoft Fabric.
 sections:
   - name: General
@@ -54,14 +53,6 @@ sections:
           For more information, see [security for Cosmos DB in Microsoft Fabric](security.md).
   - name: Troubleshooting
     questions:
-      - question: |
-          Why is Cosmos DB isn't available as an option when I select Fabric => Workspaces => New Item?
-        answer: |
-          By default, preview features aren't enabled in your Fabric workspace. To enable Cosmos DB in Fabric, use the Admin portal's tenant settings to enable the Cosmos DB database feature. For more information, see, [tenant settings](../../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings).
-
-          If you can't enable the feature, ensure that your current role has the necessary permissions to modify tenant settings.
-
-          For more information, see [roles required to enable previews](../../fundamentals/preview.md#who-can-enable-a-preview-experiences-and-features).
       - question: |
           How do I control which users in my organization can access the Cosmos DB feature in Microsoft Fabric?
         answer: |

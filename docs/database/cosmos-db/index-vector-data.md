@@ -1,7 +1,7 @@
 ---
 title: Index Vector Data in Cosmos DB Database
 titleSuffix: Microsoft Fabric
-description: Explore how to index vector data in your Cosmos DB database within Microsoft Fabric during the preview, including setup and optimization tips.
+description: Explore how to index vector data in your Cosmos DB database within Microsoft Fabric, including setup and optimization tips.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article

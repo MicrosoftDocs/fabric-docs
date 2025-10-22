@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart Create a Cosmos DB Database Preview'
+title: 'Quickstart Create a Cosmos DB Database'
 titleSuffix: Microsoft Fabric
 description: Get started quickly with Cosmos DB in Microsoft Fabric by creating a new instance in the Microsoft Fabric portal.
 author: seesharprun

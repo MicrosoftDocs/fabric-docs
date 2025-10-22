@@ -1,5 +1,5 @@
 ---
-title: Cosmos DB Database Preview
+title: Cosmos DB Database
 titleSuffix: Microsoft Fabric
 description: Learn about Cosmos DB in Microsoft Fabric, an integrated NoSQL developer-friendly database.
 author: seesharprun
