@@ -5,7 +5,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 07/16/2025
+ms.date: 10/22/2025
 ---
 
 # Get events from Azure Event Grid namespace into Fabric Real-Time hub
@@ -17,9 +17,25 @@ This article describes how to get events from an Azure Event Grid namespace into
 - Enable [managed identity](/azure/event-grid/event-grid-namespace-managed-identity) on the Event Grid namespace. 
 - Enable [MQTT](/azure/event-grid/mqtt-publish-and-subscribe-portal) and [routing](/azure/event-grid/mqtt-routing) on the Event Grid namespace, if you want to receive Message Queueing Telemetry Transport (MQTT) data.  
 
-
 ## Get events from an Azure Event Grid namespace
-You can get events from an Azure Event Grid namespace into Real-Time hub using the [**Data sources** page](#data-sources-page).
+
+You can get events from an Azure Event Grid namespace into Real-Time hub in one of the ways:
+
+- [Using the **Azure sources** page](#azure-sources-page)
+- [Using the **Data sources** page](#data-sources-page)
+
+## Azure sources page
+
+1. In Real-Time hub, select **Azure sources** on the left navigation menu. You can use the search box to the type your resource name or use filters (Source, Subscription, Resource group, Region) to search for your resource. 
+1. For **Source** at the top, select **Azure Event Grid Namespace** from the drop-down list. 
+1. For **Subscription**, select an **Azure subscription** that has the resource group with your Event Grid namespace.
+1. For **Resource group**, select a **resource group** that has your Event Grid namespace.
+1. For **Region**, select a location where your Event Grid namespace is located.
+1. Now, move the mouse over the name of the Event Grid namespace that you want to connect to Real-Time hub in the list of namespaces, and select the **Connect** button, or select **... (ellipsis)**, and then select **Connect data source**.
+
+    :::image type="content" source="./media/add-source-azure-event-grid/azure-sources-connect.png" alt-text="Screenshot that shows the Azure sources page with filters to show Event Grid namespaces and the connect button for a namespace." lightbox="./media/add-source-azure-event-grid/azure-sources-connect.png":::
+
+    Now, move on to the [Configure and connect to an Event Grid namespace](#configure-and-connect-to-the-event-grid-namespace) section. 
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
