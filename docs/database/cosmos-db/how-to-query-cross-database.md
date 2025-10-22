@@ -1,5 +1,5 @@
 ---
-title: Query Cross-Database Data in Cosmos DB Database (Preview)
+title: Query Cross-Database Data in Cosmos DB Database
 titleSuffix: Microsoft Fabric
 description: Learn how to query data across multiple Cosmos DB databases in Microsoft Fabric during the preview, including setup and best practices.
 author: seesharprun

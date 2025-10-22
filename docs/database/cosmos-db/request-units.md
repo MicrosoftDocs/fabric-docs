@@ -1,5 +1,5 @@
 ---
-title: Request Units in Cosmos DB Database (Preview)
+title: Request Units in Cosmos DB Database
 titleSuffix: Microsoft Fabric
 description: Learn how request units function as a currency and how to estimate request unit requirements in your Cosmos DB database within Microsoft Fabric during the preview.
 author: seesharprun

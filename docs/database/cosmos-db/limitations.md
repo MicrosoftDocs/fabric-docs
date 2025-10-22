@@ -1,5 +1,5 @@
 ---
-title: Cosmos DB Database Limitations (Preview)
+title: Cosmos DB Database Limitations
 titleSuffix: Microsoft Fabric
 description: Learn about the current limitations and restrictions when using Cosmos DB databases in Microsoft Fabric during the preview phase.
 author: seesharprun

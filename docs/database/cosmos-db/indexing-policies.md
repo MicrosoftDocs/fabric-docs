@@ -1,5 +1,5 @@
 ---
-title: Indexing policies in Cosmos DB Database (Preview)
+title: Indexing policies in Cosmos DB Database
 titleSuffix: Microsoft Fabric
 description: Use custom indexing policies to fine tune the performance of Cosmos DB in Microsoft Fabric during the preview to better match your application workloads.
 author: seesharprun

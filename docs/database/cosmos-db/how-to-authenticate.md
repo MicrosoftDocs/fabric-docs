@@ -1,5 +1,5 @@
 ---
-title: Authenticate to Cosmos DB Database From Azure Services (Preview)
+title: Authenticate to Cosmos DB Database From Azure Services
 titleSuffix: Microsoft Fabric
 description: Use Microsoft Entra authentication and the Azure SDK to connect to Cosmos DB in Microsoft Fabric during the preview.
 author: seesharprun

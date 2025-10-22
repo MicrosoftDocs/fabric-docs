@@ -1,5 +1,5 @@
 ---
-title: Secure Your Cosmos DB Database (Preview)
+title: Secure Your Cosmos DB Database
 titleSuffix: Microsoft Fabric
 description: Review the fundamentals of securing Cosmos DB in Microsoft Fabric from the perspective of data security.
 author: seesharprun
