@@ -1,7 +1,7 @@
 ---
 title: Sample Data Set Cosmos DB Database
 titleSuffix: Microsoft Fabric
-description: Explore the sample data set and schema that is available for use in to the Cosmos DB database workload within Microsoft Fabric during the preview.
+description: Explore the sample data set and schema that is available for use in to the Cosmos DB database workload within Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article

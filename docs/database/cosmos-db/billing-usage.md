@@ -1,7 +1,7 @@
 ---
 title: Billing and Utilization Data For Cosmos DB Database
 titleSuffix: Microsoft Fabric
-description: Learn about billing concepts for compute and storage and how to monitor usage for Cosmos DB in Microsoft Fabric during the preview.
+description: Learn about billing concepts for compute and storage and how to monitor usage for Cosmos DB in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article

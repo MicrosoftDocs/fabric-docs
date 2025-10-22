@@ -1,7 +1,7 @@
 ---
 title: Authorization in Cosmos DB Database
 titleSuffix: Microsoft Fabric
-description: Learn how authentication works using data plane roles for Cosmos DB databases in Microsoft Fabric during the preview.
+description: Learn how authentication works using data plane roles for Cosmos DB databases in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
