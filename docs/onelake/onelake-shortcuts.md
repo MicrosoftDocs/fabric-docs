@@ -115,7 +115,7 @@ The shortcut can point to a folder location within the same item, across items w
 When a user accesses data through a shortcut to another OneLake location, OneLake uses the identity of the calling user to authorize access to the data in the target path of the shortcut. This user must have permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When users access shortcuts through Power BI semantic models or T-SQL, the calling user’s identity isn't passed through to the shortcut target. The calling item owner’s identity is passed instead, delegating access to the calling user.
+> When accessing shortcuts through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines in Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user. To resolve this, use **Power BI semantic models in DirectLake over OneLake mode** or **T-SQL in User's identity mode**.
 
 <a id="adls-shortcuts"></a>
 ### Azure Data Lake Storage shortcuts
