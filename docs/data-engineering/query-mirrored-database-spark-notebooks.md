@@ -86,7 +86,7 @@ ON a.id = b.id")
 display(df)
 ```
 
-## Best Practices & Troubleshooting
+## Best practices & troubleshooting
 
 - Always use fully qualified names (workspace.database.schema.table) for mirrored DB queries.
 - Mirrored DB currently supports read-only operations in Spark notebooks.
@@ -94,7 +94,7 @@ display(df)
 - Lakehouse attachments are required for any write operations on a Lakehouse.
 - Nonschema Lakehouse attachments don't enable the mirrored DB query experience.
 
-## Known Limitations
+## Known limitations
 
 - Currently supported mirrored DBs are Azure SQL, Cosmos DB, Snowflake, and Open Mirroring. More sources will be added in future iterations.
 - You can't query mirrored DBs with a nonschema lakehouse attached in your notebook.
