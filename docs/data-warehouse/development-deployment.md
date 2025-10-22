@@ -14,7 +14,7 @@ ms.topic: conceptual
 
 This article provides a high-level overview of the development and deployment workflows available to developers working with Fabric Data Warehouse, whether you're building in the Fabric web editor, working locally in an integrated development environment (IDE), deploying through Fabric's native deployment pipelines, or integrating with CI/CD pipelines in Azure DevOps Services or GitHub.
 
-:::image type="content" source="media/development-deployment/development-deployment.svg" alt-text="Diagram of deployment landscape for Fabric Data Warehouse." lightbox="media/development-deployment/ddevelopment-deployment.png":::
+:::image type="content" source="media/development-deployment/development-deployment.svg" alt-text="Diagram of deployment landscape for Fabric Data Warehouse." lightbox="media/development-deployment/development-deployment.png":::
 
 Fabric Data Warehouse offers flexible development and deployment options tailored to different developer preferences:
 
