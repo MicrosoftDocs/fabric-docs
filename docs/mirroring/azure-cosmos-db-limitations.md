@@ -67,10 +67,6 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
 - You can directly share the mirrored database in Fabric.
 
-- If you only have viewer permissions in Fabric, you can't preview or query data in the SQL analytics endpoint.
-
-- If you intend to use the data explorer, the Azure Cosmos DB data explorer doesn't use the same permissions as Fabric. Requests to view and query data using the data explorer are routed to Azure instead of Fabric.
-
 - The source Azure Cosmos DB account must enable **public network access** for **all networks**.
 
 - Private endpoints aren't supported for Azure Cosmos DB accounts.
@@ -78,6 +74,12 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 - Network isolation using techniques and features like IP addresses or service endpoints aren't supported for Azure Cosmos DB accounts.
 
 - Data in OneLake doesn't support private endpoints, customer managed keys, or double encryption.
+
+## Permissions limitations
+
+- If you only have viewer permissions in Fabric, you can't preview or query data in the SQL analytics endpoint.
+
+- If you intend to use the data explorer, the Azure Cosmos DB data explorer doesn't use the same permissions as Fabric. Requests to view and query data using the data explorer are routed to Azure instead of Fabric.
 
 ## Data explorer limitations
 
