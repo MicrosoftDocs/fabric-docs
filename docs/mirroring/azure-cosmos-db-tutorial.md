@@ -3,7 +3,7 @@ title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure Cosmo
 description: Learn how to configure a mirrored database from Azure Cosmos DB in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: anithaa, whhender
+ms.reviewer: jmaldonado
 ms.date: 10/22/2025
 ms.topic: tutorial
 no-loc: [Copilot]
