@@ -43,7 +43,7 @@ Use the **Metrics Summary** dialog to review high-level sums and averages (aggre
     | **`Index Usage (Avg)`** | The average storage size consumed by index data in the database. This metric is useful for understanding the storage overhead introduced by indexing, particularly in write-heavy or large-schema workloads. |
     | **`Document Count (Avg)`** | The average number of documents stored in the database. This metric helps estimate data volume, track growth trends, and anticipate changes in storage or performance needs. |
 
-    :::image source="media/how-to-monitor/metrics-summary.png" lightbox="media/how-to-monitor/metrics-summary-full.png" alt-text="Screenshot of the 'Metrics summary' dialog for a database in the Fabric portal.":::
+    :::image type="content" source="media/how-to-monitor/metrics-summary.png" lightbox="media/how-to-monitor/metrics-summary-full.png" alt-text="Screenshot of the 'Metrics summary' dialog for a database in the Fabric portal.":::
 
 ## Review detailed metrics
 
