@@ -5,6 +5,8 @@ author: eric-urban
 ms.author: eur
 ms.reviewer: anuve
 ms.topic: concept-article
+ms.custom:
+  - best-spark-on-azure
 ms.date: 10/23/2025
 ---
 
