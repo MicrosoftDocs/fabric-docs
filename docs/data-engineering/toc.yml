@@ -495,4 +495,17 @@ items:
     items: 
     - name: Tutorial - medallion architecture with materialized lake views
       href: ./materialized-lake-views/tutorial.md
-
+- name: Best practices
+  items:
+   - name: Spark best practices
+     items:
+      - name: Fabric Spark best practices overview
+        href: spark-best-practices-overview.md
+      - name: Fabric Spark Capacity and Cluster Planning
+        href: spark-best-practices-capacity-planning.md
+      - name: Fabric Spark Security
+        href: spark-best-practices-security.md
+      - name: Development and Monitoring
+        href: spark-best-practices-development-monitoring.md
+      - name: Spark Basics
+        href: spark-best-practices-basics.md

@@ -3,7 +3,7 @@ title: About private Links for secure access to Fabric
 description: Learn about the Azure private link feature to provide secure access to Fabric using Azure Networking private endpoints. Data is sent privately instead of over the internet.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: conceptual
 ms.custom:
 ms.date: 08/21/2025
