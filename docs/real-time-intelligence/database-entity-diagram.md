@@ -86,7 +86,9 @@ Schema violations help you identify inconsistencies or broken references between
 > [!NOTE]
 > Shortcuts are referred to as "external tables" in the schema violations capability.
 
-Enabling Show Schema Violations highlights affected entities directly in the diagram. This feature allows you to quickly locate and resolve broken dependencies, ensuring your Eventhouse database remains consistent and reliable.
+Enabling show Schema Violations highlights affected entities directly in the diagram. Clicking on the Schema Violation instance opens a side pane with details about the violation.
+
+This feature allows you to quickly locate and resolve broken dependencies, ensuring your Eventhouse database remains consistent and reliable.
 
 :::image type="content" source="media/database-entity-diagram/schema-violation.png" alt-text="Screenshot of an entity diagram, showing schema violations highlighted in red." lightbox="media/database-entity-diagram/schema-violation.png":::
 
