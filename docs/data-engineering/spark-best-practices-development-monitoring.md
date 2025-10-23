@@ -261,7 +261,7 @@ Spark Session configs and Delta table feature flags exist so that you can custom
 
   - Enable Auto Compaction for ingestion pipelines with frequent small writes on new tables, we recommend using auto compaction instead of scheduling OPTIMIZE jobs for compaction:
 
-    > spark.conf.set('spark.databricks.delta.autoCompact.enabled', True)
+  `spark.conf.set('spark.databricks.delta.autoCompact.enabled', True)`
 
   - You can use predefined Spark resource profiles to optimize Spark configurations based on use cases. Refer to this documentation for more details: [Configure Resource Profile Configurations in Microsoft Fabric](/fabric/data-engineering/configure-resource-profile-configurations). Here are the Spark configurations you can set based on the use cases:
 

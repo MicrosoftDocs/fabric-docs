@@ -50,7 +50,7 @@ To learn more about starter and custom pools, refer to the [Apache Spark compute
 
 - If the maximum and allocated instances overlap, consider increasing the maximum nodes configuration to enhance parallelism and improve performance. 
 
-    :::image type="content" source="media/spark-best-practices/spark-executor-utilization.png" alt-text="screenshot of a graph that shows executor utilization over time" lightbox="media/spark-best-practices/spark-executor-utilization.png":::
+    :::image type="content" source="media/spark-best-practices/spark-executor-utilization.png" alt-text="Screenshot of a graph that shows executor utilization over time." lightbox="media/spark-best-practices/spark-executor-utilization.png":::
 
 **Handling Data Skew:** 
 

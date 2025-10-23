@@ -55,7 +55,7 @@ Store the credentials securely in Azure Key Vault (AKV). Don't keep a single key
 
     - You can use notebookutils (previously called mssparkutils) to access the AKV using the credentials of the user running the Notebook/SJD:
 
-    > `notebookutils.credentials.getSecret('<AKV URL>', 'Secret Name')`
+    `notebookutils.credentials.getSecret('<AKV URL>', 'Secret Name')`
 
 - In production, we don't recommend providing user access to AKVs in prod environment. Instead use service accounts to access your Key Vault (KV). Submit the notebooks/jobs using service account. 
 
