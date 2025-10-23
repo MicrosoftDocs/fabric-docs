@@ -63,22 +63,22 @@ Store the credentials securely in Azure Key Vault (AKV). Don't keep a single key
 
 Here's the sample Scala code snippet: 
 
-    ```scala
-    val clientSecretCredential: ClientSecretCredential = new ClientSecretCredentialBuilder()
-      .clientId("<client id here>")
-      .clientSecret("<client secret here>")
-      .tenantId("<tenant id here>")
-      .build()
-    
-    val secretClient: SecretClient = new SecretClientBuilder()
-      .vaultUrl("<vault url here>")
-      .credential(clientSecretCredential)
-      .buildClient()
-    
-    val secretName = "<your value>"
-    val retrievedSecret = secretClient.getSecret(secretName)
-    println(s"Retrieved secret: ${retrievedSecret.getValue}")
-    ```
+```scala
+val clientSecretCredential: ClientSecretCredential = new ClientSecretCredentialBuilder()
+  .clientId("<client id here>")
+  .clientSecret("<client secret here>")
+  .tenantId("<tenant id here>")
+  .build()
+
+val secretClient: SecretClient = new SecretClientBuilder()
+  .vaultUrl("<vault url here>")
+  .credential(clientSecretCredential)
+  .buildClient()
+
+val secretName = "<your value>"
+val retrievedSecret = secretClient.getSecret(secretName)
+println(s"Retrieved secret: ${retrievedSecret.getValue}")
+```
 
 > [!NOTE] 
 > Don't hard-code any secrets or passwords in plain text in your code. Always use a secure vault (like Azure Key Vault) to store and retrieve your secrets.
