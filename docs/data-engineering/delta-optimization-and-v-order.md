@@ -165,8 +165,10 @@ CREATE TABLE person (id INT, name STRING, age INT) USING parquet TBLPROPERTIES("
 > When the table property is set to true, INSERT, UPDATE, and MERGE commands behave as expected and perform the write-time optimization. If the V-Order session configuration is set to true or the spark.write enables it, then the writes are V-Order even if the TBLPROPERTIES is set to false.
 
 
-Enable or disable V-Order by altering the table property (note that you need to have 'spark.databricks.delta.allowArbitraryProperties.enabled' set to 'true'): 
+Enable or disable V-Order by altering the table property:
 
+> [!NOTE]
+> You need to have 'spark.databricks.delta.allowArbitraryProperties.enabled' set to 'true'.
 ```sql
 %%sql 
 ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.default" = "true");
