@@ -3,7 +3,7 @@ title: Set Up VNet gateway to Access Lakehouse From Power BI
 description: Learn how to configure a virtual network (VNet) gateway to securely connect Power BI to a lakehouse using Azure Data Lake Storage Gen2.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.custom:
 ms.date: 08/13/2025
