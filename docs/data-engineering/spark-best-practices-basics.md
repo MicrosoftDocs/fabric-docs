@@ -111,28 +111,28 @@ Be cautious with Python UDFs. Each executor launches a separate Python process, 
 
 1. Wrap reads, writes, and transformations in try and except blocks. Use `logger.error` for exceptions and `logger.info` for progress messages.
 
-- **Python logging:** Ideal for logging operations, status updates, or debugging information from code that executes only on the Spark Driver. Python's logging module doesn't propagate to executor logs. Reference: /fabric/data-engineering/author-execute-notebook#python-logging-in-a-notebook
-
-- **Spark log4j:** The standard for robust, production-level application logging in Spark as it integrates natively with Spark's driver/executor logs.
-
-    Sample log4j usage in PySpark:
+    - **Python logging:** Ideal for logging operations, status updates, or debugging information from code that executes only on the Spark Driver. Python's logging module doesn't propagate to executor logs. Reference: /fabric/data-engineering/author-execute-notebook#python-logging-in-a-notebook
     
-    ```python
-    import traceback
-    # Get log4j logger
-    log4jLogger = spark._jvm.org.apache.log4j
-    logger = log4jLogger.LogManager.getLogger("PySparkLogger")
-    logger.info("Application started.")
-    try:
-        # Create DataFrame with 20 records
-        data = [(f"Name{i}", i) for i in range(1, 21)]  # 20 records
-        df = spark.createDataFrame(data, ["name", "age"])
-        logger.info("DataFrame created successfully with 20 records.")
-        df.show(s)  # 's' is not defined -> will throw error but the application will not fail
-    except Exception as e:
-        logger.error(f"Error while creating or showing DataFrame: {str(e)}\n{traceback.format_exc()}")
-    ```
-
+    - **Spark log4j:** The standard for robust, production-level application logging in Spark as it integrates natively with Spark's driver/executor logs.
+    
+        Sample log4j usage in PySpark:
+        
+        ```python
+        import traceback
+        # Get log4j logger
+        log4jLogger = spark._jvm.org.apache.log4j
+        logger = log4jLogger.LogManager.getLogger("PySparkLogger")
+        logger.info("Application started.")
+        try:
+            # Create DataFrame with 20 records
+            data = [(f"Name{i}", i) for i in range(1, 21)]  # 20 records
+            df = spark.createDataFrame(data, ["name", "age"])
+            logger.info("DataFrame created successfully with 20 records.")
+            df.show(s)  # 's' is not defined -> will throw error but the application will not fail
+        except Exception as e:
+            logger.error(f"Error while creating or showing DataFrame: {str(e)}\n{traceback.format_exc()}")
+        ```
+    
 1. Centralize error monitoring:
     
     - Use diagnostic emitter extension ([Monitor Apache Spark applications with Azure Log Analytics](/fabric/data-engineering/azure-fabric-diagnostic-emitters-log-analytics#available-apache-spark-configurations)) in environment and attach to the Notebooks running Spark applications. The emitter can send event logs, custom logs (like log4j), and metrics to Azure Log Analytics/Azure Storage/Azure Event Hubs. Pass the log4j name to the property: `spark.synapse.diagnostic.emitter.\<destination\>.filter.loggerName.match`.
