@@ -16,16 +16,16 @@ Establish a controlled execution environment, govern data egress, and enforce le
 
 ##### Scenario: You're a data engineer working with sensitive data in Fabric Spark. Your security team has a requirement to run all the codes in a network isolated environment for enhanced security.
 
-- Enable Managed Virtual Network (VNets). To enable managed VNets, see [public documentation](/fabric/security/security-managed-vnets-fabric-overview).  [Managed virtual networks](/fabric/security/security-managed-vnets-fabric-overview) (VNets) are virtual networks created and managed by Microsoft Fabric for each Fabric workspace. They provide network isolation for Fabric Spark workloads, meaning that the compute clusters are deployed in a dedicated network per workspace and are no longer part of the shared virtual network. 
+- Enable Managed Virtual Network (VNets). To enable managed VNets, see [public documentation](/fabric/security/security-managed-vnets-fabric-overview).  Microsoft Fabric creates and manages [managed virtual networks](/fabric/security/security-managed-vnets-fabric-overview) (VNets) for each Fabric workspace. They provide network isolation for Fabric Spark workloads, meaning that Microsoft Fabric deploys the compute clusters in a dedicated network per workspace, removing them from the shared virtual network.
 
 - In production, use managed VNets for the secure execution of Spark Notebooks. 
 
-- When you create a MPE, it will automatically be created at the workspace level.  
+- When you create a MPE, it gets created at the workspace level by default.  
 
-- When you enable PL at the tenant level, all workspaces in the tenant are enabled for managed VNets. After you enable the PL setting, running the first Spark job (Notebook or Spark Job Definitions) or performing a Lakehouse operation (for example, Load to Table, or a table maintenance operation such as Optimize or Vacuum) results in the creation of a managed virtual network for the workspace. 
+- When you enable PL at the tenant level, the system enables managed VNets for all workspaces in the tenant. After you enable the PL setting, the system creates a managed virtual network for the workspace when you run the first Spark job (Notebook or Spark Job Definitions). The system also creates the virtual network when you perform a Lakehouse operation, such as Load to Table or a table maintenance operation (Optimize or Vacuum).
 
 > [!NOTE]
-> Starter pools will become unavailable, as they run in a shared network.
+> When you enable managed VNets, starter pools become unavailable because they run in a shared network.
 
 ## Workspace Outbound Access Protection (WS OAP)
 
@@ -49,17 +49,19 @@ Store the credentials securely in Azure Key Vault. Don't keep a single key vault
 
 - **Network:** We recommend protecting your AKV with firewall rules to allow access only from known networks. However, you allow Fabric Spark's IP addresses in your firewall rules. To securely connect to protected AKVs from Fabric Spark Notebooks, we recommend creating a managed private endpoint to AKV. One AKV can support only up to 64 private endpoints ([Azure subscription and service limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-private-link-limits)). 
 
-- **Authentication:** Fabric Spark Notebooks and SJDs are executed in the context of the user who is submitting the jobs/Notebooks. To access the AKV, the submitting user should have sufficient access to retrieve the secret (“Key Vault Secrets Officer”). Refer to AKV best practices: [Grant permission to applications to access an Azure key vault using Azure RBAC](/azure/key-vault/general/rbac-guide?tabs=azure-cli).  
+- **Authentication:** The system executes Fabric Spark Notebooks and SJDs in the context of the user who submits the jobs/Notebooks. To access the AKV, the submitting user should have sufficient access to retrieve the secret ("Key Vault Secrets Officer"). Refer to AKV best practices: [Grant permission to applications to access an Azure key vault using Azure RBAC](/azure/key-vault/general/rbac-guide?tabs=azure-cli).
 
-    - You can use Notebookutils (previously called mssparkutils) to access the AKV using the credentials of the user running the Notebook/SJD:
+    - You can use notebookutils (previously called mssparkutils) to access the AKV using the credentials of the user running the Notebook/SJD:
 
     > `notebookutils.credentials.getSecret('<AKV URL>', 'Secret Name')`
 
 - In production, we don't recommend providing user access to AKVs in prod environment. Instead use service accounts to access your KV. Submit the notebooks/jobs using service account. 
 
-- In some cases, the service account which submits the job will have access to read secrets from AKV. 
+- In some cases, the service account that submits the job has access to read secrets from AKV. 
 
-- In some cases, this service account is usually a DevOps account that might not have access to read secrets from AKV. In such cases, credential builder is helpful to access the AKV using a different SPN. Here is the sample Scala code snippet: 
+- In some cases, this service account is usually a DevOps account that might not have access to read secrets from AKV. In such cases, credential builder is helpful to access the AKV using a different SPN.
+
+Here's the sample Scala code snippet: 
 
     ```scala
     val clientSecretCredential: ClientSecretCredential = new ClientSecretCredentialBuilder()

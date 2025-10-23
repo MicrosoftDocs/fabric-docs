@@ -24,7 +24,7 @@ This series of articles outlines best practices for optimizing the performance, 
 
 ## Acronyms
 
-Here is a list of common acronyms used throughout the Fabric Spark best practices articles:
+Here's a list of common acronyms used throughout the Fabric Spark best practices articles:
 
 | **Acronym** | **Meaning** |
 |-------------|-------------|
@@ -39,7 +39,7 @@ Here is a list of common acronyms used throughout the Fabric Spark best practice
 | MPE         | Managed Private Endpoint |
 | NEE         | Native Execution Engine |
 | OOM         | Out of Memory |
-| PAYG        | Pay As You Go |
+| PAYG        | Pay-as-you-go |
 | PL          | Private Link  |
 | ORC         | Optimized Row Columnar |
 | RDD         | Resilient Distributed Dataset |

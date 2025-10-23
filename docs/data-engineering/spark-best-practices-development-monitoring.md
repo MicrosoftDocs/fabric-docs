@@ -24,9 +24,9 @@ Store the JARs in the Lakehouse and pass the path via spark.jars. Alternatively,
 
 ##### Scenario: When to run on High Concurrency Mode?
 
-- You're doing development of 5 different Spark applications in 5 Notebooks, you find waiting for session to be started in each of the Notebooks is impacting your productivity. To run multiple Notebooks having same Lakehouse and environment, run in High Concurrency mode to optimize costs and reduce the startup time of subsequent Notebooks.
+- You're doing development of 5 different Spark applications in 5 Notebooks. You find waiting for session to be started in each of the Notebooks is impacting your productivity. To run multiple Notebooks having same Lakehouse and environment, run in High Concurrency mode to optimize costs and reduce the startup time of subsequent Notebooks.
 
-- You're running a pipeline with Notebooks in foreach, session start up time of each of the Notebook executions is leading to longer execution time. To minimize cumulative session startup times for Notebooks sharing the same environment and default Lakehouse in a pipeline, enable High Concurrency mode at the workspace level and add session tags to share the same session. 
+- You're running a pipeline with Notebooks in foreach, session start-up time of each of the Notebook executions is leading to longer execution time. To minimize cumulative session startup times for Notebooks sharing the same environment and default Lakehouse in a pipeline, enable High Concurrency mode at the workspace level and add session tags to share the same session. 
 
 - When using High Concurrency sessions:
     - To share variables across Notebooks in the same session, use global temp views: `df.createOrReplaceGlobalTempView("global_view")`.
@@ -42,7 +42,7 @@ Store the JARs in the Lakehouse and pass the path via spark.jars. Alternatively,
 
   1. Use a Notebook to define MLVs that reference the original schema-less or schema-enabled Lakehouse tables.
 
-    Here is the sample code:
+    Here's the sample code:
     
     ```sql
     CREATE MATERIALIZED LAKE VIEW IF NOT EXISTS <old_workspace>.<old_lakehouse>.dbo.mlv_test_scot
@@ -57,23 +57,23 @@ To monitor all Spark applications across workspaces, configure the Fabric Apache
 
 ##### Scenario: You're a developer and looking for inline AI tools in Notebook to suggest code completions.
 
-For lightweight inline AI assistance without starting a Spark session, enable Copilot Completions and type your query as a comment using the "#" symbol. Queries typed as comments (e.g., `# write a sample pyspark code` will trigger Copilot responses if completions are enabled).
+For lightweight inline AI assistance without starting a Spark session, enable Copilot Completions and type your query as a comment using the "#" symbol. Queries typed as comments (for example, `# write a sample pyspark code` triggers Copilot responses if completions are enabled).
 
 ##### Scenario: You have SparkR workloads running on runtime 1.3.
 
-Since SparkR is deprecated starting with Spark 4.0, keep running SparkR workloads in Fabric Runtime 1.3.
+Since Spark 4.0 deprecates SparkR, keep running SparkR workloads in Fabric Runtime 1.3.
 
 ## CI/CD Flow
 
 ##### Scenario: How to replace parameters in CI/CD flow
 
-In CI/CD pipelines, notebooks often need to adapt to different environments (e.g., dev, test, prod). The variable library utilities in notebookutils allows you to inject environment-specific values dynamically—such as lakehouse names, mount points, and configuration flags—without hardcoding them.
+In CI/CD pipelines, notebooks often need to adapt to different environments (for example, dev, test, prod). The variable library utilities in notebookutils allow you to inject environment-specific values dynamically—such as lakehouse names, mount points, and configuration flags—without hardcoding them.
 
 You can use `notebookutils.variableLibrary.help()` to find out the detailed API usage.
 
 **Example:** **Dynamically interacting Lakehouses**
 
-1. Create a variable library and define the workspace name and lakehouse name inside the variable library, you can define multiple value sets, for example, Development, Test, Prod, and activate one of them according to your current environment.
+1. Create a variable library and define the workspace name and lakehouse name inside the variable library. You can define multiple value sets, for example, Development, Test, Prod, and activate one of them according to your current environment.
 
     :::image type="content" source="media/spark-best-practices/variable-library.png" alt-text="Screenshot of alternate value sets creation." lightbox="media/spark-best-practices/variable-library.png":::
 
@@ -140,15 +140,15 @@ Here are some important tips when using the variable library in your notebooks:
 
 ##### Scenario: Customize session configuration in the Notebook
 
-[%%configure](/fabric/data-engineering/author-execute-notebook#spark-session-configuration-magic-command) is a powerful magic command in Microsoft Fabric notebooks that allows users to programmatically define Spark session properties, including default lakehouse, attached environment, runtime settings, and compute configurations.
+[%%configure](/fabric/data-engineering/author-execute-notebook#spark-session-configuration-magic-command) is a powerful magic command in Microsoft Fabric notebooks. With `%%configure`, you can programmatically define Spark session properties, including default lakehouse, attached environment, runtime settings, and compute configurations.
 
 **Interactive Development Phase**
 
 **Use Case**: Exploratory data analysis, debugging, prototyping.
 
-- **Place %%configure in the first cell**: It's a good habit to always put %%configure in the first cell, it will take effect when it becomes the first executed cell, so that Spark session is initialized with the desired configuration before any other code runs. If it's being executed as the first cell, changes won't take effect unless the session is restarted.
+- **Place %%configure in the first cell**: It's a good habit to always put %%configure in the first cell. It takes effect when it becomes the first executed cell, so that Spark initializes the session with the desired configuration before any other code runs. If you execute it as the first cell, changes don't take effect unless you restart the session.
 
-- **Avoid GUI dependency**: Configuring via code ensures reproducibility and avoids issues with GUI-based lineage tracking, which might not reflect programmatic changes. The %%configure is applied at session level (unlike GUI functions that applies on an item level), which takes precedence over the GUI in terms of execution flow.
+- **Avoid GUI dependency**: Configuring via code ensures reproducibility and avoids issues with GUI-based lineage tracking, which might not reflect programmatic changes. The system applies %%configure at session level (unlike GUI functions that apply at item level), giving it precedence over the GUI in terms of execution flow.
 
 **Pipeline Execution Phase**
 
@@ -168,7 +168,7 @@ Here are some important tips when using the variable library in your notebooks:
     }
     ```
 
-- **Leverage variable library to customize the session**: While different teams have varying CI/CD architecture designs, but %%configure and the variable library, as part of a pure code experience, are highly flexible and enable diverse CI/CD needs. You can request the variable library within %%configure to dynamically adjust session settings—such as the default lakehouse, mount points, and attached environments. By activating different sets of variable library values based on the environment, notebook runs can adaptively consume the correct dependencies as the CI/CD environment changes.
+- **Use variable library to customize the session**: While different teams have varying CI/CD architecture designs, but %%configure and the variable library, as part of a pure code experience, are highly flexible and enable diverse CI/CD needs. You can request the variable library within %%configure to dynamically adjust session settings—such as the default lakehouse, mount points, and attached environments. By activating different sets of variable library values based on the environment, notebook runs can adaptively consume the correct dependencies as the CI/CD environment changes.
 
     Example:
     
@@ -197,41 +197,39 @@ Here are some important tips when using the variable library in your notebooks:
 
 - **What is Data Skew:** Data skew occurs when one or more partitions contain significantly more data than others, leading to imbalanced workloads. Similarly, time skew arises when certain tasks take substantially longer to complete, often due to data skew or differences in computational complexity. 
 
-- **What are Partitions:** Partitions are the fundamental units of parallelism in Apache Spark and play a crucial role in performance optimization. When we partition 1 GB of data into 100 partitions, Spark attempts to process these 100 partitions concurrently as separate tasks—up to the number of available CPU cores in the cluster (assuming spark.task.cpus=1). 
+- **What are Partitions:** Partitions are the fundamental units of parallelism in Apache Spark and play a crucial role in performance optimization. When you partition 1 GB of data into 100 partitions, Spark attempts to process these 100 partitions concurrently as separate tasks—up to the number of available CPU cores in the cluster (assuming spark.task.cpus=1). 
     - For optimal performance, it's important that data is evenly distributed across partitions.
     - However, having too many partitions can introduce overhead from task scheduling and shuffle operations. It's important to profile and benchmark your workload to determine the appropriate number of partitions based on your data volume and the transformations. 
 
 To analyze if there are skews: 
 
-- *Jobs UI in Spark Monitoring* will show if there is skew, mean and max metrics as below: 
+- *Jobs UI in Spark Monitoring* shows if there's skew, mean, and max metrics as shown here: 
 
     :::image type="content" source="media/spark-best-practices/spark-job-monitoring.png" alt-text="Screenshot of a Spark job UI showing skew, mean, and max metrics." lightbox="media/spark-best-practices/spark-job-monitoring.png":::
 
-- Check *Spark UI* task aggregation metrics. If there is a significant gap between median, 75th percentile and max metrics, there could be skew. If that stage takes significant amount of time and skew is significant, handle the skew to optimize performance.  
+- Check *Spark UI* task aggregation metrics. If a significant gap exists between median, 75th percentile and max metrics, skew could exist. If that stage takes significant amount of time and skew is significant, handle the skew to optimize performance.  
 
     :::image type="content" source="media/spark-best-practices/spark-task-aggregation.png" alt-text="Screenshot of Spark UI task aggregation metrics." lightbox="media/spark-best-practices/spark-task-aggregation.png":::
 
-There could be various reasons for Skew. Most common reasons are the result of Join or group by operations Eg: If distribution of the data is uneven for unique values of the grouping columns, it can result in a data skew. This might result in straggling tasks. To handle such skews: 
+Various reasons can cause skew. The most common reasons result from Join or group by operations. For example: Uneven distribution of data for unique values of the grouping columns can result in data skew. This might result in straggling tasks. To handle such skews: 
 
-- See if Adaptive Query Execution (AQE) is enabled as it uses runtime statistics to optimize performance. It adjusts post-shuffle partitions through coalescing, converts sort merge joins into broadcast joins and applies skew join optimization. 
+- Check whether you enabled Adaptive Query Execution (AQE), as it uses runtime statistics to optimize performance. It adjusts post-shuffle partitions through coalescing, converts sort merge joins into broadcast joins and applies skew join optimization. 
 
-- Use repartition or coalesce to redistribute data. Coalesce vs Repartition: Repartition is used to increase or decrease partitions. Repartition is an expensive operation as it shuffles the data. Results in almost equal sized partitions. Coalesce only reduces partitions and it avoids shuffles. It often involves experimentation and tuning to find out optimal number of partitions (and this changes with data volume and shape, thus can evolve) 
+- Use repartition or coalesce to redistribute data. Coalesce vs Repartition: Use repartition to increase or decrease partitions. Repartition is an expensive operation as it shuffles the data, but it results in almost equal sized partitions. Coalesce only reduces partitions and avoids shuffles. Finding the optimal number of partitions often involves experimentation and tuning (and this changes with data volume and shape, thus can evolve) 
 
-##### Scenario: You have Fabric Spark Notebooks deployed in a production workspace, but you don't have direct access to it. The production support team reports that a Fabric Spark job has failed in the production workspace, and you need to analyze the logs to troubleshoot the issue.
+##### Scenario: You have Fabric Spark Notebooks deployed in a production workspace, but you don't have direct access to it. The production support team reports that a Fabric Spark job failed in the production workspace, and you need to analyze the logs to troubleshoot the issue.
 
-In production workspace, don't grant developers or non privileged users access. Grant read-only access to only privileged users like SREs and production support engineers. have access to them.  
+In production workspaces, don't grant developers or non-privileged users direct access. Instead, grant read-only access only to privileged users such as SREs and production support engineers to retrieve Spark logs.
 
-If any Spark Notebook or Spark Job Definition (SJD) in the production workspace requires investigation, production support engineers can download the logs from the Spark UI and share them with developers for further analysis. This approach follows the principle of least privileged access for ensuring security. 
-
-:::image type="content" source="media/spark-best-practices/send-event-logs-flow.png" alt-text="Diagram of the event logs flow from support to developers." lightbox="media/spark-best-practices/send-event-logs-flow.png":::
+If any Spark Notebook or Spark Job Definition (SJD) in the production workspace requires investigation, production support engineers can download the logs from the Spark UI and share them with developers for further analysis. This approach follows the principle of least privileged access for ensuring security.:::image type="content" source="media/spark-best-practices/send-event-logs-flow.png" alt-text="Diagram of the event logs flow from support to developers." lightbox="media/spark-best-practices/send-event-logs-flow.png":::
 
 Developers who don't have access to the workspace can set up a Spark History Server locally to view all the event logs and investigate. 
 
 ## Spark Session Configurations
 
-##### Scenario: You have developed and Spark application in Fabric and you want to optimize further.
+##### Scenario: You developed a Spark application in Fabric and you want to optimize further.
 
-Spark Session configs and Delta table feature flags exist so that Spark can be custom tailored to the needs of your specific workload. 
+Spark Session configs and Delta table feature flags exist so that you can custom tailor Spark to the needs of your specific workload. 
 
 - **Enable Native Execution Engine (NEE)** in the environment and run the Spark applications for better performance. To enable NEE in the session level, here are the Spark configs: 
 
@@ -243,7 +241,7 @@ Spark Session configs and Delta table feature flags exist so that Spark can be c
     spark.sql("SET spark.native.enabled = True")
     ```
 
-- If you're not using the NEE, and thus operating on the traditional Spark JVM-based execution engine, you're missing out on huge performance gains. We're talking 2x–5x improvements in many cases. 
+- If you're not using the NEE, and thus operating on the traditional Spark JVM-based execution engine, you miss huge performance gains. We're talking 2x–5x improvements in many cases. 
 
 - **Read Optimization**: Spark determines the number of partitions based on input file sizes. Tune `spark.sql.files.maxPartitionBytes` and benchmark for your workload to optimize partition sizing.
 
@@ -255,7 +253,7 @@ Spark Session configs and Delta table feature flags exist so that Spark can be c
 
   - If tasks are CPU-bound but don't require significant memory: reduce spark.task.cpus (e.g: 0.5) to allow more tasks to run in parallel.
 
-  - If tasks are memory-intensive and causing executor OOMs: increase spark.task.cpus (e.g: 2) to allocate more memory per task and benchmark performance.
+  - If tasks are memory-intensive and cause executor OOMs: increase spark.task.cpus (e.g: 2) to allocate more memory per task and benchmark performance.
 
 - **Write Optimization:** 
 
