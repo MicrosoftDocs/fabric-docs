@@ -4,7 +4,7 @@ description: Learn how to create, use, and manage warehouse snapshots in Fabric 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: twcyril
-ms.date: 05/08/2025
+ms.date: 10/22/2025
 ms.service: fabric
 ms.topic: how-to
 ms.search.form: Manage warehouse snapshots
@@ -125,6 +125,7 @@ The `ALTER DATABASE` SQL statement uses the system time of the warehouse as the 
    ```
 
 Warehouse snapshots can also be updated via the Fabric portal. In the ribbon, under **Management**, select **Manage warehouse snapshot**.
+
 ## Rename
 
 You can rename a warehouse snapshot item via REST API and in the Fabric portal.
