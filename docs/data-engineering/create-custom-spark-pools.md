@@ -50,15 +50,12 @@ These custom pools have a default autopause duration of 2 minutes. Once the auto
 
 When you set up a custom Spark pool, you choose from the following node sizes:
 
-| Node size | Capacity Units (CU) | Memory (GB) | Description |
+| Node size | vCores | Memory (GB) | Description |
 |--|--|--|--|
 | Small | 4 | 32 | For lightweight development and testing jobs. |
 | Medium | 8 | 64 | For general workloads and typical operations. |
 | Large | 16 | 128 | For memory-intensive tasks or large data processing jobs. |
 | X-Large | 32 | 256 | For the most demanding Spark workloads that need significant resources. |
-
-> [!NOTE] 
-> A capacity unit (CU) in Microsoft Fabric Spark pools represents the compute capacity assigned to each node, not the actual consumption. Capacity units differ from VCore (Virtual Core), which is used in SQL-based Azure resources. CU is the standard term for Spark pools in Fabric, while VCore is more common for SQL pools. When sizing nodes, use CU to determine the assigned capacity for your Spark workloads.
 
 ## Related content
 
