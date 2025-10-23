@@ -36,7 +36,7 @@ To learn more about starter and custom pools, refer to the [Apache Spark compute
 
   - [Resource Usage UI](/fabric/data-engineering/monitor-spark-resource-utilization): to analyze executor utilization and numbers of executors scaled up or down after each stage.
 
-  - [Monitoring UI](/fabric/data-engineering/browse-spark-applications-monitoring-hub): 30 day metrics of high level Notebook/SJD/Pipeline execution details like execution time, status, submitted by etc. Monitoring UI is good for cross app visibility.
+  - [Monitoring UI](/fabric/data-engineering/browse-spark-applications-monitoring-hub): 30 day metrics of high level Notebook/Spark Job Definition (SJD)/Pipeline execution details like execution time, status, submitted by etc. Monitoring UI is good for cross app visibility.
 
   - [Diagnostic emitter extension](/fabric/data-engineering/azure-fabric-diagnostic-emitters-azure-event-hub): To emit logs to targets like Azure log analytics, Azure storage, and Azure event hubs. This is great for long‑term trend analysis.
 
@@ -55,7 +55,7 @@ To learn more about starter and custom pools, refer to the [Apache Spark compute
 - If you detect data skew, simply adding more resources might not help. Address skews using techniques like repartitioning when uneven data distribution causes the skew.
 - Refer to the [development and monitoring article in this series](./spark-best-practices-development-monitoring.md) for guidance on identifying and addressing skews. 
 
-**Evaluating Utilization:** Use the Capacity Metrics app to evaluate utilization and estimate the optimal capacity size for your workloads. Refer to the [Monitor Apache Spark capacity consumption documentation](/fabric/data-engineering/monitor-spark-capacity-consumption) for more details. After analyzing trial capacity utilization, choose the appropriate Pay As You Go (pay-as-you-go) capacity for your PoCs and then move to capacity backed by a Reservations (RI) or Auto scale Billing. RI is a year long commitment. A PAYG capacity can be canceled anytime. RI offers about a 40% discount compared to PAYG capacity.
+**Evaluating Utilization:** Use the Capacity Metrics app to evaluate utilization and estimate the optimal capacity size for your workloads. Refer to the [Monitor Apache Spark capacity consumption documentation](/fabric/data-engineering/monitor-spark-capacity-consumption) for more details. After analyzing trial capacity utilization, choose the appropriate Pay-as-you-go (PAYG) capacity for your PoCs and then move to capacity backed by a Reservations (RI) or Auto scale Billing. RI is a year long commitment. A PAYG capacity can be canceled anytime. RI offers about a 40% discount compared to PAYG capacity.
 
 ##### Scenario: Running Spark workloads on PAYG capacity. What is the optimal capacity model to choose?
 

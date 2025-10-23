@@ -16,11 +16,11 @@ Learn how to establish a repeatable path from exploratory development to product
 
 ##### Scenario: You need to know which runtime to use for development.
 
-Begin with the latest available Fabric Runtime to take advantage of recent enhancements and performance optimizations. Currently, Fabric Runtime 1.3 is the most up-to-date version, featuring Spark 3.5, Java 11, and Python 3.11. This version introduces key improvements such as the Native Execution Engine, which significantly boosts performance by executing Spark code on the Velox C++ engine instead of the traditional JVM.
+Begin with the latest available Fabric Runtime to take advantage of recent enhancements and performance optimizations. Currently, Fabric Runtime 1.3 is the most up-to-date version, featuring Spark 3.5, Java 11, and Python 3.11. This version introduces key improvements such as the Native Execution Engine, which significantly boosts performance by executing Spark code on the Velox C++ engine instead of the traditional Java Virtual Machine (JVM).
 
 ##### Scenario: You have custom JARs uploaded in the environment and they're taking longer to publish. How can you reduce the environment publishing time?
 
-Store the JARs in the Lakehouse and pass the path via spark.jars. Alternatively, if the package is in a Maven repository, pass it via `spark.jars.packages`.
+Store the Java Archive (JAR) files in the Lakehouse and pass the path via spark.jars. Alternatively, if the package is in a Maven repository, pass it via `spark.jars.packages`.
 
 ##### Scenario: When to run on High Concurrency Mode?
 
@@ -30,11 +30,11 @@ Store the JARs in the Lakehouse and pass the path via spark.jars. Alternatively,
 
 - When using High Concurrency sessions:
     - To share variables across Notebooks in the same session, use global temp views: `df.createOrReplaceGlobalTempView("global_view")`.
-    - To access the view from another Notebook in the same HC session, use: `spark.sql("SELECT * FROM global_temp.global_view")`.
+    - To access the view from another Notebook in the same High Concurrency (HC) session, use: `spark.sql("SELECT * FROM global_temp.global_view")`.
 
 ##### Scenario: How to organize Materialized Lake Views (MLVs)?
 
-- **Centralize Materialized Lake Views (MLVs):** Create all MLVs for a workspace within a single Lakehouse to ensure a consolidated and clear representation in the Directed Acyclic Graph (DAG) view.
+- **Centralize Materialized Lake Views (MLVs):** Create all Materialized Lake Views (MLVs) for a workspace within a single Lakehouse to ensure a consolidated and clear representation in the Directed Acyclic Graph (DAG) view.
 
 - **Handling Schema-less Tables for MLV Creation:** If your Lakehouse contains tables without a defined schema and you intend to create MLVs on those tables, follow this approach:
 
@@ -67,7 +67,7 @@ Since Spark 4.0 deprecates SparkR, keep running SparkR workloads in Fabric Runti
 
 ##### Scenario: How to replace parameters in CI/CD flow
 
-In CI/CD pipelines, notebooks often need to adapt to different environments (for example, dev, test, prod). The variable library utilities in notebookutils allow you to inject environment-specific values dynamically—such as lakehouse names, mount points, and configuration flags—without hardcoding them.
+In Continuous Integration/Continuous Deployment (CI/CD) pipelines, notebooks often need to adapt to different environments (for example, dev, test, prod). The variable library utilities in notebookutils allow you to inject environment-specific values dynamically—such as lakehouse names, mount points, and configuration flags—without hardcoding them.
 
 You can use `notebookutils.variableLibrary.help()` to find out the detailed API usage.
 
@@ -219,7 +219,7 @@ Various reasons can cause skew. The most common reasons result from Join or grou
 
 ##### Scenario: You have Fabric Spark Notebooks deployed in a production workspace, but you don't have direct access to it. The production support team reports that a Fabric Spark job failed in the production workspace, and you need to analyze the logs to troubleshoot the issue.
 
-In production workspaces, don't grant developers or non-privileged users direct access. Instead, grant read-only access only to privileged users such as SREs and production support engineers to retrieve Spark logs.
+In production workspaces, don't grant developers or non-privileged users direct access. Instead, grant read-only access only to privileged users such as Site Reliability Engineers (SREs) and production support engineers to retrieve Spark logs.
 
 If any Spark Notebook or Spark Job Definition (SJD) in the production workspace requires investigation, production support engineers can download the logs from the Spark UI and share them with developers for further analysis. This approach follows the principle of least privileged access for ensuring security.:::image type="content" source="media/spark-best-practices/send-event-logs-flow.png" alt-text="Diagram of the event logs flow from support to developers." lightbox="media/spark-best-practices/send-event-logs-flow.png":::
 
@@ -253,7 +253,7 @@ Spark Session configs and Delta table feature flags exist so that you can custom
 
   - If tasks are CPU-bound but don't require significant memory: reduce spark.task.cpus (e.g: 0.5) to allow more tasks to run in parallel.
 
-  - If tasks are memory-intensive and cause executor OOMs: increase spark.task.cpus (e.g: 2) to allocate more memory per task and benchmark performance.
+  - If tasks are memory-intensive and cause executor Out of Memory (OOM) errors: increase spark.task.cpus (e.g: 2) to allocate more memory per task and benchmark performance.
 
 - **Write Optimization:** 
 

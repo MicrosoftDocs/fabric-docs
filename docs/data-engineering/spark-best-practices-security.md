@@ -18,11 +18,11 @@ Establish a controlled execution environment, govern data egress, and enforce le
 
 - Enable Managed Virtual Network (VNets). To enable managed VNets, see [public documentation](/fabric/security/security-managed-vnets-fabric-overview).  Microsoft Fabric creates and manages [managed virtual networks](/fabric/security/security-managed-vnets-fabric-overview) (VNets) for each Fabric workspace. They provide network isolation for Fabric Spark workloads, meaning that Microsoft Fabric deploys the compute clusters in a dedicated network per workspace, removing them from the shared virtual network.
 
-- In production, use managed VNets for the secure execution of Spark Notebooks. 
+- In production, use managed VNets for the secure execution of Spark Notebooks. 
 
-- When you create a MPE, it gets created at the workspace level by default.  
+- When you create a Managed Private Endpoint (MPE), it gets created at the workspace level by default.  
 
-- When you enable PL at the tenant level, the system enables managed VNets for all workspaces in the tenant. After you enable the PL setting, the system creates a managed virtual network for the workspace when you run the first Spark job (Notebook or Spark Job Definitions). The system also creates the virtual network when you perform a Lakehouse operation, such as Load to Table or a table maintenance operation (Optimize or Vacuum).
+- When you enable Private Link (PL) at the tenant level, the system enables managed VNets for all workspaces in the tenant. After you enable the PL setting, the system creates a managed virtual network for the workspace when you run the first Spark job (Notebook or Spark Job Definitions). The system also creates the virtual network when you perform a Lakehouse operation, such as Load to Table or a table maintenance operation (Optimize or Vacuum).
 
 > [!NOTE]
 > When you enable managed VNets, starter pools become unavailable because they run in a shared network.
@@ -43,7 +43,7 @@ Consider not turning on WS OAP in development or lower workspaces because it imp
 
 ##### Scenario: You're a data engineer and you want to connect to multiple data sources using secured credentials from Spark Notebooks.
 
-Store the credentials securely in Azure Key Vault. Don't keep a single key vault to store all secrets. Instead, use multiple key vaults based on projects/domains if possible.
+Store the credentials securely in Azure Key Vault (AKV). Don't keep a single key vault to store all secrets. Instead, use multiple key vaults based on projects/domains if possible.
 
 **Accessing Azure Key Vault (AKV) from Notebook**
 
@@ -55,11 +55,11 @@ Store the credentials securely in Azure Key Vault. Don't keep a single key vault
 
     > `notebookutils.credentials.getSecret('<AKV URL>', 'Secret Name')`
 
-- In production, we don't recommend providing user access to AKVs in prod environment. Instead use service accounts to access your KV. Submit the notebooks/jobs using service account. 
+- In production, we don't recommend providing user access to AKVs in prod environment. Instead use service accounts to access your Key Vault (KV). Submit the notebooks/jobs using service account. 
 
 - In some cases, the service account that submits the job has access to read secrets from AKV. 
 
-- In some cases, this service account is usually a DevOps account that might not have access to read secrets from AKV. In such cases, credential builder is helpful to access the AKV using a different SPN.
+- In some cases, this service account is usually a DevOps account that might not have access to read secrets from AKV. In such cases, credential builder is helpful to access the AKV using a different Service Principal Name (SPN).
 
 Here's the sample Scala code snippet: 
 

@@ -17,9 +17,9 @@ Core concepts underpinning sizing, optimization, and troubleshooting. Read this 
 
 | Use case | Best practices |
 |---|---|
-| Use optimized serialized formats | Do: Prefer formats like Avro, Parquet, or ORC because they embed schema, are compact, and optimize storage and processing. In Fabric, use Delta format for additional ACID guarantees and performance benefits |
-| Be cautious with XML/JSON | Don't rely on schema inference for large JSON or XML files, as Spark reads the entire dataset to infer schema, which slows down processing and consumes memory intensively.<br/><br/>Provide a static primary schema when reading JSON/XML or use `.option("samplingRatio", 0.1)` to speed up reads, but be aware that if the sample doesn't represent the full dataset, reads might fail. A safer approach infers schema from a representative sample and persists it for all reads.<br/><br/>Avoid parsing large XML files. XML parsing runs inherently slower due to tag processing and type casting. |
-| Optimize joins & filtering | Do: Apply column pruning and row-level filtering before joins to reduce shuffle and memory usage.<br/><br/>The Catalyst optimizer automatically handles predicate pushdown when you use DataFrame APIs. Avoid RDD APIs because they bypass Catalyst optimizations. |
+| Use optimized serialized formats | Do: Prefer formats like Avro, Parquet, or Optimized Row Columnar (ORC) because they embed schema, are compact, and optimize storage and processing. In Fabric, use Delta format for Atomicity, Consistency, Isolation, Durability (ACID) guarantees and performance benefits |
+| Be cautious with XML/JSON | Don't rely on schema inference for large JavaScript Object Notation (JSON) or Extensible Markup Language (XML) files, as Spark reads the entire dataset to infer schema, which slows down processing and consumes memory intensively.<br/><br/>Provide a static primary schema when reading JSON/XML or use `.option("samplingRatio", 0.1)` to speed up reads, but be aware that if the sample doesn't represent the full dataset, reads might fail. A safer approach infers schema from a representative sample and persists it for all reads.<br/><br/>Avoid parsing large XML files. XML parsing runs inherently slower due to tag processing and type casting. |
+| Optimize joins & filtering | Do: Apply column pruning and row-level filtering before joins to reduce shuffle and memory usage.<br/><br/>The Catalyst optimizer automatically handles predicate pushdown when you use DataFrame APIs. Avoid Resilient Distributed Dataset (RDD) APIs because they bypass Catalyst optimizations. |
 | Prefer DataFrames over RDDs | Do: Use DataFrames instead of RDDs for most operations. DataFrames use the Catalyst optimizer and Tungsten execution engine for efficient execution. |
 | Enable adaptive query execution (AQE) | Do: Turn on AQE to dynamically optimize shuffle partitions and handle skewed data automatically. |
 
@@ -29,9 +29,9 @@ Core concepts underpinning sizing, optimization, and troubleshooting. Read this 
 
 Even if an executor is configured with 56 GB memory, Spark doesn't allow all of it to be used directly for user data. Spark Core divides and manages executor memory:
 
-- **Reserved Memory:** A fixed portion reserved for system and Spark internal overhead (for example, JVM, internals).
+- **Reserved Memory:** A fixed portion reserved for system and Spark internal overhead (for example, Java Virtual Machine (JVM), internals).
 
-- **User Memory:** Stores UDFs, local variables, data structures (lists, maps, dictionaries), and objects created during computation.
+- **User Memory:** Stores User Defined Functions (UDFs), local variables, data structures (lists, maps, dictionaries), and objects created during computation.
 
 - **Storage Memory:** Holds cached/persisted data, broadcast variables, and shuffle data that can be cached.
 
@@ -55,7 +55,7 @@ Common cause: driver-heavy operations such as `collect()`, `countByKey()`, or la
 
 Mitigation: Avoid driver-heavy operations whenever possible. If unavoidable, increase the driver size and benchmark to find the optimal configuration.
 
-**Executor OOM:**
+**Executor Out of Memory (OOM):**
 
 Executor OOM errors occur when a Spark executor exceeds its allocated memory.
 
@@ -136,7 +136,7 @@ Be cautious with Python UDFs. Each executor launches a separate Python process, 
 
 - Use diagnostic emitter extension ([Monitor Apache Spark applications with Azure Log Analytics](/fabric/data-engineering/azure-fabric-diagnostic-emitters-log-analytics#available-apache-spark-configurations)) in environment and attach to the Notebooks running Spark applications. The emitter can send event logs, custom logs (like log4j), and metrics to Azure Log Analytics/Azure Storage/Azure Event Hubs. Pass the log4j name to the property: `spark.synapse.diagnostic.emitter.\<destination\>.filter.loggerName.match`.
 
-- Additionally for debugging, you can also collect failed rows/records to LH tables for record level bad data capture.
+- Additionally for debugging, you can also collect failed rows/records to Lakehouse (LH) tables for record level bad data capture.
 
 ## Related content
 
