@@ -5,7 +5,7 @@ description: Learn how data is mirrored from Cosmos DB in Microsoft Fabric to On
 author: seesharprun
 ms.author: sidandrews
 ms.topic: limits-and-quotas
-ms.date: 10/22/2025
+ms.date: 10/23/2025
 ai-usage: ai-generated
 appliesto:
 - ✅ Cosmos DB in Fabric
@@ -23,11 +23,12 @@ This article details the current limitations for mirroring for Cosmos DB databas
 
 - Container throughput limitations from Cosmos DB in Fabric apply to mirrored containers:
 
-  - Maximum autoscale throughput of 10,000 RU/s per container
+  - Maximum autoscale throughput of 50,000 RU/s per container
 
   - Default allocation of 5,000 RU/s for containers created through the Fabric portal
-
-  - Container throughput can't be modified after creation
+  
+    > [!TIP]
+    > Maximum throughput can be increased with a support ticket.
 
 ## Security limitations
 
