@@ -12,7 +12,7 @@ ms.search.form: Lakehouse Overview
 
 # What is a lakehouse in Microsoft Fabric?
 
-Microsoft Fabric Lakehouse is a data architecture platform for storing, managing, and analyzing structured and unstructured data in a single location. It's a flexible and scalable solution that allows organizations to handle large volumes of data using various tools and frameworks to process and analyze that data. It integrates with other data management and analytics tools to provide a comprehensive solution for data engineering and analytics. A lakehouse combines the scalability of a data lake with the performance and structure of a data warehouse, providing a unified platform for data storage, management, and analytics.
+Microsoft Fabric Lakehouse is a data repository for storing, managing, and analyzing structured and unstructured data in a single location. It's a flexible and scalable solution that allows organizations to handle large volumes of data using various tools and frameworks to process and analyze that data. It integrates with other data management and analytics tools to provide a comprehensive solution for data engineering and analytics. A lakehouse combines the scalability of a data lake with the performance and structure of a data warehouse, providing a unified platform for data storage, management, and analytics.
 
 :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Visual representation of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
 
