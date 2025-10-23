@@ -18,6 +18,8 @@ OneLake catalog is a centralized place that helps you find, explore, and use the
 
 * **[Govern tab](./onelake-catalog-govern.md)**: The govern tab provides insights that help you understand the governance posture of all the data you own in Fabric, and presents recommended actions you can take to improve the governance status of your data.
 
+* **[Secure tab](./secure-your-data.md)**: The OneLake catalog Secure tab centralizes security management in Microsoft Fabric by providing a unified view of workspace roles and OneLake security roles across items. It enables admins to audit permissions, view user access, and create, edit, or delete security roles from a single location, ensuring streamlined governance and consistent enforcement of data access policies.
+
 ## Open the OneLake catalog
 
 To open the OneLake catalog, select the OneLake icon in the Fabric navigation pane. Select the tab you're interested if it's not displayed by default.

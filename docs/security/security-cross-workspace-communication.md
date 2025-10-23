@@ -3,10 +3,10 @@ title: About cross-workspace communication
 description: Learn how to set up cross-workspace communication.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.custom:
-ms.date: 08/13/2025
+ms.date: 10/20/2025
 
 #customer intent: As a workspace admin, I want to understand how to securely enable and configure cross-workspace communication, so I can allow data and resource access between workspaces while maintaining security controls.
 
@@ -51,7 +51,7 @@ The following diagram illustrates how the connection is established using a virt
 
 :::image type="content" source="./media/security-cross-workspace-communication/virtual-network-data-gateway.png" alt-text="Diagram illustrating a connection using a virtual network data gateway." lightbox="media/security-cross-workspace-communication/virtual-network-data-gateway.png" border="false":::  
 
-For an example, see [Accessing a lakehouse in a restricted workspace from a notebook in an open workspace](./security-workspace-private-links-example-notebook.md).
+For an example, see [Access inbound restricted lakehouse data from Power BI using a VNet gateway](./security-workspace-private-links-example-power-bi-virtual-network.md).
 
 ### On-premises data gateway
 
@@ -59,7 +59,7 @@ The following diagram illustrates how the connection is established using an on-
 
 :::image type="content" source="./media/security-cross-workspace-communication/on-premises-data-gateway.png" alt-text="Diagram illustrating a connection using an on-premises data gateway." lightbox="media/security-cross-workspace-communication/on-premises-data-gateway.png" border="false":::  
 
-For an example of how to set up cross-workspace communication using an on-premises data gateway, see [Accessing a lakehouse in a restricted workspace from a notebook in an open workspace](./security-workspace-private-links-example-notebook.md).
+For an example of how to set up cross-workspace communication using an on-premises data gateway, see [Access inbound restricted lakehouse data from Power BI using an OPDG gateway](./security-workspace-private-links-example-on-premises-data-gateway.md).
 
 ## Related content
 

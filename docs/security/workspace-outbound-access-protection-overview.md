@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview
-ms.date: 10/03/2025
+ms.date: 10/20/2025
 
 #customer intent: As a Fabric administrator, I want to control and secure outbound connections from workspace artifacts so that I can protect organizational data and ensure compliance with security policies.
 
@@ -92,6 +92,9 @@ The following limitations apply when using workspace outbound access protection:
 * Outbound access protection isn't supported for schema enabled lakehouses.
 
 * In workspaces with outbound access protection enabled, querying data warehouse file paths from notebooks using the `dbo` schema isnt supported, because access to schema-based paths isn't supported. To query the warehouse from notebooks, use the T-SQL option instead.
+
+* The Fabric portal UI doesn't currently support enabling both inbound protection (workspace-level private links) and outbound access protection at the same time for a workspace. To configure both settings together, use the [Workspaces - Set Network Communication Policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy?tabs=HTTP), which allows full management of inbound and outbound protection policies.
+
 
 ### Data connection rule limitations
 
