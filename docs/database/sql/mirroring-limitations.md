@@ -39,7 +39,10 @@ For general limitations for SQL database in Microsoft Fabric, see [Limitations i
 
 - A table cannot be mirrored if the primary key includes an [unsupported data type](#column-level).
 - Source tables that have any of the following features in use cannot be mirrored to Fabric OneLake.
-   - Clustered columnstore indexes can be created but the table then cannot not be mirrored to Fabric OneLake.
+   - Clustered columnstore indexes (CCI) can be created but the table then cannot not be mirrored to Fabric OneLake. Below are a few options to create CCI when Mirroring is Running:
+       - The CCI  must be created at the same time when table is created. 
+       - If Mirroring is Running, it can be [Stopped using API here](https://learn.microsoft.com/en-us/rest/api/fabric/sqldatabase/mirroring/stop-mirroring) and then [Started](https://learn.microsoft.com/en-us/rest/api/fabric/sqldatabase/mirroring/start-mirroring?tabs=HTTP) again after creating the clustered columnstore index.
+       - 
    - Temporal history tables and ledger history tables
    - Always Encrypted
    - In-memory tables
