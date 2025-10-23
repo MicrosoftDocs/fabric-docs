@@ -55,17 +55,17 @@ To learn more about starter and custom pools, refer to the [Apache Spark compute
 - If you detect data skew, simply adding more resources might not help. Address skews using techniques like repartitioning when uneven data distribution causes the skew.
 - Refer to the [development and monitoring article in this series](./spark-best-practices-development-monitoring.md) for guidance on identifying and addressing skews. 
 
-**Evaluating Utilization:** Use the Capacity Metrics app to evaluate utilization and estimate the optimal capacity size for your workloads. Refer to the [Monitor Apache Spark capacity consumption documentation](/fabric/data-engineering/monitor-spark-capacity-consumption) for more details. After analyzing trial capacity utilization, choose the appropriate Pay-as-you-go (PAYG) capacity for your PoCs and then move to capacity backed by a Reservations (RI) or Auto scale Billing. RI is a year long commitment. A PAYG capacity can be canceled anytime. RI offers about a 40% discount compared to PAYG capacity.
+**Evaluating Utilization:** Use the Capacity Metrics app to evaluate utilization and estimate the optimal capacity size for your workloads. Refer to the [Monitor Apache Spark capacity consumption documentation](/fabric/data-engineering/monitor-spark-capacity-consumption) for more details. After analyzing trial capacity utilization, choose the appropriate pay-as-you-go capacity for your PoCs and then move to capacity backed by a Reservations (RI) or Auto scale Billing. RI is a year long commitment. A pay-as-you-go capacity can be canceled anytime. RI offers about a 40% discount compared to pay-as-you-go capacity.
 
-##### Scenario: Running Spark workloads on PAYG capacity. What is the optimal capacity model to choose?
+##### Scenario: Running Spark workloads on pay-as-you-go capacity. What is the optimal capacity model to choose?
 
-If you're running Spark workloads on a PAYG capacity, consider transitioning to autoscale. Autoscale provides the same contractual flexibility as PAYG, but with the advantage of removing the risk of throttling. Jobs will, however, queue if there are insufficient resources and at a lower cost.
+If you're running Spark workloads on a pay-as-you-go capacity, consider transitioning to autoscale. Autoscale provides the same contractual flexibility as pay-as-you-go, but with the advantage of removing the risk of throttling. Jobs will, however, queue if there are insufficient resources and at a lower cost.
 
 You might also want to consider a hybrid model using a reservation for stable workloads and Autoscale for more variable workloads. Reservations provide the best cost performance, as long as the capacities remain well utilized (greater than 75% on average for the term of the contract).
 
-In general, there aren't many reasons why you might prefer PAYG over the previously discussed options:
+In general, there aren't many reasons why you might prefer pay-as-you-go over the previously discussed options:
 
-- You already have a PAYG capacity running non-spark workloads that have more headrooms to run your Spark jobs- the marginal cost of adding another job to a capacity is 0 (although if you add too many you could throttle). Even here though you should consider reserving for a year at a reduced cost if possible.
+- You already have a pay-as-you-go capacity running non-spark workloads that have more headrooms to run your Spark jobs- the marginal cost of adding another job to a capacity is 0 (although if you add too many you could throttle). Even here though you should consider reserving for a year at a reduced cost if possible.
 
 - You have a short term PoC or dev project, where cost predictability is more important than cost efficiency- with a capacity you pay a set amount each month. If you overuse the capacity you're not charged more, instead you're throttled. With Autoscale, you're charged for what you use, which could cause cost overruns if bad code is run in your dev environment. For a dev project with a tightly managed budget this might be a worthwhile trade-off.
 
