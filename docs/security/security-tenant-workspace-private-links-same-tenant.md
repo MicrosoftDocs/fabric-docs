@@ -3,7 +3,7 @@ title: Use tenant and workspace private links
 description: Learn how tenant-level and workspace-level private links interact for secure access to a Fabric workspace.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: overview
 ms.custom:
 ms.date: 08/13/2025
