@@ -20,7 +20,7 @@ Use the Fabric portal to explore the data that already exists in your Azure Cosm
 1. Run any query. For example, use `SELECT COUNT(1) FROM container` to count the number of items in the container.
 
     > [!NOTE]
-    > All the reads on source database are routed to Azure and consumes Request Units (RUs) allocated on the account.  
+    > All the reads on the source database are routed to Azure and consume Request Units (RUs) allocated on the account.  
 
 ## Analyze the target mirrored database
 
