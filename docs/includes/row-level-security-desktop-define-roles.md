@@ -1,3 +1,13 @@
+---
+title: Include file for roles and rules in Power BI Desktop
+description: Include file for roles and rules in Power BI Desktop. This include file will be referenced in the content where roles and rules in Power BI Desktop are used.
+author: billmath
+ms.author: billmath
+ms.topic: include
+ms.custom: 
+ms.date: 10/22/2025
+---
+
 ## Define roles and rules in Power BI Desktop
 
 You can define roles and rules within Power BI Desktop. With this editor, you can toggle between using the default drop-down interface and a DAX interface.  When you publish to Power BI, you also publish the role definitions.
