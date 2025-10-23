@@ -266,7 +266,7 @@ Direct Lake on OneLake table storage mode is in public preview. Enable the tenan
 |Shortcuts in a lakehouse can be used as data sources for semantic model tables.     |Not supported during public preview         |Supported         |
 |Create Direct Lake models in personal workspaces (My Workspace).     |Not supported         |Not supported         |
 |Deployment pipeline rules to rebind data source.   |Not supported directly - can create a parameter expression to use in the connection string.   |Supported   |
-|Adding a table from the same data source twice.   |Not supported in Power BI Desktop or web modeling. It is possible in XMLA-based external tools.  |Not supported in Power BI Desktop or web modeling. It is possible in XMLA-based external tools. |
+|Adding multiple tables from the same data source table.   |Not supported in Power BI Desktop or web modeling. It is possible to add multiple tables from the same data source table using XMLA-based external tools. Using **Edit tables** in Power BI tooling and **refresh** result in an error with multiple tables from the same data source table in the semantic model.  |Not supported in Power BI Desktop or web modeling. It is possible to add multiple tables from the same data source table using XMLA-based external tools. Using **Edit tables** in Power BI tooling and **refresh** result in an error with multiple tables from the same data source table in the semantic model. |
 
 - Analyze in Excel pivot tables (and other MDX clients) have the same limitations as DirectQuery with Direct Lake tables in the semantic model. Session-scoped MDX statements, such as named sets, calculated members, default members, etc. are not supported. Query-scoped MDX statements, such as the 'WITH' clause, are supported. Direct Lake table user-defined hierarchies are not supported. Import table user-defined hierarchies are supported even with Direct Lake tables in the semantic model.
 
@@ -280,6 +280,8 @@ Direct Lake on OneLake table storage mode is in public preview. Enable the tenan
 
 - Creating reports with a live connection is supported for all semantic models, when the report author has at least build access.
 
+- Direct Lake on SQL connection expression in the semantic model must refer to the SQL analytics endpoint by GUID, not by friendly name, to use **Edit tables** and **refresh** operations in Power BI Desktop and Power BI web modeling. The connection expression can be updated in TMDL view or XMLA based external tools. The GUID is available in the URL when viewing the SQL analytics endpoint in the browser.
+  
 ## Related content
 
 - [Develop Direct Lake semantic models](direct-lake-develop.md)
