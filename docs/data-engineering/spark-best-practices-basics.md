@@ -117,21 +117,21 @@ Be cautious with Python UDFs. Each executor launches a separate Python process, 
 
     Sample log4j usage in PySpark:
     
-        ```python
-        import traceback
-        # Get log4j logger
-        log4jLogger = spark._jvm.org.apache.log4j
-        logger = log4jLogger.LogManager.getLogger("PySparkLogger")
-        logger.info("Application started.")
-        try:
-           # Create DataFrame with 20 records
-           data = [(f"Name{i}", i) for i in range(1, 21)]  # 20 records
-           df = spark.createDataFrame(data, ["name", "age"])
-           logger.info("DataFrame created successfully with 20 records.")
-           df.show(s)  # 's' is not defined -> will throw error but the application will not fail
-        except Exception as e:
-           logger.error(f"Error while creating or showing DataFrame: {str(e)}\n{traceback.format_exc()}")
-        ```
+    ```python
+    import traceback
+    # Get log4j logger
+    log4jLogger = spark._jvm.org.apache.log4j
+    logger = log4jLogger.LogManager.getLogger("PySparkLogger")
+    logger.info("Application started.")
+    try:
+        # Create DataFrame with 20 records
+        data = [(f"Name{i}", i) for i in range(1, 21)]  # 20 records
+        df = spark.createDataFrame(data, ["name", "age"])
+        logger.info("DataFrame created successfully with 20 records.")
+        df.show(s)  # 's' is not defined -> will throw error but the application will not fail
+    except Exception as e:
+        logger.error(f"Error while creating or showing DataFrame: {str(e)}\n{traceback.format_exc()}")
+    ```
 
 1. Centralize error monitoring:
     
