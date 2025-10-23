@@ -3,7 +3,7 @@ title: Set up and use a tenant-level private link
 description: Learn how to set up and use private links to provide secure access to Fabric.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.custom: video--3yFtlZBpqs, sfi-image-nochange
 ms.date: 08/13/2025
