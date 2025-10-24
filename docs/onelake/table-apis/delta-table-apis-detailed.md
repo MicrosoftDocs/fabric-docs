@@ -40,27 +40,27 @@ List schemas within a Fabric data item.
 
 - **Response**
 
-    ```json
-    200 OK
-    {
-	"schemas": [
-		{
-			"name": "dbo",
-			"catalog_name": "testlh.Lakehouse",
-			"full_name": "testlh.Lakehouse.dbo",
-			"created_at": 1759768029062,
-			"updated_at": 1759768029062,
-			"comment": null,
-			"properties": null,
-			"owner": null,
-			"created_by": null,
-			"updated_by": null,
-			"schema_id": null
-		}
-	],
-	"next_page_token": null
-    }
-    ```
+```json
+200 OK
+{
+"schemas": [
+	{
+		"name": "dbo",
+		"catalog_name": "testlh.Lakehouse",
+        "full_name": "testlh.Lakehouse.dbo",
+		"created_at": 1759768029062,
+		"updated_at": 1759768029062,
+		"comment": null,
+		"properties": null,
+		"owner": null,
+		"created_by": null,
+		"updated_by": null,
+		"schema_id": null
+	}
+],
+"next_page_token": null
+}
+```
 ### List tables
 
 List tables within a given schema.
@@ -74,31 +74,31 @@ List tables within a given schema.
 
 - **Response**
 
-    ```json
-    200 OK
+```json
+200 OK
+{
+"tables": [
     {
-	"tables": [
-		{
-			"name": "product_table",
-			"catalog_name": "testlh.Lakehouse",
-			"schema_name": "dbo",
-			"table_type": null,
-			"data_source_format": "DELTA",
-			"columns": null,
-			"storage_location": "https://onelake.dfs.fabric.microsoft.com/.../.../Tables/product_table",
-			"comment": null,
-			"properties": null,
-			"owner": null,
-			"created_at": null,
-			"created_by": null,
-			"updated_at": null,
-			"updated_by": null,
-			"table_id": null
-		}
-	],
-	"next_page_token": null
+        "name": "product_table",
+        "catalog_name": "testlh.Lakehouse",
+        "schema_name": "dbo",
+        "table_type": null,
+        "data_source_format": "DELTA",
+        "columns": null,
+        "storage_location": "https://onelake.dfs.fabric.microsoft.com/.../.../Tables/product_table",
+        "comment": null,
+        "properties": null,
+        "owner": null,
+        "created_at": null,
+        "created_by": null,
+        "updated_at": null,
+        "updated_by": null,
+        "table_id": null
     }
-    ```
+],
+"next_page_token": null
+}
+```
 
 ### Get table
 
