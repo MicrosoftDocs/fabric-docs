@@ -106,10 +106,10 @@ Get table details for a given table. Here `<FullTableName>` is `DataItemName.Dat
 
 **Request**
 
-    ```
-    GET <BaseUrl>/<Workspace>/<DataItem>/api/2.1/unity-catalog/tables/<FullTableName>`
-    Authorization: Bearer <Token>
-    ```
+```
+GET <BaseUrl>/<Workspace>/<DataItem>/api/2.1/unity-catalog/tables/<FullTableName>`
+Authorization: Bearer <Token>
+```
 
 **Response**
 
