@@ -53,7 +53,7 @@ To use these APIs, you first need to gather the following pieces of information:
 Learn [how to get started with the OneLake table API endpoint to interact with Iceberg tables in OneLake](./onelake-iceberg-table-apis.md). Initially, read-only metadata table operations are supported, and we plan to add more operations soon.
 
 > [!NOTE]
-> Before using the Iceberg APIs, be sure you have Delta Lake to Iceberg metadata conversion enabled for your tenant or workspace. Review the[instructions to learn how to enable automatic Delta Lake to Iceberg table format conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
+> Before using the Iceberg APIs, be sure you have Delta Lake to Iceberg metadata conversion enabled for your tenant or workspace. Review the [instructions to learn how to enable automatic Delta Lake to Iceberg table format conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
 
 ## Delta Lake REST API operations on OneLake
 
