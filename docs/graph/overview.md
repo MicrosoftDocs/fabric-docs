@@ -119,10 +119,18 @@ For more information on pricing and capacity units, see [Microsoft Fabric pricin
 
 Graph in Microsoft Fabric is rolling out to new Fabric regions every week. It's currently available in the following regions:
 
+- Australia East
+- Canada Central
+- Central US
+- East US
 - East US 2
 - North Central US
-- West Europe
+- North Europe
+- Norway East
+- Poland Central
 - UK South
+- West Europe
+- West US 2
 
 If you would like to be notified when the service is available in your region, fill out this [form](https://forms.office.com/r/zkFLe8M8gP).
 

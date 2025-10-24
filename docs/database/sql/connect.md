@@ -21,7 +21,7 @@ You can connect to and query your [SQL database in Fabric](overview.md) in all t
 - Create or use an existing SQL database in Fabric.
     - If you don't have one already, [create a new SQL database in Fabric](create.md).
 <!--    - During the current preview, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups). -->
-- Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. For more information, see [Connection policy](limitations.md#connection-policy).
+- Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Default**. For more information, see [Connection policy](limitations.md#connection-policy).
 
 ## Query editor in the Fabric portal
 

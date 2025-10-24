@@ -43,9 +43,15 @@ CRUD stands for Create, Read, Update, and Delete, which are the four basic opera
 
 The primary online reference documentation for Microsoft Fabric REST APIs can be found in the [Microsoft Fabric REST API documentation](/rest/api/fabric/articles/).
 
+### Additional APIs offered in Apache Airflow Jobs
+
+In addition to CRUD APIs, there are a series of additional operational APIs offered for Apache Airflow Jobs:
+
+- **Job File Management APIs**
+
 ## Get started with REST APIs for Apache Airflow Jobs
 
-The following examples show how to to create, update, and manage Apache Airflow Jobs using the Fabric Data Factory APIs.
+The following documentations outlines how to create, update, and manage Apache Airflow Jobs and operational use cases using the Fabric Data Factory APIs.
 
 ## Obtain an authorization token
 
@@ -335,6 +341,71 @@ Deletes the specified Apache Airflow Job.
 
 ```rest
 200 OK
+```
+
+## Job File Management APIs
+
+### Get Apache Airflow Job File
+
+Returns job file from Apache Airflow by path.
+
+**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}```
+
+**Sample Results**:
+
+```rest
+200 OK
+```
+
+### Create/Update Apache Airflow Job File
+
+Creates or updates an Apache Airflow Job file.
+
+**Request URI**: ```PUT https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}```
+
+**Request Payload**:
+
+```rest
+Binary 
+PYTHON files (DAGs), should be UTF-8 encoded
+```
+
+**Sample Results**:
+
+```rest
+200 OK
+```
+
+### Delete Apache Airflow Job File
+
+Deletes the specified Apache Airflow Job file.
+
+**Request URI**: ```DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}```
+
+**Sample Results**:
+
+```rest
+200 OK
+```
+
+### List Apache Airflow Job Files
+
+Lists the files the specified Apache Airflow Job file.
+
+**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files?rootPath=”my_folder”&continuationToken={token}```
+
+Note that rootPath and continutationToken are optional.
+
+**Sample Results**:
+
+```rest
+{
+"files": [
+{ filePath:string, sizeInBytes: int },
+  ],
+ "continuationToken": "LDEsMTAwMDAwLDA%3D "
+"continuationUri": "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files?continuationToken='LDEsMTAwMDAwLDA%3D'"
+}  
 ```
 
 ## Service Principal Name (SPN) Support

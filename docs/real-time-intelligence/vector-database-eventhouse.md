@@ -173,7 +173,7 @@ To call Azure OpenAI embedding API you need an endpoint.
 
 | Variable name | Value |
 |---|---|
-| endpoint |This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). Alternatively, you can find the value in the **[Azure AI Foundry](https://oai.azure.com/) > Playground > Code View**. An example endpoint is: `https://docs-test-001.openai.azure.com/`. |
+| endpoint |This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://portal.azure.com/). Alternatively, you can find the value in the **[Azure AI Foundry](https://oai.azure.com/) > Playground > Code View**. An example endpoint is: `https://docs-test-001.openai.azure.com/`. |
 
 Use the information in the table when running the Azure OpenAI cells.
 

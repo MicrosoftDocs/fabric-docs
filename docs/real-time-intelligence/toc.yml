@@ -759,7 +759,7 @@ items:
     items:
     - name: Anomaly detection using Real-Time Intelligence
       items:
-      - name: Overview of anomaly detection
+      - name: Set up anomaly detection
         href: anomaly-detection.md
       - name: Anomaly detection models
         href: anomaly-detection-models.md

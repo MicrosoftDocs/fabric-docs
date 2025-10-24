@@ -58,6 +58,10 @@ Here are some insights you can take from the example:
 * Select a single item, such as an *Eventhouse item*, breaks down the CU usage by operations.
 * The utilization graph, on the right side of the app, shows nearly 100% CU usage over time. This high utilization can explain query throttling experienced by users and indicates a need to increase the capacity units.
 
+> [!NOTE]
+> To better understand your Eventhouse compute size see [Understand Eventhouse compute usage](/eventhouse-compute-observability.md).
+
+
 ## Storage billing
 
 Storage is billed separately from your Fabric or Power BI Premium Capacity units. Data ingested into a KQL database is stored in two tiers of storage: OneLake Cache Storage, and OneLake Standard Storage.
