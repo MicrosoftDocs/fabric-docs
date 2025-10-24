@@ -111,7 +111,7 @@ Be cautious with Python UDFs. Each executor launches a separate Python process, 
 
 1. Wrap reads, writes, and transformations in try and except blocks. Use `logger.error` for exceptions and `logger.info` for progress messages.
 
-    - **Python logging:** Ideal for logging operations, status updates, or debugging information from code that executes only on the Spark Driver. Python's logging module doesn't propagate to executor logs. Reference: /fabric/data-engineering/author-execute-notebook#python-logging-in-a-notebook
+    - **Python logging:** Ideal for logging operations, status updates, or debugging information from code that executes only on the Spark Driver. Python's logging module doesn't propagate to executor logs. See the [develop, execute, and manage notebooks documentation](./author-execute-notebook.md#python-logging-in-a-notebook).
     
     - **Spark log4j:** The standard for robust, production-level application logging in Spark as it integrates natively with Spark's driver/executor logs.
     
