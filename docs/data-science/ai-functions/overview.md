@@ -346,7 +346,7 @@ display(similarity)
 
 ---
 
-:::image type="content" source="../../media/ai-functions/similarity-pairwise-example-output.png" alt-text="Screenshot showing a data frame with a 'names' column, a 'companies' column, and a 'similarity' column. The 'similarity' column contains similarity scores for each name  for the corresponding value in the 'companies' column" lightbox="../../media/ai-functions/similarity-pairwise-example-output.png":::
+:::image type="content" source="../media/ai-functions/similarity-pairwise-example-output.png" alt-text="Screenshot showing a data frame with a 'names' column, a 'companies' column, and a 'similarity' column. The 'similarity' column contains similarity scores for each name  for the corresponding value in the 'companies' column" lightbox="../media/ai-functions/similarity-pairwise-example-output.png":::
 
 ### Summarize text with ai.summarize
 
