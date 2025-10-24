@@ -13,9 +13,9 @@ ms.topic: concept-article
 
 OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This article describes how to get started using this endpoint to interact with Delta APIs available at this endpoint for metadata read operations. These operations are compatible with [Unity Catalog API open standard.](https://github.com/unitycatalog/unitycatalog/tree/main/api)
 
-For overall OneLake table API guidance and prerequisite guidance, see the [OneLake table API overview](./onelake-table-apis.md).
+For overall OneLake table API guidance and prerequisite guidance, see the [OneLake table API overview](./table-apis-overview.md).
 
-For detailed API documentation, see the [Getting started guide](./delta-table-apis-examples.md#example-requests-and-responses). 
+For detailed API documentation, see the [Getting started guide](./delta-table-apis-getting-started.md#example-requests-and-responses). 
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -35,7 +35,7 @@ https://onelake.table.fabric.microsoft.com/delta
 
 ## Delta table API operations
 
-The following Delta API operations are currently supported at this endpoint. Detailed guidance for these operations is available in the [Getting started guide](./delta-table-apis-examples.md#example-requests-and-responses).
+The following Delta API operations are currently supported at this endpoint. Detailed guidance for these operations is available in the [Getting started guide](./delta-table-apis-getting-started.md#example-requests-and-responses).
 
 - **List schemas**
     
@@ -83,5 +83,5 @@ The use of the OneLake table APIs for Delta are subject to the following limitat
 
 ## Related content
 
-- Learn more about [OneLake table APIs](./onelake-table-apis.md).
-- See [detailed guidance and API details](./delta-table-apis-examples.md).
+- Learn more about [OneLake table APIs](./table-apis-overview.md).
+- See [detailed guidance and API details](./delta-table-apis-getting-started.md).
