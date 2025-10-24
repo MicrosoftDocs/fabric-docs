@@ -12,7 +12,6 @@ ms.search.form: AI functions
 
 # Use ai.generate_response with PySpark
 
-
 The `ai.generate_response` function uses generative AI to generate custom text responses that are based on your own instructions, with a single line of code.
 
 > [!NOTE]
@@ -93,12 +92,13 @@ responses = df.ai.generate_response(prompt="Write a short, punchy email subject 
 display(responses)
 ```
 
+---
+
 The example code cell with a simple prompt provides the following output:
 :::image type="content" source="../../media/ai-functions/generate-response-simple-example-output.png" alt-text="Screenshot showing a data frame with a 'product' column and a 'response' column. The 'response' column contains a punchy subject line for the product in the corresponding row." lightbox="../../media/ai-functions/generate-response-simple-example-output.png":::
 
 The example code cell with a template prompt provides the following output:
 :::image type="content" source="../../media/ai-functions/generate-response-template-example-output.png" alt-text="Screenshot showing a data frame with all the columns specified along with a 'response column'. The 'response' column contains a punchy subject line for the product in the 'product' column." lightbox="../../media/ai-functions/generate-response-template-example-output.png":::
-
 
 ## Related content
 

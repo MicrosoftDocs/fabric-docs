@@ -19,7 +19,6 @@ Microsoft Fabric AI Functions enable all business professionals (from developers
 
 AI functions use industry-leading large language models (LLMs) for summarization, classification, text generation, and more. With a single line of code, you can:
 
-
 - [`ai.analyze_sentiment`](#detect-sentiment-with-aianalyze_sentiment): Detect the emotional state of input text.
 - [`ai.classify`](#categorize-text-with-aiclassify): Categorize input text according to your labels.
 - [`ai.extract`](#extract-entities-with-aiextract): Extract specific types of information from input text (e.g., locations or names).
@@ -41,19 +40,30 @@ You can incorporate these functions as part of data science and data engineering
 >
 > - AI functions are supported in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
  > - Unless you configure a different model, AI functions default to *gpt-4.1-mini*. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
-> - Most of the AI functions are optimized for use on English-language texts.
+> - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts."
 
 ## Getting started with AI functions
 
 AI Functions can be used with pandas (Python and PySpark runtimes), and with PySpark (PySpark runtime). The required installation and import steps for each are outlined below, followed by the corresponding commands.
+
 ### Install dependencies
+
 - Pandas (Python runtime) 
-    - `synapseml_internal` and `synapseml_core` whl files installation required (commands provided below)
-    - `openai` package installation required (command provided below)
-- Pandas (PySpark runtime) 
-    - `openai` package installation required (command provided below)
+  - `synapseml_internal` and `synapseml_core` whl files installation required (commands provided below)
+  - `openai` package installation required (command provided below)
+- Pandas (PySpark runtime)
+  - `openai` package installation required (command provided below)
 - PySpark (PySpark runtime)
-    - No installation required
+  - No installation required
+
+# [pandas (PySpark runtime)](#tab/pandas-pyspark)
+
+```python
+# The pandas AI functions package requires OpenAI version 1.99.5 or later
+%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
+
+# AI functions are preinstalled on the Fabric PySpark runtime
+```
 
 # [pandas (Python runtime)](#tab/pandas-python)
 
@@ -67,16 +77,9 @@ AI Functions can be used with pandas (Python and PySpark runtimes), and with PyS
 
 ```
 
-# [pandas (PySpark runtime)](#tab/pandas-pyspark)
+---
 
-```python
-# The pandas AI functions package requires OpenAI version 1.99.5 or later
-%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
-
-# AI functions are preinstalled on the Fabric PySpark runtime
-```
-
-### Import required libraries 
+### Import required libraries
 
 The following code cell imports the AI functions library and its dependencies.
 
@@ -108,8 +111,6 @@ Each of the following functions allows you to invoke the built-in AI endpoint in
 ### Detect sentiment with ai.analyze_sentiment
 
 The `ai.analyze_sentiment` function invokes AI to identify whether the emotional state expressed by input text is positive, negative, mixed, or neutral. If AI can't make this determination, the output is left blank. For more detailed instructions about the use of `ai.analyze_sentiment` with pandas, see [this article](./pandas/analyze-sentiment.md). For `ai.analyze_sentiment` with PySpark, see [this article](./pyspark/analyze-sentiment.md).
-
-#### Sample usage
 
 # [pandas](#tab/pandas)
 
@@ -147,11 +148,11 @@ display(sentiment)
 
 ---
 
+:::image type="content" source="../../media/ai-functions/analyze-sentiment-example-output.png" alt-text="Screenshot showing a data frame with a 'reviews' column and a 'sentiment' column. the 'sentiment' column contains values 'negative', 'positive', 'mixed', and 'neutral', according to the emotional state of the review in the corresponding row." lightbox="../../media/ai-functions/analyze-sentiment-example-output.png":::
+
 ### Categorize text with ai.classify
 
 The `ai.classify` function invokes AI to categorize input text according to custom labels you choose. For more information about the use of `ai.classify` with pandas, go to [this article](./pandas/classify.md). For `ai.classify` with PySpark, see [this article](./pyspark/classify.md).
-
-#### Sample usage
 
 # [pandas](#tab/pandas)
 
@@ -187,11 +188,11 @@ display(categories)
 
 ---
 
+:::image type="content" source="../../media/ai-functions/classify-example-output.png" alt-text="Screenshot showing a data frame with a 'descriptions' column and a 'category' column. the 'category' column contains the category name of the description in the corresponding row." lightbox="../../media/ai-functions/classify-example-output.png":::
+
 ### Extract entities with ai.extract
 
 The `ai.extract` function invokes AI to scan input text and extract specific types of information that are designated by labels you choose (for example, locations or names). For more detailed instructions about the use of `ai.extract` with pandas, see [this article](./pandas/extract.md). For `ai.extract` with PySpark, see [this article](./pyspark/extract.md).
-
-#### Sample usage
 
 # [pandas](#tab/pandas)
 
@@ -225,11 +226,11 @@ display(df_entities)
 
 ---
 
+:::image type="content" source="../../media/ai-functions/extract-example-output.png" alt-text="Screenshot showing a new data frame with a 'name' column, a 'profession' column,  and a 'city' column. Each column contains the corresponding data extracted from the original data frame." lightbox="../../media/ai-functions/extract-example-output.png":::
+
 ### Fix grammar with ai.fix_grammar
 
 The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and punctuation of input text. For more detailed instructions about the use of `ai.fix_grammar` with pandas, see [this article](./pandas/fix-grammar.md). For `ai.fix_grammar` with PySpark, see [this article](./pyspark/fix-grammar.md).
-
-#### Sample usage
 
 # [pandas](#tab/pandas)
 
@@ -265,11 +266,55 @@ display(corrections)
 
 ---
 
+:::image type="content" source="../../media/ai-functions/fix-grammar-example-output.png" alt-text="Screenshot showing a  data frame with a 'text' column and a 'corrections' column which has the text from the text column with corrected grammar." lightbox="../../media/ai-functions/fix-grammar-example-output.png":::
+
+### Answer custom user prompts with ai.generate_response
+
+The `ai.generate_response` function invokes AI to generate custom text based on your own instructions. For more detailed instructions about the use of `ai.generate_response` with pandas, see [this article](./pandas/generate-response.md). For `ai.generate_response` with PySpark, see [this article](./pyspark/generate-response.md).
+
+# [pandas](#tab/pandas)
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+
+df = pd.DataFrame([
+        ("Scarves"),
+        ("Snow pants"),
+        ("Ski goggles")
+    ], columns=["product"])
+
+df["response"] = df.ai.generate_response("Write a short, punchy email subject line for a winter sale.")
+display(df)
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+
+df = spark.createDataFrame([
+        ("Scarves",),
+        ("Snow pants",),
+        ("Ski goggles",)
+    ], ["product"])
+
+responses = df.ai.generate_response(prompt="Write a short, punchy email subject line for a winter sale.", output_col="response")
+display(responses)
+```
+
+---
+
+Simple prompt sample output:
+:::image type="content" source="../../media/ai-functions/generate-response-simple-example-output.png" alt-text="Screenshot showing a data frame with a 'product' column and a 'response' column. The 'response' column contains a punchy subject line for the product in the corresponding row." lightbox="../../media/ai-functions/generate-response-simple-example-output.png":::
+
+Template prompt sample output:
+:::image type="content" source="../../media/ai-functions/generate-response-template-example-output.png" alt-text="Screenshot showing a data frame with all the columns specified along with a 'response column'. The 'response' column contains a punchy subject line for the product in the 'product' column." lightbox="../../media/ai-functions/generate-response-template-example-output.png":::
+
 ### Calculate similarity with ai.similarity
 
 The `ai.similarity` function compares each input text value either to one common reference text or to the corresponding value in another column (pairwise mode). The output similarity score values are relative, and they can range from `-1` (opposites) to `1` (identical). A score of `0` indicates that the values are unrelated in meaning. For more detailed instructions about the use of `ai.similarity` with pandas, see [thi article](./pandas/similarity.md). For `ai.similarity` with PySpark, see [this article](./pyspark/similarity.md).
-
-#### Sample usage
 
 # [pandas](#tab/pandas)
 
@@ -305,11 +350,15 @@ display(similarity)
 
 ---
 
+Single value sample output:
+:::image type="content" source="../../media/ai-functions/similarity-single-example-output.png" alt-text="Screenshot showing a data frame with a 'name' column and a 'similarity' column. The 'similarity' column contains similarity scores for each input text row." lightbox="../../media/ai-functions/similarity-single-example-output.png":::
+
+Pairwise values sample output:
+:::image type="content" source="../../media/ai-functions/similarity-pairwise-example-output.png" alt-text="Screenshot showing a data frame with a 'names' column, a 'companies' column, and a 'similarity' column. The 'similarity' column contains similarity scores for each name  for the corresponding value in the 'companies' column" lightbox="../../media/ai-functions/similarity-pairwise-example-output.png":::
+
 ### Summarize text with ai.summarize
 
 The `ai.summarize` function invokes AI to generate summaries of input text (either values from a single column of a DataFrame, or row values across all the columns). For more detailed instructions about the use of `ai.summarize` with pandas, see [this article](./pandas/summarize.md). For `ai.summarize` with PySpark, see [this article](./pyspark/summarize.md).
-
-#### Sample usage
 
 # [pandas](#tab/pandas)
 
@@ -363,11 +412,15 @@ display(summaries)
 
 ---
 
+Single column sample output:
+:::image type="content" source="../../media/ai-functions/summarize-single-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the 'description' column only, in the corresponding row." lightbox="../../media/ai-functions/summarize-single-example-output.png":::
+
+All columns sample output:
+:::image type="content" source="../../media/ai-functions/summarize-all-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the information across all the columns in the corresponding row." lightbox="../../media/ai-functions/summarize-all-example-output.png":::
+
 ### Translate text with ai.translate
 
 The `ai.translate` function invokes AI to translate input text to a new language of your choice. For more detailed instructions about the use of `ai.translate` with pandas, see [this article](./pandas/translate.md). For `ai.translate` with PySpark, see [this article](./pyspark/translate.md).
-
-#### Sample usage
 
 # [pandas](#tab/pandas)
 
@@ -403,43 +456,7 @@ display(translations)
 
 ---
 
-### Answer custom user prompts with ai.generate_response
-
-The `ai.generate_response` function invokes AI to generate custom text based on your own instructions. For more detailed instructions about the use of `ai.generate_response` with pandas, see [this article](./pandas/generate-response.md). For `ai.generate_response` with PySpark, see [this article](./pyspark/generate-response.md).
-
-#### Sample usage
-
-# [pandas](#tab/pandas)
-
-```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
-
-df = pd.DataFrame([
-        ("Scarves"),
-        ("Snow pants"),
-        ("Ski goggles")
-    ], columns=["product"])
-
-df["response"] = df.ai.generate_response("Write a short, punchy email subject line for a winter sale.")
-display(df)
-```
-
-# [PySpark](#tab/pyspark)
-
-```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
-
-df = spark.createDataFrame([
-        ("Scarves",),
-        ("Snow pants",),
-        ("Ski goggles",)
-    ], ["product"])
-
-responses = df.ai.generate_response(prompt="Write a short, punchy email subject line for a winter sale.", output_col="response")
-display(responses)
-```
+:::image type="content" source="../../media/ai-functions/translate-example-output.png" alt-text="Screenshot showing a data frame with a 'text' column and a 'translations' column. The 'translations' column contains the English text in the 'text' column, translated in Spanish." lightbox="../../media/ai-functions/translate-example-output.png":::
 
 ## Related content
 

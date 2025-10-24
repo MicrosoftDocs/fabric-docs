@@ -12,7 +12,6 @@ ms.search.form: AI functions
 
 # Use ai.summarize with pandas
 
-
 The `ai.summarize` function uses generative AI to produce summaries of input text, with a single line of code. The function can either summarize values from one column of a DataFrame or values across all the columns.
 
 > [!NOTE]
@@ -102,12 +101,11 @@ df["summaries"] = df.ai.summarize()
 display(df)
 ```
 
-The example code cell with a single value provides the following output:
+The example code cell with a single column provides the following output:
 :::image type="content" source="../../media/ai-functions/summarize-single-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the 'description' column only, in the corresponding row." lightbox="../../media/ai-functions/summarize-single-example-output.png":::
 
-The example code cell with pairwise values provides the following output:
+The example code cell with all columns provides the following output:
 :::image type="content" source="../../media/ai-functions/summarize-all-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the information across all the columns in the corresponding row." lightbox="../../media/ai-functions/summarize-all-example-output.png":::
-
 
 ## Related content
 

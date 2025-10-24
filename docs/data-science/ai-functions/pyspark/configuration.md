@@ -19,7 +19,6 @@ AI functions are designed to work out of the box, with the underlying model and 
 >
 > - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with the built-in AI endpoint in Fabric.
 
 > [!NOTE]
 > - This article covers customizing AI functions with PySpark. To customize AI functions with pandas, see [this article](../pandas/configuration.md).
@@ -31,11 +30,40 @@ If you're working with AI functions in PySpark, you can use the `OpenAIDefaults`
 
 | Parameter | Description | Default |
 |---|---|---|
-| `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. This value must be set per individual AI function call. | `50` |
+| `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. This value must be set per individual AI function call. In spark, this concurrency value is for each worker. | `50` |
 | `deployment_name` | A string value that designates the name of the underlying model. You can choose from [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). This can also be set to a custom model deployment in Azure OpenAI or Azure AI Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Azure AI Foundry portal, the value appears on the **Deployments** page.  | `gpt-4.1-mini` |
-| `temperature` | A numeric value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. | `0.0` |
+| `reasoning_effort` | Part of OpenAIDefaults. Used by gpt-5 series models for amount of reasoning tokens it should use. Can be set to None or a string value of "minimal", "low", "medium", or "high". | None |
 | `subscription_key` | An API key used for authentication with your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. | N/A |
+| `temperature` | A numeric value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. | `0.0` |
+| `top_p` | Part of OpenAIDefaults. A [float](https://docs.python.org/3/library/functions.html#float) between 0 and 1. A lower value (e.g., 0.1) restricts the model to consider only the most probable tokens, making the output more deterministic. A higher value (e.g., 0.9) allows for more diverse and creative outputs by including a broader range of tokens. | None |
 | `URL`| A URL that designates the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: `https://your-openai-endpoint.openai.azure.com/`. | N/A |
+| `verbosity` | Part of OpenAIDefaults. Used by gpt-5 series models for output length. Can be set to None or a string value of "low", "medium", or "high". | None |
+
+The following code sample shows how to configure `concurrency` for an individual function call.
+
+```python
+df = spark.createDataFrame([
+        ("There are an error here.",),
+        ("She and me go weigh back. We used to hang out every weeks.",),
+        ("The big picture are right, but you're details is all wrong.",)
+    ], ["text"])
+
+results = df.ai.fix_grammar(input_col="text", output_col="corrections", concurrency=200)
+display(results)
+```
+
+The following code sample shows how to configure the `gpt-5` model for all functions.
+
+```python
+from synapse.ml.services.openai import OpenAIDefaults
+defaults = OpenAIDefaults()
+
+defaults.set_deployment_name("gpt-5")
+defaults.reset_temperature()  # gpt-5 does not take temperature as a parameter
+defaults.reset_top_p()  # gpt-5 does not take temperature as a parameter
+defaults.set_verbosity("medium")
+defaults.set_reasoning_effort("low")
+```
 
 You can retrieve and print each of the `OpenAIDefaults` parameters with the following code sample:
 

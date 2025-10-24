@@ -14,10 +14,15 @@ ms.search.form: AI functions
 
 AI functions are designed to work out of the box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
 
+> [!IMPORTANT]
+> This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
+>
+> - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
+
 > [!NOTE]
 > - This article covers customizing AI functions with pandas. To customize AI functions with PySpark, see [this article](../pyspark/configuration.md).
 > - See additional AI functions in [this overview article](../overview.md).
-> - > - Learn how to customize the [configuration of AI functions](./configuration.md).
 
 ## Configurations
 
@@ -25,12 +30,16 @@ By default, AI functions are powered by the built-in AI endpoint in Fabric. The 
 
 | Parameter | Description | Default |
 |---|---|---|
-| `model_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI functions. You can choose from the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). | `gpt-4.1-mini` |
-| `embedding_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` |
-| `temperature`<br> Optional | A [float](https://docs.python.org/3/library/functions.html#float) between `0.0` and `1.0` that designates the temperature of the underlying model. Higher temperatures increase the randomness or creativity of the model's outputs. | `0.0` |
-| `seed`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the seed to use for the response of the underlying model. The default behavior randomly picks a seed value for each row. The choice of a constant value improves the reproducibility of your experiments. | `openai.NOT_GIVEN` |
-| `timeout`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a time-out error. By default, there's no timeout. | None |
 | `concurrency`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. | `200` |
+| `embedding_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` |
+| `model_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI functions. You can choose from the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). | `gpt-4.1-mini` |
+| `reasoning_effort`<br> Optional | Used by gpt-5 series models for amount of reasoning tokens it should use. Can be set to `openai.NOT_GIVEN` or a string value of "minimal", "low", "medium", or "high". | `openai.NOT_GIVEN` |
+| `seed`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the seed to use for the response of the underlying model. The default behavior randomly picks a seed value for each row. The choice of a constant value improves the reproducibility of your experiments. | `openai.NOT_GIVEN` |
+| `temperature`<br> Optional | A [float](https://docs.python.org/3/library/functions.html#float) between `0.0` and `1.0` that designates the temperature of the underlying model. Higher temperatures increase the randomness or creativity of the model's outputs. | `0.0` |
+| `timeout`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a time-out error. By default, there's no timeout. | None |
+| `top_p`<br> Optional | A [float](https://docs.python.org/3/library/functions.html#float) between 0 and 1. A lower value (e.g., 0.1) restricts the model to consider only the most probable tokens, making the output more deterministic. A higher value (e.g., 0.9) allows for more diverse and creative outputs by including a broader range of tokens. | `openai.NOT_GIVEN` |
+| `use_progress_bar`<br> Optional | Show tqdm progress bar for AI function progress over input data. Uses tqdm under the hood. Boolean value which can be set to `True` or `False`. | `True` |
+| `verbosity`<br> Optional | Used by gpt-5 series models for output length. Can be set to `openai.NOT_GIVEN` or a string value of "low", "medium", or "high". | `openai.NOT_GIVEN` |
 
 > [!TIP]
 > - Setting *concurrency* to higher values can speed up processing time (if your capacity can accommodate it). 

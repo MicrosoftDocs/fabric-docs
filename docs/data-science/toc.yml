@@ -53,7 +53,7 @@ items:
       href: ./ai-functions/pandas/summarize.md
     - name: ai.translate
       href: ./ai-functions/pandas/translate.md
-    - name: Customize AI function configurations
+    - name: Custom configurations
       href: ./ai-functions/pandas/configuration.md
   - name: PySpark
     items: 
@@ -73,7 +73,7 @@ items:
       href: ./ai-functions/pyspark/summarize.md
     - name: ai.translate
       href: ./ai-functions/pyspark/translate.md
-    - name: Customize AI function configurations
+    - name: Custom configurations
       href: ./ai-functions/pyspark/configuration.md
 - name: Fabric data agent
   items: 
