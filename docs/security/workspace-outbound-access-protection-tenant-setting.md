@@ -5,13 +5,13 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to
-ms.date: 08/20/2025
+ms.date: 09/24/2025
 
 #customer intent: As a Fabric administrator, I want to enable workspace outbound access protection on my tenant so that workspace admins can securely manage outbound network connections from their workspaces.
 
 ---
 
-# Manage admin access to workspace outbound access protection settings (preview)
+# Manage admin access to workspace outbound access protection settings
 
 Workspace outbound access protection is a network security feature that ensures that connections outside the workspace go through a secure connection between Fabric and a virtual network. It prevents the items from establishing unsecure connections to sources outside the workspace boundary unless allowed by the workspace admins.
 

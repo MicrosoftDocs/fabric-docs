@@ -103,4 +103,4 @@ This dashboard provides you with the following information:
 ## Related content
 
 - [Compare differences between Dataflow Gen1 and Gen2 in Data Factory](dataflows-gen2-overview.md)
-- [Dataflows save as draft](dataflows-gen2-save-draft.md)
+- [Save dataflows as a draft](dataflows-gen2-save-draft.md)

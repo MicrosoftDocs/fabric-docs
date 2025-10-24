@@ -37,6 +37,9 @@ See the list of [supported items](#supported-items).
 
 * Read about the best way to manage your [Git branches](./manage-branches.md).
 
+## Network security for Git integration
+Workspace-level security in Microsoft Fabric provides granular control over data access and network connectivity by allowing administrators to configure both inbound and outbound protections for individual workspaces. These controls ensure that sensitive data remains within trusted network boundaries, and they integrate with CI/CD tools like Git integration.  For more information, see [Network security for continuous integration/continuous deployment](../cicd-security.md)
+
 ## Privacy information
 
 Before you enable Git integration, make sure you review the following privacy statements:
@@ -75,7 +78,7 @@ The following items currently support Git integration:
 
   * [Copy Job](../../data-factory/cicd-copy-job.md#git-integration-for-copy-job)
   * [Dataflow gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
-  * [Data pipeline](../../data-factory/cicd-pipelines.md)
+  * [Pipeline](../../data-factory/cicd-pipelines.md)
   * [Mirrored database](../../mirroring/mirrored-database-cicd.md#mirrored-database-git-integration)
   * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric.md)
   * [Mirrored snowflake](../../mirroring/snowflake.md) *(preview)*
@@ -107,8 +110,11 @@ The following items currently support Git integration:
 
 * Database items:
 
-  * [SQL database](../../database/sql/source-control.md) *(preview)*
+  * [SQL database](../../database/sql/source-control.md)
   * [Cosmos database](../../database/cosmos-db/overview.md) *(preview)*
+
+* Graph:
+  * [Graph in Microsoft Fabric (preview)](../../graph/overview.md)
 * Industry solutions:
 
   * [Healthcare](/industry/healthcare/healthcare-data-solutions/application-lifecycle-management) *(preview)*

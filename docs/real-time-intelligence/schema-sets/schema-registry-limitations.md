@@ -30,6 +30,7 @@ Schema Registry in Fabric Real-Time Intelligence is currently in preview. This a
 - A limited set of input sources are supported. During public preview, schema registration is only available for these input sources:
     - Custom Endpoint
     - Azure SQL Change Data Capture (CDC)
+    - Azure Event Hubs
 - A limited set of destinations are supported. Today, schema-validated events can only be written to:
     - Eventhouse (Push Mode)
     - Custom App

@@ -67,9 +67,9 @@ Once the Cloud connection ID is obtained, integrate Unity Catalog tables to Fabr
 
 ### Schedule the notebook
 
-If you want to execute the notebook at regular intervals to integrate Unity Catalog Delta tables into OneLake without manual resync / rerun, you can either [schedule the notebook](../data-engineering/how-to-use-notebook.md) or utilize a [notebook activity](../data-factory/notebook-activity.md) in a data pipeline within Fabric Data Factory.
+If you want to execute the notebook at regular intervals to integrate Unity Catalog Delta tables into OneLake without manual resync / rerun, you can either [schedule the notebook](../data-engineering/how-to-use-notebook.md) or utilize a [notebook activity](../data-factory/notebook-activity.md) in a pipeline within Fabric Data Factory.
 
-In the latter scenario, if you intend to pass parameters from the data pipeline, designate the first cell of the notebook as a [toggle parameter cell](../data-engineering/author-execute-notebook.md) and provide the appropriate parameters in the pipeline.
+In the latter scenario, if you intend to pass parameters from the pipeline, designate the first cell of the notebook as a [toggle parameter cell](../data-engineering/author-execute-notebook.md) and provide the appropriate parameters in the pipeline.
 
 :::image type="content" source="media\onelake-unity-catalog\pipeline-parameters-zoom.png" alt-text="Screenshot showing notebook activity parameters." lightbox="media\onelake-unity-catalog\pipeline-parameters.png":::
 

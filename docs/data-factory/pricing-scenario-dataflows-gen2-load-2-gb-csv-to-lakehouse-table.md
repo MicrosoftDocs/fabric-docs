@@ -45,7 +45,7 @@ To accomplish this scenario, you need to create a dataflow with the following st
 :::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-1-metrics-details-3.png" alt-text="Screenshot showing details of a second Dataflow Gen2 High Scale Dataflow Compute consumption used in the run.":::
 
 
-The Dataflow Gen2 Refresh operation consumed 4749.42 CU seconds, and two High Scale Dataflows Compute operations consumed 7.78 CU seconds + 7.85 CU seconds each.
+The Dataflow Gen2 Refresh operation consumed 4749.42 CU seconds, and two High Scale Dataflow Compute operations consumed 7.78 CU seconds + 7.85 CU seconds each.
 
 > [!NOTE]
 > Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Metrics App since the CU seconds metric it also reports already accounts for its duration.
@@ -53,7 +53,7 @@ The Dataflow Gen2 Refresh operation consumed 4749.42 CU seconds, and two High Sc
 |Metric  |Compute consumption  |
 |---------|---------|
 |Dataflow Gen2 Refresh CU seconds     | 4749.42 CU seconds        |
-|High Scale Dataflows Compute CU seconds     | (7.78 + 7.85) 15.63 CU seconds        |
+|High Scale dataflow compute CU seconds     | (7.78 + 7.85) 15.63 CU seconds        |
 |Effective CU hours billed | (4749.42 + 15.63) / (60*60) = 1.32 CU hours |
 
 **Total run cost at $0.18/CU hour** = (1.32 CU-hours) * ($0.18/CU hour) ~= **$0.24**

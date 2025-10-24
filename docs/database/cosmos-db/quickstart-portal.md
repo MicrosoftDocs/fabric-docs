@@ -31,17 +31,17 @@ First, go to the Fabric portal and create a new Cosmos DB database within your w
 
 1. Select the **Create** option.
 
-    :::image source="media/quickstart-portal/create-option-full.png" lightbox="media/quickstart-portal/create-option-full.png" alt-text="Screenshot of the option to 'Create' a new resource in the Fabric portal.":::
+    :::image type="content" source="media/quickstart-portal/create-option-full.png" lightbox="media/quickstart-portal/create-option-full.png" alt-text="Screenshot of the option to 'Create' a new resource in the Fabric portal.":::
 
 1. If the option to create an **Cosmos DB** account isn't initially available, select **See all**.
 
 1. Within the **Databases** category, select **Cosmos DB (preview)**.
 
-    :::image source="media/quickstart-portal/cosmos-db-database-option.png" lightbox="media/quickstart-portal/cosmos-db-database-option-full.png" alt-text="Screenshot of the option to specifically create a Cosmos DB database in the Fabric portal.":::
+    :::image type="content" source="media/quickstart-portal/cosmos-db-database-option.png" lightbox="media/quickstart-portal/cosmos-db-database-option-full.png" alt-text="Screenshot of the option to specifically create a Cosmos DB database in the Fabric portal.":::
 
 1. Give the database a unique name and then select **Create**.
 
-    :::image source="media/quickstart-portal/database-name-dialog.png" lightbox="media/quickstart-portal/database-name-dialog-full.png" alt-text="Screenshot of the dialog to name a new Cosmos DB database in the Fabric portal.":::
+    :::image type="content" source="media/quickstart-portal/database-name-dialog.png" lightbox="media/quickstart-portal/database-name-dialog-full.png" alt-text="Screenshot of the dialog to name a new Cosmos DB database in the Fabric portal.":::
 
 1. Wait for the database creation operation to finish before proceeding to the next step\[s\].
 
@@ -53,19 +53,19 @@ Next, load a sample data set into the database using the tools in the Fabric por
 
 1. Select **Sample data** on the **Build your database** page.
 
-    :::image source="media/quickstart-portal/load-sample-data-option.png" lightbox="media/quickstart-portal/load-sample-data-option-full.png" alt-text="Screenshot of the option to load sample data into the database using the Fabric portal.":::
+    :::image type="content" source="media/quickstart-portal/load-sample-data-option.png" lightbox="media/quickstart-portal/load-sample-data-option-full.png" alt-text="Screenshot of the option to load sample data into the database using the Fabric portal.":::
 
 1. A dialog appears informing you that the import operation could take a few minutes. Select **Start** to begin importing the sample data set.
 
-    :::image source="media/quickstart-portal/sample-data-confirmation-dialog.png" lightbox="media/quickstart-portal/sample-data-confirmation-dialog-full.png" alt-text="Screenshot of the dialog to confirm that the sample data loading operation could take a few minutes in the Fabric portal.":::
+    :::image type="content" source="media/quickstart-portal/sample-data-confirmation-dialog.png" lightbox="media/quickstart-portal/sample-data-confirmation-dialog-full.png" alt-text="Screenshot of the dialog to confirm that the sample data loading operation could take a few minutes in the Fabric portal.":::
 
 1. Wait for the loading operation to finish.
 
-    :::image source="media/quickstart-portal/sample-data-loading-dialog.png" lightbox="media/quickstart-portal/sample-data-loading-dialog-full.png" alt-text="Screenshot of the dialog to indicate that sample data is loading to the database in the Fabric portal.":::
+    :::image type="content" source="media/quickstart-portal/sample-data-loading-dialog.png" lightbox="media/quickstart-portal/sample-data-loading-dialog-full.png" alt-text="Screenshot of the dialog to indicate that sample data is loading to the database in the Fabric portal.":::
 
 1. Once the import operation concludes, select **Close**.
 
-    :::image source="media/quickstart-portal/sample-data-success-dialog.png" lightbox="media/quickstart-portal/sample-data-success-dialog-full.png" alt-text="Screenshot of the dialog to indicate that the sample data loading operation succeeded in the Fabric portal.":::
+    :::image type="content" source="media/quickstart-portal/sample-data-success-dialog.png" lightbox="media/quickstart-portal/sample-data-success-dialog-full.png" alt-text="Screenshot of the dialog to indicate that the sample data loading operation succeeded in the Fabric portal.":::
 
 ## Perform a query
 
@@ -75,7 +75,7 @@ Finally, perform a NoSQL query to test the sample data in the **SampleData** con
 
 1. Select the newly created **SampleData** container. Then, select **New SQL Query**.
 
-    :::image source="media/quickstart-portal/new-container-query-option.png" lightbox="media/quickstart-portal/new-container-query-option-full.png" alt-text="Screenshot of the option to create a 'New SQL Query' for a container within the Fabric portal.":::
+    :::image type="content" source="media/quickstart-portal/new-container-query-option.png" lightbox="media/quickstart-portal/new-container-query-option-full.png" alt-text="Screenshot of the option to create a 'New SQL Query' for a container within the Fabric portal.":::
 
 1. In the query editor, use this baseline query to reshape the data in the sample container into simplified JSON output.
 
@@ -104,7 +104,7 @@ Finally, perform a NoSQL query to test the sample data in the **SampleData** con
     ]
     ```    
 
-    :::image source="media/quickstart-portal/query-results.png" lightbox="media/quickstart-portal/query-results-full.png" alt-text="Screenshot of the query editor and result sections for a container in the Fabric portal.":::
+    :::image type="content" source="media/quickstart-portal/query-results.png" lightbox="media/quickstart-portal/query-results-full.png" alt-text="Screenshot of the query editor and result sections for a container in the Fabric portal.":::
 
 ## Related content
 

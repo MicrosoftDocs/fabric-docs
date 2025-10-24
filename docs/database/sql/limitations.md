@@ -4,7 +4,7 @@ description: A detailed list of limitations for SQL database in Microsoft Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier
-ms.date: 09/08/2025
+ms.date: 10/13/2025
 ms.topic: conceptual
 ms.update-cycle: 180-days
 ms.search.form: Databases Limitations for SQL, Databases Limitations
@@ -30,8 +30,7 @@ This article applies to SQL database in Fabric only. For the warehouse and SQL a
 ## Table level
 
 - A table primary key cannot be one of these data types: **hierarchyid**, **sql_variant**, **timestamp**.
-- If one or more columns in the table is of type Large Binary Object (LOB) with a size > 1 MB, the column data is truncated to size of 1 MB in Fabric OneLake.
-- Currently, tables cannot be in-memory tables.
+- Currently, in-memory, ledger, ledger history, and Always Encrypted tables cannot be created in SQL database in Microsoft Fabric.
 - Full-text indexing is not supported and cannot be created in SQL database in Microsoft Fabric.
 - The following table-level data definition language (DDL) operations aren't allowed:
     - Switch/Split/Merge partition
@@ -47,15 +46,13 @@ The SQL analytics endpoint of the SQL database in Fabric works just like the [La
 
 ## Connection policy
 
-Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. In the **Redirect** policy, clients establish connections directly to the node hosting the database, leading to reduced latency and improved throughput. 
+Currently, the connection policy for SQL database in Microsoft Fabric is **Default** and cannot be changed. For more information, see [Connectivity architecture - Connection policy](/azure/azure-sql/database/connectivity-architecture?view=fabric&preserve-view=true#connection-policy).
 
 For connections to use this mode, clients need to:
 
   - Allow outbound communication from the client to all Azure SQL IP addresses in the region on ports in the range of 11000 to 11999. Use the Service Tags for SQL to make this easier to manage. Refer to the [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) for a list of your region's IP addresses to allow.
   
   - Allow outbound communication from the client to Azure SQL gateway IP addresses on port 1433.
-  
-For more information, see [Connectivity architecture - Connection policy](/azure/azure-sql/database/connectivity-architecture?view=fabric&preserve-view=true#connection-policy).
 
 ## Availability
 
@@ -162,7 +159,7 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | **VNet Service endpoint** | Yes, see [virtual network service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **VNet Global peering** | Yes, using [Private IP and service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **Private connectivity** | Yes, using [Private Link](/azure/private-link/private-endpoint-overview) | Yes, using [Private links](../../security/security-private-links-overview.md)  |
-| **Connectivity Policy**|[Redirect, Proxy, or Default](/azure/azure-sql/database/connectivity-architecture?view=azuresql-db&preserve-view=true)|[Redirect](/azure/azure-sql/database/connectivity-architecture?view=fabric&preserve-view=true)|
+| **Connectivity Policy**|[Redirect, Proxy, or Default](/azure/azure-sql/database/connectivity-architecture?view=azuresql-db&preserve-view=true#connection-policy)|[Default](/azure/azure-sql/database/connectivity-architecture?view=fabric&preserve-view=true#connection-policy)|
 
 ## Resource limits
 

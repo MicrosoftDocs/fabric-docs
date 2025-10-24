@@ -18,7 +18,7 @@ The Teradata database connector is supported in Data Factory for [!INCLUDE [prod
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/-)                                                 | On-premises| Basic<br> Windows |
-| **Data pipeline** <br>- [Copy activity](connector-teradata-copy-activity.md) (source/destination)<br>- Lookup activity        | On-premises | Basic<br> Windows |
+| **Pipeline** <br>- [Copy activity](connector-teradata-copy-activity.md) (source/destination)<br>- Lookup activity        | On-premises | Basic<br> Windows |
 
 ## Related content
 

@@ -77,7 +77,7 @@ Fabric supports two levels of Private Link:
 
 * **Tenant-level private links**, which provide network policy to the entire tenant. For more information about tenant-level private links, see [Private links for Fabric tenants](security-private-links-overview.md).
 
-* **Workspace-level private links (preview)**, which provide more granular control, making it possible to restrict access to certain workspaces while allowing the rest of the workspaces to remain open for public access. For more information about workspace-level private links, see [About workspace-level private links](security-workspace-level-private-links-overview.md).
+* **Workspace-level private links**, which provide more granular control, making it possible to restrict access to certain workspaces while allowing the rest of the workspaces to remain open for public access. For more information about workspace-level private links, see [About workspace-level private links](security-workspace-level-private-links-overview.md).
 
 ### On-premises networks
 

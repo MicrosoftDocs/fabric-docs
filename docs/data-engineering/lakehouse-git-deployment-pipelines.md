@@ -20,7 +20,7 @@ The [Lakehouse](lakehouse-overview.md) integrates with the lifecycle management 
 
 The Lakehouse is an item that contains both metadata and data that is referenced in multiple objects in the workspace. Lakehouse contains tables, folders, and shortcuts as primary manageable data container items. From a development workflow perspective, the following dependent objects might reference a Lakehouse:
 
-* [Dataflows](../data-factory/create-first-dataflow-gen2.md) and [Data Pipelines](../data-factory/create-first-pipeline-with-sample-data.md)
+* [Dataflows](../data-factory/create-first-dataflow-gen2.md) and [Pipelines](../data-factory/create-first-pipeline-with-sample-data.md)
 * [Spark Job Definitions](spark-job-definition.md)
 * [Notebooks](how-to-use-notebook.md)
 * Semantic models and Power BI

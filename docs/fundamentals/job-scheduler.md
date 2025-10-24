@@ -2,8 +2,8 @@
 title: Job Scheduler in Microsoft Fabric
 description: Learn how to use the job scheduler in Microsoft Fabric to automate recurring jobs, manage multiple schedules, and integrate with CI/CD.
 ms.reviewer: zhaya
-author: JulCsc
-ms.author: juliacawthra
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.date: 07/29/2025
 

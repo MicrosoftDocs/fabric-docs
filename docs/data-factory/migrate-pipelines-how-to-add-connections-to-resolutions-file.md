@@ -105,7 +105,7 @@ If you plan to upgrade an ADF ExecutePipeline activity, add a **CredentialConnec
 1. In the **New Connection** pane:
 
    - Enter a name for the connection.
-   - Choose **Fabric Data Pipelines** as the Connection Type.
+   - Choose **Fabric Pipelines** as the Connection Type.
    - Select **OAuth 2.0** as the Authentication method.
 
     :::image type="content" source="media/migrate-pipeline-powershell-upgrade/edit-credential-connection-authenticate.png" alt-text="Screenshot of copying credential connection ID.":::

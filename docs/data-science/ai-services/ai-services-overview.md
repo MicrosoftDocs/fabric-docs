@@ -41,7 +41,7 @@ Fabric provides two options to use Azure AI services:
 
 [REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md), [SynapseML](how-to-use-openai-sdk-synapse.md)
 
-- Language Models: `gpt-4.1`, `gpt-4o`, `gpt-4o-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
+- Language Models: `gpt-5`, `gpt-4.1`, `gpt-4.1-mini`, and `gpt-4o-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
 - Text Embedding Model: `text-embedding-ada-002` is hosted. [See table for details](#consumption-rate-for-openai-embedding-models)
 
 ### [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) 
@@ -87,10 +87,10 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 
 | **Model** | **Deployment Name** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** | **Retirement Date** |
 |---|---|---|---|---|---|
+| gpt-5-2025-08-07 | `gpt-5` | 400,000 |  42 CU seconds |  336 CU seconds | TBD |
 | gpt-4.1-2025-04-14 | `gpt-4.1` | 1,047,576 | 67.20 CU seconds | 268.80 CU seconds | TBD |
+| gpt-4.1-mini-2025-04-14 | `gpt-4.1-mini` | 1,047,576 | 13.44 CU seconds | 53.76 CU seconds | TBD |
 | gpt-4o-mini-2024-07-18 | `gpt-4o-mini`| 128,000 | 5.04 CU seconds | 20.17 CU seconds | 2025-10-30 |
-| gpt-4o-2024-05-13 | `gpt-4o`  | 128,000 | 84.03 CU seconds | 336.13 CU seconds | 2025-09-30 |
-
 
 
 ### Consumption rate for OpenAI embedding models

@@ -13,7 +13,7 @@ items:
     href: get-started-real-time-hub.md
 - name: Tutorials
   items:
-  - name: Build event-driven data pipelines 
+  - name: Build event-driven pipelines 
     href: tutorial-build-event-driven-data-pipelines.md
 - name: Get events and create data streams
   items:

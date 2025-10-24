@@ -1,6 +1,6 @@
 ---
-title: Sources supported by Fabric event streams (enhanced)
-description: The include file has the list of sources supported by Fabric event streams with enhanced capabilities.
+title: Sources Supported by Fabric Eventstreams (Enhanced)
+description: This file has the list of sources supported by Fabric eventstreams with enhanced capabilities.
 ms.author: xujiang1
 author: xujxu
 ms.topic: include
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 08/26/2025
 ---
 
-| Sources          | Description |
+| Source          | Description |
 | --------------- | ---------- |
 | [Azure Data Explorer (preview)](../add-source-azure-data-explorer-database.md) | If you have an Azure Data Explorer database and a table, you can ingest data from the table into Microsoft Fabric using Eventstream.  |
 | [Azure Event Hubs](../add-source-azure-event-hubs.md) | If you have an Azure event hub, you can ingest event hub data into Microsoft Fabric using Eventstream.  |
@@ -17,10 +17,11 @@ ms.date: 08/26/2025
 | [Azure IoT Hub](../add-source-azure-iot-hub.md) | If you have an Azure IoT hub, you can ingest IoT data into Microsoft Fabric using Eventstream.  |
 | [Custom endpoint (that is, Custom App in standard capability)](../add-source-custom-app.md) | The custom endpoint feature allows your applications or Kafka clients to connect to Eventstream using a connection string, enabling the smooth ingestion of streaming data into Eventstream. |
 | [Azure IoT Operations](/azure/iot-operations/connect-to-cloud/howto-configure-fabric-real-time-intelligence) | Configure Azure IoT Operations to send real-time data directly to Microsoft Fabric Real-Time Intelligence using an eventstream custom endpoint (supports Microsoft Entra ID or SASL authentication).  |
-| [Sample data](../add-source-sample-data.md) | You can choose **Bicycles**, **Yellow Taxi**, or **Stock Market events** as a sample data source to test the data ingestion while setting up an eventstream. |
+| [Sample data](../add-source-sample-data.md) | You can choose **Bicycles**, **Yellow Taxi**, **Stock Market**, **Buses**, **S&P 500 companies stocks** or **Semantic Model Logs** as a sample data source to test the data ingestion while setting up an eventstream. |
 | [Real-time weather (preview)](../add-source-real-time-weather.md) | You can add a real-time weather source to an eventstream to stream real-time weather data from different locations. |
 | [Azure SQL Database Change Data Capture (CDC)](../add-source-azure-sql-database-change-data-capture.md) | The Azure SQL Database CDC source connector allows you to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data. |
 | [PostgreSQL Database CDC](../add-source-postgresql-database-change-data-capture.md) | The PostgreSQL Database Change Data Capture (CDC) source connector allows you to capture a snapshot of the current data in a PostgreSQL database. The connector then monitors and records any future row-level changes to this data. |
+| [MongoDB CDC (preview)](../add-source-mongodb-change-data-capture.md) | The MongoDB CDC source connector for Microsoft Fabric event streams captures an initial snapshot of data from MongoDB. You can specify the collections to monitor, and the eventstream tracks and records real-time changes to documents in selected databases and collections. |
 | [MySQL Database CDC](../add-source-mysql-database-change-data-capture.md) | The Azure MySQL Database Change Data Capture (CDC) Source connector allows you to capture a snapshot of the current data in an Azure Database for MySQL database. You can specify the tables to monitor, and the eventstream records any future row-level changes to the tables. |
 | [Azure Cosmos DB CDC](../add-source-azure-cosmos-db-change-data-capture.md) | The Azure Cosmos DB Change Data Capture (CDC) source connector for Microsoft Fabric event streams lets you capture a snapshot of the current data in an Azure Cosmos DB database. The connector then monitors and records any future row-level changes to this data. |
 | [SQL Server on virtual machine (VM) Database (DB) CDC](../add-source-sql-server-change-data-capture.md) | The SQL Server on VM DB (CDC) source connector for Fabric event streams allows you to capture a snapshot of the current data in a SQL Server database on VM. The connector then monitors and records any future row-level changes to the data. |
@@ -36,4 +37,3 @@ ms.date: 08/26/2025
 | [Amazon MSK Kafka](../add-source-amazon-managed-streaming-for-apache-kafka.md) | Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, scaling, and management. By integrating Amazon MSK Kafka as a source within your eventstream, you can seamlessly bring the real-time events from your MSK Kafka and process them before routing them to multiple destinations within Fabric. |
 | [MQTT (preview)](../add-source-mqtt.md) | Microsoft Fabric event streams allow you to connect to an MQTT broker, where messages in MQTT broker to be ingested into Fabric eventstream, and routed to various destinations within Fabric. |
 | [Solace PubSub+ (preview)](../add-source-solace-pub-sub.md) | Microsoft Fabric event streams allow you to connect to Solace PubSub+, enabling messages from Solace PubSub+ to be ingested into Fabric eventstream and routed to various destinations within Fabric. |
-

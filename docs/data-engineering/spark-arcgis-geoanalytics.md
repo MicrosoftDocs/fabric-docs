@@ -33,7 +33,7 @@ The ArcGIS GeoAnalytics library is currently available only in [Fabric Runtime 1
 # [Python](#tab/python)
 
 ```python
-import geoanalytics fabric
+import geoanalytics_fabric
 import geoanalytics_fabric.sql.functions as ST
 ```
 

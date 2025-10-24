@@ -1,6 +1,6 @@
 ---
 title: Monitor Copy activity
-description: Learn how to monitor Copy activity in data pipelines in Data Factory for Microsoft Fabric.
+description: Learn how to monitor Copy activity in pipelines in Data Factory for Microsoft Fabric.
 ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
@@ -10,7 +10,7 @@ ms.date: 09/19/2025
 
 # Monitor Copy activity
 
-This article outlines how to monitor the copy activity execution in data pipelines.
+This article outlines how to monitor the copy activity execution in pipelines.
 
 ## Monitor visually
 
@@ -20,7 +20,7 @@ To monitor the Copy activity run, go to the Data Factory UI for your service ins
 
 :::image type="content" source="media/monitor-copy-activity/monitor-tab.png" alt-text="Screenshot of Data Factory monitor tab.":::
 
-Besides, you can select **View run history** under **Run** tab in your data pipeline, and select the pipeline name link to access the list of activity runs.
+Besides, you can select **View run history** under **Run** tab in your pipeline, and select the pipeline name link to access the list of activity runs.
 
 :::image type="content" source="media/monitor-copy-activity/view-run-history-pipeline.png" alt-text="Screenshot of pipeline view run history.":::
 

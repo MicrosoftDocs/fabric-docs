@@ -29,7 +29,7 @@ Copy jobs move data from your source to your destination with flexibility and ea
 
 To get started, you'll need:
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A Microsoft Fabric enabled workspace.
 
 ## Add a Copy job activity to your pipeline

@@ -14,11 +14,12 @@ ms.custom:
 
 The SAP Business Warehouse (BW) Application Server connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|On-premises |Basic (Username/Password)<br> Windows |
 
-For information on how to connect to an SAP BW Application Server in Dataflow Gen2, go to [Set up your SAP BW Application Server connection](connector-sap-bw-application-server.md).
+## Related content
 
-## Support in pipelines
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support an SAP BW Application Server connection in pipelines.
+To learn about how to connect to an SAP BW Application Server, go to [Set up your SAP BW Application Server connection](connector-sap-bw-application-server.md).

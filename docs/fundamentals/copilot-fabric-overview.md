@@ -4,7 +4,7 @@ description: Learn about Copilot in Fabric and Power BI, which brings a new way 
 author: denglishbi
 ms.author: daengli
 ms.reviewer: guptamaya, maghan
-ms.date: 05/27/2025
+ms.date: 10/23/2025
 ms.update-cycle: 180-days
 ms.service: fabric
 ms.topic: overview
@@ -61,7 +61,7 @@ The following diagram depicts an overview of the different items that support Co
 
 ### Copilot in Fabric in the Data Science and Data Engineering workloads
 
-Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored to support data professionals in their workflow. It provides intelligent code completion, automates routine tasks, and supplies industry-standard code templates to facilitate building robust data pipelines and crafting complex analytical models. Utilizing advanced machine learning algorithms, Copilot offers contextual code suggestions that adapt to the specific task at hand, helping you code more effectively and with greater ease. From data preparation to insight generation, Microsoft Fabric Copilot acts as an interactive aide, lightening the load on engineers and scientists and expediting the journey from raw data to meaningful conclusions.
+Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored to support data professionals in their workflow. It provides intelligent code completion, automates routine tasks, and supplies industry-standard code templates to facilitate building robust pipelines and crafting complex analytical models. Utilizing advanced machine learning algorithms, Copilot offers contextual code suggestions that adapt to the specific task at hand, helping you code more effectively and with greater ease. From data preparation to insight generation, Microsoft Fabric Copilot acts as an interactive aide, lightening the load on engineers and scientists and expediting the journey from raw data to meaningful conclusions.
 
 ### Copilot in Fabric in the Data Factory workload
 
@@ -96,7 +96,7 @@ The following table provides an overview of the various AI and Copilot experienc
 | **Copilot for Data Science and Data Engineering** | Notebook (typically with lakehouses and other data items) | - [Copilot chat panel](../data-engineering/copilot-notebooks-chat-pane.md) vs [chat magics](../data-engineering/copilot-notebooks-chat-magics.md) in a notebook.<br />- [Generate code or markdown for a notebook (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities).<br />- [Add comments, fix errors, or debug notebook code (preview)](../data-engineering/copilot-notebooks-chat-magics.md#commenting-and-debugging).<br />- [Analyze and visualize data](../data-engineering/copilot-notebooks-chat-pane.md).<br />- [Explain notebook contents (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities). |
 | **AI Experiences in Fabric Data Science** | Data agent <br> AI functions <br> AI services | - [Create a Fabric Data agent](../data-science/how-to-create-data-agent.md). <br />- [Transform and enrich data seamlessly with AI functions](../data-science/ai-functions/overview.md).<br />- [AI services in Fabric](../data-science/ai-services/ai-services-overview.md#ai-services-in-fabric-preview).<br />
 | **Copilot for Data Factory** | Dataflows gen2 | - [Generate a new query](copilot-fabric-data-factory.md#get-started-with-copilot-for-dataflow-gen2). |
-| | Data pipeline | - [Generate and run a data pipeline](copilot-fabric-data-factory.md#generate-a-data-pipeline-with-copilot).<br />- [Summarize a data pipeline](copilot-fabric-data-factory.md#summarize-a-data-pipeline-with-copilot).<br />- [Troubleshoot pipeline errors](copilot-fabric-data-factory.md#troubleshoot-pipeline-errors-with-copilot). |
+| | Pipeline | - [Generate and run a pipeline](copilot-fabric-data-factory.md#generate-a-data-pipeline-with-copilot).<br />- [Summarize a pipeline](copilot-fabric-data-factory.md#summarize-a-data-pipeline-with-copilot).<br />- [Troubleshoot pipeline errors](copilot-fabric-data-factory.md#troubleshoot-pipeline-errors-with-copilot). |
 | **Copilot for Data Warehouse** | SQL Queries in Data Warehouse | - [Generate SQL queries (preview)](../data-warehouse/copilot-chat-pane.md).<br />- [Suggest SQL code completions (preview)](../data-warehouse/copilot-code-completion.md).<br />- [Fix code in SQL queries (preview)](../data-warehouse/copilot-quick-action.md).<br />- [Explain code in SQL queries (preview)](../data-warehouse/copilot-quick-action.md). |
 | **Copilot for SQL database** | SQL queries in SQL database | - [Generate SQL queries (preview)](../database/sql/copilot-chat-pane.md).<br />- [Suggest SQL code completions (preview)](../database/sql/copilot-code-completion.md).<br />- [Fix code in SQL queries (preview)](../database/sql/copilot-quick-actions.md).<br />- [Explain code in SQL queries (preview)](../database/sql/copilot-quick-actions.md). |
 | **Copilot for Power BI** | Semantic models in Power BI Desktop or Power BI service | - [Suggest linguistic model synonyms](/power-bi/natural-language/q-and-a-copilot-enhancements).<br />- [Suggest measure descriptions](/power-bi/transform-model/desktop-measure-copilot-descriptions).<br />- [Write and explain DAX queries](/dax/dax-copilot).<br />- [Ask questions about your data (preview)](/power-bi/create-reports/copilot-ask-data-question). |
@@ -114,9 +114,13 @@ The following table provides an overview of the various AI and Copilot experienc
 
 Using the client advisor AI accelerator tool, you can build custom copilot with your enterprise data. The client advisor AI accelerator uses Azure OpenAI Service, Azure AI Search, and Microsoft Fabric to create custom Copilot solutions. This all-in-one custom copilot empowers client advisors to use generative AI across structured and unstructured data optimizing daily tasks and fostering better interactions with clients. To learn more, see the [GitHub repo](https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator).
 
-### Conversational knowledge mining solution accelerator
+### Agentic applications for unified data foundation
 
-The conversational knowledge mining solution accelerator is built on top of Microsoft Fabric, Azure OpenAI Service, and Azure AI Speech. It enables customers with large amounts of conversational data to use generative AI to find key phrases alongside the operational metrics. This way, you can discover valuable insights with business impact. To learn more, see the [GitHub repo.](https://github.com/microsoft/Customer-Service-Conversational-Insights-with-Azure-OpenAI-Services)
+Accelerate intelligent decision-making at scale with secure, agentic AI built on a unified data foundation in Microsoft Fabric. This solution integrates Azure AI Foundry agents and Semantic Kernel to power intelligent workflows that support natural language querying, governed data access, and AI-driven automation—enhancing agility and innovation. To learn more, [explore the solution on GitHub](https://github.com/microsoft/agentic-applications-for-unified-data-foundation-solution-accelerator)
+
+### Unified data foundation with Fabric
+
+Build a unified data foundation in Microsoft Fabric using the Modern Analytics, AI, and Governance (MAAG) framework to deliver scalable insights. This accelerator connects Fabric, OneLake, Purview, and Azure Databricks through a [medallion lakehouse architecture](../onelake/onelake-medallion-lakehouse-architecture.md), with sample domain models and prebuilt Power BI dashboards. With flexible deployment options and built-in governance, it helps you unify and analyze data across domains efficiently. To learn more, [explore the solution on GitHub](https://github.com/microsoft/unified-data-foundation-with-fabric-solution-accelerator)
 
 ## How do I use Copilot responsibly?
 

@@ -30,9 +30,6 @@ A Fabric variable library:
 * Is compatible with continuous integration and continuous delivery (CI/CD) processes. This compatibility allows [integration with Git](../git-integration/intro-to-git-integration.md#supported-items) and deployment through [deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md#supported-items).
 * Supports automation via Fabric public APIs.
 
-> [!NOTE]
-> The Fabric variable library item is currently in preview.
-
 ## Benefits
 
 Variable libraries enable customers to customize and share configurations.
@@ -75,7 +72,7 @@ When you create an alternative value set, the new value set is created with poin
 
 The following items support the variable library:
 
-- [Data pipeline ](../../data-factory/variable-library-integration-with-data-pipelines.md)
+- [Pipeline ](../../data-factory/variable-library-integration-with-data-pipelines.md)
 - [Shortcut for a lakehouse ](../../onelake/assign-variables-to-shortcuts.md)
 - Notebook , through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities) and [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
 - [Dataflow Gen 2](../../data-factory/dataflow-gen2-variable-library-integration.md)

@@ -19,7 +19,7 @@ The Vertica connector is supported in Data Factory in [!INCLUDE [product-name](.
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|On-premises |Basic |
-| **Data pipeline**<br>- [Copy activity](connector-vertica-copy-activity.md) (source/-) <br>- Lookup activity    |On-premises (version 3000.238.11 or above)|Basic |
+| **Pipeline**<br>- [Copy activity](connector-vertica-copy-activity.md) (source/-) <br>- Lookup activity    |On-premises (version 3000.238.11 or above)|Basic |
 | **Copy job** (source/-) <br>- Full load<br>- Incremental load |On-premises |Basic |
 
 > [!NOTE]
@@ -27,4 +27,4 @@ The Vertica connector is supported in Data Factory in [!INCLUDE [product-name](.
 
 ## Related content
 
-To learn about the copy activity configuration for Vertica in data pipelines, go to [Configure Vertica in a copy activity](connector-vertica-copy-activity.md).
+To learn about the copy activity configuration for Vertica in pipelines, go to [Configure Vertica in a copy activity](connector-vertica-copy-activity.md).

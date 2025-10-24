@@ -29,28 +29,18 @@ One of the ways to consume a Fabric data agent is by adding it to a custom AI ag
 
 Before you can connect a Fabric data agent to Microsoft Copilot Studio, ensure the following settings are configured:
 
-1. **Publish your Fabric data agent**: The data agent must be published and in a _Running_ state in Microsoft Fabric.
+1. **Data agent readiness**: Confirm that data agent is working as expected and is responding to queries.
 
-1. **Tenant alignment**: Both the Fabric data agent and Microsoft Copilot Studio must be on the same Microsoft 365 tenant.
+1. **Publish your Fabric data agent**: The data agent must be published with a rich and detailed description.
+
+1. **Tenant alignment**: Both the Fabric data agent and Microsoft Copilot Studio agent must be on the same tenant.
 
 1. **Authentication**: Sign in to both Microsoft Fabric and Microsoft Copilot Studio with the same account that has access to the data agent.
 
 1. **Permissions**: Ensure you have the following permissions:
-   - Read access to the Fabric workspace containing the data agent
+   - At least read access to the Fabric data agent. Read [here](../data-science/data-agent-sharing.md?tabs=azure-devops) about different permissions to the Fabric data agent.
    - Permission to create and modify agents in Microsoft Copilot Studio
    - Access to the underlying data sources used by the Fabric data agent
-
-1. **Data agent visibility**: Verify that the data agent appears in your list of available agents in the Fabric workspace before attempting to connect it in Copilot Studio.
-
-## Verify Fabric data agent readiness
-
-Before adding your Fabric data agent to Copilot Studio, complete these verification steps:
-
-1. In Microsoft Fabric, navigate to your workspace and confirm your data agent is listed with a "Running" status.
-
-1. Test your data agent in Fabric to ensure it's responding correctly to queries.
-
-1. Note the workspace name and data agent name - you need these when connecting in Copilot Studio.
 
 ## How to add a Fabric data agent to the custom AI agent in Copilot Studio
 
@@ -127,6 +117,9 @@ Before adding your Fabric data agent to Copilot Studio, complete these verificat
    > The ability to use the custom agent with connected Fabric data agent isn't currently supported in Microsoft 365 Copilot.
 
 1. To publish to Teams, select Teams and Microsoft 365 Copilot from the list of channels. This opens the window on left. Select **Add channel** to enable this channel. Once done, the **See agent in Teams** are active. You can select it, which prompts you to open Microsoft Teams.
+
+   > [!NOTE]
+   > If you share your custom AI agent with others, they must have at least read access to the Fabric data agent and the necessary permissions for all underlying data sources.
 
    :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-teams-channels.png" alt-text="Screenshot showing the publish process to Teams." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-teams-channels.png":::
 

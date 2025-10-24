@@ -41,5 +41,5 @@ In this tutorial, create a new [SQL database in Fabric](overview.md).
 ## Related content
 
 - [Connect to your SQL database in Microsoft Fabric](connect.md)
-- [Ingest data into SQL database via data pipelines](load-data-pipelines.md)
+- [Ingest data into SQL database via pipelines](load-data-pipelines.md)
 - [Options to create a SQL database in the Fabric portal](create-options.md)

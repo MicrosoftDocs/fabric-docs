@@ -18,7 +18,7 @@ Each Activator includes one or more rules, which are evaluated continuously. The
 ## Actions 
 When a rule’s conditions are met and an action is initiated, then the rule is said to be activated. The supported targets for actions include: 
 
-- Fabric data pipelines (for data movement, enrichment)
+- Fabric pipelines (for data movement, enrichment)
 - Fabric notebooks (for machine-learning scoring, diagnostics)
 - Power Automate flows (for business process integration)
 - Teams notifications (using template-based messaging)

@@ -7,7 +7,7 @@ ms.reviewer: negust
 reviewer: nelgson
 ms.topic: how-to
 ms.custom:
-ms.date: 07/11/2024
+ms.date: 09/30/2025
 ms.search.form: Train models with scikit-learn
 
 #customer intent: As a developer, I want to use scikit-learn in Microsoft Fabric so that I can train models for supervised and unsupervised learning.
@@ -19,17 +19,17 @@ This article describes how to train and track the iterations of a scikit-learn m
 
 ## Prerequisites
 
-Install scikit-learn within your notebook. You can install or upgrade the version of scikit-learn on your environment by using the following command:
+Install or upgrade scikit-learn in your notebook with the following command:
 
 ```shell
 pip install scikit-learn
 ```
 
-## Set up the machine learning experiment
+## Set up a machine learning experiment
 
-You can create a machine learning experiment by using the MLFLow API. The MLflow `set_experiment()` function creates a new machine learning experiment named _sample-sklearn_, if it doesn't already exist. 
+Create a machine learning experiment with the MLflow API. The MLflow `set_experiment()` function creates a machine learning experiment named `sample-sklearn` if it doesn't exist. 
 
-Run the following code in your notebook and create the experiment:
+Run the following code to create the experiment:
 
 ```python
 import mlflow
@@ -39,9 +39,9 @@ mlflow.set_experiment("sample-sklearn")
 
 ## Train a scikit-learn model
 
-After you set up the experiment, you create a sample dataset and a logistic regression model. The following code starts an MLflow run, and tracks the metrics, parameters, and final logistic regression model. After you generate the final model, you can save the resulting model for more tracking.
+After you set up the experiment, create a sample dataset and train a logistic regression model. The following code starts an MLflow run and tracks metrics, parameters, and the final logistic regression model. After you generate the final model, save it to track it.
 
-Run the following code in your notebook and create the sample dataset and logistic regression model:
+Run the following code to create the sample dataset and train the logistic regression model:
 
 ```python
 import mlflow.sklearn
@@ -78,17 +78,18 @@ with mlflow.start_run() as run:
 
 ## Load and evaluate the model on a sample dataset
 
-After you save the model, you can load it for inferencing.
+After you save the model, load it for inference.
 
-Run the following code in your notebook and load the model, and then run the inference on a sample dataset:
+Run the following code in your notebook to load the model and generate predictions on a sample dataset:
 
 ```python
-# Inference with loading the logged model
-from synapse.ml.predict import MLflowTransformer
+# Run inference with the logged model
+import numpy as np
+from synapse.ml.predict import MLFlowTransformer
 
 spark.conf.set("spark.synapse.ml.predict.enabled", "true")
 
-model = MLflowTransformer(
+model = MLFlowTransformer(
     inputCols=["x"],
     outputCol="prediction",
     modelName="sample-sklearn",
@@ -100,11 +101,11 @@ test_spark = spark.createDataFrame(
 )
 
 batch_predictions = model.transform(test_spark)
-
 batch_predictions.show()
 ```
 
+
 ## Related content
 
-- Explore [machine learning models](machine-learning-model.md)
-- Create [machine learning experiments](machine-learning-experiment.md) 
+- Explore [machine learning models](machine-learning-model.md).
+- Create [machine learning experiments](machine-learning-experiment.md). 

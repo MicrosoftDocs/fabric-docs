@@ -29,7 +29,7 @@ The queue operates in a First-In-First-Out (FIFO) manner, where jobs are added t
 
 When a Spark job is submitted, if the Fabric capacity is already at its maximum compute limit, the job can't be executed immediately. In such cases, you can queue the job for execution. Use the following steps to queue a notebook from a pipeline:
 
-1. Create a new **Data pipeline** item and a new **Pipeline activity** within it to run the notebook.
+1. Create a new **Pipeline** item and a new **Pipeline activity** within it to run the notebook.
 
 1. From the pipeline activity, open the **Settings** tab and choose the notebook you want to queue and **Run** the pipeline.
 

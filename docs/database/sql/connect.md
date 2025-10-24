@@ -4,7 +4,7 @@ description: Learn about options to connect to your SQL database in Microsoft Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaurk, imotiwala, maghan
-ms.date: 08/06/2025
+ms.date: 09/30/2025
 ms.topic: how-to
 ms.search.form: product-databases, Connect to SQL database
 ---
@@ -21,7 +21,7 @@ You can connect to and query your [SQL database in Fabric](overview.md) in all t
 - Create or use an existing SQL database in Fabric.
     - If you don't have one already, [create a new SQL database in Fabric](create.md).
 <!--    - During the current preview, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups). -->
-- Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. For more information, see [Connection policy](limitations.md#connection-policy).
+- Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Default**. For more information, see [Connection policy](limitations.md#connection-policy).
 
 ## Query editor in the Fabric portal
 
@@ -93,7 +93,12 @@ bcp bcptest in "c:\temp\sample.dat" -S <your_server>.database.fabric.microsoft.c
 
 ## Connect with Python Notebook
 
-[Fabric Python Notebooks](../../data-engineering/using-python-experience-on-notebook.md) (preview) offer the [ability to run T-SQL code with the T-SQL magic command](../../data-engineering/tsql-magic-command-notebook.md). In the following steps, connect to a SQL database in Fabric using the `%%tsql` magic command:
+[Fabric Python Notebooks](../../data-engineering/using-python-experience-on-notebook.md) (preview) offer the [ability to run T-SQL code with the T-SQL magic command](../../data-engineering/tsql-magic-command-notebook.md). 
+
+> [!TIP]
+> You can also [connect your applications to a SQL database in Fabric with the Microsoft Python Driver](connect-python.md).
+
+In the following steps, connect to a SQL database in Fabric using the `%%tsql` magic command:
 
 1. Create a notebook in your workspace with the language set to Python.
 1. In a cell, use the `%%tsql` magic command. The cell type automatically changes to `T-SQL`. 
@@ -122,6 +127,4 @@ For more possibilities to query your data with T-SQL inside Python Notebooks, se
 
 - [Authentication in SQL database in Microsoft Fabric](authentication.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
-- [SQL database in Microsoft Fabric](overview.md)
-- [Private links in Microsoft Fabric](../../security/security-private-links-overview.md)
-- [Ingest data into SQL database via data pipelines](load-data-pipelines.md)
+- [Quickstart: Connect to a SQL database in Fabric with the Microsoft Python Driver for SQL Server](connect-python.md)
