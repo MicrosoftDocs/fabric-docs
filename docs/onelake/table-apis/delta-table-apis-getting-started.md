@@ -215,5 +215,5 @@ Authorization: Bearer <Token>
 
 ## Related content
 
-- Learn more about [OneLake table APIs](./onelake-table-apis.md).
+- Learn more about [OneLake table APIs](./table-apis-overview.md). 
 - Learn more about [OneLake table APIs for Delta](./delta-table-apis-overview.md).
