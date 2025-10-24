@@ -211,11 +211,15 @@ For example, the type for *PersonID* column in source is int, and you can change
 
 If you choose Binary as your file format, mapping isn't supported.
 
-### Lakehouse tables data type mapping
+### Settings
+
+For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
+## Lakehouse tables data type mapping
 
 The following sections describe data type mappings when copying data from Lakehouse tables. Refer to the subsection corresponding to your source mode for details.
 
-#### Table
+### Table
 
 When copying data from Lakehouse tables in Table mode, the following mappings are used from Lakehouse table data types to interim data types used by the service internally.
 
@@ -258,7 +262,7 @@ When copying data to Lakehouse tables in Table mode, the following mappings are 
 | Byte array       | binary              |
 | Decimal          | decimal             |
 
-#### T-SQL Query
+### T-SQL Query
 
 When copying data from Lakehouse tables in T-SQL Query mode, the following mappings are used from Lakehouse table data types to interim data types used by the service internally.
 
@@ -275,10 +279,6 @@ When copying data from Lakehouse tables in T-SQL Query mode, the following mappi
 | varbinary           | Byte[]           |
 | date                | Date             |
 | datetime2           | DateTime         |
-
-### Settings
-
-For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ## Parallel copy from Lakehouse tables using T-SQL Query
 
