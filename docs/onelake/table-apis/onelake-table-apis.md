@@ -57,10 +57,10 @@ Learn [how to get started with the OneLake table API endpoint to interact with I
 
 ## Delta Lake REST API operations on OneLake
 
-Learn [how to get started with the OneLake table API endpoint to interact with Delta tables in OneLake](./delta-table-apis.md).
+Learn [how to get started with the OneLake table API endpoint to interact with Delta tables in OneLake](./delta-table-apis-overview.md).
 
 ## Related content
 
 - Learn more about [OneLake table APIs for Iceberg](./onelake-iceberg-table-apis.md).
-- Learn more about [OneLake table APIs for Delta](./delta-table-apis.md).
+- Learn more about [OneLake table APIs for Delta](./delta-table-apis-overview.md).
 - Set up [automatic Delta Lake to Iceberg format conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
