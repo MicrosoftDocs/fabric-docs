@@ -214,3 +214,6 @@ Get table details for a given table. Here `<FullTableName>` is `DataItemName.Dat
 ```
 
 ## Related content
+
+- Learn more about [OneLake table APIs](./onelake-table-apis.md).
+- Learn more about [OneLake table APIs for Delta](./delta-table-apis.md).
