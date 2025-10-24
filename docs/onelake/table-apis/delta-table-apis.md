@@ -15,7 +15,7 @@ OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabr
 
 For overall OneLake table API guidance and prerequisite guidance, see the [OneLake table API overview](./onelake-table-apis.md).
 
-For detailed API documentation, see the [Getting started guide](./delta-table-apis-detailed.md#client-quickstart-examples). 
+For detailed API documentation, see the [Getting started guide](./delta-table-apis-detailed.md#example-requests-and-responses). 
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
