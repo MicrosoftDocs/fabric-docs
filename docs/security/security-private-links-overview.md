@@ -140,7 +140,7 @@ Customers can provision and utilize Healthcare data solutions in Microsoft Fabri
 
 ### Fabric Events
 
-Fabric Events support Private Link without affecting event delivery, because the events originate from within the tenan
+Fabric Events support Private Link without affecting event delivery, because the events originate from within the tenant.
 
 ### Azure Events
 
