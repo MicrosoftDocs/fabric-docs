@@ -56,7 +56,10 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
     - `Microsoft.DocumentDB/databaseAccounts/readAnalytics`  
 
-  - For more information, see [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
+  > [!NOTE]
+  > For more information, see [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
+  >
+  > For an example of a script to auto-apply a custom role-based access control role, see [`rbac-cosmos-mirror.sh` on azure-samples/azure-cli-samples](https://github.com/Azure-Samples/azure-cli-samples/blob/master/cosmosdb/common/rbac-cosmos-mirror.sh).
 
 - You must update the connection credentials for Fabric mirroring if the account keys are rotated. If you don't update the keys, mirroring fails. To resolve this failure, stop replication, update the credentials with the newly rotated keys, and then restart replication.
 
