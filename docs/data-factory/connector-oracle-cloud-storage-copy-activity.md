@@ -17,7 +17,7 @@ This article outlines how to use the copy activity in a pipeline to copy data fr
 
 ## Prerequisites
 
-To copy data from Oracle Cloud Storage, see [Object Storage Amazon S3 Compatibility API](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/s3compatibleapi.htm) for the prerequisites and required permission.
+To copy data from Oracle Cloud Storage, see [Object Storage Amazon S3 Compatibility API](https://docs.oracle.com/iaas/Content/Object/Tasks/s3compatibleapi.htm) for the prerequisites and required permission.
 
 ## Supported format
 
