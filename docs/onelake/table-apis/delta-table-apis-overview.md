@@ -81,6 +81,10 @@ The use of the OneLake table APIs for Delta are subject to the following limitat
 
     If your schema or table name contains dots (.) and is included in the URL, you must also provide additional query parameters. For example, when the schema name includes dots, include the catalog_name as an additional query parameter in the API call to check whether the schema exists.
 
+- **Metadata write operations, other operations**
+
+    Only the operations listed in [Delta table API operations](#delta-table-api-operations) are supported today. Operations that handle metadata write operations are not yet supported by the OneLake table Delta API endpoint. 
+
 ## Related content
 
 - Learn more about [OneLake table APIs](./table-apis-overview.md).
