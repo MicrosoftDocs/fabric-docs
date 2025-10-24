@@ -87,6 +87,10 @@ items:
     href: ./table-apis/onelake-iceberg-table-apis.md
   - name: Getting started with OneLake table APIs for Iceberg
     href: ./table-apis/onelake-iceberg-table-apis-detailed.md
+  - name: OneLake table APIs for Delta
+    href: ./table-apis/delta-table-apis-overview.md
+  - name: Getting started with OneLake table APIs for Delta
+    href: ./table-apis/delta-table-apis-examples.md
 - name: Secure and manage data access
   items:
   - name: OneLake security overview
