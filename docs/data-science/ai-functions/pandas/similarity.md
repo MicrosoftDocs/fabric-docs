@@ -73,6 +73,9 @@ df["similarity"] = df["name"].ai.similarity("Microsoft")
 display(df)
 ```
 
+This example code cell provides the following output:
+:::image type="content" source="../../media/ai-functions/similarity-single-example-output.png" alt-text="Screenshot showing a data frame with a 'name' column and a 'similarity' column. The 'similarity' column contains similarity scores for each input text row." lightbox="../../media/ai-functions/similarity-single-example-output.png":::
+
 # [Compare with pairwise values](#tab/similarity-pairwise)
 
 ```python
@@ -89,13 +92,10 @@ df["similarity"] = df["names"].ai.similarity(df["companies"])
 display(df)
 ```
 
----
-
-The example code cell with a single value provides the following output:
-:::image type="content" source="../../media/ai-functions/similarity-single-example-output.png" alt-text="Screenshot showing a data frame with a 'name' column and a 'similarity' column. The 'similarity' column contains similarity scores for each input text row." lightbox="../../media/ai-functions/similarity-single-example-output.png":::
-
-The example code cell with pairwise values provides the following output:
+This example code cell provides the following output:
 :::image type="content" source="../../media/ai-functions/similarity-pairwise-example-output.png" alt-text="Screenshot showing a data frame with a 'names' column, a 'companies' column, and a 'similarity' column. The 'similarity' column contains similarity scores for each name  for the corresponding value in the 'companies' column" lightbox="../../media/ai-functions/similarity-pairwise-example-output.png":::
+
+---
 
 ## Related content
 

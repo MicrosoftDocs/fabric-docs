@@ -148,7 +148,7 @@ display(sentiment)
 
 ---
 
-:::image type="content" source="../../media/ai-functions/analyze-sentiment-example-output.png" alt-text="Screenshot showing a data frame with a 'reviews' column and a 'sentiment' column. the 'sentiment' column contains values 'negative', 'positive', 'mixed', and 'neutral', according to the emotional state of the review in the corresponding row." lightbox="../../media/ai-functions/analyze-sentiment-example-output.png":::
+:::image type="content" source="../media/ai-functions/analyze-sentiment-example-output.png" alt-text="Screenshot showing a data frame with a 'reviews' column and a 'sentiment' column. the 'sentiment' column contains values 'negative', 'positive', 'mixed', and 'neutral', according to the emotional state of the review in the corresponding row." lightbox="../media/ai-functions/analyze-sentiment-example-output.png":::
 
 ### Categorize text with ai.classify
 
@@ -188,7 +188,7 @@ display(categories)
 
 ---
 
-:::image type="content" source="../../media/ai-functions/classify-example-output.png" alt-text="Screenshot showing a data frame with a 'descriptions' column and a 'category' column. the 'category' column contains the category name of the description in the corresponding row." lightbox="../../media/ai-functions/classify-example-output.png":::
+:::image type="content" source="../media/ai-functions/classify-example-output.png" alt-text="Screenshot showing a data frame with a 'descriptions' column and a 'category' column. the 'category' column contains the category name of the description in the corresponding row." lightbox="../media/ai-functions/classify-example-output.png":::
 
 ### Extract entities with ai.extract
 
@@ -226,7 +226,7 @@ display(df_entities)
 
 ---
 
-:::image type="content" source="../../media/ai-functions/extract-example-output.png" alt-text="Screenshot showing a new data frame with a 'name' column, a 'profession' column,  and a 'city' column. Each column contains the corresponding data extracted from the original data frame." lightbox="../../media/ai-functions/extract-example-output.png":::
+:::image type="content" source="../media/ai-functions/extract-example-output.png" alt-text="Screenshot showing a new data frame with a 'name' column, a 'profession' column,  and a 'city' column. Each column contains the corresponding data extracted from the original data frame." lightbox="../media/ai-functions/extract-example-output.png":::
 
 ### Fix grammar with ai.fix_grammar
 
@@ -266,7 +266,7 @@ display(corrections)
 
 ---
 
-:::image type="content" source="../../media/ai-functions/fix-grammar-example-output.png" alt-text="Screenshot showing a  data frame with a 'text' column and a 'corrections' column which has the text from the text column with corrected grammar." lightbox="../../media/ai-functions/fix-grammar-example-output.png":::
+:::image type="content" source="../media/ai-functions/fix-grammar-example-output.png" alt-text="Screenshot showing a  data frame with a 'text' column and a 'corrections' column which has the text from the text column with corrected grammar." lightbox="../media/ai-functions/fix-grammar-example-output.png":::
 
 ### Answer custom user prompts with ai.generate_response
 
@@ -306,11 +306,7 @@ display(responses)
 
 ---
 
-Simple prompt sample output:
-:::image type="content" source="../../media/ai-functions/generate-response-simple-example-output.png" alt-text="Screenshot showing a data frame with a 'product' column and a 'response' column. The 'response' column contains a punchy subject line for the product in the corresponding row." lightbox="../../media/ai-functions/generate-response-simple-example-output.png":::
-
-Template prompt sample output:
-:::image type="content" source="../../media/ai-functions/generate-response-template-example-output.png" alt-text="Screenshot showing a data frame with all the columns specified along with a 'response column'. The 'response' column contains a punchy subject line for the product in the 'product' column." lightbox="../../media/ai-functions/generate-response-template-example-output.png":::
+:::image type="content" source="../media/ai-functions/generate-response-simple-example-output.png" alt-text="Screenshot showing a data frame with a 'product' column and a 'response' column. The 'response' column contains a punchy subject line for the product in the corresponding row." lightbox="../media/ai-functions/generate-response-simple-example-output.png":::
 
 ### Calculate similarity with ai.similarity
 
@@ -350,10 +346,6 @@ display(similarity)
 
 ---
 
-Single value sample output:
-:::image type="content" source="../../media/ai-functions/similarity-single-example-output.png" alt-text="Screenshot showing a data frame with a 'name' column and a 'similarity' column. The 'similarity' column contains similarity scores for each input text row." lightbox="../../media/ai-functions/similarity-single-example-output.png":::
-
-Pairwise values sample output:
 :::image type="content" source="../../media/ai-functions/similarity-pairwise-example-output.png" alt-text="Screenshot showing a data frame with a 'names' column, a 'companies' column, and a 'similarity' column. The 'similarity' column contains similarity scores for each name  for the corresponding value in the 'companies' column" lightbox="../../media/ai-functions/similarity-pairwise-example-output.png":::
 
 ### Summarize text with ai.summarize
@@ -412,11 +404,7 @@ display(summaries)
 
 ---
 
-Single column sample output:
-:::image type="content" source="../../media/ai-functions/summarize-single-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the 'description' column only, in the corresponding row." lightbox="../../media/ai-functions/summarize-single-example-output.png":::
-
-All columns sample output:
-:::image type="content" source="../../media/ai-functions/summarize-all-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the information across all the columns in the corresponding row." lightbox="../../media/ai-functions/summarize-all-example-output.png":::
+:::image type="content" source="../media/ai-functions/summarize-single-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the 'description' column only, in the corresponding row." lightbox="../media/ai-functions/summarize-single-example-output.png":::
 
 ### Translate text with ai.translate
 
@@ -456,7 +444,7 @@ display(translations)
 
 ---
 
-:::image type="content" source="../../media/ai-functions/translate-example-output.png" alt-text="Screenshot showing a data frame with a 'text' column and a 'translations' column. The 'translations' column contains the English text in the 'text' column, translated in Spanish." lightbox="../../media/ai-functions/translate-example-output.png":::
+:::image type="content" source="../media/ai-functions/translate-example-output.png" alt-text="Screenshot showing a data frame with a 'text' column and a 'translations' column. The 'translations' column contains the English text in the 'text' column, translated in Spanish." lightbox="../media/ai-functions/translate-example-output.png":::
 
 ## Related content
 

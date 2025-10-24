@@ -76,6 +76,9 @@ df["summaries"] = df["description"].ai.summarize()
 display(df)
 ```
 
+This example code cell provides the following output:
+:::image type="content" source="../../media/ai-functions/summarize-single-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the 'description' column only, in the corresponding row." lightbox="../../media/ai-functions/summarize-single-example-output.png":::
+
 # [Summarize values across all columns](#tab/dataframe-summary)
 
 ```python
@@ -101,11 +104,10 @@ df["summaries"] = df.ai.summarize()
 display(df)
 ```
 
-The example code cell with a single column provides the following output:
-:::image type="content" source="../../media/ai-functions/summarize-single-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the 'description' column only, in the corresponding row." lightbox="../../media/ai-functions/summarize-single-example-output.png":::
-
-The example code cell with all columns provides the following output:
+This example code cell provides the following output:
 :::image type="content" source="../../media/ai-functions/summarize-all-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the information across all the columns in the corresponding row." lightbox="../../media/ai-functions/summarize-all-example-output.png":::
+
+---
 
 ## Related content
 
