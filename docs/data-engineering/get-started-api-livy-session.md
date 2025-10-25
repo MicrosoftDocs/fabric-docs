@@ -1,12 +1,12 @@
 ---
 title: Submit Spark session jobs using the Livy API
 description: Learn how to submit Spark session jobs using the Livy API.
-ms.reviewer: sngun
+ms.reviewer: avinandac
 ms.author: eur
 author: eric-urban
 ms.topic: how-to
 ms.search.form: Get started with Session jobs with the Livy API for Data Engineering
-ms.date: 05/05/2025
+ms.date: 10/31/2025
 ms.custom: sfi-image-nochange
 ---
 
@@ -15,8 +15,6 @@ ms.custom: sfi-image-nochange
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
 Learn how to submit Spark session jobs using the Livy API for Fabric Data Engineering.
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -59,13 +57,13 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     import requests
     import time
 
-    tenant_id = "Entra_TenantID" 
-    client_id = "Entra_ClientID"
-    client_secret = "Entra_ClientSecret"
+    tenant_id = "<Entra_TenantID>" 
+    client_id = "<Entra_ClientID>"
+    client_secret = "<Entra_ClientSecret>"
     audience = "https://api.fabric.microsoft.com/.default"  
 
-    workspace_id = "Fabric_WorkspaceID"
-    lakehouse_id = "Fabric_LakehouseID"
+    workspace_id = "<Fabric_WorkspaceID>"
+    lakehouse_id = "<Fabric_LakehouseID>"
 
     # Get the app-only token
     def get_app_only_token(tenant_id, client_id, client_secret, audience):
@@ -112,9 +110,9 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     print(token)
 
-1. In Visual Studio Code, you should see the Microsoft Entra token returned.
+1. Run the notebook cell. You should see the Microsoft Entra token returned.
 
-    :::image type="content" source="media/livy-api/livy-session-entra-spn-token.png" alt-text="Screenshot showing the Microsoft Entra SPN token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-spn-token.png":::    ```
+    :::image type="content" source="media/livy-api/livy-session-entra-spn-token.png" alt-text="Screenshot showing the Microsoft Entra SPN token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-spn-token.png":::
 
 ### Authenticate a Livy API Spark session using an Entra user token
 
@@ -125,10 +123,10 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     import requests
     import time
 
-    tenant_id = "Entra_TenantID"
-    client_id = "Entra_ClientID"
-    workspace_id = "Fabric_WorkspaceID"
-    lakehouse_id = "Fabric_LakehouseID"
+    tenant_id = "<Entra_TenantID>"
+    client_id = "<Entra_ClientID>"
+    workspace_id = "<Fabric_WorkspaceID>"
+    lakehouse_id = "<Fabric_LakehouseID>"
 
     app = PublicClientApplication(
         client_id,
@@ -146,16 +144,17 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     if "access_token" in result:
         print(f"Access token: {result['access_token']}")
     else:
-    print("Authentication failed or no access token obtained.")
+        print("Authentication failed or no access token obtained.")
 
     if "access_token" in result:
         access_token = result['access_token']
         api_base_url ='https://api.fabric.microsoft.com/v1'
         livy_base_url = api_base_url + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/sessions"
         headers = {"Authorization": "Bearer " + access_token}
+        print(access_token)
     ```
 
-1. In Visual Studio Code, you should see the Microsoft Entra token returned.
+1. Run the notebook cell. You should see the Microsoft Entra token returned.
 
     :::image type="content" source="media/livy-api/livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra user token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-token.png":::
 

@@ -1,12 +1,12 @@
 ---
 title: Submit Spark batch jobs using the Livy API
 description: Learn how to submit Spark batch jobs using the Livy API.
-ms.reviewer: sngun
+ms.reviewer: avinandac
 ms.author: eur
 author: eric-urban
 ms.topic: how-to
 ms.search.form: Get started with batch jobs with the Livy API for Data Engineering
-ms.date: 03/14/2025
+ms.date: 10/31/2025
 ms.custom: sfi-image-nochange
 ---
 
@@ -15,8 +15,6 @@ ms.custom: sfi-image-nochange
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
 Learn how to submit Spark batch jobs using the Livy API for Fabric Data Engineering. The Livy API currently doesn't support Azure Service Principal (SPN).
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -97,6 +95,75 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Copy this ABFS path to your Notebook cell in step 1.
 
+## Authenticate a Livy API Spark batch session using either an Entra user token or an Entra SPN token
+
+### Authenticate a Livy API Spark batch session using an Entra SPN token
+
+1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
+
+    ```python
+    from msal import ConfidentialClientApplication
+    import requests
+    import time
+
+    tenant_id = "<Entra_TenantID>" 
+    client_id = "<Entra_ClientID>"
+    client_secret = "<Entra_ClientSecret>"
+    audience = "https://api.fabric.microsoft.com/.default"  
+
+    workspace_id = "<Fabric_WorkspaceID>"
+    lakehouse_id = "<Fabric_LakehouseID>"
+
+    # Get the app-only token
+    def get_app_only_token(tenant_id, client_id, client_secret, audience):
+        """
+        Get an app-only access token for a Service Principal using OAuth 2.0 client credentials flow.
+        Args:
+            tenant_id (str): The Azure Active Directory tenant ID.
+            client_id (str): The Service Principal's client ID.
+            client_secret (str): The Service Principal's client secret.
+            audience (str): The audience for the token (e.g., resource-specific scope).
+        Returns:
+            str: The access token.
+        """
+        try:
+            # Define the authority URL for the tenant
+            authority = f"https://login.microsoftonline.com/{tenant_id}"
+
+            # Create a ConfidentialClientApplication instance
+            app = ConfidentialClientApplication(
+                client_id = client_id,
+                client_credential = client_secret,
+                authority = authority
+            )
+
+            # Acquire a token using the client credentials flow
+            result = app.acquire_token_for_client(scopes = [audience])
+
+            # Check if the token was successfully retrieved
+            if "access_token" in result:
+                return result["access_token"]
+            else:
+                raise Exception("Failed to retrieve token: {result.get('error_description', 'Unknown error')}")
+        except Exception as e:
+            print(f"Error retrieving token: {e}", fil = sys.stderr)
+            sys.exit(1)
+
+    token = get_app_only_token(tenant_id, client_id, client_secret, audience)
+
+    api_base_url = 'https://api.fabric.microsoft.com/v1/'
+    livy_base_url = api_base_url + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"    
+    headers = {"Authorization": "Bearer " + token}
+
+    print(token)
+    ```
+
+1. Run the notebook cell, you should see the Microsoft Entra token returned.
+
+    :::image type="content" source="media/livy-api/livy-session-entra-spn-token.png" alt-text="Screenshot showing the Microsoft Entra SPN token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-spn-token.png":::
+
+### Authenticate a Livy API Spark session using an Entra user token
+
 ## Create a Livy API Spark batch session
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
@@ -133,8 +200,9 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     if "access_token" in result:
         access_token = result['access_token']
         api_base_url ='https://api.fabric.microsoft.com/v1'
-        livy_base_url = api_base_url + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"
-            headers = {"Authorization": "Bearer " + access_token}
+        livy_base_url = api_base_url + "/workspaces/" + workspace_id + "/lakehouses/" + lakehouse_id + "/livyApi/versions/2023-12-01/batches"
+        headers = {"Authorization": "Bearer " + access_token}
+        print(access_token)
     ```
 
 1. Run the notebook cell, a popup should appear in your browser allowing you to choose the identity to sign-in with.

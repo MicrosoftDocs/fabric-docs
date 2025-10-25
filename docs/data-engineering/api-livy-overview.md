@@ -1,12 +1,12 @@
 ---
 title: Livy API overview
 description: Learn about the Microsoft Fabric Livy API for submitting jobs to Spark
-ms.reviewer: sngun
+ms.reviewer: avinandac
 ms.author: eur
 author: eric-urban
 ms.topic: overview
 ms.search.form: Livy API Overview for Data Engineering
-ms.date: 11/19/2024
+ms.date: 10/31/2025
 ---
 
 # What is the Livy API for Data Engineering? (Preview)
@@ -14,8 +14,6 @@ ms.date: 11/19/2024
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
 Microsoft Fabric Livy API lets users submit and execute Spark code within Spark compute associated with a Fabric Lakehouse, eliminating the need to create any Notebook or Spark Job Definition artifacts. This integration with the Lakehouse ensures straightforward access to data stored on OneLake.
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Features
 
