@@ -82,12 +82,14 @@ items:
     href: tables.md
   - name: T-SQL surface area
     href: tsql-surface-area.md
-- name: Develop
+- name: Continous integration & continous deployment (CI/CD)
   items:
   - name: Development and Deployment
     href: development-deployment.md
   - name: Source control with Warehouse
     href: source-control.md
+- name: Develop
+  items:
   - name: SQL analytics endpoint performance
     href: sql-analytics-endpoint-performance.md
   - name: Transactions
