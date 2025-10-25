@@ -16,7 +16,7 @@ no-loc: [Copilot]
 
 You can use Copilot to translate your natural language questions into Kusto Query Language (KQL) queries. Simply describe what you want to analyze or find in plain language, and Copilot generates the corresponding KQL query for you. This feature makes it easier for anyone—regardless of their familiarity with KQL—to explore and analyze data efficiently.
 
-For billing information about Copilot, see [Announcing Copilot in Fabric pricing](https://blog.fabric.microsoft.com/en-us/blog/announcing-fabric-copilot-pricing-2/).
+For billing information about Copilot, see [Announcing Copilot in Fabric pricing](https://blog.fabric.microsoft.com/blog/announcing-fabric-copilot-pricing-2/).
 
 ## Prerequisites
 
