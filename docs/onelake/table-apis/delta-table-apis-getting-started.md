@@ -33,15 +33,9 @@ List schemas within a Fabric data item.
 
 - **Request**
 
-```
-GET <BaseUrl>/<Workspace>/<DataItem>/api/2.1/unity-catalog/schemas?catalog_name=<DataItemName.DataItemType or DataItemID>
-Authorization: Bearer <Token>
-```
-
-
 ```bash
 curl -X GET \
-  "<BaseUrl>/<Workspace>/<DataItem>/api/2.1/unity-catalog/schemas?catalog_name=<DataItemName.DataItemType or DataItemID>" \
+  "<BaseUrl>/<Workspace>/<DataItem>/api/2.1/unity-catalog/schemas?catalog_name=testlh.Lakehouse" \
   -H "Authorization: Bearer <Token>" \
   -H "Content-Type: application/json"
 ```
@@ -75,9 +69,11 @@ List tables within a given schema.
 
 - **Request**
 
-```
-GET <BaseUrl>/<Workspace>/<DataItem>/api/2.1/unity-catalog/tables?catalog_name=<DataItemName.DataItemType or DataItemID>&schema_name=<SchemaName>
-Authorization: Bearer <Token>
+```bash
+curl -X GET \
+  "<BaseUrl>/<Workspace>/<DataItem>/api/2.1/unity-catalog/tables?catalog_name=testlh.Lakehouse&schema_name=dbo" \
+  -H "Authorization: Bearer <Token>" \
+  -H "Content-Type: application/json"
 ```
 
 - **Response**
