@@ -108,7 +108,7 @@ Entity diagrams allow you to trace the relationships between materialized views 
 
 You can select on any element in the graph to highlight its related items, while the rest of the graph is dimmed out, making it easier to focus on specific relationships. For tables and external tables, in the ellipsis [**...**], you can select other options, such as querying the table, creating a Power BI report based on the table, and more.
 
-:::image type="content" source="media/database-entity-diagram/element-details.png" alt-text="Screenshot of an entity diagram table, showing the more menu.":::
+:::image type="content" source="media/database-entity-diagram/element-details.png" alt-text="Screenshot of an entity diagram table, showing the more menu." lightbox="media/database-entity-diagram/element-details.png:::
 
 ### Track record ingestion
 
