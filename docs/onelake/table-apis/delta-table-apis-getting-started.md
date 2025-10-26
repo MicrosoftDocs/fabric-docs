@@ -106,7 +106,7 @@ curl -X GET \
 
 ### Get table
 
-Get table details for a given table. Here `<FullTableName>` is `DataItemName.DataItemType.SchemaName.TableName`
+Get table details for a given table. 
 
 **Request**
 
