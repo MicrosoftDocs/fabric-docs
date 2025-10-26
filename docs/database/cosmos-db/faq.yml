@@ -2,7 +2,7 @@
 metadata:
   title: Frequently Asked Questions for Cosmos DB database
   titleSuffix: Microsoft Fabric
-  description: Use Microsoft Entra authentication and the Azure SDK to connect to Cosmos DB in Microsoft Fabric from an Azure Functions host.
+  description: Use Microsoft Entra authentication and the Azure SDK to connect to Cosmos DB in Fabric from an Azure Functions host.
   author: seesharprun
   ms.author: sidandrews
   ms.topic: faq
@@ -10,32 +10,32 @@ metadata:
   ai-usage: ai-assisted
   appliesto:
   - ✅ Cosmos DB in Fabric
-title: Frequently asked questions for Cosmos DB in Microsoft Fabric
+title: Frequently asked questions for Cosmos DB in Fabric
 summary: |
-  This article answers frequently asked questions about Cosmos DB in Microsoft Fabric.
+  This article answers frequently asked questions about Cosmos DB in Fabric.
 sections:
   - name: General
     questions:
       - question: |
-          What is Cosmos DB in Microsoft Fabric?
+          What is Cosmos DB in Fabric?
         answer: |
           Microsoft Fabric is an enterprise-ready, end-to-end data platform. Fabric unifies data movement, databases, data engineering, data science, real-time intelligence, BI with copilot, and application development. You no longer need to put together these services individually from multiple vendors.
 
-          Cosmos DB in Microsoft Fabric is an AI-optimized NoSQL database, automatically configured to meet your application needs through a simplified experience. Developers can use Cosmos DB in Fabric to build AI applications with ease, without managing complex database settings. Cosmos DB in Microsoft Fabric is based on [Azure Cosmos DB](/azure/cosmos-db/nosql), which provides dynamic scaling, high availability, and reliability for the database.
+          Cosmos DB in Fabric is an AI-optimized NoSQL database, automatically configured to meet your application needs through a simplified experience. Developers can use Cosmos DB in Fabric to build AI applications with ease, without managing complex database settings. Cosmos DB in Microsoft Fabric is based on [Azure Cosmos DB](/azure/cosmos-db/nosql), which provides dynamic scaling, high availability, and reliability for the database.
 
           Cosmos DB is a new addition to the Databases workload in Fabric. You can now store semi-structured NoSQL data in Cosmos DB in Fabric. Semi-structured data can be stored alongside your relational data in SQL databases in Fabric, enabling a unified data platform for your applications.
 
           Cosmos DB data is made available to Fabric OneLake automatically. This integration provides deep integration of Cosmos DB with the rest of Fabric platform, enabling seamless analytics, Real-time intelligence, User Data Functions (UDFs), GraphQL, Data Science and BI with Copilot, and data agents all in one place.
 
-          For more information, see [Cosmos DB in Microsoft Fabric](overview.md).
+          For more information, see [Cosmos DB in Fabric](overview.md).
       - question: |
-          How do I connect to Cosmos DB in Microsoft Fabric?
+          How do I connect to Cosmos DB in Fabric?
         answer: |
           Microsoft Fabric exposes an endpoint that is compatible with the various Azure Cosmos DB for NoSQL software development kits (SDKs). These SDKs along with the corresponding Azure Identity library should be used to connect to the database directly using Microsoft Entra authentication. For more information, see [connect to Cosmos DB in Microsoft Fabric using Microsoft Entra ID](how-to-authenticate.md).
       - question: |
-          What query language can I use to query data in Cosmos DB in Microsoft Fabric?
+          What query language can I use to query data in Cosmos DB in Fabric?
         answer: |
-          Cosmos DB in Microsoft Fabric primarily supports the NoSQL query language for querying data.
+          Cosmos DB in Fabric primarily supports the NoSQL query language for querying data.
 
           The NoSQL query language provides a powerful, American National Standards Institute (ANSI) Structured Query Language (SQL)-like syntax for working with JSON data. This language is designed to be familiar to users with SQL experience, while also supporting the flexibility and hierarchical nature of JSON documents.
 
@@ -43,24 +43,22 @@ sections:
 
           For more information, see [use the NoSQL query language](/nosql/query).
       - question: |
-          How can I secure my data in Cosmos DB in Microsoft Fabric?
+          How can I secure my data in Cosmos DB in Fabric?
         answer: |
-          Cosmos DB in Microsoft Fabric provides several security features to help protect your data by default. These features include, but aren't limited to:
+          Cosmos DB in Fabric provides several security features to help protect your data by default. These features include, but aren't limited to:
 
           - Microsoft Entra authentication for secure access
           - Data encryption at rest and in transit
 
-          For more information, see [security for Cosmos DB in Microsoft Fabric](security.md).
-  - name: Troubleshooting
-    questions:
+          For more information, see [security for Cosmos DB in Fabric](security.md).
       - question: |
-          How do I control which users in my organization can access the Cosmos DB feature in Microsoft Fabric?
+          How can I set user permissions for my Cosmos DB in Fabric artifact?
         answer: |
-          You can control access to the Cosmos DB feature in Microsoft Fabric by managing user roles and permissions through the Admin portal. Grant users access to the feature by assigning the appropriate roles to users or security groups.
+          Cosmos DB in Fabric inherits user Fabric workspace permissions. For example, if a user has workspace viewer permissions, they have read-only access to the Cosmos DB artifact. Currently, you cannot set item-level permissions.
 
-          For more information, see [tenant settings](../../admin/about-tenant-settings.md#how-to-use-the-tenant-settings).
+          For more information, see [limitations for Cosmos DB in Fabric](limitations.md).
 additionalContent: |
   ## Related content
 
-  - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
-  - [Review limitations of Cosmos DB in Microsoft Fabric](limitations.md)
+  - [Learn about Cosmos DB in Fabric](overview.md)
+  - [Review limitations of Cosmos DB in Fabric](limitations.md)
