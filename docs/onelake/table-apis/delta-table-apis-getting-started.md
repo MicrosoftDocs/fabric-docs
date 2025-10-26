@@ -17,7 +17,7 @@ OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabr
 
 ## Example requests and responses
 
-These example requests and responses illustrate the use of the Delta API operations currently supported at the OneLake table API endpoint. For more information about IRC, see [the open standard specification](https://iceberg.apache.org/rest-catalog-spec/).
+These example requests and responses illustrate the use of the Delta API operations currently supported at the OneLake table API endpoint. 
 
 For each of these operations:
 - `<BaseUrl>` is `https://onelake.table.fabric.microsoft.com/delta`
