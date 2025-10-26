@@ -38,6 +38,14 @@ GET <BaseUrl>/<Workspace>/<DataItem>/api/2.1/unity-catalog/schemas?catalog_name=
 Authorization: Bearer <Token>
 ```
 
+
+```bash
+curl -X GET \
+  "<BaseUrl>/<Workspace>/<DataItem>/api/2.1/unity-catalog/schemas?catalog_name=<DataItemName.DataItemType or DataItemID>" \
+  -H "Authorization: Bearer <Token>" \
+  -H "Content-Type: application/json"
+```
+
 - **Response**
 
 ```json
