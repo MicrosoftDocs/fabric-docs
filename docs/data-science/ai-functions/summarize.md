@@ -173,7 +173,7 @@ display(summaries)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/.
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("Microsoft Teams", "2017",

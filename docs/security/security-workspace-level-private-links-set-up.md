@@ -3,7 +3,7 @@ title: Set up and use workspace-level private links
 description: Learn how to set up and use a workspace-level private links for secure access to a Fabric workspace.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.custom:
 ms.date: 09/22/2025

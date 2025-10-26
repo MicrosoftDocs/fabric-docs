@@ -3,7 +3,7 @@ title: Access a notebook from a Pipeline to a Notebook in a Restricted Workspace
 description: Learn how to securely run a pipeline from an open workspace to a notebook in a restricted workspace using a pipeline and workspace-level private links in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.custom:
 ms.date: 08/13/2025

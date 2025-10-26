@@ -25,7 +25,7 @@ You're unable to sign up for Power BI with your personal email address. You can 
 
 There are many trials available on the Microsoft 365 site at any time. Look for the **Try free for one month** buttons.
 
-To follow along, sign up for an Office 365 E5 trial [on the Microsoft 365 web site](https://www.microsoft.com/en-us/microsoft-365/enterprise/office365-plans-and-pricing). If you don't already have an account, Microsoft walks you through the steps to create a new onmicrosoft work account. 
+To follow along, sign up for an Office 365 E5 trial [on the Microsoft 365 web site](https://www.microsoft.com/microsoft-365/enterprise/office365-plans-and-pricing). If you don't already have an account, Microsoft walks you through the steps to create a new onmicrosoft work account. 
 
 1. On the Office 365 E5 option, select **Try for free**.
 1. Follow the prompts to set up your trial. Enter a non-work and non-school email address, and select **Next** > **Set up account**.  

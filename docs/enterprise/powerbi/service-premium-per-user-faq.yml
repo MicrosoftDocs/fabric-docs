@@ -103,7 +103,7 @@ sections:
       - question: |
           How can I purchase a PPU license?
         answer: |
-          To purchase Power BI Premium Per User, see [Power BI pricing](https://powerbi.microsoft.com/en-us/pricing/). Scroll to **Power BI Premium**, under **Per user** select **Buy now**.
+          To purchase Power BI Premium Per User, see [Power BI pricing](https://powerbi.microsoft.com/pricing/). Scroll to **Power BI Premium**, under **Per user** select **Buy now**.
 
       - question: |
           Considerations and limitations
