@@ -110,9 +110,11 @@ Get table details for a given table. Here `<FullTableName>` is `DataItemName.Dat
 
 **Request**
 
-```
-GET <BaseUrl>/<Workspace>/<DataItem>/api/2.1/unity-catalog/tables/<FullTableName>`
-Authorization: Bearer <Token>
+```bash
+curl -X GET \
+  "<BaseUrl>/<Workspace>/<DataItem>/api/2.1/unity-catalog/tables/testlh.Lakehouse.dbo.product_table" \
+  -H "Authorization: Bearer <Token>" \
+  -H "Content-Type: application/json"
 ```
 
 **Response**
