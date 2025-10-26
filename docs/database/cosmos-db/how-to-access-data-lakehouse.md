@@ -22,7 +22,7 @@ Microsoft Fabric Lakehouse is a data architecture platform for storing, managing
 
 - Fabric workspace contributer permissions
 
-  - Users with viewer permissions can not create a OneLake shortcut in a Lakehouse.
+  - Users with viewer permissions cannot create a OneLake shortcut in a Lakehouse.
 
 ## Open the SQL analytics endpoint for the database
 
