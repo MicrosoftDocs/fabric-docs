@@ -82,7 +82,7 @@ items:
     href: tables.md
   - name: T-SQL surface area
     href: tsql-surface-area.md
-- name: Continous integration & continous deployment (CI/CD)
+- name: Continuous integration & continuous deployment (CI/CD)
   items:
   - name: Development and Deployment
     href: development-deployment.md
