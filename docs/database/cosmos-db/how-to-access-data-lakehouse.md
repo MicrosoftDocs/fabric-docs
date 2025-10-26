@@ -20,6 +20,10 @@ Microsoft Fabric Lakehouse is a data architecture platform for storing, managing
 
 [!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
 
+- Fabric workspace contributer permissions
+
+  - Users with viewer permissions can not create a OneLake shortcut in a Lakehouse.
+
 ## Open the SQL analytics endpoint for the database
 
 Start by accessing the SQL analytics endpoint for the Cosmos DB in Fabric database to ensure that mirroring ran successfully at least once.
