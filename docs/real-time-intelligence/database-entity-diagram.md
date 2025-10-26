@@ -79,8 +79,8 @@ Schema violations help you identify inconsistencies or broken references between
 * A function references a column whose data type has changed.
 * An update policy references a function or source table that no longer exists.
 * An update policy references a function whose output schema doesn’t match the target table schema.
-* Invalid ingestion mapping—for example, one or more columns defined in the mapping don’t exist in the target table.
-* Invalid continuous export—for example, a referenced table or column couldn’t be found.
+* Invalid ingestion mapping (e.g. one or more columns defined in the mapping don’t exist in the target table).
+* Invalid continuous export (e.g. a referenced table or column couldn’t be found).
 * An external table cannot be reached because the storage location might not exist, or there are insufficient permissions to access it.
 
 > [!NOTE]
@@ -106,7 +106,7 @@ Entity diagrams allow you to trace the relationships between materialized views 
 
 ### Interact with elements and act
 
-You can select on any element in the graph to highlight its related items, while the rest of the graph is dimmed out, making it easier to focus on specific relationships. For tables and external tables, in the **More menu** [**...**], you can select other options, such as querying the table, creating a Power BI report based on the table, and more.
+You can select on any element in the graph to highlight its related items, while the rest of the graph is dimmed out, making it easier to focus on specific relationships. For tables and external tables, in the ellipsis [**...**], you can select other options, such as querying the table, creating a Power BI report based on the table, and more.
 
 :::image type="content" source="media/database-entity-diagram/element-details.png" alt-text="Screenshot of an entity diagram table, showing the more menu.":::
 
