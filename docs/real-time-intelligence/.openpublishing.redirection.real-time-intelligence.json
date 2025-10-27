@@ -481,6 +481,16 @@
       "redirect_document_id": true
     },
     {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-get-historical-data.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-transform-kql-database",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-set-alert.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-set-alert",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-4-explore.md",
       "redirect_url": "/fabric/real-time-intelligence/tutorial-4-query-data",
       "redirect_document_id": false
