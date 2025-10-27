@@ -2,7 +2,7 @@
 title: ArcGIS GeoAnalytics for Microsoft Fabric (Generally Available)
 description: Learn how to use the ArcGIS GeoAnalytics library in Microsoft Fabric, including data import, enrichment, visualization, and support resources.
 ms.reviewer: sngun
-ms.author: eur
+ms.author: ms-arali
 author: ms-arali
 ms.topic: concept-article
 ms.date: 10/27/2025
@@ -11,7 +11,7 @@ ms.date: 10/27/2025
 
 # ArcGIS GeoAnalytics for Microsoft Fabric (Generally Available)
 
-Microsoft and [Esri](https://www.esri.com/) have partnered to integrate spatial analytics into Microsoft Fabric. The ArcGIS GeoAnalytics library is available in Fabric. This library enables spatial analytics in Spark notebooks and Spark Job Definitions for Data Engineering and Data Science workloads. This integration allows Spark developers and data scientists to use Esri's ArcGIS GeoAnalytics functions and tools within Fabric Spark for spatial data transformation and analysis. You don't need any separate installation to use this capability.
+Microsoft and [Esri](https://www.esri.com/) have partnered to integrate spatial analytics into Microsoft Fabric. The ArcGIS GeoAnalytics library is available in Fabric. This library enables spatial analytics in Spark notebooks and Spark Job Definitions for Data Engineering and Data Science workloads. This integration allows Spark developers and data scientists to use Esri's ArcGIS GeoAnalytics functions and tools within Fabric Spark for spatial data transformation and analysis. You don't need any separate installation to use these capabilities.
 
 ## Enable ArcGIS GeoAnalytics
 
@@ -19,7 +19,7 @@ Tenant administrators can enable or disable the ArcGIS GeoAnalytics library in t
 
 :::image type="content" source="media\spark-arcgis-geoanalytics\enable-arcgis-tenant.png" alt-text="Screenshot showing how to enable ArcGIS GeoAnalytics from Tenant settings." lightbox="media/spark-arcgis-geoanalytics/enable-arcgis-tenant.png":::
 
-Additionally, if you are a Capacity administrator you can enable or disable the ArcGIS GeoAnalytics library in the Fabric Runtime for all users using a your specific capacity. By default, capacity level settings are inherited from tenant level settings however you as a capacity administrator can choose to override it at the capacity level by navigating to **Settings** > **Admin Portal** > **Capacity settings** and choose the capacity. Next, under **Delegated tenant settings** > **Integration settings**, you can override and enabled or disable **ArcGIS GeoAnalytics for Fabric Runtime**.
+Additionally, if you are a Capacity administrator you can enable or disable the ArcGIS GeoAnalytics library in the Fabric Runtime for all users using a your specific capacity. By default, capacity level settings are inherited from tenant level settings however you as a capacity administrator can choose to override it at the capacity level by navigating to **Settings** > **Admin Portal** > **Capacity settings** and choose your capacity. Next, under **Delegated tenant settings** > **Integration settings**, you can override and enable or disable **ArcGIS GeoAnalytics for Fabric Runtime**.
 
 :::image type="content" source="media\spark-arcgis-geoanalytics\enable-arcgis-capacity.png" alt-text="Screenshot showing how to enable ArcGIS GeoAnalytics from Capacity settings." lightbox="media/spark-arcgis-geoanalytics/enable-arcgis-capacity.png":::
 
