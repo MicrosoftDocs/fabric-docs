@@ -126,6 +126,7 @@ But doesn't support:
 
 * [Workspace-level KQL Querysets](../create-query-set.md).
 * [Management commands](/kusto/management/?view=microsoft-fabric&preserve-view=true) aren't supported in KQL queries.
+* [Database shortcut](../database-shortcut.md).
 
 > [!NOTE]
 > Each tab supports only one query. Using multiple queries in a single tab results in a syntax error.

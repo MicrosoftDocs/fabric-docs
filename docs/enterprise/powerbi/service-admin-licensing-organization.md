@@ -72,7 +72,7 @@ Fabric and the Power BI service are available for organizations to purchase and 
 
     After you purchase a Fabric subscription, [enable Fabric for your organization](/fabric/admin/fabric-switch). Enabling Fabric includes setting up tenants and capacities.
 
-1. Purchase a Power BI subscription and licenses. Power BI Pro is included in Microsoft 365 E5. Otherwise, you can purchase Pro or PPU licenses from the [Microsoft pricing site](https://powerbi.microsoft.com/en-us/pricing/), through Microsoft 365, or through a Microsoft partner. After your purchase, you can assign licenses to individual users or use self-service. For more information, see [enabling your users to upgrade their own licenses](#enable-and-disable-self-service-sign-up-and-purchase).
+1. Purchase a Power BI subscription and licenses. Power BI Pro is included in Microsoft 365 E5. Otherwise, you can purchase Pro or PPU licenses from the [Microsoft pricing site](https://powerbi.microsoft.com/pricing/), through Microsoft 365, or through a Microsoft partner. After your purchase, you can assign licenses to individual users or use self-service. For more information, see [enabling your users to upgrade their own licenses](#enable-and-disable-self-service-sign-up-and-purchase).
 
 1. Go directly to the [sign-up wizard for Power BI Pro](https://go.microsoft.com/fwlink/?LinkId=2106428&clcid=0x409&cmpid=pbidocs-purchasing-power-bi-pro). 
 
