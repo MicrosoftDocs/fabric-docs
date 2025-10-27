@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
 ms.custom:
-ms.date: 12/02/2024
+ms.date: 10/27/2025
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to create a Real-Time Dashboard in Real-Time Intelligence.
@@ -121,4 +121,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 6: Create a Power BI report](tutorial-6-power-bi-report.md)
+> [Tutorial part 6: Set an alert on an eventstream](tutorial-6-set-alert.md)

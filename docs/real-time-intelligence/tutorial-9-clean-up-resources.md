@@ -13,7 +13,7 @@ ms.search.form: Get started
 # Real-Time Intelligence tutorial part 8: Clean up resources
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 7: Set an alert on your eventstream](tutorial-7-set-alert.md).
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 7: Create an anomaly detection](tutorial-7-create-anomaly-detection.md).
 
 ## Clean up resources
 
