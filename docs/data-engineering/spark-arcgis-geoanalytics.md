@@ -32,7 +32,7 @@ ArcGIS GeoAnalytics for Microsoft Fabric is a proprietory technologies from Esri
 
 ## Authentication
 
-Though ArcGIS GeoAnalytics library is preinstalled and preconfigured, so you can import the modules and start using it immediately however usage  must be authorized with a valid license before running any function or tool. You can authorize the module with a GeoAnalytics for Microsoft Fabric username and password or an API key provided by Esri. If the module is not authorized, functions and tools will fail to run with the following error: `com.esri.geoanalytics.internal.AuthError: Not authorized.` Here you can learn more about [Authorization](https://developers.arcgis.com/geoanalytics-fabric/authorization/).
+Though ArcGIS GeoAnalytics library is preinstalled and preconfigured and you can import the modules to start using it immediately, the usage must be authorized with a valid license before running any function or tool. You can authorize the module with a GeoAnalytics for Microsoft Fabric username and password or an API key provided by Esri. If the module is not authorized, functions and tools will fail to run with the following error: `com.esri.geoanalytics.internal.AuthError: Not authorized.` Here you can learn more about [Authorization](https://developers.arcgis.com/geoanalytics-fabric/authorization/).
 
 ## ArcGIS GeoAnalytics Capabilities
 
