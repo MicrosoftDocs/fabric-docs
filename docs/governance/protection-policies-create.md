@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to #Don't change
-ms.date: 08/06/2025
+ms.date: 10/27/2025
 
 #customer intent: As a security admin or Fabric admin, I want to learn how to create protection policies for Microsoft Fabric. 
 
