@@ -106,4 +106,5 @@ Finally, perform a NoSQL query to test the sample data in the **SampleData** con
 
 ## Next step
 
-- [Query mirrored Cosmos DB in Microsoft Fabric data using the SQL Analytics Endpoint](tutorial-mirroring.md)
+> [!div class="nextstepaction"]
+> [Query mirrored Cosmos DB in Microsoft Fabric data using the SQL Analytics Endpoint](tutorial-mirroring.md)
