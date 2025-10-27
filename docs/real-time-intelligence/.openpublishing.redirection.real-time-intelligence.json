@@ -372,27 +372,27 @@
     },
     {
       "source_path_from_root": "/docs/real-time-analytics/tutorial-3-get-historical-data.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-get-historical-data",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-transform-kql-database",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-analytics/tutorial-4-explore.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-4-explore",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-4-query-data",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-analytics/tutorial-5-advanced-kql-query.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-advanced-kql-query",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-create-dashboard",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-analytics/tutorial-6-build-report.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-build-report",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-create-dashboard",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-analytics/tutorial-7-clean-up-resources.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-8-clean-up-resources",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-9-clean-up-resources",
       "redirect_document_id": false
     },
     {
@@ -481,11 +481,6 @@
       "redirect_document_id": true
     },
     {
-      "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-get-historical-data.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-set-alert",
-      "redirect_document_id": true
-    },
-    {
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-4-explore.md",
       "redirect_url": "/fabric/real-time-intelligence/tutorial-4-query-data",
       "redirect_document_id": false
@@ -499,16 +494,6 @@
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-build-report.md",
       "redirect_url": "/fabric/real-time-intelligence/tutorial-6-power-bi-report",
       "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-set-alert.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-7-set-alert",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-set-alert.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-7-set-alert",
-      "redirect_document_id": true
     },
     {
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-query-data.md",
@@ -527,7 +512,7 @@
     },
     {
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-7-clean-up-resources.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-8-clean-up-resources",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-9-clean-up-resources",
       "redirect_document_id": true
     },
     {
