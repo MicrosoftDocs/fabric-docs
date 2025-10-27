@@ -104,8 +104,7 @@ Finally, perform a NoSQL query to test the sample data in the **SampleData** con
 
     :::image type="content" source="media/quickstart-portal/query-results.png" lightbox="media/quickstart-portal/query-results-full.png" alt-text="Screenshot of the query editor and result sections for a container in the Fabric portal.":::
 
-## Related content
+## Next step
 
-- [Learn about Cosmos DB in Microsoft Fabric](overview.md)
-- [Review the sample data set](sample-data.md)
-- [Connect using Microsoft Entra ID to Cosmos DB in Microsoft Fabric](how-to-authenticate.md)
+> [!div class="nextstepaction"]
+> [Query mirrored Cosmos DB in Microsoft Fabric data using the SQL Analytics Endpoint](tutorial-mirroring.md)
