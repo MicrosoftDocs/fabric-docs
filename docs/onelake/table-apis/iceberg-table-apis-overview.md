@@ -13,9 +13,9 @@ ms.topic: concept-article
 
 OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This article describes how to get started using this endpoint to interact with Apache Iceberg REST Catalog (IRC) APIs available at this endpoint for metadata read operations.
 
-For overall OneLake table API guidance and prerequisite guidance, see the [OneLake table API overview](./onelake-table-apis.md).
+For overall OneLake table API guidance and prerequisite guidance, see the [OneLake table API overview](./table-apis-overview.md).
 
-For detailed API documentation, see the [Getting started guide](./onelake-iceberg-table-apis-detailed.md#client-quickstart-examples). 
+For detailed API documentation, see the [Getting started guide](./iceberg-table-apis-get-started.md#client-quickstart-examples). 
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -33,14 +33,14 @@ At the OneLake table API endpoint, the Iceberg REST Catalog (IRC) APIs are avail
 https://onelake.table.fabric.microsoft.com/iceberg
 ```
 
-Examples of IRC client configuration with the OneLake table endpoint are covered in the [Getting started guide](./onelake-iceberg-table-apis-detailed.md#client-quickstart-examples).
+Examples of IRC client configuration with the OneLake table endpoint are covered in the [Getting started guide](./iceberg-table-apis-get-started.md#client-quickstart-examples).
 
 > [!NOTE]
 > Before using the Iceberg APIs, be sure you have Delta Lake to Iceberg metadata conversion enabled for your tenant or workspace. [See the instructions to learn how to enable automatic Delta Lake to Iceberg metadata conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
 
 ## Iceberg table API operations
 
-The following IRC operations are currently supported at this endpoint. Detailed guidance for these operations is available in the [Getting started guide](./onelake-iceberg-table-apis-detailed.md#example-requests-and-responses).
+The following IRC operations are currently supported at this endpoint. Detailed guidance for these operations is available in the [Getting started guide](./iceberg-table-apis-get-started.md#example-requests-and-responses).
 
 - **Get configuration**
     
@@ -54,13 +54,13 @@ The following IRC operations are currently supported at this endpoint. Detailed 
 
     `GET <BaseUrl>/v1/<Prefix>/namespaces`
 
-    This operation returns the list of schemas within a data item. If the data item does not support schemas, a fixed schema named `dbo` is returned.
+    This operation returns the list of schemas within a data item. If the data item doesn't support schemas, a fixed schema named `dbo` is returned.
 
 - **Get namespace**
 
     `GET <BaseUrl>/v1/<Prefix>/namespaces/<SchemaName>`
 
-    This operation returns information about a schema within a data item, if the schema is found. If the data item does not support schemas, a fixed schema named `dbo` is supported here.
+    This operation returns information about a schema within a data item, if the schema is found. If the data item doesn't support schemas, a fixed schema named `dbo` is supported here.
 
 - **List tables**
 
@@ -76,7 +76,7 @@ The following IRC operations are currently supported at this endpoint. Detailed 
 
 ## Current limitations, considerations
 
-The use of the OneLake table APIs for Iceberg are subject to the following limitations and considerations:
+The use of the OneLake table APIs for Iceberg is subject to the following limitations and considerations:
 
 - **Certain data items may not support schemas**
 
@@ -84,16 +84,16 @@ The use of the OneLake table APIs for Iceberg are subject to the following limit
 
 - **Current namespace scope**
 
-    In Fabric, data items contain a flat list of schemas, which each contain a flat list of tables. Today, the top-level namespaces listed by the Iceberg APIs are schemas, so although the Iceberg REST Catalog (IRC) standard supports multi-level namespaces, the OneLake implementation offers one level, mapping to schemas.
+    In Fabric, data items contain a flat list of schemas, which each contains a flat list of tables. Today, the top-level namespaces listed by the Iceberg APIs are schemas, so although the Iceberg REST Catalog (IRC) standard supports multi-level namespaces, the OneLake implementation offers one level, mapping to schemas.
 
-    Because of this limitation, we do not yet support the `parent` query parameter for the `list namespaces` operation.
+    Because of this limitation, we don't yet support the `parent` query parameter for the `list namespaces` operation.
 
 - **Metadata write operations, other operations**
 
-    Only the operations listed in [Iceberg table API operations](#iceberg-table-api-operations) are supported today. Operations that handle metadata write operations are not yet supported by the OneLake table API endpoint. We plan to add support for more operations at a later time.
+    Only the operations listed in [Iceberg table API operations](#iceberg-table-api-operations) are supported today. Operations that handle metadata write operations aren't yet supported by the OneLake table API endpoint. We plan to add support for more operations at a later time.
 
 ## Related content
 
-- Learn more about [OneLake table APIs](./onelake-table-apis.md).
-- See [detailed guidance and API details](./onelake-iceberg-table-apis-detailed.md).
+- Learn more about [OneLake table APIs](./table-apis-overview.md).
+- See [detailed guidance and API details](./iceberg-table-apis-get-started.md).
 - Set up [automatic Delta Lake to Iceberg format conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
