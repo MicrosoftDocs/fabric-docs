@@ -33,7 +33,7 @@ Start by accessing the SQL analytics endpoint for the Cosmos DB in Fabric databa
 
 1. In the menu bar, select the **Cosmos DB** list and then select **SQL Endpoint** to switch to the SQL analytics endpoint.
 
-    :::image source="media/how-to-create-reports/endpoint-selection.png" lightbox="media/how-to-create-reports/endpoint-selection.png" alt-text="Screenshot of the endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
+    :::image type="content" source="media/how-to-create-reports/endpoint-selection.png" lightbox="media/how-to-create-reports/endpoint-selection.png" alt-text="Screenshot of the endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
 
 1. Once you're able to successfully navigate to the SQL analytics endpoint, this navigation step confirms that mirroring ran successfully at least once.
 

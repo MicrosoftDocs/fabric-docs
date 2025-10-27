@@ -106,6 +106,8 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
+          - text: Development and Deployment
+            url: development-deployment.md
           - text: Semantic models
             url: semantic-models.md            
           - text: Reports in the Power BI service
