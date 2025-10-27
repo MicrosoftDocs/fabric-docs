@@ -54,13 +54,13 @@ The following IRC operations are currently supported at this endpoint. Detailed 
 
     `GET <BaseUrl>/v1/<Prefix>/namespaces`
 
-    This operation returns the list of schemas within a data item. If the data item does not support schemas, a fixed schema named `dbo` is returned.
+    This operation returns the list of schemas within a data item. If the data item doesn't support schemas, a fixed schema named `dbo` is returned.
 
 - **Get namespace**
 
     `GET <BaseUrl>/v1/<Prefix>/namespaces/<SchemaName>`
 
-    This operation returns information about a schema within a data item, if the schema is found. If the data item does not support schemas, a fixed schema named `dbo` is supported here.
+    This operation returns information about a schema within a data item, if the schema is found. If the data item doesn't support schemas, a fixed schema named `dbo` is supported here.
 
 - **List tables**
 
@@ -76,7 +76,7 @@ The following IRC operations are currently supported at this endpoint. Detailed 
 
 ## Current limitations, considerations
 
-The use of the OneLake table APIs for Iceberg are subject to the following limitations and considerations:
+The use of the OneLake table APIs for Iceberg is subject to the following limitations and considerations:
 
 - **Certain data items may not support schemas**
 
@@ -84,13 +84,13 @@ The use of the OneLake table APIs for Iceberg are subject to the following limit
 
 - **Current namespace scope**
 
-    In Fabric, data items contain a flat list of schemas, which each contain a flat list of tables. Today, the top-level namespaces listed by the Iceberg APIs are schemas, so although the Iceberg REST Catalog (IRC) standard supports multi-level namespaces, the OneLake implementation offers one level, mapping to schemas.
+    In Fabric, data items contain a flat list of schemas, which each contains a flat list of tables. Today, the top-level namespaces listed by the Iceberg APIs are schemas, so although the Iceberg REST Catalog (IRC) standard supports multi-level namespaces, the OneLake implementation offers one level, mapping to schemas.
 
-    Because of this limitation, we do not yet support the `parent` query parameter for the `list namespaces` operation.
+    Because of this limitation, we don't yet support the `parent` query parameter for the `list namespaces` operation.
 
 - **Metadata write operations, other operations**
 
-    Only the operations listed in [Iceberg table API operations](#iceberg-table-api-operations) are supported today. Operations that handle metadata write operations are not yet supported by the OneLake table API endpoint. We plan to add support for more operations at a later time.
+    Only the operations listed in [Iceberg table API operations](#iceberg-table-api-operations) are supported today. Operations that handle metadata write operations aren't yet supported by the OneLake table API endpoint. We plan to add support for more operations at a later time.
 
 ## Related content
 

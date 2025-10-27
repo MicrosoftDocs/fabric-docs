@@ -71,7 +71,7 @@ The following Delta API operations are currently supported at this endpoint. Det
 
 ## Current limitations, considerations
 
-The use of the OneLake table APIs for Delta are subject to the following limitations and considerations:
+The use of the OneLake table APIs for Delta is subject to the following limitations and considerations:
 
 - **Certain data items may not support schemas**
 

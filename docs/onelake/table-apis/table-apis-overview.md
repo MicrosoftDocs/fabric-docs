@@ -11,7 +11,7 @@ ms.topic: overview
 
 # Overview of OneLake table APIs
 
-OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This endpoint can be used with clients and libraries that are compatible with [the Iceberg REST Catalog (IRC) API open standard](https://iceberg.apache.org/rest-catalog-spec/). Soon, this endpoint will support Delta Lake REST API operations.
+OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This endpoint can be used with clients and libraries that are compatible with [the Iceberg REST Catalog (IRC) API open standard](https://iceberg.apache.org/rest-catalog-spec/) or the [Unity Catalog API open standard.](https://github.com/unitycatalog/unitycatalog/tree/main/api). 
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)] 
 
