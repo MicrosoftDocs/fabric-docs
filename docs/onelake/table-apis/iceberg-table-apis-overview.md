@@ -15,7 +15,7 @@ OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabr
 
 For overall OneLake table API guidance and prerequisite guidance, see the [OneLake table API overview](./table-apis-overview.md).
 
-For detailed API documentation, see the [Getting started guide](./iceberg-table-apis-getting-started.md#client-quickstart-examples). 
+For detailed API documentation, see the [Getting started guide](./iceberg-table-apis-get-started.md#client-quickstart-examples). 
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -33,14 +33,14 @@ At the OneLake table API endpoint, the Iceberg REST Catalog (IRC) APIs are avail
 https://onelake.table.fabric.microsoft.com/iceberg
 ```
 
-Examples of IRC client configuration with the OneLake table endpoint are covered in the [Getting started guide](./iceberg-table-apis-getting-started.md#client-quickstart-examples).
+Examples of IRC client configuration with the OneLake table endpoint are covered in the [Getting started guide](./iceberg-table-apis-get-started.md#client-quickstart-examples).
 
 > [!NOTE]
 > Before using the Iceberg APIs, be sure you have Delta Lake to Iceberg metadata conversion enabled for your tenant or workspace. [See the instructions to learn how to enable automatic Delta Lake to Iceberg metadata conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
 
 ## Iceberg table API operations
 
-The following IRC operations are currently supported at this endpoint. Detailed guidance for these operations is available in the [Getting started guide](./iceberg-table-apis-getting-started.md#example-requests-and-responses).
+The following IRC operations are currently supported at this endpoint. Detailed guidance for these operations is available in the [Getting started guide](./iceberg-table-apis-get-started.md#example-requests-and-responses).
 
 - **Get configuration**
     
@@ -95,5 +95,5 @@ The use of the OneLake table APIs for Iceberg is subject to the following limita
 ## Related content
 
 - Learn more about [OneLake table APIs](./table-apis-overview.md).
-- See [detailed guidance and API details](./iceberg-table-apis-getting-started.md).
+- See [detailed guidance and API details](./iceberg-table-apis-get-started.md).
 - Set up [automatic Delta Lake to Iceberg format conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).

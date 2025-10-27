@@ -15,7 +15,7 @@ OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabr
 
 For overall OneLake table API guidance and prerequisite guidance, see the [OneLake table API overview](./table-apis-overview.md).
 
-For detailed API documentation, see the [Getting started guide](./delta-table-apis-getting-started.md#example-requests-and-responses). 
+For detailed API documentation, see the [Getting started guide](./delta-table-apis-get-started.md#example-requests-and-responses). 
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -35,7 +35,7 @@ https://onelake.table.fabric.microsoft.com/delta
 
 ## Delta table API operations
 
-The following Delta API operations are currently supported at this endpoint. Detailed guidance for these operations is available in the [Getting started guide](./delta-table-apis-getting-started.md#example-requests-and-responses).
+The following Delta API operations are currently supported at this endpoint. Detailed guidance for these operations is available in the [Getting started guide](./delta-table-apis-get-started.md#example-requests-and-responses).
 
 - **List schemas**
     
@@ -88,4 +88,4 @@ The use of the OneLake table APIs for Delta is subject to the following limitati
 ## Related content
 
 - Learn more about [OneLake table APIs](./table-apis-overview.md).
-- See [detailed guidance and API details](./delta-table-apis-getting-started.md).
+- See [detailed guidance and API details](./delta-table-apis-get-started.md).
