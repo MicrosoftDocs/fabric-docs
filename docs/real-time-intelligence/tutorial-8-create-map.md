@@ -41,8 +41,8 @@ In this part of the tutorial, you learn how to create a map using geospatial dat
 1. Enter **TutorialLakehouse** as Name
 1. Right-click the **File** node and under **Upload**, select **Upload files**.
 1. Download the following two GeoJSON files from the following links and upload them to the Lakehouse.
-    - london-boroughs.geojson
-    - buckingham-palace-road.json
+    - [london-boroughs.geojson](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/london-boroughs.geojson)
+    - [buckingham-palace-road.json](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/buckingham-palace-road.geojson)
 
     :::image type="content" source="media/tutorial/lakehouse-upload-files.png" alt-text="Screenshot of files upload to lakehouse." lightbox="media/tutorial/lakehouse-upload-files.png":::
 
@@ -77,7 +77,7 @@ In this part of the tutorial, you learn how to create a map using geospatial dat
 1. In the **Explorer** pane, select **Lakehouse** and select **+ Add data items** and choose the **TutorialLakehouse** lakehouse.
 1. Under TutorialLakehouse, select the **london-boroughs.geojson** file and right-click on the file and select **Show on map**. Repeat the step for **buckingham-palace-road.json** file.
 
-    :::image type="content" source="media/tutorial/geojson-selection.png" alt-text="Screenshot of geojson selection." lightbox="media/tutorial/geojson-selection.png":::
+    :::image type="content" source="media/tutorial/selection.png" alt-text="Screenshot of geojson selection." lightbox="media/tutorial/selection.png":::
 
 1. We should see the borough boundaries and Buckingham Palace road on the map. You can toggle visibility of each layer by clicking the eye icon next to each layer under **Data layers**.
 
