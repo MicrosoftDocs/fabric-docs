@@ -31,22 +31,22 @@ To use these APIs, you first need to gather the following pieces of information:
 
     These IDs are GUIDs. They can be found within the OneLake URL of any table in OneLake. They can alternatively be found within the URL seen in your browser when you have a data item open in Fabric.
 
-- The user or service principal identity in Entra ID that has permissions to read tables in your chosen data item.
+- The user or service principal identity in Microsoft Entra ID that has permissions to read tables in your chosen data item.
 
 ### Preparing for authentication
 
-1. Decide how you would like to authenticate with Entra ID to obtain an access token for your chosen Entra identity.
+1. Decide how you would like to authenticate with Microsoft Entra ID to obtain an access token for your chosen Microsoft Entra identity.
 
-    You can [check this guide to learn about the different ways to obtain an access token with Entra ID](/entra/identity-platform/authentication-flows-app-scenarios). Microsoft offers [convenient authentication libraries in several languages](/entra/identity-platform/msal-overview).
+    You can [check this guide to learn about the different ways to obtain an access token with Microsoft Entra ID](/entra/identity-platform/authentication-flows-app-scenarios). Microsoft offers [convenient authentication libraries in several languages](/entra/identity-platform/msal-overview).
 
-1. If you are developing a new application that will either allow users to sign in or sign in as a standalone application, [register your application with Entra ID](/entra/identity-platform/quickstart-register-app).
+1. If you are developing a new application that will either allow users to sign in or sign in as a standalone application, [register your application with Microsoft Entra ID](/entra/identity-platform/quickstart-register-app).
 
-1. [Grant API permission](/entra/identity-platform/howto-update-permissions?pivots=portal#option-1-add-permissions-in-the-api-permissions-pane) for the Azure Storage (`https://storage.azure.com/`) token audience, to your Entra ID application. Granting this permission ensures that your application can obtain tokens for use with the OneLake table endpoint.
+1. [Grant API permission](/entra/identity-platform/howto-update-permissions?pivots=portal#option-1-add-permissions-in-the-api-permissions-pane) for the Azure Storage (`https://storage.azure.com/`) token audience, to your Microsoft Entra ID application. Granting this permission ensures that your application can obtain tokens for use with the OneLake table endpoint.
 
     > [!NOTE]
     > The OneLake table API endpoint accepts the same token audience as the OneLake filesystem endpoints.
     > 
-    > If you are developing an application, you might already know how to authenticate with Entra ID to interact with OneLake filesystem REST APIs. If so, you can use the same approach to authenticate with the new OneLake table endpoint.
+    > If you are developing an application, you might already know how to authenticate with Microsoft Entra ID to interact with OneLake filesystem REST APIs. If so, you can use the same approach to authenticate with the new OneLake table endpoint.
 
 ## Iceberg REST Catalog (IRC) API operations on OneLake
 

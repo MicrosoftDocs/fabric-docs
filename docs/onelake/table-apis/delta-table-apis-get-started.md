@@ -25,7 +25,7 @@ For each of these operations:
     - `<WorkspaceID>/<DataItemID>`, such as `12345678-abcd-4fbd-9e50-3937d8eb1915/98765432-dcba-4209-8ac2-0821c7f8bd91`
     - `<WorkspaceName>/<DataItemName>.<DataItemType>`, such as `MyWorkspace/MyItem.Lakehouse`, as long as both names do not contain special  
        characters.
-- `<Token>` is the access token value returned by Entra ID upon successful authentication.
+- `<Token>` is the access token value returned by Microsoft Entra ID upon successful authentication.
 
 ### List schemas
 
