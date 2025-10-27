@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 8 - Create a Map
+title: Real-Time Intelligence tutorial part 8 - Create a map using geospatial data
 description: Tutorial- Learn how to create a map in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: spelluru
@@ -11,14 +11,14 @@ ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to create a map in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 8: Create a Map
+# Real-Time Intelligence tutorial part 8: Create a map using geospatial data
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 7: Detect anomalies on an Eventhouse table](tutorial-7-create-anomaly-detection.md).
 
 In this part of the tutorial, you learn how to create a map using geospatial data.
 
-## Create KQL Queryset tab used by Map
+## Create a KQL Queryset tab to be used by the map
 
 1. Open the **Tutorial** eventhouse that you created in the previous part of the tutorial.
 1. Select the **Tutorial_queryset**, open a new query tab, and paste the following query.
@@ -46,7 +46,7 @@ In this part of the tutorial, you learn how to create a map using geospatial dat
 
     :::image type="content" source="media/tutorial/lakehouse-upload-files.png" alt-text="Screenshot of files upload to lakehouse." lightbox="media/tutorial/lakehouse-upload-files.png":::
 
-## Create a Map
+## Create a map
 
 1. Browse to the workspace and in upper left corner select the **+ New item** button. Then search for and select **Map**.
 
@@ -54,7 +54,7 @@ In this part of the tutorial, you learn how to create a map using geospatial dat
 
 1. Enter *TutorialMap* in **Name**.
 
-## Add Eventhouse data to the Map
+## Add Eventhouse data to the map
 
 1. In the **Explorer** pane, select **Eventhouse** and select **+ Add data items** and choose the **Tutorial** eventhouse.
 1. Under Tutorial, select the **Tutorial_queryset** and right-click on the tab and select **Show on map**
@@ -72,7 +72,7 @@ In this part of the tutorial, you learn how to create a map using geospatial dat
 
     :::image type="content" source="media/tutorial/bubble-map.png" alt-text="Screenshot of bubble map." lightbox="media/tutorial/bubble-map.png":::
 
-## Add GeoJSON files from Lakehouse to the Map
+## Add GeoJSON files from Lakehouse to the map
 
 1. In the **Explorer** pane, select **Lakehouse** and select **+ Add data items** and choose the **TutorialLakehouse** lakehouse.
 1. Under TutorialLakehouse, select the **london-boroughs.geojson** file and right-click on the file and select **Show on map**. Repeat the step for **buckingham-palace-road.json** file.
