@@ -714,6 +714,21 @@
       "source_path_from_root": "/docs/real-time-intelligence/dashboard-copy-from-data-explorer.md",
       "redirect_url": "/fabric/real-time-intelligence/",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-power-bi-report.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-create-dashboard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-7-set-alert.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-set-alert",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-8-clean-up-resources.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-9-clean-up-resources",
+      "redirect_document_id": false
     }
   ]
 }
