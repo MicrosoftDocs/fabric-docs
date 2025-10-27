@@ -15,11 +15,11 @@ appliesto:
 Cosmos DB in Fabric has support for customer managed keys (CMK) in Microsoft Fabric in *preview*. There are some caveats that users should be aware of when enabling CMK in a Microsoft Fabric workspace.
 
 > [!IMPORTANT]
-> During preview, if you intend to use CMK in any of your workspaces with Cosmos DB, this should be enabled **BEFORE** provisioning any Cosmos DB artifacts.
+> During preview, if you intend to use CMK in any of your workspaces with Cosmos DB, CMK should be enabled **BEFORE** provisioning any Cosmos DB artifacts.
 
 ## Cannot enable CMK on a workspace with Cosmos DB artifacts
 
-This scenario is not supported during preview. There are two workarounds to this scenario.
+This scenario isn't supported during preview. There are two workarounds to this scenario.
 
 ### Migrate to new workspace
 
@@ -27,7 +27,7 @@ Create a new workspace, enabled CMK on it, then create your Cosmos DB artifacts 
 
 ### Delete the Cosmos DB artifacts
 
-Deleted Cosmos DB artifacts are associated with a Fabric workspace for up to 8 days after they are deleted to allow a user to restore them to the workspace. If migrating to a new workspace is not possible or desirable, it is possible to delete all the Cosmos DB artifacts in the workspace, then wait 8 days until all restore points have expired. Once all restore points have expired you can enable CMK on the workspace, then provision new Cosmos DB artifacts within it.
+Deleted Cosmos DB artifacts are associated with a Fabric workspace for up to 8 days after they are deleted to allow a user to restore them to the workspace. If migrating to a new workspace is not possible or desirable, delete all the Cosmos DB artifacts in the workspace, then wait eight days until all restore points expire. With all restore points expired you can enable CMK on the workspace, then provision new Cosmos DB artifacts within it.
 
 ## Cannot disable CMK on a workspace with Cosmos DB artifacts
 
@@ -35,7 +35,7 @@ This scenario is not supported during preview. There is one workaround to this s
 
 ### Delete the Cosmos DB artifacts
 
-Delete all Cosmos DB artifacts in a workspace, then disable CMK. However, it will not be possible to re-enable CMK within that workspace after a Cosmos DB artifact has been created.
+Delete all Cosmos DB artifacts in a workspace, then disable CMK. However, it will not be possible to re-enable CMK within that workspace after a Cosmos DB artifact is created.
 
 ## Related content
 
