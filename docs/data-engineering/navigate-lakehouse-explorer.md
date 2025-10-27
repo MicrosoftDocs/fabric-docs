@@ -104,8 +104,10 @@ This feature allows you to:
 - Download files from both table files and the File section (with required permission).
 - Keep your data secure and compliant by including Microsoft Information Protection (MIP) sensitivity labels for supported files.
 
-Enable this feature by going to:
-Admin Portal → Tenant settings → OneLake settings, and turn on “Users can access data stored in OneLake with apps external to Fabric.”
+To enable the corresponding feature:
+
+1. Select **Admin Portal** > **Tenant settings**.
+1. Under **OneLake settings** turn on “Users can access data stored in OneLake with apps external to Fabric.”
 
 :::image type="content" source="media\lakehouse-overview\lakehouse-download-settings.png" alt-text="Image of download settings to enable." lightbox="media\lakehouse-overview\lakehouse-download-settings.png":::
 
