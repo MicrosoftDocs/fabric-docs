@@ -429,7 +429,7 @@ items:
      href: graphql-faq.yml  
 - name: Partner integration
   items:
-   - name: Esri - ArcGIS GeoAnalytics (preview)
+   - name: Esri - ArcGIS GeoAnalytics
      href: spark-arcgis-geoanalytics.md
 - name: User data functions
   items:
