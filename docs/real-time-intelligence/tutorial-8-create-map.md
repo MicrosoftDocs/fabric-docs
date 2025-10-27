@@ -1,6 +1,6 @@
 ---
 title: Real-Time Intelligence tutorial part 8 - Create a Map
-description: Learn how to create a map in Real-Time Intelligence.
+description: Tutorial- Learn how to create a map in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
@@ -81,7 +81,7 @@ In this part of the tutorial, you learn how to create a map using geospatial dat
 
 1. We should see the borough boundaries and Buckingham Palace road on the map. You can toggle visibility of each layer by clicking the eye icon next to each layer under **Data layers**.
 
-    :::image type="content" source="media/tutorial/map-data-layers.png" alt-text="Screenshot of 3 data layers." lightbox="media/tutorial/map-data-layers.png":::
+    :::image type="content" source="media/tutorial/map-data-layers.png" alt-text="Screenshot of 3 data layers in map." lightbox="media/tutorial/map-data-layers.png":::
 
 1. Right-click on **buckingham-palace-road** under **Data layers** and select **Zoom to fit** to zoom into Buckingham Palace road area on the map.
 
