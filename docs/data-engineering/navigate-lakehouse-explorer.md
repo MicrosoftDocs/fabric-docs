@@ -99,9 +99,10 @@ Supported capabilities include:
 
 ## Download Files in Lakehouse Explorer 
 Lakehouse allows you to download files directly from the UX, empowering you to work more efficiently, reduce friction in your data workflows, and gain faster insights.
- This feature allows you to:
-•	Download files from both table files and the File section (with required permission).
-•	Keep your data secure and compliant by including Microsoft Information Protection (MIP) sensitivity labels for supported files.
+
+This feature allows you to:
+- Download files from both table files and the File section (with required permission).
+- Keep your data secure and compliant by including Microsoft Information Protection (MIP) sensitivity labels for supported files.
 
 Enable this feature by going to:
 Admin Portal → Tenant settings → OneLake settings, and turn on “Users can access data stored in OneLake with apps external to Fabric.”
