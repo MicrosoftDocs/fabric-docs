@@ -56,8 +56,8 @@ The Lakehouse explorer offers a unified, graphical representation of your entire
     - Perform key actions such as previewing data, creating subfolders, renaming objects—directly in the explorer and more. 
     - Copy reference lakehouse URLs to open a reference lakehouse as a primary lakehouse.
     
-    >   [!NOTE]
-    >   Ribbon actions are only available for the primary lakehouse. 
+    > [!NOTE]
+    > Ribbon actions are only available for the primary lakehouse. 
 
 ## Main view area
 
