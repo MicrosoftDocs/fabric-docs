@@ -23,7 +23,7 @@ Anomaly detection is a feature of Real-Time Intelligence that allows you to iden
 1. From the left navigation bar, select **Real-Time** to open the *Real-Time hub*.
 2. Under **All data streams** select the eventhouse table **TransformedData** you created in the previous tutorial. The table details page opens. Select **Detect anomalies** from the top menu.
 
-    ![Screenshot of eventhouse table details page and detect anomalies selected.](media/detect-anomalies.png)
+    ![Screenshot of eventhouse table details page and detect anomalies selected.](media/tutorial/detect-anomalies.png)
 
 3. Enter **`BikeAnomaliesconfiguration`** as Name
 4. Under Save to, select the workspace in which you want to create the anomaly detector item, enter a name such as **`BikeAnomalies`**. Then select **Create**.
@@ -35,7 +35,7 @@ Anomaly detection is a feature of Real-Time Intelligence that allows you to iden
     | Group by | Street|
     | Timestamp | Timestamp |  
 
-    ![Screenshot of anomaly configuration pane](media/anomaly-configuration.png)
+    ![Screenshot of anomaly configuration pane](media/tutorial/anomaly-configuration.png)
 
 6. Select **Run analysis**.
 
@@ -47,12 +47,17 @@ Anomaly detection is a feature of Real-Time Intelligence that allows you to iden
 
 7. When analysis is complete, anomalies along with tabular data are displayed on the right.
 
-    ![Screenshot of completed anomaly detection](media/anomalies-detected.png)
+    ![Screenshot of completed anomaly detection](media/tutorial/anomalies-detected.png)
 
 > [!NOTE]
 > Play around with the **Detection model** under **Customize detection** section and Timestamp above the **Detector results** pane. More data might increase anomaly detection accuracy.
 
 8. Select **Save**.
+
+## Related content
+
+For more information about tasks performed in this tutorial, see:
+* [Anomaly detection in Real-Time Intelligence (Preview)](anomaly-detection.md)
 
 ## Next step
 
