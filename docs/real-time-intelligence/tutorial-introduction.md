@@ -37,7 +37,8 @@ Specifically, in this tutorial, you learn how to:
 > * Create an alert based on a KQL query
 > * Create a Real-Time dashboard
 > * Explore data visually in the Real-Time dashboard
-> * Create a Power BI report from a KQL query
+> * Set up anomaly detection on Eventhouse tables
+> * Create a map using geospacial data
 > * Set an alert on the eventstream
 
 ## Prerequisites
