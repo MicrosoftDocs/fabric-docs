@@ -25,7 +25,6 @@ This article lists current limitations for Cosmos DB in Microsoft Fabric.
 - Containers created in the Fabric portal are automatically allocated **5,000** RU/s maximum autoscale throughput.
 - Containers created using a software development kit (SDK) can be set with a minimum of **1,000** RU/s up to the maximum allowed autoscale throughput.
 - Containers created through an SDK must have throughput set to autoscale during container creation or an error will be thrown.
-- Container throughput can't be changed once the container is created.
   
     > [!TIP]
     > Maximum throughput more than 50,000 RU/s can be increased with a support ticket.
