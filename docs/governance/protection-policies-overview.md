@@ -21,7 +21,7 @@ The target audience for this article is security and compliance admins, Fabric a
 
 Each protection policy for Fabric is associated with a sensitivity label. The policy controls access to an item that has the associated label by allowing users and groups specified in the policy to retain permissions they have on the item, while blocking access for everyone else. The policy can:
 
-* Allow specified users and groups to retain *read* permission on labeled items if they have it. Any other permissions they have on the item will be removed. This feature is in preview for Fabric, and the "read only" experience may differ across workloads.
+* Allow specified users and groups to retain *read* permission on labeled items if they have it. Any other permissions they have on the item will be removed.
 
     and/or
 
@@ -77,13 +77,7 @@ Additionally, protection policies are supported for Power BI semantic models. Ot
 
 * After a policy has been created, it can take up to 24 hours for it to start detecting and protecting items labeled with the sensitivity label that was associated with the policy.
 
-* In Fabric, users who apply sensitivity labels to items retain access to those items, even if they're not listed in the protection policy. However, users who create items may lose access to those items if another user applies a label with a protection policy and they're not included in that policy. This limitation also applies when [labels are inherited](service-security-sensitivity-label-downstream-inheritance.md). The following examples illustrate this limitation:
-
-   * If a user creates a Notebook item and another user applies a sensitivity label with a protection policy to that item, the creator will be restricted from accessing the Notebook unless they are included in the protection policy.
-
-   * If a user creates a Notebook that is linked to a Lakehouse, and a sensitivity label with a protection policy is applied to the Lakehouse, label inheritance occurs. In this case, the user who applied the label will retain access to the Lakehouse, but the Notebook creator may be restricted from accessing the linked Notebook if they aren't included in the protection policy.
-
-   This limitation for users who create artifacts is temporary and will be addressed in a future update.
+* For native Fabric item types, if the label is applied automatically by the system—such as in the case of [downstream inheritance](/power-bi/enterprise/service-security-sensitivity-label-downstream-inheritance)—and there is no designated label issuer, the user who created the artifact will not be restricted by protection policies.
 
 ## Related content
 

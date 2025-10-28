@@ -60,7 +60,7 @@ To create a protection policy, the following requirements must be met:
 
     You have two options:
 
-    * **Allow users to retain read access** - Any users or groups added under this control setting will retain read permissions to resources with the selected sensitivity label if they already have it. Any other permissions they have on the item will be removed. This feature is in preview for Fabric, and the "read only" experience may differ across workloads. 
+    * **Allow users to retain read access** - Any users or groups added under this control setting will retain read permissions to resources with the selected sensitivity label if they already have it. Any other permissions they have on the item will be removed.
     * **Allow users to retain full control** - Any users or groups added under this control setting will retain full control of the labeled item if they already have it, or any other permissions they might have.
 
     You can select either one option or both options. For each control, select **Add users and groups** to specify which users and/or groups the control should apply to.
