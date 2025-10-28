@@ -2,7 +2,7 @@
 title: Current Limitations of Graph in Microsoft Fabric
 description: Understand the current limitations of Graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL (Graph Query Language) conformance.
 ms.topic: reference
-ms.date: 10/10/2025
+ms.date: 10/28/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam
@@ -27,6 +27,19 @@ Graph in Microsoft Fabric currently only exposes support for the following data 
 - Integer (values are 64-bit signed integers)
 - String (values are Unicode character strings)
 - Zoned DateTime (values are timestamps together with a timeshift for the time zone)
+
+The following OneLake types are supported:
+- IntegerType
+- LongType
+- StringType
+- DoubleType
+- BooleanType
+- FloatType
+- ByteType
+- ArrayType
+- DateType
+- TimestampNtzType
+- TimestampType
 
 ### Data sources
 
