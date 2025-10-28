@@ -98,4 +98,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Real-Time Intelligence tutorial part 3: Transform data in a KQL database](tutorial-3-transform-kql-database.md)
+> [Real-Time Intelligence tutorial part 3: Set an alert on your event stream](tutorial-3-set-alert.md)
