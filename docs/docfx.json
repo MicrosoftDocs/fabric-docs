@@ -206,6 +206,14 @@
             "zone_pivot_group_filename": {
                 "database/cosmos-db/**/*.md": "database/cosmos-db/zone-pivot-groups.json",
                 "database/cosmos-db/**/*.yml": "database/cosmos-db/zone-pivot-groups.json"
+            },
+            "appliesto": {
+                "database/cosmos-db/**/*.md": [
+                    "✅ Cosmos DB in Fabric"
+                ],
+                "database/cosmos-db/**/*.yml": [
+                    "✅ Cosmos DB in Fabric"
+                ]
             }
         },
         "template": [],
