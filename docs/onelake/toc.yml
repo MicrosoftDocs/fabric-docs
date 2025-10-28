@@ -82,11 +82,15 @@ items:
 - name: OneLake table APIs
   items:
   - name: OneLake table APIs overview
-    href: ./table-apis/onelake-table-apis.md
+    href: ./table-apis/table-apis-overview.md
   - name: OneLake table APIs for Iceberg
-    href: ./table-apis/onelake-iceberg-table-apis.md
+    href: ./table-apis/iceberg-table-apis-overview.md
   - name: Getting started with OneLake table APIs for Iceberg
-    href: ./table-apis/onelake-iceberg-table-apis-detailed.md
+    href: ./table-apis/iceberg-table-apis-get-started.md
+  - name: OneLake table APIs for Delta
+    href: ./table-apis/delta-table-apis-overview.md
+  - name: Getting started with OneLake table APIs for Delta
+    href: ./table-apis/delta-table-apis-get-started.md
 - name: Secure and manage data access
   items:
   - name: OneLake security overview

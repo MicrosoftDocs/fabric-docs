@@ -134,22 +134,13 @@ Limitations:
 * Data connectors relying on queued ingestion aren't supported.
 * Querying an Eventhouse using T-SQL isn't possible.
 
-### API for GraphQL
-
-API for GraphQL supports Private Link, allowing secure API access and querying from your Azure Virtual Network via a private link. 
-
-Limitations:
-
-* API monitoring dashboard and logging based on Workspace Monitoring is not supported.
-* Service Principals (SPN) are supported as clients however it's not possible to use a service principal to create a saved credential for access between the API and data source.
-
 ### Healthcare data solutions (preview)
 
 Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. In a tenant where private link is enabled, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. Also included is the ability to ingest healthcare data from various sources, such as Azure Storage accounts, and more.
 
 ### Fabric Events
 
-Fabric Events support Private Link without affecting event delivery, because the events originate from within the tenan
+Fabric Events support Private Link without affecting event delivery, because the events originate from within the tenant.
 
 ### Azure Events
 

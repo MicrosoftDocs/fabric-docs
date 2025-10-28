@@ -28,7 +28,7 @@ Consider the following before deciding to disable V-Order:
 
 - [Microsoft Fabric Direct Lake mode](../fundamentals/direct-lake-overview.md) depends on V-Order.
 - In warehouse, the effect of V-Order on performance can vary depending on your table schemas, data volumes, query, and ingestion patterns.
-- Make sure you test how V-Order affects the performance of data ingestion and of your queries before deciding to disable it. Consider creating a [copy of your test warehouse using source control](source-control.md#publish-sql-database-project-to-a-new-warehouse), disabling V-Order on the copy, and executing data ingestion and querying tasks to test the performance implications.
+- Make sure you test how V-Order affects the performance of data ingestion and of your queries before deciding to disable it. Consider creating a [copy of your test warehouse using source control](source-control.md), disabling V-Order on the copy, and executing data ingestion and querying tasks to test the performance implications.
 
 ### Scenarios where V-Order might not be beneficial
 

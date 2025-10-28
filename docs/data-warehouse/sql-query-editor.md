@@ -183,7 +183,7 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
    |---|---|---|
    |Using [SET Statements (Transact-SQL)](/sql/t-sql/statements/set-statements-transact-sql?view=fabric&preserve-view=true) to set properties for session |Yes|No|
    |Using [sp_set_session_context (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-set-session-context-transact-sql?view=fabric&preserve-view=true) for multiple batch statements runs |Yes|No|
-   |[Transactions (Transact-SQL)](/sql/t-sql/language-elements/transactions-sql-data-warehouse?view=fabric&preserve-view=true) (unless executed as a single batch request) |Yes|No|
+   |[Transactions (Transact-SQL)](transactions.md) (unless executed as a single batch request) |Yes|No|
 
 ## Related content
 
