@@ -14,7 +14,7 @@ ms.search.form: Get started
 # Real-Time Intelligence tutorial part 7: Detect anomalies on an Eventhouse table
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 6: Set an alert on an eventstream](tutorial-6-set-alert.md).
+> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 6: Create a Real-Time Dashboard](tutorial-6-create-dashboard.md).
 
 Anomaly detection is a feature of Real-Time Intelligence that allows you to identify unusual patterns in your data. In this part of the tutorial, you learn how to create an 'Anomaly detector' item on your workspace to detect anomalies in the number of empty docks at a station.
 
@@ -62,5 +62,5 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 8: Create a Map](tutorial-8-create-map.md)
+> [Real-Time Intelligence tutorial part 8: Create a map using geospatial data](tutorial-8-create-map.md)
 

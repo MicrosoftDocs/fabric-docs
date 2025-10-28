@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 4 - Query streaming data using KQL
+title: Real-Time Intelligence tutorial part 5 - Query streaming data using KQL
 description: Learn how to query your streaming data in a KQL queryset Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: spelluru
@@ -13,10 +13,10 @@ ms.collection: ce-skilling-ai-copilot
 ms.search.form: Get started
 #customer intent: I want to learn how to query my streaming data in a KQL queryset in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 4: Query streaming data using KQL
+# Real-Time Intelligence tutorial part 5: Query streaming data using KQL
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 3: Transform data in a KQL database](tutorial-3-transform-kql-database.md).
+> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 4: Transform data in a KQL database](tutorial-4-transform-kql-database.md).
 
 In this part of the tutorial, you query streaming data using a few different methods. You write a KQL query to visualize data in a time chart and you create an aggregation query using a materialized view. You also query data by using T-SQL and by using `explain` to convert SQL to KQL. Finally, you use Copilot to generate a KQL query.
 
@@ -125,4 +125,4 @@ For more information about tasks in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 5: Create a Real-Time dashboard](tutorial-5-create-dashboard.md)
+>  [Real-Time Intelligence tutorial part 6: Create a Real-Time Dashboard](tutorial-6-create-dashboard.md)

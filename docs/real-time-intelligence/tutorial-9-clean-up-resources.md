@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 8- Clean up resources
+title: Real-Time Intelligence tutorial part 9- Clean up resources
 description: Learn how to delete the resources in your Microsoft Fabric workspace.
 ms.reviewer: tzgitlin
 ms.author: spelluru
@@ -10,10 +10,10 @@ ms.date: 11/19/2024
 ms.subservice: rti-core
 ms.search.form: Get started
 ---
-# Real-Time Intelligence tutorial part 8: Clean up resources
+# Real-Time Intelligence tutorial part 9: Clean up resources
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 7: Create an anomaly detection](tutorial-7-create-anomaly-detection.md).
+> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 8: Create a map using geospatial data](tutorial-8-create-map.md).
 
 ## Clean up resources
 
