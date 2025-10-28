@@ -80,7 +80,7 @@ A full refresh performs the full recompute of materialized lake view based on th
 
 If it's necessary to reprocess the entire data in materialized lake views, you can disable the optimal refresh toggle to switch to full refresh mode.
 
-:::image type="content" source="./media/refresh-materialized-lake-view/full-refresh-option.png" alt-text="Screenshot that shows toggle to enable optimal refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/full-refresh-option.png":::
+:::image type="content" source="./media/refresh-materialized-lake-view/full-refresh-option.png" alt-text="Screenshot that shows toggle to switch to full refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/full-refresh-option.png":::
 
 or
 
