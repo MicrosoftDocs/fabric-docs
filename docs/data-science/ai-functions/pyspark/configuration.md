@@ -15,9 +15,9 @@ ms.search.form: AI functions
 AI functions are designed to work out of the box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
 
 > [!IMPORTANT]
-> This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
+> This feature is in [preview](../../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../../data-engineering/runtime-1-3.md) and later.
 >
-> - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - Review the prerequisites in [this overview article](../overview.md), including the [library installations](../overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 
 > [!NOTE]
@@ -31,7 +31,7 @@ If you're working with AI functions in PySpark, you can use the `OpenAIDefaults`
 | Parameter | Description | Default |
 |---|---|---|
 | `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. This value must be set per individual AI function call. In spark, this concurrency value is for each worker. | `50` |
-| `deployment_name` | A string value that designates the name of the underlying model. You can choose from [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). This can also be set to a custom model deployment in Azure OpenAI or Azure AI Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Azure AI Foundry portal, the value appears on the **Deployments** page.  | `gpt-4.1-mini` |
+| `deployment_name` | A string value that designates the name of the underlying model. You can choose from [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). This can also be set to a custom model deployment in Azure OpenAI or Azure AI Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Azure AI Foundry portal, the value appears on the **Deployments** page.  | `gpt-4.1-mini` |
 | `reasoning_effort` | Part of OpenAIDefaults. Used by gpt-5 series models for amount of reasoning tokens it should use. Can be set to None or a string value of "minimal", "low", "medium", or "high". | None |
 | `subscription_key` | An API key used for authentication with your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. | N/A |
 | `temperature` | A numeric value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. | `0.0` |
@@ -87,7 +87,7 @@ defaults.reset_temperature()
 
 ### Choose another supported AI model
 
-Set the `deployment_name` to one of the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). For example:
+Set the `deployment_name` to one of the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). For example:
 
 ```python
 from synapse.ml.services.openai import OpenAIDefaults

@@ -64,7 +64,6 @@ display(translations)
 This example code cell provides the following output:
 :::image type="content" source="../../media/ai-functions/translate-example-output.png" alt-text="Screenshot showing a data frame with a 'text' column and a 'translations' column. The 'translations' column contains the English text in the 'text' column, translated in Spanish." lightbox="../../media/ai-functions/translate-example-output.png":::
 
-
 ## Related content
 
 - Use [ai.translate with pandas](../pandas/translate.md).
@@ -74,6 +73,6 @@ This example code cell provides the following output:
 - Fix grammar with [ai.fix_grammar](./fix-grammar.md).
 - Summarize text with [ai.summarize](./summarize.md).
 - Answer custom user prompts with [ai.generate_response](./generate-response.md).
-- Learn more about the [full set of AI functions](./overview.md).
+- Learn more about the [full set of AI functions](../overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

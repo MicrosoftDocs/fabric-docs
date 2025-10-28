@@ -34,7 +34,7 @@ You can incorporate these functions as part of data science and data engineering
 
 - To use AI functions with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
 - Depending on your location, you might need to enable a tenant setting for cross-geo processing. Learn more about [available regions for Azure OpenAI Service](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
-- You need a paid Fabric capacity (F2 or higher, or any P edition). Bring-your-own Azure OpenAI resources aren't supported on the Fabric trial edition.
+- You need a paid Fabric capacity (F2 or higher, or any P edition).
 
 > [!NOTE]
 >
@@ -61,8 +61,6 @@ AI Functions can be used with pandas (Python and PySpark runtimes), and with PyS
 ```python
 # The pandas AI functions package requires OpenAI version 1.99.5 or later
 %pip install -q --force-reinstall openai==1.99.5 2>/dev/null
-
-# AI functions are preinstalled on the Fabric PySpark runtime
 ```
 
 # [pandas (Python runtime)](#tab/pandas-python)

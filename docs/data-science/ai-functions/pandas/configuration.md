@@ -15,9 +15,9 @@ ms.search.form: AI functions
 AI functions are designed to work out of the box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
 
 > [!IMPORTANT]
-> This feature is in [preview](../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and later.
+> This feature is in [preview](../../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../../data-engineering/runtime-1-3.md) and later.
 >
-> - Review the prerequisites in [this overview article](./overview.md), including the [library installations](./overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
+> - Review the prerequisites in [this overview article](../overview.md), including the [library installations](../overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 
 > [!NOTE]
@@ -32,7 +32,7 @@ By default, AI functions are powered by the built-in AI endpoint in Fabric. The 
 |---|---|---|
 | `concurrency`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. | `200` |
 | `embedding_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` |
-| `model_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI functions. You can choose from the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). | `gpt-4.1-mini` |
+| `model_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI functions. You can choose from the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). | `gpt-4.1-mini` |
 | `reasoning_effort`<br> Optional | Used by gpt-5 series models for amount of reasoning tokens it should use. Can be set to `openai.NOT_GIVEN` or a string value of "minimal", "low", "medium", or "high". | `openai.NOT_GIVEN` |
 | `seed`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the seed to use for the response of the underlying model. The default behavior randomly picks a seed value for each row. The choice of a constant value improves the reproducibility of your experiments. | `openai.NOT_GIVEN` |
 | `temperature`<br> Optional | A [float](https://docs.python.org/3/library/functions.html#float) between `0.0` and `1.0` that designates the temperature of the underlying model. Higher temperatures increase the randomness or creativity of the model's outputs. | `0.0` |
@@ -89,7 +89,7 @@ To use an AI model other than the default, you can choose another model supporte
 
 ### Choose another supported large language model
 
-Select one of the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service) and configure it using the `model_deployment_name` parameter. You can do this in one of two ways:
+Select one of the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service) and configure it using the `model_deployment_name` parameter. You can do this in one of two ways:
 
 - Globally in the `aifunc.Conf` class.:
 
@@ -105,7 +105,7 @@ df["translations"] = df["text"].ai.translate("spanish", conf=Conf(model_deployme
 
 ### Choose another supported embedding model
 
-Select one of the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service) and configure it using the `embedding_deployment_name` parameter. You can do this in one of two ways:
+Select one of the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service) and configure it using the `embedding_deployment_name` parameter. You can do this in one of two ways:
 
 - Globally in the `aifunc.Conf` class. Example:
 

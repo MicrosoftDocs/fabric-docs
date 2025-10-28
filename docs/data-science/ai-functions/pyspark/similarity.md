@@ -107,6 +107,6 @@ This example code cell provides the following output:
 - Summarize text with [ai.summarize](./summarize.md).
 - Translate text with [ai.translate](./translate.md).
 - Answer custom user prompts with [ai.generate_response](./generate-response.md).
-- Learn more about the [full set of AI functions](./overview.md).
+- Learn more about the [full set of AI functions](../overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
