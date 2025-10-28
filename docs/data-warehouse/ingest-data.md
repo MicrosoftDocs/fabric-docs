@@ -89,8 +89,8 @@ SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 
 ## Related content
 
-- [Ingest data using pipelines](ingest-data-pipelines.md)
 - [Ingest data using the COPY statement](ingest-data-copy.md)
+- [Ingest data using pipelines](ingest-data-pipelines.md)
 - [Ingest data using Transact-SQL](ingest-data-tsql.md)
 - [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md)
 - [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true)
