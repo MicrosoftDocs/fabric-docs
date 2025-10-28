@@ -42,19 +42,32 @@ The transformation is executed by **Fabric Spark compute**, which **copies** the
 
 | Source file format | Destination | Notes |
 |--------------------|-------------|-------|
-| CSV (UTF-8, comma-delimited) | Delta Lake table in the **Lakehouse / Tables** folder | Additional formats (Parquet, JSON) will be added during preview. |
+| CSV (UTF-8, UTF-16) , Parquet, JSON | Delta Lake table in the **Lakehouse / Tables** folder | Formats such .csv, .txt (when delimited) supported for CSV, .parquet and all types of compressed parquet types supported, .json, .jsonl. .ndjson & all types of compressed .json.<compress type> supported for JSON files |
+
+- Shortcut Transformations flatten struct of array (five levels), array of struct (five levels), array of array of structs (one level)
+- Excel file support with multi-tab recognition is under development
 
 ## Set up a shortcut transformation
 
-1. In your lakehouse, select **+ New > Shortcut transformation (preview)**.  
-2. **Choose shortcut** – Browse to an existing OneLake shortcut that points to the folder with your CSV files.  
-3. **Configure transformation**:  
-   - *Table name* – Provide a friendly name; Fabric creates it under **/Tables**.  
-   - *Delimiter* – Select the character used to separate columns (comma, semicolon, pipe, tab).  
-   - *First row as headers* – Indicate whether the first row contains column names.  
-4. Select **Create**.
+1. In your lakehouse, select **+ New > Table Shortcut** , connect to your source (e.g., Azure Data Lake, Azure Blob Storage, Dataverse, Amazon S3, GCP, SharePoint, OneDrive etc.) and select your source file folder
+   
+    <img width="1216" height="334" alt="image" src="https://github.com/user-attachments/assets/bedf62a1-a973-4d42-b67b-ab80bc3c2612" />
 
-Fabric Spark compute copies the data into a Delta table and shows progress in the **Manage shortcuts** pane.
+    
+3. **Configure transformation parameters as applicable & Create**:  
+   - *Delimiter* in case of CSVs – Select the character used to separate columns (comma, semicolon, pipe, tab).  
+   - *First row as headers* in case of CSVs – Indicate whether the first row contains column names
+   - *Table name* – Provide a friendly name; Fabric creates it under **/Tables**
+   - Note: More user configurations for all the supported file formats being planned
+     
+4. Fabric Spark compute copies the data into a Delta table & refreshes could be tracked in **Manage Shortcuts hub**
+
+   <img width="605" height="527" alt="image" src="https://github.com/user-attachments/assets/b70069ca-8f97-42cd-b1ce-fc1c10cbb5e0" />
+
+6. **View logs** in the monitoring view for complete transparency
+
+   <img width="605" height="452" alt="image" src="https://github.com/user-attachments/assets/b1b5b94a-2089-4545-9d90-6d59d88b9a36" />
+
 
 ## How synchronization works
 
@@ -72,14 +85,22 @@ After the initial load, Fabric Spark compute:
    * **Status** – Last scan result and current sync state.  
    * **Activity log** – Chronological list of sync operations with row counts and any error details.  
 
-From this tab you can also **Pause** or **Delete** the transformation if needed.
+Note: **Pause** or **Delete** the transformation from this tab is an upcoming feature part of roadmap
 
 ## Limitations (preview)
 
-* Only **CSV** sources are supported.  
+* Only **CSV, Parqut, JSON** sources are supported.  
 * Files must share an identical schema; schema drift isn’t yet supported.  
 * Transformations are _read-optimized_; **MERGE INTO** or **DELETE** statements directly on the table are blocked.  
-* Available only in **Lakehouse** items (not Warehouses or KQL databases).  
+* Available only in **Lakehouse** items (not Warehouses or KQL databases)
+* **Unsupported datatypes for CSV:** Mixed data type columns, Timestamp_Nanos, Complex logical types - MAP/LIST/STRUCT, Raw binary
+* **Unsupported datatype for Parquet:** Timestamp_nanos, Decimal with INT32/INT64, INT96, Unassigned integer types - UINT_8/UINT_16/UINT_64, Complex logical types - MAP/LIST/STRUCT)
+* **Unsupported datatypes for JSON:** Mixed data types in an array, Raw binary blobs inside JSON, Timestamp_Nanos
+* **Flatening of Array data type in JSON:** Array data type shall be retained in delta table and data accessible with Spark SQL & Pyspark where for further transformations Fabric Materialized Lake Views could be leverage for silver layer
+* **Unsupported file name characters:** File names cannot contain characters such as  < > : " / \ | ? * because they are reserved by file systems and will cause read/write errors
+
+Note: To add support for some of the above and reduced limitations is part of our roadmap. Please track our release communications for further update
+
 
 ## Clean up
 
