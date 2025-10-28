@@ -74,7 +74,6 @@ To select a Fabric workspace:
 
 ### Current Limitations
 
-- The extension under the desktop mode doesn't support the [Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) yet
 - The extension doesn't support shell commands that start with "!".
 
 ## Related content
