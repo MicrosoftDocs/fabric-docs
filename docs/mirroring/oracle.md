@@ -66,17 +66,6 @@ For complete setup instructions and requirements, see:
 * [Oracle mirroring setup guide](oracle-tutorial.md)
 * [Oracle mirroring limitations](oracle-limitations.md)
 
-## Database tiers and pricing
-
-Your source database can be a single database or part of an elastic pool.
-
-We support these database models:
-
-* All [vCore model](/azure/azure-sql/database/service-tiers-sql-database-vcore) service tiers
-* [DTU model](/azure/azure-sql/database/service-tiers-dtu) databases with 100 DTUs or more
-
-Currently, we don't support DTU databases in the Free, Basic, or Standard tiers that have fewer than 100 DTUs.
-
 ## Cost overview
 
 There's no charge for these components:

@@ -21,14 +21,14 @@ In this quickstart, you learn how dataflows and pipelines work together to creat
 
 Before you start, you need:
 
-- A tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/free/).
+- A tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A [!INCLUDE [product-name](../includes/product-name.md)] enabled workspace: [Set up a workspace](../fundamentals/create-workspaces.md) that isn’t the default My Workspace.
 - [An Azure SQL database with table data](/azure/azure-sql/database/single-database-create-quickstart).
 - [A Blob Storage account](/azure/storage/common/storage-account-create).
 
 ## Compare dataflows and pipelines
 
-Dataflows Gen2 provide a low-code interface with 300+ data and AI-based transformations. You can easily clean, prep, and transform data with flexibility. Pipelines offer rich data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.
+Dataflow Gen2 provide a low-code interface with 300+ data and AI-based transformations. You can easily clean, prep, and transform data with flexibility. Pipelines offer rich data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.
 
 In a pipeline, you can create logical groupings of activities that perform a task. This might include calling a dataflow to clean and prep your data. While there's some functionality overlap between the two, your choice depends on whether you need the full capabilities of pipelines or can use the simpler capabilities of dataflows. For more information, see the [Fabric decision guide](../fundamentals/decision-guide-pipeline-dataflow-spark.md).
 

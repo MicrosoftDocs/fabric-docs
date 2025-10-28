@@ -25,9 +25,6 @@ Each variable in the variable library has the following properties:
 - Default value set
 - Alternative value sets (optional)
 
-> [!NOTE]
-> The Fabric variable library item is currently in preview.
-
 ## Naming conventions
 
 ### Variable library name

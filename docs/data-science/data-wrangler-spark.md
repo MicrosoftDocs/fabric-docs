@@ -7,14 +7,14 @@ ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 08/12/2024
+ms.date: 09/29/2025
 
 ms.search.form: Data Wrangler
 ---
 
 # How to use Data Wrangler on Spark DataFrames
 
-[Data Wrangler](data-wrangler.md), a notebook-based tool for exploratory data analysis, now supports both Spark DataFrames and pandas DataFrames. It generates PySpark code, in addition to Python code. For a general overview of Data Wrangler, covering how to explore and transform pandas DataFrames, visit the [the main tutorial](data-wrangler.md). This tutorial shows how to use Data Wrangler to explore and transform Spark DataFrames.
+[Data Wrangler](data-wrangler.md), a notebook-based tool for exploratory data analysis, now supports both Spark DataFrames and pandas DataFrames. It generates PySpark code, in addition to Python code. For a general overview of Data Wrangler, covering how to explore and transform pandas DataFrames, visit [the main tutorial](data-wrangler.md). This tutorial shows how to use Data Wrangler to explore and transform Spark DataFrames.
 
 ## Prerequisites
 
@@ -23,11 +23,11 @@ ms.search.form: Data Wrangler
 ## Limitations
 
 - Custom code operations are currently supported only for pandas DataFrames.
-- The Data Wrangler display works best on large monitors, although you can minimize or hide different portions of the interface, to accommodate smaller screens.
+- The Data Wrangler display works best on large monitors, although you can minimize or hide different portions of the interface to accommodate smaller screens.
 
 ## Launching Data Wrangler with a Spark DataFrame
 
-Users can open Spark DataFrames in Data Wrangler directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook, by navigating to the same dropdown prompt where pandas DataFrames are displayed. A list of active Spark DataFrames appears in the dropdown beneath the list of active pandas variables.
+You can open Spark DataFrames in Data Wrangler directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook by navigating to the same dropdown prompt where pandas DataFrames are displayed. A list of active Spark DataFrames appears in the dropdown beneath the list of active pandas variables.
 
 This code snippet creates a Spark DataFrame with the same sample data used in the [pandas Data Wrangler tutorial](data-wrangler.md):
 
@@ -58,7 +58,7 @@ This launches a pop-up with options to specify the size of the desired sample (n
 
 ## Viewing summary statistics
 
-When Data Wrangler loads, it displays an informational banner above the preview grid. This banner explains that Spark DataFrames are temporarily converted to pandas samples, but all generated code is ultimately be converted to PySpark. Past that, using Data Wrangler on Spark DataFrames is no different from using it on pandas DataFrames. A descriptive overview in the "Summary" panel displays information about the sample's dimensions, missing values, and more. Selection of any column in the Data Wrangler grid prompts the "Summary" panel to update and display descriptive statistics about that specific column. Quick insights about every column are also available in its header.
+When Data Wrangler loads, it displays an informational banner above the preview grid. This banner explains that Spark DataFrames are temporarily converted to pandas samples, but all generated code is ultimately converted to PySpark. After that, using Data Wrangler on Spark DataFrames is no different from using it on pandas DataFrames. A descriptive overview in the "Summary" panel displays information about the sample's dimensions, missing values, and more. Selecting any column in the Data Wrangler grid prompts the "Summary" panel to update and display descriptive statistics about that specific column. Quick insights about every column are also available in its header.
 
 > [!TIP]
 > Column-specific statistics and visuals (both in the "Summary" panel and in the column headers) depend on the column datatype. For instance, a binned histogram of a numeric column will appear in the column header only if the column is cast as a numeric type, as shown in this screenshot:
@@ -67,7 +67,7 @@ When Data Wrangler loads, it displays an informational banner above the preview 
 
 ## Browsing data-cleaning operations
 
-A searchable list of data-cleaning steps can be found in the "Operations" panel. From the "Operations" panel, selection of a data-cleaning step prompts you to provide a target column or columns, along with any necessary parameters to complete the step. For example, the prompt to numerically scale a column requires a new range of values, as shown in this screenshot:
+A searchable list of data-cleaning steps can be found in the "Operations" panel. From the "Operations" panel, selecting a data-cleaning step prompts you to provide a target column or columns, along with any necessary parameters to complete the step. For example, the prompt to numerically scale a column requires a new range of values, as shown in this screenshot:
 
 :::image type="content" source="media/data-wrangler-spark/browse-operations.png" alt-text="Screenshot showing the Data Wrangler Operations panel." lightbox="media/data-wrangler-spark/browse-operations.png":::
 
@@ -123,10 +123,10 @@ At any time, you can customize the interface with the "Views" tab in the toolbar
 
 ## Saving and exporting code
 
-The toolbar above the Data Wrangler display grid provides options to save the generated code. You can copy the code to the clipboard, or export it to the notebook as a function. For Spark DataFrames, all the code generated on the pandas sample is translated to PySpark before it lands back in the notebook. Before Data Wrangler closes, the tool displays a preview of the translated PySpark code, and it provides an option to export the intermediate pandas code as well.
+The toolbar above the Data Wrangler display grid provides options to save the generated code. You can copy the code to the clipboard or export it to the notebook as a function. For Spark DataFrames, all the code generated on the pandas sample is translated to PySpark before it returns to the notebook. Before Data Wrangler closes, the tool displays a preview of the translated PySpark code and provides an option to export the intermediate pandas code as well.
 
 > [!TIP]
-> Data Wrangler generates code that is applied only when you manually run the new cell, and it won't overwrite your original DataFrame, as shown in this screenshot:
+> Data Wrangler generates code that is applied only when you manually run the new cell, and it doesn't overwrite your original DataFrame, as shown in this screenshot:
 > 
 > :::image type="content" source="media/data-wrangler-spark/export-code.png" alt-text="Screenshot showing the options to export code in Data Wrangler." lightbox="media/data-wrangler-spark/export-code.png":::
 > 

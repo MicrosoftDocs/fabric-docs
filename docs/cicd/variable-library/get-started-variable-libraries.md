@@ -18,9 +18,6 @@ Microsoft Fabric variable libraries enable developers to customize and share ite
 
 For a more detailed walkthrough of the process, see the [tutorial for using variable libraries](./tutorial-variable-library.md).
 
-> [!NOTE]
-> The Fabric variable library item is currently in preview.
-
 ## Prerequisites
 
 To create variable library items in Fabric, you need:

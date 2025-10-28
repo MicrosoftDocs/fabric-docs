@@ -1,22 +1,25 @@
 ---
-title: Create Activator alerts from a KQL Queryset
-description: Learn how to create a Fabric Activator alert from the results of a KQL query in a KQL Queryset in Real-Time Intelligence.
+title: Create Activator Alerts from KQL Query Results
+description: Learn how to create a Fabric Activator alert from the results of a Kusto Query Language (KQL) query in a KQL Queryset in Real-Time Intelligence.
+#customer intent: As a data analyst, I want to create Activator alerts from a KQL Queryset so that I can receive notifications when specific conditions are met in query results.
 author: spelluru
 ms.author: spelluru
 ms.reviewer: guregini
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 09/29/2025
 ms.search.form: Activator KQL Queryset Onramp
 # CustomerIntent: As a customer, I want to learn how to create Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---
+
 # Create Activator alerts from a KQL Queryset 
 
-This article explains how to create Fabric Activator alerts from a KQL Queryset. For more information, see [What is Activator](activator-introduction.md).
-You can use Activator on a KQL Queryset to trigger notifications in two modes: 
-- when a scheduled KQL query returns results
-- when a scheduled KQL query returns results that contain a visualization that meets a defined set of conditions. 
+This article explains how to create Fabric Activator alerts from a KQL queryset. For more information, see [What is Activator](activator-introduction.md).
 
-Send alert notifications either to yourself, or to others in your organization. Notifications can be sent by email or Microsoft Teams message.
+You can use Activator on a KQL Queryset to trigger notifications in two modes: 
+- when scheduled KQL queries returns results
+- when scheduled KQL queries returns results that contain a visualization that meets a defined set of conditions. 
+
+Send alert notifications either to yourself, or to others in your organization. You can configure notifications to be sent via email or Microsoft Teams message.
 
 ## Sample scenarios
 
@@ -34,7 +37,8 @@ Here are some ways you can use Activator alerts with KQL queries:
 * A [KQL Queryset](../../real-time-intelligence/create-query-set.md) connected to the KQL database. For more information, see [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md).
 
 > [!IMPORTANT]
-> Only queries against KQL databases within an Eventhouse are supported. If your KQL queryset is connected to an [external Azure Data Explorer cluster](../kusto-query-set.md#select-a-data-source), creating an alert is not supported. 
+> - Only queries against KQL databases within an Eventhouse are supported. If your KQL queryset is connected to an [external Azure Data Explorer cluster](../kusto-query-set.md#select-a-data-source), creating an alert isn't supported. 
+> - The impact of an alert rule on Eventhouse depends on the query’s complexity. Simple queries and aggregations are lightweight, while joins, transformations, and sorts are more resource-intensive. If a query runs every 1 or 5 minutes, it effectively keeps Eventhouse in an **always-on** state. Without queries or ingestion for more than 5 minutes, Eventhouse can go idle, which reduces costs. For more information, see [Eventhouse Uptime](../real-time-intelligence-consumption.md#eventhouse-uptime).
 
 The following steps show you how to create an alert on a query that creates a visualization, or on a query that doesn't create a visualization.
 
@@ -45,7 +49,7 @@ Choose the tab that corresponds to your desired workflow.
 ## Set alert on a KQL Queryset
 
 > [!IMPORTANT]
-> [Timechart](/kusto/query/visualization-timechart?view=microsoft-fabric&preserve-view=true) visualizations are not supported in this scenario. They are supported in [Create Activator alerts from a Real-Time Dashboard](activator-get-data-real-time-dashboard.md).
+> [Timechart](/kusto/query/visualization-timechart?view=microsoft-fabric&preserve-view=true) visualizations aren't supported in this scenario. They're supported in [Create Activator alerts from a Real-Time Dashboard](activator-get-data-real-time-dashboard.md).
 
 1. Open the workspace that contains your KQL Queryset.
 1. Browse to your KQL Queryset and select it to open.
@@ -101,7 +105,7 @@ SampleTable
 
 ### Example 2 - Create a single result with an array of several values
 
-In the following example, the query returns an alert if the number of bicycles in any neighborhood is above the given threshold. In order to get a single alert for all neighborhoods for which the number is above the threshold, the query is built to return a single record (meaning, a single alert). This is done using the [make_list() operator](/kusto/query/make-list-aggregation-function?view=microsoft-fabric&preserve-view=true) To edit the alert to contain the list of the neighborhoods that reached the threshold, see [Optional: Edit your rule in Activator](#optional-edit-your-rule-in-activator).
+In the following example, the query returns an alert if the number of bicycles in any neighborhood is above the given threshold. In order to get a single alert for all neighborhoods for which the number is above the threshold, the query is built to return a single record (meaning, a single alert), which is done using the [make_list() operator](/kusto/query/make-list-aggregation-function?view=microsoft-fabric&preserve-view=true). To edit the alert to contain the list of the neighborhoods that reached the threshold, see [Optional: Edit your rule in Activator](#optional-edit-your-rule-in-activator).
 
 ```kusto
 TableForReflex

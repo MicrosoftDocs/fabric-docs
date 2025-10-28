@@ -6,7 +6,7 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: concept-article
 ms.custom:
-ms.date: 08/20/2025
+ms.date: 09/24/2025
 #customer intent: As a data admin, I want to learn how to protect my data by limiting outbound requests. As a data engineer, I want to learn how to work with my data, even when outbound access protection is turned on. 
 ---
 
@@ -18,7 +18,7 @@ Outbound access protection protects data by limiting OneLake's outbound requests
 
 Outbound access protection helps ensure that data is shared securely within your network security perimeter. For example, data exfiltration protection solutions use outbound access protection controls to limit a malicious actor's ability to move large amounts of data to an untrusted external location. Outbound protections only limit requests that originate in the workspace and communicate with different workspace or location. A comprehensive network security solution also involves [inbound network protection](onelake-manage-inbound-access.md) through private links, combined with [data access controls](./security/get-started-security.md) to limit access to your data.
 
-Outbound access protection is currently in public preview. To learn more about managing outbound access protection, see [Workspace outbound access protection](/fabric/security/workspace-outbound-access-protection-overview).
+To learn more about managing outbound access protection, see [Workspace outbound access protection](/fabric/security/workspace-outbound-access-protection-overview).
 
 ## When does OneLake make outbound requests?  
   

@@ -37,7 +37,6 @@ The following properties are supported for Azure SQL Managed Instance under the 
 
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Azure SQL Managed Instance connection from the connection list. If the connection doesn't exist, then create a new Azure SQL Managed Instance connection by selecting **New**.
 - **Connection type**: Select **Azure SQL Managed Instance**.
 - **Use query**: Specify the way to read data. You can choose **Table**, **Query**, or **Stored procedure**. The following list describes the configuration of each setting:
@@ -88,11 +87,8 @@ Note the following points:
 
 The following properties are supported for Azure SQL Managed Instance under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-sql-managed-instance/destination.png" alt-text="Screenshot showing Destination tab.":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Azure SQL Managed Instance connection from the connection list. If the connection doesn't exist, then create a new Azure SQL Managed Instance connection by selecting **New**.
 - **Connection type**: Select **Azure SQL Managed Instance**.
 - **Table option**: You can choose **Use existing** to use the table specified. Or choose **Auto create table** to automatically create a destination table if the table doesn't exist in the source schema, and note that this selection is not supported when stored procedure is used as the write behavior.
@@ -205,7 +201,6 @@ See the following table for the summary and more information for the Azure SQL M
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
 |**Connection type** |Your connection type. Select **Azure SQL Managed Instance**.|**Azure SQL Managed Instance** |Yes|/|
 |**Use query** |The custom SQL query to read data.|• Table<br>• Query<br>• Stored procedure |Yes |/|
@@ -225,7 +220,6 @@ See the following table for the summary and more information for the Azure SQL M
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the destination data store.|< your connection >|Yes|connection|
 |**Connection type** |Your connection type. Select **Azure SQL Managed Instance**.|**Azure SQL Managed Instance** |Yes|/|
 |**Table option** |Specifies whether to automatically create the destination table if it doesn't exist based on the source schema.|• Use existing <br>• Auto create table|Yes |tableOption:<br><br>• autoCreate|

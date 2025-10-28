@@ -18,7 +18,7 @@ For a complete list of data connectors, see [Data connectors overview](data-conn
 
 * .NET SDK 6.0 or later
 * A [KQL database](/fabric/real-time-analytics/create-database).
-* An Azure subscription. Create a [free Azure account](https://azure.microsoft.com/free/).<a id=ingestion-uri></a>
+* An Azure subscription. Create a [free Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).<a id=ingestion-uri></a>
 * Your database ingestion URI to use as the *TargetURI* value. For more information, see [Copy URI](access-database-copy-uri.md#copy-uri).
 
 [!INCLUDE [ingest-data-serilog-2](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-serilog-2.md)]

@@ -86,8 +86,8 @@ Sharing a direct link to an eventhouse enables users to access the eventhouse an
 
 When you delete an eventhouse, both the eventhouse and all its child KQL databases are deleted forever.
 
-1. Browse to the eventhouse item in your workspace.
-1. Select **More menu** [**...**] > **Delete**.
+1. Browse to your workspace.
+1. Hover the mouse over your eventhouse item, select [**...**] (ellipsis), and then selected **Delete**.
 
     :::image type="content" source="media/eventhouse/delete-eventhouse.png" alt-text="Screenshot of deleting an eventhouse.":::
 

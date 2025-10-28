@@ -1994,6 +1994,16 @@
       "source_path_from_root": "/docs/fundamentals/fabric-settings.md",
       "redirect_url": "/fabric/fundamentals/fabric-home",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/direct-lake-manage.md",
+      "redirect_url": "/fabric/fundamentals/direct-lake-security-integration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/direct-lake-fixed-identity.md",
+      "redirect_url": "/fabric/fundamentals/direct-lake-security-integration",
+      "redirect_document_id": false
     }
   ]
 }

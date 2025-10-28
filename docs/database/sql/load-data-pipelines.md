@@ -27,6 +27,8 @@ A pipeline is a logical grouping of activities that together perform a data inge
 - For this walkthrough, we rely on opening ports on the source Azure SQL Database using the "Allow Azure services and resources to access this server" setting.
    - For heightened security, consider a gateway to transfer your data. For more information, see [How to access on-premises data sources in Data Factory](../../data-factory/how-to-access-on-premises-data.md).
 
+<a id="create-data-pipeline"></a>
+
 ## Create pipeline
 
 1. In your workspace, select **+ New**, then **More options**.

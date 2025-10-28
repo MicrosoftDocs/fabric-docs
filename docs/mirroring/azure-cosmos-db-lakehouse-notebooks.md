@@ -3,7 +3,7 @@ title: "How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks 
 description: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview).
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: anithaa, whhender
+ms.reviewer: jmaldonado
 ms.date: 11/19/2024
 ms.topic: how-to
 ms.custom: sfi-image-nochange

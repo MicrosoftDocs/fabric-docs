@@ -4,7 +4,7 @@ description: Learn how to Query data as it existed in the past with time travel 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.date: 06/20/2025
+ms.date: 10/13/2025
 ms.topic: conceptual
 ---
 # Query data as it existed in the past
@@ -20,6 +20,7 @@ Warehouse in Microsoft Fabric offers the capability to query historical data as 
 - Time travel allows organizations to audit data changes over time, often required for compliance purposes.
 - Time travel helps to reproduce the results from machine learning models.
 - Time travel can query tables as they existed at a specific point in time across multiple warehouses in the same workspace.
+- Time travel can hints can be used with session-scoped temp tables, which are unaffected by `TIMESTAMP` syntax.
 
 ## What is time travel?
 
@@ -95,6 +96,7 @@ Considerations for the [OPTION FOR TIMESTAMP AS OF query hint](/sql/t-sql/querie
 - The `FOR TIMESTAMP AS OF` query hint cannot be used to create the views as of any prior point in time within the retention period. It can be used to query views as of past point in time, within the retention period.
 - The `FOR TIMESTAMP AS OF` query hint can be used only once within a `SELECT` statement.
 - The `FOR TIMESTAMP AS OF` query hint can be defined within the `SELECT` statement in a stored procedure.
+- The `FOR TIMESTAMP AS OF` query hint doesn't affect session-scoped temp tables, like `#temp_table`.
 
 ## Permissions to time travel
 

@@ -1,5 +1,5 @@
 ---
-title: "Source Control with Warehouse (Preview)"
+title: "Source Control with Fabric Data Warehouse (Preview)"
 description: "Learn how to use source control with Microsoft Fabric Warehouse."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -8,7 +8,9 @@ ms.date: 07/16/2025
 ms.topic: conceptual
 ---
 
-# Source control with Warehouse (preview)
+# Source control (preview)
+
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 This article explains how Git integration and deployment pipelines work for warehouses in Microsoft Fabric. Learn how to set up a connection to your repository, manage your warehouses, and deploy them across different environments. Source control for Fabric Warehouse is currently a preview feature.
 
@@ -51,29 +53,6 @@ When you commit the warehouse item to the Git repo, the warehouse is converted t
 
 Shared queries are also committed to the repo and inherit the name that they are saved as.
 
-### Download the SQL database project of a warehouse in Fabric
-
-With the [SQL Database Projects extension](/sql/azure-data-studio/extensions/sql-database-project-extension) available inside of [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) and [Visual Studio Code](https://visualstudio.microsoft.com/downloads/), you can manage a warehouse schema, and handle Warehouse object changes like other SQL database projects.
-
-To download a local copy of your warehouse's schema, select **Download SQL database project** in the ribbon.
-
-:::image type="content" source="media/source-control/download-sql-database-project.png" alt-text="Screenshot from the Fabric portal of the query ribbon. The Download SQL database project box is highlighted." lightbox="media/source-control/download-sql-database-project.png":::
-
-The local copy of a database project that contains the definition of the warehouse schema. The database project can be used to:
-
-- Recreate the warehouse schema in another warehouse.
-- Further develop the warehouse schema in client tools, like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
-
-### Publish SQL database project to a new warehouse
-
-To publish the warehouse schema to a new warehouse:
-
-1. Create a new warehouse in your Fabric workspace.
-1. On the new warehouse launch page, under **Build a warehouse**, select **SQL database project**.
-    :::image type="content" source="media/source-control/new-warehouse-sql-database-project.png" alt-text="Screenshot from the Fabric portal of the SQL database project button." lightbox="media/source-control/new-warehouse-sql-database-project.png":::
-1. Select the .zip file that was downloaded from the existing warehouse.
-1. The warehouse schema is published to the new warehouse.
-
 ## Deployment pipelines
 
 You can also use deployment pipelines to deploy your warehouse code across different environments, such as development, test, and production. Deployment pipelines don't expose a database project.
@@ -113,7 +92,5 @@ For more information about the Fabric deployment pipelines process, see [Introdu
 
 ## Related content
 
+- [Development and Deployment](development-deployment.md)
 - [Get started with Git integration](../cicd/git-integration/git-get-started.md)
-- [Basic concepts in Git integration](../cicd/git-integration/git-integration-process.md)
-- [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
-- [Tutorial: Set up dbt for Fabric Data Warehouse](tutorial-setup-dbt.md)

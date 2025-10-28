@@ -35,6 +35,8 @@ To get started, you must complete the following prerequisites:
 - **Permissions**: [Read access to the ADF workspace and items](/azure/data-factory/concepts-roles-permissions#scope-of-the-data-factory-contributor-role) you’ll migrate and [Contributor or higher rights in the Fabric workspace](../security/permission-model.md#workspace-roles) you’ll write to.
 - **Network and auth**: Make sure you can sign in to both Azure and Fabric from your machine (interactive or service principal).
 
+> [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=46afe4ed-f186-4937-b09f-326dd63bbf5b]
+
 ## Supported functionality
 
 Alongside the [currently supported datasets and linked services](#currently-supported-datasets-and-linked-services) and [currently supported activities](#currently-supported-activities), the following limitations apply:

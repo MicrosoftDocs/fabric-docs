@@ -30,9 +30,6 @@ A Fabric variable library:
 * Is compatible with continuous integration and continuous delivery (CI/CD) processes. This compatibility allows [integration with Git](../git-integration/intro-to-git-integration.md#supported-items) and deployment through [deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md#supported-items).
 * Supports automation via Fabric public APIs.
 
-> [!NOTE]
-> The Fabric variable library item is currently in preview.
-
 ## Benefits
 
 Variable libraries enable customers to customize and share configurations.
