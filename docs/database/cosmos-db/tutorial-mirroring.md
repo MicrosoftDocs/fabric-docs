@@ -1,14 +1,11 @@
 ---
 title: "Tutorial: Query Microsoft Fabric Mirrored Databases From Cosmos DB Database (Preview)"
-titleSuffix: Microsoft Fabric
 description: Learn how to query Microsoft Fabric mirrored databases from Cosmos DB in this tutorial. Follow step-by-step instructions to get started.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: tutorial
 ms.date: 10/22/2025
 ai-usage: ai-generated
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
 # Tutorial: Query Microsoft Fabric mirrored database from Cosmos DB in Microsoft Fabric (preview)
