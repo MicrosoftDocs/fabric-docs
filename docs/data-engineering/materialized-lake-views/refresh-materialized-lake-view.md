@@ -61,9 +61,11 @@ The following table outlines the supported expressions:
 
 ### How to enable optimal refresh mode 
 
-By default, optimal refresh mode is enabled for the lineage. If it isn’t enabled - 
+By default, optimal refresh mode is enabled for the lineage. If not, follow the steps below:
 
 1. Navigate to the manage materialized lake view option and enable the toggle “optimal refresh”.
+   
+   :::image type="content" source="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png" alt-text="Screenshot that shows toggle to enable optimal refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png":::
 
 > [!Note]
 > 1. For best results, avoid non-deterministic functions in your queries, as these may force a full refresh.
@@ -77,6 +79,8 @@ By default, optimal refresh mode is enabled for the lineage. If it isn’t enabl
 A full refresh performs the full recompute of materialized lake view based on the source data.
 
 If it's necessary to reprocess the entire data in materialized lake views, you can disable the optimal refresh toggle to switch to full refresh mode.
+
+:::image type="content" source="./media/refresh-materialized-lake-view/full-refresh-option.png" alt-text="Screenshot that shows toggle to enable optimal refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/full-refresh-option.png":::
 
 or
 
