@@ -209,10 +209,10 @@
             },
             "appliesto": {
                 "database/cosmos-db/**/*.md": [
-                    "✅ Cosmos DB in Fabric"
+                    "✅ Cosmos DB in Microsoft Fabric"
                 ],
                 "database/cosmos-db/**/*.yml": [
-                    "✅ Cosmos DB in Fabric"
+                    "✅ Cosmos DB in Microsoft Fabric"
                 ]
             }
         },
