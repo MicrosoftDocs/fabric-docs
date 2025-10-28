@@ -763,7 +763,7 @@ Here is an overview of the available methods provided by `notebookutils.lakehous
 create(name: String, description: String = "", definition: ItemDefinition = null, workspaceId: String = ""): Artifact
 
 # Create Lakehouse with Schema Support
-create(name: String, description: String = "", definition:{"enableSchemas": True}): Artifact
+create(name: String, description: String = "", definition: {"enableSchemas": True}): Artifact
 
 # Retrieve a Lakehouse artifact
 get(name: String, workspaceId: String = ""): Artifact
