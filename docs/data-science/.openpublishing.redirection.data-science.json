@@ -127,6 +127,11 @@
         "redirect_document_id": true
       },
       {
+        "source_path_from_root": "/docs/data-science/ai-functions/summarize.md",
+        "redirect_url": "/docs/data-science/ai-functions/pandas/summarize.md",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-science/ai-functions/translate.md",
         "redirect_url": "/docs/data-science/ai-functions/pandas/translate.md",
         "redirect_document_id": true
