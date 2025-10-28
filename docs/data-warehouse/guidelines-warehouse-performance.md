@@ -3,8 +3,8 @@ title: Performance Guidelines
 description: This article contains a list of performance guidelines for the warehouse item in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: xiaoyul, procha, fipopovi
-ms.date: 06/30/2025
+ms.reviewer: xiaoyul, procha, fipopovi, twcyril
+ms.date: 10/14/2025
 ms.topic: best-practice
 ms.custom:
 ---
@@ -53,7 +53,7 @@ For complete information, see [decimal and numeric (Transact-SQL)](/sql/t-sql/da
 Use **varchar(n)** instead of **char(n)** for string columns, unless fixed-length padding is explicitly required. A **varchar** column stores only the actual string length per row, plus a small overhead, and reduces wasted space, which improves I/O efficiency.
 
 - Use **varchar(n)** for values like names, addresses, and descriptions, as they have widely variable values. Statistics and query cost estimation are more accurate when the data type length is more precise to the actual data.
-- Use **char(n)** when you know the string will be a fixed length each time. For example, storing the string `000000000` as a **char(9)** makes sense if the string is always exactly 9 numeric characters which can start with a zero.
+- Use **char(n)** when you know the string will be a fixed length each time. For example, storing the string `000000000` as a **char(9)** makes sense if the string is always exactly 9 numeric characters that can start with a zero.
 - The length `n` in the column data type declaration is the storage bytes. For multibyte encoding character sets such as UTF-8, the encoding for Fabric Data Warehouse, Latin characters and numbers take 1 byte of storage. However, there are Unicode characters that require more than 1 byte, such as Japanese characters that require 3 bytes to store, so the number of Unicode characters actually stored can be less than the data type length `n`. For more information, see [char and varchar Arguments](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true#char---n--).
 
 ### Avoid nullable columns when possible
@@ -121,6 +121,14 @@ In Fabric Data Warehouse, data compaction is a background optimization process i
 Although the Fabric Data Warehouse engine automatically resolves fragmentation over time through data compaction, performance might degrade until the process completes. Data compaction runs automatically without user intervention for Fabric Data Warehouse. 
 
 Data compaction doesn't apply to the Lakehouse. For Lakehouse tables accessed through SQL analytics endpoints, it's important to follow Lakehouse best practices and manually run the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#table-maintenance-operations) after significant data changes to maintain optimal storage layout.
+
+#### Data compaction preemption
+
+Fabric Data Warehouse intelligently and actively avoids write-write conflicts between background compaction tasks and user operations. Starting in October 2025, data compaction preemption is enabled. 
+
+Compaction checks for shared locks held by user queries. If data compaction detects a lock before it begins, it waits and will try again later. If data compaction starts and detects a lock before it commits, compaction aborts to avoid a write conflict with the user query.
+
+Write-write conflicts with the Fabric Data Warehouse background data compaction service are still possible. It is possible to create a write-write conflict with data compaction, for example, if an application uses an explicit transaction and performs non-conflicting work (like `INSERT`) before a conflicting operation (`UPDATE`, `DELETE`, `MERGE`). Data compaction can commit successfully, causing the explicit transaction later to fail due to a conflict. For more information on write-write or update conflicts, see [Transactions in Warehouse tables in Microsoft Fabric](transactions.md#schema-locks).
 
 ## V-Order in Fabric Data Warehouse
 
@@ -199,7 +207,7 @@ Fabric Warehouse transactions support:
 - **Cross-database transactions:** Supported within the same workspace, including reads from SQL analytics endpoints.
 - **Parquet-based rollback:** Since Fabric Data Warehouse stores data in immutable Parquet files, rollbacks are fast. Rollbacks simply revert to previous file versions.
 - **Automatic data compaction and checkpointing:** [Data compaction](#data-compaction) optimizes storage and read performance by merging small Parquet files and removing logically deleted rows.
-- **Automatic checkpointing:** Every write operation (`INSERT`, `UPDATE`, `DELETE`) appends a new JSON log file to [the Delta Lake transaction log](query-delta-lake-logs.md). Over time, this can result in hundreds or thousands of log files, especially in streaming or high-frequency ingestion scenarios. Automatic checkpointing improves metadata read efficiency by summarizing transaction logs into a single checkpoint file. Without checkpointing, every read must scan the entire transaction log history. With checkpointing, only the latest checkpoint file and the logs after it are read. This drastically reduces I/O and metadata parsing, especially for large or frequently updated tables.
+- **Automatic checkpointing:** Every write operation (`INSERT`, `UPDATE`, `DELETE`) appends a new JSON log file to [the Delta Lake transaction log](query-delta-lake-logs.md). Over time, this can result in hundreds or thousands of log files, especially in streaming or high-frequency ingestion scenarios. Automatic checkpointing improves metadata read efficiency by summarizing transaction logs into a single checkpoint file. Without checkpointing, every read must scan the entire transaction log history. With checkpointing, the only logs read are the latest checkpoint file and the logs after it. This drastically reduces I/O and metadata parsing, especially for large or frequently updated tables.
 
 Both compaction and checkpointing are critical for table health, especially in long-running or high-concurrency environments.
 

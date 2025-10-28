@@ -1,6 +1,5 @@
 ---
 title: Secure Your Cosmos DB Database
-titleSuffix: Microsoft Fabric
 description: Review the fundamentals of securing Cosmos DB in Microsoft Fabric from the perspective of data security.
 author: seesharprun
 ms.author: sidandrews
@@ -9,8 +8,6 @@ ms.date: 07/17/2025
 ms.custom: [security-horizontal-2025, horz-security]
 ms.search.form: Cosmos DB database security
 ai-usage: ai-generated
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
 # Secure your Cosmos DB in Microsoft Fabric database

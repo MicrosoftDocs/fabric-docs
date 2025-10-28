@@ -1,13 +1,10 @@
 ---
 title: Indexing in Cosmos DB Database
-titleSuffix: Microsoft Fabric
 description: Explore how indexing works under the hood within Cosmos DB in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
 ms.date: 07/14/2025
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
 # Indexing in Cosmos DB in Microsoft Fabric
