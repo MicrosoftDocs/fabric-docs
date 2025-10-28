@@ -26,7 +26,7 @@ Optimal refresh is engineered to improve data management efficiency, speed, and 
 |Refresh Policy | Description |
 |---------------|-------------|
 |Incremental refresh| An incremental refresh only processes the changed data in the sources used to define materialized lake view.|
-|No refresh | If the source remains unchanged i.e. if no change detected in delta commits, the service skips the refresh. This behavior saves unnecessary processing and reduces costs.|
+|No refresh | If the source remains unchanged, i.e., if no change detected in delta commits, the service skips the refresh. This behavior saves unnecessary processing and reduces costs.|
 |Full refresh |Full refresh entails evaluating the complete dataset of the dependant source whenever the service detects any modifications in the sources.|
 
 > [!Important]
@@ -38,7 +38,7 @@ Optimal refresh is engineered to improve data management efficiency, speed, and 
 
 1. Improved Efficiency: Faster refresh cycles help you deliver fresher insights and keep up with rapidly changing data. 
 
-1. Time Savings: Only changed data is processed, resulting in significantly reduced refresh durations. 
+1. Time Savings: Only changed data is processed, resulting in reduced refresh duration. 
 
 ### Supported expression in Optimal refresh for Incremental refresh strategy 
 
@@ -49,7 +49,7 @@ The following table outlines the supported expressions:
 
 |SQL Construct |  Remark|
 |--------------| -------|
-|SELECT expression | Supports expressions having deterministic functions (inbuilt). Non-deterministic function will lead to full refresh strategy.|
+|SELECT expression | Supports expressions having deterministic functions (inbuilt). Non-deterministic functions lead to full refresh strategy.|
 |FROM||
 |WHERE| Only deterministic inbuilt functions are supported.|
 |INNER JOIN || 
@@ -63,7 +63,7 @@ The following table outlines the supported expressions:
 
 By default, optimal refresh mode is enabled for the lineage. If not, follow the steps below:
 
-1. Navigate to the manage materialized lake view option and enable the toggle “optimal refresh”.
+1. Navigate to the manage materialized lake view option and enable the toggle `Optimal refresh`.
    
    :::image type="content" source="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png" alt-text="Screenshot that shows toggle to enable optimal refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png":::
 
@@ -82,9 +82,9 @@ If it's necessary to reprocess the entire data in materialized lake views, you c
 
 :::image type="content" source="./media/refresh-materialized-lake-view/full-refresh-option.png" alt-text="Screenshot that shows toggle to switch to full refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/full-refresh-option.png":::
 
-or
+Or
 
-To perform a full refresh of a materialized lake view, you can use the following command  
+To perform a full refresh of a materialized lake view, you can use the following command:
 
 ```sql
 REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier FULL
@@ -101,10 +101,10 @@ To determine the refresh policy under optimal refresh mode, you can query the sy
 SELECT 
     refreshPolicy 
 FROM  
-  dbo. sys_dq_metrics 
-WHERE MLVName = “materialized_lake_view_name” 
+    dbo. sys_dq_metrics 
+WHERE
+    MLVName = <materialized_lake_view_name> 
 ```
-
 
 ## Related articles
 
