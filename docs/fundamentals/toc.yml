@@ -149,6 +149,8 @@ items:
           href: ../real-time-intelligence/copilot-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
         - name: Generate a real-time dashboard with Copilot
           href: ../real-time-intelligence/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
+        - name: Use Copilot to eplore tile data in a Real-Time Dashboard
+          href: ../real-time-intelligence/copilot-explore-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
     - name: Use Copilot for Data Science and Data Engineering
       items:
       - name: Explore Chat magics in notebooks (preview)

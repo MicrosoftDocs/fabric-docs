@@ -6,7 +6,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 09/28/2025
+ms.date: 10/28/2025
 ---
 # Explore data in real-time dashboards with Copilot
 

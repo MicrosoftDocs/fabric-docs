@@ -787,7 +787,7 @@ items:
       href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
     - name: Real-Time Dashboard permissions
       href: dashboard-permissions.md
-    - name: Explore data in Real-Time Dashboard tiles
+    - name: Explore Tile Data With Copilot
       href: dashboard-explore-data.md
     - name: Customize Real-Time Dashboard visuals
       href: dashboard-visuals-customize.md
