@@ -58,4 +58,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Real-Time Intelligence tutorial part 4: Query streaming data using KQL](tutorial-4-query-data.md)
+> [Real-Time Intelligence tutorial part 4: Transform data in a KQL database](tutorial-4-transform-kql-database.md)
