@@ -5,36 +5,102 @@ author: eric-urban
 ms.author: eur
 ms.reviewer: abhishjain
 ms.topic: how-to
-ms.date: 06/19/2025
+ms.date: 10/28/2025
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.
 ---
 
 # Refresh materialized lake views in a lakehouse
 
-After you create a materialized lake view, the Microsoft Fabric service can handle its future refreshes based on the schedule that you provide in the generated lineage.  
+This article describes the various refresh modes for materialized lake view refresh and outlines the semantic considerations involved in effectively refreshing materialized lake views. 
 
-The following refresh operations can occur, depending on the updates to the data in the source tables:
+**Refresh modes for materialized lake views**
 
-* **Full refresh:** A full refresh entails evaluating the complete dataset of the source tables whenever the service detects any modifications in the source tables.
+  1. **Optimal refresh**: This mode automatically chooses the best refresh strategy for maximum performance for your materialized lake views – incremental, full, or no refresh.
+    
+  1. **Full refresh**: This mode enforces the full recompute for the materialized lake view.
 
-* **No refresh:** If the source tables remain unchanged, the service skips the refresh. This behavior saves unnecessary processing and reduces costs.
+## Optimal refresh  
 
-## Refresh a materialized lake view by using a Spark SQL command
+Optimal refresh is engineered to improve data management efficiency, speed, and cost-effectiveness on the Microsoft Fabric platform. The Optimal refresh feature automatically selects the most appropriate refresh strategy to maximize refresh performance. The following refresh policies are supported: 
 
-If it's necessary to quickly reflect changes in a materialized lake view, you can use the following command to perform a refresh:
+|Refresh Policy | Description |
+|---------------|-------------|
+|Incremental refresh| An incremental refresh only processes the changed data in the sources used to define materialized lake view.|
+|No refresh | If the source remains unchanged i.e. if no change detected in delta commits, the service skips the refresh. This behavior saves unnecessary processing and reduces costs.|
+|Full refresh |Full refresh entails evaluating the complete dataset of the dependant source whenever the service detects any modifications in the sources.|
+
+> [!Important]
+> Optimal refresh requires delta CDF property to be enabled for the data sources used to define materialized lake views 
+
+### Benefits of Optimal refresh 
+
+1. Lower Cost: Less compute and storage are used, especially when data changes are minimal and No refresh by passes the data refresh when no delta commit change is detected 
+
+1. Improved Efficiency: Faster refresh cycles help you deliver fresher insights and keep up with rapidly changing data. 
+
+1. Time Savings: Only changed data is processed, resulting in significantly reduced refresh durations. 
+
+### Supported expression in Optimal refresh for Incremental refresh strategy 
+
+When a materialized lake view is created using supported expressions, Fabric can perform incremental refreshes. If unsupported expressions are used in queries, a full refresh is performed 
+
+The following table outlines the supported expressions:
+
+
+|SQL Construct |  Remark|
+|--------------| -------|
+|SELECT expression | Supports expressions having deterministic functions (inbuilt). Non-deterministic function will lead to full refresh strategy.|
+|FROM||
+|WHERE| Only deterministic inbuilt functions are supported.|
+|INNER JOIN || 
+|UNION ALL|| 
+|Data quality constraints| Only deterministic inbuilt functions are supported.|
+
+> [!Note]
+> For the better incremental refresh experience, use supported clauses as much as possible. If a query uses unsupported patterns, the refresh will automatically fall back to a full refresh or no refresh.
+
+### How to enable optimal refresh mode 
+
+By default, optimal refresh mode is enabled for the lineage. If it isn’t enabled - 
+
+1. Navigate to the manage materialized lake view option and enable the toggle “optimal refresh”.
+
+> [!Note]
+> 1. For best results, avoid non-deterministic functions in your queries, as these may force a full refresh.
+> 2. Incremental refresh is supported for append-only data. If the data includes deletions or updates, Fabric will perform a full refresh.
+> 3. If you define data quality constraints in your MLV definition, incremental refresh will respect and enforce those constraints during updates.
+> 4. No additional charges apply specifically for using optimal refresh. You are billed based on compute usage during refresh operations.
+> 5. In cases such as small source datasets, Fabric might choose full over incremental refresh given the performance yield.
+
+## Full Refresh 
+
+A full refresh performs the full recompute of materialized lake view based on the source data.
+
+If it's necessary to reprocess the entire data in materialized lake views, you can disable the optimal refresh toggle to switch to full refresh mode.
+
+or
+
+To perform a full refresh of a materialized lake view, you can use the following command  
 
 ```sql
-REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier [FULL]
+REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier FULL
 ```
-
-`FULL` is an optional argument. If you use the `FULL` keyword, the service performs a full refresh of the materialized lake view. If you omit this keyword, the service decides whether to run a full refresh or skip it based on the source data.
-
+  
 > [!NOTE]
 > Refreshing a materialized lake view that uses non-delta tables as its source initiates a full refresh.
 
-## Known issues
+### Determine the refresh policy 
 
-* Currently, all refresh operations default to a full refresh.
+To determine the refresh policy under optimal refresh mode, you can query the sys_dq_metrics table 
+
+```sql
+SELECT 
+    refreshPolicy 
+FROM  
+  dbo. sys_dq_metrics 
+WHERE MLVName = “materialized_lake_view_name” 
+```
+
 
 ## Related articles
 
