@@ -56,7 +56,7 @@ To ensure your schedule is valid:
 - Make sure the end time is after the start time.
 - The scheduler automatically handles special cases like daylight saving time and invalid dates (for example, February 30).
 
-**Throttling limits**
+**Job throttling limits**
 
 * The Scheduler limits each user to 50 job submissions and 50 Get Job requests per minute to maintain system stability. Requests beyond these limits are automatically rejected.
 
