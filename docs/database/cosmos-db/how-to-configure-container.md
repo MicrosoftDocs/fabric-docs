@@ -1,13 +1,10 @@
 ---
 title: Configure container in Cosmos DB Database
-titleSuffix: Microsoft Fabric
 description: Learn how to configure containers in your Cosmos DB database in Microsoft Fabric, including steps like managing time-to-live (TTL) and indexing policy.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
 ms.date: 07/14/2025
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
 # Configure a container in Cosmos DB in Microsoft Fabric
