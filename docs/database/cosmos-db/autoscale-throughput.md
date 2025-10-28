@@ -1,14 +1,11 @@
 ---
 title: Autoscale Throughput in Cosmos DB Database (Preview)
-titleSuffix: Microsoft Fabric
 description: Learn about the benefits and use cases for autoscale throughput in your Cosmos DB database within Microsoft Fabric during the preview.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
 ms.date: 07/14/2025
 show_latex: true
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
 # Autoscale throughput in Cosmos DB in Microsoft Fabric (preview)

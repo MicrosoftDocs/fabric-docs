@@ -3,10 +3,10 @@ title: Supported scenarios for workspace private links
 description: Find information and links for supported and unsupported workspace-level private link scenarios.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: overview
 ms.custom:
-ms.date: 10/16/2025
+ms.date: 10/22/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
 
@@ -177,8 +177,8 @@ Manage environments in workspaces enabled with private links by using the Fabric
 * [Create, configure, and use an environment](/fabric/data-engineering/create-and-use-environment)
 #### [REST API](#tab/rest-apis-7)
 * [Items - REST API (Environment)](/rest/api/fabric/environment/items)
-* [Spark Compute - REST API (Environment)](/rest/api/fabric/environment/spark-compute)
-* [Spark Libraries - REST API (Environment)](/rest/api/fabric/environment/spark-libraries)
+* [Spark Compute - REST API (Environment)](/rest/api/fabric/environment/published/get-spark-compute)
+* [Spark Libraries - REST API (Environment)](/rest/api/fabric/environment/published/list-libraries)
 * [Custom Pools - REST API (Spark)](/rest/api/fabric/spark/custom-pools)
 * [Livy Sessions - REST API (Spark)](/rest/api/fabric/spark/livy-sessions)
 * [Workspace Settings - REST API (Spark)](/rest/api/fabric/spark/workspace-settings)
@@ -265,6 +265,8 @@ Manage Dataflows Gen2 in workspaces enabled with private links by using the Fabr
 
 A virtual network data gateway must be used for every dataflow connector. The virtual network data gateway must reside in the same virtual network as the workspace-level private link endpoint used by the workspace. 
 
+Power Platform Dataflow Connector: When a workspace has workspace private links enabled and public access denied, for any two dataflows in that workspace (dataflow A and dataflow B), neither dataflow will be able to connect to the other dataflow using the Power Platform Dataflow Connector, because the dataflow won't appear in the navigator.
+
 #### [Fabric portal](#tab/fabric-portal-12)
 * [Dataflow Gen2 default destination](/fabric/data-factory/default-destination)
 #### [REST API](#tab/rest-apis-12)
@@ -313,6 +315,7 @@ You can manage mirrored databases in workspaces enabled with private links by us
 - The limit of private endpoints for a workspace is 100. Create a support ticket if you need to increase this limit.
 - Limit of workspace PLS you can create per tenant: 500. Create a support ticket if you need to increase this limit.
 - Up to 10 workspace private link services can be created per minute.
+- The Fabric portal UI doesn't currently support enabling both inbound protection (workspace-level private links) and outbound access protection at the same time for a workspace. To configure both settings together, use the [Workspaces - Set Network Communication Policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy?tabs=HTTP), which allows full management of inbound and outbound protection policies.
 - For Data Engineering workloads:
    - To query Lakehouse files or tables from a workspace that has workspace-level private link enabled, you must create a cross-workspace managed private endpoint connection to access resources in the other workspace. <!--For instructions, see [Cross workspace communication](security-cross-workspace-communication.md).-->
    - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace. To read files in a Lakehouse located in another workspace, use a fully qualified path that includes the workspace ID and lakehouse ID (not their display names). This approach ensures the Spark session can resolve the path correctly and avoids socket timeout errors. [Learn more](workspace-outbound-access-protection-data-engineering.md#understanding-the-behavior-of-file-paths)

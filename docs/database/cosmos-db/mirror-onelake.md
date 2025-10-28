@@ -1,14 +1,11 @@
 ---
 title: Mirror OneLake in Cosmos DB Database (Preview)
-titleSuffix: Microsoft Fabric
 description: Learn how data is automatically mirrored from Cosmos DB database in Microsoft Fabric to OneLake during the preview.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
 ms.date: 07/17/2025
 ms.search.form: Databases replication to OneLake,Integrate Cosmos DB with other services
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
 # Mirror OneLake in Cosmos DB database in Microsoft Fabric (preview)
@@ -28,7 +25,7 @@ This automatic mirror support enables scenarios including, but not limited to:
 
 You can check the status of replication by navigating to the replication section for the database in the Fabric portal. This section includes metadata about replication including the status of the last sync.
 
-:::image source="media/mirror-onelake/mirroring-status.png" lightbox="media/mirror-onelake/mirroring-status-full.png" alt-text="Screenshot of the status dialog for mirroring for a Cosmos DB in Fabric database.":::
+:::image type="content" source="media/mirror-onelake/mirroring-status.png" lightbox="media/mirror-onelake/mirroring-status-full.png" alt-text="Screenshot of the status dialog for mirroring for a Cosmos DB in Fabric database.":::
 
 ## SQL analytics endpoint queries
 
@@ -46,7 +43,7 @@ GROUP BY
   category
 ```
 
-:::image source="media/mirror-onelake/sql-analytics-endpoint-query.png" lightbox="media/mirror-onelake/sql-analytics-endpoint-query-full.png" alt-text="Screenshot of a Transact SQL (T-SQL) query using the query editor in the SQL analytics endpoint.":::
+:::image type="content" source="media/mirror-onelake/sql-analytics-endpoint-query.png" lightbox="media/mirror-onelake/sql-analytics-endpoint-query-full.png" alt-text="Screenshot of a Transact SQL (T-SQL) query using the query editor in the SQL analytics endpoint.":::
 
 ## Related content
 

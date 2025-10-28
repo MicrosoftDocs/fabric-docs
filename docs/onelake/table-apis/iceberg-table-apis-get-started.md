@@ -17,7 +17,7 @@ OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabr
 
 ## Prerequisites
 
-Learn more about [OneLake table APIs for Iceberg](./onelake-iceberg-table-apis.md) and make sure to review the [prerequisite information](./onelake-table-apis.md#prerequisites). 
+Learn more about [OneLake table APIs for Iceberg](./iceberg-table-apis-overview.md) and make sure to review the [prerequisite information](./table-apis-overview.md#prerequisites). 
 
 ## Client quickstart examples
 
@@ -449,6 +449,6 @@ List Iceberg catalog configuration settings.
 
 ## Related content
 
-- Learn more about [OneLake table APIs](./onelake-table-apis.md).
-- Learn more about [OneLake table APIs for Iceberg](./onelake-iceberg-table-apis.md).
+- Learn more about [OneLake table APIs](./table-apis-overview.md).
+- Learn more about [OneLake table APIs for Iceberg](./iceberg-table-apis-overview.md).
 - Set up [automatic Delta Lake to Iceberg format conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).

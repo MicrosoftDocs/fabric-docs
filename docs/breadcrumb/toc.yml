@@ -55,3 +55,13 @@ items:
   - name: Microsoft Fabric Security
     tocHref: /azure/reliability
     topicHref: /fabric/security/index
+- name: Microsoft Fabric
+  tocHref: /sql/
+  topicHref: /fabric/index
+  items:
+  - name: Database
+    tocHref: /fabric/database/
+    topicHref: /fabric/database/index
+  - name: Data Warehouse
+    tocHref: /fabric/data-warehouse/
+    topicHref: /fabric/data-warehouse/index
