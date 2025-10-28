@@ -4,7 +4,7 @@ description: Learn about the release status of AI and Copilot features in Fabric
 author: nelgson
 ms.author: daengli
 ms.reviewer: guptamaya, maghan
-ms.date: 05/22/2025
+ms.date: 10/28/2025
 ms.update-cycle: 180-days
 ms.service: fabric
 ms.topic: overview
