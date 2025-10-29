@@ -72,7 +72,7 @@ When a T-SQL query is run, information about the current version of the data bei
 - Warehouse snapshots don't exist without the source warehouse. When the warehouse is deleted, all snapshots are deleted. Warehouse snapshots must be recreated if the warehouse is restored.
 - Warehouse snapshots are valid for up to 30 days in the past. Snapshot datetime can be set to any date in the past up to 30 days or database creation time (whichever is later).
 
-## Call out
+## Remarks
 
 - Modified tables, views, and stored procedures after the snapshot timestamp become invalid in the snapshot.
 - Warehouse snapshots require Direct Query or Import mode in Power BI, and don't support [Direct Lake](../fundamentals/direct-lake-overview.md) mode.
