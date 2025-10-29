@@ -1019,6 +1019,8 @@
         items: 
           - name: Concepts
             href: apache-airflow-jobs-concepts.md
+          - name: Apache Airflow compute
+            href: apache-airflow-compute.md
           - name: How-to
             items: 
               - name: Synchronize your code from an existing Git repo
