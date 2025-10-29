@@ -109,7 +109,7 @@ try {
 
     Write-Host 'Attempting to connect to the database.'
 
-   sqlcmd.exe -S $databaseProperties.ServerFqdn -d $databaseProperties.DatabaseName -G -Q 'create table test2 
+    sqlcmd.exe -S $databaseProperties.ServerFqdn -d $databaseProperties.DatabaseName -G -Q 'create table test2 
     ( 
     id int 
     );

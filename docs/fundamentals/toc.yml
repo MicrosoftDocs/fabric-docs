@@ -78,14 +78,6 @@ items:
     href: direct-lake-overview.md
   - name: Understand Direct Lake query performance
     href: direct-lake-understand-storage.md
-  - name: Use Direct Lake in Power BI Desktop
-    href: direct-lake-power-bi-desktop.md
-  - name: Use Direct Lake in Power BI Project (PBIP) (preview)
-    href: direct-lake-power-bi-project.md
-  - name: Use Direct Lake in Power BI web modeling
-    href: direct-lake-web-modeling.md
-  - name: Edit tables for Direct Lake semantic models
-    href: direct-lake-edit-tables.md
   - name: Create a lakehouse for Direct Lake
     href: direct-lake-create-lakehouse.md
   - name: Develop Direct Lake models
@@ -94,8 +86,19 @@ items:
     href: direct-lake-security-integration.md
   - name: Analyze Direct Lake query processing
     href: direct-lake-analyze-query-processing.md
-  - name: Build reports
-    href: building-reports.md
+  - name: Build Power BI semantic models and reports
+    items:
+    - name: Use Direct Lake in Power BI web modeling
+      href: direct-lake-web-modeling.md
+    - name: Use Direct Lake in Power BI Desktop
+      href: direct-lake-power-bi-desktop.md
+    - name: Use Direct Lake in Power BI Project (PBIP) (preview)
+      href: direct-lake-power-bi-project.md
+    - name: Use Edit tables for Direct Lake semantic models
+      href: direct-lake-edit-tables.md
+    - name: Build reports
+      href: building-reports.md
+      
 
 - name: Use Copilot and AI
   items:

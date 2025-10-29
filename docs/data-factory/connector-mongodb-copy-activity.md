@@ -58,11 +58,8 @@ Under **Advanced**, you can specify the following fields:
 
 Go to **Destination** tab to configure your copy activity destination. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-mongodb/destination.png" alt-text="Screenshot showing destination tab and the list of properties.":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select a MongoDB connection from the connection list. If no connection exists, then create a new MongoDB connection by selecting **New**.
 - **Database**: Select your database from the drop-down list.
 - **Collection name**: Specify the name of the collection in MongoDB database. You can select the collection from the drop-down list or select **Edit** to enter it manually. 
@@ -127,7 +124,6 @@ The following table contains more information about the copy activity in MongoDB
 
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the source data store.|< your MongoDB connection >|Yes|connection|
 |**Database**|Your database that you use as source.|< your database >|Yes|database|
 |**Collection name**|Name of the collection in MongoDB database.|< your collection >|Yes|collection|
@@ -141,7 +137,6 @@ The following table contains more information about the copy activity in MongoDB
 
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the destination data store.|< your MongoDB connection >|Yes|connection|
 |**Database**|Your database that you use as destination.|< your database >|Yes|database|
 |**Collection name**|Name of the collection in MongoDB database.|< your collection >|Yes|collection|

@@ -1,6 +1,5 @@
 ---
 title: Customize indexing policies in Cosmos DB Database (Preview)
-titleSuffix: Microsoft Fabric
 description: Create a custom indexing policy for a container within a database in Cosmos DB in Microsoft Fabric during the preview.
 author: seesharprun
 ms.author: sidandrews
@@ -8,8 +7,6 @@ ms.topic: how-to
 ms.date: 07/29/2025
 ai-usage: ai-assisted
 zone_pivot_groups: dev-lang-core
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
 # Customize indexing policies in Cosmos DB in Microsoft Fabric (preview)
@@ -38,7 +35,7 @@ First, use the Fabric portal to set the indexing policy for a container
 
 1. In the **Settings** section, select the **Indexing Policy** tab.
 
-    :::image source="media/how-to-customize-indexing-policy/editor.png" lightbox="media/how-to-customize-indexing-policy/editor-full.png" alt-text="Screenshot of the 'Indexing Policy' section for a container within a database in the Fabric portal.":::
+    :::image type="content" source="media/how-to-customize-indexing-policy/editor.png" lightbox="media/how-to-customize-indexing-policy/editor-full.png" alt-text="Screenshot of the 'Indexing Policy' section for a container within a database in the Fabric portal.":::
 
 1. In the editor, update the setting to a new value. For example, you can set the indexing policy to only index the `name` and `category` properties for items in the container using this policy.
 

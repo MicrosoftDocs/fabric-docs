@@ -79,16 +79,16 @@ This completes the setup and now you can now read and write data in Fabric using
 
 ## Connecting to OneLake using Databricks serverless compute
 
-[Databricks serverless compute]/azure/databricks/compute/serverless/) allows you to run workloads without provisioning a cluster. As per Databricks serverless limitations, to automate the configuration of Spark on serverless compute, Databricks doesn't allow configuring [Spark properties](/azure/databricks/spark/conf#configure-spark-properties-for-serverless-notebooks-and-jobs) outside supported properties that are listed [here](/azure/databricks/spark/conf#configure-spark-properties-for-serverless-notebooks-and-jobs).
+[Databricks serverless compute](/azure/databricks/compute/serverless/) allows you to run workloads without provisioning a cluster. As per Databricks serverless documentation, to automate the configuration of Spark on serverless compute, Databricks serverless doesn't allow configuring [Spark properties](/azure/databricks/spark/conf#configure-spark-properties-for-serverless-notebooks-and-jobs) outside supported properties that are listed [here](/azure/databricks/spark/conf#configure-spark-properties-for-serverless-notebooks-and-jobs).
 
 > [!NOTE]
-> This limitation isn't unique to Azure Databricks. Databricks Serverless implementations on [Amazon Web Services (AWS)](https://docs.databricks.com/aws/release-notes/serverless#supported-spark-configuration-parameters) and [Google Cloud](https://docs.databricks.com/gcp/release-notes/serverless#supported-spark-configuration-parameters) exhibit the same behavior.
+> This limitation isn't unique to Azure Databricks. Databricks serverless implementations on [Amazon Web Services (AWS)](https://docs.databricks.com/aws/release-notes/serverless#supported-spark-configuration-parameters) and [Google Cloud](https://docs.databricks.com/gcp/release-notes/serverless#supported-spark-configuration-parameters) exhibit the same behavior.
 
 If you attempt to modify or set an unsupported Spark configuration in a notebook linked to Databricks serverless compute, the system returns a CONFIG_NOT_AVAILABLE error.
 
 :::image type="content" source="media\onelake-azure-databricks\unsupported-config-error.png" alt-text="Screenshot showing error message if a user attempts to modify unsupported Spark config in serverless compute.":::
 
-OneLake supports inbound connectivity from Databricks serverless compute. You can connect to OneLake as provided you have successfully authenticated and there's network path between Databricks serverless compute and OneLake. With Databricks serverless, you must ensure that your code doesn't modify any unsupported Spark properties.  
+OneLake supports inbound connectivity from Databricks serverless compute. You can connect to OneLake (from Databricks serverless compute) provided you have appropriate access and there's a network path between Databricks serverless compute and OneLake. With Databricks serverless, you must ensure that your code doesn't modify any unsupported Spark properties.  
 
 ### Prerequisites
 

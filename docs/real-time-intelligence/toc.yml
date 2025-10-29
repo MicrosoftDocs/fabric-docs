@@ -759,7 +759,7 @@ items:
     items:
     - name: Anomaly detection using Real-Time Intelligence
       items:
-      - name: Overview of anomaly detection
+      - name: Set up anomaly detection
         href: anomaly-detection.md
       - name: Anomaly detection models
         href: anomaly-detection-models.md
@@ -816,7 +816,7 @@ items:
       href: map/create-map.md
     - name: Customize a map
       href: map/customize-map.md
-    - name: Share Map
+    - name: Share a map
       href: map/share-map.md
     - name: Create a tileset
       href: map/spatial-job-create-tile-sets.md

@@ -3,8 +3,7 @@ items:
   href: index.yml
 - name: What is lifecycle management? 
   href: cicd-overview.md
-- name: Network security and CI/CD
-  href: cicd-security.md
+
 - name: "Tutorial: End to end lifecycle management"
   href: cicd-tutorial.md
 - name: "CI/CD workflow options in Fabric"
@@ -85,6 +84,8 @@ items:
     href: variable-library/variable-library-troubleshoot.md
 - name: Lifecycle management best practices
   href: best-practices-cicd.md
+- name: Network security and CI/CD
+  href: cicd-security.md
 - name: Frequently asked questions
   href: faq.yml
 - name: Troubleshooting

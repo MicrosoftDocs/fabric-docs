@@ -3,7 +3,7 @@ title: Overview of workspace-level private links
 description: Learn how workspace-level private links in Microsoft Fabric securely connect specific workspaces to your virtual network, block public internet access, and improve data protection.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: overview
 ms.custom:
 ms.date: 09/29/2025
@@ -58,7 +58,7 @@ When connecting to a workspace, you need to use the workspace fully qualified do
 * `https://{workspaceid}.z{xy}.onelake.fabric.microsoft.com` 
 * `https://{workspaceid}.z{xy}.dfs.fabric.microsoft.com`
 * `https://{workspaceid}.z{xy}.blob.fabric.microsoft.com`
-* `https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com` *that is, add z{xy} to the regular warehouse connection string.
+* `https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com` *that is, add z{xy} to the regular warehouse connection string found under SQL connection string. The GUIDs in the FQDN correspond to Tenant GUID in Base32 and Workspace GUID in Base32 respectively. 
 
 ## How the workspace FQDN resolves in different environments
 

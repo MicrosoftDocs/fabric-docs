@@ -118,9 +118,9 @@ This section describes how to establish connectivity between an outbound access 
 > [!IMPORTANT]
 > The activation status shows as *Provisioning* and approval as blank. A tenant admin must approve this request as described in the following section.
 
-### Tenant admin: Approve the managed private endpoint connection
+### Private Link Service Owner: Approve the managed private endpoint connection
 
-A tenant admin must approve the managed private endpoint connection by completing the following steps. 
+The private link service owner must approve the managed private endpoint connection by completing the following steps. 
 
 1. Go to the Azure portal, search for **Private Link Services**, and open the **Private Link Center**.
 

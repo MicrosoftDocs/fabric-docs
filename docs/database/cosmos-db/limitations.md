@@ -1,6 +1,5 @@
 ---
 title: Cosmos DB Database Limitations (Preview)
-titleSuffix: Microsoft Fabric
 description: Learn about the current limitations and restrictions when using Cosmos DB databases in Microsoft Fabric during the preview phase.
 author: seesharprun
 ms.author: sidandrews
@@ -8,8 +7,6 @@ ms.topic: concept-article
 ms.date: 07/16/2025
 ms.search.form: Databases Limitations
 ms.custom: references_regions
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
 # Limitations in Cosmos DB in Microsoft Fabric (preview)
@@ -22,11 +19,21 @@ This article lists current limitations for Cosmos DB in Fabric.
 
 ## Quotas and limits
 
-- Containers support a maximum autoscale throughput of **10,000** request units per second (RU/s). 
+- Databases support a maximum of 25 containers.
 
-- Containers created in the Fabric portal are automatically allocated **5,000** RU/s. Containers created using a software development kit (SDK) can be set up to the maximum allowed autoscale throughput.
+- Containers support a maximum autoscale throughput of **50,000** request units per second (RU/s). 
+
+- Containers created in the Fabric portal are automatically allocated **5,000** RU/s maximum autoscale throughput.
+
+- Containers created using a software development kit (SDK) can be set up to the maximum allowed autoscale throughput.
+
+- Containers created through an SDK must have throughput set to autoscale during container creation or an error will be thrown.
 
 - Container throughput can't be changed once the container is created.
+  
+    > [!TIP]
+    > Maximum throughput more than 50,000 RU/s can be increased with a support ticket.
+
 
 ## Regional availability
 

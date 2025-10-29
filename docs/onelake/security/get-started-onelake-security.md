@@ -26,11 +26,8 @@ The table below outlines which data items support OneLake security.
 | ---- | --- | --- |
 | Lakehouse | Private Preview | Read, ReadWrite |
 | Azure Databricks Mirrored Catalog | Private Preview | Read |
-| Mirrored Databases | Private Preview | Read |
 
 ## How to opt in
-
-[!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
 
 OneLake security is currently in private preview and as a result is disabled by default. The preview feature is configured on a per-item basis. The opt-in control allows for a single item to try the preview without enabling it on any other Fabric items.
 
