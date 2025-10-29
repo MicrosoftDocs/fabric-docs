@@ -34,28 +34,26 @@ Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to trigger no
 
 ## Define the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alert conditions
 
-### Details
+### Details section
 
 In the **Set alert** pane, provide a name for your rule.
 :::image type="content" source="media/activator-get-data/details.png" alt-text="Screenshot of details section in the create an alert pane." lightbox="media/activator-get-data/details.png":::
 
-### Monitor
+### Monitor section
 
 Select how often you want [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to run the query. The default is every 5 minutes.
 
 :::image type="content" source="media/activator-get-data/monitor.png" alt-text="Screenshot of create an alert window in Activator, monitor highlighted." lightbox="media/activator-get-data/monitor.png":::
 
-### Condition
+### Condition section
 
 Define your rule conditions. Rule conditions include deciding which fields to monitor and setting the threshold.
 
 :::image type="content" source="media/activator-get-data/condition.png" alt-text="Screenshot of create an alert window in Activator, save condition highlighted." lightbox="media/activator-get-data/condition.png":::
 
-### Action
-
 [!INCLUDE [action](../../real-time-hub/includes/rule-action.md)]
 
-### Save location
+### Save location section
 
 Set the location to save this [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule and select **Create**.
 
