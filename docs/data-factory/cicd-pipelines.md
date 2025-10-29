@@ -217,4 +217,4 @@ The following known limitations apply to CI/CD for pipelines in Data Factory in 
 - [Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric](../cicd/cicd-overview.md?source=recommendations)
 - [Get started with Git integration, the Fabric Application Lifecycle Management (ALM) tool](../cicd/git-integration/git-get-started.md?tabs=azure-devops%2CAzure%2Ccommit-to-git)
 - [Get started using deployment pipelines, the Fabric Application Lifecycle Management (ALM) tool](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md?tabs=from-fabric%2Cnew%2Cstage-settings-new)
-- [Blog: Exploring CI/CD Capabilities in Microsoft Fabric: A Focus on pipelines](https://blog.fabric.microsoft.com/en-us/blog/exploring-ci-cd-capabilities-in-microsoft-fabric-a-focus-on-data-pipelines?ft=All)
+- [Blog: Exploring CI/CD Capabilities in Microsoft Fabric: A Focus on pipelines](https://blog.fabric.microsoft.com/blog/exploring-ci-cd-capabilities-in-microsoft-fabric-a-focus-on-data-pipelines?ft=All)

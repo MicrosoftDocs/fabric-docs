@@ -39,11 +39,8 @@ For **General** tab configuration, go to [General](activity-overview.md#general-
 
 The following properties are supported for REST under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-rest/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
-
 The following first three properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an **REST** connection from the connection list. If no connection exists, then create a new REST connection by selecting **New**.
 - **Connection type**: Select **REST**.
 - **Relative URL**: A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`.
@@ -72,11 +69,8 @@ Under **Advanced**, you can specify the following fields:
 
 The following properties are supported for REST under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-rest/destination.png" alt-text="Screenshot showing destination tab.":::
-
 The following first three properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select a **REST** connection from the connection list. If no connection exists, then create a new REST connection by selecting **New**.
 - **Connection type**: Select **REST**.
 - **Relative URL**: A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`.
@@ -108,7 +102,6 @@ The following tables contain more information about the copy activity in REST.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|• **Workspace**<br>• **External**<br>• **Sample dataset**<br>|Yes|type|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**Connection type** | Your connection type. Select **REST**.|**REST**|Yes |type:<br>RestResource|
 |**Relative URL** |A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`.| \<your relative url> |No |relativeUrl|
@@ -123,7 +116,6 @@ The following tables contain more information about the copy activity in REST.
 
 |Name |Description |Value |Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|• **Workspace**<br>• **External** |Yes|type|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**Connection type** | Your connection type. Select **REST**.|**REST**|Yes |type:<br>RestResource|
 |**Relative URL** |A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `[URL specified in connection]/[relative URL specified]`.|\<your relative url> |No |relativeUrl|

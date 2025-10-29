@@ -4,7 +4,7 @@ description: A detailed list of limitations for SQL database in Microsoft Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier
-ms.date: 10/13/2025
+ms.date: 10/22/2025
 ms.topic: conceptual
 ms.update-cycle: 180-days
 ms.search.form: Databases Limitations for SQL, Databases Limitations
@@ -46,15 +46,13 @@ The SQL analytics endpoint of the SQL database in Fabric works just like the [La
 
 ## Connection policy
 
-Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. In the **Redirect** policy, clients establish connections directly to the node hosting the database, leading to reduced latency and improved throughput. 
+Currently, the connection policy for SQL database in Microsoft Fabric is **Default** and cannot be changed. For more information, see [Connectivity architecture - Connection policy](/azure/azure-sql/database/connectivity-architecture?view=fabric&preserve-view=true#connection-policy).
 
 For connections to use this mode, clients need to:
 
   - Allow outbound communication from the client to all Azure SQL IP addresses in the region on ports in the range of 11000 to 11999. Use the Service Tags for SQL to make this easier to manage. Refer to the [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) for a list of your region's IP addresses to allow.
   
   - Allow outbound communication from the client to Azure SQL gateway IP addresses on port 1433.
-  
-For more information, see [Connectivity architecture - Connection policy](/azure/azure-sql/database/connectivity-architecture?view=fabric&preserve-view=true#connection-policy).
 
 ## Availability
 
@@ -80,7 +78,7 @@ The following table lists the major features of SQL Server and provides informat
 | [Change data capture - CDC](/sql/relational-databases/track-changes/about-change-data-capture-sql-server) | Yes, for S3 tier and above. Basic, S0, S1, S2 aren't supported. | No  |
 | [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, `SQL_Latin1_General_CP1_CI_AS`. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name) and can't be updated. Collations on individual columns are supported.| By default, `SQL_Latin1_General_CP1_CI_AS` and can't be updated. Collations on individual columns are supported.|
 | [Column encryption](/sql/relational-databases/security/encryption/encrypt-a-column-of-data) | Yes | Yes |
-| [Columnstore indexes, clustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes, but the table cannot be mirrored to OneLake. |
+| [Columnstore indexes, clustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes, but the index must be created at the same time the table is created, or mirroring must be stopped. For more information, see [Limitations for Fabric SQL database mirroring (preview)](mirroring-limitations.md#table-level).|
 | [Columnstore indexes, nonclustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes |
 | [Credentials](/sql/relational-databases/security/authentication-access/credentials-database-engine) | Yes, but only [database scoped credentials](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?view=azuresqldb-current&preserve-view=true). | Yes, but only [database scoped credentials](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?view=fabric&preserve-view=true).|
 | [Cross-database/three-part name queries](/sql/relational-databases/linked-servers/linked-servers-database-engine) | No, see [Elastic queries](/azure/azure-sql/database/elastic-query-overview) | Yes, you can do cross-database three-part name queries via the SQL analytics endpoint.  |
@@ -126,6 +124,7 @@ The following table lists the major features of SQL Server and provides informat
 | [System catalog views](/sql/relational-databases/system-catalog-views/catalog-views-transact-sql) | Some, see individual views | Some, see individual views |
 | [TempDB](/sql/relational-databases/databases/tempdb-database) | Yes | Yes |
 | [Temporary tables](/sql/t-sql/statements/create-table-transact-sql#database-scoped-global-temporary-tables-azure-sql-database) | Local and database-scoped global temporary tables | Local and database-scoped global temporary tables |
+| [Temporal tables](/azure/azure-sql/temporal-tables) | Yes | Yes |
 | Time zone choice | No | No |
 | [Trace flags](/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql) | No | No |
 | [Transactional replication](/azure/azure-sql/database/migrate-to-database-from-sql-server) | Yes, subscriber only |  Yes, subscriber only |
@@ -161,7 +160,7 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | **VNet Service endpoint** | Yes, see [virtual network service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **VNet Global peering** | Yes, using [Private IP and service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **Private connectivity** | Yes, using [Private Link](/azure/private-link/private-endpoint-overview) | Yes, using [Private links](../../security/security-private-links-overview.md)  |
-| **Connectivity Policy**|[Redirect, Proxy, or Default](/azure/azure-sql/database/connectivity-architecture?view=azuresql-db&preserve-view=true)|[Redirect](/azure/azure-sql/database/connectivity-architecture?view=fabric&preserve-view=true)|
+| **Connectivity Policy**|[Redirect, Proxy, or Default](/azure/azure-sql/database/connectivity-architecture?view=azuresql-db&preserve-view=true#connection-policy)|[Default](/azure/azure-sql/database/connectivity-architecture?view=fabric&preserve-view=true#connection-policy)|
 
 ## Resource limits
 

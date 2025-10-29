@@ -3,8 +3,8 @@ title: "Generate unique identifiers in a warehouse table"
 description: "Learn about workarounds to generate unique identifiers in a Microsoft Fabric warehouse table."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: shrisk, scbradl
-ms.date: 11/13/2024
+ms.reviewer: procha
+ms.date: 10/15/2025
 ms.topic: how-to
 ms.custom:
   - fabric-cat
@@ -14,66 +14,12 @@ ms.custom:
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-It's a common requirement in data warehouses to assign a unique identifier to each row of a table. In SQL Server-based environments this is typically done by creating an [identity column](/sql/t-sql/statements/create-table-transact-sql-identity-property?view=sql-server-ver16&preserve-view=true) in a table, however currently this feature isn't supported in a warehouse in Microsoft Fabric. Instead, you need to use a workaround technique. We present two alternatives.
+It's a common requirement in data warehouses to assign a unique identifier to each row of a table. In SQL Server-based environments this is typically done by creating an [identity column](/sql/t-sql/statements/create-table-transact-sql-identity-property?view=sql-server-ver16&preserve-view=true) in a table, however currently this feature isn't supported in a warehouse in Microsoft Fabric. This article describes a workaround to generate unique identifiers in a warehouse table.
 
-This article describes workaround techniques to generate unique identifiers in a warehouse table.
+> [!IMPORTANT]
+> If multiple processes insert data at the same time, you may get duplicate values.
 
-## Method 1
-
-This method is most applicable when you need to create identity values, but the order of the values isn't important (nonsequential values are acceptable).
-
-Unique values are generated in the code that inserts data into the table.
-
-1. To create unique data using this method, create a table that includes a column that stores unique identifier values. The column data type should be set to **bigint**. You should also define the column as `NOT NULL` to ensure that every row is assigned an identifier.
-
-    The following T-SQL code sample creates an example table named `Orders_with_Identifier` in the `dbo` schema, where the `Row_ID` column serves as a unique key.
-    
-    ```sql
-    --Drop a table named 'Orders_with_Identifier' in schema 'dbo', if it exists
-    IF OBJECT_ID('[dbo].[Orders_with_Identifier]', 'U') IS NOT NULL
-        DROP TABLE [dbo].[Orders_with_Identifier];
-    GO
-    
-    CREATE TABLE [dbo].[Orders_with_Identifier] (
-        [Row_ID] BIGINT NOT NULL,
-        [O_OrderKey] BIGINT NULL,
-        [O_CustomerKey] BIGINT NULL,
-        [O_OrderStatus] VARCHAR(1) NULL,
-        [O_TotalPrice] DECIMAL(15, 2) NULL,
-        [O_OrderDate] DATE NULL,
-        [O_OrderPriority] VARCHAR(15) NULL,
-        [O_Clerk] VARCHAR (15) NULL,
-        [O_ShipPriority] INT NULL,
-        [O_Comment] VARCHAR (79) NULL
-    );
-    ```
-
-1. When you insert rows into the table, via T-SQL scripts or application code or otherwise, generate unique data for `Row_ID` with the `NEWID()` function. This function generates a unique value of type **uniqueidentifier** which can then be cast and stored as a **bigint**.
-
-    The following code inserts rows into the `dbo.Orders_with_Identifier` table. The values for the `Row_ID` column are computed by converting the values returned by the `newid()` function. The function doesn't require an `ORDER BY` clause and generates a new value for each record.
-
-    ```sql
-    --Insert new rows with unique identifiers
-    INSERT INTO [dbo].[Orders_with_Identifier]
-    SELECT
-        CONVERT(BIGINT, CONVERT(VARBINARY, CONCAT(NEWID(), GETDATE()))) AS [Row_ID],
-        [src].[O_OrderKey],
-        [src].[O_CustomerKey],
-        [src].[O_OrderStatus],
-        [src].[O_TotalPrice],
-        [src].[O_OrderDate],
-        [src].[O_OrderPriority],
-        [src].[O_Clerk],
-        [src].[O_ShipPriority],
-        [src].[O_Comment]
-    FROM [dbo].[Orders] AS [src];
-    ```
-
-## Method 2
-
-This method is most applicable when you need to create sequential identity values but should be used with caution on larger datasets as it can be slower than alternative methods. Considerations should also be made for multiple processes inserting data simultaneously as this could lead to duplicate values.
-
-1. To create unique data using this method, create a table that includes a column that stores unique identifier values. The column data type should be set to **int or bigint**,  depending on the volume of data you expect to store. You should also define the column as `NOT NULL` to ensure that every row is assigned an identifier.
+1. Create a table that includes a column that stores unique identifier values. The column data type should be set to **int** or **bigint**, depending on the volume of data you expect to store. You should also define the column as `NOT NULL` to ensure that every row is assigned an identifier.
 
     The following T-SQL code sample creates an example table named `Orders_with_Identifier` in the `dbo` schema, where the `Row_ID` column serves as a unique key.
 
