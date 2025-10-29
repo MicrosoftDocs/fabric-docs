@@ -67,7 +67,7 @@ This article lists current limitations for Cosmos DB in Microsoft Fabric.
 ## Vector and full-text indexing and search
 
 - For limitations on vector indexing and search see, [Cosmos DB vector limitations](/azure/cosmos-db/nosql/vector-search#current-limitations)
-- For limitations on full-text indexing and search see, [Cosmos DB full-text limitations](/azure/cosmos-db/gen-ai/full-text-search-faq#limitations)
+- For limitations on full-text indexing and search see, [Cosmos DB full-text limitations](/azure/cosmos-db/gen-ai/full-text-search-faq##what-are-the-known-limitations-of-full-text-search-in-azure-cosmos-db-)
 
 ## Programmability
 
