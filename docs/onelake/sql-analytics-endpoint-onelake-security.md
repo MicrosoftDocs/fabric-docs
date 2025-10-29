@@ -53,6 +53,9 @@ In user identity mode:
 
 * Write operations aren't supported at the SQL analytics endpoint. All writes must occur through the Lakehouse UI and are governed by workspace roles (Admin, Member, Contributor).
 
+>[!IMPORTANT]
+>The SQL Analytics Endpoint requires a one-to-one mapping between item permissions and members in a OneLake security role to sync correctly. If you grant an identity access to a OneLake security role, that same identity needs to have Fabric Read permission to the lakehouse as well. For example, if a user assigns "user123@microsoft.com" to a OneLake security role then "user123@microsoft.com" must also be assigned to that lakehouse.
+
 ### Workspace role behavior
 
 Users with the **Admin**, **Member**, or **Contributor** role at the workspace level aren't subject to OneLake security enforcement. These roles have elevated privileges and will bypass RLS, CLS, and OLS policies entirely. Follow these requirements to ensure OneLake security is respected:
@@ -98,6 +101,9 @@ This synchronization ensures that OneLake security definitions stay authoritativ
 | **RLS/CLS policy references a deleted or renamed table** | Error: *Security policy references a table that no longer exists.* | No error surfaced; query fails silently if table is missing. | Update or remove one or more affected roles, or restore the missing table. |
 | **DDM (Dynamic Data Masking) policy references a deleted or renamed column** | DDM not supported from OneLake Security, must be implemented through SQL. | Error: *Invalid column name \<column name\>* | Update or remove one or more affected DDM rules, or restore the missing column. |
 | **System error (unexpected failure)** | Error: *An unexpected system error occurred. Try again or contact support.* | Error: *An internal error has occurred while applying table changes to SQL.* | Retry operation; if issue persists, contact Microsoft Support. |
+| **User doesn't have permission on the artifact** | Error: *User doesn't have permission on the artifact* | Error: *User doesn't have permission on the artifact* | Provide user with objectID {objectID} permission to the artifact..<sup>1</sup> |
+
+<sup>1</sup> The object ID must be an exact match between the OneLake security role member and the Fabric item permissions. If a group is added to the role membership, then that same group must be given the Fabric Read permission. Adding a member from that group to the item does not count as a direct match.
 
 ### Shortcuts behavior with security sync
 
@@ -186,7 +192,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
 * **Delayed permission propagation**: Permission changes aren't instantaneous. Switching between security modes (User Identity vs. Delegated) may require time to propagate before taking effect, but should take less than 1 minute.
 
-* **Control-plane dependency**: Permissions can't be applied to users or groups that don't already exist in the workspace control plane. You either need to share the source item, or the user must be member of Viewer workspace role.
+* **Control-plane dependency**: Permissions can't be applied to users or groups that don't already exist in the workspace control plane. You either need to share the source item, or the user must be member of Viewer workspace role. Note that the exact same object ID must be in both places. A group and a member of that group do not count as a match.
 
 * **Most-permissive access prevails**: When users belong to multiple groups or roles, the most permissive effective permission is honored *Example*: If a user has both DENY through one role and GRANT through another, the GRANT takes precedence.
 
