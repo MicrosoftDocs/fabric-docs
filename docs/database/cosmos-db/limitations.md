@@ -5,7 +5,7 @@ description: Learn about the current limitations and restrictions when using Cos
 author: markjbrown
 ms.author: mjbrown
 ms.topic: concept-article
-ms.date: 10/27/2025
+ms.date: 10/29/2025
 ms.search.form: Databases Limitations
 ms.custom: references_regions
 appliesto:
@@ -72,6 +72,16 @@ This article lists current limitations for Cosmos DB in Microsoft Fabric.
 ## Programmability
 
 - Cosmos DB stored procedures, triggers, and user-defined functions aren't supported.
+
+## Fabric limitations for Azure workloads
+
+### Support for `run-as` using workspace identity
+
+Currently Microsoft Fabric does not support `run-as` functionality with Workspace Identity. Operations execute with the identity of the user that created them, not the user executing them. For example, when any user runs a notebook within a workspace, it will always execute in the context of the user who originally created that notebook.
+
+### Support for Azure user-assigned managed identities
+
+Currently Microsoft Fabric does not support granting workspace-level permissions (such as Admin, Contributor, Member, or Viewer roles) to user-assigned managed identities. Only user identities are supported for workspace role assignments at this time.
 
 ## Related content
 
