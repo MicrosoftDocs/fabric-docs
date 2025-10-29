@@ -5,7 +5,7 @@ author: mystina
 ms.author: majia
 ms.topic: overview
 ms.custom:
-ms.date: 07/21/2025
+ms.date: 10/21/2025
 ---
 
 # Introduction to Fabric Real-Time hub
