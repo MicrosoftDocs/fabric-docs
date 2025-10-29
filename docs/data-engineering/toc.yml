@@ -481,6 +481,8 @@ items:
       href: ./materialized-lake-views/run-history.md
     - name: Operational run details
       href: ./materialized-lake-views/operational-run-details.md
+    - name: Manage materialized lake views through public APIs
+      href: ./materialized-lake-views/materialized-lake-views-public-api.md
   - name: Data quality
     items:  
     - name: Data quality in materialized lake views
