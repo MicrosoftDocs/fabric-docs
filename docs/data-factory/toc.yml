@@ -889,6 +889,8 @@
             href: copy-activity-performance-and-scalability-guide.md
           - name: Monitor Copy activity
             href: monitor-copy-activity.md
+          - name: Data type conversion in Copy activity
+            href: data-type-conversion-copy-activity.md
           - name: Copy activity tutorials
             items: 
               - name: Copy from Azure Blob Storage to Lakehouse
@@ -919,6 +921,8 @@
             href: /fabric/mirroring/overview?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
           - name: Mirroring documentation
             href: /fabric/mirroring/
+      - name: Data type mapping
+        href: data-type-mapping-data-movement.md
   - name: Transform data
     items: 
       - name: Data transformation pipeline activities
@@ -1015,6 +1019,8 @@
         items: 
           - name: Concepts
             href: apache-airflow-jobs-concepts.md
+          - name: Apache Airflow compute
+            href: apache-airflow-compute.md
           - name: How-to
             items: 
               - name: Synchronize your code from an existing Git repo
@@ -1111,8 +1117,6 @@
         href: create-alerts-for-pipeline-runs.md
       - name: Evaluate pipeline expressions
         href: evaluate-pipeline-expression.md
-      - name: Data type mapping
-        href: data-type-mapping.md
       - name: Pipeline sample templates
         href: templates.md
       - name: Monitor pipeline runs
