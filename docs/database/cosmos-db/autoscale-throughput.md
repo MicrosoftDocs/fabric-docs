@@ -6,6 +6,7 @@ ms.author: mjbrown
 ms.topic: concept-article
 ms.date: 10/29/2025
 show_latex: true
+zone_pivot_groups: dev-lang-core
 ---
 
 # Autoscale throughput in Cosmos DB in Microsoft Fabric
