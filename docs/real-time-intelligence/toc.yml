@@ -656,7 +656,7 @@ items:
     href: eventhouse-compute-observability.md
   - name: Eventhouse Cost per GB Ingested
     href: pricing-cost-drivers.md
-- name: Digital twin builder
+- name: Digital Twin Builder
   items:
   - name: Get started with digital twin builder
     items:
@@ -718,7 +718,7 @@ items:
       href: /rest/api/fabric/digitaltwinbuilder/items
     - name: Digital twin builder flow REST API
       href: /rest/api/fabric/digitaltwinbuilderflow/items
-- name: Event schema sets
+- name: Event Schema Set
   items:
   - name: Schema Registry in Real-Time hub
     href: schema-sets/schema-registry-overview.md
@@ -755,7 +755,7 @@ items:
     href: sample-gallery.md
   - name: Create alerts from a KQL Queryset
     href: data-activator/activator-alert-queryset.md
-- name: Time series anomaly detection
+- name: Anomaly Detector
   items:
   - name: Anomaly detection using Real-Time Intelligence
     items:
@@ -773,7 +773,7 @@ items:
       href: multivariate-anomaly-overview.md
     - name: Multivariate anomaly detection tutorial
       href: multivariate-anomaly-detection.md
-- name: Real-Time Dashboards
+- name: Real-Time Dashboard
   items:
   - name: Create a Real-Time Dashboard
     href: dashboard-real-time-create.md
