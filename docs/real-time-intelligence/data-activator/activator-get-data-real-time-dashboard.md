@@ -34,23 +34,32 @@ Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to trigger no
 
 ## Define the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alert conditions
 
+### Details
+
+In the **Set alert** pane, provide a name for your rule.
+:::image type="content" source="media/activator-get-data/details.png" alt-text="Screenshot of details section in the create an alert pane." lightbox="media/activator-get-data/details.png":::
+
+### Monitor
+
+Select how often you want [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to run the query. The default is every 5 minutes.
+
+:::image type="content" source="media/activator-get-data/monitor.png" alt-text="Screenshot of create an alert window in Activator, monitor highlighted." lightbox="media/activator-get-data/monitor.png":::
+
 ### Condition
 
-In the **Set alert** pane, define your rule conditions. Rule conditions include deciding which field to monitor and setting the threshold.
+Define your rule conditions. Rule conditions include deciding which fields to monitor and setting the threshold.
 
-:::image type="content" source="media/activator-get-data/set-alerts-condition.png" alt-text="Screenshot of create an alert window in Activator, save condition highlighted." lightbox="media/activator-get-data/set-alerts-condition.png":::
+:::image type="content" source="media/activator-get-data/condition.png" alt-text="Screenshot of create an alert window in Activator, save condition highlighted." lightbox="media/activator-get-data/condition.png":::
 
 ### Action
 
-Choose the action to take when the alert triggers. You can receive an email or a Teams message when the condition is met or automatically run a Fabric item.
-
-:::image type="content" source="media/activator-get-data/set-alerts-action.png" alt-text="Screenshot of create an alert window in Activator, save action highlighted." lightbox="media/activator-get-data/set-alerts-action.png":::
+[! INCLUDE [action](../../real-time-hub/includes/rule-action.md)]
 
 ### Save location
 
 Set the location to save this [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule and select **Create**.
 
-:::image type="content" source="media/activator-get-data/set-alerts-location.png" alt-text="Screenshot of create an alert window in Activator, save location highlighted." lightbox="media/activator-get-data/set-alerts-location.png":::
+:::image type="content" source="media/activator-get-data/save.png" alt-text="Screenshot of create an alert window in Activator, save location highlighted.":::
 
 ## Modify your rule in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
