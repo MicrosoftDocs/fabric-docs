@@ -884,7 +884,7 @@
             href: copy-activity-performance-and-scalability-guide.md
           - name: Monitor Copy activity
             href: monitor-copy-activity.md
-          - name: Data type mapping in Copy activity
+          - name: Data type conversion in Copy activity
             href: data-type-mapping-copy-activity.md
           - name: Copy activity tutorials
             items: 

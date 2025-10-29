@@ -1,5 +1,5 @@
 ---
-title: Data type mapping in a copy activity
+title: Data type conversion in a copy activity
 description: Learn how to configure advanced mapping settings.
 ms.author: jianleishen
 author: jianleishen
@@ -8,7 +8,7 @@ ms.custom: pipelines
 ms.date: 09/29/2025
 ---
 
-# Data type mapping in a copy activity
+# Data type conversion in a copy activity
 
 This article describes how to configure advanced settings in a copy activity **Mappings** tab besides the basic settings introduced in [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
 
