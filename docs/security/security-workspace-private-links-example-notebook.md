@@ -3,7 +3,7 @@ title: Access a lakehouse from a notebook
 description: Learn how to configure and use workspace-level Private Link access for Lakehouse resources.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.custom:
 ms.date: 10/13/2025

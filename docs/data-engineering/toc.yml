@@ -481,6 +481,8 @@ items:
       href: ./materialized-lake-views/run-history.md
     - name: Operational run details
       href: ./materialized-lake-views/operational-run-details.md
+    - name: Manage materialized lake views through public APIs
+      href: ./materialized-lake-views/materialized-lake-views-public-api.md
   - name: Data quality
     items:  
     - name: Data quality in materialized lake views
@@ -495,4 +497,17 @@ items:
     items: 
     - name: Tutorial - medallion architecture with materialized lake views
       href: ./materialized-lake-views/tutorial.md
-
+- name: Best practices
+  items:
+   - name: Spark best practices
+     items:
+      - name: Fabric Spark best practices overview
+        href: spark-best-practices-overview.md
+      - name: Fabric Spark Capacity and Cluster Planning
+        href: spark-best-practices-capacity-planning.md
+      - name: Fabric Spark Security
+        href: spark-best-practices-security.md
+      - name: Development and Monitoring
+        href: spark-best-practices-development-monitoring.md
+      - name: Spark Basics
+        href: spark-best-practices-basics.md

@@ -1,24 +1,24 @@
 ---
-title: Data type mapping in a copy activity
+title: Data type conversion in a copy activity
 description: Learn how to configure advanced mapping settings.
 ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom: pipelines
-ms.date: 07/18/2024
+ms.date: 09/29/2025
 ---
 
-# Data type mapping in a copy activity
+# Data type conversion in a copy activity
 
 This article describes how to configure advanced settings in a copy activity **Mappings** tab besides the basic settings introduced in [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
 
 ## Configure your type conversion
 
-Expand **Type conversion settings** to configure your type conversion if needed. 
+On Mapping tab, expand **Type conversion settings** to configure your type conversion if needed. 
 
    :::image type="content" source="media/data-type-mapping/mapping-type-conversion.png" alt-text="Screenshot of mapping type conversion." lightbox="media/data-type-mapping/mapping-type-conversion.png":::
 
-See the following table for the setting details.
+The following settings are supported in copy activity for data type conversion. 
 
 |Setting  |Description  |
 |---------|---------|
@@ -32,7 +32,7 @@ See the following table for the setting details.
 
 ## Configure your column flatten settings
 
-Expand **Column flatten settings** to configure your column flatten if needed. Applies to the following connectors/formats:
+On Mapping tab, expand **Column flatten settings** to configure your column flatten if needed. Applies to the following connectors/formats:
 
 - [Azure Cosmos DB for NoSQL](connector-azure-cosmosdb-for-nosql-copy-activity.md)
 - [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-copy-activity.md)
@@ -52,6 +52,8 @@ See the following table for the setting details.
 |**Treat array as string** | Specify to treat array values as string. |
 |**Treat struct as string** |  Specify to treat struct values as string.|
 |**Flatten column delimiter** | Specify the flatten column delimiter, and the default is `.`. This setting isn't available when you enable **Treat struct as string**. |
+
+
 
 ## Related content
 

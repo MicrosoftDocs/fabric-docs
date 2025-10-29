@@ -3,7 +3,7 @@ title: Overview of workspace-level private links
 description: Learn how workspace-level private links in Microsoft Fabric securely connect specific workspaces to your virtual network, block public internet access, and improve data protection.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: overview
 ms.custom:
 ms.date: 09/29/2025
