@@ -1,15 +1,15 @@
 ---
 title: Request Units in Cosmos DB Database
 description: Learn how request units function as a currency and how to estimate request unit requirements in your Cosmos DB database within Microsoft Fabric.
-author: seesharprun
-ms.author: sidandrews
+author: markjbrown
+ms.author: mjbrown
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 10/29/2025
 ---
 
 # Request units in Cosmos DB in Microsoft Fabric
 
-Cosmos DB in Microsoft Fabric normalizes the cost of all database operations using Request Units (or RUs, for short) and measures cost based on throughput (Request Units per second, RU/s).
+Microsoft Fabric reports all usage and billing using capacity units. Cosmos DB in Microsoft Fabric internally normalizes the cost of all database operations using Request Units (or RUs, for short) and measures cost based on throughput (Request Units per second, RU/s). RU/s from Cosmos DB are then converted to CUs within Fabric for usage and billing purposes.
 
 Request unit is a performance currency abstracting the system resources such as processing (CPU), input/output operations (IOPS), and memory that are required to perform the database operations supported by Cosmos DB in Fabric. Whether the database operation is a write, point read, or query, operations are always measured in RUs.
 
@@ -55,31 +55,19 @@ While you estimate the number of RUs consumed by your workload, consider the fol
 
 - **Indexed properties**: An index policy on each container determines which properties are indexed by default. To reduce the RU consumption for write operations, limit the number of indexed properties.
 
-- **Data consistency**: The strong and bounded staleness consistency levels consume approximately two times more RUs while performing read operations when compared to that of other relaxed consistency levels.
-
 - **Type of reads**: Point reads cost fewer RUs than queries.
 
 - **Query patterns**: The complexity of a query affects how many RUs are consumed for an operation. Factors that affect the cost of query operations include:
 
-  * The number of query results
-  * The number of predicates
-  * The nature of the predicates
-  * The number of user-defined functions
-  * The size of the source data
-  * The size of the result set
-  * Projections
+  - The number of query results
+  - The number of predicates
+  - The nature of the predicates
+  - The number of user-defined functions
+  - The size of the source data
+  - The size of the result set
+  - The number and size of properties projected from a query
 
   The same query on the same data always costs the same number of RUs on repeated executions.
-
-- **Script usage**: As with queries, stored procedures and triggers consume RUs based on the complexity of the operations that are performed. As you develop your application, inspect the request charge header to better understand how much RU capacity each operation consumes.
-
-## Multiple regions
-
-If you assign *'R'* RUs on a Cosmos DB in Fabric container (or database), Cosmos DB in Fabric ensures that *'R'* RUs are available in *each* region associated with your Cosmos DB in Fabric account. You can't selectively assign RUs to a specific region. The RUs provisioned on a Cosmos DB in Fabric container (or database) are provisioned in all the regions associated with your Cosmos DB in Fabric account.
-
-Assuming that a Cosmos DB in Fabric container is configured with *'R'* RUs and there are *'N'* regions associated with the Cosmos DB in Fabric account, the total RUs available globally on the container = *R* x *N*.
-
-Your choice of consistency model also affects the throughput. You can get approximately 2x read throughput for the more relaxed consistency levels (*session*, *consistent prefix, and *eventual* consistency) compared to stronger consistency levels (*bounded staleness* or *strong* consistency).
 
 ## Related content
 
