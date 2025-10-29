@@ -53,7 +53,7 @@ Define your rule conditions. Rule conditions include deciding which fields to mo
 
 ### Action
 
-[! INCLUDE [action](../../real-time-hub/includes/rule-action.md)]
+[! INCLUDE [action](/real-time-hub/includes/rule-action.md)]
 
 ### Save location
 
