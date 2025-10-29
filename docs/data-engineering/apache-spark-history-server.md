@@ -182,6 +182,23 @@ This feature has been deprecated in Fabric now. If you still want to use this as
 
    :::image type="content" source="media\apache-spark-history-server\modify-path.png" alt-text="Screenshot showing how to modify the url." lightbox="media\apache-spark-history-server\modify-path.png":::
 
+## Spark Executor Rolling Logs: Easier Access for Large and Long Jobs
+
+As Spark applications continue to grow in scale and duration, efficient log management and analysis have become increasingly critical. To address these evolving needs, we’ve introduced enhancements to the Spark History Server (for completed applications) and Spark UI (for running applications), enabling executor rolling logs for Spark 3.4 and above.
+
+With this enhancement, when an executor log exceeds 16MB or the Spark job runs for more than one hour, the system automatically splits logs into hourly segments. This makes it easier to navigate, view, and download logs without dealing with extremely large files.
+
+You can now:
+- View logs by hour to quickly pinpoint specific execution windows
+- Access the latest active logs while the job is still running.
+- Download individual hourly logs or all logs together as needed
+
+This feature empowers users to locate and analyze logs from a particular timepoint with ease, while avoiding the hassle of downloading or opening a massive single log file.
+
+Below is an example of the Executor Rolling Logs view:
+
+:::image type="content" source="media\apache-spark-history-server\spark-executor-rolling-logs.png" alt-text="Screenshot showing spark executor rolling logs." lightbox="media\apache-spark-history-server\spark-executor-rolling-logs.png":::
+
 ## Related content
 
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
