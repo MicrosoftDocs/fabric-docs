@@ -1,49 +1,55 @@
 ---
 title: Cosmos DB Database Limitations
 description: Learn about the current limitations and restrictions when using Cosmos DB databases in Microsoft Fabric phase.
-author: seesharprun
-ms.author: sidandrews
+author: markjbrown
+ms.author: mjbrown
 ms.topic: concept-article
-ms.date: 07/16/2025
+ms.date: 10/29/2025
 ms.search.form: Databases Limitations
 ms.custom: references_regions
 ---
 
 # Limitations in Cosmos DB in Microsoft Fabric
 
-This article lists current limitations for Cosmos DB in Fabric.
+This article lists current limitations for Cosmos DB in Microsoft Fabric.
 
 **The content in this article changes regularly. For the latest limitations, revisit this article periodically.**
 
 ## Quotas and limits
 
 - Databases support a maximum of 25 containers.
-
-- Containers support a maximum autoscale throughput of **50,000** request units per second (RU/s). 
-
+- Containers support a maximum autoscale throughput of **50,000** request units per second (RU/s).
 - Containers created in the Fabric portal are automatically allocated **5,000** RU/s maximum autoscale throughput.
-
-- Containers created using a software development kit (SDK) can be set up to the maximum allowed autoscale throughput.
-
+- Containers created using a software development kit (SDK) can be set with a minimum of **1,000** RU/s up to the maximum allowed autoscale throughput.
 - Containers created through an SDK must have throughput set to autoscale during container creation or an error will be thrown.
-
-- Container throughput can't be changed once the container is created.
   
     > [!TIP]
     > Maximum throughput more than 50,000 RU/s can be increased with a support ticket.
+    > Maximum containers more than 25 can be increased with a support ticket.
 
+## Customer managed keys (preview)
+
+- Customer managed key (CMK) encryption is available in preview and must be enabled before creating any Cosmos DB artifacts. CMK also cannot be disabled once a Cosmos DB artifact exists within the workspace. For more information see, [Customer managed keys for Cosmos DB in Microsoft Fabric (preview)](customer-managed-keys.md)
+
+## Artifact renaming
+
+- Artifact renaming is not currently supported.
+
+## Private Link support
+
+- Private Link is not currently supported.
+
+## Authorization
+
+- Setting Fabric [item permissions](../../security/permission-model.md#item-permissions) is currently not supported.
+
+## Localization and accessibility
+
+- Cosmos Data Explorer in Microsoft Fabric is currently only available in `en-us` and currently lacks the accessibility features of the Fabric portal.
 
 ## Regional availability
 
-- The following regions aren't supported as Cosmos DB in Fabric regions. These regions can be your **home** region, but can't contain Fabric capacity used for Cosmos DB in Fabric:
-
-  - West US 3
-
-  - Central US
-
-  - South Central US
-
-  - Switzerland North
+- Fabric is not yet available in every region within Azure. Please review the list of regions where Fabric capacity is available and can support Cosmos DB in Fabric. [Fabric regional availability](../../admin/region-availability.md)
 
 ## Data
 
@@ -55,43 +61,20 @@ This article lists current limitations for Cosmos DB in Fabric.
 
   - This limitation is related to a similar limitation of the data warehouse feature. The current workaround is to create a shortcut of the mirrored database in Fabric Lakehouse and utilize a Spark notebook to query your data.
 
-## Vector search
+## Vector and full-text indexing and search
 
-- `quantizedFlat` and `diskANN` indexes require at least 1,000 vectors to be indexed to ensure that the quantization is accurate. If fewer than 1,000 vectors are indexed, then a full-scan is used instead and RU charges might be higher.
-
-- Vectors indexed with the `flat` index type can be at most 505 dimensions. Vectors indexed with the `quantizedFlat` or `DiskANN` index type can be at most 4,096 dimensions.
-
-- The rate of vector insertions should be limited. Large ingestion, in excess of 5,000,000 vectors, could require extra index build time.
-
-- The vector search feature isn't currently supported on the existing containers. To use it, a new container must be created, and the container-level vector embedding policy must be specified.
-
-- Shared throughput databases are unsupported.
-
-- At this time, vector indexing and vector search aren't supported on accounts with Analytical Store, Azure Synapse Link, or shared throughput.
-
-- Once vector indexing and vector search are enabled on a container, they can't be disabled.
-
-- Customer managed key (CMK) encryption can't be enabled after vector search is enabled in a workspace. If your intent is to use CMK in your workspace with Cosmos DB for Fabric vector search, enable CMK first, then apply vector search. You can enable vector search after creating a new Cosmos DB artifact by selecting "Sample vector data" in the explorer, or by enabling the feature in the workspace's settings.
-
-## Full text indexing
-
-- Multi-language support is only supported with the following languages:
-
-  - `en-US` (English)
-  
-  - `de-DE` (German)
-  
-  - `es-ES` (Spanish)
-  
-  - `fr-FR` (French)
-
-## Authorization
-
-- Setting Fabric [item permissions](../../security/permission-model.md#item-permissions) is currently not supported.
+- For limitations on vector indexing and search see, [Cosmos DB vector limitations](/azure/cosmos-db/nosql/vector-search#current-limitations)
+- For limitations on full-text indexing and search see, [Cosmos DB full-text limitations](/azure/cosmos-db/gen-ai/full-text-search-faq#limitations)
 
 ## Programmability
 
-- Stored procedures, triggers, or user-defined functions aren't supported.
+- Cosmos DB stored procedures, triggers, and user-defined functions aren't supported.
+
+## Fabric limitations for Azure workloads
+
+### Support for `run-as` using workspace identity
+
+Currently Microsoft Fabric does not support `run-as` functionality with Workspace Identity. Operations execute with the identity of the user that created them, not the user executing them. For example, when any user runs a notebook within a workspace, it will always execute in the context of the user who originally created that notebook.
 
 ## Related content
 
