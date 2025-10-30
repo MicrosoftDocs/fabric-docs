@@ -34,9 +34,9 @@ The `parts` field is an array that contains the detailed setup of the Spark Job 
 
 In the following example, we'll create a Spark Job Definition item which:
 1. Name is `SJDHelloWorld`.
-2. Main definition file is `main.py`, which is to read a CSV file from its default Lakehouse and save as a Delta table back to the same Lakehouse.
-3. Other lib file is `libs.py`, which has a utility function to return the name of the CSV file and the Delta table.
-4. The default Lakehouse is set to a specific Lakehouse artifact ID.
+1. Main definition file is `main.py`, which is to read a CSV file from its default Lakehouse and save as a Delta table back to the same Lakehouse.
+1. Other lib file is `libs.py`, which has a utility function to return the name of the CSV file and the Delta table.
+1. The default Lakehouse is set to a specific Lakehouse artifact ID.
 
 The following is the detailed payload for creating the Spark Job Definition item.
 
@@ -68,7 +68,7 @@ The following is the detailed payload for creating the Spark Job Definition item
 }
 ```
 
-To decode or encode the detailed setup, you can use the following helper functions in Python. There are also other online tools such as https://www.base64decode.org/ that can perform the same job.
+To decode or encode the detailed setup, you can use the following helper functions in Python. There are also other online tools such as [https://www.base64decode.org/](https://www.base64decode.org/) that can perform the same job.
 
 ```python
 import base64
@@ -105,9 +105,8 @@ A HTTP code 202 response indicates the Spark Job Definition item was created suc
 With the new v2 format, when getting a Spark Job Definition item with definition parts, the file content of the main definition file and other lib files are all included in the response payload, base64 encoded under the `parts` field. Here's an example of getting a Spark Job Definition item with definition parts:
 
 1. First, make a POST request to the endpoint `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{sjdartifactid}/getDefinitionParts?format=SparkJobDefinitionV2`. Make sure the value of the format query parameter is `SparkJobDefinitionV2`.
-2. Then, in the response headers, check the HTTP status code. An HTTP code 202 indicates the request was successfully accepted. Copy the `x-ms-operation-id` value from the response headers.
-3. Finally, make a GET request to the endpoint `https://api.fabric.microsoft.com/v1/operations/{operationId}` with the copied `x-ms-operation-id` value to get the operation result. In the response payload, the `definition` field contains the detailed setup of the Spark Job Definition item, including the main definition file and other lib files under the `parts` field.
-
+1. Then, in the response headers, check the HTTP status code. An HTTP code 202 indicates the request was successfully accepted. Copy the `x-ms-operation-id` value from the response headers.
+1. Finally, make a GET request to the endpoint `https://api.fabric.microsoft.com/v1/operations/{operationId}` with the copied `x-ms-operation-id` value to get the operation result. In the response payload, the `definition` field contains the detailed setup of the Spark Job Definition item, including the main definition file and other lib files under the `parts` field.
 
 ## Update the Spark Job Definition item with the main definition file and other lib files under v2 format
 
@@ -142,13 +141,11 @@ To update an existing Spark Job Definition item with the main definition file an
 
 With the above payload, the following changes are made to the files:
 1. The main.py file is updated with new content.
-2. The lib1.py is deleted from this Spark Job Definition item and also removed from the OneLake storage.
-3. A new lib2.py file is added to this Spark Job Definition item and uploaded to the OneLake storage.
+1. The lib1.py is deleted from this Spark Job Definition item and also removed from the OneLake storage.
+1. A new lib2.py file is added to this Spark Job Definition item and uploaded to the OneLake storage.
 
 
 To update the Spark Job Definition item, make a POST request to the endpoint `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{sjdartifactid}` with the above payload. An HTTP code 202 response indicates the Spark Job Definition item was updated successfully.
-
-
 
 ## Related content
 
