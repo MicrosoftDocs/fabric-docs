@@ -17,7 +17,7 @@ The `ai.fix_grammar` function uses generative AI to correct the spelling, gramma
 
 > [!NOTE]
 > - This article covers using *ai.fix_grammar* with PySpark. To use *ai.fix_grammar* with pandas, see [this article](../pandas/fix-grammar.md).
-> - See additional AI functions in [this overview article](../overview.md).
+> - See other AI functions in [this overview article](../overview.md).
 > - Learn how to customize the [configuration of AI functions](./configuration.md).
 
 ## Overview
@@ -61,7 +61,8 @@ display(results)
 ```
 
 This example code cell provides the following output:
-:::image type="content" source="../../media/ai-functions/fix-grammar-example-output.png" alt-text="Screenshot showing a  data frame with a 'text' column and a 'corrections' column which has the text from the text column with corrected grammar." lightbox="../../media/ai-functions/fix-grammar-example-output.png":::
+
+:::image type="content" source="../../media/ai-functions/fix-grammar-example-output.png" alt-text="Screenshot showing a  data frame with a 'text' column and a 'corrections' column, which has the text from the text column with corrected grammar." lightbox="../../media/ai-functions/fix-grammar-example-output.png":::
 
 
 ## Related content

@@ -17,7 +17,7 @@ The `ai.translate` function uses generative AI to translate input text into a ne
 
 > [!NOTE]
 > - This article covers using *ai.translate* with PySpark. To use *ai.translate* with pandas, see [this article](../pandas/translate.md).
-> - See additional AI functions in [this overview article](../overview.md).
+> - See other AI functions in [this overview article](../overview.md).
 > - Learn how to customize the [configuration of AI functions](./configuration.md).
 
 ## Overview
@@ -62,7 +62,8 @@ display(translations)
 ```
 
 This example code cell provides the following output:
-:::image type="content" source="../../media/ai-functions/translate-example-output.png" alt-text="Screenshot showing a data frame with a 'text' column and a 'translations' column. The 'translations' column contains the English text in the 'text' column, translated in Spanish." lightbox="../../media/ai-functions/translate-example-output.png":::
+
+:::image type="content" source="../../media/ai-functions/translate-example-output.png" alt-text="Screenshot of a data frame with columns 'text' and 'translations'. The 'translations' column contains the text translated to Spanish." lightbox="../../media/ai-functions/translate-example-output.png":::
 
 ## Related content
 

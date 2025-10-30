@@ -17,7 +17,7 @@ The `ai.classify` function uses generative AI to categorize input text according
 
 > [!NOTE]
 > - This article covers using *ai.classify* with pandas. To use *ai.classify* with PySpark, see [this article](../pyspark/classify.md).
-> - See additional AI functions in [this overview article](../overview.md).
+> - See other AI functions in [this overview article](../overview.md).
 > - Learn how to customize the [configuration of AI functions](./configuration.md).
 
 ## Overview
@@ -62,7 +62,8 @@ display(df)
 ```
 
 This example code cell provides the following output:
-:::image type="content" source="../../media/ai-functions/classify-example-output.png" alt-text="Screenshot showing a data frame with a 'descriptions' column and a 'category' column. the 'category' column contains the category name of the description in the corresponding row." lightbox="../../media/ai-functions/classify-example-output.png":::
+
+:::image type="content" source="../../media/ai-functions/classify-example-output.png" alt-text="Screenshot of a data frame with 'descriptions' and 'category' columns. The 'category' column lists each description’s category name." lightbox="../../media/ai-functions/classify-example-output.png":::
 
 
 ## Related content

@@ -16,7 +16,7 @@ The `ai.extract` function uses generative AI to scan input text and extract spec
 
 > [!NOTE]
 > - This article covers using *ai.extract* with pandas. To use *ai.extract* with PySpark, see [this article](../pyspark/extract.md).
-> - See additional AI functions in [this overview article](../overview.md).
+> - See other AI functions in [this overview article](../overview.md).
 > - Learn how to customize the [configuration of AI functions](./configuration.md).
 
 ## Overview
@@ -57,7 +57,8 @@ display(df_entities)
 ```
 
 This example code cell provides the following output:
-:::image type="content" source="../../media/ai-functions/extract-example-output.png" alt-text="Screenshot showing a new data frame with a 'name' column, a 'profession' column,  and a 'city' column. Each column contains the corresponding data extracted from the original data frame." lightbox="../../media/ai-functions/extract-example-output.png":::
+
+:::image type="content" source="../../media/ai-functions/extract-example-output.png" alt-text="Screenshot showing a new data frame with the columns 'name', 'profession',  and 'city', containing the data extracted from the original data frame." lightbox="../../media/ai-functions/extract-example-output.png":::
 
 ## Related content
 

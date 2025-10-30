@@ -16,7 +16,7 @@ The `ai.analyze_sentiment` function uses generative AI to detect the emotional s
 
 > [!NOTE]
 > - This article covers using *ai.analyze_sentiment* with pandas. To use *ai.analyze_sentiment* with PySpark, see [this article](../pyspark/analyze-sentiment.md).
-> - See additional AI functions in [this overview article](../overview.md).
+> - See other AI functions in [this overview article](../overview.md).
 > - Learn how to customize the [configuration of AI functions](./configuration.md).
 
 ## Overview
@@ -43,7 +43,7 @@ df["sentiment"] = df["input"].ai.analyze_sentiment("label2", "label2", "label3")
 
 ## Returns
 
-The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains sentiment labels for each input text row. The default sentiment labels include `positive`, `negative`, `neutral`, or `mixed`. If custom labels are specified, those labels will be used instead. If a sentiment can't be determined, the return value is `null`.
+The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains sentiment labels for each input text row. The default sentiment labels include `positive`, `negative`, `neutral`, or `mixed`. If custom labels are specified, those labels are used instead. If a sentiment can't be determined, the return value is `null`.
 
 ## Example
 
@@ -61,9 +61,10 @@ df = pd.DataFrame([
 df["sentiment"] = df["reviews"].ai.analyze_sentiment()
 display(df)
 ```
-This example code cell provides the following output:
-:::image type="content" source="../../media/ai-functions/analyze-sentiment-example-output.png" alt-text="Screenshot showing a data frame with a 'reviews' column and a 'sentiment' column. the 'sentiment' column contains values 'negative', 'positive', 'mixed', and 'neutral', according to the emotional state of the review in the corresponding row." lightbox="../../media/ai-functions/analyze-sentiment-example-output.png":::
 
+This example code cell provides the following output:
+
+:::image type="content" source="../../media/ai-functions/analyze-sentiment-example-output.png" alt-text="Screenshot of a data frame with 'reviews' and 'sentiment' columns. The 'sentiment' column includes 'negative', 'positive', 'mixed', and 'neutral'." lightbox="../../media/ai-functions/analyze-sentiment-example-output.png":::
 
 ## Related content
 - Use [ai.analyze_sentiment with PySpark](../pyspark/analyze-sentiment.md).

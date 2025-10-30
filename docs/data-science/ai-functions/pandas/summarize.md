@@ -16,7 +16,7 @@ The `ai.summarize` function uses generative AI to produce summaries of input tex
 
 > [!NOTE]
 > - This article covers using *ai.summarize* with pandas. To use *ai.summarize* with PySpark, see [this article](../pyspark/summarize.md).
-> - See additional AI functions in [this overview article](../overview.md).
+> - See other AI functions in [this overview article](../overview.md).
 > - Learn how to customize the [configuration of AI functions](./configuration.md).
 
 ## Overview
@@ -77,6 +77,7 @@ display(df)
 ```
 
 This example code cell provides the following output:
+
 :::image type="content" source="../../media/ai-functions/summarize-single-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the 'description' column only, in the corresponding row." lightbox="../../media/ai-functions/summarize-single-example-output.png":::
 
 # [Summarize values across all columns](#tab/dataframe-summary)
@@ -105,6 +106,7 @@ display(df)
 ```
 
 This example code cell provides the following output:
+
 :::image type="content" source="../../media/ai-functions/summarize-all-example-output.png" alt-text="Screenshot showing a data frame. The 'summaries' column has a summary of the information across all the columns in the corresponding row." lightbox="../../media/ai-functions/summarize-all-example-output.png":::
 
 ---

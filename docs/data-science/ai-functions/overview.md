@@ -21,7 +21,7 @@ AI functions use industry-leading large language models (LLMs) for summarization
 
 - [`ai.analyze_sentiment`](#detect-sentiment-with-aianalyze_sentiment): Detect the emotional state of input text.
 - [`ai.classify`](#categorize-text-with-aiclassify): Categorize input text according to your labels.
-- [`ai.extract`](#extract-entities-with-aiextract): Extract specific types of information from input text (e.g., locations or names).
+- [`ai.extract`](#extract-entities-with-aiextract): Extract specific types of information from input text (for example, locations or names).
 - [`ai.fix_grammar`](#fix-grammar-with-aifix_grammar): Correct the spelling, grammar, and punctuation of input text.
 - [`ai.generate_response`](#answer-custom-user-prompts-with-aigenerate_response): Generate responses based on your own instructions.
 - [`ai.similarity`](#calculate-similarity-with-aisimilarity): Compare the meaning of input text with a single text value, or with text in another column.
@@ -146,7 +146,7 @@ display(sentiment)
 
 ---
 
-:::image type="content" source="../media/ai-functions/analyze-sentiment-example-output.png" alt-text="Screenshot showing a data frame with a 'reviews' column and a 'sentiment' column. the 'sentiment' column contains values 'negative', 'positive', 'mixed', and 'neutral', according to the emotional state of the review in the corresponding row." lightbox="../media/ai-functions/analyze-sentiment-example-output.png":::
+:::image type="content" source="../media/ai-functions/analyze-sentiment-example-output.png" alt-text="Screenshot of a data frame with 'reviews' and 'sentiment' columns. The 'sentiment' column includes 'negative', 'positive', 'mixed', and 'neutral'." lightbox="../media/ai-functions/analyze-sentiment-example-output.png":::
 
 ### Categorize text with ai.classify
 
@@ -186,7 +186,7 @@ display(categories)
 
 ---
 
-:::image type="content" source="../media/ai-functions/classify-example-output.png" alt-text="Screenshot showing a data frame with a 'descriptions' column and a 'category' column. the 'category' column contains the category name of the description in the corresponding row." lightbox="../media/ai-functions/classify-example-output.png":::
+:::image type="content" source="../media/ai-functions/classify-example-output.png" alt-text="Screenshot of a data frame with 'descriptions' and 'category' columns. The 'category' column lists each description’s category name." lightbox="../media/ai-functions/classify-example-output.png":::
 
 ### Extract entities with ai.extract
 
@@ -224,7 +224,7 @@ display(df_entities)
 
 ---
 
-:::image type="content" source="../media/ai-functions/extract-example-output.png" alt-text="Screenshot showing a new data frame with a 'name' column, a 'profession' column,  and a 'city' column. Each column contains the corresponding data extracted from the original data frame." lightbox="../media/ai-functions/extract-example-output.png":::
+:::image type="content" source="../media/ai-functions/extract-example-output.png" alt-text="Screenshot showing a new data frame with the columns 'name', 'profession',  and 'city', containing the data extracted from the original data frame." lightbox="../media/ai-functions/extract-example-output.png":::
 
 ### Fix grammar with ai.fix_grammar
 
@@ -304,11 +304,11 @@ display(responses)
 
 ---
 
-:::image type="content" source="../media/ai-functions/generate-response-simple-example-output.png" alt-text="Screenshot showing a data frame with a 'product' column and a 'response' column. The 'response' column contains a punchy subject line for the product in the corresponding row." lightbox="../media/ai-functions/generate-response-simple-example-output.png":::
+:::image type="content" source="../media/ai-functions/generate-response-simple-example-output.png" alt-text="Screenshot showing a data frame with columns 'product' and 'response'. The 'response' column contains a punchy subject line for the product." lightbox="../media/ai-functions/generate-response-simple-example-output.png":::
 
 ### Calculate similarity with ai.similarity
 
-The `ai.similarity` function compares each input text value either to one common reference text or to the corresponding value in another column (pairwise mode). The output similarity score values are relative, and they can range from `-1` (opposites) to `1` (identical). A score of `0` indicates that the values are unrelated in meaning. For more detailed instructions about the use of `ai.similarity` with pandas, see [thi article](./pandas/similarity.md). For `ai.similarity` with PySpark, see [this article](./pyspark/similarity.md).
+The `ai.similarity` function compares each input text value either to one common reference text or to the corresponding value in another column (pairwise mode). The output similarity score values are relative, and they can range from `-1` (opposites) to `1` (identical). A score of `0` indicates that the values are unrelated in meaning. For more detailed instructions about the use of `ai.similarity` with pandas, see [this article](./pandas/similarity.md). For `ai.similarity` with PySpark, see [this article](./pyspark/similarity.md).
 
 # [pandas](#tab/pandas)
 
@@ -344,7 +344,7 @@ display(similarity)
 
 ---
 
-:::image type="content" source="../media/ai-functions/similarity-pairwise-example-output.png" alt-text="Screenshot showing a data frame with a 'names' column, a 'companies' column, and a 'similarity' column. The 'similarity' column contains similarity scores for each name  for the corresponding value in the 'companies' column" lightbox="../media/ai-functions/similarity-pairwise-example-output.png":::
+:::image type="content" source="../media/ai-functions/similarity-pairwise-example-output.png" alt-text="Screenshot of a data frame with columns 'names', 'companies', and 'similarity'. The 'similarity' column has similarity scores for the name and company." lightbox="../media/ai-functions/similarity-pairwise-example-output.png":::
 
 ### Summarize text with ai.summarize
 
@@ -442,7 +442,7 @@ display(translations)
 
 ---
 
-:::image type="content" source="../media/ai-functions/translate-example-output.png" alt-text="Screenshot showing a data frame with a 'text' column and a 'translations' column. The 'translations' column contains the English text in the 'text' column, translated in Spanish." lightbox="../media/ai-functions/translate-example-output.png":::
+:::image type="content" source="../media/ai-functions/translate-example-output.png" alt-text="Screenshot of a data frame with columns 'text' and 'translations'. The 'translations' column contains the text translated to Spanish." lightbox="../media/ai-functions/translate-example-output.png":::
 
 ## Related content
 
