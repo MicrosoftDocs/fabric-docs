@@ -15,7 +15,6 @@ ms.search.form: Real-Time Dashboard
 You can create Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from many different data sources in Microsoft Fabric. This article explains how to create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts for a Real-Time Dashboard. For more information, see [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?](activator-introduction.md)
 
 ## Alert when conditions are met in a Real-Time Dashboard
-
 Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to trigger notifications when conditions are met on data in a Real-Time Dashboard. For example, if you have a Real-Time Dashboard displaying availability of bicycles for hire in multiple locations, you can trigger an alert if there are too few bicycles available in any one location. Send those alert notifications either to yourself, or to others in your organization, using email or Microsoft Teams.
 
 ## Prerequisites
@@ -67,6 +66,16 @@ When your rule is ready, you receive a notification with a link to your rule. Se
 * Define a more complex alert condition than is possible in the **Set alert** pane.
 
 For information on how to edit rules in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)], see [Create activators in design mode](activator-create-activators.md).
+
+## Limitations for setting alerts
+
+When creating alerts, keep the following limitations in mind:
+
+1. **Tile compatibility**: Alerts can only be set on tiles that display data. If a visual does not have any data to show (e.g., a column chart with no rows for the selected time range), the option to create an alert will not be available.
+
+1. **Custom time ranges**: Alerts cannot be created on visuals using custom time ranges. For example, if you adjust the time range of a column chart to include data, the system will still prevent alert creation if the time range is custom.
+
+To ensure successful alert creation, verify that the visual has data to display and that the time range used is supported.
 
 ## Limitations on charts with a time axis
 
