@@ -4,10 +4,10 @@ summary: Learn how to use the Cosmos DB database workload in Microsoft Fabric fo
 metadata:
   title: Cosmos DB Database Documentation
   description: Learn how to use the Cosmos DB database workload in Microsoft Fabric for your NoSQL and AI applications.
-  author: seesharprun
-  ms.author: sidandrews
+  author: markjbrown
+  ms.author: mjbrown
   ms.topic: landing-page
-  ms.date: 07/17/2025
+  ms.date: 10/30/2025
   ms.search.form: Databases Overview,Cosmos DB Overview
 landingContent:
   - title: Overview
@@ -84,10 +84,12 @@ landingContent:
             url: security.md
           - text: Authorization
             url: authorization.md
-      - linkListType: concept
+      - linkListType: how-to-guide
         links:
-          - text: Authenticate with Microsoft Entra ID
+          - text: Authenticate from Azure services
             url: how-to-authenticate.md
+          - text: Authenticate from notebooks
+            url: how-to-authenticate-notebooks.md
   - title: Manage resources
     linkLists:
       - linkListType: concept
