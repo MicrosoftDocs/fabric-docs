@@ -55,10 +55,10 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
     The permissions required for the Fabric login are:
    
    - The following permissions in the user database:
-    - SELECT
-    - ALTER ANY EXTERNAL MIRROR
-    - VIEW DATABASE PERFORMANCE STATE
-    - VIEW DATABASE SECURITY STATE
+     - SELECT
+     - ALTER ANY EXTERNAL MIRROR
+     - VIEW DATABASE PERFORMANCE STATE
+     - VIEW DATABASE SECURITY STATE
         
    - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
       
