@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: concept-article #Don't change
-ms.date: 10/27/2025
+ms.date: 10/30/2025
 
 #customer intent: As a security admin, Fabric admin, Fabric user, or business decision maker, I want to learn about how protection policies control access to items in Fabric. 
 
@@ -71,9 +71,7 @@ Additionally, protection policies are supported for Power BI semantic models. Ot
 
 * Protection policies for Fabric don't support guest/external users.
 
-* ALM pipelines won't work in scenarios where a user creates an ALM pipeline in a workspace that contains an item protected by a protection policy that doesn't include the user.
-
-* Git integration isn't supported for items protected by a protection policy. If a workspace contains items protected by a policy that doesn't include the user, Git operations (such as syncing or publishing) don't work for those items.
+* Protection policies don't integrate with Fabric CI/CD solutions. Deployment pipelines and Git integration use only workspace permissions, not item-level permissions from protection policy labels.
 
 * After a policy has been created, it can take up to 24 hours for it to start detecting and protecting items labeled with the sensitivity label that was associated with the policy.
 
