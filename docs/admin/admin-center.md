@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.topic: conceptual
 ms.custom:
-ms.date: 10/29/2025
+ms.date: 10/30/2025
 ---
 
 # What is the admin portal?
@@ -33,6 +33,7 @@ The many controls in the admin portal are listed in the following table, with li
 | [Refresh summary](service-admin-portal-refresh-summary.md) | Schedule refresh on a capacity and view the details of refreshes that occurred. |
 | [Embed codes](service-admin-portal-embed-codes.md) | View and manage the embed codes that have been generated for your organization to share reports publicly. |
 | [Organizational visuals](organizational-visuals.md#organizational-visuals) | View, add, and manage which type of Power BI visuals users can access across the organization. |
+| [Organizational themes (preview)](/power-bi/create-reports/desktop-organizational-themes) | Manage and distribute custom report themes across the organization. |
 | [Azure connections](service-admin-portal-azure-connections.md) | Configure and manage connections to Azure resources. |
 | [Workspaces](portal-workspaces.md) | View and manage the workspaces that exist in your organization. |
 | [Custom branding](service-admin-custom-branding.md) |  Change the look and feel of the Microsoft Fabric to match your organization's own branding. |
