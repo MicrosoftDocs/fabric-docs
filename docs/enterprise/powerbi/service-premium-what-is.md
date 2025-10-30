@@ -92,6 +92,12 @@ Semantic model operations such as queries are subject to individual memory limit
 
 * **Interacting with the report** - The third action is caused by the user's interaction with the report. During the semantic model refresh, report interactions will execute DAX queries. Each DAX query consumes a certain amount of temporary memory required to produce the results. Each query may consume a different amount of memory. The memory used to query the semantic model is added to the memory needed to load the semantic model, and refresh it.
 
+#### Handling low memory situations
+
+Load balancing across semantic models is managed automatically by the system. In some cases, the capacity might temporarily run low on memory during high-demand periods. When this occurs, you might encounter memory-related errors. The system typically recovers quickly as resources become available. If you receive a memory error, wait a moment and retry your operation.
+
+If memory errors occur frequently or persist, your capacity might require additional resources. In such cases, contact Microsoft Support to investigate capacity sizing and optimization options for your workload.
+
 ## Refreshes
 
 Power BI Premium and [Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi) don't require cumulative memory limits, and therefore concurrent semantic model refreshes don't contribute to resource constraints. However, refreshing individual semantic models is governed by existing capacity memory and CPU limits, and the model refresh parallelism limit for the SKU, as described in [Capacities and SKUs](#capacities-and-skus).
