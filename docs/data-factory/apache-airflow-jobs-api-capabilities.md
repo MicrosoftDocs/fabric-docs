@@ -47,7 +47,7 @@ The primary online reference documentation for Microsoft Fabric REST APIs can be
 
 In addition to CRUD APIs, there are a series of additional operational APIs offered for Apache Airflow Jobs:
 
-- **Job File Management APIs**
+- **File Management APIs**
 
 ## Get started with REST APIs for Apache Airflow Jobs
 
@@ -101,7 +101,7 @@ Create an Apache Airflow Job in a specified workspace.
 {
   "displayName": "My Apache Airflow Job",
   "description": "My Apache Airflow Job description",
-  "type": "ApacheAirflowJobs"
+  "type": "ApacheAirflowJob"
 }
 ```
 
@@ -110,7 +110,7 @@ Create an Apache Airflow Job in a specified workspace.
 ```rest
 {
   "id": "<artifactId>",
-  "type": "ApacheAirflowJobs",
+  "type": "ApacheAirflowJob",
   "displayName": "My Apache Airflow Job",
   "description": "My Apache Airflow Job description",
   "workspaceId": "<workspaceId>"
@@ -120,6 +120,7 @@ Create an Apache Airflow Job in a specified workspace.
 ## Create an Apache Airflow Job with definition
 
 Create an Apache Airflow Job with a public definition in a specified workspace.
+For additional details on creating an Apache Airflow Job with definition, please review - [Microsoft Fabric REST API](/rest/api/fabric/apacheairflowjob/items/create-apache-airflow-job).
 
 **Sample request**:
 
@@ -141,7 +142,7 @@ Create an Apache Airflow Job with a public definition in a specified workspace.
   "displayName": " My Apache Airflow Job",
   "description": "My Apache Airflow Job description",
 
-  "type": "ApacheAirflowJobs",
+  "type": "ApacheAirflowJob",
   "definition": { 
     "parts": [ 
       {
@@ -164,7 +165,7 @@ Create an Apache Airflow Job with a public definition in a specified workspace.
 ```rest
 {
   "id": "<Your artifactId>",
-  "type": "ApacheAirflowJobs",
+  "type": "ApacheAirflowJob",
   "displayName": "My Apache Airflow Job",
   "description": "My Apache Airflow Job description",
   "workspaceId": "<Your workspaceId>"
@@ -192,7 +193,7 @@ Returns properties of specified Apache Airflow Job.
 ```rest
 {
   "id": "<Your artifactId>",
-  "type": "ApacheAirflowJobs",
+  "type": "ApacheAirflowJob",
   "displayName": "My Apache Airflow Job",
   "description": "My Apache Airflow Job description",
   "workspaceId": "<Your workspaceId>"
@@ -202,6 +203,7 @@ Returns properties of specified Apache Airflow Job.
 ## Get Apache Airflow Job with definition
 
 Returns the Apache Airflow Job item definition.
+For additional details on getting an Apache Airflow Job with definition, please review - [Microsoft Fabric REST API](/rest/api/fabric/apacheairflowjob/items/get-apache-airflow-job-definition).
 
 **Sample request**:
 
@@ -259,7 +261,7 @@ Updates the properties of the Apache Airflow Job.
 {
   "displayName": "My Apache Airflow Job updated",
   "description": "My Apache Airflow Job description updated",
-  "type": "ApacheAirflowJobs"
+  "type": "ApacheAirflowJob"
 }
 ```
 
@@ -268,7 +270,7 @@ Updates the properties of the Apache Airflow Job.
 ```rest
 {
   "id": "<Your artifactId>",
-  "type": "ApacheAirflowJobs",
+  "type": "ApacheAirflowJob",
   "displayName": "My Apache Airflow Job updated",
   "description": "My Apache Airflow Job description updated",
   "workspaceId": "<Your workspaceId>"
@@ -278,6 +280,7 @@ Updates the properties of the Apache Airflow Job.
 ## Update Apache Airflow Job with definition
 
 Updates the Apache Airflow Job item definition.
+For additional details on updating an Apache Airflow Job with definition, please review - [Microsoft Fabric REST API](/rest/api/fabric/apacheairflowjob/items/update-apache-airflow-job-definition).
 
 **Sample request**:
 
@@ -297,7 +300,7 @@ Updates the Apache Airflow Job item definition.
 ```rest
 {
   "displayName": "My Apache Airflow Job",
-  "type": "ApacheAirflowJobs",
+  "type": "ApacheAirflowJob",
   "definition": {
     "parts": [ 
       {
@@ -343,13 +346,13 @@ Deletes the specified Apache Airflow Job.
 200 OK
 ```
 
-## Job File Management APIs
+## File Management APIs
 
 ### Get Apache Airflow Job File
 
 Returns job file from Apache Airflow by path.
 
-**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}```
+**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}?preview=true```
 
 **Sample Results**:
 
@@ -361,12 +364,11 @@ Returns job file from Apache Airflow by path.
 
 Creates or updates an Apache Airflow Job file.
 
-**Request URI**: ```PUT https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}```
+**Request URI**: ```PUT https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}?preview=true```
 
 **Request Payload**:
 
 ```rest
-Binary 
 PYTHON files (DAGs), should be UTF-8 encoded
 ```
 
@@ -380,7 +382,7 @@ PYTHON files (DAGs), should be UTF-8 encoded
 
 Deletes the specified Apache Airflow Job file.
 
-**Request URI**: ```DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}```
+**Request URI**: ```DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}?preview=true```
 
 **Sample Results**:
 
@@ -392,7 +394,7 @@ Deletes the specified Apache Airflow Job file.
 
 Lists the files the specified Apache Airflow Job file.
 
-**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files?rootPath=”my_folder”&continuationToken={token}```
+**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files?rootPath=”my_folder”&continuationToken={token}?preview=true```
 
 Note that rootPath and continutationToken are optional.
 

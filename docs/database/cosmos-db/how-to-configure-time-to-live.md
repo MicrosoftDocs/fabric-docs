@@ -1,6 +1,5 @@
 ---
 title: Configure Time To Live in Cosmos DB Database (Preview)
-titleSuffix: Microsoft Fabric
 description: Configure a time-to-live (TTL) value that automatically purges items from a Cosmos DB in Microsoft Fabric database during the preview.
 author: seesharprun
 ms.author: sidandrews
@@ -8,8 +7,6 @@ ms.topic: how-to
 ms.date: 07/29/2025
 ai-usage: ai-assisted
 zone_pivot_groups: dev-lang-core
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
 # Configure time to live (TTL) in Cosmos DB in Microsoft Fabric (preview)
@@ -40,7 +37,7 @@ First, use the Fabric portal to set the container-level TTL.
 
 1. Locate the **Time to Live** setting.
 
-    :::image source="media/how-to-configure-time-to-live/settings.png" lightbox="media/how-to-configure-time-to-live/settings-full.png" alt-text="Screenshot of the 'Settings' section for a container within a database in the Fabric portal.":::
+    :::image type="content" source="media/how-to-configure-time-to-live/settings.png" lightbox="media/how-to-configure-time-to-live/settings-full.png" alt-text="Screenshot of the 'Settings' section for a container within a database in the Fabric portal.":::
 
 1. Update the setting to a new value. For example, you can set the value to **On (no default)** to set the default time-to-live at the container level to `-1` (*infinity*) where TTL is enabled but items don't expire by default.
 

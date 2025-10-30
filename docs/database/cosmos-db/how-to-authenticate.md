@@ -1,6 +1,5 @@
 ---
 title: Authenticate to Cosmos DB Database From Azure Services (Preview)
-titleSuffix: Microsoft Fabric
 description: Use Microsoft Entra authentication and the Azure SDK to connect to Cosmos DB in Microsoft Fabric during the preview.
 author: seesharprun
 ms.author: sidandrews
@@ -8,8 +7,6 @@ ms.topic: how-to
 ms.date: 07/29/2025
 ms.search.form: Get Started with Cosmos DB
 zone_pivot_groups: dev-lang-core
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
 # Authenticate to Cosmos DB in Microsoft Fabric from Azure host services (preview)
@@ -45,11 +42,11 @@ First, get the endpoint for the Cosmos DB database in Fabric. This endpoint is r
 
 1. Select the **Settings** option in the menu bar for the database.
 
-    :::image source="media/how-to-authenticate/settings-option.png" lightbox="media/how-to-authenticate/settings-option-full.png" alt-text="Screenshot of the 'Settings' menu bar option for a database in the Fabric portal.":::
+    :::image type="content" source="media/how-to-authenticate/settings-option.png" lightbox="media/how-to-authenticate/settings-option-full.png" alt-text="Screenshot of the 'Settings' menu bar option for a database in the Fabric portal.":::
 
 1. In the settings dialog, navigate to the **Connection** section. Then, copy the value of the **Endpoint for Cosmos DB NoSQL database** field. You use this value in later step\[s\].
 
-    :::image source="media/how-to-authenticate/settings-connection-endpoint.png" lightbox="media/how-to-authenticate/settings-connection-endpoint-full.png" alt-text="Screenshot of the 'Connection' section of the 'Settings' dialog for a database in the Fabric portal.":::
+    :::image type="content" source="media/how-to-authenticate/settings-connection-endpoint.png" lightbox="media/how-to-authenticate/settings-connection-endpoint-full.png" alt-text="Screenshot of the 'Connection' section of the 'Settings' dialog for a database in the Fabric portal.":::
 
 ## Authenticate to Azure CLI
 

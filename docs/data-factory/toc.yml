@@ -703,6 +703,13 @@
                 href: connector-snowflake.md
               - name: Configure in a pipeline Copy activity
                 href: connector-snowflake-copy-activity.md
+          - name: Spark
+            items: 
+              - name: Spark - Overview
+                href: spark-connector-overview.md
+              - name: Configure in a pipeline Copy activity
+                href: spark-connector-copy-activity.md
+
           - name: SQL database
             items: 
               - name: SQL database - Overview
@@ -882,6 +889,8 @@
             href: copy-activity-performance-and-scalability-guide.md
           - name: Monitor Copy activity
             href: monitor-copy-activity.md
+          - name: Data type conversion in Copy activity
+            href: data-type-conversion-copy-activity.md
           - name: Copy activity tutorials
             items: 
               - name: Copy from Azure Blob Storage to Lakehouse
@@ -912,6 +921,8 @@
             href: /fabric/mirroring/overview?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
           - name: Mirroring documentation
             href: /fabric/mirroring/
+      - name: Data type mapping
+        href: data-type-mapping-data-movement.md
   - name: Transform data
     items: 
       - name: Data transformation pipeline activities
@@ -940,6 +951,8 @@
                 href: tutorial-dataflows-gen2-pipeline-activity.md
               - name: Pattern to incrementally amass data with Dataflow Gen2
                 href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
+              - name: Use a dataflow to bring data into Databricks
+                href: tutorial-dataflows-gen2-adlsgen2-databricks.md
               - name: Slowly changing dimension type 1
                 href: slowly-changing-dimension-type-one.md
               - name: Slowly changing dimension type 2
@@ -1006,6 +1019,8 @@
         items: 
           - name: Concepts
             href: apache-airflow-jobs-concepts.md
+          - name: Apache Airflow compute
+            href: apache-airflow-compute.md
           - name: How-to
             items: 
               - name: Synchronize your code from an existing Git repo
@@ -1102,8 +1117,6 @@
         href: create-alerts-for-pipeline-runs.md
       - name: Evaluate pipeline expressions
         href: evaluate-pipeline-expression.md
-      - name: Data type mapping
-        href: data-type-mapping.md
       - name: Pipeline sample templates
         href: templates.md
       - name: Monitor pipeline runs

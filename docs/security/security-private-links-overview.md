@@ -3,7 +3,7 @@ title: About private Links for secure access to Fabric
 description: Learn about the Azure private link feature to provide secure access to Fabric using Azure Networking private endpoints. Data is sent privately instead of over the internet.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: conceptual
 ms.custom:
 ms.date: 08/21/2025
@@ -134,22 +134,13 @@ Limitations:
 * Data connectors relying on queued ingestion aren't supported.
 * Querying an Eventhouse using T-SQL isn't possible.
 
-### API for GraphQL
-
-API for GraphQL supports Private Link, allowing secure API access and querying from your Azure Virtual Network via a private link. 
-
-Limitations:
-
-* API monitoring dashboard and logging based on Workspace Monitoring is not supported.
-* Service Principal (SPN) are supported as clients however access between the API and data source with a SPN and saved credentials is not supported. SPNs can only be used with single sign-on (SSO) authentication to access data sources.
-
 ### Healthcare data solutions (preview)
 
 Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. In a tenant where private link is enabled, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. Also included is the ability to ingest healthcare data from various sources, such as Azure Storage accounts, and more.
 
 ### Fabric Events
 
-Fabric Events support Private Link without affecting event delivery, because the events originate from within the tenan
+Fabric Events support Private Link without affecting event delivery, because the events originate from within the tenant.
 
 ### Azure Events
 

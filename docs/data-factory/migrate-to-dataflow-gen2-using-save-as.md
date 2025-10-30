@@ -1,5 +1,5 @@
 ---
-title: Migrate to Dataflow Gen2 (CI/CD) using Save As (Preview)
+title: Migrate to Dataflow Gen2 (CI/CD) using Save As
 description: This article describes the procedure for migrating Dataflow Gen1, Dataflow Gen2, and Dataflow Gen2 (CI/CD) to Dataflow Gen2 (CI/CD) in Data Factory.
 author: whhender
 ms.author: whhender
@@ -10,20 +10,17 @@ ms.custom:
   - dataflows
 ---
 
-# Migrate to Dataflow Gen2 (CI/CD) using Save As (Preview)
+# Migrate to Dataflow Gen2 (CI/CD) using Save As
 
 Data Factory in Microsoft Fabric now includes a Save As feature that lets you perform a single gesture to save an existing dataflow as a new Dataflow Gen2 (CI/CD) item.
 
-## Save a Dataflow Gen2 or Gen2 (CI/CD) as a new Dataflow Gen2 (CI/CD) (Preview)
-
->[!IMPORTANT]
->Saving from Gen2 (CI/CD) is still in preview.
+## Save a Dataflow Gen2 or Gen2 (CI/CD) as a new Dataflow Gen2 (CI/CD)
 
 You can now use the new Save As feature to save a Dataflow Gen2 or Dataflow Gen2 (CI/CD) to a new Dataflow Gen2 (CI/CD). To use the Save As feature:
 
 [!INCLUDE [save-as-feature-how-to](includes/save-as-feature-how-to.md)]
 
-## Save a Dataflow Gen1 as a new Dataflow Gen2 (CI/CD) (Preview)
+## Save a Dataflow Gen1 as a new Dataflow Gen2 (CI/CD)
 
 You can also use the new Save As feature to save a Dataflow Gen1 to a new Dataflow Gen2 (CI/CD). To learn more, go to [Migrate from Dataflow Gen1 to Dataflow Gen2](dataflow-gen2-migrate-from-dataflow-gen1.md).  
 

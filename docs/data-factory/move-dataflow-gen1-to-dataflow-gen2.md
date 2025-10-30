@@ -88,13 +88,13 @@ To copy existing Dataflow Gen1 queries:
 
 ## Save an existing Dataflow Gen1 As a new Dataflow Gen2 (CI/CD)
 
-Use the Save As (preview) feature if you’re aiming to upgrade an entire Dataflow Gen1 to Dataflow Gen2 (CI/CD), including its settings (for more information, go to [Known limitations](migrate-to-dataflow-gen2-using-save-as.md#known-limitations)) and queries.  
+Use the Save As feature if you’re aiming to upgrade an entire Dataflow Gen1 to Dataflow Gen2 (CI/CD), including its settings (for more information, go to [Known limitations](migrate-to-dataflow-gen2-using-save-as.md#known-limitations)) and queries.  
 
-To use the Save As (preview) feature:
+To use the Save As feature:
 
 [!INCLUDE [save-as-feature-how-to](includes/save-as-feature-how-to.md)]
 
 ## Related content
 
 - [Differences between Dataflow Gen1 and Gen2 in Microsoft Fabric](dataflows-gen2-overview.md)
-- [Migrate to Dataflow Gen2 (CI/CD) using Save As (Preview)](migrate-to-dataflow-gen2-using-save-as.md)
+- [Migrate to Dataflow Gen2 (CI/CD) using Save As](migrate-to-dataflow-gen2-using-save-as.md)
