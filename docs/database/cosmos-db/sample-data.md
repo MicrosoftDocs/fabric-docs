@@ -40,7 +40,6 @@ Product documents contain detailed information about individual items in the e-c
 | **`name`** | `string` | Product display name |
 | **`description`** | `string` | Detailed product description |
 | **`categoryName`** | `string` | Product category (e.g., "Computers, Laptops", "Media", "Accessories") |
-| **`countryOfOrigin`** | `string` | Country where the product was manufactured |
 | **`inventory`** | `number` | Number of items currently in stock |
 | **`firstAvailable`** | `string` | Date when product became available (ISO 8601 format) |
 | **`currentPrice`** | `number` | Current selling price |
@@ -84,7 +83,6 @@ The following examples show the structure of documents in both sample data sets.
   "name": "EchoSphere Pro ANC-X900 Premium Headphones",
   "description": "EchoSphere Pro ANC-X900 Premium Headphones deliver immersive sound with advanced 40mm drivers and Adaptive Hybrid Active Noise Cancellation. Bluetooth 5.3 ensures seamless connectivity.",
   "categoryName": "Accessories, Premium Headphones",
-  "countryOfOrigin": "Thailand",
   "inventory": 772,
   "firstAvailable": "2024-01-01T00:00:00",
   "currentPrice": 454.87,
@@ -119,7 +117,6 @@ The following examples show the structure of documents in both sample data sets.
     "name": "EchoSphere Pro ANC-X900 Premium Headphones",
     "description": "EchoSphere Pro ANC-X900 Premium Headphones deliver immersive sound with advanced 40mm drivers and Adaptive Hybrid Active Noise Cancellation. Bluetooth 5.3 ensures seamless connectivity.",
     "categoryName": "Accessories, Premium Headphones",
-    "countryOfOrigin": "Thailand",
     "inventory": 772,
     "firstAvailable": "2024-01-01T00:00:00",
     "currentPrice": 454.87,
@@ -210,7 +207,6 @@ The following JSON schemas describe the structure of documents in both sample da
     "name": { "type": "string" },
     "description": { "type": "string" },
     "categoryName": { "type": "string" },
-    "countryOfOrigin": { "type": "string" },
     "inventory": { "type": "number" },
     "firstAvailable": { "type": "string" },
     "currentPrice": { "type": "number" },
@@ -227,7 +223,7 @@ The following JSON schemas describe the structure of documents in both sample da
     }
   },
   "required": [
-    "id", "docType", "productId", "name", "description", "categoryName", "countryOfOrigin", "inventory", "firstAvailable", "currentPrice", "priceHistory"
+    "id", "docType", "productId", "name", "description", "categoryName", "inventory", "firstAvailable", "currentPrice", "priceHistory"
   ]
 }
 ```
@@ -244,7 +240,6 @@ The following JSON schemas describe the structure of documents in both sample da
     "name": { "type": "string" },
     "description": { "type": "string" },
     "categoryName": { "type": "string" },
-    "countryOfOrigin": { "type": "string" },
     "inventory": { "type": "number" },
     "firstAvailable": { "type": "string" },
     "currentPrice": { "type": "number" },
@@ -267,8 +262,7 @@ The following JSON schemas describe the structure of documents in both sample da
     }
   },
   "required": [
-    "id", "docType", "productId", "name", "description", "categoryName", 
-    "countryOfOrigin", "inventory", "firstAvailable", "currentPrice", "priceHistory", "vectors"
+    "id", "docType", "productId", "name", "description", "categoryName", "inventory", "firstAvailable", "currentPrice", "priceHistory", "vectors"
   ]
 }
 ```
