@@ -30,7 +30,7 @@ This article provides guidance on how to best secure your Cosmos DB in Fabric de
 
 ## Execution context and identity considerations
 
-- **Understand notebook execution identity**: When working with notebooks in Fabric workspaces, be aware that Fabric artifacts always execute with the identity of the user who created them, regardless of who executes . This means that data access permissions and audit trails will reflect the notebook creator's identity, not the executor's identity. Plan your notebook creation and sharing strategy accordingly to ensure appropriate access controls.
+- **Understand notebook execution identity**: When working with notebooks in Fabric workspaces, be aware that Fabric artifacts always execute with the identity of the user who created them, regardless of who executes. This means that data access permissions and audit trails will reflect the notebook creator's identity, not the executor's identity. Plan your notebook creation and sharing strategy accordingly to ensure appropriate access controls.
 
 - **Plan for workspace identity limitations**: Currently, Fabric does not support `run-as` functionality with Workspace Identity. Operations execute with the identity of the user that created them rather than a shared workspace identity. Consider this when designing multi-user scenarios and ensure that the appropriate users create artifacts that will be shared within the workspace.
 
@@ -39,3 +39,4 @@ This article provides guidance on how to best secure your Cosmos DB in Fabric de
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Authenticate using Microsoft Entra ID to Cosmos DB in Microsoft Fabric](how-to-authenticate.md)
 - [Manage authorization in Cosmos DB in Microsoft Fabric](authorization.md)
+
