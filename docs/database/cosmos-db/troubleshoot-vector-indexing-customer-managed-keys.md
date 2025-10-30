@@ -2,49 +2,43 @@
 title: Troubleshoot Vector Indexing And Customer Managed Keys For Cosmos DB
 titleSuffix: Microsoft Fabric
 description: Learn how to troubleshoot common issues with vector indexing and customer managed keys in Cosmos DB for Microsoft Fabric, including configuration errors and access problems.
-author: seesharprun
-ms.author: sidandrews
+author: markjbrown
+ms.author: mjbrown
 ms.topic: troubleshooting-general
-ms.date: 10/22/2025
+ms.date: 10/27/2025
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# Troubleshoot vector indexing and customer managed keys for Cosmos DB in Microsoft Fabric
+# Troubleshoot vector indexing and customer managed keys for Cosmos DB in Microsoft Fabric (preview)
 
-TODO - Introduce and explain the purpose of the article.
+Cosmos DB in Fabric has support for customer managed keys (CMK) in Microsoft Fabric in *preview*. There are some caveats that users should be aware of when enabling CMK in a Microsoft Fabric workspace.
 
-## Prerequisites
+> [!IMPORTANT]
+> During preview, if you intend to use CMK in any of your workspaces with Cosmos DB, CMK should be enabled **BEFORE** provisioning any Cosmos DB artifacts.
 
-TODO - Add prerequisites if needed, or remove this section.
+## Cannot enable CMK on a workspace with Cosmos DB artifacts
 
-- TODO - Prerequisite 1
-- TODO - Prerequisite 2
+This scenario isn't supported during preview. There are two workarounds to this scenario.
 
-## TODO - Potential quick workarounds
+### Migrate to new workspace
 
-1. TODO - Procedure step
-1. TODO - Procedure step
+Create a new workspace, enable CMK on it, then create your Cosmos DB artifacts and migrate any existing Fabric artifacts and data into the new workspace.
 
-## TODO - Troubleshooting checklist
+### Delete the Cosmos DB artifacts
 
-### TODO - Troubleshooting step
+Deleted Cosmos DB artifacts are associated with a Fabric workspace for up to eight days after they are deleted to allow a user to restore them to the workspace. If migrating to a new workspace is not possible or desirable, delete all the Cosmos DB artifacts in the workspace, then wait eight days until all restore points expire. With all restore points expired you can enable CMK on the workspace, then provision new Cosmos DB artifacts within it.
 
-TODO - Provide guidance about how the user can troubleshoot the issues and determine the cause of the issue.
+## Cannot disable CMK on a workspace with Cosmos DB artifacts
 
-## TODO - Causes and/or solutions
+This scenario is not supported during preview. There is one workaround to this scenario.
 
-### TODO - Solution 
+### Delete the Cosmos DB artifacts
 
-1. TODO - Procedure step
-1. TODO - Procedure step
-
-## TODO - Advanced troubleshooting and data collection
-
-TODO - Include this section if advanced troubleshooting is needed and might require a call for support, or remove this section.
+Delete all Cosmos DB artifacts in a workspace, then disable CMK. However, it will not be possible to re-enable CMK within that workspace after a Cosmos DB artifact is created.
 
 ## Related content
 
-- TODO - [Related article title](about:blank)
-- TODO - [Related article title](about:blank)
-- TODO - [Related article title](about:blank)
+- [Customer managed keys for Cosmos DB in Microsoft Fabric](customer-managed-keys.md)
+- [Customer-managed keys for Fabric workspaces](../../security/workspace-customer-managed-keys.md)
+- [Secure Cosmos DB in Microsoft Fabric](security.md)
