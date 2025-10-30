@@ -75,6 +75,7 @@ For specifics about CUs and the pricing model for Apache Airflow pools, see [Apa
 
 For pricing specifics in your region, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
+
 > [!TIP]
 > Custom pools don't shut down automatically when idle.
 >
