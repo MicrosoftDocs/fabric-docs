@@ -31,12 +31,19 @@ In this part of the tutorial, you learn how to set an alert on your eventstream 
 
     | Field | Value |
     | --- | --- |
+    | **Details** | |
+    | Rule name | TutorialRule|
     | **Condition** |  |
     | Check | On each event when |
     | Field | No_Bikes |  
     | Condition | Is less than |
     | Value | 5 |
-    | **Action** |  **Message me in Teams**
+    | **Action** |  |
+    | Select action| Message to individuals|
+    | To | Your Teams account |
+    | Headline | Activator alert |
+    | Notes | The condition has been met
+    | Context | No_Bikes
     | **Save location** | | 
     | Workspace | The workspace in which you created resources|
     | Item | Create a new item |

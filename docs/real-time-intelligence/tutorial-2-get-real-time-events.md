@@ -21,18 +21,20 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
 ## Create an eventstream
 
 1. Select **Real-Time** on the left navigation bar.
-1. Select **+ Connect data source** in the top-right corner of the page. 
+1. Select **+ Add data** in the top-right corner of the page. 
 
     :::image type="content" source="media/tutorial/connect-data-source.png" alt-text="Screenshot of Real-time hub with get events highlighted." lightbox="media/tutorial/connect-data-source.png":::
 
-1. On the **Data sources** page, select **Sample scenarios** category, and then select **Connect** on the **Bicycle rentals** tile.
-1. On the **Connect** page, for **Source name**, enter **TutorialSource**. 
+1. On the **Sample scenarios** page, select **Connect** on the **Bicycle rentals** tile.
+1. On the **Connect data source** page, for **Source name**, enter **TutorialSource**. 
 1. In the **Stream details** section, select the pencil button, and change the name of the eventstream to **TutorialEventstream**, and then select **Next**. 
 1. On the **Review + connect** page, review settings, and select **Connect**.
 
 ## Transform events - add a timestamp
 
-1. On the **Review + connect** page, select **Open Eventstream**.
+Once the eventstream source is created, you can open the eventstream and add more settings.
+
+1. Once the eventstream is created, on the the **Review + connect** page, select **Open Eventstream**.
 
     :::image type="content" source="media/tutorial/open-event-stream-button.png" alt-text="Screenshot of Review + connect page with Open Eventstream button selected." lightbox="media/tutorial/open-event-stream-button.png":::         
 
@@ -43,8 +45,10 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
     :::image type="content" source="media/tutorial/event-stream-edit-button.png" alt-text="Screenshot with the Edit button selected." lightbox="media/tutorial/event-stream-edit-button.png":::
 
 1. In the eventstream authoring canvas, select the down arrow on the **Transform events or add destination** tile, and then select **Manage fields**. The tile is renamed to `ManageFields`.
-1. Hover over the left edge of the **Manage fields** tile. Click and drag the connector to the right side the **TutorialEventstream** tile. You have now connected the eventstream to a new transformation tile.
-1. In the **Manage fields** pane, do the following actions:
+
+    :::image type="content" source="media/tutorial/manage-fields.png" alt-text="Screenshot of authoring canvas with transform events or add destination.":::
+
+1. Select the pencil icon in the **Manage fields** pane, and do the following actions:
     1. In **Operation name**, enter **TutorialTransform**. 
     1. Select **Add all fields**
 
