@@ -26,7 +26,7 @@ AI functions are designed to work out of the box, with the underlying model and 
 
 ## Configurations
 
-If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to configure the underlying AI model used by all functions. Settings that can  only be applied per function call are specified below.
+If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to configure the underlying AI model used by all functions. Settings that can  only be applied per function call are specified in the following section.
 
 | Parameter | Description | Default |
 |---|---|---|

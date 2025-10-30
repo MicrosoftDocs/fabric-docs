@@ -26,7 +26,7 @@ The `ai.generate_response` function can extend the [pandas DataFrame](https://pa
 
 To generate custom text responses row by row, you can either call this function on a pandas series or an entire pandas DataFrame.
 
-If calling the function on an entire pandas DataFrame, your prompt can be a literal string, and the function will consider all columns of the DataFrame while generating responses. Your prompt can also be a format string, where the function considers only those column values that appear between curly braces in the prompt.
+If calling the function on an entire pandas DataFrame, your prompt can be a literal string, and the function considers all columns of the DataFrame while generating responses. Your prompt can also be a format string, where the function considers only those column values that appear between curly braces in the prompt.
 
 The function returns a pandas Series that contains custom text responses for each row of input. The text responses can be stored in a new DataFrame column.
 

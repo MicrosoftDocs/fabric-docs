@@ -44,15 +44,15 @@ You can incorporate these functions as part of data science and data engineering
 
 ## Getting started with AI functions
 
-AI Functions can be used with pandas (Python and PySpark runtimes), and with PySpark (PySpark runtime). The required installation and import steps for each are outlined below, followed by the corresponding commands.
+AI Functions can be used with pandas (Python and PySpark runtimes), and with PySpark (PySpark runtime). The required installation and import steps for each are outlined in the following section, followed by the corresponding commands.
 
 ### Install dependencies
 
 - Pandas (Python runtime) 
-  - `synapseml_internal` and `synapseml_core` whl files installation required (commands provided below)
-  - `openai` package installation required (command provided below)
+  - `synapseml_internal` and `synapseml_core` whl files installation required (commands provided in the following code cell)
+  - `openai` package installation required (command provided in the following code cell)
 - Pandas (PySpark runtime)
-  - `openai` package installation required (command provided below)
+  - `openai` package installation required (command provided in the following code cell)
 - PySpark (PySpark runtime)
   - No installation required
 
@@ -264,7 +264,7 @@ display(corrections)
 
 ---
 
-:::image type="content" source="../media/ai-functions/fix-grammar-example-output.png" alt-text="Screenshot showing a  data frame with a 'text' column and a 'corrections' column which has the text from the text column with corrected grammar." lightbox="../media/ai-functions/fix-grammar-example-output.png":::
+:::image type="content" source="../media/ai-functions/fix-grammar-example-output.png" alt-text="Screenshot showing a  data frame with a 'text' column and a 'corrections' column, which has the text from the text column with corrected grammar." lightbox="../media/ai-functions/fix-grammar-example-output.png":::
 
 ### Answer custom user prompts with ai.generate_response
 
