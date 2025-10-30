@@ -1,10 +1,10 @@
 ---
 title: Configure container in Cosmos DB Database
 description: Learn how to configure containers in your Cosmos DB database in Microsoft Fabric, including steps like managing time-to-live (TTL) and indexing policy.
-author: seesharprun
-ms.author: sidandrews
+author: markjbrown
+ms.author: mjbrown
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 10/30/2025
 ---
 
 # Configure a container in Cosmos DB in Microsoft Fabric
@@ -17,12 +17,12 @@ While many features are automatically enabled and built-in to Cosmos DB in Micro
 
 [!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
 
-> [!NOTE]
-> Databases do not support offer replacement for containers, meaning you cannot change a container's throughput after it has been created.
-
 ## Update settings
 
-First, use the **Settings** section for a container to customize and observe the most common options including, but not limited to time-to-live (TTL), geospatial configuration, and partitioning.
+To modify a Cosmos DB container, open the **Settings** section for a container in the Fabric portal. Settings which can be customized time-to-live (TTL), geospatial configuration, and indexing policy.
+
+> [!NOTE]
+> The vector and full-text container policy, partition keys are immutable and cannot be changed after container creation. Container throughput cannot be changed in the Fabric portal but can modified using the Cosmos DB SDK. See [Change Throughput](#change-throughput) for details.
 
 1. Open the Fabric portal (<https://app.fabric.microsoft.com>).
 
@@ -32,21 +32,20 @@ First, use the **Settings** section for a container to customize and observe the
 
 1. In the **Settings** section, select the redundant **Settings** tab.
 
-1. Now, observe the value for the **Partition key** option.
+## Time-to-live and geospatial configuration
 
-1. Next, optionally configure the **Time to Live** and **Geospatial Configuration** values.
+1. To configure the **Time to Live** and **Geospatial Configuration** values, change the values below.
 
     :::image type="content" source="media/how-to-configure-container/settings.png" lightbox="media/how-to-configure-container/settings-full.png" alt-text="Screenshot of the 'Settings' section for a container within a database in the Fabric portal.":::
 
 1. Select **Save** to persist your changes.
 
-    > [!TIP]
-    > For more information on time-to-live (TTL) configuration, see [time-to-live](time-to-live.md). For more information on geospatial configuration, see [geospatial data](/nosql/query/geospatial).
+    > [!Note]
+    > Time-to-live (TTL) on a container will also apply to any data mirrored to OneLake. For more information on time-to-live (TTL) configuration, see [time-to-live](time-to-live.md). For more information on geospatial configuration, see [geospatial data](/nosql/query/geospatial).
 
-## Rework indexing policy
+## Indexing policy
 
-Now, use the **Indexing Policy** section to customize how indexing works for your container. Indexing customizes how Cosmos DB converts items into a tree representation internally. Customizing the indexing policy can tune the performance of your container to better align with your profile of your data workload.
-
+The **Indexing Policy** section will customize the indexing for your container. Indexing customizes how Cosmos DB converts items into a tree representation internally. Customizing the indexing policy can tune the performance of the queries for your container or improve write performance of your data.
 
 1. Still in the **Settings** section, select the **Indexing Policy** tab.
 
@@ -78,6 +77,27 @@ Now, use the **Indexing Policy** section to customize how indexing works for you
 
     > [!TIP]
     > For more information on indexing, see [indexing policies](indexing-policies.md).
+
+## Change Throughput
+
+The throughput of your containers can be done using the Cosmos DB SDK. This can be easily done using a Notebook in Fabric. Below is a simplified sample. For a complete sample notebook see, [Management Operations for Cosmos DB in Fabric](https://github.com/AzureCosmosDB/cosmos-fabric-samples/tree/main/management). This provides a complete sample notebook you can import into your workspace to use.
+
+```python
+# Get the current throughput on the created container and increase it by 1000 RU/s
+
+throughput_properties = await CONTAINER.get_throughput()
+autoscale_throughput = throughput_properties.auto_scale_max_throughput
+
+print(print(f"Autoscale throughput: {autoscale_throughput}"))
+
+new_throughput = autoscale_throughput + 1000
+
+await CONTAINER.replace_throughput(ThroughputProperties(auto_scale_max_throughput=new_throughput))
+
+# Verify the updated throughput
+updated_throughput_properties = await CONTAINER.get_throughput()
+print(f"Verified updated autoscale throughput: {updated_throughput_properties.auto_scale_max_throughput}")
+```
 
 ## Related content
 
