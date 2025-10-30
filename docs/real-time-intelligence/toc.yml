@@ -794,7 +794,7 @@ items:
   - name: Create alerts from a Real-Time Dashboard
     displayName: trigger, activator, reflex
     href: ./data-activator/activator-get-data-real-time-dashboard.md
-  - name: Visuaize data in Power BI
+  - name: Visualize data in Power BI
     items:
     - name: Visualize data in a Power BI report
       href: create-powerbi-report.md
