@@ -4,7 +4,7 @@ description: This quickstart describes connect to your SQL database in Fabric fr
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, drskwier
-ms.date: 10/06/2025
+ms.date: 10/30/2025
 ms.topic: quickstart-sdk
 ms.custom:
   - sfi-ropc-nochange
@@ -35,6 +35,10 @@ The `mssql-python` driver doesn't require any external dependencies on Windows m
   - [Python extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
   - [Jupyter Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+
+  - [(Optional) Azure Repos](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-repos)
+
+- [(Optional) Azure Command-Line Interface (CLI)](/cli/azure/install-azure-cli)
 
 - If you don't already have `uv`, install `uv` by following the instructions from [https://docs.astral.sh/uv/getting-started/installation/](https://docs.astral.sh/uv/getting-started/installation/).
 
@@ -260,6 +264,9 @@ code .
                Console().print(table)
    ```
 
+> [!TIP]  
+> To use Microsoft Entra Authentication in macOS, you need to be logged in via either the [Azure Repos](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-repos) extension in Visual Studio Code or by running `az login` via the [Azure Command-Line Interface (CLI)](/cli/azure/install-azure-cli).
+
 1. Use the **Run All** button at the top of the notebook to run the notebook.
 
 1. Select the **jupyter-notebook-qs** kernel when prompted.
@@ -289,6 +296,7 @@ code .
        plt.style.use('seaborn-v0_8-notebook')
        plt.barh(data['ProductCategory'], data['Spend'])
    ```
+
 1. Use the **Execute Cell** button or `Ctrl+Alt+Enter` to run the cell.
 
 1. Review the results. Make this notebook your own.
