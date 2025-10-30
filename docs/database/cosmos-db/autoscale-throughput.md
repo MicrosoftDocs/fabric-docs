@@ -19,7 +19,7 @@ Cosmos DB containers in Microsoft Fabric configured with autoscale provisioned t
 
 - **Simple:** Autoscale removes the complexity of managing throughput or manually scaling capacity.
 
-- **Scalable:** Containers automatically scale the provisioned throughput as needed. There is no no disruption to client applications.
+- **Scalable:** Containers automatically scale the provisioned throughput as needed. There is no disruption to client applications.
 
 - **Instantaneous:** Containers scale up *instantly* when needed. There is no warm-up period when additional throughput is required for sudden increases.
 
