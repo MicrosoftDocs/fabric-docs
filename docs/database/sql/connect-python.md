@@ -4,7 +4,7 @@ description: This quickstart describes connect to your SQL database in Fabric us
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, drskwier
-ms.date: 09/26/2025
+ms.date: 10/30/2025
 ms.topic: quickstart-sdk
 ms.custom:
   - sfi-ropc-nochange
@@ -29,6 +29,14 @@ The `mssql-python` driver doesn't require any external dependencies on Windows m
   - Prefer to not use your own environment? Open as a devcontainer using [GitHub Codespaces](https://github.com/features/codespaces).
 
     [:::image type="icon" source="https://github.com/codespaces/badge.svg":::](https://codespaces.new/github/codespaces-blank?quickstart=1)
+
+- [Visual Studio Code](https://code.visualstudio.com/download) with the following extensions:
+
+  - [Python extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+
+  - [(Optional) Azure Repos](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-repos)
+
+- [(Optional) Azure Command-Line Interface (CLI)](/cli/azure/install-azure-cli)
 
 - If you don't already have `uv`, install `uv` by following the instructions from [https://docs.astral.sh/uv/getting-started/installation/](https://docs.astral.sh/uv/getting-started/installation/).
 - Install one-time operating system specific prerequisites.
@@ -75,6 +83,7 @@ The `mssql-python` driver doesn't require any external dependencies on Windows m
 
 - [Create a new project](#create-a-new-project)
 - [Add dependencies](#add-dependencies)
+- [Launch Visual Studio Code](#launch-visual-studio-code)
 - [Update pyproject.toml](#update-pyprojecttoml)
 - [Update main.py](#update-mainpy)
 - [Save the connection string](#save-the-connection-string)
@@ -97,6 +106,14 @@ In the same directory, install the `mssql-python`, `streamlit`, and `python-dote
 
 ```bash
 uv add mssql-python python-dotenv streamlit
+```
+
+### Launch Visual Studio Code
+
+In the same directory, run the following command.
+
+```console
+code .
 ```
 
 ### Update pyproject.toml
@@ -245,10 +262,10 @@ uv add mssql-python python-dotenv streamlit
    SQL_CONNECTION_STRING="Server=<server_name>;Database={<database_name>};Encrypt=yes;TrustServerCertificate=no;Authentication=ActiveDirectoryInteractive"
    ```
 
-   > [!TIP]  
-   > For **SQL database in Fabric**, use the **ODBC** connection string from the connection strings tab without the **DRIVER** information.
-
 ### Use uv run to execute the script
+
+> [!TIP]  
+> To use Microsoft Entra Authentication in macOS, you need to be logged in via either the [Azure Repos](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-repos) extension in Visual Studio Code or by running `az login` via the [Azure Command-Line Interface (CLI)](/cli/azure/install-azure-cli).
 
 1. In the terminal window from before, or a new terminal window open to the same directory, run the following command.
 
