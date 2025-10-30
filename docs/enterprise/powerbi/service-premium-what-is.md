@@ -33,6 +33,8 @@ Power BI Premium provides enhancements to Power BI, and a comprehensive portfoli
 
 [!INCLUDE [Power BI capacity and SKUs](~/..//powerbi-repo/powerbi-docs/includes/capacity-table.md)]
 
+As a SaaS service, each workload handles load balancing and resource management automatically, ensuring optimal performance and reliability across your Power BI Premium capacity.
+
 ## Subscriptions and licensing
 
 Power BI Premium is a tenant-level Microsoft 365 subscription, available in two SKU (Stock-Keeping Unit) families.
