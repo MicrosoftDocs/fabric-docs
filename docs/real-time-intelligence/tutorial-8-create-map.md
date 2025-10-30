@@ -21,7 +21,10 @@ In this part of the tutorial, you learn how to create a map using geospatial dat
 ## Create a KQL Queryset tab to be used by the map
 
 1. Open the **Tutorial** eventhouse that you created in the previous part of the tutorial.
-1. Select the **Tutorial_queryset**, open a new query tab, and paste the following query.
+1. Select the **Tutorial_queryset**.
+1. Select the **+** button on the ribbon to create a new tab.
+1. Select the pencil icon on the tab and rename the query tab *Show on map*.
+1. Copy/paste and run the following query.
 
     ```kusto
     TransformedData
@@ -30,15 +33,16 @@ In this part of the tutorial, you learn how to create a map using geospatial dat
     | summarize sum(No_Bikes), sum(No_Empty_Docks) by Street, Neighbourhood, Latitude, Longitude
     ```
 
-    :::image type="content" source="media/tutorial/map-kql-query.png" alt-text="Screenshot of kql query for map." lightbox="media/tutorial/map-kql-query.png":::
+    :::image type="content" source="media/tutorial/show-on-map.png" alt-text="Screenshot of kql query for map." lightbox="media/tutorial/show-on-map.png":::
 
 ## Create a Lakehouse and upload GeoJson files
 
-1. Browse to the workspace and in upper left corner select the **+ New item** button. Then search for and select **Lakehouse**.
+1. Browse to your workspace and in upper left corner select the **+ New item** button. Then search for and select **Lakehouse**.
 
     :::image type="content" source="media/tutorial/lakehouse.png" alt-text="Screenshot of lakehouse creation." lightbox="media/tutorial/lakehouse.png":::
 
-1. Enter **TutorialLakehouse** as Name
+1. Enter **TutorialLakehouse** as name.
+1. Select the workspace in which you've created your resources. 
 1. Right-click the **File** node and under **Upload**, select **Upload files**.
 1. Download the following two GeoJSON files from the following links and upload them to the Lakehouse.
     - [london-boroughs.geojson](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/london-boroughs.geojson)
@@ -48,33 +52,39 @@ In this part of the tutorial, you learn how to create a map using geospatial dat
 
 ## Create a map
 
-1. Browse to the workspace and in upper left corner select the **+ New item** button. Then search for and select **Map**.
+1. Browse to your workspace and in upper left corner select the **+ New item** button. Then search for and select **Map**.
 
     :::image type="content" source="media/tutorial/map-item-creation.png" alt-text="Screenshot of map item creation." lightbox="media/tutorial/map-item-creation.png":::
 
-1. Enter *TutorialMap* in **Name**.
+1. Enter *TutorialMap* in **Name**, and select **Create**
 
 ## Add Eventhouse data to the map
 
 1. In the **Explorer** pane, select **Eventhouse** and select **+ Add data items** and choose the **Tutorial** eventhouse.
-1. Under Tutorial, select the **Tutorial_queryset** and right-click on the tab and select **Show on map**
+1. Under Tutorial, select the **Tutorial_queryset**.
+1. Select the more menu (**...**) next to **Show on map** and select **Show on map**.
 
     :::image type="content" source="media/tutorial/map-eventhouse.png" alt-text="Screenshot of eventhouse queryset tab selection." lightbox="media/tutorial/map-eventhouse.png":::
 
-1. A new window showing data preview of the query opens. Select **Next** and enter *BikeLatLong* as Name. Select the **Latitude** and **Longitude** columns. Under **Data refresh interval** select 5 minutes. Select **Next**.
+1. A new window showing data preview of the query opens. Select **Next** .
+1. Enter *BikeLatLong* as Name. Select the **Latitude** and **Longitude** columns. Under **Data refresh interval** select 5 minutes. Select **Next**.
 
     :::image type="content" source="media/tutorial/map-eventhouse-config.png" alt-text="Screenshot of map latitude and longitude selection." lightbox="media/tutorial/map-eventhouse-config.png":::
 
 1. In the next screen, select **Add to map**.
 1. Right-click on **BikeLatLong** under **Data layers** and select **Zoom to fit** to zoom into London area showing bike stations on the map.
 1. Under General settings, add Street and Neighbourhood under Tooltips.
-1. Under Point settings, toggle **Enable series group** and select **Neighbourhood**, change **Size** to **By data** and select **sum_No_Empty_Docks**. This should immediately take effect on the map with bubble sizes representing the number of empty docks and colors representing different neighbourhoods.
+1. Under Point settings, toggle **Enable series group** and select **Neighbourhood**.
+1. Change **Size** to **By data** and select **sum_No_Empty_Docks**. 
+
+    This should immediately take effect on the map with bubble sizes representing the number of empty docks and colors representing different neighbourhoods.
 
     :::image type="content" source="media/tutorial/bubble-map.png" alt-text="Screenshot of bubble map." lightbox="media/tutorial/bubble-map.png":::
 
 ## Add GeoJSON files from Lakehouse to the map
 
-1. In the **Explorer** pane, select **Lakehouse** and select **+ Add data items** and choose the **TutorialLakehouse** lakehouse.
+1. In the **Explorer** pane, select **Lakehouse** and select **+ Add data items** and 
+1. Choose the **TutorialLakehouse** lakehouse and select **Connect**.
 1. Under TutorialLakehouse, select the **london-boroughs.geojson** file and right-click on the file and select **Show on map**. Repeat the step for **buckingham-palace-road.json** file.
 
     :::image type="content" source="media/tutorial/selection.png" alt-text="Screenshot of geojson selection." lightbox="media/tutorial/selection.png":::
@@ -87,7 +97,7 @@ In this part of the tutorial, you learn how to create a map using geospatial dat
 
     :::image type="content" source="media/tutorial/zoom-buckingham-palace.png" alt-text="Screenshot of 3 data layers." lightbox="media/tutorial/zoom-buckingham-palace.png":::
 
-1. Select **Save**
+1. From the menu bar, select the **Save** icon.
 
 
 ## Related content
