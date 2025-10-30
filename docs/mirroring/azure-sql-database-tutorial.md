@@ -55,11 +55,9 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
     The permissions required for the Fabric login are:
    
    - The following permissions in the user database:
-   - - SELECT
+    - SELECT
     - ALTER ANY EXTERNAL MIRROR
-        
-    - VIEW DATABASE PEFORMANCE STATE
-        
+    - VIEW DATABASE PERFORMANCE STATE
     - VIEW DATABASE SECURITY STATE
         
    - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
@@ -91,28 +89,28 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
     ```sql
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO [fabric_user];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [fabric_user];
     ```
     
     - Or, for a Microsoft Entra authenticated login:
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO [bob@contoso.com];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [bob@contoso.com];
     ```
   
     - Or, for a Service Principal Name (SPN) login:
 
     ```sql
     CREATE USER [Service Principal Name] FOR LOGIN [Service Principal Name];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO [Service Principal Name];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [Service Principal Name];
     ```
 
     - Or, for [Fabric workspace identity](../security/workspace-identity.md) login:
 
     ```sql
     CREATE USER [Workspace Identity Name] FOR LOGIN [workspace identity Name];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO [Workspace Identity Name];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [Workspace Identity Name];
     ```
 
 1. TO [fabric_user];
