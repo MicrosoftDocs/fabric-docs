@@ -1,10 +1,10 @@
 ---
 title: Sample indexing policies in Cosmos DB Database
 description: Explore sample custom indexing policies that fine tune the performance of Cosmos DB in Microsoft Fabric.
-author: seesharprun
-ms.author: sidandrews
+author: markjbrown
+ms.author: mjbrown
 ms.topic: sample
-ms.date: 07/14/2025
+ms.date: 10/30/2025
 ai-usage: ai-generated
 ---
 
@@ -19,8 +19,16 @@ This policy indexes every property in every item, which is the default behavior.
 ```json
 {
   "indexingMode": "consistent",
-  "includedPaths": [ { "path": "/*" } ],
-  "excludedPaths": []
+  "includedPaths": [ 
+    { 
+      "path": "/*" 
+    } 
+  ],
+  "excludedPaths": [
+    {
+      path: '/_etag/?'
+    }
+  ]
 }
 ```
 
@@ -31,8 +39,19 @@ This policy indexes all properties except for a specific property, reducing stor
 ```json
 {
   "indexingMode": "consistent",
-  "includedPaths": [ { "path": "/*" } ],
-  "excludedPaths": [ { "path": "/nonIndexedProperty/?" } ]
+  "includedPaths": [ 
+    { 
+      "path": "/*" 
+    } 
+  ],
+  "excludedPaths": [ 
+    {
+      path: '/_etag/?'
+    },
+    { 
+      "path": "/nonIndexedProperty/?" 
+    } 
+  ]
 }
 ```
 
@@ -44,35 +63,50 @@ This policy only performs indexing of the properties you specify, which can impr
 {
   "indexingMode": "consistent",
   "includedPaths": [
-    { "path": "/name/?" },
-    { "path": "/address/city/?" }
+    { 
+      "path": "/name/?" 
+    },
+    { 
+      "path": "/address/city/?" 
+    }
   ],
-  "excludedPaths": [ { "path": "/*" } ]
+  "excludedPaths": [ 
+    {
+      path: '/_etag/?'
+    },
+    { 
+      "path": "/*" 
+    } 
+  ]
 }
 ```
 
-## Use range and spatial indexes
+## Use spatial indexes
 
-This policy demonstrates how to use different index types for different properties, such as range indexes for numbers and spatial indexes for geospatial data.
+This policy demonstrates how to use a spatial indexes for geospatial data.
 
 ```json
 {
   "indexingMode": "consistent",
   "includedPaths": [
+    { 
+      "path": "/*" 
+    },
     {
       "path": "/location/?",
       "indexes": [
-        { "kind": "Spatial", "dataType": "Point" }
-      ]
-    },
-    {
-      "path": "/age/?",
-      "indexes": [
-        { "kind": "Range", "dataType": "Number", "precision": -1 }
+        { 
+          "kind": "Spatial", 
+          "dataType": "Point" 
+        }
       ]
     }
   ],
-  "excludedPaths": [ { "path": "/*" } ]
+  "excludedPaths": [ 
+    {
+      path: '/_etag/?'
+    }
+  ]
 }
 ```
 
@@ -83,12 +117,26 @@ This policy adds a composite index to optimize queries that filter or sort on mu
 ```json
 {
   "indexingMode": "consistent",
-  "includedPaths": [ { "path": "/*" } ],
-  "excludedPaths": [],
+  "includedPaths": [ 
+    { 
+      "path": "/*" 
+    } 
+  ],
+  "excludedPaths": [ 
+    {
+      path: '/_etag/?'
+    }
+  ]
   "compositeIndexes": [
     [
-      { "path": "/category/?", "order": "ascending" },
-      { "path": "/timestamp/?", "order": "descending" }
+      { 
+        "path": "/category/?", 
+        "order": "ascending" 
+      },
+      { 
+        "path": "/timestamp/?", 
+        "order": "descending" 
+      }
     ]
   ]
 }
@@ -96,7 +144,7 @@ This policy adds a composite index to optimize queries that filter or sort on mu
 
 ## Disable indexing
 
-This policy disables indexing for the container, which is useful for write-heavy workloads where you don’t need to query the data.
+This policy disables indexing for the container, which is useful for write-heavy workloads where you don’t need to query the data and only use point-read operations to get fetch data.
 
 ```json
 {
@@ -104,19 +152,18 @@ This policy disables indexing for the container, which is useful for write-heavy
 }
 ```
 
-
 ## Vector indexing policy
 
-This policy enables vector indexing on the `/vector` property, allowing efficient similarity searches using cosine distance on three-dimensional `float32` vectors.
+This policy enables vector indexing on a property you named, `/vectors` you are using to store embeddings for that item, `/vectors`. This allows for efficient similarity searches using cosine distance with 512 dimensions with `float32` vectors.
 
 ```json
 {
   "vectorEmbeddings": [
     {
-      "path": "/vector",
+      "path": "/vectors",
       "dataType": "float32",
       "distanceFunction": "cosine",
-      "dimensions": 3
+      "dimensions": 512
     },
   ]
 }
@@ -124,7 +171,7 @@ This policy enables vector indexing on the `/vector` property, allowing efficien
 
 ## Full text indexing policy
 
-This policy configures the `/text` property for full text search using English language analysis, allowing efficient text search queries.
+This policy configures a property you named, `/text` property for full text search using English language analysis, allowing efficient text search queries.
 
 ```json
 {
@@ -202,7 +249,7 @@ This policy combines full text and vector indexing to enable hybrid search capab
       "path": "/\"_etag\"/?"
     },
     {
-      "path": "/vector/*"
+      "path": "/vectors/*"
     }
   ],
   "fullTextIndexes": [
@@ -212,7 +259,7 @@ This policy combines full text and vector indexing to enable hybrid search capab
   ],
   "vectorIndexes": [
     {
-      "path": "/vector",
+      "path": "/vectors",
       "type": "DiskANN"
     }
   ]
