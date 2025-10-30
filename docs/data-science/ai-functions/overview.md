@@ -48,7 +48,7 @@ AI Functions can be used with pandas (Python and PySpark runtimes), and with PyS
 
 ### Install dependencies
 
-- Pandas (Python runtime) 
+- Pandas (Python runtime)
   - `synapseml_internal` and `synapseml_core` whl files installation required (commands provided in the following code cell)
   - `openai` package installation required (command provided in the following code cell)
 - Pandas (PySpark runtime)
@@ -317,12 +317,12 @@ The `ai.similarity` function compares each input text value either to one common
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([ 
-        ("Bill Gates", "Microsoft"), 
-        ("Satya Nadella", "Toyota"), 
-        ("Joan of Arc", "Nike") 
-    ], columns=["names", "companies"])
+        ("Bill Gates", "Technology"), 
+        ("Satya Nadella", "Healthcare"), 
+        ("Joan of Arc", "Agriculture") 
+    ], columns=["names", "industries"])
     
-df["similarity"] = df["names"].ai.similarity(df["companies"])
+df["similarity"] = df["names"].ai.similarity(df["industries"])
 display(df)
 ```
 
@@ -333,18 +333,18 @@ display(df)
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
-        ("Bill Gates", "Microsoft"), 
-        ("Satya Nadella", "Toyota"), 
-        ("Joan of Arc", "Nike")
-    ], ["names", "companies"])
+        ("Bill Gates", "Technology"), 
+        ("Satya Nadella", "Healthcare"), 
+        ("Joan of Arc", "Agriculture")
+    ], ["names", "industries"])
 
-similarity = df.ai.similarity(input_col="names", other_col="companies", output_col="similarity")
+similarity = df.ai.similarity(input_col="names", other_col="industries", output_col="similarity")
 display(similarity)
 ```
 
 ---
 
-:::image type="content" source="../media/ai-functions/similarity-pairwise-example-output.png" alt-text="Screenshot of a data frame with columns 'names', 'companies', and 'similarity'. The 'similarity' column has similarity scores for the name and company." lightbox="../media/ai-functions/similarity-pairwise-example-output.png":::
+:::image type="content" source="../media/ai-functions/similarity-pairwise-example-output.png" alt-text="Screenshot of a data frame with columns 'names', 'industries', and 'similarity'. The 'similarity' column has similarity scores for the name and industry." lightbox="../media/ai-functions/similarity-pairwise-example-output.png":::
 
 ### Summarize text with ai.summarize
 

@@ -83,18 +83,18 @@ This example code cell provides the following output:
 # Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([ 
-        ("Bill Gates", "Microsoft"), 
-        ("Satya Nadella", "Toyota"), 
-        ("Joan of Arc", "Nike") 
-    ], columns=["names", "companies"])
+        ("Bill Gates", "Technology"), 
+        ("Satya Nadella", "Healthcare"), 
+        ("Joan of Arc", "Agriculture") 
+    ], columns=["names", "industries"])
     
-df["similarity"] = df["names"].ai.similarity(df["companies"])
+df["similarity"] = df["names"].ai.similarity(df["industries"])
 display(df)
 ```
 
 This example code cell provides the following output:
 
-:::image type="content" source="../../media/ai-functions/similarity-pairwise-example-output.png" alt-text="Screenshot of a data frame with columns 'names', 'companies', and 'similarity'. The 'similarity' column has similarity scores for name and company." lightbox="../../media/ai-functions/similarity-pairwise-example-output.png":::
+:::image type="content" source="../../media/ai-functions/similarity-pairwise-example-output.png" alt-text="Screenshot of a data frame with columns 'names', 'industries', and 'similarity'. The 'similarity' column has similarity scores for name and industry." lightbox="../../media/ai-functions/similarity-pairwise-example-output.png":::
 
 ---
 
