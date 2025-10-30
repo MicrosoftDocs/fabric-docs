@@ -91,7 +91,7 @@ To use an AI model other than the default, you can choose another model supporte
 
 Select one of the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service) and configure it using the `model_deployment_name` parameter. You can do this configuration in one of two ways:
 
-- Globally in the `aifunc.Conf` class.:
+- Globally in the `aifunc.Conf` class. Example:
 
 ```python
     aifunc.default_conf.model_deployment_name = "<model deployment name>">
