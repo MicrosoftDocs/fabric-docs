@@ -79,10 +79,6 @@ This article lists current limitations for Cosmos DB in Microsoft Fabric.
 
 Currently Microsoft Fabric does not support `run-as` functionality with Workspace Identity. Operations execute with the identity of the user that created them, not the user executing them. For example, when any user runs a notebook within a workspace, it will always execute in the context of the user who originally created that notebook.
 
-### Support for Azure user-assigned managed identities
-
-Currently Microsoft Fabric does not support granting workspace-level permissions (such as Admin, Contributor, Member, or Viewer roles) to user-assigned managed identities. Only user identities are supported for workspace role assignments at this time.
-
 ## Related content
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
