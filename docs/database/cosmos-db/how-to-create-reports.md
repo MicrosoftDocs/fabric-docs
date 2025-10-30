@@ -106,6 +106,27 @@ The Azure Cosmos DB v2 Power BI connector enables direct connection to your Cosm
 
 ### Connect to your database
 
+# [Power BI service](#tab/Service)
+
+1. In the Fabric portal (<https://app.fabric.microsoft.com>), navigate to your workspace.
+
+1. Select the **Create** tab on the left toolbar, and then select **Get data**.
+
+1. Search for and select **Azure Cosmos DB v2**.
+
+1. Enter your Cosmos DB in Fabric database endpoint URL (available from your database settings).
+
+1. When prompted to authenticate, select **Organizational account**, sign in, and select **Next**.
+
+   > [!NOTE]
+   > Account key authentication isn't supported for Cosmos DB in Fabric. Connection mode selection (Import or DirectQuery) isn't available during initial setup in the Power BI service—Import mode is used by default.
+
+1. In the **Navigator** pane, select the database and container that contain the necessary data for your report.
+
+    The **Preview** pane shows a list of **Record** items. Each document is represented as a **Record** type in Power BI. Nested JSON blocks within documents also appear as **Record** types.
+
+1. Expand the record columns to view document properties, then select **Load** or **Transform Data**.
+
 # [Power BI Desktop](#tab/Desktop)
 
 1. Open **Power BI Desktop**.
@@ -128,27 +149,6 @@ The Azure Cosmos DB v2 Power BI connector enables direct connection to your Cosm
    - **Import**: Select **Import** to load a copy of the data into Power BI Desktop. This mode is ideal for large datasets and provides faster report performance after initial data load.
 
    - **DirectQuery**: Select **DirectQuery** to query your database in real-time. This mode ensures your reports always show the latest data without manual refresh, but report performance depends on your database query performance.
-
-1. In the **Navigator** pane, select the database and container that contain the necessary data for your report.
-
-    The **Preview** pane shows a list of **Record** items. Each document is represented as a **Record** type in Power BI. Nested JSON blocks within documents also appear as **Record** types.
-
-1. Expand the record columns to view document properties, then select **Load** or **Transform Data**.
-
-# [Power BI service](#tab/Service)
-
-1. In the Fabric portal (<https://app.fabric.microsoft.com>), navigate to your workspace.
-
-1. Select the **Create** tab on the left toolbar, and then select **Get data**.
-
-1. Search for and select **Azure Cosmos DB v2**.
-
-1. Enter your Cosmos DB in Fabric database endpoint URL (available from your database settings).
-
-1. When prompted to authenticate, select **Organizational account**, sign in, and select **Next**.
-
-   > [!NOTE]
-   > Account key authentication isn't supported for Cosmos DB in Fabric. Connection mode selection (Import or DirectQuery) isn't available during initial setup in the Power BI service—Import mode is used by default.
 
 1. In the **Navigator** pane, select the database and container that contain the necessary data for your report.
 
