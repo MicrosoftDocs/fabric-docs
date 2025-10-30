@@ -20,10 +20,10 @@ items:
         href: mirror-onelake.md
       - name: Query mirrored data
         href: tutorial-mirroring.md
-      - name: Create Power BI reports
-        href: how-to-create-reports.md
       - name: Access data from a lakehouse
         href: how-to-access-data-lakehouse.md
+      - name: Create Power BI reports
+        href: how-to-create-reports.md
   - name: Build AI applications
     items:
       - name: Index vector data
