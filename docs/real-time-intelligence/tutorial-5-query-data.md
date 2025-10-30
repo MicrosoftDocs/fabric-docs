@@ -24,7 +24,7 @@ In this part of the tutorial, you query streaming data using a few different met
 
 The name of the table you created from the update policy in a previous step is *TransformedData*. Use this table name (case-sensitive) as the data source for your query.
 
-- Enter the following query, and then press **Shift + Enter** to run the query.
+- In the Tutorial_queryset, enter the following query, and then press **Shift + Enter** to run the query.
 
     ```kusto
     TransformedData
@@ -97,7 +97,10 @@ This query returns a KQL equivalent of the T-SQL query you enter. The KQL query 
 
 If you're new to writing KQL, you can ask a question in natural language and Copilot generates the KQL query for you.
 
+1. Select **Queryset** from the menu bar. 
 1. In the KQL queryset, select the **Copilot** icon from the menu bar.
+
+    :::image type="content" source="media/tutorial/copilot-select.png" alt-text="Screenshot of how to get to the right copilot.":::
 
 1. Enter a question in natural language. For example, "Which station has the most bikes right now. Use the materialized view for the most updated data." It can help to include the name of the materialized view in your question.
 

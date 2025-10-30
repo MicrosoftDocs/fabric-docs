@@ -31,58 +31,20 @@ In this part of the tutorial, you learn how to create a Real-Time Dashboard in R
 
     :::image type="content" source="media/tutorial/bikes-by-bikepoint.png" alt-text="Screenshot of query showing column chart of bikes by bike point ID. ":::
 
-1. Select **Pin to dashboard**.
+1. Select **Save to dashboard** > **New Real-Time Dashboard**.
 1. Enter the following information:
-
-    :::image type="content" source="media/tutorial/pin-dashboard.png" alt-text="Screenshot of pinning query to dashboard in Real-Time Intelligence.":::
 
     | Field | Value |
     | --- | --- |
-    | **Create new tile** | *In a new dashboard* |
-    | **Dashboard name** | *TutorialDashboard* |
-    | **Tile name** | *Recent bikes by Timepoint* |
-    | **Open dashboard after creation** | *Selected* |
+    | **Name** | *TutorialDashboard* |
+    | **Location** | The workspace in which you have created your resources |
+    
 
 1. Select **Create**.
 
-Since you've selected **Open dashboard after creation**, the new Real-Time dashboard, *TutorialDashboard*, opens with the *Recent bikes by Bikepoint* tile. You can also access the Real-Time dashboard by browsing to your workspace and selecting the desired item.
+The new Real-Time dashboard, *TutorialDashboard*, opens with the New tile. You can also access the Real-Time dashboard by browsing to your workspace and selecting the desired item.
 
 ## Add a new tile to the dashboard
-
-1. On the top menu bar, toggle from **Viewing** mode to **Editing** mode.
-1. Select **New tile**
-
-    :::image type="content" source="media/tutorial/new-tile.png" alt-text="Screenshot of Real-Time Dashboard in editing mode with new tile selected.":::
-
-1. In the query editor, enter the following query:
-
-    ```kusto
-    RawData
-    | where Neighbourhood == "Chelsea"
-    ```
-
-1. From the menu ribbon, Select **Apply changes**.
-    A new tile is created.
-1. Rename the tile by selecting the **More menu [...]** on the top right corner of the tile > **Rename tile**.
-1. Enter the new name *Chelsea bikes* to rename the tile.
-
-## Explore the data visually by adding an aggregation
-
-1. On the new **Chelsea bikes** tile, select the **Explore** icon. :::image type="icon" source="media/tutorial/explore-icon.png" border="false":::
-1. Select **+ Add** > **Aggregation**.
-1. Select **Operator** > **max** and **Column** > *No_Bikes*.
-1. Under **Display Name**, enter *Max_Bikes*.
-1. Select **+ Add grouping**.
-1. Select **Group by** > *Street*.
-1. Select **Apply**.
-    
-    :::image type="content" source="media/tutorial/aggregation-tool.png" alt-text="Screenshot of exploration tool showing max number of bikes by street.":::
-    
-    Notice that the query elements are updated to include the **max(No_Bikes) by Street** aggregation. The resulting table changed to show the total count of bike locations by street.
-1. Change the **Visual type** to **Bar chart**.
-1. Select **Pin to dashboard** > **In this dashboard**.
-
-## Add a map tile
 
 1. Select **New tile**.
 1. In the query editor, enter and run the following query:
