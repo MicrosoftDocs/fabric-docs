@@ -1,6 +1,6 @@
 ---
 title: Authenticate to Cosmos DB Database From Fabric Notebooks
-description: How do authenticate to Cosmos DB from a notebook in Microsoft Fabric.
+description: How to authenticate to Cosmos DB from a notebook in Microsoft Fabric.
 author: markjbrown
 ms.author: mjbrown
 ms.topic: how-to
@@ -45,9 +45,9 @@ First, get the endpoint for the Cosmos DB database in Fabric. This endpoint is r
 
 ## Authenticate from a notebook
 
-Fabric notebooks do not have a way to create a valid Azure credential object used by Azure services. Users authenticate using [Fabric NotebookUtils credential utilities](/fabric/data-engineering/notebook-utilities#credentials-utilities) which requires the authentication scope for Cosmos DB and produces a token in string format. This requires some custom code to create a valid Azure credential object.
+Fabric notebooks don't have a way to create a valid Azure credential object used by Azure services. Users authenticate using [Fabric NotebookUtils credential utilities](/fabric/data-engineering/notebook-utilities#credentials-utilities) which requires the authentication scope for Cosmos DB and produces a token in string format. This requires some custom code to create a valid Azure credential object.
 
-Here is a notebook sample that demonstrates how to do this.
+Here's a notebook sample that demonstrates how to do this.
 
 **Cell [1]:**
 
