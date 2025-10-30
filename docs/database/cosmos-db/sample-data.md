@@ -1,5 +1,5 @@
 ---
-title: Sample Data Set Cosmos DB Database
+title: Sample Data Sets Cosmos DB Database
 description: Explore the sample data sets and schemas that are available for use in to the Cosmos DB database workload within Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
@@ -10,33 +10,58 @@ ai-usage: ai-generated
 
 # Sample data sets in Cosmos DB in Microsoft Fabric
 
-Microsoft Fabric's Cosmos DB database workload comes with built-in sample data sets designed to help you explore, learn, and experiment. These data sets represent various entity types with properties that reflect real-world data.
+Microsoft Fabric's Cosmos DB database workload provides built-in sample data sets to help you explore, learn, and experiment with NoSQL database patterns. These data sets represent a realistic e-commerce scenario with products and customer reviews, demonstrating how different entity types coexist in the same container.
 
-## Core sample data set
+Two sample data sets are available:
 
-This data set is a collection of products, each with various properties that reflect real-world e-commerce scenarios.
+- **Standard sample data**: Core e-commerce data with products and reviews
+- **Vector sample data**: Enhanced version that includes 512-dimensional vector embeddings for AI and machine learning scenarios
 
-### Data set structure and schema
+## Data set overview
 
-Each item in the sample data set represents a product and includes the following properties:
+Both sample data sets contain the same e-commerce data with two document types.
 
-| | Type | Description |
+- **Product documents** (`docType: "product"`) - Individual products with pricing, inventory, and metadata
+- **Review documents** (`docType: "review"`) - Customer reviews and ratings linked to products via `productId`
+
+The vector sample data set is based on the standard sample data set. Product documents in the vector data set include an additional `vectors` property containing 512-dimensional embeddings for semantic search capabilities.
+
+## Document schemas
+
+### Product document schema
+
+Product documents contain detailed information about individual items in the e-commerce catalog:
+
+| Property | Type | Description |
 | --- | --- | --- |
-| **`id`** | `string` | A unique identifier for the product in globally unique identifier (GUID) format |
-| **`name`** | `string` | The product's name |
-| **`price`** | `number` | The current price of the product |
-| **`category`** | `string` | The product category, such as `Electronics`, `Media`, `Accessory`, `Peripheral`, or `Other` |
-| **`description`** | `string` | A brief description of the product |
-| **`stock`** | `number` | The number of items in stock |
-| **`countryOfOrigin`** | `string` | The region where the product was made |
-| **`firstAvailable`** | `string` | The date and time the product was first available  in ISO 8601 format |
-| **`priceHistory`** | `array` | An array of previous prices for the product (array of numbers) |
-| **`customerRatings`** | `array` | An array of customer rating objects |
-| **`customerRatings[].username`** | `string` | Username of the customer who gave the rating |
-| **`customerRatings[].stars`** | `number` | Numeric rating value |
-| **`customerRatings[].date`** | `string` | The date and time the rating was given in ISO 8601 format |
-| **`customerRatings[].verifiedUser`** | `boolean` | Boolean indicating if the user is verified |
-| **`rareProperty`** | `boolean` | (*Optional*) Indicates if the product has a rare attribute |
+| **`id`** | `string` | Unique identifier for the product in GUID format |
+| **`docType`** | `string` | Document type identifier, always `"product"` |
+| **`productId`** | `string` | Product identifier, same as `id` for product documents |
+| **`name`** | `string` | Product display name |
+| **`description`** | `string` | Detailed product description |
+| **`categoryName`** | `string` | Product category (e.g., "Computers, Laptops", "Media", "Accessories") |
+| **`inventory`** | `number` | Number of items currently in stock |
+| **`firstAvailable`** | `string` | Date when product became available (ISO 8601 format) |
+| **`currentPrice`** | `number` | Current selling price |
+| **`priceHistory`** | `array` | Array of price change objects with `date` and `price` fields |
+| **`priceHistory[].priceDate`** | `string` | Date and time of the price change in ISO 8601 format |
+| **`priceHistory[].newPrice`** | `number` | Price at the specified date |
+| **`vectors`** | `array` | *Vector sample data only* - 512-dimensional vector embedding |
+
+### Review document schema
+
+Review documents contain customer feedback and ratings for products:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| **`id`** | `string` | Unique identifier for the review in GUID format |
+| **`docType`** | `string` | Document type identifier, always `"review"` |
+| **`productId`** | `string` | References the `id` of the product being reviewed |
+| **`categoryName`** | `string` | Product category (inherited from the reviewed product) |
+| **`customerName`** | `string` | Name of the customer who wrote the review |
+| **`reviewDate`** | `string` | Date when the review was submitted (ISO 8601 format) |
+| **`stars`** | `number` | Rating given by the customer (typically 1-5 scale) |
+| **`reviewText`** | `string` | Written review content from the customer |
 
 > [!NOTE]
 > Cosmos DB automatically manages all standard system properties (`_rid`, `_self`, `_etag`, `_attachments`, `_ts`) for all documents.
@@ -44,239 +69,192 @@ Each item in the sample data set represents a product and includes the following
 > [!NOTE]
 > For more information about the ISO 8601 format, see [international date and time standard](https://en.wikipedia.org/wiki/ISO_8601). For more information about the GUID format, see [universally unique identifiers](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 
-### Example item
+## Example documents
 
-Here's an example of a product from the sample data set:
+The following examples show the structure of documents in both sample data sets.
+
+### Standard product document example
 
 ```json
 {
-  "id": "dddddddd-3333-4444-5555-eeeeeeeeeeee",
-  "name": "Awesome Stand Micro (Red)",
-  "price": 1073.12,
-  "category": "Accessory",
-  "description": "This Awesome Stand Micro (Red) is rated 4.6 out of 5 by 3.\n\nRated 3 out of 5 by Thomas Margrand (tmargand) from A great deal So this is a very nice buy, but the price is a little high, so I will not be buying again. Good price for it, but I still don't know if all i love about it is the high",
-  "stock": 11,
-  "countryOfOrigin": "France",
-  "firstAvailable": "2020-05-04 16:01:42",
+  "id": "ae449848-3f15-4147-8eee-fe76cfcc6bb4",
+  "docType": "product",
+  "productId": "ae449848-3f15-4147-8eee-fe76cfcc6bb4",
+  "name": "EchoSphere Pro ANC-X900 Premium Headphones",
+  "description": "EchoSphere Pro ANC-X900 Premium Headphones deliver immersive sound with advanced 40mm drivers and Adaptive Hybrid Active Noise Cancellation. Bluetooth 5.3 ensures seamless connectivity.",
+  "categoryName": "Accessories, Premium Headphones",
+  "inventory": 772,
+  "firstAvailable": "2024-01-01T00:00:00",
+  "currentPrice": 454.87,
   "priceHistory": [
-    1143.82,
-    1098.56
-  ],
-  "customerRatings": [
     {
-      "username": "cthomas",
-      "stars": 1,
-      "date": "2021-09-25 11:29:23",
-      "verifiedUser": true
+      "date": "2024-01-01T00:00:00",
+      "price": 349.0
     },
     {
-      "username": "tmargand",
-      "stars": 3,
-      "date": "2022-05-13 21:56:20",
-      "verifiedUser": true
+      "date": "2024-08-01T00:00:00",
+      "price": 363.0
+    },
+    {
+      "date": "2025-04-01T00:00:00",
+      "price": 408.14
+    },
+    {
+      "date": "2025-08-01T00:00:00",
+      "price": 454.87
     }
   ]
 }
 ```
 
-### How to use the sample data
-
-You can use this data set to practice querying, filtering, and aggregating data in Cosmos DB within Microsoft Fabric. Try searching for products by category, analyzing price trends, or exploring customer feedback.
-
-### JSON schema for the sample data set
-
-If you want to use this sample data set in your own environment, here's a JSON schema that describes the structure of each product item:
+### Vectorized product document example
 
 ```json
 {
-  "type": "object",
-  "properties": {
-    "id": { "type": "string" },
-    "name": { "type": "string" },
-    "price": { "type": "number" },
-    "category": { "type": "string" },
-    "description": { "type": "string" },
-    "stock": { "type": "number" },
-    "countryOfOrigin": { "type": "string" },
-    "firstAvailable": { "type": "string" },
-    "priceHistory": {
-      "type": "array",
-      "items": { "type": "number" }
-    },
-    "customerRatings": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "username": { "type": "string" },
-          "stars": { "type": "number" },
-          "date": { "type": "string" },
-          "verifiedUser": { "type": "boolean" }
-        },
-        "required": ["username", "stars", "date", "verifiedUser"]
-      }
-    },
-    "rareProperty": { "type": "boolean" }
-  },
-  "required": [
-    "id", "name", "price", "category", "description", "stock", "countryOfOrigin", "firstAvailable", "priceHistory", "customerRatings"
-  ]
-}
-```
-
-This schema can help you validate or generate similar data for your own Cosmos DB workloads.
-
-## Vector sample data set
-
-This data set contains vector embeddings and AI-ready sample data. It supports testing artificial intelligence and agent-based workloads. You can use it for semantic search, similarity matching, and machine learning scenarios.
-
-### Data set structure and schema
-
-The vector sample data set contains two primary document types that demonstrate different use cases for AI and vector search:
-
-#### Product documents
-
-Product documents contain detailed product information along with vector embeddings for semantic search capabilities:
-
-| | Type | Description |
-| --- | --- | --- |
-| **`id`** | `string` | A unique identifier for the product in globally unique identifier (GUID) format |
-| **`productId`** | `string` | Product identifier (could match `id` for product documents) |
-| **`category`** | `string` | The product category, such as `Electronics`, `Media`, `Accessory`, `Peripheral`, or `Other` |
-| **`docType`** | `string` | Document type identifier set to `product` for product documents |
-| **`name`** | `string` | The product's name |
-| **`description`** | `string` | A detailed description of the product |
-| **`countryOfOrigin`** | `string` | The region where the product was manufactured |
-| **`rareItem`** | `boolean` | Indicates if the product is a rare or special item |
-| **`firstAvailable`** | `string` | The date and time the product was first available in ISO 8601 format |
-| **`price`** | `number` | The current price of the product |
-| **`stock`** | `number` | The number of items in stock |
-| **`priceHistory`** | `array` | An array of price history objects containing `priceDate` and `newPrice` |
-| **`priceHistory[].priceDate`** | `string` | The date and time of the price change in ISO 8601 format |
-| **`priceHistory[].newPrice`** | `number` | The price at the specified date |
-| **`descriptionVector`** | `array` | A 512-dimensional vector embedding representing the product description for semantic search |
-
-#### Customer rating documents
-
-Customer rating documents contain individual product reviews and ratings:
-
-| | Type | Description |
-| --- | --- | --- |
-| **`id`** | `string` | A unique identifier for the rating in globally unique identifier (GUID) format |
-| **`productId`** | `string` | The identifier of the product being rated |
-| **`category`** | `string` | The category of the product being rated |
-| **`docType`** | `string` | Document type identifier set to `customerRating` for rating documents |
-| **`userName`** | `string` | Username of the customer who provided the rating |
-| **`reviewDate`** | `string` | The date and time the review was submitted in ISO 8601 format |
-| **`stars`** | `number` | Numeric rating value (typically 1-5) |
-| **`verifiedUser`** | `boolean` | Boolean indicating if the user is verified |
-
-> [!NOTE]
-> Cosmos DB automatically manages all standard system properties (`_rid`, `_self`, `_etag`, `_attachments`, `_ts`) for all documents.
-
-### Example items
-
-Here are examples of both document types from the vector sample data set:
-
-#### Product document example
-
-Here's an example of a product document from the vector sample data set:
-
-```json
-{
-    "id": "71abb6ae-6745-47cc-9834-c85855c43ff0",
-    "productId": "71abb6ae-6745-47cc-9834-c85855c43ff0",
-    "category": "Electronics",
+    "id": "ae449848-3f15-4147-8eee-fe76cfcc6bb4",
     "docType": "product",
-    "name": "Awesome Computer Super (Black)",
-    "description": "This Awesome Computer Super (Black) is a cool computer you should buy in stores. If you are already using one then this would be a good computer for you. I recommend that you save an extra $35 and purchase a cheap computer",
-    "countryOfOrigin": "India",
-    "rareItem": true,
-    "firstAvailable": "2019-02-06T18:00:31",
-    "price": 344.89,
-    "stock": 95,
+    "productId": "ae449848-3f15-4147-8eee-fe76cfcc6bb4",
+    "name": "EchoSphere Pro ANC-X900 Premium Headphones",
+    "description": "EchoSphere Pro ANC-X900 Premium Headphones deliver immersive sound with advanced 40mm drivers and Adaptive Hybrid Active Noise Cancellation. Bluetooth 5.3 ensures seamless connectivity.",
+    "categoryName": "Accessories, Premium Headphones",
+    "inventory": 772,
+    "firstAvailable": "2024-01-01T00:00:00",
+    "currentPrice": 454.87,
     "priceHistory": [
-        {
-            "priceDate": "2019-02-06T18:00:31",
-            "newPrice": 316.4
-        },
-        {
-            "priceDate": "2025-09-08T18:00:31",
-            "newPrice": 344.89
-        }
+      {
+        "date": "2024-01-01T00:00:00",
+        "price": 349.0
+      },
+      {
+        "date": "2025-08-01T00:00:00",
+        "price": 454.87
+      }
     ],
-    "descriptionVector": [
-        -0.04926479607820511,
-        0.0013136870693415403,
-        -0.02283181995153427,
-        // ... (512 dimensions total)
-        -0.046570055186748505
+    "vectors": [
+      -0.02783808670938015,
+      0.011827611364424229,
+      -0.04711977392435074,
+      // ... (512 dimensions total)
+      0.04251981899142265
     ]
 }
 ```
 
-#### Customer rating document example
+### Review document example
 
-Here's an example of a customer rating document from the vector sample data set:
+Review documents are identical in both sample data sets:
 
 ```json
 {
-    "id": "63d50bd1-b3a5-4b25-ac3f-2bd979a5d731",
-    "productId": "fdd09a81-1a6b-48b8-9c04-f35a44c3479a",
-    "category": "Media",
-    "docType": "customerRating",
-    "userName": "eallen",
-    "reviewDate": "2021-07-09T02:18:13",
-    "stars": 1,
-    "verifiedUser": true
+  "id": "fa799013-1746-4a7f-bd0f-2a95b2b76481",
+  "docType": "review",
+  "productId": "e847e069-d0f9-4fec-b42a-d37cd5b2f536",
+  "categoryName": "Accessories, Premium Headphones",
+  "customerName": "Emily Rodriguez",
+  "reviewDate": "2025-03-02T00:00:00",
+  "stars": 5,
+  "reviewText": "Excellent sound quality! Premium build! This EchoSphere Pro ANC-X900 exceeded hopes."
 }
 ```
 
-### How to use the sample data
+## How to use the sample data
 
-You can use this vector-enabled data set to practice advanced AI and machine learning scenarios in Cosmos DB in Fabric. This data set is ideal for experimenting with:
+Both sample data sets help you practice querying, filtering, and aggregating data in Cosmos DB. The mixed document types provide realistic scenarios for various use cases.
 
-- **Semantic search**: Use the `descriptionVector` field to find products with similar descriptions using vector similarity queries
-- **Hybrid search**: Combine traditional filtering (by category, price range) with semantic search for enhanced discovery
-- **Recommendation systems**: Build recommendation engines based on product similarity using vector embeddings
-- **Customer analytics**: Analyze customer ratings and sentiment across products
-- **AI agent scenarios**: Use the rich product and rating data to build intelligent shopping assistants or chatbots
+### Standard sample data scenarios
 
-The vector embeddings enable you to perform similarity searches to find products with related descriptions, even when they don't share exact keywords.
+- **Joining related data**: Link reviews to products using `productId`
+- **Category analysis**: Query products and reviews by `categoryName`
+- **Review analysis**: Examine customer feedback patterns and ratings
 
-### JSON schema for the vector sample data set
+#### Common query patterns
 
-If you want to use this sample data set in your own environment, here are JSON schemas for both document types:
+**Get all products in a category:**
+```nosql
+SELECT *
+FROM c
+WHERE c.docType = "product"
+  AND c.categoryName = "Computers, Laptops"
+```
 
-#### Product document schema
+**Get reviews for a specific product:**
+```nosql
+SELECT *
+FROM c
+WHERE c.docType = "review"
+  AND c.productId = "77be013f-4036-4311-9b5a-dab0c3d022be"
+```
+
+### Vector sample data scenarios
+
+- **Semantic similarity search**: Find products with similar features using vector embeddings
+- **Content-based recommendations**: Generate product suggestions based on description similarity
+- **Hybrid queries**: Combine traditional filters with vector similarity for enhanced results
+
+## JSON schemas
+
+The following JSON schemas describe the structure of documents in both sample data sets. Use these schemas to validate or generate similar data for your own Cosmos DB workloads.
+
+### Standard product document schema
 
 ```json
 {
   "type": "object",
   "properties": {
     "id": { "type": "string" },
+    "docType": { "type": "string" },
     "productId": { "type": "string" },
-    "category": { "type": "string" },
-    "docType": { "type": "string", "enum": ["product"] },
     "name": { "type": "string" },
     "description": { "type": "string" },
-    "countryOfOrigin": { "type": "string" },
-    "rareItem": { "type": "boolean" },
+    "categoryName": { "type": "string" },
+    "inventory": { "type": "number" },
     "firstAvailable": { "type": "string" },
-    "price": { "type": "number" },
-    "stock": { "type": "number" },
+    "currentPrice": { "type": "number" },
     "priceHistory": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "priceDate": { "type": "string" },
-          "newPrice": { "type": "number" }
+          "date": { "type": "string" },
+          "price": { "type": "number" }
         },
-        "required": ["priceDate", "newPrice"]
+        "required": ["date", "price"]
+      }
+    }
+  },
+  "required": [
+    "id", "docType", "productId", "name", "description", "categoryName", "inventory", "firstAvailable", "currentPrice", "priceHistory"
+  ]
+}
+```
+
+### Vector-enabled product document schema
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "docType": { "type": "string" },
+    "productId": { "type": "string" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "categoryName": { "type": "string" },
+    "inventory": { "type": "number" },
+    "firstAvailable": { "type": "string" },
+    "currentPrice": { "type": "number" },
+    "priceHistory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": { "type": "string" },
+          "price": { "type": "number" }
+        },
+        "required": ["date", "price"]
       }
     },
-    "descriptionVector": {
+    "vectors": {
       "type": "array",
       "items": { "type": "number" },
       "minItems": 512,
@@ -284,36 +262,32 @@ If you want to use this sample data set in your own environment, here are JSON s
     }
   },
   "required": [
-    "id", "productId", "category", "docType", "name", "description", 
-    "countryOfOrigin", "rareItem", "firstAvailable", "price", "stock", 
-    "priceHistory", "descriptionVector"
+    "id", "docType", "productId", "name", "description", "categoryName", "inventory", "firstAvailable", "currentPrice", "priceHistory", "vectors"
   ]
 }
 ```
 
-#### Customer rating document schema
+### Review document schema
 
 ```json
 {
   "type": "object",
   "properties": {
     "id": { "type": "string" },
+    "docType": { "type": "string", "const": "review" },
     "productId": { "type": "string" },
-    "category": { "type": "string" },
-    "docType": { "type": "string", "enum": ["customerRating"] },
-    "userName": { "type": "string" },
+    "categoryName": { "type": "string" },
+    "customerName": { "type": "string" },
     "reviewDate": { "type": "string" },
     "stars": { "type": "number" },
-    "verifiedUser": { "type": "boolean" }
+    "reviewText": { "type": "string" }
   },
   "required": [
-    "id", "productId", "category", "docType", "userName", 
-    "reviewDate", "stars", "verifiedUser"
+    "id", "docType", "productId", "categoryName", "customerName", 
+    "reviewDate", "stars"
   ]
 }
 ```
-
-These schemas help validate or generate similar vector-enabled data for your own AI and machine learning workloads in Cosmos DB.
 
 ## Related content
 
