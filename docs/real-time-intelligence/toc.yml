@@ -546,7 +546,7 @@ items:
     - name: Connectors
       items:
       - name: Data connectors overview
-        href: data-connectors/data-connectors.md
+        href: event-house-connectors.md
       - name: Apache Flink
         href: get-data-flink.md
       - name: Apache Kafka
