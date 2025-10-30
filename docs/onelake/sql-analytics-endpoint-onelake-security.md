@@ -94,16 +94,15 @@ This synchronization ensures that OneLake security definitions stay authoritativ
 
 ### Security sync errors & resolution
 
-| Scenario | Behavior in user identity mode | Behavior in delegated mode | Corrective action |
+| Scenario | Behavior in user identity mode | Behavior in delegated mode | Corrective action | Notes |
 |----|----|----|----|
-| **RLS policy references a deleted or renamed column** | Error: *Row-level security policy references a column that no longer exists.*Database enters error state until policy is fixed. | Error: *Invalid column name \<column name\>* | Update or remove one or more affected roles, or restore the missing column. |
-| **CLS policy references a deleted or renamed column** | Error: *Column-level security policy references a column that no longer exists.*Database enters error state until policy is fixed. | Error: *Invalid column name \<column name\>* | Update or remove one or more affected roles, or restore the missing column. |
-| **RLS/CLS policy references a deleted or renamed table** | Error: *Security policy references a table that no longer exists.* | No error surfaced; query fails silently if table is missing. | Update or remove one or more affected roles, or restore the missing table. |
-| **DDM (Dynamic Data Masking) policy references a deleted or renamed column** | DDM not supported from OneLake Security, must be implemented through SQL. | Error: *Invalid column name \<column name\>* | Update or remove one or more affected DDM rules, or restore the missing column. |
-| **System error (unexpected failure)** | Error: *An unexpected system error occurred. Try again or contact support.* | Error: *An internal error has occurred while applying table changes to SQL.* | Retry operation; if issue persists, contact Microsoft Support. |
-| **User doesn't have permission on the artifact** | Error: *User doesn't have permission on the artifact* | Error: *User doesn't have permission on the artifact* | Provide user with objectID {objectID} permission to the artifact..<sup>1</sup> |
-
-<sup>1</sup> The object ID must be an exact match between the OneLake security role member and the Fabric item permissions. If a group is added to the role membership, then that same group must be given the Fabric Read permission. Adding a member from that group to the item does not count as a direct match.
+| **RLS policy references a deleted or renamed column** | Error: *Row-level security policy references a column that no longer exists.*Database enters error state until policy is fixed. | Error: *Invalid column name \<column name\>* | Update or remove one or more affected roles, or restore the missing column. | The update will need to be made in the lakehouse where the role was created. |
+| **CLS policy references a deleted or renamed column** | Error: *Column-level security policy references a column that no longer exists.*Database enters error state until policy is fixed. | Error: *Invalid column name \<column name\>* | Update or remove one or more affected roles, or restore the missing column. | The update will need to be made in the lakehouse where the role was created. |
+| **RLS/CLS policy references a deleted or renamed table** | Error: *Security policy references a table that no longer exists.* | No error surfaced; query fails silently if table is missing. | Update or remove one or more affected roles, or restore the missing table. | The update will need to be made in the lakehouse where the role was created. |
+| **DDM (Dynamic Data Masking) policy references a deleted or renamed column** | DDM not supported from OneLake Security, must be implemented through SQL. | Error: *Invalid column name \<column name\>* | Update or remove one or more affected DDM rules, or restore the missing column. | Update the DDM policy in the SQL Analytics Endpoint. |
+| **System error (unexpected failure)** | Error: *An unexpected system error occurred. Try again or contact support.* | Error: *An internal error has occurred while applying table changes to SQL.* | Retry operation; if issue persists, contact Microsoft Support. | N/A |
+| **User doesn't have permission on the artifact** | Error: *User doesn't have permission on the artifact* | Error: *User doesn't have permission on the artifact* | Provide user with objectID {objectID} permission to the artifact. | The object ID must be an exact match between the OneLake security role member and the Fabric item permissions. If a group is added to the role membership, then that same group must be given the Fabric Read permission. Adding a member from that group to the item does not count as a direct match. |
+| **User principal is not supported.** | Error: *User principal is not supported.* | Error: *User principal is not supported.* | Please remove user {username} from role DefaultReader | This error occurs if the user is no longer a valid Entra ID, such as if the user has left your organization or been deleted. Remove them from the role to resolve this error. |
 
 ### Shortcuts behavior with security sync
 
@@ -235,6 +234,8 @@ The access mode determines how data access is authenticated and enforced when qu
 * Mail enabled security groups and distribution lists are not supported.
   
 * The owner of the lakehouse must be a member of the admin, member, or contributor workspace roles; otherwise, security isn't applied to the SQL analytics endpoint.
+
+* The owner of the lakehouse cannot be a service principal for security sync to work. 
 
 ## Related content
 
