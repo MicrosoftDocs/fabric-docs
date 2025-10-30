@@ -71,9 +71,9 @@ To run Apache Airflow custom pools, make sure your Fabric capacity is large enou
 
 Microsoft Fabric measures compute usage in **Capacity Units (CUs)**. All workloads, including Apache Airflow, use CUs.
 
-For specifics about CUs for and the pricing model for Apache Airflow pools, see [Apache Airflow job pricing for Data Factory in Microsoft Fabric](pricing-apache-airflow-job.md).
+For specifics about CUs and the pricing model for Apache Airflow pools, see [Apache Airflow job pricing for Data Factory in Microsoft Fabric](pricing-apache-airflow-job.md).
 
-For pricing specifics in your region, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/)
+For pricing specifics in your region, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
 > [!TIP]
 > Custom pools don't shut down automatically when idle.
