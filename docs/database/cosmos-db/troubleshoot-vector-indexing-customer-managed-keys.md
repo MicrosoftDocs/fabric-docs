@@ -23,11 +23,11 @@ This scenario isn't supported during preview. There are two workarounds to this 
 
 ### Migrate to new workspace
 
-Create a new workspace, enabled CMK on it, then create your Cosmos DB artifacts and migrate any existing Fabric artifacts and data into the new workspace.
+Create a new workspace, enable CMK on it, then create your Cosmos DB artifacts and migrate any existing Fabric artifacts and data into the new workspace.
 
 ### Delete the Cosmos DB artifacts
 
-Deleted Cosmos DB artifacts are associated with a Fabric workspace for up to 8 days after they are deleted to allow a user to restore them to the workspace. If migrating to a new workspace is not possible or desirable, delete all the Cosmos DB artifacts in the workspace, then wait eight days until all restore points expire. With all restore points expired you can enable CMK on the workspace, then provision new Cosmos DB artifacts within it.
+Deleted Cosmos DB artifacts are associated with a Fabric workspace for up to eight days after they are deleted to allow a user to restore them to the workspace. If migrating to a new workspace is not possible or desirable, delete all the Cosmos DB artifacts in the workspace, then wait eight days until all restore points expire. With all restore points expired you can enable CMK on the workspace, then provision new Cosmos DB artifacts within it.
 
 ## Cannot disable CMK on a workspace with Cosmos DB artifacts
 

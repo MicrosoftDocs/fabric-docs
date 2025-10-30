@@ -12,7 +12,7 @@ appliesto:
 
 # Customer managed keys for Cosmos DB in Microsoft Fabric (Preview)
 
-Cosmos DB in Fabric has support for customer managed keys (CMK) in Microsoft Fabric in *preview*. To enable CMK in your Microsoft Fabric workspace see, [Customer-managed keys for Fabric workspaces](../../security/workspace-customer-managed-keys.md).
+Cosmos DB in Fabric has support for customer managed keys (CMK) in Microsoft Fabric in *preview*. To enable CMK in your Microsoft Fabric workspace, see [Customer-managed keys for Fabric workspaces](../../security/workspace-customer-managed-keys.md).
 
 > [!IMPORTANT]
 > During preview, if you intend to use CMK in any of your workspaces, this should be enabled **BEFORE** provisioning any Cosmos DB artifacts. The following limitations apply during this preview.
@@ -23,7 +23,7 @@ Cosmos DB in Fabric has support for customer managed keys (CMK) in Microsoft Fab
 | Scenario | Supported | Comments |
 |-|-|-|
 | Enable CMK before creating first Cosmos DB artifact | Yes | Fully supported |
-| Rotating keys on workspace | Yes | Fully supported once CMK is enabled |
+| Rotating keys on workspace | Yes | Fully supported |
 | Enable CMK after creating a Cosmos DB artifact | No | Not supported during preview |
 | Disable CMK on workspace with Cosmos DB artifact | No | Not supported during preview |
 | Re-enable CMK on a workspace after adding a Cosmos DB artifact | No | Not supported during preview |
