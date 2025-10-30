@@ -24,23 +24,18 @@ This article provides guidance on how to best secure your Cosmos DB in Fabric de
 
 - **Separate the Azure identities used for data and control plane access**: Use distinct Azure identities for control plane and data plane operations to reduce the risk of privilege escalation and ensure better access control. This separation enhances security by limiting the scope of each identity. For more information, see [configure authorization](authorization.md).
 
-- **Plan identity strategy around current limitations**: Be aware that user-assigned managed identities cannot be granted workspace-level permissions in Fabric. Use system-assigned managed identities or user identities for scenarios requiring workspace access. For workspace role assignments, only user identities are currently supported.
-
 ## User permissions
 
 - **Configure least-permissive Fabric workspace access**: User permissions are enforced based on the current level of workspace access. If a user is removed from the Fabric workspace, they also automatically lose access to the associated Cosmos DB database and underlying data. For more information, see [Fabric permission model](../../security/permission-model.md).
 
 ## Execution context and identity considerations
 
-- **Understand notebook execution identity**: When working with notebooks in Fabric workspaces, be aware that notebooks always execute with the identity of the user who created them, regardless of who runs the notebook. This means that data access permissions and audit trails will reflect the notebook creator's identity, not the executor's identity. Plan your notebook creation and sharing strategy accordingly to ensure appropriate access controls.
+- **Understand notebook execution identity**: When working with notebooks in Fabric workspaces, be aware that Fabric artifacts always execute with the identity of the user who created them, regardless of who executes . This means that data access permissions and audit trails will reflect the notebook creator's identity, not the executor's identity. Plan your notebook creation and sharing strategy accordingly to ensure appropriate access controls.
 
 - **Plan for workspace identity limitations**: Currently, Fabric does not support `run-as` functionality with Workspace Identity. Operations execute with the identity of the user that created them rather than a shared workspace identity. Consider this when designing multi-user scenarios and ensure that the appropriate users create artifacts that will be shared within the workspace.
-
-- **Use user identities for workspace role assignments**: Only user identities (not user-assigned managed identities) can be granted workspace-level permissions such as Admin, Contributor, Member, or Viewer roles. Design your access control strategy using user identities for workspace management.
 
 ## Related content
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Authenticate using Microsoft Entra ID to Cosmos DB in Microsoft Fabric](how-to-authenticate.md)
 - [Manage authorization in Cosmos DB in Microsoft Fabric](authorization.md)
-
