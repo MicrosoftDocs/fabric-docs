@@ -94,11 +94,11 @@ Finally, use Spark within a notebook to write Python queries for your mirrored d
 
     | `geography` | `itemCount` |
     | --- | --- |
-    | France | 47 |
-    | Egypt | 47 |
-    | Brazil | 44 |
-    | Nigeria | 43 |
-    | India | 40 |
+    | Nigeria | 21 |
+    | Egypt | 20 |
+    | France | 18 |
+    | Japan | 18 |
+    | Argentina | 17 |
 
     :::image type="content" source="media/how-to-access-data-lakehouse/notebook-run.png" lightbox="media/how-to-access-data-lakehouse/notebook-run-full.png" alt-text="Screenshot of the notebook interface with a single cell and query results in tabular format.":::
 
