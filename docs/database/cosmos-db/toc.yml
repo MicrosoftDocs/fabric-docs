@@ -47,8 +47,10 @@ items:
         href: security.md
       - name: Authorization
         href: authorization.md
-      - name: Authenticate with Microsoft Entra ID
+      - name: Authenticate from Azure services
         href: how-to-authenticate.md
+      - name: Authenticate from Fabric Notebooks
+        href: how-to-authenticate-notebooks.md
       - name: Customer managed keys
         href: customer-managed-keys.md
   - name: Manage resources

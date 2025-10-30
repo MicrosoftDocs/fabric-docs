@@ -11,7 +11,7 @@ zone_pivot_groups: dev-lang-core
 
 # Authenticate to Cosmos DB in Microsoft Fabric from Azure host services
 
-Cosmos DB in Microsoft Fabric primarily relies on Microsoft Entra ID authentication and built-in data plane roles to manage authentication and authorization. In this guide, you use Microsoft Entra ID and your signed-in account to connect to a Cosmos DB in Fabric database.
+Cosmos DB in Microsoft Fabric exclusively relies on Microsoft Entra ID authentication and built-in data plane roles to manage authentication and authorization. In this guide, you use Microsoft Entra ID and your signed-in account to connect to a Cosmos DB artifact in Microsoft Fabric.
 
 > [!IMPORTANT]
 > The steps are similar to the process used to authenticate if you're using a [service principal](/entra/identity-platform/app-objects-and-service-principals), [group](/entra/fundamentals/concept-learn-about-groups), or other type of Microsoft Entra ID identity. To grant a service principal the ability to connect to Microsoft Fabric and your Cosmos DB database, enable the **"Service principals can use Fabric APIs** setting in the Fabric tenant. For more information, see [Microsoft Fabric tenant settings](../../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis). This setting is enabled by default for new customers.
