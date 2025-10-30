@@ -72,15 +72,16 @@ Finally, perform a NoSQL query to test the sample data in the **SampleData** con
 
     :::image type="content" source="media/quickstart-portal/new-container-query-option.png" lightbox="media/quickstart-portal/new-container-query-option-full.png" alt-text="Screenshot of the option to create a 'New SQL Query' for a container within the Fabric portal.":::
 
-1. In the query editor, use this baseline query to reshape the data in the sample container into simplified JSON output.
+1. In the query editor, use this baseline query to retrieve the top 10 most expensive products from the sample data and reshaping the results into simplified JSON output.
 
     ```nosql
     SELECT TOP 10 VALUE {
-        "item": CONCAT(item.name, " - ", item.category),
-        "price": item.price
+        "product": CONCAT(item.name, " - ", item.categoryName),
+        "currentPrice": item.currentPrice
     }
     FROM items AS item
-    ORDER BY item.price DESC
+    WHERE item.docType = "product"
+    ORDER BY item.currentPrice DESC
     ```
 
 1. Observe the results of the query in the query editor.
@@ -88,12 +89,12 @@ Finally, perform a NoSQL query to test the sample data in the **SampleData** con
     ```json
     [
       {
-        "item": "Basic Speaker Mini (Black) - Media",
-        "price": 1096.74
+        "product": "QuantumPro X9 Elite Workstation - Computers, Workstations",
+        "currentPrice": 8890.61
       },
       {
-        "item": "Luxe Keyboard Ultra (Red) - Perhipheral",
-        "price": 1091.03
+        "product": "ProCore X3 Elite Workstation - Computers, Workstations",
+        "currentPrice": 8486.6
       },
       // Ommitted for brevity
     ]
