@@ -28,7 +28,7 @@ sections:
       - question: |
           How does Cosmos DB in Fabric differ from Azure Cosmos DB?
         answer: |
-          Cosmos DB in Fabric uses the same underlying engine and infrastructure as Azure Cosmos DB for NoSQL, providing the same performance, reliability, and availability guarantees. However, there are key differences:
+          Cosmos DB in Fabric uses the same underlying engine and infrastructure as Azure Cosmos DB, providing the same performance, reliability, and availability guarantees. However, there are key differences:
 
           - **Integration**: Cosmos DB in Fabric is tightly integrated with Microsoft Fabric and OneLake, providing automatic data mirroring for analytics without ETL pipelines.
           - **Management**: Cosmos DB in Fabric offers a simplified, autonomous experience with optimized defaults, reducing database management complexity.
