@@ -83,24 +83,46 @@ items:
   items: 
     - name: Transform and enrich data with AI functions
       href: ../data-science/ai-functions/overview.md
-    - name: ai.similarity
-      href: ../data-science/ai-functions/similarity.md
-    - name: ai.classify
-      href: ../data-science/ai-functions/classify.md
-    - name: ai.analyze_sentiment
-      href: ../data-science/ai-functions/analyze-sentiment.md
-    - name: ai.extract
-      href: ../data-science/ai-functions/extract.md
-    - name: ai.fix_grammar
-      href: ../data-science/ai-functions/fix-grammar.md
-    - name: ai.summarize
-      href: ../data-science/ai-functions/summarize.md
-    - name: ai.translate
-      href: ../data-science/ai-functions/translate.md
-    - name: ai.generate_response
-      href: ../data-science/ai-functions/generate-response.md
-    - name: Customize AI function configurations
-      href: ../data-science/ai-functions/configuration.md
+    - name: pandas
+      items:
+        - name: ai.analyze_sentiment
+          href: ../data-science/ai-functions/pandas/analyze-sentiment.md
+        - name: ai.classify
+          href: ../data-science/ai-functions/pandas/classify.md
+        - name: ai.extract
+          href: ../data-science/ai-functions/pandas/extract.md
+        - name: ai.fix_grammar
+          href: ../data-science/ai-functions/pandas/fix-grammar.md
+        - name: ai.generate_response
+          href: ../data-science/ai-functions/pandas/generate-response.md
+        - name: ai.similarity
+          href: ../data-science/ai-functions/pandas/similarity.md
+        - name: ai.summarize
+          href: ../data-science/ai-functions/pandas/summarize.md
+        - name: ai.translate
+          href: ../data-science/ai-functions/pandas/translate.md
+        - name: Customize AI function configurations
+          href: ../data-science/ai-functions/pandas/configuration.md
+    - name: PySpark
+      items:
+        - name: ai.analyze_sentiment
+          href: ../data-science/ai-functions/pyspark/analyze-sentiment.md
+        - name: ai.classify
+          href: ../data-science/ai-functions/pyspark/classify.md
+        - name: ai.extract
+          href: ../data-science/ai-functions/pyspark/extract.md
+        - name: ai.fix_grammar
+          href: ../data-science/ai-functions/pyspark/fix-grammar.md
+        - name: ai.generate_response
+          href: ../data-science/ai-functions/pyspark/generate-response.md
+        - name: ai.similarity
+          href: ../data-science/ai-functions/pyspark/similarity.md
+        - name: ai.summarize
+          href: ../data-science/ai-functions/pyspark/summarize.md
+        - name: ai.translate
+          href: ../data-science/ai-functions/pyspark/translate.md
+        - name: Customize AI function configurations
+          href: ../data-science/ai-functions/pyspark/configuration.md
 - name: Lakehouse access control
   items:
   - name: Workspace roles and permissions
