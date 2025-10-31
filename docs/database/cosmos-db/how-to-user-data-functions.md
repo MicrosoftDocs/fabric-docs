@@ -82,7 +82,7 @@ Next we will create a new function. In this example we will modify the `hello_fa
 
 1. Select **azure-cosmos** library and select the latest version. Once the library is added, it's automatically saved in your User Data Functions item. Then close the Library management dialog.
 
-   :::image type="content" source="../media/how-to-user-data-functions/add-cosmos-library.png" alt-text="Screenshot showing how to add azure-cosmos library." lightbox="../media/how-to-user-data-functions/add-cosmos-library.png":::
+   :::image type="content" source="./media/how-to-user-data-functions/add-cosmos-library.png" alt-text="Screenshot showing how to add azure-cosmos library." lightbox="./media/how-to-user-data-functions/add-cosmos-library.png":::
 
 1. Select the code below then insert it into the body of your new function.
 
@@ -149,13 +149,13 @@ def query_products(cosmosDb: fn.FabricItem, categoryName: str) -> list[dict[str,
 
 1. Once the code is inserted into the editor, update the COSMOS_DB_URI and the DB_NAME with the values you captured earlier. 
 
-    :::image type="content" source="../media/how-to-user-data-functions/update-endpoint-and-database.png" alt-text="Screenshot showing how to update the endpoint and database name." lightbox="../media/how-to-user-data-functions/update-endpoint-and-database.png":::
+    :::image type="content" source="./media/how-to-user-data-functions/update-endpoint-and-database.png" alt-text="Screenshot showing how to update the endpoint and database name." lightbox="./media/how-to-user-data-functions/update-endpoint-and-database.png":::
 
 1. Now you can test it by using the [Test capability](/fabric/data-engineering/user-data-functions/test-user-data-functions.md) in Develop mode.
 
 1. In the catetoryName parameter type `Computers, Laptops`
 
-    :::image type="content" source="../media/how-to-user-data-functions/test-user-data-function.png" alt-text="Screenshot showing how to test the user data function." lightbox="../media/how-to-user-data-functions/test-user-data-function.png":::
+    :::image type="content" source="./media/how-to-user-data-functions/test-user-data-function.png" alt-text="Screenshot showing how to test the user data function." lightbox="./media/how-to-user-data-functions/test-user-data-function.png":::
 
 1. Press Test and view the results in the output.
 
