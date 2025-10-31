@@ -14,7 +14,7 @@ items:
         href: sample-data.md
       - name: Query cross-database
         href: how-to-query-cross-database.md
-  - name: Integrate with other services
+  - name: Integrate with Fabric services
     items:
       - name: Mirror to OneLake
         href: mirror-onelake.md
@@ -24,6 +24,16 @@ items:
         href: how-to-access-data-lakehouse.md
       - name: Create Power BI reports
         href: how-to-create-reports.md
+  - name: Samples
+    items:
+      - name: Cosmos DB getting started
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/python-crud-fundamentals
+      - name: Vector search
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search
+      - name: Advanced vector search
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search-advanced
+      - name: Spark analytics with Power BI queries
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/spark-analytics-power-bi
   - name: Build AI applications
     items:
       - name: Index vector data
