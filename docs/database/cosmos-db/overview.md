@@ -20,7 +20,7 @@ To learn more about Cosmos DB in Fabric, watch this demo from Microsoft Build 20
 
 ## Why Cosmos DB in Fabric?
 
-- **Optimized for semi-structured data**: Cosmos DB in Fabric is a database optimized for semi-structured data. You can use Cosmos DB database and SQL database in Fabric together to store both semi-structured and relational data. With various databases available, you can unify your data platform and analytics experience across your entire application solution. Cosmos DB comes with built-in AI capabilities like vector search, full-text search and hybrid search combining both with Reciprocol Rank Fusion (RRF).
+- **Optimized for semi-structured data**: Cosmos DB in Fabric is a database optimized for semi-structured data. You can use Cosmos DB database and SQL database in Fabric together to store both semi-structured and relational data. With various databases available, you can unify your data platform and analytics experience across your entire application solution. Cosmos DB comes with built-in AI capabilities like vector search, full-text search and hybrid search combining both with Reciprocal Rank Fusion (RRF).
 
 - **Autonomous**: Cosmos DB in Fabric comes with autonomous defaults optimized for most application workloads. Existing applications can easily connect to Cosmos DB in Fabric. Your applications can use the same Entra ID you use today and supports all identity types, like human identities, application identities, or workload identities, to connect to the database in a secure manner.
 
