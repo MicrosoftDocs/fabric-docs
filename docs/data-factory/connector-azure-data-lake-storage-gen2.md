@@ -44,7 +44,7 @@ The Azure Date Lake Storage Gen2 connector supports the following authentication
 
 1. Configure a resource instance rule. For more information, see [Resource instance rule](../security/security-trusted-workspace-access.md#configure-trusted-workspace-access-in-adls-gen2).
 
-1. Follow steps from [Set up your connection](#set-up-your-connection) to create the connection.
+1. Follow steps from [Set up your connection](#set-up-your-connection-for-a-pipeline) to create the connection.
 
 ## Set up your connection for Dataflow Gen2
 
