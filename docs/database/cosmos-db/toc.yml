@@ -29,11 +29,11 @@ items:
       - name: Cosmos DB getting started
         href: /samples/azurecosmosdb/cosmos-fabric-samples/python-crud-fundamentals
       - name: Vector search
-        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search.md
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search
       - name: Advanced vector search
-        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search-advanced.md
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search-advanced
       - name: Spark analytics with Power BI queries
-        href: /samples/azurecosmosdb/cosmos-fabric-samples/spark-analytics-power-bi.md
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/spark-analytics-power-bi
   - name: Build AI applications
     items:
       - name: Index vector data
