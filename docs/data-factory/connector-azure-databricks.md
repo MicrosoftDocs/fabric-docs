@@ -64,10 +64,10 @@ For specific instructions to set up your connection in a pipeline, follow these 
 
 1. In the **New connection** pane, specify the following fields:
 
-  * **Server Hostname** : The hostname for your Azure Databricks instance. For example: *example.azuredatabricks.net*
-  * **HTTP Path** : The http path for your data. For example: */sql/1.0/warehouses/abcdef1234567890*
-  * **Connection**: Select **Create new connection**.
-  * **Connection name**: Specify a name for your connection.
+    * **Server Hostname** : The hostname for your Azure Databricks instance. For example: *example.azuredatabricks.net*
+    * **HTTP Path** : The http path for your data. For example: */sql/1.0/warehouses/abcdef1234567890*
+    * **Connection**: Select **Create new connection**.
+    * **Connection name**: Specify a name for your connection.
 
 1. Under **Data gateway**, select an existing data gateway if your Azure Databricks instance isn't publicly accessible.
 
