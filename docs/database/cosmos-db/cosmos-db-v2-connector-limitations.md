@@ -66,13 +66,13 @@ This article lists current limitations for the Azure Cosmos DB v2 connector in M
     ```powerquery
     #"Added Truncated Column" = Table.AddColumn(#"PreviousStep", "myShorterTextColumn", each Text.Start([myLongTextColumn], 250))
     ```
-    
+
     Then remove the original column and use the truncated version in your visuals.
 
   - **Option 3 - Use SQL analytics endpoint**: If you need to analyze the full text without truncation, use the SQL analytics endpoint approach instead of the Azure Cosmos DB v2 connector. The SQL analytics endpoint accesses mirrored data in OneLake and doesn't have the 255-byte column limitation.
 
 ## Related content
 
-- [Power BI reporting with Cosmos DB in Fabric](./power-bi-reporting.md)
+- [Power BI reporting with Cosmos DB in Fabric](./how-to-create-reports.md)
 - [Limitations for Cosmos DB in Fabric](./limitations.md)
-- [Azure Cosmos DB in Fabric FAQ](./faq.yml)
+- [Cosmos DB in Fabric FAQ](./faq.yml)
