@@ -171,7 +171,7 @@ Executing the query ...
 Error -1052311437: We had to move the session with ID '<Session ID>' to another Power BI Premium node. Moving the session temporarily interrupted this trace - tracing will resume automatically as soon as the session has been fully moved to the new node.
 ```
 
-This is an informational message that can be ignored in SSMS 18.8 and higher because the client libraries reconnects automatically. Note that client libraries installed with SSMS v18.7.1 or lower do not support session tracing. [Download the latest SSMS](/sql/ssms/download-sql-server-management-studio-ssms).
+This is an informational message that can be ignored in SSMS 18.8 and higher because the client libraries reconnect automatically. Note that client libraries installed with SSMS v18.7.1 or lower do not support session tracing. [Download the latest SSMS](/sql/ssms/download-sql-server-management-studio-ssms).
 
 ### Executing a large command using the XMLA endpoint
 
@@ -222,7 +222,7 @@ When using the SQL Server Management Studio (SSMS) v18.8 to edit a role membersh
 
 ```
 Failed to save modifications to the server. 
-Error returned: â€˜Metadata change of current operation cannot be resolved, please check the command or try again later.â€™ 
+Error returned: 'Metadata change of current operation cannot be resolved, please check the command or try again later.' 
 ```
 
 This is due to a known issue in the app services REST API. Until resolved, to get around this error, in **Role Properties**, click **Script**, and then enter and execute the following TMSL command:
@@ -300,7 +300,7 @@ For example, for a P1 capacity, if:
 - DbpropMsmdRequestMemoryLimit = 5 GB, the effective memory limit for the command is 5 GB.
 - DbpropMsmdRequestMemoryLimit = 50 GB, the effective memory limit for the command is 25 GB.
 
-Typically, the effective memory limit for a command is calculated on the memory allowed for the semantic model by the capacity (25 GB, 50 GB, 100 GB) and how much memory the semantic model is already consuming when the command starts executing. For example, a semantic model using 12 GB on a P1 capacity allows an effective memory limit for a new command of 13 GB. However, the effective memory limit can be further constrained by the DbPropMsmdRequestMemoryLimit XMLA property when optionally specified by an application. Using the previous example, if 10 GB is specified in the DbPropMsmdRequestMemoryLimit property, then the commandâ€™s effective limit is further reduced to 10 GB.
+Typically, the effective memory limit for a command is calculated on the memory allowed for the semantic model by the capacity (25 GB, 50 GB, 100 GB) and how much memory the semantic model is already consuming when the command starts executing. For example, a semantic model using 12 GB on a P1 capacity allows an effective memory limit for a new command of 13 GB. However, the effective memory limit can be further constrained by the DbPropMsmdRequestMemoryLimit XMLA property when optionally specified by an application. Using the previous example, if 10 GB is specified in the DbPropMsmdRequestMemoryLimit property, then the command's effective limit is further reduced to 10 GB.
 
 If the command operation attempts to consume more memory than allowed by the limit, the operation can fail, and an error is returned. For example, the following error describes an effective memory limit of 25 GB (P1 capacity) has been exceeded because the semantic model already consumed 12 GB (12288 MB) when the command started execution, and an effective limit of 13 GB (13312 MB) was applied for the command operation:
 
@@ -308,7 +308,7 @@ If the command operation attempts to consume more memory than allowed by the lim
 
 In some cases, as shown in the following error, "consumed memory" is 0 but the amount shown for "database size before command execution" is already greater than the effective memory limit. This means the operation failed to begin execution because the amount of memory already used by the semantic model is greater than the memory limit for the SKU.
 
-**"Resource governing: This operation was canceled because there wasnâ€™t enough memory to finish running it. Either increase the memory of the Premium capacity where this semantic model is hosted or reduce the memory footprint of your semantic model by doing things like limiting the amount of imported data. More details: consumed memory 0 MB, memory limit 25600 MB, database size before command execution 26000 MB. Learn more: `https://go.microsoft.com/fwlink/?linkid=2159753`."**
+**"Resource governing: This operation was canceled because there wasn't enough memory to finish running it. Either increase the memory of the Premium capacity where this semantic model is hosted or reduce the memory footprint of your semantic model by doing things like limiting the amount of imported data. More details: consumed memory 0 MB, memory limit 25600 MB, database size before command execution 26000 MB. Learn more: `https://go.microsoft.com/fwlink/?linkid=2159753`."**
 
 ### Understanding memory errors and recovery
 
