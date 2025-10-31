@@ -5,7 +5,7 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: include
 ms.custom: sfi-image-nochange
-ms.date: 05/23/2025
+ms.date: 10/31/2025
 ---
 
 1. On the **Connect** page, select **New connection**.
@@ -39,7 +39,7 @@ ms.date: 05/23/2025
     - If not specified, a GUID is used to create the slot, requiring the appropriate database permissions.
     - If a specified slot name exists, the connector uses it directly.
 
-1. You may expand **Advanced settings** to access additional configuration options for the PostgreSQL Database CDC source:
+1. You may expand **Advanced settings** to access more configuration options for the PostgreSQL Database CDC source:
     - **Publication name**: Specifies the name of the PostgreSQL logical replication publication to use. This must match an existing publication in the database, or it will be created automatically depending on the autocreate mode. Default value: `dbz_publication`.
 
         > [!NOTE]
@@ -56,6 +56,12 @@ ms.date: 05/23/2025
         - `Precise`: Represents values using exact decimal types (for example, Java `BigDecimal`) to ensure full precision and accuracy in data representation.
         - `Double`: Converts values to double-precision floating-point numbers. This improves usability and performance but may result in a loss of precision.
         - `String`: Encodes values as formatted strings. This makes them easy to consume in downstream systems but loses semantic information about the original numeric type.
+    - **Snapshot mode**: Controls snapshot behavior when the connector starts:
+        - `Initial`: The connector performs a snapshot only when no offsets have been recorded for the logical server name.
+        - `Initial_only`: The connector performs an initial snapshot and then stops, without processing any subsequent changes.
+        - `No_data`: The connector never performs snapshots. When a connector is configured this way, after it starts, it behaves as follows: If there's a previously stored LSN in the Kafka offsets topic, the connector continues streaming changes from that position. If no LSN is stored, the connector starts streaming changes from the point in time when the PostgreSQL logical replication slot was created on the server. Use this snapshot mode only when you know all data of interest is still reflected in the WAL.
+    - **Heartbeat action query**：Specifies a query that the connector executes on the source database when the connector sends a heartbeat message.
+    - **Snapshot select statement override**：Specifies the table rows to include in a snapshot. Use the property if you want a snapshot to include only a subset of the rows in a table. This property affects snapshots only. It doesn't apply to events that the connector reads from the log.
 
 1. On the **Review + connect** page, review the summary, and then select **Add**.
 

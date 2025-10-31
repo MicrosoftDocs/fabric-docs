@@ -5,7 +5,7 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: include
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 10/31/2025
 ---
 
 ::: zone pivot="basic-features"  
@@ -34,11 +34,21 @@ ms.date: 11/18/2024
       - Use `dbo\.(test1|test2)` to select `dbo.test1` and `dbo.test2`.  
 
       You can mix both formats using commas. The total character limit for the entire entry is **102,400** characters.
-1. You can expand **Advanced settings** to configure the **Decimal handling mode**, which specifies how the connector handles `DECIMAL` and `NUMERIC` column values:
+1. You may expand **Advanced settings** to access additional configuration options for the Azure SQL Database CDC source:
 
-      - `Precise`: Represents values using exact decimal types (for example, Java `BigDecimal`) to ensure full precision and accuracy in data representation.
-      - `Double`: Converts values to double-precision floating-point numbers. This setting improves usability and performance but might result in a loss of precision.
-      - `String`: Encodes values as formatted strings. This setting makes it easy to consume in downstream systems but loses semantic information about the original numeric type.
+    - **Decimal handling mode**: Defines how the connector handles `DECIMAL` and `NUMERIC` column values:
+        - `Precise`: Represents values using exact decimal types (for example, Java `BigDecimal`) to ensure full precision and accuracy in data representation.
+        - `Double`: Converts values to double-precision floating-point numbers. This setting improves usability and performance but might result in a loss of precision.
+        - `String`: Encodes values as formatted strings. This setting makes it easy to consume in downstream systems but loses semantic information about the original numeric type.
+    - **Snapshot mode**: Controls snapshot behavior when the connector starts:
+        - `Initial`: The connector performs a database snapshot. After the snapshot completes, the connector begins to stream event records for subsequent database changes.
+        - `Initial_only`: The connector performs a database snapshot and stops before streaming any change event records, not allowing any subsequent change events to be captured.
+        - `No_data`: The connector captures the structure (schema) of all relevant tables only. Set this option if you do not need a consistent snapshot of the data, but you need only the changes happening since the connector starts.
+    - **Column exclude list**: Specifies columns to exclude from change event values using fully-qualified names (schemaName.tableName.columnName).
+    - **Database applicationIntent**: Determines routing behavior in SQL Server Always On availability groups:
+        - `ReadWrite`: Connects to the primary replica. Use this if the connection needs to perform both read and write operations.
+        - `ReadOnly`: Allows routing to a readable secondary replica for read-only operations. Use it to enable CDC directly on replicas. It requires to set snapshot.isolation.mode to snapshot, which is the only one transaction isolation mode supported for read-only replicas.
+    - **Snapshot select statement override**: Use the property if you want a snapshot to include only a subset of the rows in a table. This property affects snapshots only. It does not apply to events that the connector reads from the log.
 1. Select **Next**.
 
    :::image type="content" source="./media/azure-sql-database-cdc-source-connector/connect-page-filled.png" alt-text="Screenshot that shows the Connect page of the Get events wizard filled." lightbox="./media/azure-sql-database-cdc-source-connector/connect-page-filled.png":::
@@ -75,11 +85,21 @@ Ingest change data from Azure SQL databases with automatic table schema registra
       - Use `dbo\.(test1|test2)` to select `dbo.test1` and `dbo.test2`.  
 
       You can mix both formats using commas. The total character limit for the entire entry is **102,400** characters.
-1. You might expand **Advanced settings** to configure the **Decimal handling mode**, which specifies how the connector handles `DECIMAL` and `NUMERIC` column values:
+1. You may expand **Advanced settings** to access additional configuration options for the Azure SQL Database CDC source:
 
-      - `Precise`: Represents values using exact decimal types (for example, Java `BigDecimal`) to ensure full precision and accuracy in data representation.
-      - `Double`: Converts values to double-precision floating-point numbers. This setting improves usability and performance but might result in a loss of precision.
-      - `String`: Encodes values as formatted strings. This setting makes it easy to consume in downstream systems but loses semantic information about the original numeric type.
+    - **Decimal handling mode**: Defines how the connector handles `DECIMAL` and `NUMERIC` column values:
+        - `Precise`: Represents values using exact decimal types (for example, Java `BigDecimal`) to ensure full precision and accuracy in data representation.
+        - `Double`: Converts values to double-precision floating-point numbers. This setting improves usability and performance but might result in a loss of precision.
+        - `String`: Encodes values as formatted strings. This setting makes it easy to consume in downstream systems but loses semantic information about the original numeric type.
+    - **Snapshot mode**: Controls snapshot behavior when the connector starts:
+        - `Initial`: The connector performs a database snapshot. After the snapshot completes, the connector begins to stream event records for subsequent database changes.
+        - `Initial_only`: The connector performs a database snapshot and stops before streaming any change event records, not allowing any subsequent change events to be captured.
+        - `No_data`: The connector captures the structure (schema) of all relevant tables only. Set this option if you do not need a consistent snapshot of the data, but you need only the changes happening since the connector starts.
+    - **Column exclude list**: Specifies columns to exclude from change event values using fully-qualified names (schemaName.tableName.columnName).
+    - **Database applicationIntent**: Determines routing behavior in SQL Server Always On availability groups:
+        - `ReadWrite`: Connects to the primary replica. Use this if the connection needs to perform both read and write operations.
+        - `ReadOnly`: Allows routing to a readable secondary replica for read-only operations. Use it to enable CDC directly on replicas. It requires to set snapshot.isolation.mode to snapshot, which is the only one transaction isolation mode supported for read-only replicas.
+    - **Snapshot select statement override**: Use the property if you want a snapshot to include only a subset of the rows in a table. This property affects snapshots only. It does not apply to events that the connector reads from the log.
 1. Enable **event schema association**.
 1. For **Workspace**, select a Fabric workspace for the schema set.
 1. For **Schema set**, **+ Create** is selected by default, which creates a new schema set. You can change it to select an existing event schema set.
