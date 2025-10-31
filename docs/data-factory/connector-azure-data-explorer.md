@@ -65,10 +65,10 @@ For specific instructions to set up your connection in a pipeline, follow these 
 
 1. In the **New connection** pane, specify the following fields:
 
-  * **Cluster** : Your Azure Data Explorer cluster URL. For example: `https://mycluster.kusto.windows.net`
-  * **Database** : Optionally provide the database in Azure Data Explorer where your data is housed. For example: *MyDatabase*
-  * **Connection**: Select **Create new connection**.
-  * **Connection name**: Specify a name for your connection.
+    * **Cluster** : Your Azure Data Explorer cluster URL. For example: `https://mycluster.kusto.windows.net`
+    * **Database** : Optionally provide the database in Azure Data Explorer where your data is housed. For example: *MyDatabase*
+    * **Connection**: Select **Create new connection**.
+    * **Connection name**: Specify a name for your connection.
 
 1. Under **Data gateway**, select an existing data gateway if your Azure Data Explorer instance isn't publicly accessible.
 
