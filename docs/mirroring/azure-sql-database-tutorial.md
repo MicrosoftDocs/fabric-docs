@@ -53,69 +53,67 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
 
     The permissions required for the Fabric login are:
+   
+   - The following permissions in the user database:
+     - SELECT
+     - ALTER ANY EXTERNAL MIRROR
+     - VIEW DATABASE PERFORMANCE STATE
+     - VIEW DATABASE SECURITY STATE
+        
+   - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
+      
+   ```sql
+   CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
+   ```
     
-    - Membership in the server role `##MS_ServerStateReader##`
-    - The following permissions in the user database:
-        - SELECT
-        - ALTER ANY EXTERNAL MIRROR
+   - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+      
+   ```sql
+   CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
+   ```
     
-    - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
-
-    ```sql
-    CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [fabric_login];
-    ```
-
-    - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
-
-    ```sql
-    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
-    ```
-
-    - Or, log in as the Microsoft Entra admin, and create a Service Principal Name (SPN) authenticated login from an existing account. Run the following T-SQL script in the `master` database:
-
-    ```sql
-    CREATE LOGIN [Service Principal Name] FROM EXTERNAL PROVIDER;
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [Service Principal Name];
-    ```
-    - Or, log in as the Microsoft Entra admin, and create a login for the [Fabric workspace identity](../security/workspace-identity.md). Run the following T-SQL script in the `master` database:
-
-    ```sql
-    CREATE LOGIN [Workspace Identity Name] FROM EXTERNAL PROVIDER;
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [Workspace Identity Name];
-    ```
-
+   - Or, log in as the Microsoft Entra admin, and create a Service Principal Name (SPN) authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+      
+   ```sql
+   CREATE LOGIN [Service Principal Name] FROM EXTERNAL PROVIDER;
+   ```
+   - Or, log in as the Microsoft Entra admin, and create a login for the [Fabric workspace identity](../security/workspace-identity.md). Run the following T-SQL script in the `master` database:
+      
+   ```sql
+   CREATE LOGIN [Workspace Identity Name] FROM EXTERNAL PROVIDER;
+   ```
+    
 1. Connect to the user database that will be mirrored. Create a database user connected to the login and grant the minimum privileges necessary:
 
     - For a SQL Authenticated login:
 
     ```sql
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO [fabric_user];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [fabric_user];
     ```
     
     - Or, for a Microsoft Entra authenticated login:
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO [bob@contoso.com];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [bob@contoso.com];
     ```
   
     - Or, for a Service Principal Name (SPN) login:
 
     ```sql
     CREATE USER [Service Principal Name] FOR LOGIN [Service Principal Name];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO [Service Principal Name];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [Service Principal Name];
     ```
 
     - Or, for [Fabric workspace identity](../security/workspace-identity.md) login:
 
     ```sql
     CREATE USER [Workspace Identity Name] FOR LOGIN [workspace identity Name];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO [Workspace Identity Name];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [Workspace Identity Name];
     ```
 
+1. TO [fabric_user];
 ## Create a mirrored Azure SQL Database
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
@@ -169,4 +167,6 @@ For more information and details on the replication states, see [Monitor Fabric 
 ## Related content
 
 - [Mirroring Azure SQL Database](../mirroring/azure-sql-database.md)
+
 - [What is Mirroring in Fabric?](../mirroring/overview.md)
+
