@@ -86,68 +86,68 @@ Next we will create a new function. In this example we will modify the `hello_fa
 
 1. Select the code below then insert it into the body of your new function.
 
-```python
-import fabric.functions as fn
-udf = fn.UserDataFunctions()
+    ```python
+    import fabric.functions as fn
+    udf = fn.UserDataFunctions()
 
-import logging
-from typing import Any
-from fabric.functions.cosmosdb import get_cosmos_client
-from azure.cosmos import exceptions
+    import logging
+    from typing import Any
+    from fabric.functions.cosmosdb import get_cosmos_client
+    from azure.cosmos import exceptions
 
-@udf.generic_connection(argName="cosmosDb", audienceType="CosmosDB")
-@udf.function()
-def query_products(cosmosDb: fn.FabricItem, categoryName: str) -> list[dict[str, Any]]:
+    @udf.generic_connection(argName="cosmosDb", audienceType="CosmosDB")
+    @udf.function()
+    def query_products(cosmosDb: fn.FabricItem, categoryName: str) -> list[dict[str, Any]]:
 
-    COSMOS_DB_URI = "{my-cosmos-artifact-uri}"
-    DB_NAME = "{my-cosmos-artifact-name}" 
-    CONTAINER_NAME = "SampleData"
+        COSMOS_DB_URI = "{my-cosmos-artifact-uri}"
+        DB_NAME = "{my-cosmos-artifact-name}" 
+        CONTAINER_NAME = "SampleData"
 
-    try:
-        cosmosClient = get_cosmos_client(cosmosDb, COSMOS_DB_URI)
-        database = cosmosClient.get_database_client(DB_NAME)
-        container = database.get_container_client(CONTAINER_NAME)
+        try:
+            cosmosClient = get_cosmos_client(cosmosDb, COSMOS_DB_URI)
+            database = cosmosClient.get_database_client(DB_NAME)
+            container = database.get_container_client(CONTAINER_NAME)
 
-        # Use parameterized query
-        query = """
-            SELECT
-                c.categoryName,
-                c.name, 
-                c.description,
-                c.currentPrice,
-                c.inventory,
-                c.priceHistory
-            FROM c 
-            WHERE 
-                c.categoryName = @categoryName AND
-                c.docType = @docType
-            ORDER BY
-                c.price DESC
-        """
+            # Use parameterized query
+            query = """
+                SELECT
+                    c.categoryName,
+                    c.name, 
+                    c.description,
+                    c.currentPrice,
+                    c.inventory,
+                    c.priceHistory
+                FROM c 
+                WHERE 
+                    c.categoryName = @categoryName AND
+                    c.docType = @docType
+                ORDER BY
+                    c.price DESC
+            """
 
-        parameters = [
-            {"name": "@categoryName", "value": categoryName},
-            {"name": "@docType", "value": 'product'}
-        ]
+            parameters = [
+                {"name": "@categoryName", "value": categoryName},
+                {"name": "@docType", "value": 'product'}
+            ]
 
-        # Execute the query
-        products = [p for p in container.query_items(
-            query=query,
-            enable_cross_partition_query=False,
-            parameters=parameters
-        )]
+            # Execute the query
+            products = [p for p in container.query_items(
+                query=query,
+                enable_cross_partition_query=False,
+                parameters=parameters
+            )]
 
-        return products
-    
-    except exceptions.CosmosHttpResponseError as e:
-        logging.error(f"Cosmos DB query failed: {e}")
-        raise
-    except exceptions as e:
-        logging.error(f"Unexpected error in query_products: {e}")
-        raise
-```
+            return products
+        
+        except exceptions.CosmosHttpResponseError as e:
+            logging.error(f"Cosmos DB query failed: {e}")
+            raise
+        except exceptions as e:
+            logging.error(f"Unexpected error in query_products: {e}")
+            raise
+    ```
 
-1. Once the code is inserted into the editor, update the COSMOS_DB_URI and the DB_NAME with the values you captured earlier. 
+1. Once the code is inserted into the editor, update the COSMOS_DB_URI and the DB_NAME with the values you captured earlier.
 
     :::image type="content" source="./media/how-to-user-data-functions/update-endpoint-and-database.png" alt-text="Screenshot showing how to update the endpoint and database name." lightbox="./media/how-to-user-data-functions/update-endpoint-and-database.png":::
 
