@@ -2,7 +2,7 @@
 title: ArcGIS GeoAnalytics for Microsoft Fabric (Generally Available)
 description: Learn how to use the ArcGIS GeoAnalytics library in Microsoft Fabric, including data import, enrichment, visualization, and support resources.
 ms.reviewer: sngun
-ms.author: ms-arali
+ms.author: arali
 author: ms-arali
 ms.topic: concept-article
 ms.date: 10/27/2025
