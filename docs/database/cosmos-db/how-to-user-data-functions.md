@@ -20,19 +20,19 @@ In this guide, we will create a new User Data Functions item and write a new fun
 
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-database.md)]
 
-- An identity with the **Read** permission for the database in Fabric
+    - An identity with the **Read** permission for the database in Fabric
 
-  - For more information on Fabric permissions, see [access controls](authorization.md#access-controls).
+    - For more information on Fabric permissions, see [access controls](authorization.md#access-controls).
 
-- Capture the name of the new Cosmos DB database you created. You use this value in later step\[s\].
+    - Capture the name of the new Cosmos DB database you created. You use this value in later step\[s\].
 
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-container.md)]
 
-- You will use the SampleData container in later step\[s\].
+    - You will use the SampleData container in later step\[s\].
 
 ## Retrieve Cosmos DB endpoint
 
-First, get the endpoint for the Cosmos DB database in Fabric. This endpoint is required to connect the user data function to Cosmos DB.
+After saving the Cosmos database and container name, get the endpoint for the Cosmos DB database in Fabric. This endpoint is required to connect the user data function to Cosmos DB.
 
 1. Open the Fabric portal (<https://app.fabric.microsoft.com>).
 
@@ -57,13 +57,13 @@ First, get the endpoint for the Cosmos DB database in Fabric. This endpoint is r
 
 1. In the pane that opens, search for `user data functions`, then select the tile.
 
-   :::image type="content" source="/fabric/data-engineering/user-data-functions/media/user-data-functions-create-in-portal/select-user-data-functions.png" alt-text="Screenshot showing user data functions tile in the new item pane." lightbox="/fabric/data-engineering/user-data-functions/media/user-data-functions-create-in-portal/select-user-data-functions.png":::
+   :::image type="content" source="/fabric/data-engineering/media/user-data-functions-create-in-portal/select-user-data-functions.png" alt-text="Screenshot showing user data functions tile in the new item pane." lightbox="/fabric/data-engineering/media/user-data-functions-create-in-portal/select-user-data-functions.png":::
 
 1. Provide a **Name** for the user data functions item.
 
 1. Select **New function** to create a `hello_fabric` Python function template. The Functions explorer shows all the functions that are published and ready to be invoked.
 
-   :::image type="content" source="/fabric/data-engineering/user-data-functions/media/user-data-functions-create-in-portal/new-functions-to-create-template.png" alt-text="Screenshot showing how to create a new function using a template." lightbox="/fabric/data-engineering/user-data-functions/media/user-data-functions-create-in-portal/new-functions-to-create-template.png":::
+   :::image type="content" source="/fabric/data-engineering/media/user-data-functions-create-in-portal/new-functions-to-create-template.png" alt-text="Screenshot showing how to create a new function using a template." lightbox="/fabric/data-engineering/media/user-data-functions-create-in-portal/new-functions-to-create-template.png":::
 
 1. Once the `hello_fabric` function is published, you can run it from the list of functions in the Functions explorer.
 
