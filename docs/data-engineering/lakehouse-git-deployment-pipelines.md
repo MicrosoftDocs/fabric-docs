@@ -6,15 +6,28 @@ ms.author: eur
 author: eric-urban
 ms.topic: conceptual
 ms.custom:
-ms.date: 4/29/2025
+ms.date: 10/31/2025
 ms.search.form: lakehouse git deployment pipelines alm ci cd
 ---
 
-# Lakehouse deployment pipelines and git integration (Preview)
+# Lakehouse deployment pipelines and git integration
 
 The [Lakehouse](lakehouse-overview.md) integrates with the lifecycle management capabilities in Microsoft Fabric, providing a standardized collaboration between all development team members throughout the product's life. Lifecycle management facilitates an effective product versioning and release process by continuously delivering features and bug fixes into multiple environments. To learn more, see [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md).
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+## What is tracked in git and deployment pipelines?
+
+The following table summarizes the Lakehouse items and sub-items that are tracked in git-connected workspaces and supported in deployment pipelines.
+
+| Item/Sub-item | Git | Deployment Pipelines | Release Status | Notes |
+|---------------|-----|---------------------|----------------|-------|
+| Lakehouse metadata (display name, description, logical GUID) | ✅ Tracked | ✅ Tracked | GA | Cross-workspace identifier for source control |
+| OneLake Shortcuts metadata | ✅ Tracked | ✅ Tracked | GA | Stored in shortcuts.metadata.json file |
+| External shortcuts (ADLS Gen2, S3, etc.) | ✅ Tracked | ✅ Synced across stages | GA | Same targets across all stages |
+| Internal OneLake Shortcuts | ✅ Tracked | ✅ Auto-remapped across stages | GA | Requires valid targets in workspace |
+| OneLake Security Data Access Roles metadata | ✅ Tracked | ✅ Tracked | Preview | Stored in dar.metadata.json file |
+| SQL Analytics endpoint metadata | ✅ Tracked | ✅ Provisioned on deployment | GA | Managed by git update process |
+| Tables (Delta and non-Delta) | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
+| Folders in Files section | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
 
 ## Lakehouse git integration
 
