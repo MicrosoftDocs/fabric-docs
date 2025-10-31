@@ -27,7 +27,7 @@ items:
   - name: Samples
     items:
       - name: Cosmos DB getting started
-        href: /samples/azurecosmosdb/cosmos-fabric-samples/python-crud-fundamentals.md
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/python-crud-fundamentals
       - name: Vector search
         href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search.md
       - name: Advanced vector search
