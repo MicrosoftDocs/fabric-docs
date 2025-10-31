@@ -4,7 +4,7 @@ description: This article provides information about how to create a Snowflake d
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 03/11/2025
+ms.date: 10/31/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -22,6 +22,7 @@ The Snowflake database connector supports the following authentication types for
 |:---|:---|:---|
 |Snowflake| √ | √ |
 |Microsoft Account| √ | √ |
+|Key-pair | √ | √ |
 
 ## Set up your connection in Dataflow Gen2
 
