@@ -5,7 +5,6 @@ author: markjbrown
 ms.author: mjbrown
 ms.topic: how-to
 ms.date: 10/31/2025
-zone_pivot_groups: dev-lang-core
 ---
 
 # How to create user data functions for Cosmos DB in Microsoft Fabric
@@ -58,17 +57,17 @@ First, get the endpoint for the Cosmos DB database in Fabric. This endpoint is r
 
 1. In the pane that opens, search for `user data functions`, then select the tile.
 
-   :::image type="content" source="\fabric\data-engineering\user-data-functions\media\user-data-functions-create-in-portal\select-user-data-functions.png" alt-text="Screenshot showing user data functions tile in the new item pane." lightbox="\fabric\data-engineering\user-data-functions\media\user-data-functions-create-in-portal\select-user-data-functions.png":::
+   :::image type="content" source="/fabric/data-engineering/user-data-functions/media/user-data-functions-create-in-portal/select-user-data-functions.png" alt-text="Screenshot showing user data functions tile in the new item pane." lightbox="/fabric/data-engineering/user-data-functions/media/user-data-functions-create-in-portal/select-user-data-functions.png":::
 
 1. Provide a **Name** for the user data functions item.
 
 1. Select **New function** to create a `hello_fabric` Python function template. The Functions explorer shows all the functions that are published and ready to be invoked.
 
-   :::image type="content" source="\fabric\data-engineering\user-data-functions\media\user-data-functions-create-in-portal\new-functions-to-create-template.png" alt-text="Screenshot showing how to create a new function using a template." lightbox="\fabric\data-engineering\user-data-functions\media\user-data-functions-create-in-portal\new-functions-to-create-template.png":::
+   :::image type="content" source="/fabric/data-engineering/user-data-functions/media/user-data-functions-create-in-portal/new-functions-to-create-template.png" alt-text="Screenshot showing how to create a new function using a template." lightbox="/fabric/data-engineering/user-data-functions/media/user-data-functions-create-in-portal/new-functions-to-create-template.png":::
 
 1. Once the `hello_fabric` function is published, you can run it from the list of functions in the Functions explorer.
 
-   :::image type="content" source="\fabric\data-engineering\user-data-functions\media\user-data-functions-create-in-portal\hello-fabric-template-1.png" alt-text="Screenshot showing the code for hello-fabric function." lightbox="\fabric\data-engineering\user-data-functions\media\user-data-functions-create-in-portal\hello-fabric-template-1.png":::
+   :::image type="content" source="/fabric/data-engineering/user-data-functions/media/user-data-functions-create-in-portal/hello-fabric-template-1.png" alt-text="Screenshot showing the code for hello-fabric function." lightbox="/fabric/data-engineering/user-data-functions/media/user-data-functions-create-in-portal/hello-fabric-template-1.png":::
 
 ### Add a new function for Cosmos DB
 
@@ -76,14 +75,14 @@ Next we will create a new function. In this example we will modify the `hello_fa
 
 1. Make sure you are in **Develop mode**. Select **Library management** to add the libraries that your function requires.
 
-   :::image type="content" source="\fabric\data-engineering\user-data-functions\media\user-data-functions-manage-libraries\select-library-management.png" alt-text="Screenshot showing how to manage libraries." lightbox="\fabric\data-engineering\user-data-functions\media\user-data-functions-manage-libraries\select-library-management.png":::
+   :::image type="content" source="/fabric/data-engineering/user-data-functions/media/user-data-functions-manage-libraries/select-library-management.png" alt-text="Screenshot showing how to manage libraries." lightbox="/fabric/data-engineering/user-data-functions/media/user-data-functions-manage-libraries/select-library-management.png":::
 
    >[!NOTE]
    > `fabric_user_data_functions` library is added by default and can't be removed. This library is required for the functionality of User data functions. You need to update the version of this library for any future releases of this SDK.
 
 1. Select **azure-cosmos** library and select the latest version. Once the library is added, it's automatically saved in your User Data Functions item. Then close the Library management dialog.
 
-   :::image type="content" source="..\media\how-to-user-data-functions\add-cosmos-library.png" alt-text="Screenshot showing how to add azure-cosmos library." lightbox="..\media\how-to-user-data-functions\add-cosmos-library.png":::
+   :::image type="content" source="../media/how-to-user-data-functions/add-cosmos-library.png" alt-text="Screenshot showing how to add azure-cosmos library." lightbox="../media/how-to-user-data-functions/add-cosmos-library.png":::
 
 1. Select the code below then insert it into the body of your new function.
 
@@ -150,13 +149,13 @@ def query_products(cosmosDb: fn.FabricItem, categoryName: str) -> list[dict[str,
 
 1. Once the code is inserted into the editor, update the COSMOS_DB_URI and the DB_NAME with the values you captured earlier. 
 
-    :::image type="content" source="..\media\how-to-user-data-functions\update-endpoint-and-database.png" alt-text="Screenshot showing how to update the endpoint and database name." lightbox="..\media\how-to-user-data-functions\update-endpoint-and-database.png":::
+    :::image type="content" source="../media/how-to-user-data-functions/update-endpoint-and-database.png" alt-text="Screenshot showing how to update the endpoint and database name." lightbox="../media/how-to-user-data-functions/update-endpoint-and-database.png":::
 
 1. Now you can test it by using the [Test capability](./test-user-data-functions.md) in Develop mode.
 
 1. In the catetoryName parameter type `Computers, Laptops`
 
-    :::image type="content" source="..\media\how-to-user-data-functions\test-user-data-function.png" alt-text="Screenshot showing how to test the user data function." lightbox="..\media\how-to-user-data-functions\test-user-data-function.png":::
+    :::image type="content" source="../media/how-to-user-data-functions/test-user-data-function.png" alt-text="Screenshot showing how to test the user data function." lightbox="../media/how-to-user-data-functions/test-user-data-function.png":::
 
 1. Press Test and view the results in the output.
 
