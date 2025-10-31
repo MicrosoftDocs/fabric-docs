@@ -14,15 +14,13 @@ With Cosmos DB in Microsoft Fabric, you can build interactive Power BI reports u
 - **SQL analytics endpoint (via OneLake)**: Leverage mirrored data through the SQL analytics endpoint with DirectLake mode for optimal performance and no RU consumption
 - **Azure Cosmos DB v2 connector**: Connect directly to your database using the Power BI connector with DirectQuery or Import mode
 
-Each approach offers distinct advantages. The SQL analytics endpoint is recommended for most production scenarios, while the v2 connector provides flexibility for real-time reporting and direct database access.
+Each approach offers distinct advantages. The SQL analytics endpoint is recommended for most production scenarios, while the Azure Cosmos DB v2 connector provides flexibility for real-time reporting and direct database access.
 
 ## Prerequisites
 
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-database.md)]
 
 [!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
-
-- **Power BI Desktop** (optional): Download and install the [latest version of Power BI Desktop](https://powerbi.microsoft.com/desktop) if you prefer to build reports locally. The Azure Cosmos DB v2 connector is available in both Power BI Desktop and the Power BI service.
 
 > [!IMPORTANT]
 > For this guide, the existing Cosmos DB database has the [sample data set](.\sample-data.md) already loaded. The remaining examples assume you're using the same data set.
@@ -36,14 +34,14 @@ Select the approach that best fits your requirements:
 | Complex data types (arrays, objects, nested structures) | SQL analytics endpoint |
 | No database resource consumption (RUs) | SQL analytics endpoint |
 | Dynamic schema evolution | SQL analytics endpoint |
-| Real-time data with direct database queries | v2 connector (DirectQuery) |
-| Existing Power BI connector workflows | v2 connector |
-
-Both approaches support Power BI Desktop and the Power BI service.
+| Real-time data with direct database queries | Azure Cosmos DB v2 connector (DirectQuery) |
+| Existing Power BI connector workflows | Azure Cosmos DB v2 connector |
 
 ## Approach 1: Build reports using the SQL analytics endpoint
 
 The SQL analytics endpoint provides access to mirrored data in OneLake, enabling you to build Power BI reports with DirectLake mode. This approach offers optimal performance without consuming database RUs and supports complex data types including arrays, objects, and hierarchical structures.
+
+For more information about semantic model modes in Power BI, see [Semantic model modes in the Power BI service](https://learn.microsoft.com/power-bi/connect-data/service-dataset-modes-understand).
 
 ### Verify mirroring replication
 
@@ -77,6 +75,8 @@ Once mirroring has completed successfully, configure your semantic model:
 > [!NOTE]
 > By default, semantic models are empty. If you skip this step, any attempt to create a Power BI report results in an error due to an empty semantic model.
 
+For more information about semantic models in Power BI, see [Semantic models in the Power BI service](https://learn.microsoft.com/power-bi/connect-data/service-datasets-understand).
+
 ### Create and design your report
 
 Once your semantic model is configured, create your Power BI report:
@@ -95,18 +95,18 @@ Once your semantic model is configured, create your Power BI report:
    - Review suggestions and select **Create** to add them
 
 > [!TIP]
-> You can also create reports by selecting **Pick a published semantic model** from the **Create** tab in the Fabric portal, or by accessing the **OneLake catalog** in Power BI Desktop.
+> You can also create reports by selecting **Pick a published semantic model** from the **Create** tab in the Fabric portal, or by selecting **Power BI semantic models** in Power BI Desktop.
+
+For more information about creating reports in Power BI, see [Get started creating in the Power BI service](https://learn.microsoft.com/power-bi/fundamentals/service-get-started).
 
 ## Approach 2: Build reports using the Azure Cosmos DB v2 connector
 
-The Azure Cosmos DB v2 Power BI connector enables direct connection to your Cosmos DB in Fabric database from both Power BI Desktop and the Power BI service. This approach supports DirectQuery for real-time reporting and Import mode for scheduled data loads.
+The Azure Cosmos DB v2 Power BI connector enables direct connection to your Cosmos DB in Fabric database from the Power BI service. This approach supports DirectQuery for real-time reporting and Import mode for scheduled data loads.
 
 > [!IMPORTANT]
-> The v2 connector consumes request units (RUs) from your database. DirectQuery mode generates queries with each report interaction, while Import mode consumes RUs during data refresh. Review the [known limitations](#known-limitations-and-considerations) before using this connector.
+> The Azure Cosmos DB v2 connector consumes request units (RUs) from your database. DirectQuery mode generates queries with each report interaction, while Import mode consumes RUs during data refresh. Review the [limitations and considerations](#azure-cosmos-db-v2-connector-limitations-and-considerations) before using this connector.
 
 ### Connect to your database
-
-# [Power BI service](#tab/Service)
 
 1. In the Fabric portal (<https://app.fabric.microsoft.com>), navigate to your workspace.
 
@@ -119,53 +119,19 @@ The Azure Cosmos DB v2 Power BI connector enables direct connection to your Cosm
 1. When prompted to authenticate, select **Organizational account**, sign in, and select **Next**.
 
    > [!NOTE]
-   > Account key authentication isn't supported for Cosmos DB in Fabric. Connection mode selection (Import or DirectQuery) isn't available during initial setup in the Power BI service—Import mode is used by default.
+   > Account key authentication isn't supported for Cosmos DB in Fabric. 
 
 1. In the **Navigator** pane, select the database and container that contain the necessary data for your report.
 
     The **Preview** pane shows a list of **Record** items. Each document is represented as a **Record** type in Power BI. Nested JSON blocks within documents also appear as **Record** types.
 
-1. Expand the record columns to view document properties, then select **Load** or **Transform Data**.
-
-# [Power BI Desktop](#tab/Desktop)
-
-1. Open **Power BI Desktop**.
-
-1. In the **Home** ribbon, select **Get Data**.
-
-1. Select **Azure** > **Azure Cosmos DB v2** > **Connect**.
-
-    :::image type="content" source="media/how-to-create-reports/pbi-desktop-connector-selection.png" lightbox="media/how-to-create-reports/pbi-desktop-connector-selection-full.png" alt-text="Screenshot of the Get Data window in Power BI Desktop showing Azure Cosmos DB v2 connector selection.":::
-
-1. In the **Azure Cosmos DB v2** window, enter your Cosmos DB in Fabric database endpoint URL(available from your database settings in the Fabric portal), select **OK**.
-
-1. When prompted to authenticate, select **Organizational account**, sign in, and select **Connect**.
-
-   > [!NOTE]
-   > Account key authentication isn't supported for Cosmos DB in Fabric.
-
-1. Choose your connection mode:
-
-   - **Import**: Select **Import** to load a copy of the data into Power BI Desktop. This mode is ideal for large datasets and provides faster report performance after initial data load.
-
-   - **DirectQuery**: Select **DirectQuery** to query your database in real-time. This mode ensures your reports always show the latest data without manual refresh, but report performance depends on your database query performance.
-
-1. In the **Navigator** pane, select the database and container that contain the necessary data for your report.
-
-    The **Preview** pane shows a list of **Record** items. Each document is represented as a **Record** type in Power BI. Nested JSON blocks within documents also appear as **Record** types.
-
-1. Expand the record columns to view document properties, then select **Load** or **Transform Data**.
-
----
-
-> [!TIP]
-> In Power BI Desktop, choose DirectQuery mode when you need real-time data access and your queries are optimized for performance. Choose Import mode when you need faster report interactions and can work with scheduled data refreshes.
+1. Expand the record columns to view document properties, then select **Create a report**. Optionally you can select **Create a semantic model only** or **Transform Data**.
 
 ### Create visualizations
 
 After loading your data:
 
-1. In the **Report** view, drag fields from the **Data** pane to the report canvas.
+1. In the new **Report** artifact, drag fields from the **Data** pane to the report canvas.
 
 1. Select visualizations from the **Visualizations** pane to create charts, tables, and other report elements.
 
@@ -262,7 +228,7 @@ For more information about data refresh in Power BI, see [Data refresh in Power 
 | **Data freshness** | Near real-time (mirroring latency) | Real-time (DirectQuery) or scheduled (Import) |
 | **Complex data types** | Supported (arrays, objects, nested) | Not supported |
 | **Schema evolution** | Handles dynamic schemas | Limited (first 1,000 docs) |
-| **Available in** | Fabric portal, Power BI Desktop, Power BI service | Fabric portal, Power BI Desktop, Power BI service |
+| **Available in** | Power BI service, Power BI Desktop| Power BI service, Power BI Desktop |
 | **Best for** | Production BI, complex data, no RU impact | Real-time queries, direct access, simple schemas |
 
 > [!TIP]
