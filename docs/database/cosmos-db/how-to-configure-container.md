@@ -22,7 +22,7 @@ While many features are automatically enabled and built-in to Cosmos DB in Micro
 To modify a Cosmos DB container, open the **Settings** section for a container in the Fabric portal. Settings which can be customized time-to-live (TTL), geospatial configuration, and indexing policy.
 
 > [!NOTE]
-> The vector and full-text container policy, partition keys are immutable and cannot be changed after container creation. Container throughput cannot be changed in the Fabric portal but can modified using the Cosmos DB SDK. See [Change Throughput](#change-throughput) for details.
+> The vector and full-text container policy, partition keys are immutable and cannot be changed after container creation. Container throughput cannot be changed in the Fabric portal but can be modified using the Cosmos DB SDK. See [Change Throughput](#change-throughput) for details.
 
 1. Open the Fabric portal (<https://app.fabric.microsoft.com>).
 
