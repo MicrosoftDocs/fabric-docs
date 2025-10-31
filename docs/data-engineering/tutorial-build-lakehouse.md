@@ -47,7 +47,7 @@ In this section, you create a lakehouse in Fabric.
 
 1. To open your workspace, enter its name in the search box located at the top and select it from the search results.
 
-1. From the workspace, select **New item**, then select **Lakehouse**.
+1. From the workspace, select **New item**, enter **Lakehouse** in the search box, then select **Lakehouse**.
 
 1. In the **New lakehouse** dialog box, enter **wwilakehouse** in the **Name** field.
 
