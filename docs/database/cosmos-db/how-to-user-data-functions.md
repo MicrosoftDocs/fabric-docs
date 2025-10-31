@@ -151,7 +151,7 @@ def query_products(cosmosDb: fn.FabricItem, categoryName: str) -> list[dict[str,
 
     :::image type="content" source="./media/how-to-user-data-functions/update-endpoint-and-database.png" alt-text="Screenshot showing how to update the endpoint and database name." lightbox="./media/how-to-user-data-functions/update-endpoint-and-database.png":::
 
-1. Now you can test it by using the [Test capability](/fabric/data-engineering/user-data-functions/test-user-data-functions.md) in Develop mode.
+1. Now you can test it by using the [Test capability](/fabric/data-engineering/user-data-functions/test-user-data-functions) in Develop mode.
 
 1. In the catetoryName parameter type `Computers, Laptops`
 
