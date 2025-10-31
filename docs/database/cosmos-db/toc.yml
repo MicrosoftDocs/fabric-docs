@@ -24,6 +24,16 @@ items:
         href: how-to-access-data-lakehouse.md
       - name: Create Power BI reports
         href: how-to-create-reports.md
+  - name: Samples
+    items:
+      - name: Cosmos DB getting started
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/python-crud-fundamentals.md
+      - name: Vector search
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search.md
+      - name: Advanced vector search
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search-advanced.md
+      - name: Spark analytics with Power BI queries
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/spark-analytics-power-bi.md
   - name: Build AI applications
     items:
       - name: Index vector data
