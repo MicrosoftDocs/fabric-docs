@@ -28,14 +28,12 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 | **Approximate numerics** | <ul><li>**[float](/sql/t-sql/data-types/float-and-real-transact-sql?view=fabric&preserve-view=true)**</li><li>**[real](/sql/t-sql/data-types/float-and-real-transact-sql?view=fabric&preserve-view=true)**</li></ul> |
 | **Date and time** | <ul><li>**[date](/sql/t-sql/data-types/date-transact-sql?view=fabric&preserve-view=true)**</li><li>**[time](/sql/t-sql/data-types/time-transact-sql?view=fabric&preserve-view=true)**\*</li><li>**[datetime2](/sql/t-sql/data-types/datetime2-transact-sql?view=fabric&preserve-view=true)**\*</li></ul> |
 | **Fixed-length character strings** | <ul><li>**[char](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**</li></ul>|
-| **Variable length character strings**| <ul><li>**[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**\*\*\*</li></ul> |
-| **Binary strings** | <ul><li>**[varbinary](/sql/t-sql/data-types/binary-and-varbinary-transact-sql?view=fabric&preserve-view=true)**\*\*\*</li><li>**[uniqueidentifer](/sql/t-sql/data-types/uniqueidentifier-transact-sql?view=fabric&preserve-view=true)**\*\*</li></ul> |
+| **Variable length character strings**| <ul><li>**[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)** - the limit for storage in **varchar(max)** is currently 16 MB in Fabric Data Warehouse.</li></ul> |
+| **Binary data** | <ul><li>**[varbinary](/sql/t-sql/data-types/binary-and-varbinary-transact-sql?view=fabric&preserve-view=true)** - the limit for storage in **varbinary(max)** is currently 16 MB in Fabric Data Warehouse.</li><li>**[uniqueidentifer](/sql/t-sql/data-types/uniqueidentifier-transact-sql?view=fabric&preserve-view=true)**\*\*</li></ul> |
 
 \* The precision for **datetime2** and **time** is limited to 6 digits of precision on fractions of seconds.
 
 \*\* The **uniqueidentifier** data type is a T-SQL data type without a matching data type in Delta Parquet. As a result, it's stored as a binary type. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports storing and reading **uniqueidentifier** columns, but these values can't be read on the [!INCLUDE [fabric-dw](includes/fabric-se.md)]. Reading **uniqueidentifier** values in the lakehouse displays a binary representation of the original values. As a result, features such as cross-joins between [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-dw](includes/fabric-se.md)] using a **uniqueidentifier** column don't work as expected.
-
-\*\*\* Support for **varchar (max)** and **varbinary (max)** is currently in preview for the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The string columns from the underlying Delta Lake files in One Lake are represented as **varchar(8000)** instead of **varchar(max)** in the [!INCLUDE [fabric-dw](includes/fabric-se.md)]. The limit for storage in **varchar(max)** is currently 1 MB in Fabric Data Warehouse.
 
 For more information about the supported data types including their precisions, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric).
 
@@ -79,8 +77,8 @@ The rules for mapping original Delta types to the SQL types in [!INCLUDE [fabric
 | **DATE** | **[date](/sql/t-sql/data-types/date-transact-sql?view=fabric&preserve-view=true)** |
 | **TIMESTAMP** | **[datetime2](/sql/t-sql/data-types/datetime2-transact-sql?view=fabric&preserve-view=true)** |
 | **CHAR**(n) | **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(n) with `Latin1_General_100_BIN2_UTF8` collation |
-| **STRING**, **VARCHAR**(n) | **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(n) with `Latin1_General_100_BIN2_UTF8` collation |
-| **STRING**, **VARCHAR**(8000) | **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(8000) with `Latin1_General_100_BIN2_UTF8` collation |
+| **VARCHAR**(n)  where n < 2000 | **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(4*n) with `Latin1_General_100_BIN2_UTF8` collation |
+| **STRING**, **VARCHAR**(n) where n >= 2000| **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(8000) in SQL analytics endpoint for Lakehouse, and **[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**(MAX) in SQL analytics endpoint for Mirrored artifacts.<br/>The **varchar** column has `Latin1_General_100_BIN2_UTF8` collation. |
 | **BINARY** | **[varbinary](/sql/t-sql/data-types/binary-and-varbinary-transact-sql?view=fabric&preserve-view=true)**(n) |
 | **DECIMAL**, **DEC**, **NUMERIC** | **[decimal](/sql/t-sql/data-types/decimal-and-numeric-transact-sql?view=fabric&preserve-view=true)**(p,s) |
 
