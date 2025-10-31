@@ -45,7 +45,7 @@ The following table contains a summary of the properties needed for a pipeline c
 | **Server Hostname** | The hostname for your Azure Databricks instance. For example: *example.azuredatabricks.net* | Yes |  | ✓ |
 | **HTTP Path** | The http path for your data. For example: */sql/1.0/warehouses/abcdef1234567890* | Yes |  | ✓ |
 | **Connection name** | A name for your connection. | Yes |  | ✓ |
-| **Data gateway** | An existing data gateway if your Azure Databricks instance isn't publically accessible. | No |  | ✓ |
+| **Data gateway** | An existing data gateway if your Azure Databricks instance isn't publicly accessible. | No |  | ✓ |
 | **Authentication kind** | Personal access token. | Yes |  | Personal Access token. |
 | **Personal access token** | Your personal access token for Azure Databricks | Yes |  | ✓ |
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, and **Public**.|Yes||✓|
