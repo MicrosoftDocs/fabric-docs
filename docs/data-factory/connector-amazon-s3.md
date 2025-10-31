@@ -32,7 +32,7 @@ The following table contains a summary of the properties needed for a pipeline c
 |**Connection name**|A name for your connection.|Yes||✓|
 |**Connection type**|Select **Amazon S3** for your connection type.|Yes||✓|
 |**Data source path**|Enter your account endpoint URL of your Amazon S3.|Yes||✓|
-|**Authentication**|Go to [Authentication](#authentication) |Yes||Go to [Authentication](#authentication)|
+|**Authentication**|Access Key |Yes||Access Key|
 
 For specific instructions to set up your connection in a pipeline, follow these steps:
 
@@ -55,7 +55,7 @@ For specific instructions to set up your connection in a pipeline, follow these 
 
 1. Under **Authentication kind**, select your authentication kind from the drop-down list and complete the related configuration. The Amazon S3 connector supports the following authentication types:
 
-   - [Access Key](#access-key-authentication)
+   - Access Key
 
    :::image type="content" source="media/connector-amazon-s3/authentication-kind.png" alt-text="Screenshot showing the authentication kind for Amazon S3.":::
 

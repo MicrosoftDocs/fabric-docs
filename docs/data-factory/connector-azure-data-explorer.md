@@ -43,7 +43,7 @@ The following table contains a summary of the properties needed for a pipeline c
 
 | Name | Description | Required | Property | Copy |
 | --- | --- | :---: | --- | :---: |
-| **Cluster** | Your Azure Data Explorer cluster URL. For example: *https://mycluster.kusto.windows.net* | Yes |  | ✓ |
+| **Cluster** | Your Azure Data Explorer cluster URL. For example: `https://mycluster.kusto.windows.net` | Yes |  | ✓ |
 | **Database** | The database in Azure Data Explorer where your data is housed. For example: *MyDatabase* | No |  | ✓ |
 | **Connection name** | A name for your connection. | Yes |  | ✓ |
 | **Data gateway** | An existing data gateway if your Azure Data Explorer instance isn't publicly accessible. | No |  | ✓ |
@@ -65,7 +65,7 @@ For specific instructions to set up your connection in a pipeline, follow these 
 
 1. In the **New connection** pane, specify the following fields:
 
-  * **Cluster** : Your Azure Data Explorer cluster URL. For example: *https://mycluster.kusto.windows.net*
+  * **Cluster** : Your Azure Data Explorer cluster URL. For example: `https://mycluster.kusto.windows.net`
   * **Database** : Optionally provide the database in Azure Data Explorer where your data is housed. For example: *MyDatabase*
   * **Connection**: Select **Create new connection**.
   * **Connection name**: Specify a name for your connection.

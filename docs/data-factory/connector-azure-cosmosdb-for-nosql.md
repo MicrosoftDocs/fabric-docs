@@ -53,7 +53,7 @@ A summary of the connector properties supported in a pipeline is provided in the
 |**Connection type**|Select **Azure CosmosDB (Pipeline)** for your connection type.|Yes||✓|
 |**Account Endpoint**|Enter your Azure Cosmos DB for NoSQL account endpoint URL.|Yes||✓|
 |**Database**|Enter the Azure Cosmos DB for NoSQL database ID.|Yes||✓|
-|**Authentication**|Go to [Authentication](#authentication). |Yes|Go to [Authentication](#authentication).|Go to [Authentication](#authentication).|
+|**Authentication**|Go to [Authentication](#account-key-authentication). |Yes|Go to [Authentication](#account-key-authentication).|Go to [Authentication](#account-key-authentication).|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, and **Public**.|Yes||✓|
 
 For specific steps to set up your connection, follow these instructions:
