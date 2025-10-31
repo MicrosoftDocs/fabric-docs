@@ -9,7 +9,7 @@ ms.date: 10/22/2025
 
 - Deleting and adding a similar container replaces the data in the warehouse tables with only the new container's data.
 
-- Changing the type of data in a property across multiple items cause the replicator to upcast the data where applicable. This behavior is in parity with the native delta experience. Any data that doesn't fit into the supported criteria become a null type. For example, changing an array property to a string upcasts to a null type.
+- Changing the type of data in a property across multiple items cause the replicator to upcast the data where applicable. This behavior is in parity with the native delta experience. Any data that doesn't fit into the supported criteria becomes a null type. For example, changing an array property to a string upcasts to a null type.
 
 - Adding new properties to items cause mirroring to seamlessly detect the new properties and add corresponding columns to the warehouse table. If item properties are removed or missing, they have a null value for the corresponding record.
 
