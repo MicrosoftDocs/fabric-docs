@@ -20,15 +20,15 @@ In this guide, we will create a new User Data Functions item and write a new fun
 
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-database.md)]
 
-    - An identity with the **Read** permission for the database in Fabric
+- An identity with the **Read** permission for the database in Fabric
 
-    - For more information on Fabric permissions, see [access controls](authorization.md#access-controls).
+- For more information on Fabric permissions, see [access controls](authorization.md#access-controls).
 
-    - Capture the name of the new Cosmos DB database you created. You use this value in later step\[s\].
+- Capture the name of the new Cosmos DB database you created. You use this value in later step\[s\].
 
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-container.md)]
 
-    - You will use the SampleData container in later step\[s\].
+- You will use the SampleData container in later step\[s\].
 
 ## Retrieve Cosmos DB endpoint
 
@@ -67,7 +67,7 @@ After saving the Cosmos database and container name, get the endpoint for the Co
 
 1. Once the `hello_fabric` function is published, you can run it from the list of functions in the Functions explorer.
 
-   :::image type="content" source="/fabric/data-engineering/user-data-functions/media/user-data-functions-create-in-portal/hello-fabric-template-1.png" alt-text="Screenshot showing the code for hello-fabric function." lightbox="/fabric/data-engineering/user-data-functions/media/user-data-functions-create-in-portal/hello-fabric-template-1.png":::
+   :::image type="content" source="/fabric/data-engineering/media/user-data-functions-create-in-portal/hello-fabric-template-1.png" alt-text="Screenshot showing the code for hello-fabric function." lightbox="/fabric/data-engineering/media/user-data-functions-create-in-portal/hello-fabric-template-1.png":::
 
 ### Add a new function for Cosmos DB
 
@@ -75,7 +75,7 @@ Next we will create a new function. In this example we will modify the `hello_fa
 
 1. Make sure you are in **Develop mode**. Select **Library management** to add the libraries that your function requires.
 
-   :::image type="content" source="/fabric/data-engineering/user-data-functions/media/user-data-functions-manage-libraries/select-library-management.png" alt-text="Screenshot showing how to manage libraries." lightbox="/fabric/data-engineering/user-data-functions/media/user-data-functions-manage-libraries/select-library-management.png":::
+   :::image type="content" source="/fabric/data-engineering/media/user-data-functions-manage-libraries/select-library-management.png" alt-text="Screenshot showing how to manage libraries." lightbox="/fabric/data-engineering/media/user-data-functions-manage-libraries/select-library-management.png":::
 
    >[!NOTE]
    > `fabric_user_data_functions` library is added by default and can't be removed. This library is required for the functionality of User data functions. You need to update the version of this library for any future releases of this SDK.
@@ -151,7 +151,7 @@ def query_products(cosmosDb: fn.FabricItem, categoryName: str) -> list[dict[str,
 
     :::image type="content" source="../media/how-to-user-data-functions/update-endpoint-and-database.png" alt-text="Screenshot showing how to update the endpoint and database name." lightbox="../media/how-to-user-data-functions/update-endpoint-and-database.png":::
 
-1. Now you can test it by using the [Test capability](./test-user-data-functions.md) in Develop mode.
+1. Now you can test it by using the [Test capability](/fabric/data-engineering/user-data-functions/test-user-data-functions.md) in Develop mode.
 
 1. In the catetoryName parameter type `Computers, Laptops`
 
