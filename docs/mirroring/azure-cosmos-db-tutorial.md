@@ -58,7 +58,7 @@ Next, connect the source database to the mirrored database.
 
 1. Provide credentials for the Azure Cosmos DB for NoSQL account including these items:
 
-    | | Value |
+    | Account credentials | Value |
     | --- | --- |
     | **Azure Cosmos DB endpoint** | URL endpoint for the source account. |
     | **Connection name** | Unique name for the connection. |
@@ -75,6 +75,8 @@ Next, connect the source database to the mirrored database.
     > - `Microsoft.DocumentDB/databaseAccounts/readAnalytics`
     >
     > For more information, see [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
+    >
+    > For an example of a script to auto-apply a custom role-based access control role, see [`rbac-cosmos-mirror.sh` on azure-samples/azure-cli-samples](https://github.com/Azure-Samples/azure-cli-samples/blob/master/cosmosdb/common/rbac-cosmos-mirror.sh).
 
 2. Select **Connect**. Then, select a database to mirror. Optionally, select specific containers to mirror.
 

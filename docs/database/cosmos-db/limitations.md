@@ -49,7 +49,15 @@ This article lists current limitations for Cosmos DB in Microsoft Fabric.
 
 ## Regional availability
 
-- Fabric is not yet available in every region within Azure. Please review the list of regions where Fabric capacity is available and can support Cosmos DB in Fabric. [Fabric regional availability](../../admin/region-availability.md)
+- Microsoft Fabric is available in specific Azure regions. For the complete list of regions where Fabric capacity is available, see [Fabric regional availability](../../admin/region-availability.md).
+
+  Cosmos DB in Fabric is currently not supported in the following regions:
+  - India West
+  - Qatar Central
+  - UAE Central
+  - Austria East
+  - Chile Central
+  - South Central US
 
 ## Data
 
