@@ -14,7 +14,7 @@ items:
         href: sample-data.md
       - name: Query cross-database
         href: how-to-query-cross-database.md
-  - name: Integrate with other services
+  - name: Integrate with Fabric services
     items:
       - name: Mirror to OneLake
         href: mirror-onelake.md
