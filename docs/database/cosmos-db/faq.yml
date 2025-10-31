@@ -18,7 +18,7 @@ sections:
         answer: |
           Microsoft Fabric is an enterprise-ready, end-to-end data platform. Fabric unifies data movement, databases, data engineering, data science, real-time intelligence, BI with copilot, and application development. You no longer need to put together these services individually from multiple vendors.
 
-          Cosmos DB in Fabric is an AI-optimized NoSQL database, automatically configured to meet your application needs through a simplified experience. Developers can use Cosmos DB in Fabric to build AI applications with ease, without managing complex database settings. Cosmos DB in Microsoft Fabric is based on [Azure Cosmos DB](/azure/cosmos-db/nosql), which provides dynamic scaling, high availability, and reliability for the database.
+          Cosmos DB in Fabric is an AI-optimized NoSQL database, automatically configured to meet your application needs through a simplified experience. Developers can use Cosmos DB in Fabric to build AI applications with ease, without managing complex database settings. Cosmos DB in Microsoft Fabric is based on [Azure Cosmos DB](/nosql/query/overview?context=/fabric/context/context-database), which provides dynamic scaling, high availability, and reliability for the database.
 
           Cosmos DB is a new addition to the Databases workload in Fabric. You can now store semi-structured NoSQL data in Cosmos DB in Fabric. Semi-structured data can be stored alongside your relational data in SQL databases in Fabric, enabling a unified data platform for your applications.
 
@@ -35,7 +35,6 @@ sections:
           - **Billing**: Usage is measured in Fabric capacity units (CUs) rather than Azure request units (RUs), and is billed through your Fabric capacity.
           - **Authentication**: Cosmos DB in Fabric uses Microsoft Entra authentication exclusively, with no primary/secondary keys.
           - **Licensing**: Requires a Power BI Premium, Fabric Capacity, or Trial Capacity license.
-          - **API compatibility**: Only the NoSQL API is supported. Other Azure Cosmos DB APIs (MongoDB, Cassandra, Gremlin, Table) are not available in Fabric.
           
           For more information, see [Cosmos DB in Fabric overview](overview.md) and [billing and utilization](billing-usage.md).
       - question: |
@@ -52,7 +51,7 @@ sections:
           1. Ensure you have a Power BI Premium, Fabric Capacity, or Trial Capacity license.
           2. Navigate to the Fabric portal and create a new Cosmos DB database in your workspace.
           3. Create containers to store your data.
-          4. Connect to your database using the Azure Cosmos DB for NoSQL SDKs with Microsoft Entra authentication.
+          4. Connect to your database using the Cosmos DB SDKs with Microsoft Entra authentication.
           
           For a step-by-step guide, see [Quickstart: Create a Cosmos DB database in Microsoft Fabric](quickstart-portal.md).
   - name: Connectivity
@@ -60,25 +59,25 @@ sections:
       - question: |
           How do I connect to Cosmos DB in Fabric?
         answer: |
-          Microsoft Fabric exposes an endpoint that is compatible with the various Azure Cosmos DB for NoSQL software development kits (SDKs). These SDKs along with the corresponding Azure Identity library should be used to connect to the database directly using Microsoft Entra authentication. For more information, see [connect to Cosmos DB in Microsoft Fabric using Microsoft Entra ID](how-to-authenticate.md).
+          Microsoft Fabric exposes an endpoint that is compatible with the Cosmos DB software development kits (SDKs). These SDKs along with the corresponding Azure Identity library should be used to connect to the database directly using Microsoft Entra authentication. For more information, see [connect to Cosmos DB in Microsoft Fabric using Microsoft Entra ID](how-to-authenticate.md).
       - question: |
           Which Azure Cosmos DB SDKs are supported for Cosmos DB in Fabric?
         answer: |
-          Cosmos DB in Fabric supports only the Azure Cosmos DB for NoSQL SDKs, including:
+          Cosmos DB in Fabric supports the Cosmos DB SDKs, including:
 
-          - .NET SDK for NoSQL
-          - Python SDK for NoSQL
-          - Java SDK for NoSQL
-          - JavaScript/Node.js SDK for NoSQL
-          - Go SDK for NoSQL
-          
-          **Important**: Other Azure Cosmos DB API SDKs (MongoDB, Cassandra, Gremlin, Table) are not compatible with Cosmos DB in Fabric.
+          - .NET SDK
+          - Python SDK
+          - Java SDK
+          - JavaScript/Node.js SDK
+          - GO SDK
+          - Rust SDK
+          - Apache Spark SDK
           
           Use these SDKs along with the Azure Identity library for Microsoft Entra authentication. For more information, see [connect to Cosmos DB in Fabric](how-to-authenticate.md).
       - question: |
           Can I use connection strings or primary keys to connect to Cosmos DB in Fabric?
         answer: |
-          No. Cosmos DB in Fabric exclusively uses Microsoft Entra authentication for secure access. Primary and secondary keys are not supported. You must use Microsoft Entra identities (user identities, service principals, or managed identities) to authenticate.
+          No, primary and secondary keys are not supported. You must use Microsoft Entra identities (user identities, service principals, or managed identities) to authenticate.
 
           For more information, see [authentication for Cosmos DB in Fabric](how-to-authenticate.md).
   - name: Query and data operations
@@ -92,13 +91,13 @@ sections:
 
           The built-in mirroring feature for Cosmos DB in Fabric also supports the use of T-SQL to query data. Mirroring and the SQL analytics endpoint allow you to use familiar T-SQL syntax to work with your Cosmos DB data, making it easier to integrate with existing SQL-based workflows and tools.
 
-          For more information, see [use the NoSQL query language](/nosql/query).
+          For more information, see [use the NoSQL query language](/nosql/query/overview?context=/fabric/context/context-database).
       - question: |
           Does Cosmos DB in Fabric support aggregation functions?
         answer: |
           Yes. Cosmos DB in Fabric supports aggregation via aggregate functions in the NoSQL query language, including COUNT, MAX, MIN, AVG, and SUM. These functions can be used in queries to perform analytics on your data.
 
-          For more information, see [NoSQL query language documentation](/azure/cosmos-db/nosql/query/).
+          For more information, see [NoSQL query language documentation](/nosql/query/overview?context=/fabric/context/context-database).
       - question: |
           Does Cosmos DB in Fabric support ACID transactions?
         answer: |
@@ -106,13 +105,13 @@ sections:
 
           Transactions can be executed using transactional batch operations in the SDKs.
 
-          For more information, see [Azure Cosmos DB transactions](/azure/cosmos-db/nosql/transactional-batch).
+          For more information, see [Cosmos DB transactions](/azure/cosmos-db/nosql/transactional-batch).
       - question: |
           How does Cosmos DB in Fabric handle concurrency?
         answer: |
           Cosmos DB in Fabric supports optimistic concurrency control (OCC) through HTTP entity tags (ETags). Every resource has an ETag that is set on the server every time a document is updated. ETags can be used with the If-Match header to allow the server to decide whether a resource should be updated. If the ETag is no longer current, the server rejects the operation with an "HTTP 412 Precondition failure" response code, and the client must refetch the resource to acquire the current ETag value.
 
-          Most of the Cosmos DB NoSQL SDKs include classes to manage optimistic concurrency control.
+          Most of the Cosmos DB SDKs include classes to manage optimistic concurrency control.
       - question: |
           Can I query data across multiple Cosmos DB databases in Fabric?
         answer: |
@@ -160,7 +159,7 @@ sections:
 
           In Cosmos DB in Fabric, request units are converted to Fabric capacity units (CUs) for billing and usage reporting purposes.
 
-          For more information, see [request units in Cosmos DB in Fabric](request-units.md).
+          For more information, see [request units in Cosmos DB in Fabric](request-units.md) and [billing and utilization](billing-usage.md).
       - question: |
           How does autoscale work in Cosmos DB in Fabric?
         answer: |
@@ -188,7 +187,7 @@ sections:
       - question: |
           How do I modify the throughput (RU/s) for a container?
         answer: |
-          You can read and update autoscale throughput on a container using the Cosmos DB NoSQL SDK. Use the SDK's throughput management methods to get the current throughput and replace it with a new value.
+          You can read and update autoscale throughput on a container using the Cosmos DB SDK. Use the SDK's throughput management methods to get the current throughput and replace it with a new value.
 
           For code examples, see [autoscale throughput in Cosmos DB in Fabric](autoscale-throughput.md).
   - name: Indexing and search
@@ -343,7 +342,7 @@ sections:
         answer: |
           Yes. You can implement CI/CD workflows for Cosmos DB in Fabric using Fabric's deployment pipelines and Git integration. This allows you to version control your database schemas, configurations, and deployment automation.
 
-          For more information, see [continuous integration and deployment for Cosmos DB in Fabric](.how-to-continuous-integration-deployment.md).
+          For more information, see [continuous integration and deployment for Cosmos DB in Fabric](how-to-continuous-integration-deployment.md).
       - question: |
           Can I migrate data from Azure Cosmos DB to Cosmos DB in Fabric?
         answer: |
