@@ -21,10 +21,6 @@ Cosmos DB in Microsoft Fabric exclusively relies on Microsoft Entra ID authentic
 
   - For more information on Fabric permissions, see [access controls](authorization.md#access-controls).
 
-- Azure CLI
-
-  - If you don't already have it, [install Azure CLI](/cli/azure/install-azure-cli).
-
 [!INCLUDE[Prerequisites - Development languages core](includes/prerequisite-dev-lang-core.md)]
 
 ## Retrieve Cosmos DB endpoint
