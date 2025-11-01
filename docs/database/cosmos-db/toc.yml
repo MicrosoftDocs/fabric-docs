@@ -24,6 +24,8 @@ items:
         href: how-to-access-data-lakehouse.md
       - name: Create Power BI reports
         href: how-to-create-reports.md
+      - name: User data functions
+        href: how-to-user-data-functions.md
   - name: Samples
     items:
       - name: Cosmos DB getting started
