@@ -24,6 +24,8 @@ items:
         href: how-to-access-data-lakehouse.md
       - name: Create Power BI reports
         href: how-to-create-reports.md
+      - name: Use Cosmos DB containers directly with Spark
+        href: how-to-use-spark-directly.md
   - name: Samples
     items:
       - name: Cosmos DB getting started
