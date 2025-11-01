@@ -11,7 +11,7 @@ ms.date: 11/01/2025
 
 # Query Cosmos DB in Microsoft Fabric using the Cosmos DB Spark Connector
 
-You can use Spark and the Azure Cosmos DB Spark connector to read or write data from an Azure Cosmos DB for NoSQL account. This is different from using Spark to read data from the Cosmos DB in Fabric mirrored data stored in OneLake, as it connects directly to the Cosmos DB endpoint to perform operations.
+You can use Spark and the Azure Cosmos DB Spark connector to read or write data from an Azure Cosmos DB for NoSQL account. Using Spark connector is different from using Spark to read data from the Cosmos DB in Fabric mirrored data stored in OneLake, as it connects directly to the Cosmos DB endpoint to perform operations.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ You can use Spark and the Azure Cosmos DB Spark connector to read or write data 
 [!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
 
 > [!NOTE]  
-> In this article, we have used the Cosmos DB sample created above with a database name of **CosmosSampleDatabase** and a container name of **SampleData**. Creating a sample database and container with these names will let you more easily follow this article.
+> This article uses the built-in Cosmos DB sample created with a database name of **CosmosSampleDatabase** and a container name of **SampleData**.
 
 ## Retrieve Cosmos DB endpoint
 
@@ -119,7 +119,8 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    df.show(5)
    ```
 
-> [!NOTE] The *SampleData* container you created earlier contains two different entities with two separate schemas, *product* and *review*. When you use the inferSchema option above. It will detect these two different schemas within this Cosmos DB container.
+> [!NOTE]
+> The *SampleData* container you created earlier contains two different entities with two separate schemas, *product* and *review*. The inferSchema option will detect the two different schemas within this Cosmos DB container.
 
 1. Show the schema of the data loaded into the DataFrame by using `printSchema` and ensure the schema matches the sample document structure.
 
@@ -190,7 +191,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    queryDF.show(1)
    ```
 
-1. In this example, we will show how to execute a query with an embedded array and project the results. Query the sample dataset to retrieve a DataFrame containing a list of all products along with their lowest recorded price.
+1. This example shows how to work with an embedded array in a JSON document. First, query the container, then use the explode operator, then calculate the lowest price for a product in its product history.
 
    ```scala
    // Retrieve the product data from the SampleData container
@@ -242,7 +243,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
 
 ## Create a new Cosmos DB in Fabric container using Spark
 
-1. Create a new container named `MinPricePerProduct` by using `CREATE TABLE IF NOT EXISTS` with the Spark Catalog API. Since this will always be a small container that does not need to scale we set the partition key path to `/id` and set the smallest allowable throughput with an autoscale throughput of `1000` request units per second (RU/s).
+1. Create a new container named `MinPricePerProduct` by using `CREATE TABLE IF NOT EXISTS` with the Spark Catalog API. This container will always be small and not need to scale. Set the partition key path to `/id` and set the smallest allowable throughput with an autoscale throughput of `1000` request units per second (RU/s).
 
    ```scala
    // Create a MinPricePerProduct container by using the Catalog API
