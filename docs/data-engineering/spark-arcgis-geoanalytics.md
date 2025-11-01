@@ -5,7 +5,7 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: concept-article
-ms.date: 10/27/2025
+ms.date: 10/31/2025
 #customer intent: As a data scientist or Spark developer, I want to use ArcGIS GeoAnalytics in Microsoft Fabric to perform spatial data transformation and analysis.
 ---
 
@@ -140,7 +140,7 @@ Support for ArcGIS GeoAnalytics can be found through the [Esri Community](https:
 
   * When writing to Delta, ArcGIS GeoAnalytics converts geometry to a well-known binary format. When reading these Delta tables, check the column type and use functions like [ST_GeomFromBinary](https://developers.arcgis.com/geoanalytics-fabric/sql-functions/st_geom_from_binary/) to convert back to geometry.
 
-* For authentication and usage tracking, the ArcGIS GeoAnalytics engine makes calls to Esri services outside of Fabric and hence currently it is not supported when [Outbound Access Protection](https://learn.microsoft.com/en-us/fabric/security/workspace-outbound-access-protection-overview) is enabled. 
+* For authentication and usage tracking, the ArcGIS GeoAnalytics engine makes calls to Esri services outside of Fabric and hence currently it is not supported when [Outbound Access Protection](https://learn.microsoft.com/fabric/security/workspace-outbound-access-protection-overview) is enabled. 
 
 ### Related content
 
