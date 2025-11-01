@@ -34,26 +34,26 @@ To connect to Cosmos DB using the Spark connector, you need to configure a custo
 1. Create a new notebook.
 1. Select Spark (Scala) as the language you want to use.
 
-   :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook.png." alt-text="Screenshot of the notebook showing the selection of Spark (Scala) as the preferred language.":::
+   :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook.png" alt-text="Screenshot of the notebook showing the selection of Spark (Scala) as the preferred language.":::
 
 1. Click the environment dropdown.
 1. Check your workspace settings to ensure that you are using Runtime 1.3 (Spark 3.5).
 
-   :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook-settings.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook-settings.png." alt-text="Screenshot of the notebook showing dropdown menu of workspace settings.":::
+   :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook-settings.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook-settings.png" alt-text="Screenshot of the notebook showing dropdown menu of workspace settings.":::
 
 1. Select **New environment**.
 1. Provide a new environment name.
 1. Ensure that the runtime is configured for Runtime 1.3 (Spark 3.5).
 1. Choose **Custom Library** from the **Libraries** folder in the left panel.
 
-   :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook-custom.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook-custom.png." alt-text="Screenshot of the environment showing custom library option.":::
+   :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook-custom.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook-custom.png" alt-text="Screenshot of the environment showing custom library option.":::
 
 1. Upload the two library `.jar` files you previously downloaded.
 1. Click **Save**.
 1. Click **Publish**, then **Publish all**, and finally **Publish**.
 1. Once published, the custom libraries should have a status of success.
 
-   :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook-library.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook-library.png." alt-text="Screenshot of the environment with custom library files commited.":::
+   :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook-library.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook-library.png" alt-text="Screenshot of the environment with custom library files commited.":::
 
 1. Return to the notebook and select the newly configured environment by clicking the environment dropdown, selecting **Change environment**, and choosing the name of the newly created environment.
 
