@@ -35,8 +35,8 @@ V-Order behavior in Apache Spark is controlled through the following configurati
 | Configuration | Default Value | Description |
 |---------------|----------------|-------------|
 | `spark.sql.parquet.vorder.default` | `false` | Controls session-level V-Order writing. Set to `false` by default in new Fabric workspaces. |
-| `TBLPROPERTIES("delta.parquet.vorder.default")` | `false` | Controls default V-Order behavior at the table level. |
-| DataFrame writer option: `parquet.vorder.default` | Unset | Used to control V-Order at the write operation level. |
+| `TBLPROPERTIES("delta.parquet.vorder.enabled")` | Unset | Controls default V-Order behavior at the table level. |
+| DataFrame writer option: `parquet.vorder.enabled` | Unset | Used to control V-Order at the write operation level. |
 
 Use the following commands to enable or override V-Order writes as needed for your scenario.
 
@@ -120,7 +120,7 @@ sparkR.conf("spark.sql.parquet.vorder.default", "false")
 ### Enable V-Order writing in Apache Spark session
 
 > [!IMPORTANT]
-> When enabled at the session level. All parquet writes are made with V-Order enabled which, includes non-Delta parquet tables and Delta tables with the ```parquet.vorder.default``` table property set to either ```true``` or ```false```.
+> When enabled at the session level. All parquet writes are made with V-Order enabled which, includes non-Delta parquet tables and Delta tables with the ```parquet.vorder.enabled``` table property set to either ```true``` or ```false```.
 
 # [Spark SQL](#tab/sparksql)
 
@@ -158,7 +158,7 @@ sparkR.conf("spark.sql.parquet.vorder.default", "true")
 Enable V-Order table property during table creation:
 ```sql
 %%sql 
-CREATE TABLE person (id INT, name STRING, age INT) USING parquet TBLPROPERTIES("delta.parquet.vorder.default" = "true");
+CREATE TABLE person (id INT, name STRING, age INT) USING parquet TBLPROPERTIES("delta.parquet.vorder.enabled" = "true");
 ```
 
 > [!IMPORTANT]
@@ -168,11 +168,11 @@ Enable or disable V-Order by altering the table property:
 
 ```sql
 %%sql 
-ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.default" = "true");
+ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.enabled" = "true");
 
-ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.default" = "false");
+ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.enabled" = "false");
 
-ALTER TABLE person UNSET TBLPROPERTIES("delta.parquet.vorder.default");
+ALTER TABLE person UNSET TBLPROPERTIES("delta.parquet.vorder.enabled");
 ```
 
 After you enable or disable V-Order using table properties, only future writes to the table are affected. Parquet files keep the ordering used when it was created. To change the current physical structure to apply or remove V-Order, see how to [Control V-Order when optimizing a table](#control-v-order-when-optimizing-a-table).
@@ -213,7 +213,7 @@ df_source.write\
   .format("delta")\
   .mode("overwrite")\
   .option("replaceWhere","start_date >= '2017-01-01' AND end_date <= '2017-01-31'")\
-  .option("parquet.vorder.default ","true")\
+  .option("parquet.vorder.enabled ","true")\
   .saveAsTable("myschema.mytable")
 
 DeltaTable.createOrReplace(spark)\
@@ -222,7 +222,7 @@ DeltaTable.createOrReplace(spark)\
   .addColumn("middleName","STRING")\
   .addColumn("lastName","STRING",comment="surname")\
   .addColumn("birthDate","TIMESTAMP")\
-  .option("parquet.vorder.default","true")\
+  .option("parquet.vorder.enabled","true")\
   .location("Files/people")\
   .execute()
 ```
