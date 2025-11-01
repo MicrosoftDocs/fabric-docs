@@ -29,7 +29,7 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 | **Date and time** | <ul><li>**[date](/sql/t-sql/data-types/date-transact-sql?view=fabric&preserve-view=true)**</li><li>**[time](/sql/t-sql/data-types/time-transact-sql?view=fabric&preserve-view=true)**\*</li><li>**[datetime2](/sql/t-sql/data-types/datetime2-transact-sql?view=fabric&preserve-view=true)**\*</li></ul> |
 | **Fixed-length character strings** | <ul><li>**[char](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)**</li></ul>|
 | **Variable length character strings**| <ul><li>**[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true)** - the limit for storage in **varchar(max)** is currently 16 MB in Fabric Data Warehouse.</li></ul> |
-| **Binary data** | <ul><li>**[varbinary](/sql/t-sql/data-types/binary-and-varbinary-transact-sql?view=fabric&preserve-view=true)** - the limit for storage in **varbinary(max)** is currently 16 MB in Fabric Data Warehouse.</li><li>**[uniqueidentifer](/sql/t-sql/data-types/uniqueidentifier-transact-sql?view=fabric&preserve-view=true)**\*\*</li></ul> |
+| **Binary data** | <ul><li>**[varbinary](/sql/t-sql/data-types/binary-and-varbinary-transact-sql?view=fabric&preserve-view=true)** - the limit for storage in **varbinary(max)** is currently 16 MB in Fabric Data Warehouse.</li><li>**[uniqueidentifier](/sql/t-sql/data-types/uniqueidentifier-transact-sql?view=fabric&preserve-view=true)**\*\*</li></ul> |
 
 \* The precision for **datetime2** and **time** is limited to 6 digits of precision on fractions of seconds.
 
