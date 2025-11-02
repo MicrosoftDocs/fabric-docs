@@ -13,7 +13,8 @@ ms.search.form: GQL Quick Reference
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This article is a quick reference for GQL (Graph Query Language) syntax in graph in Microsoft Fabric. For detailed explanations, see the [GQL language guide](gql-language-guide.md).
+This article is a quick reference of GQL (Graph Query Language) syntax for graph in Microsoft Fabric. 
+For detailed explanations, see the [GQL language guide](gql-language-guide.md).
 
 ## Query structure
 
@@ -170,9 +171,10 @@ Edge patterns specify relationships between nodes, including direction and edge 
 ```gql
 <-[e]-             -- Incoming edge
 -[e]->             -- Outgoing edge
--[e]-              -- Undirected edge
--[:knows]->        -- Edge with type
--[e:knows|likes]-> -- Multiple edge types
+-[e]-              -- Any edge
+-[e:knows]->       -- Edge with label ("relationship type")
+-[e:knows|likes]-> -- Edges with different labels
+-[:knows]->        -- :knows edge, don't bind variable
 ```
 
 For more information about edge patterns, see the [Graph patterns](gql-graph-patterns.md).
