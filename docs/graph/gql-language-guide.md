@@ -26,12 +26,12 @@ This guide serves both newcomers learning GQL fundamentals and experienced users
 
 Before diving into GQL, you should be familiar with these concepts:
 
-- **Basic understanding of databases** - Experience with any database system (SQL, NoSQL, or graph) is helpful
+- **Basic understanding of databases** - Experience with any database system (such as relational (SQL), NoSQL, or graph) is helpful
 - **Graph concepts** - Understanding of nodes, edges, and relationships in connected data
 - **Query fundamentals** - Knowledge of basic query concepts like filtering, sorting, and aggregation
 
 **Recommended background:**
-- Experience with SQL or openCypher makes learning GQL syntax easier (they share similar roots)
+- Experience with SQL or openCypher languages makes learning GQL syntax easier (they are GQL's roots)
 - Familiarity with data modeling helps with graph schema design
 - Understanding of your specific use case for graph data
 
@@ -254,7 +254,7 @@ This pipeline:
 3. Keeps only Contoso employees  
 4. Sorts by full name
 5. Takes the first 10 results
-6. Returns names and company locations
+6. Returns person's full names and company names
 
 ### Variables connect your data
 
@@ -323,7 +323,7 @@ Other status codes indicate further errors or warnings that were detected during
 > In application code, always rely on status codes to test for certain conditions.
 > Status codes are guaranteed to be stable and their general meaning will not change in the future.
 > Do not test for the contents of messages, as the concrete message reported for a status code can change 
-> from query to query.
+> in the future depending on the query or even between executions of the same query.
 
 Additionally, status objects can contain an underlying cause status object and a diagnostic record
 with further information characterizing the recorded condition.
