@@ -13,10 +13,11 @@ ms.search.form: GQL Language Guide
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-The GQL Graph Query Language is the ISO-standardized query language for graph databases. It helps you query and work with graph data efficiently. 
+The GQL Graph Query Language is the ISO-standardized query language for graph databases. 
+It helps you query and work with graph data efficiently. 
 
-The same international working group that oversees SQL develops GQL. If you already know SQL, you'll see familiar syntax in GQL.
-
+GQL is developed by the same ISO working group that standardizes SQL, ensuring consistency and rigor. 
+If you’re familiar with SQL, you’ll find many similarities in GQL (expressions, predicates, types) - making it easier to get started. 
 This guide serves both newcomers learning GQL fundamentals and experienced users seeking advanced techniques and comprehensive reference information.
 
 > [!NOTE]
@@ -47,9 +48,11 @@ Before diving into GQL, you should be familiar with these concepts:
 
 GQL is designed specifically for graph data. This makes it natural and intuitive to work with connected information. 
 
-Unlike SQL, which works with tables and joins, GQL lets you describe relationships using visual patterns. These patterns mirror how you think about connected data.
+Unlike SQL, which relies on table joins to express relationships, GQL uses visual graph patterns, which directly mirror how entities are connected, 
+making queries easier to read and reason about. 
 
-Here's a simple query that shows GQL's visual approach:
+Let’s say you want to find people and their friends (people who know each other) who were both born before 1999. 
+Here’s how GQL expresses that using a visual graph pattern: 
 
 ```gql
 MATCH (person:Person)-[:knows]-(friend:Person)
@@ -65,13 +68,13 @@ This query finds friends (people who know each other) who were both born before 
 
 Before diving into queries, understand these core concepts that form the foundation of GQL:
 
-- **Graphs** store your data as nodes (entities) and edges (relationships) with labels and properties
+- **Graphs** store your data as nodes (entities) and edges (relationships), each with labels and properties
 - **Graph types** act like schemas, defining what nodes and edges can exist in your graph
-- **Constraints** are extra restrictions imposed by graph types on graphs
+- **Constraints** are additional rules and restrictions imposed by graph types on graphs to enforce data integrity
 - **Queries** use statements like `MATCH`, `FILTER`, and `RETURN` to process data and show results
 - **Patterns** describe the graph structures you want to find using intuitive visual syntax
 - **Expressions** perform calculations and comparisons on your data, similar to SQL expressions
-- **Predicates** are boolean value expressions that are used to filter data 
+- **Predicates** are boolean value expressions that are used to filter results within queries 
 - **Value types** define what kinds of values you can process and store
 
 ## Understanding graph data
@@ -84,13 +87,15 @@ In GQL, you work with labeled property graphs. A graph consists of two types of 
 
 **Nodes** typically represent the entities (the "nouns") in your system—things like people, organizations, posts, or products. They're independent objects that exist in your domain. Nodes are sometimes also called vertices.
 
-**Edges** represent relationships between entities (the "verbs")—how your entities connect and interact. For example, which people know each other, which organization operates where, or who purchased which product. Edges are sometimes also called relationships.
+**Edges** represent relationships between entities (the "verbs")—how your entities connect and interact. 
+For example, people know each other (`:knows`), organizations that operate in specific regions (`:operates`), or customers who purchased products (`:purchased`).  
+Edges are sometimes also called relationships.
 
 Every graph element has these characteristics:
 
 - An **internal ID** that uniquely identifies it
-- **One or more labels**—descriptive names like `Person` or `knows`. Edges always have exactly one label in a graph in Microsoft Fabric.
-- **Properties**—name-value pairs that store data about the element
+- **One or more labels**—descriptive names like `Person` or `knows`. In Microsoft Fabric, graph edges always have exactly one label.
+- **Properties**—name-value pairs that store data about the element (such as `firstName: "Alice"` or `birthday: "19730108"`).
 
 ### How graphs are structured
 
@@ -148,12 +153,13 @@ Our social network includes these main kinds of nodes, representing entities of 
 ### How everything connects
 
 The connections between entities make the network interesting:
-- People know each other (friendships)
-- People work at companies or study at universities
-- People create posts and comments
-- People like posts and comments
-- People have interests in specific tags
-- Forums contain posts and have members and moderators
+- People know each other (friendships, `:knows`)
+- People work at companies (`:workAt`) or study at universities (`:studyAt`)
+- People create posts and comments (`:hasCreator`)
+- People like posts and comments (`:likes`)
+- Posts, Forums, Comments can have tags (`:hasTag`)
+- People have interests in specific tags (`:hasInterest`)
+- Forums contain posts (`:containerOf`) and have members (`:hasMember`) and moderators (`:hasModerator`)
 
 Graph edges represent domain relationships. This rich network creates many opportunities for interesting queries and analysis.
 
@@ -166,7 +172,7 @@ Now that you understand graph basics, let's see how to query graph data using GQ
 
 ### Start simple: find all people
 
-Let's begin with the most basic query possible:
+Let's begin with the most basic query possible, find the names (first name, last name) of all the people (`:Person`s) in the graph.
 
 ```gql
 MATCH (p:Person)
@@ -180,7 +186,7 @@ In this query:
 
 ### Add filtering: find specific people
 
-Now let's find people with specific characteristics:
+Now let's find people with specific characteristics, in this case, everyone named Alice and show their names and birthdays. 
 
 ```gql
 MATCH (p:Person)
@@ -188,13 +194,18 @@ FILTER p.firstName = 'Alice'
 RETURN p.firstName, p.lastName, p.birthday
 ```
 
-This query finds everyone named Alice and shows their names and birthdays.
+In this query: 
+
+1. **`MATCH`** finds all nodes (p) labeled Person 
+2. **`FILTER`** nodes (p) whose first name is Alice 
+3. **`RETURN`** shows their first, last name and birthday 
 
 ### Basic query structure
 
-Basic GQL queries all follow a consistent pattern: a sequence of statements that work together to find, filter, and return data. Most queries start with `MATCH` to find patterns in the graph and end with `RETURN` to specify what data you want back.
+Basic GQL queries all follow a consistent pattern: a sequence of statements that work together to find, filter, and return data.
+Most queries start with `MATCH` to find patterns in the graph and end with `RETURN` to specify the output.
 
-Here's a simple query:
+Here's a simple query that finds pairs of people who know each other and share the same birthday, then returns the total count of those friend pairs.
 
 ```gql
 MATCH (n:Person)-[:knows]-(m:Person)
@@ -202,7 +213,7 @@ FILTER n.birthday = m.birthday
 RETURN count(*) AS same_age_friends
 ```
 
-Here:
+In this query:
 
 1. **`MATCH`** finds all pairs of `Person` nodes that know each other
 2. **`FILTER`** keeps only the pairs where both people have the same birthday
@@ -215,49 +226,54 @@ Here:
 > [!NOTE]
 > GQL supports C-style `//` line comments, SQL-style `--` line comments, and C-style `/* */` block comments.
 
+### Common statements
+
+* [**`MATCH`**](#match-statement): Identifies the graph pattern to search for—this is where you define the structure of the data you're interested in. 
+* [**`LET`**](#let-statement): Assigns new variables or computed values based on matched data—adds derived columns to the result. 
+* [**`FILTER`**](#filter-statement): Narrows down the results by applying conditions—removes rows that don’t meet the criteria. 
+* [**`ORDER BY`**](#order-by-statement): Sorts the filtered data—helps organize the output based on one or more fields. 
+* [**`OFFSET`**](#offset-and-limit-statements) and [**`LIMIT`**](#offset-and-limit-statements): Restrict the number of rows returned—useful for pagination or top-k queries. 
+* [**`RETURN`**](#return-basic-result-projection): Specifies the final output—defines what data should be included in the result set and performs aggregation.
+
 ### How statements work together
 
-Statements in GQL work like a pipeline—each statement transforms the data from the previous statement. This approach makes queries easy to read because the execution order matches the reading order.
+GQL statements form a pipeline, where each statement processes the output of the previous one. 
+This sequential execution makes queries easy to read and debug because the execution order matches the reading order.
 
-**Linear statement composition:**
+Key points:
 
-In GQL, statements execute sequentially. Each statement processes the output from the previous statement. This composition creates a clear data flow that's easy to understand and debug.
+* Statements effectively execute sequentially.
+* Each statement transforms data and passes it to the next.
+* This creates a clear, predictable data flow that simplifies complex queries.
 
-The pipeline works like this: each statement transforms data and passes it to the next statement. This approach makes queries readable because execution order matches reading order.
+> [!IMPORTANT]
+> Internally, execution of statements can be re-ordered and individual statements can be executed in parallel
+> by Microsoft Fabric to maximize performance.
+> However, this will not impact correctness of results.  
+
+**Example**
+
+The following GQL query finds the first 10 people working at companies with "Air" in their name, sorts them by full name, and returns their full name along with the name of their companies. 
 
 ```gql
 -- Data flows: Match → Let → Filter → Order → Limit → Return
-MATCH (p:Person)-[:workAt]->(c:Company) -- Input: unit table, Output: (p, c) table
-LET companyName = c.name                -- Input: (p, c) table, Output: (p, c, companyName) table
-FILTER companyName CONTAINS 'Tech'      -- Input: (p, c, companyName) table, Output: filtered table  
-ORDER BY p.firstName DESC               -- Input: filtered table, Output: sorted table
-LIMIT 5                                 -- Input: sorted table, Output: top 5 rows table
-RETURN                                  -- Input: top 5 rows table, 
-  p.firstName                              Output: (companyName, name) result table
-  || ' ' || p.lastName AS name,
-  companyName                        
+MATCH (p:Person)-[:workAt]->(c:Company)           -- Input: unit table, Output: (p, c) table
+LET fullName = p.firstName || ' ' || p.lastName   -- Input: (p, c) table, Output: (p, c, fullName) table
+FILTER c.name CONTAINS 'Air'                     -- Input: (p, c, fullName) table, Output: filtered table
+ORDER BY fullName                                 -- Input: filtered table, Output: sorted table
+LIMIT 10                                          -- Input: sorted table, Output: top 10 rows table
+RETURN fullName, c.name AS companyName            -- Input: top 10 rows table
+                                                  -- Output: projected (fullName, companyName) result table
 ```
 
-This linear composition ensures predictable execution and makes complex queries easier to understand step-by-step.
+In this query:
 
-**Example with multiple statements:**
-
-```gql
-MATCH (p:Person)-[:workAt]->(c:Company)
-LET fullName = p.firstName || ' ' || p.lastName  
-FILTER c.name = 'Contoso'
-ORDER BY fullName
-LIMIT 10
-RETURN fullName, c.name AS company_name
-```
-
-This pipeline:
-1. Finds people who work at companies
-2. Creates full names by combining first and family names
-3. Keeps only Contoso employees  
-4. Sorts by full name
-5. Takes the first 10 results
-6. Returns person's full names and company names
+1. **`MATCH`** finds people who work at companies with "Air" in their name
+2. **`LET`** creates full names by combining first and family names 
+3. **`FILTER`** keeps only Contoso employees 
+4. **`ORDER BY`** sorts by full name 
+5. **`LIMIT`** takes the first 10 results 
+6. **`RETURN`** returns names and company locations 
 
 ### Variables connect your data
 
