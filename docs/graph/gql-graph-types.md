@@ -176,6 +176,30 @@ This concept allows you to model the same type of relationship between different
 
 Both edge types use the `isPartOf` label, but they connect different types of nodes, forming an edge type family that represents hierarchical containment relationships.
 
+### Use node subtyping in edge type definitions
+
+Having to spell out each possible edge type can be a bit tedious. 
+To simplify, it is also possible to define edge type families that align with the hierarchy of node types implied by their endpoints.
+
+Example:
+
+```gql
+-- Node types
+ABSTRACT (:Message { ... }),
+(:Post => :Message { ... }),
+(:Comment => :Message { ... }),
+
+-- All edge types (x)-[:hasTag]->(:Tag) where x is at least a (:Message)
+(<:Message)-[:hasTag]->(:Tag) 
+```
+
+This implicitly defines the following edge types:
+
+```gql
+(:Post)-[:hasTag]->(:Tag) 
+(:Comment)-[:hasTag]->(:Tag) 
+```
+
 ## Supported property types
 
 When you're defining a property type, the property value type must be one that graph in Microsoft Fabric supports. Choosing the right data types is important for storage efficiency and query performance.
