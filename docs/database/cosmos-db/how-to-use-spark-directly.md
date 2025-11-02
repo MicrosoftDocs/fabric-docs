@@ -124,8 +124,8 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    df.show(5)
    ```
 
-> [!NOTE]
-> The *SampleData* container you created earlier contains two different entities with two separate schemas, *product* and *review*. The inferSchema option will detect the two different schemas within this Cosmos DB container.
+   > [!NOTE]
+   > The *SampleData* container you created earlier contains two different entities with two separate schemas, *product* and *review*. The inferSchema option will detect the two different schemas within this Cosmos DB container.
 
 1. Show the schema of the data loaded into the DataFrame by using `printSchema` and ensure the schema matches the sample document structure.
 
