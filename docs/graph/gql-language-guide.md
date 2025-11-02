@@ -96,6 +96,9 @@ Every graph element has these characteristics:
 
 Each edge connects exactly two nodes: a source and a destination. This connection creates the graph's structure and shows how entities relate to each other. The direction of edges matters—a `Person` who `follows` another `Person` creates a directed relationship.
 
+> [!NOTE]
+> Fabric Graph currenly does not support undirected edges.
+
 GQL graphs are always well-formed, meaning every edge connects two valid nodes. If you see an edge in a graph, both its endpoints exist in the same graph.
 
 ### Graph models and graph types
@@ -791,40 +794,47 @@ GQL supports rich data types for storing and manipulating different kinds of inf
 - **Text**: `STRING` for names, descriptions, and textual data
 - **Logic**: `BOOL` with three values: TRUE, FALSE, and UNKNOWN (for null handling)
 - **Time**: `ZONED DATETIME` for timestamps with timezone information
-- **Collections**: `LIST<T>` for multiple values, `PATH` for graph traversal results
+- **Collections**: `LIST<T>` for multiple values of the same type `T`, `PATH` for graph traversal results
 - **Graph elements**: `NODE` and `EDGE` for referencing graph data
+
+> [!IMPORTANT]
+> Certain value types are not supported as the types of property values.
+> In particular, all values involving graph element reference values cannot be used as property values
+> (such as lists of nodes or paths).
 
 **Example literals:**
 
 ```gql
-42                                     -- Integer
-"Hello, graph!"                        -- String  
-TRUE                                   -- Boolean
-ZONED_DATETIME('2024-01-15T10:30:00Z') -- DateTime with timezone
-[1, 2, 3]                              -- List of integers
+42                                     -- Integer literal
+"Hello, graph!"                        -- String  literal
+TRUE                                   -- Boolean literal
+ZONED_DATETIME('2024-01-15T10:30:00Z') -- DateTime with timezone literakl
+[1, 2, 3]                              -- Literal list of integers
 ```
 
 **Critical null handling patterns:**
 
 ```gql
--- Equality with NULL always returns UNKNOWN
-5 = NULL                              -- Returns UNKNOWN (not FALSE!)
-NULL = NULL                           -- Returns UNKNOWN (not TRUE!)
+-- Equality predicates with NULL always returns UNKNOWN
+5 = NULL                              -- Evaluates to UNKNOWN (not FALSE!)
+NULL = NULL                           -- Evaluates to UNKNOWN (not TRUE!)
 
--- Use IS NULL for explicit null testing
-p.nickname IS NULL                    -- Returns TRUE if nickname is null
-p.nickname IS NOT NULL                -- Returns TRUE if nickname has a value
+-- Use IS NULL predicates for explicit null testing
+p.nickname IS NULL                    -- Evaluates to TRUE if nickname is null
+p.nickname IS NOT NULL                -- Evaluates to TRUE if nickname has a value
 
--- COALESCE for null-safe value selection
-coalesce(p.nickname, p.firstName, '???')  -- First non-null value
+-- Use the COALESCE function for null-safe value selection
+coalesce(p.nickname, p.firstName, '???')  -- Evaluates to first non-null value
 ```
 
 **Three-valued logic implications:**
 
 ```gql
 -- In FILTER statements, only TRUE values pass through
-FILTER p.birthday > 0        -- Removes rows where birthday is null
-FILTER NOT (p.birthday > 0)  -- Also removes rows (NOT UNKNOWN = UNKNOWN)
+FILTER p.birthday > 0        -- Removes rows where birthday is null or missing or zero
+
+-- It's important to understand that NOT UNKNOWN = UNKNOWN
+FILTER NOT (p.birthday > 0)  -- Removes rows where birthday is null or missing or positive
 
 -- Use explicit null handling for inclusive filtering
 FILTER p.birthday < 19980101 OR p.birthday IS NULL -- Includes null birthdays
@@ -855,7 +865,7 @@ coalesce(p.firstName, p.lastName)              -- Null handling
 ```gql
 -- Combine conditions with proper precedence
 FILTER (p.birthday > 19560101 AND p.birthday < 20061231) 
-  AND (p.gender IN ['male', 'female'] OR p.browserUsed IS NOT NULL)
+  AND ((p.gender IN ['male', 'female']) OR (p.browserUsed IS NOT NULL))
 
 -- Use parentheses for clarity and correctness
 FILTER p.gender = 'female' AND (p.firstName STARTS WITH 'A' OR p.id > 1000)
@@ -892,6 +902,9 @@ GQL provides these function categories for different data processing needs:
 6. Logical conjunction (`AND`)
 7. Logical disjunction (`OR`)
 
+In above list, an operator with lower number "binds tighter" than an operator with a higher number.
+Example: `NOT n.prop OR m.prop` is `(NOT n.prop) OR m.prop` but not `NOT (n.prop OR m.prop) 
+
 > [!TIP]
 > Use parentheses to make precedence explicit. Complex expressions are easier to read and debug 
 > when grouping is clear.
@@ -920,12 +933,12 @@ LET companyName = company.name
 MATCH (employee)-[:isLocatedIn]->(city:City)
 FILTER employee.birthday < 19850101
 LET cityName = city.name
-RETURN companyName, cityName, avg(employee.birthday) AS avgBirthYear, count(employee) AS employeeCount
+RETURN companyName, cityName, avg(employee.birthday) AS avgBirthday, count(employee) AS employeeCount
 GROUP BY companyName, cityName
-ORDER BY avgBirthYear DESC
+ORDER BY avgBirthday DESC
 ```
 
-This query progressively builds complexity: find companies, their employees, employee locations, calculate average birth years, filter companies with employees born before 1985, and summarize results.
+This query progressively builds complexity: find companies, their employees, employee locations, filter companies with employees born before 1985, calculate average birthday, and summarize and sort results.
 
 **Use of horizontal aggregation:**
 
@@ -945,11 +958,11 @@ Variables connect data across query statements and enable complex graph traversa
 **Variable binding and scoping patterns:**
 
 ```gql
--- Variables flow forward through subsequent statements
-MATCH (p:Person)                     -- Bind p
-LET fullName = p.firstName || ' ' || p.lastName  -- p available, bind fullName
-FILTER fullName CONTAINS 'Smith'     -- Both p and fullName available
-RETURN p.id, fullName                -- Both still available initially but `RETURN` will discard `p`
+-- Variables flow forward through subsequent statements 
+MATCH (p:Person)                                    -- Bind p 
+LET fullName = p.firstName || ' ' || p.lastName     -- Bind concatenation of p.firstName and p.lastName as fullNume
+FILTER fullName CONTAINS 'Smith'                    -- Filter for fullNames with “Smith” substring (p is still bound)
+RETURN p.id, fullName – Return p’s id and fullName  -- Only return p.id and fullName (p is dropped from scope) 
 ```
 
 **Variable reuse for joins across statements:**
@@ -959,26 +972,34 @@ RETURN p.id, fullName                -- Both still available initially but `RETU
 MATCH (p:Person)-[:workAt]->(:Company)          -- Find people with jobs
 MATCH (p)-[:isLocatedIn]->(:City)               -- Same p: people with both job and residence
 MATCH (p)-[:knows]->(friend:Person)             -- Same p: their social connections
+RETURN *
 ```
 
 **Critical scoping rules and limitations:**
 
 ```gql
--- ✅ Forward references work
+-- ✅ Backward references work
 MATCH (p:Person)
 LET adult = p.birthday < 20061231  -- Can reference p from previous statement
+RETURN *
 
--- ❌ Backward references don't work  
+
+-- ❌ Forward references don't work  
 LET adult = p.birthday < 20061231  -- Error: p not yet defined
 MATCH (p:Person)
+RETURN *
 
--- ❌ Variables in same statement can't reference each other
+-- ❌ Variables in same LET statement can't reference each other
+MATCH (p:Person)
 LET name = p.firstName || ' ' || p.lastName,
     greeting = 'Hello, ' || name     -- Error: name not visible yet
+RETURN *
 
 -- ✅ Use separate statements for dependent variables
+MATCH (p:Person)
 LET name = p.firstName || ' ' || p.lastName
 LET greeting = 'Hello, ' || name     -- Works: name now available
+RETURN *
 ```
 
 **Variable visibility in complex queries:**
@@ -1041,6 +1062,7 @@ Understanding how edge variables bind in variable-length patterns is crucial:
 -- Edge variable 'e' refers to each individual edge during filtering
 MATCH (p:Person)-[e:knows WHERE e.creationDate > zoned_datetime('2020-01-01T00:00:00Z')]->{2,4}(friend:Person)
 -- 'e' is evaluated for each edge in the path during matching
+RETURN *
 ```
 
 **In result expressions (group context):**

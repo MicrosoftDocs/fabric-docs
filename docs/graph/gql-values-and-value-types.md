@@ -55,11 +55,9 @@ Understanding how GQL compares values is crucial for writing effective queries, 
 
 When you compare any value with null, the result is always `UNKNOWN`. Null handling follows three-valued logic principles. However, the `ORDER BY` statement treats `NULL` as the smallest value when sorting, providing predictable ordering behavior.
 
-### Test if values are distinct
+## Distinctness vs. equality
 
 Certain statements don't test for equality but rather for distinctness. Understanding the difference is important for operations like `DISTINCT` and `GROUP BY`.
-
-### Distinctness vs. equality
 
 Distinctness testing follows the same rules as equality with one crucial exception: `NULL` isn't distinct from `NULL`. Distinctness differs from equality tests involving `NULL`, which always result in `UNKNOWN`.
 
@@ -206,7 +204,6 @@ The system compares all numbers by their numeric value.
 | Common notation w. grouping     | 123_456.789   | 123456.789 |
 | Scientific notation             | 1.23456e2     | 123.456    |
 | Scientific notation (uppercase) | 1.23456E2     | 123.456    |
-| Floating-point with suffix      | 123.456f      | 123.456    |
 | Floating-point with suffix      | 123.456f      | 123.456    |
 | Double precision with suffix    | 123.456d      | 123.456    |
 
@@ -476,7 +473,9 @@ A path consists of:
 
 **How comparison works:**
 
-Paths are compared by comparing their constituent nodes and edges in sequence.
+Paths are compared by comparing lists of reference values to all of their constituent nodes and edges, in the sequence in which they occur along the path.
+
+See the comparison rules for [list values](#list-values) and [reference values](#reference-value-types) for further details.
 
 **Type syntax:**
 

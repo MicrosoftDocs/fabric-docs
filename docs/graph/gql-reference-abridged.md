@@ -251,11 +251,14 @@ PATH             -- Path values
 
 Learn more about collection types in the [GQL values and value types](gql-values-and-value-types.md).
 
-### Nullable types
+### Material and nullable types
+
+Every value type either is nullable (includes the null value) or material (excludes it).
+By default, types are nullable unless explicitly specified as `NOT NULL`.
 
 ```gql
-STRING NOT NULL  -- Nonnullable string
-INT64            -- Nullable int (default)
+STRING NOT NULL  -- Material (Non-nullable) string type
+INT64            -- Nullable (default) integer type
 ```
 
 <!--
