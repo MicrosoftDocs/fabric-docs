@@ -1,20 +1,20 @@
 ---
-title: Real-Time Intelligence tutorial part 7 - Set an alert on your event stream
+title: Real-Time Intelligence tutorial part 3 - Set an alert on your event stream
 description: Learn how to set an alert on your event stream in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 10/28/2025
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to set an alert on my eventstream in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 7: Set an alert on your event stream
+# Real-Time Intelligence tutorial part 3: Set an alert on your event stream
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 6: Create a Power BI report](tutorial-6-power-bi-report.md).
+> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 2: Get data in the Real-Time hub](tutorial-2-get-real-time-events.md).
 
 In this part of the tutorial, you learn how to set an alert on your eventstream to receive a notification in Teams when the number of bikes falls below a certain threshold.
 
@@ -31,12 +31,19 @@ In this part of the tutorial, you learn how to set an alert on your eventstream 
 
     | Field | Value |
     | --- | --- |
+    | **Details** | |
+    | Rule name | TutorialRule|
     | **Condition** |  |
     | Check | On each event when |
     | Field | No_Bikes |  
     | Condition | Is less than |
     | Value | 5 |
-    | **Action** |  **Message me in Teams**
+    | **Action** |  |
+    | Select action| Message to individuals|
+    | To | Your Teams account |
+    | Headline | Activator alert |
+    | Notes | The condition has been met
+    | Context | No_Bikes
     | **Save location** | | 
     | Workspace | The workspace in which you created resources|
     | Item | Create a new item |
@@ -58,4 +65,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 8: Clean up resources](tutorial-8-clean-up-resources.md)
+> [Real-Time Intelligence tutorial part 4: Transform data in a KQL database](tutorial-4-transform-kql-database.md)
