@@ -93,13 +93,19 @@ RETURN p.firstName || ' ' || p.lastName AS fullName
 
 ## Property existence predicates
 
-Nonexisting properties always evaluate to `NULL`. Hence, to check if properties exist, you can use:
+To check if properties exist, you can use:
 
 ```gql
 p.locationIP IS NOT NULL
 p.browserUsed IS NULL
 ```
 
+> [!NOTE]
+> Atempting to access a known non-existing property results in a syntax error.
+> Access to a potentially non-existing property evaluates to `null`.
+> The determination of whether a property is known or potentially non-existing
+> is made based on the type of the accessed node or edge.
+ 
 ## List membership predicates
 
 Test if values are in lists:
