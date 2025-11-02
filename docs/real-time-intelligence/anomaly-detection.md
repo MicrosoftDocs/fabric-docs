@@ -6,7 +6,7 @@ ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: how-to
 ms.custom: 
-ms.date: 09/15/2025
+ms.date: 11/02/2025
 ms.search.form: Anomaly detection how-to
 ---
 
