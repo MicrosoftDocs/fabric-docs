@@ -81,11 +81,11 @@ Patterns can express complex requirements on the labels of matched nodes and edg
 **Example:**
 
 ```gql
-MATCH (:Person|(Organisation&!Company))-[:isLocatedIn]->(p:City|Country)
+MATCH (:Person|(Organization&!Company))-[:isLocatedIn]->(p:City|Country)
 RETURN count(*) AS num_matches
 ```
 
-This counts the number of `isLocatedIn` edges connecting `Person` nodes or `Organisation`-but-not-`Company` nodes (which are always `University` nodes in the social network schema) to `City` or `Country` nodes.
+This counts the number of `isLocatedIn` edges connecting `Person` nodes or `Organization`-but-not-`Company` nodes (which are always `University` nodes in the social network schema) to `City` or `Country` nodes.
 
 **Syntax:**
 

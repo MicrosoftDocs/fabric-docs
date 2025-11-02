@@ -276,7 +276,7 @@ Graph types define the structure of nodes, edges, and constraints in the graph.
     name :: STRING 
 })
 
-(:University => :Organisation)   -- Inheritance
+(:University => :Organization)   -- Inheritance
 ABSTRACT (:Message => { ... })   -- Abstract type
 ```
 

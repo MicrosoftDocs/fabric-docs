@@ -35,7 +35,7 @@ Structurally, a graph type defines allowed node types and edge types of graphs o
 A node type specifies what labels and property types your nodes can have. Here's how to specify a basic node type:
 
 ```gql
-(:Organisation => { 
+(:Organization => { 
   id :: UINT64 NOT NULL, 
   name :: STRING, 
   url :: STRING 
@@ -44,7 +44,7 @@ A node type specifies what labels and property types your nodes can have. Here's
 
 This example creates a node type that defines nodes with:
 
-- The label `Organisation`.
+- The label `Organization`.
 - An `id` property that holds unsigned integer values and can't be null.
 - A `name` property that holds string values (can be null).
 - A `url` property that holds string values (can be null).
@@ -77,22 +77,22 @@ Nodes can have multiple labels to support inheritance and categorization. You ca
 As an example, consider:
 
 ```gql
-(:University => :Organisation),
-(:Company => :Organisation)
+(:University => :Organization),
+(:Company => :Organization)
 ```
 
-Here, `University` and `Company` are the key labels of the two node types defined, while `Organisation` is a secondary label shared by both types. Notice how the key label and secondary labels are separated by `=>` in each node type. This approach creates a type hierarchy where both universities and companies are types of organizations.
+Here, `University` and `Company` are the key labels of the two node types defined, while `Organization` is a secondary label shared by both types. Notice how the key label and secondary labels are separated by `=>` in each node type. This approach creates a type hierarchy where both universities and companies are types of organizations.
 
 Since key labels identify node types, the properties of node types identified by secondary labels are automatically inherited when using this syntax.
 Therefore the previous syntax can be understood to effectively define the following node types:
 
 ```gql
-(:University => :Organisation {
+(:University => :Organization {
   id :: UINT64 NOT NULL, 
   name :: STRING, 
   url :: STRING 
 }),
-(:Company => :Organisation {
+(:Company => :Organization {
   id :: UINT64 NOT NULL, 
   name :: STRING, 
   url :: STRING 
