@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 02/11/2025
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to detect anomalies on my Eventhouse table in Real-Time Intelligence.

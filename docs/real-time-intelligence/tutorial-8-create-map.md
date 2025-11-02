@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 02/11/2025
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to create a map in Real-Time Intelligence.
@@ -69,7 +69,7 @@ In this part of the tutorial, you learn how to create a map using geospatial dat
 1. A new window showing data preview of the query opens. Select **Next** .
 1. Enter *BikeLatLong* as Name. Select the **Latitude** and **Longitude** columns. Under **Data refresh interval** select 5 minutes. Select **Next**.
 
-    :::image type="content" source="media/tutorial/map-eventhouse-config.png" alt-text="Screenshot of map latitude and longitude selection." lightbox="media/tutorial/map-eventhouse-config.png":::
+    :::image type="content" source="media/tutorial/map-eventhouse-configure.png" alt-text="Screenshot of map latitude and longitude selection." lightbox="media/tutorial/map-eventhouse-configure.png":::
 
 1. In the next screen, select **Add to map**.
 1. Right-click on **BikeLatLong** under **Data layers** and select **Zoom to fit** to zoom into London area showing bike stations on the map.

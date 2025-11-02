@@ -34,7 +34,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
 
 Once the eventstream source is created, you can open the eventstream and add more settings.
 
-1. Once the eventstream is created, on the the **Review + connect** page, select **Open Eventstream**.
+1. Once the eventstream is created, on the **Review + connect** page, select **Open Eventstream**.
 
     :::image type="content" source="media/tutorial/open-event-stream-button.png" alt-text="Screenshot of Review + connect page with Open Eventstream button selected." lightbox="media/tutorial/open-event-stream-button.png":::         
 
@@ -46,7 +46,7 @@ Once the eventstream source is created, you can open the eventstream and add mor
 
 1. In the eventstream authoring canvas, select the down arrow on the **Transform events or add destination** tile, and then select **Manage fields**. The tile is renamed to `ManageFields`.
 
-    :::image type="content" source="media/tutorial/manage-fields.png" alt-text="Screenshot of authoring canvas with transform events or add destination.":::
+    :::image type="content" source="media/tutorial/manage-fields.png" alt-text="Screenshot of authoring canvas with transform events or add destination." lightbox="media/tutorial/manage-fields.png":::
 
 1. Select the pencil icon in the **Manage fields** pane, and do the following actions:
     1. In **Operation name**, enter **TutorialTransform**. 

@@ -29,7 +29,7 @@ In this part of the tutorial, you learn how to create a Real-Time Dashboard in R
     | render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)
     ```
 
-    :::image type="content" source="media/tutorial/bikes-by-bikepoint.png" alt-text="Screenshot of query showing column chart of bikes by bike point ID. ":::
+    :::image type="content" source="media/tutorial/bikes-by-bikepoint.png" alt-text="Screenshot of query showing column chart of bikes by bike point ID. " lightbox="media/tutorial/bikes-by-bikepoint.png":::
 
 1. Select **Save to dashboard** > **New Real-Time Dashboard**.
 1. Enter the following information:

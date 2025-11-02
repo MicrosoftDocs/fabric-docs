@@ -27,7 +27,7 @@ In this step, you move the raw data table into a Bronze folder to organize the d
     :::image type="content" source="media/tutorial/tutorial-queryset.png" alt-text="Screenshot of selecting the tutorial queryset from the database item tree.":::
 
 1. In the object tree, under the KQL database name, select the query workspace called **Tutorial_queryset**.
-1. Copy/paste and run the following command in the query editor to alter table to move table into a Bronze folder. You can run the query by selecting the **Run** button from the menu ribbon or by pressing **Shift + Enter**.
+1. Copy/paste and run the following command in the query editor to move table into a Bronze folder. You can run the query by selecting the **Run** button from the menu ribbon or by pressing **Shift + Enter**.
 
     ```kusto
     .alter table RawData (BikepointID:string,Street:string,Neighbourhood:string,Latitude:real,Longitude:real,No_Bikes:long,No_Empty_Docks:long,Timestamp:datetime) with (folder="Bronze")
