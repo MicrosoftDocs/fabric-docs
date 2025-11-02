@@ -409,7 +409,7 @@ MATCH (p:Person)-[w:workAt WHERE w.workFrom >= 20200101]->(c:Company)
 Use `TRAIL` patterns to prevent cycles during graph traversal, ensuring each edge is visited at most once:
 
 ```gql
--- Find paths without visiting the same person twice
+-- Find paths without visiting the same :knows edge twice
 MATCH TRAIL (start:Person)-[:knows]->{1,4}(end:Person)
 WHERE start.firstName = 'Alice' AND end.firstName = 'Bob'
 

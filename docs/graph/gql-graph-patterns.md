@@ -276,7 +276,7 @@ This pattern finds direct friends, friends-of-friends, and friends-of-friends-of
 > ```
 >
 > This pattern matches pairs of different persons that know each other *but also*
-> matches the same person as both `p1` and `p2` if that person doesn't "know" themselves.
+> matches the same person as both `p1` and `p2` - even if that person doesn't "know" themselves.
 
 When no lower bound is specified, it generally defaults to 0 (zero).
 <!-- but with the exception that
