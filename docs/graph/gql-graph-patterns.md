@@ -172,6 +172,13 @@ p=(c:Company)<-[:workAt]-(x:Person)-[:knows]-(y:Person)-[:workAt]->(c:Company)
 
 Here, `p` is bound to a path value representing the complete matched path structure, including reference values for all nodes and edges in the order given.
 
+Bound paths can either be returned to the user or further processed using functions like `NODES` or `EDGES`:
+
+```gql
+MATCH p=(c:Company)<-[:workAt]-(x:Person)-[:knows]-(y:Person)-[:workAt]->(c:Company)
+RETURN p, size(edges(p)) AS num_edges_in_path
+```
+
 ## Compose patterns
 
 Real-world queries often require more complex patterns than simple node-edge-node structures. GQL provides several ways to compose patterns for sophisticated graph traversals.
@@ -287,7 +294,8 @@ The pattern finds pairs of comments where people who know each other liked diffe
 
 ### Bind variable-length pattern edge variables
 
-When you bind a variable-length edge pattern, the value and type of the edge variable change depending on the reference context. Understanding this behavior is crucial for correctly processing variable-length matches:
+When you bind a variable-length edge pattern, the value and type of the edge variable change depending on the reference context. 
+Understanding this behavior is crucial for correctly processing variable-length matches:
 
 **Two degrees of reference:**
 
@@ -297,7 +305,7 @@ When you bind a variable-length edge pattern, the value and type of the edge var
 **Example demonstrating both contexts:**
   
 ```gql
-MATCH (:Person)-[e:knows WHERE e.creationDate >= ZONED_DATETIME("2000-01-01T00:00:00Z")]->{3}()
+MATCH (:Person)-[e:knows WHERE e.creationDate >= ZONED_DATETIME("2000-01-01T00:00:00Z")]->{1,3}()
 RETURN e[0]
 ```
 
@@ -306,6 +314,17 @@ The evaluation of the edge variable `e` occurs in two contexts:
 - **In the `MATCH` statement**: The query finds chains of friends-of-friends-of-friends where each friendship was established since the year 2000. During pattern matching, the edge pattern predicate `e.creationDate >= ZONED_DATETIME("2000-01-01T00:00:00Z")` is evaluated once for each candidate edge. In this context, `e` is bound to a single edge reference value.
 
 - **In the `RETURN` statement**: Here, `e` is bound to a (group) list of edge reference values in the order they occur in the matched chain. The result of `e[0]` is the first edge reference value in each matched chain.
+
+**Variable-length pattern edge variables in horizontal aggregation:**
+
+Edge variables bound by variable length pattern matching are group lists outside the variable-length pattern and thus can be used in horizontal aggregation.
+
+```gql
+MATCH (a:Person)-[e:knows WHERE e.creationDate >= ZONED_DATETIME("2000-01-01T00:00:00Z")]->{1,3}(b)
+RETURN a, b, size(e) AS num_edges
+```
+
+See the section on [horizontal aggregation](gql-language-guide.md#horizontal-aggregation-with-group-list-variables) for further details.
 
 <!-- Commented out intentionally
 
