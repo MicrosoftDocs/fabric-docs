@@ -23,7 +23,8 @@ Apache Airflow jobs are billed based on pool uptime. Each Apache Airflow job has
 >[!TIP]
 > For more details about Apache Airflow pool types, see [Apache Airflow compute in Fabric](apache-airflow-compute.md).
 
-The table below shows how much capacity units (CU) each Apache Ariflow job uses based on its size. By default, both "Starter" and "Custom" pools use the Large size, but you can pick Small, if you use a Custom pool. Each Apache Airflow job runs on a cluster with three nodes, unless you turn on Autoscale or add extra nodes.
+The table below shows how much capacity units (CU) each Apache Airflow job uses based on its size. By default, both "Starter" and "Custom" pools use the Large size, but you can pick Small, if you use a Custom pool. Each Apache Airflow job runs on a cluster with three nodes, unless you turn on Autoscale or add extra nodes.
+
 
 |Apache Airflow job  size (Base)  |Consumption Meters  |Fabric CU consumption rate  |Consumption reporting granularity      |
 |---------|---------|---------|---------|
