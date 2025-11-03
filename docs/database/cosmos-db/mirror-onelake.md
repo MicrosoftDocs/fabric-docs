@@ -153,7 +153,7 @@ Observe the results of the query in the query editor:
 ]
 ```
 
-:::image type="content" source="media/mirror-onelake/sql-analytics-endpoint-query-openjson.png" lightbox="media/mirror-onelake/sql-analytics-endpoint-query-openjson-full.png" alt-text="Screenshot of a OPENJSON Transact SQL (T-SQL) query using the query editor in the SQL analytics endpoint for an advanced scenario.":::
+:::image type="content" source="media/mirror-onelake/sql-analytics-endpoint-query-openjson.png" lightbox="media/mirror-onelake/sql-analytics-endpoint-query-openjson-full.png" alt-text="Screenshot of an OPENJSON Transact SQL (T-SQL) query using the query editor in the SQL analytics endpoint for an advanced scenario.":::
 
 ## Next steps
 - [Create a OneLake shortcut in a Lakehouse](./how-to-access-data-lakehouse.md) or [run a cross-database query](./how-to-query-cross-database.md)

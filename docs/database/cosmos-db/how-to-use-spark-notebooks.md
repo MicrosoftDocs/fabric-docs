@@ -252,7 +252,7 @@ Cosmos DB is an exceptional serving layer for analytical workloads due to its ar
 
 ### Create a new Cosmos DB in Fabric container using Spark
 
-1. Create a new container named `MinPricePerProduct` by using `CREATE TABLE IF NOT EXISTS` with the Spark Catalog API. This container will always be small and not need to scale. Set the partition key path to `/id` and set the smallest allowable throughput with an autoscale throughput of `1000` request units per second (RU/s).
+- Create a new container named `MinPricePerProduct` by using `CREATE TABLE IF NOT EXISTS` with the Spark Catalog API. This container will always be small and not need to scale. Set the partition key path to `/id` and set the smallest allowable throughput with an autoscale throughput of `1000` request units per second (RU/s).
 
    ```scala
    // Create a MinPricePerProduct container by using the Catalog API
