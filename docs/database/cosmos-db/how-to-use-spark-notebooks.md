@@ -246,7 +246,11 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    +--------------------+--------------------+--------------------+-----------+
 ```
 
-## Create a new Cosmos DB in Fabric container using Spark
+## Use Cosmos DB to implement reverse ETL using Spark
+
+Cosmos DB is an exceptional serving layer for analytical workloads due to its architecture. Below is an example of how to perform a reverse ETL on analytical data and serve it using Cosmos DB.
+
+### Create a new Cosmos DB in Fabric container using Spark
 
 1. Create a new container named `MinPricePerProduct` by using `CREATE TABLE IF NOT EXISTS` with the Spark Catalog API. This container will always be small and not need to scale. Set the partition key path to `/id` and set the smallest allowable throughput with an autoscale throughput of `1000` request units per second (RU/s).
 
@@ -263,7 +267,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    spark.sql(sqlDef)
    ```
 
-## Write data into a Cosmos DB in Fabric container using Spark
+### Write data into a Cosmos DB in Fabric container using Spark
 
 1. All documents in Cosmos DB require an **id** property, which is also the partition key for the container. Create an `id` column with the value of `productId`.
 
