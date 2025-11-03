@@ -26,6 +26,8 @@ items:
         href: how-to-create-reports.md
       - name: Use Cosmos DB containers directly with Spark
         href: how-to-use-spark-directly.md
+      - name: User data functions
+        href: how-to-user-data-functions.md
   - name: Samples
     items:
       - name: Cosmos DB getting started
