@@ -85,7 +85,7 @@ To create an Azure Key Vault key, follow the instructions in [Create a key vault
 
 ### Key Vault requirements
 
-Fabric only supports [versionless customer-managed keys](/azure/key-vault/keys/how-to-configure-key-rotation#key-rotation-policy), which are keys in the format: `https://{vault-name}.vault.azure.net/{key-type}/{key-name}` for Vaults and `https://{hsm-name}.managedhsm.azure.net/{key-type}/{key-name}` for Managed HSM. Fabric checks the key vault daily for a new version, and uses the latest version available. To avoid having a period where you can't access data in the workspace after a new key is created, wait 24 hours before disabling the older version.
+Fabric only supports [versionless customer-managed keys](/azure/key-vault/keys/how-to-configure-key-rotation#key-rotation-policy), which are keys in the format `https://{vault-name}.vault.azure.net/{key-type}/{key-name}` for Vaults and `https://{hsm-name}.managedhsm.azure.net/{key-type}/{key-name}` for Managed HSM. Fabric checks the key vault daily for a new version, and uses the latest version available. To avoid having a period where you can't access data in the workspace after a new key is created, wait 24 hours before disabling the older version.
 
 Key Vault and Managed HSM must have both soft-delete and purge protection enabled and the key must be of RSA or RSA-HSM type. The supported key sizes are:
 
