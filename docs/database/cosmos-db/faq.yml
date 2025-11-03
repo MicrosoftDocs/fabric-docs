@@ -334,7 +334,7 @@ sections:
         answer: |
           Yes. You can use Fabric notebooks to interact with data directly in Cosmos DB in Fabric. Also, data in Cosmos DB in Fabric is automatically mirrored to OneLake in Delta Parquet format, making it accessible from Apache Spark notebooks. You can use Spark to perform analytics, data science workflows, and machine learning operations on your Cosmos DB data.
 
-          For more information, see [mirror OneLake in Cosmos DB in Fabric](mirror-onelake.md) or [use Spark with Cosmos DB in Fabric](use-spark.md) or [use Fabric notebooks with Cosmos DB in Fabric](use-notebooks.md).
+          For more information, see [mirror OneLake in Cosmos DB in Fabric](mirror-onelake.md) or [use Spark with Cosmos DB in Fabric](how-to-use-spark-notebooks.md) or [use Fabric notebooks with Cosmos DB in Fabric](how-to-use-python-notebooks.md).
       - question: |
           How do I use Cosmos DB in Fabric data in Power BI?
         answer: |
