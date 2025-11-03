@@ -98,10 +98,10 @@ Now, authenticate to the Azure CLI. The Azure SDK can use various different auth
 
 ## Connect using Azure SDK
 
-Finally, use the Azure SDK to connect to the Cosmos DB database in Fabric using the endpoint and your identity. The Azure SDK ships with a unified **identity** library that automatically handles authentication on your behalf. This step uses the `AzureCliCredential` type, which automatically finds the right identity type based on your environment.
+Finally, use the Azure SDK to connect to the Cosmos DB database in Fabric using the endpoint and your identity. The Azure SDK ships with a unified **identity** library that automatically handles authentication on your behalf. This step uses the `DefaultAzureCredential()` type, which automatically finds the right identity type based on your environment.
 
-> [!TIP]
-> Alternatively, you can use the `DefaultAzureCredential` type. This type can automatically find the right system-assigned or user-assigned managed identity if you deploy your application code to Azure and the right human identity locally in development.
+> [!NOTE]
+> Azure credential objects are not supported in Microsoft Fabric notebooks. You cannot use `DefaultAzureCredential` to authenticate to Cosmos DB in Fabric. You must create a custom credential object in your notebooks to authenticate. For more information see [Authenticate to Cosmos DB in Microsoft Fabric from Fabric Notebooks](how-to-authenticate-notebooks.md).
 
 :::zone pivot="dev-lang-python"
 
@@ -119,8 +119,7 @@ async with CosmosClient(endpoint, credential=credential) as client:
     nosql = "SELECT TOP 10 VALUE item.id FROM items AS item"
 
     results = container.query_items(
-        query=nosql,
-        enable_cross_partition_query=True,
+        query=nosql
     )
 
     items = []

@@ -1,6 +1,6 @@
 ---
-title: Use Spark to work with Cosmos DB in Fabric directly
-description: Learn how to use Spark to work with Cosmos DB databases in Microsoft Fabric, directly using the Cosmos DB Spark Connector.
+title: Use Cosmos DB in Spark notebook in Microsoft Fabric
+description: Learn how to use the Cosmos DB Spark Connector to work with a Spark notebook in Microsoft Fabric.
 author: garyhope
 ms.author: garyhope
 ms.topic: how-to
@@ -9,9 +9,9 @@ ms.date: 11/01/2025
 
 # Work with Cosmos DB in Microsoft Fabric using the Cosmos DB Spark Connector
 
-You can use Spark and the Azure Cosmos DB Spark connector to read write and query data from an Azure Cosmos DB for NoSQL account. You can also create and manage Cosmos DB containers with it as well. 
+You can use Spark and the Azure Cosmos DB Spark connector to read write and query data from an Azure Cosmos DB for NoSQL account. You can also create and manage Cosmos DB containers with it as well.
 
-Using Spark connector is different from using Spark to read data from the Cosmos DB in Fabric mirrored data stored in OneLake, as it connects directly to the Cosmos DB endpoint to perform operations. 
+Using Spark connector is different from using Spark to read data from the Cosmos DB in Fabric mirrored data stored in OneLake, as it connects directly to the Cosmos DB endpoint to perform operations.
 
 The Cosmos DB Spark connector can be used to support reverse-ETL scenarios where you need to serve data with low latency or high concurrency.
 
@@ -246,9 +246,13 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    +--------------------+--------------------+--------------------+-----------+
 ```
 
-## Create a new Cosmos DB in Fabric container using Spark
+## Use Cosmos DB to implement reverse ETL using Spark
 
-1. Create a new container named `MinPricePerProduct` by using `CREATE TABLE IF NOT EXISTS` with the Spark Catalog API. This container will always be small and not need to scale. Set the partition key path to `/id` and set the smallest allowable throughput with an autoscale throughput of `1000` request units per second (RU/s).
+Cosmos DB is an exceptional serving layer for analytical workloads due to its architecture. Below is an example of how to perform a reverse ETL on analytical data and serve it using Cosmos DB.
+
+### Create a new Cosmos DB in Fabric container using Spark
+
+- Create a new container named `MinPricePerProduct` by using `CREATE TABLE IF NOT EXISTS` with the Spark Catalog API. This container will always be small and not need to scale. Set the partition key path to `/id` and set the smallest allowable throughput with an autoscale throughput of `1000` request units per second (RU/s).
 
    ```scala
    // Create a MinPricePerProduct container by using the Catalog API
@@ -263,7 +267,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    spark.sql(sqlDef)
    ```
 
-## Write data into a Cosmos DB in Fabric container using Spark
+### Write data into a Cosmos DB in Fabric container using Spark
 
 1. All documents in Cosmos DB require an **id** property, which is also the partition key for the container. Create an `id` column with the value of `productId`.
 

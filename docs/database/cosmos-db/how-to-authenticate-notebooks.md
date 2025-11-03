@@ -6,7 +6,6 @@ ms.author: mjbrown
 ms.topic: how-to
 ms.date: 10/30/2025
 ms.search.form: Get Started with Cosmos DB
-zone_pivot_groups: dev-lang-core
 ---
 
 # Authenticate to Cosmos DB in Microsoft Fabric from Fabric Notebooks
@@ -20,8 +19,6 @@ Cosmos DB in Microsoft Fabric exclusively relies on Microsoft Entra ID authentic
 - An identity with the **Read** permission for the database in Fabric
 
   - For more information on Fabric permissions, see [access controls](authorization.md#access-controls).
-
-[!INCLUDE[Prerequisites - Development languages core](includes/prerequisite-dev-lang-core.md)]
 
 ## Retrieve Cosmos DB endpoint
 
