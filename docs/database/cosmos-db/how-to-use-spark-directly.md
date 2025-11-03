@@ -20,7 +20,7 @@ You can use Microsoft Fabric Runtime and the Cosmos DB Spark connector to read o
 [!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
 
 > [!NOTE]  
-> In this article, we use a database name of *SampleDatabase* and a container name of **SampleData**, you should substitute these values for the database and container names you're using.
+> In this article, we use a database name of `SampleDatabase` and a container name of `SampleData`, you should substitute these values for the database and container names you're using.
 
 ## Configure your Spark environment in a Fabric notebook
 
@@ -106,27 +106,27 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    ```
 
    ```text
-   The result should look something like this.
-       root
-        |-- stock: integer (nullable = true)
-        |-- name: string (nullable = true)
-        |-- priceHistory: array (nullable = true)
-        |    |-- element: struct (containsNull = true)
-        |    |    |-- priceDate: string (nullable = true)
-        |    |    |-- newPrice: double (nullable = true)
-        |-- stars: integer (nullable = true)
-        |-- description: string (nullable = true)
-        |-- price: double (nullable = true)
-        |-- verifiedUser: boolean (nullable = true)
-        |-- reviewDate: string (nullable = true)
-        |-- countryOfOrigin: string (nullable = true)
-        |-- id: string (nullable = false)
-        |-- category: string (nullable = true)
-        |-- productId: string (nullable = true)
-        |-- rareItem: boolean (nullable = true)
-        |-- firstAvailable: string (nullable = true)
-        |-- userName: string (nullable = true)
-        |-- docType: string (nullable = true)
+   The result should look similar to the followuing.
+      root
+         |-- inventory: integer (nullable = true)
+         |-- name: string (nullable = true)
+         |-- priceHistory: array (nullable = true)
+         |    |-- element: struct (containsNull = true)
+         |    |    |-- date: string (nullable = true)
+         |    |    |-- price: double (nullable = true)
+         |-- stars: integer (nullable = true)
+         |-- currentPrice: double (nullable = true)
+         |-- description: string (nullable = true)
+         |-- customerName: string (nullable = true)
+         |-- categoryName: string (nullable = true)
+         |-- reviewText: string (nullable = true)
+         |-- reviewDate: string (nullable = true)
+         |-- countryOfOrigin: string (nullable = true)
+         |-- id: string (nullable = false)
+         |-- rating: integer (nullable = true)
+         |-- productId: string (nullable = true)
+         |-- firstAvailable: string (nullable = true)
+         |-- docType: string (nullable = true)
    ```
 
 1. Filter the DataFrame using the `where` function.
@@ -134,15 +134,6 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    ```scala
    // Render filtered rows by specific document type
    df.where("docType = 'product'")
-   df.show(10)
-   ```
-
-1. Filter the DataFrame using the `filter` function.
-
-   ```scala
-   // Render filtered rows by specific document type
-   df.where("docType = 'product'")
-   df.filter($"rareItem" === true)
    df.show(10)
    ```
 
@@ -191,6 +182,25 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    lowestPriceDF.show(10)
    ```
 
+    The result should look similar to the following example:
+
+    ```text
+         +--------------------+--------------------+------------+--------------------+-----------+
+        |           productId|                name|currentPrice|        categoryName|lowestPrice|
+        +--------------------+--------------------+------------+--------------------+-----------+
+        |77be013f-4036-431...|TechCorp SwiftEdg...|     2655.33|  Computers, Laptops|     2199.0|
+        |4fef9ecf-5049-49a...| Elevate ProStand X5|       185.5|Accessories, Desi...|      149.0|
+        |486951fe-3e46-400...|PulseCharge Pro X950|       89.32|Accessories, High...|      79.99|
+        |2dc116e1-ca1b-4e7...|VoltEdge HyperCha...|       67.73|Accessories, High...|      67.73|
+        |8a58ebb1-1294-483...|VisionTech UltraV...|      279.75|Peripherals, Moni...|     279.75|
+        |cbb472ca-1cc4-44b...|Vertex UltraForge...|     3364.96|Computers, Gaming...|    3364.96|
+        |736b0dcf-bef2-4f2...|    eReader Aura GX7|      174.27|  Devices, E-readers|     174.27|
+        |0cb21c1e-ab88-471...|AstroShift X90 Me...|      105.76|Peripherals, Keyb...|     105.76|
+        |1aec0dc4-bb18-40d...|AuroraShield Luxe...|      176.15|Accessories, Luxu...|      149.0|
+        |91a40caa-b18e-4bb...|SwiftPoint Edge P...|       87.99|   Peripherals, Mice|      87.99|
+        +--------------------+--------------------+------------+--------------------+-----------+
+    ```
+
 ## Create a new Cosmos DB in Fabric container using Spark
 
 1. Create a new container named `Products` by using `CREATE TABLE IF NOT EXISTS` statement. Ensure that you set the partition key path to `/id` and enable autoscale throughput with a maximum throughput of `1000` request units per second (RU/s).
@@ -216,13 +226,13 @@ In order to write data directly to a Cosmos DB in Fabric container, you require:
    ProductsDF.show(10)
    ```
 
-1. Create a new configuration for the `Products` container you want to write to. Remember to set the endpoint, database, and container values appropriate for your environment.
+1. Create a new configuration for the `Products` container you want to write to. 
 
    ```scala
    // Configure the Cosmos DB connection information for the database and container.
    val configWrite = Map(
-             "spark.cosmos.accountendpoint" -> "https://YourCosmosDBEndpoint...fabric.microsoft.com:443/",
-             "spark.cosmos.database" -> "SampleDatabase",
+             "spark.cosmos.accountendpoint" -> config("spark.cosmos.accountendpoint"),
+             "spark.cosmos.database" -> config("spark.cosmos.database"),
              "spark.cosmos.container" -> "Products",
              "spark.cosmos.write.strategy" -> "ItemOverwrite",
              // auth config options
@@ -254,20 +264,20 @@ In order to write data directly to a Cosmos DB in Fabric container, you require:
    The result should look similar to the following example:
 
    ```text
-       +--------------------+-------+-----------+--------------------+-----------+--------------------+
-       |                name|  price|lowestPrice|                  id|   category|           productId|
-       +--------------------+-------+-----------+--------------------+-----------+--------------------+
-       |Basic Speaker Min...| 384.93|     370.26|0205710a-d0f4-46f...|      Media|0205710a-d0f4-46f...|
-       |Premium Mouse Min...| 278.88|     269.07|f9b8a696-90ba-41f...|Peripheral |f9b8a696-90ba-41f...|
-       |Awesome Speaker 3...| 442.73|     442.73|6c6c7d08-dbe6-40a...|      Media|6c6c7d08-dbe6-40a...|
-       |Luxe Computer Ult...| 283.69|     264.67|f47c260a-48b1-4b8...|Electronics|f47c260a-48b1-4b8...|
-       |Premium Stand Mic...|1090.23|    1090.23|8717225c-5869-4f0...|  Accessory|8717225c-5869-4f0...|
-       |Awesome Phone Sup...| 497.67|     464.41|089e86c1-c3f7-4c9...|Electronics|089e86c1-c3f7-4c9...|
-       |Amazing Computer ...| 493.62|     493.62|28f95f5c-7aee-435...|Electronics|28f95f5c-7aee-435...|
-       |Awesome Filter 30...| 823.36|     756.72|0dc86d42-4674-4cf...|      Other|0dc86d42-4674-4cf...|
-       |Premium Speaker U...| 449.66|     429.75|bf0b673d-54e5-434...|      Media|bf0b673d-54e5-434...|
-       |Amazing Mouse Pro...| 418.59|     415.69|8c8a1a10-506f-412...|Peripheral |8c8a1a10-506f-412...|
-       +--------------------+-------+-----------+--------------------+-----------+--------------------+
+        +--------------------+--------------------+------------+--------------------+-----------+--------------------+
+        |           productId|                name|currentPrice|        categoryName|lowestPrice|                  id|
+        +--------------------+--------------------+------------+--------------------+-----------+--------------------+
+        |77be013f-4036-431...|TechCorp SwiftEdg...|     2655.33|  Computers, Laptops|     2199.0|77be013f-4036-431...|
+        |4fef9ecf-5049-49a...| Elevate ProStand X5|       185.5|Accessories, Desi...|      149.0|4fef9ecf-5049-49a...|
+        |486951fe-3e46-400...|PulseCharge Pro X950|       89.32|Accessories, High...|      79.99|486951fe-3e46-400...|
+        |2dc116e1-ca1b-4e7...|VoltEdge HyperCha...|       67.73|Accessories, High...|      67.73|2dc116e1-ca1b-4e7...|
+        |8a58ebb1-1294-483...|VisionTech UltraV...|      279.75|Peripherals, Moni...|     279.75|8a58ebb1-1294-483...|
+        |cbb472ca-1cc4-44b...|Vertex UltraForge...|     3364.96|Computers, Gaming...|    3364.96|cbb472ca-1cc4-44b...|
+        |736b0dcf-bef2-4f2...|    eReader Aura GX7|      174.27|  Devices, E-readers|     174.27|736b0dcf-bef2-4f2...|
+        |0cb21c1e-ab88-471...|AstroShift X90 Me...|      105.76|Peripherals, Keyb...|     105.76|0cb21c1e-ab88-471...|
+        |1aec0dc4-bb18-40d...|AuroraShield Luxe...|      176.15|Accessories, Luxu...|      149.0|1aec0dc4-bb18-40d...|
+        |91a40caa-b18e-4bb...|SwiftPoint Edge P...|       87.99|   Peripherals, Mice|      87.99|91a40caa-b18e-4bb...|
+        +--------------------+--------------------+------------+--------------------+-----------+--------------------+
    ```
 
 ## Related content
