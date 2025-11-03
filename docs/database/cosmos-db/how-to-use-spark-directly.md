@@ -20,7 +20,7 @@ You can use Microsoft Fabric Runtime and the Cosmos DB Spark connector to read o
 [!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
 
 > [!NOTE]  
-> In this article, we have used a Cosmos DB in Fabric database name of *SampleDatabase* and a container name of **SampleData**. You should substitute these for the database and container names you will be using.
+> In this article, we have used a Cosmos DB in Fabric database name of *SampleDatabase* and a container name of **SampleData**. You should substitute these for the database and container names you are using.
 
 ## Configure your Spark environment in a Fabric notebook
 
@@ -204,7 +204,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
 
 ## Write data into a Cosmos DB in Fabric container using Spark
 
-In order to write data directly to a Cosmos DB in Fabric container you require:
+In order to write data directly to a Cosmos DB in Fabric container, you require:
 
 - a correctly formated DataFrame containing the container partition key and id columns
 - a correctly specifid configuration for the container you wish to write to
