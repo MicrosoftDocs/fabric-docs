@@ -30,21 +30,24 @@ Specifically, in this tutorial, you learn how to:
 > * Get data in the Real-Time hub
 > * Transform events
 > * Publish an eventstream
-> * Subscribe to Fabric Events
 > * Use update policies to transform data in Eventhouse
 > * Use Copilot to create a KQL query
 > * Create a KQL query
 > * Create an alert based on a KQL query
 > * Create a Real-Time dashboard
 > * Explore data visually in the Real-Time dashboard
-> * Create a Power BI report from a KQL query
+> * Set up anomaly detection on Eventhouse tables
+> * Create a map using geospatial data
 > * Set an alert on the eventstream
 
 ## Prerequisites
 
-To successfully complete this tutorial, you need a [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+* To successfully complete this tutorial, you need a [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+* The tenant admin must enable the maps and anomaly detector preview settings in the admin portal. For more information, see [What is the admin portal?](../admin/admin-center.md).
+    
+    :::image type="content" source="media/tutorial/enable-preview.png" alt-text="Screenshot of enabling the preview items in the admin portal.":::
 
 ## Related content
 
 > [!div class="nextstepaction"]
-> [Tutorial part 1: Set up resources](tutorial-1-resources.md)
+> [Real-Time Intelligence tutorial part 1: Set up Eventhouse](tutorial-1-resources.md)
