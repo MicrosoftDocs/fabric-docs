@@ -11,7 +11,7 @@ ms.date: 10/31/2025
 
 # Query Cosmos DB in Microsoft Fabric using the Cosmos DB Spark Connector
 
-You can use Microsoft Fabric Runtime and the Cosmos DB Spark connector to read or write data from a Cosmos DB in Fabric database. The Cosmos DB Spark connector connects directly to the Cosmos DB endpoint to perform read and write operations. These read operations opertations are different from using Spark to read data from the mirrored container data stored in OneLake, and use Request Units (RU) from the container to complete.
+You can use Microsoft Fabric Runtime and the Cosmos DB Spark connector to read or write data from a Cosmos DB in Fabric database. The Cosmos DB Spark connector connects directly to the Cosmos DB endpoint to perform read and write operations. These read operations are different from using Spark to read data from the mirrored container data stored in OneLake, and use Request Units (RU) from the container to complete.
 
 ## Prerequisites
 
