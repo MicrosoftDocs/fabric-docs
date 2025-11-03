@@ -95,7 +95,7 @@ Key Vault and Managed HSM must have both soft-delete and purge protection enable
 
 For more information, see [About keys](/azure/key-vault/keys/about-keys).
 
-You can also use Azure Key Vaults for which the [firewall setting is enabled](https://learn.microsoft.com/en-us/azure/key-vault/general/network-security#key-vault-firewall-enabled-trusted-services-only). When you disable public access to the Key Vault, you can choose the option to 'Allow Trusted Microsoft Services to bypass this firewall.'
+You can also use Azure Key Vaults for which the [firewall setting is enabled](/azure/key-vault/general/network-security#key-vault-firewall-enabled-trusted-services-only). When you disable public access to the Key Vault, you can choose the option to 'Allow Trusted Microsoft Services to bypass this firewall.'
 
 ### Step 5: Enable encryption using customer-managed keys
 
