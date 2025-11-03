@@ -29,7 +29,7 @@ The Cosmos DB Spark connector can be used to support reverse-ETL scenarios where
 
 ## Retrieve Cosmos DB endpoint
 
-First, get the endpoint for the Cosmos DB database in Fabric. This endpoint is required to connect using the Cosomos DB Spark Connector.
+First, get the endpoint for the Cosmos DB database in Fabric. This endpoint is required to connect using the Cosmos DB Spark Connector.
 
 1. Open the Fabric portal (<https://app.fabric.microsoft.com>).
 
@@ -74,7 +74,7 @@ To connect to Cosmos DB using the Spark connector, you need to configure a custo
 1. Click **Publish**, then **Publish all**, and finally **Publish**.
 1. Once published, the custom libraries should have a status of success.
 
-   :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook-library.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook-library.png" alt-text="Screenshot of the environment with custom library files commited.":::
+   :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook-library.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook-library.png" alt-text="Screenshot of the environment with custom library files committed.":::
 
 1. Return to the notebook and select the newly configured environment by clicking the environment dropdown, selecting **Change environment**, and choosing the name of the newly created environment.
 
@@ -156,7 +156,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
         |-- docType: string (nullable = true)
    ```
 
-1. The two schemas and their data can be filtered usign the *docType* property in the container.  Filter the DataFrame for just products using the `where` function.
+1. The two schemas and their data can be filtered using the *docType* property in the container.  Filter the DataFrame for just products using the `where` function.
 
    ```scala
    // Render filtered rows by specific document type
@@ -164,7 +164,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    productsDF.show(10)
    ```
 
-1. Filter the DataFrame using the `filter` function to show only products within a specfic category
+1. Filter the DataFrame using the `filter` function to show only products within a specific category
 
    ```scala
    // Render filtered rows by specific document type and categoryName
