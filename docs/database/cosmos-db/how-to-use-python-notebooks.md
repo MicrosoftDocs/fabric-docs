@@ -1,5 +1,5 @@
 ---
-title: Use Cosmos DB in a Python notebook in Microsoft Fabric
+title: Use Cosmos DB in a Python Notebook in Microsoft Fabric
 description: Learn how to use Cosmos DB with a Python notebook in Microsoft Fabric.
 author: markjbrown
 ms.author: mjbrown
