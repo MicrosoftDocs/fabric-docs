@@ -11,7 +11,7 @@ ms.date: 10/31/2025
 
 # Query Cosmos DB in Microsoft Fabric using the Cosmos DB Spark Connector
 
-You can use Microsoft Fabric Runtime and the Cosmos DB Spark connector to read or write data from a Cosmos DB in Fabric database. The Cosmos DB Spark connector connects directly to the Cosmos DB endpoint to perform read operations. These read operations opertations are different from using Spark to read data from the mirrored container data stored in OneLake, and will use Request Units (RU) from the container to complete.
+You can use Microsoft Fabric Runtime and the Cosmos DB Spark connector to read or write data from a Cosmos DB in Fabric database. The Cosmos DB Spark connector connects directly to the Cosmos DB endpoint to perform read operations. These read operations opertations are different from using Spark to read data from the mirrored container data stored in OneLake, and use Request Units (RU) from the container to complete.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ You can use Microsoft Fabric Runtime and the Cosmos DB Spark connector to read o
 [!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
 
 > [!NOTE]  
-> In this article, we have used a Cosmos DB in Fabric database name of *SampleDatabase* and a container name of **SampleData**, you should substitute these values for the database and container names you're using.
+> In this article, we use a database name of *SampleDatabase* and a container name of **SampleData**, you should substitute these values for the database and container names you're using.
 
 ## Configure your Spark environment in a Fabric notebook
 
@@ -216,7 +216,7 @@ In order to write data directly to a Cosmos DB in Fabric container, you require:
    ProductsDF.show(10)
    ```
 
-1. Create a new configuration for the `Products` container you want to write to. Remember to set the endpoint, database and container values to those of your environment. 
+1. Create a new configuration for the `Products` container you want to write to. Remember to set the endpoint, database, and container values appropriate for your environment.
 
    ```scala
    // Configure the Cosmos DB connection information for the database and container.
@@ -251,7 +251,7 @@ In order to write data directly to a Cosmos DB in Fabric container, you require:
    queryDF.show(10)
    ```
 
-   The result should look similar to the following:
+   The result should look similar to the following example:
 
    ```text
        +--------------------+-------+-----------+--------------------+-----------+--------------------+
