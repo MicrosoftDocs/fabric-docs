@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 3- Transform data in a KQL Database
+title: Real-Time Intelligence tutorial part 4- Transform data in a KQL Database
 description: Learn how to use an update policy to transform data in a KQL Database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: spelluru
@@ -10,10 +10,10 @@ ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to transform data in a KQL database in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 3: Transform data in a KQL database
+# Real-Time Intelligence tutorial part 4: Transform data in a KQL database
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 2: Get data in the Real-Time hub](tutorial-2-get-real-time-events.md).
+> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 3: Set an alert on your event stream](tutorial-3-set-alert.md).
 
 In this part of the tutorial, you learn how to use an update policy to transform data in a KQL Database in Real-Time Intelligence. Update policies are automation mechanisms triggered when new data is written to a table. They eliminate the need for special orchestration by running a query to transform the ingested data and save the result to a destination table. Multiple update policies can be defined on a single table, allowing for different transformations and saving data to multiple tables simultaneously. The target tables can have a different schema, retention policy, and other policies from the source table.
 
@@ -21,9 +21,13 @@ In this part of the tutorial, you learn how to use an update policy to transform
 
 In this step, you move the raw data table into a Bronze folder to organize the data in the KQL database.
 
-1. Browse to the KQL database you created in a previous step, named *Tutorial*.
+1. Browse to your workspace.
+1. Select the KQL database you created in a previous step, named *Tutorial*.
+
+    :::image type="content" source="media/tutorial/tutorial-queryset.png" alt-text="Screenshot of selecting the tutorial queryset from the database item tree.":::
+
 1. In the object tree, under the KQL database name, select the query workspace called **Tutorial_queryset**.
-1. Copy/paste the following command to alter table to move table into a Bronze folder.
+1. Copy/paste and run the following command in the query editor to move table into a Bronze folder. You can run the query by selecting the **Run** button from the menu ribbon or by pressing **Shift + Enter**.
 
     ```kusto
     .alter table RawData (BikepointID:string,Street:string,Neighbourhood:string,Latitude:real,Longitude:real,No_Bikes:long,No_Empty_Docks:long,Timestamp:datetime) with (folder="Bronze")
@@ -33,7 +37,7 @@ In this step, you move the raw data table into a Bronze folder to organize the d
 
 In this step, you create a target table that will be used to store the data that is transformed with the update policy.
 
-1. Copy/paste the following command to create a new table called **TransformedData** with a specified schema.
+1. On a new line, with at least one line between the cursor and the last query, copy/paste the following command to create a new table called **TransformedData** with a specified schema.
 
     ```kusto
     .create table TransformedData (BikepointID: int, Street: string, Neighbourhood: string, Latitude: real, Longitude: real, No_Bikes: long, No_Empty_Docks: long, Timestamp: datetime, BikesToBeFilled: long, Action: string) with (folder="Silver")
@@ -119,4 +123,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Real-Time Intelligence tutorial part 4: Query streaming data using KQL](tutorial-4-query-data.md)
+> [Real-Time Intelligence tutorial part 5: Query streaming data using KQL](tutorial-5-query-data.md)
