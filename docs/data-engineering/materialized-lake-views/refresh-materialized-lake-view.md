@@ -9,9 +9,9 @@ ms.date: 10/28/2025
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.
 ---
 
-# Refresh materialized lake views in a lakehouse
+# Optimal refresh for materialized lake views in a lakehouse
 
-This article describes the various refresh modes for materialized lake view refresh and outlines the semantic considerations involved in effectively refreshing materialized lake views. 
+This article describes the semantic aspects to consider when using optimal refresh for materialized lake views and outlines the available modes of refresh for materialized lake view 
 
 **Refresh modes for materialized lake views**
 
@@ -21,7 +21,7 @@ This article describes the various refresh modes for materialized lake view refr
 
 ## Optimal refresh  
 
-Optimal refresh is engineered to improve data management efficiency, speed, and cost-effectiveness on the Microsoft Fabric platform. The Optimal refresh feature automatically selects the most appropriate refresh strategy to maximize refresh performance. The following refresh policies are supported: 
+Optimal refresh is engineered to improve data management efficiency, speed, and cost-effectiveness on the Microsoft Fabric platform. It automatically selects the most appropriate refresh strategy to maximize refresh performance. The following refresh policies are supported under optimal refresh: 
 
 |Refresh Policy | Description |
 |---------------|-------------|
@@ -30,7 +30,7 @@ Optimal refresh is engineered to improve data management efficiency, speed, and 
 |Full refresh |Full refresh entails evaluating the complete dataset of the dependant source whenever the service detects any modifications in the sources.|
 
 > [!Important]
-> Optimal refresh requires delta CDF property to be enabled for the data sources used to define materialized lake views 
+> For incremental refresh to take effect, it is required to set delta CDF property to `delta.enableChangeDataFeed=true` for the sources referenced in the materialized lake views definition.
 
 ### Benefits of Optimal refresh 
 
@@ -46,7 +46,6 @@ When a materialized lake view is created using supported expressions, Fabric can
 
 The following table outlines the supported expressions:
 
-
 |SQL Construct |  Remark|
 |--------------| -------|
 |SELECT expression | Supports expressions having deterministic functions (inbuilt). Non-deterministic functions lead to full refresh strategy.|
@@ -59,6 +58,14 @@ The following table outlines the supported expressions:
 > [!Note]
 > For the better incremental refresh experience, use supported clauses as much as possible. If a query uses unsupported patterns, the refresh will automatically fall back to a full refresh or no refresh.
 
+### Key points for optimal refresh
+
+1. For best results, use deterministic functions in your queries to help ensure incremental refresh can be applied..
+2. Incremental refresh is supported for append-only data. If the data includes deletions or updates, Fabric will perform a full refresh.
+3. If you define data quality constraints in your MLV definition, incremental refresh will respect and enforce those constraints during updates.
+4. No additional charges apply specifically for using optimal refresh. You are billed based on compute usage during refresh operations.
+5. In cases such as small source datasets, Fabric might choose full over incremental refresh given the performance yield.
+
 ### How to enable optimal refresh mode 
 
 By default, optimal refresh mode is enabled for the lineage. If not, follow the steps below:
@@ -66,13 +73,6 @@ By default, optimal refresh mode is enabled for the lineage. If not, follow the 
 1. Navigate to the manage materialized lake view option and enable the toggle `Optimal refresh`.
    
    :::image type="content" source="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png" alt-text="Screenshot that shows toggle to enable optimal refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png":::
-
-> [!Note]
-> 1. For best results, avoid non-deterministic functions in your queries, as these may force a full refresh.
-> 2. Incremental refresh is supported for append-only data. If the data includes deletions or updates, Fabric will perform a full refresh.
-> 3. If you define data quality constraints in your MLV definition, incremental refresh will respect and enforce those constraints during updates.
-> 4. No additional charges apply specifically for using optimal refresh. You are billed based on compute usage during refresh operations.
-> 5. In cases such as small source datasets, Fabric might choose full over incremental refresh given the performance yield.
 
 ## Full Refresh 
 
