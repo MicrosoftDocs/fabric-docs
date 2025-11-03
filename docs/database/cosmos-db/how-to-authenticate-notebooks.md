@@ -18,8 +18,6 @@ Cosmos DB in Microsoft Fabric exclusively relies on Microsoft Entra ID authentic
 
 - An identity with the **Read** permission for the database in Fabric
 
-  - For more information on Fabric permissions, see [access controls](authorization.md#access-controls).
-
 [!INCLUDE[Prerequisites - Development languages core](includes/prerequisite-dev-lang-core.md)]
 
 ## Retrieve Cosmos DB endpoint
