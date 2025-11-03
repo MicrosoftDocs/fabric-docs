@@ -2,14 +2,14 @@
 title: Graph Overview
 description: Learn about the core purpose, architecture, and benefits of graph in Microsoft Fabric, including integration and feature highlights.
 ms.topic: concept-article
-ms.date: 10/21/2025
+ms.date: 10/28/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam
 ms.service: fabric
 ms.subservice: graph
 ms.custom: references_regions
-ms.search.form: product-graph
+ms.search.form: Graph Overview
 ---
 
 # Graph in Microsoft Fabric overview (preview)
@@ -112,28 +112,52 @@ Usage is measured in minutes of CPU uptime. You can monitor your graph workload'
 | Fabric operation name    | Azure billing meter     | Unit of measure  | Fabric CU consumption rate |
 |--------------------------|-------------------------|------------------|----------------------------|
 | Graph general operations | Graph capacity usage CU | Minute           | 0.16667 CUs per minute     |
-| Graph cache storage      | OneLakeCache            | Per GB per month | -                          |
+| Graph cache storage      | OneLake Cache           | Per GB per month | -                          |
 
 For more information on pricing and capacity units, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
 ## Region availability
 
-Graph in Microsoft Fabric is rolling out to new Fabric regions every week. It's currently available in the following regions:
+Graph is currently available in the following regions:
 
 - Australia East
+- Australia Southeast
+- Brazil South
 - Canada Central
+- Central India
 - Central US
+- East Asia
 - East US
 - East US 2
+- France Central
+- Germany West Central
+- Israel Central
+- Italy North
+- Japan East
+- Japan West
+- Korea Central
+- Mexico Central
 - North Central US
 - North Europe
 - Norway East
 - Poland Central
+- South Africa North
+- South Central US
+- Southeast Asia
+- South India
+- Spain Central
+- Sweden Central
+- Switzerland North
+- Switzerland West
+- UAE North
 - UK South
+- UK West
 - West Europe
+- West US
 - West US 2
+- West US 3
 
-If you would like to be notified when the service is available in your region, fill out this [form](https://forms.office.com/r/zkFLe8M8gP).
+If you would like to be notified when the service has been added to your region, fill out this [form](https://forms.office.com/r/zkFLe8M8gP).
 
 ## Related content
 

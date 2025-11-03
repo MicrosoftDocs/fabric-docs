@@ -22,18 +22,20 @@ items:
       href: tutorial-1-resources.md
     - name: 2- Get data in the Real-Time hub
       href: tutorial-2-get-real-time-events.md
-    - name: 3- Transform data in your KQL database
-      href: tutorial-3-transform-kql-database.md
-    - name: 4- Query streaming data using KQL
-      href: tutorial-4-query-data.md
-    - name: 5- Create a Real-Time dashboard
-      href: tutorial-5-create-dashboard.md
-    - name: 6- Create a Power BI report
-      href: tutorial-6-power-bi-report.md
-    - name: 7- Set an alert on your event stream
-      href: tutorial-7-set-alert.md
-    - name: 8- Clean up resources
-      href: tutorial-8-clean-up-resources.md
+    - name: 3- Set an alert on an eventstream
+      href: tutorial-3-set-alert.md
+    - name: 4- Transform data in your KQL database
+      href: tutorial-4-transform-kql-database.md
+    - name: 5- Query streaming data using KQL
+      href: tutorial-5-query-data.md
+    - name: 6- Create a Real-Time dashboard
+      href: tutorial-6-create-dashboard.md
+    - name: 7- Detect anomalies on an Eventhouse table
+      href: tutorial-7-create-anomaly-detection.md
+    - name: 8- Create a map using geospatial data
+      href: tutorial-8-create-map.md
+    - name: 9- Clean up resources
+      href: tutorial-9-clean-up-resources.md
   - name: Digital twin builder tutorial
     items: 
       - name: Digital twin builder tutorial - Introduction

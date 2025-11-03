@@ -95,7 +95,7 @@ The JSON event contains the following attributes:
 | tenantId |	The tenant identifier that performed the OneLake operation |
 | executingPrincipalId |	The GUID of the Microsoft Entra principle performing the OneLake operation |
 | correlationId |	A GUID correlation identifier for the OneLake operation |
-| operationName |	The OneLake operation being performed (not provided for internal Fabric operations) |
+| operationName |	The OneLake operation being performed (not provided for internal Fabric operations). [See Operations](#operations) below for more details. |
 | operationCategory |	The broad category of the OneLake operation (for example, Read)  |
 | executingUPN |	The Microsoft Entra unique principal name performing the operation (not provided for internal Fabric operations) |
 | executingPrincipalType |	The type of principal being used, for example User or Service Principal  |
@@ -151,3 +151,82 @@ If the Lakehouse selected for diagnostics is deleted:
 OneLake diagnostics isn't currently compatible with [Workspace outbound access protection (OAP)](../security/workspace-outbound-access-protection-overview.md) across workspaces. If you require OneLake diagnostics and OAP to work together, you must select a Lakehouse in the same Workspace.
 
 When OneLake diagnostics is configured, the selection of the workspace honors workspace private link configuration by limiting your selection to workspaces within the same private network. However, OneLake diagnostics doesn't automatically respond to networking changes.
+
+## Operations
+
+### Global operations
+
+| Operation                         | Category |
+|-----------------------------------|----------|
+| ReadFileOrGetBlob                 | Read     |
+| GetFileOrBlobProperties           | Read     |
+| GetActionFileOrBlobProperties     | Read     |
+| CheckAccessFileOrBlob             | Read     |
+| DeleteFileOrBlob                  | Delete   |
+
+### Blob operations
+
+| Operation                        | Category |
+|----------------------------------|----------|
+| GetBlockList                     | Read     |
+| ListBlob                         | Read     |
+| GetBlob                          | Read     |
+| DeleteBlob                       | Delete   |
+| UndeleteBlob                     | Write    |
+| GetBlobMetadata                  | Read     |
+| SetBlobExpiry                    | Write    |
+| SetBlobMetadata                  | Write    |
+| SetBlobProperties                | Write    |
+| SetBlobTier                      | Write    |
+| LeaseBlob                        | Write    |
+| AbortCopyBlob                    | Write    |
+| PutBlockFromURL                  | Write    |
+| PutBlock                         | Write    |
+| PutBlockList                     | Write    |
+| AppendBlockFromURL               | Write    |
+| AppendBlock                      | Write    |
+| AppendBlobSeal                   | Write    |
+| PutBlobFromURL                   | Write    |
+| CopyBlob                         | Write    |
+| PutBlob                          | Write    |
+| QueryBlobContents                | Read     |
+| GetBlobProperties                | Read     |
+| CreateContainer                  | Write    |
+| DeleteContainer                  | Delete   |
+| GetContainerMetadata             | Read     |
+| GetContainerProperties           | Read     |
+| SetContainerMetadata             | Write    |
+| SetContainerAcl                  | Write    |
+| LeaseContainer                   | Write    |
+| RestoreContainer                 | Write    |
+| SnapshotBlob                     | Write    |
+| CreateFastPathReadSession        | Read     |
+| CreateFastPathWriteSession       | Write    |
+
+### DFS operations
+
+| Operation                              | Category |
+|----------------------------------------|----------|
+| CreateFileSystem                       | Write    |
+| PatchFileSystem                        | Write    |
+| DeleteFileSystem                       | Delete   |
+| GetFileSystemProperties                | Read     |
+| CreateDirectory                        | Write    |
+| CreateFile                             | Write    |
+| DeleteDirectory                        | Delete   |
+| DeleteFile                             | Delete   |
+| RenameFileOrDirectory                  | Write    |
+| ListFilePath                           | Read     |
+| AppendDataToFile                       | Write    |
+| FlushDataToFile                        | Write    |
+| SetFileProperties                      | Write    |
+| SetAccessControlForFile                | Write    |
+| SetAccessControlForDirectory           | Write    |
+| LeasePath                              | Write    |
+| GetPathStatus                          | Read     |
+| GetAccessControlListForFile            | Read     |
+
+### Fabric operations
+| Operation                              | Category |
+|----------------------------------------|----------|
+| FabricWorkloadAccess                   | Read     |

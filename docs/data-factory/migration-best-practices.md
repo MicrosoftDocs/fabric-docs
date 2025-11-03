@@ -85,7 +85,7 @@ All core activities in Azure Data Factory (ADF), such as Copy, Lookup, Stored Pr
 
 Fabric often provides more native options for certain tasks. For example, use SQL Script in a Warehouse instead of a generic Stored Procedure call for better lineage and monitoring. To streamline migration, centralize common expressions like paths, dates, and tenant-specific URIs into pipeline parameters. This reduces drift and speeds up testing.
 
-For more information, see [Activity continuity between Azure Data Factory and Fabric](activity-parity.md).
+For more information, see [Activity continuity between Azure Data Factory and Fabric](compare-fabric-data-factory-and-azure-data-factory.md#activity-comparison).
 
 ## Dataflow differences
 
