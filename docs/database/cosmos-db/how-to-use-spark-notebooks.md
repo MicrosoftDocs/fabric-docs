@@ -1,6 +1,6 @@
 ---
-title: Use Spark to work with Cosmos DB in Fabric directly
-description: Learn how to use Spark to work with Cosmos DB databases in Microsoft Fabric, directly using the Cosmos DB Spark Connector.
+title: Use Cosmos DB in Spark notebook in Microsoft Fabric
+description: Learn how to use the Cosmos DB Spark Connector to work with a Spark notebook in Microsoft Fabric.
 author: garyhope
 ms.author: garyhope
 ms.topic: how-to
@@ -9,9 +9,9 @@ ms.date: 11/01/2025
 
 # Work with Cosmos DB in Microsoft Fabric using the Cosmos DB Spark Connector
 
-You can use Spark and the Azure Cosmos DB Spark connector to read write and query data from an Azure Cosmos DB for NoSQL account. You can also create and manage Cosmos DB containers with it as well. 
+You can use Spark and the Azure Cosmos DB Spark connector to read write and query data from an Azure Cosmos DB for NoSQL account. You can also create and manage Cosmos DB containers with it as well.
 
-Using Spark connector is different from using Spark to read data from the Cosmos DB in Fabric mirrored data stored in OneLake, as it connects directly to the Cosmos DB endpoint to perform operations. 
+Using Spark connector is different from using Spark to read data from the Cosmos DB in Fabric mirrored data stored in OneLake, as it connects directly to the Cosmos DB endpoint to perform operations.
 
 The Cosmos DB Spark connector can be used to support reverse-ETL scenarios where you need to serve data with low latency or high concurrency.
 
