@@ -16,22 +16,40 @@ The [Lakehouse](lakehouse-overview.md) integrates with the lifecycle management 
 
 ## What is tracked in git and deployment pipelines?
 
-The following table summarizes the Lakehouse items and sub-items that are tracked in git-connected workspaces and supported in deployment pipelines.
+The following table summarizes the Lakehouse item and sub-items and their support in git-connected workspaces and deployment pipelines.
 
 | Item/Sub-item | Git | Deployment Pipelines | Release Status | Notes |
 |---------------|-----|---------------------|----------------|-------|
 | Lakehouse metadata (display name, description, logical GUID) | ✅ Tracked | ✅ Tracked | GA | Cross-workspace identifier for source control |
 | OneLake Shortcuts metadata | ✅ Tracked | ✅ Tracked | GA | Stored in shortcuts.metadata.json file |
-| External shortcuts (ADLS Gen2, S3, etc.) | ✅ Tracked | ✅ Synced across stages | GA | Same targets across all stages |
-| Internal OneLake Shortcuts | ✅ Tracked | ✅ Auto-remapped across stages | GA | Requires valid targets in workspace |
+| External shortcuts: ADLS Gen2, S3, and Google Cloud Storage | ✅ Tracked | ✅ Synced across stages | GA | Same targets across all stages, unless remapped using Variable Library |
+| External shortcuts: Sharepoint, Azure blob storage, OneDrive, Dataverse | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
+| Internal OneLake Shortcuts | ✅ Tracked | ✅ Auto-remapped across stages | GA | Requires valid targets in workspace to become usable |
 | OneLake Security Data Access Roles metadata | ✅ Tracked | ✅ Tracked | Preview | Stored in dar.metadata.json file |
 | SQL Analytics endpoint metadata | ✅ Tracked | ✅ Provisioned on deployment | GA | Managed by git update process |
 | Tables (Delta and non-Delta) | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
+| Spark Views | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
 | Folders in Files section | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
+
+## Opt-In experience for object types
+
+Lakehouse offers an opt-in experience that enables or disables the tracking object types in git and deployment pipelines. To enable the experience, go to Lakehouse settings and enable the desired object types to be tracked.
+
+This feature provides the following benefits for two reasons:
+1. Provide flexibility to development teams to choose which object types are tracked in git and deployment pipelines based on their specific needs and workflows. Teams might want to orchestrate object types via external tools or scripts. Also, some object types might not be relevant for all stages in a deployment pipeline.
+2. Gradually introduce new object types for tracking, allowing teams to adapt existing workflows and automations before opting in to additional object types. This safeguards against potential disruptions to existing workflows and automations.
+
+![Lakehouse settings opt-in experience](media/lakehouse-git-deployment-pipelines/lakehouse-settings-opt-in.png)
+
+The following behaviors are applied when opting in or out of object types tracking:
+1. After opting in to track an object type that was not tracked before and syncing changes to git, the current metadata state of that object type is serialized and stored in git. Future changes to that object type will be tracked and synchronized across workspaces in deployment pipelines.
+1. After opting out of tracking an object type that was tracked before, the object type metadata is no longer serialized or stored in git. Future changes to that object type will not be tracked or synchronized across workspaces in deployment pipelines. The existing metadata in git is removed.
+1. New lakehouses are created with all object types opted in by default, except the ones that in Preview state.
+1. Existing lakehouses retain their current object types tracking state unless changed by the user.
 
 ## Lakehouse git integration
 
-The Lakehouse is an item that contains both metadata and data that is referenced in multiple objects in the workspace. Lakehouse contains tables, folders, and shortcuts as primary manageable data container items. From a development workflow perspective, the following dependent objects might reference a Lakehouse:
+The Lakehouse is an item that contains both metadata and data that is referenced in multiple objects in the workspace. Lakehouse contains references to tables, folders, and shortcuts as primary manageable data container items. From a development workflow perspective, the following dependent objects might reference a Lakehouse:
 
 * [Dataflows](../data-factory/create-first-dataflow-gen2.md) and [Pipelines](../data-factory/create-first-pipeline-with-sample-data.md)
 * [Spark Job Definitions](spark-job-definition.md)
@@ -76,7 +94,6 @@ The following capabilities are available:
 
 > [!IMPORTANT]
 > An update from git __will override the state of shortcuts in the workspace__. All the Shortcuts in the workspace are created, updated or deleted based on the incoming state from git.
-
 
 ## Lakehouse in deployment pipelines
 
