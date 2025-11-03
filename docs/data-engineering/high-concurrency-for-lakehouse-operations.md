@@ -82,7 +82,5 @@ High Concurrency sessions provide measurable **price-performance gains**:
 This model ensures Lakehouse users achieve better performance per capacity unit, especially in workloads with frequent **Load** or **Preview** operations.
 
 ## Related content
-
-- [High concurrency mode in Apache Spark for Fabric](high-concurrency-mode-for-notebooks.md)
-- [Configure Spark compute in Microsoft Fabric](configure-spark-compute.md)
-- [Monitor Spark jobs in Microsoft Fabric](monitor-spark-jobs.md)
+* To learn more about high concurrency mode in Microsoft Fabric, see [High concurrency mode in Apache Spark for Fabric](high-concurrency-overview.md).
+* To get started with high concurrency mode for notebooks, see [Configure high concurrency mode for Fabric notebooks](configure-high-concurrency-session-notebooks.md).
