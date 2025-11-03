@@ -162,21 +162,20 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
 
    ```scala
    // Retrieve the product data from the SampleData container
-   val productPriceMinDF = spark.sql("SELECT productId,category,name, price,priceHistory FROM cosmosCatalog.SampleDatabase.SampleData WHERE SampleData.docType = 'product'")
+   val productPriceMinDF = spark.sql("SELECT productId,categoryName,name, currentPrice,priceHistory FROM cosmosCatalog.SampleDatabase.SampleData WHERE SampleData.docType = 'product'")
+
 
    // Prepare an exploded result set containing one row for every member of the priceHistory array
    val explodedDF = productPriceMinDF
      .withColumn("priceHistory", explode(col("priceHistory")))
-     .withColumn("priceDate", col("priceHistory.priceDate"))
-     .withColumn("newPrice", col("priceHistory.newPrice"))
+     .withColumn("Date", col("priceHistory.Date"))
+     .withColumn("Price", col("priceHistory.Price"))
 
    // Aggregate just the lowest price ever recorded in the priceHistory
    val lowestPriceDF = explodedDF
      .filter(col("docType") === "product")
-     .groupBy("productId", "name", "price", "category")
-     .agg(
-       min("newPrice").as("lowestPrice")
-     )
+     .groupBy("productId", "name", "currentPrice", "categoryName")
+     .agg(min("Price").as("lowestPrice"))
 
    // Show 10 rows of the result data
    lowestPriceDF.show(10)
