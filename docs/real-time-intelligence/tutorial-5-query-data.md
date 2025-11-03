@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 4 - Query streaming data using KQL
+title: Real-Time Intelligence tutorial part 5 - Query streaming data using KQL
 description: Learn how to query your streaming data in a KQL queryset Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: spelluru
@@ -13,10 +13,10 @@ ms.collection: ce-skilling-ai-copilot
 ms.search.form: Get started
 #customer intent: I want to learn how to query my streaming data in a KQL queryset in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 4: Query streaming data using KQL
+# Real-Time Intelligence tutorial part 5: Query streaming data using KQL
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 3: Transform data in a KQL database](tutorial-3-transform-kql-database.md).
+> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 4: Transform data in a KQL database](tutorial-4-transform-kql-database.md).
 
 In this part of the tutorial, you query streaming data using a few different methods. You write a KQL query to visualize data in a time chart and you create an aggregation query using a materialized view. You also query data by using T-SQL and by using `explain` to convert SQL to KQL. Finally, you use Copilot to generate a KQL query.
 
@@ -24,7 +24,7 @@ In this part of the tutorial, you query streaming data using a few different met
 
 The name of the table you created from the update policy in a previous step is *TransformedData*. Use this table name (case-sensitive) as the data source for your query.
 
-- Enter the following query, and then press **Shift + Enter** to run the query.
+- In the Tutorial_queryset, enter the following query, and then press **Shift + Enter** to run the query.
 
     ```kusto
     TransformedData
@@ -97,7 +97,10 @@ This query returns a KQL equivalent of the T-SQL query you enter. The KQL query 
 
 If you're new to writing KQL, you can ask a question in natural language and Copilot generates the KQL query for you.
 
+1. Select **Queryset** from the menu bar. 
 1. In the KQL queryset, select the **Copilot** icon from the menu bar.
+
+    :::image type="content" source="media/tutorial/copilot-select.png" alt-text="Screenshot of how to get to the right copilot.":::
 
 1. Enter a question in natural language. For example, "Which station has the most bikes right now. Use the materialized view for the most updated data." It can help to include the name of the materialized view in your question.
 
@@ -105,7 +108,7 @@ If you're new to writing KQL, you can ask a question in natural language and Cop
 
 1. Select the **Insert** button to add the query to the KQL editor.
 
-    :::image type="content" source="media/tutorial/copilot.png" alt-text="Screenshot of Copilot dialog showing a generated KQL query and the Insert button.":::
+    :::image type="content" source="media/tutorial/copilot.png" alt-text="Screenshot of Copilot dialog showing a generated KQL query and the Insert button." lightbox="media/tutorial/copilot.png":::
 
 1. Select **Run** to run the query.
 
@@ -125,4 +128,4 @@ For more information about tasks in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 5: Create a Real-Time dashboard](tutorial-5-create-dashboard.md)
+>  [Real-Time Intelligence tutorial part 6: Create a Real-Time Dashboard](tutorial-6-create-dashboard.md)
