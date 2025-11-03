@@ -11,7 +11,7 @@ ms.date: 10/31/2025
 
 # Query Cosmos DB in Microsoft Fabric using the Cosmos DB Spark Connector
 
-You can use Spark and the Azure Cosmos DB Spark connector to read or write data from an Azure Cosmos DB for NoSQL account. This is different from using Spark to read data from the Cosmos DB in Fabric mirrored data stored in OneLake, as it connects directly to the Cosmos DB endpoint to perform operations.
+You can use Microsoft Fabric Runtime and the Cosmos DB Spark connector to read or write data from a Cosmos DB in Fabric database. The Cosmos DB Spark connector as connector connects directly to the Cosmos DB endpoint to perform operations. This is different from using Spark to read data from the Cosmos DB in Fabric mirrored data stored in OneLake
 
 ## Prerequisites
 
@@ -81,7 +81,7 @@ To connect to your Cosmos DB in Fabric database and container, specify a connect
 
 Load OLTP data into a DataFrame to perform some basic Spark operations.
 
-1. Use `spark.read` to load the OLTP data into a DataFrame object. Use the same configuration you used earlier in this tutorial. Also, set `spark.cosmos.read.inferSchema.enabled` to `true` to allow the Spark connector to infer the schema by sampling existing items.
+1. Use `spark.read` to load the OLTP data into a DataFrame object. Use the configuration created in the previous step. Also, set `spark.cosmos.read.inferSchema.enabled` to `true` to allow the Spark connector to infer the schema by sampling existing items.
 
    ```scala
    // Read Cosmos DB container into a dataframe
@@ -158,7 +158,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    spark.conf.set("spark.sql.catalog.cosmosCatalog.spark.cosmos.accountDataResolverServiceName", "com.azure.cosmos.spark.fabric.FabricAccountDataResolver")
    ```
 
-1. Query your data by using the catalog information and a SparkSQL query string.
+1. Query your data by using the catalog information and a SQL query string with the Spark SQL function.
 
    ```scala
    // Show results of query   
@@ -193,23 +193,30 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
 
 ## Create a new Cosmos DB in Fabric container using Spark
 
-1. Create a new container named `Products` by using `CREATE TABLE IF NOT EXISTS`. Ensure that you set the partition key path to `/id` and enable autoscale throughput with a maximum throughput of `1000` request units per second (RU/s).
+1. Create a new container named `Products` by using `CREATE TABLE IF NOT EXISTS` statement. Ensure that you setthe partition key path to `/id` and enable autoscale throughput with a maximum throughput of `1000` request units per second (RU/s).
 
    ```scala
    // Create a products container by using the Catalog API
    spark.sql(("CREATE TABLE IF NOT EXISTS cosmosCatalog.cosmicworks.products USING cosmos.oltp TBLPROPERTIES(partitionKeyPath = '/id', autoScaleMaxThroughput = '1000')"))
    ```
 
+1. After running the cell validate that your container is created within your Cosmos DB database.
+
 ## Write data into a Cosmos DB in Fabric container using Spark
 
-1. All documents in Cosmos DB require an **id** property, which is also the partition key for the container. Create an `id` column with the value of `productId`.
+In order to write data directly to a Cosmos DB in Fabric container you require:
+
+- a correctly formated DataFrame containing the container partition key and id columns
+- a correctly specifid configuration for the container you wish to write to
+
+1. All documents in Cosmos DB require an **id** property, which is also the partition key chosen for the `Producs` container. Create an `id` column on the `ProducsDF` DataFrame with the value of `productId` column.
 
    ```scala
    val ProductsDF = lowestPriceDF.withColumn("id", col("productId"))
    ProductsDF.show(10)
    ```
 
-1. Create a new configuration for the `Products` container you want to write to.
+1. Create a new configuration for the `Products` container you want to write to. Remember to set the endpoint, database and container values to those of your environment. 
 
    ```scala
    // Configure the Cosmos DB connection information for the database and container.
