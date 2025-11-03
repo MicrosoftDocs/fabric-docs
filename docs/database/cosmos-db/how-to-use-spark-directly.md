@@ -11,7 +11,7 @@ ms.date: 10/31/2025
 
 # Query Cosmos DB in Microsoft Fabric using the Cosmos DB Spark Connector
 
-You can use Microsoft Fabric Runtime and the Cosmos DB Spark connector to read or write data from a Cosmos DB in Fabric database. The Cosmos DB Spark connector connects directly to the Cosmos DB endpoint to perform read operations. These read operations opertationsare different from using Spark to read data from the mirrored container data stored in OneLake, and use Request Units (RU) from the container to complete.
+You can use Microsoft Fabric Runtime and the Cosmos DB Spark connector to read or write data from a Cosmos DB in Fabric database. The Cosmos DB Spark connector connects directly to the Cosmos DB endpoint to perform read and write operations. These read operations opertations are different from using Spark to read data from the mirrored container data stored in OneLake, and use Request Units (RU) from the container to complete.
 
 ## Prerequisites
 
@@ -151,11 +151,30 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
 
 1. Query your data by using the catalog information and a SQL query string with the Spark SQL function.
 
-   ```scala
-   // Show results of query   
-   val queryString = "SELECT * FROM cosmosCatalog.SampleDatabase.SampleData"
-   val queryDF = spark.sql(queryString)
-   queryDF.show(1)
+   ```scala  
+    // Show results of query   
+    val queryString = "SELECT categoryName,productId, docType, name, currentPrice,stars FROM cosmosCatalog.SampleDatabase.SampleData"
+    val queryDF = spark.sql(queryString)
+    queryDF.show(10)
+   ```
+
+   The result should look similar to the following example:
+
+    ```text
+    +------------------+--------------------+-------+--------------------+------------+-----+
+    |      categoryName|           productId|docType|                name|currentPrice|stars|
+    +------------------+--------------------+-------+--------------------+------------+-----+
+    |Computers, Laptops|77be013f-4036-431...|product|TechCorp SwiftEdg...|     2655.33| NULL|
+    |Computers, Laptops|77be013f-4036-431...| review|                NULL|        NULL|    4|
+    |Computers, Laptops|77be013f-4036-431...| review|                NULL|        NULL|    1|
+    |Computers, Laptops|d4df3f4e-5a90-41e...|product|AeroTech VortexBo...|     2497.71| NULL|
+    |Computers, Laptops|d4df3f4e-5a90-41e...| review|                NULL|        NULL|    1|
+    |Computers, Laptops|d4df3f4e-5a90-41e...| review|                NULL|        NULL|    2|
+    |Computers, Laptops|d4df3f4e-5a90-41e...| review|                NULL|        NULL|    1|
+    |Computers, Laptops|d4df3f4e-5a90-41e...| review|                NULL|        NULL|    2|
+    |Computers, Laptops|d4df3f4e-5a90-41e...| review|                NULL|        NULL|    5|
+    |Computers, Laptops|e8b100f0-166d-43d...|product|NovaTech EdgeBook...|     1387.45| NULL|
+    +------------------+--------------------+-------+--------------------+------------+-----+
    ```
 
 1. Query the sample dataset to retrieve a DataFrame containing a list of all products along with their lowest recorded price.
