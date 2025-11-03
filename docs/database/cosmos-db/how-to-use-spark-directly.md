@@ -11,7 +11,7 @@ ms.date: 10/31/2025
 
 # Query Cosmos DB in Microsoft Fabric using the Cosmos DB Spark Connector
 
-You can use Microsoft Fabric Runtime and the Cosmos DB Spark connector to read or write data from a Cosmos DB in Fabric database. The Cosmos DB Spark connector as connector connects directly to the Cosmos DB endpoint to perform operations. This is different from using Spark to read data from the Cosmos DB in Fabric mirrored data stored in OneLake
+You can use Microsoft Fabric Runtime and the Cosmos DB Spark connector to read or write data from a Cosmos DB in Fabric database. The Cosmos DB Spark connector connects directly to the Cosmos DB endpoint to perform read operations. These read operations opertations are different from using Spark to read data from the mirrored container data stored in OneLake, and will use Request Units (RU) from the container to complete.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ You can use Microsoft Fabric Runtime and the Cosmos DB Spark connector to read o
 [!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
 
 > [!NOTE]  
-> In this article, we have used a Cosmos DB in Fabric database name of *SampleDatabase* and a container name of **SampleData**. You should substitute these for the database and container names you are using.
+> In this article, we have used a Cosmos DB in Fabric database name of *SampleDatabase* and a container name of **SampleData**, you should substitute these values for the database and container names you're using.
 
 ## Configure your Spark environment in a Fabric notebook
 
@@ -37,7 +37,7 @@ To connect to Cosmos DB using the Spark connector, you need to configure a custo
    :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook.png" alt-text="Screenshot of the notebook showing the selection of Spark (Scala) as the preferred language.":::
 
 1. Click the environment dropdown.
-1. Check your workspace settings to ensure that you are using Runtime 1.3 (Spark 3.5).
+1. Check your workspace settings to ensure that you're using Runtime 1.3 (Spark 3.5).
 
    :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook-settings.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook-settings.png" alt-text="Screenshot of the notebook showing dropdown menu of workspace settings.":::
 
@@ -53,7 +53,7 @@ To connect to Cosmos DB using the Spark connector, you need to configure a custo
 1. Click **Publish**, then **Publish all**, and finally **Publish**.
 1. Once published, the custom libraries should have a status of success.
 
-   :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook-library.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook-library.png" alt-text="Screenshot of the environment with custom library files commited.":::
+   :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook-library.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook-library.png" alt-text="Screenshot of the environment with custom library files committed.":::
 
 1. Return to the notebook and select the newly configured environment by clicking the environment dropdown, selecting **Change environment**, and choosing the name of the newly created environment.
 
@@ -193,21 +193,21 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
 
 ## Create a new Cosmos DB in Fabric container using Spark
 
-1. Create a new container named `Products` by using `CREATE TABLE IF NOT EXISTS` statement. Ensure that you setthe partition key path to `/id` and enable autoscale throughput with a maximum throughput of `1000` request units per second (RU/s).
+1. Create a new container named `Products` by using `CREATE TABLE IF NOT EXISTS` statement. Ensure that you set the partition key path to `/id` and enable autoscale throughput with a maximum throughput of `1000` request units per second (RU/s).
 
    ```scala
    // Create a products container by using the Catalog API
    spark.sql(("CREATE TABLE IF NOT EXISTS cosmosCatalog.cosmicworks.products USING cosmos.oltp TBLPROPERTIES(partitionKeyPath = '/id', autoScaleMaxThroughput = '1000')"))
    ```
 
-1. After running the cell validate that your container is created within your Cosmos DB database.
+1. After running the cell,validate that your container is created within your Cosmos DB database.
 
 ## Write data into a Cosmos DB in Fabric container using Spark
 
 In order to write data directly to a Cosmos DB in Fabric container, you require:
 
-- a correctly formated DataFrame containing the container partition key and id columns
-- a correctly specifid configuration for the container you wish to write to
+- a correctly formatted DataFrame containing the container partition key and id columns
+- a correctly specified configuration for the container you wish to write to
 
 1. All documents in Cosmos DB require an **id** property, which is also the partition key chosen for the `Producs` container. Create an `id` column on the `ProducsDF` DataFrame with the value of `productId` column.
 
@@ -251,7 +251,7 @@ In order to write data directly to a Cosmos DB in Fabric container, you require:
    queryDF.show(10)
    ```
 
-   The result should look similar to this:
+   The result should look similar to the following:
 
    ```text
        +--------------------+-------+-----------+--------------------+-----------+--------------------+
