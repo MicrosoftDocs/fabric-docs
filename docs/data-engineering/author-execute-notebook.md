@@ -280,6 +280,7 @@ Notebook reference works in both interactive mode and pipeline.
 > - The ```%run``` command currently only supports reference notebooks in the same workspace with the current notebook.
 > - The ```%run``` command currently only supports up to four parameter value types: `int`, `float`, `bool`, and `string`. Variable replacement operation isn't supported.
 > - The ```%run``` command doesn't support nested reference with a depth larger than **five**.
+> - Currently the ```%run``` command doesn't work when the workspace level private link is enabled.
 
 #### Reference run a script
 
