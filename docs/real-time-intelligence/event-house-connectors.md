@@ -47,7 +47,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Telemetry
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/flink-connector-kusto/
-* **Documentation:** [Get data from Apache Flink](../get-data-flink.md)
+* **Documentation:** [Get data from Apache Flink](get-data-flink.md)
 
 ## Apache Kafka
 
@@ -58,7 +58,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Logs, Telemetry, Time series
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/kafka-sink-azure-kusto/
-* **Documentation:** [Get data from Apache Kafka](../get-data-kafka.md)
+* **Documentation:** [Get data from Apache Kafka](get-data-kafka.md)
 * **Community Blog:** [Kafka ingestion into Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/kafka-ingestion-into-azure-data-explorer-part-1/ba-p/1452439)
 
 ## Apache Log4J 2
@@ -70,7 +70,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Logs
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-log4j
-* **Documentation:** [Get data with the Apache Log4J 2 connector](../get-data-log4j2.md)
+* **Documentation:** [Get data with the Apache Log4J 2 connector](get-data-log4j2.md)
 * **Community Blog:** [Getting started with Apache Log4J and Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/getting-started-with-apache-log4j-and-azure-data-explorer/ba-p/3705242)
 
 ## Apache Spark
@@ -82,7 +82,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Telemetry
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-spark/
-* **Documentation:** [Apache Spark connector](../get-data-spark.md)
+* **Documentation:** [Apache Spark connector](get-data-spark.md)
 * **Community Blog:** [Data preprocessing for Azure Data Explorer for Azure Data Explorer with Apache Spark](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/data-pre-processing-for-azure-data-explorer-with-apache-spark/ba-p/2727993/)
 
 ## Apache Spark for Azure Synapse Analytics
@@ -138,7 +138,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching, Streaming
 * **Use cases:** Machine data processing including logs, metrics, instrumentation data
-* **Documentation:** [Get data from Cribl Stream](../get-data-cribl-stream.md)
+* **Documentation:** [Get data from Cribl Stream](get-data-cribl-stream.md)
 
 ## Fluent Bit
 
@@ -148,7 +148,7 @@ Fluent Bit is an open-source agent that collects logs, metrics, and traces from 
 * **Ingestion type supported:** Batching
 * **Use cases:** Logs, Metrics, Traces
 * **Repository:** [fluent-bit Kusto Output Plugin](https://github.com/fluent/fluent-bit/tree/master/plugins/out_azure_kusto)
-* **Documentation:** [Get data with Fluent Bit](../get-data-fluent.md)
+* **Documentation:** [Get data with Fluent Bit](get-data-fluent.md)
 
 ## Logstash
 
@@ -171,7 +171,7 @@ NLog is a flexible and free logging platform for various .NET platforms, includi
 * **Use cases:** Telemetry, Logs, Metrics
 * **Underlying SDK:** [.NET](/azure/data-explorer/kusto/api/netfx/about-the-sdk?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-nlog-sink
-* **Documentation:** [Get data with the NLog sink](../get-data-nlog-sink.md)
+* **Documentation:** [Get data with the NLog sink](get-data-nlog-sink.md)
 * **Community Blog:** [Getting started with NLog sink and Azure Data Explorer](https://aka.ms/adx-docs-nlog-blog)
 
 ## OpenTelemetry
@@ -204,7 +204,7 @@ Serilog is a popular logging framework for .NET applications. Serilog allows dev
 * **Use cases:** Logs
 * **Underlying SDK:** [.NET](/azure/data-explorer/kusto/api/netfx/about-the-sdk?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/serilog-sinks-azuredataexplorer
-* **Documentation:** [Get data from Serilog](../get-data-serilog.md)
+* **Documentation:** [Get data from Serilog](get-data-serilog.md)
 * **Community Blog:** [Getting started with Serilog sink and Azure Data Explorer](https://go.microsoft.com/fwlink/p/?linkid=2227749)
 
 ## Splunk
@@ -238,5 +238,5 @@ Telegraf is an open source, lightweight, minimal memory foot print agent for col
 * **Use cases:** Telemetry, Logs, Metrics
 * **Underlying SDK:** [Go](/azure/data-explorer/kusto/api/golang/kusto-golang-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** InfluxData - https://github.com/influxdata/telegraf/tree/master/plugins/outputs/azure_data_explorer
-* **Documentation:** [Ingest data from Telegraf into Microsoft Fabric Eventhouse](../get-data-telegraf.md)
+* **Documentation:** [Ingest data from Telegraf into Microsoft Fabric Eventhouse](get-data-telegraf.md)
 * **Community Blog:**  [New Azure Data Explorer output plugin for Telegraf enables SQL monitoring at huge scale](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/new-azure-data-explorer-output-plugin-for-telegraf-enables-sql/ba-p/2829444)
