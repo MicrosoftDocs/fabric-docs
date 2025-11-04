@@ -48,21 +48,21 @@ The following table outlines the supported expressions:
 
 |SQL Construct |  Remark|
 |--------------| -------|
-|SELECT expression | Supports expressions having deterministic functions (inbuilt). Non-deterministic functions lead to full refresh strategy.|
+|SELECT expression | Supports expressions having deterministic functions (inbuilt). Non-deterministic and window functions lead to full refresh strategy.|
 |FROM||
 |WHERE| Only deterministic inbuilt functions are supported.|
 |INNER JOIN || 
 |UNION ALL|| 
-|Data quality constraints| Only deterministic inbuilt functions are supported.|
+|Data quality constraints| Only deterministic inbuilt functions are supported in constraints.|
 
 > [!Note]
 > For the better incremental refresh experience, use supported clauses as much as possible. If a query uses unsupported patterns, the refresh will automatically fall back to a full refresh or no refresh.
 
 ### Key points for optimal refresh
 
-1. For best results, use deterministic functions in your queries to help ensure incremental refresh can be applied..
+1. For best results, use deterministic functions in your queries to help ensure incremental refresh can be applied.
 2. Incremental refresh is supported for append-only data. If the data includes deletions or updates, Fabric will perform a full refresh.
-3. If you define data quality constraints in your MLV definition, incremental refresh will respect and enforce those constraints during updates.
+3. If you define data quality constraints in materialized lake view definition, incremental refresh respect and enforce those constraints during updates.
 4. No additional charges apply specifically for using optimal refresh. You are billed based on compute usage during refresh operations.
 5. In cases such as small source datasets, Fabric might choose full over incremental refresh given the performance yield.
 
