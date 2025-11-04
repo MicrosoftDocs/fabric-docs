@@ -64,13 +64,13 @@ To: Microsoft Corporation
 
 Subject: Vendor Self-Attestation for Compliance with Microsoft Workload Development Requirements
 
-We, the undersigned, [Vendor Name], hereby confirm and attest that we have reviewed, understood, and complied with all applicable requirements as outlined in the Microsoft Extensibility toolkit documentation, specifically the [Publish Workload Requirements](https://learn.microsoft.com/fabric/extensibility-toolkit/publishing-requirements).
+We, the undersigned, [Vendor Name], hereby confirm and attest that we have reviewed, understood, and complied with all applicable requirements as outlined in the Microsoft Extensibility toolkit documentation, specifically the [Publish Workload Requirements](/fabric/extensibility-toolkit/publishing-requirements).
 
 ## Section III
 
 ### Publish Workload Requirements Attestation Checklist
 
-We, the vendor, [Vendor Name], confirm and attest to reviewing, meeting, and complying with the requirements outlined in the Microsoft Fabric Extensibility Toolkit specifically the [Publish Workload Requirements](https://learn.microsoft.com/fabric/extensibility-toolkit/publishing-requirements)
+We, the vendor, [Vendor Name], confirm and attest to reviewing, meeting, and complying with the requirements outlined in the Microsoft Fabric Extensibility Toolkit specifically the [Publish Workload Requirements](/fabric/extensibility-toolkit/publishing-requirements)
 
 The following sections documents details, exceptions, or variances regarding the attestation of adherence to the Publish Workload Requirements.
 

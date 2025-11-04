@@ -1,6 +1,6 @@
 ---
 title: Fabric Extensibility toolkit validation guidelines and requirements for workloads
-description: Learn about the guidelines and requirements for publishing a Microsoft Fabric workload to the Workload Hub.
+description: Learn about the guidelines and requirements for publishing a Microsoft Fabric workload to the Workload Hub with he extensibility toolkit.
 author: gsaurer
 ms.author: billmath
 ms.topic: conceptual
@@ -102,7 +102,7 @@ Workload must have a published marketplace offer with a valid, accessible licens
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://learn.microsoft.com/marketplace/](https://learn.microsoft.com/marketplace/)
+**Reference:** [https://learn.microsoft.com/marketplace/](/marketplace/)
 
 **Guidelines:**
 
@@ -130,7 +130,7 @@ The offer link needs to point to Azure Marketplace or AppSource.
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://learn.microsoft.com/legal/marketplace/certification-policies#1000-software-as-a-service-saas](https://learn.microsoft.com/legal/marketplace/certification-policies#1000-software-as-a-service-saas)
+**Reference:** [https://learn.microsoft.com/legal/marketplace/certification-policies#1000-software-as-a-service-saas](/legal/marketplace/certification-policies#1000-software-as-a-service-saas)
 
 **Guidelines:**
 
@@ -159,7 +159,7 @@ Workload must display a clear, professional publisher name that helps customers 
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://learn.microsoft.com/marketplace/](https://learn.microsoft.com/marketplace/)
+**Reference:** [https://learn.microsoft.com/marketplace/](/marketplace/)
 
 ---
 
@@ -173,7 +173,7 @@ Publisher name must be consistent between the workload manifest and Azure Market
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://learn.microsoft.com/marketplace/](https://learn.microsoft.com/marketplace/)
+**Reference:** [https://learn.microsoft.com/marketplace/](/marketplace/)
 
 ---
 
@@ -448,7 +448,7 @@ Fabric commits to a seamless service availability to customers. We recognize the
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
-**Reference:** [https://learn.microsoft.com/azure/reliability/reliability-fabric](https://learn.microsoft.com/azure/reliability/reliability-fabric)
+**Reference:** [https://learn.microsoft.com/azure/reliability/reliability-fabric](/azure/reliability/reliability-fabric)
 
 **Guidelines:**
 
@@ -1105,7 +1105,7 @@ Partners are responsible to define and document their support parameters (Servic
 |---------|---------------------|
 | ⚠️ Optional | ✅ Required |
 
-**Reference:** [https://learn.microsoft.com/partner-center/marketplace-offers/marketplace-criteria-content-validation](https://learn.microsoft.com/partner-center/marketplace-offers/marketplace-criteria-content-validation)
+**Reference:** [https://learn.microsoft.com/partner-center/marketplace-offers/marketplace-criteria-content-validation](/partner-center/marketplace-offers/marketplace-criteria-content-validation)
 
 **Guidelines:**
 
