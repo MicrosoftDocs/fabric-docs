@@ -21,64 +21,56 @@ items:
     href: supported-sources.md
   - name: Sample data source
     href: add-source-sample-data.md
+  - name: Amazon Kinesis Data Streams 
+    href: add-source-amazon-kinesis-data-streams.md
+  - name: Amazon Managed Streaming for Kafka
+    href: add-source-amazon-managed-streaming-for-kafka.md
+  - name: Apache Kafka
+    href: add-source-apache-kafka.md
+  - name: Azure Blob Storage events
+    href: get-azure-blob-storage-events.md
+  - name: Azure Cosmos DB Change Data Capture
+    href: add-source-azure-cosmos-db-cdc.md
+  - name: Azure Data Explorer database table
+    href: add-source-azure-data-explorer-database.md
+  - name: Azure Data Explorer shortcut
+    href: add-source-azure-data-explorer.md
   - name: Azure diagnostic logs and metrics
     href: add-source-azure-diagnostic-logs-metrics.md
-  - name: Microsoft sources
-    items:
-    - name: Azure Event Grid
-      href: add-source-azure-event-grid.md
-    - name: Azure Event Hubs
-      href: add-source-azure-event-hubs.md
-    - name: Azure Service Bus
-      href: add-source-azure-service-bus.md
-    - name: Azure IoT Hub
-      href: add-source-azure-iot-hub.md
-    - name: Azure SQL Database Change Data Capture (CDC)
-      href: add-source-azure-sql-database-cdc.md
-    - name: PostgreSQL Database Change Data Capture
-      href: add-source-postgresql-database-cdc.md
-    - name: MySQL Database Change Data Capture
-      href: add-source-mysql-database-cdc.md
-    - name: Azure Cosmos DB Change Data Capture
-      href: add-source-azure-cosmos-db-cdc.md
-    - name: Azure SQL Managed Instance Change Data Capture
-      href: add-source-azure-sql-managed-instance-cdc.md
-    - name: SQL Server on Virtual Machine Database CDC
-      href: add-source-sql-server-on-vm-db-cdc.md
-    - name: Azure Data Explorer shortcut
-      href: add-source-azure-data-explorer.md
-    - name: Azure Data Explorer database table
-      href: add-source-azure-data-explorer-database.md
-  - name: External sources 
-    items:
-    - name: Google Cloud Pub/Sub
-      href: add-source-google-cloud-pub-sub.md
-    - name: Amazon Kinesis Data Streams 
-      href: add-source-amazon-kinesis-data-streams.md
-    - name: Apache Kafka
-      href: add-source-apache-kafka.md
-    - name: Amazon Managed Streaming for Kafka
-      href: add-source-amazon-managed-streaming-for-kafka.md
-    - name: Confluent Cloud Kafka
-      href: add-source-confluent-kafka.md
-    - name: MQTT
-      href: add-source-mqtt.md
-    - name: Solace PubSub+
-      href: add-source-solace-pub-sub.md
-    - name: Real-time weather
-      href: add-source-real-time-weather.md
-  - name: Fabric events
-    items:    
-    - name: Create streams for Fabric workspace item events
-      href: create-streams-fabric-workspace-item-events.md
-    - name: Create streams for Fabric OneLake events
-      href: create-streams-fabric-onelake-events.md
-    - name: Create streams for Fabric Job events
-      href: create-streams-fabric-job-events.md
-  - name: Azure events
-    items:    
-    - name: Get Azure Blob Storage events and create streams
-      href: get-azure-blob-storage-events.md      
+  - name: Azure Event Grid
+    href: add-source-azure-event-grid.md
+  - name: Azure Event Hubs
+    href: add-source-azure-event-hubs.md
+  - name: Azure IoT Hub
+    href: add-source-azure-iot-hub.md
+  - name: Azure Service Bus
+    href: add-source-azure-service-bus.md
+  - name: Azure SQL Database Change Data Capture (CDC)
+    href: add-source-azure-sql-database-cdc.md
+  - name: Azure SQL Managed Instance Change Data Capture
+    href: add-source-azure-sql-managed-instance-cdc.md
+  - name: Confluent Cloud Kafka
+    href: add-source-confluent-kafka.md
+  - name: Fabric Job events
+    href: create-streams-fabric-job-events.md
+  - name: Fabric OneLake events
+    href: create-streams-fabric-onelake-events.md
+  - name: Fabric workspace item events
+    href: create-streams-fabric-workspace-item-events.md
+  - name: Google Cloud Pub/Sub
+    href: add-source-google-cloud-pub-sub.md
+  - name: MQTT
+    href: add-source-mqtt.md
+  - name: MySQL Database Change Data Capture
+    href: add-source-mysql-database-cdc.md
+  - name: PostgreSQL Database Change Data Capture
+    href: add-source-postgresql-database-cdc.md
+  - name: Real-time weather
+    href: add-source-real-time-weather.md
+  - name: Solace PubSub+
+    href: add-source-solace-pub-sub.md
+  - name: SQL Server on Virtual Machine Database CDC
+    href: add-source-sql-server-on-vm-db-cdc.md      
   - name: Microsoft Fabric events capacity consumption
     href: fabric-events-capacity-consumption.md
 - name: Discover and manage data streams and events
