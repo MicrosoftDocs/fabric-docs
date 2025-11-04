@@ -54,12 +54,12 @@ All data sources supported in OneLake are supported.
 
 ## Set up a shortcut transformation
 
-1. In your lakehouse, select **+ Table Shortcut in Tables section which is Shortcut transformation (preview)** and choose your source (e.g., Azure Data Lake, Azure Blob Storage, Dataverse, Amazon S3, GCP, SharePoint, OneDrive etc.).
+1. In your lakehouse, select **+ Table Shortcut in Tables section which is Shortcut transformation (preview)** and choose your source (for example, Azure Data Lake, Azure Blob Storage, Dataverse, Amazon S3, GCP, SharePoint, OneDrive etc.).
 
    <img width="1216" height="334" alt="Tableshortcut" src="https://github.com/user-attachments/assets/f80624eb-b7dc-4d77-8327-58f4998fa79e" />
 
-3. **Choose file, Configure transformation & create shortcut** – Browse to an existing OneLake shortcut that points to the folder with your CSV files, configure parameters and initiate creation. 
-   - *Delimiter* in case of CSV files – Select the character used to separate columns (comma, semicolon, pipe, tab).  
+3. **Choose file, Configure transformation & create shortcut** – Browse to an existing OneLake shortcut that points to the folder with your CSV files, configure parameters, and initiate creation. 
+   - *Delimiter* in CSV files – Select the character used to separate columns (comma, semicolon, pipe, tab).  
    - *First row as headers* – Indicate whether the first row contains column names.
    - *Table Shortcut name* – Provide a friendly name; Fabric creates it under **/Tables**.
 4. Track refreshes and view logs for transparency in **Manage Shortcut monitoring hub**.
@@ -99,9 +99,9 @@ Note: **Pause** or **Delete** the transformation from this tab is an upcoming fe
 * **Unsupported datatypes for CSV:** Mixed data type columns, Timestamp_Nanos, Complex logical types - MAP/LIST/STRUCT, Raw binary
 * **Unsupported datatype for Parquet:** Timestamp_nanos, Decimal with INT32/INT64, INT96, Unassigned integer types - UINT_8/UINT_16/UINT_64, Complex logical types - MAP/LIST/STRUCT)
 * **Unsupported datatypes for JSON:** Mixed data types in an array, Raw binary blobs inside JSON, Timestamp_Nanos
-* **Flattening of Array data type in JSON:** Array data type shall be retained in delta table and data accessible with Spark SQL & Pyspark where for further transformations Fabric Materialized Lake Views could be leveraged for silver layer
+* **Flattening of Array data type in JSON:** Array data type shall be retained in delta table and data accessible with Spark SQL & Pyspark where for further transformations Fabric Materialized Lake Views could be used for silver layer
 
-Note: Adding support for some of the above and reducing limitations is part of our roadmap. Please track our release communications for further updates.
+Note: Adding support for some of the above and reducing limitations is part of our roadmap. Track our release communications for further updates.
 
 ## Clean up
 
