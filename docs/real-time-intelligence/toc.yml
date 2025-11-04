@@ -512,10 +512,10 @@ items:
       href: ../data-factory/connector-kql-database-copy-activity.md
     - name: Connect to KQL Database in dataflows
       href: ../data-factory/connector-kusto-dataflows.md
-    - name: Connectors
+    - name: Eventhouse data connectors
       items:
-      - name: Data connectors overview
-        href: data-connectors/data-connectors.md
+      - name: Eventhouse data connectors overview
+        href: event-house-connectors.md
       - name: Apache Flink
         href: get-data-flink.md
       - name: Apache Kafka
