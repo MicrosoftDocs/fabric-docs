@@ -19,8 +19,6 @@ items:
   items:
   - name: Supported sources
     href: supported-sources.md
-  - name: Sample data source
-    href: add-source-sample-data.md
   - name: Amazon Kinesis Data Streams 
     href: add-source-amazon-kinesis-data-streams.md
   - name: Amazon Managed Streaming for Kafka
@@ -67,12 +65,12 @@ items:
     href: add-source-postgresql-database-cdc.md
   - name: Real-time weather
     href: add-source-real-time-weather.md
+  - name: Sample data source
+    href: add-source-sample-data.md
   - name: Solace PubSub+
     href: add-source-solace-pub-sub.md
   - name: SQL Server on Virtual Machine Database CDC
     href: add-source-sql-server-on-vm-db-cdc.md      
-  - name: Microsoft Fabric events capacity consumption
-    href: fabric-events-capacity-consumption.md
 - name: Explore data streams and events
   items:
   - name: View data stream details
@@ -85,8 +83,6 @@ items:
     href: explore-all-data-streams.md
   - name: Explore Microsoft sources
     href: explore-microsoft-sources.md
-  - name: Subscribe permission for Fabric/Azure events
-    href: fabric-events-subscribe-permission.md    
   - name: Explore Azure events
     items:
     - name: Azure events page
@@ -129,6 +125,10 @@ items:
     items:
     - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md
+  - name: Subscribe permission for Fabric/Azure events
+    href: fabric-events-subscribe-permission.md   
+  - name: Microsoft Fabric events capacity consumption
+    href: fabric-events-capacity-consumption.md
 - name: Register and use schemas
   items:
   - name: Schema Registry in Real-Time hub
