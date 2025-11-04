@@ -23,7 +23,7 @@ The key prerequisites for this quickstart include a working Azure OpenAI resourc
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 * Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
-* An Azure OpenAI resource: [Request Access to Azure OpenAI Service](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu) before [creating a resource](/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal#create-a-resource)
+* An Azure OpenAI resource: THIS LINK IS NOT WORKING ANYMORE --> [Request Access to Azure OpenAI Service](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu) before [creating a resource](/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal#create-a-resource)
 
 
 ## Import this guide as a notebook
