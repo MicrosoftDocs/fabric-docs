@@ -62,7 +62,13 @@ items:
   - name: Overview
     href: publishing-overview.md    
   - name: Publish your workload
-    href: publish-workload-flow.md 
+    href: publish-workload-flow.md
+  - name: Item Publishing Requirements
+    href: publishing-requirements-item.md
+  - name: Workload Publishing Requirements
+    href: publishing-requirements-workload.md
+  - name: Vendor Attestation Document Template
+    href: publishing-vendor-attestation-document-template.md
 - name: Reference
   items:
     - name: Starter Kit
