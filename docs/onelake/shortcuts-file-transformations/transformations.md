@@ -44,9 +44,9 @@ All data sources supported in OneLake are supported.
 
 | Source file format | Destination | Supported Extensions | Supported Compression types | Notes |
 |--------------------|-------------|----------------------|-----------------------------|-------|
-| CSV (UTF-8, UTF-16) | Delta Lake table in the **Lakehouse / Tables** folder | .csv, .txt (delimiter),.tsv (tab-separated),.psv (pipe-separated), |  .csv.gz, .csv.bz2 | .csv.zip,.csv.snappy are not supported as of date  |
+| CSV (UTF-8, UTF-16) | Delta Lake table in the **Lakehouse / Tables** folder | .csv,.txt(delimiter),.tsv(tab-separated),.psv(pipe-separated), |  .csv.gz,.csv.bz2 | .csv.zip,.csv.snappy aren't supported as of date  |
 | Parquet | Delta Lake table in the **Lakehouse / Tables** folder | .parquet | .parquet.snappy,.parquet.gzip,.parquet.lz4,.parquet.brotli,.parquet.zstd |    |
-| JSON | Delta Lake table in the **Lakehouse / Tables** folder | .json,.jsonl,.ndjson | .json.gz,.json.bz2,.jsonl.gz,.ndjson.gz,.jsonl.bz2,.ndjson.bz2 | .json.zip, .json.snappy are not supported as of date  |
+| JSON | Delta Lake table in the **Lakehouse / Tables** folder | .json,.jsonl,.ndjson | .json.gz,.json.bz2,.jsonl.gz,.ndjson.gz,.jsonl.bz2,.ndjson.bz2 | .json.zip, .json.snappy aren't supported as of date  |
 
 * Excel file support is part of roadmap
 * AI Transformations available to support unstructured file formats (.txt, .doc, .docx) with Text Analytics use case live with more enhancements upcoming
