@@ -11,7 +11,7 @@ ms.date: 10/28/2025
 
 # Optimal refresh for materialized lake views in a lakehouse
 
-This article describes the semantic aspects to consider when using optimal refresh for materialized lake views and outlines the available modes of refresh for materialized lake view 
+This article describes the semantic aspects to consider when using optimal refresh for materialized lake views and outlines the available modes of refresh for materialized lake views.
 
 **Refresh modes for materialized lake views**
 
@@ -21,20 +21,20 @@ This article describes the semantic aspects to consider when using optimal refre
 
 ## Optimal refresh  
 
-Optimal refresh is engineered to improve data management efficiency, speed, and cost-effectiveness on the Microsoft Fabric platform. It automatically selects the most appropriate refresh strategy to maximize refresh performance. The following refresh policies are supported under optimal refresh: 
+Optimal refresh is engineered to improve data management efficiency, speed, and cost-effectiveness on the Microsoft Fabric platform. It automatically selects the most appropriate refresh strategy to maximize refresh performance. The following refresh policies are supported under optimal refresh -
 
 |Refresh Policy | Description |
 |---------------|-------------|
-|Incremental refresh| An incremental refresh only processes the changed data in the sources used to define materialized lake view.|
-|No refresh | If the source remains unchanged, i.e., if no change detected in delta commits, the service skips the refresh. This behavior saves unnecessary processing and reduces costs.|
-|Full refresh |Full refresh entails evaluating the complete dataset of the dependant source whenever the service detects any modifications in the sources.|
+|Incremental refresh| An incremental refresh only processes the changed data in the sources referenced in the materialized lake views definition.|
+|No refresh | If the source remains unchanged, i.e., if no change detected in delta commits, the service skips the refresh. This behavior saves unnecessary processing.|
+|Full refresh |A full refresh involves assessing the entire dataset of dependent sources whenever any modification is made to the source.|
 
 > [!Important]
 > For incremental refresh to take effect, it is required to set delta CDF property to `delta.enableChangeDataFeed=true` for the sources referenced in the materialized lake views definition.
 
 ### Benefits of Optimal refresh 
 
-1. Lower Cost: Less compute and storage are used, especially when data changes are minimal and No refresh by passes the data refresh when no delta commit change is detected 
+1. Lower Cost: Less compute and storage are used, especially when data changes are minimal and No refresh bypasses the data refresh when no delta commit change is detected.
 
 1. Improved Efficiency: Faster refresh cycles help you deliver fresher insights and keep up with rapidly changing data. 
 
@@ -42,13 +42,13 @@ Optimal refresh is engineered to improve data management efficiency, speed, and 
 
 ### Supported expression in Optimal refresh for Incremental refresh strategy 
 
-When a materialized lake view is created using supported expressions, Fabric can perform incremental refreshes. If unsupported expressions are used in queries, a full refresh is performed 
+When a materialized lake view is created using supported expressions, Fabric can perform incremental refreshes. If unsupported expressions are used in queries, either a full refresh or no refresh is performed depending on the change.
 
-The following table outlines the supported expressions:
+The following table outlines the supported expressions -
 
 |SQL Construct |  Remark|
 |--------------| -------|
-|SELECT expression | Supports expressions having deterministic functions (inbuilt). Non-deterministic and window functions lead to full refresh strategy.|
+|SELECT expression | Support expressions having deterministic functions (inbuilt). Non-deterministic and window functions lead to full refresh strategy.|
 |FROM||
 |WHERE| Only deterministic inbuilt functions are supported.|
 |INNER JOIN || 
@@ -56,11 +56,11 @@ The following table outlines the supported expressions:
 |Data quality constraints| Only deterministic inbuilt functions are supported in constraints.|
 
 > [!Note]
-> For the better incremental refresh experience, use supported clauses as much as possible. If a query uses unsupported patterns, the refresh will automatically fall back to a full refresh or no refresh.
+> For the better incremental refresh experience, use supported clauses as much as possible. If a query uses unsupported patterns, the refresh automatically fall back to a full refresh or no refresh strategy.
 
 ### Key points for optimal refresh
 
-1. For best results, use deterministic functions in your queries to help ensure incremental refresh can be applied.
+1. To optimize outcome, use supported expressions in your queries so that incremental refresh strategy can be applied.
 2. Incremental refresh is supported for append-only data. If the data includes deletions or updates, Fabric will perform a full refresh.
 3. If you define data quality constraints in materialized lake view definition, incremental refresh respect and enforce those constraints during updates.
 4. No additional charges apply specifically for using optimal refresh. You are billed based on compute usage during refresh operations.
