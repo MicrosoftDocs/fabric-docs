@@ -169,6 +169,8 @@ items:
     items: 
     - name: Limitations
       href: sql/limitations.md
+    - name: Start/stop mirroring with REST API
+      href: sql/start-stop-mirroring-api.md
   - name: Reference
     items: 
     - name: T-SQL Reference for Fabric

@@ -1,13 +1,10 @@
 ---
 title: Full Text Indexing And Search in Cosmos DB Database (Preview)
-titleSuffix: Microsoft Fabric
 description: Query data using "best matching 25" scoring in Cosmos DB in Microsoft Fabric during the preview.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
 ms.date: 07/16/2025
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
 # Full text indexing and search in Cosmos DB in Microsoft Fabric (preview)
