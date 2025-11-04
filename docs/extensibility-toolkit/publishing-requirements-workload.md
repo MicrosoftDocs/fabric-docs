@@ -298,7 +298,7 @@ Workload must register a valid Microsoft Entra application with proper GUID form
 
 ### 2.1.2 - Dependency on Fabric.Extend scope
 
-The workload must take a static dependency on https://analysis.windows.net/powerbi/api/Fabric.Extend scope and get user consent for it. Workload Development Kit infrastructure helps to implement the consent flow, but the responsibility is with the workload owner to take dependency on Fabric.Extend scope and ensure consent is granted. Fabric reserves the rights to block the integration with a workload for which the consent isn't granted.
+The workload must take a static dependency on **https:\/\/analysis.windows.net/powerbi/api/Fabric.Extend** scope and get user consent for it. Workload Development Kit infrastructure helps to implement the consent flow, but the responsibility is with the workload owner to take dependency on Fabric.Extend scope and ensure consent is granted. Fabric reserves the rights to block the integration with a workload for which the consent isn't granted.
 
 **Stage Requirements:**
 

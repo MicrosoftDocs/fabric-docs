@@ -68,7 +68,7 @@ items:
   - name: Workload Publishing Requirements
     href: publishing-requirements-workload.md
   - name: Vendor Attestation Document Template
-    href: publishing-vendor-attestation-document-template.md
+    href: publishing-vendor-attestation-template.md
 - name: Reference
   items:
     - name: Starter Kit
