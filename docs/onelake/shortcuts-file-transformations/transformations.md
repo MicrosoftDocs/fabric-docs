@@ -56,7 +56,7 @@ All data sources supported in OneLake are supported.
 
 1. In your lakehouse, select **+ Table Shortcut in Tables section which is Shortcut transformation (preview)** and choose your source (e.g., Azure Data Lake, Azure Blob Storage, Dataverse, Amazon S3, GCP, SharePoint, OneDrive etc.).
 
-   <img width="1216" height="334" alt="image" src="https://github.com/user-attachments/assets/f80624eb-b7dc-4d77-8327-58f4998fa79e" />
+   <img width="1216" height="334" alt="Tableshortcut" src="https://github.com/user-attachments/assets/f80624eb-b7dc-4d77-8327-58f4998fa79e" />
 
 3. **Choose file, Configure transformation & create shortcut** – Browse to an existing OneLake shortcut that points to the folder with your CSV files, configure parameters and initiate creation. 
    - *Delimiter* in case of CSV files – Select the character used to separate columns (comma, semicolon, pipe, tab).  
@@ -82,11 +82,11 @@ After the initial load, Fabric Spark compute:
    * **Status** – Last scan result and current sync state.  
    * **Refresh history** – Chronological list of sync operations with row counts and any error details.
    
-  <img width="605" height="527" alt="image" src="https://github.com/user-attachments/assets/b807b713-4630-4689-a64f-da2fc71bae7e" />
+  <img width="605" height="527" alt="Monitor" src="https://github.com/user-attachments/assets/b807b713-4630-4689-a64f-da2fc71bae7e" />
 
 4. View more details in logs to troubleshoot
 
-   <img width="605" height="452" alt="image" src="https://github.com/user-attachments/assets/72279c26-b09f-4e1f-9343-3f289859190a" />
+   <img width="605" height="452" alt="Logfiles" src="https://github.com/user-attachments/assets/72279c26-b09f-4e1f-9343-3f289859190a" />
 
 Note: **Pause** or **Delete** the transformation from this tab is an upcoming feature part of roadmap
 
