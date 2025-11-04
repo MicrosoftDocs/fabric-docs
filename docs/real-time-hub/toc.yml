@@ -15,7 +15,7 @@ items:
   items:
   - name: Build event-driven pipelines 
     href: tutorial-build-event-driven-data-pipelines.md
-- name: Get events and create data streams
+- name: Create data streams
   items:
   - name: Supported sources
     href: supported-sources.md
@@ -73,7 +73,7 @@ items:
     href: add-source-sql-server-on-vm-db-cdc.md      
   - name: Microsoft Fabric events capacity consumption
     href: fabric-events-capacity-consumption.md
-- name: Discover and manage data streams and events
+- name: Explore data streams and events
   items:
   - name: View data stream details
     href: view-data-stream-details.md
@@ -105,7 +105,7 @@ items:
       href: explore-fabric-onelake-events.md
     - name: Explore Fabric Job events
       href: explore-fabric-job-events.md
-- name: Consume events and data streams
+- name: Consume data streams and events
   items:
   - name: Consume data streams
     items:
@@ -129,7 +129,7 @@ items:
     items:
     - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md
-- name: Register and use schemas in event-driven applications
+- name: Register and use schemas
   items:
   - name: Schema Registry in Real-Time hub
     href: ../real-time-intelligence/schema-sets/schema-registry-overview.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
