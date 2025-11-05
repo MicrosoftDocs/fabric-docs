@@ -13,8 +13,10 @@ You can use Spark and the Azure Cosmos DB Spark connector to read, write, and qu
 
 Using Spark and the connector is different from using Spark to read data from the Cosmos DB in Fabric mirrored data stored in OneLake, as it connects directly to the Cosmos DB endpoint to perform operations.
 
-The Cosmos DB Spark connector can be used to support reverse-ETL scenarios where you need to serve data from the Cosmos DB endpoint with low latency or high concurrency.
+The Cosmos DB Spark connector can be used to support reverse ETL scenarios where you need to serve data from the Cosmos DB endpoint with low latency or high concurrency.
 
+> [!Note]
+> Reverse ETL (Extract, Transform, Load) refers to the process of taking transformed analytical data from an analytics system and loading it back into operational systems (such as CRM, ERP, POS, or marketing tools) so that business teams can act on insights directly in the applications they use every day.
 > [!TIP]
 > Download the complete sample from [Work with Cosmos DB in Microsoft Fabric using the Cosmos DB Spark Connector on GitHub](https://github.com/AzureCosmosDB/cosmos-fabric-samples/blob/main/spark-scala/README.md).
 
