@@ -6,7 +6,7 @@ ms.author: spelluru
 ms.topic: how-to
 ms.reviewer: guregini
 ms.custom: FY25Q1-Linter
-ms.date: 10/20/2025
+ms.date: 11/05/2025
 ms.search.form: Real-Time Dashboard
 #Customer intent: As a customer, I want to learn how to create Activator alerts from a Real-Time Dashboard so that I can trigger notifications when conditions are met on daa in the dashboard.
 ---
@@ -24,12 +24,20 @@ Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to trigger no
 
 ## Create an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule using **Set alert**
 
-1. Open a Real-Time Dashboard.
-1. Toggle from **Viewing** to **Editing** mode in the toolbar.
-1. Choose a tile on the Real-Time Dashboard for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to monitor.
-1. Select **Set Alert** from the tile's toolbar or in the **More menu (...)** at the top-right of the tile. You can also use the *Set Alert* button in the Real-Time Dashboard menu bar.
+Open a Real-Time Dashboard and then do either of the following:
 
-:::image type="content" source="media/activator-get-data/set-alerts.png" alt-text="Screenshot showing how to add an Activator rule from a tile." lightbox="media/activator-get-data/set-alerts.png":::
+1. From the ribbon menu bar:
+    1. Set alerts by selecting the *Set alert* button.
+        :::image type="content" source="media/activator-get-data/ribbon-button.png" alt-text="Screenshot showing how to add an Activator rule from the ribbon menu bar." lightbox="media/activator-get-data/ribbon-button.png":::
+
+    1. In the popup window, choose the tile you want to monitor and then select **Select** to open the side pane.
+        :::image type="content" source="media/activator-get-data/ribbon-select-tile.png" alt-text="Screenshot of the popup window with the list of tiles to create an Activator rule." lightbox="media/activator-get-data/ribbon-select-tile.png":::
+
+1. From the tile:
+    1. Choose a tile on the Real-Time Dashboard for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to monitor.
+    1. Select **Set Alert** from the tile's toolbar or in the **More menu (...)** at the top-right of the tile.
+
+        :::image type="content" source="media/activator-get-data/set-alerts.png" alt-text="Screenshot showing how to add an Activator rule from a tile." lightbox="media/activator-get-data/set-alerts.png":::
 
 ## Define the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alert conditions
 
@@ -69,13 +77,17 @@ For information on how to edit rules in [!INCLUDE [fabric-activator](../includes
 
 ## Limitations for setting alerts
 
-When creating alerts, keep the following limitations in mind:
+When creating alerts, keep in mind that alerts can only be created on specific types of visuals.
+The following visuals aren't supported for alert creation:
 
-1. **Tile compatibility**: Alerts can only be set on tiles that display data. If a visual does not have any data to show (e.g., a column chart with no rows for the selected time range), the option to create an alert will not be available.
-
-1. **Custom time ranges**: Alerts cannot be created on visuals using custom time ranges. For example, if you adjust the time range of a column chart to include data, the system will still prevent alert creation if the time range is custom.
-
-To ensure successful alert creation, verify that the visual has data to display and that the time range used is supported.
+* Tables
+* Maps
+* Funnel charts
+* Anomalies
+* Scatter charts
+* Markdowns
+* Heatmaps
+* Time charts (as described in the next section)
 
 ## Limitations on charts with a time axis
 
