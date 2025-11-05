@@ -15,13 +15,13 @@ This article describes the semantic aspects to consider when using optimal refre
 
 **Refresh modes for materialized lake views**
 
-  1. **Optimal refresh**: This mode automatically chooses the best refresh strategy for maximum performance for your materialized lake views – incremental, full, or no refresh.
+  * **Optimal refresh**: This mode automatically chooses the best refresh strategy for maximum performance for your materialized lake views – incremental, full, or no refresh.
     
-  1. **Full refresh**: This mode enforces the full recompute for the materialized lake view.
+  * **Full refresh**: This mode enforces the full recompute for the materialized lake view.
 
 ## Optimal refresh  
 
-Optimal refresh is engineered to improve data management efficiency, speed, and cost-effectiveness on the Microsoft Fabric platform. It automatically selects the most appropriate refresh strategy to maximize refresh performance. The following refresh policies are supported under optimal refresh -
+Optimal refresh is engineered to improve data management efficiency, speed, and cost-effectiveness on the Microsoft Fabric platform. It automatically selects the most appropriate refresh strategy to maximize refresh performance. The following refresh policies are supported under optimal refresh:
 
 |Refresh Policy | Description |
 |---------------|-------------|
@@ -32,19 +32,19 @@ Optimal refresh is engineered to improve data management efficiency, speed, and 
 > [!Important]
 > For incremental refresh to take effect, it is required to set delta CDF property to `delta.enableChangeDataFeed=true` for the sources referenced in the materialized lake views definition.
 
-### Benefits of Optimal refresh 
+### Benefits of optimal refresh 
 
-1. Lower Cost: Less compute and storage are used, especially when data changes are minimal and No refresh bypasses the data refresh when no delta commit change is detected.
+* Lower Cost: Less compute and storage are used, especially when data changes are minimal and No refresh bypasses the data refresh when no delta commit change is detected.
 
-1. Improved Efficiency: Faster refresh cycles help you deliver fresher insights and keep up with rapidly changing data. 
+* Improved Efficiency: Faster refresh cycles help you deliver fresher insights and keep up with rapidly changing data. 
 
-1. Time Savings: Only changed data is processed, resulting in reduced refresh duration. 
+* Time Savings: Only changed data is processed, resulting in reduced refresh duration. 
 
-### Supported expression in Optimal refresh for Incremental refresh strategy 
+### Supported expression in optimal refresh for incremental refresh strategy 
 
 When a materialized lake view is created using supported expressions, Fabric can perform incremental refreshes. If unsupported expressions are used in queries, either a full refresh or no refresh is performed depending on the change.
 
-The following table outlines the supported expressions -
+The following table outlines the supported expressions:
 
 |SQL Construct |  Remark|
 |--------------| -------|
@@ -56,15 +56,15 @@ The following table outlines the supported expressions -
 |Data quality constraints| Only deterministic inbuilt functions are supported in constraints.|
 
 > [!Note]
-> For the better incremental refresh experience, use supported clauses as much as possible. If a query uses unsupported patterns, the refresh automatically fall back to a full refresh or no refresh strategy.
+> For the better incremental refresh experience, use supported clauses as much as possible. If a query uses unsupported patterns, the refresh automatically fall back to a full refresh strategy.
 
 ### Key points for optimal refresh
 
-1. To optimize outcome, use supported expressions in your queries so that incremental refresh strategy can be applied.
-2. Incremental refresh is supported for append-only data. If the data includes deletions or updates, Fabric will perform a full refresh.
-3. If you define data quality constraints in materialized lake view definition, incremental refresh respect and enforce those constraints during updates.
-4. No additional charges apply specifically for using optimal refresh. You are billed based on compute usage during refresh operations.
-5. In cases such as small source datasets, Fabric might choose full over incremental refresh given the performance yield.
+* To optimize outcome, use supported expressions in your queries so that incremental refresh strategy can be applied.
+* Incremental refresh is supported for append-only data. If the data includes deletions or updates, Fabric will perform a full refresh.
+* If you define data quality constraints in materialized lake view definition, incremental refresh respect and enforce those constraints during updates.
+* No additional charges apply specifically for using optimal refresh. You are billed based on compute usage during refresh operations.
+* In cases such as small source datasets, Fabric might choose full over incremental refresh given the performance yield.
 
 ### How to enable optimal refresh mode 
 
@@ -74,7 +74,7 @@ By default, optimal refresh mode is enabled for the lineage. If not, follow the 
    
    :::image type="content" source="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png" alt-text="Screenshot that shows toggle to enable optimal refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png":::
 
-## Full Refresh 
+## Full refresh 
 
 A full refresh performs the full recompute of materialized lake view based on the source data.
 
@@ -95,15 +95,16 @@ REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier FULL
 
 ### Determine the refresh policy 
 
-To determine the refresh policy under optimal refresh mode, you can query the sys_dq_metrics table 
+To determine the refresh policy under optimal refresh mode, you can query the sys_dq_metrics table:
 
 ```sql
 SELECT 
+    MLVName,
     refreshPolicy 
 FROM  
-    dbo. sys_dq_metrics 
+    dbo.sys_dq_metrics 
 WHERE
-    MLVName = <materialized_lake_view_name> 
+    MLVName = '<materialized_lake_view_name>' 
 ```
 
 ## Related articles
