@@ -33,17 +33,22 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Key-pair authentication
+## Authentication
+
+The Snowflake connector supports multiple authentication types. This section describes how to configure Key-pair authentication.
+
+- [Key-pair](connector-snowflake.md#key-pair-authentication)
+
+### Key-pair authentication
 
 :::image type="content" source="media/connector-snowflake/key-pair-authentication.png" alt-text="Screenshot showing that Key-pair authentication method for Snowflake.":::
 
 To use Key-pair authentication, you need to configure and create a Key-pair authentication user in Snowflake by referring to [Key-pair Authentication & Key-pair Rotation](https://docs.snowflake.com/en/user-guide/key-pair-auth).
 
 - **Username**: Specify the login name for the Snowflake user.
-- **Private key**: Specify the the private key used for the Key-pair authentication. <br> To ensure the private key is valid when sent to Microsoft Fabric, and considering that the Private key file includes newline characters (\n), it's essential to correctly format the Private key content in its string literal form. This process involves adding \n explicitly to each newline.
+- **Private key**: Upload the private key file used for Key-pair authentication. After you upload the private key file, the service automatically detects whether it is encrypted or unencrypted, and displays or hides the Private Key Passphrase accordingly.
 
-  > [!NOTE]
-  > For Dataflow Gen2, we recommend generating a new RSA private key using the PKCS#8 standard in PEM format (.p8 file).
+  - **Private Key Passphrase (Optional)**: Specify the passphrase used for decrypting the private key, if it's encrypted.
 
 ## Related content
 
