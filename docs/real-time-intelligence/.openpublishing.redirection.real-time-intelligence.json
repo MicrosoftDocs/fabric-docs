@@ -76,8 +76,13 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/real-time-intelligence/data-connectors/data-connectors.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-house-connectors",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/real-time-analytics/data-connectors/data-connectors.md",
-      "redirect_url": "/fabric/real-time-intelligence/data-connectors/data-connectors",
+      "redirect_url": "/fabric/real-time-intelligence/event-house-connectors",
       "redirect_document_id": false
     },
     {
