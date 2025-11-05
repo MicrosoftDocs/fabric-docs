@@ -491,7 +491,7 @@ items:
       href: ./materialized-lake-views/get-started-with-materialized-lake-views.md
     - name: Create materialized lake views
       href: ./materialized-lake-views/create-materialized-lake-view.md
-    - name: Refresh materialized lake views
+    - name: Optimal refresh for materialized lake views
       href: ./materialized-lake-views/refresh-materialized-lake-view.md
   - name: Manage
     items:  
@@ -503,7 +503,7 @@ items:
       href: ./materialized-lake-views/run-history.md
     - name: Operational run details
       href: ./materialized-lake-views/operational-run-details.md
-    - name: Manage materialized lake views through public APIs
+    - name: REST APIs for materialized lake views
       href: ./materialized-lake-views/materialized-lake-views-public-api.md
   - name: Data quality
     items:  
