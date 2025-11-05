@@ -83,7 +83,7 @@ To connect to Cosmos DB using the Spark connector, you need to configure a custo
 
 To connect to your Cosmos DB in Fabric database and container, specify a connection configuration to use when reading from and writing to the container.
 
-1. Within the notebook, paste the Cosmos DB endpoint, database and container names you preserved earlier, then set online transaction processing (OLTP) configuration settings for the NoSQL account endpoint, database name, and container name.
+1. Within the notebook, paste the Cosmos DB endpoint, database, and container names you preserved earlier, then set online transaction processing (OLTP) configuration settings for the NoSQL account endpoint, database name, and container name.
 
    ```scala
    // User values for Cosmos DB
@@ -126,7 +126,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    ```
 
    > [!NOTE]
-   > The *SampleData* container you created earlier contains two different entities with two separate schemas, *product* and *review*. The inferSchema option will detect the two different schemas within this Cosmos DB container.
+   > The *SampleData* container you created earlier contains two different entities with two separate schemas, *product* and *review*. The inferSchema option detects the two different schemas within this Cosmos DB container and combines them.
 
 1. Show the schema of the data loaded into the DataFrame by using `printSchema` and ensure the schema matches the sample document structure.
 
@@ -166,7 +166,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    productsDF.show(5)
    ```
 
-1. Show the schema of the filtered *product* entities
+1. Show the schema of the filtered *product* entities.
 
    ```scala
    // Render schema    
@@ -232,7 +232,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
     +------------------+--------------------+-------+--------------------+------------+-----+
    ```
 
-1. This example shows how to work with an embedded array in a JSON document stored in Cosmos DB. First, query the container, then use the explode operator to expand the `priceHistory` array elements into rows, then calculate the lowest price for each product stored in the product history.
+1. This example shows how to work with an embedded array in a JSON document stored in Cosmos DB. First, query the container, then use the `explode` operator to expand the `priceHistory` array elements into rows, then calculate the lowest price for each product stored in the product history.
 
    ```scala
    // Retrieve the product data from the SampleData container
@@ -288,7 +288,7 @@ Cosmos DB is an exceptional serving layer for analytical workloads due to its ar
 
 ### Create a Cosmos DB in Fabric container with Spark
 
-- Create a new container named `MinPricePerProduct` by using `CREATE TABLE IF NOT EXISTS` with the Spark Catalog API. This container will always be small and not need to scale. Set the partition key path to `/id` and set the smallest allowable throughput with an autoscale throughput of `1000` request units per second (RU/s).
+- Create a `MinPricePerProduct` container by using the Spark Catalog API and `CREATE TABLE IF NOT EXISTS`. Set the partition key path to `/id`, and configure the autoscale throughput to the minimum value of `1000` RU/s, since the container is expected to remain small.
 
    ```scala
    // Create a MinPricePerProduct container by using the Catalog API
@@ -318,7 +318,7 @@ To write data directly to a Cosmos DB in Fabric container, you need:
    ProductsDF.show(10)
    ```
 
-1. Create a new configuration for the `MinPricePerProduct` container you want to write to. Note that `spark.cosmos.write.strategy` is set to `ItemOverwrite`, which means that any existing documents with the same id and partition key values will be overwritten.
+1. Create a new configuration for the `MinPricePerProduct` container you want to write to. The `spark.cosmos.write.strategy` is set to `ItemOverwrite`, which means that any existing documents with the same id and partition key values are overwritten.
 
    ```scala
    // Configure the Cosmos DB connection information for the database and the new container.
