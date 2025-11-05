@@ -18,7 +18,7 @@ Use this guide to quickly find and fix common issues in Fabric notebooks. Each i
 
 This table lists common Fabric Notebooks error messages and links to relevant troubleshooting sections.
 
-| Error message | Categories and resolution |
+| Error | Categories and resolution |
 |---------------|------------------------|
 | Your session timed out after inactivity. | [Timeouts](#timeouts) |
 | Your session expired. | [General connectivity](#general-connectivity), [Timeouts](#timeouts), and [Session connectivity](#session-connectivity) |
