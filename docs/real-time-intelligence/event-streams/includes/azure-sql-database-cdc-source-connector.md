@@ -91,10 +91,10 @@ Ingest change data from Azure SQL databases with automatic table schema registra
         - `Precise`: Represents values using exact decimal types (for example, Java `BigDecimal`) to ensure full precision and accuracy in data representation.
         - `Double`: Converts values to double-precision floating-point numbers. This setting improves usability and performance but might result in a loss of precision.
         - `String`: Encodes values as formatted strings. This setting makes it easy to consume in downstream systems but loses semantic information about the original numeric type.
-    - **Snapshot mode**: Controls snapshot behavior when the connector starts:
-        - `Initial`: The connector performs a database snapshot. After the snapshot completes, the connector begins to stream event records for subsequent database changes.
-        - `Initial_only`: The connector performs a database snapshot and stops before streaming any change event records, not allowing any subsequent change events to be captured.
-        - `No_data`: The connector captures the structure (schema) of all relevant tables only. Set this option if you do not need a consistent snapshot of the data, but you need only the changes happening since the connector starts.
+    - **Snapshot mode**: Specify the criteria for performing a snapshot when the connector starts:
+        - `Initial`: The connector runs a snapshot only when no offsets have been recorded for the logical server name, or if it detects that an earlier snapshot failed to complete. After the snapshot completes, the connector begins to stream event records for subsequent database changes.
+        - `InitialOnly`: The connector runs a snapshot only when no offsets have been recorded for the logical server name. After the snapshot completes, the connector stops. It does not transition to streaming to read change events from the binlog.
+        - `NoData`: The connector runs a snapshot that captures only the schema, but not any table data. Set this option if you do not need a consistent snapshot of the data, but you need only the changes happening since the connector starts.
     - **Column exclude list**: Specifies columns to exclude from change event values using fully-qualified names (schemaName.tableName.columnName).
     - **Database applicationIntent**: Determines routing behavior in SQL Server Always On availability groups:
         - `ReadWrite`: Connects to the primary replica. Use this if the connection needs to perform both read and write operations.
