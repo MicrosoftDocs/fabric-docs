@@ -99,7 +99,7 @@ Triggers use Fabric platform features including eventstreams and Data Activator 
 
    :::image type="content" source="media/pipeline-storage-event-triggers/set-trigger-button.png" alt-text="Screenshot showing the Trigger button on the Home ribbon of the pipeline canvas editor window.":::
 
-1. The **Set alert** panel opens. Here you can define source events for your trigger using the Data Activator alert service.
+1. The **Set alert** panel opens. Here you can define source events for your trigger using the Data Activator alert service. Note that you can values to parameters if needed.
 
    :::image type="content" source="media/pipeline-storage-event-triggers/set-alert-panel.png" alt-text="Screenshot showing the Set Alert panel.":::
 
