@@ -31,7 +31,7 @@ Open a Real-Time Dashboard and then do either of the following:
         :::image type="content" source="media/activator-get-data/ribbon-button.png" alt-text="Screenshot showing how to add an Activator rule from the ribbon menu bar." lightbox="media/activator-get-data/ribbon-button.png":::
 
     1. In the popup window, choose the tile you want to monitor and then select **Select** to open the side pane.
-        :::image type="content" source="media/activator-get-data/ribbon-select-tile.png" alt-text="Screenshot of the popup window with the list of tiles to create an Activator rule." lightbox="media/activator-get-data/ribbon-select-tile.png":::
+        :::image type="content" source="media/activator-get-data/ribbon-popup.png" alt-text="Screenshot of the popup window with the list of tiles to create an Activator rule." lightbox="media/activator-get-data/ribbon-popup.png":::
 
 1. From the tile:
     1. Choose a tile on the Real-Time Dashboard for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to monitor.
