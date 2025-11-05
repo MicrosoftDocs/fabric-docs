@@ -33,7 +33,7 @@ ms.date: 10/31/2025
    
    > [!NOTE]
    > **Set a different Server ID for each reader**. Every MySQL database client for reading binlog should have a unique ID, called Server ID. MySQL Server uses this ID to maintain the network connection and the binlog position. Different jobs sharing the same Server ID can result in reading from the wrong binlog position. Therefore, it's recommended to set a different Server ID for each reader.
-1. You may expand **Advanced settings** to access additional configuration options for the MySQL Database CDC source:
+1. You may expand **Advanced settings** to access more configuration options for the MySQL Database CDC source:
    - **Snapshot locking mode**: Options are: 
       - `Minimal (default)`: Holds a global read lock only during the initial phase to capture schema and metadata. The rest of the snapshot uses a REPEATABLE READ transaction, allowing updates while data is being read.
       - `Extended`: Maintains a global read lock for the entire snapshot duration, blocking all writes. Use for full consistency if write blocking is acceptable.
@@ -42,10 +42,10 @@ ms.date: 10/31/2025
       - `Precise`: Represents values using exact decimal types (for example, Java `BigDecimal`) to ensure full precision and accuracy in data representation.
       - `Double`: Converts values to double-precision floating-point numbers. This improves usability and performance but may result in a loss of precision.
       - `String`: Encodes values as formatted strings. This makes them easy to consume in downstream systems but loses semantic information about the original numeric type.
-   - **Snapshot mode**: Controls snapshot behavior when the connector starts:
+   - **Snapshot mode**: Specify the criteria for performing a snapshot when the connector starts:
       - `Initial`: The connector runs a snapshot only when no offsets have been recorded for the logical server name, or if it detects that an earlier snapshot failed to complete. After the snapshot completes, the connector begins to stream event records for subsequent database changes.
-      - `Initial_only`: The connector runs a snapshot only when no offsets have been recorded for the logical server name. After the snapshot completes, the connector stops. It does not transition to streaming to read change events from the binlog.
-      - `No_data`: The connector runs a snapshot that captures only the schema, but not any table data. Set this option if you do not need a consistent snapshot of the data, but you need only the changes happening since the connector starts.
+      - `InitialOnly`: The connector runs a snapshot only when no offsets have been recorded for the logical server name. After the snapshot completes, the connector stops. It doesn't transition to streaming to read change events from the binlog.
+      - `NoData`: The connector runs a snapshot that captures only the schema, but not any table data. Set this option if you don't need a consistent snapshot of the data, but you need only the changes happening since the connector starts.
 
    You can also edit source name by selecting the **Pencil button** for **Source name** in the **Stream details** section to the right.
 

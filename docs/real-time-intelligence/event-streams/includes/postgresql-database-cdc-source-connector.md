@@ -56,10 +56,10 @@ ms.date: 10/31/2025
         - `Precise`: Represents values using exact decimal types (for example, Java `BigDecimal`) to ensure full precision and accuracy in data representation.
         - `Double`: Converts values to double-precision floating-point numbers. This improves usability and performance but may result in a loss of precision.
         - `String`: Encodes values as formatted strings. This makes them easy to consume in downstream systems but loses semantic information about the original numeric type.
-    - **Snapshot mode**: Controls snapshot behavior when the connector starts:
-        - `Initial`: The connector performs a snapshot only when no offsets have been recorded for the logical server name.
-        - `Initial_only`: The connector performs an initial snapshot and then stops, without processing any subsequent changes.
-        - `No_data`: The connector never performs snapshots. When a connector is configured this way, after it starts, it behaves as follows: If there's a previously stored LSN in the Kafka offsets topic, the connector continues streaming changes from that position. If no LSN is stored, the connector starts streaming changes from the point in time when the PostgreSQL logical replication slot was created on the server. Use this snapshot mode only when you know all data of interest is still reflected in the WAL.
+    - **Snapshot mode**: Specify the criteria for performing a snapshot when the connector starts:
+        - `Initial`: The connector runs a snapshot only when no offsets have been recorded for the logical server name, or if it detects that an earlier snapshot failed to complete. After the snapshot completes, the connector begins to stream event records for subsequent database changes.
+        - `InitialOnly`: The connector runs a snapshot only when no offsets have been recorded for the logical server name. After the snapshot completes, the connector stops. It does not transition to streaming to read change events from the binlog.
+        - `NoData`: The connector runs a snapshot that captures only the schema, but not any table data. Set this option if you do not need a consistent snapshot of the data, but you need only the changes happening since the connector starts.
     - **Heartbeat action query**：Specifies a query that the connector executes on the source database when the connector sends a heartbeat message.
     - **Snapshot select statement override**：Specifies the table rows to include in a snapshot. Use the property if you want a snapshot to include only a subset of the rows in a table. This property affects snapshots only. It doesn't apply to events that the connector reads from the log.
 
