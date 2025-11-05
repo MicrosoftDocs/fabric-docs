@@ -9,11 +9,11 @@ ms.date: 11/01/2025
 
 # Work with Cosmos DB in Microsoft Fabric using the Cosmos DB Spark Connector
 
-You can use Spark and the Azure Cosmos DB Spark connector to read write and query data from an Azure Cosmos DB for NoSQL account. You can also create and manage Cosmos DB containers with it as well.
+You can use Spark and the Azure Cosmos DB Spark connector to read, write, and query data from an Azure Cosmos DB for NoSQL account. Additionally, you can use the connector to create and manage Cosmos DB containers.
 
-Using Spark connector is different from using Spark to read data from the Cosmos DB in Fabric mirrored data stored in OneLake, as it connects directly to the Cosmos DB endpoint to perform operations.
+Using Spark and the connector is different from using Spark to read data from the Cosmos DB in Fabric mirrored data stored in OneLake, as it connects directly to the Cosmos DB endpoint to perform operations.
 
-The Cosmos DB Spark connector can be used to support reverse-ETL scenarios where you need to serve data with low latency or high concurrency.
+The Cosmos DB Spark connector can be used to support reverse-ETL scenarios where you need to serve data from the Cosmos DB endpoint with low latency or high concurrency.
 
 > [!TIP]
 > Download the complete sample from [Work with Cosmos DB in Microsoft Fabric using the Cosmos DB Spark Connector on GitHub](https://github.com/AzureCosmosDB/cosmos-fabric-samples/blob/main/spark-scala/README.md).
@@ -39,11 +39,11 @@ First, get the endpoint for the Cosmos DB database in Fabric. This endpoint is r
 
     :::image type="content" source="media/how-to-authenticate/settings-option.png" lightbox="media/how-to-authenticate/settings-option-full.png" alt-text="Screenshot of the 'Settings' menu bar option for a database in the Fabric portal.":::
 
-1. In the settings dialog, navigate to the **Connection** section. Then, copy the value of the **Endpoint for Cosmos DB NoSQL database** field. You use this value in later step\[s\].
+1. In the settings dialog, navigate to the **Connection** section. Then, copy the value of the **Endpoint for Cosmos DB NoSQL database** field. You use this value in a later step.
 
     :::image type="content" source="media/how-to-authenticate/settings-connection-endpoint.png" lightbox="media/how-to-authenticate/settings-connection-endpoint-full.png" alt-text="Screenshot of the 'Connection' section of the 'Settings' dialog for a database in the Fabric portal.":::
 
-## Configure your Spark environment in a Fabric notebook
+## Configure Spark in a Fabric notebook
 
 To connect to Cosmos DB using the Spark connector, you need to configure a custom Spark environment. This section walks you through creating a custom Spark environment and uploading the Cosmos DB Spark Connector libraries.
 
@@ -58,13 +58,13 @@ To connect to Cosmos DB using the Spark connector, you need to configure a custo
 
    :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook.png" alt-text="Screenshot of the notebook showing the selection of Spark (Scala) as the preferred language.":::
 
-1. Select the environment dropdown.
+1. Select the Environment dropdown.
 1. Check your workspace settings to ensure that you're using Runtime 1.3 (Spark 3.5).
 
    :::image type="content" source="media/how-to-use-spark-directly/spark-scala-notebook-settings.png" lightbox="media/how-to-use-spark-directly/spark-scala-notebook-settings.png" alt-text="Screenshot of the notebook showing dropdown menu of workspace settings.":::
 
 1. Select **New environment**.
-1. Provide a new environment name.
+1. Enter a name for the new environment.
 1. Ensure that the runtime is configured for Runtime 1.3 (Spark 3.5).
 1. Choose **Custom Library** from the **Libraries** folder in the left panel.
 
@@ -87,7 +87,7 @@ To connect to your Cosmos DB in Fabric database and container, specify a connect
 
    ```scala
    // User values for Cosmos DB
-   val ENDPOINT = "https://YourAccountEndpoint....cosmos.fabric.microsoft.com:443/"
+   val ENDPOINT = "https://{YourAccountEndpoint....cosmos.fabric.microsoft.com:443/}"
    val DATABASE = "{your-cosmos-artifact-name}"
    val CONTAINER = "{your-container-name}"
 
@@ -118,7 +118,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
      .load()
    ```
 
-1. Show the first five rows of the data within the DataFrame.
+1. Display the first five rows of data in the DataFrame.
 
    ```scala
    // Show the first 5 rows of the dataframe
@@ -134,9 +134,10 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    // Render schema    
    df.printSchema()
    ```
-
+     
+   The result should look similar to the following example:
    ```text
-   The result should look something like this.
+  
        root
         |-- inventory: integer (nullable = true)
         |-- name: string (nullable = true)
@@ -162,10 +163,17 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    ```scala
    // Render filtered rows by specific document type
    val productsDF = df.where("docType = 'product'")
-   productsDF.show(10)
+   productsDF.show(5)
    ```
 
-1. Filter the DataFrame using the `filter` function to show only products within a specific category
+1. Show the schema of the filtered *product* entities
+
+   ```scala
+   // Render schema    
+   productsDF.printSchema()
+   ```
+
+1. Filter the DataFrame using the `filter` function to show only products within a specific category.
 
    ```scala
    // Render filtered rows by specific document type and categoryName
@@ -176,13 +184,13 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    filteredDF.show(10)
    ```
 
-## Query Cosmos DB in Microsoft Fabric using SparkSQL
+## Query Cosmos DB in Microsoft Fabric using Spark SQL
 
-1. Configure the Catalog API to allow you to reference and manage Cosmos DB in Fabric resources by using Spark queries, with the endpoint set in the configuration created earlier.
+1. Configure the Catalog API to allow you to reference and manage Cosmos DB in Fabric resources by using Spark queries, using the endpoint value defined previously.
 
    ```scala
    spark.conf.set("spark.sql.catalog.cosmosCatalog", "com.azure.cosmos.spark.CosmosCatalog")
-   spark.conf.set("spark.sql.catalog.cosmosCatalog.spark.cosmos.accountEndpoint", config("spark.cosmos.accountendpoint"))
+   spark.conf.set("spark.sql.catalog.cosmosCatalog.spark.cosmos.accountEndpoint", ENDPOINT)
    spark.conf.set("spark.sql.catalog.cosmosCatalog.spark.cosmos.auth.type", "AccessToken")
    spark.conf.set("spark.sql.catalog.cosmosCatalog.spark.cosmos.useGatewayMode", "true")
    spark.conf.set("spark.sql.catalog.cosmosCatalog.spark.cosmos.accountDataResolverServiceName", "com.azure.cosmos.spark.fabric.FabricAccountDataResolver")
@@ -192,12 +200,20 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
 
    ```scala  
     // Show results of query   
-    val queryString = "SELECT categoryName,productId, docType, name, currentPrice,stars FROM cosmosCatalog.SampleDatabase.SampleData"
+    val queryString = 
+    " SELECT " +
+    "  categoryName, " +
+    "  productId, " +
+    "  docType, " +
+    "  name, " +
+    "  currentPrice, " +
+    "  stars " + 
+    " FROM cosmosCatalog." + DATABASE + "." + CONTAINER 
     val queryDF = spark.sql(queryString)
     queryDF.show(10)
    ```
 
-   The result should look similar to the following example:
+   The result shows that properties missing from individual documents are returned as NULL values and should look similar to the following example:
 
     ```text
     +------------------+--------------------+-------+--------------------+------------+-----+
@@ -216,7 +232,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
     +------------------+--------------------+-------+--------------------+------------+-----+
    ```
 
-1. This example shows how to work with an embedded array in a JSON document. First, query the container, then use the explode operator, then calculate the lowest price for a product in its product history.
+1. This example shows how to work with an embedded array in a JSON document stored in Cosmos DB. First, query the container, then use the explode operator to expand the `priceHistory` array elements into rows, then calculate the lowest price for each product stored in the product history.
 
    ```scala
    // Retrieve the product data from the SampleData container
@@ -247,30 +263,30 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
    lowestPriceDF.show(10)
    ```
 
-1. The results should look like this.
+    The results should look like this.
 
-```text
-   +--------------------+--------------------+--------------------+-----------+
-   |           productId|        categoryName|                name|lowestPrice|
-   +--------------------+--------------------+--------------------+-----------+
-   |5d81221f-79ad-4ae...|Accessories, High...|PulseCharge Pro X120|      79.99|
-   |9173595c-2b5c-488...|Accessories, Desi...| Elevate ProStand X2|     117.16|
-   |a5d1be8f-ef18-484...|Computers, Gaming...|VoltStream Enigma...|     1799.0|
-   |c9e3a6ce-432f-496...|Peripherals, Keyb...|HyperKey Pro X77 ...|     117.12|
-   |f786eb9e-de01-45f...|    Devices, Tablets|TechVerse TabPro X12|     469.93|
-   |59f21059-e9d4-492...|Peripherals, Moni...|GenericGenericPix...|     309.77|
-   |074d2d7a-933e-464...|Devices, Smartwat...|  PulseSync Orion X7|     170.43|
-   |dba39ca4-f94a-4b6...|Accessories, Desi...|Elevate ProStand ...|      129.0|
-   |4775c430-1470-401...|Peripherals, Micr...|EchoStream Pro X7...|     119.65|
-   |459a191a-21d1-42f...|Computers, Workst...|VertexPro Ultima ...|     3750.4|
-   +--------------------+--------------------+--------------------+-----------+
-```
+    ```text
+       +--------------------+--------------------+--------------------+-----------+
+       |           productId|        categoryName|                name|lowestPrice|
+       +--------------------+--------------------+--------------------+-----------+
+       |5d81221f-79ad-4ae...|Accessories, High...|PulseCharge Pro X120|      79.99|
+       |9173595c-2b5c-488...|Accessories, Desi...| Elevate ProStand X2|     117.16|
+       |a5d1be8f-ef18-484...|Computers, Gaming...|VoltStream Enigma...|     1799.0|
+       |c9e3a6ce-432f-496...|Peripherals, Keyb...|HyperKey Pro X77 ...|     117.12|
+       |f786eb9e-de01-45f...|    Devices, Tablets|TechVerse TabPro X12|     469.93|
+       |59f21059-e9d4-492...|Peripherals, Moni...|GenericGenericPix...|     309.77|
+       |074d2d7a-933e-464...|Devices, Smartwat...|  PulseSync Orion X7|     170.43|
+       |dba39ca4-f94a-4b6...|Accessories, Desi...|Elevate ProStand ...|      129.0|
+       |4775c430-1470-401...|Peripherals, Micr...|EchoStream Pro X7...|     119.65|
+       |459a191a-21d1-42f...|Computers, Workst...|VertexPro Ultima ...|     3750.4|
+       +--------------------+--------------------+--------------------+-----------+
+    ```
 
 ## Use Cosmos DB to implement reverse ETL using Spark
 
-Cosmos DB is an exceptional serving layer for analytical workloads due to its architecture. Below is an example of how to perform a reverse ETL on analytical data and serve it using Cosmos DB.
+Cosmos DB is an exceptional serving layer for analytical workloads due to its architecture. The following example shows how to perform a reverse ETL on analytical data and serve it using Cosmos DB.
 
-### Create a new Cosmos DB in Fabric container using Spark
+### Create a Cosmos DB in Fabric container with Spark
 
 - Create a new container named `MinPricePerProduct` by using `CREATE TABLE IF NOT EXISTS` with the Spark Catalog API. This container will always be small and not need to scale. Set the partition key path to `/id` and set the smallest allowable throughput with an autoscale throughput of `1000` request units per second (RU/s).
 
@@ -287,24 +303,24 @@ Cosmos DB is an exceptional serving layer for analytical workloads due to its ar
    spark.sql(sqlDef)
    ```
 
-### Write data into a Cosmos DB in Fabric container using Spark
+### Write data to a Cosmos DB in Fabric container with Spark
 
-In order to write data directly to a Cosmos DB in Fabric container, you require:
+To write data directly to a Cosmos DB in Fabric container, you need:
 
-- a correctly formatted DataFrame containing the container partition key and `id` columns
-- a correctly specified configuration for the container you wish to write to
+- a correctly formatted DataFrame containing the container partition key and `id` columns.
+- a correctly specified configuration for the container you wish to write to.
 
-1. All documents in Cosmos DB require an **id** property, which is also the partition key chosen for the `Producs` container. Create an `id` column on the `ProducsDF` DataFrame with the value of `productId` column.
+1. All documents in Cosmos DB require an **id** property, which is also the partition key chosen for the `Products` container. Create an `id` column on the `ProductsDF` DataFrame with the value of `productId`.
 
    ```scala
-   //create an id column and copy productId into it
+   // Create an id column and copy productId value into it
    val ProductsDF = lowestPriceDF.withColumn("id", col("productId"))
    ProductsDF.show(10)
    ```
 
-1. Create a new configuration for the `MinPricePerProduct` container you want to write to.
+1. Create a new configuration for the `MinPricePerProduct` container you want to write to. Note that `spark.cosmos.write.strategy` is set to `ItemOverwrite`, which means that any existing documents with the same id and partition key values will be overwritten.
 
-   ```scala.
+   ```scala
    // Configure the Cosmos DB connection information for the database and the new container.
    val configWrite = Map(
       "spark.cosmos.accountendpoint" -> ENDPOINT,
@@ -332,7 +348,7 @@ In order to write data directly to a Cosmos DB in Fabric container, you require:
 1. Query the container to validate that it now contains the correct data.
 
    ```scala
-   // Test our write operation worked
+   // Test that the write operation worked
    val queryString = s"SELECT * FROM cosmosCatalog.$DATABASE.$NEW_CONTAINER"
    val queryDF = spark.sql(queryString)
    queryDF.show(10)
@@ -360,4 +376,4 @@ In order to write data directly to a Cosmos DB in Fabric container, you require:
 ## Related content
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
-- [Frequently Asked Questions about Cosmos DB in Microsoft Fabric](faq.yml)
+- [Frequently asked questions about Cosmos DB in Microsoft Fabric](faq.yml)
