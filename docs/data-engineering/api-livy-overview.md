@@ -6,10 +6,10 @@ ms.author: eur
 author: eric-urban
 ms.topic: overview
 ms.search.form: Livy API Overview for Data Engineering
-ms.date: 10/31/2025
+ms.date: 11/05/2025
 ---
 
-# What is the Livy API for Data Engineering? (Preview)
+# What is the Livy API for Data Engineering? 
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
@@ -28,7 +28,9 @@ The Fabric Livy API allows submitting jobs in two different modes:
 
 ## Get started with the Livy API
 
-Learn how to [Create and run Spark jobs using the Livy API in Fabric](get-started-api-livy.md) by choosing either a [Submit Spark session jobs using the Livy API](get-started-api-livy-session.md) or a [Submit Spark batch jobs using the Livy API](get-started-api-livy-batch.md).
+Learn how to [Create and run Spark jobs using the Livy API in Fabric](get-started-api-livy.md):
+- [Submit Spark session jobs using the Livy API](get-started-api-livy-session.md)
+- [Submit Spark batch jobs using the Livy API](get-started-api-livy-batch.md).
 
 ## Related content
 

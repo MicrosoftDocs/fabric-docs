@@ -6,7 +6,7 @@ ms.author: eur
 author: eric-urban
 ms.topic: conceptual
 ms.search.form: Get started with the Livy API for Data Engineering
-ms.date: 10/31/2025
+ms.date: 11/05/2025
 ---
 
 # Use the Livy API to submit and execute Spark session jobs with user credentials

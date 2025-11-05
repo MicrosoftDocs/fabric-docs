@@ -6,7 +6,7 @@ ms.author: eur
 author: eric-urban
 ms.topic: how-to
 ms.search.form: Get started with batch jobs with the Livy API for Data Engineering
-ms.date: 10/31/2025
+ms.date: 11/05/2025
 ms.custom: sfi-image-nochange
 ---
 
@@ -103,59 +103,41 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     ```python
     from msal import ConfidentialClientApplication
-    import requests
-    import time
 
-    tenant_id = "<Entra_TenantID>" 
-    client_id = "<Entra_ClientID>"
-    client_secret = "<Entra_ClientSecret>"
-    audience = "https://api.fabric.microsoft.com/.default"  
-
-    workspace_id = "<Fabric_WorkspaceID>"
-    lakehouse_id = "<Fabric_LakehouseID>"
-
-    # Get the app-only token
-    def get_app_only_token(tenant_id, client_id, client_secret, audience):
-        """
-        Get an app-only access token for a Service Principal using OAuth 2.0 client credentials flow.
-        Args:
-            tenant_id (str): The Azure Active Directory tenant ID.
-            client_id (str): The Service Principal's client ID.
-            client_secret (str): The Service Principal's client secret.
-            audience (str): The audience for the token (e.g., resource-specific scope).
-        Returns:
-            str: The access token.
-        """
-        try:
-            # Define the authority URL for the tenant
-            authority = f"https://login.microsoftonline.com/{tenant_id}"
-
-            # Create a ConfidentialClientApplication instance
-            app = ConfidentialClientApplication(
-                client_id = client_id,
-                client_credential = client_secret,
-                authority = authority
-            )
-
-            # Acquire a token using the client credentials flow
-            result = app.acquire_token_for_client(scopes = [audience])
-
-            # Check if the token was successfully retrieved
-            if "access_token" in result:
-                return result["access_token"]
-            else:
-                raise Exception("Failed to retrieve token: {result.get('error_description', 'Unknown error')}")
-        except Exception as e:
-            print(f"Error retrieving token: {e}", fil = sys.stderr)
-            sys.exit(1)
-
-    token = get_app_only_token(tenant_id, client_id, client_secret, audience)
-
-    api_base_url = 'https://api.fabric.microsoft.com/v1/'
-    livy_base_url = api_base_url + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"    
-    headers = {"Authorization": "Bearer " + token}
-
-    print(token)
+    tenant_id = "<Tenant ID>"
+    client_id = "<Service Principal Client ID>"
+    audience = "https://analysis.windows.net/powerbi/api/.default"
+    authority = f"https://login.windows.net/{tenant_id}"
+    certificate_path = "<Certificate Path>"
+    private_key_path = "<Private Key Path>"
+    certificate_thumbprint = "<Certificate Thumbprint>"
+    
+    def get_access_token(tenant_id, client_id, audience, authority, certificate_path, private_key_path, certificate_thumbprint=None):
+        # Read the certificate from PEM file
+        with open(certificate_path, "r", encoding="utf-8") as f:
+            certificate_pem = f.read()
+    
+        # Read the private key from PEM file
+        with open(private_key_path, "r", encoding="utf-8") as f:
+            private_key_pem = f.read()
+    
+        app = ConfidentialClientApplication(
+            client_id=client_id,
+            authority=authority,
+            client_credential={
+                "private_key": private_key_pem,
+                "thumbprint": certificate_thumbprint,
+                "certificate": certificate_pem
+            }
+        )
+    
+        token_response = app.acquire_token_for_client(scopes=[audience])
+    
+        if "access_token" in token_response:
+            return token_response["access_token"]
+        return None
+    
+    print(get_access_token(tenant_id, client_id, audience, authority, certificate_path, private_key_path, certificate_thumbprint))
     ```
 
 1. Run the notebook cell, you should see the Microsoft Entra token returned.
@@ -163,8 +145,6 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     :::image type="content" source="media/livy-api/livy-session-entra-spn-token.png" alt-text="Screenshot showing the Microsoft Entra SPN token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-spn-token.png":::
 
 ### Authenticate a Livy API Spark session using an Entra user token
-
-## Create a Livy API Spark batch session
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
@@ -181,7 +161,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     app = PublicClientApplication(
         client_id,
-        authority="https://login.microsoftonline.com/43a26159-4e8e-442a-9f9c-cb7a13481d48"
+        authority="https://login.microsoftonline.com/REDACTED"  # replace REDACTED with your tenant ID
     )
 
     result = None

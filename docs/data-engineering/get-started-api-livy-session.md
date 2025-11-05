@@ -6,7 +6,7 @@ ms.author: eur
 author: eric-urban
 ms.topic: how-to
 ms.search.form: Get started with Session jobs with the Livy API for Data Engineering
-ms.date: 10/31/2025
+ms.date: 11/05/2025
 ms.custom: sfi-image-nochange
 ---
 
