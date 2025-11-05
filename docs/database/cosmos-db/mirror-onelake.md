@@ -1,10 +1,10 @@
 ---
 title: Mirror OneLake in Cosmos DB Database
 description: Learn how data is automatically mirrored from Cosmos DB database in Microsoft Fabric to OneLake.
-author: seesharprun
-ms.author: sidandrews
+author: markjbrown
+ms.author: mjbrown
 ms.topic: how-to
-ms.date: 07/17/2025
+ms.date: 11/03/2025
 ms.search.form: Databases replication to OneLake,Integrate Cosmos DB with other services
 ---
 
@@ -96,7 +96,7 @@ Observe the results of the query in the query editor:
 ]
 ```
 
-:::image type="content" source="media/mirror-onelake/sql-analytics-endpoint-query-advanced.png" lightbox="media/mirror-onelake/sql-analytics-endpoint-query-advanced-full.png" alt-text="Screenshot of a Transact SQL (T-SQL) query using the query editor in the SQL analytics endpoint for an advanced scenario.":::
+:::image type="content" source="media/mirror-onelake/sql-analytics-endpoint-query-advanced.png" lightbox="media/mirror-onelake/sql-analytics-endpoint-query-advanced-full.png" alt-text="Screenshot of advanced Transact SQL (T-SQL) query using the query editor in the SQL analytics endpoint for an advanced scenario.":::
 
 ### Query nested JSON arrays with OPENJSON
 
@@ -153,7 +153,7 @@ Observe the results of the query in the query editor:
 ]
 ```
 
-:::image type="content" source="media/mirror-onelake/sql-analytics-endpoint-query-openjson.png" lightbox="media/mirror-onelake/sql-analytics-endpoint-query-openjson-full.png" alt-text="Screenshot of a Transact SQL (T-SQL) query using the query editor in the SQL analytics endpoint for an advanced scenario.":::
+:::image type="content" source="media/mirror-onelake/sql-analytics-endpoint-query-openjson.png" lightbox="media/mirror-onelake/sql-analytics-endpoint-query-openjson-full.png" alt-text="Screenshot of an OPENJSON Transact SQL (T-SQL) query using the query editor in the SQL analytics endpoint for an advanced scenario.":::
 
 ## Next steps
 - [Create a OneLake shortcut in a Lakehouse](./how-to-access-data-lakehouse.md) or [run a cross-database query](./how-to-query-cross-database.md)

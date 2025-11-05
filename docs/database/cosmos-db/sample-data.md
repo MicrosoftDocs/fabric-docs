@@ -1,30 +1,33 @@
 ---
 title: Sample Data Sets Cosmos DB Database
 description: Explore the sample data sets and schemas that are available for use in to the Cosmos DB database workload within Microsoft Fabric.
-author: seesharprun
-ms.author: sidandrews
+author: markjbrown
+ms.author: mjbrown
 ms.topic: concept-article
-ms.date: 10/22/2025
+ms.date: 11/03/2025
 ai-usage: ai-generated
 ---
 
 # Sample data sets in Cosmos DB in Microsoft Fabric
 
-Microsoft Fabric's Cosmos DB database workload provides built-in sample data sets to help you explore, learn, and experiment with NoSQL database patterns. These data sets represent a realistic e-commerce scenario with products and customer reviews, demonstrating how different entity types coexist in the same container.
+Microsoft Fabric's Cosmos DB database workload provides built-in sample data sets to help you explore, learn, and experiment with NoSQL database patterns. This data set represents an e-commerce scenario with products and customer reviews, demonstrating how different entity types coexist in the same container.
 
 Two sample data sets are available:
 
 - **Standard sample data**: Core e-commerce data with products and reviews
-- **Vector sample data**: Enhanced version that includes 512-dimensional vector embeddings for AI and machine learning scenarios
+- **Vector sample data**: Enhanced version that includes 1536-dimensional vector embeddings generated using OpenAI's *text-embedding-ada-002* model for semantic search scenarios.
 
 ## Data set overview
 
 Both sample data sets contain the same e-commerce data with two document types.
 
-- **Product documents** (`docType: "product"`) - Individual products with pricing, inventory, and metadata
+- **Product documents** (`docType: "product"`) - Individual products with name, description, inventory, current price, and an embedded array of the price history for that product.
 - **Review documents** (`docType: "review"`) - Customer reviews and ratings linked to products via `productId`
 
-The vector sample data set is based on the standard sample data set. Product documents in the vector data set include an additional `vectors` property containing 512-dimensional embeddings for semantic search capabilities.
+The vector sample data set is based on the standard sample data set. Product documents in the vector data set include an additional `vectors` property containing 1536-dimensional embeddings for semantic search capabilities.
+
+> [!NOTE]
+> You can find both datasets as well as an additional dataset with vectors generated using the OpenAI *text-embedding-3-large* model with 512 dimensions in the [Sample Datasets folder of the Cosmos DB in Fabric - Samples Repository](https://github.com/AzureCosmosDB/cosmos-fabric-samples/blob/main/datasets/datasets-readme.md)
 
 ## Document schemas
 
@@ -44,9 +47,9 @@ Product documents contain detailed information about individual items in the e-c
 | **`firstAvailable`** | `string` | Date when product became available (ISO 8601 format) |
 | **`currentPrice`** | `number` | Current selling price |
 | **`priceHistory`** | `array` | Array of price change objects with `date` and `price` fields |
-| **`priceHistory[].priceDate`** | `string` | Date and time of the price change in ISO 8601 format |
-| **`priceHistory[].newPrice`** | `number` | Price at the specified date |
-| **`vectors`** | `array` | *Vector sample data only* - 512-dimensional vector embedding |
+| **`priceHistory[].date`** | `string` | Date and time of the price change in ISO 8601 format |
+| **`priceHistory[].price`** | `number` | Price at the specified date |
+| **`vectors`** | `array` | *Vector sample data only* - 1536-dimensional vector embedding |
 
 ### Review document schema
 
@@ -60,11 +63,11 @@ Review documents contain customer feedback and ratings for products:
 | **`categoryName`** | `string` | Product category (inherited from the reviewed product) |
 | **`customerName`** | `string` | Name of the customer who wrote the review |
 | **`reviewDate`** | `string` | Date when the review was submitted (ISO 8601 format) |
-| **`stars`** | `number` | Rating given by the customer (typically 1-5 scale) |
+| **`stars`** | `number` | Rating given by the customer (1-5 scale) |
 | **`reviewText`** | `string` | Written review content from the customer |
 
 > [!NOTE]
-> Cosmos DB automatically manages all standard system properties (`_rid`, `_self`, `_etag`, `_attachments`, `_ts`) for all documents.
+> Cosmos DB automatically generates system properties (`_rid`, `_self`, `_etag`, `_attachments`, `_ts`) for all documents.
 
 > [!NOTE]
 > For more information about the ISO 8601 format, see [international date and time standard](https://en.wikipedia.org/wiki/ISO_8601). For more information about the GUID format, see [universally unique identifiers](https://en.wikipedia.org/wiki/Universally_unique_identifier).
@@ -134,7 +137,7 @@ The following examples show the structure of documents in both sample data sets.
       -0.02783808670938015,
       0.011827611364424229,
       -0.04711977392435074,
-      // ... (512 dimensions total)
+      // ... (1536 dimensions total)
       0.04251981899142265
     ]
 }
@@ -170,19 +173,23 @@ Both sample data sets help you practice querying, filtering, and aggregating dat
 #### Common query patterns
 
 **Get all products in a category:**
+
 ```nosql
 SELECT *
 FROM c
-WHERE c.docType = "product"
-  AND c.categoryName = "Computers, Laptops"
+WHERE 
+  c.docType = "product" AND 
+  c.categoryName = "Computers, Laptops"
 ```
 
 **Get reviews for a specific product:**
+
 ```nosql
 SELECT *
 FROM c
-WHERE c.docType = "review"
-  AND c.productId = "77be013f-4036-4311-9b5a-dab0c3d022be"
+WHERE 
+  c.docType = "review" AND 
+  c.productId = "77be013f-4036-4311-9b5a-dab0c3d022be"
 ```
 
 ### Vector sample data scenarios
@@ -257,8 +264,8 @@ The following JSON schemas describe the structure of documents in both sample da
     "vectors": {
       "type": "array",
       "items": { "type": "number" },
-      "minItems": 512,
-      "maxItems": 512
+      "minItems": 1536,
+      "maxItems": 1536
     }
   },
   "required": [
@@ -291,5 +298,6 @@ The following JSON schemas describe the structure of documents in both sample da
 
 ## Related content
 
+- [Review the Cosmos DB in Microsoft Fabric Samples Repository](https://github.com/AzureCosmosDB/cosmos-fabric-samples/blob/main/readme.md)
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Quickstart: Create a Cosmos DB database workload in Microsoft Fabric](quickstart-portal.md)

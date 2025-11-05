@@ -2,10 +2,10 @@
 metadata:
   title: Frequently Asked Questions for Cosmos DB database
   description: Use Microsoft Entra authentication and the Azure SDK to connect to Cosmos DB in Fabric from an Azure Functions host.
-  author: seesharprun
-  ms.author: sidandrews
+  author: markjbrown
+  ms.author: mjbrown
   ms.topic: faq
-  ms.date: 07/16/2025
+  ms.date: 11/03/2025
   ai-usage: ai-assisted
 title: Frequently asked questions for Cosmos DB in Fabric
 summary: |
@@ -20,7 +20,7 @@ sections:
 
           Cosmos DB in Fabric is an AI-optimized NoSQL database, automatically configured to meet your application needs through a simplified experience. Developers can use Cosmos DB in Fabric to build AI applications with ease, without managing complex database settings. Cosmos DB in Microsoft Fabric is based on [Azure Cosmos DB](/nosql/query/overview?context=/fabric/context/context-database), which provides dynamic scaling, high availability, and reliability for the database.
 
-          Cosmos DB is a new addition to the Databases workload in Fabric. You can now store semi-structured NoSQL data in Cosmos DB in Fabric. Semi-structured data can be stored alongside your relational data in SQL databases in Fabric, enabling a unified data platform for your applications.
+          Cosmos DB is a distributed NoSQL database. You can store semi-structured or unstructured data in Cosmos DB in Fabric. Cosmos DB in Fabric can be used alongside your relational data and your data in OneLake in Fabric, enabling a unified data platform for your applications.
 
           Cosmos DB data is made available to Fabric OneLake automatically. This integration provides deep integration of Cosmos DB with the rest of Fabric platform, enabling seamless analytics, Real-time intelligence, User Data Functions (UDFs), GraphQL, Data Science and BI with Copilot, and data agents all in one place.
 
@@ -31,7 +31,7 @@ sections:
           Cosmos DB in Fabric uses the same underlying engine and infrastructure as Azure Cosmos DB, providing the same performance, reliability, and availability guarantees. However, there are key differences:
 
           - **Integration**: Cosmos DB in Fabric is tightly integrated with Microsoft Fabric and OneLake, providing automatic data mirroring for analytics without ETL pipelines.
-          - **Management**: Cosmos DB in Fabric offers a simplified, autonomous experience with optimized defaults, reducing database management complexity.
+          - **Management**: Cosmos DB in Fabric offers a simplified management experience with optimized defaults, reducing database management complexity.
           - **Billing**: Usage is measured in Fabric capacity units (CUs) rather than Azure request units (RUs), and is billed through your Fabric capacity.
           - **Authentication**: Cosmos DB in Fabric uses Microsoft Entra authentication exclusively, with no primary/secondary keys.
           - **Licensing**: Requires a Power BI Premium, Fabric Capacity, or Trial Capacity license.
@@ -40,7 +40,7 @@ sections:
       - question: |
           Does Cosmos DB in Fabric support schema-free data?
         answer: |
-          Yes. Cosmos DB in Fabric allows applications to store arbitrary JSON documents without schema definitions or hints. The flexible, schemaless data model is ideal for semi-structured data and makes it easy to evolve your data model over time. Data is immediately available for query using the NoSQL query language after insertion.
+          Yes. Cosmos DB in Fabric allows applications to store arbitrary JSON documents without schema definitions or hints. The flexible, schemaless data model is ideal for semi-structured or unstructured data and makes it easy to evolve your data model over time. Data is immediately available for query using the NoSQL query language.
 
           For more information, see [Cosmos DB in Fabric overview](overview.md).
       - question: |
@@ -111,7 +111,7 @@ sections:
         answer: |
           Cosmos DB in Fabric supports optimistic concurrency control (OCC) through HTTP entity tags (ETags). Every resource has an ETag that is set on the server every time a document is updated. ETags can be used with the If-Match header to allow the server to decide whether a resource should be updated. If the ETag is no longer current, the server rejects the operation with an "HTTP 412 Precondition failure" response code, and the client must refetch the resource to acquire the current ETag value.
 
-          Most of the Cosmos DB SDKs include classes to manage optimistic concurrency control.
+          Most of the Cosmos DB SDKs include classes to manage optimistic concurrency control. For more information, see [optimistic concurrency control in Cosmos DB](/azure/cosmos-db/nosql/database-transactions-optimistic-concurrency#optimistic-concurrency-control).
       - question: |
           Can I query data across multiple Cosmos DB databases in Fabric?
         answer: |
@@ -129,7 +129,7 @@ sections:
       - question: |
           How long does it take to replicate data changes to OneLake?
         answer: |
-          Data replication from Cosmos DB in Fabric to OneLake occurs in near real-time. Inserts, updates, and deletes are replicated with minimal latency, typically within seconds to minutes depending on the volume of changes.
+          Data replication from Cosmos DB in Fabric to OneLake occurs in near real-time. Inserts, updates, and deletes are replicated with minimal latency, typically within seconds depending on the volume of changes.
 
           For more information, see [mirror OneLake in Cosmos DB in Fabric](mirror-onelake.md).
       - question: |
@@ -165,13 +165,13 @@ sections:
         answer: |
           All containers in Cosmos DB in Fabric use autoscale provisioned throughput. With autoscale, containers automatically scale throughput based on workload demands, scaling between 10% and 100% of the maximum configured throughput (RU/s). When your workload is idle, it scales down to 10% of the maximum to minimize costs. When demand increases, it scales up instantly without any warm-up period.
 
-          Containers created in the Fabric portal have a default maximum autoscale throughput of 5,000 RU/s. This can be adjusted between 1,000 and 50,000 RU/s using the Cosmos DB SDK.
+          Containers created in the Fabric portal have a default autoscale throughput of 5,000 RU/s. This can be adjusted between 1,000 and 50,000 RU/s using the Cosmos DB SDK.
 
           For more information, see [autoscale throughput in Cosmos DB in Fabric](autoscale-throughput.md).
       - question: |
-          Can I set manual (standard) provisioned throughput instead of autoscale?
+          Can I use serverless or manual (standard) provisioned throughput instead of autoscale?
         answer: |
-          No. All containers in Cosmos DB in Fabric must use autoscale provisioned throughput. Manual (standard) provisioned throughput is not supported. Containers created through the SDK must have throughput set to autoscale during container creation, or an error will be thrown stating "Offer Type is restricted to Autoscale for your account.".
+          No. All containers in Cosmos DB in Fabric must use autoscale provisioned throughput. Serverless and manual (standard) provisioned throughput is not supported. Containers created through the SDK must have throughput set to autoscale during container creation, or an error will be thrown stating "Offer Type is restricted to Autoscale for your account.".
 
           For more information, see [limitations for Cosmos DB in Fabric](limitations.md).
       - question: |
@@ -195,13 +195,15 @@ sections:
       - question: |
           What indexing capabilities does Cosmos DB in Fabric support?
         answer: |
-          Cosmos DB in Fabric supports:
+          Cosmos DB in Fabric supports automatic indexing by default. All properties in your JSON documents are automatically indexed by default. Users can also define custom indexing policies to include or exclude specific paths, configure index types, and optimize for your query patterns.
+          
+          Cosmos DB in Fabric supports several index types:
 
-          - **Automatic indexing**: All properties in your JSON documents are automatically indexed by default.
-          - **Custom indexing policies**: You can define custom indexing policies to include or exclude specific paths, configure index types, and optimize for your query patterns.
-          - **Vector indexing**: Index and search vector embeddings for AI applications using DiskANN or quantized flat vector indexes.
-          - **Full-text search**: Perform text-based searches across your documents.
-          - **Hybrid search**: Combine vector search with full-text search for powerful AI-powered search scenarios.
+          - **Range index**: Support for range queries on numeric, string, and date types.
+          - **Spatial index**: Support for geospatial queries using point, line, and polygon data types.
+          - **Composite index**: Support for optimizing queries that filter or sort on multiple properties simultaneously.
+          - **Vector index**: Support for indexing and searching vector embeddings for AI applications using DiskANN or quantized flat vector indexes.
+          - **Full-text index**: Support for full-text indexing and search on your documents with language-specific support.
           
           For more information, see [indexing in Cosmos DB in Fabric](indexing.md) and [vector indexing](index-vector-data.md).
       - question: |
@@ -294,7 +296,7 @@ sections:
       - question: |
           Does Cosmos DB in Fabric support availability zones?
         answer: |
-          Yes. Cosmos DB in Fabric benefits from Fabric's availability zone support, providing enhanced resilience and high availability within supported regions.
+          Yes. Cosmos DB deploys all resources across availability zones, providing enhanced resilience and high availability within supported regions.
 
           For more information, see [Fabric availability zone support](/azure/reliability/reliability-fabric#availability-zone-support).
   - name: Limitations and quotas
@@ -320,7 +322,9 @@ sections:
       - question: |
           Are there any limitations with JSON data size?
         answer: |
-          Yes. JSON strings greater than 8 KB are truncated when queried from the mirrored SQL analytics endpoint. The workaround is to create a shortcut of the mirrored database in Fabric Lakehouse and use a Spark notebook to query your data.
+          Documents within Cosmos DB have a 2 MB limit. 
+          
+          JSON strings within a document greater than 8 KB are truncated when queried from the mirrored SQL analytics endpoint. The workaround is to create a shortcut of the mirrored database in Fabric Lakehouse or use Spark to query your data.
 
           For more information, see [limitations for Cosmos DB in Fabric](limitations.md).
   - name: Development and integration
@@ -328,9 +332,9 @@ sections:
       - question: |
           Can I use Cosmos DB in Fabric with notebooks and Spark?
         answer: |
-          Yes. Data in Cosmos DB in Fabric is automatically mirrored to OneLake in Delta Parquet format, making it accessible from Apache Spark notebooks. You can use Spark to perform analytics, data science workflows, and machine learning operations on your Cosmos DB data.
+          Yes. You can use Fabric notebooks to interact with data directly in Cosmos DB in Fabric. Also, data in Cosmos DB in Fabric is automatically mirrored to OneLake in Delta Parquet format, making it accessible from Apache Spark notebooks. You can use Spark to perform analytics, data science workflows, and machine learning operations on your Cosmos DB data.
 
-          For more information, see [mirror OneLake in Cosmos DB in Fabric](mirror-onelake.md).
+          For more information, see [mirror OneLake in Cosmos DB in Fabric](mirror-onelake.md) or [use Spark with Cosmos DB in Fabric](how-to-use-spark-notebooks.md) or [use Fabric notebooks with Cosmos DB in Fabric](how-to-use-python-notebooks.md).
       - question: |
           How do I use Cosmos DB in Fabric data in Power BI?
         answer: |
