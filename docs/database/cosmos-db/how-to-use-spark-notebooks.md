@@ -160,7 +160,7 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
         |-- docType: string (nullable = true)
    ```
 
-1. The two schemas and their data can be filtered using the *docType* property in the container.  Filter the DataFrame for just products using the `where` function.
+1. The two schemas and their data can be filtered using the *docType* property in the container. Filter the DataFrame for just products using the `where` function.
 
    ```scala
    // Render filtered rows by specific document type
@@ -202,17 +202,17 @@ Load OLTP data into a DataFrame to perform some basic Spark operations.
 
    ```scala  
     // Show results of query   
-    val queryString = 
-    " SELECT " +
-    "  categoryName, " +
-    "  productId, " +
-    "  docType, " +
-    "  name, " +
-    "  currentPrice, " +
-    "  stars " + 
-    " FROM cosmosCatalog." + DATABASE + "." + CONTAINER 
-    val queryDF = spark.sql(queryString)
-    queryDF.show(10)
+     val queryDF = spark.sql(
+     " SELECT " + 
+     "  categoryName, " + 
+     "  productId, " + 
+     "  docType, " + 
+     "  name, " + 
+     "  currentPrice, " + 
+     "  stars " + 
+     " FROM cosmosCatalog." + DATABASE + "." + CONTAINER
+     )
+     queryDF.show(10)
    ```
 
    The result shows that properties missing from individual documents are returned as NULL values and should look similar to the following example:
@@ -296,12 +296,11 @@ Cosmos DB is an exceptional serving layer for analytical workloads due to its ar
    // Create a MinPricePerProduct container by using the Catalog API
    val NEW_CONTAINER = "MinPricePerProduct"
 
-   val sqlDef = s"""
-      |CREATE TABLE IF NOT EXISTS cosmosCatalog.$DATABASE.$NEW_CONTAINER 
-      |USING cosmos.oltp 
-      |TBLPROPERTIES(partitionKeyPath = '/id', autoScaleMaxThroughput = '1000')
-   """.stripMargin
-
+   val sqlDef = "
+    CREATE TABLE IF NOT EXISTS cosmosCatalog.$DATABASE.$NEW_CONTAINER 
+    USING cosmos.oltp 
+    TBLPROPERTIES(partitionKeyPath = '/id', autoScaleMaxThroughput = '1000')
+   "
    spark.sql(sqlDef)
    ```
 
