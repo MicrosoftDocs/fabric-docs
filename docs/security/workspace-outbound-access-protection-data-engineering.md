@@ -185,7 +185,7 @@ Periodic monitoring and updates are required to keep the mirror in sync. The fol
    %pip install pytest --index-url https://<storage-account-name>.z5.web.core.windows.net/simple
 ```
 
-### Understanding the behavior of file paths
+### Understanding file path behavior in Fabric notebooks
 
 When working with data in your Lakehouse using a Fabric notebook, you can reference files in two primary ways:
 
