@@ -53,29 +53,6 @@ When you commit the warehouse item to the Git repo, the warehouse is converted t
 
 Shared queries are also committed to the repo and inherit the name that they are saved as.
 
-### Download the SQL database project of a warehouse in Fabric
-
-With the [SQL Database Projects extension](/sql/azure-data-studio/extensions/sql-database-project-extension) available inside of [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) and [Visual Studio Code](https://visualstudio.microsoft.com/downloads/), you can manage a warehouse schema, and handle Warehouse object changes like other SQL database projects.
-
-To download a local copy of your warehouse's schema, select **Download SQL database project** in the ribbon.
-
-:::image type="content" source="media/source-control/download-sql-database-project.png" alt-text="Screenshot from the Fabric portal of the query ribbon. The Download SQL database project box is highlighted." lightbox="media/source-control/download-sql-database-project.png":::
-
-The local copy of a database project that contains the definition of the warehouse schema. The database project can be used to:
-
-- Recreate the warehouse schema in another warehouse.
-- Further develop the warehouse schema in client tools, like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
-
-### Publish SQL database project to a new warehouse
-
-To publish the warehouse schema to a new warehouse:
-
-1. Create a new warehouse in your Fabric workspace.
-1. On the new warehouse launch page, under **Build a warehouse**, select **SQL database project**.
-    :::image type="content" source="media/source-control/new-warehouse-sql-database-project.png" alt-text="Screenshot from the Fabric portal of the SQL database project button." lightbox="media/source-control/new-warehouse-sql-database-project.png":::
-1. Select the .zip file that was downloaded from the existing warehouse.
-1. The warehouse schema is published to the new warehouse.
-
 ## Deployment pipelines
 
 You can also use deployment pipelines to deploy your warehouse code across different environments, such as development, test, and production. Deployment pipelines don't expose a database project.

@@ -50,7 +50,7 @@ You can accomplish this by specifying a [database role](#use-a-database-role) fo
 
 #### Use a database role
 
-1. Connect to your Azure Database for PostgreSQL flexible server using [pgAdmin](https://www.pgadmin.org/) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio). You should connect with a principal that is a member of the role `azure_pg_admin`.
+1. Connect to your Azure Database for PostgreSQL flexible server using [pgAdmin](https://www.pgadmin.org/). You should connect with a principal that is a member of the role `azure_pg_admin`.
 1. Create a PostgreSQL role named `fabric_user`. You can choose any name for this role. Provide your own strong password. Grant the permissions needed for Fabric mirroring in the database. Run the following SQL script to grant the `CREATEDB`, `CREATEROLE`, `LOGIN`, `REPLICATION`, and `azure_cdc_admin` permissions to the new role named `fabric_user`.
 
     ```sql

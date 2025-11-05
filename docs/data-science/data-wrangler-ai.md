@@ -1,7 +1,7 @@
 ---
 # Required metadata
-# For more information, see https://learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata
-# For valid values of ms.service, ms.prod, and ms.topic, see https://learn.microsoft.com/en-us/help/platform/metadata-taxonomies
+# For more information, see https://learn.microsoft.com/help/platform/learn-editor-add-metadata
+# For valid values of ms.service, ms.prod, and ms.topic, see https://learn.microsoft.com/help/platform/metadata-taxonomies
 
 title:       Use AI in Data Wrangler
 description: Learn how to use AI functions and other AI-powered features in Data Wrangler to further accelerate data preparation

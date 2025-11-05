@@ -30,5 +30,5 @@ The following is a list of data ingestion sources:
 
 ## Related content
 
-* [Overview of connectors for data ingestion](data-connectors/data-connectors.md)
+* [Overview of connectors for data ingestion](event-house-connectors.md)
 * [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md)

@@ -24,7 +24,7 @@ To get started configuring CMK for your Fabric workspace, see [Customer-managed 
 
 Fabric Data Warehouse follows a multi-layered encryption model to ensure your data remains protected at rest and transient in use.
 
-:::image type="content" source="media/encryption/encryption-diagram.png" alt-text="Diagram of the layers of encryption with Fabric Data Warehouse with customer-managed keys (C M K).":::
+:::image type="content" source="media/encryption/encryption-diagram.svg" alt-text="Diagram of the layers of encryption with Fabric Data Warehouse with customer-managed keys (C M K)." lightbox="media/encryption/encryption-diagram.png":::
 
 **SQL Frontend:** Encrypts metadata (tables, views, functions, stored procedures).
 

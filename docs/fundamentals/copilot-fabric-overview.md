@@ -23,7 +23,7 @@ Copilot and other generative AI features in preview bring new ways to transform 
 
 Copilot in Microsoft Fabric is a generative AI assistive technology that aims to enhance the data analytics experience in the Fabric platform for users. Copilot uses large-language models (LLMs) that attempt to facilitate user interaction with their data and items in Fabric. People who use Copilot can include people who create, manage, and consume Fabric items, including enterprise developers, self-service users, and business users.
 
-:::image type="content" source="media/copilot-fabric-overview/fabric-copilot-users-diagram.svg" alt-text="Diagram showing how enterprise developers, self-service users, and business users can all use Copilot experiences in Fabric workloads.":::
+:::image type="content" source="media/copilot-fabric-overview/fabric-copilot-users-diagram.svg" alt-text="Diagram showing how enterprise developers, self-service users, and business users can use Copilot experiences in Fabric workloads.":::
 
 This article helps you to understand how Copilot in Fabric works, including its architecture and cost. The information in this article is intended to guide you and your organization to use and manage Copilot effectively. This article is primarily targeted at:
 

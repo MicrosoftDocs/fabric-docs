@@ -1,13 +1,10 @@
 ---
 title: Access Mirrored Cosmos DB Database Data From Lakehouse (Preview)
-titleSuffix: Microsoft Fabric
 description: Learn how to use a lakehouse and notebook in Microsoft Fabric to query mirrored Cosmos DB data with Spark and Python for advanced analytics.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
 ms.date: 07/29/2025
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
 # Access mirrored Cosmos DB data from Lakehouse in Microsoft Fabric
@@ -19,6 +16,10 @@ Microsoft Fabric Lakehouse is a data architecture platform for storing, managing
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-database.md)]
 
 [!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
+
+- Fabric workspace contributer permissions
+
+  - Users with viewer permissions cannot create a OneLake shortcut in a Lakehouse.
 
 ## Open the SQL analytics endpoint for the database
 
