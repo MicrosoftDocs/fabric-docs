@@ -4,7 +4,7 @@ description: Troubleshoot common issues in the Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: xiaoyul
-ms.date: 04/06/2025
+ms.date: 10/14/2025
 ms.topic: conceptual
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
@@ -52,6 +52,15 @@ A SELECT statement could have completed successfully in the backend and fails wh
     - The [Visual Query editor](visual-query-editor.md) in the [!INCLUDE [product-name](../includes/product-name.md)] portal
     - SQLCMD utility (for authentication via Microsoft Entra ID (formerly Azure Active Directory) Universal with MFA, use parameters `-G -U`)  
 1. If step 1 fails, run a CTAS command with the failed SELECT statement to send the SELECT query result to another table in the same warehouse. Using CTAS avoids query result set being sent back to the client machine. If the CTAS command finishes successfully and the target table is populated, then the original query failure is likely caused by the warehouse front end or client issues.
+
+## Write-write or update conflicts
+
+Write-write conflicts or update conflicts can occur when two transactions attempt to `UPDATE`, `DELETE`, `MERGE`, or `TRUNCATE` the same table. You might see error messages such as:
+
+- **Error 24556**: Snapshot isolation transaction aborted due to update conflict. Using snapshot isolation to access table '%.*ls' directly or indirectly in database '%.*ls' can cause update conflicts if rows in that table have been deleted or updated by another concurrent transaction. Retry the transaction.
+- **Error 24706**: Snapshot isolation transaction aborted due to update conflict. You cannot use snapshot isolation to access table '%.*ls' directly or indirectly in database '%.*ls' to update, delete, or insert the row that has been modified or deleted by another transaction. Please retry the transaction.
+
+For more information, see [Best practices to avoid write-write conflicts](transactions.md#best-practices-to-avoid-write-write-conflicts).
 
 ## What to collect before contacting Microsoft support
 

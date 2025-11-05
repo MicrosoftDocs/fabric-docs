@@ -43,6 +43,8 @@ items:
     href: create-on-premises-shortcut.md
   - name: Create shortcuts to an Iceberg table
     href: onelake-iceberg-tables.md
+  - name: Use Snowflake with Iceberg tables
+    href: onelake-iceberg-snowflake.md
   - name: Shortcut security
     href: onelake-shortcut-security.md
   - name: Manage cloud connections
@@ -82,11 +84,15 @@ items:
 - name: OneLake table APIs
   items:
   - name: OneLake table APIs overview
-    href: ./table-apis/onelake-table-apis.md
+    href: ./table-apis/table-apis-overview.md
   - name: OneLake table APIs for Iceberg
-    href: ./table-apis/onelake-iceberg-table-apis.md
+    href: ./table-apis/iceberg-table-apis-overview.md
   - name: Getting started with OneLake table APIs for Iceberg
-    href: ./table-apis/onelake-iceberg-table-apis-detailed.md
+    href: ./table-apis/iceberg-table-apis-get-started.md
+  - name: OneLake table APIs for Delta
+    href: ./table-apis/delta-table-apis-overview.md
+  - name: Getting started with OneLake table APIs for Delta
+    href: ./table-apis/delta-table-apis-get-started.md
 - name: Secure and manage data access
   items:
   - name: OneLake security overview
@@ -140,7 +146,7 @@ items:
   - name: OneLake compute and storage consumption
     href: onelake-consumption.md
   - name: OneLake capacity consumption example
-    href: OneLake-capacity-consumption.md
+    href: onelake-capacity-consumption.md
 - name: OneLake events
   items:
   - name: Explore OneLake events

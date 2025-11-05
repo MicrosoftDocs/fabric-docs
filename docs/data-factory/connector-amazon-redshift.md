@@ -4,7 +4,7 @@ description: This article provides information about how to create an Amazon Red
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 10/31/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -12,7 +12,10 @@ ms.custom:
 
 # Set up your Amazon Redshift connection
 
-This article outlines the steps to create an Amazon Redshift connection.
+You can connect Dataflow Gen2 to Amazon Redshift in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+1. [Connect to Amazon Redshift data](/power-query/connectors/amazon-redshift#connect-to-amazon-redshift-data-from-power-query-online).
 
 ## Supported authentication types
 
@@ -23,12 +26,8 @@ The Amazon Redshift connector supports the following authentication types for co
 |Amazon Redshift| n/a | √ |
 |Microsoft Account| n/a | √ |
 
-## Set up your connection in Dataflow Gen2
+## Learn more about this connector
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Amazon Redshift. The following links provide the specific Power Query connector information you need to connect to Amazon Redshift in Dataflow Gen2:
-
-- To get started using the Amazon Redshift connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Amazon Redshift prerequisites](/power-query/connectors/amazon-redshift#prerequisites) before connecting to the Amazon Redshift connector.
-- To connect to the Amazon Redshift connector from Power Query, go to [Connect to Amazon Redshift data from Power Query Online](/power-query/connectors/amazon-redshift#connect-to-amazon-redshift-data-from-power-query-online).
-
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+- [Supported capabilities](/power-query/connectors/amazon-redshift#capabilities-supported)
+- [Connect using advanced options](/power-query/connectors/amazon-redshift#connect-using-advanced-options)
+- [Enable Microsoft Entra ID single sign-on for Amazon Redshift](/power-query/connectors/amazon-redshift#enable-microsoft-entra-id-single-sign-on-for-amazon-redshift)
