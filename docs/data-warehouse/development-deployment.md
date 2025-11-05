@@ -1,11 +1,10 @@
 ---
 title: Development and Deployment Workflows
-titleSuffix: Fabric Data Warehouse
 description: Learn about development and deployment workflows available to developers working with Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: pvenkat, randolphwest
-ms.date: 10/21/2025
+ms.date: 11/05/2025
 ms.topic: conceptual
 ---
 # Development and deployment workflows
@@ -60,11 +59,15 @@ Fabric Data Warehouse development is also supported through client tools like:
 
 Database projects in [SQL Database Projects extension for Visual Studio Code](/sql/tools/visual-studio-code-extensions/sql-database-projects/sql-database-projects-extension?view=fabric&preserve-view=true) use the [DacFx (Data-Tier Application Framework) package](/sql/tools/sqlpackage/sqlpackage) to enable advanced capabilities such as building and publishing warehouse projects, comparing schemas, scripting changes, and extracting or deploying `.dacpac` files. For more information, see [Data-tier applications (DAC) overview](/sql/tools/sql-database-projects/concepts/data-tier-applications/overview).
 
+To get started developing a warehouse project in the SQL Database Projects extension for Visual Studio Code, see [Develop warehouse projects in Visual Studio Code](develop-warehouse-project.md).
+
 **SQL Server Management Studio (SSMS)** also supports development on Fabric Data Warehouse, providing a robust, full-featured environment for database administrators and developers. SSMS enables advanced querying, performance tuning, security management, and object exploration. It's especially well-suited for tasks such as monitoring query plans, executing complex scripts, and managing security roles within the warehouse. SSMS is an essential tool for both development and administrative workflows.
 
 ## Deployment workflows
 
 You can use [Fabric deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md) or [Fabric's built-in continuous integration/continuous development (CI/CD)](../cicd/cicd-overview.md) to deploy to a warehouse.
+
+Learn more about [Source control](source-control.md) for Fabric Data Warehouse. 
 
 ### Fabric deployment pipelines
 
@@ -80,6 +83,7 @@ You can use [Fabric deployment pipelines](../cicd/deployment-pipelines/intro-to-
 - Git integration enables seamless collaboration and versioning across teams.
 - To get started, see [Get started with Git integration](../cicd/git-integration/git-get-started.md)
 
-## Related content
+## Next step
 
-- [Source control](source-control.md)
+> [!div class="nextstepaction"]
+> [Develop warehouse projects in Visual Studio Code](develop-warehouse-project.md)
