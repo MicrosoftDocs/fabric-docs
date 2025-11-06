@@ -251,6 +251,8 @@ items:
     href: machine-learning-experiment.md
   - name: Machine learning model
     href: machine-learning-model.md
+  - name: Machine learning tracking upgrade
+    href: mlflow-upgrade.md
   - name: Fabric autologging
     href: mlflow-autologging.md
   - name: Git and deployment pipelines 
