@@ -48,7 +48,7 @@ To use Key-pair authentication, you need to configure and create a Key-pair auth
 - **Username**: Specify the login name for the Snowflake user.
 - **Private key**: Upload the private key file used for Key-pair authentication. After you upload the private key file, the service automatically detects whether it is encrypted or unencrypted, and displays or hides the Passphrase accordingly.
 
-- **Passphrase**: Specify the passphrase used for decrypting the private key, if the private key file is encrypted.
+- **Passphrase**: Specify the passphrase used to decrypt the private key. This is required only if the private key file is encrypted.
 
     :::image type="content" source="media/connector-snowflake/key-pair-authentication-passphrase.png" alt-text="Screenshot showing the passphrase option.":::
 
