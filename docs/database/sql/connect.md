@@ -11,7 +11,7 @@ ms.search.form: product-databases, Connect to SQL database
 
 # Connect to your SQL database in Microsoft Fabric
 
-**Applies to:** [!INCLUDE [fabric](../includes/applies-to-version/fabric.md)]
+**Applies to:** [!INCLUDE [fabric](../includes/applies-to-version/fabric-sqldb.md)]
 
 You can connect to and query your [SQL database in Fabric](overview.md) in all the same ways as [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true).
 
@@ -74,7 +74,7 @@ In [SQL Server Management Studio (SSMS)](https://aka.ms/ssms):
 
 ## Connect with the MSSQL extension for Visual Studio Code manually
 
-You can also use the [Fabric browse experience in the MSSQL extension for VS Code](/sql/tools/visual-studio-code-extensions/mssql/mssql-fabric-integration?view=sql-server-ver17). This feature allows developers to connect seamlessly to their SQL database in Fabric or SQL analytics endpoints — without manually copying connection strings from the Fabric portal or relying on the **Open in** button to connect directly to their database within VS Code.
+You can also use the [Fabric browse experience in the MSSQL extension for VS Code](/sql/tools/visual-studio-code-extensions/mssql/mssql-fabric-integration). This feature allows developers to connect seamlessly to their SQL database in Fabric or SQL analytics endpoints — without manually copying connection strings from the Fabric portal or relying on the **Open in** button to connect directly to their database within VS Code.
 
 :::image type="content" source="media/connect/fabric-connectivity.png" alt-text="Screenshot of VS Code connection settings." lightbox="media/connect/fabric-connectivity.png":::
 
