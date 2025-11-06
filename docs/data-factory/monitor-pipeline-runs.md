@@ -91,7 +91,7 @@ Workspace Monitoring provides log-level visibility for all items in a workspace,
    
    :::image type="content" source="media/monitor-pipeline-runs/workspace-monitoring-settings.png" alt-text="Screenshot of how to toggle on workspace monitoring.":::
 
-3. Navigate to the KQL database created. You can find this in the **Monitoring database** link within the Monitoring settings or find the database within your workspace.
+1. Navigate to the KQL database created. You can find this in the **Monitoring database** link within the Monitoring settings or find the database within your workspace.
 
 :::image type="content" source="media/monitor-pipeline-runs/monitoring-kql-database.png" alt-text="Screenshot of items generated from workspace monitoring.":::
 
