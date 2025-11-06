@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: pvenkat
 ms.topic: include
 ms.custom:
-ms.date: 08/05/2025
+ms.date: 11/05/2025
 ---
 
-Starting September 5, 2025, Power BI *default* semantic models are no longer created automatically when a warehouse, lakehouse, or mirrored item is created. If your item doesn't have a semantic model already, you can [create a Power BI semantic model](https://learn.microsoft.com/fabric/data-warehouse/semantic-models#create-a-new-power-bi-semantic-model). Existing default semantic models will be converted to regular semantic models. For more information, see [Sunsetting Default Semantic Models](https://blog.fabric.microsoft.com/blog/sunsetting-default-semantic-models-microsoft-fabric).
+Starting November 20, 2025, Power BI *default* semantic models are disconnected from their item and become independent semantic models. You can retain them if you still use them for reports or dashboards or delete them safely if they are no longer needed. Since September 5, 2025, Power BI *default* semantic models are no longer created automatically when a warehouse, lakehouse, or mirrored item is created. For more information, see [Sunsetting Default Semantic Models](https://blog.fabric.microsoft.com/blog/sunsetting-default-semantic-models-microsoft-fabric). If your item doesn't have a semantic model already, you can [create a Power BI semantic model](https://learn.microsoft.com/fabric/data-warehouse/semantic-models#create-a-new-power-bi-semantic-model).
