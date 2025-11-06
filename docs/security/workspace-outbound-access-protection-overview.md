@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview
-ms.date: 10/20/2025
+ms.date: 11/05/2025
 
 #customer intent: As a Fabric administrator, I want to control and secure outbound connections from workspace artifacts so that I can protect organizational data and ensure compliance with security policies.
 
@@ -13,28 +13,30 @@ ms.date: 10/20/2025
 
 # Workspace outbound access protection
 
-Workspace outbound access protection in Microsoft Fabric allows admins to control and restrict outbound connections from workspace artifacts to external resources. Security can be viewed from two perspectives:
+Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. With this feature, admins can block all outbound connections, and then allow only approved connections to external resources through secure connections. You have granular control over your organization's data security because you can restrict connectivity for specific workspaces while allowing others to maintain open access.
 
-* Inbound security: Ensuring that data inside a boundary is protected from external threats.
-* Outbound security: Ensuring that data is shared securely outside a boundary.
+This article provides an overview of workspace outbound access protection and its configuration options.
 
-For inbound security, Fabric supports private links at the [tenant level](security-private-links-overview.md) and the [workspace level](security-workspace-level-private-links-overview.md), which play a crucial role by providing secure connections directly between your virtual network and Fabric.
+> [!NOTE]
+> For *inbound* security, Fabric supports private links at the [tenant level](security-private-links-overview.md) and at the [workspace level](security-workspace-level-private-links-overview.md).
 
-For outbound security, Fabric supports workspace outbound access protection. This network security feature ensures that connections outside the workspace go through a secure connection between Fabric and a virtual network. It prevents items from establishing unsecure connections to sources outside the workspace boundary unless allowed by the workspace admins. This granular control makes it possible to restrict outbound connectivity for some workspaces while allowing the rest of the workspaces to remain open. This article provides an overview of workspace outbound access protection. 
+## How is outbound access controlled at the workspace level?
 
-## Key benefits of workspace outbound access protection
+When outbound access protection is enabled for a workspace, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to permit specific outbound connections. These exceptions are established using *managed private endpoints*, which are network connections that securely link workspace items to supported resources over private virtual networks.
 
-The following diagram illustrates workspace-level outbound access protection from the perspective of the end customer.
+### Using managed private endpoints to allow outbound access
+
+By default, all outbound connections are blocked when outbound access protection is enabled. Admins can then configure managed private endpoints to explicitly allow connections to resources outside of the workspace.
 
 :::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection." border="false":::
 
-Workspace level outbound access protection makes it possible to control what the items in the workspace can access outside the workspace boundary. Customers can set up private endpoints to connect the workspace items to different resources from a specific virtual network.
+In this diagram:
 
-* The outbound enabled workspace can connect to all the resources that support private endpoints by setting up a managed private endpoint from the workspace to the destination. For example, in the preceding diagram, Workspace A (outbound access protection enabled) can connect to the SQL server because it has a managed private endpoint set up to the SQL server.
+* Workspace A and Workspace B both have outbound access protection enabled. They can connect to resources that support private endpoints through a managed private endpoint from the workspace to the destination. For example, Workspace A can connect to the SQL server because it has a managed private endpoint set up to the SQL server.
 
-* The outbound access protection enabled workspace can also connect to another workspace within the same tenant if a managed private endpoint is established from the source to the target workspace. For example, in the diagram, Workspace B has a managed private endpoint configured to workspace C. This managed private endpoint allows items in Workspace B (for example shortcuts) to reference the data in Workspace C (for example, in a lakehouse).
+* An outbound access protection enabled workspace can also connect to another workspace within the same tenant if a managed private endpoint is established from the source to the target workspace. For example, Workspace B has a managed private endpoint configured to Workspace C. This managed private endpoint allows items in Workspace B (for example shortcuts) to reference the data in Workspace C (for example, in a lakehouse).
 
-* Multiple workspaces can connect to the same source by setting up managed private endpoints. For example, in the diagram, both Workspace A and Workspace B can connect to the SQL server because managed private endpoints are set up for each of them for this SQL server.
+* Multiple workspaces can connect to the same source by setting up managed private endpoints. For example, both Workspace A and Workspace B can connect to the SQL server because managed private endpoints are set up for each of them for this SQL server.
 
 ## Supported item types
 

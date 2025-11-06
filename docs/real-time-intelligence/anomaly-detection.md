@@ -6,7 +6,7 @@ ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: how-to
 ms.custom: 
-ms.date: 09/15/2025
+ms.date: 11/02/2025
 ms.search.form: Anomaly detection how-to
 ---
 
@@ -35,7 +35,8 @@ Key capabilities include:
   :::image type="content" source="media/anomaly-detection/python.png" alt-text="Screenshot of enabling the Python plugin in Eventhouse.":::
 
 > [!NOTE]
-> Ensure your Eventhouse table contains sufficient historical data to improve model recommendations and anomaly detection accuracy. For example, datasets with one data point per day require a few months of data, while datasets with one data point per second might only need a few days.
+> * Ensure your Eventhouse table contains sufficient historical data to improve model recommendations and anomaly detection accuracy. For example, datasets with one data point per day require a few months of data, while datasets with one data point per second might only need a few days.
+> * This feature is available in all regions where Microsoft Fabric is available.
 
 ## How to set up anomaly detection
 
