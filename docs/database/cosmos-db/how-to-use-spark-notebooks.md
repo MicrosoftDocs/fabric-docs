@@ -318,7 +318,7 @@ To write data directly to a Cosmos DB in Fabric container, you need:
    ProductsDF.show(10)
    ```
 
-1. Create a new configuration for the `MinPricePerProduct` container you want to write to. The `spark.cosmos.write.strategy` is set to `ItemOverwrite`, which means that any existing documents with the same id and partition key values are overwritten.
+1. Create a new configuration for the `MinPricePerProduct` container you want to write to. The `spark.cosmos.write.strategy` is set to `ItemOverwrite`, which means that any existing documents with the same ID and partition key values are overwritten.
 
    ```scala
    // Configure the Cosmos DB connection information for the database and the new container.
