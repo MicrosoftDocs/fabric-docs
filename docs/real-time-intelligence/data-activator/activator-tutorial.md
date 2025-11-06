@@ -3,9 +3,10 @@ title: Activator tutorial using sample data
 description: Learn how Activator works using sample data. Activator is a powerful tool for working with data and creating rules based on specific conditions.
 author: spelluru
 ms.author: spelluru
+ms.reviewer: jtmsft
 ms.topic: tutorial
 ms.custom: FY25Q1-Linter, sfi-image-nochange
-ms.date: 07/08/2025
+ms.date: 11/06/2025
 ms.search.form: Data Activator Sample Tutorial
 #customer intent: As a Fabric user I want to learn more about Activator using a tutorial and sample data.
 ---
@@ -28,12 +29,17 @@ Before you begin, you need a workspace with a Fabric capacity. You can learn abo
 ## Create a sample activator
 
 1. Navigate to the [Fabric portal]( https://app.fabric.microsoft.com). 
-1. On the left navigation pane, select **Create**, and then select **Activator** in the **Real-Time Intelligence** section. If you don't see **Create**, select the ellipses(**...**), and then select **Create**. 
+1. On the left navigation pane, select the ellipses(**...**), and then select **Create**. 
 
-    :::image type="content" source="media/activator-tutorial/activator-create.png" alt-text="Screenshot showing the left navigation pane with Create selected." lightbox="media/activator-tutorial/activator-create.png":::
+    :::image type="content" source="media/activator-tutorial/create.png" alt-text="Screenshot showing the left navigation pane with Create selected." lightbox="media/activator-tutorial/create.png":::
+
+1. On the **Create** page, under the Real-Time Intelligence section, select **Data Activator**.
+
+    :::image type="content" source="media/activator-tutorial/activator.png" alt-text="Screenshot showing the Create page with Data Activator selected." lightbox="media/activator-tutorial/activator.png":::
+
 1. On the **Activator** page, select **Try sample**.
 
-    :::image type="content" source="media/activator-tutorial/activator-sample.png" alt-text="Screenshot showing the option to add data or use the sample data." lightbox="media/activator-tutorial/activator-sample.png":::
+    :::image type="content" source="media/activator-tutorial/try-sample.png" alt-text="Screenshot showing the option to add data or use the sample data." lightbox="media/activator-tutorial/try-sample.png":::
 
 ## Explore the data
 
@@ -41,7 +47,7 @@ In this step, we explore the eventstream data this sample is built on.
 
 The new activator has an **Explorer** section. Scroll down and select the **Package delivery events** stream.
 
-:::image type="content" source="media/activator-tutorial/activator-eventstream.png" alt-text="Screenshot of Activator with the Package delivery events stream selected." lightbox="media/activator-tutorial/activator-eventstream.png":::
+:::image type="content" source="media/activator-tutorial/explore-data.png" alt-text="Screenshot of Activator with the Package delivery events stream selected." lightbox="media/activator-tutorial/explore-data.png":::
 
 These events show the real-time status of packages that are in the process of being delivered.
 
@@ -55,24 +61,39 @@ The Explorer pane displays objects, like eventstreams, for this activator. **Del
 
 1. In the Explorer pane, select the object called **Delivery events**. You can create rules about objects that use data from the **Package delivery events** eventstream. For example, a rule that checks packages for temperature.
 
-    :::image type="content" source="media/activator-tutorial/activator-temperature.png" alt-text="Screenshot showing Delivery events table and the temperature column." lightbox="media/activator-tutorial/activator-temperature.png":::
+    :::image type="content" source="media/activator-tutorial/explore-rule.png" alt-text="Screenshot showing Delivery events table and the temperature column." lightbox="media/activator-tutorial/explore-rule.png":::
+
 1. Notice that the **Events by object ID** section is organized by **Package ID**. **Package ID** is the column ID that uniquely identifies each package. We use this unique ID to assign the Package events to Package objects.
 
-    :::image type="content" source="media/activator-tutorial/data-activator-unique-id.png" alt-text="Screenshot showing the unique ID column in the Events by object ID screen."lightbox="media/activator-tutorial/data-activator-unique-id.png":::
-1. Select the **Temperature** rule called **Too hot for medicine**. 
+    :::image type="content" source="media/activator-tutorial/id.png" alt-text="Screenshot showing the unique ID column in the Events by object ID screen."lightbox="media/activator-tutorial/id.png":::
 
-    :::image type="content" source="media/activator-tutorial/medicine-rule.png" alt-text="Screenshot showing the sample rule."lightbox="media/activator-tutorial/medicine-rule.png":::    
-1. In the right-most pane, see the **Definition** pane to see how the rule works. In the **Monitor** section, select **Temperature**. The temperature values come from the *Temperature* column in the **Delivery events** table. You can see the **Temperature** column in an earlier screenshot.
+1. Select the **Temperature** rule called **Too hot for medicine**. In the right-most pane, see the **Definition** pane to see how the rule works.
 
-    :::image type="content" source="media/activator-tutorial/data-activator-monitor.png" alt-text="Screenshot showing the Monitor section of the Definition pane." lightbox="media/activator-tutorial/data-activator-monitor.png":::
-1. In the **Summarization** section, you see the window size, step size, and the aggregation operation (average) use. It basically looks for the average of temperature readings over 10-minutes window. 
+    :::image type="content" source="media/activator-tutorial/definition.png" alt-text="Screenshot showing the sample rule."lightbox="media/activator-tutorial/definition.png":::
+
+1. In the **Monitor** section, select **Temperature**. The temperature values come from the *Temperature* column in the **Delivery events** table. You can see the **Temperature** column in an earlier screenshot.
+
+    :::image type="content" source="media/activator-tutorial/monitor.png" alt-text="Screenshot showing the Monitor section of the Definition pane." lightbox="media/activator-tutorial/monitor.png":::
+
 1. In the **Condition** section, you see the rule condition to monitor temperatures that **are higher than 20** degrees Celsius.
+
+    :::image type="content" source="media/activator-tutorial/condition.png" alt-text="Screenshot showing the Condition section of the Definition pane." lightbox="media/activator-tutorial/condition.png":::
+
 1. Scroll further down to **Property filter**. Our rule applies only to packages containing medicine. In the **Delivery events** table, the rule looks at the column named **Special care contents**. In the **Special care contents** column, some of the packages have a value of **Medicine**.
 
-    :::image type="content" source="media/activator-tutorial/activator-filter.png" alt-text="Screenshot showing the Property filter section of the Definition pane." lightbox="media/activator-tutorial/activator-filter.png":::
-1. Lastly, scroll down to **Action**. Our rule sends a Teams message if the condition is met.
+    :::image type="content" source="media/activator-tutorial/property-filter.png" alt-text="Screenshot showing the Property filter section of the Definition pane." lightbox="media/activator-tutorial/property-filter.png":::
 
-    :::image type="content" source="media/activator-tutorial/rule-action.png" alt-text="Screenshot showing the Action section of the Definition pane." lightbox="media/activator-tutorial/rule-action.png":::    
+1. Lastly, scroll down to **Action**. Choose one of the following actions if the condition is met:
+    1. Send a message via Teams.
+
+        :::image type="content" source="media/activator-tutorial/action.png" alt-text="Screenshot showing the Action section of the Definition pane." lightbox="media/activator-tutorial/action.png":::
+
+    1. Send an email notification.
+        :::image type="content" source="media/activator-tutorial/action-email.png" alt-text="Screenshot showing the Action section of the Definition pane with email action selected." lightbox="media/activator-tutorial/action-email.png":::
+
+    1. IcM incident.
+
+        :::image type="content" source="media/activator-tutorial/action-incident.png" alt-text="Screenshot showing the Action section of the Definition pane with IcM action selected." lightbox="media/activator-tutorial/action-incident.png":::
 
 We created a Fabric Activator rule. The rule is running against the **Package delivery events** eventstream. The rule looks for packages that have medicine and checks to see if the temperature is now greater than 20 degrees Celsius. When the temperature becomes greater than 20 degrees Celsius, a Teams message is sent.
 
