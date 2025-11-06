@@ -71,7 +71,7 @@ In the request body, set `outbound` to `Deny`. Also specify the `inbound` value 
 
 ---
 
-Now that outbound access is blocked, you can create an allowlist of approved connections to external resources using managed private endpoints.
+Now that outbound access is blocked, you can permit specific outbound connections to external data sources or other workspaces as described in the following sections.
 
 ## Connect an outbound access protection-enabled workspace to another workspace within the tenant
 
