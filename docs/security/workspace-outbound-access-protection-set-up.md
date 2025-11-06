@@ -71,7 +71,7 @@ In the request body, set `outbound` to `Deny`. Also specify the `inbound` value 
 
 ---
 
-Now that outbound public access is blocked, you can create an allowlist of approved connections to external resources using either data connection rules or managed private endpoints.
+After outbound public access is blocked, you can create an allowlist of approved connections to external resources using either data connection rules or managed private endpoints.
 
 ## Next steps
 

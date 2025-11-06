@@ -5,14 +5,14 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to
-ms.date: 09/24/2025
+ms.date: 11/06/2025
 
 #customer intent: As a data platform administrator, I want to set up outbound access protection for my workspace and create an allowlist using managed private endpoints so that I can control and secure how my workspace resources connect to external networks.
 
 ---
 # Create an allowlist using managed private endpoints
 
-The workspace outbound access protection setting blocks all outbound connections from a workspace. After [enabling this setting](./workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to resources in other workspaces or external destinations. You can allow outbound access by creating an allowlist using [managed private endpoints](security-managed-private-endpoints-overview.md) with or without the Private Link service:
+The workspace outbound access protection setting blocks all outbound connections from a workspace. After [enabling this setting](workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to resources in other workspaces or external destinations. You can allow outbound access by creating an allowlist using [managed private endpoints](security-managed-private-endpoints-overview.md) with or without the Private Link service:
 
 - Use managed private endpoints for connections to external sources.
 - For connections to other workspaces, use managed private endpoints together with the Private Link service.
@@ -28,25 +28,23 @@ To enable outbound access to external data sources that support managed private 
 
 :::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/connect-workspace-data-source-diagram.png" alt-text="Diagram showing a connection from a workspace to a data source." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/connect-workspace-data-source-diagram.png" border="false":::
 
-To enable this scenario, complete the following steps:
+To enable this scenario, follow these steps:
 
 1. Make sure [outbound access protection is enabled](workspace-outbound-access-protection-set-up.md) for the workspace.
 
 1. Sign in to Fabric as a workspace admin and create a managed private endpoint by going to **Workspace settings** > **Network Security** > **Managed Private Endpoints** > **Create**. For detailed steps, see [Create a managed private endpoint](security-managed-private-endpoints-create.md).
 
-Once the managed private endpoint is created and approved on the external data source, artifacts in the outbound access protected workspace can connect to the data source.
+After the managed private endpoint is created and approved on the external data source, artifacts in the outbound access protected workspace can connect to the data source.
 
+## Allow outbound access to another workspace in the tenant
 
+To connect to another workspace in the tenant, use managed private endpoints and the Private Link service to enable secure outbound connections. As described in this section, create a Private Link service for the target workspace (Workspace 2 in the diagram) by deploying an ARM template, and then create a managed private endpoint in the outbound access protected workspace (Workspace 1) to connect to the target workspace.
 
-## Allow outbound access to another workspace
-
-To connect to another workspace, use managed private endpoints and the Private Link service to enable secure outbound connections. As described in this section, you create a Private Link service for the target workspace (Workspace 2 in the diagram) by deploying an ARM template, and then you create a managed private endpoint in the outbound access protected workspace (Workspace 1) to connect to the target workspace.
-
-:::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/private-link-service-diagram.png" alt-text="Diagram showing workspaces connected by managed private links and private links service." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/private-link-service-diagram.png" border="false":::
+:::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/private-link-service-diagram.png" alt-text="Diagram showing a connection from an outbound access protection enabled workspace to another workspace." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/private-link-service-diagram.png" border="false":::
 
 ### Create the Private Link service for the target workspace
 
-1. In a web browser, sign in to the [Azure portal](https://portal.azure.com/).
+1. Sign in to the [Azure portal](https://portal.azure.com/).
 
 1. From the Azure portal search bar, search for **deploy a custom template** and then select it from the available options.
 
@@ -104,7 +102,7 @@ Create a managed private endpoint in the outbound access protected workspace (Wo
 > [!IMPORTANT]
 > The activation status displays *Provisioning* and the approval status is blank, meaning the managed private endpoint request is pending approval. A tenant admin must approve the request as described in the next section.
 
-## Approve the managed private endpoint connection
+### Approve the managed private endpoint connection
 
 A tenant admin must approve the pending managed private endpoint request by completing the following steps. 
 
