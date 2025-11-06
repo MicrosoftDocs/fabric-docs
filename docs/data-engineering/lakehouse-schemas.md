@@ -89,6 +89,7 @@ Below listed unsupported features/functionalities are for current release of pub
 | Spark.catalog API | Not supported. Use Spark SQL instead. |
 | `USE <schemaName>` | Doesn't work cross workspaces, but supported within same workspace. |
 | Migration	| Migration of existing non-schema Lakehouses to schema-based Lakehouses isn't supported. |
+| Private LInks	| Workspace-level private links are not supported. |
 
 ## Related content
 
