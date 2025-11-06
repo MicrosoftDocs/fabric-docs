@@ -12,7 +12,7 @@ ms.date: 11/06/2025
 ---
 # Create an allowlist using managed private endpoints
 
-The workspace outbound access protection setting blocks all outbound connections from a workspace. After [enabling this setting](./workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to resources in other workspaces or external destinations. You can allow outbound access by creating an allowlist using [managed private endpoints](security-managed-private-endpoints-overview.md) with or without the Private Link service:
+The workspace outbound access protection setting blocks all outbound connections from a workspace. After [enabling this setting](workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to resources in other workspaces or external destinations. You can allow outbound access by creating an allowlist using [managed private endpoints](security-managed-private-endpoints-overview.md) with or without the Private Link service:
 
 - Use managed private endpoints for connections to external sources.
 - For connections to other workspaces, use managed private endpoints together with the Private Link service.

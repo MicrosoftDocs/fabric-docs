@@ -1,5 +1,5 @@
 ---
-title: Set up workspace outbound access protection
+title: Enable workspace outbound access protection
 description: "Learn how to set up workspace outbound access protection on Microsoft Fabric workspaces."
 author: msmimart
 ms.author: mimart
@@ -11,7 +11,7 @@ ms.date: 11/06/2025
 
 ---
 
-# Set up workspace outbound access protection
+# Enable workspace outbound access protection
 
 Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. Admins can block all outbound connections, and then allow only approved connections to external resources through secure links between Fabric and virtual networks. [Learn more](./workspace-outbound-access-protection-overview.md).
 
