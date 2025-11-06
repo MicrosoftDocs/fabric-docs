@@ -294,14 +294,13 @@ Cosmos DB is an exceptional serving layer for analytical workloads due to its ar
 
    ```scala
    // Create a MinPricePerProduct container by using the Catalog API
-   val NEW_CONTAINER = "MinPricePerProduct"
-
-   val sqlDef = "
-    CREATE TABLE IF NOT EXISTS cosmosCatalog.$DATABASE.$NEW_CONTAINER 
-    USING cosmos.oltp 
-    TBLPROPERTIES(partitionKeyPath = '/id', autoScaleMaxThroughput = '1000')
-   "
-   spark.sql(sqlDef)
+    val NEW_CONTAINER = "MinPricePerProduct"
+    
+    spark.sql(
+    "CREATE TABLE IF NOT EXISTS cosmosCatalog." + DATABASE + "." + NEW_CONTAINER + " " +
+    "USING cosmos.oltp " + 
+    "TBLPROPERTIES(partitionKeyPath = '/id', autoScaleMaxThroughput = '1000')"
+    )
    ```
 
 ### Write data to a Cosmos DB in Fabric container with Spark
