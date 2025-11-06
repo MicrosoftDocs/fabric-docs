@@ -93,7 +93,7 @@ Workspace Monitoring provides log-level visibility for all items in a workspace,
 
 1. Navigate to the KQL database created. You can find this in the **Monitoring database** link within the Monitoring settings or find the database within your workspace.
 
-:::image type="content" source="media/monitor-pipeline-runs/monitoring-kql-database.png" alt-text="Screenshot of items generated from workspace monitoring.":::
+   :::image type="content" source="media/monitor-pipeline-runs/monitoring-kql-database.png" alt-text="Screenshot of items generated from workspace monitoring.":::
 
 4. Within the KQL database, the **ItemJobEventLogs** table captures pipeline-level events that occur in your workspace (we call this L1 monitoring). Logs include pipeline name, run status, timestamps, and system diagnostics.
 
