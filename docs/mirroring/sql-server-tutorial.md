@@ -204,7 +204,7 @@ To configure Fabric Mirroring, you need to configure Azure Arc for your SQL Serv
 
 The managed identity of the SQL Server is created and granted permissions by Microsoft Fabric automatically.
 
-However, for SQL Server instances running in an Always On availability group, the system-assigned managed identity (SAMI) of every secondary node needs to be granted **Contributor** permissions to the Fabric workspace. A managed identity is created by the PowerShell script provided for each secondary node, and that must be granted Fabric permissions manually. 
+However, for SQL Server instances running in an Always On availability group, the system-assigned managed identity (SAMI) of every secondary node needs to be granted **Contributor** permissions to the Fabric workspace. A managed identity is created by the Azure Extension for SQL Server when the SQL instance is connected to Azure Arc, and each must be granted Fabric permissions manually.
 
 1. In the Fabric portal, grant Fabric permissions to each secondary node's managed identity.
     1. In the Fabric workspace, select **Manage access**.
