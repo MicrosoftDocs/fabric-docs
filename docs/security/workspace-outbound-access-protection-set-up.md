@@ -48,9 +48,9 @@ To enable workspace outbound access protection from the Fabric portal, follow th
 
 To enable or disable workspace outbound access protection using the API, use the [Workspaces Set Network Communication Policy](/rest/api/fabric/core/workspaces/set-network-communication-policy) in the Fabric REST API:
 
-`PUT https://api.fabric.microsoft.com/v1/workspaces/{workspace-id}/networking/communicationPolicy`
+`PUT https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/networking/communicationPolicy`
 
-Where `{workspace-id}` is the ID of the workspace where you want to enable outbound access protection.
+Where `{workspaceId}` is the ID of the workspace where you want to enable outbound access protection.
 
 In the request body, set `outbound` to `Deny`. Also specify the `inbound` value if needed so it isn't overwritten by the default value (Allow).
 
