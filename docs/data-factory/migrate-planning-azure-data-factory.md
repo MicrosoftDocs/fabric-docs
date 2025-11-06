@@ -44,7 +44,7 @@ To address these challenges, follow these best practices:
 
 1. Conduct a thorough asset inventory. Identify duplicates, unused items, and dependencies.
 1. Review [connector parity](connector-parity.md) and [activity parity](activity-parity.md) to identify and map feature gaps early.
-1. Use automated scripts and partner tools for bulk migration.
+1. Consider using automated scripts and partner tools for bulk migration.
 1. Maintain detailed documentation and rollback plans.
 1. Engage stakeholders throughout the process.
 1. Run incremental migrations to minimize risk.
@@ -54,13 +54,13 @@ To address these challenges, follow these best practices:
 
 Migration paths depend on your ADF assets and their feature parity. Options include:
 
-- [Mounting ADF items in Fabric for continuity.](#mount-an-azure-data-factory-item-in-your-fabric-workspace) - A live view of your existing Azure Data Factory instance within Fabric, enabling gradual migration and testing. This is also a good first step before using conversion tools or replatforming.
+- [Azure Data Factory items in Fabric for continuity.](#azure-data-factory-items-in-your-fabric-workspace) - A live view of your existing Azure Data Factory instance within Fabric, enabling gradual migration and testing. This is also a good first step before using conversion tools or replatforming.
 - [Use the powershell conversion tool to migrate pipelines with high parity.](#use-the-powershell-upgrade-tool) - Automate the migration of pipelines, activities, and parameters at scale. Ideal for standard patterns like Copy, Lookup, and Stored Procedure.
 - [Manual migration for complex environments](#manual-migration) - Rebuild pipelines in Fabric to leverage new features and optimize performance. This is necessary for pipelines with low parity or custom logic, but it’s also an opportunity to modernize your architecture.
 
-## Mount an Azure Data Factory item in your Fabric workspace
+## Azure Data Factory items in your Fabric workspace
 
-**Mounting** lets you bring an existing ADF into your Fabric workspace for immediate visibility and governance while you migrate incrementally. It’s ideal for discovery, ownership assignment, and side-by-side testing because teams can see pipelines, organize them under Fabric workspaces, and plan cutovers per domain. Use mounting to catalog what exists, prioritize the highest-value/lowest-risk pipelines first, and establish conventions (naming, folders, connection reuse) that your conversion scripts and partner tools can follow consistently.
+**Adding an existing ADF to your Fabric workspace** give you immediate visibility and governance while you migrate incrementally. It’s ideal for discovery, ownership assignment, and side-by-side testing because teams can see pipelines, organize them under Fabric workspaces, and plan cutovers per domain. Use Azure Data Factory items to catalog what exists, prioritize the highest-value/lowest-risk pipelines first, and establish conventions (naming, folders, connection reuse) that your conversion scripts and partner tools can follow consistently.
 
 Mounting in Fabric is achieved via the Azure Data Factory item type: [Bring your Azure Data Factory to Fabric](/fabric/data-factory/migrate-pipelines-azure-data-factory-item).
 
@@ -82,7 +82,7 @@ To migrate effectively, consider these steps:
 1. **Identify gaps**: Review the [connector parity](connector-parity.md) and [activity parity](activity-parity.md) documents to identify gaps between your ADF pipelines and Fabric pipelines, and plan for alternatives.
 1. **Review new features**: Use our [data movement decision guide](decision-guide-data-movement.md) and [data integration decision guide](decision-guide-data-integration.md) to decide which Fabric tools will work best for your needs.
 1. **Plan**: Review the [migration best practices](migration-best-practices.md) for considerations for each of your items, and guidelines for making the most of Fabric's improved capabilities.
-1. **ADF transition**: Consider [mounting your Azure Data Factory in Microsoft Fabric](#mount-an-azure-data-factory-item-in-your-fabric-workspace) as a first step in migration, allowing for gradual transition in a single platform.
+1. **ADF transition**: Consider [adding an Azure Data Factory itemin Microsoft Fabric](#azure-data-factory-items-in-your-fabric-workspace) as a first step in migration, allowing for gradual transition in a single platform.
 1. **Prioritize**: Rank your pipelines based on business impact, complexity, and ease of migration.
 1. **Automate where you can**: For all low-complexity pipelines, consider using the [PowerShell upgrade tool](#use-the-powershell-upgrade-tool) to automate some migration.
 1. **Consider tooling**: Use these tools to make recreation easier:
@@ -90,7 +90,7 @@ To migrate effectively, consider these steps:
    - Use [parameterization](parameters.md) to create reusable pipelines
    - Use [Copilot in Fabric Data Factory](copilot-fabric-data-factory.md) to help with pipeline creation
    - Use [deployment pipelines](cicd-pipelines.md) for CI/CD and version control
-1. **Manual migration**: For high-complexity pipelines, rebuild them in Fabric:
+1. **Manual migration**: For scenarios not supported by other migration methods, rebuild them in Fabric:
     1. **Recreate connections**: Set up [Connections](connector-overview.md) in Fabric to replace Linked Services in ADF
     1. **Recreate activities**: Set up your [activities](activity-overview.md) in your pipelines, replacing [unsupported activities](activity-parity.md) with Fabric alternatives or using the Invoke pipeline activity
     1. **Schedule and set triggers**: [Rebuild schedules and event triggers in Fabric](pipeline-runs.md) to match your ADF schedules
@@ -103,7 +103,7 @@ Moving from ADF to Fabric can involve different strategies depending on your use
 - [Scenario 1: ADF pipelines and data flows](#scenario-1-adf-pipelines-and-data-flows)
 - [Scenario 2: ADF with CDC, SSIS, and Airflow](#scenario-2-adf-with-cdc-ssis-and-airflow)
 - [Scenario 3: PowerShell migration](#scenario-3-powershell-migration)
-- [Scenario 4: Mount ADF instances in a Fabric workspace](#scenario-4-mount-adf-instances-in-a-fabric-workspace)
+- [Scenario 4: ADF items in a Fabric workspace](#scenario-4-adf-items-in-a-fabric-workspace)
 
 ### Scenario 1: ADF pipelines and data flows
 
@@ -137,9 +137,9 @@ Use the **Microsoft.FabricPipelineUpgrade** PowerShell module to migrate your Az
 
 For detailed guidance, see the [PowerShell migration tutorial](migrate-pipelines-powershell-upgrade-module-tutorial.md).
 
-### Scenario 4: Mount ADF instances in a Fabric workspace
+### Scenario 4: ADF items in a Fabric workspace
 
-You can mount an entire ADF factory in a Fabric workspace as a native item. This lets you manage ADF factories alongside Fabric artifacts within the same interface. The ADF UI remains fully accessible, allowing you to monitor, manage, and edit your ADF factory items directly from the Fabric workspace. However, execution of pipelines, activities, and integration runtimes still occurs within your Azure resources.
+You can add an entire ADF factory in a Fabric workspace as a native item. This lets you manage ADF factories alongside Fabric artifacts within the same interface. The ADF UI remains fully accessible, allowing you to monitor, manage, and edit your ADF factory items directly from the Fabric workspace. However, execution of pipelines, activities, and integration runtimes still occurs within your Azure resources.
 
 This feature is useful for organizations transitioning to Fabric, as it provides a unified view of both ADF and Fabric resources, simplifying management and planning for migration.
 
