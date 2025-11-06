@@ -21,7 +21,7 @@ This article explains how to configure outbound access protection for your Fabri
 
 * Make sure you have an admin role in the workspace.
 
-* Make sure the workspace where you want to set up outbound access protection resides on a Fabric capacity (F SKUs). No other capacity types are supported. You can check assignment by going to the workspace settings and selecting **License info**, as described in Step 1 of [Reassign a workspace to a different capacity](/fabric/fundamentals/workspace-license-mode#reassign-a-workspace-to-a-different-capacity-1).
+* Make sure the workspace where you want to set up outbound access protection resides on a Fabric capacity (F SKUs). No other capacity types are supported. You can check assignment by going to the workspace settings and selecting **License info**.
 
 * The tenant setting **Configure workspace-level outbound network rules** must be enabled by a Fabric tenant administrator. See [Manage admin access to outbound access protection settings](workspace-outbound-access-protection-tenant-setting.md).
 
@@ -34,7 +34,7 @@ This article explains how to configure outbound access protection for your Fabri
 
  ### [Fabric portal](#tab/fabric-portal-1)
 
-To enable workspace outbound access protection from the Fabric portal, follow these steps:
+To enable workspace outbound access protection by using the Fabric portal, follow these steps:
 
 1. Sign in to Fabric with an account that has the Admin role in the workspace where you want to set up outbound access protection.
 
@@ -46,7 +46,7 @@ To enable workspace outbound access protection from the Fabric portal, follow th
 
 ### [API](#tab/api-1)
 
-To enable or disable workspace outbound access protection using the API, use the [Workspaces Set Network Communication Policy](/rest/api/fabric/core/workspaces/set-network-communication-policy) in the Fabric REST API:
+To enable workspace outbound access protection with the Fabric REST API, use the [Workspaces Set Network Communication Policy](/rest/api/fabric/core/workspaces/set-network-communication-policy):
 
 `PUT https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/networking/communicationPolicy`
 
