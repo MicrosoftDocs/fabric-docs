@@ -104,15 +104,17 @@ Create a managed private endpoint in the outbound access protected workspace (Wo
 > [!IMPORTANT]
 > The activation status displays *Provisioning* and the approval status is blank, meaning the managed private endpoint request is pending approval. A tenant admin must approve the request as described in the next section.
 
-## Tenant admin: Approve the managed private endpoint connection
+## Approve the managed private endpoint connection
 
-A tenant admin must approve the managed private endpoint connection by completing the following steps. 
+A tenant admin must approve the pending managed private endpoint request by completing the following steps. 
 
-1. In the Azure portal, search for and select **Private Link Services**.
+1. Sign in to the [Azure portal](https://portal.azure.com).
 
-1. Under **Pending connections**, locate the pending connection with the name specified in the template.
+1. Search for and select **Private Link Services**.
 
-1. Select the connection and approve it.
+1. Select **Pending connections**. 
+
+1. Select the connection with the name specified in the template, and then select **Approve**.
 
    :::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/approve-connection.png" alt-text="Screenshot of the button for approving the connection." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/approve-connection.png":::
 

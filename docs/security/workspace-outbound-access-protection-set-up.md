@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to
-ms.date: 10/20/2025
+ms.date: 11/06/2025
 
 #customer intent: As a data platform administrator, I want to set up outbound access protection for my workspace so that I can control and secure how my workspace resources connect to external networks.
 
@@ -21,7 +21,7 @@ This article explains how to configure outbound access protection for your Fabri
 
 * Make sure you have an admin role in the workspace.
 
-* Make sure the workspace where you want to set up outbound access protection resides on a Fabric capacity (F SKUs). No other capacity types are supported. You can check assignment by going to the workspace settings and selecting **License info**, as described in Step 1 of [Reassign a workspace to a different capacity](/fabric/fundamentals/workspace-license-mode#reassign-a-workspace-to-a-different-capacity-1).
+* Make sure the workspace where you want to set up outbound access protection resides on a Fabric capacity (F SKUs). No other capacity types are supported. You can check assignment by going to the workspace settings and selecting **License info**.
 
 * The tenant setting **Configure workspace-level outbound network rules** must be enabled by a Fabric tenant administrator. See [Manage admin access to outbound access protection settings](workspace-outbound-access-protection-tenant-setting.md).
 
@@ -34,6 +34,8 @@ This article explains how to configure outbound access protection for your Fabri
 
  ### [Fabric portal](#tab/fabric-portal-1)
 
+To enable workspace outbound access protection by using the Fabric portal, follow these steps:
+
 1. Sign in to Fabric with an account that has the Admin role in the workspace where you want to set up outbound access protection.
 
 1. In the workspace where you want to set up outbound access protection, go to **Workspace settings** -> **Network Security**. Under **Outbound access protection**, turn on **Block outbound public access**.
@@ -44,9 +46,11 @@ This article explains how to configure outbound access protection for your Fabri
 
 ### [API](#tab/api-1)
 
-Use the [Workspaces Set Network Communication Policy](/rest/api/fabric/core/workspaces/set-network-communication-policy) in the Fabric REST API:
+To enable workspace outbound access protection with the Fabric REST API, use the [Workspaces Set Network Communication Policy](/rest/api/fabric/core/workspaces/set-network-communication-policy):
 
-`PUT https://api.fabric.microsoft.com/v1/workspaces/{workspace-id}/networking/communicationPolicy`
+`PUT https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/networking/communicationPolicy`
+
+Where `{workspaceId}` is the ID of the workspace where you want to enable outbound access protection.
 
 In the request body, set `outbound` to `Deny`. Also specify the `inbound` value if needed so it isn't overwritten by the default value (Allow).
 
