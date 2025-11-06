@@ -8,6 +8,7 @@ ms.topic: concept-article
 ms.date: 04/21/2025
 ms.custom:
   - fabric-cat
+ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to understand medallion lakehouse architecture and learn how to implement a lakehouse so that I can optimally structure and store my organization's data.
 ---
 
@@ -115,6 +116,22 @@ Lastly, today many organizations face massive growth in data volumes, together w
 
 You can create a data mesh architecture for your data estate in Fabric by creating data domains. You might create domains that map to your business domains, for example, marketing, sales, inventory, human resources, and others. You can then implement medallion architecture by setting up data zones within each of your domains. For more information about domains, see [Domains](../governance/domains.md).
 
+### Use materialized lake views for medallion architecture
+
+[Materialized lake views](../data-engineering/materialized-lake-views/overview-materialized-lake-view.md) in Microsoft Fabric help you to implement medallion architecture in your lakehouse. Rather than building complex pipelines to transform data between bronze, silver, and gold layers, you can define materialized lake views that automatically manage the transformations.
+
+Key benefits of using materialized lake views for medallion architecture include:
+
+- **Declarative pipelines**: Define data transformations using SQL statements rather than building manual pipelines between layers.
+- **Automatic dependency management**: Fabric automatically determines the correct execution order based on view dependencies.
+- **Data quality rules**: Built-in support for defining and enforcing data quality constraints as data moves through layers.
+- **Optimal refresh**: The system automatically determines whether to perform incremental, full, or no refresh for each view.
+- **Visualization and monitoring**: View lineage across all layers and track execution progress.
+
+For example, you can create a silver layer view that cleanses and joins data from bronze tables, and then create gold layer views that aggregate the silver layer data for reporting. The system handles the refresh orchestration automatically.
+
+For more information, see [Implement medallion architecture with materialized lake views](../data-engineering/materialized-lake-views/tutorial.md).
+
 ### Understand Delta table data storage
 
 This section describes other guidance related to implementing a medallion lakehouse architecture in Fabric.
@@ -143,9 +160,10 @@ You should plan and control who needs access to specific data in the lakehouse. 
 
 ## Related content
 
-For more information about implementing a Fabric lakehouse, see the following resources.
+For more information about implementing medallion lakehouse architecture, see the following resources.
 
 - [Tutorial: Lakehouse end-to-end scenario](../data-engineering/tutorial-lakehouse-introduction.md)
+- [Tutorial: Implement medallion architecture with materialized lake views](../data-engineering/materialized-lake-views/tutorial.md)
 - [Lakehouse and Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md)
 - [Microsoft Fabric decision guide: choose a data store](../fundamentals/decision-guide-data-store.md)
 - [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark)
