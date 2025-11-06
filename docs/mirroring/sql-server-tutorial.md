@@ -244,8 +244,7 @@ To enable Mirroring, you need to connect to the SQL Server instance from Fabric 
    - **Server**: The fully qualified server name path that Fabric uses to reach your SQL Server instance, the same that you would use for SSMS. 
 
    > [!TIP] 
-   > SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-ver17&preserve-view=true#network-name) for **Server**.
-
+   > SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. 
    - **Database**: Enter the name of your SQL Server.
       - **Connection**: Create new connection.
       - **Connection name**: An automatic name is provided. You can change it.
@@ -288,8 +287,7 @@ To enable Mirroring, you need to connect to the SQL Server instance from Fabric 
    - **Server**: The fully qualified server name path that Fabric uses to reach your SQL Server instance, the same that you would use for SSMS.
 
    > [!TIP] 
-   > For SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-ver17&preserve-view=true#network-name) for **Server**.
-
+   > For SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**.
    - **Database**: Enter the name of your SQL Server.
       - **Connection**: Create new connection.
       - **Connection name**: An automatic name is provided. You can change it.
