@@ -87,7 +87,7 @@ Workspace Monitoring provides log-level visibility for all items in a workspace,
 
 1. To enable Workspace Monitoring, go to **Workspace Settings** in your Fabric Workspace and select **Monitoring**.
    
-2. Add a Monitoring Eventhouse and turning on **Log workspace activity**. Fabric creates a KQL database inside the Eventhouse within your workspace for storing logs. 
+1. Add a Monitoring Eventhouse and turning on **Log workspace activity**. Fabric creates a KQL database inside the Eventhouse within your workspace for storing logs. 
    
 :::image type="content" source="media/monitor-pipeline-runs/workspace-monitoring-settings.png" alt-text="Screenshot of how to toggle on workspace monitoring.":::
 
