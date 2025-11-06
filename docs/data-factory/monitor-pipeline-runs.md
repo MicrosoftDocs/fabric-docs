@@ -99,7 +99,7 @@ Workspace Monitoring provides log-level visibility for all items in a workspace,
 
    :::image type="content" source="media/monitor-pipeline-runs/pipeline-workspace-monitoring.png" alt-text="Screenshot of pipeline workspace monitoring table.":::
 
-   Use KQL queries in the Monitoring Eventhouse to analyze:
+Use KQL queries in the Monitoring Eventhouse to analyze:
 - Success/failure trends
 - Performance metrics
 - Error details for troubleshooting
