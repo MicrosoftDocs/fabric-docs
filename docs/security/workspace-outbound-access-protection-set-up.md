@@ -32,7 +32,7 @@ This article explains how to configure outbound access protection for your Fabri
 > [!NOTE]
 > The workspace-level setting to block outbound public access can take up to 15 mins to take effect.
 
- ### Using the Fabric portal
+ ### [Fabric portal](#tab/fabric-portal-1)
 
 1. Sign in to Fabric with an account that has the Admin role in the workspace where you want to set up outbound access protection.
 
