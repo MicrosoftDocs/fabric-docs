@@ -47,15 +47,15 @@ In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), th
 ## Supported environments
 
 - SQL Server 2016 - 2022 
-    - SQL Server on Windows supports Fabric Mirroring in Standard, Enterprise, and Developer editions
-    - SQL Server 2017 on Linux supports Fabric Mirroring starting with CU18
-    - SQL Server 2019 and SQL Server 2022 on Linux support Fabric Mirroring
-    - SQL Server instances hosted on on-premises, SQL Server on Azure VM, SQL Server on non-Azure clouds
+    - SQL Server on Windows supports Fabric Mirroring in Standard, Enterprise, and Developer editions.
+    - SQL Server 2017 on Linux supports Fabric Mirroring starting with CU18.
+    - SQL Server 2019 and SQL Server 2022 on Linux support Fabric Mirroring.
+    - SQL Server instances hosted on on-premises, SQL Server on Azure VM, SQL Server on non-Azure clouds support Fabric Mirroring.
 
 - SQL Server 2025
     - Fabric Mirroring for SQL Server 2025 is supported for on-premises instances, currently not supported for SQL Server 2025 instances running in an Azure Virtual Machine.
     - Fabric Mirroring for SQL Server 2025 is currently not supported in SQL Server on Linux.
-    - Fabric Mirroring for SQL Server 2025 requires connection to Azure Arc. Installing the Azure Extension for SQL Server is recommended.
+    - Fabric Mirroring for SQL Server 2025 requires connection to Azure Arc including the Azure Extension for SQL Server. For steps, see [Tutorial: Configure Microsoft Fabric Mirroring from SQL Server](sql-server-tutorial.md?tabs=sql2025).
 
 ## Mirroring SQL Server behind firewall
 
