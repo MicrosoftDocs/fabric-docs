@@ -1,4 +1,4 @@
----
+<img width="464" height="77" alt="image" src="https://github.com/user-attachments/assets/4f1f2691-4eee-4575-9346-bf9864affa03" />---
 title: Change data capture (CDC) in Copy Job
 description: This article guides you through how to use CDC in copy job.
 author: dearandyxu
@@ -38,6 +38,9 @@ Supported source store:
    - On-premises SQL Server
    - Azure SQL Managed Instance
    - Fabric Lakehouse table
+   - SAP Datasphere Outbound for ADLS Gen2
+   - Snowflake
+   - Google BigQuery
 
 Supported destination store:
    - Azure SQL DB
@@ -45,6 +48,7 @@ Supported destination store:
    - Azure SQL Managed Instance
    - SQL Database in Fabric (Preview)
    - Snowflake
+   - Fabric Lakehouse table
 
 ## How to get started:
 
@@ -121,6 +125,39 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 1. Run the Copy job again to capture and replicate all changes, including inserted, updated, and deleted rows, to the destination.
 
    :::image type="content" source="media/copy-job/monitor-cdc-second-run.png" alt-text="Screenshot showing the Copy job panel where you can monitor capturing and replicating all changes.":::
+
+## SAP Datasphere Outbound
+
+Using SAP Datasphere Outbound to obtain change data from SAP is a two-step process:
+
+1. Extract data with SAP Datasphere:
+
+    Use SAP Datasphere to extract both the initial snapshot and subsequent changed records from the SAP source system. The extracted data is then landed in an Azure Data Lake Storage Gen2 container, which serves as a staging area.
+
+2. Move data with Copy job:
+
+    Use Copy job to connect to the staging container in ADLS Gen2 and move the data to any supported destination.
+
+This solutions supports all sources offered by SAP Datasphere, including SAP S/4HANA, SAP ECC, SAP BW/4HANA, SAP BW, as well as SAP Datasphere itself.
+
+### How to  
+
+Step 1: Configuration in SAP Datasphere
+1. Set up connections
+   - Create both source and sink connections in SAP Datasphere.
+   - The source connection can be any SAP system supported by SAP Datasphere.
+   - For the sink connection, select Azure Data Lake Storage Gen2, and provide the storage account name and container name.
+2. Create the replication flow
+   - Use the source and sink connections you just created.
+   - Select the source objects you want to copy from SAP.
+   - Select the ADLS Gen2 container and specify the root folder where you want the data to be copied.
+   - Adjust the Load Type to Initial and Delta.
+   - Ensure that Group Delta By is set to None.
+
+Step 2: Configuration in Copy job
+1. Select the SAP Datasphere Outbound connection as the source.
+2. Select the ADLS Gen2 container and specify the root folder where your SAP Datasphere outbound data will be stored.
+3. The remaining configuration is the same as for any other CDC-enabled source.
 
 
 ## Known limitations
