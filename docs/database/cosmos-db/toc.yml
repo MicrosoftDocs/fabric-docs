@@ -39,7 +39,7 @@ items:
       - name: Advanced vector search
         href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search-advanced
       - name: Spark analytics with Power BI queries
-        href: /samples/azurecosmosdb/cosmos-fabric-samples/spark-analytics-power-bi
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/spark-analytics-powerbi
   - name: Build AI applications
     items:
       - name: Index vector data
