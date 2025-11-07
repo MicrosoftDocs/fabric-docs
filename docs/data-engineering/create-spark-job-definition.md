@@ -6,7 +6,7 @@ ms.author: eur
 author: eric-urban
 ms.topic: how-to
 ms.custom:
-ms.date: 10/31/2025
+ms.date: 11/07/2025
 ms.search.form: Create Spark Job Definition,spark_job_definition
 ---
 
@@ -23,7 +23,7 @@ You can create a Spark job definition from the Fabric portal or by using the Mic
 Before you get started, you need:
 
 - A Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace in Microsoft Fabric. For more information, see [Create and manage workspaces in Microsoft Fabric](../fundamentals/create-workspace.md).
+- A workspace in Microsoft Fabric. For more information, see [Create and manage workspaces in Microsoft Fabric](../fundamentals/create-workspaces.md).
 - At least one lakehouse in the workspace. The lakehouse serves as the default file system for the Spark job definition. For more information, see [Create a lakehouse](../data-engineering/create-lakehouse.md).
 - A main definition file for the Spark job. This file contains the application logic and is mandatory to run a Spark job. Each Spark job definition can have only one main definition file.
 

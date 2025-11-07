@@ -6,7 +6,7 @@ ms.author: eur
 author: eric-urban
 ms.topic: overview
 ms.custom:
-ms.date: 10/31/2025
+ms.date: 11/07/2025
 ms.search.form: spark_job_definition
 ---
 
