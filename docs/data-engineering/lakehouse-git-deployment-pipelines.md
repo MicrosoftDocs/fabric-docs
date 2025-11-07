@@ -25,7 +25,7 @@ The Lakehouse is an item that contains both metadata and data that is referenced
 * [Notebooks](how-to-use-notebook.md)
 * Semantic models and Power BI
 
-The default semantic model and SQL analytics endpoint metadata are related to a Lakehouse and managed by the git update process by default. As a principle __data is not tracked in git__, only metadata is tracked.
+The SQL analytics endpoint metadata are related to a Lakehouse and managed by the git update process by default. As a principle __data is not tracked in git__, only metadata is tracked.
 
 ### Git representation
 
@@ -47,7 +47,7 @@ The following capabilities are available:
 
 * Serialization of the Lakehouse object metadata to a git JSON representation.
 * Apply changes directly or use pull request to control changes to upstream or downstream workspaces and branches.
-* Renaming lakehouses are tracked in git. Updating a renamed lakehouse also renames the default semantic data model and SQL Analytics endpoint.
+* Renaming lakehouses are tracked in git. Updating a renamed lakehouse also renames the SQL Analytics endpoint.
 * __No action is applied to tables and folders metadata__, and data of those items is always preserved.
 * __OneLake Shortcuts metadata__ is preserved in git. 
 
