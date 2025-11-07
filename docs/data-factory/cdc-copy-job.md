@@ -1,4 +1,4 @@
-<img width="464" height="77" alt="image" src="https://github.com/user-attachments/assets/4f1f2691-4eee-4575-9346-bf9864affa03" />---
+---
 title: Change data capture (CDC) in Copy Job
 description: This article guides you through how to use CDC in copy job.
 author: dearandyxu
