@@ -13,7 +13,7 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
   ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
-  ms.date: 10/17/2025
+  ms.date: 11/05/2025
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -108,6 +108,8 @@ landingContent:
         links:
           - text: Development and Deployment
             url: development-deployment.md
+          - text: Warehouse projects in Visual Studio Code
+            url: develop-warehouse-project.md
           - text: Semantic models
             url: semantic-models.md            
           - text: Reports in the Power BI service
