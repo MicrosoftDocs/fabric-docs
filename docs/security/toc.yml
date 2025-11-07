@@ -102,11 +102,15 @@ items:
           - name: Manage admin access to outbound settings
             href: workspace-outbound-access-protection-tenant-setting.md
           - name: Set up workspace outbound access protection
-            href: workspace-outbound-access-protection-set-up.md
-          - name: Workspace outbound access protection scenarios
-            href: workspace-outbound-access-protection-scenarios.md
-          - name: Scenarios by Fabric workload
             items:
+              - name: Enable workspace outbound access protection
+                href: workspace-outbound-access-protection-set-up.md
+              - name: Create allowlist using managed private endpoints
+                href: workspace-outbound-access-protection-allow-list-endpoint.md
+          - name: Scenarios
+            items:
+              - name: Workspace outbound access protection scenarios
+                href: workspace-outbound-access-protection-scenarios.md
               - name: Data Engineering
                 href: workspace-outbound-access-protection-data-engineering.md
               - name: Data Warehouse
