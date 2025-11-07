@@ -91,7 +91,7 @@ Event triggers let you start pipelines when specific events happen, like when fi
 
 Triggers use Fabric platform features including eventstreams and Data Activator alerts. You can create triggers from the pipeline canvas or directly in the Data Activator experience.
 
-> [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=9f36af9d-f362-4452-a221-ca27d39da11c]
+[!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=9f36af9d-f362-4452-a221-ca27d39da11c]
 
 ### Set up storage event triggers
 
