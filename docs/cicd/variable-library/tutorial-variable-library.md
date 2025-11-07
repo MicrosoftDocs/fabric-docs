@@ -37,9 +37,9 @@ The following diagram shows the workspace layout for this tutorial.
 ## Prerequisites
 
 * A Fabric tenant account with an active subscription. [Create an account for free](../../get-started/fabric-trial.md).
-* The following [tenant switches](../../admin/about-tenant-settings.md) enabled from the admin portal:
+* The following [tenant switch](../../admin/about-tenant-settings.md) is enabled from the admin portal:
   * [Users can create Fabric items](../../admin/fabric-switch.md)
-  * **Users can create variable libraries**
+
 
   The tenant admin, capacity admin, or workspace admin can enable these switches, depending on your [organization's settings](../../admin/delegate-settings.md).
 
