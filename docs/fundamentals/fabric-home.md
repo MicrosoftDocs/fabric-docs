@@ -77,7 +77,7 @@ When you create or open an item, it appears in a tab horizontally across the top
 > [!NOTE]
 > The tabbed navigation is only available in the Fabric view, not in Power BI view. For instance, when you switch to the Power BI view from the left nav switcher, the tabbed experience isn't available.
 
-You can right-click any tab in the horizontal tab bar to access the following multitasking options, similar to Microsoft Edge.
+You can right-click any tab in the horizontal tab bar to access the following options, similar to Microsoft Edge:
 
 * **Open in new browser tab**: Opens the selected Fabric tab in a new browser tab with the same item and context.
 
