@@ -6,7 +6,7 @@ ms.author: spelluru
 ms.reviewer: jtmsft
 ms.topic: tutorial
 ms.custom: FY25Q1-Linter, sfi-image-nochange
-ms.date: 11/06/2025
+ms.date: 11/09/2025
 ms.search.form: Data Activator Sample Tutorial
 #customer intent: As a Fabric user I want to learn more about Activator using a tutorial and sample data.
 ---
@@ -89,11 +89,21 @@ The Explorer pane displays objects, like eventstreams, for this activator. **Del
         :::image type="content" source="media/activator-tutorial/action.png" alt-text="Screenshot showing the Action section of the Definition pane." lightbox="media/activator-tutorial/action.png":::
 
     1. Send an email notification.
+
         :::image type="content" source="media/activator-tutorial/action-email.png" alt-text="Screenshot showing the Action section of the Definition pane with email action selected." lightbox="media/activator-tutorial/action-email.png":::
 
-    1. IcM incident.
+    1. Run Fabric activities:
+        1. Run a pipeline and select a dataflow:
 
-        :::image type="content" source="media/activator-tutorial/action-incident.png" alt-text="Screenshot showing the Action section of the Definition pane with IcM action selected." lightbox="media/activator-tutorial/action-incident.png":::
+            :::image type="content" source="media/activator-tutorial/pipeline.png" alt-text="Screenshot showing the Action section of the Definition pane with pipeline action selected." lightbox="media/activator-tutorial/pipeline.png":::
+
+        1. Run a Spark job:
+
+            :::image type="content" source="media/activator-tutorial/spark.png" alt-text="Screenshot showing the Action section of the Definition pane with Spark job action selected." lightbox="media/activator-tutorial/spark.png":::
+
+        1. Run a notebook and select a notebook:
+
+            :::image type="content" source="media/activator-tutorial/notebook.png" alt-text="Screenshot showing the Action section of the Definition pane with notebook action selected." lightbox="media/activator-tutorial/notebook.png":::
 
 We created a Fabric Activator rule. The rule is running against the **Package delivery events** eventstream. The rule looks for packages that have medicine and checks to see if the temperature is now greater than 20 degrees Celsius. When the temperature becomes greater than 20 degrees Celsius, a Teams message is sent.
 
@@ -143,14 +153,13 @@ Create a rule that alerts you if the transit time in delivery exceeds a threshol
 1. Select your new **HoursInTransit** property. From the ribbon, select **New rule**. 
 
     :::image type="content" source="media/activator-tutorial/new-rule-button.png" alt-text="Screenshot showing the New rule button on the ribbon." lightbox="media/activator-tutorial/new-rule-button.png":::
-1. In the **Create rule** pane, follow these steps:
-    1. For **Condition**, select **Increases above**. 
-    1. For **Value**, select **25**. 
-    1. For **Occurrence**, select **Every time the condition is met**. 
-    1. For **Action**, select one of the options to send an email to message in Teams. 
-    1. Select **Create**. 
+1. In the **Definition** pane, follow these steps:
+    1. For **Monitor**, choose the attribute to monitor and optionally add filters.
+    1. For **Condition**, select the type of condition and occurrence. 
+    1. For **Action**, select one of the options to send a message in Teams or email. 
+    1. Select **Save**. 
     
-        :::image type="content" source="media/activator-tutorial/create-rule-pane.png" alt-text="Screenshot showing the Create rule pane." lightbox="media/activator-tutorial/create-rule-pane.png":::      
+        :::image type="content" source="media/activator-tutorial/create-rule.png" alt-text="Screenshot showing the Definition pane." lightbox="media/activator-tutorial/create-rule-pane.png":::      
 1. You should see the rule under **HoursInTransit** in the Explorer pane. Select the rule. In the middle pane, select the pencil icon at the top, and update the name to **Average transit time above target**. 
 
     :::image type="content" source="media/activator-tutorial/edit-rule-name.png" alt-text="Screenshot showing the pencil icon to change the rule name." lightbox="media/activator-tutorial/edit-rule-name.png":::          
