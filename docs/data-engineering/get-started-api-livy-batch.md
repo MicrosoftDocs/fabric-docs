@@ -44,41 +44,42 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-overview.png" :::
 
-## Create a Spark payload and upload to your Lakehouse
+## Create a Spark Batch code and upload to your Lakehouse
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code
 
     ```python
     import sys
     import os
-
+    
     from pyspark.sql import SparkSession
     from pyspark.conf import SparkConf
     from pyspark.sql.functions import col
-
+    
     if __name__ == "__main__":
-
-    #Spark session builder
-    spark_session = (SparkSession
-        .builder
-        .appName("livybatchdemo") 
-        .getOrCreate())
-
-    spark_context = spark_session.sparkContext
-    spark_context.setLogLevel("DEBUG")  
- 
-    targetLakehouse = spark_context.getConf().get("spark.targetLakehouse")
-
-    if targetLakehouse is not None:
-        print("targetLakehouse: " + str(targetLakehouse))
-    else:
-        print("targetLakehouse is None")
-
-    df_valid_totalPrice = spark_session.sql("SELECT * FROM <YourLakeHouseDataTableName>.transactions where TotalPrice > 0")
-    df_valid_totalPrice_plus_year = df_valid_totalPrice.withColumn("transaction_year", col("TransactionDate").substr(1, 4))
-
-    deltaTablePath = "abfss:<YourABFSSpath>"+str(targetLakehouse)+".Lakehouse/Tables/CleanedTransactions"
-    df_valid_totalPrice_plus_year.write.mode('overwrite').format('delta').save(deltaTablePath)
+    
+        #Spark session builder
+        spark_session = (SparkSession
+            .builder
+            .appName("batch_demo") 
+            .getOrCreate())
+    
+        spark_context = spark_session.sparkContext
+        spark_context.setLogLevel("DEBUG")  
+    
+        tableName = spark_context.getConf().get("spark.targetTable")
+    
+        if tableName is not None:
+            print("tableName: " + str(tableName))
+        else:
+            print("tableName is None")
+    
+        df_valid_totalPrice = spark_session.sql("SELECT * FROM green_tripdata_2022 where total_amount > 0")
+        df_valid_totalPrice_plus_year = df_valid_totalPrice.withColumn("transaction_year", col("lpep_pickup_datetime").substr(1, 4))
+    
+    
+        deltaTablePath = f"Tables/{tableName}CleanedTransactions"
+        df_valid_totalPrice_plus_year.write.mode('overwrite').format('delta').save(deltaTablePath)
     ```
 
 1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse and needs to be uploaded to your Lakehouse.  You'll need the ABFS path of the payload to reference in your Livy API batch job in Visual Studio Code and your Lakehouse table name in the Select SQL statement..
@@ -102,42 +103,80 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
     ```python
+    import sys
     from msal import ConfidentialClientApplication
-
-    tenant_id = "<Tenant ID>"
-    client_id = "<Service Principal Client ID>"
+    
+    # Configuration - Replace with your actual values
+    tenant_id = "Entra_TenantID"  # Azure AD Tenant ID
+    client_id = "Entra_ClientID"  # Service Principal Application ID
+    
+    # Certificate paths - Update these paths to your certificate files
+    certificate_path = "PATH_TO_YOUR_CERTIFICATE.pem"      # Public certificate file
+    private_key_path = "PATH_TO_YOUR_PRIVATE_KEY.pem"      # Private key file
+    certificate_thumbprint = "YOUR_CERTIFICATE_THUMBPRINT" # Certificate thumbprint
+    
+    # OAuth settings
     audience = "https://analysis.windows.net/powerbi/api/.default"
     authority = f"https://login.windows.net/{tenant_id}"
-    certificate_path = "<Certificate Path>"
-    private_key_path = "<Private Key Path>"
-    certificate_thumbprint = "<Certificate Thumbprint>"
     
-    def get_access_token(tenant_id, client_id, audience, authority, certificate_path, private_key_path, certificate_thumbprint=None):
-        # Read the certificate from PEM file
-        with open(certificate_path, "r", encoding="utf-8") as f:
-            certificate_pem = f.read()
+    def get_access_token(client_id, audience, authority, certificate_path, private_key_path, certificate_thumbprint=None):
+        """
+        Get an app-only access token for a Service Principal using OAuth 2.0 client credentials flow.
+        
+        This function uses certificate-based authentication which is more secure than client secrets.
     
-        # Read the private key from PEM file
-        with open(private_key_path, "r", encoding="utf-8") as f:
-            private_key_pem = f.read()
+        Args:
+            client_id (str): The Service Principal's client ID  
+            audience (str): The audience for the token (resource scope)
+            authority (str): The OAuth authority URL
+            certificate_path (str): Path to the certificate file (.pem format)
+            private_key_path (str): Path to the private key file (.pem format)
+            certificate_thumbprint (str): Certificate thumbprint (optional but recommended)
     
-        app = ConfidentialClientApplication(
-            client_id=client_id,
-            authority=authority,
-            client_credential={
-                "private_key": private_key_pem,
-                "thumbprint": certificate_thumbprint,
-                "certificate": certificate_pem
-            }
-        )
+        Returns:
+            str: The access token for API authentication
     
-        token_response = app.acquire_token_for_client(scopes=[audience])
+        Raises:
+            Exception: If token acquisition fails
+        """
+        try:
+            # Read the certificate from PEM file
+            with open(certificate_path, "r", encoding="utf-8") as f:
+                certificate_pem = f.read()
     
-        if "access_token" in token_response:
-            return token_response["access_token"]
-        return None
+            # Read the private key from PEM file
+            with open(private_key_path, "r", encoding="utf-8") as f:
+                private_key_pem = f.read()
     
-    print(get_access_token(tenant_id, client_id, audience, authority, certificate_path, private_key_path, certificate_thumbprint))
+            # Create the confidential client application
+            app = ConfidentialClientApplication(
+                client_id=client_id,
+                authority=authority,
+                client_credential={
+                    "private_key": private_key_pem,
+                    "thumbprint": certificate_thumbprint,
+                    "certificate": certificate_pem
+                }
+            )
+    
+            # Acquire token using client credentials flow
+            token_response = app.acquire_token_for_client(scopes=[audience])
+    
+            if "access_token" in token_response:
+                print("Successfully acquired access token")
+                return token_response["access_token"]
+            else:
+                raise Exception(f"Failed to retrieve token: {token_response.get('error_description', 'Unknown error')}")
+                
+        except FileNotFoundError as e:
+            print(f"Certificate file not found: {e}")
+            sys.exit(1)
+        except Exception as e:
+            print(f"Error retrieving token: {e}", file=sys.stderr)
+            sys.exit(1)
+    
+    # Get the access token
+    token = get_access_token(client_id, audience, authority, certificate_path, private_key_path, certificate_thumbprint)
     ```
 
 1. Run the notebook cell, you should see the Microsoft Entra token returned.
@@ -152,37 +191,56 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     from msal import PublicClientApplication
     import requests
     import time
-
-    tenant_id = "<Entra_TenantID>"
-    client_id = "<Entra_ClientID>"
-
-    workspace_id = "<Fabric_WorkspaceID>"
-    lakehouse_id = "<Fabric_LakehouseID>"
-
-    app = PublicClientApplication(
-        client_id,
-        authority="https://login.microsoftonline.com/REDACTED"  # replace REDACTED with your tenant ID
-    )
-
-    result = None
-
-    # If no cached tokens or user interaction needed, acquire tokens interactively
-    if not result:
-        result = app.acquire_token_interactive(scopes=["https://api.fabric.microsoft.com/Lakehouse.Execute.All", "https://api.fabric.microsoft.com/Lakehouse.Read.All", "https://api.fabric.microsoft.com/Item.ReadWrite.All", "https://api.fabric.microsoft.com/Workspace.ReadWrite.All", "https://api.fabric.microsoft.com/Code.AccessStorage.All", "https://api.fabric.microsoft.com/Code.AccessAzureKeyvault.All", 
-        "https://api.fabric.microsoft.com/Code.AccessAzureDataExplorer.All", "https://api.fabric.microsoft.com/Code.AccessAzureDataLake.All", "https://api.fabric.microsoft.com/Code.AccessFabric.All"])
-
-    # Print the access token (you can use it to call APIs)
-    if "access_token" in result:
-        print(f"Access token: {result['access_token']}")
-    else:
-        print("Authentication failed or no access token obtained.")
-
-    if "access_token" in result:
-        access_token = result['access_token']
-        api_base_url ='https://api.fabric.microsoft.com/v1'
-        livy_base_url = api_base_url + "/workspaces/" + workspace_id + "/lakehouses/" + lakehouse_id + "/livyApi/versions/2023-12-01/batches"
-        headers = {"Authorization": "Bearer " + access_token}
-        print(access_token)
+    
+    # Configuration - Replace with your actual values
+    tenant_id = "Entra_TenantID"  # Azure AD Tenant ID
+    client_id = "Entra_ClientID"  # Application ID (can be the same as above or different)
+    
+    # Required scopes for Microsoft Fabric API access
+    scopes = [
+        "https://api.fabric.microsoft.com/Lakehouse.Execute.All",      # Execute operations in lakehouses
+        "https://api.fabric.microsoft.com/Lakehouse.Read.All",        # Read lakehouse metadata
+        "https://api.fabric.microsoft.com/Item.ReadWrite.All",        # Read/write fabric items
+        "https://api.fabric.microsoft.com/Workspace.ReadWrite.All",   # Access workspace operations
+        "https://api.fabric.microsoft.com/Code.AccessStorage.All",    # Access storage from code
+        "https://api.fabric.microsoft.com/Code.AccessAzureKeyvault.All",     # Access Azure Key Vault
+        "https://api.fabric.microsoft.com/Code.AccessAzureDataExplorer.All", # Access Azure Data Explorer
+        "https://api.fabric.microsoft.com/Code.AccessAzureDataLake.All",     # Access Azure Data Lake
+        "https://api.fabric.microsoft.com/Code.AccessFabric.All"             # General Fabric access
+    ]
+    
+    def get_access_token(tenant_id, client_id, scopes):
+        """
+        Get an access token using interactive authentication.
+        
+        This method will open a browser window for user authentication.
+        
+        Args:
+            tenant_id (str): The Azure Active Directory tenant ID
+            client_id (str): The application client ID
+            scopes (list): List of required permission scopes
+            
+        Returns:
+            str: The access token, or None if authentication fails
+        """
+        app = PublicClientApplication(
+            client_id,
+            authority=f"https://login.microsoftonline.com/{tenant_id}"
+        )
+    
+        print("Opening browser for interactive authentication...")
+        token_response = app.acquire_token_interactive(scopes=scopes)
+    
+        if "access_token" in token_response:
+            print("Successfully authenticated")
+            return token_response["access_token"]
+        else:
+            print(f"Authentication failed: {token_response.get('error_description', 'Unknown error')}")
+            return None
+    
+    # Uncomment the lines below to use interactive authentication
+    token = get_access_token(tenant_id, client_id, scopes)
+    print("Access token acquired via interactive login")
     ```
 
 1. Run the notebook cell, a popup should appear in your browser allowing you to choose the identity to sign-in with.
@@ -201,56 +259,82 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra token returned after running cell and logging in." lightbox="media/livy-api/Livy-session-entra-token.png":::
 
-1. Add another notebook cell and insert this code.
-
-    ```python
-    # call get batch API
-
-    get_livy_get_batch = livy_base_url
-    get_batch_response = requests.get(get_livy_get_batch, headers = headers)
-    if get_batch_response.status_code == 200:
-        print("API call successful")
-        print(get_batch_response.json())
-    else:
-        print(f"API call failed with status code: {get_batch_response.status_code}")
-        print(get_batch_response.text)
-    ```
-
-1. Run the notebook cell, you should see two lines printed as the Livy batch job is created.
-
-    :::image type="content" source="media\livy-api\Livy-batch.png" alt-text="Screenshot showing the results of the batch session creation." lightbox="media\livy-api\Livy-batch.png" :::
-
-## Submit a spark.sql statement using the Livy API batch session
+## Submit a Livy Batch and monitor batch job.
 
 1. Add another notebook cell and insert this code.
 
     ```python
     # submit payload to existing batch session
 
-    print('Submit a spark job via the livy batch API to ') 
-
-    newlakehouseName = "YourNewLakehouseName"
-    create_lakehouse = api_base_url + "/workspaces/" + workspace_id + "/items"
-    create_lakehouse_payload = {
-        "displayName": newlakehouseName,
-        "type": 'Lakehouse'
-        }
-
-    create_lakehouse_response = requests.post(create_lakehouse, headers = headers, json = create_lakehouse_payload)
-    print(create_lakehouse_response.json())
-
+    import requests
+    import time
+    import json
+    
+    api_base_url = "https://api.fabric.microsoft.com/v1"  # Base URL for Fabric APIs
+    
+    # Fabric Resource IDs - Replace with your workspace and lakehouse IDs  
+    workspace_id = "Fabric_WorkspaceID"
+    lakehouse_id = "Fabric_LakehouseID"
+    
+    # Construct the Livy Batch API URL
+    # URL pattern: {base_url}/workspaces/{workspace_id}/lakehouses/{lakehouse_id}/livyApi/versions/{api_version}/batches
+    livy_base_url = f"{api_base_url}/workspaces/{workspace_id}/lakehouses/{lakehouse_id}/livyApi/versions/2023-12-01/batches"
+    
+    # Set up authentication headers
+    headers = {"Authorization": f"Bearer {token}"}
+    
+    print(f"Livy Batch API URL: {livy_base_url}")
+    
+    new_table_name = "TABLE_NAME"  # Name for the new table
+    
+    # Configure the batch job
+    print("Configuring batch job parameters...")
+    
+    # Batch job configuration - Modify these values for your use case
     payload_data = {
-        "name":"livybatchdemo_with"+ newlakehouseName,
-        "file":"abfss://YourABFSPathToYourPayload.py", 
+        # Job name - will appear in the Fabric UI
+        "name": f"livy_batch_demo_{new_table_name}",
+        
+        # Path to your Python file in the lakehouse
+        "file": "<ABFSS_PATH_TO_YOUR_PYTHON_FILE>",  # Replace with your Python file path
+        
+        # Optional: Spark configuration parameters
         "conf": {
-            "spark.targetLakehouse": "Fabric_LakehouseID"
-            }
-        }
-
-    get_batch_response = requests.post(get_livy_get_batch, headers = headers, json = payload_data)
-
-    print("The Livy batch job submitted successful")
-    print(get_batch_response.json())
+            "spark.targetTable": new_table_name,  # Custom configuration for your application
+        },
+    }
+    
+    print("Batch Job Configuration:")
+    print(json.dumps(payload_data, indent=2))
+    
+    try:
+        # Submit the batch job
+        print("\nSubmitting batch job...")
+        post_batch = requests.post(livy_base_url, headers=headers, json=payload_data)
+        
+        if post_batch.status_code == 202:
+            batch_info = post_batch.json()
+            print("Livy batch job submitted successfully!")
+            print(f"Batch Job Info: {json.dumps(batch_info, indent=2)}")
+            
+            # Extract batch ID for monitoring
+            batch_id = batch_info['id']
+            livy_batch_get_url = f"{livy_base_url}/{batch_id}"
+            
+            print(f"\nBatch Job ID: {batch_id}")
+            print(f"Monitoring URL: {livy_batch_get_url}")
+            
+        else:
+            print(f"Failed to submit batch job. Status code: {post_batch.status_code}")
+            print(f"Response: {post_batch.text}")
+            
+    except requests.exceptions.RequestException as e:
+        print(f"Network error occurred: {e}")
+    except json.JSONDecodeError as e:
+        print(f"JSON decode error: {e}")
+        print(f"Response text: {post_batch.text}")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
     ```
 
 1. Run the notebook cell, you should see several lines printed as the Livy Batch job is created and run.
