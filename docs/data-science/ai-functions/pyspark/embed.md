@@ -23,7 +23,7 @@ The `ai.embed` function uses generative AI to convert text into vector embedding
 
 The `ai.embed` function is available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify the name of an existing input column as a parameter. You must also specify a single common text value for comparisons, or the name of another column for pairwise comparisons.
 
-The function returns a new DataFrame that includes embed vectors for each row of input text, in an output column.
+The function returns a new DataFrame that includes embeddings for each row of input text, in an output column.
 
 ## Syntax
 
@@ -35,13 +35,13 @@ df.ai.embed(input_col="col1", output_col="embed")
 
 | Name | Description |
 |---|---|
-| `input_col` <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column with input text values to use for computing embed vectors. |
-| `output_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store calculated embed vectors for each input text row. If you don't set this parameter, a default name generates for the output column. |
+| `input_col` <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column with input text values to use for computing embeddings. |
+| `output_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store calculated embeddings for each input text row. If you don't set this parameter, a default name generates for the output column. |
 | `error_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column that stores any OpenAI errors that result from processing each input text row. If you don't set this parameter, a default name generates for the error column. If an input row has no errors, this column has a `null` value. |
 
 ## Returns
 
-The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) that includes a new column that contains generated embed vectors for each input text row.
+The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) that includes a new column that contains generated embeddings for each input text row.
 
 ## Example
 
@@ -61,7 +61,7 @@ display(embed)
 
 This example code cell provides the following output:
 
-:::image type="content" source="../../media/ai-functions/embed-example-output.png" alt-text="Screenshot of a data frame with columns 'name' and 'embed'. The 'embed' column contains embed scores for the names and input word." lightbox="../../media/ai-functions/embed-example-output.png":::
+:::image type="content" source="../../media/ai-functions/embed-example-output.png" alt-text="Screenshot of a data frame with columns 'descriptions' and 'embed'. The 'embed' column contains embeddings for the descriptions." lightbox="../../media/ai-functions/embed-example-output.png":::
 
 ## Related content
 

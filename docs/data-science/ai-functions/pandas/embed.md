@@ -25,7 +25,7 @@ The `ai.embed` function extends the [pandas Series](https://pandas.pydata.org/do
 
 To generate vector embeddings of each input row, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column.
 
-The function returns a pandas Series that contains embed vectors, which can be stored in a new DataFrame column.
+The function returns a pandas Series that contains embeddings, which can be stored in a new DataFrame column.
 
 ## Syntax
 
@@ -39,7 +39,7 @@ None.
 
 ## Returns
 
-The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains embed vectors for each input text row.
+The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains embeddings for each input text row.
 
 ## Example
 
@@ -59,7 +59,7 @@ display(df)
 
 This example code cell provides the following output:
 
-:::image type="content" source="../../media/ai-functions/embed-example-output.png" alt-text="Screenshot of a data frame with columns 'descriptions' and 'embed'. The 'embed' column contains embed vectors for the descriptions." lightbox="../../media/ai-functions/embed-example-output.png":::
+:::image type="content" source="../../media/ai-functions/embed-example-output.png" alt-text="Screenshot of a data frame with columns 'descriptions' and 'embed'. The 'embed' column contains embeddings for the descriptions." lightbox="../../media/ai-functions/embed-example-output.png":::
 
 ## Related content
 

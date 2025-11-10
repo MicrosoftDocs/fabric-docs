@@ -56,7 +56,7 @@ df["response"] = df.ai.generate_response(prompt="Instructions for a custom respo
 |--- |---|
 | `prompt` <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) that contains prompt instructions to apply to input text values for custom responses. |
 | `is_prompt_template` <br> Optional | A [Boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) that indicates whether the prompt is a format string or a literal string. If this parameter is set to `True`, then the function considers only the specific row values from each column name that appears in the format string. In this case, those column names must appear between curly braces, and other columns are ignored. If this parameter is set to its default value of `False`, then the function considers all column values as context for each input row. |
-| `response_format` <br> Optional | A [dictionary](https://docs.python.org/3/library/stdtypes.html#dict) that specifies the expected structure of the model’s response. The `type` field can be set to "text" for free-form text, "json_object" to ensure the output is a valid JSON object, or a custom JSON Schema to enforce a specific response structure. If this parameter is not provided, the response is returned as plain text. |
+| `response_format` <br> Optional | A [dictionary](https://docs.python.org/3/library/stdtypes.html#dict) that specifies the expected structure of the model’s response. The `type` field can be set to "text" for free-form text, "json_object" to ensure the output is a valid JSON object, or a custom JSON Schema to enforce a specific response structure. If this parameter isn't provided, the response is returned as plain text. |
 
 ## Returns
 

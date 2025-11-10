@@ -226,7 +226,7 @@ display(embed)
 
 ---
 
-:::image type="content" source="../../media/ai-functions/embed-example-output.png" alt-text="Screenshot of a data frame with columns 'descriptions' and 'embed'. The 'embed' column contains embed vectors for the descriptions." lightbox="../../media/ai-functions/embed-example-output.png":::
+:::image type="content" source="../media/ai-functions/embed-example-output.png" alt-text="Screenshot of a data frame with columns 'descriptions' and 'embed'. The 'embed' column contains embed vectors for the descriptions." lightbox="../media/ai-functions/embed-example-output.png":::
 
 ### Extract entities with ai.extract
 
