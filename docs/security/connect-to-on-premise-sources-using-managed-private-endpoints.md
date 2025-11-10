@@ -277,14 +277,15 @@ If you **don’t have a Private Link Service setup yet**, follow the steps below
 
 ---
 
-# Alternative Option: Use Private Link Service Direct Connect (Preview)
+## Alternative Option: Use Private Link Service Direct Connect (Preview)
 
 If you already know the **destination IP address** of your on-premises or privately hosted resource, you can now use the new **Private Link Service Direct Connect** feature — currently in **public preview**.  
 This feature allows you to connect your Private Link Service **directly to a privately routable IP address**, without requiring a load balancer or IP-forwarding virtual machine.
 
 > [!NOTE]
 > **Private Link Service Direct Connect** is currently in **Public Preview** and available in select regions.  
-> Learn more in the [official Azure documentation](https://learn.microsoft.com/azure/private-link/configure-private-link-service-direct-connect?tabs=powershell%2Cpowershell-pe%2Cverify-powershell%2Ccleanup-powershell).
+> Learn more in the [official Azure documentation](/azure/private-link/configure-private-link-service-direct-connect?tabs=powershell%2Cpowershell-pe%2Cverify-powershell%2Ccleanup-powershell).
+
 
 ## When to use Direct Connect
 
