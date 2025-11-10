@@ -21,7 +21,7 @@ Microsoft Fabric Lakehouse is a data repository for storing, managing, and analy
 When you create a Lakehouse in Microsoft Fabric, a [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) is automatically generated. This endpoint provides a read-only, relational interface over your Delta tables, allowing users to explore and query data using T-SQL. While it offers a familiar SQL experience, it doesn't support the full T-SQL capabilities of a traditional transactional data warehouse. The endpoint also includes a default semantic model, making it easier to use the Lakehouse data in Power BI for reporting and visualization. Together, this setup enables a streamlined experience from data ingestion to analysis and reporting.
 
 > [!NOTE]
-> Only the tables in Delta format are available in the SQL analytics endpoint. Parquet, CSV, and other formats can't be queried using the SQL analytics endpoint. If you don't see your table, you need convert it to Delta format.
+> Only the tables in Delta format are available in the SQL analytics endpoint. Parquet, CSV, and other formats can't be queried using the SQL analytics endpoint. If you don't see your table, you need to convert it to Delta format.
 
 ## Automatic table discovery and registration
 
