@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview #Don't change
-ms.date: 11/10/2025
+ms.date: 10/16/2025
 
 #customer intent: As a data engineer, I want to restrict and manage outbound network connections from my Fabric workspace’s data warehouse workloads, so that I can prevent unauthorized data exfiltration and ensure compliance with my organization’s security requirements.
 
