@@ -37,13 +37,27 @@ df.ai.extract(labels=["entity1", "entity2", "entity3"], input_col="input")
 |---|---|
 | `labels` <br> Required | An [array](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.ArrayType.html) of [strings](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that represents the set of entity types to extract from the text values in the input column. |
 | `input_col` <br> Required | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column with input text values to scan for the custom entities. |
+| `aifunc.ExtractLabel` <br> Optional | One or more label definitions describing the fields to extract. Refer to the ExtractLabel Parameters table for more details. |
 | `error_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each input text row. If you don't set this parameter, a default name generates for the error column. If an input row has no errors, the value in this column is `null`. |
+
+### ExtractLabel Parameters
+| Name | Description |
+|---|---|
+| `label` <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) that represents the entity to extract from the input text values. |
+| `description` <br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that adds extra context for the AI model. It can include requirements, context, or instructions for the AI to consider while performing the extraction. |
+| `max_items` <br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that specifies the maximum number of items to extract for this label. |
+| `type` <br> Optional | JSON schema type for the extracted value. Supported types for this class include `string`, `number`, `integer`, `boolean`, `object`, and `array`. |
+| `properties` <br> Optional | Additional JSON schema properties for the type as a dictionary. It can include supported properties like ‘items’ for arrays, ‘properties’ for objects, ‘enum’ for enum types, and more. See example usage [in this article](https://platform.openai.com/docs/guides/structured-outputs/json-?api-mode=responses#supported-schemas).|
 
 ## Returns
 
 The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column for each specified entity type. The column or columns contain the entities extracted for each row of input text. If the function identifies more than one match for an entity, it returns only one of those matches. If no match is found, the result is `null`.
 
 ## Example
+
+## Example
+
+# [labels only](#tab/labels)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -61,6 +75,31 @@ display(df_entities)
 This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/extract-example-output.png" alt-text="Screenshot showing a new data frame with the columns 'name', 'profession',  and 'city', containing the data extracted from the original data frame." lightbox="../../media/ai-functions/extract-example-output.png":::
+
+## [ExtractLabel](#tab/extract-label)
+
+```python
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
+
+df = spark.createDataFrame([
+        ("Alex Rivera, a 24-year-old midfielder from Barcelona, scored 12 goals last season, with an impressive 5 goals in one game.",),
+        ("Jordan Smith, a 29-year-old striker from Manchester, scored exactly 1 goal in every game, for a total of 34 goals.",)
+    ], ["bio"])
+
+df = df.ai.extract(aifunc.ExtractLabel(
+        label = "goals", 
+        description = "total goals only", 
+        max_items = 1, 
+        type = "integer"), 
+    input_col="bio")
+display(df)
+```
+
+This example code cell provides the following output:
+
+:::image type="content" source="../../media/ai-functions/extract-extractlabel-example-output.png" alt-text="Screenshot showing a data frame with the columns 'bio' and 'goals', containing the data extracted from the original data frame." lightbox="../../media/ai-functions/extract-extractlabel-example-output.png":::
+
+---
 
 
 ## Related content
