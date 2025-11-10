@@ -46,7 +46,7 @@ The Lakehouse explorer offers a unified, graphical representation of your entire
     - Browse your lakehouse directories. 
         - the File Section displays folder-level objects exclusively in the OE. To view files, use the main view area.
     - Select a folder to preview and browse in your Main View area to learn more about your files. 
-    - Perform common actions on your folder objects such as renaming, deleting, creating a new sub-folder or shortcut and upload files and folders. 
+    - Perform common actions on your folder objects such as renaming, deleting, creating a new subfolder or shortcut and upload files and folders. 
 
 - The object explorer allows you to add **multiple lakehouses** as reference allowing you to view & manage them in a single, unified view—making it easier than ever to organize and access your data.
 
@@ -80,10 +80,10 @@ Previewing data files in a lakehouse offers a range of benefits that enhance dat
 Preview is available for the following file types:
   - **Image File Type:** jpg, jpeg, png, bmp, gif, svg
 
-  - **Text File Type:** txt, js, ts, tsx, py, json, xml, css, mjs, md, html, ps1, yaml, yml,log, sql
+  - **Text File Type:** txt, js, ts, tsx, py, json, xml, css, mjs, md, html, ps1, yaml, yml, log, sql
 
 
-## Filter, sort and search Lakehouse objects 
+## Filter, sort, and search Lakehouse objects 
 The sorting, filtering, and searching capabilities make it easier to access and organize data within both the Object Explorer (OE) and the main view area. These tools simplify navigation and management of your Lakehouse data, especially when working with numerous schemas, tables, files, or folders. 
 
 Supported capabilities include: 
@@ -109,7 +109,7 @@ To enable the corresponding feature:
 1. Select **Admin Portal** > **Tenant settings**.
 1. Under **OneLake settings** turn on “Users can access data stored in OneLake with apps external to Fabric.”
 
-:::image type="content" source="media\lakehouse-overview\lakehouse-download-settings.png" alt-text="Image of download settings to enable." lightbox="media\lakehouse-overview\lakehouse-download-settings.png":::
+:::image type="content" source="media\lakehouse-overview\lakehouse-download-settings.png" alt-text="Screenshot of how to enable download switch in tenant settings." lightbox="media\lakehouse-overview\lakehouse-download-settings.png":::
 
 ## Table Deep Links
 
@@ -120,12 +120,12 @@ Simply click on the “…” beside the table and choose “Copy URL.” You ca
 
 ## Ribbon
 
-The lakehouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within your lakehouse. From here, you can refresh your lakehouse, access your item settings,choose options to load data, create or open notebooks, create new custom semantic models, and much more. 
+The lakehouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within your lakehouse. From here, you can refresh your lakehouse, access your item settings, choose options to load data, create or open notebooks, create new custom semantic models, and much more. 
 
 
 ### Access a lakehouse's SQL analytics endpoint
 
-The [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) can be accessed directly from a lakehouse by using the dropdown in top-right area of the ribbon. Using this quick access method, you immediately land in the t-sql mode, which will allow you to work directly on top of your Delta tables in the lake to help you prepare them for reporting.
+The [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) can be accessed directly from a lakehouse by using the dropdown in top-right area of the ribbon. Using this quick access method, you immediately land in the t-sql mode, which allows you to work directly on top of your Delta tables in the lake to help you prepare them for reporting.
 
 
 ## Related content
