@@ -1,22 +1,19 @@
 ---
-title: Warehouse Snapshots (Preview)
+title: Warehouse Snapshots
 description: Learn about warehouse snapshots in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: twcyril
-ms.date: 05/09/2025
+ms.date: 11/10/2025
 ms.service: fabric
 ms.topic: conceptual
 ms.search.form: Warehouse snapshot overview
 ---
-# Warehouse snapshots (preview)
+# Warehouse snapshots
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 A warehouse snapshot is a read-only representation of a warehouse item at a specific point in time, retained to up to 30 days. To get started, [create a warehouse snapshot](create-manage-warehouse-snapshot.md).
-
-> [!NOTE]
-> Warehouse snapshots are currently a [preview feature](../fundamentals/preview.md).
 
 Warehouse snapshots can be seamlessly "rolled forward" on demand, allowing consumers to connect to the same snapshot or use a consistent warehouse connection string to access a past version of the data. When the snapshot timestamp is rolled forward, updates are applied immediately, as if in a single, atomic transaction. Warehouse snapshot ensures that data engineers can provide analytical users with a consistent dataset, even as real-time updates occur. Analysts can run `SELECT` queries based on the snapshot without any ETL interference.
 
