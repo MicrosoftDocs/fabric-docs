@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to
-ms.date: 11/04/2025
+ms.date: 11/10/2025
 
 #customer intent: As a Fabric administrator, I want to enable workspace outbound access protection on my tenant so that workspace admins can securely manage outbound network connections from their workspaces.
 
@@ -33,7 +33,6 @@ To allow workspace admins to manage outbound access protection, a Fabric adminis
 
 1. Select **Apply**.
 
-## Related content
+## Next steps
 
-- [Workspace outbound access protection overview](./workspace-outbound-access-protection-overview.md)
-- [Workspace outbound access protection - scenarios](./workspace-outbound-access-protection-scenarios.md)
+- [Enable workspace outbound access protection](./workspace-outbound-access-protection-set-up.md)
