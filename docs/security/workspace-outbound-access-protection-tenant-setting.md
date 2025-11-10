@@ -33,6 +33,6 @@ To allow workspace admins to manage outbound access protection, a Fabric adminis
 
 1. Select **Apply**.
 
-## Related content
+## Next steps
 
-- [Workspace outbound access protection overview](./workspace-outbound-access-protection-overview.md)
+- [Enable workspace outbound access protection](./workspace-outbound-access-protection-set-up.md)
