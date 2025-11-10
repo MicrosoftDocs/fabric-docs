@@ -37,7 +37,7 @@ Once configured, Data Factory items can connect only to the approved destination
 
 The following Data Factory item types are supported with outbound access protection:
 
-- Data Flows Gen2 (with CICD)
+- Dataflows Gen2 (with CICD)
 - Data Pipelines
 - Copy Jobs
 
@@ -121,9 +121,9 @@ When you allowlist a gateway, dataflows can connect to any data source accessibl
 > [!NOTE]
 > Other Fabric connectors like Datamarts and KQL Database don’t support workspace-level granularity.
 
-- Data Pipelines only support following Fabric connectors:
+- Data Pipelines support only the following Fabric connectors:
 
-  - FabricDataPipeline,
+  - FabricDataPipeline
   - CopyJob
   - UserDataFunction
   - PowerBIDataset

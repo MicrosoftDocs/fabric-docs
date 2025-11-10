@@ -21,7 +21,8 @@ When outbound access protection is enabled for a workspace, all outbound connect
 
    > [!NOTE]
 > One way to create a data gateway is through the **Manage connections and gateways** experience. For details, see [Add or remove a gateway data source](/power-bi/connect-data/service-gateway-data-sources) or [Data Factory data source management](/fabric/data-factory/data-source-management).
-
+> [!IMPORTANT]
+> Essential information required for user success
 This article describes how to use data connection rules in the workspace settings to allow cloud connections and data gateways.
 
 Data connection rules are available for Data Factory workloads. For Data Engineering or OneLake, use [managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md) to allow outbound access.

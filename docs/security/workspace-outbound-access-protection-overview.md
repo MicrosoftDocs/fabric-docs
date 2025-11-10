@@ -46,7 +46,7 @@ In this diagram:
 
 ### Using data connection rules to allow outbound access
 
-For Data Factory workloads, admins can use data connection rules to create an allowlist of approved connectors that can be used within the workspace. By default, all connectors are blocked when outbound access protection is enabled. Admins can then specify which connectors are allowed to be used within the workspace.
+For Data Factory workloads, admins can use data connection rules to create an allowlist of approved connectors that can be used within the workspace. When outbound access protection is enabled, all connectors are blocked by default. Admins can then explicitly allow specific connectors, creating an allowlist of approved connections that workspace items can use to access external services.
 
 :::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-connectors.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection with data connection rules." border="false":::
 
@@ -91,16 +91,15 @@ The following limitations apply when using workspace outbound access protection:
 
 * Outbound access protection isn't supported for schema enabled lakehouses.
 
-* In workspaces with outbound access protection enabled, querying data warehouse file paths from notebooks using the `dbo` schema isnt supported, because access to schema-based paths isn't supported. To query the warehouse from notebooks, use the T-SQL option instead.
+* In workspaces with outbound access protection enabled, querying data warehouse file paths from notebooks using the `dbo` schema isn't supported, because access to schema-based paths isn't supported. To query the warehouse from notebooks, use the T-SQL option instead.
 
 * The Fabric portal UI doesn't currently support enabling both inbound protection (workspace-level private links) and outbound access protection at the same time for a workspace. To configure both settings together, use the [Workspaces - Set Network Communication Policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy?tabs=HTTP), which allows full management of inbound and outbound protection policies.
 
-
-### Data connection rule limitations
+### Data connection rules
 
 #### Internal (Fabric) connection types with workspace-level granularity
 
-Workspace admins can specify which workspaces are allowed as destinations for certain item types. For example, under the Lakehouse connection type, admins can add specific workspaces to the allowlist, enabling Lakehouses in those workspaces to be accessed. The following Fabric connection types support workspace-level granularity in the allowlist:
+Workspace admins can specify which workspaces are allowed as destinations for certain item types. For example, under the Lakehouse connection type, admins can add workspaces to an allowlist, enabling Lakehouses in those workspaces to be accessed. The following Fabric connection types support workspace-level granularity:
 
    * Lakehouse
    * Warehouse
@@ -109,9 +108,39 @@ Workspace admins can specify which workspaces are allowed as destinations for ce
 
 Other Fabric connection types, such as Datamarts, KQL Database, Fabric Data Pipelines, and CopyJob, don't support workspace-level granularity. For these connection types, admins can't specify individual workspaces in the allowlist.
 
-#### External connection type endpoint granularity
+#### External connection types with endpoint granularity
 
-Some external connection types support endpoint-level granularity, such as SQL Server, Azure Data Lake Gen2, Azure Databricks, and Web. When configuring these connection types, workspace admins can add specific endpoint exceptions in the exception box if the connection type supports endpoint granularity. This configuration allows admins to permit outbound connections only to approved endpoints.
+Some external connection types, such as SQL Server, Azure Data Lake Gen2, Azure Databricks, and Web, support endpoint-level granularity. Workspace admins can specify approved endpoints as exceptions, allowing outbound connections only to those endpoints.
+
+#### Summary of connector granularity
+
+The following table summarizes the level of granularity supported by different connector types for outbound access protection.
+
+* *Endpoint* means you can allow access to specific external endpoints. 
+* *Workspace* means you can allow access to specific workspaces.
+
+| Connector type                  | Granularity|
+|---------------------------------|------------|
+| Web                             | Endpoint   |
+| SharePoint                      | Endpoint   |
+| AnalysisServices                | Endpoint   |
+| SQL Server                      | Endpoint   |
+| OData                           | Endpoint   |
+| AzureDataLakeStorage            | Endpoint   |
+| AzureBlobs                      | Endpoint   |
+| Dataflows                       | Workspace  |
+| Snowflake                       | Endpoint   |
+| PostgreSQL                      | Endpoint   |
+| Databricks                      | Endpoint   |
+| HttpServer                      | Endpoint   |
+| RestService                     | Endpoint   |
+| Amazon S3                       | Endpoint   |
+| Web v2                          | Endpoint   |
+| My SQL                          | Endpoint   |
+| Dataverse CommonDataService     | Endpoint   |
+| Lakehouse                       | Workspace  |
+| Warehouse                       | Workspace  |
+| Fabric SQL Database             | Workspace  |
 
 ## Next steps
 
