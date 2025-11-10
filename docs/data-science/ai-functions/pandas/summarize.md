@@ -43,7 +43,9 @@ df["summaries"] = df.ai.summarize()
 
 ## Parameters
 
-None
+| Name | Description |
+|---|---|
+| `instructions` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains additional context for the AI model, such as specifying output length. |
 
 ## Returns
 
