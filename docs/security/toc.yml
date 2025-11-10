@@ -97,18 +97,24 @@ items:
         href: connect-to-on-premise-sources-using-managed-private-endpoints.md
       - name: Workspace outbound access protection
         items: 
-          - name: Overview of workspace outbound access protection
+          - name: About workspace outbound access protection
             href: workspace-outbound-access-protection-overview.md
-          - name: Manage admin access to outbound protection settings
+          - name: Manage admin access to outbound settings
             href: workspace-outbound-access-protection-tenant-setting.md
           - name: Set up workspace outbound access protection
-            href: workspace-outbound-access-protection-set-up.md
-          - name: Workspace outbound access protection scenarios
-            href: workspace-outbound-access-protection-scenarios.md
-          - name: Workspace outbound access protection for data engineering
-            href: workspace-outbound-access-protection-data-engineering.md
-          - name: Workspace outbound access protection for Data Warehouse
-            href: workspace-outbound-access-protection-data-warehouse.md
+            items:
+              - name: Enable workspace outbound access protection
+                href: workspace-outbound-access-protection-set-up.md
+              - name: Create allowlist using managed private endpoints
+                href: workspace-outbound-access-protection-allow-list-endpoint.md
+          - name: Scenarios
+            items:
+              - name: Workspace outbound access protection scenarios
+                href: workspace-outbound-access-protection-scenarios.md
+              - name: Data Engineering
+                href: workspace-outbound-access-protection-data-engineering.md
+              - name: Data Warehouse
+                href: workspace-outbound-access-protection-data-warehouse.md
       - name: Trusted workspace access
         href: security-trusted-workspace-access.md
 - name: Data security

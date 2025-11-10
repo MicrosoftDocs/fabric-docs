@@ -35,7 +35,6 @@ These data destinations support incremental refresh:
 - Fabric Lakehouse
 - Fabric Warehouse
 - Azure SQL Database
-- Azure Synapse Analytics
 
 You can use other destinations with incremental refresh too. Create a second query that references the staged data to update your destination. This approach still lets you use incremental refresh to reduce the data that needs processing from the source system. However, you'll need to do a full refresh from the staged data to your final destination. 
 
@@ -165,6 +164,7 @@ When working with lakehouse as a data destination, be aware of these limitations
 
   If you must use other writers, make sure they don't conflict with the incremental refresh process. Also, table maintenance like OPTIMIZE or REORG TABLE operations aren't supported for tables that use incremental refresh.
 - If you leverage a data gateway to connect to your data sources, ensure that the gateway is updated to at least version May 2025 update (3000.270) or later. This is crucial for maintaining compatibility and ensuring that incremental refresh functions correctly with lakehouse destinations.
+- Switching from non-incremental to incremental refresh with existing overlapping data in the destination is not supported. If the lakehouse destination already contains data for buckets that overlap with the incremental buckets defined in the settings, the system cannot safely convert to incremental refresh without rewriting the entire Delta table. We recommend to filter the initial ingestion to include only data before the earliest incremental bucket to avoid overlap and ensure correct refresh behavior.
 
 ### The data destination must be set to a fixed schema
 

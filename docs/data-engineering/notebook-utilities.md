@@ -762,6 +762,9 @@ Here is an overview of the available methods provided by `notebookutils.lakehous
 # Create a new Lakehouse artifact
 create(name: String, description: String = "", definition: ItemDefinition = null, workspaceId: String = ""): Artifact
 
+# Create Lakehouse with Schema Support
+create(name: String, description: String = "", definition: {"enableSchemas": True}): Artifact
+
 # Retrieve a Lakehouse artifact
 get(name: String, workspaceId: String = ""): Artifact
 
@@ -791,6 +794,8 @@ To utilize these methods effectively, consider the following usage examples:
 #### Creating a Lakehouse
 ```python
 artifact = notebookutils.lakehouse.create("artifact_name", "Description of the artifact", "optional_workspace_id")
+# Create Lakehouse with Schema Support
+artifact = notebookutils.lakehouse.create("artifact_name", "Description of the artifact", {"enableSchemas": True})
 ```
 
 #### Getting a Lakehouse
