@@ -91,7 +91,7 @@ Event triggers let you start pipelines when specific events happen, like when fi
 
 Triggers use Fabric platform features including eventstreams and Data Activator alerts. You can create triggers from the pipeline canvas or directly in the Data Activator experience.
 
-> [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=9f36af9d-f362-4452-a221-ca27d39da11c]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=9f36af9d-f362-4452-a221-ca27d39da11c]
 
 ### Set up storage event triggers
 
@@ -99,9 +99,9 @@ Triggers use Fabric platform features including eventstreams and Data Activator 
 
    :::image type="content" source="media/pipeline-storage-event-triggers/set-trigger-button.png" alt-text="Screenshot showing the Trigger button on the Home ribbon of the pipeline canvas editor window.":::
 
-1. The **Set alert** panel opens. Here you can define source events for your trigger using the Data Activator alert service.
+1. The **Set alert** panel opens. Here you can define source events for your trigger using the Data Activator alert service. You can add values to parameters, if needed.
 
-   :::image type="content" source="media/pipeline-storage-event-triggers/set-alert-panel.png" alt-text="Screenshot showing the Set Alert panel.":::
+   :::image type="content" source="media/pipeline-storage-event-triggers/set-alert-panel-with-parameters.png" alt-text="Screenshot showing the Set Alert panel.":::
 
 1. Select the type of events you want to listen for. Choose `OneLake` events for OneLake file events, Azure Blob events, etc.
 
