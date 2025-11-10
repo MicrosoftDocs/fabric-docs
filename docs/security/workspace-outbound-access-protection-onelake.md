@@ -5,7 +5,7 @@ description: Learn how to configure Workspace Outbound Access Protection (OAP) t
 author: msmimart
 ms.author: mimart
 ms.reviewer: mimart
-ms.date: 09/23/2025
+ms.date: 11/10/2025
 ms.topic: how-to
 ---
 

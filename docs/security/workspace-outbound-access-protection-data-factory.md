@@ -5,7 +5,7 @@ description: Learn how to configure Workspace Outbound Access Protection (outbou
 author: msmimart
 ms.author: mimart
 ms.reviewer: mimart
-ms.date: 10/20/2025
+ms.date: 11/10/2025
 ms.topic: how-to
 ---
 

@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview
-ms.date: 11/05/2025
+ms.date: 11/10/2025
 
 #customer intent: As a Fabric administrator, I want to control and secure outbound connections from workspace artifacts so that I can protect organizational data and ensure compliance with security policies.
 
