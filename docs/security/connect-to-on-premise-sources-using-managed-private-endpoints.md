@@ -8,7 +8,7 @@ ms.custom: sfi-image-nochange, sfi-ropc-nochange
 ms.date: 10/07/2025
 ---
 
-# Connect on-premises data sources to Microsoft Fabric using managed private endpoints
+# Connect to external sources or on-premises data sources to Microsoft Fabric using managed private endpoints
 
 With managed private endpoints, you can securely connect Microsoft Fabric workloads such as Spark or Data Pipelines to your **on-premises** or **custom-hosted data sources** through an approved private link setup.  
 This approach ensures that traffic flows through the Microsoft backbone network instead of the public internet — maintaining end-to-end data privacy and compliance.
@@ -261,7 +261,7 @@ To maintain secure and compliant access:
 * Rotate credentials and review endpoint approvals periodically.
 
 
-## End-to-end setup: Connecting Fabric to an on-premises SQL Server
+## End-to-end setup: Connecting Fabric to an on-premises SQL Server or any external data source
 
 If you **don’t have a Private Link Service setup yet**, follow the steps below to build the entire topology — from the network layer to Fabric integration.
 
@@ -276,6 +276,101 @@ If you **don’t have a Private Link Service setup yet**, follow the steps below
 
 
 ---
+
+# Alternative Option: Use Private Link Service Direct Connect (Preview)
+
+If you already know the **destination IP address** of your on-premises or privately hosted resource, you can now use the new **Private Link Service Direct Connect** feature — currently in **public preview**.  
+This feature allows you to connect your Private Link Service **directly to a privately routable IP address**, without requiring a load balancer or IP-forwarding virtual machine.
+
+> [!NOTE]
+> **Private Link Service Direct Connect** is currently in **Public Preview** and available in select regions.  
+> Learn more in the [official Azure documentation](https://learn.microsoft.com/azure/private-link/configure-private-link-service-direct-connect?tabs=powershell%2Cpowershell-pe%2Cverify-powershell%2Ccleanup-powershell).
+
+## When to use Direct Connect
+
+Use this option if:
+- You already have a **static private IP address** for your data source (for example, `10.0.1.50` for an on-premises database or application).
+- You don’t need load balancing or NAT forwarding in Azure.
+- You want to simplify network topology and reduce latency.
+
+Common scenarios include:
+- Direct connection to on-premises databases or servers via ExpressRoute or VPN.
+- Access to third-party SaaS or network appliances reachable through private IPs.
+- Legacy applications that depend on IP-based routing instead of DNS.
+
+## Key Benefits
+
+| **Benefit** | **Description** |
+|--------------|-----------------|
+| **Simplified setup** | No need to create or maintain an internal load balancer or forwarding VMs. |
+| **Lower latency** | Directly routes traffic to the destination IP without intermediate hops. |
+| **Supports IP-based workloads** | Ideal for applications requiring static IP connections. |
+| **Reduced Azure cost footprint** | Eliminates VM and load balancer costs for simple connectivity patterns. |
+
+## Important Considerations
+
+- Requires at least **2 IP configurations** (in multiples of 2) for high availability.
+- Supports **static destination IP addresses only**.
+- Source Private Endpoint, Private Link Service, and Fabric workspace must reside in the **same region** (cross-region is not yet supported).
+- Available only in select regions during preview: *North Central US, East US 2, Central US, South Central US, West US, West US 2, West US 3, Southeast Asia, Australia East, Spain Central*.
+- You must enable the feature flag `Microsoft.Network/AllowPrivateLinkserviceUDR` in your Azure subscription.
+
+## Example: Creating a Private Link Service Direct Connect (PowerShell)
+
+The example below creates a Private Link Service Direct Connect pointing directly to a destination IP address `10.0.1.100`.
+
+```powershell
+# Variables
+$resourceGroupName = "rg-pls-directconnect"
+$location = "westus"
+$vnetName = "pls-vnet"
+$subnetName = "pls-subnet"
+$plsName = "pls-directconnect"
+$destinationIP = "10.0.1.100"
+
+# Create resource group
+New-AzResourceGroup -Name $resourceGroupName -Location $location
+
+# Create VNet and subnet
+$subnet = New-AzVirtualNetworkSubnetConfig -Name $subnetName -AddressPrefix "10.0.1.0/24" -PrivateLinkServiceNetworkPoliciesFlag "Disabled"
+$vnet = New-AzVirtualNetwork -Name $vnetName -ResourceGroupName $resourceGroupName -Location $location -AddressPrefix "10.0.0.0/16" -Subnet $subnet
+
+# Create IP configurations (minimum 2)
+$subnet = Get-AzVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name $subnetName
+$ipConfig1 = @{ Name = "ipconfig1"; PrivateIpAllocationMethod = "Dynamic"; Subnet = $subnet; Primary = $true }
+$ipConfig2 = @{ Name = "ipconfig2"; PrivateIpAllocationMethod = "Dynamic"; Subnet = $subnet; Primary = $false }
+
+# Create Private Link Service Direct Connect
+New-AzPrivateLinkService `
+    -Name $plsName `
+    -ResourceGroupName $resourceGroupName `
+    -Location $location `
+    -IpConfiguration @($ipConfig1, $ipConfig2) `
+    -DestinationIPAddress $destinationIP
+```
+
+Once created, you can **use this new Private Link Service ID** (`/subscriptions/.../providers/Microsoft.Network/privateLinkServices/pls-directconnect`)  
+in your **Fabric Managed Private Endpoint** setup, as documented in **Step 2: Create a Managed Private Endpoint using the Fabric REST API** above.
+
+> [!TIP]
+> From Fabric’s perspective, the process is identical — you still create an MPE referencing the PLS resource ID,  
+> but the underlying Azure resource now routes **directly to your destination IP** instead of through a load balancer.
+
+## Comparison: Standard vs. Direct Connect
+
+| **Aspect** | **Standard Private Link Service** | **Private Link Service Direct Connect (Preview)** |
+|-------------|-----------------------------------|--------------------------------------------------|
+| **Target type** | Load balancer frontend IP | Static private destination IP |
+| **Typical use** | Applications or databases fronted by a load balancer or forwarder VMs | Databases or custom services with fixed IPs |
+| **Setup complexity** | Requires Load Balancer + optional NAT forwarding | Simple: directly specify target IP |
+| **Availability** | Generally available | Public Preview (limited regions) |
+| **Fabric integration** | Supported | Supported via same MPE API flow |
+| **Ideal for** | Multi-VM or high-availability services | Single-node private IP workloads |
+
+**In summary:**  
+If your environment already exposes a **static private IP address** that Fabric needs to reach, use **Private Link Service Direct Connect (Preview)** to simplify your setup and reduce networking overhead.  
+Otherwise, follow the **standard Private Link Service + Load Balancer** pattern already covered in this documentation.
+
 
 ### Step 1: Create subnets for resources
 
