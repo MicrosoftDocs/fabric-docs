@@ -46,9 +46,9 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-overview.png":::
 
-## Authenticate a Livy API Spark session using either an Entra user token or an Entra SPN token
+## Authenticate a Livy API Spark session using either a Microsoft Entra user token or a Microsoft Entra SPN token
 
-### Authenticate a Livy API Spark session using an Entra SPN token
+### Authenticate a Livy API Spark session using a Microsoft Entra SPN token
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
@@ -57,7 +57,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     from msal import ConfidentialClientApplication
     
     # Configuration - Replace with your actual values
-    tenant_id = "Entra_TenantID"  # Azure AD Tenant ID
+    tenant_id = "Entra_TenantID"  # Microsoft Entra tenant ID
     client_id = "Entra_ClientID"  # Service Principal Application ID
     
     # Certificate paths - Update these paths to your certificate files
@@ -132,7 +132,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/livy-api/livy-session-entra-spn-token.png" alt-text="Screenshot showing the Microsoft Entra SPN token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-spn-token.png":::
 
-### Authenticate a Livy API Spark session using an Entra user token
+### Authenticate a Livy API Spark session using a Microsoft Entra user token
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
@@ -142,7 +142,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     import time
     
     # Configuration - Replace with your actual values
-    tenant_id = "Entra_TenantID"  # Azure AD Tenant ID
+    tenant_id = "Entra_TenantID"  # Microsoft Entra tenant ID
     client_id = "Entra_ClientID"  # Application ID (can be the same as above or different)
     
     # Required scopes for Microsoft Fabric API access
@@ -165,7 +165,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         This method will open a browser window for user authentication.
         
         Args:
-            tenant_id (str): The Azure Active Directory tenant ID
+            tenant_id (str): The Microsoft Entra tenant ID
             client_id (str): The application client ID
             scopes (list): List of required permission scopes
             
@@ -259,7 +259,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 ### Integration with Fabric Environments
 
-By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs. To use a Fabric Environment, simply update the prior notebook cell with this json payload.
+By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs. To use a Fabric Environment, update the prior notebook cell with this json payload.
 
 ```python
 create_livy_session = requests.post(livy_base_url, headers = headers, json = {

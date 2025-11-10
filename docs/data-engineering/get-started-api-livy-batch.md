@@ -82,11 +82,11 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         df_valid_totalPrice_plus_year.write.mode('overwrite').format('delta').save(deltaTablePath)
     ```
 
-1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse and needs to be uploaded to your Lakehouse.  You'll need the ABFS path of the payload to reference in your Livy API batch job in Visual Studio Code and your Lakehouse table name in the Select SQL statement..
+1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse and needs to be uploaded to your Lakehouse.  You need the ABFS path of the payload to reference in your Livy API batch job in Visual Studio Code and your Lakehouse table name in the Select SQL statement.
 
     :::image type="content" source="media\livy-api\Livy-batch-payload.png" alt-text="Screenshot showing the Python payload cell." lightbox="media\livy-api\Livy-batch-payload.png" :::
 
-1. Upload the Python payload to the files section of your Lakehouse. > Get data > Upload files > click in the Files/ input box.
+1. Upload the Python payload to the files section of your Lakehouse. In the Lakehouse explorer, select **Files**. Then select > **Get data** > **Upload files**. Select files via the file picker.
 
     :::image type="content" source="media\livy-api\Livy-batch-payload-in-lakehouse-files.png" alt-text="Screenshot showing payload in Files section of the Lakehouse." lightbox="media\livy-api\Livy-batch-payload-in-lakehouse-files.png" :::
 
@@ -96,9 +96,9 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Copy this ABFS path to your Notebook cell in step 1.
 
-## Authenticate a Livy API Spark batch session using either an Entra user token or an Entra SPN token
+## Authenticate a Livy API Spark batch session using either a Microsoft Entra user token or a Microsoft Entra SPN token
 
-### Authenticate a Livy API Spark batch session using an Entra SPN token
+### Authenticate a Livy API Spark batch session using a Microsoft Entra SPN token
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
@@ -107,7 +107,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     from msal import ConfidentialClientApplication
     
     # Configuration - Replace with your actual values
-    tenant_id = "Entra_TenantID"  # Azure AD Tenant ID
+    tenant_id = "Entra_TenantID"  # Microsoft Entra tenant ID
     client_id = "Entra_ClientID"  # Service Principal Application ID
     
     # Certificate paths - Update these paths to your certificate files
@@ -183,7 +183,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/livy-api/livy-session-entra-spn-token.png" alt-text="Screenshot showing the Microsoft Entra SPN token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-spn-token.png":::
 
-### Authenticate a Livy API Spark session using an Entra user token
+### Authenticate a Livy API Spark session using a Microsoft Entra user token
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
@@ -193,7 +193,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     import time
     
     # Configuration - Replace with your actual values
-    tenant_id = "Entra_TenantID"  # Azure AD Tenant ID
+    tenant_id = "Entra_TenantID"  # Microsoft Entra tenant ID
     client_id = "Entra_ClientID"  # Application ID (can be the same as above or different)
     
     # Required scopes for Microsoft Fabric API access
@@ -247,7 +247,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/livy-api/entra-logon-user.png" alt-text="Screenshot showing logon screen to Microsoft Entra app." lightbox="media/livy-api/entra-logon-user.png" :::
 
-1. After you choose the identity to sign-in with, you'll also be asked to approve the Microsoft Entra app registration API permissions.
+1. After you choose the identity to sign-in with, you need to approve the Microsoft Entra app registration API permissions.
 
     :::image type="content" source="media/livy-api/entra-logon.png" alt-text="Screenshot showing Microsoft Entra app API permissions." lightbox="media/livy-api/entra-logon.png" :::
 
@@ -341,11 +341,11 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media\livy-api\Livy-batch-job-submission.png" alt-text="Screenshot showing results in Visual Studio Code after Livy Batch Job has been successfully submitted." lightbox="media\livy-api\Livy-batch-job-submission.png" :::
 
-1. Navigate back to your Lakehouse to see the changes.
+1. To see the changes, navigate back to your Lakehouse.
 
 ## Integration with Fabric Environments
 
-By default, this Livy API session runs against the default starter pool for the workspace.  Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  To use your Fabric Environment, simply update the prior notebook cell with this one line line change.
+By default, this Livy API session runs against the default starter pool for the workspace.  Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  To use your Fabric Environment, update the prior notebook cell with this one line change.
 
 ```python
 payload_data = {
