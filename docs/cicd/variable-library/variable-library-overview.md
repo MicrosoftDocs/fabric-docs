@@ -74,9 +74,10 @@ The following items support the variable library:
 
 - [Pipeline ](../../data-factory/variable-library-integration-with-data-pipelines.md)
 - [Shortcut for a lakehouse ](../../onelake/assign-variables-to-shortcuts.md)
-- Notebook , through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities) and [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
+- Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities) and [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
 - [Dataflow Gen 2](../../data-factory/dataflow-gen2-variable-library-integration.md)
 - [Copy job](../../data-factory/cicd-copy-job.md)
+- [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md#get-variables-from-fabric-variable-libraries)
 
 ## Considerations and limitations
 
