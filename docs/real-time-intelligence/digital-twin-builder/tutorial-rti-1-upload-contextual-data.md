@@ -3,7 +3,7 @@ title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Uploa
 description: Prepare your environment for the tutorial scenario by uploading the static, contextual sample data to a lakehouse.
 author: baanders
 ms.author: baanders
-ms.date: 04/28/2025
+ms.date: 11/10/2025
 ms.topic: tutorial
 ---
 
