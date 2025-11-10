@@ -45,7 +45,7 @@ df_entities = df["text"].ai.extract("entity1", "entity2", "entity3")
 | `description` <br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that adds extra context for the AI model. It can include requirements, context, or instructions for the AI to consider while performing the extraction. |
 | `max_items` <br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that specifies the maximum number of items to extract for this label. |
 | `type` <br> Optional | JSON schema type for the extracted value. Supported types for this class include `string`, `number`, `integer`, `boolean`, `object`, and `array`. |
-| `properties` <br> Optional | More JSON schema properties for the type as a dictionary. It can include supported properties like ‘items’ for arrays, ‘properties’ for objects, ‘enum’ for enum types, and more. See example usage [in this article](https://platform.openai.com/docs/guides/structured-outputs/json-?api-mode=responses#supported-schemas).|
+| `properties` <br> Optional | More JSON schema properties for the type as a dictionary. It can include supported properties like "items" for arrays, "properties" for objects, "enum" for enum types, and more. See example usage [in this article](https://platform.openai.com/docs/guides/structured-outputs/json-?api-mode=responses#supported-schemas).|
 
 ## Returns
 
@@ -87,7 +87,7 @@ display(df)
 
 This example code cell provides the following output:
 
-:::image type="content" source="../../media/ai-functions/extract-extractlabel-example-output.png" alt-text="Screenshot showing a data frame with the columns 'bio' and 'goals', containing the data extracted from the original data frame." lightbox="../../media/ai-functions/extract-extractlabel-example-output.png":::
+:::image type="content" source="../../media/ai-functions/extract-extract-label-example-output.png" alt-text="Screenshot showing a data frame with the columns 'bio' and 'goals', containing the data extracted from the original data frame." lightbox="../../media/ai-functions/extract-extract-label-example-output.png":::
 
 ---
 
