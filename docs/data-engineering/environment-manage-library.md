@@ -46,7 +46,7 @@ To add a new library from public repository, i.e., PyPI or conda, select ***Add 
 
 #### Setup connection for your Azure Artifact Feed
 
-In Fabric, directly storing the credential is forbidden. The connections need to be setup through in [Data Factory Connector](/fabric/data-factory/connector-overview). Following is a step-by-step guidance to set-up the connection for Azure Artifact Feed. Learn more about [Azure Artifact Feed](/azure/devops/artifacts/quickstarts/python-packages?view=azure-devops&tabs=twine).
+In Fabric, directly storing the credential is forbidden. The connections need to be setup through in [Data Factory Connector](/fabric/data-factory/connector-overview). Following is a step-by-step guidance to set-up the connection for Azure Artifact Feed. Learn more about [Azure Artifact Feed](/azure/devops/artifacts/quickstarts/python-packages).
 
 **Step 1**: In your workspace ***Settings***, go to ***Manage connections and gateways***.
 
