@@ -4,17 +4,14 @@ description: Learn how to create, use, and manage warehouse snapshots in Fabric 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: twcyril
-ms.date: 10/22/2025
+ms.date: 11/10/2025
 ms.service: fabric
 ms.topic: how-to
 ms.search.form: Manage warehouse snapshots
 ---
-# Create and manage a warehouse snapshot (preview)
+# Create and manage a warehouse snapshot
 
 This article includes steps to create and manage warehouse snapshots using the Fabric portal, T-SQL queries, or the [Fabric API](/rest/api/fabric/articles/).
-
-> [!NOTE]
-> Warehouse snapshots are currently a [preview feature](../fundamentals/preview.md).
 
 ## Prerequisites
 
