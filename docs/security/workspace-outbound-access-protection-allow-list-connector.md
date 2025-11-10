@@ -17,19 +17,16 @@ When outbound access protection is enabled for a workspace, all outbound connect
 
 - **Cloud connections**: You can configure different types of cloud connections, such as lakehouses, databases, and SaaS services. Some connection types can only be fully allowed or fully blocked. Others let you block the connection type by default, but specify exceptions. For example, you can block the Lakehouse connection type for all workspaces except those you explicitly allow.
 
-- **Data gateways**: Data gateways let you securely connect to on-premises or virtual network resources. Only previously-created data gateways can be allowed or blocked using data connection rules. 
+- **Data gateways**: Data gateways let you securely connect to on-premises or virtual network resources. Only previously-created data gateways can be allowed or blocked using data connection rules. One way to create a data gateway is by using the **Manage connections and gateways** feature; see [Add or remove a gateway data source](/power-bi/connect-data/service-gateway-data-sources) or [Manage Data Factory data sources](/fabric/data-factory/data-source-management).
 
-   > [!NOTE]
-> One way to create a data gateway is through the **Manage connections and gateways** experience. For details, see [Add or remove a gateway data source](/power-bi/connect-data/service-gateway-data-sources) or [Data Factory data source management](/fabric/data-factory/data-source-management).
-> [!IMPORTANT]
-> Essential information required for user success
 This article describes how to use data connection rules in the workspace settings to allow cloud connections and data gateways.
 
-Data connection rules are available for Data Factory workloads. For Data Engineering or OneLake, use [managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md) to allow outbound access.
+> [!NOTE]
+> Data connection rules are available for Data Factory workloads. For Data Engineering or OneLake, use [managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md) to allow outbound access.
 
 ## How to create an allowlist using data connection rules
 
-When you enable the **Block outbound public access** setting in the outbound access protection settings, all outbound connections are blocked by default. To allow cloud or gateway connections, configure data connection rules using the Fabric portal or REST API.
+When you enable the **Block outbound public access** setting in the outbound access protection settings, all outbound connections are blocked by default. To allow cloud or gateway connections, configure data connection rules.<!-- You can use either the Fabric portal or the REST API.-->
 
 <!--### [Fabric portal](#tab/fabric-portal-2)-->
 
