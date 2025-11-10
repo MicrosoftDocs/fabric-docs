@@ -21,6 +21,7 @@ AI functions use industry-leading large language models (LLMs) for summarization
 
 - [`ai.analyze_sentiment`](#detect-sentiment-with-aianalyze_sentiment): Detect the emotional state of input text.
 - [`ai.classify`](#categorize-text-with-aiclassify): Categorize input text according to your labels.
+- [`ai.embed`](#generate-vector-embeddings-with-aiembed): Generate vector embeddings for input text.
 - [`ai.extract`](#extract-entities-with-aiextract): Extract specific types of information from input text (for example, locations or names).
 - [`ai.fix_grammar`](#fix-grammar-with-aifix_grammar): Correct the spelling, grammar, and punctuation of input text.
 - [`ai.generate_response`](#answer-custom-user-prompts-with-aigenerate_response): Generate responses based on your own instructions.
@@ -187,6 +188,45 @@ display(categories)
 ---
 
 :::image type="content" source="../media/ai-functions/classify-example-output.png" alt-text="Screenshot of a data frame with 'descriptions' and 'category' columns. The 'category' column lists each description’s category name." lightbox="../media/ai-functions/classify-example-output.png":::
+
+### Generate vector embeddings with ai.embed
+The `ai.embed` function invokes AI to generate vector embeddings for input text. For more detailed instructions about the use of `ai.embed` with pandas, see [this article](./pandas/embed.md). For `ai.embed` with PySpark, see [this article](./pyspark/embed.md).
+
+# [pandas](#tab/pandas)
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+
+df = pd.DataFrame([
+        "This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",
+        "Tired of friends judging your baking? With these handy-dandy measuring cups, you'll create culinary delights.",
+        "Enjoy this *BRAND NEW CAR!* A compact SUV perfect for the professional commuter!"
+    ], columns=["descriptions"])
+    
+df["embed"] = df["descriptions"].ai.embed()
+display(df)
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+
+df = spark.createDataFrame([
+        ("This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",), 
+        ("Tired of friends judging your baking? With these handy-dandy measuring cups, you'll create culinary delights.",), 
+        ("Enjoy this *BRAND NEW CAR!* A compact SUV perfect for the professional commuter!",) 
+    ], ["descriptions"])
+
+embed = df.ai.embed(input_col="descriptions", output_col="embed")
+display(embed)
+```
+
+---
+
+:::image type="content" source="../../media/ai-functions/embed-example-output.png" alt-text="Screenshot of a data frame with columns 'descriptions' and 'embed'. The 'embed' column contains embed vectors for the descriptions." lightbox="../../media/ai-functions/embed-example-output.png":::
 
 ### Extract entities with ai.extract
 

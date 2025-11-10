@@ -1,0 +1,77 @@
+---
+title: Use ai.embed with pandas
+description: Learn how to convert text into numeric vectors that capture its meaning and context by using the ai.embed function with pandas.
+ms.author: jburchel
+author: jonburchel
+ms.reviewer: vimeland
+reviewer: virginiaroman
+ms.topic: how-to
+ms.date: 09/19/2025
+ms.search.form: AI functions
+---
+
+# Use ai.embed with pandas
+
+The `ai.embed` function uses generative AI to convert text into vector embeddings. These vectors let AI understand relationships between texts, so you can search, group, and compare content based on meaning rather than exact wording. With a single line of code, you can generate vector embeddings from a column in a DataFrame.
+
+> [!NOTE]
+> - This article covers using *ai.embed* with pandas. To use *ai.embed* with PySpark, see [this article](../pyspark/embed.md).
+> - See other AI functions in [this overview article](../overview.md).
+> - Learn how to customize the [configuration of AI functions](./configuration.md).
+
+## Overview
+
+The `ai.embed` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class.
+
+To generate vector embeddings of each input row, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column.
+
+The function returns a pandas Series that contains embed vectors, which can be stored in a new DataFrame column.
+
+## Syntax
+
+```python
+df["embed"] = df["col1"].ai.embed()
+```
+
+## Parameters
+
+None.
+
+## Returns
+
+The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains embed vectors for each input text row.
+
+## Example
+
+```python
+# This code uses AI. Always review output for mistakes. 
+# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+
+df = pd.DataFrame([
+        "This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",
+        "Tired of friends judging your baking? With these handy-dandy measuring cups, you'll create culinary delights.",
+        "Enjoy this *BRAND NEW CAR!* A compact SUV perfect for the professional commuter!"
+    ], columns=["descriptions"])
+    
+df["embed"] = df["descriptions"].ai.embed()
+display(df)
+```
+
+This example code cell provides the following output:
+
+:::image type="content" source="../../media/ai-functions/embed-example-output.png" alt-text="Screenshot of a data frame with columns 'descriptions' and 'embed'. The 'embed' column contains embed vectors for the descriptions." lightbox="../../media/ai-functions/embed-example-output.png":::
+
+## Related content
+
+- Use [ai.embed with PySpark](../pyspark/embed.md).
+- Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
+- Categorize text with [ai.classify](./classify.md).
+- Extract entities with [ai_extract](./extract.md).
+- Fix grammar with [ai.fix_grammar](./fix-grammar.md).
+- Answer custom user prompts with [ai.generate_response](./generate-response.md).
+- Summarize text with [ai.summarize](./summarize.md).
+- Translate text with [ai.translate](./translate.md).
+
+- Learn more about the [full set of AI functions](../overview.md).
+- Customize the [configuration of AI functions](./configuration.md).
+- Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

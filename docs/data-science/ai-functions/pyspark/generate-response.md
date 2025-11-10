@@ -105,11 +105,12 @@ This example code cell provides the following output:
 ## Related content
 
 - Use [ai.generate_response with pandas](../pandas/generate-response.md).
-- Calculate similarity with [ai.similarity](./similarity.md).
-- Categorize text with [ai.classify](./classify.md).
 - Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
+- Categorize text with [ai.classify](./classify.md).
+- Generate vector embeddings with [ai.embed](./embed.md).
 - Extract entities with [ai_extract](./extract.md).
 - Fix grammar with [ai.fix_grammar](./fix-grammar.md).
+- Calculate similarity with [ai.similarity](./similarity.md).
 - Summarize text with [ai.summarize](./summarize.md).
 - Translate text with [ai.translate](./translate.md).
 - Learn more about the [full set of AI functions](../overview.md).

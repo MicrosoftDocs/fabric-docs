@@ -41,6 +41,8 @@ items:
       href: ./ai-functions/pandas/analyze-sentiment.md
     - name: ai.classify
       href: ./ai-functions/pandas/classify.md
+    - name: ai.embed
+      href: ./ai-functions/pandas/embed.md
     - name: ai.extract
       href: ./ai-functions/pandas/extract.md
     - name: ai.fix_grammar
@@ -61,6 +63,8 @@ items:
       href: ./ai-functions/pyspark/analyze-sentiment.md
     - name: ai.classify
       href: ./ai-functions/pyspark/classify.md
+    - name: ai.embed
+      href: ./ai-functions/pyspark/embed.md
     - name: ai.extract
       href: ./ai-functions/pyspark/extract.md
     - name: ai.fix_grammar
