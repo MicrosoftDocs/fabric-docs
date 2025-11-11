@@ -1,21 +1,22 @@
 ---
-title: dbt jobs
-description: Learn how to use dbt jobs to transform your data using SQL from within Fabric
+title: dbt jobs in Microsoft Fabric (Preview)
+description: Learn how to use dbt jobs to transform your data using SQL from within Fabric.
 ms.reviewer: whhender
 ms.author: akurnala
 author: abhinayakurnala1
-ms.date: 10/11/2025
+ms.date: 11/11/2025
 ms.custom:
    - dbt
 ---
 
-# What is a dbt job?
+# What is a dbt job? (Preview)
 
-dbt jobs in Microsoft Fabric enable SQL-based data transformations directly within the Fabric user interface. They provide a simple, no-code setup to build, test, and deploy dbt models on top of your Fabric data warehouse.
+> [!NOTE]
+> Currently, this feature is in [preview](/fabric/fundamentals/preview).
+
+[dbt](https://docs.getdbt.com/) jobs in Microsoft Fabric enable SQL-based data transformations directly within the Fabric user interface. They provide a simple, no-code setup to build, test, and deploy dbt models on top of your Fabric data warehouse.
 
 With dbt jobs, you can develop and manage your transformation logic in one place—without relying on the command line or external orchestration tools. Fabric’s integration with dbt Core allows you to schedule, monitor, and visualize dbt workflows using the same workspace where your data pipelines and reports live.
-
-This native experience simplifies collaboration, improves governance, and ensures that every transformation aligns with your organization’s security and compliance policies.
 
 ## Prerequisites
 
@@ -23,19 +24,19 @@ Before creating dbt jobs in Microsoft Fabric, ensure your environment is properl
 
 1. Enable dbt jobs:
     - Go to the Admin Portal in Fabric.
-    - Under Tenant Settings, enable the dbt Jobs (Preview) feature for your organization or specific security groups.
-  
-1. Create a workspace:
-    - In the Fabric portal, select Workspaces > New workspace.
-    - Assign the appropriate permissions (Contributor or higher) for users who will create or edit dbt jobs.
+    - Under Tenant Settings, enable the **dbt Jobs (Preview)** feature for your organization or specific security groups.
+1. If you haven't already, [create a workspace](/fabric/fundamentals/create-workspaces).
+1. If you haven't already, [set up a Fabric Data Warehouse](/fabric/data-warehouse/create-warehouse).
 
-1. Set up a Fabric Data Warehouse:
-    - dbt jobs require a connection to a Fabric Data Warehouse.
-    - Verify that your workspace includes at least one warehouse and that you have write access.
+### Permissions and access
 
-1. Permissions and aAccess:
-    - Ensure you have both build and read/write access to linked datasets and connections.
-    - Check that your Fabric environment supports the latest dbt Core version supported by Fabric.
+- In your Fabric workspace, assign Contributor or higher roles to users who will create or manage dbt jobs.
+- For the target Fabric Data Warehouse, ensure users have read/write permissions to execute dbt transformations
+- Ensure you have both build and read/write access to linked datasets and connections.
+
+## dbt version supported
+
+Fabric currently supports dbt Core v1.7 (subject to periodic updates). Microsoft maintains alignment with major dbt Core releases to ensure compatibility and feature parity. Updates are applied automatically, with notifications in the Fabric release notes.
 
 ## Create a dbt job
 
@@ -69,7 +70,7 @@ Use dbt configurations to set (or review) your dbt profile:
 1. (Optional) Check Seed data if you want to load CSVs on dbt seed or dbt build.
 1. Select Apply.
 
-:::image type="content" source="media/dbt-job/profile-adapter.png" alt-text="Screenshot of the Fabric UI with the dbt job profile adapter settings.":::
+    :::image type="content" source="media/dbt-job/profile-adapter.png" alt-text="Screenshot of the Fabric UI with the dbt job profile adapter settings.":::
 
 ## Change adapter
 
@@ -104,7 +105,7 @@ Here you can adjust project-level execution options:
 1. (Optional) Enable Fail fast or Full refresh as needed.
 1. Select Apply to save.
 
-:::image type="content" source="media/dbt-job/advanced-settings.png" alt-text="Screenshot of the Fabric UI with the dbt job general settings.":::
+    :::image type="content" source="media/dbt-job/advanced-settings.png" alt-text="Screenshot of the Fabric UI with the dbt job general settings.":::
 
 ### Run settings
 
@@ -170,7 +171,7 @@ Scheduling allows you to:
     - **Time zone**: Select your preferred time zone for scheduling.
 1. Select Save to activate the schedule.
 
-:::image type="content" source="media/dbt-job/schedule-dbt.png" alt-text="Screenshot of the Fabric UI with the dbt job schedule settings.":::
+    :::image type="content" source="media/dbt-job/schedule-dbt.png" alt-text="Screenshot of the Fabric UI with the dbt job schedule settings.":::
 
 ## dbt job settings and commands
 
@@ -216,10 +217,6 @@ dbt build --exclude deprecated_models
 
 Selectors let you target parts of your pipeline for faster iteration during development or testing.
 
-## dbt version supported
-
-Fabric currently supports dbt Core v1.7 (subject to periodic updates). Microsoft maintains alignment with major dbt Core releases to ensure compatibility and feature parity. Updates are applied automatically, with notifications in the Fabric release notes.
-
 ## Adapters Supported
 
 The following dbt adapters are supported in Microsoft Fabric:
@@ -251,7 +248,5 @@ To optimize performance, avoid long dependency chains and prefer well-partitione
 
 ## Related Content
 
-- [Microsoft Fabric Documentation](/fabric/)
 - [dbt Official Documentation](https://docs.getdbt.com/)
-- [Fabric Data Factory Overview](/fabric/data-factory/)
-- [Getting Started with dbt in Fabric (Tutorial)](https://statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html)
+- [Get started with dbt in Fabric (Tutorial)](https://statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html)
