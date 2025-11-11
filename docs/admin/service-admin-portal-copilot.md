@@ -99,13 +99,13 @@ You can enable copilot as a standalone experience for Fabric. Enabling this sett
 
 **Default:** Disabled
 
-<a id="limit-to-prepped"></a>
-## Only show AI-prepped items in the standalone Copilot in Power BI experience (preview) 
+<a id="limit-to-approved"></a>
+## Only show approved items in the standalone Copilot in Power BI experience (preview) 
 
-Tenant admins can default Copilot search to be limited to items that have prepped for AI. This setting is delegated to workspace admins by default, allowing workspace admins to make broader content findable by Copilot search when appropriate. 
+Tenant admins can default Copilot search to be limited to items that are marked as approved for Copilot. This setting is delegated to workspace admins by default, allowing workspace admins to make broader content findable by Copilot search when appropriate. 
 
 Note that this setting is applicable in the standalone Power BI Copilot as well as the Power BI agent. If this setting is turned on for standalone Copilot, it is also mandatory for the Power BI agent. To learn more, see [standalone Copilot experience](/power-bi/create-reports/copilot-enable-power-bi).
-![Screenshot of only show AI-prepped items in the standalone Copilot tenant setting.](media/service-admin-portal-copilot/limit-to-prepped.png)
+![Screenshot of only show approved-for-copilot items in the standalone Copilot tenant setting.](media/service-admin-portal-copilot/admin-setting-only-show-approved-items.png)
 
 **Default:** Disabled
 
