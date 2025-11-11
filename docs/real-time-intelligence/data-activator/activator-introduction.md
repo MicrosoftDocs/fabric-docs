@@ -136,11 +136,10 @@ When a rule’s conditions are met and an action is initiated, then the rule is 
 - Fabric pipelines (for data movement, enrichment)
 - Fabric notebooks (for machine-learning scoring, diagnostics)
 - Fabric spark jobs (for batch/streaming jobs)
-
 - Fabric functions (for custom business logic with code)
-
 - Power Automate flows (for business process integration)
 - Teams notifications (using template-based messaging)
+- Email notifications
 
 Activator emits a trigger message with the current object state and rule metadata, and actions are nonblocking, that is, and Activator doesn't wait for completions of actions to enable scalable asynchronous flows.
 
