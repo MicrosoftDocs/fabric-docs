@@ -4,8 +4,7 @@ description: Learn how to use dbt jobs to transform your data using SQL from wit
 ms.reviewer: whhender
 ms.author: akurnala
 author: abhinayakurnala1
-ms.topic: A dbt job runs SQL-based data transformations in Fabric, scheduled and managed natively.
-ms.date: 11/11/2025
+ms.date: 10/11/2025
 ms.custom:
    - dbt
 ---
@@ -44,13 +43,13 @@ Before creating dbt jobs in Microsoft Fabric, ensure your environment is properl
 1. Select New item > dbt job from the item creation menu.
 1. Enter a name and select a location.
 
-    :::image type="content" source="media/dbt-activity/create_job.png" alt-text="Screenshot of the Fabric UI with the create job pop-up.":::
+    :::image type="content" source="media/dbt-job/create-job.png" alt-text="Screenshot of the Fabric UI with the create job pop-up.":::
 
 1. Choose the target Fabric Data Warehouse connection.
 1. Configure job parameters and save the new dbt job item.
 1. Once created, you can open the dbt job to view its file structure, configure settings, and run dbt commands directly from the Fabric UI.
 
-   :::image type="content" source="media/dbt-activity/landing_page.png" alt-text="Screenshot of the Fabric UI with landing page of dbt job.":::
+   :::image type="content" source="media/dbt-job/landing-page.png" alt-text="Screenshot of the Fabric UI with landing page of dbt job.":::
 
 ## Configure a dbt job
 
@@ -70,7 +69,7 @@ Use dbt configurations to set (or review) your dbt profile:
 1. (Optional) Check Seed data if you want to load CSVs on dbt seed or dbt build.
 1. Select Apply.
 
-:::image type="content" source="media/dbt-activity/profile_adapter.png" alt-text="Screenshot of the Fabric UI with the dbt job profile adapter settings.":::
+:::image type="content" source="media/dbt-job/profile-adapter.png" alt-text="Screenshot of the Fabric UI with the dbt job profile adapter settings.":::
 
 ## Change adapter
 
@@ -105,7 +104,7 @@ Here you can adjust project-level execution options:
 1. (Optional) Enable Fail fast or Full refresh as needed.
 1. Select Apply to save.
 
-:::image type="content" source="media/dbt-activity/advanced_settings.png" alt-text="Screenshot of the Fabric UI with the dbt job advanced run settings.":::
+:::image type="content" source="media/dbt-job/advanced-settings.png" alt-text="Screenshot of the Fabric UI with the dbt job general settings.":::
 
 ### Run settings
 
@@ -116,7 +115,7 @@ This tab lets you control which models run and how to select them:
 - Run only selected models: Choose specific models to include in the run (for example, orders, stg_customers, etc.).
 - Run with advanced selectors: Use dbt selectors for granular control (unions, intersections, exclusions).
 
-    :::image type="content" source="media/dbt-activity/run_settings.png" alt-text="Screenshot of the Fabric UI with the dbt job advanced run settings.":::
+    :::image type="content" source="media/dbt-job/run-settings.png" alt-text="Screenshot of the Fabric UI with the dbt job advanced run settings.":::
 
 **Advanced selector configuration**:
 
@@ -124,7 +123,7 @@ This tab lets you control which models run and how to select them:
 - Select: Specify resources (models, tags, packages).
 - Exclude: List resources to skip.
 
-    :::image type="content" source="media/dbt-activity/running_with_advance_selectors.png" alt-text="Screenshot of the Fabric UI with the dbt job advanced selector run settings.":::
+    :::image type="content" source="media/dbt-job/running-with-advance-selectors.png" alt-text="Screenshot of the Fabric UI with the dbt job advanced selector run settings.":::
 
 1. Select Advanced Settings → Run settings.
 1. Choose your run mode:
@@ -171,14 +170,14 @@ Scheduling allows you to:
     - **Time zone**: Select your preferred time zone for scheduling.
 1. Select Save to activate the schedule.
 
-:::image type="content" source="media/dbt-activity/schedule_dbt.png" alt-text="Screenshot of the Fabric UI with the dbt job schedule settings.":::
+:::image type="content" source="media/dbt-job/schedule-dbt.png" alt-text="Screenshot of the Fabric UI with the dbt job schedule settings.":::
 
 ## dbt job settings and commands
 
 Each dbt job in Fabric includes key tabs to help manage your project:
 
 ```
-my_dbt_project/ 
+my-dbt_project/ 
 ├── dbt_project.yml     # Project configuration 
 ├── models/             # SQL models for transformations 
 │   ├── staging/ 
@@ -250,7 +249,7 @@ These features help maintain reliability and observability across your transform
 
 To optimize performance, avoid long dependency chains and prefer well-partitioned transformations.
 
-# Related Content
+## Related Content
 
 - [Microsoft Fabric Documentation](/fabric/)
 - [dbt Official Documentation](https://docs.getdbt.com/)
