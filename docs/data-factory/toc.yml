@@ -61,7 +61,7 @@
             href: tutorial-end-to-end-introduction.md
           - name: Module 1 - Create a pipeline
             href: tutorial-end-to-end-pipeline.md
-          - name: Module 2 - Transform data with a dataflow
+          - name: Module 2 -  data with a dataflow
             href: tutorial-end-to-end-dataflow.md
           - name: Module 3 - Automate and send notification
             href: tutorial-end-to-end-integration.md
@@ -82,7 +82,7 @@
       - name: Monitoring activity in Data Factory
         href: monitor-data-factory.md
       - name: Operationalize Data Factory
-        href: transform-data.md
+        href: -data.md
   - name: Migrate to Fabric
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
@@ -883,8 +883,8 @@
             items: 
               - name: Copy from Azure Blob Storage to Lakehouse
                 href: tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse.md
-              - name: Copy sample data into Lakehouse and transform with a dataflow
-                href: tutorial-load-data-lakehouse-transform.md
+              - name: Copy sample data into Lakehouse and  with a dataflow
+                href: tutorial-load-data-lakehouse-.md
               - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
                 href: tutorial-preprocess-data-with-stored-procedure-load-into-lakehouse.md
               - name: Move data from Azure SQL DB into Lakehouse via copy assistant
@@ -997,6 +997,8 @@
             href: dataflow-gen2-copilot-explain.md
           - name: Copilot in Modern Get Data
             href: copilot-modern-get-data.md
+    - name: dbt job
+      href: dbt-job-overview.md
   - name: Orchestrate your pipelines
     items:
       - name: What is a pipeline?
