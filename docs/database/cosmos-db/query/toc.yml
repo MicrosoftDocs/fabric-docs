@@ -12,15 +12,6 @@ items:
   - name: Perform self-joins
     displayName: self-joins, join
     href: /cosmos-db/query/join?context=/fabric/context/context-database
-  - name: Constants
-    displayName: literals, values
-    href: /cosmos-db/query/constants?context=/fabric/context/context-database
-  - name: Scalar expressions
-    displayName: scalar values
-    href: /cosmos-db/query/scalar?context=/fabric/context/context-database
-  - name: Subqueries
-    displayName: clause, subquery
-    href: /cosmos-db/query/subquery?context=/fabric/context/context-database
   - name: Clauses
     displayName: clauses, expressions
     expanded: true
@@ -53,6 +44,18 @@ items:
       - name: BETWEEN
         displayName: between, keyword
         href: /cosmos-db/query/between?context=/fabric/context/context-database
+      - name: DISTINCT
+        displayName: distinct, keyword
+        href: ../distinct.md
+      - name: LIKE
+        displayName: like, keyword
+        href: ../like.md
+      - name: IN
+        displayName: in, keyword
+        href: ../in.md
+      - name: TOP
+        displayName: top, keyword
+        href: ../top.md
   - name: Functions
     displayName: commands, operators
     expanded: true
@@ -169,6 +172,8 @@ items:
             href: /cosmos-db/query/trunc?context=/fabric/context/context-database
       - name: Array functions
         items:
+          - name: ARRAY_AVG
+            href: /cosmos-db/query/array-avg?context=/fabric/context/context-database
           - name: ARRAY_CONCAT
             displayName: array, array concat, array-concat, arrayconcat, concat
             href: /cosmos-db/query/array-concat?context=/fabric/context/context-database
@@ -184,15 +189,27 @@ items:
           - name: ARRAY_LENGTH
             displayName: array, array length, array-length, arraylength, length
             href: /cosmos-db/query/array-length?context=/fabric/context/context-database
+          - name: ARRAY_MAX
+            href: /cosmos-db/query/array-max?context=/fabric/context/context-database
+          - name: ARRAY_MEDIAN
+            href: /cosmos-db/query/array-median?context=/fabric/context/context-database
+          - name: ARRAY_MIN
+            href: /cosmos-db/query/array-min?context=/fabric/context/context-database
           - name: ARRAY_SLICE
             displayName: array, array slice, array-slice, arrayslice, slice
             href: /cosmos-db/query/array-slice?context=/fabric/context/context-database
+          - name: ARRAY_SUM
+            href: /cosmos-db/query/array-sum?context=/fabric/context/context-database
           - name: CHOOSE
             displayName: array, choose
             href: /cosmos-db/query/choose?context=/fabric/context/context-database
           - name: OBJECTTOARRAY
             displayName: array, objecttoarray
             href: /cosmos-db/query/objecttoarray?context=/fabric/context/context-database
+          - name: SETDIFFERENCE
+            href: /cosmos-db/query/setdifference?context=/fabric/context/context-database
+          - name: SETEQUAL
+            href: /cosmos-db/query/setequal?context=/fabric/context/context-database
           - name: SETINTERSECT
             displayName: array, setintersect
             href: /cosmos-db/query/setintersect?context=/fabric/context/context-database
@@ -224,12 +241,22 @@ items:
           - name: CONTAINS
             displayName: contains, string
             href: /cosmos-db/query/contains?context=/fabric/context/context-database
+          - name: CONTAINS_ALL_CI
+            href: /cosmos-db/query/contains-all-ci?context=/fabric/context/context-database
+          - name: CONTAINS_ALL_CS
+            href: /cosmos-db/query/contains-all-cs?context=/fabric/context/context-database
+          - name: CONTAINS_ANY_CI
+            href: /cosmos-db/query/contains-any-ci?context=/fabric/context/context-database
+          - name: CONTAINS_ANY_CS
+            href: /cosmos-db/query/contains-any-cs?context=/fabric/context/context-database
           - name: ENDSWITH
             displayName: endswith, string
             href: /cosmos-db/query/endswith?context=/fabric/context/context-database
           - name: INDEX-OF
             displayName: index, index of, index-of, of, string
             href: /cosmos-db/query/index-of?context=/fabric/context/context-database
+          - name: LASTINDEXOF
+            href: /cosmos-db/query/lastindexof?context=/fabric/context/context-database
           - name: LEFT
             displayName: left, string
             href: /cosmos-db/query/left?context=/fabric/context/context-database
@@ -292,6 +319,8 @@ items:
             href: /cosmos-db/query/upper?context=/fabric/context/context-database
       - name: Date and time functions
         items:
+          - name: AGO
+            href: /cosmos-db/query/ago?context=/fabric/context/context-database
           - name: DATETIMEADD
             displayName: and, date, date and time, date-and-time, dateandtime, datetimeadd, time
             href: /cosmos-db/query/datetimeadd?context=/fabric/context/context-database
@@ -301,6 +330,8 @@ items:
           - name: DATETIMEDIFF
             displayName: and, date, date and time, date-and-time, dateandtime, datetimediff, time
             href: /cosmos-db/query/datetimediff?context=/fabric/context/context-database
+          - name: DATETIMEFORMAT
+            href: /cosmos-db/query/datetimeformat?context=/fabric/context/context-database
           - name: DATETIMEFROMPARTS
             displayName: and, date, date and time, date-and-time, dateandtime, datetimefromparts, time
             href: /cosmos-db/query/datetimefromparts?context=/fabric/context/context-database
@@ -313,6 +344,8 @@ items:
           - name: DATETIMETOTIMESTAMP
             displayName: and, date, date and time, date-and-time, dateandtime, datetimetotimestamp, time
             href: /cosmos-db/query/datetimetotimestamp?context=/fabric/context/context-database
+          - name: DAY
+            href: /cosmos-db/query/day?context=/fabric/context/context-database
           - name: GETCURRENTDATETIME
             displayName: and, date, date and time, date-and-time, dateandtime, getcurrentdatetime, time
             href: /cosmos-db/query/getcurrentdatetime?context=/fabric/context/context-database
@@ -331,12 +364,20 @@ items:
           - name: GETCURRENTTIMESTAMPSTATIC
             displayName: and, date, date and time, date-and-time, dateandtime, getcurrenttimestampstatic, time
             href: /cosmos-db/query/getcurrenttimestampstatic?context=/fabric/context/context-database
+          - name: IS_DATETIME
+            href: /cosmos-db/query/is-datetime?context=/fabric/context/context-database
+          - name: MONTH
+            href: /cosmos-db/query/month?context=/fabric/context/context-database
+          - name: NOW
+            href: /cosmos-db/query/now?context=/fabric/context/context-database
           - name: TICKSTODATETIME
             displayName: and, date, date and time, date-and-time, dateandtime, tickstodatetime, time
             href: /cosmos-db/query/tickstodatetime?context=/fabric/context/context-database
           - name: TIMESTAMPTODATETIME
             displayName: and, date, date and time, date-and-time, dateandtime, time, timestamptodatetime
             href: /cosmos-db/query/timestamptodatetime?context=/fabric/context/context-database
+          - name: YEAR
+            href: /cosmos-db/query/year?context=/fabric/context/context-database
       - name: Item functions
         items:
           - name: DOCUMENTID
@@ -428,3 +469,74 @@ items:
           - name: VECTORDISTANCE
             displayName: spatial, vectordistance
             href: /cosmos-db/query/vectordistance?context=/fabric/context/context-database
+  - name: Syntax
+    expanded: true
+    items:
+      - name: Constants
+        displayName: literals, values
+        href: /cosmos-db/query/constants?context=/fabric/context/context-database
+      - name: Keywords
+        displayName: reserved words
+        href: /cosmos-db/query/keywords?context=/fabric/context/context-database
+      - name: Scalar expressions
+        displayName: scalar values
+        href: /cosmos-db/query/scalar?context=/fabric/context/context-database
+      - name: Subqueries
+        displayName: clause, subquery
+        href: /cosmos-db/query/subquery?context=/fabric/context/context-database
+      - name: Geospatial data
+        displayName: spatial, polygon, line, geojson, geometry, geography, location, geo
+        href: /cosmos-db/query/geospatial?context=/fabric/context/context-database
+      - name: Dates and times
+        displayName: datetime, timestamp, timezone, datepart, timepart
+        href: /cosmos-db/query/dates?context=/fabric/context/context-database
+      - name: Operators
+        displayName: arithmetic, logical, comparison, bitwise, ternary, coalesce
+        href: /cosmos-db/query/operators?context=/fabric/context/context-database
+  - name: Concepts
+    displayName: syntax, parts, elements, features
+    expanded: false
+    items:
+      - name: Computed properties
+        displayName: property, field, calculated, preprocessed
+        href: /cosmos-db/query/computed-properties?context=/fabric/context/context-database
+      - name: LINQ to SQL
+        displayName: LINQ, Language Integrated Query, .NET, C#
+        href: /cosmos-db/query/linq-to-sql?context=/fabric/context/context-database
+      - name: Pagination
+        displayName: paginate, continuation token, next page, page size
+        href: /cosmos-db/query/pagination?context=/fabric/context/context-database
+      - name: Parameterized queries
+        displayName: parameters, parameter, injection, cross site scripting, cross-site, css
+        href: /cosmos-db/query/parameterized-queries?context=/fabric/context/context-database
+  - name: Query Advisor
+    displayName: improve query performance, optimize queries
+    expanded: false
+    items:
+      - name: Query Advisor overview
+        displayName: Improve queries with Query Advisor
+        href: /cosmos-db/query/advisor?context=/fabric/context/context-database
+      - name: QA1000 - Array_CONTAINS
+        displayName: ARRAY_CONTAINS, partial match, performance
+        href: /cosmos-db/query/advisor/QA1000?context=/fabric/context/context-database
+      - name: QA1002 - Contains
+        displayName: CONTAINS, string search, performance
+        href: /cosmos-db/query/advisor/QA1002?context=/fabric/context/context-database
+      - name: QA1003 - Case insensitivity
+        displayName: STARTSWITH, StringEquals, case insensitive, performance
+        href: /cosmos-db/query/advisor/QA1003?context=/fabric/context/context-database
+      - name: QA1004 - EndsWith
+        displayName: ENDSWITH, string matching, performance
+        href: /cosmos-db/query/advisor/QA1004?context=/fabric/context/context-database
+      - name: QA1006 - UPPER or LOWER
+        displayName: UPPER, LOWER, case conversion, performance
+        href: /cosmos-db/query/advisor/QA1006?context=/fabric/context/context-database
+      - name: QA1007 - GetCurrentDateTime
+        displayName: GetCurrentDateTime, system function, performance
+        href: /cosmos-db/query/advisor/QA1007?context=/fabric/context/context-database
+      - name: QA1008 - GetCurrentTicks
+        displayName: GetCurrentTicks, system function, performance
+        href: /cosmos-db/query/advisor/QA1008?context=/fabric/context/context-database
+      - name: QA1009 - GetCurrentTimestamp
+        displayName: GetCurrentTimestamp, system function, performance
+        href: /cosmos-db/query/advisor/QA1009?context=/fabric/context/context-database
