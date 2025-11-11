@@ -82,7 +82,7 @@
       - name: Monitoring activity in Data Factory
         href: monitor-data-factory.md
       - name: Operationalize Data Factory
-        href: -data.md
+        href: transform-data.md
   - name: Migrate to Fabric
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
@@ -884,7 +884,7 @@
               - name: Copy from Azure Blob Storage to Lakehouse
                 href: tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse.md
               - name: Copy sample data into Lakehouse and  with a dataflow
-                href: tutorial-load-data-lakehouse-.md
+                href: tutorial-load-data-lakehouse-transform.md
               - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
                 href: tutorial-preprocess-data-with-stored-procedure-load-into-lakehouse.md
               - name: Move data from Azure SQL DB into Lakehouse via copy assistant
