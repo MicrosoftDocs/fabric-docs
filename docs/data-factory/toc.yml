@@ -997,8 +997,8 @@
             href: dataflow-gen2-copilot-explain.md
           - name: Copilot in Modern Get Data
             href: copilot-modern-get-data.md
-    - name: dbt job
-      href: dbt-job-overview.md
+      - name: dbt job
+        href: dbt-job-overview.md
   - name: Orchestrate your pipelines
     items:
       - name: What is a pipeline?
