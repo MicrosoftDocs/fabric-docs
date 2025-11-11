@@ -71,7 +71,7 @@ Review this sample indexing policy with both full text and vector indexes:
 
 ## Hybrid search queries
 
-Hybrid search queries can be executed by using the [`RRF`](/nosql/query/rrf) system function in an `ORDER BY RANK` clause that includes both a `VECTORDISTANCE` function and `FULLTEXTSCORE`. For example, a parameterized query to find the top *k* most relevant results would look like:
+Hybrid search queries can be executed by using the [`RRF`](/cosmos-db/query/rrf) system function in an `ORDER BY RANK` clause that includes both a `VECTORDISTANCE` function and `FULLTEXTSCORE`. For example, a parameterized query to find the top *k* most relevant results would look like:
 
 ```nosql
 SELECT TOP @k

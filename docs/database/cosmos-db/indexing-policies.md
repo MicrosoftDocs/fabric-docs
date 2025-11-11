@@ -517,7 +517,7 @@ The following considerations apply when creating composite indexes to optimize a
 
 ### Queries with a filter and an aggregate
 
-If a query filters on one or more properties and has an aggregate system function, it might be helpful to create a composite index for the properties in the filter and aggregate system function. This optimization applies to the [`SUM`](/nosql/query/sum) and [`AVG`](/nosql/query/avg) system functions.
+If a query filters on one or more properties and has an aggregate system function, it might be helpful to create a composite index for the properties in the filter and aggregate system function. This optimization applies to the [`SUM`](/cosmos-db/query/sum) and [`AVG`](/cosmos-db/query/avg) system functions.
 
 The following considerations apply when creating composite indexes to optimize a query with a filter and aggregate system function.
 

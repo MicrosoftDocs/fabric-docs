@@ -43,7 +43,7 @@ First, use the **Settings** section for a container to customize and observe the
 1. Select **Save** to persist your changes.
 
     > [!TIP]
-    > For more information on time-to-live (TTL) configuration, see [time-to-live](time-to-live.md). For more information on geospatial configuration, see [geospatial data](/nosql/query/geospatial).
+    > For more information on time-to-live (TTL) configuration, see [time-to-live](time-to-live.md). For more information on geospatial configuration, see [geospatial data](/cosmos-db/query/geospatial).
 
 ## Rework indexing policy
 

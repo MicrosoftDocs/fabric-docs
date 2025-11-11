@@ -35,13 +35,13 @@ landingContent:
       - linkListType: reference
         links:
           - text: NoSQL query language
-            url: /nosql/query/overview?context=/fabric/context/context-database
+            url: /cosmos-db/query/overview?context=/fabric/context/context-database
           - text: Work with JSON
-            url: /nosql/query/get-started-json?context=/fabric/context/context-database
+            url: /cosmos-db/query/get-started-json?context=/fabric/context/context-database
           - text: Create subqueries
-            url: /nosql/query/subquery?context=/fabric/context/context-database
+            url: /cosmos-db/query/subquery?context=/fabric/context/context-database
           - text: Perform self-joins
-            url: /nosql/query/join?context=/fabric/context/context-database
+            url: /cosmos-db/query/join?context=/fabric/context/context-database
   - title: Integrate
     linkLists:
       - linkListType: concept
