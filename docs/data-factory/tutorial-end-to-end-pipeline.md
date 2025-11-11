@@ -21,17 +21,17 @@ The high-level steps in module 1 are:
 
 ## Prerequisites
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. If you don't have one, you can [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. If you don't have one, you can [try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial).
 - A [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace. [Learn how to create a workspace.](../fundamentals/create-workspaces.md)
-- Access to [Power BI](https://app.powerbi.com/).
+- Access to [Power BI](https://msit.powerbi.com/home).
 
 ## Create a pipeline
 
-1. Sign into Power BI.
+1. Sign into [Power BI](https://msit.powerbi.com/home).
 
 1. Select the default Power BI icon at the bottom left of the screen, and select **Fabric**.
 
-1. Select a workspace from the **Workspaces** tab, then select **+ New item**, then search for and choose **Pipeline**.
+1. Select a workspace from the **Workspaces** tab or select **My workspace**, then select **+ New item**, then search for and choose **Pipeline**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-pipeline.png" alt-text="Screenshot of the Data Factory start page with the button to create a new pipeline selected." lightbox="media/tutorial-end-to-end-pipeline/new-data-pipeline.png":::
 
@@ -57,13 +57,19 @@ The high-level steps in module 1 are:
 
 1. Select **Connect**.
 
-1. Select **Tables** for the **Root folder** and **Load to new table** for **Load settings**. Provide a **Table** name (in our example we've named it Bronze) and select **Next**.
+1. Select **Full copy** for the copy job mode.
+
+1. When mapping to destination, select **Tables**, select **Append** as the update method, and edit the table mapping so the destination table is named `Bronze`. Then select **Next**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-destination-table-details.png" alt-text="Screenshot showing the Connect to data destination tab of the Copy data assistant, on the Select and map to folder path or table step." lightbox="media/tutorial-end-to-end-pipeline/choose-destination-table-details.png":::
 
-1. Finally, on the **Review + save** page of the copy data assistant, review the configuration. For this tutorial, uncheck the **Start data transfer immediately** checkbox, since we run the activity manually in the next step. Then select **OK**.
+1. On the **Review + save** page of the copy data assistant, review the configuration and then select **Save**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/review-save-copy-configuration.png" alt-text="Screenshot showing the Copy data assistant on the Review + save page." lightbox="media/tutorial-end-to-end-pipeline/review-save-copy-configuration.png":::
+1. At the top of the pipeline editor, select **Run** to run the pipeline and copy the data.
+
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/run-pipeline.png" alt-text="Screenshot of the pipeline editor with the Run button highlighted." lightbox="media/tutorial-end-to-end-pipeline/run-pipeline.png":::
+
+1. Select **Save and run** to confirm and run the pipeline.
 
 ## Run and view the results of your Copy activity
 
