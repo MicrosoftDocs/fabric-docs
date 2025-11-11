@@ -46,16 +46,16 @@ items:
         href: /cosmos-db/query/between?context=/fabric/context/context-database
       - name: DISTINCT
         displayName: distinct, keyword
-        href: ../distinct.md
+        href: /cosmos-db/query/distinct?context=/fabric/context/context-database
       - name: LIKE
         displayName: like, keyword
-        href: ../like.md
+        href: /cosmos-db/query/like?context=/fabric/context/context-database
       - name: IN
         displayName: in, keyword
-        href: ../in.md
+        href: /cosmos-db/query/in?context=/fabric/context/context-database
       - name: TOP
         displayName: top, keyword
-        href: ../top.md
+        href: /cosmos-db/query/top?context=/fabric/context/context-database
   - name: Functions
     displayName: commands, operators
     expanded: true
