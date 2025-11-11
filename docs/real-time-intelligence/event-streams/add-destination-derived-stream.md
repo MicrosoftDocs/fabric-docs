@@ -2,11 +2,11 @@
 title: Add a derived stream destination to an eventstream
 description: Learn how to add a derived stream destination to an eventstream.
 ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.author: anboisve
+author: ahartoon
 ms.topic: how-to
 ms.custom:
-ms.date: 06/07/2025
+ms.date: 11/10/2025
 ms.search.form: Source and Destination
 ---
 
@@ -16,7 +16,15 @@ This article shows you how to add a derived stream destination to an eventstream
 
 A derived stream refers to a logical stream of data. This stream is created by applying transformations or filters to the default stream. Derived streams enhance data management and analytics by providing a curated subset of data tailored to specific needs.
 
-You can create a derived stream after doing operations like filtering and aggregating an eventstream. The derived stream is then ready for further consumption or analysis through the Real-Time hub. For more information about derived streams, see [Create default and derived Fabric event streams](create-default-derived-streams.md).
+You can create a derived stream after doing operations like filtering and aggregating an eventstream. The derived stream is then ready for further consumption or analysis through the Real-Time hub. 
+
+## Pause and resume derived streams
+
+You can pause and resume traffic from your derived streams in Eventstream, providing you with greater control over your data flow without requiring you to delete or reconfigure your eventstream topology.
+
+When a derived stream is paused, Eventstream temporarily stops forwarding data to the destination while preserving all existing configurations. You can resume traffic at any time to continue data flow from where it left off.
+
+For more information about derived streams, see [Create default and derived Fabric event streams](create-default-derived-streams.md).
 
 ## Prerequisites
 

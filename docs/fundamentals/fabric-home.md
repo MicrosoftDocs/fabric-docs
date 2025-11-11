@@ -4,7 +4,7 @@ description: Learn how to quickly find content, search, filter, multitask with t
 author: julcsc
 ms.author: juliacawthra
 ms.topic: overview
-ms.date: 10/14/2025
+ms.date: 11/07/2025
 ai-usage: ai-assisted
 #customer intent: As a new Fabric user, I want to quickly find my content, understand navigation, personalize settings, and get help.
 ---
@@ -76,6 +76,12 @@ When you create or open an item, it appears in a tab horizontally across the top
 
 > [!NOTE]
 > The tabbed navigation is only available in the Fabric view, not in Power BI view. For instance, when you switch to the Power BI view from the left nav switcher, the tabbed experience isn't available.
+
+You can right-click any tab in the horizontal tab bar to access the following options, similar to Microsoft Edge:
+
+* **Open in new browser tab**: Opens the selected Fabric tab in a new browser tab with the same item and context.
+
+* **Pin tab**: Keeps a tab fixed on the left side for quick access to important items. Pinned tabs stay visible even when you open more items. To unpin, right-click the tab and select **Unpin** or select the pinned icon.
 
 ### Multiple open workspaces
 

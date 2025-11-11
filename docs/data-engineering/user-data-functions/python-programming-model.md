@@ -5,7 +5,7 @@ ms.author: eur
 ms.reviewer: sumuth
 author: eric-urban
 ms.topic: overview
-ms.date: 07/7/2025
+ms.date: 11/10/2025
 ms.search.form: Write new user data functions items
 ---
 
@@ -31,7 +31,7 @@ A user data functions item contains one or many functions you can invoke from th
   udf = fn.UserDataFunctions()
   ```
 
-- Every function is identified with a `@udf.function()` decorator. This decorator defines if your function can be invoked individually from the portal or an external invoker. Using this decorator will also require the function to have a return value. Functions with this decorator can access the connection objects denoted by the `@udf.connection` decorator. 
+- Every function is identified with a `@udf.function()` decorator. This decorator defines if your function can be invoked individually from the portal or an external invoker. Using this decorator also requires the function to have a return value. Functions with this decorator can access the connection objects denoted by the `@udf.connection` decorator.
 
   **Invokable function example**
   ```python
@@ -118,7 +118,7 @@ The supported output data types are:
 
 ## How to write an async function
 
-Add async decorator with your function definition in your code. With an `async` function you can improve responsiveness and efficiency of your application by handling multiple tasks at once. They are ideal for managing high volumes of I/O-bound operations.  This example function reads a CSV file from a lakehouse using pandas. Function takes file name as an input parameter. 
+Add async decorator with your function definition in your code. With an `async` function you can improve responsiveness and efficiency of your application by handling multiple tasks at once. They're ideal for managing high volumes of I/O-bound operations. This example function reads a CSV file from a lakehouse using pandas. Function takes file name as an input parameter. 
 
 ```python
 import pandas as pd 
@@ -189,7 +189,7 @@ def read_from_sql_db(demosqldatabase: fn.FabricSqlConnection)-> list:
 
 ## Generic connections for Fabric items or Azure resources
 
-Generic connections allow you to create connections to Fabric items or Azure resources using your User Data Functions item owner identity. This feature generates an Entra ID token with the item owner's identity and a provided audience type. This token is used to authenticate with Fabric items or Azure resources that support that audience type. This process will give you a similar programming experience to using managed connections objects from the [Manage Connections feature](./connect-to-data-sources.md) but only for the provided audience type in the connection. 
+Generic connections allow you to create connections to Fabric items or Azure resources using your User Data Functions item owner identity. This feature generates a Microsoft Entra ID token with the item owner's identity and a provided audience type. This token is used to authenticate with Fabric items or Azure resources that support that audience type. This process will give you a similar programming experience to using managed connections objects from the [Manage Connections feature](./connect-to-data-sources.md) but only for the provided audience type in the connection. 
 
 This feature uses the `@udf.generic_connection()` decorator with the following parameters:
 
@@ -258,7 +258,7 @@ You can connect to a [Fabric Cosmos DB item](../../database/cosmos-db/overview.m
 ### Connect to Azure Key Vault using a generic connection
 Generic connections support connecting to an Azure Key Vault by using the `KeyVault` audience type. This type of connection requires that the Fabric User Data Functions owner has permissions to connect to the Azure Key Vault. You can use this connection to retrieve keys, secrets, or certificates by name.
 
-You can connect to [Azure Key Vault](https://learn.microsoft.com/azure/key-vault/general/basic-concepts) to retrieve a client secret to call an API using a generic connection by following these steps:
+You can connect to [Azure Key Vault](/azure/key-vault/general/basic-concepts) to retrieve a client secret to call an API using a generic connection by following these steps:
 
 1. In your **Fabric User Data Functions item**, install the `requests` and the `azure-keyvault-secrets` libraries using the [Library Management experience](./how-to-manage-libraries.md).
 
@@ -266,10 +266,10 @@ You can connect to [Azure Key Vault](https://learn.microsoft.com/azure/key-vault
 
     :::image type="content" source="..\media\user-data-functions-python-programming-model\key-vault-connection-1.png" alt-text="Screenshot showing the Azure Key Vault endpoint URL and values." lightbox="..\media\user-data-functions-python-programming-model\key-vault-connection-1.png":::
 
-1. Go back to your **Fabric User Data Functions item** and use this sample. In this sample, we will retrieve a secret from Azure Key Vault to connect to a public API. Replace the value of the following variables:
+1. Go back to your **Fabric User Data Functions item** and use this sample. In this sample, we retrieve a secret from Azure Key Vault to connect to a public API. Replace the value of the following variables:
     - `KEY_VAULT_URL` with the `Vault URI` you retrieved in the previous step. 
     - `KEY_VAULT_SECRET_NAME` with the name of your secret.
-    - `API_URL` variable with the URL of the API you'd like to connect to. This sample assumes that you are connecting to a public API that accepts GET requests and takes the following parameters `api-key` and `request-body`. 
+    - `API_URL` variable with the URL of the API you'd like to connect to. This sample assumes that you're connecting to a public API that accepts GET requests and takes the following parameters `api-key` and `request-body`. 
  
     ```python
     from azure.keyvault.secrets import SecretClient
@@ -356,12 +356,29 @@ def raise_userthrownerror(age: int)-> str:
 ```
 
 This `UserThrownError` method takes two parameters:
-- `Message`: This string is returned as the error message to the application that is invoking this function.
-- A dictionary of properties is returned to the application that is invoking this function.
+- `Message`: This string is returned as the error message to the application that's invoking this function.
+- A dictionary of properties is returned to the application that's invoking this function.
 
+## Get variables from Fabric variable libraries
 
+A [Fabric Variable Library](../../cicd/variable-library/tutorial-variable-library.md) in Microsoft Fabric is a centralized repository for managing variables that can be used across different items within a workspace. It allows developers to customize and share item configurations efficiently.
+1. Add a connection to a variable library using **Manage connections** and get the **alias** for the variable library item.
+1. Add a connection decorator, `@udf.connection(argName="varLib", alias="<My Variable Library Alias>")` to reference the alias of the variable library item.
+1. In the function definition, include an argument with type `fn.FabricVariablesClient`. This client provides methods you need to work with variables library item. For example, `def standardize_date(rawDate: str, varLib: fn.FabricVariablesClient) -> str:`
+1. Use `getVariables()` method to get all the variables from the variable library.
+ ```python
+     # Get all variables from the variable library item
+     variables = varLib.getVariables()
+   ```  
+1 To read the values of the variables use, either `["variable-name"]` or `.get("variable-name")`.
+  ```python
+    # Get desired format from environment or use default
+    date_format = variables["DATE_FORMAT"]
+    # Another way to get the variable
+    # date_format= variables.get("DATE_FORMAT")
+   ```  
 
-## Next steps
+## Related content
 - [Reference API documentation](/python/api/fabric-user-data-functions/fabric.functions)
 - [Create a Fabric User data functions item](./create-user-data-functions-portal.md)
 - [User data functions samples](https://github.com/microsoft/fabric-user-data-functions-samples)

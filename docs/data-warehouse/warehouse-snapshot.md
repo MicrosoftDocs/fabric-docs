@@ -1,22 +1,19 @@
 ---
-title: Warehouse Snapshots (Preview)
+title: Warehouse Snapshots
 description: Learn about warehouse snapshots in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: twcyril
-ms.date: 05/09/2025
+ms.date: 11/10/2025
 ms.service: fabric
 ms.topic: conceptual
 ms.search.form: Warehouse snapshot overview
 ---
-# Warehouse snapshots (preview)
+# Warehouse snapshots
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 A warehouse snapshot is a read-only representation of a warehouse item at a specific point in time, retained to up to 30 days. To get started, [create a warehouse snapshot](create-manage-warehouse-snapshot.md).
-
-> [!NOTE]
-> Warehouse snapshots are currently a [preview feature](../fundamentals/preview.md).
 
 Warehouse snapshots can be seamlessly "rolled forward" on demand, allowing consumers to connect to the same snapshot or use a consistent warehouse connection string to access a past version of the data. When the snapshot timestamp is rolled forward, updates are applied immediately, as if in a single, atomic transaction. Warehouse snapshot ensures that data engineers can provide analytical users with a consistent dataset, even as real-time updates occur. Analysts can run `SELECT` queries based on the snapshot without any ETL interference.
 
@@ -72,10 +69,8 @@ When a T-SQL query is run, information about the current version of the data bei
 - Warehouse snapshots don't exist without the source warehouse. When the warehouse is deleted, all snapshots are deleted. Warehouse snapshots must be recreated if the warehouse is restored.
 - Warehouse snapshots are valid for up to 30 days in the past. Snapshot datetime can be set to any date in the past up to 30 days or database creation time (whichever is later).
 
-## Limitations
+## Remarks
 
-- Warehouse snapshots can only be created against new warehouse items created after March 2025.
-- Warehouse snapshots don't appear in SSMS Object Explorer but do show up in the database selection dropdown list.
 - Modified tables, views, and stored procedures after the snapshot timestamp become invalid in the snapshot.
 - Warehouse snapshots require Direct Query or Import mode in Power BI, and don't support [Direct Lake](../fundamentals/direct-lake-overview.md) mode.
 - Warehouse snapshots aren't supported on the SQL analytics endpoint of the Lakehouse.
