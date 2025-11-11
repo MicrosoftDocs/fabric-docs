@@ -20,11 +20,44 @@ The Lakehouse explorer page serves as the central hub for all your interactions 
 
 The Lakehouse explorer offers a unified, graphical representation of your entire lakehouse, providing users with an intuitive interface for data navigation, access, and management.
 
-- The **Table Section** is a user-friendly representation of the managed area within your lakehouse. This area is typically organized and governed to facilitate efficient data processing and analysis. Here, you find all your tables, whether they were automatically generated or explicitly created and registered in the metastore. You can select a table to preview, inspect the table schema, access underlying files, and execute various other actions related to your data.
+- The **Table Section** is a user-friendly representation of the managed area within your lakehouse. This area is typically organized and governed to facilitate efficient data processing and analysis. Here, you find all your tables, whether they were automatically generated or explicitly created and registered in the metastore. 
 
-- The **Unidentified Area** is a unique space within the managed area of your lakehouse. It displays any folders or files present in the managed area that lack associated tables in SyMS. For instance, if a user uploads unsupported files like images or audio files to the managed area, they won't be automatically detected and linked to tables. Instead, they appear in this unidentified area. The primary purpose of this section is to prompt users to either remove these files from the managed area or transfer them to the File Section for further processing.
+    From this section, you can:
+    - Browse your lakehouse schemas, tables & table details.
+    - Select a table to preview. 
+    - Access your underlying table files from the table context menu.
+    - Perform common actions on your table objects such as renaming, deleting, creating a new schema or shortcut and view your table properties. 
 
-- The **File Section** represents the unmanaged area of your lakehouse and can be considered a "landing zone" for raw data ingested from various sources. Before this data can be used for analysis, it often requires additional processing. In this section, you can navigate through directories, select a directory to preview, load a folder into a table, and perform various other actions. It's worth noting that **the File Section displays folder-level objects exclusively**. To view file-level objects, you need to utilize the Main View area.
+
+- The **Unidentified Area** is a unique space within the managed area of your lakehouse. It displays any folders or files present in the managed area that lack associated tables in our metastore. 
+
+    **For example:**
+    *If a user uploads unsupported files such as images or audio files to the managed area, they won't be automatically detected or mapped to a table in our metastore. Instead, they appear in this unidentified area.*
+
+    Use this section to:
+    - Identify files that don’t belong in the managed area.
+    - Transfer these files to the File section for further processing.
+    - Delete these files from your lakehouse.
+
+
+- The **File Section** represents the unmanaged area of your lakehouse and can be considered a "landing zone" for raw data ingested from various sources. Before this data can be used for analysis, it often requires additional processing. 
+
+    From this section, you can:
+    - Browse your lakehouse directories. 
+        - the File Section displays folder-level objects exclusively in the OE. To view files, use the main view area.
+    - Select a folder to preview and browse in your Main View area to learn more about your files. 
+    - Perform common actions on your folder objects such as renaming, deleting, creating a new subfolder or shortcut and upload files and folders. 
+
+- The object explorer allows you to add **multiple lakehouses** as reference allowing you to view & manage them in a single, unified view—making it easier than ever to organize and access your data.
+
+    With this feature, you can:
+    - Add reference lakehouses you have access to, while keeping your primary lakehouse clearly distinguished.
+    - Sort, filter, and search across all schemas, tables, and folders in all your added lakehouses. 
+    - Perform key actions such as previewing data, creating subfolders, renaming objects—directly in the explorer and more. 
+    - Copy reference lakehouse URLs to open a reference lakehouse as a primary lakehouse.
+    
+    > [!NOTE]
+    > Ribbon actions are only available for the primary lakehouse. 
 
 ## Main view area
 
@@ -45,33 +78,55 @@ Our table preview datagrid is equipped it with a suite of powerful features that
 Previewing data files in a lakehouse offers a range of benefits that enhance data quality, understanding, and overall data management efficiency. It empowers data professionals to make informed decisions, optimize resource allocation, and ensure that their analysis is based on reliable and valuable data.
 
 Preview is available for the following file types:
-**bmp, css, csv, gif, html, jpeg, jpg, js, json, md, mjs, png, ps1, py, svg, ts, tsx, txt, xml,yaml**
+  - **Image File Type:** jpg, jpeg, png, bmp, gif, svg
+
+  - **Text File Type:** txt, js, ts, tsx, py, json, xml, css, mjs, md, html, ps1, yaml, yml, log, sql
+
+
+## Filter, sort, and search Lakehouse objects 
+The sorting, filtering, and searching capabilities make it easier to access and organize data within both the Object Explorer (OE) and the main view area. These tools simplify navigation and management of your Lakehouse data, especially when working with numerous schemas, tables, files, or folders. 
+
+Supported capabilities include: 
+- Sorting schemas, tables, files, and folders by name or creation date, allowing you to view data in your preferred order. 
+    - Available through the object’s context menu. 
+    - Sorting applies only to immediate children of the selected parent node. 
+- Filtering objects based on type, loading status, or creation date to locate specific type of data quickly. 
+    - In the Object Explorer: Filter schemas and tables. 
+    - In the main view area: Filter files and folders. 
+- Searching schemas, tables, files, or folders by name to find specific items quickly by entering a substring. 
+    - In the Object Explorer: Search for schemas and tables. 
+    - In the main view area: Search for files and folders.
+
+## Download Files in Lakehouse Explorer 
+Lakehouse allows you to download files directly from the UX, empowering you to work more efficiently, reduce friction in your data workflows, and gain faster insights.
+
+This feature allows you to:
+- Download files from both table files and the File section (with required permission).
+- Keep your data secure and compliant by including Microsoft Information Protection (MIP) sensitivity labels for supported files.
+
+To enable the corresponding feature:
+
+1. Select **Admin Portal** > **Tenant settings**.
+1. Under **OneLake settings** turn on “Users can access data stored in OneLake with apps external to Fabric.”
+
+:::image type="content" source="media\lakehouse-overview\lakehouse-download-settings.png" alt-text="Screenshot of how to enable download switch in tenant settings." lightbox="media\lakehouse-overview\lakehouse-download-settings.png":::
+
+## Table Deep Links
+
+Users can generate a unique URL for any table in the lakehouse, allowing them to preview that specific table directly. By copying and sharing this URL with others who have access, recipients can open Lakehouse Explorer with the chosen table already previewed. 
+Simply click on the “…” beside the table and choose “Copy URL.” You can use this link to open the lakehouse in Lakehouse Explorer, where you’ll see a preview of the chosen table. 
+
+:::image type="content" source="media\lakehouse-overview\lakehouse-deep-link.png" alt-text="Image showing entry for getting deep-link of table" lightbox="media\lakehouse-overview\lakehouse-deep-link.png":::
 
 ## Ribbon
 
-The lakehouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within your lakehouse. From here, you can refresh your lakehouse, update settings, load data, create or open notebooks, create new custom semantic models, to manage OneLake data access with ease.
+The lakehouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within your lakehouse. From here, you can refresh your lakehouse, access your item settings, choose options to load data, create or open notebooks, create new custom semantic models, and much more. 
 
-### Different ways to load data into a lakehouse
-
-There are several ways to load data into your lakehouse from the explorer page:
-
-- **Local file/folder upload:** Easily upload data from your local machine directly to the File section of your lakehouse. Learn more [here](lakehouse-notebook-load-data.md).
-
-- **Notebook code:** Utilize available Spark libraries to connect to data sources and load data into dataframes, then save it in your lakehouse. Find additional information [here](lakehouse-notebook-load-data.md).
-
-- **Copy tool in pipelines:** Connect to various data sources and land the data in its original format or convert it into a Delta table. Learn more [here](..\data-factory\copy-data-activity.md).
-
-- **Dataflows Gen 2:** Create dataflows to import data, transform it, and publish it into your lakehouse. Find out more [here](../data-factory/create-first-dataflow-gen2.md).
-
-- **Shortcut:** Create shortcuts that connect to existing data in your lakehouse without needing to copy it. Find additional information [here](lakehouse-shortcuts.md).
-
-- **Samples:** Quickly ingest sample data to jump-start your exploration of semantic models and tables.
-
-Discover different use cases to understand the best way to [load data in your lakehouse](load-data-lakehouse.md).
 
 ### Access a lakehouse's SQL analytics endpoint
 
-The [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) can be accessed directly from a lakehouse by using the dropdown in top-right area of the ribbon. Using this quick access method, you immediately land in the t-sql mode, which will allow you to work directly on top of your Delta tables in the lake to help you prepare them for reporting.
+The [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) can be accessed directly from a lakehouse by using the dropdown in top-right area of the ribbon. Using this quick access method, you immediately land in the t-sql mode, which allows you to work directly on top of your Delta tables in the lake to help you prepare them for reporting.
+
 
 ## Related content
 
@@ -79,12 +134,4 @@ We hope this guide helps you make the most of the Lakehouse explorer and its div
 
 - [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md).
 
-- [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md).
 
-- [How to use a notebook to load data into your lakehouse](lakehouse-notebook-load-data.md).
-
-- [How to copy data using copy activity](..\data-factory\copy-data-activity.md).
-
-- [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
-
-- [Create a OneLake shortcut](../real-time-intelligence/onelake-shortcuts.md?tab=onelake-shortcut)
