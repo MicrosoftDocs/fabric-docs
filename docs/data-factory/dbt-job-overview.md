@@ -5,6 +5,7 @@ ms.reviewer: whhender
 ms.author: akurnala
 author: abhinayakurnala1
 ms.date: 11/11/2025
+ms.topic: overview
 ms.custom:
    - dbt
 ---
