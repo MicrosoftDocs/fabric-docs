@@ -44,7 +44,7 @@ ms.date: 10/31/2025
         - `Initial`: The connector runs a snapshot only when no offsets have been recorded for the logical server name, or if it detects that an earlier snapshot failed to complete. After the snapshot completes, the connector begins to stream event records for subsequent database changes.
         - `InitialOnly`: The connector runs a snapshot only when no offsets have been recorded for the logical server name. After the snapshot completes, the connector stops. It does not transition to streaming to read change events from the binlog.
         - `NoData`: The connector runs a snapshot that captures only the schema, but not any table data. Set this option if you do not need a consistent snapshot of the data, but you need only the changes happening since the connector starts.
-    - **Column exclude list**: Specifies columns to exclude from change event values using fully-qualified names (schemaName.tableName.columnName).
+    - **Column exclude list**: Specifies columns to exclude from change event values using fully qualified names (schemaName.tableName.columnName).
     - **Database applicationIntent**: Determines routing behavior in SQL Server Always On availability groups:
         - `ReadWrite`: Connects to the primary replica. Use this if the connection needs to perform both read and write operations.
         - `ReadOnly`: Allows routing to a readable secondary replica for read-only operations. Use it to enable CDC directly on replicas. It requires to set snapshot.isolation.mode to snapshot, which is the only one transaction isolation mode supported for read-only replicas.
@@ -95,7 +95,7 @@ Ingest change data from Azure SQL databases with automatic table schema registra
         - `Initial`: The connector runs a snapshot only when no offsets have been recorded for the logical server name, or if it detects that an earlier snapshot failed to complete. After the snapshot completes, the connector begins to stream event records for subsequent database changes.
         - `InitialOnly`: The connector runs a snapshot only when no offsets have been recorded for the logical server name. After the snapshot completes, the connector stops. It does not transition to streaming to read change events from the binlog.
         - `NoData`: The connector runs a snapshot that captures only the schema, but not any table data. Set this option if you do not need a consistent snapshot of the data, but you need only the changes happening since the connector starts.
-    - **Column exclude list**: Specifies columns to exclude from change event values using fully-qualified names (schemaName.tableName.columnName).
+    - **Column exclude list**: Specifies columns to exclude from change event values using fully qualified names (schemaName.tableName.columnName).
     - **Database applicationIntent**: Determines routing behavior in SQL Server Always On availability groups:
         - `ReadWrite`: Connects to the primary replica. Use this if the connection needs to perform both read and write operations.
         - `ReadOnly`: Allows routing to a readable secondary replica for read-only operations. Use it to enable CDC directly on replicas. It requires to set snapshot.isolation.mode to snapshot, which is the only one transaction isolation mode supported for read-only replicas.
