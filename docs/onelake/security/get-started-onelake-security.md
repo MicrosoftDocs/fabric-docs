@@ -20,23 +20,23 @@ Fabric users with Write and Reshare permissions (generally Admin and Member work
 
 To configure OneLake security, you must be an Admin or Member in the workspace, or have Write and Reshare permissions. Role creation and membership assignment take effect as soon as the role is saved, so make sure you want to grant access before adding someone to a role.
 
-The table below outlines which data items support OneLake security.
+The following table outlines which data items support OneLake security:
 
 | Fabric item | Status | Supported permissions |
 | ---- | --- | --- |
-| Lakehouse | Private Preview | Read, ReadWrite |
-| Azure Databricks Mirrored Catalog | Private Preview | Read |
+| Lakehouse | Preview | Read, ReadWrite |
+| Azure Databricks Mirrored Catalog | Preview | Read |
 
 ## How to opt in
 
-OneLake security is currently in private preview and as a result is disabled by default. The preview feature is configured on a per-item basis. The opt-in control allows for a single item to try the preview without enabling it on any other Fabric items.
+OneLake security is currently in preview and as a result is disabled by default. The preview feature is configured on a per-item basis. The opt-in control allows for a single item to try the preview without enabling it on any other Fabric items.
 
 The preview feature can't be turned off once enabled.
 
 1. Navigate to a lakehouse and select **Manage OneLake security (preview)**.
 1. Review the confirmation dialog. The data access roles preview isn't compatible with the External data sharing preview. If you're ok with the change, select **Continue**.
 
-To ensure a smooth opt-in experience, all users with read permission to data in the item continue to have read access through a default data access role called **DefaultReader**. Using [virtualized role memberships](#assign-virtual-members), all users that had the necessary permissions to view data in the lakehouse (the ReadAll permission) are included as members of this default role. To start restricting access to those users, delete the DefaultReader role or remove the ReadAll permission from the accessing users.  
+To ensure a smooth opt-in experience, all users with read permission to data in the item continue to have read access through a default data access role called **DefaultReader**. With [virtualized role memberships](#assign-virtual-members), all users that had the necessary permissions to view data in the lakehouse (the ReadAll permission) are included as members of this default role. To start restricting access to those users, delete the DefaultReader role or remove the ReadAll permission from the accessing users.  
 
 > [!IMPORTANT]
 > Make sure that any users that are included in a data access role are removed from the DefaultReader role. Otherwise they maintain full access to the data.
@@ -68,7 +68,7 @@ Use the following steps to create a OneLake security role.
 
 1. If you want this role to apply only to a selected group of tables and folders, select the **Selected data** toggle. Then, use the following steps to define the approved data for this role.
 
-   1. Select **Browse Lakehouse**. (or the equivalent for the item you are working with)
+   1. Select **Browse Lakehouse** or the equivalent for the item that you're working with.
 
       :::image type="content" source="./media/get-started-data-access-roles/browse-lakehouse.png" alt-text="Screenshot that shows the 'browse lakehouse' option to select data.":::
    
@@ -107,7 +107,7 @@ Use the following steps to edit an existing OneLake security role.
 
    This tab shows all of the data that the members of the role can access.
 
-   The **Data** column shows the name of the tables or folders that are part of the role access. You can expand and collapse schemas to view the items underneath. Hovering over an entry shows the full path of the table or folder. Hovering over the **...** will give you options to configure **Row-level security** or **Column-level security**. The [row level security](./row-level-security.md) and [column level security](./column-level-security.md) guides provide more information on how that works. 
+   The **Data** column shows the name of the tables or folders that are part of the role access. You can expand and collapse schemas to view the items underneath. Hover over an entry to see the full path of the table or folder. Hover over the **...** to see options to configure **Row-level security** or **Column-level security**. For more information, see the [row level security](./row-level-security.md) and [column level security](./column-level-security.md) guides.
 
    The **Type** column tells you the type of item that was selected. The values are either: **Schema**, **Table**, or **Folder**. 
 
