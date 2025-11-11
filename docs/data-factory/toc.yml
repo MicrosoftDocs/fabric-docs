@@ -43,16 +43,6 @@
                     href: pricing-scenario-load-1-tb-csv-to-lakehouse-files.md
                   - name: Load 1 TB of Parquet data to a Lakehouse table
                     href: pricing-scenario-load-1-tb-parquet-to-lakehouse-table.md
-              - name: Dataflow Gen2
-                items: 
-                  - name: Load 2 GB of on-premises CSV data to a Lakehouse table
-                    href: pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md
-                  - name: Load 2 GB of Parquet data to a Lakehouse table
-                    href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md
-                  - name: Load 6 GB of CSV data to a Lakehouse table with Fast Copy enabled
-                    href: pricing-scenario-dataflows-gen2-load-6-gb-csv-to-lakehouse-table-fastcopy.md
-                  - name: Load 2 GB of Parquet data to a Lakehouse table through Virtual Network Data Gateway
-                    href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-vnet-gateway.md
               - name: Copy job
                 items:
                   - name: Load 1 TB of CSV data to a Lakehouse table
@@ -97,6 +87,8 @@
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
       href: compare-fabric-data-factory-and-azure-data-factory.md
+    - name: Connector capability comparison
+      href: connector-parity.md
     - name: Migration best practices
       href: migration-best-practices.md
     - name: Pipelines
@@ -117,10 +109,6 @@
           href: migrate-pipelines-how-to-add-connections-to-resolutions-file.md
         - name: Find your Fabric workspace ID
           href: migrate-pipelines-how-to-find-your-fabric-workspace-id.md
-      - name: Activity Continuity
-        href: activity-parity.md
-      - name: Connector Continuity
-        href: connector-parity.md
       - name: Fabric dataflows for mapping data flow users
         href: guide-to-dataflows-for-mapping-data-flow-users.md
       - name: How to ingest data from Azure Data Factory to Fabric
@@ -1019,6 +1007,8 @@
         items: 
           - name: Concepts
             href: apache-airflow-jobs-concepts.md
+          - name: Apache Airflow compute
+            href: apache-airflow-compute.md
           - name: How-to
             items: 
               - name: Synchronize your code from an existing Git repo

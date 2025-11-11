@@ -12,7 +12,7 @@ ms.date: 11/19/2024
 
 [!INCLUDE [ingest-data-cribl](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-cribl.md)]
 
-For a complete list of data connectors, see [Data connectors overview](data-connectors/data-connectors.md).
+For a complete list of data connectors, see [Data connectors overview](event-house-connectors.md).
 
 ## Prerequisites
 

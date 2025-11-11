@@ -34,6 +34,26 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md",
+        "redirect_url": "/fabric/data-factory/pricing-dataflows-gen2",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md",
+        "redirect_url": "/fabric/data-factory/pricing-dataflows-gen2",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-vnet-gateway.md",
+        "redirect_url": "/fabric/data-factory/pricing-dataflows-gen2",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/pricing-scenario-dataflows-gen2-load-6-gb-csv-to-lakehouse-table-fastcopy.md",
+        "redirect_url": "/fabric/data-factory/pricing-dataflows-gen2",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/pipeline-resource-limits.md",
         "redirect_url": "/fabric/data-factory/data-factory-limitations",
         "redirect_document_id": false
@@ -161,6 +181,11 @@
       {
         "source_path_from_root": "/docs/data-factory/known-issue-template.md",
         "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/activity-parity.md",
+        "redirect_url": "/fabric/data-factory/compare-fabric-data-factory-and-azure-data-factory#activity-comparison",
         "redirect_document_id": false
       },
       {
