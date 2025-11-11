@@ -2,57 +2,57 @@
 items:
   - name: NoSQL query language
     displayName: introduction, welcome, start, getting started
-    href: /cosmos-db/query/overview?context=/fabric/context/context-database
+    href: /nosql/query/overview?context=/fabric/context/context-database
   - name: Work with JSON
     displayName: get started, quickstart, first query, JSON, JSON documents, JSON arrays, JSON objects
-    href: /cosmos-db/query/get-started-json?context=/fabric/context/context-database
+    href: /nosql/query/get-started-json?context=/fabric/context/context-database
   - name: Create subqueries
     displayName: subqueries, subquery
-    href: /cosmos-db/query/subquery?context=/fabric/context/context-database
+    href: /nosql/query/subquery?context=/fabric/context/context-database
   - name: Perform self-joins
     displayName: self-joins, join
-    href: /cosmos-db/query/join?context=/fabric/context/context-database
+    href: /nosql/query/join?context=/fabric/context/context-database
   - name: Constants
     displayName: literals, values
-    href: /cosmos-db/query/constants?context=/fabric/context/context-database
+    href: /nosql/query/constants?context=/fabric/context/context-database
   - name: Scalar expressions
     displayName: scalar values
-    href: /cosmos-db/query/scalar?context=/fabric/context/context-database
+    href: /nosql/query/scalar?context=/fabric/context/context-database
   - name: Subqueries
     displayName: clause, subquery
-    href: /cosmos-db/query/subquery?context=/fabric/context/context-database
+    href: /nosql/query/subquery?context=/fabric/context/context-database
   - name: Clauses
     displayName: clauses, expressions
     expanded: true
     items:
       - name: FROM
         displayName: clause, from
-        href: /cosmos-db/query/from?context=/fabric/context/context-database
+        href: /nosql/query/from?context=/fabric/context/context-database
       - name: GROUP BY
         displayName: by, clause, group, group by, group-by, groupby
-        href: /cosmos-db/query/group-by?context=/fabric/context/context-database
+        href: /nosql/query/group-by?context=/fabric/context/context-database
       - name: OFFSET LIMIT
         displayName: clause, limit, offset, offset limit, offset-limit, offsetlimit
-        href: /cosmos-db/query/offset-limit?context=/fabric/context/context-database
+        href: /nosql/query/offset-limit?context=/fabric/context/context-database
       - name: ORDER BY RANK
         displayName: by, clause, order, order by rank, order-by-rank, orderbyrank, rank
-        href: /cosmos-db/query/order-by-rank?context=/fabric/context/context-database
+        href: /nosql/query/order-by-rank?context=/fabric/context/context-database
       - name: ORDER BY
         displayName: by, clause, order, order by, order-by, orderby
-        href: /cosmos-db/query/order-by?context=/fabric/context/context-database
+        href: /nosql/query/order-by?context=/fabric/context/context-database
       - name: SELECT
         displayName: clause, select
-        href: /cosmos-db/query/select?context=/fabric/context/context-database
+        href: /nosql/query/select?context=/fabric/context/context-database
       - name: WHERE
         displayName: clause, where
-        href: /cosmos-db/query/where?context=/fabric/context/context-database
+        href: /nosql/query/where?context=/fabric/context/context-database
   - name: Keywords
     displayName: keywords, reserved words
     expanded: true
     items:
       - name: BETWEEN
         displayName: between, keyword
-        href: /cosmos-db/query/between?context=/fabric/context/context-database
+        href: /nosql/query/between?context=/fabric/context/context-database
   - name: Functions
     displayName: commands, operators
     expanded: true
@@ -61,370 +61,370 @@ items:
         items:
           - name: ABS
             displayName: abs, mathematical
-            href: /cosmos-db/query/abs?context=/fabric/context/context-database
+            href: /nosql/query/abs?context=/fabric/context/context-database
           - name: ACOS
             displayName: acos, mathematical
-            href: /cosmos-db/query/acos?context=/fabric/context/context-database
+            href: /nosql/query/acos?context=/fabric/context/context-database
           - name: ASIN
             displayName: asin, mathematical
-            href: /cosmos-db/query/asin?context=/fabric/context/context-database
+            href: /nosql/query/asin?context=/fabric/context/context-database
           - name: ATAN
             displayName: atan, mathematical
-            href: /cosmos-db/query/atan?context=/fabric/context/context-database
+            href: /nosql/query/atan?context=/fabric/context/context-database
           - name: ATN2
             displayName: 2, atn, atn 2, atn2, mathematical
-            href: /cosmos-db/query/atn2?context=/fabric/context/context-database
+            href: /nosql/query/atn2?context=/fabric/context/context-database
           - name: CEILING
             displayName: ceiling, mathematical
-            href: /cosmos-db/query/ceiling?context=/fabric/context/context-database
+            href: /nosql/query/ceiling?context=/fabric/context/context-database
           - name: COS
             displayName: cos, mathematical
-            href: /cosmos-db/query/cos?context=/fabric/context/context-database
+            href: /nosql/query/cos?context=/fabric/context/context-database
           - name: COT
             displayName: cot, mathematical
-            href: /cosmos-db/query/cot?context=/fabric/context/context-database
+            href: /nosql/query/cot?context=/fabric/context/context-database
           - name: DEGREES
             displayName: degrees, mathematical
-            href: /cosmos-db/query/degrees?context=/fabric/context/context-database
+            href: /nosql/query/degrees?context=/fabric/context/context-database
           - name: EXP
             displayName: exp, mathematical
-            href: /cosmos-db/query/exp?context=/fabric/context/context-database
+            href: /nosql/query/exp?context=/fabric/context/context-database
           - name: FLOOR
             displayName: floor, mathematical
-            href: /cosmos-db/query/floor?context=/fabric/context/context-database
+            href: /nosql/query/floor?context=/fabric/context/context-database
           - name: INTADD
             displayName: intadd, mathematical
-            href: /cosmos-db/query/intadd?context=/fabric/context/context-database
+            href: /nosql/query/intadd?context=/fabric/context/context-database
           - name: INTBITAND
             displayName: intbitand, mathematical
-            href: /cosmos-db/query/intbitand?context=/fabric/context/context-database
+            href: /nosql/query/intbitand?context=/fabric/context/context-database
           - name: INTBITLEFTSHIFT
             displayName: intbitleftshift, mathematical
-            href: /cosmos-db/query/intbitleftshift?context=/fabric/context/context-database
+            href: /nosql/query/intbitleftshift?context=/fabric/context/context-database
           - name: INTBITNOT
             displayName: intbitnot, mathematical
-            href: /cosmos-db/query/intbitnot?context=/fabric/context/context-database
+            href: /nosql/query/intbitnot?context=/fabric/context/context-database
           - name: INTBITOR
             displayName: intbitor, mathematical
-            href: /cosmos-db/query/intbitor?context=/fabric/context/context-database
+            href: /nosql/query/intbitor?context=/fabric/context/context-database
           - name: INTBITRIGHTSHIFT
             displayName: intbitrightshift, mathematical
-            href: /cosmos-db/query/intbitrightshift?context=/fabric/context/context-database
+            href: /nosql/query/intbitrightshift?context=/fabric/context/context-database
           - name: INTBITXOR
             displayName: intbitxor, mathematical
-            href: /cosmos-db/query/intbitxor?context=/fabric/context/context-database
+            href: /nosql/query/intbitxor?context=/fabric/context/context-database
           - name: INTDIV
             displayName: intdiv, mathematical
-            href: /cosmos-db/query/intdiv?context=/fabric/context/context-database
+            href: /nosql/query/intdiv?context=/fabric/context/context-database
           - name: INTMOD
             displayName: intmod, mathematical
-            href: /cosmos-db/query/intmod?context=/fabric/context/context-database
+            href: /nosql/query/intmod?context=/fabric/context/context-database
           - name: INTMUL
             displayName: intmul, mathematical
-            href: /cosmos-db/query/intmul?context=/fabric/context/context-database
+            href: /nosql/query/intmul?context=/fabric/context/context-database
           - name: INTSUB
             displayName: intsub, mathematical
-            href: /cosmos-db/query/intsub?context=/fabric/context/context-database
+            href: /nosql/query/intsub?context=/fabric/context/context-database
           - name: LOG
             displayName: log, mathematical
-            href: /cosmos-db/query/log?context=/fabric/context/context-database
+            href: /nosql/query/log?context=/fabric/context/context-database
           - name: LOG10
             displayName: 10, log, log 10, log10, mathematical
-            href: /cosmos-db/query/log10?context=/fabric/context/context-database
+            href: /nosql/query/log10?context=/fabric/context/context-database
           - name: NUMBERBIN
             displayName: mathematical, numberbin
-            href: /cosmos-db/query/numberbin?context=/fabric/context/context-database
+            href: /nosql/query/numberbin?context=/fabric/context/context-database
           - name: PI
             displayName: mathematical, pi
-            href: /cosmos-db/query/pi?context=/fabric/context/context-database
+            href: /nosql/query/pi?context=/fabric/context/context-database
           - name: POWER
             displayName: mathematical, power
-            href: /cosmos-db/query/power?context=/fabric/context/context-database
+            href: /nosql/query/power?context=/fabric/context/context-database
           - name: RADIANS
             displayName: mathematical, radians
-            href: /cosmos-db/query/radians?context=/fabric/context/context-database
+            href: /nosql/query/radians?context=/fabric/context/context-database
           - name: RAND
             displayName: mathematical, rand
-            href: /cosmos-db/query/rand?context=/fabric/context/context-database
+            href: /nosql/query/rand?context=/fabric/context/context-database
           - name: ROUND
             displayName: mathematical, round
-            href: /cosmos-db/query/round?context=/fabric/context/context-database
+            href: /nosql/query/round?context=/fabric/context/context-database
           - name: SIGN
             displayName: mathematical, sign
-            href: /cosmos-db/query/sign?context=/fabric/context/context-database
+            href: /nosql/query/sign?context=/fabric/context/context-database
           - name: SIN
             displayName: mathematical, sin
-            href: /cosmos-db/query/sin?context=/fabric/context/context-database
+            href: /nosql/query/sin?context=/fabric/context/context-database
           - name: SQRT
             displayName: mathematical, sqrt
-            href: /cosmos-db/query/sqrt?context=/fabric/context/context-database
+            href: /nosql/query/sqrt?context=/fabric/context/context-database
           - name: SQUARE
             displayName: mathematical, square
-            href: /cosmos-db/query/square?context=/fabric/context/context-database
+            href: /nosql/query/square?context=/fabric/context/context-database
           - name: TAN
             displayName: mathematical, tan
-            href: /cosmos-db/query/tan?context=/fabric/context/context-database
+            href: /nosql/query/tan?context=/fabric/context/context-database
           - name: TRUNC
             displayName: mathematical, trunc
-            href: /cosmos-db/query/trunc?context=/fabric/context/context-database
+            href: /nosql/query/trunc?context=/fabric/context/context-database
       - name: Array functions
         items:
           - name: ARRAY_CONCAT
             displayName: array, array concat, array-concat, arrayconcat, concat
-            href: /cosmos-db/query/array-concat?context=/fabric/context/context-database
+            href: /nosql/query/array-concat?context=/fabric/context/context-database
           - name: ARRAY_CONTAINS_ALL
             displayName: all, array, array contains all, array-contains-all, arraycontainsall, contains
-            href: /cosmos-db/query/array-contains-all?context=/fabric/context/context-database
+            href: /nosql/query/array-contains-all?context=/fabric/context/context-database
           - name: ARRAY_CONTAINS_ANY
             displayName: any, array, array contains any, array-contains-any, arraycontainsany, contains
-            href: /cosmos-db/query/array-contains-any?context=/fabric/context/context-database
+            href: /nosql/query/array-contains-any?context=/fabric/context/context-database
           - name: ARRAY_CONTAINS
             displayName: array, array contains, array-contains, arraycontains, contains
-            href: /cosmos-db/query/array-contains?context=/fabric/context/context-database
+            href: /nosql/query/array-contains?context=/fabric/context/context-database
           - name: ARRAY_LENGTH
             displayName: array, array length, array-length, arraylength, length
-            href: /cosmos-db/query/array-length?context=/fabric/context/context-database
+            href: /nosql/query/array-length?context=/fabric/context/context-database
           - name: ARRAY_SLICE
             displayName: array, array slice, array-slice, arrayslice, slice
-            href: /cosmos-db/query/array-slice?context=/fabric/context/context-database
+            href: /nosql/query/array-slice?context=/fabric/context/context-database
           - name: CHOOSE
             displayName: array, choose
-            href: /cosmos-db/query/choose?context=/fabric/context/context-database
+            href: /nosql/query/choose?context=/fabric/context/context-database
           - name: OBJECTTOARRAY
             displayName: array, objecttoarray
-            href: /cosmos-db/query/objecttoarray?context=/fabric/context/context-database
+            href: /nosql/query/objecttoarray?context=/fabric/context/context-database
           - name: SETINTERSECT
             displayName: array, setintersect
-            href: /cosmos-db/query/setintersect?context=/fabric/context/context-database
+            href: /nosql/query/setintersect?context=/fabric/context/context-database
           - name: SETUNION
             displayName: array, setunion
-            href: /cosmos-db/query/setunion?context=/fabric/context/context-database
+            href: /nosql/query/setunion?context=/fabric/context/context-database
       - name: Aggregation functions
         items:
           - name: AVG
             displayName: aggregation, avg
-            href: /cosmos-db/query/avg?context=/fabric/context/context-database
+            href: /nosql/query/avg?context=/fabric/context/context-database
           - name: COUNT
             displayName: aggregation, count
-            href: /cosmos-db/query/count?context=/fabric/context/context-database
+            href: /nosql/query/count?context=/fabric/context/context-database
           - name: MAX
             displayName: aggregation, max
-            href: /cosmos-db/query/max?context=/fabric/context/context-database
+            href: /nosql/query/max?context=/fabric/context/context-database
           - name: MIN
             displayName: aggregation, min
-            href: /cosmos-db/query/min?context=/fabric/context/context-database
+            href: /nosql/query/min?context=/fabric/context/context-database
           - name: SUM
             displayName: aggregation, sum
-            href: /cosmos-db/query/sum?context=/fabric/context/context-database
+            href: /nosql/query/sum?context=/fabric/context/context-database
       - name: String functions
         items:
           - name: CONCAT
             displayName: concat, string
-            href: /cosmos-db/query/concat?context=/fabric/context/context-database
+            href: /nosql/query/concat?context=/fabric/context/context-database
           - name: CONTAINS
             displayName: contains, string
-            href: /cosmos-db/query/contains?context=/fabric/context/context-database
+            href: /nosql/query/contains?context=/fabric/context/context-database
           - name: ENDSWITH
             displayName: endswith, string
-            href: /cosmos-db/query/endswith?context=/fabric/context/context-database
+            href: /nosql/query/endswith?context=/fabric/context/context-database
           - name: INDEX-OF
             displayName: index, index of, index-of, of, string
-            href: /cosmos-db/query/index-of?context=/fabric/context/context-database
+            href: /nosql/query/index-of?context=/fabric/context/context-database
           - name: LEFT
             displayName: left, string
-            href: /cosmos-db/query/left?context=/fabric/context/context-database
+            href: /nosql/query/left?context=/fabric/context/context-database
           - name: LENGTH
             displayName: length, string
-            href: /cosmos-db/query/length?context=/fabric/context/context-database
+            href: /nosql/query/length?context=/fabric/context/context-database
           - name: LOWER
             displayName: lower, string
-            href: /cosmos-db/query/lower?context=/fabric/context/context-database
+            href: /nosql/query/lower?context=/fabric/context/context-database
           - name: LTRIM
             displayName: ltrim, string
-            href: /cosmos-db/query/ltrim?context=/fabric/context/context-database
+            href: /nosql/query/ltrim?context=/fabric/context/context-database
           - name: REGEXMATCH
             displayName: regexmatch, string
-            href: /cosmos-db/query/regexmatch?context=/fabric/context/context-database
+            href: /nosql/query/regexmatch?context=/fabric/context/context-database
           - name: REPLACE
             displayName: replace, string
-            href: /cosmos-db/query/replace?context=/fabric/context/context-database
+            href: /nosql/query/replace?context=/fabric/context/context-database
           - name: REPLICATE
             displayName: replicate, string
-            href: /cosmos-db/query/replicate?context=/fabric/context/context-database
+            href: /nosql/query/replicate?context=/fabric/context/context-database
           - name: REVERSE
             displayName: reverse, string
-            href: /cosmos-db/query/reverse?context=/fabric/context/context-database
+            href: /nosql/query/reverse?context=/fabric/context/context-database
           - name: RIGHT
             displayName: right, string
-            href: /cosmos-db/query/right?context=/fabric/context/context-database
+            href: /nosql/query/right?context=/fabric/context/context-database
           - name: RTRIM
             displayName: rtrim, string
-            href: /cosmos-db/query/rtrim?context=/fabric/context/context-database
+            href: /nosql/query/rtrim?context=/fabric/context/context-database
           - name: STARTSWITH
             displayName: startswith, string
-            href: /cosmos-db/query/startswith?context=/fabric/context/context-database
+            href: /nosql/query/startswith?context=/fabric/context/context-database
           - name: STRINGEQUALS
             displayName: string, stringequals
-            href: /cosmos-db/query/stringequals?context=/fabric/context/context-database
+            href: /nosql/query/stringequals?context=/fabric/context/context-database
           - name: STRINGJOIN
             displayName: string, stringjoin
-            href: /cosmos-db/query/stringjoin?context=/fabric/context/context-database
+            href: /nosql/query/stringjoin?context=/fabric/context/context-database
           - name: STRINGSPLIT
             displayName: string, stringsplit
-            href: /cosmos-db/query/stringsplit?context=/fabric/context/context-database
+            href: /nosql/query/stringsplit?context=/fabric/context/context-database
           - name: STRINGTOARRAY
             displayName: string, stringtoarray
-            href: /cosmos-db/query/stringtoarray?context=/fabric/context/context-database
+            href: /nosql/query/stringtoarray?context=/fabric/context/context-database
           - name: STRINGTOBOOLEAN
             displayName: string, stringtoboolean
-            href: /cosmos-db/query/stringtoboolean?context=/fabric/context/context-database
+            href: /nosql/query/stringtoboolean?context=/fabric/context/context-database
           - name: SUBSTRING
             displayName: string, substring
-            href: /cosmos-db/query/substring?context=/fabric/context/context-database
+            href: /nosql/query/substring?context=/fabric/context/context-database
           - name: TOSTRING
             displayName: string, tostring
-            href: /cosmos-db/query/tostring?context=/fabric/context/context-database
+            href: /nosql/query/tostring?context=/fabric/context/context-database
           - name: TRIM
             displayName: string, trim
-            href: /cosmos-db/query/trim?context=/fabric/context/context-database
+            href: /nosql/query/trim?context=/fabric/context/context-database
           - name: UPPER
             displayName: string, upper
-            href: /cosmos-db/query/upper?context=/fabric/context/context-database
+            href: /nosql/query/upper?context=/fabric/context/context-database
       - name: Date and time functions
         items:
           - name: DATETIMEADD
             displayName: and, date, date and time, date-and-time, dateandtime, datetimeadd, time
-            href: /cosmos-db/query/datetimeadd?context=/fabric/context/context-database
+            href: /nosql/query/datetimeadd?context=/fabric/context/context-database
           - name: DATETIMEBIN
             displayName: and, date, date and time, date-and-time, dateandtime, datetimebin, time
-            href: /cosmos-db/query/datetimebin?context=/fabric/context/context-database
+            href: /nosql/query/datetimebin?context=/fabric/context/context-database
           - name: DATETIMEDIFF
             displayName: and, date, date and time, date-and-time, dateandtime, datetimediff, time
-            href: /cosmos-db/query/datetimediff?context=/fabric/context/context-database
+            href: /nosql/query/datetimediff?context=/fabric/context/context-database
           - name: DATETIMEFROMPARTS
             displayName: and, date, date and time, date-and-time, dateandtime, datetimefromparts, time
-            href: /cosmos-db/query/datetimefromparts?context=/fabric/context/context-database
+            href: /nosql/query/datetimefromparts?context=/fabric/context/context-database
           - name: DATETIMEPART
             displayName: and, date, date and time, date-and-time, dateandtime, datetimepart, time
-            href: /cosmos-db/query/datetimepart?context=/fabric/context/context-database
+            href: /nosql/query/datetimepart?context=/fabric/context/context-database
           - name: DATETIMETOTICKS
             displayName: and, date, date and time, date-and-time, dateandtime, datetimetoticks, time
-            href: /cosmos-db/query/datetimetoticks?context=/fabric/context/context-database
+            href: /nosql/query/datetimetoticks?context=/fabric/context/context-database
           - name: DATETIMETOTIMESTAMP
             displayName: and, date, date and time, date-and-time, dateandtime, datetimetotimestamp, time
-            href: /cosmos-db/query/datetimetotimestamp?context=/fabric/context/context-database
+            href: /nosql/query/datetimetotimestamp?context=/fabric/context/context-database
           - name: GETCURRENTDATETIME
             displayName: and, date, date and time, date-and-time, dateandtime, getcurrentdatetime, time
-            href: /cosmos-db/query/getcurrentdatetime?context=/fabric/context/context-database
+            href: /nosql/query/getcurrentdatetime?context=/fabric/context/context-database
           - name: GETCURRENTDATETIMESTATIC
             displayName: and, date, date and time, date-and-time, dateandtime, getcurrentdatetimestatic, time
-            href: /cosmos-db/query/getcurrentdatetimestatic?context=/fabric/context/context-database
+            href: /nosql/query/getcurrentdatetimestatic?context=/fabric/context/context-database
           - name: GETCURRENTTICKS
             displayName: and, date, date and time, date-and-time, dateandtime, getcurrentticks, time
-            href: /cosmos-db/query/getcurrentticks?context=/fabric/context/context-database
+            href: /nosql/query/getcurrentticks?context=/fabric/context/context-database
           - name: GETCURRENTTICKSSTATIC
             displayName: and, date, date and time, date-and-time, dateandtime, getcurrentticksstatic, time
-            href: /cosmos-db/query/getcurrentticksstatic?context=/fabric/context/context-database
+            href: /nosql/query/getcurrentticksstatic?context=/fabric/context/context-database
           - name: GETCURRENTTIMESTAMP
             displayName: and, date, date and time, date-and-time, dateandtime, getcurrenttimestamp, time
-            href: /cosmos-db/query/getcurrenttimestamp?context=/fabric/context/context-database
+            href: /nosql/query/getcurrenttimestamp?context=/fabric/context/context-database
           - name: GETCURRENTTIMESTAMPSTATIC
             displayName: and, date, date and time, date-and-time, dateandtime, getcurrenttimestampstatic, time
-            href: /cosmos-db/query/getcurrenttimestampstatic?context=/fabric/context/context-database
+            href: /nosql/query/getcurrenttimestampstatic?context=/fabric/context/context-database
           - name: TICKSTODATETIME
             displayName: and, date, date and time, date-and-time, dateandtime, tickstodatetime, time
-            href: /cosmos-db/query/tickstodatetime?context=/fabric/context/context-database
+            href: /nosql/query/tickstodatetime?context=/fabric/context/context-database
           - name: TIMESTAMPTODATETIME
             displayName: and, date, date and time, date-and-time, dateandtime, time, timestamptodatetime
-            href: /cosmos-db/query/timestamptodatetime?context=/fabric/context/context-database
+            href: /nosql/query/timestamptodatetime?context=/fabric/context/context-database
       - name: Item functions
         items:
           - name: DOCUMENTID
             displayName: documentid, item
-            href: /cosmos-db/query/documentid?context=/fabric/context/context-database
+            href: /nosql/query/documentid?context=/fabric/context/context-database
       - name: Full text search functions
         items:
           - name: FULLTEXTCONTAINS
             displayName: full, full text search, full-text-search, fulltextcontains, fulltextsearch, search, text
-            href: /cosmos-db/query/fulltextcontains?context=/fabric/context/context-database
+            href: /nosql/query/fulltextcontains?context=/fabric/context/context-database
           - name: FULLTEXTCONTAINSALL
             displayName: full, full text search, full-text-search, fulltextcontainsall, fulltextsearch, search, text
-            href: /cosmos-db/query/fulltextcontainsall?context=/fabric/context/context-database
+            href: /nosql/query/fulltextcontainsall?context=/fabric/context/context-database
           - name: FULLTEXTCONTAINSANY
             displayName: full, full text search, full-text-search, fulltextcontainsany, fulltextsearch, search, text
-            href: /cosmos-db/query/fulltextcontainsany?context=/fabric/context/context-database
+            href: /nosql/query/fulltextcontainsany?context=/fabric/context/context-database
           - name: FULLTEXTSCORE
             displayName: full, full text search, full-text-search, fulltextscore, fulltextsearch, search, text
-            href: /cosmos-db/query/fulltextscore?context=/fabric/context/context-database
+            href: /nosql/query/fulltextscore?context=/fabric/context/context-database
           - name: RRF
             displayName: full, full text search, full-text-search, fulltextsearch, rrf, search, text
-            href: /cosmos-db/query/rrf?context=/fabric/context/context-database
+            href: /nosql/query/rrf?context=/fabric/context/context-database
       - name: Conditional functions
         items:
           - name: IIF
             displayName: conditional, iif
-            href: /cosmos-db/query/iif?context=/fabric/context/context-database
+            href: /nosql/query/iif?context=/fabric/context/context-database
       - name: Type checking functions
         items:
           - name: IS_ARRAY
             displayName: array, checking, is, is array, is-array, isarray, type, type checking, type-checking, typechecking
-            href: /cosmos-db/query/is-array?context=/fabric/context/context-database
+            href: /nosql/query/is-array?context=/fabric/context/context-database
           - name: IS_BOOL
             displayName: bool, checking, is, is bool, is-bool, isbool, type, type checking, type-checking, typechecking
-            href: /cosmos-db/query/is-bool?context=/fabric/context/context-database
+            href: /nosql/query/is-bool?context=/fabric/context/context-database
           - name: IS_DEFINED
             displayName: checking, defined, is, is defined, is-defined, isdefined, type, type checking, type-checking, typechecking
-            href: /cosmos-db/query/is-defined?context=/fabric/context/context-database
+            href: /nosql/query/is-defined?context=/fabric/context/context-database
           - name: IS_FINITE_NUMBER
             displayName: checking, finite, is, is finite number, is-finite-number, isfinitenumber, number, type, type checking, type-checking, typechecking
-            href: /cosmos-db/query/is-finite-number?context=/fabric/context/context-database
+            href: /nosql/query/is-finite-number?context=/fabric/context/context-database
           - name: IS_INTEGER
             displayName: checking, integer, is, is integer, is-integer, isinteger, type, type checking, type-checking, typechecking
-            href: /cosmos-db/query/is-integer?context=/fabric/context/context-database
+            href: /nosql/query/is-integer?context=/fabric/context/context-database
           - name: IS_NULL
             displayName: checking, is, is null, is-null, isnull, null, type, type checking, type-checking, typechecking
-            href: /cosmos-db/query/is-null?context=/fabric/context/context-database
+            href: /nosql/query/is-null?context=/fabric/context/context-database
           - name: IS_NUMBER
             displayName: checking, is, is number, is-number, isnumber, number, type, type checking, type-checking, typechecking
-            href: /cosmos-db/query/is-number?context=/fabric/context/context-database
+            href: /nosql/query/is-number?context=/fabric/context/context-database
           - name: IS_OBJECT
             displayName: checking, is, is object, is-object, isobject, object, type, type checking, type-checking, typechecking
-            href: /cosmos-db/query/is-object?context=/fabric/context/context-database
+            href: /nosql/query/is-object?context=/fabric/context/context-database
           - name: IS_PRIMITIVE
             displayName: checking, is, is primitive, is-primitive, isprimitive, primitive, type, type checking, type-checking, typechecking
-            href: /cosmos-db/query/is-primitive?context=/fabric/context/context-database
+            href: /nosql/query/is-primitive?context=/fabric/context/context-database
           - name: IS_STRING
             displayName: checking, is, is string, is-string, isstring, string, type, type checking, type-checking, typechecking
-            href: /cosmos-db/query/is-string?context=/fabric/context/context-database
+            href: /nosql/query/is-string?context=/fabric/context/context-database
           - name: STRINGTONULL
             displayName: checking, stringtonull, type, type checking, type-checking, typechecking
-            href: /cosmos-db/query/stringtonull?context=/fabric/context/context-database
+            href: /nosql/query/stringtonull?context=/fabric/context/context-database
           - name: STRINGTONUMBER
             displayName: checking, stringtonumber, type, type checking, type-checking, typechecking
-            href: /cosmos-db/query/stringtonumber?context=/fabric/context/context-database
+            href: /nosql/query/stringtonumber?context=/fabric/context/context-database
           - name: STRINGTOOBJECT
             displayName: checking, stringtoobject, type, type checking, type-checking, typechecking
-            href: /cosmos-db/query/stringtoobject?context=/fabric/context/context-database
+            href: /nosql/query/stringtoobject?context=/fabric/context/context-database
       - name: Spatial functions
         items:
           - name: ST_AREA
             displayName: area, spatial, st, st area, st-area, starea
-            href: /cosmos-db/query/st-area?context=/fabric/context/context-database
+            href: /nosql/query/st-area?context=/fabric/context/context-database
           - name: ST_DISTANCE
             displayName: distance, spatial, st, st distance, st-distance, stdistance
-            href: /cosmos-db/query/st-distance?context=/fabric/context/context-database
+            href: /nosql/query/st-distance?context=/fabric/context/context-database
           - name: ST_INTERSECTS
             displayName: intersects, spatial, st, st intersects, st-intersects, stintersects
-            href: /cosmos-db/query/st-intersects?context=/fabric/context/context-database
+            href: /nosql/query/st-intersects?context=/fabric/context/context-database
           - name: ST_ISVALID
             displayName: isvalid, spatial, st, st isvalid, st-isvalid, stisvalid
-            href: /cosmos-db/query/st-isvalid?context=/fabric/context/context-database
+            href: /nosql/query/st-isvalid?context=/fabric/context/context-database
           - name: ST_ISVALIDDETAILED
             displayName: isvaliddetailed, spatial, st, st isvaliddetailed, st-isvaliddetailed, stisvaliddetailed
-            href: /cosmos-db/query/st-isvaliddetailed?context=/fabric/context/context-database
+            href: /nosql/query/st-isvaliddetailed?context=/fabric/context/context-database
           - name: ST_WITHIN
             displayName: spatial, st, st within, st-within, stwithin, within
-            href: /cosmos-db/query/st-within?context=/fabric/context/context-database
+            href: /nosql/query/st-within?context=/fabric/context/context-database
           - name: VECTORDISTANCE
             displayName: spatial, vectordistance
-            href: /cosmos-db/query/vectordistance?context=/fabric/context/context-database
+            href: /nosql/query/vectordistance?context=/fabric/context/context-database
