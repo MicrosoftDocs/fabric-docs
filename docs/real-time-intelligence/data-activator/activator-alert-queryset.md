@@ -6,7 +6,7 @@ author: spelluru
 ms.author: spelluru
 ms.reviewer: guregini
 ms.topic: how-to
-ms.date: 09/29/2025
+ms.date: 11/12/2025
 ms.search.form: Activator KQL Queryset Onramp
 # CustomerIntent: As a customer, I want to learn how to create Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---
@@ -54,33 +54,79 @@ Choose the tab that corresponds to your desired workflow.
 1. Open the workspace that contains your KQL Queryset.
 1. Browse to your KQL Queryset and select it to open.
 1. Run a query that returns a visualization.
+
+:::image type="content" source="media/activator-alert-queryset/query.png" alt-text="Screenshot of a query and its results visualized." lightbox="media/activator-alert-queryset/query.png":::
+
 1. Once the query returns results, select **Set Alert** on the top ribbon.
 
-    For example, the following query is based on the sample *Bicycles* data from the [Real-Time Intelligence tutorial](../../real-time-intelligence/tutorial-introduction.md).
-
-    ```kusto
-    TutorialTable
-    | where Timestamp < ago(5m)
-    | summarize NumberOfBikes=sum(No_Bikes) by Neighbourhood
-    | render columnchart
-    ```
-
-    The query returns a column chart that shows the number of bikes available in each neighborhood. Use this chart to set alert conditions.
+:::image type="content" source="media/activator-alert-queryset/set-alert-button.png" alt-text="Screenshot of the Set Alert button in the top ribbon." lightbox="media/activator-alert-queryset/set-alert-button.png":::
 
 ## Define alert conditions
 
-1. Set a time frequency for how often the query is run. The default is five minutes.
-1. In **Conditions**, specify your alert conditions as follows:
+In the **Add Rule** side pane that appears, follow these steps to define your alert conditions:
+
+1. In the **Details** section, provide a name for your Activator alert rule.
+
+    :::image type="content" source="media/activator-alert-queryset/details.png" alt-text="Screenshot of the Details section in the Add Rule side pane.":::
+
+1. In the **Monitor** section, set a time frequency for how often the query is run. The default is 5 minutes.
+
+    :::image type="content" source="media/activator-alert-queryset/monitor.png" alt-text="Screenshot of the Monitor section in the Add Rule side pane.":::
+
+1. In **Condition** section, specify your alert conditions as follows:
+
+    :::image type="content" source="media/activator-alert-queryset/condition.png" alt-text="Screenshot of the Condition section in the Add Rule side pane.":::
+
     * If your visualization has no dimensions, you can select the **On each event when** condition to monitor changes in the data stream by choosing a specific field to monitor.
     * If your visualization includes dimensions, you can select the **On each event grouped by** condition to monitor changes in the data stream by selecting a field for grouping, which divides the data into distinct groups
     * In the **When** dropdown, set the value to be evaluated.
     * In the **Condition** dropdown, set the condition to be evaluated. For more information, see [Conditions](activator-detection-conditions.md#conditions).
-    * In the **Value** field, set the value to compare against.
-1. In **Action**, specify whether you want your alert via email or Microsoft Teams. In the side pane, you can configure notifications that are sent to yourself. To send notifications to a different user, see [Optional: Edit your rule in Fabric Activator]](#optional-edit-your-rule-in-activator).
-1. In **Save location**, specify where to save your Activator alert. Choose an existing workspace, and save either in an existing activator or a new one.
-1. Select **Create** to create your Activator rule.
+    * In the **Occurrence** field, set the number of times the condition must be met before an alert is triggered.
+1. In **Action** section, select one of the following actions:
+    * **Send email notification**:
+        1. For **Select action**, select **Send email**.
+        1. For **To**, enter the email address of the receiver or use the drop-down list to select a property whose value is an email address. By default, your email address is populated here.
+        1. For **Subject**, enter the subject of the email notification.
+        1. For **Headline**, enter the headline of the email notification.
+        1. For **Notes**, enter notes for the email notification.
+            >[!NOTE]
+            > When entering subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
+        1. For **Context**, select the values from the drop-down list you want to include in the email notification.
 
-    :::image type="content" source="media/activator-alert-queryset/conditions-with-visualization.png" alt-text="Screenshot of the set alert pane in the KQL queryset for creating an Activator alert.":::
+        :::image type="content" source="media/activator-alert-queryset/action-email.png" alt-text="Screenshot of the Send email notification section in the Add Rule side pane.":::
+
+    * **Send Microsoft Teams notification**: Sends a Microsoft Teams message to yourself. You can customize the title and message content.
+        1. For **Select action**, select **Teams** --> **Message to indviduals** or **Group chat message**, or **Channel post**.
+        1. Follow one of these steps depending on your selection:
+            * If you selected the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, an email is sent to specified individuals.
+            * If you selected the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.
+            * If you selected the **Channel post** option, select a **team** and **channel** from the drop-down lists. When the condition is met, a message is posted to the selected channel.
+        1. For **Headline**, enter the headline of the Teams notification.
+        1. For **Notes**, enter notes for the Teams notification.
+            >[!NOTE]
+            > When entering subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
+        1. For **Context**, select the values from the drop-down list you want to include in the Teams notification.
+
+        :::image type="content" source="media/activator-alert-queryset/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
+
+    * **Run Fabric activities**:
+        * Run a pipeline and select a dataflow.
+
+            :::image type="content" source="media/activator-alert-queryset/action-pipeline.png" alt-text="Screenshot of the pipline option in the drop-down menu.":::
+
+        * Run a Spark job.
+
+            :::image type="content" source="media/activator-alert-queryset/action-spark.png" alt-text="Screenshot of the Spark job option in the drop-down menu.":::
+
+        * Run a notebook.
+
+            :::image type="content" source="media/activator-alert-queryset/action-notebook.png" alt-text="Screenshot of the Notebook option in the drop-down menu.":::
+
+1. In **Save location**, specify where to save your Activator alert. Choose an existing workspace, and save either in an existing activator or a new one.
+
+:::image type="content" source="media/activator-alert-queryset/save-location.png" alt-text="Screenshot of the Save location section in the Add Rule side pane.":::
+
+1. Select **Create** to create your Activator rule.
 
 ## [Without visualization](#tab/no-visualization)
 
@@ -117,15 +163,70 @@ TableForReflex
 
 ## Define alert conditions
 
-Next, define your alert conditions. In the **Set Alert** pane that appears, take the following steps:
+In the **Add Rule** side pane that appears, follow these steps to define your alert conditions:
 
-1. Set a time frequency for how often the query is run. The default is 5 minutes.
-    The only condition available in this scenario is **On each event**, meaning that when any record is returned, the condition is met.
-1. In **Action**, specify whether you want your alert via email or Microsoft Teams. In the side pane, you can configure notifications that are sent to yourself. To send notifications to a different user, see [Optional: Edit your rule in Activator](#optional-edit-your-rule-in-activator).
+1. In the **Details** section, provide a name for your Activator alert rule.
+
+    :::image type="content" source="media/activator-alert-queryset/details.png" alt-text="Screenshot of the Details section in the Add Rule side pane.":::
+
+1. In the **Monitor** section, set a time frequency for how often the query is run. The default is 5 minutes.
+
+    :::image type="content" source="media/activator-alert-queryset/monitor.png" alt-text="Screenshot of the Monitor section in the Add Rule side pane.":::
+
+1. In **Condition** section, specify your alert conditions as follows:
+
+    :::image type="content" source="media/activator-alert-queryset/condition.png" alt-text="Screenshot of the Condition section in the Add Rule side pane.":::
+
+    * If your visualization has no dimensions, you can select the **On each event when** condition to monitor changes in the data stream by choosing a specific field to monitor.
+    * If your visualization includes dimensions, you can select the **On each event grouped by** condition to monitor changes in the data stream by selecting a field for grouping, which divides the data into distinct groups
+    * In the **When** dropdown, set the value to be evaluated.
+    * In the **Condition** dropdown, set the condition to be evaluated. For more information, see [Conditions](activator-detection-conditions.md#conditions).
+    * In the **Occurrence** field, set the number of times the condition must be met before an alert is triggered.
+1. In **Action** section, select one of the following actions:
+    * **Send email notification**:
+        1. For **Select action**, select **Send email**.
+        1. For **To**, enter the email address of the receiver or use the drop-down list to select a property whose value is an email address. By default, your email address is populated here.
+        1. For **Subject**, enter the subject of the email notification.
+        1. For **Headline**, enter the headline of the email notification.
+        1. For **Notes**, enter notes for the email notification.
+            >[!NOTE]
+            > When entering subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
+        1. For **Context**, select the values from the drop-down list you want to include in the email notification.
+
+        :::image type="content" source="media/activator-alert-queryset/action-email.png" alt-text="Screenshot of the Send email notification section in the Add Rule side pane.":::
+
+    * **Send Microsoft Teams notification**: Sends a Microsoft Teams message to yourself. You can customize the title and message content.
+        1. For **Select action**, select **Teams** --> **Message to indviduals** or **Group chat message**, or **Channel post**.
+        1. Follow one of these steps depending on your selection:
+            * If you selected the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, an email is sent to specified individuals.
+            * If you selected the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.
+            * If you selected the **Channel post** option, select a **team** and **channel** from the drop-down lists. When the condition is met, a message is posted to the selected channel.
+        1. For **Headline**, enter the headline of the Teams notification.
+        1. For **Notes**, enter notes for the Teams notification.
+            >[!NOTE]
+            > When entering subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
+        1. For **Context**, select the values from the drop-down list you want to include in the Teams notification.
+
+        :::image type="content" source="media/activator-alert-queryset/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
+
+    * **Run Fabric activities**:
+        * Run a pipeline and select a dataflow.
+
+            :::image type="content" source="media/activator-alert-queryset/action-pipeline.png" alt-text="Screenshot of the pipline option in the drop-down menu.":::
+
+        * Run a Spark job.
+
+            :::image type="content" source="media/activator-alert-queryset/action-spark.png" alt-text="Screenshot of the Spark job option in the drop-down menu.":::
+
+        * Run a notebook.
+
+            :::image type="content" source="media/activator-alert-queryset/action-notebook.png" alt-text="Screenshot of the Notebook option in the drop-down menu.":::
+
 1. In **Save location**, specify where to save your Activator alert. Choose an existing workspace, and save either in an existing activator or a new one.
-1. Select **Create** to create your Activator rule.
 
-:::image type="content" source="media/activator-alert-queryset/conditions-without-visualizations.png" alt-text="Screenshot of conditions being set on a query that doesn't include a visualization.":::
+:::image type="content" source="media/activator-alert-queryset/save-location.png" alt-text="Screenshot of the Save location section in the Add Rule side pane.":::
+
+1. Select **Create** to create your Activator rule.
 
 ---
 
