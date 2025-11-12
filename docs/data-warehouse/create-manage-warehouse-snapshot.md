@@ -1,20 +1,17 @@
 ---
-title: Create and Manage a Warehouse Snapshot (Preview)
+title: Create and Manage a Warehouse Snapshot
 description: Learn how to create, use, and manage warehouse snapshots in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: twcyril
-ms.date: 05/08/2025
+ms.date: 11/10/2025
 ms.service: fabric
 ms.topic: how-to
 ms.search.form: Manage warehouse snapshots
 ---
-# Create and manage a warehouse snapshot (preview)
+# Create and manage a warehouse snapshot
 
 This article includes steps to create and manage warehouse snapshots using the Fabric portal, T-SQL queries, or the [Fabric API](/rest/api/fabric/articles/).
-
-> [!NOTE]
-> Warehouse snapshots are currently a [preview feature](../fundamentals/preview.md).
 
 ## Prerequisites
 
@@ -123,6 +120,8 @@ The `ALTER DATABASE` SQL statement uses the system time of the warehouse as the 
    ALTER DATABASE [<snapshot name>]
    SET TIMESTAMP = '2025-04-27T18:10:00.00';
    ```
+
+Warehouse snapshots can also be updated via the Fabric portal. In the ribbon, under **Management**, select **Manage warehouse snapshot**.
 
 ## Rename
 

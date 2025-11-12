@@ -7,6 +7,7 @@ ms.reviewer: whhender
 ms.topic: how-to
 ms.date: 01/11/2024
 ms.custom: pipelines
+ROBOTS: NOINDEX
 ---
 
 # Use the Scope activity to execute a script in Azure Data Lake Analytics
