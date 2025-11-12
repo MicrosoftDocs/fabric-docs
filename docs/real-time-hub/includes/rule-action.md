@@ -75,7 +75,7 @@ To configure the alert to call a custom action when the condition is met, follow
 1. For **Select action**, select **Create custom action**.
  
     :::image type="content" source="./media/set-details-conditions-actions-rule/custom-action.png" alt-text="Screenshot of the Action section with custom action selected.":::   
-1. As mentioned in the **Action** section, create the rule, and then complete the custom action setup by following steps from [Trigger custom actions (Power Automate flows)](/fabric/real-time-intelligence/data-activator/activator-trigger-power-automate-flows).
+1. As mentioned in the **Action** section, create the rule first, and then complete the custom action setup by following steps from [Trigger custom actions (Power Automate flows)](/fabric/real-time-intelligence/data-activator/activator-trigger-power-automate-flows).
 
     :::image type="content" source="./media/set-details-conditions-actions-rule/create-custom-action.png" alt-text="Screenshot of the custom action selected.":::   
 1. After you create the custom action, in the **Definition** pane of the rule, select the custom action from the **Action** drop-down list. 
