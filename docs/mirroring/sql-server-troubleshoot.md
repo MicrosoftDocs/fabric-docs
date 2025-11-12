@@ -13,8 +13,6 @@ ms.custom:
 
 This article covers troubleshooting steps for mirroring a database in a SQL Server instance.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 ## Changes to Fabric capacity or workspace
 
 Learn more from [Changes to Fabric capacity](troubleshooting.md#changes-to-fabric-capacity). 

@@ -13,8 +13,6 @@ ms.custom:
 
 This article includes important steps to optimize performance of the source database and mirrored database from SQL Server in Microsoft Fabric.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 ## Control scan performance
 
 When mirroring is enabled on tables in a database, a scan process periodically captures changes by harvesting the transaction log. This process begins at the LSN of the oldest unreplicated committed transaction and scans the next N-1 replicated transactions, where N represents the number of transactions specified using the `@maxtrans` parameter in `sys.sp_change_feed_configure_parameters`. The `maxtrans` parameter value indicates the maximum number of transactions to process in each scan cycle.

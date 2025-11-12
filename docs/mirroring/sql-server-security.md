@@ -13,15 +13,15 @@ ms.custom:
 
 This guide helps you establish data security in your mirrored SQL Server in Microsoft Fabric.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 ## Security requirements
 
-1. Check the networking requirements to access your SQL Server instance data source. [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install). The gateway machine's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
+1. Check the networking requirements to access your SQL Server instance data source. [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install) or [create a virtual network data gateway](/data-integration/vnet/create-data-gateways). The data gateway's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
     - Resources for data gateways:
         - [Plan, scale, and maintain a business-critical gateway solution](/data-integration/gateway/plan-scale-maintain)
         - [Monitor and optimize on-premises data gateway performance](/data-integration/gateway/service-gateway-performance)
         - [Troubleshoot the on-premises data gateway](/data-integration/gateway/service-gateway-tshoot)
+        - [Manage virtual network data gateway high availability and load balancing](/data-integration/vnet/high-availability-load-balancing)
+        - [Troubleshoot a virtual network data gateway](/data-integration/vnet/troubleshoot-data-gateway)
         - [Azure Arc-enabled SQL Server instance: Troubleshoot Azure Connected Machine agent connection issues](/azure/azure-arc/servers/troubleshoot-agent-onboard)
 1. Fabric needs to authenticate to the SQL Server instance. For this purpose, create a dedicated database user with limited permissions, to follow the principle of least privilege. Create either a login with a strong password and connected user in the source database, or a contained database user with a strong password. For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-tutorial.md).
 

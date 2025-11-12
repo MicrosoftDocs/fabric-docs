@@ -963,6 +963,8 @@
             href: dataflow-gen2-refresh.md
           - name: Dataflow Gen2 with CICD and Git integration
             href: dataflow-gen2-cicd-and-git-integration.md
+          - name: AI Functions in Dataflow Gen2 (Preview)
+            href: dataflow-gen2-ai-functions.md
           - name: Fast copy at scale
             href: dataflows-gen2-fast-copy.md
           - name: Modern query evaluator (Preview)
@@ -1105,6 +1107,8 @@
         href: create-alerts-for-pipeline-runs.md
       - name: Evaluate pipeline expressions
         href: evaluate-pipeline-expression.md
+      - name: Copilot pipeline expression builder (Preview)
+        href: copilot-pipeline-expression-builder.md
       - name: Pipeline sample templates
         href: templates.md
       - name: Monitor pipeline runs
