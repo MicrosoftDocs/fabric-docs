@@ -18,7 +18,7 @@ This overview explains how Real-Time Dashboard works, highlights its key feature
 
 :::image type="content" source="media/tutorial/final-dashboard.png" alt-text="Screenshot of a real-time dashboard in Fabric displaying sample bike data." lightbox="media/tutorial/final-dashboard.png":::
 
-## Core components of Real-Time Dashboard
+## Core Components of Real-Time Dashboard
 
 1. Real-Time Hub: The centralized entrypoint for streaming data sources, enabling quick setup and management of real-time data pipelines.
 1. KQL Querysets: The engine behind Real-Time Dashboard, allowing users to write and execute Kusto Query Language (KQL) queries against live data streams for dynamic insights.
