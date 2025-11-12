@@ -394,13 +394,13 @@ For older updates, review the [Microsoft Fabric What's New archive](whats-new-ar
 
 <a id="cosmos-db-in-microsoft-fabric"></a>
 
-## Cosmos DB in Microsoft Fabric (Preview)
+## Cosmos DB in Microsoft Fabric
 
 This section summarizes recent improvements and features for [Cosmos DB in Microsoft Fabric](../database/cosmos-db/overview.md).
 
 |**Month** | **Feature** | **Learn more** |
-|:-- |:-- | :-- |
-|July 2025|**Cosmos DB in Microsoft Fabric (preview)**|The preview of [Cosmos DB in Microsoft Fabric](../database/cosmos-db/overview.md) is now available to all users. Since its announcement at Microsoft Build 2025, several new capabilities have been added, including [vector indexing and search](../database/cosmos-db/index-vector-data.md). For more information, see [Announcing Cosmos DB in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/announcing-cosmos-db-in-microsoft-fabric-preview-with-exciting-new-features?ft=All). To get started, see [Quickstart: Create a Cosmos DB database in Microsoft Fabric (preview)](../database/cosmos-db/quickstart-portal.md).|
+| :-- | :-- | :-- |
+| November 2025 | **Cosmos DB in Microsoft Fabric** | [Cosmos DB in Microsoft Fabric](../database/cosmos-db/overview.md) is now available to all users. Since its announcement at Microsoft Build 2025, several new capabilities have been added, including [vector indexing and search](../database/cosmos-db/index-vector-data.md). For more information, see [Announcing Cosmos DB in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/announcing-cosmos-db-in-microsoft-fabric-preview-with-exciting-new-features?ft=All). To get started, see [Quickstart: Create a Cosmos DB database in Microsoft Fabric (preview)](../database/cosmos-db/quickstart-portal.md). |
 
 <a id="sql-database-in-microsoft-fabric"></a>
 
