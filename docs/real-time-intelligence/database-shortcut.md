@@ -104,7 +104,7 @@ A data consumer who wants to create a database shortcut using invitation tokens 
 
 To create an invitation token, the data provider can use the following steps:
 
-1. Browse to the [Azure portal](https://ms.portal.azure.com).
+1. Browse to the [Azure portal](https://portal.azure.com).
 1. Browse to the Azure Data Explorer database you wish to use as source.
 1. Select **Share**.
 

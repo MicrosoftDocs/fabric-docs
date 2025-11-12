@@ -18,6 +18,8 @@ items:
     items:
       - name: Mirror to OneLake
         href: mirror-onelake.md
+      - name: Query mirrored data
+        href: tutorial-mirroring.md
       - name: Create Power BI reports
         href: how-to-create-reports.md
       - name: Access data from a lakehouse
@@ -68,8 +70,10 @@ items:
       - name: Autoscale throughput
         href: autoscale-throughput.md
   - name: Write queries
-    href: nosql-query/toc.yml
+    href: query/toc.yml
   - name: Troubleshoot
     items:
       - name: Limitations
         href: limitations.md
+      - name: Mirroring limitations
+        href: mirroring-limitations.md

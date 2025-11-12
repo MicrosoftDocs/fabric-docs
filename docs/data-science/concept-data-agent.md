@@ -97,6 +97,7 @@ The Fabric data agent is currently in public preview and it has limitations. Upd
 - Fabric Data Agent does not support unstructured Data (.pdf, .docx, or .txt). You can't use the Fabric data agent to access unstructured data resources. These resources include .pdf, .docx, or .txt files, for example.
 - The Fabric data agent does not currently support non-English languages. For optimal performance please provide questions, instructions, and example queries in English. 
 - You can't change the LLM that the Fabric data agent uses.
+- Conversation history in Fabric Data Agent may not always persist. In certain cases, such as backend infrastructure changes, service updates, or model upgrades, past conversation history may be reset or lost.
 
 ## Related content
 

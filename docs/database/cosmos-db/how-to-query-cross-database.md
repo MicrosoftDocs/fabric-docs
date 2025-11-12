@@ -1,13 +1,10 @@
 ---
 title: Query Cross-Database Data in Cosmos DB Database (Preview)
-titleSuffix: Microsoft Fabric
 description: Learn how to query data across multiple Cosmos DB databases in Microsoft Fabric during the preview, including setup and best practices.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
 ms.date: 07/14/2025
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
 # Query cross-database data in Cosmos DB in Microsoft Fabric (preview)
@@ -37,7 +34,7 @@ Start by accessing the SQL analytics endpoint for the first Cosmos DB in Fabric 
 
 1. In the menu bar, select the **Cosmos DB** list and then select **SQL Endpoint**.
 
-    :::image source="media/how-to-query-cross-database/endpoint-selection.png" lightbox="media/how-to-query-cross-database/endpoint-selection-full.png" alt-text="Screenshot of the endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
+    :::image type="content" source="media/how-to-query-cross-database/endpoint-selection.png" lightbox="media/how-to-query-cross-database/endpoint-selection-full.png" alt-text="Screenshot of the endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
 
 1. In the analytics endpoint page, select **New SQL Query** in the menu bar.
 

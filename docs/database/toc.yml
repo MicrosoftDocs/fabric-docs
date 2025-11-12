@@ -65,6 +65,16 @@ items:
       href: sql/tutorial-create-application.md
     - name: 9. Clean up resources
       href: sql/tutorial-clean-up.md
+  - name: AI
+    items:
+    - name: Intelligent applications and AI
+      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric&preserve-view=true
+    - name: Intelligent applications and AI FAQ
+      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications-faq?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric&preserve-view=true
+    - name: Vectors and embeddings
+      href: /sql/sql-server/ai/vectors?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric&preserve-view=true
+    - name: Vectors and embeddings FAQ
+      href: /sql/sql-server/ai/vectors-faq?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric&preserve-view=true
   - name: Data recovery
     items:
     - name: Backups
@@ -83,6 +93,10 @@ items:
     items:
     - name: Connect to your SQL database
       href: sql/connect.md
+    - name: Connect with Python
+      href: sql/connect-python.md
+    - name: Jupyter Notebooks
+      href: sql/connect-jupyter-notebook.md
     - name: SQL Query editor
       href: ./sql/query-editor.md
     - name: Source control
@@ -155,6 +169,8 @@ items:
     items: 
     - name: Limitations
       href: sql/limitations.md
+    - name: Start/stop mirroring with REST API
+      href: sql/start-stop-mirroring-api.md
   - name: Reference
     items: 
     - name: T-SQL Reference for Fabric

@@ -1,49 +1,51 @@
 ---
-title: Microsoft Fabric concepts
-description: Understand Microsoft Fabric concepts such as tenants, capacities, and SKUs.
+title: Understand Microsoft Fabric Licenses
+description: Explore Microsoft Fabric licenses, tenants, capacities, and SKUs to plan deployment and collaboration. Learn key scenarios and choose the right option.
 author: JulCsc
 ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
-ms.date: 11/28/2024
+ms.date: 10/13/2025
+ai-usage: ai-assisted
 ---
 
-# Microsoft Fabric concepts and licenses
+# Understand Microsoft Fabric licenses
 
-[Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md) is a platform that allows users to get, create, share, and visualize data using an array of tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [F or P capacity](#capacity), and at least one [per-user license](#per-user-licenses).
+Microsoft Fabric licenses and capacities determine how users create, share, and view items across your organization. To collaborate, you need an [F or P capacity](#capacity) and at least one [per-user license](#per-user-licenses). This article explains tenants, capacities, workspaces, license modes, and scenarios so you can plan a scalable deployment.
 
-A Microsoft Fabric deployment can be organized in various ways according to your organizational needs. This illustration shows two different ways of deploying Fabric in an organization. Retail company A has a single Microsoft Entra tenant for the entire company. Retail company B has two Microsoft Entra tenants, which have complete separation between them, one for military products and another for commercial products. Both companies deployed Fabric capacities according to their geographical location.
+The following diagram illustrates two common ways organizations can structure their Microsoft Fabric deployment using tenants and capacities. For example, a company can use a single Microsoft Entra tenant for all business units, or separate tenants for different divisions or compliance needs. Each tenant can have one or more Fabric capacities, often aligned to geographic or business requirements.
 
-:::image type="content" source="media/licenses/tenants-capacities.png" alt-text="Illustration. Org A has one tenant with three capacities. Org B has two tenants, each with a few capacities. Every capacity has workspaces." lightbox="media/licenses/tenants-capacities.png":::
+:::image type="content" source="media/licenses/tenants-capacities.png" alt-text="Screenshot of two organizational deployment examples: Org A with one tenant and three capacities; Org B with two tenants each containing several capacities and workspaces." lightbox="media/licenses/tenants-capacities.png":::
 
-## Microsoft Fabric concepts
+<a id="microsoft-fabric-concepts"></a>
+
+## Core building blocks
 
 This section describes tenants, capacities, and workspaces, which are helpful in understanding a Fabric deployment.
 
 ### Tenant
 
-Microsoft Fabric is deployed to a [Microsoft Entra tenant](/microsoft-365/education/deploy/intro-azure-active-directory#what-is-an-azure-ad-tenant). Each tenant is tied to a specific Domain Name System (DNS) and other domains can be added to the tenant. If you don't already have a Microsoft Entra tenant, you can either add your domain to an existing tenant or a tenant is created for you when you acquire a free, trial, or paid license for a Microsoft online service. Once you have your tenant, you can add capacities to it. To create a tenant, see [Quickstart: Create a new tenant in Microsoft Entra ID](/entra/fundamentals/create-new-tenant).
+Microsoft Fabric runs in a Microsoft Entra tenant. A tenant is associated with one primary DNS domain, and you can add additional custom domains to it. If you don’t already have a tenant, one is created automatically when you acquire a free, trial, or paid Microsoft online service license, or you can add your domain to an existing tenant. After the tenant exists, add one or more Fabric capacities to support workloads. To create a tenant manually, see [Quickstart: Create a new tenant in Microsoft Entra ID](/entra/fundamentals/create-new-tenant).
 
 ### Capacity
 
-A Microsoft Fabric capacity resides on a tenant. Each capacity that sits under a specific tenant is a distinct pool of resources allocated to Microsoft Fabric. The size of the capacity determines the amount of computation power available.
+A Microsoft Fabric capacity resides in a tenant. Each capacity in a tenant is a distinct resource pool for Microsoft Fabric. The size of the capacity determines the amount of computation power available.
 
-Your capacity allows you to:
+Your capacity lets you:
 
-* Use all the Microsoft Fabric features licensed by capacity
+- Use all Microsoft Fabric features licensed by capacity
+- Create Microsoft Fabric items and connect to other Microsoft Fabric items
 
-* Create Microsoft Fabric items and connect to other Microsoft Fabric items
+    > [!NOTE]
+    > To create Power BI items in workspaces that aren't *My workspace*, you need a *Pro* license.
 
-    >[!NOTE]
-    >To create Power BI items in workspaces that are not *My workspace*, you need a *Pro* license.
+- Save your items to a workspace and share them with a user that has an appropriate license
 
-* Save your items to a workspace and share them with a user that has an appropriate license
+Capacities use stock-keeping units (SKUs). Each SKU provides Fabric resources for your organization. Your organization can have as many capacities as needed.
 
-Capacities are split into Stock Keeping Units (SKUs). Each SKU provides a set of Fabric resources for your organization. Your organization can have as many capacities as needed.
+The table lists the Microsoft Fabric SKUs. Capacity units (CUs) measure the compute power for each SKU. For customers familiar with Power BI, the table also lists Power BI Premium per capacity *P* SKUs and virtual cores (v-cores). Power BI Premium *P* SKUs support Microsoft Fabric. *A* and *EM* SKUs only support Power BI items.
 
-The capacity and SKUs table lists the Microsoft Fabric SKUs. Capacity Units (CU) are used to measure the compute power available for each SKU. For the benefit of customers that are familiar with Power BI, the table also includes Power BI Premium per capacity *P* SKUs and v-cores. Power BI Premium *P* SKUs support Microsoft Fabric. *A* and *EM* SKUs only support Power BI items.
-
-| SKU<sup>*</sup> | Capacity Units (CU) | Power BI SKU | Power BI v-cores |
+| SKU | Capacity Units (CUs) | Power BI SKU | Power BI v-cores |
 |--|--|--|--|
 | F2 | 2 | - | 0.25 |
 | F4 | 4 | - | 0.5 |
@@ -58,18 +60,33 @@ The capacity and SKUs table lists the Microsoft Fabric SKUs. Capacity Units (CU)
 | F1024 | 1024 | P5/A8 | 128 |
 | F2048 | 2048 | - | 256 |
 
-<sup>*</sup>In the Power BI [Embed for your organization](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers) scenario, and Embedding in Microsoft 365 apps such as Sharepoint online and PowerPoint, SKUs smaller than F64 require a Pro or Premium Per User (PPU) license, or a Power BI individual trial to consume Power BI content.
+<a id="embedded-scenarios"></a>
+
+#### Power BI embedding scenarios
+
+| Scenario | Required capacity or SKU | User license requirement | Notes |
+|--|--|--|--|
+| Internal viewing in Fabric capacity < F64 | Any F < F64 | Pro / PPU / trial for Power BI viewing | Free users blocked from Power BI viewing outside *My workspace*. |
+| Internal viewing in Fabric capacity ≥ F64 | F64+ | Free (viewer role) | Viewer role on workspace is sufficient. |
+| Embed for your organization (Microsoft Entra users) | F (any) or P, or A/EM (Power BI only) | Depends on SKU & size (see licensing rules) | F64 lifts internal viewer requirement. |
+| App owns data (external users) | A/EM or P SKUs | End users unlicensed | Service principal handles auth; Fabric capacity not required for embedding. |
+
+In "Embed for your organization" and embedding in Microsoft 365 apps (SharePoint Online, PowerPoint), F SKUs smaller than F64 require each consuming user to have a Pro, Premium Per User (PPU), or individual trial license to view Power BI content.
+
+For "app owns data" (external application / service principal) embedding scenarios, you can use Power BI Embedded A/EM SKUs or Premium per capacity (P) SKUs without an F64 Fabric capacity. An F64 or larger Fabric capacity removes the Pro/PPU viewing requirement for internal users (viewer role) with only a Free license.
 
 ### Workspace
 
-[Workspaces](../fundamentals/workspaces.md) reside within capacities and are used as containers for Microsoft Fabric items. Each Microsoft Fabric user has a personal workspace known as *My Workspace*. More workspaces can be created to enable collaboration.  
+[Workspaces](../fundamentals/workspaces.md) reside within capacities and are used as containers for Microsoft Fabric items. Each Microsoft Fabric user has a personal workspace known as *My Workspace*. Create more workspaces to enable collaboration.  
 
-Each Microsoft Entra tenant that has Fabric deployed to it, has a shared capacity that hosts all the *My Workspaces* and the workspaces with Pro or Premium Per User license mode. By default, workspaces are created in your tenant's shared capacity. When your tenant has other capacities, workspaces - including *My Workspaces* - can be assigned to any capacity in your tenant.
+Each Microsoft Entra tenant with Fabric has a shared capacity that hosts all *My Workspaces* and workspaces in Pro or Premium Per User license mode. By default, workspaces are created in your tenant's shared capacity. When your tenant has other capacities, assign any workspace—including *My Workspaces*—to any capacity in the tenant.
 
->[!NOTE]
->If you're using a [Power BI Premium](/power-bi/enterprise/service-premium-what-is) capacity, Microsoft Fabric items aren't enabled. To enable support for Microsoft Fabric items on your Power BI capacity, [enable Microsoft Fabric](../admin/fabric-switch.md).
+> [!NOTE]
+> If you're using a [Power BI Premium](/power-bi/enterprise/service-premium-what-is) capacity, Microsoft Fabric items aren't enabled. To enable support for Microsoft Fabric items on your Power BI capacity, [enable Microsoft Fabric](../admin/fabric-switch.md).
 
-Workspaces can be created in (or assigned to) Microsoft Fabric capacities. The workspace license mode dictates what kind of capacity the workspace can be hosted in. User capabilities in the workspace are determined by the workspace license mode.
+## Workspace license modes
+
+Workspaces can be created in (or assigned to) Microsoft Fabric capacities. The workspace license mode dictates which underlying capacity type (Fabric F SKU, Power BI Premium per capacity P SKU, shared/PPU shared pool, or Pro/Free shared) the workspace can use. A Premium Per User (PPU) license mode isn't a Fabric capacity—it uses a shared Premium feature pool and doesn't itself enable Fabric (non–Power BI) item creation unless an F capacity also exists. The workspace license mode determines user capabilities.
 
 | Workspace license mode | User capabilities | Access | Supported experiences |
 |--|--|--|--|
@@ -80,22 +97,22 @@ Workspaces can be created in (or assigned to) Microsoft Fabric capacities. The w
 | Fabric capacity (F SKUs) | Create, share, collaborate on, and distribute Fabric content. | To view Power BI content with a Microsoft Fabric free per user license, your capacity must reside on an F64 or larger [SKU](#capacity), and you need to have a viewer role on the workspace. | All Fabric experiences |
 | Trial | Try Fabric features and experiences for 60 days. | Microsoft Fabric (Free) license | All Fabric experiences |
 
-## Per user licenses
+> [!NOTE]
+> Premium Per User (PPU) provides access to most Power BI Premium features on a per-user basis. It doesn't provision a Fabric capacity. To create or run non–Power BI Fabric items (for example, lakehouses, warehouses, notebooks) you still need an F capacity (or a Trial Fabric capacity).
 
-Per-user licenses allow users to work in Microsoft Fabric. There are three types of individual licenses:
+## Per-user licenses
 
-* **Free** - A free license allows you to create and share Fabric content other than Power BI items in Microsoft Fabric, if you have access to a Fabric capacity (either trial or paid).
+Per-user licenses let users work in Microsoft Fabric. A Free (Fabric) license is automatically assigned the first time a user signs in to the Fabric portal (if the tenant has Fabric enabled). It lets you create non-Power BI Fabric items only in a workspace backed by an F or Trial capacity. You can choose from three individual license types:
 
-    >[!NOTE]
-    >To create Power BI items in a workspace other than *My workspace* and share them, you need a Power BI Pro or a Premium Per-User (PPU) license, or a Power BI individual trial.
+- **Free** - Automatically granted on first Fabric sign-in (if Fabric is enabled in the tenant). Lets you create and share non-Power BI Fabric items when the workspace runs on a Fabric (F) or Trial capacity. Doesn’t remove Power BI viewing requirements on F capacities smaller than F64.
 
-* **Pro** - A [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) license lets you share Power BI content with other users. Every organization needs at least one user with a [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) or a Premium Per User (PPU) license, if they intend to use Power BI within Fabric.
+    > [!NOTE]
+    > To create Power BI items in a workspace other than *My workspace* and share them, you need a Power BI Pro or a Premium Per-User (PPU) license, or a Power BI individual trial.
 
-    SKUs smaller than F64 require a Power BI Pro or Premium Per User license for each user consuming Power BI content. Content in workspaces on F64 or larger Fabric capacities is available for users with a Free license if they have viewer role on the workspace.
+- **Pro** - A [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) license lets you share Power BI content with other users. Every organization needs at least one user with a [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) or a Premium Per User (PPU) license, if they intend to use Power BI within Fabric. On F SKUs smaller than F64, each user viewing Power BI content must have Pro, PPU, or an individual trial. On F64 or larger, users with only a Free license and a viewer role can view Power BI content.
+- **Premium per-user (PPU)** - PPU licenses let organizations use Power BI [Premium features](/power-bi/enterprise/service-premium-features) by licensing every user with a PPU license instead of buying a Power BI Premium capacity. PPU is more cost effective when Power BI Premium features are needed for fewer than 250 users. PPU uses shared capacity across the organization, which provides the computing power for Power BI operations.
 
-* **Premium per-user (PPU)** - PPU licenses allow organizations to access Power BI [Premium features](/power-bi/enterprise/service-premium-features) by licensing every user with a PPU license instead of purchasing a Power BI Premium capacity. PPU can be more cost effective when Power BI Premium features are needed for fewer than 250 users. PPU uses a shared capacity across the organization, which provides the computing power for the Power BI operations.
-
-This table lists the main differences between the capabilities of per-user licenses. For embedded analytics license considerations, see [Capacity and SKUs in Power BI embedded analytics](/power-bi/developer/embedded/embedded-capacity).
+The following table lists the main differences between the capabilities of per-user licenses. For embedded analytics license considerations, see [Capacity and SKUs in Power BI embedded analytics](/power-bi/developer/embedded/embedded-capacity).
 
 | Capabilities | Free | Pro | PPU |
 |--|--|--|--|
@@ -103,7 +120,7 @@ This table lists the main differences between the capabilities of per-user licen
 | Create Fabric capacity workspaces |&#x2705; | &#x2705; | &#x2705; |
 | Create Power BI Premium workspaces |&#x274C; | &#x2705; | &#x2705; |
 | Create Pro workspaces |&#x274C; | &#x2705; |&#x2705; |
-| Create, update, delete or manage Power BI items in workspaces other than their "My Workspace" | &#x274C; | &#x2705; |&#x2705; |
+| Create, update, delete, or manage Power BI items in workspaces other than their "My workspace" | &#x274C; | &#x2705; |&#x2705; |
 | Create PPU workspaces |&#x274C; | &#x274C; |&#x2705; |
 | Create non-Power BI Fabric items in Fabric / Trial capacity workspaces | &#x2705; | &#x2705; |&#x2705; |
 | Create non-Power BI Fabric items in Power BI Premium capacity workspaces | &#x2705; | &#x2705; |&#x2705; |
@@ -111,6 +128,21 @@ This table lists the main differences between the capabilities of per-user licen
 | View Power BI items in Pro workspaces or Fabric Capacity workspaces (where the Fabric Capacity SKU is less than a F64) | &#x274C; | &#x2705; |&#x2705; |
 | Users signing in with an Entra user account and a workspace viewer role on a Power BI Premium Per Capacity or a Fabric Capacity with an F64 or higher SKU, can view the content of that workspace | &#x2705; | &#x2705; |&#x2705; |
 
+## Licensing scenario summary
+
+Use this reference to see who can do what.
+
+| Scenario | Do you have an F (Fabric) capacity? | Do you have a Power BI Premium per capacity (P) SKU only? | Do you have only PPU licenses? | Can you create Fabric (non-Power BI) items? | Can you view Power BI content? | Notes |
+|--|--|--|--|--|--|--|
+| Fabric capacity (F64 or larger) + free users | Yes | No | Optional | Yes | Yes (viewer role) | Free users rely on capacity. They can't create Power BI items outside **My workspace** without a Pro or PPU license. |
+| Fabric capacity (any F SKU < F64) + free users | Yes | No | Optional | Yes | No (outside **My workspace**) | Viewing Power BI content requires a Pro or PPU license when the F SKU is below F64. |
+| Power BI Premium per capacity (P1-P5) only | No | Yes | Optional | Limited (Fabric items are disabled until enabled) | Yes | Enable Fabric to create Fabric items. |
+| PPU only (no F or P capacity) | No | No | Yes | No | Yes (PPU workspaces) | PPU is a per-user feature set, not a capacity. |
+| Pro only (no F/P capacity) | No | No | No | No (beyond personal Power BI) | Limited | A Fabric capacity is required for Fabric workloads. |
+| Trial Fabric capacity | Temporary | No | Optional | Yes | Yes (acts like F64 for viewing) | Ends after the trial. |
+
+Next, review purchase options to select the capacity and user licensing mix that fits your rollout strategy.
+
 ## Related content
 
-* [Buy a Microsoft Fabric subscription](buy-subscription.md)
+- [Buy a Microsoft Fabric subscription](buy-subscription.md)

@@ -91,7 +91,7 @@ The following screenshot shows you how to get the application/client ID and obje
 
 * Select *Provider type* as **Open ID Connect**
 
-* Provider URL: `https://sts.windows.net/<your-tenant-id>`
+* Provider URL: `https://sts.windows.net/<your-tenant-id>/` 
 
 * Audience: `https://analysis.windows.net/powerbi/connector/AmazonS3`
 
@@ -155,6 +155,9 @@ Use Microsoft Fabric OneLake's shortcut creation interface to create the shortcu
 
 * **Service principal key:** The client secret of the Microsoft Entra application
 
+> [!NOTE]
+> If your Amazon S3 buckets are configured behind a firewall or Virtual Private Cloud (VPC) follow the guidance in [Create shortcuts to on-premises data](create-on-premises-shortcut.md).
+
 ## Security recommendations
 
 * Use a separate service principal per AWS role for better isolation and auditability
@@ -167,9 +170,8 @@ Use Microsoft Fabric OneLake's shortcut creation interface to create the shortcu
 
 * This feature currently supports only the service principal-based approach; OAuth and Workspace Identity aren't yet supported.
 
-* Access to S3 buckets behind a firewall via on-premises data gateway isn't currently supported with service principal or OAuth.
-
 ## Related content
 
 * [Create an S3 shortcut](create-s3-shortcut.md)
 * [Create an Amazon S3 compatible shortcut](create-s3-compatible-shortcut.md)
+* [Create shortcuts to on-premises data](create-on-premises-shortcut.md)

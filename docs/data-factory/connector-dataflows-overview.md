@@ -1,6 +1,6 @@
 ---
-title: Dataflows (Power Platform) connector overview
-description: This article provides an overview of the supported capabilities of the Dataflows connector.
+title: Dataflow (Power Platform) connector overview
+description: This article provides an overview of the supported capabilities of the Dataflow connector.
 author: whhender
 ms.author: whhender
 ms.topic: how-to
@@ -10,9 +10,9 @@ ms.custom:
   - connectors
 ---
 
-# Dataflows (Power Platform) connector overview
+# Dataflow (Power Platform) connector overview
 
-The Dataflows connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The dataflow connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 
@@ -22,4 +22,4 @@ The Dataflows connector is supported in Data Factory for [!INCLUDE [product-name
 
 ## Related content
 
-For information on how to connect to Dataflows, go to [Set up your Dataflows connection](connector-dataflows.md).
+For information on how to connect to dataflows, go to [Set up your dataflow connection](connector-dataflows.md).

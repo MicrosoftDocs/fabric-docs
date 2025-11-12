@@ -36,12 +36,14 @@ This section describes the security model based on generally available OneLake f
 
 Workspace permissions define what actions users can take within a workspace and its items. These permissions are managed at the workspace level and are primarily control plane permissions; they determine administrative and item management capabilities, not direct data access. However, workspace permissions will generally inherit down to the item and folder level to grant data access by default. Workspace permissions allow for defining access to all items within that workspace. There are four different workspace roles, each of which grants different types of access. Below are the default behaviors of each workspace role.
 
-| Role | Can add admins? | Can add members? | Can edit OneLake security? | Can write data and create items? | Can read data in OneLake? |
-|--|--|--|--|--|
-| Admin | Yes | Yes | Yes | Yes | Yes |
-| Member | No | Yes | Yes | Yes | Yes |
-| Contributor | No | No | No | Yes | Yes |
-| Viewer | No | No | No | No | No* |
+| Role | Can add admins? | Can add members? | Can edit OneLake security? | Can write data and create items? | Can read data in OneLake? | Update and delete the workspace. |
+|--|--|--|--|--|--|--|--|
+| Admin | Yes | Yes | Yes | Yes | Yes | Yes |
+| Member | No | Yes | Yes | Yes | Yes | No |
+| Contributor | No | No | No | Yes | Yes | No |
+| Viewer | No | No | No | No | No* | No |
+
+Learn more about [Roles in workspaces in Microsoft Fabric](../../fundamentals/roles-workspaces.md).
 
 > [!NOTE]
 > *Viewers can be given access to data through OneLake security roles.
@@ -65,9 +67,6 @@ Another way to configure permissions is via an item's **Manage permissions** pag
 ## OneLake security (preview)
 
 OneLake security allows users to define granular role-based security to data stored in OneLake, and enforce that security consistently across all compute engines in Fabric. OneLake security is the **data plane** security model for data in OneLake. 
-
-> [!NOTE]
-> OneLake security replaces the existing OneLake data access roles (preview) feature that was released in April 2024. All data access roles users are seamlessly and automatically upgraded to OneLake security roles when the feature moved to public preview.
 
 Fabric users in the Admin or Member roles can create OneLake security roles to grant users access to data within an item. Each role has four components:
 

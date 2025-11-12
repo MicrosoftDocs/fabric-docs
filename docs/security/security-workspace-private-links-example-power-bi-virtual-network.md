@@ -3,7 +3,7 @@ title: Set Up VNet gateway to Access Lakehouse From Power BI
 description: Learn how to configure a virtual network (VNet) gateway to securely connect Power BI to a lakehouse using Azure Data Lake Storage Gen2.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.custom:
 ms.date: 08/13/2025
@@ -132,9 +132,9 @@ To enable the semantic model to connect to the lakehouse in the restricted works
 
 1. Use the Bind Gateway API to bind the semantic model to the gateway ID and connection ID:
 
-      `https://{WorkspaceID w/o (-)}.zxy.w.dailyapi.fabric.microsoft.com/{WorkspaceID}/datasets/{Semantic Model ID}/Default.BindToGateway`
+      `https://{WorkspaceID w/o (-)}.zxy.w.api.fabric.microsoft.com/{WorkspaceID}/datasets/{Semantic Model ID}/Default.BindToGateway`
 
-   where `{workspaceFQDN}` is `{workspaceID}.z{xy}.w.dailyapi.fabric.microsoft.com`
+   where `{workspaceFQDN}` is `{workspaceID}.z{xy}.w.api.fabric.microsoft.com`
 
 1. Verify the gateway binding: In the semantic model settings, refresh the page. The VNet gateway should now be shown as the active gateway.
 
