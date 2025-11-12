@@ -48,6 +48,7 @@ df.ai.extract(labels=["entity1", "entity2", "entity3"], input_col="input")
 | `max_items` <br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that specifies the maximum number of items to extract for this label. |
 | `type` <br> Optional | JSON schema type for the extracted value. Supported types for this class include `string`, `number`, `integer`, `boolean`, `object`, and `array`. |
 | `properties` <br> Optional | More JSON schema properties for the type as a dictionary. It can include supported properties like "items" for arrays, "properties" for objects, "enum" for enum types, and more. See example usage [in this article](https://platform.openai.com/docs/guides/structured-outputs/json-?api-mode=responses#supported-schemas).|
+| `raw_col` <br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that sets the column name for the raw LLM response. The raw response provides a list of dictionary pairs for every entity label, including "reason" and "extraction_text". |
 
 ## Returns
 
@@ -58,7 +59,7 @@ The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/ap
 # [labels only](#tab/labels)
 
 ```python
-# This code uses AI. Always review output for mistakes.
+# This code uses AI. Always review output for mistakes. 
 
 df = spark.createDataFrame([
         ("MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",),
@@ -76,7 +77,7 @@ This example code cell provides the following output:
 ## [ExtractLabel](#tab/extract-label)
 
 ```python
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
+# This code uses AI. Always review output for mistakes.
 
 df = spark.createDataFrame([
         ("Alex Rivera, a 24-year-old midfielder from Barcelona, scored 12 goals last season, with an impressive 5 goals in one game.",),
