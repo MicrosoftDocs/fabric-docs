@@ -52,7 +52,6 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
    |**Site URL**| The root URL of your SharePoint account, not including any subfolders. |
    |**Connection** | The default value, **Create new connection**. |
    |**Connection name** | A name for your connection. The service generates a suggested connection name based on the storage account name, but you can overwrite with a preferred name. |
-   |**Data gateway** |  |
    |**Authentication kind**| The supported authentication type for this shortcut is **Organizational account**. |
 
 1. Select **Next**.
@@ -63,7 +62,7 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 
    Choose one or more target locations by selecting the checkbox next a folder in the navigation view. Then, select **Next**.
 
-   :::image type="content" source="./media/create-onelake-sharepoint-shortcut/select-target.png" alt-text="Screenshot that shows selecting the target locations for a new shortcut.":::
+   :::image type="content" source="./media/create-onedrive-sharepoint-shortcut/select-target.png" alt-text="Screenshot that shows selecting the target locations for a new shortcut.":::
 
 1. On the **Transform** page, select a transformation option if you want to transform the data in your shortcut or select **Skip**.
 
@@ -75,7 +74,7 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 
 1. The lakehouse automatically refreshes. The shortcut or shortcuts appear in the **Explorer** pane.
 
-   :::image type="content" source="./media/create-onelake-sharepoint-shortcut/view-shortcuts.png" alt-text="Screenshot showing the lakehouse explorer view with a list of folders that display the shortcut symbol.":::
+   :::image type="content" source="./media/create-onedrive-sharepoint-shortcut/view-shortcuts.png" alt-text="Screenshot showing the lakehouse explorer view with a list of folders that display the shortcut symbol.":::
 
 ## Related content
 
