@@ -3,9 +3,9 @@ title: Secure Your Fabric Data Warehouse
 description: Learn more about securing your warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: chweb
-ms.date: 08/12/2025
-ms.topic: overview
+ms.reviewer: chweb, fresantos
+ms.date: 10/15/2025
+ms.topic: conceptual
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 
@@ -97,7 +97,11 @@ To track user activity in warehouse and SQL analytics endpoint for meeting regul
 
 ## SQL analytics endpoint security
 
-For more about security in the SQL anlaytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
+For more about security in the SQL analytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
+
+## Customer-managed key (CMK) encryption
+
+You can enhance your security posture by using customer-managed keys (CMK), giving you direct control over the encryption keys that protect your data and metadata. When you enable CMK for a workspace that contains a Fabric Data Warehouse, both OneLake data and warehouse metadata are protected using your Azure Key Vault-hosted encryption keys. For more information, see [Data Encryption in Fabric Data Warehouse](encryption.md).
 
 ## Related content
 

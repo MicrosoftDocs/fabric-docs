@@ -7,7 +7,7 @@ ms.reviewer: negust
 reviewer: nelgson
 ms.topic: how-to
 ms.custom:
-ms.date: 07/17/2024
+ms.date: 09/30/2025
 ms.search.form: Train models with PyTorch
 
 #customer intent: As a developer, I want to use PyTorch in Microsoft Fabric so I can train models for applications, such as computer vision and natural language processing.
@@ -19,7 +19,7 @@ This article describes how to train and track the iterations of a PyTorch model.
 
 ## Prerequisites
 
-Install PyTorch and torchvision within your notebook. You can install or upgrade the version of these libraries on your environment by using the following command:
+Install PyTorch and torchvision in your notebook. Install or upgrade the libraries in your environment with:
 
 ```shell
 pip install torch torchvision
@@ -27,9 +27,9 @@ pip install torch torchvision
 
 ## Set up the machine learning experiment
 
-You can create a machine learning experiment by using the MLFLow API. The MLflow `set_experiment()` function creates a new machine learning experiment named _sample-pytorch_, if it doesn't already exist. 
+Create a machine learning experiment with the MLflow API. The MLflow `set_experiment()` function creates the experiment named `sample-pytorch` if it doesn't exist. 
 
-Run the following code in your notebook and create the experiment:
+Run the following code in your notebook to create the experiment:
 
 ```python
 import mlflow
@@ -37,11 +37,11 @@ import mlflow
 mlflow.set_experiment("sample-pytorch")
 ```
 
-## Train and evaluate a Pytorch model
+## Train and evaluate a PyTorch model
 
-After you set up the experiment, you load the Modified National Institute of Standards and Technology (MNIST) dataset. You generate the test and training datasets, and then create a training function.
+After you set up the experiment, load the Modified National Institute of Standards and Technology (MNIST) dataset. Generate the training and test datasets, then create a training function.
 
-Run the following code in your notebook and train the Pytorch model:
+Run this code in your notebook to train the PyTorch model:
 
 ```python
 import os
@@ -75,8 +75,8 @@ test_loader = torch.utils.data.DataLoader(
     dataset=test_set, batch_size=batch_size, shuffle=False
 ) 
 
-print("==>>> total trainning batch number: {}".format(len(train_loader)))
-print("==>>> total testing batch number: {}".format(len(test_loader)))
+print("Total training batches: {}".format(len(train_loader)))
+print("Total testing batches: {}".format(len(test_loader)))
 
 # Define the network
 class LeNet(nn.Module):
@@ -145,11 +145,11 @@ for epoch in range(1):
 torch.save(model.state_dict(), model.name())
 ```
 
-## Log model with MLflow
+## Log a model with MLflow
 
-The next task starts an MLflow run and tracks the results within the machine learning experiment. The sample code creates a new model named **sample-pytorch**. It creates a run with the specified parameters, and logs the run within the _sample-pytorch_ experiment.  
+Start an MLflow run to log results in the machine learning experiment. The code registers a new model named **sample-pytorch** in the `sample-pytorch` experiment.  
 
-Run the following code in your notebook and log the model:
+Run this code to log the model:
 
 ```python
 with mlflow.start_run() as run:
@@ -165,12 +165,13 @@ with mlflow.start_run() as run:
 
 ## Load and evaluate the model
 
-After you save the model, you can load it for inferencing.
+After you save the model, load it for inference.
 
-Run the following code in your notebook and load the model for inferencing:
+Run this code in your notebook to load the model and run inference:
 
 ```python
-# Inference with loading the logged model
+# Load the logged model for inference
+
 loaded_model = mlflow.pytorch.load_model(model_uri)
 print(type(loaded_model))
 
@@ -194,5 +195,5 @@ for batch_idx, (x, target) in enumerate(test_loader):
 
 ## Related content
 
-- Explore [machine learning models](machine-learning-model.md)
-- Create [machine learning experiments](machine-learning-experiment.md) 
+- Explore [machine learning models](machine-learning-model.md).
+- Create [machine learning experiments](machine-learning-experiment.md). 

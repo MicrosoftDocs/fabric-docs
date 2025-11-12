@@ -70,7 +70,7 @@ Once you authenticate, you can connect to OneLake using [Azure Data Lake Storage
 
 Alternatively, if you choose to utilize Azure SQL Database, you can implement the following procedure to read data from a Warehouse.
 
-1. Create an authorization context. For an example of creating an authorization context, see the [AuthenticateDataPlaneCall method](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthenticationService.cs).
+1. Create an authorization context. For an example of creating an authorization context, see the [AuthenticateDataPlaneCall method](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/dotnet/src/Services/AuthenticationService.cs).
 1. Acquire a token with the *Warehouse.Read.All* scope on behalf of the user using the bearer token passed from the front end.
 1. Use the *Fabric* token to call the [Get Warehouse API](/rest/api/fabric/warehouse/items/get-warehouse). It's required to access the Connection info and the display name of the Warehouse, which is the initial catalog of the server.
 1. Acquire a token with SQL scopes on behalf of the user. To successfully establish an SQL connection, use the scope `https://database.windows.net//user_impersonation`.

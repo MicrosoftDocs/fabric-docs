@@ -1,21 +1,21 @@
 ---
-title: "Create and manage protection policies for Fabric (preview)"
+title: "Create and manage protection policies for Fabric"
 description: "This article describes how to create, edit, or delete a Microsoft Purview protection policy for Microsoft Fabric."
 author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to #Don't change
-ms.date: 11/21/2024
+ms.date: 10/30/2025
 
 #customer intent: As a security admin or Fabric admin, I want to learn how to create protection policies for Microsoft Fabric. 
 
 ---
 
-# Create and manage protection policies for Fabric (preview)
+# Create and manage protection policies for Fabric
 
 This article describes how to create, edit, and delete Microsoft Purview protection policies for Microsoft Fabric. Its target audience is security and compliance admins who need to create protection policies for Fabric.
 
-For an overview of how protection policies for Fabric work, see [Protection policies in Fabric (preview)](./protection-policies-overview.md).
+For an overview of how protection policies for Fabric work, see [Protection policies in Fabric](./protection-policies-overview.md).
 
 ## Prerequisites
 
@@ -82,9 +82,9 @@ To create a protection policy, the following requirements must be met:
   
     :::image type="content" source="./media/protection-policies-create/review-policy-settings.png" alt-text="Screenshot of review and finish page in protection policy configuration.":::
 
-1. You'll be informed that your new protection policy has been created and that it can take up to 30 minutes for the new policy to start detecting and protecting items labeled with the sensitivity label you chose.
+1. You'll be informed that your new protection policy has been created. It can take up to 24 hours for the new policy to start detecting and protecting items labeled with the sensitivity label you chose.
 
-    :::image type="content" source="./media/protection-policies-create/policy-created-notice.png" alt-text="Screenshot showing the policy created notice.":::
+<!-- TODO: NEED NEW SCREENSHOT OR NOTE ABOUT 24 HRS IN UI :::image type="content" source="./media/protection-policies-create/policy-created-notice.png" alt-text="Screenshot showing the policy created notice."::: --> 
 
 Your new policy now appears in the list of protection policies. Select it to confirm that all the details are correct.
 
@@ -106,5 +106,5 @@ To edit or delete a protection policy:
 
 ## Related content
 
-* [Protection policies in Fabric (preview)](./protection-policies-overview.md)
+* [Protection policies in Fabric](./protection-policies-overview.md)
 * [Authoring and publishing protection policies (preview)](/purview/how-to-create-protection-policy)

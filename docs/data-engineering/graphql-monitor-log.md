@@ -140,7 +140,7 @@ The API requests page provides detailed information about all the API requests t
 ## Related content
 
 * [Microsoft Fabric API for GraphQL](api-graphql-overview.md)
-* [Workspace Monitoring Announcement](https://blog.fabric.microsoft.com/en-us/blog/15036/preview)
+* [Workspace Monitoring Announcement](https://blog.fabric.microsoft.com/blog/15036/preview)
 * [Workspace Monitoring Overview](..\get-started\workspace-monitoring-overview.md)
 * [API for GraphQL in Fabric](get-started-api-graphql.md)
 * [Fabric API for GraphQL Editor](api-graphql-editor.md)

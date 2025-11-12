@@ -76,7 +76,7 @@ In the details area, you can copy the following eventhouse URI values:
 
 | URI type | Usage |
 |--|--|
-| Query URI | URI that can be used to [add database shortcuts](database-shortcut.md) or by [connectors](data-connectors/data-connectors.md) and APIs to run queries or management commands. |
+| Query URI | URI that can be used to [add database shortcuts](database-shortcut.md) or by [connectors](event-house-connectors.md) and APIs to run queries or management commands. |
 | Ingestion URI | URI that is for use by connectors and APIs to ingest data. |
 | [Always-on](#enable-always-on) | Minimum available capacity unit (CU) size for your eventhouse.|
 

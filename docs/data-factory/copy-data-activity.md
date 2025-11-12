@@ -151,6 +151,8 @@ If the connector that you use supports mapping, you can go to **Mapping** tab to
 
 You can also select **+ New mapping** to add new mapping, select **Clear** to clear all mapping settings, and select **Reset** to reset all mapping **Source** column.
 
+For more information about data type mapping, see [Data type mapping in a copy activity](data-type-mapping.md).
+
 ### Configure your other settings under settings tab
 
 The **Settings** tab contains the settings of performance, staging, and so on.
@@ -166,7 +168,6 @@ See the following table for the description of each setting.
 |**Fault tolerance** |When you select this option, you can ignore some errors that happen in the middle of copy process. For example, incompatible rows between source and destination store, file being deleted during data movement, etc.  |• enableSkipIncompatibleRow <br> • skipErrorFile: <br>  &nbsp;&nbsp; fileMissing <br>&nbsp;&nbsp; fileForbidden <br> &nbsp;&nbsp; invalidFileName |
 |**Enable logging** |When you select this option, you can log copied files, skipped files and rows.| / |
 |**Enable staging** | Specify whether to copy data via an interim staging store. Enable staging only for helpful scenarios.| enableStaging |
-| **Data store type** | When enable staging, you can choose **Workspace** and **External** as your data store type.| / |
 | *For **Workspace*** |  |  |
 |**Workspace**| Specify to use built-in staging storage. | / |
 | *For **External*** |  |  |

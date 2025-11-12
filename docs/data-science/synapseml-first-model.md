@@ -7,7 +7,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
-ms.date: 08/26/2025
+ms.date: 09/29/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ai.usage: ai-assisted
@@ -15,7 +15,7 @@ ai.usage: ai-assisted
 
 # Build a model with SynapseML
 
-This article shows how to build a machine learning model with SynapseML and how it simplifies complex machine learning tasks. Use SynapseML to build a training pipeline with a featurization stage and a LightGBM regression stage. The pipeline predicts ratings from book review text. Here’s how to use prebuilt models with SynapseML to solve machine learning problems.
+This article shows how to build a machine learning model with SynapseML and how it simplifies complex machine learning tasks. Use SynapseML to build a training pipeline with a featurization stage and a LightGBM regression stage. The pipeline predicts ratings from book review text. Here's how to use prebuilt models with SynapseML to solve machine learning problems.
 
 ## Prerequisites
 

@@ -3,7 +3,7 @@ title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Get a
 description: Prepare your environment for the tutorial scenario by processing the real-time streaming data sample and getting it into a lakehouse.
 author: baanders
 ms.author: baanders
-ms.date: 04/28/2025
+ms.date: 11/10/2025
 ms.topic: tutorial
 ---
 
@@ -33,7 +33,7 @@ Follow these steps to create the eventstream and add the *Buses* sample data as 
 
     :::image type="content" source="media/tutorial-rti/prep-use-sample-data.png" alt-text="Screenshot of selecting sample data for the eventstream.":::
     
-1. In the **Add source** page, enter *BusDataSource* for the source name. Under **Sample data**, select *Buses*. Select **Add**.
+1. In the **Add source** page, select *Buses* under **Sample data**. Enter *BusDataSource* for the source name. Select **Add**.
 
     :::image type="content" source="media/tutorial-rti/prep-buses.png" alt-text="Screenshot of selecting the bus sample data.":::
 
@@ -55,9 +55,9 @@ Follow these steps to add the data transformation.
 
     :::image type="content" source="media/tutorial-rti/prep-manage-fields-2.png" alt-text="Screenshot of changing the Timestamp field.":::
     
-1. Without saving, select the *ScheduleTime* field. Toggle **Change type** to *Yes*. For **Converted Type**, select *DateTime* from the dropdown list. Leave the name as *ScheduleTime*. 
+1. Select the *ScheduleTime* field. Toggle **Change type** to *Yes*. For **Converted Type**, select *DateTime* from the dropdown list. Leave the name as *ScheduleTime*. 
 
-    Now select **Save**.
+    Select **Save**.
 
 1. The **Manage fields** pane closes. The **ManageFields** tile continues to display an error until you connect it to a destination.
 
@@ -120,7 +120,7 @@ To run the transformation queries, follow these steps.
 
     ```kusto
     // Create table
-    .create table bus_data_processed (ActualTime:datetime, TripId:string, BusLine:string, StationNumber:string, ScheduleTime:datetime, BusState:string, TimeToNextStation:string, StopCode:int)
+    .create table bus_data_processed (ActualTime:datetime, TripId:string, BusLine:long, StationNumber:long, ScheduleTime:datetime, BusState:string, TimeToNextStation:string, StopCode:int)
     ```    
 
     ````kusto

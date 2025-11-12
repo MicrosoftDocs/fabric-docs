@@ -10,30 +10,30 @@ ms.date: 08/10/2025
 ---
 # Share KQL queries
 
-In this article, you learn how to share Kusto Query Language (KQL) queries, including how to share a query link, share the query results, or pin it to a dashboard. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
+In this article, you learn how to share Kusto Query Language (KQL) queries, including how to share a query link, share the query results, or save it to a dashboard. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions and data.
 
-## Pin to dashboard
+## Save to dashboard
 
-To pin a query to a dashboard for continuous monitoring, follow these steps:
+To save a query to a dashboard for continuous monitoring, follow these steps:
 
-1. In the query window, select the query that you want to pin.
+1. In the query window, select the query that you want to save.
 
-1. Select **Pin to dashboard**.
+1. Select **Save to dashboard**.
 
-    :::image type="content" source="media/kusto-share-queries/pin-dashboard.png" alt-text="Screenshot of the pin to dashboard button.":::
+    :::image type="content" source="media/real-time-dashboard/pin-to-dashboard.png" alt-text="Screenshot of the pin to dashboard button.":::
 
-1. In the **Pin query to dashboard** pane:
+1. In the **Save query to dashboard** pane:
     1. Select an existing dashboard or create a new dashboard.
     1. Name your dashboard tile.
     1. Optionally, select **Open dashboard after tile creation** to view your dashboard immediately after creation.
     1. Select **Create**.
 
-        :::image type="content" source="media/kusto-share-queries/pin-query-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
+        :::image type="content" source="media/real-time-dashboard/pin-to-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
 
 ## Copy query
 

@@ -10,9 +10,12 @@ ms.subservice: rti-core
 ms.search.form: Map permissions 
 ---
 
-# Manage Map permissions
+# Manage Map permissions (preview)
 
 Permissions for reading, writing, and sharing Map items follow the standard Fabric workspace roles, ensuring a consistent and secure access model across all Fabric items.
+
+> [!IMPORTANT]
+> This feature is in [preview](../../fundamentals/preview.md).
 
 ## Workspace roles for Map items
 
@@ -43,9 +46,9 @@ Map items depend on other Fabric items, such as Lakehouse or KQL Database. To bu
 |--------------------|-------------------------|-------------------------------------------------|
 | Builder and Viewer roles access the full GeoJSON data for tile generation. | Lakehouse  | Read |
 | Builder uploads PM Tiles to Lakehouse                                      | Lakehouse  | Write|
-| Builder access KQL DB and query set and read the result. | KQL Database, KQL Queryset  | KQL DB - Read and ReadData<br>KQL Queryset - Read |
-| Users view the content in the Map item    | KQL Queryset | Read and ReadData                   |
+| Builder access KQL DB and query set and read the result. | KQL Database  | Write |
+| Users view the content in the Map item    | KQL Database | Write |
 
 > [!NOTE]
 >
-> If a user does not have permission to access the Lakehouse or KQL Database, the Map may display errors or incomplete data. Access to Maps is controlled by the permissions of the underlying data. Shared Maps will only show information that the user is authorized to view.
+> When users lack permission to access the Lakehouse or KQL Database, the map displays errors or incomplete data. Map access depends on the permissions of the underlying data. Shared maps only show information the user is authorized to view.

@@ -45,6 +45,7 @@ Follow these steps to add a sample data source:
    - **Stock Market**: Sample data of a stock exchange with preset schema columns such as time, symbol, price, and volume.
    - **Buses**: Sample buses data with a preset schema that includes fields such as Timestamp, TripId, StationNumber, SchedulTime and Properties.
    - **S&P 500 companies stocks**: Sample data of S&P 500 companies' historical stock prices with a preset schema that includes fields such as Date, Open, High, Low, Close, Adjusted Close, Volume and Ticker.
+   - **Semantic Model Logs**: Sample data of semantic model operation logs with a preset schema that includes fields such as Timestamp, OperationName, ItemId, ItemKind, ItemName, WorkspaceId, WorkspaceName and CapacityId.
 
    :::image type="content" border="true" source="media\add-source-sample-data-enhanced\sample-sources.png" alt-text="A screenshot showing the choices on the Sample data screen.":::
 1. After you create the sample data source, you see it added to your eventstream on the canvas in **Edit mode**. To implement this newly added sample data, select **Publish**.
