@@ -30,7 +30,7 @@ Shortcuts are objects in OneLake that point to other storage locations, which ca
   
 Outbound access protection doesn't restrict shortcuts with a source and target within the same workspace, because all OneLake calls remain within the boundary of the workspace.
 
-:::image type="content" source="media/onelake-manage-outbound-access/outbound-access-protection_connector_diagram.png" alt-text="Diagram of a shortcut between workspaces using managed private endpoint and Private Link service." lightbox="media/onelake-manage-outbound-access/outbound-access-protection_connector_diagram.png" border="false":::
+:::image type="content" source="media/onelake-manage-outbound-access/outbound-access-protection-connector-diagram.png" alt-text="Diagram of a shortcut between workspaces using managed private endpoint and Private Link service." lightbox="media/onelake-manage-outbound-access/outbound-access-protection_connector_diagram.png" border="false":::
 
 ## Copying data within OneLake 
 
