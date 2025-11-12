@@ -85,7 +85,7 @@ To create an Azure Key Vault key, follow the instructions in [Create a key vault
 
 ### Key Vault requirements
 
-Fabric only supports [versionless customer-managed keys](/azure/key-vault/keys/how-to-configure-key-rotation#key-rotation-policy), which are keys in the `https://{vault-name}.vault.azure.net/{key-type}/{key-name}` format. Fabric checks the key vault daily for a new version, and uses the latest version available. To avoid having a period where you can't access data in the workspace after a new key is created, wait 24 hours before disabling the older version.
+Fabric only supports [versionless customer-managed keys](/azure/key-vault/keys/how-to-configure-key-rotation#key-rotation-policy), which are keys in the format `https://{vault-name}.vault.azure.net/{key-type}/{key-name}` for Vaults and `https://{hsm-name}.managedhsm.azure.net/{key-type}/{key-name}` for Managed HSM. Fabric checks the key vault daily for a new version, and uses the latest version available. To avoid having a period where you can't access data in the workspace after a new key is created, wait 24 hours before disabling the older version.
 
 Key Vault and Managed HSM must have both soft-delete and purge protection enabled and the key must be of RSA or RSA-HSM type. The supported key sizes are:
 
@@ -94,6 +94,8 @@ Key Vault and Managed HSM must have both soft-delete and purge protection enable
 * 4,096 bit
 
 For more information, see [About keys](/azure/key-vault/keys/about-keys).
+
+You can also use Azure Key Vaults for which the [firewall setting is enabled](/azure/key-vault/general/network-security#key-vault-firewall-enabled-trusted-services-only). When you disable public access to the Key Vault, you can choose the option to 'Allow Trusted Microsoft Services to bypass this firewall.'
 
 ### Step 5: Enable encryption using customer-managed keys
 
@@ -150,8 +152,6 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 * CMK is supported on all [F SKUs](../enterprise/licenses.md). Trial capacities cannot be used for encryption using CMK. CMK cannot be enabled for workspaces that have BYOK enabled and CMK workspaces cannot be moved to capacities for which BYOK is enabled either.
 
 * CMK can be enabled using the Fabric portal and does not have API support.
-
-* CMK is not supported when Azure Key Vault firewall setting is enabled.
 
 * CMK can be enabled and disabled for the workspace while the tenant level encryption setting is on. Once the tenant setting is turned off, you can no longer enable CMK for workspaces in that tenant or disable CMK for workspaces that already have CMK turned on in that tenant. Data in workspaces that enabled CMK before the tenant setting was turned off will remain encrypted with the customer managed key. Keep the associated key active to be able to unwrap data in that workspace. 
 

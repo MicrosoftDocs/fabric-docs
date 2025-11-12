@@ -12,7 +12,7 @@ ms.date: 12/01/2024
 
 [!INCLUDE [fluent-bit](~/../kusto-repo/data-explorer/includes/cross-repo/fluent-bit.md)]
 
-For a complete list of data connectors, see [Data connectors overview](data-connectors/data-connectors.md).
+For a complete list of data connectors, see [Data connectors overview](event-house-connectors.md).
 
 ## Prerequisites
 

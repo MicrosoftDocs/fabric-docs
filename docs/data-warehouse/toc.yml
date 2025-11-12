@@ -86,8 +86,11 @@ items:
   items:
   - name: Development and Deployment
     href: development-deployment.md
+  - name: Developer warehouse projects
+    href: develop-warehouse-project.md
   - name: Source control with Warehouse
     href: source-control.md
+
 - name: Develop
   items:
   - name: SQL analytics endpoint performance
@@ -130,10 +133,10 @@ items:
     href: browse-file-content-with-openrowset.md
   - name: Ingesting data into the warehouse
     href: ingest-data.md
-  - name: Ingest data with pipelines
-    href: ingest-data-pipelines.md
   - name: Ingest data with the COPY statement
     href: ingest-data-copy.md
+  - name: Ingest data with pipelines
+    href: ingest-data-pipelines.md
   - name: Ingest data with TSQL
     href: ingest-data-tsql.md
   - name: Use dbt with data warehouse
@@ -243,6 +246,10 @@ items:
         href: monitor-using-dmv.md
       - name: Observe utilization trends
         href: how-to-observe-utilization.md
+- name: Continuous integration and deployment
+  items:
+  - name: Overview
+    href: development-deployment.md
 - name: Warehouse capacity
   items:
   - name: Burstable capacity

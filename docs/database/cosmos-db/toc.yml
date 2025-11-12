@@ -70,7 +70,7 @@ items:
       - name: Autoscale throughput
         href: autoscale-throughput.md
   - name: Write queries
-    href: nosql-query/toc.yml
+    href: query/toc.yml
   - name: Troubleshoot
     items:
       - name: Limitations
