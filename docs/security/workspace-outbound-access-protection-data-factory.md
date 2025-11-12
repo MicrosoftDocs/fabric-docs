@@ -121,18 +121,24 @@ When you allowlist a gateway, dataflows can connect to any data source accessibl
 > [!NOTE]
 > Other Fabric connectors like Datamarts and KQL Database don’t support workspace-level granularity.
 
-- Data Pipelines support only the following Fabric connectors:
+- **Pipelines**: Pipelines support only the following Fabric connectors:
 
   - FabricDataPipeline
   - CopyJob
   - UserDataFunction
   - PowerBIDataset
 
-- For Dataflows, cross-workspace Data Warehouse destinations aren't supported.
+- **Pipeline activities**: The Teams activity and Office 365 Outlook activity don't support outbound access protection.
 
-- Workspace outbound access protection isn't supported for Lakehouse with default Semantic models. To ensure the Lakehouse is compatible with outbound access protection:
+- **Dataflows**: For Dataflows, cross-workspace Data Warehouse destinations aren't supported.
 
-  - We recommend enabling outbound access protection on the workspace before creating a Lakehouse to ensure compatibility.
+- **Lakehouses with default semantic models**: Workspace outbound access protection isn't supported for lakehouses with default semantic models. 
+
+  - To ensure the Lakehouse is compatible with outbound access protection, we recommend enabling outbound access protection on the workspace before creating a Lakehouse to ensure compatibility.
   - Enabling outbound access protection on an existing workspace that already contains a Lakehouse (and its associated Semantic model) isn't supported.
+
+- **Exploratory APIs in pipelines and Copy job**: APIs used for Browse, Preview, and Test Connection operations do not support outbound access protection.
+
+- **Workspace staging in pipelines**: Internal staging scenarios using workspace staging don't work. Use external staging instead. Staging settings are configurable in the [pipeline copy settings](/fabric/data-factory/copy-data-activity#configure-your-other-settings-under-settings-tab).
 
 - For other limitations, refer to [Workspace outbound access protection overview - Microsoft Fabric](/fabric/security/workspace-outbound-access-protection-overview#considerations-and-limitations).
