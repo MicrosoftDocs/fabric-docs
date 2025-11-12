@@ -56,8 +56,7 @@ The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/
 # [Summarize values from a single column](#tab/column-summary)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df= pd.DataFrame([
         ("Microsoft Teams", "2017",

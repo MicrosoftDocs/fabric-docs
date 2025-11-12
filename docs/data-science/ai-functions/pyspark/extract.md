@@ -58,8 +58,7 @@ The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/ap
 # [labels only](#tab/labels)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = spark.createDataFrame([
         ("MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",),
@@ -84,12 +83,15 @@ df = spark.createDataFrame([
         ("Jordan Smith, a 29-year-old striker from Manchester, scored exactly 1 goal in every game, for a total of 34 goals.",)
     ], ["bio"])
 
-df = df.ai.extract(aifunc.ExtractLabel(
-        label = "goals", 
-        description = "total goals only", 
-        max_items = 1, 
-        type = "integer"), 
-    input_col="bio")
+df = df.ai.extract(
+        aifunc.ExtractLabel(
+            label = "goals", 
+            description = "total goals only", 
+            max_items = 1, 
+            type = "integer"
+        ), 
+        input_col="bio"
+    )
 display(df)
 ```
 

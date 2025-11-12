@@ -64,8 +64,7 @@ The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/ap
 # [Generate responses with a simple prompt](#tab/simple-prompt)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = spark.createDataFrame([
         ("Scarves",),
@@ -84,8 +83,7 @@ This example code cell provides the following output:
 # [Generate responses with a template prompt](#tab/template-prompt)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = spark.createDataFrame([
         ("001", "Scarves", "Boots", "2021"),
@@ -108,8 +106,7 @@ This example code cell provides the following output:
 The following example shows how to use the `response_format` parameter to specify different response formats, including plain text, a JSON object, and a custom JSON schema.
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = spark.createDataFrame([
         ("Alex Rivera is a 24-year-old soccer midfielder from Barcelona who scored 12 goals last season.",),

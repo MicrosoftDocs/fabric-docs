@@ -56,8 +56,7 @@ The function returns a [pandas DataFrame](https://pandas.pydata.org/docs/referen
 # [labels only](#tab/labels)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = pd.DataFrame([
         "MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",
@@ -74,14 +73,21 @@ This example code cell provides the following output:
 
 # [ExtractLabel](#tab/extract-label)
 ```python
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
+# This code uses AI. Always review output for mistakes.
 
 df = pd.DataFrame([
         "Alex Rivera, a 24-year-old midfielder from Barcelona, scored 12 goals last season, with an impressive 5 goals in one game.",
         "Jordan Smith, a 29-year-old striker from Manchester, scored exactly 1 goal in every game, for a total of 34 goals."
     ], columns=["bio"])
 
-df["goals"] = df["bio"].ai.extract(aifunc.ExtractLabel(label = "goals", description = "total goals only", max_items = 1, type = "integer"))
+df["goals"] = df["bio"].ai.extract(
+    aifunc.ExtractLabel(
+        label = "goals", 
+        description = "total goals only", 
+        max_items = 1, 
+        type = "integer"
+    )
+)
 display(df)
 ```
 

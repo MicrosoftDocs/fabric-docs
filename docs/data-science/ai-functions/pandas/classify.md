@@ -48,8 +48,7 @@ The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/
 ## Example
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = pd.DataFrame([
         "This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",

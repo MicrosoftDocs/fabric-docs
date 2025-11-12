@@ -59,8 +59,7 @@ The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/
 # [Compare with a single value](#tab/similarity-single)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = pd.DataFrame([ 
         ("Bill Gates"), 
@@ -79,8 +78,7 @@ This example code cell provides the following output:
 # [Compare with pairwise values](#tab/similarity-pairwise)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = pd.DataFrame([ 
         ("Bill Gates", "Technology"), 

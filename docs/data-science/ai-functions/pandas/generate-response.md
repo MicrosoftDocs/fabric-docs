@@ -67,8 +67,7 @@ The function returns a [pandas DataFrame](https://pandas.pydata.org/docs/referen
 # [Generate responses with a simple prompt](#tab/simple-prompt)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = pd.DataFrame([
         ("Scarves"),
@@ -87,8 +86,7 @@ This example code cell provides the following output:
 # [Generate responses with a template prompt](#tab/template-prompt)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = pd.DataFrame([
         ("001", "Scarves", "Boots", "2021"),

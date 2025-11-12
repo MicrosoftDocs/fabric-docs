@@ -21,7 +21,7 @@ The `ai.embed` function uses generative AI to convert text into vector embedding
 
 ## Overview
 
-The `ai.embed` function is available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify the name of an existing input column as a parameter. You must also specify a single common text value for comparisons, or the name of another column for pairwise comparisons.
+The `ai.embed` function is available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify the name of an existing input column as a parameter.
 
 The function returns a new DataFrame that includes embeddings for each row of input text, in an output column.
 
