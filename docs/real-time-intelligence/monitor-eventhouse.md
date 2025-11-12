@@ -50,5 +50,5 @@ There are two monitoring templates available:
 * [Workspace monitoring overview](../fundamentals/workspace-monitoring-overview.md)
 * [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md)
 * [Manage and monitor an eventhouse](manage-monitor-eventhouse.md)
-* [End-toend monitoring in Real-Time Intelligence](../real-time-intelligence/sample-end-to-end.md)
+* [End-to-end monitoring in Real-Time Intelligence](../real-time-intelligence/sample-end-to-end.md)
 * [Visualize workspace monitoring data](../fundamentals/sample-gallery-workspace-monitoring.md)
