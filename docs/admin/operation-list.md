@@ -41,6 +41,7 @@ The following operations are available in the audit logs.
 | Append data to file | :::no-loc text="AppendDataToFile"::: | OneLake operation. Uploads data to be append to a file (DFS). |
 | Applied a change to model in Power BI | :::no-loc text="ApplyChangeToPowerBIModel"::: | A user makes a change to an existing model. This occurs whenever any edit is made to the model (ex: write a DAX measure, manage relationships, etc.)  |
 | Applied sensitivity label to Power BI item | :::no-loc text="SensitivityLabelApplied"::: |   |
+| Apply CMK encryption to your workspace | :::no-loc text="ApplyWorkspaceEncryption"::: | Triggered when CMK encryption is applied to a workspace |
 | Assign Workspace To Alm Pipeline | :::no-loc text="AssignWorkspaceToAlmPipeline"::: |   |
 | Assigned a workspace to a deployment pipeline | :::no-loc text="AssignWorkspaceToPipeline"::: | Not currently used  |
 | Attach Notebook Environment | :::no-loc text="AttachNotebookEnvironment"::: | Attach the environment for Notebook.  |
@@ -741,7 +742,7 @@ The following operations are available in the audit logs.
 | View Spark App Input Output | :::no-loc text="ViewSparkAppInputOutput"::: |  |
 | View Spark App Log | :::no-loc text="ViewSparkAppLog"::: |  |
 | View Spark Application | :::no-loc text="ViewSparkApplication"::: |  |
-| View Sql Analytics Endpoint Lakehouse | :::no-loc text="ViewSqlAnalyticsEndpointLakehouse"::: | Viewed a lakehouse SQL analytics endpoint. Previously named *Viewed a default warehouse* (Operation name: :::no-loc text="*ViewDefaultWarehouse*":::) |
+| View SQL Analytics Endpoint Lakehouse | :::no-loc text="ViewSqlAnalyticsEndpointLakehouse"::: | Viewed a lakehouse SQL analytics endpoint. Previously named *Viewed a default warehouse* (Operation name: :::no-loc text="*ViewDefaultWarehouse*":::) |
 | View Warehouse | :::no-loc text="ViewWarehouse"::: |  |
 | View mounted warehouse | :::no-loc text="ViewMountedWarehouse"::: | Generated when mounted warehouse is fetched for viewing |
 | Viewed Power BI dashboard | :::no-loc text="ViewDashboard"::: | Some fields such as CapacityID and CapacityName, will return null if the report or dashboard is viewed from a Power BI app, rather than a Power BI workspace |
@@ -750,7 +751,11 @@ The following operations are available in the audit logs.
 | Viewed Power BI report | :::no-loc text="ViewReport"::: | A report is also generated per page when exporting a report. Some fields such as CapacityID and CapacityName, will return null if the report or dashboard is viewed from a Power BI app, rather than a Power BI workspace. |
 | Viewed Power BI tile | :::no-loc text="ViewTile"::: |  |
 | Viewed Power BI usage metrics | :::no-loc text="ViewUsageMetrics"::: |  |
+| View or modify CMK encryption settings | :::no-loc text="GetWorkspaceEncryption"::: | Logged when the encryption settings page is opened in the portal, modified, or applied to artifacts |
 | disable workspace | :::no-loc text="DisableWorkspaceViaAdminApi"::: | Disables the workspace |
+| Disable CMK encryption for your workspace | :::no-loc text="DisableWorkspaceEncryption"::: | Triggered when CMK encryption is disabled for a workspace |
+| Disable Workspace Outbound Access Protection | :::no-loc text="DisableWorkspaceOutboundAccessProtection"::: | Outbound Access Protection Disabled on Workspace |
+| Enable Workspace Outbound Access Protection | :::no-loc text="EnableWorkspaceOutboundAccessProtection"::: | Outbound Access Protection Enabled on Workspace |
 
 ## Considerations and limitations
 
