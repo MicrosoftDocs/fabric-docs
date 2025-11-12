@@ -76,6 +76,7 @@ The following table lists the features of Microsoft Fabric that are currently in
 |**Fabric data agent integration with Azure AI Agent Service (preview)**|We're excited to launch the integration of data agents in Fabric with Azure AI Agent Service from Azure AI Foundry. To get started, see [Consume a Fabric Data Agent in Microsoft Copilot Studio (preview)](../data-science/data-agent-microsoft-copilot-studio.md). The [Fabric data agent SDK](https://pypi.org/project/fabric-data-agent-sdk/) is also available in preview.|
 |**Fabric data agent integration with Microsoft Copilot Studio (preview)**|Fabric data agent is available in preview and can be added as an agent to your custom setup in Microsoft Copilot Studio. For more information, see [Fabric data agent integration with Microsoft Copilot Studio (preview)](https://blog.fabric.microsoft.com/blog/fabric-may-2025-feature-summary?ft=All#post-23234-_Toc198140712).|
 |**Fabric data factory Upsert table action in the Lakehouse Connector (preview)**|The [Upsert (Preview) table action in the Lakehouse Connector](https://blog.fabric.microsoft.com/blog/on-premises-data-gateway-june-2025-release?ft=All) is in preview.|
+| **IQ (preview)** workload and **ontology (preview)** item | [IQ (preview)](../iq/overview.md) is a new workload for unifying business semantics across data, models, and systems to power intelligent agents and decisions grounded in a live, holistic view of the business. It contains the [ontology (preview) item](../iq/ontology/overview.md), where you can define entity types, relationships, properties, and other constraints to organize data according to your business vocabulary. For more information, see [What is IQ (preview)?](../iq/overview.md). |
 |**Fabric Extensibility Toolkit (Preview)**|The [Extensibility Toolkit](../extensibility-toolkit/key-concepts.md) builds on the foundation of the Workload Development Kit while introducing several key improvements and new capabilities. We have also created a new [Fabric Community Repository](https://aka.ms/fabric-extensibility-toolkit-samples). This repository contains a wide variety of item types built with the Extensibility toolkit you can add to your tenant. For more information, see [Introducing the Microsoft Fabric Extensibility Toolkit](https://blog.fabric.microsoft.com/blog/introducing-the-microsoft-fabric-extensibility-toolkit?ft=All).|
 |**Fabric MCP (Preview)**|[Fabric MCP](https://github.com/microsoft/mcp/) is a developer-focused Model Context Protocol server that enables AI-assisted code generation and item authoring in Microsoft Fabric. Designed for agent-powered development and automation, it integrates with tools like VS Code and GitHub Codespaces as part of the Microsoft MCP initiative. For more information, see [Introducing Fabric MCP (preview)](https://blog.fabric.microsoft.com/blog/introducing-fabric-mcp-public-preview?ft=All). |
 |**Fabric Spark Applications Comparison (Preview)**|The Spark Applications Comparison feature lets users select and compare up to four Spark application runs side by side. For more information, see [Blog: Fabric Spark Applications Comparison](https://aka.ms/SparkComparisonBlog).|
@@ -516,6 +517,14 @@ For older updates, review the [Microsoft Fabric What's New archive](whats-new-ar
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
 |July 2025|**From Signals to Insights: Building a Real-Time Streaming Data Platform with Fabric Eventstream**|Learn how [Contoso uses MQTT sensors, public weather feeds, and Fabric Real-Time Intelligence to monitor smart buildings](https://blog.fabric.microsoft.com/blog/from-signals-to-insights-building-a-real-time-streaming-data-platform-with-fabric-eventstream?ft=All).|
+
+## IQ (preview)
+
+This section summarizes recent improvements and features for the new [IQ (preview) workload](../iq/overview.md).
+
+|**Month** | **Feature** | **Learn more** |
+|:-- |:-- | :-- |
+|November 2025|**Ontology (preview) item**| The [ontology (preview) item](../iq/ontology/overview.md) lets you define entity types, relationships, properties, and other constraints to organize data according to your business vocabulary. For more information, see [What is ontology (preview)?](../iq/ontology/overview.md)|
 
 ## Related content
 

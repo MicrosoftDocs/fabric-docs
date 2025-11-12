@@ -16,7 +16,7 @@ ai-usage: ai-assisted
 
 # Fabric data agent example with the AdventureWorks dataset (preview)
 
-This article shows how to set up a data agent in Microsoft Fabric using a lakehouse as the example data source. We first create and populate a lakehouse, then create a Fabric data agent and add the lakehouse to it. If you already have a Power BI semantic model (with the necessary read/write permissions), a warehouse, or a KQL database, follow the same steps and select that source instead. Although this walkthrough uses a lakehouse, the pattern is the same for other sources—only the data source selection differs.
+This article shows how to set up a data agent in Microsoft Fabric using a lakehouse as the example data source. We first create and populate a lakehouse, then create a Fabric data agent and add the lakehouse to it. If you already have a Power BI semantic model (with the necessary read/write permissions), a warehouse, a KQL database, or an ontology, follow the same steps and select that source instead. Although this walkthrough uses a lakehouse, the pattern is the same for other sources—only the data source selection differs.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
