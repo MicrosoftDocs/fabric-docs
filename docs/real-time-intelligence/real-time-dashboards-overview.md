@@ -36,6 +36,7 @@ Key features and capabilities of Real-Time Dashboard include:
 * **Dynamic interactions:** Support for [cross-filtering](dashboard-parameters.md#interact-with-your-data-using-cross-filter), [drill-through](dashboard-parameters.md#use-drillthroughs-as-dashboard-parameters), and [parameters](dashboard-parameters.md) for deeper insights.
 * **Git integration:** Sync dashboards with GitHub or Azure DevOps for version control and parallel development.
 * **Permission separation:** Grant dashboard access without exposing the underlying data, supporting [secure collaboration](dashboard-permissions.md).
+* **Set Alert for Proactive Monitoring:** Define thresholds and [trigger alerts](data-activator/activator-get-data-real-time-dashboard.md) when critical metrics change, enabling automatic actions and ensuring rapid response.
 
 ## Getting started
 
