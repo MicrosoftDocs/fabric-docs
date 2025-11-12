@@ -4,7 +4,7 @@ description: Review the fundamentals of securing Cosmos DB in Microsoft Fabric f
 author: markjbrown
 ms.author: mjbrown
 ms.topic: best-practice
-ms.date: 10/29/2025
+ms.date: 11/12/2025
 ms.custom: [security-horizontal-2025, horz-security]
 ms.search.form: Cosmos DB database security
 ai-usage: ai-generated
@@ -27,6 +27,9 @@ This article provides guidance on how to best secure your Cosmos DB in Fabric de
 ## User permissions
 
 - **Configure least-permissive Fabric workspace access**: User permissions are enforced based on the current level of workspace access. If a user is removed from the Fabric workspace, they also automatically lose access to the associated Cosmos DB database and underlying data. For more information, see [Fabric permission model](../../security/permission-model.md).
+
+> [NOTE!]
+> Currently when permissions are assigned to a user on any Cosmos DB artifact in a workspace those permissions are applied to all Cosmos DB artifacts in the workspace.
 
 ## Execution context and identity considerations
 

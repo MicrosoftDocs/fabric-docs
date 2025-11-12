@@ -67,8 +67,6 @@ items:
         href: how-to-authenticate.md
       - name: Authenticate from Fabric Notebooks
         href: how-to-authenticate-notebooks.md
-      - name: Customer managed keys
-        href: customer-managed-keys.md
   - name: Manage resources
     items:
       - name: Configure container
