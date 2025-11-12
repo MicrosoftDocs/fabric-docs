@@ -1,11 +1,11 @@
 ---
 title: Module 1 - Create a pipeline with Data Factory
-description: This tutorial module covers creating a pipeline, as part of an end-to-end data integration tutorial to complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
+description: In this tutorial, you create a pipeline to copy data as part of an end-to-end guide to complete a full data integration scenario within an hour using Data Factory in Microsoft Fabric.
 ms.author: whhender
 ms.reviewer: xupzhou
 author: whhender
 ms.topic: tutorial
-ms.date: 09/25/2025
+ms.date: 11/11/2025
 ms.custom: pipelines, sfi-image-nochange
 ---
 
@@ -65,17 +65,31 @@ The high-level steps in module 1 are:
 
 1. On the **Review + save** page of the copy data assistant, review the configuration and then select **Save**.
 
-1. At the top of the pipeline editor, select **Run** to run the pipeline and copy the data.
+1. Select the copy job activity on the pipeline canvas, then select the **Settings** tab below the canvas.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/run-pipeline.png" alt-text="Screenshot of the pipeline editor with the Run button highlighted." lightbox="media/tutorial-end-to-end-pipeline/run-pipeline.png":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/select-settings.png" alt-text="Screenshot of the pipeline canvas with the copy job activity highlighted and the settings tab highlighted." lightbox="media/tutorial-end-to-end-pipeline/select-settings.png":::
 
-1. Select **Save and run** to confirm and run the pipeline.
+1. Select the **Connection** drop-down and select **Browse all**.
+
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/browse-all.png" alt-text="Screenshot of the copy job activity settings list, with browse all highlighted." lightbox="media/tutorial-end-to-end-pipeline/browse-all.png":::
+
+1. Select **Copy job** under **New sources**.
+
+1. On the **Connect data source** page, select **Sign in** to authenticate the connection.
+
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/select-sign-in.png" alt-text="Screenshot of the get data connection credentials page, with the Sign in Option highlighted." lightbox="media/tutorial-end-to-end-pipeline/select-sign-in.png":::
+
+1. Follow the prompts to sign in to your organizational account.
+
+1. Select **Connect** to complete the connection setup.
+
+1. At the top of the pipeline editor, select **Save** to save the pipeline.
 
 ## Run and view the results of your Copy activity
 
-1. Select the **Run** tab in the pipeline editor. Then select the **Run** button, and then **Save and run**, to run the Copy activity.
+1. At the top of the pipeline editor, select **Run** to run the pipeline and copy the data.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/run-button.png" alt-text="Screenshot showing the pipeline Run tab with the Run button highlighted.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/run-pipeline.png" alt-text="Screenshot of the pipeline editor with the Run button highlighted." lightbox="media/tutorial-end-to-end-pipeline/run-pipeline.png":::
 
 1. You can monitor the run and check the results on the **Output** tab below the pipeline canvas. Select name of the pipeline to view the run details.
 
