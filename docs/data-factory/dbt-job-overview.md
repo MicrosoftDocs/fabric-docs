@@ -250,4 +250,4 @@ To optimize performance, avoid long dependency chains and prefer well-partitione
 ## Related Content
 
 - [dbt Official Documentation](https://docs.getdbt.com/)
-- [Get started with dbt in Fabric (Tutorial)](https://statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html)
+
