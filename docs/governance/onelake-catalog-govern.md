@@ -24,7 +24,7 @@ To get to the Govern tab, select the [OneLake catalog icon in the Fabric navigat
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png" alt-text="Screenshot showing how to open the Govern tab in the OneLake catalog." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png":::
 
-You can also access from the settings gear by selecting the **OneLake Catalog | Govern** link.  
+You can also access the Govern tabfrom the settings gear by selecting the **OneLake Catalog | Govern** link.  
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-settings-gear.png" alt-text="Screenshot showing how to open the Govern tab from setting panel." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-settings-gear.png":::
 
@@ -32,7 +32,7 @@ You can also access from the settings gear by selecting the **OneLake Catalog | 
 
 The first time you open the Govern tab, it might take a few moments for the insights and actions to appear.
 
-When Fabric Admins access the Govern tab, they see **All Data in Fabric** by default. They can switch to view their own items' governance states by selecting **My items**.
+When Fabric Admins access the Govern tab, they see **All Data in Fabric** by default. They can switch to their own items' governance state by selecting **My items**.
 
 Data owners see their own items view by default.
 
@@ -40,7 +40,7 @@ Data owners see their own items view by default.
 
 ## Scope the insights and recommended actions by domain
 
-If your organization has defined domains, you can use the OneLake catalog's [domain selector](./onelake-catalog-explore.md#scope-the-catalog-to-a-particular-domain) to choose a specific domain or subdomain. Doing so scopes the insights and recommended actions to items that reside within the selected domain.
+If your organization defines domains, you can use the OneLake catalog's [domain selector](./onelake-catalog-explore.md#scope-the-catalog-to-a-particular-domain) to choose a specific domain or subdomain. This action scopes the insights and recommended actions to items that reside within the selected domain.
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-domains-selector.png" alt-text="Screenshot showing how to select a domain in the OneLake catalog." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-domains-selector.png":::
 
@@ -49,15 +49,15 @@ If your organization has defined domains, you can use the OneLake catalog's [dom
 
 ## Get insights about the governance status 
 
-For Fabric admins, the insights section provides high-level insights about the entire Fabric tenant. You can select **View more** to see [all available insights](#all-insights).
+For Fabric admins, the insights section provides high-level insights about the entire Fabric tenant. Select **View more** to see [all available insights](#all-insights).
 
-The data in these insights is based on the last successful refresh of the Admin Monitoring Storage that was automatically generated in the Admin Monitoring workspace the first time an admin opened the Govern tab or accessed the Admin Monitoring workspace. The data refreshes automatically every day. (See [Considerations and limitations for exceptions](#considerations-and-limitations).)
+These insights use data from the last successful refresh of the Admin Monitoring Storage, which isautomatically generated in the Admin Monitoring workspace the first time an admin opens the Govern tab or accesses the Admin Monitoring workspace. The data refreshes automatically every day. (See [Considerations and limitations for exceptions](#considerations-and-limitations).)
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-insights-admins.png" alt-text="Screenshot showing the top insights for Fabric admins on the Govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-insights-admins.png":::
 
-For data owners, and as part of My Items view, the insights section provides basic high-level insights about the content you've created in Fabric. You can select **View more** to see [all available insights](#all-insights).
+For data owners, the insights section in the My Items view shows basic high-level insights about the content you create in Fabric. Select **View more** to see [all available insights](#all-insights).
 
-The data in these insights is based on the last successful refresh of your OneLake catalog governance report. The data refreshes automatically every time you open the Govern tab. You can also select the Refresh button if you want to make sure you have the latest data.
+These insights use data from the last successful refresh of your OneLake catalog governance report. The data refreshes automatically every time you open the Govern tab. Select the Refresh button to make sure you have the latest data.
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-governance-status.png" alt-text="Screenshot showing the top insights for data owners on the Govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-governance-status.png":::
 
@@ -69,7 +69,7 @@ Selecting **View more** gives Fabric admins access to expanded insights across t
 
 * **Protect, secure & comply** includes information about sensitivity label coverage and data loss prevention policies activated and scanned across the various workspaces in the organization.
 
-* **Discover, trust, and reuse** surfaces insights about data freshness, item curation state with information about description &endorsement coverage and content sharing view.
+* **Discover, trust, and reuse** surfaces insights about data freshness, item curation state with information about description and endorsement coverage and content sharing view.
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-view-more-report-admins.png" alt-text="Screenshot showing the view more report for admins." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-view-more-report-admins.png":::
 
@@ -133,4 +133,3 @@ For the *My items* view, if the data isn't refreshing as expected, check the not
 * [OneLake catalog overview](./onelake-catalog-overview.md)
 * [Discover and explore Fabric items in the OneLake catalog](./onelake-catalog-explore.md)
 * [Administer Microsoft Fabric](https://go.microsoft.com/fwlink/?linkid=2321486)
-  
