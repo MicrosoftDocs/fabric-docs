@@ -176,6 +176,29 @@ The selected items in your workspace revert to how they were when the workspace 
 >
 >Undoing added items will permanently delete the item. 
 
+### [Standalone branch](#tab/stand-alone)
+Commit to standalone branch is a Git integration feature in the Fabric repository that lets you create a fresh branch and commit your current changes to it in one single action. In other words, instead of committing to the connected branch, you can branch off on the fly: the system will spin up a new Git branch and save your work there without requiring you to leave or switch from your original branch. 
+
+This capability didn’t exist in earlier workflows – previously a user would have had to manually create or checkout a separate branch and then commit – so Commit to standalone branch provides a convenient parallel commit flow that wasn't possible before. 
+
+1. Go to the workspace.
+2. Select the **Source control** icon. This icon shows the number of uncommitted changes.
+    :::image type="content" source="./media/git-get-started/source-control-number.png" alt-text="Screenshot of source control icon with the number 2 indicating that there are two changes to commit.":::
+3. Select the **Changes** from the **Source control** panel.
+   A list appears with all the items you changed, and an icon indicating if the item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, *conflict* :::image type="icon" source="./media/git-get-started/conflict-icon.png":::, *same change* :::image type="icon" source="./media/git-get-started/warning.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
+4. Select the items you want to commit. To select all items, check the top box.
+5. Add a comment in the box. If you don't add a comment, a default message is added automatically.
+6. Select **Commit to new branch**.
+
+>[!IMPORTANT]
+>Be aware of the followingL
+> - the newly created branch will not be connected to the exisiting workspace.
+> - the newly created branch will be based on the last synch state of the current workspace
+
+
+
+
+
 ---
 
 ## Update workspace from Git
