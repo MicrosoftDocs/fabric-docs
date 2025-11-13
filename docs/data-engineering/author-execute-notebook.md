@@ -591,14 +591,18 @@ You can also use `%%configure` magic command to dynamically inject configuration
     "id": {
       "variableName": "$(/**/myVL/LHid)"
     },
-    "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>"
+    "workspaceId": {
+      "variableName": "$(/**/myVL/WorkspaceId)"
+    }
   }
 }
 ```
 
 In this example:
 - `myVL` is the name of your Variable Library.
-- `LHname` and `LHid` are variable keys defined in the library.
+- `LHname`, `LHid`, and `WorkspaceId` are variable keys defined in the library.
+- All variables should be defined as String type in the variable library, even for GUID values.
+- The `workspaceId` is required when the lakehouse is in a different workspace than the current notebook.
 - These values are resolved at runtime depending on the active environment (for example, Dev, Test, Prod).
 
 This allows you to switch configurations like default lakehouse without modifying your notebook code.
