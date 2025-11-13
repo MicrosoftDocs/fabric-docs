@@ -18,7 +18,7 @@ Workspace outbound access protection in Microsoft Fabric lets admins secure the 
 This article provides an overview of workspace outbound access protection and its configuration options.
 
 > [!NOTE]
-> For *inbound* security, Fabric supports private links at the [tenant level](security-private-links-overview.md) and at the [workspace level](security-workspace-level-private-links-overview.md).
+> In addition to outbound access protection, Microsoft Fabric provides *inbound* security by supporting private links. Learn more about configuring private links at the [tenant level](security-private-links-overview.md) and the [workspace level](security-workspace-level-private-links-overview.md).
 
 ## How is outbound access controlled at the workspace level?
 
@@ -65,7 +65,7 @@ The following table summarizes the supported workloads and item types that can b
 
 ## Considerations and limitations
 
-The following limitations apply when using workspace outbound access protection:
+The following limitations apply when using workspace outbound access protection.
 
 ### Regions
 

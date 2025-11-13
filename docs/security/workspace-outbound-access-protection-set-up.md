@@ -36,13 +36,16 @@ This article explains how to configure outbound access protection for your Fabri
 
 To enable workspace outbound access protection by using the Fabric portal, follow these steps:
 
-1. Sign in to Fabric with an account that has the Admin role in the workspace where you want to set up outbound access protection.
+1. Sign in to [Fabric](https://app.fabric.microsoft.com) with an account that has the Admin role in the workspace where you want to set up outbound access protection.
 
-1. In the workspace where you want to set up outbound access protection, go to **Workspace settings** -> **Network Security**. Under **Outbound access protection**, turn on **Block outbound public access**.
+1. In the workspace where you want to set up outbound access protection, go to **Workspace settings** > **Network Security**.
+
+1. Under **Outbound access protection**, switch the **Block outbound public access** toggle to **On**.
  
    :::image type="content" source="media/workspace-outbound-access-protection-set-up/network-security-settings.png" alt-text="Screenshot showing outbound access protection settings." lightbox="media/workspace-outbound-access-protection-set-up/network-security-settings.png":::
 
-1. If you want to allow Git integration, turn the **Allow Git integration** toggle to **On**. Git integration is blocked by default when **Block outbound public access** is enabled, but you can enable Git integration for the workspace so its content (like notebooks, dataflows, Power BI reports, etc.) can sync with an external Git repository (GitHub or Azure DevOps). [Learn more](/fabric/cicd/cicd-security)
+   > [!NOTE]
+   > If you want to allow Git integration, turn the **Allow Git integration** toggle to **On**. Git integration is blocked by default when **Block outbound public access** is enabled, but you can enable Git integration for the workspace so its content (like notebooks, dataflows, Power BI reports, etc.) can sync with an external Git repository (GitHub or Azure DevOps). [Learn more](/fabric/cicd/cicd-security)
 
 ### [API](#tab/api-1)
 

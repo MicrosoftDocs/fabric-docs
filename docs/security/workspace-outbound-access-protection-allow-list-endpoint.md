@@ -12,9 +12,9 @@ ms.date: 11/10/2025
 ---
 # Create an allowlist using managed private endpoints
 
-The workspace outbound access protection setting blocks all outbound connections from a workspace. After [enabling this setting](workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to resources in other workspaces or external destinations. You can allow outbound access by creating an allowlist using [managed private endpoints](security-managed-private-endpoints-overview.md) with or without the Private Link service:
+When outbound access protection is enabled for a workspace, all outbound connections are blocked by default. For Data Engineering and OneLake workloads, you can then permit access to external data sources or other workspaces by configuring [managed private endpoints](security-managed-private-endpoints-overview.md):
 
-- Use managed private endpoints for connections to external sources.
+- For connections to external data sources, use managed private endpoints.
 - For connections to other workspaces, use managed private endpoints together with the Private Link service.
 
 This article explains how to create managed private endpoints for both of these scenarios. Managed private endpoints apply to Data Engineering and OneLake workloads. For Data Factory, use [data connection rules](./workspace-outbound-access-protection-allow-list-connector.md) to allow outbound access.
