@@ -38,7 +38,7 @@ Once configured, Data Factory items can connect only to the approved destination
 The following Data Factory item types are supported with outbound access protection:
 
 - Dataflows Gen2 (with CICD)
-- Data Pipelines
+- Pipelines
 - Copy Jobs
 
 The next section explains how outbound access protection affects several common Data Factory scenarios.

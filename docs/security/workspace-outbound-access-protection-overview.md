@@ -24,7 +24,7 @@ This article provides an overview of workspace outbound access protection and it
 
 When outbound access protection is enabled for a workspace, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to permit specific outbound connections. There are two options for allowing outbound access:
 
-* **Managed private endpoints**, which are network connections that securely link workspace items to supported resources over private virtual networks. This method is supported for Data Engineering and OneLake workloads.
+* **Managed private endpoints**, which are network connections that let you securely link workspace items to supported external data sources over private virtual networks. You can also connect to other workspaces within the same tenant by using managed private endpoints in conjunction with the Private Link service. Managed private endpoints are supported for Data Engineering and OneLake workloads.
 
 * **Data connection rules**, which are policies that permit workspace items to access external services through specific cloud connections or gateway connections. Admins control outbound connectivity by explicitly allowing or blocking connectors. This method is supported for Data Factory workloads.
 
@@ -40,7 +40,7 @@ In this diagram:
 
 * Workspace A and Workspace B both have outbound access protection enabled. They can connect to all the resources that support private endpoints through a managed private endpoint from the workspace to the destination. For example, Workspace A can connect to the SQL server because it has a managed private endpoint set up to the SQL server.
 
-* An outbound access protection enabled workspace can also connect to another workspace within the same tenant if a managed private endpoint is established from the source to the target workspace. For example, Workspace B has a managed private endpoint configured to workspace C. This managed private endpoint allows items in Workspace B (for example shortcuts) to reference the data in Workspace C (for example, in a lakehouse).
+* An outbound access protection enabled workspace can also connect to another workspace within the same tenant. In this scenario, the protected workspace has a managed private configured for the target workspace, and the Private Link service is established for the target workspace. In the diagram, Workspace B has a managed private endpoint configured to workspace C. This managed private endpoint allows items in Workspace B (for example shortcuts) to reference the data in Workspace C (for example, in a lakehouse).
 
 * Multiple workspaces can connect to the same source by setting up managed private endpoints. For example, both Workspace A and Workspace B can connect to the SQL server because managed private endpoints are set up for each of them for this SQL server.
 
@@ -58,14 +58,14 @@ The following table summarizes the supported workloads and item types that can b
 
 |Workload  |Supported items  |More information  |
 |---------|---------|---------|
-|OneLake     |<ul><li>OneLake shortcuts</li></ul>         |[Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md)         |
 |Data Engineering     |<ul><li>Lakehouses</li><li>Notebooks</li><li>Spark Job Definitions</li><li>Environments</li></ul>         |[Workspace outbound access protection for data engineering workloads](workspace-outbound-access-protection-data-engineering.md)         |
-|Data Warehouse     |<ul><li>Data Warehouse</li></ul>         |[Workspace outbound access protection for data engineering workloads](workspace-outbound-access-protection-data-engineering.md)         |
 |Data Factory     |<ul><li>Data Flows Gen2 (with CICD)</li><li>Pipelines</li><li>Copy Jobs</li></ul>         |[Workspace outbound access protection for Data Factory](workspace-outbound-access-protection-data-factory.md)         |
+|Data Warehouse     |<ul><li>Warehouses</li><li>SQL analytics endpoints</li></ul>         |[Workspace outbound access protection for data warehouse workloads](workspace-outbound-access-protection-data-warehouse.md)         |
+|OneLake     |<ul><li>OneLake shortcuts</li></ul>         |[Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md)         |
 
 ## Considerations and limitations
 
-The following limitations apply when using workspace outbound access protection.
+This section outlines important considerations and limitations when using workspace outbound access protection.
 
 ### Regions
 
