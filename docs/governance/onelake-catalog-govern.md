@@ -32,9 +32,9 @@ You can also access the Govern tab from the settings gear by selecting the **One
 
 The first time you open the Govern tab, it might take a few moments for the insights and actions to appear.
 
-When Fabric Admins access the Govern tab, they see **All Data in Fabric** by default. They can switch to their own items' governance state by selecting **My items**.
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-admins.png" alt-text="Screenshot showing how to open the Govern tab from setting panel." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-admins.png":::
 
-Data owners see their own items view by default.
+When Fabric Admins access the Govern tab, they see **All Data in Fabric** by default. They can switch to their own items' governance state by selecting **My items**. Data owners see their own items view by default.
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-left-rail-navigation.png" alt-text="Screenshot showing how admins can switch between views." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-left-rail-navigation.png":::
 
@@ -47,13 +47,19 @@ If your organization defines domains, you can use the OneLake catalog's [domain 
 > [!NOTE]
 > For Fabric admins, the domain filter doesn't apply to certain actions and those actions remain unchanged.
 
-## Get insights about the governance status 
+## Get insights about the governance status
+
+The insights section provides a snapshot of the current governance state of your data.
+
+### Insights for Fabric admins
 
 For Fabric admins, the insights section provides high-level insights about the entire Fabric tenant. Select **View more** to see [all available insights](#all-insights).
 
 These insights use data from the last successful refresh of the Admin Monitoring Storage, which is automatically generated in the Admin Monitoring workspace the first time an admin opens the Govern tab or accesses the Admin Monitoring workspace. The data refreshes automatically every day. (See [Considerations and limitations for exceptions](#considerations-and-limitations).)
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-insights-admins.png" alt-text="Screenshot showing the top insights for Fabric admins on the Govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-insights-admins.png":::
+
+### Insights for data owners
 
 For data owners, the insights section in the My Items view shows basic high-level insights about the content you create in Fabric. Select **View more** to see [all available insights](#all-insights).
 
@@ -63,7 +69,9 @@ These insights use data from the last successful refresh of your OneLake catalog
 
 ## All insights
 
-Selecting **View more** gives Fabric admins access to expanded insights across three tabs:
+Selecting **View more** in the insights section gives you expanded insights for your Fabric data.
+
+Fabric admins see a report that provides access to expanded insights across three tabs:
 
 * **Manage your data estate** contains inventory overview, capacities & domains information and details about feature usage across the tenant. 
 
@@ -101,10 +109,11 @@ The recommended actions vary depending on what the insights reveal.
 
 The Govern tab provides links to tools and resources relevant to your scope of responsibility:
 
-  **Top solutions**: Lists relevant Microsoft Fabric solutions for data governance, compliance, and security, along with links to documentation.
+* **Top solutions**: Lists relevant Microsoft Fabric solutions for data governance, compliance, and security, along with links to documentation.
 
-  **Read, watch, and learn** Provides links to other relevant documentation and resources.
+* **Read, watch, and learn** Provides links to other relevant documentation and resources.
 
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-tools-links-admins.png" alt-text="Screenshot showing an example of a recommended action card." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-tools-links-admins.png":::
 
 ## Create custom reports
 
@@ -121,11 +130,13 @@ For the *My items* view, if the data isn't refreshing as expected, check the not
 
 ## Considerations and limitations
 
+The following are some considerations and limitations when using the Govern tab:
+
 * Subitems, such as tables, aren't supported and don't surface into the insights.
 * The Govern tab doesn't support cross-tenant scenarios or guest users
 * The Govern tab isn't available when Private Link is activated.
 * Copilot functionality depends on organizational setup and the capacity the workspace is assigned with. The workspace (*admin monitoring workspace* for the admin view and *My workspaces* for the data owners view) should be allocated to the appropriate capacity in order to activate the Copilot button.
-* As Admins insights, recommended actions, and view more reports are based on admin monitoring storage that refreshes once a day, there could be gaps between the data reflected and the actual state. It takes a day to get an updated view of all the changes made in the organization.
+* Because admin insights, recommended actions, and view more reports are based on admin monitoring storage that refreshes once a day, there could be gaps between the data reflected and the actual state. It takes a day to get an updated view of all the changes made in the organization.
 * If *admin monitoring workspace* or *My workspaces* are reassigned to another capacity, users could get an error when accessing the Govern tab in the OneLake Catalog. In such cases, ensure the newly assigned capacity has enough resources to run the semantic models and reports.
 
 ## Related content
