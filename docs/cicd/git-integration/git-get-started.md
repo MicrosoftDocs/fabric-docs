@@ -177,7 +177,7 @@ The selected items in your workspace revert to how they were when the workspace 
 >Undoing added items will permanently delete the item. 
 
 ### [Standalone branch](#tab/stand-alone)
-Commit to standalone branch is a Git integration feature in the Fabric repository that lets you create a fresh branch and commit your current changes to it in one single action. In other words, instead of committing to the connected branch, you can branch off on the fly: the system will spin up a new Git branch and save your work there without requiring you to leave or switch from your original branch. 
+Commit to standalone branch is a Git integration feature that lets you create a fresh branch and commit your current changes to it in one single action. In other words, instead of committing to the connected branch, you can branch off on the fly: the system will spin up a new Git branch and save your work there without requiring you to leave or switch from your original branch. 
 
 This capability didn’t exist in earlier workflows – previously a user would have had to manually create or checkout a separate branch and then commit – so Commit to standalone branch provides a convenient parallel commit flow that wasn't possible before. 
 
@@ -191,7 +191,7 @@ This capability didn’t exist in earlier workflows – previously a user would 
 6. Select **Commit to new branch**.
 
 >[!IMPORTANT]
->Be aware of the followingL
+>Be aware of the following:
 > - the newly created branch will not be connected to the exisiting workspace.
 > - the newly created branch will be based on the last synch state of the current workspace
 
