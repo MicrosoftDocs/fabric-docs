@@ -33,7 +33,7 @@ Before you create dbt jobs in Microsoft Fabric, make sure your environment is se
 1. Go to the Admin Portal in Fabric.
 1. Under Tenant Settings, enable the **dbt Jobs (Preview)** feature for your organization or specific security groups.
 
-   :::image type="content" source="media/dbt-job/enable_dbt.png" alt-text="Screenshot of the Fabric UI with the tenant settings to enable dbt job.":::
+   :::image type="content" source="media/dbt-job/enable-dbt.png" alt-text="Screenshot of the Fabric UI with the tenant settings to enable dbt job.":::
 
 ### Set up your workspace and warehouse
 
