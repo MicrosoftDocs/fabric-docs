@@ -68,7 +68,7 @@ Create a new dbt job item in your workspace to start building transformations.
 
 ## Configure a dbt job
 
-When you create or edit a dbt job, select the dbt configurations button to open the profile setup page. Here, you define how your dbt job connects to your data warehouse.
+When you create or edit a dbt job, select the dbt configurations button to open the profile setup page. Here, you define how your dbt job connects to your data warehouse. You can also [change the adapter](#change-adapter) if needed and configure [advanced settings](#advanced-settings) to fine-tune execution behavior.
 
 Use dbt configurations to set (or review) your dbt profile:
 
@@ -86,23 +86,7 @@ Use dbt configurations to set (or review) your dbt profile:
 
     :::image type="content" source="media/dbt-job/profile-adapter.png" alt-text="Screenshot of the Fabric UI with the dbt job profile adapter settings.":::
 
-## Schedule dbt jobs
-
-You can automate dbt job runs using the built-in Schedule feature to refresh models, run tests, or keep data pipelines up to date.
-
-1. Open your dbt job in Fabric.
-1. Select the **Schedule** tab in the top panel.
-1. Select **Add schedule** to configure a new scheduled run.
-    - **Repeat**: Choose how often to run the job (for example, by the minute, hourly, daily, weekly).
-    - **Interval**: Set the frequency (for example, every 15 minutes).
-    - **Start date and time**: When the schedule should begin.
-    - **End date and time**: (Optional) When the schedule should stop.
-    - **Time zone**: Select your preferred time zone for scheduling.
-1. Select **Save** to activate the schedule.
-
-    :::image type="content" source="media/dbt-job/schedule-dbt.png" alt-text="Screenshot of the Fabric UI with the dbt job schedule settings.":::
-
-## Change adapter
+### Change adapter
 
 The **change adapter** control at the top-left of the dbt configurations page lets you change the dbt adapter used by the job's profile.
 
@@ -118,14 +102,14 @@ The **change adapter** control at the top-left of the dbt configurations page le
 - Dependent fields (for example, Schema) might need revalidation.
 - Runtime behavior must align with the adapter’s SQL dialect and capabilities.
 
-## Advanced settings
+### Advanced settings
 
 After you configure your dbt job's Profile, select **Advanced Settings** to fine-tune execution and run behavior. The Advanced Settings panel is split into two tabs:
 
 - [General settings](#general-settings)
 - [Run settings](#run-settings)
 
-### General settings
+#### General settings
 
 Here you can adjust project-level execution options:
 
@@ -140,7 +124,7 @@ Here you can adjust project-level execution options:
 
     :::image type="content" source="media/dbt-job/advanced-settings.png" alt-text="Screenshot of the Fabric UI with the dbt job general settings.":::
 
-### Run settings
+#### Run settings
 
 This tab lets you control which models run and how to select them.
 
@@ -164,6 +148,22 @@ This tab lets you control which models run and how to select them.
     - For simple runs, select models from the tree.
     - For advanced runs, configure selectors for targeted execution.
 1. Select **Apply** to save.
+
+## Schedule dbt jobs
+
+You can automate dbt job runs using the built-in Schedule feature to refresh models, run tests, or keep data pipelines up to date.
+
+1. Open your dbt job in Fabric.
+1. Select the **Schedule** tab in the top panel.
+1. Select **Add schedule** to configure a new scheduled run.
+    - **Repeat**: Choose how often to run the job (for example, by the minute, hourly, daily, weekly).
+    - **Interval**: Set the frequency (for example, every 15 minutes).
+    - **Start date and time**: When the schedule should begin.
+    - **End date and time**: (Optional) When the schedule should stop.
+    - **Time zone**: Select your preferred time zone for scheduling.
+1. Select **Save** to activate the schedule.
+
+    :::image type="content" source="media/dbt-job/schedule-dbt.png" alt-text="Screenshot of the Fabric UI with the dbt job schedule settings.":::
 
 ## Project structure and job settings
 
@@ -216,13 +216,15 @@ Selectors let you target parts of your pipeline for faster iteration during deve
 
 ## Monitor dbt jobs
 
-Fabric provides several visual aids to help you understand and validate your dbt project:
+Fabric provides several tools to help you monitor and validate your dbt jobs:
+
+### Visual aids
 
 - **Lineage View**: Generates a dependency graph of your models, showing how data flows between sources and transformations.
 - **Compiled SQL View**: Displays the rendered SQL code that dbt runs, so you can debug or optimize queries.
 - **Run Results Panel**: Shows model-level success, failure, and execution time for each dbt command.
 
-You can also monitor dbt job runs through the Output Panel and Lineage View:
+### Monitoring and troubleshooting
 
 - **Run Summary**: Displays total models run, runtime, and success status.
 - **Error Logs**: Provide stack traces and query payloads for troubleshooting.
@@ -251,4 +253,3 @@ Each adapter supports its respective connection parameters and SQL dialect.
 ## Related content
 
 - [dbt Official Documentation](https://docs.getdbt.com/)
-
