@@ -29,6 +29,9 @@ By default, sharing a lakehouse grants Fabric **Read** permission on the lakehou
 - ReadData permission on SQL analytics endpoint to access data without SQL policy.
 - ReadAll permission on the lakehouse to access all data using Apache Spark, and SubscribeOneLakeEvents permission to get OneLake events generated for the lakehouse.
 
+> [!IMPORTANT]
+> ReadAll permission requires users to have workspace **Viewer** role or **Read** permission on the lakehouse as a prerequisite. ReadAll alone does not grant access to lakehouse data.
+
 ## Managing permissions
 
 After you share an item, you can edit or remove permissions on the **Direct access** screen for that item. To manage permissions for the lakehouse you shared, navigate to your workspace and select the ellipsis (**...**) next to the lakehouse name. From the **More options** menu, select **Manage permissions**. On the **Direct access** screen, you can see the access you granted, add custom permissions, and remove access and custom permissions.
