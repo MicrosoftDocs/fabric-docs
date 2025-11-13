@@ -229,7 +229,6 @@ sections:
           - Data encryption at rest and in transit
           - Workspace-based access control through Fabric permissions
           
-
           For more information, see [security for Cosmos DB in Fabric](security.md).
       - question: |
           How can I set user permissions for my Cosmos DB in Fabric artifact?

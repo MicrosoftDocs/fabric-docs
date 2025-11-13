@@ -51,6 +51,6 @@ A pipeline is a logical grouping of activities that together perform a data inge
 
 - [Get started with deployment pipelines integration with SQL database in Microsoft Fabric](deployment-pipelines.md)
 - [Ingest sample data and create objects and data](tutorial-ingest-data.md)
-- [Set up your SQL database connection in Data Factory (Preview)](../../data-factory/connector-sql-database.md)
-- [SQL database connector overview (Preview)](../../data-factory/connector-sql-database-overview.md)
-- [Configure SQL database in a copy activity (Preview)](../../data-factory/connector-sql-database-copy-activity.md)
+- [Set up your SQL database connection in Data Factory](../../data-factory/connector-sql-database.md)
+- [SQL database connector overview](../../data-factory/connector-sql-database-overview.md)
+- [Configure SQL database in a copy activity](../../data-factory/connector-sql-database-copy-activity.md)

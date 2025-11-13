@@ -13,8 +13,6 @@ ms.custom:
 
 This article covers automatic reseeding for mirroring a database from a SQL Server instance.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 There are certain situations where delays in mirroring to Fabric can lead to increased transaction log file usage. This is because the transaction log cannot be truncated until after committed changes have been replicated to the mirrored database. Once the transaction log size reaches its maximum defined limit, writes to the database fail. To safeguard operational databases from write failures for critical OLTP transactions, you can set up an autoreseed mechanism that allows the transaction log to be truncated and reinitializes the database mirroring to Fabric.
 
 A reseed stops flow of transactions to Microsoft Fabric from the mirrored database and reinitializes the mirroring at the present state. This involves generating a new initial snapshot of the tables configured for mirroring, and replicating that to Microsoft Fabric. After the snapshot, incremental changes are replicated. 

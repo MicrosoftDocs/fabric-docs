@@ -68,6 +68,7 @@ Currently, the following external databases are available:
 | [Microsoft Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Google BigQuery (preview)](google-bigquery.md) | Yes | Database mirroring | [Tutorial: Google BigQuery](google-bigquery-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Oracle (preview)](oracle.md) | Yes | Database mirroring | [Tutorial: Oracle](oracle-tutorial.md) |
+| [Microsoft Fabric mirrored databases from SAP (preview)](sap.md) | Yes | Database mirroring | [Tutorial: SAP](sap-datasphere-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes | Database mirroring | [Tutorial: Snowflake](snowflake-tutorial.md) |
 | [Microsoft Fabric mirrored databases from SQL Server (preview)](sql-server.md) | Yes | Database mirroring | [Tutorial: SQL Server](sql-server-tutorial.md) |
 | [Open mirrored databases](open-mirroring.md) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md)|
