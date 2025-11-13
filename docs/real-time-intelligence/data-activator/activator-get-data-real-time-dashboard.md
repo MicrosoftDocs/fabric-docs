@@ -101,7 +101,7 @@ In the **Action** section, select one of the following actions to take when the 
   * Run a notebook.    
     :::image type="content" source="media/activator-get-data/action-notebook.png" alt-text="Screenshot of the Run notebook option in the Add Rule side pane.":::
   * Run a Spark job.    
-    :::image type="content" source="media/activator-get-data/action-sparkjob.png" alt-text="Screenshot of the Run Spark job option in the Add Rule side pane.":::
+    :::image type="content" source="media/activator-get-data/action-spark.png" alt-text="Screenshot of the Run Spark job option in the Add Rule side pane.":::
   * Run a function.    
     :::image type="content" source="media/activator-get-data/action-function.png" alt-text="Screenshot of the Run function option in the Add Rule side pane.":::
 
