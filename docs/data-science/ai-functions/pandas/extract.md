@@ -103,7 +103,7 @@ This example code cell provides the following output:
 - Use [ai.extract with PySpark](../pyspark/extract.md).
 - Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
 - Categorize text with [ai.classify](./classify.md).
-- - Generate vector embeddings with [ai.embed](./embed.md).
+- Generate vector embeddings with [ai.embed](./embed.md).
 - Fix grammar with [ai.fix_grammar](./fix-grammar.md).
 - Answer custom user prompts with [ai.generate_response](./generate-response.md).
 - Calculate similarity with [ai.similarity](./similarity.md).
