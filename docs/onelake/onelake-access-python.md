@@ -67,7 +67,7 @@ def create_file_system_client(self, service_client, file_system_name: str) : Dat
     return file_system_client
 
 def create_directory_client(self, file_system_client : FileSystemClient, path: str) -> DataLakeDirectoryClient: directory_client 
-    directory_client = file_system_client.GetDirectoryClient(path)
+    directory_client = file_system_client.get_directory_client(path)
     return directory_client
 
 
@@ -87,7 +87,7 @@ def upload_file_to_directory(self, directory_client: DataLakeDirectoryClient, lo
     file_client = directory_client.get_file_client(file_name)
 
     with open(file=os.path.join(local_path, file_name), mode="rb") as data:
-        file_client.upload_data(dataW, overwrite=True)
+        file_client.upload_data(data, overwrite=True)
 ```
 
 ## Sample
