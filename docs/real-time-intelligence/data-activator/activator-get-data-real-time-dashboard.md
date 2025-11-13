@@ -54,11 +54,56 @@ Select how often you want [!INCLUDE [fabric-activator](../includes/fabric-activa
 
 ### Condition section
 
-Define your rule conditions. Rule conditions include deciding which fields to monitor and setting the threshold.
+Define your rule conditions as follows:
+
+* If your visualization has no dimensions, you can select the **On each event when** condition to monitor changes in the data stream by choosing a specific field to monitor.
+* If your visualization includes dimensions, you can select the **On each event grouped by** condition to monitor changes in the data stream by selecting a field for grouping, which divides the data into distinct groups
+
+1. In the **When** dropdown, select the value to be evaluated.
+1. In the **Condition** dropdown, select the condition to be met. For more information, see [Coniditions](activator-detection-conditions.md#conditions).
+1. In the **Occurence** dropdown, set the number of times the condition must be met to trigger the alert.
 
 :::image type="content" source="media/activator-get-data/condition.png" alt-text="Screenshot of create an alert window in Activator, save condition highlighted." lightbox="media/activator-get-data/condition.png":::
 
-[!INCLUDE [action](../../real-time-hub/includes/rule-action.md)]
+### Action section
+
+In the **Action** section, select one of the following actions to take when the alert is triggered:
+
+* **Send email**:
+    1. For **Select action**, choose **Send email**.
+    1. For **To**, enter the email address of the recipient or use the dropdown to select from a list of users in your organization. By default, your email address is populated there.
+    1. For **Subject**, enter the subject of the email notification.
+    1. For **Headline**, enter the headline of the email notification.
+    1. For **Notes**, enter any additional information you want to include in the email notification.
+        >[!NOTE]
+        > When entering the subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
+    1. For **Context**, select the values from the dropdown list you want to include in the email notification.
+
+    :::image type="content" source="media/activator-get-data/action-email.png" alt-text="Screenshot of the Send email notification section in the Add Rule side pane.":::
+
+* **Send Microsoft Teams notification**:
+    1. For **Select action**, select **Teams** --> **Message to indviduals** or **Group chat message**, or **Channel post**.
+    1. Follow one of these steps depending on your selection:
+        * If you selected the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, an email is sent to specified individuals.
+        * If you selected the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.
+        * If you selected the **Channel post** option, select a **team** and **channel** from the drop-down lists. When the condition is met, a message is posted to the selected channel.
+    1. For **Headline**, enter the headline of the Teams notification.
+    1. For **Notes**, enter notes for the Teams notification.
+        >[!NOTE]
+        > When entering subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
+    1. For **Context**, select the values from the drop-down list you want to include in the Teams notification.
+
+    :::image type="content" source="media/activator-get-data/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
+
+* **Run Fabric activities**:
+  * Run a pipeline and select a dataflow.    
+    :::image type="content" source="media/activator-get-data/action-pipeline.png" alt-text="Screenshot of the Run pipeline option in the Add Rule side pane.":::
+  * Run a notebook.    
+    :::image type="content" source="media/activator-get-data/action-notebook.png" alt-text="Screenshot of the Run notebook option in the Add Rule side pane.":::
+  * Run a Spark job.    
+    :::image type="content" source="media/activator-get-data/action-sparkjob.png" alt-text="Screenshot of the Run Spark job option in the Add Rule side pane.":::
+  * Run a function.    
+    :::image type="content" source="media/activator-get-data/action-function.png" alt-text="Screenshot of the Run function option in the Add Rule side pane.":::
 
 ### Save location section
 
