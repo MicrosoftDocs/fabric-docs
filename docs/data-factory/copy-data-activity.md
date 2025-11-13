@@ -6,7 +6,7 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
-ms.date: 09/01/2025
+ms.date: 11/13/2025
 ai-usage: ai-assisted
 ---
 
@@ -165,6 +165,7 @@ See the following table for the description of each setting.
 |---------|---------|---------|
 |**Intelligent throughput optimization** |Specify to optimize the throughput. You can choose from: <br>• **Auto**<br>• **Standard**<br>• **Balanced**<br>• **Maximum**<br><br> When you choose **Auto**, the optimal setting is dynamically applied based on your source-destination pair and data pattern. You can also customize your throughput, and custom value can be 2-256 while higher value implies more gains.  | dataIntegrationUnits |
 |**Degree of copy parallelism** | Specify the degree of parallelism that data loading would use. | parallelCopies |
+|**Adaptive performance tuning (Preivew)** | Specify to automatically adjusts read and write behavior to optimize performance based on copy patterns and runtime conditions, reducing manual tuning needs. This feature applies when the source and destination are Lakehouse Table or Parquet format. | adaptivePerformanceTuning |
 |**Fault tolerance** |When you select this option, you can ignore some errors that happen in the middle of copy process. For example, incompatible rows between source and destination store, file being deleted during data movement, etc.  |• enableSkipIncompatibleRow <br> • skipErrorFile: <br>  &nbsp;&nbsp; fileMissing <br>&nbsp;&nbsp; fileForbidden <br> &nbsp;&nbsp; invalidFileName |
 |**Enable logging** |When you select this option, you can log copied files, skipped files and rows.| / |
 |**Enable staging** | Specify whether to copy data via an interim staging store. Enable staging only for helpful scenarios.| enableStaging |
