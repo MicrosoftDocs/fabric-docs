@@ -40,7 +40,7 @@ In this diagram:
 
 * Workspace A and Workspace B both have outbound access protection enabled. They can connect to all the resources that support private endpoints through a managed private endpoint from the workspace to the destination. For example, Workspace A can connect to the SQL server because it has a managed private endpoint set up to the SQL server.
 
-* An outbound access protection enabled workspace can also connect to another workspace within the same tenant. In this scenario, the protected workspace has a managed private configured for the target workspace, and the Private Link service is established for the target workspace. In the diagram, Workspace B has a managed private endpoint configured to workspace C. This managed private endpoint allows items in Workspace B (for example shortcuts) to reference the data in Workspace C (for example, in a lakehouse).
+* A workspace with outbound access protection enabled can connect to another workspace in the same tenant. In this scenario, a managed private endpoint is configured in the source workspace pointing to the target workspace, and the Private Link service is enabled on the target workspace. In the diagram, Workspace B connects to Workspace C using this setup, allowing items in Workspace B (such as shortcuts) to access data in Workspace C (such as lakehouses).
 
 * Multiple workspaces can connect to the same source by setting up managed private endpoints. For example, both Workspace A and Workspace B can connect to the SQL server because managed private endpoints are set up for each of them for this SQL server.
 
