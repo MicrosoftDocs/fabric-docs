@@ -23,7 +23,7 @@ The `ai.embed` function uses generative AI to convert text into vector embedding
 
 The `ai.embed` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class.
 
-To generate vector embeddings of each input row, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column.
+To generate vector embeddings of each input row, call the function on either a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) or a text column of [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html).
 
 The function returns a pandas Series that contains embeddings, which can be stored in a new DataFrame column.
 
