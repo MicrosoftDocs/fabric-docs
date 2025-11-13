@@ -151,7 +151,7 @@ You can also move the selected cell using **Move up** and **Move down** on the r
 
 To delete a cell, select the delete button at the right side of the cell.
 
-You can also use [shortcut keys in command mode](#shortcut-keys-in-command-mode). Press **Shift+D** to delete the current cell.
+You can also use [shortcut keys in command mode](#shortcut-keys-in-command-mode). Press **D,D** (D twice) to delete the current cell.
 
 ### Collapse a cell input
 
@@ -728,7 +728,7 @@ Similar to Jupyter Notebooks, Fabric notebooks have a modal user interface. The 
 | Select next cell | J |
 | Insert cell above | A |
 | Insert cell below | B |
-| Delete selected cells | Shift + D |
+| Delete selected cells | D,D |
 | Switch to edit mode | Enter |
 
 ### Shortcut keys in edit mode
