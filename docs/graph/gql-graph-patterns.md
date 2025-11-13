@@ -22,11 +22,12 @@ Simple element patterns help you match individual nodes and edges from your grap
 
 A node pattern specifies the labels and properties that a node must have to match:
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
-(:Place&City { name: "New York, USA" })
+(:City { name: "New York" })
 ```
 
-This pattern matches all nodes that have **both** the `Place` and `City` labels (indicated by the `&` operator) and whose `name` property equals `"New York, USA"`. This specification of required labels and properties is called the *filler* of the node pattern.
+This pattern matches all nodes that have **both** the `Place` and `City` labels (indicated by the `&` operator) and whose `name` property equals `"New York"`. This specification of required labels and properties is called the *filler* of the node pattern.
 
 **Key concepts:**
 
@@ -38,8 +39,9 @@ This pattern matches all nodes that have **both** the `Place` and `City` labels 
 
 Edge patterns are more complex than node patterns. They not only specify a filler but also connect a source node pattern to a destination node pattern. Edge patterns describe requirements on both the edge and its endpoints:
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
-(:Person)-[:likes|loves { creationDate: ZONED_DATETIME("2000-01-01T18:00:00Z") }]->(:Comment)
+(:Person)-[:likes|knows { creationDate: ZONED_DATETIME("2010-08-31T13:16:54Z") }]->(:Comment)
 ```
 
 The arrow direction `-[...]->` is important—it determines `(:Person)` as the source node pattern and `(:Comment)` as the destination node pattern. Understanding edge direction is crucial for querying your graph correctly.
@@ -48,8 +50,9 @@ The arrow direction `-[...]->` is important—it determines `(:Person)` as the s
 
 You can flip the arrow and swap the node patterns to create the equivalent, mirrored edge pattern:
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
-(:Comment)<-[:likes { creationDate: ZONED_DATETIME("2000-01-01T18:00:00Z") }]-(:Person)
+(:Comment)<-[:likes { creationDate: ZONED_DATETIME("2010-08-31T13:16:54Z") }]-(:Person)
 ```
 
 This pattern finds the same relationships but from the opposite perspective.
@@ -58,6 +61,7 @@ This pattern finds the same relationships but from the opposite perspective.
 
 When the direction of a graph edge doesn't matter for your query, you can leave it unspecified by creating an any-directed edge pattern:
 
+<!-- GQL Pattern: Hypothetical -->
 ```gql
 (:Song)-[:inspired]-(:Movie)
 ```
@@ -80,6 +84,7 @@ Patterns can express complex requirements on the labels of matched nodes and edg
 
 **Example:**
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 MATCH (:Person|(Organization&!Company))-[:isLocatedIn]->(p:City|Country)
 RETURN count(*) AS num_matches
@@ -105,6 +110,7 @@ Variables allow you to refer to matched graph elements in other parts of your qu
 
 Both node and edge patterns can bind matched nodes and edges to variables for later reference.
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 (p:Person)-[w:workAt]->(c:Company)
 ```
@@ -115,6 +121,7 @@ In this pattern, `p` is bound to matching `Person` nodes, `w` to matching `workA
 
 Reusing the same variable in a pattern multiple times expresses a restriction on the structure of matches. Every occurrence of the same variable must always bind to the same graph element in a valid match. Variable reuse is powerful for expressing complex structural requirements.
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 (c:Company)<-[:workAt]-(x:Person)-[:knows]-(y:Person)-[:workAt]->(c:Company)
 ```
@@ -125,6 +132,7 @@ The pattern finds `Person` nodes `x` and `y` that know each other and work at th
 
 Binding element variables enables you to specify node and edge pattern predicates. Instead of just providing a filler with exact property values like `{ name: "New York, USA" }`, a filler can specify a predicate that gets evaluated for each candidate element. The pattern only matches if the predicate evaluates to `TRUE`:
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 (p:Person)-[e:knows WHERE e.creationDate >= ZONED_DATETIME("2000-01-01T18:00:00Z")]-(o:Person)
 ```
@@ -166,6 +174,7 @@ WHERE p.quota_achievement > 1.2 AND c.revenue > c.revenue_target
 
 You can also bind a matched path to a path variable for further processing or to return the complete path structure to the user:
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 p=(c:Company)<-[:workAt]-(x:Person)-[:knows]-(y:Person)-[:workAt]->(c:Company)
 ```
@@ -174,9 +183,12 @@ Here, `p` is bound to a path value representing the complete matched path struct
 
 Bound paths can either be returned to the user or further processed using functions like `NODES` or `EDGES`:
 
+<!-- GQL Query: Checked 2025-11-13 -->
 ```gql
 MATCH p=(c:Company)<-[:workAt]-(x:Person)-[:knows]-(y:Person)-[:workAt]->(c:Company)
-RETURN p, size(edges(p)) AS num_edges_in_path
+LET path_edges = edges(p)
+RETURN path_edges, size(path_edges) AS num_edges
+GROUP BY path_edges
 ```
 
 ## Compose patterns
@@ -187,8 +199,9 @@ Real-world queries often require more complex patterns than simple node-edge-nod
 
 Path patterns can be composed by concatenating simple node and edge patterns to create longer traversals.
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
-(:Person)-[:knows]->(:Person)-[:workAt]->(:Company)-[:locatedIn]->(:City)-[:isPartOf]->(:Country)
+(:Person)-[:knows]->(:Person)-[:workAt]->(:Company)-[:isLocatedIn]->(:Country)-[:isPartOf]->(:Continent)
 ```
 
 The pattern traverses from a person through their social and professional connections to find where their colleague's company is located.
@@ -196,10 +209,11 @@ The pattern traverses from a person through their social and professional connec
 **Piecewise pattern construction:**
 You can also build path patterns more incrementally, which can make complex patterns easier to read and understand:
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 (:Person)-[:knows]->(p:Person),
 (p:Person)-[:workAt]->(c:Company),
-(c:Company)-[:locatedIn]->(:City)-[:isPartOf]->(:Country)
+(c:Company)-[:isLocatedIn]->(:Country)-[:isPartOf]->(:Continent)
 ```
 
 This approach breaks down the same traversal into logical steps, making it easier to understand and debug.
@@ -208,11 +222,12 @@ This approach breaks down the same traversal into logical steps, making it easie
 
 The resulting shape of a pattern doesn't have to be a linear path. You can match more complex structures like "star-shaped" patterns that radiate from a central node:
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 (p:Person),
 (p)-[:studyAt]->(u:University),
 (p)-[:workAt]->(c:Company),
-(p)-[:likes]-(m:Message)
+(p)-[:likes]-(m)
 ```
 
 The pattern finds a person along with their education, employment, and content preferences all at once—a comprehensive profile query.
@@ -223,6 +238,7 @@ In complex patterns, it's often undesirable to traverse the same edge multiple t
 
 Prefixing a path pattern with the keyword `TRAIL` discards all matches that bind the same edge multiple times:
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 TRAIL (a)-[e1:knows]->(b)-[e2:knows]->(c)-[e3:knows]->(d)
 ```
@@ -244,12 +260,14 @@ Variable-length patterns are powerful constructs that let you find paths of vary
 
 Many common graph queries require repeating the same edge pattern multiple times. Instead of writing verbose patterns like:
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 (:Person)-[:knows]->(:Person)-[:knows]->(:Person)-[:knows]->(:Person)
 ```
 
 You can use the more concise variable-length syntax:
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 (:Person)-[:knows]->{3}(:Person)
 ```
@@ -259,6 +277,7 @@ The `{3}` specifies that the `-[:knows]->` edge pattern should be repeated exact
 **Flexible repetition ranges:**
 For more flexibility, you can specify both a lower bound and an upper bound for the repetition:
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 (:Person)-[:knows]->{1, 3}(:Person)
 ```
@@ -283,11 +302,14 @@ When no lower bound is specified, it generally defaults to 0 (zero).
 when unbounded variable-length patterns with `+`-repetition are used, it defaults to 1 (one) instead -->
 
 **Complex variable-length compositions:**
-Variable-length patterns can be part of larger, more complex patterns:
+Variable-length patterns can be part of larger, more complex patterns as in the following query:
 
+<!-- GQL Query: Checked 2025-11-13 -->
 ```gql
-(c1:Comment)<-[:likes]-(p1:Person)-[:knows]-(p2:Person)-[:likes]->(c2:Comment),
-(c1:Comment)-[:replyOf]-{1,5}(m:Message)<-[:replyOf]->{1,5}(c2:Comment)
+MATCH (c1:Comment)<-[:likes]-(p1:Person)-[:knows]-(p2:Person)-[:likes]->(c2:Comment),
+      (c1:Comment)<-[:replyOf]-{1,3}(m)-[:replyOf]->{1,3}(c2:Comment)
+RETURN *
+LIMIT 100
 ```
 
 The pattern finds pairs of comments where people who know each other liked different comments, and those comments are connected through reply chains of 1-5 levels each.
@@ -304,9 +326,11 @@ Understanding this behavior is crucial for correctly processing variable-length 
 
 **Example demonstrating both contexts:**
   
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 MATCH (:Person)-[e:knows WHERE e.creationDate >= ZONED_DATETIME("2000-01-01T00:00:00Z")]->{1,3}()
 RETURN e[0]
+LIMIT 100
 ```
 
 The evaluation of the edge variable `e` occurs in two contexts:
@@ -319,9 +343,11 @@ The evaluation of the edge variable `e` occurs in two contexts:
 
 Edge variables bound by variable length pattern matching are group lists outside the variable-length pattern and thus can be used in horizontal aggregation.
 
+<!-- GQL Pattern: Checked 2025-11-13 -->
 ```gql
 MATCH (a:Person)-[e:knows WHERE e.creationDate >= ZONED_DATETIME("2000-01-01T00:00:00Z")]->{1,3}(b)
 RETURN a, b, size(e) AS num_edges
+LIMIT 100
 ```
 
 See the section on [horizontal aggregation](gql-language-guide.md#horizontal-aggregation-with-group-list-variables) for further details.
