@@ -35,7 +35,7 @@ The tenant setting **Domain admins can set default sensitivity labels for their 
 
 ## Limitations
 
-Dataflows, dashboards, scorecards, and some additional item types aren't currently supported.
+Deployment pipelines and Git integration are currently not supported.
 
 ## Related content
 
