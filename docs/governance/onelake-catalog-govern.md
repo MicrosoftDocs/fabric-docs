@@ -24,7 +24,7 @@ To get to the Govern tab, select the [OneLake catalog icon in the Fabric navigat
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png" alt-text="Screenshot showing how to open the Govern tab in the OneLake catalog." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png":::
 
-You can also access the Govern tabfrom the settings gear by selecting the **OneLake Catalog | Govern** link.  
+You can also access the Govern tab from the settings gear by selecting the **OneLake Catalog | Govern** link.  
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-settings-gear.png" alt-text="Screenshot showing how to open the Govern tab from setting panel." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-settings-gear.png":::
 
@@ -51,7 +51,7 @@ If your organization defines domains, you can use the OneLake catalog's [domain 
 
 For Fabric admins, the insights section provides high-level insights about the entire Fabric tenant. Select **View more** to see [all available insights](#all-insights).
 
-These insights use data from the last successful refresh of the Admin Monitoring Storage, which isautomatically generated in the Admin Monitoring workspace the first time an admin opens the Govern tab or accesses the Admin Monitoring workspace. The data refreshes automatically every day. (See [Considerations and limitations for exceptions](#considerations-and-limitations).)
+These insights use data from the last successful refresh of the Admin Monitoring Storage, which is automatically generated in the Admin Monitoring workspace the first time an admin opens the Govern tab or accesses the Admin Monitoring workspace. The data refreshes automatically every day. (See [Considerations and limitations for exceptions](#considerations-and-limitations).)
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-insights-admins.png" alt-text="Screenshot showing the top insights for Fabric admins on the Govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-insights-admins.png":::
 
