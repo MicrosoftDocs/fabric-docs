@@ -32,8 +32,6 @@ You can also access the Govern tab from the settings gear by selecting the **One
 
 The first time you open the Govern tab, it might take a few moments for the insights and actions to appear.
 
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-admins.png" alt-text="Screenshot showing how to open the Govern tab from setting panel." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-admins.png":::
-
 When Fabric Admins access the Govern tab, they see **All Data in Fabric** by default. They can switch to their own items' governance state by selecting **My items**. Data owners see their own items view by default.
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-left-rail-navigation.png" alt-text="Screenshot showing how admins can switch between views." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-left-rail-navigation.png":::
@@ -112,8 +110,6 @@ The Govern tab provides links to tools and resources relevant to your scope of r
 * **Top solutions**: Lists relevant Microsoft Fabric solutions for data governance, compliance, and security, along with links to documentation.
 
 * **Read, watch, and learn** Provides links to other relevant documentation and resources.
-
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-tools-links-admins.png" alt-text="Screenshot showing an example of a recommended action card." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-tools-links-admins.png":::
 
 ## Create custom reports
 
