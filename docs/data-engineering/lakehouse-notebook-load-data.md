@@ -61,6 +61,7 @@ import pandas as pd
 df = pd.read_parquet("/lakehouse/default/Files/sample.parquet")
 
 # Keep it if you want to read parquet file with Pandas from the absolute abfss path 
+# Path structure: abfss://WorkspaceName@msit-onelake.dfs.fabric.microsoft.com/LakehouseName.Lakehouse/Files/filename
 
 import pandas as pd
 df = pd.read_parquet("abfss://DevExpBuildDemo@msit-onelake.dfs.fabric.microsoft.com/Marketing_LH.Lakehouse/Files/sample.parquet")
