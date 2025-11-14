@@ -11,9 +11,7 @@ ms.search.form: AI functions
 ai-usage: ai-assisted
 ---
 
-# Transform and enrich data with AI functions (preview)
-
-[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
+# Transform and enrich data with AI functions
 
 Microsoft Fabric AI Functions enable all business professionals (from developers to analysts) to transform and enrich their enterprise data using generative AI.
 
@@ -115,7 +113,6 @@ The `ai.analyze_sentiment` function invokes AI to identify whether the emotional
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         "The cleaning spray permanently stained my beautiful kitchen counter. Never again!",
@@ -132,7 +129,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("The cleaning spray permanently stained my beautiful kitchen counter. Never again!",),
@@ -157,7 +153,6 @@ The `ai.classify` function invokes AI to categorize input text according to cust
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         "This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",
@@ -173,7 +168,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",),
@@ -196,7 +190,6 @@ The `ai.embed` function invokes AI to generate vector embeddings for input text.
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         "This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",
@@ -212,7 +205,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",), 
@@ -236,7 +228,6 @@ The `ai.extract` function invokes AI to scan input text and extract specific typ
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         "MJ Lee lives in Tucson, AZ, and works as a software engineer for Microsoft.",
@@ -251,7 +242,6 @@ display(df_entities)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("MJ Lee lives in Tucson, AZ, and works as a software engineer for Microsoft.",),
@@ -274,7 +264,6 @@ The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and p
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         "There are an error here.",
@@ -290,7 +279,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("There are an error here.",),
@@ -314,7 +302,6 @@ The `ai.generate_response` function invokes AI to generate custom text based on 
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         ("Scarves"),
@@ -330,7 +317,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("Scarves",),
@@ -354,7 +340,6 @@ The `ai.similarity` function compares each input text value either to one common
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([ 
         ("Bill Gates", "Technology"), 
@@ -370,7 +355,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("Bill Gates", "Technology"), 
@@ -394,7 +378,6 @@ The `ai.summarize` function invokes AI to generate summaries of input text (eith
 
 ```python
 # This code uses AI. Always review output for mistakes.
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df= pd.DataFrame([
         ("Microsoft Teams", "2017",
@@ -419,7 +402,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("Microsoft Teams", "2017",
@@ -452,7 +434,6 @@ The `ai.translate` function invokes AI to translate input text to a new language
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         "Hello! How are you doing today?", 
@@ -468,7 +449,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("Hello! How are you doing today?",),
