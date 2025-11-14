@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 11/13/2025
 ms.search.form: AI functions
 ---
 
@@ -48,8 +48,7 @@ The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/ap
 ## Example
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = spark.createDataFrame([
         ("Hello! How are you doing today?",),
@@ -76,6 +75,7 @@ This example code cell provides the following output:
 - Answer custom user prompts with [ai.generate_response](./generate-response.md).
 - Calculate similarity with [ai.similarity](./similarity.md).
 - Summarize text with [ai.summarize](./summarize.md).
+
 - Learn more about the [full set of AI functions](../overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 11/13/2025
 ms.search.form: AI functions
 ---
 
@@ -64,7 +64,7 @@ The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/ap
 # [Generate responses with a simple prompt](#tab/simple-prompt)
 
 ```python
-# This code uses AI. Always review output for mistakes.
+# This code uses AI. Always review output for mistakes. 
 
 df = spark.createDataFrame([
         ("Scarves",),
@@ -83,7 +83,7 @@ This example code cell provides the following output:
 # [Generate responses with a template prompt](#tab/template-prompt)
 
 ```python
-# This code uses AI. Always review output for mistakes.
+# This code uses AI. Always review output for mistakes. 
 
 df = spark.createDataFrame([
         ("001", "Scarves", "Boots", "2021"),
@@ -162,7 +162,6 @@ This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/generate-response-format-example-output.png" alt-text="Screenshot showing a data frame with a 'bio' column, and a new column for each specified format, with its corresponding formatted output." lightbox="../../media/ai-functions/generate-response-format-example-output.png":::
 
-
 ## Related content
 
 - Use [ai.generate_response with pandas](../pandas/generate-response.md).
@@ -174,6 +173,7 @@ This example code cell provides the following output:
 - Calculate similarity with [ai.similarity](./similarity.md).
 - Summarize text with [ai.summarize](./summarize.md).
 - Translate text with [ai.translate](./translate.md).
+
 - Learn more about the [full set of AI functions](../overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

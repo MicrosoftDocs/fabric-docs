@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 11/13/2025
 ms.search.form: AI functions
 ---
 
@@ -45,7 +45,7 @@ df["summaries"] = df.ai.summarize()
 
 | Name | Description |
 |---|---|
-| `instructions` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains more context for the AI model, such as specifying output length. |
+| `instructions` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains more context for the AI model, such as specifying output length, tone, or more. More precise instructions will yield better results. |
 
 ## Returns
 
@@ -84,8 +84,7 @@ This example code cell provides the following output:
 # [Summarize values across all columns](#tab/dataframe-summary)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df= pd.DataFrame([
         ("Microsoft Teams", "2017",
@@ -123,6 +122,7 @@ This example code cell provides the following output:
 - Answer custom user prompts with [ai.generate_response](./generate-response.md).
 - Calculate similarity with [ai.similarity](./similarity.md).
 - Translate text with [ai.translate](./translate.md).
+
 - Learn more about the [full set of AI functions](../overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

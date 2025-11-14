@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 11/13/2025
 ms.search.form: AI functions
 ---
 
@@ -68,13 +68,15 @@ This example code cell provides the following output:
 ## Related content
 
 - Use [ai.embed with pandas](../pandas/embed.md).
-- Categorize text with [ai.classify](./classify.md).
 - Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
+- Categorize text with [ai.classify](./classify.md).
 - Extract entities with [ai_extract](./extract.md).
 - Fix grammar with [ai.fix_grammar](./fix-grammar.md).
+- Answer custom user prompts with [ai.generate_response](./generate-response.md).
+- Calculate similarity with [ai.similarity](./similarity.md).
 - Summarize text with [ai.summarize](./summarize.md).
 - Translate text with [ai.translate](./translate.md).
-- Answer custom user prompts with [ai.generate_response](./generate-response.md).
+
 - Learn more about the [full set of AI functions](../overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

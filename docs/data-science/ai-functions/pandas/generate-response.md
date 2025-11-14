@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 11/13/2025
 ms.search.form: AI functions
 ---
 
@@ -109,8 +109,7 @@ This example code cell provides the following output:
 The following example shows how to use the `response_format` parameter to specify different response formats, including plain text, a JSON object, and a custom JSON schema.
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = pd.DataFrame([
         ("Alex Rivera is a 24-year-old soccer midfielder from Barcelona who scored 12 goals last season."),

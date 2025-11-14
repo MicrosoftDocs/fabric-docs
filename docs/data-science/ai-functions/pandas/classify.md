@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 11/13/2025
 ms.search.form: AI functions
 ---
 
@@ -64,8 +64,8 @@ This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/classify-example-output.png" alt-text="Screenshot of a data frame with 'descriptions' and 'category' columns. The 'category' column lists each description’s category name." lightbox="../../media/ai-functions/classify-example-output.png":::
 
-
 ## Related content
+
 - Use [ai.classify with PySpark](../pyspark/classify.md).
 - Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
 - Generate vector embeddings with [ai.embed](./embed.md).
