@@ -16,39 +16,9 @@ ai-usage: ai-assisted
 > [!NOTE]
 > This feature is in [preview](/fabric/fundamentals/preview).
 
-### What is dbt job?
-
-### Overview
-
 [dbt](https://docs.getdbt.com/) jobs in Microsoft Fabric let you transform your data with SQL directly in the Fabric interface. You get a no-code setup to build, test, and deploy dbt models on top of your Fabric data warehouse.
 
 With dbt jobs, you can develop and manage your transformation logic in one place—no command line or external orchestration tools needed. Fabric's integration with dbt Core lets you schedule, monitor, and visualize dbt workflows in the same workspace where your data pipelines and reports live.
-
-## Prerequisites
-
-Before you create dbt jobs in Microsoft Fabric, make sure your environment is set up correctly:
-
-- [Enabling dbt jobs](#enable-dbt-jobs)
-- [Setting up your workspace and warehouse](#set-up-your-workspace-and-warehouse)
-- [Setting permissions and access](#permissions-and-access)
-
-### Enable dbt job in Public Preview
-
-1. Go to the Admin Portal in Fabric.
-1. Under Tenant Settings, enable the **dbt Jobs (Preview)** feature for your organization or specific security groups.
-
-   :::image type="content" source="media/dbt-job/enable-dbt.png" alt-text="Screenshot of the Fabric UI with the tenant settings to enable dbt job.":::
-
-### Set up your workspace and warehouse
-
-- [Create a workspace](/fabric/fundamentals/create-workspaces) if you don't have one.
-- [Set up a Fabric Data Warehouse](/fabric/data-warehouse/create-warehouse) if you don't have one.
-
-### Permissions and access
-
-- In your Fabric workspace, you need a Contributor role or higher to create or manage dbt jobs.
-- For the target Fabric Data Warehouse, you need read/write permissions to run dbt transformations.
-- You need both build and read/write access to linked datasets and connections.
 
 ## Supported dbt version
 
