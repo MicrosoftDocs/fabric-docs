@@ -4,7 +4,7 @@ description: This article provides information about what staging items are.
 author: Luitwieler
 ms.author: jeluitwi
 ms.topic: concept-article
-ms.date: 08/05/2024
+ms.date: 11/14/2025
 ms.custom: dataflows
 ---
 
@@ -14,7 +14,7 @@ To improve performance and reliability, Dataflow Gen2 uses staging items to stor
 
 ## What are staging items?
 
-Staging items are intermediate data storage locations used by Dataflow Gen2 to store data during data transformation. These items go by the "DataflowsStagingLakehouse" and "DataflowsStagingWarehouse" names. The staging items are used to store intermediate data during data transformation to improve performance. These items are created automatically when you create your first dataflow and are managed by Dataflow Gen2. These items are hidden from the user in the workspace, but might be visible in other experiences like Get Data or the Lakehouse explorer. We strongly advise not to access or modify the data in the staging items directly as it may lead to unexpected behavior. Also storing data yourself in the staging items isn't supported and might result in data loss.
+Staging items are intermediate data storage locations used by Dataflow Gen2 to store data during data transformation. These items go by the "DataflowsStagingLakehouse" and "DataflowsStagingWarehouse" names. The staging items are used to store intermediate data during data transformation to improve performance. These items are created automatically when you create your first dataflow and are managed by Dataflow Gen2. These items are hidden from the user in the workspace, but might be visible in other experiences like Get Data or the Lakehouse explorer. We strongly advise not to access or modify the data in the staging items directly as it might lead to unexpected behavior. Also storing data yourself in the staging items isn't supported and might result in data loss.
 
 ## Data in staging items
 
