@@ -40,7 +40,7 @@ On the **Select a data source** page, search for **Azure Event Hubs**. On the **
 
 ## View an updated eventstream
 
-1. Confirm that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. Select **Refresh** to display a preview of the data in the event hub. To implement this newly added Azure event hub, select **Publish** on the ribbon.
+1. Confirm that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. Select **Refresh** to display a preview of the data in the event hub. To implement this newly added event hub, select **Publish** on the ribbon.
 
     :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/publish.png" alt-text="Screenshot that shows the editor with the Publish button selected." lightbox="./media/add-source-azure-event-hubs-enhanced/publish.png":::
 
@@ -53,7 +53,7 @@ On the **Select a data source** page, search for **Azure Event Hubs**. On the **
 
 ## View an updated eventstream
 
-1. Confirm that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. Select **Refresh** to display a preview of the data in the event hub. To implement this newly added Azure event hub, select **Publish** on the ribbon.
+1. Confirm that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. Select **Refresh** to display a preview of the data in the event hub. To implement this newly added event hub, select **Publish** on the ribbon.
 
     :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/extended-publish.png" alt-text="Screenshot that shows the Publish button in the editor." lightbox="./media/add-source-azure-event-hubs-enhanced/extended-publish.png":::
 
