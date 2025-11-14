@@ -150,10 +150,9 @@ After the changes are committed, the items that were committed are removed from 
 
 After the commit is completed successfully, the status of the selected items changes from **Uncommitted** to **Synced**.
 
-### [Standalone branch](#tab/stand-alone)
+### [Commit to standalone branch](#tab/stand-alone)
 Commit to standalone branch is a Git integration feature that lets you create a fresh branch and commit your current changes to it in one single action. In other words, instead of committing to the connected branch, you can branch off on the fly: the system will spin up a new Git branch and save your work there without requiring you to leave or switch from your original branch. 
 
-This capability didn’t exist in earlier workflows – previously a user would have had to manually create or checkout a separate branch and then commit – so Commit to standalone branch provides a convenient parallel commit flow that wasn't possible before. 
 
 1. Go to the workspace.
 2. Select the **Source control** icon. This icon shows the number of uncommitted changes.
@@ -163,11 +162,14 @@ This capability didn’t exist in earlier workflows – previously a user would 
 4. Select the items you want to commit. To select all items, check the top box.
 5. Add a comment in the box. If you don't add a comment, a default message is added automatically.
 6. Select **Commit to new branch**.
+   :::image type="content" source="./media/git-get-started/commit-stand-alone.png" alt-text="Screenshot of commiting to a standalone branch." lightbox="./media/git-get-started/commit-stand-alone.png":::
 
 >[!IMPORTANT]
 >Be aware of the following:
 > - the newly created branch will not be connected to the exisiting workspace.
-> - the newly created branch will be based on the last synch state of the current workspace
+> - the newly created branch will be based on the last synch state of the current workspace.
+> - this functionality is possible when there are incoming updates - even if the default commit is disabled.
+> - the current workspace state will not be changed because of this commit and remains as is.
 
 ### [Undo saved change](#tab/undo-save)
 
