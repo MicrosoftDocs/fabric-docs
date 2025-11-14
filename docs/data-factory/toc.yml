@@ -998,7 +998,11 @@
           - name: Copilot in Modern Get Data
             href: copilot-modern-get-data.md
       - name: dbt job
-        href: dbt-job-overview.md
+        items:
+          - name: dbt job overview
+            href: dbt-job-overview.md
+          - name: dbt job tutorial
+            href: dbt-job-tutorial.md
   - name: Orchestrate your pipelines
     items:
       - name: What is a pipeline?
