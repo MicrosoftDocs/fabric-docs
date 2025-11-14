@@ -65,7 +65,7 @@ For specific instructions to set up your connection in a pipeline, follow these 
    * **Connection**: Select **Create new connection**.
    * **Connection name**: Specify a name for your connection.
 
-1. Under **Data gateway**, select an existing data gateway if your Azure Data Explorer instance isn't publicly accessible.
+1. Under **Data gateway**, select an existing data gateway if your Snowflake instance isn't publicly accessible.
 
 1. Under **Authentication kind**, select your authentication kind from the drop-down list and complete the related configuration. The Snowflake connector supports the following authentication types:
 
