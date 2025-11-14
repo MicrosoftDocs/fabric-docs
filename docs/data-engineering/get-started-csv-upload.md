@@ -12,7 +12,7 @@ ms.search.form: csv load to delta to pbi report
 
 # CSV file upload to Delta table for Power BI reporting
 
-[!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](lakehouse-overview.md) is a data architecture platform for storing, managing, and analyzing structured and unstructured data in a single location.
+Microsoft Fabric [Lakehouse](lakehouse-overview.md) is a data architecture platform for storing, managing, and analyzing structured and unstructured data in a single location.
 
 In this tutorial you learn to:
 

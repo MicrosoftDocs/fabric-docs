@@ -12,7 +12,7 @@ ms.search.form: delta lake v-order optimization
 
 # Delta Lake table optimization and V-Order
 
-The [Lakehouse](lakehouse-overview.md) and the [Delta Lake](lakehouse-and-delta-tables.md) table format are central to [!INCLUDE [product-name](../includes/product-name.md)], assuring that tables are optimized for analytics is a key requirement. This guide covers Delta Lake table optimization concepts, configurations and how to apply it to most common Big Data usage patterns.
+The [Lakehouse](lakehouse-overview.md) and the [Delta Lake](lakehouse-and-delta-tables.md) table format are central to Microsoft Fabric, assuring that tables are optimized for analytics is a key requirement. This guide covers Delta Lake table optimization concepts, configurations and how to apply it to most common Big Data usage patterns.
 
 > [!IMPORTANT]
 > The `OPTIMIZE` commands in this article are **Spark SQL commands** and must be executed in Spark environments such as:
@@ -36,7 +36,7 @@ V-Order is applied at the parquet file level. Delta tables and its features, suc
 
 ## Controlling V-Order writes
 
-V-Order is used to optimize parquet file layout for faster query performance, especially in read-heavy scenarios. In [!INCLUDE [product-name](../includes/product-name.md)], **V-Order is _disabled by default_ for all newly created workspaces** to optimize performance for write-heavy data engineering workloads.
+V-Order is used to optimize parquet file layout for faster query performance, especially in read-heavy scenarios. In Microsoft Fabric, **V-Order is _disabled by default_ for all newly created workspaces** to optimize performance for write-heavy data engineering workloads.
 
 V-Order behavior in Apache Spark is controlled through the following configurations:
 
