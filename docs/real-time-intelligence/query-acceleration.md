@@ -13,8 +13,6 @@ ms.date: 11/19/2024
 
 This article explains how to use the query acceleration policy to accelerate queries over OneLake shortcuts in the Microsoft Fabric UI. To set this policy using commands, see [query acceleration policy](https://aka.ms/query-acceleration). For general information on the query acceleration over OneLake shortcuts, see [Query acceleration over OneLake shortcuts - overview](query-acceleration-overview.md).
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
 > [!NOTE]
 > If you have compliance considerations that require you to store data in a specific region, make sure your Eventhouse capacity is in the same region as your external table or shortcut data.
 
