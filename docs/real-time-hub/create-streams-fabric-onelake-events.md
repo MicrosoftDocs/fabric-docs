@@ -42,6 +42,8 @@ You can create streams for OneLake events in Real-Time hub using one of the ways
 - [Using the **Data sources** page](#data-sources-page)
 - [Using the **Fabric events** page](#fabric-events-page)
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 4. On the **Data sources** page, select **OneLake events** category at the top, and then select **Connect** on the **OneLake events** tile. You can also use the search bar to search for OneLake events. 
