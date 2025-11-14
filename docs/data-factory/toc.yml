@@ -1001,8 +1001,8 @@
         items:
           - name: dbt job overview
             href: dbt-job-overview.md
-          - name: dbt job tutorial
-            href: dbt-job-tutorial.md
+          - name: How to create a dbt job
+            href: dbt-job-how-to.md
   - name: Orchestrate your pipelines
     items:
       - name: What is a pipeline?
