@@ -13,27 +13,28 @@ ms.search.form: Activator KQL Queryset Onramp
 
 # Create Activator alerts from a KQL Queryset 
 
-This article explains how to create Fabric Activator alerts from a KQL queryset. For more information, see [What is Activator](activator-introduction.md).
+This article explains how to create Fabric Activator alerts from a KQL queryset. Fabric Activator in Microsoft Fabric allows you to take actions when patterns or conditions are detected in data streams. For more information, see [What is Activator](activator-introduction.md).
 
-You can use Activator on a KQL Queryset to trigger notifications in two modes: 
-- when scheduled KQL queries returns results
-- when scheduled KQL queries returns results that contain a visualization that meets a defined set of conditions. 
+You can configure Activator to trigger notifications based on KQL Queryset results in two scenarios:
+
+- When scheduled KQL queries return results.
+- When scheduled KQL queries return results with visualizations that meet specific conditions.
 
 Send alert notifications either to yourself, or to others in your organization. You can configure notifications to be sent via email or Microsoft Teams message.
 
 ## Sample scenarios
 
-Here are some ways you can use Activator alerts with KQL queries:
+Here are some examples of how you can use Activator alerts with KQL queries:
 
-* Suppose you have a KQL database and are storing application logs.
-    * You receive an alert when any records from the last five minutes contain the string `authorization error` in the table’s *message* column.
-* In a different scenario, you have streaming data for available bicycles in different neighborhoods. A KQL query is created to render a pie chart for the number of available bicycles per neighborhood.
-    * You receive an alert when the number of available bicycles in any neighborhood falls below an acceptable number.
+- **Monitor application logs for errors**: Suppose you have a KQL database storing application logs. You can configure an alert to notify you if any records from the last five minutes contain the string `authorization error` in the *message* column.
+
+- **Track available bicycles in neighborhoods**: Imagine you have streaming data for available bicycles in different neighborhoods. You create a KQL query to render a pie chart showing the number of available bicycles per neighborhood. You can set up an alert to notify you when the number of available bicycles in any neighborhood falls below a specified threshold.
+
 
 ## Prerequisites
 
-* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
-* A [KQL database](../../real-time-intelligence/create-database.md) with data
+* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
+* A [KQL database](../../real-time-intelligence/create-database.md) with data.
 * A [KQL Queryset](../../real-time-intelligence/create-query-set.md) connected to the KQL database. For more information, see [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md).
 
 > [!IMPORTANT]
@@ -54,12 +55,9 @@ Choose the tab that corresponds to your desired workflow.
 1. Open the workspace that contains your KQL Queryset.
 1. Browse to your KQL Queryset and select it to open.
 1. Run a query that returns a visualization.
-
-:::image type="content" source="media/activator-alert-queryset/query.png" alt-text="Screenshot of a query and its results visualized." lightbox="media/activator-alert-queryset/query.png":::
-
 1. Once the query returns results, select **Set Alert** on the top ribbon.
 
-:::image type="content" source="media/activator-alert-queryset/set-alert-button.png" alt-text="Screenshot of the Set Alert button in the top ribbon." lightbox="media/activator-alert-queryset/set-alert-button.png":::
+    :::image type="content" source="media/activator-alert-queryset/set-alert-button.png" alt-text="Screenshot of the Set Alert button in the top ribbon." lightbox="media/activator-alert-queryset/set-alert-button.png":::
 
 ## Define alert conditions
 
@@ -114,13 +112,17 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
 
             :::image type="content" source="media/activator-alert-queryset/action-pipeline.png" alt-text="Screenshot of the pipline option in the drop-down menu.":::
 
+        * Run a notebook.
+
+            :::image type="content" source="media/activator-alert-queryset/action-notebook.png" alt-text="Screenshot of the Notebook option in the drop-down menu.":::
+
         * Run a Spark job.
 
             :::image type="content" source="media/activator-alert-queryset/action-spark.png" alt-text="Screenshot of the Spark job option in the drop-down menu.":::
 
-        * Run a notebook.
+        * Run a function.
 
-            :::image type="content" source="media/activator-alert-queryset/action-notebook.png" alt-text="Screenshot of the Notebook option in the drop-down menu.":::
+            :::image type="content" source="media/activator-alert-queryset/action-function.png" alt-text="Screenshot of the Function option in the drop-down menu.":::
 
 1. In **Save location**, specify where to save your Activator alert. Choose an existing workspace, and save either in an existing activator or a new one.
 
@@ -260,3 +262,4 @@ TableForReflex
 
 * [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md)
 * [KQL quick reference guide](/kusto/query/kql-quick-reference)
+* [Tutorial: Create and Activate a Fabric Activator Rule](activator-tutorial.md)
