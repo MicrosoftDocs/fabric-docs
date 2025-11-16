@@ -5,7 +5,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.custom: FY25Q1-Linter
-ms.date: 07/16/2025
+ms.date: 11/16/2025
 ms.search.form: Data Activator PBI Onramp
 #customer intent: As a Power BI user I want to learn how to get data from Power BI alerts into Activator where I can continue refining the alert.
 ---
