@@ -71,23 +71,23 @@ Over time, the status of a Fabric Connection may change due to various reasons, 
 
 :::image type="content" source="media\fabric-connection-notebook\connection-check-status.png" alt-text="Screenshot of check status option. "lightbox="media\fabric-connection-notebook\connection-check-status.png.png":::
 
-If there are any issues with the connection, an offline icon will be displayed next to the connection name. Following are some comon scenarios that may cause a connection to go offline:
-- **Credential Expiration**: If the credentials used for the connection have expired, the connection will go offline. You need to update the credentials to bring the connection back online.
-- **Permission Changes**: If the permissions for the data source have changed and the connection no longer has access, the connection will go offline. You need to restore the necessary permissions to bring the connection back online. For example, if you are using Workspace Identity Authentication or SPN, ensure that the Fabric workspace identity or SPN has the required permissions to access the data source.
-- **Network Issues**: If there are network issues preventing access to the data source, the connection may go offline. You need to resolve the network issues to bring the connection back online.
-- **Connection deleted**: If the connection is deleted after being bound to the notebook, it will go offline. You can not generate code snippets from an offline connection, but when you run the code, it will show an error indicating that the connection is not found. To resolve this, you can either recreate the connection and bind it to the notebook again, or update the code snippets to use a different connection that is available.
+If there are any issues with the connection, an offline icon is displayed next to the connection name. Following are some comon scenarios that may cause a connection to go offline:
+- **Credential Expiration**: If the credential used for the connection is expired, then the connection goes offline. You need to update the credentials to bring the connection back online.
+- **Permission Changes**: If the permission for the data source change and the connection no longer has access, then the connection goes offline. You need to restore the necessary permissions to bring the connection back online. For example, if you're using Workspace Identity Authentication or SPN, ensure that the Fabric workspace identity or SPN has the required permissions to access the data source.
+- **Network Issues**: If there are network issues preventing access to the data source, the connection goes offline. You need to resolve the network issues to bring the connection back online.
+- **Connection deleted**: If the connection is deleted after being bound to the notebook, it goes offline with **Unavailable** detail error. You can't generate code snippets from an offline connection.
 
 
 :::image type="content" source="media\fabric-connection-notebook\connection-offline.png" alt-text="Screenshot of connection offline status. "lightbox="media\fabric-connection-notebook\connection-offline.png.png":::
 
 
-For the offline connection under the **"Current Notebook"** node, the **"Check status"** and **"Disconnect"** options are available in the context menu. You can't generate code snippets from an offline connection. If the **Check status** is also disabled, it indicates that the connection has been deleted. You can either recreate the connection and bind it to the notebook again, or update the code snippets to use a different connection that is available.
+For the offline connection under the **"Current Notebook"** node, the **"Check status"** and **"Disconnect"** options are available in the context menu. You can't generate code snippets from an offline connection. If the **Check status** is also disabled, it indicates that the connection is deleted. You can either recreate the connection and bind it to the notebook again, or update the code snippets to use a different connection that's available.
 
-For the offline connection under the **"Global Permissions"** node, the **"Check status"** option is available in the context menu. You can't connect an offline connection to the current notebook. The the **"Delete"** option is only available if the current user has the owner permission for the connection.
+For the offline connection under the **"Global Permissions"** node, the **"Check status"** option is available in the context menu. You can't connect an offline connection to the current notebook. The **"Delete"** option is only available if the current user has the owner permission for the connection.
 
 
 > [!IMPORTANT]
-> If Workspace Identity Authentication is used to created the connection, the **"Check status"** option can not validate if the connection is online or offline given the test connection can not support workspace identity authentication.
+> If Workspace Identity Authentication is used to create the connection, the **"Check status"** option can’t validate if the connection is online or offline given the test connection can’t support workspace identity authentication.
 
 ## How to use Fabric Connection in notebook code
 
@@ -146,7 +146,7 @@ To connect or disconnect a Fabric Connection from the current notebook:
 1. Select the connection in the **"Current Notebook"** node.
 1. Select the ellipsis (...) and then select **"Disconnect"** or **"Connect"** from the context menu.
 
-If the same connection is disconnected and reconnected, the connection ID will change. For any existing code cells that reference the connection, you need to update the connection ID in the code cell to the new connection ID. You can find the connection ID with context menu of the connection by selecting **"Copy ID"**.
+If the same connection is disconnected and reconnected, the connection ID changes. For any existing code cells that reference the connection, you need to update the connection ID in the code cell to the new connection ID. You can find the connection ID with context menu of the connection by selecting **"Copy ID"**.
 
 :::image type="content" source="media\fabric-connection-notebook\copy-connection-id.png" alt-text="Screenshot of copying the connection ID in the context menu. "lightbox="media\fabric-connection-notebook\copy-connection-id.png":::
 
