@@ -39,7 +39,7 @@ items:
       - name: Billing and capacity usage
         href: ontology/resources-capacity-usage.md
       - name: Ontology FAQ
-        href: ontology/frequently-asked-questions.md
+        href: ontology/resources-frequently-asked-questions.md
       - name: CI/CD in Fabric
         href: ../cicd/cicd-overview.md
   - name: Fabric data agent
