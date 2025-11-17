@@ -36,6 +36,8 @@ items:
         href: ontology/how-to-use-preview-experience.md
     - name: Resources
       items:
+      - name: Billing and capacity usage
+        href: ontology/resources-capacity-usage.md
       - name: Ontology FAQ
         href: ontology/frequently-asked-questions.md
       - name: CI/CD in Fabric
