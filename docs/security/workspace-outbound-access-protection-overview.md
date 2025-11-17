@@ -100,9 +100,9 @@ This section outlines important considerations and limitations when using worksp
 
 #### Region availability limitation
 
-    Data connection rules aren't yet available in the following region:
+Data connection rules aren't yet available in the following region:
 
-    * Qatar Central
+* Qatar Central
 
 #### Internal (Fabric) connection types with workspace-level granularity
 
