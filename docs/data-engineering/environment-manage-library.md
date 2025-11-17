@@ -44,19 +44,19 @@ To add a new library from public repository, i.e., PyPI or conda, select ***Add 
 
 ### Add a new library from private repositories
 
-#### Setup connection for your Azure Artifact Feed
+#### Set up connection for your Azure Artifact Feed
 
-In Fabric, directly storing the credential is forbidden. The connections need to be setup through in [Data Factory Connector](/fabric/data-factory/connector-overview). Following is a step-by-step guidance to set-up the connection for Azure Artifact Feed. Learn more about [Azure Artifact Feed](/azure/devops/artifacts/quickstarts/python-packages).
+In Fabric, directly storing the credential is forbidden. The connections need to be set up through in [Data Factory Connector](/fabric/data-factory/connector-overview). Following is a step-by-step guidance to set up the connection for Azure Artifact Feed. Learn more about [Azure Artifact Feed](/azure/devops/artifacts/quickstarts/python-packages).
 
-**Step 1**: In your workspace ***Settings***, go to ***Manage connections and gateways***.
+1. Step 1: In your workspace ***Settings***, go to ***Manage connections and gateways***.
 
-:::image type="content" source="media\environment-lm\external-library-connector-in-setting.png" alt-text="Screenshot that shows the entrypoint of the environment External repositories connectors." lightbox="media\environment-lm\external-library-connector-in-setting.png":::
+    :::image type="content" source="media\environment-lm\external-library-connector-in-setting.png" alt-text="Screenshot that shows the entrypoint of the environment External repositories connectors." lightbox="media\environment-lm\external-library-connector-in-setting.png":::
 
-**Step 2**: Create a new ***connection***. Select ***Cloud*** as the type and choose ***Azure Artifact Feed (Preview)*** as the connection type. Enter the URL and user token in the respective fields, and make sure to check ***Allow Code-First Artifact ... to access this connection (Preview)***.
+2. Step 2: Create a new ***connection***. Select ***Cloud*** as the type and choose ***Azure Artifact Feed (Preview)*** as the connection type. Enter the URL and user token in the respective fields, and make sure to check ***Allow Code-First Artifact ... to access this connection (Preview)***.
 
-:::image type="content" source="media\environment-lm\external-library-connector-example.png" alt-text="Screenshot that shows an example of creating a new connector screen." lightbox="media\environment-lm\external-library-connector-example.png":::
+    :::image type="content" source="media\environment-lm\external-library-connector-example.png" alt-text="Screenshot that shows an example of creating a new connector screen." lightbox="media\environment-lm\external-library-connector-example.png":::
 
-**Step 3**: Record the connection ID after creation, this is needed for using the connection in Fabric environments.
+3. Step 3: Record the connection ID after creation, this is needed for using the connection in Fabric environments.
 
 #### Add libraries from Azure Artifact Feed
 
@@ -80,7 +80,7 @@ dependencies:
     - --index-url <YOUR_CONNECTION_ID> 
 ```
 
-With the prepared YML file, you can either upload it directly or switch to **YML editor view** to paste the content into the editor in Fabric environments. When you publish the environment, the system reads the packages from your private repository and persist them in Fabric. If you update packages in your Azure Artifact Feed, make sure to **republish the environment** to apply the latest changes.
+With the prepared YML file, you can either upload it directly or switch to **YML editor view** to paste the content into the editor in Fabric environments. When you publish the environment, the system reads the packages from your private repository and persists them in Fabric. If you update packages in your Azure Artifact Feed, make sure to **republish the environment** to apply the latest changes.
 
 > [!NOTE]
 >
