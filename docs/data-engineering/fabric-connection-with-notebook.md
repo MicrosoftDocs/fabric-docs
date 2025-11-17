@@ -69,7 +69,7 @@ After you bind the connection to the current notebook, it appears in the **"Curr
 
 Over time, the status of a Fabric Connection may change due to various reasons, such as credential expiration or permission changes. You can check the connection status by selecting the **"Check status"** button from the context menu. 
 
-:::image type="content" source="media\fabric-connection-notebook\connection-check-status.png" alt-text="Screenshot of check status option. "lightbox="media\fabric-connection-notebook\connection-check-status.png.png":::
+:::image type="content" source="media\fabric-connection-notebook\connection-check-status.png" alt-text="Screenshot of check status option. "lightbox="media\fabric-connection-notebook\connection-check-status.png":::
 
 If there are any issues with the connection, an offline icon is displayed next to the connection name. Following are some comon scenarios that may cause a connection to go offline:
 - **Credential Expiration**: If the credential used for the connection is expired, then the connection goes offline. You need to update the credentials to bring the connection back online.
@@ -78,7 +78,7 @@ If there are any issues with the connection, an offline icon is displayed next t
 - **Connection deleted**: If the connection is deleted after being bound to the notebook, it goes offline with **Unavailable** detail error. You can't generate code snippets from an offline connection.
 
 
-:::image type="content" source="media\fabric-connection-notebook\connection-offline.png" alt-text="Screenshot of connection offline status. "lightbox="media\fabric-connection-notebook\connection-offline.png.png":::
+:::image type="content" source="media\fabric-connection-notebook\connection-offline.png" alt-text="Screenshot of connection offline status. "lightbox="media\fabric-connection-notebook\connection-offline.png":::
 
 
 For the offline connection under the **"Current Notebook"** node, the **"Check status"** and **"Disconnect"** options are available in the context menu. You can't generate code snippets from an offline connection. If the **Check status** is also disabled, it indicates that the connection is deleted. You can either recreate the connection and bind it to the notebook again, or update the code snippets to use a different connection that's available.
