@@ -77,7 +77,7 @@ items:
     href: onelake-unity-catalog.md
   - name: Azure HDInsight
     href: onelake-azure-hdinsight.md
-  - name: Microsoft Foundry
+  - name: Microsoft Foundry knowledge
     href: onelake-foundry-knowledge.md
   - name: PowerShell
     href: onelake-powershell.md
