@@ -332,7 +332,7 @@ items:
   - name: T-SQL magic command in Python Notebook
     href: tsql-magic-command-notebook.md
   - name: Fabric Connection with Notebook
-    href: Fabric-Connection-with-Notebook.md  
+    href: fabric-connection-with-notebook.md  
   - name: Fabric Notebook known limitation
     href: notebook-limitation.md
   - name: Query Mirrored Databases in Spark Notebook
