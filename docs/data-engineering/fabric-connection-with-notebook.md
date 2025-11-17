@@ -25,9 +25,10 @@ Here are the supported authentication methods for Fabric Connection in notebooks
 - **Account Key Authentication**: Supported for REST API data sources that require Account key authentication.
 - **Token Authentication**: Supported for data sources that require token-based authentication.
 - **Workspace Identity Authentication**: Supported for Fabric workspace identity authentication.
+- **Service Principal Authentication(SPN)**: Supported for data sources that require SPN-based authentication.
 
 > [!IMPORTANT]
-> OAuth2.0 isn't supported for Fabric Connection in notebooks. If you choose workspace identity authentication, make sure to grant the necessary permissions to the Fabric workspace identity to access the data source. Service Principal Authentication(SPN) authentication support will be added in a future update.
+> OAuth2.0 isn't supported for Fabric Connection in notebooks. If you choose workspace identity authentication or SPN, make sure to grant the necessary permissions to the Fabric workspace identity to access the data source. For the detail setup of each connector, please refer to [Data source management](../data-factory/connector-overview.md) article.
 
 There's a tenant level setting that allows the tenant admin to control whether this feature is enabled for the entire tenant. If the setting is disabled, users can't use Fabric Connection in notebooks. By default, this feature is enabled.
 
@@ -62,6 +63,31 @@ For the connection under the **"Global Permissions"** node, you need to explicit
 :::image type="content" source="media\fabric-connection-notebook\bind-connection.png" alt-text="Screenshot of binding connection to current notebook. "lightbox="media\fabric-connection-notebook\bind-connection.png":::
 
 After you bind the connection to the current notebook, it appears in the **"Current Notebook"** node in the **"Connections"** pane.
+
+
+### Connection status
+
+Over time, the status of a Fabric Connection may change due to various reasons, such as credential expiration or permission changes. You can check the connection status by selecting the **"Check status"** button from the context menu. 
+
+:::image type="content" source="media\fabric-connection-notebook\connection-check-status.png" alt-text="Screenshot of check status option. "lightbox="media\fabric-connection-notebook\connection-check-status.png.png":::
+
+If there are any issues with the connection, an offline icon will be displayed next to the connection name. Following are some comon scenarios that may cause a connection to go offline:
+- **Credential Expiration**: If the credentials used for the connection have expired, the connection will go offline. You need to update the credentials to bring the connection back online.
+- **Permission Changes**: If the permissions for the data source have changed and the connection no longer has access, the connection will go offline. You need to restore the necessary permissions to bring the connection back online. For example, if you are using Workspace Identity Authentication or SPN, ensure that the Fabric workspace identity or SPN has the required permissions to access the data source.
+- **Network Issues**: If there are network issues preventing access to the data source, the connection may go offline. You need to resolve the network issues to bring the connection back online.
+- **Connection deleted**: If the connection is deleted after being bound to the notebook, it will go offline. You can note generate code snippets from an offline connection, but when you run the code, it will show an error indicating that the connection is not found. To resolve this, you can either recreate the connection and bind it to the notebook again, or update the code snippets to use a different connection that is available.
+
+
+:::image type="content" source="media\fabric-connection-notebook\connection-offline.png" alt-text="Screenshot of connection offline status. "lightbox="media\fabric-connection-notebook\connection-offline.png.png":::
+
+
+For the offline connection under the **"Current Notebook"** node, the **"Check status"** and **"Disconnect"** options are available in the context menu. You can't generate code snippets from an offline connection. If the **Check status** is also disabled, it indicates that the connection has been deleted. You can either recreate the connection and bind it to the notebook again, or update the code snippets to use a different connection that is available.
+
+For the offline connection under the **"Global Permissions"** node, the **"Check status"** option is available in the context menu. You can't connect an offline connection to the current notebook. The the **"Delete"** option is only available if the current user has the owner permission for the connection.
+
+
+> [!IMPORTANT]
+> If Workspace Identity Authentication is used to created the connection, the **"Check status"** option can not validate if the connection is online or offline given the test connection can not support workspace identity authentication.
 
 ## How to use Fabric Connection in notebook code
 
