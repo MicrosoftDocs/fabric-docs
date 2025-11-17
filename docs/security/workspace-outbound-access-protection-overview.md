@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview
-ms.date: 11/10/2025
+ms.date: 11/17/2025
 
 #customer intent: As a Fabric administrator, I want to control and secure outbound connections from workspace artifacts so that I can protect organizational data and ensure compliance with security policies.
 
@@ -26,7 +26,7 @@ When outbound access protection is enabled for a workspace, all outbound connect
 
 * **Managed private endpoints**, which are network connections that let you securely link workspace items to supported external data sources over private virtual networks. You can also connect to other workspaces within the same tenant by using managed private endpoints in conjunction with the Private Link service. Managed private endpoints are supported for Data Engineering and OneLake workloads.
 
-* **Data connection rules**, which are policies that permit workspace items to access external services through specific cloud connections or gateway connections. Admins control outbound connectivity by explicitly allowing or blocking connectors. This method is supported for Data Factory workloads.
+* **Data connection rules**, which are policies that permit workspace items to access external services through specific cloud connections or gateway connections. Admins control outbound connectivity by explicitly allowing or blocking connectors. Data connection rules are supported for Data Factory workloads and mirrored databases.
 
 The following sections explain these options in more detail.
 
@@ -56,12 +56,13 @@ In the diagram, outbound access protection is enabled in Workspace A. Data conne
 
 The following table summarizes the supported workloads and item types that can be protected using workspace outbound access protection.
 
-|Workload  |Supported items  |More information  |
-|---------|---------|---------|
-|Data Engineering     |<ul><li>Lakehouses</li><li>Notebooks</li><li>Spark Job Definitions</li><li>Environments</li></ul>         |[Workspace outbound access protection for data engineering workloads](workspace-outbound-access-protection-data-engineering.md)         |
-|Data Factory     |<ul><li>Data Flows Gen2 (with CICD)</li><li>Pipelines</li><li>Copy Jobs</li></ul>         |[Workspace outbound access protection for Data Factory](workspace-outbound-access-protection-data-factory.md)         |
-|Data Warehouse     |<ul><li>Warehouses</li><li>SQL analytics endpoints</li></ul>         |[Workspace outbound access protection for data warehouse workloads](workspace-outbound-access-protection-data-warehouse.md)         |
-|OneLake     |<ul><li>OneLake shortcuts</li></ul>         |[Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md)         |
+| Workload | Exception (allowlist) mechanism | Supported items | More information |
+|--|--|--|--|
+| Data Engineering | Managed private endpoints | <ul><li>Lakehouses</li><li>Notebooks</li><li>Spark Job Definitions</li><li>Environments</li></ul> | [Workspace outbound access protection for data engineering workloads](workspace-outbound-access-protection-data-engineering.md) |
+| Data Factory | Data connection rules | <ul><li>Data Flows Gen2 (with CICD)</li><li>Pipelines</li><li>Copy Jobs</li></ul> | [Workspace outbound access protection for Data Factory](workspace-outbound-access-protection-data-factory.md) |
+| Data Warehouse | Not applicable | <ul><li>Warehouses</li><li>SQL analytics endpoints</li></ul> | [Workspace outbound access protection for data warehouse workloads](workspace-outbound-access-protection-data-warehouse.md) |
+| Mirrored databases | Data connection rules | Microsoft Fabric mirrored databases from:<ul><li>Azure SQL Database</li><li>Snowflake</li><li>Mirrored Database</li><li>Azure Cosmos DB</li><li>Azure SQL Managed Instance</li><li>Azure Database for PostgreSQL</li><li>SQL Server</li><li>Oracle</li><li>Google Big Query</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
+| OneLake | Managed private endpoints | <ul><li>OneLake shortcuts</li></ul> | [Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md) |
 
 ## Considerations and limitations
 
@@ -96,6 +97,12 @@ This section outlines important considerations and limitations when using worksp
 * The Fabric portal UI doesn't currently support enabling both inbound protection (workspace-level private links) and outbound access protection at the same time for a workspace. To configure both settings together, use the [Workspaces - Set Network Communication Policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy?tabs=HTTP), which allows full management of inbound and outbound protection policies.
 
 ### Data connection rules
+
+#### Region availability limitation
+
+    Data connection rules aren't yet available in the following region:
+
+    * Qatar Central
 
 #### Internal (Fabric) connection types with workspace-level granularity
 

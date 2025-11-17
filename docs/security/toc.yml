@@ -117,6 +117,8 @@ items:
                 href: workspace-outbound-access-protection-data-factory.md
               - name: Data Warehouse
                 href: workspace-outbound-access-protection-data-warehouse.md
+              - name: Mirrored databases (preview)
+                href: workspace-outbound-access-protection-mirrored-databases.md
               - name: OneLake (preview)
                 href: workspace-outbound-access-protection-onelake.md
       - name: Trusted workspace access
