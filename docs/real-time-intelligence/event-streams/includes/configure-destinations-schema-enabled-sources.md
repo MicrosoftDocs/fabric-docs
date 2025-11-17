@@ -12,6 +12,8 @@ ms.date: 09/27/2025
 
 Currently, only the eventhouse, custom endpoint, and derived stream destinations are supported for eventstreams with extended features enabled. This section shows you how to add and configure an eventhouse destination when extended features (like schema support) are enabled for the eventstream.
 
+<a name = "configure-schema-for-a-custom-endpoint-destination"></a>
+
 ### Configure a schema for a custom endpoint destination
 
 1. Select **Transform events or add destination**, and then select **CustomEndpoint**.

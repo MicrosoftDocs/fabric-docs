@@ -1,6 +1,6 @@
 ---
-title: Azure Data Explorer connector for Fabric event streams
-description: This include file has the common content for configuring an Azure Data Explorer connector for Fabric event streams and real-time hub. 
+title: Azure Data Explorer connector for Fabric eventstreams
+description: This include file has the common content for configuring an Azure Data Explorer connector for Fabric eventstreams and real-time hub. 
 ms.author: spelluru
 author: spelluru
 ms.topic: include
@@ -30,7 +30,7 @@ ms.date: 03/21/2025
     1. The **Stream name** value is automatically generated for you by appending **-stream** to the name of the eventstream. You can see this stream on the real-time hub's **All data streams** page when the wizard finishes.  
 
         :::image type="content" source="./media/azure-data-explorer-connector/stream-name.png" alt-text="Screenshot that shows the section for source details in the Azure Data Explorer connection settings." :::
-1. If you're using the eventstream editor to add an Azure Data Explorer database table as a source to an event stream, select the pencil button under **Source name**, and then enter a source name.
+1. If you're using the eventstream editor to add an Azure Data Explorer database table as a source to an eventstream, select the pencil button under **Source name**, and then enter a source name.
 
     :::image type="content" source="./media/azure-data-explorer-connector/stream-details.png" alt-text="Screenshot that shows the pencil button for adding a source name.":::
 1. Select **Next** at the bottom of the page.

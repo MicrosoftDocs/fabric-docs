@@ -40,7 +40,7 @@ On the **Select a data source** page, search for **Azure Data Explorer DB**. On 
 
 ## Limitations
 
-The Azure Data Explorer streaming connector captures table changes by using a database cursor to query the differences between two ingestion times. However, each query result is limited to a maximum of 64 MB or 500,000 records. For details, see the [Azure Data Explorer query limits](/kusto/concepts/query-limits#limit-on-result-set-size-result-truncation). If your Azure Data Explorer database has a high ingestion rate that exceeds this limit, the connector might fail.
+The Azure Data Explorer streaming connector captures table changes by using a database cursor to query the differences between two ingestion times. However, each query result is limited to a maximum of 64 MB or 500,000 records. For details, see the [Azure Data Explorer query limits](/kusto/concepts/query-limits#limit-on-result-set-size-result-truncation). If your Azure Data Explorer database has a high ingestion rate that exceeds this limit, the connector might fail.
 
 ## Related content
 

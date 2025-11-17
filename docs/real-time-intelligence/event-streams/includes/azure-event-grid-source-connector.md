@@ -40,7 +40,7 @@ On the **Configure connection settings** page, follow these steps:
 
 1. Select **Next** at the bottom of the page.
 
-1. On the **Review + connect** page, review your settings and then select **Connect**.
+1. On the **Review + connect** page, review your settings, and then select **Connect**.
 
     :::image type="content" source="./media/azure-event-grid-source-connector/review-connect-page.png" alt-text="Screenshot that shows the page for reviewing settings and creating an Event Grid namespace.":::
 
