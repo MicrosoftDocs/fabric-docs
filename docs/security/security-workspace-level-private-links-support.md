@@ -47,7 +47,6 @@ The following item types aren't currently supported in workspaces enabled with w
 * Deployment pipelines
 * Default semantic models
 * Lakehouses with schemas
-* Spark connectors for SQL Data Warehouse
 
 If a workspace contains any unsupported item types, inbound public access can't be restricted for the workspace, even if workspace-level private link is set up. 
 
