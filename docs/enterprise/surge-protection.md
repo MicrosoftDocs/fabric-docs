@@ -11,7 +11,7 @@ ms.date: 06/03/2025
 
 # Surge protection
 
-Surge protection helps limit overuse of your capacity by limiting the amount of compute consumed by background jobs. You configure surge protection for each capacity. Surge protection helps prevent throttling and rejections but isn't a substitute for capacity optimization, scaling up, and scaling out. When the capacity reaches its compute limit, it experiences interactive delays, interactive rejections, or all rejections even when surge protection is enabled.
+Surge protection helps limit overuse of your capacity by limiting the amount of compute consumed by background jobs. You configure surge protection for each capacity. Surge protection helps prevent throttling and rejections but isn't a substitute for capacity optimization, scaling up, and scaling out. When the capacity reaches its compute limit, it experiences interactive delays, interactive rejections, or all rejections even when surge protection is enabled.  There is also the ability to provide workspace-level surge protection.
 
 ## Prerequisites
 
