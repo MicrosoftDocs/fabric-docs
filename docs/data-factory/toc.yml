@@ -943,7 +943,23 @@
             href: dataflow-gen2-data-destinations-and-managed-settings.md
             items:
               - name: Dataflow default destination
-                href: default-destination.md    
+                href: default-destination.md
+          - name: Authoring tools
+            items:
+              - name: Explain Mashup with Copilot 
+                href: dataflow-gen2-copilot-explain.md
+              - name: Get data with Copilot
+                href: copilot-modern-get-data.md
+              - name: Query evaluator (Preview)
+                href: dataflow-gen2-modern-evaluator.md
+              - name: Preview only (Preview)
+                href: dataflow-gen2-preview-only-step.md
+              - name: Partitioned compute (Preview)
+                href: dataflow-gen2-partitioned-compute.md
+              - name: Public parameters in Dataflow Gen2
+                href: dataflow-parameters.md
+              - name: Variable libraries in Dataflow Gen2
+                href: dataflow-gen2-variable-library-integration.md    
           - name: Dataflow refresh
             href: dataflow-gen2-refresh.md
             items:
@@ -951,30 +967,18 @@
                 href: dataflow-gen2-incremental-refresh.md
           - name: Monitor your dataflows
             href: dataflows-gen2-monitor.md
-          - name: Dataflow AI tools
+          - name: Performance and troubleshooting
             items:
-              - name: Explain Mashup with Copilot 
-                href: dataflow-gen2-copilot-explain.md
-              - name: Get data with Copilot
-                href: copilot-modern-get-data.md
+              - name: Dataflow Gen2 performance and scalability
+                href: dataflow-gen2-performance-best-practices.md  
+              - name: Dataflows that use gateways
+                href: dataflow-gen2-cloud-connection-gateway-use.md
           - name: Guided tutorials
             items:
               - name: Incrementally amass data with Dataflow Gen2
                 href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
               - name: Use a dataflow to bring data into Databricks
                 href: tutorial-dataflows-gen2-adlsgen2-databricks.md
-          - name: Authoring tools
-            items:
-              - name: Modern query evaluator (Preview)
-                href: dataflow-gen2-modern-evaluator.md
-              - name: Preview only step (Preview)
-                href: dataflow-gen2-preview-only-step.md
-              - name: Partitioned compute (Preview)
-                href: dataflow-gen2-partitioned-compute.md
-              - name: Public parameters in Dataflow Gen2
-                href: dataflow-parameters.md
-              - name: Variable libraries in Dataflow Gen2
-                href: dataflow-gen2-variable-library-integration.md
           - name: Advanced topics
             items:
               - name: Fast copy at scale
@@ -1001,12 +1005,6 @@
                     href: dataflow-gen2-parameterized-dataflow.md
                   - name: Variable references in Dataflow
                     href: dataflow-gen2-variable-references.md
-          - name: Performance and troubleshooting
-            items:
-              - name: Dataflow Gen2 performance and scalability
-                href: dataflow-gen2-performance-best-practices.md  
-              - name: Dataflows that use gateways
-                href: dataflow-gen2-cloud-connection-gateway-use.md
   - name: Orchestrate your pipelines
     items:
       - name: What is a pipeline?
