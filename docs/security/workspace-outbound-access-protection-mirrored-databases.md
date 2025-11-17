@@ -40,7 +40,7 @@ Outbound access protection applies to the following Microsoft Fabric mirrored da
 - Google Big Query
 
 > [!NOTE]
-> Mirrored databases follow connector rules for mirroring. Only allowed sources can be mirrored. Connections to other sources for mirroring are blocked.
+> Mirrored databases follow data connection rules for mirroring. Only allowed sources can be mirrored. Connections to other sources for mirroring are blocked.
 
 ## Considerations and limitations
 

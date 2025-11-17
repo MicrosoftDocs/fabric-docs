@@ -96,7 +96,13 @@ This section outlines important considerations and limitations when using worksp
 
 * The Fabric portal UI doesn't currently support enabling both inbound protection (workspace-level private links) and outbound access protection at the same time for a workspace. To configure both settings together, use the [Workspaces - Set Network Communication Policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy?tabs=HTTP), which allows full management of inbound and outbound protection policies.
 
+* Workspace outbound access protection isn't currently compatible with [OneLake Diagnostics](/fabric/onelake/onelake-diagnostics-overview). If you require OneLake diagnostics and outbound access protection to work together, you must select a lakehouse in the same workspace.
+
 ### Data connection rules
+
+#### Fabric portal limitation with private links
+
+The Fabric portal UI doesn't currently support configuring data connection rules if private links are enabled at either the workspace or tenant level. To set up outbound access protection with data connection rules when private links are enabled, use the [REST APIs](workspace-outbound-access-protection-allow-list-connector.md#apitabapi-2) for Network Communication Policy and Outbound Gateway Rules.
 
 #### Region availability limitation
 

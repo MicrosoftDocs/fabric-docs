@@ -65,7 +65,7 @@ When you enable the **Block outbound public access** setting in the outbound acc
 
 1. Select **Save**.
 
-<!--
+!--
 ### [API](#tab/api-2)
 
 Call the following APIs to view/update the Data Connection rules (Cloud Connections).
