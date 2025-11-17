@@ -69,6 +69,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/scope-activity.md",
+        "redirect_url": "/fabric/data-factory/activity-overview#control-flow-activities",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/pipeline-copy-from-azure-blob-storage-to-lakehouse.md",
         "redirect_url": "/fabric/data-factory/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse",
         "redirect_document_id": false
