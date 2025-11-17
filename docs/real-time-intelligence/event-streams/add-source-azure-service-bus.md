@@ -21,7 +21,7 @@ This article shows you how to add a Service Bus source to an eventstream.
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode or the trial license mode with Contributor or higher permissions.  
+- Access to a workspace in the Fabric capacity license mode or trial license mode with Contributor or higher permissions.  
 - Appropriate permission to get access keys for the Service Bus namespace, queues, or topics. The Service Bus namespace must be publicly accessible and not behind a firewall or secured in a virtual network.
 - An eventstream. If you don't have an eventstream, [create one](create-manage-an-eventstream.md).
 

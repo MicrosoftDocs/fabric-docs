@@ -18,7 +18,7 @@ This article shows you how to add an Azure Event Hubs source to a Microsoft Fabr
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode or the trial license mode with Contributor or higher permissions.
+- Access to a workspace in the Fabric capacity license mode or trial license mode with Contributor or higher permissions.
 - Appropriate permission to get an event hub's access keys. If your event hub is within a protected network, [connect to it by using a managed private endpoint](set-up-private-endpoint.md). Otherwise, ensure that the event hub is publicly accessible and not behind a firewall.
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md).
 
