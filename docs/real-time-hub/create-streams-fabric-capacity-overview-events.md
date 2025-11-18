@@ -40,6 +40,8 @@ You can create streams for Fabric capacity overview events in Real-Time hub usin
 - [Using the **Data sources** page](#data-sources-page)
 - [Using the **Fabric events** page](#fabric-events-page)
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 5. On the **Data sources** page, select **Fabric events** category at the top, and then select **Connect** on the **Capacity overview events** tile.
