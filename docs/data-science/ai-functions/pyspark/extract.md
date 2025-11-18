@@ -12,7 +12,6 @@ ms.search.form: AI functions
 
 # Use ai.extract with PySpark
 
-
 The `ai.extract` function uses generative AI to scan input text and extract specific types of information designated by labels you choose (for example, locations or names). It uses only a single line of code.
 
 > [!NOTE]
@@ -53,6 +52,8 @@ df.ai.extract(labels=["entity1", "entity2", "entity3"], input_col="input")
 ## Returns
 
 The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column for each specified entity type. The column or columns contain the entities extracted for each row of input text. If the function identifies more than one match for an entity, it returns only one of those matches. If no match is found, the result is `null`.
+
+The default return type is a list of strings for each label. If users choose to specify a different type in the `aifunc.ExtractLabel` configuration, such as "type=integer", then the output will be a list of python int. If users specify "max_items=1" in the `aifunc.ExtractLabel` configuration, then only one element of the type is returned for that label.
 
 ## Example
 
