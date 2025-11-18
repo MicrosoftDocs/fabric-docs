@@ -25,7 +25,7 @@ Review the troubleshooting section of frequently asked questions for each data s
 - [Troubleshoot Mirroring Snowflake](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric)
 - [FAQ about Mirroring Azure Databricks](../mirroring/azure-databricks-faq.yml)
 - [Troubleshoot mirroring from Fabric SQL database](../database/sql/mirroring-troubleshooting.md) and [FAQ for Mirroring Fabric SQL database](../database/sql/mirroring-faq.yml)
-- [Troubleshoot Fabric mirrored databases From SQL Server](../mirroring/sql-server-troubleshoot.md) and [FAQ for Mirroring SQL Server in Microsoft Fabric](../mirroring/sql-server-faq.yml)
+- [Troubleshoot Fabric mirrored databases from SQL Server](../mirroring/sql-server-troubleshoot.md) and [FAQ for Mirroring SQL Server in Microsoft Fabric](../mirroring/sql-server-faq.yml)
 
 Review limitations documentation for each data source:
 
