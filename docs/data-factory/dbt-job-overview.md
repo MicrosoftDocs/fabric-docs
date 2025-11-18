@@ -1,6 +1,6 @@
 ---
-title: dbt jobs in Microsoft Fabric (Preview)
-description: Learn how to use dbt jobs in Microsoft Fabric to transform your data with SQL.
+title: dbt job in Microsoft Fabric (Preview)
+description: Learn how to use dbt job in Microsoft Fabric to transform your data with SQL.
 ms.reviewer: whhender
 ms.author: akurnala
 author: abhinayakurnala1
@@ -11,18 +11,18 @@ ms.custom:
 ai-usage: ai-assisted
 ---
 
-# dbt jobs in Microsoft Fabric (Preview)
+# dbt job in Microsoft Fabric (Preview)
 
 > [!NOTE]
 > This feature is in [preview](/fabric/fundamentals/preview).
 
-[dbt](https://docs.getdbt.com/) jobs in Microsoft Fabric let you transform your data with SQL directly in the Fabric interface. You get a no-code setup to build, test, and deploy dbt models on top of your Fabric data warehouse.
+[dbt](https://docs.getdbt.com/) job in Microsoft Fabric let you transform your data with SQL directly in the Fabric interface. You get a no-code setup to build, test, and deploy dbt models on top of your Fabric data warehouse.
 
-With dbt jobs, you can develop and manage your transformation logic in one place—no command line or external orchestration tools needed. Fabric's integration with dbt Core lets you schedule, monitor, and visualize dbt workflows in the same workspace where your data pipelines and reports live.
+With dbt job, you can develop and manage your transformation logic in one place—no command line or external orchestration tools needed. Fabric's integration with dbt Core lets you schedule, monitor, and visualize dbt workflows in the same workspace where your data pipelines and reports live.
 
 ## Prerequisites
 
-Before you create dbt jobs in Microsoft Fabric, make sure your environment is set up correctly:
+Before you create dbt job in Microsoft Fabric, make sure your environment is set up correctly:
 
 - [Enabling dbt jobs](#enable-dbt-jobs)
 - [Setting up your workspace and warehouse](#set-up-your-workspace-and-warehouse)
@@ -241,7 +241,7 @@ Fabric provides several tools to help you monitor and validate your dbt jobs:
 
 In Microsoft Fabric, a dbt Job Runtime is a managed execution environment that provides a consistent and secure way to run dbt jobs. It simplifies execution by offering a versioned environment that includes dbt capabilities, ensuring reliability and performance across workloads. 
 
-Currently, when you create a dbt job, by default it uses Runtime v1.0, which supports dbt Core v1.9 and includes adapters for Microsoft Fabric Warehouse, Azure SQL Database, PostgreSQL, and Snowflake. Looking ahead, Runtime v2.0 will introduce dbt Fusion, delivering up to 30x faster performance and enhanced scalability. More details on supported adapters for v2.0 will be shared soon.Microsoft maintains alignment with major dbt Core releases to ensure compatibility and feature parity. Updates are applied automatically, and you can track changes in the Fabric release notes.
+Currently, when you create a dbt job, by default it uses **Runtime v1.0**, which supports **dbt Core v1.9** and includes adapters for **Microsoft Fabric Warehouse**, **Azure SQL Database**, **PostgreSQL**, and **Snowflake**. Looking ahead, **Runtime v2.0** will introduce dbt Fusion, delivering up to 30x faster performance and enhanced scalability. More details on supported adapters for v2.0 will be shared soon.Microsoft maintains alignment with major dbt Core releases to ensure compatibility and feature parity. Updates are applied automatically, and you can track changes in the Fabric release notes.
 
 ## Related content
 
