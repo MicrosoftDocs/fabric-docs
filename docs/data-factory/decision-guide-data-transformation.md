@@ -11,7 +11,7 @@ ms.custom:
 # Microsoft Fabric decision guide: Choose a data transformation strategy
 
 > **Note**  
-> To get the most out of this article, we recommend reviewing [**Query Folding Basics**](/powerquery-docs/query-folding-basics), which provides essential background that will help you understand the concepts discussed here.
+> To get the most out of this article, we recommend reviewing [**Query Folding Basics**](/power-query/query-folding-basics), which provides essential background that will help you understand the concepts discussed here.
 
 
 
