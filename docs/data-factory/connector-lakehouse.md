@@ -34,25 +34,25 @@ In some cases, the Power Query connector article might include advanced options,
 
 ## Set up your connection in a pipeline
 
-To create a Lakehouse connection in a pipeline, select an existing Lakehouse under **OneLake** section.
+1. Go to Get Data page and navigate to OneLake catalog through the following ways:
 
-:::image type="content" source="media/connector-lakehouse/select-lakehouse-in-onelake.png" lightbox="media/connector-sql-database/select-sql-database-in-onelake.png" alt-text="Screenshot of selecting SQL database in OneLake section.":::
+   - In copy assistant, go to **OneLake catalog** section.
+   - In a pipeline, browse to all connection page through the connection drop-down list and go to **OneLake catalog** section.
 
-You have two ways to browse to this page:
+1. Select an existing Lakehouse.
 
-- In copy assistant, browse to this page after selecting **OneLake**.
-- In a pipeline, browse to all connection page through the connection drop-down list and go to **OneLake** section.
+    :::image type="content" source="media/connector-lakehouse/select-lakehouse-in-onelake.png" lightbox="media/connector-sql-database/select-sql-database-in-onelake.png" alt-text="Screenshot of selecting SQL database in OneLake section.":::
 
-If you have multiple Lakehouse connections in **Manage Connections and Gateways**, it navigates to **Connect to data source** pane. You can select an existing connection or create a new connection from the drop-down list.
+1. In **Connect to data source** pane, select a connection or create a new connection from the drop-down list, depending on your needs. The connections displayed are those available within your tenant.
 
-  :::image type="content" source="media/connector-lakehouse/connect-to-data-source.png" lightbox="media/connector-lakehouse/connect-to-data-source.png" alt-text="Screenshot of the pane to connect to data source.":::
+    :::image type="content" source="media/connector-lakehouse/connect-to-data-source.png" lightbox="media/connector-lakehouse/connect-to-data-source.png" alt-text="Screenshot of the pane to connect to data source.":::
 
 
 > [!NOTE]
 > To allow others to use the Lakehouse connection in your pipeline, you need to share your Lakehouse connection with them.
 
 > [!NOTE]
-> When you use an existing Lakehouse connection, ensure that the credentials used in the connection have sufficient permissions to access your workspace with the Lakehouse. Otherwise, you are recommended to create a new Lakehouse connection.
+> When you use an existing Lakehouse connection, ensure that the credential used in the connection have at least Viewer permission to access your workspace with the Lakehouse. Otherwise, you are recommended to create a new Lakehouse connection.
 
 ## Related content
 
