@@ -34,7 +34,7 @@ In this tutorial, learn how to use multiple tools to analyze data stored in your
 
 1. For the database name, select all the characters between the characters **Initial Catalog=** and **;MultipleActiveResultSets**.
 
-You can now use these SQL strings in your connection area for tools such as Power BI or SQL Server Management Studio. For [Visual Studio Code with the mssql extension](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), you can paste the entire connection string in the first text box where you make a database connection, so you don't have to select only the server and database names.
+You can now use these SQL strings in your connection area for tools such as Power BI or SQL Server Management Studio. For [Visual Studio Code with the mssql extension](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true), you can paste the entire connection string in the first text box where you make a database connection, so you don't have to select only the server and database names.
 
 ## Power BI visualization creation
 

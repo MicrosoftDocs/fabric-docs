@@ -75,9 +75,38 @@ The following table describes the general settings for data layers.
 | Tooltips | Specifies which more data properties should be displayed when hovering over map geometries. These properties provide contextual information about the spatial features shown on the map.|
 | Zoom level | Defines the range of zoom levels at which map geometries are visible.<br>Note: This setting isn't supported when using PMTiles as the data source. |
 
-### Point geometry
+### Data label settings
 
-#### Bubble visual
+When enabled, data labels display text derived from the chosen fields in your dataset, allowing each map point to show relevant information directly on the visual.
+
+The following examples illustrate data labels on maps with various geometries including point, line and polygon.
+
+This example uses point geometry to display public schools, with data labels indicating school names:
+
+:::image type="content" source="media/customize-map/data-labels-points.png" lightbox="media/customize-map/data-labels-points.png" alt-text="Screenshot showing a Fabric Map created using point geometry to show public schools, displaying the school name in the data label.":::
+
+This example uses line geometry to display National Forest System trails, with data labels indicating trail name:
+
+:::image type="content" source="media/customize-map/data-labels-lines.png" lightbox="media/customize-map/data-labels-lines.png" alt-text="Screenshot of a Fabric Map using line geometry to depict trails in a national forest, with each trail labeled by its official name.":::
+
+This example uses polygons that represent areas previously affected by forest fires in California, with each polygon labeled using the official fire name:
+
+:::image type="content" source="media/customize-map/data-labels-polygons.png" lightbox="media/customize-map/data-labels-polygons.png" alt-text="Screenshot of a Fabric Map displaying polygons that represent areas previously affected by forest fires in California, with each polygon labeled using the official fire name.":::
+
+The following table describes the general settings for data labels.
+
+| Setting            | Description                                                                                       |
+|--------------------|---------------------------------------------------------------------------------------------------|
+| Enable data labels | A toggle switch used to enable/disable data labels for the selected layer.                        |
+| Data labels        | A drop-down list showing available fields from the selected data source.                          |
+| Text color         | The text color of the data label.  The available color choices depend on the selected data theme. For more information, see [Change Map settings](#change-map-settings).|
+| Text size          | The text size of the data label. Valid text sizes range from 8-48. Default=12.                    |
+| Text stroke color  | The text stroke color of the data label. The available color choices depend on the selected data theme. For more information, see [Change Map settings](#change-map-settings).|
+| Text stroke width  | The text stroke width of the data label. Valid text sizes range from 0-10. Default=1.             |
+
+### Point settings
+
+#### Bubble layer
 
 A bubble visual displays individual data points as circles on a geographic map. Each bubble's size, color, and opacity can be customized to represent attributes such as magnitude, category, or intensity. This visualization is ideal for highlighting differences across locations, helping users compare values and spot patterns or outliers in spatial datasets. Bubble layers are especially useful for mapping quantitative data like population, sales volume, or event frequency.
 
@@ -116,7 +145,7 @@ When using the zoom control to zoom in, more granular clustering visuals appear.
 
 :::image type="content" source="media/customize-map/bubble-visual-clustering-zoom-in.png" lightbox="media/customize-map/bubble-visual-clustering-zoom-in.png" alt-text="A zoomed in version of the previous example.":::
 
-#### Heat map visual
+#### Heat map layer
 
 Heat maps, or point density maps, use color gradients to visualize where data points are most concentrated. They highlight high-density areas ("hot spots") and make spatial patterns easier to detect. This method is especially effective for large datasets, converting raw data into a smooth, continuous surface that reveals both absolute and relative densities across geographic regions.
 
@@ -145,13 +174,13 @@ The following screenshot illustrates a clustered heat map that visualizes spatia
 
 :::image type="content" source="media/customize-map/heatmap-visual-clustering.png" lightbox="media/customize-map/heatmap-visual-clustering.png" alt-text="Screenshot of heatmap visual enable clustering.":::
 
-### Line geometry
+### Line settings
 
-#### Line visual
+#### Line layer
 
-Line visual is used to visualize linear geographic features such as roads, paths, routes, or boundaries on a map. It connects a series of coordinates to form lines, which can be styled with various attributes like color, stroke width. This type of visual is especially useful for representing movement, direction, or connections between locations, and is commonly applied in scenarios like route planning, infrastructure mapping, or network visualization.
+Line layers are used to visualize linear geographic features such as roads, paths, routes, or boundaries on a map. It connects a series of coordinates to form lines, which can be styled with various attributes like color, stroke width. This type of visual is especially useful for representing movement, direction, or connections between locations, and is commonly applied in scenarios like route planning, infrastructure mapping, or network visualization.
 
-The following screenshot shows national forest trails near by Mount Rainier.
+The following screenshot shows national forest trails near Mount Rainier.
 
 :::image type="content" source="media/customize-map/line-visual-basic.png" lightbox="media/customize-map/line-visual-basic.png" alt-text="Screenshot of line visual basic.":::
 
@@ -170,11 +199,11 @@ The following screenshot shows national forest trail data near by Mount Rainier.
 
 :::image type="content" source="media/customize-map/line-visual-enable-series-group.png" lightbox="media/customize-map/line-visual-enable-series-group.png" alt-text="Screenshot of line visual enable series group.":::
 
-### Polygon geometry
+### Polygon settings
 
-#### Polygon visual
+#### Polygon layer
 
-Polygon visual is used to visualize areas or regions by connecting multiple geographic coordinates to form enclosed shapes. These polygons can represent boundaries such as city limits, zones, or regions of interest. You can customize the appearance of these shapes using attributes like layer color, and opacity. This visual is useful for highlighting specific geographic areas and analyzing spatial relationships or coverage.
+Polygon layers are used to visualize areas or regions by connecting multiple geographic coordinates to form enclosed shapes. These polygons can represent boundaries such as city limits, zones, or regions of interest. You can customize the appearance of these shapes using attributes like layer color, and opacity. This visual is useful for highlighting specific geographic areas and analyzing spatial relationships or coverage.
 
 The following screenshot displays a historical fire perimeters map of California, showing the geographic extent of past wildfires using red polygons. Each polygon represents a distinct fire event and includes metadata such as the year, cause, and GIS-calculated acreage. This visualization enables users to quickly identify fire-prone areas, analyze historical fire patterns, and support wildfire mitigation and land management planning.
 

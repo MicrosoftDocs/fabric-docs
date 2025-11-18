@@ -4,7 +4,7 @@ description: This article contains a list of performance guidelines for the ware
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: xiaoyul, procha, fipopovi, twcyril
-ms.date: 10/14/2025
+ms.date: 11/03/2025
 ms.topic: best-practice
 ms.custom:
 ---
@@ -287,6 +287,18 @@ If you often filter table rows on specific columns, consider partitioning the ta
 Partitioning works well for low cardinality columns or columns with predictable cardinality like years or dates. For more information, see [Lakehouse tutorial - Prepare and transform lakehouse data](../data-engineering/tutorial-lakehouse-data-preparation.md) and [Load data to Lakehouse using partition](../data-factory/tutorial-lakehouse-partition.md).
 
 Clustering works well for high selectivity columns. If you have other columns that you often use for filtering, other than partitioning columns, consider clustering the table using optimize with the Spark SQL syntax `ZORDER BY`. For more information, see [Delta Lake table optimization](../data-engineering/delta-optimization-and-v-order.md).
+
+## Data clustering
+
+You can also accomplish data clustering on specific columns in the `CREATE TABLE` and `CREATE TABLE AS SELECT` (CTAS) T-SQL statements. Data clustering works by storing rows with similar values in adjacent locations on storage during ingestion. 
+
+- Data clustering uses a space-filling curve to organize data in a way that preserves locality across multiple dimensions, meaning rows with similar values across clustering columns are stored physically close together. This approach dramatically improves query performance by performing file skipping and reducing the number of files that are scanned.
+- Data clustering metadata is embedded in the manifest during ingestion, allowing the warehouse engine to make intelligent decisions about which files to access during user queries. This metadata, combined with how rows with similar values are stored together, ensures that queries with filter predicates can skip entire files and row groups that fall outside the predicate scope. 
+
+For example: if a query targets only 10% of a table's data, clustering ensures that only files that contain the data within the filter's range are scanned, reducing I/O and compute consumption. Larger tables benefit more from data clustering, as the benefits of file skipping scale with data volume.
+
+- For complete information on data clustering, see [Data clustering in Fabric Data Warehouse](data-clustering.md).
+- For a tutorial of data clustering and how to measure its positive effect on performance, see [Use data clustering in Fabric Data Warehouse](tutorial-data-clustering.md).
 
 ## Query metadata views
 

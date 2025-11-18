@@ -84,6 +84,11 @@ productDirectory:
       summary: Discover insights from your streaming data. Quickly ingest, query, create visualizations, and take actions on changes in your data.
       url: real-time-intelligence/index.yml
     # Card
+    - title: IQ
+      imageSrc: ./media/iq-icon.svg
+      summary: "Unify business semantics across data, models, and systems to power intelligent agents and decisions grounded in a live, holistic view of the business."
+      url: iq/index.yml
+    # Card
     - title: Fabric Data Engineering
       imageSrc: ./media/fabric-data-engineering-icon.png
       summary: Build, transform, and share your data estate using lakehouses, notebooks, and Spark environments.

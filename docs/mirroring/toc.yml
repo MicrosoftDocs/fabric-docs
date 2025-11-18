@@ -148,6 +148,14 @@ items:
     - name: Troubleshoot
       displayName: Troubleshoot mirrored PostgreSQL
       href: azure-database-postgresql-troubleshoot.md
+- name: Mirroring SAP
+  items:
+    - name: Mirrored databases from SAP
+      href: sap.md
+    - name: SAP tutorial
+      href: sap-datasphere-tutorial.md
+    - name: Limitations in mirrored SAP
+      href: sap-limitations.md
 - name: Mirroring Snowflake
   items: 
     - name: Mirrored warehouses from Snowflake
