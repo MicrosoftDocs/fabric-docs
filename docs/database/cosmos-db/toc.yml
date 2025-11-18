@@ -97,5 +97,3 @@ items:
         href: mirroring-limitations.md
       - name: Cosmos DB v2 connector limitations
         href: cosmos-db-v2-connector-limitations.md
-      - name: Vector indexing and customer managed keys
-        href: troubleshoot-vector-indexing-customer-managed-keys.md
