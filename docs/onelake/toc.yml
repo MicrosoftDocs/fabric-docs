@@ -115,7 +115,7 @@ items:
       href: ./security/column-level-security.md
     - name: Row-level security
       href: ./security/row-level-security.md
-  - name: How to encrypt data in Onelake?
+  - name: How to encrypt data in OneLake?
     href: /fabric/security/workspace-customer-managed-keys?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json    
   - name: Authorize with a OneLake shared access signature (SAS)
     items:

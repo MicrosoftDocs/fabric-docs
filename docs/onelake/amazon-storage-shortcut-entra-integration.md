@@ -10,8 +10,7 @@ ms.reviewer: sngun
 
 # Integrate Microsoft Entra with AWS S3 shortcuts using service principal authentication
 
-You can integrate Microsoft Entra with AWS S3 using the Service Principal Name (SPN) approach. This integration enables seamless, secure access to S3 buckets using Microsoft Entra credentials, simplifying identity
-management and enhancing security.
+You can integrate Microsoft Entra with AWS S3 using the Service Principal Name (SPN) approach. This integration enables seamless, secure access to S3 buckets using Microsoft Entra credentials, simplifying identity management and enhancing security.
 
 ## Key benefits
 
@@ -25,8 +24,7 @@ management and enhancing security.
 
 ## Architecture
 
-The Entra-AWS integration is built on a federated identity model that uses OpenID Connect (OIDC) to enable secure, temporary access to AWS resources. The architecture consists of the following three main
-components that work together to establish trust, authenticate users, and authorize access to Amazon S3 from Microsoft Fabric:
+The Entra-AWS integration is built on a federated identity model that uses OpenID Connect (OIDC) to enable secure, temporary access to AWS resources. The architecture consists of the following three main components that work together to establish trust, authenticate users, and authorize access to Amazon S3 from Microsoft Fabric:
 
 1. A **Service Principal (SPN)** registered in Microsoft Entra.
 2. An **OIDC trust relationship** between AWS and Microsoft Entra.
@@ -146,7 +144,7 @@ The following screenshot shows you how to get the application/client ID and obje
 
 ## Create an S3 connection in Fabric
 
-Use Microsoft Fabric OneLake's shortcut creation interface to create the shortcut as described in the [create an S3 shortcut](create-s3-shortcut.md) article. Follow the same steps, but set **RoleARN** to the Amazon Resource Name (ARN) for the IAM role, and set the *Authentication Kind* to **Service Principal** and fill in the following details:
+Use Microsoft OneLake's shortcut creation interface to create the shortcut as described in the [create an S3 shortcut](create-s3-shortcut.md) article. Follow the same steps, but set **RoleARN** to the Amazon Resource Name (ARN) for the IAM role, and set the *Authentication Kind* to **Service Principal** and fill in the following details:
 
 * **Tenant ID:** Tenant ID of the Microsoft Entra application
 
