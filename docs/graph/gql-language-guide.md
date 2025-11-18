@@ -54,6 +54,7 @@ making queries easier to read and reason about.
 Let’s say you want to find people and their friends (people who know each other) who were both born before 1999. 
 Here’s how GQL expresses that using a visual graph pattern: 
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (person:Person)-[:knows]-(friend:Person)
 WHERE person.birthday < 19990101 
@@ -174,6 +175,7 @@ Now that you understand graph basics, let's see how to query graph data using GQ
 
 Let's begin with the most basic query possible, find the names (first name, last name) of all the people (`:Person`s) in the graph.
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)
 RETURN p.firstName, p.lastName
@@ -188,9 +190,10 @@ In this query:
 
 Now let's find people with specific characteristics, in this case, everyone named Alice and show their names and birthdays. 
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)
-FILTER p.firstName = 'Alice'
+FILTER p.firstName = 'Annemarie'
 RETURN p.firstName, p.lastName, p.birthday
 ```
 
@@ -207,6 +210,7 @@ Most queries start with `MATCH` to find patterns in the graph and end with `RETU
 
 Here's a simple query that finds pairs of people who know each other and share the same birthday, then returns the total count of those friend pairs.
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (n:Person)-[:knows]-(m:Person)
 FILTER n.birthday = m.birthday
@@ -255,11 +259,12 @@ Key points:
 
 The following GQL query finds the first 10 people working at companies with "Air" in their name, sorts them by full name, and returns their full name along with the name of their companies. 
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 -- Data flows: Match → Let → Filter → Order → Limit → Return
 MATCH (p:Person)-[:workAt]->(c:Company)           -- Input: unit table, Output: (p, c) table
 LET fullName = p.firstName || ' ' || p.lastName   -- Input: (p, c) table, Output: (p, c, fullName) table
-FILTER c.name CONTAINS 'Air'                     -- Input: (p, c, fullName) table, Output: filtered table
+FILTER c.name CONTAINS 'Air'                      -- Input: (p, c, fullName) table, Output: filtered table
 ORDER BY fullName                                 -- Input: filtered table, Output: sorted table
 LIMIT 10                                          -- Input: sorted table, Output: top 10 rows table
 RETURN fullName, c.name AS companyName            -- Input: top 10 rows table
@@ -359,23 +364,25 @@ Graph patterns are the heart of GQL queries. They let you describe the data stru
 
 Start with basic relationship patterns:
 
+<!-- GQL Pattern: Checked 2025-11-17 -->
 ```gql
 -- Find direct friendships
 (p:Person)-[:knows]->(f:Person)
 
 -- Find people working at any company
-(:Person)-[:workAt]->(:Company)
+(p:Person)-[:workAt]->(c:Company)
 
 -- Find cities in any country
-(:City)-[:isPartOf]->(:Country)  
+(ci:City)-[:isPartOf]->(co:Country)  
 ```
 
 **Patterns with specific data:**
 
+<!-- GQL Pattern: Checked 2025-11-17 -->
 ```gql
 -- Find who works at Microsoft specifically
 (p:Person)-[:workAt]->(c:Company)
-WHERE c.name = 'Microsoft'
+WHERE p.firstName = 'Annemarie'
 
 -- Find friends who are both young
 (p:Person)-[:knows]->(f:Person)  
@@ -390,10 +397,14 @@ WHERE p.birthday > 19950101 AND f.birthday > 19950101
 (:Person&!Company)                                  -- NOT with !
 ```
 
+> [!NOTE]
+> Graph models with multiple element labels are not yet supported (known issue).
+
 Label expressions let you match different kinds of nodes in a single pattern, making your queries more flexible.
 
 **Variable reuse creates powerful joins:**
 
+<!-- GQL Pattern: Checked 2025-11-17 -->
 ```gql
 -- Find coworkers: people who work at the same company
 (c:Company)<-[:workAt]-(x:Person)-[:knows]-(y:Person)-[:workAt]->(c)
@@ -406,16 +417,18 @@ The reuse of variable `c` ensures both people work at the **same** company, crea
 
 **Pattern-level filtering with WHERE:**
 
+<!-- GQL Pattern: Checked 2025-11-17 -->
 ```gql
 -- Filter during pattern matching (more efficient)
-MATCH (p:Person WHERE p.birthday < 19940101)-[:workAt]->(c:Company WHERE c.id > 1000)
+(p:Person WHERE p.birthday < 19940101)-[:workAt]->(c:Company WHERE c.id > 1000)
 
 -- Filter edges during matching  
-MATCH (p:Person)-[w:workAt WHERE w.workFrom >= 20200101]->(c:Company)
+(p:Person)-[w:workAt WHERE w.workFrom >= 2000]->(c:Company)
 ```
 
 **Bounded variable-length patterns:**
 
+<!-- GQL Pattern: Checked 2025-11-17 -->
 ```gql
 (:Person)-[:knows]->{1,3}(:Person)  -- Friends up to 3 degrees away
 ```
@@ -424,43 +437,55 @@ MATCH (p:Person)-[w:workAt WHERE w.workFrom >= 20200101]->(c:Company)
 
 Use `TRAIL` patterns to prevent cycles during graph traversal, ensuring each edge is visited at most once:
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 -- Find paths without visiting the same :knows edge twice
-MATCH TRAIL (start:Person)-[:knows]->{1,4}(end:Person)
-WHERE start.firstName = 'Alice' AND end.firstName = 'Bob'
+MATCH TRAIL (src:Person)-[:knows]->{1,4}(dst:Person)
+WHERE src.firstName = 'Alice' AND dst.firstName = 'Bob'
+RETURN count(*) AS num_connections
+```
 
+<!-- GQL Query: Checked 2025-11-17 -->
+```gql
 -- Find acyclic paths in social networks
-MATCH TRAIL (p:Person)-[e:knows]->{,5}(celebrity:Person WHERE celebrity.id > 9000)
+MATCH TRAIL (p:Person)-[e:knows]->{,3}(celebrity:Person)
 RETURN 
   p.firstName || ' ' || p.lastName AS person_name, 
   celebrity.firstName || ' ' || celebrity.lastName AS celebrity_name, 
   count(e) AS distance
+LIMIT 1000
 ```
 
 **Variable-length edge binding:**
 
 In variable-length patterns, edge variables capture different information based on context:
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 -- Edge variable 'e' binds to a single edge for each result row
 MATCH (p:Person)-[e:knows]->(friend:Person)
 RETURN p.firstName, e.creationDate, friend.firstName  -- e refers to one specific relationship
+LIMIT 1000
 
--- Edge variable 'edges' binds to a group list of all edges in the path
-MATCH (p:Person)-[edges:knows]->{2,4}(friend:Person)  
+-- Edge variable 'e' binds to a group list of all edges in the path
+MATCH (p:Person)-[e:knows]->{2,4}(friend:Person)  
 RETURN 
   p.firstName || ' ' || p.lastName AS person_name, 
   friend.firstName || ' ' || friend.lastName AS friend_name, 
-  -- edges is a list
-  size(edges) AS path_length  
+  -- e is a list
+  size(e) AS num_edges
+LIMIT 1000
 ```
 
 This distinction is crucial for using edge variables correctly.
 
 **Complex patterns with multiple relationships:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person), (p)-[:workAt]->(c:Company), (p)-[:isLocatedIn]->(city:City)
+RETURN p.firstName, p.lastName, c.name AS company_name, city.name AS city_name
+LIMIT 1000
 ```
 
 This pattern finds people along with both their workplace and residence, showing how one person connects to multiple other entities.
@@ -493,6 +518,7 @@ MATCH (p:Person)-[:workAt]->(c:Company)
 
 **Statement-level filtering with WHERE:**
 
+<!-- GQL Statement: Checked 2025-11-17 -->
 ```gql
 -- Filter pattern matches
 MATCH (p:Person)-[:workAt]->(c:Company) WHERE p.lastName = c.name
@@ -510,7 +536,6 @@ When `MATCH` isn't the first statement, it joins input data with pattern matches
 -- Implicit join: targetCompany (equality join)
 -- Output: table with (targetCompany, p, r) columns
 MATCH (p:Person)-[r:workAt]->(targetCompany)
-...
 ```
 
 > [!IMPORTANT]
@@ -532,6 +557,7 @@ How `MATCH` handles data joining:
 
 **Multiple patterns require shared variables:**
 
+<!-- GQL Statement: Checked 2025-11-17 -->
 ```gql
 -- Shared variable 'p' joins the two patterns
 -- Output: people with both workplace and residence data
@@ -551,19 +577,23 @@ The `LET` statement creates computed variables and enables data transformation w
 
 **Basic variable creation:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)
 LET fullName = p.firstName || ' ' || p.lastName
 RETURN *
+LIMIT 1000
 ```
 
 **Complex calculations:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)
 LET adjustedAge = 2000 - (p.birthday / 10000),
     fullProfile = p.firstName || ' ' || p.lastName || ' (' || p.gender || ')'
 RETURN *
+LIMIT 1000
 ```
 
 **Key behaviors:**
@@ -585,6 +615,7 @@ The `FILTER` statement provides precise control over which data proceeds through
 
 **Basic filtering:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)
 FILTER p.birthday < 19980101 AND p.gender = 'female'
@@ -593,6 +624,7 @@ RETURN *
 
 **Complex logical conditions:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)
 FILTER (p.gender = 'male' AND p.birthday < 19940101) 
@@ -623,12 +655,13 @@ ORDER BY <expression> [ ASC | DESC ], <expression> [ ASC | DESC ], ...
 
 **Multi-level sorting with computed expressions:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)
 RETURN *
 ORDER BY p.firstName DESC,               -- Primary: by first name (Z-A)
          p.birthday ASC,                 -- Secondary: by age (oldest first)
-         p.id DESC,                      -- Tertiary: by ID (highest first)
+         p.id DESC                       -- Tertiary: by ID (highest first)
 ```
 
 **Null handling in sorting:**
@@ -647,6 +680,7 @@ Understanding how `ORDER BY` works:
 - **Default order**: `ASC` (ascending) is default, `DESC` (descending) must be specified explicitly
 - **Computed sorting**: You can sort by calculated values, not just stored properties
 
+<!-- GQL Query: Checked 2025-11-17 -->
 > [!CAUTION]
 > The sort order established by `ORDER BY` is only visible to the *immediately* following statement.
 > Hence, `ORDER BY` followed by `RETURN *` does NOT produce an ordered result. 
@@ -655,9 +689,11 @@ Understanding how `ORDER BY` works:
 >
 > ```gql
 > MATCH (a:Person)-[r:knows]->(b:Person)
-> ORDER BY r.since DESC
+> LET aName = a.firstName || ' ' || a.lastName
+> LET bName = b.firstName || ' ' || b.lastName
+> ORDER BY r.creationDate DESC
 > /* intermediary result _IS_ guaranteed to be ordered here */
-> RETURN a.name AS aName, b.name AS bName, r.since AS since
+> RETURN aName, bName, r.creationDate AS since
 > /* final result _IS_ _NOT_ guaranteed to be ordered here  */
 > ```
 >
@@ -665,9 +701,11 @@ Understanding how `ORDER BY` works:
 >
 > ```gql
 > MATCH (a:Person)-[r:knows]->(b:Person)
+> LET aName = a.firstName || ' ' || a.lastName
+> LET bName = b.firstName || ' ' || b.lastName
 > /* intermediary result _IS_ _NOT_ guaranteed to be ordered here */
-> RETURN a.name AS aName, b.name AS bName, r.since AS since
-> ORDER BY since DESC
+> RETURN aName, bName, r.creationDate AS since
+> ORDER BY r.creationDate DESC
 > /* final result _IS_ guaranteed to be ordered here              */
 > ```
 >
@@ -686,6 +724,7 @@ Understanding how `ORDER BY` works:
 
 **Common patterns:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 -- Basic top-N query
 MATCH (p:Person)
@@ -712,6 +751,7 @@ The `RETURN` statement produces your query's final output by specifying which da
 
 **Basic output:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)-[:workAt]->(c:Company)
 RETURN p.firstName || ' ' || p.lastName AS name, 
@@ -721,6 +761,7 @@ RETURN p.firstName || ' ' || p.lastName AS name,
 
 **Using aliases for clarity:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)-[:workAt]->(c:Company)
 RETURN p.firstName AS first_name, 
@@ -730,6 +771,7 @@ RETURN p.firstName AS first_name,
 
 **Combine with sorting and top-k:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)-[:workAt]->(c:Company)
 RETURN p.firstName || ' ' || p.lastName AS name, 
@@ -741,6 +783,7 @@ LIMIT 10
 
 **Duplicate handling with DISTINCT:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 -- Remove duplicate combinations
 MATCH (p:Person)-[:workAt]->(c:Company)
@@ -750,6 +793,7 @@ ORDER BY p.gender, p.browserUsed, birth_year
 
 **Combine with aggregation:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)-[:workAt]->(c:Company)
 RETURN count(DISTINCT p) AS employee_count
@@ -771,10 +815,11 @@ Use `GROUP BY` to group rows by shared values and compute aggregate functions wi
 
 **Basic grouping with aggregation:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)-[:workAt]->(c:Company)
 LET companyName = c.name
-RETURN c.name, 
+RETURN companyName, 
        count(*) AS employeeCount,
        avg(p.birthday) AS avg_birth_year
 GROUP BY companyName
@@ -783,7 +828,9 @@ ORDER BY employeeCount DESC
 
 **Multi-column grouping:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
+MATCH (p:Person)
 LET gender = p.gender
 LET browser = p.browserUsed
 RETURN gender,
@@ -942,6 +989,7 @@ Understanding how to compose complex queries efficiently is crucial for advanced
 
 **Multi-step pattern progression:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 -- Build complex analysis step by step
 MATCH (company:Company)<-[:workAt]-(employee:Person)
@@ -958,6 +1006,7 @@ This query progressively builds complexity: find companies, their employees, emp
 
 **Use of horizontal aggregation:**
 
+<!-- GQL Query: Broken 2025-11-17 Lack of support for nested aggregates -->
 ```gql
 -- Find people and their minimum distance to people working at Microsoft
 MATCH TRAIL (p:Person)-[e:knows]->{,5}(:Person)-[:workAt]->(:Company { name: 'Microsoft'})
@@ -967,22 +1016,27 @@ GROUP BY p_name
 ORDER BY minDistance DESC
 ```
 
+> [!NOTE]
+> This query is not yet supported (known issue).
+
 ### Variable scope and advanced flow control
 
 Variables connect data across query statements and enable complex graph traversals. Understanding advanced scope rules helps you write sophisticated multi-statement queries.
 
 **Variable binding and scoping patterns:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 -- Variables flow forward through subsequent statements 
 MATCH (p:Person)                                    -- Bind p 
 LET fullName = p.firstName || ' ' || p.lastName     -- Bind concatenation of p.firstName and p.lastName as fullNume
 FILTER fullName CONTAINS 'Smith'                    -- Filter for fullNames with “Smith” substring (p is still bound)
-RETURN p.id, fullName – Return p’s id and fullName  -- Only return p.id and fullName (p is dropped from scope) 
+RETURN p.id, fullName                               -- Only return p.id and fullName (p is dropped from scope) 
 ```
 
 **Variable reuse for joins across statements:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 -- Multi-statement joins using variable reuse
 MATCH (p:Person)-[:workAt]->(:Company)          -- Find people with jobs
@@ -993,12 +1047,12 @@ RETURN *
 
 **Critical scoping rules and limitations:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 -- ✅ Backward references work
 MATCH (p:Person)
 LET adult = p.birthday < 20061231  -- Can reference p from previous statement
 RETURN *
-
 
 -- ❌ Forward references don't work  
 LET adult = p.birthday < 20061231  -- Error: p not yet defined
@@ -1020,6 +1074,7 @@ RETURN *
 
 **Variable visibility in complex queries:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 -- Variables remain visible until overridden or query ends
 MATCH (p:Person)                     -- p available from here
@@ -1040,12 +1095,13 @@ GQL supports two distinct types of aggregation for analyzing data across groups 
 
 Vertical aggregation (covered in [`RETURN` with `GROUP BY`](#return-with-group-by-grouped-result-projection)) groups rows by shared values and computes aggregates within each group:
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)-[:workAt]->(c:Company)
-RETURN c.name, 
+RETURN c.name AS companyName, 
        count(*) AS employee_count, 
        avg(p.birthday) AS avg_birth_year
-GROUP BY c.name
+GROUP BY companyName
 ```
 
 This approach creates one result row per company, aggregating all employees within each group.
@@ -1054,6 +1110,7 @@ This approach creates one result row per company, aggregating all employees with
 
 Horizontal aggregation computes aggregates over collections bound by variable-length patterns. When you use variable-length edges, the edge variable becomes a **group list variable** that holds all edges in each matched path:
 
+<!-- GQL Query: Broken 2025-11-17 Lack of aggregation support for temporal instants -->
 ```gql
 -- Group list variable 'edges' enables horizontal aggregation
 MATCH (p:Person)-[edges:knows]->{2,4}(friend:Person)
@@ -1063,6 +1120,9 @@ RETURN p.firstName || ' ' || p.lastName AS person_name,
        avg(edges.creationDate) AS avg_connection_age,
        min(edges.creationDate) AS oldest_connection
 ```
+
+> [!NOTE]
+> This query is not yet supported (known issue).
 
 **Key differences:**
 - **Vertical aggregation** summarizes across rows - or - groups rows and summarizes across rows in each group
@@ -1074,38 +1134,49 @@ RETURN p.firstName || ' ' || p.lastName AS person_name,
 Understanding how edge variables bind in variable-length patterns is crucial:
 
 **During pattern matching (singleton context):**
+
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 -- Edge variable 'e' refers to each individual edge during filtering
-MATCH (p:Person)-[e:knows WHERE e.creationDate > zoned_datetime('2020-01-01T00:00:00Z')]->{2,4}(friend:Person)
+MATCH (p:Person)-[e:knows WHERE e.creationDate > zoned_datetime('2000-01-01T00:00:00Z')]->{2,4}(friend:Person)
 -- 'e' is evaluated for each edge in the path during matching
 RETURN *
 ```
 
 **In result expressions (group context):**
+
+<!-- GQL Query: Broken 2025-11-17 Lack of aggregation support for temporal instants -->
 ```gql
 -- Edge variable 'edges' becomes a list of all qualifying edges
-MATCH (p:Person)-[edges:knows]->{2,4}(friend:Person)
-RETURN size(edges) AS path_length,           -- Number of edges in path
-       edges[0].creationDate AS first_edge,         -- First edge in path
-       avg(edges.creationDate) AS avg_age           -- Horizontal aggregation
+MATCH (p:Person)-[e:knows]->{2,4}(friend:Person)
+RETURN size(e) AS num_edges,                    -- Number of edges in path
+       e[0].creationDate AS first_edge,         -- First edge in path
+       avg(e.creationDate) AS avg_age           -- Horizontal aggregation
 ```
+
+> [!NOTE]
+> This query is not yet supported (known issue).
 
 #### Combining vertical and horizontal aggregation
 
 You can combine both aggregation types in sophisticated analysis patterns:
 
+<!-- GQL Query: Broken 2025-11-17 Nested aggregation -->
 ```gql
 -- Find average connection age by city pairs
 MATCH (p1:Person)-[:isLocatedIn]->(c1:City)
 MATCH (p2:Person)-[:isLocatedIn]->(c2:City)
-MATCH (p1)-[edges:knows]->{1,3}(p2)
+MATCH (p1)-[e:knows]->{1,3}(p2)
 RETURN c1.name AS city1,
        c2.name AS city2,
-       count(*) AS connection_paths,              -- Vertical: count paths per city pair
-       avg(size(edges)) AS avg_degrees,           -- Horizontal then vertical: path lengths
-       avg(avg(edges.creationDate)) AS avg_connection_age -- Horizontal then vertical: connection ages
-GROUP BY c1.name, c2.name
+       count(*) AS connection_paths,                  -- Vertical: count paths per city pair
+       avg(size(e)) AS avg_degrees,                   -- Horizontal then vertical: path lengths
+       avg(avg(e.creationDate)) AS avg_connection_age -- Horizontal then vertical: connection ages
+GROUP BY city1, city2
 ```
+
+> [!NOTE]
+> This query is not yet supported (known issue).
 
 > [!TIP]
 > Horizontal aggregation always takes precedence over vertical aggregation. To convert a group list into a regular list, use `collect_list(edges)`.
@@ -1119,6 +1190,7 @@ Understanding common error patterns helps you write robust queries.
 
 **Handle missing data gracefully:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)
 -- Use COALESCE for missing properties
@@ -1129,6 +1201,7 @@ RETURN *
 
 **Use explicit null checks:**
 
+<!-- GQL Query: Checked 2025-11-17 -->
 ```gql
 MATCH (p:Person)
 -- Be explicit about null handling

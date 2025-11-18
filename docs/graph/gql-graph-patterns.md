@@ -35,6 +35,9 @@ This pattern matches all nodes that have **both** the `Place` and `City` labels 
 - **Property filtering**: Specify exact values that properties must match.
 - **Flexible ("covariant") matching**: Matched nodes can have more labels and properties beyond the ones specified.
 
+> [!NOTE]
+> Graph models with multiple element labels are not yet supported (known issue).
+
 ### Simple edge patterns
 
 Edge patterns are more complex than node patterns. They not only specify a filler but also connect a source node pattern to a destination node pattern. Edge patterns describe requirements on both the edge and its endpoints:
@@ -343,7 +346,7 @@ The evaluation of the edge variable `e` occurs in two contexts:
 
 Edge variables bound by variable length pattern matching are group lists outside the variable-length pattern and thus can be used in horizontal aggregation.
 
-<!-- GQL Pattern: Checked 2025-11-13 -->
+<!-- GQL Query: Checked 2025-11-13 -->
 ```gql
 MATCH (a:Person)-[e:knows WHERE e.creationDate >= ZONED_DATETIME("2000-01-01T00:00:00Z")]->{1,3}(b)
 RETURN a, b, size(e) AS num_edges
