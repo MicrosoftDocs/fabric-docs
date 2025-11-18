@@ -2,7 +2,7 @@
 title: Monitor Fabric Capacity Health in Real Time with Capacity Overview Events
 description: Build an automated workflow that sends an Outlook email alert when your capacity approaches throttling conditions
 author: george-guirguis
-ms.author: george-guirguis
+ms.author: geguirgu
 ms.reviewer: george-guirguis
 ms.date: 11/17/2025
 ms.topic: tutorial
