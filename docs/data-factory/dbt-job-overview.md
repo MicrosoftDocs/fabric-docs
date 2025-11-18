@@ -46,10 +46,6 @@ Before you create dbt jobs in Microsoft Fabric, make sure your environment is se
 - For the target Fabric Data Warehouse, you need read/write permissions to run dbt transformations.
 - You need both build and read/write access to linked datasets and connections.
 
-## Supported dbt version
-
-Fabric currently supports dbt Core v1.7 (subject to periodic updates). Microsoft maintains alignment with major dbt Core releases to ensure compatibility and feature parity. Updates are applied automatically, and you can find notifications in the Fabric release notes.
-
 ## Create a dbt job
 
 Create a new dbt job item in your workspace to start building transformations.
@@ -241,14 +237,11 @@ Fabric provides several tools to help you monitor and validate your dbt jobs:
 - Keep your models modular and test-driven for easier debugging and faster runs.
 - To optimize performance, avoid long dependency chains and prefer well-partitioned transformations.
 
-### Supported adapters
+### dbt Job Runtime
 
-The following dbt adapters are supported in Microsoft Fabric:
+In Microsoft Fabric, a dbt Job Runtime is a managed execution environment that provides a consistent and secure way to run dbt jobs. It simplifies execution by offering a versioned environment that includes dbt capabilities, ensuring reliability and performance across workloads. 
 
-- Fabric Data Warehouse
-- PostgreSQL
-
-Each adapter supports its respective connection parameters and SQL dialect.
+Currently, when you create a dbt job, by default it uses Runtime v1.0, which supports dbt Core v1.9 and includes adapters for Microsoft Fabric Warehouse, Azure SQL Database, PostgreSQL, and Snowflake. Looking ahead, Runtime v2.0 will introduce dbt Fusion, delivering up to 30x faster performance and enhanced scalability. More details on supported adapters for v2.0 will be shared soon.Microsoft maintains alignment with major dbt Core releases to ensure compatibility and feature parity. Updates are applied automatically, and you can track changes in the Fabric release notes.
 
 ## Related content
 
