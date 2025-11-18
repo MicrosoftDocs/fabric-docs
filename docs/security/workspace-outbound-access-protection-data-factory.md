@@ -11,7 +11,7 @@ ms.topic: how-to
 
 # Workspace outbound access protection for Data Factory (preview)
 
-Workspace outbound access protection helps safeguard your data by controlling outbound connections from Data Factory items in your workspace to external data sources. When this feature[ is enabled, Data Factory items](#supported-data-factory-item-types) are restricted from making outbound connections unless access is explicitly granted through approved data connection rules. 
+Workspace outbound access protection helps safeguard your data by controlling outbound connections from Data Factory items in your workspace to external data sources. When this feature is enabled, [Data Factory items](#supported-data-factory-item-types) are restricted from making outbound connections unless access is explicitly granted through approved data connection rules. 
 
 ## Understanding outbound access protection with Data Factory
 

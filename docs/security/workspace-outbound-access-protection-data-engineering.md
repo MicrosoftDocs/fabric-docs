@@ -13,7 +13,7 @@ ms.date: 11/17/2025
 
 # Workspace outbound access protection for data engineering workloads
 
-Workspace outbound access protection enables precise control over external communications from Microsoft Fabric workspaces. When this feature is enabled, data engineering workspace items, such as notebooks, Spark job definitions, and lakehouses, are restricted from making outbound connections to public endpoints unless access is explicitly granted through approved managed private endpoints. This capability is crucial for organizations in secure or regulated environments, as it helps prevent data exfiltration and enforces organizational network boundaries.
+Workspace outbound access protection enables precise control over external communications from Microsoft Fabric workspaces. When this feature is enabled, [data engineering workspace items](#supported-data-engineering-item-types), such as notebooks, Spark job definitions, and lakehouses, are restricted from making outbound connections to public endpoints unless access is explicitly granted through approved managed private endpoints. This capability is crucial for organizations in secure or regulated environments, as it helps prevent data exfiltration and enforces organizational network boundaries.
 
 ## Understanding outbound access protection with data engineering
 
