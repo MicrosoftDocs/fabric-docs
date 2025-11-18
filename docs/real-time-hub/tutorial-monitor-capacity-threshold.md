@@ -62,3 +62,9 @@ Your real-time alerting workflow is now active.
 ## Observe the alert
 
 Once your Activator is saved and started, it automatically listens for Capacity Overview Events from the selected capacity. When an event arrives where the interactiveDelayThresholdPercentage exceeds the threshold you configured, the Activator sends an email alert.
+
+## Related content
+- [Azure and Fabric events Overview](fabric-events-overview.md)
+- [Explore Fabric Capacity Overview events](explore-fabric-capacity-overview-events.md)
+- [Set alerts on Capacity Overview events](set-alerts-fabric-capacity-overview-events.md)
+- [Get Capacity Overview events ](create-streams-fabric-capacity-overview-events.md)
