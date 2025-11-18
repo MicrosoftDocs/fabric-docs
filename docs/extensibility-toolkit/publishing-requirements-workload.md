@@ -48,9 +48,9 @@ Workload must provide a valid, accessible HTTPS link to terms of use in the mani
 
 **Reference:** [/fabric/governance/governance-compliance-overview](/fabric/governance/governance-compliance-overview)
 
-**Guidelines:**
 
-**LINK:**
+
+
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.terms.url`. 
 
@@ -76,9 +76,9 @@ Workload must provide a valid, accessible HTTPS link to privacy policy in the ma
 
 **Reference:** [/fabric/extensibility-toolkit/manifest-overview](/fabric/extensibility-toolkit/manifest-overview)
 
-**Guidelines:**
 
-**LINK:**
+
+
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.privacy.url`. 
 
@@ -104,9 +104,9 @@ Workload must have a published marketplace offer with a valid, accessible licens
 
 **Reference:** [https://learn.microsoft.com/marketplace/](/marketplace/)
 
-**Guidelines:**
 
-**LINK:**
+
+
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.license.url`. 
 
@@ -132,9 +132,9 @@ The offer link needs to point to Azure Marketplace or AppSource.
 
 **Reference:** [https://learn.microsoft.com/legal/marketplace/certification-policies#1000-software-as-a-service-saas](/legal/marketplace/certification-policies#1000-software-as-a-service-saas)
 
-**Guidelines:**
 
-**LINK:**
+
+
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.license.url`. 
 
@@ -187,9 +187,9 @@ Workload must provide a valid, accessible HTTPS link to certification attestatio
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**LINK:**
+
+
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.certification.url`. 
 
@@ -260,9 +260,9 @@ Workload must provide a valid, accessible HTTPS link to comprehensive product do
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**LINK:**
+
+
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.documentation.url`. 
 
@@ -344,7 +344,7 @@ OneLake is where data is stored in Fabric. Workloads need to integrate with it t
 
 **Reference:** [/fabric/onelake/onelake-overview](/fabric/onelake/onelake-overview)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -371,7 +371,7 @@ Workload must support Microsoft Entra Conditional Access policies for enterprise
 
 **Reference:** [/fabric/workload-development-kit/authentication-concept](/fabric/workload-development-kit/authentication-concept)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -396,7 +396,7 @@ Workload must provide monitoring and diagnostic capabilities for customers to tr
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -423,7 +423,7 @@ Fabric sharing strategy is focused on allowing customers to collaborate with the
 
 **Reference:** [/fabric/security/security-b2b](/fabric/security/security-b2b)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -450,7 +450,7 @@ Fabric commits to a seamless service availability to customers. We recognize the
 
 **Reference:** [https://learn.microsoft.com/azure/reliability/reliability-fabric](/azure/reliability/reliability-fabric)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -475,7 +475,7 @@ Performance is an important requirement for Fabric customers. We recommend our p
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -502,7 +502,7 @@ To ensure that you can meet customer expectations independent of their home or c
 
 **Reference:** [/fabric/admin/region-availability](/fabric/admin/region-availability)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -529,7 +529,7 @@ The workload and all Item types the partner provides as part of it need to compl
 
 **Reference:** [https://aka.ms/fabricux](https://aka.ms/fabricux)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -554,7 +554,7 @@ English has to be the default language. Content can be localized if you decide t
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -611,7 +611,7 @@ Product icon must meet dimension requirements (240x240) and be visually clear an
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
+
 
 **IMAGE:**
 
@@ -636,7 +636,7 @@ Favicon must be provided in the manifest with appropriate dimensions and clarity
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
+
 
 **IMAGE:**
 
@@ -757,7 +757,7 @@ Workload must provide a banner image with exact dimensions of 1920x240 pixels fo
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
+
 
 **IMAGE:**
 
@@ -802,7 +802,7 @@ Microsoft customers entrust Fabric with their most sensitive data. As partners i
 
 **Reference:** [/fabric/governance/governance-compliance-overview#secure-protect-and-comply](/fabric/governance/governance-compliance-overview#secure-protect-and-comply)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -827,7 +827,7 @@ Workload must obtain Microsoft Entra ID tokens exclusively through the Fabric ho
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -852,7 +852,7 @@ Workload must use only the official Fabric Workload Client SDK JavaScript APIs f
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -877,7 +877,7 @@ Workload must not rely on third-party cookies; only essential HTTP-only cookies 
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -916,7 +916,7 @@ Microsoft customers entrust Fabric with their most sensitive data. As such, part
 
 **Reference:** [/fabric/governance/governance-compliance-overview#secure-protect-and-comply](/fabric/governance/governance-compliance-overview#secure-protect-and-comply)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -943,7 +943,7 @@ Workload owners can only use essential HTTP-only cookies. Workload can use them 
 
 **Reference:** [https://european-union.europa.eu/cookies_en](https://european-union.europa.eu/cookies_en)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -970,7 +970,7 @@ Partner workloads aren't to use, write, or rely on third-party cookies
 
 **Reference:** [https://european-union.europa.eu/cookies_en](https://european-union.europa.eu/cookies_en)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -995,7 +995,7 @@ Publisher must only obtain any Microsoft Entra token using the JavaScript APIs p
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -1022,7 +1022,7 @@ Fabric is making an Enterprise Promise around data not leaving the geography of 
 
 **Reference:** [https://azure.microsoft.com/explore/global-infrastructure/data-residency/](https://azure.microsoft.com/explore/global-infrastructure/data-residency/)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -1049,7 +1049,7 @@ Within the Attestation Document you can show customers how your app handles secu
 
 **Reference:** [/fabric/governance/governance-compliance-overview](/fabric/governance/governance-compliance-overview)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -1080,7 +1080,7 @@ Partner workloads are becoming an integral part of Fabric therefore our support 
 |---------|---------------------|
 | ⚠️ Optional | ✅ Required |
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -1107,7 +1107,7 @@ Partners are responsible to define and document their support parameters (Servic
 
 **Reference:** [https://learn.microsoft.com/partner-center/marketplace-offers/marketplace-criteria-content-validation](/partner-center/marketplace-offers/marketplace-criteria-content-validation)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -1134,9 +1134,9 @@ Workload must provide a valid, accessible HTTPS link to help resources and suppo
 
 **Reference:** [/fabric/workload-development-kit/supportability](/fabric/workload-development-kit/supportability)
 
-**Guidelines:**
 
-**LINK:**
+
+
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.help.url`. 
 
@@ -1160,7 +1160,7 @@ Product details page must clearly display support contact information for custom
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -1185,7 +1185,7 @@ Partners need to host a website that shows their service health and availability
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -1218,7 +1218,7 @@ Microsoft Fabric's lifecycle management tools enable efficient product developme
 
 **Reference:** [/fabric/cicd/cicd-overview](/fabric/cicd/cicd-overview)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -1245,7 +1245,7 @@ In Fabric, you can configure and use an endpoint that allows your organization t
 
 **Reference:** [/fabric/security/security-private-links-use](/fabric/security/security-private-links-use)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -1272,7 +1272,7 @@ The OneLake data hub makes it easy to find, explore, and use the Fabric data ite
 
 **Reference:** [/fabric/governance/onelake-catalog-overview](/fabric/governance/onelake-catalog-overview)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -1299,7 +1299,7 @@ In modern business intelligence (BI) projects, understanding the flow of data fr
 
 **Reference:** [/fabric/governance/lineage](/fabric/governance/lineage)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -1326,7 +1326,7 @@ Sensitivity labels from Microsoft Purview Information Protection on items can gu
 
 **Reference:** [/fabric/fundamentals/apply-sensitivity-labels](/fabric/fundamentals/apply-sensitivity-labels)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 
@@ -1353,7 +1353,7 @@ For partners that are using Export functionality within their Item they need to 
 
 **Reference:** [/fabric/fundamentals/apply-sensitivity-labels](/fabric/fundamentals/apply-sensitivity-labels)
 
-**Guidelines:**
+
 
 **ATTESTATION:**
 

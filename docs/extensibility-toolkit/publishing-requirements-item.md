@@ -22,7 +22,7 @@ General requirements for item naming, icons, and basic metadata
 
 ### 1.1 - Item has a clear name
 
-Item must have a clear, descriptive display name that helps users understand its purpose and type. You can't use generic names (for example, AI, Agent,.. ) without any pre or suffix indicating the specialty, your company, or product.
+Item must have a clear, descriptive display name that helps users understand its purpose and type. You can't use generic names (for example, AI, Agent,.. ) without any prefix or suffix indicating the specialty, your company, or product.
 
 **Stage Requirements:**
 
@@ -43,10 +43,6 @@ Item must provide a clear, recognizable icon that visually represents the item t
 | ✅ Required | ✅ Required |
 
 **Reference:** [https://aka.ms/fabricvisualskit](https://aka.ms/fabricvisualskit)
-
-**Guidelines:**
-
-**UX:**
 
 Filetype icons are comprised of a container and an interior Fluent system icon. There are 3 generic shapes: vertical, horizontal, and square. Some interior icons work better in specific shapes, so explore which shape is best.
 
@@ -228,10 +224,6 @@ Item editor must implement with one ribbon interface for consistent user experie
 
 **Reference:** [https://aka.ms/fabrictemplates](https://aka.ms/fabrictemplates)
 
-**Guidelines:**
-
-**UX:**
-
 Item editor must implement with one ribbon interface for consistent user experience across Fabric. This ribbon should include all actions and controls necessary for item editing and it must be sticky on top above the canvas. The ribbon tabs can't be used to switch the view.
 
 ---
@@ -247,10 +239,6 @@ Item Editor ribbon actions must use the fabric button component in subtle state.
 | ✅ Required | ✅ Required |
 
 **Reference:** [https://fabricux-c6c9fchnggh3d5dn.b02.azurefd.net/?path=/docs/fabricweb_pre-release-button--docs](https://fabricux-c6c9fchnggh3d5dn.b02.azurefd.net/?path=/docs/fabricweb_pre-release-button--docs)
-
-**Guidelines:**
-
-**UX:**
 
 Item Editor ribbon actions must use the fabric button component in subtle state. Any other component should be max height 32 px.
 
@@ -268,9 +256,6 @@ Ribbon tooltips must follow Fabric guidelines for content, timing, and placement
 
 **Reference:** [https://fabricux-c6c9fchnggh3d5dn.b02.azurefd.net/?path=/docs/fabricweb_pre-release-tooltip--docs](https://fabricux-c6c9fchnggh3d5dn.b02.azurefd.net/?path=/docs/fabricweb_pre-release-tooltip--docs)
 
-**Guidelines:**
-
-**UX:**
 
 ---
 
@@ -286,11 +271,8 @@ Item Editor ribbon must include Home tab as the primary editor page. It also mus
 
 **Reference:** [https://aka.ms/fabricuikit](https://aka.ms/fabricuikit)
 
-**Guidelines:**
 
-**UX:**
-
-Item Editor ribbon must include Home tab as the primary editor page, it's also must called "home" and be the first tab in the ribbon. this is the first palace users will land when oppening the item editor.
+Item Editor ribbon must include Home tab as the primary editor page. It also must be called "home" and be the first tab in the ribbon. This is the first palace users will land when opening the item editor.
 
 ---
 
@@ -306,11 +288,8 @@ Item editor should provide either explicit save functionality or AutoSave to pre
 
 **Reference:** [https://www.figma.com/community/file/836835755999342788/microsoft-fluent-system-iconography](https://www.figma.com/community/file/836835755999342788/microsoft-fluent-system-iconography)
 
-**Guidelines:**
 
-**UX:**
-
-Item editor should implement either a save button or autosave functionality for user data protection. button is icon only.
+Item editor should implement either a save button or autosave functionality for user data protection. Button is icon only.
 
 ---
 
@@ -326,9 +305,6 @@ Ribbon colors must follow Fabric style guidelines using approved color tokens an
 
 **Reference:** [https://fabricux-c6c9fchnggh3d5dn.b02.azurefd.net/iframe?viewMode=docs&id=foundations-design-iconography--docs&globals=#color](https://fabricux-c6c9fchnggh3d5dn.b02.azurefd.net/iframe?viewMode=docs&id=foundations-design-iconography--docs&globals=#color)
 
-**Guidelines:**
-
-**UX:**
 
 ---
 
@@ -342,9 +318,7 @@ Ribbon typography must use Fabric-approved fonts, sizes, and weights for consist
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
 
 ---
 
@@ -358,9 +332,7 @@ Ribbon elevation (shadow/depth) must follow Fabric guidelines to maintain proper
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
 
 ---
 
@@ -376,9 +348,6 @@ Ribbon border radius must follow Fabric guidelines for consistent rounded corner
 
 **Reference:** [https://aka.ms/fabrictemplates](https://aka.ms/fabrictemplates)
 
-**Guidelines:**
-
-**UX:**
 
 ---
 
@@ -392,9 +361,9 @@ Ribbon spacing and layout must use Fabric-approved padding, margins, and grid sy
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 Ribbon spacing and layout must use Fabric-approved padding, margins, and grid systems for visual consistency. Ribbon spacing and layouts of the buttons: if placing buttons next to each other than use 0px spacing. When adding border line between buttons use 4px spacing on the left and right sides. If placing different components e.g. dropdown use 4px spacing between them.
 
@@ -416,9 +385,9 @@ Canvas border styling must follow Fabric guidelines for color, width, and border
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 Canvas border styling must follow Fabric guidelines for color, width, and border radius. Canvas must implement proper border styling according to Fabric design standards.
 
@@ -434,9 +403,9 @@ Canvas colors should follow Fabric style guidelines using semantic color tokens 
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 Canvas colors should follow Fabric style guidelines using semantic color tokens and theme support. Canvas colors must follow Fabric design system color guidelines for consistency.
 
@@ -452,9 +421,9 @@ If Empty state exists (recommended), it should follow Fabric guidelines providin
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 If Empty state exists (recommended), it should follow Fabric guidelines providing helpful messaging and clear actions for users. Canvas must properly implement empty states to guide users when no content exists.
 
@@ -470,11 +439,11 @@ If left drawer panel exists it should follow Fabric guidelines for width, animat
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
 
-If left drawer panel exists it should follow Fabric guidelines for width, animation, and content organization. Canvas may implement a left drawer for additional navigation or tools.
+
+
+Canvas may implement a left drawer for additional navigation or tools.
 
 ---
 
@@ -488,9 +457,9 @@ If bottom drawer panel exists it should follow Fabric guidelines for height, ani
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 If bottom drawer panel exists it should follow Fabric guidelines for height, animation, and content organization. Canvas may implement a bottom drawer for additional functionality.
 
@@ -506,9 +475,9 @@ Tab components should follow Fabric guidelines for styling, interaction, and act
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 Tab components should follow Fabric guidelines for styling, interaction, and active state indication. Canvas may implement tabs for organizing content within the editor.
 
@@ -524,9 +493,9 @@ If Switch/toggle controls exist they should follow Fabric guidelines for size, c
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 If Switch/toggle controls exist they should follow Fabric guidelines for size, color, and interaction behavior. Canvas may implement switch controls for toggling functionality.
 
@@ -542,9 +511,9 @@ Right drawer panel should follow Fabric guidelines for width, animation, and con
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 ---
 
@@ -564,9 +533,9 @@ If multi level navigation between canvas levels (L1 to L2) is used it must follo
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 ---
 
@@ -586,9 +555,9 @@ If popup dialogs are used  they must follow Fabric style guidelines for modal be
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 ---
 
@@ -602,9 +571,9 @@ Dialog border radius must follow Fabric guidelines for consistent rounded corner
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 ---
 
@@ -618,9 +587,9 @@ Dialog colors must follow Fabric guidelines using semantic color tokens for back
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 ---
 
@@ -634,9 +603,9 @@ Dialog typography must use Fabric-approved fonts, sizes, and hierarchy for heade
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 ---
 
@@ -650,9 +619,9 @@ Dialog elevation must follow Fabric guidelines to ensure proper visual layering 
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 ---
 
@@ -666,9 +635,9 @@ Dialog spacing and layout must use Fabric-approved padding, margins, and content
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 ---
 
@@ -712,9 +681,9 @@ Item should provide a sample or trial experience to help user explore features b
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 ---
 
@@ -728,9 +697,9 @@ Item should provide a sample or trial experience to help users explore features 
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
-**Guidelines:**
 
-**UX:**
+
+
 
 ---
 
