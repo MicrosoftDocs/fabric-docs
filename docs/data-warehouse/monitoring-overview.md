@@ -8,7 +8,7 @@ ms.date: 04/06/2025
 ms.topic: overview
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
-# Monitor Fabric Data warehouse
+# Monitor Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 

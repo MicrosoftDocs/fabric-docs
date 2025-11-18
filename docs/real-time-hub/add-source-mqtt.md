@@ -12,6 +12,8 @@ This article describes how to add an MQTT topic as an event source in Fabric Rea
 
 [!INCLUDE [mqtt-source-description-prerequisites](../real-time-intelligence/event-streams/includes/mqtt-source-description-prerequisites.md)]
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Select MQTT as data source type

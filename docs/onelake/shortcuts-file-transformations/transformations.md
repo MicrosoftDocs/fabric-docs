@@ -7,16 +7,15 @@ title:       Shortcuts file transformations
 description: Shortcut transformations convert raw files into Delta tables that stay always in sync with the source data.  
 author:      miquelladeboer # GitHub alias
 ms.author:   mideboer # Microsoft alias
-# ms.service:  Shortcuts
-# ms.prod:   # To use ms.prod, uncomment it and delete ms.service
+ms.reviewer: kgremban
 ms.topic:    how-to
-ms.date:     07/09/2025
+ms.date: 11/12/2025
+ai-usage:    ai-assisted
 ---
 
 # Shortcuts file transformations
 
-Shortcut transformations convert raw files into **Delta tables** that stay _always in sync_ with the source data.  
-The transformation is executed by **Fabric Spark compute**, which **copies** the data referenced by a OneLake shortcut into a managed Delta table so you don’t have to build and orchestrate traditional ETL pipelines yourself.
+Shortcut transformations convert raw files (CSV, Parquet, and JSON) into **Delta tables** that stay _always in sync_ with the source data. The transformation is executed by **Fabric Spark compute**, which copies the data referenced by a OneLake shortcut into a managed Delta table so you don't have to build and orchestrate traditional extract, transform, load (ETL) pipelines yourself. With automatic schema handling, deep flattening capabilities, and support for multiple compression formats, shortcut transformations eliminate the complexity of building and maintaining ETL pipelines.
 
 > [!NOTE]  
 > Shortcut transformations are currently in **public preview** and are subject to change.
@@ -27,34 +26,58 @@ The transformation is executed by **Fabric Spark compute**, which **copies** the
 * **Frequent refresh** – Fabric checks the shortcut every **2 minutes** and synchronizes any changes almost immediately.  
 * **Open & analytics-ready** – Output is a Delta Lake table that any Apache Spark–compatible engine can query.  
 * **Unified governance** – The shortcut inherits OneLake lineage, permissions, and Microsoft Purview policies.
-* **Spark based** – Transforms build for scale. 
+* **Spark based** – Transforms build for scale.
 
 ## Prerequisites
 
 | Requirement | Details |
 |-------------|---------|
 | Microsoft Fabric SKU | Capacity or Trial that supports **Lakehouse** workloads. |
-| OneLake shortcut | A shortcut targeting a folder that contains _homogeneous_ CSV files. |
+| Source data | A folder that contains homogeneous CSV, Parquet, or JSON files. |
 | Workspace role | **Contributor** or higher. |
-
 
 ## Supported sources and destinations
 
-| Source file format | Destination | Notes |
-|--------------------|-------------|-------|
-| CSV (UTF-8, comma-delimited) | Delta Lake table in the **Lakehouse / Tables** folder | Additional formats (Parquet, JSON) will be added during preview. |
+Shortcut transformations support CSV, Parquet, and JSON file formats. You can include multiple file formats in the same shortcut folder. The transformation intelligently handles each format and consolidates them into a single Delta table based on schema compatibility.
+
+Shortcut transformations are available in Lakehouse items. They create Delta Lake tables in the **Lakehouse / Tables** folder.
+
+### CSV files
+
+* **Extensions**: `.csv`
+* **Encoding**: UTF-8
+* **Delimiters**: Comma, semicolon, pipe, tab, ampersand, space (configurable)
+* **Headers**: Configurable first-row header support
+
+### Parquet files
+
+* **Extensions**: `.parquet`
+* **Nested structures**: Up to five levels of structs and arrays automatically flattened
+
+### JSON files
+
+* **Extensions**: `.json`, `.jsonl`, `.ndjson`
+* **Nested structures**: Up to five levels of structs and arrays automatically flattened
 
 ## Set up a shortcut transformation
 
-1. In your lakehouse, select **+ New > Shortcut transformation (preview)**.  
-2. **Choose shortcut** – Browse to an existing OneLake shortcut that points to the folder with your CSV files.  
-3. **Configure transformation**:  
-   - *Table name* – Provide a friendly name; Fabric creates it under **/Tables**.  
-   - *Delimiter* – Select the character used to separate columns (comma, semicolon, pipe, tab).  
-   - *First row as headers* – Indicate whether the first row contains column names.  
-4. Select **Create**.
+1. In your lakehouse, right-click the **Tables** folder and select **New shortcut**.  
 
-Fabric Spark compute copies the data into a Delta table and shows progress in the **Manage shortcuts** pane.
+1. Browse to the folder with your source files (CSV, Parquet, JSON, or a mix).  
+
+1. On the **Transform** page, view the objects that are autotransformed. You can select **Revert changes** if you don't want to apply the transform.
+
+   * For CSV files:
+     * **Delimiter** – Select the character used to separate columns (comma, semicolon, pipe, tab).  
+     * **First row as headers** – Indicate whether the first row contains column names.
+   * For Parquet and JSON files:
+     * Schema is automatically inferred.
+
+1. Select **Next**.
+
+1. Review the shortcut details, then select **Create**.
+
+Fabric Spark compute copies the data into a Delta table and shows progress in the **Manage shortcuts** pane. The initial load processes all existing files, then continuous sync monitors for changes every 2 minutes.
 
 ## How synchronization works
 
@@ -66,20 +89,27 @@ After the initial load, Fabric Spark compute:
 
 ## Monitor and troubleshoot
 
-1. Open the lakehouse and select **Shortcuts** in the left pane.  
-2. Choose the shortcut that feeds your transformation.  
-3. In the details pane, select the **Manage shortcut** tab to view:  
+Shortcut transformations include monitoring and error handling to help you track ingestion status and diagnose issues.
+
+### Monitoring view
+
+1. Open the lakehouse and right-click the shortcut that feeds your transformation.  
+1. Select **Manage shortcut**.
+1. In the details pane, you can view:  
    * **Status** – Last scan result and current sync state.  
    * **Activity log** – Chronological list of sync operations with row counts and any error details.  
 
 From this tab you can also **Pause** or **Delete** the transformation if needed.
 
-## Limitations (preview)
+## Limitations
 
-* Only **CSV** sources are supported.  
-* Files must share an identical schema; schema drift isn’t yet supported.  
-* Transformations are _read-optimized_; **MERGE INTO** or **DELETE** statements directly on the table are blocked.  
-* Available only in **Lakehouse** items (not Warehouses or KQL databases).  
+Current limitations of shortcut transformations:
+
+* **Source format**: Only CSV, JSON, and Parquet files are supported.
+* **Flattening depth**: Nested structures are flattened up to five levels deep. Deeper nesting requires preprocessing.
+* **Write operations**: Transformations are _read-optimized_; direct **MERGE INTO** or **DELETE** statements on the transformation target table aren't supported.
+* **Workspace availability**: Available only in **Lakehouse** items (not Data Warehouses or KQL databases).  
+* **File schema consistency**: Files must share an identical schema.
 
 ## Clean up
 

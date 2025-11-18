@@ -13,8 +13,6 @@ ms.custom:
 
 Current limitations in the [Microsoft Fabric mirrored databases](overview.md) From SQL Server are listed in this page. This page is subject to change.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 For troubleshooting, see:
 
 - [Troubleshoot Fabric mirrored databases](troubleshooting.md)
