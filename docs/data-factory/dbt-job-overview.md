@@ -1,5 +1,5 @@
 ---
-title: dbt job in Microsoft Fabric (Preview)
+title: dbt job in Microsoft Fabric (preview)
 description: Learn how to use dbt job in Microsoft Fabric to transform your data with SQL.
 ms.reviewer: whhender
 ms.author: akurnala
@@ -11,7 +11,7 @@ ms.custom:
 ai-usage: ai-assisted
 ---
 
-# dbt job in Microsoft Fabric (Preview)
+# dbt job in Microsoft Fabric (preview)
 
 > [!NOTE]
 > This feature is in [preview](/fabric/fundamentals/preview).
@@ -41,7 +41,7 @@ Before you create a dbt job in Microsoft Fabric, make sure your environment is s
 1. Go to the [admin portal](/fabric/admin/admin-center) in Fabric.
 1. Under **Tenant settings**, enable the **dbt jobs (preview)** feature for your organization or specific security groups.
 
-   :::image type="content" source="media/dbt-job/enable-dbt.png" alt-text="Screenshot of the Fabric UI with the tenant settings to enable dbt job.":::
+   :::image type="content" source="media/dbt-job/enable-dbt.png" alt-text="Screenshot of the Fabric UI with the tenant settings to enable dbt job." lightbox="media/dbt-job/enable-dbt.png":::
 
 ### Set up your workspace and warehouse
 
@@ -62,13 +62,13 @@ Create a new dbt job item in your workspace to start building transformations.
 1. Select **+New item** then search for and select **dbt job** from the item creation menu.
 1. Enter a name and select a location.
 
-   :::image type="content" source="media/dbt-job/create-job.png" alt-text="Screenshot of the Fabric UI with the create job dialog.":::
+   :::image type="content" source="media/dbt-job/create-job.png" alt-text="Screenshot of the Fabric UI with the create job dialog." lightbox="media/dbt-job/create-job.png":::
 
 1. Choose the target Fabric Data Warehouse connection.
 1. Configure job parameters and save the new dbt job item.
 1. After it's created, you can open the dbt job to view its file structure, configure settings, and run dbt commands directly from the Fabric UI.
 
-   :::image type="content" source="media/dbt-job/landing-page.png" alt-text="Screenshot of the Fabric UI with landing page of dbt job.":::
+   :::image type="content" source="media/dbt-job/landing-page.png" alt-text="Screenshot of the Fabric UI with landing page of dbt job." lightbox="media/dbt-job/landing-page.png":::
 
 ## Configure a dbt job
 
@@ -88,7 +88,7 @@ Use dbt configurations to set (or review) your dbt profile:
 1. (Optional) Check **Seed data** if you want to load CSVs on dbt seed or dbt build.
 1. Select **Apply**.
 
-    :::image type="content" source="media/dbt-job/profile-adapter.png" alt-text="Screenshot of the Fabric UI with the dbt job profile adapter settings.":::
+    :::image type="content" source="media/dbt-job/profile-adapter.png" alt-text="Screenshot of the Fabric UI with the dbt job profile adapter settings." lightbox="media/dbt-job/profile-adapter.png":::
 
 ### Change adapter
 
@@ -126,7 +126,7 @@ Here you can adjust project-level execution options:
 1. (Optional) Enable **Fail fast** or **Full refresh** as needed.
 1. Select **Apply** to save.
 
-    :::image type="content" source="media/dbt-job/advanced-settings.png" alt-text="Screenshot of the Fabric UI with the dbt job general settings.":::
+    :::image type="content" source="media/dbt-job/advanced-settings.png" alt-text="Screenshot of the Fabric UI with the dbt job general settings." lightbox="media/dbt-job/advanced-settings.png":::
 
 #### Run settings
 
@@ -137,7 +137,7 @@ This tab lets you control which models run and how to select them.
 - Run only selected models: Choose specific models to include in the run (for example, orders, stg_customers, etc.).
 - Run with advanced selectors: Use dbt selectors for granular control (unions, intersections, exclusions).
 
-    :::image type="content" source="media/dbt-job/run-settings.png" alt-text="Screenshot of the Fabric UI with the dbt job advanced run settings.":::
+    :::image type="content" source="media/dbt-job/run-settings.png" alt-text="Screenshot of the Fabric UI with the dbt job advanced run settings." lightbox="media/dbt-job/run-settings.png":::
 
 **Advanced selector configuration**
 
@@ -145,7 +145,7 @@ This tab lets you control which models run and how to select them.
 - Select: Specify resources (models, tags, packages).
 - Exclude: List resources to skip.
 
-    :::image type="content" source="media/dbt-job/running-with-advance-selectors.png" alt-text="Screenshot of the Fabric UI with the dbt job advanced selector run settings.":::
+    :::image type="content" source="media/dbt-job/running-with-advance-selectors.png" alt-text="Screenshot of the Fabric UI with the dbt job advanced selector run settings." lightbox="media/dbt-job/running-with-advance-selectors.png":::
 
 1. Select **Advanced Settings** > **Run settings**.
 1. Choose your run mode:
@@ -167,7 +167,7 @@ You can automate dbt job runs using the built-in schedule feature to refresh mod
     - **Time zone**: Select your preferred time zone for scheduling.
 1. Select **Save** to activate the schedule.
 
-    :::image type="content" source="media/dbt-job/schedule-dbt.png" alt-text="Screenshot of the Fabric UI with the dbt job schedule settings.":::
+    :::image type="content" source="media/dbt-job/schedule-dbt.png" alt-text="Screenshot of the Fabric UI with the dbt job schedule settings." lightbox="media/dbt-job/schedule-dbt.png":::
 
 ## Project structure and job settings
 
