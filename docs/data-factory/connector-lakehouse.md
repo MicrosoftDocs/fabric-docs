@@ -52,7 +52,7 @@ If you have multiple Lakehouse connections in **Manage Connections and Gateways*
 > To allow others to use the Lakehouse connection in your pipeline, you need to share your Lakehouse connection with them.
 
 > [!NOTE]
-> When you use an existing Lakehouse connection, ensure that the credentials used in the connection have sufficient permissions to access your workspace with the Lakehouse. If not, you are recommended to create a new Lakehouse connection.
+> When you use an existing Lakehouse connection, ensure that the credentials used in the connection have sufficient permissions to access your workspace with the Lakehouse. Otherwise, you are recommended to create a new Lakehouse connection.
 
 ## Related content
 
