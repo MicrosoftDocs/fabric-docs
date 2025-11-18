@@ -26,9 +26,9 @@ This article describes how to use data connection rules in the workspace setting
 
 ## How to create an allowlist using data connection rules
 
-When you enable the **Block outbound public access** setting in the outbound access protection settings, all outbound connections are blocked by default. To allow cloud or gateway connections, configure data connection rules.<!-- You can use either the Fabric portal or the REST API.-->
+When you enable the **Block outbound public access** setting in the outbound access protection settings, all outbound connections are blocked by default. To allow cloud or gateway connections, configure data connection rules. You can use either the Fabric portal or the REST API.
 
-<!--### [Fabric portal](#tab/fabric-portal-2)-->
+### [Fabric portal](#tab/fabric-portal-2)
 
 1. Sign in to Fabric as a workspace admin.
 
@@ -65,7 +65,6 @@ When you enable the **Block outbound public access** setting in the outbound acc
 
 1. Select **Save**.
 
-!--
 ### [API](#tab/api-2)
 
 Call the following APIs to view/update the Data Connection rules (Cloud Connections).
@@ -77,7 +76,7 @@ Call the following APIs to view/update the Data Connection rules (Gateways).
 Refer to the [Workspaces - Get Outbound Gateway Rules](/rest/api/fabric/core/workspaces/get-outbound-gateway-rules) and [Workspaces - Set Outbound Gateway Rules](/rest/api/fabric/core/workspaces/set-outbound-gateway-rules) APIs.
 
 ---
--->
+
 ## Related content
 
 - [Workspace outbound access protection overview](./workspace-outbound-access-protection-overview.md)
