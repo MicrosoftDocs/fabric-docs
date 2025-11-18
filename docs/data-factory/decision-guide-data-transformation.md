@@ -107,7 +107,7 @@ After ingestion, the team applies filtering, null replacement, and code mapping 
 - Reduce overall refresh time and cost.
 
 ### Solution
-The team enables **Modern Evaluator**, a high-performance execution engine designed for efficient transformation—especially for connectors like ADLS Gen2 and SharePoint.
+The team enables **Modern Evaluator**, a high-performance execution engine designed for efficient transformation especially for connectors like ADLS Gen2 and SharePoint.
 
 #### Modern Evaluator considerations
 - Expected refresh times may be **significantly faster** (varies by dataset and transformations).  
