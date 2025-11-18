@@ -45,8 +45,8 @@ Each runtime version includes release stage, dbt engine version, and OS details.
 |                       | Runtime 1.1            | Runtime 2.1            |
 |-----------------------|------------------------|-------------------------|
 | **Release Stage**     | Public Preview        | Public Preview         |
-| **dbt Runtime**       | dbt Core v1.9           | dbt Fusion Beta        |
-| **Operating System**  | Windows                |                         |
+| **dbt Runtime**       | dbt Core v1.7         | dbt Fusion Beta        |
+| **Operating System**  | Ubuntu                |                         |
 | **Adapters Supported**| Microsoft Fabric Warehouse<br>Azure SQL Database<br>PostgreSQL<br>Snowflake |                         |
 | **Pre-Installed Packages** |                  |                         |
 
