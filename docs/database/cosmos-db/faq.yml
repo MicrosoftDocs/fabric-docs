@@ -241,7 +241,6 @@ sections:
         answer: |
           No. Customer-managed key (CMK) encryption is not currently available for Cosmos DB in Fabric.
 
-          For more information, see [customer-managed keys for Cosmos DB in Fabric](customer-managed-keys.md).
       - question: |
           Does Cosmos DB in Fabric support Private Link?
         answer: |
