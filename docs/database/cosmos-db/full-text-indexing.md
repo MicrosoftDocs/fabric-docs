@@ -1,17 +1,15 @@
 ---
-title: Full Text Indexing And Search in Cosmos DB Database (Preview)
-description: Query data using "best matching 25" scoring in Cosmos DB in Microsoft Fabric during the preview.
+title: Full Text Indexing And Search in Cosmos DB Database
+description: Query data using "best matching 25" scoring in Cosmos DB in Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
 ms.date: 07/16/2025
 ---
 
-# Full text indexing and search in Cosmos DB in Microsoft Fabric (preview)
+# Full text indexing and search in Cosmos DB in Fabric
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
-Cosmos DB in Microsoft Fabric offers a powerful Full Text Search feature as generally available. This feature is designed to enhance the native search capabilities of your apps without needing an external search service for basic full text search.
+Cosmos DB in Fabric offers a powerful Full Text Search feature as generally available. This feature is designed to enhance the native search capabilities of your apps without needing an external search service for basic full text search.
 
 ## What is full text search?
 
@@ -95,7 +93,7 @@ Multi-language support allows you to index and search text in languages beyond E
 > [!NOTE]
 > Multi-language support is in early preview. Performance and quality of search might be different than full text search in English. For example, stopword removal is only available for English (en-us) at this time. The functionality is subject to change through the evolution of the preview.
 
-For more information about limitations related to multi-language support, see [limitations](limitations.md#full-text-indexing).
+For more information about limitations related to multi-language support, see [Cosmos DB full-text limitations](/azure/cosmos-db/gen-ai/full-text-search-faq#limitations).
 
 ### Full text index
 

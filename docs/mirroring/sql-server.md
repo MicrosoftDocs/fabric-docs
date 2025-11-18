@@ -17,8 +17,6 @@ no-loc: [Copilot]
 
 For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-tutorial.md).
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 ## Why use Mirroring in Fabric?
 
 With Mirroring in Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs, and built for openness and collaboration between Microsoft, SQL Server, and the 1000s of technology solutions that can read the open-source Delta Lake table format.
@@ -59,7 +57,7 @@ In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), th
 
 ## Mirroring SQL Server behind firewall
 
-Set up an [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. Learn more from [the mirrored SQL Server tutorial](../mirroring/sql-server-tutorial.md) and [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
+Set up an [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) or [virtual network data gateway](/data-integration/vnet/overview) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. Learn more from [the mirrored SQL Server tutorial](../mirroring/sql-server-tutorial.md) and [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
 
 ## Active transactions, workloads, and replicator engine behaviors
 

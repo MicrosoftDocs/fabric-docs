@@ -27,6 +27,7 @@ The table below shows which data sources currently support example queries in th
 | Warehouse                   | ✅ Yes                   |
 | Eventhouse KQL Databases     | ✅ Yes                   |
 | Semantic Models             | ❌ No                    |
+| Ontology                    | ❌ No                    |
 
 You can also use the **run steps** view to debug which example queries were actually retrieved and applied to a user’s question. This is especially useful for confirming that the right examples are being used and for diagnosing why certain results are being generated. If the wrong examples appear, try refining your questions or adding clearer, more targeted examples.  
 

@@ -4,7 +4,7 @@ description: This quickstart describes connect to your SQL database in Fabric fr
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, drskwier
-ms.date: 11/04/2025
+ms.date: 11/18/2025
 ms.topic: quickstart-sdk
 ms.custom:
   - sfi-ropc-nochange
@@ -12,9 +12,9 @@ ms.custom:
 
 # Quickstart: Connect to a SQL database in Fabric from a Jupyter Notebook
 
-In this quickstart, you use Jupyter Notebook in Visual Studio Code to quickly derive business insights. You use the `mssql-python (preview)` driver for Python to connect to your **SQL database in Fabric** and read the data that is then formatted for use in emails, reports presentations, etc.
+In this quickstart, you use Jupyter Notebook in Visual Studio Code to quickly derive business insights. You use the `mssql-python` driver for Python to connect to your **SQL database in Fabric** and read the data that is then formatted for use in emails, reports presentations, etc.
 
-The `mssql-python (preview)` driver doesn't require any external dependencies on Windows machines. The driver installs everything that it needs with a single `pip` install, allowing you to use the latest version of the driver for new scripts without breaking other scripts that you don't have time to upgrade and test.
+The `mssql-python` driver doesn't require any external dependencies on Windows machines. The driver installs everything that it needs with a single `pip` install, allowing you to use the latest version of the driver for new scripts without breaking other scripts that you don't have time to upgrade and test.
 
 [mssql-python documentation](https://github.com/microsoft/mssql-python/wiki) | [mssql-python source code](https://github.com/microsoft/mssql-python/wiki) | [Package (PyPi)](https://pypi.org/project/mssql-python/) | [Visual Studio Code](https://code.visualstudio.com/download)
 

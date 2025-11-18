@@ -4,7 +4,7 @@ description: "Learn more about the Microsoft Copilot in Microsoft Fabric in the 
 author: markingmyname
 ms.author: maghan
 ms.reviewer: yoleichen, wiassaf
-ms.date: 09/02/2025
+ms.date: 11/18/2025
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
@@ -12,7 +12,7 @@ ms.update-cycle: 180-days
 ms.devlang: copilot-prompt
 ---
 
-# What is Copilot in Fabric in the SQL database workload (Preview)?
+# What is Copilot in Fabric in the SQL database workload?
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
@@ -63,7 +63,7 @@ The following example prompts are clear, specific, and tailored to the propertie
 
 ## Responsible AI use of Copilot
 
-To view Microsoft's guidelines for responsible AI in SQL database, see [Privacy, security, and responsible use of Copilot for SQL database in Microsoft Fabric (preview)](/fabric/fundamentals/copilot-database-privacy-security).
+To view Microsoft's guidelines for responsible AI in SQL database, see [Privacy, security, and responsible AI use of Copilot in Fabric in the SQL database workload](../../fundamentals/copilot-database-privacy-security.md).
 
 Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://www.microsoft.com/ai/responsible-ai). These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to proactively address emerging issues.
 

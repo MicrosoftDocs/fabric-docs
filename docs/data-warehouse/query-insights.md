@@ -148,10 +148,15 @@ WHERE last_run_command LIKE '%<some_label>%'
 ORDER BY median_total_elapsed_time_ms DESC;
 ```
 
-## Related content
+## Query insights views
 
-- [Monitoring connections, sessions, and requests using DMVs](monitor-using-dmv.md)
 - [queryinsights.exec_requests_history (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true)
 - [queryinsights.exec_sessions_history (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-exec-sessions-history-transact-sql?view=fabric&preserve-view=true)
 - [queryinsights.long_running_queries (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-long-running-queries-transact-sql?view=fabric&preserve-view=true)
 - [queryinsights.frequently_run_queries (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-frequently-run-queries-transact-sql?view=fabric&preserve-view=true)
+
+## Related content
+
+- [Monitoring connections, sessions, and requests using DMVs](monitor-using-dmv.md)
+- [Use query labels in Fabric Data Warehouse](query-label.md)
+- [Data clustering in Fabric Data Warehouse](data-clustering.md)
