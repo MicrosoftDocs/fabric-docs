@@ -14,6 +14,7 @@ ms.search.form: Eventstreams Tutorials
 
 Eventstream's streaming connector enables seamless connection of external real-time data streams to Fabric, allowing for an optimal out-of-the-box experience and more choices for real-time insights from various sources. It supports well-known cloud services like Google Cloud and Amazon Kinesis, and database change data capture (CDC) streams through our new messaging connectors.
 
+
 ## The Challenge
 
 Due to data protection requirements, the streaming source might be in a private network, such as cloud virtual networks or on-premises networks. At the moment, many of Eventstream's streaming connectors can't directly access sources within these network environments, except the Azure Event Hubs and IoT Hub sources (refer to [Connect to Azure resources securely using managed private endpoints](./set-up-private-endpoint.md)). Before Eventstream supports private connectivity for more sources, the following workarounds can help bring real-time data from the private network to Fabric to unblock your streaming and real-time needs for now.
@@ -25,6 +26,8 @@ Here are the approaches that can help with this purpose before the native privat
 ### IP allowlist
 
 Eventstream's streaming connector in each region has a single outbound IP address. If your company's network policy permits allowlisting this IP address and your source has a publicly resolvable address, Eventstream's connector can bring real-time data into Fabric, though the transmission occurs over a public network.
+
+This solution is applicable to all streaming connector sources. If you're interested in implementing this solution, kindly reach out to the product team by completing the following form: [Real-Time Intelligence Eventstream Streaming Connector IP allowlist Request](https://aka.ms/EventStreamsConnIPAllowlistRequest) 
 
 ### Mirror Kafka Topics to Eventstream or Azure Event Hubs
 
