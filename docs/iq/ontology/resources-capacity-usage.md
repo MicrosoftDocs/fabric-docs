@@ -44,9 +44,9 @@ This section contains tips for managing your ontology (preview) capacity usage.
 
 Microsoft Fabric allows administrators to [pause and resume](../../enterprise/pause-resume.md) their capacities to enable cost savings. You can pause and resume your capacity as needed.
 
-### Consider other charges
+### Other considerations
 
-Consider charges for the following additional factors:
+Consider the following factors that could potentially impact cost:
 
 * **Model uptime:** Charges for the time your ontology model is running. This is dependent on the number of definitions, model complexity, size, and usage time.
 * **Ontology logic and operations:** Charges for running queries and associated compute. Operations like indexing, refresh rates, and idle time can affect CU usage.
