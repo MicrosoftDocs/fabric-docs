@@ -14,7 +14,7 @@ ms.date: 11/18/2024
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/new-connection-button.png" alt-text="Screenshot that shows the page for configuring a connection setting, with the link for a new connection highlighted." lightbox="./media/azure-event-hubs-source-connector/new-connection-button.png":::
 
-    If there's an existing connection to your Azure event hub, select that existing connection as shown in the following image. Then, move on to configuring the data format in the following steps.
+    If there's an existing connection to your event hub, select that existing connection. Then, move on to configuring the data format in the following steps.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure event hub." lightbox="./media/azure-event-hubs-source-connector/existing-connection.png":::
 
@@ -31,11 +31,11 @@ ms.date: 11/18/2024
     1. For **Authentication kind**, confirm that **Shared Access Key** is selected.
     1. For **Shared Access Key Name**, enter the name of the shared access key. For instructions on getting an access key, see [Get an Azure Event Hubs connection string](/azure/event-hubs/event-hubs-get-connection-string#azure-portal).
     1. For **Shared Access Key**, enter the value of the shared access key.
-    1. Select **Connect** at the bottom of the page.
+    1. Select **Connect**.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/connect-page-1.png" alt-text="Screenshot that shows entered credentials for an Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-page-1.png":::
 
-1. For **Consumer group**, enter the name of the consumer group. The default consumer group for the event hub is `$Default`.
+1. For **Consumer group**, enter the name of the consumer group. The default consumer group for the event hub is **$Default**.
 
 1. For **Data format**, select a data format for the incoming real-time events that you want to get from your Azure event hub. You can select from JSON, Avro, and CSV (with header) data formats.  
 
@@ -61,7 +61,7 @@ ms.date: 11/18/2024
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-connect.png" alt-text="Screenshot that shows the page for configuring connection settings, with the option for extended features selected." lightbox="./media/azure-event-hubs-source-connector/extended-connect.png":::
 
-    If there's an existing connection to your Azure event hub, you select that existing connection as shown in the following image. Then, move on to configuring the data format in the following steps.
+    If there's an existing connection to your event hub, select that existing connection. Then, move on to configuring the data format in the following steps.
 
 1. In the **Connection settings** section, follow these steps:
 
@@ -76,11 +76,11 @@ ms.date: 11/18/2024
     1. For **Authentication kind**, confirm that **Shared Access Key** is selected.
     1. For **Shared Access Key Name**, enter the name of the shared access key. For instructions on getting an access key, see [Get an Azure Event Hubs connection string](/azure/event-hubs/event-hubs-get-connection-string#azure-portal).
     1. For **Shared Access Key**, enter the value of the shared access key.
-    1. Select **Connect** at the bottom of the page.
+    1. Select **Connect**.
 
         :::image type="content" source="./media/azure-event-hubs-source-connector/connect-page-1.png" alt-text="Screenshot that shows entered credentials for an Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-page-1.png":::
 
-1. For **Consumer group**, enter the name of the consumer group. The default consumer group for the event hub is `$Default`.
+1. For **Consumer group**, enter the name of the consumer group. The default consumer group for the event hub is **$Default**.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-consumer-group.png" alt-text="Screenshot that shows the area for entering a consumer group for extended features." lightbox="./media/azure-event-hubs-source-connector/extended-consumer-group.png":::
 
@@ -94,15 +94,15 @@ ms.date: 11/18/2024
 
     If you have one schema that governs all of the events, select **Fixed schema**.
 
-    If you have multiple schemas that represent the different incoming events, you can define matching rules to apply your schemas. To choose this mode, select **Dynamic schema via headers** option. Then, specify the rules by using header/value pairs to select each schema. The header is a custom Kafka header property that's part of the event metadata. The value is the expected value for that property.
+    If you have multiple schemas that represent the various incoming events, you can define matching rules to apply your schemas. To choose this mode, select **Dynamic schema via headers** option. Then, specify the rules by using header/value pairs to select each schema. The header is a custom Kafka header property that's part of the event metadata. The value is the expected value for that property.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-schema-handling-page.png" alt-text="Screenshot that shows the page for schema handling, with the option for extended features selected." lightbox="./media/azure-event-hubs-source-connector/extended-schema-handling-page.png":::
 
-1. Choose schemas by selecting the **Add more schemas** dropdown menu and then choosing one or more existing schemas from the event schema registry. If you don't have schemas to choose from, you can create new schemas from this view. To learn how to define a new event schema, see [Create and manage event schemas in schema sets](../../schema-sets/create-manage-event-schemas.md).
+1. Choose schemas by selecting the **Add more schema(s)** dropdown menu and then choosing one or more existing schemas from the event schema registry. If you don't have schemas to choose from, you can create new schemas from this view. To learn how to define a new event schema, see [Create and manage event schemas in schema sets](../../schema-sets/create-manage-event-schemas.md).
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-fixed-schema-option.png" alt-text="Screenshot that shows the area for adding schemas, with the fixed schema option selected." lightbox="./media/azure-event-hubs-source-connector/extended-fixed-schema-option.png":::
 
-    If you selected the **Choose from event schema registry** option, the **Associate an event schema** pane appears. Select one or more schemas from the registry, depending on your schema matching mode, and then select **Choose** at the bottom of the page.
+    If you selected the **Choose from event schema registry** option, the **Associate an event schema** pane appears. Select one or more schemas from the registry, depending on your schema matching mode, and then select **Choose** at the bottom of the pane.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-associate-event-schema.png" alt-text="Screenshot that shows the pane for associating an event schema." lightbox="./media/azure-event-hubs-source-connector/extended-associate-event-schema.png":::
 
