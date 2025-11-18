@@ -38,7 +38,7 @@ Choose your preferred scenario by using the selector at the beginning of the art
 
 ## Download sample data 
 
-Download the contents of this GitHub folder: [Ontology samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/other).
+Download the contents of this GitHub folder: [IQ samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/iq).
 
 It contains the following sample CSV files. The data contains static entity details about the Lakeshore Retail scenario and streaming data from its freezers.
 * *DimStore.csv*
