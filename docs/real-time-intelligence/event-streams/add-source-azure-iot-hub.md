@@ -46,7 +46,7 @@ On the **Select a data source** page, search for **Azure IoT Hub**. On the **Azu
 
     :::image type="content" source="./media/add-source-azure-iot-hub-enhanced/publish.png" alt-text="Screenshot that shows the editor with the Publish button selected.":::
 
-1. After you complete these steps, the IoT hub is available for visualization in the **Live** view. Select the **IoT hub** tile in the diagram to display a page similar to the following example.
+1. The IoT hub is available for visualization in the **Live** view. Select the **IoT hub** tile in the diagram to display a page similar to the following example.
 
     :::image type="content" source="./media/add-source-azure-iot-hub-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
 
@@ -92,10 +92,6 @@ Follow these steps to add an IoT hub as your eventstream source:
 
         :::image type="content" source="./media/add-iot-hub-source/create-new-cloud-connection.png" alt-text="Screenshot that shows the link for creating a new cloud connection.":::
 
-    1. Fill in the **Connection settings** and **Connection credentials** values for your IoT hub, and then select **Create**.
-
-        :::image type="content" source="./media/add-iot-hub-source/add-new-cloud-connection.png" alt-text="Screenshot that shows connection settings and connection credentials for a new cloud connection." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png":::
-
     1. For **IoT Hub**, enter the name of the IoT hub in the Azure portal.
 
     1. For **Connection name**, enter a name for the new cloud connection, such as **iothub-connection**.
@@ -103,6 +99,10 @@ Follow these steps to add an IoT hub as your eventstream source:
     1. For **Shared access key name** and **Shared access key**, enter the connection credentials for your IoT hub. You can find them under **Shared access policies** in the Azure portal. You must have appropriate permissions to access any of the Azure IoT Hub endpoints.
 
        :::image type="content" source="./media/add-iot-hub-source/shared-access-key.png" alt-text="Screenshot that shows where to find a shared access key in the Azure portal." lightbox="./media/add-iot-hub-source/shared-access-key.png":::
+
+    1. Select **Create**.
+
+        :::image type="content" source="./media/add-iot-hub-source/add-new-cloud-connection.png" alt-text="Screenshot that shows connection settings and connection credentials for a new cloud connection." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png":::
 
     1. Return to the Azure IoT Hub configuration pane and select **Refresh** to load the new cloud connection.
 

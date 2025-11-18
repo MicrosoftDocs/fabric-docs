@@ -41,11 +41,11 @@ ms.date: 11/18/2024
 
         :::image type="content" source="./media/azure-iot-hub-source-connector/access-key-value.png" alt-text="Screenshot that shows the access key for an IoT hub." lightbox="./media/azure-iot-hub-source-connector/access-key-value.png":::
 
-1. Select **Connect** at the bottom of the page.
+1. Select **Connect**.
 
     :::image type="content" source="./media/azure-iot-hub-source-connector/connection-page-1.png" alt-text="Screenshot that shows the Connect button under connection credentials for an Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/connection-page-1.png":::
 
-1. For **Consumer group**, enter the name of the consumer group. The default consumer group for the IoT hub is `$Default`.
+1. For **Consumer group**, enter the name of the consumer group. The default consumer group for the IoT hub is **$Default**.
 
 1. For **Data format**, select a data format for the incoming real-time events that you want to get from your IoT hub. You can select from JSON, Avro, and CSV data formats. Then select **Connect**.
 
