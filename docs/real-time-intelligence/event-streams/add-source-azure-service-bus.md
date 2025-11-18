@@ -42,6 +42,7 @@ On the **Select a data source** page, search for **Azure Service Bus**. On the *
 1. Confirm that the Service Bus source is added to your eventstream on the canvas in the **Edit** mode. To publish it, select **Publish** on the ribbon.
 
     :::image type="content" source="./media/add-source-azure-service-bus/event-stream-publish.png" alt-text="Screenshot that shows the editor with the Publish button selected." lightbox="./media/add-source-azure-service-bus/event-stream-publish.png":::
+
 1. The Service Bus source is available for visualization in the **Live** view. Select the **Service Bus** tile in the diagram to open a page similar to the following example.
 
     :::image type="content" source="./media/add-source-azure-service-bus/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::

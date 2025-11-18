@@ -50,9 +50,9 @@ To get a better understanding of how an eventstream works, you can use sample da
 
     :::image type="content" source="media\add-source-sample-data-enhanced\edit-mode.png" alt-text="Screenshot that shows an eventstream in Edit mode, with the Publish button highlighted.":::
 
-After publishing succeeds, the sample data is available for visualization in **Live** view.
+1. After publishing succeeds, the sample data is available for visualization in **Live** view.
 
-:::image type="content" source="media\add-source-sample-data-enhanced\live-view.png" alt-text="Screenshot that shows an eventstream in Live view." lightbox="media\add-source-sample-data-enhanced\live-view.png":::
+    :::image type="content" source="media\add-source-sample-data-enhanced\live-view.png" alt-text="Screenshot that shows an eventstream in Live view." lightbox="media\add-source-sample-data-enhanced\live-view.png":::
 
 ## Related content
 

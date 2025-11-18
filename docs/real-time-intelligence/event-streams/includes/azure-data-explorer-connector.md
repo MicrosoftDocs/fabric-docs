@@ -13,7 +13,7 @@ ms.date: 03/21/2025
     :::image type="content" source="./media/azure-data-explorer-connector/new-connection-button.png" alt-text="Screenshot that shows the page for configuration connection settings.":::
 1. In the **Connection settings** section of the popup window, follow these steps:
     1. For **Cluster**, enter the URI of your Azure Data Explorer cluster.
-    1. The **Database** and **Table name** boxes in the cloud connection are optional. Values entered in these boxes are ignored in this step. You can specify them in the next step of the wizard. The **Cluster** value is required here.
+    1. The **Database** and **Table name** boxes in the cloud connection are optional. Values entered in these boxes are ignored in this step. You can specify them in the next step of the wizard.
     1. For **Connection name**, enter a name for the connection to the Azure Data Explorer cluster.  
     1. For **Authentication kind**, only **Organizational account** is currently supported.
     1. Select **Connect**.

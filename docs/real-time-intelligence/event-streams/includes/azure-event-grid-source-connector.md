@@ -32,7 +32,7 @@ On the **Configure connection settings** page, follow these steps:
 
     1. In the **Stream details** section to the right, select the Fabric workspace where you want to save the eventstream.
     1. For **Eventstream name**, enter a name for the eventstream. The wizard creates an eventstream with the selected Event Grid namespace as a source.
-    1. The **Stream name** value is automatically generated for you by appending **-stream** to the name of the eventstream. You can see this stream on the real-time hub's **All data streams** page when the wizard finishes.  
+    1. The **Stream name** value is automatically generated for you by appending **-stream** to the name of the eventstream. This stream appears on the real-time hub's **All data streams** page when the wizard finishes.  
 
     :::image type="content" source="./media/azure-event-grid-source-connector/stream-name.png" alt-text="Screenshot that shows the stream details section for the Event Grid namespace." :::
 

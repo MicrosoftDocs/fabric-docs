@@ -47,6 +47,7 @@ On the **Select a data source** page, search for **Azure Event Hubs**. On the **
 1. The event hub is available for visualization in the **Live** view. Select the **Event hub** tile in the diagram to open a pane that's similar to the following example.
 
     :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view." lightbox="./media/add-source-azure-event-hubs-enhanced/live-view.png":::
+
 ::: zone-end
 
 ::: zone pivot="extended-features"
@@ -61,7 +62,7 @@ On the **Select a data source** page, search for **Azure Event Hubs**. On the **
 
     :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/live-view.png" alt-text="Screenshot that shows the editor in live view." lightbox="./media/add-source-azure-event-hubs-enhanced/live-view.png":::
 
- [!INCLUDE [configure-destintions-schema-enabled-sources](./includes/configure-destinations-schema-enabled-sources.md)]
+[!INCLUDE [configure-destintions-schema-enabled-sources](./includes/configure-destinations-schema-enabled-sources.md)]
 
 ::: zone-end
 

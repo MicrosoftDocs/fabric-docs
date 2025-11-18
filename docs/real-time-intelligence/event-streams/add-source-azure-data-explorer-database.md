@@ -31,7 +31,8 @@ On the **Select a data source** page, search for **Azure Data Explorer DB**. On 
 1. Confirm that the Azure Data Explorer DB source is added to your eventstream on the canvas in the **Edit** mode. To implement this newly added Azure Data Explorer DB source, select **Publish**.  
 
     :::image type="content" source="./media/add-source-azure-data-explorer/edit-mode.png" alt-text="Screenshot that shows the editor with the Publish button selected.":::
-1. After you complete these steps, your Azure Data Explorer DB source is available for visualization in the **Live** view.  
+
+1. Your Azure Data Explorer DB source is available for visualization in the **Live** view.  
 
     :::image type="content" source="./media/add-source-azure-data-explorer/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
 

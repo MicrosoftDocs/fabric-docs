@@ -40,7 +40,7 @@ This article shows you how to add an Event Grid namespace source to an eventstre
 
 ## Configure portal settings
 
-To ensure that the managed identity of the Event Grid namespace has the required permissions, configure settings in the admin portal：
+To ensure that the managed identity of the Event Grid namespace has the required permissions, configure settings in the admin portal:
 
 1. In the upper-right corner, select **Settings** (gear icon).
 
@@ -86,7 +86,7 @@ On the **Select a data source** page, search for **Azure Event Grid Namespace**.
 
     :::image type="content" source="./media/add-source-azure-event-grid/publish.png" alt-text="Screenshot that shows the editor with Publish button selected." lightbox="./media/add-source-azure-event-grid/publish.png":::
 
-1. The Event Grid namespace is available for visualization in the **Live** view. Select the **Event Grid Namespace** tile in the diagram to see details about the source.
+1. The Event Grid namespace is available for visualization in the **Live** view. Select the **Event Grid Namespace** tile in the diagram to show details about the source.
 
 ## Related content
 
