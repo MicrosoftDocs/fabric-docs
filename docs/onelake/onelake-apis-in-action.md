@@ -24,6 +24,9 @@ In this scenario, we cover:
 - How to handle scenarios that crop up with block blobs when writing parquet data to blob storage from .NET
 - How to test everything locally using the [Azurite emulator](/azure/storage/common/storage-use-azurite). (Yes—code you write against OneLake works with the storage emulator too!)
 
+> [!NOTE]
+> The code for this article can be found in [GitHub](https://github.com/microsoft/fabric-toolbox/tree/main/samples/OneLake/write-to-open-mirror-landing-zone/OneLakeOpenMirroringExample).
+
 ## Streaming parquet into OneLake with Blob APIs
 In this section, we demonstrate how to efficiently stream parquet data into OneLake, particularly the open mirroring landing zone. Open mirroring is a powerful way to bring data from proprietary systems, where shortcuts [shortcuts](onelake-shortcuts.md) can't be used, into Microsoft Fabric. It handles the heavy lifting, converting raw data into [Delta Lake format](https://delta.io/), managing [upserts, delete vectors](https://docs.delta.io/latest/delta-update.html), [optimize](https://delta.io/blog/delta-lake-optimize/), [vacuum](https://docs.delta.io/latest/delta-utility.html#remove-files-no-longer-referenced-by-a-delta-table), and more. All you need to do is upload your data into the landing zone, include a row marker, and mirroring takes it from there.
 

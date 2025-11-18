@@ -1113,6 +1113,8 @@
         href: create-alerts-for-pipeline-runs.md
       - name: Evaluate pipeline expressions
         href: evaluate-pipeline-expression.md
+      - name: Copilot pipeline expression builder (Preview)
+        href: copilot-pipeline-expression-builder.md
       - name: Pipeline sample templates
         href: templates.md
       - name: Monitor pipeline runs

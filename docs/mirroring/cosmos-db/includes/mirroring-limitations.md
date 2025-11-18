@@ -2,14 +2,14 @@
 author: seesharprun
 ms.author: sidandrews
 ms.topic: include
-ms.date: 10/22/2025
+ms.date: 11/06/2025
 ---
 
 ## Schema and data changes limitations
 
 - Deleting and adding a similar container replaces the data in the warehouse tables with only the new container's data.
 
-- Changing the type of data in a property across multiple items cause the replicator to upcast the data where applicable. This behavior is in parity with the native delta experience. Any data that doesn't fit into the supported criteria become a null type. For example, changing an array property to a string upcasts to a null type.
+- Changing the type of data in a property across multiple items cause the replicator to upcast the data where applicable. This behavior is in parity with the native delta experience. Any data that doesn't fit into the supported criteria becomes a null type. For example, changing an array property to a string upcasts to a null type.
 
 - Adding new properties to items cause mirroring to seamlessly detect the new properties and add corresponding columns to the warehouse table. If item properties are removed or missing, they have a null value for the corresponding record.
 
@@ -27,13 +27,14 @@ ms.date: 10/22/2025
 
 - Mirroring doesn't have schema constraints on the level of nesting. For more information, see [Azure Cosmos DB analytical store schema constraints](/azure/cosmos-db/analytical-store-introduction#schema-constraints).
 
-## Data warehouse limitations
+<a id="data-warehouse-limitations"></a>
 
-- Warehouse can't handle JSON string columns greater than 8 KB in size. The error message for this scenario is **"JSON text is not properly formatted. Unexpected character '"' is found at position"**.
+## SQL analytics endpoint limitations
 
-  - A current workaround is to create a shortcut of your mirrored database in Fabric Lakehouse and utilize a Spark Notebook to query your data to avoid this limitation.
+Mirrored Cosmos DB supports up to 2 MB. 
 
-- Nested data represented as a JSON string in SQL analytics endpoint and warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message.
+- The SQL analytics endpoint supports **varchar(max)** up to 2 MB for tables created after November 18, 2025. 
+- Existing tables before November 18, 2025 only support **varchar(8000)** and need to be recreated to adopt new data type and support data greater that 8 KB.
 
 ## Mirrored item limitations
 

@@ -59,7 +59,7 @@ Here are some insights you can take from the example:
 * The utilization graph, on the right side of the app, shows nearly 100% CU usage over time. This high utilization can explain query throttling experienced by users and indicates a need to increase the capacity units.
 
 > [!NOTE]
-> To better understand your Eventhouse compute size see [Understand Eventhouse compute usage](/eventhouse-compute-observability.md).
+> To better understand your Eventhouse compute size, see [Understand Eventhouse compute usage](eventhouse-compute-observability.md).
 
 
 ## Storage billing
