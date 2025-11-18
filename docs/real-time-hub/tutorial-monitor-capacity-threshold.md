@@ -11,7 +11,7 @@ ms.topic: tutorial
 
 As organizations scale their usage of Microsoft Fabric, maintaining healthy capacities becomes increasingly important. With **Capacity Overview Events** in the Real-Time Hub, administrators can monitor capacity behavior in real time and take action when conditions require attention.
 
-In this tutorial, you can create an automated workflow that sends an **Outlook email alert** when your capacity approaches throttling conditions—triggered by the `interactiveDelayThresholdPercentage` metric.
+In this tutorial, you can create an automated workflow that sends an **Outlook email alert** when your capacity approaches throttling conditions.
 
 
 ## Prerequisites
