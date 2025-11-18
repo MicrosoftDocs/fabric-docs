@@ -7,7 +7,7 @@ ms.topic: include
 ms.date: 12/18/2024
 ---
 
-## Data sources page
+
 
 1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com/).
 1. If you see **Power BI** at the bottom-left of the page, switch to the **Fabric** workload by selecting **Power BI** and then by selecting **Fabric**.
