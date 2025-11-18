@@ -147,7 +147,7 @@ Consider the process of the `Product` dimension table.
 
 ### Surrogate keys
 
-We recommend that each dimension table has a [surrogate key](dimensional-modeling-dimension-tables.md#surrogate-key), which should use the smallest possible integer data type. In SQL Server-based environments that's typically done by creating an identity column, however this feature isn't supported in Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Instead, you'll need to use a [workaround technique](generate-unique-identifiers.md) that generates unique identifiers.
+We recommend that each dimension table has a [surrogate key](dimensional-modeling-dimension-tables.md#surrogate-key), which should use the smallest possible integer data type. In SQL Server-based environments that's typically done by creating an `IDENTITY` column, and in Fabric Data Warehouse, `IDENTITY` columns are available with some limitations. For more information, see [IDENTITY columns](identity.md) and [Use IDENTITY columns to create surrogate keys in Fabric Data Warehouse](tutorial-identity.md).
 
 > [!IMPORTANT]
 > When a dimension table includes automatically generated surrogate keys, you should never perform a truncate and full reload of it. That's because it would invalidate the data loaded into fact tables that use the dimension. Also, if the dimension table supports [SCD type 2](dimensional-modeling-dimension-tables.md#scd-type-2) changes, it might not be possible to regenerate the historical versions.

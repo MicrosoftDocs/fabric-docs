@@ -27,6 +27,7 @@
         "docs/enterprise/.openpublishing.redirection.enterprise.json",
         "docs/fundamentals/.openpublishing.redirection.fundamentals.json",
         "docs/onelake/.openpublishing.redirection.onelake.json",
+        "docs/knowledge/.openpublishing.redirection.knowledge.json",
         "docs/real-time-intelligence/.openpublishing.redirection.real-time-intelligence.json",
         "docs/security/.openpublishing.redirection.security.json",
         "docs/workload-development-kit/.openpublishing.redirection.workload-development-kit.json",

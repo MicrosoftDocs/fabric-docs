@@ -1,17 +1,17 @@
 ### YamlMime:FAQ
 metadata:
   title: "Frequently asked questions for Microsoft Copilot in Fabric in the SQL database workload"
-  description: This article answers frequently asked questions about Microsoft Copilot in Fabric in hte SQL database workload.
+  description: This article answers frequently asked questions about Microsoft Copilot in Fabric in the SQL database workload.
   author: markingmyname
   ms.author: maghan
   ms.reviewer: yoleichen
   ms.topic: faq
   ms.custom:
-  ms.date: 03/31/2025
+  ms.date: 11/18/2025
   ms.update-cycle: 180-days
   ms.collection: ce-skilling-ai-copilot
   
-title: "Frequently asked questions for Copilot in Fabric in the SQL database workload (Preview)"
+title: "Frequently asked questions for Copilot in Fabric in the SQL database workload"
 summary: |
   **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
