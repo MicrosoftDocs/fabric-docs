@@ -54,6 +54,7 @@ This step connects the Activator to the real-time Capacity Summary events emitte
 4. In the message, type "Your Fabric capacity has exceeded the configured delay threshold: @interactiveDelayThresholdPercentage %"
 > [!NOTE]  
 > Type "@interactiveDelayThresholdPercentage" instead of copying it so the variable can be populated properly.
+
 5. Select **Save and start**
 
 Your real-time alerting workflow is now active.
