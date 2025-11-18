@@ -124,14 +124,17 @@ For Teams group chats, only recently active chats are enabled for selection. If 
 
 ## Lifecycle management limitations
 
-Activator items do not currently work with Microsoft Fabric’s lifecycle management tools if they use either of these data sources:
+Activator items do not currently work with Microsoft Fabric’s lifecycle management tools if they use either of these scenarios:
 
-* Azure Blob Storage Events
-* Power BI
-  
-If you include an Activator item with one of these sources in a deployment pipeline or a Git-integrated workspace, you will see an error when you try to deploy or commit the Activator item.
+* Azure Blob Storage Events as data source
 
-Support for these data sources is planned for a future release.
+* Power BI as data source
+
+* Fabric User Data Functions as action (coming soon in December 2025)
+
+If you include an Activator item with one of these sources or actions in a deployment pipeline or a Git-integrated workspace, you will see an error when you try to deploy or commit the Activator item.
+
+Support for these data sources and actions is planned for a future release.
 
 ## Related content
 
