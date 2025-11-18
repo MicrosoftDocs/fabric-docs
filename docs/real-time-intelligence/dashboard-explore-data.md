@@ -28,7 +28,7 @@ Use Copilot to explore data in the context of the entire dashboard. Ask question
 
 1. In your Fabric workspace, select a real-time dashboard.
 
-    :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a real-time dashboard showing the Explore Data Copilot icon highlighted.":::
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a real-time dashboard showing the Explore Data Copilot icon highlighted." lightbox="media/dashboard-explore-copilot/dashboard-explore-copilot.png":::
 
 1. By default, the Copilot pane opens in the context of the entire dashboard. Ask a question or make a request about the data in the dashboard. For example, "Show me the total sales by region" or "What are the top five products by revenue?"
 
@@ -52,7 +52,7 @@ These instructions explain how to explore tile data using Copilot with the storm
 
 1. Enter your request in the dialog box.
 
-    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-toolbar-dialog.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot dialog highlighted. This is where you enter your question to Copilot":::
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-toolbar-dialog.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot dialog highlighted. This is where you enter your question to Copilot.":::
 
 1. For this example, enter "Show me data for Texas only," and select the **Submit** icon.
 
@@ -60,13 +60,13 @@ These instructions explain how to explore tile data using Copilot with the storm
 
 1. The new data appears in the Copilot pane. Select **View answer** to see the results in the tabs: **Visual**, **Table**, and **Query**.
 
-    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-copilot-answer.png" alt-text="Screenshot of the Copilot pane with the question asked highlighted.":::
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-copilot-answer.png" alt-text="Screenshot of the Copilot pane with the question asked highlighted." lightbox="media/dashboard-explore-copilot/dashboard-tile-copilot-answer.png":::
 
     ### [Visual](#tab/visual)
 
     If the tile data was tabular, when you go to the Visual tab, select the format you want to use. For this example, select **Pie chart**.
 
-    :::image type="content" source="media/dashboard-explore-copilot/dashboard-select-visual-format.png" alt-text="Screenshot of Create a visual":::
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-select-visual-format.png" alt-text="Screenshot of Create a visual.":::
 
     The Visual tab shows the pie chart for Texas data only.
 
