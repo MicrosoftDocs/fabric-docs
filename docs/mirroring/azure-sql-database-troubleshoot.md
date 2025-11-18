@@ -13,7 +13,7 @@ ms.custom:
 
 This article covers troubleshooting steps troubleshooting for mirroring Azure SQL Database.
 
-For troubleshooting the automatically configured mirroring for Fabric SQL database, see [Troubleshoot mirroring from Fabric SQL database (preview)](../database/sql/mirroring-troubleshooting.md).
+For troubleshooting the automatically configured mirroring for Fabric SQL database, see [Troubleshoot mirroring from Fabric SQL database](../database/sql/mirroring-troubleshooting.md).
 
 ## Changes to Fabric capacity or workspace
 

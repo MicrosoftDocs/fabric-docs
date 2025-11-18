@@ -20,7 +20,7 @@ All Fabric data stores are encrypted at rest with Microsoft-managed keys. Custom
 
 ## Enable encryption with customer-managed keys for your workspace
 
-Workspace admins can set up encryption using CMK at the workspace level. Once the workspace admin enables the setting in the portal, all customer content stored in that workspace is encrypted using the specified CMK. CMK integrates with AKV’s access policies and role-based access control (RBAC), allowing you flexibility to define granular permissions based on your organization’s security model. If you choose to disable CMK encryption later, the workspace will revert to using Microsoft-managed keys. You can also revoke the key at any time and access to the encrypted data will be blocked within an hour of revocation. With workspace level granularity and control, you elevate the security of your data in Fabric. 
+Workspace admins can set up encryption using CMK at the workspace level. Once the workspace admin enables the setting in the portal, all customer content stored in that workspace is encrypted using the specified CMK. CMK integrates with AKV's access policies and role-based access control (RBAC), allowing you flexibility to define granular permissions based on your organization's security model. If you choose to disable CMK encryption later, the workspace will revert to using Microsoft-managed keys. You can also revoke the key at any time and access to the encrypted data will be blocked within an hour of revocation. With workspace level granularity and control, you elevate the security of your data in Fabric. 
 
 ## Supported items
 
@@ -36,6 +36,7 @@ Customer-managed keys are currently supported for the following Fabric items:
   * Pipeline
   * Dataflow
   * Industry solutions
+  * SQL Database (preview)
 
 This feature can't be enabled for a workspace that contains unsupported items. When customer-managed key encryption for a Fabric workspace is enabled, only supported items can be created in that workspace. To use unsupported items, create them in a different workspace that does not have this feature enabled. 
 
@@ -95,6 +96,9 @@ Key Vault and Managed HSM must have both soft-delete and purge protection enable
 
 For more information, see [About keys](/azure/key-vault/keys/about-keys).
 
+> [!NOTE]
+> 4,096 bit keys are not supported for SQL database in Microsoft Fabric.
+
 You can also use Azure Key Vaults for which the [firewall setting is enabled](/azure/key-vault/general/network-security#key-vault-firewall-enabled-trusted-services-only). When you disable public access to the Key Vault, you can choose the option to 'Allow Trusted Microsoft Services to bypass this firewall.'
 
 ### Step 5: Enable encryption using customer-managed keys
@@ -121,11 +125,15 @@ You can revoke a customer-managed encryption key by changing the access policy, 
 
 To reinstate access, restore access to the customer-managed key in the Key Vault.
 
+> [!NOTE]
+> The workspace does not automatically revalidate the key for SQL Database in Microsoft Fabric. Instead, the user must [manually revalidate](../database/sql/encryption.md#inaccessible-customer-managed-key) the CMK to restore access.
+
 ## Disable the encryption
 
 To disable encrypting the workspace using a customer-managed key, go to *Workspace settings* disable **Apply customer-managed keys**. The workspace remains encrypted using Microsoft Managed keys.
 
-Note: You can't disable customer-managed keys while encryption for any of the Fabric items in your workspace is in progress.
+> [!NOTE]
+> You can't disable customer-managed keys while encryption for any of the Fabric items in your workspace is in progress.
 
 ## Monitoring
 

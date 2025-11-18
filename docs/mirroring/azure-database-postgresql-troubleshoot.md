@@ -4,7 +4,7 @@ description: Troubleshooting mirrored databases from Azure Database for PostgreS
 author: whhender
 ms.author: whhender
 ms.reviewer: scoriani
-ms.date: 01/15/2025
+ms.date: 11/17/2025
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
@@ -26,12 +26,12 @@ When you create a new mirrored database, in the **Choose data** page you might r
 | `FORBIDDEN_CHARS_IN_TABLE_NAME` | ERROR | Table {}.{} contains forbidden characters in name | Table name has unsupported characters. <sup>1</sup> |
 | `NOT_REGULAR_TABLE` | ERROR | Table {}.{} is not a regular table | Table type is not supported for mirroring. <sup>2</sup> |
 | `HAS_PRIMARY_KEY` | OK | Table {}.{} has a primary key | Table is a regular table and has a valid primary key used for mirroring. |
-| `HAS_UNIQUE_INDEX` | OK | Table {}.{} has a suitable unique index | Table does not have a primary key, but has a unique index which shall be used for mirroring. |
-| `NO_INDEX_FULL_IDENTITY` | WARNING | Table {}.{} does not have a suitable unique index. Using full identity | Table does not have a primary key or a unique index, so `REPLICA IDENTITY FULL` is required to support mirroring, which can cause performance problems. |
+| `HAS_UNIQUE_INDEX` | OK | Table {}.{} has a suitable unique index | Table does not have a primary key, but has a **non-nullable** unique index which shall be used for mirroring. Nullable unique indexes will cause an error during replication phase and aren't supported. |
+| `NO_INDEX_FULL_IDENTITY` | WARNING | Table {}.{} does not have a suitable unique index. Using full identity | Table does not have a primary key or a unique index, so `REPLICA IDENTITY FULL` is required to support mirroring, which can cause performance problems and additional WAL usage. |
 
 <sup>1</sup> Object identifiers with a space (' ') character aren't supported. 
 
-<sup>2</sup> This table type isn't supported for mirroring. Currently, views, materialized views, foreign tables, and partitioned tables aren't supported. 
+<sup>2</sup> This table type isn't supported for mirroring. Currently, views, materialized views, foreign tables, and partitioned tables aren't supported. TimescaleDB hypertables are also not supported for Fabric Mirroring.
 
 <sup>3</sup> For a list of unsupported data types, see [Limitations](azure-database-postgresql-limitations.md#column-level). Only columns with following types are supported: 
 
@@ -59,6 +59,16 @@ When you create a new mirrored database, in the **Choose data** page you might r
    - `uuid` 
 
    In Postgres, two 'time with time zone' values that correspond to exactly the same moment, but in different time zones, are considered different. For example: `06:24:00.59+05` and `05:24:00.59+04` correspond to the same epoch time, but Postgres treats them differently.
+
+## Data definition language (DDL) operations supported on source database
+
+- **Rename column**: a column with the new name is added to the mirrored table in Fabric and contains data for newly inserted rows (for existing rows will be NULL). Old column is still maintained with values for the existing rows (for new rows are NULL).
+- **Add column**: added column is visible in the mirrored table and contains data for newly inserted rows (for existing rows are NULL).
+- **Remove column**: removed column remains visible in the mirrored table and contains data for existing rows (for new rows are NULL).
+- **Change primary key**: mirroring session continues regularly.
+
+Any other DDL operation on source tables is currently not supported and can cause replication failures.
+
 
 ## Changes to Fabric capacity or workspace
 
