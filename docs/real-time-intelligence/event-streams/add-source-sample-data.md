@@ -14,7 +14,7 @@ zone_pivot_groups: event-streams-standard-enhanced
 
 # Add a sample data source to an eventstream
 
-To get a better understanding of how an eventstream works, you can use sample data and send the data to the eventstream. This article shows you how to add the sample data source to an eventstream.
+To get a better understanding of how a Microsoft Fabric eventstream works, you can use sample data and send the data to the eventstream. This article shows you how to add the sample data source to an eventstream.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
@@ -64,7 +64,7 @@ To get a better understanding of how an eventstream works, you can use sample da
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode or the trial license mode with Contributor or higher permissions.
+- Access to a workspace in the Fabric capacity license mode or trial license mode with Contributor or higher permissions.
 
 ## Add sample data as a source
 
