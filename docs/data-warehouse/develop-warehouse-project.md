@@ -4,7 +4,7 @@ description: Learn how to develop warehouse projects for Fabric Data Warehouse i
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: pvenkat, randolphwest
-ms.date: 11/04/2025
+ms.date: 11/12/2025
 ms.topic: how-to
 ---
 # Develop warehouse projects in Visual Studio Code
@@ -178,18 +178,58 @@ After building your project, publish it to your target warehouse. Publishing cre
 1. Right-click on the project and select **Publish**.
 1. Choose **Publish to an existing SQL server**.
 1. For **Select publish profile to load**, the first time you publish, choose **Don't use profile**.
-    - You can save options for publishing your warehouse into a *publish profile*. When you're completed, you're given the option in a Visual Studio Code notification to save the publishing options you just used to a publish profile file. 
-    - You can re-use the publish profile in the future when you publish your project to your warehouse. You might have different profile options for different warehouses, or for different environments in your dev/test/acceptance/production development environments.
+   - You can save options for publishing your warehouse into a *publish profile*. When you're completed, you're given the option in a Visual Studio Code notification to save the publishing options you just used to a publish profile file. 
+   - You can re-use the publish profile in the future when you publish your project to your warehouse. You might have different profile options for different warehouses, or for different environments in your dev/test/acceptance/production development environments.
 1. Choose the Fabric Data Warehouse connection profile from the list.
 1. Choose the name of the target warehouse.
 1. In the **Choose action** option, you can either **Generate Script** to review the script before publishing, or publish project to a warehouse. 
-    - The first time you want to deploy changes, you should carefully **Generate Script** and review the resulting T-SQL to be applied to the target warehouse. No changes are made to the target warehouse.
-    - If you choose **Publish**, changes will be written to your target warehouse. 
-
+   - The first time you want to deploy changes, you should carefully **Generate Script** and review the resulting T-SQL to be applied to the target warehouse. No changes are made to the target warehouse.
+   - If you choose **Publish**, changes will be written to your target warehouse. 
+      
    :::image type="content" source="media/develop-warehouse-project/deploy-in-progress.png" alt-text="Screenshot from Visual Studio Code showing the Deploy dacpac: In progress notification.":::
-
+   
 1. On the notification **Would you like to save the settings in a profile (.publish.xml)?**, choose **Yes** and save your publish profile choices for the next time you need to publish.
 
+### Important deployment settings for warehouse projects
+
+When deploying database projects to Fabric Data Warehouse, several settings control schema changes and can impact data safety. **Use with caution**.
+
+ -  `BlockOnPossibleDataLoss`
+    
+    - **What it does:** Prevents deployment if there's a risk of data loss (for example, dropping a column or table that contains data).
+    - **Recommendation:** Always set to `True` in production to protect critical data.
+    - **Caution:** Setting it to `False` allows deployment even if data can be lost. Use only in controlled environments (for example, dev/test).
+    
+ - `DropObjectsNotInSource`
+    
+    - **What it does:** Drops objects in the target database that are **not present** in the project source.
+    - **Recommendation:** Use in dev/test environments to clean up leftover objects.
+    - **Caution:** Using `DropObjectsNotInSource` in production can **delete important objects and data**. Double-check before enabling.
+    
+ -  `Pre-Deployment Scripts`
+    
+    - **What it does:** Executes custom SQL scripts **before** the schema deployment.  
+    - **Common uses:**  
+      - Archive or backup data before dropping tables
+      - Disable constraints or triggers temporarily
+      - Cleanup legacy objects  
+    - **Caution:** Ensure scripts are **idempotent** and don't introduce schema changes that conflict with deployment.
+
+> [!TIP]
+> When a deployment process is **idempotent**, it can be run multiple times without causing issues, and you can deploy to multiple databases without needing to predetermine their status.
+
+ -  `Post-Deployment Scripts`
+    
+    - **What it does:** Executes custom SQL scripts **after** the schema deployment.  
+    - **Common uses:**  
+      - Seed lookup or reference data
+      - Re-enable constraints or triggers
+      - Log deployment history  
+    - **Caution:** Avoid heavy operations on large tables in production; ensure scripts can safely run multiple times if needed.
+
+> [!IMPORTANT] 
+> Always review deployment scripts and settings before publishing. Test in dev/test environments first to prevent unintended data loss.
+    
 ## Verify publish
 
 Connect to your warehouse and script objects that were changed or verify by running system catalog objects.

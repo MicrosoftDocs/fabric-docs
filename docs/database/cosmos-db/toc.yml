@@ -67,8 +67,6 @@ items:
         href: how-to-authenticate.md
       - name: Authenticate from Fabric Notebooks
         href: how-to-authenticate-notebooks.md
-      - name: Customer managed keys
-        href: customer-managed-keys.md
   - name: Manage resources
     items:
       - name: Configure container
@@ -99,5 +97,3 @@ items:
         href: mirroring-limitations.md
       - name: Cosmos DB v2 connector limitations
         href: cosmos-db-v2-connector-limitations.md
-      - name: Vector indexing and customer managed keys
-        href: troubleshoot-vector-indexing-customer-managed-keys.md

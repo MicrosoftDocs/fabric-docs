@@ -6,7 +6,7 @@ ms.author: eur
 author: eric-urban
 ms.topic: conceptual
 ms.custom:
-ms.date: 07/16/2025
+ms.date: 11/10/2025
 ms.search.form: Lakehouse SQL Analytics Endpoint
 ---
 
@@ -41,6 +41,10 @@ To modify data in lakehouse Delta tables, you have to switch to lakehouse mode a
 You can set object-level security for accessing data using SQL analytics endpoint. These security rules only apply for accessing data via SQL analytics endpoint, see [SQL granular permissions](../data-warehouse/sql-granular-permissions.md)
 
 To ensure data isn't accessible in other ways, you must set workspace roles and permissions, see [Workspace roles and permissions](workspace-roles-lakehouse.md).
+
+## Limitations of the SQL analytics endpoint
+
+The SQL analytics endpoint has some limitations based on its use of the Fabric Data Warehouse engine. For more information, see [Limitations of the SQL analytics endpoint](../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
 
 ## Related content
 

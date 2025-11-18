@@ -4,7 +4,7 @@ description: Review the fundamentals of securing Cosmos DB in Microsoft Fabric f
 author: markjbrown
 ms.author: mjbrown
 ms.topic: best-practice
-ms.date: 10/29/2025
+ms.date: 11/12/2025
 ms.custom: [security-horizontal-2025, horz-security]
 ms.search.form: Cosmos DB database security
 ai-usage: ai-generated

@@ -19,6 +19,8 @@ This article describes how to add Apache Kafka as an event source in Fabric Real
 - An Apache Kafka cluster running. 
 - Your Apache Kafka must be publicly accessible and not be behind a firewall or secured in a virtual network.  
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Add Apache Kafka as a source
