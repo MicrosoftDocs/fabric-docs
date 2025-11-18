@@ -78,6 +78,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Azure SQL Database CDC                                    | Source        | YES                       | - When streaming was last stopped           |
 | PostgreSQL Database CDC                                   | Source        | YES                       | - When streaming was last stopped           |
 | MongoDB CDC (preview)                                     | Source        | YES                       | - When streaming was last stopped           |
+| HTTP (preview)                                     | Source        | YES                       | - When streaming was last stopped           |
 | MySQL Database CDC                                        | Source        | YES                       | - When streaming was last stopped           |
 | Azure Cosmos DB CDC                                       | Source        | YES                       | - When streaming was last stopped           |
 | SQL Server on VM DB CDC                                   | Source        | YES                       | - When streaming was last stopped           |
@@ -93,6 +94,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Fabric Job events                                         | Source        | NO                        |                                             |
 | Azure Blob storage                                        | Source        | NO                        |                                             |
 | MQTT (preview)                                            | Source        | YES                       | - When streaming was last stopped           |
+| Cribl (preview)                                          | Source        | NO                        |                                             |
 | Solace PubSub+ (preview)                                  | Source        | YES                       | - When streaming was last stopped           |
 | Lakehouse                                                 | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Eventhouse (Event processing before ingestion)            | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
