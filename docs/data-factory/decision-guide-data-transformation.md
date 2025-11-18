@@ -76,10 +76,10 @@ Year-wise merged NYC Yellow Taxi Parquet files, five consolidated partitions (20
 #### Results
 
 ##### Without Fast Copy
-:::image type="content" source="media/decision-guide-data-transformation/results-without-fastcopy.png" alt-text="Screenshot of Recent runs results without Fast Copy" lightbox="media/decision-guide-data-transformation/results-without-fastcopy.png":::
+:::image type="content" source="media/decision-guide-data-transformation/results-without-fast-copy.png" alt-text="Screenshot of Recent runs results without Fast Copy" lightbox="media/decision-guide-data-transformation/results-without-fast-copy.png":::
 
 ##### With Fast Copy
-:::image type="content" source="media/decision-guide-data-transformation/results-with-fastcopy.png" alt-text="Screenshot of Recent runs results with Fast Copy" lightbox="media/decision-guide-data-transformation/results-with-fastcopy.png":::
+:::image type="content" source="media/decision-guide-data-transformation/results-with-fast-copy.png" alt-text="Screenshot of Recent runs results with Fast Copy" lightbox="media/decision-guide-data-transformation/results-with-fast-copy.png":::
 
 | Dataflow Capability | Execution Time (hh:mm:ss) |
 |---------------------|---------------------------|
@@ -124,10 +124,10 @@ All Parquet files for 2021–Aug 2025 merged into one consolidated file.
 #### Results
 
 ##### Without Modern Evaluator
-:::image type="content" source="media/decision-guide-data-transformation/results-without-modernevaluator.png" alt-text="Screenshot of Recent runs results without Modern Evaluator" lightbox="media/decision-guide-data-transformation/results-without-modernevaluator.png":::
+:::image type="content" source="media/decision-guide-data-transformation/results-without-modern-evaluator.png" alt-text="Screenshot of Recent runs results without Modern Evaluator" lightbox="media/decision-guide-data-transformation/results-without-modern-evaluator.png":::
 
 ##### With Modern Evaluator
-:::image type="content" source="media/decision-guide-data-transformation/results-with-modernevaluator.png" alt-text="Screenshot of Recent runs results with Modern Evaluator" lightbox="media/decision-guide-data-transformation/results-with-modernevaluator.png":::
+:::image type="content" source="media/decision-guide-data-transformation/results-with-modern-evaluator.png" alt-text="Screenshot of Recent runs results with Modern Evaluator" lightbox="media/decision-guide-data-transformation/results-with-modern-evaluator.png":::
 
 | Dataflow Capability | Execution Time (hh:mm:ss) |
 |---------------------|---------------------------|
@@ -171,13 +171,13 @@ The team enables **Partitioned Compute**, which parallelizes processing across p
 
 #### Results
 ##### Without Partitioned Compute
-:::image type="content" source="media/decision-guide-data-transformation/results-without-partitionedcompute.png" alt-text="Screenshot of Recent runs results without Partitioned Compute" lightbox="media/decision-guide-data-transformation/results-without-partitionedcompute.png":::
+:::image type="content" source="media/decision-guide-data-transformation/results-without-partitioned-compute.png" alt-text="Screenshot of Recent runs results without Partitioned Compute" lightbox="media/decision-guide-data-transformation/results-without-partitioned-compute.png":::
 
 ##### With Partitioned Compute
-:::image type="content" source="media/decision-guide-data-transformation/results-with-partitionedcompute.png" alt-text="Screenshot of Recent runs results with Partitioned Compute" lightbox="media/decision-guide-data-transformation/results-with-partitionedcompute.png":::
+:::image type="content" source="media/decision-guide-data-transformation/results-with-partitioned-compute.png" alt-text="Screenshot of Recent runs results with Partitioned Compute" lightbox="media/decision-guide-data-transformation/results-with-partitioned-compute.png":::
 
 ##### With Partitioned Compute + Modern Evaluator:
-:::image type="content" source="media/decision-guide-data-transformation/results-with-partitionedcompute-and-modernevaluator.png" alt-text="Screenshot of Recent runs results with Partitioned Compute + Modern Evaluator" lightbox="media/decision-guide-data-transformation/results-with-partitionedcompute-and-modernevaluator.png":::
+:::image type="content" source="media/decision-guide-data-transformation/results-with-partitioned-compute-and-modern-evaluator.png" alt-text="Screenshot of Recent runs results with Partitioned Compute + Modern Evaluator" lightbox="media/decision-guide-data-transformation/results-with-partitioned-compute-and-modern-evaluator.png":::
 
 | Dataflow Capability                     | Execution Time (hh:mm:ss) |
 |-----------------------------------------|---------------------------|
