@@ -230,7 +230,7 @@ Fabric provides several tools to help you monitor and validate your dbt jobs:
 
 - **Full project runs**: Currently, preview supports full-project runs only (no partial build caching).
 - **Incremental models**: Make sure you have proper primary keys and unique constraints for incremental builds.
-- **Adapter constraints**: [Some partner adapters aren't yet supported in Fabric.](#supported-adapters)
+- **Adapter constraints**: Some partner adapters aren't yet supported in Fabric.
 
 ### Best practices
 
