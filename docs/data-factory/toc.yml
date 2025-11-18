@@ -946,6 +946,8 @@
                 href: default-destination.md
           - name: Authoring tools
             items:
+              - name: AI Functions in Dataflow Gen2 (Preview)
+                href: dataflow-gen2-ai-functions.md
               - name: Explain Mashup with Copilot 
                 href: dataflow-gen2-copilot-explain.md
               - name: Get data with Copilot
