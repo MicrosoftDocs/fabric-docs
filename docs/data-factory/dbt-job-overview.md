@@ -16,9 +16,17 @@ ai-usage: ai-assisted
 > [!NOTE]
 > This feature is in [preview](/fabric/fundamentals/preview).
 
-[dbt](https://docs.getdbt.com/) job in Microsoft Fabric let you transform your data with SQL directly in the Fabric interface. You get a no-code setup to build, test, and deploy dbt models on top of your Fabric data warehouse.
+[dbt](https://docs.getdbt.com/) job in Microsoft Fabric brings the power of dbt (Data Build Tool) directly into the Fabric experience. You can transform data with SQL in a familiar, unified environment. Build, test, and deploy dbt models on top of your Fabric data warehouse or other supported warehouses—no need to install local tools or manage external orchestration.
 
-With dbt job, you can develop and manage your transformation logic in one place—no command line or external orchestration tools needed. Fabric's integration with dbt Core lets you schedule, monitor, and visualize dbt workflows in the same workspace where your data pipelines and reports live.
+You can develop and manage transformation logic entirely within Fabric. Author your models, define dependencies, and run tests in one place while you use Fabric's enterprise-grade security and governance.
+
+Fabric integrates with dbt Core to provide:
+
+- No-code setup for onboarding and configuration
+- Native scheduling and monitoring to keep workflows reliable and transparent
+- Visual insights into dbt runs, tests, and lineage—all within the same workspace as your pipelines and reports
+
+This approach combines the flexibility of code-first development with the simplicity of low-code orchestration so analytics and engineering teams can collaborate and scale transformations across the organization.
 
 ## Prerequisites
 
