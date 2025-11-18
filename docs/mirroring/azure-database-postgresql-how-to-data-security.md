@@ -13,14 +13,11 @@ ms.custom:
 
 This guide helps you establish data security in your mirrored Azure Database for PostgreSQL flexible server in Microsoft Fabric.
 
-> [!IMPORTANT]
-> For the current preview, Microsoft Entra ID users and service principals in Azure Database for PostgreSQL flexible server are not supported. Use Basic (PostgreSQL Authentication).
-
 ## Security requirements
 
 - The System Assigned Managed Identity (SAMI) of your Azure Database for PostgreSQL flexible server needs to be enabled, and must be the primary identity. To configure, go to your flexible server in the Azure portal. Under **Security** the resource menu, select **Identity**. Under **System assigned managed identity**, select **Status** to **On**.
    - After enabling the SAMI, if the SAMI is disabled or removed, the mirroring of Azure Database for PostgreSQL flexible server to Fabric OneLake will fail.
-- Fabric needs to connect to the Azure Database for PostgreSQL flexible server. For this purpose, create a database role with proper permissions to access source database and tables, to follow the principle of least privilege, and with a strong password. For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-tutorial.md).
+- Fabric needs to connect to the Azure Database for PostgreSQL flexible server. For this purpose, create an Entra or PostgreSQL database role with proper permissions to access source database and tables, to follow the principle of least privilege, and with a strong password. For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-tutorial.md).
 
 > [!IMPORTANT]
 > Any granular security established in the source database must be reconfigured in the mirrored database in Microsoft Fabric.

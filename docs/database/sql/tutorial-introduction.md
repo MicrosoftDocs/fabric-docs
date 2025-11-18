@@ -15,8 +15,6 @@ ms.search.form: Get Started, Databases Get Started
 
 [Microsoft Fabric](../../fundamentals/microsoft-fabric-overview.md) provides a one-stop shop for all the analytical needs for every enterprise. The purpose of this tutorial is to provide a comprehensive guide to utilizing a **SQL database in Fabric**. This tutorial is tailored to help you navigate through the process of database creation, setting up database objects, exploring autonomous features, and combining and visualizing data. Additionally, you'll learn how to create a GraphQL endpoint, which serves as a modern approach to connecting and querying your data efficiently. You'll also learn how to use the SQL analytics endpoint to work with mirrored data for reporting and analysis, and developing data visualizations.
 
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
-
 This tutorial is structured to offer hands-on experience, guiding you through each step of the process to ensure a solid understanding of the SQL database in Fabric within the Microsoft Fabric ecosystem. You'll gain insights into the seamless integration points and the diverse experiences tailored for both the professional and the citizen developer within Microsoft Fabric.
 
 This tutorial isn't intended to serve as a reference architecture, nor does it cover an exhaustive list of features and functionalities. It's also not a prescriptive guide on best practices but rather a foundational walkthrough to familiarize you with the capabilities and user experience of SQL database in Fabric.

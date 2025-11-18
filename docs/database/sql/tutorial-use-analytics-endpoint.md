@@ -80,7 +80,7 @@ In this step, create a view over the mirrored data, and then create a report to 
 
 You can now use these views in analytics and reporting. You will create a report using these views later in this tutorial.
 
-To learn more about the automatic mirroring of SQL database into OneLake, see [Mirroring Fabric SQL database in Microsoft Fabric (preview)](mirroring-overview.md).
+To learn more about the automatic mirroring of SQL database into OneLake, see [Mirroring Fabric SQL database in Microsoft Fabric](mirroring-overview.md).
 
 ## Next step
 

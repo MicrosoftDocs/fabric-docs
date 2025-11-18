@@ -41,13 +41,15 @@ This table shows the permissions needed for each shortcut action.
 | **Capability** | **Permission on shortcut path** | **Permission on target path** |
 |---|---|---|---|---|
 | **Read file/folder content of shortcut** | ReadAll<sup>1</sup> | ReadAll<sup>1</sup> |
-| **Write to shortcut target location** | Write | Write |
-| **Read data from shortcuts in table section of the lakehouse via TDS endpoint** | Read | ReadAll<sup>2</sup> |
+| **Write to shortcut target location** | Write<sup>2</sup> | Write<sup>2</sup> |
+| **Read data from shortcuts in table section of the lakehouse via TDS endpoint** | Read | ReadAll<sup>3</sup> |
 
 <sup>1</sup> If [OneLake security](./security/get-started-onelake-security.md) is enabled the user needs to be in a role that grants access to the target path.
 
+<sup>2</sup> Alternatively, OneLake security with ReadWrite permission on the shortcut path.
+
 > [!IMPORTANT]
-> <sup>2</sup> **Exception to identity passthrough:** While OneLake security typically passes through the calling user's identity to enforce permissions, certain query engines operate differently. When accessing shortcut data through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines configured for Delegated identity mode**, these engines don't pass through the calling user's identity to the shortcut target. Instead, they use the **item owner's identity** to access the data, and then apply OneLake security roles to filter what the calling user can see.
+> <sup>3</sup> **Exception to identity passthrough:** While OneLake security typically passes through the calling user's identity to enforce permissions, certain query engines operate differently. When accessing shortcut data through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines configured for Delegated identity mode**, these engines don't pass through the calling user's identity to the shortcut target. Instead, they use the **item owner's identity** to access the data, and then apply OneLake security roles to filter what the calling user can see.
 >
 > This means:
 > - The shortcut target is accessed using the item owner's permissions (not the end user's)
@@ -62,6 +64,17 @@ This table shows the permissions needed for each shortcut action.
 Users in the Admin, Member, and Contributor roles have full access to read data from a shortcut regardless of the OneLake data access roles defined. However they still need access on both the shortcut path and target path as mentioned in [Workspace roles](./security/get-started-security.md#workspace-permissions).
 
 Users in the Viewer role or that had a lakehouse shared with them directly have access restricted based on if the user has access through a OneLake data access role. For more information on the access control model with shortcuts, see [Data Access Control Model in OneLake.](./security/data-access-control-model.md#shortcuts)
+
+Users in Viewer roles can create shortcuts if they have ReadWrite permissions on the path where the shortcut is created.
+
+The following table illustrates the necessary permissions to perform shortcut operations.
+
+| **Shortcut operation** | **Permission on shortcut path** | **Permission on target path** |
+|---|---|---|---|---|
+| **Create** | Fabric Read *and* OneLake security ReadWrite | OneLake security Read  |
+| **Read (GET/LIST shortcuts)** | Fabric Read *and* OneLake security Read | N/A |
+| **Update** | Fabric Read *and* OneLake security ReadWrited | OneLake security Read (on the new target) |
+| **Delete** | Fabric Read *and* OneLake security ReadWrite | N/A |
 
 ### Shortcut auth models
 
