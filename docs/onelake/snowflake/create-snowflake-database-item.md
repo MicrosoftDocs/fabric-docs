@@ -195,3 +195,63 @@ In [the Fabric web UI](https://app.fabric.microsoft.com/?experience=fabric-devel
 You should see the same data displayed in both Snowflake and Fabric.
 
 This data resides in OneLake, and both Fabric and Snowflake can work with the same copy of data, no data movement or duplication required!
+
+## Alternative setup: Create Snowflake database item in Fabric
+
+This guide walks through setting up connectivity to OneLake from the Snowflake UI as a starting point. As an alternative, you can establish connectivity by creating the Snowflake database Fabric item within the Fabric UI.
+
+To do this, you first need to [follow the prerequisites](#prerequisites), [create the necessary user and role in Snowflake](#create-least-privileged-user-and-role-in-snowflake), and [prepare the connection in Fabric](#prepare-connection-in-fabric). Then you can follow the steps below to create the item in Fabric.
+
+1. In the Snowflake UI, run the following code to create a new database and grant permissions to your role.
+   - Replace `SnowflakeFabricIcebergDB` with your database name.
+
+    ```sql
+    -- Create new Snowflake database
+    CREATE DATABASE SnowflakeFabricIcebergDB;
+    
+    -- Grant Iceberg metadata role permissions on the new database
+    BEGIN
+      LET db STRING := 'SnowflakeFabricIcebergDB';
+
+      EXECUTE IMMEDIATE 'GRANT USAGE ON DATABASE ' || db || ' TO ROLE R_ICEBERG_METADATA';
+      EXECUTE IMMEDIATE 'GRANT MONITOR ON DATABASE ' || db || ' TO ROLE R_ICEBERG_METADATA';
+      EXECUTE IMMEDIATE 'GRANT USAGE ON ALL SCHEMAS IN DATABASE ' || db || ' TO ROLE R_ICEBERG_METADATA';
+      EXECUTE IMMEDIATE 'GRANT USAGE ON FUTURE SCHEMAS IN DATABASE ' || db || ' TO ROLE R_ICEBERG_METADATA';
+      EXECUTE IMMEDIATE 'GRANT SELECT ON ALL ICEBERG TABLES IN DATABASE ' || db || ' TO ROLE R_ICEBERG_METADATA';
+      EXECUTE IMMEDIATE 'GRANT SELECT ON FUTURE ICEBERG TABLES IN DATABASE ' || db || ' TO ROLE R_ICEBERG_METADATA';
+    END;
+    ```
+
+1. In the Fabric UI, navigate to your workspace.
+1. Create a new item, and select the **Snowflake database** item type.
+1. Select the Snowflake connection you previously created and proceed.
+1. Select your Snowflake database in the creation flow.
+1. Create your item.
+1. In the browser URL, copy the second GUID, the ID of the new Fabric item.
+1. Back in Snowflake, run the following to create the external volume object, update your database to write to OneLake by default, and grant the new role permissions on that external volume object.
+   - Replace `SnowflakeFabricIcebergDB` with your database name, and provide the correct values for `WORKSPACE-ID`, `ITEM-ID`, and `FABRIC-TENANT-ID`.
+
+    ```sql
+    -- Create new external volume and set it as the default for the new database
+    CREATE EXTERNAL VOLUME SnowflakeFabricIcebergDB
+    STORAGE_LOCATIONS =
+    (
+       (
+          NAME = 'SnowflakeFabricIcebergDB'
+          STORAGE_PROVIDER = 'AZURE'
+          STORAGE_BASE_URL = 'azure://onelake.dfs.fabric.microsoft.com/WORKSPACE-ID/ITEM-ID/SnowflakeVolume'
+          AZURE_TENANT_ID = 'FABRIC-TENANT-ID'
+       )
+    );
+    
+    ALTER DATABASE SnowflakeFabricIcebergDB
+    SET EXTERNAL_VOLUME = SnowflakeFabricIcebergDB;
+    
+    -- Grant the Iceberg metadata role permissions on the new external volume
+    GRANT USAGE ON EXTERNAL VOLUME SnowflakeFabricIcebergDB TO ROLE R_ICEBERG_METADATA;
+    GRANT OWNERSHIP ON EXTERNAL VOLUME SnowflakeFabricIcebergDB TO ROLE R_ICEBERG_METADATA COPY CURRENT GRANTS;
+    ```
+
+1. Back in the Fabric UI, ensure that your Snowflake item reports no errors and is ready for new tables to be written in Snowflake.
+
+You can now proceed to [create your Iceberg tables in Snowflake](#create-an-iceberg-table-in-snowflake)!
