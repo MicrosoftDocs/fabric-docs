@@ -327,6 +327,7 @@ You can manage mirrored databases in workspaces enabled with private links by us
    - Fabric doesn't currently support Event Hub integration.
    - Queued ingestion via OneLake isn't currently available.
 * The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
+* **OneLake Security** isn't currently supported when a workspace-level private link is enabled for a workspace.
 * Workspace monitoring isn't currently supported when a workspace-level private link is enabled for a workspace.
 
 ## Common errors and troubleshooting
