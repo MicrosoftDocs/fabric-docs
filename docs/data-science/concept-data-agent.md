@@ -28,13 +28,13 @@ You can also add organization-specific instructions, examples, and guidance to f
 
 ## How the Fabric data agent works
 
-Fabric data agent uses large language models (LLMs) to help users interact with their data naturally. Fabric data agent applies Azure OpenAI Assistant APIs, and it behaves like an agent. It processes user questions, determines the most relevant data source (Lakehouse, Warehouse, Power BI dataset, KQL databases), and it invokes the appropriate tool to generate, validate, and execute queries. Users can then ask questions in plain language and receive structured, human-readable answers—eliminating the need to write complex queries and ensuring accurate and secure data access.
+Fabric data agent uses large language models (LLMs) to help users interact with their data naturally. Fabric data agent applies Azure OpenAI Assistant APIs, and it behaves like an agent. It processes user questions, determines the most relevant data source (Lakehouse, Warehouse, Power BI dataset, KQL databases, ontology), and it invokes the appropriate tool to generate, validate, and execute queries. Users can then ask questions in plain language and receive structured, human-readable answers—eliminating the need to write complex queries and ensuring accurate and secure data access.
 
 Here's how it works in detail:
 
 **Question Parsing & Validation**: The Fabric data agent applies Azure OpenAI Assistant APIs as the underlying agent to process user questions. This approach ensures that the question complies with security protocols, responsible AI (RAI) policies, and user permissions. The Fabric data agent strictly enforces read-only access, maintaining read-only data connections to all data sources.
 
-**Data Source Identification**: The Fabric data agent uses the user's credentials to access the schema of the data source. This ensures that the system fetches data structure information that the user has permission to view. It then evaluates the user's question against all available data sources, including relational databases (Lakehouse and Warehouse), Power BI datasets (Semantic Models), and KQL databases. It might also reference user-provided data agent instructions to determine the most relevant data source.
+**Data Source Identification**: The Fabric data agent uses the user's credentials to access the schema of the data source. This ensures that the system fetches data structure information that the user has permission to view. It then evaluates the user's question against all available data sources, including relational databases (Lakehouse and Warehouse), Power BI datasets (Semantic Models), KQL databases, and ontologies. It might also reference user-provided data agent instructions to determine the most relevant data source.
 
 **Tool Invocation & Query Generation**: Once the correct data source or sources are identified, the Fabric data agent rephrases the question for clarity and structure, and then invokes the corresponding tool to generate a structured query:
 
@@ -54,7 +54,7 @@ This approach ensures that users can interact with their data using natural lang
 
 Configuring a Fabric data agent is similar to building a Power BI report—you start by designing and refining it to ensure it meets your needs, then publish and share it with colleagues so they can interact with the data. Setting up a Fabric data agent involves:
 
-**Selecting Data Sources**: A Fabric data agent supports up to five data sources in any combination, including lakehouses, warehouses, KQL databases, and Power BI semantic models. For example, a configured Fabric data agent could include five Power BI semantic models. It could include a mix of two Power BI semantic models, one lakehouse, and one KQL database. You have many available options.
+**Selecting Data Sources**: A Fabric data agent supports up to five data sources in any combination, including lakehouses, warehouses, KQL databases, Power BI semantic models, and ontologies. For example, a configured Fabric data agent could include five Power BI semantic models. It could include a mix of two Power BI semantic models, one lakehouse, and one KQL database. You have many available options.
 
 **Choosing Relevant Tables**: After you select the data sources, you need to add them one at a time, and define the specific tables from each source that the Fabric data agent will use. This step ensures that the Fabric data agent retrieves accurate results by focusing only on relevant data.
 

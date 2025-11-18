@@ -22,6 +22,8 @@ Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, sca
 - An Amazon MSK Kafka cluster in active status. 
 - Your Amazon MSK Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Add Amazon Managed Streaming for Apache Kafka as a source

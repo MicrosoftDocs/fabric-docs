@@ -74,14 +74,20 @@ items:
     href: get-started-lakehouse-sql-analytics-endpoint.md
   - name: Data types
     href: data-types.md
-  - name: Manage objects in a warehouse
-    href: manage-objects.md
+  - name: IDENTITY column
+    href: identity.md
   - name: Primary, foreign, and unique keys
     href: table-constraints.md    
   - name: Tables
     href: tables.md
   - name: T-SQL surface area
     href: tsql-surface-area.md
+  - name: How to  
+    items:
+    - name: Create IDENTITY column
+      href: tutorial-identity.md      
+    - name: Manage objects in a warehouse
+      href: manage-objects.md
 - name: Continuous integration & continuous deployment (CI/CD)
   items:
   - name: Development and Deployment
@@ -93,14 +99,12 @@ items:
 
 - name: Develop
   items:
-  - name: SQL analytics endpoint performance
-    href: sql-analytics-endpoint-performance.md
+  - name: Query labels
+    href: query-label.md
   - name: Transactions
     href: transactions.md 
   - name: Warehouse collation
     href: collation.md
-  - name: Warehouse performance
-    href: guidelines-warehouse-performance.md
   - name: Warehouse snapshots
     href: warehouse-snapshot.md
     displayName: Snapshot
@@ -115,8 +119,8 @@ items:
       href: analyze-range-bands.md
     - name: Datamart upgrade to warehouse
       href: datamart-upgrade-to-warehouse.md
-    - name: Generate unique identifiers
-      href: generate-unique-identifiers.md
+    - name: Create an IDENTITY column
+      href: tutorial-identity.md
 - name: Dimensional modeling
   items:
   - name: Overview
@@ -214,15 +218,26 @@ items:
     href: tutorial-clone-table-portal.md
 - name: Manage performance
   items:
+  - name: Data clustering
+    href: data-clustering.md
   - name: In-memory and disk caching
     href: caching.md
+  - name: Performance guidelines
+    displayName: Warehouse performance
+    href: guidelines-warehouse-performance.md
   - name: Result set caching
     href: result-set-caching.md
     displayName: result set caching
+  - name: SQL analytics endpoint performance
+    href: sql-analytics-endpoint-performance.md
   - name: Statistics
     href: statistics.md
   - name: V-Order 
     href: v-order.md
+  - name: How to
+    items:    
+      - name: Use data clustering in Fabric Data Warehouse
+        href: tutorial-data-clustering.md
 - name: Mirroring databases
   items:
     - name: Mirroring overview
@@ -277,7 +292,8 @@ items:
       href: extract-data-tier-application-synapse-dedicated-sql-pool.md
     - name: Migration Assistant guide for Azure Synapse Analytics
       href: migrate-with-migration-assistant.md
-
+    - name: Migrate to IDENTITY columns
+      href: migrate-identity-columns.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse

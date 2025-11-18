@@ -1,28 +1,28 @@
 ---
-title: Create an allowlist using managed private endpoints
-description: "Learn how to create an allowlist using managed private endpoints on Microsoft Fabric workspaces."
+title: Create an allow list using managed private endpoints
+description: "Learn how to create an allow list using managed private endpoints on Microsoft Fabric workspaces."
 author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to
-ms.date: 11/06/2025
+ms.date: 11/10/2025
 
-#customer intent: As a data platform administrator, I want to set up outbound access protection for my workspace and create an allowlist using managed private endpoints so that I can control and secure how my workspace resources connect to external networks.
+#customer intent: As a data platform administrator, I want to set up outbound access protection for my workspace and create an allow list using managed private endpoints so that I can control and secure how my workspace resources connect to external networks.
 
 ---
-# Create an allowlist using managed private endpoints
+# Create an allow list using managed private endpoints
 
-The workspace outbound access protection setting blocks all outbound connections from a workspace. After [enabling this setting](workspace-outbound-access-protection-set-up.md), a workspace admin can permit specific outbound connections to resources in other workspaces or external destinations. You can allow outbound access by creating an allowlist using [managed private endpoints](security-managed-private-endpoints-overview.md) with or without the Private Link service:
+When outbound access protection is enabled for a workspace, all outbound connections are blocked by default. For Data Engineering and OneLake workloads, you can then permit access to external data sources or other workspaces by configuring [managed private endpoints](security-managed-private-endpoints-overview.md):
 
-- Use managed private endpoints for connections to external sources.
+- For connections to external data sources, use managed private endpoints.
 - For connections to other workspaces, use managed private endpoints together with the Private Link service.
 
-This article explains how to create managed private endpoints for both of these scenarios. 
+This article explains how to create managed private endpoints for both of these scenarios. Managed private endpoints apply to Data Engineering and OneLake workloads. For Data Factory, use [data connection rules](./workspace-outbound-access-protection-allow-list-connector.md) to allow outbound access.
 
 > [!NOTE]
-> Before creating managed private endpoints, make sure you have completed the steps to [enable outbound access protection](workspace-outbound-access-protection-set-up.md) for your workspace.
+> Before creating managed private endpoints, make sure you have completed the steps to [enable outbound access protection](./workspace-outbound-access-protection-set-up.md) for your workspace.
 
-## Allow outbound access to an external data source
+## Allow outbound access to an external source 
 
 To enable outbound access to external data sources that support managed private endpoints, create a managed private endpoint in your workspace with outbound access protection enabled. The diagram below illustrates Workspace 1, which has outbound access protection turned on, connecting securely to an external data source through a managed private endpoint.
 
@@ -42,7 +42,7 @@ To connect to another workspace in the tenant, use managed private endpoints and
 
 :::image type="content" source="media/workspace-outbound-access-protection-allow-list-endpoint/private-link-service-diagram.png" alt-text="Diagram showing a connection from an outbound access protection enabled workspace to another workspace." lightbox="media/workspace-outbound-access-protection-allow-list-endpoint/private-link-service-diagram.png" border="false":::
 
-### Create the Private Link Service for the target workspace
+### Create the Private Link service for the target workspace
 
 1. Sign in to the [Azure portal](https://portal.azure.com/).
 
@@ -54,7 +54,7 @@ To connect to another workspace in the tenant, use managed private endpoints and
 
     * `<resource-name>` is the name you choose for the Fabric resource.
     * `<tenant-object-id>` is your Microsoft Entra tenant ID. See [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
-    * `<workspace-id>` is the workspace ID you noted as part of the prerequisites.
+    * `<workspace-id>` is the workspace ID for the target workspace. Find it in the workspace URL after `group`.
 
     ```json
     {

@@ -54,6 +54,11 @@
         "source_path_from_root": "/docs/data-warehouse/data-modeling-defining-relationships.md",
         "redirect_url": "/fabric/data-warehouse/semantic-models",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/generate-unique-identifiers.md",
+        "redirect_url": "/fabric/data-warehouse/identity",
+        "redirect_document_id": false
       }
     ]
 }

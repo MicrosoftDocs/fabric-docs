@@ -48,12 +48,12 @@ To set up and use a tenant-level private link, see [Set up and use tenant-level 
 
 A workspace-level private link maps a workspace to a specific virtual network using the Azure Private Link service. With this integration in Eventstream, it allows you to restrict public internet access and enforce access only through approved virtual networks via private links. This ensures that data streaming into Eventstream is tightly controlled and protected from unauthorized access.
 
-The diagram demonstrates a typical Eventstream setup operating under Workspace Private Link.
+<!-- The diagram demonstrates a typical Eventstream setup operating under Workspace Private Link.
 
 :::image type="content" source="media/set-up-private-links/workspace-private-link-scenario.png" alt-text="A screenshot of the Eventstream workspace private link architecture." lightbox="media/set-up-private-links/workspace-private-link-scenario.png":::
 
 * Contoso App1 securely streams data to Eventstream via Private Links.
-* Contoso App2 is blocked from connecting because public access to the workspace is disabled.
+* Contoso App2 is blocked from connecting because public access to the workspace is disabled.-->
 
 To set up and use a workspace-level private link, see [Set up and use workspace-level private links](../../security/security-workspace-level-private-links-set-up.md).
 

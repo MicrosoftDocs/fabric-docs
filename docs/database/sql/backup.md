@@ -48,7 +48,7 @@ ZRS is currently available in only certain regions. When ZRS-based Azure storage
 
 ### Backup storage retention
 
-The default retention period for the backups in a backup chain is 7 days, but this can be extended up to 35 days (as a preview feature).
+The default retention period for the backups in a backup chain is 7 days, but this can be extended up to 35 days.
 
 SQL database in Microsoft Fabric schedules one full backup every week. To provide PITR within the entire retention period, the system stores a complete set of full, differential, and transaction log backups for up to a week longer than the configured retention period.
 
@@ -59,9 +59,6 @@ For all databases, full and differential backups are compressed to reduce backup
 A longer retention duration of SQL database backups increases the storage used for backups in your Fabric capacity. 
 
 #### Change backup storage retention policy
-
-> [!NOTE]
-> The ability to change the retention period from the default of 7 days is currently a preview feature.
 
 To change the backup storage retention from the default 7 days to up to 35 days:
 
@@ -74,7 +71,7 @@ To change the backup storage retention from the default 7 days to up to 35 days:
 
 ## Backup history
 
-You can view the list of backups using simple T-SQL command through the dynamic management view (DMV) [sys.dm_database_backups](/sql/relational-databases/system-dynamic-management-views/sys-dm-database-backups-azure-sql-database?view=fabric&preserve-view=true), which operates similarly to Azure SQL Database. This DMV contains metadata information on all the present backups that are needed for enabling point-in-time restore. The `backup_type` column indicates the type of backup: Full (D) or Differential (I) or Transaction log (L).
+You can view the list of backups using simple T-SQL command through the dynamic management view (DMV) [sys.dm_database_backups](/sql/relational-databases/system-dynamic-management-views/sys-dm-database-backups-azure-sql-database?view=fabric-sqldb&preserve-view=true), which operates similarly to Azure SQL Database. This DMV contains metadata information on all the present backups that are needed for enabling point-in-time restore. The `backup_type` column indicates the type of backup: Full (D) or Differential (I) or Transaction log (L).
 
 To query backup history catalog, [run this T-SQL query in the Fabric portal](query-editor.md) or query tool of your choice:
 
