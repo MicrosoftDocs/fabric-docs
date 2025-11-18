@@ -1,17 +1,17 @@
 ---
-title: Create an allowlist using data connection rules
-description: "Learn how to create an allowlist using data connection rules on Microsoft Fabric workspaces."
+title: Create an allow list using data connection rules
+description: "Learn how to create an allow list using data connection rules on Microsoft Fabric workspaces."
 author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to
 ms.date: 10/22/2025
 
-#customer intent: As a data platform administrator, I want to set up outbound access protection and create an allowlist using data connection rules so that I can control and secure how my workspace resources connect to external networks.
+#customer intent: As a data platform administrator, I want to set up outbound access protection and create an allow list using data connection rules so that I can control and secure how my workspace resources connect to external networks.
 
 ---
 
-# Create an allowlist using data connection rules
+# Create an allow list using data connection rules
 
 When outbound access protection is enabled for a workspace, all outbound connections are blocked by default. For Data Factory workloads, you can permit access to external data sources by configuring data connection rules. These rules let you allow or block specific cloud connections or data gateways: 
 
@@ -24,7 +24,7 @@ This article describes how to use data connection rules in the workspace setting
 > [!NOTE]
 > Data connection rules are available for Data Factory workloads. For Data Engineering or OneLake, use [managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md) to allow outbound access.
 
-## How to create an allowlist using data connection rules
+## How to create an allow list using data connection rules
 
 When you enable the **Block outbound public access** setting in the outbound access protection settings, all outbound connections are blocked by default. To allow cloud or gateway connections, configure data connection rules. You can use either the Fabric portal or the REST API.
 

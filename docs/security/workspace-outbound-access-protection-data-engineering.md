@@ -23,7 +23,7 @@ When outbound access protection is enabled, all outbound connections from the wo
 
 ## Configuring outbound access protection for data engineering
 
-You can only create an allowlist using managed private endpoints; data connection rules aren't supported for data engineering workloads. To configure outbound access protection for data engineering:
+You can only create an allow list using managed private endpoints; data connection rules aren't supported for data engineering workloads. To configure outbound access protection for data engineering:
 
 1. Follow the steps to [enable outbound access protection](workspace-outbound-access-protection-set-up.md). 
 
@@ -102,7 +102,7 @@ df = spark.read.format("csv").option("header", "true").load("abfss://4c8efb42-7d
 > Always use Workspace ID and Lakehouse ID in the URI when accessing data across workspaces.
 
 
-### Spark Jobs
+### Spark jobs
 
 When workspace outbound access protection is enabled, Spark clusters are prevented from making outbound connections to the public internet. This includes:
 
@@ -219,7 +219,7 @@ Periodic monitoring and updates are required to keep the mirror in sync. The fol
    This command creates the following subdirectories in your mirror directory on the local filesystem.
 
    > [!NOTE]
-   > The initial sync takes time to run (refer to [Statistics · PyPI](https://pypi.org/stats/)). Bandersnatch also supports selective mirroring using allowlist and blocklist plugins, enabling more efficient management of dependencies. By filtering unnecessary packages, you can reduce the size of the mirror, minimizing both cost and maintenance effort. For example, if the mirror is intended solely for Fabric, you can exclude Windows binaries to optimize storage. We recommend evaluating these filtering options based on your use case.
+   > The initial sync takes time to run (refer to [Statistics · PyPI](https://pypi.org/stats/)). Bandersnatch also supports selective mirroring using allow list and blocklist plugins, enabling more efficient management of dependencies. By filtering unnecessary packages, you can reduce the size of the mirror, minimizing both cost and maintenance effort. For example, if the mirror is intended solely for Fabric, you can exclude Windows binaries to optimize storage. We recommend evaluating these filtering options based on your use case.
 
    See also [Mirror filtering — Bandersnatch documentation] (https://bandersnatch.readthedocs.io/en/latest/filtering_configuration.html).
 

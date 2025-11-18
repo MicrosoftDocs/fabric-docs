@@ -74,9 +74,9 @@ In the request body, set `outbound` to `Deny`. Also specify the `inbound` value 
 
 ---
 
-After outbound public access is blocked, you can create an allowlist of approved connections to external resources using either data connection rules or managed private endpoints.
+After outbound public access is blocked, you can create an allow list of approved connections to external resources using either data connection rules or managed private endpoints.
 
 ## Next steps
 
-- [Create an allowlist with managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md)
-- [Create an allowlist with data connection rules](./workspace-outbound-access-protection-allow-list-connector.md)
+- [Create an allow list with managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md)
+- [Create an allow list with data connection rules](./workspace-outbound-access-protection-allow-list-connector.md)

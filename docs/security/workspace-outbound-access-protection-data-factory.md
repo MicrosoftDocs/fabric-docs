@@ -25,7 +25,7 @@ Next, the workspace admin configures data connection rules for cloud or gateway 
 
 ## Configuring outbound access protection for Data Factory
 
-You can only create an allowlist using data connection rules; managed private endpoints aren't supported for Data Factory workloads. To configure outbound access protection for Data Factory:
+You can only create an allow list using data connection rules; managed private endpoints aren't supported for Data Factory workloads. To configure outbound access protection for Data Factory:
 
 1. Follow the steps to [enable outbound access protection](workspace-outbound-access-protection-set-up.md). 
 
@@ -43,7 +43,7 @@ The following Data Factory item types are supported with outbound access protect
 
 The next section explains how outbound access protection affects several common Data Factory scenarios.
 
-## Common Scenarios
+## Common scenarios
 
 Workspace outbound access protection affects how Data Factory items connect to other workspaces and external data sources. This section describes common scenarios that illustrate how outbound access protection affects these connections.
 
@@ -64,7 +64,7 @@ Fabric connector types that support workspace-level granularity include lakehous
 
 #### Fabric connectors without workspace-level granularity
 
-Fabric connectors that don't support workspace-level granularity include all Fabric connectors except the types described in the previous section (such as when a data pipeline triggers a notebook). For these connectors, the allowlist applies to all item types, and either allows or blocks all connections without workspace-specific exceptions.
+Fabric connectors that don't support workspace-level granularity include all Fabric connectors except the types described in the previous section (such as when a data pipeline triggers a notebook). For these connectors, the allow list applies to all item types, and either allows or blocks all connections without workspace-specific exceptions.
 
 | Data Pipeline workspace | Notebook workspace | Connector Type | Connector Setting (Allowed/Blocked) | Result |
 |----|----|----|----|----|
@@ -100,7 +100,7 @@ The following table summarizes how workspace outbound access protection applies 
 
 #### Virtual network and on-premises data gateway connections
 
-When you allowlist a gateway, dataflows can connect to any data source accessible through that gateway. All outbound connections made via the allowlisted gateway are allowed.
+When you allow a gateway, dataflows can connect to any data source accessible through that gateway. All outbound connections made via the permitted gateway are allowed.
 
 | Dataflow workspace | Connection type | Destination type | Connection Setting (Allowed/Blocked) | Result |
 |----|----|----|----|----|

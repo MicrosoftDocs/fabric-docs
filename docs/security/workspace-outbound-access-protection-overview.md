@@ -32,7 +32,7 @@ The following sections explain these options in more detail.
 
 ### Using managed private endpoints to allow outbound access
 
-For Data Engineering and OneLake workloads, admins can use managed private endpoints to create an allowlist of approved external resources that can be accessed from the workspace. By default, all outbound connections are blocked when outbound access protection is enabled. Admins can then configure managed private endpoints to explicitly allow connections to resources outside of the workspace.
+For Data Engineering and OneLake workloads, admins can use managed private endpoints to create an allow list of approved external resources that can be accessed from the workspace. By default, all outbound connections are blocked when outbound access protection is enabled. Admins can then configure managed private endpoints to explicitly allow connections to resources outside of the workspace.
 
 :::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection with managed private endpoints." border="false":::
 
@@ -46,9 +46,9 @@ In this diagram:
 
 ### Using data connection rules to allow outbound access
 
-For Data Factory workloads, admins can use data connection rules to create an allowlist of approved connectors that can be used within the workspace. When outbound access protection is enabled, all connectors are blocked by default. Admins can then explicitly allow specific connectors, creating an allowlist of approved connections that workspace items can use to access external services.
+For Data Factory workloads, admins can use data connection rules to create an allow list of approved connectors that can be used within the workspace. When outbound access protection is enabled, all connectors are blocked by default. Admins can then explicitly allow specific connectors, creating an allow list of approved connections that workspace items can use to access external services.
 
-:::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-connectors.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-diagram.png" alt-text="Diagram of workspace outbound access protection with data connection rules." border="false":::
+:::image type="content" source="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-connectors.png" lightbox="media/workspace-outbound-access-protection-overview/workspace-outbound-access-protection-connectors.png" alt-text="Diagram of workspace outbound access protection with data connection rules." border="false":::
 
 In the diagram, outbound access protection is enabled in Workspace A. Data connection rules are also configured in Workspace A, which allow specific cloud or gateway connections. The Dataflow in Workspace A can access SQL Server and ADLS Gen2 Storage through these allowed connectors, while all other outbound connections remain blocked.
 
@@ -56,7 +56,7 @@ In the diagram, outbound access protection is enabled in Workspace A. Data conne
 
 The following table summarizes the supported workloads and item types that can be protected using workspace outbound access protection.
 
-| Workload | Exception (allowlist) mechanism | Supported items | More information |
+| Workload | Exception (allow list) mechanism | Supported items | More information |
 |--|--|--|--|
 | Data Engineering | Managed private endpoints | <ul><li>Lakehouses</li><li>Notebooks</li><li>Spark Job Definitions</li><li>Environments</li></ul> | [Workspace outbound access protection for data engineering workloads](workspace-outbound-access-protection-data-engineering.md) |
 | Data Factory | Data connection rules | <ul><li>Data Flows Gen2 (with CICD)</li><li>Pipelines</li><li>Copy Jobs</li></ul> | [Workspace outbound access protection for Data Factory](workspace-outbound-access-protection-data-factory.md) |
@@ -102,7 +102,7 @@ This section outlines important considerations and limitations when using worksp
 
 #### Fabric portal limitation with private links
 
-The Fabric portal UI doesn't currently support configuring data connection rules if private links are enabled at either the workspace or tenant level. To set up outbound access protection with data connection rules when private links are enabled, use the Outbound Gateway Rules REST API ([learn more](workspace-outbound-access-protection-allow-list-connector.md#how-to-create-an-allowlist-using-data-connection-rules)).
+The Fabric portal UI doesn't currently support configuring data connection rules if private links are enabled at either the workspace or tenant level. To set up outbound access protection with data connection rules when private links are enabled, use the Outbound Gateway Rules REST API ([learn more](workspace-outbound-access-protection-allow-list-connector.md#how-to-create-an-allow-list-using-data-connection-rules)).
 
 #### Region availability limitation
 
@@ -112,14 +112,14 @@ Data connection rules aren't yet available in the following region:
 
 #### Internal (Fabric) connection types with workspace-level granularity
 
-Workspace admins can specify which workspaces are allowed as destinations for certain item types. For example, under the Lakehouse connection type, admins can add workspaces to an allowlist, enabling Lakehouses in those workspaces to be accessed. The following Fabric connection types support workspace-level granularity:
+Workspace admins can specify which workspaces are allowed as destinations for certain item types. For example, under the Lakehouse connection type, admins can add workspaces to an allow list, enabling Lakehouses in those workspaces to be accessed. The following Fabric connection types support workspace-level granularity:
 
    * Lakehouse
    * Warehouse
    * Dataflows
    * Fabric SQL Database
 
-Other Fabric connection types, such as Datamarts, KQL Database, Fabric Data Pipelines, and CopyJob, don't support workspace-level granularity. For these connection types, admins can't specify individual workspaces in the allowlist.
+Other Fabric connection types, such as Datamarts, KQL Database, Fabric Data Pipelines, and CopyJob, don't support workspace-level granularity. For these connection types, admins can't specify individual workspaces in the allow list.
 
 #### External connection types with endpoint granularity
 
