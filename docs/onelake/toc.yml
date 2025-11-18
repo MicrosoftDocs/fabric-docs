@@ -81,6 +81,8 @@ items:
     href: ./snowflake/create-snowflake-database-item.md
   - name: Azure HDInsight
     href: onelake-azure-hdinsight.md
+  - name: Microsoft Foundry knowledge
+    href: onelake-foundry-knowledge.md
   - name: PowerShell
     href: onelake-powershell.md
   - name: AzCopy
