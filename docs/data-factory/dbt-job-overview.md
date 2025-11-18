@@ -226,22 +226,22 @@ Fabric provides several tools to help you monitor and validate your dbt jobs:
 - **Error Logs**: Provide stack traces and query payloads for troubleshooting.
 - **Download Logs**: Export detailed logs or payloads for offline analysis.
 
-## Limitations and best practices
-
-- **Full project runs**: Currently, preview supports full-project runs only (no partial build caching).
-- **Incremental models**: Make sure you have proper primary keys and unique constraints for incremental builds.
-- **Adapter constraints**: Some partner adapters aren't yet supported in Fabric.
-
-### Best practices
-
-- Keep your models modular and test-driven for easier debugging and faster runs.
-- To optimize performance, avoid long dependency chains and prefer well-partitioned transformations.
-
 ## dbt job runtime
 
 In Microsoft Fabric, a dbt Job Runtime is a managed execution environment that provides a consistent and secure way to run dbt jobs. It simplifies execution by offering a versioned environment that includes dbt capabilities, ensuring reliability and performance across workloads. 
 
 Currently, when you create a dbt job, by default it uses **Runtime v1.0**, which supports **dbt Core v1.9** and includes adapters for **Microsoft Fabric Warehouse**, **Azure SQL Database**, **PostgreSQL**, and **Snowflake**. Microsoft maintains alignment with major dbt Core releases to ensure compatibility and feature parity. Updates are applied automatically, and you can track changes in the Fabric release notes.
+
+## Limitations and best practices
+
+- **Full project runs**: Currently, preview supports full-project runs only (no partial build caching).
+- **Incremental models**: Make sure you have proper primary keys and unique constraints for incremental builds.
+- **Adapter constraints**: Some partner adapters aren't yet supported in Fabric. See [dbt job runtime](#dbt-job-runtime) for supported adapters.
+
+### Best practices
+
+- Keep your models modular and test-driven for easier debugging and faster runs.
+- To optimize performance, avoid long dependency chains and prefer well-partitioned transformations.
 
 ## Related content
 
