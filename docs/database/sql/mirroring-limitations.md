@@ -4,7 +4,7 @@ description: "Details on the limitations of mirroring for SQL database in Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac
-ms.date: 10/22/2025
+ms.date: 11/10/2025
 ms.topic: conceptual
 ms.custom:
 ---
@@ -66,8 +66,8 @@ For general limitations for SQL database in Microsoft Fabric, see [Limitations i
    - Upon removing system versioning (splitting temporal data from its history table), the history table is treated as a standalone table and automatically added to mirroring.
 - Full-text indexing is not supported and cannot be created in SQL database in Microsoft Fabric.
 - The **NotSupported** replication status in the [Replication monitor](mirroring-monitor.md) page contains status information specific to the table, often caused by an unsupported data type.
-- Currently, table cannot be mirrored if it has the **json** or **vector** data type.
-    - Currently, you cannot ALTER a column to the **vector** or **json** data type in SQL database in Fabric.
+- Currently, a table cannot be mirrored if it has the **json** or **vector** data type.
+    - Currently, you cannot `ALTER` a column to the **vector** or **json** data type in SQL database in Fabric.
 
 ## Column level
 

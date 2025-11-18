@@ -32,21 +32,23 @@ As with any AI-based product, giving clear instructions and easy-to-understand d
 
 ## Limitations
 
-Operations agents rely on a large language model (LLM) to create the playbook and rules the agent follows, as well as to reason about and generate messages for actions and recommendations. Since LLM-based AI services are probabilistic and can be fallible, it's important to carefully review the results and recommendations they provide. For more information, see the [Fabric Copilot information page](../fundamentals/copilot-real-time-intelligence-privacy-security.md).
+1. Operations agents rely on a large language model (LLM) to create the playbook and rules the agent follows, as well as to reason about and generate messages for actions and recommendations. Since LLM-based AI services are probabilistic and can be fallible, it's important to carefully review the results and recommendations they provide. For more information, see the [Fabric Copilot information page](../fundamentals/copilot-real-time-intelligence-privacy-security.md).
 
-To track what queries and data the agent accesses, you can look into the Eventhouse and KQL database it monitors. In the Query Insights tab, you see the queries that it runs and can validate the KQL it uses.
+   To track what queries and data the agent accesses, you can look into the Eventhouse and KQL database it monitors. In the Query Insights tab, you see the queries that it runs and can validate the KQL it uses.
 
-:::image type="content" source="media/operations-agent/query-insights.png" alt-text="Screenshot of the Query Insights tab in the KQL database.":::
+   :::image type="content" source="media/operations-agent/query-insights.png" alt-text="Screenshot of the Query Insights tab in the KQL database.":::
 
-While system guardrails are in place, heavy usage might result in throttling, which limits the number of messages the agent can send. In such cases, you might receive simplified, non-LLM-generated messages through Teams.
+1. While system guardrails are in place, heavy usage might result in throttling, which limits the number of messages the agent can send. In such cases, you might receive simplified, non-LLM-generated messages through Teams.
 
-At present, the agent and LLM support only English instructions and goals.
+1. At present, the agent and LLM support only English instructions and goals.
 
-The agent operates by using the delegated identity and permissions of its creator. This means:
+1. The agent operates by using the delegated identity and permissions of its creator. This means:
 
-* Queries, data access, and actions run based on the creator's credentials.
-* By default, the creator receives recommendation messages. Changing the recipient doesn't change the credentials used for queries and actions.
+   * Queries, data access, and actions run based on the creator's credentials.
+   * By default, the creator receives recommendation messages. Changing the recipient doesn't change the credentials used for queries and actions.
 
-The agent runs data queries every five minutes when it's active.
+1. The agent runs data queries every five minutes when it's active.
 
-When the agent detects data matching its rules, it tracks the recommended actions and the user's response as an "operation." If the user doesn't respond (approve or reject) within three days, the operation is automatically canceled. After this period, you can't interact with or approve the action.
+1. When the agent detects data matching its rules, it tracks the recommended actions and the user's response as an "operation." If the user doesn't respond (approve or reject) within three days, the operation is automatically canceled. After this period, you can't interact with or approve the action.
+
+1. If your Fabric tenant and capacity are in different regions, you may run into errors when configuring Power Automate actions. Until a fix is available, ensure your workspace capacity is in the same region as your Fabric tenant to use the operations agent.
