@@ -15,9 +15,9 @@ ms.date: 10/22/2025
 
 When outbound access protection is enabled for a workspace, all outbound connections are blocked by default. For Data Factory workloads, you can permit access to external data sources by configuring data connection rules. These rules let you allow or block specific cloud connections or data gateways: 
 
-- **Cloud connections**: You can configure different types of cloud connections, such as lakehouses, databases, and SaaS services. Some connection types can only be fully allowed or fully blocked. Others let you block the connection type by default, but specify exceptions. For example, you can block the Lakehouse connection type for all workspaces except those you explicitly allow.
+- **Cloud connections**: You can configure different types of cloud connections, such as lakehouses, databases, and SaaS services. Some connection types can only be fully allowed or fully blocked. Others let you block the connection type by default, but specify exceptions. For example, you can block the Lakehouse connection type for all workspaces except workspaces you explicitly allow.
 
-- **Data gateways**: Data gateways let you securely connect to on-premises or virtual network resources. Only previously-created data gateways can be allowed or blocked using data connection rules. One way to create a data gateway is by using the **Manage connections and gateways** feature; see [Add or remove a gateway data source](/power-bi/connect-data/service-gateway-data-sources) or [Manage Data Factory data sources](/fabric/data-factory/data-source-management).
+- **Data gateways**: Data gateways let you securely connect to on-premises or virtual network resources. Only data gateways that were previously created can be allowed or blocked using data connection rules. One way to create a data gateway is by using the **Manage connections and gateways** feature; see [Add or remove a gateway data source](/power-bi/connect-data/service-gateway-data-sources) or [Manage Data Factory data sources](/fabric/data-factory/data-source-management).
 
 This article describes how to use data connection rules in the workspace settings to allow cloud connections and data gateways.
 
@@ -46,7 +46,7 @@ When you enable the **Block outbound public access** setting in the outbound acc
 
    - If no exceptions can be configured for the connection type, select **Add**, and then set the toggle to **Allowed**. Select **Save**.
 
-   - If the connection type allows you to configure exceptions (for example Lakehouse), use the drop-down to select the exception (for example, a workspace) you want to allow. Then select **Add**. Leave the toggle for the connection type set to **Blocked**, and select **Save**. This blocks the connection type overall, but allows the exception you selected.
+   - If the connection type allows you to configure exceptions (for example Lakehouse), use the drop-down to select the exception (for example, a workspace) you want to allow. Then select **Add**. Leave the toggle for the connection type set to **Blocked**, and select **Save**. This configuration blocks the connection type overall, but allows the exception you selected.
 
       > [!NOTE]
       > Exceptions can only be added one at a time. To add more exceptions (even to the same connection type), start again from step 1.

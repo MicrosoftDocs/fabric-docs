@@ -46,11 +46,11 @@ The following sections explain how outbound access protection affects specific d
 
 When outbound access protection is enabled on a workspace, notebooks can reference a destination only if a managed private endpoint is set up from the workspace to the destination.
 
-| Source | Destination | Is a managed private endpoint set up? | Can the notebook/Spark job connect to the destination? |
+| Source | Destination | Is a managed private endpoint set up? | Can the notebook or Spark job connect to the destination? |
 |:--|:--|:--|:--|
 | Notebook (Workspace A) | Lakehouse (Workspace B) | Yes, a cross-workspace managed private endpoint from A to B is set up in A | Yes |
 | Notebook (Workspace A) | Lakehouse (Workspace B) | No | No |
-| Notebook (Workspace A) | External ADLS G2/other data source | Yes, a managed private endpoint is set up from A to the external data source | Yes |
+| Notebook (Workspace A) | External Azure Data Lake Storage (ADLS) G2/other data source | Yes, a managed private endpoint is set up from A to the external data source | Yes |
 | Notebook (Workspace A) | External ADLS G2/other data source | No | No | 
 
 ### Understanding file path behavior in Fabric notebooks
@@ -69,11 +69,11 @@ Relative paths are the simplest and most common way to reference files within yo
 df = spark.read.format("csv").option("header", "true").load("Files/people.csv")
 ```
 
-Relative paths work out of the box and require no additional configuration.
+Relative paths work out of the box and require no further configuration.
 
 #### Fully qualified (absolute) paths
 
-Fully qualified paths specify the complete location of a file, including workspace and Lakehouse information. However, using display names in these paths can cause errors, such as socket timeouts, because the Spark session cannot resolve them by default.
+Fully qualified paths specify the complete location of a file, including workspace and Lakehouse information. However, using display names in these paths can cause errors, such as socket timeouts, because the Spark session can't resolve them by default.
 
 **Incorrect example (will fail):**  
 `abfss://your_workspace@onelake.dfs.fabric.microsoft.com/your_lakehouse.Lakehouse/Files/people.csv`
@@ -110,7 +110,7 @@ When workspace outbound access protection is enabled, Spark clusters are prevent
 - Accessing public domains such as `https://login.microsoftonline.com`
 - Connecting to any external APIs or websites
 
-This restriction is enforced by Microsoft Fabric through Managed Virtual Networks (Managed VNETs), which isolate Spark clusters from external networks unless explicit access is granted.
+Microsoft Fabric enforces this restriction through Managed Virtual Networks (Managed VNETs), which isolate Spark clusters from external networks unless explicit access is granted.
 
 #### Secure connectivity with managed private endpoints
 

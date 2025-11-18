@@ -15,13 +15,13 @@ Workspace outbound access protection helps safeguard your data by controlling ou
 
 ## Understanding outbound access protection with Data Factory
 
-When configuring workspace outbound access protection, the workspace admin first enables outbound access protection, which blocks all outbound connections from Dataflow by default.  
+The workspace admin first enables outbound access protection for the workspace, which blocks all outbound connections from dataflows by default.  
 
-:::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-by-default.png" alt-text="Diagram showing the outbound access protection configuration process for Dataflow." lightbox="media/workspace-outbound-access-protection-data-factory/block-by-default.png" border="false":::
+:::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-by-default.png" alt-text="Diagram showing the outbound access protection configuration process for a dataflow." lightbox="media/workspace-outbound-access-protection-data-factory/block-by-default.png" border="false":::
 
-Next, the workspace admin configures data connection rules for cloud or gateway connection policies to specify which external sources are allowed, such as SQL Server and ADLS Gen2 Storage. Once policies are set, Dataflow can connect only to the approved destinations (in this example, SQL Server and ADLS Gen2 Storage), while all other outbound connections remain blocked.
+Next, the workspace admin configures data connection rules for cloud or gateway connection policies. These rules specify which external sources are allowed, such as SQL Server and Azure Data Lake Storage (ADLS) Gen2 Storage. Once policies are set, dataflows can connect only to the approved destinations (in this example, SQL Server and ADLS Gen2 Storage), while all other outbound connections remain blocked.
 
-:::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-and-allow.png" alt-text="Screenshot of Dataflow connections showing allowed connections to SQL Server and ADLS G2 Storage." lightbox="media/workspace-outbound-access-protection-data-factory/block-and-allow.png" border="false":::
+:::image type="content" source="media/workspace-outbound-access-protection-data-factory/block-and-allow.png" alt-text="Screenshot of dataflow connections showing allowed connections to SQL Server and ADLS G2 Storage." lightbox="media/workspace-outbound-access-protection-data-factory/block-and-allow.png" border="false":::
 
 ## Configuring outbound access protection for Data Factory
 
@@ -37,7 +37,7 @@ Once configured, Data Factory items can connect only to the approved destination
 
 The following Data Factory item types are supported with outbound access protection:
 
-- Dataflows Gen2 (with CICD)
+- Dataflow Gen2 (with CI/CD)
 - Pipelines
 - Copy Jobs
 
@@ -45,15 +45,15 @@ The next section explains how outbound access protection affects several common 
 
 ## Common Scenarios
 
-Workspace outbound access protection affects how Data Factory items connect to other workspaces and external data sources. Below are common scenarios illustrating how outbound access protection impacts these connections.
+Workspace outbound access protection affects how Data Factory items connect to other workspaces and external data sources. This section describes common scenarios that illustrate how outbound access protection affects these connections.
 
 ### Internal Fabric connectors
 
 The following tables summarize how workspace outbound access protection applies to Fabric connectors with and without workspace-level granularity.
 
-#### Fabric connectors with workspace allowlist (Lakehouse, Warehouse, Fabric SQL DB, and Dataflows)
+#### Fabric connectors with workspace-level granularity
 
-For Fabric connectors that support workspace-level granularity, you can specify which destination workspaces are permitted for each connector.
+Fabric connector types that support workspace-level granularity include lakehouse, warehouse, Fabric SQL database, and dataflow. For these Fabric connectors, you can specify which destination workspaces are permitted for each connector.
 
 | Source workspace | Destination workspace | Connector Type | Connector Setting | Result |
 |----|----|----|----|----|
@@ -62,9 +62,9 @@ For Fabric connectors that support workspace-level granularity, you can specify 
 | A | B | Lakehouse | Connector blocked (only workspace B is allowed) | Connection is allowed only to lakehouses in workspace B |
 | A | B | Lakehouse | Connector blocked (only workspace C) | Connection to workspace B is blocked |
 
-#### Fabric connectors without granularity (all Fabric connectors except those in 4.1) (example: data pipeline triggering a notebook)
+#### Fabric connectors without workspace-level granularity
 
-For Fabric connectors that lack workspace-level granularity, the allowlist applies to all item types and either allows or blocks all connections without workspace-specific exceptions.
+Fabric connectors that don't support workspace-level granularity include all Fabric connectors except the types described in the previous section (such as when a data pipeline triggers a notebook). For these connectors, the allowlist applies to all item types, and either allows or blocks all connections without workspace-specific exceptions.
 
 | Data Pipeline workspace | Notebook workspace | Connector Type | Connector Setting (Allowed/Blocked) | Result |
 |----|----|----|----|----|
@@ -73,11 +73,11 @@ For Fabric connectors that lack workspace-level granularity, the allowlist appli
 
 ### External data sources
 
-The following tables show how workspace outbound access protection applies to external connectors with granular endpoint exceptions, allowing admins to permit or block specific external destinations.
+The following tables show how workspace outbound access protection applies to external connectors that support granular endpoint exceptions. By configuring exceptions, admins can permit or block specific external destinations.
 
-#### External connector with granular endpoints exception (for example, ADLS Gen2 storage)
+#### External connector with granular endpoints exception
 
-For external connectors that support endpoint-level granularity, you can specify individual destination endpoints as exceptions to outbound access restrictions.
+For external connectors that support endpoint-level granularity, such as ADLS Gen2 storage, you can specify individual destination endpoints as exceptions to outbound access restrictions.
 
 | Dataflow workspace | Destination | Connector Type | Connector Setting | Result |
 |----|----|----|----|----|
@@ -104,7 +104,7 @@ When you allowlist a gateway, dataflows can connect to any data source accessibl
 
 | Dataflow workspace | Connection type | Destination type | Connection Setting (Allowed/Blocked) | Result |
 |----|----|----|----|----|
-| A | VNet/OPDG | Any | Allowed | Dataflow connects to all VNets and OPDGs |
+| A | VNet/OPDG | Any | Allowed | Dataflow connects to all virtual networks (VNets) and on-premises data gateways (OPDGs) |
 | A | VNet/OPDG | Any | Blocked (no exceptions) | Dataflow can't connect to any VNet or OPDG |
 | A | VNet/OPDG | VNet V1 | Blocked; only VNet V1 is an exception | Dataflow connects only to sources behind VNet V1 |
 | A | VNet/OPDG | OPDG O1 | Blocked; only OPDG O1 is an exception | Dataflow connects only to sources behind OPDG O1 |
@@ -130,14 +130,14 @@ When you allowlist a gateway, dataflows can connect to any data source accessibl
 
 - **Pipeline activities**: The Teams activity and Office 365 Outlook activity don't support outbound access protection.
 
-- **Dataflows**: For Dataflows, cross-workspace Data Warehouse destinations aren't supported.
+- **Dataflows**: For dataflows, cross-workspace Data Warehouse destinations aren't supported.
 
 - **Lakehouses with default semantic models**: Workspace outbound access protection isn't supported for lakehouses with default semantic models. 
 
   - To ensure the Lakehouse is compatible with outbound access protection, we recommend enabling outbound access protection on the workspace before creating a Lakehouse to ensure compatibility.
   - Enabling outbound access protection on an existing workspace that already contains a Lakehouse (and its associated Semantic model) isn't supported.
 
-- **Exploratory APIs in pipelines and Copy job**: APIs used for Browse, Preview, and Test Connection operations do not support outbound access protection.
+- **Exploratory APIs in pipelines and Copy job**: APIs used for Browse, Preview, and Test Connection operations don't support outbound access protection.
 
 - **Workspace staging in pipelines**: Internal staging scenarios using workspace staging don't work. Use external staging instead. Staging settings are configurable in the [pipeline copy settings](/fabric/data-factory/copy-data-activity#configure-your-other-settings-under-settings-tab).
 
