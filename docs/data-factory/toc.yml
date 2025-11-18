@@ -61,7 +61,7 @@
             href: tutorial-end-to-end-introduction.md
           - name: Module 1 - Create a pipeline
             href: tutorial-end-to-end-pipeline.md
-          - name: Module 2 - Transform data with a dataflow
+          - name: Module 2 -  data with a dataflow
             href: tutorial-end-to-end-dataflow.md
           - name: Module 3 - Automate and send notification
             href: tutorial-end-to-end-integration.md
@@ -883,7 +883,7 @@
             items: 
               - name: Copy from Azure Blob Storage to Lakehouse
                 href: tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse.md
-              - name: Copy sample data into Lakehouse and transform with a dataflow
+              - name: Copy sample data into Lakehouse and  with a dataflow
                 href: tutorial-load-data-lakehouse-transform.md
               - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
                 href: tutorial-preprocess-data-with-stored-procedure-load-into-lakehouse.md
@@ -999,6 +999,8 @@
             href: dataflow-gen2-copilot-explain.md
           - name: Copilot in Modern Get Data
             href: copilot-modern-get-data.md
+      - name: dbt job
+        href: dbt-job-overview.md
   - name: Orchestrate your pipelines
     items:
       - name: What is a pipeline?
