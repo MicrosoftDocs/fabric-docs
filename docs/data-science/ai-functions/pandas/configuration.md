@@ -134,9 +134,8 @@ client = AzureOpenAI(
 aifunc.setup(client)  # Set the client for all functions.
 ```
 
-> [!NOTE]
->
-> The Fabric trial edition doesn't support bring-your-own Azure OpenAI resources for AI functions. To connect a custom Azure OpenAI endpoint, upgrade to an F2 (or higher) or P capacity.
+> [!TIP]
+> - You can configure a custom AI Foundry resource to use models beyond OpenAI.
 
 ## Related content
 

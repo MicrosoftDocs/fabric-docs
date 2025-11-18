@@ -109,9 +109,22 @@ defaults.set_URL("https://your-openai-endpoint.openai.azure.com/")
 defaults.set_temperature(0.05)
 ```
 
-> [!NOTE]
->
-> The Fabric trial edition doesn't support bring-your-own Azure OpenAI resources for AI functions. To connect a custom Azure OpenAI endpoint, upgrade to an F2 (or higher) or P capacity.
+The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom AI Foundry resource to use models beyond OpenAI:
+
+```python
+import synapse.ml.spark.aifunc.DataFrameExtensions
+from synapse.ml.services.openai import OpenAIDefaults
+
+defaults = OpenAIDefaults()
+defaults.set_URL("https://synapseml-ai-foundry-resource.services.ai.azure.com/") # Use your AI Foundry Endpoint
+defaults.set_subscription_key(os.getenv("AI_Foundry_API_Key")) # Use your AI Foundry API Key
+defaults.set_api_version("2024-05-01-preview")
+defaults.set_model("Llama-3.3-70B-Instruct") # Deployment Name
+```
+
+> [!IMPORTANT]
+> - The `ai.similarity` function is not supported when using an AI Foundry resource
+> - Output may vary depending on the behavior of the selected AI model. Please explore the capabilities of other models with appropriate caution.
 
 ## Related content
 
