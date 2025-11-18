@@ -49,7 +49,7 @@ When you enable the **Block outbound public access** setting in the outbound acc
    - If the connection type allows you to configure exceptions (for example Lakehouse), use the drop-down to select the exception (for example, a workspace) you want to allow. Then select **Add**. Leave the toggle for the connection type set to **Blocked**, and select **Save**. This blocks the connection type overall, but allows the exception you selected.
 
       > [!NOTE]
-> Exceptions can only be added one at a time. To add more exceptions (even to the same connection type), start again from step 1.
+      > Exceptions can only be added one at a time. To add more exceptions (even to the same connection type), start again from step 1.
 
 1. Select **Save**. 
 
@@ -65,15 +65,21 @@ When you enable the **Block outbound public access** setting in the outbound acc
 
 1. Select **Save**.
 
-### [API](#tab/api-2)
+### [REST API](#tab/api-2)
 
-Call the following APIs to view/update the Data Connection rules (Cloud Connections).
+To manage data connection rules using the REST API:
 
-Refer to the [Workspaces - Get Network Communication Policy](/rest/api/fabric/core/workspaces/get-network-communication-policy) and [Workspaces - Set Network Communication Policy](/rest/api/fabric/core/workspaces/set-network-communication-policy) APIs.
+**Cloud connections**
 
-Call the following APIs to view/update the Data Connection rules (Gateways).
+- Use [Workspaces - Get Outbound Cloud Connection Rules](/rest/api/fabric/core/workspaces/get-outbound-cloud-connection-rules) to view current cloud connection rules.
 
-Refer to the [Workspaces - Get Outbound Gateway Rules](/rest/api/fabric/core/workspaces/get-outbound-gateway-rules) and [Workspaces - Set Outbound Gateway Rules](/rest/api/fabric/core/workspaces/set-outbound-gateway-rules) APIs.
+- Use [Workspaces - Set Outbound Cloud Connection Rules](/rest/api/fabric/core/workspaces/set-outbound-cloud-connection-rules) to update cloud connection rules.
+ 
+**Gateways**
+
+- Use [Workspaces - Get Outbound Gateway Rules](/rest/api/fabric/core/workspaces/get-outbound-gateway-rules) to view current gateway rules.
+
+- Use [Workspaces - Set Outbound Gateway Rules](/rest/api/fabric/core/workspaces/set-outbound-gateway-rules) to update gateway rules.
 
 ---
 
