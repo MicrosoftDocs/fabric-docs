@@ -38,7 +38,7 @@ ms.date: 11/18/2024
         1. Select the access key from the list. Note down the name of the access key.
         1. Select the copy button next to the **Primary key** value.
 
-    1. Select **Connect** at the bottom of the page.
+    1. Select **Connect**.
 
     :::image type="content" source="./media/azure-service-bus-source-connector/connection-credentials.png" alt-text="Screenshot that shows connection credentials for an Azure Service Bus connector.":::
 
