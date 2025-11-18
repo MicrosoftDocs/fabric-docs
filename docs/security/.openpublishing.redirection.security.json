@@ -24,6 +24,11 @@
             "source_path_from_root": "/docs/security/conditional-access.md",
             "redirect_url": "/fabric/security/security-conditional-access",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/security/workspace-outbound-access-protection-scenarios.md",
+            "redirect_url": "/fabric/security/workspace-outbound-access-protection-onelake",
+            "redirect_document_id": false
         }
     ]
 }

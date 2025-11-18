@@ -1,18 +1,19 @@
 ---
-title: Time To Live in Cosmos DB Database (Preview)
-description: Automatically purge items after a specified amount of time using the time-to-live (TTL) feature of Cosmos DB in Microsoft Fabric during the preview.
-author: seesharprun
-ms.author: sidandrews
+title: Time To Live in Cosmos DB Database
+description: Automatically purge items after a specified amount of time using the time-to-live (TTL) feature of Cosmos DB in Microsoft Fabric.
+author: markjbrown
+ms.author: mjbrown
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 10/30/2025
 ai-usage: ai-generated
 ---
 
-# Time to live (TTL) in Cosmos DB in Microsoft Fabric (preview)
+# Time to live (TTL) in Cosmos DB in Microsoft Fabric
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+The time-to-live (TTL) feature in Cosmos DB helps you manage your data's lifecycle by automatically deleting items after a specified period, **in seconds**. TTL is especially useful for scenarios where data is only relevant for a limited time, such as session data, metrics, or logs. By enabling TTL, you can keep your database lean, reduce storage costs, and ensure that only current, relevant data is retained.
 
-The time-to-live (TTL) feature in Cosmos DB helps you manage your data's lifecycle by automatically deleting items after a specified period. TTL is especially useful for scenarios where data is only relevant for a limited time, such as session data, metrics, or logs. By enabling TTL, you can keep your database lean, reduce storage costs, and ensure that only current, relevant data is retained.
+> [!NOTE]
+> When you apply a TTL policy on a container. Items expired via TTL are reflected in the data mirrored in OneLake.
 
 ## How TTL works
 
@@ -91,4 +92,3 @@ This table illustrates example scenarios with different TTL values assigned at t
 
 > [!div class="nextstepaction"]
 > [Configure time-to-live (TTL) for a container in Cosmos DB in Microsoft Fabric](how-to-configure-time-to-live.md)
-

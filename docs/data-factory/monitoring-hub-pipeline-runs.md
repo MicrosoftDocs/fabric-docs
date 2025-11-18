@@ -19,7 +19,7 @@ In the **Data Factory** or **Data Engineering** experience, you can access the M
 
    :::image type="content" lightbox="media/monitoring-hub-pipeline-runs/pipeline-access-monitoring-hub.png" source="media/monitoring-hub-pipeline-runs/pipeline-access-monitoring-hub.png" alt-text="Screenshot showing where to find monitoring hub.":::
 
-## Sort, search and filter pipeline runs
+## Sort, search, and filter pipeline runs
 
 For better usability and discoverability, you can sort the pipeline runs by selecting different columns in the UI. You can also filter the pipeline runs based on different columns and search for specific pipeline runs.
 
@@ -47,21 +47,35 @@ When you hover over a pipeline run row, you can see various row-level actions th
 
 ### View pipeline run detail pane
 
-You can hover over a pipeline run row and click the **View detail** icon to open the **Detail** pane and view more details about a pipeline run.
+You can hover over a pipeline run row and select the **View detail** icon to open the **Detail** pane and view more details about a pipeline run.
 
 :::image type="content" source="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-detail-pane.png" alt-text="Screenshot showing the pipeline run detail pane." lightbox="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-detail-pane.png":::
 
 ### Retry a pipeline run
 
-If you need to retry a completed pipeline run, hover over its row and click the **Retry** icon.
+If you need to retry a completed pipeline run, hover over its row and select the **Retry** icon.
 
 :::image type="content" source="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-retry.png" alt-text="Screenshot showing the retry a pipeline run." lightbox="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-retry.png":::
 
 ## Navigate to pipeline run detail view
 
-If you need more information about detail activity runs of the pipeline run, you can click on the name of a pipeline run to navigate to its corresponding pipeline run detail page.
+If you need more information about detail activity runs of the pipeline run, you can select on the name of a pipeline run to navigate to its corresponding pipeline run detail page.
 
-:::image type="content" source="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-level-two-status.png" alt-text="Screenshot showing a pipeline run level two status." lightbox="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-level-two-status.png":::
+:::image type="content" source="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-level-two-status.png" alt-text="Screenshot showing a pipeline run level 2 status." lightbox="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-level-two-status.png":::
+
+## Hierarchical view for pipelines
+
+The hierarchical view helps you navigate through different layers of jobs. Jobs are usually triggered automatically by programs; pipeline is the most common example of this. With this feature, you'll be able to search through a job to its upstream or downstream jobs.
+
+In **Column Options** in Monitoring Hub, you can toggle on the options for **Upstream run** and **Downstream runs**.
+
+:::image type="content" source="media\monitoring-hub-pipeline-runs\hierarchical-view-column-options.png" alt-text="Screenshot showing a Column Options selecting Upstream run and Downstream runs." lightbox="media\monitoring-hub-pipeline-runs\hierarchical-view-column-options.png":::
+
+After applying your changes, you can track your upstream and downstream runs for your Pipelines.
+
+:::image type="content" source="media\monitoring-hub-pipeline-runs\hierarchical-view-pipelines.png" alt-text="Screenshot showing Upstream run and Downstream runs for Pipelines in Monitoring Hub." lightbox="media\monitoring-hub-pipeline-runs\hierarchical-view-pipelines.png":::
+
+It's worth noting that job hierarchy is different from the parent-child relationship of artifacts (which you can see from the workspace view).
 
 ## Related content
 

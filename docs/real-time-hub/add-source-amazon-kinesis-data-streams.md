@@ -19,6 +19,7 @@ This article describes how to add Amazon Kinesis Data Streams as an event source
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
 - An Amazon Web Services (AWS) account with the Kinesis Data Streams service enabled.
 
+## Data sources page
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Add Amazon Kinesis Data Streams as a source

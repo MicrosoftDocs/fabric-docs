@@ -17,7 +17,7 @@ ai.usage: ai-assisted
 
 # Create a Fabric data agent (preview)
 
-With a data agent in Microsoft Fabric, you can create conversational AI experiences that answer questions about data stored in lakehouses, warehouses, Power BI semantic models, and KQL databases in Fabric. Your colleagues can ask questions in plain English and receive data-driven answers, even if they aren't AI experts or deeply familiar with the data.
+With a data agent in Microsoft Fabric, you can create conversational AI experiences that answer questions about data stored in lakehouses, warehouses, Power BI semantic models, KQL databases, and ontologies in Fabric. Your colleagues can ask questions in plain English and receive data-driven answers, even if they aren't AI experts or deeply familiar with the data.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -53,7 +53,7 @@ Refer to the provided screenshot for a visual guide on naming the Fabric data ag
 
 ## Select your data
 
-After you create a Fabric data agent, you can add up to five data sources - including lakehouses, warehouses, Power BI semantic models, and KQL databases - in any combination (up to five total). For example, you could add five Power BI semantic models, or two Power BI semantic models, one lakehouse, and one KQL database.
+After you create a Fabric data agent, you can add up to five data sources - including lakehouses, warehouses, Power BI semantic models, KQL databases, and ontologies - in any combination (up to five total). For example, you could add five Power BI semantic models, or two Power BI semantic models, one lakehouse, and one KQL database.
 
 When you create a Fabric data agent for the first time, and provide a name, the OneLake catalog automatically appears, allowing you to add data sources. To add a data source, select it from the catalog as shown on the next screen, then select **Add**. Each data source must be added individually. For example, you can add a lakehouse, select **Add**, and then proceed to add another data source. To filter the data source types, select the filter icon and then select the desired type. You can view only the data sources of the selected type, making it easier to locate and connect the appropriate sources for your Fabric data agent.
 
@@ -98,7 +98,7 @@ When you ask a question, the Fabric data agent uses the Azure OpenAI Assistant A
 
 ### Schema access with user credentials
 
-The system first uses the credentials of the user to access the schema of the data source (for example, lakehouse, warehouse, PBI semantic model, or KQL databases). This ensures that the system fetches data structure information that the user has permission to view.
+The system first uses the credentials of the user to access the schema of the data source (for example, lakehouse, warehouse, PBI semantic model, KQL databases, or ontology). This ensures that the system fetches data structure information that the user has permission to view.
 
 ### Constructing the prompt
 
@@ -197,7 +197,7 @@ To add or edit example queries, select the **Example queries** button to open th
 
 :::image type="content" source="./media/how-to-create-data-agent/data-agent-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/how-to-create-data-agent/data-agent-adding-examples.png":::
 
-This pane provides options to add or edit example queries for all supported data sources except Power BI semantic models. For each data source, you can select **Add or Edit Example Queries** to input the relevant examples, as shown in the following screenshot:
+This pane provides options to add or edit example queries for all supported data sources except Power BI semantic models and ontologies. For each data source, you can select **Add or Edit Example Queries** to input the relevant examples, as shown in the following screenshot:
 
 :::image type="content" source="./media/how-to-create-data-agent/data-agent-adding-examples-sql.png" alt-text="Screenshot showing the SQL examples you provide to the AI." lightbox="./media/how-to-create-data-agent/data-agent-adding-examples-sql.png":::
 

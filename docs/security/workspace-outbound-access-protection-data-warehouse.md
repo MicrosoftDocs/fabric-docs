@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview #Don't change
-ms.date: 10/16/2025
+ms.date: 11/17/2025
 
 #customer intent: As a data engineer, I want to restrict and manage outbound network connections from my Fabric workspace’s data warehouse workloads, so that I can prevent unauthorized data exfiltration and ensure compliance with my organization’s security requirements.
 
@@ -13,7 +13,7 @@ ms.date: 10/16/2025
 
 # Workspace outbound access protection for Data Warehouse (preview)
 
-Workspace outbound access protection controls outbound connections from your workspace to other workspaces and external sources, helping prevent unauthorized data exfiltration. These protections apply to Fabric Data Warehouse items, including warehouses and SQL analytics endpoints. When enabled, outbound access is restricted to the current workspace, ensuring consistent governance and reducing risk. This article explains how outbound access protection impacts Data Warehouse items.
+Workspace outbound access protection helps safeguard your data by controlling outbound connections from Data Warehouse items in your workspace to external data sources. When this feature is enabled, [Data Warehouse items](#supported-data-warehouse-item-types) are restricted from making outbound connections. At this time, exceptions can’t be configured. All outbound connections from warehouses and SQL analytics endpoints are blocked when outbound access protection is enabled.
 
 ## Understanding outbound access protection with Data Warehouse
 
