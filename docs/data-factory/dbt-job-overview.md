@@ -4,7 +4,7 @@ description: Learn how to use dbt job in Microsoft Fabric to transform your data
 ms.reviewer: whhender
 ms.author: akurnala
 author: abhinayakurnala1
-ms.date: 11/13/2025
+ms.date: 11/18/2025
 ms.topic: overview
 ms.custom:
    - dbt
@@ -22,16 +22,16 @@ With dbt job, you can develop and manage your transformation logic in one placeâ
 
 ## Prerequisites
 
-Before you create dbt job in Microsoft Fabric, make sure your environment is set up correctly:
+Before you create a dbt job in Microsoft Fabric, make sure your environment is set up correctly:
 
-- [Enabling dbt jobs](#enable-dbt-jobs)
-- [Setting up your workspace and warehouse](#set-up-your-workspace-and-warehouse)
-- [Setting permissions and access](#permissions-and-access)
+- [Enable dbt jobs](#enable-dbt-jobs)
+- [Set up your workspace and warehouse](#set-up-your-workspace-and-warehouse)
+- [Set permissions and access](#permissions-and-access)
 
 ### Enable dbt jobs
 
-1. Go to the Admin Portal in Fabric.
-1. Under Tenant Settings, enable the **dbt Jobs (Preview)** feature for your organization or specific security groups.
+1. Go to the [admin portal](/fabric/admin/admin-center) in Fabric.
+1. Under **Tenant settings**, enable the **dbt jobs (preview)** feature for your organization or specific security groups.
 
    :::image type="content" source="media/dbt-job/enable-dbt.png" alt-text="Screenshot of the Fabric UI with the tenant settings to enable dbt job.":::
 
@@ -42,8 +42,8 @@ Before you create dbt job in Microsoft Fabric, make sure your environment is set
 
 ### Permissions and access
 
-- In your Fabric workspace, you need a Contributor role or higher to create or manage dbt jobs.
-- For the target Fabric Data Warehouse, you need read/write permissions to run dbt transformations.
+- In your Fabric workspace, you need a [Contributor role](/fabric/fundamentals/roles-workspaces) or higher to create or manage dbt jobs.
+- For the target Fabric Data Warehouse, you need [read/write permissions](/fabric/data-warehouse/share-warehouse-manage-permissions#manage-permissions) to run dbt transformations.
 - You need both build and read/write access to linked datasets and connections.
 
 ## Create a dbt job
@@ -51,7 +51,7 @@ Before you create dbt job in Microsoft Fabric, make sure your environment is set
 Create a new dbt job item in your workspace to start building transformations.
 
 1. Go to your Fabric workspace.
-1. Select **New item** > **dbt job** from the item creation menu.
+1. Select **+New item** then search for and select **dbt job** from the item creation menu.
 1. Enter a name and select a location.
 
    :::image type="content" source="media/dbt-job/create-job.png" alt-text="Screenshot of the Fabric UI with the create job dialog.":::
@@ -94,13 +94,13 @@ The **change adapter** control at the top-left of the dbt configurations page le
 
 ### What changes when you switch
 
-- The Adapter and Connection backing the Profile.
+- The adapter and connection backing the pProfile.
 - Dependent fields (for example, Schema) might need revalidation.
 - Runtime behavior must align with the adapterâ€™s SQL dialect and capabilities.
 
 ### Advanced settings
 
-After you configure your dbt job's Profile, select **Advanced Settings** to fine-tune execution and run behavior. The Advanced Settings panel is split into two tabs:
+After you configure your dbt job's profile, select **Advanced Settings** to fine-tune execution and run behavior. The Advanced Settings panel is split into two tabs:
 
 - [General settings](#general-settings)
 - [Run settings](#run-settings)
@@ -147,7 +147,7 @@ This tab lets you control which models run and how to select them.
 
 ## Schedule dbt jobs
 
-You can automate dbt job runs using the built-in Schedule feature to refresh models, run tests, or keep data pipelines up to date.
+You can automate dbt job runs using the built-in schedule feature to refresh models, run tests, or keep data pipelines up to date.
 
 1. Open your dbt job in Fabric.
 1. Select the **Schedule** tab in the top panel.
@@ -237,11 +237,11 @@ Fabric provides several tools to help you monitor and validate your dbt jobs:
 - Keep your models modular and test-driven for easier debugging and faster runs.
 - To optimize performance, avoid long dependency chains and prefer well-partitioned transformations.
 
-### dbt Job Runtime
+## dbt job runtime
 
 In Microsoft Fabric, a dbt Job Runtime is a managed execution environment that provides a consistent and secure way to run dbt jobs. It simplifies execution by offering a versioned environment that includes dbt capabilities, ensuring reliability and performance across workloads. 
 
-Currently, when you create a dbt job, by default it uses **Runtime v1.0**, which supports **dbt Core v1.9** and includes adapters for **Microsoft Fabric Warehouse**, **Azure SQL Database**, **PostgreSQL**, and **Snowflake**. Looking ahead, **Runtime v2.0** will introduce dbt Fusion, delivering up to 30x faster performance and enhanced scalability. More details on supported adapters for v2.0 will be shared soon.Microsoft maintains alignment with major dbt Core releases to ensure compatibility and feature parity. Updates are applied automatically, and you can track changes in the Fabric release notes.
+Currently, when you create a dbt job, by default it uses **Runtime v1.0**, which supports **dbt Core v1.9** and includes adapters for **Microsoft Fabric Warehouse**, **Azure SQL Database**, **PostgreSQL**, and **Snowflake**. Microsoft maintains alignment with major dbt Core releases to ensure compatibility and feature parity. Updates are applied automatically, and you can track changes in the Fabric release notes.
 
 ## Related content
 
