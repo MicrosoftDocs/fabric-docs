@@ -22,7 +22,7 @@ With dbt jobs, you can develop and manage your transformation logic in one place
 
 ## Supported dbt version
 
-Fabric currently supports dbt Core v1.9 (subject to periodic updates). Microsoft maintains alignment with major dbt Core releases to ensure compatibility and feature parity. Updates are applied automatically, and you can find notifications in the Fabric release notes.
+Fabric currently supports dbt Core v1.7 (subject to periodic updates). Microsoft maintains alignment with major dbt Core releases to ensure compatibility and feature parity. Updates are applied automatically, and you can find notifications in the Fabric release notes.
 
 ### dbt job run time
 
