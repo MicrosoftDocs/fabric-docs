@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure Cosmos DB (Preview)"
+title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: Learn how to configure a mirrored database from Azure Cosmos DB in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
@@ -9,15 +9,12 @@ ms.topic: tutorial
 no-loc: [Copilot]
 ---
 
-# Tutorial: Configure Microsoft Fabric mirrored database for Azure Cosmos DB (Preview)
+# Tutorial: Configure Microsoft Fabric mirrored database for Azure Cosmos DB
 
 In this tutorial, you configure a Fabric mirrored database from an existing Azure Cosmos DB for NoSQL account.
 
 Mirroring incrementally replicates Azure Cosmos DB data into Fabric OneLake in near real-time, without affecting the performance of transactional workloads or consuming Request Units (RUs).
 You can build Power BI reports directly on the data in OneLake, using DirectLake mode. You can run ad hoc queries in SQL or Spark, build data models using notebooks and use built-in Copilot and advanced AI capabilities in Fabric to analyze the data. 
-
-> [!IMPORTANT]
-> Mirroring for Azure Cosmos DB is currently in [preview](../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
 ## Prerequisites
 
@@ -27,7 +24,7 @@ You can build Power BI reports directly on the data in OneLake, using DirectLake
 - An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../fundamentals/fabric-trial.md). Mirroring might not be available in some Fabric regions. For more information, see [supported regions.](azure-cosmos-db-limitations.md#availability-limitations)
 
 > [!TIP]
-> During the public preview, it's recommended to use a test or development copy of your existing Azure Cosmos DB data that can be recovered quickly from a backup.
+> It's recommended to use a test or development copy of your existing Azure Cosmos DB data that can be recovered quickly from a backup.
 
 ## Configure your Azure Cosmos DB account
 
@@ -49,7 +46,7 @@ Now, create a mirrored database that is the target of the replicated data. For m
 
 1. In the navigation menu, select **Create**.
 
-1. Select **Create**, locate the **Data Warehouse** section, and then select **Mirrored Azure Cosmos DB (Preview)**.
+1. Select **Create**, locate the **Data Warehouse** section, and then select **Mirrored Azure Cosmos DB**.
 
 1. Provide a name for the mirrored database and then select **Create**.
 
@@ -61,7 +58,7 @@ Next, connect the source database to the mirrored database.
 
 1. Provide credentials for the Azure Cosmos DB for NoSQL account including these items:
 
-    | | Value |
+    | Account credentials | Value |
     | --- | --- |
     | **Azure Cosmos DB endpoint** | URL endpoint for the source account. |
     | **Connection name** | Unique name for the connection. |
@@ -78,6 +75,8 @@ Next, connect the source database to the mirrored database.
     > - `Microsoft.DocumentDB/databaseAccounts/readAnalytics`
     >
     > For more information, see [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
+    >
+    > For an example of a script to auto-apply a custom role-based access control role, see [`rbac-cosmos-mirror.sh` on azure-samples/azure-cli-samples](https://github.com/Azure-Samples/azure-cli-samples/blob/master/cosmosdb/common/rbac-cosmos-mirror.sh).
 
 2. Select **Connect**. Then, select a database to mirror. Optionally, select specific containers to mirror.
 
@@ -108,11 +107,11 @@ Now that your data is up and running, there are various analytics scenarios avai
 
 Learn more about how to access and query mirrored Azure Cosmos DB data in Fabric:
 
-- [How to: Query nested data in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-how-to-query-nested.md)
-- [How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview)](../mirroring/azure-cosmos-db-lakehouse-notebooks.md)
-- [How to: Join mirrored Azure Cosmos DB data with other mirrored databases in Microsoft Fabric (Preview)](../mirroring/azure-cosmos-db-how-to-join-multiple.md)
+- [How to: Query nested data in Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-how-to-query-nested.md)
+- [How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric](../mirroring/azure-cosmos-db-lakehouse-notebooks.md)
+- [How to: Join mirrored Azure Cosmos DB data with other mirrored databases in Microsoft Fabric](../mirroring/azure-cosmos-db-how-to-join-multiple.md)
 
 ## Related content
 
-- [Mirroring Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db.md)
+- [Mirroring Azure Cosmos DB](../mirroring/azure-cosmos-db.md)
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)

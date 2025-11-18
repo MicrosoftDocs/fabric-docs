@@ -1,14 +1,14 @@
 ### YamlMime:FAQ
 metadata:
-  title: "Frequently asked questions for Mirroring Fabric SQL database (preview)"
-  description: This article answers frequently asked questions about Mirroring of Fabric SQL database (preview).
+  title: "Frequently asked questions for Mirroring Fabric SQL database"
+  description: This article answers frequently asked questions about Mirroring of Fabric SQL database.
   author: WilliamDAssafMSFT
   ms.author: wiassaf
   ms.reviewer: nzagorac
   ms.topic: faq
   ms.custom:
   ms.date: 10/14/2024
-title: "Frequently asked questions for Mirroring Fabric SQL database (preview)"
+title: "Frequently asked questions for Mirroring Fabric SQL database"
 summary: |
   This article answers frequently asked questions about Mirroring Fabric SQL database.
 
@@ -83,5 +83,5 @@ additionalContent: |
   ## Related content
 
   - [Monitor Fabric mirrored Fabric SQL database replication](mirroring-monitor.md)
-  - [Mirroring Fabric SQL database (preview)](mirroring-overview.md)
-  - [Limitations and behaviors for Fabric SQL database mirroring (preview)](mirroring-limitations.md)
+  - [Mirroring Fabric SQL database](mirroring-overview.md)
+  - [Limitations and behaviors for Fabric SQL database mirroring](mirroring-limitations.md)

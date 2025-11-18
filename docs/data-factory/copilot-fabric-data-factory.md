@@ -42,6 +42,7 @@ Copilot in the Data Factory workload offers different capabilities depending on 
 - **Pipeline Generation**: Using natural language, you can describe your desired pipeline, and Copilot understands the intent and generates the necessary pipeline activities
 - **Error message assistant**: Troubleshoot pipeline issues with clear error explanation capability and actionable troubleshooting guidance
 - **Summarize Pipeline**: Explain your complex pipeline with a summary of content and relations of activities within the Pipeline
+- **Build expressions**: Generate and explain pipeline expressions using Copilot's intuitive chat interface.
 
 ## Best practices for using Copilot in the Data Factory workload
 
@@ -98,6 +99,6 @@ Here are the current limitations of Copilot in the Data Factory workload:
 
 ## Related content
 
+- [Get started with Copilot in Fabric in the Data Factory workload](copilot-fabric-data-factory-get-started.md)
+- [Copilot pipeline expressions builder](copilot-pipeline-expression-builder.md)
 - [Privacy, security, and responsible use of Copilot in Fabric in the Data Factory workload](../fundamentals/copilot-data-factory-privacy-security.md)
-- [Tutorial: Create an end-to-end pipeline](../data-factory/tutorial-end-to-end-pipeline.md)
-- [Tutorial: Create an end-to-end dataflow](../data-factory/tutorial-end-to-end-dataflow.md)

@@ -3,8 +3,8 @@ title: "Troubleshoot Fabric Mirrored Databases"
 description: Troubleshooting scenarios, workarounds, and links for mirrored databases in Microsoft Fabric.
 author: whhender
 ms.author: whhender
-ms.reviewer: imotiwala, maprycem, cynotebo
-ms.date: 07/30/2025
+ms.reviewer: imotiwala, maprycem, cynotebo, wiassaf
+ms.date: 11/06/2025
 ms.topic: troubleshooting
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -24,8 +24,8 @@ Review the troubleshooting section of frequently asked questions for each data s
 - [Troubleshoot Mirroring Azure Cosmos DB](../mirroring/azure-cosmos-db-troubleshooting.yml) and [FAQ about Mirroring Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
 - [Troubleshoot Mirroring Snowflake](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric)
 - [FAQ about Mirroring Azure Databricks](../mirroring/azure-databricks-faq.yml)
-- [Troubleshoot mirroring from Fabric SQL database (preview)](../database/sql/mirroring-troubleshooting.md) and [FAQ for Mirroring Fabric SQL database (preview)](../database/sql/mirroring-faq.yml)
-- [Troubleshoot Fabric mirrored databases From SQL Server](../mirroring/sql-server-troubleshoot.md) and [FAQ for Mirroring SQL Server in Microsoft Fabric](../mirroring/sql-server-faq.yml)
+- [Troubleshoot mirroring from Fabric SQL database](../database/sql/mirroring-troubleshooting.md) and [FAQ for Mirroring Fabric SQL database](../database/sql/mirroring-faq.yml)
+- [Troubleshoot Fabric mirrored databases from SQL Server](../mirroring/sql-server-troubleshoot.md) and [FAQ for Mirroring SQL Server in Microsoft Fabric](../mirroring/sql-server-faq.yml)
 
 Review limitations documentation for each data source:
 
@@ -118,7 +118,17 @@ Currently, views are not supported. Only replicating regular tables are supporte
 
 #### Some of the data in my column appears to be truncated
 
-The SQL analytics endpoint doesn't support **varchar(max)** it only currently supports **varchar(8000)**. A workaround is to use a [warehouse](../data-warehouse/data-warehousing.md#fabric-data-warehouse), which supports **varchar(max)** up to 1MB. You can copy the data from the tables mirrored in OneLake into the warehouse by creating a [copy job](../data-factory/create-copy-job.md) or using the T-SQL [COPY INTO](../data-warehouse/ingest-data-copy.md) statement in a notebook scheduled to run periodically.
+The SQL analytics endpoint supports **varchar(max)** up to 16 MB.
+
+- The limit of 16 MB applies to tables created after November 18, 2025 in mirrored databases, but each mirrored item type can have a different and lower limit. For example, mirrored SQL Server supports up to 1 MB and Cosmos DB supports up to 2 MB. See the following table.
+- Existing tables created before November 18, 2025 only support **varchar(8000)** and need to be recreated to adopt new data type and support data greater that 8 KB. 
+
+| Mirrored platform item | **varchar(max)** limit |
+|:--|:--|
+| Mirrored SQL Server, Azure SQL Database, Azure SQL Managed Instance | 1 MB |
+| SQL database in Fabric | 1 MB |
+| Mirrored Azure Cosmos DB | 2 MB |
+| Cosmos DB in Fabric | 2 MB | 
 
 #### I can't change the source database
 

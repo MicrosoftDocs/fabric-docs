@@ -26,6 +26,8 @@ You can get events from an Azure Service Bus into Real-Time hub in one of the wa
 - [Using the **Data sources** page](#data-sources-page)
 - [Using the **Microsoft sources** page](#azure-sources-page)
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 4. On the **Data sources** page, select **Microsoft sources** category at the top, and then select **Connect** on the **Azure Service Bus** tile. 
