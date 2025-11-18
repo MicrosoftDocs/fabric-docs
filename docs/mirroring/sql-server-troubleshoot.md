@@ -153,7 +153,7 @@ This error occurs if on-premises data gateway (OPDG) cannot connect to the SQL S
 
 #### Error message: SQL server agent is probably stopped, hence watermark in the db is null
 
-For SQL Server 2016-20222, Fabric Mirroring uses SQL Server Agent CDC jobs to track changes in the source tables. This error occurs if SQL Server Agent is not running resulting in the changes on the sources have exceeding the default retention interval. Ensure the SQL Server Agent is running and set to automatically start when the server is restarted.
+For SQL Server 2016-20222, Fabric Mirroring uses SQL Server Agent CDC jobs to track changes in the source tables. This error occurs if SQL Server Agent is not running, resulting in the changes on the sources exceeding the default retention interval. Ensure the SQL Server Agent is running and set to automatically start when the server is restarted.
 
 #### Error message: Table \<schema.table\> definition has changed since CDC was enabled. Please re-enable CDC (EXEC ...)
 
