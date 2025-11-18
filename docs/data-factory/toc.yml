@@ -69,6 +69,8 @@
         href: decision-guide-data-integration.md
       - name: Decide - Data movement strategy
         href: decision-guide-data-movement.md
+      - name: Decide - Data transformation strategy
+        href: decision-guide-data-transformation.md
       - name: Decide - Copy activity, Copy job, dataflow, or Spark?
         href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md 
       - name: Create a Copy job
