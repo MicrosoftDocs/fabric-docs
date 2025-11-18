@@ -930,13 +930,13 @@
           - name: Stored Procedure activity
             href: stored-procedure-activity.md
           - name: SQL script activity
-            href: script-activity.md
-      - name: Decide - Data transformation strategy
-        href: decision-guide-data-transformation.md
+            href: script-activity.md      
       - name: Dataflows
         items:
           - name: What are dataflows?
             href: dataflows-gen2-overview.md
+          - name: Decide - Data transformation strategy
+            href: decision-guide-data-transformation.md
           - name: Tutorials
             items: 
               - name: Use a dataflow in a pipeline
