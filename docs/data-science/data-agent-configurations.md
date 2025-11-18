@@ -49,6 +49,12 @@ Here is a recommended starting format for writing effective agent-level instruct
 
 :::image type="content" source="media/how-to-create-data-agent/configuration-agent-instructions.png" alt-text="Screenshot of adding data agent level instructions to the data agent" lightbox="media/how-to-create-data-agent/configuration-agent-instructions.png":::
 
+## Data source description
+
+Data Source descriptions allow creators to provide high-level context about each data source so the Data Agent can intelligently route questions. A description should summarize what the data source contains, the types of questions it can answer, and any business-specific nuances that help distinguish it from other sources. The agent uses this information during its reasoning process to determine which source is the most relevant to a user’s query.
+
+:::image type="content" source="media/how-to-create-data-agent/configuration-data-source-description.png" alt-text="Screenshot of adding data source descriptions to the data agent" lightbox="media/how-to-create-data-agent/configuration-data-source-description.png":::
+
 ## Data source instructions
 
 Data source instructions are applied when the agent routes a question to a specific data source. These instructions provide the context needed to construct precise queries—whether in SQL, DAX, or KQL—so the agent can retrieve accurate information.
