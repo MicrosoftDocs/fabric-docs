@@ -91,7 +91,7 @@ sections:
 
           The built-in mirroring feature for Cosmos DB in Fabric also supports the use of T-SQL to query data. Mirroring and the SQL analytics endpoint allow you to use familiar T-SQL syntax to work with your Cosmos DB data, making it easier to integrate with existing SQL-based workflows and tools.
 
-          For more information, see [use the NoSQL query language](/nosql/query/overview?context=/fabric/context/context-database).
+          For more information, see [use the NoSQL query language](/cosmos-db/query/overview?context=/fabric/context/context-database).
       - question: |
           Does Cosmos DB in Fabric support aggregation functions?
         answer: |

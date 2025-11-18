@@ -41,7 +41,7 @@ To modify a Cosmos DB container, open the **Settings** section for a container i
 1. Select **Save** to persist your changes.
 
     > [!Note]
-    > Time-to-live (TTL) on a container will also apply to any data mirrored to OneLake. For more information on time-to-live (TTL) configuration, see [time-to-live](time-to-live.md). For more information on geospatial configuration, see [geospatial data](/nosql/query/geospatial).
+    > Time-to-live (TTL) on a container will also apply to any data mirrored to OneLake. For more information on time-to-live (TTL) configuration, see [time-to-live](time-to-live.md). For more information on geospatial configuration, see [geospatial data](/cosmos-db/query/geospatial).
 
 ## Indexing policy
 
