@@ -17,15 +17,15 @@ This article contains information about how ontology (preview) capacity usage is
 ## Consumption rates
 
 >[!IMPORTANT]
-> Billing for ontology (preview) is not currently in effect, except where otherwise noted for associated underlying Fabric items that are being used. The information provided here is for informational purposes and is subject to change.
+> Billing for ontology (preview) is not currently in effect, except where otherwise noted for associated underlying Fabric items that are being used. The information provided in this article is for informational purposes and is subject to change.
 
 The following table defines how many capacity units (CU) are consumed when an ontology (preview) item is used.
 
 | Meter name | Operation name | Description | Unit of measure | Fabric consumption rate |
 | --- | --- | --- | --- | --- |
-| Ontology Modeling | Ontology AI | Measures the usage of ontology definitions (including entity types, relationships, properties, and bindings). | Per ontology definition usage <br><br>*Usage is defined by intervals of at minimum 30 minutes, each time the API is triggered by CRUD definitions such as entity types, relationships, properties, or bindings.* | 0.0039 CU per hour |
-| Ontology Logic and Operations​ | Ontology Logic and Operations​ | Measures the usage for ontology operations, including visualizations, logic, graph creation, ontology exploration, and querying and analyzing with query endpoints (including API and SQL endpoint) | Per hour | 40 CU per hour <br><br>*While ontology (preview) billing is not in effect, users are billed according to their [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.* |
-| Ontology AI | Ontology AI Operations | Measures the usage of AI for context driven reasoning and query over ontology | (Input) Per 1000 Tokens <br><br>(Output) Per 1000 Tokens | (Input) 400 CU seconds <br><br>(Output) 1600 CU seconds <br><br>*While ontology (preview) billing is not in effect, users are billed according to their [Copilot in Fabric](../../fundamentals/copilot-fabric-consumption.md) usage.* |
+| Ontology Modeling | Ontology AI | Measures the usage of ontology definitions (including entity types, relationships, properties, and bindings). | Per ontology definition usage <br><br>*Usage is defined by intervals of at minimum 30 minutes, each time the API is triggered by CRUD definitions like entity types, relationships, properties, or bindings.* | 0.0039 CU per hour |
+| Ontology Logic and Operations​ | Ontology Logic and Operations​ | Measures the usage for ontology operations, including visualizations, logic, graph creation, ontology exploration, and querying and analyzing with query endpoints (including API and SQL endpoint) | Per hour | 40 CU per hour <br><br>*While ontology (preview) billing isn't in effect, users are billed according to their [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.* |
+| Ontology AI | Ontology AI Operations | Measures the usage of AI for context driven reasoning and query over ontology | (Input) Per 1,000 Tokens <br><br>(Output) Per 1,000 Tokens | (Input) 400 CU seconds <br><br>(Output) 1,600 CU seconds <br><br>*While ontology (preview) billing isn't in effect, users are billed according to their [Copilot in Fabric](../../fundamentals/copilot-fabric-consumption.md) usage.* |
 
 ## Monitor usage
 
@@ -34,7 +34,7 @@ The [Microsoft Fabric Capacity Metrics](../../enterprise/metrics-app.md) app pro
 The Microsoft Fabric Capacity Metrics app must be installed by a capacity admin. Once the app is installed, anyone in the organization can be granted permissions to view the app. For more information about the app, see [Install the Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md#install-the-app).
 
 >[!IMPORTANT]
-> Billing for ontology (preview) is not currently in effect, except where otherwise noted for associated underlying Fabric items that are being used. The information provided here is for informational purposes and is subject to change.
+> Billing for ontology (preview) is not currently in effect, except where otherwise noted for associated underlying Fabric items that are being used. The information provided in this article is for informational purposes and is subject to change.
 
 ## Manage usage
 
@@ -46,9 +46,9 @@ Microsoft Fabric allows administrators to [pause and resume](../../enterprise/pa
 
 ### Other considerations
 
-Consider the following factors that could potentially impact cost:
+Consider the following factors that could potentially affect cost:
 
-* **Model uptime:** Charges for the time your ontology model is running. This is dependent on the number of definitions, model complexity, size, and usage time.
+* **Model uptime:** Charges for the time your ontology model is running. This factor is dependent on the number of definitions, model complexity, size, and usage time.
 * **Ontology logic and operations:** Charges for running queries and associated compute. Operations like indexing, refresh rates, and idle time can affect CU usage.
 * **AI reasoning and query:** Charges for advanced reasoning and natural language queries powered by AI, based on the number of tokens used.
 
