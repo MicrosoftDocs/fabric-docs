@@ -876,11 +876,11 @@ items:
 - name: Build AI agents
   displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
   items:
-    - name: Operation agents  
+    - name: Operations agents  
       items:
-      - name: Getting started with operation agents
+      - name: Getting started with operations agents
         href: operations-agent.md 
-      - name: Operation agents limitations
+      - name: Operations agents limitations
         href: operations-agent-limitations.md
     - name: Fabric RTI MCP Server (preview)
       href: mcp-overview.md 
