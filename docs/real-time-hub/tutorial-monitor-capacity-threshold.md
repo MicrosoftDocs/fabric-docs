@@ -1,6 +1,6 @@
 ---
 title: Monitor Fabric Capacity Health in Real Time with Capacity Overview Events
-description: build an automated workflow that sends an Outlook email alert when your capacity approaches throttling conditions
+description: Build an automated workflow that sends an Outlook email alert when your capacity approaches throttling conditions
 author: george-guirguis
 ms.author: george-guirguis
 ms.reviewer: george-guirguis
@@ -11,12 +11,12 @@ ms.topic: tutorial
 
 As organizations scale their usage of Microsoft Fabric, maintaining healthy capacities becomes increasingly important. With **Capacity Overview Events** in the Real-Time Hub, administrators can monitor capacity behavior in real time and take action when conditions require attention.
 
-In this tutorial, you'll create an automated workflow that sends an **Outlook email alert** when your capacity approaches throttling conditions—triggered by the `interactiveDelayThresholdPercentage` metric.
+In this tutorial, you can create an automated workflow that sends an **Outlook email alert** when your capacity approaches throttling conditions—triggered by the `interactiveDelayThresholdPercentage` metric.
 
 
 ## Prerequisites
 
-You must have access to an **existing non-trial Fabric capacity** where you are assigned the **Capacity Admin** role.
+You must have access to an **existing non-trial Fabric capacity** where you're assigned the **Capacity Admin** role.
 
 ## Create an Activator
 
@@ -40,11 +40,11 @@ You must have access to an **existing non-trial Fabric capacity** where you are 
    - **Operator:** `Number greater than`  
    - **Value:** `20`
 > [!NOTE]  
-> The value **20%** is intentionally low for testing purposes. For production workloads, raise this to the threshold meaningful for your operational policy (for example, 80% or 90%).
+> The value **20%** is intentionally low for testing purposes. For production workloads, raise this value to the threshold meaningful for your operational policy (for example, 80% or 90%).
 
 4. Select **Next** and **Connect**
 
-This connects the Activator to the real-time Capacity Summary events emitted by your selected capacity.
+This step connects the Activator to the real-time Capacity Summary events emitted by your selected capacity.
 
 ## Add a Rule
 
@@ -60,4 +60,4 @@ Your real-time alerting workflow is now active.
 
 ## Observe the alert
 
-Once your Activator is saved and started, it will automatically listen for Capacity Overview Events from the selected capacity. When an event arrives where the interactiveDelayThresholdPercentage exceeds the threshold you configured, the Activator will send an email alert.
+Once your Activator is saved and started, it automatically listens for Capacity Overview Events from the selected capacity. When an event arrives where the interactiveDelayThresholdPercentage exceeds the threshold you configured, the Activator sends an email alert.
