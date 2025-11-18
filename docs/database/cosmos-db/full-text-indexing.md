@@ -152,13 +152,13 @@ As with the full text policies, full text indexes can be defined on multiple pat
 
 Full text search and scoring operations are performed using the following system functions in the Cosmos DB in Fabric query language:
 
-- [`FULLTEXTCONTAINS`](/nosql/query/fulltextcontains): Returns `true` if a given string is contained in the specified property of a document. This function is useful in a `WHERE` clause when you want to ensure specific key words are included in the documents returned by your query.
+- [`FULLTEXTCONTAINS`](/cosmos-db/query/fulltextcontains): Returns `true` if a given string is contained in the specified property of a document. This function is useful in a `WHERE` clause when you want to ensure specific key words are included in the documents returned by your query.
 
-- [`FULLTEXTCONTAINSALL`](/nosql/query/fulltextcontainsall): Returns `true` if *all* of the given strings are contained in the specified property of a document. This function is useful in a `WHERE` clause when you want to ensure that multiple key words are included in the documents returned by your query.
+- [`FULLTEXTCONTAINSALL`](/cosmos-db/query/fulltextcontainsall): Returns `true` if *all* of the given strings are contained in the specified property of a document. This function is useful in a `WHERE` clause when you want to ensure that multiple key words are included in the documents returned by your query.
 
-- [`FULLTEXTCONTAINSANY`](/nosql/query/fulltextcontainsany): Returns `true` if *any* of the given strings are contained in the specified property of a document. This function is useful in a `WHERE` clause when you want to ensure that at least one of the key words is included in the documents returned by your query.
+- [`FULLTEXTCONTAINSANY`](/cosmos-db/query/fulltextcontainsany): Returns `true` if *any* of the given strings are contained in the specified property of a document. This function is useful in a `WHERE` clause when you want to ensure that at least one of the key words is included in the documents returned by your query.
 
-- [`FULLTEXTSCORE`](/nosql/query/fulltextscore): Use this function in an `ORDER BY RANK` clause to return documents ordered by their full text score, placing the most relevant (highest scoring) documents at the top and the least relevant (lowest scoring) at the bottom.
+- [`FULLTEXTSCORE`](/cosmos-db/query/fulltextscore): Use this function in an `ORDER BY RANK` clause to return documents ordered by their full text score, placing the most relevant (highest scoring) documents at the top and the least relevant (lowest scoring) at the bottom.
 
 Here are a few examples of each function in use.
 

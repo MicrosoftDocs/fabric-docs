@@ -31,6 +31,8 @@ items:
     href: create-adls-shortcut.md
   - name: Create a Blob Storage shortcut
     href: create-blob-shortcut.md
+  - name: Create a OneDrive or SharePoint shortcut
+    href: create-onedrive-sharepoint-shortcut.md
   - name: Create an Amazon S3 shortcut
     href: create-s3-shortcut.md
   - name: Create an Amazon S3 compatible shortcut
@@ -79,6 +81,8 @@ items:
     href: ./snowflake/create-snowflake-database-item.md
   - name: Azure HDInsight
     href: onelake-azure-hdinsight.md
+  - name: Microsoft Foundry knowledge
+    href: onelake-foundry-knowledge.md
   - name: PowerShell
     href: onelake-powershell.md
   - name: AzCopy
@@ -115,7 +119,7 @@ items:
       href: ./security/column-level-security.md
     - name: Row-level security
       href: ./security/row-level-security.md
-  - name: How to encrypt data in Onelake?
+  - name: How to encrypt data in OneLake?
     href: /fabric/security/workspace-customer-managed-keys?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json    
   - name: Authorize with a OneLake shared access signature (SAS)
     items:

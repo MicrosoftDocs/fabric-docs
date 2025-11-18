@@ -495,7 +495,7 @@ WHERE
 
 The query predicate (filtering on items that have headquarters in a location that contains "United") can be evaluated with an index scan of the `headquarters/country` path. Unlike a precise index scan, a full index scan always scans through the distinct set of possible values to identify the index pages where there are results. In this case, `CONTAINS` is run on the index. The index lookup time and RU charge for index scans increases as the cardinality of the path increases. In other words, the more possible distinct values that the query engine needs to scan, the higher the latency and RU charge involved in doing a full index scan.  
 
-For example, consider two properties: `town` and `country`. The cardinality of town is 5,000 and the cardinality of `country` is 200. Here are two example queries that each have a [`CONTAINS`](/nosql/query/contains) system function that does a full index scan on the `town` property. The first query uses more request units (RUs) than the second query because the cardinality of town is higher than `country`.
+For example, consider two properties: `town` and `country`. The cardinality of town is 5,000 and the cardinality of `country` is 200. Here are two example queries that each have a [`CONTAINS`](/cosmos-db/query/contains) system function that does a full index scan on the `town` property. The first query uses more request units (RUs) than the second query because the cardinality of town is higher than `country`.
 
 ```nosql
 SELECT
@@ -576,11 +576,11 @@ Like in the first example, the `CONTAINS` system function might return some fals
 
 Queries with the following aggregate functions must rely exclusively on the index, so evaluating some system functions requires a full scan.
 
-- [`AVG`](/nosql/query/avg)
-- [`COUNT`](/nosql/query/count)
-- [`MAX`](/nosql/query/max)
-- [`MIN`](/nosql/query/min)
-- [`SUM`](/nosql/query/sum)
+- [`AVG`](/cosmos-db/query/avg)
+- [`COUNT`](/cosmos-db/query/count)
+- [`MAX`](/cosmos-db/query/max)
+- [`MIN`](/cosmos-db/query/min)
+- [`SUM`](/cosmos-db/query/sum)
 
 ## Related content
 

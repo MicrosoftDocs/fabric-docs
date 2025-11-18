@@ -15,6 +15,8 @@ This article describes how to pull diagnostic logs and metrics data from your Az
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Add Azure diagnostics source

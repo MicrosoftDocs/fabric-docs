@@ -91,7 +91,7 @@ sections:
 
           The built-in mirroring feature for Cosmos DB in Fabric also supports the use of T-SQL to query data. Mirroring and the SQL analytics endpoint allow you to use familiar T-SQL syntax to work with your Cosmos DB data, making it easier to integrate with existing SQL-based workflows and tools.
 
-          For more information, see [use the NoSQL query language](/nosql/query/overview?context=/fabric/context/context-database).
+          For more information, see [use the NoSQL query language](/cosmos-db/query/overview?context=/fabric/context/context-database).
       - question: |
           Does Cosmos DB in Fabric support aggregation functions?
         answer: |
@@ -228,21 +228,19 @@ sections:
           - Microsoft Entra authentication for secure access
           - Data encryption at rest and in transit
           - Workspace-based access control through Fabric permissions
-          - Customer-managed keys (CMK) for encryption (preview)
-
+          
           For more information, see [security for Cosmos DB in Fabric](security.md).
       - question: |
           How can I set user permissions for my Cosmos DB in Fabric artifact?
         answer: |
-          Cosmos DB in Fabric inherits user Fabric workspace permissions. For example, if a user has workspace viewer permissions, they have read-only access to the Cosmos DB artifact. Currently, you cannot set item-level permissions.
+          Cosmos DB in Fabric inherits user Fabric workspace permissions. For example, if a user has workspace viewer permissions, they have read-only access to the Cosmos DB artifact. Currently, you can set item-level permissions. However, they will be applied to all Cosmos DB artifacts within the workspace.
 
           For more information, see [limitations for Cosmos DB in Fabric](limitations.md).
       - question: |
           Does Cosmos DB in Fabric support customer-managed keys (CMK)?
         answer: |
-          Yes. Customer-managed key (CMK) encryption is available in preview. CMK allows you to add an extra layer of encryption using your own keys from Azure Key Vault. CMK must be enabled before creating any Cosmos DB artifacts and cannot be disabled once a Cosmos DB artifact exists within the workspace.
+          No. Customer-managed key (CMK) encryption is not currently available for Cosmos DB in Fabric.
 
-          For more information, see [customer-managed keys for Cosmos DB in Fabric](customer-managed-keys.md).
       - question: |
           Does Cosmos DB in Fabric support Private Link?
         answer: |

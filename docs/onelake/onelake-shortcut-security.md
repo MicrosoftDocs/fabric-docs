@@ -1,7 +1,7 @@
 ---
 title: Secure and manage OneLake shortcuts
 description: Understand security for OneLake shortcuts and the permissions required for shortcut creation and data access.
-ms.reviewer: trolson
+ms.reviewer: kgremban
 ms.author: aamerril
 author: aamerril
 ms.search.form: Shortcuts

@@ -4,7 +4,7 @@ description: Learn about how to secure data in mirrored databases From SQL Serve
 author: whhender
 ms.author: whhender
 ms.reviewer: ajayj
-ms.date: 05/19/2025
+ms.date: 11/18/2025
 ms.topic: how-to
 ms.custom:
 ---
@@ -26,8 +26,7 @@ This guide helps you establish data security in your mirrored SQL Server in Micr
 1. Fabric needs to authenticate to the SQL Server instance. For this purpose, create a dedicated database user with limited permissions, to follow the principle of least privilege. Create either a login with a strong password and connected user in the source database, or a contained database user with a strong password. For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-tutorial.md).
 
 > [!IMPORTANT]
-> Any granular security established in the source SQL Server database must be re-configured in the mirrored database in Microsoft Fabric.
-> For more information, see [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md).
+> If the source tables have granular security such as row-level security, column-level security, or data masking configured, the tables will be mirrored without the granular security. The granular security must be reconfigured in the mirrored database in Microsoft Fabric. For more information, see [Get started with OneLake security (preview)](../onelake/security/get-started-onelake-security.md) and [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md).
 
 ## Data protection features
 
