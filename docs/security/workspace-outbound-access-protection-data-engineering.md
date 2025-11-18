@@ -221,7 +221,7 @@ Periodic monitoring and updates are required to keep the mirror in sync. The fol
    > [!NOTE]
    > The initial sync takes time to run (refer to [Statistics · PyPI](https://pypi.org/stats/)). Bandersnatch also supports selective mirroring using allow list and blocklist plugins, enabling more efficient management of dependencies. By filtering unnecessary packages, you can reduce the size of the mirror, minimizing both cost and maintenance effort. For example, if the mirror is intended solely for Fabric, you can exclude Windows binaries to optimize storage. We recommend evaluating these filtering options based on your use case.
 
-   See also [Mirror filtering — Bandersnatch documentation] (https://bandersnatch.readthedocs.io/en/latest/filtering_configuration.html).
+   See also [Mirror filtering — Bandersnatch documentation](https://bandersnatch.readthedocs.io/en/latest/filtering_configuration.html).
 
 
 1. To verify the mirror setup, you can use an HTTP server to serve your local PyPI mirror. This command starts a simple HTTP server on port 8000 that serves the contents of the mirror directory:
