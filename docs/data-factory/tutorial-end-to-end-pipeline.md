@@ -89,6 +89,9 @@ The high-level steps in module 1 are:
 
 1. At the top of the pipeline editor, select **Run** to run the pipeline and copy the data.
 
+   >[!NOTE]
+   >This copy can take over 30 minutes to complete.
+
    :::image type="content" source="media/tutorial-end-to-end-pipeline/run-pipeline.png" alt-text="Screenshot of the pipeline editor with the Run button highlighted." lightbox="media/tutorial-end-to-end-pipeline/run-pipeline.png":::
 
 1. You can monitor the run and check the results on the **Output** tab below the pipeline canvas. Select name of the pipeline to view the run details.
@@ -99,7 +102,7 @@ The high-level steps in module 1 are:
 
 ## Next step
 
-Continue to the next section to create your dataflow.
+Once the copy has completed, it can take around half an hour, continue to the next section to create your dataflow.
 
 > [!div class="nextstepaction"]
 > [Module 2: Transform data with a dataflow in Data Factory](tutorial-end-to-end-dataflow.md)
