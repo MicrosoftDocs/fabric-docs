@@ -119,7 +119,7 @@ defaults = OpenAIDefaults()
 defaults.set_URL("https://synapseml-ai-foundry-resource.services.ai.azure.com/") # Use your AI Foundry Endpoint
 defaults.set_subscription_key(os.getenv("AI_Foundry_API_Key")) # Use your AI Foundry API Key
 defaults.set_api_version("2024-05-01-preview")
-defaults.set_model("Llama-3.3-70B-Instruct") # Deployment Name
+defaults.set_model("grok-4-fast-reasoning") # Deployment Name
 ```
 
 > [!IMPORTANT]
