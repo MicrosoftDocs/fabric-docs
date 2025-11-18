@@ -931,6 +931,8 @@
             href: stored-procedure-activity.md
           - name: SQL script activity
             href: script-activity.md
+      - name: Decide - Data transformation strategy
+        href: decision-guide-data-transformation.md
       - name: Dataflows
         items:
           - name: What are dataflows?
