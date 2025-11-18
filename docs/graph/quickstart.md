@@ -6,8 +6,6 @@ ms.date: 10/28/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam
-ms.service: fabric
-ms.subservice: graph
 ms.search.form: Get Started with Graph in Microsoft Fabric
 ---
 

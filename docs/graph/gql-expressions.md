@@ -6,8 +6,6 @@ ms.date: 10/09/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: splantikow
-ms.service: fabric
-ms.subservice: graph
 ---
 
 # GQL expressions, predicates, and functions

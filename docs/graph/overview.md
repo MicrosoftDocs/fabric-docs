@@ -6,8 +6,6 @@ ms.date: 10/28/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam
-ms.service: fabric
-ms.subservice: graph
 ms.custom: references_regions
 ms.search.form: Graph Overview
 ---
