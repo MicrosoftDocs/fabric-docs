@@ -123,7 +123,7 @@ defaults.set_model("Llama-3.3-70B-Instruct") # Deployment Name
 ```
 
 > [!IMPORTANT]
-> - The `ai.similarity` function is not supported when using an AI Foundry resource
+> - The `ai.similarity` function isn't supported when using an AI Foundry resource
 > - Output may vary depending on the behavior of the selected AI model. Please explore the capabilities of other models with appropriate caution.
 
 ## Related content
