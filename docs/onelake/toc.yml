@@ -31,6 +31,8 @@ items:
     href: create-adls-shortcut.md
   - name: Create a Blob Storage shortcut
     href: create-blob-shortcut.md
+  - name: Create a OneDrive or SharePoint shortcut
+    href: create-onedrive-sharepoint-shortcut.md
   - name: Create an Amazon S3 shortcut
     href: create-s3-shortcut.md
   - name: Create an Amazon S3 compatible shortcut
@@ -65,7 +67,7 @@ items:
     href: onelake-access-python.md
   - name: OneLake Deep Dive ADLS and Blob APIs in Action
     href: onelake-apis-in-action.md
-- name: Integrate with Azure services
+- name: Integrate with other services
   items:
   - name: Azure Synapse Analytics
     href: onelake-azure-synapse-analytics.md
@@ -75,6 +77,8 @@ items:
     href: onelake-azure-databricks.md
   - name: Databricks Unity Catalog
     href: onelake-unity-catalog.md
+  - name: Snowflake
+    href: ./snowflake/create-snowflake-database-item.md
   - name: Azure HDInsight
     href: onelake-azure-hdinsight.md
   - name: PowerShell

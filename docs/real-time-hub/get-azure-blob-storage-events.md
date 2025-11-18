@@ -45,6 +45,8 @@ You can create streams for Azure Blob Storage events in Real-Time hub using one 
 - [Using the **Data sources** page](#data-sources-page)
 - [Using the **Azure events** page](#azure-events-page)
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 4. On the **Data sources** page, select **Azure events** category at the top, and then select **Connect** on the **Azure Blob Storage events** tile. 

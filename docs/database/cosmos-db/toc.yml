@@ -14,16 +14,32 @@ items:
         href: sample-data.md
       - name: Query cross-database
         href: how-to-query-cross-database.md
-  - name: Integrate with other services
+  - name: Integrate with Fabric services
     items:
       - name: Mirror to OneLake
         href: mirror-onelake.md
       - name: Query mirrored data
         href: tutorial-mirroring.md
-      - name: Create Power BI reports
-        href: how-to-create-reports.md
       - name: Access data from a lakehouse
         href: how-to-access-data-lakehouse.md
+      - name: Create Power BI reports
+        href: how-to-create-reports.md
+      - name: Spark Notebooks
+        href: how-to-use-spark-notebooks.md
+      - name: Python Notebooks
+        href: how-to-use-python-notebooks.md
+      - name: User data functions
+        href: how-to-user-data-functions.md
+  - name: Samples
+    items:
+      - name: Cosmos DB getting started
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/python-crud-fundamentals
+      - name: Vector search
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search
+      - name: Advanced vector search
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search-advanced
+      - name: Spark analytics with Power BI queries
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/spark-analytics-powerbi
   - name: Build AI applications
     items:
       - name: Index vector data
@@ -47,8 +63,12 @@ items:
         href: security.md
       - name: Authorization
         href: authorization.md
-      - name: Authenticate with Microsoft Entra ID
+      - name: Authenticate from Azure services
         href: how-to-authenticate.md
+      - name: Authenticate from Fabric Notebooks
+        href: how-to-authenticate-notebooks.md
+      - name: Customer managed keys
+        href: customer-managed-keys.md
   - name: Manage resources
     items:
       - name: Configure container
@@ -70,10 +90,14 @@ items:
       - name: Autoscale throughput
         href: autoscale-throughput.md
   - name: Write queries
-    href: nosql-query/toc.yml
+    href: query/toc.yml
   - name: Troubleshoot
     items:
       - name: Limitations
         href: limitations.md
       - name: Mirroring limitations
         href: mirroring-limitations.md
+      - name: Cosmos DB v2 connector limitations
+        href: cosmos-db-v2-connector-limitations.md
+      - name: Vector indexing and customer managed keys
+        href: troubleshoot-vector-indexing-customer-managed-keys.md

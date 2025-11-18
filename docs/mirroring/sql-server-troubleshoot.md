@@ -13,8 +13,6 @@ ms.custom:
 
 This article covers troubleshooting steps for mirroring a database in a SQL Server instance.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 ## Changes to Fabric capacity or workspace
 
 Learn more from [Changes to Fabric capacity](troubleshooting.md#changes-to-fabric-capacity). 
@@ -95,7 +93,7 @@ If the Fabric Mirroring source SQL Server database transaction log is full due t
 
 ## Performance impact on source mirrored database in SQL Server
 
-In SQL Server 2025 (Preview), you can create a resource governor pool to manage and cap the workload of Fabric mirroring on your SQL Server. You can use resource governor to manage Database Engine resource consumption and enforce policies for user workloads. Resource governor lets you reserve or limit various server resources, including the amount of CPU, memory, and physical I/O that user query workloads can use. In this way, you can protect your primary business workloads from pressure from Fabric Mirroring's change feed data collection. 
+In SQL Server 2025, you can create a resource governor pool to manage and cap the workload of Fabric mirroring on your SQL Server. You can use resource governor to manage Database Engine resource consumption and enforce policies for user workloads. Resource governor lets you reserve or limit various server resources, including the amount of CPU, memory, and physical I/O that user query workloads can use. In this way, you can protect your primary business workloads from pressure from Fabric Mirroring's change feed data collection. 
 
 - To get started, see [Optimize performance of mirrored databases from SQL Server](sql-server-performance.md#resource-governor-for-sql-server-mirroring).
 - For more information, see [Resource governor](/sql/relational-databases/resource-governor/resource-governor?view=sql-server-ver17&preserve-view=true).

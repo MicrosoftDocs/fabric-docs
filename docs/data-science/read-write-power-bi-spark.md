@@ -11,7 +11,11 @@ ms.date: 03/22/2025
 ms.search.form: Read write powerbi
 ---
 
-# Read from semantic models and write data consumable by Power BI using Spark
+# Read from semantic models and write data consumable by Power BI using Spark (DEPRECATED)
+
+> [!IMPORTANT]
+> The Spark native connector for Semantic Link is in deprecation mode as of October 2025 and will be fully retired by **October 2028**.
+> To ensure continued support and access to new features, please migrate to the [Semantic Link Python SDK](/python/api/semantic-link/overview-semantic-link).
 
 In this article, you can learn how to read data and metadata and evaluate measures in semantic models using the semantic link Spark native connector in Microsoft Fabric.
 You will also learn how to write data that semantic models can consume.

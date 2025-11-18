@@ -43,16 +43,6 @@
                     href: pricing-scenario-load-1-tb-csv-to-lakehouse-files.md
                   - name: Load 1 TB of Parquet data to a Lakehouse table
                     href: pricing-scenario-load-1-tb-parquet-to-lakehouse-table.md
-              - name: Dataflow Gen2
-                items: 
-                  - name: Load 2 GB of on-premises CSV data to a Lakehouse table
-                    href: pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md
-                  - name: Load 2 GB of Parquet data to a Lakehouse table
-                    href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md
-                  - name: Load 6 GB of CSV data to a Lakehouse table with Fast Copy enabled
-                    href: pricing-scenario-dataflows-gen2-load-6-gb-csv-to-lakehouse-table-fastcopy.md
-                  - name: Load 2 GB of Parquet data to a Lakehouse table through Virtual Network Data Gateway
-                    href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-vnet-gateway.md
               - name: Copy job
                 items:
                   - name: Load 1 TB of CSV data to a Lakehouse table
@@ -973,6 +963,8 @@
             href: dataflow-gen2-refresh.md
           - name: Dataflow Gen2 with CICD and Git integration
             href: dataflow-gen2-cicd-and-git-integration.md
+          - name: AI Functions in Dataflow Gen2 (Preview)
+            href: dataflow-gen2-ai-functions.md
           - name: Fast copy at scale
             href: dataflows-gen2-fast-copy.md
           - name: Modern query evaluator (Preview)
@@ -1115,6 +1107,8 @@
         href: create-alerts-for-pipeline-runs.md
       - name: Evaluate pipeline expressions
         href: evaluate-pipeline-expression.md
+      - name: Copilot pipeline expression builder (Preview)
+        href: copilot-pipeline-expression-builder.md
       - name: Pipeline sample templates
         href: templates.md
       - name: Monitor pipeline runs

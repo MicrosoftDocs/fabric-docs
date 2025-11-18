@@ -45,7 +45,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - `BULK LOAD`
 - `CREATE USER`
 - `FOR JSON` must be the last operator in the query, and so is not allowed inside subqueries
-- IDENTITY Columns
 - Manually created multi-column stats
 - Materialized views
 - `PREDICT`
