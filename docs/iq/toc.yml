@@ -47,6 +47,6 @@ items:
   - name: Graph in Microsoft Fabric
     href: ../graph/overview.md
   - name: Operations agent
-    href: /rest/api/fabric/articles/item-management/definitions/operations-agent-definition
+    href: ../real-time-intelligence/operations-agent.md
   - name: Power BI semantic model
     href: ../data-warehouse/semantic-models.md
