@@ -18,8 +18,6 @@ If you want to connect your own application with an eventstream, you can add a c
 
 This article shows you how to add a custom endpoint source or a custom app source to an eventstream in Microsoft Fabric.
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 ## Prerequisites
 
 - Access to the workspace where your eventstream is located. The workspace must be in Fabric capacity or trial mode.
@@ -56,7 +54,7 @@ You also need to make sure that the managed identity of the custom endpoint has 
   
 ::: zone pivot="basic-features"  
 
-## Add a custom endpoint data as a source
+## Add custom endpoint data as a source
 
 1. To add a custom endpoint source, on the get-started page, select **Use custom endpoint**. Or, if you already have a published eventstream and you want to add custom endpoint data as a source, switch to edit mode. On the ribbon, select **Add source** > **Custom endpoint**.
 
@@ -76,7 +74,7 @@ You also need to make sure that the managed identity of the custom endpoint has 
 
 ::: zone pivot="extended-features"
 
-## Add a custom endpoint data as a source
+## Add custom endpoint data as a source
 
 1. To add a custom endpoint source, on the get-started page, select **Use custom endpoint**. Or, if you already have a published eventstream and you want to add custom endpoint data as a source, switch to edit mode. On the ribbon, select **Add source** > **Custom endpoint**.
 
@@ -119,6 +117,8 @@ You also need to make sure that the managed identity of the custom endpoint has 
         Enter the JSON code into the editor.
 
         :::image type="content" source="../schema-sets/media/create-manage-event-schemas/code-editor-schema-json.png" alt-text="Screenshot that shows JSON code in the code editor to build a schema." lightbox="../schema-sets/media/create-manage-event-schemas/code-editor-schema-json.png":::
+
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ::: zone-end
 
@@ -193,4 +193,4 @@ For a clear guide on using the custom endpoint with the Kafka protocol, refer to
 
 ## Related content
 
-- For a list of supported sources, see [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md)
+- For a list of supported sources, see [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md).
