@@ -11,7 +11,8 @@ ms.custom: dataflows
 
 # Use public parameters in Dataflow Gen2
 
-> For more information on how to leverage this capability in continous integration / continous deployment (CI/CD) scenarios, be sure to read the article on [CI/CD and ALM solution architectures for Dataflow Gen2](dataflow-gen2-cicd-alm-solution-architecture.md) and the end-to-end tutorial on [Parameterized Dataflow Gen2](dataflow-gen2-parameterized-dataflow.md).
+>[!TIP]
+>For more information on how to leverage this capability in continous integration / continous deployment (CI/CD) scenarios, read the article on [CI/CD and ALM solution architectures for Dataflow Gen2](dataflow-gen2-cicd-alm-solution-architecture.md) and the end-to-end tutorial on [Parameterized Dataflow Gen2](dataflow-gen2-parameterized-dataflow.md).
 
 Parameters in Dataflow Gen2 allow you to dynamically control and customize dataflows, making them more flexible and reusable by enabling different inputs and scenarios without modifying the dataflow itself. It helps keep things organized by reducing the need for multiple dataflows and centralizing control within a single, parameterized dataflow.
 

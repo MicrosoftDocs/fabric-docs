@@ -17,7 +17,7 @@ In this tutorial, learn how to explore the data in your lakehouse with a noteboo
 
 To get started, you need the following prerequisites:
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - Read the [Lakehouse overview](lakehouse-overview.md).
 
 ## Open or create a notebook from a lakehouse
@@ -42,7 +42,7 @@ You can add multiple lakehouses to the same notebook. By switching the available
 
 :::image type="content" source="media\lakehouse-notebook-explore\select-different-lakehouse.png" alt-text="Screenshot showing a list of available files in the Lake view." lightbox="media\lakehouse-notebook-explore\select-different-lakehouse.png":::
 
-In the lakehouse list, the pin icon next to the name of a lakehouse indicates that it's the default lakehouse in your current notebook. In the notebook code, if only a relative path is provided to access the data from the [!INCLUDE [product-name](../includes/product-name.md)] OneLake, then the default lakehouse is served as the root folder at run time.
+In the lakehouse list, the pin icon next to the name of a lakehouse indicates that it's the default lakehouse in your current notebook. In the notebook code, if only a relative path is provided to access the data from the Microsoft Fabric OneLake, then the default lakehouse is served as the root folder at run time.
 
 To switch to a different default lakehouse, move the pin icon.
 
