@@ -2,7 +2,7 @@
 title: Current Limitations of Graph in Microsoft Fabric
 description: Understand the current limitations of Graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL (Graph Query Language) conformance.
 ms.topic: reference
-ms.date: 10/28/2025
+ms.date: 11/18/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam
@@ -228,7 +228,7 @@ We're still working on conformance to GQL standards for:
 -	LOCAL DATETIME value type
 -	LOCAL TIME value type
 -	CALL named procedure statement
--	ORDER BY with explict NULL ordering
+-	ORDER BY with explicit NULL ordering
 -	Tabular FOR statement
 -	EXCEPT ALL statement
 -	EXCEPT DISTINCT statement
