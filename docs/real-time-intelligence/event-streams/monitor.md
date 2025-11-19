@@ -90,7 +90,6 @@ Streaming connector source nodes include the following sources:
 - Azure SQL Database Change Data Capture (CDC)
 - Azure SQL Managed Instance CDC
 - Confluent Cloud Kafka
-- Cribl
 - Google Cloud Pub/Sub
 - HTTP
 - MongoDB CDC
