@@ -228,7 +228,7 @@ We're still working on conformance to GQL standards for:
 -	LOCAL DATETIME value type
 -	LOCAL TIME value type
 -	CALL named procedure statement
--	ORDER BY with explict NULL ordering
+-	ORDER BY with explicit NULL ordering
 -	Tabular FOR statement
 -	EXCEPT ALL statement
 -	EXCEPT DISTINCT statement
