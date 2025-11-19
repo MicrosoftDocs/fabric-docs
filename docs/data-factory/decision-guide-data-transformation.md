@@ -10,23 +10,23 @@ ms.custom:
 
 # Microsoft Fabric decision guide: Choose a data transformation strategy
 
-> **Note**  
-> To get the most out of this article, we recommend reviewing [**Query Folding Basics**](/power-query/query-folding-basics), which provides essential background that will help you understand the concepts discussed here.
 
+> [!NOTE]
+> To get the most out of this article, we recommend reviewing [**Overview of query evaluation and query folding in Power Query**](/power-query/query-folding-basics), which provides essential background that will help you understand the concepts discussed here.
 
 
 Microsoft Fabric Dataflows Gen2 offers multiple ways to ingest, transform, and load data efficiently, helping you balance **performance**, **scalability**, and **cost**.
 
 Depending on your transformation needs, you can choose from three powerful capabilities:
 
-- **Fast Copy** – Accelerate bulk data movement with minimal transformation.  
-- **Modern Evaluator** – Optimize complex transformation performance for non-foldable queries.  
-- **Partitioned Compute** – Scale transformations across large and partitioned datasets.
+- [**Fast copy in Dataflow Gen2**](dataflows-gen2-fast-copy.md) – Accelerate bulk data movement with minimal transformation.  
+- [**Modern Evaluator for Dataflow Gen2**](dataflow-gen2-modern-evaluator.md)  – Optimize complex transformation performance for non-foldable queries.  
+- [**Use partitioned compute in Dataflow Gen2**](dataflow-gen2-partitioned-compute.md) – Scale transformations across large and partitioned datasets.
 
 This guide explains **when and why** to use each feature, supported by real-world examples and benchmarking results.
 
 
-### When to use each capability
+## When to use each capability
 
 | Capability          | Flagship scenario                                    | Ideal workload                                      | Supported sources | Typical benefits |
 |--------------------|------------------------------------------------------|------------------------------------------------------|-------------------|------------------|
@@ -35,9 +35,9 @@ This guide explains **when and why** to use each feature, supported by real-worl
 | **Partitioned Compute** | Partitioned datasets                             | High-volume transformations across multi-file sources | ADLS Gen2, Azure Blob Storage, Lakehouse files, Local folders | Parallelized execution and faster processing |
 
 
-### Benchmark dataset
+## Benchmark dataset
 
-All scenarios in this guide use the [**New York City Taxi & Limousine Commission (TLC) Trip Data – TLC Trip Record Data**](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) dataset, which contains billions of records detailing taxi trips across NYC.
+All scenarios in this guide use the [**New York City Taxi & Limousine Commission (TLC) Trip Data – TLC Trip Record Data**](/azure/open-datasets/dataset-taxi-yellow?tabs=azureml-opendatasets) dataset, which contains billions of records detailing taxi trips across NYC.
 
 - **Data format:** Parquet files stored in ADLS Gen2  
 - **Data size:** Multi-gigabyte datasets for years 2021–2025 (up to August)  
@@ -48,7 +48,7 @@ This consistent dataset provides a fair and controlled environment to compare Fa
 
 
 
-## Scenario 1: Accelerating bulk ingestion with Fast Copy
+## Scenario 1: Accelerate bulk ingestion with fast copy
 
 ### Background
 The NYC Taxi analytics team needs to load millions of raw Parquet trip records from ADLS Gen2 into a Fabric Lakehouse. No transformations are required, only a direct copy to support downstream analytics.
@@ -61,7 +61,7 @@ The NYC Taxi analytics team needs to load millions of raw Parquet trip records f
 ### Solution
 The team enables **Fast Copy** in Dataflows Gen2. Fast Copy optimizes data movement paths and parallelizes writes for supported connectors.
 
-#### Fast Copy considerations
+#### Fast copy considerations
 - Supports **.csv** and **.parquet** file formats.  
 - Supports up to **1M rows per table per run** for Azure SQL Database.  
 - Best suited for **extract–load** workflows with minimal transformations.
@@ -73,12 +73,12 @@ Year-wise merged NYC Yellow Taxi Parquet files, five consolidated partitions (20
 #### Design
 :::image type="content" source="media/decision-guide-data-transformation/fast-copy-design.png" alt-text="Screenshot of dataflow design for Fast Copy showcasing Query settings" lightbox="media/decision-guide-data-transformation/fast-copy-design.png":::
 
-#### Results
+### Results
 
-##### Without Fast Copy
+#### Without fast copy
 :::image type="content" source="media/decision-guide-data-transformation/results-without-fast-copy.png" alt-text="Screenshot of Recent runs results without Fast Copy" lightbox="media/decision-guide-data-transformation/results-without-fast-copy.png":::
 
-##### With Fast Copy
+#### With fast copy
 :::image type="content" source="media/decision-guide-data-transformation/results-with-fast-copy.png" alt-text="Screenshot of Recent runs results with Fast Copy" lightbox="media/decision-guide-data-transformation/results-with-fast-copy.png":::
 
 | Dataflow Capability | Execution Time (hh:mm:ss) |
@@ -89,14 +89,14 @@ Year-wise merged NYC Yellow Taxi Parquet files, five consolidated partitions (20
 ### Outcome
 Fast Copy achieves **up to ~9× faster ingestion** while reducing compute usage.
 
-#### Use Fast Copy when:
+#### Use fast copy when:
 - Your dataflow performs a direct copy from supported sources.  
 - You need high-throughput ingestion for large datasets.  
 - You want faster loads at lower compute cost.
 
 
 
-## Scenario 2: Improving transformation speed with Modern Evaluator
+## Scenario 2: Improve transformation speed with modern evaluator
 
 ### Background
 After ingestion, the team applies filtering, null replacement, and code mapping before loading data into the Warehouse. These transformations don’t fully fold back to Parquet and are slow in memory.
@@ -109,7 +109,7 @@ After ingestion, the team applies filtering, null replacement, and code mapping 
 ### Solution
 The team enables **Modern Evaluator**, a high-performance execution engine designed for efficient transformation especially for connectors like ADLS Gen2 and SharePoint.
 
-#### Modern Evaluator considerations
+#### Modern evaluator considerations
 - Expected refresh times may be **significantly faster** (varies by dataset and transformations).  
 - Optimized for large volumes (millions of rows).  
 - Particularly beneficial for non-foldable queries.  
@@ -123,10 +123,10 @@ All Parquet files for 2021–Aug 2025 merged into one consolidated file.
 
 #### Results
 
-##### Without Modern Evaluator
+##### Without modern evaluator
 :::image type="content" source="media/decision-guide-data-transformation/results-without-modern-evaluator.png" alt-text="Screenshot of Recent runs results without Modern Evaluator" lightbox="media/decision-guide-data-transformation/results-without-modern-evaluator.png":::
 
-##### With Modern Evaluator
+##### With modern evaluator
 :::image type="content" source="media/decision-guide-data-transformation/results-with-modern-evaluator.png" alt-text="Screenshot of Recent runs results with Modern Evaluator" lightbox="media/decision-guide-data-transformation/results-with-modern-evaluator.png":::
 
 | Dataflow Capability | Execution Time (hh:mm:ss) |
@@ -137,14 +137,14 @@ All Parquet files for 2021–Aug 2025 merged into one consolidated file.
 ### Outcome
 Modern Evaluator improves transformation speed by **~1.6×** while preserving the no-code Power Query experience.
 
-#### Use Modern Evaluator when:
+#### Use modern evaluator when:
 - Working with non-foldable or partially foldable connectors.  
 - Applying filters, column derivations, or data cleansing.  
 - You want faster, more efficient execution without changing logic.
 
 
 
-## Scenario 3: Scaling transformations with Partitioned Compute
+## Scenario 3: Scale transformations with partitioned compute
 
 ### Background
 The team must now aggregate and enrich trip data across hundreds of Parquet files (monthly partitions). Transformations include computing tip percentages across the dataset.
@@ -157,7 +157,7 @@ The team must now aggregate and enrich trip data across hundreds of Parquet file
 ### Solution
 The team enables **Partitioned Compute**, which parallelizes processing across partitions and merges results efficiently.
 
-#### Partitioned Compute considerations
+#### Partitioned compute considerations
 - Recommended when the source doesn’t support folding.  
 - Best performance when loading to staging or Warehouse.  
 - Use **Sample transform file** from Combine Files to ensure consistent transformation logic.  
@@ -170,13 +170,13 @@ The team enables **Partitioned Compute**, which parallelizes processing across p
 :::image type="content" source="media/decision-guide-data-transformation/partitioned-compute-design.png" alt-text="Screenshot of dataflow design for Partitioned Compute showcasing Query settings" lightbox="media/decision-guide-data-transformation/partitioned-compute-design.png":::
 
 #### Results
-##### Without Partitioned Compute
+##### Without partitioned compute
 :::image type="content" source="media/decision-guide-data-transformation/results-without-partitioned-compute.png" alt-text="Screenshot of Recent runs results without Partitioned Compute" lightbox="media/decision-guide-data-transformation/results-without-partitioned-compute.png":::
 
-##### With Partitioned Compute
+##### With partitioned compute
 :::image type="content" source="media/decision-guide-data-transformation/results-with-partitioned-compute.png" alt-text="Screenshot of Recent runs results with Partitioned Compute" lightbox="media/decision-guide-data-transformation/results-with-partitioned-compute.png":::
 
-##### With Partitioned Compute + Modern Evaluator:
+##### With partitioned compute + modern evaluator:
 :::image type="content" source="media/decision-guide-data-transformation/results-with-partitioned-compute-and-modern-evaluator.png" alt-text="Screenshot of Recent runs results with Partitioned Compute + Modern Evaluator" lightbox="media/decision-guide-data-transformation/results-with-partitioned-compute-and-modern-evaluator.png":::
 
 | Dataflow Capability                     | Execution Time (hh:mm:ss) |
@@ -188,7 +188,7 @@ The team enables **Partitioned Compute**, which parallelizes processing across p
 ### Outcome
 Partitioned Compute delivers **15× faster performance**, and when combined with Modern Evaluator, **22× faster processing** for large, partitioned datasets.
 
-#### Use Partitioned Compute when:
+#### Use partitioned compute when:
 - Working with large, partitioned, or multi-file datasets.  
 - Transformations can be parallelized (aggregations, joins, filters).  
 - You need high-performance, scalable data preparation pipelines.  
@@ -196,7 +196,7 @@ Partitioned Compute delivers **15× faster performance**, and when combined with
 
 
 
-## Choosing the right strategy
+## Choose the right strategy
 
 | Your goal | Recommended capability |
 |-----------|------------------------|
