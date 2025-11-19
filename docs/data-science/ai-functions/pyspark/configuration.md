@@ -112,7 +112,7 @@ defaults.set_temperature(0.05)
 The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom AI Foundry resource to use models beyond OpenAI:
 
 > [!IMPORTANT]
-> - Support for Azure AI Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with a JSON schema
+> - Support for Azure AI Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
 > - Output may vary depending on the behavior of the selected AI model. Please explore the capabilities of other models with appropriate caution
 > - The `ai.similarity` function isn't supported when using an AI Foundry resource
 
