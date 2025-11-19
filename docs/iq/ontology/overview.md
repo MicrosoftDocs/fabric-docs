@@ -55,6 +55,9 @@ After you define an ontology, you can [bind it to your data](how-to-bind-data.md
 
 ### Ontology graph
 
+>[!IMPORTANT]
+>Ontology's graph feature relies on [Graph in Microsoft Fabric](../../graph/overview.md), so the Graph setting must be enabled for your tenant. For more information, see [Required tenant settings](#required-tenant-settings).
+
 The *ontology graph* is the navigable instance graph built from your bindings and relationship definitions. It's visible from the [ontology preview experience](how-to-use-preview-experience.md). In the graph, nodes are entity instances, and edges are links (either asserted or derived) with metadata attributes. Each node or edge keeps data source lineage and follows a scheduled data refresh. Graphs enable visual exploration of business context, execution of graph algorithms (like paths, centrality, and communities), and rule‑driven inferences. Graphs improve semantics by making relationships first‑class, so context isn't buried in join logic, but instead is explicit, queryable, and governed.
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
@@ -62,6 +65,29 @@ The *ontology graph* is the navigable instance graph built from your bindings an
 ### Querying your ontology
 
 *Ontology querying* lets you ask business-level questions over bound sources through ontology concepts. Queries start with entity types and allow filtering by properties, traversing relationships, aggregating by time, and other constraints. The ontology layer pushes predicates down to the native engines where possible (GQL for Graph in Microsoft Fabric and KQL for Eventhouse). It also includes an NL2Ontology query layer that converts natural language into a detailed federated query plan, executes the plan, and returns the relevant results. By querying concepts rather than physical schemas, federated queries improve semantics. They ensure that filters, joins, units, and validity windows align with the canonical definitions you published in your ontology.
+
+## Required tenant settings
+
+To use all features of ontology (preview), enable the settings described in this section on your Fabric tenant. [Fabric administrators](../../admin/roles.md) can grant access to these settings in the [admin portal](../../admin/admin-center.md). In the [tenant settings](../../admin/tenant-settings-index.md), enable the following settings:
+
+* **Ontology item (preview)**
+
+    This setting is required to create ontology (preview) items.
+
+    :::image type="content" source="media/overview/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
+
+* **Graph (preview)**
+
+    This setting is required to enable the graphs associated with ontology (preview).
+
+    :::image type="content" source="media/overview/prerequisite-graph.png" alt-text="Screenshot of enabling graph in the admin portal.":::
+
+* **Data agent item types (preview)** enabled on your tenant.
+
+    This setting is optional, but required if you want to use ontology (preview) with a Fabric data agent.
+
+    :::image type="content" source="media/overview/prerequisite-data-agent.png" alt-text="Screenshot of enabling data agents in the admin portal.":::
+
 
 ## Next steps
 

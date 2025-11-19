@@ -77,6 +77,9 @@ The ontology (preview) item opens when it's ready.
 
 :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/ontology-start.png" alt-text="Screenshot of new ontology.":::
 
+>[!NOTE]
+>If you see an error that Fabric is unable to create the ontology (preview) item, make sure that [Graph in Microsoft Fabric](../../graph/overview.md), is enabled for your tenant as described in the [Tutorial prerequisites](tutorial-0-introduction.md#prerequisites).
+
 Next, review the entity types, data bindings, and relationships that were generated from your semantic model. In the following sections, you make a few edits to complete the ontology configuration, and verify that generated items are correct.
 
 ## Verify entity types
@@ -214,6 +217,9 @@ In this tutorial step, you build an ontology from the sample OneLake data that y
 The ontology opens when it's ready.
 
 :::image type="content" source="media/tutorial-1-create-ontology/onelake/ontology-blank.png" alt-text="Screenshot of empty ontology.":::
+
+>[!NOTE]
+>If you see an error that Fabric is unable to create the ontology (preview) item, make sure that [Graph in Microsoft Fabric](../../graph/overview.md), is enabled for your tenant as described in the [Tutorial prerequisites](tutorial-0-introduction.md#prerequisites).
 
 Next, create entity types, data bindings, and relationships based on data from your lakehouse tables. 
 

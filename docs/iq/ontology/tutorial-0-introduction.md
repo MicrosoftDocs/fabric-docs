@@ -32,9 +32,11 @@ Choose your preferred scenario by using the selector at the beginning of the art
 
         :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
 
+        :::image type="content" source="media/tutorial-0-introduction/prerequisite-graph.png" alt-text="Screenshot of enabling graph in the admin portal.":::
+
         :::image type="content" source="media/tutorial-0-introduction/prerequisite-data-agent.png" alt-text="Screenshot of enabling data agents in the admin portal.":::
 
-        :::image type="content" source="media/tutorial-0-introduction/prerequisite-graph.png" alt-text="Screenshot of enabling graph in the admin portal.":::
+        For more information about these prerequisites, see [Required tenant settings](overview.md#required-tenant-settings).
 
 ## Download sample data 
 
