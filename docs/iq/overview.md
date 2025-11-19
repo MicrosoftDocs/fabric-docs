@@ -41,7 +41,7 @@ IQ (preview) contains the following items:
 * *Ontology (preview):* [Ontology (preview)](ontology/overview.md) is an item for the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, and rules and constraints, and binds them to real data so that downstream tools share the same language.
 * *Fabric data agent (preview)*: [Fabric data agent (preview)](../data-science/concept-data-agent.md) allows you to build your own conversational Q&A systems using generative AI.
 * *Graph in Microsoft Fabric* (preview): [Graph in Microsoft Fabric (preview)](../graph/overview.md) offers native graph storage and compute for nodes, edges, and traversals over connected data. It's good for path finding, dependency analysis, and graph algorithms.
-* *Operations agent (preview)*: [Operations agent (preview)](/rest/api/fabric/articles/item-management/definitions/operations-agent-definition) lets you create an AI agent to monitor real-time data and recommend business actions.
+* *Operations agent (preview)*: [Operations agent (preview)](../real-time-intelligence/operations-agent.md) lets you create an AI agent to monitor real-time data and recommend business actions.
 * *Power BI semantic model:* A [semantic model](../data-warehouse/semantic-models.md) is a curated analytics model that's optimized for reporting and interactive analysis with measures, scorecard hierarchies, and relationships for visuals and DAX.
 
 ### Choose the right item
