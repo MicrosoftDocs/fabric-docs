@@ -35,6 +35,7 @@ With your trial capacity, you can:
 However, some features aren't available:
 
 - Copilot and Trusted Workspace Access aren't supported.
+- AI Experiences such as Data agent, AI functions and AI services aren't supported.
 - Private Link is disabled.
 
 Learn more about which [Microsoft Fabric features are supported in a trial capacity](../enterprise/fabric-features.md).

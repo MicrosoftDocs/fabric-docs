@@ -4,7 +4,7 @@ description: This quickstart describes connect to your SQL database in Fabric fr
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, drskwier
-ms.date: 10/30/2025
+ms.date: 11/18/2025
 ms.topic: quickstart-sdk
 ms.custom:
   - sfi-ropc-nochange

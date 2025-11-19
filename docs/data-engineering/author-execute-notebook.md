@@ -151,7 +151,7 @@ You can also move the selected cell using **Move up** and **Move down** on the r
 
 To delete a cell, select the delete button at the right side of the cell.
 
-You can also use [shortcut keys in command mode](#shortcut-keys-in-command-mode). Press **Shift+D** to delete the current cell.
+You can also use [shortcut keys in command mode](#shortcut-keys-in-command-mode). Press **D,D** (D twice) to delete the current cell.
 
 ### Collapse a cell input
 
@@ -591,14 +591,18 @@ You can also use `%%configure` magic command to dynamically inject configuration
     "id": {
       "variableName": "$(/**/myVL/LHid)"
     },
-    "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>"
+    "workspaceId": {
+      "variableName": "$(/**/myVL/WorkspaceId)"
+    }
   }
 }
 ```
 
 In this example:
 - `myVL` is the name of your Variable Library.
-- `LHname` and `LHid` are variable keys defined in the library.
+- `LHname`, `LHid`, and `WorkspaceId` are variable keys defined in the library.
+- All variables should be defined as String type in the variable library, even for GUID values.
+- The `workspaceId` is required when the lakehouse is in a different workspace than the current notebook.
 - These values are resolved at runtime depending on the active environment (for example, Dev, Test, Prod).
 
 This allows you to switch configurations like default lakehouse without modifying your notebook code.
@@ -724,7 +728,7 @@ Similar to Jupyter Notebooks, Fabric notebooks have a modal user interface. The 
 | Select next cell | J |
 | Insert cell above | A |
 | Insert cell below | B |
-| Delete selected cells | Shift + D |
+| Delete selected cells | D,D |
 | Switch to edit mode | Enter |
 
 ### Shortcut keys in edit mode

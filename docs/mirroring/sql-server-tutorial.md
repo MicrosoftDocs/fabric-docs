@@ -1,19 +1,17 @@
 ---
-title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From SQL Server"
-description: Learn how to configure a mirrored database From SQL Server in Microsoft Fabric.
+title: "Tutorial: Configure Microsoft Fabric Mirroring from SQL Server"
+description: Learn how to configure a mirrored database from SQL Server in Microsoft Fabric.
 author: whhender
 ms.author: whhender
-ms.reviewer: ajayj, rajpo
-ms.date: 10/20/2025
+ms.reviewer: ajayj, rajpo, twright, wiassaf
+ms.date: 11/05/2025
 ms.topic: tutorial
 ms.custom:
 ---
 
-# Tutorial: Configure Microsoft Fabric mirrored databases from SQL Server
+# Tutorial: Configure Microsoft Fabric Mirroring from SQL Server
 
 [Mirroring in Fabric](../mirroring/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored SQL Server database, which creates a read-only, continuously replicated copy of your SQL Server data in OneLake.
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -21,13 +19,13 @@ ms.custom:
     - As a tutorial, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. 
 - Install a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../fundamentals/fabric-trial.md).
-    - The Fabric capacity needs to be active and running. A paused or deleted capacity will affect Mirroring and no data is replicated.
+    - The Fabric capacity needs to be active and running. A paused or deleted capacity prevents Fabric Mirroring and no data is replicated.
 - Fabric tenant settings are required. Ensure the following two [Fabric Tenant settings](../admin/about-tenant-settings.md) are enabled:
     - [Service principals can use Fabric APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings)
-- To mirror data from SQL Server 2025, you need to have a member or admin role in your workspace when create a mirrored database from the Fabric portal. During creation, the managed identity of SQL Server is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
+- To mirror data from SQL Server 2025, you need to have a member or admin role in your workspace when you create a mirrored database from the Fabric portal. During creation, the managed identity of SQL Server is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
 - Review the [Platform limitations in Microsoft Fabric mirrored databases From SQL Server](sql-server-limitations.md#platform-limitations).
-- An [on-premises data gateway](/data-integration/gateway/service-gateway-install) in your SQL Server instance's network. The gateway machine's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
+- An [on-premises data gateway](/data-integration/gateway/service-gateway-install) or [a virtual network data gateway](/data-integration/vnet/create-data-gateways) in your SQL Server instance's network. The data gateway's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
 
 ### Database principal for Fabric
 
@@ -43,7 +41,7 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
 
 ## [SQL Server 2025](#tab/sql2025)
 
-In SQL Server 2025, the permissions required for the Fabric login are:
+Starting in SQL Server 2025, the permissions required for the Fabric login are:
 
 - Membership in the server role `##MS_ServerStateReader##`
 - The following permissions in the user database:
@@ -100,9 +98,9 @@ In SQL Server 2025, the permissions required for the Fabric login are:
 
 ## [SQL Server 2016-2022](#tab/sql201622)
 
-For SQL Server versions 2016-2022, an admin needs membership in the sysadmin server role to initially setup CDC. Any future CDC maintenance will require membership in the sysadmin server role.
+For SQL Server versions 2016-2022, an admin needs membership in the sysadmin server role to initially set up CDC. Any future CDC maintenance will require membership in the sysadmin server role.
 
-Once CDC is setup, enabling Mirroring only requires CONNECT at the server level, and SELECT and CONNECT permissions at the database level to replicate the data.
+Once CDC is set up, enabling Mirroring only requires CONNECT at the server level, and SELECT and CONNECT permissions at the database level to replicate the data.
 
 1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
@@ -173,112 +171,21 @@ Once CDC is setup, enabling Mirroring only requires CONNECT at the server level,
 
 ## Connect to your SQL Server
 
-The instructions and requirements for configuring a Fabric Mirrored Database from SQL Server differ in SQL Server 2025. In SQL Server 2025, an Azure Arc-enabled server is part of the necessary configuration for the communication to Fabric. Before SQL Server 2025, Azure Arc is not required, and the replication is based on [Change Data Capture (CDC)](/sql/relational-databases/track-changes/about-change-data-capture-sql-server).
+The instructions and requirements for configuring a Fabric Mirrored Database from SQL Server differ starting in SQL Server 2025. 
+
+Starting in SQL Server 2025, an Azure Arc-enabled server is part of the necessary configuration for the communication to Fabric. Before SQL Server 2025, Azure Arc is not required, and the replication is based on [Change Data Capture (CDC)](/sql/relational-databases/track-changes/about-change-data-capture-sql-server).
 
 ## [SQL Server 2025](#tab/sql2025)
 
-### Connect server to Azure Arc and enable manage identity
+### Connect server to Azure Arc and enable managed identity
 
 To configure Fabric Mirroring, you need to configure Azure Arc for your SQL Server 2025 instance.
 
-1. Connect the server to Azure Arc. Follow the steps in [Quickstart - Connect hybrid machine with Azure Arc-enabled servers](/azure/azure-arc/servers/learn/quick-enable-hybrid-vm).
-
-   For SQL Server instances running in an Always On availability group or failover cluster instance configuration, all nodes must be connected to Azure Arc. 
-
-1. Three registry keys are needed on the Windows Server hosting the source SQL Server instance for Fabric Mirroring. The registry keys include information about the system-assigned managed identity (SAMI) for the Windows Server. The following PowerShell script adds three registry keys, the necessary file system permissions, and managed identities.
-   
-    > [!NOTE]
-    > This section contains a script to modify the Windows registry. Make sure that you follow these steps carefully. For added protection, back up the registry before you modify it. Then, you can restore the registry if a problem occurs. For more information about how to back up and restore the registry, see [How to back up and restore the registry in Windows](/troubleshoot/windows-server/performance/windows-registry-advanced-users#back-up-the-registry).
-    
-    The three registry keys are added in the following location:    
-    - For a default instance: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL17.MSSQLSERVER\MSSQLServer\FederatedAuthentication`
-    - For a named instance: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL17.Instancename\MSSQLServer\FederatedAuthentication`
-    
-    The script adds the following keys:    
-    - `ArcServerManagedIdentityClientId`
-    - `ArcServerSystemAssignedManagedIdentityClientId`
-    - `ArcServerSystemAssignedManagedIdentityTenantID`
-
-   Run the following PowerShell script to configure the system-assigned managed identity (SAMI) and necessary registry keys on the Windows Server that hosts the source SQL Server instance.
-
-   ```powershell
-    $apiVersion = "2020-06-01"
-    $resource = "https://storage.azure.com/"
-    $ep = $env:IDENTITY_ENDPOINT
-    if (!$ep) {
-        throw "Azure Arc service is not installed, Microsoft Fabric Mirroring cannot be enabled."
-    }
-    $endpoint = "{0}?resource={1}&api-version={2}" -f $ep,$resource,$apiVersion
-    $secretFile = ""
-    try {
-        Invoke-WebRequest -Method GET -Uri $endpoint -Headers @{Metadata='True'} -UseBasicParsing > $null
-    } catch {
-        if ($_.Exception.Response.Headers) {
-            $wwwAuthHeader = $_.Exception.Response.Headers["WWW-Authenticate"]
-            if ($wwwAuthHeader -match "Basic realm=.+") {
-                $secretFile = ($wwwAuthHeader -split "Basic realm=")[1]
-            }
-        }
-    }
-     
-    if (!$secretFile) {
-        throw "Secret file path not found."
-    }
-     
-    $secret = cat -Raw $secretFile
-     
-    try {
-        $response = Invoke-WebRequest -Method GET -Uri $endpoint -Headers @{Metadata='True'; Authorization="Basic $secret"} -UseBasicParsing
-    } catch {
-        throw "Can not establish communication with IMDS service. You need to have Azure Arc service installed"
-    }
-     
-    if ($response) {
-        $parts = (ConvertFrom-Json -InputObject $response.Content).access_token -split "\."
-        $padLength = 4 - ($parts[1].Length % 4)
-        if ($padLength -ne 4) { $parts[1] += "=" * $padLength }
-        $payload = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($parts[1])) | ConvertFrom-Json
-        $regPath = "HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL"
-        $instance = ""
-        $regKey = Get-Item -Path $regPath
-        $regKey.GetValueNames() | Where-Object { $regKey.GetValue($_) -match 'MSSQL17' } | ForEach-Object {
-            $instance = $_
-            $service = if ($instance -eq "MSSQLSERVER") { "MSSQLSERVER" } else { "MSSQL$" + $instance }
-            $reginst = $regKey.GetValue($_)
-            $regFed = "HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\$($reginst)\MSSQLServer\FederatedAuthentication"
-            if (-not (Test-Path -Path $regFed)) {
-                New-Item -Path $regFed -Force > $null
-            }
-            Write-Host "Registering Azure Arc MSI service for SQL Server instance: " $instance `n
-            Set-ItemProperty -Path $regFed -Name "ArcServerManagedIdentityClientId" -Value ""
-            Set-ItemProperty -Path $regFed -Name "ArcServerSystemAssignedManagedIdentityClientId" -Value $($payload.appid)
-            Set-ItemProperty -Path $regFed -Name "ArcServerSystemAssignedManagedIdentityTenantId" -Value $($payload.tid)
-            $svcPath = "HKLM:\SYSTEM\CurrentControlSet\Services\$($service)"
-            if (Test-Path -Path $svcPath) {
-                $keyPath = Split-Path $secretFile
-                $svcKey = Get-Item -Path $svcPath
-                $sqlAccount = $svcKey.GetValue("ObjectName")
-                if ($sqlAccount -ne "LocalSystem") {
-                    Write-Host "Permissioning folder" $keyPath "for SQL Server account" $sqlAccount `n
-                    icacls $keyPath /grant "$($sqlAccount):(OI)(CI)R"
-                    $group = "Hybrid agent extension applications"
-                    $isMember = Get-LocalGroupMember -Group $group | Where-Object { $_.Name -eq $sqlAccount }
-                    if (-not $isMember) {
-                        Write-Host "Also adding SQL running account to local group: $group" `n
-                        Add-LocalGroupMember -Group $group -Member $sqlAccount
-                    } else {
-                        Write-Host ""
-                    }
-                }
-            }
-        }
-        Write-Host "Registration complete for:" `n "Client ID: " $($payload.appid) `n "Tenant ID: " $($payload.tid) `n
-    }
-   ```
-   
-   > [!IMPORTANT]
-   > For SQL Server instances running in an Always On availability group or failover cluster instance configuration, run the PowerShell script locally on each node. 
-
+1. If not already, connect the server to Azure Arc and install the Azure Extension for SQL Server.
+   - Follow the steps in [Quickstart - Connect hybrid machine with Azure Arc-enabled servers](/azure/azure-arc/servers/learn/quick-enable-hybrid-vm). 
+   - The Azure Extension for SQL Server installs automatically when you connect the SQL Server instance to Azure Arc.
+   - For SQL Server instances running in an Always On availability group, all nodes must be connected to Azure Arc. 
+1. If not already configured, you should configure [Managed identity for SQL Server enabled by Azure Arc](/sql/sql-server/azure-arc/managed-identity), which enables outbound authentication necessary for Fabric Mirroring.
 1. Connect to your local SQL Server 2025 instance. When you connect, select **Trust server certificate**.
 1. View the managed identities:
 
@@ -295,7 +202,7 @@ To configure Fabric Mirroring, you need to configure Azure Arc for your SQL Serv
 
 The managed identity of the SQL Server is created and granted permissions by Microsoft Fabric automatically.
 
-However, for SQL Server instances running in an Always On availability group or failover cluster instance configuration, the system-assigned managed identity (SAMI) of every secondary node needs to be granted **Contributor** permissions to the Fabric workspace. A managed identity is created by the PowerShell script provided for each secondary node, and that must be granted Fabric permissions manually. 
+However, for SQL Server instances running in an Always On availability group, the system-assigned managed identity (SAMI) of every secondary node needs to be granted **Contributor** permissions to the Fabric workspace. A managed identity is created by the Azure Extension for SQL Server when the SQL instance is connected to Azure Arc, and each must be granted Fabric permissions manually.
 
 1. In the Fabric portal, grant Fabric permissions to each secondary node's managed identity.
     1. In the Fabric workspace, select **Manage access**.
@@ -303,14 +210,16 @@ However, for SQL Server instances running in an Always On availability group or 
        :::image type="content" source="media/sql-server-tutorial/manage-access.png" alt-text="Screenshot from the Fabric portal of the Manage access button.":::
 
     1. Select **Add people or groups**. 
-    1. In the **Add people** dialogue, find the server names for each node in the availability group or failover cluster. 
+    1. In the **Add people** dialogue, find the server names for each node in the availability group.
     1. Grant each membership to the **Contributor** role.
 
        :::image type="content" source="media/sql-server-tutorial/add-people.png" alt-text="Screenshot of the Add people dialogue, where you add each node to the Fabric Contributor role.":::
 
-### Configure the on-premises data gateway
+### Configure the on-premises or virtual network data gateway
 
-Check your networking requirements for Fabric to access your SQL Server. You need to [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the on-premises gateway machine's network can [connect to the SQL Server instance](/troubleshoot/sql/database-engine/connect/resolve-connectivity-errors-overview). For more information, see [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
+Check your networking requirements for Fabric to access your SQL Server. You need to [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) or [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the on-premises gateway machine's network can [connect to the SQL Server instance](/troubleshoot/sql/database-engine/connect/resolve-connectivity-errors-overview). For more information, see [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
+
+To use on-premises data gateway:
 
 1. [Download On-premises data gateway from the Official Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53127&msockid=0448b52333796d6425f3a0b332c36cba).
 1. Start installation. Follow instructions in [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install).
@@ -328,19 +237,18 @@ Check your networking requirements for Fabric to access your SQL Server. You nee
 
 ### Connect Fabric to your SQL Server instance
 
-To enable Mirroring, you will need to connect to the SQL Server instance from Fabric to initiate the connection from Fabric. The following steps guide you through the process of creating the connection to your SQL Server:
+To enable Mirroring, you need to connect to the SQL Server instance from Fabric to initiate the connection from Fabric. The following steps guide you through the process of creating the connection to your SQL Server:
 
 1. Under **New sources**, select **SQL Server database**. Or, select an existing SQL Server connection from the OneLake hub.
 1. If you selected **New connection**, enter the connection details to the SQL Server instance.
-   - **Server**: The fully qualified server name path that Fabric will use to reach your SQL Server instance, the same that you would use for SSMS. 
+   - **Server**: The fully qualified server name path that Fabric uses to reach your SQL Server instance, the same that you would use for SSMS. 
 
    > [!TIP] 
-   > SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-ver17&preserve-view=true#network-name) for **Server**.
-
+   > SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. 
    - **Database**: Enter the name of your SQL Server.
       - **Connection**: Create new connection.
       - **Connection name**: An automatic name is provided. You can change it.
-      - **Data gateway:** Select the on-premises data gateway you set up according to your scenario.
+      - **Data gateway:** Select the data gateway you set up according to your scenario.
       - **Authentication kind**: Choose the authentication method and provide the principal you set up in [Use a login and mapped database user](#use-a-login-and-mapped-database-user).
       - Select the **Use encrypted connection** checkbox.
 1. Select **Connect**.
@@ -352,9 +260,11 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
 1. The SQL Server Agent service must be running. It is highly recommended to configure Automatic Startup.
 1. Changed Data Capture (CDC) will be automatically enabled and configured by Fabric Mirroring for each desired table in your database. Review the [Known issues and errors with CDC](/sql/relational-databases/track-changes/known-issues-and-errors-change-data-capture). CDC requires that each table has a primary key.
 
-### Configure the on-premises data gateway
+### Configure the on-premises or virtual network data gateway
 
-Check your networking requirements for Fabric to access your SQL Server. You need to [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the on-premises gateway machine's network can [connect to the SQL Server instance](/troubleshoot/sql/database-engine/connect/resolve-connectivity-errors-overview). For more information, see [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
+Check your networking requirements for Fabric to access your SQL Server. You need to [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) or [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the data gateway's network can [connect to the SQL Server instance](/troubleshoot/sql/database-engine/connect/resolve-connectivity-errors-overview). For more information, see [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
+
+To use on-premises data gateway:
 
 1. Download the on-premises data gateway, see [Download the on-premises data gateway from the Official Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53127&msockid=0448b52333796d6425f3a0b332c36cba).
 1. Start installation. Follow instructions in [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install).
@@ -372,15 +282,14 @@ Check your networking requirements for Fabric to access your SQL Server. You nee
 
 ### Connect Fabric to your SQL Server instance
 
-To enable Mirroring, you will need to connect to the SQL Server instance from Fabric to initiate the connection from Fabric. The following steps guide you through the process of creating the connection to your SQL Server:
+To enable Mirroring, you need to connect to the SQL Server instance from Fabric to initiate the connection from Fabric. The following steps guide you through the process of creating the connection to your SQL Server:
 
 1. Under **New sources**, select **SQL Server database**. Or, select an existing SQL Server connection from the OneLake hub.
 1. If you selected **New connection**, enter the connection details to the SQL Server instance.
-   - **Server**: The fully qualified server name path that Fabric will use to reach your SQL Server instance, the same that you would use for SSMS.
+   - **Server**: The fully qualified server name path that Fabric uses to reach your SQL Server instance, the same that you would use for SSMS.
 
    > [!TIP] 
-   > For SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-ver17&preserve-view=true#network-name) for **Server**.
-
+   > For SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**.
    - **Database**: Enter the name of your SQL Server.
       - **Connection**: Create new connection.
       - **Connection name**: An automatic name is provided. You can change it.
@@ -392,7 +301,7 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
 
 This section is only required if the source database for the SQL Server mirroring to Fabric is a member of an Always On availability group.
 
-If the source database is in an Always On availability group, additional steps are required to configure the secondary replicas. Repeat these steps for every secondary replica in order to prepare the entire availability group. Each replica requires SQL agent jobs to be setup so that CDC behaves properly when that replica is primary.
+If the source database is in an Always On availability group, additional steps are required to configure the secondary replicas. Repeat these steps for every secondary replica in order to prepare the entire availability group. Each replica requires SQL agent jobs to be set up so that CDC behaves properly when that replica is primary.
 
 1. Fail over the availability group to a secondary replica. 
 1. Use the provided script to create, if they don't already exist, cleanup and capture jobs in the secondary replica instance's `msdb` system database. These jobs are important to maintain the historical data retained by CDC.
@@ -457,7 +366,7 @@ If the source database is in an Always On availability group, additional steps a
 
    The capture and cleanup CDC jobs start immediately and are created with default settings. For more information on the jobs, see [sys.sp_cdc_add_job (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sys-sp-cdc-add-job-transact-sql?view=sql-server-ver17&preserve-view=true).
 
-1. Each job will run on each availability group replica by default, even if it is a secondary replica. This will cause error messages in the logs as the user databases on the secondary replicas are not writeable. Enable the two CDC jobs on primary replicas, and disable them on secondary replicas. Follow guidance in [Change data capture on Always On availability groups](/sql/database-engine/availability-groups/windows/replicate-track-change-data-capture-always-on-availability?view=sql-server-ver17&preserve-view=true#change-data-capture).
+1. Each job runs on each availability group replica by default, even if it is a secondary replica. This will cause error messages in the logs as the user databases on the secondary replicas are not writeable. Enable the two CDC jobs on primary replicas, and disable them on secondary replicas. Follow guidance in [Change data capture on Always On availability groups](/sql/database-engine/availability-groups/windows/replicate-track-change-data-capture-always-on-availability?view=sql-server-ver17&preserve-view=true#change-data-capture).
 
 ---
 

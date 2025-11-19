@@ -47,7 +47,6 @@ The following item types aren't currently supported in workspaces enabled with w
 * Deployment pipelines
 * Default semantic models
 * Lakehouses with schemas
-* Spark connectors for SQL Data Warehouse
 
 If a workspace contains any unsupported item types, inbound public access can't be restricted for the workspace, even if workspace-level private link is set up. 
 
@@ -318,16 +317,16 @@ You can manage mirrored databases in workspaces enabled with private links by us
 - The Fabric portal UI doesn't currently support enabling both inbound protection (workspace-level private links) and outbound access protection at the same time for a workspace. To configure both settings together, use the [Workspaces - Set Network Communication Policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy?tabs=HTTP), which allows full management of inbound and outbound protection policies.
 - For Data Engineering workloads:
    - To query Lakehouse files or tables from a workspace that has workspace-level private link enabled, you must create a cross-workspace managed private endpoint connection to access resources in the other workspace. <!--For instructions, see [Cross workspace communication](security-cross-workspace-communication.md).-->
-   - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace. To read files in a Lakehouse located in another workspace, use a fully qualified path that includes the workspace ID and lakehouse ID (not their display names). This approach ensures the Spark session can resolve the path correctly and avoids socket timeout errors. [Learn more](workspace-outbound-access-protection-data-engineering.md#understanding-the-behavior-of-file-paths)
+   - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace. To read files in a Lakehouse located in another workspace, use a fully qualified path that includes the workspace ID and lakehouse ID (not their display names). This approach ensures the Spark session can resolve the path correctly and avoids socket timeout errors. [Learn more](workspace-outbound-access-protection-data-engineering.md#understanding-file-path-behavior-in-fabric-notebooks).
 
 - You could run into Spark issues in the following regions when outbound access protection is enabled for the workspace: Mexico Central, Israel Central, and Spain Central.
-- Dataflows currently don't support using a Fabric Warehouse or Fabric Lakehouse in the same workspace as either a data source or an output destination.
 - Current limitations for Private Link with an eventhouse:
    - Copilot features: Machine learning workloads might experience limited functionality due to a known regression.
    - Eventstream pull: Eventstream workloads don't currently support full polling functionality.
    - Fabric doesn't currently support Event Hub integration.
    - Queued ingestion via OneLake isn't currently available.
 * The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
+* **OneLake Security** isn't currently supported when a workspace-level private link is enabled for a workspace.
 * Workspace monitoring isn't currently supported when a workspace-level private link is enabled for a workspace.
 
 ## Common errors and troubleshooting

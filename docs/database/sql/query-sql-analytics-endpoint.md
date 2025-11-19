@@ -31,7 +31,7 @@ The SQL analytics endpoint can be queried with T-SQL multiple ways:
 - The SQL analytics endpoint can also be accessed from within the SQL query editor. This can be especially useful when toggling between the database and the SQL analytics endpoint. Use the pulldown in the upper right corner to change from the editor to the analytics endpoint.  
         :::image type="content" source="media/query-sql-analytics-endpoint/sql-database-sql-analytics-endpoint-dropdown.png" alt-text="Screenshot from the Fabric portal showing the query editor's dropdown list containing the SQL database and SQL analytics endpoint options.":::
 
-- The SQL analytics endpoint also has its own SQL connection string if you want to query it directly from tools like [SQL Server Management Studio](connect.md#connect-with-sql-server-management-studio-manually) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true). To get the connection strings, see [Find SQL connection strings](connect.md#find-sql-connection-string).
+- The SQL analytics endpoint also has its own SQL connection string if you want to query it directly from tools like [SQL Server Management Studio](connect.md#connect-with-sql-server-management-studio-manually) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true). To get the connection strings, see [Find SQL connection strings](connect.md#find-sql-connection-string).
 
 ## Query the SQL analytics endpoint
 
