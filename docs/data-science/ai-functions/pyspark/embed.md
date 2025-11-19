@@ -43,7 +43,7 @@ df.ai.embed(input_col="col1", output_col="embed")
 
 The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) that includes a new column that contains generated embeddings for each input text row.
 Embeddings are of the type [pyspark.ml.linalg.DenseVector])https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.ml.linalg.DenseVector.html#densevector).
-The number of elements in the DenseVector depend on the embedding model's dimensions which is [configurable in AI functions](./configuration.md)
+The number of elements in the DenseVector depends on the embedding model's dimensions, which are [configurable in AI functions](./configuration.md)
 
 ## Example
 

@@ -40,7 +40,7 @@ None.
 ## Returns
 
 The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) that contains embeddings as [numpy array of float-32](https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float32) for each input text row.
-The number of elements in array depend on the embedding model's dimensions which is [configurable in AI functions](./configuration.md)
+The number of elements in array depends on the embedding model's dimensions, which are [configurable in AI functions](./configuration.md)
 
 ## Example
 
