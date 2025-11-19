@@ -19,7 +19,7 @@ A reseed stops flow of transactions to Microsoft Fabric from the mirrored databa
 
 During reseed, the mirrored database item in Microsoft Fabric is available but will not receive incremental changes until the reseed is completed. The `reseed_state` column in `sys.sp_help_change_feed_settings` indicates the reseed state.
 
-The autoreseed feature is disabled by default in SQL Server 2025 (Preview), to enable see [Enable autoreseed](#enable-autoreseed). The autoreseed feature is enabled and cannot be managed or disabled in Azure SQL Database and Azure SQL Managed Instance.
+The autoreseed feature is disabled by default in SQL Server 2025, to enable see [Enable autoreseed](#enable-autoreseed). The autoreseed feature is enabled and cannot be managed or disabled in Azure SQL Database and Azure SQL Managed Instance.
 
 In Fabric Mirroring, the source SQL database transaction log is monitored. An autoreseed will only trigger when the following three conditions are true:
 

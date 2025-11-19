@@ -138,6 +138,25 @@ When you attach an environment from another workspace, both workspaces must have
 
 When you attach an environment from another workspace, the compute configuration in that environment is ignored. Instead, the pool and compute configurations default to the settings of your current workspace.
 
+## Delete an environment
+
+You can delete an environment when it's no longer needed. Before deleting an environment, consider the following:
+
+> [!IMPORTANT]
+> - Deleting an environment is permanent and cannot be undone.
+> - Any notebooks or Spark job definitions currently attached to the environment will need to be reconfigured to use a different environment or workspace settings.
+> - If the environment is set as a workspace default, you must first change the workspace default setting before deletion.
+
+### Delete an environment using REST API
+
+You can delete an environment programmatically using the Fabric REST API:
+
+**Endpoint**: `DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}`
+
+**Required permissions**: `Environment.ReadWrite.All` or `Item.ReadWrite.All`
+
+For more information about the REST API, see [Delete environment](/rest/api/fabric/environment/items/delete-environment).
+
 ## Related content
 
 - [Spark compute configuration settings in Fabric environments](environment-manage-compute.md)

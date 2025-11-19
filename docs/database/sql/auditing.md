@@ -4,7 +4,7 @@ description: Learn how to configure and manage auditing for Fabric SQL database 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: srsaluru
-ms.date: 10/24/2025
+ms.date: 11/17/2025
 ms.topic: conceptual
 ms.search.form: SQL database security
 ---
@@ -43,6 +43,14 @@ Each preconfigured scenario maps to specific audit action groups (for example, `
 
 To filter out common or known access queries, you can provide **predicate expressions** in Transact-SQL (T-SQL) to filter out audit events based on conditions (for example, to exclude SELECT statements): `WHERE statement NOT LIKE '%select%'`.
 
+## Permissions
+
+To manage auditing using Fabric workspace roles (recommended), users must have membership in the Fabric workspace **Contributor** role or higher permissions. 
+
+To manage auditing with SQL permissions:
+ - To configure the database audit, users must have ALTER ANY DATABASE AUDIT permission.
+ - To view audit logs using T-SQL, users must have the VIEW DATABASE SECURITY AUDIT permission.
+
 ## Retention
 
 By default, audit data is kept indefinitely. You can configure a custom retention period in the section **Automatically delete logs after this duration**.
@@ -63,7 +71,7 @@ To begin auditing for a Fabric SQL database:
 
 ## Query audit logs
 
-Audit logs can be queried using the T-SQL functions `sys.fn_get_audit_file` and `sys.fn_get_audit_file_v2`. 
+Audit logs can be queried using the T-SQL functions [sys.fn_get_audit_file](/sql/relational-databases/system-functions/sys-fn-get-audit-file-transact-sql?view=fabric-sqldb&preserve-view=true) and [sys.fn_get_audit_file_v2](/sql/relational-databases/system-functions/sys-fn-get-audit-file-v2-transact-sql?view=fabric-sqldb&preserve-view=true). 
 
 In the following script, you need to provide the workspace ID and database ID. Both can be found in the URL from the Fabric portal. For example: `https://fabric.microsoft.com/groups/<fabric workspace id>/sqldatabases/<fabric sql database id>`. The first unique identifier string in the URL is the Fabric workspace ID, and the second unique identifier string is the SQL database ID.
 

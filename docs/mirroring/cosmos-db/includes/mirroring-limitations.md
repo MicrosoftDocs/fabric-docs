@@ -2,7 +2,7 @@
 author: seesharprun
 ms.author: sidandrews
 ms.topic: include
-ms.date: 10/22/2025
+ms.date: 11/06/2025
 ---
 
 ## Schema and data changes limitations
@@ -27,13 +27,14 @@ ms.date: 10/22/2025
 
 - Mirroring doesn't have schema constraints on the level of nesting. For more information, see [Azure Cosmos DB analytical store schema constraints](/azure/cosmos-db/analytical-store-introduction#schema-constraints).
 
-## Data warehouse limitations
+<a id="data-warehouse-limitations"></a>
 
-- Warehouse can't handle JSON string columns greater than 8 KB in size. The error message for this scenario is **"JSON text is not properly formatted. Unexpected character '"' is found at position"**.
+## SQL analytics endpoint limitations
 
-  - A current workaround is to create a shortcut of your mirrored database in Fabric Lakehouse and utilize a Spark Notebook to query your data to avoid this limitation.
+Mirrored Cosmos DB supports up to 2 MB. 
 
-- Nested data represented as a JSON string in SQL analytics endpoint and warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message.
+- The SQL analytics endpoint supports **varchar(max)** up to 2 MB for tables created after November 18, 2025. 
+- Existing tables before November 18, 2025 only support **varchar(8000)** and need to be recreated to adopt new data type and support data greater that 8 KB.
 
 ## Mirrored item limitations
 

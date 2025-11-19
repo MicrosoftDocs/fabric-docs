@@ -68,8 +68,9 @@ To view the list of role members and to add or remove role members:
         1. Select role members, you want to remove.
         1. Select  **Remove**.
 1. Select **Save** to save your changes to the list of role members.
+
    > [!NOTE]
-   > When you add a new role member that has no user object in the database, the Fabric portal automatically creates a user object for the role member on your behalf (using [CREATE USER (Transact-SQL)](/sql/t-sql/statements/create-user-transact-sql?view=fabric-sqldb&preserve-view=true)). The Fabric portal doesn't remove user objects from the database, when a role member is removed from a role.
+   > When you add a new role member that has no user object in the database, the Fabric portal automatically creates a user object for the role member on your behalf (using [CREATE USER (Transact-SQL)](/sql/t-sql/statements/create-user-transact-sql?view=fabric-sqldb&preserve-view=true)). The Fabric portal doesn't remove user objects from the database when a role member is removed from a role.
 
 ## Configure SQL controls with Transact-SQL
 

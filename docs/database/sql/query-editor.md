@@ -1,6 +1,6 @@
 ---
-title: Query with the SQL Editor
-description: Learn how to use the SQL database query editor in the Microsoft Fabric portal
+title: Query with the SQL Query Editor
+description: Learn how to use the SQL database query editor in the Fabric portal.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: yoleichen
@@ -13,7 +13,7 @@ ms.search.form: Develop and run queries in SQL editor
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-This article describes how to use the SQL query editor in the Microsoft Fabric portal.
+This article describes how to use the SQL query editor in the Fabric portal.
 
 The SQL query editor provides support for IntelliSense, code completion, syntax highlighting, client-side parsing, and validation. You can run Data Definition Language (DDL), Data Manipulation Language (DML), and Data Control Language (DCL) statements.
 

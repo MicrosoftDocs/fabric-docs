@@ -13,8 +13,10 @@ items:
     href: get-started-real-time-hub.md
 - name: Tutorials
   items:
-  - name: Build event-driven pipelines 
+  - name: Build event-driven pipelines with Azure and Fabric Events 
     href: tutorial-build-event-driven-data-pipelines.md
+  - name: Monitor Fabric Capacity health with Capacity Overview Events 
+    href: tutorial-monitor-capacity-threshold.md
 - name: Create data streams
   items:
   - name: Supported sources
