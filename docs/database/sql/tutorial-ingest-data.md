@@ -154,6 +154,6 @@ The data is now ingested into your database. You can now create a query that com
 
 ## Related content
 
-- [Set up your SQL database connection in Data Factory (Preview)](../../data-factory/connector-sql-database.md)
-- [SQL database connector overview (Preview)](../../data-factory/connector-sql-database-overview.md)
-- [Configure SQL database in a copy activity (Preview)](../../data-factory/connector-sql-database-copy-activity.md)
+- [Set up your SQL database connection in Data Factory](../../data-factory/connector-sql-database.md)
+- [SQL database connector overview](../../data-factory/connector-sql-database-overview.md)
+- [Configure SQL database in a copy activity](../../data-factory/connector-sql-database-copy-activity.md)

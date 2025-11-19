@@ -3,12 +3,11 @@ title: Limitations of Fabric Data Warehouse
 description: This article contains a list of current limitations in Microsoft Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: joanpo, ajagadish
-ms.date: 05/19/2025
+ms.reviewer: joanpo, ajagadish, anphil
+ms.date: 11/09/2025
 ms.topic: conceptual
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
-
 # Limitations of Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
@@ -59,6 +58,23 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 - For information and recommendations on performance of the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
 
 - Scalar UDFs are supported when inlineable. For more information, see [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true) and [Scalar UDF inlining](/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=fabric&preserve-view=true).
+
+- The **varchar(max)** data type is only supported in SQL analytics endpoints of mirrored items and Fabric databases, and not for Lakehouses. Tables created after November 10, 2025 will automatically be mapped with **varchar(max)**. Tables created before November 10, 2025 need to be recreated to adopt a new data type, or will be automatically upgraded to **varchar(max)** during the next schema change. 
+
+Data truncation to 8 KB still applies on the tables in SQL analytics endpoint of the Lakehouse, including shortcuts to a mirrored item.
+
+Since all tables do not support **varchar(max)** joins on these columns may not work as expected if one of the tables still has a data truncation. For example, if you CTAS a table of a newly created mirrored item into a Lakehouse table using Spark, then join them using the column with **varchar(max)**, the query results will be different compared to the **varchar(8000)** data type. If you would like to continue to have previous behavior, you can cast the column to **varchar(8000)** in the query.    
+
+You can confirm if a table has any **varchar(max)** column from the schema metadata using the following T-SQL query. A `max_length` value of `-1` represents **varchar(max)**:
+
+```sql
+SELECT o.name, c.name, type_name(user_type_id) AS [type], max_length
+FROM sys.columns AS c
+INNER JOIN sys.objects AS o
+ON c.object_id = o.object_id
+WHERE max_length = -1 
+AND type_name(user_type_id) IN ('varchar', 'varbinary');
+```
 
 ## Known issues
 

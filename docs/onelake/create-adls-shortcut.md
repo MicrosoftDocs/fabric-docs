@@ -2,8 +2,8 @@
 title: Create an Azure Data Lake Storage Gen2 shortcut
 description: Learn how to create a OneLake shortcut for Azure Data Lake Storage Gen2 inside a Microsoft Fabric lakehouse.
 ms.reviewer: eloldag
-ms.author: trolson
-author: TrevorLOlson
+ms.author: kgremban
+author: kgremban
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom:

@@ -1,0 +1,59 @@
+### YamlMime:Landing
+
+title: IQ (preview) documentation in Microsoft Fabric
+summary:  IQ (preview) enables a governed, self-service knowledge graph that links business entities, relationships, and business logic into a coherent framework for driving action across all enterprise data.
+
+metadata:
+  title: IQ (preview) documentation
+  description: Learn about IQ (preview).
+  ms.service: fabric  #Required; use either service or product per approved list.
+  ms.topic: landing-page
+  ms.collection: collection
+  author: baanders
+  ms.author: baanders
+  ms.date: 11/05/2025
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+  # Card
+  - title: About IQ (preview)
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is IQ (preview)?
+            url: overview.md
+          - text: What is ontology (preview)?
+            url: ontology/overview.md
+
+  # Card
+  - title: Get started with ontology (preview)
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: 0- Introduction and environment setup
+            url: ontology/tutorial-0-introduction.md
+          - text: 1- Create an ontology
+            url: ontology/tutorial-1-create-ontology.md
+          - text: 2- Enrich the ontology
+            url: ontology/tutorial-2-enrich-ontology.md
+          - text: 3- Preview the ontology
+            url: ontology/tutorial-3-preview-ontology.md
+          - text: 4- Create data agent
+            url: ontology/tutorial-4-create-data-agent.md
+          - text: 5- Conclude and clean up resources
+            url: ontology/tutorial-5-conclusion.md
+
+
+  # Card
+  - title: Read about ontology (preview) features
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Create entity types
+            url: ontology/how-to-create-entity-types.md
+          - text: Bind data
+            url: ontology/how-to-bind-data.md
+          - text: Add relationship types
+            url: ontology/how-to-create-relationship-types.md
+          - text: Use preview experience
+            url: ontology/how-to-use-preview-experience.md

@@ -1,17 +1,15 @@
 ---
-title: Customize indexing policies in Cosmos DB Database (Preview)
-description: Create a custom indexing policy for a container within a database in Cosmos DB in Microsoft Fabric during the preview.
-author: seesharprun
-ms.author: sidandrews
+title: Customize indexing policies in Cosmos DB Database
+description: Create a custom indexing policy for a container within a database in Cosmos DB in Microsoft Fabric.
+author: markjbrown
+ms.author: mjbrown
 ms.topic: how-to
-ms.date: 07/29/2025
+ms.date: 10/30/2025
 ai-usage: ai-assisted
 zone_pivot_groups: dev-lang-core
 ---
 
-# Customize indexing policies in Cosmos DB in Microsoft Fabric (preview)
-
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+# Customize indexing policies in Cosmos DB in Microsoft Fabric
 
 Indexing in Cosmos DB is designed to deliver fast and flexible query performance, no matter how your data evolves. In this guide, you modify the indexing policy for a container using the Fabric portal or an Azure SDK.
 
@@ -37,7 +35,29 @@ First, use the Fabric portal to set the indexing policy for a container
 
     :::image type="content" source="media/how-to-customize-indexing-policy/editor.png" lightbox="media/how-to-customize-indexing-policy/editor-full.png" alt-text="Screenshot of the 'Indexing Policy' section for a container within a database in the Fabric portal.":::
 
-1. In the editor, update the setting to a new value. For example, you can set the indexing policy to only index the `name` and `category` properties for items in the container using this policy.
+1. In the editor, update the setting to a new value. For example, consider this sample document structure that contains both business data and system metadata:
+
+    ```json
+    {
+      "id": "product-123",
+      "_etag": "abc123def456",
+      "name": "Wireless Headphones",
+      "category": "Electronics",
+      "price": 99.99,
+      "metadata": {
+        "createdBy": "system",
+        "lastModified": "2025-10-30T10:30:00Z",
+        "version": 1.2,
+        "tags": ["internal", "generated"],
+        "audit": {
+          "importSource": "legacy-system",
+          "reviewStatus": "pending"
+        }
+      }
+    }
+    ```
+
+1. You can create an indexing policy that indexes all properties except for metadata fields that are typically not used in queries:
 
     ```json
     {
@@ -45,19 +65,30 @@ First, use the Fabric portal to set the indexing policy for a container
       "automatic": true,
       "includedPaths": [
         {
-          "path": "/name/?"
-        },
-        {
-          "path": "/category/?"
+          "path": "/*"
         }
       ],
       "excludedPaths": [
         {
-          "path": "/*"
+          "path": "/_etag/?"
+        },
+        {
+          "path": "/metadata/*"
         }
       ]
     }
     ```
+
+    > [!NOTE]
+    > The `/_etag/?` path uses `?` to exclude only the `_etag` property itself, while `/metadata/*` uses `*` to exclude the entire `metadata` object and all its child properties.
+
+    With this indexing policy applied to the sample document:
+    - **Indexed properties**: `id`, `name`, `category`, `price` (and all other properties except those excluded)
+    - **Excluded from indexing**:
+      - `_etag` property (single value)
+      - Entire `metadata` object including `createdBy`, `lastModified`, `version`, `tags`, and the nested `audit` object with its properties
+
+    This approach optimizes storage and performance by excluding system metadata that's typically not used in user queries while keeping all business data searchable.
 
 ## Set using the Azure SDK
 
@@ -70,27 +101,27 @@ database = client.get_database_client("<database-name>")
 
 container = database.get_container_client("<container-name>")
 
-# Create policy that only indexes specific paths
+# Create policy that indexes all paths except metadata fields
 indexing_policy = {
   "indexingMode": "consistent",
   "automatic": True,
   "includedPaths": [
     {
-      "path": "/name/?"
-    },
-    {
-      "path": "/category/?"
+      "path": "/*"
     }
   ],
   "excludedPaths": [
     {
-      "path": "/*"
+      "path": "/_etag/?"
+    },
+    {
+      "path": "/metadata/*"
     }
   ]
 }
 
-# Create policy that only indexes specific paths
-database.replace_container(container, partition_key=PartitionKey(path='/<partition-key-path>'), indexing_policy=indexing_policy)
+# Apply the indexing policy to the container
+await database.replace_container(container, partition_key=PartitionKey(path='/<partition-key-path>'), indexing_policy=indexing_policy)
 ```
 
 :::zone-end
@@ -102,21 +133,21 @@ const container: Container = client.database('<database-name>').container('<cont
 
 const { resource: containerProperties } = await container.read();
 
-// Create policy that only indexes specific paths
+// Create policy that indexes all paths except metadata fields
 containerProperties['indexingPolicy'] = {
   indexingMode: 'consistent',
   automatic: true,
   includedPaths: [
     {
-      path: '/name/?'
-    },
-    {
-      path: '/category/?'
+      path: '/*'
     }
   ],
   excludedPaths: [
     {
-      path: '/*'
+      path: '/_etag/?'
+    },
+    {
+      path: '/metadata/*'
     }
   ]
 }
@@ -135,20 +166,20 @@ Container container = client
 
 ContainerProperties properties = await container.ReadContainerAsync();
 
-// Create policy that only indexes specific paths
+// Create policy that indexes all paths except metadata fields
 IndexingPolicy indexingPolicy = new()
 {
     IndexingMode = IndexingMode.Consistent,
     Automatic = true
 };
+indexingPolicy.IncludedPaths.Add(
+    new IncludedPath { Path = "/*" }
+);
 indexingPolicy.ExcludedPaths.Add(
-    new ExcludedPath{ Path = "/*" }
+    new ExcludedPath{ Path = "/_etag/?" }
 );
-indexingPolicy.IncludedPaths.Add(
-    new IncludedPath { Path = "/name/?"  }
-);
-indexingPolicy.IncludedPaths.Add(
-    new IncludedPath { Path = "/category/?" }
+indexingPolicy.ExcludedPaths.Add(
+    new ExcludedPath{ Path = "/metadata/*" }
 );
 properties.IndexingPolicy = indexingPolicy;
 

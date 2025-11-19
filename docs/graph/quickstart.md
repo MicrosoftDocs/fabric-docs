@@ -2,12 +2,10 @@
 title: Get Started with Graph in Microsoft Fabric
 description: Learn how to get started with graph in Microsoft Fabric, including key concepts, setup instructions, and first steps.
 ms.topic: quickstart
-ms.date: 10/28/2025
+ms.date: 11/18/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam
-ms.service: fabric
-ms.subservice: graph
 ms.search.form: Get Started with Graph in Microsoft Fabric
 ---
 
@@ -145,10 +143,10 @@ By this point, you created all the nodes and edges for your graph. This is the b
 
 ## Load the graph
 
-To load the graph, click **Save**. This will verify the graph model, load data from OneLake, construct the graph, and ready it for querying.
+To load the graph, select **Save**. This will verify the graph model, load data from OneLake, construct the graph, and ready it for querying.
 
 > [!IMPORTANT]
-> You currently need to re-load the graph (by clicking **Save**) whenever the model or the underlying data is changed.
+> You currently need to re-load the graph (by selecting **Save**) whenever the model or the underlying data is changed.
 
 ## Query the graph
 

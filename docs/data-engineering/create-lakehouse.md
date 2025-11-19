@@ -12,7 +12,7 @@ ms.search.form: Create lakehouse
 
 # Create a lakehouse in Microsoft Fabric
 
-In this tutorial, you learn different ways to create a Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)].
+In this tutorial, you learn different ways to create a Lakehouse in Microsoft Fabric.
 
 ## Prerequisites
 
