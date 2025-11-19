@@ -53,57 +53,19 @@ All data sources supported in OneLake are supported.
 
 ## Set up a shortcut transformation
 
-1. In your lakehouse, select **+ Table Shortcut in Tables section which is Shortcut transformation (preview)** and choose your source (for example, Azure Data Lake, Azure Blob Storage, Dataverse, Amazon S3, GCP, SharePoint, OneDrive etc.).
-:::image type="content" source="./media/transformations/Create-newtableshortcut.png" alt-text="Screenshot that shows creating 'table shortcut'.":::
+1. In your lakehouse, select **New Table Shortcut in Tables section which is Shortcut transformation (preview)** and choose your source (for example, Azure Data Lake, Azure Blob Storage, Dataverse, Amazon S3, GCP, SharePoint, OneDrive etc.).
+
+:::image type="content" source="./media/transformations/create-newtableshortcut.png" alt-text="Screenshot that shows creating 'table shortcut'.":::
+
 3. **Choose file, Configure transformation & create shortcut** – Browse to an existing OneLake shortcut that points to the folder with your CSV files, configure parameters, and initiate creation. 
-   - *Delimiter* in CSV files – Select the character used to separate columns (comma, semicolon, pipe, tab).  
+   - *Delimiter* in CSV files – Select the character used to separate columns (comma, semicolon, pipe, tab, ampersand, space).  
    - *First row as headers* – Indicate whether the first row contains column names.
    - *Table Shortcut name* – Provide a friendly name; Fabric creates it under **/Tables**.
+   
 4. Track refreshes and view logs for transparency in **Manage Shortcut monitoring hub**.
 
-Fabric Spark compute copies the data into a Delta table and shows progress in the **Manage shortcut** pane.
-## Supported sources and destinations
+Fabric Spark compute copies the data into a Delta table and shows progress in the **Manage shortcut** pane. Shortcut transformations are available in Lakehouse items. They create Delta Lake tables in the **Lakehouse / Tables** folder.
 
-Shortcut transformations support CSV, Parquet, and JSON file formats. You can include multiple file formats in the same shortcut folder. The transformation intelligently handles each format and consolidates them into a single Delta table based on schema compatibility.
-
-Shortcut transformations are available in Lakehouse items. They create Delta Lake tables in the **Lakehouse / Tables** folder.
-
-### CSV files
-
-* **Extensions**: `.csv`
-* **Encoding**: UTF-8
-* **Delimiters**: Comma, semicolon, pipe, tab, ampersand, space (configurable)
-* **Headers**: Configurable first-row header support
-
-### Parquet files
-
-* **Extensions**: `.parquet`
-* **Nested structures**: Up to five levels of structs and arrays automatically flattened
-
-### JSON files
-
-* **Extensions**: `.json`, `.jsonl`, `.ndjson`
-* **Nested structures**: Up to five levels of structs and arrays automatically flattened
-
-## Set up a shortcut transformation
-
-1. In your lakehouse, right-click the **Tables** folder and select **New shortcut**.  
-
-1. Browse to the folder with your source files (CSV, Parquet, JSON, or a mix).  
-
-1. On the **Transform** page, view the objects that are autotransformed. You can select **Revert changes** if you don't want to apply the transform.
-
-   * For CSV files:
-     * **Delimiter** – Select the character used to separate columns (comma, semicolon, pipe, tab).  
-     * **First row as headers** – Indicate whether the first row contains column names.
-   * For Parquet and JSON files:
-     * Schema is automatically inferred.
-
-1. Select **Next**.
-
-1. Review the shortcut details, then select **Create**.
-
-Fabric Spark compute copies the data into a Delta table and shows progress in the **Manage shortcuts** pane. The initial load processes all existing files, then continuous sync monitors for changes every 2 minutes.
 
 ## How synchronization works
 
@@ -117,8 +79,6 @@ After the initial load, Fabric Spark compute:
 
 Shortcut transformations include monitoring and error handling to help you track ingestion status and diagnose issues.
 
-### Monitoring view
-
 1. Open the lakehouse and right-click the shortcut that feeds your transformation.  
 1. Select **Manage shortcut**.
 1. In the details pane, you can view:  
@@ -126,7 +86,7 @@ Shortcut transformations include monitoring and error handling to help you track
    * **Refresh history** – Chronological list of sync operations with row counts and any error details.
 :::image type="content" source="./media/transformations/monitoring-hub.png" alt-text="Screenshot that shows 'monitoring hub' for viewing transformation status.":::
 4. View more details in logs to troubleshoot
-:::image type="content" source="./media/transformations/logfile-troubleshooting.png" alt-text="Screenshot that shows how to access 'log file' to troubleshoot.":::
+:::image type="content" source="./media/transformations/log files-troubleshooting.png" alt-text="Screenshot that shows how to access 'log file' to troubleshoot.":::
 
 Note: **Pause** or **Delete** the transformation from this tab is an upcoming feature part of roadmap
 
@@ -142,13 +102,14 @@ Current limitations of shortcut transformations:
 * **Unsupported datatype for Parquet:** Timestamp_nanos, Decimal with INT32/INT64, INT96, Unassigned integer types - UINT_8/UINT_16/UINT_64, Complex logical types - MAP/LIST/STRUCT)
 * **Unsupported datatypes for JSON:** Mixed data types in an array, Raw binary blobs inside JSON, Timestamp_Nanos
 * **Flattening of Array data type in JSON:** Array data type shall be retained in delta table and data accessible with Spark SQL & Pyspark where for further transformations Fabric Materialized Lake Views could be used for silver layer
-
-Note: Adding support for some of the above and reducing limitations is part of our roadmap. Track our release communications for further updates.
-* **Source format**: Only CSV, JSON, and Parquet files are supported.
-* **Flattening depth**: Nested structures are flattened up to five levels deep. Deeper nesting requires preprocessing.
+* **Source format**: Only CSV, JSON, and Parquet files are supported as of date.
+* **Flattening depth in JSON**: Nested structures are flattened up to five levels deep. Deeper nesting requires preprocessing.
 * **Write operations**: Transformations are _read-optimized_; direct **MERGE INTO** or **DELETE** statements on the transformation target table aren't supported.
 * **Workspace availability**: Available only in **Lakehouse** items (not Data Warehouses or KQL databases).  
 * **File schema consistency**: Files must share an identical schema.
+
+Note: Adding support for some of the above and reducing limitations is part of our roadmap. Track our release communications for further updates.
+
 
 ## Clean up
 
