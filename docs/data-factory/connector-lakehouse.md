@@ -43,16 +43,15 @@ In some cases, the Power Query connector article might include advanced options,
 
     :::image type="content" source="media/connector-lakehouse/select-lakehouse-in-onelake.png" lightbox="media/connector-sql-database/select-sql-database-in-onelake.png" alt-text="Screenshot of selecting SQL database in OneLake section.":::
 
-1. In **Connect to data source** pane, select a connection or create a new connection from the drop-down list, depending on your needs. The connections displayed are those available within your tenant.
+1. In **Connect to data source** pane, select an existing connection within your tenant or create a new one.
 
     :::image type="content" source="media/connector-lakehouse/connect-to-data-source.png" lightbox="media/connector-lakehouse/connect-to-data-source.png" alt-text="Screenshot of the pane to connect to data source.":::
 
+1. Select **Connect** to connect to your Lakehouse.
 
 > [!NOTE]
-> To allow others to use the Lakehouse connection in your pipeline, you need to share your Lakehouse connection with them.
-
-> [!NOTE]
-> When you use an existing Lakehouse connection, ensure that the credential used in the connection have at least Viewer permission to access your workspace with the Lakehouse. Otherwise, you are recommended to create a new Lakehouse connection.
+> 1. To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
+> 2. If choose to use an existing Lakehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Lakehouse. 
 
 ## Related content
 
