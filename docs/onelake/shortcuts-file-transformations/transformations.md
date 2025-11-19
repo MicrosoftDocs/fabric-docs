@@ -54,9 +54,7 @@ All data sources supported in OneLake are supported.
 ## Set up a shortcut transformation
 
 1. In your lakehouse, select **+ Table Shortcut in Tables section which is Shortcut transformation (preview)** and choose your source (for example, Azure Data Lake, Azure Blob Storage, Dataverse, Amazon S3, GCP, SharePoint, OneDrive etc.).
-
-   <img width="1216" height="334" alt="Tableshortcut" src="https://github.com/user-attachments/assets/f80624eb-b7dc-4d77-8327-58f4998fa79e" />
-
+:::image type="content" source="./media/transformations/Create-newtableshortcut.png" alt-text="Screenshot that shows creating 'table shortcut'.":::
 3. **Choose file, Configure transformation & create shortcut** – Browse to an existing OneLake shortcut that points to the folder with your CSV files, configure parameters, and initiate creation. 
    - *Delimiter* in CSV files – Select the character used to separate columns (comma, semicolon, pipe, tab).  
    - *First row as headers* – Indicate whether the first row contains column names.
@@ -126,12 +124,9 @@ Shortcut transformations include monitoring and error handling to help you track
 1. In the details pane, you can view:  
    * **Status** – Last scan result and current sync state.  
    * **Refresh history** – Chronological list of sync operations with row counts and any error details.
-   
-  <img width="605" height="527" alt="Monitor" src="https://github.com/user-attachments/assets/b807b713-4630-4689-a64f-da2fc71bae7e" />
-
+:::image type="content" source="./media/transformations/monitoring-hub.png" alt-text="Screenshot that shows 'monitoring hub' for viewing transformation status.":::
 4. View more details in logs to troubleshoot
-
-   <img width="605" height="452" alt="Logfiles" src="https://github.com/user-attachments/assets/72279c26-b09f-4e1f-9343-3f289859190a" />
+:::image type="content" source="./media/transformations/logfile-troubleshooting.png" alt-text="Screenshot that shows how to access 'log file' to troubleshoot.":::
 
 Note: **Pause** or **Delete** the transformation from this tab is an upcoming feature part of roadmap
 
