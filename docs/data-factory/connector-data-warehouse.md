@@ -50,5 +50,5 @@ In some cases, the Power Query connector article might include advanced options,
 1. Select **Connect** to connect to your Data Warehouse.
 
 > [!NOTE]
-> 1. To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
-> 2. If choose to use an existing Data Warehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Data Warehouse. For more information about the permission, see this [article](../data-warehouse/workspace-roles.md).
+> - To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
+> - If you choose to use an existing Data Warehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Data Warehouse. For more information about the permission, see this [article](../data-warehouse/workspace-roles.md).
