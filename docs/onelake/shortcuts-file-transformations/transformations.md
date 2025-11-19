@@ -86,7 +86,7 @@ Shortcut transformations include monitoring and error handling to help you track
    * **Refresh history** – Chronological list of sync operations with row counts and any error details.
 :::image type="content" source="./media/transformations/monitoring-hub.png" alt-text="Screenshot that shows 'monitoring hub' for viewing transformation status.":::
 4. View more details in logs to troubleshoot
-:::image type="content" source="./media/transformations/log files-troubleshooting.png" alt-text="Screenshot that shows how to access 'log file' to troubleshoot.":::
+:::image type="content" source="./media/transformations/logfiles-troubleshooting.png" alt-text="Screenshot that shows how to access 'log file' to troubleshoot.":::
 
 Note: **Pause** or **Delete** the transformation from this tab is an upcoming feature part of roadmap
 
