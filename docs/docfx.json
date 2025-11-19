@@ -83,6 +83,8 @@
                 "fundamentals/**/*.md": "get-started",
                 "governance/**/*.md": "governance",
                 "governance/**/*.yml": "governance",
+                "graph/**/*.md": "graph",
+                "graph/**/*.yml": "graph",
                 "onelake/**/*.md": "onelake",
                 "onelake/**/*.yml": "onelake",
                 "real-time-hub/**/*.md": "rti-hub",

@@ -6,8 +6,6 @@ ms.date: 11/18/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam
-ms.service: fabric
-ms.subservice: graph
 ---
 
 #  Compare graph and relational databases
