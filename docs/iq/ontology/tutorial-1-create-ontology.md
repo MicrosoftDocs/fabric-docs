@@ -4,7 +4,7 @@ description: Create an ontology (preview) item with data from a semantic model o
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 10/31/2025
+ms.date: 11/12/2025
 ms.topic: tutorial
 zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
 zone_pivot_groups: create-ontology-scenario
@@ -53,6 +53,12 @@ This section describes support in ontology (preview) for different semantic mode
 | Generating entity type bindings to data sources | Not supported | Supported | Not Supported |
 | Generating relationship type bindings to data sources | Not supported | Supported only if primary key is identified (the primary key is used as the entity type key for the ontology) | Not Supported |
 | Querying data using bindings to data sources | Not supported | Supported (without measures and calculated columns) | Not Supported |
+
+### Other semantic model limitations
+
+* Ontology does not support creating data bindings when the semantic model table is in **Direct Lake mode** and the backing lakehouse is in a workspace with **inbound public access disabled**. The ontology item is created successfully but that entity type has no data bindings.
+* Fabric Graph does not currently support the `Decimal` type. As a result, if you generate an ontology from a semantic model with tables that include `Decimal` type columns, you see null values returned for those properties on all queries. 
+    * `Decimal` is different from the floating-point `Double` type, which is supported. `Decimal` is a fixed-precision numeric type that is most commonly used for representing monetary values.
 
 ## Generate ontology
 
@@ -164,7 +170,7 @@ Select the *SaleEvent* entity type to display it and its relationship types on t
 Select each of the three relationship types and update its details to match the following table. First, rename the relationship type to the provided friendlier name. Next, set the correct order of source and target entity types. Finally, bind the relationship type to the source data table.
 
 >[!NOTE]
->To prevent unexpected behavior from a known issue, make sure the correct source and target entity types are set before choosing the source data table to bind.
+>To prevent unexpected behavior from a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&active=true&fixed=true&sort=published&issueId=1619), make sure the correct source and target entity types are set before choosing the source data table to bind.
 
 The final relationship details match the following table.
 

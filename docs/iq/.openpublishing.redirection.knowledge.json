@@ -1,5 +1,9 @@
 {
   "redirections": [
-    
+    {
+      "source_path_from_root": "/docs/iq/ontology/frequently-asked-questions.md",
+      "redirect_url": "/fabric/iq/ontology/resources-frequently-asked-questions",
+      "redirect_document_id": true
+    }
   ]
 }

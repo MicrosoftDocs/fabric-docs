@@ -12,6 +12,8 @@ ms.topic: concept-article
 
 This article contains answers to frequently asked questions about ontology (preview).
 
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Does ontology (preview) support Eventstream?
 
 Yes, you can bind data from Fabric Eventstream to ontology (preview) by landing that eventstream data in an eventhouse that is used as the ontology binding data source. For a walkthrough of this process, see the [ontology (preview) tutorial](tutorial-0-introduction.md).
