@@ -67,7 +67,7 @@ The following table presents features supported in Power BI dataflow and/or Fabr
 | [Pipeline orchestration](dataflow-activity.md), which allows you to add a [Dataflow activity](dataflow-activity.md) to a pipeline and create orchestrated conditional events | No | Yes |
 | **Artificial intelligence** |||
 | [Copilot for Data Factory](../fundamentals/copilot-fabric-data-factory.md), which provides intelligent code generation to transform data with ease, and generates code explanations to help better understand complex tasks | No | Yes |
-| [Cognitive Services](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration), which use artificial intelligence (AI) to apply different algorithms from Azure Cognitive Services to enrich self-service data preparation | Yes | No <sup>2</sup> |
+| [Cognitive Services](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration), which use artificial intelligence (AI) to apply different algorithms from Azure Cognitive Services to enrich self-service data preparation | Yes | Yes <sup>2</sup> |
 | [Automated machine learning (AutoML)](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration), which enables business analysts to train, validate, and invoke machine learning (ML) models directly in Fabric | Deprecated <sup>3</sup> ||
 | [Azure Machine Learning](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration) integration, which exposes custom models as dynamic Power Query functions that users can invoke in the Power Query Editor | Yes | Yes <sup>2</sup> |
 | **Content management** |||
