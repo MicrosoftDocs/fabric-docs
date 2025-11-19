@@ -41,11 +41,11 @@ In some cases, the Power Query connector article might include advanced options,
 
 1. Select an existing Lakehouse.
 
-    :::image type="content" source="media/connector-lakehouse/select-lakehouse-in-onelake.png" lightbox="media/connector-sql-database/select-sql-database-in-onelake.png" alt-text="Screenshot of selecting SQL database in OneLake section.":::
+    :::image type="content" source="media/connector-lakehouse/select-lakehouse-in-onelake.png" lightbox="media/connector-sql-database/select-sql-database-in-onelake.png" alt-text="Screenshot of selecting Lakehouse in OneLake section.":::
 
 1. In **Connect to data source** pane, select an existing connection within your tenant or create a new one.
 
-    :::image type="content" source="media/connector-lakehouse/connect-to-data-source.png" lightbox="media/connector-lakehouse/connect-to-data-source.png" alt-text="Screenshot of the pane to connect to data source.":::
+    :::image type="content" source="media/connector-lakehouse/connect-to-data-source.png" alt-text="Screenshot of the pane to connect to data source.":::
 
 1. Select **Connect** to connect to your Lakehouse.
 
