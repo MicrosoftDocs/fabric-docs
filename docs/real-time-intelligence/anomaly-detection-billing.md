@@ -32,7 +32,7 @@ Anomaly Detector operations include:
     1. Each monitoring cycle incurs CU consumption based on the check frequency and data volume, which determines the associated billing.
 
 > [!IMPORTANT]
-> [Billing is tied to query execution and not to the volume of data processed.]
+> Billing is tied to query execution and not to the volume of data processed.
 
 ## Billing meter
 
@@ -41,7 +41,7 @@ Anomaly Detector uses one dedicated billing meter:
 - Meter Name: Anomaly Detector Queries Capacity Usage CU
 - Operation Name: Anomaly Detector Run Queries
 
-This single meter tracks all CU consumption for both interactive analysis and continuous monitoring. The Microsoft Fabric Capacity Metrics app and Azure billing system report usage.
+This single meter tracks all CU consumption for both interactive analysis and continuous monitoring. You can find the detailed usage reports in the Microsoft Fabric Capacity Metrics app or through the Azure billing system.
 
 ## Reporting and visibility
 
