@@ -51,7 +51,7 @@ In some cases, the Power Query connector article might include advanced options,
 
 > [!NOTE]
 > 1. To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
-> 2. If choose to use an existing Lakehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Lakehouse. 
+> 2. If choose to use an existing Lakehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Lakehouse. For more information about the permission, see this [article](../data-engineering/workspace-roles-lakehouse.md).
 
 ## Related content
 
