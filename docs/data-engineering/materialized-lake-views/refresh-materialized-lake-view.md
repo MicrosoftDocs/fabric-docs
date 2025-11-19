@@ -89,9 +89,10 @@ To perform a full refresh of a materialized lake view, you can use the following
 ```sql
 REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier FULL
 ```
-  
+
 > [!NOTE]
-> Refreshing a materialized lake view that uses non-delta tables as its source initiates a full refresh.
+> - If your workspace name contains spaces, enclose it in backticks: `` `My Workspace`.lakehouse.schema.view_name ``
+> - Refreshing a materialized lake view that uses non-delta tables as its source initiates a full refresh.
 
 ### Determine the refresh policy 
 
