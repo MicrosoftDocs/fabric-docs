@@ -63,7 +63,7 @@ The default return type is a list of strings for each label. If users choose to 
 # This code uses AI. Always review output for mistakes. 
 
 df = spark.createDataFrame([
-        ("MJ Lee lives in Tuscon, AZ, and works as a software engineer for Microsoft.",),
+        ("MJ Lee lives in Tuscon, AZ, and works as a software engineer for Contoso.",),
         ("Kris Turner, a nurse at NYU Langone, is a resident of Jersey City, New Jersey.",)
     ], ["descriptions"])
 
