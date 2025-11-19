@@ -137,8 +137,8 @@ Use this reference to see who can do what.
 | Fabric capacity (F64 or larger) + free users | Yes | No | Optional | No | Yes | Yes (viewer role) | Free users rely on capacity. They can't create Power BI items outside My workspace without a Pro or PPU license. |
 | Fabric capacity (any F SKU < F64) + free users | Yes | No | Optional | No | Yes | No (outside My workspace) | Viewing Power BI content requires a Pro or PPU license when the F SKU is below F64. |
 | Power BI Premium per capacity (P1–P5) only | No | Yes | Optional | No | Yes (Fabric items disabled until enabled by Fabric Admin) | Yes (with a viewer role, same as Fabric) | Enable Fabric to create Fabric items. |
-| PPU only (no F or P capacity) | No | No | Yes | No | No | Yes (PPU workspaces) | PPU is a per-user feature set, not a capacity. |
-| Pro only (no F/P capacity) | No | No | No | No | No (personal Power BI does not include Fabric non–Power BI items) | Limited | A Fabric capacity is required for Fabric workloads. |
+| PPU only (no F or P capacity) | No | No | Yes | No | No | Not applicable | PPU is a per-user feature set, not a capacity. |
+| Pro only (no F/P capacity) | No | No | No | No | No (personal Power BI does not include Fabric non–Power BI items) | Not applicable | A Fabric capacity is required for Fabric workloads. |
 | Trial Fabric capacity | Temporary | No | Optional | No | Yes | Yes (acts like F64 for viewing) | Ends after the trial. |
 | Embedding for your organization (User Owns the Data) with content on A capacity | No | No | No | Yes | No | With a Power BI Pro or PPU license or Power BI Individual Trial | Standard "user owns data" embedding rules. |
 | Embedding for your customers (App Owns the Data) with content on A capacity | No | No | No | Yes | No | Only when using the app that owns the data and authenticating through that app; cannot use the user’s Entra identity | Follows strict “app owns data” model. |
