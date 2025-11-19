@@ -2,12 +2,10 @@
 title: Graph Overview
 description: Learn about the core purpose, architecture, and benefits of graph in Microsoft Fabric, including integration and feature highlights.
 ms.topic: concept-article
-ms.date: 10/28/2025
+ms.date: 11/18/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam
-ms.service: fabric
-ms.subservice: graph
 ms.custom: references_regions
 ms.search.form: Graph Overview
 ---
@@ -46,6 +44,9 @@ Graph in Microsoft Fabric broadens access to graph insights beyond specialized r
 Graph in Microsoft Fabric enables you to:
 
 - Create a labeled property graph over structured data in OneLake by defining its nodes and edges in terms of underlying tabular data.
+
+    > [!TIP]
+    > Graph fully supports schema evolution through OneLake. This means you can add, remove, or reorder columns in your source tables without breaking graph ingestion or requiring a full reload. All schema changes are automatically handled during graph load and reflected in production, giving you flexibility to adapt your data model as business needs evolve. This capability ensures that graph solutions remain resilient and up to date even as underlying datasets change.
 
 - Query using GQL (Graph Query Language), including pattern matching, path constructs, aggregations, and other features as they're released. The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
 

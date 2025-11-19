@@ -283,7 +283,7 @@ The `sp_describe_first_result_set` function uses a sample of the data to estimat
 ```sql
 EXEC sp_describe_first_result_set N'  
    SELECT * FROM OPENROWSET(  
-      BULK ''[abfss://<workspace ID>@<tenant>.dfs.fabric.microsoft.com/<lakehouse ID>/Files/Contoso/store.parquet](mailto:abfss://%3cworkspaceid%3e@%3ctenant%3e.dfs.fabric.microsoft.com/%3clakehouseid%3e/Files/Contoso/store.parquet)'',  
+      BULK ''abfss://<workspace ID>@<tenant>.dfs.fabric.microsoft.com/<lakehouse ID>/Files/Contoso/store.parquet'',  
       FORMAT = ''parquet''  
    ) AS DATA'; 
 ```
@@ -301,13 +301,13 @@ SELECT
   r.filename() as file_name
 , r.filepath() as full_path 
 FROM OPENROWSET
-   (BULK '[abfss://<workspace ID>@<tenant>.dfs.fabric.microsoft.com/<lakehouse ID>/Files/*/*.parquet](mailto:abfss://%3cworkspaceid%3e@%3ctenant%3e.dfs.fabric.microsoft.com/%3clakehouseid%3e/Files/*/*.parquet)',  
+   (BULK 'abfss://<workspace ID>@<tenant>.dfs.fabric.microsoft.com/<lakehouse ID>/Files/*/*.parquet',  
     FORMAT = 'parquet'  
    ) AS r 
 GROUP BY r.filename(), r.filepath() 
 ORDER BY file_name;  
 ```
- 
+
 For more information, see [filename()](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true#filename-function) and [filepath()](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true#filepath-function).
 
 ## Related content
