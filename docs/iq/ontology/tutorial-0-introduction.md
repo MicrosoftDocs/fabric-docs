@@ -36,7 +36,7 @@ Choose your preferred scenario by using the selector at the beginning of the art
 
         :::image type="content" source="media/tutorial-0-introduction/prerequisite-data-agent.png" alt-text="Screenshot of enabling data agents in the admin portal.":::
 
-        For more information about these prerequisites, see [Prepare your tenant for ontology (preview)](overview-prepare-tenant.md).
+        For more information about these prerequisites, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
 
 ## Download sample data 
 
