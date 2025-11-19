@@ -20,10 +20,10 @@ These limitations apply only to Warehouse and SQL analytics endpoint items in Fa
 
 Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. More functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/blog/announcing-the-fabric-roadmap?ft=All).
 
-- Data warehousing is not supported for *multiple* geographies at this time.
+> [!IMPORTANT]
+> Fabric Warehouse and SQL Analytics Endpoint connections require both the source and target items to be in the same region. Cross-region connections—including those across workspaces or capacities in different regions—are not supported and might fail to authenticate or connect.
 
 For more limitations in specific areas, see:
-
 - [Clone table](clone-table.md#limitations)
 - [Connectivity](connectivity.md#considerations-and-limitations)
 - [Data types in Microsoft Fabric](data-types.md)
