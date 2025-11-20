@@ -20,7 +20,7 @@ This article provides instructions for setting up workspace-level private links 
 
 ## Prerequisites
 
-* The workspace must be assigned to a Fabric capacity (F SKUs). Other capacities, such as premium (P SKU) and trial capacities, aren't supported.
+* The workspace must be assigned to a Fabric capacity (F SKUs). Other capacities, such as premium (P SKU) and trial capacities, aren't supported. You can check assignment by going to the workspace settings and selecting **License info**, as described in Step 1 of [Reassign a workspace to a different capacity](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity-1).
 * A Fabric administrator must enable the tenant setting **Configure workspace-level inbound network rules**. For details, see [Enable workspace inbound access protection for your tenant](security-workspace-enable-inbound-access-protection.md).
 * You need the workspace ID. Find it in the URL after `group`.
 * You need the tenant ID. In the Fabric portal, select the question mark in the upper right corner, then select **About Power BI**. The tenant ID is the **ctid** part of the **Tenant URL**.
@@ -28,9 +28,25 @@ This article provides instructions for setting up workspace-level private links 
 * You must be a workspace admin to configure the workspace communication policy.
 * If this is the first time setting up workspace-level private links in your tenant, re-register the **Microsoft.Fabric** resource provider in Azure for subscriptions containing the workspace private link resource and private endpoint. In the Azure portal, go to **Subscriptions** > **Settings** > **Resource providers**, select **Microsoft.Fabric**, and then select **Re-register**.
 
-## Step 1. Create a workspace in Fabric
 
-[Create a workspace in Fabric](/fabric/fundamentals/create-workspaces). Make sure the workspace is assigned to a Fabric capacity. You can check assignment by going to the workspace settings and selecting **License info**, as described in Step 1 of [Reassign a workspace to a different capacity](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity-1).
+## Step 1. Restrict inbound public access to the workspace
+
+Workspace admins can restrict inbound public access for their workspaces:
+
+1. In the Fabric portal, navigate to your workspace.
+
+1. Select **Settings** from the workspace menu.
+
+1. Go to the **Network** tab.
+
+1. Under **Inbound access protection**, switch the toggle to **Restrict public access**.
+
+1. Review the warning and confirm your selection.
+
+1. Select **Save** to apply the changes.
+
+> [!NOTE]
+> After restricting public access, only approved private endpoints or networks can connect to the workspace. Public internet access is blocked unless explicitly allowed.
 
 ## Step 2. Create the private link service in Azure
 

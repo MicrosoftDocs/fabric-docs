@@ -43,6 +43,12 @@ items:
           items: 
             - name: Manage admin access to inbound protection settings
               href: security-workspace-enable-inbound-access-protection.md
+            - name: Workspace IP firewall
+              items:
+                - name: About workspace IP firewall
+                  href: security-workspace-level-firewall-overview.md
+                - name: Set up and use workspace IP firewall
+                  href: security-workspace-level-firewall-set-up.md
             - name: Workspace-level private links
               items: 
                 - name: About workspace-level private links
