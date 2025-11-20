@@ -47,13 +47,13 @@ In **Run only mode** users with Execute permissions can view and run the publish
 The following are the components of Run only mode:
 1. **Mode switcher:** This control allows you to switch to Run only mode from Develop mode. 
 1. **Functions list:** In Run only mode, the functions list contains only published functions. 
-1. **Code editor:** In Run only mode, the code editor is ready-only and can't be modified in this mode. 
+1. **Code editor:** In Run only mode, the code editor is read-only and can't be modified in this mode. 
 1. **Code changes indicator:** This message bar indicates if there are unpublished changes in Develop mode. To see those changes, the user needs to switch to Develop mode by clicking on the button in the bar or using the Mode switcher. 
 
 Users that only have View permissions can see the **View only mode**. In this mode, users have access to a read-only version of the code and its metadata. 
 
 >[!NOTE]
-> Only users that only have View permissions are able to see the code the View only mode.
+> Only users with View permissions can see the code in View only mode.
 
 ## Use Develop mode to test your changes in the Fabric portal
 

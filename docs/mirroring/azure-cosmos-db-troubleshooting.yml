@@ -1,6 +1,6 @@
 ### YamlMime:FAQ
 metadata:
-  title: Troubleshoot Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+  title: Troubleshoot Microsoft Fabric mirrored databases from Azure Cosmos DB
   description: Learn how to troubleshoot prompts related to mirroring for Azure Cosmos DB databases in Microsoft Fabric.
   author: seesharprun
   ms.author: sidandrews
@@ -8,13 +8,11 @@ metadata:
   ms.service: fabric
   ms.subservice: data-warehouse
   ms.topic: faq
-  ms.date: 05/07/2025
+  ms.date: 11/06/2025
 title: |
-  Troubleshoot Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+  Troubleshoot Microsoft Fabric mirrored databases from Azure Cosmos DB
 summary: |
   Mirroring in Microsoft Fabric provides a seamless no-ETL experience to integrate your existing Azure Cosmos DB data with the rest of your data in Fabric. Use the tips in this article to help troubleshoot problems that you might experience when you create a mirrored database for Azure Cosmos DB in Fabric.
-  > [!IMPORTANT]
-  > Mirroring for Azure Cosmos DB is currently in [preview](../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
   Here's a list of common issues and relevant troubleshooting steps to follow if mirroring an Azure Cosmos DB database to Microsoft Fabric isn't working as expected.
 sections:
@@ -78,7 +76,8 @@ sections:
       - question: |
           Why am I getting a "JSON text isn't properly formatted. Unexpected character '"' is found at position" error message when running T-SQL queries against my SQL analytics endpoint?
         answer: |
-          Data warehouse can't handle JSON string columns greater than 8 KB in size. Nested data represented as a JSON string in SQL analytics endpoint or warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message. For more information, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
+          - In containers created before November 18, 2025, the SQL analytics endpoint can't handle JSON string columns greater than 8 KB in size. Nested data represented as a JSON string in SQL analytics endpoint or warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message. For more information, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
+          - The SQL analytics endpoint supports **varchar(max)** up to 16 MB for tables created after November 18, 2025. Cosmos DB supports up to 2 MB. Existing mirrored containers only support **varchar(8000)** and need to be recreated to adopt new data type and support data greater that 8 KB.
       - question: |
           Does Cosmos DB mirroring support column names with special characters?
         answer: |

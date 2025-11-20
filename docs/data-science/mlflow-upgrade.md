@@ -17,7 +17,7 @@ Microsoft Fabric integrates MLflow, an open-source machine learning tracking pla
 
 ## Upgrade to the latest machine learning tracking experience
 
-Starting November 2025, we're introducing an enhanced machine learning experiment tracking experience for your workspace. This upgrade is optional and available on-demand. If you choose not to upgrade manually, we'll automatically update your system by the end of Q1 2026.
+Starting November 2025, we're introducing an enhanced machine learning experiment tracking experience for your workspace. This upgrade is optional and available on-demand. 
 
 ## How to upgrade your workspace
 

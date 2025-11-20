@@ -14,5 +14,5 @@ ms.date: 07/10/2025
 - [Fabric data agent tenant settings](../data-agent-tenant-settings.md) is enabled.
 - [Cross-geo processing for AI](../data-agent-tenant-settings.md) is enabled.
 - [Cross-geo storing for AI](../data-agent-tenant-settings.md) is enabled.
-- At least one of these: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
+- At least one of these, with data: A warehouse, a lakehouse, one or more Power BI semantic models, a KQL database, or an ontology.
 - [Power BI semantic models via XMLA endpoints tenant switch](../data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.

@@ -110,7 +110,15 @@ Just-in-time publishing ensures your changes are available when needed. This sec
 
 Dataflow Gen2 uses an automated "just-in-time" publishing model. When you save a dataflow, changes are immediately available for the next refresh or execution. Syncing changes from Git or using deployment pipelines saves the updated dataflow in your workspace. The next refresh attempts to publish the latest saved version. If publishing fails, the error appears in the refresh history.
 
+When you refresh a dataflow, there is an option (`Run On Demand Execute` in the Background Jobs REST API) that controls whether publishing is attempted. The default for this option to `ApplyChangesIfNeeded` is true, which triggers a publish only if the source has changed since the last publish. This addresses scenarios in which users needed to manually trigger a publish when making changes via CI/CD or API.
+
 In some cases, the backend automatically republishes dataflows during refreshes to ensure compatibility with updates.
+
+Previously if publishing fails, the refresh runs using the last successfully published version of the dataflow. With just-in-time publishing, the refresh will fail if:
+- The dataflow was last saved after January  1, 2026, and
+- The publish fails (even if there was a successful publish in the past).
+
+This prevents scenarios where customers unknowingly run outdated versions of a dataflow. It ensures that what is shown in the editor matches what is executed.
 
 APIs are also available to refresh a dataflow without publishing or to manually trigger publishing.
 

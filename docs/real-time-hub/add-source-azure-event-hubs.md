@@ -64,6 +64,8 @@ On the **Connect** page, in the **Configure connection settings** section, follo
     
    Skip the **Data sources page** section, and continue to the [Configure and connect to the Azure event hub resource](#configure-and-connect-to-the-azure-event-hub) section.
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 4. On the **Data sources** page, select **Microsoft sources** category at the top, and then select **Connect** on the **Azure Event Hubs** tile. 
