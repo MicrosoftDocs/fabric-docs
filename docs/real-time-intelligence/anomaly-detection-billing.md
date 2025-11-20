@@ -18,21 +18,20 @@ Anomaly Detector in Microsoft Fabric Real-Time Intelligence automatically identi
 
 - **Capacity Units (CUs)**: All operations in Fabric consume CUs. Anomaly Detector usage is billed based on the number of queries executed during analysis and continuous monitoring.
 - **Eventhouse Dependency**: Both model recommendations and anomaly monitoring rely on Eventhouse queries. These queries drive CU consumption.
-- **Preview Status**: Anomaly Detector is currently in public preview. Billing starts on Dec 8, 2025.
+- **Preview Status**: Anomaly Detector is currently in public preview. Billing starts on December 8th, 2025.
 
 ## How Real-Time Intelligence measures Anomaly Detector usage
 
 Anomaly Detector operations include:
 
-1. Interactive Analysis
+1. **Interactive Analysis**
     1. When you initiate anomaly detection from the Real-Time hub or Eventhouse table, the system runs queries to analyze historical data and recommend models.
     1. Each analysis session consumes CUs based on query complexity and data size. 
-1. Continuous Monitoring
+1. **Continuous Monitoring**
     1. After deploying a model for monitoring, the system routinely queries Eventhouse to detect anomalies in the incoming data.
     1. Each monitoring cycle incurs CU consumption based on the check frequency and data volume, which determines the associated billing.
-
-> [!IMPORTANT]
-> Billing is tied to query execution and not to the volume of data processed.
+    > [!IMPORTANT]
+    > Billing is tied to query execution and not to the volume of data processed.
 
 ## Billing meter
 
@@ -58,3 +57,4 @@ This single meter tracks all CU consumption for both interactive analysis and co
 
 - [Anomaly Detection in Real-Time Intelligence](anomaly-detection.md)
 - [Anomaly Detection Models](anomaly-detection-models.md)
+- [Troubleshoot Anomaly Detection](troubleshoot-anomaly-detection.md)
