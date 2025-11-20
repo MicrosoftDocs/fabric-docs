@@ -21,7 +21,7 @@ When you create a Microsoft Entra app, a [service principal object](/entra/ident
 
 To enable service principal authentication for Fabric APIs, follow these steps:
 
-1. [Create a Microsoft Entra app](/entra/identity-platform/howto-create-service-principal-portal). You can skip this step if you already have a Microsoft Entra app you want to use. Take note of the app ID which you'll need in later steps.
+1. [Create a Microsoft Entra app](/entra/identity-platform/howto-create-service-principal-portal). You can skip this step if you already have a Microsoft Entra app you want to use. Take note of the app ID, which you need in later steps.
 
     >[!IMPORTANT]
     > Make sure the app you use doesn't have any admin-consent required permissions for Fabric set on it in the Azure portal. [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions).
@@ -35,12 +35,12 @@ To enable service principal authentication for Fabric APIs, follow these steps:
 4. Enable the Fabric admin settings:
     1. Sign in to the Fabric admin portal. You need to be a Fabric admin to see the tenant settings page.
     2. Under **Admin API settings**, select the switch for the type of admin APIs you want to enable:
-        * **Service principals can access read-only admin APIs** (see the [supported Power BI admin APIs](#supported-power-bi-admin-apis-for-read-only))
-        * **Service principals can access admin APIs used for updates** (see the [supported Fabric admin APIs](#supported-fabric-admin-apis-for-updates))
+        * **Service principals can access read-only admin APIs** (see [supported Power BI admin APIs](#supported-power-bi-admin-apis-for-read-only))
+        * **Service principals can access admin APIs used for updates** (see [supported Fabric admin APIs](#supported-fabric-admin-apis-for-updates))
 
 5. Set the toggle to **Enabled**.
 
-6. Select the **Specific security groups** radio button and in the text field that appears below it, add the security group you created in *Step 2*.
+6. Select the **Specific security groups** radio button. In the text field that appears below it, add the security group you created in *Step 2*.
 
 7. Select **Apply**.
 
