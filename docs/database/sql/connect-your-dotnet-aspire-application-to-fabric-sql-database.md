@@ -11,7 +11,7 @@ ms.topic: quickstart
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-In this tutorial, learn how to connect your .NET Aspire application to a [SQL database in Microsoft Fabric (Preview)](overview.md).
+In this tutorial, learn how to connect your .NET Aspire application to a [SQL database in Microsoft Fabric](overview.md).
 
 SQL database in Fabric lets you quickly connect your applications. In this article, you'll connect a .NET Aspire application to a SQL database in Fabric using the `AdventureWorksLT` sample schema. This walkthrough uses [Visual Studio Code](https://code.visualstudio.com/), which, when combined with [a Fabric trial capacity](../../fundamentals/fabric-trial.md), lets you complete this entire walkthrough for free.
 

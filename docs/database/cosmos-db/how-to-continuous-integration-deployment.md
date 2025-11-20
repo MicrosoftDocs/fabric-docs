@@ -1,16 +1,14 @@
 ---
-title: Configure Continuous Integration and Continuous Deployment (Preview)
-description: Understand how to set up continuous integration and deployment for Cosmos DB databases in Microsoft Fabric during the preview phase.
-author: seesharprun
-ms.author: sidandrews
+title: Configure Continuous Integration and Continuous Deployment
+description: Understand how to set up continuous integration and deployment for Cosmos DB databases in Microsoft Fabric phase.
+author: markjbrown
+ms.author: mjbrown
 ms.topic: how-to
-ms.date: 07/17/2025
+ms.date: 10/28/2025
 ms.search.form: Deploy and monitor Cosmos DB
 ---
 
-# Configure continuous integration and continuous deployment for Cosmos DB in Microsoft Fabric (preview)
-
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+# Configure continuous integration and continuous deployment for Cosmos DB in Microsoft Fabric
 
 Cosmos DB in Microsoft Fabric supports robust CI/CD capabilities through deployment pipelines and Git integration. This functionality streamlines development workflows and promotes consistency across environments. In this guide, you configure a deployment pipeline and Git integration for a database in Cosmos DB in Fabric.
 
@@ -44,9 +42,11 @@ Deployment pipelines simplify the process of moving items like datasets, reports
 > [!NOTE]
 > For more information about supported deployment pipeline items, see [supported items in deployment pipelines](../../cicd/deployment-pipelines/intro-to-deployment-pipelines.md#supported-items).
 
+:::image type="content" source="media/how-to-continuous-integration-deployment/deployment-pipeline.png" lightbox="media/how-to-continuous-integration-deployment/deployment-pipeline.png" alt-text="Screenshot of the deployment pipelines in the Fabric portal.":::
+
 ## Integrate with Git
 
-Git integration streamlines the process of collaboration using version control for your Fabric items. Using the integration with Git, you can sync your Cosmos DB database with the repository, import items from Git into your current workspace, or track changes over time using the Gitflow (pull requests, branches, etc.). In this section, the database is integrated with a repository on GitHub.
+Git integration streamlines the process of collaboration using version control for your Fabric items. Using the integration with Git, you can sync your Cosmos DB database and containers with the repository, import items from Git into your current workspace, or track changes over time using the Gitflow (pull requests, branches, etc.). In this section, the database is integrated with a repository on GitHub.
 
 1. Navigate to your existing workspace again.
 
@@ -64,6 +64,8 @@ Git integration streamlines the process of collaboration using version control f
 
 > [!NOTE]
 > For more information about Git integration, see [Get started with Git integration](../../cicd/git-integration/git-get-started.md).
+
+:::image type="content" source="media/how-to-continuous-integration-deployment/git-integration.png" lightbox="media/how-to-continuous-integration-deployment/git-integration.png" alt-text="Screenshot of the git integration in the Fabric portal.":::
 
 ## Related content
 

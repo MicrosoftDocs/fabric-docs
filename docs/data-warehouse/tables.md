@@ -157,7 +157,6 @@ The following list shows some of the table features that aren't currently suppor
 - Partitioned tables
 - Sequence
 - Sparse columns
-- Surrogate keys on number sequences with Identity columns
 - Synonyms
 - Triggers
 - Unique indexes

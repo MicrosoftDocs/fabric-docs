@@ -24,10 +24,13 @@ To edit or remove permissions, see [Managing permissions](#managing-permissions)
 
 ## Sharing and permissions
 
-By default, sharing a lakehouse grants Fabric **Read** permission on the lakehouse, the associated SQL analytics endpoint. In addition to these default permissions, you can grant:
+By default, sharing a lakehouse grants Fabric **Read** permission on the lakehouse, the associated SQL analytics endpoint. **Lakehouse sharing does not provide write permissions** - shared users can only read data, not modify it. In addition to these default permissions, you can grant:
 
 - ReadData permission on SQL analytics endpoint to access data without SQL policy.
 - ReadAll permission on the lakehouse to access all data using Apache Spark, and SubscribeOneLakeEvents permission to get OneLake events generated for the lakehouse.
+
+> [!IMPORTANT]
+> ReadAll permission requires users to have workspace **Viewer** role or **Read** permission on the lakehouse as a prerequisite. ReadAll alone does not grant access to lakehouse data.
 
 ## Managing permissions
 
@@ -35,7 +38,7 @@ After you share an item, you can edit or remove permissions on the **Direct acce
 
 ## Folder level access control
 
-OneLake data access permissions (preview) allow you to create custom roles within a lakehouse and to grant read permissions only to specific folders in OneLake. OneLake folder security is inheritable for all subfolders. For each OneLake role, you can assign users and security groups, or grant an automatic assignment based on the workspace role.
+OneLake data access permissions (preview) allow you to create custom roles within a lakehouse and to grant **read permissions only** to specific folders in OneLake. **OneLake security does not grant write permissions** - it only provides granular control over read access for users who already have basic read access to the lakehouse. Write permissions must still be granted through workspace roles (Contributor or higher). OneLake folder security is inheritable for all subfolders. For each OneLake role, you can assign users and security groups, or grant an automatic assignment based on the workspace role.
 
 Learn more about OneLake [Role-based access control (RBAC)](../onelake/security/data-access-control-model.md).
 

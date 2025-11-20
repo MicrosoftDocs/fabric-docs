@@ -37,7 +37,7 @@ For more information on connecting to your SQL database data, see [Connect to yo
 
 ## Access control using SQL security
 
-You can set object-level security for database users or database roles using ([workspace roles](authorization.md#workspace-roles) or [item permissions](authorization.md#item-permissions)) in the Fabric portal, or by using [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) Transact-SQL statements. These security rules will only apply for accessing data via SQL analytics endpoint. 
+You can set object-level security for database users or database roles using ([workspace roles](authorization.md#workspace-roles) or [item permissions](authorization.md#item-permissions)) in the Fabric portal, or by using [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric-sqldb&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric-sqldb&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric-sqldb&preserve-view=true) Transact-SQL statements. These security rules will only apply for accessing data via SQL analytics endpoint. 
 
 ## Collation
 

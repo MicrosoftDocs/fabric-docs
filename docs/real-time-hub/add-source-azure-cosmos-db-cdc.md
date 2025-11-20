@@ -26,6 +26,8 @@ You can get events from an Azure Cosmos DB CDC into Real-Time hub in one of the 
 - [Using the **Add source** experience](#data-sources-page)
 - [Using the **Microsoft sources** page](#microsoft-sources-page)
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 Use instructions from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmos-db-cdc-as-a-source) section.

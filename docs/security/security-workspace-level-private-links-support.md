@@ -47,7 +47,6 @@ The following item types aren't currently supported in workspaces enabled with w
 * Deployment pipelines
 * Default semantic models
 * Lakehouses with schemas
-* Spark connectors for SQL Data Warehouse
 
 If a workspace contains any unsupported item types, inbound public access can't be restricted for the workspace, even if workspace-level private link is set up. 
 
@@ -263,7 +262,7 @@ The following scenarios are unsupported:
 
 Manage Dataflows Gen2 in workspaces enabled with private links by using the Fabric portal or REST API.
 
-A virtual network data gateway must be used for every dataflow connector. The virtual network data gateway must reside in the same virtual network as the workspace-level private link endpoint used by the workspace. 
+A virtual network data gateway must be used with every connector. The virtual network data gateway must reside in the same virtual network as the workspace-level private link endpoint used by the workspace. 
 
 Power Platform Dataflow Connector: When a workspace has workspace private links enabled and public access denied, for any two dataflows in that workspace (dataflow A and dataflow B), neither dataflow will be able to connect to the other dataflow using the Power Platform Dataflow Connector, because the dataflow won't appear in the navigator.
 
@@ -327,6 +326,7 @@ You can manage mirrored databases in workspaces enabled with private links by us
    - Fabric doesn't currently support Event Hub integration.
    - Queued ingestion via OneLake isn't currently available.
 * The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
+* **OneLake Security** isn't currently supported when a workspace-level private link is enabled for a workspace.
 * Workspace monitoring isn't currently supported when a workspace-level private link is enabled for a workspace.
 
 ## Common errors and troubleshooting
