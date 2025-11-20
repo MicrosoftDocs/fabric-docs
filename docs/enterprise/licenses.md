@@ -113,7 +113,7 @@ Per-user licenses let users work in Microsoft Fabric. A Free (Fabric) license is
 - **Premium per-user (PPU)** - PPU licenses let organizations use Power BI [Premium features](/power-bi/enterprise/service-premium-features) by licensing every user with a PPU license instead of buying a Power BI Premium capacity. PPU is more cost effective when Power BI Premium features are needed for fewer than 250 users. PPU uses shared capacity across the organization, which provides the computing power for Power BI operations.
 
 > [!IMPORTANT]
-> **Premium Per User (PPU) does not provision a Fabric capacity.** While PPU provides access to most Power BI Premium features, it doesn't enable you to create or run non-Power BI Fabric items (such as lakehouses, warehouses, or notebooks). To use Fabric workloads beyond Power BI, you need an F capacity or a Trial Fabric capacity.
+> **Premium Per User (PPU) doesn't provision a Fabric capacity.** Although PPU provides access to most Power BI Premium features, it doesn't enable you to create or run non-Power BI Fabric items (such as lakehouses, warehouses, or notebooks). To use Fabric workloads beyond Power BI, you need an F capacity or a Trial Fabric capacity.
 
 ### Common licensing scenarios
 

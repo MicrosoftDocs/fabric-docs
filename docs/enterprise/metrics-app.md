@@ -18,7 +18,7 @@ Fabric resides on a capacity, which is a pool of resources allocated to your pla
 The Microsoft Fabric Capacity Metrics app is designed to provide monitoring capabilities for Microsoft Fabric capacities. Use the app to monitor your capacity consumption and make informed decisions on how to use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on autoscale.
 
 > [!NOTE]
-> Autoscale is available for Fabric F SKUs and Power BI Premium P SKUs. For more information about autoscale, see [Autoscale your Fabric capacity](/power-bi/enterprise/service-premium-auto-scale). Note that autoscale for Power BI Embedded A SKUs has been deprecated and is no longer available for most customers.
+> Autoscale is available for Fabric F SKUs and Power BI Premium P SKUs. For more information about autoscale, see [Autoscale your Fabric capacity](/power-bi/enterprise/service-premium-auto-scale). Autoscale for Power BI Embedded A SKUs has been deprecated and is no longer available for most customers.
 
 The app is updated often with new features and functionalities and provides the most in-depth information into how your capacities are performing.
 
