@@ -5,7 +5,7 @@ author: itsnotaboutthecell
 ms.author: alpowers
 ms.reviewer: whhender, mllopis
 ms.topic: conceptual
-ms.date: 12/08/2024
+ms.date: 11/19/2025
 ms.custom: fabric-cat, intro-migration, dataflows
 ---
 
@@ -22,11 +22,11 @@ This article targets Power BI dataflow creators. It provides them with guidance 
 
 Microsoft Fabric has evolved into an integrated platform for both self-service and IT-managed enterprise data. With exponential growth in data volumes and complexity, Fabric customers demand that their enterprise solutions scale, are secure, easy to manage, and accessible to all users across the largest of organizations.
 
-In recent years, Microsoft has taken great strides to deliver scalable cloud capabilities to [Fabric capacity](../enterprise/licenses.md#capacity). To that end, Data Factory in Fabric instantly empowers a large ecosystem of data integration developers and data integration solutions that have been built up over decades. It leverages the full set of features and capabilities that go far beyond comparable functionality available in previous generations.
+In recent years, Microsoft has taken great strides to deliver scalable cloud capabilities to [Fabric capacity](../enterprise/licenses.md#capacity). To that end, Data Factory in Fabric instantly empowers a large ecosystem of data integration developers and data integration solutions that have been built up over decades. It applies the full set of features and capabilities that go far beyond comparable functionality available in previous generations.
 
 Naturally, customers are now asking whether there's an opportunity to consolidate their data integration solutions by hosting them within Fabric. They often ask questions like:
 
-- Does all the dataflow functionality we depend on work in Dataflow Gen2?
+- Do the dataflow functionalities we depend on work in Dataflow Gen2?
 - What capabilities are available only in Dataflow Gen2?
 - How do we migrate existing dataflows to Dataflow Gen2?
 - What's Microsoft's roadmap for enterprise data ingestion?
@@ -36,11 +36,11 @@ Answers to many of these questions are described in this article.
 > [!NOTE]
 > The decision to migrate to Fabric capacity depends on the requirements of each customer. Customers should carefully evaluate the benefits in order to make an informed decision. We expect to see organic migration to Dataflow Gen2 over time, and our intention is that it happens on terms that the customer is comfortable with.
 >
-> To be clear, currently there aren't any plans to deprecate Power BI dataflows or Power Platform dataflows. However, there is a priority to focus investment on Dataflow Gen2 for enterprise data ingestion, and so the value provided by Fabric capacity will increase over time. Customers that choose Fabric capacity can expect to benefit from alignment with the [Microsoft Fabric product roadmap](https://aka.ms/fabricrm).
+> To be clear, currently there aren't any plans to deprecate Power BI dataflows or Power Platform dataflows. However, there's a priority to focus investment on Dataflow Gen2 for enterprise data ingestion, and so the value provided by Fabric capacity will increase over time. Customers that choose Fabric capacity can expect to benefit from alignment with the [Microsoft Fabric product roadmap](https://aka.ms/fabricrm).
 
 ### Convergence of self-service and enterprise data integration
 
-The consolidation of items in Fabric simplifies discovery, collaboration, and management by co-locating resources. It allows central IT teams to more easily adopt and integrate popular self-service items. At the same time, it allows operationalizing mission-critical data movement and transformation services aligned with corporate standards, including data lineage and monitoring.
+The consolidation of items in Fabric simplifies discovery, collaboration, and management by colocating resources. It allows central IT teams to more easily adopt and integrate popular self-service items. At the same time, it allows operationalizing mission-critical data movement and transformation services aligned with corporate standards, including data lineage and monitoring.
 
 To support the collaborative and scalable needs of creators, Dataflow Gen2 in Fabric introduces [fast copy](dataflows-gen2-fast-copy.md), which enables efficient ingestion of large data volumes by using Fabric's backend infrastructure to [store and process](data-in-staging-artifacts.md) intermediate data during transformation. It can handle terabytes of data seamlessly. Dataflow creators can specify [data destinations](dataflow-gen2-data-destinations-and-managed-settings.md) for their transformed data, such as a Fabric lakehouse, warehouse, eventhouse, or Azure SQL Database, facilitating better data management and accessibility. And what's more, the recent integration of generative AI through [Copilot](../fundamentals/copilot-fabric-data-factory.md) enhances the data preparation experience by providing intelligent code generation and automating repetitive tasks, providing an easier and faster path to create complex solutions.
 
@@ -48,7 +48,7 @@ By utilizing a common platform, the workflow is streamlined, which results in en
 
 ### Fabric capacity
 
-Thanks to its distributed architecture, [Fabric capacity](../enterprise/licenses.md#capacity) is less sensitive to overall load, temporal spikes, and high concurrency. By consolidating capacities to larger Fabric capacity SKUs, customers can achieve increased performance and throughput.
+Because of its distributed architecture, [Fabric capacity](../enterprise/licenses.md#capacity) is less sensitive to overall load, temporal spikes, and high concurrency. By consolidating capacities to larger Fabric capacity SKUs, customers can achieve increased performance and throughput.
 
 ## Feature comparison
 
@@ -67,9 +67,9 @@ The following table presents features supported in Power BI dataflow and/or Fabr
 | [Pipeline orchestration](dataflow-activity.md), which allows you to add a [Dataflow activity](dataflow-activity.md) to a pipeline and create orchestrated conditional events | No | Yes |
 | **Artificial intelligence** |||
 | [Copilot for Data Factory](../fundamentals/copilot-fabric-data-factory.md), which provides intelligent code generation to transform data with ease, and generates code explanations to help better understand complex tasks | No | Yes |
-| [Cognitive Services](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration), which use artificial intelligence (AI) to apply different algorithms from Azure Cognitive Services to enrich self-service data preparation | Yes | No <sup>2</sup> |
+| [Cognitive Services](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration), which use artificial intelligence (AI) to apply different algorithms from Azure Cognitive Services to enrich self-service data preparation | Yes | Yes <sup>2</sup> |
 | [Automated machine learning (AutoML)](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration), which enables business analysts to train, validate, and invoke machine learning (ML) models directly in Fabric | Deprecated <sup>3</sup> ||
-| [Azure Machine Learning](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration) integration, which exposes custom models as dynamic Power Query functions that users can invoke in the Power Query Editor | Yes | No <sup>2</sup> |
+| [Azure Machine Learning](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration) integration, which exposes custom models as dynamic Power Query functions that users can invoke in the Power Query Editor | Yes | Yes <sup>2</sup> |
 | **Content management** |||
 | [Data lineage view](../governance/lineage.md), which help users understand and assess dataflow item dependencies | Yes | Yes |
 | [Deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md), which manage the lifecycle of Fabric content | Yes | Yes |
@@ -90,9 +90,9 @@ The following table presents features supported in Power BI dataflow and/or Fabr
 | [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md), which provides monitoring capabilities for Fabric capacity | Yes | Yes |
 | [Audit log](../admin/track-user-activities.md), which tracks user activities across Fabric and Microsoft 365 | Yes | Yes |
 
-<sup>1</sup> It is recommended to leverage data destinations and connect directly to the output tables, see [this article](dataflow-gen2-data-destinations-and-managed-settings.md).
+<sup>1</sup> It's recommended to use data destinations and connect directly to the output tables, see [this article](dataflow-gen2-data-destinations-and-managed-settings.md).
 
-<sup>2</sup> To learn how to create custom functions that call Azure AI API endpoints, see [Tutorial: Extract key phrases from text stored in Power BI](/azure/ai-services/language-service/key-phrase-extraction/tutorials/integrate-power-bi).
+<sup>2</sup> To learn how to add an AI Prompt column in Dataflows Gen2 (CI/CD), see [Fabric AI prompt in Dataflow Gen2 (Preview)](dataflow-gen2-ai-functions.md).
 
 <sup>3</sup> Automated Machine Learning (AutoML) has been deprecated. For more information, see [this official announcement](https://powerbi.microsoft.com/blog/deprecation-of-automl-in-power-bi-using-dataflows-v1/).
 

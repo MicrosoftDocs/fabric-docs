@@ -15,7 +15,7 @@ Lakehouse supports the creation of custom schemas. Schemas allow you to group yo
 
 ## Create a lakehouse schema
 
-To enable schema support for your lakehouse, check the box next to **Lakehouse schemas (Public Preview)** when you create it.
+To enable schema support for your lakehouse, check the box next to **Lakehouse schemas** when you create it.
 
 :::image type="content" source="media\lakehouse-schemas\new-lakehouse.png" alt-text="Screenshot showing the new lakehouse dialog." lightbox="media/lakehouse-schemas/new-lakehouse.png":::
 

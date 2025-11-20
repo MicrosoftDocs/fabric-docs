@@ -22,8 +22,8 @@ Visual Studio Code (VS Code) is a one of the most popular lightweight source cod
 
 Prerequisites for the VS Code extension:
 
-- Install [Visual Studio Code](https://code.visualstudio.com/download).
-- Install the [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+- Install [Visual Studio Code](https://code.visualstudio.com/Download).
+- Install the [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) from the Visual Studio Code Marketplace.
 
 ## Install the extension and prepare your environment
 

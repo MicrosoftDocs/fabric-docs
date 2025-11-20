@@ -42,6 +42,9 @@ Select **Publish** to publish the changes and begin streaming data from HTTP sou
 
    :::image type="content" border="true" source="media/add-source-http/live-view.png" alt-text="A screenshot of the added HTTP source in Live view with the Publish button highlighted.":::
 
+## Limitation
+* The HTTP source currently doesn't support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Attempting to export or import an Eventstream item with this source to a Git repository may result in errors.  
+
 ## Related content
 
 Other connectors:

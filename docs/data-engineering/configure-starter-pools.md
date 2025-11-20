@@ -8,20 +8,19 @@ ms.topic: how-to
 ms.custom:
 ms.date: 10/20/2023
 ---
-# Configuring starter pools in Microsoft Fabric
+# Configure starter pools in Microsoft Fabric
 
-In this article, we explain how to customize starter pools in Microsoft Fabric for your analytics workloads. Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platform within seconds. You can use Spark sessions right away, instead of waiting for Spark to set up the nodes for you, which helps you do more with data and get insights quicker.
+Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platform within seconds. You can use Spark sessions right away, instead of waiting for Spark to set up the nodes for you, which helps you do more with data and get insights quicker.
 
-Starter pools have Spark clusters that are always on and ready for your requests. They use medium-sized nodes and can be scaled up based on your workload requirements.
+Starter pools have Spark clusters that are always on and ready for your requests. They use medium-sized nodes and can be scaled up based on your workload requirements. The default configuration and maximum node limits for starter pools vary depending on your purchased Microsoft Fabric capacity SKU.
 
-You can specify the maximum nodes for autoscaling based on the data engineering or data science workload requirements. Based on the max nodes you configure, the system dynamically acquires and retires nodes as the job's compute requirements change, which results in efficient scaling and improved performance.
+## Prerequisites
 
-You can also set the maximum limit for executors in starter pools and with Dynamic Allocation enabled, the system adjusts the number of executors depending on the data volume and job-level compute needs. This process enables you to focus on your workloads without worrying about performance optimization and resource management.
+To customize a starter pool, you need admin access to the workspace.
 
-> [!NOTE]
-> To customize a starter pool, you need admin access to the workspace.
+## Configure starter pool settings
 
-## Configure starter pools
+You can specify the maximum nodes for autoscaling and set the maximum limit for executors in starter pools. Based on the max nodes you configure, the system dynamically acquires and retires nodes as the job's compute requirements change, which results in efficient scaling and improved performance.
 
 To manage the starter pool associated with your workspace:
 
@@ -39,27 +38,26 @@ To manage the starter pool associated with your workspace:
 
 1. You can set the maximum node configuration for your starter pools to an allowed number based on the purchased capacity or reduce the default max node configuration to a smaller value when running smaller workloads.
 
+   Each Microsoft Fabric capacity SKU has specific default configurations and maximum node limits for starter pools. Higher capacity SKUs support more nodes to handle larger workloads, while smaller SKUs have more restrictive limits.
+
    :::image type="content" source="media\configure-starter-pools\starter-pool-max-node.png" alt-text="Screenshot showing starter pool max node and max executor options for autoscaling and dynamic allocation." lightbox="media\configure-starter-pools\starter-pool-max-node.png":::
 
-The following section lists various default configurations and the max node limits supported for starter pools based on Microsoft Fabric capacity SKUs:
+   The following table shows the available configurations by SKU:
 
-| SKU name | Capacity units | Spark VCores | Node size | Default max nodes | Max number of nodes |
-|--|--|--|--|--|--|
-| F2 | 2 | 4 | Medium | 1 | 1 |
-| F4 | 4 | 8 | Medium | 1 | 1 |
-| F8 | 8 | 16 | Medium | 2 | 2 |
-| F16 | 16 | 32 | Medium | 3 | 4 |
-| F32 | 32 | 64 | Medium | 8 | 8 |
-| F64 | 64 | 128 | Medium | 10 | 16 |
-| (Trial Capacity) | 64 | 128 | Medium | 10 | 16 |
-| F128 | 128 | 256 | Medium | 10 | 32 |
-| F256 | 256 | 512 | Medium | 10 | 64 |
-| F512 | 512 | 1024 | Medium | 10 | 128 |
-| F1024 | 1024 | 2048 | Medium | 10 | 200 |
-| F2048 | 2048 | 4096 | Medium | 10 | 200 |
-
-> [!NOTE]
-> To customize a starter pool, you need admin access to the workspace.
+   | SKU name | Capacity units | Spark VCores | Node size | Default max nodes | Max number of nodes |
+   |--|--|--|--|--|--|
+   | F2 | 2 | 4 | Medium | 1 | 1 |
+   | F4 | 4 | 8 | Medium | 1 | 1 |
+   | F8 | 8 | 16 | Medium | 2 | 2 |
+   | F16 | 16 | 32 | Medium | 3 | 4 |
+   | F32 | 32 | 64 | Medium | 8 | 8 |
+   | F64 | 64 | 128 | Medium | 10 | 16 |
+   | (Trial Capacity) | 64 | 128 | Medium | 10 | 16 |
+   | F128 | 128 | 256 | Medium | 10 | 32 |
+   | F256 | 256 | 512 | Medium | 10 | 64 |
+   | F512 | 512 | 1024 | Medium | 10 | 128 |
+   | F1024 | 1024 | 2048 | Medium | 10 | 200 |
+   | F2048 | 2048 | 4096 | Medium | 10 | 200 |
 
 ## Related content
 

@@ -69,43 +69,36 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 1. Navigate to **Authentication**. For **SASL mechanism**, select either **OAUTHBEARER** or **PLAIN**. Expand the section below based on your selection to view detailed steps:
 
-   <details>
-   <summary><b>Option 1: OAUTHBEARER (Click to expand)</b></summary>
+   ### [OAUTHBEARER](#tab/oauthbearer)
 
-      1. [Create a service principal App in Microsoft Entra admin center](https://entra.microsoft.com/) if you don’t have one.
-      1. Go to your Fabric workspace and select **Manage access**.
+   1. [Create a service principal App in Microsoft Entra admin center](https://entra.microsoft.com/) if you don’t have one.
+   1. Go to your Fabric workspace and select **Manage access**.
 
-         :::image type="content" source="media/add-source-cribl/manage-access.png" alt-text="Screenshot that shows how to add workspace access." lightbox="media/add-source-cribl/manage-access.png":::
+      :::image type="content" source="media/add-source-cribl/manage-access.png" alt-text="Screenshot that shows how to add workspace access." lightbox="media/add-source-cribl/manage-access.png":::
 
-      1. Search for your application and assign the **Contributor** (or higher) to your app.
+   1. Search for your application and assign the **Contributor** (or higher) to your app.
 
-         :::image type="content" source="media/add-source-cribl/contributor-role.png" alt-text="Screenshot that shows how to assign contributor role in workspace." lightbox="media/add-source-cribl/contributor-role.png":::
+      :::image type="content" source="media/add-source-cribl/contributor-role.png" alt-text="Screenshot that shows how to assign contributor role in workspace." lightbox="media/add-source-cribl/contributor-role.png":::
 
-      1. In [Microsoft Entra admin center](https://entra.microsoft.com/). Navigate to **Identity** > **Applications** > **App registrations**, and open your application.
-      1. Under **Overview**, copy the **Application (client)** value into the **Client ID** field on the Authentication page. 
-      1. Copy the **Directory (tenant) ID** value into the **Tenant identifier** field on the Authentication page. 
+   1. In [Microsoft Entra admin center](https://entra.microsoft.com/). Navigate to **Identity** > **Applications** > **App registrations**, and open your application.
+   1. Under **Overview**, copy the **Application (client)** value into the **Client ID** field on the Authentication page. 
+   1. Copy the **Directory (tenant) ID** value into the **Tenant identifier** field on the Authentication page. 
 
-         :::image type="content" source="media/add-source-cribl/app-id.png" alt-text="Screenshot that shows how to get app client ID and tenant ID." lightbox="media/add-source-cribl/app-id.png":::
+      :::image type="content" source="media/add-source-cribl/app-id.png" alt-text="Screenshot that shows how to get app client ID and tenant ID." lightbox="media/add-source-cribl/app-id.png":::
 
-      1. Go to **Certificates & secrets**, copy the **Client secrets** value into the **Client secret** field on the Authentication page. 
+   1. Go to **Certificates & secrets**, copy the **Client secrets** value into the **Client secret** field on the Authentication page. 
 
-         :::image type="content" source="media/add-source-cribl/app-key.png" alt-text="Screenshot that shows how to get app client key." lightbox="media/add-source-cribl/app-key.png":::
-      
-      1. In the Eventstream Cribl source's details pane, under **SASL mechanism**, select the **Oauthbearer** tab. Then copy the **Scope** value into the **Scope** field on the Authentication page.
+      :::image type="content" source="media/add-source-cribl/app-key.png" alt-text="Screenshot that shows how to get app client key." lightbox="media/add-source-cribl/app-key.png":::
+         
+   1. In the Eventstream Cribl source's details pane, under **SASL mechanism**, select the **Oauthbearer** tab. Then copy the **Scope** value into the **Scope** field on the Authentication page.
 
-         :::image type="content" source="media/add-source-cribl/scope.png" alt-text="Screenshot that shows how to get scope value in an eventstream." lightbox="media/add-source-cribl/scope.png":::
+      :::image type="content" source="media/add-source-cribl/scope.png" alt-text="Screenshot that shows how to get scope value in an eventstream." lightbox="media/add-source-cribl/scope.png":::
 
-   </details>
+   ### [PLAIN](#tab/plain)
 
-   <details>
+   1. In the Eventstream Cribl source's details pane, under **SASL mechanism**, select the **Plain** tab. Then copy the **SASL JASS password-primary** value into the **SASL JASS password** field on the Authentication page.
 
-   <summary><b>Option 2: PLAIN (Click to expand)</b></summary>
-
-      1. In the Eventstream Cribl source's details pane, under **SASL mechanism**, select the **Plain** tab. Then copy the **SASL JASS password-primary** value into the **SASL JASS password** field on the Authentication page.
-
-         :::image type="content" source="media/add-source-cribl/configure-cribl-jaas-password.png" alt-text="Screenshot that shows how to get JASS password in eventstream." lightbox="media/add-source-cribl/configure-cribl-jaas-password.png":::
-
-   </details>
+      :::image type="content" source="media/add-source-cribl/configure-cribl-jaas-password.png" alt-text="Screenshot that shows how to get JASS password in eventstream." lightbox="media/add-source-cribl/configure-cribl-jaas-password.png":::
 
 1. Select **Save**, and use the Cribl QuickConnect to connect to your Cribl source in Cribl service portal, and then **Commit & Deploy**.
 1. After you complete these steps, you can preview the data in your eventstream that is from your Cribl.
