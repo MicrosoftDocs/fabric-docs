@@ -113,7 +113,7 @@ Workspace-level surge protection extends capacity-based surge protection by lett
 
 - In the **Admin Portal**, under **Capacity settings**, select **Fabric Capacity**.
 - In the **workspaces** table at the bottom, click the gear icon in the **Actions** column to access workspace settings.
-- Workspaces can be in one of the following:
+- Workspaces can be in one of the following states:
 
   - **Available:** Default state, subject to surge protection rules. It operates normally and is subject to background surge protection and consumption rules. And can be blocked if it exceeds limits. You can return it to available state to unblock it immediately.
   
