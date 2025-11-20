@@ -260,6 +260,19 @@ If you're the Capacity or Fabric administrator, from the upper right corner of F
 
 :::image type="content" source="media/fabric-trial/fabric-admin.png" lightbox="media/fabric-trial/fabric-admin.png" alt-text="Screenshot of Admin center showing the Capacity settings screen.":::
 
+#### How do I know if my tenant has reached its trial capacity limit?
+
+Microsoft limits the number of trial capacities available per tenant. If your tenant has exhausted its trial capacity limit, you'll encounter one of these scenarios:
+
+- When attempting to start a new trial from the Account manager, the **Start trial** option might not be available or you may receive an error message indicating the trial limit has been reached.
+- If you try to trigger a trial by creating a Fabric item, the trial activation prompt won't appear.
+
+To resolve this issue:
+
+- Contact your Fabric administrator to check existing trial capacities in **Admin portal > Capacity settings > Trial**. If there are inactive or unmanaged trial capacities (for example, from users who left the organization), consider canceling them to free up capacity for new trials.
+- Request access to an existing trial capacity from a Capacity administrator who can share their trial by assigning workspaces or enabling contributor permissions.
+- Consider [purchasing a Fabric capacity](../enterprise/buy-subscription.md) if trial limits prevent your organization from testing Fabric features.
+
 #### How do I look up the number of days remaining in my trial?
 
 From the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select **Capacity settings** and then choose the **Trial** tab. The **Days left** column tracks the remaining days for each trial.

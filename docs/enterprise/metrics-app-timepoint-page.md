@@ -64,7 +64,23 @@ Start and end times may occur before or after the displayed time period, due to 
 
 * **Workspace** - The workspace the item belongs to.
 
-* **Item kind** - The type of the item.
+* **Item kind** - The type of the item. Common values include:
+  * **Report** - Power BI reports
+  * **SemanticModel** - Power BI semantic models (formerly datasets)
+  * **Lakehouse** - Fabric lakehouses
+  * **Warehouse** - Fabric data warehouses
+  * **Notebook** - Fabric notebooks
+  * **Pipeline** - Data Factory pipelines
+  * **Dataflow** - Dataflows
+  * **Eventstream** - Real-Time Intelligence event streams
+  * **KQLDatabase** - Kusto Query Language databases
+  * **KQLQueryset** - KQL query sets
+  * **Reflex** - Fabric Reflex items
+  * **MLModel** - Machine learning models
+  * **MLExperiment** - Machine learning experiments
+  
+  > [!NOTE]
+  > Some AI features may appear with different item kinds. For example, Copilot operations might be represented under different item types depending on the context of the operation. The item kind values are continually updated as new Fabric features are released.
 
 * **Item name** - The name of the item.
 
