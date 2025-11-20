@@ -172,12 +172,14 @@ We can also query the graph using the GQL graph query language.
 
 Follow these steps to switch to code editor and start querying your graph using GQL:
 
+<!-- GQL Query: Checked 2025-11-18 -->
 1. Select **Modes** > **Code editor** from your graph's home page.
 1. Enter a GQL query into the input field, such as ``MATCH (n:`Order`) RETURN count(n) AS num_orders``.
 1. Select **Run query** to execute the query.
 
 You can also run more complex queries, such as queries that combine matching graph patterns, filtering, aggregation, sorting, and top-k limiting:
 
+<!-- GQL Query: Checked 2025-11-20 -->
 ```gql
 MATCH (v:Vendor)-[:produces]->(p:`Product`)->(sc:`ProductSubcategory`)->(c:`ProductCategory`), 
       (o:`Order`)-[:`contains`]->(p)

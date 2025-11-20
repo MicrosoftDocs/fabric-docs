@@ -36,6 +36,7 @@ MATCH (p:Person)-[:friendsWith]->(friend)-[:purchased]->(o:Order)
 WHERE p.name = 'Alice';
 RETURN o
 ```
+
 SQL (equivalent):
 
 ```sql

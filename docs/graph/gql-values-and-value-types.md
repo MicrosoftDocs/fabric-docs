@@ -277,7 +277,8 @@ When working with graph types, you can define abstract node types that serve as 
 
 ```gql
 -- Abstract base type (cannot be instantiated)
-ABSTRACT (:Person {
+ABSTRACT
+(:Person => {
   id :: INT64,
   name :: STRING,
   birth_date :: ZONED DATETIME
@@ -313,7 +314,7 @@ RETURN e.name AS sales_person, c.name AS customer
 ```
 
 > [!NOTE]
-> These queries assume the sketched out graph type and do not use the social network example data set.
+> The preceding queries assume the graph type sketched out above and do not use the social network example data set.
 
 This approach provides type safety while enabling flexible, inheritance-based data modeling in your graph schemas.
 
@@ -425,7 +426,6 @@ Use square brackets with zero-based indexing to access list elements:
 ```gql
 list_var[0]  -- first element
 list_var[1]  -- second element
-list_var[-1] -- last element (if supported)
 ```
 
 **Common list operations:**
@@ -435,10 +435,7 @@ list_var[-1] -- last element (if supported)
 WHERE 'Engineering' IN employee.departments
 
 -- List concatenation
-RETURN [1, 2] + [3, 4]  -- [1, 2, 3, 4]
-
--- List slicing (if supported)
-list_var[1:3]  -- elements from index 1 to 2
+RETURN [1, 2] || [3, 4]  -- [1, 2, 3, 4]
 
 -- List size
 size(list_var)
