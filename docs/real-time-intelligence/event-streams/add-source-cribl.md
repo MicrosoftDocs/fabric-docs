@@ -69,7 +69,9 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 1. Navigate to **Authentication**. For **SASL mechanism**, select either **OAUTHBEARER** or **PLAIN**. Expand the section below based on your selection to view detailed steps:
 
-   ### [OAUTHBEARER](#tab/oauthbearer)
+:::tabs
+
+@tab OAUTHBEARER
 
    1. [Create a service principal App in Microsoft Entra admin center](https://entra.microsoft.com/) if you don’t have one.
    1. Go to your Fabric workspace and select **Manage access**.
@@ -94,13 +96,13 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
       :::image type="content" source="media/add-source-cribl/scope.png" alt-text="Screenshot that shows how to get scope value in an eventstream." lightbox="media/add-source-cribl/scope.png":::
 
-   ### [PLAIN](#tab/plain)
+@tab PLAIN
 
    1. In the Eventstream Cribl source's details pane, under **SASL mechanism**, select the **Plain** tab. Then copy the **SASL JASS password-primary** value into the **SASL JASS password** field on the Authentication page.
 
       :::image type="content" source="media/add-source-cribl/configure-cribl-jaas-password.png" alt-text="Screenshot that shows how to get JASS password in eventstream." lightbox="media/add-source-cribl/configure-cribl-jaas-password.png":::
 
-   ---
+:::
 
 1. Select **Save**, and use the Cribl QuickConnect to connect to your Cribl source in Cribl service portal, and then **Commit & Deploy**.
 1. After you complete these steps, you can preview the data in your eventstream that is from your Cribl.
