@@ -92,6 +92,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Fabric Workspace events source                            | Source        | NO                        |                                             |
 | Fabric OneLake events                                     | Source        | NO                        |                                             |
 | Fabric Job events                                         | Source        | NO                        |                                             |
+| Fabric capacity overview events (preview)                 | Source        | NO                        |                                             |
 | Azure Blob storage                                        | Source        | NO                        |                                             |
 | MQTT (preview)                                            | Source        | YES                       | - When streaming was last stopped           |
 | Cribl (preview)                                          | Source        | NO                        |                                             |
