@@ -28,7 +28,7 @@ To start, you must complete the following prerequisites:
 ## Create a pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
-1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
+1. Select the Power BI icon in the bottom left of the screen, then select **Fabric** to open homepage of Data Factory.
 1. Select **Pipeline** and then input a pipeline name to create a new pipeline.
 
    :::image type="content" source="media/copy-data-activity/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
