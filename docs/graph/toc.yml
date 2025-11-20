@@ -43,7 +43,7 @@ items:
           href: gql-reference-status-codes.md
         - name: GQL reserved words reference
           href: gql-reference-reserved-terms.md
-  - name: Reference
+  - name: API Reference
     items:
       - name: Graph Background Jobs REST API
         href: /rest/api/fabric/graphmodel/background-jobs
