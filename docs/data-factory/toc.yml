@@ -1010,6 +1010,7 @@
                   - name: Variable references in Dataflow
                     href: dataflow-gen2-variable-references.md
       - name: dbt job
+        items:
         - name: What is dbt job?
           href: dbt-job-overview.md
         - name: How to create a dbt job
