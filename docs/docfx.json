@@ -85,6 +85,8 @@
                 "governance/**/*.yml": "governance",
                 "graph/**/*.md": "graph",
                 "graph/**/*.yml": "graph",
+                "iq/**/*.md": "iq",
+                "iq/**/*.yml": "iq",
                 "onelake/**/*.md": "onelake",
                 "onelake/**/*.yml": "onelake",
                 "real-time-hub/**/*.md": "rti-hub",
