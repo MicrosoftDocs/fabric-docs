@@ -6,7 +6,7 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
 ms.custom: pipelines
-ms.date: 08/05/2024
+ms.date: 11/20/2025
 ms.search.form: Pipeline tutorials
 ---
 
@@ -18,11 +18,9 @@ After you complete the steps here, Data Factory will scan all the files in the s
 
 ## Prerequisites
 
-- **Lakehouse**. You use the Lakehouse as the destination data store. If you don't have it, see [Create a Lakehouse](../data-engineering/create-lakehouse.md) for steps to create one. Create a folder named *source* and a folder named *destination*.
+- **Lakehouse**: You use the Lakehouse as the destination data store. If you don't have it, see [Create a Lakehouse](../data-engineering/create-lakehouse.md) for steps to create one. Create a folder named *source* and a folder named *destination*.
 
-## Configure a pipeline for incremental copy
-
-### Step 1: Create a pipeline
+## Create a pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
 1. Select the Power BI icon in the bottom left of the screen, then select **Fabric** to open the Fabric home page.
@@ -30,13 +28,12 @@ After you complete the steps here, Data Factory will scan all the files in the s
 1. Navigate to your Microsoft Fabric workspace.
 
 1. Select  **+ New item**.
+
 1. Search for and select **Pipeline** and then input a pipeline name to create a new pipeline.
 
    :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
 
-   :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
-
-### Step 2: Configure a copy activity for incremental copy
+## Configure a copy activity for incremental copy
 
 1. Add a copy activity to the canvas.
 
@@ -48,13 +45,17 @@ After you complete the steps here, Data Factory will scan all the files in the s
 
    :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/configure-destination.png" alt-text="Screenshot showing the configuration of destination.":::
 
-### Step 3: Set the time interval for incremental copy
+## Set the time interval for incremental copy
 
 Assume that you want to incrementally copy new or changed files in your source folder every five minutes:
 
-1. Select the **Schedule** button on the top menu. In the pop-up pane, turn on your schedule run, select **By the minute** in **Repeat** and set the interval to **5** minutes. Then specify the **Start date and time** and **End date and time** to confirm the time span that you want this schedule to be executed. Then select **Apply**.
+1. Select the **Schedule** button on the top menu.
 
    :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/select-schedule.png" alt-text="Screenshot showing the schedule button.":::
+
+1. Select **+ Add schedule**
+
+1. Select **By the minute** in **Repeat** and set the interval to **5** minutes. Then specify the **Start date and time** and **End date and time** to confirm the time span that you want this schedule to be executed. Then select **Save**.
 
    :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/configure-schedule.png" alt-text="Screenshot showing the configuration of schedule.":::
 
@@ -73,8 +74,8 @@ Assume that you want to incrementally copy new or changed files in your source f
     | Daily  | `@formatDateTime(addDays(pipeline().TriggerTime, -1), 'yyyy-MM-ddTHH:mm:ss')`  |
     | Weekly | `@formatDateTime(addDays(pipeline().TriggerTime, -7), 'yyyy-MM-ddTHH:mm:ss')`  |
 
-
 ## Related content
+
 Next, advance to learn more about how to incrementally load data from Data Warehouse to Lakehouse.
 
 > [!div class="nextstepaction"]
