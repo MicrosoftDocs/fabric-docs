@@ -11,13 +11,13 @@ ms.date: 11/19/2025
 
 # Enable service principal authentication for admin APIs
 
-This article shows how to enable service principal authentication for two types of Microsoft Fabric APIs, *read-only* and *update*.
+This article shows how to enable service principal authentication for [Power BI *read-only* admin APIs](#supported-power-bi-admin-apis-for-read-only) and [Microsoft Fabric *update* admin APIs](#supported-fabric-admin-apis-for-updates).
 
 Service principal is an authentication method that can be used to let a Microsoft Entra application access Microsoft Fabric content and APIs.
 
 When you create a Microsoft Entra app, a [service principal object](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) is created. The service principal object, also known simply as the service principal, allows Microsoft Entra ID to authenticate your app. Once authenticated, the app can access Microsoft Entra tenant resources.
 
-## Method
+## Enable service principal authentication
 
 To enable service principal authentication for Fabric APIs, follow these steps:
 
@@ -35,8 +35,8 @@ To enable service principal authentication for Fabric APIs, follow these steps:
 4. Enable the Fabric admin settings:
     1. Sign in to the Fabric admin portal. You need to be a Fabric admin to see the tenant settings page.
     2. Under **Admin API settings**, select the switch for the type of admin APIs you want to enable:
-        * Service principals can access read-only admin APIs (for more information, see [Supported Read-only admin APIs](#supported-read-only-admin-apis))
-        * Service principals can access admin APIs used for updates (for more information, see [Supported Fabric Admin APIs for updates](#supported-fabric-admin-apis-for-updates))
+        * **Service principals can access read-only admin APIs** (see the [supported Power BI admin APIs](#supported-power-bi-admin-apis-for-read-only))
+        * **Service principals can access admin APIs used for updates** (see the [supported Fabric admin APIs](#supported-fabric-admin-apis-for-updates))
 
 5. Set the toggle to **Enabled**.
 
@@ -44,7 +44,7 @@ To enable service principal authentication for Fabric APIs, follow these steps:
 
 7. Select **Apply**.
 
-## Supported Read-only admin APIs
+## Supported Power BI admin APIs for read-only
 
 Service principal authentication is currently supported for the following read-only admin APIs.
 
@@ -83,7 +83,7 @@ Service principal authentication is currently supported for the following read-o
 * [GetReportUsersAsAdmin](/rest/api/power-bi/admin/reports-get-report-users-as-admin)
 * [GetReportsInGroupAsAdmin](/rest/api/power-bi/admin/reports_getreportsingroupasadmin)
 
-## How to check if your app has admin-consent required permissions
+### How to check if your app has admin-consent required permissions
 
 An app using service principal authentication that calls read-only admin APIs **must not** have any admin-consent required permissions for Power BI set on it in the Azure portal. To check the assigned permissions:
 
@@ -95,17 +95,17 @@ An app using service principal authentication that calls read-only admin APIs **
 
 4. Select **Permissions**. There must be no admin-consent required permissions of type Application registered for the app.
 
+## Supported Fabric admin APIs for updates
+
+The **Service principals can access admin APIs used for updates** setting applies to Fabric admin APIs, such as the [Workspaces - Restore Workspace API](/rest/api/fabric/admin/workspaces/restore-workspace?tabs=HTTP). 
+
+To find out if a specific Fabric admin API supports service principal authentication, check the API's documentation in the Microsoft Fabric REST API reference. Look for the "Microsoft Entra supported identities" section, which indicates whether service principal authentication is supported.
+
 ## Considerations and limitations
 
 * The service principal can make rest API calls, but you can't open Fabric with service principal credentials.
 
 * Fabric admin rights are required to enable service principal in the Admin API settings in the Fabric admin portal.
-
-## Supported Fabric Admin APIs for updates
-
-The **Service principals can access admin APIs used for updates** setting applies to Fabric Admin APIs, such as the [Workspaces - Restore Workspace API](/rest/api/fabric/admin/workspaces/restore-workspace?tabs=HTTP). 
-
-To determine whether a specific Fabric Admin API supports service principal authentication, refer to the API's documentation in the Microsoft Fabric REST API reference. Look for the "Microsoft Entra supported identities" section, which indicates whether service principal authentication is supported.
 
 ## Related content
 
