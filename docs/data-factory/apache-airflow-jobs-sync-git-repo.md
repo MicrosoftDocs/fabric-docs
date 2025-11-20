@@ -24,8 +24,6 @@ You can store your workflow files in two locations: Fabric-managed storage or Gi
 1. You can use an existing workspace or [create a new workspace](../fundamentals/create-workspaces.md).
 1. Select **+ New Item**. Under the **Prepare data** section, select **Apache Airflow job**.
 
-   :::image type="content" source="media/apache-airflow-jobs/new-item.png" lightbox="media/apache-airflow-jobs/more-options.png" alt-text="Screenshot showing how to select more options.":::
-
    :::image type="content" source="media/apache-airflow-jobs/apache-airflow-project.png" lightbox="media/apache-airflow-jobs/apache-airflow-project.png" alt-text="Screenshot showing how to select Apache Airflow Job.":::
 
 1. Enter a name for your project and select **Create**.
