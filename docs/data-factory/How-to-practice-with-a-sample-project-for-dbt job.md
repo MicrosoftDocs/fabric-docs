@@ -9,7 +9,7 @@ ms.search.form: dbt-job-sample-project-tutorial
 ms.custom: 
 ---
 
-# Learn how to use a sample project for dbt job Data Factory for Microsoft Fabric
+# Learn how to use a sample project for dbt job in Microsoft Fabric
 
 The dbt Job in Microsoft Fabric makes it easy to run dbt transformations without complex setup. You can orchestrate model builds, tests, and deployments directly in Fabric, leveraging built-in capabilities for scheduling and monitoring. Follow the steps in this guide to start working with dbt jobs efficiently.
 
