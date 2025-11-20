@@ -100,8 +100,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
       :::image type="content" source="media/add-source-cribl/configure-cribl-jaas-password.png" alt-text="Screenshot that shows how to get JASS password in eventstream." lightbox="media/add-source-cribl/configure-cribl-jaas-password.png":::
 
-   ***
-
 1. Select **Save**, and use the Cribl QuickConnect to connect to your Cribl source in Cribl service portal, and then **Commit & Deploy**.
 1. After you complete these steps, you can preview the data in your eventstream that is from your Cribl.
 
