@@ -362,45 +362,45 @@
             items: 
               - name: Avro
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Avro - Configure in a pipeline
                     href: format-avro.md
               - name: Binary
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Binary - Configure in a pipeline
                     href: format-binary.md
-                  - name: Configure in Dataflow Gen2
+                  - name: Binary - Configure in Dataflow Gen2
                     href: connector-binary-dataflows.md
               - name: Delimited text
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Delimited text - Configure in a pipeline
                     href: format-delimited-text.md
               - name: Excel
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Excel - Configure in a pipeline
                     href: format-excel.md
-                  - name: Configure in Dataflow Gen2
+                  - name: Excel - Configure in Dataflow Gen2
                     href: connector-excel-dataflows.md
               - name: Iceberg
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Iceberg - Configure in a pipeline
                     href: format-iceberg.md
               - name: JSON
                 items: 
-                  - name: Configure in a pipeline
+                  - name: JSON - Configure in a pipeline
                     href: format-json.md
               - name: ORC
                 items: 
-                  - name: Configure in a pipeline
+                  - name: ORC - Configure in a pipeline
                     href: format-orc.md
               - name: Parquet
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Parquet - Configure in a pipeline
                     href: format-parquet.md
-                  - name: Configure in Dataflow Gen2
+                  - name: Parquet - Configure in Dataflow Gen2
                     href: connector-parquet-dataflows.md
               - name: XML
                 items: 
-                  - name: Configure in a pipeline
+                  - name: XML - Configure in a pipeline
                     href: format-xml.md
           - name: FTP
             items: 
