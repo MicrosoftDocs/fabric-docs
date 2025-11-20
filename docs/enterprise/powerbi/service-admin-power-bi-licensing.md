@@ -6,7 +6,7 @@ ms.author: juliacawthra
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.topic: conceptual-article
+ms.topic: how-to
 ms.date: 11/20/2025
 ms.custom: licensing support
 LocalizationGroup: Administration
