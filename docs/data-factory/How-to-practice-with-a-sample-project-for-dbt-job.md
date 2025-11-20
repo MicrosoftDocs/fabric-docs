@@ -32,23 +32,23 @@ Create a new dbt job item in your workspace to start building transformations.
 
 4. You will see three options for starting a dbt project. Select **Practice with Sample Project** to explore and work with a pre-built example.
 
-    :::image type="content" source="media/dbt-job/landing-page-with-three-options.png" alt-text="Screenshot of the Fabric UI with three options to start dbt project." ":::
+    :::image type="content" source="media/dbt-job/landing-page-with-three-options.png" alt-text="Screenshot of the Fabric UI with three options to start dbt project.":::
 
 5. Click on the jaffle shop sample project which allows us to look at data with orders, payments and customer datasets.
 
-    :::image type="content" source="media/dbt-job/jaffle-shop.png" alt-text="Screenshot of the Fabric UI with jaffle shop sample project." ":::
+    :::image type="content" source="media/dbt-job/jaffle-shop.png" alt-text="Screenshot of the Fabric UI with jaffle shop sample project.":::
 
 6. We will need to select an adapter profile to run the dbt project against.
 
-  :::image type="content" source="media/dbt-job/select-profile-jaffle-shop.png" alt-text="Screenshot of the Fabric UI with selecting profile." ":::
+  :::image type="content" source="media/dbt-job/select-profile-jaffle-shop.png" alt-text="Screenshot of the Fabric UI with selecting profile.":::
 
 7. We will have to create a new warehouse in which our sample data will sit.
 
-   :::image type="content" source="media/dbt-job/select-warehouse.png" alt-text="Screenshot of the Fabric UI with selecting fabric datawarehouse" ":::
+   :::image type="content" source="media/dbt-job/select-warehouse.png" alt-text="Screenshot of the Fabric UI with selecting fabric datawarehouse":::
 
 8. Enter a name for the warehouse and click on "create and connect". This step ensures that a dedicated destination is created to store the data we plan to transform.
 
-   :::image type="content" source="media/dbt-job/name-a-warehouse.png" alt-text="Screenshot of the Fabric UI with naming fabric datawarehouse" ":::
+   :::image type="content" source="media/dbt-job/name-a-warehouse.png" alt-text="Screenshot of the Fabric UI with naming fabric datawarehouse":::
 
 9. By default, the schema is set to jaffle_shop, and the option to seed data is selected. This ensures that sample data is available within the schema inside the datawarehouse we created earlier for our project. If you prefer to seed the data later, simply clear the checkbox before proceeding to click on connect.
 
