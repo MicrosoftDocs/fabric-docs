@@ -29,7 +29,8 @@ After you complete the steps here, Data Factory will scan all the files in the s
 
 1. Navigate to your Microsoft Fabric workspace.
 
-1. Select **Pipeline** and then input a pipeline name to create a new pipeline.
+1. Select  **+ New item**.
+1. Search for and select **Pipeline** and then input a pipeline name to create a new pipeline.
 
    :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
 

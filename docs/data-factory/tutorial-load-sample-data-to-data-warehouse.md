@@ -31,7 +31,8 @@ To get started, you must complete the following prerequisites:
 
    :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
 
-1. Select **Pipeline** and then input a pipeline name to create a new pipeline.
+1. Select  **+ New item**.
+1. Search for and select **Pipeline** and then input a pipeline name to create a new pipeline. to create a new pipeline.
 
    :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
 
