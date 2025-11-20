@@ -15,13 +15,13 @@ ms.date: 07/24/2025
 
 In this article, you learn how to create an S3 compatible shortcut inside a Fabric lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
-S3 compatible shortcuts can take advantage of file caching to reduce egress costs associated with cross-cloud data access. For more information, see [OneLake shortcuts Caching](onelake-shortcuts.md#caching). Currently only key or secret authentication is supported for S3-compatible sources. Entra-based OAuth, Service Principal, and RoleArn are not yet supported.
+S3 compatible shortcuts can take advantage of file caching to reduce egress costs associated with cross-cloud data access. For more information, see [OneLake shortcuts Caching](onelake-shortcuts.md#caching).
 
 ## Prerequisites
 
 - If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
 
-- Ensure your chosen S3 compatible bucket and secret key credentials meet the [access and authorization requirements for S3 shortcuts](onelake-shortcuts.md#s3-shortcuts).
+- Ensure your chosen S3 compatible bucket and secret key credentials meet the [access and authorization requirements for S3 shortcuts](./create-s3-shortcut.md#access).
 
 ## Create a shortcut
 
@@ -63,6 +63,12 @@ S3 compatible shortcuts can take advantage of file caching to reduce egress cost
 1. Select **Create**.
 
 The lakehouse automatically refreshes. The shortcut appears under **Files** in the **Explorer** pane.
+
+## Limitations
+
+The following limitations apply to S3 compatible shortcuts:
+
+* Currently only key or secret authentication is supported for S3-compatible sources. Entra-based OAuth, Service Principal, and RoleArn are not yet supported.
 
 ## Related content
 

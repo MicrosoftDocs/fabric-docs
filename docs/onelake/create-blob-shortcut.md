@@ -74,6 +74,21 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 
    :::image type="content" source="./media/create-blob-shortcut/view-shortcuts.png" alt-text="Screenshot showing the lakehouse explorer view with a list of folders that display the shortcut symbol.":::
 
+## Access
+
+Azure Blob Storage shortcut can point to the account name or URL for the Storage account.
+
+Example: `accountname` or `https://accountname.blob.core.windows.net/`
+
+## Authorization
+
+Blob storage shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the shortcut and all access to that shortcut is authorized using that credential. Blob shortcuts support the following delegated authorization types:
+
+- **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Service principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Workspace identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute.
+
 ## Related content
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)

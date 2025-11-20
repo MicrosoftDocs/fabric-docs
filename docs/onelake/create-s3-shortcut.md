@@ -13,11 +13,11 @@ ms.date: 07/25/2024
 
 # Create an Amazon S3 shortcut
 
-In this article, you learn how to create an Amazon S3 shortcut inside a Fabric lakehouse.
+In this article, you learn how to create an Amazon S3 shortcut inside a Fabric lakehouse. When you create shortcuts to Amazon S3 accounts, the target path must contain a bucket name at a minimum. S3 doesn't natively support hierarchical namespaces but you can use prefixes to mimic a directory structure. You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcut. When you access data through an S3 shortcut, prefixes are represented as folders.
+
+S3 shortcuts are read-only. They don't support write operations regardless of the user's permissions.
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
-
-You can secure your S3 buckets using customer-managed KMS keys. As long as the IAM user has encrypt/decrypt permissions for the bucket key, OneLake can access the encrypted data in the S3 bucket. For more information, see [Configuring your bucket to use an S3 Bucket Key with SSE-KMS for new objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/configuring-bucket-key.html).
 
 S3 shortcuts can take advantage of file caching to reduce egress costs associated with cross-cloud data access. For more information, see [OneLake shortcuts > Caching](onelake-shortcuts.md#caching).
 
@@ -43,8 +43,39 @@ S3 shortcuts can take advantage of file caching to reduce egress costs associate
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 
+## Access
+
+S3 shortcuts must point to the https endpoint for the S3 bucket.
+
+Example: `https://bucketname.s3.region.amazonaws.com/`
+
+> [!NOTE]
+> You don't need to disable the S3 Block Public Access setting for your S3 account for the S3 shortcut to function.
+>
+> Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud unless you configure an on-premises data gateway. To set up a data gateway, see [Create shortcuts to on-premises data](create-on-premises-shortcut.md).
+
+## Authorization
+
+S3 shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the S3 shortcut and all access to that shortcut is authorized using that credential. The supported delegated credential is a key and secret for an IAM user.
+
+The IAM user must have the following permissions on the bucket that the shortcut is pointing to:
+
+- `S3:GetObject`
+- `S3:GetBucketLocation`
+- `S3:ListBucket`
+
+S3 shortcuts support S3 buckets that use S3 Bucket Keys for SSE-KMS encryption. To access data encrypted with SSE-KMS encryption, the user must have encrypt/decrypt permissions for the bucket key, otherwise they receive a **"Forbidden" error (403)**. For more information, see [Configuring your bucket to use an S3 Bucket Key with SSE-KMS for new objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/configuring-bucket-key.html).
+
+## Limitations
+
+The following limitations apply to S3 shortcuts:
+
+- S3 shortcuts are read-only. They don't support write operations regardless of the user's permissions.
+- S3 shortcut target paths can't contain any reserved characters from [RFC 3986 section 2.2](https://www.rfc-editor.org/rfc/rfc3986#section-2.2). For allowed characters, see [RFC 3968 section 2.3](https://www.rfc-editor.org/rfc/rfc3986#section-2.3).
+- S3 shortcuts don't support the Copy Blob API.
+- More shortcuts can't be created inside S3 shortcuts.
+
 ## Related content
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)
-- [Create an Azure Data Lake Storage Gen2 shortcut](create-adls-shortcut.md)
 - [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)
