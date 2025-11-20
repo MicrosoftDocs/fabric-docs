@@ -28,7 +28,9 @@ This setting is **required** to enable the graphs associated with ontology (prev
 
 :::image type="content" source="media/overview-tenant-settings/prerequisite-graph.png" alt-text="Screenshot of enabling graph in the admin portal.":::
 
-Failure to enable this setting results in errors when accessing a newly-created ontology item.
+Failure to enable this setting results in errors when accessing a newly-created ontology item. You might see the error message *Unable to create the Ontology (preview) item. Please try again or contact support if the issue persists.*
+
+:::image type="content" source="media/overview-tenant-settings/graph-error.png" alt-text="Screenshot of the error from missing graph permissions.":::
 
 ## Data agent item types (preview)
 
