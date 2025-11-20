@@ -277,24 +277,24 @@ When working with graph types, you can define abstract node types that serve as 
 
 ```gql
 -- Abstract base type (cannot be instantiated)
-NODE TYPE Person ABSTRACT (
-  id INT64,
-  name STRING,
-  birth_date ZONED DATETIME
-)
+ABSTRACT (:Person {
+  id :: INT64,
+  name :: STRING,
+  birth_date :: ZONED DATETIME
+}),
 
 -- Concrete types that inherit from abstract base
-NODE TYPE Employee : Person (
-  employee_id STRING,
-  department STRING,
-  hire_date ZONED DATETIME
-)
+(:Employee => Person {
+  employee_id :: STRING,
+  department :: STRING,
+  hire_date :: ZONED DATETIME
+})
 
-NODE TYPE Customer : Person (
-  customer_id STRING,
-  membership_level STRING,
-  registration_date ZONED DATETIME
-)
+(:Customer => :Person {
+  customer_id :: STRING,
+  membership_level :: STRING,
+  registration_date :: ZONED DATETIME
+})
 ```
 
 **Polymorphic queries with abstract types:**
@@ -304,18 +304,16 @@ Abstract types enable powerful querying patterns where you can match against the
 ```gql
 -- Find all Person instances (both Employee and Customer)
 MATCH (p:Person)
-RETURN p.name, p.birth_date, labels(p)
-
--- Use type-specific filtering
-MATCH (p:Person)
-WHERE p:Employee AND p.department = 'Engineering'
-RETURN p.name, p.employee_id
+RETURN p.name, p.birthday, labels(p) AS label_names
 
 -- Mixed type patterns
 MATCH (e:Employee)-[:knows]-(c:Customer)
 WHERE e.department = 'Sales' AND c.membership_level = 'Premium'
 RETURN e.name AS sales_person, c.name AS customer
 ```
+
+> [!NOTE]
+> These queries assume the sketched out graph type and do not use the social network example data set.
 
 This approach provides type safety while enabling flexible, inheritance-based data modeling in your graph schemas.
 

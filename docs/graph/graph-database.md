@@ -27,12 +27,16 @@ Graph queries retrieve connected information by traversing from a starting node 
 Graph databases use pattern-based query languages, such as the increasingly adopted **Graph Query Language (GQL)**, to describe these traversals concisely. GQL is being standardized by the same international working group that oversees SQL (ISO/IEC 39075), aligning graph querying with established database standards.
 
 **Example (pattern matching with GQL):**
+
+<!-- GQL Query: Checked 2025-11-20 -->
 ```gql
-MATCH (p:Person {name: "Alice"})-[:FRIENDS_WITH]->(friend)-[:PURCHASED]->(o:Order)
-RETURN o
+MATCH (p:Person {firstName: "Annemarie"})-[:knows]->(friend)-[:likes]->(c:Comment)
+RETURN c
+ORDER BY c.creationDate
+LIMIT 100
 ```
 
-This pattern reads as: starting at the Person node for Alice, follow FRIENDS_WITH edges to each friend, then follow PURCHASED edges to related Order nodes, and return those orders.
+This pattern reads as: starting at the Person node for Annemarie, follow `:knows` edges to each friend, then follow `:likes` edges to related `:Comment` nodes, and return the 100 newest of those comments.
 
 ## Modeling and schema
 
