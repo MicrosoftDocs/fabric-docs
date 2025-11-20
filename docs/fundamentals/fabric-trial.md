@@ -7,7 +7,7 @@ ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
-ms.date: 08/25/2025
+ms.date: 11/20/2025
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
 ---
@@ -139,14 +139,17 @@ To see the status of your trial, open your Account manager again and look for th
 
 The person who starts the Fabric trial capacity becomes the Capacity administrator for that trial capacity. Other users on the same tenant can also start a Fabric trial capacity and become the Capacity administrator for their own trial capacity. Hundreds of users can use each trial capacity. But, Microsoft sets a limit on the number of trial capacities that can be created on a single tenant. To help others in your organization try out Fabric, share your trial capacity. There are several ways to share.   
 
-### Share by enabling Contributor permissions
+### Share by enabling contributor permissions
 
-Enabling the **Contributor permissions** setting allows other users to assign their workspaces to your trial capacity. If you're the Capacity or Fabric administrator, adjust this setting from the Admin portal.
+To share and collaborate during a trial, you need to make sure the right tenant settings are enabled. Trial enablement is no longer controlled by a single toggle in the Admin portal. Instead, it’s managed through **Tenant settings** and **Help and support settings**, with optional capacity assignment.
 
-1. From the top right section of the Fabric menubar, select the cog icon to open **Settings**.
-1. Select **Admin portal** > **Trial**. **Enabled for the entire organization** is set by default.
+1. In the **Admin portal**, go to **Tenant settings.**
+1. Expand **Users can create Fabric items**, and turn it on. Optionally, scope this setting to specific security groups.
+1. Under **Help and support settings**, enable **Users can try Microsoft Fabric paid features**. This allows users to start a trial.
+1. (Optional) Assign trial capacity in **Capacity settings** if you want to control where trial workspaces are created.
 
-Enabling **Contributor permissions** means that any user with an Admin role in a workspace can assign that workspace to the trial capacity and access Fabric features. Apply these permissions to the entire organization or apply them to only specific users or groups.
+> [!NOTE]
+> The previous option **Enabled for the entire organization** in the **Trial** section is no longer available. Trial enablement is now managed through tenant settings.
 
 ### Share by assigning workspaces
 
