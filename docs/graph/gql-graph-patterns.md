@@ -14,6 +14,9 @@ ms.reviewer: splantikow
 
 Graph patterns are core building blocks of your GQL queries. They describe the structures you're looking for in the graph using nodes and edges in an intuitive, visual way. Think of graph patterns as templates that the query engine tries to match against the actual data in your graph.
 
+> [!IMPORTANT]
+> This article exclusively uses the [social network example graph dataset](sample-datasets.md).
+
 ## Simple element patterns
 
 Simple element patterns help you match individual nodes and edges from your graph that fulfill specific requirements. These patterns form the foundation for more complex pattern matching.

@@ -19,6 +19,7 @@ This article provides the complete technical specification for the social networ
 > the [LDBC SNB (LDBC Social Network Benchmark)](https://ldbcouncil.org/benchmarks/snb/) published by 
 > the [GDC (Graph Data Council)](https://ldbcouncil.org/).
 > See the article ["The LDBC Social Network Benchmark"](https://arxiv.org/abs/2001.02299) for further details.
+> See [social network example graph dataset](sample-datasets.md) for how to obtain a copy of the derived dataset.
 
 <!-- Image source in graphviz dot format
 //// CREATE GRAPH ldbc_snb {

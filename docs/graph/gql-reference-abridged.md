@@ -16,6 +16,9 @@ ms.search.form: GQL Quick Reference
 This article is a quick reference of GQL (Graph Query Language) syntax for graph in Microsoft Fabric. 
 For detailed explanations, see the [GQL language guide](gql-language-guide.md).
 
+> [!IMPORTANT]
+> This article exclusively uses the [social network example graph dataset](sample-datasets.md).
+
 ## Query structure
 
 GQL queries use a sequence of statements that define what data to get from the graph, how to process it, and how to show the results. Each statement has a specific purpose, and together they create a linear pipeline that matches data from the graph and transforms it step by step.

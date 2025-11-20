@@ -15,6 +15,9 @@ ms.search.form: Get Started with Graph in Microsoft Fabric
 
 In this quickstart, you learn how to create a graph model in Microsoft Fabric.
 
+> [!IMPORTANT]
+> This article exclusively uses the [AdventureWorks example graph dataset](sample-datasets.md).
+
 ## Prerequisites
 
 To get started with graph in Microsoft Fabric, you need the following prerequisites:

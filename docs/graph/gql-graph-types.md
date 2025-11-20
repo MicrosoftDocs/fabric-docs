@@ -14,6 +14,9 @@ ms.reviewer: splantikow
 
 A graph type describes your graph's structure by defining which nodes and edges can exist. Think of it like a blueprint or schema—it specifies the shape of nodes and edges in the graph in terms of their labels and properties. For edges (the connections between nodes), it also specifies which kinds of edges can connect which kinds of nodes. If you're familiar with relational databases, graph types work similarly to how ER diagrams describe tables and foreign key relationships. 
 
+> [!IMPORTANT]
+> This article exclusively uses the [social network example graph dataset](sample-datasets.md).
+
 Graph types provide several key benefits:
 
 - **Data validation**: Ensure your graph contains only valid node and edge combinations.
@@ -78,6 +81,7 @@ As an example, consider:
 
 ```gql
 (:University => :Organization),
+
 (:Company => :Organization)
 ```
 
@@ -92,6 +96,7 @@ Therefore the previous syntax can be understood to effectively define the follow
   name :: STRING, 
   url :: STRING 
 }),
+
 (:Company => :Organization {
   id :: UINT64 NOT NULL, 
   name :: STRING, 

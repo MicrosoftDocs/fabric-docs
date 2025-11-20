@@ -15,6 +15,9 @@ ms.search.form: GQL Query HTTP API reference
 
 Run GQL queries against property graphs in Microsoft Fabric using a RESTful HTTP API. This reference describes the HTTP contract: request and response formats, authentication, JSON result encoding, and error handling.
 
+> [!IMPORTANT]
+> This article exclusively uses the [social network example graph dataset](sample-datasets.md).
+
 ## Overview
 
 The GQL Query API is a single endpoint (RPC over HTTP) that accepts GQL queries as JSON payloads and returns structured, typed results. The API is stateless, handles authentication, and provides comprehensive error reporting.
