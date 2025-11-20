@@ -45,8 +45,6 @@ Two monitoring templates are available:
 
 :::image type="content" source="media/eventhouse/eventhouse-dashboard-power-bi.png" alt-text="Screenshot of the Power BI dashboard based on the template." lightbox="media/eventhouse/eventhouse-dashboard-power-bi.png":::
 
-You can check refresh rates and other details in the [Workspace Monitoring Repository](https://github.com/microsoft/fabric-toolbox/blob/main/monitoring/workspace-monitoring-dashboards/documentation/Workspace_Monitoring_PBI_Report.md#analytical-pathway--sm--refresh-analysis).
-
 ## Related content
 * [Workspace monitoring overview](../fundamentals/workspace-monitoring-overview.md)
 * [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md)
