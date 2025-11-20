@@ -4,7 +4,7 @@ description: Learn how to enable service principal authentication to permit use 
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 02/27/2025
+ms.date: 11/19/2025
 
 # Customer intent: As a developer, learn how to enable service principal authentication to permit use of read-only and update admin APIs.
 ---
@@ -35,8 +35,8 @@ To enable service principal authentication for Fabric APIs, follow these steps:
 4. Enable the Fabric admin settings:
     1. Sign in to the Fabric admin portal. You need to be a Fabric admin to see the tenant settings page.
     2. Under **Admin API settings**, select the switch for the type of admin APIs you want to enable:
-        * Service principals can access read-only admin APIs
-        * Service principals can access admin APIs used for update
+        * Service principals can access read-only admin APIs (for more information, see [Supported Read-only admin APIs](#supported-read-only-admin-apis))
+        * Service principals can access admin APIs used for updates (for more information, see [Supported Fabric Admin APIs for updates](#supported-fabric-admin-apis-for-updates))
 
 5. Set the toggle to **Enabled**.
 
@@ -100,6 +100,12 @@ An app using service principal authentication that calls read-only admin APIs **
 * The service principal can make rest API calls, but you can't open Fabric with service principal credentials.
 
 * Fabric admin rights are required to enable service principal in the Admin API settings in the Fabric admin portal.
+
+## Supported Fabric Admin APIs for updates
+
+The **Service principals can access admin APIs used for updates** setting applies to Fabric Admin APIs, such as the [Workspaces - Restore Workspace API](/rest/api/fabric/admin/workspaces/restore-workspace?tabs=HTTP). 
+
+To determine whether a specific Fabric Admin API supports service principal authentication, refer to the API's documentation in the Microsoft Fabric REST API reference. Look for the "Microsoft Entra supported identities" section, which indicates whether service principal authentication is supported.
 
 ## Related content
 
