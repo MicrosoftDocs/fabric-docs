@@ -55,6 +55,9 @@ After you define an ontology, you can [bind it to your data](how-to-bind-data.md
 
 ### Ontology graph
 
+>[!IMPORTANT]
+>Ontology's graph feature relies on [Graph in Microsoft Fabric](../../graph/overview.md), so the Graph setting must be enabled for your tenant. For more information, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
+
 The *ontology graph* is the navigable instance graph built from your bindings and relationship definitions. It's visible from the [ontology preview experience](how-to-use-preview-experience.md). In the graph, nodes are entity instances, and edges are links (either asserted or derived) with metadata attributes. Each node or edge keeps data source lineage and follows a scheduled data refresh. Graphs enable visual exploration of business context, execution of graph algorithms (like paths, centrality, and communities), and rule‑driven inferences. Graphs improve semantics by making relationships first‑class, so context isn't buried in join logic, but instead is explicit, queryable, and governed.
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
@@ -65,4 +68,4 @@ The *ontology graph* is the navigable instance graph built from your bindings an
 
 ## Next steps
 
-To get started with ontology (preview), try out the [Ontology (preview) tutorial](tutorial-0-introduction.md).
+Prepare your tenant for ontology (preview) by enabling required tenant settings in [Ontology (preview) required tenant settings](overview-tenant-settings.md).
