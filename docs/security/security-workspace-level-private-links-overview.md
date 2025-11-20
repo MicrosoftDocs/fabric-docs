@@ -59,7 +59,7 @@ When connecting to a workspace, you need to use the workspace fully qualified do
 * `https://{workspaceid}.z{xy}.onelake.fabric.microsoft.com` 
 * `https://{workspaceid}.z{xy}.dfs.fabric.microsoft.com`
 * `https://{workspaceid}.z{xy}.blob.fabric.microsoft.com`
-For Datawarehouse conenction strings, use `https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com` that is, add z{xy} to the regular warehouse connection string found under SQL connection string. The GUIDs in the FQDN correspond to Tenant GUID in Base32 and Workspace GUID in Base32 respectively. *This FQDN is not available as part of the DNS configurations for the Private Endpoint*
+For data warehouse connection strings, use `https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com` that is, add z{xy} to the regular warehouse connection string found under SQL connection string. The GUIDs in the FQDN correspond to Tenant GUID in Base32 and Workspace GUID in Base32 respectively. *This FQDN is not available as part of the DNS configurations for the private endpoint.*
 
 ## How the workspace FQDN resolves in different environments
 
