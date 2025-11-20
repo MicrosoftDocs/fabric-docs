@@ -10,7 +10,7 @@ ms.date: 03/18/2025
 ms.search.form: Source and Destination
 ---
 
-# Add Fabric capacity overview events to an eventstream 
+# Add Fabric capacity overview events to an eventstream (preview)
 
 This article shows you how to add Fabric capacity overview event source to an eventstream.
 
@@ -57,7 +57,8 @@ On the **Select a data source** page, search for and select **Connect** on the *
     :::image type="content" source="media/add-source-fabric-capacity-overview-events/edit.png" alt-text="A screenshot of the Fabric capacity overview events in Live view, where you can select Edit." lightbox="media/add-source-fabric-capacity-overview-events/edit.png" :::
 
 
-
+## Limitation
+* The Fabric capacity overview events source currently doesn't support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Attempting to export or import an Eventstream item with this source to a Git repository may result in errors. 
 
 
 ## Related content

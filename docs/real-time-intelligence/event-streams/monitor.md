@@ -81,18 +81,24 @@ To view the data insights for an Azure event hub, Azure IoT hub, lakehouse, even
 
 Streaming connector source nodes include the following sources:
 
-- Azure SQL Database Change Data Capture (CDC)
-- Azure Service Bus
-- Azure Database for PostgreSQL CDC
-- Azure Database for MySQL CDC
-- Azure Cosmos DB CDC
-- SQL Server on virtual machine (VM) database (DB) CDC
-- Azure SQL Managed Instance CDC
-- Google Cloud Pub/Sub
 - Amazon Kinesis Data Streams
-- Confluent Cloud Kafka
-- Apache Kafka
 - Amazon MSK Kafka
+- Apache Kafka
+- Azure Cosmos DB CDC
+- Azure Data Explorer
+- Azure Service Bus
+- Azure SQL Database Change Data Capture (CDC)
+- Azure SQL Managed Instance CDC
+- Confluent Cloud Kafka
+- Google Cloud Pub/Sub
+- HTTP
+- MongoDB CDC
+- MQTT
+- MySQL Database CDC
+- PostgreSQL Database CDC
+- Real-time weather
+- Solace PubSub+
+- SQL Server on virtual machine (VM) database (DB)
 
 The following metrics are available on the **Data insights** tab for streaming connector source nodes:
 
