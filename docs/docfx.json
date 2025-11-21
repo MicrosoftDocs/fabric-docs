@@ -87,6 +87,8 @@
                 "graph/**/*.yml": "graph",
                 "iq/**/*.md": "iq",
                 "iq/**/*.yml": "iq",
+                "iq/ontology/**/*.md": "iq-ontology",
+                "iq/ontology/**/*.yml": "iq-ontology",
                 "onelake/**/*.md": "onelake",
                 "onelake/**/*.yml": "onelake",
                 "real-time-hub/**/*.md": "rti-hub",
