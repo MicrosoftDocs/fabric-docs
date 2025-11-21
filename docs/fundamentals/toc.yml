@@ -58,6 +58,8 @@ items:
         href: enable-workspace-monitoring.md
       - name: Visualize workspace monitoring
         href: sample-gallery-workspace-monitoring.md
+      - name: Monitor items with item job logs
+        href: item-job-event-logs.md
 
 - name: Manage and govern content
   items:
