@@ -67,7 +67,7 @@ For a user to successfully query through a Fabric data agent, they need the mini
 | Lakehouse | Read on the lakehouse item (and table access if enforced) | Write not required unless modifying data. |
 | Warehouse | Read (SELECT on relevant tables) | Higher permissions only for DML/DDL operations. |
 | KQL database | Reader role on the database | Higher roles only for management commands. |
-| Ontology | Read on the ontology item, and Read on the underlying lakehouse and/or KQL database bound to the ontology |  |
+| Ontology | Read on the ontology item, and Read on the underlying semantic model, lakehouse, or KQL database bound to the ontology |  |
 | Other supported sources | Query/read-level access | Must allow metadata + data retrieval. |
 
 > [!IMPORTANT]

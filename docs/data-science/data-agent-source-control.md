@@ -93,7 +93,7 @@ The **draft folder** contains the configuration files corresponding to the draft
   - **Lakehouse or warehouse data sources**: Folder names start with `lakehouse-tables-` or `warehouse-tables-`, followed by the name of the lakehouse or warehouse.
   - **Semantic model data sources**: Folder names start with `semantic-model-`, followed by the name of the semantic model.
   - **KQL database data sources**: Folder names start with `kusto-`, followed by the name of KQL database.
-  - **Ontology data sources**: 
+  - **Ontology data sources**: Folder names start with `ontology-`, followed by the name of the ontology.
 
 :::image type="content" source="./media/data-agent-cicd/git-config-draft.png" alt-text="Screenshot showing the draft folder." lightbox="./media/data-agent-cicd/git-config-draft.png":::
 
