@@ -84,4 +84,4 @@ Currently, when you create a dbt job, by default it uses **Runtime v1.0**, which
 ## Related content
 
 - [dbt Official Documentation](https://docs.getdbt.com/)
-- [Step-by-step-tutorial-using-jaffle-shop-project](How-to-practice-with-a-sample-project-for-dbt job.md/)
+- [Step-by-step-tutorial-using-jaffle-shop-project](How-to-practice-with-a-sample-project-for-dbt-job.md/)
