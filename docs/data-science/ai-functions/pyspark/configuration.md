@@ -97,22 +97,21 @@ defaults.set_deployment_name("deployment-name")
 
 ### Configure a custom model endpoint
 
-By default, AI functions use the Fabric LLM endpoint. You can also use your own model endpoint by setting up an Azure OpenAI or AsyncOpenAI-compatible client with your endpoint and key. The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Azure OpenAI LLM deployment:
+By default, AI functions use the Fabric LLM endpoint API for unified billing and easy setup.
+You may choose to use your own model endpoint by setting up an Azure OpenAI or AsyncOpenAI-compatible client with your endpoint and key. The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with your own Microsoft AI Foundry (formerly Azure OpenAI) resource's model deployments:
 
 ```python
 from synapse.ml.services.openai import OpenAIDefaults
 defaults = OpenAIDefaults()
 
-defaults.set_deployment_name("your-deployment-name")
-defaults.set_subscription_key("your-subscription-key")
-defaults.set_URL("https://your-openai-endpoint.openai.azure.com/")
-defaults.set_temperature(0.05)
+defaults.set_URL("https://<ai-foundry-resource>.openai.azure.com/")
+defaults.set_subscription_key("<API_KEY>")
 ```
 
-The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom AI Foundry resource to use models beyond OpenAI:
+The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Microsoft AI Foundry resource to use models beyond OpenAI:
 
 > [!IMPORTANT]
-> - Support for Azure AI Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
+> - Support for Microsoft AI Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
 > - Output may vary depending on the behavior of the selected AI model. Please explore the capabilities of other models with appropriate caution
 > - The `ai.similarity` function isn't supported when using an AI Foundry resource
 
@@ -121,10 +120,9 @@ import synapse.ml.spark.aifunc.DataFrameExtensions
 from synapse.ml.services.openai import OpenAIDefaults
 
 defaults = OpenAIDefaults()
-defaults.set_URL("https://your-ai-foundry-resource.services.ai.azure.com/") # Use your AI Foundry Endpoint
-defaults.set_subscription_key(os.getenv("AI_Foundry_API_Key")) # Use your AI Foundry API Key
-defaults.set_api_version("2024-05-01-preview")
-defaults.set_model("grok-4-fast-reasoning") # Deployment Name
+defaults.set_URL("https://<ai-foundry-resource>.services.ai.azure.com")  # Use your AI Foundry Endpoint
+defaults.set_subscription_key("<API_KEY>")
+defaults.set_deployment_name("grok-4-fast-non-reasoning")
 ```
 
 ## Related content

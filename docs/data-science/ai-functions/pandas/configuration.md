@@ -118,24 +118,45 @@ df["similarity"] = df["company"].ai.similarity("Microsoft", conf=Conf(embedding_
 
 ### Configure a custom model endpoint
 
-By default, AI functions use the Fabric LLM endpoint. You can also use your own model endpoint by setting up an Azure OpenAI or AsyncOpenAI-compatible client with your endpoint and key. The following example shows how to bring your own Azure OpenAI resource using `aifunc.setup`:
+By default, AI functions use the Fabric LLM endpoint API for unified billing and easy setup.
+You may choose to use your own model endpoint by setting up an Azure OpenAI or OpenAI-compatible client with your endpoint and key. The following example shows how to bring your own Microsoft AI Foundry (formerly Azure OpenAI) resource using `aifunc.setup`:
 
 ```python
 from openai import AzureOpenAI
 
-# Example of how to create a custom client:
+# Example to create client for Microsoft AI Foundry OpenAI models
 client = AzureOpenAI(
-    api_key="your-api-key",
-    azure_endpoint="https://your-openai-endpoint.openai.azure.com/",
-    api_version=aifunc.session.api_version,  # Default "2024-10-21"
+    azure_endpoint="https://<ai-foundry-resource>.openai.azure.com/",
+    api_key="<API_KEY>",
+    api_version=aifunc.session.api_version,  # Default "2025-04-01-preview"
     max_retries=aifunc.session.max_retries,  # Default: sys.maxsize ~= 9e18
 )
-
 aifunc.setup(client)  # Set the client for all functions.
 ```
 
 > [!TIP]
 > - You can configure a custom AI Foundry resource to use models beyond OpenAI.
+
+The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Microsoft AI Foundry resource to use models beyond OpenAI:
+
+> [!IMPORTANT]
+> - Support for Microsoft AI Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
+> - Output may vary depending on the behavior of the selected AI model. Please explore the capabilities of other models with appropriate caution
+> - The `ai.similarity` function isn't supported when using an AI Foundry resource
+
+```python
+from openai import OpenAI
+
+# Example to create client for Azure AI Foundry models
+client = OpenAI(
+    base_url="https://<ai-foundry-resource>.services.ai.azure.com/openai/v1/",
+    api_key="<API_KEY>",
+    max_retries=aifunc.session.max_retries,  # Default: sys.maxsize ~= 9e18
+)
+aifunc.setup(client)  # Set the client for all functions.
+
+aifunc.default_conf.model_deployment_name = "grok-4-fast-non-reasoning"
+```
 
 ## Related content
 
