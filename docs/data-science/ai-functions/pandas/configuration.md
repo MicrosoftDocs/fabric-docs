@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 11/13/2025
 ms.search.form: AI functions
 ---
 
@@ -15,8 +15,7 @@ ms.search.form: AI functions
 AI functions are designed to work out of the box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
 
 > [!IMPORTANT]
-> This feature is in [preview](../../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../../data-engineering/runtime-1-3.md) and later.
->
+> - AI functions are for use in [Fabric Runtime 1.3 (Spark 3.5), (Python 3.11)](../../../data-engineering/runtime-1-3.md) and later.
 > - Review the prerequisites in [this overview article](../overview.md), including the [library installations](../overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 
@@ -47,8 +46,7 @@ By default, AI functions are powered by the built-in AI endpoint in Fabric. The 
 The following code sample shows how to override `aifunc.Conf` settings globally, so that they apply to all AI function calls in a session:
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 aifunc.default_conf.temperature = 0.5 # Default: 0.0
 aifunc.default_conf.concurrency = 300 # Default: 200
@@ -68,7 +66,6 @@ You can also customize these settings for each individual function call. Each AI
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 from synapse.ml.aifunc import Conf
 
@@ -137,9 +134,8 @@ client = AzureOpenAI(
 aifunc.setup(client)  # Set the client for all functions.
 ```
 
-> [!NOTE]
->
-> The Fabric trial edition doesn't support bring-your-own Azure OpenAI resources for AI functions. To connect a custom Azure OpenAI endpoint, upgrade to an F2 (or higher) or P capacity.
+> [!TIP]
+> - You can configure a custom AI Foundry resource to use models beyond OpenAI.
 
 ## Related content
 

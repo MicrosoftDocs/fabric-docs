@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 11/13/2025
 ms.search.form: AI functions
 ---
 
@@ -15,8 +15,7 @@ ms.search.form: AI functions
 AI functions are designed to work out of the box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
 
 > [!IMPORTANT]
-> This feature is in [preview](../../../get-started/preview.md), for use in [Fabric Runtime 1.3](../../../data-engineering/runtime-1-3.md) and later.
->
+> - AI functions are for use in [Fabric Runtime 1.3 (Spark 3.5)](../../../data-engineering/runtime-1-3.md) and later.
 > - Review the prerequisites in [this overview article](../overview.md), including the [library installations](../overview.md#getting-started-with-ai-functions) that are temporarily required to use AI functions.
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 
@@ -110,9 +109,23 @@ defaults.set_URL("https://your-openai-endpoint.openai.azure.com/")
 defaults.set_temperature(0.05)
 ```
 
-> [!NOTE]
->
-> The Fabric trial edition doesn't support bring-your-own Azure OpenAI resources for AI functions. To connect a custom Azure OpenAI endpoint, upgrade to an F2 (or higher) or P capacity.
+The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom AI Foundry resource to use models beyond OpenAI:
+
+> [!IMPORTANT]
+> - Support for Azure AI Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
+> - Output may vary depending on the behavior of the selected AI model. Please explore the capabilities of other models with appropriate caution
+> - The `ai.similarity` function isn't supported when using an AI Foundry resource
+
+```python
+import synapse.ml.spark.aifunc.DataFrameExtensions
+from synapse.ml.services.openai import OpenAIDefaults
+
+defaults = OpenAIDefaults()
+defaults.set_URL("https://your-ai-foundry-resource.services.ai.azure.com/") # Use your AI Foundry Endpoint
+defaults.set_subscription_key(os.getenv("AI_Foundry_API_Key")) # Use your AI Foundry API Key
+defaults.set_api_version("2024-05-01-preview")
+defaults.set_model("grok-4-fast-reasoning") # Deployment Name
+```
 
 ## Related content
 
