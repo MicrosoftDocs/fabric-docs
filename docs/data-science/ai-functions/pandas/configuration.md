@@ -41,7 +41,7 @@ By default, AI functions are powered by the built-in AI endpoint in Fabric. The 
 | `verbosity`<br> Optional | Used by gpt-5 series models for output length. Can be set to `openai.NOT_GIVEN` or a string value of "low", "medium", or "high". | `openai.NOT_GIVEN` |
 
 > [!TIP]
-> - Setting *concurrency* to higher values can speed up processing time (if your capacity can accommodate it). 
+> - If your model deployment capacity can accomodate more requests, setting a higher *concurrency* values can speed up processing time. 
 
 The following code sample shows how to override `aifunc.Conf` settings globally, so that they apply to all AI function calls in a session:
 
@@ -80,6 +80,16 @@ df["sentiment"] = df["text"].ai.analyze_sentiment()
 display(df)
 ```
 
+The following code sample shows how to configure the `gpt-5` and other reasoning models for all functions.
+
+```python
+aifunc.default_conf.model_deployment_name = "gpt-5"
+aifunc.default_conf.temperature = 1  # gpt-5 only accepts default value of temperature
+aifunc.default_conf.top_p = 1  # gpt-5 only accepts default value of top_p
+aifunc.default_conf.verbosity = "low"
+aifunc.default_conf.reasoning_effort = "low"
+```
+
 ## Custom Models
 
 To use an AI model other than the default, you can choose another model supported by Fabric or configure a custom model endpoint.
@@ -91,13 +101,16 @@ Select one of the [models supported by Fabric](../../ai-services/ai-services-ove
 - Globally in the `aifunc.Conf` class. Example:
 
 ```python
-    aifunc.default_conf.model_deployment_name = "<model deployment name>">
+    aifunc.default_conf.model_deployment_name = "<model deployment name>"
 ```
 
 - Individually in each AI function call:
 
- ```python
-df["translations"] = df["text"].ai.translate("spanish", conf=Conf(model_deployment_name="<model deployment name>"))
+```python
+df["translations"] = df["text"].ai.translate(
+    "spanish",
+    conf=Conf(model_deployment_name="<model deployment name>")
+)
 ```
 
 ### Choose another supported embedding model
@@ -107,13 +120,15 @@ Select one of the [models supported by Fabric](../../ai-services/ai-services-ove
 - Globally in the `aifunc.Conf` class. Example:
 
 ```python
-    aifunc.default_conf.embedding_deployment_name = "<embedding deployment name>">
+    aifunc.default_conf.embedding_deployment_name = "<embedding deployment name>"
 ```
 
 - Individually in each AI function call. Example:
 
- ```python
-df["similarity"] = df["company"].ai.similarity("Microsoft", conf=Conf(embedding_deployment_name="<embbedding deployment name>"))
+```python
+df["embedding"] = df["text"].ai.embed(
+    conf=Conf(embedding_deployment_name="<embbedding deployment name>")
+)
 ```
 
 ### Configure a custom model endpoint
@@ -142,7 +157,7 @@ The following code sample uses placeholder values to show you how to override th
 > [!IMPORTANT]
 > - Support for Microsoft AI Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
 > - Output may vary depending on the behavior of the selected AI model. Please explore the capabilities of other models with appropriate caution
-> - The `ai.similarity` function isn't supported when using an AI Foundry resource
+> - The embedding based AI functions `ai.embed` and `ai.similarity` aren't supported when using an AI Foundry resource
 
 ```python
 from openai import OpenAI
