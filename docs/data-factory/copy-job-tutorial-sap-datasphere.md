@@ -8,9 +8,9 @@ ms.date: 11/21/2025
 ms.topic: tutorial
 ---
 
-# How to set up CDC replication from SAP in Copy job via SAP Datasphere Outbound (Preview)
+# How to set up CDC replication in Copy job from SAP via SAP Datasphere Outbound (Preview)
 
-This tutorial introduces how to set up CDC replication from SAP in Copy job via SAP Datasphere Outbound. For a CDC overview in Copy job, refer to [Change data capture (CDC) in Copy Job](cdc-copy-job.md).
+This tutorial introduces how to set up CDC replication in Copy job from SAP via SAP Datasphere Outbound. For a CDC overview in Copy job, refer to [Change data capture (CDC) in Copy Job](cdc-copy-job.md).
 
 Using SAP Datasphere Outbound to obtain change data from SAP is a two-step process:
 
@@ -35,10 +35,10 @@ You need:
 
 ## Set up SAP Datasphere
 
-This section covers the setup steps you need to replicate data from your SAP source into an Azure Data Lake Storage (ADLS) Gen2 container. You'll use this container later to configure the Copy job in Fabric.
+This section covers the setup steps you need to replicate data from your SAP source into an Azure Data Lake Storage (ADLS) Gen2 container. You'll use this later to configure the Copy job in Fabric.
 
 >[!TIP]
->If you already have running replication flow to replicate data into ADLS Gen2, you can skip this section and [Create a Copy job](#Create a Copy job).
+>If you already have running SAP replication flow to replicate data into ADLS Gen2, you can skip this section and [Create a Copy job](#Create a Copy job).
 
 ### Set up connections in SAP Datasphere
 
@@ -96,9 +96,9 @@ This section explains how to create a Copy job to replicate data from SAP via SA
 
     :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adlsgen2-connections.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/sap-datasphere-tutorial/browse-lakehouse-and-select-path.png":::
 
-1. Specify the folders where your SAP Datasphere outbound data will be stored.
+1. Specify the folders where your SAP Datasphere outbound data is stored and that you want to move to your destinations.
    
-1. The remaining configuration is the same as for any other CDC-enabled source.
+1. The remaining steps are the same as CDC replication for any other CDC-enabled source.
 
 
 ## Limitations
