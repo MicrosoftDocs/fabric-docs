@@ -41,7 +41,7 @@ By default, AI functions are powered by the built-in AI endpoint in Fabric. The 
 | `verbosity`<br> Optional | Used by gpt-5 series models for output length. Can be set to `openai.NOT_GIVEN` or a string value of "low", "medium", or "high". | `openai.NOT_GIVEN` |
 
 > [!TIP]
-> - If your model deployment capacity can accomodate more requests, setting a higher *concurrency* values can speed up processing time. 
+> - If your model deployment capacity can accommodate more requests, setting a higher *concurrency* values can speed up processing time. 
 
 The following code sample shows how to override `aifunc.Conf` settings globally, so that they apply to all AI function calls in a session:
 
