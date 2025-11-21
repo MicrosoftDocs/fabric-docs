@@ -39,10 +39,10 @@ Before you create a dbt job in Microsoft Fabric, make sure your environment is s
  ### Adapters Supported
  
  You can connect a dbt job to multiple data sources using supported adapters. This enables dbt models to run transformations directly on your chosen platform. Currently supported adapters are listed below, with plans to expand support for more adapters in future releases.
+ - Microsoft Fabric Warehouse
  - Snowflake
  - PostgreSQL
  - Azure SQL Server
- - Microsoft Fabric Warehouse
 
 ### Enable dbt jobs
 
@@ -84,4 +84,4 @@ Currently, when you create a dbt job, by default it uses **Runtime v1.0**, which
 ## Related content
 
 - [dbt Official Documentation](https://docs.getdbt.com/)
-- [How-to-practice-with-a-sample-project-for-dbt job.md](Insert link)
+- [Step-by-step-tutorial-using-jaffle-shop-project](How-to-practice-with-a-sample-project-for-dbt job.md/)
