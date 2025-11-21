@@ -90,36 +90,44 @@ When surge protection is active, background requests are rejected. In the Fabric
 
 ## Workspace-Level surge protection
 
-Workspace-level surge protection extends capacity-based surge protection by letting you control surge behavior per workspace. You can set limits, exclude workspaces, or block them manually.
+Surge protection helps limit overuse of your capacity by limiting the amount of compute consumed by background jobs. Workspace-level surge protection extends this capability further by allowing you to limit or exclude specific workspaces from these limits or manually block specific workspaces.
 
 ### Key capabilities
 
-- **CU consumption limits per workspace:** Define compute unit (CU) consumption limits for individual workspaces within a capacity.
-- **Per workspace-level configurations:** Configure surge protection settings for each workspace.
-- **Workspace states:**
+Here are the key capabilities of workspace-level surge protection:
+
+- **CU consumption limits per workspace:** Define CU consumption limits for individual workspaces within a capacity.
+- **Per workspace-level configurations:** Configure surge protection settings for each workspace with one of the following states:
   - **Available:** Workspace follows the capacity-level surge protection rules.
   - **Mission Critical:** Workspace ignores all capacity-level surge protection rules (immune from blocking).
   - **Blocked:** Workspace is manually or automatically blocked for a specified period; rejecting all operation requests.
 
+The workspace CU limit is set as a percentage threshold that applies to all workspaces in the capacity unless a workspace is marked mission critical or blocked.
+
 ### Enable workspace-level surge protection
 
-1. Go to **Admin Portal** → **Capacity settings** → Select **Fabric Capacity**.
-1. Under **Surge protection**, enable automatic detection to monitor all workspaces and block those that exceed CU limits.
-1. **Workspace consumption:** Toggle **ON/OFF**. When set to ON two new properties appear:
-   - **Rejection Threshold**: CU limit for a single workspace.
+Use the following steps to enable workspace-level surge protection:
+
+1. Go to **Admin Portal** → **Capacity settings** → Select the **Fabric Capacity**.
+1. Under **Surge protection**, set automatic detection to monitor all workspaces in a capacity and block those that exceed CU limits.
+1. **Workspace consumption:** Toggle **ON/OFF**. When set to **ON** the following two properties appear:
+   - **Rejection Threshold**: CU limit that a single workspace can consume. It is represented as a percentage of the total CU available to the capacity.
    - **Block**: When CU consumption by a single workspace reaches the rejection threshold, that workspace is placed in a **Blocked** state and rejects new operation requests. You can block the workspace indefinitely or for a specified period (in hours).
 
 ### Manual workspace controls
 
 - In the **Admin Portal**, under **Capacity settings**, select **Fabric Capacity**.
 - In the **workspaces** table at the bottom, click the gear icon in the **Actions** column to access workspace settings.
-- Workspaces can be in one of the following states:
+- Workspaces can be in one of the following 3 states:
 
-  - **Available:** Default state, subject to surge protection rules. It operates normally and is subject to background surge protection and consumption rules. And can be blocked if it exceeds limits. You can return it to available state to unblock it immediately.
+  - **Available:** Default state, subject to surge protection rules. 
+    - If a workspace is marked as *Available*, it is in its *default* state. It operates normally and is subject to background surge protection rules. Workspace consumption rules can put it in a blocked state if it exceeds limits. You can return it to available state to unblock it immediately.
   
-  - **Mission Critical:** It's exempt from workspace consumption limits. This lets you ensure high-priority workspaces keep running while still blocking lower-priority ones when they exceed capacity.
+  - **Mission Critical:** Exempt from workspace consumption limits. 
+    - If a workspace is marked as *Mission Critical*, it is exempt from the workspace consumption rules. This state lets you ensure high-priority workspaces keep running while still blocking lower-priority ones when they exceed capacity.
   
-  - **Blocked:** All interactive and background operations are rejected. Workspaces can be blocked manually by capacity admins or automatically by detection rules.
+  - **Blocked:** All interactive and background operations are rejected. 
+    - If a workspace is marked as **Blocked**, all the interactive and background operations will be rejected. Workspaces can be blocked manually by capacity admins or automatically by detection rules
 
 ## Related content
 
