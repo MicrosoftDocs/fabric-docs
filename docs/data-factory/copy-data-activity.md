@@ -169,7 +169,7 @@ See the following table for the description of each setting.
 |**Enable logging** |When you select this option, you can log copied files, skipped files and rows.| / |
 |**Enable staging** | Specify whether to copy data via an interim staging store. Enable staging only for helpful scenarios.| enableStaging |
 | *For **Workspace*** |  |  |
-|**Workspace**| Specify to use built-in staging storage. <br><br> When using workspace staging, the SAS token for accessing staging files expires after 1 hour. You should use external staging storage for copy activities that exceed 1 hour. | / |
+|**Workspace**| Specify to use built-in staging storage. <br><br> The workspace staging process times out after 1 hour because the SAS token expires. You should use external staging storage for copy activities that exceed 1 hour. | / |
 | *For **External*** |  |  |
 | **Staging account connection** |Specify the connection of an [Azure Blob Storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md), which refers to the instance of Storage that you use as an interim staging store. Create a staging connection if you don't have it. | connection (under *`externalReferences`*) |
 | **Storage path** | Specify the path that you want to contain the staged data. If you don't provide a path, the service creates a container to store temporary data. Specify a path only if you use Storage with a shared access signature, or you require temporary data to be in a specific location. | path |
