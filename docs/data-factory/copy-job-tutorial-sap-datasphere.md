@@ -52,7 +52,7 @@ Before you can replicate data from your SAP source into ADLS Gen2, you need to c
 
 1. Before you continue, validate your connections by selecting your connection and choosing the **Validate** option in the top menu.
 
-    :::image type="content" source="media/sap-datasphere-tutorial/sap-datasphere-connections.png" alt-text="Screenshot of the connections in SAP Datasphere." lightbox="media/sap-datasphere-tutorial/sap-datasphere-connections.png":::
+    :::image type="content" source="media/copy-job/sap-datasphere-connections.png" alt-text="Screenshot of the connections in SAP Datasphere." lightbox="media/copy-job/sap-datasphere-connections.png":::
 
 ### Set up a Datasphere replication flow
 
@@ -66,19 +66,19 @@ Create a replication flow to replicate data from your SAP source into ADLS Gen2.
 
 1. Select the appropriate source container, which is the type of source objects you want to replicate from. The following example uses CDS_EXTRACTION to replicate data from CDS views in an SAP S/4HANA on-premises source system. Then select **Select**.
 
-    :::image type="content" source="media/sap-datasphere-tutorial/sap-datasphere-select-source-container.png" alt-text="Screenshot of selecting the source container in replication flow." lightbox="media/sap-datasphere-tutorial/sap-datasphere-select-source-container.png":::
+    :::image type="content" source="media/copy-job/sap-datasphere-select-source-container.png" alt-text="Screenshot of selecting the source container in replication flow." lightbox="media/sap-datasphere-tutorial/sap-datasphere-select-source-container.png":::
 
 1. Select **Add Source Objects** to choose the source objects you want to replicate. After you select all your sources, select **Next**.
 
-    :::image type="content" source="media/sap-datasphere-tutorial/sap-datasphere-select-source-objects.png" alt-text="Screenshot of selecting the source objects in replication flow." lightbox="media/sap-datasphere-tutorial/sap-datasphere-select-source-objects.png":::
+    :::image type="content" source="media/copy-job/sap-datasphere-select-source-objects.png" alt-text="Screenshot of selecting the source objects in replication flow." lightbox="media/sap-datasphere-tutorial/sap-datasphere-select-source-objects.png":::
 
 1. Configure the target ADLS Gen2. Select the target connection and container. Check that the target settings are correct: **Group Delta** by is set to **None** and **File Type** is set to **Parquet**.
 
-    :::image type="content" source="media/sap-datasphere-tutorial/sap-datasphere-target-settings.png" alt-text="Screenshot of ADLS Gen2 target settings." lightbox="media/sap-datasphere-tutorial/sap-datasphere-target-settings.png":::
+    :::image type="content" source="media/copy-job/sap-datasphere-target-settings.png" alt-text="Screenshot of ADLS Gen2 target settings." lightbox="media/copy-job/sap-datasphere-target-settings.png":::
 
 1. Configure the detail settings for the replication. Select **Settings** in the middle section of the canvas. Check and adjust the selected **Load Type** if needed. Currently, mirroring supports **Initial and Delta**.
 
-    :::image type="content" source="media/sap-datasphere-tutorial/sap-datasphere-load-type.png" alt-text="Screenshot of replication flow load type settings." lightbox="media/sap-datasphere-tutorial/sap-datasphere-load-type.png":::
+    :::image type="content" source="media/copy-job/sap-datasphere-load-type.png" alt-text="Screenshot of replication flow load type settings." lightbox="media/copy-job/sap-datasphere-load-type.png":::
 
 1. In the **Run Settings** dialog, you can adjust the load frequency of the replication and adjust resources if needed.
 
@@ -92,10 +92,12 @@ This section explains how to create a Copy job to replicate data from SAP via SA
 
 1. In your workspace, select **New item** and find **Copy job**.
 
-1. Select the ADLS Gen2 container and specify the root folder where your SAP Datasphere outbound data will be stored.
+1. Select the SAP Datasphere Outbound connection and provide the URL to your ADLS Gen2 account.
 
-    :::image type="content" source="media/sap-datasphere-tutorial/browse-lakehouse-and-select-path.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/sap-datasphere-tutorial/browse-lakehouse-and-select-path.png":::
+    :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adlsgen2-connections.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/sap-datasphere-tutorial/browse-lakehouse-and-select-path.png":::
 
+1. Specify the folders where your SAP Datasphere outbound data will be stored.
+   
 1. The remaining configuration is the same as for any other CDC-enabled source.
 
 
