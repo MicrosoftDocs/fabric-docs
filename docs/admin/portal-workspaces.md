@@ -135,7 +135,9 @@ Workspaces and the data they contain reside on capacities. You can move the work
     :::image type="content" source="./media/portal-workspaces/license-modes.png" alt-text="Screenshot showing the Reassign workspace license modes pane.":::
 
     > [!NOTE]
-    > The types of items contained in the workspace can affect the ability to change license modes and/or move the workspace to a capacity in a different region. See [Moving data around](#moving-data-around) for detail.
+    > [!NOTE]
+    > * The types of items in the workspace can affect your ability to change license modes or move the workspace to a capacity in a different region. For more information, see [Moving data around](#moving-data-around).
+    > * Moving a workspace to a different capacity might start successfully but finish with errors. This can potentially impact some or all items in the workspace. For details, see [Capacity reassignment restrictions and common issues](portal-workspace-restrictions.md).
 
 ## Govern My workspaces
 
@@ -186,16 +188,6 @@ To restore a deleted My workspace as an app workspace
 1. When done, select **Restore**.
 
 After the deleted workspace has been restored as an app workspace, it's just like any other app workspace. 
-
-## Moving data around
-
-Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities. Such movement might be to a capacity in the same region, or it might be to a capacity in a different region.
-
-In the Fabric UI, workspaces can be moved to other capacities in the following ways:
-
-* Fabric admins can reassign workspaces to a different capacity individually via the [Workspaces page](#reassign-a-workspace-to-a-different-capacity) in the Fabric Admin portal.
-* Fabric admins and capacity admins can reassign workspaces to a capacity in bulk via the **Workspaces assigned to this capacity** option in the [capacity's settings](./capacity-settings.md#capacity-settings).
-* Workspace admins can reassign their workspace to a different capacity via the **[License info option of the workspace settings](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity)**.
 
 ### Restrictions on moving workspaces around
 
