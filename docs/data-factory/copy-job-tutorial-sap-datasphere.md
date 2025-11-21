@@ -8,9 +8,9 @@ ms.date: 11/21/2025
 ms.topic: tutorial
 ---
 
-# How to set up CDC replication in Copy job from SAP via SAP Datasphere Outbound (Preview)
+# Change Data Capture from SAP via SAP Datasphere Outbound in Copy job (Preview)  
 
-This tutorial introduces how to set up CDC replication in Copy job from SAP via SAP Datasphere Outbound. For a CDC overview in Copy job, refer to [Change data capture (CDC) in Copy Job](cdc-copy-job.md).
+This tutorial introduces how to set up CDC replication in Copy job from SAP via SAP Datasphere Outbound. For a CDC overview in Copy job, refer to [Change data capture (CDC) in Copy job](cdc-copy-job.md).
 
 Using SAP Datasphere Outbound to obtain change data from SAP is a two-step process:
 
@@ -36,9 +36,6 @@ You need:
 ## Set up SAP Datasphere
 
 This section covers the setup steps you need to replicate data from your SAP source into an Azure Data Lake Storage (ADLS) Gen2 container. You'll use this later to configure the Copy job in Fabric.
-
->[!TIP]
->If you already have running SAP replication flow to replicate data into ADLS Gen2, you can skip this section and [Create a Copy job](#Create a Copy job).
 
 ### Set up connections in SAP Datasphere
 
@@ -66,11 +63,11 @@ Create a replication flow to replicate data from your SAP source into ADLS Gen2.
 
 1. Select the appropriate source container, which is the type of source objects you want to replicate from. The following example uses CDS_EXTRACTION to replicate data from CDS views in an SAP S/4HANA on-premises source system. Then select **Select**.
 
-    :::image type="content" source="media/copy-job/sap-datasphere-select-source-container.png" alt-text="Screenshot of selecting the source container in replication flow." lightbox="media/sap-datasphere-tutorial/sap-datasphere-select-source-container.png":::
+    :::image type="content" source="media/copy-job/sap-datasphere-select-source-container.png" alt-text="Screenshot of selecting the source container in replication flow." lightbox="media/copy-job/sap-datasphere-select-source-container.png":::
 
 1. Select **Add Source Objects** to choose the source objects you want to replicate. After you select all your sources, select **Next**.
 
-    :::image type="content" source="media/copy-job/sap-datasphere-select-source-objects.png" alt-text="Screenshot of selecting the source objects in replication flow." lightbox="media/sap-datasphere-tutorial/sap-datasphere-select-source-objects.png":::
+    :::image type="content" source="media/copy-job/sap-datasphere-select-source-objects.png" alt-text="Screenshot of selecting the source objects in replication flow." lightbox="media/copy-job/sap-datasphere-select-source-objects.png":::
 
 1. Configure the target ADLS Gen2. Select the target connection and container. Check that the target settings are correct: **Group Delta** by is set to **None** and **File Type** is set to **Parquet**.
 
@@ -94,7 +91,7 @@ This section explains how to create a Copy job to replicate data from SAP via SA
 
 1. Select the SAP Datasphere Outbound connection and provide the URL to your ADLS Gen2 account.
 
-    :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adlsgen2-connections.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/sap-datasphere-tutorial/browse-lakehouse-and-select-path.png":::
+    :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adlsgen2-connections.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/copy-job/browse-lakehouse-and-select-path.png":::
 
 1. Specify the folders where your SAP Datasphere outbound data is stored and that you want to move to your destinations.
    
