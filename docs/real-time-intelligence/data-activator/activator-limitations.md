@@ -19,26 +19,8 @@ Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is subject
 
 * Creating alerts for a report using Dynamic M parameters isn't supported.
 * Creating alerts from the Fabric or Power BI Capacity Metrics app isn't supported.
+* Alerts do not run while the Fabric capacity is paused
 
-## Activator item migration from Preview to GA
-
-Activator became Generally Available (GA) in November 2024. The move to GA impacts the functionality of your Activator items and rules. 
-
-> [!IMPORTANT]
-> You need to take action or your Activator items created during the preview will be deleted in March 2025.
-
-If you created a rule or activator while Activator was in preview, those rules and activators will eventually be deleted. The rules and activators created during preview are being phased out according to the following schedule.
-
-- January 2025, the items convert to read-only mode. Rules currently running continue to run but can't be edited. Recreate these rules in a new Activator item to keep them running and editable.
-- March 2025, all Activator items are deleted. Even running rules are deleted.
-
-To ensure no gaps in functionality, create new activator items and recreate your rules.
-
-### How to check if your item needs to be migrated
-
-If the item shows Data and Design mode tabs in the lower left corner of the item, it needs to be migrated. If the Data and Design tabs are visible, [recreate your rules in a new item](activator-create-activators.md) to get all the newest capabilities.
-
-:::image type="content" source="media/activator-limitations/activator-migration.png" alt-text="Screenshot showing the screen with Data and Design. ":::
 
 ## Supported Power BI visuals
 
