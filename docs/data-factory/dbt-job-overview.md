@@ -44,7 +44,7 @@ Before you create a dbt job in Microsoft Fabric, make sure your environment is s
  - PostgreSQL
  - Azure SQL Server
 
-### Enable dbt jobs
+### How to enable dbt jobs preview
 
 1. Go to the [admin portal](/fabric/admin/admin-center) in Fabric.
 1. Under **Tenant settings**, enable the **dbt jobs (preview)** feature for your organization or specific security groups.
