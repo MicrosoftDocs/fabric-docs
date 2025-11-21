@@ -1,20 +1,30 @@
 ---
-title: "Tutorial: Configure Microsoft Fabric Mirrored Databases to Mirror SAP via SAP Datasphere (Preview)"
-description: Learn how to mirror SAP systems via SAP Datasphere. Set up connections, replicate data, and integrate with Fabric for data management.
-author: linda33wj
-ms.author: jingwang
-ms.reviewer: whhender
-ms.date: 11/03/2025
+title: "Tutorial: Copy job with SAP Datasphere Outbound (Preview)"
+description: Learn how to configure Copy job for SAP Datasphere Outbound.
+author: dearandyxu
+ms.author: yexu
+ms.reviewer: 
+ms.date: 11/21/2025
 ms.topic: tutorial
 ---
 
-# Mirroring SAP via SAP Datasphere (Preview)
+# How to set up CDC replication from SAP in Copy job via SAP Datasphere Outbound (Preview)
 
-[Mirroring in Fabric](../mirroring/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored SAP database, which creates a read-only, continuously replicated copy of your SAP data in OneLake.
+This tutorial introduces how to set up CDC replication from SAP in Copy job via SAP Datasphere Outbound. For a CDC overview in Copy job, refer to [Change data capture (CDC) in Copy Job](cdc-copy-job.md).
 
-This tutorial introduces how to set up mirrored SAP via SAP Datasphere. For a solution overview, refer to [Mirroring for SAP via SAP Datasphere](sap.md#mirroring-for-sap-via-sap-datasphere).
+Using SAP Datasphere Outbound to obtain change data from SAP is a two-step process:
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+1. Extract data with SAP Datasphere:
+
+    Use SAP Datasphere to extract both the initial snapshot and subsequent changed records from the SAP source system. The extracted data is then landed in an Azure Data Lake Storage Gen2 container, which serves as a staging area.
+
+2. Move data with Copy job:
+
+    Use Copy Job to connect to a staging container in ADLS Gen2 and replicate data—including inserts, updates, and deletions—to any supported destination.
+
+This solution supports all types of SAP sources offered by SAP Datasphere, including SAP S/4HANA, SAP ECC, SAP BW/4HANA, SAP BW, and SAP Datasphere itself.
+
+SAP Datasphere Premium Outbound Integration pricing applies when using Copy job to replicate SAP data via SAP Datasphere.
 
 ## Prerequisites
 
@@ -25,10 +35,10 @@ You need:
 
 ## Set up SAP Datasphere
 
-This section covers the setup steps you need to replicate data from your SAP source into an Azure Data Lake Storage (ADLS) Gen2 container. You'll use this container later to configure the mirrored SAP database in Fabric.
+This section covers the setup steps you need to replicate data from your SAP source into an Azure Data Lake Storage (ADLS) Gen2 container. You'll use this container later to configure the Copy job in Fabric.
 
 >[!TIP]
->If you already have running replication flow to replicate data into ADLS Gen2, you can skip this section and [create mirrored database](#create-a-mirrored-sap-database-via-sap-datasphere).
+>If you already have running replication flow to replicate data into ADLS Gen2, you can skip this section and [Create a Copy job](#Create a Copy job).
 
 ### Set up connections in SAP Datasphere
 
@@ -76,43 +86,31 @@ Create a replication flow to replicate data from your SAP source into ADLS Gen2.
 
 1. Go to your ADLS Gen2 container and validate the data is replicated.
 
-## Create a mirrored SAP database (via SAP Datasphere)
+## Create a Copy job
 
-This section explains how to create the mirrored SAP database in Fabric.
+This section explains how to create a Copy job to replicate data from SAP via SAP Datasphere Outbound.
 
-## Create a Lakehouse shortcut
+1. In your workspace, select **New item** and find **Copy job**.
 
-1. Open the [Fabric portal](https://fabric.microsoft.com).
-
-1. [Create a lakehouse](../onelake/create-lakehouse-onelake.md) or reuse an existing lakehouse.
-
-1. In your lakehouse, [create an Azure Data Lake Storage Gen2 shortcut](../onelake/create-adls-shortcut.md) to the storage container where SAP Datasphere replicates the source SAP data. Make sure you select the whole storage container when creating the shortcut:
-
-    :::image type="content" source="media/sap-datasphere-tutorial/lakehouse-shortcut-adls-dialog.png" alt-text="Screenshot of the Lakehouse shortcut creation dialog for connecting to an ADLS container." lightbox="media/sap-datasphere-tutorial/lakehouse-shortcut-adls-dialog.png":::
-
-1. Validate you can see the SAP data in your lakehouse under "Files".
-
-### Create a mirrored database
-
-1. In your workspace, select **New item** and find **Mirrored SAP (preview)**.
-
-1. Select the lakehouse name that contains the shortcut to your ADLS Gen2 storage container from the OneLake catalog.
-
-1. Select **Browse** and select the root folder that contains the replicated SAP data (`datasphere` in this example). You can also directly enter the shortcut path (omit the prefix "Files/") in the input box. Select **OK**, then **Next**.
+1. Select the ADLS Gen2 container and specify the root folder where your SAP Datasphere outbound data will be stored.
 
     :::image type="content" source="media/sap-datasphere-tutorial/browse-lakehouse-and-select-path.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/sap-datasphere-tutorial/browse-lakehouse-and-select-path.png":::
 
-1. Enter a name for the mirrored SAP database, and select **Create mirrored database**.
+1. The remaining configuration is the same as for any other CDC-enabled source.
 
-1. Mirroring begins and you're taken to the monitoring page. After a few minutes, you'll see the number of rows replicated and can view your data in the SQL analytics endpoint.
 
-    :::image type="content" source="media/sap-datasphere-tutorial/monitor-replication.png" alt-text="Screenshot of monitoring the mirrored database for SAP." lightbox="media/sap-datasphere-tutorial/monitor-replication.png":::
+## Limitations
 
-## Monitor Fabric mirroring
+- Copy job for SAP CDC via SAP Datasphere supports all types of SAP sources offered by SAP Datasphere, including SAP S/4HANA, SAP ECC, SAP BW/4HANA, SAP BW, and SAP Datasphere itself. Refer to [SAP Datasphere replication flow documentation](https://help.sap.com/docs/SAP_DATASPHERE/c8a54ee704e94e15926551293243fd1d/25e2bd7a70d44ac5b05e844f9e913471.html) for details.
 
-Once mirroring is configured, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication. For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../mirroring/monitor.md).
+- SAP Datasphere replication flow setup requirements:
+
+  - Ensure you configure the target storage settings propertly: set **Group Delta** to **None** and set **File Type** to **Parquet**.
+  - Currently, SAP mirroring supports replication flow load type as **Initial and Delta**.
+
+- Once the Copy job is configured, you can monitor the current state of replication from ADLS Gen2 to supported destinations. If you observe a delay in the appearance of mirrored data, also check the SAP Datasphere replication flow status and if the data is replicated into the storage.
+
 
 ## Related content
 
-* [SAP mirroring overview](sap.md)
-* [Limitations in Microsoft Fabric mirrored databases from SAP](sap-limitations.md)
+* [CDC in Copy job](cdc-copy-job.md)
