@@ -4,7 +4,7 @@ description: Learn how ontology (preview) capacity usage is billed and reported.
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 11/17/2025
+ms.date: 11/21/2025
 ms.topic: concept-article
 ---
 
@@ -23,7 +23,7 @@ The following table defines how many capacity units (CU) are consumed when an on
 
 | Meter name | Operation name | Description | Unit of measure | Fabric consumption rate |
 | --- | --- | --- | --- | --- |
-| Ontology Modeling | Ontology AI | Measures the usage of ontology definitions (including entity types, relationships, properties, and bindings). | Per ontology definition usage <br><br>*Usage is defined by intervals of at minimum 30 minutes, each time the API is triggered by CRUD definitions like entity types, relationships, properties, or bindings.* | 0.0039 CU per hour |
+| Ontology Modeling | Ontology Modeling | Measures the usage of ontology definitions (including entity types, relationships, properties, and bindings). | Per ontology definition usage <br><br>*Usage is defined by intervals of at minimum 30 minutes, each time the API is triggered by CRUD definitions like entity types, relationships, properties, or bindings.* | 0.0039 CU per hour |
 | Ontology Logic and Operations​ | Ontology Logic and Operations​ | Measures the usage for ontology operations, including visualizations, logic, graph creation, ontology exploration, and querying and analyzing with query endpoints (including API and SQL endpoint) | Per hour | 40 CU per hour <br><br>*While ontology (preview) billing isn't in effect, users are billed according to their [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.* |
 | Ontology AI | Ontology AI Operations | Measures the usage of AI for context driven reasoning and query over ontology | (Input) Per 1,000 Tokens <br><br>(Output) Per 1,000 Tokens | (Input) 400 CU seconds <br><br>(Output) 1,600 CU seconds <br><br>*While ontology (preview) billing isn't in effect, users are billed according to their [Copilot in Fabric](../../fundamentals/copilot-fabric-consumption.md) usage.* |
 
