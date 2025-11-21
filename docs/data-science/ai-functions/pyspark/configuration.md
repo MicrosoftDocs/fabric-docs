@@ -52,7 +52,7 @@ results = df.ai.fix_grammar(input_col="text", output_col="corrections", concurre
 display(results)
 ```
 
-The following code sample shows how to configure the `gpt-5` model for all functions.
+The following code sample shows how to configure the `gpt-5` and other reasoning models for all functions.
 
 ```python
 from synapse.ml.services.openai import OpenAIDefaults
