@@ -11,7 +11,7 @@ ms.search.form: GQL Example Graph Datasets
 
 # Example graph datasets
 
-GQL queries given by most documentation articles for Graph in Microsoft Fabric assume one of the following example graphs:
+GQL queries given by most documentation articles for Graph in Microsoft Fabric assume one of the following example [property graphs](graph-data-models.md):
 
 * The *social network example graph* is the primary example graph used in the documentation.
   It's detailed structure is explained in the article on its [schema definition](gql-schema-example.md).
