@@ -16,8 +16,6 @@ This article shows you how to add a Cribl source to an eventstream.
 
 The Cribl source for Eventstream allows you to stream data from Cribl Stream into Fabric Eventstream. You can add Cribl as a source to your eventstream to capture, transform, and route real-time events to various destinations in Fabric.
 
-[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
-
 ## Prerequisites
 
 - A Worker Group is set up in Cribl Stream with the required permissions to configure destinations.

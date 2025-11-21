@@ -101,7 +101,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Custom endpoint (i.e., Custom App in standard capability) | Destination   | NO                        |                                             |
 | Eventhouse (Direct Ingestion)                             | Destination   | NO                        |                                             |
 | Fabric Activator (preview)                                | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                          |
-| Derived stream                                            | Destination   | NO                        |                                             |
+| Derived stream                                            | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                              |
 
 
 ::: zone-end
