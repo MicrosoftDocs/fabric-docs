@@ -10,7 +10,9 @@ ms.topic: overview
 
 # What is ontology (preview)?
 
-The *ontology (preview)* item (part of the [IQ (preview) workload](../overview.md)) is for digitally representing the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, and rules and constraints. It then binds the entity type definitions to real data, allowing downstream tools to share the same language. Ontology works well in situations where you need cross-domain consistency, governance, or AI/agent grounding, and you want to reason across processes.
+The *ontology (preview)* item (part of the [IQ (preview) workload](../overview.md)) is for digitally representing the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, and constraints. It then binds the entity type definitions to live data, allowing downstream tools to share the same language. This language can be used by AI agents for cross-domain reasoning and decision-ready actions.
+
+Ontology works well in situations where you need cross-domain consistency, governance, or AI/agent grounding, and you want to reason across processes.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -53,19 +55,26 @@ After you define an ontology, you can [bind it to your data](how-to-bind-data.md
 
 *Binding* connects your ontology's definitions (including entity types, properties, and relationships) to concrete data living in OneLake, including lakehouse tables, eventhouse streams, and semantic models. A binding describes data types, identity keys, how columns map to properties, and how keys map to relationships across multiple data sources. By enabling schema evolution rules, data quality checks (based on things like nullability, ranges, and uniqueness), and provenance at the concept layer, bindings turn raw rows and events into governed business objects. Binding improves semantics by ensuring every instance carries consistent meaning, types, constraints, and lineage, regardless of source.
 
+[!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
+
 ### Ontology graph
 
 >[!IMPORTANT]
 >Ontology's graph feature relies on [Graph in Microsoft Fabric](../../graph/overview.md), so the Graph setting must be enabled for your tenant. For more information, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
 
-The *ontology graph* is the navigable instance graph built from your bindings and relationship definitions. It's visible from the [ontology preview experience](how-to-use-preview-experience.md). In the graph, nodes are entity instances, and edges are links (either asserted or derived) with metadata attributes. Each node or edge keeps data source lineage and follows a scheduled data refresh. Graphs enable visual exploration of business context, execution of graph algorithms (like paths, centrality, and communities), and rule‑driven inferences. Graphs improve semantics by making relationships first‑class, so context isn't buried in join logic, but instead is explicit, queryable, and governed.
+The *ontology graph* is a navigable instance graph built from your bindings and relationship definitions. It's visible from the [ontology preview experience](how-to-use-preview-experience.md). In the graph, nodes are entity instances, and edges are links (either asserted or derived) with metadata attributes. Each node or edge keeps data source lineage and follows a scheduled data refresh. Graphs enable visual exploration of business context, execution of graph algorithms (like paths, centrality, and communities), and rule‑driven inferences. Graphs improve semantics by making relationships first‑class, so context isn't buried in join logic, but instead is explicit, queryable, and governed.
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 
 ### Querying your ontology
 
-*Ontology querying* lets you ask business-level questions over bound sources through ontology concepts. Queries start with entity types and allow filtering by properties, traversing relationships, aggregating by time, and other constraints. The ontology layer pushes predicates down to the native engines where possible (GQL for Graph in Microsoft Fabric and KQL for Eventhouse). It also includes an NL2Ontology query layer that converts natural language into a detailed federated query plan, executes the plan, and returns the relevant results. By querying concepts rather than physical schemas, federated queries improve semantics. They ensure that filters, joins, units, and validity windows align with the canonical definitions you published in your ontology.
+*Ontology querying* lets you ask business-level questions over bound sources through ontology concepts. Queries start with entity types and allow filtering by properties, traversing relationships, aggregating by time, and other constraints. The ontology layer pushes predicates down to the native engines where possible (GQL for Graph in Microsoft Fabric and KQL for Eventhouse). It also includes an NL2Ontology query layer that converts natural language into a detailed federated query plan, executes the plan, and returns the relevant results. That layer can be used by Fabric AI agents to improve answer accuracy and explainability.
+
+By querying concepts rather than physical schemas, federated queries improve semantics. They ensure that filters, joins, units, and validity windows align with the canonical definitions you published in your ontology.
 
 ## Next steps
 
-Prepare your tenant for ontology (preview) by enabling required tenant settings in [Ontology (preview) required tenant settings](overview-tenant-settings.md).
+* Prepare your tenant for ontology (preview) by enabling required tenant settings in [Ontology (preview) required tenant settings](overview-tenant-settings.md).
+* Get started with the [Ontology (preview) tutorial](tutorial-0-introduction.md).
+* Skip ahead to instructions for [generating an ontology from a semantic model](tutorial-1-create-ontology.md#about-generating-an-ontology-from-a-semantic-model?pivots=semantic-model).
+
