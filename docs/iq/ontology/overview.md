@@ -76,5 +76,5 @@ By querying concepts rather than physical schemas, federated queries improve sem
 
 * Prepare your tenant for ontology (preview) by enabling required tenant settings in [Ontology (preview) required tenant settings](overview-tenant-settings.md).
 * Get started with the [Ontology (preview) tutorial](tutorial-0-introduction.md).
-* Skip ahead to instructions for [generating an ontology from a semantic model](tutorial-1-create-ontology.md#about-generating-an-ontology-from-a-semantic-model?pivots=semantic-model).
+* Skip ahead to instructions for [generating an ontology from a semantic model](tutorial-1-create-ontology.md?pivots=semantic-model#about-generating-an-ontology-from-a-semantic-model).
 
