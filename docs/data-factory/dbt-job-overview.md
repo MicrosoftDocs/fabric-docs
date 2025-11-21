@@ -32,7 +32,7 @@ This approach combines the flexibility of code-first development with the simpli
 
 Before you create a dbt job in Microsoft Fabric, make sure your environment is set up correctly:
 
-- [Enable dbt jobs](#enable-dbt-jobs)
+- [Enable dbt jobs](#how-to-enable-dbt-jobs-preview)
 - [Set up your workspace and warehouse](#set-up-your-workspace-and-warehouse)
 - [Set permissions and access](#permissions-and-access)
 

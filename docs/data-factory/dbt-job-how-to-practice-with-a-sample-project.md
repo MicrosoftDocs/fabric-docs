@@ -1,8 +1,9 @@
 ---
 title: How to practice with sample project
 description: This article guides you through how to create a dbt job using a sample jaafle shop project
-author: akurnala
-ms.author: yexu
+ms.reviewer: whhender
+ms.author: akurnala
+author: abhinayakurnala1
 ms.topic: how-to
 ms.date: 11/20/2025
 ms.search.form: dbt-job-sample-project-tutorial
