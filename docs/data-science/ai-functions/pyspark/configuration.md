@@ -45,7 +45,7 @@ The following code sample shows how to configure `concurrency` for an individual
 df = spark.createDataFrame([
         ("There are an error here.",),
         ("She and me go weigh back. We used to hang out every weeks.",),
-        ("The big picture are right, but you're details is all wrong.",)
+        ("The big picture are right, but you're details is all wrong.",),
     ], ["text"])
 
 results = df.ai.fix_grammar(input_col="text", output_col="corrections", concurrency=200)
@@ -91,24 +91,23 @@ Set the `deployment_name` to one of the [models supported by Fabric](../../ai-se
 
 - Globally in the `OpenAIDefaults()` object:
 
-```python
-from synapse.ml.services.openai import OpenAIDefaults
-default_conf = OpenAIDefaults()
-
-default_conf.set_deployment_name("<model deployment name>")
-```
+    ```python
+    from synapse.ml.services.openai import OpenAIDefaults
+    default_conf = OpenAIDefaults()
+    default_conf.set_deployment_name("<model deployment name>")
+    ```
 
 - Individually in each AI function call:
 
-```python
-results = df.ai.translate(
-    to_lang="spanish",
-    input_col="text",
-    output_col="out",
-    error_col="error_col",
-    deploymentName="<model deployment name>",
-)
-```
+    ```python
+    results = df.ai.translate(
+        to_lang="spanish",
+        input_col="text",
+        output_col="out",
+        error_col="error_col",
+        deploymentName="<model deployment name>",
+    )
+    ```
 
 ### Choose another supported embedding model
 
@@ -116,22 +115,21 @@ Set the `embedding_deployment_name` to one of the [models supported by Fabric](.
 
 - Globally in the `OpenAIDefaults()` object:
 
-```python
-from synapse.ml.services.openai import OpenAIDefaults
-default_conf = OpenAIDefaults()
-
-default_conf.set_embedding_deployment_name("<embedding deployment name>")
-```
+    ```python
+    from synapse.ml.services.openai import OpenAIDefaults
+    default_conf = OpenAIDefaults()
+    default_conf.set_embedding_deployment_name("<embedding deployment name>")
+    ```
 
 - Individually in each AI function call:
 
-```python
-results = df.ai.embed(
-    input_col="english",
-    output_col="out",
-    deploymentName="<embedding deployment name>",
-)
-```
+    ```python
+    results = df.ai.embed(
+        input_col="english",
+        output_col="out",
+        deploymentName="<embedding deployment name>",
+    )
+    ```
 
 ### Configure a custom model endpoint
 

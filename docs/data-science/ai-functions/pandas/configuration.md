@@ -54,7 +54,7 @@ aifunc.default_conf.concurrency = 300 # Default: 200
 df = pd.DataFrame([
         "Hello! How are you doing today?", 
         "Tell me what you'd like to know, and I'll do my best to help.", 
-        "The only thing we have to fear is fear itself."
+        "The only thing we have to fear is fear itself.",
     ], columns=["text"])
 
 df["translations"] = df["text"].ai.translate("spanish")
@@ -72,7 +72,7 @@ from synapse.ml.aifunc import Conf
 df = pd.DataFrame([
         "Hello! How are you doing today?", 
         "Tell me what you'd like to know, and I'll do my best to help.", 
-        "The only thing we have to fear is fear itself."
+        "The only thing we have to fear is fear itself.",
     ], columns=["text"])
 
 df["translations"] = df["text"].ai.translate("spanish", conf=Conf(temperature=0.5))
@@ -100,18 +100,18 @@ Select one of the [models supported by Fabric](../../ai-services/ai-services-ove
 
 - Globally in the `aifunc.Conf` class. Example:
 
-```python
+    ```python
     aifunc.default_conf.model_deployment_name = "<model deployment name>"
-```
+    ```
 
 - Individually in each AI function call:
 
-```python
-df["translations"] = df["text"].ai.translate(
-    "spanish",
-    conf=Conf(model_deployment_name="<model deployment name>"),
-)
-```
+    ```python
+    df["translations"] = df["text"].ai.translate(
+        "spanish",
+        conf=Conf(model_deployment_name="<model deployment name>"),
+    )
+    ```
 
 ### Choose another supported embedding model
 
@@ -119,17 +119,17 @@ Select one of the [models supported by Fabric](../../ai-services/ai-services-ove
 
 - Globally in the `aifunc.Conf` class. Example:
 
-```python
+    ```python
     aifunc.default_conf.embedding_deployment_name = "<embedding deployment name>"
-```
+    ```
 
 - Individually in each AI function call. Example:
 
-```python
-df["embedding"] = df["text"].ai.embed(
-    conf=Conf(embedding_deployment_name="<embbedding deployment name>"),
-)
-```
+    ```python
+    df["embedding"] = df["text"].ai.embed(
+        conf=Conf(embedding_deployment_name="<embbedding deployment name>"),
+    )
+    ```
 
 ### Configure a custom model endpoint
 
