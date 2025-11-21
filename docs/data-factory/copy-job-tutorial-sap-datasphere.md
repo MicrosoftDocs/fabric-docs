@@ -91,7 +91,7 @@ This section explains how to create a Copy job to replicate data from SAP via SA
 
 1. Select the SAP Datasphere Outbound connection and provide the URL to your ADLS Gen2 account.
 
-    :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adlsgen2-connections.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/copy-job/browse-lakehouse-and-select-path.png":::
+    :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adlsgen2-connections.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/copy-job/copy-job-sap-datasphere-adlsgen2-connections.png":::
 
 1. Specify the folders where your SAP Datasphere outbound data is stored and that you want to move to your destinations.
    
