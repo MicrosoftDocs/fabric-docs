@@ -96,7 +96,7 @@ CREATE OR REPLACE EXTERNAL VOLUME IRC_EXVOL
             NAME = 'IRC_EXVOL'
             STORAGE_PROVIDER = 'AZURE'
             STORAGE_BASE_URL = 'azure://onelake.dfs.fabric.microsoft.com/12345678-abcd-4fbd-9e50-3937d8eb1915/98765432-dcba-4209-8ac2-0821c7f8bd91'
-            AZURE_TENANT_ID='81ba0d80-2361-40bb-9c1f-bf1c84027025' --tenant id
+            AZURE_TENANT_ID='11122233-1122-4138-8485-a47dc5d60435' -- Entra tenant id
         )
     )
     ALLOW_WRITES = FALSE;
