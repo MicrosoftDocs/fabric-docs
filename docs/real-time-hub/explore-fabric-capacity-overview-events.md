@@ -97,25 +97,25 @@ The `data` object has the following properties for Summary events:
 > |--------------------|----------------------------|------------------------------------------------------------------------------------------------------------------|
 > | AD                | Anomaly Detector           | Anomaly detection by running queries supporting both interactive and background utilization types for real-time and scheduled analysis. |
 > | AI                | AI (Copilot/AI features)   | Evaluates AI functions on dataflows and datasets as background operations to deliver intelligent and contextual insights. |
-> | AS                | Semantic Model             | Semantic Model query and refresh operations.                                                                    |
-> | CDSA              | Dataflow/VNET              | Background operations related to dataflow refreshes and VNET gateways.                                          |
+> | AS                | Semantic Model             | Semantic Model queries and refresh operations.                                                                    |
+> | CDSA              | Dataflow/VNET              | Background operations related to dataflow refresh and virtual network gateways.                                          |
 > | Dataflows         | Dataflow                   | Background operations related to running queries for dataflows Gen 2.                                           |
-> | DI                | Data Integration           | Background operations across different item types for data movement, activity runs and orchestration.           |
+> | DI                | Data Integration           | Background operations across different item types for data movement, activity runs, and orchestration.           |
 > | DMS               | Warehouse                  | Background operations across warehouses related to queries and SQL endpoints.                                   |
-> | ES                | EventStream                | Background operations related to eventstream data and traffic generated per hour.                               |
-> | FuncSet           | User Data Functions        | Interactive and background operations for user data functions related to read, write and executions.            |
+> | ES                | Eventstream                | Background operations related to eventstream data and traffic generated per hour.                               |
+> | FuncSet           | User Data Functions        | Interactive and background operations for user data function related to read, write, and executions.            |
 > | GeoIntel          | Map                        | Generating and managing map tiles and creating custom tilesets for geospatial visualization.                    |
 > | Graph             | GraphIndex                 | Background operations related to graphs.                                                                        |
 > | GraphQL           | GraphQL                    | Interactive operations for queries on graphs.                                                                   |
 > | Kusto             | Kusto                      | Background operations for uptime related to Kusto databases and eventhouse.                                     |
-> | lake              | OneLake                    | Background operations for lakehouse such as reads, writes etc with respect to different item types.             |
+> | lake              | OneLake                    | Background operations for lakehouse such as reads, writes with respect to different item types.             |
 > | ML                | Machine Learning           | Background operations for machine learning features such as Copilot across different item types.                |
-> | OneRiver          | OneRiver                   | Onelake operations for different item types related to event listeners and event operations.                    |
+> | OneRiver          | OneRiver                   | One Lake operations for different item types related to event listeners and event operations.                    |
 > | Reflex            | Activator                  | Data activator operations related to event computations and ingestion.                                          |
 > | RsRdlEngine       | PaginatedReport            | Paginated report operations fired during renders.                                                               |
 > | ScreenshotEngine  | Report Export/ Subscription| Background operations related to subscriptions and export.                                                      |
 > | SparkCore         | Spark                      | Background operations related to spark job runs across different item types.                                    |
-> | SQLb              | SQL Database               | Interactive execution of SQL usage operations on native database items.                                         |
+> | SQLDb              | SQL Database               | Interactive execution of SQL usage operations on native database items.                                         |
 
 The `data` object has the following properties for State events:
 
