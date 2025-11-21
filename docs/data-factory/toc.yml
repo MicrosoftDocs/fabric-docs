@@ -874,6 +874,8 @@
                 href: create-copy-job.md
               - name: How to monitor a Copy job
                 href: monitor-copy-job.md
+              - name: Change data capture from SAP via SAP Datasphere Outbound 
+                href: copy-job-tutorial-sap-datasphere.md
       - name: Copy activity
         href: copy-data-activity.md
         items:
