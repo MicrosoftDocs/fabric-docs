@@ -49,7 +49,7 @@ The preview experience also contains a **Relationship graph**, which you use to 
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph.png" alt-text="Screenshot of expanding the relationship graph.":::
 
-1. In the graph, observe the details of the three relationships to the *SaleEvent* entity type from *CalendarDate*, *Store*, and *Freezer*.
+1. In the graph, observe the details of the three relationships to the *SaleEvent* entity type from *CalendarDate*, *Store*, and *Product*.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph-expanded.png" alt-text="Screenshot of data in the expanded relationship graph." lightbox="media/tutorial-3-preview-ontology/relationship-graph-expanded.png":::
 
