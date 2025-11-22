@@ -269,7 +269,7 @@ Follow the same steps that you used for the *Store* entity type to create the en
 | *Product* | *dimproduct* | `ProductId` |
 | *SaleEvent* | *factsales* | `SaleId` |
 
-When you're done, you see four entity types listed in the **Entity Types** pane. 
+When you're done, you see these entity types listed in the **Entity Types** pane. 
 
 :::image type="content" source="media/tutorial-1-create-ontology/onelake/all-entity-types.png" alt-text="Screenshot of the scenario entity types.":::
 
@@ -279,7 +279,7 @@ Next, create relationship types between the entity types to represent contextual
 
 ### Store has SaleEvent
 
-1. Select **Add relationship * from the top ribbon.
+1. Select **Add relationship type** from the top ribbon.
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-1.png" alt-text="Screenshot of adding a relationship type.":::
 
@@ -292,22 +292,22 @@ Next, create relationship types between the entity types to represent contextual
 
 1. The **Relationship configuration** pane opens, where you can configure additional information. Enter the following details (some fields become visible based on other selections) and select **Create**.
     1. **Source data**: Select your tutorial workspace, the *OntologyDataLH* lakehouse, and the *factsales* table.
-    1. **Source entity type > Source column**: Select `StoreId`.
-    1. **Target entity type > Source column**: Select `SaleId`.
+    1. **Source entity type > Source column**: Select `StoreId` to match the entity type key property.
+    1. **Target entity type > Source column**: Select `SaleId` to match the entity type key property.
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-3.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/tutorial-1-create-ontology/onelake/relationship-type-3.png":::
 
-Now the first relationship is created, and bound to data in your source table. Continue to the next section to create the remaining two relationship types.
+Now the first relationship is created, and bound to data in your source table. Continue to the next section to create another relationship type.
 
 ### Product soldIn SaleEvent
 
-Follow the same steps that you used for the first relationship type to create the relationship types described in the following table. All relationships use the *factsales* table, and their source columns match the **Entity type key property** fields.
+Follow the same steps that you used for the first relationship type to create the relationship type described in the following table.
 
-| Relationship type name | Source entity type | Target entity type |
-| --- | --- | --- |
-| *soldIn* | *Product* | *SaleEvent* |
+| Relationship type name  | Source entity type | Target entity type | Table |
+| --- | --- | --- | --- |
+| *soldIn* | *Product* | *SaleEvent* | *factsales*<br>Set source columns to match entity type key properties|
 
-When you're done, you have two relationships targeting the *SaleEvent* entity type. To see the relationships, select the **SaleEvent** entity type from the **Entity Types** pane. You see relationships to it on the canvas.
+When you're done, you have two relationships targeting the *SaleEvent* entity type. To see the relationships, select the **SaleEvent** entity type from the **Entity Types** pane. You see its relationships on the canvas.
 
 :::image type="content" source="media/tutorial-1-create-ontology/onelake/all-relationship-types.png" alt-text="Screenshot of the scenario relationship types." lightbox="media/tutorial-1-create-ontology/onelake/all-relationship-types-crop.png":::
 

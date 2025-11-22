@@ -22,7 +22,7 @@ When you bound data to your entity types in previous tutorial steps, ontology au
 
     :::image type="content" source="media/tutorial-3-preview-ontology/open-preview.png" alt-text="Screenshot of opening the preview experience.":::
 
-    It may take a few minutes for the ontology overview to load the first time.
+    It might take a few minutes for the ontology overview to load the first time.
 
 1. Look for the **Entity instances** section. Verify that it shows entity instances, with unit counts and revenue populated from the *factsales* lakehouse table.
 

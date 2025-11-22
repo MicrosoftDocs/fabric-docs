@@ -85,7 +85,7 @@ Next, add time series data on the *Freezer* entity, by creating new properties a
 1. Configure a time series data binding.
     1. For **Binding type**, leave the default selection of **Timeseries**.
         1. For **Source data timestamp column**, select `timestamp`.
-    1. Under **Bind your properties > Static**, remove the default bindings. Select **+ Add static property**, and use the **Source column** dropdown menu to select the `freezerId` column. Then, use the **Property name** dropdown menu to select `FreezerId` (beginning with a capital letter). This step ensures that the `freezerId` column in the *FreezerTelemetry* table is bound to the same `FreezerId` property that is already defined on the *Freezer* entity type from the static data source.
+    1. Under **Bind your properties > Static**, use the dropdown menu for **Property name** to select `FreezerId` (beginning with a capital letter). This step ensures that the `freezerId` column in the *FreezerTelemetry* table is bound to the same `FreezerId` property that is already defined on the *Freezer* entity type from the static data source.
     1. Under **Bind your properties > Timeseries**, the columns from the *FreezerTelemetry* table populate automatically with matching property names for the *Freezer* entity type. Leave the default selections.
     1. Select **Save**.
 
@@ -108,8 +108,8 @@ Finally, create a new relationship type to represent the connection between a st
     1. **Target entity type**: *Freezer*
 1. The **Relationship configuration** pane opens, where you can configure additional information. Enter the following details (some fields become visible based on other selections) and select **Create**.
     1. **Source data**: Select your tutorial workspace, the *OntologyDataLH* lakehouse, and the *freezer* table.
-    1. **Source entity type > Source column**: Select `StoreId` (matches the **Entity type key property**).
-    1. **Target entity type > Source column**: Select `FreezerId` (matches the **Entity type key property**).
+    1. **Source entity type > Source column**: Select `StoreId` to match the entity type key property.
+    1. **Target entity type > Source column**: Select `FreezerId` to match the entity type key property.
 
     Here's what the relationship configuration looks like:
 
