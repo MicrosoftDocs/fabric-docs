@@ -101,7 +101,7 @@ Finally, create a new relationship type to represent the connection between a st
 
 ### Create Store operates Freezer
 
-1. Select **Add relationship** from the top ribbon.
+1. Select **Add relationship type** from the menu ribbon.
 1. Enter the following relationship type details and select **Add relationship type**.
     1. **Relationship type name**: *operates*
     1. **Source entity type**: *Store*
