@@ -354,6 +354,8 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 
 * To query data from a Spark notebook using Spark SQL, the user must have at least Viewer access in the workspace they're querying.
 
+* Mixed-mode queries are not supported. Single queries that access both OneLake security enabled and non-OneLake security enabled data will fail with query errors.
+
 * Spark notebooks require that the environment be 3.5 or higher and using Fabric runtime 1.3.
 
 * OneLake security doesn't work with [private link protection](../../security/security-private-links-overview.md).

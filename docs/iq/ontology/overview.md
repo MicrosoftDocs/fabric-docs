@@ -6,6 +6,7 @@ ms.author: baanders
 ms.reviewer: baanders
 ms.date: 10/06/2025
 ms.topic: overview
+ms.search.form: Ontology Overview
 ---
 
 # What is ontology (preview)?
