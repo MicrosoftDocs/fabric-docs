@@ -4,7 +4,7 @@ description: Preview the ontology by observing its entity instances and relation
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 10/18/2025
+ms.date: 11/21/2025
 ms.topic: tutorial
 ---
 
@@ -49,7 +49,7 @@ The preview experience also contains a **Relationship graph**, which you use to 
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph.png" alt-text="Screenshot of expanding the relationship graph.":::
 
-1. In the graph, observe the details of the three relationships to the *SaleEvent* entity type from *CalendarDate*, *Store*, and *Freezer*.
+1. In the graph, observe the details of the relationships to the *SaleEvent* entity type from *Store* and *Freezer*.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph-expanded.png" alt-text="Screenshot of data in the expanded relationship graph." lightbox="media/tutorial-3-preview-ontology/relationship-graph-expanded.png":::
 
@@ -59,7 +59,7 @@ The preview experience also contains a **Relationship graph**, which you use to 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-default-query.png" alt-text="Screenshot of the Store relationship graph and instances." lightbox="media/tutorial-3-preview-ontology/relationship-default-query.png":::
 
 >[!TIP]
->If the graph looks sparse, check the entity type keys in the data bindings and verify that they match the keys defined in [Create entity types and data bindings](tutorial-1-create-ontology.md#create-entity-types-and-data-bindings). For example, the key for the *SaleEvent* entity type is `StoreId`, `ProductId`, and `Date`.
+>If the graph looks sparse, check the entity type keys in the data bindings and verify that they match the keys defined in [Create entity types and data bindings](tutorial-1-create-ontology.md#create-entity-types-and-data-bindings). For example, the key for the *SaleEvent* entity type is `SaleId`.
 
 ## Query graph instances
 

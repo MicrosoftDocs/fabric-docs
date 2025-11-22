@@ -4,7 +4,7 @@ description: Enrich the ontology by creating a new entity and binding time serie
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 10/29/2025
+ms.date: 11/21/2025
 ms.topic: tutorial
 ---
 
@@ -85,7 +85,7 @@ Next, add time series data on the *Freezer* entity, by creating new properties a
 1. Configure a time series data binding.
     1. For **Binding type**, leave the default selection of **Timeseries**.
         1. For **Source data timestamp column**, select `timestamp`.
-    1. Under **Bind your properties > Static**, use the dropdown menu for **Property name** to select `FreezerId` (beginning with a capital letter). This step ensures that the `freezerId` column in the *FreezerTelemetry* table is bound to the same `FreezerId` property that is already defined on the *Freezer* entity type from the static data source.
+    1. Under **Bind your properties > Static**, remove the default bindings. Select **+ Add static property**, and use the **Source column** dropdown menu to select the `freezerId` column. Then, use the **Property name** dropdown menu to select `FreezerId` (beginning with a capital letter). This step ensures that the `freezerId` column in the *FreezerTelemetry* table is bound to the same `FreezerId` property that is already defined on the *Freezer* entity type from the static data source.
     1. Under **Bind your properties > Timeseries**, the columns from the *FreezerTelemetry* table populate automatically with matching property names for the *Freezer* entity type. Leave the default selections.
     1. Select **Save**.
 

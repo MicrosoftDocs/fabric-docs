@@ -4,7 +4,7 @@ description: Create a data agent that queries the ontology (preview) in natural 
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 10/30/2025
+ms.date: 11/21/2025
 ms.topic: tutorial
 ---
 
