@@ -8,6 +8,7 @@ ms.date: 10/29/2025
 ms.topic: tutorial
 zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
 zone_pivot_groups: create-ontology-scenario
+ms.search.form: Ontology Tutorial
 ---
 
 # Ontology (preview) tutorial part 0: Introduction and environment setup

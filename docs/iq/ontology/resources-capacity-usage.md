@@ -6,6 +6,7 @@ ms.author: baanders
 ms.reviewer: baanders
 ms.date: 11/21/2025
 ms.topic: concept-article
+ms.search.form: Ontology Billing
 ---
 
 # Capacity consumption for ontology (preview)
