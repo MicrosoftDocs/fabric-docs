@@ -72,7 +72,7 @@ First, craft this query: *Show all freezers that are operated in the Paris store
 
     :::image type="content" source="media/tutorial-3-preview-ontology/add-filter-store.png" alt-text="Screenshot of filtering by Store ID." lightbox="media/tutorial-3-preview-ontology/add-filter-store.png":::
 
-1. In the **Components** pane, ensure the only checked fields are **Nodes > Store**, **Nodes > Freezer**, and **Edges > operates**.
+1. In the **Components** pane, uncheck *SaleEvent* so that the only checked fields are **Nodes > Store**, **Nodes > Freezer**, and **Edges > operates**.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/components.png" alt-text="Screenshot of filtering the components." lightbox="media/tutorial-3-preview-ontology/components.png":::
 
