@@ -56,7 +56,7 @@ These instructions explain how to explore tile data using Copilot with the storm
 
 1. For this example, enter "Show me data for Texas only," and select the **Submit** icon.
 
-    :::image type="content" source="media/copilot-data-explore/dashboard-tile-copilot-ask.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot dialog with a question typed and the submit button activated.":::
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-copilot-ask.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot dialog with a question typed and the submit button activated.":::
 
 [!INCLUDE [copilot-explore-data](../includes/copilot-explore-data.md)]
 

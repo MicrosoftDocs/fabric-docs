@@ -4,8 +4,7 @@ ms.author: spelluru
 ms.topic: include
 ms.date: 11/23/2025
 ---
-
-1. In the Copilot pane, ask a question or make a request about the data. For example, "Show me the total sales by region" or "What are the top five products by revenue?"
+1. In the Copilot pane, ask a question or make a request about the data. For example, "Show me the total sales by region" or "What are the top five products by revenue?" 
 
 1. Continue exploring and drill through the data by asking follow-up questions or making additional requests.
 
