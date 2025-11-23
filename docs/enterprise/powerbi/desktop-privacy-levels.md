@@ -36,6 +36,17 @@ The following table describes data source privacy levels:
 
 > [!CAUTION]
 > Configure a data source containing highly sensitive or confidential data as **Private**.
+
+### Practical guidance for using privacy levels
+
+When deciding which privacy level to use, consider these common scenarios:
+
+- **Combining internal databases with public data**: Set your internal database to **Organizational** and public data sources (like web data) to **Public**. This prevents organizational data from being transmitted to public sources.
+- **Working with highly sensitive data**: Use **Private** for HR databases, financial records, or customer PII (Personally Identifiable Information). This ensures data stays isolated even from other organizational sources.
+- **Multiple internal sources**: When combining data from different internal systems (like CRM and ERP), set both to **Organizational** to allow query folding and optimal performance while maintaining security.
+- **Performance vs. security trade-offs**: Setting **Ignore the Privacy Levels** improves performance but may expose sensitive data. Only use this setting in development environments or when you're certain all data sources are equally trusted.
+
+**Best practice**: Start with more restrictive privacy levels and only relax them if you encounter performance issues and understand the security implications.
 ## Privacy levels
 
 To configure privacy options for a file:

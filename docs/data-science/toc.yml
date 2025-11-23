@@ -41,6 +41,8 @@ items:
       href: ./ai-functions/pandas/analyze-sentiment.md
     - name: ai.classify
       href: ./ai-functions/pandas/classify.md
+    - name: ai.embed
+      href: ./ai-functions/pandas/embed.md
     - name: ai.extract
       href: ./ai-functions/pandas/extract.md
     - name: ai.fix_grammar
@@ -61,6 +63,8 @@ items:
       href: ./ai-functions/pyspark/analyze-sentiment.md
     - name: ai.classify
       href: ./ai-functions/pyspark/classify.md
+    - name: ai.embed
+      href: ./ai-functions/pyspark/embed.md
     - name: ai.extract
       href: ./ai-functions/pyspark/extract.md
     - name: ai.fix_grammar
@@ -99,6 +103,8 @@ items:
           href: data-agent-semantic-model.md
         - name: How to configure a data agent
           href: develop-iterative-process-data-agent.md
+        - name: Connect to an AI Foundry Search Index
+          href: data-agent-ai-search-index.md
     - name: How to consume a Fabric data agent
       items:
         - name: Consume a data agent from Azure AI foundry (preview)
@@ -108,7 +114,7 @@ items:
         - name: Consume a data agent from Microsoft Copilot Studio (preview)
           href: data-agent-microsoft-copilot-studio.md         
         - name: Consume a data agent using Python SDK (preview)
-          href: consume-data-agent-python.md   
+          href: consume-data-agent-python.md
     - name: Source Control, CI/CD, and ALM for Fabric data agent
       href: data-agent-source-control.md 
     - name: Fabric data agent end-to-end tutorial
@@ -251,6 +257,8 @@ items:
     href: machine-learning-experiment.md
   - name: Machine learning model
     href: machine-learning-model.md
+  - name: Machine learning tracking upgrade
+    href: mlflow-upgrade.md
   - name: Fabric autologging
     href: mlflow-autologging.md
   - name: Git and deployment pipelines 

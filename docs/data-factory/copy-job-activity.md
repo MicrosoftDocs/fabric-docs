@@ -4,15 +4,12 @@ description: Set up and configure the Copy Job activity in Data Factory pipeline
 author: whhender
 ms.author: whhender
 ms.reviewer: whhender
-ms.date: 08/06/2025
+ms.date: 11/06/2025
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
 # Copy job activity in Data Factory pipelines
-
-> [!NOTE]
-> This feature is in [preview](/fabric/fundamentals/preview).
 
 The Copy job activity runs a Copy job directly inside a pipeline. This means you can manage data movement alongside other tasks like transformations and notifications—all in one place.
 

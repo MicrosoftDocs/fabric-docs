@@ -31,6 +31,7 @@ By assigning a member to a role, that user is then subject to the associated per
 OneLake security roles support the following permission:
 
 - **Read:** Grants the user the ability to read data from a table and view the associated table and column metadata. In SQL terms, this permission is equivalent to both VIEW_DEFINITION and SELECT. For more information, see the [Metadata security](#metadata-security).
+- **ReadWrite:** Grants the user the ability to read and write data from a table or folder and view the associated table and column metadata. In SQL terms, this permission is equivalent to ALTER, DROP, UPDATE, and INSERT. For more information see [ReadWrite permission.](#readwrite-permission)
 
 OneLake security enables users to define data access roles for the following Fabric items only.
 
@@ -266,6 +267,23 @@ OneLake security supports limiting access to columns by removing (hiding) a user
 
 Column level security also follows a more strict behavior in SQL Endpoint by operating through a deny semantic. Deny on a column in SQL Endpoint ensures that all access to the column is blocked, even if multiple roles would combine to give access to it. As a result, CLS in SQL Endpoint operates using an intersection between all roles a user is part of instead of the union behavior in place for all other permission types. See the Evaluating multiple OneLake security roles section for more information on how roles combine.
 
+## ReadWrite permission
+
+The ReadWrite permission gives read-only users the ability to perform write operations to specific items. ReadWrite permission is only applicable for Viewers or users with the Read permission on an item. Assigning ReadWrite access to an Admin, Member, or Contributor has no effect as those roles already have that permission implicitly. The ReadWrite permission operates in the following ways:
+
+- The ReadWrite permission includes all privileges granted by the Read permission.
+- Users with ReadWrite permissions on an object can perform write operations on that object, inclusive. That is, any operations can also be performed on the object itself.
+- ReadWrite allows the following actions:
+  - Create a new folder or table
+  - Delete a folder or table
+  - Rename a folder or table
+  - Upload or edit a file
+  - Create a shortcut
+  - Delete a shortcut
+  - Rename a shortcut
+- OneLake security roles with ReadWrite access cannot contain RLS or CLS constraints.
+- Because Fabric only supports single engine writes to data, users with ReadWrite permission on an object can only Write to that data through OneLake. However, the Read operations will be enforced consistently through all querying engines.
+
 ## Shortcuts
 
 ### Shortcuts overview
@@ -335,6 +353,8 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 * If you add a distribution list to a role in OneLake security, the SQL endpoint can't resolve the members of the list to enforce access. The result is that users appear not to be members of the role when they access the SQL endpoint. DirectLake on SQL semantic models are subject to this limitation too.
 
 * To query data from a Spark notebook using Spark SQL, the user must have at least Viewer access in the workspace they're querying.
+
+* Mixed-mode queries are not supported. Single queries that access both OneLake security enabled and non-OneLake security enabled data will fail with query errors.
 
 * Spark notebooks require that the environment be 3.5 or higher and using Fabric runtime 1.3.
 
