@@ -50,7 +50,15 @@ These instructions explain how to explore tile data using Copilot with the storm
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-toolbar.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot icon highlighted.":::
 
-[!INCLUDE [copilot-explore-data](includes/copilot-explore-data.md)]
+1. Enter your request in the Copilot dialog box.
+
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-toolbar-dialog.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot dialog highlighted. This is where you enter your question to Copilot.":::
+
+1. For this example, enter "Show me data for Texas only," and select the **Submit** icon.
+
+    :::image type="content" source="media/copilot-data-explore/dashboard-tile-copilot-ask.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot dialog with a question typed and the submit button activated.":::
+
+[!INCLUDE [copilot-explore-data](../includes/copilot-explore-data.md)]
 
 ### Configure visual options manually
 
@@ -62,4 +70,4 @@ Manually change the display using the **Visual Options** pane.
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-visual-options.png" alt-text="Screenshot of the visual pane, showing the dropdown selector options.":::
 
-    The options available depend on the type of visual you use. For example, with a bar chart, change the bar orientation, adjust axis labels, and more. With a table visual, add or remove columns, change column order, and apply sorting.
+    The options available depend on the type of visual you use. For example, with a bar chart, change the orientation, adjust axis labels, and more. With a table visual, add or remove columns, change column order, and apply sorting.

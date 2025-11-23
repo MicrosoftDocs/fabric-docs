@@ -21,7 +21,7 @@ If the data stream is[!INCLUDE [copilot-explore-data](../real-time-intelligence/
 
 :::image type="content" source="./media/get-started-real-time-hub/kql-table-actions.png" alt-text="Screenshot that shows the actions available on a KQL table stream." lightbox="./media/get-started-real-time-hub/kql-table-actions.png":::
 
-[!INCLUDE [copilot-explore-data](../real-time-intelligence/includes/copilot-explore-data.md)]
+[!INCLUDE [copilot-explore-data](../includes/copilot-explore-data.md)]
 
 ## Related content
 
