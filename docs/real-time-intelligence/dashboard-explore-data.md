@@ -1,5 +1,5 @@
 ---
-title: Copilot-assisted real-time data exploration
+title: Copilot-Assisted Real-time Data Exploration
 description: Learn how to explore data with copilot in Real-Time Intelligence dashboards for more insights about the information rendered in the visual.
 ms.reviewer: mibar
 author: spelluru
@@ -7,7 +7,7 @@ ms.author: spelluru
 ms.topic: how-to
 ms.collection: ce-skilling-ai-copilot
 ms.custom:
-ms.date: 11/18/2025
+ms.date: 11/23/2025
 ---
 # Copilot-assisted real-time data exploration
 
@@ -26,11 +26,11 @@ Explore real-time data at the [dashboard](#explore-dashboards-with-copilot) or [
 
 Use Copilot to explore data in the context of the entire dashboard. Ask questions about the overall data, request summaries, or seek insights that span multiple tiles.
 
-1. In your Fabric workspace, select a real-time dashboard.
+1. In your Fabric workspace, select a real-time dashboard. By default, the Copilot pane opens in the context of the entire dashboard.
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a real-time dashboard showing the Explore Data Copilot icon highlighted." lightbox="media/dashboard-explore-copilot/dashboard-explore-copilot.png":::
 
-1. By default, the Copilot pane opens in the context of the entire dashboard. Ask a question or make a request about the data in the dashboard. For example, "Show me the total sales by region" or "What are the top five products by revenue?"
+1. In the Copilot pane, ask a question or make a request about the data in the dashboard. For example, "Show me the total sales by region" or "What are the top five products by revenue?"
 
 1. Continue exploring and drill through the data by asking follow-up questions or making additional requests. Save your insights to the dashboard by selecting **Save to dashboard**. This action saves the current view and query as a new tile on the dashboard. Each saved tile stays connected to your live data, so as the data updates, your visual does too.
 
@@ -83,7 +83,7 @@ These instructions explain how to explore tile data using Copilot with the storm
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-query-texas.png" alt-text="Screenshot of the query tab showing the KQL query for Texas data that is run to display the visual and table results.":::
 
 1. Continue exploring and drilling through the data by asking more questions or modifying the visual manually using the **Visual Options** pane.
- 
+
 1. When you're ready to save your insights to the dashboard, select **Save to dashboard**. This action saves the current view and query as a new tile on the dashboard.
 
 ### Configure visual options manually
