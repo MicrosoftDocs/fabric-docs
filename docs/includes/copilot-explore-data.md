@@ -10,7 +10,7 @@ ms.date: 11/23/2025
 
 1. The new data appears in the Copilot pane. Select **View answer** to see the results reflected in the **Visual**, **Table**, and **Query** tabs.
 
-    :::image type="content" source="media/copilot-data-explore/dashboard-tile-copilot-answer.png" alt-text="Screenshot of the Copilot pane with the question asked highlighted." lightbox="media/dashboard-explore-copilot/dashboard-tile-copilot-answer.png":::
+    :::image type="content" source="media/copilot-data-explore/dashboard-tile-copilot-answer.png" alt-text="Screenshot of the Copilot pane with the question asked highlighted." lightbox="media/copilot-data-explore/dashboard-tile-copilot-answer.png":::
 
     ### [Visual](#tab/visual)
 
