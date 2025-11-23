@@ -1,6 +1,6 @@
 ---
-title: Interactively Explore KQL Tables with Copilot
-description: Explore KQL tables in real-time with Copilot. This guide shows you how to filter, preview, and visualize streaming data interactively.
+title: Interactively Explore KQL Tables with Copilot in the Real-Time Hub
+description: Explore KQL tables in Real-time Hub with Copilot. This guide shows you how to filter, preview, and visualize streaming data interactively.
 ms.reviewer: mibar
 author: spelluru
 ms.author: spelluru
@@ -9,9 +9,9 @@ ms.custom:
 ms.date: 11/23/2025
 ---
 
-# Explore KQL tables with Copilot in Real-Time hub
+# Explore KQL table data with Copilot
 
-If the data stream is based on a Kusto Query Language (KQL) table, you can preview, explore, and visualize data in the KQL table, using Copilot.
+With Copilot, you can preview, explore, and visualize data in Kusto Query Language (KQL) tables in the Real-time Hub.
 
 ## Access Copilot to explore KQL table data
 
