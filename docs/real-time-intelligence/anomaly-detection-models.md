@@ -7,7 +7,7 @@ ms.reviewer: tessarhurr
 ms.topic: conceptual
 ms.custom: 
 ms.date: 09/15/2025
-ms.search.form: Anomaly detection models specifications
+ms.search.form: Anomaly Detection Model Technical Details
 ---
 
 # Specifications of anomaly detection models in Fabric (Preview)
