@@ -94,7 +94,7 @@ We encourage you to leverage operations agents in your innovative solutions or a
 
 ### Technical limitations, operational factors, and ranges
 
-- Despite intensive training by OpenAI and the implementation of responsible AI controls by Microsoft on both user prompts and LLM outputs, AI services are fallible and probabilistic. This makes it challenging to comprehensively block all inappropriate content, leading to potential biases, stereotypes, or ungroundedness in AI-generated content. For more on the known limitations of AI-generated content, see the [Transparency Note for Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/openai/transparency-note?view=foundry-classic&tabs=text), which includes references to the LLMs behind operations agents.  
+- Despite intensive training by OpenAI and the implementation of responsible AI controls by Microsoft on both user prompts and LLM outputs, AI services are fallible and probabilistic. This makes it challenging to comprehensively block all inappropriate content, leading to potential biases, stereotypes, or ungroundedness in AI-generated content. For more on the known limitations of AI-generated content, see the [Transparency Note for Azure OpenAI Service](https://learn.microsoft.com/azure/ai-foundry/responsible-ai/openai/transparency-note?view=foundry-classic&tabs=text&preserve-view=tru), which includes references to the LLMs behind operations agents.  
 
 - Operations agents can be given a wide range of instructions and goals, but the inherent probabilistic nature of the LLMs used to generate their behavior models mean that you may not be able to fully align it with your requirements. The description of the agent’s behavior model is also generated using AI so also may not be 100% accurate. 
 
@@ -108,7 +108,7 @@ We encourage you to leverage operations agents in your innovative solutions or a
 
 - The agent configuration UX provides controls to start/stop the agent which can be used as a way to quickly interrupt or shutdown the agent at any time. This stops the monitoring of any new data, and any new actions that the agent might recommend or take. Actions that have been invoked in other systems (e.g. starting a Power Automate flow or Fabric pipeline/notebook) may not be stopped immediately; the agent launches these as independent processes that need to be managed in those other product experiences. 
 
-Messages between the agent and user are delivered via Teams. When you send messages to the agent, the Azure Bot Service is used to process messages. The use of [Azure AI Bot Service](https://learn.microsoft.com/en-us/microsoftteams/platform/bots/build-a-bot) has a technical limitation that each bot can only have a single global endpoint. For Teams first-party bots, requests are sent to the global endpoint and then rerouted to a regional endpoint near the user. Examples of Customer Data that is transferred: All Customer Data collected by the bot. Operations agents use an endpoint located in the EU, which means your user data can be moved outside of your geographical region for processing. 
+Messages between the agent and user are delivered via Teams. When you send messages to the agent, the Azure Bot Service is used to process messages. The use of [Azure AI Bot Service](https://learn.microsoft.com/microsoftteams/platform/bots/build-a-bot&preserve-view=tru) has a technical limitation that each bot can only have a single global endpoint. For Teams first-party bots, requests are sent to the global endpoint and then rerouted to a regional endpoint near the user. Examples of Customer Data that is transferred: All Customer Data collected by the bot. Operations agents use an endpoint located in the EU, which means your user data can be moved outside of your geographical region for processing. 
 
 ## System performance
 
@@ -147,9 +147,9 @@ Highly responsive agents can lead to excessive notifications or overuse of autom
 ## Related content
 
 * [Operations agent overview](../real-time-intelligence/operations-agent.md)
-* [Microsoft AI principles](https://www.microsoft.com/en-us/ai/responsible-ai)
-* [Microsoft responsible AI resources](https://www.microsoft.com/en-us/ai/tools-practices)
-* [Microsoft Azure learning courses on responsible AI](https://learn.microsoft.com/en-us/ai/?tabs=developer)
+* [Microsoft AI principles](https://www.microsoft.com/ai/responsible-ai&preserve-view=tru)
+* [Microsoft responsible AI resources](https://www.microsoft.com/ai/tools-practices&preserve-view=tru)
+* [Microsoft Azure learning courses on responsible AI](https://learn.microsoft.com/ai/?tabs=developer&preserve-view=tru)
 
 ## Contact us
 
