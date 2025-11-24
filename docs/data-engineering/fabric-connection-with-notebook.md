@@ -66,7 +66,7 @@ After you bind the connection to the current notebook, it appears in the **"Curr
 
 
 > [!IMPORTANT]
-> For the connection created from the Data Source Management page, if its data source is not listed inside the **Add Connection** dialog in the notebook, you can not see the connection in the **Global Permissions** node. This restriction will be removed in a future update.
+> For the connection created from the Data Source Management page, if its data source isn't listed inside the **Add Connection** dialog in the notebook, you can’t see the connection in the **Global Permissions** node. This restriction will be removed in a future update.
 
 
 ### Connection status
