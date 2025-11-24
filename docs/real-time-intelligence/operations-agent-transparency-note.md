@@ -94,7 +94,7 @@ We encourage you to apply operations agents in your innovative solutions or appl
 
 ### Technical limitations, operational factors, and ranges
 
-- Despite intensive training by OpenAI and the implementation of responsible AI controls by Microsoft on both user prompts and LLM outputs, AI services are fallible and probabilistic. This limitation makes it challenging to comprehensively block all inappropriate content, leading to potential biases, stereotypes, or ungroundedness in AI-generated content. For more on the known limitations of AI-generated content, see the [Transparency Note for Azure OpenAI Service](https://learn.microsoft.com/azure/ai-foundry/responsible-ai/openai/transparency-note?view=foundry-classic&tabs=text), which includes references to the LLMs behind operations agents.  
+- Despite intensive training by OpenAI and the implementation of responsible AI controls by Microsoft on both user prompts and LLM outputs, AI services are fallible and probabilistic. This limitation makes it challenging to comprehensively block all inappropriate content, leading to potential biases, stereotypes, or ungroundedness in AI-generated content. For more on the known limitations of AI-generated content, see the [Transparency Note for Azure OpenAI Service](https://learn.microsoft.com/azure/ai-foundry/responsible-ai/openai/transparency-note), which includes references to the LLMs behind operations agents.  
 
 - You can give operations agents a wide range of instructions and goals, but the inherent probabilistic nature of the LLMs used to generate their behavior models means that you might not be able to fully align them with your requirements. The description of the agent’s behavior model is also generated using AI, so it might not be 100% accurate. 
 
