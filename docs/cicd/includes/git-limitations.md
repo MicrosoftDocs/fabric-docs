@@ -21,7 +21,7 @@ ms.date: 02/26/2025
 - Azure DevOps isn't supported if [Enable IP Conditional Access policy validation](/azure/devops/organizations/accounts/change-application-access-policies#cap-support-on-azure-devops) is enabled.
 - If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 - If your organization configured [conditional access](/appcenter/general/configuring-aad-conditional-access), make sure the **Power BI Service** has the same [conditions set](/fabric/security/security-conditional-access) for authentication to function as expected.
-- When using the Azure DevOps connector the commit size is limited:
+- When using the Azure DevOps connector the commit size is limited to:
   - 25 MB using the Azure DevOps connector with Service Principal. 
   - 125 MB using default single sign-on (SSO) Microsoft Entra ID account and Azure DevOps connector with User Principal.
 
