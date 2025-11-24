@@ -69,7 +69,7 @@ Create a replication flow to replicate data from your SAP source into ADLS Gen2.
 
     :::image type="content" source="media/copy-job/sap-datasphere-select-source-objects.png" alt-text="Screenshot of selecting the source objects in replication flow." lightbox="media/copy-job/sap-datasphere-select-source-objects.png":::
 
-1. Configure the target ADLS Gen2. Select the target connection and container. Check that the target settings are correct: **Group Delta** by is set to **None** and **File Type** is set to **Parquet**.
+1. Configure the target ADLS Gen2. Select the target connection and container. Check that the target settings are correct: **Group Delta** is set to **None** and **File Type** is set to **Parquet**.
 
     :::image type="content" source="media/copy-job/sap-datasphere-target-settings.png" alt-text="Screenshot of ADLS Gen2 target settings." lightbox="media/copy-job/sap-datasphere-target-settings.png":::
 
@@ -91,7 +91,7 @@ This section explains how to create a Copy job to replicate data from SAP via SA
 
 1. Select the SAP Datasphere Outbound connection and provide the URL to your ADLS Gen2 account.
 
-    :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adlsgen2-connections.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/copy-job/copy-job-sap-datasphere-adlsgen2-connections.png":::
+    :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png":::
 
 1. Specify the folders where your SAP Datasphere outbound data is stored and that you want to move to your destinations.
    
