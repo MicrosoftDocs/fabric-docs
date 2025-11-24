@@ -16,8 +16,6 @@ This article shows you how to add Apache Kafka source to a Fabric eventstream.
 
 Apache Kafka is an open-source, distributed platform for building scalable, real-time data systems. By integrating Apache Kafka as a source within your eventstream, you can seamlessly bring real-time events from your Apache Kafka and process them before routing to multiple destinations within Fabric.
 
-[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
-
 ## Prerequisites 
 
 - Access to the Fabric workspace with Contributor or above permissions.

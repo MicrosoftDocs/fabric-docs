@@ -6,7 +6,7 @@ ms.author: lle
 author: lrtoyou1223
 ms.topic: tutorial
 ms.custom: pipelines, sfi-image-nochange
-ms.date: 05/17/2024
+ms.date: 11/20/2025
 ms.search.form: Pipeline Tutorials
 ---
 
@@ -20,7 +20,7 @@ To start, you must complete the following prerequisites:
 
 - Install an on-premises data gateway in your local environment. You can get more details about how to install and configure an on-premises data gateway here: [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install)
 
-> [!NOTE] 
+> [!NOTE]
 > Fabric pipeline activities can only be executed by a version of the on-premises data gateway that is 3000.222.5 or higher.
 
 - Install 64-bit Oracle Client for Microsoft Tools (OCMT) on the computer running on-premises data gateway. You can download OCMT from the [Oracle Client for Microsoft Tools page](https://www.oracle.com/database/technologies/appdev/ocmt.html).
@@ -28,8 +28,9 @@ To start, you must complete the following prerequisites:
 ## Create a pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
-1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
-1. Select **Pipeline** and then input a pipeline name to create a new pipeline.
+1. Select the Power BI icon in the bottom left of the screen, then select **Fabric** to open homepage of Data Factory.
+1. Select  **+ New item**.
+1. Search for and select **Pipeline** and then input a pipeline name to create a new pipeline. to create a new pipeline.
 
    :::image type="content" source="media/copy-data-activity/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
 

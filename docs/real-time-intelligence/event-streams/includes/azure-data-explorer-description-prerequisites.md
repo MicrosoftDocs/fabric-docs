@@ -12,9 +12,6 @@ ms.date: 03/21/2025
 
 Azure Data Explorer is a fully managed, high-performance platform that delivers real-time insights from massive streaming data. You can use Microsoft Fabric eventstreams to connect to an Azure Data Explorer database, stream the data from its tables, and route them to various destinations within Fabric.
 
-> [!NOTE]
-> This source isn't supported in the following regions of your workspace capacity: West US3, Switzerland West.
-
 ## Prerequisites
 
 - Access to the Fabric premium workspace with Contributor or higher permissions.

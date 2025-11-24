@@ -1,6 +1,6 @@
 ---
 title: Functions activity
-description: Learn how to add a Functions activity to a pipeline and use it to run Azure Functions.
+description: Learn how to add a functions activity to a pipeline and use it to run Azure Functions.
 ms.reviewer: shaween18
 ms.author: abnarain
 author: ssindhub
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom: 
   - pipelines
   - Build-2025
-ms.date: 05/21/2024
+ms.date: 11/18/2025
 ---
 
 # Use the Functions activity to run Fabric user data functions and Azure Functions
@@ -42,25 +42,25 @@ To use a Functions activity in a pipeline, complete the following steps:
 
 Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
-
 ## Configure settings
 
 Selecting the Settings tab, you can choose between two radio button options for the type of Functions activity you would like to execute.
 
-### 1) Fabric user data functions activity settings
+### Fabric user data functions activity settings
 
-Under the **Settings** tab, you can choose the **Fabric user data functions** option to run your customized user data functions for event driven scenarios. You'll need to specify the **Workspace** information, choose an existing, or create a new **User data function** and select the **Fabric function** you would like to execute.
+Under the **Settings** tab, you can choose the **Fabric user data functions** option to run your customized user data functions for event driven scenarios. You need to specify the **Workspace** information, choose an existing, or create a new **User data function** and select the **Fabric function** you would like to execute.
 
 :::image type="content" source="media/functions-activity/fabric-user-data-functions-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Fabric user data functions activity.":::
 
-### 2) Azure Functions activity settings
+### Azure Functions activity settings
 
-Under the **Settings** tab, you can choose the **Azure function** option to run your functions. You can choose either an existing or create a new **Azure Function connection**, provide a **Function relative URL** that points to the relative path to the Azure App function within the Azure Function connection, and an HTTP **Method** to be submitted to the URL. You can also specify as many additional **Headers** as required for the function you're executing.
+Under the **Settings** tab, you can choose the **Azure function** option to run your functions. You can choose either an existing or create a new **Azure Function connection**, provide a **Function relative URL** that points to the relative path to the Azure App function within the Azure Function connection, and an HTTP **Method** to be submitted to the URL. You can also specify as many extra **Headers** as required for the function you're executing.
 
 :::image type="content" source="media/functions-activity/azure-function-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Function activity.":::
 
-## Using On-premises or VNET data gateway
-When creating a new Azure function connection, you can now choose to use either an on-premises data gateway (OPDG) or a VNET data gateway to connect to an Azure Function App that is secured behind private networking. For guidance on creating and configuring your OPDG, refer to [how to create on-premises data gateway](how-to-access-on-premises-data.md).
+## Use an on-premises or VNET data gateway
+
+When creating a new Azure function connection, you can now choose to use either an on-premises data gateway (OPDG) or a virtual network (VNET) data gateway to connect to an Azure Function App that is secured behind private networking. For guidance on creating and configuring your OPDG, refer to [how to create on-premises data gateway](how-to-access-on-premises-data.md).
 
 If you would like to use a VNET gateway, refer to [how to create a VNET data gateway](/data-integration/vnet/create-data-gateways).
 

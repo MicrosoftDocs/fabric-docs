@@ -16,9 +16,6 @@ Azure Service Bus is a fully managed enterprise message broker with message queu
 
 This article shows you how to add a Service Bus source to an eventstream.
 
-> [!NOTE]
-> This source is not supported in the following regions of your workspace capacity: West US3, Switzerland West.  
-
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode or trial license mode with Contributor or higher permissions.  
