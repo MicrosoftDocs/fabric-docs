@@ -49,11 +49,11 @@ The preview experience also contains a **Relationship graph**, which you use to 
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph.png" alt-text="Screenshot of expanding the relationship graph.":::
 
-1. In the graph, observe the details of the three relationships to the *SaleEvent* entity type from *CalendarDate*, *Store*, and *Freezer*.
+1. In the graph, observe the details of the three relationships to the *SaleEvent* entity type from *CalendarDate*, *Store*, and *Product*.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph-expanded.png" alt-text="Screenshot of data in the expanded relationship graph." lightbox="media/tutorial-3-preview-ontology/relationship-graph-expanded.png":::
 
-1. Use the tabs across the top of the preview experience to switch to the *Store* entity type, and **Expand** its relationship graph.
+1. Open the preview experience for the *Store* entity type, and **Expand** its relationship graph.
 1. In the graph, observe the relationship between *Store* and *SaleEvent*, and the relationship between *Store* and *Freezer*. Then, select **Run query** in the query builder ribbon to run the default query and see a graph of entity instances and their connections.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-default-query.png" alt-text="Screenshot of the Store relationship graph and instances." lightbox="media/tutorial-3-preview-ontology/relationship-default-query.png":::
@@ -72,7 +72,7 @@ First, craft this query: *Show all freezers that are operated in the Paris store
 
     :::image type="content" source="media/tutorial-3-preview-ontology/add-filter-store.png" alt-text="Screenshot of filtering by Store ID." lightbox="media/tutorial-3-preview-ontology/add-filter-store.png":::
 
-1. In the **Components** pane, ensure the only checked fields are **Nodes > Store**, **Nodes > Freezer**, and **Edges > operates**.
+1. In the **Components** pane, uncheck *SaleEvent* so that the only checked fields are **Nodes > Store**, **Nodes > Freezer**, and **Edges > operates**.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/components.png" alt-text="Screenshot of filtering the components." lightbox="media/tutorial-3-preview-ontology/components.png":::
 
@@ -80,14 +80,16 @@ First, craft this query: *Show all freezers that are operated in the Paris store
 
     :::image type="content" source="media/tutorial-3-preview-ontology/store-freezers.png" alt-text="Screenshot of the freezers that are connected to the filtered store." lightbox="media/tutorial-3-preview-ontology/store-freezers.png":::
 
-1. Select **Clear query** to reset the query builder.
+1. Select **Clear query** to clear the query results, and use the **Remove filter** options to remove the store filter.
+
+    :::image type="content" source="media/tutorial-3-preview-ontology/clear-query.png" alt-text="Screenshot of clearing the query and filter.":::
 
 Next, craft this query: *Show all stores that have made a sale with a revenue greater than 150.*
 1. Select **Add a node** and add a node for *SaleEvent*.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/add-node.png" alt-text="Screenshot of adding nodes to a new query.":::
 
-1. In the **Components** pane, check the boxes next to **Nodes > Store** and **Edges > storeSale** to add them to the graph.
+1. In the **Components** pane, check the boxes next to **Nodes > Store** and **Edges > has** to add them to the graph.
 1. From the query builder ribbon, select **Add filter > SaleEvent > RevenueUSD**. Set the filter for `RevenueUSD > 150`.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/add-filter-sale.png" alt-text="Screenshot of filtering by sale revenue.":::
