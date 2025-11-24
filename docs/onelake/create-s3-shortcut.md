@@ -25,7 +25,7 @@ S3 shortcuts can take advantage of file caching to reduce egress costs associate
 
 - If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
 
-- Ensure your chosen S3 bucket and IAM user meet the [access and authorization requirements for S3 shortcuts](onelake-shortcuts.md#s3-shortcuts).
+- Ensure your chosen S3 bucket and IAM user meet the [access](#access) and [authorization](#authorization) requirements for S3 shortcuts.
 
 ## Create a shortcut
 
@@ -37,8 +37,41 @@ S3 shortcuts can take advantage of file caching to reduce egress costs associate
 
    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view.":::
 
-[!INCLUDE [amazon-s3-shortcut](../includes/amazon-s3-shortcut.md)]
+1. Under **External sources**, select **Amazon S3**.
+    :::image type="content" source="./media/create-s3-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 is highlighted." lightbox="./media/create-s3-shortcut/new-shortcut-expanded.png":::
 
+1. Enter the **Connection settings** according to the following table:
+
+    :::image type="content" source="./media/create-s3-shortcut/shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials." lightbox="./media/create-s3-shortcut/shortcut-details.png":::
+
+      |Field | Description| Value|
+      |-----|-----| -----|
+      | **URL**| The connection string for your Amazon S3 bucket. | `https://`*BucketName*`.s3.`*RegionCode*`.amazonaws.com` |
+      |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If no connections exist, create a new connection.| *Create new connection* |
+      |**Connection name** | The Amazon S3 connection name.| A name for your connection.|
+      |**Authentication kind**| The *Identity and Access Management (IAM)* policy. The policy must have read and list permissions. For more information, see [IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html).| Dependent on the bucket policy.|
+      |**Access Key ID**| The *Identity and Access Management (IAM)* user key. For more information, see [Manage access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html). | Your access key.|
+      |**Secret Access Key**| The *Identity and Access Management (IAM)* secret key. | Your secret key.|
+
+1. Select **Next**.
+
+1. Browse to the target location for the shortcut.
+
+    :::image type="content" source="./media/create-s3-shortcut/shortcut-browse.png" alt-text="Screenshot of the storage browse window with multiple folders selected." lightbox="./media/create-s3-shortcut/shortcut-browse.png":::
+
+    If you used the global endpoint in the connection URL, all of your available buckets appear in the left navigation view. If you used a bucket specific endpoint in the connection URL, only the specified bucket and its contents appear in the navigation view.
+
+    Navigate the storage account by selecting a folder or clicking on the expansion arrow next to a folder.
+
+    In this view, you can select one or more shortcut target locations. Choose target locations by clicking the checkbox next a folder in the left navigation view.
+
+1. Select **Next**
+
+    :::image type="content" source="./media/create-s3-shortcut/shortcut-review.png" alt-text="Screenshot of shortcut review page with options to rename and delete shortcuts." lightbox="./media/create-s3-shortcut/shortcut-review.png":::
+
+    The review page allows you to verify all of your selections. Here you can see each shortcut that will be created. In the action column, you can click the pencil icon to edit the shortcut name. You can click the trash can icon to delete shortcut.
+
+1. Select **Create**.
    The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane under the **Tables** section.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::

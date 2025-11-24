@@ -13,7 +13,7 @@ ms.date: 12/31/2024
 
 # OneLake shortcuts
 
-Shortcuts allow you to unify your data across domains, clouds, and accounts by making Microsoft OneLake the single virtual data lake for your entire enterprise. All Fabric experiences and analytical engines can connect to your existing data sources such as Azure, Amazon Web Services (AWS), and OneLake through a unified namespace. OneLake manages all permissions and credentials, so you don't need to separately configure each Fabric workload to connect to each data source. Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
+With shortcuts in Microsoft OneLake, you can unify your data across domains, clouds, and accounts by making OneLake the single virtual data lake for your entire enterprise. Fabric experiences and analytical engines can connect to your existing data sources including Azure, Amazon Web Services (AWS), and OneLake through a unified namespace. OneLake manages all permissions and credentials, so you don't need to separately configure each Fabric workload to connect to each data source. Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
 
 ## What are shortcuts?
 
@@ -25,20 +25,20 @@ Shortcuts appear as folders in OneLake and any workload or service that has acce
 
 ## Where can I create shortcuts?
 
-You can create shortcuts in lakehouses and Kusto Query Language (KQL) databases. Furthermore, the shortcuts you create within these items can point to other OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3 storage accounts, or Dataverse. You can even [create shortcuts to on-premises or network-restricted locations](create-on-premises-shortcut.md) with the use of the Fabric on-premises data gateway (OPDG).
+You can create shortcuts in lakehouses and Kusto Query Language (KQL) databases.
 
-You can use the Fabric UI to create shortcuts interactively, and you can use the [REST API](onelake-shortcuts-rest-api.md) to create shortcuts programmatically.
+You can use the Fabric portal to create shortcuts interactively, and you can use the [REST API](onelake-shortcuts-rest-api.md) to create shortcuts programmatically.
 
 ### Lakehouse
 
-When creating shortcuts in a lakehouse, you must understand the folder structure of the item. Lakehouses are composed of two top-level folders: the **Tables** folder and the **Files** folder. The Tables folder is the managed portion of the lakehouse for structured datasets. While the Files folder is the unmanaged portion of the lakehouse for unstructured or semi-structured data.
+When creating shortcuts in a lakehouse, you must understand the folder structure of the item. Lakehouses have two top-level folders: the **Tables** folder and the **Files** folder. The tables folder is the managed portion of the lakehouse for structured datasets. The files folder is the unmanaged portion of the lakehouse for unstructured or semi-structured data.
 
-In the Tables folder, you can only create shortcuts at the top level. Shortcuts aren't supported in subdirectories of the Tables folder. Shortcuts in the tables section typically point to internal sources within OneLake or link to other data assets that conform to the Delta table format. If the target of the shortcut contains data in the Delta\Parquet format, the lakehouse automatically synchronizes the metadata and recognizes the folder as a table. Shortcuts in the tables section can link to either a single table or a schema, which is a parent folder for multiple tables.
+In the tables folder, you can create shortcuts only at the top level. Shortcuts aren't supported in subdirectories of the tables folder. Shortcuts in the tables section typically point to internal sources within OneLake or link to other data assets that conform to the Delta table format. If the target of the shortcut contains data in the Delta Parquet format, the lakehouse automatically synchronizes the metadata and recognizes the folder as a table. Shortcuts in the tables section can link to either a single table or a schema, which is a parent folder for multiple tables.
 
 > [!NOTE]
 > The Delta format doesn't support tables with space characters in the name. Any shortcut containing a space in the name won't be discovered as a Delta table in the lakehouse.
 
-In the Files folder, there are no restrictions on where you can create shortcuts. You can create them at any level of the folder hierarchy. Table discovery doesn't happen in the Files folder. Shortcuts here can point to both internal (OneLake) and external storage systems with data in any format.
+In the files folder, there are no restrictions on where you can create shortcuts. You can create shortcuts at any level of the folder hierarchy. Table discovery doesn't happen in the files folder. Shortcuts here can point to either internal OneLake and external storage systems with data in any format.
 
 :::image type="content" source="media\onelake-shortcuts\lake-view-table-view.png" alt-text="Diagram showing the Lake view and the Table view side by side.":::
 
@@ -88,7 +88,7 @@ external_table('MyShortcut')
 
 You can create semantic models for lakehouses containing shortcuts in the **Tables** section of the lakehouse. When the semantic model runs in Direct Lake mode, Analysis Services can read data directly from the shortcut.
 
-### Non-Fabric
+### Non-Fabric services
 
 Applications and services outside of Fabric can also access shortcuts through the OneLake API. OneLake supports a subset of the ADLS Gen2 and Blob storage APIs. To learn more about the OneLake API, see [OneLake access with APIs](onelake-access-api.md).
 
@@ -99,6 +99,8 @@ https://onelake.dfs.fabric.microsoft.com/MyWorkspace/MyLakhouse/Tables/MyShortcu
 ## Types of shortcuts
 
 OneLake shortcuts support multiple filesystem data sources. These include internal OneLake locations and external or third-party sources.
+
+You can also [create shortcuts to on-premises or network-restricted locations](create-on-premises-shortcut.md) with the use of the Fabric on-premises data gateway (OPDG).
 
 ### Internal OneLake shortcuts
 
@@ -112,6 +114,8 @@ Internal OneLake shortcuts allow you to reference data within existing Fabric it
 * SQL databases
 * Warehouses
 
+For instructions to create an internal shortcut, see [Create an internal OneLake shortcut](./create-onelake-shortcut.md).
+
 The shortcut can point to a folder location within the same item, across items within the same workspace, or even across items in different workspaces. When you create a shortcut across items, the item types don't need to match. For instance, you can create a shortcut in a lakehouse that points to data in a data warehouse.
 
 When a user accesses data through a shortcut to another OneLake location, OneLake uses the identity of the calling user to authorize access to the data in the target path of the shortcut. This user must have permissions in the target location to read the data.
@@ -121,7 +125,7 @@ When a user accesses data through a shortcut to another OneLake location, OneLak
 
 ### External OneLake shortcuts
 
-For detailed instructions on creating a specific shortcut type, select an article from this list of supported external sources:
+For detailed instructions to create a specific shortcut type, select an article from this list of supported external sources:
 
 * [Amazon S3 shortcuts](./create-s3-shortcut.md)
 * [Amazon S3 compatible shortcuts](./create-s3-compatible-shortcut.md)
