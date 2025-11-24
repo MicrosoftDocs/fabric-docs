@@ -65,6 +65,10 @@ For the connection under the **"Global Permissions"** node, you need to explicit
 After you bind the connection to the current notebook, it appears in the **"Current Notebook"** node in the **"Connections"** pane.
 
 
+> [!IMPORTANT]
+> For the connection created from the Data Source Management page, if its data source is not listed inside the **Add Connection** dialog in the notebook, you can not see the connection in the **Global Permissions** node. This restriction will be removed in a future update.
+
+
 ### Connection status
 
 Over time, the status of a Fabric Connection may change due to various reasons, such as credential expiration or permission changes. You can check the connection status by selecting the **"Check status"** button from the context menu. 
