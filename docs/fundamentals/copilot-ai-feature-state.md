@@ -4,7 +4,7 @@ description: Learn about the release status of AI and Copilot features in Fabric
 author: nelgson
 ms.author: daengli
 ms.reviewer: guptamaya, maghan
-ms.date: 05/22/2025
+ms.date: 10/28/2025
 ms.update-cycle: 180-days
 ms.service: fabric
 ms.topic: overview
@@ -32,5 +32,5 @@ The following table provides an overview of the state of various AI and Copilot 
 | **SQL database** | SQL queries in SQL database | - [Generate SQL queries (preview)](../database/sql/copilot-chat-pane.md).<br />- [Suggest SQL code completions (preview)](../database/sql/copilot-code-completion.md).<br />- [Fix code in SQL queries (preview)](../database/sql/copilot-quick-actions.md).<br />- [Explain code in SQL queries (preview)](../database/sql/copilot-quick-actions.md). | Preview |
 | **Power BI** | Semantic models in Power BI Desktop or Power BI service | - [Suggest linguistic model synonyms](/power-bi/natural-language/q-and-a-copilot-enhancements).<br />- [Suggest measure descriptions](/power-bi/transform-model/desktop-measure-copilot-descriptions).<br />- [Write and explain DAX queries](/dax/dax-copilot).<br />- [Ask questions about your data](/power-bi/create-reports/copilot-ask-data-question). | GA |
 | | Reports (Power BI Desktop, service, or mobile app) | - Power BI home (announced).<br />- [Suggest a report page](/power-bi/create-reports/copilot-create-desktop-report).<br />- [Suggest a visual](/power-bi/create-reports/copilot-create-report-service).<br />- [Summarize data in a narrative visual](/power-bi/create-reports/copilot-create-narrative?tabs=powerbi-service).<br />- [Explain a report page or visual](/power-bi/create-reports/copilot-pane-summarize-content). | GA |
-| **Real-Time Intelligence** | KQL queryset | - [Copilot for Writing KQL Queries (preview)](../fundamentals/copilot-for-writing-queries.md).<br />- [Modify or explore a previously generated KQL query (preview)](../fundamentals/copilot-for-writing-queries.md). | Preview |
-| | Real-time dashboards | - [Generate a real-time dashboard](../fundamentals/copilot-generate-dashboard.md). | Preview |
+| **Real-Time Intelligence** | KQL queryset | - [Copilot for Writing KQL Queries (preview)](../fundamentals/copilot-for-writing-queries.md).<br />- [Modify or explore a previously generated KQL query](../fundamentals/copilot-for-writing-queries.md). | GA |
+| | Real-time dashboards | - [Generate a real-time dashboard](../fundamentals/copilot-generate-dashboard.md). <br />- [Explore data in real-time dashboards with Copilot](../real-time-intelligence/dashboard-explore-data.md)| GA |

@@ -6,6 +6,7 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: concept-article
 ms.custom:
+ai-usage: ai-assisted
 ms.date: 09/27/2023
 #customer intent: As a data engineer, I want to learn how to use Python and the Azure Storage Python SDK to access and manage files and directories in OneLake so that I can efficiently work with data stored there and perform necessary operations such as uploading files, creating directories, and listing directory contents.
 ---
@@ -62,14 +63,13 @@ To learn more about using DefaultAzureCredential to authorize access to data, se
 To work with a directory in OneLake, create a filesystem client and directory client. You can use this directory client to perform various operations, including renaming, moving, or listing paths (as seen in the following example). You can also create a directory client when creating a directory, using the [FileSystemClient.create_directory](/python/api/azure-storage-file-datalake/azure.storage.filedatalake.filesystemclient#azure-storage-filedatalake-filesystemclient-create-directory) method.
 
 ```python
-def create_file_system_client(self, service_client, file_system_name: str) : DataLakeServiceClient) -> FileSystemClient:
+def create_file_system_client(self, service_client: DataLakeServiceClient, file_system_name: str) -> FileSystemClient:
     file_system_client = service_client.get_file_system_client(file_system = file_system_name)
     return file_system_client
 
-def create_directory_client(self, file_system_client : FileSystemClient, path: str) -> DataLakeDirectoryClient: directory_client 
-    directory_client = file_system_client.GetDirectoryClient(path)
+def create_directory_client(self, file_system_client : FileSystemClient, path: str) -> DataLakeDirectoryClient: 
+    directory_client = file_system_client.get_directory_client(path)
     return directory_client
-
 
 def list_directory_contents(self, file_system_client: FileSystemClient, directory_name: str):
     paths = file_system_client.get_paths(path=directory_name)
@@ -87,7 +87,7 @@ def upload_file_to_directory(self, directory_client: DataLakeDirectoryClient, lo
     file_client = directory_client.get_file_client(file_name)
 
     with open(file=os.path.join(local_path, file_name), mode="rb") as data:
-        file_client.upload_data(dataW, overwrite=True)
+        file_client.upload_data(data, overwrite=True)
 ```
 
 ## Sample

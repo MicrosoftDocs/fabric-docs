@@ -64,8 +64,18 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/data-in-staging-artifacts.md",
+        "redirect_url": "copy-data-items.md",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/pipeline-storage-event-triggers.md",
         "redirect_url": "/fabric/data-factory/pipeline-runs",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/scope-activity.md",
+        "redirect_url": "/fabric/data-factory/activity-overview#control-flow-activities",
         "redirect_document_id": false
       },
       {

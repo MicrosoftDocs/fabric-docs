@@ -1,11 +1,11 @@
 ---
 title: Module 1 - Create a pipeline with Data Factory
-description: This tutorial module covers creating a pipeline, as part of an end-to-end data integration tutorial to complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
+description: In this tutorial, you create a pipeline to copy data as part of an end-to-end guide to complete a full data integration scenario within an hour using Data Factory in Microsoft Fabric.
 ms.author: whhender
 ms.reviewer: xupzhou
 author: whhender
 ms.topic: tutorial
-ms.date: 09/25/2025
+ms.date: 11/18/2025
 ms.custom: pipelines, sfi-image-nochange
 ---
 
@@ -21,17 +21,17 @@ The high-level steps in module 1 are:
 
 ## Prerequisites
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. If you don't have one, you can [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. If you don't have one, you can [try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial).
 - A [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace. [Learn how to create a workspace.](../fundamentals/create-workspaces.md)
-- Access to [Power BI](https://app.powerbi.com/).
+- Access to [Power BI](https://msit.powerbi.com/home).
 
 ## Create a pipeline
 
-1. Sign into Power BI.
+1. Sign into [Power BI](https://msit.powerbi.com/home).
 
 1. Select the default Power BI icon at the bottom left of the screen, and select **Fabric**.
 
-1. Select a workspace from the **Workspaces** tab, then select **+ New item**, then search for and choose **Pipeline**.
+1. Select a workspace from the **Workspaces** tab or select **My workspace**, then select **+ New item**, then search for and choose **Pipeline**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-pipeline.png" alt-text="Screenshot of the Data Factory start page with the button to create a new pipeline selected." lightbox="media/tutorial-end-to-end-pipeline/new-data-pipeline.png":::
 
@@ -57,19 +57,42 @@ The high-level steps in module 1 are:
 
 1. Select **Connect**.
 
-1. Select **Tables** for the **Root folder** and **Load to new table** for **Load settings**. Provide a **Table** name (in our example we've named it Bronze) and select **Next**.
+1. Select **Full copy** for the copy job mode.
+
+1. When mapping to destination, select **Tables**, select **Append** as the update method, and edit the table mapping so the destination table is named `Bronze`. Then select **Next**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-destination-table-details.png" alt-text="Screenshot showing the Connect to data destination tab of the Copy data assistant, on the Select and map to folder path or table step." lightbox="media/tutorial-end-to-end-pipeline/choose-destination-table-details.png":::
 
-1. Finally, on the **Review + save** page of the copy data assistant, review the configuration. For this tutorial, uncheck the **Start data transfer immediately** checkbox, since we run the activity manually in the next step. Then select **OK**.
+1. On the **Review + save** page of the copy data assistant, review the configuration and then select **Save**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/review-save-copy-configuration.png" alt-text="Screenshot showing the Copy data assistant on the Review + save page." lightbox="media/tutorial-end-to-end-pipeline/review-save-copy-configuration.png":::
+1. Select the copy job activity on the pipeline canvas, then select the **Settings** tab below the canvas.
+
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/select-settings.png" alt-text="Screenshot of the pipeline canvas with the copy job activity highlighted and the settings tab highlighted." lightbox="media/tutorial-end-to-end-pipeline/select-settings.png":::
+
+1. Select the **Connection** drop-down and select **Browse all**.
+
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/browse-all.png" alt-text="Screenshot of the copy job activity settings list, with browse all highlighted." lightbox="media/tutorial-end-to-end-pipeline/browse-all.png":::
+
+1. Select **Copy job** under **New sources**.
+
+1. On the **Connect data source** page, select **Sign in** to authenticate the connection.
+
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/select-sign-in.png" alt-text="Screenshot of the get data connection credentials page, with the Sign in Option highlighted." lightbox="media/tutorial-end-to-end-pipeline/select-sign-in.png":::
+
+1. Follow the prompts to sign in to your organizational account.
+
+1. Select **Connect** to complete the connection setup.
+
+1. At the top of the pipeline editor, select **Save** to save the pipeline.
 
 ## Run and view the results of your Copy activity
 
-1. Select the **Run** tab in the pipeline editor. Then select the **Run** button, and then **Save and run**, to run the Copy activity.
+1. At the top of the pipeline editor, select **Run** to run the pipeline and copy the data.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/run-button.png" alt-text="Screenshot showing the pipeline Run tab with the Run button highlighted.":::
+   >[!NOTE]
+   >This copy can take over 30 minutes to complete.
+
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/run-pipeline.png" alt-text="Screenshot of the pipeline editor with the Run button highlighted." lightbox="media/tutorial-end-to-end-pipeline/run-pipeline.png":::
 
 1. You can monitor the run and check the results on the **Output** tab below the pipeline canvas. Select name of the pipeline to view the run details.
 
@@ -79,7 +102,7 @@ The high-level steps in module 1 are:
 
 ## Next step
 
-Continue to the next section to create your dataflow.
+Once the copy has completed, it can take around half an hour, continue to the next section to create your dataflow.
 
 > [!div class="nextstepaction"]
 > [Module 2: Transform data with a dataflow in Data Factory](tutorial-end-to-end-dataflow.md)

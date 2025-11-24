@@ -61,7 +61,7 @@
             href: tutorial-end-to-end-introduction.md
           - name: Module 1 - Create a pipeline
             href: tutorial-end-to-end-pipeline.md
-          - name: Module 2 - Transform data with a dataflow
+          - name: Module 2 -  data with a dataflow
             href: tutorial-end-to-end-dataflow.md
           - name: Module 3 - Automate and send notification
             href: tutorial-end-to-end-integration.md
@@ -69,6 +69,8 @@
         href: decision-guide-data-integration.md
       - name: Decide - Data movement strategy
         href: decision-guide-data-movement.md
+      - name: Decide - Data transformation strategy
+        href: decision-guide-data-transformation.md
       - name: Decide - Copy activity, Copy job, dataflow, or Spark?
         href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md 
       - name: Create a Copy job
@@ -131,6 +133,8 @@
         href: azure-key-vault-reference-overview.md
       - name: Configure AKV references
         href: azure-key-vault-reference-configure.md
+      - name: Data source management
+        href: data-source-management.md
       - name: Connectors
         href: connector-overview.md
         items:
@@ -358,45 +362,45 @@
             items: 
               - name: Avro
                 items: 
-                  - name: Configure in a pipeline
+                  - name:  Configure Avro in a pipeline
                     href: format-avro.md
               - name: Binary
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure Binary in a pipeline
                     href: format-binary.md
-                  - name: Configure in Dataflow Gen2
+                  - name: Configure Binary in Dataflow Gen2
                     href: connector-binary-dataflows.md
               - name: Delimited text
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure Delimited text in a pipeline
                     href: format-delimited-text.md
               - name: Excel
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure Excel in a pipeline
                     href: format-excel.md
-                  - name: Configure in Dataflow Gen2
+                  - name: Configure Excel in Dataflow Gen2
                     href: connector-excel-dataflows.md
               - name: Iceberg
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure Iceberg in a pipeline
                     href: format-iceberg.md
               - name: JSON
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure JSON in a pipeline
                     href: format-json.md
               - name: ORC
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure ORC in a pipeline
                     href: format-orc.md
               - name: Parquet
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure Parquet in a pipeline
                     href: format-parquet.md
-                  - name: Configure in Dataflow Gen2
+                  - name: Configure Parquet in Dataflow Gen2
                     href: connector-parquet-dataflows.md
               - name: XML
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure XML in a pipeline
                     href: format-xml.md
           - name: FTP
             items: 
@@ -870,6 +874,8 @@
                 href: create-copy-job.md
               - name: How to monitor a Copy job
                 href: monitor-copy-job.md
+              - name: Change data capture from SAP via SAP Datasphere Outbound 
+                href: copy-job-tutorial-sap-datasphere.md
       - name: Copy activity
         href: copy-data-activity.md
         items:
@@ -883,7 +889,7 @@
             items: 
               - name: Copy from Azure Blob Storage to Lakehouse
                 href: tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse.md
-              - name: Copy sample data into Lakehouse and transform with a dataflow
+              - name: Copy sample data into Lakehouse and  with a dataflow
                 href: tutorial-load-data-lakehouse-transform.md
               - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
                 href: tutorial-preprocess-data-with-stored-procedure-load-into-lakehouse.md
@@ -928,75 +934,85 @@
           - name: Stored Procedure activity
             href: stored-procedure-activity.md
           - name: SQL script activity
-            href: script-activity.md
+            href: script-activity.md      
       - name: Dataflows
         items:
           - name: What are dataflows?
             href: dataflows-gen2-overview.md
-          - name: Tutorials
-            items: 
-              - name: Use a dataflow in a pipeline
-                href: tutorial-dataflows-gen2-pipeline-activity.md
-              - name: Pattern to incrementally amass data with Dataflow Gen2
+          - name: Use a dataflow in a pipeline
+            href: tutorial-dataflows-gen2-pipeline-activity.md
+          - name: Save a draft of your dataflow
+            href: dataflows-gen2-save-draft.md
+          - name: Dataflow destinations and managed settings
+            href: dataflow-gen2-data-destinations-and-managed-settings.md
+            items:
+              - name: Dataflow default destination
+                href: default-destination.md
+          - name: Authoring tools
+            items:
+              - name: AI Functions in Dataflow Gen2 (Preview)
+                href: dataflow-gen2-ai-functions.md
+              - name: Explain Mashup with Copilot 
+                href: dataflow-gen2-copilot-explain.md
+              - name: Get data with Copilot
+                href: copilot-modern-get-data.md
+              - name: Query evaluator (Preview)
+                href: dataflow-gen2-modern-evaluator.md
+              - name: Preview only (Preview)
+                href: dataflow-gen2-preview-only-step.md
+              - name: Partitioned compute (Preview)
+                href: dataflow-gen2-partitioned-compute.md
+              - name: Public parameters in Dataflow Gen2
+                href: dataflow-parameters.md
+              - name: Variable libraries in Dataflow Gen2
+                href: dataflow-gen2-variable-library-integration.md    
+          - name: Dataflow refresh
+            href: dataflow-gen2-refresh.md
+            items:
+              - name: Dataflow incremental refresh
+                href: dataflow-gen2-incremental-refresh.md
+          - name: Monitor your dataflows
+            href: dataflows-gen2-monitor.md
+          - name: Performance and troubleshooting
+            items:
+              - name: Dataflow Gen2 performance and scalability
+                href: dataflow-gen2-performance-best-practices.md  
+              - name: Dataflows that use gateways
+                href: dataflow-gen2-cloud-connection-gateway-use.md
+          - name: Guided tutorials
+            items:
+              - name: Incrementally amass data with Dataflow Gen2
                 href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
               - name: Use a dataflow to bring data into Databricks
                 href: tutorial-dataflows-gen2-adlsgen2-databricks.md
-              - name: Slowly changing dimension type 1
-                href: slowly-changing-dimension-type-one.md
-              - name: Slowly changing dimension type 2
-                href: slowly-changing-dimension-type-two.md
-          - name: Dataflow Gen2 performance and scalability
-            href: dataflow-gen2-performance-best-practices.md  
-          - name: Data in Dataflow Gen2 staging
-            href: data-in-staging-artifacts.md
-          - name: Data source management
-            href: data-source-management.md
-          - name: Dataflow Gen2 default destination
-            href: default-destination.md
-          - name: Dataflow Gen2 destinations and managed settings
-            href: dataflow-gen2-data-destinations-and-managed-settings.md
-          - name: Dataflow Gen2 incremental refresh
-            href: dataflow-gen2-incremental-refresh.md
-          - name: Dataflow Gen2 public APIs
-            href: dataflow-gen2-public-apis.md 
-          - name: Dataflow Gen2 refresh
-            href: dataflow-gen2-refresh.md
-          - name: Dataflow Gen2 with CICD and Git integration
-            href: dataflow-gen2-cicd-and-git-integration.md
-          - name: Fast copy at scale
-            href: dataflows-gen2-fast-copy.md
-          - name: Modern query evaluator (Preview)
-            href: dataflow-gen2-modern-evaluator.md
-          - name: Preview only step (Preview)
-            href: dataflow-gen2-preview-only-step.md
-          - name: Partitioned compute (Preview)
-            href: dataflow-gen2-partitioned-compute.md
-          - name: How to handle schema drift
-            href: how-to-handle-schema-drift.md
-          - name: How to obfuscate data
-            href: data-obfuscation-with-delphix.md
-          - name: Monitoring your dataflows in Fabric
-            href: dataflows-gen2-monitor.md
-          - name: Public parameters in Dataflow Gen2
-            href: dataflow-parameters.md
-          - name: Variable libraries in Dataflow Gen2
-            href: dataflow-gen2-variable-library-integration.md
-          - name: CI/CD and ALM solution architectures for Dataflow Gen2
+          - name: Advanced topics
             items:
-              - name: Overview
-                href: dataflow-gen2-cicd-alm-solution-architecture.md
-              - name: Parameterized Dataflow
-                href: dataflow-gen2-parameterized-dataflow.md
-              - name: Variable references in Dataflow
-                href: dataflow-gen2-variable-references.md
-          - name: Saving a draft of your dataflow
-            href: dataflows-gen2-save-draft.md
-          - name: Use cloud connections through gateways
-            href: dataflow-gen2-cloud-connection-gateway-use.md
-          - name: Copilot explainer skill in Dataflow Gen2 
-            href: dataflow-gen2-copilot-explain.md
-          - name: Copilot in Modern Get Data
-            href: copilot-modern-get-data.md
+              - name: Fast copy at scale
+                href: dataflows-gen2-fast-copy.md
+              - name: Implement slowly changing dimension type 1
+                href: slowly-changing-dimension-type-one.md
+              - name: Implement lowly changing dimension type 2
+                href: slowly-changing-dimension-type-two.md
+              - name: Staging in Dataflow Gen2
+                href: data-in-staging-artifacts.md
+              - name: How to handle schema drift
+                href: how-to-handle-schema-drift.md
+              - name: How to obfuscate data
+                href: data-obfuscation-with-delphix.md
+              - name: Dataflow Gen2 public APIs
+                href: dataflow-gen2-public-apis.md 
+              - name: Dataflow Gen2 with CICD and Git integration
+                href: dataflow-gen2-cicd-and-git-integration.md
+              - name: CI/CD and ALM solution architectures for Dataflow Gen2
+                items:
+                  - name: Overview
+                    href: dataflow-gen2-cicd-alm-solution-architecture.md
+                  - name: Parameterized Dataflow
+                    href: dataflow-gen2-parameterized-dataflow.md
+                  - name: Variable references in Dataflow
+                    href: dataflow-gen2-variable-references.md
+      - name: dbt job
+        href: dbt-job-overview.md  
   - name: Orchestrate your pipelines
     items:
       - name: What is a pipeline?
@@ -1105,6 +1121,8 @@
         href: create-alerts-for-pipeline-runs.md
       - name: Evaluate pipeline expressions
         href: evaluate-pipeline-expression.md
+      - name: Copilot pipeline expression builder (Preview)
+        href: copilot-pipeline-expression-builder.md
       - name: Pipeline sample templates
         href: templates.md
       - name: Monitor pipeline runs
