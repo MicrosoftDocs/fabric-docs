@@ -63,7 +63,7 @@ For lightweight inline AI assistance without starting a Spark session, enable Co
 
 ##### Scenario: You have SparkR workloads running on runtime 1.3.
 
-Since Spark 4.0 deprecates SparkR, keep running SparkR workloads in Fabric Runtime 1.3.
+Since Spark 4.0 deprecates SparkR, migrate these workloads to Python or PySpark.
 
 ## CI/CD Flow
 

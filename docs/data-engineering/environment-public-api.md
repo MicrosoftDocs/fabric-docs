@@ -17,7 +17,8 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 > [!IMPORTANT]
 >
 > - The GA release includes updates in the request/response contract of existing APIs, API deprecations, and new APIs. You can find the details in the following sections.
-> - A new query parameter `preview` is introduced to facilitate the transition of request/response contract changes. The `preview` query parameter defaults to `True` until **March 31, 2026**, making the preview contracts still available. Set the value to `False` to start using the stable Release version of the contracts.
+> - A new query parameter `beta` is introduced to facilitate the transition of request/response contract changes. The `beta` query parameter defaults to `True` until **March 31, 2026**, making the preview contracts still available. Set the value to `False` to start using the stable Release version of the contracts.
+> - `Preview` query parameter has been replaced by `beta`. For backward compatibility, preview is still supported and behaves the same as beta.
 > - The to-be-deprecated APIs will continue to be supported until **March 31, 2026**, please use the newly introduced APIs to replace them as soon as possible.
 
 ### APIs with request/response contract update
@@ -31,16 +32,16 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 |Published|List published libraries|Get the libraries that are published and effective in Spark sessions.|Update in response contract.|[List published libraries (Preview)](/rest/api/fabric/environment/published/list-libraries(preview))|[List published libraries](/rest/api/fabric/environment/published/list-libraries)|
 |Published|List published Spark compute|Get the Spark compute configurations and Spark properties that are published and effective in Spark sessions.|Update in response contract.|[List published libraries (Preview)](/rest/api/fabric/environment/published/get-spark-compute(preview))|[List published libraries](/rest/api/fabric/environment/published/get-spark-compute)|
 
-The `preview` parameter defaults to `True` until **March 31, 2026**, i.e., the system considers the parameter as `True` if the request is sending without specifying this parameter until the deprecation date. We highly recommend migrating your implementations to the stable version by explicitly set the `preview` parameter to `False` as soon as possible.
+The `beta` parameter defaults to `True` until **March 31, 2026**, i.e., the system considers the parameter as `True` if the request is sending without specifying this parameter until the deprecation date. We highly recommend migrating your implementations to the stable version by explicitly set the `beta` parameter to `False` as soon as possible.
 
 Using `List staging libraries` API as an example, which has an update in the API response.
 
-- When sending the request with `preview` parameter as `True`
+- When sending the request with `beta` parameter as `True`
   
   Sample request:
 
     ```HTTP
-    GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}/libraries?preview=True
+    GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}/libraries?beta=True
     ```
 
   Sample response:
@@ -70,7 +71,7 @@ Using `List staging libraries` API as an example, which has an update in the API
   Sample request:
   
   ```HTTP
-    GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}/libraries?preview=False
+    GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}/libraries?beta=False
     ```
 
   Sample response:
@@ -178,7 +179,7 @@ Before you add or delete a library, use the Get Published Libraries API to check
 - Sample request
 
     ```http
-    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/libraries?preview=False
+    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/libraries?beta=False
     ```
 
 - Sample response
@@ -245,7 +246,7 @@ Before you change the configurations for the environment, use the Get Published 
 - Sample request
 
     ```http
-    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/sparkcompute?preview=False
+    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/sparkcompute?beta=False
     ```
 
 - Sample response
@@ -287,7 +288,7 @@ If you want to remove an existing Spark property, specify the value as `null` wi
 - Sample request
 
     ```http
-    PATCH https://api.fabric.microsoft.com/v1/workspaces/f089354e-8366-4e18-aea3-4cb4a3a50b48/environments/707cfd07-cbf1-41da-aad7-dd157ddb8c11/staging/sparkcompute?preview=False
+    PATCH https://api.fabric.microsoft.com/v1/workspaces/f089354e-8366-4e18-aea3-4cb4a3a50b48/environments/707cfd07-cbf1-41da-aad7-dd157ddb8c11/staging/sparkcompute?beta=False
 
     {
       "instancePool": {
@@ -336,9 +337,9 @@ The environment can accept one publish operation at a time. Before you publish y
 - **Step 2:** Get the staging libraries/Spark compute to have a final review.
 
     ```http
-    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/libraries?preview=False
+    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/libraries?beta=False
     
-    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/sparkcompute?preview=False
+    GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/sparkcompute?beta=False
     ```
 
 #### Trigger the publish operation of the environment
@@ -348,7 +349,7 @@ The changes that you made for the staging libraries and Spark compute are cached
 - Sample request
 
     ```http
-    POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/publish?preview=False
+    POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/publish?beta=False
     ```
 
 - Sample response

@@ -52,9 +52,9 @@ Before you enable Git integration, make sure you review the following privacy st
 
 The following Git providers are supported:
 
-* [Azure DevOps](/en-us/azure/devops/user-guide/code-with-git) within the *same* Fabric tenant (cross tenant support is in *preview*)
-* [GitHub](https://github.com/) (cloud versions only)
-* [GitHub Enterprise](https://github.com/enterprise) (cloud versions only)
+* [Azure DevOps](/en-us/azure/devops/user-guide/code-with-git) (cloud-based only)
+* [GitHub](https://github.com/) (cloud-based only)
+* [GitHub Enterprise](https://github.com/enterprise) (cloud-based only)
 
 ## Supported items
 

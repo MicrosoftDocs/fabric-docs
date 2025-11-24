@@ -189,8 +189,6 @@ items:
     items:
     - name: Spark utilities
       href: microsoft-spark-utilities.md
-    - name: Library management
-      href: library-management.md
   - name: Spark administration settings
     items:
     - name: Capacity settings overview
@@ -345,6 +343,8 @@ items:
     href: environment-manage-compute.md
   - name: Manage libraries in environments
     href: environment-manage-library.md
+  - name: Library management best practices
+    href: library-management.md
   - name: Environment Git integration and deployment pipeline
     href: environment-git-and-deployment-pipeline.md
   - name: Manage the environment through public APIs

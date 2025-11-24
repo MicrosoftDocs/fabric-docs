@@ -89,7 +89,7 @@ The workarounds for some of the common unsupported features:
 | SQL authentication | Replace SQL authentication users with [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md). |
 | Column-level encryption | Use alternative ways to protect your data such as implementing encryption at the application layer and [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md) for obfuscating sensitive data. |
 | Scalar functions | Scalar user-defined functions (UDFs) are not currently migrated by the Migration Assistant. Scalar UDFs are supported in Fabric Data Warehouse, but only when inlineable (currently in preview). For more information, see [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true) and [Scalar UDF inlining](/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=fabric&preserve-view=true). |
-| Identity columns | Use alternative methods to assign a unique identifier. For examples, see [Generate unique identifiers in a warehouse table in Microsoft Fabric](generate-unique-identifiers.md) |
+| Identity columns | IDENTITY columns in Fabric Data Warehouse behave differently than they do in other platforms, such as SQL Server. For more details, refer to [Understanding IDENTITY columns in Fabric Data Warehouse](identity.md).|
 | Temp tables | Use regular tables. |
 
 The following unsupported features are no longer needed in Microsoft Fabric Data Warehouse:

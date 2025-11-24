@@ -134,10 +134,16 @@ items:
       href: event-streams/add-source-fabric-onelake.md
     - name: Fabric Job events
       href: event-streams/add-source-fabric-job.md
+    - name: Fabric capacity overview events
+      href: event-streams/add-source-fabric-capacity-overview-events.md
     - name: Azure Blob Storage events
       href: event-streams/add-source-azure-blob-storage.md
+    - name: HTTP
+      href: event-streams/add-source-http.md      
     - name: MQTT
       href: event-streams/add-source-mqtt.md
+    - name: Cribl
+      href: event-streams/add-source-cribl.md      
     - name: Solace PubSub+
       href: event-streams/add-source-solace-pub-sub.md
   - name: Add destination connectors to eventstreams
@@ -642,7 +648,7 @@ items:
           href: query-acceleration-overview.md
         - name: Accelerate queries over OneLake shortcuts
           href: query-acceleration.md
-      - name: Eventhouse endpoint for Lakehouse
+      - name: Eventhouse endpoint for Lakehouse and Warehouse
         href: eventhouse-as-endpoint.md
       - name: External tools
         items: 
@@ -683,10 +689,10 @@ items:
   - name: Create a Real-Time Dashboard
     href: dashboard-real-time-create.md
   - name: Generate Real-Time Dashboard Using Copilot
-    href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
+    href: copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
   - name: Real-Time Dashboard permissions
     href: dashboard-permissions.md
-  - name: Explore data in Real-Time Dashboard tiles
+  - name: Explore data in Real-Time Dashboard Using Copilot
     href: dashboard-explore-data.md
   - name: Customize Real-Time Dashboard visuals
     href: dashboard-visuals-customize.md
@@ -869,7 +875,13 @@ items:
       href: monitor-logs-query.md
 - name: Build AI agents
   displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
-  items: 
+  items:
+    - name: Operations agents  
+      items:
+      - name: Getting started with operations agents
+        href: operations-agent.md 
+      - name: Operations agents limitations
+        href: operations-agent-limitations.md
     - name: Fabric RTI MCP Server (preview)
       href: mcp-overview.md 
     - name: Use MCP with Eventhouse

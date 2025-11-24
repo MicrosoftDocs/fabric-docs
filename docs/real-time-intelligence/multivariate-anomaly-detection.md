@@ -53,7 +53,7 @@ In this step, you create a Spark environment to run the Python notebook that tra
 1. Enter the name *MVAD_ENV* for the environment and then select **Create**.
 1. Under **Libraries**, select **Public libraries**.
 1. Select **Add from PyPI**.
-1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version. This tutorial was created using version 0.3.5.
+1. In the search box, enter *time-series-anomaly-detector*. The version field is automatically populated with the most recent version. Change it to version 0.3.9 which is the latest version that is compatible with MLflow 2.19.0 (the current version in the Python image)
 1. Select **Save**.
 
     :::image type="content" source="media/multivariate-anomaly-detection/add-package.png" alt-text="Screenshot of adding the PyPI package to the Spark environment." lightbox="media/multivariate-anomaly-detection/add-package.png":::
@@ -159,7 +159,6 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** pa
 1. Run the cells to train the model and save it in Fabric MLflow models registry.
 
     ```python
-    import mlflow
     from anomaly_detector import MultivariateAnomalyDetector
     model = MultivariateAnomalyDetector()
     ```
@@ -174,6 +173,12 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** pa
     ```
 
     ```python
+    model_name = "mvad_5_stocks_model"
+    ```
+
+    ```python
+    import mlflow
+
     with mlflow.start_run():
         mlflow.log_params(params)
         mlflow.set_tag("Training Info", "MVAD on 5 Stocks Dataset")
@@ -181,15 +186,19 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** pa
         model_info = mlflow.pyfunc.log_model(
             python_model=model,
             artifact_path="mvad_artifacts",
-            registered_model_name="mvad_5_stocks_model",
+            registered_model_name=model_name,
         )
     ```
 
 1. Run the following cell to extract the registered model path to be used for prediction using Kusto Python sandbox.
 
     ```python
-    mi = mlflow.search_registered_models(filter_string="name='mvad_5_stocks_model'")[0]
-    model_abfss = mi.latest_versions[0].source
+    from mlflow.tracking import MlflowClient
+    
+    client = MlflowClient()
+    mvs = client.search_model_versions(f"name='{model_name}'")
+    latest = max(mvs, key=lambda v: v.creation_timestamp)
+    model_abfss = latest.source
     print(model_abfss)
     ```
 
