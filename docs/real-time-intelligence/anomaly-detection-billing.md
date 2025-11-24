@@ -46,7 +46,6 @@ This single meter tracks all CU consumption for both interactive analysis and co
 
 - The Microsoft Fabric Capacity Metrics app receives usage events, so capacity admins can monitor Anomaly Detector CU consumption.
 - Customers can view CU consumption per operation, helping them understand costs associated with anomaly detection activities.
-- Integration with MWC dashboards ensures transparency for anomaly detection workloads.
 
 ## Best practices
 
