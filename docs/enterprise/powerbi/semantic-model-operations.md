@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.service: powerbi
 ms.topic: reference
-ms.date: 11/20/2024
+ms.date: 11/20/2025
 
 ---
 
@@ -23,6 +23,9 @@ Use semantic model logs to:
 * Analyze query performance and trends, including external DirectQuery operations.
 * Analyze semantic model refresh duration, overlaps, and processing steps.
 * Analyze custom operations sent using the Premium XMLA endpoint.
+
+> [NOTE]
+> You can check refresh rates and other details in the [Workspace Monitoring Repository](https://github.com/microsoft/fabric-toolbox/blob/main/monitoring/workspace-monitoring-dashboards/documentation/Workspace_Monitoring_PBI_Report.md#analytical-pathway--sm--refresh-analysis).
 
 This table lists the semantic model logs. For more information on the events and drill-down into the `ExecutionMetrics` event, see [Events and schema](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure#events-and-schema).
 
