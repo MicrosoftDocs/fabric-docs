@@ -7,6 +7,7 @@ author: spelluru
 ms.topic: tutorial
 ms.custom:
 ms.date: 06/29/2025
+ms.subservice: rti-eventhouse
 ms.search.form: notebook kqlmagic Jupyter
 ---
 # Tutorial: Use a Fabric notebook with Kqlmagic to query a KQL database
