@@ -5,6 +5,7 @@ ms.reviewer: avnera
 author: bwatts64
 ms.author: bwatts
 ms.topic: concept-article
+ms.subservice: rti-eventhouse
 ms.date: 09/08/2025
 ms.search: Cost, pricing, Cost per GB, optimize, 
 
