@@ -4,8 +4,8 @@ metadata:
    description: This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric.
    author: whhender
    ms.author: whhender
-   ms.reviewer: imotiwala, jingwang
-   ms.date: 07/03/2025
+   ms.reviewer: imotiwala, jingwang, atodalbagi
+   ms.date: 11/25/2025
    ms.service: fabric
    ms.subservice: data-warehouse
    ms.topic: faq
@@ -63,9 +63,12 @@ sections:
 
            For troubleshooting steps, see [Troubleshoot Fabric mirrored databases from Azure SQL Database](azure-sql-database-troubleshoot.md).
       - question: |
-          How to enable System assigned managed identity (SAMI) on SQL Server? 
+          How to enable System assigned managed identity (SAMI) or User Assigned Managed Identity (UAMI) on SQL Server? 
         answer: |
-          With a single step in the Azure portal, you can [enable System Assigned Managed Identity (SAMI) of your Azure SQL logical server](azure-sql-database-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server).
+          With a single step in the Azure portal, you can [enable System Assigned Managed Identity (SAMI) or User Assigned Managed Identity (UAMI) of your Azure SQL logical server](azure-sql-database-tutorial.md#enable-managed-identity).
+
+          > [!NOTE]  
+          > Support for User Assigned Managed Identity (UAMI) is currently in preview.
 
       - question: |
           What are the replication statuses? 
