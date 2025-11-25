@@ -148,8 +148,6 @@ The `data` object has the following properties for State events:
 
     - In order to ensure low latency and high performance, Capacity Events in Real-Time Hub are based on a best effort delivery mode. For the Summary table this behavior can mean that, while rare, events can either fail to be sent, or duplicates might be received.
 
-    - There are also important considerations when capacities are paused. In particular, when a capacity is paused all smoothed future usage is aggregated into the current 30-second timepoint. This behavior is intentional because pausing your capacity requires paying off all smoothed usage at the time of the pause. Consider this condition when you graph or analyze your data.
-
     As follows are some patterns that can be employed for each of the scenarios mentioned.
 
     - **Duplicate events**
