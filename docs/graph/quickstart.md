@@ -159,6 +159,29 @@ To load the graph, select **Save**. This will verify the graph model, load data 
 
 ## Query the graph
 
+Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following workspace role permissions apply depending on whether you run queries via the Graph Model or QuerySet item.
+
+### Workspace role permissions for Graph Model
+
+| Capability                           | Admin | Member | Contributor | Viewer |
+|--------------------------------------|-------|--------|-------------|--------|
+| Create or modify graph model         | ✔     | ✔      | ✔           | ✖      |
+| Delete graph model                   | ✔     | ✔      | ✔           | ✖      |
+| View and read content of graph model | ✔     | ✔      | ✔           | ✔      |
+| Share graph model                    | ✔     | ✔      | ✖           | ✖      |
+| Create or modify graph queries       | ✔     | ✔      | ✔           | ✖      |
+| Create or modify graph QuerySet item | ✔     | ✔      | ✔           | ✖      |
+
+### Workspace role permissions for Graph QuerySet
+
+| Capability                             | Admin | Member | Contributor | Viewer |
+|----------------------------------------|-------|--------|-------------|--------|
+| Create or modify graph QuerySet item   | ✔     | ✔      | ✔           | ✖      |
+| Delete QuerySet item                   | ✔     | ✔      | ✔           | ✖      |
+| View and read content of QuerySet item | ✔     | ✔      | ✔           | ✔      |
+| Connect to graph instance              | ✔     | ✔      | ✔           | ✖      |
+| Share QuerySet                         | ✔     | ✔      | ✖           | ✖      |
+
 ### Using the query builder
 
 <!-- In the next sections, -->
