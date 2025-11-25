@@ -43,7 +43,7 @@ In Azure:
 * [Register the Event Grid resource provider](/azure/event-grid/subscribe-to-partner-events) with your Azure subscription.
 * Assign [Storage Blob Data Reader](/azure/role-based-access-control/built-in-roles) role permissions to the workspace identity.
 * Assign permissions to the user configuring the continuous ingestion, or to an AD group with the user who is configuring the continuous ingestion:
-    * [Storage Account Contributor](/azure/role-based-access-control/built-in-roles/storage#classic-storage-account-contributor).
+    * [Storage Account Contributor](/azure/role-based-access-control/built-in-roles/storage?branch=main#storage-account-contributor).
     * [EventGrid Contributor permission](/azure/role-based-access-control/built-in-roles/integration#eventgrid-contributor).
 * [Create](#create-a-container-with-data-file) a [blob container](/azure/storage/blobs/blob-containers-portal) to hold the data files.
     * Upload a data file. The data file structure is used to define the table schema. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
