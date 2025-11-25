@@ -182,6 +182,10 @@ Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabri
 | Connect to graph instance              | ✔     | ✔      | ✔           | ✖      |
 | Share QuerySet                         | ✔     | ✔      | ✖           | ✖      |
 
+> [!NOTE]
+> All users need read access to the underlying graph instance item to execute queries against the referenced graph instance from the graph QuerySet item.
+> Only read, write, and reshare permissions are supported for QuerySet item.
+
 ### Using the query builder
 
 <!-- In the next sections, -->
