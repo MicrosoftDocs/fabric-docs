@@ -112,7 +112,7 @@ To view your OneLake audit logs, follow the instructions in [Track user activiti
 
 Data stored in OneLake is encrypted at rest by default using Microsoft-managed keys. Microsoft-managed keys are rotated appropriately. Data in OneLake is encrypted and decrypted transparently and is FIPS 140-2 compliant.
 
-You can use encryption at rest using customer-managed keys to add another layer of protection using keys you own and control. To know more, see [Customer-managed keys for Fabric workspaces.](https://learn.microsoft.com/en-us/fabric/security/workspace-customer-managed-keys)
+You can use encryption at rest using customer-managed keys to add another layer of protection using keys you own and control. To know more, see [Customer-managed keys for Fabric workspaces.](../../security/workspace-customer-managed-keys.md)
 
 ### Data in transit
 
