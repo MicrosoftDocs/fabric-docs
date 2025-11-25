@@ -3,8 +3,8 @@ title: "Troubleshoot Fabric Mirrored Databases From Azure SQL Database"
 description: Troubleshooting mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: whhender
 ms.author: whhender
-ms.reviewer: imotiwala, anagha-todalbagi, ajayj, wiassaf
-ms.date: 10/21/2025
+ms.reviewer: imotiwala, ajayj, wiassaf, atodalbagi
+ms.date: 11/25/2025
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
@@ -63,27 +63,26 @@ If you're experiencing mirroring problems, perform the following database level 
 
 ## Managed identity
 
-The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled, and must be the primary identity. For more information, see [Create an Azure SQL Database server](/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity-create-server?view=azuresql-db&preserve-view=true&tabs=azure-portal). Enable the SAMI in the Azure portal, in the resource menu under **Security**, in the **Identity** page.
+Either the System Assigned Managed Identity (SAMI) or the User Assigned Managed Identity (UAMI) of the Azure SQL logical server must be enabled, and one of them must be the primary identity.
 
-After enablement, if SAMI setting status is either turned Off or initially enabled, then disabled, and then enabled again, the mirroring of Azure SQL Database to Fabric OneLake will fail.
+> [!NOTE]  
+> Support for User Assigned Managed Identity (UAMI) is currently in preview.
 
-The SAMI must be the primary identity. Verify the SAMI is the primary identity with the following T-SQL script: `SELECT * FROM sys.dm_server_managed_identities;`
+Verify the correct primary identity using the following Transact-SQL query:
 
-User Assigned Managed Identity (UAMI) is not supported. If you add a UAMI, it becomes the primary identity, replacing the SAMI as primary. This causes replication to fail. To resolve:
-- Remove all UAMIs. Verify that the SAMI is enabled.
-<!-- - Use the [REST API to change the SAMI to be the primary identity](/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity-create-server?view=azuresql-db&preserve-view=true&tabs=rest-api). -->
+```sql
+SELECT * FROM sys.dm_server_managed_identities;
+```
 
-## SAMI permissions
+For more information, see [Create an Azure SQL Database server](/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity-create-server?view=azuresql-db&preserve-view=true&tabs=azure-portal).
 
-The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to have **Read** and **Write** permissions on the mirrored database item in Microsoft Fabric. When you create the mirrored database from the Fabric portal, the permission is granted automatically. If you encounter error `Unable to grant required permission to the source server. User does not have permission to reshare` during the setup, ensure you have a member or admin role in the workspace with sufficient privilege. When you [use API](../mirroring/mirrored-database-rest-api.md) to create the mirrored database, make sure you grant the permission explicitly.
+### Permissions for managed identities
 
-Do not remove SAMI **Read** and **Write** permissions on Fabric mirrored database item. If you accidentally remove the permissions, mirroring Azure SQL Database will not function as expected. No new data can be mirrored from the source database.
+Both the System Assigned Managed Identity (SAMI) and the User Assigned Managed Identity (UAMI) for the Azure SQL logical server must have **Read** and **Write** permissions on the mirrored database item in Microsoft Fabric. When you create the mirrored database from the Fabric portal, the permission is granted automatically. If you encounter error `Unable to grant required permission to the source server. User does not have permission to reshare` during the setup, ensure you have a member or admin role in the workspace with sufficient privilege. When you [use API](../mirroring/mirrored-database-rest-api.md) to create the mirrored database, make sure you grant the permission explicitly.
 
-If you remove Azure SQL Database SAMI permissions or permissions are not set up correctly, use the following steps.
+Don't remove SAMI and/or UAMI **Read** and **Write** permissions on Fabric mirrored database items. If you accidentally remove the permissions, mirroring Azure SQL Database doesn't function as expected. No new data can be mirrored from the source database.
 
-1. Add the SAMI as a user by selecting the `...` ellipses option on the mirrored database item.
-1. Select the **Manage Permissions** option.
-1. Enter the name of the Azure SQL Database logical server name. Provide **Read** and **Write** permissions.
+If you remove Azure SQL Database SAMI and/or UAMI permissions, or permissions aren't set up correctly, refer to the steps outlined in the tutorial section to set it up.
 
 ## Errors from stale permissions with Microsoft Entra logins
 
