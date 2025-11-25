@@ -1,6 +1,5 @@
 ---
 title: Use Schemas in Eventstreams - Fabric Real-Time Intelligence
-ms.subservice: rti-hub
 ms.service: fabric
 ms.reviewer: spelluru
 description: Discover how to enable and manage schemas in eventstreams. Step-by-step guidance for custom endpoints, Azure SQL CDC, and schema-validated destinations.
