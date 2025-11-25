@@ -75,17 +75,17 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 1. Create a database user connected to the login. Substitute the name of a new database user for this purpose for `<fabric_user>`:
 
-   ```sql
-   CREATE USER <fabric_user> FOR LOGIN <fabric_login>;
-   GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW
-   ```
+    ```sql
+    CREATE USER [fabric_user] FOR LOGIN [fabric_login];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [fabric_user];
+    ```
     
-       Or, for Microsoft Entra logins,
+    - Or, for a Microsoft Entra authenticated login:
 
-   ```sql
-   CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-   GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [bob@contoso.com];
-   ```
+    ```sql
+    CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [bob@contoso.com];
+    ```
     
 ## Create a mirrored Azure SQL Managed Instance database
 
