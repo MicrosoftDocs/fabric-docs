@@ -24,7 +24,7 @@ Changes to the Fabric capacity or workspace can affect mirroring. For more infor
 | Cause    | Result | Recommended resolution     |
 |:--|:--|:--|
 | Workspace deleted | Mirroring stops automatically and disables the change feed in Azure SQL Database |In case mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
-| Persistent errors | Mirroring is disabled |To ensure your compute resources aren't affected and to protect your source Azure SQL Database, mirroring can be disabled on any persistent errors. Review [sys.dm_change_feed_errors](/sql/relational-databases/system-dynamic-management-views/sys-dm-change-feed-errors/?view=azuresqldb-current&preserve-view=true) and resolve the underlying errors before re-enabling the table for mirroring.|
+| Persistent errors | Mirroring is disabled for the affected database|To ensure your compute resources aren't affected and to protect your source Azure SQL Database, mirroring will be disabled on any persistent errors. Review [sys.dm_change_feed_errors](/sql/relational-databases/system-dynamic-management-views/sys-dm-change-feed-errors/?view=azuresqldb-current&preserve-view=true) and resolve the underlying errors before re-enabling the database for mirroring.|
 | "Users can access data stored in OneLake with apps external to Fabric" setting disabled | "Replicator - Tables Cannot Reach Replicating Status" |Enable the Tenant setting [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings).|
 
 For additional troubleshooting scenarios, see [Troubleshoot Fabric Mirrored Databases - Microsoft Fabric](/fabric/mirroring/troubleshooting).
