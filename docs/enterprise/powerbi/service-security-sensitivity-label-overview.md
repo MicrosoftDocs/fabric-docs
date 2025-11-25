@@ -37,7 +37,7 @@ A [protection metrics report](/fabric/governance/use-microsoft-purview-hub) avai
 
 ## Important considerations
 
-In the Power BI service, sensitivity labeling **does not** affect access to content. Access to content in the service is managed solely by Power BI permissions. While the labels are visible, any associated encryption settings (configured in the [Microsoft Purview compliance portal](https://compliance.microsoft.com/)) aren't applied. They're applied only to data that leaves the service via a supported export path, such as export to Excel, PowerPoint, or PDF, and download to .pbix.
+In the Power BI service, sensitivity labeling **does not** affect access to content. Access to content in the service is managed solely by Power BI permissions. While the labels are visible, any associated encryption settings (configured in the [Microsoft Purview portal](https://compliance.microsoft.com/)) aren't applied. They're applied only to data that leaves the service via a supported export path, such as export to Excel, PowerPoint, or PDF, and download to .pbix.
 
 In Power BI Desktop, sensitivity labels with encryption settings **do** affect access to content. If a user doesn't have sufficient [permissions](#power-bi-desktop) according to the encryption settings of the sensitivity label on the .pbix file, they won't be able to open the file. In addition, in Desktop, when you save your work, any sensitivity label you've added and its associated encryption settings will be applied to the saved .pbix file.
 
@@ -214,7 +214,7 @@ See [Licensing and requirements](service-security-enable-data-sensitivity-labels
 
 ## Sensitivity label creation and management
 
-Sensitivity labels are created and managed in the [Purview compliance portal](https://compliance.microsoft.com/).
+Sensitivity labels are created and managed in the [Microsoft Purview portal](https://compliance.microsoft.com/).
 
 To access sensitivity labels in either of these centers, navigate to **Classification > Sensitivity labels**. These sensitivity labels can be used by multiple Microsoft services such Azure Information Protection, Office apps, and Office 365 services.
 
@@ -238,7 +238,7 @@ See [Custom help link for sensitivity labels](service-security-sensitivity-label
   - [User-defined](/microsoft-365/compliance/encryption-sensitivity-labels#let-users-assign-permissions), where users are allowed to assign permissions when they manually apply a sensitivity label to content.
   - [HYOK (hold your own key)](/azure/information-protection/configure-adrms-restrictions)
 
-The *Do Not Forward* and *user-defined* types refer to labels defined in the [Micosoft Purview portal](https://purview.microsoft.com/informationprotection/purviewmipoverview).
+The *Do Not Forward* and *user-defined* types refer to labels defined in the [Microsoft Purview portal](https://purview.microsoft.com/informationprotection/purviewmipoverview).
 
 - Don't use parent labels. A parent label is a label that has sublabels. You can't apply parent labels, but a label that is already applied may become a parent label if it acquires sublabels. If you come across an item that has a parent label, apply the appropriate sublabel. To change a parent label, you must have [sufficient usage rights on the label](./service-security-sensitivity-label-change-enforcement.md).
 
