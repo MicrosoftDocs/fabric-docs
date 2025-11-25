@@ -55,7 +55,7 @@ All data sources supported in OneLake are supported.
 
 1. In your lakehouse, select **New Table Shortcut in Tables section which is Shortcut transformation (preview)** and choose your source (for example, Azure Data Lake, Azure Blob Storage, Dataverse, Amazon S3, GCP, SharePoint, OneDrive etc.).
 
-:::image type="content" source="./media/transformations/create-newtableshortcut.png" alt-text="Screenshot that shows creating 'table shortcut'.":::
+   :::image type="content" source="./media/transformations/create-new-table-shortcut.png" alt-text="Screenshot that shows creating 'table shortcut'.":::
 
 3. **Choose file, Configure transformation & create shortcut** – Browse to an existing OneLake shortcut that points to the folder with your CSV files, configure parameters, and initiate creation. 
    - *Delimiter* in CSV files – Select the character used to separate columns (comma, semicolon, pipe, tab, ampersand, space).  
@@ -84,11 +84,12 @@ Shortcut transformations include monitoring and error handling to help you track
 1. In the details pane, you can view:  
    * **Status** – Last scan result and current sync state.  
    * **Refresh history** – Chronological list of sync operations with row counts and any error details.
-:::image type="content" source="./media/transformations/monitoring-hub.png" alt-text="Screenshot that shows 'monitoring hub' for viewing transformation status.":::
+   :::image type="content" source="./media/transformations/monitoring-hub.png" alt-text="Screenshot that shows 'monitoring hub' for viewing transformation status.":::
 4. View more details in logs to troubleshoot
-:::image type="content" source="./media/transformations/logfiles-troubleshooting.png" alt-text="Screenshot that shows how to access 'log file' to troubleshoot.":::
+   :::image type="content" source="./media/transformations/log-files-troubleshooting.png" alt-text="Screenshot that shows how to access 'log file' to troubleshoot.":::
 
-Note: **Pause** or **Delete** the transformation from this tab is an upcoming feature part of roadmap
+> [!NOTE]
+> **Pause** or **Delete** the transformation from this tab is an upcoming feature part of roadmap
 
 ## Limitations
 
@@ -108,7 +109,8 @@ Current limitations of shortcut transformations:
 * **Workspace availability**: Available only in **Lakehouse** items (not Data Warehouses or KQL databases).  
 * **File schema consistency**: Files must share an identical schema.
 
-Note: Adding support for some of the above and reducing limitations is part of our roadmap. Track our release communications for further updates.
+> [!NOTE]
+> Adding support for some of the above and reducing limitations is part of our roadmap. Track our release communications for further updates.
 
 
 ## Clean up
