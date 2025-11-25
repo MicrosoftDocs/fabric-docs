@@ -101,6 +101,8 @@
                 "real-time-intelligence/data-activator/**/*.yml": "rti-activator",
                 "real-time-intelligence/digital-twin-builder/**/*.yml": "rti-digital-twin-builder",
                 "real-time-intelligence/digital-twin-builder/**/*.md": "rti-digital-twin-builder",
+                "real-time-intelligence/schema-sets/**/*.yml": "rti-schema-set",
+                "real-time-intelligence/schema-sets/**/*.md": "rti-schema-set",
                 "security/**/*.md": "security",
                 "security/**/*.yml": "security",
                 "workload-development-kit/**/*.md": "workload-development-kit",
