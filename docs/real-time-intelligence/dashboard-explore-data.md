@@ -6,6 +6,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.collection: ce-skilling-ai-copilot
+ms.subservice: rti-dashboard
 ms.custom:
 ms.date: 11/18/2025
 ---
