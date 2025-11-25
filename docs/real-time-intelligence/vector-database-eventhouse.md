@@ -7,6 +7,7 @@ author: spelluru
 ms.topic: tutorial
 ms.custom:
 ms.date: 08/19/2025
+ms.subservice: rti-eventhouse
 ms.search.form: Eventhouse
 ---
 # Tutorial: Use an Eventhouse as a vector database

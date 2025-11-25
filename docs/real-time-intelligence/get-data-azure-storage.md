@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 07/31/2025
+ms.date: 11/25/2025
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -20,10 +20,9 @@ In this article, you learn how to get data from Azure Storage (ADLS Gen2 contain
 
 * **One-time ingestion**: Use this method to retrieve data from Azure Storage as a one-time operation.
 
-> [!NOTE]
->
-> * A continuous ingestion stream can affect your billing. For more information, see [Eventhouse and KQL Database consumption](real-time-intelligence-consumption.md).
-
+    > [!NOTE]
+    >
+    > * A continuous ingestion stream can affect your billing. For more information, see [Eventhouse and KQL Database consumption](real-time-intelligence-consumption.md).
 
 > [!WARNING]
 >
@@ -43,12 +42,16 @@ In Azure:
 
 * [Register the Event Grid resource provider](/azure/event-grid/subscribe-to-partner-events) with your Azure subscription.
 * Assign [Storage Blob Data Reader](/azure/role-based-access-control/built-in-roles) role permissions to the workspace identity.
+* Assign permissions to the user configuring the continuous ingestion, or to an AD group with the user who is configuring the continuous ingestion:
+    * [Storage Account Contributor](/azure/role-based-access-control/built-in-roles/storage?branch=main#storage-account-contributor).
+    * [EventGrid Contributor permission](/azure/role-based-access-control/built-in-roles/integration#eventgrid-contributor).
 * [Create](#create-a-container-with-data-file) a [blob container](/azure/storage/blobs/blob-containers-portal) to hold the data files.
-* Upload a data file. The data file structure is used to define the table schema. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
-    > [!NOTE]
-    > You must upload a data file:
-    > * Before the [configuration](#configure) to define the table schema during set-up.
-    > * After the configuration to trigger the continuous ingestion, to preview data, and to verify the connection.
+    * Upload a data file. The data file structure is used to define the table schema. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
+
+        > [!NOTE]
+        > You must upload a data file:
+        > * Before the [configuration](#configure) to define the table schema during set-up.
+        > * After the configuration to trigger the continuous ingestion, to preview data, and to verify the connection.
 
 ### Add the workspace identity role assignment to the storage account
 
