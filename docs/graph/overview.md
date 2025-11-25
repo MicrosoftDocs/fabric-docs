@@ -80,33 +80,6 @@ You can incorporate graph analytics into your existing workflows, eliminating th
 > [!NOTE]
 > * Join the new Fabric user panel to share feedback and help shape Fabric and Power BI. Participate in surveys and 1:1 sessions with the product team. Learn more and sign up at [Fabric user panel](../fundamentals/feedback.md#fabric-user-panel).
 
-## Workspace roles
-
-Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following table summarizes the permissions associated with each Microsoft Fabric workspace role's capability on graph models and QuerySet items.
-
-### Graph Model
-
-| Capability                           | Admin | Member | Contributor | Viewer |
-|--------------------------------------|-------|--------|-------------|--------|
-| Create or modify graph model         | ✔     | ✔      | ✔           | ✖      |
-| Delete graph model                   | ✔     | ✔      | ✔           | ✖      |
-| View and read content of graph model | ✔     | ✔      | ✔           | ✔      |
-| Share graph model                    | ✔     | ✔      | ✖           | ✖      |
-
-### Graph QuerySet
-
-| Capability                             | Admin | Member | Contributor | Viewer |
-|----------------------------------------|-------|--------|-------------|--------|
-| Create or modify graph QuerySet item   | ✔     | ✔      | ✔           | ✖      |
-| Delete QuerySet item                   | ✔     | ✔      | ✔           | ✖      |
-| View and read content of QuerySet item | ✔     | ✔      | ✔           | ✔      |
-| Connect to graph instance              | ✔     | ✔      | ✔           | ✖      |
-| Share QuerySet                         | ✔     | ✔      | ✖           | ✖      |
-
-> [!NOTE]
-> All users need read access to the underlying graph instance item to execute queries against the referenced graph instance from the graph QuerySet item.
-> Only read, write, and reshare permissions are supported for QuerySet item.
-
 ## Pricing and capacity units
 
 Graph uses the same capacity units (CUs) as other workloads in Microsoft Fabric. You don't need to purchase a separate graph-specific license or SKU. All graph operations, including data ingestion, querying, and running algorithms, consume your organization's reserved or pay-as-you-go Fabric capacity.
