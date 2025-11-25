@@ -5,6 +5,7 @@ author: spelluru
 ms.author: spelluru
 ms.reviewer: sharmaanshul
 ms.topic: reference
+ms.subservice: rti-eventhouse
 ms.date: 03/26/2025
 ---
 # Migrate from Azure Synapse Data Explorer to Eventhouse - REST API (preview)
