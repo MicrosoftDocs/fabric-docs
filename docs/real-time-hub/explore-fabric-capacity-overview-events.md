@@ -138,7 +138,7 @@ The `data` object has the following properties for State events:
 
 ### Considerations and Patterns
 
-- When a capacity is paused, all smoothed usage is pushed into the next available window. As a result, large spikes in capacity utilization can appear for the window in which the pause occurs. If a capacity is busy when paused (for instance, during background rejection), you might see higher than average capacity unit consumption for that time window.
+- When a capacity is paused, all smoothed usage is pushed into the next available window. As a result, large spikes in capacity utilization can appear for the window in which the pause occurs.
 
 - Utilization percentage can't be calculated for P SKUs when autoscale is enabled because autoscale adds extra capacity units that aren't included in the states table.
 
