@@ -47,17 +47,13 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 1. Connect to your Azure SQL Managed Instance using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or the [mssql extension](https://aka.ms/mssql-marketplace) for [Visual Studio Code](https://code.visualstudio.com/docs). Connect to the `master` database.
 1. Create a server login and assign the appropriate permissions.
 
-   The permissions required for the Fabric login are:
+    The permissions required for the Fabric login are:
    
    - The following permissions in the user database:
-   
-   - SELECT
-   
-   - ALTER ANY EXTERNAL MIRROR
-   
-    - VIEW DATABASE PERFORMANCE STATE
-    
-    - VIEW DATABASE SECURITY STATE
+     - SELECT
+     - ALTER ANY EXTERNAL MIRROR
+     - VIEW DATABASE PERFORMANCE STATE
+     - VIEW DATABASE SECURITY STATE
     
    - Create a SQL Authenticated login. You can choose any name for this login, substitute it in the following script for `<fabric_login>`. Provide your own strong password. Run the following T-SQL script in the `master` database:
       
