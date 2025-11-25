@@ -33,7 +33,7 @@ To get started with graph in Microsoft Fabric, you need the following prerequisi
 - You are a member of a workspace or have permission to create items in the workspace. For more information, see [Workspaces in Microsoft Fabric](/fabric/admin/portal-workspaces).
 
     > [!IMPORTANT]
-    > Access management of the graph is restricted to the workspace where it's hosted. The graph isn't accessible to users outside of the workspace. Users within the workspace who have access to the underlying data in the lakehouse will be able to model and query the graph.
+    > Access management of the graph is restricted to the workspace that hosts it. The graph isn't accessible to users outside of the workspace. Users within the workspace who have access to the underlying data in the lakehouse can model and query the graph.
 
 ## Create a graph model
 
@@ -155,7 +155,7 @@ By this point, you created all the nodes and edges for your graph. This is the b
 To load the graph, select **Save**. This will verify the graph model, load data from OneLake, construct the graph, and ready it for querying.
 
 > [!IMPORTANT]
-> You currently need to re-load the graph (by selecting **Save**) whenever the model or the underlying data is changed.
+> You currently need to reload the graph (by selecting **Save**) whenever the model or the underlying data is changed.
 
 ## Query the graph
 
@@ -194,7 +194,7 @@ Now, we can query the graph by selecting specific nodes and relationships. All q
 
 Follow these steps to switch to query builder and start querying your graph interactively:
 
-1. Select **Modes** > **Query builder** from your graph's home page. From this view you can also create a read-only queryset, which has the same functionalities as below and allows you to share your query results.
+1. Select **Modes** > **Query builder** from your graph's home page. From this view, you can also create a read-only queryset, which has the same functionalities as below and allows you to share your query results.
 1. Select **Add node** to see the available nodes for querying.
 1. Select a node to add it to your query. In this example, we add the **Customer** node.
 
