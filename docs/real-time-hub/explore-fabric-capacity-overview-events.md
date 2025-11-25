@@ -146,7 +146,7 @@ The `data` object has the following properties for State events:
 
 - Guidance on scenarios you might encounter:
 
-    - In order to ensure low latency and high performance, Capacity Events in Real-Time Hub are based on a best effort delivery mode. For the Summary table this behavior can mean that, while rare, events can either fail to be sent, or duplicates might be received.
+    In order to ensure low latency and high performance, Capacity Events in Real-Time Hub are based on a best effort delivery mode. For the Summary table this behavior can mean that, while rare, events can either fail to be sent, or duplicates might be received.
 
     As follows are some patterns that can be employed for each of the scenarios mentioned.
 
@@ -162,12 +162,12 @@ The `data` object has the following properties for State events:
 
     take_any is preferred to distinct because there's a possibility there might be small differences between duplicate data. In this case, a distinct operation would keep both. Here, take_any ensures exactly one row is taken.
 
-    **Missing events**
+    - **Missing events**
 
     Missing data is far rarer than duplicate data but might still occur. This condition doesn't have a noticeable impact on alerting or most capacity analysis, but might impact graphing/ analysis at the granularity of window start time.
     A useful pattern to handle dropped data is sampling the maximum value of a column over a fixed time window, such as five minutes. This approach helps ignore dropped data while still analyzing your data at a detailed level.
 
-    **Paused capacities**
+    - **Paused capacities**
 
     When a capacity is paused, all smoothed usage is pushed into the next available window. This behavior can cause large spikes in CU appearing for the window in which the pause occurs (up to 288,000% of normal if a capacity is busy when paused).
 
