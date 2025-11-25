@@ -658,6 +658,6 @@ The driver maps Spark SQL data types to JDBC SQL types and Java types:
 
 ## Related content
 
-* [Apache Spark Runtimes in Fabric](/runtime.md)
-* [Fabric Runtime 1.3](/runtime-1-3.md)
-* [What is the Livy API for Data Engineering](api-livy-overview.md)
+* [Apache Spark Runtimes in Fabric](./runtime.md)
+* [Fabric Runtime 1.3](./runtime-1-3.md)
+* [What is the Livy API for Data Engineering](./api-livy-overview.md)
