@@ -5,6 +5,7 @@ ms.reviewer: orhasban
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
+ms.subservice: rti-eventhouse
 ms.custom: sfi-image-nochange
 ms.date: 11/19/2024
 ms.search.form: Notebooks

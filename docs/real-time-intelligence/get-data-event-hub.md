@@ -5,6 +5,7 @@ ms.reviewer: guregini
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
+ms.subservice: rti-eventhouse
 ms.custom: sfi-image-nochange
 ms.date: 08/04/2025
 ms.search.form: Get data in a KQL Database, Data connection
