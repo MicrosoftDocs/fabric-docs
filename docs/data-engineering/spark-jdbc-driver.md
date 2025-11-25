@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 11/25/2025
 ---
 
-# Microsoft JDBC Driver for Microsoft Fabric Data Engineering (Preview)
+# Microsoft JDBC driver for Microsoft Fabric Data Engineering (preview)
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
