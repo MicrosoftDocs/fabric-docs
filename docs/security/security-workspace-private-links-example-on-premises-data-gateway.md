@@ -110,12 +110,13 @@ d. XMLA-based tools to deploy a semantic model programmatically (see [Semantic m
 5.	Under Connection credentials, apply the following configuration settings:
 
 
-| Input control        | Value                                                                                                  |
-|----------------------|--------------------------------------------------------------------------------------------------------|
-| Connection listbox   | Create a new connection                                                                               |
-| Connection name      | Accept the default or provide a meaningful name.                                                      |
-| Data gateway         | If already installed, select an OPDGW for the data connection. This step can also be performed later (Step 4 below). |
-| Authentication kind  | Choose Organizational account and click on Sign in to provide the credentials to access the data source. |
+   | Input control        | Value                                                                                                  |
+   |----------------------|--------------------------------------------------------------------------------------------------------|
+   | Connection listbox   | Create a new connection                                                                               |
+   | Connection name      | Accept the default or provide a meaningful name.                                                      |
+   | Data gateway         | If already installed, select an OPDGW for the data connection. This step can also be performed later (Step 4 below). |
+   | Authentication kind  | Choose Organizational account and click on Sign in to provide the credentials to access the data source. |
+   ...
 
 6.	Accept the remaining default settings and click on Next.
 
