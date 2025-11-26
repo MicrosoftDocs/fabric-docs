@@ -47,7 +47,7 @@ To configure delimited text format, choose your connection in the source or dest
 
 After selecting **Settings** in **File format** section, following properties are shown up in the pop-up **File format settings** dialog box.
 
-:::image type="content" source="./media/format-delimited-text/file-format-settings.png" alt-text="Screenshot showing source file format settings.":::
+:::image type="content" source="./media/format-delimited-text/file-format-settings-source.png" alt-text="Screenshot showing source file format settings.":::
 
 - **Compression type**: The compression codec used to read delimited text files.
 You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, **TarGzip** or **tar** type in the drop-down list.
@@ -81,6 +81,7 @@ You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, 
 - **First row as header**: Specifies whether to treat/make the first row as a header line with names of columns. Allowed values are selected and unselected (default). When first row as header is unselected, note UI data preview and lookup activity output auto generate column names as Prop_{n} (starting from 0), copy activity requires [explicit mapping](/azure/data-factory/copy-activity-schema-and-type-mapping#explicit-mapping) from source to destination and locates columns by ordinal (starting from 1).
 
 - **Null value**: Specifies the string representation of null value. The default value is empty string.
+- **Multiline rows**: Specifies whether the source file contains rows that span multiple lines. Multiline values must be in quotes. Allowed values are selected (default) and unselected.
 
 Under **Advanced** settings in **Source** tab, other delimited text format related properties are exposed.
 
@@ -88,7 +89,7 @@ Under **Advanced** settings in **Source** tab, other delimited text format relat
 
 After selecting **Settings** in **File format** section, following properties are shown up in the pop-up **File format settings** dialog box.
 
-:::image type="content" source="./media/format-delimited-text/file-format-settings.png" alt-text="Screenshot showing destination file format settings.":::
+:::image type="content" source="./media/format-delimited-text/file-format-settings-destination.png" alt-text="Screenshot showing destination file format settings.":::
 
 - **Compression type**: The compression codec used to write delimited text files.
 You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, **TarGzip** or **tar** type in the drop-down list.
@@ -111,7 +112,6 @@ You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, 
 - **First row as header**: Specifies whether to treat/make the first row as a header line with names of columns. Allowed values are selected and unselected (default). When first row as header is unselected, note UI data preview and lookup activity output auto generate column names as Prop_{n} (starting from 0), copy activity requires [explicit mapping](/azure/data-factory/copy-activity-schema-and-type-mapping#explicit-mapping) from source to destination and locates columns by ordinal (starting from 1).
 
 - **Null value**: Specifies the string representation of null value. The default value is empty string.
-- **Multiline rows**: Specifies whether the source file contains rows that span multiple lines. Multiline values must be in quotes. Allowed values are selected (default) and unselected.
 
 Under **Advanced** settings in **Destination** tab, further delimited text format related property are shown up.
 
@@ -134,7 +134,7 @@ The service optimizes performance automatically when copying delimited text file
 - A custom line break is defined.
 - Binary copy is enabled.
 
-Adjust your configuration as described above to achieve optimal performance.
+Modify the above settings to achieve optimal performance.
 
 ## Table summary
 
