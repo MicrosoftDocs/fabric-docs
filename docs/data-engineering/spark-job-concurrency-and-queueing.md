@@ -4,7 +4,7 @@ description: Learn about the job concurrency limits and queueing for notebooks, 
 ms.reviewer: saravi
 ms.author: eur
 author: eric-urban
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
 ms.date: 10/20/2023
 ---
