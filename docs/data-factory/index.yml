@@ -86,7 +86,7 @@ landingContent:
           - text: Choose a data movement strategy
             url: decision-guide-data-movement.md
           - text: Copy job
-            url: copy-job.md
+            url: what-is-copy-job.md
           - text: Change data capture
             url: cdc-copy-job.md
           - text: Copy activity in pipelines
