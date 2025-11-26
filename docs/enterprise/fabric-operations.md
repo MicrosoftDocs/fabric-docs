@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
-ms.date: 11/24/2025
+ms.date: 11/26/2025
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -211,7 +211,7 @@ You can find the consumption rates for Anomaly Detector in [Anomaly Detector cap
 
 | Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
 | ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
-| Anomaly Detector Run Queries | Interactive analysis and continuous monitoring          | Multiple | Anomaly Detector Queries Capacity Usage CU         | Background |
+| Anomaly Detector Run Queries | Interactive analysis and continuous monitoring          | AnomalyDetector | Anomaly Detector Queries Capacity Usage CU         | Background |
 
 #### Azure and Fabric events
 
