@@ -1,104 +1,100 @@
 ---
-title: Explore data in Real-Time Dashboard tiles
-description: Learn how to explore data in Real-Time Intelligence tiles for more insights about the information rendered in the visual.
+title: Copilot-assisted real-time data exploration
+description: Learn how to explore data with copilot in Real-Time Intelligence dashboards for more insights about the information rendered in the visual.
 ms.reviewer: mibar
 author: spelluru
 ms.author: spelluru
 ms.topic: how-to
+ms.collection: ce-skilling-ai-copilot
+ms.subservice: rti-dashboard
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 11/18/2025
 ---
-# Explore data in Real-Time Dashboard tiles
+# Copilot-assisted real-time data exploration
 
-The explore data feature enables you to delve deeper into the data presented in any Real-Time Dashboard. If the information you're seeking isn't readily available on the dashboard, this feature allows you to extend your exploration beyond the data displayed in the tiles, potentially uncovering new insights.
+Real-time dashboards show key metrics, help you spot anomalies, and let you make fast, informed decisions. With Copilot, use natural language to explore the live data behind your real-time dashboard, each tile, or in KQL tables. Ask questions, refine visuals, and uncover insights without needing to use query language.
 
-Even if a dashboard is shared with you and you only have viewer permissions, you can still explore it. The exploration process begins with viewing the data and its corresponding visualization as they appear on the tile. From there, you can further explore the data by adding or removing filters and aggregations, and viewing your results using different visualizations, all without needing any knowledge of the Kusto Query Language.
+After exploring data with Copilot, save insights to the dashboard for quick access, view streaming or near real-time updates, and share them with your team.
 
-This exploration can provide additional insights into your data, enhancing your understanding and decision-making capabilities.
+Explore real-time data at the [dashboard](#explore-dashboards-with-copilot) or [tile](#explore-tiles-with-copilot) level.
 
 ## Prerequisites
 
-* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A dashboard with visuals. For more information, see [Create a Real-Time Dashboard](dashboard-real-time-create.md)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+* A dashboard with visuals. Learn more in [Create a real-time dashboard](dashboard-real-time-create.md).
 
-## Start your data exploration
+## Explore dashboards with Copilot
 
-1. Within your workspace, select a Real-Time Dashboard.
+Use Copilot to explore data in the context of the entire dashboard. Ask questions about the overall data, request summaries, or seek insights that span multiple tiles.
 
-1. On the tile that you'd like to explore, select the **Explore data** icon.
+1. In your Fabric workspace, select a real-time dashboard.
 
-    :::image type="content" source="media/dashboard-explore-data/select-explore-data-icon.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data icon highlighted.":::
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a real-time dashboard showing the Explore Data Copilot icon highlighted." lightbox="media/dashboard-explore-copilot/dashboard-explore-copilot.png":::
 
-## Explore data
+1. By default, the Copilot pane opens in the context of the entire dashboard. Ask a question or make a request about the data in the dashboard. For example, "Show me the total sales by region" or "What are the top five products by revenue?"
 
-When you open the explore data window, you start with the same visualization as shown in the tile.
+1. Continue exploring and drill through the data by asking follow-up questions or making additional requests. Save your insights to the dashboard by selecting **Save to dashboard**. This action saves the current view and query as a new tile on the dashboard. Each saved tile stays connected to your live data, so as the data updates, your visual does too.
 
-:::image type="content" source="media/dashboard-explore-data/explore-data-areas.png" alt-text="Screenshot of a Real-Time Dashboard explore data window with the different areas highlighted." lightbox="media/dashboard-explore-data/explore-data-areas.png":::
+1. Optionally, adjust the visual options manually using the **Visual Options** pane to fine-tune chart types, columns, or formatting to match your preferences.
 
-In the explore data window, you see the following areas:
+## Explore tiles with Copilot
 
-A. **Filter and aggregations bar**: Shows filters and aggregations from the original query, added filters and aggregations, and the refresh data button.
+The **Explore Data** icon in each tile opens the Copilot pane so you can ask questions to explore the data in the specific tile.
 
-B. **Visual pane**: Shows the visualization of the query data.
+For example, you can change the time frame, filter by a column or value, calculate an average or total, or group by a column. Each time you explore the data with Copilot, the tile data updates, and you can save the insights as a new tile in the dashboard.
 
-C. **Results pane**: Show the tabular results of the query data and the query in the **Results** and **KQL** tabs respectively.
+These instructions explain how to explore tile data using Copilot with the storm events sample data as an example.
 
-D. **Columns pane**: Shows the query columns and their metadata, value distributions, and sample values depending on their data type.
+1. In your Fabric workspace, select a real-time dashboard.
 
-You can then explore your data without affecting the visualization shown in the tile in the following ways:
+1. Select the **Explore Data** icon on the tile to explore the data.
 
-* In the filters bar, you can remove, add, and modify filters and aggregations from the query.
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-toolbar.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot icon highlighted.":::
 
-    Filters that came from the original tile query can't be modified and can only be removed in reverse order. You can add your own filters and aggregations, which you can later modify or remove as you explore.
+1. Enter your request in the dialog box.
 
-    To add a filter:
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-toolbar-dialog.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot dialog highlighted. This is where you enter your question to Copilot.":::
 
-    1. Select **+ Add**.
+1. For this example, enter "Show me data for Texas only," and select the **Submit** icon.
 
-    1. Find and select the column you'd like to filter.
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-copilot-ask.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot dialog with a question typed and the submit button activated.":::
 
-        :::image type="content" source="media/dashboard-explore-data/add-filter-select-column.png" alt-text="Screenshot of the filter dialog box showing how to select a column.":::
+1. The new data appears in the Copilot pane. Select **View answer** to see the results in the tabs: **Visual**, **Table**, and **Query**.
 
-    1. Select the filter **Operator** and **Value**, and then select **Apply**. The visual, results, and KQL query update to reflect the new filter.
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-copilot-answer.png" alt-text="Screenshot of the Copilot pane with the question asked highlighted." lightbox="media/dashboard-explore-copilot/dashboard-tile-copilot-answer.png":::
 
-        :::image type="content" source="media/dashboard-explore-data/add-filter-select-operator-and-value.png" alt-text="Screenshot of the filter dialog box showing how to select an operator and a value.":::
+    ### [Visual](#tab/visual)
 
-    To add an aggregation:
+    If the tile data was tabular, when you go to the Visual tab, select the format you want to use. For this example, select **Pie chart**.
 
-    1. Select **+ Add** > **Aggregation**.
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-select-visual-format.png" alt-text="Screenshot of Create a visual.":::
 
-        :::image type="content" source="media/dashboard-explore-data/add-aggregation-select-type.png" alt-text="Screenshot of the aggregation dialog box showing how to select an aggregation type.":::
+    The Visual tab shows the pie chart for Texas data only.
 
-    1. Select the filter **Operator** and **Display Name**, optionally add up to two columns to group by, and then select **Apply**. The visual, results, and KQL query update to reflect the new filter.
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-visual-texas.png" alt-text="Screenshot of the visual tab showing a pie chart of the storm event types in Texas.":::
 
-        :::image type="content" source="media/dashboard-explore-data/add-aggregation-select-options.png" alt-text="Screenshot of the aggregation dialog box showing how to select aggregation options.":::
+    ### [Table](#tab/table)
 
-* From the **Visual type** dropdown, select other visual types to visualize your data in different ways.
+    The Table tab shows the tabular data for Texas data only.
 
-    :::image type="content" source="media/dashboard-explore-data/select-visual-type.png" alt-text="Screenshot of the visual pane, showing the dropdown selector options.":::
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-table-texas.png" alt-text="Screenshot of the table tab showing the storm even types in Texas in tabular format.":::
 
-* Select the **Results** and **KQL** tabs to view the tabular query results and the underlying query respectively. As you explore, you see the changes you make updated in these tabs.
+    ### [Query](#tab/query)
 
-    :::image type="content" source="media/dashboard-explore-data/query-pane.png" alt-text="Schreenshot of the query pane, showing the query for the visual.":::
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-query-texas.png" alt-text="Screenshot of the query tab showing the KQL query for Texas data that is run to display the visual and table results.":::
 
-* In the **Columns** pane, you can browse the table schema by looking at the columns or finding a particular column. You can also choose columns to see their top values, value distributions, and sample values depending on their data type, as follows:
+1. Continue exploring and drilling through the data by asking more questions or modifying the visual manually using the **Visual Options** pane.
+ 
+1. When you're ready to save your insights to the dashboard, select **Save to dashboard**. This action saves the current view and query as a new tile on the dashboard.
 
-    :::image type="content" source="media/dashboard-explore-data/columns-pane.png" alt-text="Screenshot of the Columns pane, showing the columns with their metadata.":::
+### Configure visual options manually
 
-    <!-- // **QUESTION: @MICHAL, @GABI -- TOOK A GUESS HERE THAT IT'S LIKE DATA PROFILE, PLEASE CONFIRM**
+Manually change the display using the **Visual Options** pane.
 
-    |Type|Statistic|On selection|
-    |--|--|--|
-    |string|Count of unique values| Top 10 values|
-    |numeric|Minimum and maximum values| Top 10 values|
-    |datetime|Date range| Top 10 values|
-    |dynamic|No specific statistic|Random sampled value|
-    |bool|No specific statistic|Count of true and false| -->
+1. Select the Visual tab and expand **Visual Options**.
 
-## Related content
+1. In the **Visual Options** pane, change the visual type, add or remove columns, and adjust the legend's location.
 
-* [Create a Real-Time Dashboard](dashboard-real-time-create.md)
-* [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md)
-* [Apply conditional formatting in Real-Time Dashboard visuals](dashboard-conditional-formatting.md)
-* [Use parameters in Real-Time Dashboards](dashboard-parameters.md)
-* [Real-Time Dashboard-specific visuals](dashboard-visuals.md)
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-visual-options.png" alt-text="Screenshot of the visual pane, showing the dropdown selector options.":::
+
+    The options available depend on the type of visual you use. For example, with a bar chart, change the bar orientation, adjust axis labels, and more. With a table visual, add or remove columns, change column order, and apply sorting.

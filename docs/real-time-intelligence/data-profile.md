@@ -5,6 +5,7 @@ ms.reviewer: mibar
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
+ms.subservice: rti-kql-query
 ms.custom:
 ms.date: 11/19/2024
 ---

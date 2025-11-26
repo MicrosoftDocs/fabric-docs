@@ -43,10 +43,11 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
 
 Starting in SQL Server 2025, the permissions required for the Fabric login are:
 
-- Membership in the server role `##MS_ServerStateReader##`
 - The following permissions in the user database:
-    - SELECT
-    - ALTER ANY EXTERNAL MIRROR
+     - SELECT
+     - ALTER ANY EXTERNAL MIRROR
+     - VIEW DATABASE PERFORMANCE STATE
+     - VIEW DATABASE SECURITY STATE
 
 1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
@@ -60,8 +61,6 @@ Starting in SQL Server 2025, the permissions required for the Fabric login are:
    --Run in the master database
    USE [master];
    CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
-
-   ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [fabric_login];
    ```
 
    - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account (recommended). Run the following T-SQL script in the `master` database:
@@ -70,8 +69,6 @@ Starting in SQL Server 2025, the permissions required for the Fabric login are:
    --Run in the master database
    USE [master];
    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
-    
-   ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
    ```
 
 1. Connect to the user database your plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary:
@@ -82,7 +79,7 @@ Starting in SQL Server 2025, the permissions required for the Fabric login are:
     --Run in the user database
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
 
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE
        TO [fabric_user];
     ```
     
@@ -92,7 +89,7 @@ Starting in SQL Server 2025, the permissions required for the Fabric login are:
     --Run in the user database
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
 
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE
        TO [bob@contoso.com];
     ```
 

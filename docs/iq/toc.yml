@@ -8,8 +8,12 @@ items:
     href: overview.md
   - name: Ontology
     items:
-    - name: What is ontology?
-      href: ontology/overview.md
+    - name: Overview
+      items:
+      - name: What is ontology?
+        href: ontology/overview.md
+      - name: Required tenant settings
+        href: ontology/overview-tenant-settings.md
     - name: Ontology tutorial
       items:
       - name: 0- Introduction and environment setup

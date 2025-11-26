@@ -128,17 +128,8 @@ items:
     href: powerbi/aas-pbi-migration-overview.md
   - name: OneLake integration for semantic models
     href: powerbi/onelake-integration-overview.md
-  - name: Licensing
-    expanded: false
-    items:
-    - name: Purchase Power BI Pro
-      href: powerbi/service-admin-purchasing-power-bi-pro.md         
-    - name: Organizational licenses
-      href: powerbi/service-admin-licensing-organization.md
-    - name: Disable self-service sign-up
-      href: powerbi/service-admin-disable-self-service.md
-    - name: Sign up with a Microsoft 365 Trial
-      href: powerbi/service-admin-signing-up-for-power-bi-with-a-new-office-365-trial.md 
+  - name: Power BI licensing for organizations
+    href: powerbi/service-admin-power-bi-licensing.md 
   - name: Power BI sovereign clouds
     expanded: false
     items:

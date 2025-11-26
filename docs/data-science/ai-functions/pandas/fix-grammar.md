@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 11/13/2025
 ms.search.form: AI functions
 ---
 
@@ -44,7 +44,6 @@ The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         "There are an error here.",
@@ -60,12 +59,12 @@ This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/fix-grammar-example-output.png" alt-text="Screenshot showing a  data frame with a 'text' column and a 'corrections' column, which has the text from the text column with corrected grammar." lightbox="../../media/ai-functions/fix-grammar-example-output.png":::
 
-
 ## Related content
 
 - Use [ai.fix_grammar with PySpark](../pyspark/fix-grammar.md).
 - Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
 - Categorize text with [ai.classify](./classify.md).
+- Generate vector embeddings with [ai.embed](./embed.md).
 - Extract entities with [ai_extract](./extract.md).
 - Answer custom user prompts with [ai.generate_response](./generate-response.md).
 - Calculate similarity with [ai.similarity](./similarity.md).
