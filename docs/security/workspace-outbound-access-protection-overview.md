@@ -97,7 +97,7 @@ This section outlines important considerations and limitations when using worksp
 
 #### Fabric portal limitation with private links
 
-The Fabric portal UI doesn't currently support configuring data connection rules if private links are enabled at either the workspace or tenant level. To set up outbound access protection with data connection rules when private links are enabled, use the Outbound Gateway Rules REST API ([learn more](workspace-outbound-access-protection-allow-list-connector.md#how-to-create-an-allow-list-using-data-connection-rules)).
+The Fabric portal UI doesn't currently support configuring data connection rules if private links are enabled at either the workspace or tenant level. 
 
 #### Region availability limitation
 

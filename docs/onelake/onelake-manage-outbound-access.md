@@ -64,13 +64,9 @@ azcopy copy "https://onelake.dfs.fabric.microsoft.com/WorkspaceA/LakehouseA.Lake
 
 ## Allowing requests to Fabric workspaces.
 
-You can permit your Fabric workspace to make outbound requests to a different Fabric workspace by either [creating a data connection rule](../security/workspace-outbound-access-protection-allow-list-connector.md) via the Lakehouse connector, or creating a [managed private endpoint](../security/security-managed-private-endpoints-overview.md). When you allowlist the target workspace or have an approved managed private endpoint, outbound requests are permitted from the source workspace to the target workspace even when outbound access is restricted.
+You can permit your Fabric workspace to make outbound requests to a different Fabric workspace by creating a [managed private endpoint](../security/security-managed-private-endpoints-overview.md). When you allowlist the target workspace or have an approved managed private endpoint, outbound requests are permitted from the source workspace to the target workspace even when outbound access is restricted.
 
 For example, creating a data connection rule from Workspace A to Workspace B lets users read data in Workspace B through a shortcut, or copy data from Workspace B to Workspace A using AzCopy.
-
-## Allowing requests to external locations
-
-You can create and use shortcuts to external locations even when outbound access protection is enabled by [creating a data connection rule](../security/workspace-outbound-access-protection-allow-list-connector.md) via the appropriate connector for your shortcut target. When you allowlist the target location, you can create shortcuts and read data via shortcuts from that location, even when outbound access protection is enabled.
 
 ## Limitations
 You can't currently use AzCopy to load data from an external ADLS account when outbound access protection is enabled, even if you add a data connection rule for that storage account.
