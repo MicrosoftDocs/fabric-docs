@@ -18,6 +18,6 @@ GQL queries given by most documentation articles for Graph in Microsoft Fabric a
 
 * The *AdventureWorks exmple graph* is explained and used in the [quickstart tutorial](quickstart.md).
 
-The required datasets for these graphs are published in the [Fabric Graph Samples Repository](https://github.com/microsoft/fabric-samples/docs-samples/graph).
+The required datasets for these graphs are published in the [Graph in Microsoft Fabric samples repository](https://github.com/microsoft/fabric-samples/docs-samples/graph).
 
 Please see the [README file](https://github.com/microsoft/fabric-samples/docs-samples/graph/README.md) for further instructions on how to obtain and load these datasets.
