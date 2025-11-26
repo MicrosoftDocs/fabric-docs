@@ -103,7 +103,7 @@ Every graph element has these characteristics:
 Each edge connects exactly two nodes: a source and a destination. This connection creates the graph's structure and shows how entities relate to each other. The direction of edges matters—a `Person` who `follows` another `Person` creates a directed relationship.
 
 > [!NOTE]
-> Fabric Graph currenly does not support undirected edges.
+> Graph in Microsoft Fabric currently doesn't support undirected edges.
 
 GQL graphs are always well-formed, meaning every edge connects two valid nodes. If you see an edge in a graph, both its endpoints exist in the same graph.
 
