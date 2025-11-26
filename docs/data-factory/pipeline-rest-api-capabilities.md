@@ -359,6 +359,30 @@ Runs on-demand pipeline job instance.
 202 Accepted
 ```
 
+**Sample response header**:
+
+```rest
+{
+  'Cache-Control': 'no-store, must-revalidate, no-cache',
+  'Pragma': 'no-cache',
+  'Content-Length': '0',
+  'Content-Type': 'application/octet-stream',
+  'Content-Encoding': 'gzip',
+  'Location': 'https://msitapi.fabric.microsoft.com/v1/workspaces/79294ce5-364b-4936-b251-f5a864181ddd/items/b2541h74-7cf5-42b3-a72b-447fe47a6d4a/jobs/instances/0a7195c4-5ed1-4262-a1c3-376bd3b6f75d',
+  'Retry-After': '60',
+  'x-ms-job-id': '38fd5429-136b-4041-9353-211d561039f8',
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+  'X-Frame-Options': 'deny',
+  'X-Content-Type-Options': 'nosniff',
+  'RequestId': '8d42928f-19d0-43a3-98ef-f029dac6fabf',
+  'Access-Control-Expose-Headers': 'RequestId,Location,Retry-After',
+  'request-redirected': 'true',
+  'home-cluster-uri': 'https://wabi-north-europe-k-primary-redirect.analysis.windows.net/',
+  'Date': 'Wed, 26 Nov 2025 11:11:34 GMT'}
+}
+
+```
+
 ## Get pipeline job instance
 
 Gets singular pipeline’s job instance.
