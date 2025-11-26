@@ -5,6 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: concept-article
+ms.subservice: rti-eventhouse
 ms.date: 03/31/2025
 # customer intent: As a customer, I want to learn about the different sources I can use to get data into an Eventhouse in Real-Time Intelligence.
 ---

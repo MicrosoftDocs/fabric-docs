@@ -4,6 +4,7 @@ description: Learn how to use Fabric APIs for Eventhouse and KQL Database to aut
 author: spelluru
 ms.author: spelluru
 ms.reviewer: bwatts
+ms.subservice: rti-eventhouse
 ms.topic: how-to
 ms.date: 03/09/2025
 ms.custom:

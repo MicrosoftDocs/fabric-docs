@@ -7,6 +7,7 @@ author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 02/27/2025
+ms.subservice: rti-eventhouse
 ms.search.form: Get data in a KQL Database
 ---
 # Get data from Amazon S3
