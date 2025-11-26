@@ -4,7 +4,7 @@ description: Learn about Spark job definition Git integration, including how to 
 ms.reviewer: qixwang
 ms.author: eur
 author: eric-urban
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/03/2024
 ms.search.form: Spark Job Definition git
 ---
