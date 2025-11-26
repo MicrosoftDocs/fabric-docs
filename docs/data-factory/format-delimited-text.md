@@ -81,7 +81,7 @@ You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, 
 - **First row as header**: Specifies whether to treat/make the first row as a header line with names of columns. Allowed values are selected and unselected (default). When first row as header is unselected, note UI data preview and lookup activity output auto generate column names as Prop_{n} (starting from 0), copy activity requires [explicit mapping](/azure/data-factory/copy-activity-schema-and-type-mapping#explicit-mapping) from source to destination and locates columns by ordinal (starting from 1).
 
 - **Null value**: Specifies the string representation of null value. The default value is empty string.
-- **Multiline rows**: Specifies whether the source file contains rows that span multiple lines. Multiline values must be in quotes. Allowed values are selected (default) and unselected.
+- **Multiline rows**: Specifies whether the source file contains rows that span multiple lines. Multiline values must be in quotes. This feature is enabled by default. You can disable it to achieve optimal performance. 
 
 Under **Advanced** settings in **Source** tab, other delimited text format related properties are exposed.
 
