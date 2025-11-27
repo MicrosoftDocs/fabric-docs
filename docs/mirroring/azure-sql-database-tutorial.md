@@ -139,7 +139,6 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
     GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [Workspace Identity Name];
     ```
 
-1. TO [fabric_user];
 ## Create a mirrored Azure SQL Database
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
