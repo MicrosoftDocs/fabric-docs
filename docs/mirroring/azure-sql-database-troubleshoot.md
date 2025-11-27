@@ -53,11 +53,11 @@ If you're experiencing mirroring problems, perform the following database level 
 
     The key columns to look for here are the `table_name` and `state`. Any value besides `4` indicates a potential problem.
 
-1. If replication is still not working, verify that the correct SAMI object has permissions.
+1. If replication is still not working, verify that the correct [managed identity](#managed-identity) object has permissions.
     1. In the Fabric portal, select the "..." ellipses option on the mirrored database item.
     1. Select the **Manage Permissions** option.
-    1. Confirm that the Azure SQL logical server name shows with Read, Write permissions.
-    1. Ensure that AppId that shows up matches the ID of the SAMI of your Azure SQL Database logical server.
+    1. Confirm that the managed identity name shows with Read, Write permissions.
+    1. Ensure that AppId that shows up matches the ID of the managed identity of your Azure SQL Database logical server.
 
 1. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
 
@@ -78,7 +78,9 @@ For more information, see [Create an Azure SQL Database server](/azure/azure-sql
 
 ### Permissions for managed identities
 
-Both the System Assigned Managed Identity (SAMI) and the User Assigned Managed Identity (UAMI) for the Azure SQL logical server must have **Read** and **Write** permissions on the mirrored database item in Microsoft Fabric. When you create the mirrored database from the Fabric portal, the permission is granted automatically. If you encounter error `Unable to grant required permission to the source server. User does not have permission to reshare` during the setup, ensure you have a member or admin role in the workspace with sufficient privilege. When you [use API](../mirroring/mirrored-database-rest-api.md) to create the mirrored database, make sure you grant the permission explicitly.
+Both the System Assigned Managed Identity (SAMI) and the User Assigned Managed Identity (UAMI) for the Azure SQL logical server must have **Read** and **Write** permissions on the mirrored database item in Microsoft Fabric.
+
+When you create the mirrored database from the Fabric portal, the permission is granted automatically. If you encounter error `Unable to grant required permission to the source server. User does not have permission to reshare` during the setup, ensure you have a member or admin role in the workspace with sufficient privilege. When you use [API](../mirroring/mirrored-database-rest-api.md) or [CI/CD](../mirroring/mirrored-database-cicd.md) to create the mirrored database, make sure you grant the permission explicitly.
 
 Don't remove SAMI and/or UAMI **Read** and **Write** permissions on Fabric mirrored database items. If you accidentally remove the permissions, mirroring Azure SQL Database doesn't function as expected. No new data can be mirrored from the source database.
 
