@@ -73,7 +73,51 @@ Use the [API templates in GitHub](https://github.com/microsoft/fabric-event-stre
 
 You can refer to [this Swagger document](/rest/api/fabric/eventstream/topology/get-eventstream-topology?tabs=HTTP#definitions) for details on each API property, and it also guides you in defining an Eventstream API payload.
 
-If you're using **Eventhouse direct ingestion mode** destination, ensure that the `connectionName` and `mappingRuleName` property is correctly specified. To find the correct `connectionName`, navigate to your Eventhouse KQL database, select **Data streams**, and copy the desired `connectionName`. For detailed instructions on creating ingestion mappings, see [Mapping with ingestionMappingReference](/kusto/management/mappings?#mapping-with-ingestionmappingreference).
+#### Eventhouse Direct Ingestion Mode
+
+When using **Eventhouse direct ingestion mode** as a destination in your Eventstream API payload, follow these guidelines:
+
+**1. Specify Required Properties**
+
+Ensure the following properties are correctly set in your JSON body:
+
+- **`connectionName`** – The name of the Eventhouse connection.
+- **`mappingRuleName`** – The ingestion mapping rule for the target table.
+
+To find the correct `connectionName`:
+1. Navigate to your **Eventhouse KQL database** in Fabric.
+2. Select **Data streams**.
+3. Copy the desired `connectionName`.
+
+For `mappingRuleName`, you can find detailed instructions on creating ingestion mappings on [Mapping with ingestionMappingReference](/kusto/management/mappings?#mapping-with-ingestionmappingreference).
+
+**2. Configure Service Principal Permissions**
+
+If you authenticate using a **service principal**, it must have:
+- **Database viewer** permissions.
+- **Table ingestor** permissions.
+
+You can grant these permissions in two ways:
+**Option 1: Using Eventhouse UI**
+
+Grant these permissions using the following KQL commands in the UI:
+
+```kql
+.add database ['yourDatabase'] viewers (@'aadapp=<clientid>;<tenantid>')
+.add table yourTable ingestors (@'aadapp=<id>;<directoryid>')
+```
+Replace `clientid` and `tenantid` with your service principal values.
+
+These commands will grant the service principal the necessary data-plane permissions, allowing Eventhouse to create the connection and pull data from Eventstream. For more information, see [Security roles overview](https://kusto.azurewebsites.net/docs/kusto/management/security-roles.html#security-roles-overview)
+
+**Option 2: Using Eventhouse REST API**
+
+If you prefer to manage permissions by calling the REST API, you can run the same Kusto commands by using the REST API.  
+Refer to the following documentation for details:
+
+- [Kusto REST API overview](https://learn.microsoft.com/en-us/kusto/api/rest/?view=microsoft-fabric)
+- [Manage database security roles](https://learn.microsoft.com/en-us/kusto/management/manage-database-security-roles?view=microsoft-fabric)
+- [Manage table security roles](https://learn.microsoft.com/en-us/kusto/management/manage-table-security-roles?view=microsoft-fabric) 
 
 For more details about defining an Eventstream item, check out [Eventstream item definition](#eventstream-item-definition) section.
 
