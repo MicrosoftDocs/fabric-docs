@@ -4,7 +4,7 @@ description: This article describes the available REST APIs for Fabric mirroring
 author: xuyangit1
 ms.author: xuyan
 ms.reviewer: whhender
-ms.date: 09/26/2025
+ms.date: 11/27/2025
 ms.topic: conceptual
 ms.custom: sfi-ropc-nochange
 ---
@@ -54,8 +54,8 @@ The original JSON definition examples are as follows. For more information about
 > [!IMPORTANT]
 > To mirror data from Azure SQL Database, Azure SQL Managed Instance, Azure Database for PostgreSQL or SQL Server 2025, you need to also do the following before start mirroring:
 >
-> 1. Enable System Assigned Managed Identity (SAMI) of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server), [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance), [Azure Database for PostgreSQL](azure-database-postgresql-tutorial.md#prepare-your-azure-database-for-postgresql) or [SQL Server](sql-server-tutorial.md?tabs=sql2025#connect-to-your-sql-server).
-> 2. [Grant the SAMI **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternatively, you can grant SAMI workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
+> 1. Enable the managed identity of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-managed-identity), [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance), [Azure Database for PostgreSQL](azure-database-postgresql-tutorial.md#prepare-your-azure-database-for-postgresql) or [SQL Server](sql-server-tutorial.md?tabs=sql2025#connect-to-your-sql-server).
+> 2. [Grant the managed identity **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternatively, you can grant the managed identity workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
 
 > [!NOTE]
 > Set the `deafultSchema` property to preserve the source schema hierarchy in the mirrored database.
