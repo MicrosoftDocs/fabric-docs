@@ -4,7 +4,7 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 author: whhender
 ms.author: whhender
 ms.reviewer: imotiwala, maprycem, cynotebo, wiassaf
-ms.date: 11/06/2025
+ms.date: 11/27/2025
 ms.topic: troubleshooting
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -129,6 +129,15 @@ The SQL analytics endpoint supports **varchar(max)** up to 16 MB.
 | SQL database in Fabric | 1 MB |
 | Mirrored Azure Cosmos DB | 2 MB |
 | Cosmos DB in Fabric | 2 MB | 
+
+#### Mirrored table/schema is not deleted when it's dropped in the source database
+
+Table level:
+
+- When you choose to mirror a list of selective tables and the source table is dropped, the mirrored table stays and you see error "The source table does not exist" in monitoring. If you no longer want to replicate this table, update your mirrored database configuration and remove it, then the mirrored table will be deleted.
+- When you choose to mirror all data and the source table is dropped, the mirrored table is deleted as well.
+
+Schema level: When the schema is dropped in the source database, you still see the schema in the SQL Analytics Endpoint as an empty schema.
 
 #### I can't change the source database
 
