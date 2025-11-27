@@ -14,19 +14,19 @@ ms.date: 05/27/2025
 ## November 2025 - v0.2.3
 
 - Data Factory - OneLake operations were over estimated
-- Power BI - In case you had a cost recommendation, PowerBI CU consumption was inappropriately excluded from the computed consumption.
+- Power BI - In case you had a cost recommendation, Power BI CU (consumption unit) consumption was inappropriately excluded from the computed consumption.
 - Minor fixes & internal updates
 
 ## July 2025 - v0.2.0
 
-- Real-time - Eventstream calculations have been fully revamped.
-- Private Preview - Export to Excel - Export your inputs and estimates as an Excel file.
+- Real-time – Eventstream calculations were fully revamped.
+- Preview - Export to Excel - Export your inputs and estimates as an Excel file.
 
 ## May 2025 - v0.1.2
 
 - Real-time - Updated the consumption model to more accurately represent the diversity of scenarios. You now need to input the number of jobs.
 - Real-time - You can now estimate up to 10M messages per day.
-- Event house - OneLake storage calculation is now displayed in the results.
+- Eventhouse - OneLake storage calculation is now displayed in the results.
 - User interface - Recommendation Display - Added a "recalculate" button to update the displayed recommendations without needing to scroll.
 - User interface - Revamped tooltips and added a help pane
 - User interface - Large estimations - When your estimate exceeds the F2048 SKU, the tool displays how much consumption is above the F2048 SKU limit.
