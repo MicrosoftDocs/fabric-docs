@@ -4,12 +4,17 @@ description: Find information about Fabric SKU Estimator limitations, known issu
 author: cmaneu
 ms.author: chmaneu
 ms.topic: release-notes
-ms.date: 05/27/2025
+ms.date: 11/27/2025
 ---
 
 # Fabric SKU Estimator (preview) release notes
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+
+## November 2025 - v0.2.3
+
+- Data Factory - OneLake operations were over estimated
+- Power BI - In case you had a cost recommendation, PowerBI CU consumption was inappropriately excluded from the computed consumption.
 
 ## July 2025 - v0.2.0
 
