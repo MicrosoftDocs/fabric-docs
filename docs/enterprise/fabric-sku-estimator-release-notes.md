@@ -11,6 +11,12 @@ ms.date: 05/27/2025
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
+## November 2025 - v0.2.3
+
+- Data Factory - OneLake operations were over estimated
+- Power BI - In case you had a cost recommendation, PowerBI CU consumption was inappropriately excluded from the computed consumption.
+- Minor fixes & internal updates
+
 ## July 2025 - v0.2.0
 
 - Real-time - Eventstream calculations have been fully revamped.
