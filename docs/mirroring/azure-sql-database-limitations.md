@@ -3,9 +3,9 @@ title: "Limitations and Behaviors for Fabric Mirrored Databases From Azure SQL D
 description: A detailed list of limitations for mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: whhender
 ms.author: whhender
-ms.reviewer: imotiwala, sbahadur, drskwier, ajayj
-ms.date: 10/15/2025
-ms.topic: conceptual
+ms.reviewer: imotiwala, sbahadur, drskwier, ajayj, atodalbagi
+ms.date: 11/25/2025
+ms.topic: article
 ms.custom:
   - references_regions
 ---
@@ -38,7 +38,11 @@ For troubleshooting, see:
 
 ## Network and connectivity security
 
-- The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled and must be the primary identity.
+- Either the System Assigned Managed Identity (SAMI) or the User Assigned Managed Identity (UAMI) of the Azure SQL logical server needs to be enabled and must be the primary identity.
+
+  > [!NOTE]  
+  > Support for User Assigned Managed Identity (UAMI) is currently in preview.
+
 - The Azure SQL Database service principal name (SPN) contributor permissions should not be removed from the Fabric mirrored database item.
 - Mirroring across [Microsoft Entra](/entra/fundamentals/new-name) tenants is not supported where an Azure SQL Database and the Fabric workspace are in separate tenants.  
 - Microsoft Purview Information Protection/sensitivity labels defined in Azure SQL Database are not cascaded and mirrored to Fabric OneLake.
