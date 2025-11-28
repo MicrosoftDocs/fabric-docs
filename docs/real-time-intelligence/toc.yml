@@ -577,7 +577,7 @@ items:
       - name: Logstash
         href: /azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric
       - name: NLog sink
-        href: /azure/data-explorer/nlog-sink?context=/fabric/context/context-rti&pivots=fabric
+        href: get-data-nlog-sink.md
       - name: OpenTelemetry
         href: /azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rti&pivots=fabric
       - name: Microsoft Power Automate
@@ -684,6 +684,8 @@ items:
     href: sample-gallery.md
   - name: Create alerts from a KQL Queryset
     href: data-activator/activator-alert-queryset.md
+  - name: Add query visualization to a dashboard
+    href: add-query-visualization.md
 - name: Real-Time Dashboard
   items:
   - name: Create a Real-Time Dashboard
