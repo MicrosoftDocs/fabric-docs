@@ -10,7 +10,7 @@ ms.date: 9/19/2025
 ms.search.form: Fabric Connection 
 ---
 
-# What is Fabric Connection inside Notebook
+# What is Fabric connection inside Notebook
 
 > [!IMPORTANT]
 > The Fabric Connection integration with Notebook is currently in preview.
