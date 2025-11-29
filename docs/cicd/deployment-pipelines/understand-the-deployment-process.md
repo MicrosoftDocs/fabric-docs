@@ -118,7 +118,7 @@ Autobinding works only with items that are supported by deployment pipelines and
 
 ### Autobinding across workspaces
 
-Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item connected to it in the other pipeline. For example, if you have a report in the test stage of pipeline *A* that's connected to a semantic model in the test stage of pipeline *B*, deployment pipelines recognizes this connection.
+Deployment pipelines automatically binds items that are connected across pipelines if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item connected to it in the other pipeline. For example, if you have a report in the test stage of pipeline *A* that's connected to a semantic model in the test stage of pipeline *B*, deployment pipelines recognizes this connection.
 
 >[!NOTE]
 >Each pipeline must have the same number of stages. So for example, if pipeline *A* has 3 stages, then pipeline *B* must also have 3 stages.  Pipeline *A* cannot have 3 stages and pipeline *B* 5 stages for autobinding to succeed. 
@@ -202,9 +202,9 @@ The workspace content is shown in Deployment pipelines as a flat list of items. 
 
 In Deployment pipelines, folders are considered part of an item’s name (an item name includes its full path). When an item is deployed, after its path was changed (moved from folder A to folder B, for example), then Deployment pipelines applies this change to its paired item during deployment - the paired item will be moved as well to folder B. If folder B doesn't exist in the stage we're deploying to, it's created in its workspace first. Folders can be seen and managed only on the workspace page.
 
-With the current view of the folders hierarchy, you can select for deployment, only items in the same folder level. You cannot select items across folders.
+With the current view of the folders hierarchy, you can select for deployment only items in the same folder level. You cannot select items across folders.
  
-Flat list view of deployment pipelines allows you to select items regardless of its location. With the flat list view, you can select items across folders, regarding their location in the workspace. For more information, see [flat list view](deploy-content.md#flat-list-view).
+The flat list view of deployment pipelines allows you to select items regardless of its location. With the flat list view, you can select items across folders regardless of their location in the workspace. For more information, see [flat list view](deploy-content.md#flat-list-view).
 
 ### Identify items that were moved to different folders
 
@@ -232,7 +232,7 @@ Unless there's also a schema change, the option next to the label to open a *Cha
 
 ## Parent-child item representation
 
-Parent child relationships only appear in the new UI. They looks the same as in the workspace. The child isn't deployed but recreated on the target stage
+Parent child relationships only appear in the new UI. They look the same as in the workspace. The child isn't deployed but recreated on the target stage
 
 :::image type="content" source="media/understand-the-deployment-process/parent-child.png" alt-text="Screenshot showing the depiction of a parent child relationship in the new UI.":::
 
@@ -311,7 +311,7 @@ Deployment pipelines supports [incremental refresh](/power-bi/connect-data/incre
 
 With deployment pipelines, you can make updates to a semantic model with incremental refresh while retaining both data and partitions. When you deploy the semantic model, the policy is copied along.
 
-To understand how incremental refresh behaves with dataflows, see [why do I see two data sources connected to my dataflow after using dataflow rules?](/power-bi/create-reports/deployment-pipelines-troubleshooting#why-do-i-see-two-data-sources-connected-to-my-dataflow-after-using-dataflow-rules-)
+To understand how incremental refresh behaves with dataflows, see [why do I see two data sources connected to my dataflow after using dataflow rules?](/fabric/cicd/troubleshoot-cicd#i-see-two-data-sources-connected-to-my-dataflow-after-using-dataflow-rules)
 
 > [!NOTE]
 > Incremental refresh settings aren't copied in Gen 1.
