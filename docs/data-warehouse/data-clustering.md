@@ -10,7 +10,7 @@ ms.topic: conceptual
 
 # Data clustering in Fabric Data Warehouse
 
-**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 Data clustering is a technique used to organize and store data based on similarity. Data clustering improves query performance and reduces compute and storage access costs for queries by grouping similar records together.
 
