@@ -36,7 +36,7 @@ Failure to enable this setting results in errors when accessing a newly created 
 
 This setting is optional, but required if you want to generate an ontology (preview) from a semantic model.
 
-:::image type="content" source="media/overview-tenant-settings/prerequisite-data-agent.png" alt-text="Screenshot of enabling data agents in the admin portal.":::
+:::image type="content" source="media/overview-tenant-settings/prerequisite-xmla.png" alt-text="Screenshot of enabling XMLA in the admin portal.":::
 
 If this setting isn't enabled, you see a failure to generate the ontology.
 
