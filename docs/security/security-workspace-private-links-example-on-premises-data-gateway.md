@@ -94,7 +94,7 @@ a.	Web modeling experience in the Power BI portal.
 
 d. XMLA-based tools to deploy a semantic model programmatically (see [Semantic model connectivity with the XMLA endpoint](/fabric/enterprise/powerbi/service-premium-connect-tools)).
 
-### Option 3a: Using the Web modelling experience
+### Option 3a: Using the Web modeling experience
 
 1.	In the source workspace, click on New item, and then in the New item pane, click on the Semantic model tile.
 
