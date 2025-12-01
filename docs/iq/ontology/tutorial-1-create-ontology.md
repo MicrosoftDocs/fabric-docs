@@ -64,7 +64,7 @@ This section describes support in ontology (preview) for different semantic mode
 
 1. Go to the *RetailSalesModel* semantic model in Fabric. From the top ribbon, select **Generate Ontology**.
 
-    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology.png" alt-text="Screenshot of Generate ontology button in the ribbon." lightbox="media/tutorial-1-create-ontology/semantic-model/generate-ontology-crop.png":::
+    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology.png" alt-text="Screenshot of Generate ontology button in the ribbon." lightbox="media/tutorial-1-create-ontology/semantic-model/generate-ontology.png":::
 
 1. Select your **Workspace** and enter *RetailSalesOntology* for the **Name**. Select **Create**.
 
@@ -309,7 +309,7 @@ Follow the same steps that you used for the first relationship type to create th
 
 When you're done, you have two relationships targeting the *SaleEvent* entity type. To see the relationships, select the **SaleEvent** entity type from the **Entity Types** pane. You see its relationships on the canvas.
 
-:::image type="content" source="media/tutorial-1-create-ontology/onelake/all-relationship-types.png" alt-text="Screenshot of the scenario relationship types." lightbox="media/tutorial-1-create-ontology/onelake/all-relationship-types-crop.png":::
+:::image type="content" source="media/tutorial-1-create-ontology/onelake/all-relationship-types.png" alt-text="Screenshot of the scenario relationship types." lightbox="media/tutorial-1-create-ontology/onelake/all-relationship-types.png":::
 
 ::: zone-end
 

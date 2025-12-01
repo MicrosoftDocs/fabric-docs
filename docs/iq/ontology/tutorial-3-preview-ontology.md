@@ -35,7 +35,7 @@ When you bound data to your entity types in previous tutorial steps, ontology au
 
 1. Update the time range from the default of *Last 30 minutes* to a custom date range that begins on *Fri Aug 01 2025 at 12:00 AM*, ends on *Mon Aug 04 2025 at 12:00 AM*, and has a **Time granularity** of *1 minute*.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/freezer-telemetry-edit-time.png" alt-text="Screenshot of the time selector." lightbox="media/tutorial-3-preview-ontology/freezer-telemetry-edit-time-crop.png":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/freezer-telemetry-edit-time.png" alt-text="Screenshot of the time selector." lightbox="media/tutorial-3-preview-ontology/freezer-telemetry-edit-time.png":::
 
 1. Observe the time series data that's visible from different *Freezer* entity instances.
 
