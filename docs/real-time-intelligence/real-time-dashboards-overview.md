@@ -23,11 +23,12 @@ This overview explains how Real-Time Dashboard works, highlights its key feature
 
 * **Live data monitoring:** Dashboards update continuously or at [refresh intervals](dashboard-real-time-create.md#enable-auto-refresh) as low as 10 seconds, ensuring teams always have access to the most current data.
 * **Interactive exploration:**
-    * Drag and drop [visualizations](dashboard-visualizations.md) to build dynamic dashboards and tiles that adapt to changing business needs.
+    * Drag and drop tiles and visualizations to build dynamic dashboards that adapt to changing business needs.
     * Slice and dice data by time, geography, or custom dimensions to focus on key metrics.
     * Apply [filters](dashboard-parameters.md#interact-with-your-data-using-cross-filter) or [drill down](dashboard-parameters.md#use-drillthroughs-as-dashboard-parameters) on chart elements to refine other visuals or dive deeper into the data.
+    * Create various [visualizations](dashboard-visuals.md) including line charts, bar charts, pie charts, maps, and more to represent real-time data effectively.
 * **No-code experience:** Empower business users to create and customize dashboards through an intuitive, no-code interface.
-    * Quickly build [dashboards](../fundamentals/copilot-generate-dashboard.md){:target="_blank"} with Copilot assistance.
+    * Quickly build [dashboards](../fundamentals/copilot-generate-dashboard.md) with Copilot assistance.
     * Use the [Explorer Data](dashboard-explore-data.md) feature to analyze underlying data without writing queries.
 * **Proactive monitoring with alerts:** Integrated with Data Activator to enable real-time monitoring and alerting based on data changes.
     * Define thresholds for key metrics displayed on your Real-Time Dashboard.
@@ -63,7 +64,7 @@ Create a Real-Time Dashboard to visualize and explore insights quickly with real
     * Write Kusto Query Language (KQL) queries to retrieve and visualize data in dashboard tiles.
     * Design and organize the layout of your dashboard.
 
-1. Use [Copilot to automate dashboard creation:](../fundamentals/copilot-generate-dashboard.md){:target="_blank"}
+1. Use [Copilot to automate dashboard creation:](../fundamentals/copilot-generate-dashboard.md)
     * Select a data source, use natural language prompts, and Copilot automatically generates a Real-Time Dashboard as a starting point.
     * Customize the generated dashboard by modifying queries, adding or removing tiles, and adjusting the layout to fit your needs.
 
