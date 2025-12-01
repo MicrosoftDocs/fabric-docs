@@ -86,7 +86,7 @@ Create a lakehouse in the target workspace and upload a Delta table to it by fol
 
 Now that you have a lakehouse in the restricted workspace, you can create a semantic model in the open workspace that references this lakehouse. You can use:
 
-&nbsp;&nbsp;&nbsp;&nbsp;a.	Web modelling experience in the Power BI portal
+a.	Web modeling experience in the Power BI portal.
    
 &nbsp;&nbsp;&nbsp;&nbsp;b.	Power BI Desktop
    
