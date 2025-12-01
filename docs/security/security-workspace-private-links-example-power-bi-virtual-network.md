@@ -101,7 +101,7 @@ d. XMLA-based tools to deploy a semantic model programmatically (see [Semantic m
 2.	On the Add data to start building a report page, click on Get Data, and then choose Azure SQL database to connect to the data source via the SQL Analytics Endpoint.
 
    > [!NOTE]
-   > Do not use the OneLake catalog tile because the Web modelling experience creates a Direct Lake model when connecting to a data source in the OneLake catalog. Direct Lake is not yet supported against data sources in an inbound restricted workspace.
+   > Do not use the OneLake catalog tile because the Web modeling experience creates a Direct Lake model when connecting to a data source in the OneLake catalog. Direct Lake is not yet supported against data sources in an inbound restricted workspace.
 3. In the Server textbox, enter the workspaceFQDN using the format for warehouse connection strings, https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com that is, add z{xy} to the regular warehouse connection string found under SQL connection string. The GUIDs in the FQDN correspond to Tenant GUID in Base32 and Workspace GUID in Base32 respectively.
 
 4.	Optionally, in the Database textbox, enter the Guid of the SQL Analytics Endpoint to which you want to connect.
