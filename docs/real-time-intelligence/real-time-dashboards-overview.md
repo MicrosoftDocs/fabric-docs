@@ -19,19 +19,19 @@ This overview explains how Real-Time Dashboard works, highlights its key feature
 :::image type="content" source="media/tutorial/final-dashboard.png" alt-text="Screenshot of a real-time dashboard in Fabric displaying sample bike data." lightbox="media/tutorial/final-dashboard.png":::
 
 ## Key features
-### Key features and capabilities of Real-Time Dashboard include:
 
-* **Live data monitoring:** Dashboards update continuously or at [refresh intervals](dashboard-real-time-create.md#enable-auto-refresh) as low as 10 seconds, ensuring teams always have access to the most current data.
-* **Interactive exploration:**
-    * Drag and drop tiles and visualizations to build dynamic dashboards that adapt to changing business needs.
+* **Live data monitoring:** Dashboards update continuously or at [refresh intervals](dashboard-real-time-create.md#enable-auto-refresh) as low as 10 seconds, ensuring continuous access to the most current data.
+* **Interactive exploration:** Engage with real-time data through interactive dashboards that allow you to:
+    * Drag-and-drop tiles and visualizations to build dynamic dashboards that adapt to changing business needs.
     * Slice and dice data by time, geography, or custom dimensions to focus on key metrics.
     * Apply [filters](dashboard-parameters.md#interact-with-your-data-using-cross-filter) or [drill down](dashboard-parameters.md#use-drillthroughs-as-dashboard-parameters) on chart elements to refine other visuals or dive deeper into the data.
     * Create various [visualizations](dashboard-visuals.md) including line charts, bar charts, pie charts, maps, and more to represent real-time data effectively.
-* **No-code experience:** Empower business users to create and customize dashboards through an intuitive, no-code interface.
+* **No-code experience:** Empower users to create and customize dashboards through an intuitive, no-code interface. This includes:
     * Quickly build [dashboards](../fundamentals/copilot-generate-dashboard.md) with Copilot assistance.
+    * [Create KQL queries using Copilot](copilot-writing-queries.md) to retrieve and visualize data without needing deep technical expertise.
     * Use the [Explorer Data](dashboard-explore-data.md) feature to analyze underlying data without writing queries.
-* **Proactive monitoring with alerts:** Integrated with Data Activator to enable real-time monitoring and alerting based on data changes.
-    * Define thresholds for key metrics displayed on your Real-Time Dashboard.
+* **Proactive monitoring with alerts:** Integrated with Data Activator to enable real-time monitoring and alerting based on data changes. It allows you to:
+    * Define thresholds for key metrics displayed on your Real-Time dashboard.
     * [Trigger alerts](data-activator/activator-get-data-real-time-dashboard.md) when metrics exceed defined limits, ensuring timely responses to critical events.
     * Automate actions such as sending notifications via email or Microsoft Teams, or initiating Power Automate flows.
 * **Git integration:** Sync dashboards with GitHub or Azure DevOps for version control and collaborative development.
@@ -70,7 +70,7 @@ Create a Real-Time Dashboard to visualize and explore insights quickly with real
 
 ## Next steps
 
-Explore these articles to learn more about Real-Time Dashboards:
+After understanding the basics of Real-Time Dashboard and setting up your first dashboard, explore these resources to enhance your skills and make the most of Real-Time Dashboard:
 
 * [Explore data in Real-Time Dashboard](dashboard-explore-data.md)
 * [Set alert for Real-Time Dashboard](data-activator/activator-get-data-real-time-dashboard.md)
