@@ -135,9 +135,8 @@ Workspaces and the data they contain reside on capacities. You can move the work
     :::image type="content" source="./media/portal-workspaces/license-modes.png" alt-text="Screenshot showing the Reassign workspace license modes pane.":::
 
     > [!NOTE]
-    > [!NOTE]
-    > * The types of items in the workspace can affect your ability to change license modes or move the workspace to a capacity in a different region. For more information, see [Moving data around](#moving-data-around).
-    > * Moving a workspace to a different capacity might start successfully but finish with errors. This can potentially impact some or all items in the workspace. For details, see [Capacity reassignment restrictions and common issues](portal-workspace-restrictions.md).
+    > * The types of items in the workspace can affect your ability to change license modes or move the workspace to a capacity in a different region.
+    > * Moving a workspace to a different capacity might start successfully but finish with errors, which could affect some or all items in the workspace. For details, see [Capacity reassignment restrictions and common issues](portal-workspace-capacity-reassignment.md).
 
 ## Govern My workspaces
 
@@ -189,49 +188,11 @@ To restore a deleted My workspace as an app workspace
 
 After the deleted workspace has been restored as an app workspace, it's just like any other app workspace. 
 
-### Restrictions on moving workspaces around
+## Moving data around
 
-Moving workspaces from one capacity to another has the following restrictions:
+Workspaces and the data they contain reside on capacities. Workspace admins can move the data contained in a workspace by reassigning the workspace to a different capacity. The capacity can be in the same region or a different region.
 
-* When you move a workspace, all jobs related to items in the workspace get canceled.
-
-* Only movable item types can move between regions. **If you're reassigning a workspace to a capacity located in a different region, you must remove all non-movable items first, otherwise reassignment will fail**.
-
-    The following items types are movable:
-
-    * Report
-    * Semantic model (small storage format)
-    * Dashboard
-    * Dataflow Gen1
-    * Paginated Report
-    * Datamart
-    * Scorecard 
-
-    All other item types can't be moved between regions and must be removed from the workspace before you can migrate the workspace to a capacity in another region.
-
-    After you've removed the non-movable items and the workspace is migrated to a different region, you can create new items of the non-movable type. It can take up to an hour after the migration before you will be able to do so.
-
-* Only Power BI items can move from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode (with exceptions as noted below). If you're changing a workspace from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode, you must remove all non-Power BI items and any Power BI items that can't be moved first, otherwise the license mode change will fail.
-
-    The following item types are considered Power BI items from the perspective of the workspace license mode.
-
-    * Report
-    * Semantic model (small storage format and large storage format)
-    * Dashboard
-    * Org app**
-    * Dataflow Gen1
-    * Paginated Report
-    * Metric set*
-    * Exploration**
-    * Datamart*
-    * Scorecard
-
-    *Can't move to Pro<br>**Can't move to Pro or Premium per user
-
-    All other item types must be removed from the workspace before you can change its license mode from Premium capacity or Fabric capacity to Pro or Premium Per User.
-
-> [!NOTE]
-> If you have Dataflow Gen2 items in your workspace, note that their underlying staging lakehouse and staging warehouse items only become visible in the workspace UI after **all** Dataflow Gen2 items in the workspace have been deleted. These staging items are Fabric items as well, and as such their existance can prevent the workspace from being successfully migrated from one region to another. To ensure that your workspace can be successfully migrated across regions, first delete all Dataflow Gen2 items in the workspace, and then delete all the staging lakehouses and warehouses in the workspace that become visible.
+For details, see [Capacity reassignment restrictions and common issues](portal-workspace-capacity-reassignment.md).
 
 ## Related content
 

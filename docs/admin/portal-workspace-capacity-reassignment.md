@@ -5,20 +5,65 @@ author: msmimart
 ms.author: mimart
 ms.custom: admin-portal
 ms.topic: overview
-ms.date: 11/21/2025
+ms.date: 12/01/2025
+ai-usage: ai-assisted
 ---
 
 # Capacity reassignment restrictions and common issues
 
-Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities. Such movement might be to a capacity in the same region, or it might be to a capacity in a different region.
+Workspaces and the data they contain reside on capacities. Workspace admins can move the data contained in a workspace by reassigning the workspace to a different capacity. The capacity can be in the same region or a different region.
 
 ## Reassigning a workspace to another capacity
 
 In the Fabric UI, workspaces can be moved to other capacities in the following ways:
 
-* Fabric admins can reassign workspaces to a different capacity individually via the [Workspaces page](#reassign-a-workspace-to-a-different-capacity) in the Fabric Admin portal.
+* Fabric admins can reassign workspaces to a different capacity individually via the [Workspaces page](portal-workspaces.md#reassign-a-workspace-to-a-different-capacity) in the Fabric Admin portal.
 * Fabric admins and capacity admins can reassign workspaces to a capacity in bulk via the **Workspaces assigned to this capacity** option in the [capacity's settings](./capacity-settings.md#capacity-settings).
-* Workspace admins can reassign their workspace to a different capacity via the **[License info option of the workspace settings](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity)**.
+* Workspace admins can reassign their workspace to a different capacity via the [License info option of the workspace settings](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity).
+
+## Restrictions on moving workspaces around
+
+Moving workspaces from one capacity to another has the following restrictions:
+
+* When you move a workspace, all jobs related to items in the workspace get canceled.
+
+* Only movable item types can move between regions. **If you're reassigning a workspace to a capacity located in a different region, you must remove all non-movable items first, otherwise reassignment will fail**.
+
+    The following items types are movable:
+
+    * Report
+    * Semantic model (small storage format)
+    * Dashboard
+    * Dataflow Gen1
+    * Paginated Report
+    * Datamart
+    * Scorecard 
+
+    All other item types can't be moved between regions and must be removed from the workspace before you can migrate the workspace to a capacity in another region.
+
+    After you've removed the non-movable items and the workspace is migrated to a different region, you can create new items of the non-movable type. It can take up to an hour after the migration before you will be able to do so.
+
+* Only Power BI items can move from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode (with exceptions as noted below). If you're changing a workspace from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode, you must remove all non-Power BI items and any Power BI items that can't be moved first, otherwise the license mode change will fail.
+
+    The following item types are considered Power BI items from the perspective of the workspace license mode.
+
+    * Report
+    * Semantic model (small storage format and large storage format)
+    * Dashboard
+    * Org app**
+    * Dataflow Gen1
+    * Paginated Report
+    * Metric set*
+    * Exploration**
+    * Datamart*
+    * Scorecard
+
+    *Can't move to Pro<br>**Can't move to Pro or Premium per user
+
+    All other item types must be removed from the workspace before you can change its license mode from Premium capacity or Fabric capacity to Pro or Premium Per User.
+
+> [!NOTE]
+> If you have Dataflow Gen2 items in your workspace, note that their underlying staging lakehouse and staging warehouse items only become visible in the workspace UI after **all** Dataflow Gen2 items in the workspace have been deleted. These staging items are Fabric items as well, and as such their existance can prevent the workspace from being successfully migrated from one region to another. To ensure that your workspace can be successfully migrated across regions, first delete all Dataflow Gen2 items in the workspace, and then delete all the staging lakehouses and warehouses in the workspace that become visible.
 
 ## Discovering capacity reassignment issues
 
@@ -30,7 +75,7 @@ If you have access to the workspace settings, you'll see a similar warning banne
 
 :::image type="content" source="media/portal-workspace-capacity-reassignment/license-info.png" alt-text="Screenshot showing the License Info page." lightbox="media/portal-workspace-capacity-reassignment/license-info.png":::
 
-To see which items are affected, select **View details** in the warning banner. This opens a detailed view showing all items that remain attached to a different capacity than the workspace. For each item, you'll see the capacity name, its region, and the reason the migration failed.
+To see which items are affected, select **View details** in the warning banner. A detailed view opens showing all items that remain attached to a different capacity than the workspace. For each item, you'll see the capacity name, its region, and the reason the migration failed.
 
 :::image type="content" source="media/portal-workspace-capacity-reassignment/license-info-details.png" alt-text="Screenshot showing the License Info page with item details." lightbox="media/portal-workspace-capacity-reassignment/license-info-details.png":::
 
@@ -44,11 +89,11 @@ When a workspace reassignment fails for some or all items, the detailed view sho
 
 Before addressing specific errors, follow these general steps:
 
-1. **Don't delete or pause the source capacity** – Items that failed to migrate remain attached to their original capacity (shown in the "Capacity" column). Deleting or pausing this capacity will make those items unavailable.
+1. **Don't delete or pause the source capacity**. Items that failed to migrate remain attached to their original capacity (shown in the "Capacity" column). Deleting or pausing this capacity will make those items unavailable.
 
-2. **Retry the reassignment** – Many failures are caused by transient errors. Try reassigning the workspace to the destination capacity again.
+2. **Retry the reassignment**. Many failures are caused by transient errors. Try reassigning the workspace to the destination capacity again.
 
-3. **Consider same-region migration** – If you're moving between regions, try moving to a different capacity in the same region first to rule out cross-region migration limitations.
+3. **Consider same-region migration**. If you're moving between regions, try moving to a different capacity in the same region first to rule out cross-region migration limitations.
 
 ### Error types
 
