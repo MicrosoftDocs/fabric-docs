@@ -1,7 +1,6 @@
 ---
 title: Manage shortcut connections
 description: How to update the shared cloud connections that are created to enable OneLake shortcuts.
-ms.reviewer: trolson
 ms.author: kgremban
 author: kgremban
 ms.topic: how-to

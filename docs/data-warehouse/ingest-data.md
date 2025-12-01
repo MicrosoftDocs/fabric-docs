@@ -21,7 +21,7 @@ You can ingest data into a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using o
 - **COPY (Transact-SQL)**: the COPY statement offers flexible, high-throughput data ingestion from an external Azure storage account. You can use the COPY statement as part of your existing ETL/ELT logic in Transact-SQL code. The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] also supports traditional BULK INSERT statement that is synonym for COPY INTO with classic loading options.
 - **Pipelines**: pipelines offer a code-free or low-code experience for data ingestion. Using pipelines, you can orchestrate robust workflows for a full Extract, Transform, Load (ETL) experience that includes activities to help prepare the destination environment, run custom Transact-SQL statements, perform lookups, or copy data from a source to a destination. 
 - **Dataflows**: an alternative to pipelines, dataflows enable easy data preparation, cleaning, and transformation using a code-free experience. 
-- **T-SQL ingestion**: you can use Transact-SQL features such as **INSERT...SELECT**, **SELECT INTO**, or **CREATE TABLE AS SELECT (CTAS)** to read data from table referencing other warehouses, lakehouses, or mirrored databases withing the same workspace, or to read data from **OPENROWSET** function that references files in the external Azure storage accounts.
+- **T-SQL ingestion**: you can use Transact-SQL features such as **INSERT...SELECT**, **SELECT INTO**, or **CREATE TABLE AS SELECT (CTAS)** to read data from table referencing other warehouses, lakehouses, or mirrored databases within the same workspace, or to read data from **OPENROWSET** function that references files in the external Azure storage accounts.
 
 ### Decide which data ingestion tool to use
 

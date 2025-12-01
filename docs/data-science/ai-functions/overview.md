@@ -6,14 +6,12 @@ author: jonburchel
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 11/13/2025
 ms.search.form: AI functions
 ai-usage: ai-assisted
 ---
 
-# Transform and enrich data with AI functions (preview)
-
-[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
+# Transform and enrich data with AI functions
 
 Microsoft Fabric AI Functions enable all business professionals (from developers to analysts) to transform and enrich their enterprise data using generative AI.
 
@@ -21,6 +19,7 @@ AI functions use industry-leading large language models (LLMs) for summarization
 
 - [`ai.analyze_sentiment`](#detect-sentiment-with-aianalyze_sentiment): Detect the emotional state of input text.
 - [`ai.classify`](#categorize-text-with-aiclassify): Categorize input text according to your labels.
+- [`ai.embed`](#generate-vector-embeddings-with-aiembed): Generate vector embeddings for input text.
 - [`ai.extract`](#extract-entities-with-aiextract): Extract specific types of information from input text (for example, locations or names).
 - [`ai.fix_grammar`](#fix-grammar-with-aifix_grammar): Correct the spelling, grammar, and punctuation of input text.
 - [`ai.generate_response`](#answer-custom-user-prompts-with-aigenerate_response): Generate responses based on your own instructions.
@@ -114,7 +113,6 @@ The `ai.analyze_sentiment` function invokes AI to identify whether the emotional
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         "The cleaning spray permanently stained my beautiful kitchen counter. Never again!",
@@ -131,7 +129,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("The cleaning spray permanently stained my beautiful kitchen counter. Never again!",),
@@ -156,7 +153,6 @@ The `ai.classify` function invokes AI to categorize input text according to cust
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         "This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",
@@ -172,7 +168,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",),
@@ -188,6 +183,43 @@ display(categories)
 
 :::image type="content" source="../media/ai-functions/classify-example-output.png" alt-text="Screenshot of a data frame with 'descriptions' and 'category' columns. The 'category' column lists each description’s category name." lightbox="../media/ai-functions/classify-example-output.png":::
 
+### Generate vector embeddings with ai.embed
+The `ai.embed` function invokes AI to generate vector embeddings for input text. For more detailed instructions about the use of `ai.embed` with pandas, see [this article](./pandas/embed.md). For `ai.embed` with PySpark, see [this article](./pyspark/embed.md).
+
+# [pandas](#tab/pandas)
+
+```python
+# This code uses AI. Always review output for mistakes. 
+
+df = pd.DataFrame([
+        "This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",
+        "Tired of friends judging your baking? With these handy-dandy measuring cups, you'll create culinary delights.",
+        "Enjoy this *BRAND NEW CAR!* A compact SUV perfect for the professional commuter!"
+    ], columns=["descriptions"])
+    
+df["embed"] = df["descriptions"].ai.embed()
+display(df)
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+# This code uses AI. Always review output for mistakes. 
+
+df = spark.createDataFrame([
+        ("This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",), 
+        ("Tired of friends judging your baking? With these handy-dandy measuring cups, you'll create culinary delights.",), 
+        ("Enjoy this *BRAND NEW CAR!* A compact SUV perfect for the professional commuter!",) 
+    ], ["descriptions"])
+
+embed = df.ai.embed(input_col="descriptions", output_col="embed")
+display(embed)
+```
+
+---
+
+:::image type="content" source="../media/ai-functions/embed-example-output.png" alt-text="Screenshot of a data frame with columns 'descriptions' and 'embed'. The 'embed' column contains embed vectors for the descriptions." lightbox="../media/ai-functions/embed-example-output.png":::
+
 ### Extract entities with ai.extract
 
 The `ai.extract` function invokes AI to scan input text and extract specific types of information that are designated by labels you choose (for example, locations or names). For more detailed instructions about the use of `ai.extract` with pandas, see [this article](./pandas/extract.md). For `ai.extract` with PySpark, see [this article](./pyspark/extract.md).
@@ -196,7 +228,6 @@ The `ai.extract` function invokes AI to scan input text and extract specific typ
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         "MJ Lee lives in Tucson, AZ, and works as a software engineer for Microsoft.",
@@ -211,7 +242,6 @@ display(df_entities)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("MJ Lee lives in Tucson, AZ, and works as a software engineer for Microsoft.",),
@@ -234,7 +264,6 @@ The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and p
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         "There are an error here.",
@@ -250,7 +279,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("There are an error here.",),
@@ -274,7 +302,6 @@ The `ai.generate_response` function invokes AI to generate custom text based on 
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         ("Scarves"),
@@ -290,7 +317,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("Scarves",),
@@ -314,7 +340,6 @@ The `ai.similarity` function compares each input text value either to one common
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([ 
         ("Bill Gates", "Technology"), 
@@ -330,7 +355,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("Bill Gates", "Technology"), 
@@ -354,7 +378,6 @@ The `ai.summarize` function invokes AI to generate summaries of input text (eith
 
 ```python
 # This code uses AI. Always review output for mistakes.
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df= pd.DataFrame([
         ("Microsoft Teams", "2017",
@@ -379,7 +402,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("Microsoft Teams", "2017",
@@ -412,7 +434,6 @@ The `ai.translate` function invokes AI to translate input text to a new language
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = pd.DataFrame([
         "Hello! How are you doing today?", 
@@ -428,7 +449,6 @@ display(df)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("Hello! How are you doing today?",),
@@ -443,6 +463,22 @@ display(translations)
 ---
 
 :::image type="content" source="../media/ai-functions/translate-example-output.png" alt-text="Screenshot of a data frame with columns 'text' and 'translations'. The 'translations' column contains the text translated to Spanish." lightbox="../media/ai-functions/translate-example-output.png":::
+
+## View usage statistics with ai.stats
+
+Fabric AI functions provide a built-in way to inspect usage and execution statistics for any AI-generated Series or DataFrame. You can access these metrics by calling `ai.stats` on the result returned by an AI function.
+
+`ai.stats` returns a DataFrame with the following columns:
+
+- num_successful – Number of rows processed successfully by the AI function.
+- num_exceptions – Number of rows that encountered an exception during execution. These rows are represented as instances of `aifunc.ExceptionResult`.
+- num_unevaluated – Number of rows that were not processed because an earlier exception made it impossible to continue evaluation. These rows are instances of aifunc.NotEvaluatedResult.
+- num_harmful – Number of rows blocked by the Azure OpenAI content filter. These rows are instances of `aifunc.FilterResult`.
+- prompt_tokens – Total number of input tokens used for the AI function call.
+- completion_tokens – Total number of output tokens generated by the model.
+
+> [!TIP]
+> You can call `ai.stats` on any Series or DataFrame returned by an AI function. This can help you track usage, understand error patterns, and monitor token consumption.
 
 ## Related content
 

@@ -5,7 +5,7 @@ author: billmath
 ms.author: billmath
 ms.service: fabric
 ms.topic: troubleshooting-problem-resolution
-ms.date: 02/16/2025
+ms.date: 11/21/2025
 
 #customer intent: As a developer, I want to learn how to troubleshoot variable libraries so that I can manage my content lifecycle.
 
@@ -17,16 +17,6 @@ This article provides solutions for common errors and problems that you might en
 
 
 ## Failure to manage a variable library
-
-### I can't find the icon for creating a variable library
-
-**Description of the problem**: I want to create a variable library, but I can't find the **Create** icon.
-
-**Cause**: The **Create** icon is available only if the **Users can create variable libraries** [tenant switch](../../admin/service-admin-portal-microsoft-fabric-tenant-settings.md) is enabled in the admin portal.
-
-**Solution**: If you're an admin, go to the admin portal and enable the **Users can create variable libraries** tenant switch. If you're not an admin, contact your admin. Wait awhile, refresh the browser, clean the cache, and check again. Note that the change can take up to an hour to take effect.
-
-:::image type="content" source="./media/variable-library-troubleshoot/create-variable-library-enabled.png" alt-text="Screenshot of the tenant switch that enables users to create variable libraries.":::
 
 ### I can't create a variable library item
 

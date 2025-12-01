@@ -13,8 +13,6 @@ ms.custom:
 
 [Mirroring in Fabric](../mirroring/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored SQL Server database, which creates a read-only, continuously replicated copy of your SQL Server data in OneLake.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 - Install or use an existing SQL Server instance, on-premises or in the cloud.
@@ -25,9 +23,9 @@ ms.custom:
 - Fabric tenant settings are required. Ensure the following two [Fabric Tenant settings](../admin/about-tenant-settings.md) are enabled:
     - [Service principals can use Fabric APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings)
-- To mirror data from SQL Server 2025, you need to have a member or admin role in your workspace when create a mirrored database from the Fabric portal. During creation, the managed identity of SQL Server is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
+- To mirror data from SQL Server 2025, you need to have a member or admin role in your workspace when you create a mirrored database from the Fabric portal. During creation, the managed identity of SQL Server is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
 - Review the [Platform limitations in Microsoft Fabric mirrored databases From SQL Server](sql-server-limitations.md#platform-limitations).
-- An [on-premises data gateway](/data-integration/gateway/service-gateway-install) in your SQL Server instance's network. The gateway machine's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
+- An [on-premises data gateway](/data-integration/gateway/service-gateway-install) or [a virtual network data gateway](/data-integration/vnet/create-data-gateways) in your SQL Server instance's network. The data gateway's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
 
 ### Database principal for Fabric
 
@@ -45,10 +43,11 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
 
 Starting in SQL Server 2025, the permissions required for the Fabric login are:
 
-- Membership in the server role `##MS_ServerStateReader##`
 - The following permissions in the user database:
-    - SELECT
-    - ALTER ANY EXTERNAL MIRROR
+     - SELECT
+     - ALTER ANY EXTERNAL MIRROR
+     - VIEW DATABASE PERFORMANCE STATE
+     - VIEW DATABASE SECURITY STATE
 
 1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
@@ -62,8 +61,6 @@ Starting in SQL Server 2025, the permissions required for the Fabric login are:
    --Run in the master database
    USE [master];
    CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
-
-   ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [fabric_login];
    ```
 
    - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account (recommended). Run the following T-SQL script in the `master` database:
@@ -72,8 +69,6 @@ Starting in SQL Server 2025, the permissions required for the Fabric login are:
    --Run in the master database
    USE [master];
    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
-    
-   ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
    ```
 
 1. Connect to the user database your plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary:
@@ -84,7 +79,7 @@ Starting in SQL Server 2025, the permissions required for the Fabric login are:
     --Run in the user database
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
 
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE
        TO [fabric_user];
     ```
     
@@ -94,7 +89,7 @@ Starting in SQL Server 2025, the permissions required for the Fabric login are:
     --Run in the user database
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
 
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE
        TO [bob@contoso.com];
     ```
 
@@ -217,9 +212,11 @@ However, for SQL Server instances running in an Always On availability group, th
 
        :::image type="content" source="media/sql-server-tutorial/add-people.png" alt-text="Screenshot of the Add people dialogue, where you add each node to the Fabric Contributor role.":::
 
-### Configure the on-premises data gateway
+### Configure the on-premises or virtual network data gateway
 
-Check your networking requirements for Fabric to access your SQL Server. You need to [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the on-premises gateway machine's network can [connect to the SQL Server instance](/troubleshoot/sql/database-engine/connect/resolve-connectivity-errors-overview). For more information, see [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
+Check your networking requirements for Fabric to access your SQL Server. You need to [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) or [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the on-premises gateway machine's network can [connect to the SQL Server instance](/troubleshoot/sql/database-engine/connect/resolve-connectivity-errors-overview). For more information, see [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
+
+To use on-premises data gateway:
 
 1. [Download On-premises data gateway from the Official Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53127&msockid=0448b52333796d6425f3a0b332c36cba).
 1. Start installation. Follow instructions in [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install).
@@ -248,7 +245,7 @@ To enable Mirroring, you need to connect to the SQL Server instance from Fabric 
    - **Database**: Enter the name of your SQL Server.
       - **Connection**: Create new connection.
       - **Connection name**: An automatic name is provided. You can change it.
-      - **Data gateway:** Select the on-premises data gateway you set up according to your scenario.
+      - **Data gateway:** Select the data gateway you set up according to your scenario.
       - **Authentication kind**: Choose the authentication method and provide the principal you set up in [Use a login and mapped database user](#use-a-login-and-mapped-database-user).
       - Select the **Use encrypted connection** checkbox.
 1. Select **Connect**.
@@ -260,9 +257,11 @@ To enable Mirroring, you need to connect to the SQL Server instance from Fabric 
 1. The SQL Server Agent service must be running. It is highly recommended to configure Automatic Startup.
 1. Changed Data Capture (CDC) will be automatically enabled and configured by Fabric Mirroring for each desired table in your database. Review the [Known issues and errors with CDC](/sql/relational-databases/track-changes/known-issues-and-errors-change-data-capture). CDC requires that each table has a primary key.
 
-### Configure the on-premises data gateway
+### Configure the on-premises or virtual network data gateway
 
-Check your networking requirements for Fabric to access your SQL Server. You need to [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the on-premises gateway machine's network can [connect to the SQL Server instance](/troubleshoot/sql/database-engine/connect/resolve-connectivity-errors-overview). For more information, see [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
+Check your networking requirements for Fabric to access your SQL Server. You need to [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) or [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the data gateway's network can [connect to the SQL Server instance](/troubleshoot/sql/database-engine/connect/resolve-connectivity-errors-overview). For more information, see [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
+
+To use on-premises data gateway:
 
 1. Download the on-premises data gateway, see [Download the on-premises data gateway from the Official Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53127&msockid=0448b52333796d6425f3a0b332c36cba).
 1. Start installation. Follow instructions in [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install).

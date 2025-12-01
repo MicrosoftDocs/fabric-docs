@@ -66,15 +66,22 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
 
 1. The **Configure mirroring** screen allows you to mirror all data in the database, by default.
 
-    - **Mirror all data** means that any new tables created after Mirroring is started will be mirrored.
+    - **Mirror all data** means that any new tables created after Mirroring is started will be mirrored. You may choose to mirror all managed and Iceberg tables, or just all managed tables (skipping any new Iceberg tables).
     <!--  -->
 
     - Optionally, choose only certain objects to mirror. Disable the **Mirror all data** option, then select individual tables from your database.
     <!--  -->
 
+    > [!NOTE]
+    > If you choose to mirror any Iceberg tables, you will need to know how to connect to the underlying storage of the Iceberg tables. One storage connection will be required, so be sure to only select Iceberg tables that are reachable via the same storage connection.
+    > 
+    > To find the storage associated with an Iceberg table in Snowflake, run the [`SYSTEM$GET_ICEBERG_TABLE_INFORMATION`](https://docs.snowflake.com/en/sql-reference/functions/system_get_iceberg_table_information) system function in Snowflake.
+
     For this tutorial, we select the **Mirror all data** option.
 
-1. Select **Mirror database**. Mirroring begins.
+1. Select **Connect**. If you chose to mirror any Iceberg tables, enter the connection information for the storage containing your Iceberg tables. 
+
+1. Name your mirrored database, then select **Create mirrored database**. Mirroring begins.
 
     :::image type="content" source="media/snowflake-tutorial/mirrored-snowflake-is-running.png" alt-text="Screenshot from the Fabric portal showing that mirrored snowflake is running. The Monitor mirroring button is visible.":::
 

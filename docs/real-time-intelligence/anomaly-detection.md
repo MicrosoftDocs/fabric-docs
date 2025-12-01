@@ -5,6 +5,7 @@ ms.reviewer: tessarhurr
 ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: how-to
+ms.subservice: rti-anomaly-detector
 ms.custom: 
 ms.date: 11/02/2025
 ms.search.form: Anomaly detection how-to

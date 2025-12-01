@@ -37,12 +37,14 @@ It fits into a reactive, event-driven architecture where data flows continuously
 - **Actions** 
 
     When a rule condition is satisfied, Activator can trigger:
-  - pipelines, notebooks, or spark job definition in Fabric.
-    
-    - External actions via Power Automate.
-    - Send Teams message to an individual, group, or channel 
-    - Send e-mail
-    
+  - pipelines, notebooks, functions, or spark job definition in Fabric.
+  
+  - External actions via Power Automate.
+  
+  - Send Teams message to an individual, group, or channel 
+  
+  - Send e-mail
+  
 - **Alert management and rule Testing** 
 
     Activator provides preview and impact estimates before rules are activated, showing how often a rule would have fired on historical data. These features help prevent alert spam and over-firing. Internally, state transitions are managed to suppress noise (for example, a value must cross a threshold, not just remain under it).
@@ -65,6 +67,8 @@ Activator instances are deployed per workspace and bound to specific data source
 | Power Automate | Allows event-driven ops via templated or custom actions |
 | Fabric events  | Supplies events that are happening within Fabric like refreshing of a semantic model or failing of a pipeline​ |
 | Notebooks      | Notebook execution can be triggered by an Activator |
+| Spark Job Definition| Spark job execution can be triggered by an Activator|
+| User Data Function| Function execution can be triggered by an Activator|
 
 ### Activator as an orchestrator
 Effective use of Activator in enterprise-grade real-time architectures requires intentional orchestration across Microsoft Fabric components and performance tuning for event volume, object cardinality, and rule complexity. This section explores how to orchestrate Activator with other services and how to optimize detection logic and runtime behavior to support low-latency, cost-efficient automation at scale.
@@ -131,8 +135,11 @@ When a rule’s conditions are met and an action is initiated, then the rule is 
 
 - Fabric pipelines (for data movement, enrichment)
 - Fabric notebooks (for machine-learning scoring, diagnostics)
+- Fabric spark jobs (for batch/streaming jobs)
+- Fabric functions (for custom business logic with code)
 - Power Automate flows (for business process integration)
 - Teams notifications (using template-based messaging)
+- Email notifications
 
 Activator emits a trigger message with the current object state and rule metadata, and actions are nonblocking, that is, and Activator doesn't wait for completions of actions to enable scalable asynchronous flows.
 

@@ -1,6 +1,5 @@
 ---
 title: Create and Manage Event Schemas in Fabric Real-Time Hub
-ms.subservice: rti-hub
 ms.service: fabric
 ms.reviewer: spelluru
 description: Learn how to create and manage event schemas in Fabric Real-Time Hub with step-by-step guidance for registration, schema building, and organization.

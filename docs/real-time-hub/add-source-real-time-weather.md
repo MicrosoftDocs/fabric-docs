@@ -12,6 +12,8 @@ This article describes how to add a real-time weather event source in Fabric Rea
 
 [!INCLUDE [real-time-weather-source-description-prerequisites](../real-time-intelligence/event-streams/includes/real-time-weather-source-description-prerequisites.md)]
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Select Real-time weather as data source type

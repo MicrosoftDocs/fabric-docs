@@ -18,6 +18,8 @@ This article describes how to get events from sample data sources into Real-Time
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Add sample data as a source

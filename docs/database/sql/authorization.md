@@ -22,7 +22,7 @@ The access controls at these two different levels work together.
 
 - To [connect](connect.md) to a database, a user must have at least the [Read permission in Fabric](#item-permissions) for the Fabric database item.
 - You can grant access to specific capabilities or data using Fabric access controls, SQL access controls, or both. A permission to connect to the database can only be granted with Fabric roles or permissions.
-- Denying access (with the [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) Transact-SQL statement) in the database always takes priority.
+- Denying access (with the [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric-sqldb&preserve-view=true) Transact-SQL statement) in the database always takes priority.
 
 > [!NOTE]
 > Microsoft Purview protection policies can augment effective permission for database users. If your organization uses Microsoft Purview with Microsoft Fabric, see [Protect sensitive data in SQL database with Microsoft Purview protection policies](protect-databases-with-protection-policies.md).
@@ -76,13 +76,13 @@ You can also grant Read, ReadAll, and ReadData permissions for an individual dat
 
 The following SQL concepts allow much more granular access control in comparison to Fabric workspace roles and item permissions.
 
-- [Database-level roles](/sql/relational-databases/security/authentication-access/database-level-roles?view=fabric&preserve-view=true). There are two types of database-level roles: *fixed database roles* that are predefined in the database, and *user-defined database roles* that you can create.
+- [Database-level roles](/sql/relational-databases/security/authentication-access/database-level-roles?view=fabric-sqldb&preserve-view=true). There are two types of database-level roles: *fixed database roles* that are predefined in the database, and *user-defined database roles* that you can create.
    - You can manage membership of database-level roles and define user-defined roles for common scenarios in Fabric portal.
       - For more information, see [Manage SQL database-level roles from Fabric portal](configure-sql-access-controls.md#manage-sql-database-level-roles-from-fabric-portal).
    - You can also manage role membership and role definitions using Transact-SQL.
-      - To add and remove users to a database role, use the `ADD MEMBER` and `DROP MEMBER` options of the [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?view=fabric&preserve-view=true) statement. To manage definitions of user-defined roles, use [CREATE ROLE](/sql/t-sql/statements/create-role-transact-sql?view=fabric&preserve-view=true), [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?view=fabric&preserve-view=true), and [DROP ROLE](/sql/t-sql/statements/drop-role-transact-sql?view=fabric&preserve-view=true).
-- [SQL permissions](/sql/relational-databases/security/permissions-database-engine?view=fabric&preserve-view=true). You can manage permissions for database users or database roles by using the [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) Transact-SQL statements.
-- [Row-level security (RLS)](/sql/relational-databases/security/row-level-security?view=fabric&preserve-view=true) allows you to control access to specific rows in a table.
+      - To add and remove users to a database role, use the `ADD MEMBER` and `DROP MEMBER` options of the [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?view=fabric-sqldb&preserve-view=true) statement. To manage definitions of user-defined roles, use [CREATE ROLE](/sql/t-sql/statements/create-role-transact-sql?view=fabric-sqldb&preserve-view=true), [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?view=fabric-sqldb&preserve-view=true), and [DROP ROLE](/sql/t-sql/statements/drop-role-transact-sql?view=fabric-sqldb&preserve-view=true).
+- [SQL permissions](/sql/relational-databases/security/permissions-database-engine?view=fabric-sqldb&preserve-view=true). You can manage permissions for database users or database roles by using the [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric-sqldb&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric-sqldb&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric-sqldb&preserve-view=true) Transact-SQL statements.
+- [Row-level security (RLS)](/sql/relational-databases/security/row-level-security?view=fabric-sqldb&preserve-view=true) allows you to control access to specific rows in a table.
 
 For more information, see [Configure granular access control for a SQL database](configure-sql-access-controls.md).
 

@@ -5,6 +5,7 @@ ms.reviewer: akshayd
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
+ms.subservice: rti-eventhouse
 ms.custom:
 ms.date: 11/19/2024
 ---

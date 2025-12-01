@@ -105,12 +105,10 @@ items:
             items:
               - name: Enable workspace outbound access protection
                 href: workspace-outbound-access-protection-set-up.md
-              - name: Create allowlist using managed private endpoints
+              - name: Create an allow list using managed private endpoints
                 href: workspace-outbound-access-protection-allow-list-endpoint.md
-          - name: Scenarios
+          - name: Scenarios by Fabric workload
             items:
-              - name: Workspace outbound access protection scenarios
-                href: workspace-outbound-access-protection-scenarios.md
               - name: Data Engineering
                 href: workspace-outbound-access-protection-data-engineering.md
               - name: Data Warehouse
