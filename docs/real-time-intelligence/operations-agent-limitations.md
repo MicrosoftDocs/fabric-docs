@@ -51,4 +51,6 @@ As with any AI-based product, giving clear instructions and easy-to-understand d
 
 1. When the agent detects data matching its rules, it tracks the recommended actions and the user's response as an "operation." If the user doesn't respond (approve or reject) within three days, the operation is automatically canceled. After this period, you can't interact with or approve the action.
 
+1. Operations agent is available in Fabric regions excluding South Central US and East US.
+
 1. If your Fabric tenant and capacity are in different regions, you may run into errors when configuring Power Automate actions. Until a fix is available, ensure your workspace capacity is in the same region as your Fabric tenant to use the operations agent.
