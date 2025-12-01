@@ -4,7 +4,7 @@ description: Learn about Spark job definition deployment pipeline integration, i
 ms.reviewer: qixwang
 ms.author: eur
 author: eric-urban
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/31/2025
 ms.search.form: Spark job definition deployment pipeline
 ---

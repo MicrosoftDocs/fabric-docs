@@ -6,6 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange
+ms.subservice: rti-eventhouse
 ms.date: 07/31/2025
 ms.search.form: Get data in a KQL Database
 ---

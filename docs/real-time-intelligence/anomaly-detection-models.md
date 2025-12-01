@@ -5,6 +5,7 @@ ms.author: v-hzargari
 author: hzargari-ms
 ms.reviewer: tessarhurr
 ms.topic: conceptual
+ms.subservice: rti-anomaly-detector
 ms.custom: 
 ms.date: 09/15/2025
 ms.search.form: Anomaly detection models specifications
