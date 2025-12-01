@@ -124,7 +124,7 @@ d. XMLA-based tools to deploy a semantic model programmatically (see [Semantic m
 
 9.	In the Some Steps didn’t Complete dialog box, click on Open Model View. Note that the semantic model cannot yet connect to the SQL Analytics Endpoint in the inbound restricted target workspace. You complete the connection configuration in Step 4 below.
 
-### Option 3b: Using the Web modelling experience
+### Option 3b: Using the Web modeling experience
 
 1.	In the source workspace, click on New item, and then in the New item pane, click on the Semantic model tile.
 
