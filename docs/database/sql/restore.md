@@ -15,8 +15,6 @@ ms.custom: sfi-image-nochange
 
 This article provides steps to restore any database from a backup in SQL database in Microsoft Fabric.
 
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Point-in-time restore
 
 [Automated database backups](backup.md) help protect your databases from user and application errors, accidental database deletion, and prolonged outages. This is a built-in capability that SQL database in Fabric provides to protect your data from unwanted modifications. Point-in-time restore (PITR) is a capability to recover database into a specific point in time within the retention period. With a database restore, you create a new SQL database in the same Workspace, from backups.
@@ -34,7 +32,7 @@ For a large or very active database, the restore might take several hours. When 
 
 ### Cost
 
-In the current preview, there's no cost or consumption of CPU resources associated with restoring a database.
+Currently, there's no cost or consumption of CPU resources associated with restoring a database.
 
 Initiating a point-in-time restore can bring the database from a paused state to online state and could incur consumption units.
 

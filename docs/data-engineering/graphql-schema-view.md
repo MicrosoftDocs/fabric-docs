@@ -5,7 +5,7 @@ description: Learn about the Fabric API for GraphQL schema view and the Schema e
 ms.reviewer: sngun
 ms.author: eur
 author: eric-urban
-ms.topic: conceptual
+ms.topic: article
 ms.custom: null
 ms.search.form: GrpahQL schema view
 ms.date: 08/21/2025

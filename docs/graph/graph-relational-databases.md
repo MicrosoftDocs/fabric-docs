@@ -2,12 +2,10 @@
 title:  Compare Graph and Relational Databases
 description: Compare graph databases and relational databases, highlighting key differences, use cases, and advantages in analytics.
 ms.topic: concept-article
-ms.date: 10/09/2025
+ms.date: 11/18/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam
-ms.service: fabric
-ms.subservice: graph
 ---
 
 #  Compare graph and relational databases

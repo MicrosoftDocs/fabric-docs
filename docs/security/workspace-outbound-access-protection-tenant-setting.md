@@ -13,9 +13,9 @@ ms.date: 11/10/2025
 
 # Manage admin access to workspace outbound access protection settings
 
-Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. Admins can block all outbound connections, and then allow only approved connections to external resources through secure links between Fabric and virtual networks. [Learn more](./workspace-outbound-access-protection-overview.md).
+Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. With this feature, admins can block all outbound connections, and then allow only approved connections to external resources through secure connections. [Learn more](./workspace-outbound-access-protection-overview.md).
 
-To allow workspace admins to manage outbound access protection, a Fabric administrator must first enable the **Configure workspace-level outbound network rules** tenant setting in the Fabric admin center. This setting is off by default and must be enabled before workspace admins can configure outbound access protection.
+Before workspace admins can manage outbound access protection, a Fabric administrator must enable the **Configure workspace-level outbound network rules** tenant setting. By default, this setting is turned off and must be enabled to allow workspace admins to configure outbound access protection.
 
 ## Prerequisites
 
@@ -23,9 +23,11 @@ To allow workspace admins to manage outbound access protection, a Fabric adminis
 
 ## Enable workspace outbound access protection on your tenant
 
-1. [Open the admin portal and go to the tenant settings](/fabric/admin/about-tenant-settings#how-to-get-to-the-tenant-settings).
+1. Sign in to [Fabric](https://app.fabric.microsoft.com) using your admin account credentials.
 
-1. Find and expand the **Configure workspace-level outbound network rules** tenant setting.
+1. Select the **Settings** (gear) icon, and then select **Admin portal**.
+
+1. In the **Tenant settings**, find and expand the **Configure workspace-level outbound network rules** tenant setting.
 
 1. Switch the toggle to **Enabled**.
 

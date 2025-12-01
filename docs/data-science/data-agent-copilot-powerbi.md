@@ -64,7 +64,7 @@ When you select a Fabric Data Agent, Copilot in Power BI proceeds with these ste
 
 1. Rephrase the question: Copilot in Power BI might rephrase a question to fit the context or to improve clarity, based on the conversation.
 1. Send the query: Copilot in Power BI sends the question to the selected Fabric Data Agent.
-1. Fabric Data Agent answer retrieval: The data agent identifies the most relevant data source (lakehouse, warehouse, semantic model, or KQL database) and queries that data source. Data security protocols - for example, Row-Level Security (RLS) and Column-Level Security (CLS) are enforced based on user permissions.
+1. Fabric Data Agent answer retrieval: The data agent identifies the most relevant data source (lakehouse, warehouse, semantic model, KQL database, or ontology) and queries that data source. Data security protocols - for example, Row-Level Security (RLS) and Column-Level Security (CLS) are enforced based on user permissions.
 1. Response delivery: The Fabric Data Agent sends the answer back to Copilot in Power BI.
 1. Final user presentation: Copilot in Power BI then presents the answer directly to the user in the conversation interface.
 

@@ -4,6 +4,7 @@ description: Overview on learning how to use the query acceleration policy over 
 ms.reviewer: sharmaanshul
 ms.author: spelluru
 author: spelluru
+ms.subservice: rti-eventhouse
 ms.topic: conceptual
 ms.custom:
 ms.date: 11/19/2024

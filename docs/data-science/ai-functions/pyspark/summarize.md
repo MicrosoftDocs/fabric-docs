@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 11/13/2025
 ms.search.form: AI functions
 ---
 
@@ -47,8 +47,9 @@ df.ai.summarize(output_col="summaries")
 | Name | Description |
 |---|---|
 | `input_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of an existing column with input text values to summarize. If you don't set this parameter, the function summarizes values across all columns in the DataFrame, instead of values from a specific column. |
-| `output_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store summaries for each input text row. If you don't set this parameter, a default name generates for the output column. |
+| `instructions` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains more context for the AI model, such as specifying output length, tone, or more. More precise instructions will yield better results. |
 | `error_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each input text row. If you don't set this parameter, a default name generates for the error column. If an input row has no errors, the value in this column is `null`. |
+| `output_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store summaries for each input text row. If you don't set this parameter, a default name generates for the output column. |
 
 ## Returns
 
@@ -59,8 +60,7 @@ The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/ap
 # [Summarize values from a single column](#tab/column-summary)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = spark.createDataFrame([
         ("Microsoft Teams", "2017",
@@ -88,8 +88,7 @@ This example code cell provides the following output:
 # [Summarize values across all columns](#tab/dataframe-summary)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = spark.createDataFrame([
         ("Microsoft Teams", "2017",
@@ -119,13 +118,15 @@ This example code cell provides the following output:
 ## Related content
 
 - Use [ai.summarize with pandas](../pandas/summarize.md).
-- Calculate similarity with [ai.similarity](./similarity.md).
-- Categorize text with [ai.classify](./classify.md).
 - Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
+- Categorize text with [ai.classify](./classify.md).
+- Generate vector embeddings with [ai.embed](./embed.md).
 - Extract entities with [ai_extract](./extract.md).
 - Fix grammar with [ai.fix_grammar](./fix-grammar.md).
-- Translate text with [ai.translate](./translate.md).
 - Answer custom user prompts with [ai.generate_response](./generate-response.md).
+- Calculate similarity with [ai.similarity](./similarity.md).
+- Translate text with [ai.translate](./translate.md).
+
 - Learn more about the [full set of AI functions](../overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

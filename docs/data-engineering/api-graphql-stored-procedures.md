@@ -5,7 +5,7 @@ author: eric-urban
 ms.author: eur
 ms.reviewer: edlima
 ms.date: 06/5/2025
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
 ms.search.form: 
 ---

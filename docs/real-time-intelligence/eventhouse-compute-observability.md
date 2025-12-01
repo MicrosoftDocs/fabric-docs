@@ -5,6 +5,7 @@ ms.reviewer: spelluru
 ms.author: bwatts
 author: bwatts64
 ms.topic: how-to
+ms.subservice: rti-eventhouse
 ms.date: 07/01/2025
 ---
 

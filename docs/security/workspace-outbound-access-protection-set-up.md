@@ -1,11 +1,11 @@
 ---
 title: Enable workspace outbound access protection
-description: "Learn how to set up workspace outbound access protection on Microsoft Fabric workspaces."
+description: "Learn how to enable the workspace outbound access protection on Microsoft Fabric workspaces."
 author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to
-ms.date: 11/06/2025
+ms.date: 11/10/2025
 
 #customer intent: As a data platform administrator, I want to set up outbound access protection for my workspace so that I can control and secure how my workspace resources connect to external networks.
 
@@ -15,7 +15,7 @@ ms.date: 11/06/2025
 
 Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. Admins can block all outbound connections, and then allow only approved connections to external resources through secure links between Fabric and virtual networks. [Learn more](./workspace-outbound-access-protection-overview.md).
 
-This article explains how to configure outbound access protection for your Fabric workspaces to block all outbound connections by default, and then enable outbound access through managed private endpoints.
+This article explains how to configure outbound access protection for your Fabric workspaces to block all outbound connections by default. After completing the steps in this article, you can enable outbound access through managed private endpoints or data connection rules.
 
 ## Prerequisites
 
@@ -36,13 +36,16 @@ This article explains how to configure outbound access protection for your Fabri
 
 To enable workspace outbound access protection by using the Fabric portal, follow these steps:
 
-1. Sign in to Fabric with an account that has the Admin role in the workspace where you want to set up outbound access protection.
+1. Sign in to [Fabric](https://app.fabric.microsoft.com) with an account that has the Admin role in the workspace where you want to set up outbound access protection.
 
-1. In the workspace where you want to set up outbound access protection, go to **Workspace settings** -> **Network Security**. Under **Outbound access protection**, turn on **Block outbound public access**.
+1. In the workspace where you want to set up outbound access protection, go to **Workspace settings** > **Network Security**.
+
+1. Under **Outbound access protection**, switch the **Block outbound public access** toggle to **On**.
  
    :::image type="content" source="media/workspace-outbound-access-protection-set-up/network-security-settings.png" alt-text="Screenshot showing outbound access protection settings." lightbox="media/workspace-outbound-access-protection-set-up/network-security-settings.png":::
 
-1. If you want to allow Git integration, turn the **Allow Git integration** toggle to **On**. Git integration is blocked by default when **Block outbound public access** is enabled, but you can enable Git integration for the workspace so its content (like notebooks, dataflows, Power BI reports, etc.) can sync with an external Git repository (GitHub or Azure DevOps). [Learn more](/fabric/cicd/cicd-security)
+   > [!NOTE]
+   > If you want to allow Git integration, turn the **Allow Git integration** toggle to **On**. Git integration is blocked by default when **Block outbound public access** is enabled, but you can enable Git integration for the workspace so its content (like notebooks, dataflows, Power BI reports, etc.) can sync with an external Git repository (GitHub or Azure DevOps). [Learn more](/fabric/cicd/cicd-security)
 
 ### [API](#tab/api-1)
 
@@ -71,8 +74,8 @@ In the request body, set `outbound` to `Deny`. Also specify the `inbound` value 
 
 ---
 
-Now that outbound public access is blocked, you can create an allowlist of approved connections to external resources using managed private endpoints.
+After outbound public access is blocked, you can create an allow list of approved connections to external resources using either data connection rules or managed private endpoints.
 
 ## Next steps
 
-- [Create an allowlist with managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md)
+- [Create an allow list with managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md)

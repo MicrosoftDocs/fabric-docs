@@ -16,8 +16,6 @@ This article shows you how to add a MongoDB Change Data Capture(CDC) source to a
 
 The MongoDB CDC Connector for Eventstream allows you to stream Change Data Capture (CDC) events from MongoDB into Fabric Eventstream. It supports multiple MongoDB deployment types, including on-premises, cloud-hosted, and MongoDB Atlas, enabling a wide range of CDC scenarios. With this connector, you can capture real-time database changes and stream them directly into Eventstream for immediate processing and analytics.
 
-[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
-
 ## Prerequisites
 
 - A workspace in Fabric capacity or Trial license mode, with **Contributor** or higher permissions.  

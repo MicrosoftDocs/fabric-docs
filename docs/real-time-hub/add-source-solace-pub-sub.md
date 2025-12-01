@@ -12,6 +12,8 @@ This article describes how to add a Solace PubSub+ queue or topic as an event so
 
 [!INCLUDE [solace-pub-sub-source-description-prerequisites](../real-time-intelligence/event-streams/includes/solace-pub-sub-source-description-prerequisites.md)]
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Select Solace PubSub+ as data source type

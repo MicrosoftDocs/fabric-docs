@@ -1,6 +1,6 @@
 ---
-title: Connect Event Grid Namespace Source to Eventstream
-description: Learn how to add Azure Event Grid namespace to Microsoft Fabric Eventstream for real-time event and MQTT data ingestion. Connect IoT telemetry and streaming events seamlessly with step-by-step guidance.
+title: Connect an Event Grid Namespace Source to an Eventstream
+description: Learn how to add Azure Event Grid namespace to a Microsoft Fabric eventstream for real-time event and MQTT data ingestion.
 author: spelluru
 ms.author: spelluru
 ms.topic: how-to
@@ -10,69 +10,84 @@ ms.custom:
   - ai-seo-date:07/24/2025
   - ai-gen-description
 ms.date: 09/08/2025
-#customer intent: As a user planning IoT telemetry monitoring, I want to connect Azure Event Grid Namespace to Microsoft Fabric Eventstream so that I can process MQTT messages and standard events for real-time analytics.
+#customer intent: As a user who's planning IoT data monitoring, I want to connect an Azure Event Grid namespace to a Microsoft Fabric eventstream so that I can process MQTT messages and standard events for real-time analytics.
 ---
 
-# Add Azure Event Grid namespace to an eventstream for real-time event and MQTT data ingestion
-In today’s connected world, organizations rely on streaming event data and IoT telemetry for real-time analytics, monitoring, and decision-making. With the new capability to add an Azure Event Grid Namespace as a source to Eventstream, you can seamlessly bring both standard events and MQTT messages into Microsoft Fabric. This integration enables scenarios like industrial IoT monitoring, connected vehicle telemetry, and enterprise system integration without complex custom pipelines. By bridging Azure Event Grid and Fabric Eventstream, you gain a powerful, scalable foundation to process millions of events per second and unlock insights instantly across your data estate.
+# Add an Event Grid namespace to an eventstream for real-time event and MQTT data ingestion
 
-This article shows you how to add an Azure Event Grid Namespace source to an eventstream. 
+In today's connected world, organizations rely on streaming event data and Internet of Things (IoT) data for real-time analytics, monitoring, and decision-making. With the new capability to add an Azure Event Grid namespace as a source to an eventstream, you can seamlessly bring both standard events and Message Queuing Telemetry Transport (MQTT) messages into Microsoft Fabric.
+
+This integration enables scenarios like industrial IoT monitoring, connected vehicle data, and enterprise system integration without complex custom pipelines. By bridging Event Grid and Fabric eventstreams, you gain a powerful, scalable foundation to process millions of events per second and unlock insights instantly across your data estate.
+
+This article shows you how to add an Event Grid namespace source to an eventstream.
 
 ## Prerequisites
 
-- Create or have an Azure Event Grid namespace with [managed identity](/azure/event-grid/event-grid-namespace-managed-identity) enabled. 
-- A workspace that is not ‘My workspace’, operating in Fabric capacity or Trial license mode, is required, together with the following access.:
-    - If you have Member (or higher) permissions, no extra setup is needed. 
-    - If you don’t have Member permissions, ask a colleague with Member access to assign Contributor access to the Event Grid service principal before you add the source:
+- Create or have an Event Grid namespace with [managed identity](/azure/event-grid/event-grid-namespace-managed-identity) enabled.
 
-        1. Open the workspace [Manage access](../../fundamentals/give-access-workspaces.md) pane.
-        1. Select Add people or groups.
-        1. Enter the Event Grid namespace name and choose the matching service principal.
-        1. Assign the Contributor role and select Add.
-    
-- Enable [MQTT](/azure/event-grid/mqtt-publish-and-subscribe-portal) and [routing](/azure/event-grid/mqtt-routing) on the Event Grid namespace, if you want to receive Message Queuing Telemetry Transport (MQTT) data. 
-- [Create an eventstream](create-manage-an-eventstream.md) if you don't have one. 
+- A workspace that's not **My workspace**, operating in a Fabric capacity or trial license mode, is required.
 
-To ensure the managed identity of the Event Grid namespace has the required permissions, configure the necessary settings in the **Admin portal**：
+- If you have Member (or higher) permissions, no extra setup is needed. If you don't have Member permissions, ask a colleague with Member access to assign Contributor access to the Event Grid service principal before you add the source:
 
-- Select **Settings** (gear icon) in the top-right corner.
-- Select **Admin portal** in the **Governance and insights** section. 
+  1. In the workspace, open the [Manage access](../../fundamentals/give-access-workspaces.md) pane.
+  1. Select **Add people or groups**.
+  1. Enter the Event Grid namespace name and choose the matching service principal.
+  1. Assign the Contributor role and select **Add**.
 
-    :::image type="content" source="./media/add-source-azure-event-grid/admin-portal-link.png" alt-text="Screenshot of Admin portal link selection in the Governance and insights section." lightbox="./media/add-source-azure-event-grid/admin-portal-link.png":::        
+- Enable [MQTT](/azure/event-grid/mqtt-publish-and-subscribe-portal) and [routing](/azure/event-grid/mqtt-routing) on the Event Grid namespace, if you want to receive MQTT data.
 
-- Activate the following tenant setting to grant the service principal access to Fabric APIs for creating workspaces, connections, or deployment pipelines.
-    - On the **Tenant settings** page, in the **Developer settings** section, expand **Service principal can use Fabric API** option.
-    - Toggle to **Enabled**.
-    - Apply to **the entire organization**.
-    - Select **Apply**.
-    
-        :::image type="content" source="./media/add-source-azure-event-grid/developer-settings.png" alt-text="Screenshot that shows the developer settings." lightbox="./media/add-source-azure-event-grid/developer-settings.png":::              
-- Enable this option to access all other APIs (enabled by default for new tenants):
-    - On the **Tenant settings** page, in the **Developer settings** section, expand **Allow Service principals to create and use profiles** option.
-    - Toggle to **Enabled**.
-    - Apply to **the entire organization**.
-    - Select **Apply**.
+- [Create an eventstream](create-manage-an-eventstream.md) if you don't have one.
 
-## Launch the select a data source wizard
+## Configure portal settings
+
+To ensure that the managed identity of the Event Grid namespace has the required permissions, configure settings in the admin portal:
+
+1. In the upper-right corner, select **Settings** (gear icon).
+
+1. In the **Governance and insights** section, select **Admin portal**.
+
+    :::image type="content" source="./media/add-source-azure-event-grid/admin-portal-link.png" alt-text="Screenshot of the link for the admin portal in Power BI settings." lightbox="./media/add-source-azure-event-grid/admin-portal-link.png":::
+
+1. On the **Tenant settings** page, go to the **Developer settings** section.
+
+1. To grant the service principal access to Fabric APIs for creating workspaces, connections, or deployment pipelines:
+
+   1. Expand the **Service principals can use Fabric APIs** option.
+   1. Set the toggle to **Enabled**.
+   1. Under **Apply to**, select **The entire organization**.
+   1. Select **Apply**.
+
+   :::image type="content" source="./media/add-source-azure-event-grid/developer-settings.png" alt-text="Screenshot that shows developer settings." lightbox="./media/add-source-azure-event-grid/developer-settings.png":::
+
+   To access all other APIs (enabled by default for new tenants):
+
+   1. Expand the **Allow service principals to create and use profiles** option.
+   1. Set the toggle to **Enabled**.
+   1. Under **Apply to**, select **The entire organization**.
+   1. Select **Apply**.
+
+## Start the wizard for selecting a data source
+
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-On the **Select a data source** page, search for and select **Connect** on the **Azure Event Grid Namespace** tile.
+On the **Select a data source** page, search for **Azure Event Grid Namespace**. On the **Azure Event Grid Namespace** tile, select **Connect**.
 
-:::image type="content" source="./media/add-source-azure-event-grid/select-azure-event-grid.png" alt-text="Screenshot of Azure Event Grid Namespace selection in the Get events wizard source type dialog." lightbox="./media/add-source-azure-event-grid/select-azure-event-grid.png":::
+:::image type="content" source="./media/add-source-azure-event-grid/select-azure-event-grid.png" alt-text="Screenshot that shows the selection of an Azure Event Grid namespace as the source type in the wizard for getting events." lightbox="./media/add-source-azure-event-grid/select-azure-event-grid.png":::
 
+## Configure the Event Grid connector
 
-## Configure the Azure Event Grid connector
 [!INCLUDE [azure-event-grid-source-connector](./includes/azure-event-grid-source-connector.md)]
 
+## View an updated eventstream
 
-## View updated eventstream
+1. On the **Review + connect** page, select **Add**.
 
-1. On the **Review + connect** page, select **Add**. 
-1. You see that the Event Grid source is added to your eventstream on the canvas in the **Edit** mode. To implement this newly added Azure Event Grid namespace, select **Publish** on the ribbon. 
+1. Confirm that the Event Grid source is added to your eventstream on the canvas in the **Edit** mode. To implement this newly added Event Grid namespace, select **Publish** on the ribbon.
 
     :::image type="content" source="./media/add-source-azure-event-grid/publish.png" alt-text="Screenshot that shows the editor with Publish button selected." lightbox="./media/add-source-azure-event-grid/publish.png":::
-1. After you complete these steps, the Azure Event Grid namespace is available for visualization in the **Live view**. Select the **Event Grid Namespace** tile in the diagram to see details about the source.
 
+1. The Event Grid namespace is available for visualization in the **Live** view. Select the **Event Grid Namespace** tile in the diagram to show details about the source.
 
 ## Related content
-To learn how to add other sources to an eventstream, see the following article: [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md)
+
+- To learn how to add other sources to an eventstream, see [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md).

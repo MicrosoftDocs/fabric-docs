@@ -17,7 +17,7 @@ Notebooks are a powerful code item for you to develop Apache Spark jobs and mach
 ## Prerequisites
 
 - Complete the tutorial to create a mirrored database from your source database.
-    - [Tutorial: Configure Microsoft Fabric mirrored database for Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-tutorial.md)
+    - [Tutorial: Configure Microsoft Fabric mirrored database for Azure Cosmos DB](../mirroring/azure-cosmos-db-tutorial.md)
     - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-tutorial.md)
     - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-tutorial.md)
     - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-tutorial.md)

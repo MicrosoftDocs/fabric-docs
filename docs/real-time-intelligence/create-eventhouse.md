@@ -7,6 +7,7 @@ author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 07/29/2025
+ms.subservice: rti-eventhouse
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to create an eventhouse for data storage in Real-Time Intelligence so that I can effectively manage my data.
 ---

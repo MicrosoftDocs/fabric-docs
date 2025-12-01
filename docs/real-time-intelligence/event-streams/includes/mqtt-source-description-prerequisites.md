@@ -12,9 +12,6 @@ ms.date: 08/26/2025
 
 MQTT is a publish-subscribe messaging transport protocol that was designed for constrained environments. It's the go-to communication standard for IoT scenarios due to efficiency, scalability, and reliability. Microsoft Fabric event streams allow you to connect to an MQTT broker, where messages in MQTT broker to be ingested into Fabric eventstream, and routed to various destinations within Fabric. 
 
-> [!NOTE]
-> This source is **not supported** in the following regions of your workspace capacity: **West US3, Switzerland West**.  
-
 ## Prerequisites  
 Before you start, you must complete the following prerequisites: 
 
