@@ -4,7 +4,7 @@ description: Enable settings on your Fabric tenant before using ontology (previe
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 11/19/2025
+ms.date: 12/01/2025
 ms.topic: overview
 ---
 
@@ -28,9 +28,17 @@ This setting is **required** to enable the graphs associated with ontology (prev
 
 :::image type="content" source="media/overview-tenant-settings/prerequisite-graph.png" alt-text="Screenshot of enabling graph in the admin portal.":::
 
-Failure to enable this setting results in errors when accessing a newly-created ontology item. You might see the error message *Unable to create the Ontology (preview) item. Please try again or contact support if the issue persists.*
+Failure to enable this setting results in errors when accessing a newly created ontology item. You might see the error message *Unable to create the Ontology (preview) item. Please try again or contact support if the issue persists.*
 
 :::image type="content" source="media/overview-tenant-settings/graph-error.png" alt-text="Screenshot of the error from missing graph permissions.":::
+
+## XMLA endpoints
+
+This setting is optional, but required if you want to generate an ontology (preview) from a semantic model.
+
+:::image type="content" source="media/overview-tenant-settings/prerequisite-data-agent.png" alt-text="Screenshot of enabling data agents in the admin portal.":::
+
+If this setting isn't enabled, you see a failure to generate the ontology.
 
 ## Data agent item types (preview)
 
@@ -38,7 +46,7 @@ This setting is optional, but required if you want to use ontology (preview) wit
 
 :::image type="content" source="media/overview-tenant-settings/prerequisite-data-agent.png" alt-text="Screenshot of enabling data agents in the admin portal.":::
 
-Failure to enable this setting results in errors when creating a new data agent item.
+If this setting isn't enabled, you see errors when creating a new data agent item.
 
 ## Next steps
 
