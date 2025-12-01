@@ -108,7 +108,7 @@ The following list contains common disqualifications for result set caching in F
 - Query doesn't reference at least one table of at least 100,000 rows
 - Query references an object outside the currently connected Fabric item (for example, cross-database query)
 - Query is within an explicit transaction or a `WHILE` loop
-- Query output contains an unsupported datatype and/or the `VARCHAR(MAX)` and/or `VARBINARY(MAX)` datatype. For supported data types, see [Data types in Fabric Data Warehouse](data-types.md)
+- Query output contains an unsupported data type and/or the `VARCHAR(MAX)` data type and/or the `VARBINARY(MAX)` data type. For supported data types, see [Data types in Fabric Data Warehouse](data-types.md)
 - Query contains a `CAST` or `CONVERT` that has some reference to **date** or **sql_variant** data type
 - Query contains runtime constants (such as `CURRENT_USER` or `GETDATE()`)
 - Query result is estimated to be > 10,000 rows
