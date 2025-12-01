@@ -241,20 +241,21 @@ Transport Layer Security (TLS) is a widely adopted security protocol that's desi
 
 | Connector | Dataflow gen2 | Copy activity | Copy job |
 |:--|:-:|:-:|:-:|
-|[Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-copy-activity.md)| | ✓ | |
-|[Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-copy-activity.md)| | ✓ | |
-|[Azure Data Explorer (Kusto)](connector-azure-data-explorer-copy-activity.md)| | ✓ | |
-|[Azure Database for PostgreSQL (version 2.0)](connector-azure-database-for-postgresql-copy-activity.md)| | ✓ | |
-|[Azure Files](connector-azure-files-copy-activity.md)| | ✓ | |
-|[Azure SQL Database](connector-azure-sql-database-copy-activity.md)| | ✓ | |
-|[Azure SQL Managed Instance](connector-azure-sql-managed-instance-copy-activity.md)| | ✓ | |
-|[Azure Synapse Analytics (SQL DW)](connector-azure-synapse-analytics-copy-activity.md)| | ✓ | |
-|[Azure Tables](connector-azure-table-storage-copy-activity.md)| | ✓ | |
-|[IBM Db2 database](connector-ibm-db2-database-copy-activity.md)| | ✓ | |
-|[Oracle database](connector-oracle-database-copy-activity.md)| | ✓ | |
-|[PostgreSQL database](connector-postgresql-copy-activity.md)| | ✓ | |
-|[Snowflake](connector-snowflake-copy-activity.md)| | ✓ | |
-|[SQL Server database](connector-sql-server-copy-activity.md)| | ✓ | |
+|[Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-copy-activity.md)| | ✓ | ✓ |
+|[Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-copy-activity.md)| | ✓ | ✓ |
+|[Azure Blobs](connector-azure-blob-storage-copy-activity.md)| | ✓ | ✓ |
+|[Azure Data Explorer (Kusto)](connector-azure-data-explorer-copy-activity.md)| | ✓ | ✓ |
+|[Azure Database for PostgreSQL (version 2.0)](connector-azure-database-for-postgresql-copy-activity.md)| | ✓ | ✓ |
+|[Azure Files](connector-azure-files-copy-activity.md)| | ✓ | ✓ |
+|[Azure SQL Database](connector-azure-sql-database-copy-activity.md)| | ✓ | ✓ |
+|[Azure SQL Managed Instance](connector-azure-sql-managed-instance-copy-activity.md)| | ✓ | ✓ |
+|[Azure Synapse Analytics (SQL DW)](connector-azure-synapse-analytics-copy-activity.md)| | ✓ | ✓ |
+|[Azure Tables](connector-azure-table-storage-copy-activity.md)| | ✓ | ✓ |
+|[IBM Db2 database](connector-ibm-db2-database-copy-activity.md)| | ✓ | ✓ |
+|[Oracle database](connector-oracle-database-copy-activity.md)| | ✓ | ✓ |
+|[PostgreSQL database](connector-postgresql-copy-activity.md)| | ✓ | ✓ |
+|[Snowflake](connector-snowflake-copy-activity.md)| | ✓ | ✓ |
+|[SQL Server database](connector-sql-server-copy-activity.md)| | ✓ | ✓ |
 
 ## Related content
 
