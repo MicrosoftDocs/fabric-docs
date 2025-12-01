@@ -88,7 +88,7 @@ Now that you have a lakehouse in the restricted workspace, you can create a sema
 
 a.	Web modeling experience in the Power BI portal.
 
-&nbsp;&nbsp;&nbsp;b.	Power BI Desktop
+b.	Power BI Desktop
 
 c.	REST APIs to deploy a model definition with the same table schema as in the restricted lakehouse.
 
