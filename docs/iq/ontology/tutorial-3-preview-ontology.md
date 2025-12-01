@@ -82,7 +82,7 @@ First, craft this query: *Show all freezers that are operated in the Paris store
 
 1. Select **Clear query** to clear the query results, and use the **Remove filter** options to remove the store filter.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/clear-query.png" alt-text="Screenshot of clearing the query and filter.":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/clear-query.png" alt-text="Screenshot of clearing the query and filter." lightbox="media/tutorial-3-preview-ontology/clear-query.png":::
 
 Next, craft this query: *Show all stores that have made a sale with a revenue greater than 150.*
 1. Select **Add a node** and add a node for *SaleEvent*.
