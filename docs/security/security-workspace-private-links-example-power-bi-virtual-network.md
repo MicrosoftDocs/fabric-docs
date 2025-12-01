@@ -90,7 +90,7 @@ a.	Web modeling experience in the Power BI portal.
    
 b.	Power BI Desktop.
    
-&nbsp;&nbsp;&nbsp;&nbsp;c.	REST APIs to deploy a model definition with the same table schema as in the restricted lakehouse.
+c.	REST APIs to deploy a model definition with the same table schema as in the restricted lakehouse.
    
 &nbsp;&nbsp;&nbsp;&nbsp;d. XMLA-based tools to deploy a semantic model programmatically (see [Semantic model connectivity with the XMLA endpoint](/fabric/enterprise/powerbi/service-premium-connect-tools)) 
 
