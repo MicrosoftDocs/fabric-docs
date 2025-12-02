@@ -128,7 +128,7 @@ The following measures are used in visuals throughout the *content sharing* repo
 | Total access count    | The number of individual users, service principals, and group members with access to an item. *Total access counts* for workspaces, capacities, and domains are a sum of access counts for all underlying items, not the container itself. *Total access counts* include both individual access to an item and access through a group, so users are double counted if they have access to an item in both scenarios.   |
 
 > [!NOTE]
-> Access counts include access to an item through _Manage permissions_, or access inherited through a workspace role. Access counts also include service principals and sharing links for a specific persons or group.
+> Access counts include access to an item through _Manage permissions_, or access inherited through a workspace role. Access counts include service principals and sharing links for a specific persons or group. Access counts include permissions to an item through a related item, such as permissions to a semantic model through org app access.
 
 ## Considerations and limitations
 
