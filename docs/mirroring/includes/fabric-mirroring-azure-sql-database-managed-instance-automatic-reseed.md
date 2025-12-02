@@ -6,7 +6,7 @@ ms.topic: include
 # For docs\mirroring\azure-sql-database-automatic-reseed.md and docs\mirroring\azure-sql-managed-instance-automatic-reseed.md
 ---
 
-Under certain conditions if there is a delay in mirroring to Fabric, increased transaction log file usage can result. The transaction log cannot be truncated until after committed changes are replicated to the mirrored database. Once the transaction log size reaches its maximum defined limit, writes to the database fail. To safeguard operational databases from write failures for critical OLTP transactions, you can set up an autoreseed mechanism that allows the transaction log to be truncated and reinitializes the database mirroring to Fabric.
+Under certain conditions if there is a delay in mirroring to Fabric, increased transaction log file usage can result. The transaction log cannot be truncated until after committed changes are replicated to the mirrored database. Once the transaction log size reaches its maximum defined limit, writes to the database fail. 
 
 To safeguard operational databases from write failures for critical OLTP transactions, mirroring in Azure SQL Database and Azure SQL Managed Instance uses the autoreseed capability that allows the transaction log to be truncated and reinitializes the database mirroring to Fabric.
 
