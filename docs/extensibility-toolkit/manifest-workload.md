@@ -3,7 +3,7 @@ title: Workload Manifest
 description: Learn more about the Workload Manifest and the usage.
 author: gsaurer
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
 ms.date: 09/04/2025
 ---

@@ -3,7 +3,7 @@ title: Fabric Extensibility toolkit vendor attestation template
 description: Template document for vendor attestation requirements when publishing to Microsoft Fabric Workload Hub.
 author: gsaurer
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: article
 ms.date: 11/03/2025
 ---
 
