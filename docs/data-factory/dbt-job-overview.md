@@ -4,7 +4,7 @@ description: Learn how to use dbt job in Microsoft Fabric to transform your data
 ms.reviewer: whhender
 ms.author: akurnala
 author: abhinayakurnala1
-ms.date: 11/18/2025
+ms.date: 12/02/2025
 ms.topic: overview
 ms.custom:
    - dbt
@@ -41,11 +41,9 @@ This approach combines the flexibility of code-first development with the simpli
 - For the target Fabric Data Warehouse, you need [read/write permissions](/fabric/data-warehouse/share-warehouse-manage-permissions#manage-permissions) to run dbt transformations.
 - You need both build and read/write access to linked datasets and connections.
 
-You can find the links to tutorials on how to create a new project or import an exisiting project in the related content section below.
-
 ## Supported adapters
 
-You can connect a dbt job to multiple data sources using supported adapters. This enables dbt models to run transformations directly on your chosen platform. These are the currently supported adapters:
+You can connect a dbt job to multiple data sources using supported adapters. This enables dbt models to run transformations directly on your chosen platform. Here are the currently supported adapters:
 
 - Microsoft Fabric Warehouse
 - Snowflake
