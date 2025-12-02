@@ -1,6 +1,6 @@
 ---
-title: Store data in an item
-description: Learn how to Store date in an item in your item within Microsoft Fabric.
+title: Store data in OneLake
+description: Learn how to Store date in OneLake within Microsoft Fabric.
 author: gsaurer
 ms.author: billmath
 ms.topic: how-to
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 09/04/2025
 ---
 
-# How to store data in an item
+# How-To: Store data in OneLake
 
 Every Fabric item has access to OneLake storage, which provides a secure, scalable way to store files associated with your item. This guide explains how to upload files to your Fabric item using the `FabricPlatformAPIClient` and the underlying `OneLakeClient`.
 
@@ -209,11 +209,11 @@ async function deleteFile(workspaceId: string, itemId: string, fileName: string)
 
 ## Best practices for file uploads
 
-1. **Use appropriate file formats**: Consider the purpose of the file and use formats that are widely supported.
-2. **Handle errors gracefully**: Always include error handling for network issues or permission problems.
-3. **Validate file sizes**: Large files may take longer to upload and process.
-4. **Check permissions**: Ensure the user has appropriate permissions before attempting uploads.
-5. **Use file prefixes or folders**: For complex items with many files, consider organizing them in subfolders.
+- **Use appropriate file formats**: Consider the purpose of the file and use formats that are widely supported.
+- **Handle errors gracefully**: Always include error handling for network issues or permission problems.
+- **Validate file sizes**: Large files may take longer to upload and process.
+- **Check permissions**: Ensure the user has appropriate permissions before attempting uploads.
+- **Use file prefixes or folders**: For complex items with many files, consider organizing them in subfolders.
 
 ## Using the OneLakeClientItemWrapper
 
