@@ -1016,7 +1016,7 @@
         - name: How to create a dbt job
           href: dbt-job-how-to-create-a-new-project.md
         - name: Step-by-step dbt job tutorial
-          href: dbt-job-how-to-practice-with-a-sample-project.md
+          href: dbt-job-sample-tutorial.md
   - name: Orchestrate your pipelines
     items:
       - name: What is a pipeline?
