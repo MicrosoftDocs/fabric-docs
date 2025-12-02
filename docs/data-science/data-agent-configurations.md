@@ -5,8 +5,8 @@ ms.author: jburchel
 author: jonburchel
 ms.reviewer: midesa
 reviewer: midesa
-ms.topic: conceptual
-ms.date: 06/12/2025
+ms.topic: article
+ms.date: 12/2/2025
 ---
 
 # Configure your data agent
