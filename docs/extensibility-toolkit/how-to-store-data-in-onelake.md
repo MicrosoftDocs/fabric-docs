@@ -1,6 +1,6 @@
 ---
-title: HowTo - Store Data in OneLake
-description: Learn how to Store date in your item within Fabric.
+title: Store data in OneLake
+description: Learn how to Store date in OneLake within Microsoft Fabric.
 author: gsaurer
 ms.author: billmath
 ms.topic: how-to
