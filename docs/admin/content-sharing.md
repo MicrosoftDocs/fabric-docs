@@ -159,6 +159,10 @@ Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on i
 * All *My workspaces* are counted as separate records as part of the _Total workspaces_ measure.
 * Trial Fabric capacities are counted as separate records as part of the _Total capacities_ measure. Trial capacities can be filtered out using the Capacity SKU filter with the value _FT1_.
 
+### Model limitations
+
+* The semantic model is read-only and cannot be used with Fabric data agents.
+
 ## Related content
 
 * [What is the Admin monitoring workspace?](monitoring-workspace.md)
