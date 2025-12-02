@@ -66,6 +66,8 @@ You can use the reports in the admin monitoring workspace for getting insights a
 
 * Once access is provided to the admin monitoring workspace or its underlying content, access can't be removed without reinitializing the workspace. However, sharing links can be modified as with a typical workspace.
 
+* Semantic models in the admin monitoring workspace are read-only and cannot be used with Fabric data agents.
+
 ### Refreshes
 
 The semantic models in the workspace are automatically refreshed once per day, around the same time that the workspace was installed for the first time.
