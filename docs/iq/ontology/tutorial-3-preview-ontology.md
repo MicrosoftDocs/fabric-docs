@@ -4,7 +4,7 @@ description: Preview the ontology by observing its entity instances and relation
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 11/21/2025
+ms.date: 12/02/2025
 ms.topic: tutorial
 ---
 
@@ -24,7 +24,7 @@ When you bound data to your entity types in previous tutorial steps, ontology au
 
     It might take a few minutes for the ontology overview to load the first time.
 
-1. Look for the **Entity instances** section. Verify that it shows entity instances, with unit counts and revenue populated from the *factsales* lakehouse table.
+1. Scroll down to the **Entity instances** section. Verify that it shows entity instances, with unit counts and revenue populated from the *factsales* lakehouse table.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/entity-instances.png" alt-text="Screenshot of the entity instances." lightbox="media/tutorial-3-preview-ontology/entity-instances.png":::
 
