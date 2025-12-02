@@ -37,7 +37,7 @@ GCS shortcuts can take advantage of file caching to reduce egress costs associat
 
    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view." lightbox="media\create-onelake-shortcut\new-shortcut-lake-view.png":::
 
-# Select a source
+## Select a source
 
 1. Under **External sources**, select **Google Cloud Storage**.
 
