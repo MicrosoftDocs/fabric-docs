@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: overview
-ms.date: 11/07/2025
+ms.date: 12/02/2025
 ms.search.form: product-data-factory
 ms.custom: connectors
 ---
@@ -25,7 +25,7 @@ Before setting up a connection, ensure you have:
 
 Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Select a data store to see what it can do and how to set it up.
 
-| Connector | Dataflow gen2 (source/destination) | Pipeline (copy activity source/destination) | Copy job (source/destination) |
+| Connector | Dataflow Gen2 (source/destination) | Pipeline (copy activity source/destination) | Copy job (source/destination) |
 |:--|:-:|:-:|:-:|
 | [Access](connector-access-database-overview.md) | ✓/− |  |  |
 | Acterys: Model Automation & Planning (Beta) | ✓/− |  |  |
@@ -47,19 +47,19 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Autodesk Construction Cloud](/power-query/connectors/autodesk-construction-cloud) | ✓/− |  |  |
 | Automation Anywhere | ✓/− |  |  |
 | [Automy Analytics](/power-query/connectors/automy-data-analytics) | ✓/− |  |  |
-| [Azure AI Search](connector-azure-search-overview.md) |  | −/✓ |  |
+| [Azure AI Search](connector-azure-search-overview.md) |  | −/✓ | −/✓  |
 | [Azure Analysis Services](connector-azure-analysis-services-overview.md) | ✓/− |  |  |
 | [Azure Blobs](connector-azure-blob-storage-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
-| [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-overview.md) |  | ✓/✓ |  |
+| [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Azure Cosmos DB for MongoDB vCore (Beta)](/power-query/connectors/azure-cosmos-db-for-mongodb-vcore) | ✓/− |  |  |
-| [Azure Cosmos DB v2](connector-azure-cosmosdb-for-nosql-overview.md) | ✓/− | ✓/✓ |  |
+| [Azure Cosmos DB v2](connector-azure-cosmosdb-for-nosql-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Azure Cost Management](/power-query/connectors/azure-cost-management) | ✓/− |  |  |
 | [Azure Data Explorer (Kusto)](connector-azure-data-explorer-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Azure Databricks](connector-azure-databricks-overview.md) | ✓/− |  |  |
-| [Azure Files](connector-azure-files-overview.md) |  | ✓/✓ |  |
+| [Azure Files](connector-azure-files-overview.md) |  | ✓/✓ |  ✓/✓ |
 | [Azure HDInsight (HDFS)](/power-query/connectors/azure-hdinsight) | ✓/− |  |  |
 | Azure HDInsight Spark | ✓/− |  |  |
 | [Azure Resource Graph](/power-query/connectors/azure-resource-graph) | ✓/− |  |  |
@@ -67,13 +67,13 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Azure SQL Managed Instance](connector-azure-sql-managed-instance-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Azure Synapse Analytics (SQL DW)](connector-azure-synapse-analytics-overview.md) | ✓/- | ✓/✓ | ✓/✓ |
 | [Azure Synapse Analytics workspace (Beta)](/power-query/connectors/synapse) | ✓/− |  |  |
-| [Azure Tables](connector-azure-table-storage-overview.md) | ✓/− | ✓/✓ |  |
+| [Azure Tables](connector-azure-table-storage-overview.md) | ✓/− | ✓/✓ | ✓/- |
 | BI Connector | ✓/− |  |  |
 | [BitSight Security Ratings](/power-query/connectors/bitsight-security-ratings) | ✓/− |  |  |
 | [Bloomberg Data and Analytics](/power-query/connectors/bloomberg-data-and-analytics) | ✓/− |  |  |
 | [BQE CORE](/power-query/connectors/bqecore) | ✓/− |  |  |
 | [BuildingConnected & Trade Tapp](/power-query/connectors/buildingconnected) | ✓/− |  |  |
-| [Cassandra](connector-cassandra-overview.md) |  | ✓/− |  |
+| [Cassandra](connector-cassandra-overview.md) |  | ✓/− | ✓/− |
 | [CData Connect Cloud](/power-query/connectors/cdata-connect-cloud) | ✓/− |  |  |
 | [Celonis EMS](/power-query/connectors/celonis-ems) | ✓/− |  |  |
 | Cherwell (Beta) | ✓/− |  |  |
@@ -86,7 +86,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Databricks](connector-databricks-overview.md) | ✓/− |  |  |
 | [Dataflow](connector-dataflows-overview.md) | ✓/− |  |  |
 | Datamarts (Beta) | ✓/− |  |  |
-| [Dataverse](connector-dataverse-overview.md) | ✓/− | ✓/✓ |  |
+| [Dataverse](connector-dataverse-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Delta Sharing](/power-query/connectors/delta-sharing) | ✓/− |  |  |
 | [Denodo](/power-query/connectors/denodo) | ✓/− |  |  |
 | Dremio Cloud | ✓/− |  |  |
@@ -94,7 +94,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Dynamics 365 Business Central | ✓/− |  |  |
 | Dynamics 365 Customer Insights (Beta) | ✓/− |  |  |
 | [Dynamics AX](connector-dynamics-ax-overview.md) |  | ✓/− | ✓/− |
-| [Dynamics CRM](connector-dynamics-crm-overview.md) |  | ✓/✓ |  |
+| [Dynamics CRM](connector-dynamics-crm-overview.md) |  | ✓/✓ |✓/✓  |
 | Dynatrace Grail DQL (Beta) | ✓/− |  |  |
 | [Eduframe (Beta)](/power-query/connectors/eduframe) | ✓/− |  |  |
 | Emigo Data Source | ✓/− |  |  |
@@ -111,7 +111,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | FactSet Analytics | ✓/− |  |  |
 | [FactSet RMS (Beta)](/power-query/connectors/factset-rms) | ✓/− |  |  |
 | [FHIR](connector-fhir-overview.md) | ✓/− |  |  |
-| [Folder](connector-folder-overview.md) | ✓/− | ✓/✓ |  |
+| [Folder](connector-folder-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [FTP](connector-ftp-overview.md) |  | ✓/− | ✓/− |
 | [Funnel](/power-query/connectors/funnel) | ✓/− |  |  |
 | [Google Analytics](connector-google-analytics-overview.md) | ✓/− |  |  |
@@ -150,15 +150,15 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Microsoft Azure Data Manager for Energy | ✓/− |  |  |
 | [Microsoft Exchange Online](connector-microsoft-exchange-online-overview.md) | ✓/− |  |  |
 | Strategy for Power BI | ✓/− |  |  |
-| [MongoDB Atlas for Pipelines](connector-mongodb-atlas-overview.md) |  | ✓/✓ |  |
+| [MongoDB Atlas for Pipelines](connector-mongodb-atlas-overview.md) |  | ✓/✓ | ✓/✓ |
 | [MongoDB Atlas SQL](connector-mongodb-atlas-sql-overview.md) | ✓/− |  |  |
-| [MongoDB for Pipeline](connector-mongodb-overview.md) |  | ✓/✓ |  |
+| [MongoDB for Pipeline](connector-mongodb-overview.md) |  | ✓/✓ |✓/✓  |
 | [MySQL database](connector-mysql-database-overview.md) | ✓/− | ✓/− | ✓/− |
 | [OData](connector-odata-overview.md) | ✓/− | ✓/− | ✓/− |
 | [Odbc](connector-odbc-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [OneStream](/power-query/connectors/onestream) | ✓/− |  |  |
 | [OpenSearch Project (Beta)](/power-query/connectors/opensearch-project) | ✓/− |  |  |
-| [Oracle Cloud Storage](connector-oracle-cloud-storage-overview.md) |  | ✓/− |  |
+| [Oracle Cloud Storage](connector-oracle-cloud-storage-overview.md) |  | ✓/− | ✓/−  |
 | [Oracle database](connector-oracle-database-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Palantir Foundry Datasets](connector-palantir-foundry-overview.md) | ✓/− |  |  |
 | [Parquet](/power-query/connectors/parquet) | ✓/− |  |  |
@@ -176,7 +176,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Profisee](/power-query/connectors/profisee) | ✓/− |  |  |
 | QubolePresto (Beta) | ✓/− |  |  |
 | Quickbase | ✓/− |  |  |
-| [REST](connector-rest-overview.md) |  | ✓/✓ |  |
+| [REST](connector-rest-overview.md) |  | ✓/✓ | ✓/✓ |
 | Roamler (Beta) | ✓/− |  |  |
 | [Salesforce objects](connector-salesforce-objects-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Salesforce reports](connector-salesforce-reports-overview.md) | ✓/− |  |  |
@@ -184,16 +184,16 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Samsara](/power-query/connectors/samsara) | ✓/− |  |  |
 | [SAP BW Application Server](connector-sap-bw-application-server-overview.md) | ✓/− |  |  |
 | [SAP BW Message Server](connector-sap-bw-message-server-overview.md) | ✓/− |  |  |
-| [SAP BW Open Hub Application Server](connector-sap-bw-open-hub-application-server-overview.md) |  | ✓/− |  |
-| [SAP BW Open Hub Message Server](connector-sap-bw-open-hub-message-server-overview.md) |  | ✓/− |  |
-| [SAP HANA database](connector-sap-hana-overview.md) | ✓/− | ✓/− | ✓/− |
-| [SAP Table Application Server](connector-sap-table-application-server-overview.md) |  | ✓/− |  |
-| [SAP Table Message Server](connector-sap-table-message-server-overview.md) |  | ✓/− |  |
-| [ServiceNow](connector-servicenow-overview.md) |  | ✓/− |  |
+| [SAP BW Open Hub Application Server](connector-sap-bw-open-hub-application-server-overview.md) |  | ✓/− |✓/−  |
+| [SAP BW Open Hub Message Server](connector-sap-bw-open-hub-message-server-overview.md) |  | ✓/− | ✓/− |
+| [SAP HANA database](coctor-sap-hana-overview.md) | ✓/− | ✓/− | ✓/− |
+| [SAP Table Application Server](connector-sap-table-application-server-overview.md) |  | ✓/− | ✓/− |
+| [SAP Table Message Server](connector-sap-table-message-server-overview.md) |  | ✓/− |✓/−   |
+| [ServiceNow](connector-servicenow-overview.md) |  | ✓/− | ✓/− |
 | [SFTP](connector-sftp-overview.md) |  | ✓/✓ | ✓/✓ |
 | [SharePoint folder](connector-sharepoint-folder-overview.md) | ✓/✓ |  |  |
 | [SharePoint list](connector-sharepoint-list-overview.md) | ✓/− |  |  |
-| [SharePoint Online list](connector-sharepoint-online-list-overview.md) | ✓/− | ✓/− |  |
+| [SharePoint Online list](connector-sharepoint-online-list-overview.md) | ✓/− | ✓/− |✓/− |
 | Shortcuts Business Insights (Beta) | ✓/− |  |  |
 | [SingleStore Direct Query Connector](/power-query/connectors/singlestore) | ✓/− |  |  |
 | [SIS-CC SDMX (Beta)](/power-query/connectors/sis-cc-sdmx) | ✓/− |  |  |
@@ -239,7 +239,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 
 Transport Layer Security (TLS) is a widely adopted security protocol that's designed to secure connections and communications between servers and clients. The following connectors support TLS 1.3 for Data Factory:
 
-| Connector | Dataflow gen2 | Copy activity | Copy job |
+| Connector | Dataflow Gen2 | Copy activity | Copy job |
 |:--|:-:|:-:|:-:|
 |[Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-copy-activity.md)| | ✓ | ✓ |
 |[Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-copy-activity.md)| | ✓ | ✓ |
