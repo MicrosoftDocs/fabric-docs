@@ -31,6 +31,8 @@ items:
     href: how-to-create-item.md
   - name: Store Item Definition
     href: how-to-store-item-definition.md
+  - name: Store Data in OneLake
+    href: how-to-store-data-in-onelake.md
   - name: Create Shortcuts
     href: how-to-create-shortcut.md
   - name: Access Fabric APIs
@@ -46,8 +48,6 @@ items:
     href: publishing-overview.md
   - name: Cross-tenant publishing (Public distribution)
     items:
-    - name: Cross-tenant publishing overview
-      href: publishing-requirements-overview.md
     - name: Workload requirements
       href: publishing-requirements-workload.md
     - name: Item requirements
@@ -93,11 +93,6 @@ items:
     href: tools-devserver.md
   - name: FabricClient SDK
     href: https://go.microsoft.com/fwlink/?linkid=2271989
-
-- name: Support
-  items:
-  - name: Troubleshooting and Support
-    href: troubleshooting.md
 
 - name: Reference
   items:

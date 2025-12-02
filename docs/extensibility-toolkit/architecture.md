@@ -3,7 +3,7 @@ title: Extensibility Toolkit Architecture
 description: Learn more about the Architecture of the Extensibility Toolkit.
 author: gsaurer
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
 ms.date: 09/04/2025
 ---
