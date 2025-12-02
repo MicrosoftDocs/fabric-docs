@@ -83,7 +83,7 @@ To create more tiles, follow these steps.
 
 You can also edit or delete existing tiles by selecting **...** in the top right corner of a tile.
 
-    :::image type="content" source="media/how-to-use-preview-experience/edit-delete.png" alt-text="Screenshot of edit and delete options for a tile." lightbox="media/how-to-use-preview-experience/edit-delete.png":::
+:::image type="content" source="media/how-to-use-preview-experience/edit-delete.png" alt-text="Screenshot of edit and delete options for a tile." lightbox="media/how-to-use-preview-experience/edit-delete.png":::
 
 ### Use graph view
 
