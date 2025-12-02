@@ -102,7 +102,7 @@ If you authenticate using a **service principal**, it must have:
 
 You can grant these permissions in two ways:
 
-  **Option 1: Using Eventhouse UI**
+  ##### [Using Eventhouse UI](#tab/using-eventhouse-ui)
 
   Grant these permissions using the following KQL commands in the UI:
 
@@ -116,14 +116,14 @@ You can grant these permissions in two ways:
 
   :::image type="content" source="media/eventstream-rest-api/grant-permission-via-ui.png" alt-text="A screenshot of granting Database and Table permission via kusto UI." lightbox="media/eventstream-rest-api/grant-permission-via-ui.png":::
 
-  **Option 2: Using Eventhouse REST API**
+  ##### [Using Eventhouse REST API](#tab/using-eventhouse-rest-api)
 
   If you prefer to manage permissions by calling the REST API, you can run the same Kusto commands by using the REST API.  
   Refer to the following documentation for details:
 
-  - [Kusto REST API overview](/kusto/api/rest/?view=microsoft-fabric)
-  - [Manage database security roles](/kusto/management/manage-database-security-roles?view=microsoft-fabric)
-  - [Manage table security roles](/kusto/management/manage-table-security-roles?view=microsoft-fabric) 
+  - [Kusto REST API overview](/kusto/api/rest)
+  - [Manage database security roles](/kusto/management/manage-database-security-roles)
+  - [Manage table security roles](/kusto/management/manage-table-security-roles) 
 
 For more details about defining an Eventstream item, check out [Eventstream item definition](#eventstream-item-definition) section.
 
