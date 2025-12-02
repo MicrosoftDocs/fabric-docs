@@ -2,8 +2,8 @@
 title: Use Python experience on Notebook
 description: Learn how to work with pure Python notebooks for data exploration, visualization, and machine learning.
 ms.reviewer: jingzh
-ms.author: eur
-author: eric-urban
+ms.author: jingzh
+author: JeneZhang
 ms.topic: how-to
 ms.custom:
 ms.search.form: Create and use notebooks
@@ -250,6 +250,13 @@ df = conn.query("SELECT * FROM sys.schemas;")
 ```python
 conn = notebookutils.data.connect_to_artifact("warehouse_name_or_id", "optional_workspace_id", "optional_warehouse_type")
 df = conn.query("SELECT * FROM sys.schemas;")
+```
+
+#### Query data from SQL database
+
+```python
+conn = notebookutils.data.connect_to_artifact("sqldb_name_or_id", "optional_workspace_id", "optional_warehouse_type") 
+df = conn.query("""SELECT * FROM sys.schemas;""")
 ```
 
 > [!NOTE]
