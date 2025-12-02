@@ -5,8 +5,8 @@ items:
   items:
   - name: Extensibility Toolkit overview
     href: extensibility-toolkit-overview.md
-  - name: From ideas to a workload
-    href: overview-story.md
+  - name: Architecture
+    href: architecture.md
 - name: Get started
   items:
   - name: Build your workload
@@ -17,8 +17,6 @@ items:
     href: implementation-guide.md
   - name: Setup guide
     href: setup-guide.md
-  - name: Architecture
-    href: architecture.md
   - name: Key Concepts and Features
     href: key-concepts.md
 - name: How-To
