@@ -126,11 +126,11 @@ What's the difference between ItemEditor and ItemEditorDefaultView?
 
 #### Best Practices for AI Collaboration
 
-1. **Be Specific**: Provide clear requirements and context
-2. **Review Each Step**: Understand the generated code before proceeding
-3. **Ask Questions**: Request explanations for patterns you don't understand
-4. **Test Frequently**: Run and test the item after each major change
-5. **Follow Up**: Ask for refinements and improvements
+- **Be Specific**: Provide clear requirements and context
+- **Review Each Step**: Understand the generated code before proceeding
+- **Ask Questions**: Request explanations for patterns you don't understand
+- **Test Frequently**: Run and test the item after each major change
+- **Follow Up**: Ask for refinements and improvements
 
 ### AI Development Tools and Environment
 
@@ -308,10 +308,10 @@ After completing all manual steps:
 
 The HelloWorld item serves as the **reference template** that receives regular updates from Microsoft. Key reasons to keep it unchanged:
 
-1. **Updates and Improvements**: Microsoft regularly updates HelloWorld with new features, bug fixes, and best practices
-2. **Integration Testing**: HelloWorld ensures your environment is working correctly
-3. **Reference Documentation**: It serves as live documentation for implementation patterns
-4. **Backward Compatibility**: Updates maintain compatibility with existing customizations
+- **Updates and Improvements**: Microsoft regularly updates HelloWorld with new features, bug fixes, and best practices
+- **Integration Testing**: HelloWorld ensures your environment is working correctly
+- **Reference Documentation**: It serves as live documentation for implementation patterns
+- **Backward Compatibility**: Updates maintain compatibility with existing customizations
 
 ### Recommended Workflow
 

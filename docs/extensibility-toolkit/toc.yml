@@ -14,8 +14,8 @@ items:
 - name: Get started
   items:
   - name: Getting Started with Fabric Extensibility Toolkit
-    href: getting-started.md
-  - name: Setup your enviroment and run the Hello World
+    href: get-started.md
+  - name: Set up your environment and run the Hello World
     href: setup-guide.md
   - name: Manual Setup
     href: setup-manual.md

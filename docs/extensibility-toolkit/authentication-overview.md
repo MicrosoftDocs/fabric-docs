@@ -67,10 +67,10 @@ The Extensibility Toolkit simplifies consent management:
 
 Before using authentication in your workload:
 
-1. **Register your application** in Microsoft Entra ID
-2. **Configure redirect URIs** for your workload
-3. **Set required permissions** for Fabric and any external services
-4. **Test authentication flow** in your development environment
+- **Register your application** in Microsoft Entra ID
+- **Configure redirect URIs** for your workload
+- **Set required permissions** for Fabric and any external services
+- **Test authentication flow** in your development environment
 
 For step-by-step authentication setup instructions, see [Authentication guidelines](./authentication-guidelines.md).
 

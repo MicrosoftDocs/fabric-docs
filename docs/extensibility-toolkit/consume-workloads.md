@@ -108,4 +108,4 @@ Once you've added workloads:
 - Train your team on new capabilities
 - Set up monitoring and governance processes
 
-For custom workload development, see [Getting Started with Fabric Extensibility Toolkit](getting-started.md).
+For custom workload development, see [Getting Started with Fabric Extensibility Toolkit](get-started.md).

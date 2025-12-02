@@ -49,7 +49,7 @@ Exact routes can vary by template, but the sample repository exposes a small set
 3. Open your Fabric workspace and launch the workload entry point; Fabric loads your app in an iFrame and calls your DevServer endpoints to read manifest data.
 4. Edit UI or manifest files and refresh; changes take effect immediately without repackaging.
 
-For how to start each process, see the [Getting Started tutorial](./getting-started.md) and the [Setup guide](./setup-guide.md).
+For how to start each process, see the [Getting Started tutorial](./get-started.md) and the [Setup guide](./setup-guide.md).
 
 ## Relationship to published manifests
 

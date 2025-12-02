@@ -160,10 +160,10 @@ const token = await workloadClient.auth.acquireFrontendAccessToken({ scopes: [] 
 
 The Extensibility Toolkit automatically handles consent workflows:
 
-1. **Initial request**: If consent is missing, a popup window opens
-2. **User interaction**: User grants or denies permissions
-3. **Automatic closure**: Popup closes automatically after user action
-4. **Token delivery**: If successful, the token is returned to your application
+- **Initial request**: If consent is missing, a popup window opens
+- **User interaction**: User grants or denies permissions
+- **Automatic closure**: Popup closes automatically after user action
+- **Token delivery**: If successful, the token is returned to your application
 
 ### Consent popup handling
 

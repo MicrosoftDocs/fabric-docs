@@ -98,5 +98,5 @@ Any use of third-party trademarks or logos are subject to those third-party's po
 - [Architecture](architecture.md) - Understand the technical architecture
 - [Key concepts and features](key-concepts.md) - Learn about core concepts
 - [Manifest overview](manifest-overview.md) - Understand workload manifests
-- [Getting Started](getting-started.md) - Start building your first workload
+- [Getting Started](get-started.md) - Start building your first workload
 - [Publish a Fabric workload to Workload Hub](publishing-overview.md) - Learn about publishing

@@ -24,23 +24,23 @@ All Fabric workloads follow a consistent item-based structure:
 
 Each Fabric item consists of five key components:
 
-### 1. Item Model (`ItemModel.ts`)
+### - Item Model (`ItemModel.ts`)
 
 Defines the data structure and properties that represent the item's configuration and state that is stored in Fabric.
 
-### 2. Item Editor (`ItemEditor.tsx`) 
+### - Item Editor (`ItemEditor.tsx`) 
 
 The main interface where users interact with the item. Built using default Fabric components for consistency.
 
-### 3. Empty View (`ItemEditorEmpty.tsx`)
+### - Empty View (`ItemEditorEmpty.tsx`)
 
 The initial experience when users first create an item, providing onboarding and setup guidance.
 
-### 4. Detail View (`ItemEditorDetail.tsx`)
+### - Detail View (`ItemEditorDetail.tsx`)
 
 Provides drill-down navigation and detailed views for complex item configurations and hierarchical content.
 
-### 5. Ribbon Actions (`ItemEditorRibbon.tsx`)
+### - Ribbon Actions (`ItemEditorRibbon.tsx`)
 
 Toolbar actions that users can perform on the item, such as save, settings, and custom operations.
 
@@ -81,10 +81,10 @@ Fabric provides standardized components that ensure consistency across all workl
 
 When building Fabric extensions:
 
-1. **Start with the item model** - Define what data your item will store
-2. **Use default components** - Leverage Fabric's standardized editor components
-3. **Follow established patterns** - Implement ribbon actions, panel layouts, and navigation consistently
-4. **Customize content** - Fill the standardized structure with your workload-specific functionality
+- **Start with the item model** - Define what data your item will store
+- **Use default components** - Leverage Fabric's standardized editor components
+- **Follow established patterns** - Implement ribbon actions, panel layouts, and navigation consistently
+- **Customize content** - Fill the standardized structure with your workload-specific functionality
 
 ## Key principles
 

@@ -38,7 +38,7 @@ This mirrors what happens at publish time, but everything stays local for fast i
 3. Open your Fabric workspace and use the workload entry point; Fabric loads your UI in an iFrame and discovers items via your manifests.
 4. Edit UI and manifest files, refresh to see changes immediately.
 
-See the [Getting Started tutorial](./getting-started.md) for step-by-step setup and start instructions.
+See the [Getting Started tutorial](./get-started.md) for step-by-step setup and start instructions.
 
 ## Configuration inputs
 
