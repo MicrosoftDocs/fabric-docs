@@ -231,9 +231,15 @@ ON cases.iso3 = reference.countrycode;
 
 To learn more about cross-warehouse queries, see [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-query).
 
+## Data ingestion options
+
+Other ways to ingest data into your warehouse include:
+
+- [Ingest data using the COPY statement](ingest-data-copy.md)
+- [Ingest data using pipelines](ingest-data-pipelines.md)
+- [Ingest data using a dataflow](../data-factory/create-first-dataflow-gen2.md)
+
 ## Related content
 
 - [Ingest data into the Warehouse](ingest-data.md)
-- [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)
-- [Ingest data into your Warehouse using pipelines](ingest-data-pipelines.md)
 - [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-query)
