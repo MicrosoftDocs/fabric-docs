@@ -22,20 +22,8 @@ items:
 
 - name: Tutorials
   items:
-  - name: Create Microsoft Entra App
-    href: tutorial-create-entra-app.md
   - name: Create Custom Fabric Items
     href: tutorial-create-new-fabric-item.md
-  - name: Host Your Workload in Azure
-    href: tutorial-host-workload-in-azure.md
-  - name: Publish Your Workload to Azure
-    href: tutorial-publish-workload-to-azure.md
-  - name: Publish and Manage Workload
-    href: tutorial-publish-workload.md
-  - name: Supportability Best Practices
-    href: tutorial-supportability.md
-  - name: Validate Workload for Publishing
-    href: tutorial-validate-workload.md
 
 - name: Feature configuration
   items:
@@ -43,34 +31,12 @@ items:
     href: how-to-create-item.md
   - name: Store Item Definition
     href: how-to-store-item-definition.md
-  - name: Store Data in OneLake
-    href: how-to-store-data-in-onelake.md
   - name: Create Shortcuts
     href: how-to-create-shortcut.md
-  - name: Integrate with OneLake Catalog
-    href: how-to-integrate-with-onelake-catalog.md
-  - name: Configure Workload Media Section
-    href: how-to-configure-workload-media-section.md
-  - name: Create Trial Experience
-    href: how-to-add-trial-experience.md
-  - name: Add Custom Item Actions
-    href: how-to-add-custom-item-actions.md
-  - name: Add Jobs-to-be-Done
-    href: how-to-add-jobs-to-be-done.md
-  - name: Define Jobs for Your Workload
-    href: how-to-define-jobs.md
-  - name: Enable Item Lifecycle Notifications
-    href: how-to-enable-item-lifecycle-notifications.md
   - name: Access Fabric APIs
     href: how-to-access-fabric-apis.md
   - name: Acquire Microsoft Entra Token
     href: how-to-acquire-entra-token.md
-  - name: Create Custom Settings Dialogs
-    href: how-to-add-custom-settings.md
-  - name: Create Custom About Pages
-    href: how-to-add-custom-about.md
-  - name: Localize Your Workload
-    href: how-to-localize.md
   - name: Relax the iFrame
     href: how-to-relax-iframe.md
 
@@ -78,10 +44,6 @@ items:
   items:
   - name: Overview
     href: publishing-overview.md
-  - name: Monetize Your Workload
-    href: how-to-monetize-workload.md
-  - name: General requirements (All scenarios)
-    href: publishing-requirements-general.md
   - name: Cross-tenant publishing (Public distribution)
     items:
     - name: Cross-tenant publishing overview
