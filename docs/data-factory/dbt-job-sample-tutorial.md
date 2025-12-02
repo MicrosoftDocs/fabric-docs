@@ -36,7 +36,7 @@ Before you begin this tutorial, you need:
 
 ## Create a dbt job with a sample project
 
-Create a new dbt job item in your workspace to start building transformations.
+Create a new dbt job item in your workspace using sample project files.
 
 1. Go to your Fabric workspace.
 1. Select **+New item**, then search for and select **dbt job** from the item creation menu.
@@ -44,7 +44,7 @@ Create a new dbt job item in your workspace to start building transformations.
 
     :::image type="content" source="media/dbt-job/create-job.png" alt-text="Screenshot of the create job dialog in the Fabric UI." lightbox="media/dbt-job/create-job.png":::
 
-1. You'll see three options for starting a dbt project. Select **Practice with Sample Project** to explore and work with a pre-built example.
+1. You see three options for starting a dbt project. Select **Practice with Sample Project** to explore and work with a prebuilt example.
 
     :::image type="content" source="media/dbt-job/landing-page-with-three-options.png" alt-text="Screenshot showing three options to start a dbt project.":::
 
@@ -68,7 +68,7 @@ Create a new dbt job item in your workspace to start building transformations.
 
     :::image type="content" source="media/dbt-job/jaffle-shop-schema.png" alt-text="Screenshot showing the Jaffle Shop schema and seed data options.":::
 
-1. The project setup completes in a few minutes as the files are imported. After it finishes, verify that the sample data was seeded  selecting the **Open Warehouse** button at the top of the page, and checking the warehouse and schema. You can also confirm this in the output panel at the bottom of the screen. If the data isn't in the warehouse, run the seed command from the UI to load it.
+1. The project setup completes in a few minutes as the files are imported. After it finishes, verify that the sample data was seeded  selecting the **Open Warehouse** button at the top of the page, and checking the warehouse and schema. You can also confirm the sample data in the output panel at the bottom of the screen.
 
     :::image type="content" source="media/dbt-job/setup-seed-success.png" alt-text="Screenshot showing the successful import of the Jaffle Shop project and seeded data." lightbox="media/dbt-job/setup-seed-success.png":::
 
@@ -82,7 +82,7 @@ Execute the dbt transformations to build models, run tests, and create snapshots
 
     :::image type="content" source="media/dbt-job/build-run-command.png" alt-text="Screenshot showing the Build command and Run command buttons.":::
 
-1. (Optional) You can run or exclude specific models using advanced selectors. To do this, go to **Advanced Settings** in the top panel, select **Run Settings**, and then select **Run with Advanced Selectors**.
+1. (Optional) You can run or exclude specific models using advanced selectors. Go to **Advanced Settings** in the top panel, select **Run Settings**, and then select **Run with Advanced Selectors**.
 
     ```bash
     dbt run --select my_model 
@@ -108,7 +108,7 @@ Review the execution results and verify that transformations completed successfu
 
     :::image type="content" source="media/dbt-job/fabric-dw-success.png" alt-text="Screenshot showing the transformed data in the Fabric warehouse.":::
 
-1. Open the **Compiled SQL** tab at the bottom of the dbt job page to review the rendered SQL code that dbt ran. This helps you debug issues or optimize queries.
+1. Open the **Compiled SQL** tab at the bottom of the dbt job page to review the rendered SQL code that dbt ran. This tab helps you debug issues or optimize queries.
 
     :::image type="content" source="media/dbt-job/compiled-sql.png" alt-text="Screenshot showing the compiled SQL in the bottom panel.":::
 
