@@ -49,7 +49,7 @@ To work with Fabric APIs, you first need to get a Microsoft Entra token for Fabr
 If your application needs to access Fabric APIs using a **service principal**, you can use the MSAL.NET library to acquire an access token. Follow the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD (AAD) token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
 
 > [!NOTE] 
-> If the eventstream you create includes any sources that use a cloud connection, make sure the service principal must has required [cloud connection permission](../../data-factory/data-source-management#manage-users).
+> If the eventstream you create includes any sources that use a cloud connection, make sure the service principal must has required [cloud connection permission](../../data-factory/data-source-management.md#add-users-to-a-data-source).
 
 **Option 2: Get token using the Fabric Portal**
 
@@ -62,7 +62,7 @@ powerBIAccessToken
 Copy the token and paste it into your application.
 
 > [!NOTE] 
-> If the eventstream you create includes any sources that use a cloud connection, make sure the user has required [cloud connection permission](../../data-factory/data-source-management#manage-users).
+> If the eventstream you create includes any sources that use a cloud connection, make sure the user has required [cloud connection permission](../../data-factory/data-source-management.md#add-users-to-a-data-source).
 
 ### Step 2: Prepare for an Eventstream body in JSON
 
@@ -121,9 +121,9 @@ These commands will grant the service principal the necessary data-plane permiss
 If you prefer to manage permissions by calling the REST API, you can run the same Kusto commands by using the REST API.  
 Refer to the following documentation for details:
 
-- [Kusto REST API overview](https://learn.microsoft.com/en-us/kusto/api/rest/?view=microsoft-fabric)
-- [Manage database security roles](https://learn.microsoft.com/en-us/kusto/management/manage-database-security-roles?view=microsoft-fabric)
-- [Manage table security roles](https://learn.microsoft.com/en-us/kusto/management/manage-table-security-roles?view=microsoft-fabric) 
+- [Kusto REST API overview](https://learn.microsoft.com/kusto/api/rest/?view=microsoft-fabric)
+- [Manage database security roles](https://learn.microsoft.com/kusto/management/manage-database-security-roles?view=microsoft-fabric)
+- [Manage table security roles](https://learn.microsoft.com/kusto/management/manage-table-security-roles?view=microsoft-fabric) 
 
 For more details about defining an Eventstream item, check out [Eventstream item definition](#eventstream-item-definition) section.
 
