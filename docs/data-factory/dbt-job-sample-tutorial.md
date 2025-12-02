@@ -81,7 +81,7 @@ Execute the dbt transformations to build models, run tests, and create snapshots
 
     Fabric supports the following core dbt commands directly from the dbt job interface:
 
-    [!INCLUDE [Supported commands for dbt jobs](dbt-job-supported-commands.md)]
+    [!INCLUDE [Supported commands for dbt jobs](/includes/dbt-job-supported-commands.md)]
 
 1. (Optional) You can choose to run or exclude specific models using advanced selectors. To do this, go to **Advanced Settings** in the top panel, select **Run Settings**, and then choose **Run with Advanced Selectors**.
 
@@ -125,7 +125,6 @@ Review the execution results and verify that transformations completed successfu
 
 ## Related content
 
-* [dbt job concepts in Microsoft Fabric](apache-airflow-jobs-concepts.md)
-* [Create a new dbt project](dbt-job-how-to-create-new-project.md)
-* [Import an existing dbt project](dbt-job-how-to-import-existing-project.md)
+* [dbt job in Microsoft Fabric overview](dbt-job-overview.md)
+* [Create a new dbt project](dbt-job-how-to-create-a-new-project.md)
 

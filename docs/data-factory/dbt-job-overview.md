@@ -84,4 +84,5 @@ Currently, when you create a dbt job, by default it uses **Runtime v1.0**, which
 ## Related content
 
 - [dbt Official Documentation](https://docs.getdbt.com/)
-- [Step-by-step dbt job tutorial](dbt-job-how-to-practice-with-a-sample-project.md)
+- [Step-by-step dbt job tutorial](dbt-job-sample-tutorial.md)
+- [Create a new dbt job](dbt-job-how-to-create-a-new-project.md)
