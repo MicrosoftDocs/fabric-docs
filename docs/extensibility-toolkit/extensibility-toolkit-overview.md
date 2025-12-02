@@ -12,6 +12,17 @@ ms.date: 09/04/2025
 
 The Extensibility Toolkit provides customers and partners with an easy way to extend Fabric to their needs. You can add more capabilities that feel, behave, and integrate like native Fabric components. The Extensibility Toolkit lets developers get started in minutes by using the [Starter-Kit](https://aka.ms/fabric-extensibility-starter-kit). Local and cloud development environments are supported, reducing the entry barrier. The AI-enabled repository also allows rapid development and helps the developer along its journey to extend Fabric.
 
+## What is a workload?
+
+A workload is a partner- or customer-built web application that integrates into the Fabric portal. The Fabric host loads your app according to its manifest, provides authentication tokens via Microsoft Entra ID, and exposes a host API to enable navigation, theming, notifications, and other platform interactions.
+
+Key characteristics of workloads:
+
+- **Hosted by you, rendered in Fabric via iFrame** - Your web application runs on your infrastructure but displays within Fabric
+- **Manifest-driven** - Entry points, capabilities, and permissions are declared in a manifest file
+- **Microsoft Entra authentication** - Scoped tokens provide secure access to resources
+- **Fabric API integration** - Uses Fabric Public REST APIs for platform operations
+
 > [!NOTE]
 > The Extensibility Toolkit is the modern evolution of the [Workload Development Kit](../workload-development-kit/development-kit-overview.md) designed to make extending Microsoft Fabric with custom functionality easier and faster than ever. It offers a streamlined development environment allowing developers to focus on innovation rather than infrastructure. This evolution reflects Microsoft’s commitment to empowering developers with intuitive, scalable, and intelligent tools that accelerate productivity and unlock new possibilities within Fabric.
 
@@ -27,11 +38,21 @@ The Extensibility Toolkit provides customers and partners with an easy way to ex
 
 ## Who should use it
 
-The toolkit is for any organization that wants to extend Fabric to adapt it to their needs. Developers can easily embed data apps and UI experiences into Fabric workspaces. Typical scenarios include: pipelines, custom data stores, visualization apps, and operational apps that act on Fabric items.
+**Organizations adopting Fabric:** The toolkit is perfect for any organization that wants to extend Fabric to adapt it to their specific internal needs. Whether you're looking to integrate existing systems, create custom data processing workflows, or build specialized analytics tools for your teams, the Extensibility Toolkit enables you to seamlessly embed your solutions into Fabric workspaces. Developers can easily create data apps and UI experiences that feel native to Fabric, supporting scenarios like custom pipelines, specialized data stores, visualization apps, and operational tools that work with your Fabric items.
 
-## Publish to the Workload Hub
+**Solution builders for the Fabric ecosystem:** If you're building solutions that you want to provide to the entire Fabric community through the Workload Hub, the toolkit offers a complete path to market. You can develop innovative workloads that solve common industry challenges, extend Fabric's capabilities for specific use cases, or create entirely new experiences that other organizations can discover, trial, and purchase. This represents a significant business opportunity to reach millions of Fabric users worldwide while building a sustainable revenue stream through the Workload Hub marketplace.
 
-After developing a Fabric workload, customers and partners can publish it to their tenant and make it available in the Workload Hub to the whole organization. Workloads can also be published to all Fabric users according to the [publishing requirements](../workload-development-kit/publish-workload-requirements.md). This allows users to discover and add the workload to their tenant, start a trial experience, and then buy your workload. See [Publish a workload](./publish-workload-flow.md) for details.
+## Items and native integration
+
+Workloads can contribute one or more item types that appear in workspaces and participate in collaboration, sharing, search, lineage, and lifecycle operations. Data is stored in [OneLake](../onelake/onelake-overview.md) and metadata is managed via Fabric public APIs, ensuring items behave like any other Fabric artifact.
+
+Examples of native participation:
+
+- **Full CRUD operations** - Create, read, update, and delete items in Fabric portal and over API
+- **Workspace integration** - Workspace ACLs and tenant governance automatically apply
+- **Discoverability** - Items are discoverable via search and integrated in navigation
+- **Data storage** - Leverage OneLake for data storage and management
+- **CI/CD support** - Automatic participation in continuous integration and deployment workflows
 
 ## Workload examples
 
@@ -47,13 +68,23 @@ The [Extensibility Samples](https://aka.ms/fabric-extensibility-toolkit-samples)
 - Package Installer: Installs predefined packages (items, data, job schedules) into new or existing workspaces.
 - OneLake Editor: Opens and visualizes OneLake data for Fabric items, including items created via the Extensibility Toolkit.
 
+## When to use the Extensibility Toolkit
+
+Use the Extensibility Toolkit when you want to bring a custom experience to Fabric while leveraging its identity, governance, storage, and APIs. Common scenarios include:
+
+- **Domain-specific authoring experiences** - Build specialized tools for your industry or use case
+- **Governance and compliance tooling** - Create custom governance workflows and compliance dashboards
+- **System integrations** - Connect Fabric with your existing systems and workflows
+- **Custom analytics and visualization** - Build specialized analytics tools that complement Power BI
+- **Operational tools** - Create custom monitoring, management, and operational dashboards
+
 ## Key considerations for developing a Fabric workload
 
 There are several important concepts to understand before beginning development:
 
 - Native Fabric experience: Review the [Fabric UX system](https://aka.ms/fabricux); all published workloads must comply with these design principles.
 - Integrate with the Fabric workspace: Your application must function in a [Fabric workspace](../fundamentals/workspaces.md), where users create instances and collaborate.
-- Multitenant integration: Your workload is embedded in Fabric, but your code runs in your cloud. Fabric exposes APIs for user data and context so you can map between the customer’s environment and your deployment. 
+- Multitenant integration: Your workload is embedded in Fabric, but your code runs in your cloud. Fabric exposes APIs for user data and context so you can map between the customer's environment and your deployment.
 
 ## Trademarks
 
@@ -64,5 +95,8 @@ Any use of third-party trademarks or logos are subject to those third-party's po
 
 ## Related content
 
-- [Publish a Fabric workload to Workload Hub](publish-workload-flow.md)
-- [Quick start: Add a workload in minutes](quickstart.md)
+- [Architecture](architecture.md) - Understand the technical architecture
+- [Key concepts and features](key-concepts.md) - Learn about core concepts
+- [Manifest overview](manifest-overview.md) - Understand workload manifests
+- [Getting Started](getting-started.md) - Start building your first workload
+- [Publish a Fabric workload to Workload Hub](publishing-overview.md) - Learn about publishing
