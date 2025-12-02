@@ -184,6 +184,10 @@ Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on i
 
 * All *My workspaces* are counted as separate records as part of the *Active workspaces* measure.
 
+### Model limitations
+
+* The semantic model is read-only and cannot be used with Fabric data agents.
+
 ## Related content
 
 * [What is the Admin monitoring workspace?](monitoring-workspace.md)
