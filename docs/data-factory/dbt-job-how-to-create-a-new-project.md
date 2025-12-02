@@ -165,7 +165,7 @@ my-dbt_project/
 
 Fabric supports the following core dbt commands directly from the dbt job interface.
 
-[!INCLUDE [Supported commands for dbt jobs](/includes/dbt-job-supported-commands.md)]
+[!INCLUDE [Supported commands for dbt jobs](includes/dbt-job-supported-commands.md)]
 
 You can selectively run or exclude specific models using selectors:
 
