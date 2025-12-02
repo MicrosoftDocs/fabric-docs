@@ -1,72 +1,142 @@
 items:
 - name: Microsoft Fabric Extensibility Toolkit documentation
   href: index.yml
+
 - name: Overview
   items:
   - name: Extensibility Toolkit overview
     href: extensibility-toolkit-overview.md
   - name: Architecture
     href: architecture.md
-- name: Get started
-  items:
-  - name: Build your workload
-    href: build-your-workload.md
-  - name: Starter kit
-    href: quickstart.md
-  - name: Implementation guide
-    href: implementation-guide.md
-  - name: Setup guide
-    href: setup-guide.md
   - name: Key Concepts and Features
     href: key-concepts.md
-- name: How-To
+
+- name: Get started
+  items:
+  - name: Getting Started with Fabric Extensibility Toolkit
+    href: getting-started.md
+  - name: Setup your enviroment and run the Hello World
+    href: setup-guide.md
+  - name: Manual Setup
+    href: setup-manual.md
+
+- name: Tutorials
+  items:
+  - name: Create Microsoft Entra App
+    href: tutorial-create-entra-app.md
+  - name: Create Custom Fabric Items
+    href: tutorial-create-new-fabric-item.md
+  - name: Host Your Workload in Azure
+    href: tutorial-host-workload-in-azure.md
+  - name: Publish Your Workload to Azure
+    href: tutorial-publish-workload-to-azure.md
+  - name: Publish and Manage Workload
+    href: tutorial-publish-workload.md
+  - name: Supportability Best Practices
+    href: tutorial-supportability.md
+  - name: Validate Workload for Publishing
+    href: tutorial-validate-workload.md
+
+- name: Feature configuration
   items:
   - name: Define Item Creation
     href: how-to-create-item.md
   - name: Store Item Definition
     href: how-to-store-item-definition.md
-  - name: Acquire Microsoft Entra Token
-    href: how-to-acquire-entra-token.md
-  - name: How to create a shortcut
+  - name: Store Data in OneLake
+    href: how-to-store-data-in-onelake.md
+  - name: Create Shortcuts
     href: how-to-create-shortcut.md
-  - name: Store data in an Item
-    href: how-to-store-data-in-item.md
+  - name: Integrate with OneLake Catalog
+    href: how-to-integrate-with-onelake-catalog.md
+  - name: Configure Workload Media Section
+    href: how-to-configure-workload-media-section.md
+  - name: Create Trial Experience
+    href: how-to-add-trial-experience.md
+  - name: Add Custom Item Actions
+    href: how-to-add-custom-item-actions.md
+  - name: Add Jobs-to-be-Done
+    href: how-to-add-jobs-to-be-done.md
+  - name: Define Jobs for Your Workload
+    href: how-to-define-jobs.md
+  - name: Enable Item Lifecycle Notifications
+    href: how-to-enable-item-lifecycle-notifications.md
   - name: Access Fabric APIs
     href: how-to-access-fabric-apis.md
+  - name: Acquire Microsoft Entra Token
+    href: how-to-acquire-entra-token.md
+  - name: Create Custom Settings Dialogs
+    href: how-to-add-custom-settings.md
+  - name: Create Custom About Pages
+    href: how-to-add-custom-about.md
+  - name: Localize Your Workload
+    href: how-to-localize.md
   - name: Relax the iFrame
     href: how-to-relax-iframe.md
-  - name: Manual setup guide
-    href: setup-manual.md
+
+- name: Publish your workload
+  items:
+  - name: Overview
+    href: publishing-overview.md
+  - name: Monetize Your Workload
+    href: how-to-monetize-workload.md
+  - name: General requirements (All scenarios)
+    href: publishing-requirements-general.md
+  - name: Cross-tenant publishing (Public distribution)
+    items:
+    - name: Cross-tenant publishing overview
+      href: publishing-requirements-overview.md
+    - name: Workload requirements
+      href: publishing-requirements-workload.md
+    - name: Item requirements
+      href: publishing-requirements-item.md 
+    - name: Vendor Attestation Template
+      href: publishing-vendor-attestation-template.md
+
+- name: Consume workloads
+  items:
+  - name: How to add workloads
+    href: consume-workloads.md 
+
+- name: Concepts
+  items:
+  - name: Authentication and Authorization
+    items:
+    - name: Overview
+      href: authentication-overview.md
+    - name: Guidelines
+      href: authentication-guidelines.md
+    - name: JavaScript API
+      href: authentication-javascript-api.md
+    
+  - name: Manifest
+    items:
+    - name: Overview
+      href: manifest-overview.md
+    - name: Workload manifest
+      href: manifest-workload.md
+    - name: Product manifest
+      href: manifest-product.md
+    - name: Item manifests
+      href: manifest-item.md
+  - name: Fabric Item
+    href: concept-item-overview.md
+  
+
 - name: Tools and SDKs
   items:
   - name: DevGateway
-    href: devgateway.md
+    href: tools-devgateway.md
   - name: DevServer
-    href: devserver.md
+    href: tools-devserver.md
   - name: FabricClient SDK
     href: https://go.microsoft.com/fwlink/?linkid=2271989
-- name: Manifest
+
+- name: Support
   items:
-  - name: Overview
-    href: manifest-overview.md
-  - name: Workload manifest
-    href: manifest-workload.md
-  - name: Product manifest
-    href: manifest-product.md
-  - name: Item manifests
-    href: manifest-item.md
-- name: Publish
-  items:
-  - name: Overview
-    href: publishing-overview.md    
-  - name: Publish your workload
-    href: publish-workload-flow.md
-  - name: Item Publishing Requirements
-    href: publishing-requirements-item.md
-  - name: Workload Publishing Requirements
-    href: publishing-requirements-workload.md
-  - name: Vendor Attestation Document Template
-    href: publishing-vendor-attestation-template.md
+  - name: Troubleshooting and Support
+    href: troubleshooting.md
+
 - name: Reference
   items:
     - name: Starter Kit
