@@ -107,5 +107,5 @@ Once you have access to the code (either in Codespaces or locally), continue wit
 - Learn the [architecture](architecture.md) and how the host, your app, and Fabric services interact
 - Read the [Manifest Overview](manifest-overview.md) for schema and best practices
 - Understand the [Workload manifest](manifest-workload.md) structure and configuration
-- Develop with the [DevGateway](tools-devgateway.md) for local testing
+- Develop with the [DevGateway](tools-register-local-workload.md) for local testing
 - [Publish your workload](publishing-overview.md) when you're ready to share it broadly

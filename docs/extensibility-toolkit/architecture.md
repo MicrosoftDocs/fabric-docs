@@ -50,7 +50,7 @@ Workloads typically contribute one or more item types. Items created by your wor
 
 ## Next steps
 
-To develop locally and publish your workload, see [Publish your workload](publishing-overview.md). For manifest schema and local development guidance, see [Manifest overview](manifest-overview.md), [DevServer](tools-devserver.md), and [DevGateway](tools-devgateway.md). For API endpoints, scopes, and identity guidance, see the [Fabric Public REST APIs](/rest/api/fabric/articles/).
+To develop locally and publish your workload, see [Publish your workload](publishing-overview.md). For manifest schema and local development guidance, see [Manifest overview](manifest-overview.md), [DevServer](tools-register-local-web-server.md), and [DevGateway](tools-register-local-workload.md). For API endpoints, scopes, and identity guidance, see the [Fabric Public REST APIs](/rest/api/fabric/articles/).
 
 ## Related content
 

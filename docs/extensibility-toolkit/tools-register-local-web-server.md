@@ -20,7 +20,7 @@ The DevServer is the local web server you run while developing a Fabric workload
 - Enables rapid edit-refresh cycles with hot reload in most setups.
 
 > [!IMPORTANT]
-> The DevServer works together with the [DevGateway](./tools-devgateway.md). The DevGateway registers your local workload instance with Fabric so the service knows to talk to your DevServer endpoints while you develop.
+> The DevServer works together with the [DevGateway](./tools-register-local-workload.md). The DevGateway registers your local workload instance with Fabric so the service knows to talk to your DevServer endpoints while you develop.
 
 ## Where Fabric calls the DevServer
 
@@ -66,7 +66,7 @@ In production, your workload's manifests are packaged and uploaded as part of yo
 
 ## See also
 
-- [DevGateway](./tools-devgateway.md)
+- [DevGateway](./tools-register-local-workload.md)
 - [Workload manifest](./manifest-workload.md)
 - [Product manifest](./manifest-product.md)
 - [Item manifest](./manifest-item.md)

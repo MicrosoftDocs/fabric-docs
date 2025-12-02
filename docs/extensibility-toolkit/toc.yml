@@ -88,9 +88,9 @@ items:
 - name: Tools and SDKs
   items:
   - name: DevGateway
-    href: tools-devgateway.md
+    href: tools-register-local-workload.md
   - name: DevServer
-    href: tools-devserver.md
+    href: tools-register-local-web-server.md
   - name: FabricClient SDK
     href: https://go.microsoft.com/fwlink/?linkid=2271989
 

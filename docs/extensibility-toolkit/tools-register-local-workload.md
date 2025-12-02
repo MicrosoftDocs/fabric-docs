@@ -17,7 +17,7 @@ The DevGateway is a small helper you run during development to register your loc
 - Registers a local workload instance in a specific workspace for the current signed-in developer.
 - Informs Fabric about your workload identity and entry point using your manifests.
 - Routes Fabric host calls to your local environment so the platform can load your frontend and discover items while you iterate.
-- Works hand-in-hand with the [DevServer](./tools-devserver.md), which actually hosts your frontend and exposes manifest endpoints.
+- Works hand-in-hand with the [DevServer](./tools-register-local-web-server.md), which actually hosts your frontend and exposes manifest endpoints.
 
 > [!NOTE]
 > The DevGateway doesn't serve your web app or manifests itself. Instead, it registers your local instance and points Fabric to your DevServer and manifests.
@@ -27,7 +27,7 @@ The DevGateway is a small helper you run during development to register your loc
 Your workload is manifest-driven in both development and production. During development:
 
 - The DevGateway uses your local configuration to advertise the workload's identity and entry points (as defined in the [Workload manifest](./manifest-workload.md)).
-- Fabric then calls your [DevServer](./tools-devserver.md) to fetch the [Product manifest](./manifest-product.md) and [Item manifests](./manifest-item.md) via local endpoints (for example, the template's `/manifests` route), so the service can render navigation, tiles, and creation experiences.
+- Fabric then calls your [DevServer](./tools-register-local-web-server.md) to fetch the [Product manifest](./manifest-product.md) and [Item manifests](./manifest-item.md) via local endpoints (for example, the template's `/manifests` route), so the service can render navigation, tiles, and creation experiences.
 
 This mirrors what happens at publish time, but everything stays local for fast iteration.
 
@@ -58,7 +58,7 @@ Your repository's setup/build scripts generate or update this config automatical
 
 ## See also
 
-- [DevServer](./tools-devserver.md)
+- [DevServer](./tools-register-local-web-server.md)
 - [Manifest overview](./manifest-overview.md)
 - [Workload manifest](./manifest-workload.md)
 - [Product manifest](./manifest-product.md)
