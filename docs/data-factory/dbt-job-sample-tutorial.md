@@ -52,23 +52,23 @@ Create a new dbt job item in your workspace to start building transformations.
 
     :::image type="content" source="media/dbt-job/jaffle-shop.png" alt-text="Screenshot showing the Jaffle Shop sample project option.":::
 
-1. Select an adapter profile to run the dbt project against.
+1. Select **Select a profile** to select an adapter profile to run your dbt project against.
 
     :::image type="content" source="media/dbt-job/select-profile-jaffle-shop.png" alt-text="Screenshot showing the profile selection for the Jaffle Shop project.":::
 
-1. Create a new warehouse to store your sample data, or select an existing warehouse.
+1. Create a new warehouse to store your sample data by selecting the **Warehouse** option.
 
     :::image type="content" source="media/dbt-job/select-warehouse.png" alt-text="Screenshot showing the Fabric warehouse selection.":::
 
-1. Enter a name for the warehouse and select **Create and connect**. This step creates a dedicated destination to store the data you'll transform.
+1. Enter a name for the warehouse and select **Create and connect**.
 
     :::image type="content" source="media/dbt-job/name-a-warehouse.png" alt-text="Screenshot showing the warehouse naming dialog.":::
 
-1. By default, the schema is set to jaffle_shop, and the option to seed data is selected. This loads sample data into the schema inside the warehouse you created. If you want to seed the data later, clear the checkbox before you select **Connect**.
+1. By default, the schema is set to jaffle_shop, and the option to seed data is selected. This loads sample data into the schema inside the warehouse you created. Select **Connect**.
 
     :::image type="content" source="media/dbt-job/jaffle-shop-schema.png" alt-text="Screenshot showing the Jaffle Shop schema and seed data options.":::
 
-1. The project setup completes in a few seconds as the files are imported. After it finishes, verify that the sample data was seeded by checking the warehouse and schema. You can also confirm this in the output panel at the bottom of the screen. If the data isn't in the warehouse, run the seed command from the UI to load it.
+1. The project setup completes in a few minutes as the files are imported. After it finishes, verify that the sample data was seeded  selecting the **Open Warehouse** button at the top of the page, and checking the warehouse and schema. You can also confirm this in the output panel at the bottom of the screen. If the data isn't in the warehouse, run the seed command from the UI to load it.
 
     :::image type="content" source="media/dbt-job/setup-seed-success.png" alt-text="Screenshot showing the successful import of the Jaffle Shop project and seeded data." lightbox="media/dbt-job/setup-seed-success.png":::
 
@@ -78,9 +78,9 @@ Execute the dbt transformations to build models, run tests, and create snapshots
 
 1. The top panel provides options to Build, Compile, or Run your project. By default, the operation is set to Build, which runs all models, tests, and snapshots together for a complete workflow.
 
-    Fabric supports the following core dbt commands directly from the dbt job interface:
+1. Select **Build**, then select **Run**.
 
-    [!INCLUDE [Supported commands for dbt jobs](includes/dbt-job-supported-commands.md)]
+    :::image type="content" source="media/dbt-job/build-run-command.png" alt-text="Screenshot showing the Build command and Run command buttons.":::
 
 1. (Optional) You can run or exclude specific models using advanced selectors. To do this, go to **Advanced Settings** in the top panel, select **Run Settings**, and then select **Run with Advanced Selectors**.
 
@@ -94,25 +94,21 @@ Execute the dbt transformations to build models, run tests, and create snapshots
 
     :::image type="content" source="media/dbt-job/advanced-selectors.png" alt-text="Screenshot showing the advanced selectors option.":::
 
-1. Select **Build**, then select **Run**.
-
-    :::image type="content" source="media/dbt-job/build-run-command.png" alt-text="Screenshot showing the Build command and Run command buttons.":::
-
 ## Monitor and verify the results
 
 Review the execution results and verify that transformations completed successfully.
 
-1. After the dbt job starts, you can monitor its progress in the Output tab at the bottom of the screen. The run typically completes in a few minutes, depending on the size and complexity of your project.
+1. After the dbt job starts, you can monitor its progress in the Output tab at the bottom of the screen. The run typically completes in a few minutes.
 
 1. Confirm a successful run by checking the Output tab. The status shows as succeeded when the run completes successfully.
 
     :::image type="content" source="media/dbt-job/run-success.png" alt-text="Screenshot showing a successful build command execution.":::
 
-1. Verify the output by checking the transformed data in the Fabric Warehouse under the sample_dbt_project → jaffle_shop schema.
+1. Verify the output by checking the transformed data in the Fabric Warehouse by selecting the **Open Warehouse** button at the top of the dbt job page, then looking under the sample_dbt_project → jaffle_shop schema.
 
     :::image type="content" source="media/dbt-job/fabric-dw-success.png" alt-text="Screenshot showing the transformed data in the Fabric warehouse.":::
 
-1. Open the **Compiled SQL** tab at the bottom to review the rendered SQL code that dbt ran. This helps you debug issues or optimize queries.
+1. Open the **Compiled SQL** tab at the bottom of the dbt job page to review the rendered SQL code that dbt ran. This helps you debug issues or optimize queries.
 
     :::image type="content" source="media/dbt-job/compiled-sql.png" alt-text="Screenshot showing the compiled SQL in the bottom panel.":::
 
@@ -122,8 +118,19 @@ Review the execution results and verify that transformations completed successfu
 
 ## Clean up resources
 
+After completing the tutorial, you can delete the dbt job and warehouse to avoid incurring unnecessary costs.
+
+1. Open the Fabric workspace where you created the dbt job.
+1. Hover over the dbt job you created, select the **More options** ellipsis (...), and then select **Delete**.
+
+    :::image type="content" source="media/dbt-job/delete-dbt-job.png" alt-text="Screenshot showing the more options menu to delete the dbt job from your workspace.":::
+
+1. To delete the warehouse, search for the warehouse in the workspace where you created your dbt job, hover over the warehouse you created, select the **More options** ellipsis (...), and then select **Delete**.
+
+    :::image type="content" source="media/dbt-job/delete-warehouse.png" alt-text="Screenshot showing the more options menu to delete the warehouse from your workspace.":::
+
 ## Related content
 
 * [dbt job in Microsoft Fabric overview](dbt-job-overview.md)
-* [Create a new dbt project](dbt-job-how-to-create-a-new-project.md)
+* [How to create a new dbt job](dbt-job-how-to-create-a-new-project.md)
 
