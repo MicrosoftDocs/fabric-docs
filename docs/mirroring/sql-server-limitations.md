@@ -55,7 +55,7 @@ For troubleshooting, see:
 
 ## Table level
 
-- Tables with primary key or a clustered index (when a primary key does not exist) on unsupported types cannot be mirrored - **computed columns**, **user-defined types**, **geometry**, **geography**, **hierarchy ID**, **SQL variant**, **timestamp**, **datetime2(7)**, **datetimeoffset(7**) or **time(7).**
+- Tables with primary key or a clustered index (when a primary key does not exist) on unsupported types cannot be mirrored - **computed columns**, **user-defined types**, **geometry**, **geography**, **hierarchy ID**, **SQL variant**, **timestamp**, **datetime2(7)**, **datetimeoffset(7)**, or **time(7)**.
 
 - When mirroring SQL Server 2016 thru SQL Server 2022, a table cannot be mirrored if it does not have a primary key.
 - Delta lake supports only six digits of precision.
