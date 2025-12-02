@@ -48,6 +48,9 @@ To work with Fabric APIs, you first need to get a Microsoft Entra token for Fabr
 
 If your application needs to access Fabric APIs using a **service principal**, you can use the MSAL.NET library to acquire an access token. Follow the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD (AAD) token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
 
+> [!NOTE] 
+> If the eventstream you create includes any sources that use a cloud connection, make sure the service principal must has required [cloud connection permission](../../data-factory/data-source-management#manage-users).
+
 **Option 2: Get token using the Fabric Portal**
 
 You can use your Azure AD token to authenticate and test the Fabric APIs. Sign in into the Fabric Portal for the Tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
@@ -57,6 +60,9 @@ powerBIAccessToken
 ```
 
 Copy the token and paste it into your application.
+
+> [!NOTE] 
+> If the eventstream you create includes any sources that use a cloud connection, make sure the user has required [cloud connection permission](../../data-factory/data-source-management#manage-users).
 
 ### Step 2: Prepare for an Eventstream body in JSON
 

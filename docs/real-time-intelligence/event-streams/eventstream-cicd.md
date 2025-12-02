@@ -86,7 +86,7 @@ Eventstream generally supports CI/CD through Git integration and Deployment pipe
 >
 > After CI/CD (Git integration and deployment pipeline), all resources in the target eventstream become active, unless they fail due to connection or configuration issues. The resources in the original eventstream (exported to Git) and in the eventstream being deployed retain their states.
 >
->When importing an **Azure Event Grid namespace** source into a workspace, ensure you have Member or higher permissions in that target Fabric workspace; if not, ask a colleague with Member access to grant Contributor permissions to the Event Grid service principal before proceeding. When exporting, note that the **principalId** property will not be included in your Git repository.
+> When importing an **Azure Event Grid namespace** source into a workspace, ensure you have Member or higher permissions in that target Fabric workspace; if not, ask a colleague with Member access to grant Contributor permissions to the Event Grid service principal before proceeding.
 
 ## Limitation
 
