@@ -125,6 +125,7 @@ You can grant these permissions in two ways:
   - [Manage database security roles](/kusto/management/manage-database-security-roles)
   - [Manage table security roles](/kusto/management/manage-table-security-roles) 
 
+
 For more details about defining an Eventstream item, check out [Eventstream item definition](#eventstream-item-definition) section.
 
 **Example of Eventstream definition in JSON:**
