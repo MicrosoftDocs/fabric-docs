@@ -111,7 +111,7 @@ You can export data from the Details page, or any other visual, by clicking _Mor
 You can also navigate directly to an item or its workspace using the hyperlinks in the data table.
 
 > [!NOTE]
-> Workspaces can only be accessed if you have a valid workspace role, else you are redirected to your *My workspace*. Item urls currently only support legacy Power BI items and some Fabric items.
+> Workspaces can only be accessed if you have a valid workspace role, else you're redirected to your *My workspace*. Item urls currently only support legacy Power BI items and some Fabric items.
 
 ## Measures
 
@@ -161,7 +161,7 @@ Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on i
 
 ### Model limitations
 
-* The semantic model is read-only and cannot be used with Fabric data agents.
+* The semantic model is read-only and can't be used with Fabric data agents.
 
 ## Related content
 
