@@ -4,7 +4,7 @@ description: Learn about the preview experience in ontology (preview).
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 10/30/2025
+ms.date: 12/02/2025
 ms.topic: how-to
 ---
 
@@ -66,18 +66,24 @@ To create more tiles, follow these steps.
 
     :::image type="content" source="media/how-to-use-preview-experience/add-tile-1.png" alt-text="Screenshot of adding a tile.":::
 
-1. Select the type of tile you want to create: a **Timeseries** chart for streaming data, or **Fabric Graph** for a relationship graph. Only one graph tile is allowed per dashboard.
+1. Select the type of tile you want to create: a **Timeseries** line chart for streaming data, a **Static property** bar chart for static data, or **Fabric graph** for a relationship graph (only one graph tile is allowed per dashboard).
 
-1. In the tile configuration options, configure the fields for the X and Y axis, and the property you want to display.
+1. Complete the configuration for your chosen tile type.
 
     :::image type="content" source="media/how-to-use-preview-experience/add-tile-2.png" alt-text="Screenshot of configuring a time series tile.":::
+
+    :::image type="content" source="media/how-to-use-preview-experience/add-tile-3.png" alt-text="Screenshot of configuring a static property tile.":::
 
     >[!NOTE]
     > All tiles created at the entity level propagate down to the entity instance level.
 
-1. Use the time range selector to configure the time range for the data displayed in the tiles.
+1. Back on the overview page, use the time range selector to configure the time range for the data displayed in the tiles.
 
     :::image type="content" source="media/how-to-use-preview-experience/change-date-range.png" alt-text="Screenshot of configuring the time range." lightbox="media/how-to-use-preview-experience/change-date-range.png":::
+
+You can also edit or delete existing tiles by selecting **...** in the top right corner of a tile.
+
+    :::image type="content" source="media/how-to-use-preview-experience/edit-delete.png" alt-text="Screenshot of edit and delete options for a tile." lightbox="media/how-to-use-preview-experience/edit-delete.png":::
 
 ### Use graph view
 
