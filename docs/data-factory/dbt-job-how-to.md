@@ -1,0 +1,98 @@
+---
+title: How to create a new dbt job in Microsoft Fabric (preview)
+description: This article guides you through how to create a dbt job, execute it, and view the results.
+ms.reviewer: whhender
+ms.author: akurnala
+author: abhinayakurnala1
+ms.topic: how-to
+ms.date: 11/20/2025
+ms.search.form: dbt-job-tutorials
+---
+
+# Learn how to create a new dbt job in Microsoft Fabric (preview)
+
+Microsoft Fabric now lets you transform data in your Data Warehouses using dbt—all within the Fabric web experience. No external adapters, no CLI, no Airflow. Just SQL, a warehouse, and a streamlined UI.
+
+This walkthrough demonstrates how to use dbt directly within Microsoft Fabric to transform data in a warehouse—without external tools minimizing setup complexity and enabling users to leverage existing compute resources. As a result, dbt jobs make enterprise-scale data modeling more accessible to the SQL community. 
+
+It’s designed to help data engineers and analysts:
+
+- Import a Sample Data Warehouse in Fabric
+- Build a dbt item to transform your data
+- Run and validate your models—all natively in Fabric.
+
+## Prerequisites
+
+Before you create a dbt job in Microsoft Fabric, make sure your environment is set up correctly:
+
+- [Enable dbt jobs](dbt-job-overview.md#how-to-enable-dbt-jobs-preview)
+- [Create a workspace](/fabric/fundamentals/create-workspaces) if you don't have one.
+- [Set up a Fabric Data Warehouse](/fabric/data-warehouse/create-warehouse) if you don't have one.
+- [Set permissions and access](dbt-job-overview.md#required-permissions-and-access)
+
+## Supported commands
+
+Fabric supports the following core dbt commands directly from the dbt job interface.
+
+[!INCLUDE [Supported commands for dbt jobs](includes/dbt-job-supported-commands.md)]
+
+You can also selectively run or exclude specific models using [selectors](dbt-job-configure.md#advanced-selector-configuration).
+
+## Create a dbt job
+
+Create a new dbt job item in your workspace to start building transformations.
+
+1. Go to your Fabric workspace.
+1. Select **+New item** then search for and select **dbt job** from the item creation menu.
+1. Enter a name and select a location.
+
+   :::image type="content" source="media/dbt-job/create-job.png" alt-text="Screenshot of the Fabric UI with the create job dialog." lightbox="media/dbt-job/create-job.png":::
+
+1. Choose the target Fabric Data Warehouse connection.
+1. Configure job parameters and save the new dbt job item.
+1. After it's created, you can open the dbt job to view its file structure, configure settings, and run dbt commands directly from the Fabric UI.
+
+   :::image type="content" source="media/dbt-job/landing-page.png" alt-text="Screenshot of the Fabric UI with landing page of dbt job." lightbox="media/dbt-job/landing-page.png":::
+
+## Schedule dbt jobs
+
+You can automate dbt job runs using the built-in schedule feature to refresh models, run tests, or keep data pipelines up to date.
+
+1. Open your dbt job in Fabric.
+1. Select the **Schedule** tab in the top panel.
+1. Select **Add schedule** to configure a new scheduled run.
+    - **Repeat**: Choose how often to run the job (for example, by the minute, hourly, daily, weekly).
+    - **Interval**: Set the frequency (for example, every 15 minutes).
+    - **Start date and time**: When the schedule should begin.
+    - **End date and time**: (Optional) When the schedule should stop.
+    - **Time zone**: Select your preferred time zone for scheduling.
+1. Select **Save** to activate the schedule.
+
+    :::image type="content" source="media/dbt-job/schedule-dbt.png" alt-text="Screenshot of the Fabric UI with the dbt job schedule settings." lightbox="media/dbt-job/schedule-dbt.png":::
+
+## Monitor dbt jobs
+
+Fabric provides several tools to help you monitor and validate your dbt jobs:
+
+### Visual aids
+
+- **Lineage View**: Generates a dependency graph of your models, showing how data flows between sources and transformations.
+- **Compiled SQL View**: Displays the rendered SQL code that dbt runs, so you can debug or optimize queries.
+- **Run Results Panel**: Shows model-level success, failure, and execution time for each dbt command.
+
+### Monitoring and troubleshooting
+
+- **Run Summary**: Displays total models run, runtime, and success status.
+- **Error Logs**: Provide stack traces and query payloads for troubleshooting.
+- **Download Logs**: Export detailed logs or payloads for offline analysis.
+
+## Best practices
+
+- Keep your models modular and test-driven for easier debugging and faster runs.
+- To optimize performance, avoid long dependency chains and prefer well-partitioned transformations.
+
+## Related content
+
+* [dbt job in Microsoft Fabric overview](dbt-job-overview.md)
+* [Step-by-step dbt job tutorial](dbt-job-how-to.md)
+* [How to configure a dbt job](dbt-job-configure.md)

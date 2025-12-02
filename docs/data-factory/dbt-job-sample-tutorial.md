@@ -1,5 +1,5 @@
 ---
-title: Practice with a sample dbt project in Microsoft Fabric
+title: Practice with a sample dbt project in Microsoft Fabric (preview)
 description: Learn how to create and run a dbt job using the sample Jaffle Shop project in Microsoft Fabric.
 author: abhinayakurnala1
 ms.author: akurnala
@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 ---
 
-# Tutorial: Practice with a sample dbt project in Microsoft Fabric
+# Tutorial: Practice with a sample dbt project in Microsoft (preview)
 
 The dbt Job in Microsoft Fabric lets you run dbt transformations without complex setup. You can orchestrate model builds, tests, and deployments directly in Fabric using built-in capabilities for scheduling and monitoring. This tutorial walks you through working with a sample project to learn dbt job capabilities.
 
@@ -132,5 +132,6 @@ After completing the tutorial, you can delete the dbt job and warehouse to avoid
 ## Related content
 
 * [dbt job in Microsoft Fabric overview](dbt-job-overview.md)
-* [How to create a new dbt job](dbt-job-how-to-create-a-new-project.md)
+* [How to create a new dbt job](dbt-job-how-to.md)
+* [How to configure a dbt job](dbt-job-configure.md)
 

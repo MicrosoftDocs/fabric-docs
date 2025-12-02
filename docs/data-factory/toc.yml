@@ -1013,10 +1013,12 @@
         items:
         - name: What is dbt job?
           href: dbt-job-overview.md
-        - name: How to create a dbt job
-          href: dbt-job-how-to-create-a-new-project.md
         - name: Step-by-step dbt job tutorial
           href: dbt-job-sample-tutorial.md
+        - name: Create a dbt job
+          href: dbt-job-how-to.md
+        - name: Configure a dbt job
+          href: dbt-job-configure.md
   - name: Orchestrate your pipelines
     items:
       - name: What is a pipeline?
