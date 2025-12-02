@@ -186,7 +186,7 @@ Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on i
 
 ### Model limitations
 
-* The semantic model is read-only and cannot be used with Fabric data agents.
+* The semantic model is read-only and can't be used with Fabric data agents.
 
 ## Related content
 
