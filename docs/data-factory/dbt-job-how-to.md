@@ -13,12 +13,12 @@ ms.search.form: dbt-job-tutorials
 
 Microsoft Fabric now lets you transform data in your Data Warehouses using dbt—all within the Fabric web experience. No external adapters, no CLI, no Airflow. Just SQL, a warehouse, and a streamlined UI.
 
-This walkthrough demonstrates how to use dbt directly within Microsoft Fabric to transform data in a warehouse—without external tools minimizing setup complexity and enabling users to leverage existing compute resources. As a result, dbt jobs make enterprise-scale data modeling more accessible to the SQL community. 
+This walkthrough demonstrates how to use dbt directly within Microsoft Fabric to transform data in a warehouse—without external tools minimizing setup complexity and enabling users to use existing compute resources. As a result, dbt jobs make enterprise-scale data modeling more accessible to the SQL community.
 
 It’s designed to help data engineers and analysts:
 
 - Import a Sample Data Warehouse in Fabric
-- Build a dbt item to transform your data
+- Transform your data with dbt items
 - Run and validate your models—all natively in Fabric.
 
 ## Prerequisites
@@ -40,7 +40,7 @@ You can also selectively run or exclude specific models using [selectors](dbt-jo
 
 ## Create a dbt job
 
-Create a new dbt job item in your workspace to start building transformations.
+Start building transformations by creating a dbt job item in your Fabric workspace.
 
 1. Go to your Fabric workspace.
 1. Select **+New item** then search for and select **dbt job** from the item creation menu.
@@ -50,7 +50,7 @@ Create a new dbt job item in your workspace to start building transformations.
 
 1. Choose the target Fabric Data Warehouse connection.
 1. Configure job parameters and save the new dbt job item.
-1. After it's created, you can open the dbt job to view its file structure, configure settings, and run dbt commands directly from the Fabric UI.
+1. Open the dbt job to view its file structure, configure settings, and run dbt commands directly from the Fabric UI.
 
    :::image type="content" source="media/dbt-job/landing-page.png" alt-text="Screenshot of the Fabric UI with landing page of dbt job." lightbox="media/dbt-job/landing-page.png":::
 
