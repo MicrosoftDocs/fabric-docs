@@ -4,7 +4,7 @@ description: This article provides information about how to create an Oracle dat
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 07/31/2024
+ms.date: 11/14/2025
 ms.custom:
 - template-how-to
 - connectors
@@ -62,7 +62,7 @@ You have two ways to browse to this page:
 - In copy assistant, browse to this page after selecting the connector.
 - In a pipeline, browse to this page after selecting **More** in Connection section and selecting the connector.
 
-### Step 1: Specify the server, connection, connection name and data gateway
+### Step 1: Specify the server, connection, connection name, and data gateway
 
    :::image type="content" source="media/connector-oracle-database/connection-details.png" alt-text="Screenshot showing how to set new connection.":::
 

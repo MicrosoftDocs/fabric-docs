@@ -1,14 +1,14 @@
 ---
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 10/20/2025
+ms.date: 12/01/2025
 ms.topic: include
 # For docs\mirroring\azure-sql-database-automatic-reseed.md and docs\mirroring\azure-sql-managed-instance-automatic-reseed.md
 ---
 
 Under certain conditions if there is a delay in mirroring to Fabric, increased transaction log file usage can result. The transaction log cannot be truncated until after committed changes are replicated to the mirrored database. Once the transaction log size reaches its maximum defined limit, writes to the database fail. To safeguard operational databases from write failures for critical OLTP transactions, you can set up an autoreseed mechanism that allows the transaction log to be truncated and reinitializes the database mirroring to Fabric.
 
-The autoreseed feature is enabled and cannot be managed or disabled in Azure SQL Database and Azure SQL Managed Instance.
+To safeguard operational databases from write failures for critical OLTP transactions, mirroring in Azure SQL Database and Azure SQL Managed Instance uses the autoreseed capability that allows the transaction log to be truncated and reinitializes the database mirroring to Fabric.
 
 A reseed stops flow of transactions to Microsoft Fabric from the mirrored database and reinitializes the mirroring at the present state. A reseed involves generating a new initial snapshot of the tables configured for mirroring, and replicating that to Microsoft Fabric. After the snapshot, incremental changes are replicated. 
 
@@ -22,15 +22,16 @@ In Azure SQL Database and Azure SQL Managed Instance, reseed can occur at the da
 
 A reseed at the database level protects database write availability by ensuring that transaction log does not grow to max size. The maximum transaction log size is based on the database Service Level Objective of the Azure SQL Database or Azure SQL Managed Instance. Transaction log usage for a database enabled for Fabric mirroring can continue to grow and hold up log truncation. Once the transaction log size reaches the max defined limit, writes to the database fail.  
 
-- Prevented log truncation due to mirroring can happen for multiple reasons: 
+- Prevented log truncation due to mirroring can happen for multiple reasons:
 
-    - Latency in mirroring data from the source to the mirrored database prevent transactions pending replication from being truncated from the transaction log.
-    - Long running replicated transactions pending replication cannot be truncated, holding onto transaction log space. 
-    - Persistent errors writing to the landing zone in OneLake prevent replication.
-        - For example, due to lack of sufficient permissions. Mirroring to Fabric uses System Assigned Managed Identity to write to landing zone in One Lake. If this is not configured properly, replication of transactions can repeatedly fail. 
-    
-    To safeguard from this, mirroring triggers automatic reseed of the whole database when the log space used has passed a certain threshold of total configured log space. 
-    
+  - Latency in mirroring data from the source to the mirrored database prevent transactions pending replication from being truncated from the transaction log.
+  - Long running replicated transactions pending replication cannot be truncated, holding onto transaction log space.
+  - Persistent errors writing to the landing zone in OneLake can prevent replication.
+    - This scenario can be caused by insufficient permissions. Mirroring to Fabric uses System Assigned Managed Identity (SAMI) or User Assigned Managed Identity (UAMI) to write to the landing zone in One Lake. If this isn't configured properly, replication of transactions can repeatedly fail.
+
+      > [!NOTE]  
+      > Support for User Assigned Managed Identity (UAMI) is currently in preview.
+
 - If the Fabric capacity is paused and resumed, the mirrored database status remains **Paused**. As a result, changes made in the source aren't replicated to OneLake. To resume mirroring, go to the mirrored database in the Fabric portal, select **Resume replication**. Mirroring continues from where it was paused. 
 
    If the Fabric capacity remains paused for a long time, mirroring might not resume from its stopping point and will reseed data from the beginning. This is because pausing mirroring for a long time can cause the source database transaction log usage to grow and hold up log truncation. When mirroring is resumed, if the transaction log file space used is close to full, a reseed of the database will be initiated to release the held up log space.

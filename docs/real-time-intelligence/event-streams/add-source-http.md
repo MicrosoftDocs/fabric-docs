@@ -16,8 +16,6 @@ This article shows you how to add an HTTP source to an eventstream.
 
 The HTTP connector provides a no-code, configurable way to stream data from any REST API directly into Eventstream for real-time processing. It allows you to continuously pull data from SaaS platforms and public data feeds and automatically parse JSON responses into structured events. It also offers example public feeds to help you get started quickly—simply select an example API, enter your API key, and let Eventstream prefill the required headers and parameters.
 
-[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
-
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
@@ -41,6 +39,9 @@ You can see the HTTP source added to your eventstream in **Edit mode**.
 Select **Publish** to publish the changes and begin streaming data from HTTP source to the eventstream.
 
    :::image type="content" border="true" source="media/add-source-http/live-view.png" alt-text="A screenshot of the added HTTP source in Live view with the Publish button highlighted.":::
+
+## Limitation
+* The HTTP source currently doesn't support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Attempting to export or import an Eventstream item with this source to a Git repository may result in errors.  
 
 ## Related content
 

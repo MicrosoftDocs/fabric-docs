@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 11/13/2025
 ms.search.form: AI functions
 ---
 
@@ -49,7 +49,6 @@ The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/ap
 
 ```python
 # This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
 
 df = spark.createDataFrame([
         ("This duvet, lovingly hand-crafted from all-natural fabric, is perfect for a good night's sleep.",),
@@ -65,11 +64,11 @@ This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/classify-example-output.png" alt-text="Screenshot of a data frame with 'descriptions' and 'category' columns. The 'category' column lists each description’s category name." lightbox="../../media/ai-functions/classify-example-output.png":::
 
-
 ## Related content
 
 - Use [ai.classify with pandas](../pandas/classify.md).
 - Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
+- Generate vector embeddings with [ai.embed](./embed.md).
 - Extract entities with [ai_extract](./extract.md).
 - Fix grammar with [ai.fix_grammar](./fix-grammar.md).
 - Answer custom user prompts with [ai.generate_response](./generate-response.md).

@@ -577,7 +577,7 @@ items:
       - name: Logstash
         href: /azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric
       - name: NLog sink
-        href: /azure/data-explorer/nlog-sink?context=/fabric/context/context-rti&pivots=fabric
+        href: get-data-nlog-sink.md
       - name: OpenTelemetry
         href: /azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rti&pivots=fabric
       - name: Microsoft Power Automate
@@ -684,15 +684,17 @@ items:
     href: sample-gallery.md
   - name: Create alerts from a KQL Queryset
     href: data-activator/activator-alert-queryset.md
+  - name: Add query visualization to a dashboard
+    href: add-query-visualization.md
 - name: Real-Time Dashboard
   items:
   - name: Create a Real-Time Dashboard
     href: dashboard-real-time-create.md
   - name: Generate Real-Time Dashboard Using Copilot
-    href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
+    href: copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
   - name: Real-Time Dashboard permissions
     href: dashboard-permissions.md
-  - name: Explore data in Real-Time Dashboard tiles
+  - name: Explore data in Real-Time Dashboard Using Copilot
     href: dashboard-explore-data.md
   - name: Customize Real-Time Dashboard visuals
     href: dashboard-visuals-customize.md
@@ -882,6 +884,8 @@ items:
         href: operations-agent.md 
       - name: Operations agents limitations
         href: operations-agent-limitations.md
+      - name: Operations agent transparency note
+        href: operations-agent-transparency-note.md
     - name: Fabric RTI MCP Server (preview)
       href: mcp-overview.md 
     - name: Use MCP with Eventhouse

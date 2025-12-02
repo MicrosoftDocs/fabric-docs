@@ -6,6 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
+ms.subservice: rti-eventhouse
 ms.date: 12/25/2024
 ms.search.form: product-kusto
 ---

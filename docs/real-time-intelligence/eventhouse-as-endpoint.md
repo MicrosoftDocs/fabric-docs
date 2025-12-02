@@ -4,6 +4,7 @@ description: Use an eventhouse endpoint to query Lakehouse or Warehouse tables w
 ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
+ms.subservice: rti-eventhouse
 ms.topic: how-to
 ms.date: 10/30/2025
 ---

@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: vimeland
 reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 11/13/2025
 ms.search.form: AI functions
 ---
 
@@ -59,8 +59,7 @@ The function returns a [pandas Series](https://pandas.pydata.org/docs/reference/
 # [Compare with a single value](#tab/similarity-single)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = pd.DataFrame([ 
         ("Bill Gates"), 
@@ -79,8 +78,7 @@ This example code cell provides the following output:
 # [Compare with pairwise values](#tab/similarity-pairwise)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
-# Read terms: https://azure.microsoft.com/support/legal/preview-supplemental-terms/.
+# This code uses AI. Always review output for mistakes.
 
 df = pd.DataFrame([ 
         ("Bill Gates", "Technology"), 
@@ -103,6 +101,7 @@ This example code cell provides the following output:
 - Use [ai.similarity with PySpark](../pyspark/similarity.md).
 - Detect sentiment with [ai.analyze_sentiment](./analyze-sentiment.md).
 - Categorize text with [ai.classify](./classify.md).
+- Generate vector embeddings with [ai.embed](./embed.md).
 - Extract entities with [ai_extract](./extract.md).
 - Fix grammar with [ai.fix_grammar](./fix-grammar.md).
 - Answer custom user prompts with [ai.generate_response](./generate-response.md).

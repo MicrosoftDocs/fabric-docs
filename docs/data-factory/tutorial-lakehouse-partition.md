@@ -23,13 +23,14 @@ This tutorial helps you learn how to load data to Lakehouse using partition in a
 ## Create a pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
-1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
+1. Select the Power BI icon in the bottom left of the screen, then select **Fabric** to open homepage of Data Factory.
 
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you created a new workspace in the prior Prerequisites section, use this one.
 
    :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
 
-1. Select **Pipeline** and then input a pipeline name to create a new pipeline.
+1. Select  **+ New item**.
+1. Search for and select **Pipeline** and then input a pipeline name to create a new pipeline. to create a new pipeline.
 
    :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new pipeline button in the newly created workspace.":::
 
