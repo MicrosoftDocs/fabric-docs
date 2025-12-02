@@ -1,6 +1,6 @@
 ---
-title: DevServer
-description: Learn what the DevServer does during local development—hosting your frontend (loaded in an iFrame) and exposing local endpoints Fabric uses to read your manifests.
+title: DevServer for Microsoft Fabric
+description: This article describes what the DevServer does during local development—hosting your frontend (loaded in an iFrame) and exposing local endpoints Microsoft Fabric uses to read your manifests.
 author: gsaurer
 ms.author: billmath
 ms.topic: conceptual
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 08/28/2025
 ---
 
-# DevServer
+# DevServer with Microsoft Fabric
 
 The DevServer is the local web server you run while developing a Fabric workload. It serves your frontend (SPA) on localhost and provides a small set of HTTP endpoints that Fabric calls during development to retrieve your Product and Item manifests. When combined with the DevGateway, Fabric can load your workload UI in an iFrame and read your manifest data without publishing anything to your tenant.
 

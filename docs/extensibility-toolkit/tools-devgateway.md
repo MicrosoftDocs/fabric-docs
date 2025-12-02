@@ -1,6 +1,6 @@
 ---
-title: DevGateway
-description: Learn how the DevGateway registers your local development instance with Fabric and routes host calls to your DevServer using your manifests.
+title: DevGateway for Microsoft Fabric
+description: This article describes how the DevGateway registers your local development instance with Microsoft Fabric and routes host calls to your DevServer using your manifests.
 author: gsaurer
 ms.author: billmath
 ms.topic: conceptual
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 08/28/2025
 ---
 
-# DevGateway
+# DevGateway with Microsoft Fabric
 
 The DevGateway is a small helper you run during development to register your local workload instance with Fabric. It tells the Fabric service where your frontend is hosted (your DevServer on localhost) and which items are available, based on your manifests. With the DevGateway running, Fabric can load your UI in an iFrame and call your local DevServer to read product and item metadata—without publishing a package to your tenant.
 
