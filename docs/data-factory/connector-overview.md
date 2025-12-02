@@ -186,7 +186,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [SAP BW Message Server](connector-sap-bw-message-server-overview.md) | ✓/− |  |  |
 | [SAP BW Open Hub Application Server](connector-sap-bw-open-hub-application-server-overview.md) |  | ✓/− |✓/−  |
 | [SAP BW Open Hub Message Server](connector-sap-bw-open-hub-message-server-overview.md) |  | ✓/− | ✓/− |
-| [SAP HANA database](coctor-sap-hana-overview.md) | ✓/− | ✓/− | ✓/− |
+| [SAP HANA database](connector-sap-hana-overview.md) | ✓/− | ✓/− | ✓/− |
 | [SAP Table Application Server](connector-sap-table-application-server-overview.md) |  | ✓/− | ✓/− |
 | [SAP Table Message Server](connector-sap-table-message-server-overview.md) |  | ✓/− |✓/−   |
 | [ServiceNow](connector-servicenow-overview.md) |  | ✓/− | ✓/− |
