@@ -30,7 +30,7 @@ Make sure you enable the [Invite external users to your organization](../../admi
 Most email addresses are supported for guest user invitations, including personal email accounts like gmail.com, outlook.com, and hotmail.com. Microsoft Entra B2B calls these addresses *social identities*.
 
 > [!NOTE]
-> In Microsoft Entra ID, external users can be set to UserType Member. In Power BI, support for UserType Member is currently in preview. Microsoft Purview Information Protection isn't supported for external members. Admins in the provider tenant shouldn't enable information protection for external members. In some situations, external members might see errors during their first sign-in attempt on the provider tenant. To unblock these external members, grant them permission to a Power BI item, such as a workspace, semantic model, or report, and then have them sign in again.
+> In Microsoft Entra ID, external users can be set to UserType Member. Microsoft Purview Information Protection isn't supported for external members. Admins in the provider tenant shouldn't enable information protection for external members.
 
 ## Invite guest users
 
