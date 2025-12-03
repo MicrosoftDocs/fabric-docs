@@ -31,7 +31,7 @@ Sharing geospatial insights across an organization is now easier and more secure
    - Specify who should have access (individuals, groups, or organization-wide).
    - Set permissions for the app audience by selecting **Share** button in the upper-right side of the window, then **Add person or group**.
 
-     :::image type="content" source="media/share-map/org-app/share.png" alt-text="A screenshot showing the 'Org app (preview)' button in the New Item pane.":::
+     :::image type="content" source="media/share-map/org-app/share.png" alt-text="A screenshot showing the 'Add person of group' option in the popup menu that appears when selecting the share button.":::
 
    - In the **Grant people access** dialog box, enter the name or email address of anyone you wish to grant access to, then select **Grant**.
 

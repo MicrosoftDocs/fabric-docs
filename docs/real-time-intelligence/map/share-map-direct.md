@@ -52,7 +52,7 @@ You can share Map items in Microsoft Fabric through two methods:
 ### Direct Access
 
 1. From the workspace, select the ellipsis (...) next to the map name.
-   :::image type="content" source="media/share-map/direct/select-manage-permissions.png" lightbox="media/share-map/select-manage-permissions.png"  alt-text="A screenshot highlighting the ellipsis to select to bring up the 'manage permissions' screen.":::
+   :::image type="content" source="media/share-map/direct/select-manage-permissions.png" lightbox="media/share-map/direct/select-manage-permissions.png"  alt-text="A screenshot highlighting the ellipsis to select to bring up the 'manage permissions' screen.":::
 1. Select **Manage Permissions.**
 1. Enter user or group email addresses, or select specific people can view and share, then select **Send**
   :::image type="content" source="media/share-map/direct/create-send-link.png" alt-text="A screenshot showing the create and send link view.":::
