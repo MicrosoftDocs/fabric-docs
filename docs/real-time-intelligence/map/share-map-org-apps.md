@@ -12,7 +12,7 @@ ms.search.form: Map
 
 # How to share a map using org apps (preview)
 
-Sharing geospatial insights across an organization is now easier and more secure with Microsoft Fabric org apps. By integrating Fabric Maps into org apps, operation teams and decision-makers can package interactive map artifacts into curated, read-only applications. This approach enables broader audiences, such as field teams and business stakeholders, to explore and respond to spatial data within a governed, scalable environment, ensuring that access permissions are managed and sensitive information remains protected. Org apps streamline the distribution of geospatial intelligence, making it accessible to the right users while maintaining organizational control and compliance.
+Sharing geospatial insights across an organization is now easier and more secure with Microsoft Fabric org apps. By integrating Fabric Maps into org apps, operation teams and decision-makers can package interactive maps into curated, read-only applications. This approach enables broader audiences, such as field teams and business stakeholders, to explore and respond to spatial data within a governed, scalable environment, ensuring that access permissions are managed and sensitive information remains protected. Org apps streamline the distribution of geospatial intelligence, making it accessible to the right users while maintaining organizational control and compliance.
 
 > [!IMPORTANT]
 > The preview for org apps is off by default for tenants. To enable the preview, you must be a Microsoft Fabric administrator. For more information, see [Prerequisites for creating org app items](/power-bi/consumer/org-app-items/org-app-items#prerequisites-for-creating-org-app-items)
