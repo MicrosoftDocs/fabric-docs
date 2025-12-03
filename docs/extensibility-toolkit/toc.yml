@@ -13,9 +13,9 @@ items:
 
 - name: Get started
   items:
-  - name: Getting Started with Fabric Extensibility Toolkit
+  - name: Get started with Fabric Extensibility Toolkit
     href: get-started.md
-  - name: Set up your environment and run the Hello World
+  - name: Set up your enviroment and run the Hello World
     href: setup-guide.md
   - name: Manual Setup
     href: setup-manual.md
@@ -35,10 +35,24 @@ items:
     href: how-to-store-data-in-onelake.md
   - name: Create Shortcuts
     href: how-to-create-shortcut.md
+  - name: Configure Workload Media Section
+    href: how-to-configure-workload-media-section.md
+  - name: Create Trial Experience
+    href: how-to-add-trial-experience.md
+  - name: Add Jobs-to-be-Done
+    href: how-to-add-jobs-to-be-done.md
+  - name: Define Jobs for Your Workload
+    href: how-to-define-jobs.md
+  - name: Enable Item Lifecycle Notifications
+    href: how-to-enable-item-lifecycle-notifications.md
   - name: Access Fabric APIs
     href: how-to-access-fabric-apis.md
   - name: Acquire Microsoft Entra Token
     href: how-to-acquire-entra-token.md
+  - name: Create Custom Settings Dialogs
+    href: how-to-add-custom-settings.md
+  - name: Create Custom About Pages
+    href: how-to-add-custom-about.md
   - name: Relax the iFrame
     href: how-to-relax-iframe.md
 
@@ -93,6 +107,7 @@ items:
     href: tools-register-local-web-server.md
   - name: FabricClient SDK
     href: https://go.microsoft.com/fwlink/?linkid=2271989
+
 
 - name: Reference
   items:
