@@ -24,6 +24,10 @@ items:
   items:
   - name: Create Custom Fabric Items
     href: tutorial-create-new-fabric-item.md
+  - name: Host Your Workload in Azure
+    href: tutorial-host-workload-in-azure.md
+  - name: Validate Workload for Publishing
+    href: tutorial-validate-workload.md
   
 
 - name: Feature configuration
