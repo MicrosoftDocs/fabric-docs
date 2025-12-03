@@ -4,7 +4,7 @@ description: This article explains how to copy data using Snowflake.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/11/2025
+ms.date: 12/03/2025
 ms.custom: 
   - pipelines
   - template-how-to
@@ -49,7 +49,7 @@ The following properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Storage integration**: Specify the name of your storage integration that you created in the Snowflake. For the prerequisite steps of using the storage integration, see [Configuring a Snowflake storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration).
+- **Storage integration**: Specify the name of your storage integration that you created in the Snowflake. For the prerequisite steps of using the storage integration, see [Configuring a Snowflake storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration). To use storage integration in Snowflake connector, go to the [Staged copy from Snowflake](#staged-copy-from-snowflake) section.
 
 - **Additional Snowflake copy options**: Specify additional Snowflake copy options which will be used in Snowflake COPY statement to load data. Additional copy options are provided as a dictionary of key-value pairs. Examples: MAX_FILE_SIZE, OVERWRITE. For more information, see [Snowflake Copy Options](https://docs.snowflake.com/en/sql-reference/sql/copy-into-location#copy-options-copyoptions).
 
@@ -91,13 +91,22 @@ If your destination data store and format meet the criteria described in this se
 
 #### Staged copy from Snowflake
 
-When your destination data store or format isn't natively compatible with the Snowflake COPY command, as mentioned in the last section, enable the built-in staged copy using an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service exports data from Snowflake into staging storage, then copies the data to destination, and finally cleans up your temporary data from the staging storage.
+When your destination data store or format isn't natively compatible with the Snowflake COPY command, use staged copy. You can choose built-in staging copy, or external staging copy with an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service exports data from Snowflake into staging storage, then copies the data to destination, and finally cleans up your temporary data from the staging storage.
 
-To use this feature, create an [Azure Blob storage connection](connector-azure-blob-storage.md#set-up-your-connection-for-a-pipeline) that refers to the Azure storage account as the interim staging. Then go to **Settings** tab to configure your staging settings. You need to select **External** to configure the Azure Blob Storage staging connection.
+- **Built-in staging copy**
 
-- When you specify **Storage integration** in the source, the interim staging Azure Blob Storage should be the one that you referred in the external stage in Snowflake. Ensure that you create an [Azure Blob Storage](connector-azure-blob-storage.md) connection for it with any supported authentication, and grant at least **Storage Blob Data Contributor** role to the Snowflake service principal in the staging Azure Blob Storage **Access Control (IAM)**. The **Storage path** under **Staging settings** in **Settings** tab is required.
+  To use built-in staging, go to **Settings** tab and select **Workspace**. Then  follow the steps before copying data:
 
-- When you don't specify **Storage integration** in the source, the staging Azure Blob Storage connection must use shared access signature authentication, as required by the Snowflake COPY command. Make sure you grant proper access permission to Snowflake in the staging Azure Blob Storage. To learn more about this, see this [article](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-2-generating-a-sas-token).
+  1. [Create a cloud storage integration in Snowflake](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration). During setup, you must allowlist one of the following OneLake URLs: `azure://msit-onelake.blob.fabric.microsoft.com/<Workspace Object ID>/<Pipeline Object ID>/Staging` or `azure://msit-onelake.blob.fabric.microsoft.com/<Workspace Object ID>`.
+  2. Grant at least **Contributor** permission to the Snowflake service principal.
+
+- **External staging copy**
+
+  To use this feature, create an [Azure Blob storage connection](connector-azure-blob-storage.md#set-up-your-connection-for-a-pipeline) that refers to the Azure storage account as the interim staging. Then go to **Settings** tab to configure your staging settings. You need to select **External** to configure the Azure Blob Storage staging connection.
+
+  - When you specify **Storage integration** in the source, the interim staging Azure Blob Storage should be the one that you referred in the external stage in Snowflake. Ensure that you create an [Azure Blob Storage](connector-azure-blob-storage.md) connection for it with any supported authentication, and grant at least **Storage Blob Data Contributor** role to the Snowflake service principal in the staging Azure Blob Storage **Access Control (IAM)**. The **Storage path** under **Staging settings** in **Settings** tab is required.
+
+  - When you don't specify **Storage integration** in the source, the staging Azure Blob Storage connection must use shared access signature authentication, as required by the Snowflake COPY command. Make sure you grant proper access permission to Snowflake in the staging Azure Blob Storage. To learn more about this, see this [article](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-2-generating-a-sas-token).
 
 ### Destination
 
@@ -119,7 +128,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Pre-copy script**: Specify a script for Copy Activity to execute before writing data into destination table in each run. You can use this property to clean up the pre-loaded data.
 
-- **Storage integration**: Specify the name of your storage integration that you created in the Snowflake. For the prerequisite steps of using the storage integration, see [Configuring a Snowflake storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration).
+- **Storage integration**: Specify the name of your storage integration that you created in the Snowflake. For the prerequisite steps of using the storage integration, see [Configuring a Snowflake storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration). To use storage integration in Snowflake connector, go to the [Staged copy to Snowflake](#staged-copy-to-snowflake) section.
 
 - **Additional Snowflake copy options**: Specify additional Snowflake copy options, which will be used in Snowflake COPY statement to load data. Additional copy options are provided as a dictionary of key-value pairs. Examples: ON_ERROR, FORCE, LOAD_UNCERTAIN_FILES. For more information, see [Snowflake Copy Options](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table#copy-options-copyoptions).
 
@@ -168,13 +177,22 @@ If your source data store and format meet the criteria described in this section
 
 #### Staged copy to Snowflake
 
-When your source data store or format isn't natively compatible with the Snowflake COPY command, as mentioned in the last section, enable the built-in staged copy using an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service automatically converts the data to meet the data format requirements of Snowflake. It then invokes the COPY command to load data into Snowflake. Finally, it cleans up your temporary data from the blob storage.
+When your source data store or format isn't natively compatible with the Snowflake COPY command, as mentioned in the last section, use staged copy. You can choose built-in staging copy, or external staging copy with an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service automatically converts the data to meet the data format requirements of Snowflake. It then invokes the COPY command to load data into Snowflake. Finally, it cleans up your temporary data from the blob storage.
 
-To use this feature, create an [Azure Blob storage connection](connector-azure-blob-storage.md#set-up-your-connection-for-a-pipeline) that refers to the Azure storage account as the interim staging. Then go to **Settings** tab to configure your staging settings. You need to select **External** to configure the Azure Blob Storage staging connection.
+- **Built-in staging copy**
 
-- When you specify **Storage integration** in the destination, the interim staging Azure Blob Storage should be the one that you referred in the external stage in Snowflake. Ensure that you create an [Azure Blob Storage](connector-azure-blob-storage.md) connection for it with any supported authentication, and grant at least **Storage Blob Data Reader** role to the Snowflake service principal in the staging Azure Blob Storage **Access Control (IAM)**. The **Storage path** under **Staging settings** in **Settings** tab is required.
+  To use built-in staging, go to **Settings** tab and select **Workspace**. Then  follow the steps before copying data:
 
-- When you don't specify **Storage integration** in the destination, the staging Azure Blob Storage connection need to use shared access signature authentication as required by the Snowflake COPY command.
+  1. [Create a cloud storage integration in Snowflake](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration). During setup, you must allowlist one of the following OneLake URLs: `azure://msit-onelake.blob.fabric.microsoft.com/<Workspace Object ID>/<Pipeline Object ID>/Staging` or `azure://msit-onelake.blob.fabric.microsoft.com/<Workspace Object ID>`.
+  2. Grant at least **Contributor** permission to the Snowflake service principal.
+
+- **External staging copy**
+
+  To use this feature, create an [Azure Blob storage connection](connector-azure-blob-storage.md#set-up-your-connection-for-a-pipeline) that refers to the Azure storage account as the interim staging. Then go to **Settings** tab to configure your staging settings. You need to select **External** to configure the Azure Blob Storage staging connection.
+
+  - When you specify **Storage integration** in the destination, the interim staging Azure Blob Storage should be the one that you referred in the external stage in Snowflake. Ensure that you create an [Azure Blob Storage](connector-azure-blob-storage.md) connection for it with any supported authentication, and grant at least **Storage Blob Data Reader** role to the Snowflake service principal in the staging Azure Blob Storage **Access Control (IAM)**. The **Storage path** under **Staging settings** in **Settings** tab is required.
+
+  - When you don't specify **Storage integration** in the destination, the staging Azure Blob Storage connection need to use shared access signature authentication as required by the Snowflake COPY command.
 
 ### Mapping
 
