@@ -48,7 +48,6 @@ Download the contents of this GitHub folder: [IQ samples](https://github.com/mic
 It contains the following sample CSV files. The data contains static entity details about the Lakeshore Retail scenario and streaming data from its freezers.
 * *DimStore.csv*
 * *DimProduct.csv*
-* *DimDate.csv*
 * *FactSales.csv*
 * *Freezer.csv*
 * *FreezerTelemetry.csv*
@@ -57,10 +56,9 @@ It contains the following sample CSV files. The data contains static entity deta
 
 First, create a new lakehouse called *OntologyDataLH* in your Fabric workspace (make sure the checkbox for **Lakehouse schemas (Public Preview)** is not enabled).
 
-Then, upload five (out of the six) sample CSV files to your lakehouse, and load each one to a new delta table. These files contain entity details about business objects in the Lakeshore Retail scenario.
+Then, upload four sample CSV files to your lakehouse, and load each one to a new delta table. These files contain entity details about business objects in the Lakeshore Retail scenario.
 * *DimStore.csv*
 * *DimProduct.csv*
-* *DimDate.csv*
 * *FactSales.csv*
 * *Freezer.csv*
 * (**NOT** *FreezerTelemetry.csv*. This file is uploaded to Eventhouse in a later step.)
@@ -83,8 +81,7 @@ This section prepares you to generate an ontology from a semantic model. If you'
 1. In the **New semantic model** pane, set the following details.
     * **Direct Lake semantic model name**: *RetailSalesModel*
     * **Workspace**: Your tutorial workspace is chosen by default.
-    * **Select or deselect tables for the semantic model.** Select four tables:
-        * *dimdate*
+    * **Select or deselect tables for the semantic model.** Select three tables:
         * *dimproduct*
         * *dimstore*
         * *factsales*
@@ -96,13 +93,12 @@ This section prepares you to generate an ontology from a semantic model. If you'
 
     :::image type="content" source="media/tutorial-0-introduction/manage-relationships.png" alt-text="Screenshot of the semantic model ribbon." lightbox="media/tutorial-0-introduction/manage-relationships.png":::
 
-1. In the **Manage relationships** pane, use the **+ New relationship** button to create three relationships with the following details.
+1. In the **Manage relationships** pane, use the **+ New relationship** button to create two relationships with the following details.
 
     | From table | To table | Cardinality | Cross-filter direction | Make this relationship active? |
     |---|---|---|---|---|
     | *factsales*, select `StoreId` | *dimstore*, select `StoreId` | Many to one (*:1) | Single | Yes |
     | *factsales*, select `ProductId` | *dimproduct*, select `ProductId` | Many to one (*:1) | Single | Yes |
-    | *factsales*, select `Date` | *dimdate*, select `Date` | Many to one (*:1) | Single | Yes |
 
     The relationships look like this when you're done:
 
