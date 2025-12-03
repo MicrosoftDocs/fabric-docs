@@ -4,7 +4,7 @@ description: Learn how ontology (preview) capacity usage is billed and reported.
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 11/21/2025
+ms.date: 12/03/2025
 ms.topic: concept-article
 ms.search.form: Ontology Billing
 ---
@@ -25,8 +25,34 @@ The following table defines how many capacity units (CU) are consumed when an on
 | Meter name | Operation name | Description | Unit of measure | Fabric consumption rate |
 | --- | --- | --- | --- | --- |
 | Ontology Modeling | Ontology Modeling | Measures the usage of ontology definitions (including entity types, relationships, properties, and bindings). | Per ontology definition usage <br><br>*Usage is defined by intervals of at minimum 30 minutes, each time the API is triggered by CRUD definitions like entity types, relationships, properties, or bindings.* | 0.0039 CU per hour |
-| Ontology Logic and Operations​ | Ontology Logic and Operations​ | Measures the usage for ontology operations, including visualizations, logic, graph creation, ontology exploration, and querying and analyzing with query endpoints (including API and SQL endpoint) | Per hour | 40 CU per hour <br><br>*While ontology (preview) billing isn't in effect, users are billed according to their [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.* |
+| Ontology Logic and Operations​ | Ontology Logic and Operations​ | Measures the usage for ontology operations, including visualizations, logic, graph creation, ontology exploration, and querying and analyzing with query endpoints (including API and SQL endpoints) | Per min | 0.666667 CU per min <br><br>*While ontology (preview) billing isn't in effect, users are billed according to their [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.* |
 | Ontology AI | Ontology AI Operations | Measures the usage of AI for context driven reasoning and query over ontology | (Input) Per 1,000 Tokens <br><br>(Output) Per 1,000 Tokens | (Input) 400 CU seconds <br><br>(Output) 1,600 CU seconds <br><br>*While ontology (preview) billing isn't in effect, users are billed according to their [Copilot in Fabric](../../fundamentals/copilot-fabric-consumption.md) usage.* |
+
+## Capacity Usage example
+**Ontology Modeling**
+Billing starts with the first action and the time will continue for 30 mins from the last activity.
+
+For example, assume there are 1000 Ontology definitions of a combination of entity types, relationships, properties. User makes an edit to  a property, the consumption is 1000 * 0.5 * 0.0039 = 1.95 CU hours.  
+
+When an ontology modelling action (e.g. create, update, delete) is done, it initiates a usage window of 30 minutes. This starting point can be labeled as "X." If a second action is trigger at X + 15 minutes, you add the 30-minute block from the first plus the 15-minute interval before the next, totaling 45 minutes of measured. Rather than overlapping or restarting the window., this avoids double-counting and provides a straightforward way to sum usage across multiple actions.
+
+  
+**Ontology Logic and Operations​**
+This measures ontology operations including visualizations, ontology exploration, and querying and analyzing with query endpoints. Usage is measured in minutes of CPU uptime.
+
+*While ontology (preview) billing isn't in effect, users are billed according to their [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.*
+
+**Ontology AI Operations**
+
+Ontology AI Operations are classified as "background jobs" to handle a higher volume of requests during peak hours. 
+
+Fabric is designed to provide fast performance by allowing operations to access more CU (Capacity Units) resources than are allocated to capacity. Fabric [smooths](https://learn.microsoft.com/fabric/enterprise/throttling#smoothing) or averages the CU usage of an "interactive job" over a minimum of 5 minutes and a "background job" over a 24-hour period. According to the Fabric throttling policy, the first phase of throttling begins when a capacity has consumed all its available CU resources for the next 10 minutes.
+
+For example, assume each Ontology request has 2,000 input tokens and 500 output tokens. The price for one Ontolgy request is calculated as follows: (2,000 × 400 + 500 × 1600) / 1,000 = 1,600.00 CU seconds = 26.67 CU minutes.
+
+Since Ontology is a background job, each request (~26.67 CU minute job) consumes only one CU minute of each hour of a capacity. For a customer on F64 who has 64 * 24 CU Hours (1,536) in a day, and each Ontology job consumes (26.67 CU mins / 60 mins) = 0.44 CU Hours, customers can run over 3456 requests before they exhaust the capacity. However, once the capacity is exhausted, all operations will shut down.
+
+*While ontology (preview) billing isn't in effect, users are billed according to their [Copilot in Fabric](../../fundamentals/copilot-fabric-consumption.md) usage.*
 
 ## Monitor usage
 
