@@ -3,7 +3,7 @@ title: Workload Manifest
 description: Learn more about the Workload Manifest and the usage.
 author: gsaurer
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
 ms.date: 09/04/2025
 ---
@@ -61,6 +61,6 @@ In the Starter-Kit, populates the placeholders every time the Manifest is create
 
 ## Related content
 
-- [Getting started guide](getting-started.md)
+- [Getting started guide](get-started.md)
 - [Setup guide](setup-guide.md)
 - [Fabric Public REST APIs](/rest/api/fabric/articles/)

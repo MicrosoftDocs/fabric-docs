@@ -3,7 +3,7 @@ title: Manifest overview
 description: Describes the Manifest and its purpose.
 author: gsaurer
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
 ms.date: 09/04/2025
 ---
@@ -31,7 +31,7 @@ The [Starter-Kit](https://aka.ms/fabric-extensibility-starter-kit) repository in
 
 ## How it’s used in dev and production
 
-- DevGateway: Uses the manifest to register your local development instance with Fabric so your app loads in an iFrame during development. See [DevGateway](tools-devgateway.md).
+- DevGateway: Uses the manifest to register your local development instance with Fabric so your app loads in an iFrame during development. See [DevGateway](tools-register-local-workload.md).
 - Admin Portal: For testing and production, upload the manifest package through the Fabric Admin Portal as part of your publishing flow. See [Publish your workload](publishing-overview.md).
 
 ## Related content
@@ -39,4 +39,4 @@ The [Starter-Kit](https://aka.ms/fabric-extensibility-starter-kit) repository in
 - [Workload manifest](manifest-workload.md)
 - [Product manifest](manifest-product.md)
 - [Items](manifest-item.md)
-- [Getting started guide](getting-started.md)
+- [Getting started guide](get-started.md)

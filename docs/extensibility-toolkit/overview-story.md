@@ -3,7 +3,7 @@ title: Extensibility Toolkit overview
 description: Basic overview of the Extensibility Toolkit and its functionality.
 author: gsaurer
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
 ms.date: 09/04/2025
 ---
@@ -43,6 +43,6 @@ Use the toolkit when you want to bring a custom experience to Fabric while lever
 
 - [Architecture](architecture.md)
 - [Manifest overview](manifest-overview.md)
-- [Getting started guide](getting-started.md)
+- [Getting started guide](get-started.md)
 - [Publish your workload](publishing-overview.md)
 - [Fabric Public REST APIs](/rest/api/fabric/articles/)
