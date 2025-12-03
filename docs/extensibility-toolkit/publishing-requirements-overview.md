@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 11/18/2025
 ---
 
-# Publishing Requirements for Microsoft Fabric Workloads
+# Publishing requirements for Microsoft Fabric workloads
 
 > [!IMPORTANT]
 > This section applies ONLY to cross-tenant publishing (Workload Hub distribution). Organizations publishing workloads for internal tenant use do not need to meet these requirements.

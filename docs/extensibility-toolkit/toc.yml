@@ -15,7 +15,7 @@ items:
   items:
   - name: Get started with Fabric Extensibility Toolkit
     href: get-started.md
-  - name: Setup your enviroment and run the Hello World
+  - name: Setup your environment and run the Hello World
     href: setup-guide.md
   - name: Manual Setup
     href: setup-manual.md
@@ -118,9 +118,9 @@ items:
 
 - name: Tools and SDKs
   items:
-  - name: DevGateway
+  - name: DevGateway in Microsoft Fabric
     href: tools-register-local-workload.md
-  - name: DevServer
+  - name: DevServer in Microsoft Fabric
     href: tools-register-local-web-server.md
   - name: FabricClient SDK
     href: https://go.microsoft.com/fwlink/?linkid=2271989

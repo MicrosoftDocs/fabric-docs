@@ -67,7 +67,7 @@ Users can create, update, and delete items with content using the standard [Fabr
 > [!NOTE]
 > CI/CD support for the Extensibility Toolkit is currently under development. The features described below are planned capabilities and may change before release.
 
-CI/CD support for all items is one of the highest asks from customers. With this feature all items, participate in CICD out of the box, without the need to implement any specific logic or operations. This means you can automate deployment, testing, and updates for your workloads using standard Azure pipelines and tools. The item format and APIs are designed to be fully compatible with CI/CD processes, ensuring a consistent and reliable experience across environments. For more information on integrating with CI/CD, see the [Fabric CICD documentation](../cicd/cicd-overview.md).
+CI/CD support for all items is one of the highest asks from customers. With this feature all items, participate in CICD out of the box, without the need to implement any specific logic or operations. This means you can automate deployment, testing, and updates for your workloads using standard Azure Pipelines and tools. The item format and APIs are designed to be fully compatible with CI/CD processes, ensuring a consistent and reliable experience across environments. For more information on integrating with CI/CD, see the [Fabric CICD documentation](../cicd/cicd-overview.md).
 
 ## Item CRUD notification API
 

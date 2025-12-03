@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 11/20/2025
 ---
 
-# How-To: Integrate with OneLake Catalog
+# Integrate with OneLake catalog
 
 Configure your Fabric items to appear in OneLake Catalog with proper categorization and DataHub support.
 

@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 11/19/2025
 ---
 
-# General Publishing Requirements
+# General publishing requirements
 
 > [!IMPORTANT]
 > These requirements apply to ALL publishing scenarios (both internal and cross-tenant publishing)
@@ -42,7 +42,7 @@ https://<verified-domain>/<frontend>/<backend>/<workload-id>/<optional>
 ### Application Registration
 
 - **Type**: Web application
-- **Tenant support**: Multi-tenant (required for cross-tenant publishing)
+- **Tenant support**: Multitenant (required for cross-tenant publishing)
 - **Redirect URI**: `{frontend-url}/close`
 - **Application ID URI**: Must match verified domain
 - **Permissions**: Microsoft Fabric APIs

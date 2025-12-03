@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 11/20/2025
 ---
 
-# How-To: Monetize your workload
+# Monetize your workload
 
 Implement monetization for your Fabric workload using Azure Marketplace SaaS offers or external monetization solutions with user experiences defined in [Fabric templates](https://aka.ms/fabrictemplates).
 
