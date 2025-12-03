@@ -5,12 +5,25 @@ author: baanders
 ms.author: baanders
 ms.topic: include
 ms.custom:
-ms.date: 10/21/2025
+ms.date: 12/03/2025
 ---
 
 1. Browse to the workspace in which you want to create your tutorial resources. You must create all resources in the same workspace.
+
 1. Select **+ New item**.
+
 1. In the **Filter by item type** search box, enter **Eventhouse**.
+
+   :::image type="content" source="../media/tutorial/Eventhouse-new-item.png" alt-text="New item panel with Eventhouse highlighted." lightbox="../media/tutorial/Eventhouse-new-item.png":::
+
 1. Select the Eventhouse item.
+
 1. Enter *Tutorial* as the eventhouse name and click **Create**. The Eventhouse and a KQL database is created simultaneously with the same name.
-1. When provisioning is complete, click **Get started** in the welcome window. The eventhouse **System overview** page is shown.
+
+   :::image type="content" source="../media/tutorial/Eventhouse-new-tutorial.png" alt-text="Screenshot of the Eventhouse interface displaying the Eventhouse name dialogue and the Create button highlighted." lightbox="../media/tutorial/Eventhouse-new-tutorial.png":::
+
+1. When provisioning is complete, click **Get started** in the welcome window.
+
+    :::image type="content" source="../media/tutorial/Eventhouse-get-started-small.png" alt-text="Screenshot of the Eventhouse welcome interface with Get started button highlighted." lightbox="../media/tutorial/Eventhouse-get-started.png":::
+
+   The eventhouse **System overview** page is shown.
