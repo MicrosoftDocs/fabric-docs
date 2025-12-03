@@ -26,6 +26,8 @@ items:
     href: tutorial-create-new-fabric-item.md
   - name: Host Your Workload in Azure
     href: tutorial-host-workload-in-azure.md
+  - name: Publish and Manage Workload
+    href: tutorial-publish-workload.md
   - name: Validate Workload for Publishing
     href: tutorial-validate-workload.md
   
