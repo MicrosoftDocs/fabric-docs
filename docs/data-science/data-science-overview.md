@@ -13,15 +13,17 @@ reviewer: s-polly
 
 # What is Data Science in Microsoft Fabric?
 
-For data enrichment and business insights, [!INCLUDE [product-name](../includes/product-name.md)] offers Data Science experiences that empower users to build end-to-end data science workflows. You can complete a wide range of activities across the entire data science process:
+For data enrichment and business insights, [!INCLUDE [product-name](../includes/product-name.md)] offers Data Science experiences that empower users to build end-to-end data science workflows. To get started, see the [Data Science end-to-end tutorial](tutorial-data-science-introduction.md).
 
-- data exploration
-- data preparation
-- data cleaning
-- experimentation
-- modeling
-- model scoring
-- serving predictive insights to BI reports
+You can complete a wide range of activities across the entire data science process:
+
+- [data exploration](data-wrangler.md#viewing-summary-statistics)
+- [data preparation](data-wrangler.md#browsing-data-cleaning-operations)
+- [data cleaning](data-wrangler.md#previewing-and-applying-operations)
+- [experimentation](machine-learning-experiment.md)
+- [modeling](machine-learning-model.md)
+- [model scoring](model-scoring-predict.md)
+- [serving predictive insights to BI reports](semantic-link-overview.md)
 
 [!INCLUDE [product-name](../includes/product-name.md)] users can access a Data Science home page. Then, they can discover and access various relevant resources, as shown in the following screenshot:
 
@@ -30,10 +32,10 @@ For data enrichment and business insights, [!INCLUDE [product-name](../includes/
 Most machine learning projects follow the data science process. At a high level, that process involves these steps:
 
 - problem formulation and ideation
-- data discovery and preprocessing
-- experimentation and modeling
-- enrich and operationalize
-- build insights
+- [data discovery and preprocessing](data-wrangler.md#viewing-summary-statistics)
+- [experimentation and modeling](machine-learning-experiment.md)
+- [enrich and operationalize](model-scoring-predict.md)
+- [build insights](semantic-link-overview.md)
 
 :::image type="content" source="media/data-science-overview/data-science-process.png" alt-text="Diagram of data science process." lightbox="media/data-science-overview/data-science-process.png":::
 
