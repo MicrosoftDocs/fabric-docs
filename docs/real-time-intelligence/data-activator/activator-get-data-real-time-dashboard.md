@@ -6,7 +6,7 @@ ms.author: spelluru
 ms.topic: how-to
 ms.reviewer: guregini
 ms.custom: FY25Q1-Linter
-ms.date: 11/05/2025
+ms.date: 12/03/2025
 ms.search.form: Real-Time Dashboard
 #Customer intent: As a customer, I want to learn how to create Activator alerts from a Real-Time Dashboard so that I can trigger notifications when conditions are met on daa in the dashboard.
 ---
@@ -96,14 +96,20 @@ In the **Action** section, select one of the following actions to take when the 
     :::image type="content" source="media/activator-get-data/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
 
 * **Run Fabric activities**:
-  * Run a pipeline and select a dataflow.    
-    :::image type="content" source="media/activator-get-data/action-pipeline.png" alt-text="Screenshot of the Run pipeline option in the Add Rule side pane.":::
-  * Run a notebook.    
-    :::image type="content" source="media/activator-get-data/action-notebook.png" alt-text="Screenshot of the Run notebook option in the Add Rule side pane.":::
-  * Run a Spark job.    
-    :::image type="content" source="media/activator-get-data/action-spark.png" alt-text="Screenshot of the Run Spark job option in the Add Rule side pane.":::
-  * Run a function.    
-    :::image type="content" source="media/activator-get-data/action-function.png" alt-text="Screenshot of the Run function option in the Add Rule side pane.":::
+    To configure the alert to launch a Fabric pipeline, Spark job, or notebook when the condition is met, follow these steps:
+    1. For **Select action**, select **Run Pipeline**,  **Run Spark job**, **Run Notebook**, or **Run Function (preview)**.
+    1. On Select Fabric item to run, select the Fabric item (pipeline, notebook, Spark job, or function) from the list.
+    1. Select Add parameter and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
+    You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`.
+        :::image type="content" source="media/activator-alert-queryset/fabric-activities.png" alt-text="Screenshot of the Run Fabric activities section in the Add Rule side pane.":::
+  * **Custom actions**:
+      To configure the alert to call a custom action when the condition is met, follow these steps:
+      1. For **Select action**, select **Create custom action**.
+
+          :::image type="content" source="media/activator-alert-queryset/custom-action.png" alt-text="Screenshot of the Create custom action section in the Add Rule side pane.":::
+
+      1. As mentioned in the Action section, create the rule first, and then complete the custom action setup by following steps from [Trigger custom actions (Power Automate flows)](activator-trigger-power-automate-flows.md).
+      1. After you create the custom action, in the **Definition** pane of the rule, select the custom action you created from the **Action** drop-down list.
 
 ### Save location section
 
