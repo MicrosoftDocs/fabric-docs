@@ -3,7 +3,7 @@ title: Workload Manifest
 description: Learn more about the Workload Manifest and the usage.
 author: gsaurer
 ms.author: billmath
-ms.topic: article
+ms.topic: conceptual
 ms.custom:
 ms.date: 09/04/2025
 ---
@@ -20,7 +20,7 @@ The workload manifest (WorkloadManifest.xml) is the workload-level configuration
 - Workload identity: `WorkloadName` ([Organization].[WorkloadId]) and `Version` (semantic version)
 - Hosting model: `HostingType` (use `FERemote`)
 - Front-end Microsoft Entra app: `AADFEApp` > `AppId`
-- Front-end endpoints: `ServiceEndpoint` entries with `Name` (for example, `Frontend`), `Url` (localhost in dev; production domain associated to your Microsoft Entra tenant), and `IsEndpointResolutionService`
+- Front-end endpoints: `ServiceEndpoint` entries with `Name` (for example, `Frontend`), `Url` (localhost in dev; production domain must be a subdomain of your verified Entra domain), and `IsEndpointResolutionService`. See [General Publishing Requirements](publishing-requirements-general.md#domain-configuration) for domain restrictions.
 - Optional sandbox relaxation: `EnableSandboxRelaxation` only when special iFrame capabilities are required (for example, initiating file downloads)
 
 ## Best practices
@@ -44,7 +44,7 @@ Key elements in the Manifest and what they mean:
 	- `EnableSandboxRelaxation` — set it to `true` if you require special iFrame capabilities (for example, initiating file downloads). Keep `false` by default for security.
 	- `Endpoints` > `ServiceEndpoint` entries with:
 		- `Name` (for example, `Frontend`).
-		- `Url` — where the frontend is hosted. Use `https://localhost:port` for development. In production, the domain used needs to be associated with your Microsoft Entra tenant.
+		- `Url` — where the frontend is hosted. Use `https://localhost:port` for development. In production, the domain must be a subdomain of your verified Entra domain. See [General Publishing Requirements](publishing-requirements-general.md#domain-configuration) for complete domain restrictions.
 		- `IsEndpointResolutionService`.
 
 ## Build output and placeholders
@@ -53,10 +53,14 @@ In the Starter-Kit, populates the placeholders every time the Manifest is create
 
 - DevGateway: Register your local development instance with Fabric so your app can load inside the Fabric portal during development.
 - DevServer: Which is providing the information to the Fabric 
-- Admin Portal: for test and production, upload the manifest package through the Fabric Admin Portal as part of publishing. See [Publish your workload](publish-workload-flow.md).
+- Admin Portal: for test and production, upload the manifest package through the Fabric Admin Portal as part of publishing. See [Publish your workload](publishing-overview.md).
 
 ## Learn more
 
 - [Architecture](architecture.md)
-- [Implementation guide](implementation-guide.md)
+
+## Related content
+
+- [Getting started guide](getting-started.md)
+- [Setup guide](setup-guide.md)
 - [Fabric Public REST APIs](/rest/api/fabric/articles/)

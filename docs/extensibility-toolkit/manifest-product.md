@@ -3,7 +3,7 @@ title: Product Manifest
 description: Learn more about the Product Manifest.
 author: gsaurer
 ms.author: billmath
-ms.topic: article
+ms.topic: conceptual
 ms.custom:
 ms.date: 09/04/2025
 ---
