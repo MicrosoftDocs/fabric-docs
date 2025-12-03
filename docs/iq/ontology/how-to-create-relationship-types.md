@@ -33,7 +33,7 @@ Before adding relationship types to your ontology, make sure you have the follow
 
 Relationship types use the following ontology (preview) concepts.
 
-* *Entity type:* An abstract representation of a business object (like *Vehicle* or *Sensor*). It's the blueprint that defines this type of item.
+* *Entity type:* An abstract representation of a business object (like *Vehicle* or *Sensor*). It defines a logical model of an item.
 * *Relationship type:* A definition that specifies how two entity types are connected (such as *located_at* or *monitored_by*). 
 
     >[!TIP]
