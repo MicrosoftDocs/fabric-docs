@@ -11,8 +11,8 @@ metadata:
   ms.custom:
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: sdgilley #Required; your GitHub user alias, with correct capitalization.
-  ms.author: sgilley #Required; microsoft alias of author; optional team alias.
+  author: jonburchel #Required; your GitHub user alias, with correct capitalization.
+  ms.author: jburchel #Required; microsoft alias of author; optional team alias.
   ms.date: 12/03/2025
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
