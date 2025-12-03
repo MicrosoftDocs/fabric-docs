@@ -4,7 +4,7 @@ description: Enrich the ontology by creating a new entity and binding time serie
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 11/21/2025
+ms.date: 12/03/2025
 ms.topic: tutorial
 ---
 
@@ -14,14 +14,14 @@ In this tutorial step, enrich your ontology further by adding a new *Freezer* en
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Add Freezer entity type
-
-In this section, you create the new entity type and define properties without binding them to specific data. Then, you bind the static data to those properties in a separate step. Finally, you add time series data to the entity type by creating new properties and binding time series data to them in a single data binding operation.
+First, you create the new entity type and define properties without binding them to specific data. Then, you bind the static data to those properties in a separate step. Later, you add time series data to the entity type by creating new properties and binding time series data to them in a single data binding operation.
 
 >[!NOTE]
->For both static and time series data, you have the option to create them without binding data and bind data afterwards, or to create properties and bind data to them in a single step. This section demonstrates both approaches.
+>For both static and time series data, you have the option to create properties without binding data and bind data afterwards, or to create properties and bind data to them in a single step. This article demonstrates both approaches.
 
-### Create Freezer entity type and add properties
+Finally, you create a new relationship type to represent the connection between a store and its freezers.
+
+## Create Freezer entity type and add properties
 
 Follow these steps to create the *Freezer* entity type and add properties to it. The properties aren't bound to data yet.
 
@@ -52,7 +52,7 @@ Follow these steps to create the *Freezer* entity type and add properties to it.
 
     Select `FreezerId` as the key value. 
 
-### Bind static data to properties
+## Bind static data to properties
 
 Next, bind static data to the properties you created on the *Freezer* entity type.
 
@@ -71,7 +71,7 @@ Next, bind static data to the properties you created on the *Freezer* entity typ
 
 Now the *Freezer* entity has static data bound to it.
 
-### Bind time series data to additional properties
+## Bind time series data to additional properties
 
 Next, add time series data on the *Freezer* entity, by creating new properties and binding time series data to them in a single data binding operation. 
 
