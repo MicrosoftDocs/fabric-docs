@@ -119,6 +119,8 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Google BigQuery (Microsoft Entra ID)](/power-query/connectors/google-bigquery-aad) | ✓/− |  |  |
 | [Google Cloud Storage](connector-google-cloud-storage-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Google Sheets](/power-query/connectors/google-sheets) | ✓/− |  |  |
+| [Greenplum for Pipeline](connector-greenplum-for-pipeline-overview.md) |  | ✓/− | ✓/− |
+| [Hadoop Distributed File System (Hdfs)](connector-hdfs-for-pipeline-overview.md) |  | ✓/− | ✓/− |
 | HDInsight Interactive Query | ✓/− |  |  |
 | Hexagon PPM Smart API | ✓/− |  |  |
 | [Hive LLAP](connector-hive-llap-overview.md) | ✓/− |  |  |
