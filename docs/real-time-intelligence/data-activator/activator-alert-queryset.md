@@ -6,7 +6,7 @@ author: spelluru
 ms.author: spelluru
 ms.reviewer: guregini
 ms.topic: how-to
-ms.date: 11/12/2025
+ms.date: 12/03/2025
 ms.search.form: Activator KQL Queryset Onramp
 # CustomerIntent: As a customer, I want to learn how to create Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---
@@ -108,21 +108,20 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
         :::image type="content" source="media/activator-alert-queryset/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
 
     * **Run Fabric activities**:
-        * Run a pipeline and select a dataflow.
+        To configure the alert to launch a Fabric pipeline, Spark job, or notebook when the condition is met, follow these steps:
+        1. For **Select action**, select **Run Pipeline**,  **Run Spark job**, **Run Notebook**, or **Run Function (preview)**.
+        1. On Select Fabric item to run, select the Fabric item (pipeline, notebook, Spark job, or function) from the list.
+        1. Select Add parameter and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
+        You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`.
+            :::image type="content" source="media/activator-alert-queryset/fabric-activities.png" alt-text="Screenshot of the Run Fabric activities section in the Add Rule side pane.":::
+    * **Custom actions**:
+        To configure the alert to call a custom action when the condition is met, follow these steps:
+        1. For **Select action**, select **Create custom action**.
 
-            :::image type="content" source="media/activator-alert-queryset/action-pipeline.png" alt-text="Screenshot of the pipline option in the drop-down menu.":::
+            :::image type="content" source="media/activator-alert-queryset/custom-action.png" alt-text="Screenshot of the Create custom action section in the Add Rule side pane.":::
 
-        * Run a notebook.
-
-            :::image type="content" source="media/activator-alert-queryset/action-notebook.png" alt-text="Screenshot of the Notebook option in the drop-down menu.":::
-
-        * Run a Spark job.
-
-            :::image type="content" source="media/activator-alert-queryset/action-spark.png" alt-text="Screenshot of the Spark job option in the drop-down menu.":::
-
-        * Run a function.
-
-            :::image type="content" source="media/activator-alert-queryset/action-function.png" alt-text="Screenshot of the Function option in the drop-down menu.":::
+        1. As mentioned in the Action section, create the rule first, and then complete the custom action setup by following steps from [Trigger custom actions (Power Automate flows)](activator-trigger-power-automate-flows.md).
+        1. After you create the custom action, in the **Definition** pane of the rule, select the custom action you created from the **Action** drop-down list.
 
 1. In **Save location**, specify where to save your Activator alert. Choose an existing workspace, and save either in an existing activator or a new one.
 
@@ -212,17 +211,20 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
         :::image type="content" source="media/activator-alert-queryset/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
 
     * **Run Fabric activities**:
-        * Run a pipeline and select a dataflow.
+        To configure the alert to launch a Fabric pipeline, Spark job, or notebook when the condition is met, follow these steps:
+        1. For **Select action**, select **Run Pipeline**,  **Run Spark job**, **Run Notebook**, or **Run Function (preview)**.
+        1. On Select Fabric item to run, select the Fabric item (pipeline, notebook, Spark job, or function) from the list.
+        1. Select Add parameter and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
+        You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`.
+            :::image type="content" source="media/activator-alert-queryset/fabric-activities.png" alt-text="Screenshot of the Run Fabric activities section in the Add Rule side pane.":::
+    * **Custom actions**:
+        To configure the alert to call a custom action when the condition is met, follow these steps:
+        1. For **Select action**, select **Create custom action**.
 
-            :::image type="content" source="media/activator-alert-queryset/action-pipeline.png" alt-text="Screenshot of the pipline option in the drop-down menu.":::
+            :::image type="content" source="media/activator-alert-queryset/custom-action.png" alt-text="Screenshot of the Create custom action section in the Add Rule side pane.":::
 
-        * Run a Spark job.
-
-            :::image type="content" source="media/activator-alert-queryset/action-spark.png" alt-text="Screenshot of the Spark job option in the drop-down menu.":::
-
-        * Run a notebook.
-
-            :::image type="content" source="media/activator-alert-queryset/action-notebook.png" alt-text="Screenshot of the Notebook option in the drop-down menu.":::
+        1. As mentioned in the Action section, create the rule first, and then complete the custom action setup by following steps from [Trigger custom actions (Power Automate flows)](activator-trigger-power-automate-flows.md).
+        1. After you create the custom action, in the **Definition** pane of the rule, select the custom action you created from the **Action** drop-down list.
 
 1. In **Save location**, specify where to save your Activator alert. Choose an existing workspace, and save either in an existing activator or a new one.
 
