@@ -859,7 +859,7 @@ items:
       href: map/sharing-maps.md
     - name: Share maps directly
       href: map/share-map-direct.md
-    - name: Share maps with Org Apps
+    - name: Share maps with org apps
       href: map/share-map-org-apps.md
   - name: Create a tileset
     href: map/spatial-job-create-tile-sets.md

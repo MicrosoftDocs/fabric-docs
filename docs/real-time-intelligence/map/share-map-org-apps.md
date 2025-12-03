@@ -24,10 +24,10 @@ Sharing geospatial insights across an organization is now easier and more secure
 
     :::image type="content" source="media/share-map/org-app/org-app.png" alt-text="A screenshot showing the 'Org app (preview)' button in the New Item pane.":::
 
-2. **Select Content to Include**
+2. **Select content to include**
    - Add any needed content, including items like Fabric maps, Power BI reports, dashboards, and notebooks.
 
-3. **Define Audience and Permissions**
+3. **Define audience and permissions**
    - Specify who should have access (individuals, groups, or organization-wide).
    - Set permissions for the app audience by selecting **Share** button in the upper-right side of the window, then **Add person or group**.
 
@@ -38,13 +38,13 @@ Sharing geospatial insights across an organization is now easier and more secure
      :::image type="content" source="media/share-map/org-app/grant-people-access.png" alt-text="A screenshot showing the 'Grant people access' dialog box.":::
 
    - Reshare and manage access
-     - org apps support resharing according to your organization's policies. To enable resharing, select the **Share** checkbox when granting people access.
-     - org apps support updating audience access or permissions at any time, according to your organization's policies. To change permissions, select the **Share** button in the upper-right side of the window, then **Manage access**.
+     - Org apps support resharing according to your organization's policies. To enable resharing, select the **Share** checkbox when granting people access.
+     - Org apps support updating audience access or permissions at any time, according to your organization's policies. To change permissions, select the **Share** button in the upper-right side of the window, then **Manage access**.
 
     > [!IMPORTANT]
     > You must also manually grant recipients access to all underlying data sources, such as a lakehouse or eventhouse, for the map to function correctly.
 
-## Best Practices
+## Best practices
 
 - When sharing via org apps, always verify recipients have access to all underlying data sources. If recipients lack permissions for underlying data sources, they could encounter access errors
 - Monitor for future updates as additions and improvements to features are released.
