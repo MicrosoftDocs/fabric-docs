@@ -45,7 +45,7 @@ When you bound data to your entity types in previous tutorial steps, ontology au
 
 The preview experience also contains a **Relationship graph**, which you use to visualize your ontology in a graph of nodes and edges.
 
-1. Start with the *SaleEvent* entity type selected in the preview experience. In the **Relationship graph** tile, select **Expand**.
+1. Use the tabs across the top of the preview experience to reopen the *SaleEvent* entity type. In the **Relationship graph** tile, select **Expand**.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph.png" alt-text="Screenshot of expanding the relationship graph.":::
 

@@ -7,6 +7,7 @@ author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 08/25/2025
+ms.subservice: rti-kql-query
 ms.search.form: product-kusto
 ---
 # Use example queries

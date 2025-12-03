@@ -7,6 +7,7 @@ ms.reviewer: tessahurr
 ms.topic: concept-article
 ms.custom:
 ms.date: 09/15/2025
+ms.subservice: rti-anomaly-detector
 ms.search.form: Anomaly Detection, Anomaly Detection Errors, Anomaly Detection Troubleshooting (Preview)
 ---
 

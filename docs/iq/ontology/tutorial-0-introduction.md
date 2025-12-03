@@ -4,7 +4,7 @@ description: Get started with ontology (preview) with this tutorial featuring a 
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 11/21/2025
+ms.date: 12/01/2025
 ms.topic: tutorial
 zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
 zone_pivot_groups: create-ontology-scenario
@@ -29,11 +29,13 @@ Choose your preferred scenario by using the selector at the beginning of the art
 
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). Use this workspace for all resources created in the tutorial.
 * **Ontology item (preview)**, **Graph (preview)**, and **Data agent item types (preview)** enabled on your tenant.
-    * [Fabric administrators](../../admin/roles.md) can grant access to ontology in the [admin portal](../../admin/admin-center.md). In the [tenant settings](../../admin/tenant-settings-index.md), enable *Ontology item (preview)*, *Graph (preview)*, and *Data agent item types (preview)*.
+    * [Fabric administrators](../../admin/roles.md) can grant access to ontology in the [admin portal](../../admin/admin-center.md). In the [tenant settings](../../admin/tenant-settings-index.md), enable *Ontology item (preview)*, *Graph (preview)*, *XMLA endpoints*, and *Data agent item types (preview)*.
 
         :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
 
         :::image type="content" source="media/tutorial-0-introduction/prerequisite-graph.png" alt-text="Screenshot of enabling graph in the admin portal.":::
+
+        :::image type="content" source="media/tutorial-0-introduction/prerequisite-xmla.png" alt-text="Screenshot of enabling XMLA in the admin portal.":::
 
         :::image type="content" source="media/tutorial-0-introduction/prerequisite-data-agent.png" alt-text="Screenshot of enabling data agents in the admin portal.":::
 

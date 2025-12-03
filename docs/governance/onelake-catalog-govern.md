@@ -134,6 +134,8 @@ The following are some considerations and limitations when using the Govern tab:
 * Copilot functionality depends on organizational setup and the capacity the workspace is assigned with. The workspace (*admin monitoring workspace* for the admin view and *My workspaces* for the data owners view) should be allocated to the appropriate capacity in order to activate the Copilot button.
 * Because admin insights, recommended actions, and view more reports are based on admin monitoring storage that refreshes once a day, there could be gaps between the data reflected and the actual state. It takes a day to get an updated view of all the changes made in the organization.
 * If *admin monitoring workspace* or *My workspaces* are reassigned to another capacity, users could get an error when accessing the Govern tab in the OneLake Catalog. In such cases, ensure the newly assigned capacity has enough resources to run the semantic models and reports.
+* All users viewing content in the admin monitoring workspace, including the admins report, must have a Power BI Pro license, unless the workspace is assigned to a capacity.
+* The admins semantic model is read-only and can't be used with Fabric data agents.
 
 ## Related content
 

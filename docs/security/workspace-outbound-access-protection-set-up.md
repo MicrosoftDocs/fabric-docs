@@ -79,4 +79,3 @@ After outbound public access is blocked, you can create an allow list of approve
 ## Next steps
 
 - [Create an allow list with managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md)
-- [Create an allow list with data connection rules](./workspace-outbound-access-protection-allow-list-connector.md)
