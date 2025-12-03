@@ -32,7 +32,7 @@ An ontology is made up of [entity types](#entity-type), [entity instances](#enti
 
 ### Entity type
 
-An *entity type* is the reusable blueprint of a real world concept (like *Shipment*, *Product*, or *Sensor*). It standardizes the name, description, identifiers, properties, and constraints for that item, so that every team in your business means the same thing when they use a term like "shipment." By elevating the concept above any single table, entity types eliminate conflicting column level definitions across sources. They provide a single point to attach properties, relationships, and labels that downstream tools can use to improve semantics across tables and models.
+An *entity type* is the reusable logical model of a real world concept (like *Shipment*, *Product*, or *Sensor*). It standardizes the name, description, identifiers, properties, and constraints for that item, so that every team in your business means the same thing when they use a term like "shipment." By elevating the concept above any single table, entity types eliminate conflicting column level definitions across sources. They provide a single point to attach properties, relationships, and labels that downstream tools can use to improve semantics across tables and models.
 
 ### Entity instance
 
