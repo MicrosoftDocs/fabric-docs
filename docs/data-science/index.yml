@@ -79,6 +79,8 @@ landingContent:
             url: machine-learning-model.md 
           - text: AI functions
             url: ./ai-functions/overview.md
+          - text: What is semantic link?
+            url: semantic-link-overview.md
 
 
 # Card 
@@ -154,23 +156,6 @@ landingContent:
             url: open-ai.md
           - text: Use AI Services with SynapseML
             url: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
-
-# Card 
-  - title: Use semantic link 
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What is semantic link?
-            url: semantic-link-overview.md
-      - linkListType: how-to-guide
-        links:
-          - text: Read from Power BI and write data consumable by Power BI
-            url: read-write-power-bi-python.md
-          - text: Detect, explore, and validate functional dependencies in your data
-            url: semantic-link-validate-data.md
-          - text: Explore and validate relationships in semantic models
-            url: semantic-link-validate-relationship.md
-
 
 # Card
   - title: Reference docs     
