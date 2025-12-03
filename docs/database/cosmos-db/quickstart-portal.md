@@ -1,19 +1,14 @@
 ---
-title: 'Quickstart Create a Cosmos DB Database Preview'
-titleSuffix: Microsoft Fabric
+title: 'Quickstart Create a Cosmos DB Database'
 description: Get started quickly with Cosmos DB in Microsoft Fabric by creating a new instance in the Microsoft Fabric portal.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: quickstart
 ms.date: 07/29/2025
 ms.search.form: Databases Get Started,Get Started with Cosmos DB
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
-# Quickstart: Create a Cosmos DB database in Microsoft Fabric (preview)
-
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+# Quickstart: Create a Cosmos DB database in Microsoft Fabric
 
 In this quickstart, you create a Cosmos DB database using the Microsoft Fabric portal. Once you create the database, you seed the database with a sample container and data set. Then you finish up by querying the sample data set with a sample NoSQL query.
 
@@ -33,9 +28,9 @@ First, go to the Fabric portal and create a new Cosmos DB database within your w
 
     :::image type="content" source="media/quickstart-portal/create-option-full.png" lightbox="media/quickstart-portal/create-option-full.png" alt-text="Screenshot of the option to 'Create' a new resource in the Fabric portal.":::
 
-1. If the option to create an **Cosmos DB** account isn't initially available, select **See all**.
+1. If the option to create a **Cosmos DB database** isn't initially available, select **See all**.
 
-1. Within the **Databases** category, select **Cosmos DB (preview)**.
+1. Within the **Databases** category, select **Cosmos DB database**.
 
     :::image type="content" source="media/quickstart-portal/cosmos-db-database-option.png" lightbox="media/quickstart-portal/cosmos-db-database-option-full.png" alt-text="Screenshot of the option to specifically create a Cosmos DB database in the Fabric portal.":::
 
@@ -77,15 +72,16 @@ Finally, perform a NoSQL query to test the sample data in the **SampleData** con
 
     :::image type="content" source="media/quickstart-portal/new-container-query-option.png" lightbox="media/quickstart-portal/new-container-query-option-full.png" alt-text="Screenshot of the option to create a 'New SQL Query' for a container within the Fabric portal.":::
 
-1. In the query editor, use this baseline query to reshape the data in the sample container into simplified JSON output.
+1. In the query editor, use this baseline query to retrieve the top 10 most expensive products from the sample data and reshaping the results into simplified JSON output.
 
     ```nosql
     SELECT TOP 10 VALUE {
-        "item": CONCAT(item.name, " - ", item.category),
-        "price": item.price
+        "product": CONCAT(item.name, " - ", item.categoryName),
+        "currentPrice": item.currentPrice
     }
     FROM items AS item
-    ORDER BY item.price DESC
+    WHERE item.docType = "product"
+    ORDER BY item.currentPrice DESC
     ```
 
 1. Observe the results of the query in the query editor.
@@ -93,12 +89,12 @@ Finally, perform a NoSQL query to test the sample data in the **SampleData** con
     ```json
     [
       {
-        "item": "Basic Speaker Mini (Black) - Media",
-        "price": 1096.74
+        "product": "QuantumPro X9 Elite Workstation - Computers, Workstations",
+        "currentPrice": 8890.61
       },
       {
-        "item": "Luxe Keyboard Ultra (Red) - Perhipheral",
-        "price": 1091.03
+        "product": "ProCore X3 Elite Workstation - Computers, Workstations",
+        "currentPrice": 8486.6
       },
       // Ommitted for brevity
     ]
@@ -106,8 +102,7 @@ Finally, perform a NoSQL query to test the sample data in the **SampleData** con
 
     :::image type="content" source="media/quickstart-portal/query-results.png" lightbox="media/quickstart-portal/query-results-full.png" alt-text="Screenshot of the query editor and result sections for a container in the Fabric portal.":::
 
-## Related content
+## Next step
 
-- [Learn about Cosmos DB in Microsoft Fabric](overview.md)
-- [Review the sample data set](sample-data.md)
-- [Connect using Microsoft Entra ID to Cosmos DB in Microsoft Fabric](how-to-authenticate.md)
+> [!div class="nextstepaction"]
+> [Query mirrored Cosmos DB in Microsoft Fabric data using the SQL Analytics Endpoint](tutorial-mirroring.md)

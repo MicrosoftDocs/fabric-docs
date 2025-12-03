@@ -2,13 +2,11 @@
 title: Get Started with Graph in Microsoft Fabric
 description: Learn how to get started with graph in Microsoft Fabric, including key concepts, setup instructions, and first steps.
 ms.topic: quickstart
-ms.date: 10/10/2025
+ms.date: 11/18/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam
-ms.service: fabric
-ms.subservice: graph
-ms.search.form: Getting started with Graph
+ms.search.form: Get Started with Graph in Microsoft Fabric
 ---
 
 # Quickstart Guide for Graph in Microsoft Fabric
@@ -35,9 +33,18 @@ To get started with graph in Microsoft Fabric, you need the following prerequisi
 - You are a member of a workspace or have permission to create items in the workspace. For more information, see [Workspaces in Microsoft Fabric](/fabric/admin/portal-workspaces).
 
     > [!IMPORTANT]
-    > Access management of the graph is restricted to the workspace where it's hosted. The graph isn't accessible to users outside of the workspace. Users within the workspace who have access to the underlying data in the lakehouse will be able to model and query the graph.
+    > Access management of the graph is restricted to the workspace that hosts it. The graph isn't accessible to users outside of the workspace. Users within the workspace who have access to the underlying data in the lakehouse can model and query the graph.
 
 ## Create a graph model
+
+Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following table summarizes the permissions associated with each Microsoft Fabric workspace role's capability on graph models.
+
+| Capability                           | Admin | Member | Contributor | Viewer |
+|--------------------------------------|-------|--------|-------------|--------|
+| Create or modify graph model         | ✔     | ✔      | ✔           | ✖      |
+| Delete graph model                   | ✔     | ✔      | ✔           | ✖      |
+| View and read content of graph model | ✔     | ✔      | ✔           | ✔      |
+| Share graph model                    | ✔     | ✔      | ✖           | ✖      |
 
 To create a graph model in Microsoft Fabric, follow these steps:
 
@@ -145,12 +152,39 @@ By this point, you created all the nodes and edges for your graph. This is the b
 
 ## Load the graph
 
-To load the graph, click **Save**. This will verify the graph model, load data from OneLake, construct the graph, and ready it for querying.
+To load the graph, select **Save**. This will verify the graph model, load data from OneLake, construct the graph, and ready it for querying.
 
 > [!IMPORTANT]
-> You currently need to re-load the graph (by clicking **Save**) whenever the model or the underlying data is changed.
+> You currently need to reload the graph (by selecting **Save**) whenever the model or the underlying data is changed.
 
 ## Query the graph
+
+Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following workspace role permissions apply depending on whether you run queries via the Graph Model or QuerySet item.
+
+### Workspace role permissions for Graph Model
+
+| Capability                           | Admin | Member | Contributor | Viewer |
+|--------------------------------------|-------|--------|-------------|--------|
+| Create or modify graph model         | ✔     | ✔      | ✔           | ✖      |
+| Delete graph model                   | ✔     | ✔      | ✔           | ✖      |
+| View and read content of graph model | ✔     | ✔      | ✔           | ✔      |
+| Share graph model                    | ✔     | ✔      | ✖           | ✖      |
+| Create or modify graph queries       | ✔     | ✔      | ✔           | ✖      |
+| Create or modify graph QuerySet item | ✔     | ✔      | ✔           | ✖      |
+
+### Workspace role permissions for Graph QuerySet
+
+| Capability                             | Admin | Member | Contributor | Viewer |
+|----------------------------------------|-------|--------|-------------|--------|
+| Create or modify graph QuerySet item   | ✔     | ✔      | ✔           | ✖      |
+| Delete QuerySet item                   | ✔     | ✔      | ✔           | ✖      |
+| View and read content of QuerySet item | ✔     | ✔      | ✔           | ✔      |
+| Connect to graph instance              | ✔     | ✔      | ✔           | ✖      |
+| Share QuerySet                         | ✔     | ✔      | ✖           | ✖      |
+
+> [!NOTE]
+> All users need read access to the underlying graph instance item to execute queries against the referenced graph instance from the graph QuerySet item.
+> Only read, write, and reshare permissions are supported for QuerySet item.
 
 ### Using the query builder
 
@@ -160,7 +194,7 @@ Now, we can query the graph by selecting specific nodes and relationships. All q
 
 Follow these steps to switch to query builder and start querying your graph interactively:
 
-1. Select **Modes** > **Query builder** from your graph's home page. From this view you can also create a read-only queryset, which has the same functionalities as below and allows you to share your query results.
+1. Select **Modes** > **Query builder** from your graph's home page. From this view, you can also create a read-only queryset, which has the same functionalities as below and allows you to share your query results.
 1. Select **Add node** to see the available nodes for querying.
 1. Select a node to add it to your query. In this example, we add the **Customer** node.
 

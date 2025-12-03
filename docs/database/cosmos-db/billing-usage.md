@@ -1,23 +1,18 @@
 ---
-title: Billing and Utilization Data For Cosmos DB Database (Preview)
-titleSuffix: Microsoft Fabric
-description: Learn about billing concepts for compute and storage and how to monitor usage for Cosmos DB in Microsoft Fabric during the preview.
-author: seesharprun
-ms.author: sidandrews
+title: Billing and Utilization Data For Cosmos DB Database
+description: Learn about billing concepts for compute and storage and how to monitor usage for Cosmos DB in Microsoft Fabric.
+author: markjbrown
+ms.author: mjbrown
 ms.topic: concept-article
-ms.date: 07/16/2025
+ms.date: 10/28/2025
 show_latex: true
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
-# Billing and utilization data for Cosmos DB in Microsoft Fabric (preview)
+# Billing and utilization data for Cosmos DB in Microsoft Fabric
 
-Cosmos DB in Microsoft Fabric compute usage is encapsulated within your Fabric capacity. You can review and understand your utilization using similar tools to other Fabric workloads.
+Cosmos DB in Microsoft Fabric compute and storage usage is encapsulated within your Fabric capacity. You can review and understand your utilization using similar tools to other Fabric workloads.
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal within your subscription's context. For more information, see [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). For more information on Fabric billing, see [understand your Azure bill on a Fabric capacity](../../enterprise/azure-billing.md).
-
-At this time, compute and data storage for Cosmos DB do not incur charges against your Fabric capacity.
 
 ## Capacity units
 
@@ -27,21 +22,30 @@ Capacity is a dedicated set of resources that are available at a given time to b
 
 ## Request units
 
-Cosmos DB normalizes the cost of all database operations using **request units** (RUs) and measures cost based on throughput referred to as **request units per second** (RU/s). For more information about throughput, see [request units](request-units.md)
+Cosmos DB normalizes the cost of all database operations using **request units** (RUs) and measures cost based on throughput referred to as **request units per second** (RU/s). For more information about throughput, see [request units](request-units.md).
+
+If using Cosmos DB SDK's users provision and manage request units. Within Microsoft Fabric, consumed request units for Cosmos DB are converted into equivalent Fabric capacity units for usage and billing reporting.
+
+## Autoscale
+
+All containers for Cosmos DB in Fabric are provisioned for autoscale. With autoscale in Cosmos DB, users provision the maximum throughput for a container. When a container is unused it scales down to 10% of the maximum throughput. For a container with autoscale throughput of `1000` RU/s, the container will scale between `100` and `1000` RU/s. Consumption is scaled in increments of `100` RU/s or the equivalent to `0.067` CU/hr, see [Conversion](#conversion) below.
+
+New Cosmos DB containers in the Fabric portal are created with a default autoscale maximum of `5000` RU/s. This can be scaled from `1000` to `50000` RU/s using the Cosmos DB SDK. New containers created using the SDK can be created with the same limits. For examples on how to create new containers or modify existing container throughput see, [Management Operations for Cosmos DB in Fabric](https://github.com/AzureCosmosDB/cosmos-fabric-samples/tree/main/management)
+
+Users requiring additional throughput can make a quota request via support. For more information, see [throughput limitations](limitations.md#quotas-and-limits).
+
+> [!Note]
+> Cosmos DB bills the highest autoscale throughput consumed per hour. Because of this, Cosmos is configured as a background service within Fabric. This is unlike other services and is done to ensure smooth Fabric capacity utilization such that no single hour of usage can trigger throttling on the Fabric capacity.
 
 ## Conversion
 
-Cosmos DB aims to make the most of the purchased capacity and provides visibility into usage using a capacity-based software-as-a-service (SaaS) model.
+The formula for the conversion between Cosmos DB request units per second and Microsoft Fabric capacity units per hour.
 
-In straightforward terms, $100 RU/s = 0.067 CUs/hr$ or $1 RU/s = 0.00067 CUs/hr$. Put another way, `1` CU/h is equivalent to approximately `1,500` RU/s, meaning that $100 RU/s = 1/15 CU/hr$.
+ $100 RU/s = 0.067 CUs/hr$ or $1 RU/s = 0.00067 CUs/hr$. Put another way, `1` CU/h is equivalent to approximately `1,500` RU/s.
 
-This ratio aligns the cost structure between Microsoft Azure and Microsoft Fabric if you're already familiar with throughput-based pricing for services like [Azure Cosmos DB for NoSQL](/azure/cosmos-db/nosql) maintaining price parity.
+This ratio aligns the cost structure and maintaining price parity between Microsoft Azure and Microsoft Fabric. Users pay the same for Cosmos DB whether using RU/s in Azure or CUs/hr in Fabric.
 
-For example, a workload that typically requires `10,000` RU/s in Azure Cosmos DB for NoSQL would need `670` CUs per hour (CUs/hr) in Fabric using this formula:
-
-$10000 RU/s * 0.00067 = 670 CUs/hr$
-
-## Examples
+## Fabric capacity SKU examples
 
 Reference this example table for sizing estimations for Cosmos DB in Fabric based on commonly used capacity unit (CU) allocations:
 
@@ -60,14 +64,6 @@ Reference this example table for sizing estimations for Cosmos DB in Fabric base
 | `2048` | `3,056,716.42` |
 
 For more information about Fabric capacity planning, see [plan your capacity size in Microsoft Fabric](../../enterprise/plan-capacity.md).
-
-## Autoscale
-
-Consider an example where you manually set the autoscale throughput to `1000` RU/s. This means that throughput scales between `100` and `1000` RU/s. Consumption is scaled in increments of `100` RU/s equivalent to `0.067` CU/hr.
-
-In an autoscale setup, the current throughput (`T`) automatically adjusts between 10% and 100% of the maximum throughput (`Tmax`), following the formula $0.1*T_{max} \leq T \leq T_{max}$. You can set the autoscale maximum throughput for each container as needed.
-
-Cosmos DB in Fabric uses autoscale throughput with a default autoscale maximum of `5000` RU/s if deployed using the Fabric portal. If you deploy using the SDK, you can set the autoscale limit up to `10000` RU/s. For more information, see [throughput limitations](limitations.md#quotas-and-limits).
 
 ## Reporting
 

@@ -31,6 +31,8 @@ items:
     href: create-adls-shortcut.md
   - name: Create a Blob Storage shortcut
     href: create-blob-shortcut.md
+  - name: Create a OneDrive or SharePoint shortcut
+    href: create-onedrive-sharepoint-shortcut.md
   - name: Create an Amazon S3 shortcut
     href: create-s3-shortcut.md
   - name: Create an Amazon S3 compatible shortcut
@@ -43,6 +45,8 @@ items:
     href: create-on-premises-shortcut.md
   - name: Create shortcuts to an Iceberg table
     href: onelake-iceberg-tables.md
+  - name: Use Snowflake with Iceberg tables
+    href: onelake-iceberg-snowflake.md
   - name: Shortcut security
     href: onelake-shortcut-security.md
   - name: Manage cloud connections
@@ -63,7 +67,7 @@ items:
     href: onelake-access-python.md
   - name: OneLake Deep Dive ADLS and Blob APIs in Action
     href: onelake-apis-in-action.md
-- name: Integrate with Azure services
+- name: Integrate with other services
   items:
   - name: Azure Synapse Analytics
     href: onelake-azure-synapse-analytics.md
@@ -73,8 +77,12 @@ items:
     href: onelake-azure-databricks.md
   - name: Databricks Unity Catalog
     href: onelake-unity-catalog.md
+  - name: Snowflake
+    href: ./snowflake/create-snowflake-database-item.md
   - name: Azure HDInsight
     href: onelake-azure-hdinsight.md
+  - name: Microsoft Foundry knowledge
+    href: onelake-foundry-knowledge.md
   - name: PowerShell
     href: onelake-powershell.md
   - name: AzCopy
@@ -82,11 +90,15 @@ items:
 - name: OneLake table APIs
   items:
   - name: OneLake table APIs overview
-    href: ./table-apis/onelake-table-apis.md
+    href: ./table-apis/table-apis-overview.md
   - name: OneLake table APIs for Iceberg
-    href: ./table-apis/onelake-iceberg-table-apis.md
+    href: ./table-apis/iceberg-table-apis-overview.md
   - name: Getting started with OneLake table APIs for Iceberg
-    href: ./table-apis/onelake-iceberg-table-apis-detailed.md
+    href: ./table-apis/iceberg-table-apis-get-started.md
+  - name: OneLake table APIs for Delta
+    href: ./table-apis/delta-table-apis-overview.md
+  - name: Getting started with OneLake table APIs for Delta
+    href: ./table-apis/delta-table-apis-get-started.md
 - name: Secure and manage data access
   items:
   - name: OneLake security overview
@@ -107,7 +119,7 @@ items:
       href: ./security/column-level-security.md
     - name: Row-level security
       href: ./security/row-level-security.md
-  - name: How to encrypt data in Onelake?
+  - name: How to encrypt data in OneLake?
     href: /fabric/security/workspace-customer-managed-keys?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json    
   - name: Authorize with a OneLake shared access signature (SAS)
     items:
@@ -140,7 +152,7 @@ items:
   - name: OneLake compute and storage consumption
     href: onelake-consumption.md
   - name: OneLake capacity consumption example
-    href: OneLake-capacity-consumption.md
+    href: onelake-capacity-consumption.md
 - name: OneLake events
   items:
   - name: Explore OneLake events

@@ -1,75 +1,77 @@
 ---
-title: Synchronize your code from an existing Git repo
-description: This tutorial helps you Synchronize your code from an existing Git repo.
+title: Synchronize code from an existing Git repository
+description: Learn how to synchronize your Apache Airflow Job code from an existing Git repository.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: nabhishek
 ms.topic: quickstart
 ms.custom: airflows
-ms.date: 03/25/2024
+ms.date: 11/17/2025
+ai-usage: ai-assisted
 ---
 
-# Synchronize your code from an existing GitHub repository
+# Synchronize code from an existing Git repository
 
 > [!NOTE]
 > Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
-Data Workflows, a transformative capability within Microsoft Fabric, redefines your approach to constructing and managing pipelines. Powered by the Apache Airflow runtime, Data Workflows provides an integrated, cloud-based platform for developing, scheduling, and monitoring Python-based data workflows, articulated as Directed Acyclic Graphs (DAGs). It delivers a Software-as-a-Service (SaaS) experience for pipeline development and management using Apache Airflow, making the runtime easily accessible and enabling the creation and operation of your data workflows.<br>
-With data workflows, you have two options for storing your workflow files: Fabric-managed storage and GitHub-managed storage. In this article, you'll learn how to synchronize your code from an existing GitHub repository.
+Data Workflows is a capability within Microsoft Fabric that helps you build and manage pipelines. Powered by the Apache Airflow runtime, Data Workflows provides a cloud-based platform for developing, scheduling, and monitoring Python-based data workflows as Directed Acyclic Graphs (DAGs). You can use Apache Airflow in a Software-as-a-Service (SaaS) model for pipeline development and management.
 
-## Create an Apache Airflow Job
+You can store your workflow files in two locations: Fabric-managed storage or Git-managed storage. This article shows you how to synchronize your code from an existing Git repository.
 
-1. You can use an existing workspace or [Create a new workspace](../fundamentals/create-workspaces.md).
-2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Job (preview)
+## Create an Apache Airflow job
 
-   :::image type="content" source="media/apache-airflow-jobs/more-options.png" lightbox="media/apache-airflow-jobs/more-options.png" alt-text="Screenshot shows click on more options.":::
+1. You can use an existing workspace or [create a new workspace](../fundamentals/create-workspaces.md).
+1. Select **+ New Item**. Under the **Prepare data** section, select **Apache Airflow job**.
 
-   :::image type="content" source="media/apache-airflow-jobs/apache-airflow-project.png" lightbox="media/apache-airflow-jobs/apache-airflow-project.png" alt-text="Screenshot to select Apache Airflow Job.":::
+   :::image type="content" source="media/apache-airflow-jobs/apache-airflow-project.png" lightbox="media/apache-airflow-jobs/apache-airflow-project.png" alt-text="Screenshot showing how to select Apache Airflow Job.":::
 
-3. Give a suitable name to your project and Click on "Create" Button.
+1. Enter a name for your project and select **Create**.
 
-## Synchronize Your GitHub repository
+## Synchronize your Git repository
 
-Specify the git repository you want to sync your Apache Airflow Job with.
+Specify the Git repository you want to synchronize with your Apache Airflow Job.
 
-1. Go to the "Settings" button and click on 'File Storage' tab. Choose "Git-sync" as the type of storage.
-   :::image type="content" source="media/apache-airflow-jobs/git-sync.png" lightbox="media/apache-airflow-jobs/git-sync.png" alt-text="Screenshot to synchronize GitHub repository.":::
+1. Go to the **Settings** button and select the **File Storage** tab. Choose **Git-sync** as the storage type.
 
-2. Fill out the following fields:
+   :::image type="content" source="media/apache-airflow-jobs/git-sync.png" lightbox="media/apache-airflow-jobs/git-sync.png" alt-text="Screenshot showing how to synchronize a Git repository.":::
 
-   - <strong>Git service type</strong>: Supported service types:
+1. Fill out the following fields:
+
+   - **Git service type**: The type of Git service you're using. Supported service types:
 
      - GitHub
      - ADO: Azure DevOps
      - GitLab
      - BitBucket
 
-   - <strong>Git Credential type</strong>: Supported credential types:
-     - None: Choose this credential type, if the repository is public.
-     - Personal Access token: A personal access token from the Git service used to authenticate with repository.
+   - **Git Credential type**: The authentication method for your Git repository. Supported credential types:
+     - None: Select this credential type if the repository is public.
+     - Personal Access token: A personal access token from the Git service used to authenticate with the repository.
        - Fill out the fields:
-         - Username: Username of GitHub.
-         - Personal Access token
-     - Service Principal: Select this credential when you choose Git Service as Azure Devops:
+         - Username: Your Git username.
+         - Personal Access token: Your token value.
+     - Service Principal: Select this credential when you use Azure DevOps as the Git service:
        - Fill out the fields:
-         - Service principal app ID: Client ID of your Service Principal that has access to Azure Devops Repository.
-         - Service principal secret: Client secret with access to Azure DevOps repository.
-         - Service principal tenant ID: Tenant ID of your Service Principal.
-     - <strong>Repo</strong>: The clone URL to the repository you want to sync.
-     - <strong>Branch</strong>: Name of the repository’s branch you want to sync.
+         - Service principal app ID: The client ID of your service principal that has access to the Azure DevOps repository.
+         - Service principal secret: The client secret with access to the Azure DevOps repository.
+         - Service principal tenant ID: The tenant ID of your service principal.
+   - **Repo**: The clone URL to the repository you want to synchronize.
+   - **Branch**: The name of the repository branch you want to synchronize.
 
-3. Click on 'Apply'.
+1. Select **Apply**.
 
-### Monitor your DAGs
+## Monitor your DAGs
 
-- To verify if your repository is synchronized, navigate to the Apache Airflow's UI by clicking on "Monitor in Apache Airflow". In the UI, you'll see all the DAGs from your repository loaded directly.
-  :::image type="content" source="media/apache-airflow-jobs/monitor-dag-apache-airflow.png" lightbox="media/apache-airflow-jobs/monitor-dag-apache-airflow.png" alt-text="Screenshot to monitor DAGs in apache airflow.":::
+To verify your repository is synchronized, go to the Apache Airflow UI by selecting **Monitor in Apache Airflow**. In the UI, you see all the DAGs from your repository loaded directly.
 
-- Code editor isn't supported while using git-sync storage. You need to edit your code locally and push the changes to your remote Git repository. Your latest commit will be automatically synchronized with Data Workflows, and you can see your updated code in the Apache Airflow's UI.
+:::image type="content" source="media/apache-airflow-jobs/monitor-dag-apache-airflow.png" lightbox="media/apache-airflow-jobs/monitor-dag-apache-airflow.png" alt-text="Screenshot showing how to monitor DAGs in Apache Airflow.":::
 
-### Supported Git repository structure
+The code editor isn't supported when you use Git-sync storage. You need to edit your code locally and push the changes to your remote Git repository. Your latest commit is automatically synchronized with Data Workflows, and you can see your updated code in the Apache Airflow UI.
 
-```
+## Supported Git repository structure
+
+```text
 |── dags/
 |   |-- *.py
 |-- plugins
@@ -90,8 +92,8 @@ Specify the git repository you want to sync your Apache Airflow Job with.
 |    |    └-- *.py
 ```
 
-> [!Note]
-> We only synchronize the `dags` and `plugins` folders from the repository. Make sure any files or subfolders are inside one of these folders.
+> [!NOTE]
+> Data Workflows only synchronizes the `dags` and `plugins` folders from the repository. Make sure your files or subfolders are inside one of these folders.
 
 ## Related content
 

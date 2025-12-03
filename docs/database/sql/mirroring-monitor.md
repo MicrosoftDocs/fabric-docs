@@ -32,4 +32,4 @@ The **NotSupported** replication status in the **Replication monitor** page cont
 
 ## Related content
 
-- [Troubleshoot mirroring from Fabric SQL database (preview)](mirroring-troubleshooting.md)
+- [Troubleshoot mirroring from Fabric SQL database](mirroring-troubleshooting.md)

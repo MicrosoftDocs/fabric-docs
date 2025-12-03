@@ -4,7 +4,7 @@ description: This article explains how to copy data using Amazon S3 Compatible.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 11/11/2025
 ms.custom: 
   - pipelines
   - template-how-to
@@ -19,6 +19,8 @@ This article outlines how to use the copy activity in a pipeline to copy data fr
 ## Required permissions
 
 To copy data from Amazon S3 Compatible, make sure you've been granted the following permissions for Amazon S3 Compatible object operations: `s3:GetObject` and `s3:GetObjectVersion`.
+
+To copy data to Amazon S3 Compatible, make sure you've been granted the `s3:PutObject` permission for Amazon S3 Compatible object operations.
 
 In addition, `s3:ListAllMyBuckets` and `s3:ListBucket`/`s3:GetBucketLocation` permissions are required for operations like testing connection and browsing from root.
 

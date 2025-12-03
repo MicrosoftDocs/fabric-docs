@@ -5,6 +5,7 @@ ms.reviewer: aksdi
 author: spelluru
 ms.author: spelluru
 ms.topic: how-to
+ms.subservice: rti-eventhouse
 ms.date: 08/25/2025
 
 #Customer intent: As an integration developer, I want to build integration pipelines from Telegraf into Microsoft Fabric Eventhouse, so I can make data available for near real-time analytics.

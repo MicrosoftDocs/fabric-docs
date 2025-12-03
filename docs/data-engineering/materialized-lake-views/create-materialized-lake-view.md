@@ -60,6 +60,10 @@ FROM bronze.customers c LEFT JOIN bronze.orders o
 ON c.customerID = o.customerID; 
 ```
 
+> [!NOTE]
+> - If your workspace name contains spaces, enclose it in backticks: `` `My Workspace`.lakehouse.schema.view_name ``
+> - Materialized lake view names are case-insensitive and converted to lowercase (e.g., `MyTestView` becomes `mytestview`)
+
 The following example defines a materialized lake view called `customers_enriched`, partitioned by the `city` column:
 
 ```sql

@@ -3,7 +3,7 @@ title: Enable workspace inbound access protection
 description: Learn how to enable and manage inbound access protection for your Fabric workspace to secure network connections.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: overview
 ms.custom:
 ms.date: 08/13/2025

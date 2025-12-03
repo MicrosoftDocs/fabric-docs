@@ -32,7 +32,7 @@ The pillars of Power BI's data protection capabilities and how they help you pro
 * **Microsoft 365 data loss prevention**
     * **Data loss prevention policies for Power BI** enable central security teams to use Microsoft 365 data loss prevention policies to enforce the organization's DLP policies on Power BI. DLP policies for Power BI currently support detection of sensitive info types and sensitivity labels on semantic models, and can trigger automatic risk remediation actions such as alerts to security admins in Microsoft 365 compliance portal and policy tips for end users.
 
-Read more about [sensitivity labels from Microsoft Purview Information Protection](/microsoft-365/compliance/sensitivity-labels), [Microsoft Defender for Cloud Apps](https://www.microsoft.com/en-us/security/business/cloud-apps-defender), and [Microsoft 365 data loss prevention](/microsoft-365/compliance/dlp-learn-about-dlp).
+Read more about [sensitivity labels from Microsoft Purview Information Protection](/microsoft-365/compliance/sensitivity-labels), [Microsoft Defender for Cloud Apps](https://www.microsoft.com/security/business/cloud-apps-defender), and [Microsoft 365 data loss prevention](/microsoft-365/compliance/dlp-learn-about-dlp).
 
 #### Give us your feedback
 

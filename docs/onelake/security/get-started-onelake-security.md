@@ -12,7 +12,7 @@ ms.date: 09/05/2025
 
 # Get started with OneLake security (preview)
 
-OneLake security enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific folders within a Fabric item, then assign these roles to users or groups. Roles can also contain row or column level security to further limit access. The OneLake security permissions determine what data that user can see across all experiences in Fabric.
+OneLake security enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant access to specific folders within a Fabric item, then assign these roles to users or groups. Roles can also contain row or column level security to further limit access. The OneLake security permissions determine what data that user can see across all experiences in Fabric.
 
 Fabric users with Write and Reshare permissions (generally Admin and Member workspace users) can get started by creating OneLake security roles to grant access to only specific folders or tables in a Fabric data item. To grant access to data in an item, add users to a data access role. Users that aren't part of a data access role see no data in that item.
 
@@ -20,23 +20,23 @@ Fabric users with Write and Reshare permissions (generally Admin and Member work
 
 To configure OneLake security, you must be an Admin or Member in the workspace, or have Write and Reshare permissions. Role creation and membership assignment take effect as soon as the role is saved, so make sure you want to grant access before adding someone to a role.
 
-The table below outlines which data items support OneLake security.
+The following table outlines which data items support OneLake security:
 
 | Fabric item | Status | Supported permissions |
 | ---- | --- | --- |
-| Lakehouse | Private Preview | Read, ReadWrite |
-| Azure Databricks Mirrored Catalog | Private Preview | Read |
+| Lakehouse | Preview | Read, ReadWrite |
+| Azure Databricks Mirrored Catalog | Preview | Read |
 
 ## How to opt in
 
-OneLake security is currently in private preview and as a result is disabled by default. The preview feature is configured on a per-item basis. The opt-in control allows for a single item to try the preview without enabling it on any other Fabric items.
+OneLake security is currently in preview and as a result is disabled by default. The preview feature is configured on a per-item basis. The opt-in control allows for a single item to try the preview without enabling it on any other Fabric items.
 
 The preview feature can't be turned off once enabled.
 
 1. Navigate to a lakehouse and select **Manage OneLake security (preview)**.
 1. Review the confirmation dialog. The data access roles preview isn't compatible with the External data sharing preview. If you're ok with the change, select **Continue**.
 
-To ensure a smooth opt-in experience, all users with read permission to data in the item continue to have read access through a default data access role called **DefaultReader**. Using [virtualized role memberships](#assign-virtual-members), all users that had the necessary permissions to view data in the lakehouse (the ReadAll permission) are included as members of this default role. To start restricting access to those users, delete the DefaultReader role or remove the ReadAll permission from the accessing users.  
+To ensure a smooth opt-in experience, all users with read permission to data in the item continue to have read access through a default data access role called **DefaultReader**. With [virtualized role memberships](#assign-virtual-members), all users that had the necessary permissions to view data in the lakehouse (the ReadAll permission) are included as members of this default role. To start restricting access to those users, delete the DefaultReader role or remove the ReadAll permission from the accessing users.  
 
 > [!IMPORTANT]
 > Make sure that any users that are included in a data access role are removed from the DefaultReader role. Otherwise they maintain full access to the data.
@@ -44,6 +44,8 @@ To ensure a smooth opt-in experience, all users with read permission to data in 
 ## What types of data can be secured?
 
 Use OneLake security roles to manage OneLake read access to any tables or folders in an item. Access to tables can be further restricted using row and/or column level security. Any security set applies to access from all engines in Fabric. For more information, see the [data access control model.](../security/data-access-control-model.md)
+
+For specific item types, ReadWrite access can also be configured. This permission gives users the ability to edit data in a lakehouse on specified tables or folders without giving them access to create or manage Fabric items. ReadWrite access enables users to perform write operations through Spark notebooks, the OneLake file explorer, or OneLake APIs. Write operations through the Lakehouse UX for viewers is not supported.
 
 ## Create a role
 
@@ -62,13 +64,17 @@ Use the following steps to create a OneLake security role.
    * Names are case insensitive and must be unique.
    * The maximum name length is 128 characters.
 
+1. Select **Grant** as the type of role.
+
+1. Choose the permissions you want to grant. **Read** is selected at a minimum, and you can optionally choose **ReadWrite**.
+
 1. If you want this role to apply to all of the tables and files in this lakehouse, select the **All data** toggle.
 
     This selection also provides access to any folders that are added in the future.
 
 1. If you want this role to apply only to a selected group of tables and folders, select the **Selected data** toggle. Then, use the following steps to define the approved data for this role.
 
-   1. Select **Browse Lakehouse**. (or the equivalent for the item you are working with)
+   1. Select **Browse Lakehouse** or the equivalent for the item that you're working with.
 
       :::image type="content" source="./media/get-started-data-access-roles/browse-lakehouse.png" alt-text="Screenshot that shows the 'browse lakehouse' option to select data.":::
    
@@ -107,21 +113,23 @@ Use the following steps to edit an existing OneLake security role.
 
    This tab shows all of the data that the members of the role can access.
 
-   The **Data** column shows the name of the tables or folders that are part of the role access. You can expand and collapse schemas to view the items underneath. Hovering over an entry shows the full path of the table or folder. Hovering over the **...** will give you options to configure **Row-level security** or **Column-level security**. The [row level security](./row-level-security.md) and [column level security](./column-level-security.md) guides provide more information on how that works. 
+   The role name tells you which role you are looking at. To edit the role name, select the **Edit** dropdown in the upper right corner, select **Update role name**, enter a new name, and then confirm with the check mark. You can discard your changes by selecting the **X**.
 
-   The **Type** column tells you the type of item that was selected. The values are either: **Schema**, **Table**, or **Folder**. 
+   The **Permissions** item at the top, tells you what permissions the role currently grants. To change the role permissions, select the **Edit** dropdown in the upper right corner, select **Edit role permissions**, edit the selected permissions with the dropdown, and then confirm with the  check mark. You can discard your changes by selecting the **X**.
 
-   The **Permissions** column shows what permission is granted by the role to each item. Currently, only **Read** is supported.
+   The **Data** column shows the name of the tables or folders that are part of the role access. You can expand and collapse schemas to view the items underneath. Hover over an entry to view the full path of the table or folder. Hover over the **...** to see options to configure **Row-level security** or **Column-level security**. The [row level security](./row-level-security.md) and [column level security](./column-level-security.md) guides provide more information on how that works.
 
-   The **Data access** column indicates whether any row or column level restrictions are applied to the item. An icon with a lock and horizontal lines indicates row level security is applied, while an icon with a lock and vertical lines indicates column level security is applied. 
+   The **Type** column tells you the type of item that was selected. The values are either: **Schema**, **Table**, or **Folder**.
 
-1. To edit the data included in the role, select **Add data**.   
+   The **Data access** column indicates whether any row or column level restrictions are applied to the item. An icon with a lock and horizontal lines indicates row level security is applied, while an icon with a lock and vertical lines indicates column level security is applied.
 
-   This action opens the table and folder selection dialog. 
+1. To edit the data included in the role, select **Add data**.
 
-1. Check and uncheck tables or folders to add or remove them from the role. 
+   This action opens the table and folder selection dialog.
 
-1. Select **Add data** to confirm your selections. 
+1. Check and uncheck tables or folders to add or remove them from the role.
+
+1. Select **Add data** to confirm your selections.
 
 1. Select the Members in role tab to view the members of the role.
 
@@ -157,7 +165,7 @@ OneLake security role supports two methods of adding users to a role. The main m
 
 Adding users directly to a role adds the users as explicit members of the role. These users show up with their name and picture shown in the **Members** list.  
 
-The virtual members allow for the membership of the role to be dynamically adjusted based on the [Fabric item permissions](../../security/permission-model.md#item-permissions) of the users. By selecting **Advanced configuration** and selecting a permission, you add any user in the Fabric workspace who has all of the selected permissions as an implicit member of the role. For example, if you chose **ReadAll, Write** then any user of the Fabric workspace that has ReadAll *and* Write permissions to the item would be included as a member of the role. You can see which users are being added by a permission group by looking at the **Added using** column in the **Members in role** tab. These members can't be manually removed directly. To remove a member that was added through a permission group, remove the permission group from the role. 
+The virtual members allow for the membership of the role to be dynamically adjusted based on the [Fabric item permissions](../../security/permission-model.md#item-permissions) of the users. By selecting **Advanced configuration** and selecting a permission, you add any user in the Fabric workspace who has all of the selected permissions as an implicit member of the role. For example, if you chose **ReadAll, Write** then any user of the Fabric workspace that has ReadAll *and* Write permissions to the item would be included as a member of the role. You can see which users are being added by a permission group by looking at the **Added using** column in the **Members in role** tab. These members can't be manually removed directly. To remove a member that was added through a permission group, remove the permission group from the role.
 
 Regardless of which membership type you use, OneLake security roles support adding individual users, Microsoft Entra groups, and security principals.  
 

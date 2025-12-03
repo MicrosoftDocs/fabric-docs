@@ -5,6 +5,7 @@ ms.reviewer: avnera
 ms.author: spelluru
 author: spelluru
 ms.topic: concept-article
+ms.subservice: rti-eventhouse
 ms.custom:
 ms.date: 11/19/2024
 ---

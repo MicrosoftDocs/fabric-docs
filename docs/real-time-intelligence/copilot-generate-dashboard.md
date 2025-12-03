@@ -6,6 +6,7 @@ ms.author: spelluru
 ms.reviewer: mibar, maghan
 ms.date: 08/21/2025
 ms.topic: how-to
+ms.subservice: rti-dashboard
 ms.collection:
   - ce-skilling-ai-copilot
 ms.update-cycle: 180-days
@@ -16,7 +17,7 @@ no-loc: [Copilot]
 
 Copilot makes it easy to create dashboards by automating the initial setup. You don't need any technical expertise. The process includes selecting a data table in Real-Time Hub or KQL Queryset and using AI to generate a Real-Time Dashboard. The dashboard includes an insights page for a quick overview and a data profile page.
 
-For billing information about Copilot, see [Announcing Copilot in Fabric pricing](https://blog.fabric.microsoft.com/en-us/blog/announcing-fabric-copilot-pricing-2/).
+For billing information about Copilot, see [Announcing Copilot in Fabric pricing](https://blog.fabric.microsoft.com/blog/announcing-fabric-copilot-pricing-2/).
 
 ## Prerequisites
 

@@ -1,9 +1,9 @@
 ---
-title: "Microsoft Fabric Mirrored Databases From Azure Cosmos DB (Preview)"
+title: "Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: Learn about the mirrored databases from Azure Cosmos DB in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: anithaa, whhender
+ms.reviewer: jmaldonado
 ms.date: 05/07/2025
 ms.topic: overview
 ms.custom:
@@ -11,7 +11,7 @@ ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
 
-# Mirroring Azure Cosmos DB (Preview)
+# Mirroring Azure Cosmos DB
 
 [Mirroring in Microsoft Fabric](../mirroring/overview.md) provides a seamless no-ETL experience to integrate your existing Azure Cosmos DB data with the rest of your data in Microsoft Fabric. 
 Your Azure Cosmos DB data is continuously replicated directly into Fabric OneLake in near real-time, without any performance impact on your transactional workloads or consuming Request Units (RUs). 
@@ -22,7 +22,7 @@ You can use built-in Power BI capabilities to access data in OneLake in DirectLa
 In addition to Power BI, you can use T-SQL to run complex aggregate queries or use Spark for data exploration. You can seamlessly access the data in notebooks and use data science to build machine learning models.
 
 > [!IMPORTANT]
-> Mirroring for Azure Cosmos DB is currently in [preview](../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+> Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
 ## Why use mirroring in Fabric?
 
@@ -193,9 +193,9 @@ If you're using the data explorer in Fabric mirroring, you accrue typical costs 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-tutorial.md)
 
 ## Related content
 
-- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-limitations.md)
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)

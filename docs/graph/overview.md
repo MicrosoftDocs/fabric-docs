@@ -2,13 +2,12 @@
 title: Graph Overview
 description: Learn about the core purpose, architecture, and benefits of graph in Microsoft Fabric, including integration and feature highlights.
 ms.topic: concept-article
-ms.date: 10/10/2025
+ms.date: 11/18/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: wangwilliam
-ms.service: fabric
-ms.subservice: graph
 ms.custom: references_regions
+ms.search.form: Graph Overview
 ---
 
 # Graph in Microsoft Fabric overview (preview)
@@ -46,6 +45,9 @@ Graph in Microsoft Fabric enables you to:
 
 - Create a labeled property graph over structured data in OneLake by defining its nodes and edges in terms of underlying tabular data.
 
+    > [!TIP]
+    > Graph fully supports schema evolution through OneLake. This means you can add, remove, or reorder columns in your source tables without breaking graph ingestion or requiring a full reload. All schema changes are automatically handled during graph load and reflected in production, giving you flexibility to adapt your data model as business needs evolve. This capability ensures that graph solutions remain resilient and up to date even as underlying datasets change.
+
 - Query using GQL (Graph Query Language), including pattern matching, path constructs, aggregations, and other features as they're released. The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
 
 - Enrich your graph with scores and communities for downstream BI (business intelligence) and AI (artificial intelligence) workflows. Run built-in graph algorithms such as shortest path, page rank, weakly connected components (WCC), and Louvain.
@@ -75,32 +77,8 @@ You can incorporate graph analytics into your existing workflows, eliminating th
 | Operations & cost | Graph workloads run on pooled Fabric capacity units (CUs) with automatic scale-down and centralized metrics, which helps optimize resource usage and cost. | Standalone graph databases require separate clusters or licenses, custom scaling and monitoring, and often incur idle capacity charges, increasing operational complexity and cost. |
 | Governance & security | Microsoft Fabric provides native OneLake governance, lineage tracking, and workspace role-based access control (RBAC), and integrates with Fabric compliance standards for security and auditing. | Standalone graph databases have separate security and governance models that must be configured and audited independently, which can increase risk and administrative burden. |
 
-## Workspace roles
-
-Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following table summarizes the permissions associated with each Microsoft Fabric workspace role's capability on graph models and QuerySet items.
-
-### Graph Model
-
-| Capability                           | Admin | Member | Contributor | Viewer |
-|--------------------------------------|-------|--------|-------------|--------|
-| Create or modify graph model         | ✔     | ✔      | ✔           | ✖      |
-| Delete graph model                   | ✔     | ✔      | ✔           | ✖      |
-| View and read content of graph model | ✔     | ✔      | ✔           | ✔      |
-| Share graph model                    | ✔     | ✔      | ✖           | ✖      |
-
-### Graph QuerySet
-
-| Capability                             | Admin | Member | Contributor | Viewer |
-|----------------------------------------|-------|--------|-------------|--------|
-| Create or modify graph QuerySet item   | ✔     | ✔      | ✔           | ✖      |
-| Delete QuerySet item                   | ✔     | ✔      | ✔           | ✖      |
-| View and read content of QuerySet item | ✔     | ✔      | ✔           | ✔      |
-| Connect to graph instance              | ✔     | ✔      | ✔           | ✖      |
-| Share QuerySet                         | ✔     | ✔      | ✖           | ✖      |
-
 > [!NOTE]
-> All users need read access to the underlying graph instance item to execute queries against the referenced graph instance from the graph QuerySet item.
-> Only read, write, and reshare permissions are supported for QuerySet item.
+> * Join the new Fabric user panel to share feedback and help shape Fabric and Power BI. Participate in surveys and 1:1 sessions with the product team. Learn more and sign up at [Fabric user panel](../fundamentals/feedback.md#fabric-user-panel).
 
 ## Pricing and capacity units
 
@@ -111,28 +89,52 @@ Usage is measured in minutes of CPU uptime. You can monitor your graph workload'
 | Fabric operation name    | Azure billing meter     | Unit of measure  | Fabric CU consumption rate |
 |--------------------------|-------------------------|------------------|----------------------------|
 | Graph general operations | Graph capacity usage CU | Minute           | 0.16667 CUs per minute     |
-| Graph cache storage      | OneLakeCache            | Per GB per month | -                          |
+| Graph cache storage      | OneLake Cache           | Per GB per month | -                          |
 
 For more information on pricing and capacity units, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
 ## Region availability
 
-Graph in Microsoft Fabric is rolling out to new Fabric regions every week. It's currently available in the following regions:
+Graph is currently available in the following regions:
 
 - Australia East
+- Australia Southeast
+- Brazil South
 - Canada Central
+- Central India
 - Central US
+- East Asia
 - East US
 - East US 2
+- France Central
+- Germany West Central
+- Israel Central
+- Italy North
+- Japan East
+- Japan West
+- Korea Central
+- Mexico Central
 - North Central US
 - North Europe
 - Norway East
 - Poland Central
+- South Africa North
+- South Central US
+- Southeast Asia
+- South India
+- Spain Central
+- Sweden Central
+- Switzerland North
+- Switzerland West
+- UAE North
 - UK South
+- UK West
 - West Europe
+- West US
 - West US 2
+- West US 3
 
-If you would like to be notified when the service is available in your region, fill out this [form](https://forms.office.com/r/zkFLe8M8gP).
+If you would like to be notified when the service has been added to your region, fill out this [form](https://forms.office.com/r/zkFLe8M8gP).
 
 ## Related content
 

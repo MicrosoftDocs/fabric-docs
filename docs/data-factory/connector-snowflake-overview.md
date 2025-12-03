@@ -4,7 +4,7 @@ description: This article provides an overview of the Snowflake connector in Mic
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 03/11/2025
+ms.date: 11/10/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -14,17 +14,13 @@ ms.custom:
 
 The Snowflake connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-> [!NOTE]
-> The Snowflake connector now supports Key Pair Authorization. When using Key Pair Auth for the Snowflake connector, the ADBC implementation is used. When choosing connections that are created with KeyPair Auth for datasets or dataflows, the connections will automatically start using the ADBC implementation to complete the refresh and the results might be different. Copilot AI
-
-
 ## Supported capabilities
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
-| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account |
-| **Pipeline**<br>- [Copy activity](connector-snowflake-copy-activity.md) (source/destination) <br>- Lookup activity  <br>- Script activity |None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account |
-| **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- Append |None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account |
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account <br> Key-pair |
+| **Pipeline**<br>- [Copy activity](connector-snowflake-copy-activity.md) (source/destination) <br>- Lookup activity  <br>- Script activity |None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account <br> Key-pair |
+| **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- Append |None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account <br> Key-pair |
 
 ## Related content
 

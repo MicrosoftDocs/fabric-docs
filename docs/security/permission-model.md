@@ -61,6 +61,8 @@ Different Fabric items have different permissions. To learn more about the permi
 
 * [Real-Time Intelligence](/azure/data-explorer/kusto/management/security-roles)
 
+* [Mirrored database](../mirroring/share-and-manage-permissions.md)
+
 ## Compute permissions
 
 Permissions can also be set within a specific compute engine in Fabric, specifically through the SQL analytics endpoint or in a semantic model. Compute engine permissions enable a more granular data access control, such as table and row level security.

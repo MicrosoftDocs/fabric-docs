@@ -2,12 +2,10 @@
 title: GQL Status Codes Reference
 description: Complete reference of GQLSTATUS codes used by graph in Microsoft Fabric
 ms.topic: reference
-ms.date: 10/09/2025
+ms.date: 11/18/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: splantikow
-ms.service: fabric
-ms.subservice: graph
 ---
 
 # GQL status codes reference

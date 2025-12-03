@@ -44,7 +44,10 @@ To create or manage the Spark pool associated with your workspace:
 
 1. You can adjust the number of executors using a slider. Each executor is a Spark process that runs tasks and holds data in memory. Increasing executors can improve parallelism, but it also increases the size and startup time of the cluster. You can also choose to enable dynamic executor allocation for your Spark pool, which automatically determines the optimal number of executors within the user-specified maximum bound. This feature adjusts the number of executors based on data volume, resulting in improved performance and resource utilization.
 
-These custom pools have a default autopause duration of 2 minutes. Once the autopause duration is reached, the session expires and the clusters are unallocated. You're charged based on the number of nodes and the duration for which the custom Spark pools are used.
+These custom pools have a default autopause duration of 2 minutes after the time period of inactivity had expired. Once the autopause duration is reached, the session expires and the clusters are unallocated. You're charged based on the number of nodes and the duration for which the custom Spark pools are used.
+
+>[!NOTE]
+>Custom Spark pools in Microsoft Fabric currently support a maximum node limit of 200. When configuring autoscaling or setting manual node counts, make sure your minimum and maximum values remain within this limit. Exceeding this limit will result in validation errors during pool creation or update.
 
 ## Node size options
 

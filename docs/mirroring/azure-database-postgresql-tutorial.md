@@ -4,13 +4,16 @@ description: Learn how to configure a mirrored database from Azure Database for 
 author: whhender
 ms.author: whhender
 ms.reviewer: scoriani, maghan
-ms.date: 07/15/2025
+ms.date: 11/17/2025
 ms.topic: tutorial
 ---
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL
 
-[Mirroring in Fabric](../mirroring/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored Azure Database for PostgreSQL flexible server, which creates a read-only, continuously replicated copy of your PostgreSQL data in OneLake.
+[Mirroring in Fabric](../mirroring/overview.md) (now generally available) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored Azure Database for PostgreSQL flexible server, which creates a read-only, continuously replicated copy of your PostgreSQL data in OneLake.
+
+> [!IMPORTANT]  
+> Newly created Azure Database for PostgreSQL flexible servers after Ignite 2025 automatically include the latest general availability version of mirroring components. Existing servers upgrade progressively as part of the next maintenance cycles without requiring manual intervention. You don't need to disable and re-enable mirroring to receive updates.
 
 ## Prerequisites
 
@@ -22,9 +25,9 @@ ms.topic: tutorial
 - Fabric tenant settings are required. Ensure the following two [Fabric Tenant settings](../admin/about-tenant-settings.md) are enabled:
     - [Service principals can use Fabric APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings)
-- You need to have a member or admin role in your workspace when create a mirrored database from the Fabric portal. During creation, the managed identity of Azure Database for PostgreSQL is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
-- If your Flexible Server is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for PostgreSQL flexible server via a private endpoint or is allowed by the firewall rule.
-- Fabric Mirroring can't be configured on a Read Replica, or on a Primary where a Read Replica exists.
+- You need to have a member or admin role in your workspace when creating a mirrored database from the Fabric portal. During creation, the managed identity of Azure Database for PostgreSQL is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
+- If your Flexible Server doesn't have public connectivity enabled or doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for PostgreSQL flexible server via a private endpoint or is allowed by the firewall rule.
+- Fabric Mirroring is not supported on a Read Replica, or on a Primary server where a Read Replica exists.
 
 
 ## Prepare your Azure Database for PostgreSQL
@@ -41,21 +44,30 @@ Mirroring in Azure Database for PostgreSQL flexible server is based on Logical R
 
 ### Database role for Fabric Mirroring
 
-Next, you need to provide or create a PostgreSQL role for the Fabric service to connect to your Azure Database for PostgreSQL flexible server.
+Next, you need to provide or create a PostgreSQL or an Entra ID role for the Fabric service to connect to your Azure Database for PostgreSQL flexible server.
 
-> [!IMPORTANT]  
-> In the current preview, using Microsoft Entra ID users and service principals to connect to the source database in Azure Database for PostgreSQL flexible server isn't supported. Use Basic (PostgreSQL Authentication).
+You can accomplish this by specifying a database role for connecting to your source system using one of the following options:
 
-You can accomplish this by specifying a [database role](#use-a-database-role) for connecting to your source system.
+#### Use an Entra ID role
 
-#### Use a database role
+1. Follow these [instructions](/azure/postgresql/flexible-server/security-manage-entra-users#manage-microsoft-entra-roles-using-sql) to map an Entra ID user or group to a PostgreSQL database role. 
+1. Once that is done, you can use the following SQL script to grant the `azure_cdc_admin` permissions to the new role.
 
-1. Connect to your Azure Database for PostgreSQL flexible server using [pgAdmin](https://www.pgadmin.org/) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio). You should connect with a principal that is a member of the role `azure_pg_admin`.
+    ```sql
+    -- grant role for replication management to the new user
+    GRANT azure_cdc_admin TO <entra_user>;
+    -- grant create permission on the database to mirror to the new user
+    GRANT CREATE ON DATABASE <database_to_mirror> TO <entra_user>;
+    ```
+
+#### Use a PostgreSQL role
+
+1. Connect to your Azure Database for PostgreSQL flexible server using [pgAdmin](https://www.pgadmin.org/). You should connect with a principal that is a member of the role `azure_pg_admin`.
 1. Create a PostgreSQL role named `fabric_user`. You can choose any name for this role. Provide your own strong password. Grant the permissions needed for Fabric mirroring in the database. Run the following SQL script to grant the `CREATEDB`, `CREATEROLE`, `LOGIN`, `REPLICATION`, and `azure_cdc_admin` permissions to the new role named `fabric_user`.
 
     ```sql
     -- create a new user to connect from Fabric
-    CREATE ROLE fabric_user  CREATEDB CREATEROLE LOGIN REPLICATION PASSWORD '<strong password>';
+    CREATE ROLE fabric_user CREATEDB CREATEROLE LOGIN REPLICATION PASSWORD '<strong password>';
 
     -- grant role for replication management to the new user
     GRANT azure_cdc_admin TO fabric_user;
@@ -63,8 +75,10 @@ You can accomplish this by specifying a [database role](#use-a-database-role) fo
     GRANT CREATE ON DATABASE <database_to_mirror> TO fabric_user;
     ```
 
-1. The database user created also needs to be `owner` of the tables to replicate in the mirrored database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE <table name here> OWNER TO fabric_user;`.
-   - When switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html).
+
+The database user created with one of the two previous methods also needs to be `owner` of the tables to replicate in the mirrored database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE <table name here> OWNER TO <user>;`.
+
+- When switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html).
 
 > [!IMPORTANT]  
 > Missing one of the previous security configuration steps will cause subsequent mirrored operations in Fabric portal to fail with an `Internal error` message.
@@ -87,8 +101,9 @@ The following steps guide you through the process of creating the connection to 
    - **Connection**: Create new connection.
    - **Connection name**: An automatic name is provided. You can change it.
    - **Data Gateway**: select an available [VNET Data Gateway](/data-integration/vnet/create-data-gateways) to connect an Azure Database for PostgreSQL flexible server with VNET integration or Private Endpoints.
-   - **Authentication kind** (only Basic is available in the current preview):
+   - **Authentication kind**:
        - Basic (PostgreSQL Authentication)
+       - Organizational account (Entra Authentication)
     - Leave **Use encrypted connection** checkbox selected, and **This connection can be used with on-premises data gateway and VNET data gateway** unselected.
 1. Select **Connect**.
 

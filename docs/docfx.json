@@ -83,6 +83,12 @@
                 "fundamentals/**/*.md": "get-started",
                 "governance/**/*.md": "governance",
                 "governance/**/*.yml": "governance",
+                "graph/**/*.md": "graph",
+                "graph/**/*.yml": "graph",
+                "iq/**/*.md": "iq",
+                "iq/**/*.yml": "iq",
+                "iq/ontology/**/*.md": "iq-ontology",
+                "iq/ontology/**/*.yml": "iq-ontology",
                 "onelake/**/*.md": "onelake",
                 "onelake/**/*.yml": "onelake",
                 "real-time-hub/**/*.md": "rti-hub",
@@ -95,6 +101,10 @@
                 "real-time-intelligence/data-activator/**/*.yml": "rti-activator",
                 "real-time-intelligence/digital-twin-builder/**/*.yml": "rti-digital-twin-builder",
                 "real-time-intelligence/digital-twin-builder/**/*.md": "rti-digital-twin-builder",
+                "real-time-intelligence/schema-sets/**/*.yml": "rti-schema-set",
+                "real-time-intelligence/schema-sets/**/*.md": "rti-schema-set",
+                "real-time-intelligence/map/**/*.yml": "rti-map",
+                "real-time-intelligence/map/**/*.md": "rti-map",
                 "security/**/*.md": "security",
                 "security/**/*.yml": "security",
                 "workload-development-kit/**/*.md": "workload-development-kit",
@@ -206,6 +216,14 @@
             "zone_pivot_group_filename": {
                 "database/cosmos-db/**/*.md": "database/cosmos-db/zone-pivot-groups.json",
                 "database/cosmos-db/**/*.yml": "database/cosmos-db/zone-pivot-groups.json"
+            },
+            "appliesto": {
+                "database/cosmos-db/**/*.md": [
+                    "✅ Cosmos DB in Microsoft Fabric"
+                ],
+                "database/cosmos-db/**/*.yml": [
+                    "✅ Cosmos DB in Microsoft Fabric"
+                ]
             }
         },
         "template": [],

@@ -3,8 +3,8 @@ title: "Microsoft Fabric Mirrored Databases From SQL Server"
 description: Learn about the mirrored databases From SQL Server in Microsoft Fabric.
 author: whhender
 ms.author: whhender
-ms.reviewer: ajayj, rajpo
-ms.date: 05/19/2025
+ms.reviewer: ajayj, rajpo, twright, wiassaf
+ms.date: 11/05/2025
 ms.topic: conceptual
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -16,8 +16,6 @@ no-loc: [Copilot]
 [Mirroring in Fabric](../mirroring/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing SQL Server estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing SQL Server databases directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
 For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-tutorial.md).
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Why use Mirroring in Fabric?
 
@@ -47,24 +45,39 @@ In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), th
 ## Supported environments
 
 - SQL Server 2016 - 2022 
-    - SQL Server on Windows supports Fabric Mirroring in Standard, Enterprise and Developer editions
-    - SQL Server 2017 on Linux supports Fabric Mirroring starting with CU18
-    - SQL Server 2019 and SQL Server 2022 on Linux support Fabric Mirroring
-    - SQL Server instances hosted on on-premises, SQL Server on Azure VM, SQL Server on non-Azure clouds
+    - SQL Server on Windows supports Fabric Mirroring in Standard, Enterprise, and Developer editions.
+    - SQL Server 2017 on Linux supports Fabric Mirroring starting with CU18.
+    - SQL Server 2019 and SQL Server 2022 on Linux support Fabric Mirroring.
+    - SQL Server instances hosted on on-premises, SQL Server on Azure VM, SQL Server on non-Azure clouds support Fabric Mirroring.
 
 - SQL Server 2025
     - Fabric Mirroring for SQL Server 2025 is supported for on-premises instances, currently not supported for SQL Server 2025 instances running in an Azure Virtual Machine.
     - Fabric Mirroring for SQL Server 2025 is currently not supported in SQL Server on Linux.
-
+    - Fabric Mirroring for SQL Server 2025 requires connection to Azure Arc including the Azure Extension for SQL Server. For steps, see [Tutorial: Configure Microsoft Fabric Mirroring from SQL Server](sql-server-tutorial.md?tabs=sql2025).
 
 ## Mirroring SQL Server behind firewall
 
-Set up an [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. Learn more from [the mirrored SQL Server tutorial](../mirroring/sql-server-tutorial.md) and [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
+Set up an [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) or [virtual network data gateway](/data-integration/vnet/overview) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. Learn more from [the mirrored SQL Server tutorial](../mirroring/sql-server-tutorial.md) and [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
 
 ## Active transactions, workloads, and replicator engine behaviors
 
 - Active transactions continue to hold the transaction log truncation until the transaction commits and the mirrored SQL Server catches up, or the transaction aborts. Long-running transactions might result in the transaction log filling up more than usual. The source database transaction log should be monitored so that the transaction log does not fill. For more information, see [Transaction log grows due to long-running transactions and CDC](/troubleshoot/sql/database-engine/replication/monitor-long-running-transactions-and-log-growth).
 - Each user workload varies. During initial snapshot, there might be more resource usage on the source database, for both CPU and IOPS (input/output operations per second, to read the pages). Table updates/delete operations can lead to increased log generation. Learn more on how to [monitor resources for your SQL Server](/sql/relational-databases/performance/performance-monitoring-and-tuning-tools?view=sql-server-ver16&preserve-view=true).
+
+## Fabric Mirroring and Always On availability groups
+
+Fabric Mirroring for SQL Server has the following behaviors when configured for an [Always On availability group](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver17&preserve-view=true):
+
+ - In the event of a failover: 
+   - Mirroring continues to work if the login for Fabric user, permissions in the database, and Fabric workspace are set up the same. Follow the steps in the [Tutorial: Configure Microsoft Fabric mirrored databases from SQL Server](sql-server-tutorial.md) on each replica.
+ - If you remove a secondary node from Availability Group:
+   - Databases that were part of the availability group in secondary node will go into RESTORING state.
+   - When the database is recovered by running RESTORE DATABASE WITH RECOVERY statement, and comes back online, mirroring is disabled.
+ - If the availability group is dropped (`DROP AVAILABILITY GROUP`):
+   - If mirroring is enabled on the former primary replica, mirroring stops working since the listener connection string used by Fabric to connect to SQL Server is no longer valid. Re-establish mirroring by deleting and re-enabling on the database both on Fabric and the SQL Server instance.
+   - For databases that go into RESTORING state, when these databases are recovered by running `RESTORE DATABASE WITH RECOVERY` statement, mirroring is disabled.
+ - Add a new node to an existing availability group:
+   - Follow the steps in [Tutorial: Configure Microsoft Fabric mirrored databases from SQL Server](sql-server-tutorial.md) on the new replica to ensure that the new node has all the required permissions in the database and Fabric workspace.
 
 ## Pricing
 
@@ -73,7 +86,7 @@ Fabric compute used to replicate your data into Fabric OneLake is free. Storage 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric Mirroring From SQL Server](../mirroring/sql-server-tutorial.md)
 
 ## Related content
 
