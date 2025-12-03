@@ -90,8 +90,10 @@ items:
       href: manage-objects.md
 - name: Continuous integration & continuous deployment (CI/CD)
   items:
-  - name: Development and Deployment
+  - name: Development and deployment workflows
     href: development-deployment.md
+  - name: Cross-warehouse dependencies
+    href: cross-warehouse-development-database-projects.md
   - name: Developer warehouse projects
     href: develop-warehouse-project.md
   - name: Source control with Warehouse

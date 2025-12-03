@@ -237,4 +237,5 @@ Connect to your warehouse and script objects that were changed or verify by runn
 ## Related Articles
 
 - [Development and deployment workflows](development-deployment.md)
+- [Develop and deploy cross-warehouse dependencies](cross-warehouse-development-database-projects.md)
 - [Get started using Fabric deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md)
