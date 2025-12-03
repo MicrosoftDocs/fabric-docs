@@ -56,7 +56,7 @@ Since `%pip install` generating different dependency trees from time to time, wh
 | **Python Custom (.whl)** | Supported | Supported |
 | **R Public (CRAN)** | Not supported | Supported |
 | **R custom (.tar.gz)** | Supported as custom library| Supported |
-| **PySpark Public (Maven)** | Not supported | Supported |
+| **Scala/Java Public (Maven)** | Not supported | Supported |
 | **Jar** | Supported as custom library | Supported |
 
 <a id="in-line-installation"></a>
@@ -179,14 +179,14 @@ You can install Maven libraries with the following command:
 %%configure -f
 {
     "conf": {
-        "spark.jars.packages": "io.delta:delta-sharing-spark_2.12:3.2.1",
+        "spark.jars.packages": "io.delta:delta-sharing-spark_2.12:3.2.1"
     }
 }        
 ```
 
 ### Manage custom Jar libraries through inline installation
 
-The *.jar* files are supported in notebook sessions with following command.
+The *.jar* files are supported in notebook sessions with the following command.
 
 ```Scala
 %%configure -f
