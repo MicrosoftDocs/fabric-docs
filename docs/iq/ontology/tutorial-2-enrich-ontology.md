@@ -64,7 +64,7 @@ Next, bind static data to the properties you created on the *Freezer* entity typ
 
 1. Configure a static data binding for the properties.
     1. For **Binding type**, leave the default selection of **Static**.
-    1. Under **Bind your properties**, select **+ Add static property** and add all four columns from the *freezer* table. The corresponding property names for them populate automatically.
+    1. Under **Bind your properties**, the properties you created populate automatically with links to matching columns from the *freezer* table.
     1. Select **Save**.
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-2.png" alt-text="Screenshot of static data for Freezer." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-2.png":::
@@ -83,13 +83,16 @@ Next, add time series data on the *Freezer* entity, by creating new properties a
 1. For your data source, select the *TelemetryDataEH* eventhouse and the *FreezerTelemetry* table. Select **Next**.
 
 1. Configure a time series data binding.
-    1. For **Binding type**, leave the default selection of **Timeseries**.
-        1. For **Source data timestamp column**, select `timestamp`.
-    1. Under **Bind your properties > Static**, use the dropdown menu for **Property name** to select `FreezerId` (beginning with a capital letter). This step ensures that the `freezerId` column in the *FreezerTelemetry* table is bound to the same `FreezerId` property that is already defined on the *Freezer* entity type from the static data source.
-    1. Under **Bind your properties > Timeseries**, the columns from the *FreezerTelemetry* table populate automatically with matching property names for the *Freezer* entity type. Leave the default selections.
+    1. For **Binding type**, leave the default selection of **Timeseries**. For **Source data timestamp column**, select `timestamp`.
+    1. Under **Bind your properties > Static**, remove both properties that populate automatically to avoid duplicating the static properties already on the entity. 
+
+        :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-3-a.png" alt-text="Screenshot of removing the default static properties." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-3-a.png":::
+
+        Then, select **+ Add static property > Add static property**. Select `freezerId` as the **Source column** and select `FreezerId` (beginning with a capital letter) from the dropdown menu in the **Property name** column. This step ensures that the `freezerId` column in the *FreezerTelemetry* table is bound to the same `FreezerId` property that is already defined on the *Freezer* entity type from the static data source.
+    1. Under **Bind your properties > Timeseries**, the time series columns from the *FreezerTelemetry* table populate automatically with matching property names for the *Freezer* entity type. Leave the default selections.
     1. Select **Save**.
 
-    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-3.png" alt-text="Screenshot of time series data for Freezer." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-3.png":::
+    :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-3-b.png" alt-text="Screenshot of time series data for Freezer." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-3-b.png":::
 
 Now the *Freezer* entity has two data bindings, one with static data from the *freezer* lakehouse table and one with streaming data from the *FreezerTelemetry* eventhouse table.
 
