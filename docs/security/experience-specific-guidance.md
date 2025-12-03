@@ -2,10 +2,10 @@
 title: Microsoft Fabric disaster recovery experience specific guidance
 description: See experience-specific guidance for recovering from a regional disaster.
 author: msmimart
-ms.author: mimart
+ms.author: danzhang
 ms.topic: conceptual
 ms.custom:
-ms.date: 10/15/2025
+ms.date: 12/02/2025
 ---
 
 # Experience-specific disaster recovery guidance
@@ -32,6 +32,7 @@ Here's the general recovery plan:
 
 1. Follow the dedicated instructions for each component to restore items to their full function.
 
+This recovery plan assumes that the tenant’s home region remains operational. If the home region experiences an unrecoverable disaster, the steps outlined above are contingent upon Microsoft initiating the necessary activation actions before recovery can proceed.
 
 ## Experience-specific recovery plans
 
