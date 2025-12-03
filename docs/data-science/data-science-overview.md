@@ -6,7 +6,7 @@ author: jonburchel
 ms.reviewer: negust
 ms.topic: overview
 ms.custom: 
-ms.date: 04/22/2025
+ms.date: 12/03/2025
 ms.search.form: Data Science Overview
 reviewer: s-polly
 ---
@@ -45,7 +45,7 @@ Data Science users in [!INCLUDE [product-name](../includes/product-name.md)] wor
 
 ## Data discovery and preprocessing
 
-[!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in OneLake using the Lakehouse resource. To browse and interact with data, Lakehouse easily attaches to a notebook. Users can easily read data from a Lakehouse directly into a Pandas dataframe. For exploration, seamless data reads from OneLake then become possible.
+[!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in OneLake by using the Lakehouse resource. To browse and interact with data, Lakehouse easily attaches to a notebook. Users can easily read data from a Lakehouse directly into a Pandas dataframe. For exploration, seamless data reads from OneLake then become possible.
 
 A powerful set of tools is available for data ingestion and data orchestration pipelines with data integration pipelines - a natively integrated part of [!INCLUDE [product-name](../includes/product-name.md)]. Easy-to-build pipelines can access and transform the data into a format that machine learning can consume.
 
@@ -71,7 +71,7 @@ MLflow experiments and runs can track ML model training. To log experiments and 
 
 ### SynapseML
 
-Microsoft owns and operates the SynapseML (known earlier as MMLSpark) open-source library. It simplifies massively scalable machine learning pipeline creation. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks, and new Microsoft algorithms, into a single, scalable API. The open-source SynapseML library includes a rich ecosystem of ML tools for predictive model development, and it uses pretrained AI models from Azure AI services. For more information, visit the [SynapseML](https://aka.ms/spark) resource.
+Microsoft owns and operates the SynapseML (formerly known as MMLSpark) open-source library. It simplifies the creation of massively scalable machine learning pipelines. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API. The open-source SynapseML library includes a rich ecosystem of ML tools for predictive model development, and it uses pretrained AI models from Azure AI services. For more information, visit the [SynapseML](https://aka.ms/spark) resource.
 
 ## Enrich and operationalize
 
@@ -85,7 +85,7 @@ You can use notebook scheduling features to schedule runs of notebooks that cont
 
 ## Data exploration with semantic link
 
-Data scientists and business analysts spend lots of time trying to understand, clean, and transform data before meaningful analysis can begin. Business analysts typically work with semantic models, and encode their domain knowledge and business logic into Power BI measures. On the other hand, data scientists can work with the same data, but typically in a different code environment or language. With semantic link, data scientists can establish a connection between Power BI semantic models and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in the [!INCLUDE [product-name](../includes/product-name.md)] experience via the [SemPy Python library](/python/api/semantic-link-sempy). To simplify data analytics, SemPy captures and uses data semantics as users perform various transformations on the semantic models. When data scientists use semantic link, they can
+Data scientists and business analysts spend lots of time trying to understand, clean, and transform data before meaningful analysis can begin. Business analysts typically work with semantic models and encode their domain knowledge and business logic into Power BI measures. On the other hand, data scientists can work with the same data but typically use a different code environment or language. With semantic link, data scientists can establish a connection between Power BI semantic models and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in the [!INCLUDE [product-name](../includes/product-name.md)] experience via the [SemPy Python library](/python/api/semantic-link-sempy). To simplify data analytics, SemPy captures and uses data semantics as users perform various transformations on the semantic models. When data scientists use semantic link, they can
 
 - avoid reimplementation of business logic and domain knowledge in their code
 - easily access and use Power BI measures in their code
@@ -98,7 +98,7 @@ When organizations use SemPy, they can expect
 - increased cross-collaboration across business intelligence and AI teams
 - reduced ambiguity, and an easier learning curve when onboarding onto a new model or dataset
 
-For more information about semantic link, visit the [What is semantic link?](semantic-link-overview.md) resource.
+For more information about semantic link, see [What is semantic link?](semantic-link-overview.md).
 
 ## Related content
 
