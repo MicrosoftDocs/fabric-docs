@@ -4,7 +4,7 @@ description: Learn about the preview experience in ontology (preview).
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 10/30/2025
+ms.date: 12/02/2025
 ms.topic: how-to
 ---
 
@@ -75,9 +75,13 @@ To create more tiles, follow these steps.
     >[!NOTE]
     > All tiles created at the entity level propagate down to the entity instance level.
 
-1. Use the time range selector to configure the time range for the data displayed in the tiles.
+1. Back on the overview page, use the time range selector to configure the time range for the data displayed in the tiles.
 
     :::image type="content" source="media/how-to-use-preview-experience/change-date-range.png" alt-text="Screenshot of configuring the time range." lightbox="media/how-to-use-preview-experience/change-date-range.png":::
+
+You can also edit or delete existing tiles by selecting **...** in the top right corner of a tile.
+
+:::image type="content" source="media/how-to-use-preview-experience/edit-delete.png" alt-text="Screenshot of edit and delete options for a tile." lightbox="media/how-to-use-preview-experience/edit-delete.png":::
 
 ### Use graph view
 
