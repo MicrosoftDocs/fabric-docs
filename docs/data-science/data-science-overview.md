@@ -1,6 +1,8 @@
 ﻿---
-title: Data science in Microsoft Fabric
-description: Learn about the Data science machine learning resources, including models, experiments, and notebooks.
+title: Explore Data Science in Microsoft Fabric
+ms.service: azure-ai-foundry
+description: Learn how to build end-to-end data science workflows in Microsoft Fabric, from data cleaning to predictive insights. Explore tutorials and resources now.
+#customer intent: As a data scientist, I want to understand the data science capabilities in Microsoft Fabric so that I can build end-to-end workflows.
 ms.author: jburchel
 author: jonburchel
 ms.reviewer: negust
