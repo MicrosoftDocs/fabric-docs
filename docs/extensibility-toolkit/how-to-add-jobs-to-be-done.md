@@ -197,10 +197,10 @@ Since only 3 categories are supported, your options are:
 
 After configuring Item Task Flow Categories in Product.json:
 
-1. **Test integration** - Verify your item appears correctly in Task Flow Framework
-2. **Validate workflows** - Ensure categories enable appropriate workflow suggestions
-3. **User testing** - Confirm users can discover and use your item effectively
-4. **Monitor usage** - Track how categories affect item adoption and usage patterns
+- **Test integration** - Verify your item appears correctly in Task Flow Framework
+- **Validate workflows** - Ensure categories enable appropriate workflow suggestions
+- **User testing** - Confirm users can discover and use your item effectively
+- **Monitor usage** - Track how categories affect item adoption and usage patterns
 
 ## Related topics
 

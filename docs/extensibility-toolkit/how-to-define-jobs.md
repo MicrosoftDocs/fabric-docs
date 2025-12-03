@@ -168,10 +168,10 @@ Jobs can leverage OneLake for data operations:
 
 While job functionality is under development, you can prepare by:
 
-1. **Designing your job architecture** - Plan what background operations your workload needs
-2. **Identifying job types** - Determine on-demand vs. scheduled operations
-3. **Planning data flows** - Design how jobs will interact with OneLake and external systems
-4. **Considering monitoring** - Plan what metrics and logging you'll need
+- **Designing your job architecture** - Plan what background operations your workload needs
+- **Identifying job types** - Determine on-demand vs. scheduled operations
+- **Planning data flows** - Design how jobs will interact with OneLake and external systems
+- **Considering monitoring** - Plan what metrics and logging you'll need
 
 ## Related Content
 

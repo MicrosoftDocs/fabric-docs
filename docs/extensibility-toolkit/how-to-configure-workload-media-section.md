@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 11/20/2025
 ---
 
-# How-To: Configure at a glance Section for the Workload Hub
+# Configure at a glance section for the workload hub
 
 Configure the at-a-glance section in your workload's product details page using slide media content to showcase your workload's capabilities and features.
 
