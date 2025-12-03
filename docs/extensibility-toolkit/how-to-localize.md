@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 11/18/2025
 ---
 
-# Localize your workload
+# Localize your workload in Microsoft Fabric
 
 Localization is the process of adapting a product to serve other markets by changing the language or the content. Localizing your workload enables you to reach a wider audience and provide your customers with the best, most personalized experience. For example, a localized workload is more attractive to a user whose default language isn't English in the Microsoft Fabric workload hub.
 
