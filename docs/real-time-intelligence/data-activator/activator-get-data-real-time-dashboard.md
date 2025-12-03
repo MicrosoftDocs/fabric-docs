@@ -101,12 +101,12 @@ In the **Action** section, select one of the following actions to take when the 
     1. On Select Fabric item to run, select the Fabric item (pipeline, notebook, Spark job, or function) from the list.
     1. Select Add parameter and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
     You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`.
-        :::image type="content" source="media/activator-alert-queryset/fabric-activities.png" alt-text="Screenshot of the Run Fabric activities section in the Add Rule side pane.":::
+        :::image type="content" source="media/activator-get-data/fabric-activities.png" alt-text="Screenshot of the Run Fabric activities section in the Add Rule side pane.":::
   * **Custom actions**:
       To configure the alert to call a custom action when the condition is met, follow these steps:
       1. For **Select action**, select **Create custom action**.
 
-          :::image type="content" source="media/activator-alert-queryset/custom-action.png" alt-text="Screenshot of the Create custom action section in the Add Rule side pane.":::
+          :::image type="content" source="media/activator-get-data/custom-action.png" alt-text="Screenshot of the Create custom action section in the Add Rule side pane.":::
 
       1. As mentioned in the Action section, create the rule first, and then complete the custom action setup by following steps from [Trigger custom actions (Power Automate flows)](activator-trigger-power-automate-flows.md).
       1. After you create the custom action, in the **Definition** pane of the rule, select the custom action you created from the **Action** drop-down list.
