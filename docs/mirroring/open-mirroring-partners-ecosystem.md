@@ -16,6 +16,10 @@ no-loc: [Copilot]
 
 The following are the open mirroring partners who have solutions ready to integrate with Microsoft Fabric.
 
+## AecorSoft
+
+AecorSoft Data Integrator is an SAP-certified data integration tool which supports data replication from SAP systems into Microsoft Fabric via open mirroring. For more information, see [AecorSoft Data Integrator](https://aka.ms/mirroring/aecorsoft-mirroring-overview).
+
 ## ASAPIO
 
 The ASAPIO Integration Add-on is an SAP-certified solution that connects SAP systems directly to Microsoft Fabric. It supports open mirroring to enable change data capture to Microsoft Fabric and comes with a data catalog of predefined data products for real-time and scheduled data replication.

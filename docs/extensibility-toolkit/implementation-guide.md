@@ -3,7 +3,7 @@ title: Implementation guide
 description: Learn how to implement a workload for Fabric.
 author: gsaurer
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
 ms.date: 09/04/2025
 ---

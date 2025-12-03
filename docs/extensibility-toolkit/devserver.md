@@ -3,7 +3,7 @@ title: DevServer
 description: Learn what the DevServer does during local development—hosting your frontend (loaded in an iFrame) and exposing local endpoints Fabric uses to read your manifests.
 author: gsaurer
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
 ms.date: 08/28/2025
 ---

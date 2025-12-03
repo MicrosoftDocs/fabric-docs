@@ -7,6 +7,7 @@ author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 04/29/2025
+ms.subservice: rti-kql-query
 ms.search.form: KQL Queryset
 ---
 
