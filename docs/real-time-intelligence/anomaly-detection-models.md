@@ -4,7 +4,7 @@ description: Learn about the specifications of anomaly detection models in Fabri
 ms.author: v-hzargari
 author: hzargari-ms
 ms.reviewer: tessarhurr
-ms.topic: conceptual
+ms.topic: concept-article
 ms.subservice: rti-anomaly-detector
 ms.custom: 
 ms.date: 09/15/2025
