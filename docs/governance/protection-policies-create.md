@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to #Don't change
-ms.date: 12/02/2025
+ms.date: 12/03/2025
 
 #customer intent: As a security admin or Fabric admin, I want to learn how to create protection policies for Microsoft Fabric. 
 
@@ -58,9 +58,7 @@ To create a protection policy, the following requirements must be met:
 
 1. On the **Define access control settings** page, specify which users and groups should retain their access to items labeled with the sensitivity label you selected in step 4.
 
-    1. Select the **Allow users to retain full control** checkbox if you want certain users and groups to keep their existing permissions on labeled items. When enabled, this setting allows:
-       - Users with full control to retain full control
-       - Users with partial permissions to retain those specific permissions
+    1. Select the **Allow users to retain full control** checkbox if you want certain users and groups to keep their existing permissions on labeled items. When enabled, this setting allows users with full control of labeled items to retain full control.
 
     1. Select **Add users and groups** to choose specific users and groups who should retain their access to protected items. 
 
