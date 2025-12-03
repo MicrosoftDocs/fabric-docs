@@ -26,6 +26,31 @@ landingContent:
         links:
           - text: What is Data Science?
             url: data-science-overview.md 
+      - linkListType: tutorial
+        links:
+          - text: Fabric Data Science end-to-end tutorial
+            url: tutorial-data-science-introduction.md
+# Card 
+  - title: Fabric data agent (preview)
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is a Fabric data agent (preview)?
+            url: concept-data-agent.md
+      - linkListType: get-started
+        links:
+          - text: Fabric data agent over Adventure Works
+            url: data-agent-end-to-end-tutorial.md
+          - text: Get started with Fabric data agents
+            url: how-to-create-data-agent.md
+          - text: Configure a data agent
+            url: data-agent-configurations.md
+      - linkListType: how-to-guide
+        links:
+          - text: Fabric data agent tenant settings
+            url: data-agent-tenant-settings.md
+          - text: Consume a Fabric data agent in Copilot Studio
+            url: data-agent-microsoft-copilot-studio.md
 
 # Card
   - title: Copilot
@@ -40,21 +65,7 @@ landingContent:
         links:
           - text: Use the Copilot chat panel
             url: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
-
-# Card 
-  - title: Fabric data agent (preview)
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What is a Fabric data agent (preview)?
-            url: concept-data-agent.md
-      - linkListType: get-started
-        links:
-          - text: Fabric data agent over Adventure Works
-            url: data-agent-end-to-end-tutorial.md
-          - text: Get started with Fabric data agents
-            url: how-to-create-data-agent.md
-  
+ 
 # Card 
   - title: Get started
     linkLists:
@@ -66,6 +77,8 @@ landingContent:
             url: models-experiments-rbac.md
           - text: Machine learning models
             url: machine-learning-model.md 
+          - text: AI functions
+            url: ./ai-functions/overview.md
 
 
 # Card 
