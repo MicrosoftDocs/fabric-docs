@@ -27,6 +27,8 @@ Sharing geospatial insights across an organization is now easier and more secure
 2. **Select content to include**
    - Add any needed content, including items like Fabric maps, Power BI reports, dashboards, and notebooks.
 
+     :::image type="content" source="media/share-map/org-app/select-items.png" alt-text="A screenshot showing the 'select items' screen with a report, real-time dashboard and map selected.":::
+
 3. **Define audience and permissions**
    - Specify who should have access (individuals, groups, or organization-wide).
    - Set permissions for the app audience by selecting **Share** button in the upper-right side of the window, then **Add person or group**.

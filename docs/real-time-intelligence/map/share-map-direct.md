@@ -12,74 +12,74 @@ ms.search.form: Map
 
 # Share a map through direct access (preview)
 
-When you share a Microsoft Fabric Map, you grant users or groups permission to view or edit the map created in Map Builder. The map typically references backend data sources such as Lakehouse or KQL Database (Eventhouse) to render real-time or historical spatial insights.
+Sharing a map through direct access grants permissions on the map item only. It does not provide access to underlying data sources (like Lakehouse or KQL database), so recipients must have those permissions for the map to load and function.
 
-Sharing a Map through [Direct Access](#direct-access) automatically enforces permission checks for both the Map and its underlying data sources. This ensures secure, role-based access without requiring full workspace-level permissions.
+Sharing a map through [direct access](#direct-access) automatically enforces permission checks for both the map and its underlying data sources. This ensures secure, role-based access without requiring full workspace-level permissions.
 
 <!------------------------------------------------------------------------------------
 > [!NOTE]
-> To share a Microsoft Fabric Map using Fabric Org Apps, see [How to share a map using Org Apps](share-map-org-apps.md)
+> To share a Microsoft Fabric map using Fabric Org Apps, see [How to share a map using Org Apps](share-map-org-apps.md)
 ------------------------------------------------------------------------------------>
 
 > [!IMPORTANT]
 > This feature is in [preview](../../fundamentals/preview.md).
 
-## Accessing Shared Maps
+## Accessing shared maps
 
-You can find Maps that others shared with you by selecting **Browse > Shared with me** in the Fabric navigation pane. Shared Maps can be explored, filtered, and interacted with depending on your assigned permission level.
+You can find maps that others shared with you by selecting **Browse > Shared with me** in the Fabric navigation pane. Shared maps can be explored, filtered, and interacted with depending on your assigned permission level.
 
 :::image type="content" source="media/share-map/direct/share-with-me.png" alt-text="A screenshot showing the 'share with me' button in the browse folder.":::
 
-## Share a Map
+## Share a map
 
-You can share Map items in Microsoft Fabric through two methods:
+You can share map items in Microsoft Fabric through two methods:
 
-1. [**Share Link**](#share-link). A quick way to grant view or edit access to specific people.
+1. [**Share link**](#share-link). A quick way to grant view or edit access to specific people.
 
-2. [**Direct Access**](#direct-access) allows individuals or groups to be explicitly granted permissions, giving them clear control over what they can view or modify.
+2. Grant [**direct access**](#direct-access) to individuals or groups by assigning permissions that define what they can view or edit.
 
-### Share Link
+### Sharing and permissions
 
-1. Navigate to your workspace and locate the Map item.
-1. Select the **Share** icon next to the Map name.
+When you share a map by sharing a link or granting direct access, recipients automatically get read access to view the map. Additional permissions depend on the options you select:
+
+- **Read** — Always granted for viewing the map.
+- **Share** — Only granted if you select **Share** when granting access, allowing recipients to reshare the map.
+- **Write** — Only granted if you select **Edit** when granting access, allowing recipients to modify the map.
+
+Recipients also need appropriate permissions on underlying data sources (such as Lakehouse or KQL Database) for the map to function correctly.
+
+:::image type="content" source="media/share-map/direct/grant-direct-access.png" alt-text="A screenshot showing the Grant people access pane.":::
+
+> [!IMPORTANT]
+>
+> Users must have permission to access the lakehouse or KQL database. They can only view data they're authorized to see, so appropriate permissions on the underlying data are essential for the map to render and function correctly.
+
+### Share link
+
+1. Navigate to your workspace and locate the map item.
+1. Select the **Share** icon next to the map name.
   :::image type="content" source="media/share-map/direct/share-icon.png" alt-text="A screenshot showing the share icon.":::
 1. In the **Create and send link** pane:
     - Enter user or group email addresses, or select specific people can view and share, then select **Send**
       :::image type="content" source="media/share-map/direct/create-send-link.png" alt-text="A screenshot showing the create and send link screen.":::
-    - In the **Select permissions** dialog, you can optionally enable **Share** and/or **Edit** to allow recipients to modify or redistribute the Map. Once enabled, select **Apply**.
+    - In the **Select permissions** dialog, you can optionally enable **Share** and/or **Edit** to allow recipients to modify or redistribute the map. Once enabled, select **Apply**.
       :::image type="content" source="media/share-map/direct/select-permissions.png" alt-text="A screenshot showing the select permissions screen.":::
 
-### Direct Access
+### Direct access
 
 1. From the workspace, select the ellipsis (...) next to the map name.
    :::image type="content" source="media/share-map/direct/select-manage-permissions.png" lightbox="media/share-map/direct/select-manage-permissions.png"  alt-text="A screenshot highlighting the ellipsis to select to bring up the 'manage permissions' screen.":::
 1. Select **Manage Permissions.**
 1. Enter user or group email addresses, or select specific people can view and share, then select **Send**
   :::image type="content" source="media/share-map/direct/create-send-link.png" alt-text="A screenshot showing the create and send link view.":::
-1. In the **Select permissions** dialog, you can optionally enable **Share** and/or **Edit** to allow recipients to modify or redistribute the Map. Once enabled, select **Apply**.
+1. In the **Select permissions** dialog, you can optionally enable **Share** and/or **Edit** to allow recipients to modify or redistribute the map. Once enabled, select **Apply**.
   :::image type="content" source="media/share-map/direct/select-permissions.png" alt-text="A screenshot showing select permissions.":::
 1. Enable **email notification** if desired.
-1. Select **Grant**.
-
-## Sharing and Permissions
-
-When a Map is shared using a share link or through direct access, the recipient automatically receives Read permission on the Map item. More permissions depend on the selected options during sharing:
-
-- **Read** permission is always granted to allow viewing the Map.
-- **Share** permission is granted if the Share option is selected, enabling the recipient to reshare the Map.
-- **Write** permission is granted if the Edit option is selected, allowing the recipient to modify the Map.
-
-To ensure the Map functions correctly, recipients must also have appropriate permissions on the underlying data sources such as Lakehouse and KQL Database.
-
-:::image type="content" source="media/share-map/direct/grant-direct-access.png" alt-text="A screenshot showing the Grant people access pane.":::
-
-> [!IMPORTANT]
->
-> Users must have permission to access the Lakehouse or KQL Database. They can only view data they're authorized to see, so appropriate permissions on the underlying data are essential for the Map to render and function correctly.
+1. Select **Share**.
 
 ## Next steps
 
 To learn more, please see:
 
 > [!div class="nextstepaction"]
-> [How to share a map using Org Apps](share-map-org-apps.md)
+> [How to share a map using org apps](share-map-org-apps.md)
