@@ -2,7 +2,7 @@
 title: How to create shortcuts in your application
 description: Learn how to create shortcuts from a lakehouse or S3 account into your Fabric workload item
 author: gsaurer
-ms.author: gesaur
+ms.author: billmath
 ms.topic: how-to
 ms.custom:
 ms.date: 08/21/2025
