@@ -496,7 +496,7 @@ items:
       - name: SQL language reference
         href: ./materialized-lake-views/create-materialized-lake-view.md
       - name: PySpark language reference
-        href: ./materialized-lake-views/refresh-materialized-lake-view-pyspark.md
+        href: ./materialized-lake-views/create-materialized-lake-view-pyspark.md
     - name: Data quality in materialized lake views
       href: ./materialized-lake-views/data-quality.md
   - name: Manage
