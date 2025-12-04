@@ -384,7 +384,7 @@ Item editor should provide either explicit save functionality or AutoSave to pre
 
 **UX:**
 
-Item editor should implement either a save button or autosave functionality for user data protection. button is icon only.
+Item editor should implement either a save button or AutoSave functionality for user data protection. button is icon only.
 
 ---
 
@@ -593,7 +593,7 @@ If left drawer panel exists it should follow Fabric guidelines for width, animat
 
 **UX:**
 
-If left drawer panel exists it should follow Fabric guidelines for width, animation, and content organization. Canvas may implement a left drawer for additional navigation or tools.
+If left drawer panel exists it should follow Fabric guidelines for width, animation, and content organization. The canvas may implement a left drawer for additional navigation or tools.
 
 ---
 
@@ -617,7 +617,7 @@ If bottom drawer panel exists it should follow Fabric guidelines for height, ani
 
 **UX:**
 
-If bottom drawer panel exists it should follow Fabric guidelines for height, animation, and content organization. Canvas may implement a bottom drawer for additional functionality.
+If bottom drawer panel exists it should follow Fabric guidelines for height, animation, and content organization. The canvas may implement a bottom drawer for additional functionality.
 
 ---
 
@@ -641,7 +641,7 @@ Tab components should follow Fabric guidelines for styling, interaction, and act
 
 **UX:**
 
-Tab components should follow Fabric guidelines for styling, interaction, and active state indication. Canvas may implement tabs for organizing content within the editor.
+Tab components should follow Fabric guidelines for styling, interaction, and active state indication. The canvas may implement tabs for organizing content within the editor.
 
 ---
 
@@ -665,7 +665,7 @@ If Switch/toggle controls exist they should follow Fabric guidelines for size, c
 
 **UX:**
 
-If Switch/toggle controls exist they should follow Fabric guidelines for size, color, and interaction behavior. Canvas may implement switch controls for toggling functionality.
+If Switch/toggle controls exist they should follow Fabric guidelines for size, color, and interaction behavior. The canvas may implement switch controls for toggling functionality.
 
 ---
 

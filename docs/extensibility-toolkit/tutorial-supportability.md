@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 11/18/2025
 ---
 
-# Tutorial: Supportability Best Practices
+# Supportability best practices
 
 This tutorial provides guidance for Fabric Extensibility Toolkit developers on how to support their customers. It covers best practices for maintaining, saving, and correlating important request headers, as well as recommendations for logging, monitoring, and support.
 

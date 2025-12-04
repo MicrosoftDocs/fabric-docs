@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Create Entra App for Fabric Workload
+title: Tutorial - Create Microsoft Entra App for Fabric Workload
 description: Learn how to create and configure a Microsoft Entra application for your Fabric workload, both using automated scripts and manual steps
 author: gsaurer
 ms.author: billmath
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 11/18/2025
 ---
 
-# Tutorial: Create Entra App for Fabric Workload
+# Tutorial: Create Microsoft Entra app for Fabric workload
 
 This tutorial shows you how to create and configure a Microsoft Entra application for your Fabric workload. You can use either the automated script approach (recommended) or follow the manual steps for full control over the configuration.
 
@@ -32,7 +32,7 @@ Before you begin, ensure you have:
 
 ## Approach 1: Automated Script (Recommended)
 
-The extensibility toolkit provides an automated script that creates and configures your Entra app with all required settings.
+The extensibility toolkit provides an automated script that creates and configures your Microsoft Entra app with all required settings.
 
 ### Running the Script
 
@@ -52,9 +52,9 @@ The extensibility toolkit provides an automated script that creates and configur
    ```
 
 3. **Provide required information** when prompted:
-   * **Application Name**: Display name for your Entra app (e.g., "My Analytics Workload")
+   * **Application Name**: Display name for your Microsoft Entra app (e.g., "My Analytics Workload")
    * **Workload Name**: Must follow pattern `Org.[YourWorkloadName]` (e.g., "Org.MyWorkload")
-   * **Tenant ID**: Your Azure AD tenant ID where the workload will be developed
+   * **Tenant ID**: Your Microsoft Entra ID tenant ID where the workload will be developed
 
 ### Script Output
 
@@ -74,7 +74,7 @@ The automated script sets up:
 #### **Authentication Configuration**
 * **Redirect URIs**: Local development and Fabric platform URLs
 * **Audience URI**: Unique identifier following the pattern `api://localdevinstance/[tenant-id]/[workload-name]/[random]`
-* **Sign-in audience**: Multi-tenant support (`AzureADMultipleOrgs`)
+* **Sign-in audience**: Multitenant support (`AzureADMultipleOrgs`)
 
 #### **API Permissions**
 * **Microsoft Fabric**: `Fabric.Extend`, workspace and item permissions
@@ -99,8 +99,8 @@ If you need full control or prefer manual setup, follow these detailed steps.
 
 ### Step 1: Create the Application
 
-1. **Sign in to Azure Portal**:
-   Navigate to [Azure Portal](https://portal.azure.com) and sign in with your administrator account.
+1. **Sign in to Microsoft Azure portal**:
+   Navigate to [Microsoft Azure portal](https://portal.azure.com) and sign in with your administrator account.
 
 2. **Access App Registrations**:
    * Go to **Azure Active Directory** > **App registrations**
@@ -108,7 +108,7 @@ If you need full control or prefer manual setup, follow these detailed steps.
 
 3. **Configure Basic Settings**:
    * **Name**: Enter your application name (e.g., "My Analytics Workload")
-   * **Supported account types**: Select "Accounts in any organizational directory (Any Azure AD directory - Multitenant)"
+   * **Supported account types**: Select "Accounts in any organizational directory (Any Microsoft Entra ID directory - Multitenant)"
    * **Redirect URI**: Leave empty for now (we'll add this later)
    * Select **Register**
 
@@ -233,7 +233,7 @@ If your workload uses remote hosting, add custom scopes:
 
 ## Next Steps
 
-After creating your Entra app:
+After creating your Microsoft Entra app:
 
 1. **Update Environment Configuration**:
    * Copy the Application ID, secret, and other values
@@ -278,7 +278,7 @@ If you encounter issues:
 
 1. **Check Application Overview**: Review all configured settings
 2. **Validate Permissions**: Ensure all required permissions are present and consented
-3. **Review Logs**: Check Azure AD sign-in logs for detailed error information
+3. **Review Logs**: Check Microsoft Entra ID sign-in logs for detailed error information
 4. **Test with Graph Explorer**: Verify permissions using [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)
 
 ## Security Best Practices
@@ -293,4 +293,4 @@ If you encounter issues:
 * [Setup Guide](./setup-guide.md) - Complete environment setup
 * [Authentication Overview](./authentication-overview.md) - Understanding Fabric authentication
 * [Authentication Guidelines](./authentication-guidelines.md) - Best practices for implementation
-* [Microsoft Entra Documentation](/azure/active-directory/develop/) - Official Entra development docs
+* [Microsoft Entra Documentation](/azure/active-directory/develop/) - Official Microsoft Entra development docs
