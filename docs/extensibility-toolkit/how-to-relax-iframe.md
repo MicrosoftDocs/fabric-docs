@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 09/04/2025
 ---
 
-# How to relax the iFrame
+# How-To: Relax the iFrame
 
 This article describes how you can enable additional iFrame attributes for your editor.
 
