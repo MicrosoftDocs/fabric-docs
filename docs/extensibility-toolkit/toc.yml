@@ -53,8 +53,6 @@ items:
     href: how-to-configure-workload-media-section.md
   - name: Create Trial Experience
     href: how-to-add-trial-experience.md
-  - name: Add Custom Item Actions
-    href: how-to-add-custom-item-actions.md
   - name: Add Jobs-to-be-Done
     href: how-to-add-jobs-to-be-done.md
   - name: Define Jobs for Your Workload

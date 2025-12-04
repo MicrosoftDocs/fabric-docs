@@ -68,7 +68,7 @@ To: Microsoft Corporation
 
 Subject: Vendor Self-Attestation for Compliance with Microsoft Workload Development Requirements
 
-We, the undersigned, [Vendor Name], hereby confirm and attest that we have reviewed, understood, and complied with all applicable requirements as outlined in the Microsoft Extensibility toolkit documentation, specifically the [Publish Workload Requirements](/publishing-requirements-workload.md).
+We, the undersigned, [Vendor Name], hereby confirm and attest that we have reviewed, understood, and complied with all applicable requirements as outlined in the Microsoft Extensibility toolkit documentation, specifically the [Publish Workload Requirements](publishing-requirements-workload.md).
 
 ## Section III
 
@@ -385,7 +385,8 @@ The publisher attests to the following security, data, and compliance regulation
 
 Partner workloads are an integral part of Fabric that requires that the Microsoft support teams are aware of how to contact you in case customers are reaching out to us directly.
 
-**Micros
+**Microsoft direct vendor outreach:**
+
 |Name|Required or optional|
 |-----|-----|
 | Contact Name/Team: | (Vendor Primary contact Name / Team Here) |
