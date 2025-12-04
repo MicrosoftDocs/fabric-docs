@@ -41,7 +41,7 @@ my-dbt_project/
 
 ## Configure profile settings
 
-Use dbt configurations to set (or review) your dbt profile:
+Use dbt configurations to set or review your dbt profile:
 
 - **Adapter**: DataWarehouse (default in Fabric)
 - **Connection name**: For example, dbtsampledemowarehouse
@@ -64,12 +64,12 @@ The **change adapter** control at the top-left of the dbt configurations page le
 ### When to use it
 
 - Your workspace connection changes (for example, moving to a different Fabric Data Warehouse).
-- You’re creating demos that contrast adapters (for example, a future PostgreSQL path), or you cloned a job and need to point it to a new target.
-- You’re standardizing schemas across environments (dev → test → prod) and need a different connection behind the scenes.
+- You're creating demos that contrast adapters (for example, a future PostgreSQL path), or you cloned a job and need to point it to a new target.
+- You're standardizing schemas across environments (dev → test → prod) and need a different connection behind the scenes.
 
 ### What changes when you switch
 
-- The adapter and connection backing the pProfile.
+- The adapter and connection that back the profile.
 - Dependent fields (for example, Schema) might need revalidation.
 - Runtime behavior must align with the adapter’s SQL dialect and capabilities.
 
@@ -104,7 +104,7 @@ The run settings tab lets you control which models run and how to select them. T
 
 #### Run mode
 
-- Run only selected models: Choose specific models to include in the run (for example, orders, stg_customers, etc.).
+- Run only selected models: Choose specific models to include in the run (for example, orders, stg_customers, and so on).
 - Run with advanced selectors: Use dbt selectors for granular control (unions, intersections, exclusions).
 
     :::image type="content" source="media/dbt-job/run-settings.png" alt-text="Screenshot of the Fabric UI with the dbt job advanced run settings." lightbox="media/dbt-job/run-settings.png":::
@@ -119,7 +119,7 @@ Selectors let you target parts of your pipeline for faster iteration during deve
     - For advanced runs, configure selectors for targeted execution.
 1. Select **Apply** to save.
 
-You can selectively run or exclude specific models using [selectors](dbt-job-configure.md#advanced-selector-configuration).
+You can selectively run or exclude specific models by using [selectors](dbt-job-configure.md#advanced-selector-configuration).
 
 For example:
 

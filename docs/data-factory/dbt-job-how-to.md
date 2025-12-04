@@ -11,11 +11,11 @@ ms.search.form: dbt-job-tutorials
 
 # Learn how to create a new dbt job in Microsoft Fabric (preview)
 
-Microsoft Fabric now lets you transform data in your Data Warehouses using dbt—all within the Fabric web experience. No external adapters, no CLI, no Airflow. Just SQL, a warehouse, and a streamlined UI.
+Fabric now lets you transform data in your Data Warehouses by using dbt—all within the Fabric web experience. No external adapters, no CLI, no Airflow. Just SQL, a warehouse, and a streamlined UI.
 
-This walkthrough demonstrates how to use dbt directly within Microsoft Fabric to transform data in a warehouse—without external tools minimizing setup complexity and enabling users to use existing compute resources. As a result, dbt jobs make enterprise-scale data modeling more accessible to the SQL community.
+This walkthrough demonstrates how to use dbt directly within Fabric to transform data in a warehouse—without external tools. This approach minimizes setup complexity and enables users to use existing compute resources. As a result, dbt jobs make enterprise-scale data modeling more accessible to the SQL community.
 
-It’s designed to help data engineers and analysts:
+This tool is designed to help data engineers and analysts:
 
 - Import a Sample Data Warehouse in Fabric
 - Transform your data with dbt items
@@ -23,7 +23,7 @@ It’s designed to help data engineers and analysts:
 
 ## Prerequisites
 
-Before you create a dbt job in Microsoft Fabric, make sure your environment is set up correctly:
+Before you create a dbt job in Fabric, make sure your environment is set up correctly:
 
 - [Enable dbt jobs](dbt-job-overview.md#how-to-enable-dbt-jobs-preview)
 - [Create a workspace](/fabric/fundamentals/create-workspaces) if you don't have one.
@@ -36,14 +36,14 @@ Fabric supports the following core dbt commands directly from the dbt job interf
 
 [!INCLUDE [Supported commands for dbt jobs](includes/dbt-job-supported-commands.md)]
 
-You can also selectively run or exclude specific models using [selectors](dbt-job-configure.md#advanced-selector-configuration).
+You can also selectively run or exclude specific models by using [selectors](dbt-job-configure.md#advanced-selector-configuration).
 
 ## Create a dbt job
 
 Start building transformations by creating a dbt job item in your Fabric workspace.
 
 1. Go to your Fabric workspace.
-1. Select **+New item** then search for and select **dbt job** from the item creation menu.
+1. Select **+New item**, then search for and select **dbt job** from the item creation menu.
 1. Enter a name and select a location.
 
    :::image type="content" source="media/dbt-job/create-job.png" alt-text="Screenshot of the Fabric UI with the create job dialog." lightbox="media/dbt-job/create-job.png":::
@@ -56,7 +56,7 @@ Start building transformations by creating a dbt job item in your Fabric workspa
 
 ## Schedule dbt jobs
 
-You can automate dbt job runs using the built-in schedule feature to refresh models, run tests, or keep data pipelines up to date.
+Automate dbt job runs by using the built-in schedule feature to refresh models, run tests, or keep data pipelines up to date.
 
 1. Open your dbt job in Fabric.
 1. Select the **Schedule** tab in the top panel.
@@ -82,14 +82,14 @@ Fabric provides several tools to help you monitor and validate your dbt jobs:
 
 ### Monitoring and troubleshooting
 
-- **Run Summary**: Displays total models run, runtime, and success status.
+- **Run Summary**: Shows the total models run, runtime, and success status.
 - **Error Logs**: Provide stack traces and query payloads for troubleshooting.
 - **Download Logs**: Export detailed logs or payloads for offline analysis.
 
 ## Best practices
 
 - Keep your models modular and test-driven for easier debugging and faster runs.
-- To optimize performance, avoid long dependency chains and prefer well-partitioned transformations.
+- To optimize performance, avoid long dependency chains and use well-partitioned transformations.
 
 ## Related content
 

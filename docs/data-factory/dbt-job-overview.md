@@ -16,7 +16,7 @@ ai-usage: ai-assisted
 > [!NOTE]
 > This feature is in [preview](/fabric/fundamentals/preview).
 
-[dbt](https://docs.getdbt.com/) job in Microsoft Fabric brings the power of dbt (Data Build Tool) directly into the Fabric experience. You can transform data with SQL in a familiar, unified environment. Build, test, and deploy dbt models on top of your Fabric data warehouse or other supported warehouses—no need to install local tools or manage external orchestration.
+[dbt](https://docs.getdbt.com/) job in Fabric brings the power of dbt (Data Build Tool) directly into the Fabric experience. You can transform data with SQL in a familiar, unified environment. Build, test, and deploy dbt models on top of your Fabric data warehouse or other supported warehouses—no need to install local tools or manage external orchestration.
 
 You can develop and manage transformation logic entirely within Fabric. Author your models, define dependencies, and run tests in one place while you use Fabric's enterprise-grade security and governance.
 
@@ -43,22 +43,22 @@ This approach combines the flexibility of code-first development with the simpli
 
 ## Supported adapters
 
-You can connect a dbt job to multiple data sources using supported adapters. This enables dbt models to run transformations directly on your chosen platform. Here are the currently supported adapters:
+You can connect a dbt job to multiple data sources by using supported adapters. This feature enables dbt models to run transformations directly on your chosen platform. Here are the currently supported adapters:
 
-- Microsoft Fabric Warehouse
+- Fabric Warehouse
 - Snowflake
 - PostgreSQL
 - Azure SQL Server
 
 ## dbt job runtime
 
-In Microsoft Fabric, a dbt Job Runtime is a managed execution environment that provides a consistent and secure way to run dbt jobs. It simplifies execution by offering a versioned environment that includes dbt capabilities, ensuring reliability and performance across workloads. 
+In Fabric, a dbt Job Runtime is a managed execution environment that provides a consistent and secure way to run dbt jobs. It simplifies execution by offering a versioned environment that includes dbt capabilities, ensuring reliability and performance across workloads. 
 
-Currently, when you create a dbt job, by default it uses **Runtime v1.0**, which supports **dbt Core v1.9** and includes adapters for **Microsoft Fabric Warehouse**, **Azure SQL Database**, **PostgreSQL**, and **Snowflake**.
+Currently, when you create a dbt job, it uses **Runtime v1.0** by default. This runtime supports **dbt Core v1.9** and includes adapters for **Fabric Warehouse**, **Azure SQL Database**, **PostgreSQL**, and **Snowflake**.
 
 ## Limitations
 
-- **Full project runs**: Currently, preview supports full-project runs only (no partial build caching).
+- **Full project runs**: Currently, preview supports only full-project runs (no partial build caching).
 - **Incremental models**: Make sure you have proper primary keys and unique constraints for incremental builds.
 - **Adapter constraints**: Some partner adapters aren't yet supported in Fabric. See [the current supported adapters](#supported-adapters).
 
