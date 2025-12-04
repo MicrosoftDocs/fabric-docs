@@ -45,7 +45,7 @@ You can define a materialized lake view using a decorator `@fmlv.materialized_la
 | **partition_cols** | Parameter for creating partitions based on the specified column(s).  |
 | **table_properties** | A list of key-value pairs that for defining the properties of materialized lake view. | 
 | **function definition** | Required. A function to define the logic which returns a Spark dataframe object.         |  
-| **check** | Optional. Function to define the data quality constraints. For more details, refer to data quality page<link> .     |  
+| **check** | Optional. Function to define the data quality constraints. For more details, refer to data quality page.     |  
 
 ## Examples
 
