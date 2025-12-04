@@ -10,7 +10,7 @@ ms.date: 09/04/2025
 
 # Detailed Setup Guide
 
-Once you have access to the code (either in Codespaces or locally) by following the [Getting Started guide](getting-started.md), follow these steps:
+Once you have access to the code (either in Codespaces or locally) by following the [Getting Started guide](get-started.md), follow these steps:
 
 > [!TIP]
 > If you don't want to follow the steps manually, ask GitHub Copilot to help you do the work. The Starter-Kit repository is AI-enabled and Copilot can guide you through the setup process interactively. Try this prompt: **"Help me get started with this repository and run the HelloWorld sample."**

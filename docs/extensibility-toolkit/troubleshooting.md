@@ -2,7 +2,7 @@
 title: Troubleshooting and Support
 description: Get help with Microsoft Fabric Extensibility Toolkit issues and find the right support channels.
 author: gsaurer
-ms.author: gesaur
+ms.author: billmath
 ms.topic: how-to
 ms.custom:
 ms.date: 11/19/2025
@@ -59,13 +59,13 @@ Having issues with the Microsoft Fabric Extensibility Toolkit? This guide helps 
 
 ## Before You Report
 
-1. **Check the documentation** - Review [Getting Started](getting-started.md) and relevant guides
+1. **Check the documentation** - Review [Getting Started](get-started.md) and relevant guides
 2. **Search existing issues** - Your problem might already be reported  
 3. **Gather information** - Error messages, steps to reproduce, environment details
 
 ## Quick Links
 
-- **[Getting Started](getting-started.md)** - Start here for setup help
+- **[Getting Started](get-started.md)** - Start here for setup help
 - **[Key Concepts](key-concepts.md)** - Understand core concepts  
 - **[Authentication Guide](authentication-overview.md)** - Authentication troubleshooting
 - **[Starter Kit](https://aka.ms/fabric-extensibility-starter-kit)** - Working examples
