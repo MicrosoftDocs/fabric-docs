@@ -489,12 +489,20 @@ items:
     items:  
     - name: Quick start guide
       href: ./materialized-lake-views/get-started-with-materialized-lake-views.md
-    - name: Create materialized lake views
-      href: ./materialized-lake-views/create-materialized-lake-view.md
-    - name: Optimal refresh for materialized lake views
-      href: ./materialized-lake-views/refresh-materialized-lake-view.md
+   - name: Develop
+     items:  
+     - name: Create materialized lake views
+       items: 
+        - name: SQL language reference
+          href: ./materialized-lake-views/create-materialized-lake-view.md
+        - name: PySpark language reference
+          href: ./materialized-lake-views/refresh-materialized-lake-view-pyspark.md
+      - name: Data quality in materialized lake views
+        href: ./materialized-lake-views/data-quality.md
   - name: Manage
     items:  
+    - name: Optimal refresh for materialized lake views
+      href: ./materialized-lake-views/refresh-materialized-lake-view.md
     - name: View lineage
       href: ./materialized-lake-views/view-lineage.md
     - name: Schedule materialized lake views
@@ -505,16 +513,12 @@ items:
       href: ./materialized-lake-views/operational-run-details.md
     - name: REST APIs for materialized lake views
       href: ./materialized-lake-views/materialized-lake-views-public-api.md
-  - name: Data quality
-    items:  
-    - name: Data quality in materialized lake views
-      href: ./materialized-lake-views/data-quality.md
-    - name: Data quality report
-      href: ./materialized-lake-views/data-quality-reports.md
   - name: Monitor
     items:  
     - name: Monitor materialized lake views
       href: ./materialized-lake-views/monitor-materialized-lake-views.md
+    - name: Data quality report
+      href: ./materialized-lake-views/data-quality-reports.md
   - name: Tutorial
     items: 
     - name: Tutorial - medallion architecture with materialized lake views
