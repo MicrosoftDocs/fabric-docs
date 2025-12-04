@@ -30,11 +30,11 @@ The following table defines how many capacity units (CU) are consumed when an on
 
 ## Capacity usage examples
 
-This section contains examples of capacity usage calculations for each ontology (preview) operation.
+This section contains more details about capacity usage calculations for each ontology (preview) operation, including examples.
 
 ### Ontology Modeling
 
-When a CRUD operation (create, update, or delete) triggers the ontology API, it initiates a usage window of 30 minutes. Billing starts when the first CRUD operation is triggered, and the time will continue for 30 minutes after the last operation is triggered.
+When a CRUD operation triggers the ontology API, it initiates a usage window of 30 minutes. Billing starts when the first CRUD operation is triggered, and the time will continue for 30 minutes after the last operation is triggered.
 
 For example, assume there are 1000 ontology definitions comprised of a combination of entity types, properties, and relationship types. When a user makes an edit to a property, the consumption is 1000 (number of definitions) * 0.5 (unit of measurement for ontology definition usage; 30 minutes represented in hours) * 0.0039 (Fabric consumption rate of this operation) = 1.95 CU hours.
 
