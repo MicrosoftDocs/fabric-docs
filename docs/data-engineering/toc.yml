@@ -489,16 +489,16 @@ items:
     items:  
     - name: Quick start guide
       href: ./materialized-lake-views/get-started-with-materialized-lake-views.md
-   - name: Develop
-     items:  
-     - name: Create materialized lake views
-       items: 
-        - name: SQL language reference
-          href: ./materialized-lake-views/create-materialized-lake-view.md
-        - name: PySpark language reference
-          href: ./materialized-lake-views/refresh-materialized-lake-view-pyspark.md
-      - name: Data quality in materialized lake views
-        href: ./materialized-lake-views/data-quality.md
+  - name: Develop
+    items:  
+    - name: Create materialized lake views
+      items: 
+      - name: SQL language reference
+        href: ./materialized-lake-views/create-materialized-lake-view.md
+      - name: PySpark language reference
+        href: ./materialized-lake-views/refresh-materialized-lake-view-pyspark.md
+    - name: Data quality in materialized lake views
+      href: ./materialized-lake-views/data-quality.md
   - name: Manage
     items:  
     - name: Optimal refresh for materialized lake views
