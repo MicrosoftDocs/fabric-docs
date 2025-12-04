@@ -12,7 +12,7 @@ ms.search.form: Map
 
 # Share a map through direct access (preview)
 
-Sharing a map through direct access grants permissions on the map item only. It does not provide access to underlying data sources (like Lakehouse or KQL database), so recipients must have those permissions for the map to load and function.
+Sharing a map through direct access grants permissions on the map item only. It doesn't provide access to underlying data sources (like Lakehouse or KQL database), so recipients must have those permissions for the map to load and function.
 
 Sharing a map through [direct access](#direct-access) automatically enforces permission checks for both the map and its underlying data sources. This ensures secure, role-based access without requiring full workspace-level permissions.
 
@@ -40,13 +40,13 @@ You can share map items in Microsoft Fabric through two methods:
 
 ### Sharing and permissions
 
-When you share a map by sharing a link or granting direct access, recipients automatically get read access to view the map. Additional permissions depend on the options you select:
+When you share a map by sharing a link or granting direct access, recipients automatically get read access to view the map. Extra permissions depend on the options you select:
 
-- **Read** — Always granted for viewing the map.
-- **Share** — Only granted if you select **Share** when granting access, allowing recipients to reshare the map.
-- **Write** — Only granted if you select **Edit** when granting access, allowing recipients to modify the map.
+- **Read—Always granted for viewing the map.
+- **Share—Only granted if you select **Share** when granting access, allowing recipients to reshare the map.
+- **Write—Only granted if you select **Edit** when granting access, allowing recipients to modify the map.
 
-Recipients also need appropriate permissions on underlying data sources (such as Lakehouse or KQL Database) for the map to function correctly.
+Recipients also need appropriate permissions on underlying data sources (such as lakehouse or KQL database) for the map to function correctly.
 
 :::image type="content" source="media/share-map/direct/grant-direct-access.png" alt-text="A screenshot showing the Grant people access pane.":::
 
