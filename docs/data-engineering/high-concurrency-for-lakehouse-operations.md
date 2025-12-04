@@ -64,7 +64,7 @@ You can track High Concurrency sessions in the **Monitoring hub**. When a Lakeho
 
 This naming convention helps you quickly identify which activities are running in High Concurrency mode.
 
-![Screenshot of the Monitoring hub showing a High Concurrency Lakehouse activity.](docs/data-engineering/media/high-concurrency-lakehouse-overview/high-concurrency-for-lakehouse-monitoring.png)
+![Screenshot of the Monitoring hub showing a High Concurrency Lakehouse activity.](/media/high-concurrency-lakehouse-overview/high-concurrency-for-lakehouse-monitoring.png)
 
 To view the specific operations running within the session:
 
@@ -73,7 +73,7 @@ To view the specific operations running within the session:
 
 In the detail view, you can see the list of individual jobs that are being executed in the High Concurrency session. This list displays the table-specific operations, such as "Load table," confirming that multiple jobs are sharing the single Spark application context.
 
-![Screenshot of the detailed job view showing multiple Load table operations within a single session.](docs/data-engineering/media/high-concurrency-lakehouse-overview/high-concurrency-for-lakehouse-monitoring-detail.png)
+![Screenshot of the detailed job view showing multiple Load table operations within a single session.](/media/high-concurrency-lakehouse-overview/high-concurrency-for-lakehouse-monitoring-detail.png)
 
 ## Billing and capacity impact
 
