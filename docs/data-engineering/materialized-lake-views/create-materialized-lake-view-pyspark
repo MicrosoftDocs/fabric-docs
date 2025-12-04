@@ -1,0 +1,54 @@
+---
+title: PySpark Reference for Materialized Lake Views
+description: Learn about the PySpark semantics for activities related to materialized lake views in Microsoft Fabric.
+ms.topic: concept-article
+author: eric-urban
+ms.author: eur
+ms.reviewer: abhishjain
+ms.date: 12/04/2025
+#customer intent: As a data engineer, I want to create materialized lake views in a lakehouse so that I can optimize query performance and manage data quality.
+---
+
+# PySpark reference for materialized lake views
+
+In this article, you learn about the PySpark semantics for activities related to materialized lake views in Microsoft Fabric.
+
+## Create a materialized lake view
+
+The `fmlv` module contains all the essential functions for creating materialized lake views using PySpark. To define a materialized lake view, make sure to import this module. 
+
+```python
+   import fmlv 
+```
+
+The following code outlines the syntax for declaring a materialized lake view by using PySpark:
+
+```python
+    @fmlv.materialized_lake_view(
+        name="<MLV Name>",
+        comment="<Description>",
+        table_properties={"key1": "value1"},
+        partition_cols=["<col1>", "<col2>"]
+    )
+    @fmlv.check("constraint_name", "condition_expression", "action")
+    def <function_name>():
+        dfObject = <logic and definition>
+        return dfObject
+```
+
+### Arguments
+                
+| Parameter        | Description                                      |
+|------------------|--------------------------------------------------|
+| **name**         | Required. Name of materialized lake view.        |
+| **comment**      | Description of materialized lake view.           |
+| **partition_cols** | Columns for partitioning.                      |
+| **table_properties** | Key-value pairs defining properties.         |
+
+
+
+## Related content
+
+* [What are materialized lake views in Microsoft Fabric?](./overview-materialized-lake-view.md)
+* [Data quality in materialized lake views](./data-quality.md)
+* [Refresh materialized lake views in a lakehouse](./refresh-materialized-lake-view.md)
