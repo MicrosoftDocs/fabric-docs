@@ -33,6 +33,8 @@ Entity types use the following ontology (preview) concepts.
 * *Property:* An attribute of an entity, like *ID*, *temperature* or *location*. Properties can be created manually or from data through data binding.
     * Properties can be bound to static or time series data. Static data doesn't change over time, and represents fixed characteristics about the entity type (like *ID*). Time series data contains attributes whose values vary over time (like *temperature* and *location*).
 * *Entity type key:* A unique identifier for each instance of an entity type within your ontology. This value is created from static data bound to one or more properties on your entity type.
+    >[!NOTE]
+    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&active=true&fixed=true&sort=published&issueId=1615), only strings or integers should be currently used as entity type keys.
 * *Data binding:* The process that connects the schema of entity types, relationship types, and properties to concrete data sources that drive enterprise operations and analytics.
 
 ## How-to steps
@@ -66,6 +68,9 @@ This section contains step-by-step instructions for adding and managing entity t
     :::image type="content" source="media/how-to-create-entity-types/add-property-details.png" alt-text="Screenshot of configuring property details.":::
 
 1. Next, define your entity type **Key** using one or more properties modeled on the entity type. This value represents a unique identifier for each record of ingested data. Select one or more columns from the source data that can be used to uniquely identify a record. This process must be done once for each entity type.
+
+    >[!IMPORTANT]
+    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&active=true&fixed=true&sort=published&issueId=1615), only strings or integers should be currently used as entity type keys.
 
     :::image type="content" source="media/how-to-create-entity-types/entity-type-key.png" alt-text="Screenshot of the entity type key.":::
 
