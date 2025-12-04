@@ -4,7 +4,7 @@ description: Get started with ontology (preview) with this tutorial featuring a 
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 12/01/2025
+ms.date: 12/03/2025
 ms.topic: tutorial
 zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
 zone_pivot_groups: create-ontology-scenario
@@ -17,7 +17,7 @@ This tutorial shows how to create your first ontology (preview) in Microsoft Fab
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-The example scenario for this tutorial is a fictional company called Lakeshore Retail. Lakeshore is a retail ice cream seller that keeps data on sales and freezer streaming data. In the tutorial, you generate entity types (like *Store*, *Product*, and *SaleEvent*), bind streaming data (like *freezer temperature*) from Eventhouse, and answer questions like: "Which stores have fewer ice cream sales when their freezer temperature rises higher than -18°C?"
+The example scenario for this tutorial is a fictional company called Lakeshore Retail. Lakeshore is a retail ice cream seller that keeps data on sales and freezer streaming data. In the tutorial, you generate entity types (like *Store*, *Products*, and *SaleEvent*), bind streaming data (like *freezer temperature*) from Eventhouse, and answer questions like: "Which stores have fewer ice cream sales when their freezer temperature rises higher than -18°C?"
 
 ## Choose scenario for creating ontology
 
@@ -47,7 +47,7 @@ Download the contents of this GitHub folder: [IQ samples](https://github.com/mic
 
 It contains the following sample CSV files. The data contains static entity details about the Lakeshore Retail scenario and streaming data from its freezers.
 * *DimStore.csv*
-* *DimProduct.csv*
+* *DimProducts.csv*
 * *FactSales.csv*
 * *Freezer.csv*
 * *FreezerTelemetry.csv*
@@ -58,7 +58,7 @@ First, create a new lakehouse called *OntologyDataLH* in your Fabric workspace (
 
 Then, upload four sample CSV files to your lakehouse, and load each one to a new delta table. These files contain entity details about business objects in the Lakeshore Retail scenario.
 * *DimStore.csv*
-* *DimProduct.csv*
+* *DimProducts.csv*
 * *FactSales.csv*
 * *Freezer.csv*
 * (**NOT** *FreezerTelemetry.csv*. This file is uploaded to Eventhouse in a later step.)
@@ -82,7 +82,7 @@ This section prepares you to generate an ontology from a semantic model. If you'
     * **Direct Lake semantic model name**: *RetailSalesModel*
     * **Workspace**: Your tutorial workspace is chosen by default.
     * **Select or deselect tables for the semantic model.** Select three tables:
-        * *dimproduct*
+        * *dimproducts*
         * *dimstore*
         * *factsales*
         * (**NOT** *freezer*. This entity is created manually in a later step.)
@@ -98,7 +98,7 @@ This section prepares you to generate an ontology from a semantic model. If you'
     | From table | To table | Cardinality | Cross-filter direction | Make this relationship active? |
     |---|---|---|---|---|
     | *factsales*, select `StoreId` | *dimstore*, select `StoreId` | Many to one (*:1) | Single | Yes |
-    | *factsales*, select `ProductId` | *dimproduct*, select `ProductId` | Many to one (*:1) | Single | Yes |
+    | *factsales*, select `ProductId` | *dimproducts*, select `ProductId` | Many to one (*:1) | Single | Yes |
 
     The relationships look like this when you're done:
 
