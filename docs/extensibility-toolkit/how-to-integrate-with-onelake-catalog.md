@@ -1,6 +1,6 @@
 ---
-title: How to integrate with OneLake Catalog
-description: Learn how to configure your Fabric items to appear in OneLake Catalog with proper categorization and DataHub L1 support.
+title: How to integrate with OneLake catalog
+description: Learn how to configure your Fabric items to appear in OneLake catalog with proper categorization and DataHub L1 support.
 author: gsaurer
 ms.author: billmath
 ms.topic: how-to
