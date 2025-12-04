@@ -54,8 +54,8 @@ Currently, Fabric doesn't support these Delta Lake features:
 
 * V2 Checkpoints aren't uniformly available in all experiences. Only Spark notebooks and Spark jobs can read and write to tables with V2 Checkpoints. Lakehouse and SQL Analytics don't correctly list tables containing V2 Checkpoint files in the ```__delta_log``` folder.
 * Delta Lake 3.x Uniform. This feature is supported only in the Data Engineering Spark-compute (Notebooks, Spark Jobs).
-* Identity columns writing (proprietary Databricks feature)
-* Delta Live Tables (proprietary Databricks feature)
+* Identity columns writing (Azure Databricks feature)
+* Lakeflow Spark Declarative Pipelines (Azure Databricks feature)
 * Delta Lake 4.x features: Type widening, collations, variant type, coordinated commits.
 
 ## Special characters on table names
