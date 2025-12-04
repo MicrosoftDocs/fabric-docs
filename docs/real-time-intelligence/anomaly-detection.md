@@ -7,7 +7,7 @@ author: hzargari-ms
 ms.topic: how-to
 ms.subservice: rti-anomaly-detector
 ms.custom: 
-ms.date: 11/02/2025
+ms.date: 12/04/2025
 ms.search.form: Anomaly Detection How To
 ---
 
@@ -203,12 +203,12 @@ Now that you have anomaly detection configured, next you can:
 
 - [Explore anomaly detection events](../real-time-hub/explore-anomaly-detection.md)
 - [Set alerts on anomaly detection events](../real-time-hub/set-alerts-anomaly-detection.md)
+- [Set up Activator for automated responses](../real-time-intelligence/data-activator/activator-introduction.md)
 - [Learn about multivariate anomaly detection](multivariate-anomaly-detection.md)
-- [Explore multivariate anomaly overview](multivariate-anomaly-overview.md)
 - [Create alerts from a KQL queryset](../data-activator/data-activator-alert-queryset.md)
 
 ## Related content
 
 - [KQL query reference](/kusto/query/)
 - [Real-Time Dashboard documentation](dashboard-real-time-create.md)
-- [Data Activator overview](../data-activator/data-activator-introduction.md)
+- [Activator overview](../data-activator/data-activator-introduction.md)
