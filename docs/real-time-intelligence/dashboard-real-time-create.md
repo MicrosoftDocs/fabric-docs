@@ -6,6 +6,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.date: 10/05/2025
+ms.subservice: rti-dashboard
 ms.search.form: product-kusto, Real-Time Dashboard
 ---
 # Create a Real-Time Dashboard

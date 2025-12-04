@@ -4,7 +4,7 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 author: whhender
 ms.author: whhender
 ms.reviewer: imotiwala, maprycem, cynotebo, wiassaf
-ms.date: 11/06/2025
+ms.date: 11/27/2025
 ms.topic: troubleshooting
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -12,31 +12,13 @@ ms.search.form: Fabric Mirroring
 
 # Troubleshoot Fabric mirrored databases
 
-Scenarios, resolutions, and workarounds for Microsoft Fabric mirrored databases.
+This article describes the common scenarios, resolutions, and workarounds for Microsoft Fabric mirrored databases. For each data source, also review the specific troubleshooting, frequently asked questions (FAQ), and limitations.
 
-## Resources
-
-Review the troubleshooting section of frequently asked questions for each data source:
-
-- [Troubleshoot Mirroring Azure SQL Database](../mirroring/azure-sql-database-troubleshoot.md) and [FAQ about Mirroring Azure SQL Database](../mirroring/azure-sql-database-mirroring-faq.yml)
-- [Troubleshoot Mirroring Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-troubleshoot.md) and [FAQ about Mirroring Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-faq.yml)
-- [Troubleshoot Mirroring Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-troubleshoot.md) and [FAQ about Mirroring Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-mirroring-faq.yml)
-- [Troubleshoot Mirroring Azure Cosmos DB](../mirroring/azure-cosmos-db-troubleshooting.yml) and [FAQ about Mirroring Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
-- [Troubleshoot Mirroring Snowflake](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric)
-- [FAQ about Mirroring Azure Databricks](../mirroring/azure-databricks-faq.yml)
-- [Troubleshoot mirroring from Fabric SQL database](../database/sql/mirroring-troubleshooting.md) and [FAQ for Mirroring Fabric SQL database](../database/sql/mirroring-faq.yml)
-- [Troubleshoot Fabric mirrored databases from SQL Server](../mirroring/sql-server-troubleshoot.md) and [FAQ for Mirroring SQL Server in Microsoft Fabric](../mirroring/sql-server-faq.yml)
-
-Review limitations documentation for each data source:
-
-- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server (Preview)](../mirroring/azure-database-postgresql-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Snowflake](../mirroring/snowflake-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-limitations.md)
-- [Limitations in mirroring from Fabric SQL database](../database/sql/mirroring-limitations.md)
+| Area | Reference |
+|--------|----------|
+| Troubleshooting | Mirroring for [Azure Cosmos DB](./azure-cosmos-db-troubleshooting.yml), [Azure Database for PostgreSQL](./azure-database-postgresql-troubleshoot.md), [Azure SQL Database](./azure-sql-database-troubleshoot.md), [Azure SQL Managed Instance](./azure-sql-managed-instance-troubleshoot.md), [Snowflake](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric), [SQL Server](./sql-server-troubleshoot.md), [Fabric SQL database](../database/sql/mirroring-troubleshooting.md) |
+| Limitations | Mirroring for [Azure Cosmos DB](./azure-cosmos-db-limitations.md), [Azure Database for PostgreSQL](./azure-database-postgresql-limitations.md), [Azure Databricks](./azure-databricks-limitations.md), [Azure SQL Database](./azure-sql-database-limitations.md), [Azure SQL Managed Instance](./azure-sql-managed-instance-limitations.md), [Snowflake](./snowflake-limitations.md), [Google BigQuery](./google-bigquery-limitations.md), [Oracle](./oracle-limitations.md), [SAP](./sap-limitations.md), [SQL Server](./sql-server-limitations.md), [Fabric SQL database](../database/sql/mirroring-limitations.md)|
+| FAQ | Mirroring for [Azure Cosmos DB](./azure-cosmos-db-faq.yml), [Azure Database for PostgreSQL](./azure-database-postgresql-mirroring-faq.yml),  [Azure Databricks](./azure-databricks-faq.yml), [Azure SQL Database](./azure-sql-database-mirroring-faq.yml), [Azure SQL Managed Instance](./azure-sql-managed-instance-faq.yml), [Google BigQuery](./google-bigquery-faq.yml), [SQL Server](./sql-server-faq.yml), [Fabric SQL database](../database/sql/mirroring-faq.yml) |
 
 ## Changes to Fabric capacity
 
@@ -129,6 +111,15 @@ The SQL analytics endpoint supports **varchar(max)** up to 16 MB.
 | SQL database in Fabric | 1 MB |
 | Mirrored Azure Cosmos DB | 2 MB |
 | Cosmos DB in Fabric | 2 MB | 
+
+#### Mirrored table/schema is not deleted when it's dropped in the source database
+
+Table level:
+
+- When you choose to mirror a list of selective tables and the source table is dropped, the mirrored table stays and you see error "The source table does not exist" in monitoring. If you no longer want to replicate this table, update your mirrored database configuration and remove it, then the mirrored table will be deleted.
+- When you choose to mirror all data and the source table is dropped, the mirrored table is deleted as well.
+
+Schema level: When the schema is dropped in the source database, you still see the schema in the SQL Analytics Endpoint as an empty schema.
 
 #### I can't change the source database
 

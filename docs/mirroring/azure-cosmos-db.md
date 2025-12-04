@@ -1,19 +1,19 @@
 ---
-title: "Microsoft Fabric Mirrored Databases From Azure Cosmos DB (Preview)"
+title: "Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: Learn about the mirrored databases from Azure Cosmos DB in Microsoft Fabric.
-author: seesharprun
-ms.author: sidandrews
+author: markjbrown
+ms.author: mjbrown
 ms.reviewer: jmaldonado
-ms.date: 05/07/2025
+ms.date: 12/03/2025
 ms.topic: overview
 ms.custom:
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
 
-# Mirroring Azure Cosmos DB (Preview)
+# Mirroring Azure Cosmos DB
 
-[Mirroring in Microsoft Fabric](../mirroring/overview.md) provides a seamless no-ETL experience to integrate your existing Azure Cosmos DB data with the rest of your data in Microsoft Fabric. 
+[Mirroring in Microsoft Fabric](../mirroring/overview.md) provides a seamless no-ETL experience to integrate your existing Azure Cosmos DB data with the rest of your data in Microsoft Fabric for true Hybrid Transactional/Analytical Processing (HTAP) with complete workload isolation between transactional and analytical systems.
 Your Azure Cosmos DB data is continuously replicated directly into Fabric OneLake in near real-time, without any performance impact on your transactional workloads or consuming Request Units (RUs). 
 
 Data in OneLake is stored in the open-source delta format and automatically made available to all analytical engines on Fabric. 
@@ -22,7 +22,7 @@ You can use built-in Power BI capabilities to access data in OneLake in DirectLa
 In addition to Power BI, you can use T-SQL to run complex aggregate queries or use Spark for data exploration. You can seamlessly access the data in notebooks and use data science to build machine learning models.
 
 > [!IMPORTANT]
-> Mirroring for Azure Cosmos DB is currently in [preview](../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+> Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
 ## Why use mirroring in Fabric?
 
@@ -91,7 +91,7 @@ There are a few considerations and supported scenarios you should consider befor
 To mirror a database, it should already be provisioned in Azure. You must enable continuous backup on the account as a prerequisite.
 
 - You can only mirror each database individually at a time. You can choose which database to mirror.
-- You can mirror the same database multiple times within the same workspace. As a best practice, a single copy of database can be reused across lakehouses, warehouses, or other mirrored databases. You shouldn't need to set up multiple mirrors to the same database.
+- You can mirror the same database multiple times within the same workspace. As a best practice, a single copy of database can be reused across lakehouses, warehouses, or other mirrored databases. You don't need to set up multiple mirrors to the same database.
 - You can also mirror the same database across different Fabric workspaces or tenants.
 - You can select which containers to mirror within your database.
 - Changes to Azure Cosmos DB containers, such as adding new containers and deleting existing ones, are replicated seamlessly to Fabric. You can start mirroring an empty database with no containers, for example, and mirroring seamlessly picks up the containers added at a later point in time.
@@ -101,9 +101,6 @@ To mirror a database, it should already be provisioned in Azure. You must enable
 Nested data is shown as a JSON string in SQL analytics endpoint tables. You can use `OPENJSON`, `CROSS APPLY`, and `OUTER APPLY` in T-SQL queries or views to expand this data selectively. If you're using Power Query, you can also apply the `ToJson` function to expand this data.
 
 Through auto schema inference, nested data can be flattened through `OPENJSON` without having to explicitely define the nested schema. This is especially useful for workloads with dynamic or unpredictable nested schemas. For more information, see [how to query nested data](../mirroring/azure-cosmos-db-how-to-query-nested.md).
-
-> [!NOTE]
-> Fabric has a limitation for string columns of 8 KB in size. For more information and our current workaround, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
 
 ### Handle schema changes
 
@@ -193,9 +190,9 @@ If you're using the data explorer in Fabric mirroring, you accrue typical costs 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-tutorial.md)
+> [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-tutorial.md)
 
 ## Related content
 
-- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-limitations.md)
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)

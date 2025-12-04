@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 09/04/2025
 ---
 
-# Store item definition (state)
+# How-To: Store item definition (state)
 
 You can find the code for storing item definition in the `saveItemDefinition` method within the [SampleWorkloadEditor.tsx](https://github.com/microsoft/fabric-extensibility-toolkit/blob/main/Workload/app/items/HelloWorldItem/HelloWorldItemEditor.tsx) file. Here's the method content for reference:
 

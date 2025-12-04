@@ -6,6 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: concept-article
 ms.custom:
+ms.subservice: rti-eventhouse
 ms.date: 11/19/2024
 ms.search.form: Manage data in a KQL Database
 ---
