@@ -15,7 +15,7 @@ items:
   items:
   - name: Get started with Fabric Extensibility Toolkit
     href: get-started.md
-  - name: Set up your enviroment and run the Hello World
+  - name: Setup your environment and run the Hello World
     href: setup-guide.md
   - name: Manual Setup
     href: setup-manual.md
@@ -24,6 +24,13 @@ items:
   items:
   - name: Create Custom Fabric Items
     href: tutorial-create-new-fabric-item.md
+  - name: Host Your Workload in Azure
+    href: tutorial-host-workload-in-azure.md
+  - name: Publish and Manage Workload
+    href: tutorial-publish-workload.md
+  - name: Validate Workload for Publishing
+    href: tutorial-validate-workload.md
+  
 
 - name: Feature configuration
   items:
@@ -35,6 +42,8 @@ items:
     href: how-to-store-data-in-onelake.md
   - name: Create Shortcuts
     href: how-to-create-shortcut.md
+  - name: Integrate with OneLake Catalog
+    href: how-to-integrate-with-onelake-catalog.md
   - name: Configure Workload Media Section
     href: how-to-configure-workload-media-section.md
   - name: Create Trial Experience
@@ -53,6 +62,8 @@ items:
     href: how-to-add-custom-settings.md
   - name: Create Custom About Pages
     href: how-to-add-custom-about.md
+  - name: Localize Your Workload
+    href: how-to-localize.md
   - name: Relax the iFrame
     href: how-to-relax-iframe.md
 
@@ -60,8 +71,14 @@ items:
   items:
   - name: Overview
     href: publishing-overview.md
+  - name: Monetize Your Workload
+    href: how-to-monetize-workload.md
+  - name: General requirements (All scenarios)
+    href: publishing-requirements-general.md
   - name: Cross-tenant publishing (Public distribution)
     items:
+    - name: Cross-tenant publishing overview
+      href: publishing-requirements-overview.md
     - name: Workload requirements
       href: publishing-requirements-workload.md
     - name: Item requirements
@@ -101,9 +118,9 @@ items:
 
 - name: Tools and SDKs
   items:
-  - name: DevGateway
+  - name: DevGateway in Microsoft Fabric
     href: tools-register-local-workload.md
-  - name: DevServer
+  - name: DevServer in Microsoft Fabric
     href: tools-register-local-web-server.md
   - name: FabricClient SDK
     href: https://go.microsoft.com/fwlink/?linkid=2271989
