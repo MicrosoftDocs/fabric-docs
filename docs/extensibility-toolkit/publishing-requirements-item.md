@@ -3,7 +3,7 @@ title: Fabric Extensibility toolkit validation guidelines and requirements for i
 description: Learn about the guidelines and requirements for publishing Microsoft Fabric workload items to the Workload Hub.
 author: gsaurer
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: article
 ms.date: 11/20/2025
 ---
 
@@ -890,7 +890,6 @@ If Actions in the workspace are used, all item actions (rename, delete, share, e
 | ✅ Required | ✅ Required |
 
 **References:**
-- [How to Add Custom Item Action](./how-to-add-custom-item-actions.md)
 - [Item Manifest](./manifest-item.md)
 
 ---
@@ -979,7 +978,6 @@ Item should define custom actions for the item in the workspace. All Actions nee
 | ⚠️ Optional | ⚠️ Optional |
 
 **References:**
-- [How to Add Custom Item Action](./how-to-add-custom-item-actions.md)
 - [Item Manifest](./manifest-item.md)
 
 ---

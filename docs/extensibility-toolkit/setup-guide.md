@@ -165,7 +165,7 @@ For comprehensive troubleshooting information, refer to the [Starter-Kit Reposit
 
 ### New Chrome Local Network Access Restrictions
 
-Google has introduced new Local Network Access (LNA) restrictions in Chrome that **will break local development** with the [DevServer](./tools-devserver.md). These restrictions prevent websites from accessing local network resources without explicit user permission.
+Google has introduced new Local Network Access (LNA) restrictions in Chrome that **will break local development** with the [DevServer](./tools-register-local-web-server.md). These restrictions prevent websites from accessing local network resources without explicit user permission.
 
 **Action Required for Local Development**: You must change your Chrome configuration to continue developing workloads locally:
 
@@ -187,5 +187,5 @@ Google has introduced new Local Network Access (LNA) restrictions in Chrome that
 - Learn the [architecture](architecture.md) and how the host, your app, and Fabric services interact
 - Read the [Manifest Overview](manifest-overview.md) for schema and best practices
 - Understand the [Workload manifest](manifest-workload.md) structure and configuration
-- Develop with the [DevGateway](tools-devgateway.md) for local testing
+- Develop with the [DevGateway](tools-register-local-workload.md) for local testing
 - [Publish your workload](publishing-overview.md) when you're ready to share it broadly

@@ -334,4 +334,4 @@ Enable Application Insights for monitoring:
 
 - [How to publish and manage a workload](./tutorial-publish-workload.md) - Uploading manifest to Fabric
 - [Setup Guide](./setup-guide.md) - Initial development environment setup
-- [Tutorial: Getting Started](./getting-started.md) - Getting started with the Extensibility Toolkit
+- [Tutorial: Getting Started](./get-started.md) - Getting started with the Extensibility Toolkit

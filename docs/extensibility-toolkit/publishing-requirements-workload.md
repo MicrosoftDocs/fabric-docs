@@ -2,8 +2,8 @@
 title: Fabric Extensibility toolkit validation guidelines and requirements for workloads
 description: Learn about the guidelines and requirements for publishing a Microsoft Fabric workload.
 author: gsaurer
-ms.author: gsaurer
-ms.topic: conceptual
+ms.author: billmath
+ms.topic: article
 ms.date: 11/20/2025
 ---
 
@@ -107,8 +107,8 @@ Workload must have a published marketplace offer with a valid, accessible licens
 | ✅ Required | ✅ Required |
 
 **References:**
-- [Creating a SaaS offer](/partner-center/marketplace-offers/plan-saas-offer.md)
-- [Commercial marketplace certification policies](/marketplace/certification-policies#1000-software-as-a-service-saas)
+- [Creating a SaaS offer](/partner-center/marketplace-offers/create-new-saas-offer)
+- [Commercial marketplace certification policies](/legal/marketplace/certification-policies#1000-software-as-a-service-saas)
 - [Publishing Overview](./publishing-overview.md)
 - [Publish Workload Tutorial](./tutorial-publish-workload.md)
 
