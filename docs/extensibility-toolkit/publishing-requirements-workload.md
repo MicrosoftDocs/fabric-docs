@@ -1,10 +1,10 @@
 ---
 title: Fabric Extensibility toolkit validation guidelines and requirements for workloads
-description: Learn about the guidelines and requirements for publishing a Microsoft Fabric workload to the Workload Hub with the extensibility toolkit.
+description: Learn about the guidelines and requirements for publishing a Microsoft Fabric workload.
 author: gsaurer
 ms.author: billmath
 ms.topic: article
-ms.date: 11/03/2025
+ms.date: 11/20/2025
 ---
 
 # Microsoft Fabric Workload Publishing Requirements
@@ -46,11 +46,13 @@ Workload must provide a valid, accessible HTTPS link to terms of use in the mani
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/governance/governance-compliance-overview](/fabric/governance/governance-compliance-overview)
+**References:**
+- [Governance overview and guidance](../governance/governance-compliance-overview.md)
+- [Product Manifest](./manifest-product.md)
 
+**Guidelines:**
 
-
-
+**LINK:**
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.terms.url`. 
 
@@ -74,11 +76,13 @@ Workload must provide a valid, accessible HTTPS link to privacy policy in the ma
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/extensibility-toolkit/manifest-overview](/fabric/extensibility-toolkit/manifest-overview)
+**References:**
+- [Governance overview and guidance](../governance/governance-compliance-overview.md#secure-protect-and-comply)
+- [Product Manifest](./manifest-product.md)
 
+**Guidelines:**
 
-
-
+**LINK:**
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.privacy.url`. 
 
@@ -102,11 +106,15 @@ Workload must have a published marketplace offer with a valid, accessible licens
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://learn.microsoft.com/marketplace/](/marketplace/)
+**References:**
+- [Creating a SaaS offer](/partner-center/marketplace-offers/create-new-saas-offer)
+- [Commercial marketplace certification policies](/legal/marketplace/certification-policies#1000-software-as-a-service-saas)
+- [Publishing Overview](./publishing-overview.md)
+- [Publish Workload Tutorial](./tutorial-publish-workload.md)
 
+**Guidelines:**
 
-
-
+**LINK:**
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.license.url`. 
 
@@ -130,11 +138,12 @@ The offer link needs to point to Azure Marketplace or AppSource.
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://learn.microsoft.com/legal/marketplace/certification-policies#1000-software-as-a-service-saas](/legal/marketplace/certification-policies#1000-software-as-a-service-saas)
+**References:**
+- [Documentation](/marketplace/marketplace-overview)
 
+**Guidelines:**
 
-
-
+**LINK:**
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.license.url`. 
 
@@ -159,7 +168,8 @@ Workload must display a clear, professional publisher name that helps customers 
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://learn.microsoft.com/marketplace/](/marketplace/)
+**References:**
+- [Documentation](/marketplace/marketplace-overview)
 
 ---
 
@@ -173,7 +183,8 @@ Publisher name must be consistent between the workload manifest and Azure Market
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://learn.microsoft.com/marketplace/](/marketplace/)
+**References:**
+- [Documentation](/marketplace/marketplace-overview)
 
 ---
 
@@ -187,9 +198,13 @@ Workload must provide a valid, accessible HTTPS link to certification attestatio
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Product Manifest](./manifest-product.md)
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
+**Guidelines:**
 
-
+**LINK:**
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.certification.url`. 
 
@@ -224,6 +239,9 @@ Workload must provide learning materials or getting started guides to help new u
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Product Manifest](./manifest-product.md)
+
 ---
 
 ### 1.4.3 - At a glance section includes image or a video
@@ -235,6 +253,11 @@ Workload must include visual content (images or videos) in the 'At a glance' sec
 | Preview | General Availability |
 |---------|---------------------|
 | ✅ Required | ✅ Required |
+
+**References:**
+- [How to configure at a glance section](./how-to-configure-workload-media-section.md)
+- [Product Manifest](./manifest-product.md)
+- [Video guidelines](/partner-center/marketplace-offers/create-new-saas-offer-listing#add-videos-optional)
 
 ---
 
@@ -248,6 +271,9 @@ Learning material links must direct users to stable, static documentation pages 
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Product Manifest](./manifest-product.md)
+
 ---
 
 ### 1.4.5 - Documentation link in Workload page is correct
@@ -260,9 +286,12 @@ Workload must provide a valid, accessible HTTPS link to comprehensive product do
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Product Manifest](./manifest-product.md)
 
+**Guidelines:**
 
-
+**LINK:**
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.documentation.url`. 
 
@@ -292,19 +321,27 @@ Workload must register a valid Microsoft Entra application with proper GUID form
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/workload-development-kit/authentication-concept](/fabric/workload-development-kit/authentication-concept)
+**References:**
+- [Product Manifest](./manifest-product.md)
+- [Authentication Overview](./authentication-overview.md)
+- [Documentation](./authentication-overview.md)
+- [App Registration Guide](/entra/identity-platform/quickstart-register-app)
+- [Verified Microsoft Entra App ID](/entra/verified-id/decentralized-identifier-overview)
 
 ---
 
 ### 2.1.2 - Dependency on Fabric.Extend scope
 
-The workload must take a static dependency on **https:\/\/analysis.windows.net/powerbi/api/Fabric.Extend** scope and get user consent for it. Workload Development Kit infrastructure helps to implement the consent flow, but the responsibility is with the workload owner to take dependency on Fabric.Extend scope and ensure consent is granted. Fabric reserves the rights to block the integration with a workload for which the consent isn't granted.
+The workload must take a static dependency on Fabric.Extend scope and get user consent for it. Workload Development Kit infrastructure helps to implement the consent flow, but the responsibility is with the workload owner to take dependency on Fabric.Extend scope and ensure consent is granted. Fabric reserves the rights to block the integration with a workload for which the consent isn't granted.
 
 **Stage Requirements:**
 
 | Preview | General Availability |
 |---------|---------------------|
 | ✅ Required | ✅ Required |
+
+**References:**
+- [Entra Scopes](/entra/identity-platform/scopes-oidc)
 
 ---
 
@@ -318,6 +355,10 @@ The redirect must land in Fabric for The Extensibility Authentication redirect U
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Authentication Overview](./authentication-overview.md)
+- [How to Acquire Entra Token](./how-to-acquire-entra-token.md)
+
 ---
 
 ### 2.1.4 - Microsoft Entra Scopes are kept to a limit
@@ -329,6 +370,12 @@ Workload should request only essential Microsoft Entra scopes to minimize permis
 | Preview | General Availability |
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
+
+**References:**
+- [Entra Scopes](/entra/identity-platform/scopes-oidc)
+- [Fabric Scopes](/rest/api/fabric/articles/scopes)
+- [Authentication Overview](./authentication-overview.md)
+- [Authentication Guidelines](./authentication-guidelines.md)
 
 ---
 
@@ -342,9 +389,12 @@ OneLake is where data is stored in Fabric. Workloads need to integrate with it t
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/onelake/onelake-overview](/fabric/onelake/onelake-overview)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [OneLake Overview](../onelake/onelake-overview.md)
+- [How to Store Data in OneLake](./how-to-store-data-in-onelake.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -369,9 +419,11 @@ Workload must support Microsoft Entra Conditional Access policies for enterprise
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/workload-development-kit/authentication-concept](/fabric/workload-development-kit/authentication-concept)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](./authentication-overview.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -396,7 +448,10 @@ Workload must provide monitoring and diagnostic capabilities for customers to tr
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -421,9 +476,11 @@ Fabric sharing strategy is focused on allowing customers to collaborate with the
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
-**Reference:** [/fabric/security/security-b2b](/fabric/security/security-b2b)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](../security/security-b2b.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -448,9 +505,11 @@ Fabric commits to a seamless service availability to customers. We recognize the
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
-**Reference:** [https://learn.microsoft.com/azure/reliability/reliability-fabric](/azure/reliability/reliability-fabric)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -475,7 +534,10 @@ Performance is an important requirement for Fabric customers. We recommend our p
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -500,9 +562,11 @@ To ensure that you can meet customer expectations independent of their home or c
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/admin/region-availability](/fabric/admin/region-availability)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](../admin/region-availability.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -527,9 +591,11 @@ The workload and all Item types the partner provides as part of it need to compl
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://aka.ms/fabricux](https://aka.ms/fabricux)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Fabric UX System](https://aka.ms/fabricux)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -554,7 +620,10 @@ English has to be the default language. Content can be localized if you decide t
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -587,6 +656,9 @@ Workload must have a clear, descriptive name that helps users understand its pur
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Product Manifest](./manifest-product.md)
+
 ---
 
 ### 3.1.2 - Workload icons, and images are clear
@@ -598,6 +670,11 @@ Workload must provide custom, professional icons, and images that are distinct f
 | Preview | General Availability |
 |---------|---------------------|
 | ✅ Required | ✅ Required |
+
+**References:**
+- [Product Manifest](./manifest-product.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
 
 ---
 
@@ -611,7 +688,12 @@ Product icon must meet dimension requirements (240x240) and be visually clear an
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Product Manifest](./manifest-product.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
 
+**Guidelines:**
 
 **IMAGE:**
 
@@ -636,7 +718,12 @@ Favicon must be provided in the manifest with appropriate dimensions and clarity
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Product Manifest](./manifest-product.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
 
+**Guidelines:**
 
 **IMAGE:**
 
@@ -661,6 +748,11 @@ Custom action icons must meet dimension requirements and be clear, recognizable 
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Product Manifest](./manifest-product.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+
 ---
 
 ### 3.1.2.4 - Create experience Icon validation
@@ -672,6 +764,11 @@ Create experience icons must meet dimension requirements and provide clear visua
 | Preview | General Availability |
 |---------|---------------------|
 | ✅ Required | ✅ Required |
+
+**References:**
+- [Product Manifest](./manifest-product.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
 
 ---
 
@@ -685,6 +782,11 @@ Small create experience icons must meet dimension requirements and remain clear 
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Product Manifest](./manifest-product.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+
 ---
 
 ### 3.1.2.6 - Tabs Icon validation
@@ -696,6 +798,11 @@ Tab icons must meet dimension requirements and be visually distinct to aid navig
 | Preview | General Availability |
 |---------|---------------------|
 | ✅ Required | ✅ Required |
+
+**References:**
+- [Product Manifest](./manifest-product.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
 
 ---
 
@@ -709,6 +816,11 @@ Active tab icons must meet dimension requirements and provide clear visual indic
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Product Manifest](./manifest-product.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+
 ---
 
 ### 3.1.3 - Workload has a clear sub title
@@ -720,6 +832,10 @@ Workload must provide a clear, concise slogan/subtitle that complements the name
 | Preview | General Availability |
 |---------|---------------------|
 | ✅ Required | ✅ Required |
+
+**References:**
+- [Product Manifest](./manifest-product.md)
+- [Fabric UX System](https://aka.ms/fabricux)
 
 ---
 
@@ -733,6 +849,9 @@ Workload must provide a comprehensive description that explains features, capabi
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Product Manifest](./manifest-product.md)
+
 ---
 
 ### 3.1.4.1 - Workload has a clear description in the Workload Hub Card
@@ -744,6 +863,9 @@ Workload Hub card must include a concise description optimized for the card disp
 | Preview | General Availability |
 |---------|---------------------|
 | ✅ Required | ✅ Required |
+
+**References:**
+- [Product Manifest](./manifest-product.md)
 
 ---
 
@@ -757,7 +879,11 @@ Workload must provide a banner image with exact dimensions of 1920x240 pixels fo
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Product Manifest](./manifest-product.md)
+- [Fabric UX System](https://aka.ms/fabricux)
 
+**Guidelines:**
 
 **IMAGE:**
 
@@ -782,6 +908,9 @@ Gallery videos must focus exclusively on product features without displaying thi
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Video guidelines](/partner-center/marketplace-offers/create-new-saas-offer-listing#add-videos-optional)
+
 ---
 
 ## 4. Security & Compliance Requirements
@@ -800,9 +929,11 @@ Microsoft customers entrust Fabric with their most sensitive data. As partners i
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/governance/governance-compliance-overview#secure-protect-and-comply](/fabric/governance/governance-compliance-overview#secure-protect-and-comply)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](../governance/governance-compliance-overview.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -827,7 +958,11 @@ Workload must obtain Microsoft Entra ID tokens exclusively through the Fabric ho
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Authentication Guidelines](./authentication-guidelines.md)
 
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -852,7 +987,11 @@ Workload must use only the official Fabric Workload Client SDK JavaScript APIs f
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Authentication Guidelines](./authentication-guidelines.md)
 
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -877,7 +1016,11 @@ Workload must not rely on third-party cookies; only essential HTTP-only cookies 
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Cookie compliance](https://european-union.europa.eu/cookies_en)
 
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -902,6 +1045,10 @@ Microsoft Entra application name and publisher must align with the workload name
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Authentication Guidelines](./authentication-guidelines.md)
+- [How to register an Entra app](/entra/identity-platform/quickstart-register-app)
+
 ---
 
 ### 4.2 - Privacy
@@ -914,9 +1061,11 @@ Microsoft customers entrust Fabric with their most sensitive data. As such, part
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/governance/governance-compliance-overview#secure-protect-and-comply](/fabric/governance/governance-compliance-overview#secure-protect-and-comply)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](../governance/governance-compliance-overview.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -941,9 +1090,11 @@ Workload owners can only use essential HTTP-only cookies. Workload can use them 
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://european-union.europa.eu/cookies_en](https://european-union.europa.eu/cookies_en)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](https://european-union.europa.eu/cookies_en)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -968,9 +1119,11 @@ Partner workloads aren't to use, write, or rely on third-party cookies
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://european-union.europa.eu/cookies_en](https://european-union.europa.eu/cookies_en)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](../governance/governance-compliance-overview.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -995,7 +1148,10 @@ Publisher must only obtain any Microsoft Entra token using the JavaScript APIs p
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -1020,9 +1176,11 @@ Fabric is making an Enterprise Promise around data not leaving the geography of 
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://azure.microsoft.com/explore/global-infrastructure/data-residency/](https://azure.microsoft.com/explore/global-infrastructure/data-residency/)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](https://azure.microsoft.com/explore/global-infrastructure/data-residency/)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -1047,9 +1205,11 @@ Within the Attestation Document you can show customers how your app handles secu
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/governance/governance-compliance-overview](/fabric/governance/governance-compliance-overview)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](../governance/governance-compliance-overview.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -1080,7 +1240,10 @@ Partner workloads are becoming an integral part of Fabric therefore our support 
 |---------|---------------------|
 | ⚠️ Optional | ✅ Required |
 
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -1105,9 +1268,11 @@ Partners are responsible to define and document their support parameters (Servic
 |---------|---------------------|
 | ⚠️ Optional | ✅ Required |
 
-**Reference:** [https://learn.microsoft.com/partner-center/marketplace-offers/marketplace-criteria-content-validation](/partner-center/marketplace-offers/marketplace-criteria-content-validation)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](/partner-center/marketplace-offers/marketplace-criteria-content-validation)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -1132,11 +1297,12 @@ Workload must provide a valid, accessible HTTPS link to help resources and suppo
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/workload-development-kit/supportability](/fabric/workload-development-kit/supportability)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
+**Guidelines:**
 
-
-
+**LINK:**
 
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.help.url`. 
 
@@ -1160,7 +1326,11 @@ Product details page must clearly display support contact information for custom
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](/partner-center/marketplace-offers/marketplace-criteria-content-validation)
 
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -1185,7 +1355,11 @@ Partners need to host a website that shows their service health and availability
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](/partner-center/marketplace-offers/marketplace-criteria-content-validation)
 
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -1216,9 +1390,11 @@ Microsoft Fabric's lifecycle management tools enable efficient product developme
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/cicd/cicd-overview](/fabric/cicd/cicd-overview)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](../cicd/cicd-overview.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -1243,9 +1419,11 @@ In Fabric, you can configure and use an endpoint that allows your organization t
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/security/security-private-links-use](/fabric/security/security-private-links-use)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](../security/security-private-links-use.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -1270,9 +1448,12 @@ The OneLake data hub makes it easy to find, explore, and use the Fabric data ite
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/governance/onelake-catalog-overview](/fabric/governance/onelake-catalog-overview)
+**References:**
+- [How to integrate with OneLake catalog](./how-to-integrate-with-onelake-catalog.md)
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](../governance/onelake-catalog-overview.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -1297,9 +1478,11 @@ In modern business intelligence (BI) projects, understanding the flow of data fr
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/governance/lineage](/fabric/governance/lineage)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](../governance/lineage.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -1324,9 +1507,11 @@ Sensitivity labels from Microsoft Purview Information Protection on items can gu
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/fundamentals/apply-sensitivity-labels](/fabric/fundamentals/apply-sensitivity-labels)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](../fundamentals/apply-sensitivity-labels.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
@@ -1351,9 +1536,11 @@ For partners that are using Export functionality within their Item they need to 
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [/fabric/fundamentals/apply-sensitivity-labels](/fabric/fundamentals/apply-sensitivity-labels)
+**References:**
+- [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
+- [Documentation](../fundamentals/apply-sensitivity-labels.md)
 
-
+**Guidelines:**
 
 **ATTESTATION:**
 
