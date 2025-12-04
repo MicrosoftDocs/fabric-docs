@@ -140,7 +140,7 @@ The *SaleEvent* entity type doesn't have a key that was imported from the source
 1. Select `SaleId`.
 
     >[!NOTE]
-    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&active=true&fixed=true&sort=published&issueId=1615), only strings or integers should be currently used as entity type keys.
+    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
 
 1. When the key is saved, it looks like this:
 
@@ -173,7 +173,7 @@ Select the *SaleEvent* entity type to display it and its relationship types on t
 Select each of the relationship types and update its details to match the following table. First, rename the relationship type to the provided friendlier name. Next, set the correct order of source and target entity types. Finally, bind the relationship type to the source data table and select the source columns.
 
 >[!NOTE]
->To prevent unexpected behavior from a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&active=true&fixed=true&sort=published&issueId=1619), make sure the correct source and target entity types are set before choosing the source data table to bind.
+>To prevent unexpected behavior from a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1619), make sure the correct source and target entity types are set before choosing the source data table to bind.
 
 The final relationship details match the following table.
 
@@ -263,7 +263,7 @@ First create entity types, which represent types of objects in a business. This 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/entity-type-key-2.png" alt-text="Screenshot of selecting the entity type key.":::
 
     >[!NOTE]
-    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&active=true&fixed=true&sort=published&issueId=1615), only strings or integers should be currently used as entity type keys.
+    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
 
 Now the *Store* entity type is ready. Continue to the next section to create the remaining entity types.
 

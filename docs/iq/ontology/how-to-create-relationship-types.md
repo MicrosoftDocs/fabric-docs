@@ -89,7 +89,7 @@ You can edit or delete relationship types in the **Relationship configuration** 
 * To **edit** a relationship type, select it in the canvas and edit any of the fields in the **Relationship configuration** pane.
 
     >[!NOTE]
-    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&active=true&fixed=true&sort=published&issueId=1619), it's currently not recommended to change the source or target entity type on a relationship that has already been bound to data. If you need to change the source or target entity type on a relationship that's connected to a data source, delete the relationship and recreate it with the right entity types.
+    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1619), it's currently not recommended to change the source or target entity type on a relationship that has already been bound to data. If you need to change the source or target entity type on a relationship that's connected to a data source, delete the relationship and recreate it with the right entity types.
 
 * To **delete** a relationship type, select it in the canvas and select the **Delete relationship type** button in the **Relationship configuration** pane.
 
