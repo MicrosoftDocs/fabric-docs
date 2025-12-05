@@ -4,7 +4,7 @@ description: Learn about SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur
-ms.date: 05/29/2025
+ms.date: 12/05/2025
 ms.topic: overview
 ms.search.form: product-databases, SQL database Overview, Databases Overview
 ---
