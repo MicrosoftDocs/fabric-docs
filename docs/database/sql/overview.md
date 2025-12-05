@@ -53,7 +53,7 @@ In addition to the [Fabric SQL database Query Editor](query-editor.md), there's 
 
 ### Sharing and data security
 
-Sharing enables ease of access control and management, while security controls like row level security (RLS) and object level security (OLS), and more make sure you can control access to sensitive information. Fabric SQL database also sports enterprise-grade security features, including [workspace-level customer managed keys](../../security/workspace-customer-managed-keys.md) and [SQL auditing](audit.md). For more information, see [Data encryption in SQL database](encryption.md) and [Security in SQL database](security-overview.md).
+Sharing enables ease of access control and management, while security controls like row level security (RLS) and object level security (OLS), and more make sure you can control access to sensitive information. Fabric SQL database also sports enterprise-grade security features, including [workspace-level customer managed keys](../../security/workspace-customer-managed-keys.md) and [SQL auditing](auditing.md). For more information, see [Data encryption in SQL database](encryption.md) and [Security in SQL database](security-overview.md).
 
 Sharing also enables secure and democratized decision-making across your organization. By sharing your SQL database, you can grant other users or a group of users access to a database without giving access to the workspace and the rest of its items. When someone shares a database, they also grant access to the SQL analytics endpoint.
 
