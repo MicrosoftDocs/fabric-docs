@@ -855,8 +855,14 @@ items:
     href: map/create-map.md
   - name: Customize a map
     href: map/customize-map.md
-  - name: Share a map
-    href: map/share-map.md
+  - name: Map sharing
+    items:
+    - name: Sharing maps
+      href: map/sharing-maps.md
+    - name: Share maps directly
+      href: map/share-map-direct.md
+    - name: Share maps with org apps
+      href: map/share-map-org-apps.md
   - name: Create a tileset
     href: map/spatial-job-create-tile-sets.md
   - name: Manage Map permissions
