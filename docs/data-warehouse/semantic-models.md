@@ -4,9 +4,10 @@ description: Learn more about Power BI semantic models in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: chweb, salilkanade, pvenkat
-ms.date: 07/22/2025
+ms.date: 12/05/2025
 ms.topic: conceptual
 ms.search.form: Default semantic model overview # This article's title should not change. If so, contact engineering.
+ai-usage: ai-assisted
 ---
 
 # Power BI semantic models in Microsoft Fabric
@@ -111,9 +112,9 @@ The **New Power BI semantic model** button creates a new blank semantic model.
 - Semantic models in Fabric follow the current limitations for semantic models in Power BI. Learn more:
    - [Azure Analysis Services resource and object limits](/azure/analysis-services/analysis-services-capacity-limits)
    - [Data types in Power BI Desktop - Power BI](/power-bi/connect-data/desktop-data-types)
+- Semantic models are independent items in Fabric and can be managed via REST APIs to enumerate semantic models in a workspace, check for dependencies (reports/dashboards) and model content, and delete unused ones. This includes decoupled semantic models that were created by default in the past, which are no longer created automatically.
 - If the parquet, Apache Spark, or SQL data types can't be mapped to one of the Power BI desktop data types, they are dropped as part of the sync process. This is in line with current Power BI behavior. For these columns, we recommend that you add explicit type conversions in their ETL processes to convert it to a type that is supported. If there are data types that are needed upstream, users can optionally specify a view in SQL with the explicit type conversion desired. This will be picked up by the sync or can be added manually as previously indicated.
 - Semantic models can only be edited in the SQL analytics endpoint or warehouse.
-- [!INCLUDE [default-semantic-model-retirement](../includes/default-semantic-model-retirement.md)]
 
 ## Related content
 
