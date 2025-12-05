@@ -25,13 +25,12 @@ SQL database in Fabric is:
 - The home in Fabric for OLTP workloads
 - Easy to configure and manage
 - Set up for analytics by automatically replicating the data into OneLake near real time
+- Ready for AI development scenarios with features like semantic search and retrieval-augmented generation (RAG)
 - Integrated with development frameworks and analytics
 - Based on the underlying technology of [Mirroring in Fabric](../../mirroring/overview.md)
+- Easy to manage, with intelligent performance features enabled by default, like [Automatic index creation with Automatic Tuning](/azure/azure-sql/database/automatic-tuning-overview?view=azuresql-db&preserve-view=true)
 - Queried in all the same ways as [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), plus a [web-based editor in the Fabric portal](query-editor.md).
 
-Intelligent performance features from Azure SQL Database are enabled by default in SQL database in Fabric, including:
-
-- [Automatic index creation with Automatic Tuning](/azure/azure-sql/database/automatic-tuning-overview?view=azuresql-db&preserve-view=true)
 
 ## Why use SQL database in Fabric?
 
@@ -48,17 +47,17 @@ Creating a new SQL database in Fabric creates these items in your Fabric workspa
 - Data in your SQL database is automatically replicated of into the [OneLake](../../onelake/onelake-overview.md) and converted to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
 - A [SQL analytics endpoint](sql-analytics-endpoint.md)
 
-In addition to the [Fabric SQL database Query Editor](query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true), and even GitHub Copilot.
+In addition to the [Fabric SQL database Query Editor](query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true), and even GitHub Copilot. 
 
-## Sharing
+<a id="sharing"></a>
 
-Sharing enables ease of access control and management, while security controls like row level security (RLS) and object level security (OLS), and more make sure you can control access to sensitive information. Sharing also enables secure and democratized decision-making across your organization.
+### Sharing and data security
 
-By sharing your SQL database, you can grant other users or a group of users access to a database without giving access to the workspace and the rest of its items. When someone shares a database, they also grant access to the SQL analytics endpoint.
+Sharing enables ease of access control and management, while security controls like row level security (RLS) and object level security (OLS), and more make sure you can control access to sensitive information. Fabric SQL database also sports enterprise-grade security features, including [workspace-level customer managed keys](../../security/workspace-customer-managed-keys.md) and [SQL auditing](audit.md). For more information, see [Security in SQL database in Microsoft Fabric](security-overview.md).
 
-Access the Sharing dialog with the **Share** button next to the database name in the **Workspace** view. Shared databases can be found through **OneLake** **Data Hub** or the **Shared with Me** section in Microsoft Fabric.
+Sharing also enables secure and democratized decision-making across your organization. By sharing your SQL database, you can grant other users or a group of users access to a database without giving access to the workspace and the rest of its items. When someone shares a database, they also grant access to the SQL analytics endpoint.
 
-For more information, see [Share data and manage access to your SQL database in Microsoft Fabric](share-data.md).
+Access the Sharing dialog with the **Share** button next to the database name in the **Workspace** view. Shared databases can be found through **OneLake** **Data Hub** or the **Shared with Me** section in Microsoft Fabric. For more information, see [Share data and manage access to your SQL database in Microsoft Fabric](share-data.md).
 
 ## Connect
 
