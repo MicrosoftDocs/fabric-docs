@@ -19,11 +19,13 @@ This tutorial shows how to create your first ontology (preview) in Microsoft Fab
 
 The example scenario for this tutorial is a fictional company called Lakeshore Retail. Lakeshore is a retail ice cream seller that keeps data on sales and freezer streaming data. In the tutorial, you generate entity types (like *Store*, *Products*, and *SaleEvent*), bind streaming data (like *freezer temperature*) from Eventhouse, and answer questions like: "Which stores have fewer ice cream sales when their freezer temperature rises higher than -18°C?"
 
-## Choose scenario for creating ontology
+## Choose ontology creation method
 
 This tutorial contains two options for setting up the ontology (preview) item: automatically **generate it from a semantic model**, or manually **build it from OneLake data**. 
 
-Choose your preferred scenario by using the selector at the beginning of the article.
+Choose your preferred scenario by using the selector at the beginning of the article, or the links below (will reload the page):
+* [Generate from a semantic model](?pivots=semantic-model)
+* [Build from OneLake datal](?pivots=onelake)
 
 ## Prerequisites
 
