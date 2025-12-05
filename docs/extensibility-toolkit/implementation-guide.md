@@ -3,7 +3,7 @@ title: Implementation guide
 description: Learn how to implement a workload for Fabric.
 author: gsaurer
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
 ms.date: 09/04/2025
 ---
@@ -109,5 +109,5 @@ The Extensibility framework is designed for rapid development.
 
 - [Architecture](architecture.md)
 - [Workload manifest](manifest-workload.md)
-- [DevGateway](devgateway.md)
+- [DevGateway](tools-register-local-workload.md)
 - [Publish your workload](publish-workload-flow.md)

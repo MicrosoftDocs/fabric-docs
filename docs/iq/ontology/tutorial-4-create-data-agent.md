@@ -4,7 +4,7 @@ description: Create a data agent that queries the ontology (preview) in natural 
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 10/30/2025
+ms.date: 12/03/2025
 ms.topic: tutorial
 ---
 
@@ -38,7 +38,7 @@ Start with these example prompts:
 * *List the top three products by revenue in Paris stores.*
 * *Do stores with higher freezer temperatures correlate with lower daily sales? Explain the evidence.*
 
-Notice that the responses reference entity types (*Store*, *SaleEvent*, *Product*, *Freezer*) and their relationships, not just raw tables.
+Notice that the responses reference entity types (*Store*, *SaleEvent*, *Products*, *Freezer*) and their relationships, not just raw tables.
 
 :::image type="content" source="media/tutorial-4-create-data-agent/query-result.png" alt-text="Screenshot of the result of a query." lightbox="media/tutorial-4-create-data-agent/query-result.png":::
 
