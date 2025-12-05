@@ -284,6 +284,8 @@ items:
       href: lakehouse-and-delta-tables.md
     - name: Load to tables
       href: load-to-tables.md
+    - name: High Concurrency Mode for Lakehouse Table Load and Preview Operations
+      href: high-concurrency-for-lakehouse-operations.md
     - name: Table compaction
       href: table-compaction.md
     - name: Lakehouse table maintenance
