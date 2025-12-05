@@ -11,7 +11,7 @@ ms.date: 12/04/2025
 
 # High concurrency mode for Lakehouse operations in Microsoft Fabric
 
-High concurrency (HC) mode for Lakehouse operations in Microsoft Fabric is designed to optimize Spark resource utilization and improve concurrency for workloads that fall back to Spark execution — such as **Load to Table** and **Preview** operations.
+High concurrency mode for Lakehouse operations in Microsoft Fabric is designed to optimize Spark resource utilization and improve concurrency for workloads that fall back to Spark execution — such as **Load to Table** and **Preview** operations.
 
 When a Lakehouse table preview operation runs in Spark (for example, when the SQL endpoint isn’t available), it can hold a Spark session for up to 20 minutes. On smaller capacities, this behavior can lead to session blocking and reduced concurrency. The new **High Concurrency mode** addresses this by allowing multiple Lakehouse operations to share a single Spark session, maximizing efficiency and reducing compute overhead.
 
