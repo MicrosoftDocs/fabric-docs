@@ -51,7 +51,23 @@ The SQL database restore process will always honor the customer-managed key work
 | Encrypted with customer-managed key | Enabled | SQL database is encrypted with customer-managed key |
 | Encrypted with customer-managed key | Enabled but different customer-managed key | SQL database is encrypted with the new customer-managed key |
 
-## Inaccessible customer-managed key
+## Verify successful customer-managed key
+
+Once you enable customer-managed key encryption in the workspace, the existing database will be encrypted. A new database in a workspace will also be encrypted when customer-managed key enabled. To verify if your database is successfully encrypted, run the following T-SQL query:
+
+```sql
+SELECT DB_NAME(database_id) as DatabaseName, * 
+FROM sys.dm_database_encryption_keys 
+WHERE database_id <> 2;
+```
+
+- A database is encrypted if the `encryption_state_desc` field displays `ENCRYPTED` with `ASYMMETRIC_KEY` as the `encryptor_type`. 
+- If the state is `ENCRYPTION_IN_PROGRESS`, the `percent_complete` column will indicate the progress of the encryption state change. This will be `0` if there is no state change in progress.
+- If not encrypted, a database will not appear in the query results of `sys.dm_database_encryption_keys`.
+
+<a id="inaccessible-customer-managed-key"></a>
+
+## Troubleshoot inaccessible customer-managed key
 
 When a customer-managed key is configured for a workspace in Microsoft Fabric, continuous access to the key is required for the SQL database to stay online. If the SQL database loses access to the key in the Azure Key Vault, in up to 10 minutes the SQL database starts denying all connections and changes its state to Inaccessible. Users will receive a corresponding error message such as "Database `<database ID>.database.fabric.microsoft.com` is not accessible due to Azure Key Vault critical error.".
 
