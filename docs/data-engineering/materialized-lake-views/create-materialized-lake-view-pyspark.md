@@ -112,7 +112,7 @@ spark.sql("DROP MATERIALIZED LAKE IF EXISTS silver.customer_enriched")
 ## Execution semantics 
 
 To create the materialized lake view, execute the definition once in the notebook and schedule the lineage for subsequent refresh. 
-PySpark materialized lake view refresh requires notebook unlike Spark SQL. During the refresh, Fabric automatically determine the notebook associated with the PySpark MLV and execute the cells in the notebook required to refresh. 
+PySpark materialized lake view refresh requires notebook unlike Spark SQL. During the refresh, Fabric automatically determines the notebook associated with the PySpark MLV and executes the cells in the notebook required to refresh. 
 
 ### Best practices for defining PySpark based materialized lake views
 
