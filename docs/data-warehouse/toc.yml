@@ -150,7 +150,7 @@ items:
   - name: Semantic models
     href: semantic-models.md
   - name: Create a semantic model
-    href: create-semantic-models.md
+    href: create-semantic-model.md
   - name: Manage a semantic model
     href: manage-semantic-model.md
   - name: Create reports in the Power BI service
