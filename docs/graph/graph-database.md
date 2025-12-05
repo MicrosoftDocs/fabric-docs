@@ -14,6 +14,9 @@ ms.reviewer: wangwilliam
 
 A graph database models data as a network of connected entities and relationships. The most commonly used type of graph database implements the [labeled property graph](graph-data-models.md#labeled-property-graph-lpg) model: entities (nodes) and relationships (edges) can have labels and properties (key–value pairs). This flexible model enables both schema-optional and schema-driven designs, and it lets you express rich semantics. Because connections are stored explicitly as edges, queries traverse relationships by following edges instead of computing expensive joins at query time.
 
+> [!IMPORTANT]
+> This article exclusively uses the [social network example graph dataset](sample-datasets.md).
+
 ## Graph database core concepts
 
 - Nodes represent things such as people, products, or places. Nodes can have labels and properties that describe their attributes.
@@ -53,11 +56,11 @@ Choose a graph database when your primary questions involve paths, neighborhoods
 ## What about ETL
 
 Representing your data as a graph and storing it in a separate, standalone graph database often introduces ETL and governance overhead. By contrast, graph in Microsoft Fabric operates directly on OneLake, which reduces or eliminates the need for separate ETL pipelines and data duplication. Consider these tradeoffs:
-- **Data movement & duplication**: Standalone graph databases typically require extracting, transforming, and loading (ETL) data into a separate store, which increases complexity and can lead to duplicated datasets. Graph in Microsoft Fabric operates on OneLake so you can model and query connected data without moving it.
+- **Data movement and duplication**: Standalone graph databases typically require extracting, transforming, and loading (ETL) data into a separate store, which increases complexity and can lead to duplicated datasets. Graph in Microsoft Fabric operates on OneLake so you can model and query connected data without moving it.
 - **Operational costs**: Standalone graph stacks run as separate clusters or services and often carry idle-capacity charges. Graph workloads in Fabric consume pooled capacity units (CUs) with automatic scale-down and centralized metrics, which simplifies operations and can lower cost.
 - **Scalability**: Some standalone graph databases depend on scale-up or vendor-specific clustering. Graph in Microsoft Fabric is designed for large-scale graphs and uses scale-out sharding across multiple workers to handle big-data workloads efficiently.
-- **Tooling & skills**: Vendor-specific graph systems can require specialized languages and separate analytics frameworks. Graph in Microsoft Fabric provides unified modeling, standards-based querying (GQL), built-in graph analytics algorithms, BI and AI integration, and low/no-code exploratory tools so a broader set of users can work with connected data.
-- **Governance & security**: Separate graph deployments need independent governance and security setups. Graph in Microsoft Fabric uses OneLake governance, lineage, and workspace role-based access control (RBAC) so compliance, auditing, and permissions remain consistent with the rest of your Fabric environment.
+- **Tooling and skills**: Vendor-specific graph systems can require specialized languages and separate analytics frameworks. Graph in Microsoft Fabric provides unified modeling, standards-based querying (GQL), built-in graph analytics algorithms, BI and AI integration, and low/no-code exploratory tools so a broader set of users can work with connected data.
+- **Governance and security**: Separate graph deployments need independent governance and security setups. Graph in Microsoft Fabric uses OneLake governance, lineage, and workspace role-based access control (RBAC) so compliance, auditing, and permissions remain consistent with the rest of your Fabric environment.
 
 ## Related content
 

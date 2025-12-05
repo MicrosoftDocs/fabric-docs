@@ -105,7 +105,7 @@ p.browserUsed IS NULL
 ```
 
 > [!NOTE]
-> Atempting to access a known non-existing property results in a syntax error.
+> Attempting to access a known non-existing property results in a syntax error.
 > Access to a potentially non-existing property evaluates to `null`.
 > The determination of whether a property is known or potentially non-existing
 > is made based on the type of the accessed node or edge.

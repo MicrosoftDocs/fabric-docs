@@ -181,7 +181,7 @@ MATCH (p:Person)
 RETURN p.firstName, p.lastName
 ```
 
-In this query:
+This query is executed as follows:
 
 1. **`MATCH`** finds all nodes labeled `Person`
 2. **`RETURN`** shows their first and last names
@@ -197,7 +197,7 @@ FILTER p.firstName = 'Annemarie'
 RETURN p.firstName, p.lastName, p.birthday
 ```
 
-In this query: 
+This query is executed as follows:
 
 1. **`MATCH`** finds all nodes (p) labeled Person 
 2. **`FILTER`** nodes (p) whose first name is Alice 
@@ -217,7 +217,7 @@ FILTER n.birthday = m.birthday
 RETURN count(*) AS same_age_friends
 ```
 
-In this query:
+This query is executed as follows:
 
 1. **`MATCH`** finds all pairs of `Person` nodes that know each other
 2. **`FILTER`** keeps only the pairs where both people have the same birthday
@@ -271,7 +271,7 @@ RETURN fullName, c.name AS companyName            -- Input: top 10 rows table
                                                   -- Output: projected (fullName, companyName) result table
 ```
 
-In this query:
+This query is executed as follows:
 
 1. **`MATCH`** finds people who work at companies with "Air" in their name
 2. **`LET`** creates full names by combining first and family names 
@@ -372,7 +372,7 @@ Start with basic relationship patterns:
 -- Find people working at any company
 (p:Person)-[:workAt]->(c:Company)
 
--- Find cities in any country
+-- Find cities in any country/region
 (ci:City)-[:isPartOf]->(co:Country)  
 ```
 
