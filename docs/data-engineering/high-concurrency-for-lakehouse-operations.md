@@ -45,7 +45,7 @@ High Concurrency mode provides **significant improvements in performance, effici
 | **Optimized Compute Usage** | Up to five Lakehouse operations can run in a shared Spark session, reducing capacity usage and preventing resource exhaustion. |
 | **Faster Start Times** | Session reuse minimizes Spark startup latency, especially when workspaces are enabled with network security features like private links |
 | **Improved Price-Performance** | Only the initiating Spark session is billed — subsequent shared operations are not billed separately, leading to compute costs savings. |
-| **Higher Concurrency** | Enables more users or workflows to execute Lakehouse operations simultaneously without blocking other workloads which alows users with smaller capacities to run more jobs |
+| **Higher Concurrency** | Enables more users or workflows to execute Lakehouse operations simultaneously without blocking other workloads which allows users with smaller capacities to run more jobs |
 
 ## Example scenario
 
