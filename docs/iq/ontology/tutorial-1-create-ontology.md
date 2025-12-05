@@ -322,6 +322,6 @@ When you're done, you have two relationships targeting the *SaleEvent* entity ty
 
 ## Next steps
 
-In this step, you created an ontology (preview) item and populated it with entity types, their properties, and relationship types between them. Next, enrich the entities further by adding a *Freezer* entity that's bound to time series data.
+In this step, you created an ontology (preview) item and populated it with entity types, their properties, and relationship types between them. Next, enrich the entities further by adding a *Freezer* entity that's bound to both static and time series data.
 
-Next, continue to [Enrich the ontology with time series data](tutorial-2-enrich-ontology.md).
+Next, continue to [Enrich the ontology with additional data](tutorial-2-enrich-ontology.md).
