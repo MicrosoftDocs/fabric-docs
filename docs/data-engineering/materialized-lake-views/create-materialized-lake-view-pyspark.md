@@ -60,7 +60,7 @@ You can define a materialized lake view using a decorator `@fmlv.materialized_la
       return enriched_df
 ```
 
-### Creating a materialized lake view with partitions and table properties
+### Create a materialized lake view with partitions and table properties
 
 ```python
    @fmaterialized lake view.materialized_lake_view(
@@ -116,13 +116,13 @@ PySpark materialized lake view refresh requires notebook unlike Spark SQL. Durin
 
 ### Best practices for defining PySpark based materialized lake views
 
-1. Ensure that all cells required for the materialized lake view definition are included within the same notebook.
-1. All cells upon which the materialized lake view definition depends must be positioned above the cell containing the @fmlv decorator definition.
-1. Only one instance of the @fmaterialized lake view decorator and its associated function should be present per notebook cell.
-1. Do not delete the notebook where the PySpark materialized lake view is defined, as this will cause scheduled refresh failures.
-1. Fabric validates all cells related to the materialized lake view and disregards unrelated cells within the notebook.
-1. Multiple notebooks may be utilized to create separate materialized lake views.
-1. Any changes made to the @fmlv decorator definition require the notebook to be re-executed.
+* Ensure that all cells required for the materialized lake view definition are included within the same notebook.
+* All cells upon which the materialized lake view definition depends must be positioned above the cell containing the `@fmlv` decorator definition.
+* Only one instance of the `@fmlv` view decorator and its associated function should be present per notebook cell.
+* Do not delete the notebook where the PySpark materialized lake view is defined, as this will cause scheduled refresh failures.
+* Fabric validates all cells related to the materialized lake view and disregards unrelated cells within the notebook.
+* Multiple notebooks may be utilized to create separate materialized lake views.
+* Any changes made to the `@fmlv` decorator definition require the notebook to be re-executed.
 
 Consider the following example of defining materialized lake view in a notebook 
  
@@ -166,11 +166,11 @@ Consider the following example of defining materialized lake view in a notebook
 ```
 ## Current limitations 
 
-1. PySpark-based MLV does not support optimal refresh; all refreshes default to a full refresh.
-1. You can refresh PySpark MLVs only through the lineage schedule.
-1. Only %%pyspark and %%sql magic commands are supported, and they must appear at the top of a notebook cell. Magic commands placed elsewhere within the same cell are not supported.
-1. The name of a materialized lake can include special characters except for periods.
-1. Using variables to pass parameter values in the @fmlv decorator is not supported. 
+* PySpark-based MLV does not support optimal refresh; all refreshes default to a full refresh.
+* You can refresh PySpark MLVs only through the lineage schedule.
+* Only `%%pyspark` and `%%sql` magic commands are supported, and they must appear at the top of a notebook cell. Magic commands placed elsewhere within the same cell are not supported.
+* The name of a materialized lake can include special characters except for periods.
+* Using variables to pass parameter values in the @fmlv decorator is not supported. 
 
 ## Related content
 
