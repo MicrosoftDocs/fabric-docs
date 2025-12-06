@@ -42,7 +42,7 @@ To create a Power BI semantic model in import or DirectQuery mode, follow these 
 1. Select the **Connect** button dropdown list and choose **Connect to SQL endpoint**.
 1. Select import or DirectQuery storage mode and the tables to add to the semantic model.
 
-From therem, you can create the Power BI semantic model and report to publish to the workspace when ready. 
+From there, you can create the Power BI semantic model and report to publish to the workspace when ready. 
 
 ## Create a new, blank Power BI semantic model
 
