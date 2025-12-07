@@ -5,12 +5,13 @@ author: ms-arali
 ms.author: arali
 ms.reviewer: arali
 ms.topic: how-to
-ms.date: 11/25/2025
+ms.date: 12/05/2025
 ---
 
 # Microsoft JDBC driver for Microsoft Fabric Data Engineering (preview)
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+>[!NOTE]
+> This feature is in preview. 
 
 JDBC (Java Database Connectivity) is a widely adopted standard that enables client applications to connect to and work with data from databases and big data platforms.
 

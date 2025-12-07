@@ -22,7 +22,7 @@ Decide on a WorkloadName and fill it out in .env.dev file.
 
 You can use the [CreateDevAADApp.ps1](https://github.com/microsoft/fabric-extensibility-toolkit/blob/main/scripts/Setup/CreateDevAADApp.ps1) to create a new Microsoft Entra app or you can follow the steps.
 
-1. Navigate to App registrations in the Azure Admin Portal.
+1. Navigate to App registrations in the Microsoft Entra IDmin Portal.
 2. Create a new Multitenant application.
 
  :::image type="content" source="media/setup-manual/manual-1.png" alt-text="Screenshot of app registration." lightbox="media/setup-manual/manual-1.png":::

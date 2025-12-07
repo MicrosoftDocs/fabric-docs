@@ -4,7 +4,7 @@ description: Learn about multivariate anomaly detection in Real-Time Intelligenc
 ms.reviewer: adieldar
 author: spelluru
 ms.author: spelluru
-ms.topic: conceptual
+ms.topic: concept-article
 ms.subservice: rti-anomaly-detector
 ms.custom:
 ms.date: 11/19/2024
