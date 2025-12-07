@@ -34,16 +34,16 @@ Operations agent in Microsoft Fabric Real-Time Intelligence helps you automate m
 
 Operations agent consumes capacity based on the following factors:
 
-1. **Interactive usage:** consumes resources when you actively work within the Fabric UI, such as configuring the agent, reviewing recommendations, or approving actions.
-1. **Background usage:** consumes processing resources once you set up and activate a rule, based on the following operations.
+- **Interactive usage:** consumes resources when you actively work within the Fabric UI, such as configuring the agent, reviewing recommendations, or approving actions.
+- **Background usage:** consumes processing resources once you set up and activate a rule, based on the following operations.
 
-| Azure Metric Name   | Fabric Operation Name                               | CU Rate |
-|------------------|--------------------------------------------------|----------------------|
-| Operations Agents Compute Capacity Usage CU  | Operations agent compute                 | 0.46 CUs per vCore hour                |
-| Copilot and AI Capacity Usage CU  | Copilot in Fabric                  | 100 CUs per 1,000 input tokens 
-400 CUs per 1,000 output tokens               |
-| Operations Agents Autonomous Reasoning Capacity Usage CU  | Operations agent autonomous reasoning          | 400 CUs per 1,000 input tokens 1600 CUs per 1,000 output tokens    |
-| N/A | storage      | per GB per hour              |
+    | Azure Metric Name   | Fabric Operation Name                               | CU Rate |
+    |------------------|--------------------------------------------------|----------------------|
+    | Operations Agents Compute Capacity Usage CU  | Operations agent compute                 | 0.46 CUs per vCore hour                |
+    | Copilot and AI Capacity Usage CU  | Copilot in Fabric                  | 100 CUs per 1,000 input tokens 
+    400 CUs per 1,000 output tokens               |
+    | Operations Agents Autonomous Reasoning Capacity Usage CU  | Operations agent autonomous reasoning          | 400 CUs per 1,000 input tokens 1600 CUs per 1,000 output tokens    |
+    | N/A | storage      | per GB per hour              |
 
 ### Pause and resume activity in your capacity
 
@@ -64,6 +64,6 @@ Consumption rates can change at any time. Microsoft makes reasonable efforts to 
 
 ## Related content
 
-* [Operations agent overview](real-time-intelligence/operations-agent-overview.md)
+* [Operations agent overview](real-time-intelligence/operations-agent.md)
 * [Understand your Azure bill](../enterprise/azure-billing.md)
 * [Understand your Metrics app](../enterprise/metrics-app-compute-page.md)
