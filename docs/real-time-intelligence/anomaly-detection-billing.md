@@ -10,7 +10,7 @@ ms.date: 11/19/2025
 ms.search.form: Anomaly detector billing
 ---
 
-# Anomaly Detector capacity usage and billing in Real-Time Intelligence
+# Anomaly detector capacity usage and billing in Real-Time Intelligence
 
 Anomaly Detector in Microsoft Fabric Real-Time Intelligence automatically identifies unusual patterns in your data from Eventhouse tables. It empowers you to monitor anomalies in real-time, without requiring data science expertise, by using no-code tools for setup and continuous monitoring. This article explains how Real-Time Intelligence measures, bills, and reports Anomaly Detector usage.
 
@@ -24,12 +24,12 @@ Anomaly Detector in Microsoft Fabric Real-Time Intelligence automatically identi
 
 Anomaly Detector operations include:
 
-1. **Interactive Analysis**
-    1. When you initiate anomaly detection from the Real-Time hub or Eventhouse table, the system runs queries to analyze historical data and recommend models.
-    1. Each analysis session consumes CUs based on query complexity and data size. 
-1. **Continuous Monitoring**
-    1. After deploying a model for monitoring, the system routinely queries Eventhouse to detect anomalies in the incoming data.
-    1. Each monitoring cycle incurs CU consumption based on the check frequency and data volume, which determines the associated billing.
+- **Interactive Analysis**
+    - When you initiate anomaly detection from the Real-Time hub or Eventhouse table, the system runs queries to analyze historical data and recommend models.
+    - Each analysis session consumes CUs based on query complexity and data size. 
+- **Continuous Monitoring**
+    - After deploying a model for monitoring, the system routinely queries Eventhouse to detect anomalies in the incoming data.
+    - Each monitoring cycle incurs CU consumption based on the check frequency and data volume, which determines the associated billing.
     > [!IMPORTANT]
     > Billing is tied to query execution and not to the volume of data processed.
 
