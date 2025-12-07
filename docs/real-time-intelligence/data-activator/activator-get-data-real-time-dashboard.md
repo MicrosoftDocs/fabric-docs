@@ -60,7 +60,7 @@ Define your rule conditions as follows:
 * If your visualization includes dimensions, you can select the **On each event grouped by** condition to monitor changes in the data stream by selecting a field for grouping, which divides the data into distinct groups
 
 1. In the **When** dropdown, select the value to be evaluated.
-1. In the **Condition** dropdown, select the condition to be met. For more information, see [Coniditions](activator-detection-conditions.md#conditions).
+1. In the **Condition** dropdown, select the condition to be met. For more information, see [Conditions](activator-detection-conditions.md#conditions).
 1. In the **Occurence** dropdown, set the number of times the condition must be met to trigger the alert.
 
 :::image type="content" source="media/activator-get-data/condition.png" alt-text="Screenshot of create an alert window in Activator, save condition highlighted." lightbox="media/activator-get-data/condition.png":::
