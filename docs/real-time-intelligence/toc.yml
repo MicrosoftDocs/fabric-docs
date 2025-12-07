@@ -841,6 +841,8 @@ items:
       href: anomaly-detection-models.md
     - name: Troubleshoot anomaly detection
       href: troubleshoot-anomaly-detection.md
+    - name: Anomaly detector billing and capacity
+      href: anomaly-detection-billing.md
   - name: Univariate anomaly detection using KQL
     href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
   - name: Multivariate anomaly detection using Spark
