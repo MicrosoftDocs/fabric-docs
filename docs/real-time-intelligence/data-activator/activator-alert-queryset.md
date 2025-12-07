@@ -124,7 +124,7 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
 
 1. In **Save location**, specify where to save your Activator alert. Choose an existing workspace, and save either in an existing activator or a new one.
 
-:::image type="content" source="media/activator-alert-queryset/save-location.png" alt-text="Screenshot of the Save location section in the Add Rule side pane.":::
+    :::image type="content" source="media/activator-alert-queryset/save-location.png" alt-text="Screenshot of the Save location section in the Add Rule side pane.":::
 
 1. Select **Create** to create your Activator rule.
 
