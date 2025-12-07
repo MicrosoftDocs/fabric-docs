@@ -6,7 +6,7 @@ author: spelluru
 ms.author: spelluru
 ms.reviewer: guregini
 ms.topic: how-to
-ms.date: 12/03/2025
+ms.date: 12/07/2025
 ms.search.form: Activator KQL Queryset Onramp
 # CustomerIntent: As a customer, I want to learn how to create Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---
@@ -76,7 +76,6 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
     :::image type="content" source="media/activator-alert-queryset/condition.png" alt-text="Screenshot of the Condition section in the Add Rule side pane.":::
 
     * If your visualization has no dimensions, you can select the **On each event when** condition to monitor changes in the data stream by choosing a specific field to monitor.
-    * If your visualization includes dimensions, you can select the **On each event grouped by** condition to monitor changes in the data stream by selecting a field for grouping, which divides the data into distinct groups
     * In the **When** dropdown, set the value to be evaluated.
     * In the **Condition** dropdown, set the condition to be evaluated. For more information, see [Conditions](activator-detection-conditions.md#conditions).
     * In the **Occurrence** field, set the number of times the condition must be met before an alert is triggered.
@@ -179,7 +178,6 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
     :::image type="content" source="media/activator-alert-queryset/condition.png" alt-text="Screenshot of the Condition section in the Add Rule side pane.":::
 
     * If your visualization has no dimensions, you can select the **On each event when** condition to monitor changes in the data stream by choosing a specific field to monitor.
-    * If your visualization includes dimensions, you can select the **On each event grouped by** condition to monitor changes in the data stream by selecting a field for grouping, which divides the data into distinct groups
     * In the **When** dropdown, set the value to be evaluated.
     * In the **Condition** dropdown, set the condition to be evaluated. For more information, see [Conditions](activator-detection-conditions.md#conditions).
     * In the **Occurrence** field, set the number of times the condition must be met before an alert is triggered.
