@@ -64,6 +64,6 @@ Consumption rates can change at any time. Microsoft makes reasonable efforts to 
 
 ## Related content
 
-* [Operations agent overview](real-time-intelligence/operations-agent.md)
+* [Operations agent overview](operations-agent.md)
 * [Understand your Azure bill](../enterprise/azure-billing.md)
 * [Understand your Metrics app](../enterprise/metrics-app-compute-page.md)
