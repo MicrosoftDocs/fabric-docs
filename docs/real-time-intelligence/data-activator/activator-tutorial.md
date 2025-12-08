@@ -124,8 +124,6 @@ The Explorer pane displays objects, like eventstreams, for this activator. **Del
 
         1. As mentioned in the Action section, create the rule first, and then complete the custom action setup by following steps from [Trigger custom actions (Power Automate flows)](activator-trigger-power-automate-flows.md).
         1. After you create the custom action, in the **Definition** pane, select your custom action from the **Select action** drop-down list.
-
-            :::image type="content" source="media/activator-tutorial/custom-action-selected.png" alt-text="Screenshot showing the Action section of the Definition pane with custom action selected." lightbox="media/activator-tutorial/custom-action-selected.png":::
     1. Select **Create** to save your Activator rule.
 
 We created a Fabric Activator rule. The rule is running against the **Package delivery events** eventstream. The rule looks for packages that have medicine and checks to see if the temperature is now greater than 20 degrees Celsius. When the temperature becomes greater than 20 degrees Celsius, a Teams message is sent.
