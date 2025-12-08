@@ -1,11 +1,11 @@
 ---
-title: Real-Time Intelligence tutorial part 4- Transform data in a KQL Database
+title: Real-Time Intelligence Tutorial Part 4 - Transform data in a KQL Database
 description: Learn how to use an update policy to transform data in a KQL Database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
-ms.date: 11/19/2024
+ms.date: 12/08/2025
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to transform data in a KQL database in Real-Time Intelligence.
@@ -15,19 +15,21 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 3: Set an alert on your event stream](tutorial-3-set-alert.md).
 
-In this part of the tutorial, you learn how to use an update policy to transform data in a KQL Database in Real-Time Intelligence. Update policies are automation mechanisms triggered when new data is written to a table. They eliminate the need for special orchestration by running a query to transform the ingested data and save the result to a destination table. Multiple update policies can be defined on a single table, allowing for different transformations and saving data to multiple tables simultaneously. The target tables can have a different schema, retention policy, and other policies from the source table.
+In this part of the tutorial, you use an update policy to transform data in a KQL Database. Update policies are automation mechanisms triggered when new data is written to a table. They eliminate the need for special orchestration by running a query to transform the ingested data and save the result to a destination table. Multiple update policies can be defined on a single table, allowing for different transformations and saving data to multiple tables simultaneously. The target tables can have a different schema, retention policy, and other policies from the source table.
 
 ## Move raw data table to a bronze folder
 
 In this step, you move the raw data table into a Bronze folder to organize the data in the KQL database.
 
-1. Browse to your workspace.
-1. Select the KQL database you created in a previous step, named *Tutorial*.
+1. Browse to the workspace in which you created resources.
+
+1. Select the **Tutorial** KQL database you created in a previous step.
+
+1. In the object tree, under the KQL database name, select the query workspace called **Tutorial_queryset**.
 
     :::image type="content" source="media/tutorial/tutorial-queryset.png" alt-text="Screenshot of selecting the tutorial queryset from the database item tree.":::
 
-1. In the object tree, under the KQL database name, select the query workspace called **Tutorial_queryset**.
-1. Copy/paste and run the following command in the query editor to move table into a Bronze folder. You can run the query by selecting the **Run** button from the menu ribbon or by pressing **Shift + Enter**.
+1. Copy/paste and run the following command in the query editor to move the *RawData* table into a Bronze folder. You can run the query by selecting the **Run** button from the menu ribbon or by pressing **Shift + Enter**.
 
     ```kusto
     .alter table RawData (BikepointID:string,Street:string,Neighbourhood:string,Latitude:real,Longitude:real,No_Bikes:long,No_Empty_Docks:long,Timestamp:datetime) with (folder="Bronze")
@@ -44,13 +46,15 @@ In this step, you create a target table that will be used to store the data that
     ```
 
 1. Run the command to create the table.
-    You should now see another table under the **Tables** node in the object tree called **TransformedData**.
+
+   You now see a new folder named **Silver** containing a table called **TransformedData** under the **Tables** node in the object tree.
 
 ## Create function with transformation logic
 
 In this step, you create a stored function that holds the transformation logic to be used in the update policy. The function parses the *BikepointID* column and adds two new calculated columns.
 
 1. From the menu ribbon, select **Database**.
+
 1. Select **+New** > **Function**.
 
 1. Edit the function so that it matches the following code, or copy/paste the following command into the query editor.

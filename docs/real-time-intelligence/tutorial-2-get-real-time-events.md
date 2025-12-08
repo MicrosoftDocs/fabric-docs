@@ -24,19 +24,19 @@ Use the sample gallery to create an event stream that simulates bicycle rental d
 
 1. Select **Real-Time** in the left navigation bar.
 
-1. Select **Add data** in the top-right corner of the page. 
+1. Select **Add data** in the top-right corner of the page.
 
    :::image type="content" source="media/tutorial/connect-data-source.png" alt-text="Screenshot of the Real-Time hub with Get Events highlighted." lightbox="media/tutorial/connect-data-source.png":::
 
-1. Open the Quick start page **Try a sample scenarios** page, select **Connect** on the **Bicycle rentals** tile.
-
-   :::image type="content" source="media/tutorial/sample-scenario-bicycle-rentals.png" alt-text="Screenshot of the sample scenario page with the Bicycle rentals connect button highlighted." lightbox="media/tutorial/sample-scenario-bicycle-rentals.png":::
+1. Under **Sample scenarios**, select **Connect** on the **Bicycle rentals** tile.
 
 1. On the **Connect data source** page, for **Source name**, enter **TutorialSource**.
 
 1. In the **Stream details** section, select the pencil button. Change the name of the event stream to **TutorialEventstream**, and then select **Next**.
 
 1. On the **Review + connect** page, review the settings, and select **Connect**.
+
+   :::image type="content" source="media/tutorial/review-data-source.png" alt-text="Screenshot of the review and connect page.":::
 
 ## Transform events: Add a timestamp
 
