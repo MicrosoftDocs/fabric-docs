@@ -1,8 +1,8 @@
 ---
-author: seesharprun
-ms.author: sidandrews
+author: markjbrown
+ms.author: mjbrown
 ms.topic: include
-ms.date: 11/06/2025
+ms.date: 12/03/2025
 ---
 
 ## Schema and data changes limitations
@@ -31,10 +31,9 @@ ms.date: 11/06/2025
 
 ## SQL analytics endpoint limitations
 
-Mirrored Cosmos DB supports up to 2 MB. 
+- Existing tables before November 18, 2025 only support **varchar(8000)** and need to be recreated to adopt new data type and support data up to 2 MB which is the maximum Cosmos DB document size.
 
-- The SQL analytics endpoint supports **varchar(max)** up to 2 MB for tables created after November 18, 2025. 
-- Existing tables before November 18, 2025 only support **varchar(8000)** and need to be recreated to adopt new data type and support data greater that 8 KB.
+- The SQL analytics endpoint supports **varchar(max)** up to 2 MB for tables created after November 18, 2025.
 
 ## Mirrored item limitations
 

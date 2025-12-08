@@ -43,6 +43,6 @@ Use the toolkit when you want to bring a custom experience to Fabric while lever
 
 - [Architecture](architecture.md)
 - [Manifest overview](manifest-overview.md)
-- [Implementation guide](implementation-guide.md)
-- [Publish your workload](publish-workload-flow.md)
+- [Getting started guide](get-started.md)
+- [Publish your workload](publishing-overview.md)
 - [Fabric Public REST APIs](/rest/api/fabric/articles/)
