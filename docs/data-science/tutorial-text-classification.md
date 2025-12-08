@@ -231,7 +231,7 @@ Use Fabric pipeline items to manage the orchestration of these tasks. Orchestrat
 
 You can configure these steps to allow you to skip, repeat, or loop through different steps as you want. If any steps encounter errors, you can easily retrigger the pipeline from the specific stage of failure instead of restarting from scratch.
 
-On top of this, the monitoring hub in Fabric helps you maintain complete visibility in your operations. It tracks key metrics across your pipeline. Details on every step highlight duration, resource usage, and status. This centralized view makes it simple to audit, refine, and guarantee the quality of your workflows as they evolve.
+The monitoring hub in Fabric also helps you maintain complete visibility in your operations. It tracks key metrics across your pipeline. Details on every step highlight duration, resource usage, and status. This centralized view makes it simple to audit, refine, and guarantee the quality of your workflows as they evolve.
 
 You can use the *{justification_prompt}* injection to extend the prompt and review labeled results to improve accuracy.
 
