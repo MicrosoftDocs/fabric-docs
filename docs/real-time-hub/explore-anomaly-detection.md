@@ -6,7 +6,7 @@ ms.author: v-hzargari
 ms.reviewer: tessahurr
 ms.topic: how-to
 ms.date: 09/15/2025
-ms.search.form: Explore Anomaly Detection Events, Anomaly Detection Events
+ms.search.form: Anomaly Detection Explore Anomaly Detection Events
 ---
 
 # Explore anomaly detection events in Fabric Real-Time hub (Preview)

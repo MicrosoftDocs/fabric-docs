@@ -2,13 +2,13 @@
 title: How to create shortcuts in your application
 description: Learn how to create shortcuts from a lakehouse or S3 account into your Fabric workload item
 author: gsaurer
-ms.author: gesaur
+ms.author: billmath
 ms.topic: how-to
 ms.custom:
 ms.date: 08/21/2025
 ---
 
-# Create shortcuts in your item
+# How-To: Create shortcuts in your item
 
 This article explains how to implement shortcut functionality in your Microsoft Fabric workload item to reference data from lakehouses or external cloud storage sources like Amazon S3 without copying the data. Shortcuts allow your application to access and work with data from various sources through a unified interface, supporting the "single copy promise" of OneLake.
 
@@ -355,4 +355,4 @@ Ensure your workload correctly handles authentication and provides appropriate u
 - [OneLake shortcuts overview](../onelake/onelake-shortcuts.md)
 - [OneLake shortcuts REST APIs](../onelake/onelake-shortcuts-rest-api.md)
 - [Key concepts in the Extensibility Toolkit](key-concepts.md)
-- [How to store data in an item](how-to-store-data-in-item.md)
+- [How to store data in an item](how-to-store-data-in-onelake.md)

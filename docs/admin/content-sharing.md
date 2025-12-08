@@ -111,7 +111,7 @@ You can export data from the Details page, or any other visual, by clicking _Mor
 You can also navigate directly to an item or its workspace using the hyperlinks in the data table.
 
 > [!NOTE]
-> Workspaces can only be accessed if you have a valid workspace role, else you are redirected to your *My workspace*. Item urls currently only support legacy Power BI items and some Fabric items.
+> Workspaces can only be accessed if you have a valid workspace role, else you're redirected to your *My workspace*. Item urls currently only support legacy Power BI items and some Fabric items.
 
 ## Measures
 
@@ -128,7 +128,7 @@ The following measures are used in visuals throughout the *content sharing* repo
 | Total access count    | The number of individual users, service principals, and group members with access to an item. *Total access counts* for workspaces, capacities, and domains are a sum of access counts for all underlying items, not the container itself. *Total access counts* include both individual access to an item and access through a group, so users are double counted if they have access to an item in both scenarios.   |
 
 > [!NOTE]
-> Access counts include access to an item through _Manage permissions_, or access inherited through a workspace role. Access counts also include service principals and sharing links for a specific persons or group.
+> Access counts include access to an item through _Manage permissions_, or access inherited through a workspace role. Access counts include service principals and sharing links for a specific persons or group. Access counts include permissions to an item through a related item, such as permissions to a semantic model through org app access.
 
 ## Considerations and limitations
 
@@ -158,6 +158,10 @@ Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on i
 
 * All *My workspaces* are counted as separate records as part of the _Total workspaces_ measure.
 * Trial Fabric capacities are counted as separate records as part of the _Total capacities_ measure. Trial capacities can be filtered out using the Capacity SKU filter with the value _FT1_.
+
+### Model limitations
+
+* The semantic model is read-only and can't be used with Fabric data agents.
 
 ## Related content
 

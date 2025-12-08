@@ -81,6 +81,29 @@ The length of the bar relates to the duration of the pipeline. You can select th
 
 :::image type="content" source="media/monitor-pipeline-runs/gantt-view-bar-details.png" alt-text="Screenshot of pipeline run details from Gantt view.":::
 
+## Workspace monitoring for pipelines
+
+Workspace Monitoring provides log-level visibility for all items in a workspace, including pipelines.
+
+1. To enable Workspace Monitoring, go to **Workspace Settings** in your Fabric Workspace and select **Monitoring**.
+   
+1. Add a Monitoring Eventhouse and turning on **Log workspace activity**. Fabric creates a KQL database inside the Eventhouse within your workspace for storing logs. 
+   
+   :::image type="content" source="media/monitor-pipeline-runs/workspace-monitoring-settings.png" alt-text="Screenshot of how to toggle on workspace monitoring.":::
+
+1. Navigate to the KQL database created. You can find this in the **Monitoring database** link within the Monitoring settings or find the database within your workspace.
+
+   :::image type="content" source="media/monitor-pipeline-runs/monitoring-kql-database.png" alt-text="Screenshot of items generated from workspace monitoring.":::
+
+1. Within the KQL database, the **ItemJobEventLogs** table captures pipeline-level events that occur in your workspace (we call this L1 monitoring). Logs include pipeline name, run status, timestamps, and system diagnostics.
+
+   :::image type="content" source="media/monitor-pipeline-runs/pipeline-workspace-monitoring.png" alt-text="Screenshot of pipeline workspace monitoring table.":::
+
+Use KQL queries in the Monitoring Eventhouse to analyze:
+- Success/failure trends
+- Performance metrics
+- Error details for troubleshooting
+
 ## Related content
 
 - [Quickstart: Create your first pipeline to copy data](create-first-pipeline-with-sample-data.md)

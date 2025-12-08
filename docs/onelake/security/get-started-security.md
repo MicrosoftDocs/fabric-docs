@@ -36,12 +36,14 @@ This section describes the security model based on generally available OneLake f
 
 Workspace permissions define what actions users can take within a workspace and its items. These permissions are managed at the workspace level and are primarily control plane permissions; they determine administrative and item management capabilities, not direct data access. However, workspace permissions will generally inherit down to the item and folder level to grant data access by default. Workspace permissions allow for defining access to all items within that workspace. There are four different workspace roles, each of which grants different types of access. Below are the default behaviors of each workspace role.
 
-| Role | Can add admins? | Can add members? | Can edit OneLake security? | Can write data and create items? | Can read data in OneLake? |
-|--|--|--|--|--|
-| Admin | Yes | Yes | Yes | Yes | Yes |
-| Member | No | Yes | Yes | Yes | Yes |
-| Contributor | No | No | No | Yes | Yes |
-| Viewer | No | No | No | No | No* |
+| Role | Can add admins? | Can add members? | Can edit OneLake security? | Can write data and create items? | Can read data in OneLake? | Update and delete the workspace. |
+|--|--|--|--|--|--|--|--|
+| Admin | Yes | Yes | Yes | Yes | Yes | Yes |
+| Member | No | Yes | Yes | Yes | Yes | No |
+| Contributor | No | No | No | Yes | Yes | No |
+| Viewer | No | No | No | No | No* | No |
+
+Learn more about [Roles in workspaces in Microsoft Fabric](../../fundamentals/roles-workspaces.md).
 
 > [!NOTE]
 > *Viewers can be given access to data through OneLake security roles.
@@ -64,9 +66,7 @@ Another way to configure permissions is via an item's **Manage permissions** pag
 
 ## OneLake security (preview)
 
-OneLake security allows users to define granular role-based security to data stored in OneLake, and enforce that security consistently across all compute engines in Fabric. OneLake security is the **data plane** security model for data in OneLake. 
-
-[!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
+OneLake security allows users to define granular role-based security to data stored in OneLake, and enforce that security consistently across all compute engines in Fabric. OneLake security is the **data plane** security model for data in OneLake.
 
 Fabric users in the Admin or Member roles can create OneLake security roles to grant users access to data within an item. Each role has four components:
 
@@ -112,7 +112,7 @@ To view your OneLake audit logs, follow the instructions in [Track user activiti
 
 Data stored in OneLake is encrypted at rest by default using Microsoft-managed keys. Microsoft-managed keys are rotated appropriately. Data in OneLake is encrypted and decrypted transparently and is FIPS 140-2 compliant.
 
-Encryption at rest using customer-managed keys currently isn't supported. You can submit a request for this feature on [Microsoft Fabric ideas](https://ideas.fabric.microsoft.com/).
+You can use encryption at rest using customer-managed keys to add another layer of protection using keys you own and control. To know more, see [Customer-managed keys for Fabric workspaces.](../../security/workspace-customer-managed-keys.md)
 
 ### Data in transit
 

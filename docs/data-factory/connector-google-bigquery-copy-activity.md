@@ -32,11 +32,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Google BigQuery under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-google-bigquery/google-bigquery-source.png" alt-text="Screenshot showing source tab.":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select a Google BigQuery connection from the connection list. If no connection exists, then create a new Google BigQuery connection by selecting **New**.
 - **Use query**: Select from **Table** or **Google SQL**.
     - If you select **Table**:
@@ -69,7 +66,6 @@ The following tables contain more information about the copy activity in Google 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|\<your Google BigQuery connection> |Yes|connection|
 |**Connection type** | Your connection type. Select **Google BigQuery**.|**Google BigQuery**|Yes |/|
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Google SQL** to read data using SQL queries.|• **Table** <br>• **Google SQL** |Yes |/|

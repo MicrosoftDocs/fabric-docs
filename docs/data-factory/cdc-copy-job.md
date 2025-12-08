@@ -38,6 +38,9 @@ Supported source store:
    - On-premises SQL Server
    - Azure SQL Managed Instance
    - Fabric Lakehouse table
+   - SAP Datasphere Outbound for ADLS Gen2
+   - Snowflake
+   - Google BigQuery
 
 Supported destination store:
    - Azure SQL DB
@@ -45,6 +48,11 @@ Supported destination store:
    - Azure SQL Managed Instance
    - SQL Database in Fabric (Preview)
    - Snowflake
+   - Fabric Lakehouse table
+
+
+For SAP Datasphere Outbound, please go to [Change Data Capture from SAP via SAP Datasphere Outbound in Copy job](copy-job-tutorial-sap-datasphere.md) to learn more details. 
+
 
 ## How to get started:
 
@@ -123,11 +131,11 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
    :::image type="content" source="media/copy-job/monitor-cdc-second-run.png" alt-text="Screenshot showing the Copy job panel where you can monitor capturing and replicating all changes.":::
 
 
+
 ## Known limitations
 - When both CDC-enabled and non-CDC-enabled source tables are selected in a Copy Job, it treats all tables as watermark-based incremental copy.
 - When CDC-enabled source tables are selected, column mapping can't be configured.
 - Custom capture instances aren't supported; only the default capture instance is supported.
-- Composite primary key are not yet supported for merging changes.
 - SCD2 isn't supported for CDC-enabled source datastore yet.
 - DDL isn't supported yet in Copy job.
 

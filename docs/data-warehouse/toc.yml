@@ -68,30 +68,43 @@ items:
     href: copilot-code-completion.md
   - name: Use quick actions
     href: copilot-quick-action.md
-- name: Design and Develop
+- name: Design
   items:
   - name: Better together - the lakehouse and warehouse
     href: get-started-lakehouse-sql-analytics-endpoint.md
   - name: Data types
     href: data-types.md
-  - name: Manage objects in a warehouse
-    href: manage-objects.md
+  - name: IDENTITY column
+    href: identity.md
   - name: Primary, foreign, and unique keys
     href: table-constraints.md    
-  - name: Source control with Warehouse
-    href: source-control.md
-  - name: SQL analytics endpoint performance
-    href: sql-analytics-endpoint-performance.md
   - name: Tables
     href: tables.md
   - name: T-SQL surface area
     href: tsql-surface-area.md
+  - name: How to  
+    items:
+    - name: Create IDENTITY column
+      href: tutorial-identity.md      
+    - name: Manage objects in a warehouse
+      href: manage-objects.md
+- name: Continuous integration & continuous deployment (CI/CD)
+  items:
+  - name: Development and Deployment
+    href: development-deployment.md
+  - name: Developer warehouse projects
+    href: develop-warehouse-project.md
+  - name: Source control with Warehouse
+    href: source-control.md
+
+- name: Develop
+  items:
+  - name: Query labels
+    href: query-label.md
   - name: Transactions
     href: transactions.md 
   - name: Warehouse collation
     href: collation.md
-  - name: Warehouse performance
-    href: guidelines-warehouse-performance.md
   - name: Warehouse snapshots
     href: warehouse-snapshot.md
     displayName: Snapshot
@@ -106,8 +119,8 @@ items:
       href: analyze-range-bands.md
     - name: Datamart upgrade to warehouse
       href: datamart-upgrade-to-warehouse.md
-    - name: Generate unique identifiers
-      href: generate-unique-identifiers.md      
+    - name: Create an IDENTITY column
+      href: tutorial-identity.md
 - name: Dimensional modeling
   items:
   - name: Overview
@@ -124,10 +137,10 @@ items:
     href: browse-file-content-with-openrowset.md
   - name: Ingesting data into the warehouse
     href: ingest-data.md
-  - name: Ingest data with pipelines
-    href: ingest-data-pipelines.md
   - name: Ingest data with the COPY statement
     href: ingest-data-copy.md
+  - name: Ingest data with pipelines
+    href: ingest-data-pipelines.md
   - name: Ingest data with TSQL
     href: ingest-data-tsql.md
   - name: Use dbt with data warehouse
@@ -136,8 +149,12 @@ items:
   items:
   - name: Semantic models
     href: semantic-models.md
+  - name: Create a semantic model
+    href: create-semantic-model.md
+  - name: Manage a semantic model
+    href: manage-semantic-model.md
   - name: Create reports in the Power BI service
-    href: reports-power-bi-service.md    
+    href: reports-power-bi-service.md
 - name: Collaborate, share, and manage security
   items:
   - name: Data warehousing security
@@ -145,10 +162,13 @@ items:
   - name: Service principals
     href: service-principals.md
     displayName: SPN
+  - name: Encryption
+    displayName: CMK encryption
+    href: encryption.md
+  - name: Entra ID authentication
+    href: entra-id-authentication.md
   - name: SQL Audit Logs
     href: sql-audit-logs.md
-  - name: Microsoft Entra ID authentication
-    href: entra-id-authentication.md
   - name: Workspace roles
     href: workspace-roles.md
   - name: Column-level security
@@ -202,15 +222,26 @@ items:
     href: tutorial-clone-table-portal.md
 - name: Manage performance
   items:
+  - name: Data clustering
+    href: data-clustering.md
   - name: In-memory and disk caching
     href: caching.md
+  - name: Performance guidelines
+    displayName: Warehouse performance
+    href: guidelines-warehouse-performance.md
   - name: Result set caching
     href: result-set-caching.md
     displayName: result set caching
+  - name: SQL analytics endpoint performance
+    href: sql-analytics-endpoint-performance.md
   - name: Statistics
     href: statistics.md
   - name: V-Order 
     href: v-order.md
+  - name: How to
+    items:    
+      - name: Use data clustering in Fabric Data Warehouse
+        href: tutorial-data-clustering.md
 - name: Mirroring databases
   items:
     - name: Mirroring overview
@@ -234,6 +265,10 @@ items:
         href: monitor-using-dmv.md
       - name: Observe utilization trends
         href: how-to-observe-utilization.md
+- name: Continuous integration and deployment
+  items:
+  - name: Overview
+    href: development-deployment.md
 - name: Warehouse capacity
   items:
   - name: Burstable capacity
@@ -261,7 +296,8 @@ items:
       href: extract-data-tier-application-synapse-dedicated-sql-pool.md
     - name: Migration Assistant guide for Azure Synapse Analytics
       href: migrate-with-migration-assistant.md
-
+    - name: Migrate to IDENTITY columns
+      href: migrate-identity-columns.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse

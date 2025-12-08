@@ -5,9 +5,10 @@ ms.reviewer: tessarhurr
 ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: how-to
+ms.subservice: rti-anomaly-detector
 ms.custom: 
-ms.date: 09/15/2025
-ms.search.form: Anomaly detection how-to
+ms.date: 12/04/2025
+ms.search.form: Anomaly Detection How To
 ---
 
 # Anomaly detection in Real-Time Intelligence (Preview)
@@ -31,11 +32,12 @@ Key capabilities include:
 - A Python plugin enabled on that same Eventhouse
   - To enable the plugin, navigate to your Eventhouse.
   - In the upper toolbar, select **Plugins** and then enable the **Python language extension**.
-  - Select the Python 3.11.7 DL plugin and click **Done**.
+  - Select the Python 3.11.7 DL plugin and select **Done**.
   :::image type="content" source="media/anomaly-detection/python.png" alt-text="Screenshot of enabling the Python plugin in Eventhouse.":::
 
 > [!NOTE]
-> Ensure your Eventhouse table contains sufficient historical data to improve model recommendations and anomaly detection accuracy. For example, datasets with one data point per day require a few months of data, while datasets with one data point per second might only need a few days.
+> * Ensure your Eventhouse table contains sufficient historical data to improve model recommendations and anomaly detection accuracy. For example, datasets with one data point per day require a few months of data, while datasets with one data point per second might only need a few days.
+> * This feature is available in all regions where Microsoft Fabric is available.
 
 ## How to set up anomaly detection
 
@@ -57,7 +59,14 @@ You can start anomaly detection in two ways:
        1. Select the table to open the details page. In the upper toolbar, select **Anomaly detection**.
 
             :::image type="content" source="media/anomaly-detection/detect-details-page.png" alt-text="Screenshot of the detect anomalies option in the details page.":::
+    1. On the **Anomaly detection** page, for **Save to**, select the drop-down list, and then select **Create detector**. 
 
+        :::image type="content" source="media/anomaly-detection/real-time-hub-create-detector.png" alt-text="Screenshot of the Anomaly Detector page in Real-Time hub.":::
+    1. On the **Create anomaly detector** page, select your Fabric **workspace**, enter a **name** for the anomaly detector, and then select **Create**. 
+    
+        :::image type="content" source="media/anomaly-detection/real-time-hub-create-anomaly-detector-dialog.png" alt-text="Screenshot of the Create Anomaly Detector page in Real-Time hub.":::     
+
+        Now, continue to the [Configure input columns for analysis](#configure-input-columns-for-analysis) section, but skip configuring the **source** as the source is already selected in Real-Time hub. Start with configuring the **Value to watch** section.
 1. From the **Create** button:
 
     1. In the Fabric home page, select the ellipses (...) icon and then the **Create** option.
@@ -72,7 +81,7 @@ You can start anomaly detection in two ways:
 
 Specify which columns to analyze and how to group your data.
 
-1. In the **Anomaly detection** configuration pane, select the **Data source** you want to analyze.
+1. In the **Anomaly detection** configuration pane, select the **Data source** you want to analyze. If you're using **Real-Time hub**, skip the selection of source, and continue to configuring the **Value to watch** section. 
 
     :::image type="content" source="media/anomaly-detection/add-source.png" alt-text="Screenshot of the Anomaly detection configuration pane with Data source option highlighted.":::
 
@@ -131,9 +140,9 @@ Once the analysis is complete, you can review the results and explore the detect
 
 5. Interact with the visuals and tables to gain deeper insights into the detected anomalies and understand the patterns in your data.
 
-6. Save the anomaly detector to preserve your configuration and revisit it later.
+6. **Save** the anomaly detector to preserve your configuration and revisit it later.
 
-7. Publish the detected anomalies to the Real-Time Hub to enable continuous monitoring of incoming data. You can also configure downstream actions, such as sending alerts to Activator.
+7. **Publish** the detected anomalies to the Real-Time Hub to enable continuous monitoring of incoming data. You can also configure downstream actions, such as sending alerts to Activator.
 
 By reviewing and fine-tuning the results, you can ensure that your anomaly detection setup is optimized for your specific use case.
 
@@ -149,6 +158,13 @@ Follow the steps to reanalyze the model with new data:
 
 > [!WARNING]
 > Reanalyzing will update the model used by existing monitoring rules, which may impact downstream actions.
+
+### Explore anomaly detection events and set alerts
+
+After publishing your anomaly detection results, you can explore the detected anomalies in the Real-Time Hub and set up alerts to notify you of future anomalies.
+For more information, see:
+- [Explore anomaly detection events](../real-time-hub/explore-anomaly-detection.md)
+- [Set alerts on anomaly detection events](../real-time-hub/set-alerts-anomaly-detection.md)
 
 ## Limitations and considerations
 
@@ -183,15 +199,16 @@ For more information, see [Enable Python plugin in Real-Time Intelligence](pytho
 
 ## Next steps
 
-Now that you have anomaly detection configured, explore related capabilities:
+Now that you have anomaly detection configured, next you can:
 
+- [Explore anomaly detection events](../real-time-hub/explore-anomaly-detection.md)
+- [Set alerts on anomaly detection events](../real-time-hub/set-alerts-anomaly-detection.md)
+- [Set up Activator for automated responses](../real-time-intelligence/data-activator/activator-introduction.md)
 - [Learn about multivariate anomaly detection](multivariate-anomaly-detection.md)
-- [Explore multivariate anomaly overview](multivariate-anomaly-overview.md)
 - [Create alerts from a KQL queryset](../data-activator/data-activator-alert-queryset.md)
-- [Set up Data Activator for automated responses](../data-activator/data-activator-introduction.md)
 
 ## Related content
 
 - [KQL query reference](/kusto/query/)
 - [Real-Time Dashboard documentation](dashboard-real-time-create.md)
-- [Data Activator overview](../data-activator/data-activator-introduction.md)
+- [Activator overview](../data-activator/data-activator-introduction.md)

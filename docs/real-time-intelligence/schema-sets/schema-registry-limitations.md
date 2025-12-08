@@ -1,6 +1,5 @@
 ---
 title: Schema Registry Limits in Fabric Real-Time Intelligence
-ms.subservice: rti-hub
 ms.service: fabric
 description: Understand the limitations of Schema Registry in Fabric Real-Time Intelligence, including supported sources, destinations, and handling of non-conforming events.
 #customer intent: As a data engineer, I want to understand the current limitations of Schema Registry in Fabric Real-Time Intelligence so that I can plan my data streaming implementation effectively.
@@ -30,6 +29,7 @@ Schema Registry in Fabric Real-Time Intelligence is currently in preview. This a
 - A limited set of input sources are supported. During public preview, schema registration is only available for these input sources:
     - Custom Endpoint
     - Azure SQL Change Data Capture (CDC)
+    - Azure Event Hubs
 - A limited set of destinations are supported. Today, schema-validated events can only be written to:
     - Eventhouse (Push Mode)
     - Custom App

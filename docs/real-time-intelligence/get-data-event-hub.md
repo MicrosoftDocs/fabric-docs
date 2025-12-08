@@ -5,6 +5,7 @@ ms.reviewer: guregini
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
+ms.subservice: rti-eventhouse
 ms.custom: sfi-image-nochange
 ms.date: 08/04/2025
 ms.search.form: Get data in a KQL Database, Data connection
@@ -25,7 +26,7 @@ To get data from Event Hubs using Eventstream, see [Add Azure Event Hubs source 
 
 ## Prerequisites
 
-* An Azure subscription. [Create a free Azure account](https://azure.microsoft.com/free/)
+* An Azure subscription. [Create a free Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * An [event hub](/azure/event-hubs/event-hubs-create?context=/fabric/context/context)
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions
@@ -37,7 +38,7 @@ To get data from Event Hubs using Eventstream, see [Add Azure Event Hubs source 
 
 Before you can create a connection to your Event Hubs data, you need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the connection. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature?context=/fabric/context/context).
 
-1. In the [Azure portal](https://ms.portal.azure.com/), browse to the event hubs instance you want to connect.
+1. In the [Azure portal](https://portal.azure.com/), browse to the event hubs instance you want to connect.
 1. Under **Settings**, select **Shared access policies**
 1. Select **+Add** to add a new SAS policy, or select an existing policy with *Manage* permissions.
 

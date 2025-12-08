@@ -3,9 +3,9 @@ title: Fabric operations
 description: Understand the Microsoft Fabric operations.
 author: JulCsc
 ms.author: juliacawthra
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
-ms.date: 06/17/2025
+ms.date: 11/26/2025
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -80,9 +80,12 @@ The Data Factory experience contains operations for [Dataflows Gen2](#dataflows-
 
 You can find the consumption rates for Dataflows Gen2 in [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-dataflows-gen2.md).
 
+>[!NOTE]
+>As of October 2025, the operation name **Dataflow Gen2 Refresh** has been renamed to **Dataflow Gen2 Run Queries**.
+
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
-| Dataflow Gen2 Refresh                            | Compute cost associated with dataflow Gen2 refresh operation       | Dataflow Gen2 | Dataflows Standard Compute Capacity Usage CU | Background |
+| Dataflow Gen2 Run Queries                           | Compute cost associated with dataflow Gen2 evaluation operation       | Dataflow Gen2 | Dataflows Standard Compute Capacity Usage CU | Background |
 | High Scale Dataflow Compute - SQL Endpoint Query | Usage related to the dataflow Gen2 staging warehouse SQL endpoint  | Warehouse     | High Scale Dataflow Compute Capacity Usage CU | Background |
 
 #### Pipelines
@@ -200,7 +203,15 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder (preview)](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Anomaly Detector](#anomaly-detector), [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder (preview)](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+
+### Anomaly Detector
+
+You can find the consumption rates for Anomaly Detector in [Anomaly Detector capacity usage and billing in Real-Time Intelligence](../real-time-intelligence/anomaly-detection-billing.md).
+
+| Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
+| ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
+| Anomaly Detector Run Queries | Interactive analysis and continuous monitoring          | AnomalyDetector | Anomaly Detector Queries Capacity Usage CU         | Background |
 
 #### Azure and Fabric events
 
@@ -220,7 +231,7 @@ You can find the consumption rates for digital twin builder (preview) in [Digita
 
 | Operation        | Description                 | Item     | Azure billing meter              | Type       |
 | ---------------- | --------------------------- | -------- | -------------------------------- | ---------- |
-| Digital Twin Builder Operation | Usage for on-demand and scheduled digital twin builder flow operations.  | Digital twin builder flow | Digital Twin Builder Operation Capacity Usage CU | Background |
+| Digital Twin Builder Operation | Usage for on-demand and scheduled digital twin builder flow operations  | Digital twin builder flow | Digital Twin Builder Operation Capacity Usage CU | Background |
 
 #### Eventstream
 

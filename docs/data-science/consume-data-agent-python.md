@@ -95,14 +95,14 @@ Use the `InteractiveBrowserCredential` class to authenticate with Microsoft Entr
 
 ```python
 from azure.identity import InteractiveBrowserCredential
-from fabric_data_agent_client import DataAgentClient
+from fabric_data_agent_client import FabricDataAgentClient
 credential = InteractiveBrowserCredential()
 ```
 
 ## Create the data agent client
 
 ```python
-client = DataAgentClient(credential=credential)
+client = FabricDataAgentClient(credential=credential)
 ```
 > [!NOTE]
 > - The `fabric-data-agent-client` package provides the client SDK for connecting to the Fabric data agent.

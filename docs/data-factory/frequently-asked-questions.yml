@@ -41,7 +41,7 @@ sections:
       - question: |
           Where can I find monthly updates available in Fabric?
         answer: |
-          Fabric monthly updates are available at the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/en-us/blog/category/monthly-update).
+          Fabric monthly updates are available at the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/category/monthly-update).
       - question: |
           What is Fabric Data Factory Pricing / billing model?
         answer: |

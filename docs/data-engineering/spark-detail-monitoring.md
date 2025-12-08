@@ -12,7 +12,7 @@ ms.search.form: Monitor Spark application details
 
 # Apache Spark application detail monitoring
 
-With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache Spark to run notebooks, jobs, and other kinds of applications in your workspace. This article explains how to monitor your Apache Spark application.
+With Microsoft Fabric, you can use Apache Spark to run notebooks, jobs, and other kinds of applications in your workspace. This article explains how to monitor your Apache Spark application.
 
 You can access the Spark monitoring detail page from either the Fabric Monitoring Hub or the item's Recent runs panel. 
 

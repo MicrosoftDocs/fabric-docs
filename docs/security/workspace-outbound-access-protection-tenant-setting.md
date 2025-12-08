@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to
-ms.date: 09/24/2025
+ms.date: 11/10/2025
 
 #customer intent: As a Fabric administrator, I want to enable workspace outbound access protection on my tenant so that workspace admins can securely manage outbound network connections from their workspaces.
 
@@ -13,9 +13,9 @@ ms.date: 09/24/2025
 
 # Manage admin access to workspace outbound access protection settings
 
-Workspace outbound access protection is a network security feature that ensures that connections outside the workspace go through a secure connection between Fabric and a virtual network. It prevents the items from establishing unsecure connections to sources outside the workspace boundary unless allowed by the workspace admins.
+Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. With this feature, admins can block all outbound connections, and then allow only approved connections to external resources through secure connections. [Learn more](./workspace-outbound-access-protection-overview.md).
 
-The **Configure workspace-level outbound network rules** tenant setting in the Fabric admin center allows tenant admins to enable or disable the ability for workspace admins to configure outbound access protection for their workspaces. This setting is disabled by default. A Fabric administrator must enable this tenant setting as described in this article before a workspace admin can configure outbound access protection for their workspace.
+Before workspace admins can manage outbound access protection, a Fabric administrator must enable the **Configure workspace-level outbound network rules** tenant setting. By default, this setting is turned off and must be enabled to allow workspace admins to configure outbound access protection.
 
 ## Prerequisites
 
@@ -23,9 +23,11 @@ The **Configure workspace-level outbound network rules** tenant setting in the F
 
 ## Enable workspace outbound access protection on your tenant
 
-1. [Open the admin portal and go to the tenant settings](/fabric/admin/about-tenant-settings#how-to-get-to-the-tenant-settings).
+1. Sign in to [Fabric](https://app.fabric.microsoft.com) using your admin account credentials.
 
-1. Find and expand the **Configure workspace-level outbound network rules** tenant setting.
+1. Select the **Settings** (gear) icon, and then select **Admin portal**.
+
+1. In the **Tenant settings**, find and expand the **Configure workspace-level outbound network rules** tenant setting.
 
 1. Switch the toggle to **Enabled**.
 
@@ -33,7 +35,6 @@ The **Configure workspace-level outbound network rules** tenant setting in the F
 
 1. Select **Apply**.
 
-## Related content
+## Next steps
 
-- [Workspace outbound access protection overview](./workspace-outbound-access-protection-overview.md)
-- [Workspace outbound access protection - scenarios](./workspace-outbound-access-protection-scenarios.md)
+- [Enable workspace outbound access protection](./workspace-outbound-access-protection-set-up.md)

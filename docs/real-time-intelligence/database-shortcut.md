@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 11/19/2024
 ms.search.form: KQL Database
+ms.subservice: rti-eventhouse
 #Customer intent: To create a database shortcut in Real-Time Intelligence.
 ---
 # Create a database shortcut
@@ -104,7 +105,7 @@ A data consumer who wants to create a database shortcut using invitation tokens 
 
 To create an invitation token, the data provider can use the following steps:
 
-1. Browse to the [Azure portal](https://ms.portal.azure.com).
+1. Browse to the [Azure portal](https://portal.azure.com).
 1. Browse to the Azure Data Explorer database you wish to use as source.
 1. Select **Share**.
 

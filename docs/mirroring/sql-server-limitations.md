@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases From SQL Serv
 author: whhender
 ms.author: whhender
 ms.reviewer: ajayj, rajpo
-ms.date: 08/21/2025
+ms.date: 11/05/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -12,8 +12,6 @@ ms.custom:
 # Limitations in Microsoft Fabric mirrored databases from SQL Server
 
 Current limitations in the [Microsoft Fabric mirrored databases](overview.md) From SQL Server are listed in this page. This page is subject to change.
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 For troubleshooting, see:
 
@@ -28,6 +26,7 @@ For troubleshooting, see:
 ## Database level limitations
 
 - Fabric Mirroring for SQL Server is only supported on a primary database of an availability group.
+    - Fabric Mirroring is currently not supported on a failover cluster instance.
 - The SQL Server database cannot be mirrored if the database already has been configured for Azure Synapse Link for SQL or the database is already mirrored in another Fabric workspace.
   - A database in a SQL Server 2025 instance cannot be mirrored if Change Data Capture (CDC) is enabled on the source database.
 - The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently cannot be replicated.
@@ -56,12 +55,12 @@ For troubleshooting, see:
 
 ## Table level
 
-- A table cannot be mirrored if the primary key is one of the data types: **sql_variant**, **timestamp**/**rowversion**.
+- Tables with primary key or a clustered index (when a primary key does not exist) on unsupported types cannot be mirrored - **computed columns**, **user-defined types**, **geometry**, **geography**, **hierarchy ID**, **SQL variant**, **timestamp**, **datetime2(7)**, **datetimeoffset(7)**, or **time(7)**.
+
 - When mirroring SQL Server 2016 thru SQL Server 2022, a table cannot be mirrored if it does not have a primary key.
 - Delta lake supports only six digits of precision.
    - Columns of SQL type **datetime2**, with precision of 7 fractional second digits, do not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss happens if columns of this type are mirrored and seventh decimal second digit will be trimmed.
-   - A table cannot be mirrored if the primary key is one of these data types: **datetime2(7)**, **datetimeoffset(7)**, **time(7)**, where `7` is seven digits of precision.
-   - The **datetimeoffset(7)** data type does not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss (loss of time zone and seventh time decimal) occurs if columns of this type are mirrored.
+  - The **datetimeoffset(7)** data type does not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss (loss of time zone and seventh time decimal) occurs if columns of this type are mirrored.
 - Clustered columnstore indexes are not currently supported.
 - If one or more columns in the table is of type Large Binary Object (LOB) with a size > 1 MB, the column data is truncated to size of 1 MB in Fabric OneLake.
 - Source tables that have any of the following features in use cannot be mirrored.

@@ -13,13 +13,15 @@ This article covers troubleshooting steps troubleshooting for mirroring Azure SQ
 
 ## Changes to Fabric capacity or workspace
 
-Learn more from [Changes to Fabric capacity](troubleshooting.md#changes-to-fabric-capacity). 
+Changes to the Fabric capacity or workspace can affect mirroring. For more information, review the effects on mirroring from [Changes to Fabric capacity](troubleshooting.md#changes-to-fabric-capacity). 
 
-In addition, note the following for Azure SQL Managed Instance specifically:
+## Azure SQL Managed Instance troubleshooting
 
-| Cause    | Result | Recommended resolution     |
-|:--|:--|:--|
-| Workspace deleted | Mirroring stops automatically and disables the change feed in Azure SQL Managed Instance | In case the mirroring is still active on the Azure SQL Managed Instance, execute the following stored procedure on your Azure SQL Managed Instance: `exec sp_change_feed_disable_db;`. |
+|Cause|Result|Recommended resolution|
+| :-- | :-- | :-- |
+|Workspace deleted|Mirroring stops automatically and disables the change feed in Azure SQL Managed Instance|In case mirroring is still active on the Azure SQL Managed Instance, execute the following stored procedure for each affected database on your Azure SQL Managed Instance: `exec sp_change_feed_disable_db;`.|
+|Persistent errors|Mirroring is disabled for the affected database|To ensure your compute resources aren't affected and to protect your source database in Azure SQL Managed Instance, mirroring will be disabled on any persistent errors. Review [sys.dm_change_feed_errors](/sql/relational-databases/system-dynamic-management-views/sys-dm-change-feed-errors?view=azuresqldb-mi-current&preserve-view=true) and resolve the underlying errors before re-enabling the database for mirroring.|
+|"Users can access data stored in OneLake with apps external to Fabric" setting disabled|"Replicator - Tables Cannot Reach Replicating Status"|Enable the Tenant setting [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings).|
 
 ## T-SQL queries for troubleshooting
 
@@ -76,6 +78,14 @@ If you remove Azure SQL Managed Instance SAMI permissions or permissions aren't 
 1. Add the SAMI as a user by selecting the `...` ellipses option on the mirrored managed instance item.
 1. Select the **Manage Permissions** option.
 1. Enter the Azure SQL Managed Instance public endpoint. Provide **Read** and **Write** permissions.
+
+## Log usage 
+
+Transaction log usage for a database enabled for mirroring can continue to grow and hold up log truncation. Once the transaction log size reaches the max defined limit, writes to the database fail. To safeguard from this, mirroring triggers automatic reseed of the whole database when the log space used exceeds a threshold of total configured log space. To diagnose this and learn about automatic reseeding, see [Automatic reseed for Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance-automatic-reseed.md#diagnose).
+
+## Reseeding has automatically started
+
+Fabric Mirroring from Azure SQL Managed Instance can automatically reseed under certain conditions, at the individual table level or for the entire database. To learn more, [Automatic reseed for Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance-automatic-reseed.md).
 
 ## Related content
 

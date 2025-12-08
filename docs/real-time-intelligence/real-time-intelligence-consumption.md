@@ -5,6 +5,7 @@ ms.reviewer: bwatts
 ms.author: spelluru
 author: spelluru
 ms.topic: concept-article
+ms.subservice: rti-eventhouse
 ms.custom:
 ms.date: 11/19/2024
 ms.search.form: Eventhouse,KQL Database, Overview
@@ -18,7 +19,7 @@ When you use a Fabric capacity, your usage charges appear in the Azure portal un
 > [!IMPORTANT]
 > **Changes to Microsoft Fabric Workload Consumption Rate**
 >
-> Consumption rates are subject to change at any time. Microsoft makes reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in [Microsoft's Release Notes](/fabric/release-plan) or [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/en-US/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.  
+> Consumption rates are subject to change at any time. Microsoft makes reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in [Microsoft's Release Notes](/fabric/release-plan) or [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.  
 
 ## Capacity
 
@@ -57,6 +58,10 @@ Here are some insights you can take from the example:
 * The *Items* view is filtered to show both *Eventhouse* and *KQL Database*.
 * Select a single item, such as an *Eventhouse item*, breaks down the CU usage by operations.
 * The utilization graph, on the right side of the app, shows nearly 100% CU usage over time. This high utilization can explain query throttling experienced by users and indicates a need to increase the capacity units.
+
+> [!NOTE]
+> To better understand your Eventhouse compute size, see [Understand Eventhouse compute usage](eventhouse-compute-observability.md).
+
 
 ## Storage billing
 

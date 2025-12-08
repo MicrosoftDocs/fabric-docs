@@ -4,6 +4,7 @@ description: In this article, you learn how to efficiently query cold data in Az
 author: spelluru
 ms.author: spelluru
 ms.reviewer: vplauzon
+ms.subservice: rti-eventhouse
 ms.topic: how-to
 ms.date: 10/17/2021
 ---

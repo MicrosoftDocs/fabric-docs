@@ -37,6 +37,9 @@ See the list of [supported items](#supported-items).
 
 * Read about the best way to manage your [Git branches](./manage-branches.md).
 
+## Network security for Git integration
+Workspace-level security in Microsoft Fabric provides granular control over data access and network connectivity by allowing administrators to configure both inbound and outbound protections for individual workspaces. These controls ensure that sensitive data remains within trusted network boundaries, and they integrate with CI/CD tools like Git integration.  For more information, see [Network security for continuous integration/continuous deployment](../cicd-security.md)
+
 ## Privacy information
 
 Before you enable Git integration, make sure you review the following privacy statements:
@@ -49,9 +52,9 @@ Before you enable Git integration, make sure you review the following privacy st
 
 The following Git providers are supported:
 
-* [Azure DevOps](/en-us/azure/devops/user-guide/code-with-git) within the *same* Fabric tenant (cross tenant support is in *preview*)
-* [GitHub](https://github.com/) (cloud versions only)
-* [GitHub Enterprise](https://github.com/enterprise) (cloud versions only)
+* [Azure DevOps](/en-us/azure/devops/user-guide/code-with-git) (cloud-based only)
+* [GitHub](https://github.com/) (cloud-based only)
+* [GitHub Enterprise](https://github.com/enterprise) (cloud-based only)
 
 ## Supported items
 
@@ -107,8 +110,11 @@ The following items currently support Git integration:
 
 * Database items:
 
-  * [SQL database](../../database/sql/source-control.md) *(preview)*
+  * [SQL database](../../database/sql/source-control.md)
   * [Cosmos database](../../database/cosmos-db/overview.md) *(preview)*
+
+* Graph:
+  * [Graph in Microsoft Fabric (preview)](../../graph/overview.md)
 * Industry solutions:
 
   * [Healthcare](/industry/healthcare/healthcare-data-solutions/application-lifecycle-management) *(preview)*

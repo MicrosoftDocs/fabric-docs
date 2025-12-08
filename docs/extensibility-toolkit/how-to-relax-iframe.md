@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 09/04/2025
 ---
 
-# How to relax the iFrame
+# How-To: Relax the iFrame
 
 This article describes how you can enable additional iFrame attributes for your editor.
 
@@ -53,7 +53,7 @@ Add the `enableSandboxRelaxation` setting to your workload manifest:
 
 ## Development mode
 
-For local development, you can use sandbox relaxation and bypass consent using the dev override. [Add to devParameters](https://github.com/microsoft/fabric-extensibility-toolkit/blob/main/Workload/devServer/webpack.config.js)
+For local development, you can use sandbox relaxation and bypass consent using the dev override. [Add to devParameters](https://github.com/microsoft/fabric-extensibility-toolkit/blob/main/Workload/devServer/webpack.dev.js)
 
 ```typescript
 const devParameters = {

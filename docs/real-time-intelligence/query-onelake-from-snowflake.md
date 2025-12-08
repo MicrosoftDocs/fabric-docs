@@ -6,6 +6,7 @@ ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: how-to
 ms.custom:
+ms.subservice: rti-eventhouse
 ms.date: 07/15/2025
 ---
 

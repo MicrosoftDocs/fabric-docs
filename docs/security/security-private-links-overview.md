@@ -3,7 +3,7 @@ title: About private Links for secure access to Fabric
 description: Learn about the Azure private link feature to provide secure access to Fabric using Azure Networking private endpoints. Data is sent privately instead of over the internet.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: conceptual
 ms.custom:
 ms.date: 08/21/2025
@@ -67,7 +67,7 @@ Direct calls using OneLake regional endpoints don't work via private link to Fab
 
 ### Warehouse and Lakehouse SQL analytics endpoint
 
-Accessing a Warehouse or the SQL analytics endpoint of a Lakehouse in the Fabric portal is protected by private link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, SQL Server Management Studio, Azure Data Studio) to connect to Warehouse via private link.
+Accessing a Warehouse or the SQL analytics endpoint of a Lakehouse in the Fabric portal is protected by private link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or the [MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code-extensions/mssql/mssql-extension-visual-studio-code)) to connect to Warehouse via private link.
 
 Visual query in Warehouse doesn't work when the **Block Public Internet Access** tenant setting is enabled.
 
@@ -140,7 +140,7 @@ Customers can provision and utilize Healthcare data solutions in Microsoft Fabri
 
 ### Fabric Events
 
-Fabric Events support Private Link without affecting event delivery, because the events originate from within the tenan
+Fabric Events support Private Link without affecting event delivery, because the events originate from within the tenant.
 
 ### Azure Events
 
@@ -150,7 +150,7 @@ Azure Events support Private Link with the following behavior when the Block Pub
   
 <!--### Other Fabric items
 
-Other Fabric items, such as KQL Database, API for GraphQL(TM), and Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+Other Fabric items, such as KQL Database, and Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 -->
 
 ### Microsoft Purview Information Protection
@@ -161,9 +161,9 @@ To enable these capabilities in Desktop, admins can configure [service tags](/az
 
 ### Mirrored database
 
-Private link is supported for [open mirroring](/fabric/database/mirrored-database/open-mirroring) and [Azure Cosmos DB mirroring](/fabric/database/mirrored-database/azure-cosmos-db). For other types of database mirroring, if the **Block public Internet access** tenant setting is **enabled**, active mirrored databases enter a paused state, and mirroring can't be started. 
+Private link is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db) and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server). For other types of database mirroring, if the **Block public Internet access** tenant setting is **enabled**, active mirrored databases enter a paused state, and mirroring can't be started.
 
-For open mirroring, when the **Block public Internet access** tenant setting is **enabled**, ensure the publisher writes data into the OneLake landing zone via a private link. 
+For open mirroring, when the **Block public Internet access** tenant setting is **enabled**, ensure the publisher writes data into the OneLake landing zone via a private link.
 
 ## Other considerations and limitations
 

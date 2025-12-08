@@ -3,7 +3,7 @@ title: Overview of workspace-level private links
 description: Learn how workspace-level private links in Microsoft Fabric securely connect specific workspaces to your virtual network, block public internet access, and improve data protection.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: overview
 ms.custom:
 ms.date: 09/29/2025
@@ -22,7 +22,7 @@ This article gives an overview of workspace-level private links in Microsoft Fab
 
 ## Workspace-level private link overview
 
-A workspace-level private link maps a workspace to a specific virtual network using the Azure Private Link service. When a private link is enabled, public internet access to the workspace can be restricted, ensuring that only resources within an approved virtual network (via a managed private endpoint) can access the workspace. The following diagram illustrates various implementations of workspace-level private links.
+A workspace-level private link maps a workspace to a specific virtual network using the Azure Private Link service. When a private link is enabled, public internet access to the workspace can be restricted, ensuring that only resources within an approved virtual network (via a private endpoint) can access the workspace. The following diagram illustrates various implementations of workspace-level private links.
 
 :::image type="content" source="./media/security-workspace-level-private-links-overview/workspace-level-private-links-scenario-intro-diagram.png" alt-text="Diagram illustrating workspace-level private link scenarios." lightbox="./media/security-workspace-level-private-links-overview/workspace-level-private-links-scenario-intro-diagram.png" border="false":::
 
@@ -55,10 +55,11 @@ The diagram illustrates the following key points about workspace-level private l
 When connecting to a workspace, you need to use the workspace fully qualified domain name (FQDN). The workspace FQDN is constructed based on the workspace ID and the first two characters of the workspace object ID. The following are the formats for the workspace FQDN. The *workspaceid* is the workspace object ID without dashes, and *xy* represents the first two characters of the workspace object ID. Find the workspace object ID in the URL after group when opening the workspace page from Fabric portal. You can also get workspace FQDN by running List workspace API or Get workspace API. 
 
 * `https://{workspaceid}.z{xy}.w.api.fabric.microsoft.com`
+* `https://{workspaceid}.z{xy}.c.api.fabric.microsoft.com`
 * `https://{workspaceid}.z{xy}.onelake.fabric.microsoft.com` 
 * `https://{workspaceid}.z{xy}.dfs.fabric.microsoft.com`
 * `https://{workspaceid}.z{xy}.blob.fabric.microsoft.com`
-* `https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com` *that is, add z{xy} to the regular warehouse connection string.
+For data warehouse connection strings, use `https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com` that is, add z{xy} to the regular warehouse connection string found under SQL connection string. The GUIDs in the FQDN correspond to Tenant GUID in Base32 and Workspace GUID in Base32 respectively. *This FQDN is not available as part of the DNS configurations for the private endpoint.*
 
 ## How the workspace FQDN resolves in different environments
 

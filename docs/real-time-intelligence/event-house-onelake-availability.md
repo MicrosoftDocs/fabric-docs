@@ -5,6 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
+ms.subservice: rti-eventhouse
 ms.custom:
 ms.date: 03/11/2025
 ---

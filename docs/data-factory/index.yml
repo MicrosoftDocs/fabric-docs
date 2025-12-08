@@ -97,24 +97,24 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Create your first pipeline
-            url: create-first-pipeline-with-sample-data.md
-          - text: Move and transform data
-            url: transform-data.md
+          - text: Create your first copy job
+            url: quickstart-copy-job.md
       - linkListType: how-to-guide
         links:
-          - text: Pipeline runs
-            url: pipeline-runs.md
+          - text: Choose a data movement strategy
+            url: decision-guide-data-movement.md
+          - text: Copy job
+            url: what-is-copy-job.md
+          - text: Change data capture
+            url: cdc-copy-job.md
           - text: Copy activity in pipelines
             url: copy-data-activity.md
-          - text: Copy job
-            url: copy-job.md
       - linkListType: tutorial
         links:
-          - text: Create an end-to-end data integration scenario
-            url: tutorial-end-to-end-introduction.md
           - text: Move data with copy assistant
             url: tutorial-move-data-lakehouse-copy-assistant.md
+          - text: Create an end-to-end data integration scenario
+            url: tutorial-end-to-end-introduction.md
 
   # Card 
   - title: Manage your pipelines

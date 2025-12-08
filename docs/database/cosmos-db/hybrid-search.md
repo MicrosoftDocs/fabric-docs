@@ -1,20 +1,15 @@
 ---
-title: Hybrid Search in Cosmos DB Database (Preview)
-titleSuffix: Microsoft Fabric
-description: Combine vector search with full text search in Cosmos DB in Microsoft Fabric during the preview.
+title: Hybrid Search in Cosmos DB Database
+description: Combine vector search with full text search in Cosmos DB in Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
 ms.date: 07/14/2025
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
-# Hybrid search in Cosmos DB in Microsoft Fabric (preview)
+# Hybrid search in Cosmos DB in Fabric
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
-Cosmos DB in Microsoft Fabric supports the hybrid search capability that combines Vector Search with Full Text Search scoring (BM25) using the Reciprocal Rank Fusion (RRF) function.
+Cosmos DB in Fabric supports the hybrid search capability that combines Vector Search with Full Text Search scoring (BM25) using the Reciprocal Rank Fusion (RRF) function.
 
 ## What is hybrid search?
 
@@ -74,7 +69,7 @@ Review this sample indexing policy with both full text and vector indexes:
 
 ## Hybrid search queries
 
-Hybrid search queries can be executed by using the [`RRF`](/nosql/query/rrf) system function in an `ORDER BY RANK` clause that includes both a `VECTORDISTANCE` function and `FULLTEXTSCORE`. For example, a parameterized query to find the top *k* most relevant results would look like:
+Hybrid search queries can be executed by using the [`RRF`](/cosmos-db/query/rrf) system function in an `ORDER BY RANK` clause that includes both a `VECTORDISTANCE` function and `FULLTEXTSCORE`. For example, a parameterized query to find the top *k* most relevant results would look like:
 
 ```nosql
 SELECT TOP @k

@@ -1,19 +1,13 @@
 ---
-title: Indexing policies in Cosmos DB Database (Preview)
-titleSuffix: Microsoft Fabric
-description: Use custom indexing policies to fine tune the performance of Cosmos DB in Microsoft Fabric during the preview to better match your application workloads.
-author: seesharprun
-ms.author: sidandrews
+title: Indexing policies in Cosmos DB Database
+description: Use custom indexing policies to fine tune the performance of Cosmos DB in Microsoft Fabric to better match your application workloads.
+author: markjbrown
+ms.author: mjbrown
 ms.topic: concept-article
-ms.date: 07/14/2025
-appliesto:
-- ✅ Cosmos DB in Fabric
+ms.date: 10/30/2025
 ---
 
-# Indexing policies in Cosmos DB in Microsoft Fabric (preview)
-
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
+# Indexing policies in Cosmos DB in Microsoft Fabric
 
 Cosmos DB is a schema-agnostic database that allows you to iterate on your application without having to deal with schema or index management. Indexing within Cosmos DB in Microsoft Fabric is designed to deliver fast and flexible query performance, no matter how your data evolves. In Cosmos DB in Fabric, every container has an indexing policy that dictates how the container's items should be indexed. The default indexing policy for newly created containers indexes every property of every item and enforces range indexes for any string or number. This default configuration allows you to get good query performance without having to think about indexing and index management upfront.
 
@@ -261,7 +255,7 @@ Consider these important rules for array tuples:
 
 - After the first part, the tuple should include the array wildcard specifier `[]`. All array tuple paths should have an array wildcard specifier before the tuple specifier `{}`.
 
-- The next part specify tuples using the tuple specifier `{}`.
+- The next part specifies tuples using the tuple specifier `{}`.
 
 - Tuple needs to use the same path specification as other index paths with a few exceptions:
 
@@ -520,7 +514,7 @@ The following considerations apply when creating composite indexes to optimize a
 
 ### Queries with a filter and an aggregate
 
-If a query filters on one or more properties and has an aggregate system function, it might be helpful to create a composite index for the properties in the filter and aggregate system function. This optimization applies to the [`SUM`](/nosql/query/sum) and [`AVG`](/nosql/query/avg) system functions.
+If a query filters on one or more properties and has an aggregate system function, it might be helpful to create a composite index for the properties in the filter and aggregate system function. This optimization applies to the [`SUM`](/cosmos-db/query/sum) and [`AVG`](/cosmos-db/query/avg) system functions.
 
 The following considerations apply when creating composite indexes to optimize a query with a filter and aggregate system function.
 
