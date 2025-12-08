@@ -69,7 +69,7 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 | Intelligent cache | Yes | Yes |
 | API/SDK support | Yes | Yes |
 
-- **Runtime**: Fabric doesn't support Spark 2.4, 3.1, and 3.2 versions. Fabric Spark supports Spark 3.3 with Delta 2.2 within [Runtime 1.1](runtime-1-1.md), Spark 3.4 with Delta 2.4 within [Runtime 1.2](runtime-1-2.md) and Spark 3.5 with Delta 3.1 within [Runtime 1.3](runtime-1-3.md).
+- **Runtime**: Fabric doesn't support Spark 3.3 and earlier versions. Fabric Spark supports Spark 3.4 with Delta 2.4 within [Runtime 1.2](runtime-1-2.md), Spark 3.5 with Delta 3.1 within [Runtime 1.3](runtime-1-3.md), and Spark 4.0 with Delta 4.0 within [Runtime 2.0](runtime-2-0.md).
 
 - **Autoscale**: In Azure Synapse Spark, the pool can scale up to 200 nodes regardless of the node size. In Fabric, the maximum number of nodes is subjected to node size and provisioned capacity. See the following example for the F64 SKU.
 
