@@ -30,6 +30,8 @@ To open the OneLake catalog, select the OneLake icon in the Fabric navigation pa
 
 
 
+
+
 ## Related content
 
 * [Discover and explore Fabric items in the OneLake catalog](./onelake-catalog-explore.md)
