@@ -227,13 +227,13 @@ Notice the *{justification_prompt}* variable injection. Variable injections are 
 
 ## Orchestrate LLM interactions by using Fabric pipelines
 
-The prompt examples we shared are modularized and extensible. You can add more label dimensions, and you can chain the LLM interactions arbitrarily.
+The prompt examples in this article are modularized and extensible. You can add more label dimensions, and you can chain the LLM interactions arbitrarily.
 
 Use Fabric pipeline items to manage the orchestration of these tasks. Orchestrating multiple LLM interactions in sequence is straightforward with pipelines, as they let you manipulate control flow to organize different steps like segmentation and labeling.
 
 You can configure these steps to allow you to skip, repeat, or loop through different steps as you want. If any steps encounter errors, you can easily retrigger the pipeline from the specific stage of failure instead of restarting from scratch.
 
-The monitoring hub in Fabric also helps you maintain complete visibility in your operations. It tracks key metrics across your pipeline. Details on every step highlight duration, resource usage, and status. This centralized view makes it simple to audit, refine, and guarantee the quality of your workflows as they evolve.
+The monitoring hub in Fabric also helps you maintain complete visibility in your operations. It tracks key metrics across your pipeline. Details about every step highlight duration, resource usage, and status. This centralized view makes it simple to audit, refine, and guarantee the quality of your workflows as they evolve.
 
 You can use the *{justification_prompt}* injection to extend the prompt and review labeled results to improve accuracy.
 
@@ -243,7 +243,7 @@ To enhance label quality, we introduce a validation step where the LLM acts like
 
 After an LLM assigns initial labels, a separate LLM instance is prompted to evaluate the correctness of each label by using a justification prompt. This judge is asked whether it "Agrees" or "Disagrees" with the assigned label. We found this language to be more effective than alternatives like "Correct/Incorrect" or "Yes/No," which often led to more mistakes.
 
-If the judge disagrees, the pipeline conditionally triggers a relabeling step, which uses prior context and justification output to inform the new label. This looped validation mechanism is orchestrated using Fabric pipelines, which support conditional logic and iterative control flow. In this way, we ensure that only high-confidence labels are passed downstream, which improves both the accuracy and interpretability of the classification results.
+If the judge disagrees, the pipeline conditionally triggers a relabeling step, which uses prior context and justification output to inform the new label. This looped validation mechanism is orchestrated by using Fabric pipelines, which support conditional logic and iterative control flow. In this way, we ensure that only high-confidence labels are passed downstream, which improves both the accuracy and interpretability of the classification results.
 
 You can use these code snippets to set up a validation workflow:
 
