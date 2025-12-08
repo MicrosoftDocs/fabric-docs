@@ -12,7 +12,7 @@ ms.date: 10/03/2025
 
 # OneLake diagnostics
 
-OneLake diagnostics provides end-to-end visibility into how data is accessed and used across your Microsoft Fabric environment. It enables organizations to answer critical questions like "who accessed what, when, and how", supporting data governance, operational insight, and compliance reporting.
+OneLake diagnostics provides end-to-end visibility into how data is accessed and used across your Microsoft Fabric environment. It enables organizations to answer critical questions like "who accessed what, when, and how," supporting data governance, operational insight, and compliance reporting.
 
 When enabled at the workspace level, OneLake diagnostics streams data access events as JSON logs into a Lakehouse of your choice within the same capacity. These logs can be easily transformed into analytics-ready Delta tables, allowing teams to build dashboards and reports that track usage patterns, top-accessed items, and trends over time.
 
@@ -59,6 +59,20 @@ Use the following steps to enable OneLake diagnostics:
 
 > [!NOTE]
 > It takes up to 1 hour for diagnostic events to begin flowing into the Lakehouse.
+
+### Enabling immutable diagnostic logs
+
+:::image type="content" source="./media/onelake-diagnostics/onelake-diagnostics-immutability.png" lightbox="./media/onelake-diagnostics/onelake-diagnostics-immutability.png" alt-text="Screenshot that shows configuring the immutability period for OneLake diagnostics.":::
+
+OneLake diagnostic events can be made immutable, this means that the JSON files that contain diagnostic events can't be tampered with, or deleted, during the immutability retention period. OneLake diagnostics immutability is built on the Immutable storage for Azure Blob Storage capability. For more information, please read [Store business-critical blob data with immutable storage in a write once, read many (WORM) state](https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-storage-overview)
+
+The immutability period is configured on the workspace that contains diagnostic events. To configure the immutability period, you must have previously configured a workspace to store diagnostic events in this workspace. The immutability period applies to all events stored in this workspace.
+
+1. Enter the required immutability period
+2. Press apply
+
+> [!NOTE]
+> Once the immutability policy is applied, the files can't be modified or deleted until the immutability retention period passes. Please use caution while applying the policy as it can't be changed once set. 
 
 ### Changing the OneLake diagnostic Lakehouse
 
