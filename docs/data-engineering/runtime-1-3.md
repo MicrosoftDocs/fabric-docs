@@ -69,9 +69,9 @@ For up-to-date information, a detailed list of changes, and specific release not
 ### Related content
 
 - Read about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
-- [Spark Core migration guide](https://spark.apache.org/docs/3.5.0/core-migration-guide.html)
-- [SQL, Datasets, and DataFrame migration guides](https://spark.apache.org/docs/3.5.0/sql-migration-guide.html)
-- [Structured Streaming migration guide](https://spark.apache.org/docs/3.5.0/ss-migration-guide.html)
-- [MLlib (Machine Learning) migration guide](https://spark.apache.org/docs/3.5.0/ml-migration-guide.html)
+- [Spark Core migration guide](https://spark.apache.org/docs/latest/core-migration-guide.html)
+- [SQL, Datasets, and DataFrame migration guides](https://spark.apache.org/docs/latest/sql-migration-guide.html)
+- [Structured Streaming migration guide](https://spark.apache.org/docs/latest/ss-migration-guide.html)
+- [MLlib (Machine Learning) migration guide](https://spark.apache.org/docs/latest/ml-migration-guide.html)
 - [PySpark (Python on Spark) migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/pyspark_upgrade.html)
-- [SparkR (R on Spark) migration guide](https://spark.apache.org/docs/3.5.0/sparkr-migration-guide.html)
+- [SparkR (R on Spark) migration guide](https://spark.apache.org/docs/latest/sparkr-migration-guide.html)
