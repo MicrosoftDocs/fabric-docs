@@ -64,7 +64,7 @@ Use the following steps to enable OneLake diagnostics:
 
 :::image type="content" source="./media/onelake-diagnostics/onelake-diagnostics-immutability.png" lightbox="./media/onelake-diagnostics/onelake-diagnostics-immutability.png" alt-text="Screenshot that shows configuring the immutability period for OneLake diagnostics.":::
 
-OneLake diagnostic events can be made immutable, this means that the JSON files that contain diagnostic events can't be tampered with, or deleted, during the immutability retention period. OneLake diagnostics immutability is built on the Immutable storage for Azure Blob Storage capability. For more information, please read [Store business-critical blob data with immutable storage in a write once, read many (WORM) state](https://learn.microsoft.com/azure/storage/blobs/immutable-storage-overview)
+OneLake diagnostic events can be made immutable, this means that the JSON files that contain diagnostic events can't be tampered with, or deleted, during the immutability retention period. OneLake diagnostics immutability is built on the Immutable storage for Azure Blob Storage capability. For more information, please read [Store business-critical blob data with immutable storage in a write once, read many (WORM) state](/azure/storage/blobs/immutable-storage-overview)
 
 The immutability period is configured on the workspace that contains diagnostic events. To configure the immutability period, you must have previously configured a workspace to store diagnostic events in this workspace. The immutability period applies to all events stored in this workspace.
 
