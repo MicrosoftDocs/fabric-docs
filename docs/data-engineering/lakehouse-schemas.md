@@ -5,22 +5,22 @@ ms.reviewer: tvilutis
 ms.author: eur
 author: eric-urban
 ms.topic: article
-ms.date: 01/16/2025
+ms.date: 12/10/2025
 ms.search.form: Lakehouse schemas
 ---
 
-# What are lakehouse schemas (Preview)?
+# What are lakehouse schemas?
 
 Lakehouse supports the creation of custom schemas. Schemas allow you to group your tables together for better data discovery, access control, and more.
 
 ## Create a lakehouse schema
 
-To enable schema support for your lakehouse, check the box next to **Lakehouse schemas** when you create it.
+To enable schema support for your lakehouse, keep the box next to **Lakehouse schemas** checked when you create it.
 
 :::image type="content" source="media\lakehouse-schemas\new-lakehouse.png" alt-text="Screenshot showing the new lakehouse dialog." lightbox="media/lakehouse-schemas/new-lakehouse.png":::
 
-> [!IMPORTANT]
-> Workspace names must only contain alphanumeric characters due to preview limitations. If special characters are used in workspace names some of Lakehouse features won't work.
+> [!NOTE]
+>If you prefer to create a lakehouse without schema support, you can simply uncheck the checkbox.
 
 Once you create the lakehouse, you can find a default schema named **dbo** under **Tables**. This schema is always there and can't be changed or removed. To create a new schema, hover over **Tables**, select **…**, and choose **New schema**. Enter your schema name and select **Create**. You'll see your schema listed under **Tables** in alphabetical order.
 
@@ -56,7 +56,8 @@ To make your semantic model, just choose the tables that you want to use. Tables
 When you look at a schema enabled lakehouse in the notebook object explorer, you see tables are in schemas. You can drag and drop table into a code cell and get a code snippet that refers to the schema where the table is located. Use this namespace to refer to tables in your code: "workspace.lakehouse.schema.table". If you leave out any of the elements, the executor uses default setting. For example, if you only give table name, it uses default schema (**dbo**) from default lakehouse for the notebook.
 
 > [!IMPORTANT]
-> If you want to use schemas in your code make sure that the default lakehouse for the notebook is schema enabled.
+> If you want to use schemas in your code make sure that the default lakehouse for the notebook is schema enabled or there is no default lakehouse selected.
+
 
 ## Cross-workspace Spark SQL queries
 
@@ -69,27 +70,35 @@ SELECT *
     ON employees.deptno = departments.deptno;
 ```
 
-> [!IMPORTANT]
-> Make sure you join tables only from lakehouses that have schemas enabled. Joining tables from lakehouses that don’t have schemas enabled won’t work.
+## Referencing non-schema lakehouses
 
-## Public preview limitations
+When you set a schema-enabled lakehouse or no lakehouse as the default in your notebook, Spark code uses schema-enabled referencing for tables. However, you can still access lakehouses without enabled schemas within the same code by referencing them as “lakehouse.table”.
 
-Below listed unsupported features/functionalities are for current release of public preview. They'll be resolved in the coming releases before General Availability.
+Additionally, it’s possible to join tables from different types of lakehouses.
+```sql
+SELECT * 
+    FROM workspace.schemalh.schema.table as schematable 
+    INNER JOIN workspace.nonschemalh.table as nonschematable
+    ON schematable.id = nonschematable.id;
+```
 
-| Unsupported Features/ Functionality | Notes |
+To help transition and refactor existing code to schema-enabled lakehouses, four-part naming is supported for lakehouses without schemas. You can reference tables as “workspace.lakehouse.dbo.table”, where “dbo” serves as the schema name—even though it doesn’t exist yet in a lakehouse that isn’t schema-enabled. This approach lets you update your code with no downtime before enabling schema support in your lakehouses.
+
+## API for lakehouse schemas
+
+## Enbaling schemas for existing lakehouses
+
+## Current limitations
+
+There are still some limitations with schema-enabled lakehouses in Spark that are currently being rolled out in the coming months.
+
+| Unsupported Features/ Functionality | Workaround |
 |-|-|
-| Shared lakehouse	| Using workspace in the namespace for shared lakehouses won't work, e.g. workspace.sharedlakehouse.schema.table. The user must have workspace role in order to use workspace in the namespace. |
-| Non-Delta, Managed table schema	| Getting schema for managed, non-Delta formatted tables (for example, CSV) isn't supported. Expanding these tables in lakehouse explorer doesn't show any schema information in the UX. |
-| External Spark tables	| External Spark table operations (for example, discovery, getting schema, etc.) aren't supported. These tables are unidentified in the UX. |
-| Public API	| Public APIs (List tables, Load table, exposing defaultSchema extended property etc.) aren't supported for schema enabled Lakehouse. Existing public APIs called on a schema enabled Lakehouse results an error. |
-| Update table properties	 | Not supported. |
-| Workspace name containing special characters	| Workspace with special characters (for example, space, slashes) isn't supported. A user error is shown. |
 | Spark views | Not supported. |
-| Hive specific features | Not supported. |
-| Spark.catalog API | Not supported. Use Spark SQL instead. |
-| `USE <schemaName>` | Doesn't work cross workspaces, but supported within same workspace. |
-| Migration	| Migration of existing non-schema Lakehouses to schema-based Lakehouses isn't supported. |
+| Shared lakehouse	| Using workspace in the namespace for shared lakehouses won't work, e.g. workspace.sharedlakehouse.schema.table. The user must have workspace role in order to use workspace in the namespace. |
+| External ADLS tables	| External Spark table operations (for example, discovery, getting schema, etc.) aren't supported. These tables are unidentified in the UX. |
 | Private Links	| Workspace-level private links are not supported. |
+| Outboubd Traffic Protection 	| Workspace-level private links are not supported. |
 
 ## Related content
 
