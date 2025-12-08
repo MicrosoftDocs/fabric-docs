@@ -11,9 +11,9 @@ ms.date: 09/05/2025
 
 # Classify natural language text with generative AI in Microsoft Fabric
 
-Survey responses and other natural language feedback provide rich qualitative data, but analyzing them at scale is challenging. Traditional methods such as rule-based chunking and sentiment analysis often miss the nuances of language, such as figurative speech and implied meaning.
+Survey responses and other natural language feedback provide rich qualitative data, but it can be a challenge to analyze them at scale. Traditional methods such as rule-based chunking and sentiment analysis often miss the nuances of language, like figurative speech and implied meaning.
 
-Generative AI and large language models (LLMs) change this dynamic by enabling large-scale, sophisticated interpretation of text. They can capture figurative language, implications, connotations, and creative expressions. This level of understanding can result in deeper insights and more consistent classification across large volumes of text.
+Generative AI and large language models (LLMs) change this dynamic by enabling large-scale, sophisticated interpretation of text. They can capture figurative language, implications, connotations, and creative expressions. When you can achieve this level of understanding, you can get deeper insights and more consistent classification across large volumes of text.
 
 Microsoft Fabric brings a comprehensive suite of features that empower organizations to deliver end-to-end generative AI-based text analysis solutions. You don't need to set up and manage separate Azure resources. Instead, you can use Fabric-native tools like notebooks to access Azure OpenAI GPT models hosted in Fabric via SynapseML. These tools help you build, automate, and scale natural language analysis workflows.
 
@@ -23,19 +23,19 @@ In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
-> * Set up a multi-label text classification system in Microsoft Fabric
-> * Configure Azure OpenAI endpoints by using SynapseML
-> * Design effective prompts for text segmentation and sentiment analysis
-> * Orchestrate LLM interactions by using Fabric pipelines
-> * Improve accuracy by implementing LLM validation workflows
+> * Set up a multi-label text classification system in Microsoft Fabric.
+> * Configure Azure OpenAI endpoints by using SynapseML.
+> * Design effective prompts for text segmentation and sentiment analysis.
+> * Orchestrate LLM interactions by using Fabric pipelines.
+> * Improve accuracy by implementing LLM validation workflows.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-* Access to Azure OpenAI models through Microsoft Fabric
-* Basic knowledge of Python and PySpark
-* Familiarity with Jupyter notebooks
+* Have access to Azure OpenAI models through Microsoft Fabric.
+* Have a basic knowledge of Python and PySpark.
+* Be familiar with Jupyter notebooks.
 
 ## Set up your text classification system
 
@@ -44,11 +44,11 @@ You can set up a multi-class and multi-label text classification system orchestr
 To build your own text classifier, you need the following Fabric items:
 
 * Notebooks with SynapseML for LLM interaction.
-* OneLake for secure schema-organized storage.
-  * To learn more about lakehouse schemas, see [Organizing your tables with lakehouse schemas and more](https://blog.fabric.microsoft.com/blog/organizing-your-tables-with-lakehouse-schemas-and-more-public-preview/).
+* OneLake for secure, schema-organized storage.
+  * To learn more, see [Organize your tables with lakehouse schemas and more](https://blog.fabric.microsoft.com/blog/organizing-your-tables-with-lakehouse-schemas-and-more-public-preview/).
 * Pipelines for orchestration.
 * Fabric API calls to enable continuous integration and continuous delivery (CI/CD).
-  * To learn more about using the Fabric API for CI/CD, see [`fabric-cicd` Deployment Tool](https://blog.fabric.microsoft.com/blog/introducing-fabric-cicd-deployment-tool?ft=All).
+  * To learn more, see [`fabric-cicd` Deployment Tool](https://blog.fabric.microsoft.com/blog/introducing-fabric-cicd-deployment-tool?ft=All).
 * Power BI for visualization, including Copilot-assisted narratives.
   * Powered by the new [Direct Lake mode](https://community.fabric.microsoft.com/t5/Data-Engineering-Community-Blog/Direct-Lake-Faster-Power-BI-No-Refreshes-Seamless-Fabric/ba-p/4401197) feature for easier integration.
   
@@ -154,7 +154,9 @@ def combine_system_user(row):
 
 ## Design effective prompts
 
-To make LLMs focus on a specific task, you need to carefully construct user and system prompts. Well-designed prompts reduce the occurrence of incorrect outputs, provide necessary context for LLMs to complete their task, and help control output token cost. The following snippet is an example prompt that segments natural language text into individual topics and subjects in the context of a survey response.
+To make LLMs focus on a specific task, you need to carefully construct user and system prompts. Well-designed prompts reduce the occurrence of incorrect outputs, provide necessary context for LLMs to complete their task, and help control output token cost. 
+
+The following snippet is an example prompt that segments natural language text into individual topics and subjects in the context of a survey response.
 
 ```plaintext
 You are an AI assistant that helps people study survey responses from customers.
@@ -212,7 +214,7 @@ Segment: {child_text}
 {justification_prompt}
 ```
 
-You instruct the LLM to consider only the sentiment of the provided segment rather than the entire text verbatim. When you pass only segments, sentiments about different topics are kept separate, because a response might be positive about on e topic but negative about another. Editing this prompt to include the entire survey response can be as simple as including a few lines. See the following example:
+You instruct the LLM to consider only the sentiment of the provided segment, rather than the entire text verbatim. When you pass only segments, sentiments about different topics are kept separate, because a response might be positive about one topic but negative about another. Editing this prompt to include the entire survey response can be as simple as including a few lines. See the following example:
 
 ```plaintext
 Segment: {child_text}        
@@ -221,7 +223,7 @@ Survey response: {parent_text}
 {justification_prompt}
 ```
 
-Notice the *{justification_prompt}* variable injection. Variable injections are useful for dynamic prompt construction, and you can use this specific variable =to add instructions to judge the assigned labels in the "LLM as a Judge" step.
+Notice the *{justification_prompt}* variable injection. Variable injections are useful for dynamic prompt construction, and you can use this specific variable to add instructions to judge the assigned labels in the [Use LLM as a judge](#use-llm-as-a-judge) section.
 
 ## Orchestrate LLM interactions by using Fabric pipelines
 
@@ -235,7 +237,7 @@ The monitoring hub in Fabric also helps you maintain complete visibility in your
 
 You can use the *{justification_prompt}* injection to extend the prompt and review labeled results to improve accuracy.
 
-## Using LLM as a Judge
+## Use LLM as a Judge
 
 To enhance label quality, we introduce a validation step where the LLM acts like an "independent judge."
 
