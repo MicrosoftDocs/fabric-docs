@@ -1,7 +1,7 @@
 ---
 title: OneLake diagnostics
 description: OneLake diagnostics makes it simple to answer "who accessed what, when, and how" across your Fabric workspaces
-ms.reviewer: eloldag
+ms.reviewer: tompeplow
 ms.author: tompeplow
 author: tpeplow
 ms.topic: overview
