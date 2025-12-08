@@ -73,5 +73,5 @@ For up-to-date information, a detailed list of changes, and specific release not
 - [SQL, Datasets, and DataFrame migration guides](https://spark.apache.org/docs/3.5.0/sql-migration-guide.html)
 - [Structured Streaming migration guide](https://spark.apache.org/docs/3.5.0/ss-migration-guide.html)
 - [MLlib (Machine Learning) migration guide](https://spark.apache.org/docs/3.5.0/ml-migration-guide.html)
-- [PySpark (Python on Spark) migration guide](https://spark.apache.org/docs/3.5.0/api/python/migration_guide/pyspark_upgrade.html)
+- [PySpark (Python on Spark) migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/pyspark_upgrade.html)
 - [SparkR (R on Spark) migration guide](https://spark.apache.org/docs/3.5.0/sparkr-migration-guide.html)
