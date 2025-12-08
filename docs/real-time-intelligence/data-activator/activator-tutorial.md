@@ -6,7 +6,7 @@ ms.author: spelluru
 ms.reviewer: jtmsft
 ms.topic: tutorial
 ms.custom: FY25Q1-Linter, sfi-image-nochange
-ms.date: 11/09/2025
+ms.date: 12/08/2025
 ms.search.form: Data Activator Sample Tutorial
 #customer intent: As a Fabric user I want to learn more about Activator using a tutorial and sample data.
 ---
@@ -84,26 +84,49 @@ The Explorer pane displays objects, like eventstreams, for this activator. **Del
     :::image type="content" source="media/activator-tutorial/property-filter.png" alt-text="Screenshot showing the Property filter section of the Definition pane." lightbox="media/activator-tutorial/property-filter.png":::
 
 1. Lastly, scroll down to **Action**. Choose one of the following actions if the condition is met:
-    1. Send a message via Teams.
-
-        :::image type="content" source="media/activator-tutorial/action.png" alt-text="Screenshot showing the Action section of the Definition pane." lightbox="media/activator-tutorial/action.png":::
-
-    1. Send an email notification.
+    1. **Send email notification:** Sends an email to yourself or to others in your organization. 
+        1. For Select action, select **Send email**.
+        1. For **To**, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. By default your email is populated here.
+        1. For **Subject**, enter the subject of the email notification.
+        1. For **Headline**, enter the headline of the email notification.
+        1. For **Notes**, enter notes for the email notification.
+            > [!NOTE]
+            > When entering the subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
+        1. For **Context**, select the values for the drop-down list you want to include in the email notification.
 
         :::image type="content" source="media/activator-tutorial/action-email.png" alt-text="Screenshot showing the Action section of the Definition pane with email action selected." lightbox="media/activator-tutorial/action-email.png":::
 
-    1. Run Fabric activities:
-        1. Run a pipeline and select a dataflow:
+    1. **Send Microsoft Teams notification:** Sends a Microsoft Teams message to yourself. You can customize the title and message content.
+        1. For Select action, select **Teams** --> **Message to indviduals** or **Group chat message**, or **Channel post**.
+        1. Follow one of these steps depending on your selection:
+            * If you selected the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, an email is sent to specified individuals.
+            * If you selected the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.
+            * If you selected the **Channel post** option, select a **team** and **channel** from the drop-down lists. When the condition is met, a message is posted to the selected channel.
+        1. For **Headline**, enter the headline of the Teams notification.
+        1. For **Notes**, enter notes for the Teams notification.
+            > [!NOTE]
+            > When entering the subject, headline, or notes, you can refer to properties in the data by typing `@` or by selecting the button next to the text boxes. For example, `@BikepointID`.
+        1. For **Context**, select the values for the drop-down list you want to include in the Teams notification.
 
-            :::image type="content" source="media/activator-tutorial/pipeline.png" alt-text="Screenshot showing the Action section of the Definition pane with pipeline action selected." lightbox="media/activator-tutorial/pipeline.png":::
+        :::image type="content" source="media/activator-tutorial/action.png" alt-text="Screenshot showing the Action section of the Definition pane." lightbox="media/activator-tutorial/action.png":::
 
-        1. Run a Spark job:
+    1. **Run Fabric activities:** To configure the alert to launch a Fabric pipeline, Spark job, or notebook when the condition is met, follow these steps:
+        1. For **Select action**, select **Run Pipeline**, **Run Spark job**, **Run Notebook**, or **Run Function (preview)**.
+        1. On **Select Fabric item to run**, select the Fabric item (pipeline, notebook, Spark job, or function) from the list.
+        1. Select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter. You can pass parameters from the alert data by typing @ or by selecting the button next to the text box. For example, @BikepointID.
 
-            :::image type="content" source="media/activator-tutorial/spark.png" alt-text="Screenshot showing the Action section of the Definition pane with Spark job action selected." lightbox="media/activator-tutorial/spark.png":::
+            :::image type="content" source="media/activator-tutorial/fabric-actions.png" alt-text="Screenshot showing the Action section of the Definition pane with pipeline action selected." lightbox="media/activator-tutorial/pipeline.png":::
 
-        1. Run a notebook and select a notebook:
+    1. **Custom actions:** To configure the alert to call a custom action when the condition is met, follow these steps:
+        1. For **Select action**, select **Create custom action**.
 
-            :::image type="content" source="media/activator-tutorial/notebook.png" alt-text="Screenshot showing the Action section of the Definition pane with notebook action selected." lightbox="media/activator-tutorial/notebook.png":::
+            :::image type="content" source="media/activator-tutorial/custom-action.png" alt-text="Screenshot showing the Action section of the Definition pane with notebook action selected." lightbox="media/activator-tutorial/custom-action.png":::
+
+        1. As mentioned in the Action section, create the rule first, and then complete the custom action setup by following steps from [Trigger custom actions (Power Automate flows)](activator-trigger-power-automate-flows.md).
+        1. After you create the custom action, in the **Definition** pane, select your custom action from the **Select action** drop-down list.
+
+            :::image type="content" source="media/activator-tutorial/custom-action-selected.png" alt-text="Screenshot showing the Action section of the Definition pane with custom action selected." lightbox="media/activator-tutorial/custom-action-selected.png":::
+    1. Select **Create** to save your Activator rule.
 
 We created a Fabric Activator rule. The rule is running against the **Package delivery events** eventstream. The rule looks for packages that have medicine and checks to see if the temperature is now greater than 20 degrees Celsius. When the temperature becomes greater than 20 degrees Celsius, a Teams message is sent.
 
