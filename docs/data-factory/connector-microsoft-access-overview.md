@@ -17,7 +17,7 @@ The Microsoft Access connector is supported in Data Factory for [!INCLUDE [produ
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-microsoft-access-copy-activity.md) (source/destination)<br>- Lookup activity | On-premises (version 3000.278.5 or above) | Anonymous <br>Basic   |
+| **Pipeline** <br>- [Copy activity](connector-microsoft-access-copy-activity.md) (source/destination)<br>- Lookup activity | On-premises (version 3000.278.5 or above) | Anonymous <br>Basic   |
 | **Copy job** (source/destination) | On-premises (version 3000.278.5 or above) | Anonymous <br>Basic |
 
 > [!NOTE]
@@ -25,4 +25,4 @@ The Microsoft Access connector is supported in Data Factory for [!INCLUDE [produ
 
 ## Related content
 
-To learn more about the copy activity configuration for Microsoft Access in Data pipeline, go to [Configure in a Data pipeline copy activity](connector-microsoft-access-copy-activity.md).
+To learn more about the copy activity configuration for Microsoft Access in Pipeline, go to [Configure in a pipeline copy activity](connector-microsoft-access-copy-activity.md).

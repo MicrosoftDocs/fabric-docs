@@ -30,7 +30,7 @@ In this tutorial, create a new [SQL database in Fabric](overview.md).
 1. Under **Build your database**, three useful tiles can help you get your newly created database up and running.
    - **Sample data** option lets you import a sample data into your **Empty** database.
    - **T-SQL** option gives you a web-editor that can be used to write T-SQL to create database object like schema, tables, views, and more. For users who are looking for code snippets to create objects, they can look for available samples in **Templates** drop down list at the top of the menu.
-   - **Connection strings** option shows the SQL database connection string that is required when you want to [connect](connect.md) using [SQL Server Management Studio](https://aka.ms/ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), or other external tools.
+   - **Connection strings** option shows the SQL database connection string that is required when you want to [connect](connect.md) using [SQL Server Management Studio](https://aka.ms/ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true), or other external tools.
 1. Consider adding your new database to source control. For more information, see [SQL database source control integration in Microsoft Fabric](source-control.md#add-the-fabric-sql-database-to-source-control).
 
 ## Next step
@@ -41,5 +41,5 @@ In this tutorial, create a new [SQL database in Fabric](overview.md).
 ## Related content
 
 - [Connect to your SQL database in Microsoft Fabric](connect.md)
-- [Ingest data into SQL database via data pipelines](load-data-pipelines.md)
+- [Ingest data into SQL database via pipelines](load-data-pipelines.md)
 - [Options to create a SQL database in the Fabric portal](create-options.md)

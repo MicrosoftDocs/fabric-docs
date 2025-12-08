@@ -44,7 +44,7 @@ To troubleshoot, review the error details for the failed table or activity. Thes
 
 ## Solution: Update firewall rules on the gateway server
 
-Update the firewall rules on the gateway server or the customer's proxy servers to allow outbound traffic to the following endpoints. If your firewall doesn't support wildcards, use the IP addresses from [Azure IP Ranges and Service Tags](https://www.microsoft.com/en-us/download/details.aspx?id=56519). Keep these in sync monthly.
+Update the firewall rules on the gateway server or the customer's proxy servers to allow outbound traffic to the following endpoints. If your firewall doesn't support wildcards, use the IP addresses from [Azure IP Ranges and Service Tags](https://www.microsoft.com/download/details.aspx?id=56519). Keep these in sync monthly.
 
 - **Protocol**: TCP
 - **Endpoints**: *.datawarehouse.pbidedicated.windows.net, *.datawarehouse.fabric.microsoft.com, *.dfs.fabric.microsoft.com

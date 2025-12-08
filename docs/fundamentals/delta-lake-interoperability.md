@@ -4,7 +4,7 @@ description: Learn about Delta Lake table format interoperability in Microsoft F
 ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
 ms.date: 4/25/2025
 ms.search.form: delta lake interoperability
@@ -22,7 +22,7 @@ To achieve interoperability, all the Fabric experiences align on the Delta Lake 
 
 * **Writers**: Data warehouses, eventstreams, and exported Power BI semantic models into OneLake
 * **Readers**: SQL analytics endpoint and Power BI direct lake semantic models
-* **Writers and readers**: Fabric Spark runtime, dataflows, data pipelines, and Kusto Query Language (KQL) databases
+* **Writers and readers**: Fabric Spark runtime, dataflows, pipelines, and Kusto Query Language (KQL) databases
 
 The following matrix shows key Delta Lake features and its availability on each Fabric experience.
 
@@ -35,7 +35,7 @@ The following matrix shows key Delta Lake features and its availability on each 
 |Fabric Spark Runtime 1.2|Name: Yes<br/>ID: Yes|Yes|Yes|Yes|Read: Yes<br/>Write: Yes|Yes, read only|Yes|Reader: 1<br/>Writer: 2|
 |Fabric Spark Runtime 1.1|Name: Yes<br/>ID: Yes|No|Yes|Yes|Read: Yes<br/>Write: Yes|Yes, read only|No|Reader: 1<br/>Writer: 2|
 |Dataflows Gen2|Name: Yes<br/>ID: No|Yes|Yes|No|Read: Yes<br/>Write: Yes|Yes, read only|No|Reader: 1<br/>Writer: 2<br/>|
-Data pipelines|Name: No<br/>ID: No|No|Yes|No|Read: Yes<br/>Write: Yes, overwrite only|Yes, read only|No|Reader: 1<br/>Writer: 2|
+Pipelines|Name: No<br/>ID: No|No|Yes|No|Read: Yes<br/>Write: Yes, overwrite only|Yes, read only|No|Reader: 1<br/>Writer: 2|
 Power BI direct lake semantic models|Name: Yes<br/>ID: No|Yes|N/A (not applicable)|N/A (not applicable)|Read: Yes<br/>Write: N/A (not applicable)|Yes|No|N/A (not applicable)|
 Export Power BI semantic models into OneLake|Name: Yes<br/>ID: No|N/A (not applicable)|Yes|No|Read: N/A (not applicable)<br/>Write: No|No|No|Reader: 2<br/>Writer: 5<br/>Column Mappings (name)|
 KQL databases|Name: Yes<br/>ID: No|Yes|No|No<sup>*</sup>|Read: Yes<br/>Write: Yes|No|No|Reader: 1<br/>Writer: 1|
@@ -54,8 +54,8 @@ Currently, Fabric doesn't support these Delta Lake features:
 
 * V2 Checkpoints aren't uniformly available in all experiences. Only Spark notebooks and Spark jobs can read and write to tables with V2 Checkpoints. Lakehouse and SQL Analytics don't correctly list tables containing V2 Checkpoint files in the ```__delta_log``` folder.
 * Delta Lake 3.x Uniform. This feature is supported only in the Data Engineering Spark-compute (Notebooks, Spark Jobs).
-* Identity columns writing (proprietary Databricks feature)
-* Delta Live Tables (proprietary Databricks feature)
+* Identity columns writing (Azure Databricks feature)
+* Lakeflow Spark Declarative Pipelines (Azure Databricks feature)
 * Delta Lake 4.x features: Type widening, collations, variant type, coordinated commits.
 
 ## Special characters on table names

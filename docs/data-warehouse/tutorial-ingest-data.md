@@ -29,17 +29,17 @@ In this task, learn how to ingest data into the warehouse to create tables.
 
 1. In the workspace landing pane, select **+ New Item** to display the full list of available item types.
 
-1. From the list, in the **Get data** section, select the **Data pipeline** item type.
+1. From the list, in the **Get data** section, select the **Pipeline** item type.
 
 1. In the **New pipeline** window, in the **Name** box, enter `Load Customer Data`.
 
    :::image type="content" source="media/tutorial-ingest-data/create-new-pipeline.png" alt-text="Screenshot of the New pipeline dialog, highlighting the entered name.":::
 
-1. To provision the pipeline, select **Create**. Provisioning is complete when the **Build a data pipeline** landing page appears.
+1. To provision the pipeline, select **Create**. Provisioning is complete when the **Build a pipeline** landing page appears.
 
-1. On the data pipeline landing page, select **Pipeline activity**.
+1. On the pipeline landing page, select **Pipeline activity**.
 
-   :::image type="content" source="media/tutorial-ingest-data/select-pipeline-activity.png" alt-text="Screenshot of the Build a data pipeline landing page, highlighting the Pipeline activity option." lightbox="media/tutorial-ingest-data/select-pipeline-activity.png":::
+   :::image type="content" source="media/tutorial-ingest-data/select-pipeline-activity.png" alt-text="Screenshot of the Build a pipeline landing page, highlighting the Pipeline activity option." lightbox="media/tutorial-ingest-data/select-pipeline-activity.png":::
 
 1. In the menu, from inside the **Move and transform** section, select **Copy data**.
 

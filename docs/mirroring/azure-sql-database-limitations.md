@@ -1,11 +1,11 @@
 ---
 title: "Limitations and Behaviors for Fabric Mirrored Databases From Azure SQL Database"
 description: A detailed list of limitations for mirrored databases from Azure SQL Database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: imotiwala, sbahadur, drskwier, ajayj
-ms.date: 06/03/2025
-ms.topic: conceptual
+author: whhender
+ms.author: whhender
+ms.reviewer: imotiwala, sbahadur, drskwier, ajayj, atodalbagi
+ms.date: 11/25/2025
+ms.topic: article
 ms.custom:
   - references_regions
 ---
@@ -38,14 +38,19 @@ For troubleshooting, see:
 
 ## Network and connectivity security
 
-- The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled and must be the primary identity.
+- Either the System Assigned Managed Identity (SAMI) or the User Assigned Managed Identity (UAMI) of the Azure SQL logical server needs to be enabled and must be the primary identity.
+
+  > [!NOTE]  
+  > Support for User Assigned Managed Identity (UAMI) is currently in preview.
+
 - The Azure SQL Database service principal name (SPN) contributor permissions should not be removed from the Fabric mirrored database item.
 - Mirroring across [Microsoft Entra](/entra/fundamentals/new-name) tenants is not supported where an Azure SQL Database and the Fabric workspace are in separate tenants.  
 - Microsoft Purview Information Protection/sensitivity labels defined in Azure SQL Database are not cascaded and mirrored to Fabric OneLake.
 
 ## Table level
 
-- A table cannot be mirrored if the primary key is one of the data types: **sql_variant**, **timestamp**/**rowversion**.
+- Tables with primary key or a clustered index (when a primary key does not exist) on unsupported types cannot be mirrored - **computed columns**, **user-defined types**, **geometry**, **geography**, **hierarchy ID**, **SQL variant**, **timestamp**, **datetime2(7)**, **datetimeoffset(7)**, or **time(7)**.
+
 - Delta lake supports only six digits of precision.
    - Columns of SQL type **datetime2**, with precision of 7 fractional second digits, do not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss happens if columns of this type are mirrored and seventh decimal second digit will be trimmed.
    - A table cannot be mirrored if the primary key is one of these data types: **datetime2(7)**, **datetimeoffset(7)**, **time(7)**, where `7` is seven digits of precision.

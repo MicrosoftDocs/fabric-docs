@@ -33,26 +33,52 @@ items:
     href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: AI functions
   items: 
-    - name: Transform and enrich data with AI functions
-      href: ./ai-functions/overview.md
-    - name: ai.similarity
-      href: ./ai-functions/similarity.md
-    - name: ai.classify
-      href: ./ai-functions/classify.md
+  - name: Transform and enrich data with AI functions
+    href: ./ai-functions/overview.md
+  - name: pandas
+    items: 
     - name: ai.analyze_sentiment
-      href: ./ai-functions/analyze-sentiment.md
+      href: ./ai-functions/pandas/analyze-sentiment.md
+    - name: ai.classify
+      href: ./ai-functions/pandas/classify.md
+    - name: ai.embed
+      href: ./ai-functions/pandas/embed.md
     - name: ai.extract
-      href: ./ai-functions/extract.md
+      href: ./ai-functions/pandas/extract.md
     - name: ai.fix_grammar
-      href: ./ai-functions/fix-grammar.md
-    - name: ai.summarize
-      href: ./ai-functions/summarize.md
-    - name: ai.translate
-      href: ./ai-functions/translate.md
+      href: ./ai-functions/pandas/fix-grammar.md      
     - name: ai.generate_response
-      href: ./ai-functions/generate-response.md
-    - name: Customize AI function configurations
-      href: ./ai-functions/configuration.md
+      href: ./ai-functions/pandas/generate-response.md
+    - name: ai.similarity
+      href: ./ai-functions/pandas/similarity.md
+    - name: ai.summarize
+      href: ./ai-functions/pandas/summarize.md
+    - name: ai.translate
+      href: ./ai-functions/pandas/translate.md
+    - name: Custom configurations
+      href: ./ai-functions/pandas/configuration.md
+  - name: PySpark
+    items: 
+    - name: ai.analyze_sentiment
+      href: ./ai-functions/pyspark/analyze-sentiment.md
+    - name: ai.classify
+      href: ./ai-functions/pyspark/classify.md
+    - name: ai.embed
+      href: ./ai-functions/pyspark/embed.md
+    - name: ai.extract
+      href: ./ai-functions/pyspark/extract.md
+    - name: ai.fix_grammar
+      href: ./ai-functions/pyspark/fix-grammar.md      
+    - name: ai.generate_response
+      href: ./ai-functions/pyspark/generate-response.md
+    - name: ai.similarity
+      href: ./ai-functions/pyspark/similarity.md
+    - name: ai.summarize
+      href: ./ai-functions/pyspark/summarize.md
+    - name: ai.translate
+      href: ./ai-functions/pyspark/translate.md
+    - name: Custom configurations
+      href: ./ai-functions/pyspark/configuration.md
 - name: Fabric data agent
   items: 
     - name: What is the Fabric data agent?
@@ -69,10 +95,16 @@ items:
       items:
         - name: Data agent configurations
           href: data-agent-configurations.md
+        - name: Example queries
+          href: data-agent-example-queries.md
         - name: Best practices for configuring data agents 
           href: data-agent-configuration-best-practices.md
+        - name: Add Power BI semantic model as data source
+          href: data-agent-semantic-model.md
         - name: How to configure a data agent
           href: develop-iterative-process-data-agent.md
+        - name: Connect to an AI Foundry Search Index
+          href: data-agent-ai-search-index.md
     - name: How to consume a Fabric data agent
       items:
         - name: Consume a data agent from Azure AI foundry (preview)
@@ -80,9 +112,11 @@ items:
         - name: Consume a data agent from Copilot in Power BI (preview)
           href: data-agent-copilot-powerbi.md
         - name: Consume a data agent from Microsoft Copilot Studio (preview)
-          href: data-agent-microsoft-copilot-studio.md     
+          href: data-agent-microsoft-copilot-studio.md         
         - name: Consume a data agent using Python SDK (preview)
-          href: consume-data-agent-python.md     
+          href: consume-data-agent-python.md
+    - name: Source Control, CI/CD, and ALM for Fabric data agent
+      href: data-agent-source-control.md 
     - name: Fabric data agent end-to-end tutorial
       href: data-agent-end-to-end-tutorial.md        
     - name: Fabric data agent sharing
@@ -129,8 +163,12 @@ items:
       href: use-ai-samples.md
     - name: Book recommendation
       href: retail-recommend-model.md
+    - name: Building Retrieval Augmented Generation
+      href: quickstart-building-retrieval-augmented-generation.md
     - name: Customer churn prediction
       href: customer-churn.md
+    - name: Evaluate RAG performance
+      href: tutorial-evaluate-rag-performance.md
     - name: Fraud detection
       href: fraud-detection.md
     - name: Machine failure prediction
@@ -219,6 +257,8 @@ items:
     href: machine-learning-experiment.md
   - name: Machine learning model
     href: machine-learning-model.md
+  - name: Machine learning tracking upgrade
+    href: mlflow-upgrade.md
   - name: Fabric autologging
     href: mlflow-autologging.md
   - name: Git and deployment pipelines 

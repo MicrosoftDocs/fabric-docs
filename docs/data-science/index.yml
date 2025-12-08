@@ -11,9 +11,9 @@ metadata:
   ms.custom:
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: sdgilley #Required; your GitHub user alias, with correct capitalization.
-  ms.author: sgilley #Required; microsoft alias of author; optional team alias.
-  ms.date: 07/08/2024
+  author: jonburchel #Required; your GitHub user alias, with correct capitalization.
+  ms.author: jburchel #Required; microsoft alias of author; optional team alias.
+  ms.date: 12/03/2025
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -26,7 +26,10 @@ landingContent:
         links:
           - text: What is Data Science?
             url: data-science-overview.md 
-
+      - linkListType: tutorial
+        links:
+          - text: Fabric Data Science end-to-end tutorial
+            url: tutorial-data-science-introduction.md
 # Card
   - title: Copilot
     linkLists:
@@ -54,7 +57,15 @@ landingContent:
             url: data-agent-end-to-end-tutorial.md
           - text: Get started with Fabric data agents
             url: how-to-create-data-agent.md
-  
+          - text: Configure a data agent
+            url: data-agent-configurations.md
+      - linkListType: how-to-guide
+        links:
+          - text: Fabric data agent tenant settings
+            url: data-agent-tenant-settings.md
+          - text: Consume a Fabric data agent in Copilot Studio
+            url: data-agent-microsoft-copilot-studio.md
+ 
 # Card 
   - title: Get started
     linkLists:
@@ -66,6 +77,10 @@ landingContent:
             url: models-experiments-rbac.md
           - text: Machine learning models
             url: machine-learning-model.md 
+          - text: AI functions
+            url: ./ai-functions/overview.md
+          - text: What is semantic link?
+            url: semantic-link-overview.md
 
 
 # Card 
@@ -141,23 +156,6 @@ landingContent:
             url: open-ai.md
           - text: Use AI Services with SynapseML
             url: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
-
-# Card 
-  - title: Use semantic link 
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What is semantic link?
-            url: semantic-link-overview.md
-      - linkListType: how-to-guide
-        links:
-          - text: Read from Power BI and write data consumable by Power BI
-            url: read-write-power-bi-python.md
-          - text: Detect, explore, and validate functional dependencies in your data
-            url: semantic-link-validate-data.md
-          - text: Explore and validate relationships in semantic models
-            url: semantic-link-validate-relationship.md
-
 
 # Card
   - title: Reference docs     

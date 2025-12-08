@@ -1,9 +1,9 @@
 ---
 title: "Run T-SQL code in Fabric Python notebooks"
 description: Learn how to use T-SQL magic command inside Fabric Notebook to for achieve the mix-programming experience between T-SQL and Python.
-author: qixwang
-ms.author: qixwang
-ms.reviewer: sngun
+author: eric-urban
+ms.author: eur
+ms.reviewer: qixwang
 ms.topic: how-to
 ms.date: 07/28/2025
 ms.custom: 
@@ -12,7 +12,7 @@ ms.custom:
 
 # Run T-SQL code in Fabric Python notebooks
 
-The mix of T-SQL and Python in modern data workflows offers a powerful and flexible approach that blends the strengths of both languages. SQL remains the most efficient and readable way to query, filter, and join structured data, while Python excels at data transformation, statistical analysis, machine learning, and visualization. By combining T-SQL and Python, data engineers can use the best of both worlds, enabling them to build robust data pipelines that are efficient, maintainable, and capable of handling complex data processing tasks.
+The mix of T-SQL and Python in modern data workflows offers a powerful and flexible approach that blends the strengths of both languages. SQL remains the most efficient and readable way to query, filter, and join structured data, while Python excels at data transformation, statistical analysis, machine learning, and visualization. By combining T-SQL and Python, data engineers can use the best of both worlds, enabling them to build robust pipelines that are efficient, maintainable, and capable of handling complex data processing tasks.
 
 In Microsoft Fabric Python notebooks, we introduced a new feature called T-SQL magic command. This feature allows you to run T-SQL code directly in Python notebooks with full syntax highlighting and code completion. This means you can write T-SQL code in a Python notebook, and it will be executed as if it were a T-SQL cell. This feature is useful for data engineers who want to use the power of T-SQL while still using the flexibility of Python notebooks.
 
@@ -73,20 +73,38 @@ SELECT TOP (10) [AddressID]
 
 ## Using T-SQL magic command to query lakehouse SQL analytics endpoint
 
-You can also use the T-SQL magic command to query a SQL analytics endpoint. The syntax is similar to querying a data warehouse, but the `-type` parameter must be set to `Lakehouse`.
+You can also use the T-SQL magic command to query a SQL analytics endpoint. The syntax is similar to querying a data warehouse, but the `-type` parameter must be set to `Lakehouse`. The `-bind` parameter specifies the name of the variable to bind the results of the T-SQL query to.
+
+In the following example, the result of the query is stored in a Python variable called `df3`.
+
+```python
+%%tsql -artifact lakehouse1 -type Lakehouse -bind df3
+SELECT TOP (10) [ProductID],
+      [Name],
+      [ProductNumber],
+      [Color],
+      [StandardCost],
+      [ListPrice]
+FROM [lakehouse1].[dbo].[Product];
+```
 
 ## Using T-SQL magic command as line magic
 
-Instead of running T-SQL in a full code cell with `%%tsql`, you can run T-SQL in a single line with `%tsql` as line magic once you have declared a connection for the session. 
+Instead of running T-SQL in a full code cell with `%%tsql`, you can run T-SQL in a single line with `%tsql` as line magic. However, you must first establish a session connection.
 
-1. In a cell that uses the `%%tsql` magic command, include the parameter `-session`. For example:
+> [!IMPORTANT]
+> Before using `%tsql` line magic, you must run a `%%tsql` cell magic command with the `-session` parameter to initialize the SQL magic context. Running `%tsql` without this setup will result in a `SQLMagicContextInitializationException`.
+
+### Prerequisites for line magic
+
+1. **Initialize the session**: In a cell that uses the `%%tsql` magic command, include the parameter `-session` to establish the connection context. For example:
 
     ```python
     %%tsql -artifact ContosoDWH -type Warehouse -session
     SELECT TOP(10) * FROM [ContosoDWH].[dbo].[Geography];
     ```
 
-1. Then, in following cells, `%tsql` will assume the `-session` connection without having to provide `-artifact` and `-type`. For example, the following line command allows running quick queries without needing to create a full code cell.
+2. **Use line magic**: After initializing the session, you can use `%tsql` in following cells. The line magic will use the connection established in step 1 without requiring you to specify `-artifact` and `-type` again. For example:
 
     ```python
     df = %tsql SELECT TOP(10) * FROM [ContosoDWH].[dbo].[Geography];

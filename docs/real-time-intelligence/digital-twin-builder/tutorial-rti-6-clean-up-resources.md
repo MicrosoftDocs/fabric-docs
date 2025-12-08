@@ -3,7 +3,7 @@ title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Clean
 description: Delete resources created during the Digital twin builder (preview) in Real-Time Intelligence tutorial.
 author: baanders
 ms.author: baanders
-ms.date: 05/02/2025
+ms.date: 11/10/2025
 ms.topic: tutorial
 ---
 

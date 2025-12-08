@@ -1,9 +1,9 @@
 ---
 title: Configure Resource Profile Configurations in Microsoft Fabric
 description: Learn how to configure predefined Spark resource profiles in Microsoft Fabric to optimize for different workload patterns.
-ms.reviewer: snehagunda
-ms.author: saravi
-author: santhoshravindran7
+ms.reviewer: saravi
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
   - fabcon-2025

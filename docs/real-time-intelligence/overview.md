@@ -1,15 +1,17 @@
 ---
-title: What is Real-Time Intelligence
-description: Learn about Real-Time Intelligence in Microsoft Fabric.
+title: What Is Real-Time Intelligence in Microsoft Fabric?
+description: Discover how Real-Time Intelligence in Microsoft Fabric empowers organizations to analyze, visualize, and act on streaming data for event-driven solutions.
+#customer intent: As a data analyst, I want to understand how to use Real-Time Intelligence so that I can extract insights from streaming data.
 ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: overview
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 09/25/2025
 ms.subservice: rti-core
 ms.search.form: Overview
 ---
+
 # What is Real-Time Intelligence?
 
 Real-Time Intelligence is a powerful service that empowers everyone in
@@ -70,7 +72,7 @@ understand the data structure, patterns, anomalies, forecasting
 quantities, and data rates. Accordingly, you can act or make smart decision based on the data. Real-Time dashboards come equipped with out-of-the-box
 interactions that simplify the process of understanding data, making
 it accessible to anyone who wants to make decision based on data in
-motion using visual tools, Natural Language and Copilot.
+motion using visual tools, Natural Language, and Copilot.
 
 -   These insights can be turned into actions with Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)], as
     you set up alerts from various parts of Fabric to react to
@@ -91,7 +93,7 @@ Real-Time hub events is a catalog of data in motion, and contains:
     for example: Azure Event Hubs, Azure IoT Hub, Azure SQL DB Change
     Data Capture (CDC), Azure Cosmos DB CDC, PostgreSQL DB CDC.
 
--   **Fabric events**: Event-driven capabilities support real-time notifications and data processing. You can monitor and react to events including Fabric Workspace Item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. You can also send these events to other destinations via eventstreams. 
+-   **Fabric events**: Event-driven capabilities support real-time notifications and data processing. You can monitor and react to events including Fabric Workspace Item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a pipeline or sending a notification via email. You can also send these events to other destinations via eventstreams. 
 
 This data is all presented in a readily consumable format and is
 available to all Fabric workloads.
@@ -117,8 +119,7 @@ aggregations that can be shared to consumers in Real-Time hub.
 
 ### Store and analyze data
 
-Eventhouses are the ideal analytics engine to process data in motion. They're tailored to time-based, streaming events with structured, semi structured, and unstructured data. This data is
-automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data. Data stored in eventhouses can be made available in OneLake for consumption by other Fabric experiences.
+Eventhouses are the ideal analytics engine to process data in motion. They're tailored to time-based, streaming events with structured, semi structured, and unstructured data. This data is automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data. Data stored in eventhouses can be made available in OneLake for consumption by other Fabric experiences.
 
 The indexed, partitioned data stored in eventhouses is ready for
 lightning-fast query using various code, low-code, or no-code
@@ -141,15 +142,10 @@ Digital twin builder data can also be connected to Power BI or Real-Time dashboa
 
 ### Visualize data insights
 
-Data insights can be visualized in KQL querysets, Real-Time
-dashboards and Power BI reports, with seconds from data ingestion to
-insights. Visualization options range from no-code to fully specialized
-experiences, giving value to both the novice and expert insights
-explorer to visualize their data as charts and tables. You can use
-visual cues to perform filtering and aggregation operations on query
-results and using a rich list of built-in visualizations. These insights
-can be viewed in Power BI Reports and Real-Time Dashboards, both of
-which can have alerts built upon the data insights.
+Data insights can be visualized in KQL querysets, Real-Time dashboards, Power BI reports, and maps, with seconds from data ingestion to insights. Visualization options range from no-code to fully specialized experiences, giving value to both the novice and expert insights explorer to visualize their data as charts and tables. You can use
+visual cues to perform filtering and aggregation operations on query results and using a rich list of built-in visualizations. These insights can be viewed in Power BI Reports and Real-Time Dashboards, both of which can have alerts built upon the data insights.
+
+Map in Microsoft Fabric is a dynamic geospatial visualization tool that empowers you to analyze both static and real-time spatial data for deeper intelligence. It supports multiple customizable data layers—such as bubbles, heatmaps, polygons, and 3D extrusions, allowing you to uncover spatial patterns and trends that traditional charts often miss. By integrating with Lakehouses and Eventhouses and enabling KQL queries with refresh intervals, Map facilitates real-time data analytics, helping teams monitor live changes, detect anomalies, and make timely decisions. With built-in map styles and support for formats like [GeoJSON](https://geojson.org/) and [PMTiles](https://docs.protomaps.com/pmtiles/), it’s a powerful asset for operational awareness and spatial intelligence. For more information, see [Create a map](./map/create-map.md). 
 
 ### Trigger actions
 
@@ -168,16 +164,15 @@ advantages.
 
 - [Route events from eventstreams to Fabric item destinations](event-streams/route-events-based-on-content.md)
 - [Emit events from Fabric items into Real-Time hub](../real-time-hub/explore-fabric-workspace-item-events.md)
-- Access data in OneLake from Real-Time Intelligence in several
-ways:
--   [Data from OneLake can be queried from Real-Time Intelligence as a shortcut](database-shortcut.md)
-    -  [ Data from OneLake can be loaded into Real-Time Intelligence](get-data-onelake.md)
-    -  [Data loaded into Real-Time Intelligence is reflected in OneLake as one logical copy](one-logical-copy.md)
+- Access data in OneLake from Real-Time Intelligence in several ways:
+    - [Data from OneLake can be queried from Real-Time Intelligence as a shortcut](database-shortcut.md)
+    - [Data from OneLake can be loaded into Real-Time Intelligence](get-data-onelake.md)
+    - [Data loaded into Real-Time Intelligence is reflected in OneLake as one logical copy](one-logical-copy.md)
 - [Use the data loaded into Real-Time Intelligence as the underlying data for visualization in a Power BI report](create-powerbi-report.md)
 - [Use the data loaded into Real-Time Intelligence for analysis in Fabric Notebooks in Data Engineering](notebooks.md)
 
 
-##  Related content
+## Related content
 
 - [End-to-end tutorial](tutorial-introduction.md)
 - [What is Real-Time hub](../real-time-hub/real-time-hub-overview.md)

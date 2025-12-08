@@ -15,13 +15,16 @@ ms.date: 02/26/2025
 - If you use a workspace identity in one artifact and commit it to Git, it can be updated (back to a fabric workspace) only in a workspace connected to the same identity. Be careful, as this also affects features like branch out.
 - Submodules aren't supported.
 - Sovereign clouds aren't supported.
+- If your workspace contains hundreds of items, consider splitting it into smaller sets of artifacts. Each set should be placed in a separate workspace and linked to a different Git branch, or connected to a single branch organized into different folders.
 
 #### [Azure DevOps limitations](#tab/azure-devops)
 
 - Azure DevOps isn't supported if [Enable IP Conditional Access policy validation](/azure/devops/organizations/accounts/change-application-access-policies#cap-support-on-azure-devops) is enabled.
 - If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 - If your organization configured [conditional access](/appcenter/general/configuring-aad-conditional-access), make sure the **Power BI Service** has the same [conditions set](/fabric/security/security-conditional-access) for authentication to function as expected.
-- The commit size is limited to 125 MB.
+- The following commit size limit is applied:
+  - 25 MB using the Azure DevOps connector with Service Principal. 
+  - 125 MB using the default single sign-on (SSO) Microsoft Entra ID account and Azure DevOps connector with User Principal.
 
 #### [GitHub limitations](#tab/github)
 
@@ -39,6 +42,9 @@ Some GitHub Enterprise versions and settings aren't supported. For example:
 - GitHub Enterprise Server with a custom domain is not supported, even if the instance is publicly accessible
 - Github Enterprise Server hosted on a private network
 - IP allowlist
+
+### Azure DevOps to GitHub Enterprise migration consideration
+If your team uses Fabric Git Integration and is evaluating a migration from Azure DevOps to GitHub Enterprise, it’s recommended to run validation tests to ensure Git Integration functionality remains unaffected. Fabric Git Integration relies on the underlying Git provider APIs, which differ in capabilities and limitations between Azure DevOps and GitHub Enterprise, as described above.
 
 ### Workspace limitations
 

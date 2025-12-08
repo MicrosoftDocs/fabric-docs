@@ -7,7 +7,7 @@ ms.reviewer: juliacawthra
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: troubleshooting
-ms.date: 10/29/2024
+ms.date: 10/30/2025
 ms.custom: css_fy20Q4
 LocalizationGroup: Premium
 ---
@@ -42,16 +42,12 @@ If you've enabled tenant settings to allow service principals to use Power BI AP
 To use a service principal, be sure to specify the application identity information in the connection string as:
 
 - **User ID** - *app:appid@tenantid*
-
 - **Password**
-
-    - *cert:thumbprint* (recommended for security)
-
+  - *cert:thumbprint* (recommended for security)
       `Data Source=powerbi://api.powerbi.com/v1.0/myorg/Contoso;Initial Catalog=PowerBI_Dataset;User ID=app:<appid>;Password=cert:<thumbprint>;`
-
     - *application secret*
       
-      `Data Source=powerbi://api.powerbi.com/v1.0/myorg/Contoso;Initial Catalog=PowerBI_Dataset;User ID=app:<appid>;Password=<secret>;`
+    `Data Source=powerbi://api.powerbi.com/v1.0/myorg/Contoso;Initial Catalog=PowerBI_Dataset;User ID=app:<appid>;Password=<secret>;`
 
 If you receive the following error:
 
@@ -73,9 +69,9 @@ You can deploy a tabular model project in Visual Studio (SSDT) to a workspace as
 
 ### Deploying a new model
 
-In the default configuration, Visual Studio attempts to process the model as part of the deployment operation to load data into the semantic model from the data sources. As described in [Deploy model projects from Visual Studio (SSDT)](service-premium-connect-tools.md#deploy-model-projects-from-visual-studio-ssdt), this operation can fail because data source credentials cannot be specified as part of the deployment operation. Instead, if credentials for your data source aren't already defined for any of your existing semantic models, you must specify the data source credentials in the semantic model settings using the Power BI user interface (**Semantic models** > **Settings** > **Data source credentials** > **Edit credentials**). Having defined the data source credentials, Power BI can then apply the credentials to this data source automatically for any new semantic model, after metadata deployment has succeeded and the semantic model has been created.
+In the default configuration, Visual Studio attempts to process the model as part of the deployment operation to load data into the semantic model from the data sources. As described in [Deploy model projects from Visual Studio (SSDT)](service-premium-connect-tools.md#deploy-model-projects-from-visual-studio-ssdt), this operation can fail because data source credentials can't be specified as part of the deployment operation. Instead, if credentials for your data source aren't already defined for any of your existing semantic models, you must specify the data source credentials in the semantic model settings using the Power BI user interface (**Semantic models** > **Settings** > **Data source credentials** > **Edit credentials**). Having defined the data source credentials, Power BI can then apply the credentials to this data source automatically for any new semantic model, after metadata deployment has succeeded and the semantic model has been created.
 
-If Power BI cannot bind your new semantic model to data source credentials, you will receive an error stating "Cannot process database. Reason: Failed to save modifications to the server." with the error code "DMTS_DatasourceHasNoCredentialError", as shown below:
+If Power BI can't bind your new semantic model to data source credentials, you receive an error stating "Cannot process database. Reason: Failed to save modifications to the server." with the error code "DMTS_DatasourceHasNoCredentialError":
 
 :::image type="content" source="media/troubleshoot-xml-analysis-endpoint/deploy-refresh-error.png" alt-text="Model deployment error":::
 
@@ -85,7 +81,7 @@ To avoid the processing failure, set the **Deployment Options** > **Processing O
 
 ### New project from an existing semantic model
 
-Creating a new tabular project in Visual Studio by importing the metadata from an existing semantic model is not supported. However, you can connect to the semantic model by using SQL Server Management Studio, script out the metadata, and reuse it in other tabular projects.
+Creating a new tabular project in Visual Studio by importing the metadata from an existing semantic model isn't supported. However, you can connect to the semantic model by using SQL Server Management Studio, script out the metadata, and reuse it in other tabular projects.
 
 ## Migrating a semantic model to Power BI
 
@@ -120,7 +116,6 @@ Just as there are multiple data source types, there are also multiple partition 
 |Structured data source      |     Query partition source     |    The AS engine wraps the native query on the partition source into an M expression and then uses the Mashup engine to import the data.      |    No     |
 |Structured data source      |    M partition source      |     The AS engine uses the Mashup engine to import the data.     |   Yes      |
 
-
 ### Data sources and impersonation
 
 Impersonation settings you can define for provider data sources are not relevant for Power BI. Power BI uses a different mechanism based on semantic model settings to manage data source credentials. For this reason, make sure you select **Service Account** if you are creating a Provider Data Source.
@@ -129,7 +124,7 @@ Impersonation settings you can define for provider data sources are not relevant
 
 ### Fine-grained processing
 
-When triggering a scheduled refresh or on-demand refresh in Power BI, Power BI typically refreshes the entire semantic model. In many cases, it's more efficient to perform refreshes more selectively. You can perform fine-grained processing tasks in SQL Server Management Studio (SSMS) as shown below, or by using third-party tools or scripts.
+When triggering a scheduled refresh or on-demand refresh in Power BI, Power BI typically refreshes the entire semantic model. In many cases, it's more efficient to perform refreshes more selectively. You can perform fine-grained processing tasks in SQL Server Management Studio (SSMS) as shown in the following image, or by using third-party tools or scripts.
 
 :::image type="content" source="media/troubleshoot-xml-analysis-endpoint/process-tables.png" alt-text="Process tables in SSMS":::
 
@@ -145,7 +140,7 @@ Semantic models that are refreshed using an XMLA endpoint don't trigger an [emai
 
 ### Connect to Server error in SSMS
 
-When connecting to a Power BI workspace with SQL Server Management Studio (SSMS), the following error may be displayed:
+When connecting to a Power BI workspace with SQL Server Management Studio (SSMS), the following error might be displayed:
 
 ```
 TITLE: Connect to Server
@@ -169,18 +164,18 @@ When connecting to a Power BI workspace with SSMS, ensure the following:
 
 ### Query execution in SSMS
 
-When connected to a workspace in a [Power BI Premium](/power-bi/enterprise/service-premium-what-is) or a [Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi) capacity, SQL Server Management Studio may display the following error:
+When connected to a workspace in a [Power BI Premium](/power-bi/enterprise/service-premium-what-is) or a [Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi) capacity, SQL Server Management Studio might display the following error:
 
 ```
 Executing the query ...
 Error -1052311437: We had to move the session with ID '<Session ID>' to another Power BI Premium node. Moving the session temporarily interrupted this trace - tracing will resume automatically as soon as the session has been fully moved to the new node.
 ```
 
-This is an informational message that can be ignored in SSMS 18.8 and higher because the client libraries will reconnect automatically. Note that client libraries installed with SSMS v18.7.1 or lower do not support session tracing. [Download the latest SSMS](/sql/ssms/download-sql-server-management-studio-ssms).
+This is an informational message that can be ignored in SSMS 18.8 and higher because the client libraries reconnect automatically. Note that client libraries installed with SSMS v18.7.1 or lower do not support session tracing. [Download the latest SSMS](/sql/ssms/download-sql-server-management-studio-ssms).
 
 ### Executing a large command using the XMLA endpoint
 
-When executing a large command using the XMLA endpoint, you may encounter the following error:
+When executing a large command using the XMLA endpoint, you might encounter the following error:
 
 ```
 Executing the query ...
@@ -193,7 +188,7 @@ Date (UTC): 11/13/2020 7:57:16 PM
 Run complete
 ```
 
-When using SSMS v18.7.1 or lower to perform a long running (>1 min) refresh operation on a semantic model in a Power BI Premium or a [Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi) capacity, SSMS may display this error even though the refresh operation succeeds. This is due to a known issue in the client libraries where the status of the refresh request is incorrectly tracked. This is resolved in SSMS 18.8 and higher. [Download the latest SSMS](/sql/ssms/download-sql-server-management-studio-ssms).
+When using SSMS v18.7.1 or lower to perform a long running (>1 min) refresh operation on a semantic model in a Power BI Premium or a [Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi) capacity, SSMS might display this error even though the refresh operation succeeds. This is due to a known issue in the client libraries where the status of the refresh request is incorrectly tracked. This is resolved in SSMS 18.8 and higher. [Download the latest SSMS](/sql/ssms/download-sql-server-management-studio-ssms).
 
 This error can also occur when a very large request needs to be redirected to a different node in the Premium cluster. It's often seen when you try to create or alter a semantic model using a large TMSL script. In such cases, the error can usually be avoided by specifying the Initial Catalog to the name of the database before executing the command.
 
@@ -213,7 +208,7 @@ After you create the new semantic model, specify the Initial Catalog and then ma
 
 ### Other client applications and tools
 
- Client applications and tools such as Excel, Power BI Desktop, SSMS, or external tools connecting to and working with semantic models in Power BI Premium capacities may cause the following error: **The remote server returned an error: (400) Bad Request.**. The error can be caused especially if an underlying DAX query or XMLA command is long running. To mitigate potential errors, be sure to use the most recent applications and tools that install recent versions of the [Analysis Services client libraries](/analysis-services/client-libraries?view=power-bi-premium-current&preserve-view=true) with regular updates. Regardless of application or tool, the minimum required client library versions to connect to and work with semantic models in a Premium capacity through the XMLA endpoint are:
+ Client applications and tools such as Excel, Power BI Desktop, SSMS, or external tools connecting to and working with semantic models in Power BI Premium capacities might cause the following error: **The remote server returned an error: (400) Bad Request.**. The error can be caused especially if an underlying DAX query or XMLA command is long running. To mitigate potential errors, be sure to use the most recent applications and tools that install recent versions of the [Analysis Services client libraries](/analysis-services/client-libraries?view=power-bi-premium-current&preserve-view=true) with regular updates. Regardless of application or tool, the minimum required client library versions to connect to and work with semantic models in a Premium capacity through the XMLA endpoint are:
 
 |Client Library | Version  |
 |---------|---------|
@@ -223,14 +218,14 @@ After you create the new semantic model, specify the Initial Catalog and then ma
 
 ## Editing role memberships in SSMS
 
-When using the SQL Server Management Studio (SSMS) v18.8 to edit a role membership on a semantic model, SSMS may display the following error:
+When using the SQL Server Management Studio (SSMS) v18.8 to edit a role membership on a semantic model, SSMS might display the following error:
 
 ```
 Failed to save modifications to the server. 
-Error returned: â€˜Metadata change of current operation cannot be resolved, please check the command or try again later.â€™ 
+Error returned: 'Metadata change of current operation cannot be resolved, please check the command or try again later.' 
 ```
 
-This is due to a known issue in the app services REST API. This will be resolved in an upcoming release. In the meantime, to get around this error, in **Role Properties**, click **Script**, and then enter and execute the following TMSL command:
+This is due to a known issue in the app services REST API. Until resolved, to get around this error, in **Role Properties**, click **Script**, and then enter and execute the following TMSL command:
 
 ```json
 { 
@@ -257,22 +252,21 @@ This is due to a known issue in the app services REST API. This will be resolved
 } 
 ```
 
-## Publish Error - Live connected semantic model
+## Publish error - Live connected semantic model
 
-When republishing a live connected semantic model utilizing the Analysis Services connector, the following error, "**There is an existing report/semantic model with the same name. Please delete or rename the existing semantic model and retry.**"
- may be shown.
+When republishing a live connected semantic model utilizing the Analysis Services connector, the following error might be shown: "**There is an existing report/semantic model with the same name. Please delete or rename the existing semantic model and retry.**" 
 
 :::image type="content" source="media/troubleshoot-xml-analysis-endpoint/cannot-publish-to-power-bi.png" alt-text="Couldn't publish to Power BI error.":::
 
 This is due to the semantic model being published having a different connection string but having the same name as the existing semantic model. To resolve this issue, either delete or rename the existing semantic model. Also be sure to republish any apps that are dependent on the report. If necessary, downstream users should be informed to update any bookmarks with the new report address to ensure they access the latest report.  
 
-## Live connected semantic model cannot be loaded
+## Live connected semantic model can't be loaded
 
-Users trying to create a new Live Connected model or open an existing Live Connected model, using the March 2024 or later versions of Power BI Desktop, may encounter an error similar to the following: "**_We couldn't connect to your model in the Power BI service. The dataset may have been deleted, renamed, moved, or it is possible that you don't have permission to access it._**"
+Users trying to create a new Live Connected model or open an existing Live Connected model, using the March 2024 or later versions of Power BI Desktop, might encounter an error similar to the following: "**_We couldn't connect to your model in the Power BI service. The dataset may have been deleted, renamed, moved, or it is possible that you don't have permission to access it._**"
 
 :::image type="content" source="media/troubleshoot-xml-analysis-endpoint/cannot-load-model.png" alt-text="Screenshot of cannot load model error.":::
 
-The error may occur when a proxy is configured in the user's environment and the proxy is preventing access to the Power BI service. Beginning with the March 2024 version of Power BI Desktop, the userâ€™s environment must allow connections to the Power BI service at endpoint ***.pbidedicated.windows.net** or the corresponding Power BI service endpoints for sovereign clouds.
+The error can occur when a proxy is configured in the user's environment and the proxy is preventing access to the Power BI service. Beginning with the March 2024 version of Power BI Desktop, the userâ€™s environment must allow connections to the Power BI service at endpoint ***.pbidedicated.windows.net** or the corresponding Power BI service endpoints for sovereign clouds.
 
 To validate whether the issue is a result of proxy settings, try the **SQL Server Analysis Services** connector in Power BI Desktop or any first-party or third-party external tool, such as **SQL Server Management Studio**, to connect to any premium workspace.
 
@@ -282,7 +276,7 @@ Refer to the [establishing a client connection](#establishing-a-client-connectio
 
 Excel workbook might fail to open with error, "**Initialization of the data source failed. Check the database server or contact your database administrator.**". If the workbook contains a connection to a Power BI semantic model, then check if the connection string contains the property "**Catalog Rebound=True**". If the property is found, remove it, save the workbook, and try opening it again.
 
-The "**Catalog Rebound=True**" property is automatically added by the Analysis Services OLE DB Provider (MSOLAP) in newer versions of Excel when the connection to Power BI semantic model is optimized by the provider. Because the property is persisted to the workbook, when the same workbook is opened in Excel that's using an older version of the provider that doesn't support the optimization, then Excel will fail to open the workbook.
+The "**Catalog Rebound=True**" property is automatically added by the Analysis Services OLE DB Provider (MSOLAP) in newer versions of Excel when the connection to Power BI semantic model is optimized by the provider. Because the property is persisted to the workbook, when the same workbook is opened in Excel that's using an older version of the provider that doesn't support the optimization, then Excel fails to open the workbook.
 
 "**Catalog Rebound**" is meant for internal use only.
 
@@ -303,26 +297,24 @@ The effective memory limit for a command is based on the lesser of the capacity'
 For example, for a P1 capacity, if:
 
 - DbpropMsmdRequestMemoryLimit = 0 (or unspecified), the effective memory limit for the command is 25 GB.
-
 - DbpropMsmdRequestMemoryLimit = 5 GB, the effective memory limit for the command is 5 GB.
-
 - DbpropMsmdRequestMemoryLimit = 50 GB, the effective memory limit for the command is 25 GB.
 
-Typically, the effective memory limit for a command is calculated on the memory allowed for the semantic model by the capacity (25 GB, 50 GB, 100 GB) and how much memory the semantic model is already consuming when the command starts executing. For example, a semantic model using 12 GB on a P1 capacity allows an effective memory limit for a new command of 13 GB. However, the effective memory limit can be further constrained by the DbPropMsmdRequestMemoryLimit XMLA property when optionally specified by an application. Using the previous example, if 10 GB is specified in the DbPropMsmdRequestMemoryLimit property, then the commandâ€™s effective limit is further reduced to 10 GB.
+Typically, the effective memory limit for a command is calculated on the memory allowed for the semantic model by the capacity (25 GB, 50 GB, 100 GB) and how much memory the semantic model is already consuming when the command starts executing. For example, a semantic model using 12 GB on a P1 capacity allows an effective memory limit for a new command of 13 GB. However, the effective memory limit can be further constrained by the DbPropMsmdRequestMemoryLimit XMLA property when optionally specified by an application. Using the previous example, if 10 GB is specified in the DbPropMsmdRequestMemoryLimit property, then the command's effective limit is further reduced to 10 GB.
 
 If the command operation attempts to consume more memory than allowed by the limit, the operation can fail, and an error is returned. For example, the following error describes an effective memory limit of 25 GB (P1 capacity) has been exceeded because the semantic model already consumed 12 GB (12288 MB) when the command started execution, and an effective limit of 13 GB (13312 MB) was applied for the command operation:
 
-**"Resource governing: This operation was canceled because there wasnâ€™t enough memory to finish running it. Either increase the memory of the Premium capacity where this semantic model is hosted or reduce the memory footprint of your semantic model by doing things like limiting the amount of imported data. More details: consumed memory 13312 MB, memory limit 13312 MB, database size before command execution 12288 MB. Learn more: `https://go.microsoft.com/fwlink/?linkid=2159753`."**
+  `Resource governing: This operation was canceled because there wasnâ€™t enough memory to finish running it. Either increase the memory of the Premium capacity where this semantic model is hosted or reduce the memory footprint of your semantic model by doing things like limiting the amount of imported data. More details: consumed memory 13312 MB, memory limit 13312 MB, database size before command execution 12288 MB. Learn more: `https://go.microsoft.com/fwlink/?linkid=2159753`.`
 
 In some cases, as shown in the following error, "consumed memory" is 0 but the amount shown for "database size before command execution" is already greater than the effective memory limit. This means the operation failed to begin execution because the amount of memory already used by the semantic model is greater than the memory limit for the SKU.
 
-**"Resource governing: This operation was canceled because there wasnâ€™t enough memory to finish running it. Either increase the memory of the Premium capacity where this semantic model is hosted or reduce the memory footprint of your semantic model by doing things like limiting the amount of imported data. More details: consumed memory 0 MB, memory limit 25600 MB, database size before command execution 26000 MB. Learn more: `https://go.microsoft.com/fwlink/?linkid=2159753`."**
+  `Resource governing: This operation was canceled because there wasn't enough memory to finish running it. Either increase the memory of the Premium capacity where this semantic model is hosted or reduce the memory footprint of your semantic model by doing things like limiting the amount of imported data. More details: consumed memory 0 MB, memory limit 25600 MB, database size before command execution 26000 MB. Learn more: `https://go.microsoft.com/fwlink/?linkid=2159753`.`
 
-To potentially avoid exceeding the effective memory limit:
+### Understanding memory errors and recovery
 
-- Upgrade to a larger Premium capacity (SKU) size for the semantic model.
-- Reduce the memory footprint of your semantic model by limiting the amount of data loaded with each refresh.
-- For refresh operations through the XMLA endpoint, reduce the number of partitions being processed in parallel. Too many partitions being processed in parallel with a single command can exceed the effective memory limit.
+Load balancing across semantic models is managed automatically by the system. Memory errors like those discussed here can occur temporarily during periods of high demand on your capacity. In most cases, the system recovers quickly as memory resources become available. If you encounter a memory error, wait a moment and retry your operation.
+
+If memory errors persist or occur frequently, this indicates that your capacity might require additional resources or optimization. In such cases, consider the following mitigation strategies or contact Microsoft Support for assistance with capacity sizing and workload optimization.
 
 ## Related content
 

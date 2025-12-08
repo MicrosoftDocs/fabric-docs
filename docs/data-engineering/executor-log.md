@@ -1,9 +1,9 @@
 ---
 title: Get Spark executor logs using Spark monitoring APIs.
 description: Learn more on how to retrieve Spark Executor Logs.
-author: jejiang
-ms.author: jejiang
-ms.reviewer: whhender
+author: eric-urban
+ms.author: eur
+ms.reviewer: jejiang
 ms.topic: tutorial
 ms.date: 03/31/2025
 ---

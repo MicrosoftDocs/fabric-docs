@@ -1,9 +1,9 @@
 ---
 title: Apache Spark application detail monitoring
 description: Learn how to monitor your Apache Spark application details, including recent run status, issues, and the progress of your jobs.
-ms.reviewer: snehagunda
-ms.author: jejiang
-author: jejiang
+ms.reviewer: jejiang
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 02/24/2023
@@ -12,7 +12,7 @@ ms.search.form: Monitor Spark application details
 
 # Apache Spark application detail monitoring
 
-With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache Spark to run notebooks, jobs, and other kinds of applications in your workspace. This article explains how to monitor your Apache Spark application.
+With Microsoft Fabric, you can use Apache Spark to run notebooks, jobs, and other kinds of applications in your workspace. This article explains how to monitor your Apache Spark application.
 
 You can access the Spark monitoring detail page from either the Fabric Monitoring Hub or the item's Recent runs panel. 
 

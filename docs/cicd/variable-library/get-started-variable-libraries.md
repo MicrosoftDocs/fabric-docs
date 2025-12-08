@@ -12,14 +12,11 @@ ms.search.form: Create and use variable library
 #customer intent: As a developer, I want to learn how to use a Microsoft Fabric variable library to customize and share item configurations in a workspace, so that I can manage my content lifecycle.
 ---
 
-# Create and manage variable libraries (preview)
+# Create and manage variable libraries
 
 Microsoft Fabric variable libraries enable developers to customize and share item configurations within a workspace, with a goal of streamlining content lifecycle management. This article explains how to create, manage, and consume variable libraries.
 
 For a more detailed walkthrough of the process, see the [tutorial for using variable libraries](./tutorial-variable-library.md).
-
-> [!NOTE]
-> The Fabric variable library item is currently in preview.
 
 ## Prerequisites
 
@@ -29,9 +26,6 @@ To create variable library items in Fabric, you need:
 * A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
 * The following [tenant switches](../../admin/about-tenant-settings.md) enabled from the Admin portal:
   * [Users can create Fabric items](../../admin/fabric-switch.md)
-  * **Users can work with variable libraries**
-
-    :::image type="content" source="./media/get-started-variable-libraries/variable-library-switch.png" alt-text="Screenshot of a tenant switch for working with variable libraries.":::
 
   The tenant admin, capacity admin, or workspace admin can enable these switches, depending on your [organization's settings](../../admin/delegate-settings.md).
 

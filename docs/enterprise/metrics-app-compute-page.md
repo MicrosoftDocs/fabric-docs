@@ -43,6 +43,9 @@ The multimetric column ribbon displays the following four values. You see the to
 
 Displays usage and throttling for the selected capacity. To toggle how the visual is displayed, use the tabs at the top of the visual.
 
+> [!TIP]
+> The matrix table at the bottom of the page includes a helpful tooltip feature. When you hover over rows in the details table, a tooltip appears showing the breakdown of consumption by operation type (such as query or refresh). This tooltip is one of the only places in the app where you can see this granular breakdown, making it valuable for understanding what types of operations are consuming your capacity resources.
+
 ### Utilization  
 
 Displays CU usage over time.

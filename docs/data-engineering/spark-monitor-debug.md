@@ -1,9 +1,9 @@
 ---
 title: Notebook contextual monitoring and debugging
 description: Learn how to monitor Apache Spark jobs within a Fabric notebook, including job progress, resource usage, and Spark Advisor recommendations.
-ms.reviewer: snehagunda
-author: jejiang
-ms.author: jejiang
+ms.reviewer: jejiang
+author: eric-urban
+ms.author: eur
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 02/24/2023

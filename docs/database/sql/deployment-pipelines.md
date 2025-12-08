@@ -61,7 +61,7 @@ Once we've reviewed the pending changes from the development workspace, we can r
 
 ## Related content
 
-- [Ingest data into SQL database in Fabric via data pipelines](load-data-pipelines.md)
+- [Ingest data into SQL database in Fabric via pipelines](load-data-pipelines.md)
 - [Introduction to deployment pipelines in Fabric](../../cicd/deployment-pipelines/intro-to-deployment-pipelines.md)
 - [Automate Fabric deployment pipelines](../../cicd/deployment-pipelines/pipeline-automation-fabric.md)
 - [Tutorial: Lifecycle management in Fabric](../../cicd/cicd-tutorial.md)

@@ -7,6 +7,7 @@ author: spelluru
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 12/24/2024
+ms.subservice: rti-eventhouse
 ms.search.form: Notebooks
 ---
 # Tutorial: Use a notebook with Apache Spark to query a KQL database

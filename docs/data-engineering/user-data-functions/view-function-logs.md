@@ -1,8 +1,9 @@
 ---
 title: Quickstart - View invocation logs for a Fabric User data functions item
 description: Learn how to view and understand the invocation logs for a Fabric User data functions item.
-ms.author: sumuth
-author: mksuni
+ms.author: eur
+ms.reviewer: sumuth
+author: eric-urban
 ms.topic: quickstart
 ms.date: 03/31/2025
 ms.search.form: Fabric User data functions

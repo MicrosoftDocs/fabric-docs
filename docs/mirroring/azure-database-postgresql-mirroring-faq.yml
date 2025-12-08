@@ -2,8 +2,8 @@
 metadata:
   title: "Frequently asked questions for Mirroring Azure Database for PostgreSQL flexible server in Microsoft Fabric"
   description: This article answers frequently asked questions about Mirroring Azure Database for PostgreSQL flexible server in Microsoft Fabric.
-  author: WilliamDAssafMSFT
-  ms.author: wiassaf
+  author: whhender
+  ms.author: whhender
   ms.reviewer: scoriani
   ms.service: fabric
   ms.subservice: data-warehouse
@@ -18,11 +18,11 @@ sections:
     questions:
       - question: |
           What authentication to the Azure Database for PostgreSQL flexible server is allowed? 
-        answer: 
-          Currently, for authentication to the source Azure Database for PostgreSQL flexible server, we support basic authentication with user name and password. Microsoft Entra ID users, and Service Principal will be supported soon. 
+        answer:
+          We support both Entra and PostgreSQL database roles. For more information see [Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server](azure-database-postgresql-tutorial.md)
 
       - question: |
-           Is there a staging or landing zone for Azure Database for PostgreSQL flexible server? If so, is it outside of OneLake? 
+          Is there a staging or landing zone for Azure Database for PostgreSQL flexible server? If so, is it outside of OneLake? 
         answer: 
           A landing zone in OneLake stores both the snapshot and change data, to improve performance when converting files into delta tables.
 
@@ -73,9 +73,9 @@ sections:
           See [Monitor Fabric Mirror replication](monitor.md).
 
       - question: |
-          Can Azure Database for PostgreSQL flexible server mirroring be accessed through the Power BI Gateway or behind a firewall? 
+          Can Azure Database for PostgreSQL flexible server be VNET integrated or only accessible through a Private Endpoint? 
         answer: 
-          Currently, access through the Power BI Gateway or behind a firewall is unsupported.
+          Yes, to access an Azure Database for PostgreSQL flexible server that doesn't support public connectivity you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways).
 
       - question: |
           What steps does restarting the Mirroring include? 
@@ -105,7 +105,7 @@ sections:
       - question: |
           What happens to Mirroring during an HA failover for my Azure Database for PostgreSQL flexible server? 
         answer: 
-          Mirroring is currently not supported for servers with HA enabled.
+          For PostgreSQL version 17 and above, mirroring will continue transparently after an HA failover. If using an earlier version, mirroring will need to be restarted after the failover.
   - name: Security
     questions:
       - question: |

@@ -1,17 +1,14 @@
 ### YamlMime:Landing
-title: Cosmos DB in Microsoft Fabric documentation (preview)
+title: Cosmos DB in Microsoft Fabric documentation
 summary: Learn how to use the Cosmos DB database workload in Microsoft Fabric for your NoSQL and AI applications.
 metadata:
-  title: Cosmos DB Database Documentation Preview
-  titleSuffix: Microsoft Fabric
+  title: Cosmos DB Database Documentation
   description: Learn how to use the Cosmos DB database workload in Microsoft Fabric for your NoSQL and AI applications.
-  author: seesharprun
-  ms.author: sidandrews
+  author: markjbrown
+  ms.author: mjbrown
   ms.topic: landing-page
-  ms.date: 07/17/2025
+  ms.date: 10/30/2025
   ms.search.form: Databases Overview,Cosmos DB Overview
-  appliesto:
-    - ✅ Cosmos DB in Fabric
 landingContent:
   - title: Overview
     linkLists:
@@ -38,13 +35,13 @@ landingContent:
       - linkListType: reference
         links:
           - text: NoSQL query language
-            url: /nosql/query/overview?context=/fabric/context/context-database
+            url: /cosmos-db/query/overview?context=/fabric/context/context-database
           - text: Work with JSON
-            url: /nosql/query/get-started-json?context=/fabric/context/context-database
+            url: /cosmos-db/query/get-started-json?context=/fabric/context/context-database
           - text: Create subqueries
-            url: /nosql/query/subquery?context=/fabric/context/context-database
+            url: /cosmos-db/query/subquery?context=/fabric/context/context-database
           - text: Perform self-joins
-            url: /nosql/query/join?context=/fabric/context/context-database
+            url: /cosmos-db/query/join?context=/fabric/context/context-database
   - title: Integrate
     linkLists:
       - linkListType: concept
@@ -87,10 +84,12 @@ landingContent:
             url: security.md
           - text: Authorization
             url: authorization.md
-      - linkListType: concept
+      - linkListType: how-to-guide
         links:
-          - text: Authenticate with Microsoft Entra ID
+          - text: Authenticate from Azure services
             url: how-to-authenticate.md
+          - text: Authenticate from notebooks
+            url: how-to-authenticate-notebooks.md
   - title: Manage resources
     linkLists:
       - linkListType: concept

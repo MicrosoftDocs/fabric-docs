@@ -1,10 +1,10 @@
 ---
 title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure SQL Managed Instance"
 description: Learn how to configure a mirrored database from Azure SQL Managed Instance in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+author: whhender
+ms.author: whhender
 ms.reviewer: lazartimotic, jingwang, nzagorac
-ms.date: 05/19/2025
+ms.date: 09/25/2025
 ms.topic: tutorial
 ---
 
@@ -15,7 +15,7 @@ ms.topic: tutorial
 ## Prerequisites
 
 - Create or use an existing Azure SQL Managed Instance.
-  - [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql&tabs=azure-portal&preserve-view=true) for source Azure SQL Managed Instance needs to be configured to "[Always up to date](/azure/azure-sql/managed-instance/update-policy?view=azuresql&preserve-view=true&tabs=azure-portal#always-up-to-date-update-policy)"
+  - [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql&tabs=azure-portal&preserve-view=true) for source Azure SQL Managed Instance needs to be configured to "[Always up to date](/azure/azure-sql/managed-instance/update-policy?view=azuresql&preserve-view=true&tabs=azure-portal#always-up-to-date-update-policy)" or "[SQL Server 2025](/azure/azure-sql/managed-instance/update-policy?view=azuresql&preserve-view=true&tabs=azure-portal#sql-server-2025-update-policy)".
   - The source Azure SQL Managed Instance can be either a single SQL managed instance or a SQL managed instance belonging to an instance pool.
   - If you don't have an Azure SQL Managed Instance, [you can create a new SQL managed instance](/azure/azure-sql/managed-instance/instance-create-quickstart?view=azuresql&tabs=azure-portal&preserve-view=true). You can use the [Azure SQL Managed Instance free offer](/azure/azure-sql/managed-instance/free-offer?view=azuresql&preserve-view=true) if you like.
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../fundamentals/fabric-trial.md).
@@ -44,22 +44,29 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 #### Use a login and mapped database user
 
-1. Connect to your Azure SQL Managed Instance using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/azure-data-studio/download-azure-data-studio). Connect to the `master` database.
+1. Connect to your Azure SQL Managed Instance using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or the [mssql extension](https://aka.ms/mssql-marketplace) for [Visual Studio Code](https://code.visualstudio.com/docs). Connect to the `master` database.
 1. Create a server login and assign the appropriate permissions.
-    - Create a SQL Authenticated login. You can choose any name for this login, substitute it in the following script for `<fabric_login>`. Provide your own strong password. Run the following T-SQL script in the `master` database:
 
-    ```sql
-    CREATE LOGIN <fabric_login> WITH PASSWORD = '<strong password>';
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER <fabric_login>;
-    ```
-
-    - Or, create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
-
-    ```sql
-    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
-    ```
-
+    The permissions required for the Fabric login are:
+   
+   - The following permissions in the user database:
+     - SELECT
+     - ALTER ANY EXTERNAL MIRROR
+     - VIEW DATABASE PERFORMANCE STATE
+     - VIEW DATABASE SECURITY STATE
+    
+   - Create a SQL Authenticated login. You can choose any name for this login, substitute it in the following script for `<fabric_login>`. Provide your own strong password. Run the following T-SQL script in the `master` database:
+      
+   ```sql
+   CREATE LOGIN <fabric_login> WITH PASSWORD = '<strong password>';
+   ```
+    
+   - Or, create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+      
+   ```sql
+   CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
+   ```
+    
 1. Switch your query scope to the database you want to mirror. Substitute the name of your database for `<mirroring_source_database>` and run the following T-SQL:
 
     ```sql
@@ -69,17 +76,17 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 1. Create a database user connected to the login. Substitute the name of a new database user for this purpose for `<fabric_user>`:
 
     ```sql
-    CREATE USER <fabric_user> FOR LOGIN <fabric_login>;
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO <fabric_user>;
+    CREATE USER [fabric_user] FOR LOGIN [fabric_login];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [fabric_user];
     ```
-
-    Or, for Microsoft Entra logins,
+    
+    - Or, for a Microsoft Entra authenticated login:
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO [bob@contoso.com];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [bob@contoso.com];
     ```
-
+    
 ## Create a mirrored Azure SQL Managed Instance database
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
@@ -154,4 +161,6 @@ The **Monitor replication** screen also reflects any errors and warnings with ta
 ## Related content
 
 - [Mirroring Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance.md)
+
 - [What is Mirroring in Fabric?](../mirroring/overview.md)
+

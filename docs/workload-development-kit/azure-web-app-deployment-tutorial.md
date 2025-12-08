@@ -17,7 +17,7 @@ Make sure that you review the [workload cloud setup tutorial](workload-cloud-set
 
 ## Create and deploy the boilerplate backend web app
 
-1. In the [Azure portal](https://ms.portal.azure.com/#home), create a [web app resource](https://ms.portal.azure.com/#create/Microsoft.WebSite).
+1. In the [Azure portal](https://portal.azure.com/#home), create a [web app resource](https://portal.azure.com/#create/Microsoft.WebSite).
 1. Enter or select the relevant information:
 
    - For **Publish**, select **Code**.
@@ -44,7 +44,7 @@ For general instructions, see [Get started with Azure App Service](/azure/app-se
 
 ## Create and deploy the boilerplate frontend web app
 
-1. In the [Azure portal](https://ms.portal.azure.com/#home), create a [web app resource](https://ms.portal.azure.com/#create/Microsoft.WebSite).
+1. In the [Azure portal](https://portal.azure.com/#home), create a [web app resource](https://portal.azure.com/#create/Microsoft.WebSite).
 1. Enter or select the relevant information:
 
    - For **Publish**, select **Code**.

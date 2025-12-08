@@ -5,30 +5,18 @@ author: billmath
 ms.author: billmath
 ms.service: fabric
 ms.topic: troubleshooting-problem-resolution
-ms.date: 02/16/2025
+ms.date: 11/21/2025
 
 #customer intent: As a developer, I want to learn how to troubleshoot variable libraries so that I can manage my content lifecycle.
 
 ---
 
-# Troubleshoot variable libraries (preview)
+# Troubleshoot variable libraries 
 
 This article provides solutions for common errors and problems that you might encounter when you work with Microsoft Fabric variable libraries.
 
-> [!NOTE]
-> The Fabric variable library item is currently in preview.
 
 ## Failure to manage a variable library
-
-### I can't find the icon for creating a variable library
-
-**Description of the problem**: I want to create a variable library, but I can't find the **Create** icon.
-
-**Cause**: The **Create** icon is available only if the **Users can create variable libraries** [tenant switch](../../admin/service-admin-portal-microsoft-fabric-tenant-settings.md) is enabled in the admin portal.
-
-**Solution**: If you're an admin, go to the admin portal and enable the **Users can create variable libraries** tenant switch. If you're not an admin, contact your admin. Wait awhile, refresh the browser, clean the cache, and check again. Note that the change can take up to an hour to take effect.
-
-:::image type="content" source="./media/variable-library-troubleshoot/create-variable-library-enabled.png" alt-text="Screenshot of the tenant switch that enables users to create variable libraries.":::
 
 ### I can't create a variable library item
 
@@ -71,9 +59,9 @@ This article provides solutions for common errors and problems that you might en
 
 ### I can't reference an added variable
 
-**Description of the problem**: I can't find the variable that I want to refer to in the data pipeline.
+**Description of the problem**: I can't find the variable that I want to refer to in the pipeline.
 
-**Cause**: Reasons why a variable might not appear in the data pipeline include:
+**Cause**: Reasons why a variable might not appear in the pipeline include:
 
 - The variable wasn't saved.
 - The variable was deleted or renamed.
@@ -81,7 +69,7 @@ This article provides solutions for common errors and problems that you might en
 
 **Solution**: Go back to the variable library and check the names of the existing variables. If the variable that you want exists but wasn't saved, save it. If it doesn't exist, create it.
 
-After you find and fix the problem, remove the current reference and replace it with the correct name in the data pipeline.
+After you find and fix the problem, remove the current reference and replace it with the correct name in the pipeline.
 
 ### Active value set not changed
 

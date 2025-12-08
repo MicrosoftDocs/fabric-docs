@@ -26,10 +26,10 @@ This table summarizes information for data schema (DDL), database code (DML), an
 | Option Number | Option | What it does | Skill/Preference | Scenario |
 |:--|:--|:--|:--|:--|
 |1| [Data Factory](#option-1-schemadata-migration---copy-wizard-and-foreach-copy-activity) | Schema (DDL) conversion<br />Data extract<br />Data ingestion | ADF/Pipeline| Simplified all in one schema (DDL) and data migration. Recommended for [dimension tables](dimensional-modeling-dimension-tables.md).|
-|2| [Data Factory with partition](#option-2-ddldata-migration---data-pipeline-using-partition-option) | Schema (DDL) conversion<br />Data extract<br />Data ingestion | ADF/Pipeline | Using partitioning options to increase read/write parallelism providing ten times the throughput vs option 1, recommended for [fact tables](dimensional-modeling-fact-tables.md).|
+|2| [Data Factory with partition](#option-2-ddldata-migration---pipeline-using-partition-option) | Schema (DDL) conversion<br />Data extract<br />Data ingestion | ADF/Pipeline | Using partitioning options to increase read/write parallelism providing ten times the throughput vs option 1, recommended for [fact tables](dimensional-modeling-fact-tables.md).|
 |3| [Data Factory with accelerated code](#option-3-ddl-migration---copy-wizard-foreach-copy-activity) | Schema (DDL) conversion | ADF/Pipeline | Convert and migrate the schema (DDL) first, then use CETAS to extract and COPY/Data Factory to ingest data for optimal overall ingestion performance. |
 |4| [Stored procedures accelerated code](#migration-using-stored-procedures-in-synapse-dedicated-sql-pool) | Schema (DDL) conversion<br />Data extract<br />Code assessment | T-SQL | SQL user using IDE with more granular control over which tasks they want to work on. Use COPY/Data Factory to ingest data. |
-|5| [SQL Database Project extension for Azure Data Studio and Visual Studio Code](#migrate-using-sql-database-projects) | Schema (DDL) conversion<br />Data extract<br />Code assessment | SQL Project | SQL Database Project for deployment with the integration of option 4. Use COPY or Data Factory to ingest data.|
+|5| [SQL Database Project extension for Visual Studio Code](#migrate-using-sql-database-projects) | Schema (DDL) conversion<br />Data extract<br />Code assessment | SQL Project | SQL Database Project for deployment with the integration of option 4. Use COPY or Data Factory to ingest data.|
 |6| [CREATE EXTERNAL TABLE AS SELECT (CETAS)](#migration-of-data-with-cetas) | Data extract | T-SQL | Cost effective and high-performance data extract into Azure Data Lake Storage (ADLS) Gen2. Use COPY/Data Factory to ingest data.|
 |7| [Migrate using dbt](#migration-via-dbt) | Schema (DDL) conversion<br />database code (DML) conversion | dbt | Existing dbt users can use the dbt Fabric adapter to convert their DDL and DML. You must then migrate data using other options in this table. |
 
@@ -72,13 +72,15 @@ Using the Copy Wizard to generate a ForEach provides simple UI to convert DDL an
 
 However, it isn't optimal with the overall throughput. The requirement to use staging, the need to parallelize read and write for the "Source to Stage" step are the major factors for the performance latency. It's recommended to use this option for dimension tables only.
 
-### Option 2. DDL/Data migration - Data pipeline using partition option
+<a id="option-2-ddldata-migration---data-pipeline-using-partition-option"></a>
 
-To address improving the throughput to load larger fact tables using Fabric data pipeline, it's recommended to use Copy Activity for each Fact table with partition option. This provides the best performance with Copy activity. 
+### Option 2. DDL/Data migration - Pipeline using partition option
 
-You have the option of using the source table physical partitioning, if available. If table doesn't have physical partitioning, you must specify the partition column and supply min/max values to use dynamic partitioning. In the following screenshot, the data pipeline **Source** options are specifying a dynamic range of partitions based on the `ws_sold_date_sk` column.
+To address improving the throughput to load larger fact tables using Fabric pipeline, it's recommended to use Copy Activity for each Fact table with partition option. This provides the best performance with Copy activity. 
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-source-partition-option.png" alt-text="Screenshot of a data pipeline, depicting the option to specify the primary key, or the date for the dynamic partition column.":::
+You have the option of using the source table physical partitioning, if available. If table doesn't have physical partitioning, you must specify the partition column and supply min/max values to use dynamic partitioning. In the following screenshot, the pipeline **Source** options are specifying a dynamic range of partitions based on the `ws_sold_date_sk` column.
+
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-source-partition-option.png" alt-text="Screenshot of a pipeline, depicting the option to specify the primary key, or the date for the dynamic partition column.":::
 
 While using partition can increase the throughput with the staging phase, there are considerations to make the appropriate adjustments:
 
@@ -115,17 +117,17 @@ The following code sample covers schema (DDL) migration with Data Factory.
 
 #### Code example: Schema (DDL) migration with Data Factory
 
-You can use Fabric Data Pipelines to easily migrate over your DDL (schemas) for table objects from any source Azure SQL Database or dedicated SQL pool. This data pipeline migrates over the schema (DDL) for the source dedicated SQL pool tables to Fabric Warehouse.
+You can use Fabric Pipelines to easily migrate over your DDL (schemas) for table objects from any source Azure SQL Database or dedicated SQL pool. This pipeline migrates over the schema (DDL) for the source dedicated SQL pool tables to Fabric Warehouse.
 
 :::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-schema-migration.png" alt-text="Screenshot from Fabric Data Factory showing a Lookup object leading to a For Each Object. Inside the For Each Object, there are Activities to Migrate DDL.":::
 
 ##### Pipeline design: parameters
 
-This Data Pipeline accepts a parameter `SchemaName`, which allows you to specify which schemas to migrate over. The `dbo` schema is the default. 
+This pipeline accepts a parameter `SchemaName`, which allows you to specify which schemas to migrate over. The `dbo` schema is the default. 
 
-In the **Default value** field, enter  a comma-delimited list of table schema indicating which schemas to migrate: `'dbo','tpch'` to provide two schemas, `dbo` and `tpch`.
+In the **Default value** field, enter a comma-delimited list of table schema indicating which schemas to migrate: `'dbo','tpch'` to provide two schemas, `dbo` and `tpch`.
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a Data Pipeline. In the Name field, 'SchemaName'. In the Default value field, 'dbo','tpch', indicating these two schemas should be migrated.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a Pipeline. In the Name field, 'SchemaName'. In the Default value field, 'dbo','tpch', indicating these two schemas should be migrated.":::
 
 ##### Pipeline design: Lookup activity
 
@@ -154,7 +156,7 @@ In the **Settings** tab:
     ')
     ```
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-query-dynamic-content.png" alt-text="Screenshot from Data Factory showing the Settings tab of a Data Pipeline. The 'Query' button is selected and code is pasted into the 'Query' field.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-query-dynamic-content.png" alt-text="Screenshot from Data Factory showing the Settings tab of a Pipeline. The 'Query' button is selected and code is pasted into the 'Query' field.":::
 
 ##### Pipeline design: ForEach Loop
 
@@ -168,7 +170,7 @@ For the ForEach Loop, configure the following options in the **Settings** tab:
  
 ##### Pipeline design: Copy Activity inside the ForEach Loop
 
-Inside the ForEach Activity, add a Copy Activity. This method uses the Dynamic Expression Language within Data Pipelines to build a `SELECT TOP 0 * FROM <TABLE>` to migrate only the schema without data into a Fabric Warehouse.
+Inside the ForEach Activity, add a Copy Activity. This method uses the Dynamic Expression Language within pipelines to build a `SELECT TOP 0 * FROM <TABLE>` to migrate only the schema without data into a Fabric Warehouse.
 
 In the **Source** tab:
 
@@ -222,9 +224,9 @@ For the data migration, you need to use either COPY INTO or Data Factory to inge
 
 ## Migrate using SQL database projects
 
-Microsoft Fabric Data Warehouse is supported in the [SQL Database Projects extension](/sql/azure-data-studio/extensions/sql-database-project-extension?view=fabric&preserve-view=true) available inside of [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio?view=fabric&preserve-view=true) and [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
+Microsoft Fabric Data Warehouse is supported in the [SQL Database Projects extension](/sql/tools/visual-studio-code-extensions/sql-database-projects/sql-database-projects-extension?view=fabric&preserve-view=true) available inside of [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 
-This extension is available inside Azure Data Studio and Visual Studio Code. This feature enables capabilities for source control, database testing, and schema validation.  
+This extension is available inside Visual Studio Code. This feature enables capabilities for source control, database testing, and schema validation.  
 
 For more information on source control for warehouses in Microsoft Fabric, including Git integration and deployment pipelines, see [Source Control with Warehouse](source-control.md).
 

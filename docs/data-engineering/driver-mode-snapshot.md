@@ -2,9 +2,9 @@
 
 title: Configure Delta driver mode snapshot in Fabric Spark
 description: Learn how to configure driver mode snapshot in Fabric Spark to optimize cold query performance.
-ms.reviewer: 
-ms.author: fepessot
-author: felipepessoto
+ms.reviewer: fepessot
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 07/24/2025
@@ -80,6 +80,7 @@ Consider traditional mode for:
 - **Fallback to traditional mode**
   - Check logs for fallback reasons. Look for log messages containing "Driver mode error"
   - Review size limit configuration. Look for log messages containing "Log size check"
+  - Driver Mode Snapshot does not support storage accounts with hierarchical namespace disabled.
 
 - **Performance Issues**
   - Compare with traditional Spark mode performance

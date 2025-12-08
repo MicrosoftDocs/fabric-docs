@@ -41,4 +41,4 @@ Here are the steps to load the AdventureWorks sample data:
 ## Related content
 
 - [Connect to your SQL database in Microsoft Fabric](connect.md)
-- [Ingest data into SQL database via data pipelines](load-data-pipelines.md)
+- [Ingest data into SQL database via pipelines](load-data-pipelines.md)

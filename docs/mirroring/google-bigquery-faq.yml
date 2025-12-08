@@ -159,4 +159,4 @@ additionalContent: |
   ## Related content
 
   - [What is mirroring in Fabric?](overview.md)
-  - [Google BigQuery connector overview](https://learn.microsoft.com/en-us/fabric/data-factory/connector-google-bigquery-overview)
+  - [Google BigQuery connector overview](/fabric/data-factory/connector-google-bigquery-overview)

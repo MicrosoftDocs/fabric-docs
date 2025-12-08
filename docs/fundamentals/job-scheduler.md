@@ -2,10 +2,10 @@
 title: Job Scheduler in Microsoft Fabric
 description: Learn how to use the job scheduler in Microsoft Fabric to automate recurring jobs, manage multiple schedules, and integrate with CI/CD.
 ms.reviewer: zhaya
-author: JulCsc
-ms.author: juliacawthra
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
-ms.date: 07/29/2025
+ms.date: 10/27/2025
 
 #customer intent: As a Fabric user, I want to understand how to use the job scheduler to automate tasks and manage schedules for my items in Fabric.
 
@@ -55,6 +55,12 @@ To ensure your schedule is valid:
 - Set a valid start and end time for your schedule.
 - Make sure the end time is after the start time.
 - The scheduler automatically handles special cases like daylight saving time and invalid dates (for example, February 30).
+
+**Job throttling limits**
+
+* The Scheduler limits each user to 50 job submissions and 50 Get Job requests per minute to maintain system stability. Requests beyond these limits are automatically rejected.
+
+* Jobs can run for a maximum of 24 days. Any jobs exceeding this duration are automatically terminated.
 
 > [!IMPORTANT]
 > Schedules become expired if a user doesn't log in to Fabric for 90 consecutive days. For more information, see [Refresh tokens in the Microsoft identity platform](/entra/identity-platform/refresh-tokens).

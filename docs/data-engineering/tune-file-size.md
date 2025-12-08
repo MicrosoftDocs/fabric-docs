@@ -1,9 +1,9 @@
 ---
 title: Tune file size
 description: Learn how you can tune the size of Delta table files.
-ms.reviewer: snehagunda
-ms.author: milescole
-author: mwc360
+ms.reviewer: milescole
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 09/15/2025

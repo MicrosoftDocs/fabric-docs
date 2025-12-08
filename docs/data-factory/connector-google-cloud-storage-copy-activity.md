@@ -65,11 +65,8 @@ For **General** tab configuration, go to [General](activity-overview.md#general-
 
 The following properties are supported for Google Cloud Storage under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-google-cloud/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select a **Google Cloud Storage** connection from the connection list. If no connection exists, then create a new Google Cloud Storage connection by selecting **New**.
 - **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, or **List of files** as your file path type. The configuration of each of these settings is：
 
@@ -139,7 +136,6 @@ The following properties are supported for Google Cloud Storage under the **Dest
 
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select a Google Cloud Storage connection from the connection list. If no connection exists, then create a new Google Cloud Storage connection by selecting **New**.
 - **File path**: The data can be copied to the given bucket or the given bucket and folder path specified.
 - **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
@@ -170,7 +166,6 @@ The following tables contain more information about the copy activity in Google 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your Google Cloud Storage connection> |Yes|connection|
 | **File path type** | The file path type used to get source data. | • **File path**<br>• **Prefix**<br>• **Wildcard file path**<br>• **List of files**| Yes |/ |
 |*For **File path*** |||||
@@ -201,7 +196,6 @@ The following tables contain more information about the copy activity in Google 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **Data store type** |Your data store type.| **External**|Yes|/|
 | **Connection** |Your connection to the destination data store.|\<your Google Cloud Storage connection> |Yes|connection|
 | **File path** | The folder/file path to the destination file. | < folder/file path> | Yes |/ |
 | **Bucket** | The Google Cloud Storage bucket name. | \<your bucket name> |Yes|bucketName|

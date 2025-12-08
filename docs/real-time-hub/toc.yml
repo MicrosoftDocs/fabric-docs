@@ -13,75 +13,69 @@ items:
     href: get-started-real-time-hub.md
 - name: Tutorials
   items:
-  - name: Build event-driven data pipelines 
+  - name: Build event-driven pipelines with Azure and Fabric Events 
     href: tutorial-build-event-driven-data-pipelines.md
-- name: Get events and create data streams
+  - name: Monitor Fabric Capacity health with Capacity Overview Events 
+    href: tutorial-monitor-capacity-threshold.md
+- name: Create data streams
   items:
   - name: Supported sources
     href: supported-sources.md
-  - name: Sample data source
-    href: add-source-sample-data.md
+  - name: Amazon Kinesis Data Streams 
+    href: add-source-amazon-kinesis-data-streams.md
+  - name: Amazon Managed Streaming for Kafka
+    href: add-source-amazon-managed-streaming-for-kafka.md
+  - name: Apache Kafka
+    href: add-source-apache-kafka.md
+  - name: Azure Blob Storage events
+    href: get-azure-blob-storage-events.md
+  - name: Azure Cosmos DB Change Data Capture
+    href: add-source-azure-cosmos-db-cdc.md
+  - name: Azure Data Explorer database table
+    href: add-source-azure-data-explorer-database.md
+  - name: Azure Data Explorer shortcut
+    href: add-source-azure-data-explorer.md
   - name: Azure diagnostic logs and metrics
     href: add-source-azure-diagnostic-logs-metrics.md
-  - name: Microsoft sources
-    items:
-    - name: Azure Event Grid
-      href: add-source-azure-event-grid.md
-    - name: Azure Event Hubs
-      href: add-source-azure-event-hubs.md
-    - name: Azure Service Bus
-      href: add-source-azure-service-bus.md
-    - name: Azure IoT Hub
-      href: add-source-azure-iot-hub.md
-    - name: Azure SQL Database Change Data Capture (CDC)
-      href: add-source-azure-sql-database-cdc.md
-    - name: PostgreSQL Database Change Data Capture
-      href: add-source-postgresql-database-cdc.md
-    - name: MySQL Database Change Data Capture
-      href: add-source-mysql-database-cdc.md
-    - name: Azure Cosmos DB Change Data Capture
-      href: add-source-azure-cosmos-db-cdc.md
-    - name: Azure SQL Managed Instance Change Data Capture
-      href: add-source-azure-sql-managed-instance-cdc.md
-    - name: SQL Server on Virtual Machine Database CDC
-      href: add-source-sql-server-on-vm-db-cdc.md
-    - name: Azure Data Explorer shortcut
-      href: add-source-azure-data-explorer.md
-    - name: Azure Data Explorer database table
-      href: add-source-azure-data-explorer-database.md
-  - name: External sources 
-    items:
-    - name: Google Cloud Pub/Sub
-      href: add-source-google-cloud-pub-sub.md
-    - name: Amazon Kinesis Data Streams 
-      href: add-source-amazon-kinesis-data-streams.md
-    - name: Apache Kafka
-      href: add-source-apache-kafka.md
-    - name: Amazon Managed Streaming for Kafka
-      href: add-source-amazon-managed-streaming-for-kafka.md
-    - name: Confluent Cloud Kafka
-      href: add-source-confluent-kafka.md
-    - name: MQTT
-      href: add-source-mqtt.md
-    - name: Solace PubSub+
-      href: add-source-solace-pub-sub.md
-    - name: Real-time weather
-      href: add-source-real-time-weather.md
-  - name: Fabric events
-    items:    
-    - name: Create streams for Fabric workspace item events
-      href: create-streams-fabric-workspace-item-events.md
-    - name: Create streams for Fabric OneLake events
-      href: create-streams-fabric-onelake-events.md
-    - name: Create streams for Fabric Job events
-      href: create-streams-fabric-job-events.md
-  - name: Azure events
-    items:    
-    - name: Get Azure Blob Storage events and create streams
-      href: get-azure-blob-storage-events.md      
-  - name: Microsoft Fabric events capacity consumption
-    href: fabric-events-capacity-consumption.md
-- name: Discover and manage data streams and events
+  - name: Azure Event Grid
+    href: add-source-azure-event-grid.md
+  - name: Azure Event Hubs
+    href: add-source-azure-event-hubs.md
+  - name: Azure IoT Hub
+    href: add-source-azure-iot-hub.md
+  - name: Azure Service Bus
+    href: add-source-azure-service-bus.md
+  - name: Azure SQL Database Change Data Capture (CDC)
+    href: add-source-azure-sql-database-cdc.md
+  - name: Azure SQL Managed Instance Change Data Capture
+    href: add-source-azure-sql-managed-instance-cdc.md
+  - name: Confluent Cloud Kafka
+    href: add-source-confluent-kafka.md
+  - name: Fabric Capacity overview events
+    href: create-streams-fabric-capacity-overview-events.md
+  - name: Fabric Job events
+    href: create-streams-fabric-job-events.md
+  - name: Fabric OneLake events
+    href: create-streams-fabric-onelake-events.md
+  - name: Fabric workspace item events
+    href: create-streams-fabric-workspace-item-events.md
+  - name: Google Cloud Pub/Sub
+    href: add-source-google-cloud-pub-sub.md
+  - name: MQTT
+    href: add-source-mqtt.md
+  - name: MySQL Database Change Data Capture
+    href: add-source-mysql-database-cdc.md
+  - name: PostgreSQL Database Change Data Capture
+    href: add-source-postgresql-database-cdc.md
+  - name: Real-time weather
+    href: add-source-real-time-weather.md
+  - name: Sample data source
+    href: add-source-sample-data.md
+  - name: Solace PubSub+
+    href: add-source-solace-pub-sub.md
+  - name: SQL Server on Virtual Machine Database CDC
+    href: add-source-sql-server-on-vm-db-cdc.md      
+- name: Explore data streams and events
   items:
   - name: View data stream details
     href: view-data-stream-details.md
@@ -93,8 +87,6 @@ items:
     href: explore-all-data-streams.md
   - name: Explore Microsoft sources
     href: explore-microsoft-sources.md
-  - name: Subscribe permission for Fabric/Azure events
-    href: fabric-events-subscribe-permission.md    
   - name: Explore Azure events
     items:
     - name: Azure events page
@@ -107,13 +99,15 @@ items:
       href: explore-fabric-events.md
     - name: Explore anomaly detection events
       href: explore-anomaly-detection.md
+    - name: Explore Fabric capacity overview events
+      href: explore-fabric-capacity-overview-events.md      
     - name: Explore Fabric workspace item events
       href: explore-fabric-workspace-item-events.md
     - name: Explore Fabric OneLake events
       href: explore-fabric-onelake-events.md
     - name: Explore Fabric Job events
       href: explore-fabric-job-events.md
-- name: Consume events and data streams
+- name: Consume data streams and events
   items:
   - name: Consume data streams
     items:
@@ -127,6 +121,8 @@ items:
     items:
     - name: Set alerts on anomaly detection events
       href: set-alerts-anomaly-detection.md
+    - name: Set alerts on Fabric capacity overview events
+      href: set-alerts-fabric-capacity-overview-events.md  
     - name: Set alerts on Fabric workspace item events
       href: set-alerts-fabric-workspace-item-events.md
     - name: Set alerts on Fabric OneLake item events
@@ -137,7 +133,11 @@ items:
     items:
     - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md
-- name: Register and use schemas in event-driven applications
+  - name: Subscribe permission for Fabric/Azure events
+    href: fabric-events-subscribe-permission.md   
+  - name: Microsoft Fabric events capacity consumption
+    href: fabric-events-capacity-consumption.md
+- name: Register and use schemas
   items:
   - name: Schema Registry in Real-Time hub
     href: ../real-time-intelligence/schema-sets/schema-registry-overview.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json

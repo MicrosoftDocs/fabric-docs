@@ -44,6 +44,8 @@ You can create streams for Fabric workspace item events in Real-Time hub using o
 - [Using the **Data sources** page](#data-sources-page)
 - [Using the **Fabric events** page](#fabric-events-page)
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 4. On the **Data sources** page, select **Fabric events** category at the top, and then select **Connect** on the **Fabric Workspace Item events** tile. 

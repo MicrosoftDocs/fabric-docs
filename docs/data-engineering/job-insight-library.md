@@ -1,9 +1,9 @@
 ---
 title: Analyze Spark Jobs with Job Insight Library (Preview)
 description: Job insight is a Java-based diagnostic library that helps you interactively analyze completed Spark applications in Microsoft Fabric.
-ms.reviewer: snehagunda
-ms.author: jejiang
-author: jejiang
+ms.reviewer: jejiang
+ms.author: eur
+author: eric-urban
 ms.topic: concept-article
 ms.date: 08/23/2025
 ms.search.form: Job insight

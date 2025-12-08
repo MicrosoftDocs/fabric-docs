@@ -4,7 +4,7 @@ description: This tutorial provides a step-by-step guide for the Migration Assis
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: anphil, pvenkat, prlangad, chweb
-ms.date: 09/09/2025
+ms.date: 09/30/2025
 ms.topic: how-to
 ms.search.form: Migration Assistant
 ---
@@ -53,22 +53,26 @@ The AI-assisted migration features of the Migration Assistant to fix migration i
 
 1. In the **Set the destination** page, provide the name of the new Fabric workspace and new warehouse item you would like to migrate into. Select **Next**.
 
-1. Review your inputs and select **Migrate**. A new warehouse item will be created, and the metadata migration begins.
+1. Review your inputs and select **Migrate**. A new warehouse item is created and the metadata migration begins.
+
+   > [!NOTE]
+   > When using the Migration Assistant, the new warehouse has **case insensitive collation**, regardless of the [default warehouse collation setting](collation.md).
 
    :::image type="content" source="media/migrate-with-migration-assistant/review.png" alt-text="Screenshot from the Fabric portal of the Review page of the Migration Assistant. The source is a DACPAC file and the Destination is a new warehouse item named AdventureWorks." lightbox="media/migrate-with-migration-assistant/review.png":::
 
    During this step, the Migration Assistant translates T-SQL metadata to supported T-SQL syntax in Fabric data warehouse. Once the metadata migration is complete, the Migration assistant opens. You can access the Migration Assistant at any time using the **Migration** button in the Home tab of the warehouse ribbon.
 
 1. Review the metadata migration summary in the Migration Assistant. You'll see the count of migrated objects and the objects that need to be fixed before they can be migrated.
-1. Select **Show migrated objects** to expand the section and see a list of objects that have been successfully migrated to your Fabric warehouse.
 
    :::image type="content" source="media/migrate-with-migration-assistant/show-migrated-objects.png" alt-text="Screenshot from the Fabric portal of the Migration Assistant's metadata migration summary. The Show migrated objects option is highlighted.":::
 
-1. Review the **Details** to see the adjustments that were made to the objects.
+1. Select **Show migrated objects** to expand the section and see a list of objects that have been successfully migrated to your Fabric warehouse.
 
    :::image type="content" source="media/migrate-with-migration-assistant/show-migrated-objects-list.png" alt-text="Screenshot from the Fabric portal of the Migration Assistant's metadata migration summary and the list of migrated objects." lightbox="media/migrate-with-migration-assistant/show-migrated-objects-list.png":::
 
    The **State** column indicates if the object's metadata was adjusted during the translation to be supported in Fabric Warehouse. For example, you might see that certain column datatypes or T-SQL language constructs are automatically converted to the ones that are supported in Fabric. The **Details** column shows the information about the adjustments that were made to the objects. 
+
+1. Select any object to see the adjustments that were made during migration.
 
 1. Open the metadata migration summary in full screen view for better readability. Apply filters to view specific object types.
 

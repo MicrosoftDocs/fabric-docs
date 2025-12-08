@@ -5,11 +5,14 @@ author: ptyx507x
 ms.author: miescobar
 ms.reviewer: whhender
 ms.topic: concept-article
-ms.date: 09/15/2025
+ms.date: 10/20/2025
 ms.custom: dataflows
 ---
 
 # Use public parameters in Dataflow Gen2
+
+>[!TIP]
+>For more information on how to leverage this capability in continous integration / continous deployment (CI/CD) scenarios, read the article on [CI/CD and ALM solution architectures for Dataflow Gen2](dataflow-gen2-cicd-alm-solution-architecture.md) and the end-to-end tutorial on [Parameterized Dataflow Gen2](dataflow-gen2-parameterized-dataflow.md).
 
 Parameters in Dataflow Gen2 allow you to dynamically control and customize dataflows, making them more flexible and reusable by enabling different inputs and scenarios without modifying the dataflow itself. It helps keep things organized by reducing the need for multiple dataflows and centralizing control within a single, parameterized dataflow.
 
@@ -69,21 +72,21 @@ You can select the refresh button to request the latest parameter information fr
 ## Supported parameter types
 
 >[!TIP]
->Read and use the [discover Dataflow parameter REST API](/rest/api/fabric/dataflow/items). The documentation provides all available parameter types and their expected values, and the REST API provides a way to get the parameter information from your dataflow.
+>Read and use the [discover Dataflow parameter REST API](/rest/api/fabric/dataflow/items/discover-dataflow-parameters). The documentation provides all available parameter types and their expected values, and the REST API provides a way to get the parameter information from your dataflow.
 
 The following table showcases the currently supported parameter types and the link to the REST API definition for it to understand what are the values expected by the REST API. 
 
 |Dataflow parameter type| REST API definition|
 |----|---|
-|Text|[DataflowStringParameter](/rest/api/fabric/dataflow/items)|
-|Integer (int64)|[DataflowIntegerParameter](/rest/api/fabric/dataflow/items)|
-|Decimal number|[DataflowNumberParameter](/rest/api/fabric/dataflow/items)|
-|Date|[DataflowDateParameter](/rest/api/fabric/dataflow/items)|
-|DateTime|[DataflowDateTimeParameter](/rest/api/fabric/dataflow/items)|
-|Time|[DataflowTimeParameter](/rest/api/fabric/dataflow/items)|
-|DateTimeZone|[DataflowDateTimeZoneParameter](/rest/api/fabric/dataflow/items)|
-|Duration|[DataflowDurationParameter](/rest/api/fabric/dataflow/items)|
-|True/False|[DataflowBooleanParameter](/rest/api/fabric/dataflow/items)|
+|Text|[DataflowStringParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowstringparameter)|
+|Integer (int64)|[DataflowIntegerParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowintegerparameter)|
+|Decimal number|[DataflowNumberParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflownumberparameter)|
+|Date|[DataflowDateParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowdateparameter)|
+|DateTime|[DataflowDateTimeParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowdatetimeparameter)|
+|Time|[DataflowTimeParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowtimeparameter)|
+|DateTimeZone|[DataflowDateTimeZoneParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowdatetimezoneparameter)|
+|Duration|[DataflowDurationParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowdurationparameter)|
+|True/False|[DataflowBooleanParameter](/rest/api/fabric/dataflow/items/discover-dataflow-parameters#dataflowbooleanparameter)|
 
  
 ## Considerations and limitations

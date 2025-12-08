@@ -1,25 +1,20 @@
 ---
-title: Authenticate to Cosmos DB Database From Azure Services (Preview)
-titleSuffix: Microsoft Fabric
-description: Use Microsoft Entra authentication and the Azure SDK to connect to Cosmos DB in Microsoft Fabric during the preview.
-author: seesharprun
-ms.author: sidandrews
+title: Authenticate to Cosmos DB Database From Azure Services
+description: Use Microsoft Entra authentication and the Azure SDK to connect to Cosmos DB in Microsoft Fabric.
+author: markjbrown
+ms.author: mjbrown
 ms.topic: how-to
-ms.date: 07/29/2025
+ms.date: 10/30/2025
 ms.search.form: Get Started with Cosmos DB
 zone_pivot_groups: dev-lang-core
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
-# Authenticate to Cosmos DB in Microsoft Fabric from Azure host services (preview)
+# Authenticate to Cosmos DB in Microsoft Fabric from Azure host services
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
-Cosmos DB in Microsoft Fabric primarily relies on Microsoft Entra ID authentication and built-in data plane roles to manage authentication and authorization. In this guide, you use Microsoft Entra ID and your signed-in account to connect to a Cosmos DB in Fabric database.
+Cosmos DB in Microsoft Fabric exclusively relies on Microsoft Entra ID authentication and built-in data plane roles to manage authentication and authorization. In this guide, you use Microsoft Entra ID and your signed-in account to connect to a Cosmos DB artifact in Microsoft Fabric.
 
 > [!IMPORTANT]
-> The steps are similar to the process used to authenticate if you're using a [service principal](/entra/identity-platform/app-objects-and-service-principals), [group](/entra/fundamentals/concept-learn-about-groups), or other type of Microsoft Entra ID identity. To grant a service principal the ability to connect to Microsoft Fabric and your Cosmos DB database, enable the **"Service principals can use Fabric APIs** setting in the Fabric tenant. For more information, see [Microsoft Fabric tenant settings](../../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis).
+> The steps are similar to the process used to authenticate if you're using a [service principal](/entra/identity-platform/app-objects-and-service-principals), [group](/entra/fundamentals/concept-learn-about-groups), or other type of Microsoft Entra ID identity. To grant a service principal the ability to connect to Microsoft Fabric and your Cosmos DB database, enable the **"Service principals can use Fabric APIs** setting in the Fabric tenant. For more information, see [Microsoft Fabric tenant settings](../../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis). This setting is enabled by default for new customers.
 
 ## Prerequisites
 
@@ -45,11 +40,11 @@ First, get the endpoint for the Cosmos DB database in Fabric. This endpoint is r
 
 1. Select the **Settings** option in the menu bar for the database.
 
-    :::image source="media/how-to-authenticate/settings-option.png" lightbox="media/how-to-authenticate/settings-option-full.png" alt-text="Screenshot of the 'Settings' menu bar option for a database in the Fabric portal.":::
+    :::image type="content" source="media/how-to-authenticate/settings-option.png" lightbox="media/how-to-authenticate/settings-option-full.png" alt-text="Screenshot of the 'Settings' menu bar option for a database in the Fabric portal.":::
 
 1. In the settings dialog, navigate to the **Connection** section. Then, copy the value of the **Endpoint for Cosmos DB NoSQL database** field. You use this value in later step\[s\].
 
-    :::image source="media/how-to-authenticate/settings-connection-endpoint.png" lightbox="media/how-to-authenticate/settings-connection-endpoint-full.png" alt-text="Screenshot of the 'Connection' section of the 'Settings' dialog for a database in the Fabric portal.":::
+    :::image type="content" source="media/how-to-authenticate/settings-connection-endpoint.png" lightbox="media/how-to-authenticate/settings-connection-endpoint-full.png" alt-text="Screenshot of the 'Connection' section of the 'Settings' dialog for a database in the Fabric portal.":::
 
 ## Authenticate to Azure CLI
 
@@ -103,40 +98,40 @@ Now, authenticate to the Azure CLI. The Azure SDK can use various different auth
 
 ## Connect using Azure SDK
 
-Finally, use the Azure SDK to connect to the Cosmos DB database in Fabric using the endpoint and your identity. The Azure SDK ships with a unified **identity** library that automatically handles authentication on your behalf. This step uses the `AzureCliCredential` type, which automatically finds the right identity type based on your environment.
+Finally, use the Azure SDK to connect to the Cosmos DB database in Fabric using the endpoint and your identity. The Azure SDK ships with a unified **identity** library that automatically handles authentication on your behalf. This step uses the `DefaultAzureCredential()` type, which automatically finds the right identity type based on your environment.
 
-> [!TIP]
-> Alternatively, you can use the `DefaultAzureCredential` type. This type can automatically find the right system-assigned or user-assigned managed identity if you deploy your application code to Azure and the right human identity locally in development.
+> [!NOTE]
+> Azure credential objects are not supported in Microsoft Fabric notebooks. You cannot use `DefaultAzureCredential` to authenticate to Cosmos DB in Fabric. You must create a custom credential object in your notebooks to authenticate. For more information see [Authenticate to Cosmos DB in Microsoft Fabric from Fabric Notebooks](how-to-authenticate-notebooks.md).
 
 :::zone pivot="dev-lang-python"
 
 ```python
-from azure.cosmos import CosmosClient
+from azure.cosmos.aio import CosmosClient
 from azure.identity import DefaultAzureCredential
 
 endpoint = "<cosmos-db-fabric-endpoint>"
 
 credential = DefaultAzureCredential()
 
-client = CosmosClient(endpoint, credential=credential)
+async with CosmosClient(endpoint, credential=credential) as client:
+    container = client.get_database_client("<database-name>").get_container_client("<container-name>")
 
-container = client.get_database_client("<database-name>").get_container_client("<container-name>")
+    nosql = "SELECT TOP 10 VALUE item.id FROM items AS item"
 
-nosql = "SELECT TOP 10 VALUE item.id FROM items AS item"
+    results = container.query_items(
+        query=nosql
+    )
 
-results = container.query_items(
-    query=nosql,
-    enable_cross_partition_query=True,
-)
+    items = []
+    async for item in results:
+        items.append(item)
 
-items = [item for item in results]
-
-for item in items:
-    print(item)
+    for item in items:
+        print(item)
 ```
 
 > [!NOTE]
-> This sample uses the [`azure-identity`](https://pypi.org/project/azure-identity/) and [`azure-cosmos`](https://pypi.org/project/azure-cosmos/) packages from PyPI.
+> This sample uses the [`azure-identity`](https://pypi.org/project/azure-identity/) and [`azure-cosmos`](https://pypi.org/project/azure-cosmos/) packages from PyPI. Note the use of `azure.cosmos.aio` for async support.
 
 :::zone-end
 
@@ -144,34 +139,30 @@ for item in items:
 
 ```typescript
 import { Container, CosmosClient, CosmosClientOptions } from '@azure/cosmos'
-import { TokenCredential, AzureCliCredential } from '@azure/identity'
+import { TokenCredential, DefaultAzureCredential } from '@azure/identity'
 
-run();
+const endpoint: string = '<cosmos-db-fabric-endpoint>';
 
-async function run() {
-    let endpoint: string = '<cosmos-db-fabric-endpoint>';
+const credential: TokenCredential = new DefaultAzureCredential();
 
-    let credential: TokenCredential = new AzureCliCredential();
+const options: CosmosClientOptions = {
+    endpoint: endpoint,
+    aadCredentials: credential
+};
 
-    let options: CosmosClientOptions = {
-        endpoint: endpoint,
-        aadCredentials: credential
-    };
+const client: CosmosClient = new CosmosClient(options);
 
-    const client: CosmosClient = new CosmosClient(options);
+const container: Container = client.database('<database-name>').container('<container-name>');
 
-    const container: Container = client.database('<database-name>').container('<container-name>');
+const nosql = 'SELECT TOP 10 VALUE item.id FROM items AS item';
 
-    const nosql = 'SELECT TOP 10 VALUE item.id FROM items AS item';
+const querySpec = {
+    query: nosql
+};
 
-    const querySpec = {
-        query: nosql
-    }
-
-    let response = await container.items.query(querySpec).fetchAll();
-    for (let item of response.resources) {
-        console.log(item);
-    }
+const response = await container.items.query(querySpec).fetchAll();
+for (const item of response.resources) {
+    console.log(item);
 }
 ```
 
@@ -187,8 +178,8 @@ using Azure.Identity;
 using Microsoft.Azure.Cosmos;
 
 string endpoint = "<cosmos-db-fabric-endpoint>";
-AzureCliCredential credential = new();
-CosmosClient client = new(endpoint, credential);
+DefaultAzureCredential credential = new();
+using CosmosClient client = new(endpoint, credential);
 
 Container container = client
     .GetDatabase("<database-name>")

@@ -2,8 +2,8 @@
 title: Create and manage a OneLake shortcut
 description: Learn how to create, edit, or delete a OneLake shortcut inside a Fabric lakehouse using a lakehouse, data warehouse, or Kusto Query Language database as the source.
 ms.reviewer: eloldag
-ms.author: trolson
-author: TrevorLOlson
+ms.author: kgremban
+author: kgremban
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom:

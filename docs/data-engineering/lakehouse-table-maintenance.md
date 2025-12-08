@@ -1,9 +1,9 @@
 ---
 title: Delta table maintenance in Microsoft Fabric
 description: Learn about the Lakehouse Delta table maintenance feature. It allows you to efficiently manage Delta tables and to keep them always ready for analytics.
-ms.reviewer: snehagunda
-ms.author: dacoelho
-author: DaniBunny
+ms.reviewer: dacoelho
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 04/26/2024

@@ -1,9 +1,9 @@
 ---
 title: VS Code extension with Docker support
 description: Learn how Docker integration works with Data Engineering VS Code extension. It gives a containerized environment with all dependencies installed, configured.
-ms.reviewer: sngun
-ms.author: qixwang
-author: qixwang
+ms.reviewer: qixwang
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom:
 ms.date: 07/03/2025
@@ -25,6 +25,9 @@ The following prerequisites should be met to use the Docker containers with the 
 - Install [Docker Desktop](https://www.docker.com/products/docker-desktop).
 - Install the [VS Code Remote Development pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
 
+> [!NOTE]
+> If you are using Windows Subsystem for Linux (WSL) backend for Docker, Windows manages resources limits such as memory, swap size and processor count. To increase resource limits, open the WSL Settings application or see [Advanced settings configuration in WSL](/windows/wsl/wsl-config#configure-global-options-with-wslconfig).
+
 ## Getting started
 
 1. Clone the [Synapse VS Code Dev Container sample](https://github.com/microsoft/SynapseVSCode/tree/main/samples/.devcontainer).
@@ -34,7 +37,7 @@ The following prerequisites should be met to use the Docker containers with the 
 1. The VS Code Remote Development extension starts building the Docker image and container. This may take a few minutes to complete.
 
 1. Once the container is up and running, the **Extensions** view will have a separate section for the extensions running in the container. You can see the **Fabric Data Engineering VS Code extension** running in the container. You can now start working with the extension as you would on your local machine.
-   :::image type="content" source="media\vscode\extension-list-with-dev-container.png" alt-text="Screenshot of extension list with Dev Container running.":::
+   :::image type="content" source="media\vscode\extension-list-with-dev-container.png" alt-text="Screenshot of extension list with Dev Container running." lightbox="media/vscode/extension-list-with-dev-container.png":::
 
 1. You can either create a new notebook or open an existing one to start running code cells. The notebook operates within a containerized environment, separate from your local machine. You can install other Python packages using the Conda package manager, which will only affect the container environment and not your local system. To check the current runtime environment, open a terminal in VS Code and run the command `cat /etc/os-release`. The output displays the OS version and other relevant information.
 

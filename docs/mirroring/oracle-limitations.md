@@ -23,7 +23,7 @@ This article outlines the current limits when mirroring [Oracle databases in Mic
 
 Here's what you can expect for database scale:
 
-* Currently, mirrored database supports up to **50 tables**
+* Currently, mirrored database supports up to **500 tables**
 * In each workspace, you can have:
   * One Oracle server
   * One On-Premises Data Gateway (OPDG) instance
@@ -78,7 +78,9 @@ For schema (DDL) changes, we currently support:
 > [!NOTE]
 > Column data type updates aren't supported
 
-Currently, tables that have a Primary Key (PK) are not supported.
+Currently, tables that do not have a Primary Key (PK) are not supported.
+
+We cannot support table names that have a length greater than or equal to 30.
 
 ## Required Permissions
 

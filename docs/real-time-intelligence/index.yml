@@ -62,14 +62,10 @@ landingContent:
         links:
           - text: Visualize data in a Real-Time dashboard
             url: dashboard-real-time-create.md
-          - text: Explore data in Real-Time Dashboard tiles
-            url: dashboard-explore-data.md
-          - text: Customize Real-Time Dashboard visuals
-            url: dashboard-visuals-customize.md
-      - linkListType: how-to-guide
-        links:
           - text: Visualize data in a Power BI report
             url: create-powerbi-report.md
+          - text: Visualize spatial data on a map
+            url: ./map/create-map.md
 
   # Card
   - title: Get data

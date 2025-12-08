@@ -84,6 +84,11 @@ productDirectory:
       summary: Discover insights from your streaming data. Quickly ingest, query, create visualizations, and take actions on changes in your data.
       url: real-time-intelligence/index.yml
     # Card
+    - title: IQ
+      imageSrc: ./media/iq-icon.svg
+      summary: "Unify business semantics across data, models, and systems to power intelligent agents and decisions grounded in a live, holistic view of the business."
+      url: iq/index.yml
+    # Card
     - title: Fabric Data Engineering
       imageSrc: ./media/fabric-data-engineering-icon.png
       summary: Build, transform, and share your data estate using lakehouses, notebooks, and Spark environments.
@@ -146,6 +151,9 @@ conceptualContent:
         # Card
         - title: Migrate to Fabric
           links:
+          - url: fundamentals/migration.md
+            itemType: overview
+            text: Migrate to Fabric overview
           - url: data-factory/upgrade-paths.md
             itemType: concept
             text: Migrate to Data Factory
@@ -216,7 +224,7 @@ conceptualContent:
             itemType: how-to-guide
             text: Get data with Real-Time hub          
           footerLink:
-            url: onelake/create-onelake-shortcut.md
+            url: fundamentals/migration.md
             text: See more
         # Card
         - title: Store data
@@ -438,7 +446,7 @@ conceptualContent:
             - url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
               itemType: training
               text: Jumpstart your career with the Career Hub
-            - url: https://learn.microsoft.com/en-us/training/topics/30-day-plans/
+            - url: /training/topics/30-day-plans/
               itemType: training
               text: Skill up with Microsoft Learn 30 Day Plans
             - url: /training/fabric/?WT.mc_id=fabric_landingpage-docs-link

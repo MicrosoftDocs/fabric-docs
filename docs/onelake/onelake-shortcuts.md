@@ -2,8 +2,8 @@
 title: Unify data sources with OneLake shortcuts
 description: OneLake shortcuts provide a way to connect to existing data without having to directly copy it. Learn how to use them.
 ms.reviewer: eloldag
-ms.author: trolson
-author: TrevorLOlson
+ms.author: kgremban
+author: kgremban
 ms.search.form: Shortcuts
 ms.topic: concept-article
 ms.custom:
@@ -96,7 +96,7 @@ https://onelake.dfs.fabric.microsoft.com/MyWorkspace/MyLakhouse/Tables/MyShortcu
 
 ## Types of shortcuts
 
-OneLake shortcuts support multiple filesystem data sources. These include internal OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3, S3 Compatible, Google Cloud Storage(GCS) and Dataverse.
+OneLake shortcuts support multiple filesystem data sources. These include internal OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3, S3 Compatible, Google Cloud Storage(GCS), and Dataverse.
 
 ### Internal OneLake shortcuts
 
@@ -115,7 +115,7 @@ The shortcut can point to a folder location within the same item, across items w
 When a user accesses data through a shortcut to another OneLake location, OneLake uses the identity of the calling user to authorize access to the data in the target path of the shortcut. This user must have permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When users access shortcuts through Power BI semantic models or T-SQL, the calling user’s identity is not passed through to the shortcut target. The calling item owner’s identity is passed instead, delegating access to the calling user.
+> When accessing shortcuts through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines in Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user. To resolve this, use **Power BI semantic models in DirectLake over OneLake mode** or **T-SQL in User's identity mode**.
 
 <a id="adls-shortcuts"></a>
 ### Azure Data Lake Storage shortcuts
@@ -147,6 +147,18 @@ Microsoft Entra ID delegated authorization types (organizational account, servic
 >[!IMPORTANT]
 >The **Generate a user delegation key** requirement is not currently enforced when a workspace identity is configured for the workspace and the ADLS shortcut auth type is Organizational Account, Service Principal or Workspace Identity. However, this behavior will be restricted in the future. We recommend making sure that all delegated identities have the **Generate a user delegation key** action to ensure that your users' access isn't affected when this behavior changes.
 
+<a id="adls-limitations"></a>
+#### Limitations
+
+The following limitations apply to ADLS shortcuts:
+
+- ADLS shortcut target paths can't contain any reserved characters from [RFC 3986 section 2.2](https://www.rfc-editor.org/rfc/rfc3986#section-2.2). For allowed characters, see [RFC 3968 section 2.3](https://www.rfc-editor.org/rfc/rfc3986#section-2.3).
+- ADLS shortcuts don't support the Copy Blob API.
+- Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
+- OneLake shortcuts don't support connections to ADLS Gen2 storage accounts that use managed private endpoints. For more information, see [managed private endpoints for Fabric.](../security/security-managed-private-endpoints-overview.md#limitations-and-considerations)
+- More shortcuts can't be created inside ADLS shortcuts.
+- ADLS gen 2 shortcuts aren't supported for storage accounts that use [Microsoft Purview data sharing](/purview/legacy/concept-data-share).
+
 ### Azure Blob Storage shortcuts
 
 #### Access
@@ -168,8 +180,7 @@ Blob storage shortcuts use a delegated authorization model. In this model, the s
 
 When you create shortcuts to Amazon S3 accounts, the target path must contain a bucket name at a minimum. S3 doesn't natively support hierarchical namespaces but you can use prefixes to mimic a directory structure. You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcut. When you access data through an S3 shortcut, prefixes are represented as folders.
 
-> [!NOTE]
-> S3 shortcuts are read-only. They don't support write operations regardless of the user's permissions.
+S3 shortcuts are read-only. They don't support write operations regardless of the user's permissions.
 
 #### Access
 
@@ -180,7 +191,7 @@ Example: `https://bucketname.s3.region.amazonaws.com/`
 > [!NOTE]
 > You don't need to disable the S3 Block Public Access setting for your S3 account for the S3 shortcut to function.
 >
-> Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud.
+> Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud unless you configure an on-premises data gateway. To set up a data gateway, see [Create shortcuts to on-premises data](create-on-premises-shortcut.md).
 
 #### Authorization
 
@@ -193,6 +204,16 @@ The IAM user must have the following permissions on the bucket that the shortcut
 - `S3:ListBucket`
 
 S3 shortcuts support S3 buckets that use S3 Bucket Keys for SSE-KMS encryption. To access data encrypted with SSE-KMS encryption, the user must have encrypt/decrypt permissions for the bucket key, otherwise they receive a **"Forbidden" error (403)**. For more information, see [Configuring your bucket to use an S3 Bucket Key with SSE-KMS for new objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/configuring-bucket-key.html).
+
+<a id="s3-limitations"></a>
+#### Limitations
+
+The following limitations apply to S3 shortcuts:
+
+- S3 shortcuts are read-only. They don't support write operations regardless of the user's permissions.
+- S3 shortcut target paths can't contain any reserved characters from [RFC 3986 section 2.2](https://www.rfc-editor.org/rfc/rfc3986#section-2.2). For allowed characters, see [RFC 3968 section 2.3](https://www.rfc-editor.org/rfc/rfc3986#section-2.3).
+- S3 shortcuts don't support the Copy Blob API.
+- More shortcuts can't be created inside S3 shortcuts.
 
 ### Google Cloud Storage shortcuts
 
@@ -268,7 +289,7 @@ Shortcuts require certain permissions to manage and use. [OneLake shortcut secur
 
 ## How do shortcuts handle deletions?
 
-Shortcuts don't perform cascading deletes. When you delete a shortcut, you only delete the shortcut object. The data in the shortcut target remains unchanged. However, if you delete a file or folder within a shortcut, and you have permissions in the shortcut target to perform the delete operation, the files or folders are deleted in the target.
+Shortcuts don't perform cascading deletes. When you delete a shortcut, you only delete the shortcut object. The data in the shortcut target remains unchanged. However, if you delete a file or folder within a shortcut, and you have permissions in the shortcut target to perform the delete operation, the files, or folders are deleted in the target.
 
 For example, consider a lakehouse with the following path in it: `MyLakehouse\Files\MyShortcut\Foo\Bar`. **MyShortcut** is a shortcut that points to an ADLS Gen2 account that contains the *Foo\Bar* directories.
 
@@ -290,16 +311,11 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - The maximum number of shortcuts per Fabric item is 100,000. In this context, the term item refers to: apps, lakehouses, warehouses, reports, and more.
 - The maximum number of shortcuts in a single OneLake path is 10.
 - The maximum number of direct shortcuts to shortcut links is 5.
-- ADLS and S3 shortcut target paths can't contain any reserved characters from [RFC 3986 section 2.2](https://www.rfc-editor.org/rfc/rfc3986#section-2.2). For allowed characters, see [RFC 3968 section 2.3](https://www.rfc-editor.org/rfc/rfc3986#section-2.3).
 - OneLake shortcut names, parent paths, and target paths can't contain "%" or "+" characters.
 - Shortcuts don't support non-Latin characters.
-- Copy Blob API isn't supported for ADLS or S3 shortcuts.
-- Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
-- More shortcuts can't be created inside ADLS or S3 shortcuts.
 - Lineage for shortcuts to Data Warehouses and Semantic Models isn't currently available.
 - A Fabric shortcut syncs with the source almost instantly, but propagation time might vary due to data source performance, cached views, or network connectivity issues.
 - It might take up to a minute for the Table API to recognize new shortcuts.
-- OneLake shortcuts don't support connections to ADLS Gen2 storage accounts that use managed private endpoints. For more information, see [managed private endpoints for Fabric.](../security/security-managed-private-endpoints-overview.md#limitations-and-considerations)
 
 ## Related content
 

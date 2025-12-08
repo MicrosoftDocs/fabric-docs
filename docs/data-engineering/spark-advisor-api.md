@@ -1,9 +1,9 @@
 ---
 title:  Spark advisor API
 description: This article explains how to get real-time advice of a Spark application.
-author: jejiang
-ms.author: jejiang
-ms.reviewer: whhender
+author: eric-urban
+ms.author: eur
+ms.reviewer: jejiang
 ms.topic: tutorial
 ms.date: 05/28/2025
 ---

@@ -1,10 +1,10 @@
 ---
 title: Lakehouse deployment pipelines and git integration
 description: Learn about the Microsoft Fabric lakehouse deployment pipelines and git integration, including what is tracked in a git-connected workspace.
-ms.reviewer: snehagunda
-ms.author: dacoelho
-author: DaniBunny
-ms.topic: conceptual
+ms.reviewer: dacoelho
+ms.author: eur
+author: eric-urban
+ms.topic: article
 ms.custom:
 ms.date: 4/29/2025
 ms.search.form: lakehouse git deployment pipelines alm ci cd
@@ -20,12 +20,12 @@ The [Lakehouse](lakehouse-overview.md) integrates with the lifecycle management 
 
 The Lakehouse is an item that contains both metadata and data that is referenced in multiple objects in the workspace. Lakehouse contains tables, folders, and shortcuts as primary manageable data container items. From a development workflow perspective, the following dependent objects might reference a Lakehouse:
 
-* [Dataflows](../data-factory/create-first-dataflow-gen2.md) and [Data Pipelines](../data-factory/create-first-pipeline-with-sample-data.md)
+* [Dataflows](../data-factory/create-first-dataflow-gen2.md) and [Pipelines](../data-factory/create-first-pipeline-with-sample-data.md)
 * [Spark Job Definitions](spark-job-definition.md)
 * [Notebooks](how-to-use-notebook.md)
 * Semantic models and Power BI
 
-The default semantic model and SQL analytics endpoint metadata are related to a Lakehouse and managed by the git update process by default. As a principle __data is not tracked in git__, only metadata is tracked.
+The SQL analytics endpoint metadata are related to a Lakehouse and managed by the git update process by default. As a principle __data is not tracked in git__, only metadata is tracked.
 
 ### Git representation
 
@@ -47,7 +47,7 @@ The following capabilities are available:
 
 * Serialization of the Lakehouse object metadata to a git JSON representation.
 * Apply changes directly or use pull request to control changes to upstream or downstream workspaces and branches.
-* Renaming lakehouses are tracked in git. Updating a renamed lakehouse also renames the default semantic data model and SQL Analytics endpoint.
+* Renaming lakehouses are tracked in git. Updating a renamed lakehouse also renames the SQL Analytics endpoint.
 * __No action is applied to tables and folders metadata__, and data of those items is always preserved.
 * __OneLake Shortcuts metadata__ is preserved in git. 
 

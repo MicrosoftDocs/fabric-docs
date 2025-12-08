@@ -4,7 +4,7 @@ description: Learn more about Microsoft Copilot Explain and Fix quick action fea
 author: yoleichen
 ms.author: yoleichen
 ms.reviewer: maghan, wiassaf
-ms.date: 09/02/2025
+ms.date: 11/18/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
@@ -13,7 +13,7 @@ ms.custom:
   - sfi-image-nochange
 ---
 
-# How to use the Copilot Explain and Fix quick action features in Fabric in the SQL database workload (Preview)
+# How to use the Copilot Explain and Fix quick action features in Fabric in the SQL database workload
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 

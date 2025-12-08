@@ -3,7 +3,7 @@ title: About cross-tenant communication
 description: Learn how to use workspace-level private links to set up communication between workspaces in separate tenants.
 author: msmimart
 ms.author: mimart
-ms.reviewer: danzhang
+ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.custom:
 ms.date: 08/13/2025
@@ -21,7 +21,10 @@ Workspace-level private links can be used to establish secure connections betwee
 In this diagram:
 
 * **Tenant 1** is the tenant that requires access. In this tenant, you create a virtual network, a virtual machine, and a private endpoint that is used to connect to the workspace in Tenant 2. Then you configure DNS to ensure proper name resolution.
-* **Tenant 2** contains the Fabric workspace that Tenant 1 needs to access. In Tenant 2, you create the Private Link service for the workspace. 
+* **Tenant 2** contains the Fabric workspace that Tenant 1 needs to access. In Tenant 2, you create the Private Link service for the workspace.
+
+> [!NOTE]
+> * **Microsoft.Fabric** Resource provider should be provisioned in both tenants to establish cross-tenant communication. 
 
 ## Step 1: Create a workspace in Fabric
 

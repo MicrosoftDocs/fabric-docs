@@ -1,9 +1,9 @@
 ---
 title: Collect your Apache Spark applications logs and metrics using Azure Event Hubs 
 description: In this tutorial, you learn how to use the Fabric Apache Spark diagnostic emitter extension to emit Apache Spark applications logs, event logs, and metrics to your Azure Event Hubs.
-author: hrasheed-msft
-ms.author: jejiang
-ms.reviewer: whhender
+author: eric-urban
+ms.author: eur
+ms.reviewer: jejiang
 ms.topic: tutorial
 ms.date: 06/05/2025
 ---

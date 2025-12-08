@@ -5,10 +5,11 @@ author: jonburchel
 ms.author: jburchel
 ms.reviewer: amjafari
 ms.topic: concept-article
-ms.date: 03/25/2025
+ms.date: 09/17/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 reviewer: s-polly
+ai-usage: ai-assisted
 ---
 
 # Fabric data agent sharing and permission management (preview)
@@ -66,6 +67,7 @@ For a user to successfully query through a Fabric data agent, they need the mini
 | Lakehouse | Read on the lakehouse item (and table access if enforced) | Write not required unless modifying data. |
 | Warehouse | Read (SELECT on relevant tables) | Higher permissions only for DML/DDL operations. |
 | KQL database | Reader role on the database | Higher roles only for management commands. |
+| Ontology | Read on the ontology item, and Read on the underlying semantic model, lakehouse, or KQL database bound to the ontology |  |
 | Other supported sources | Query/read-level access | Must allow metadata + data retrieval. |
 
 > [!IMPORTANT]

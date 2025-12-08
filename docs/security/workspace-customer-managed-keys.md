@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.topic: how-to
 ms.custom:
-ms.date: 05/19/2025
+ms.date: 10/15/2025
 
 # Customer intent: As a Microsoft Fabric workspace administrator, I want to use customer-managed keys to encrypt my workspace data at rest.
 ---
@@ -14,11 +14,33 @@ ms.date: 05/19/2025
 
 Microsoft Fabric encrypts all data-at-rest using Microsoft managed keys. With customer-managed keys for Fabric workspaces, you can use your [Azure Key Vault](/azure/key-vault/general/overview) keys to add another layer of protection to the data in your Microsoft Fabric workspaces - including all data in OneLake. A customer-managed key provides greater flexibility, allowing you to manage its rotation, control access, and usage auditing. It also helps organizations meet data governance needs and comply with data protection and encryption standards.
 
-All Fabric data stores are encrypted at rest with Microsoft-managed keys. Customer-managed keys use envelope encryption, where a Key Encryption Key (KEK) encrypts a Data Encryption Key (DEK). When using customer-managed keys, the Microsoft managed DEK encrypts your data, and then the DEK is encrypted using your customer-managed KEK. Use of a KEK that never leaves Key Vault allows the data encryption keys themselves to be encrypted and controlled. This ensures that all data in OneLake in CMK enabled workspace is encrypted using your customer-managed keys.
+## How customer-managed keys work
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+All Fabric data stores are encrypted at rest with Microsoft-managed keys. Customer-managed keys use envelope encryption, where a Key Encryption Key (KEK) encrypts a Data Encryption Key (DEK). When using customer-managed keys, the Microsoft managed DEK encrypts your data, and then the DEK is encrypted using your customer-managed KEK. Use of a KEK that never leaves Key Vault allows the data encryption keys themselves to be encrypted and controlled. This ensures that all customer content in a CMK enabled workspace is encrypted using your customer-managed keys.
 
-## Prerequisites
+## Enable encryption with customer-managed keys for your workspace
+
+Workspace admins can set up encryption using CMK at the workspace level. Once the workspace admin enables the setting in the portal, all customer content stored in that workspace is encrypted using the specified CMK. CMK integrates with AKV's access policies and role-based access control (RBAC), allowing you flexibility to define granular permissions based on your organization's security model. If you choose to disable CMK encryption later, the workspace will revert to using Microsoft-managed keys. You can also revoke the key at any time and access to the encrypted data will be blocked within an hour of revocation. With workspace level granularity and control, you elevate the security of your data in Fabric. 
+
+## Supported items
+
+Customer-managed keys are currently supported for the following Fabric items:
+  * Lakehouse
+  * Warehouse
+  * Notebook
+  * Environment
+  * Spark Job Definition
+  * API for GraphQL
+  * ML model
+  * Experiment
+  * Pipeline
+  * Dataflow
+  * Industry solutions
+  * SQL Database (preview)
+
+This feature can't be enabled for a workspace that contains unsupported items. When customer-managed key encryption for a Fabric workspace is enabled, only supported items can be created in that workspace. To use unsupported items, create them in a different workspace that does not have this feature enabled. 
+
+## Configure encryption with customer-managed keys for your workspace
 
 Customer-managed key for Fabric workspaces requires an initial setup. This setup includes enabling the Fabric encryption tenant setting, configuring Azure Key Vault, and granting the Fabric Platform CMK app access to Azure Key Vault. Once the setup is complete, a user with an *admin* [workspace role](../fundamentals/roles-workspaces.md#roles-in-workspaces-in-microsoft-fabric) can enable the feature on the workspace.
 
@@ -64,7 +86,7 @@ To create an Azure Key Vault key, follow the instructions in [Create a key vault
 
 ### Key Vault requirements
 
-Fabric only supports [versionless customer-managed keys](/azure/key-vault/keys/how-to-configure-key-rotation#key-rotation-policy), which are keys in the `https://{vault-name}.vault.azure.net/{key-type}/{key-name}` format. Fabric checks the key vault daily for a new version, and uses the latest version available. To avoid having a period where you can't access data in the workspace after a new key is created, wait 24 hours before disabling the older version.
+Fabric only supports [versionless customer-managed keys](/azure/key-vault/keys/how-to-configure-key-rotation#key-rotation-policy), which are keys in the format `https://{vault-name}.vault.azure.net/{key-type}/{key-name}` for Vaults and `https://{hsm-name}.managedhsm.azure.net/{key-type}/{key-name}` for Managed HSM. Fabric checks the key vault daily for a new version, and uses the latest version available. To avoid having a period where you can't access data in the workspace after a new key is created, wait 24 hours before disabling the older version.
 
 Key Vault and Managed HSM must have both soft-delete and purge protection enabled and the key must be of RSA or RSA-HSM type. The supported key sizes are:
 
@@ -74,7 +96,12 @@ Key Vault and Managed HSM must have both soft-delete and purge protection enable
 
 For more information, see [About keys](/azure/key-vault/keys/about-keys).
 
-## Enable encryption using customer-managed keys
+> [!NOTE]
+> 4,096 bit keys are not supported for SQL database in Microsoft Fabric.
+
+You can also use Azure Key Vaults for which the [firewall setting is enabled](/azure/key-vault/general/network-security#key-vault-firewall-enabled-trusted-services-only). When you disable public access to the Key Vault, you can choose the option to 'Allow Trusted Microsoft Services to bypass this firewall.'
+
+### Step 5: Enable encryption using customer-managed keys
 
 After completing the prerequisites, follow the steps in this section to enable customer-managed keys in your Fabric workspace.
 
@@ -98,47 +125,41 @@ You can revoke a customer-managed encryption key by changing the access policy, 
 
 To reinstate access, restore access to the customer-managed key in the Key Vault.
 
+> [!NOTE]
+> The workspace does not automatically revalidate the key for SQL Database in Microsoft Fabric. Instead, the user must [manually revalidate](../database/sql/encryption.md#inaccessible-customer-managed-key) the CMK to restore access.
+
 ## Disable the encryption
 
 To disable encrypting the workspace using a customer-managed key, go to *Workspace settings* disable **Apply customer-managed keys**. The workspace remains encrypted using Microsoft Managed keys.
 
-You can't disable customer-managed keys while encryption for any of the Fabric items in your workspace is in progress.
+> [!NOTE]
+> You can't disable customer-managed keys while encryption for any of the Fabric items in your workspace is in progress.
+
+## Monitoring
+
+You can track encryption configuration requests for your Fabric workspaces by audit log entries. The following operation names are used in audit logs:
+
+* ApplyWorkspaceEncryption
+* DisableWorkspaceEncryption
+* GetWorkspaceEncryption
 
 ## Considerations and limitations
 
 Before you configure your Fabric workspace with a customer-managed key, consider the following limitations:
 
-* Customer-managed keys are currently supported for the following Fabric items:
-  * Lakehouse
-  * Environment
-  * Spark Job Definition
-  * API for GraphQL
-  * ML model
-  * Experiment
-  * Data Pipeline
-  * Dataflow
-  * Industry solutions
-
-* This feature can't be enabled for a workspace that contains unsupported items. 
-
-* When customer-managed key encryption for a Fabric workspace is enabled, only supported items can be created in that workspace. To use unsupported items, create them in a different workspace that does not have this feature enabled. 
-
 * The data listed below isn't protected with customer-managed keys:
  
-  * Lakehouse column names, table format, table compression, SQL endpoint. Once you enable CMK, no SQL endpoint is created for the Lakehouse created within that workspace.
+  * Lakehouse column names, table format, table compression.
   * All data stored in the Spark Clusters (data stored in temp discs as part of  shuffle or data spills or RDD caches in a spark application) are not protected. This includes all the Spark Jobs from Notebooks, Lakehouses, Spark Job Definitions, Lakehouse Table Load and Maintenance jobs, Shortcut Transforms, Fabric Materialized View Refresh.
   * The job logs stored in the history server
   * Libraries attached as part of environments or added as part of the Spark session customization using magic commands are not protected
-  * Metadata generated when creating a Data pipeline and Copy job, such as DB name, table, schema
+  * Metadata generated when creating a Pipeline and Copy job, such as DB name, table, schema
   * Metadata of ML model and experiment, like the model name, version, metrics
-
-* CMK is only supported in all public regions.
+  * Warehouse queries on Object Explored and backend cache, which is evicted after each use
 
 * CMK is supported on all [F SKUs](../enterprise/licenses.md). Trial capacities cannot be used for encryption using CMK. CMK cannot be enabled for workspaces that have BYOK enabled and CMK workspaces cannot be moved to capacities for which BYOK is enabled either.
 
 * CMK can be enabled using the Fabric portal and does not have API support.
-
-* CMK is not supported when Azure Key Vault firewall setting is enabled.
 
 * CMK can be enabled and disabled for the workspace while the tenant level encryption setting is on. Once the tenant setting is turned off, you can no longer enable CMK for workspaces in that tenant or disable CMK for workspaces that already have CMK turned on in that tenant. Data in workspaces that enabled CMK before the tenant setting was turned off will remain encrypted with the customer managed key. Keep the associated key active to be able to unwrap data in that workspace. 
 

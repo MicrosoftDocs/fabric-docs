@@ -23,15 +23,21 @@ In order for Fabric User Data Functions to work correctly, your network must all
 
 The following are current limitations for Fabric User Data Functions:
 
+- **Functions are editable by the owner only**: At this moment, only the owner of the User Data Functions item can modify and publish the functions code. For instructions on how to transfer ownership of Fabric items, see [Take ownership of Fabric items](../../fundamentals/item-ownership-take-over.md).
+
+- **Functions publish cooldown period**: After publishing your functions, you need to wait at least 2 minutes before publishing again. This cooldown period is applicable when publishing from the Functions in-browser portal, the User Data Functions Visual Studio Code extension, the GIT import action or by using deployment pipelines.
+
+- **"Manage connections" only supports Fabric data sources**: The "Manage connections" feature only supports connecting to Fabric-native data sources at this moment. To learn more, visit [Connect to data sources](./connect-to-data-sources.md).
+
+- **"Manage connections" cannot connect to resources that have special characters in their names**: Fabric resources, such as databases, that have special characters in their names, such as curly braces or non-ASCII characters, are not compatible with the Manage Connections experience in User Data Functions. To learn more, visit [Connect to data sources](./connect-to-data-sources.md).
+
 - **Regional limitations for User Data Functions**: User Data Functions is not available in a subset of Fabric regions. For an updated list of regions where Fabric User Data Functions is available, see [Fabric region availability](../../admin/region-availability.md). If your Home Tenant is in an unsupported region, you can create a Capacity in a supported region to use User Data Functions. For more information, see [Manage your Fabric capacity](../../admin/capacity-settings.md).
 
 - **Regional limitations for Test feature in Develop mode**: The test functionality in Develop mode is not available in the following Fabric regions: Brazil South, Israel Central, and Mexico Central. You can still test your functions by publishing them and running them, or by using the [VS Code extension](./create-user-data-functions-vs-code.md) to test them locally.
 
-- **Functions are editable by the owner only**: At this moment, only the owner of the User Data Functions item can modify and publish the functions code. For instructions on how to transfer ownership of Fabric items, see [Take ownership of Fabric items](../../fundamentals/item-ownership-take-over.md).
-
 - **Reserved Python keywords in Fabric User Data Functions**: In addition to reserved keywords from the Python language, Fabric User Data Functions also uses the following keywords: `req`, `context`, and `reqInvocationId`. Reserved keywords can't be used as parameter names or function names.
 
-- **Default values and optional parameters are unsupported**: At this moment, all function parameters are required when invoking invocation. Similarly, providing default values in the function argument definition is currently not supported. For example, the function below throws a syntax error:
+- **Parameters with default values or optional values are unsupported**: At this moment, all function parameters are required when invoking invocation. Similarly, providing default values in the function argument definition is currently not supported. For example, the function below throws a syntax error:
     ```python
         # The default value for the argument called 'name' is not supported and treated like a syntax error.
         @udf.function()
@@ -39,9 +45,7 @@ The following are current limitations for Fabric User Data Functions:
             return f"Goodbye, {name}."
     ```
 
-- **"Manage connections" only supports Fabric data sources**: The "Manage connections" feature only supports connecting to Fabric-native data sources at this moment. To learn more, visit [Connect to data sources](./connect-to-data-sources.md).
-
-- **Service principals**: Using Fabric User Data Functions as a service principal to access other items and resources is not currently supported. For example, you cannot use Fabric User Data Functions as a managed identity or workspace identity.
+- **Service principal support**: Accessing Fabric items or data sources using a Service Principal is not currently supported. For example, you cannot use Fabric User Data Functions as a managed identity or workspace identity.
 
 ## Service limits
 The following list details the service limits for User Data Functions items. 

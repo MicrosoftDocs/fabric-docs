@@ -8,8 +8,6 @@ ms.topic: how-to
 ms.custom:
 ms.date: 07/24/2025
 ms.search.form: Pause and Resume
-zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
-zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Pause and resume data streams
@@ -61,8 +59,6 @@ The table below describes the available resume options:
 
 Here's a detailed table of the nodes that support pause and resume functionality along with the available resume options:
 
-::: zone pivot="enhanced-capabilities"  
-
 
 
 
@@ -77,6 +73,8 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Real-time weather (preview)                               | Source        | YES                       | - When streaming was last stopped           |
 | Azure SQL Database CDC                                    | Source        | YES                       | - When streaming was last stopped           |
 | PostgreSQL Database CDC                                   | Source        | YES                       | - When streaming was last stopped           |
+| MongoDB CDC (preview)                                     | Source        | YES                       | - When streaming was last stopped           |
+| HTTP (preview)                                     | Source        | YES                       | - When streaming was last stopped           |
 | MySQL Database CDC                                        | Source        | YES                       | - When streaming was last stopped           |
 | Azure Cosmos DB CDC                                       | Source        | YES                       | - When streaming was last stopped           |
 | SQL Server on VM DB CDC                                   | Source        | YES                       | - When streaming was last stopped           |
@@ -90,43 +88,15 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Fabric Workspace events source                            | Source        | NO                        |                                             |
 | Fabric OneLake events                                     | Source        | NO                        |                                             |
 | Fabric Job events                                         | Source        | NO                        |                                             |
+| Fabric capacity overview events (preview)                 | Source        | NO                        |                                             |
 | Azure Blob storage                                        | Source        | NO                        |                                             |
 | MQTT (preview)                                            | Source        | YES                       | - When streaming was last stopped           |
+| Cribl (preview)                                          | Source        | NO                        |                                             |
 | Solace PubSub+ (preview)                                  | Source        | YES                       | - When streaming was last stopped           |
 | Lakehouse                                                 | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Eventhouse (Event processing before ingestion)            | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Custom endpoint (i.e., Custom App in standard capability) | Destination   | NO                        |                                             |
 | Eventhouse (Direct Ingestion)                             | Destination   | NO                        |                                             |
 | Fabric Activator (preview)                                | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                          |
-| Derived stream                                            | Destination   | NO                        |                                             |
+| Derived stream                                            | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                              |
 
-
-::: zone-end
-
-::: zone pivot="standard-capabilities"
-
-
-| Node                          | Type                  | Supports Pause and Resume |  Resume Options                              |
-|-------------------------------|-----------------------|-----------------------|---------------------------------------------|
-| Sample Data                   | Source                | YES                   | - Now                                       |
-| Azure Event Hubs              | Source                | YES                   | - When streaming was last stopped<br>- Now<br>- Custom time |
-| Azure IoT Hub                 | Source                | YES                   | - When streaming was last stopped<br>- Now<br>- Custom time |
-| Custom App                    | Source                | NO                    |                              |
-| Custom App                    | Destination           | NO                    |                              |
-| Lakehouse                     | Destination           | YES                   | - When streaming was last stopped<br>- Now<br>- Custom time |
-| KQL Database (Direct Ingestion) | Destination           | NO                    |                               |
-| KQL Database (Event processing before ingestion) | Destination           | YES                   | - When streaming was last stopped<br>- Now<br>- Custom time |
-| Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]                        | Destination           | YES                     | - When streaming was last stopped<br>- Now<br>- Custom time |
-
-::: zone-end
-
-## Activating or deactivating all nodes
-
-You can easily pause or resume all data traffic within Eventstream by selecting either the **Activate All** or **Deactivate All** option from the menu bar. When selecting **Activate All**, the available resume options may differ based on the sources and destinations configured in your eventstream. Refer to the detailed table in the previous section for specific resume options for each node. This action will either resume or pause all data traffic flowing in or out of Eventstream. It only applies to nodes that support pause and resume functionality. For nodes that don't currently support this feature, data traffic can't be paused.
-
-:::image type="content" source="./media/pause-resume-data-streams/active-deactive-all.png" alt-text="Screenshot showing how to active or deactive all nodes at simultaneously." lightbox="./media/pause-resume-data-streams/active-deactive-all.png" :::
-
-## Related content
-
-* [Add and manage destinations in an eventstream](./add-manage-eventstream-destinations.md).
-* [Add and manage an event in an eventstream](./add-manage-eventstream-sources.md).

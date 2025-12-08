@@ -18,10 +18,16 @@ Each Activator includes one or more rules, which are evaluated continuously. The
 ## Actions 
 When a rule’s conditions are met and an action is initiated, then the rule is said to be activated. The supported targets for actions include: 
 
-- Fabric data pipelines (for data movement, enrichment)
+- Fabric pipelines (for data movement, enrichment)
 - Fabric notebooks (for machine-learning scoring, diagnostics)
+- Fabric spark jobs (for batch/streaming jobs)
+
+- Fabric functions (for custom business logic with code)
+
 - Power Automate flows (for business process integration)
 - Teams notifications (using template-based messaging)
+
+- Email notifications
 
 There are three types of rules: rules on events, rules on events that are added to an object, and rules on an object's properties.  
 

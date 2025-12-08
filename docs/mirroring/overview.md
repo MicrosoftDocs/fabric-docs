@@ -29,7 +29,7 @@ Accessing and working with this data today requires complex ETL (Extract Transfo
 
 - Restricted and limited access to important, ever changing, data
 - Friction between people, process, and technology
-- Long wait times to create data pipelines and processes to critically important data
+- Long wait times to create pipelines and processes to critically important data
 - No freedom to use the tools you need to analyze and share insights comfortably
 - Lack of a proper foundation for folks to share and collaborate on data
 - No common, open data formats for all analytical scenarios - BI, AI, Integration, Engineering, and even Apps
@@ -61,17 +61,18 @@ Currently, the following external databases are available:
 
 | Platform | Near real-time replication | Type of mirroring | End-to-end tutorial |
 |:--|:--|:--|
-| [Microsoft Fabric mirrored databases from Azure Cosmos DB (preview)](azure-cosmos-db.md) | Yes | Database mirroring | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db.md) | Yes | Database mirroring | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks.md) | Yes | Metadata mirroring | [Tutorial: Azure Databricks](azure-databricks-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server (preview)](azure-database-postgresql.md) | Yes | Database mirroring | [Tutorial: Azure Database for PostgreSQL flexible server](azure-database-postgresql-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | Database mirroring | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Google BigQuery (preview)](google-bigquery.md) | Yes | Database mirroring | [Tutorial: Google BigQuery](google-bigquery-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Oracle (preview)](oracle.md) | Yes | Database mirroring | [Tutorial: Oracle](oracle-tutorial.md) |
+| [Microsoft Fabric mirrored databases from SAP (preview)](sap.md) | Yes | Database mirroring | [Tutorial: SAP](sap-datasphere-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes | Database mirroring | [Tutorial: Snowflake](snowflake-tutorial.md) |
-| [Microsoft Fabric mirrored databases from SQL Server (preview)](sql-server.md) | Yes | Database mirroring | [Tutorial: SQL Server](sql-server-tutorial.md) |
+| [Microsoft Fabric mirrored databases from SQL Server](sql-server.md) | Yes | Database mirroring | [Tutorial: SQL Server](sql-server-tutorial.md) |
 | [Open mirrored databases](open-mirroring.md) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md)|
-| [Microsoft Fabric mirrored databases from Fabric SQL database](../database/sql/overview.md) (preview) | Yes | Database mirroring | [Automatically configured](../database/sql/mirroring-overview.md) |
+| [Microsoft Fabric mirrored databases from Fabric SQL database](../database/sql/overview.md) | Yes | Database mirroring | [Automatically configured](../database/sql/mirroring-overview.md) |
 
 ## How does the near real time replication of database mirroring work?
 
@@ -153,7 +154,7 @@ For mirrored databases created from the Fabric portal after mid-June 2025, the d
 
 ## SQL database in Fabric
 
-You can also directly create and manage a [SQL database in Microsoft Fabric (Preview)](../database/sql/overview.md) inside the Fabric portal. Based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), SQL database in Fabric is automatically mirrored for analytics purposes and allows you to easily create your operational database in Fabric. SQL database is the home in Fabric for OLTP workloads, and can integrate with Fabric's [source control integration](../database/sql/source-control.md).
+You can also directly create and manage a [SQL database in Microsoft Fabric](../database/sql/overview.md) inside the Fabric portal. Based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), SQL database in Fabric is automatically mirrored for analytics purposes and allows you to easily create your operational database in Fabric. SQL database is the home in Fabric for OLTP workloads, and can integrate with Fabric's [source control integration](../database/sql/source-control.md).
 
 ## Related content
 

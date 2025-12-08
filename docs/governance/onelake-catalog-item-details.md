@@ -156,14 +156,14 @@ This section covers actions unique to Semantic Models, SQL Analytics Endpoints, 
 
 #### Process Items
 
-This section covers actions unique to Data Pipelines, Dataflow Gen2 CI/CD, and Notebooks.
+This section covers actions unique to Pipelines, Dataflow Gen2 CI/CD, and Notebooks.
 
 | Item Type | Action | Description | Where to find it |
 |---|---|---|---|
 | **Common Process Item Actions** | **Save As** | Allows you to save a copy of the item to a workspace of your choice. | Specific menu option |
 | | **Refresh now** | Launches an immediate refresh of the item. | **Refresh** button \> **Refresh now** |
 | | **Schedule refresh** | If your process item needs to be refreshed on a regular interval, you can schedule the refresh using the Fabric scheduler. | **Refresh** button \> **Schedule refresh** |
-| **Data Pipeline** | **Export** | Enables you to back up your pipelines. Exporting ensures that your data integration processes are portable and can be easily restored or replicated. | Specific menu option |
+| **Pipeline** | **Export** | Enables you to back up your pipelines. Exporting ensures that your data integration processes are portable and can be easily restored or replicated. | Specific menu option |
 | | **Download** | Downloads the pipeline definition file. | **Download** button |
 | **Dataflow Gen2 CI/CD** | **Check Validation** | Determine the validity of the dataflow by running a "zero row" evaluation for all the queries in the dataflow. | Specific menu option |
 | **Notebook** | **Download** | Downloads the notebook file. | **Download** button |

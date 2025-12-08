@@ -1,19 +1,17 @@
 ---
 title: "Configure automatic reseed for Fabric Mirrored Databases from SQL Server"
-description: Configure automatic reseed for mirrored databases from SQL Server in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: ajayj, anagha-todalbagi
-ms.date: 08/20/2025
+description: Configure automatic reseed for Fabric mirrored databases from SQL Server.
+author: whhender
+ms.author: whhender
+ms.reviewer: ajayj, anagha-todalbagi, wiassaf
+ms.date: 10/15/2025
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
 ---
 # Configure automatic reseed for Fabric mirrored databases from SQL Server
 
-This article covers automatic reseeding for mirroring a database in SQL Server instance.
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+This article covers automatic reseeding for mirroring a database from a SQL Server instance.
 
 There are certain situations where delays in mirroring to Fabric can lead to increased transaction log file usage. This is because the transaction log cannot be truncated until after committed changes have been replicated to the mirrored database. Once the transaction log size reaches its maximum defined limit, writes to the database fail. To safeguard operational databases from write failures for critical OLTP transactions, you can set up an autoreseed mechanism that allows the transaction log to be truncated and reinitializes the database mirroring to Fabric.
 
@@ -21,7 +19,7 @@ A reseed stops flow of transactions to Microsoft Fabric from the mirrored databa
 
 During reseed, the mirrored database item in Microsoft Fabric is available but will not receive incremental changes until the reseed is completed. The `reseed_state` column in `sys.sp_help_change_feed_settings` indicates the reseed state.
 
-The autoreseed feature is disabled by default in SQL Server 2025 (Preview), to enable see [Enable autoreseed](#enable-autoreseed). The autoreseed feature is enabled and cannot be managed or disabled in Azure SQL Database and Azure SQL Managed Instance.
+The autoreseed feature is disabled by default in SQL Server 2025, to enable see [Enable autoreseed](#enable-autoreseed). The autoreseed feature is enabled and cannot be managed or disabled in Azure SQL Database and Azure SQL Managed Instance.
 
 In Fabric Mirroring, the source SQL database transaction log is monitored. An autoreseed will only trigger when the following three conditions are true:
 
@@ -120,13 +118,17 @@ For more information, see [sys.sp_change_feed_reseed_db_init](/sql/relational-da
 
 ## Check if a reseed has been triggered
 
-The `reseed_state` column in the system stored procedure `sys.sp_help_change_feed_settings` on the source SQL Server database indicates its current reseed state. 
+- The `reseed_state` column in the system stored procedure `sys.sp_help_change_feed_settings` on the source SQL database indicates its current reseed state. 
 
-- `0` = Normal.
-- `1` = The database has started the process of reinitializing to Fabric. Transitionary state.
-- `2` = The database is being reinitialized to Fabric and waiting for replication to restart. Transitionary state. When replication is established, reseed state moves to `0`.
+   - `0` = Normal.
+   - `1` = The database has started the process of reinitializing to Fabric. Transitionary state.
+   - `2` = The database is being reinitialized to Fabric and waiting for replication to restart. Transitionary state. When replication is established, reseed state moves to `0`.
+    
+   For more information, see [sys.sp_help_change_feed_settings](/sql/relational-databases/system-stored-procedures/sp-help-change-feed-settings?view=azuresqldb-current&preserve-view=true).
+    
+- All tables enabled for mirroring in the database will have a value of `7` for the `state` column in `sys.sp_help_change_feed_table`.
 
-For more information, see [sys.sp_help_change_feed_settings](/sql/relational-databases/system-stored-procedures/sp-help-change-feed-settings?view=sql-server-ver17&preserve-view=true).
+   For more information, see [sys.sp_help_change_feed_table](/sql/relational-databases/system-stored-procedures/sp-help-change-feed-table?view=azuresqldb-current&preserve-view=true).
 
 ## Related content
 

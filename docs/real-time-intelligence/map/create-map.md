@@ -1,20 +1,23 @@
 ---
 title: Create a map
-description: Learn how to create map in Real-Time Intelligence.
+description: Learn how to create a map in Real-Time Intelligence.
 ms.reviewer: smunk
 author: sipa
 ms.author: sipa
 ms.topic: how-to
 ms.custom:
-ms.date: 09/15/2025
+ms.date: 10/17/2025
 ms.search.form: Create a map
 ---
 
-# Create a map
+# Create a map (preview)
 
-Map is a powerful geospatial visualization platform that transforms spatial data, whether static or real-time, into actionable intelligence. By uncovering patterns, relationships, and trends across space and time, Map reveals insights often missed in traditional charts and tables, helping you make informed decisions with greater clarity.
+Map (preview) is a powerful geospatial visualization platform that transforms spatial data, whether static or real-time, into actionable intelligence. By uncovering patterns, relationships, and trends across space and time, Map reveals insights often missed in traditional charts and tables, helping you make informed decisions with greater clarity.
 
-Map offers robust customization capabilities that let you tailor visualizations to your audience and data content. Overlay diverse data layers—such as bubbles, heatmaps, lines, polygons, and 3D extrusions—to represent complex spatial relationships. Each layer supports advanced styling options including color schemes, opacity, stroke width, and interactive tooltips. To enhance clarity and emphasize key insights, choose from multiple map styles like Grayscale, Road, Satellite, or Night.
+> [!IMPORTANT]
+> This feature is in [preview](../../fundamentals/preview.md).
+
+Map offers robust customization capabilities that let you tailor visualizations to your audience and data content. Overlay diverse data layers—such as bubbles, heatmaps, lines, polygons, and 3D extrusions—to represent complex spatial relationships. Each layer supports advanced styling options including color schemes, opacity, stroke width, interactive tooltips, and data labels. To enhance clarity and emphasize key insights, choose from multiple map styles like Grayscale, Road, Satellite, or Night.
 
 ## Prerequisites
 
@@ -68,15 +71,18 @@ You can start visualizing spatial data on the map canvas by connecting to suppor
 
 Currently Map supports the following data types:
 
-* [GeoJSON](https://geojson.org/) format with **.geojson** file extension and size limitation up to **20MB**.
-* [PMTiles](https://docs.protomaps.com/pmtiles/) format with **.pmtiles** file extension.
+* [GeoJSON](#add-data-to-a-map---geojson) format with **.geojson** file extension and size limitation up to **20MB**.
+* [PMTiles](#add-data-to-the-map---pmtiles) format with **.pmtiles** file extension.
+* [Cloud Optimized GeoTIFF (COG)](#add-data-to-a-map---cloud-optimized-geotiff-cog) format with a **.tiff** or **.tif** file extension.
 
 > [!NOTE]
 > GeoJSON files larger than **20MB** must be converted into a tileset in order to be used by Microsoft Fabric Map. For more information on how to convert a GeoJSON file into tileset, see **[Create a tileset](spatial-job-create-tile-sets.md)**.
 
-#### Add data to map - GeoJSON
+#### Add data to a map - GeoJSON
 
-1. Right-click the GeoJSON file you want to render on the map, then select **Show on map**. The map immediately renders the file's spatial data using default settings.
+GeoJSON is a widely used open standard format for representing geospatial data in a lightweight, human-readable way using JSON (JavaScript Object Notation). It's designed to encode geographic features and their attributes, making it easy to share and process spatial data across web applications and APIs. For more information, see [GeoJSON](https://geojson.org/).
+
+1. Right-click the desired GeoJSON file and choose **Show on map**. The map automatically displays the spatial data using its default settings.
   :::image type="content" source="media/create-map/geo-json-visualization.png" lightbox="media/create-map/geo-json-visualization.png" alt-text="Screenshot with a list of GeoJSON files that can be added to the map.":::
 1. The following screenshot shows the data layer added to the map. This data layer consists of power plant locations ([point geometry](https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.2)) in California using the default layer color.
     :::image type="content" source="media/create-map/geo-json-show-map.png" lightbox="media/create-map/geo-json-show-map.png" alt-text="Screenshot of GeoJSON point data rendered on the map that consist of power plant locations in California.":::
@@ -85,14 +91,17 @@ Currently Map supports the following data types:
 1. Right-click **Zoom to fit** to take closer look at the data distribution.
     :::image type="content" source="media/create-map/geo-json-zoom-fit-action.png" lightbox="media/create-map/geo-json-zoom-fit-action.png" alt-text="Screenshot of the map showing the 'Zoom to fit' option.":::
     > [!TIP]
-    > To get a larger canvas for your map, collapse the Explorer pane to expand the map view.
+    > To get a larger canvas for your map, collapse the **Explorer** pane to expand the map view.
     :::image type="content" source="media/create-map/geo-json-after-zoom-fit.png" lightbox="media/create-map/geo-json-after-zoom-fit.png" alt-text="Screenshot of the map after selecting 'Zoom to fit', where the map zoomed in to show only the portion of the map with data points displayed.":::
 
 There are other data layer customization options available. For more information, see [Customize a map](customize-map.md).
 
 #### Add data to the map - PMTiles
 
-* Right-click the PMTiles file you want to use, then select **Show on map**. The map automatically renders the spatial data using default settings.
+**PMTiles** is a single-file archive format designed for storing and serving tiled geospatial data—such as vector and raster map tiles—in a highly efficient and portable way. Instead of managing thousands or millions of small tile files in a directory structure, PMTiles packages all tiles into one file, simplifying deployment and reducing storage and request overhead. For more information, see [PMTiles Concepts](https://docs.protomaps.com/pmtiles/).
+
+* Right-click the desired PMTiles file and choose **Show on map**. The map automatically displays the spatial data using its default settings.
+
   :::image type="content" source="media/create-map/pm-tiles-visualization.png" lightbox="media/create-map/pm-tiles-visualization.png" alt-text="Screenshot showing a list of PMTiles with the ellipsis menu selected on one of the files, showing the popup menu with 'show on map' highlighted.":::
 
 The following screenshot shows the new data layer added to the map with the default layer color. The new data layer shows fire perimeter zones across California, represented using [polygon geometry](https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.6).
@@ -103,6 +112,27 @@ The following screenshot shows the new data layer added to the map with the defa
 > **Zoom to fit** is available for PMTiles when bounds information is included in the metadata.
 
 For more information on data layer customization, see [Customize a map](customize-map.md).
+
+#### Add data to a map - Cloud Optimized GeoTIFF (COG)
+
+A Cloud Optimized GeoTIFF (COG) is a standard GeoTIFF file (.tiff) designed for cloud hosting. Its internal structure allows efficient access by enabling clients to retrieve only the portions of the file they need, rather than downloading the entire file. For more information, see [cogeo.org](https://cogeo.org/).
+
+> [!IMPORTANT]
+> Fabric Maps currently supports Cloud Optimized GeoTIFF (COG) files that meet the following requirements:
+>
+> * **Projection:** Only files using the EPSG:3857 (Web Mercator) projection system are supported.
+> * **Bands:** Supported formats include 3-band RGB (Red, Green, Blue) and 4-band RGBA (Red, Green, Blue, Alpha for transparency). Single-band and other multi-band configurations aren't supported.
+>
+> Ensure your imagery is correctly formatted before uploading. Files that don't meet these requirements won't render and can trigger an error message.
+
+1. Right-click the desired COG file and choose **Show on map**. The map automatically displays the spatial data using its default settings.
+
+1. Navigate to the **Data layer** pane and select the ellipsis menu (**...**) to show the actions available in the layer.
+
+1. Select **Zoom to fit** to take closer look at the data distribution.
+    :::image type="content" source="media/create-map/cog-file-example.png" lightbox="media/create-map/cog-file-example.png" alt-text="Screenshot of a map with a Cloud Optimized GeoTIFF (COG) file overlaying it.":::
+
+There are other data layer customization options available. For more information, see [Customize a map](customize-map.md).
 
 ### Connect to Eventhouse/KQL databases
 
@@ -123,6 +153,7 @@ But doesn't support:
 
 * [Workspace-level KQL Querysets](../create-query-set.md).
 * [Management commands](/kusto/management/?view=microsoft-fabric&preserve-view=true) aren't supported in KQL queries.
+* [Database shortcut](../database-shortcut.md).
 
 > [!NOTE]
 > Each tab supports only one query. Using multiple queries in a single tab results in a syntax error.

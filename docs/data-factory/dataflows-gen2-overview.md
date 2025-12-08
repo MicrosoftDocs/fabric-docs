@@ -3,7 +3,7 @@ title: Differences between Dataflow Gen1 and Dataflow Gen2
 description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory for Microsoft Fabric.
 author: luitwieler
 ms.topic: overview
-ms.date: 07/17/2025
+ms.date: 11/19/2025
 ms.author: jeluitwi
 ms.search.form: DataflowGen2 Overview
 ms.custom: dataflows
@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # What is Dataflow Gen2?
 
-Dataflows are a cloud-based tool that help you prepare and transform data without writing code. They provide a low-code interface for ingesting data from hundreds of data sources, transforming your data using 300+ data transformations, and loading the resulting data into multiple destinations. Think of them as your personal data assistant that can connect to hundreds of different data sources, clean up messy data, and deliver it exactly where you need it. Whether you're a citizen or professional developer, dataflows empower you with a modern data integration experience to ingest, prepare and transform data from a rich set of data sources including databases, data warehouse, Lakehouse, real-time data, and more.
+Dataflows are a cloud-based tool that helps you prepare and transform data without writing code. They provide a low-code interface for ingesting data from hundreds of data sources, transforming your data using 300+ data transformations, and loading the resulting data into multiple destinations. Think of them as your personal data assistant that can connect to hundreds of different data sources, clean up messy data, and deliver it exactly where you need it. Whether you're a citizen or professional developer, dataflows empower you with a modern data integration experience to ingest, prepare and transform data from a rich set of data sources including databases, data warehouse, Lakehouse, real-time data, and more.
 
 Dataflow Gen2 is the newer, more powerful version that works alongside the original Power BI Dataflow (now called Gen1). Built using the familiar [Power Query](/power-query/power-query-what-is-power-query) experience that's available across several Microsoft products and services such as Excel, Power BI, Power Platform, and Dynamics 365, Dataflow Gen2 provides enhanced features, better performance, and fast copy capabilities to quickly ingest and transform data. If you're starting fresh, we recommend Dataflow Gen2 for its enhanced features and better performance.
 
@@ -38,10 +38,10 @@ Here's the features that are available between Dataflow Gen2 and Gen1:
 | Better monitoring and refresh tracking       | ✓ |   |
 | Works with pipelines     | ✓  |   |
 | High-performance computing     | ✓ |   |
-| Connect via Dataflows connector | ✓ | ✓ |
-| Direct Query via Dataflows connector |  | ✓ |
+| Connect via the dataflow connector | ✓ | ✓ |
+| Direct Query via the dataflow connector |  | ✓ |
 | Refresh only changed data       | ✓ | ✓ |
-| AI-powered insights |  | ✓ |
+| AI-powered insights | ✓ | ✓ |
 
 ## Upgrades to Dataflow Gen2
 

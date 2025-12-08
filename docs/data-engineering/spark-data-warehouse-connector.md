@@ -1,8 +1,9 @@
 ---
 title: Spark connector for Microsoft Fabric Data Warehouse
 description: Learn how to use a Spark connector to access and work with data from a Microsoft Fabric warehouse and the SQL analytics endpoint of a lakehouse.
-author: ms-arali
-ms.author: arali
+author: eric-urban
+ms.author: eur
+ms.reviewer: arali
 ms.topic: how-to
 ms.custom:
   - ignite-2024
@@ -22,6 +23,9 @@ The Spark connector for Fabric Data Warehouse enables Spark developers and data 
 ## Authentication
 
 Microsoft Entra authentication is an integrated authentication approach. Users sign in to the Microsoft Fabric workspace, and their credentials are automatically passed to the SQL engine for authentication and authorization. The credentials are automatically mapped, and users aren't required to provide specific configuration options.
+
+> [!NOTE]
+> The Spark connector for Fabric Data Warehouse only supports interactive Microsoft Entra user authentication. Service principal authentication isn't supported. 
 
 ### Permissions
 

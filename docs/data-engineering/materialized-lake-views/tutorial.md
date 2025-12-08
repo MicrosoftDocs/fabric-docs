@@ -1,9 +1,9 @@
 ---
 title: "Implement medallion architecture with materialized lake views"
 description: This tutorial outlines the steps and considerations for implementing a medallion architecture for a sales analytics pipeline materialized lake views.
-ms.author: rkottackal 
-author: rkottackal 
-ms.reviewer: nijelsf
+ms.author: eur
+author: eric-urban
+ms.reviewer: rkottackal
 ms.topic: tutorial
 ms.date: 06/06/2025
 # customer intent: As a data engineer, I want to implement a medallion architecture using materialized lake views in Microsoft Fabric so that I can automate data transformation workflows and gain actionable insights into sales analytics.
@@ -20,7 +20,7 @@ As prerequisites to this tutorial, complete the following steps:
 1. [Sign into your Power BI](https://powerbi.com/) account, or if you don't have an account yet, sign up for a free trial.
 1. [Enable Microsoft Fabric](../../admin/fabric-switch.md) in your tenant. Select the default Power BI icon at the bottom left of the screen and select Fabric.
 1. [Create a Microsoft Fabric enabled Workspace](../../fundamentals/create-workspaces.md).
-1. Select a workspace from the Workspaces tab, then select **+ New** item, and choose **Data pipeline**. Provide a name for your pipeline and select **Create**.
+1. Select a workspace from the Workspaces tab, then select **+ New** item, and choose **Pipeline**. Provide a name for your pipeline and select **Create**.
 1. [Create a Lakehouse with schemas](../lakehouse-schemas.md#create-a-lakehouse-schema) enabled. Name it **SalesLakehouse** and load sample data files into the Lakehouse. For more information, see [Lakehouse tutorial](/fabric/data-engineering/tutorial-build-lakehouse).
 
 ## Scenario overview

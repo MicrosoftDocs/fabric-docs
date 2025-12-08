@@ -37,11 +37,14 @@ It fits into a reactive, event-driven architecture where data flows continuously
 - **Actions** 
 
     When a rule condition is satisfied, Activator can trigger:
-    - Data pipelines or notebooks in Fabric.
-    - External actions via Power Automate.
-    - Send Teams message to an individual, group, or channel 
-    - Send e-mail
-    
+  - pipelines, notebooks, functions, or spark job definition in Fabric.
+  
+  - External actions via Power Automate.
+  
+  - Send Teams message to an individual, group, or channel 
+  
+  - Send e-mail
+  
 - **Alert management and rule Testing** 
 
     Activator provides preview and impact estimates before rules are activated, showing how often a rule would have fired on historical data. These features help prevent alert spam and over-firing. Internally, state transitions are managed to suppress noise (for example, a value must cross a threshold, not just remain under it).
@@ -64,6 +67,8 @@ Activator instances are deployed per workspace and bound to specific data source
 | Power Automate | Allows event-driven ops via templated or custom actions |
 | Fabric events  | Supplies events that are happening within Fabric like refreshing of a semantic model or failing of a pipeline​ |
 | Notebooks      | Notebook execution can be triggered by an Activator |
+| Spark Job Definition| Spark job execution can be triggered by an Activator|
+| User Data Function| Function execution can be triggered by an Activator|
 
 ### Activator as an orchestrator
 Effective use of Activator in enterprise-grade real-time architectures requires intentional orchestration across Microsoft Fabric components and performance tuning for event volume, object cardinality, and rule complexity. This section explores how to orchestrate Activator with other services and how to optimize detection logic and runtime behavior to support low-latency, cost-efficient automation at scale.
@@ -72,7 +77,7 @@ Activator plays a central role in event-driven pipelines by evaluating data at t
 
 | Pattern                                | Flow Description                                                                                                                 |
 | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Ingestion → Detection → Transformation | Events flow from Eventstream into Activator, which triggers a Data Pipeline to enrich or move the data.                          |
+| Ingestion → Detection → Transformation | Events flow from Eventstream into Activator, which triggers a Pipeline to enrich or move the data.                          |
 | Ingestion → Detection → Notification   | Activator triggers Power Automate to send alerts or push status into Teams, Outlook, or ServiceNow.                              |
 | Ingestion → Detection → Model Scoring  | Activator triggers a Notebook to score an ML model or perform advanced analytics based on real-time anomalies.                   |
 | Feedback Loop with Activator (planned) | Activator-generated insights (e.g., sensitivity labels) are fed into Activator rules, enabling semantically enriched automation. |
@@ -128,10 +133,13 @@ Each rule condition is compiled into an execution graph that is evaluated contin
 #### Actions 
 When a rule’s conditions are met and an action is initiated, then the rule is said to be activated. The supported targets for actions include: 
 
-- Fabric data pipelines (for data movement, enrichment)
+- Fabric pipelines (for data movement, enrichment)
 - Fabric notebooks (for machine-learning scoring, diagnostics)
+- Fabric spark jobs (for batch/streaming jobs)
+- Fabric functions (for custom business logic with code)
 - Power Automate flows (for business process integration)
 - Teams notifications (using template-based messaging)
+- Email notifications
 
 Activator emits a trigger message with the current object state and rule metadata, and actions are nonblocking, that is, and Activator doesn't wait for completions of actions to enable scalable asynchronous flows.
 
@@ -186,7 +194,7 @@ Here are a few real-world scenarios where you can use Fabric Activator:
 - Trigger personalized outreach workflows when a customer’s journey across apps, websites, or other touchpoints indicates a negative experience.
 - Proactively initiate investigation workflows when a shipment’s status wasn't updated within a defined timeframe, helping to locate lost packages faster.
 - Alert account teams when customers fall into arrears, using customized thresholds for time or outstanding balances per customer.
-- Monitor data pipeline health and automatically rerun failed jobs or alert teams when anomalies or failures are detected.
+- Monitor pipeline health and automatically rerun failed jobs or alert teams when anomalies or failures are detected.
 
 
 ## Next step

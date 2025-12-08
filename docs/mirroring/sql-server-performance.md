@@ -1,8 +1,8 @@
 ---
 title: "Optimize Performance of Mirrored Databases from SQL Server"
 description: Learn how to optimize performance of the source database and mirrored database from SQL Server in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+author: whhender
+ms.author: whhender
 ms.reviewer: ajayj, anagha-todalbagi
 ms.date: 08/19/2025
 ms.topic: troubleshooting
@@ -12,8 +12,6 @@ ms.custom:
 # Optimize performance for mirrored databases from SQL Server
 
 This article includes important steps to optimize performance of the source database and mirrored database from SQL Server in Microsoft Fabric.
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Control scan performance
 
@@ -45,7 +43,7 @@ EXECUTE sys.sp_change_feed_configure_parameters
 
 ### Considerations for the dynamic maximum transactions setting
 
-The dynamic maximum transactions feature is enabled by default in SQL Server 2025 (Preview). The dynamic maximum transactions feature is enabled and cannot be managed or disabled in Azure SQL Database and Azure SQL Managed Instance.
+The dynamic maximum transactions feature is enabled by default in SQL Server 2025. The dynamic maximum transactions feature is enabled and cannot be managed or disabled in Azure SQL Database and Azure SQL Managed Instance.
 
 When dynamic maxtrans is enabled, mirroring processes up to 10,000 transactions (by default) or the configured maximum transactions value during the log scan phase. To prevent this phase from running too long, a three-minute timeout is enforced. Any transactions processed before the timeout expires are published to the mirrored database, and remaining transactions will be captured during the next scan.
 
@@ -55,7 +53,7 @@ Use the extended event `repl_logscan_dynamic_maxtrans` to monitor if timeouts ar
 
 ## Resource governor for SQL Server mirroring
 
-In SQL Server 2025 (Preview), you can create a resource governor pool to manage and cap the workload of Fabric mirroring on your SQL Server. You can use resource governor to manage Database Engine resource consumption and enforce policies for user workloads. Resource governor lets you reserve or limit various server resources, including the amount of CPU, memory, and physical I/O that user query workloads can use. In this way, you can protect your primary business workloads from pressure from Fabric Mirroring's change feed data collection. For more information, see [Resource governor](/sql/relational-databases/resource-governor/resource-governor?view=sql-server-ver17&preserve-view=true).
+In SQL Server 2025, you can create a resource governor pool to manage and cap the workload of Fabric mirroring on your SQL Server. You can use resource governor to manage Database Engine resource consumption and enforce policies for user workloads. Resource governor lets you reserve or limit various server resources, including the amount of CPU, memory, and physical I/O that user query workloads can use. In this way, you can protect your primary business workloads from pressure from Fabric Mirroring's change feed data collection. For more information, see [Resource governor](/sql/relational-databases/resource-governor/resource-governor?view=sql-server-ver17&preserve-view=true).
 
 To get started configure workload groups in SQL Server 2025 for Fabric mirroring, use the following sample script and instructions.
 

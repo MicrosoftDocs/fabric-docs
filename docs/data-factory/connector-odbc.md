@@ -4,7 +4,7 @@ description: This article provides information about how to create an Odbc data 
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 10/28/2024
+ms.date: 09/24/2025
 ms.custom:
   - template-how-to
   - connectors

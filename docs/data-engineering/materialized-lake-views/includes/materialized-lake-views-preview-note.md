@@ -1,6 +1,7 @@
 ---
-author: SnehaGunda
-ms.author: sngun
+author: eric-urban
+ms.author: eur
+ms.reviewer: sngun
 ms.date: 06/16/2025
 ms.topic: include
 ms.custom: references_regions

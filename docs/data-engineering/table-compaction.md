@@ -1,9 +1,9 @@
 ---
 title: Table Compaction
 description: Learn about how and why to optimize data files in Delta tables.
-ms.reviewer: snehagunda
-ms.author: milescole
-author: mwc360
+ms.reviewer: milescole
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 09/15/2025

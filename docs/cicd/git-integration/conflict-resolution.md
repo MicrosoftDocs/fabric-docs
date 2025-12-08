@@ -33,9 +33,12 @@ There are three ways to resolve a conflict:
 
 Select **Update all** to see a list of all the items that have conflicts. You can then select which version to keep for each item. For each conflicted item, you can choose to accept the incoming changes from the Git repository or keep the current version that's in the workspace.
 
-:::image type="content" source="./media/conflict-resolution/choose-version.png" alt-text="Screenshot of UI to select which version of a conflicted item to keep.":::
+:::image type="content" source="./media/conflict-resolution/conflict-resolution.png" alt-text="Screenshot of UI to select which version of a conflicted item to keep.":::
 
 - Choose **Accept incoming changes** to override the changes in the workspace. The workspace changes are lost and the Git status changes to *synced* if the import succeeds.
+
+>[!NOTE]
+> Accepting incoming changes will override the current item in the workspace.
 
 - Choose **Keep current content** to keep the version currently in the workspace. After the update is complete, the Git status becomes *uncommitted changes* as the changes in the workspace aren't yet committed to the branch.
 

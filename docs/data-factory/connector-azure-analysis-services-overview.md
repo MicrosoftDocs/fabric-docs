@@ -14,10 +14,12 @@ ms.custom:
 
 The Azure Analysis Services connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-To learn about how to connect to Azure Analysis Services in Dataflow Gen2, go to [Set up your Azure Analysis Services connection](connector-azure-analysis-services.md).
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Basic<br> Organizational account<br> Workspace identity |
 
-## Support in pipelines
+## Related content
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Azure Analysis Services in pipelines.
+For information on how to connect to Azure Analysis Services, go to [Set up your Azure Analysis Services connection](connector-azure-analysis-services.md).

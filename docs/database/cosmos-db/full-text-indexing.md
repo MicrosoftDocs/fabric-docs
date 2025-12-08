@@ -1,20 +1,15 @@
 ---
-title: Full Text Indexing And Search in Cosmos DB Database (Preview)
-titleSuffix: Microsoft Fabric
-description: Query data using "best matching 25" scoring in Cosmos DB in Microsoft Fabric during the preview.
+title: Full Text Indexing And Search in Cosmos DB Database
+description: Query data using "best matching 25" scoring in Cosmos DB in Fabric.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
 ms.date: 07/16/2025
-appliesto:
-- ✅ Cosmos DB in Fabric
 ---
 
-# Full text indexing and search in Cosmos DB in Microsoft Fabric (preview)
+# Full text indexing and search in Cosmos DB in Fabric
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
-Cosmos DB in Microsoft Fabric offers a powerful Full Text Search feature as generally available. This feature is designed to enhance the native search capabilities of your apps without needing an external search service for basic full text search.
+Cosmos DB in Fabric offers a powerful Full Text Search feature as generally available. This feature is designed to enhance the native search capabilities of your apps without needing an external search service for basic full text search.
 
 ## What is full text search?
 
@@ -98,7 +93,7 @@ Multi-language support allows you to index and search text in languages beyond E
 > [!NOTE]
 > Multi-language support is in early preview. Performance and quality of search might be different than full text search in English. For example, stopword removal is only available for English (en-us) at this time. The functionality is subject to change through the evolution of the preview.
 
-For more information about limitations related to multi-language support, see [limitations](limitations.md#full-text-indexing).
+For more information about limitations related to multi-language support, see [Cosmos DB full-text limitations](/azure/cosmos-db/gen-ai/full-text-search-faq#limitations).
 
 ### Full text index
 
@@ -157,13 +152,13 @@ As with the full text policies, full text indexes can be defined on multiple pat
 
 Full text search and scoring operations are performed using the following system functions in the Cosmos DB in Fabric query language:
 
-- [`FULLTEXTCONTAINS`](/nosql/query/fulltextcontains): Returns `true` if a given string is contained in the specified property of a document. This function is useful in a `WHERE` clause when you want to ensure specific key words are included in the documents returned by your query.
+- [`FULLTEXTCONTAINS`](/cosmos-db/query/fulltextcontains): Returns `true` if a given string is contained in the specified property of a document. This function is useful in a `WHERE` clause when you want to ensure specific key words are included in the documents returned by your query.
 
-- [`FULLTEXTCONTAINSALL`](/nosql/query/fulltextcontainsall): Returns `true` if *all* of the given strings are contained in the specified property of a document. This function is useful in a `WHERE` clause when you want to ensure that multiple key words are included in the documents returned by your query.
+- [`FULLTEXTCONTAINSALL`](/cosmos-db/query/fulltextcontainsall): Returns `true` if *all* of the given strings are contained in the specified property of a document. This function is useful in a `WHERE` clause when you want to ensure that multiple key words are included in the documents returned by your query.
 
-- [`FULLTEXTCONTAINSANY`](/nosql/query/fulltextcontainsany): Returns `true` if *any* of the given strings are contained in the specified property of a document. This function is useful in a `WHERE` clause when you want to ensure that at least one of the key words is included in the documents returned by your query.
+- [`FULLTEXTCONTAINSANY`](/cosmos-db/query/fulltextcontainsany): Returns `true` if *any* of the given strings are contained in the specified property of a document. This function is useful in a `WHERE` clause when you want to ensure that at least one of the key words is included in the documents returned by your query.
 
-- [`FULLTEXTSCORE`](/nosql/query/fulltextscore): Use this function in an `ORDER BY RANK` clause to return documents ordered by their full text score, placing the most relevant (highest scoring) documents at the top and the least relevant (lowest scoring) at the bottom.
+- [`FULLTEXTSCORE`](/cosmos-db/query/fulltextscore): Use this function in an `ORDER BY RANK` clause to return documents ordered by their full text score, placing the most relevant (highest scoring) documents at the top and the least relevant (lowest scoring) at the bottom.
 
 Here are a few examples of each function in use.
 

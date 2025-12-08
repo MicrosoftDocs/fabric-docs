@@ -1,8 +1,9 @@
 ---
 title: Monitor Spark job definition
 description: Learn how to monitor the progress and status of a running Spark job definition, and how to view the status and duration of previous runs.
-author: jejiang
-ms.author: jejiang
+author: eric-urban
+ms.author: eur
+ms.reviewer: jejiang
 ms.topic: overview
 ms.date: 05/23/2023
 ms.custom:
