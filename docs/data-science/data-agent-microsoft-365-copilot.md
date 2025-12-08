@@ -14,7 +14,7 @@ ms.collection: ce-skilling-ai-copilot
 #customer intent: As an Analyst, I want to consume a Fabric data agent from Microsoft 365 Copilot.
 ---
 
-# Consuming Fabric Data Agent in Microsoft 365 Copilot
+# Consume Fabric Data Agent in Microsoft 365 Copilot
 
 Microsoft 365 provides a comprehensive set of productivity tools that help organizations collaborate, communicate, and make data-driven decisions. With Teams at the center of communication and collaboration, users can access their organization’s knowledge and insights in one unified workspace. Therefore, Microsoft 365 isn't just a suite of applications, but a platform that connects people to the information they need to act confidently.
 
@@ -47,7 +47,7 @@ When you type `@`, you see the list of different agents including Fabric data ag
 
 :::image type="content" source="./media/data-agent-microsoft-365-copilot/data-agent-chat-mainline.png" alt-text="Screenshot showing how to invoke from Microsoft 365 copilot mainline." lightbox="./media/data-agent-microsoft-365-copilot/data-agent-chat-mainline.png":::
 
-You can also share the agent with colleagues. To do this, select on the agent name, select **Share**, copy the link, and send it in a 1:1 chat, group chat, or Teams channel. This allows your teammates to use the agent and explore the same insights within their own Copilot experience.
+You can also share the agent with colleagues. To do this, select the agent name, select **Share**, copy the link, and send it in a 1:1 chat, group chat, or Teams channel. This allows your teammates to use the agent and explore the same insights within their own Copilot experience.
 
 :::image type="content" source="./media/data-agent-microsoft-365-copilot/data-agent-share-agent-store.png" alt-text="Screenshot showing how to share in Microsoft 365 copilot." lightbox="./media/data-agent-microsoft-365-copilot/data-agent-share-agent-store.png":::
 
@@ -62,7 +62,7 @@ Additionally, users can use the **code interpreter** in Microsoft 365 Copilot to
 
 By publishing your Fabric data agent to the Agent Store in Microsoft 365 Copilot, you provide business users with a seamless way to access organizational knowledge from Fabric OneLake, collaborate more effectively, and make informed decisions faster.
 
-## Controlling how Microsoft 365 Copilot handles the output from Fabric data agent
+## Control how Microsoft 365 Copilot handles the output from Fabric data agent
 
 When you publish a Fabric data agent to Microsoft 365 Copilot, the agent runs inside Microsoft 365 Copilot environment that has its own orchestrator. The orchestrator uses the chat context, user intent, and its own model’s reasoning to shape the final response.
 
