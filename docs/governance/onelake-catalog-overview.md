@@ -24,7 +24,7 @@ OneLake catalog is a centralized place that helps you find, explore, and use the
 
 To open the OneLake catalog, select the OneLake icon in the Fabric navigation pane. Select the tab you're interested if it's not displayed by default.
 
-![Screenshot 2025-12-07 at 15.48.20](media/onelake-catalog-overview/screenshot-2025-12-07-at-15.48.20.png)
+![onelake-catalog-overview](media/onelake-catalog-overview/onelake-catalog-overview.png)
 
 
 
