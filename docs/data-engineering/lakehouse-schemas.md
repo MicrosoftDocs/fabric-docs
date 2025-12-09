@@ -86,7 +86,13 @@ To help transition and refactor existing code to schema-enabled lakehouses, four
 
 ## API for lakehouse schemas
 
+To create a lakehouse with schemas use [Create Lakehouse - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/lakehouse/items/create-lakehouse) and specify "enableSchemas": true in creationPayload request.
+To list tables, schemas, or get table details use [OneLake table APIs for Delta](../onelake/table-apis/delta-table-apis-get-started.md).
+
+
 ## Enbaling schemas for existing lakehouses
+
+We continue to support non-schema lakehouses and are working towards complete feature parity between both types. Full interoperability in Spark is also supported, enabling querying and joining different types of lakehouses. Soon, we will introduce tools to help customers transition their lakehouses from non-schema to schema-enabled versions, allowing you to benefit from enhanced features without needing to move data or experience downtime.
 
 ## Current limitations
 
