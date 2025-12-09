@@ -86,7 +86,7 @@ To help transition and refactor existing code to schema-enabled lakehouses, four
 
 ## API for lakehouse schemas
 
-To create a lakehouse with schemas use [Create Lakehouse - REST API](https://learn.microsoft.com/en-us/rest/api/fabric/lakehouse/items/create-lakehouse) and specify "enableSchemas": true in creationPayload request.
+To create a lakehouse with schemas use [Create Lakehouse - REST API](/rest/api/fabric/lakehouse/items/create-lakehouse) and specify "enableSchemas": true in creationPayload request.
 To list tables, schemas, or get table details use [OneLake table APIs for Delta](../onelake/table-apis/delta-table-apis-get-started.md).
 
 
@@ -102,7 +102,7 @@ There are still some limitations with schema-enabled lakehouses in Spark that ar
 |-|-|
 | Spark views | Use [Materizlized Lake Views](../materialized-lake-views/overview-materialized-lake-view.md). |
 | Shared lakehouse	| Create shortcuts in a lakehouse with the workspace role to shared lakehouse tables and access them through the shortcuts. |
-| External ADLS tables	| Use [OneLake Shortcuts](https://learn.microsoft.com/en-us/rest/api/fabric/core/onelake-shortcuts). |
+| External ADLS tables	| Use [OneLake Shortcuts](/rest/api/fabric/core/onelake-shortcuts). |
 | Private Links	| Use nonschema lakehouses. |
 | Outboubd Traffic Protection 	| Use nonschema lakehouses. |
 
