@@ -100,11 +100,11 @@ There are still some limitations with schema-enabled lakehouses in Spark that ar
 
 | Unsupported Features/ Functionality | Workaround |
 |-|-|
-| Spark views | Not supported. |
-| Shared lakehouse	| Using workspace in the namespace for shared lakehouses won't work, e.g. workspace.sharedlakehouse.schema.table. The user must have workspace role in order to use workspace in the namespace. |
-| External ADLS tables	| External Spark table operations (for example, discovery, getting schema, etc.) aren't supported. These tables are unidentified in the UX. |
-| Private Links	| Workspace-level private links aren't supported. |
-| Outboubd Traffic Protection 	| Workspace-level private links aren't supported. |
+| Spark views | Use [Materizlized Lake Views](../materialized-lake-views/overview-materialized-lake-view.md). |
+| Shared lakehouse	| Create shortcuts in a lakehouse with the workspace role to shared lakehouse tables and access them through the shortcuts. |
+| External ADLS tables	| Use [OneLake Shortcuts](https://learn.microsoft.com/en-us/rest/api/fabric/core/onelake-shortcuts). |
+| Private Links	| Use nonschema lakehouses. |
+| Outboubd Traffic Protection 	| Use nonschema lakehouses. |
 
 ## Related content
 
@@ -112,3 +112,5 @@ There are still some limitations with schema-enabled lakehouses in Spark that ar
 - [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md)
 - [Options to get data into the Lakehouse](load-data-lakehouse.md)
 - [Learn more about shortcuts](../onelake/onelake-shortcuts.md)
+- [OneLake table APIs for Delta](../onelake/table-apis/delta-table-apis-get-started.md)
+
