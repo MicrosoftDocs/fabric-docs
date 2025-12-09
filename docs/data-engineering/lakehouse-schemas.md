@@ -100,7 +100,7 @@ There are still some limitations with schema-enabled lakehouses in Spark that ar
 
 | Unsupported Features/ Functionality | Workaround |
 |-|-|
-| Spark views | Use [Materizlized Lake Views](../materialized-lake-views/overview-materialized-lake-view.md). |
+| Spark views | Use [Materizlized Lake Views](materialized-lake-views/overview-materialized-lake-view.md). |
 | Shared lakehouse	| Create shortcuts in a lakehouse with the workspace role to shared lakehouse tables and access them through the shortcuts. |
 | External ADLS tables	| Use [OneLake Shortcuts](/rest/api/fabric/core/onelake-shortcuts). |
 | Private Links	| Use nonschema lakehouses. |
