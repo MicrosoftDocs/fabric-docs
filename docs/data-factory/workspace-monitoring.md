@@ -27,7 +27,7 @@ Workspace monitoring gives you log-level visibility for all items in a workspace
 
 1. In the KQL database, the **ItemJobEventLogs** table captures pipeline-level events from your workspace. Logs include pipeline name, run status, timestamps, and system diagnostics.
 
-    :::image type="content" source="media/monitor-pipeline-runs/pipeline-workspace-monitoring.png" alt-text="Screenshot of the pipeline workspace monitoring table.":::
+    :::image type="content" source="media/monitor-pipeline-runs/pipeline-workspace-monitoring.png" alt-text="Screenshot of the pipeline workspace monitoring table." lightbox="media/monitor-pipeline-runs/pipeline-workspace-monitoring.png":::
 
 ## Review logged data
 
