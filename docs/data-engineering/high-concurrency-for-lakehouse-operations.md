@@ -68,7 +68,7 @@ This naming convention helps you quickly identify which activities are running i
 
 To view the specific operations running within the session:
 
-1. Click on the activity name (e.g., `HC_lakehouse_...`) in the Monitoring hub.
+1. Select the activity name (for example, `HC_lakehouse_Etc`) in the Monitoring hub.
 2. Navigate to the detail view.
 
 In the detail view, you can see the list of individual jobs that are being executed in the High Concurrency session. This list displays the table-specific operations, such as "Load table," confirming that multiple jobs are sharing the single Spark application context.
