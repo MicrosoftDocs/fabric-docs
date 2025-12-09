@@ -57,7 +57,7 @@ Once the eventstream source is created, you can open the eventstream and add mor
     :::image type="content" source="media/tutorial/manage-fields.png" alt-text="Screenshot of authoring canvas with transform events or add destination." lightbox="media/tutorial/manage-fields.png":::
 
 1. Select the pencil icon in the **Manage fields** pane, and follow these steps:
-    1. In **Operation name**, enter **TutorialTransform**. 
+    1. In **Operation name**, enter **TutorialTransform**.
     1. Select **Add all fields**
 
         :::image type="content" source="media/tutorial/add-all-fields.png" alt-text="Screenshot with the Add all fields button selected." lightbox="media/tutorial/add-all-fields.png":::
@@ -72,10 +72,14 @@ Once the eventstream source is created, you can open the eventstream and add mor
     1. Confirm that **Timestamp** is added to the field list, and select **Save**.
         The **TutorialTransform** tile shows an error because the destination isn't configured yet.
 
-### Create a destination for the timestamp
+## Create a destination for the timestamp
+
+Create a destination to send the transformed events to a KQL database.
 
 1. Point to the right edge of the **TutorialTransform** tile and select the green plus icon.
+
 1. Select **Destinations** > **Eventhouse** to create a destination.
+
 1. Select the pencil icon on the **Eventhouse** tile.
 
     :::image type="content" source="media/tutorial/pencil-on-event-house.png" alt-text="Screenshot showing the pencil icon selected on Eventhouse tile." lightbox="media/tutorial/pencil-on-event-house.png":::
@@ -93,7 +97,9 @@ Once the eventstream source is created, you can open the eventstream and add mor
     | **Input data format**   | *Json*                                                    |
 
 1. Verify that the box **Activate ingestion after adding the data** is checked.
+
 1. Select **Save**.
+
 1. On the menu ribbon, select **Publish**.
 
     The eventstream is now set up to transform events and send them to a KQL database.
