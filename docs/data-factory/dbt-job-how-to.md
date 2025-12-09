@@ -77,8 +77,16 @@ Fabric provides several tools to help you monitor and validate your dbt jobs:
 ### Visual aids
 
 - **Lineage View**: Generates a dependency graph of your models, showing how data flows between sources and transformations.
+
+    :::image type="content" source="media/dbt-job/lineage-view.png" alt-text="Screenshot showing the lineage view in the bottom panel.":::
+
 - **Compiled SQL View**: Displays the rendered SQL code that dbt runs, so you can debug or optimize queries.
+
+    :::image type="content" source="media/dbt-job/compiled-sql.png" alt-text="Screenshot showing the compiled SQL in the bottom panel.":::
+
 - **Run Results Panel**: Shows model-level success, failure, and execution time for each dbt command.
+
+    :::image type="content" source="media/dbt-job/run-success.png" alt-text="Screenshot showing a successful build command execution.":::
 
 ### Monitoring and troubleshooting
 
