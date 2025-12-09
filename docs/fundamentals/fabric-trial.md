@@ -7,7 +7,7 @@ ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
-ms.date: 11/20/2025
+ms.date: 12/09/2025
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
 ---
@@ -321,6 +321,10 @@ The Fabric trial capacity doesn't support autoscale. If you need more compute ca
 Trial Capacity administrators can migrate existing workspaces into a trial capacity using workspace settings and choosing **Trial** as the license mode. To learn how to migrate workspaces, see [create workspaces](create-workspaces.md).
 
 :::image type="content" source="media/fabric-trial/migrate-trial.png" lightbox="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
+
+#### How many SQL databases can I create in a Fabric trial capacity?
+
+Currently, you can create up to three SQL databases in a Fabric trial capacity.
 
 ## Related content
 
