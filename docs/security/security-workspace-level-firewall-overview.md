@@ -14,47 +14,55 @@ ms.date: 11/20/2025
 
 # About workspace IP firewall rules
 
-Workspace IP firewall rules restrict inbound access to Fabric workspaces by allowing connections only from specified IP addresses. As a workspace admin, you can permit access from known IP addresses (such as users, machines, or VPNs), while all other IP addresses are automatically blocked. This approach provides straightforward, workspace-level inbound network protection and is simpler to configure than workspace private links.
+Workspace IP firewall rules control access to your Microsoft Fabric workspace by restricting connections to specified public IP addresses. This feature provides network-level access control when workspaces are exposed over public endpoints. This article provides an overview of workspace IP firewall rules. For configuration steps, see [Set up workspace IP firewall rules](security-workspace-level-firewall-set-up.md).
 
-This article provides an overview of workspace IP firewall rules in Fabric.
+## Workspace-level IP firewall overview
+Workspace-level IP firewall rules allow administrators to define a set of allowed public IP addresses that can access a specific Fabric workspace. Organizations can use IP firewall rules to:
 
-## How workspace IP firewall rules work
+- Limit workspace access to trusted networks (such as office IPs, VPN gateways, or partner ranges)
+- Add network-layer security alongside identity-based controls like Microsoft Entra Conditional Access
+- Implement IP-based restrictions without tenant-wide configuration changes
 
-Workspace IP firewall rules provide network-level access control for your Fabric workspace:
+IP firewall rules complement existing Fabric security features, including tenant-level and workspace-level private links. However, they serve different purposes: while private links provide dedicated private connectivity, IP firewall rules offer a straightforward way to control access when private links aren't available or needed.
 
-- **IP allowlist control**: Define a list of approved IP addresses for your workspace. Only connections from these IP addresses can access the workspace; all other connections are denied.
+> [!IMPORTANT]
+> IP firewall rules apply only to inbound traffic. They don't restrict outbound connections from the workspace.
 
-- **Simple configuration**: After the feature is enabled at the tenant level, workspace admins add the required IP addresses to the allowlist. There's no separate toggle to restrict public access—access control is managed entirely through the IP allowlist.
+Workspace-level IP firewall rules maps a workspace to specific public IP rules added to the workspace. When IP firewall rules are added to a workspace, public internet to the workspace is restricted except for the allowed IP rules. This ensures that either resources available in an approved virtual network (via workspace private endpoints) or allowed public IP rules can access the workspace. The following diagram illustrates the implementation of workspace-level IP firewall rules.
 
-- **Cross-workspace communication**: To enable communication between workspaces, add the relevant IP addresses to the allowlist. If a workspace is also protected by private links, additional considerations may apply.
+:::image type="content" source="media/security-workspace-level-firewall-overview/workspace-ip-firewall.png" alt-text="Diagram showing a workspace IP firewall configuration."::: 
 
-- **Interaction with other security features**: Workspace IP firewall rules work alongside other inbound security features, such as tenant-level private links and workspace-level private links. When multiple protections are enabled simultaneously, all applicable rules must be satisfied for access to be granted.
+When IP Firewall rules are enabled, Fabric evaluates the client’s public IP address before granting access to workspace items such as Lakehouses, Warehouses, OneLake shortcuts, Notebooks, or Spark Job Definitions. Only clients connecting from approved IPs are allowed.  
 
-## Tenant setting requirements
+In this diagram: 
 
-Before workspace admins can configure IP firewall rules, a Fabric administrator must enable the **Configure workspace-level IP firewall** tenant setting. This prerequisite is similar to the setup for workspace private links but uses a different tenant switch. For details, see [Enable workspace inbound access protection for your tenant](security-workspace-enable-inbound-access-protection.md).
+- Workspace A restricts inbound public access and can only be accessed from allowed IP address B 
+- A user connecting from IP Address A is denied because the IP isn’t on the allowlist. 
+- A user connecting from IP Address B is granted access because the IP matches the workspace’s configured inbound rules. 
 
-## Considerations and limitations
+## Supported scenarios and limitations  
 
-Keep the following considerations and limitations in mind when using workspace IP firewall rules:
+You can use workspace-level IP Firewall rules to connect to the following item types in Fabric: 
 
-- **IP address format**: IP addresses must be specified in IPv4 format. IPv6 addresses aren't currently supported.
+- Lakehouse, SQL Endpoint, Shortcut 
+- Direct connection via OneLake endpoint 
+- Notebook, Spark job definition, Environment 
+- Machine learning experiment, machine learning model 
+- Pipeline 
+- Copy Job 
+- Mounted Data Factory 
+- Warehouse 
+- Dataflows Gen2 (CI/CD) 
+- Variable library 
+- Mirrored database (Open mirroring, Cosmos DB) 
+- Eventstream 
+- Eventhouse 
 
-- **CIDR notation**: IP address ranges must use CIDR notation (for example, `203.0.113.0/24`).
+Considerations and Limitations 
 
-- **Maximum rules**: Each workspace can have a maximum of 50 IP address rules. If you need to allow more IP addresses, use broader CIDR ranges where possible.
-
-- **NAT and proxy considerations**: If users connect through a NAT gateway or proxy server, ensure you allowlist the public IP address of the gateway or proxy, not the individual user IP addresses.
-
-- **Dynamic IP addresses**: If users have dynamic IP addresses that change frequently, consider using broader IP ranges or implementing alternative authentication methods.
-
-- **Cross-workspace access**: For cross-workspace scenarios, ensure that IP addresses for both the source and destination workspaces are properly configured in their respective allowlists.
-
-- **Interaction with private links**: When both workspace IP firewall rules and workspace private links are enabled, connections must satisfy both security mechanisms. Private link connections bypass IP firewall checks if they originate from the private endpoint.
-
-- **Service-to-service communication**: Some Fabric services communicate between workspaces or with other Microsoft services. Ensure that necessary service IP ranges are included in the allowlist to avoid disrupting functionality.
-
-- **Emergency access**: Always maintain access from at least one reliable IP address to prevent accidental lockout from the workspace.
+- The workspace-level IP firewall rules feature is supported for all Fabric capacity types including Trial capacity.  
+- The limit of IP firewall rules for workspace is 256.  
+- Public IPs of VM on Vnet with Private endpoints (Tenant or Workspace) cannot be added as IP firewall rules 
 
 ## Next steps
 
