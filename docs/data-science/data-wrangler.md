@@ -7,14 +7,14 @@ ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 08/12/2025
+ms.date: 12/09/2025
 
 ms.search.form: Data Wrangler
 ---
 
 # Accelerate data prep with Data Wrangler in Microsoft Fabric
 
-Data Wrangler accelerates your data preparation workflow by providing an immersive, visual interface for exploratory data analysis. In this article, you'll learn how to:
+Data Wrangler accelerates your data preparation workflow by providing an immersive, visual interface for exploratory data analysis. In this article, you learn how to:
 
 - Launch Data Wrangler from your Fabric notebook
 - Explore data with interactive visualizations and summary statistics
@@ -29,7 +29,7 @@ This article focuses on pandas DataFrames. For Spark DataFrames, see [this resou
 
 ## Limitations
 
-- Custom code operations are currently supported only for pandas DataFrames.
+- Custom code operations currently support only pandas DataFrames.
 - The Data Wrangler display works best on large monitors. However, you can minimize or hide different portions of the interface to accommodate smaller screens.
 
 ## Launching Data Wrangler
@@ -51,13 +51,13 @@ display(df)
 In the notebook ribbon "Home" tab, use the Data Wrangler dropdown to browse the active DataFrames available for editing. Select the one you want to open in Data Wrangler.
 
 > [!TIP]
-> Data Wrangler can't be opened while the notebook kernel is busy. An executing cell must finish before Data Wrangler can launch, as shown in this screenshot:
+> You can't open Data Wrangler while the notebook kernel is busy. An executing cell must finish before Data Wrangler can launch, as shown in this screenshot:
 
 :::image type="content" source="media/data-wrangler/launch-data-wrangler.png" alt-text="Screenshot showing a Fabric notebook with the Data Wrangler dropdown prompt." lightbox="media/data-wrangler/launch-data-wrangler.png":::
 
 ## Choosing custom samples
 
-To open a custom sample of any active DataFrame with Data Wrangler, select "Choose custom sample" from the dropdown, as shown in this screenshot:
+To open a custom sample of any active DataFrame with Data Wrangler, select **Choose custom sample** from the dropdown, as shown in this screenshot:
 
 :::image type="content" source="media/data-wrangler/launch-custom-sample.png" alt-text="Screenshot showing the Data Wrangler dropdown prompt with the sample option outlined." lightbox="media/data-wrangler/launch-custom-sample.png":::
 
@@ -67,16 +67,16 @@ This action opens a dialog with options to specify the size of the desired sampl
 
 ## Viewing summary statistics
 
-When Data Wrangler loads, it displays a descriptive overview of the chosen DataFrame in the "Summary" panel. This overview includes information about the DataFrame dimensions, missing values, and more. When you select any column in the Data Wrangler grid, the "Summary" panel updates to display descriptive statistics about that specific column. Quick insights about every column are also available in its header.
+When Data Wrangler loads, it displays a descriptive overview of the chosen DataFrame in the **Summary** panel. This overview includes information about the DataFrame dimensions, missing values, and more. When you select any column in the Data Wrangler grid, the **Summary** panel updates to display descriptive statistics about that specific column. Quick insights about every column are also available in its header.
 
 > [!TIP]
-> Column-specific statistics and visuals (both in the "Summary" panel and in the column headers) depend on the column data type. For instance, a binned histogram of a numeric column appears in the column header only if the column is cast as a numeric type, as shown in this screenshot:
+> Column-specific statistics and visuals (both in the **Summary** panel and in the column headers) depend on the column data type. For instance, a binned histogram of a numeric column appears in the column header only if the column is cast as a numeric type, as shown in this screenshot:
 
 :::image type="content" source="media/data-wrangler/view-summary-panel.png" alt-text="Screenshot showing the Data Wrangler display grid and Summary panel." lightbox="media/data-wrangler/view-summary-panel.png":::
 
 ## Browsing data-cleaning operations
 
-A searchable list of data-cleaning operations is available in the "Operations" panel. When you select a data-cleaning operation from the "Operations" panel, you're prompted to provide a target column or columns, along with any necessary parameters to complete the operation. For example, the prompt to numerically scale a column requires a new range of values, as shown in this screenshot:
+The **Operations** panel provides a searchable list of data-cleaning operations. When you select a data-cleaning operation from the **Operations** panel, you need to provide a target column or columns, along with any necessary parameters to complete the operation. For example, the prompt to numerically scale a column requires a new range of values, as shown in this screenshot:
 
 :::image type="content" source="media/data-wrangler/browse-operations.png" alt-text="Screenshot showing the Data Wrangler Operations panel." lightbox="media/data-wrangler/browse-operations.png":::
 
@@ -87,16 +87,16 @@ A searchable list of data-cleaning operations is available in the "Operations" p
 
 ## Previewing and applying operations
 
-The Data Wrangler display grid automatically previews the results of a selected operation, and the corresponding code automatically appears in the panel below the grid. To commit the previewed code, select "Apply" in either location. To delete the previewed code and try a new operation, select "Discard" as shown in this screenshot:
+The Data Wrangler display grid automatically previews the results of a selected operation, and the corresponding code automatically appears in the panel below the grid. To commit the previewed code, select **Apply** in either location. To delete the previewed code and try a new operation, select **Discard** as shown in this screenshot:
 
 :::image type="content" source="media/data-wrangler/preview-operation.png" alt-text="Screenshot showing a Data Wrangler operation in progress." lightbox="media/data-wrangler/preview-operation.png":::
 
-Once an operation is applied, the Data Wrangler display grid and summary statistics update to reflect the results. The code appears in the running list of committed operations in the "Cleaning steps" panel, as shown in this screenshot:
+Once you apply an operation, the Data Wrangler display grid and summary statistics update to reflect the results. The code appears in the running list of committed operations in the **Cleaning steps** panel, as shown in this screenshot:
 
 :::image type="content" source="media/data-wrangler/operation-applied.png" alt-text="Screenshot showing an applied Data Wrangler operation." lightbox="media/data-wrangler/operation-applied.png":::
 
 > [!TIP]
-> You can always undo the most recently applied step. In the "Cleaning steps" panel, a trash can icon appears when you hover your cursor over the most recently applied step, as shown in this screenshot:
+> You can always undo the most recently applied step. In the **Cleaning steps** panel, a trash can icon appears when you hover your cursor over the most recently applied step, as shown in this screenshot:
 
 :::image type="content" source="media/data-wrangler/undo-operation.png" alt-text="Screenshot showing a Data Wrangler operation that can be undone." lightbox="media/data-wrangler/undo-operation.png":::
 
@@ -126,7 +126,7 @@ This table summarizes the operations that Data Wrangler currently supports:
 
 ## Customize your display
 
-At any time, you can customize the interface using the "Views" tab in the toolbar above the Data Wrangler display grid. This option can hide or show different panes based on your preferences and screen size, as shown in this screenshot:
+At any time, you can customize the interface by using the "Views" tab in the toolbar above the Data Wrangler display grid. This option can hide or show different panes based on your preferences and screen size, as shown in this screenshot:
 
 :::image type="content" source="media/data-wrangler/customize-view.png" alt-text="Screenshot showing the Data Wrangler menu for customizing the display view." lightbox="media/data-wrangler/customize-view.png":::
 
@@ -135,7 +135,7 @@ At any time, you can customize the interface using the "Views" tab in the toolba
 The toolbar above the Data Wrangler display grid provides options to save the generated code. You can copy the code to the clipboard or export it to the notebook as a function. Exporting the code closes Data Wrangler and adds the new function to a code cell in the notebook. You can also download the cleaned DataFrame as a CSV file.
 
 > [!TIP]
-> Data Wrangler generates code that is applied only when you manually run the new cell, and it won't overwrite your original DataFrame, as shown in this screenshot:
+> Data Wrangler generates code that runs only when you manually run the new cell, and it doesn't overwrite your original DataFrame, as shown in this screenshot:
 > 
 > :::image type="content" source="media/data-wrangler/export-code.png" alt-text="Screenshot showing the options to export code in Data Wrangler." lightbox="media/data-wrangler/export-code.png":::
 > 
@@ -145,7 +145,7 @@ The toolbar above the Data Wrangler display grid provides options to save the ge
 
 ## Next steps
 
-Now that you've learned how to use Data Wrangler with pandas DataFrames, explore these resources:
+Now that you know how to use Data Wrangler with pandas DataFrames, explore these resources:
 
 - [Use Data Wrangler with Spark DataFrames](data-wrangler-spark.md) - Apply the same techniques to Spark DataFrames
 - [Watch a live demo](https://www.youtube.com/watch?v=Ge0VWZMa50I) - See Data Wrangler in action with Guy in a Cube
