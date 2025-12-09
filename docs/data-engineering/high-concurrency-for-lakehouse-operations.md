@@ -64,7 +64,7 @@ You can track High Concurrency sessions in the **Monitoring hub**. When a Lakeho
 
 This naming convention helps you quickly identify which activities are running in High Concurrency mode.
 
-:::image type="content" source="/media/high-concurrency-lakehouse-overview/high-concurrency-for-lakehouse-monitoring.png" alt-text="Screenshot of the Monitoring hub showing a High Concurrency Lakehouse activity." lightbox="/media/high-concurrency-lakehouse-overview/high-concurrency-for-lakehouse-monitoring.png":::
+:::image type="content" source="../media/high-concurrency-lakehouse-overview/high-concurrency-for-lakehouse-monitoring.png" alt-text="Screenshot of the Monitoring hub showing a High Concurrency Lakehouse activity." lightbox="../media/high-concurrency-lakehouse-overview/high-concurrency-for-lakehouse-monitoring.png":::
 
 To view the specific operations running within the session:
 
