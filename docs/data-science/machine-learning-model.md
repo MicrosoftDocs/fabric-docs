@@ -163,14 +163,12 @@ for rm in client.list_registered_models():
 Once you train a model on a data set, you can apply that model to data it never saw to generate predictions. We call this model use technique **scoring** or **inferencing**. 
 
 **Next steps:**
-- [Learn about batch inferencing in Fabric](link-to-batch-inferencing)
-- [Deploy models for real-time scoring](link-to-real-time-scoring)
-- [Explore model scoring best practices](link-to-scoring-best-practices)
+- [Learn about batch scoring in Fabric](model-scoring-predict.md)
+- [Deploy models for real-time scoring](model-endpoints.md)
 - [Learn about MLflow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
 
 ## Related content
 
-- [Track experiments with MLflow in Fabric](link-to-mlflow-experiments)
+- [Track experiments with MLflow in Fabric](machine-learning-experiment.md)
 - [MLflow Experiment APIs reference](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
-- [Model versioning best practices](link-to-versioning-best-practices)
-- [Compare model performance metrics](link-to-metrics-comparison)
+
