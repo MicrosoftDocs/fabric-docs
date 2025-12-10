@@ -10,7 +10,7 @@ ms.topic: overview
 
 # What is ontology (preview)?
 
-The *ontology (preview)* item (part of the [IQ (preview) workload](../overview.md)) is for digitally representing the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, and constraints. It then binds the entity type definitions to live data, allowing downstream tools to share the same language. This language can be used by AI agents for cross-domain reasoning and decision-ready actions.
+The *ontology (preview)* item (part of the [IQ (preview) workload](../overview.md)) is for digitally representing the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, and constraints. It then binds the entity type definitions to real data, allowing downstream tools to share the same language. This language can be used by both humans and AI agents for cross-domain reasoning and decision-ready actions.
 
 Ontology works well in situations where you need cross-domain consistency, governance, or AI/agent grounding, and you want to reason across processes.
 
@@ -68,9 +68,7 @@ The *ontology graph* is a navigable instance graph built from your bindings and 
 
 ### Querying your ontology
 
-*Ontology querying* lets you ask business-level questions over bound sources through ontology concepts. Queries start with entity types and allow filtering by properties, traversing relationships, aggregating by time, and other constraints. The ontology layer pushes predicates down to the native engines where possible (GQL for Graph in Microsoft Fabric and KQL for Eventhouse). It also includes an NL2Ontology query layer that converts natural language into a detailed federated query plan, executes the plan, and returns the relevant results. That layer can be used by Fabric AI agents to improve answer accuracy and explainability.
-
-By querying concepts rather than physical schemas, federated queries improve semantics. They ensure that filters, joins, units, and validity windows align with the canonical definitions you published in your ontology.
+*Ontology querying* lets you ask business-level questions over bound sources through ontology concepts. Queries start with entity types and allow filtering by properties, traversing relationships, aggregating by time, and other constraints. The ontology layer pushes predicates down to the native engines where possible (GQL for Graph in Microsoft Fabric and KQL for Eventhouse). It also includes an NL2Ontology query layer that converts natural language into a detailed federated query plan, executes the plan, and returns the relevant results. By querying concepts rather than physical schemas, federated queries improve semantics. They ensure that filters, joins, units, and validity windows align with the canonical definitions you published in your ontology.
 
 ## Next steps
 
