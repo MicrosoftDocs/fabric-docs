@@ -65,9 +65,6 @@ To upgrade a previous installation of the *Microsoft Fabric Capacity Metrics* ap
 
 To complete the installation, configure the Microsoft Fabric Capacity Metrics app by running it for the first time.
 
-   > [!NOTE]
-   > 
-
 1. In Microsoft Fabric, in the Power BI experience, select **Apps**. If you're running the app just after installing it, you'll be redirected to the **Apps** pane, and you can skip to step 2. Otherwise, to see the **Apps** pane, change the experience selector from the bottom left to Power BI instead of Fabric.
 1. Select the **Microsoft Fabric Capacity Metrics** app.
 1. When you see the message *You have to connect to your own data to view this report*, select **Connect**.
@@ -109,6 +106,7 @@ To install the app in a government cloud environment, use one of these links. Yo
 ### Considerations and limitations
 
 OneLake isn't supported in Government Community Cloud (GCC).
+
 
 ### Troubleshooting
 
