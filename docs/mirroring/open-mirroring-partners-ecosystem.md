@@ -68,7 +68,7 @@ For more information, see [Oracle GoldenGate 23ai integration into open mirrorin
 
 Qlik Replicate provides log-based Change Data Capture (CDC) for over 40 heterogeneous source systems, including SAP, DB2 z/OS, Teradata, Oracle, and cloud databases like Amazon Aurora. By continuously streaming data changes directly to Fabric's open mirroring landing zone, Qlik Replicate removes the need for complex ETL pipelines while minimizing impact on your operational systems. The Fabric mirroring engine automatically processes these changes and merges them into analytics-ready Delta Lake tables in OneLake.
 
-For more information, see [Qlik Replicate for Microsoft Fabric](https://www.qlik.com/us/products/qlik-replicate).
+For more information, see [Qlik + Microsoft Fabric Open Mirroring](https://www.qlik.com/blog/qlik-microsoft-fabric-open-mirroring-the-fast-track-to-real-time-data).
 
 ## Quadrant Technologies
 
