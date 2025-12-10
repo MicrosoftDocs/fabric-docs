@@ -2,7 +2,7 @@
 title: Microsoft Fabric disaster recovery experience specific guidance
 description: See experience-specific guidance for recovering from a regional disaster.
 author: msmimart
-ms.author: msmimart
+ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: conceptual
 ms.custom:
