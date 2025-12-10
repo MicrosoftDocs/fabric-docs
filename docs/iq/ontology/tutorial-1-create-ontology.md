@@ -4,7 +4,7 @@ description: Create an ontology (preview) item with data from a semantic model o
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 11/21/2025
+ms.date: 12/03/2025
 ms.topic: tutorial
 zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
 zone_pivot_groups: create-ontology-scenario
@@ -87,7 +87,7 @@ Next, review the entity types, data bindings, and relationships that were genera
 Entity types represent types of objects in a business. The **Entity Types** pane lists all three entity types in the ontology, named after the data tables:
 * *factsales*
 * *dimstore*
-* *dimproduct*
+* *dimproducts*
 
 >[!TIP] 
 >If you don't see any entities in the ontology, make sure your semantic model is published, the tables in the semantic model are visible (not hidden), and relationships are defined. To revisit the setup steps for the semantic model, see [Prepare the Power BI Semantic Model ](tutorial-0-introduction.md#prepare-the-power-bi-semantic-model).
@@ -106,7 +106,7 @@ Follow these steps to rename each entity type to a friendlier name.
     | --- | --- |
     | *factsales* | *SaleEvent* |
     | *dimstore* | *Store* |
-    | *dimproduct* | *Product* |
+    | *dimproducts* | *Products* |
 
 When you're done renaming all the entity types, they look like this (they might be listed in a different order).
 
@@ -120,13 +120,13 @@ Verify that each entity type has the properties described in the following table
 
 | Entity type | Key | Properties |
 | --- | --- | --- |
-| *SaleEvent* |  | `ProductId`, `RevenueUSD`, `SaleId`, `StoreId`, `Units` |
+| *SaleEvent* |  | `ProductId`, `RevenueUSD`, `SaleDate`, `SaleId`, `StoreId`, `Units` |
 | *Store* | `StoreId` | `City`, `Region`, `Latitude`, `Longitude`, `StoreId`, `StoreName` |
-| *Product* | `ProductId` |  `Brand`, `Category`, `ProductId`, `ProductName`, `Subcategory` |
+| *Products* | `ProductId` |  `Brand`, `Category`, `ProductId`, `ProductName`, `Subcategory` |
 
 Here's an example of what entity type properties look like.
 
-:::image type="content" source="media/tutorial-1-create-ontology/semantic-model/verify-properties.png" alt-text="Screenshot of the Product entity type and its properties." lightbox="media/tutorial-1-create-ontology/semantic-model/verify-properties.png":::
+:::image type="content" source="media/tutorial-1-create-ontology/semantic-model/verify-properties.png" alt-text="Screenshot of the Products entity type and its properties." lightbox="media/tutorial-1-create-ontology/semantic-model/verify-properties.png":::
 
 ### Add SaleEvent key
 
@@ -138,6 +138,10 @@ The *SaleEvent* entity type doesn't have a key that was imported from the source
     :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/add-key.png" alt-text="Screenshot of adding entity type key.":::
 
 1. Select `SaleId`.
+
+    >[!NOTE]
+    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
+
 1. When the key is saved, it looks like this:
 
     :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/sale-event-key.png" alt-text="Screenshot of the sale event key.":::
@@ -152,7 +156,7 @@ Verify that each entity type is successfully bound to the data sources described
 | --- | --- |
 | *SaleEvent* | *factsales* |
 | *Store* | *dimstore* |
-| *Product* | *dimproduct* |
+| *Products* | *dimproducts* |
 
 Here's an example of what the bindings look like.
 
@@ -169,13 +173,13 @@ Select the *SaleEvent* entity type to display it and its relationship types on t
 Select each of the relationship types and update its details to match the following table. First, rename the relationship type to the provided friendlier name. Next, set the correct order of source and target entity types. Finally, bind the relationship type to the source data table and select the source columns.
 
 >[!NOTE]
->To prevent unexpected behavior from a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&active=true&fixed=true&sort=published&issueId=1619), make sure the correct source and target entity types are set before choosing the source data table to bind.
+>To prevent unexpected behavior from a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1619), make sure the correct source and target entity types are set before choosing the source data table to bind.
 
 The final relationship details match the following table.
 
 | Old name | New name | Source entity type | Target entity type | Source data table |
 | --- | --- | --- | --- | --- |
-| *factsales_has_dimproduct* | *soldIn* | *Product* | *SaleEvent* | Tutorial workspace > *OntologyDataLH* > *factsales* <br>Set source columns to match entity type key properties |
+| *factsales_has_dimproducts* | *soldIn* | *Products* | *SaleEvent* | Tutorial workspace > *OntologyDataLH* > *factsales* <br>Set source columns to match entity type key properties |
 | *factsales_has_dimstore* | *has* | *Store* | *SaleEvent* | Tutorial workspace > *OntologyDataLH* > *factsales* <br>Set source columns to match entity type key properties |
 
 Here's an example of what an updated relationship type looks like.
@@ -220,7 +224,7 @@ Next, create entity types, data bindings, and relationships based on data from y
 
 ## Create entity types and data bindings
 
-First create entity types, which represent types of objects in a business. This step has three entity types: *Store*, *Product*, and *SaleEvent*. After you create the entity types, you create their properties by binding source data columns in the *OntologyDataLH* lakehouse tables.
+First create entity types, which represent types of objects in a business. This step has three entity types: *Store*, *Products*, and *SaleEvent*. After you create the entity types, you create their properties by binding source data columns in the *OntologyDataLH* lakehouse tables.
 
 ### Add first entity type (Store)
 
@@ -258,15 +262,18 @@ First create entity types, which represent types of objects in a business. This 
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/entity-type-key-2.png" alt-text="Screenshot of selecting the entity type key.":::
 
+    >[!NOTE]
+    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
+
 Now the *Store* entity type is ready. Continue to the next section to create the remaining entity types.
 
-### Add other entity types (Product, SaleEvent)
+### Add other entity types (Products, SaleEvent)
 
 Follow the same steps that you used for the *Store* entity type to create the entity types described in the following table. Each entity has a static data binding with the default columns from its source table.
 
 | Entity type name | Source table in *OntologyDataLH* | Entity type key |
 | --- | --- | --- |
-| *Product* | *dimproduct* | `ProductId` |
+| *Products* | *dimproducts* | `ProductId` |
 | *SaleEvent* | *factsales* | `SaleId` |
 
 When you're done, you see these entity types listed in the **Entity Types** pane. 
@@ -299,13 +306,13 @@ Next, create relationship types between the entity types to represent contextual
 
 Now the first relationship is created, and bound to data in your source table. Continue to the next section to create another relationship type.
 
-### Product soldIn SaleEvent
+### Products soldIn SaleEvent
 
 Follow the same steps that you used for the first relationship type to create the relationship type described in the following table.
 
 | Relationship type name  | Source entity type | Target entity type | Table |
 | --- | --- | --- | --- |
-| *soldIn* | *Product* | *SaleEvent* | *factsales*<br>Set source columns to match entity type key properties|
+| *soldIn* | *Products* | *SaleEvent* | *factsales*<br>Set source columns to match entity type key properties|
 
 When you're done, you have two relationships targeting the *SaleEvent* entity type. To see the relationships, select the **SaleEvent** entity type from the **Entity Types** pane. You see its relationships on the canvas.
 
@@ -315,6 +322,6 @@ When you're done, you have two relationships targeting the *SaleEvent* entity ty
 
 ## Next steps
 
-In this step, you created an ontology (preview) item and populated it with entity types, their properties, and relationship types between them. Next, enrich the entities further by adding a *Freezer* entity that's bound to time series data.
+In this step, you created an ontology (preview) item and populated it with entity types, their properties, and relationship types between them. Next, enrich the entities further by adding a *Freezer* entity that's bound to both static and time series data.
 
-Next, continue to [Enrich the ontology with time series data](tutorial-2-enrich-ontology.md).
+Next, continue to [Enrich the ontology with additional data](tutorial-2-enrich-ontology.md).
