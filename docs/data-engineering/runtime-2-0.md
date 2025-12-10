@@ -52,7 +52,7 @@ To use Runtime 2.0 with specific notebooks or Spark job definitions:
     :::image type="content" source="media\mrs\runtime-2-environment.png" alt-text="Screenshot showing where to select runtime version for Environment item." lightbox="media\mrs\runtime-2-environment.png":::
     
     > [!IMPORTANT]
-    > It can around 2-5 minutes for Spark 2.0 sessions to start, as starter pools aren't part of the early experimental release.
+    > It can take around 2-5 minutes for Spark 2.0 sessions to start, as starter pools aren't part of the early experimental release.
 
 1. Next, you can use this **Environment** item with your `Notebook` or `Spark Job Definition`.
 
