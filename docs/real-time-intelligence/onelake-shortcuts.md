@@ -22,11 +22,11 @@ In addition to creating shortcuts from a KQL database, shortcuts can also be cre
 
 ## Prerequisites
 
-* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
-* A [KQL database](../create-database.md) with editing permissions
-* A [Lakehouse](../../data-engineering/create-lakehouse.md)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [KQL database](create-database.md) with editing permissions
+* A [Lakehouse](../data-engineering/create-lakehouse.md)
 
-To access the data in your KQL database in other [!INCLUDE [product-name](../../includes/product-name.md)] experiences, see [One logical copy](../one-logical-copy.md).
+To access the data in your KQL database in other [!INCLUDE [product-name](../includes/product-name.md)] experiences, see [One logical copy](one-logical-copy.md).
 
 ## Create shortcut
 
@@ -34,7 +34,7 @@ To access the data in your KQL database in other [!INCLUDE [product-name](../../
 
 1. Select **+** > **New** > **OneLake shortcut**.
 
-    :::image type="content" source="../media/onelake-shortcuts/new-shortcut.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
+    :::image type="content" source="./media/onelake-shortcuts/new-shortcut.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
 
 ## Select a source
 
