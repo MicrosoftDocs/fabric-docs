@@ -1,14 +1,14 @@
 ---
 title: Statistics
-description: Learn how to use the statistics features.
+description: Learn how to use the statistics features in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: emtehran
-ms.date: 04/06/2025
+ms.date: 12/10/2025
 ms.topic: conceptual
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
-# Statistics in Fabric Data Warehouse
+# Statistics
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -152,10 +152,22 @@ In [!INCLUDE [product-name](../includes/product-name.md)], there are multiple ty
 ## Built-in optimizations within Fabric statistics
 
 ### Incremental statistics refresh
-Incremental statistics refresh is a performance enhancement for automatic updates of column statistics. Usually, when a column's statistic is automatically refreshed, a sample of the entire column must be scanned to update the statistic. This feature speeds up these operations when possible by only sampling rows that have been recently-added since the last refresh and merging that data with existing histograms. When the engine requests an update to a column statistic, it will automatically determine whether this faster refresh method can be used. This performance boost typically applies to larger tables with mostly INSERTs since the last statistic refresh.
+
+Incremental statistics refresh is a performance enhancement for automatic updates of column statistics. 
+
+Usually, when a column's statistic is automatically refreshed, a sample of the entire column must be scanned to update the statistic. This feature speeds up these operations when possible by only sampling rows that have been added since the last refresh, and merging that data with existing histograms. 
+
+When the engine requests an update to a column statistic, it will automatically determine whether this faster refresh method can be used. Incremental statistics updates typically benefit larger tables with mostly INSERTs since the last statistic refresh.
 
 ### Proactive statistics refresh
-Proactive statistics refresh refers to a process that attempts to frontload statistic refreshes after data change, rather than waiting for user queries to trigger a statistic refresh. This optimization aims to reduce the likelihood of a user's `SELECT` query experiencing a delay caused by statistics updates during query plan generation. This fully-managed process is applied opportunistically to statistics that were automatically generated at querytime. This feature is enabled by default but can be configured using the [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric&preserve-view=true) command.
+
+Proactive statistics refresh refers to a fully-managed process that attempts to frontload statistic refreshes after data change, instead of at query time. 
+
+This optimization aims to reduce the likelihood of a `SELECT` query experiencing delay caused by statistics updates during query plan generation. 
+
+Proactive statistics updates only affect automatically generated histogram statistics, those with the system-generated naming convention of `_WA_sys_`.
+
+The proactive statistics feature is enabled by default but can be configured using the [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric&preserve-view=true) T-SQL command.
 
 ## Limitations
 
