@@ -6,7 +6,7 @@ author: lgayhardt
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
-ms.date: 02/14/2025
+ms.date: 12/09/2025
 ms.update-cycle: 180-days
 ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
@@ -20,46 +20,51 @@ This document shows examples of how to use Azure OpenAI in Fabric using REST API
 ## Initialization
 
 ```python
-from synapse.ml.mlflow import get_mlflow_env_config
-from trident_token_library_wrapper import PyTridentTokenLibrary
+from synapse.ml.fabric.service_discovery import get_fabric_env_config
+from synapse.ml.fabric.token_utils import TokenUtils
 
-mlflow_env_configs = get_mlflow_env_config()
-mwc_token = PyTridentTokenLibrary.get_mwc_token(mlflow_env_configs.workspace_id, mlflow_env_configs.artifact_id, 2)
+fabric_env_config = get_fabric_env_config().fabric_env_config
+auth_header_value = TokenUtils().get_openai_auth_header()
 
 auth_headers = {
-    "Authorization" : "MwcToken {}".format(mwc_token)
+    "Authorization": auth_header_value,
+    "Content-Type": "application/json"
 }
 ```
 ## Chat
 
-GPT-4o and GPT-4o-mini are language models optimized for conversational interfaces. 
+GPT-4.1 and GPT-4.1-mini are language models optimized for conversational interfaces. Use GPT-5 for reasoning capabilities.
 
 ```python
 import requests
 
 def print_chat_result(messages, response_code, response):
-    print("==========================================================================================")
+    print("=" * 90)
     print("| OpenAI Input    |")
     for msg in messages:
         if msg["role"] == "system":
-            print("[System] ", msg["content"])
+            print("[System]", msg["content"])
         elif msg["role"] == "user":
-            print("Q: ", msg["content"])
+            print("Q:", msg["content"])
         else:
-            print("A: ", msg["content"])
-    print("------------------------------------------------------------------------------------------")
+            print("A:", msg["content"])
+    print("-" * 90)
     print("| Response Status |", response_code)
-    print("------------------------------------------------------------------------------------------")
+    print("-" * 90)
     print("| OpenAI Output   |")
     if response.status_code == 200:
         print(response.json()["choices"][0]["message"]["content"])
     else:
         print(response.content)
-    print("==========================================================================================")
+    print("=" * 90)
 
+deployment_name = "gpt-4.1"
 
-deployment_name = "gpt-4o" # deployment_id could be one of {gpt-4o or gpt-4o-mini}
-openai_url = mlflow_env_configs.workload_endpoint + f"cognitive/openai/openai/deployments/{deployment_name}/chat/completions?api-version=2025-04-01-preview"
+openai_url = (
+    f"{fabric_env_config.ml_workload_endpoint}cognitive/openai/openai/deployments/"
+    f"{deployment_name}/chat/completions?api-version=2024-02-15-preview"
+)
+
 payload = {
     "messages": [
         {"role": "system", "content": "You are an AI assistant that helps people find information."},
@@ -76,15 +81,25 @@ Output
 ```console
 ==========================================================================================
 | OpenAI Input    |
-[System]  You are an AI assistant that helps people find information.
-Q:  Does Azure OpenAI support customer managed keys?
+[System] You are an AI assistant that helps people find information.
+Q: Does Azure OpenAI support customer managed keys?
 ------------------------------------------------------------------------------------------
 | Response Status | 200
 ------------------------------------------------------------------------------------------
 | OpenAI Output   |
-As of my last training cut-off in October 2023, Azure OpenAI Service did not natively support customer-managed keys (CMK) for encryption of data at rest. Data within Azure OpenAI is typically encrypted using Microsoft-managed keys. 
+Yes, **Azure OpenAI Service** supports **customer managed keys (CMK)** for encrypting your data at rest. This allows organizations to control and manage their own encryption keys using **Azure Key Vault**. By integrating with Azure Key Vault, you can bring your own keys (BYOK) to have full control over the encryption of data stored and processed by Azure OpenAI.
 
-However, you should verify this information on the official Azure documentation or by contacting Microsoft support, as cloud service features and capabilities are frequently updated.
+**Reference:**
+- [Azure OpenAI encryption documentation - Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/security#encryption)
+- [Azure OpenAI Security - Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/security)
+
+**Key features:**
+- Data at rest is encrypted by default with a service-managed key.
+- You can specify your own customer managed key (CMK) in Azure Key Vault for additional control.
+- Supported for both Standard and Enterprise Azure OpenAI deployments.
+
+**Summary:**  
+You can use customer managed keys with Azure OpenAI for enhanced security and regulatory compliance.
 ==========================================================================================
 ```
 ## Embeddings
@@ -97,24 +112,39 @@ To access Azure OpenAI embeddings endpoint in Fabric, you can send an API reques
 `deployment_name` could be `text-embedding-ada-002`.
 
 ```python
+from synapse.ml.fabric.service_discovery import get_fabric_env_config
+from synapse.ml.fabric.token_utils import TokenUtils
 import requests
 
+
+fabric_env_config = get_fabric_env_config().fabric_env_config
+
+auth_header_value = TokenUtils().get_openai_auth_header()
+auth_headers = {
+    "Authorization": auth_header_value,
+    "Content-Type": "application/json"
+}
+
 def print_embedding_result(prompts, response_code, response):
-    print("==========================================================================================")
+    print("=" * 90)
     print("| OpenAI Input    |\n\t" + "\n\t".join(prompts))
-    print("------------------------------------------------------------------------------------------")
+    print("-" * 90)
     print("| Response Status |", response_code)
-    print("------------------------------------------------------------------------------------------")
+    print("-" * 90)
     print("| OpenAI Output   |")
     if response_code == 200:
         for data in response.json()['data']:
             print("\t[" + ", ".join([f"{n:.8f}" for n in data["embedding"][:10]]) + ", ... ]")
     else:
         print(response.content)
-    print("==========================================================================================")
+    print("=" * 90)
 
 deployment_name = "text-embedding-ada-002"
-openai_url = mlflow_env_configs.workload_endpoint + f"cognitive/openai/openai/deployments/{deployment_name}/embeddings?api-version=2025-04-01-preview"
+openai_url = (
+    f"{fabric_env_config.ml_workload_endpoint}cognitive/openai/openai/deployments/"
+    f"{deployment_name}/embeddings?api-version=2024-02-15-preview"
+)
+
 payload = {
     "input": [
         "empty prompt, need to fill in the content before the request",
@@ -137,8 +167,8 @@ Output:
 | Response Status | 200
 ------------------------------------------------------------------------------------------
 | OpenAI Output   |
-	[-0.00258819, -0.00449802, -0.01700411, 0.00405622, -0.03064079, 0.01899395, -0.01295485, -0.01426286, -0.03512142, -0.01831212, ... ]
-	[0.02129045, -0.02013996, -0.00462094, -0.01146069, -0.01123944, 0.00199124, 0.00228992, -0.01370478, 0.00855917, -0.01470356, ... ]
+	[-0.00263638, -0.00441368, -0.01702866, 0.00410065, -0.03052361, 0.01894856, -0.01293149, -0.01421838, -0.03505902, -0.01835033, ... ]
+	[0.02133885, -0.02018847, -0.00464259, -0.01151640, -0.01114348, 0.00194205, 0.00229917, -0.01371602, 0.00857094, -0.01467678, ... ]
 ==========================================================================================
 ```
 
