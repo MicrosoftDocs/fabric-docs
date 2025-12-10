@@ -27,6 +27,9 @@ Workspace monitoring creates an [Eventhouse](../real-time-intelligence/eventhous
 
 After you install [workspace monitoring](enable-workspace-monitoring.md), you can query the following logs:
 
+* All up Fabric
+  * [Item job events](item-job-event-logs.md) to monitor job performance and trends for Fabric items.
+
 * Data engineering (GraphQL)
     * [GraphQL operations](../data-engineering/graphql-operations.md)
 
