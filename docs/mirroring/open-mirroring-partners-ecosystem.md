@@ -4,9 +4,10 @@ description: Learn about the open mirrored databases partner ecosystem in Micros
 author: whhender
 ms.author: whhender
 ms.reviewer: tinglee, sbahadur, ulrichchrist, maraki-ketema
-ms.date: 09/15/2025
+ms.date: 12/10/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
+ai-usage: ai-assisted
 no-loc: [Copilot]
 ---
 
@@ -28,7 +29,7 @@ For more information, see [ASAPIO Integration Add-on, Fabric Connector](https://
 
 ## CData
 
-CData Sync brings Open Mirroring support to over 150 enterprise data sources with minimal configuration, for both on-premises and in the cloud. Open Mirroring with Sync helps organizations reflect data changes from critical sources like SAP, NetSuite, Salesforce, and SQL Server directly into Fabric for immediate analysis. 
+CData Sync brings Open Mirroring support to over 150 enterprise data sources with minimal configuration, for both on-premises and in the cloud. Open Mirroring with Sync helps organizations reflect data changes from critical sources like SAP, NetSuite, Salesforce, and SQL Server directly into Fabric for immediate analysis.
 
 For more information, see [CData Sync's Open Mirroring release blog](https://www.cdata.com/blog/sync-expands-ms-fabric-support-open-mirroring). 
 
@@ -63,11 +64,17 @@ Oracle GoldenGate 23ai integration into Microsoft Fabric via open mirroring. Any
 
 For more information, see [Oracle GoldenGate 23ai integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/oracle-goldengate-23ai-docs).
 
+## Qlik
+
+Qlik Replicate provides log-based Change Data Capture (CDC) for over 40 heterogeneous source systems, including SAP, DB2 z/OS, Teradata, Oracle, and cloud databases like Amazon Aurora. By continuously streaming data changes directly to Fabric's open mirroring landing zone, Qlik Replicate removes the need for complex ETL pipelines while minimizing impact on your operational systems. The Fabric mirroring engine automatically processes these changes and merges them into analytics-ready Delta Lake tables in OneLake.
+
+For more information, see [Qlik Replicate for Microsoft Fabric](https://www.qlik.com/us/products/qlik-replicate).
+
 ## Quadrant Technologies
 
 QMigrator is a data migration and data replication tool that enables enterprises to move data from many sources to many targets, including Fabric. QMigrator's Fabric integration solution enables clients to replicate the data from operation database like DB2, Oracle, MySQL, and SQL Server to Fabric using Open Mirroring.
 
-For more information about QMigrator, see [QMigrator and Fabric](https://qmigrator.ai/Fabric). 
+For more information about QMigrator, see [QMigrator and Fabric](https://qmigrator.ai/Fabric).
 
 ## Simplement
 
