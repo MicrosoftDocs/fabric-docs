@@ -64,7 +64,7 @@ If you need to retry a completed pipeline run, hover over its row inside of Moni
 :::image type="content" source="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-retry.png" alt-text="Screenshot showing the retry a pipeline run." lightbox="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-retry.png":::
 
 Inside of the pipeline run detail view, you can navigate to a specific pipeline and identify an activity within that pipeline. Here, you'll be able to rerun your pipeline by failed activity or the selected activity.
-:::image type="content" source="media\monitoring-hub-pipeline-runs\monitoring-hub-rerun-pipeline" alt-text="Screenshot showing the retry a pipeline runby failed activity." lightbox="media\monitoring-hub-pipeline-runs\monitoring-hub-rerun-pipeline.png":::
+:::image type="content" source="media\monitoring-hub-pipeline-runs\monitoring-hub-rerun-pipeline.png" alt-text="Screenshot showing the retry a pipeline run by failed activity." lightbox="media\monitoring-hub-pipeline-runs\monitoring-hub-rerun-pipeline.png":::
 
 ## Related content
 
