@@ -5,24 +5,24 @@ ms.reviewer: tvilutis
 ms.author: eur
 author: eric-urban
 ms.topic: article
-ms.date: 01/16/2025
+ms.date: 12/10/2025
 ms.search.form: Lakehouse schemas
 ---
 
-# What are lakehouse schemas (Preview)?
+# What are lakehouse schemas?
 
 Lakehouse supports the creation of custom schemas. Schemas allow you to group your tables together for better data discovery, access control, and more.
 
 ## Create a lakehouse schema
 
-To enable schema support for your lakehouse, check the box next to **Lakehouse schemas** when you create it.
+To enable schema support for your lakehouse, keep the box next to **Lakehouse schemas** checked when you create it.
 
 :::image type="content" source="media\lakehouse-schemas\new-lakehouse.png" alt-text="Screenshot showing the new lakehouse dialog." lightbox="media/lakehouse-schemas/new-lakehouse.png":::
 
-> [!IMPORTANT]
-> Workspace names must only contain alphanumeric characters due to preview limitations. If special characters are used in workspace names some of Lakehouse features won't work.
+> [!NOTE]
+>If you prefer to create a lakehouse without schema support, you can uncheck the checkbox.
 
-Once you create the lakehouse, you can find a default schema named **dbo** under **Tables**. This schema is always there and can't be changed or removed. To create a new schema, hover over **Tables**, select **…**, and choose **New schema**. Enter your schema name and select **Create**. You'll see your schema listed under **Tables** in alphabetical order.
+Once you create the lakehouse, you can find a default schema named **dbo** under **Tables**. This schema is always there and can't be changed or removed. To create a new schema, hover over **Tables**, select **…**, and choose **New schema**. Enter your schema name and select **Create**. You see your schema listed under **Tables** in alphabetical order.
 
 :::image type="content" source="media\lakehouse-schemas\new-schema.png" alt-text="Screenshot showing the new lakehouse schema dialog." lightbox="media/lakehouse-schemas/new-schema.png":::
 
@@ -39,7 +39,7 @@ You can use Lakehouse Explorer to arrange your tables and drag and drop table na
 :::image type="content" source="media\lakehouse-schemas\move-tables.gif" alt-text="Animation of moving tables between schemas." lightbox="media/lakehouse-schemas/move-tables.gif":::
 
 > [!CAUTION]
-> If you modify the table, you must also update related items like notebook code or dataflows to ensure they are aligned with the correct schema.
+> If you modify the table, you must also update related items like notebook code or dataflows to ensure they're aligned with the correct schema.
 
 ## Bring multiple tables with schema shortcut
 
@@ -56,11 +56,12 @@ To make your semantic model, just choose the tables that you want to use. Tables
 When you look at a schema enabled lakehouse in the notebook object explorer, you see tables are in schemas. You can drag and drop table into a code cell and get a code snippet that refers to the schema where the table is located. Use this namespace to refer to tables in your code: "workspace.lakehouse.schema.table". If you leave out any of the elements, the executor uses default setting. For example, if you only give table name, it uses default schema (**dbo**) from default lakehouse for the notebook.
 
 > [!IMPORTANT]
-> If you want to use schemas in your code make sure that the default lakehouse for the notebook is schema enabled.
+> If you want to use schemas in your code, make sure that the default lakehouse for the notebook is schema enabled or there's no default lakehouse selected.
+
 
 ## Cross-workspace Spark SQL queries
 
-Use the namespace "workspace.lakehouse.schema.table” to refer to tables in your code. This way, you can join tables from different workspaces if the user who runs the code has permission to access the tables.
+Use the namespace "workspace.lakehouse.schema.table" to refer to tables in your code. This way, you can join tables from different workspaces if the user who runs the code has permission to access the tables.
 
 ```sql
 SELECT * 
@@ -69,27 +70,41 @@ SELECT *
     ON employees.deptno = departments.deptno;
 ```
 
-> [!IMPORTANT]
-> Make sure you join tables only from lakehouses that have schemas enabled. Joining tables from lakehouses that don’t have schemas enabled won’t work.
+## Referencing nonschema lakehouses
 
-## Public preview limitations
+When you set a schema-enabled lakehouse or no lakehouse as the default in your notebook, Spark code uses schema-enabled referencing for tables. However, you can still access lakehouses without enabled schemas within the same code by referencing them as "lakehouse.table."
 
-Below listed unsupported features/functionalities are for current release of public preview. They'll be resolved in the coming releases before General Availability.
+Additionally, it’s possible to join tables from different types of lakehouses.
+```sql
+SELECT * 
+    FROM workspace.schemalh.schema.table as schematable 
+    INNER JOIN workspace.nonschemalh.table as nonschematable
+    ON schematable.id = nonschematable.id;
+```
 
-| Unsupported Features/ Functionality | Notes |
+To help transition and refactor existing code to schema-enabled lakehouses, four-part naming is supported for lakehouses without schemas. You can reference tables as "workspace.lakehouse.dbo.table", where "dbo" serves as the schema name—even though it doesn’t exist yet in a lakehouse that isn’t schema-enabled. This approach lets you update your code with no downtime before enabling schema support in your lakehouses.
+
+## API for lakehouse schemas
+
+To create a lakehouse with schemas use [Create Lakehouse - REST API](/rest/api/fabric/lakehouse/items/create-lakehouse) and specify "enableSchemas": true in creationPayload request.
+To list tables, schemas, or get table details use [OneLake table APIs for Delta](../onelake/table-apis/delta-table-apis-get-started.md).
+
+
+## Enabling schemas for existing lakehouses
+
+We continue to support nonschema lakehouses and are working towards complete feature parity between both types. Full interoperability in Spark is also supported, enabling querying and joining different types of lakehouses. Soon, we introduce tools to help customers transition their lakehouses from nonschema to schema-enabled versions, allowing you to benefit from enhanced features without needing to move data or experience downtime.
+
+## Current limitations
+
+There are still some limitations with schema-enabled lakehouses in Spark that are currently being rolled out in the coming months.
+
+| Unsupported Features/ Functionality | Workaround |
 |-|-|
-| Shared lakehouse	| Using workspace in the namespace for shared lakehouses won't work, e.g. workspace.sharedlakehouse.schema.table. The user must have workspace role in order to use workspace in the namespace. |
-| Non-Delta, Managed table schema	| Getting schema for managed, non-Delta formatted tables (for example, CSV) isn't supported. Expanding these tables in lakehouse explorer doesn't show any schema information in the UX. |
-| External Spark tables	| External Spark table operations (for example, discovery, getting schema, etc.) aren't supported. These tables are unidentified in the UX. |
-| Public API	| Public APIs (List tables, Load table, exposing defaultSchema extended property etc.) aren't supported for schema enabled Lakehouse. Existing public APIs called on a schema enabled Lakehouse results an error. |
-| Update table properties	 | Not supported. |
-| Workspace name containing special characters	| Workspace with special characters (for example, space, slashes) isn't supported. A user error is shown. |
-| Spark views | Not supported. |
-| Hive specific features | Not supported. |
-| Spark.catalog API | Not supported. Use Spark SQL instead. |
-| `USE <schemaName>` | Doesn't work cross workspaces, but supported within same workspace. |
-| Migration	| Migration of existing non-schema Lakehouses to schema-based Lakehouses isn't supported. |
-| Private Links	| Workspace-level private links are not supported. |
+| Spark views | Use [Materizlized Lake Views](materialized-lake-views/overview-materialized-lake-view.md). |
+| Shared lakehouse	| Create shortcuts in a lakehouse with the workspace role to shared lakehouse tables and access them through the shortcuts. |
+| External ADLS tables	| Use [OneLake Shortcuts](/rest/api/fabric/core/onelake-shortcuts). |
+| Private Links	| Use nonschema lakehouses. |
+| Outboubd Traffic Protection 	| Use nonschema lakehouses. |
 
 ## Related content
 
@@ -97,3 +112,5 @@ Below listed unsupported features/functionalities are for current release of pub
 - [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md)
 - [Options to get data into the Lakehouse](load-data-lakehouse.md)
 - [Learn more about shortcuts](../onelake/onelake-shortcuts.md)
+- [OneLake table APIs for Delta](../onelake/table-apis/delta-table-apis-get-started.md)
+
