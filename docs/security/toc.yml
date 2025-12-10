@@ -79,10 +79,6 @@ items:
                   href: security-workspace-level-firewall-overview.md
                 - name: Set up and use workspace IP firewall
                   href: security-workspace-level-firewall-set-up.md
-        - name: Add Fabric URLs to your allowlist
-          href: fabric-allow-list-urls.md
-        - name: Add Power BI URLs to your allowlist
-          href: power-bi-allow-list-urls.md
     - name: Service tags
       href: security-service-tags.md
     - name: Microsoft Entra Conditional Access
