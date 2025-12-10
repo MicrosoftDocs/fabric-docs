@@ -34,7 +34,7 @@ Operations agent in Microsoft Fabric Real-Time Intelligence helps you automate m
 
 Operations agent consumes capacity based on the following factors:
 
-- **Background usage:** All operations performed by the operations agent are classified as *background usage*, including direct interactions. This is because Fabric Copilot and AI operations are treated as background tasks, see more information in [Copilot Fabric Consumption](../fundamentals/copilot-fabric-consumption#capacity-utilization-type). These operations are throttled only if the capacity exceeds its resource limits for 24 hours, after which background tasks are rejected, halting the agent's processing. For details, see [Understand your Fabric capacity throttling](../enterprise/throttling#throttle-triggers-and-throttle-stages).
+- **Background usage:** All operations performed by the operations agent are classified as *background usage*, including direct interactions. This is because Fabric Copilot and AI operations are treated as background tasks, see more information in [Copilot Fabric Consumption](../fundamentals/copilot-fabric-consumption.md#capacity-utilization-type). These operations are throttled only if the capacity exceeds its resource limits for 24 hours, after which background tasks are rejected, halting the agent's processing. For details, see [Understand your Fabric capacity throttling](../enterprise/throttling.md#throttle-triggers-and-throttle-stages).
 
     | Azure Metric Name   | Fabric Operation Name                               | CU Rate |
     |------------------|--------------------------------------------------|----------------------|
