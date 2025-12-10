@@ -24,7 +24,7 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
 ## Prerequisites
 
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). Use this workspace for all resources created in the tutorial.
-* **Ontology item (preview)**, **Graph (preview)**, and **Data agent item types (preview)** enabled on your tenant.
+* **Ontology item (preview)**, **Graph (preview)**, **XMLA endpoints**, and **Data agent item types (preview)** enabled on your tenant.
     * [Fabric administrators](../../admin/roles.md) can grant access to ontology in the [admin portal](../../admin/admin-center.md). In the [tenant settings](../../admin/tenant-settings-index.md), enable *Ontology item (preview)*, *Graph (preview)*, *XMLA endpoints*, and *Data agent item types (preview)*.
 
         :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::

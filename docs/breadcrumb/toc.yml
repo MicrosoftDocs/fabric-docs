@@ -21,6 +21,9 @@ items:
   - name: Data Warehouse
     tocHref: /fabric/data-warehouse/
     topicHref: /fabric/data-warehouse/index
+  - name: IQ
+    tocHref: /fabric/iq/
+    topicHref: /fabric/iq/index
   - name: Mirroring
     tocHref: /fabric/mirroring/
     topicHref: /fabric/mirroring/index

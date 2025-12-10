@@ -4,7 +4,7 @@ description: This article provides an overview of the Azure Cosmos DB for NoSQL 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 07/09/2025
+ms.date: 12/04/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -20,7 +20,7 @@ The Azure Cosmos DB for NoSQL connector is supported in Data Factory for [!INCLU
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/-)                                                           | None<br> On-premises<br> Virtual network | Account key<br> Organizational account |
 | **Pipeline** <br>- [Copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md) (source/destination)<br>- Lookup activity        | None<br> On-premises<br> Virtual network | Account key<br> Organizational account<br> Workspace identity|
-| **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Merge|None<br> On-premises<br> Virtual network |Account key<br> Organizational account<br> Workspace identity|
+| **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Upsert|None<br> On-premises<br> Virtual network |Account key<br> Organizational account<br> Workspace identity|
 
 ## Related content
 
