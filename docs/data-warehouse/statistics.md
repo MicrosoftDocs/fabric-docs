@@ -149,6 +149,14 @@ In [!INCLUDE [product-name](../includes/product-name.md)], there are multiple ty
     - Named `ACE-Cardinality`.
     - Contents cannot be viewed and are nonactionable by user.
 
+## Built-in optimizations within Fabric statistics
+
+### Incremental statistics refresh
+Incremental statistics refresh is a performance enhancement for automatic updates of column statistics. Usually, when a column's statistic is automatically refreshed, a sample of the entire column must be scanned to update the statistic. This feature speeds up these operations when possible by only sampling rows that have been recently-added since the last refresh and merging that data with existing histograms. When the engine requests an update to a column statistic, it will automatically determine whether this faster refresh method can be used. This performance boost typically applies to larger tables with mostly INSERTs since the last statistic refresh.
+
+### Proactive statistics refresh
+Proactive statistics refresh refers to a process that attempts to frontload statistic refreshes after data change, rather than waiting for user queries to trigger a statistic refresh. This optimization aims to reduce the likelihood of a user's `SELECT` query experiencing a delay caused by statistics updates during query plan generation. This fully-managed process is applied opportunistically to statistics that were automatically generated at querytime. This feature enabled by default but can be configured using the [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql-set-options) command.
+
 ## Limitations
 
 - Only single-column histogram statistics can be manually created and modified.
