@@ -5,7 +5,7 @@ author: SnehaGunda
 ms.author: sngun
 ms.topic: overview
 ms.custom:
-ms.date: 09/07/2025
+ms.date: 12/09/2025
 #customer intent: As a workspace admin I want to monitor my workspace to gain insights into the usage and performance of my workspace so that I can optimize my workspace and improve the user experience.
 ---
 
@@ -70,6 +70,8 @@ You can create and explore workspace monitoring using Power BI reports and Real-
 * [Throttling](../enterprise/throttling.md)
     * Monitoring Eventstream and Eventhouse operations arn't impacted by the state of the capacity. When the capacity is throttled, the queries on the monitoring Eventhouse and the Eventstream ingestion operations continue to function normally. There's also no impact to real-time dashboards built on top of the monitoring database.
     * Power BI reports or Activator alerts, built on top of the monitoring database respect the capacity state and get throttled.
+
+* Currently private links are not supported for workspace monitoring.
 
 ## Related content
 
