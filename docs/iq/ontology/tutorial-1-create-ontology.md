@@ -16,13 +16,7 @@ In this step of the tutorial, you generate a new ontology that represents the La
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Choose ontology creation method
-
-This tutorial contains two options for setting up the ontology (preview) item: automatically **generate it from a semantic model**, or manually **build it from OneLake data**. 
-
-Choose your preferred scenario by using the selector at the beginning of the article, or the links below (will reload the page):
-* [Generate from a semantic model](?pivots=semantic-model)
-* [Build from OneLake datal](?pivots=onelake)
+[!INCLUDE [Fabric tutorial choice note](includes/choose-tutorial-method.md)]
 
 ::: zone pivot="semantic-model"
 ## Generating an ontology from a semantic model
