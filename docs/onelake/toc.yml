@@ -23,7 +23,7 @@ items:
     href: onelake-shortcuts.md
   - name: Create shortcuts
     items:
-    - name: Internal OneLake shortcut
+    - name: OneLake shortcut
       href: create-onelake-shortcut.md
     - name: ADLS Gen2 shortcut
       href: create-adls-shortcut.md
@@ -43,24 +43,26 @@ items:
       href: onelake-iceberg-tables.md
     - name: On-premises data shortcut
       href: create-on-premises-shortcut.md
-  - name: Shortcuts file transformations
-    href: ./shortcuts-file-transformations/transformations.md
-  - name: Shortcuts AI transformations
-    href: ./Shortcuts-ai-transformations/ai-transformations.md
-  - name: S3 shortcut Entra integration
-    href: amazon-storage-shortcut-entra-integration.md  
-  - name: Use Snowflake with Iceberg tables
-    href: onelake-iceberg-snowflake.md
-  - name: Shortcut security
-    href: onelake-shortcut-security.md
-  - name: Manage cloud connections
-    href: manage-shortcut-connections.md
-  - name: Access OneLake shortcuts in an Apache Spark notebook
-    href: access-onelake-shortcuts.md
-  - name: Assign variables to shortcuts
-    href: assign-variables-to-shortcuts.md
-  - name: Use shortcuts REST API
-    href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
+  - name: Manage shortcuts
+    items:
+    - name: Shortcut security
+      href: onelake-shortcut-security.md
+    - name: S3 shortcut Entra integration
+      href: amazon-storage-shortcut-entra-integration.md  
+    - name: Manage cloud connections
+      href: manage-shortcut-connections.md
+    - name: Access OneLake shortcuts in an Apache Spark notebook
+      href: access-onelake-shortcuts.md
+    - name: Assign variables to shortcuts
+      href: assign-variables-to-shortcuts.md
+    - name: Use shortcuts REST API
+      href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
+  - name: Transform data with shortcuts
+    items: 
+    - name: Shortcuts file transformations
+      href: ./shortcuts-file-transformations/transformations.md
+    - name: Shortcuts AI transformations
+      href: ./Shortcuts-ai-transformations/ai-transformations.md
 - name: Open access
   items:
   - name: How do I connect to OneLake?
@@ -81,8 +83,10 @@ items:
     href: onelake-azure-databricks.md
   - name: Databricks Unity Catalog
     href: onelake-unity-catalog.md
-  - name: Snowflake
+  - name: Snowflake database item
     href: ./snowflake/create-snowflake-database-item.md
+  - name: Use Snowflake with Iceberg tables
+    href: onelake-iceberg-snowflake.md
   - name: Azure HDInsight
     href: onelake-azure-hdinsight.md
   - name: Microsoft Foundry knowledge
