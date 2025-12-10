@@ -33,7 +33,7 @@ Here's the general recovery plan:
 
 1. Follow the dedicated instructions for each component to restore items to their full function.
 
-This recovery plan assumes that the tenant home region remains operational. If the tenant home region experiences an outage, the steps outlined in this document are contingent on its recovery, which must be initiated first and completed by Microsoft.
+This recovery plan assumes that the tenant home region remains operational. If the tenant home region experiences an outage, the steps outlined in this document are contingent on its recovery, which must be first initiated and completed by Microsoft.
 
 ## Experience-specific recovery plans
 
