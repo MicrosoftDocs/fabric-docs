@@ -1,5 +1,5 @@
 ---
-title: Lakehouse schemas (Preview)
+title: Lakehouse schemas
 description: What lakehouse schemas are and how to use it
 ms.reviewer: tvilutis
 ms.author: eur
