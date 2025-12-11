@@ -3,10 +3,10 @@ title: Add HTTP source to an eventstream
 description: Learn how to add HTTP source to an eventstream.
 ms.reviewer: spelluru
 ms.author: zhenxilin
-author:  WenyangShi
+author:  alexlzx
 ms.topic: how-to
 ms.custom:
-ms.date: 11/03/2025
+ms.date: 12/03/2025
 ms.search.form: Source and Destination
 ---
 
@@ -18,8 +18,9 @@ The HTTP connector provides a no-code, configurable way to stream data from any 
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
+- A workspace with **Fabric capacity** or **Trial** license mode.
+- Access to the workspace with **Contributor** or higher workspace roles. 
+- If you don't have an eventstream, follow the guide to [create an eventstream](create-manage-an-eventstream.md). 
 
 ## Add HTTP as a source
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
