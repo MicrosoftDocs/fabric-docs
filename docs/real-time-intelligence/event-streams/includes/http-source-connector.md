@@ -15,17 +15,17 @@ You can select one of the **Example public APIs** to get started quickly with pr
 1. Select an example public API to quickly set up the HTTP connector:
    :::image type="content" source="media/http-connector/select-example-api.png" alt-text="Screenshot that shows example API page." lightbox="media/http-connector/select-example-api.png":::
 
-   * **Binance** — Get the latest Bitcoin price
-   * **CoinGecko** — Get the current Bitcoin price in USD
-   * **Transport for London** — Get live arrival predictions for a London station
-   * **Alpha Vantage** — Get the real-time MSFT stock price
-   * **OpenWeather** — Get the weather forecast for a location
-   * **NewsAPI** — Get the latest business headlines in the US
+   * **Binance**. Get the latest Bitcoin price
+   * **CoinGecko**. Get the current Bitcoin price in USD
+   * **Transport for London**. Get live arrival predictions for a London station
+   * **Alpha Vantage**. Get the real-time MSFT stock price
+   * **OpenWeather**. Get the weather forecast for a location
+   * **NewsAPI**. Get the latest business headlines in the US
 
-1. For APIs that require an API key, use the provided link to apply for the API key and enter it in the input box. The connector will then automatically create the Fabric cloud connection and prefill the required HTTP headers and parameters.
+1. For APIs that require an API key, use the provided link to apply for the API key and enter it in the input box. The connector then automatically creates the Fabric cloud connection and prefills the required HTTP headers and parameters.
 
    > [!IMPORTANT]
-   > The **Binance example API** does not require an API key, but you are responsible for complying with its Terms of Use.
+   > The **Binance example API** does not require an API key, but you're responsible for complying with its Terms of Use.
 
 1. If you choose **Use existing connection**, select **Apply example** to prefill the required headers and parameters for the example API without entering an API key.
 
@@ -42,7 +42,7 @@ Follow the steps to configure your own HTTP source without an example API.
    - **Base Url**: The base URL of the HTTP endpoint.
    - **Token Audience Uri (optional)**: The resource that the token is intended for.
    - **Connection name**: Enter a name for the connection.
-   - **Authentication kind**: Currently, the HTTP connector only support  `Anonymous`, `Basic`, and `API Key` authentication.
+   - **Authentication kind**: Currently, the HTTP connector only supports  `Anonymous`, `Basic`, and `API Key` authentication.
   
    :::image type="content" source="media/http-connector/connection-page.png" alt-text="Screenshot that shows the new connection page." lightbox="media/http-connector/connection-page.png":::
 
