@@ -28,6 +28,10 @@ items:
         href: ontology/tutorial-4-create-data-agent.md
       - name: 5- Conclude and clean up resources
         href: ontology/tutorial-5-conclusion.md
+    - name: Concepts
+      items:
+      - name: Generating an ontology from semantic model
+        href: ontology/concepts-generate.md
     - name: How-tos
       items:
       - name: Create entity types
