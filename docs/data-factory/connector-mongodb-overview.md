@@ -4,7 +4,7 @@ description: This article provides the overview of connecting to and using Mongo
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 07/09/2025
+ms.date: 12/04/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -19,6 +19,8 @@ The MongoDB connector is supported in Data Factory for [!INCLUDE [product-name](
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Pipeline** <br>- [Copy activity](connector-mongodb-copy-activity.md) (source/destination)                            | None<br> On-premises<br> Virtual network | Basic           |
+| **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Upsert|None<br> On-premises<br> Virtual network | Basic |
+
 
 ## Related content
 

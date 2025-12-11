@@ -96,7 +96,7 @@ Here are some transformations that your ETL process could perform.
 
 ### Load data
 
-You can load tables in a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] by using the following [data ingestion options](ingest-data.md#data-ingestion-options).
+You can load tables in a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] by using the following [data ingestion options](ingest-data.md).
 
 - **[COPY INTO (T-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true):** This option is useful when the source data comprise Parquet or CSV files stored in an external Azure storage account, like [ADLS Gen2](/azure/storage/blobs/data-lake-storage-introduction) or [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction).
 - **Pipelines:** In addition to orchestrating the ETL process, pipelines can include activities that run T-SQL statements, perform lookups, or copy data from a data source to a destination.

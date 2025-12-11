@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 07/09/2025
+ms.date: 12/04/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -20,6 +20,7 @@ The Folder connector is supported in Data Factory for [!INCLUDE [product-name](.
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/-)                                                 | On-premises                    | Windows          |
 | **Pipeline** <br>- Copy activity (source/destination)<br>- Lookup activity<br>- Get Metadata activity <br>- Delete activity | On-premises                    | Windows          |
+| **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Override|On-premises |Windows   |
 
 ## Related content
 

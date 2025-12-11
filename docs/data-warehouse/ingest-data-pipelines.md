@@ -60,13 +60,19 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
 1. After a few seconds, your pipeline finishes successfully. Navigating back to your warehouse, you can select your table to preview the data and confirm that the copy operation concluded. 
 
-For more on data ingestion into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], visit:
-
-- [Ingest data into the Warehouse](ingest-data.md)
-- [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)
-- [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md)
-
 ## Next step
 
 > [!div class="nextstepaction"]
 > [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
+
+## Data ingestion options
+
+Other ways to ingest data into your warehouse include:
+
+- [Ingest data using the COPY statement](ingest-data-copy.md)
+- [Ingest data using Transact-SQL](ingest-data-tsql.md)
+- [Ingest data using a dataflow](../data-factory/create-first-dataflow-gen2.md)
+
+## Related content
+
+- [Ingesting data into the Warehouse](ingest-data.md)

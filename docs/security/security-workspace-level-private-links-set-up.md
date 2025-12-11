@@ -86,7 +86,7 @@ We recommend reserving at least 10 IP addresses for each workspace-level private
 
 ## Step 5. Create a private endpoint
 
-Create a managed private endpoint in the virtual network you created in step 3, and point to the private link service you created in step 2.
+Create a private endpoint in the virtual network you created in step 3, and point to the private link service you created in step 2.
 
 1. In the search box at the top of the portal, enter **Private endpoint**. Select **Private endpoints**.
 

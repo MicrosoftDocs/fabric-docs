@@ -4,7 +4,7 @@ description: Get started with ontology (preview) with this tutorial featuring a 
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 10/29/2025
+ms.date: 12/03/2025
 ms.topic: tutorial
 zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
 zone_pivot_groups: create-ontology-scenario
@@ -17,23 +17,21 @@ This tutorial shows how to create your first ontology (preview) in Microsoft Fab
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-The example scenario for this tutorial is a fictional company called Lakeshore Retail. Lakeshore is a retail ice cream seller that keeps data on sales and freezer streaming data. In the tutorial, you generate entity types (like *Store*, *Product*, and *SaleEvent*), bind streaming data (like *freezer temperature*) from Eventhouse, and answer questions like: "Which stores have fewer ice cream sales when their freezer temperature rises higher than -18°C?"
+The example scenario for this tutorial is a fictional company called Lakeshore Retail. Lakeshore is a retail ice cream seller that keeps data on sales and freezer streaming data. In the tutorial, you generate entity types (like *Store*, *Products*, and *SaleEvent*), bind streaming data (like *freezer temperature*) from Eventhouse, and answer questions like: "Which stores have fewer ice cream sales when their freezer temperature rises higher than -18°C?"
 
-## Choose scenario for creating ontology
-
-This tutorial contains two options for setting up the ontology (preview) item: automatically **generate it from a semantic model**, or manually **build it from OneLake data**. 
-
-Choose your preferred scenario by using the selector at the beginning of the article.
+[!INCLUDE [tutorial choice note](includes/choose-tutorial-method.md)]
 
 ## Prerequisites
 
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). Use this workspace for all resources created in the tutorial.
-* **Ontology item (preview)**, **Graph (preview)**, and **Data agent item types (preview)** enabled on your tenant.
-    * [Fabric administrators](../../admin/roles.md) can grant access to ontology in the [admin portal](../../admin/admin-center.md). In the [tenant settings](../../admin/tenant-settings-index.md), enable *Ontology item (preview)*, *Graph (preview)*, and *Data agent item types (preview)*.
+* **Ontology item (preview)**, **Graph (preview)**, **XMLA endpoints**, and **Data agent item types (preview)** enabled on your tenant.
+    * [Fabric administrators](../../admin/roles.md) can grant access to ontology in the [admin portal](../../admin/admin-center.md). In the [tenant settings](../../admin/tenant-settings-index.md), enable *Ontology item (preview)*, *Graph (preview)*, *XMLA endpoints*, and *Data agent item types (preview)*.
 
         :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
 
         :::image type="content" source="media/tutorial-0-introduction/prerequisite-graph.png" alt-text="Screenshot of enabling graph in the admin portal.":::
+
+        :::image type="content" source="media/tutorial-0-introduction/prerequisite-xmla.png" alt-text="Screenshot of enabling XMLA in the admin portal.":::
 
         :::image type="content" source="media/tutorial-0-introduction/prerequisite-data-agent.png" alt-text="Screenshot of enabling data agents in the admin portal.":::
 
@@ -45,8 +43,7 @@ Download the contents of this GitHub folder: [IQ samples](https://github.com/mic
 
 It contains the following sample CSV files. The data contains static entity details about the Lakeshore Retail scenario and streaming data from its freezers.
 * *DimStore.csv*
-* *DimProduct.csv*
-* *DimDate.csv*
+* *DimProducts.csv*
 * *FactSales.csv*
 * *Freezer.csv*
 * *FreezerTelemetry.csv*
@@ -55,10 +52,9 @@ It contains the following sample CSV files. The data contains static entity deta
 
 First, create a new lakehouse called *OntologyDataLH* in your Fabric workspace (make sure the checkbox for **Lakehouse schemas (Public Preview)** is not enabled).
 
-Then, upload five (out of the six) sample CSV files to your lakehouse, and load each one to a new delta table. These files contain entity details about business objects in the Lakeshore Retail scenario.
+Then, upload four sample CSV files to your lakehouse, and load each one to a new delta table. These files contain entity details about business objects in the Lakeshore Retail scenario.
 * *DimStore.csv*
-* *DimProduct.csv*
-* *DimDate.csv*
+* *DimProducts.csv*
 * *FactSales.csv*
 * *Freezer.csv*
 * (**NOT** *FreezerTelemetry.csv*. This file is uploaded to Eventhouse in a later step.)
@@ -81,9 +77,8 @@ This section prepares you to generate an ontology from a semantic model. If you'
 1. In the **New semantic model** pane, set the following details.
     * **Direct Lake semantic model name**: *RetailSalesModel*
     * **Workspace**: Your tutorial workspace is chosen by default.
-    * **Select or deselect tables for the semantic model.** Select four tables:
-        * *dimdate*
-        * *dimproduct*
+    * **Select or deselect tables for the semantic model.** Select three tables:
+        * *dimproducts*
         * *dimstore*
         * *factsales*
         * (**NOT** *freezer*. This entity is created manually in a later step.)
@@ -94,13 +89,12 @@ This section prepares you to generate an ontology from a semantic model. If you'
 
     :::image type="content" source="media/tutorial-0-introduction/manage-relationships.png" alt-text="Screenshot of the semantic model ribbon." lightbox="media/tutorial-0-introduction/manage-relationships.png":::
 
-1. In the **Manage relationships** pane, use the **+ New relationship** button to create three relationships with the following details.
+1. In the **Manage relationships** pane, use the **+ New relationship** button to create two relationships with the following details.
 
     | From table | To table | Cardinality | Cross-filter direction | Make this relationship active? |
     |---|---|---|---|---|
     | *factsales*, select `StoreId` | *dimstore*, select `StoreId` | Many to one (*:1) | Single | Yes |
-    | *factsales*, select `ProductId` | *dimproduct*, select `ProductId` | Many to one (*:1) | Single | Yes |
-    | *factsales*, select `Date` | *dimdate*, select `Date` | Many to one (*:1) | Single | Yes |
+    | *factsales*, select `ProductId` | *dimproducts*, select `ProductId` | Many to one (*:1) | Single | Yes |
 
     The relationships look like this when you're done:
 

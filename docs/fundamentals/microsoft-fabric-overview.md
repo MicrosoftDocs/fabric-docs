@@ -72,7 +72,7 @@ Microsoft Fabric offers the following workloads, each customized for a specific 
 
 Fabric helps organizations and individuals analyze their data and create reports, dashboards, and machine learning models. It implements a data mesh architecture. For more information, see [What is a data mesh?](/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh)
 
-* **IQ (preview)** - IQ (preview) is a new workload for unifying business semantics across data, models, and systems. With IQ, create a unified semantic layer that organizes your core business concepts and rules, connects them to OneLake data and existing semantic models, and powers consistent decisions, reusable metrics, and context-aware automation across the platform. For more information, see [What is IQ (preview)?](../iq/overview.md)
+* **IQ (preview)** - IQ (preview) is a new workload for unifying business semantics across data, models, and systems. It introduces a new ontology item for organizing your core business concepts and rules into a unified semantic layer. That ontology connects to OneLake data and existing semantic models to create a live, structured, connected model of how your business operates, and offers a managed labeled property graph that is AI ready. IQ powers consistent decisions, reusable metrics, and context-aware automation across the Fabric platform. For more information, see [What is IQ (preview)?](../iq/overview.md)
 
 ## OneLake: The unification of lakehouses
 
