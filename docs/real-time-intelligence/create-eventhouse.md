@@ -31,7 +31,7 @@ In this article, you learn how to create an eventhouse, add new databases to an 
     :::image type="content" source="media/eventhouse/select-workspace.png" alt-text="Screenshot showing the selection of a workspace." lightbox="media/eventhouse/select-workspace.png":::    
 1. On your workspace page, select **New item**. 
 
-    :::image type="content" source="media/eventhouse/select-new-item.png" alt-text="Screeshot showing the Select new item menu." lightbox="media/eventhouse/select-new-item.png":::    
+    :::image type="content" source="media/eventhouse/select-new-item.png" alt-text="Screenshot showing the Select new item menu." lightbox="media/eventhouse/select-new-item.png":::    
 1. In the **New item** pane, search for **Eventhouse**, and then select the **Eventhouse** item.
 
     :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating a new eventhouse item in Real-Time Intelligence." lightbox="media/eventhouse/new-eventhouse.png":::
