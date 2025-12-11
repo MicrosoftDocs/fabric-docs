@@ -12,13 +12,11 @@ ms.date: 11/15/2023
 
 # Compare Fabric Data Engineering and Azure Synapse Spark
 
-This comparison between Fabric Data Engineering and Azure Synapse Spark provides a summary of key features and an in-depth analysis across various categories, which include Spark pools, configuration, libraries, notebooks, and Spark job definitions.
-
-The following table compares Azure Synapse Spark and Fabric Spark across different categories:
+This article compares Azure Synapse Spark and Fabric Spark across Spark pools, configurations, libraries, notebooks, and Spark job definitions (SJD).
 
 |Category | Azure Synapse Spark | Fabric Spark |
 | --- | --- | --- |
-| Spark pools | Spark pool <br>- <br>-| [Starter pool](configure-starter-pools.md) / [Custom pool](create-custom-spark-pools.md) <br>[V-Order](delta-optimization-and-v-order.md) <br>[High concurrency](configure-high-concurrency-session-notebooks.md) |
+| Spark pools | Spark pool <br>- <br>-| [Starter pool (pre-warmed)](configure-starter-pools.md) / [Custom pool](create-custom-spark-pools.md) <br>[V-Order](delta-optimization-and-v-order.md) <br>[High concurrency](configure-high-concurrency-session-notebooks.md) |
 | Spark configurations | Pool level <br>Notebook or Spark job definition level| [Environment level](create-and-use-environment.md) <br>[Notebook](how-to-use-notebook.md) or [Spark job definition](spark-job-definition.md) level|
 | Spark libraries | Workspace level packages <br>Pool level packages <br>Inline packages | - <br>[Environment libraries](environment-manage-library.md) <br>[Inline libraries](library-management.md)|
 | Resources | Notebook (Python, Scala, Spark SQL, R, .NET) <br>Spark job definition (Python, Scala, .NET) <br>Synapse pipelines <br>Pipeline activities (notebook, Spark job definition)| [Notebook](how-to-use-notebook.md) (Python, Scala, Spark SQL, R) <br>[Spark job definition](spark-job-definition.md) (Python, Scala, R) <br>[Data Factory pipelines](../data-factory/create-first-pipeline-with-sample-data.md) <br> [Pipeline activities](../data-factory/activity-overview.md) (notebook, Spark job definition)|
@@ -50,7 +48,7 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 
 |Spark setting | Azure Synapse Spark | Fabric Spark |
 | -- | -- | -- |
-| Live pool (pre-warm instances) | - | Yes, Starter pools |
+| Live pool (pre-warmed instances) | - | Yes, starter pool |
 | Custom pool| Yes | Yes |
 | Spark versions (runtime) | 2.4, 3.1, 3.2, 3.3, 3.4 | 3.3, 3.4, 3.5 |
 | Autoscale | Yes | Yes |
@@ -71,13 +69,23 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 
 ### Spark runtime versions
 
-Fabric doesn't support Spark 2.4, 3.1, and 3.2 versions. Fabric Spark supports Spark 3.3 with Delta 2.2 within [Runtime 1.1](runtime-1-1.md), Spark 3.4 with Delta 2.4 within [Runtime 1.2](runtime-1-2.md) and Spark 3.5 with Delta 3.1 within [Runtime 1.3](runtime-1-3.md).
+Fabric Spark supported versions:
+
+- Spark 3.3 / Delta 2.2: [Runtime 1.1](runtime-1-1.md)
+- Spark 3.4 / Delta 2.4: [Runtime 1.2](runtime-1-2.md)
+- Spark 3.5 / Delta 3.1: [Runtime 1.3](runtime-1-3.md)
+
+Fabric doesn't support Spark 2.4, 3.1, or 3.2.
 
 ### Autoscale and node configuration
 
-In Azure Synapse Spark, the pool can scale up to 200 nodes regardless of the node size. In Fabric, the maximum number of nodes depends on node size and provisioned capacity.
+Azure Synapse Spark pools scale up to 200 nodes regardless of node size. In Fabric, the maximum nodes depends on node size and provisioned capacity (SKU).
 
-In Azure Synapse Spark, you can configure up to 200 nodes. In Fabric, the number of nodes you can have in your custom Spark pool depends on your node size and Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. Two Spark vCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric Capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. So, if you choose a small node size, you can have up to 32 nodes in your pool (128/4 = 32). The formula is: total vCores in capacity / vCores per node size = total number of nodes available. For more information, see [Spark compute](spark-compute.md).
+Fabric capacity conversion: 2 Spark vCores = 1 capacity unit. For example, SKU F64 provides 64 capacity units (128 Spark vCores). With a small node size (4 vCores), you can have up to 32 nodes (128 ÷ 4 = 32).
+
+**Formula**: total vCores in capacity ÷ vCores per node size = maximum nodes available.
+
+For more information, see [Spark compute](spark-compute.md).
 
 ### F64 SKU capacity example
 
@@ -93,39 +101,53 @@ The following example shows node limits for the F64 SKU.
 
 ### Node sizes
 
-Fabric Spark pools only support [Memory Optimized node size family](spark-compute.md). If you're using a GPU-accelerated SKU Spark pool in Azure Synapse, GPU isn't available in Fabric.
+Fabric Spark pools support only the [Memory Optimized node family](spark-compute.md). GPU-accelerated pools available in Azure Synapse aren't supported in Fabric.
 
-The xx-large node size has 432 GB of memory in Azure Synapse, while the same node size has 512 GB in Fabric including 64 vCores. The rest of the node sizes (small through x-large) have the same vCores and memory in both [Azure Synapse](/azure/synapse-analytics/spark/apache-spark-pool-configurations) and [Fabric](spark-compute.md).
+Node size comparison (XX-Large):
+
+- Azure Synapse: 432 GB memory
+- Fabric: 512 GB memory, 64 vCores
+
+Node sizes Small through X-Large have identical vCores and memory in both [Azure Synapse](/azure/synapse-analytics/spark/apache-spark-pool-configurations) and [Fabric](spark-compute.md).
 
 ### Autopause behavior
 
-If you enable autopause in Azure Synapse Spark, the Apache Spark pool automatically pauses after a specified amount of idle time. This setting is configurable in Azure Synapse (minimum 5 minutes), but custom pools have [a noncustomizable default autopause duration of 2 minutes](create-custom-spark-pools.md) in Fabric after the session expires. The default session expiration is set to 20 minutes in Fabric.
+Autopause settings comparison:
+
+- **Azure Synapse**: Configurable idle timeout, minimum 5 minutes
+- **Fabric**: Fixed 2-minute autopause after session expires ([not configurable](create-custom-spark-pools.md)), default session timeout is 20 minutes
 
 ### High concurrency
 
-Fabric supports high concurrency in notebooks. For more information, see [High concurrency mode in Fabric Spark](high-concurrency-overview.md).
+Fabric supports [high concurrency mode](high-concurrency-overview.md) for notebooks, allowing multiple users to share a single Spark session. Azure Synapse doesn't support this feature.
 
 ### Concurrency limits
 
-Azure Synapse Spark has a limit of 50 simultaneous running jobs per Spark pool and 200 queued jobs per Spark pool. The maximum active jobs are 250 per Spark pool and 1000 per workspace.
+Azure Synapse Spark limits (fixed):
 
-In Microsoft Fabric Spark, capacity SKUs define the concurrency limits. SKUs have varying limits on max concurrent jobs that range from 1 to 512. Fabric Spark has a dynamic reserve-based throttling system to manage concurrency and ensure smooth operation even during peak usage times. For more information, see [Concurrency limits and queueing in Microsoft Fabric Spark](spark-job-concurrency-and-queueing.md) and [Fabric capacities](https://blog.fabric.microsoft.com/blog/fabric-capacities-everything-you-need-to-know-about-whats-new-and-whats-coming?ft=All).
+- 50 concurrent jobs per pool, 200 queued jobs per pool
+- 250 active jobs per pool, 1,000 per workspace
+
+Fabric Spark limits (SKU-based):
+
+- Concurrent jobs vary by capacity SKU: 1 to 512 max
+- Dynamic reserve-based throttling manages peak usage
+
+For more information, see [Concurrency limits and queueing in Microsoft Fabric Spark](spark-job-concurrency-and-queueing.md).
 
 ### Multiple Spark pools
 
-If you want to have multiple Spark pools, use Fabric environments to select a pool by notebook or Spark job definition. For more information, see [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md).
+In Fabric, use [environments](create-and-use-environment.md) to configure and select different Spark pools per notebook or Spark job definition.
 
 > [!NOTE]
 > Learn how to [migrate Azure Synapse Spark pools to Fabric](migrate-synapse-spark-pools.md).
 
 ## Spark configurations comparison
 
-Spark configurations can be applied at different levels:
+Spark configurations apply at two levels:
 
-- **Environment level**: These configurations are used as the default configuration for all Spark jobs in the environment.
-- **Inline level**: Set Spark configurations inline using notebooks and Spark job definitions.
-
-While both options are supported in Azure Synapse Spark and Fabric, there are some considerations:
+- **Environment level**: Default configuration for all Spark jobs in the environment
+- **Inline level**: Per-session configuration in notebooks or Spark job definitions
 
 | Spark configuration| Azure Synapse Spark | Fabric Spark |
 |--|--|--|
@@ -151,13 +173,11 @@ While both options are supported in Azure Synapse Spark and Fabric, there are so
 
 ## Spark libraries comparison
 
-You can apply Spark libraries at different levels:
+Spark libraries apply at three levels:
 
-- **Workspace level**: You can't upload/install these libraries to your workspace and later assign them to a specific Spark pool in Azure Synapse.
-- **Environment level**: You can upload/install libraries to an environment. Environment-level libraries are available to all notebooks and Spark job definitions running in the environment.
-- **Inline**: In addition to environment-level libraries, you can also specify inline libraries. For example, at the beginning of a notebook session.
-
-Considerations:
+- **Workspace level**: Available in Azure Synapse only
+- **Environment level**: Libraries available to all notebooks and Spark job definitions in the environment
+- **Inline**: Session-specific libraries installed at notebook startup
 
 | Spark library | Azure Synapse Spark | Fabric Spark |
 |--|--|--|
