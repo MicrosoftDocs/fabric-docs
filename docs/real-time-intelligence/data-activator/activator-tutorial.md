@@ -29,7 +29,7 @@ Before you begin, you need a workspace with a Fabric capacity. You can learn abo
 ## Create a sample activator
 
 1. Navigate to the [Fabric portal]( https://app.fabric.microsoft.com). 
-1. On the left navigation pane, select the ellipses(**...**), and then select **Create**. 
+1. On the left navigation pane, select the ellipses (**...**), and then select **Create**. 
 
     :::image type="content" source="media/activator-tutorial/create.png" alt-text="Screenshot showing the left navigation pane with Create selected." lightbox="media/activator-tutorial/create.png":::
 
@@ -97,7 +97,7 @@ The Explorer pane displays objects, like eventstreams, for this activator. **Del
         :::image type="content" source="media/activator-tutorial/action-email.png" alt-text="Screenshot showing the Action section of the Definition pane with email action selected." lightbox="media/activator-tutorial/action-email.png":::
 
     1. **Send Microsoft Teams notification:** Sends a Microsoft Teams message to yourself. You can customize the title and message content.
-        1. For Select action, select **Teams** --> **Message to indviduals** or **Group chat message**, or **Channel post**.
+        1. For Select action, select **Teams** --> **Message to individuals** or **Group chat message**, or **Channel post**.
         1. Follow one of these steps depending on your selection:
             * If you selected the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, an email is sent to specified individuals.
             * If you selected the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.
