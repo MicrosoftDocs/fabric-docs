@@ -889,7 +889,9 @@ items:
     - name: Operations agents  
       items:
       - name: Getting started with operations agents
-        href: operations-agent.md 
+        href: operations-agent.md
+      - name: Operations agents billing
+        href: operations-agent-billing.md 
       - name: Operations agents limitations
         href: operations-agent-limitations.md
       - name: Operations agent transparency note
