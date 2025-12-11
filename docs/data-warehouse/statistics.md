@@ -161,7 +161,7 @@ When the engine requests an update to a column statistic, it will automatically 
 
 ### Proactive statistics refresh
 
-Proactive statistics refresh refers to a fully-managed process that attempts to frontload statistic refreshes after data change, instead of at query time. 
+Proactive statistics refresh is a fully-managed process that attempts to frontload statistic refreshes after data change.
 
 This optimization aims to reduce the likelihood of a `SELECT` query experiencing delay caused by statistics updates during query plan generation. 
 
