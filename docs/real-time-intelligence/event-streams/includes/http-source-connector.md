@@ -50,8 +50,7 @@ Follow the steps to configure your own HTTP source without an example API.
 
 1. **Headers and parameters**: If you selected **API Key** authentication when you created the cloud connection, use the dynamic parameter **${apiKey}** in your headers or parameters to reference the API Key.
 
-   For example, to connect to CoinGecko, enter the header: *x_cg_demo_api_key = ${apiKey}*.
-   :::image type="content" source="media/http-connector/header-apikey.png" alt-text="Screenshot that shows how to use apiKey in the header." lightbox="media/http-connector/header-apikey.png":::
+   For example, to connect to CoinGecko, use the header: `x_cg_demo_api_key` = `${apiKey}`.
 
    > [!IMPORTANT]
    > Do NOT enter your API key or other credentials in the headers or parameters.

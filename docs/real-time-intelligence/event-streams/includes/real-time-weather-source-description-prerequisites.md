@@ -17,11 +17,11 @@ Weather data is powered by the Azure Maps Weather service. The cost of using Azu
 
 - A workspace with **Fabric capacity** or **Trial** license mode.
 - Access to the workspace with **Contributor** or higher workspace roles.
-- If you don't have an eventstream, follow the guide to [create an eventstream](event-streams/create-manage-an-eventstream.md).
+- If you don't have an eventstream, follow the guide to [create an eventstream](../create-manage-an-eventstream.md).
 
-In addition, the following [tenant switches](admin/about-tenant-settings.md) must be enabled from the Admin portal:
+In addition, the following [tenant switches](../../../admin/about-tenant-settings.md) must be enabled from the Admin portal:
 
-- [Users can use Azure Maps services](admin/map-settings.md)
+- [Users can use Azure Maps services](../../../admin/map-settings.md)
 - [Users can use Azure Maps Weather Services](https://go.microsoft.com/fwlink/?linkid=2340279). By enabling this setting, you consent to share your selected location with Azure Maps and AccuWeather to retrieve real-time weather information.
 
 :::image type="content" source="media/weather/weather-tenant-setting.png" alt-text="Screenshot that shows weather tenant setting." lightbox="media/weather/weather-tenant-setting.png":::
