@@ -38,16 +38,15 @@ Operations agent consumes capacity based on the following factors:
 
     | Azure Metric Name   | Fabric Operation Name                               | CU Rate |
     |------------------|--------------------------------------------------|----------------------|
-    | Operations Agents Compute Capacity Usage CU  | Operations agent compute                 | 0.46 CUs per vCore hour                |
-    | Copilot and AI Capacity Usage CU  | Copilot in Fabric                  | 100 CUs per 1,000 input tokens 
-    400 CUs per 1,000 output tokens               |
-    | Operations Agents Autonomous Reasoning Capacity Usage CU  | Operations agent autonomous reasoning          | 400 CUs per 1,000 input tokens 1600 CUs per 1,000 output tokens    |
-    | N/A | storage      | per GB per hour              |
+    | Operations Agents Compute Capacity Usage CU  | Operations agent compute | 0.46 CUs per vCore hour |
+    | Copilot and AI Capacity Usage CU | Copilot in Fabric | 100 CUs per 1,000 input tokens 400 CUs per 1,000 output tokens |
+    | Operations Agents Autonomous Reasoning Capacity Usage CU  | Operations agent autonomous reasoning | 400 CUs per 1,000 input tokens 1600 CUs per 1,000 output tokens |
+    | N/A | storage | per GB per hour |
 
 - **Other CU consumption:** Operations agents can drive additional CU consumption from other Fabric items or products, such as the Eventhouse being monitored:
   - **Configuration phase:** Copilot in Fabric incurs usage while generating the agent's playbook. Eventhouse usage arises from queries to identify fields and rules to monitor. Storage costs apply for saving the agent's configuration.
   - **Active monitoring:** Once activated, the agent runs queries and tracks rules in the background, consuming the Operations agent compute meter. Eventhouse charges apply for periodic queries, and storage costs cover cached query results and configurations.
-  - **Condition met:** When conditions are met, the agent uses its LLM for summarization and recommendations, consuming the Operations agent autonomous reasoning meter. Approved actions invoke Power Automate flows, which may incur separate licensing costs based on your [Power Automate plan](https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing).
+  - **Condition met:** When conditions are met, the agent uses its LLM for summarization and recommendations, consuming the Operations agent autonomous reasoning meter. Approved actions invoke Power Automate flows, which may incur separate licensing costs based on your [Power Automate plan](https://www.microsoft.com/power-platform/products/power-automate/pricing).
 
 ### Pause and resume activity in your capacity
 
