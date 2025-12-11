@@ -49,21 +49,32 @@ Create a new cell in your Fabric notebook to use this code, separate from the ce
 
 ```Python
 import openai
-import os
 
-os.environ["OPENAI_API_VERSION"] = "2024-06-01"
-
-response = openai.chat.completions.create(
-    model='gpt-4.1', # model could be one of {gpt-4.1 or gpt-4.1-mini}
+response = openai.ChatCompletion.create(
+    deployment_id="gpt-4.1",
     messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Knock knock."},
-        {"role": "assistant", "content": "Who's there?"},
-        {"role": "user", "content": "Orange."},
-    ],
-    temperature=0,
-)
+        
+{
+  "role": "user",
+  "content": """Analyze the following text and return a JSON array of issue insights.
 
+Each item must include:
+- issue_brief (1 sentence)
+- scenario
+- severity (high | medium | low)
+- verbatim_quotes (list)
+- recommended_fix
+
+Text:
+We booked the hotel room in advance for our family trip. The check-in the great however the room service was slow and pool was closed
+
+Return JSON only.
+"""
+}
+
+    ],
+
+)
 print(f"{response.choices[0].message.role}: {response.choices[0].message.content}")
 ```
 
@@ -71,7 +82,27 @@ print(f"{response.choices[0].message.role}: {response.choices[0].message.content
 ### Output
 
 ``` json
-    assistant: Orange who?
+
+assistant: [
+  {
+    "issue_brief": "Room service was slow during the stay.",
+    "scenario": "Guests experienced delays in receiving room service after check-in.",
+    "severity": "medium",
+    "verbatim_quotes": [
+      "the room service was slow"
+    ],
+    "recommended_fix": "Improve staffing or training for room service to ensure timely delivery of services."
+  },
+  {
+    "issue_brief": "The hotel pool was unavailable during the stay.",
+    "scenario": "Guests were unable to use the pool because it was closed.",
+    "severity": "medium",
+    "verbatim_quotes": [
+      "pool was closed"
+    ],
+    "recommended_fix": "Notify guests in advance about facility closures and provide alternative amenities or compensation if possible."
+  }
+]
 ```
 
 # [SynapseML](#tab/synapseml)
