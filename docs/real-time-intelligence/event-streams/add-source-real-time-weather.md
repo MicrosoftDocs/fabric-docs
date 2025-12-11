@@ -6,15 +6,13 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-ms.date: 4/24/2025
+ms.date: 12/11/2025
 ms.search.form: Source and Destination
 ---
 
 # Add a real-time weather source to an eventstream (preview)
 
 [!INCLUDE [real-time-weather-source-description-prerequisites](./includes/real-time-weather-source-description-prerequisites.md)] 
-
-- [Create an eventstream](create-manage-an-eventstream.md) if you don't have one already.
 
 ## Add a real-time weather as a source
 
