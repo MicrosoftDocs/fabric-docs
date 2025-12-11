@@ -34,7 +34,7 @@ When the agent is ready, it opens.
 Next, add some custom instructions to the agent.
 
 1. Select **Agent instructions** from the menu ribbon.
-1. At the bottom of the input box, add *Support group by in GQL*. This instruction enables better aggregation across ontology data.
+1. At the bottom of the input box, add `Support group by in GQL`. This instruction enables better aggregation across ontology data.
 
     :::image type="content" source="media/tutorial-4-create-data-agent/agent-instructions.png" alt-text="Screenshot of the agent instructions." lightbox="media/tutorial-4-create-data-agent/agent-instructions.png":::
 1. The instruction is applied automatically. Optionally, close the **Agent instructions** tab.
