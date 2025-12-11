@@ -15,7 +15,7 @@ ms.date: 12/11/2025
     :::image type="content" source="./media/launch-get-events-experience/switch-to-fabric-workload.png" alt-text="Screenshot that shows how to switch to the Fabric workload.":::    
 1. Select **Real-Time** on the left navigation bar.
 
-    :::image type="content" source="./media/launch-get-events-experience/select-real-time-hub.png" alt-text="Screenshot that shows how to launch Connect to data source experience." lightbox="./media/launch-get-events-experience/select-real-time-hub.png":::
+    :::image type="content" source="./media/launch-get-events-experience/real-time-hub.png" alt-text="Screenshot that shows how to launch Connect to data source experience." lightbox="./media/launch-get-events-experience/real-time-hub.png":::
 1. The **Streaming data** page opens by default. Click on the **Add data** button to get to the **Data sources** page. 
     
     :::image type="content" source="./media/launch-get-events-experience/streaming-data.png" alt-text="Screenshot that shows the Data sources page in the Real-Time hub." lightbox="./media/launch-get-events-experience/streaming-data.png":::
