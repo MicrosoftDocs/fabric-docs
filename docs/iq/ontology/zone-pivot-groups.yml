@@ -7,4 +7,4 @@ groups:
   - id: semantic-model
     title: Generate from semantic model
   - id: onelake
-    title: Build from OneLake data
+    title: Build directly from OneLake
