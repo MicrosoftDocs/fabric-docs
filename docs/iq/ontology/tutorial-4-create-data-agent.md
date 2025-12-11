@@ -34,7 +34,7 @@ When the agent is ready, it opens.
 Next, add some custom instructions to the agent.
 
 1. Select **Agent instructions** from the menu ribbon.
-1. At the bottom of the **Agent instructions** box, add *Support group by in GQL*. This instruction enables better aggregation across ontology data.
+1. At the bottom of the input box, add *Support group by in GQL*. This instruction enables better aggregation across ontology data.
 
     :::image type="content" source="media/tutorial-4-create-data-agent/agent-instructions.png" alt-text="Screenshot of the agent instructions." lightbox="media/tutorial-4-create-data-agent/agent-instructions.png":::
 1. The instruction is applied automatically. Optionally, close the **Agent instructions** tab.
@@ -52,7 +52,7 @@ Notice that the responses reference entity types (*Store*, *Products*, *Freezer*
 :::image type="content" source="media/tutorial-4-create-data-agent/query-result.png" alt-text="Screenshot of the result of a query." lightbox="media/tutorial-4-create-data-agent/query-result.png":::
 
 >[!TIP]
-> If you experience errors running the example queries, try waiting a few minutes to give the agent more time to initialize, and then re-run the queries.
+> If you experience errors while running the example queries, try waiting a few minutes to give the agent more time to initialize, then running the queries again.
 
 Continue exploring the data agent by trying out some prompts of your own.
 
