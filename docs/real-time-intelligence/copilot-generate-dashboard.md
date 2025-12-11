@@ -6,6 +6,7 @@ ms.author: spelluru
 ms.reviewer: mibar, maghan
 ms.date: 08/21/2025
 ms.topic: how-to
+ms.subservice: rti-dashboard
 ms.collection:
   - ce-skilling-ai-copilot
 ms.update-cycle: 180-days

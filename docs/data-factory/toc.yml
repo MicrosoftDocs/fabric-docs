@@ -362,45 +362,45 @@
             items: 
               - name: Avro
                 items: 
-                  - name: Configure in a pipeline
+                  - name:  Configure Avro in a pipeline
                     href: format-avro.md
               - name: Binary
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure Binary in a pipeline
                     href: format-binary.md
-                  - name: Configure in Dataflow Gen2
+                  - name: Configure Binary in Dataflow Gen2
                     href: connector-binary-dataflows.md
               - name: Delimited text
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure Delimited text in a pipeline
                     href: format-delimited-text.md
               - name: Excel
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure Excel in a pipeline
                     href: format-excel.md
-                  - name: Configure in Dataflow Gen2
+                  - name: Configure Excel in Dataflow Gen2
                     href: connector-excel-dataflows.md
               - name: Iceberg
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure Iceberg in a pipeline
                     href: format-iceberg.md
               - name: JSON
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure JSON in a pipeline
                     href: format-json.md
               - name: ORC
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure ORC in a pipeline
                     href: format-orc.md
               - name: Parquet
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure Parquet in a pipeline
                     href: format-parquet.md
-                  - name: Configure in Dataflow Gen2
+                  - name: Configure Parquet in Dataflow Gen2
                     href: connector-parquet-dataflows.md
               - name: XML
                 items: 
-                  - name: Configure in a pipeline
+                  - name: Configure XML in a pipeline
                     href: format-xml.md
           - name: FTP
             items: 
@@ -874,6 +874,8 @@
                 href: create-copy-job.md
               - name: How to monitor a Copy job
                 href: monitor-copy-job.md
+              - name: Change data capture from SAP via SAP Datasphere Outbound 
+                href: copy-job-tutorial-sap-datasphere.md
       - name: Copy activity
         href: copy-data-activity.md
         items:
@@ -1010,7 +1012,15 @@
                   - name: Variable references in Dataflow
                     href: dataflow-gen2-variable-references.md
       - name: dbt job
-        href: dbt-job-overview.md  
+        items:
+        - name: What is dbt job?
+          href: dbt-job-overview.md
+        - name: Step-by-step dbt job tutorial
+          href: dbt-job-sample-tutorial.md
+        - name: Create a dbt job
+          href: dbt-job-how-to.md
+        - name: Configure a dbt job
+          href: dbt-job-configure.md
   - name: Orchestrate your pipelines
     items:
       - name: What is a pipeline?

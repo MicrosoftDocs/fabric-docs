@@ -33,7 +33,7 @@ You must have access to an **existing non-trial Fabric capacity** where you're a
 
 ### Configure connection settings
 
-1. For **Event type(s), select `Microsoft.Fabric.Capacity.Summary` and keep the **Event scope** as **By capacity**  
+1. For **Event type(s)**, select `Microsoft.Fabric.Capacity.Summary` and keep the **Event scope** as **By capacity**  
 2. Select the **capacity** you want to monitor.
 3. Under **Set filters**, select **+Filter** with the following parameters:
    - **Field:** `data.interactiveDelayThresholdPercentage`  

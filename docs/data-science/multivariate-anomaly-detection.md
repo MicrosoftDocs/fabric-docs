@@ -36,7 +36,7 @@ Starting with an existing `Anomaly Detector` resource, you can explore ways to h
 - [Speech](https://azure.microsoft.com/products/ai-services/ai-speech/)
 - [Translation](https://azure.microsoft.com/products/ai-services/ai-translator)
 - [Vision](https://azure.microsoft.com/products/ai-services/ai-vision/)
-- [Web search](https://www.microsoft.com/bing/apis/bing-image-search-api)
+- [Web search](https://www.bing.com/visualsearch)
 
 ### Create an Anomaly Detector resource
 

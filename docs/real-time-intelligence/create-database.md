@@ -6,6 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
+ms.subservice: rti-eventhouse
 ms.date: 03/19/2025
 ms.search.form: KQL Database
 ---

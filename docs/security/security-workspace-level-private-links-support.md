@@ -262,7 +262,7 @@ The following scenarios are unsupported:
 
 Manage Dataflows Gen2 in workspaces enabled with private links by using the Fabric portal or REST API.
 
-A virtual network data gateway must be used with every connector. The virtual network data gateway must reside in the same virtual network as the workspace-level private link endpoint used by the workspace. 
+A connection based on a virtual network data gateway must be used, including in the output destination. The virtual network data gateway must reside in the same virtual network as the workspace-level private link endpoint used by the workspace.
 
 Power Platform Dataflow Connector: When a workspace has workspace private links enabled and public access denied, for any two dataflows in that workspace (dataflow A and dataflow B), neither dataflow will be able to connect to the other dataflow using the Power Platform Dataflow Connector, because the dataflow won't appear in the navigator.
 
@@ -294,7 +294,7 @@ You can manage mirrored databases in workspaces enabled with private links by us
 ---
 
 > [!NOTE]
-> * Currently, workspace-level private link is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db) and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server) (using SQL Server 2025 CTP 2.0 or higher version). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started. 
+> * Currently, workspace-level private link is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db), [Azure SQL Managed Instance mirroring](/fabric/mirroring/azure-sql-managed-instance) and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server). For other types of database mirroring, if your workspace is configured to deny inbound public access, active mirrored databases enter a paused state, and mirroring can't be started.
 > * For open mirroring, when your workspace is configured to deny inbound public access, ensure the publisher writes data into the OneLake landing zone via a private link with workspace FQDN.
 
 ## Supported and unsupported management tools

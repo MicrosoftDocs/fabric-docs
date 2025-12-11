@@ -608,7 +608,7 @@ Fabric supports the following mount scenarios in the Microsoft Spark Utilities p
 
 ### How to mount an ADLS Gen2 account
 
-The following example illustrates how to mount Azure Data Lake Storage Gen2. Mounting Blob Storage works similarly.
+The following example illustrates how to mount Azure Data Lake Storage Gen2. Mounting Blob Storage and Azure File Share works similarly.
 
 This example assumes that you have one Data Lake Storage Gen2 account named *storegen2*, which has a container named *mycontainer* that you want to mount to */test*  in your notebook Spark session.
 

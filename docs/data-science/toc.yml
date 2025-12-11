@@ -99,8 +99,6 @@ items:
           href: data-agent-semantic-model.md
         - name: How to configure a data agent
           href: develop-iterative-process-data-agent.md
-        - name: Connect to an AI Foundry Search Index
-          href: data-agent-ai-search-index.md
     - name: How to consume a Fabric data agent
       items:
         - name: Consume a data agent from Azure AI foundry (preview)
@@ -111,6 +109,10 @@ items:
           href: data-agent-microsoft-copilot-studio.md         
         - name: Consume a data agent using Python SDK (preview)
           href: consume-data-agent-python.md
+        - name: Consume a data agent from Microsoft 365 Copilot (preview)
+          href: data-agent-microsoft-365-copilot.md
+        - name: Consume a data agent as Model Context Protocol Server (preview)
+          href: data-agent-mcp-server.md       
     - name: Source Control, CI/CD, and ALM for Fabric data agent
       href: data-agent-source-control.md 
     - name: Fabric data agent end-to-end tutorial

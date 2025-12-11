@@ -7,7 +7,7 @@ ms.reviewer: ''
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 11/21/2025
 ---
 
 # Microsoft Fabric tenant settings
@@ -57,10 +57,6 @@ For more information, see [Metric sets setting (preview)](./service-admin-portal
 ## Mirrored Azure Databricks Catalog
 
 For more information, see [Mirroring Azure Databricks Unity Catalog](../mirroring/azure-databricks.md).
-
-## Users can create variable libraries
-
-For more information, see [What is a Variable library? (preview)](../cicd/variable-library/variable-library-overview.md).
 
 ## ML model endpoints for real-time predictions (preview)
 

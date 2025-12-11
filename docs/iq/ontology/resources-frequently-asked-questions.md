@@ -38,4 +38,4 @@ For more about these items in Fabric IQ, see [What is Fabric IQ (preview)?](../o
 
 ## Submit Fabric ideas
 
-If you have suggestions for new features that aren't currently part of ontology (preview), consider submitting them to [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
+If you have suggestions for new features that aren't currently part of ontology (preview), consider submitting them to [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas). Use the idea label **IQ | Ontology**.
