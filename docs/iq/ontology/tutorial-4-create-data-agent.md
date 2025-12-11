@@ -52,7 +52,7 @@ Notice that the responses reference entity types (*Store*, *Products*, *Freezer*
 :::image type="content" source="media/tutorial-4-create-data-agent/query-result.png" alt-text="Screenshot of the result of a query." lightbox="media/tutorial-4-create-data-agent/query-result.png":::
 
 >[!TIP]
-> If you experience errors while running the example queries, try waiting a few minutes to give the agent more time to initialize, then running the queries again.
+> If you experience errors saying there's no data while running the example queries, try waiting a few minutes to give the agent more time to initialize, then running the queries again.
 
 Continue exploring the data agent by trying out some prompts of your own.
 
