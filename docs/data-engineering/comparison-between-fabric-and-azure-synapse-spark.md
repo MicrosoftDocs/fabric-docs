@@ -69,31 +69,51 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 | Intelligent cache | Yes | Yes |
 | API/SDK support | Yes | Yes |
 
-- **Runtime**: Fabric doesn't support Spark 2.4, 3.1, and 3.2 versions. Fabric Spark supports Spark 3.3 with Delta 2.2 within [Runtime 1.1](runtime-1-1.md), Spark 3.4 with Delta 2.4 within [Runtime 1.2](runtime-1-2.md) and Spark 3.5 with Delta 3.1 within [Runtime 1.3](runtime-1-3.md).
+### Spark runtime versions
 
-- **Autoscale**: In Azure Synapse Spark, the pool can scale up to 200 nodes regardless of the node size. In Fabric, the maximum number of nodes is subjected to node size and provisioned capacity. See the following example for the F64 SKU.
+Fabric doesn't support Spark 2.4, 3.1, and 3.2 versions. Fabric Spark supports Spark 3.3 with Delta 2.2 within [Runtime 1.1](runtime-1-1.md), Spark 3.4 with Delta 2.4 within [Runtime 1.2](runtime-1-2.md) and Spark 3.5 with Delta 3.1 within [Runtime 1.3](runtime-1-3.md).
 
-    | Spark pool size | Azure Synapse Spark | Fabric Spark (Custom Pool, SKU F64) |
-    |--|--|--|
-    | Small | Min: 3, Max: 200 | Min: 1, Max: 32 |
-    | Medium | Min: 3, Max: 200 | Min: 1, Max: 16 |
-    | Large | Min: 3, Max: 200 | Min: 1, Max: 8 |
-    | X-Large | Min: 3, Max: 200 | Min: 1, Max: 4 |
-    | XX-Large | Min: 3, Max: 200 | Min: 1, Max: 2 |
+### Autoscale and node configuration
 
-- **Adjustable node sizes**: In Azure Synapse Spark, you can go up to 200 nodes. In Fabric, the number of nodes you can have in your custom Spark pool depends on your node size and Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Spark vCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric Capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. So, if you choose a small node size, you can have up to 32 nodes in your pool (128/4 = 32). Then, the total of vCores in the capacity/vCores per node size = total number of nodes available. For more information, see [Spark compute](spark-compute.md).
+In Azure Synapse Spark, the pool can scale up to 200 nodes regardless of the node size. In Fabric, the maximum number of nodes depends on node size and provisioned capacity.
 
-- **Node size family**: Fabric Spark pools only support [Memory Optimized node size family](spark-compute.md) for now. If you're using a GPU-accelerated SKU Spark pool in Azure Synapse, they aren't available in Fabric.
+In Azure Synapse Spark, you can configure up to 200 nodes. In Fabric, the number of nodes you can have in your custom Spark pool depends on your node size and Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. Two Spark vCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric Capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. So, if you choose a small node size, you can have up to 32 nodes in your pool (128/4 = 32). The formula is: total vCores in capacity / vCores per node size = total number of nodes available. For more information, see [Spark compute](spark-compute.md).
 
-- **Node size**: The xx-large node size comes with 432 GB of memory in Azure Synapse, while the same node size has 512 GB in Fabric including 64 vCores. The rest of the node sizes (small through x-large) have the same vCores and memory in both [Azure Synapse](/azure/synapse-analytics/spark/apache-spark-pool-configurations) and [Fabric](spark-compute.md).
+### F64 SKU capacity example
 
-- **Automatic pausing**: If you enable it in Azure Synapse Spark, the Apache Spark pool will automatically pause after a specified amount of idle time. This setting is configurable in Azure Synapse (minimum 5 minutes), but custom pools have [a noncustomizable default autopause duration of 2 minutes](create-custom-spark-pools.md) in Fabric after the session expires. The default session expiration is set to 20 minutes in Fabric.
+The following example shows node limits for the F64 SKU.
 
-- **High concurrency**: Fabric supports high concurrency in notebooks. For more information, see [High concurrency mode in Fabric Spark](high-concurrency-overview.md).
+| Spark pool size | Azure Synapse Spark | Fabric Spark (Custom Pool, SKU F64) |
+|--|--|--|
+| Small | Min: 3, Max: 200 | Min: 1, Max: 32 |
+| Medium | Min: 3, Max: 200 | Min: 1, Max: 16 |
+| Large | Min: 3, Max: 200 | Min: 1, Max: 8 |
+| X-Large | Min: 3, Max: 200 | Min: 1, Max: 4 |
+| XX-Large | Min: 3, Max: 200 | Min: 1, Max: 2 |
 
-- **Concurrency limits**: In terms of concurrency, Azure Synapse Spark has a limit of 50 simultaneous running jobs per Spark pool and 200 queued jobs per Spark pool. The maximum active jobs are 250 per Spark pool and 1000 per workspace. In Microsoft Fabric Spark, capacity SKUs define the concurrency limits. SKUs have varying limits on max concurrent jobs that range from 1 to 512. Also, Fabric Spark has a dynamic reserve-based throttling system to manage concurrency and ensure smooth operation even during peak usage times. For more information, see [Concurrency limits and queueing in Microsoft Fabric Spark](spark-job-concurrency-and-queueing.md) and [Fabric capacities](https://blog.fabric.microsoft.com/blog/fabric-capacities-everything-you-need-to-know-about-whats-new-and-whats-coming?ft=All).
+### Node sizes
 
-- **Multiple Spark pools**: If you want to have multiple Spark pools, use Fabric environments to select a pool by notebook or Spark job definition. For more information, see [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md).
+Fabric Spark pools only support [Memory Optimized node size family](spark-compute.md). If you're using a GPU-accelerated SKU Spark pool in Azure Synapse, GPU isn't available in Fabric.
+
+The xx-large node size has 432 GB of memory in Azure Synapse, while the same node size has 512 GB in Fabric including 64 vCores. The rest of the node sizes (small through x-large) have the same vCores and memory in both [Azure Synapse](/azure/synapse-analytics/spark/apache-spark-pool-configurations) and [Fabric](spark-compute.md).
+
+### Autopause behavior
+
+If you enable autopause in Azure Synapse Spark, the Apache Spark pool automatically pauses after a specified amount of idle time. This setting is configurable in Azure Synapse (minimum 5 minutes), but custom pools have [a noncustomizable default autopause duration of 2 minutes](create-custom-spark-pools.md) in Fabric after the session expires. The default session expiration is set to 20 minutes in Fabric.
+
+### High concurrency
+
+Fabric supports high concurrency in notebooks. For more information, see [High concurrency mode in Fabric Spark](high-concurrency-overview.md).
+
+### Concurrency limits
+
+Azure Synapse Spark has a limit of 50 simultaneous running jobs per Spark pool and 200 queued jobs per Spark pool. The maximum active jobs are 250 per Spark pool and 1000 per workspace.
+
+In Microsoft Fabric Spark, capacity SKUs define the concurrency limits. SKUs have varying limits on max concurrent jobs that range from 1 to 512. Fabric Spark has a dynamic reserve-based throttling system to manage concurrency and ensure smooth operation even during peak usage times. For more information, see [Concurrency limits and queueing in Microsoft Fabric Spark](spark-job-concurrency-and-queueing.md) and [Fabric capacities](https://blog.fabric.microsoft.com/blog/fabric-capacities-everything-you-need-to-know-about-whats-new-and-whats-coming?ft=All).
+
+### Multiple Spark pools
+
+If you want to have multiple Spark pools, use Fabric environments to select a pool by notebook or Spark job definition. For more information, see [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md).
 
 > [!NOTE]
 > Learn how to [migrate Azure Synapse Spark pools to Fabric](migrate-synapse-spark-pools.md).
