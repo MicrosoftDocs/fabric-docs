@@ -59,7 +59,7 @@ In this task, learn how to ingest data into the warehouse to create tables.
 
 1. Search for, and then select, **Azure Blobs**.
 
-1. On the **Connect data source** page, in the **Account name or URL** box, enter `https://fabrictutorialdata.blob.core.windows.net/sampledata/`.
+1. On the **Connect data source** page, in the **Account name or URL** box, enter `https://fabrictutorialdata.blob.core.windows.net/sampledata/`. **This blog accout doesn't exist anymore!**
 
 1. The **Connection name** dropdown list is automatically populated and that the authentication kind is set to **Anonymous**.
 
