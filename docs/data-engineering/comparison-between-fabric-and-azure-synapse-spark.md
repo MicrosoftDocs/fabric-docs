@@ -29,18 +29,21 @@ This article compares Azure Synapse Spark and Fabric Spark across Spark pools, c
 | Logging and monitoring | Spark Advisor <br>Built-in monitoring pools and jobs (through Synapse Studio) <br>Spark history server <br>Prometheus/Grafana <br>Log Analytics <br>Storage Account <br>Event Hubs | [Spark Advisor](spark-advisor-introduction.md) <br>Built-in monitoring pools and jobs (through [Monitoring hub](browse-spark-applications-monitoring-hub.md)) <br>[Spark history server](apache-spark-history-server.md) <br>- <br>[Log Analytics](azure-fabric-diagnostic-emitters-log-analytics.md) <br>[Storage Account](azure-fabric-diagnostic-emitters-azure-storage.md) <br>[Event Hubs](azure-fabric-diagnostic-emitters-azure-event-hub.md) |
 | Business continuity and disaster recovery (BCDR) | BCDR (data) ADLS Gen2 | [BCDR (data) OneLake](../onelake/onelake-disaster-recovery.md) |
 
-Considerations and limitations:
+**When to choose**: Use Fabric Spark for unified analytics with OneLake storage, built-in CI/CD pipelines, and capacity-based scaling. Use Azure Synapse Spark when you need GPU-accelerated pools, external Hive Metastore, or JDBC connections.
 
-- **Data Movement and Transformation Services (DMTS) integration**: You can't use DMTS via notebooks and Spark job definitions.
+### Key limitations in Fabric
 
-- **Workload level RBAC**: Fabric supports four different workspace roles. For more information, see [Roles in workspaces in Microsoft Fabric](../fundamentals/roles-workspaces.md).
+- **JDBC**: Not supported
+- **DMTS in notebooks**: Data Movement and Transformation Services can't be used in notebooks or Spark job definitions
+- **Managed identity for Key Vault**: Not supported in notebooks
+- **External Hive Metastore**: Not supported
+- **GPU-accelerated pools**: Not available
+- **.NET for Spark (C#)**: Not supported
 
-- **Managed identity**: Currently, Fabric doesn't support running notebooks and Spark job definitions using the workspace identity or managed identity for Azure KeyVault in notebooks.
+### Additional considerations
 
-- **CI/CD**: You can use the Fabric API/SDK and [deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md).
-
-- **Other considerations**:
-  - **JDBC**: JDBC connection support isn't currently available in Fabric.
+- **Workload level RBAC**: Fabric supports four workspace roles. For more information, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
+- **CI/CD**: Use the Fabric API/SDK and [deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md).
 
 ## Spark pool comparison
 
@@ -66,6 +69,8 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 | Multiple Spark pools | Yes | Yes (environments) |
 | Intelligent cache | Yes | Yes |
 | API/SDK support | Yes | Yes |
+
+**When to choose**: Use Fabric Spark pools for fast startup (starter pools), single-node jobs, high concurrency sessions, and V-Order optimization. Use Azure Synapse pools when you need GPU acceleration or fixed scaling up to 200 nodes.
 
 ### Spark runtime versions
 
@@ -156,6 +161,8 @@ Spark configurations apply at two levels:
 | Import/export | Yes | Yes (.yml from environments) |
 | API/SDK support | Yes | Yes |
 
+**When to choose**: Both platforms support environment and inline configurations. Fabric uses environments instead of pool-level configs.
+
 - **Environment level**: In Azure Synapse, you can define multiple Spark configurations and assign them to different Spark pools. You can do this in Fabric by using [environments](create-and-use-environment.md).
 
 - **Inline**: In Azure Synapse, both notebooks and Spark jobs support attaching different Spark configurations. In Fabric, session level configurations are customized with the ```spark.conf.set(<conf_name>, <conf_value>)``` setting. For batch jobs, you can also apply configurations via SparkConf.
@@ -187,7 +194,7 @@ Spark libraries apply at three levels:
 | Import/export | Yes | Yes |
 | API/SDK support | Yes | Yes |
 
-- **Other considerations**:
+**When to choose**: Both platforms support environment and inline libraries. Fabric doesn't support workspace-level packages.
   - **Built-in libraries**: Fabric and Azure Synapse share a common core of Spark, but they can slightly differ in different support of their runtime libraries. Typically, using code is compatible with some exceptions. In that case, users might need compilation, the addition of custom libraries, and adjusting syntax. See built-in Fabric Spark runtime libraries [here](runtime.md).
 
 > [!NOTE]
@@ -211,6 +218,7 @@ Notebooks and Spark job definitions are primary code items for developing Apache
 | Built-in scheduled run support | No | Yes |
 | API/SDK support | Yes | Yes |
 
+**When to choose**: Use Fabric notebooks for collaboration, high concurrency sessions, built-in scheduling, and notebook resources. Use Azure Synapse notebooks if you require .NET for Spark (C#).
 - **mssparkutils**: Because Data Movement and Transformation Services (DMTS) connections aren't supported in Fabric yet, only ```getToken``` and ```getSecret``` are supported for now in Fabric for ```mssparkutils.credentials```.
 
 - **Notebooks resources**: Fabric notebooks provide a Unix-like file system to help you manage your folders and files. For more information, see [How to use Microsoft Fabric notebooks](how-to-use-notebook.md).
@@ -246,6 +254,8 @@ Important [Spark job definition](spark-job-definition.md) considerations:
 | Retry policies | No | Yes |
 | API/SDK support | Yes | Yes |
 
+**When to choose**: Use Fabric Spark job definitions for SparkR support, built-in scheduling, and retry policies. Use Azure Synapse if you need .NET for Spark (C#) or UI-based import/export.
+
 - **Spark jobs**: You can bring your .py/.R/jar files. Fabric supports SparkR. A Spark job definition supports reference files, command line arguments, Spark configurations, and lakehouse references.
 
 - **Import/export**: In Azure Synapse, you can import/export json-based Spark job definitions from the UI. This feature isn't available yet in Fabric.
@@ -268,7 +278,7 @@ Hive MetaStore (HMS) differences and considerations:
 | Internal HMS | Yes | Yes (lakehouse) |
 | External HMS | Yes | No |
 
-- **External HMS**: Fabric currently doesn't support a Catalog API and access to an external Hive Metastore (HMS).
+**When to choose**: Use Fabric if lakehouse-based internal HMS meets your needs. Use Azure Synapse if you require external Hive Metastore (Azure SQL DB) or Catalog API access.
 
 > [!NOTE]
 > Learn how to [migrate Azure Synapse Spark catalog HMS metadata to Fabric](migrate-synapse-hms-metadata.md).
