@@ -5,7 +5,7 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 07/22/2025
+ms.date: 12/11/2025
 ---
 
 # Preview streams in Fabric Real-Time hub
@@ -17,7 +17,7 @@ On the Real-Time hub page, in the **Recent streaming data** section, use one of 
 - Move the mouse over the stream and select the eye button.
 - Move the mouse over the stream in the list, select ... (ellipsis), and then select **Preview data**.
 
-:::image type="content" source="./media/preview-data-streams/preview-data-from-data-streams-menu.png" alt-text="Screenshot that shows the Preview data links from the All data stream page of Real-Time hub." lightbox="./media/preview-data-streams/preview-data-from-data-streams-menu.png":::
+:::image type="content" source="./media/preview-data-streams/preview-data-streams.png" alt-text="Screenshot that shows the Preview data links from the All data stream page of Real-Time hub." lightbox="./media/preview-data-streams/preview-data-streams.png":::
 
 ## From stream details page
 
