@@ -140,7 +140,7 @@ Now you're familiar with the events and objects used to create a rule. The next 
     :::image type="content" source="media/activator-tutorial/send-test-action.png" alt-text="Screenshot showing the Action section of the Definition pane with Send me a test action button highlighted." lightbox="media/activator-tutorial/send-test-action.png":::        
 1. You should receive a message similar to the following one: 
 
-    :::image type="content" source="media/activator-tutorial/sample-notification.png" alt-text="Screenshot showing the sample Teams notification." lightbox="media/activator-tutorial/sample-notification.png":::            
+    :::image type="content" source="media/activator-tutorial/teams-message.png" alt-text="Screenshot showing the sample Teams notification." lightbox="media/activator-tutorial/teams-message.png":::            
 1. Select **Start**. This causes the rule to become active. You receive a Teams message whenever a medicine package is too hot. The rule should trigger several times every hour.
 
     :::image type="content" source="media/activator-tutorial/start-button.png" alt-text="Screenshot showing the Start button highlighted." lightbox="media/activator-tutorial/start-button.png":::                
