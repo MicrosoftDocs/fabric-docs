@@ -181,6 +181,9 @@ See the following table for the description of each setting.
 >[!NOTE]
 > If you use staged copy with compression enabled, the service principal authentication for staging blob connection isn't supported.
 
+> [!NOTE]
+> Workspace staging times out after 60 minutes. For long-running jobs, it’s recommended to use external storage for staging.
+
 ### Configure parameters in a copy activity
 
 Parameters can be used to control the behavior of a pipeline and its activities. You can use **Add dynamic content** to specify parameters for your copy activity properties. Let's take specifying Lakehouse/Data Warehouse as an example to see how to use it.
