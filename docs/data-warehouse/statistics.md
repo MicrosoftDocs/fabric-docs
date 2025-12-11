@@ -165,9 +165,9 @@ Proactive statistics refresh is a fully-managed process that attempts to frontlo
 
 This optimization aims to reduce the likelihood of a `SELECT` query experiencing delay caused by statistics updates during query plan generation. 
 
-Proactive statistics updates only affect automatically generated histogram statistics, those with the system-generated naming convention of `_WA_sys_`.
+Proactive statistics updates only affect automatically generated histogram statistics, those with the system-generated naming convention of `_WA_Sys_`.
 
-The proactive statistics feature is enabled by default but can be configured using the [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric&preserve-view=true) T-SQL command.
+The proactive statistics refresh feature is enabled by default but can be configured using the [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric&preserve-view=true) T-SQL command.
 
 ## Limitations
 
