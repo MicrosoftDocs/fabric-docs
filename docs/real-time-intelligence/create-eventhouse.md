@@ -23,7 +23,7 @@ In this article, you learn how to create an eventhouse, add new databases to an 
 
 ## Create an eventhouse
 
-1. In the [Fabric portal](http://fabric.microsoft.com), switch to the Fabric experience if needed, and then select **My workspace**.
+1. In the [Fabric portal](https://app.fabric.microsoft.com), switch to the Fabric experience if needed, and then select **My workspace**.
 
     :::image type="content" source="media/eventhouse/fabric-experience.png" alt-text="Screenshot showing the Fabric experience in Real-Time Intelligence." lightbox="media/eventhouse/fabric-experience.png":::
 1. In the pop-up pane, select **My workspace**. 
