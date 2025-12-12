@@ -915,9 +915,6 @@ notebookutils.session.restartPython()
 
 ## Variable library utilities
 
-> [!NOTE]
-> "Variable Library utilities" in Notebooks is in Preview.
-
 Variable libraries allow you to avoid hardcoding values in your notebook code. You can update the values in the library instead of modifying the code. The notebook references the variable library to retrieve those values. This approach simplifies the reuse of code across teams and projects by utilizing a centrally managed library. 
 
 Run the following commands for an overview of the available methods:
@@ -1012,8 +1009,6 @@ notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
 - When using runtime version above 1.2 and run ``` notebookutils.help() ```, the listed **fabricClient**, **PBIClient** APIs are not supported for now, will be available in the further. Additionally, the **Credentials** API isn't supported in Scala notebooks for now.
 
 - The Python notebook doesn't support the **stop**, **restartPython** APIs when using notebookutils.session utility for session management.
-
-- Currently SPN is not supported for variable library utilities.
 
 ## Related content
 
