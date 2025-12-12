@@ -23,7 +23,7 @@ This article compares Azure Synapse Spark and Fabric Spark across Spark pools, c
 | Data | Primary storage (ADLS Gen2) <br>Data residency (cluster/region based) | Primary storage ([OneLake](../onelake/onelake-overview.md)) <br>Data residency (capacity/region based) |
 | Metadata | Internal Hive Metastore (HMS) <br>External HMS (using Azure SQL DB) | Internal HMS ([lakehouse](lakehouse-overview.md)) <br>-|
 | Connections | Connector type (linked services) <br>[Data sources](/azure/synapse-analytics/spark/apache-spark-secure-credentials-with-tokenlibrary) <br>Data source conn. with workspace identity | Connector type (Data Movement and Transformation Services) <br>[Data sources](/power-query/connectors/) <br> - |
-| Security | RBAC and access control <br>Storage ACLs (ADLS Gen2) <br>Private Links <br>Managed VNet (network isolation) <br>Synapse workspace identity<br>Data Exfiltration Protection (DEP) <br>Service tags <br>Key Vault (via mssparkutils/ linked service) | [RBAC and access control](../fundamentals/roles-workspaces.md) <br> [OneLake RBAC](../onelake/security/data-access-control-model.md) <br> [Private Links](../security/security-private-links-overview.md) <br> [Managed VNet](../security/security-managed-vnets-fabric-overview.md) <br> [Workspace identity](../security/workspace-identity.md) <br>- <br>[Service tags](../security/security-service-tags.md) <br>Key Vault (via [notebookutils](microsoft-spark-utilities.md)) |
+| Security | RBAC and access control <br>Storage ACLs (ADLS Gen2) <br>Private Links <br>Managed virtual network (VNet) for network isolation<br>Synapse workspace identity<br>Data Exfiltration Protection (DEP) <br>Service tags <br>Key Vault (via mssparkutils/ linked service) | [RBAC and access control](../fundamentals/roles-workspaces.md) <br> [OneLake RBAC](../onelake/security/data-access-control-model.md) <br> [Private Links](../security/security-private-links-overview.md) <br> [Managed virtual network (VNet)](../security/security-managed-vnets-fabric-overview.md) <br> [Workspace identity](../security/workspace-identity.md) <br>- <br>[Service tags](../security/security-service-tags.md) <br>Key Vault (via [notebookutils](microsoft-spark-utilities.md)) |
 | DevOps | Azure DevOps integration <br>CI/CD (no built-in support) | [Azure DevOps integration](../cicd/git-integration/intro-to-git-integration.md)<br> [Deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md) |
 | Developer experience | IDE integration (IntelliJ) <br>Synapse Studio UI <br>Collaboration (workspaces) <br>Livy API <br>API/SDK <br>mssparkutils | IDE integration ([VS Code](setup-vs-code-extension.md)) <br>Fabric UI <br>Collaboration (workspaces and sharing) <br>[Livy API](api-livy-overview.md) <br>[API](/rest/api/fabric/)/SDK <br>[notebookutils](microsoft-spark-utilities.md) |
 | Logging and monitoring | Spark Advisor <br>Built-in monitoring pools and jobs (through Synapse Studio) <br>Spark history server <br>Prometheus/Grafana <br>Log Analytics <br>Storage Account <br>Event Hubs | [Spark Advisor](spark-advisor-introduction.md) <br>Built-in monitoring pools and jobs (through [Monitoring hub](browse-spark-applications-monitoring-hub.md)) <br>[Spark history server](apache-spark-history-server.md) <br>- <br>[Log Analytics](azure-fabric-diagnostic-emitters-log-analytics.md) <br>[Storage Account](azure-fabric-diagnostic-emitters-azure-storage.md) <br>[Event Hubs](azure-fabric-diagnostic-emitters-azure-event-hub.md) |
@@ -40,7 +40,7 @@ This article compares Azure Synapse Spark and Fabric Spark across Spark pools, c
 - **GPU-accelerated pools**: Not available
 - **.NET for Spark (C#)**: Not supported
 
-### Additional considerations
+### More considerations
 
 - **Workload level RBAC**: Fabric supports four workspace roles. For more information, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
 - **CI/CD**: Use the Fabric API/SDK and [deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md).
@@ -84,7 +84,7 @@ Fabric doesn't support Spark 2.4, 3.1, or 3.2.
 
 ### Autoscale and node configuration
 
-Azure Synapse Spark pools scale up to 200 nodes regardless of node size. In Fabric, the maximum nodes depends on node size and provisioned capacity (SKU).
+Azure Synapse Spark pools scale up to 200 nodes regardless of node size. In Fabric, the maximum number of nodes allowed depends on node size and provisioned capacity (SKU).
 
 Fabric capacity conversion: 2 Spark vCores = 1 capacity unit. For example, SKU F64 provides 64 capacity units (128 Spark vCores). With a small node size (4 vCores), you can have up to 32 nodes (128 ÷ 4 = 32).
 
@@ -189,7 +189,7 @@ Spark libraries apply at three levels:
 
 **When to choose**: Both platforms support environment and inline libraries. Fabric doesn't support workspace-level packages.
 
-- **Built-in libraries**: Fabric and Azure Synapse runtimes share a common Spark core but differ in library versions. Some code may require recompilation or custom libraries. See [Fabric runtime libraries](runtime.md).
+- **Built-in libraries**: Fabric and Azure Synapse runtimes share a common Spark core but differ in library versions. Some code might require recompilation or custom libraries. See [Fabric runtime libraries](runtime.md).
 
 > [!NOTE]
 > Learn how to [migrate Azure Synapse Spark libraries to Fabric](migrate-synapse-spark-libraries.md).
@@ -201,7 +201,7 @@ Notebooks and Spark job definitions are primary code items for developing Apache
 |Notebook capability| Azure Synapse Spark | Fabric Spark |
 |--|--|--|
 | Import/export | Yes | Yes |
-| Session configuration | Yes, UI and inline | Yes, UI (environment) and inline |
+| Session configuration | Yes. UI and inline | Yes. UI (environment) and inline |
 | IntelliSense | Yes | Yes |
 | mssparkutils | Yes | Yes |
 | Notebook resources | No | Yes |
