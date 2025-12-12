@@ -1,13 +1,13 @@
 ---
-title: Comparison between Fabric and Azure Synapse Spark.
-description: Learn about the key differences between support for Azure Synapse Spark and Apache Spark for Fabric.
+title: "Compare Fabric and Azure Synapse Spark: Key Differences"
+description: Compare Azure Synapse Spark and Fabric Spark across pools, configurations, libraries, notebooks, and Spark job definitions. Find out which platform fits your analytics needs.
 ms.reviewer: jejiang
 ms.author: eur
 author: eric-urban
 ms.topic: overview
 ms.custom:
   - fabric-cat
-ms.date: 11/15/2023
+ms.date: 12/12/2025
 ---
 
 # Compare Fabric Data Engineering and Azure Synapse Spark
@@ -40,7 +40,7 @@ This article compares Azure Synapse Spark and Fabric Spark across Spark pools, c
 - **GPU-accelerated pools**: Not available
 - **.NET for Spark (C#)**: Not supported
 
-### More considerations
+### More Fabric considerations
 
 - **Workload level RBAC**: Fabric supports four workspace roles. For more information, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
 - **CI/CD**: Use the Fabric API/SDK and [deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md).
