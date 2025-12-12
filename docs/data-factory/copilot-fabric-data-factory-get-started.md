@@ -85,13 +85,15 @@ Take my current data and create a transformation that filters for customers in E
 > [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
-## Get started with Copilot for pipelines
+## Generate a pipeline with Copilot
 
-You can use Copilot to generate, summarize, or even troubleshoot your pipelines.
+You can use AI tools, such as Copilot, to generate complete pipeline workflows from natural language descriptions. Instead of manually creating and configuring pipeline activities, describe your data integration needs and let Copilot generate the pipeline structure.
 
-### Generate a pipeline with Copilot
+```copilot-prompt
+Create a pipeline that copies data from a SQL Server database table called "Orders" to an Azure Data Lake Storage Gen2 container, with error handling and logging enabled.
+```
 
-Use these steps to generate a new pipeline with Copilot for Data Factory:
+Or you can use these steps to generate a new pipeline alongside Copilot for Data Factory:
 
 1. Create a new [pipeline](../data-factory/tutorial-end-to-end-pipeline.md).
 1. On the **Home** tab of the pipeline editor, select the **Copilot** button.
@@ -104,18 +106,10 @@ Use these steps to generate a new pipeline with Copilot for Data Factory:
 
 1. If you're already familiar with pipelines, you can complete everything with one prompt command, too.
 
-## Use AI to generate pipeline workflows
-
-You can use AI tools, such as Copilot, to generate complete pipeline workflows from natural language descriptions. Instead of manually creating and configuring pipeline activities, describe your data integration needs and let Copilot generate the pipeline structure.
-
-```copilot-prompt
-Create a pipeline that copies data from a SQL Server database table called "Orders" to an Azure Data Lake Storage Gen2 container, with error handling and logging enabled.
-```
-
 > [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
-### Summarize a pipeline with Copilot
+## Summarize a pipeline with Copilot
 
 Use these steps to summarize a pipeline with Copilot for Data Factory:
 
@@ -127,7 +121,7 @@ Use these steps to summarize a pipeline with Copilot for Data Factory:
 
 1. Select **Summarize this pipeline**, and Copilot generates a summary.
 
-### Troubleshoot pipeline errors with Copilot
+## Troubleshoot pipeline errors with Copilot
 
 Copilot empowers you to troubleshoot any pipeline with error messages on the Fabric Monitor page or the pipeline authoring page. When your pipeline fails, instead of manually analyzing error logs, Copilot can explain the error and provide troubleshooting recommendations.
 
