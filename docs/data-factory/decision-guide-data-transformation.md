@@ -99,7 +99,7 @@ The team enables **Fast Copy** in Dataflows Gen2. Fast Copy optimizes data movem
 
 :::image type="content" source="media/decision-guide-data-transformation/fast-copy-design.png" alt-text="Screenshot of dataflow design for Fast Copy showcasing Query settings." lightbox="media/decision-guide-data-transformation/fast-copy-design.png":::
 
-This query gathered data from the source, filtered hidden files, added a custom function, invoked it, renamed columns, removed other columns, expanded a table column, and changed two column types before loading to the Lakehouse.
+This query combines the five year-wise Parquet files and loads the result into the lakehouse.
 
 #### Fast copy considerations
 
@@ -120,13 +120,13 @@ Fast Copy provides **up to about nine times faster ingestion** while reducing co
 
 :::image type="content" source="media/decision-guide-data-transformation/results-without-fast-copy.png" alt-text="Screenshot of Recent runs results without Fast Copy." lightbox="media/decision-guide-data-transformation/results-without-fast-copy.png":::
 
-This run took an hour and nine minutes to copy the data without Fast Copy enabled.
+This run took an hour and nine minutes to copy the data without fast copy enabled.
 
 #### With fast copy
 
 :::image type="content" source="media/decision-guide-data-transformation/results-with-fast-copy.png" alt-text="Screenshot of Recent runs results with Fast Copy." lightbox="media/decision-guide-data-transformation/results-with-fast-copy.png":::
 
-This run took seven minutes to copy the data with Fast Copy enabled.
+This run took seven minutes to copy the data with fast copy enabled.
 
 ## Scenario 2: Improve transformation speed by using modern evaluator
 
@@ -150,7 +150,7 @@ The team enables **Modern Evaluator**, a high-performance execution engine desig
 
 :::image type="content" source="media/decision-guide-data-transformation/modern-evaluator-design.png" alt-text="Screenshot of dataflow design for Modern Evaluator showcasing Query settings." lightbox="media/decision-guide-data-transformation/modern-evaluator-design.png":::
 
-This query pulls the data from the source, navigates to the correct data, imports parquet data, changed a column name, filtered rows, changed another column name, filtered rows, changed a third column name, filtered rows, replaced a value, inserted another column, and changed that column's name before loading the data to the warehouse.
+This query ingests data from a consolidated parquet file, filters the trip_distance and fare_amount columns to keep values above 0, replaces nulls in passenger_count with 1, and creates a new payment_method column by mapping the payment types before loading the data into the warehouse.
 
 #### Modern evaluator considerations
 
@@ -172,13 +172,13 @@ Modern Evaluator improves transformation speed by **about 1.6×** while preservi
 
 :::image type="content" source="media/decision-guide-data-transformation/results-without-modern-evaluator.png" alt-text="Screenshot of Recent runs results without Modern Evaluator." lightbox="media/decision-guide-data-transformation/results-without-modern-evaluator.png":::
 
-This transformation took 1 hour and 34 minutes without the modern evaluator.
+This transformation took an hour and 34 minutes without the modern evaluator.
 
 #### With modern evaluator
 
 :::image type="content" source="media/decision-guide-data-transformation/results-with-modern-evaluator.png" alt-text="Screenshot of Recent runs results with Modern Evaluator." lightbox="media/decision-guide-data-transformation/results-with-modern-evaluator.png":::
 
-This transformation took one hour and one minute with the modern evaluator.
+This transformation took an hour and one minute with the modern evaluator.
 
 ## Scenario 3: Scale transformations with partitioned compute
 
@@ -209,7 +209,7 @@ The team enables **Partitioned Compute**, which parallelizes processing across p
 
 :::image type="content" source="media/decision-guide-data-transformation/partitioned-compute-design.png" alt-text="Screenshot of dataflow design for Partitioned Compute showcasing Query settings." lightbox="media/decision-guide-data-transformation/partitioned-compute-design.png":::
 
-This query pulls data from a parquet source, filters the rows, and adds a custom equation column.
+This query combines 56 parquet files and creates a new custom column for tip percentage "Tip Pctg" on the "Transform Sample file" before loading the data into the warehouse.
 
 ### Results
 
@@ -225,7 +225,7 @@ Partitioned Compute delivers **15× faster performance**, and when combined with
 
 :::image type="content" source="media/decision-guide-data-transformation/results-without-partitioned-compute.png" alt-text="Screenshot of Recent runs results without Partitioned Compute." lightbox="media/decision-guide-data-transformation/results-without-partitioned-compute.png":::
 
-This transformation took 1 hour and 44 minutes without partitioned compute.
+This transformation took an hour and 44 minutes without partitioned compute.
 
 #### With partitioned compute
 
