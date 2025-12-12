@@ -16,49 +16,14 @@ In this step of the tutorial, you generate a new ontology that represents the La
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-This tutorial contains two options for setting up the ontology (preview) item: automatically **generate it from a semantic model**, or manually **build it from OneLake data**. 
-
-Choose your preferred scenario by using the selector at the beginning of the article.
+[!INCLUDE [Fabric tutorial choice note](includes/choose-tutorial-method.md)]
 
 ::: zone pivot="semantic-model"
-## About generating an ontology from a semantic model
+## Generating an ontology from a semantic model
 
-A [semantic model](../../data-warehouse/semantic-models.md) in Fabric is a logical description of an analytical domain (like a business). They can be created from lakehouse tables, and hold information about your data and the relationships among that data.
+A [semantic model](../../data-warehouse/semantic-models.md) in Fabric is a logical description of an analytical domain (like a business). They can be created from lakehouse tables, and hold information about your data and the relationships among that data. When your data is represented by a semantic model, you can generate an ontology directly from that semantic model. For general information about generating an ontology from a semantic model, see [Generating an ontology (preview) from a semantic model](concepts-generate.md).
 
-When your data is represented by a semantic model, you can generate an ontology directly from that semantic model. 
-
-Ontology generation automatically performs the following actions:
-* Creates a new **ontology (preview) item** in your Fabric workspace, with a name of your choosing
-* Creates an **entity type** in the ontology for each table in your semantic model
-* Creates **static properties** on each entity type based on the columns in your tables, and **binds data** to them based on data rows
-* Creates **relationship types** between entity types that follow relationships defined in the semantic model
-
-After generating an ontology, complete these actions manually:
-* Bind **time series data** to entity types (properties for time series data aren't created automatically)
-* Review **entity type keys** and add them if missing (especially for multi-key scenarios)
-* Bind **relationship types** to data
-* Review the entire ontology to make sure entity types, their properties and data bindings, and relationships are complete
-
-In this tutorial step, you generate an ontology from the sample semantic model that you set up in the [previous step](tutorial-0-introduction.md?pivots=semantic-model#prepare-the-power-bi-semantic-model).
-
-### Support for semantic model modes
-
-This section describes support in ontology (preview) for different semantic model modes. For more information about semantic models and their modes, see [Power BI semantic models in Microsoft Fabric](../../data-warehouse/semantic-models.md).
-
-| Ontology (preview) | Import mode | Direct Lake mode | DirectQuery mode |
-| --- | --- | --- | --- |
-| Generating entity type definitions | Supported | Supported | Supported |
-| Generating property definitions | Supported | Supported | Supported |
-| Generating relationship definitions | Supported | Supported | Supported |
-| Generating entity type bindings to data sources | Not supported | Supported | Not Supported |
-| Generating relationship type bindings to data sources | Not supported | Supported only if primary key is identified (the primary key is used as the entity type key for the ontology) | Not Supported |
-| Querying data using bindings to data sources | Not supported | Supported (without measures and calculated columns) | Not Supported |
-
-### Other semantic model limitations
-
-* Ontology does not support creating data bindings when the semantic model table is in **Direct Lake mode** and the backing lakehouse is in a workspace with **inbound public access disabled**. The ontology item is created successfully but that entity type has no data bindings.
-* Fabric Graph does not currently support the `Decimal` type. As a result, if you generate an ontology from a semantic model with tables that include `Decimal` type columns, you see null values returned for those properties on all queries. 
-    * `Decimal` is different from the floating-point `Double` type, which is supported. `Decimal` is a fixed-precision numeric type that is most commonly used for representing monetary values.
+In this tutorial step, you generate an ontology from the sample semantic model that you set up in the [previous step](tutorial-0-introduction.md?pivots=semantic-model#prepare-the-power-bi-semantic-model). Then, you verify and complete the ontology.
 
 ## Generate ontology
 
@@ -138,6 +103,10 @@ The *SaleEvent* entity type doesn't have a key that was imported from the source
     :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/add-key.png" alt-text="Screenshot of adding entity type key.":::
 
 1. Select `SaleId`.
+
+    >[!NOTE]
+    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
+
 1. When the key is saved, it looks like this:
 
     :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/sale-event-key.png" alt-text="Screenshot of the sale event key.":::
@@ -169,7 +138,7 @@ Select the *SaleEvent* entity type to display it and its relationship types on t
 Select each of the relationship types and update its details to match the following table. First, rename the relationship type to the provided friendlier name. Next, set the correct order of source and target entity types. Finally, bind the relationship type to the source data table and select the source columns.
 
 >[!NOTE]
->To prevent unexpected behavior from a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&active=true&fixed=true&sort=published&issueId=1619), make sure the correct source and target entity types are set before choosing the source data table to bind.
+>To prevent unexpected behavior from a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1619), make sure the correct source and target entity types are set before choosing the source data table to bind.
 
 The final relationship details match the following table.
 
@@ -185,7 +154,7 @@ Here's an example of what an updated relationship type looks like.
 ::: zone-end
 
 ::: zone pivot="onelake"
-## About building an ontology from OneLake
+## Building an ontology from OneLake
 
 When your data is stored in OneLake, you can build an ontology from the OneLake data tables.
 
@@ -258,6 +227,9 @@ First create entity types, which represent types of objects in a business. This 
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/entity-type-key-2.png" alt-text="Screenshot of selecting the entity type key.":::
 
+    >[!NOTE]
+    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
+
 Now the *Store* entity type is ready. Continue to the next section to create the remaining entity types.
 
 ### Add other entity types (Products, SaleEvent)
@@ -315,6 +287,6 @@ When you're done, you have two relationships targeting the *SaleEvent* entity ty
 
 ## Next steps
 
-In this step, you created an ontology (preview) item and populated it with entity types, their properties, and relationship types between them. Next, enrich the entities further by adding a *Freezer* entity that's bound to time series data.
+In this step, you created an ontology (preview) item and populated it with entity types, their properties, and relationship types between them. Next, enrich the entities further by adding a *Freezer* entity that's bound to both static and time series data.
 
-Next, continue to [Enrich the ontology with time series data](tutorial-2-enrich-ontology.md).
+Next, continue to [Enrich the ontology with additional data](tutorial-2-enrich-ontology.md).

@@ -4,7 +4,7 @@ description: Create a data agent that queries the ontology (preview) in natural 
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 12/03/2025
+ms.date: 12/11/2025
 ms.topic: tutorial
 ---
 
@@ -29,23 +29,32 @@ When the agent is ready, it opens.
 
 :::image type="content" source="media/tutorial-4-create-data-agent/data-agent.png" alt-text="Screenshot of the Retail Ontology Agent." lightbox="media/tutorial-4-create-data-agent/data-agent.png":::
 
+## Provide agent instructions
+
+Next, add some custom instructions to the agent.
+
+1. Select **Agent instructions** from the menu ribbon.
+1. At the bottom of the input box, add `Support group by in GQL`. This instruction enables better aggregation across ontology data.
+
+    :::image type="content" source="media/tutorial-4-create-data-agent/agent-instructions.png" alt-text="Screenshot of the agent instructions." lightbox="media/tutorial-4-create-data-agent/agent-instructions.png":::
+1. The instruction is applied automatically. Optionally, close the **Agent instructions** tab.
+
 ## Query agent with natural language
 
 Next, explore your ontology with natural language questions. 
 
-Start with these example prompts:
-* *For each store, show any timestamps where a freezer operated by that store had a temperature higher than -18 degrees C, and the total units sold that day.*
-* *List the top three products by revenue in Paris stores.*
-* *Do stores with higher freezer temperatures correlate with lower daily sales? Explain the evidence.*
+Start by entering these example prompts:
+* *For each store, show any freezers operated by that store that ever had a humidity lower than 46 percent.*
+* *What is the top product by revenue across all stores?*
 
-Notice that the responses reference entity types (*Store*, *SaleEvent*, *Products*, *Freezer*) and their relationships, not just raw tables.
+Notice that the responses reference entity types (*Store*, *Products*, *Freezer*) and their relationships, not just raw tables.
 
 :::image type="content" source="media/tutorial-4-create-data-agent/query-result.png" alt-text="Screenshot of the result of a query." lightbox="media/tutorial-4-create-data-agent/query-result.png":::
 
-Continue exploring the data agent by trying out some prompts of your own.
-
 >[!TIP]
->When you're using data agent with ontology, if the agent's answers are too generic, make sure that the agent includes the ontology as a knowledge source. Also, make sure that entity and relationship names are meaningful and documented in the ontology.
+> If you experience errors saying there's no data while running the example queries, try waiting a few minutes to give the agent more time to initialize, then running the queries again.
+
+Continue exploring the data agent by trying out some prompts of your own.
 
 ## Next steps
 

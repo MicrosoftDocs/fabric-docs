@@ -8,8 +8,6 @@ ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
-zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
-zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Add a custom endpoint or custom app destination to an eventstream
@@ -19,8 +17,6 @@ If you want to connect your own application with an eventstream, you can add a c
 This article shows you how to add a custom endpoint destination or a custom app destination to an eventstream in Microsoft Fabric event streams.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
-
-::: zone pivot="enhanced-capabilities"  
 
 ## Prerequisites
 
@@ -154,92 +150,3 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Lakehouse](add-destination-lakehouse.md)
 - [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
 
-::: zone-end
-
-::: zone pivot="standard-capabilities"
-
-## Prerequisites
-
-Before you start, you must get access to the eventstream's workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
-## Add a custom app as a destination
-
-If you want to route event data to your application, you can add a custom app as your eventstream destination:
-
-1. Select **New destination** on the ribbon or the plus sign (**+**) in the main editor canvas, and then select **Custom App**.
-
-1. On the **Custom App** pane, enter a destination name for the custom app, and then select **Add**.
-
-   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" alt-text="Screenshot of the pane for configuring a custom app as a destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png":::
-
-## Get endpoint details on the Details pane to consume events
-
-After you successfully create the custom application as a destination, you can view the information on the **Details** pane.
-
-:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot that shows the Details pane for a custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png":::
-
- The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code**. These pages offer the endpoint details with the corresponding protocol for connecting.
-
-**Basic** shows the name, type, and status of your custom app.
-
-:::image type="content" source="./media/add-destination-custom-app-enhanced/custom-app-details-basic.png" alt-text="Screenshot that shows basic details for a custom app on the Details pane of an eventstream.":::
-
-**Keys** provides information about connection keys. **Sample code** provides the sample code, with the corresponding keys embedded, that you can use to stream the events to your eventstream. The information on these pages varies by protocol.
-
-### Event hub
-
-The **Keys** page on the **Event Hub** tab contains information related to an event hub's connection string. The information includes **Event hub name**, **Shared access key name**, **Primary key**, and **Connection string-primary key**.
-
-:::image type="content" source="./media/add-destination-custom-app-enhanced/event-hub-keys.png" alt-text="Screenshot that shows event hub keys on the Details pane of the eventstream.":::
-
-The event hub format is the default for the connection string, and it works with the Azure Event Hubs SDK. This format allows you to connect to your eventstream via the Event Hubs protocol.
-
-The following example shows what the connection string looks like in event hub format:
-
-> *Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxx*
-
-The **Sample code** page on the **Event Hub** tab offers ready-to-use code that includes the required information about connection keys in the event hub. Simply copy and paste it into your application for use.
-
-:::image type="content" source="./media/add-destination-custom-app-enhanced/event-hub-sample-code.png" alt-text="Screenshot that shows event hub sample code on the Details pane of the eventstream.":::
-
-### Kafka
-
-The Kafka format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use the **Keys** and **Sample code** information for the Kafka protocol format to connect to the eventstream and consume the events.
-
-:::image type="content" source="./media/add-destination-custom-app-enhanced/kafka-keys.png" alt-text="Screenshot that shows Kafka keys on the Details pane of the eventstream.":::
-
-The **Sample code** page on the **Kafka** tab provides ready-made code, including the necessary connection keys in Kafka format. Simply copy it for your use.
-
-:::image type="content" source="./media/add-destination-custom-app-enhanced/kafka-sample-code.png" alt-text="Screenshot that shows Kafka sample code on the Details pane of the eventstream.":::
-
-### AMQP
-
-The AMQP format is compatible with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between various platforms and languages. You can use this format to connect to your eventstream by using the AMQP protocol.
-
-:::image type="content" source="./media/add-destination-custom-app-enhanced/amqp-keys.png" alt-text="Screenshot that shows AMQP keys on the Details pane of the eventstream.":::
-
-The **Sample code** page on the **AMQP** tab provides ready-to-use code with connection key information in AMQP format.
-
-:::image type="content" source="./media/add-destination-custom-app-enhanced/amqp-sample-code.png" alt-text="Screenshot that shows AMQP sample code on the Details pane of the eventstream.":::
-
-You can choose the protocol format that suits your application needs and preferences, and then copy and paste the connection string into your application. You can also refer to or copy the sample code on the **Sample code** page, which shows how to send or receive events by using various protocols.
-
-## Manage a destination
-
-You can edit (via the **Edit** command) or remove (via the **Remove** command) an eventstream destination through either the **Data** pane or the canvas.
-
-When you select **Edit**, the edit pane opens on the right side of the main editor. You can modify the configuration as you want, including the event transformation logic through the event processor editor.
-
-:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot that shows where to select the modify and delete options for destinations on the canvas." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
-
-## Related content
-
-To learn how to add other destinations to an eventstream, see the following articles:
-
-- [Eventhouse](add-destination-kql-database.md)
-- [Lakehouse](add-destination-lakehouse.md)
-- [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
-
-::: zone-end

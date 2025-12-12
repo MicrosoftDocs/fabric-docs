@@ -43,6 +43,9 @@ Data binding uses the following ontology (preview) concepts.
     * Properties can be bound to static or time series data. Static data doesn't change over time, and represents fixed characteristics about the entity type (like *ID*). Time series data contains attributes whose values vary over time (like *temperature* and *location*).
 * *Entity type key:* A unique identifier for each instance of an entity type within your ontology. This value is created from static data bound to one or more properties modeled on your entity type.
 
+    >[!NOTE]
+    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
+
 ## How-to steps
 
 This section contains step-by-step instructions for adding and managing data bindings.
@@ -87,6 +90,9 @@ First, bind static data. Static data bindings must be created before time series
 1. Next, set the **Key**. The entity type key value represents a unique identifier for each record of ingested data. Select one or more columns from the source data that can be used to uniquely identify a record. This process must be done once for each entity type.
 
     :::image type="content" source="media/how-to-bind-data/entity-type-key.png" alt-text="Screenshot of adding an entity type key.":::
+
+    >[!IMPORTANT]
+    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
 
 1. Optionally, select a property modeled on your entity type to use as the **Instance display name**. This step provides a friendly name for entity instances in downstream experiences.
 

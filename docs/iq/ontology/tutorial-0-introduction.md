@@ -19,16 +19,12 @@ This tutorial shows how to create your first ontology (preview) in Microsoft Fab
 
 The example scenario for this tutorial is a fictional company called Lakeshore Retail. Lakeshore is a retail ice cream seller that keeps data on sales and freezer streaming data. In the tutorial, you generate entity types (like *Store*, *Products*, and *SaleEvent*), bind streaming data (like *freezer temperature*) from Eventhouse, and answer questions like: "Which stores have fewer ice cream sales when their freezer temperature rises higher than -18°C?"
 
-## Choose scenario for creating ontology
-
-This tutorial contains two options for setting up the ontology (preview) item: automatically **generate it from a semantic model**, or manually **build it from OneLake data**. 
-
-Choose your preferred scenario by using the selector at the beginning of the article.
+[!INCLUDE [tutorial choice note](includes/choose-tutorial-method.md)]
 
 ## Prerequisites
 
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). Use this workspace for all resources created in the tutorial.
-* **Ontology item (preview)**, **Graph (preview)**, and **Data agent item types (preview)** enabled on your tenant.
+* **Ontology item (preview)**, **Graph (preview)**, **XMLA endpoints**, and **Data agent item types (preview)** enabled on your tenant.
     * [Fabric administrators](../../admin/roles.md) can grant access to ontology in the [admin portal](../../admin/admin-center.md). In the [tenant settings](../../admin/tenant-settings-index.md), enable *Ontology item (preview)*, *Graph (preview)*, *XMLA endpoints*, and *Data agent item types (preview)*.
 
         :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
