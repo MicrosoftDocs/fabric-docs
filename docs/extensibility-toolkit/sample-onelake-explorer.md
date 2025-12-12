@@ -12,7 +12,7 @@ ms.date: 12/04/2025
 
 ![OneLake Explorer Item in action](./media/sample-onelake-explorer/onelake-explorer-overview.png)
 
-The OneLake Explorer sample item demonstrates how to build a Fabric workload item that interacts with OneLake. It provides a file explorer interface allowing users to browse, view, and edit files stored in OneLake, as well as preview tables.
+The OneLake Explorer sample item demonstrates how to build a Fabric workload item that interacts with OneLake. It provides a file explorer interface allowing users to browse, view, and edit files stored in OneLake, and preview table files.
 
 ## Overview
 
