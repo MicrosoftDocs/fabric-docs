@@ -82,27 +82,23 @@ Fabric Spark supported versions:
 
 Fabric doesn't support Spark 2.4, 3.1, or 3.2.
 
-### Autoscale and node configuration
+### Adjustable node sizes
 
-Azure Synapse Spark pools scale up to 200 nodes regardless of node size. In Fabric, the maximum number of nodes allowed depends on node size and provisioned capacity (SKU).
+Azure Synapse Spark pools scale up to 200 nodes regardless of node size. In Fabric, the maximum number of nodes depends on node size and provisioned capacity (SKU).
 
-Fabric capacity conversion: 2 Spark vCores = 1 capacity unit. For example, SKU F64 provides 64 capacity units (128 Spark vCores). With a small node size (4 vCores), you can have up to 32 nodes (128 ÷ 4 = 32).
+Fabric capacity conversion: 2 Spark vCores = 1 capacity unit. **Formula**: total vCores in capacity ÷ vCores per node size = maximum nodes available.
 
-**Formula**: total vCores in capacity ÷ vCores per node size = maximum nodes available.
-
-For more information, see [Spark compute](spark-compute.md).
-
-### F64 SKU capacity example
-
-The following example shows node limits for the F64 SKU.
+For example, SKU F64 provides 64 capacity units (128 Spark vCores). The following table shows node limits for F64:
 
 | Spark pool size | Azure Synapse Spark | Fabric Spark (Custom Pool, SKU F64) |
 |--|--|--|
-| Small | Min: 3, Max: 200 | Min: 1, Max: 32 |
-| Medium | Min: 3, Max: 200 | Min: 1, Max: 16 |
-| Large | Min: 3, Max: 200 | Min: 1, Max: 8 |
-| X-Large | Min: 3, Max: 200 | Min: 1, Max: 4 |
-| XX-Large | Min: 3, Max: 200 | Min: 1, Max: 2 |
+| Small (4 vCores) | Min: 3, Max: 200 | Min: 1, Max: 32 |
+| Medium (8 vCores) | Min: 3, Max: 200 | Min: 1, Max: 16 |
+| Large (16 vCores) | Min: 3, Max: 200 | Min: 1, Max: 8 |
+| X-Large (32 vCores) | Min: 3, Max: 200 | Min: 1, Max: 4 |
+| XX-Large (64 vCores) | Min: 3, Max: 200 | Min: 1, Max: 2 |
+
+For more information, see [Spark compute](spark-compute.md).
 
 ### Node sizes
 
