@@ -46,6 +46,9 @@ from synapse.ml.services.openai import *
 
 Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the openai libraries. GPT-4.1 and GPT-4.1-mini are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
 
+> [!NOTE]
+> Different versions of the OpenAI Python SDK may have different method names and parameters. Please refer to the [official documentation](https://platform.openai.com/docs/api-reference?lang=python) for the version you are using.
+
 
 ```Python
 import openai
