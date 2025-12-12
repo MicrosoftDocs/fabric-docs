@@ -53,13 +53,13 @@ from synapse.ml.services.openai import *
 
 # [OpenAI Python SDK < 1.0.0](#tab/python0)
 
-Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the openai libraries. GPT-4o and GPT-4o-mini are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
+Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the openai libraries. GPT-4.1 and GPT-4.1-mini are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
 
 ``` Python
 import openai
 
 response = openai.ChatCompletion.create(
-    deployment_id='gpt-4o', # deployment_id could be one of {gpt-4o or gpt-4o-mini}
+    deployment_id='gpt-4.1', # deployment_id could be one of {gpt-4.1 or gpt-4.1-mini}
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Knock knock."},
@@ -81,7 +81,7 @@ We can also stream the response
 
 ``` Python
 response = openai.ChatCompletion.create(
-    deployment_id='gpt-4o', # deployment_id could be one of {gpt-4o or gpt-4o-mini}
+    deployment_id='gpt-4.1', # deployment_id could be one of {gpt-4.1 or gpt-4.1-mini}
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Knock knock."},
@@ -109,17 +109,17 @@ for chunk in response:
 
 # [OpenAI Python SDK >=1.0.0](#tab/python1)
 
-Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the openai libraries. GPT-4o and GPT-4o-mini are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
+Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the openai libraries. GPT-4.1 and GPT-4.1-mini are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
 
 
 ```Python
 import openai
 import os
 
-os.environ["OPENAI_API_VERSION"] = "2023-05-15"
+os.environ["OPENAI_API_VERSION"] = "2024-02-15-preview"
 
 response = openai.chat.completions.create(
-    model='gpt-4o', # model could be one of {gpt-4o or gpt-4o-mini}
+    model='gpt-4.1', # model could be one of {gpt-4.1 or gpt-4.1-mini}
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Knock knock."},
@@ -141,12 +141,12 @@ print(f"{response.choices[0].message.role}: {response.choices[0].message.content
 
 # [SynapseML](#tab/synapseml)
 
-Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the openai libraries. GPT-4o and GPT-4o-mini models are language models that are optimized for conversational interfaces.
+Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the openai libraries. GPT-4.1 and GPT-4.1-mini models are language models that are optimized for conversational interfaces.
 
 `deployment_name` could be one of:
 
--   `gpt-4o`
--   `gpt-4o-mini`
+-   `gpt-4.1`
+-   `gpt-4.1-mini`
 
 ``` python
 from synapse.ml.services.openai import OpenAIChatCompletion
@@ -180,7 +180,7 @@ chat_df = spark.createDataFrame(
 
 chat_completion = (
     OpenAIChatCompletion()
-    .setDeploymentName("gpt-4o") # deploymentName could be one of {gpt-4o or gpt-4o-mini}
+    .setDeploymentName("gpt-4.1") # deploymentName could be one of {gpt-4.1, gpt-4.1-mini}
     .setMessagesCol("messages")
     .setErrorCol("error")
     .setOutputCol("chat_completions")
