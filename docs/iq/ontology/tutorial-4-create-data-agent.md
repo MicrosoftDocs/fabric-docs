@@ -31,7 +31,10 @@ When the agent is ready, it opens.
 
 ## Provide agent instructions
 
-Next, add some custom instructions to the agent.
+>[!NOTE]
+>This step is added in response to a known issue affecting aggregation in queries.
+
+Next, add a custom instruction to the agent.
 
 1. Select **Agent instructions** from the menu ribbon.
 1. At the bottom of the input box, add `Support group by in GQL`. This instruction enables better aggregation across ontology data.
