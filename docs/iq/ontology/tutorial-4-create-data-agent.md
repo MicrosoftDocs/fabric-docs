@@ -31,6 +31,9 @@ When the agent is ready, it opens.
 
 ## Provide agent instructions
 
+>[!NOTE]
+>This step is added in response to a known issue affecting aggregation in queries.
+
 Next, add some custom instructions to the agent.
 
 1. Select **Agent instructions** from the menu ribbon.
