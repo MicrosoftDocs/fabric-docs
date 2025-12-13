@@ -3,7 +3,7 @@ title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Query
 description: Run KQL queries on contextualized digital twin builder (preview) data and visualize it in a Real-Time Dashboard.
 author: baanders
 ms.author: baanders
-ms.date: 11/10/2025
+ms.date: 12/12/2025
 ms.topic: tutorial
 ---
 
@@ -15,7 +15,7 @@ Now that your digital twin builder (preview) data is projected to an eventhouse,
 
 ## Query the data using KQL
 
-Begin in your *Tutorial_queryset* from the previous part of the tutorial. 
+Begin where the previous part of the tutorial left off, in the *Tutorial_queryset* tab for your *Tutorial* KQL database. 
 
 Using the **+** above the query pane, create the following new queries. (For more information about creating KQL queries, see [Query data in a KQL queryset](../kusto-query-set.md).)
 
