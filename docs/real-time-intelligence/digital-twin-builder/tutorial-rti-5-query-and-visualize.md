@@ -149,14 +149,22 @@ Start by creating an empty Real-Time Dashboard in your Fabric workspace.
 
 [!INCLUDE [Real-Time Intelligence create-real-time-dashboard](../includes/create-real-time-dashboard.md)]
 
+6. Dashboard options can't be accessed until the dashboard is connected to some data source. Add an initial data source by selecting the **Tutorial** KQL database where it's visible on the canvas.
+
+    :::image type="content" source="media/tutorial-rti/real-time-dashboard-source.png" alt-text="Screenshot of adding a KQL database source." lightbox="media/tutorial-rti/real-time-dashboard-source.png":::
+
+    The database opens with the option to enter a query for a new tile. Since you import tiles in the next step, there's no need to create a tile now. Select **Discard changes** to return to the dashboard that's now functional with a data source connection.
+
+    :::image type="content" source="media/tutorial-rti/real-time-dashboard-source-2.png" alt-text="Screenshot of discarding tile edits." lightbox="media/tutorial-rti/real-time-dashboard-source-2.png":::
+
 ### Upload template and connect data source
 
 Next, use a template file to populate your dashboard with tiles based on your KQL queries from earlier.
 
 1. Download the *DTB+RTI_dashboard.json* dashboard template from the sample folder in GitHub: [digital-twin-builder/bus-scenario](https://aka.ms/dtb-samples-bus).
-1. In your Real-Time Dashboard, select the **Manage** tab and **Replace with file**.
+1. In your Real-Time Dashboard, switch to the **Manage** tab. Select **Replace with file** from the menu ribbon.
 1. Open the dashboard template file that you downloaded. Continue through the **migration warnings** that flag the template's placeholder values for the database and workspace ID.
-1. The template file populates the dashboard with multiple tiles, although the tiles can't get data because there's no connected data source yet.
+1. The template file populates the dashboard with multiple tiles, although the tiles can't get data until you reconnect your data source.
 
     :::image type="content" source="media/tutorial-rti/real-time-dashboard-errors.png" alt-text="Screenshot of the Real-Time Dashboard with errors.":::
 
