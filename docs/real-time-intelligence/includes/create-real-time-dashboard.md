@@ -5,7 +5,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: include
 ms.custom:
-ms.date: 06/19/2025
+ms.date: 12/12/2025
 ---
 
 The Real-Time Dashboard exists within the context of a workspace. A new Real-Time dashboard is always associated with the workspace you're using when you create it.
@@ -21,5 +21,9 @@ The Real-Time Dashboard exists within the context of a workspace. A new Real-Tim
 1. A new dashboard is created in your workspace.
 
     :::image type="content" source="./media/create-real-time-dashboard/dashboard-new.png" alt-text="Screenshot of newly created Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric.":::
+
+1. Complete dashboard setup by adding a data source to the dashboard. After the dashboard is connected to a data source, you can access all dashboard options like adding new tiles.
+
+    :::image type="content" source="./media/create-real-time-dashboard/dashboard-new-source.png" alt-text="Screenshot of Real-Time Dashboard with all options enabled.":::
 
     
