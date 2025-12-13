@@ -33,7 +33,6 @@ This article compares Azure Synapse Spark and Fabric Spark across Spark pools, c
 
 ### Key limitations in Fabric
 
-- **JDBC**: Not supported
 - **DMTS in notebooks**: Data Movement and Transformation Services can't be used in notebooks or Spark job definitions
 - **Managed identity for Key Vault**: Not supported in notebooks
 - **External Hive Metastore**: Not supported
