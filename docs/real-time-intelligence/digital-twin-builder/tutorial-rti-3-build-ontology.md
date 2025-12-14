@@ -3,7 +3,7 @@ title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Build
 description: Build an ontology in digital twin builder (preview) by creating entity types, mapping data, and creating relationship types.
 author: baanders
 ms.author: baanders
-ms.date: 11/10/2025
+ms.date: 12/12/2025
 ms.topic: tutorial
 ---
 
@@ -53,7 +53,7 @@ Next, map some non-timeseries data to the Bus entity type. These fields are stat
 1. For the **Property type**, leave the default selection of **Non-timeseries properties**. 
 1. Under **Unique Id**, select the edit icon (shaped like a pencil) to choose a unique ID out of one or more columns from your source data. Digital twin builder uses this field to uniquely identify each row of ingested data.
 
-    Select *TripId* as the unique ID column.
+    Select *TripId* as the unique ID column and select **Ok**.
 
     :::image type="content" source="media/tutorial-rti/bus-unique-id.png" alt-text="Screenshot of the bus unique ID.":::
 
@@ -148,7 +148,7 @@ Next, map some non-timeseries data to the Stop entity type. The stop data doesn'
 1. For the **Unique Id**, select *Stop_Code*.
 1. For **Mapped properties**, map **Stop_Name** from the source data to the *DisplayName* property on the right side.
 
-    Then, add the following new properties to the mapping. When you select these property names from the source columns on the left side, leave the default matching names that populate on the right side.
+    Then, use the **Add entity property** button to add the following new properties to the mapping. When you select these property names from the source columns on the left side, leave the default matching names that populate on the right side.
     - **Stop_Code**
     - **Road_Name**
     - **Borough**
