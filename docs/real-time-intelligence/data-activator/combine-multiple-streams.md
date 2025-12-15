@@ -26,7 +26,7 @@ Machines monitoring data flows into two eventstreams:
 1.  **MachineHeartbeat** eventstream contains *MachineId* column identifying a machine and *MachineRunning* column that indicates if machine is running (1) or not (0). An event is emitted every time a machine state changes.
 1.  **MachineSensorsReadings** eventstream contains a *MachineId* column together with *FlowRate* and *Vibration* columns. Every machine emits sensors readings every few seconds.
 
-The scenario described in this article raises an alert when **all** these conditions are true:
+In this scenario, you want to raise an alert when **all** these conditions are true:
 
 - Maximum *Vibration* in the last 1 hour increases above 18.
 - Average *FlowRate* in the last 10 minutes is above 185.
