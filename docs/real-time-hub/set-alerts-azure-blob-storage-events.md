@@ -33,7 +33,7 @@ Do steps from one of the following sections, which opens a side panel where you 
     - Select the **Set alert** button
     - Select **ellipsis (...)**, and select **Set alert**.
     
-    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert-azure.png" alt-text="Screenshot that shows the Azure events page with Set alert pages for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert-azure.png":::
+    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alerts-azure.png" alt-text="Screenshot that shows the Azure events page with Set alert pages for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/set-alerts-azure.png":::
 
 ### Launch from the event detail page
 
