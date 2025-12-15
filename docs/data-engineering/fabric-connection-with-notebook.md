@@ -141,8 +141,14 @@ When you run the notebook, a permission check makes sure you have the permission
 
 If you share the notebook with other users, they also need the right permissions to use the connection and run the code cell. Learn more about managing connection permissions in [Data source management](../data-factory/data-source-management.md).
 
-> [!IMPORTANT]
-> All credential details are redacted with some updates.
+If workspace identity authentication or SPN is used for the connection, make sure that the Fabric workspace identity or SPN has the necessary permissions to access the data source.
+
+For Azure Key Vault connections, following are the permission requirements if SPN or workspace identity authentication is used:
+- The SPN or Fabric workspace identity must have Admin/Contributor role on the Key Vault to access the secrets.
+- The SPN or Fabric workspace identity must have Azure Resource Owner/Contributor role on the Key Vault.
+- Update access policies in the Key Vault to grant secret access to the SPN or Fabric workspace identity
+- Enable **"Vault access policy"** in the Key Vault's access policies and grant **"Get"** and **"List"** permissions for secrets to the SPN or Fabric workspace identity.
+
 
 ## Connect or disconnect Fabric Connection from notebook
 
