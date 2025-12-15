@@ -10,7 +10,7 @@ ms.date: 12/04/2025
 
 # Package Installer Item
 
-![Package Installer Item in action](./media/sample-package-installer/package-installer-overview.png)
+![Screenshot of Package Installer Item showing deployment wizard and package configuration.](./media/sample-package-installer/package-installer-overview.png)
 
 The Package Installer sample item demonstrates how to build a Fabric workload item that manages the packaging and deployment of items. It allows users to define, configure, and execute deployments of various preconfigured Fabric items (like Notebooks, Lakehouses, etc.), define schedules, add data or create shortcuts. The deployment can happen into a newly created workspace or a folder within an existing workspace and is configurable. 
 
@@ -27,4 +27,4 @@ The Package Installer item showcases advanced capabilities of the Fabric Extensi
 
 ## Reference
 
-For detailed documentation, see the [Package Installer Item documentation on GitHub](https://github.com/microsoft/Microsoft-Fabric-tools-workload/tree/main/docs/items/PackageInstallerItem).
+For detailed documentation, see the [Package Installer Item documentation on GitHub](https://github.com/microsoft/Microsoft-Fabric-tools-workload/tree/main/Workload/app/items/PackageInstallerItem).

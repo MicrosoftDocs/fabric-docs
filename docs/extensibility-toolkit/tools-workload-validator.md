@@ -27,7 +27,7 @@ The validation tool allows workload creators to self-validate their Microsoft Fa
 * **Microsoft Fabric Account** with access to Fabric Workload Hub
 * **Chrome/Chromium Browser** (for automated manifest download)
 * **Workload Package** built using the [Microsoft Fabric Extensibility Toolkit](https://github.com/microsoft/fabric-extensibility-toolkit)
-* **Published Workload** - Your workload must be published to a tenant before validation can begin
+* **Published Workload** - Your workload must be published to a tenant before validation can begin.
 
 > [!TIP]
 > Use a different tenant for validation than the one used for publishing. This allows you to experience what end users will see and provides a more realistic validation environment.

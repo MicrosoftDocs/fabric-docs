@@ -10,7 +10,7 @@ ms.date: 12/04/2025
 
 # OneLake Explorer Item
 
-![OneLake Explorer Item in action](./media/sample-onelake-explorer/onelake-explorer-overview.png)
+![Screenshot of OneLake Explorer Item showing file browser and code editor.](./media/sample-onelake-explorer/onelake-explorer-overview.png)
 
 The OneLake Explorer sample item demonstrates how to build a Fabric workload item that interacts with OneLake. It provides a file explorer interface allowing users to browse, view, and edit files stored in OneLake, and preview table files.
 
@@ -27,4 +27,4 @@ The OneLake Explorer item showcases several key capabilities of the Fabric Exten
 
 ## Reference
 
-For detailed documentation, see the [OneLake Explorer Item documentation on GitHub](https://github.com/microsoft/Microsoft-Fabric-tools-workload/tree/main/docs/items/OneLakeExplorerItem).
+For detailed documentation, see the [OneLake Explorer Item documentation on GitHub](https://github.com/microsoft/Microsoft-Fabric-tools-workload/tree/main/Workload/app/items/OneLakeExplorerItem).
