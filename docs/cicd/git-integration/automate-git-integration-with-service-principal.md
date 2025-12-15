@@ -23,15 +23,15 @@ By default, each Fabric workspace isn't connected to any Git repository. A Fabri
   - Automatic git credential
   - Configured credential
 
-### Authentication with automatic git credential 
+### Automatic git credential 
 When an admin user wants to connect a workspace to an Azure DevOps (ADO) repository, the user must first log in from the workspace settings, the system then identifies which ADO organizations the user can access within the current Fabric tenant, allowing the user to proceed with the configuration. 
 
 Once the initial connection is established, any additional user with at least contributor permissions on the same workspace doesn't need to repeat the connection process. Instead, the system attempts to authenticate the second user with the configured ADO repository. If the user lacks the necessary permissions, the Fabric Git Integration source control pane will display a red indicator. 
 
 This streamlined authentication process is known as "Automatic Git Credential".
 
-### Authentication with automatic git credential 
-With configured credential you can create an Azure DevOps cloud connection and use it for login. 
+### Configured credential 
+With configured credential you can programmatically create an Azure DevOps cloud connection using a service principal. 
 
 The Azure DevOps connection supports two authentication methods: 
 
@@ -48,7 +48,7 @@ If **Automatic authentication** fails, the system will also attempt to connect u
 To connect a Fabric workspace to an external Git provider using a Service Principal, Git integration must use a Fabric cloud connection of type **Azure DevOps – Source Control**.  
 
 This cloud connection can be created in two ways: 
-  - **Manually** via Manage Connection Settings 
+  - **Manually** via [Manage Connection Settings](../../data-factory/data-source-management.md#add-a-data-source) 
   - Through **workspace settings** using the [Add Account](git-integration-with-service-principal.md#step-3-create-azure-devops-source-control-connection) option 
 
 In both cases, the connection is created under the logged-in user’s identity. If a Service Principal needs to use this connection, the user must either [add the Service Principal as a user](git-integration-with-service-principal.md#create-the-source-control-connection) to this connection or create a new connection using the [Connections REST API](/rest/api/fabric/core/connections/create-connection?tabs=HTTP), passing the Service Principal credentials. 
