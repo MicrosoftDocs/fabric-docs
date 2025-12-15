@@ -56,6 +56,19 @@ ItemJobEventLogs
 | summarize count() by JobStatus 
 ```
 
+## Use query logs to create an alert for workspace-wide pipeline failures 
+
+Use a KQL Queryset to detect pipeline failures across the workspace. Here is an example query that returns recent failures: 
+
+```kql
+ItemJobEventLogs 
+| extend SecondsAgo = datetime_diff('second', now(), ingestion_time()) 
+| where JobType == 'Pipeline' and JobStatus == 'Failed' 
+| where SecondsAgo <= 540 
+| order by Timestamp desc 
+| project Timestamp, ItemName, WorkspaceName, JobStartTime, JobEndTime, JobStatus 
+```
+
 ### ItemJobEventLogs schema
 
 The following table describes the schema of `ItemJobEventLogs`:
