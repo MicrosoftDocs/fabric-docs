@@ -4,7 +4,7 @@ description: Learn about the guidelines and requirements for publishing Microsof
 author: gsaurer
 ms.author: billmath
 ms.topic: article
-ms.date: 11/20/2025
+ms.date: 12/15/2025
 ---
 
 # Microsoft Fabric Item Publishing Requirements
