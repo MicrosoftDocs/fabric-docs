@@ -31,6 +31,7 @@ On the **Select a data source** page, search for and select **Connect** on the *
 1. You see the real-time weather source added to your eventstream in **Edit mode**. Select **Publish** to publish the changes and begin streaming real-time weather data to the eventstream.
 
     :::image type="content" source="media/add-source-real-time-weather/edit-mode.png" alt-text="A screenshot of the added real-time weather source in Edit mode with the Publish button highlighted." lightbox="./media/add-source-real-time-weather/edit-mode.png":::
+
 1. After you complete these steps, the source is available for visualization in the **Live view**. Select the **real-time weather** tile in the diagram to see the page similar to the following one.
 
     :::image type="content" source="media/add-source-real-time-weather/live-view.png" alt-text="A screenshot of the published eventstream with real-time weather source in Live View." lightbox="./media/add-source-real-time-weather/live-view.png":::
