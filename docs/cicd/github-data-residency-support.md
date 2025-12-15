@@ -29,9 +29,9 @@ The following limitations apply:
 
 ## Related content
 
-- [Understand the Git integration process](./git-integration-process.md)
-- [Manage Git branches](./manage-branches.md)
-- [Git integration best practices](../best-practices-cicd.md)
+- [Understand the Git integration process](./git-integration/git-integration-process.md)
+- [Manage Git branches](./git-integration/manage-branches.md)
+- [Git integration best practices](best-practices-cicd.md)
 
 
 
