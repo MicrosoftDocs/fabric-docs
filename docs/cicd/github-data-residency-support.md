@@ -17,6 +17,8 @@ Microsoft Fabric is expanding its Git integration capabilities to support [GitHu
 
 Once connected, users with appropriate permissions will be able to perform standard Git operations such as syncing, committing, updating content, and branching out from an existing workspace—even across environments where one workspace uses GitHub.com and another uses GHE.com. All Git Integration APIs will function the same across both domains, and schema updates remain fully backward‑compatible. The feature also introduces updated error messages and information prompts to reflect residency‑specific constraints. 
 
+   :::image type="content" source="media/github-data-residency-support/data-1.png" alt-text="Screenshot showing the github connection details." lightbox="media/github-data-residency-support/data-1.png":::
+
 
 ## Limitations
 The following limitations apply: 
