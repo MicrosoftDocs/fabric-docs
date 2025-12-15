@@ -4,7 +4,7 @@ description: This article shows how to explore Job events in Fabric Real-Time hu
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 11/12/2024
+ms.date: 12/11/2025
 ---
 
 # Explore Job events in Fabric Real-Time hub
@@ -20,7 +20,7 @@ Job events allow you to monitor job results in time and set up alerts using Acti
 1. In **Real-Time hub**, select **Fabric events**.
 1. Select **Job events** from the list.
 
-    :::image type="content" source="./media/explore-fabric-job-events/select-from-list.png" alt-text="Screenshot that shows the selection of Job events on the Fabric events page." lightbox="./media/explore-fabric-job-events/select-from-list.png":::
+    :::image type="content" source="./media/explore-fabric-job-events/job-events.png" alt-text="Screenshot that shows the selection of Job events on the Fabric events page." lightbox="./media/explore-fabric-job-events/job-events.png":::
 1. You should see the detail view for Job events.
 
     :::image type="content" source="./media/explore-fabric-job-events/detail-page.png" alt-text="Screenshot that shows the detail page for Job events." lightbox="./media/explore-fabric-job-events/detail-page.png":::

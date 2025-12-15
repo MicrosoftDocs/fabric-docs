@@ -25,9 +25,9 @@ Anomaly detection is a feature of Real-Time Intelligence that allows you to iden
 
     :::image type="content" source="media/tutorial/detect-anomalies.png" alt-text="Screenshot of eventhouse table details page and detect anomalies selected." lightbox="media/tutorial/detect-anomalies.png":::
 
-1. Enter **`BikeAnomaliesconfiguration`** as Name
-1. Under Save to, **Create anomaly detector**
-1. Select the workspace in which you want to create the anomaly detector item, enter a name such as **`BikeAnomalies`**. Then select **Create**.
+1. Enter **`BikeAnomaliesconfiguration`** as Name.
+1. Under Save to, select **Create detector**.
+1. Select the workspace in which you want to create the anomaly detector item, enter **`BikeAnomalies`**. Then select **Create**.
 1. In the *Select attributes* section, choose the following options:
 
     | Field | Value |
