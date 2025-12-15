@@ -44,6 +44,10 @@ There are several ways to create a new Real-Time dashboard, select the tab that 
 
 [!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
 
+6. Complete dashboard setup by adding a data source to the dashboard. After the dashboard is connected to a data source, you can access all dashboard options like adding new tiles.
+
+    :::image type="content" source="media/real-time-dashboard/dashboard-new-with-source.png" alt-text="Screenshot of Real-Time Dashboard with all options enabled.":::
+
 ## [Copilot](#tab/create-copilot)
 
 Copilot streamlines the creation of Real-Time Dashboards by automating the setup process, making it accessible even to users without advanced technical expertise. By using natural language input, you can describe the dashboard you want, and Copilot uses AI to generate it. Start by selecting a data table from the Real-Time Hub or a KQL Queryset. Copilot will then create a Real-Time Dashboard tailored to your specifications, including an insights page for a high-level summary and a data profile page for in-depth analysis.
