@@ -179,8 +179,10 @@ items:
       href: create-spark-job-definition.md
     - name: Run a Spark job definition
       href: run-spark-job-definition.md
-    - name: Spark job definition API tutorial
+    - name: Spark job definition API v1
       href: spark-job-definition-api.md
+    - name: Spark job definition API v2
+      href: spark-job-definition-api-v2.md
     - name: SJD Git integration
       href: spark-job-definition-source-control.md
     - name: SJD deployment pipeline integration
@@ -284,6 +286,8 @@ items:
       href: lakehouse-and-delta-tables.md
     - name: Load to tables
       href: load-to-tables.md
+    - name: High Concurrency Mode for Lakehouse Table Load and Preview Operations
+      href: high-concurrency-for-lakehouse-operations.md
     - name: Table compaction
       href: table-compaction.md
     - name: Lakehouse table maintenance

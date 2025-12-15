@@ -10,6 +10,7 @@ ms.subservice: data-science
 ms.topic: how-to #Don't change
 ms.date: 10/17/2025
 ms.collection: ce-skilling-ai-copilot
+ms.update-cycle: 180-days
 ai.usage: ai-assisted
 #customer intent: As an Analyst, I want to add the semantic model as a data source to Fabric data agent.
 ---

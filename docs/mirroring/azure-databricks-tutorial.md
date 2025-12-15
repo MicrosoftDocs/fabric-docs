@@ -57,7 +57,7 @@ You can also create shortcuts from your Lakehouse to your Databricks catalog ite
 
 ## Create a semantic model
 
-You can create a Power BI semantic model based on your mirrored item, and manually add/remove tables. For more information about creating and managing semantic models, see [Create a Power BI semantic model](../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model).
+You can create a Power BI semantic model based on your mirrored item, and manually add/remove tables. For more information about creating and managing semantic models, see [Create a Power BI semantic model](../data-warehouse/create-semantic-model.md).
 
 For the best experience, it's recommended that you use Microsoft Edge Browser for Semantic Modeling Tasks.
 

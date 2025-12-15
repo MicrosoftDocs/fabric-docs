@@ -3,9 +3,9 @@ title: Ingest Data into the Warehouse
 description: Learn about the features and methods to ingest data into your warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: procha
-ms.date: 09/08/2025
-ms.topic: conceptual
+ms.reviewer: procha, fresantos
+ms.date: 12/02/2025
+ms.topic: article
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
 # Ingest data into the Warehouse
@@ -14,28 +14,27 @@ ms.search.form: Ingesting data # This article's title should not change. If so, 
 
  [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers built-in data ingestion tools that allow users to ingest data into warehouses at scale using code-free or code-rich experiences.
 
-## Data ingestion options
-
-You can ingest data into a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using one of the following options:
-
-- **COPY (Transact-SQL)**: the COPY statement offers flexible, high-throughput data ingestion from an external Azure storage account. You can use the COPY statement as part of your existing ETL/ELT logic in Transact-SQL code. The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] also supports traditional BULK INSERT statement that is synonym for COPY INTO with classic loading options.
-- **Pipelines**: pipelines offer a code-free or low-code experience for data ingestion. Using pipelines, you can orchestrate robust workflows for a full Extract, Transform, Load (ETL) experience that includes activities to help prepare the destination environment, run custom Transact-SQL statements, perform lookups, or copy data from a source to a destination. 
-- **Dataflows**: an alternative to pipelines, dataflows enable easy data preparation, cleaning, and transformation using a code-free experience. 
-- **T-SQL ingestion**: you can use Transact-SQL features such as **INSERT...SELECT**, **SELECT INTO**, or **CREATE TABLE AS SELECT (CTAS)** to read data from table referencing other warehouses, lakehouses, or mirrored databases within the same workspace, or to read data from **OPENROWSET** function that references files in the external Azure storage accounts.
-
 ### Decide which data ingestion tool to use
 
 To decide which data ingestion option to use, you can use the following criteria: 
 
-- Use the **COPY (Transact-SQL)** statement for code-rich data ingestion operations, for the highest data ingestion throughput possible, or when you need to add data ingestion as part of a Transact-SQL logic. For syntax, see [COPY INTO (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
-- Use **pipelines** for code-free or low-code, robust data ingestion workflows that run repeatedly, at a schedule, or that involves large volumes of data. For more information, see [Ingest data into your Warehouse using pipelines](ingest-data-pipelines.md).
-- Use **dataflows** for a code-free experience that allow custom transformations to source data before it's ingested. These transformations include (but aren't limited to) changing data types, adding or removing columns, or using functions to produce calculated columns. For more information, see [Dataflow Gen2 dataflows](../data-factory/dataflows-gen2-overview.md).
-- Use **T-SQL ingestion** for code-rich experiences to create new tables or update existing ones with source data within the same workspace or external storage. For more information, see [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md) and [Write a cross-database query](query-warehouse.md#write-a-cross-database-query).
-
-> [!NOTE]
-> The COPY statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports only data sources on Azure storage accounts. OneLake sources are currently not supported.
+- Use the **COPY (Transact-SQL)** statement for code-rich data ingestion operations, for the highest data ingestion throughput possible, or when you need to add data ingestion as part of a Transact-SQL logic. 
+    - To get started, see [Ingest data using the COPY statement](ingest-data-copy.md)
+    - The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] also supports traditional `BULK INSERT` statement that is synonym for `COPY INTO` with classic loading options.
+    - The `COPY` statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports data sources from Azure storage accounts and OneLake lakehouse folders. OneLake sources are currently a preview feature.
+- Use **pipelines** for code-free or low-code, robust data ingestion workflows that run repeatedly, at a schedule, or that involves large volumes of data. 
+    - To get started, see [Ingest data into your Warehouse using pipelines](ingest-data-pipelines.md).
+    - Using pipelines, you can orchestrate robust workflows for a full Extract, Transform, Load (ETL) experience that includes activities to help prepare the destination environment, run custom Transact-SQL statements, perform lookups, or copy data from a source to a destination. 
+- Use **dataflows** for a code-free experience that allow custom transformations to source data before it's ingested. 
+    - To get started, see [Ingest data using a dataflow](../data-factory/create-first-dataflow-gen2.md).
+    - These transformations include (but aren't limited to) changing data types, adding or removing columns, or using functions to produce calculated columns.
+- Use **T-SQL ingestion** for code-rich experiences to create new tables or update existing ones with source data within the same workspace or external storage. 
+    - To get started, see [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md).
+    - You can use Transact-SQL features such as `INSERT...SELECT`, `SELECT INTO`, or `CREATE TABLE AS SELECT (CTAS)` to read data from table referencing other warehouses, lakehouses, or mirrored databases within the same workspace, or to read data from `OPENROWSET` function that references files in the external Azure storage accounts.
+    - You can also [write a cross-database queries](query-warehouse.md#write-a-cross-database-query) between different warehouses in your Fabric workspace.
 
 ## Supported data formats and sources
+
 Data ingestion for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers a vast number of data formats and sources you can use. Each of the options outlined includes its own list of supported data connector types and data formats. 
 
 For **T-SQL ingestion**, table data sources must be within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace and file data sources must be in Azure Data Lake or Azure Blob storage. Queries can be performed using three-part naming or OPENROWSET function for the source data. Table data sources can reference Delta Lake data sets, while OPENROWSET() can reference Parquet, CSV, or JSONL files in Azure Data Lake or Azure Blob storage.
@@ -75,7 +74,7 @@ INSERT INTO MyWarehouseTable
 SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 ```
 
-- Avoid ingesting data using singleton **INSERT** statements, as this causes poor performance on queries and updates. If singleton **INSERT** statements were used for data ingestion consecutively, we recommend creating a new table by using **CREATE TABLE AS SELECT (CTAS)** or **INSERT...SELECT** patterns, dropping the original table, and then creating your table again from the table you created using **CREATE TABLE AS SELECT (CTAS)**.
+- Avoid ingesting data using singleton `INSERT` statements, as this causes poor performance on queries and updates. If singleton `INSERT` statements were used for data ingestion consecutively, we recommend creating a new table by using `CREATE TABLE AS SELECT (CTAS)` or `INSERT...SELECT` patterns, dropping the original table, and then creating your table again from the table you created using `CREATE TABLE AS SELECT (CTAS)`.
   - Dropping your existing table impacts your semantic model, including any custom measures or customizations you might have made to the semantic model.
 - When working with external data on files, we recommend that files are at least 4 MB in size.
 - For large compressed CSV files, consider splitting your file into multiple files.
@@ -85,14 +84,10 @@ SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 - If a SELECT is within a transaction, and was preceded by data insertions, the [automatically generated statistics](statistics.md) can be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your SELECT.
 
 > [!NOTE]
-> Regardless of how you ingest data into warehouses, the parquet files produced by the data ingestion task will be optimized using V-Order write optimization. V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark, and others. Warehouse queries in general benefit from faster read times for queries with this optimization, still ensuring the parquet files are 100% compliant to its open-source specification. It isn't recommended to disable V-Order as it may affect read performance. For more information on V-Order, see [Understand and manage V-Order for Warehouse](v-order.md).
+> Regardless of how you ingest data into warehouses, the parquet files produced by the data ingestion task will be optimized using V-Order write optimization. V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark, and others. Warehouse queries in general benefit from faster read times for queries with this optimization, still ensuring the parquet files are 100% compliant to its open-source specification. It isn't recommended to disable V-Order as it might affect read performance. For more information on V-Order, see [Understand and manage V-Order for Warehouse](v-order.md).
 
 ## Related content
 
-- [Ingest data using the COPY statement](ingest-data-copy.md)
-- [Ingest data using pipelines](ingest-data-pipelines.md)
-- [Ingest data using Transact-SQL](ingest-data-tsql.md)
-- [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md)
 - [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true)
 - [CREATE TABLE AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true)
 - [INSERT (Transact-SQL)](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true)

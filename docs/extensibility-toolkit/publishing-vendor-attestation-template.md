@@ -3,11 +3,13 @@ title: Fabric Extensibility toolkit vendor attestation template
 description: Template document for vendor attestation requirements when publishing to Microsoft Fabric Workload Hub.
 author: gsaurer
 ms.author: billmath
-ms.topic: conceptual
-ms.date: 11/03/2025
+ms.topic: article
+ms.date: 11/20/2025
 ---
 
 # Vendor Attestation Document Template
+
+## Executive Summary
 
 This Vendor Self-Attestation document is designed for vendors to formally declare their compliance with the requirements outlined by Microsoft for publishing workloads using the Microsoft Workload Development Kit (WDK). It includes an attestation of adherence to standards in areas such as functional compatibility, security, performance, reliability, supportability, and legal compliance. Additionally, an attestation checklist is included to provide further details regarding each requirement and identify any exceptions, variances, or specific notes.
 
@@ -33,10 +35,13 @@ The document is composed of three sections. All sections are to be provided to M
 
 Microsoft must be notified promptly prior to releasing any changes if the changes materially impact the attestation especially regarding security, compliance, privacy and/or if the change has significant variance from the design / UX guidelines.
 
-## Section I: ISV Information
+## Section I
+
+## ISV Information
 
 ### Vendor Information
-|Requirement|Required or Optional|
+
+|Name|Required or optional|
 |-----|-----|
 | Company Name: | (Required) |
 | Company Website: | (Required)  |
@@ -49,13 +54,15 @@ Microsoft must be notified promptly prior to releasing any changes if the change
 
 ### Primary Contact
 
-|Requirement|Required or Optional|
+|Name|Required or optional|
 |-----|-----|
 | Name: | (Required)  |
 | Title: | (Required)  |
 | Email: | (Required / Email Alias OK) |
 
-## Section II: Attestation
+## Section II
+
+## Attestation
 
 To: Microsoft Corporation
 
@@ -63,15 +70,17 @@ Subject: Vendor Self-Attestation for Compliance with Microsoft Workload Developm
 
 We, the undersigned, [Vendor Name], hereby confirm and attest that we have reviewed, understood, and complied with all applicable requirements as outlined in the Microsoft Extensibility toolkit documentation, specifically the [Publish Workload Requirements](publishing-requirements-workload.md).
 
-## Section III: Publish Workload Requirements Attestation Checklist
+## Section III
+
+### Publish Workload Requirements Attestation Checklist
 
 We, the vendor, [Vendor Name], confirm and attest to reviewing, meeting, and complying with the requirements outlined in the Microsoft Fabric Extensibility Toolkit specifically the [Publish Workload Requirements](publishing-requirements-workload.md)
 
-The following sections document details, exceptions, or variances regarding the attestation of adherence to the Publish Workload Requirements.
+The following sections documents details, exceptions, or variances regarding the attestation of adherence to the Publish Workload Requirements.
 
 ### Workload Information
 
-|Requirement|Required or Optional|
+|Name|Required or optional|
 |-----|-----|
 | Workload Version: | (Required)  |
 | Workload Name: | (Required)  |
@@ -196,9 +205,9 @@ The Workload implementation takes measures to test and track performance of thei
 
 #### Presence
 
-To ensure that customer expectations independent of their home or capacity region are met, vendors need to align with Fabric regions and clouds. Availability in certain restrictions also impacts your Data Residency commitments.
+To ensure that customer expectations independent of their home or capacity region are met, vendors need to align with fabric regions and clouds. Availability in certain restrictions also impacts your Data Residency commitments.
 
-[ ] Service availability and colocation/alignment in the following Fabric regions
+[ ] Service availability and colocation/alignment in the following fabric regions
 
 > [!NOTE]
 > Notes here
@@ -337,7 +346,7 @@ Searching for items in Fabric is supported through the top search bar.
 Protection of customer data and metadata is of paramount importance. Workloads must go through a security review and assessment. Vendor attests that the security review and assessment was completed and will be periodically performed as enhancements and changes are made. Security issues discovered which could have a detrimental impact on the customer should be addressed promptly and customers notified where applicable.
 
 > [!NOTE]
-> Please outline all the security and compliance tests, attestations performed. The more detailed this is the easier it is for customers/Microsoft to review. This should include references to the latest security assessment reports
+> Please outline all the security and compliance tests, attestations performed. The more detailed this is the easier it's for customers/Microsoft to review. This should include references to the latest security assessment reports
 
 #### Privacy
 
@@ -359,7 +368,7 @@ Partners that build workloads also have a responsibility to protect that data wh
 Microsoft Fabric is making an Enterprise Promise around data not leaving the geography of the tenant for stored data and data in transit. As a workload in Fabric directly and users need to be aware what your commitments to Data Residency are. Define what your commitments are to the Data Residency of customer data.
 
 > [!NOTE]
-> Summarize your commitments. For details on Data Residency and compliance, provide an existing link to your Data Residency and compliance support.
+> Summarize your commitments. For details on Data Residency and compliance, provide an existing link to your Data Residency and compliance support>
 
 #### Compliance
 
@@ -378,7 +387,7 @@ Partner workloads are an integral part of Fabric that requires that the Microsof
 
 **Microsoft direct vendor outreach:**
 
-|Requirement|Required or Optional|
+|Name|Required or optional|
 |-----|-----|
 | Contact Name/Team: | (Vendor Primary contact Name / Team Here) |
 | Number | (Optional Phone # here) |
@@ -395,7 +404,7 @@ Vendors are responsible for defining and documenting their support parameters (S
 
 Vendors need to host a service health dashboard that shows their service health and availability to customers. This information can be included on the Supportability page.
 
-**Service health dashboard can be found here:**
+**Service heath dashboard can be found here:**
 
 > [!NOTE]
 > URL to service health dashboard
@@ -456,4 +465,4 @@ Use this section to provide any further explanations, references, or notes that 
 ## References
 
 > [!NOTE]
-> Consolidate all relevant references here for completeness, e.g. support policy, compliance, service health, etc. might seem redundant but useful to have it in a single place
+> Consolidate all relevant reference here for completeness, e.g. support policy, compliance, service health, etc. might seem redundant but useful to have it in a single place

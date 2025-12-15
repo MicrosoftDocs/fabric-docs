@@ -5,7 +5,7 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 11/23/2025
+ms.date: 12/11/2025
 ---
 
 # View details of data streams in Fabric Real-Time hub
@@ -15,7 +15,7 @@ On the Real-Time hub page, you see all data streams at the bottom of the page in
 
 On the hub page, in the **Recent streaming section**, select the stream from the table whose parent is an eventstream.
 
-:::image type="content" source="./media/view-data-stream-details/select-data-stream.png" alt-text="Screenshot that shows the hub page with a data stream selected." lightbox="./media/view-data-stream-details/select-data-stream.png":::
+:::image type="content" source="./media/view-data-stream-details/real-time-event-stream.png" alt-text="Screenshot that shows the hub page with a data stream selected." lightbox="./media/view-data-stream-details/real-time-event-stream.png":::
 
 You should see the **Stream detail** page: 
 

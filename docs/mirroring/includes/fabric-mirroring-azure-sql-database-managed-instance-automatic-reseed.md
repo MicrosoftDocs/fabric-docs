@@ -1,14 +1,14 @@
 ---
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 11/25/2025
+ms.date: 12/01/2025
 ms.topic: include
 # For docs\mirroring\azure-sql-database-automatic-reseed.md and docs\mirroring\azure-sql-managed-instance-automatic-reseed.md
 ---
 
-Under certain conditions if there is a delay in mirroring to Fabric, increased transaction log file usage can result. The transaction log cannot be truncated until after committed changes are replicated to the mirrored database. Once the transaction log size reaches its maximum defined limit, writes to the database fail. To safeguard operational databases from write failures for critical OLTP transactions, you can set up an autoreseed mechanism that allows the transaction log to be truncated and reinitializes the database mirroring to Fabric.
+Under certain conditions if there is a delay in mirroring to Fabric, increased transaction log file usage can result. The transaction log cannot be truncated until after committed changes are replicated to the mirrored database. Once the transaction log size reaches its maximum defined limit, writes to the database fail. 
 
-The autoreseed feature is enabled and cannot be managed or disabled in Azure SQL Database and Azure SQL Managed Instance.
+To safeguard operational databases from write failures for critical OLTP transactions, mirroring in Azure SQL Database and Azure SQL Managed Instance uses the autoreseed capability that allows the transaction log to be truncated and reinitializes the database mirroring to Fabric.
 
 A reseed stops flow of transactions to Microsoft Fabric from the mirrored database and reinitializes the mirroring at the present state. A reseed involves generating a new initial snapshot of the tables configured for mirroring, and replicating that to Microsoft Fabric. After the snapshot, incremental changes are replicated. 
 
@@ -31,8 +31,6 @@ A reseed at the database level protects database write availability by ensuring 
 
       > [!NOTE]  
       > Support for User Assigned Managed Identity (UAMI) is currently in preview.
-
-    To safeguard against this issue, mirroring triggers an automatic reseed of the whole database when the log space used has passed a certain threshold of total configured log space.
 
 - If the Fabric capacity is paused and resumed, the mirrored database status remains **Paused**. As a result, changes made in the source aren't replicated to OneLake. To resume mirroring, go to the mirrored database in the Fabric portal, select **Resume replication**. Mirroring continues from where it was paused. 
 

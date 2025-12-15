@@ -4,7 +4,7 @@ description: This article explains the overview of using Cassandra.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 07/31/2025
+ms.date: 12/04/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -19,6 +19,8 @@ The Cassandra connector is supported in Data Factory for [!INCLUDE [product-name
 | Supported capabilities                                                                 | Gateway                        | Authentication                                                                                                 |
 |----------------------------------------------------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------|
 | **Pipeline** <br>- [Copy activity](connector-cassandra-copy-activity.md) (source/-)<br>- Lookup activity | None<br>On-premises (version 3000.274.3 or above) <br>Virtual network | Anonymous<br> Basic |
+| **Copy job** (source/-) <br>- Full load |None<br>On-premises (version 3000.274.3 or above) <br>Virtual network  | Anonymous<br> Basic|
+
 
 ## Related content
 

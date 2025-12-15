@@ -841,6 +841,8 @@ items:
       href: anomaly-detection-models.md
     - name: Troubleshoot anomaly detection
       href: troubleshoot-anomaly-detection.md
+    - name: Anomaly detector billing and capacity
+      href: anomaly-detection-billing.md
   - name: Univariate anomaly detection using KQL
     href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
   - name: Multivariate anomaly detection using Spark
@@ -855,8 +857,14 @@ items:
     href: map/create-map.md
   - name: Customize a map
     href: map/customize-map.md
-  - name: Share a map
-    href: map/share-map.md
+  - name: Map sharing
+    items:
+    - name: Sharing maps
+      href: map/sharing-maps.md
+    - name: Share maps directly
+      href: map/share-map-direct.md
+    - name: Share maps with org apps
+      href: map/share-map-org-apps.md
   - name: Create a tileset
     href: map/spatial-job-create-tile-sets.md
   - name: Manage Map permissions
@@ -881,7 +889,9 @@ items:
     - name: Operations agents  
       items:
       - name: Getting started with operations agents
-        href: operations-agent.md 
+        href: operations-agent.md
+      - name: Operations agents billing
+        href: operations-agent-billing.md 
       - name: Operations agents limitations
         href: operations-agent-limitations.md
       - name: Operations agent transparency note
