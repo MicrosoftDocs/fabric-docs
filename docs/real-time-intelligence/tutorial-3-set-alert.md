@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 3 - Set an alert on your event stream
+title: Real-Time Intelligence Tutorial Part 3 - Set an Alert on Your Event Stream
 description: Learn how to set an alert on your event stream in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: spelluru
@@ -11,12 +11,12 @@ ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to set an alert on my eventstream in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 3: Set an alert on your event stream
+# Real-Time Intelligence tutorial part 3: Set an alert on your eventstream
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 2: Get data in the Real-Time hub](tutorial-2-get-real-time-events.md).
 
-In this part of the tutorial, you set an alert on your eventstream to receive a notification in Teams when the number of bikes falls below a certain threshold.
+In this part of the tutorial, you set an Activator alert on your eventstream to receive a notification in Teams when the number of bikes falls below a certain threshold.
 
 ## Set an alert on the eventstream
 

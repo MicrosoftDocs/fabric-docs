@@ -14,7 +14,7 @@ ms.date: 12/03/2025
 
 1. In the **Filter by item type** search box, enter **Eventhouse**.
 
-   :::image type="content" source="../media/tutorial/event-house-new-item.png" alt-text="New item panel with Eventhouse highlighted." lightbox="../media/tutorial/Eventhouse-new-item.png":::
+   :::image type="content" source="../media/tutorial/event-house-new-item.png" alt-text="New item panel with Eventhouse highlighted." lightbox="../media/tutorial/event-house-new-item.png":::
 
 1. Select the Eventhouse item.
 
