@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: quickstart
-ms.date: 03/05/2025
+ms.date: 12/15/2025
 ms.custom:
 ms.search.form: Connect to a Git repo, Update from Git, Commit changes to Git, Introduction to Git integration
 #customer intent: As a developer, I want to connect my workspace to a Git repo so that I can collaborate with others and leverage source control.
