@@ -82,6 +82,8 @@ You can use AI tools, such as Copilot, to generate custom transformation queries
 Take my current data and create a transformation that filters for customers in Europe, groups employees by city with counts, and removes orders below the median quantity value.
 ```
 
+For authoring or explaining dynamic expressions within pipeline activities, see [Use Copilot in Expression Builder to generate and explain pipeline expressions](#use-copilot-in-expression-builder-to-generate-and-explain-pipeline-expressions).
+
 > [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
@@ -105,6 +107,37 @@ Or you can use these steps to generate a new pipeline alongside Copilot for Data
 1. After everything is set up, select **Run this pipeline** to execute the new pipeline and ingest the data.
 
 1. If you're already familiar with pipelines, you can complete everything with one prompt command, too.
+
+> [!NOTE]  
+> AI powers Copilot, so surprises and mistakes are possible.
+
+### Use Copilot in expression builder to generate and explain pipeline expressions
+
+Within any pipeline activity or system setting that supports dynamic content, the expression builder includes Copilot. With Copilot, you can:
+
+- Write natural language prompts to generate valid pipeline expressions
+- Insert the generated expression directly into your pipeline
+- Select existing expressions and ask Copilot to explain them
+
+To use Copilot in expression builder:
+
+1. Open a pipeline and select an activity setting that supports expressions (for example, a query or parameter).
+
+1. Choose **Add dynamic content** to open the expression builder.
+
+1. Use the Copilot pane to enter a natural language prompt to generate an expression. Review the suggested expression and select **Accept** to apply it.
+
+    Example prompts for common pipeline expression scenarios:
+
+    ```copilot-prompt
+    Create an expression that formats today's date as yyyy-MM-dd
+    ```
+
+    ```copilot-prompt
+    Return the first non-empty value between pipeline parameter p1 and variable v2
+    ```
+
+1. To understand existing logic, open the expression builder and ask Copilot to explain with a prompt like "Explain this expression" or "What is this expression doing?"
 
 > [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
@@ -145,5 +178,7 @@ Explain this pipeline error and provide troubleshooting steps: "The pipeline fai
 ## Related content
 
 - [What is Copilot in the Data Factory workload?](copilot-fabric-data-factory.md)
+- [Build pipeline expressions with Copilot](copilot-pipeline-expression-builder.md)
+- [Expressions and functions for Data Factory](expression-language.md)
 - [Tutorial: Create an end-to-end pipeline](../data-factory/tutorial-end-to-end-pipeline.md)
 - [Tutorial: Create an end-to-end dataflow](../data-factory/tutorial-end-to-end-dataflow.md)

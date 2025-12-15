@@ -5,7 +5,7 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 10/13/2025
+ms.date: 12/14/2025
 ---
 
 # Set alerts on Fabric workspace item events in Real-Time hub
@@ -31,10 +31,10 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 1. In Real-Time hub, select **Fabric events** under **Subscribe to** category.
 1. Move the mouse over **Fabric workspace item events**, and do one of the following steps:
-    - Select the **Alert** button.
+    - Select the **Set alert** button.
     - Select **ellipsis (...)**, and select **Set alert**.
 
-    :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/set-alert-from-list.png" alt-text="Screenshot that shows the Azure events page with Set alert pages for Azure blob storage events." lightbox="./media/set-alerts-fabric-workspace-item-events/set-alert-from-list.png":::    
+    :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/fabric-workspace.png" alt-text="Screenshot that shows the Azure events page with Set alert pages for Azure blob storage events." lightbox="./media/set-alerts-fabric-workspace-item-events/fabric-workspace.png":::    
 
 ### Use the event detail page
 
