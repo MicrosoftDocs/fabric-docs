@@ -24,7 +24,7 @@ This article applies to SQL database in Fabric only. For the warehouse and SQL a
 - SQL database in Fabric uses storage encryption with service-managed keys to protect all customer data at rest. Customer-managed keys are not supported. Transparent Data Encryption (TDE) is not supported.
 - In a [trial capacity](../../fundamentals/fabric-trial.md), you are limited to three databases. There is no limit on databases in other capacities.
 - Each database in the workspace must have a unique name. If a database is deleted, another cannot be re-created with the same name.
-- Database names cannot contain characters `!` `[` `]` `<` `>` `*` `%` `&` `:` `/` `?` `#`.
+- Database names cannot contain characters `!` `[` `]` `<` `>` `*` `%` `&` `:` `/` `?` `#` `=` `@` `^` `"` `'` `;` `(` `)`.
 
 ## Table level
 
