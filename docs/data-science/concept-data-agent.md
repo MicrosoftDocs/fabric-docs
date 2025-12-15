@@ -98,6 +98,7 @@ The Fabric data agent is currently in public preview and has limitations. Update
 - The Fabric data agent doesn't currently support non-English languages. For optimal performance, provide questions, instructions, and example queries in English. 
 - You can't change the LLM that the Fabric data agent uses.
 - Conversation history in the Fabric data agent might not always persist. In certain cases, such as backend infrastructure changes, service updates, or model upgrades, past conversation history might be reset or lost.
+- The Fabric data agent cannot execute queries when the data source’s workspace's capacity is in a different region than the data agent's workspace's capacity. For example, a lakehouse with capacity in North Europe will fail if the Data Agent's capacity is in France Central.
 
 ## Related content
 
