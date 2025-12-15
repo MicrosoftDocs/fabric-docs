@@ -11,12 +11,13 @@ ms.topic: how-to #Don't change
 ms.date: 10/11/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 #customer intent: As an Analyst, I want to consume a Fabric data agent from Microsoft 365 Copilot.
 ---
 
 # Consume Fabric Data Agent in Microsoft 365 Copilot
-
-Microsoft 365 provides a comprehensive set of productivity tools that help organizations collaborate, communicate, and make data-driven decisions. With Teams at the center of communication and collaboration, users can access their organization’s knowledge and insights in one unified workspace. Therefore, Microsoft 365 isn't just a suite of applications, but a platform that connects people to the information they need to act confidently.
+'''
+Microsoft 365 provides a comprehensive set of productivity tools that help organizations collaborate, communicate, and make data-driven decisions. With Teams at the center of communication and collaboration, users can access their organization's knowledge and insights in one unified workspace. Therefore, Microsoft 365 isn't just a suite of applications, but a platform that connects people to the information they need to act confidently.
 
 > [!IMPORTANT]  
 > This feature is in [preview](../fundamentals/preview.md).
@@ -36,6 +37,9 @@ Once published, the Fabric data agent appears in the Agent Store in Microsoft 36
 
    > [!NOTE]
    > It might take a few seconds for your Fabric data agent to appear in the Agent Store. If it doesn't show up immediately, select the **Expand Navigation** button on the left side of the window to refresh the list of agents.
+
+   > [!NOTE]
+   > If agents don't appear, ask your Microsoft 365 admin to confirm that Copilot extensibility is enabled for your account. For more information, see [Enable or disable Copilot extensibility](/microsoft-365/admin/manage/manage-plugins-for-copilot-in-integrated-apps?context=/microsoft-365-copilot/extensibility/context#enable-or-disable-copilot-extensibility).
 
 :::image type="content" source="./media/data-agent-microsoft-365-copilot/data-agent-microsoft-365-store.png" alt-text="Screenshot showing in the agent store in Microsoft 365 copilot." lightbox="./media/data-agent-microsoft-365-copilot/data-agent-microsoft-365-store.png":::
 
@@ -64,9 +68,9 @@ By publishing your Fabric data agent to the Agent Store in Microsoft 365 Copilot
 
 ## Control how Microsoft 365 Copilot handles the output from Fabric data agent
 
-When you publish a Fabric data agent to Microsoft 365 Copilot, the agent runs inside Microsoft 365 Copilot environment that has its own orchestrator. The orchestrator uses the chat context, user intent, and its own model’s reasoning to shape the final response.
+When you publish a Fabric data agent to Microsoft 365 Copilot, the agent runs inside Microsoft 365 Copilot environment that has its own orchestrator. The orchestrator uses the chat context, user intent, and its own model's reasoning to shape the final response.
 
-If you want to minimize the amount of change applied to the Fabric data agent’s responses in Microsoft 365 Copilot, you can add specific instructions when you publish the Fabric data agent. The description becomes the `description_for_model` in Microsoft 365 Copilot, and it influences how the orchestrator handles the Fabric data agent’s output.
+If you want to minimize the amount of change applied to the Fabric data agent's responses in Microsoft 365 Copilot, you can add specific instructions when you publish the Fabric data agent. The description becomes the `description_for_model` in Microsoft 365 Copilot, and it influences how the orchestrator handles the Fabric data agent's output.
 
    > [!NOTE]
    > You can add to the publishing description that the output from Fabric data agent should be delivered as-is, without summarizing, rephrasing, or adding extra interpretation.
