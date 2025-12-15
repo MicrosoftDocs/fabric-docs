@@ -45,14 +45,13 @@ Any other user with at least Contributor permissions on the same workspace doesn
 If **Automatic authentication** fails, the system will also attempt to connect using any **Configured Credential** which the user has access to, ensuring a smoother experience and reduces redundant setup steps. 
 
 ## How It Works 
-
 To connect a Fabric workspace to an external Git provider using a Service Principal, Git integration must use a Fabric cloud connection of type **Azure DevOps – Source Control**.  
 
 This cloud connection can be created in two ways: 
   - **Manually** via Manage Connection Settings 
-  - Through **workspace settings** using the Add Account option 
+  - Through **workspace settings** using the [Add Account](git-integration-with-service-principal.md#step-3-create-azure-devops-source-control-connection) option 
 
-In both cases, the connection is created under the logged-in user’s identity. If a Service Principal needs to use this connection, the user must either add the Service Principal as a user to this connection or create a new connection using the [Connections REST API](/rest/api/fabric/core/connections/create-connection?tabs=HTTP), passing the Service Principal credentials. 
+In both cases, the connection is created under the logged-in user’s identity. If a Service Principal needs to use this connection, the user must either [add the Service Principal as a user](git-integration-with-service-principal.md#create-the-source-control-connection) to this connection or create a new connection using the [Connections REST API](/rest/api/fabric/core/connections/create-connection?tabs=HTTP), passing the Service Principal credentials. 
 
 ## Prerequisites
 To complete the steps outlined, you need the following permissions:
