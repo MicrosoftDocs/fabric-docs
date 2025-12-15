@@ -48,9 +48,9 @@ The condition drives the rule as illustrated in the following picture:
 
 1. Add **Activator** destination to both eventstreams. Make sure both eventstreams use the same Activator instance.
 
-    :::image type="content" source="media/combine-multiple-streams/eventstream-destination.png" alt-text="Screenshot of the MachineHeartbeat eventstream with the Activator destination added." lightbox="media/combine-multiple-streams/eventstream-destination.png":::
+    :::image type="content" source="media/combine-multiple-streams/event-stream-destination.png" alt-text="Screenshot of the MachineHeartbeat eventstream with the Activator destination added." lightbox="media/combine-multiple-streams/event-stream-destination.png":::
 
-    :::image type="content" source="media/combine-multiple-streams/activator-eventstream.png" alt-text="Screenshot of the MachineSensorsReadings eventstream with the Activator destination added." lightbox="media/combine-multiple-streams/activator-eventstream.png":::
+    :::image type="content" source="media/combine-multiple-streams/activator-event-stream.png" alt-text="Screenshot of the MachineSensorsReadings eventstream with the Activator destination added." lightbox="media/combine-multiple-streams/activator-event-stream.png":::
 
     Both eventstreams are configured with the same Activator destination:
 
@@ -58,11 +58,11 @@ The condition drives the rule as illustrated in the following picture:
 
 1.  Open Activator item. Now you can combine both eventstreams in an object and set up a rule.
 
-    :::image type="content" source="media/combine-multiple-streams/activator-eventstreams-combine.png" alt-text="Screenshot of the Activator item showing the two eventstreams available to combine." lightbox="media/combine-multiple-streams/activator-eventstreams-combine.png":::
+    :::image type="content" source="media/combine-multiple-streams/activator-event-streams-combine.png" alt-text="Screenshot of the Activator item showing the two eventstreams available to combine." lightbox="media/combine-multiple-streams/activator-event-streams-combine.png":::
 
 1.  To combine these two streams, select any stream and select **New object**.
 
-    :::image type="content" source="media/combine-multiple-streams/select-eventstream-new-object.png" alt-text="Screenshot of selecting an eventstream and clicking the New object button." lightbox="media/combine-multiple-streams/select-eventstream-new-object.png":::
+    :::image type="content" source="media/combine-multiple-streams/select-event-stream-new-object.png" alt-text="Screenshot of selecting an eventstream and clicking the New object button." lightbox="media/combine-multiple-streams/select-event-stream-new-object.png":::
 
 1.  Select the column name used to identify the instance of an object and columns that are needed for the rule, and then select **Create**. The value of *MachineId* column in each event is the key identifying the machine that emitted the event.
 
@@ -102,8 +102,5 @@ The condition drives the rule as illustrated in the following picture:
 
     :::image type="content" source="media/combine-multiple-streams/action-selection-page-options.png" alt-text="Screenshot of the action selection page with options to send notifications or run business processes." lightbox="media/combine-multiple-streams/action-selection-page-options.png":::
 
-## Next steps
-
-- To learn more about Activator rules, see [Create and manage Activator rules](activator-create-manage-rules.md).
-- To learn more about Activator objects and properties, see [Create and manage Activator objects and properties](activator-manage-objects-properties.md).
-- To learn more about Activator actions, see [Create and manage Activator actions](activator-manage-actions.md).
+## Next step
+To learn more about Activator rules, see [Create and manage Activator rules](activator-rules-overview.md).
