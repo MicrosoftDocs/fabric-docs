@@ -46,7 +46,7 @@ Inside a notebook, you can create a Fabric Connection by selecting the **"Add co
 
 This opens the **"Add connection"** pane where you can select the data source type. Provide the connection details and choose the authentication method.
 
-For the connection created within a notebook, the state of **"Allow this connection to be used in Code-First Artifact"** toggle is enabled by default. After the connection is created, it's automatically bound to the current notebook and appears in the **"Current Notebook"** node in the **"Connections"** pane.
+For the connection created within a notebook, the state of **"Allow Code-First Artifacts like Notebooksto access this connection(Preview)"** toggle is enabled by default. After the connection is created, it's automatically bound to the current notebook and appears in the **"Current Notebook"** node in the **"Connections"** pane.
 
 :::image type="content" source="media\fabric-connection-notebook\current-notebook-connection.png" alt-text="Screenshot of current notebook connection. "lightbox="media\fabric-connection-notebook\current-notebook-connection.png":::
 
@@ -157,7 +157,6 @@ If the same connection is disconnected and reconnected, the connection ID change
 ## Known issues and limitations
 
 - OAuth2.0 authentication isn't supported for Fabric Connection in notebooks.
-- Service Principal Authentication(SPN) authentication support will be added in a future update.
 
 ## Related content
 
