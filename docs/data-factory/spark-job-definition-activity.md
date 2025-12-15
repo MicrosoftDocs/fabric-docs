@@ -45,7 +45,7 @@ Select the **Settings** tab in the activity properties pane, then select the Fab
 
 :::image type="content" source="media/spark-job-definition-activity/spark-job-definition-settings.png" lightbox="media/spark-job-definition-activity/spark-job-definition-settings.png" alt-text="Screenshot showing the Settings tab of the Spark Job Definition properties pages in the pipeline editor window.":::
 
-In the **Settings** tab, you can configure your connection, workspace, and Spark job definition. If no Spark iob definition exists yet, you can create a new Spark job definition from your pipeline editor by selecting the **+New** button next to **Spark job definition**.
+In the **Settings** tab, you can configure your connection, workspace, and Spark job definition. Spark job definition activity supports SPN and WI connections. If no Spark iob definition exists yet, you can create a new Spark job definition from your pipeline editor by selecting the **+New** button next to **Spark job definition**.
 
 :::image type="content" source="media/spark-job-definition-activity/create-new-spark-job-from-activity.png" lightbox="media/spark-job-definition-activity/create-new-spark-job-from-activity.png" alt-text="Screenshot showing the +New button next to the Spark job definition selection box in the Settings tab of the Spark Job definition properties pages in the pipeline editor window.":::
 
