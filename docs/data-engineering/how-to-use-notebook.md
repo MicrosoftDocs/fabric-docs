@@ -62,7 +62,7 @@ You can import one or more existing notebooks from your local computer using the
 
 ## Export a notebook
 
-You can export your notebook to other standard formats. Synapse notebook can be exported into:
+You can export your notebook to other standard formats. The Fabric notebook can be exported into:
 
 :::image type="content" source="media\how-to-use-notebook\export-notebook.png" alt-text="Screenshot showing where to export notebook." lightbox="media\how-to-use-notebook\export-notebook.png":::
 
