@@ -38,7 +38,6 @@ Once published, the Fabric data agent appears in the Agent Store in Microsoft 36
    > [!NOTE]
    > It might take a few seconds for your Fabric data agent to appear in the Agent Store. If it doesn't show up immediately, select the **Expand Navigation** button on the left side of the window to refresh the list of agents.
 
-   > [!NOTE]
    > If agents don't appear, ask your Microsoft 365 admin to confirm that Copilot extensibility is enabled for your account. For more information, see [Manage Copilot agents](/microsoft-365/admin/manage/manage-plugins-for-copilot-in-integrated-apps?context=/microsoft-365-copilot/extensibility/context#enable-or-disable-copilot-extensibility).
 
 :::image type="content" source="./media/data-agent-microsoft-365-copilot/data-agent-microsoft-365-store.png" alt-text="Screenshot showing in the agent store in Microsoft 365 copilot." lightbox="./media/data-agent-microsoft-365-copilot/data-agent-microsoft-365-store.png":::
