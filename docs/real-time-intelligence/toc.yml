@@ -767,6 +767,10 @@ items:
       href: data-activator/activator-trigger-fabric-items.md
     - name: Use custom actions to trigger Power Automate flows
       href: data-activator/activator-trigger-power-automate-flows.md
+  - name: How-to guides
+    items:
+    - name: Combine multiple streams
+      href: data-activator/combine-multiple-streams.md
   - name: Troubleshoot errors
     href: data-activator/activator-troubleshooting.md
 - name: Digital Twin Builder
