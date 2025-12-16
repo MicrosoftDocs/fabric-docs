@@ -11,7 +11,7 @@ ms.date: 11/18/2025
 
 # Surge protection
 
-Surge protection helps limit overuse of your capacity by limiting the amount of compute consumed by background jobs. You configure surge protection for each capacity, and also at workspace level. Surge protection helps prevent throttling and rejections but isn't a substitute for capacity optimization, scaling up, and scaling out. When the capacity reaches its compute limit, it experiences interactive delays, interactive rejections, or all rejections even when surge protection is enabled.  
+Surge protection helps limit overuse of your capacity by limiting the amount of compute consumed by background jobs when set at a capacity level. It also allows you to prioritize certain workspaces over others to prioritize their performance. Ultimately, it is a tool that allows capacity admins to proactively throttle certain activities to leave more room for other activities to run. You configure surge protection for each capacity, and also at workspace level. Surge protection helps prevent throttling and rejections but isn't a substitute for capacity optimization, scaling up, and scaling out. When the capacity reaches its compute limit, it experiences interactive delays, interactive rejections, or all rejections even when surge protection is enabled.  
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ You need to be an admin on the capacity.
 
 ## Surge protection thresholds (Capacity-level)
 
-Capacity admins set a _background operations rejection threshold_ and a _background operations recovery threshold_ when they enable surge protection.
+Capacity-level surge protection enables admins to trigger background rejection earlier, preventing capacities from entering deep throttling states that require longer recovery times.  Capacity admins set a _background operations rejection threshold_ and a _background operations recovery threshold_ when they enable surge protection.
 
 - The **Background operations rejection threshold** determines when surge protection becomes active. The threshold applies to the _24-hour background percentage_ for the capacity. When the threshold is reached or exceeded, surge protection becomes active. When surge protection is active, the capacity rejects new background operations. When surge protection isn't enabled, the _24-hour background percentage_ is allowed to reach 100% before the capacity rejects new background operations.
 - The **Background operations recovery threshold** determines when surge protection stops being active. Surge protection stops being active when the _24-hour background percentage_ drops below the _background recovery threshold_. The capacity starts to accept new background operations.
@@ -114,6 +114,9 @@ Use the following steps to enable workspace-level surge protection:
    - **Rejection Threshold**: CU limit that a single workspace can consume. It is represented as a percentage of the total CU available to the capacity.
    - **Block**: When CU consumption by a single workspace reaches the rejection threshold, that workspace is placed in a **Blocked** state and rejects new operation requests. You can block the workspace indefinitely or for a specified period (in hours).
 
+
+:::image type="content" source="media\surge-protection\surge-protection-settings.png" alt-text="Screenshot of surge protection setting panel" lightbox="media\surge-protection\surge-protection-settings.png":::
+
 ### Manual workspace controls
 
 - In the **Admin Portal**, under **Capacity settings**, select **Fabric Capacity**.
@@ -121,13 +124,18 @@ Use the following steps to enable workspace-level surge protection:
 - Workspaces can be in one of the following 3 states:
 
   - **Available:** Default state, subject to surge protection rules. 
-    - If a workspace is marked as *Available*, it is in its *default* state. It operates normally and is subject to background surge protection rules. Workspace consumption rules can put it in a blocked state if it exceeds limits. You can return it to available state to unblock it immediately.
+    - If a workspace is marked as *Available*, it is in its *default* state. It operates normally and is subject to background surge protection rules. Workspace consumption rules can put it in a blocked state if it exceeds limits. You can manually put it to available state to unblock it immediately.
   
   - **Mission Critical:** Exempt from workspace consumption limits. 
-    - If a workspace is marked as *Mission Critical*, it is exempt from the workspace consumption rules. This state lets you ensure high-priority workspaces keep running while still blocking lower-priority ones when they exceed capacity.
+    - If a workspace is marked as *Mission Critical*, it is exempt from the workspace consumption rules. This state lets you ensure high-priority workspaces keep running while still blocking lower-priority ones when they exceed capacity.  This does not prevent throttling if capacity resources are exceeded - instead it overrides capacity-level surge protection for this specific workspace giving it higher priority.
   
   - **Blocked:** All interactive and background operations are rejected. 
     - If a workspace is marked as **Blocked**, all the interactive and background operations will be rejected. Workspaces can be blocked manually by capacity admins or automatically by detection rules
+
+
+## Considerations and limitations
+- Workspace Level Surge Protection currently doesn’t apply to paginated reports
+- If a capacity is scaled up or down your workspace limits remain set based on the previous SKU size (e.g. 5% of an F32). If you wish to change the limit based on the new size (e.g. 5% of an F64) you must recreate the rule 
 
 ## Related content
 
