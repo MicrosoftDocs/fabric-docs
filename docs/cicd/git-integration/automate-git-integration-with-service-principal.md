@@ -14,19 +14,19 @@ Fabric Git Integration is the foundation for organizations implementing fully au
 Currently, Fabric Git Integration supports two major Git providers: 
  - Azure DevOps
  - GitHub
-    
+  
 This article, focuses on the Service Principal capability for Azure DevOps. This integration allows the Fabric user to perform git operation using a service principal.
 
 ## Azure DevOps: Authentication - automatic and configured
 By default, each Fabric workspace isn't connected to any Git repository. A Fabric workspace has two different ways that it can authenticate to a git repository. These processes are called: 
 
-  - Automatic git credential
-  - Configured credential
+ - Automatic git credential
+ - Configured credential
 
 ### Automatic git credential 
 When an admin user wants to connect a workspace to an Azure DevOps (ADO) repository, the user must first log in from the workspace settings, the system then identifies which ADO organizations the user can access within the current Fabric tenant, allowing the user to proceed with the configuration. 
 
-Once the initial connection is established, any additional user with at least contributor permissions on the same workspace doesn't need to repeat the connection process. Instead, the system attempts to authenticate the second user with the configured ADO repository. If the user lacks the necessary permissions, the Fabric Git Integration source control pane will display a red indicator. 
+Once the initial connection is established, any additional user with at least contributor permissions on the same workspace doesn't need to repeat the connection process. Instead, the system attempts to authenticate the second user with the configured ADO repository. If the user lacks the necessary permissions, the Fabric Git Integration source control pane displays a red indicator. 
 
 This streamlined authentication process is known as "Automatic Git Credential".
 
@@ -38,39 +38,39 @@ The Azure DevOps connection supports two authentication methods:
  - OAuth 2.0 
  - Service Principal 
 
-Both methods include support for [multi-tenant (cross-tenant) scenarios](git-integration-with-service-principal.md#multitenant-considerations-for-service-principal-creation), giving organizations flexibility across environments.  
+Both methods include support for [multi-tenant (cross-tenant) scenarios](git-integration-with-service-principal.md#multitenant-considerations-for-service-principal-creation), giving organizations flexibility across environments. 
 
 Any other user with at least Contributor permissions on the same workspace doesn't need to repeat the connection process. Previously, the system attempted to authenticate secondary users only through **Automatic authentication**. 
 
-If **Automatic authentication** fails, the system will also attempt to connect using any **Configured Credential** which the user has access to, ensuring a smoother experience and reduces redundant setup steps. 
+If **Automatic authentication** fails, the system also attempts to connect using any **Configured Credential** which the user has access to, ensuring a smoother experience and reduces redundant setup steps. 
 
 ## How It Works 
-To connect a Fabric workspace to an external Git provider using a Service Principal, Git integration must use a Fabric cloud connection of type **Azure DevOps – Source Control**.  
+To connect a Fabric workspace to an external Git provider using a Service Principal, Git integration must use a Fabric cloud connection of type **Azure DevOps – Source Control**. 
 
 This cloud connection can be created in two ways through the portal: 
-  - **Manually** via [Manage Connection Settings](../../data-factory/data-source-management.md#add-a-data-source) 
-  - Through **workspace settings** using the [Add Account](git-integration-with-service-principal.md#step-3-create-azure-devops-source-control-connection) option 
+ - **Manually** via [Manage Connection Settings](../../data-factory/data-source-management.md#add-a-data-source) 
+ - Through **workspace settings** using the [Add Account](git-integration-with-service-principal.md#step-3-create-azure-devops-source-control-connection) option 
 
 In both cases, the connection is created under the logged-in user’s identity. 
 
 If a Service Principal needs to use this connection, the user needs to either
-  - share the connection with the service principal or
-  - add the Service Principal as a user to this connection or 
-  - create a new connection using the [Connections REST API](/rest/api/fabric/core/connections/create-connection?tabs=HTTP), passing the Service Principal credentials. 
+ - share the connection with the service principal or
+ - add the Service Principal as a user to this connection or 
+ - create a new connection using the [Connections REST API](/rest/api/fabric/core/connections/create-connection?tabs=HTTP), passing the Service Principal credentials. 
 
 The steps below outline how to use the API to create the cloud connection using a service principal.
 
 ## Prerequisites
 To complete the steps outlined, you need the following permissions:
 
-- [Register](/power-bi/developer/embedded/register-app#register-your-app) an Entra ID application and note:  
-     - Tenant ID 
-     - Client ID 
-     - Client Secret
+- [Register](/power-bi/developer/embedded/register-app#register-your-app) an Entra ID application and note: 
+   - Tenant ID 
+   - Client ID 
+   - Client Secret
 
-- Grant the Service Principal:  
-     - Access to the relevant [Azure DevOps organziation and project](git-integration-with-service-principal.md#step-2-assign-service-principal-to-a-devops-organization). 
-     - Admin permissions on the Fabric workspace. 
+- Grant the Service Principal: 
+   - Access to the relevant [Azure DevOps organization and project](git-integration-with-service-principal.md#step-2-assign-service-principal-to-a-devops-organization). 
+   - Admin permissions on the Fabric workspace. 
 
 
 ## Connect a new workspace to Azure DevOps using Service Principal
@@ -125,7 +125,7 @@ curl --request POST \
 ```
 
 >[!NOTE]
->Save the id from the response. It will be used in the next steps. 
+>Save the id from the response. It is used in the next steps. 
 
 ### 3. Connect workspace to git
 Links a specific Fabric workspace to the Azure DevOps repository using the connection created in step 2. 
@@ -159,7 +159,7 @@ curl --request POST \
 --data '{"initializationStrategy": "PreferRemote"}' 
 ```
 
-#### Items pre-exist in the Microsoft Fabric workspace
+#### Items preexist in the Microsoft Fabric workspace
 If the connected workspace already has items in it, you might consider using the "PreferWorkspace" conflict-resolution strategy. This tells the API to prioritize the current state of the Microsoft Fabric workspace over the content in the remote Git repo when there are conflicts.
 
 ```bash
@@ -172,56 +172,56 @@ curl --request POST \
 
 - PreferWorkspace — tells Microsoft Fabric that if an item exists both in the workspace and in the repo with differences, the workspace version takes precedence over the remote repo version. 
 
-#### Items pre-exist in both the Microsoft Fabric workspace and Git repo
+#### Items preexist in both the Microsoft Fabric workspace and Git repo
 When both the Microsoft Fabric workspace and Git repo already contain content, Microsoft Fabric pauses initialization and responds with the following:
 
 ```json
-  {
-    "requiredAction": "...",
-    "workspaceHead": "...",
-    "remoteCommitHash": "..."
-  }
+ {
+  "requiredAction": "...",
+  "workspaceHead": "...",
+  "remoteCommitHash": "..."
+ }
 
 ```
 
-The response is because Microsoft Fabric cannot guess which side is the source of truth and will ask you to make an explicit decision.
+The response is because Microsoft Fabric can't guess which side is the source of truth and asks you to make an explicit decision.
 
 There are two possible resolutions when this occurs.
 
 1. Git to Workspace ([update-from-git](/rest/api/fabric/core/git/update-from-git?tabs=HTTP))
-  Use this when:
-  - Git is the source of truth
-  - You want Git content to overwrite or populate the workspace
-  You provide:
-  - workspaceHead (current workspace state)
-  - remoteCommitHash (Git commit to apply)
+ Use this when:
+ - Git is the source of truth
+ - You want Git content to overwrite or populate the workspace
+ You provide:
+ - workspaceHead (current workspace state)
+ - remoteCommitHash (Git commit to apply)
 
 2. Workspace to Git ([commit-to-git](/rest/api/fabric/core/git/commit-to-git?tabs=HTTP))
-  Use this when:
-  - Microsoft Fabric workspace is the source of truth
-  - You want workspce content commited to Git
-  You provide:
-  - workspaceHead 
-  - remoteCommitHash
+ Use this when:
+ - Microsoft Fabric workspace is the source of truth
+ - You want workspace content commited to Git
+ You provide:
+ - workspaceHead 
+ - remoteCommitHash
 
 WorkspaceHead and remoteCommitHash are required in these scenarios and act as safety locks.
-  - workspaceHead = "This is the workspace version I think I’m operating on"
-  - remoteCommitHash = "This is the Git commit I believe is current"
+ - workspaceHead = "This is the workspace version I think I’m operating on"
+ - remoteCommitHash = "This is the Git commit I believe is current"
 
 Microsoft Fabric uses them to:
  - Prevent race conditions
  - Avoid overwriting newer changes
  - Ensure the action is intentional and deterministic
 
-If either value is stale, Microsoft Fabric will reject the request.
+If either value is stale, Microsoft Fabric rejects the request.
 
 ## Connect an Existing Workspace to Use Service Principal 
 If your workspace is already connected to Azure DevOps using a user identity, but you want to perform [Fabric Git REST API](/rest/api/fabric/core/git) operations with a Service Principal, follow these steps: 
 
 1. Add Service Principal as Workspace Admin. 
 2. Grant Service Principal access to the Azure DevOps Cloud Connection. You have two options: 
-    - **Share an existing connection:** Log in with a user who has access to the relevant ADO cloud connection and share it with the Service Principal via Manage Users. 
-    - **Create a new connection:** Repeat Steps 1 & 2 from the previous section to create a new cloud connection using Service Principal credentials. 
+  - **Share an existing connection:** Log in with a user who has access to the relevant ADO cloud connection and share it with the Service Principal via Manage Users. 
+  - **Create a new connection:** Repeat Steps 1 & 2 from the previous section to create a new cloud connection using Service Principal credentials. 
 3. Verify access - Call the GET Connections API to confirm the Service Principal can access the required cloud connection [here](/rest/api/fabric/core/connections/get-connection?tabs=HTTP): 
 
  ```bash
