@@ -22,6 +22,7 @@ To get data from a new eventstream, see [Get data from a new eventstream](event-
 > [!WARNING]
 >
 > * Ingestion from an eventstream using a [private link](/azure/private-link/private-link-overview) is not supported.
+> * Data Preview from an eventstream containing very large sized sample events (10 MB+) is not supported in the Get Data wizard. Please use small sized sample events (~1 MB each) to configure the data connection.
 
 ## Prerequisites
 
