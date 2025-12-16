@@ -188,10 +188,10 @@ The response is because Microsoft Fabric can't guess which side is the source of
 
 There are two possible resolutions when this occurs.
 
-|Solution|When to use|You provide|
-|-----|-----|-----|
-|1. Git to Workspace ([update-from-git](/rest/api/fabric/core/git/update-from-git?tabs=HTTP))|● Git is the source of truth </br>● You want Git content to overwrite or populate the workspace|● workspaceHead</br>● remoteCommitHash|
-|2. Workspace to Git ([commit-to-git](/rest/api/fabric/core/git/commit-to-git?tabs=HTTP))|●  Microsoft Fabric workspace is the source of truth</br>● You want workspace content commited to Git|● workspaceHead</br>● remoteCommitHash|
+|Solution|API to use|When to use|You provide|
+|-----|-----|-----|----|
+|1. Git to Workspace|[update-from-git](/rest/api/fabric/core/git/update-from-git?tabs=HTTP)|● Git is the source of truth </br>● You want Git content to overwrite or populate the workspace|● workspaceHead</br>● remoteCommitHash|
+|2. Workspace to Git|[commit-to-git](/rest/api/fabric/core/git/commit-to-git?tabs=HTTP)|●  Microsoft Fabric workspace is the source of truth</br>● You want workspace content commited to Git|● workspaceHead</br>● remoteCommitHash|
 
 WorkspaceHead and remoteCommitHash are required in these scenarios and act as safety locks.
  - workspaceHead = "This is the workspace version I think I’m operating on"
