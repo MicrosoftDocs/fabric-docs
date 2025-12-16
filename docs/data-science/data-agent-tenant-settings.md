@@ -60,7 +60,7 @@ For a Fabric data agent to function properly, the [**Copilot and Azure OpenAI Se
 
 :::image type="content" source="media/data-agent-tenant-settings/fabric-copilot-storage-tenant-setting.png" alt-text="Screenshot of Fabric Copilot Storage setting in the admin portal." lightbox="media/data-agent-tenant-settings/fabric-copilot-storage-tenant-setting.png":::
 
-## Update Fabric data agent tenant settings
+## Fabric data agent tenant setting
 
 By default, the Fabric data agent feature is enabled at the tenant level. This activation allows users to craft natural language Q&A experiences using generative AI, and then share the Fabric data agent within the organization.
 To disallow users to create and share Fabric data agent items, administrators can disable this setting. 
