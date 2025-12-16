@@ -1,6 +1,5 @@
 ---
 title: Create Event Schema Sets in Fabric Real-Time Intelligence
-ms.subservice: rti-hub
 ms.service: fabric
 ms.reviewer: spelluru
 description: Learn how to create and manage event schema sets in Microsoft Fabric Real-Time Intelligence to streamline your streaming analytics workflows.

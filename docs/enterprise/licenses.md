@@ -3,9 +3,9 @@ title: Understand Microsoft Fabric Licenses
 description: Explore Microsoft Fabric licenses, tenants, capacities, and SKUs to plan deployment and collaboration. Learn key scenarios and choose the right option.
 author: JulCsc
 ms.author: juliacawthra
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
-ms.date: 10/13/2025
+ms.date: 12/12/2025
 ai-usage: ai-assisted
 ---
 
@@ -43,7 +43,7 @@ Your capacity lets you:
 
 Capacities use stock-keeping units (SKUs). Each SKU provides Fabric resources for your organization. Your organization can have as many capacities as needed.
 
-The table lists the Microsoft Fabric SKUs. Capacity units (CUs) measure the compute power for each SKU. For customers familiar with Power BI, the table also lists Power BI Premium per capacity *P* SKUs and virtual cores (v-cores). Power BI Premium *P* SKUs support Microsoft Fabric. *A* and *EM* SKUs only support Power BI items.
+The table lists the Microsoft Fabric SKUs. Capacity units (CUs) measure the compute power for each SKU. For customers familiar with Power BI, the table also lists Power BI Premium per capacity *P* SKUs and virtual cores (v-cores). Power BI Premium *P* SKUs support Microsoft Fabric. *A* and *EM* SKUs only support Power BI items. This table is provided as a reference for comparing compute capacity and should not be interpreted as functional or licensing equivalence.
 
 | SKU | Capacity Units (CUs) | Power BI SKU | Power BI v-cores |
 |--|--|--|--|
@@ -65,15 +65,11 @@ The table lists the Microsoft Fabric SKUs. Capacity units (CUs) measure the comp
 #### Power BI embedding scenarios
 
 | Scenario | Required capacity or SKU | User license requirement | Notes |
-|--|--|--|--|
-| Internal viewing in Fabric capacity < F64 | Any F < F64 | Pro / PPU / trial for Power BI viewing | Free users blocked from Power BI viewing outside *My workspace*. |
-| Internal viewing in Fabric capacity ≥ F64 | F64+ | Free (viewer role) | Viewer role on workspace is sufficient. |
-| Embed for your organization (Microsoft Entra users) | F (any) or P, or A/EM (Power BI only) | Depends on SKU & size (see licensing rules) | F64 lifts internal viewer requirement. |
-| App owns data (external users) | A/EM or P SKUs | End users unlicensed | Service principal handles auth; Fabric capacity not required for embedding. |
+|---|---|---|---|
+| Embed for your organization (Microsoft Entra users) | F (any), P, or A/EM | Depends on SKU & size (see [licensing rules](#capacity)) | F64+ or P capacities support viewing by users with a Microsoft Fabric free license. |
+| App owns data (external users) | A/EM or P SKUs | End users unlicensed | Service principal handles authentication; Fabric capacity is not required for embedding. |
 
-In "Embed for your organization" and embedding in Microsoft 365 apps (SharePoint Online, PowerPoint), F SKUs smaller than F64 require each consuming user to have a Pro, Premium Per User (PPU), or individual trial license to view Power BI content.
-
-For "app owns data" (external application / service principal) embedding scenarios, you can use Power BI Embedded A/EM SKUs or Premium per capacity (P) SKUs without an F64 Fabric capacity. An F64 or larger Fabric capacity removes the Pro/PPU viewing requirement for internal users (viewer role) with only a Free license.
+In "Embed for your organization" and embedding in Microsoft 365 apps (SharePoint Online, PowerPoint), F SKUs smaller than F64 and all A SKUs require each consuming user to have a Pro, Premium Per User (PPU), or individual trial license to view Power BI content.
 
 ### Workspace
 
@@ -112,6 +108,22 @@ Per-user licenses let users work in Microsoft Fabric. A Free (Fabric) license is
 - **Pro** - A [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) license lets you share Power BI content with other users. Every organization needs at least one user with a [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) or a Premium Per User (PPU) license, if they intend to use Power BI within Fabric. On F SKUs smaller than F64, each user viewing Power BI content must have Pro, PPU, or an individual trial. On F64 or larger, users with only a Free license and a viewer role can view Power BI content.
 - **Premium per-user (PPU)** - PPU licenses let organizations use Power BI [Premium features](/power-bi/enterprise/service-premium-features) by licensing every user with a PPU license instead of buying a Power BI Premium capacity. PPU is more cost effective when Power BI Premium features are needed for fewer than 250 users. PPU uses shared capacity across the organization, which provides the computing power for Power BI operations.
 
+> [!IMPORTANT]
+> **Premium Per User (PPU) doesn't provision a Fabric capacity.** Although PPU provides access to most Power BI Premium features, it doesn't enable you to create or run non-Power BI Fabric items (such as lakehouses, warehouses, or notebooks). To use Fabric workloads beyond Power BI, you need an F capacity or a Trial Fabric capacity.
+
+### Common licensing scenarios
+
+The following table shows common scenarios to help you choose the right licensing approach:
+
+| What you want to do | Recommended license | Notes |
+|---------------------|---------------------|-------|
+| Use Power BI Premium features for a small team (< 250 users) | PPU licenses | Cost-effective for Power BI only; doesn't enable Fabric workloads |
+| Create and use Fabric items (lakehouses, notebooks, warehouses) | F capacity + Free license | F64 or larger allows Free users to view Power BI content with viewer role |
+| Create and share Power BI content only | Pro licenses or F capacity | Pro required for collaboration in Pro workspaces |
+| View Power BI content in a large organization | F64+ capacity + Free license | Viewers need only Free license with viewer role on F64+ |
+| Try Fabric features for 60 days | Trial capacity | Free trial includes F64 capacity equivalent |
+| Use Power BI Premium features organization-wide | P capacity (or F capacity) | Supports all Fabric experiences when Fabric is enabled |
+
 The following table lists the main differences between the capabilities of per-user licenses. For embedded analytics license considerations, see [Capacity and SKUs in Power BI embedded analytics](/power-bi/developer/embedded/embedded-capacity).
 
 | Capabilities | Free | Pro | PPU |
@@ -132,14 +144,16 @@ The following table lists the main differences between the capabilities of per-u
 
 Use this reference to see who can do what.
 
-| Scenario | Do you have an F (Fabric) capacity? | Do you have a Power BI Premium per capacity (P) SKU only? | Do you have only PPU licenses? | Can you create Fabric (non-Power BI) items? | Can you view Power BI content? | Notes |
-|--|--|--|--|--|--|--|
-| Fabric capacity (F64 or larger) + free users | Yes | No | Optional | Yes | Yes (viewer role) | Free users rely on capacity. They can't create Power BI items outside **My workspace** without a Pro or PPU license. |
-| Fabric capacity (any F SKU < F64) + free users | Yes | No | Optional | Yes | No (outside **My workspace**) | Viewing Power BI content requires a Pro or PPU license when the F SKU is below F64. |
-| Power BI Premium per capacity (P1-P5) only | No | Yes | Optional | Limited (Fabric items are disabled until enabled) | Yes | Enable Fabric to create Fabric items. |
-| PPU only (no F or P capacity) | No | No | Yes | No | Yes (PPU workspaces) | PPU is a per-user feature set, not a capacity. |
-| Pro only (no F/P capacity) | No | No | No | No (beyond personal Power BI) | Limited | A Fabric capacity is required for Fabric workloads. |
-| Trial Fabric capacity | Temporary | No | Optional | Yes | Yes (acts like F64 for viewing) | Ends after the trial. |
+| Scenario | Do you have an F (Fabric) capacity? | Do you have a Power BI Premium per capacity (P) SKU only? | Do you have only PPU licenses? | Do you have an A capacity? | Can you create Fabric (non–Power BI) items? | Can you view Power BI content with a Microsoft Fabric free license? | Notes |
+|---------|------------------|--------------|--------------------|------------|----------|--------------|--------|
+| Fabric capacity (F64 or larger) + free users | Yes | No | Optional | No | Yes | Yes (viewer role) | Free users rely on capacity. They can't create Power BI items outside My workspace without a Pro or PPU license. |
+| Fabric capacity (any F SKU < F64) + free users | Yes | No | Optional | No | Yes | No (outside My workspace) | Viewing Power BI content requires a Pro or PPU license when the F SKU is below F64. |
+| Power BI Premium per capacity (P1–P5) only | No | Yes | Optional | No | Yes (Fabric items disabled until enabled by Fabric Admin) | Yes (with a viewer role, same as Fabric) | Enable Fabric to create Fabric items. |
+| PPU only (no F or P capacity) | No | No | Yes | No | No | Not applicable | PPU is a per-user feature set, not a capacity. |
+| Pro only (no F/P capacity) | No | No | No | No | No (personal Power BI does not include Fabric non–Power BI items) | Not applicable | A Fabric capacity is required for Fabric workloads. |
+| Trial Fabric capacity | Temporary | No | Optional | No | Yes | Yes (acts like F64 for viewing) | Ends after the trial. |
+| Embedding for your organization (User Owns the Data) with content on A capacity | No | No | No | Yes | No | With a Power BI Pro or PPU license or Power BI Individual Trial | Standard "user owns data" embedding rules. |
+| Embedding for your customers (App Owns the Data) with content on A capacity | No | No | No | Yes | No | Only when using the app that owns the data and authenticating through that app; cannot use the user’s Entra identity | Follows strict “app owns data” model. |
 
 Next, review purchase options to select the capacity and user licensing mix that fits your rollout strategy.
 

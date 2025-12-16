@@ -33,9 +33,17 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
    :::image type="content" source="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png" alt-text="Screenshot showing where to find and select SQL analytics endpoint from the top right dropdown menu." lightbox="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png":::
 
-1. From the SQL analytics endpoint pane, you should be able to see all the tables you created. If you don't see them yet, select the **Refresh** icon at the top. Next, select the **Model** tab at the bottom to open the default Power BI semantic model.
+1. From the SQL analytics endpoint pane, you should be able to see all the tables you created. If you don't see them yet, select the **Refresh** icon at the top. Next, select **New semantic model** from the ribbon to create a new Power BI semantic model.
 
-   :::image type="content" source="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png" alt-text="Screenshot showing where to select the Refresh icon and the Model tab." lightbox="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png":::
+   :::image type="content" source="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png" alt-text="Screenshot showing where to select the Refresh icon and the New semantic model button." lightbox="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png":::
+
+1. In the **New semantic model** dialog box:
+   - Enter a name for your semantic model (for example, "WWI Sales Model")
+   - Select the workspace to save it in
+   - Select all the tables you want to include in your data model
+   - Select **Confirm**
+
+1. After the semantic model is created, select **Open data model** to open the web modeling experience where you can edit the model.
 
 1. For this data model, you need to define the relationship between different tables so that you can create reports and visualizations based on data coming across different tables. From the **fact_sale** table, drag the **CityKey** field and drop it on the **CityKey** field in the **dimension_city** table to create a relationship. The **New relationship** dialog box appears.
 

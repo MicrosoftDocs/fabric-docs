@@ -12,7 +12,7 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
   ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
-  ms.date: 09/05/2025
+  ms.date: 11/20/2025
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -49,6 +49,8 @@ landingContent:
         links:
           - text: Security overview
             url: sql/security-overview.md
+          - text: Auditing in SQL database
+            url: sql/auditing.md
           - text: Authentication
             url: sql/authentication.md
           - text: Authorization
@@ -89,6 +91,10 @@ landingContent:
         links:
           - text: What is a Lakehouse?
             url: ../data-engineering/lakehouse-overview.md
+          - text: SQL analytics endpoint for SQL database
+            url: sql/sql-analytics-endpoint.md
+          - text: SQL analytics endpoint for Cosmos DB
+            url: cosmos-db/how-to-access-data-lakehouse.md
 
   # Card 
   - title: Get started with Cosmos DB database
@@ -129,10 +135,6 @@ landingContent:
         links:
           - text: Mirror to OneLake
             url: cosmos-db/mirror-onelake.md
-      - linkListType: how-to-guide
-        links:
-          - text: Access data from a lakehouse
-            url: cosmos-db/how-to-access-data-lakehouse.md
       - linkListType: concept
         links:
           - text: Explore indexing
@@ -145,7 +147,12 @@ landingContent:
         links:
           - text: NoSQL query language
             url: /nosql/query/overview?context=/fabric/context/context-database
-
+      - linkListType: how-to-guide
+        links:
+          - text: Monitor activity and performance
+            url: cosmos-db/how-to-monitor.md            
+          - text: Implement continuous integration and deployment
+            url: cosmos-db/how-to-continuous-integration-deployment.md
   # Card
   - title: Build AI applications with Cosmos DB database
     linkLists:
@@ -157,13 +164,10 @@ landingContent:
             url: cosmos-db/full-text-indexing.md
           - text: Hybrid search
             url: cosmos-db/hybrid-search.md
-
-  # Card 
-  - title: Deploy and monitor Cosmos DB database
+  # Card
+  - title: Migrate
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Implement continuous integration and deployment
-            url: cosmos-db/how-to-continuous-integration-deployment.md
-          - text: Monitor activity and performance
-            url: cosmos-db/how-to-monitor.md
+          - text: Migrate to Fabric
+            url: ../fundamentals/migration.md

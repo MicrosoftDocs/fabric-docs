@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 07/28/2025
 ms.search.form: MCP, RTI, AI, Eventhouse
 ms.reviewer: sharmaanshul
+ms.subservice: rti-eventhouse
 
 #CustomerIntent: As a Fabric RTI AI developer, I want to use the RTI MCP server to create AI agents and AI applications that use Eventhouse and KQL databases to query and analyze real-time data.
 ---

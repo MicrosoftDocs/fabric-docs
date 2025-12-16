@@ -1,6 +1,6 @@
 ---
-title: Monitor Cosmos DB Database (Preview)
-description: Find out how to monitor your Cosmos DB database in Microsoft Fabric during the preview, including available metrics and monitoring tools.
+title: Monitor Cosmos DB Database
+description: Find out how to monitor your Cosmos DB database in Microsoft Fabric, including available metrics and monitoring tools.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
@@ -8,9 +8,7 @@ ms.date: 07/17/2025
 ms.search.form: Deploy and monitor Cosmos DB
 ---
 
-# Monitor Cosmos DB in Microsoft Fabric (preview)
-
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+# Monitor Cosmos DB in Microsoft Fabric
 
 Monitoring is key to understanding how your Cosmos DB in Fabric workloads is performing and scaling over time. The summary metrics are a useful tool for quickly assessing the health of your workload as they're updated regularly. In this guide, you use the **Metrics Summary** dialog to review a quick snapshot of key usage indicators.
 

@@ -1,39 +1,34 @@
 ---
-title: "Limits and Quotas in Microsoft Fabric Mirrored Databases From Azure Cosmos DB (Preview)"
+title: "Limits and Quotas in Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: This article includes a list of limitations and quotas for Microsoft Fabric mirrored databases from Azure Cosmos DB.
-author: seesharprun
-ms.author: sidandrews
+author: markjbrown
+ms.author: mjbrown
 ms.reviewer: jmaldonado
-ms.date: 10/22/2025
+ms.date: 12/03/2025
 ms.topic: limits-and-quotas
 ms.custom:
   - references_regions
 ---
 
-# Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+# Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB
 
 This article details the current limitations for Azure Cosmos DB accounts mirrored into Microsoft Fabric. The limitation and quota details on this page are subject to change in the future.
 
-> [!IMPORTANT]
-> Mirroring for Azure Cosmos DB is currently in [preview](../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
-
 ## Availability limitations
 
-- Mirroring is supported in a specific set of regions for Fabric and APIs for Azure Cosmos DB.
+- [!INCLUDE [fabric-mirroreddb-supported-regions](./includes/fabric-mirroreddb-supported-regions.md)]
 
 - Mirroring is only available for these Azure Cosmos DB account types listed here.
 
-  | | Available |
-  | --- | --- |
+  | Azure Cosmos DB account type | Available |
+  |---|---|
   | **API for NoSQL** | Yes |
   | **API for MongoDB (RU-based)** | No |
-  | **API for MongoDB (vCore-based)** | No |
   | **API for Apache Gremlin** | No |
   | **API for Table** | No |
   | **API for Apache Cassandra (RU-based)** | No |
   | **Managed Instance for Apache Cassandra** | No |
-
-- [!INCLUDE [fabric-mirroreddb-supported-regions](../mirroring/includes/fabric-mirroreddb-supported-regions.md)]
+  | **DocumentDB (vCore-based)** | No |
 
 ## Account and database limitations
 
@@ -98,8 +93,6 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
 ## Replication limitations
 
-- Mirroring doesn't support containers that contain items with property names containing either whitespaces or wild-card characters. This limitation causes mirroring for the specific container to fail. Other containers within the same databases can still successfully mirror. If property names are updated to remove these invalid characters, you must configure a new mirror to the same database and container and you can't use the old mirror.
-
 - Fabric OneLake mirrors from the geographically closest Azure region to Fabric's capacity region in scenarios where an Azure Cosmos DB account has multiple read regions. In disaster recovery scenarios, mirroring automatically scans and picks up new read regions as your read regions could potentially fail over and change.
 
 - Delete operations in the source container are immediately reflected in Fabric OneLake using mirroring. Soft-delete operations using time-to-live (TTL) values isn't supported.
@@ -112,6 +105,6 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
 ## Related content
 
-- [Mirroring Azure Cosmos DB (Preview)](../mirroring/azure-cosmos-db.md)
+- [Mirroring Azure Cosmos DB](../mirroring/azure-cosmos-db.md)
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
 - [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-troubleshooting.yml)

@@ -134,10 +134,16 @@ items:
       href: event-streams/add-source-fabric-onelake.md
     - name: Fabric Job events
       href: event-streams/add-source-fabric-job.md
+    - name: Fabric capacity overview events
+      href: event-streams/add-source-fabric-capacity-overview-events.md
     - name: Azure Blob Storage events
       href: event-streams/add-source-azure-blob-storage.md
+    - name: HTTP
+      href: event-streams/add-source-http.md      
     - name: MQTT
       href: event-streams/add-source-mqtt.md
+    - name: Cribl
+      href: event-streams/add-source-cribl.md      
     - name: Solace PubSub+
       href: event-streams/add-source-solace-pub-sub.md
   - name: Add destination connectors to eventstreams
@@ -571,7 +577,7 @@ items:
       - name: Logstash
         href: /azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric
       - name: NLog sink
-        href: /azure/data-explorer/nlog-sink?context=/fabric/context/context-rti&pivots=fabric
+        href: get-data-nlog-sink.md
       - name: OpenTelemetry
         href: /azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rti&pivots=fabric
       - name: Microsoft Power Automate
@@ -642,7 +648,7 @@ items:
           href: query-acceleration-overview.md
         - name: Accelerate queries over OneLake shortcuts
           href: query-acceleration.md
-      - name: Eventhouse endpoint for Lakehouse
+      - name: Eventhouse endpoint for Lakehouse and Warehouse
         href: eventhouse-as-endpoint.md
       - name: External tools
         items: 
@@ -678,15 +684,17 @@ items:
     href: sample-gallery.md
   - name: Create alerts from a KQL Queryset
     href: data-activator/activator-alert-queryset.md
+  - name: Add query visualization to a dashboard
+    href: add-query-visualization.md
 - name: Real-Time Dashboard
   items:
   - name: Create a Real-Time Dashboard
     href: dashboard-real-time-create.md
   - name: Generate Real-Time Dashboard Using Copilot
-    href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
+    href: copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
   - name: Real-Time Dashboard permissions
     href: dashboard-permissions.md
-  - name: Explore data in Real-Time Dashboard tiles
+  - name: Explore data in Real-Time Dashboard Using Copilot
     href: dashboard-explore-data.md
   - name: Customize Real-Time Dashboard visuals
     href: dashboard-visuals-customize.md
@@ -833,6 +841,8 @@ items:
       href: anomaly-detection-models.md
     - name: Troubleshoot anomaly detection
       href: troubleshoot-anomaly-detection.md
+    - name: Anomaly detector billing and capacity
+      href: anomaly-detection-billing.md
   - name: Univariate anomaly detection using KQL
     href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
   - name: Multivariate anomaly detection using Spark
@@ -847,8 +857,14 @@ items:
     href: map/create-map.md
   - name: Customize a map
     href: map/customize-map.md
-  - name: Share a map
-    href: map/share-map.md
+  - name: Map sharing
+    items:
+    - name: Sharing maps
+      href: map/sharing-maps.md
+    - name: Share maps directly
+      href: map/share-map-direct.md
+    - name: Share maps with org apps
+      href: map/share-map-org-apps.md
   - name: Create a tileset
     href: map/spatial-job-create-tile-sets.md
   - name: Manage Map permissions
@@ -869,7 +885,17 @@ items:
       href: monitor-logs-query.md
 - name: Build AI agents
   displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
-  items: 
+  items:
+    - name: Operations agents  
+      items:
+      - name: Getting started with operations agents
+        href: operations-agent.md
+      - name: Operations agents billing
+        href: operations-agent-billing.md 
+      - name: Operations agents limitations
+        href: operations-agent-limitations.md
+      - name: Operations agent transparency note
+        href: operations-agent-transparency-note.md
     - name: Fabric RTI MCP Server (preview)
       href: mcp-overview.md 
     - name: Use MCP with Eventhouse

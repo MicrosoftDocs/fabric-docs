@@ -5,6 +5,7 @@ ms.reviewer: avnera
 author: bwatts64
 ms.author: bwatts
 ms.topic: concept-article
+ms.subservice: rti-eventhouse
 ms.date: 09/08/2025
 ms.search: Cost, pricing, Cost per GB, optimize, 
 
@@ -72,11 +73,11 @@ You can configure most of these factors to optimize both performance and cost.
 
 ## A closer look at key cost drivers
 
-This section explores the key factors that influence the cost per GB ingested in Azure Data Explorer, providing insights into how you can manage and optimize these costs.
+This section explores the key factors that influence the cost per GB ingested in Eventhouse, providing insights into how you can manage and optimize these costs.
 
 ### Data retention impact on cost
 
-In Azure Data Explorer, all ingested data is stored in persistent storage. Each table and materialized view has a **retention policy** that defines how long the data is kept. The longer the data is retained, the higher the cost, based on Azure Storage pricing. When you need long-term storage, like for compliance, the cost per GB ingested increases because it includes ongoing storage expense.
+In Eventhouse, all ingested data is stored in persistent storage. Each table and materialized view has a **retention policy** that defines how long the data is kept. The longer the data is retained, the higher the cost, based on Fabric OneLake Storage pricing. When you need long-term storage, like for compliance, the cost per GB ingested increases because it includes ongoing storage expense.
 
 ### Compute size
 
@@ -110,4 +111,5 @@ Each ingestion method has different cost, latency, and functionality characteris
 >
 > - To reduce read transactions, minimize queries over cold data 
 > - Enable autoscale to dynamically match cluster size to demand.
+
 

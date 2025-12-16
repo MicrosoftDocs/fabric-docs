@@ -15,7 +15,10 @@ ms.date: 09/18/2025
 
 Fabric resides on a capacity, which is a pool of resources allocated to your platform. Each capacity has its own number of [Capacity Units (CUs)](licenses.md). CUs are used to measure the compute power available for your capacity.
 
-The Microsoft Fabric Capacity Metrics app is designed to provide monitoring capabilities for Microsoft Fabric capacities. Use the app to monitor your capacity consumption and make informed decisions on how to use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on [autoscale](/power-bi/enterprise/service-premium-auto-scale).
+The Microsoft Fabric Capacity Metrics app is designed to provide monitoring capabilities for Microsoft Fabric capacities. Use the app to monitor your capacity consumption and make informed decisions on how to use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on autoscale.
+
+> [!NOTE]
+> Autoscale is available for Fabric F SKUs and Power BI Premium P SKUs. For more information about autoscale, see [Autoscale your Fabric capacity](/power-bi/enterprise/service-premium-auto-scale). Autoscale for Power BI Embedded A SKUs has been deprecated and is no longer available for most customers.
 
 The app is updated often with new features and functionalities and provides the most in-depth information into how your capacities are performing.
 
@@ -60,6 +63,8 @@ You can choose to share with *users in your organization* or with *business-to-b
 
 When using the Microsoft Fabric Capacity Metrics app, consider the following considerations and limitations:
 
+- Update the parameters and refresh the semantic model whenever your available capacities change. For example, if you obtain JIT tenant admin access, update the *RegionName* parameter in the semantic model settings (as described in the installation guidance) and then refresh the model after access is granted.
+- The Microsoft Fabric Capacity Metrics app doesn't support alerts or notifications. For real-time alerts, see [What is Real-Time hub?](../real-time-hub/real-time-hub-overview.md).
 - Data for new capacities isn't visible in the Metrics app until the next scheduled refresh. Data for new items and workspaces isn't visible until the next scheduled refresh after their first operation consuming CUs within the past 14 days. To view the data before the next scheduled refresh, initiate a manual refresh of the semantic model.
 - To hide user emails in the app, disable the [Show user data in the Fabric Capacity Metrics app and reports](../admin/service-admin-portal-audit-usage.md#show-user-data-in-the-fabric-capacity-metrics-app-and-reports) setting in the Admin portal.
 - Billable items and operations consume CU units from your capacity and are paid for by your organization. Non-billable items and operations reflect preview features that don't count towards your capacity limit, and aren't paid for. They provide an indication of possible future impact on your capacity. When preview features become generally available, your organization starts paying for them and their impact on your capacity is taking into account.

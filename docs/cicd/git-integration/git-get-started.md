@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: quickstart
-ms.date: 03/05/2025
+ms.date: 12/15/2025
 ms.custom:
 ms.search.form: Connect to a Git repo, Update from Git, Commit changes to Git, Introduction to Git integration
 #customer intent: As a developer, I want to connect my workspace to a Git repo so that I can collaborate with others and leverage source control.
@@ -56,7 +56,7 @@ If it's the first time connecting, you need to Authorize your user. Provide the 
 
 - *Display name* - must be unique for each user
 - *Azure DevOps URL* - URL of the Azure DevOps repository. URL must be in the format `https://dev.azure.com/{organization}/{project}/_git/{repository}` or `https://{organization}.visualstudio.com/{project}/_git/{repo}`.
-- *Authentication* - You can authenticate either with *OAuth2* or a *Service Principal*.  For more information see [Azure DevOps - Git Integration with service principal (preview)](git-integration-with-service-principal.md)
+- *Authentication* - You can authenticate either with *OAuth2* or a *Service Principal*.  For more information see [Azure DevOps - Git Integration with service principal](git-integration-with-service-principal.md)
 
 :::image type="content" source="./media/git-get-started/devops-add-account.png" alt-text="Screenshot of GitHub integration UI to add an account.":::
 

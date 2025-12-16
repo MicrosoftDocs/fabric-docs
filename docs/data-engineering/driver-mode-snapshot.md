@@ -80,6 +80,7 @@ Consider traditional mode for:
 - **Fallback to traditional mode**
   - Check logs for fallback reasons. Look for log messages containing "Driver mode error"
   - Review size limit configuration. Look for log messages containing "Log size check"
+  - Driver Mode Snapshot does not support storage accounts with hierarchical namespace disabled.
 
 - **Performance Issues**
   - Compare with traditional Spark mode performance

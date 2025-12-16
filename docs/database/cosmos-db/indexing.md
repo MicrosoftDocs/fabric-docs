@@ -1,17 +1,17 @@
 ---
-title: Indexing in Cosmos DB Database (Preview)
-description: Explore how indexing works under the hood within Cosmos DB in Microsoft Fabric during the preview.
-author: seesharprun
-ms.author: sidandrews
+title: Indexing in Cosmos DB Database
+description: Explore how indexing works under the hood within Cosmos DB in Microsoft Fabric.
+author: markjbrown
+ms.author: mjbrown
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 10/30/2025
 ---
 
-# Indexing in Cosmos DB in Microsoft Fabric (preview)
+# Indexing in Cosmos DB in Microsoft Fabric
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+Cosmos DB is a schema-agnostic database that allows you to iterate on your application without having to deal with schema or index management. This is also referred to as, *schema on read*, meaning that Cosmos DB does not enforce a schema on your data when it is written to the database. Rather, your schema is projected into the classes you define within your application when you deserialize data from the database when you read or query your data.
 
-Cosmos DB is a schema-agnostic database that allows you to iterate on your application without having to deal with schema or index management. Indexing within Cosmos DB in Microsoft Fabric is designed to deliver fast and flexible query performance, no matter how your data evolves. By default, Cosmos DB automatically indexes every property for all items in your container without having to define any schema or configure secondary indexes.
+Indexing within Cosmos DB in Microsoft Fabric is designed to deliver fast and flexible query performance, no matter how your data evolves. By default, Cosmos DB automatically indexes every property for all items in your container without having to define any schema or configure secondary indexes.
 
 ## Conceptual tree
 
@@ -22,13 +22,26 @@ As an example, consider this item:
 ```json
 {
   "locations": [
-    { "country": "Germany", "city": "Berlin" },
-    { "country": "France", "city": "Paris" }
+    { 
+      "country": "Germany", 
+      "city": "Berlin" 
+    },
+    { 
+      "country": "France", 
+      "city": "Paris" 
+    }
   ],
-  "headquarters": { "country": "Belgium", "employees": 250 },
+  "headquarters": { 
+    "country": "Belgium", 
+    "employees": 250 
+  },
   "exports": [
-    { "city": "Moscow" },
-    { "city": "Athens" }
+    { 
+      "city": "Moscow" 
+    },
+    { 
+      "city": "Athens" 
+    }
   ]
 }
 ```
@@ -78,7 +91,7 @@ Cosmos DB effectively indexes each property's path and its corresponding value w
 
 ## Index types
 
-Cosmos DB currently supports four types of indexes. 
+Cosmos DB currently supports four types of indexes.
 
 - [Range](#range-index)
 - [Spatial](#spatial-index)
@@ -89,7 +102,7 @@ You can configure these index types when defining the indexing policy.
 
 ### Range index
 
-**Range** indexes are based on an ordered tree-like structure. The range index type is used for:
+**Range** indexes are based on an ordered tree-like structure. This is the default index type and does not need to be specified when defining an index policy. The range index type is used for:
 
 - Equality queries:
 
@@ -482,7 +495,7 @@ WHERE
 
 The query predicate (filtering on items that have headquarters in a location that contains "United") can be evaluated with an index scan of the `headquarters/country` path. Unlike a precise index scan, a full index scan always scans through the distinct set of possible values to identify the index pages where there are results. In this case, `CONTAINS` is run on the index. The index lookup time and RU charge for index scans increases as the cardinality of the path increases. In other words, the more possible distinct values that the query engine needs to scan, the higher the latency and RU charge involved in doing a full index scan.  
 
-For example, consider two properties: `town` and `country`. The cardinality of town is 5,000 and the cardinality of `country` is 200. Here are two example queries that each have a [`CONTAINS`](/nosql/query/contains) system function that does a full index scan on the `town` property. The first query uses more request units (RUs) than the second query because the cardinality of town is higher than `country`.
+For example, consider two properties: `town` and `country`. The cardinality of town is 5,000 and the cardinality of `country` is 200. Here are two example queries that each have a [`CONTAINS`](/cosmos-db/query/contains) system function that does a full index scan on the `town` property. The first query uses more request units (RUs) than the second query because the cardinality of town is higher than `country`.
 
 ```nosql
 SELECT
@@ -563,11 +576,11 @@ Like in the first example, the `CONTAINS` system function might return some fals
 
 Queries with the following aggregate functions must rely exclusively on the index, so evaluating some system functions requires a full scan.
 
-- [`AVG`](/nosql/query/avg)
-- [`COUNT`](/nosql/query/count)
-- [`MAX`](/nosql/query/max)
-- [`MIN`](/nosql/query/min)
-- [`SUM`](/nosql/query/sum)
+- [`AVG`](/cosmos-db/query/avg)
+- [`COUNT`](/cosmos-db/query/count)
+- [`MAX`](/cosmos-db/query/max)
+- [`MIN`](/cosmos-db/query/min)
+- [`SUM`](/cosmos-db/query/sum)
 
 ## Related content
 

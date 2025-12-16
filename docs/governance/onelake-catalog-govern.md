@@ -1,129 +1,111 @@
 ---
 title: Govern your Fabric data with the OneLake catalog
-description: Use the OneLake catalog's govern tab to get insights about the governance posture of the data you own in Fabric and guidance about how to improve it.
+description: Fabric admins and data owners can use the OneLake catalog's Govern tab to gain insights on their scope of responsibility and guidance about how to improve it.
 author: msmimart
 ms.author: mimart
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 02/03/2025
+ms.date: 11/12/2025
 ms.custom:
-#customer intent: As data owner, I want to learn about OneLake catalog's Govern tab, and use it's capabilities to get insights about and govern the data in Fabric that I own.
+#customer intent: As a Fabric admin, I would like to gain visibility on my organization governance state and improve it in one central place. As data owner, I want to learn about OneLake catalog's Govern tab and use its capabilities to get insights about and govern the data in Fabric that I own.
 ---
+# Govern Fabric data
 
-# Govern your Fabric data
+The Govern tab in the OneLake catalog enables you to assess, enhance, and oversee the governance status of the data you manage throughout Fabric. It brings everything together in a single location:
+* [Insights](#get-insights-about-the-governance-status) that help you understand the governance status of data and identify areas for improvement.
+* [Recommended actions](#take-actions-to-improve-the-governance-posture) you can take to improve data's governance posture. The recommended actions are accompanied by guidance to help you accomplish them.
+* [Links to tools and learning resources](#get-help-with-your-data-governance-efforts) you can use to help you analyze, improve, and maintain the governance of the data in Fabric.
 
-OneLake catalog's govern tab helps you analyze, improve, and monitor the governance posture of the data you own across Fabric. It centralizes in one place:
+As a Fabric admin, the insights you see on the Govern tab are based on the entire tenant metadata, from items through workspaces to capacities and domains (see [Considerations and limitations for exceptions](#considerations-and-limitations)).
 
-* [Insights](#get-insights-about-the-governance-status-of-your-data) that help you understand the governance status of your data and identify areas for improvement.
+As a data owner, the insights you see are based on all the items in Fabric that you own. These items appear when you apply the **My items** filter on the [explore tab](./onelake-catalog-explore.md) (see [Considerations and limitations for exceptions](#considerations-and-limitations)).
 
-* [Recommended actions](#improve-the-governance-posture-of-your-data) you can take to improve your data's governance posture. The recommended actions are accompanied by guidance to help you accomplish them.
+To get to the Govern tab, select the [OneLake catalog icon in the Fabric navigation pane](./onelake-catalog-overview.md) and then select **Govern**.
 
-* [Links to tools and learning resources](#get-help-with-your-data-governance-efforts) you can use to help you analyze, improve, and maintain the governance of the data you own in Fabric.
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png" alt-text="Screenshot showing how to open the Govern tab in the OneLake catalog." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png":::
 
-The insights that you see on the govern tab are based on all the items in Fabric that you own. These are the items that can appear when you apply the **My items** filter on the [explore tab](./onelake-catalog-explore.md) (see [Considerations and limitations for exceptions](#considerations-and-limitations)).
+You can also access the Govern tab from the settings gear by selecting the **OneLake Catalog | Govern** link.  
 
-The first time you open the govern tab, it might take a few moments for the insights and recommended actions to appear.
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-settings-gear.png" alt-text="Screenshot showing how to open the Govern tab from setting panel." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-settings-gear.png":::
 
-## Open the govern tab
+## Governance information 
 
-To get to the govern tab, select the [OneLake catalog icon in the Fabric navigation pane](./onelake-catalog-overview.md) and then select the govern tab.
+The first time you open the Govern tab, it might take a few moments for the insights and actions to appear.
 
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png" alt-text="Screenshot showing how to open govern tab in the OneLake catalog." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png":::
+When Fabric Admins access the Govern tab, they see **All Data in Fabric** by default. They can switch to their own items' governance state by selecting **My items**. Data owners see their own items view by default.
+
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-left-rail-navigation.png" alt-text="Screenshot showing how admins can switch between views." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-left-rail-navigation.png":::
 
 ## Scope the insights and recommended actions by domain
 
-If your organization has defined domains, you can use the OneLake catalog's [domain selector](./onelake-catalog-explore.md#scope-the-catalog-to-a-particular-domain) to choose a specific domain or subdomain. This will scope the insights and recommended actions to items that reside within the selected domain.
+If your organization defines domains, you can use the OneLake catalog's [domain selector](./onelake-catalog-explore.md#scope-the-catalog-to-a-particular-domain) to choose a specific domain or subdomain. This action scopes the insights and recommended actions to items that reside within the selected domain.
 
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-domains-selector.png" alt-text="Screenshot showing how to select a domain in the OneLake catalog." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-domains-selector.png":::
 
-## Get insights about the governance status of your data
+> [!NOTE]
+> For Fabric admins, the domain filter doesn't apply to certain actions and those actions remain unchanged.
 
-The govern tab gives you basic, high-level insights about the content you've created in Fabric, and provides a link to a page with [more insights](#all-insights). The data in the insights is based on the last successful refresh of the OneLake catalog governance report that was automatically generated in your My workspace the first time you opened the govern tab. The data refreshes automatically every time you open the govern tab. You can also select the Refresh button if you want to make sure that you've got the latest data.
+## Get insights about the governance status
 
-Select **View more** to see [all available insights](#all-insights), which include insights about sensitivity label coverage and item metadata.
+The insights section provides a snapshot of the current governance state of your data.
 
-### Your governance status at a glance
+### Insights for Fabric admins
 
-This section provides basic high-level insights about the content you've created in Fabric. The data in these insights is based on the last successful refresh of your OneLake catalog governance report. The data refreshes automatically every time you open the govern tab. You can also select the Refresh button if you want to make sure that you've got the latest data.
+For Fabric admins, the insights section provides high-level insights about the entire Fabric tenant. Select **View more** to see [all available insights](#all-insights).
 
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-governance-status.png" alt-text="Screenshot showing the top insights on the govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-governance-status.png":::
+These insights use data from the last successful refresh of the Admin Monitoring Storage, which is automatically generated in the Admin Monitoring workspace the first time an admin opens the Govern tab or accesses the Admin Monitoring workspace. The data refreshes automatically every day. (See [Considerations and limitations for exceptions](#considerations-and-limitations).)
 
-| Insight | What does it show and why is it important |
-|:--------|:--------|
-| **Summary** | Shows you at a glance how many items you own, how many workspaces they're spread over, and how many domains and subdomains you have items associated with. |
-| **Items you own by type** | Shows you at a glance how your data is distributed over different item types. |
-| **Items you own by last refresh date** | Shows you at a glance how current your data is. Regularly refreshing items ensures that data remains current and relevant, and reduces the risk of outdated or unused items cluttering up the system. Review the list of items that haven’t been refreshed recently to identify outdated items and reduce maintenance costs. |
-| **Items with description** | Descriptions provide essential context for users to understand and effectively use your data. Lack of an informative description can lead to misunderstandings and/or limit data usability, and hinder reuse. |
-| **Items by your last access date** | Reviewing rarely visited items helps you identify outdated or unused data. This can help you reduce the number of unnecessary items and free up resources for more relevant content. |
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-insights-admins.png" alt-text="Screenshot showing the top insights for Fabric admins on the Govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-insights-admins.png":::
 
-## Take actions to improve the governance posture of your data
+### Insights for data owners
 
-The recommended actions section displays cards suggesting actions you can take to improve the governance posture of the data you own. When you select a card, you see an insight about your data, an explanation of why the issue revealed by the insight matters, and a list of steps about how to address the issue.
-The recommended actions vary depending on what the insights reveal about your data.
+For data owners, the insights section in the My Items view shows basic high-level insights about the content you create in Fabric. Select **View more** to see [all available insights](#all-insights).
 
-Examples of recommended actions include refreshing potentially outdated items, improving metadata curation by adding tags or descriptions to enhance visibility and reuse across your organization, and protecting items with sensitivity labels if your organization has sensitivity labeling enabled but your coverage is low.
+These insights use data from the last successful refresh of your OneLake catalog governance report. The data refreshes automatically every time you open the Govern tab. Select the Refresh button to make sure you have the latest data.
 
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions.png" alt-text="Screenshot showing the recommended action guidance tool-tip.":::
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-governance-status.png" alt-text="Screenshot showing the top insights for data owners on the Govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-governance-status.png":::
 
-### All insights
+## All insights
 
-#### Your data estate
+Selecting **View more** in the insights section gives you expanded insights for your Fabric data.
 
-The Your data estate insights provide an overview of the content you've created in Fabric to help you identify actions you can take to improve your content's governance posture.
+Fabric admins see a report that provides access to expanded insights across three tabs:
 
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-your-data-estate.png" alt-text="Screenshot showing the your data estate insights on the OneLake catalog govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-your-data-estate.png":::
+* **Manage your data estate** contains inventory overview, capacities & domains information and details about feature usage across the tenant. 
 
-| Insight | What does it show and why is it important |
-|:--------|:--------|
-| **Domains, Subdomains, Workspaces, Items** | Shows you how many items you own, how many domains your items are associated with, and how many workspaces they're spread across. |
-| **Data hierarchy** | Shows you where your data is located. The visual is interactive, and enables you to drill down through the hierarchy from the domain level to the level of the individual items. |
-| **Workspace assignment to domains** | Shows you how many workspaces are assigned to a domain. |
-| **Items by type** | Shows you how many items you own by type. |
-| **Items by last refresh** | Shows you how current your data is. Regularly refreshing items ensures that data remains current and relevant, and reduces the risk of outdated or unused items cluttering up the system. Review the list of items that haven’t been refreshed recently to identify outdated items and reduce maintenance costs.|
-| **Items last refreshed more than 4 months ago** | Data that hasn't been refreshed in over four months is likely to be stale and could indicate a refresh problem. |
-| **Items by your last access date** | Reviewing rarely visited items helps you identify outdated or unused data. This can help you reduce the number of unnecessary items and free up resources for more relevant content. |
-| **Items that failed last refresh by type** | Shows you the number and type of your data items that failed to successfully refresh on their most recent refresh attempt. |
+* **Protect, secure & comply** includes information about sensitivity label coverage and data loss prevention policies activated and scanned across the various workspaces in the organization.
 
-#### Sensitivity label coverage
+* **Discover, trust, and reuse** surfaces insights about data freshness, item curation state with information about description and endorsement coverage and content sharing view.
 
-Sensitivity labels help users understand the sensitivity of the data they work with. Moreover, some organizations might use sensitivity labels to apply access control on sensitive data. Hence unlabeled items represent a potential security risk, both because users are more likely to make inappropriate use of such data, and because there's no protection in the case of accidental exposure to unauthorized users.
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-view-more-report-admins.png" alt-text="Screenshot showing the view more report for admins." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-view-more-report-admins.png":::
 
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-sensitivity-label-coverage.png" alt-text="Screenshot showing the sensitivity label coverage insights on the OneLake catalog govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-sensitivity-label-coverage.png":::
+Data owners see a simplified report with more insights about their inventory, sensitivity label coverage, and curation state. 
 
-| Insight | What does it show and why is it important |
-|:--------|:--------|
-| **Sensitivity  label coverage** | Shows you what percentage of the items you own have a sensitivity label applied. |
-| **Items per sensitivity label** | Shows you how much each sensitivity label is used. This information might serve as a preliminary indication of whether the correct labels are being applied to your data. |
-| **Unlabeled items by type** | Seeing which type of items are unlabeled might help you identify a problem in your labeling strategy. |
-| **Unlabeled items that were recently refreshed** | Recently refreshed items often contain updated or active data. Without sensitivity labels, they could be accidentally shared, creating compliance and/or security risks.|
-| **Your unlabeled items you recently visited** | Recently visited items that don't have sensitivity labels are at risk of unauthorized access or misuse, as their security level is unknown and they lack the protections that they might have gotten if they had the appropriate sensitivity label. |
+:::image type="content" source="./media/onelake-catalog-govern/OneLake-catalog-govern-view-more-data-owners.png" alt-text="Screenshot showing the view more report for data owners." lightbox="./media/onelake-catalog-govern/OneLake-catalog-govern-view-more-data-owners.png":::
 
-#### Discover, trust, and reuse
+In both reports, you can filter, drill through to get more details and initiate Copilot at any point to gain more insights and support comprehensive, interactive data exploration (see [Considerations and limitations for exceptions](#considerations-and-limitations)).
 
-The visuals in the Discover, trust, and reuse section provide insights about item metadata attributes such as endorsement status, description, and tags. For more information about endorsement, see [Endorsement overview](./endorsement-overview.md). For more information about tags, see [Tags in Microsoft Fabric](./tags-overview.md).
+## Take actions to improve the governance posture
 
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-metadata-attributes.png" alt-text="Screenshot showing the discover, trust, and reuse insights on the OneLake catalog govern tab." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-metadata-attributes.png":::
+The recommended actions section displays cards suggesting actions you can take to improve the governance posture of the data. When you select a card, you see an insight highlighting the issue, an explanation of why the issue revealed by the insight matters, and a list of steps about how to address the issue.
 
-| Insight | What does it show and why is it important |
-|:--------|:--------|
-| **Master Data, Certified, Promoted** | Shows you how many items have been endorsed with each endorsement type. A small number of certified items might indicate that most of the data hasn't gone through the certification process and might not meet quality standards. Increase the number of certified items to promote trust in the data. |
-| **Unendorsed items by type** | Endorsing items as Master data, Certified, or Promoted increases trust and reuse. When data isn't endorsed, people are more likely to create more duplicates, leading to discovery, security, and capacity issues. |
-| **Items with description** |Descriptions provide essential context for users to understand and effectively use your data. Lack of an informative description can lead to misunderstandings and/or limit data usability, as well as hinder reuse.|
-| **Items without description by type** | Helps you focus on what kinds of items are missing a description. |
-| **Tagged items by type** | Helps you understand the different types of content being tagged. |
-| **Untagged items by type** | Tags enhance searchability. By tagging frequently accessed content and recently visited items can help users locate valuable resources quickly. |
+Recommended actions for Fabric admins: 
 
-## Improve the governance posture of your data
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions-admins.png" alt-text="Screenshot showing the recommended action section for admins." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions-admins.png":::
 
-The recommended actions section displays cards suggesting actions you can take to improve the governance posture of the data you own. When you select a card, you see an insight about your data, an explanation of why the issue revealed by the insight matters, and a list of steps about how to address the issue.
+Recommended actions for data owners: 
 
-:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions.png" alt-text="Screenshot showing the recommended action guidance tool-tip.":::
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions.png" alt-text="Screenshot showing the recommended action section for data owners." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions.png":::
 
-The recommended actions vary depending on what the insights reveal about your data.
+Example of recommended action card:
+
+:::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions-admins-example.png" alt-text="Screenshot showing an example of a recommended action card." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-recommended-actions-admins-example.png":::
+
+The recommended actions vary depending on what the insights reveal.
 
 ## Get help with your data governance efforts
 
-The govern tab provides links to tools and resources you can use to help you keep your data healthy from the standpoint of governance:
+The Govern tab provides links to tools and resources relevant to your scope of responsibility:
 
 * **Top solutions**: Lists relevant Microsoft Fabric solutions for data governance, compliance, and security, along with links to documentation.
 
@@ -131,28 +113,32 @@ The govern tab provides links to tools and resources you can use to help you kee
 
 ## Create custom reports
 
-The first time you open the govern tab, a report and semantic model named *OneLake catalog governance report (automatically generated)* are generated in your My workspace. The data in these items refreshes every time you visit the govern tab or select the **Refresh** button on the tab.
+If you wish to customize the report, either create a copy of the report and then modify the copy, or create a new report based on the autogenerated semantic model. 
 
-If you wish to customize the report, either create a copy of the report and then modify the copy, or create a new report based on the autogenerated semantic model. **DO NOT** under any circumstances modify the original autogenerated report or semantic model. They are required for the proper functioning of the govern tab's insights, and any changes you make to these items will likely cause the insights to cease working properly.
+> [!IMPORTANT]
+> **Do not** under any circumstances modify the original autogenerated report or semantic model. They're required for the proper functioning of the Govern tab's insights, and any changes you make to these items can cause the insights to cease working properly.
 
 ## Troubleshooting
 
-If the data isn't refreshing as expected, check the notifications pane and the [Monitor page](/fabric/admin/monitoring-hub) to see if you can identify the cause. If refresh fails repeatedly, or if you can't figure out what's causing it to fail, try regenerating the report by closing the govern tab, deleting the OneLake catalog governance report and its associated semantic model from your My workspace, and then opening the govern tab once again.
+If *admin monitoring workspace* or *My workspaces* are reassigned to another capacity, users could get an error when accessing the Govern tab in the OneLake Catalog. In such cases, ensure the newly assigned capacity has enough resources to run the semantic models and reports or try to reallocate the workspaces to another capacity.
+
+For the *My items* view, if the data isn't refreshing as expected, check the notifications pane and the Monitor page to see if you can identify the cause. If refresh fails repeatedly, or if you can't figure out what's causing it to fail, try regenerating the report. To do so, close the Govern tab, and delete the OneLake catalog governance report and its associated semantic model from your My workspaces. Then reopen the Govern tab.
 
 ## Considerations and limitations
 
-* Sub-items, such as tables, are not supported and don't figure into the insights.
+The following are some considerations and limitations when using the Govern tab:
 
-* The govern tab doesn't support cross-tenant scenarios.
-
-* The govern tab isn't available when Private Link is activated.
-
+* Subitems, such as tables, aren't supported and don't surface into the insights.
+* The Govern tab doesn't support cross-tenant scenarios or guest users
+* The Govern tab isn't available when Private Link is activated.
+* Copilot functionality depends on organizational setup and the capacity the workspace is assigned with. The workspace (*admin monitoring workspace* for the admin view and *My workspaces* for the data owners view) should be allocated to the appropriate capacity in order to activate the Copilot button.
+* Because admin insights, recommended actions, and view more reports are based on admin monitoring storage that refreshes once a day, there could be gaps between the data reflected and the actual state. It takes a day to get an updated view of all the changes made in the organization.
+* If *admin monitoring workspace* or *My workspaces* are reassigned to another capacity, users could get an error when accessing the Govern tab in the OneLake Catalog. In such cases, ensure the newly assigned capacity has enough resources to run the semantic models and reports.
+* All users viewing content in the admin monitoring workspace, including the admins report, must have a Power BI Pro license, unless the workspace is assigned to a capacity.
+* The admins semantic model is read-only and can't be used with Fabric data agents.
 
 ## Related content
 
 * [OneLake catalog overview](./onelake-catalog-overview.md)
 * [Discover and explore Fabric items in the OneLake catalog](./onelake-catalog-explore.md)
-* [Endorsement](./endorsement-overview.md)
-* [Fabric domains](./domains.md)
-* [Lineage in Fabric](./lineage.md)
-* [Monitor hub](../admin/monitoring-hub.md)
+* [Administer Microsoft Fabric](https://go.microsoft.com/fwlink/?linkid=2321486)

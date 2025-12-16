@@ -1,9 +1,8 @@
 ---
 title: Assign variables to shortcuts
 description: Learn how to set workspace variable to shortcuts properties
-ms.reviewer: trolson
-ms.author: trolson
-author: trolson
+ms.author: kgremban
+author: kgremban
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom:

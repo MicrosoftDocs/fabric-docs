@@ -6,6 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange
+ms.subservice: rti-eventhouse
 ms.date: 05/11/2025
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
@@ -46,7 +47,8 @@ D. **Details area**: The [details area](#view-eventhouse-details) provides addit
 The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, enable minimum consumption, add databases, add plugins, and collapse or expand the details area.
 
 ### Enable always-on
-
+> [!NOTE]
+> Enabling [always-on](manage-monitor-eventhouse.md#enable-always-on) means that you aren't charged for *OneLake Cache Storage*. When minimum capacity is set, the eventhouse is always active resulting in 100% Eventhouse UpTime.
 Always-on prevents your eventhouse from suspending the service due to inactivity. For highly time-sensitive systems, it prevents the latency of re-activating the eventhouse.
 
 1. From the ribbon, select **Always-On**

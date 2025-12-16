@@ -58,6 +58,8 @@ items:
         href: enable-workspace-monitoring.md
       - name: Visualize workspace monitoring
         href: sample-gallery-workspace-monitoring.md
+      - name: Monitor items with item job logs
+        href: item-job-event-logs.md
 
 - name: Manage and govern content
   items:
@@ -150,6 +152,8 @@ items:
           href: ../real-time-intelligence/copilot-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
         - name: Generate a real-time dashboard with Copilot
           href: ../real-time-intelligence/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
+        - name: Use Copilot to explore data in a Real-Time Dashboard
+          href: ../real-time-intelligence/dashboard-explore-data.md?context=/fabric/context/context-rti&pivots=fabric
     - name: Use Copilot for Data Science and Data Engineering
       items:
       - name: Explore Chat magics in notebooks (preview)

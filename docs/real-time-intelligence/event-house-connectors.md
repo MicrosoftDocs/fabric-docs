@@ -5,6 +5,7 @@ ms.reviewer: aksdi
 ms.author: spelluru
 author: spelluru
 ms.topic: concept-article
+ms.subservice: rti-eventhouse
 ms.date: 07/31/2024
 # CustomerIntent: As a data ingestor, I want to know what data connectors and tools are available, so that I can choose the right one for my use case.
 ---
