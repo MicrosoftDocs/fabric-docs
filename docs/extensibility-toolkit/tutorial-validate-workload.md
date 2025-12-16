@@ -38,6 +38,8 @@ The Fabric Extensibility Toolkit Validator is available through GitHub:
 
 🔗 **Repository**: <https://github.com/microsoft/fabric-extensibility-toolkit-validator>
 
+For detailed installation and usage instructions, see [Microsoft Fabric Extensibility Toolkit Validator](tools-workload-validator.md).
+
 Visit the repository to:
 
 * Download the latest version of the validator

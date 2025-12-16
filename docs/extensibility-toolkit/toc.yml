@@ -20,6 +20,13 @@ items:
   - name: Manual Setup
     href: setup-manual.md
 
+- name: Item samples
+  items:
+  - name: OneLake Explorer Sample
+    href: sample-onelake-explorer.md
+  - name: Package Installer Sample
+    href: sample-package-installer.md
+
 - name: Tutorials
   items:
   - name: Create Microsoft Entra App
@@ -127,6 +134,8 @@ items:
     href: tools-register-local-workload.md
   - name: DevServer
     href: tools-register-local-web-server.md
+  - name: Workload Validator
+    href: tools-workload-validator.md
   - name: FabricClient SDK
     href: https://go.microsoft.com/fwlink/?linkid=2271989
 
