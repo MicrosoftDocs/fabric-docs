@@ -67,9 +67,6 @@ The Fabric runtime 2.0 experimental preview stage gives you early access to new 
 
 ### Limitations and Notes
 
-> [!NOTE]
-> Deployment in West US2 region is currently in progress and will be available soon.
-
 Fabric Runtime 2.0 is currently in an experimental public preview stage, designed for users to explore and experiment with the latest features and APIs from Spark and Delta Lake in the development or test environments. While this version offers access to core functionalities, there are certain limitations:
 
 * You can use Spark 4.0 sessions, write code in notebooks, schedule Spark job definitions, and use with PySpark, Scala, and Spark SQL. However, R language isn't supported in this early release.
