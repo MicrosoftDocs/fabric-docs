@@ -40,7 +40,7 @@ The first time when a notebook is created, a warning message is shown to remind 
 
 Follow these best practices to avoid security issues:
 
-- **Before running a notebook manually**: Check who last modified the notebook. Review any recent changes before executing code you didn't write.
+- **Before running a notebook manually**: Check who last modified the notebook. Review any recent changes before executing code you didn't write. You can use the [version history](#version-history) panel to view the actual content changes.
 - **Before adding a notebook to a pipeline**: Verify who last modified the pipeline, because the notebook runs under that user's identity. If the identity doesn't have the required permissions (or if you need a user principal instead of a service principal for certain APIs), have the appropriate user edit the pipeline to update the last modified identity.
 - **Before creating or updating a schedule**: The notebook runs under the identity of whoever creates or updates the schedule. Ensure that user has the necessary permissions for all operations in the notebook.
 - **Use workspace stages**: Separate workspaces into dev, test, and prod stages. Restrict access to production workspaces to trusted users only.
