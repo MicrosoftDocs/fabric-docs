@@ -30,14 +30,14 @@ There are three ways to access the **Explore data** option for KQL tables in the
 1. In the list of **Recent streaming data**, filter by the **tables** data type.
 1. From a KQL table's context menu (three dots), select **Explore data**.
 
-:::image type="content" source="media/copilot-explore-data-tables/explore-data-in-table.png" alt-text="Screenshot of the data-in-motion tile.":::
+:::image type="content" source="media/copilot-explore-data-tables/explore-data-in-table.png" alt-text="Screenshot of the context menu with the Explore data button highlighted.":::
 
 **KQL table details**
 
 1. Open the KQL table details.
 1. Select **Explore data** from the upper tool bar.
 
-:::image type="content" source="media/copilot-explore-data-tables/table-details-explore-data.png" alt-text="Screenshot of the data-in-motion tile.":::
+:::image type="content" source="media/copilot-explore-data-tables/table-details-explore-data.png" alt-text="Screenshot of the real-time hub tool bar with the Explore data button highlighted.":::
 
 ## Explore data with Copilot
 
