@@ -5,9 +5,10 @@ ms.reviewer: tessarhurr
 ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: how-to
+ms.subservice: rti-anomaly-detector
 ms.custom: 
-ms.date: 09/15/2025
-ms.search.form: Anomaly detection how-to
+ms.date: 12/04/2025
+ms.search.form: Anomaly Detection How To
 ---
 
 # Anomaly detection in Real-Time Intelligence (Preview)
@@ -35,7 +36,8 @@ Key capabilities include:
   :::image type="content" source="media/anomaly-detection/python.png" alt-text="Screenshot of enabling the Python plugin in Eventhouse.":::
 
 > [!NOTE]
-> Ensure your Eventhouse table contains sufficient historical data to improve model recommendations and anomaly detection accuracy. For example, datasets with one data point per day require a few months of data, while datasets with one data point per second might only need a few days.
+> * Ensure your Eventhouse table contains sufficient historical data to improve model recommendations and anomaly detection accuracy. For example, datasets with one data point per day require a few months of data, while datasets with one data point per second might only need a few days.
+> * This feature is available in all regions where Microsoft Fabric is available.
 
 ## How to set up anomaly detection
 
@@ -157,6 +159,13 @@ Follow the steps to reanalyze the model with new data:
 > [!WARNING]
 > Reanalyzing will update the model used by existing monitoring rules, which may impact downstream actions.
 
+### Explore anomaly detection events and set alerts
+
+After publishing your anomaly detection results, you can explore the detected anomalies in the Real-Time Hub and set up alerts to notify you of future anomalies.
+For more information, see:
+- [Explore anomaly detection events](../real-time-hub/explore-anomaly-detection.md)
+- [Set alerts on anomaly detection events](../real-time-hub/set-alerts-anomaly-detection.md)
+
 ## Limitations and considerations
 
 Be aware of these current limitations:
@@ -190,15 +199,16 @@ For more information, see [Enable Python plugin in Real-Time Intelligence](pytho
 
 ## Next steps
 
-Now that you have anomaly detection configured, explore related capabilities:
+Now that you have anomaly detection configured, next you can:
 
+- [Explore anomaly detection events](../real-time-hub/explore-anomaly-detection.md)
+- [Set alerts on anomaly detection events](../real-time-hub/set-alerts-anomaly-detection.md)
+- [Set up Activator for automated responses](../real-time-intelligence/data-activator/activator-introduction.md)
 - [Learn about multivariate anomaly detection](multivariate-anomaly-detection.md)
-- [Explore multivariate anomaly overview](multivariate-anomaly-overview.md)
 - [Create alerts from a KQL queryset](../data-activator/data-activator-alert-queryset.md)
-- [Set up Data Activator for automated responses](../data-activator/data-activator-introduction.md)
 
 ## Related content
 
 - [KQL query reference](/kusto/query/)
 - [Real-Time Dashboard documentation](dashboard-real-time-create.md)
-- [Data Activator overview](../data-activator/data-activator-introduction.md)
+- [Activator overview](../data-activator/data-activator-introduction.md)

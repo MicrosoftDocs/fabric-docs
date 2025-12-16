@@ -2,8 +2,8 @@
 title: Unify data sources with OneLake shortcuts
 description: OneLake shortcuts provide a way to connect to existing data without having to directly copy it. Learn how to use them.
 ms.reviewer: eloldag
-ms.author: trolson
-author: TrevorLOlson
+ms.author: kgremban
+author: kgremban
 ms.search.form: Shortcuts
 ms.topic: concept-article
 ms.custom:
@@ -147,6 +147,18 @@ Microsoft Entra ID delegated authorization types (organizational account, servic
 >[!IMPORTANT]
 >The **Generate a user delegation key** requirement is not currently enforced when a workspace identity is configured for the workspace and the ADLS shortcut auth type is Organizational Account, Service Principal or Workspace Identity. However, this behavior will be restricted in the future. We recommend making sure that all delegated identities have the **Generate a user delegation key** action to ensure that your users' access isn't affected when this behavior changes.
 
+<a id="adls-limitations"></a>
+#### Limitations
+
+The following limitations apply to ADLS shortcuts:
+
+- ADLS shortcut target paths can't contain any reserved characters from [RFC 3986 section 2.2](https://www.rfc-editor.org/rfc/rfc3986#section-2.2). For allowed characters, see [RFC 3968 section 2.3](https://www.rfc-editor.org/rfc/rfc3986#section-2.3).
+- ADLS shortcuts don't support the Copy Blob API.
+- Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
+- OneLake shortcuts don't support connections to ADLS Gen2 storage accounts that use managed private endpoints. For more information, see [managed private endpoints for Fabric.](../security/security-managed-private-endpoints-overview.md#limitations-and-considerations)
+- More shortcuts can't be created inside ADLS shortcuts.
+- ADLS gen 2 shortcuts aren't supported for storage accounts that use [Microsoft Purview data sharing](/purview/legacy/concept-data-share).
+
 ### Azure Blob Storage shortcuts
 
 #### Access
@@ -168,8 +180,7 @@ Blob storage shortcuts use a delegated authorization model. In this model, the s
 
 When you create shortcuts to Amazon S3 accounts, the target path must contain a bucket name at a minimum. S3 doesn't natively support hierarchical namespaces but you can use prefixes to mimic a directory structure. You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcut. When you access data through an S3 shortcut, prefixes are represented as folders.
 
-> [!NOTE]
-> S3 shortcuts are read-only. They don't support write operations regardless of the user's permissions.
+S3 shortcuts are read-only. They don't support write operations regardless of the user's permissions.
 
 #### Access
 
@@ -193,6 +204,16 @@ The IAM user must have the following permissions on the bucket that the shortcut
 - `S3:ListBucket`
 
 S3 shortcuts support S3 buckets that use S3 Bucket Keys for SSE-KMS encryption. To access data encrypted with SSE-KMS encryption, the user must have encrypt/decrypt permissions for the bucket key, otherwise they receive a **"Forbidden" error (403)**. For more information, see [Configuring your bucket to use an S3 Bucket Key with SSE-KMS for new objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/configuring-bucket-key.html).
+
+<a id="s3-limitations"></a>
+#### Limitations
+
+The following limitations apply to S3 shortcuts:
+
+- S3 shortcuts are read-only. They don't support write operations regardless of the user's permissions.
+- S3 shortcut target paths can't contain any reserved characters from [RFC 3986 section 2.2](https://www.rfc-editor.org/rfc/rfc3986#section-2.2). For allowed characters, see [RFC 3968 section 2.3](https://www.rfc-editor.org/rfc/rfc3986#section-2.3).
+- S3 shortcuts don't support the Copy Blob API.
+- More shortcuts can't be created inside S3 shortcuts.
 
 ### Google Cloud Storage shortcuts
 
@@ -290,16 +311,11 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - The maximum number of shortcuts per Fabric item is 100,000. In this context, the term item refers to: apps, lakehouses, warehouses, reports, and more.
 - The maximum number of shortcuts in a single OneLake path is 10.
 - The maximum number of direct shortcuts to shortcut links is 5.
-- ADLS and S3 shortcut target paths can't contain any reserved characters from [RFC 3986 section 2.2](https://www.rfc-editor.org/rfc/rfc3986#section-2.2). For allowed characters, see [RFC 3968 section 2.3](https://www.rfc-editor.org/rfc/rfc3986#section-2.3).
 - OneLake shortcut names, parent paths, and target paths can't contain "%" or "+" characters.
 - Shortcuts don't support non-Latin characters.
-- Copy Blob API isn't supported for ADLS or S3 shortcuts.
-- Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
-- More shortcuts can't be created inside ADLS or S3 shortcuts.
 - Lineage for shortcuts to Data Warehouses and Semantic Models isn't currently available.
 - A Fabric shortcut syncs with the source almost instantly, but propagation time might vary due to data source performance, cached views, or network connectivity issues.
 - It might take up to a minute for the Table API to recognize new shortcuts.
-- OneLake shortcuts don't support connections to ADLS Gen2 storage accounts that use managed private endpoints. For more information, see [managed private endpoints for Fabric.](../security/security-managed-private-endpoints-overview.md#limitations-and-considerations)
 
 ## Related content
 

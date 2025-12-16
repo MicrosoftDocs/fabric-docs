@@ -6,13 +6,14 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
+ms.subservice: rti-eventhouse
 ms.date: 11/19/2024
 ---
 # Get data from Serilog
 
 [!INCLUDE [ingest-data-serilog](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-serilog.md)]
 
-For a complete list of data connectors, see [Data connectors overview](data-connectors/data-connectors.md).
+For a complete list of data connectors, see [Data connectors overview](event-house-connectors.md).
 
 ## Prerequisites
 
@@ -50,4 +51,4 @@ For a complete list of data connectors, see [Data connectors overview](data-conn
 ## Related content
 
 * [Create a KQL database](create-database.md)
-* [Data connectors overview](data-connectors/data-connectors.md)
+* [Data connectors overview](event-house-connectors.md)

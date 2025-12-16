@@ -24,7 +24,7 @@ This tutorial shows how to use Fabric to evaluate RAG application performance. T
 
 ## Prerequisites
 
-Before you start this tutorial, complete the [Building Retrieval Augmented Generation in Fabric step-by-step guide](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-bring-your-own-keys/quickstart-genai-guidance.ipynb).
+Before you start this tutorial, complete the [Building Retrieval Augmented Generation in Fabric step-by-step guide](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-genai-guidance-byok.ipynb).
 
 You need these services to run the notebook:
 
@@ -33,7 +33,7 @@ You need these services to run the notebook:
 - [Azure AI Studio for OpenAI](https://aka.ms/what-is-ai-studio)
 - [Azure AI Search](https://aka.ms/azure-ai-search) (it contains the data you indexed in the previous tutorial).
 
-In the previous tutorial, you uploaded data to your lakehouse and built a document index used by the RAG system. Use the index in this exercise to learn core techniques to evaluate RAG performance and identify potential problems. If you didn't create an index or removed it, follow the [quickstart guide](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-bring-your-own-keys/quickstart-genai-guidance.ipynb) to complete the prerequisite.
+In the previous tutorial, you uploaded data to your lakehouse and built a document index used by the RAG system. Use the index in this exercise to learn core techniques to evaluate RAG performance and identify potential problems. If you didn't create an index or removed it, follow the [quickstart guide](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/genai-guidance/00-quickstart/quickstart-genai-guidance-byok.ipynb) to complete the prerequisite.
 
 :::image type="content" source="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png" alt-text="Diagram that shows the flow of a user conversation through the RAG system." lightbox="media/tutorial-evaluate-rag-performance/user-conversation-rag-diagram.png":::
 

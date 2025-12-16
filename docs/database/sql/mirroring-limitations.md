@@ -1,14 +1,14 @@
 ---
-title: Limitations of Mirroring for SQL database (preview)
+title: Limitations of Mirroring for SQL database
 description: "Details on the limitations of mirroring for SQL database in Fabric."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac
-ms.date: 10/22/2025
+ms.date: 11/10/2025
 ms.topic: conceptual
 ms.custom:
 ---
-# Limitations for Fabric SQL database mirroring (preview)
+# Limitations for Fabric SQL database mirroring
 
 Current limitations in the [Fabric SQL database mirroring](mirroring-overview.md) are listed in this page. This page is subject to change.
 
@@ -16,11 +16,9 @@ For troubleshooting, see:
 
 - [Troubleshoot mirroring from Fabric SQL database](mirroring-troubleshooting.md)
 - [Troubleshoot Fabric mirrored databases](../../mirroring/troubleshooting.md)
-- [Troubleshoot Fabric mirrored databases from Azure SQL Database (preview)](../../mirroring/azure-sql-database-troubleshoot.md)
+- [Troubleshoot Fabric mirrored databases from Azure SQL Database](../../mirroring/azure-sql-database-troubleshoot.md)
 
-For general limitations for SQL database in Microsoft Fabric, see [Limitations in SQL database in Microsoft Fabric (preview)](limitations.md).
-
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
+For general limitations for SQL database in Microsoft Fabric, see [Limitations in SQL database in Microsoft Fabric](limitations.md).
 
 ## Database level limitations
 
@@ -30,16 +28,16 @@ For general limitations for SQL database in Microsoft Fabric, see [Limitations i
 
 ### Security features
 
-- [Row-level security](/sql/relational-databases/security/row-level-security?view=fabric&preserve-view=true) is supported for Fabric SQL database, but permissions are currently not propagated to the replicated data in Fabric OneLake.
-- [Object-level permissions](/sql/t-sql/statements/grant-object-permissions-transact-sql?view=fabric&preserve-view=true), for example granting permissions to certain columns, are currently not propagated to the replicated data in Fabric OneLake.
-- [Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking?view=fabric&preserve-view=true) settings are currently not propagated to the replicated data in Fabric OneLake.
+- [Row-level security](/sql/relational-databases/security/row-level-security?view=fabric-sqldb&preserve-view=true) is supported for Fabric SQL database, but permissions are currently not propagated to the replicated data in Fabric OneLake.
+- [Object-level permissions](/sql/t-sql/statements/grant-object-permissions-transact-sql?view=fabric-sqldb&preserve-view=true), for example granting permissions to certain columns, are currently not propagated to the replicated data in Fabric OneLake.
+- [Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking?view=fabric-sqldb&preserve-view=true) settings are currently not propagated to the replicated data in Fabric OneLake.
 - Microsoft Purview Information Protection/sensitivity labels are not cascaded and mirrored to Fabric OneLake. For more information, see [Protect sensitive data in SQL database with Microsoft Purview protection policies](protect-databases-with-protection-policies.md).
 
 ## Table level
 
 - A table cannot be mirrored if the primary key includes an [unsupported data type](#column-level).
 - Source tables that have any of the following features in use cannot be mirrored to Fabric OneLake.
-   - [Clustered columnstore indexes (CCI)](/sql/t-sql/statements/create-table-transact-sql?view=fabric&preserve-view=true#index-index_name-clustered-columnstore) can be created on an existing table, but the table then cannot be mirrored to Fabric OneLake.
+   - [Clustered columnstore indexes (CCI)](/sql/t-sql/statements/create-table-transact-sql?view=fabric-sqldb&preserve-view=true#index-index_name-clustered-columnstore) can be created on an existing table, but the table then cannot be mirrored to Fabric OneLake.
        - CCI are supported and mirrored when they are created at the same time the table is created. For example:
 
          ```sql
@@ -68,8 +66,8 @@ For general limitations for SQL database in Microsoft Fabric, see [Limitations i
    - Upon removing system versioning (splitting temporal data from its history table), the history table is treated as a standalone table and automatically added to mirroring.
 - Full-text indexing is not supported and cannot be created in SQL database in Microsoft Fabric.
 - The **NotSupported** replication status in the [Replication monitor](mirroring-monitor.md) page contains status information specific to the table, often caused by an unsupported data type.
-- In the current preview, a table cannot be mirrored if it has the **json** or **vector** data type.
-    - Currently, you cannot ALTER a column to the **vector** or **json** data type in SQL database in Fabric.
+- Currently, a table cannot be mirrored if it has the **json** or **vector** data type.
+    - Currently, you cannot `ALTER` a column to the **vector** or **json** data type in SQL database in Fabric.
 
 ## Column level
 
@@ -97,4 +95,4 @@ For general limitations for SQL database in Microsoft Fabric, see [Limitations i
 
 ## Related content
 
-- [Limitations in SQL database in Microsoft Fabric (preview)](limitations.md)
+- [Limitations in SQL database in Microsoft Fabric](limitations.md)

@@ -4,7 +4,7 @@ description: This article explains how to configure JSON format in the pipeline 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 06/25/2024
+ms.date: 11/19/2025
 ms.custom:
   - template-how-to
 ---
@@ -36,7 +36,6 @@ JSON format is supported for the following activities and connectors as a source
 |  | [Lookup activity](lookup-activity.md) |
 |  | [GetMetadata activity](get-metadata-activity.md) |
 |  | [Delete activity](delete-data-activity.md) |
-
 
 ## JSON format in copy activity
 

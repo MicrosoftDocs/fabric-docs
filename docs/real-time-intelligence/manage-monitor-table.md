@@ -7,6 +7,7 @@ author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 03/20/2025
+ms.subservice: rti-eventhouse
 ms.search.form: Database
 #customer intent: As a user, I want to learn how to manage and monitor a table in a KQL  database so that I can effectively utilize Real-Time Intelligence.
 ---

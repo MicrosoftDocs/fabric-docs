@@ -1,7 +1,7 @@
 ---
 title: OneLake diagnostics
 description: OneLake diagnostics makes it simple to answer "who accessed what, when, and how" across your Fabric workspaces
-ms.reviewer: eloldag
+ms.reviewer: tompeplow
 ms.author: tompeplow
 author: tpeplow
 ms.topic: overview
@@ -12,7 +12,7 @@ ms.date: 10/03/2025
 
 # OneLake diagnostics
 
-OneLake diagnostics provides end-to-end visibility into how data is accessed and used across your Microsoft Fabric environment. It enables organizations to answer critical questions like "who accessed what, when, and how", supporting data governance, operational insight, and compliance reporting.
+OneLake diagnostics provides end-to-end visibility into how data is accessed and used across your Microsoft Fabric environment. It enables organizations to answer critical questions like "who accessed what, when, and how," supporting data governance, operational insight, and compliance reporting.
 
 When enabled at the workspace level, OneLake diagnostics streams data access events as JSON logs into a Lakehouse of your choice within the same capacity. These logs can be easily transformed into analytics-ready Delta tables, allowing teams to build dashboards and reports that track usage patterns, top-accessed items, and trends over time.
 
@@ -60,6 +60,20 @@ Use the following steps to enable OneLake diagnostics:
 > [!NOTE]
 > It takes up to 1 hour for diagnostic events to begin flowing into the Lakehouse.
 
+### Enabling immutable diagnostic logs
+
+:::image type="content" source="./media/onelake-diagnostics/onelake-diagnostics-immutability.png" lightbox="./media/onelake-diagnostics/onelake-diagnostics-immutability.png" alt-text="Screenshot that shows configuring the immutability period for OneLake diagnostics.":::
+
+OneLake diagnostic events can be made immutable, this means that the JSON files that contain diagnostic events can't be tampered with, or deleted, during the immutability retention period. OneLake diagnostics immutability is built on the Immutable storage for Azure Blob Storage capability. For more information, please read [Store business-critical blob data with immutable storage in a write once, read many (WORM) state](/azure/storage/blobs/immutable-storage-overview)
+
+The immutability period is configured on the workspace that contains diagnostic events. To configure the immutability period, you must have previously configured a workspace to store diagnostic events in this workspace. The immutability period applies to all events stored in this workspace.
+
+1. Enter the required immutability period
+2. Press apply
+
+> [!NOTE]
+> Once the immutability policy is applied, the files can't be modified or deleted until the immutability retention period passes. Use caution while applying the policy as it can't be changed once set. 
+
 ### Changing the OneLake diagnostic Lakehouse
 
 1. Open the workspace settings.
@@ -95,7 +109,7 @@ The JSON event contains the following attributes:
 | tenantId |	The tenant identifier that performed the OneLake operation |
 | executingPrincipalId |	The GUID of the Microsoft Entra principle performing the OneLake operation |
 | correlationId |	A GUID correlation identifier for the OneLake operation |
-| operationName |	The OneLake operation being performed (not provided for internal Fabric operations) |
+| operationName |	The OneLake operation being performed (not provided for internal Fabric operations). [See Operations](#operations) below for more details. |
 | operationCategory |	The broad category of the OneLake operation (for example, Read)  |
 | executingUPN |	The Microsoft Entra unique principal name performing the operation (not provided for internal Fabric operations) |
 | executingPrincipalType |	The type of principal being used, for example User or Service Principal  |
@@ -151,3 +165,82 @@ If the Lakehouse selected for diagnostics is deleted:
 OneLake diagnostics isn't currently compatible with [Workspace outbound access protection (OAP)](../security/workspace-outbound-access-protection-overview.md) across workspaces. If you require OneLake diagnostics and OAP to work together, you must select a Lakehouse in the same Workspace.
 
 When OneLake diagnostics is configured, the selection of the workspace honors workspace private link configuration by limiting your selection to workspaces within the same private network. However, OneLake diagnostics doesn't automatically respond to networking changes.
+
+## Operations
+
+### Global operations
+
+| Operation                         | Category |
+|-----------------------------------|----------|
+| ReadFileOrGetBlob                 | Read     |
+| GetFileOrBlobProperties           | Read     |
+| GetActionFileOrBlobProperties     | Read     |
+| CheckAccessFileOrBlob             | Read     |
+| DeleteFileOrBlob                  | Delete   |
+
+### Blob operations
+
+| Operation                        | Category |
+|----------------------------------|----------|
+| GetBlockList                     | Read     |
+| ListBlob                         | Read     |
+| GetBlob                          | Read     |
+| DeleteBlob                       | Delete   |
+| UndeleteBlob                     | Write    |
+| GetBlobMetadata                  | Read     |
+| SetBlobExpiry                    | Write    |
+| SetBlobMetadata                  | Write    |
+| SetBlobProperties                | Write    |
+| SetBlobTier                      | Write    |
+| LeaseBlob                        | Write    |
+| AbortCopyBlob                    | Write    |
+| PutBlockFromURL                  | Write    |
+| PutBlock                         | Write    |
+| PutBlockList                     | Write    |
+| AppendBlockFromURL               | Write    |
+| AppendBlock                      | Write    |
+| AppendBlobSeal                   | Write    |
+| PutBlobFromURL                   | Write    |
+| CopyBlob                         | Write    |
+| PutBlob                          | Write    |
+| QueryBlobContents                | Read     |
+| GetBlobProperties                | Read     |
+| CreateContainer                  | Write    |
+| DeleteContainer                  | Delete   |
+| GetContainerMetadata             | Read     |
+| GetContainerProperties           | Read     |
+| SetContainerMetadata             | Write    |
+| SetContainerAcl                  | Write    |
+| LeaseContainer                   | Write    |
+| RestoreContainer                 | Write    |
+| SnapshotBlob                     | Write    |
+| CreateFastPathReadSession        | Read     |
+| CreateFastPathWriteSession       | Write    |
+
+### DFS operations
+
+| Operation                              | Category |
+|----------------------------------------|----------|
+| CreateFileSystem                       | Write    |
+| PatchFileSystem                        | Write    |
+| DeleteFileSystem                       | Delete   |
+| GetFileSystemProperties                | Read     |
+| CreateDirectory                        | Write    |
+| CreateFile                             | Write    |
+| DeleteDirectory                        | Delete   |
+| DeleteFile                             | Delete   |
+| RenameFileOrDirectory                  | Write    |
+| ListFilePath                           | Read     |
+| AppendDataToFile                       | Write    |
+| FlushDataToFile                        | Write    |
+| SetFileProperties                      | Write    |
+| SetAccessControlForFile                | Write    |
+| SetAccessControlForDirectory           | Write    |
+| LeasePath                              | Write    |
+| GetPathStatus                          | Read     |
+| GetAccessControlListForFile            | Read     |
+
+### Fabric operations
+| Operation                              | Category |
+|----------------------------------------|----------|
+| FabricWorkloadAccess                   | Read     |

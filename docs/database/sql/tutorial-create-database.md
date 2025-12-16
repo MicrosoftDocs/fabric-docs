@@ -23,7 +23,7 @@ Now that you have a workspace, you can create your first SQL database, one of th
 
 1. Ensure you are in the Workspace you created earlier by selecting the **Workspaces** icon in the navigation bar, and then selecting the Workspace you created in the last step.
 1. Create a Fabric SQL database by selecting the **+ New item**.
-1. In the **New Item | All Items** panel, scroll to the **Store Data** area and select **SQL database (preview)**.
+1. In the **New Item | All Items** panel, scroll to the **Store Data** area and select **SQL database**.
 
     :::image type="content" source="media/tutorial-create-database/new-item-create-sql-database.png" alt-text="Screenshot of the New item dialogue to create a new SQL database." lightbox="media/tutorial-create-database/new-item-create-sql-database.png":::
 

@@ -4,6 +4,26 @@
             "source_path_from_root": "/docs/enterprise/service-interruption-notifications.md",
             "redirect_url": "/fabric/admin/service-interruption-notifications",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/enterprise/powerbi/service-admin-purchasing-power-bi-pro.md",
+            "redirect_url": "/fabric/enterprise/powerbi/service-admin-power-bi-licensing",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/enterprise/powerbi/service-admin-licensing-organization.md",
+            "redirect_url": "/fabric/enterprise/powerbi/service-admin-power-bi-licensing",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/enterprise/powerbi/service-admin-disable-self-service.md",
+            "redirect_url": "/fabric/enterprise/powerbi/service-admin-power-bi-licensing",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/enterprise/powerbi/service-admin-signing-up-for-power-bi-with-a-new-office-365-trial.md",
+            "redirect_url": "/fabric/enterprise/powerbi/service-admin-power-bi-licensing",
+            "redirect_document_id": false
         }
     ]
 }

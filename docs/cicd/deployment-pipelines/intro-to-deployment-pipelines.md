@@ -7,7 +7,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: overview
 ms.custom:
-ms.date: 02/13/2025
+ms.date: 12/15/2025
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
@@ -98,6 +98,10 @@ When you deploy content from one pipeline stage to another, the copied content c
 
   * [Healthcare](/industry/healthcare/healthcare-data-solutions/application-lifecycle-management) *(preview)*
   * HealthCare Cohort *(preview)*
+
+* IQ (preview) items:
+
+  * [Ontology](../../iq/ontology/overview.md) *(preview)*
 
 ## Pipeline structure
 

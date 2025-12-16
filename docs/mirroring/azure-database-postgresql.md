@@ -5,7 +5,7 @@ author: whhender
 ms.author: whhender
 ms.reviewer: scoriani
 ms.date: 07/15/2025
-ms.topic: conceptual
+ms.topic: overview
 ms.custom:
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -13,9 +13,9 @@ no-loc: [Copilot]
 
 # Mirroring Azure Database for PostgreSQL flexible server
 
-[Mirroring in Fabric](../mirroring/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Azure Database for PostgreSQL flexible server estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Azure Database for PostgreSQL flexible server directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
+[Mirroring in Fabric](../mirroring/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Azure Database for PostgreSQL flexible server estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Azure Database for PostgreSQL flexible server directly into Fabric's OneLake, whether your servers are publicly accessible, network-isolated through virtual networks or private endpoints, or configured for high availability. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
-For a tutorial on configuring your Azure Database for PostgreSQL flexible server for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-tutorial.md).
+For a tutorial on configuring your Azure Database for PostgreSQL flexible server Mirroring in Fabric (now generally available), see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-tutorial.md).
 
 ## Why use Mirroring in Fabric?
 
@@ -40,13 +40,15 @@ Each mirrored database in Azure Database for PostgreSQL flexible server has an a
 - Manage permissions on the objects.
 - Query data in other Warehouses and Lakehouses in the same workspace.
 
-In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling that can query the SQL analytics endpoint, including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot. 
+In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling that can query the SQL analytics endpoint, including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
+
+Mirrored databases also offer one-click integration with Microsoft Power BI within Fabric, enabling rapid report creation directly from the mirrored data or SQL analytics endpoint.
 
 ## Network requirements
 
 <!-- Maintain similar content in docs\database\mirrored-database\azure-database-postgresql-tutorial.md and docs\database\mirrored-database\azure-database-postgresql-limitations.md -->
 
-If your Flexible Server is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for PostgreSQL flexible server via a private endpoint or is allowed by the firewall rule.
+Mirroring supports both publicly accessible servers and network-isolated configurations, including servers connected via private endpoints or hosted in virtual networks. If your Flexible Server is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for PostgreSQL flexible server via a private endpoint or is allowed by the firewall rule.
 
 ## Active transactions, workloads, and replicator engine behaviors
 
@@ -59,6 +61,10 @@ Each user workload varies. During initial snapshot, there might be more resource
 The source Azure Database for PostgreSQL flexible server can be either a General Purpose or Memory Optimized compute tier. Burstable compute tier is not supported as source for mirroring.
 
 To know more about compute tiers available in Azure Database for PostgreSQL flexible server, see [Compute options in Azure Database for PostgreSQL flexible server](/azure/postgresql/flexible-server/concepts-compute).
+
+## High availability support
+
+Mirroring supports highly available Azure Database for PostgreSQL flexible server configurations. Replication continues seamlessly across failover events without requiring additional configuration. For any specific limitations or considerations, see [Limitations in Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server](../mirroring/azure-database-postgresql-limitations.md).
 
 ## Next step
 

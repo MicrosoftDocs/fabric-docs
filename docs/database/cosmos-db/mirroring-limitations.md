@@ -1,6 +1,6 @@
 ---
-title: Mirroring Limitations in Cosmos DB Database (Preview)
-description: Learn how data is mirrored from Cosmos DB in Microsoft Fabric to OneLake. Discover limitations and benefits during the preview.
+title: Mirroring Limitations in Cosmos DB
+description: Learn how data is mirrored from Cosmos DB in Microsoft Fabric to OneLake. Discover limitations and benefits.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: limits-and-quotas
@@ -8,9 +8,7 @@ ms.date: 10/23/2025
 ai-usage: ai-generated
 ---
 
-# Mirroring limitations in Cosmos DB database in Microsoft Fabric (preview)
-
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+# Mirroring limitations in Cosmos DB database in Microsoft Fabric
 
 This article details the current limitations for mirroring for Cosmos DB databases in Microsoft Fabric. The limitation and quota details on this page are subject to change in the future.
 

@@ -2,12 +2,10 @@
 title: GQL Graph Types
 description: Complete reference for defining graph types in GQL for graph in Microsoft Fabric, including node types, edge types, constraints, and inheritance.
 ms.topic: reference
-ms.date: 10/09/2025
+ms.date: 11/18/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: splantikow
-ms.service: fabric
-ms.subservice: graph
 ---
 
 # GQL graph types
@@ -15,6 +13,9 @@ ms.subservice: graph
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 A graph type describes your graph's structure by defining which nodes and edges can exist. Think of it like a blueprint or schema—it specifies the shape of nodes and edges in the graph in terms of their labels and properties. For edges (the connections between nodes), it also specifies which kinds of edges can connect which kinds of nodes. If you're familiar with relational databases, graph types work similarly to how ER diagrams describe tables and foreign key relationships. 
+
+> [!IMPORTANT]
+> This article exclusively uses the [social network example graph dataset](sample-datasets.md).
 
 Graph types provide several key benefits:
 
@@ -37,7 +38,7 @@ Structurally, a graph type defines allowed node types and edge types of graphs o
 A node type specifies what labels and property types your nodes can have. Here's how to specify a basic node type:
 
 ```gql
-(:Organisation => { 
+(:Organization => { 
   id :: UINT64 NOT NULL, 
   name :: STRING, 
   url :: STRING 
@@ -46,7 +47,7 @@ A node type specifies what labels and property types your nodes can have. Here's
 
 This example creates a node type that defines nodes with:
 
-- The label `Organisation`.
+- The label `Organization`.
 - An `id` property that holds unsigned integer values and can't be null.
 - A `name` property that holds string values (can be null).
 - A `url` property that holds string values (can be null).
@@ -79,22 +80,24 @@ Nodes can have multiple labels to support inheritance and categorization. You ca
 As an example, consider:
 
 ```gql
-(:University => :Organisation),
-(:Company => :Organisation)
+(:University => :Organization),
+
+(:Company => :Organization)
 ```
 
-Here, `University` and `Company` are the key labels of the two node types defined, while `Organisation` is a secondary label shared by both types. Notice how the key label and secondary labels are separated by `=>` in each node type. This approach creates a type hierarchy where both universities and companies are types of organizations.
+Here, `University` and `Company` are the key labels of the two node types defined, while `Organization` is a secondary label shared by both types. Notice how the key label and secondary labels are separated by `=>` in each node type. This approach creates a type hierarchy where both universities and companies are types of organizations.
 
 Since key labels identify node types, the properties of node types identified by secondary labels are automatically inherited when using this syntax.
 Therefore the previous syntax can be understood to effectively define the following node types:
 
 ```gql
-(:University => :Organisation {
+(:University => :Organization {
   id :: UINT64 NOT NULL, 
   name :: STRING, 
   url :: STRING 
 }),
-(:Company => :Organisation {
+
+(:Company => :Organization {
   id :: UINT64 NOT NULL, 
   name :: STRING, 
   url :: STRING 
@@ -177,6 +180,30 @@ This concept allows you to model the same type of relationship between different
 ```
 
 Both edge types use the `isPartOf` label, but they connect different types of nodes, forming an edge type family that represents hierarchical containment relationships.
+
+### Use node subtyping in edge type definitions
+
+Having to spell out each possible edge type can be a bit tedious. 
+To simplify, it is also possible to define edge type families that align with the hierarchy of node types implied by their endpoints.
+
+Example:
+
+```gql
+-- Node types
+ABSTRACT (:Message { ... }),
+(:Post => :Message { ... }),
+(:Comment => :Message { ... }),
+
+-- All edge types (x)-[:hasTag]->(:Tag) where x is at least a (:Message)
+(<:Message)-[:hasTag]->(:Tag) 
+```
+
+This implicitly defines the following edge types:
+
+```gql
+(:Post)-[:hasTag]->(:Tag) 
+(:Comment)-[:hasTag]->(:Tag) 
+```
 
 ## Supported property types
 

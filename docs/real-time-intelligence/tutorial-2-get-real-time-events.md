@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
 ms.custom:
-ms.date: 11/28/2024
+ms.date: 10/28/2025
 ms.subservice: rti-core
 ms.search.form: Get started
 # customer intent: I want to learn how to get data in the Real-Time hub in Real-Time Intelligence.
@@ -16,23 +16,25 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Set up Eventhouse](tutorial-1-resources.md).
 
-In this part of the tutorial, you browse the Real-Time hub, create an eventstream, transform events, and create a destination to send the transformed events to a KQL database. You then subscribe to Fabric Events, so that you will receive an alert each time a new item is created in your workspace.
+In this part of the tutorial, you browse the Real-Time hub, create an eventstream, transform events, and create a destination to send the transformed events to a KQL database. 
 
 ## Create an eventstream
 
 1. Select **Real-Time** on the left navigation bar.
-1. Select **+ Connect data source** in the top-right corner of the page. 
+1. Select **+ Add data** in the top-right corner of the page. 
 
     :::image type="content" source="media/tutorial/connect-data-source.png" alt-text="Screenshot of Real-time hub with get events highlighted." lightbox="media/tutorial/connect-data-source.png":::
 
-1. On the **Data sources** page, select **Sample scenarios** category, and then select **Connect** on the **Bicycle rentals** tile.
-1. On the **Connect** page, for **Source name**, enter **TutorialSource**. 
+1. On the **Sample scenarios** page, select **Connect** on the **Bicycle rentals** tile.
+1. On the **Connect data source** page, for **Source name**, enter **TutorialSource**. 
 1. In the **Stream details** section, select the pencil button, and change the name of the eventstream to **TutorialEventstream**, and then select **Next**. 
 1. On the **Review + connect** page, review settings, and select **Connect**.
 
 ## Transform events - add a timestamp
 
-1. On the **Review + connect** page, select **Open Eventstream**.
+Once the eventstream source is created, you can open the eventstream and add more settings.
+
+1. Once the eventstream is created, on the **Review + connect** page, select **Open Eventstream**.
 
     :::image type="content" source="media/tutorial/open-event-stream-button.png" alt-text="Screenshot of Review + connect page with Open Eventstream button selected." lightbox="media/tutorial/open-event-stream-button.png":::         
 
@@ -43,8 +45,10 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
     :::image type="content" source="media/tutorial/event-stream-edit-button.png" alt-text="Screenshot with the Edit button selected." lightbox="media/tutorial/event-stream-edit-button.png":::
 
 1. In the eventstream authoring canvas, select the down arrow on the **Transform events or add destination** tile, and then select **Manage fields**. The tile is renamed to `ManageFields`.
-1. Hover over the left edge of the **Manage fields** tile. Click and drag the connector to the right side the **TutorialEventstream** tile. You have now connected the eventstream to a new transformation tile.
-1. In the **Manage fields** pane, do the following actions:
+
+    :::image type="content" source="media/tutorial/manage-fields.png" alt-text="Screenshot of authoring canvas with transform events or add destination." lightbox="media/tutorial/manage-fields.png":::
+
+1. Select the pencil icon in the **Manage fields** pane, and do the following actions:
     1. In **Operation name**, enter **TutorialTransform**. 
     1. Select **Add all fields**
 
@@ -87,60 +91,6 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
 
     The eventstream is now set up to transform events and send them to a KQL database.
 
-## Subscribe to Fabric Events
-
-To subscribe to any changes in your workspace, you can use Fabric events. In this section, you set alerts on Fabric Events so that you receive an email each time a new item is created, deleted, or updated in your workspace. In different scenarios, the Activator could also be used to trigger a Fabric item, such as a pipeline or a notebook.
-
-1. Browse to the Real-Time hub on the left navigation bar.
-1. In the left pane, select **Subscribe to** > **Fabric Events**.
-1. Hover over **Workspace item events** and select the alert icon.
-
-    :::image type="content" source="media/tutorial/fabric-events.png" alt-text="Screenshot of workspace item events in the Fabric events section of the Real-Time hub." lightbox="media/tutorial/fabric-events.png":::
-
-### Configure the events for the alert
-
-1. In the **Set alert** pane that opens, under **Monitor** > **Source**, select **Select events**.
-    The default selection is six types of events that include success and failure of item creation, deletion, and update.
-
-1. Under **Workspace**, select the workspace in which you created your resources.
-1. Select **Next**.
-
-    :::image type="content" source="media/tutorial/event-types.png" alt-text="Screenshot of workspace event configuration settings." lightbox="media/tutorial/event-types.png":::
-
-1. Select **Save**.
-
-### Configure the alert
-
-1. Under **Save location** > **Workspace**, select the workspace in which you created your resources.
-1. Select **Item** > **Create a new item**.
-1. **Enter a name** for the item, such as **WorkspaceItemChange**.
-1. Select **Create**.
-    It may take a few moments for the item to be created.
-1. Once the item is created, select **Open**.
-
-A new tab opens in your browser with the Activator item you have just created. You can use this view to see the history of alerts, and to configure the alert further. 
-
-> [!NOTE]
-> If you are using a demo tenant and do not have access to the connected email, you may want to add a different email recipient to the alert. Do this by adding a new email address in the **To** field, and then selecting **Save and update**.
-
-### Customize the message
-
-In this section, you can (optionally) customize the email message that is received to include information about the condition which set off the alert.
-
-1. In the **Definition** pane, under **Action** select **Edit action**.
-1. In the **Edit the action** window, click on the field next to **Context**.
-1. Select the checkboxes next to the following fields:
-
-    * itemName
-    * itemKind
-    * __type
-
-1. Select **Apply**.
-
-    :::image type="content" source="media/tutorial/alert-changes.png" alt-text="Screenshot of customizing Activator Alert." lightbox="media/tutorial/alert-changes.png":::
-
-1. Select **Save and update**.
-
 ## Related content
 
 For more information about tasks performed in this tutorial, see:
@@ -148,9 +98,8 @@ For more information about tasks performed in this tutorial, see:
 * [Create and manage an eventstream](event-streams/create-manage-an-eventstream.md)
 * [Add a sample data as a source](event-streams/add-source-sample-data.md#add-sample-data-as-a-source)
 * [Add a KQL database as a destination](event-streams/add-destination-kql-database.md)
-* [Set alerts on Fabric workspace item events in Real-Time hub](../real-time-hub/set-alerts-fabric-workspace-item-events.md)
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Real-Time Intelligence tutorial part 3: Transform data in a KQL database](tutorial-3-transform-kql-database.md)
+> [Real-Time Intelligence tutorial part 3: Set an alert on your event stream](tutorial-3-set-alert.md)

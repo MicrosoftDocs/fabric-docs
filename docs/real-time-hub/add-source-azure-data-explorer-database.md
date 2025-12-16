@@ -17,6 +17,8 @@ This article describes how to get events from an Azure Data Explorer database ta
 ## Get events from an Azure Data Explorer table
 You can get events from an Azure Data Explorer table into Real-Time hub using the [**Data sources** page](#data-sources-page).
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 5. On the **Data sources** page, select **Microsoft sources** category at the top, and then select **Connect** on the **Azure Data Explorer DB** tile. 
