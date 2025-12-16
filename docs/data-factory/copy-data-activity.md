@@ -6,7 +6,7 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
-ms.date: 11/13/2025
+ms.date: 12/16/2025
 ai-usage: ai-assisted
 ---
 
