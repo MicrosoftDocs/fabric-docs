@@ -6,9 +6,9 @@ ms.date: 11/23/2025
 ---
 1. Ask a question or make a request about the data. For example, "Show me the total sales by region" or "What are the top five products by revenue?" 
 
-1. Continue exploring and drill through the data by asking follow-up questions or making additional requests.
+1. Continue exploring and drill through the data by asking follow-up questions or making more requests.
 
-1. The new data appears in the Copilot pane. Click the expand icon to see the results reflected in the **Visual**, **Table**, and **Query** tabs.
+1. The new data appears in the Copilot pane. Select the expand icon to see the results reflected in the **Visual**, **Table**, and **Query** tabs.
 
    ### [Visual](#tab/visual)
 
