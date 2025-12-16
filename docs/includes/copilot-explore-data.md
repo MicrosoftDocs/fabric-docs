@@ -8,7 +8,7 @@ ms.date: 11/23/2025
 
 1. Continue exploring and drill through the data by asking follow-up questions or making more requests.
 
-1. The new data appears in the Copilot pane. Select the expand icon to see the results reflected in the **Visual**, **Table**, and **Query** tabs.
+1. The filtered data appears in the Copilot pane. Select the expand icon to see the results reflected in the **Visual**, **Table**, and **Query** tabs.
 
    ### [Visual](#tab/visual)
 

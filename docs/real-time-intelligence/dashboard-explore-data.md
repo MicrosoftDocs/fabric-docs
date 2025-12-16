@@ -1,6 +1,6 @@
 ---
 title: Copilot-Assisted Real-time Data Exploration
-description: Learn how to explore data with copilot in Real-Time Intelligence dashboards for more insights about the information rendered in the visual.
+description: Learn how to explore data with copilot in Real-Time dashboards for more insights about the information rendered in the visual.
 ms.reviewer: mibar
 author: spelluru
 ms.author: spelluru
@@ -20,10 +20,7 @@ After exploring data with Copilot, save insights to the dashboard for quick acce
 
 >[!NOTE]
 >
-> Currently, Copilot-assisted data exploration in Real-Time Intelligence dashboards supports the following scenarios:
->
-> - A single-data source
-> - View mode
+> Currently, Copilot-assisted data exploration in Real-Time dashboards is supported in dashboards with a *single* data source and in *View mode* only.
 
 ## Prerequisites
 
@@ -42,27 +39,25 @@ These instructions explain how to explore data using Copilot with the storm even
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a real-time dashboard showing the Explore Data Copilot icon highlighted." lightbox="media/dashboard-explore-copilot/dashboard-explore-copilot.png":::
 
-1. Start exploring the real-time data using Copilot. Select one of the following options:
+1. **To explore data at the dashboard level:** In the Copilot pane, ask a question or make a request about the data in the dashboard. For example, "Show me the total sales by region" or "What are the top five products by revenue?".
 
-    1. **To explore all dashboard data:** In the Copilot pane, ask a question or make a request about the data in the dashboard. For example, "Show me the total sales by region" or "What are the top five products by revenue?".
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-copilot-results.png" alt-text="Screenshot showing the copilot pane with a question typed and the tabular data returned.":::
 
-        :::image type="content" source="media/dashboard-explore-copilot/dashboard-copilot-results.png" alt-text="Screenshot showing the copilot pane with a question typed and the tabular data returned.":::
+1. **To focus your exploration using a specific tile:** Select the **Explore Data** icon on the tile to explore the data.
 
-    1. **To explore data in a specific tile:** Select the **Explore Data** icon on the tile to explore the data.
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-toolbar.png" alt-text="Screenshot of a dashboard tile showing the explore data copilot icon highlighted.":::
 
-        :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-toolbar.png" alt-text="Screenshot of a dashboard tile showing the explore data copilot icon highlighted.":::
+1. A prompt appears to help you ask questions about the data in that tile. Use the prompt to guide your exploration, or enter a question or request directly in the text box.
 
-        A prompt appears to help you ask questions about the data in that tile.
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-prompt.png" alt-text="Screenshot of a dashboard tile showing the explore data copilot prompt expanded.":::
 
-        :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-prompt.png" alt-text="Screenshot of a dashboard tile showing the explore data copilot prompt expanded.":::
+1. For this example, enter "Show me data for Texas only," and select the **Submit** arrow.
 
-    1. For this example, enter "Show me data for Texas only," and select the **Submit** arrow.
+    In the Copilot pane, you see your query and the response to your query including a preview of the new data. You can also toggle between the **Visual**, **Table**, and **Query** tabs to see different representations of the data inside the Copilot pane.
 
-        In the Copilot pane, you see your query and the response to your query including a preview of the new data. You can also toggle between the **Visual**, **Table**, and **Query** tabs to see different representations of the data inside the Copilot pane.
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-copilot-ask.png" alt-text="Screenshot of a dashboard tile showing the explore data copilot dialog with a question typed and the query results. The question, tabs, and expand buttons are highlighted":::
 
-        :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-copilot-ask.png" alt-text="Screenshot of a dashboard tile showing the explore data copilot dialog with a question typed and the query results. The question, tabs, and expand buttons are highlighted":::
-
-### Continue data exploration
+## Continue data exploration
 
 [!INCLUDE [copilot-explore-data](../includes/copilot-explore-data.md)]
 
