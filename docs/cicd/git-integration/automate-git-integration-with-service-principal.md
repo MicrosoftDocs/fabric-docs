@@ -184,11 +184,9 @@ When both the Microsoft Fabric workspace and Git repo already contain content, M
 
 ```
 
-The response is because Microsoft Fabric can't guess which side is the source of truth and asks you to make an explicit decision.
+The response is because Microsoft Fabric can't guess which side is the source of truth and asks you to make an explicit decision. There are two possible resolutions when this occurs.
 
-There are two possible resolutions when this occurs.
-
-|Solution|API to use|When to use|You provide|
+|Resolution|API to use|When to use|You provide|
 |-----|-----|-----|----|
 |1. Git to Workspace|[update-from-git](/rest/api/fabric/core/git/update-from-git?tabs=HTTP)|● Git is the source of truth </br>● You want Git content to overwrite or populate the workspace|● workspaceHead</br>● remoteCommitHash|
 |2. Workspace to Git|[commit-to-git](/rest/api/fabric/core/git/commit-to-git?tabs=HTTP)|●  Microsoft Fabric workspace is the source of truth</br>● You want workspace content commited to Git|● workspaceHead</br>● remoteCommitHash|
