@@ -208,6 +208,9 @@ As a final step, confirm that all your data mappings ran successfully. Each mapp
 
 1. If any of the operations failed, check the box next to its name and select **Run** to rerun it.
 
+>[!TIP]
+> For further troubleshooting of failed mapping operations, review the job logs in Monitor hub as described in [Troubleshooting digital twin builder (preview)](resources-troubleshooting.md#get-logs-using-monitor-hub).
+
 Wait for all mappings to complete before you move on to the next part of the tutorial. In the next part, you project the ontology that you mapped to an eventhouse, to support further data analysis and visualization.
 
 ## Next step

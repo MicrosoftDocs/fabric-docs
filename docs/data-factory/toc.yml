@@ -1138,6 +1138,8 @@
         items:
           - name: Browse pipeline runs in the Monitoring Hub
             href: monitoring-hub-pipeline-runs.md
+          - name: Workspace monitoring
+            href: workspace-monitoring.md
       - name: Parameterization
         items: 
           - name: Parameter usage
