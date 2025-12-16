@@ -19,7 +19,7 @@ This article shows you how to:
 
 ## Scenario
 
-In this example, you can track the health of your machine by monitoring the *FlowRate* and *Vibration* of the machine. The goal is to automatically take action, such as sending an alert or starting a business process, if *FlowRate* and *Vibration* are both abnormal while the machine is running.
+In this example, you can track the health of your water pumps (machines) by monitoring the *FlowRate* and *Vibration* of the machine. The goal is to automatically take action, such as sending an alert or starting a business process, if Vibration is abnormal while the machine is running and moving significant amount of water (FlowRate). High water pump vibration might signal underlying issues, however it's expected as long as FlowRate is insignificant.
 
 Machines monitoring data flows into two eventstreams:
 
