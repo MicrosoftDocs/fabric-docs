@@ -32,11 +32,11 @@ After exploring data with Copilot, save insights to the dashboard for quick acce
 
 ## Explore dashboards with Copilot
 
-Use Copilot to explore data in the context of the entire dashboard or of a specific tyle. Ask questions about the overall data, request summaries, or seek insights that span multiple tiles. For example, you can change the time frame, filter by a column or value, calculate an average or total, or group by a column. Each time you explore the data with Copilot, you can view the data updates in Copilot, and when ready you can save the insights as a new tile in the dashboard.
+Use Copilot to explore data in the context of the entire dashboard or of a specific tile. Ask questions about the overall data, request summaries, or seek insights that span multiple tiles. For example, you can change the time frame, filter by a column or value, calculate an average or total, or group by a column. Each time you explore the data with Copilot, you can view the data updates in Copilot, and when ready you can save the insights as a new tile in the dashboard.
 
 These instructions explain how to explore data using Copilot with the storm events sample data as an example.
 
-1. In your Fabric workspace, select a real-time dashboard.
+1. In your Fabric workspace, select a real-time dashboard, or [create](dashboard-real-time-create.md) a new dashboard.
 
     By default, the Copilot pane opens in the context of the entire dashboard. Ensure that you are in **Viewing** mode.
 
@@ -56,11 +56,13 @@ These instructions explain how to explore data using Copilot with the storm even
 
         :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-prompt.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot prompt expanded.":::
 
-    1. For this example, enter "Show me data for Texas only," and select the **Submit** icon.
+    1. For this example, enter "Show me data for Texas only," and select the **Submit** arrow.
 
-        In the Copilot pane, you see your query and the response to your query. You can also toggle between the **Visual**, **Table**, and **Query** tabs to see different representations of the data inside the Copilot pane.
+        In the Copilot pane, you see your query and the response to your query including a preview of the new data. You can also toggle between the **Visual**, **Table**, and **Query** tabs to see different representations of the data inside the Copilot pane.
 
         :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-copilot-ask.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot dialog with a question typed and the query results. The question, tabs, and expand buttons are highlighted":::
+
+### Continue data exploration
 
 [!INCLUDE [copilot-explore-data](../includes/copilot-explore-data.md)]
 
