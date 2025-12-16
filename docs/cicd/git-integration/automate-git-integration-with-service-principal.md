@@ -173,7 +173,7 @@ curl --request POST \
 - PreferWorkspace — tells Microsoft Fabric that if an item exists both in the workspace and in the repo with differences, the workspace version takes precedence over the remote repo version. 
 
 #### Items pre-exist in both the Microsoft Fabric workspace and Git repo
-When both the Fabric workspace and Git repo already contain content, Microsoft Fabric pauses initialization and responds with the following:
+When both the Microsoft Fabric workspace and Git repo already contain content, Microsoft Fabric pauses initialization and responds with the following:
 
 ```json
   {
