@@ -48,15 +48,15 @@ You can tell if a protection policy is the cause of your restricted access if yo
 
 - You no longer see the item in your workspace list view or the Onelake catalog.
 
-   :::image type="content" source="media/troubleshoot-restriced-access/list-view-no-item.png" alt-text="Screenshot showing the message sorry we coudn't fine that artifact." lightbox="media/troubleshoot-restriced-access/list-view-no-item.png":::
+   :::image type="content" source="media/troubleshoot-restricted-access/list-view-no-item.png" alt-text="Screenshot showing the message sorry we coudn't fine that artifact." lightbox="media/troubleshoot-restricted-access/list-view-no-item.png":::
 
 - You see “Permission required” or “Sorry we couldn’t locate that artifact” when trying to open the item using a link.
 
-   :::image type="content" source="media/troubleshoot-restriced-access/permission-required.png" alt-text="Screenshot showing the permission required message." lightbox="media/troubleshoot-restriced-access/permission-required.png":::
+   :::image type="content" source="media/troubleshoot-restricted-access/permission-required.png" alt-text="Screenshot showing the permission required message." lightbox="media/troubleshoot-restricted-access/permission-required.png":::
 
 - When an item includes data from an underlying data source that is restricted, you see the item in the workspace with an indicator.
 
-   :::image type="content" source="media/troubleshoot-restriced-access/audit-risk-indicator.png" alt-text="Screenshot showing the indicator that appears when an item includes data from a restricted item." lightbox="media/troubleshoot-restriced-access/audit-risk-indicator.png":::
+   :::image type="content" source="media/troubleshoot-restricted-access/audit-risk-indicator.png" alt-text="Screenshot showing the indicator that appears when an item includes data from a restricted item." lightbox="media/troubleshoot-restricted-access/audit-risk-indicator.png":::
 
 - When viewing a dashboard built on restricted data, for tiles that access the restricted content, you see a "Permission required" message. Other tiles continue to render normally.
 
@@ -105,7 +105,7 @@ When a workspace admin receives a report from a user who has lost access to an i
 
 1. Go to the item’s **Manage Permissions** page and view the user’s current permissions. If the user’s permissions appear as **No access**, it means a company policy took effect and revoked this user’s access.
 
-   :::image type="content" source="media/troubleshoot-restriced-access/manage-permissions-no-access.png" alt-text="Screenshot showing a user with permissions set to No access." lightbox="media/troubleshoot-restriced-access/manage-permissions-no-access.png":::
+   :::image type="content" source="media/troubleshoot-restricted-access/manage-permissions-no-access.png" alt-text="Screenshot showing a user with permissions set to No access." lightbox="media/troubleshoot-restricted-access/manage-permissions-no-access.png":::
 
 1. To unblock users, take the following actions depending on whether the issue is related to a protection policy or a DLP policy.
 
