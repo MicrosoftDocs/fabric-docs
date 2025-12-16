@@ -98,6 +98,18 @@ Enable SSO capability for Oracle. By enabling, user access token information, in
 
 To learn more, see [Overview of single sign-on for on-premises data gateways in Power BI](/power-bi/connect-data/service-gateway-sso-overview).
 
+## Denodo SSO
+
+Enable SSO capability for Denodo. By enabling, user access token information, including name and email, is sent to Denodo for authentication.
+
+To learn more, see [Overview of single sign-on for on-premises data gateways in Power BI](/power-bi/connect-data/service-gateway-sso-overview).
+
+## Starburst SSO
+
+Enable SSO capability for Starburst. By enabling, user access token information, including name and email, is sent to Starburst for authentication.
+
+To learn more, see [Overview of single sign-on for on-premises data gateways in Power BI](/power-bi/connect-data/service-gateway-sso-overview).
+
 <a name='azure-ad-single-sign-on-sso-for-gateway'></a>
 
 ## Microsoft Entra Single Sign-On (SSO) for Gateway
