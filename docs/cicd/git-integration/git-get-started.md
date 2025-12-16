@@ -162,14 +162,14 @@ Commit to standalone branch is a Git integration feature that lets you create a 
 4. Select the items you want to commit. To select all items, check the top box.
 5. Add a comment in the box. If you don't add a comment, a default message is added automatically.
 6. Select **Commit to new branch**.
-   :::image type="content" source="./media/git-get-started/commit-stand-alone.png" alt-text="Screenshot of commiting to a standalone branch." lightbox="./media/git-get-started/commit-stand-alone.png":::
+   :::image type="content" source="./media/git-get-started/commit-stand-alone.png" alt-text="Screenshot of committing to a standalone branch." lightbox="./media/git-get-started/commit-stand-alone.png":::
 
 >[!IMPORTANT]
 >Be aware of the following:
-> - the newly created branch will not be connected to the exisiting workspace.
+> - the newly created branch won't be connected to the existing workspace.
 > - the newly created branch will be based on the last synch state of the current workspace.
 > - this functionality is possible when there are incoming updates - even if the default commit is disabled.
-> - the current workspace state will not be changed because of this commit and remains as is.
+> - the current workspace state won't be changed because of this commit and remains as is.
 
 ### [Undo saved change](#tab/undo-save)
 
@@ -218,9 +218,9 @@ To update a workspace, follow these steps:
 
  :::image type="content" source="./media/git-get-started/update-1.png" alt-text="Screenshot of source control panel with the update tab open and the updating all button selected.":::
 
-5. On the confirmation diaglog, select **Update**.
+5. On the confirmation dialog, select **Update**.
 
- :::image type="content" source="./media/git-get-started/update-2.png" alt-text="Screenshot of confirmation diaglog.":::
+ :::image type="content" source="./media/git-get-started/update-2.png" alt-text="Screenshot of confirmation dialog.":::
 
 After it updates successfully, the list of items is removed, and the workspace points to the new workspace that it's synced to.
 
