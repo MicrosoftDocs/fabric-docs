@@ -22,7 +22,7 @@ Once connected, users with appropriate permissions can perform standard Git oper
 All Git Integration APIs function the same across both domains, and schema updates remain fully backward‑compatible. 
 
 
-   :::image type="content" source="media/github-data-residency-support/data-1.png" alt-text="Screenshot showing the github connection details." lightbox="media/github-data-residency-support/data-1.png":::
+   :::image type="content" source="media/github-data-residency-support/data-1.png" alt-text="Screenshot showing the GitHub connection details." lightbox="media/github-data-residency-support/data-1.png":::
 
 
 ## Limitations and considerations
