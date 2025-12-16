@@ -101,7 +101,7 @@ To determine the refresh policy under optimal refresh mode, you can query the sy
 ```sql
 SELECT 
     MLVName,
-    refreshPolicy 
+    RefreshPolicy 
 FROM  
     dbo.sys_dq_metrics 
 WHERE
