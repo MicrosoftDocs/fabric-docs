@@ -91,7 +91,7 @@ REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier FULL
 ```
 
 > [!NOTE]
-> - If your workspace name contains spaces, enclose it in backticks: `` `My Workspace`.lakehouse.schema.view_name ``
+> - If your workspace name contains spaces or special characters like hyphen(-), enclose it in backticks: `` `My Workspace`.lakehouse.schema.view_name ``
 > - Refreshing a materialized lake view that uses non-delta tables as its source initiates a full refresh.
 
 ### Determine the refresh policy 
