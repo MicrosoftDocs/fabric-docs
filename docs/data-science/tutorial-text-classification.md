@@ -34,7 +34,9 @@ In this tutorial, you learn how to:
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
 * Have access to Azure OpenAI models through Microsoft Fabric.
+
 * Have a basic knowledge of Python and PySpark.
+
 * Be familiar with Jupyter notebooks.
 
 ## Set up your text classification system
@@ -211,7 +213,7 @@ Segment: {child_text}
 {justification_prompt}
 ```
 
-You instruct the LLM to consider only the sentiment of the provided segment, rather than the entire text verbatim. When you pass only segments, sentiments about different topics are kept separate, because a response might be positive about one topic but negative about another. Editing this prompt to include the entire survey response can be as simple as including a few lines, as in this example:
+You instruct the LLM to consider only the sentiment of the provided segment, rather than the entire text verbatim. When you pass only segments, sentiments about different topics are kept separate, because a response might be positive about one topic but negative about another. Editing this prompt to include the entire survey response can be as simple as including a few lines, like this example:
 
 ```plaintext
 Segment: {child_text}        
