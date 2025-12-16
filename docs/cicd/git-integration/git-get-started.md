@@ -191,9 +191,9 @@ To update a workspace, follow these steps:
 
  :::image type="content" source="./media/git-get-started/update-1.png" alt-text="Screenshot of source control panel with the update tab open and the updating all button selected.":::
 
-5. On the confirmation diaglog, select **Update**.
+5. On the confirmation dialog, select **Update**.
 
- :::image type="content" source="./media/git-get-started/update-2.png" alt-text="Screenshot of confirmation diaglog.":::
+ :::image type="content" source="./media/git-get-started/update-2.png" alt-text="Screenshot of confirmation dialog.":::
 
 After it updates successfully, the list of items is removed, and the workspace points to the new workspace that it's synced to.
 
