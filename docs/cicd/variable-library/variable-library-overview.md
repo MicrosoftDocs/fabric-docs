@@ -6,7 +6,7 @@ ms.author: billmath
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: overview
-ms.date: 01/22/2025
+ms.date: 12/15/2025
 ms.search.form: Variable library overview
 #customer intent: As a developer, I want to learn how to use a Fabric application lifecycle management (ALM) variable library to customize my release stages, so that I can manage my content lifecycle.
 ---
