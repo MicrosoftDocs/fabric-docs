@@ -160,7 +160,7 @@ curl --request POST \
 ```
 
 #### Items pre-exist in the Microsoft Fabric workspace
-If the connected workspace already has items in it, you might consider using the "preferWorkspace" conflict-resolution strategy. This tells the API to prioritize the current state of the Fabric workspace over the content in the remote Git repo when there are conflicts.
+If the connected workspace already has items in it, you might consider using the "PreferWorkspace" conflict-resolution strategy. This tells the API to prioritize the current state of the Microsoft Fabric workspace over the content in the remote Git repo when there are conflicts.
 
 ```bash
 curl --request POST \ 
