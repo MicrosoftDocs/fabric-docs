@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.reviewer: pankar
 ms.service: fabric
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/18/2025
 ---
 
@@ -131,7 +131,6 @@ Use the following steps to enable workspace-level surge protection:
   
   - **Blocked:** All interactive and background operations are rejected. 
     - If a workspace is marked as **Blocked**, all the interactive and background operations will be rejected. Workspaces can be blocked manually by capacity admins or automatically by detection rules
-
 
 ## Considerations and limitations
 - Workspace Level Surge Protection currently doesn’t apply to paginated reports
