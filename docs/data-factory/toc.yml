@@ -1025,6 +1025,8 @@
     items:
       - name: What is a pipeline?
         href: pipeline-overview.md
+      - name: Debug pipelines
+        href: how-to-debug-pipelines-in-microsoft-fabric.md
       - name: Pipeline activity overview
         href: activity-overview.md 
       - name: Apache Airflow Job
