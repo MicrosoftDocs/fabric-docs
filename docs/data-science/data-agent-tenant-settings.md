@@ -70,7 +70,7 @@ To disallow users from creating and sharing Fabric data agent items, administrat
 1. In **Tenant Settings**, locate the **Fabric data agent** section.
 2. To disable this setting, toggle the **Disabled** option in **Tenant Settings** and select **Apply** as shown in the next screenshot:
 
-:::image type="content" source="media/data-agent-tenant-settings/Disable-dataagenttenantsetting.png" alt-text="Screenshot highlighting the Fabric data agent creation and sharing option in the admin portal." lightbox="media/data-agent-tenant-settings/Disable-dataagenttenantsetting.png":::
+:::image type="content" source="media/data-agent-tenant-settings/Disable-dataagenttenantsetting.png" alt-text="Screenshot highlighting the Fabric data agent creation and sharing option in the admin portal." lightbox="media/data-agent-tenant-settings/disable-dataagent-tenant-setting.png":::
 
 ## Enable integration of Power BI semantic models via XMLA endpoints
 
