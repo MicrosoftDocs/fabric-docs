@@ -77,8 +77,7 @@ Check out the docs on [Workspace Identity](../security/workspace-identity.md).
 
 1. **Enable tenant-level settings**
 In the Fabric admin portal, enable the following tenant setting:
-
-- Service principals can call Fabric public APIs
+Service principals can call Fabric public APIs.
 This setting is required for the Workspace Identity to authenticate successfully.
 Check out the docs on [Enable service principal authentication for admin APIs](../admin/enable-service-principal-admin-apis.md).
 
