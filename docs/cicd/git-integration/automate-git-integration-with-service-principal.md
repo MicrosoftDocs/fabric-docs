@@ -148,7 +148,7 @@ curl --request POST \
 "connectionId": "<step 2 – the new connection id>"}}' 
 ```
 ### 4. Initialize Connection
-Initialize Connection, read more [here](/rest/api/fabric/core/git/initialize-connection?tabs=HTTP) 
+Initialize Connection, read more [here.](/rest/api/fabric/core/git/initialize-connection?tabs=HTTP) 
 
 >[!NOTE]
 > Replace &lt; &gt; with your values, pay attention for initializationStrategy parameter, In case the connected workspace has items already, you might consider using "preferWorkspace".
