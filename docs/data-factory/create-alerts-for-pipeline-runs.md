@@ -55,7 +55,7 @@ Workspace-level alerts let you monitor failures across all pipelines and other j
  
 * First, enable workspace monitoring. Confirm that workspace monitoring is enabled. When active, Fabric writes platform-level logs such as ItemJobEventLogs into the workspace’s monitoring Eventhouse.
 
-:::image type="content" source="media/create-alerts/workpsace-monitor.png" alt-text="Screenshot showing workspace monitoring settings.":::
+:::image type="content" source="media/create-alerts/workspace-monitor.png" alt-text="Screenshot showing workspace monitoring settings.":::
 
 * Create an alert for workspace-wide pipeline failures with a KQL Queryset and Activator rule to detect pipeline failures across the workspace. Here is an example query that returns recent failures:
    
