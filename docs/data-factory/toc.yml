@@ -1025,8 +1025,6 @@
     items:
       - name: What is a pipeline?
         href: pipeline-overview.md
-      - name: Debug pipelines
-        href: how-to-debug-pipelines-in-microsoft-fabric.md
       - name: Pipeline activity overview
         href: activity-overview.md 
       - name: Apache Airflow Job
@@ -1087,8 +1085,6 @@
             href: azure-databricks-activity.md
           - name: Azure Machine Learning activity
             href: azure-machine-learning-activity.md
-          - name: Deactivate an activity
-            href: deactivate-activity.md
           - name: Fail activity
             href: fail-activity.md
           - name: Filter activity
@@ -1131,6 +1127,10 @@
         href: create-alerts-for-pipeline-runs.md
       - name: Evaluate pipeline expressions
         href: evaluate-pipeline-expression.md
+      - name: Debug pipelines
+        href: how-to-debug-pipelines-in-microsoft-fabric.md
+      - name: Deactivate an activity
+        href: deactivate-activity.md
       - name: Copilot pipeline expression builder (Preview)
         href: copilot-pipeline-expression-builder.md
       - name: Pipeline sample templates

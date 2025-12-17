@@ -38,19 +38,11 @@ Inactive activities are helpful when you need to test specific parts of your pip
 
 ## Deactivate an activity
 
-Follow these steps to deactivate an activity:
-
-1. Open your pipeline in the Fabric Data Factory authoring experience.
-1. Select the activity you want to skip during execution.
-1. In the activity settings pane, change **Activated** to **Deactivated**.
-
-The inactive activity appears dimmed on the pipeline canvas, making it easy to see which activities are disabled.
-
-:::image type="content" source="media/how-to-debug-pipelines-in-microsoft-fabric/activity-state-settings.png" alt-text="Screenshot of Fabric Data Factory pipeline editor with ActivityDeactivated web activity set to Inactive in the General settings pane." lightbox="media/how-to-debug-pipelines-in-microsoft-fabric/activity-state-settings.png":::
-
 The pipeline skips inactive activities and doesn't execute any downstream dependencies that rely on them. This lets you test specific parts of your pipeline in isolation.
 
-After you run the pipeline, go to the Monitor hub to review the results. You can check both pipeline-level and activity-level execution details. Inactive activities show a status of **Skipped** in the monitoring view, so you can easily see which activities didn't run. 
+[!INCLUDE [deactivate-activities](../includes/deactivate-activities.md)]
+
+After you run the pipeline, go to the Monitor hub to review the results. You can check both pipeline-level and activity-level execution details. Inactive activities show a status of **Skipped** in the monitoring view, so you can easily see which activities didn't run.
 
 ## Use an iterative debugging workflow
 
