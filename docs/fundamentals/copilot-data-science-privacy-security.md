@@ -102,7 +102,7 @@ The product team tested the data agent on various public and private benchmarks,
 
 - The Fabric data agent can only access the data that you provide. It uses the schema (table name and column name), as well as the Fabric data agent instructions and example queries that you provide, in the User Interface (UI) or through the SDK.
 
-- The  Fabric data agent can only access the data that the user can access. If you use the data agent, your credentials are used to access the underlying database. If you don't have access to the underlying data, the data agent can't access that underlying data. This is true when you consume the data agent across different channels - for example, Azure AI Foundry or Microsoft Copilot Studio - where other users can use the data agent.
+- The  Fabric data agent can only access the data that the user can access. If you use the data agent, your credentials are used to access the underlying database. If you don't have access to the underlying data, the data agent can't access that underlying data. This is true when you consume the data agent across different channels - for example, Microsoft Foundry or Microsoft Copilot Studio - where other users can use the data agent.
 
 ## Related content
 
