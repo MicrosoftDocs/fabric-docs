@@ -12,15 +12,15 @@ ms.date: 12/15/2025
 ---
 # Copilot-assisted real-time data exploration (preview)
 
-Real-time dashboards show key metrics, help you spot anomalies, and let you make fast, informed decisions. With Copilot, you can use natural language to explore the live data behind your real-time dashboard, each tile, or in KQL tables. Ask questions, refine visuals, and uncover and share insights without needing to use KQL query language.
+Real-time dashboards show key metrics, help you spot anomalies, and let you make fast, informed decisions. By using Copilot, you can use natural language to explore the live data behind your real-time dashboard, each tile, or in KQL tables. Ask questions, refine visuals, and uncover and share insights without needing to use KQL query language.
 
-After exploring data with Copilot, save insights to the dashboard for quick access, view streaming or near real-time updates, and share them with your team.
+After exploring data by using Copilot, save insights to the dashboard for quick access, view streaming or near real-time updates, and share them with your team.
 
  [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 >[!NOTE]
 >
-> Currently, Copilot-assisted data exploration in Real-Time dashboards is supported in dashboards with a *single* data source and in *View mode* only.
+> Currently, Copilot-assisted data exploration in real-time dashboards supports dashboards with a *single* data source and *View mode* only.
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ After exploring data with Copilot, save insights to the dashboard for quick acce
 
 Use Copilot to explore data in the context of the entire dashboard or of a specific tile. Ask questions about the overall data, request summaries, or seek insights that span multiple tiles. For example, you can change the time frame, filter by a column or value, calculate an average or total, or group by a column. Each time you explore the data with Copilot, you can view the data updates in Copilot, and when ready you can save the insights as a new tile in the dashboard.
 
-These instructions explain how to explore data using Copilot with the storm events sample data as an example.
+These instructions explain how to explore data by using Copilot with the storm events sample data as an example.
 
 1. In your Fabric workspace, select a real-time dashboard, or [create](dashboard-real-time-create.md) a new dashboard.
 
@@ -60,15 +60,3 @@ These instructions explain how to explore data using Copilot with the storm even
 ## Continue data exploration
 
 [!INCLUDE [copilot-explore-data](../includes/copilot-explore-data.md)]
-
-### Configure visual options manually
-
-Manually change the display using the **Visual Options** pane.
-
-1. Select the Visual tab and expand **Visual Options**.
-
-1. In the **Visual Options** pane, change the visual type, add or remove columns, and adjust the legend's location.
-
-    :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-visual-options.png" alt-text="Screenshot of the visual pane, showing the dropdown selector options.":::
-
-    The options available depend on the type of visual you use. For example, with a bar chart, change the orientation, adjust axis labels, and more. With a table visual, add or remove columns, change column order, and apply sorting.
