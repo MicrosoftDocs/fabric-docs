@@ -19,7 +19,7 @@ Continue reading for information on major updates to OneLake file explorer.
 ## December 2025 Update (v 1.0.15.0)
 
 ### Improved Stability on Windows 11
-Fixed crashes occurring in certain Windows 11 environments for a smoother experience.
+Improved stability in certain Windows 11 environments for a more consistent user experience.
 
 ### Enhanced File Sync and Cleanup
 Resolved issues where local changes to Excel (.xlsx) files were not automatically syncing to the cloud and temporary .tmp files created during save operations were not being removed or deleted. This update ensures accurate synchronization and proper cleanup for seamless file management.
