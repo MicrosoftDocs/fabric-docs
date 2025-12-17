@@ -16,7 +16,8 @@ Before you can use all the features of ontology (preview), you must enable certa
 
 ## Ontology item (preview)
 
-This setting is **required** to create ontology (preview) items.
+This setting is **required** to create ontology (preview) items:
+* *Enable Ontology item (preview)*
 
 :::image type="content" source="media/overview-tenant-settings/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
 
@@ -24,7 +25,8 @@ Failure to enable this setting results in errors when creating a new ontology it
 
 ## Graph (preview)
 
-This setting is **required** to enable the graphs associated with ontology (preview).
+This setting is **required** to enable the graphs associated with ontology (preview):
+* *User can create Graph (preview)*
 
 :::image type="content" source="media/overview-tenant-settings/prerequisite-graph.png" alt-text="Screenshot of enabling graph in the admin portal.":::
 
@@ -34,7 +36,8 @@ Failure to enable this setting results in errors when accessing a newly created 
 
 ## XMLA endpoints
 
-This setting is optional, but required if you want to generate an ontology (preview) from a semantic model.
+This setting is optional, but required if you want to generate an ontology (preview) from a semantic model:
+* *Allow XMLA endpoints and Analyze in Excel with on-premises semantic models*
 
 :::image type="content" source="media/overview-tenant-settings/prerequisite-xmla.png" alt-text="Screenshot of enabling XMLA in the admin portal.":::
 
@@ -42,11 +45,23 @@ If this setting isn't enabled, you see a failure to generate the ontology.
 
 ## Data agent item types (preview)
 
-This setting is optional, but required if you want to use ontology (preview) with a Fabric data agent.
+This setting is optional, but required if you want to use ontology (preview) with a Fabric data agent:
+* *Users can create and share Data agent item types (preview)*
 
 :::image type="content" source="media/overview-tenant-settings/prerequisite-data-agent.png" alt-text="Screenshot of enabling data agents in the admin portal.":::
 
 If this setting isn't enabled, you see errors when creating a new data agent item.
+
+## Copilot and Azure OpenAI Service
+
+These settings are optional, but required if you want to use ontology (preview) with a Fabric data agent:
+* *Users can use Copilot and other features powered by Azure OpenAI*
+* *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*
+* *Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance*
+
+:::image type="content" source="media/overview-tenant-settings/prerequisite-open-ai.png" alt-text="Screenshot of enabling multiple OpenAI settings in the admin portal.":::
+
+If these settings aren't enabled, you might see the `403 Forbidden - Disallowed` error when trying to use data agent.
 
 ## Next steps
 
