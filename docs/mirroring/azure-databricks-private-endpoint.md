@@ -18,22 +18,20 @@ You can also connect to your ADLS storage accounts that are behind a private end
 
 ## Prerequisites
 
-* Microsoft Fabric
+* Microsoft Fabric capacity
 * To complete the steps in the [Create a Databrics connection](#create-a-databricks-connection) section, you must be either a user or an admin of the Azure Databricks workspace.
 
 ## Limitations
 
 * Only newly created mirrored Azure Databricks catalog items support this feature.
-
 * A virtual network data gateway can be associated with only one Azure Databricks workspace.
-
 * Managed virtual network Azure Databricks workspaces aren't supported. Only virtual network injected workspaces are supported.
-
 * Accessing Azure Databricks workspaces through an on-premises data gateway isn't supported. Only virtual network data gateway is supported.
-
 * Connection creation using the virtual network data gateway is supported only through the Manage Connections experience and not within the connection creation flow of the mirrored Azure Databricks catalog item.
 
 ## Configure an Azure Databricks workspace
+
+Create a Databricks workspace and configure it to use a private endpoint.
 
 1. Create a Databricks workspace deployed in a virtual network. Follow the instructions in [Deploy Azure Databricks in your Azure virtual netowrk (VNet injection)](/azure/databricks/security/network/classic/vnet-inject).
 
@@ -41,17 +39,21 @@ You can also connect to your ADLS storage accounts that are behind a private end
 
 ## Create a virtual network data gateway
 
+Create a virtual network data gateway to enable the connection between your Fabric workspace and your private Azure Databricks workspace.
+
 1. Create a virtual network data gateway. Follow the instructions in [Create virtual network data gateways](/data-integration/vnet/create-data-gateways).
 
-  Create the data gateway with the following required configurations:
+   Create the data gateway with the following required configurations:
 
-    * Create the virtual network data gateway in the same region as your Azure Databricks workspace.
+   * Create the virtual network data gateway in the same region as your Azure Databricks workspace.
 
-    * Use the same capacity to create the virtual network data gateway as your Fabric workspace.
+   * Use the same capacity to create the virtual network data gateway as your Fabric workspace.
 
-    * Deploy the virtual network data gateway in the same virtual network where the private endpoint was created.
+   * Deploy the virtual network data gateway in the same virtual network where the private endpoint was created.
 
 ## Create a Databricks connection
+
+Create a connection that uses the virtual network data gateway to provide access to your Databricks workspace.
 
 1. In the Fabric portal, open **Settings** > **Manage connections and gateways**.
 
@@ -72,6 +74,8 @@ You can also connect to your ADLS storage accounts that are behind a private end
 1. Select **Create**.
 
 ## Create a mirrored Azure Databricks catalog item
+
+Create a mirrored Azure Databricks catalog item that can access the private Databricks workspace through the virtual network data gateway.
 
 1. Create a mirrored Azure Databricks catalog item. Follow the instructions in [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](./azure-databricks-tutorial.md).
 
