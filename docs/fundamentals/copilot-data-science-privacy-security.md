@@ -4,7 +4,7 @@ description: Learn about privacy, security, and responsible use of Copilot for D
 author: snehagunda
 ms.author: sngun
 ms.reviewer: 'guptamaya'
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 05/11/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
