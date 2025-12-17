@@ -15,7 +15,7 @@ Currently, Fabric Git Integration supports two major Git providers:
  - Azure DevOps
  - GitHub
   
-This article, focuses on the Service Principal capability for Azure DevOps. This integration allows the Fabric user to perform git operation using a service principal.
+This article focuses on the Service Principal capability for Azure DevOps. This integration allows the Fabric user to perform git operation using a service principal.
 
 ## Azure DevOps: Authentication - automatic and configured
 By default, each Fabric workspace isn't connected to any Git repository. A Fabric workspace has two different ways that it can authenticate to a git repository. These processes are called: 
@@ -38,7 +38,7 @@ The Azure DevOps connection supports two authentication methods:
  - OAuth 2.0 
  - Service Principal 
 
-Both methods include support for [multi-tenant (cross-tenant) scenarios](git-integration-with-service-principal.md#multitenant-considerations-for-service-principal-creation), giving organizations flexibility across environments. 
+Both methods include support for [multitenant (cross-tenant) scenarios](git-integration-with-service-principal.md#multitenant-considerations-for-service-principal-creation), giving organizations flexibility across environments. 
 
 Any other user with at least Contributor permissions on the same workspace doesn't need to repeat the connection process. Before service principal support, the system attempted to authenticate secondary users only through **Automatic authentication**. 
 
@@ -124,7 +124,7 @@ curl --request POST \
 ```
 
 >[!NOTE]
->Save the id from the response. It is used in the next steps. 
+>Save the ID from the response. It is used in the next steps. 
 
 ### 3. Connect workspace to git
 Links a specific Fabric workspace to the Azure DevOps repository using the connection created in step 2. 
