@@ -4,7 +4,7 @@ description: Create an ontology (preview) item with data from a semantic model o
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 12/03/2025
+ms.date: 12/17/2025
 ms.topic: tutorial
 zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
 zone_pivot_groups: create-ontology-scenario
@@ -135,17 +135,14 @@ Select the *SaleEvent* entity type to display it and its relationship types on t
 
 :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/sale-event-relationships.png" alt-text="Screenshot of the sale event entity type and its relationships." lightbox="media/tutorial-1-create-ontology/semantic-model/sale-event-relationships.png":::
 
-Select each of the relationship types and update its details to match the following table. First, rename the relationship type to the provided friendlier name. Next, set the correct order of source and target entity types. Finally, bind the relationship type to the source data table and select the source columns.
-
->[!NOTE]
->To prevent unexpected behavior from a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1619), make sure the correct source and target entity types are set before choosing the source data table to bind.
+Select each of the relationship types and update its details to match the following table. 
 
 The final relationship details match the following table.
 
-| Old name | New name | Source entity type | Target entity type | Source data table |
+| Old name | New name | Source data table | Source entity type | Target entity type | 
 | --- | --- | --- | --- | --- |
-| *factsales_has_dimproducts* | *soldIn* | *Products* | *SaleEvent* | Tutorial workspace > *OntologyDataLH* > *factsales* <br>Set source columns to match entity type key properties |
-| *factsales_has_dimstore* | *has* | *Store* | *SaleEvent* | Tutorial workspace > *OntologyDataLH* > *factsales* <br>Set source columns to match entity type key properties |
+| *factsales_has_dimproducts* | *soldIn* | Tutorial workspace > *OntologyDataLH* > *factsales* <br>Set source columns to match entity type key properties | *Products* | *SaleEvent* |
+| *factsales_has_dimstore* | *has* |  Tutorial workspace > *OntologyDataLH* > *factsales* <br>Set source columns to match entity type key properties | *Store* | *SaleEvent* |
 
 Here's an example of what an updated relationship type looks like.
 
