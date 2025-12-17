@@ -153,9 +153,14 @@ Configure network access to allow Fabric services to connect to your Cosmos DB a
 
 > [!IMPORTANT]
 > **For private endpoint users only:** Before adding IP addresses, you must temporarily enable public network access:
+> 
+> :::image type="content" source="./media/azure-cosmos-db-private-network/public-access-disabled.png" alt-text="Screenshot showing disabled public network access for private endpoints." lightbox="./media/azure-cosmos-db-private-network/public-access-disabled-full.png":::
+> 
 > 1. Navigate to your Azure Cosmos DB account in the [Azure portal](https://portal.azure.com)
 > 1. In the resource menu, select **Networking** under **Settings**
 > 1. Under **Public network access**, select **Selected networks**
+> 
+> :::image type="content" source="./media/azure-cosmos-db-private-network/public-access-enabled-without-ips.png" alt-text="Screenshot showing enabled public network access set to selected networks." lightbox="./media/azure-cosmos-db-private-network/public-access-enabled-without-ips-full.png":::
 > 
 > After mirroring is configured, you can disable public access. See [Step 6](#step-6-disable-public-network-access-optional-for-private-endpoints).
 
@@ -166,6 +171,8 @@ Choose one of the following methods to allow Fabric service access:
 **Option A: Manual IP Address Configuration (Recommended)**
 
 We recommend manually adding all IPv4 address ranges from the Azure service tags as it doesn't rely on preview features.
+
+:::image type="content" source="./media/azure-cosmos-db-private-network/public-access-enabled-with-ips.png" alt-text="Screenshot showing public network access with IP addresses added to firewall." lightbox="./media/azure-cosmos-db-private-network/public-access-enabled-with-ips-full.png":::
 
 > [!NOTE]
 > Azure firewall does not currently support IPv6. If you add an IPv6 address to a rule, the firewall fails. To learn more, visit [Azure Firewall known issues and limitations](/azure/firewall/firewall-known-issues#azure-firewall-premium-known-issues).
@@ -192,6 +199,8 @@ We recommend manually adding all IPv4 address ranges from the Azure service tags
 **Option B: Network Security Perimeter with Service Tags (Preview)**
 
 Use Network Security Perimeter (NSP) to allow access using service tags, which automatically includes all IP addresses for the services without manual entry.
+
+:::image type="content" source="./media/azure-cosmos-db-private-network/NSP-inbound-access-rule.png" alt-text="Screenshot showing Network Security Perimeter configured with service tags." lightbox="./media/azure-cosmos-db-private-network/NSP-inbound-access-rule-full.png":::
 
 > [!NOTE]
 > Network Security Perimeter is currently in preview for Cosmos DB. Some customers may prefer to use the manual IP address method due to preview limitations. For more information about Network Security Perimeter support for Azure Cosmos DB, see [Network Security Perimeter concepts](/azure/private-link/network-security-perimeter-concepts#onboarded-private-link-resources).
@@ -278,6 +287,8 @@ Create your mirrored database in Fabric:
 
 1. In the **New connection** section, select **Azure Cosmos DB v2**.
 
+:::image type="content" source="./media/azure-cosmos-db-private-network/mirror-artifact-connection-sign-in.png" alt-text="Screenshot showing a Cosmos DB mirroring configuration set up screen before OAuth authentication." lightbox="./media/azure-cosmos-db-private-network/mirror-artifact-connection-sign-in-full.png":::
+
 1. Provide credentials for the Azure Cosmos DB for NoSQL account:
 
     | Account credentials | Value |
@@ -289,6 +300,8 @@ Create your mirrored database in Fabric:
 
     > [!NOTE]
     > Private network support for Cosmos DB mirroring is only available for OAuth-based authentication.
+
+:::image type="content" source="./media/azure-cosmos-db-private-network/mirror-artifact-connection-connect.png" alt-text="Screenshot showing a Cosmos DB mirroring configuration set up screen after OAuth authentication." lightbox="./media/azure-cosmos-db-private-network/mirror-artifact-connection-connect-full.png":::
 
 1. Select **Connect**.
 
@@ -331,6 +344,8 @@ After successfully creating the mirror and verifying replication, disable public
 After disabling public access, verify that mirroring continues to work. The Network ACL Bypass allows Fabric to access your account through the authorized workspace even with public access disabled.
 
 ## Verify the mirroring connection
+
+:::image type="content" source="./media/azure-cosmos-db-private-network/mirror-artifact-running.png" alt-text="Screenshot showing a successfully running mirroring artifact with private endpoints enabled." lightbox="./media/azure-cosmos-db-private-network/mirror-artifact-running-full.png":::
 
 After configuring your mirrored database, verify that the connection is working properly:
 
