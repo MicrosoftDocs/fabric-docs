@@ -200,7 +200,7 @@ We recommend manually adding all IPv4 address ranges from the Azure service tags
 
 Use Network Security Perimeter (NSP) to allow access using service tags, which automatically includes all IP addresses for the services without manual entry.
 
-:::image type="content" source="./media/azure-cosmos-db-private-network/NSP-inbound-access-rule.png" alt-text="Screenshot showing Network Security Perimeter configured with service tags." lightbox="./media/azure-cosmos-db-private-network/NSP-inbound-access-rule-full.png":::
+:::image type="content" source="./media/azure-cosmos-db-private-network/nsp-inbound-access-rule.png" alt-text="Screenshot showing Network Security Perimeter configured with service tags." lightbox="./media/azure-cosmos-db-private-network/nsp-inbound-access-rule-full.png":::
 
 > [!NOTE]
 > Network Security Perimeter is currently in preview for Cosmos DB. Some customers may prefer to use the manual IP address method due to preview limitations. For more information about Network Security Perimeter support for Azure Cosmos DB, see [Network Security Perimeter concepts](/azure/private-link/network-security-perimeter-concepts#onboarded-private-link-resources).
