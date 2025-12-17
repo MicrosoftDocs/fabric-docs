@@ -21,8 +21,13 @@ This guide helps you configure Azure Cosmos DB accounts that use private network
 - An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../fundamentals/fabric-trial.md).
 - The Azure Cosmos DB for NoSQL account must be configured for Fabric mirroring. For more information, see [account requirements](azure-cosmos-db-limitations.md#account-and-database-limitations).
 - PowerShell with Azure PowerShell modules (`Az.Accounts`, `Az.CosmosDB`, `Az.Network`) installed.
-- The user configuring mirroring must have **Cosmos DB Account Contributor** or higher permissions on the Azure Cosmos DB account.
-- The target Fabric workspace region must match the Azure Cosmos DB Account region.
+- You must have **Cosmos DB Account Contributor** or higher permissions on the Azure Cosmos DB account to configure mirroring.
+- Your Cosmos DB account must have either virtual network service endpoints or private endpoints already configured before starting this guide.
+- The Cosmos DB account and Fabric workspace must be in the same Azure region. To verify your Fabric workspace region:
+  1. Open your Fabric workspace
+  1. Navigate to **Workspace settings** → **License info**
+  1. Note the region of the Fabric capacity
+  1. Ensure this matches your Cosmos DB account region
 
 ## Overview of network configuration options
 
@@ -47,7 +52,17 @@ For a streamlined setup experience, use the provided PowerShell script that auto
 
 1. Download the PowerShell script `ps-account-setup-cosmos-pe-mirroring.ps1` found in our (Azure Cosmos DB Samples repo)[https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-setup-cosmos-pe-mirroring.ps1]. 
 
-1. Open PowerShell as Administrator and run:
+1. Open PowerShell as Administrator and run the following commands to authenticate and set your subscription context:
+
+    ```powershell
+    # Connect to Azure
+    Connect-AzAccount
+    
+    # Set your subscription context
+    Set-AzContext -Subscription "<subscriptionId>"
+    ```
+
+2. Run the private network configuration script to set up mirroring
 
     ```powershell
     .\ps-account-setup-cosmos-pe-mirroring.ps1
@@ -71,6 +86,22 @@ For a streamlined setup experience, use the provided PowerShell script that auto
 If you prefer manual configuration or need to understand the detailed steps, select your network configuration type:
 
 # [Virtual network service endpoints](#tab/vnet)
+
+### Authenticate to Azure
+
+Before beginning the configuration steps, connect to your Azure account:
+
+1. Open PowerShell.
+
+1. Run the following commands to authenticate and set your subscription context:
+
+    ```powershell
+    # Connect to Azure
+    Connect-AzAccount
+    
+    # Set your subscription context
+    Set-AzContext -Subscription "<subscriptionId>"
+    ```
 
 ### Step 1: Configure RBAC permissions
 
@@ -217,9 +248,6 @@ Create your mirrored database in Fabric:
     | **Account Key** | Read-write key for the source account. |
     | **Organizational account** | Access token from Microsoft Entra ID. |
 
-    > [!NOTE]
-    > No data gateway is required when using Network ACL Bypass.
-
 1. Select **Connect**.
 
 1. Select a database to mirror. Optionally, select specific containers to mirror.
@@ -229,6 +257,22 @@ Create your mirrored database in Fabric:
 1. Monitor replication to verify the connection is working properly.
 
 # [Private endpoints](#tab/private-endpoint)
+
+### Authenticate to Azure
+
+Before beginning the configuration steps, connect to your Azure account:
+
+1. Open PowerShell.
+
+1. Run the following commands to authenticate and set your subscription context:
+
+    ```powershell
+    # Connect to Azure
+    Connect-AzAccount
+    
+    # Set your subscription context
+    Set-AzContext -Subscription "<subscriptionId>"
+    ```
 
 ### Step 1: Configure RBAC permissions
 
@@ -381,7 +425,19 @@ Create your mirrored database in Fabric:
 
 ### Step 6: Disable public network access
 
-After successfully creating the mirror and verifying replication, disable public network access to restore your private endpoint-only configuration:
+After successfully creating the mirror and verifying replication, disable public network access to restore your private endpoint-only configuration. You can do this using either the Azure portal or PowerShell:
+
+**Option A: Azure portal**
+
+1. Navigate to your Azure Cosmos DB account in the [Azure portal](https://portal.azure.com).
+
+1. In the resource menu, select **Networking** under **Settings**.
+
+1. Under **Public network access**, select **Disabled**.
+
+1. Select **Save** to apply your changes.
+
+**Option B: PowerShell**
 
 1. Open PowerShell.
 
@@ -394,7 +450,7 @@ After successfully creating the mirror and verifying replication, disable public
         -PublicNetworkAccess "Disabled"
     ```
 
-1. Verify that mirroring continues to work. The Network ACL Bypass allows Fabric to access your account through the authorized workspace even with public access disabled.
+After disabling public access, verify that mirroring continues to work. The Network ACL Bypass allows Fabric to access your account through the authorized workspace even with public access disabled.
 
 ---
 
