@@ -12,9 +12,7 @@ ms.date: 11/15/2023
 
 You can now deactivate one or more activities from a pipeline, and we skip them during validation and during pipeline run. This feature significantly improves pipeline developer efficiency, allowing customers to comment out part of the pipeline, without deleting it from the canvas. You may choose to reactivate them at a later time.
 
-:::image type="content" source="media/how-to-debug-pipelines-in-microsoft-fabric/activity-state-settings.png" alt-text="Screenshot of Fabric Data Factory pipeline editor with ActivityDeactivated web activity set to Inactive in the General settings pane." lightbox="media/how-to-debug-pipelines-in-microsoft-fabric/activity-state-settings.png":::
-
-## Deactivate and reactivate
+## Deactivate activities
 
 [!INCLUDE [deactivate-activities](includes/deactivate-activities.md)]
 
