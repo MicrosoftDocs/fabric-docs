@@ -141,8 +141,8 @@ The final relationship details match the following table.
 
 | Old name | New name | Source data table | Source entity type | Target entity type | 
 | --- | --- | --- | --- | --- |
-| *factsales_has_dimproducts* | *soldIn* | Tutorial workspace > *OntologyDataLH* > *factsales* <br>Set source columns to match entity type key properties | *Products* | *SaleEvent* |
-| *factsales_has_dimstore* | *has* |  Tutorial workspace > *OntologyDataLH* > *factsales* <br>Set source columns to match entity type key properties | *Store* | *SaleEvent* |
+| *factsales_has_dimproducts* | *soldIn* | Tutorial workspace > *OntologyDataLH* > *factsales* | *Products* <br>Set source column to match entity type key property | *SaleEvent* <br>Set source column to match entity type key property |
+| *factsales_has_dimstore* | *has* | Tutorial workspace > *OntologyDataLH* > *factsales* | *Store*  <br>Set source column to match entity type key property | *SaleEvent*  <br>Set source column to match entity type key property |
 
 Here's an example of what an updated relationship type looks like.
 
