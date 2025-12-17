@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # How to: Configure private networks for Azure Cosmos DB Fabric Mirroring (Preview)
 
-This guide helps you configure Azure Cosmos DB accounts that use private networks or private endpoints to work with Microsoft Fabric mirroring. You can mirror data from Azure Cosmos DB accounts configured with virtual network (VNET) or private endpoints, while maintaining enhanced network security.
+This guide helps you configure Azure Cosmos DB accounts that use virtual networks or private endpoints to work with Microsoft Fabric mirroring. You can mirror data from Azure Cosmos DB accounts configured with virtual network (VNET) or private endpoints, while maintaining enhanced network security.
 
 > [!NOTE]
 > Private network support for Azure Cosmos DB Fabric Mirroring is currently in Preview.
@@ -357,7 +357,7 @@ After configuring your mirrored database, verify that the connection is working 
 
 ## Limitations and considerations
 
-When using private networks or private endpoints with Azure Cosmos DB mirroring, be aware of these limitations:
+When using virtual networks or private endpoints with Azure Cosmos DB mirroring, be aware of these limitations:
 
 - The user configuring private networks for Cosmos DB Mirroring must be an Azure subscription owner. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).
 - Private network support for Cosmos DB mirroring is only available for OAuth-based authentication.

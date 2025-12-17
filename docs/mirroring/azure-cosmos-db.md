@@ -150,7 +150,7 @@ You can also mask sensitive data from non admin users using dynamic data masking
 
 ### Network security
 
-Azure Cosmos DB accounts with private networks or private endpoints are supported with Fabric mirroring using the Network ACL Bypass feature. This allows your authorized Fabric workspace to access the Cosmos DB account without requiring a data gateway, while maintaining enhanced network security. For detailed configuration instructions, see [Configure private networks for Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-private-network.md).
+Azure Cosmos DB accounts with virtual networks or private endpoints are supported with Fabric mirroring using the Network ACL Bypass feature. This allows your authorized Fabric workspace to access the Cosmos DB account without requiring a data gateway, while maintaining enhanced network security. For detailed configuration instructions, see [Configure private networks for Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-private-network.md).
 
 Currently, mirroring doesn't support customer managed keys (CMK) on OneLake.
 
