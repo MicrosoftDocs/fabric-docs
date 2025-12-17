@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # How to: Configure private networks for Azure Cosmos DB Fabric Mirroring (Preview)
 
-This guide helps you configure Azure Cosmos DB accounts that use private networks or private endpoints to work with Microsoft Fabric mirroring. You can mirror data from Azure Cosmos DB accounts configured with virtual network (VNET) service endpoints or private endpoints, while maintaining enhanced network security.
+This guide helps you configure Azure Cosmos DB accounts that use private networks or private endpoints to work with Microsoft Fabric mirroring. You can mirror data from Azure Cosmos DB accounts configured with virtual network (VNET) or private endpoints, while maintaining enhanced network security.
 
 > [!NOTE]
 > Private network support for Azure Cosmos DB Fabric Mirroring is currently in Preview.
@@ -31,12 +31,13 @@ This guide helps you configure Azure Cosmos DB accounts that use private network
   1. Note the region of the Fabric capacity
   1. Ensure this matches your Cosmos DB account region
 - PowerShell with Azure PowerShell modules (`Az.Accounts`, `Az.CosmosDB`, `Az.Network`) installed.
+- The user configuring private networks for Cosmos DB Mirroring must be an Azure subscription owner. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).
 
 ## Overview of network configuration options
 
 Azure Cosmos DB supports two primary network security configurations for mirroring:
 
-- **Virtual network service endpoints**: Restrict access to your Azure Cosmos DB account to specific virtual network subnets. With this configuration, you maintain "Selected networks" access and add the necessary Azure service IP addresses.
+- **Virtual network**: Restrict access to your Azure Cosmos DB account to specific virtual network subnets. With this configuration, you maintain "Selected networks" access and add the necessary Azure service IP addresses.
 - **Private endpoint**: Provide a private IP address from your virtual network to your Azure Cosmos DB account, keeping all traffic on the Microsoft backbone network. This requires temporarily enabling public access to specific Azure services during mirroring setup.
 
 Both configurations use the **Network ACL Bypass** feature to allow Fabric to access your Cosmos DB account by authorizing specific Fabric workspace IDs.
@@ -85,13 +86,13 @@ For a streamlined setup experience, use the provided PowerShell script that auto
 
 1. When prompted, create your mirrored database in Fabric while the account is temporarily accessible.
 
-1. After mirroring is created, the script restores your original network security settings (for private endpoints) or maintains the configured service endpoints with added IP rules.
+1. After mirroring is created, the script restores your original network security settings (for private endpoints) or maintains the configured virtual network with added IP rules.
 
 ## Manual configuration
 
 If you prefer manual configuration or need to understand the detailed steps, select your network configuration type:
 
-# [Virtual network service endpoints](#tab/vnet)
+# [Virtual network](#tab/vnet)
 
 ### Authenticate to Azure
 
@@ -115,20 +116,36 @@ Configure the required RBAC permissions for both the user setting up mirroring a
 
 #### Assign Cosmos DB data contributor permissions to the user
 
-    > [!IMPORTANT]
-    > The user must have Cosmos DB Data Contributor or higher permissions to configure mirroring. Without this role, the mirroring configuration will fail.
+> [!IMPORTANT]
+> The user must have Cosmos DB Data Contributor or higher permissions to configure mirroring. Without this role, the mirroring configuration will fail. To learn more, see [Cosmos DB Built-in Data Contributor](/azure/cosmos-db/nosql/reference-data-plane-security#cosmos-db-built-in-data-contributor).
 
-[TODO PUT POWERSHELL STEPS AND LINK TO GUIDE ON THIS]
+1. Get your principal Id
+    ```powershell
+    $currentUser = Get-AzADUser -SignedIn
+    $currentUser.Id
+    ```
 
-    > [!NOTE]
-    > You can also use the provided script [assign-contibutor-rbac.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-assign-contributor.ps1) to automate the user's identity role assignment.
+2. Apply the Data Contributor RBAC policy
+    ```powershell
+    New-AzCosmosDBSqlRoleAssignment `
+        -AccountName <accountName> `
+        -ResourceGroupName <resourceGroupName> `
+        -RoleDefinitionName "Cosmos DB Built-in Data Contributor" `
+        -Scope "/" `
+        -PrincipalId <principalId>
+    ```
+
+> [!NOTE]
+> You can also use the provided script [assign-contibutor-rbac.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-assign-contributor.ps1) to automate the user's identity role assignment.
 
 #### Assign Cosmos DB metadata and analytics reader permissions to the user
 
-[TODO PUT POWERSHELL STEPS AND LINK TO GUIDE ON THIS]
+To apply the required mirroring RBAC policy, please refer to [Grant data plane role-base access](/azure/cosmos-db/nosql/how-to-connect-role-based-access-control?pivots=azure-cli#grant-data-plane-role-based-access) and ensure the following data plane permissions are added:
+    - `Microsoft.DocumentDB/databaseAccounts/readMetadata`
+    - `Microsoft.DocumentDB/databaseAccounts/readAnalytics`  
 
-    > [!NOTE]
-    > You can also use the provided script [ps-account-rbac-mirroring.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-mirroring.ps1) to automate the user's identity role assignment.
+> [!NOTE]
+> You can also use the provided script [ps-account-rbac-mirroring.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-mirroring.ps1) to automate the user's identity role assignment.
 
 ### Step 2: Add Azure service IP addresses
 
@@ -292,20 +309,36 @@ Configure the required RBAC permissions for both the user setting up mirroring a
 
 #### Assign Cosmos DB data contributor permissions to the user
 
-    > [!IMPORTANT]
-    > The user must have Cosmos DB Data Contributor or higher permissions to configure mirroring. Without this role, the mirroring configuration will fail.
+> [!IMPORTANT]
+> The user must have Cosmos DB Data Contributor or higher permissions to configure mirroring. Without this role, the mirroring configuration will fail. To learn more, see [Cosmos DB Built-in Data Contributor](/azure/cosmos-db/nosql/reference-data-plane-security#cosmos-db-built-in-data-contributor).
 
-[TODO PUT POWERSHELL STEPS AND LINK TO GUIDE ON THIS]
+1. Get your principal Id
+    ```powershell
+    $currentUser = Get-AzADUser -SignedIn
+    $currentUser.Id
+    ```
 
-    > [!NOTE]
-    > You can also use the provided script [assign-contibutor-rbac.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-assign-contributor.ps1) to automate the user's identity role assignment.
+2. Apply the Data Contributor RBAC policy
+    ```powershell
+    New-AzCosmosDBSqlRoleAssignment `
+        -AccountName <accountName> `
+        -ResourceGroupName <resourceGroupName> `
+        -RoleDefinitionName "Cosmos DB Built-in Data Contributor" `
+        -Scope "/" `
+        -PrincipalId <principalId>
+    ```
+
+> [!NOTE]
+> You can also use the provided script [assign-contibutor-rbac.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-assign-contributor.ps1) to automate the user's identity role assignment.
 
 #### Assign Cosmos DB metadata and analytics reader permissions to the user
 
-[TODO PUT POWERSHELL STEPS AND LINK TO GUIDE ON THIS]
+To apply the required mirroring RBAC policy, please refer to [Grant data plane role-base access](/azure/cosmos-db/nosql/how-to-connect-role-based-access-control?pivots=azure-cli#grant-data-plane-role-based-access) and ensure the following data plane permissions are added:
+    - `Microsoft.DocumentDB/databaseAccounts/readMetadata`
+    - `Microsoft.DocumentDB/databaseAccounts/readAnalytics`  
 
-    > [!NOTE]
-    > You can also use the provided script [ps-account-rbac-mirroring.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-mirroring.ps1) to automate the user's identity role assignment.
+> [!NOTE]
+> You can also use the provided script [ps-account-rbac-mirroring.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-mirroring.ps1) to automate the user's identity role assignment.
 
 ### Step 2: Temporarily enable public network access
 
@@ -501,13 +534,16 @@ After configuring your mirrored database, verify that the connection is working 
 
 When using private networks or private endpoints with Azure Cosmos DB mirroring, be aware of these limitations:
 
-- The `EnableFabricNetworkAclBypass` capability must be enabled on your Cosmos DB account before configuring Network ACL Bypass.
-- You must add all IPv4 addresses for the DataFactory and PowerQueryOnline service tags in your region. Partial IP lists may cause connection failures.
-- Configuring your public network access can take 5-15 minutes to complete.
-- For private endpoint configurations, you must temporarily enable public access during the initial mirror setup. After mirroring is established, you can disable public access.
-- For virtual network service endpoint configurations, the service endpoint rules must remain in place along with the added IP addresses.
-- Network ACL Bypass configuration is workspace-specific. Each workspace that needs to access the Cosmos DB account must be authorized separately.
+- The user configuring private networks for Cosmos DB Mirroring must be an Azure subscription owner. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).
+- Private network support for Cosmos DB mirroring is only available for OAuth-based authentication.
 - When using Microsoft Entra ID authentication, ensure that the required RBAC permissions are configured. For more information, see [security limitations](azure-cosmos-db-limitations.md#security-limitations).
+- The `EnableFabricNetworkAclBypass` capability must be enabled on your Cosmos DB account before configuring Network ACL Bypass.
+- Network ACL Bypass configuration is workspace-specific. Each workspace that needs to access the Cosmos DB account must be authorized separately.
+- You must add all IPv4 addresses for the DataFactory and PowerQueryOnline service tags in your region. Partial IP lists may cause connection failures.
+- For private endpoint configurations, you must temporarily enable public access during the initial mirror setup. After mirroring is established, you can disable public access.
+- For virtual network configurations, the endpoint rules must remain in place along with the added IP addresses.
+- Configuring your public network access can take 5-15 minutes to complete.
+- The target Fabric workspace region must be the same as the source Azure Cosmos DB Account region.
 
 ## Troubleshooting
 
@@ -529,7 +565,7 @@ If you experience issues connecting to your Azure Cosmos DB account:
     $account.NetworkAclBypassResourceIds
     ```
 
-    Verify that the resource exists and has the correct tenant ID and workspace ID.
+    Verify that the resource exists and has the correct tenant ID and workspace ID. If there's no output, Fabric workspace bypass has not been configured.
 
 1. **Verify IP addresses are correct:**
     
@@ -539,12 +575,16 @@ If you experience issues connecting to your Azure Cosmos DB account:
 
 1. **Review Azure Cosmos DB firewall settings:**
     
-    - For service endpoints, ensure the virtual network rules are still in place
+    - For virtual networks, ensure the endpoint rules are still in place
     - For private endpoints, only disable public access after mirror setup completes
 
 1. **Check connection credentials:**
     
-    - Account key is not support for mirroring private network support. Ensure you are using Microsoft Entra ID authentication, verify that the required permissions are assigned
+    - Account key is not support for mirroring private network support. Ensure you are using Microsoft Entra ID authentication and verify the required permissions are assigned
+
+1. **Check Fabric and Azure regions**
+
+    - Verify both your Fabric workspace region and Azure Cosmos DB Account region are the same.
 
 1. **Review monitoring logs:**
     
