@@ -32,7 +32,7 @@ The table below describes common issues when generating a new ontology (preview)
 | The ontology item is created but there are no entity types | Make sure your semantic model is published, the tables in the semantic model are visible (not hidden), and relationships are defined. |
 | The ontology item is created but entity types have no data bindings | Ontology does not support creating data bindings when the semantic model table is in **Direct Lake mode** and the backing lakehouse is in a workspace with **inbound public access disabled**. Try changing these settings and regenerating the ontology. |
 | Queries return null values for `Decimal` properties | Fabric Graph does not currently support the `Decimal` type. As a result, if you generate an ontology from a semantic model with tables that include `Decimal` type columns, you see null values returned for those properties on all queries. `Double` type is supported, however, so recreating the property as a `Double` type in ontology and binding it to the source data will allow the data to show up in queries. |
-| Other | Make sure the ontology operation you're trying to complete is [supported for your semantic model mode](concepts-generate.md#support-for-semantic-model-modes). |
+| General troubleshooting | Make sure the ontology operation you're trying to complete is [supported for your semantic model mode](concepts-generate.md#support-for-semantic-model-modes). |
 
 ## Troubleshoot data binding
 
@@ -41,7 +41,7 @@ The table below describes common issues when binding data to an ontology (previe
 | Issue | Recommendation |
 |---|---|
 | Lakehouse not available as data source when creating a binding | Check to make sure **OneLake security** is not enabled on your lakehouse. Lakehouses with OneLake security enabled are not supported as data sources for bindings. |
-| Issue with keys while binding relationship types | If you don't see any keys for an entity type, make sure your source and target entity types have keys defined.<br><br> There's also a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&active=true&fixed=true&sort=published&issueId=1619) affecting the ability to edit data binding in relationships. The recommendation is to make sure the correct source and target entity types are set before choosing the source data table to bind. If you need to make changes to the source and target after that point, delete the relationship and re-create the new one. | 
+| Issue with keys while binding relationship types | If you don't see any keys for an entity type, make sure your source and target entity types have keys defined. | 
 
 ## Troubleshoot preview experience
 
@@ -51,7 +51,7 @@ The table below describes common issues when using the preview experience of an 
 |---|---|
 | Preview experience shows error `403 Forbidden` | This error might indicate that you don't have access to the lakehouse that contains the source data for the ontology's data bindings. Contact your administrator to obtain access to the lakehouse. |
 | No entity instances shown | This behavior indicates an error accessing the data bindings. Confirm that the source data tables exist in OneLake with matching column names, and that your Fabric identity has data access. |
-| Graph is sparse or missing data | Check the entity type keys in the data bindings. Verify that the source data is properly bound to keys defined on the entity types. |
+| Graph is sparse or missing data | Check that entity type keys are defined for each entity type, and verify that the source data is properly bound to those keys. |
 
 ## Troubleshoot ontology as data agent source
 
