@@ -51,7 +51,7 @@ Perhaps you'd rather actively monitor the entirety of your pipeline (create, del
 
 ## Workspace level alerts
 
-Workspace-level alerts let you monitor failures across all pipelines and other job runs in a workspace without maintaining individual alert rules. With workspace monitoring enabled, Fabric automatically writes execution logs into an Eventhouse KQL database. You can create a single alert rule that queries recent failures using a KQL Queryset rather than needing to set-up individual pipeline alerts as described previously above.
+Workspace-level alerts let you monitor failures across all pipelines and other job runs in a workspace without maintaining individual alert rules. With workspace monitoring enabled, Fabric automatically writes execution logs into an Eventhouse KQL database. You can create a single alert rule that queries recent failures using a KQL Queryset rather than needing to set up individual pipeline alerts as described previously above.
  
 * First, enable workspace monitoring. Confirm that workspace monitoring is enabled. When active, Fabric writes platform-level logs such as ItemJobEventLogs into the workspace’s monitoring Eventhouse.
 
