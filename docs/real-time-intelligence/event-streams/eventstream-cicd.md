@@ -79,7 +79,7 @@ Eventstream generally supports CI/CD through Git integration and Deployment pipe
 
 | Fully supported | Partially supported | Not supported |
 |--------------|-----------------|---------------|
-| Most sources and all destinations<br>All standard operators (except custom code)<br>Most capabilities (e.g., multiple-schema inferencing) | Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC)<br> |Azure Service Bus(preview)<br>Cribl (preview)<br> HTTP (preview)<br>MongoDB CDC (preview)<br>SQL code editor (custom operator)<br>Pause/resume state |
+| Most sources and all destinations<br>All standard operators (except custom code)<br>Most capabilities (e.g., multiple-schema inferencing) | Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC)<br>SQL code editor (custom operator) |Azure Service Bus(preview)<br>Cribl (preview)<br> HTTP (preview)<br>MongoDB CDC (preview)<br>Pause/resume state |
 
 > [!NOTE]
 > **Partially supported** means the resource supports CI/CD, but advanced settings configuration is currently not supported and will revert to defaults after deployment.
