@@ -40,7 +40,7 @@ The Azure DevOps connection supports two authentication methods:
 
 Both methods include support for [multi-tenant (cross-tenant) scenarios](git-integration-with-service-principal.md#multitenant-considerations-for-service-principal-creation), giving organizations flexibility across environments. 
 
-Any other user with at least Contributor permissions on the same workspace doesn't need to repeat the connection process. Previously, the system attempted to authenticate secondary users only through **Automatic authentication**. 
+Any other user with at least Contributor permissions on the same workspace doesn't need to repeat the connection process. Before service principal support, the system attempted to authenticate secondary users only through **Automatic authentication**. 
 
 If **Automatic authentication** fails, the system also attempts to connect using any **Configured Credential** which the user has access to, ensuring a smoother experience and reduces redundant setup steps. 
 
