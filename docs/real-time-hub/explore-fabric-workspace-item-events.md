@@ -5,7 +5,7 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 07/22/2025
+ms.date: 12/11/2025
 ---
 
 # Explore Fabric workspace item events in Fabric Real-Time hub
@@ -21,7 +21,7 @@ Fabric workspace item events allow you to receive notification when certain acti
 1. In **Real-Time hub**, select **Fabric events**.
 1. Select **Fabric workspace item events** from the list.
 
-    :::image type="content" source="./media/explore-fabric-workspace-item-events/select-from-list.png" alt-text="Screenshot that shows the selection of Fabric workspace item events in the Fabric events page.":::
+    :::image type="content" source="./media/explore-fabric-workspace-item-events/workspace-events.png" alt-text="Screenshot that shows the selection of Fabric workspace item events in the Fabric events page.":::
 1. You should see the detail view for Fabric workspace item events.
 
     :::image type="content" source="./media/explore-fabric-workspace-item-events/detail-page.png" alt-text="Screenshot that shows the detail page for Fabric workspace item events." lightbox="./media/explore-fabric-workspace-item-events/detail-page.png":::

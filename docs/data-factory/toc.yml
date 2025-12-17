@@ -69,8 +69,6 @@
         href: decision-guide-data-integration.md
       - name: Decide - Data movement strategy
         href: decision-guide-data-movement.md
-      - name: Decide - Data transformation strategy
-        href: decision-guide-data-transformation.md
       - name: Decide - Copy activity, Copy job, dataflow, or Spark?
         href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md 
       - name: Create a Copy job
@@ -89,6 +87,8 @@
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
       href: compare-fabric-data-factory-and-azure-data-factory.md
+    - name: Pipeline assessment tool
+      href: /azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json 
     - name: Connector capability comparison
       href: connector-parity.md
     - name: Migration best practices
@@ -975,6 +975,8 @@
             href: dataflows-gen2-monitor.md
           - name: Performance and troubleshooting
             items:
+              - name: Decide - Dataflow strategy
+                href: decision-guide-data-transformation.md
               - name: Dataflow Gen2 performance and scalability
                 href: dataflow-gen2-performance-best-practices.md  
               - name: Dataflows that use gateways
@@ -1012,7 +1014,15 @@
                   - name: Variable references in Dataflow
                     href: dataflow-gen2-variable-references.md
       - name: dbt job
-        href: dbt-job-overview.md  
+        items:
+        - name: What is dbt job?
+          href: dbt-job-overview.md
+        - name: Step-by-step dbt job tutorial
+          href: dbt-job-sample-tutorial.md
+        - name: Create a dbt job
+          href: dbt-job-how-to.md
+        - name: Configure a dbt job
+          href: dbt-job-configure.md
   - name: Orchestrate your pipelines
     items:
       - name: What is a pipeline?
@@ -1130,6 +1140,8 @@
         items:
           - name: Browse pipeline runs in the Monitoring Hub
             href: monitoring-hub-pipeline-runs.md
+          - name: Workspace monitoring
+            href: workspace-monitoring.md
       - name: Parameterization
         items: 
           - name: Parameter usage

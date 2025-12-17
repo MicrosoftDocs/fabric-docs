@@ -60,16 +60,17 @@ For a Fabric data agent to function properly, the [**Copilot and Azure OpenAI Se
 
 :::image type="content" source="media/data-agent-tenant-settings/fabric-copilot-storage-tenant-setting.png" alt-text="Screenshot of Fabric Copilot Storage setting in the admin portal." lightbox="media/data-agent-tenant-settings/fabric-copilot-storage-tenant-setting.png":::
 
-## Enable Fabric data agent tenant settings
+## Fabric data agent tenant setting
 
-By default, the Fabric data agent feature is disabled at the tenant level. To allow users to create and share Fabric data agent items, administrators must enable this setting. This activation allows users to craft natural language Q&A experiences using generative AI, and then share the Fabric data agent within the organization.
+By default, the Fabric data agent feature is enabled at the tenant level. This activation allows users to craft natural language Q&A experiences using generative AI, and then share the Fabric data agent within the organization.
+To disallow users from creating and sharing Fabric data agent items, administrators can disable this setting. 
 
-### Steps to enable Fabric data agent
+### Steps to disable Fabric data agent
 
 1. In **Tenant Settings**, locate the **Fabric data agent** section.
-2. To enable this setting, check the option in **Tenant Settings** as shown in the next screenshot:
+2. To disable this setting, toggle the **Disabled** option in **Tenant Settings** and select **Apply** as shown in the next screenshot:
 
-:::image type="content" source="media/data-agent-tenant-settings/tenant-setting.png" alt-text="Screenshot highlighting the Fabric data agent creation and sharing option in the admin portal." lightbox="media/data-agent-tenant-settings/tenant-setting.png":::
+:::image type="content" source="media/data-agent-tenant-settings/disable-dataagent-tenant-setting.png" alt-text="Screenshot highlighting the Fabric data agent creation and sharing option in the admin portal." lightbox="media/data-agent-tenant-settings/disable-dataagent-tenant-setting.png":::
 
 ## Enable integration of Power BI semantic models via XMLA endpoints
 

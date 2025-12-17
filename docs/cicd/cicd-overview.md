@@ -8,7 +8,7 @@ ms.custom:
 ms.topic: concept-article
 ms.service: fabric
 ms.subservice: cicd
-ms.date: 01/12/2025
+ms.date: 12/15/2025
 #customer intent: As a developer, I want to understand the CI/CD process in Microsoft Fabric so that I can efficiently manage the lifecycle of my applications.
 ---
 
