@@ -5,7 +5,7 @@ author: billmath
 ms.author: billmath
 ms.topic: include
 ms.custom: 
-ms.date: 12/15/2025
+ms.date: 12/16/2025
 ---
 
 ### General Git integration limitations
@@ -38,9 +38,8 @@ ms.date: 12/15/2025
 
 Some GitHub Enterprise versions and settings aren't supported. For example:
 
-- GitHub Enterprise Cloud with data residency (ghe.com)
 - GitHub Enterprise Server with a custom domain is not supported, even if the instance is publicly accessible
-- Github Enterprise Server hosted on a private network
+- GitHub Enterprise Server hosted on a private network
 - IP allowlist
 
 ### Azure DevOps to GitHub Enterprise migration consideration
@@ -59,7 +58,7 @@ If your team uses Fabric Git Integration and is evaluating a migration from Azur
 - Maximum length of full path for file names is 250 characters. Longer names fail.
 - Maximum file size is 25 MB.
 - Folder structure is maintained up to 10 levels deep.
-- Downloading a report/dataset as *.pbix* from the service after deploying them with Git integration is not recommended, as the results are unreliable. We recommend using PowerBI Desktop to download reports/datasets as *.pbix*.
+- Downloading a report/dataset as *.pbix* from the service after deploying them with Git integration is not recommended, as the results are unreliable. We recommend using Power BI Desktop to download reports/datasets as *.pbix*.
 - If the item’s display name has any of these characteristics, The Git folder is renamed to the logical ID (Guid) and type:
   - Has more than 256 characters
   - Ends with a <kbd>.</kbd> or a space

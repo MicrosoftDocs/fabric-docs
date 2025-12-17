@@ -8,7 +8,7 @@ ms.topic: overview
 ms.custom:
 - build 2024
 ms.search.form: product-trident
-ms.date: 10/02/2025
+ms.date: 12/16/2025
 ---
 
 # What is Microsoft Fabric?
@@ -30,7 +30,7 @@ Microsoft Fabric provides several integrated capabilities:
 * **OneLake:** All Fabric tools can access a central data storage, eliminating the need to copy data between services.
 * **Copilot support:** An AI assistant that helps write code, generate insights, and automate repetitive tasks.
 * **Integration with Microsoft 365:** Connect Fabric data to Excel, Teams, and other Microsoft 365 applications.
-* **Azure AI Foundry:** Provides prebuilt AI models and tools for building custom machine learning solutions.
+* **Microsoft Foundry:** Provides prebuilt AI models and tools for building custom machine learning solutions.
 * **Unified data management:** Centralized data discovery that simplifies governance, sharing, and use.
 
 ## Unification with SaaS foundation
