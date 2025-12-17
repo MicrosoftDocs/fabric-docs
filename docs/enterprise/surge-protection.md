@@ -115,7 +115,7 @@ Use the following steps to enable workspace-level surge protection:
    - **Block**: When CU consumption by a single workspace reaches the rejection threshold, that workspace is placed in a **Blocked** state and rejects new operation requests. You can block the workspace indefinitely or for a specified period (in hours).
 
 
-:::image type="content" source="media\surge-protection\surge-protection-settings.png" alt-text="Screenshot of surge protection setting panel" lightbox="media\surge-protection\surge-protection-settings.png":::
+   :::image type="content" source="media\surge-protection\surge-protection-settings.png" alt-text="Screenshot of surge protection setting panel" lightbox="media\surge-protection\surge-protection-settings.png":::
 
 ### Manual workspace controls
 
@@ -132,7 +132,15 @@ Use the following steps to enable workspace-level surge protection:
   - **Blocked:** All interactive and background operations are rejected. 
     - If a workspace is marked as **Blocked**, all the interactive and background operations will be rejected. Workspaces can be blocked manually by capacity admins or automatically by detection rules
 
-## Considerations and limitations
+The following table summarizes the functionality of each workspace state: 
+
+| Workspace state | Description | Subject to capacity‑level surge protection? | Can be auto‑blocked? | Typical use case |
+|-----------------|-------------|---------------------------------------------|-----------------------|-------------------|
+| **Available** | Default state; workspace follows capacity‑level surge protection rules. | Yes | Yes | Standard workspaces that should follow normal load‑management rules. |
+| **Mission critical** | High‑priority workspace exempt from capacity‑level surge protection rules. *Note: Overall capacity‑level throttling still applies once CU limits are reached.* | No | No | Important workloads that must continue running even during spikes. |
+| **Blocked** | Workspace is manually or automatically blocked; all operations are rejected. | N/A | N/A | Workspaces that exceeded CU limits or were manually paused by an admin. |
+
+### Considerations and limitations for workspace level surge protection
 - Workspace Level Surge Protection currently doesn’t apply to paginated reports
 - If a capacity is scaled up or down your workspace limits remain set based on the previous SKU size (e.g. 5% of an F32). If you wish to change the limit based on the new size (e.g. 5% of an F64) you must recreate the rule 
 
