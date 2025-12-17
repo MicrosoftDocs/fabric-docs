@@ -40,7 +40,7 @@ To access the data in your KQL database in other [!INCLUDE [product-name](../inc
 
 OneLake supports shortcuts to both internal OneLake resources (like KQL databases, lakehouses, and warehouses) and external resources (like Azure Data Lake Storage, Amazon S3, or Google Cloud Storage). For a list of all supported shortcut types and links to their specific configuration instructions, see [OneLake shortcuts > Types of shortcuts](../onelake/onelake-shortcuts.md#types-of-shortcuts).
 
-Shortcuts in KQL databases support [query acceleration](./query-acceleration-overview.md) To enable query acceleration on a new shortcut, toggle the **Accelerate** button to **On**.
+Shortcuts in KQL databases support [query acceleration](./query-acceleration-overview.md). To enable query acceleration on a new shortcut, toggle the **Accelerate** button to **On**.
 
 :::image type="content" source="media/onelake-shortcuts/accelerate.png" alt-text="Screenshot of the New shortcut window showing the shortcut details. The Accelerate toggle is highlighted."  lightbox="media/onelake-shortcuts/accelerate.png":::
 

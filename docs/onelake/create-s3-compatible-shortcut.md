@@ -68,7 +68,7 @@ The lakehouse automatically refreshes. The shortcut appears under **Files** in t
 
 The following limitations apply to S3 compatible shortcuts:
 
-* Currently only key or secret authentication is supported for S3-compatible sources. Entra-based OAuth, Service Principal, and RoleArn are not yet supported.
+* Currently only key or secret authentication is supported for S3-compatible sources. Microsoft Entra-based OAuth, Service Principal, and RoleArn are not supported.
 
 ## Related content
 
