@@ -31,8 +31,6 @@ After exploring data by using Copilot, save insights to the dashboard for quick 
 
 Use Copilot to explore data in the context of the entire dashboard or of a specific tile. Ask questions about the overall data, request summaries, or seek insights that span multiple tiles. For example, you can change the time frame, filter by a column or value, calculate an average or total, or group by a column. Each time you explore the data with Copilot, you can view the data updates in Copilot, and when ready you can save the insights as a new tile in the dashboard.
 
-These instructions explain how to explore data by using Copilot with the storm events sample data as an example.
-
 1. In your Fabric workspace, select a real-time dashboard, or [create](dashboard-real-time-create.md) a new dashboard.
 
     By default, the Copilot pane opens in the context of the entire dashboard. Ensure that you are in **Viewing** mode.
