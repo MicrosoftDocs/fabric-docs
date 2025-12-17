@@ -119,6 +119,10 @@ Configure the required RBAC permissions for both the user setting up mirroring a
 > [!IMPORTANT]
 > The user must have Cosmos DB Data Contributor or higher permissions to configure mirroring. Without this role, the mirroring configuration will fail. To learn more, see [Cosmos DB Built-in Data Contributor](/azure/cosmos-db/nosql/reference-data-plane-security#cosmos-db-built-in-data-contributor).
 
+To apply the required Data Contributor RBAC policy, use the provided script [assign-contibutor-rbac.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-assign-contributor.ps1) to automate the user's identity role assignment.
+
+To run these commands manually:
+
 1. Get your principal Id
     ```powershell
     $currentUser = Get-AzADUser -SignedIn
@@ -135,23 +139,47 @@ Configure the required RBAC permissions for both the user setting up mirroring a
         -PrincipalId <principalId>
     ```
 
-> [!NOTE]
-> You can also use the provided script [assign-contibutor-rbac.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-assign-contributor.ps1) to automate the user's identity role assignment.
-
 #### Assign Cosmos DB metadata and analytics reader permissions to the user
 
-To apply the required mirroring RBAC policy, please refer to [Grant data plane role-base access](/azure/cosmos-db/nosql/how-to-connect-role-based-access-control?pivots=azure-cli#grant-data-plane-role-based-access) and ensure the following data plane permissions are added:
+To apply the required mirroring RBAC policy, use the provided script [ps-account-rbac-mirroring.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-mirroring.ps1) to automate the user's identity role assignment.
+
+The script ensures the following data plane permissions are added:
     - `Microsoft.DocumentDB/databaseAccounts/readMetadata`
     - `Microsoft.DocumentDB/databaseAccounts/readAnalytics`  
 
-> [!NOTE]
-> You can also use the provided script [ps-account-rbac-mirroring.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-mirroring.ps1) to automate the user's identity role assignment.
+To learn more about applying custom RBAC polices, refer to [Grant data plane role-base access](/azure/cosmos-db/nosql/how-to-connect-role-based-access-control?pivots=azure-cli#grant-data-plane-role-based-access).
 
 ### Step 2: Add Azure service IP addresses
 
 Add the required Azure service IP addresses to allow Fabric services to access your Cosmos DB account. You can use either of two approaches:
 
-**Option A: Network Security Perimeter with Service Tags (Preview)**
+**Option A: Manual IP Address Configuration**
+
+We recommend manually adding all IPv4 address ranges from the Azure service tags as it doesn't rely on preview features.
+
+> [!NOTE]
+> Azure firewall does not currently support IPv6. If you add an IPv6 address to a rule, the firewall fails. To learn more, visit [Azure Firewall known issues and limitations](/azure/firewall/firewall-known-issues#azure-firewall-premium-known-issues).
+
+1. Download the latest Azure Service Tags JSON file from [Azure IP Ranges and Service Tags](https://www.microsoft.com/download/details.aspx?id=56519).
+
+1. Extract IP address ranges for the following services in your Fabric capacity region:
+    - `DataFactory.<region>` - For example, `DataFactory.WestUS3`
+    - `PowerQueryOnline.<region>` - For example, `PowerQueryOnline.WestUS3`
+
+1. In the Azure portal, navigate to your Azure Cosmos DB account.
+
+1. In the resource menu, select **Networking** under **Settings**.
+
+1. Under **Firewall**, add all the IP address ranges you extracted.
+
+    > [!IMPORTANT]
+    > You must add all IPv4 address ranges for the DataFactory and PowerQueryOnline services. Adding only a subset of addresses may cause connectivity issues. The provided PowerShell script automates this process.
+
+1. Ensure your existing virtual network rules remain in place.
+
+1. Select **Save** to apply your changes.
+
+**Option B: Network Security Perimeter with Service Tags (Preview)**
 
 Use Network Security Perimeter (NSP) to allow access using service tags, which automatically includes all IP addresses for the services without manual entry.
 
@@ -169,32 +197,6 @@ Use Network Security Perimeter (NSP) to allow access using service tags, which a
 1. Add the following service tags for your Fabric capacity region:
     - `DataFactory.<region>` - For example, `DataFactory.WestUS3`
     - `PowerQueryOnline.<region>` - For example, `PowerQueryOnline.WestUS3`
-
-1. Ensure your existing virtual network rules remain in place.
-
-1. Select **Save** to apply your changes.
-
-**Option B: Manual IP Address Configuration**
-
-Manually add all IPv4 address ranges from the Azure service tags. This approach requires adding many individual IP addresses but doesn't rely on preview features.
-
-> [!NOTE]
-> Azure firewall does not currently support IPv6. If you add an IPv6 address to a rule, the firewall fails. To learn more, please visit [Azure Firewall known issues and limitations](https://learn.microsoft.com/azure/firewall/firewall-known-issues#azure-firewall-premium-known-issues).
-
-1. Download the latest Azure Service Tags JSON file from [Azure IP Ranges and Service Tags](https://www.microsoft.com/download/details.aspx?id=56519).
-
-1. Extract IP address ranges for the following services in your Fabric capacity region:
-    - `DataFactory.<region>` - For example, `DataFactory.WestUS3`
-    - `PowerQueryOnline.<region>` - For example, `PowerQueryOnline.WestUS3`
-
-1. In the Azure portal, navigate to your Azure Cosmos DB account.
-
-1. In the resource menu, select **Networking** under **Settings**.
-
-1. Under **Firewall**, add all the IP address ranges you extracted.
-
-    > [!IMPORTANT]
-    > You must add all IPv4 address ranges for the DataFactory and PowerQueryOnline services. Adding only a subset of addresses may cause connectivity issues. The provided PowerShell script automates this process.
 
 1. Ensure your existing virtual network rules remain in place.
 
@@ -221,21 +223,24 @@ Enable the Fabric Network ACL Bypass capability on your Cosmos DB account:
 
 Authorize your Fabric workspace to bypass network ACLs:
 
+> [!TIP]
+> Use a shared workspace instead of My workspace. Workspace IDs are more readily available in shared workspaces.
+
 1. Get your Fabric workspace ID from the Fabric portal:
-    - Navigate to your workspace in [Fabric portal](https://fabric.microsoft.com/)
+    - Navigate to your workspace in [Fabric portal](https://app.fabric.microsoft.com/)
     - Look at the browser URL for a segment like `/groups/{GUID}/`.
     - That **GUID** is your **Workspace ID**.
 
     For example:
 
-    `https://msit.powerbi.com/groups/d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4/list?experience=power-bi`
+    `https://app.fabric.com/groups/d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4/list?experience=fabric-developer`
 
     The **Workspace ID** in this example is `d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4`.
 
 [TO DO ADD HOW TO GET WORKSPACE ID IF THEY ARE IN MY  WORKSPACE]
 
 1. Get your Fabric tenant ID.
-    - Navigate to your [Fabric portal](https://fabric.microsoft.com/)
+    - Navigate to your [Fabric portal](https://app.fabric.microsoft.com/)
     - Click your avatar at the top right of the Fabric Portal
     - Hover over the information icon next to your tenant name
 
@@ -253,7 +258,7 @@ Authorize your Fabric workspace to bypass network ACLs:
 
 Create your mirrored database in Fabric:
 
-1. Navigate to the [Fabric portal](https://fabric.microsoft.com/).
+1. Navigate to the [Fabric portal](https://app.fabric.microsoft.com/).
 
 1. Open the workspace you configured for bypass access.
 
@@ -274,7 +279,7 @@ Create your mirrored database in Fabric:
     | **Authentication kind** | Select *Organizational account*. |
     | **Organizational account** | Access token from Microsoft Entra ID. |
 
-    > [NOTE!]
+    > [!NOTE]
     > Private network support for Cosmos DB mirroring is only available for OAuth-based authentication.
 
 1. Select **Connect**.
@@ -333,7 +338,7 @@ Configure the required RBAC permissions for both the user setting up mirroring a
 
 #### Assign Cosmos DB metadata and analytics reader permissions to the user
 
-To apply the required mirroring RBAC policy, please refer to [Grant data plane role-base access](/azure/cosmos-db/nosql/how-to-connect-role-based-access-control?pivots=azure-cli#grant-data-plane-role-based-access) and ensure the following data plane permissions are added:
+To apply the required mirroring RBAC policy, refer to [Grant data plane role-base access](/azure/cosmos-db/nosql/how-to-connect-role-based-access-control?pivots=azure-cli#grant-data-plane-role-based-access) and ensure the following data plane permissions are added:
     - `Microsoft.DocumentDB/databaseAccounts/readMetadata`
     - `Microsoft.DocumentDB/databaseAccounts/readAnalytics`  
 
@@ -380,7 +385,7 @@ Use Network Security Perimeter (NSP) to allow access using service tags, which a
 Manually add all IPv4 address ranges from the Azure service tags. This approach requires adding many individual IP addresses but doesn't rely on preview features.
 
 > [!NOTE]
-> Azure firewall does not currently support IPv6. If you add an IPv6 address to a rule, the firewall fails. To learn more, please visit [Azure Firewall known issues and limitations](https://learn.microsoft.com/azure/firewall/firewall-known-issues#azure-firewall-premium-known-issues).
+> Azure firewall does not currently support IPv6. If you add an IPv6 address to a rule, the firewall fails. To learn more, visit [Azure Firewall known issues and limitations](https://learn.microsoft.com/azure/firewall/firewall-known-issues#azure-firewall-premium-known-issues).
 
 1. Download the latest Azure Service Tags JSON file from [Azure IP Ranges and Service Tags](https://www.microsoft.com/download/details.aspx?id=56519).
 
@@ -423,20 +428,20 @@ Enable the Fabric Network ACL Bypass capability on your Cosmos DB account:
 Authorize your Fabric workspace to bypass network ACLs:
 
 1. Get your Fabric workspace ID from the Fabric portal:
-    - Navigate to your workspace in [Fabric portal](https://fabric.microsoft.com/)
+    - Navigate to your workspace in [Fabric portal](https://app.fabric.microsoft.com/)
     - Look at the browser URL for a segment like `/groups/{GUID}/`.
     - That **GUID** is your **Workspace ID**.
 
     For example:
 
-    `https://msit.powerbi.com/groups/d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4/list?experience=power-bi`
+    `https://app.fabric.com/groups/d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4/list?experience=fabric-developer`
 
     The **Workspace ID** in this example is `d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4`.
 
 [TO DO ADD HOW TO GET WORKSPACE ID IF THEY ARE IN MY  WORKSPACE]
 
 1. Get your Fabric tenant ID.
-    - Navigate to your [Fabric portal](https://fabric.microsoft.com/)
+    - Navigate to your [Fabric portal](https://app.fabric.microsoft.com/)
     - Click your avatar at the top right of the Fabric Portal
     - Hover over the information icon next to your tenant name
 
@@ -454,7 +459,7 @@ Authorize your Fabric workspace to bypass network ACLs:
 
 Create your mirrored database in Fabric:
 
-1. Navigate to the [Fabric portal](https://fabric.microsoft.com/).
+1. Navigate to the [Fabric portal](https://app.fabric.microsoft.com/).
 
 1. Open the workspace you configured for bypass access.
 
@@ -475,7 +480,7 @@ Create your mirrored database in Fabric:
     | **Authentication kind** | Select *Organizational account*. |
     | **Organizational account** | Access token from Microsoft Entra ID. |
 
-    > [NOTE!]
+    > [!NOTE]
     > Private network support for Cosmos DB mirroring is only available for OAuth-based authentication.
 
 1. Select **Connect**.
