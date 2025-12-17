@@ -23,19 +23,35 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
 
 ## Prerequisites
 
+::: zone pivot="semantic-model"
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). Use this workspace for all resources created in the tutorial.
-* **Ontology item (preview)**, **Graph (preview)**, **XMLA endpoints**, and **Data agent item types (preview)** enabled on your tenant.
-    * [Fabric administrators](../../admin/roles.md) can grant access to ontology in the [admin portal](../../admin/admin-center.md). In the [tenant settings](../../admin/tenant-settings-index.md), enable *Ontology item (preview)*, *Graph (preview)*, *XMLA endpoints*, and *Data agent item types (preview)*.
+* Required settings for ontology (preview) and data agent enabled on your tenant. A [Fabric administrator](../../admin/roles.md) should enable the following settings in the [tenant settings](../../admin/tenant-settings-index.md) page of the [admin portal](../../admin/admin-center.md):
+    * *Enable Ontology item (preview)*
+    * *User can create Graph (preview)*
+    * *Allow XMLA endpoints and Analyze in Excel with on-premises semantic models* <!--Only required for semantic model pivot-->
+    * *Users can create and share Data agent item types (preview)*
+    * *Users can use Copilot and other features powered by Azure OpenAI*
+    * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*
+    * *Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance*
 
-        :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
+    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
 
-        :::image type="content" source="media/tutorial-0-introduction/prerequisite-graph.png" alt-text="Screenshot of enabling graph in the admin portal.":::
+    For more information about these prerequisites, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
+::: zone-end
+::: zone pivot="onelake"
+* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity). Use this workspace for all resources created in the tutorial.
+* Required settings for ontology (preview) and data agent enabled on your tenant. A [Fabric administrator](../../admin/roles.md) should enable the following settings in the [tenant settings](../../admin/tenant-settings-index.md) page of the [admin portal](../../admin/admin-center.md):
+    * *Enable Ontology item (preview)*
+    * *User can create Graph (preview)*
+    * *Users can create and share Data agent item types (preview)*
+    * *Users can use Copilot and other features powered by Azure OpenAI*
+    * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*
+    * *Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance*
 
-        :::image type="content" source="media/tutorial-0-introduction/prerequisite-xmla.png" alt-text="Screenshot of enabling XMLA in the admin portal.":::
+    :::image type="content" source="media/tutorial-0-introduction/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
 
-        :::image type="content" source="media/tutorial-0-introduction/prerequisite-data-agent.png" alt-text="Screenshot of enabling data agents in the admin portal.":::
-
-        For more information about these prerequisites, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
+    For more information about these prerequisites, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
+::: zone-end
 
 ## Download sample data 
 
