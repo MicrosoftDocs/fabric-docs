@@ -3,7 +3,7 @@ title: Deactivate an Activity
 description: Learn how to deactivate an activity to exclude from pipeline run and validation.
 author: kromerm
 ms.author: makromer
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: pipelines
 ms.date: 11/15/2023
 ---
@@ -16,7 +16,7 @@ You can now deactivate one or more activities from a pipeline, and we skip them 
 
 ## Deactivate and reactivate
 
-[!INCLUDE [deactivate-activities](../includes/deactivate-activities.md)]
+[!INCLUDE [deactivate-activities](/includes/deactivate-activities.md)]
 
 ## Reactivate activities
 
