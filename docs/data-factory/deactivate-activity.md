@@ -16,7 +16,7 @@ You can now deactivate one or more activities from a pipeline, and we skip them 
 
 ## Deactivate and reactivate
 
-[!INCLUDE [deactivate-activities](/includes/deactivate-activities.md)]
+[!INCLUDE [deactivate-activities](includes/deactivate-activities.md)]
 
 ## Reactivate activities
 

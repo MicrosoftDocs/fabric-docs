@@ -40,7 +40,7 @@ Inactive activities are helpful when you need to test specific parts of your pip
 
 The pipeline skips inactive activities and doesn't execute any downstream dependencies that rely on them. This lets you test specific parts of your pipeline in isolation.
 
-[!INCLUDE [deactivate-activities](/includes/deactivate-activities.md)]
+[!INCLUDE [deactivate-activities](includes/deactivate-activities.md)]
 
 After you run the pipeline, go to the Monitor hub to review the results. You can check both pipeline-level and activity-level execution details. Inactive activities show a status of **Skipped** in the monitoring view, so you can easily see which activities didn't run.
 
