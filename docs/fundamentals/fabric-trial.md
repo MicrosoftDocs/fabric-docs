@@ -7,7 +7,7 @@ ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
-ms.date: 11/20/2025
+ms.date: 12/09/2025
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
 ---
@@ -260,6 +260,19 @@ If you're the Capacity or Fabric administrator, from the upper right corner of F
 
 :::image type="content" source="media/fabric-trial/fabric-admin.png" lightbox="media/fabric-trial/fabric-admin.png" alt-text="Screenshot of Admin center showing the Capacity settings screen.":::
 
+#### How do I know if my tenant has reached its trial capacity limit?
+
+Microsoft limits the number of trial capacities available per tenant. If your tenant has exhausted its trial capacity limit, you'll encounter one of these scenarios:
+
+- When attempting to start a new trial from the Account manager, the **Start trial** option might not be available or you may receive an error message indicating the trial limit has been reached.
+- If you try to trigger a trial by creating a Fabric item, the trial activation prompt won't appear.
+
+To resolve this issue:
+
+- Contact your Fabric administrator to check existing trial capacities in **Admin portal > Capacity settings > Trial**. If there are inactive or unmanaged trial capacities (for example, from users who left the organization), consider canceling them to free up capacity for new trials.
+- Request access to an existing trial capacity from a Capacity administrator who can share their trial by assigning workspaces or enabling contributor permissions.
+- Consider [purchasing a Fabric capacity](../enterprise/buy-subscription.md) if trial limits prevent your organization from testing Fabric features.
+
 #### How do I look up the number of days remaining in my trial?
 
 From the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select **Capacity settings** and then choose the **Trial** tab. The **Days left** column tracks the remaining days for each trial.
@@ -308,6 +321,10 @@ The Fabric trial capacity doesn't support autoscale. If you need more compute ca
 Trial Capacity administrators can migrate existing workspaces into a trial capacity using workspace settings and choosing **Trial** as the license mode. To learn how to migrate workspaces, see [create workspaces](create-workspaces.md).
 
 :::image type="content" source="media/fabric-trial/migrate-trial.png" lightbox="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
+
+#### How many SQL databases can I create in a Fabric trial capacity?
+
+Currently, you can create up to three SQL databases in a Fabric trial capacity.
 
 ## Related content
 

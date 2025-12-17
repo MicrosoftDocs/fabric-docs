@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
 ms.custom:
-ms.date: 10/27/2025
+ms.date: 12/09/2025
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to create a Real-Time Dashboard in Real-Time Intelligence.
@@ -45,6 +45,8 @@ In this part of the tutorial, you learn how to create a Real-Time Dashboard in R
 The new Real-Time dashboard, *TutorialDashboard*, opens with the New tile. You can also access the Real-Time dashboard by browsing to your workspace and selecting the desired item.
 
 ## Add a new tile to the dashboard
+
+Make sure that you are in **Editing** mode in the dashboard before beginning the following steps. If you are not in **Editing** mode, toggle from **Viewing** on the top right corner of the dashboard.
 
 1. Select **New tile**.
 1. In the query editor, enter and run the following query:

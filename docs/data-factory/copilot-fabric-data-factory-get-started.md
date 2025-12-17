@@ -19,7 +19,7 @@ ai-usage: ai-assisted
 
 # Get started with Copilot in Fabric in the Data Factory workload
 
-This article shows you how to get started with Microsoft Copilot in Fabric in the Data Factory workload. You can use Copilot to create data integration solutions using natural language prompts in both Dataflow Gen2 and pipelines.
+This article shows you how to get started with Microsoft Copilot in Fabric in the Data Factory workload. You can use Copilot to create data integration solutions using natural language prompts in both Dataflow Gen2 and pipelines, and troubleshoot your pipelines with error summaries and recommendations.
 
 > [!TIP]  
 > To learn more about Copilot features and capabilities, see [What is Copilot in Fabric in the Data Factory workload?](copilot-fabric-data-factory.md)
@@ -82,16 +82,20 @@ You can use AI tools, such as Copilot, to generate custom transformation queries
 Take my current data and create a transformation that filters for customers in Europe, groups employees by city with counts, and removes orders below the median quantity value.
 ```
 
+For authoring or explaining dynamic expressions within pipeline activities, see [Use Copilot in Expression Builder to generate and explain pipeline expressions](#use-copilot-in-expression-builder-to-generate-and-explain-pipeline-expressions).
+
 > [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
-## Get started with Copilot for pipelines
+## Generate a pipeline with Copilot
 
-You can use Copilot to generate, summarize, or even troubleshoot your pipelines.
+You can use AI tools, such as Copilot, to generate complete pipeline workflows from natural language descriptions. Instead of manually creating and configuring pipeline activities, describe your data integration needs and let Copilot generate the pipeline structure.
 
-### Generate a pipeline with Copilot
+```copilot-prompt
+Create a pipeline that copies data from a SQL Server database table called "Orders" to an Azure Data Lake Storage Gen2 container, with error handling and logging enabled.
+```
 
-Use these steps to generate a new pipeline with Copilot for Data Factory:
+Or you can use these steps to generate a new pipeline alongside Copilot for Data Factory:
 
 1. Create a new [pipeline](../data-factory/tutorial-end-to-end-pipeline.md).
 1. On the **Home** tab of the pipeline editor, select the **Copilot** button.
@@ -104,18 +108,41 @@ Use these steps to generate a new pipeline with Copilot for Data Factory:
 
 1. If you're already familiar with pipelines, you can complete everything with one prompt command, too.
 
-## Use AI to generate pipeline workflows
+> [!NOTE]  
+> AI powers Copilot, so surprises and mistakes are possible.
 
-You can use AI tools, such as Copilot, to generate complete pipeline workflows from natural language descriptions. Instead of manually creating and configuring pipeline activities, describe your data integration needs and let Copilot generate the pipeline structure.
+### Use Copilot in expression builder to generate and explain pipeline expressions
 
-```copilot-prompt
-Create a pipeline that copies data from a SQL Server database table called "Orders" to an Azure Data Lake Storage Gen2 container, with error handling and logging enabled.
-```
+Within any pipeline activity or system setting that supports dynamic content, the expression builder includes Copilot. With Copilot, you can:
+
+- Write natural language prompts to generate valid pipeline expressions
+- Insert the generated expression directly into your pipeline
+- Select existing expressions and ask Copilot to explain them
+
+To use Copilot in expression builder:
+
+1. Open a pipeline and select an activity setting that supports expressions (for example, a query or parameter).
+
+1. Choose **Add dynamic content** to open the expression builder.
+
+1. Use the Copilot pane to enter a natural language prompt to generate an expression. Review the suggested expression and select **Accept** to apply it.
+
+    Example prompts for common pipeline expression scenarios:
+
+    ```copilot-prompt
+    Create an expression that formats today's date as yyyy-MM-dd
+    ```
+
+    ```copilot-prompt
+    Return the first non-empty value between pipeline parameter p1 and variable v2
+    ```
+
+1. To understand existing logic, open the expression builder and ask Copilot to explain with a prompt like "Explain this expression" or "What is this expression doing?"
 
 > [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
-### Summarize a pipeline with Copilot
+## Summarize a pipeline with Copilot
 
 Use these steps to summarize a pipeline with Copilot for Data Factory:
 
@@ -127,9 +154,11 @@ Use these steps to summarize a pipeline with Copilot for Data Factory:
 
 1. Select **Summarize this pipeline**, and Copilot generates a summary.
 
-### Troubleshoot pipeline errors with Copilot
+## Troubleshoot pipeline errors with Copilot
 
-Copilot empowers you to troubleshoot any pipeline with error messages. You can use Copilot as an assistant for pipeline error messages on the Fabric Monitor page or the pipeline authoring page. The steps below show you how to access the pipeline Copilot to troubleshoot your pipeline from the Fabric Monitor page; however, you can also use these steps from the pipeline authoring page.
+Copilot empowers you to troubleshoot any pipeline with error messages on the Fabric Monitor page or the pipeline authoring page. When your pipeline fails, instead of manually analyzing error logs, Copilot can explain the error and provide troubleshooting recommendations.
+
+Here's how to access the pipeline Copilot to troubleshoot your pipeline from the Fabric Monitor page; however, you can also use these steps from the pipeline authoring page.
 
 1. Go to the Fabric Monitor page and select filters to show pipelines with failures.
 
@@ -137,9 +166,7 @@ Copilot empowers you to troubleshoot any pipeline with error messages. You can u
 
 1. Copilot provides a clear error message summary and actionable recommendations to fix it. In the recommendations, troubleshooting links are provided to help you investigate further efficiently.
 
-## Use AI to troubleshoot pipeline errors
-
-You can use AI tools, such as Copilot, to help diagnose and resolve pipeline errors. When your pipeline fails, instead of manually analyzing error logs, you can ask Copilot to explain the error and provide troubleshooting recommendations.
+Optionally, you can use a prompt like this one with the Copilot agent:
 
 ```copilot-prompt
 Explain this pipeline error and provide troubleshooting steps: "The pipeline failed with a timeout error when connecting to the SQL Server database. Connection string: Server=myserver;Database=mydb;Integrated Security=true"
@@ -151,5 +178,7 @@ Explain this pipeline error and provide troubleshooting steps: "The pipeline fai
 ## Related content
 
 - [What is Copilot in the Data Factory workload?](copilot-fabric-data-factory.md)
+- [Build pipeline expressions with Copilot](copilot-pipeline-expression-builder.md)
+- [Expressions and functions for Data Factory](expression-language.md)
 - [Tutorial: Create an end-to-end pipeline](../data-factory/tutorial-end-to-end-pipeline.md)
 - [Tutorial: Create an end-to-end dataflow](../data-factory/tutorial-end-to-end-dataflow.md)

@@ -8,7 +8,9 @@ ms.topic: how-to
 ms.date: 10/01/2025
 ---
 
-# Spark connector for SQL databases
+# Spark connector for SQL databases (Preview)
+
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 The Spark connector for SQL databases is a high-performance library that lets you read from and write to SQL Server, Azure SQL databases, and Fabric SQL databases. The connector offers the following capabilities:
 

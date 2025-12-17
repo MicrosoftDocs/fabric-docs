@@ -4,7 +4,7 @@ description: Learn about the Autoscale Billing model for Apache Spark in Microso
 ms.reviewer: saravi
 ms.author: eur
 author: eric-urban
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
 ms.date: 03/26/2025
 ---

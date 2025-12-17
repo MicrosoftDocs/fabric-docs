@@ -3,30 +3,29 @@ title: Add HTTP source to an eventstream
 description: Learn how to add HTTP source to an eventstream.
 ms.reviewer: spelluru
 ms.author: zhenxilin
-author:  WenyangShi
+author:  alexlzx
 ms.topic: how-to
 ms.custom:
-ms.date: 11/03/2025
+ms.date: 12/03/2025
 ms.search.form: Source and Destination
 ---
 
 # Add HTTP source to an eventstream (preview)
 
-This article shows you how to add an HTTP source to an eventstream. 
+This article shows you how to add an HTTP source to an eventstream.
 
 The HTTP connector provides a no-code, configurable way to stream data from any REST API directly into Eventstream for real-time processing. It allows you to continuously pull data from SaaS platforms and public data feeds and automatically parse JSON responses into structured events. It also offers example public feeds to help you get started quickly—simply select an example API, enter your API key, and let Eventstream prefill the required headers and parameters.
 
-[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
-
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
+- A workspace with **Fabric capacity** or **Trial** license mode.
+- Access to the workspace with **Contributor** or higher workspace roles.
+- If you don't have an eventstream, follow the guide to [create an eventstream](create-manage-an-eventstream.md).
 
 ## Add HTTP as a source
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-Search for **http**, and select **Connect** to add the HTTP connector to your eventstream. 
+Search for **http**, and select **Connect** to add the HTTP connector to your eventstream.
 
 :::image type="content" source="media/add-source-http/select-http.png" alt-text="Screenshot that shows the selection of HTTP as the source type in the Select a data source wizard." lightbox="media/add-source-http/select-http.png":::
 
@@ -43,7 +42,10 @@ Select **Publish** to publish the changes and begin streaming data from HTTP sou
    :::image type="content" border="true" source="media/add-source-http/live-view.png" alt-text="A screenshot of the added HTTP source in Live view with the Publish button highlighted.":::
 
 ## Limitation
-* The HTTP source currently doesn't support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Attempting to export or import an Eventstream item with this source to a Git repository may result in errors.  
+
+- The HTTP connector currently supports only **JSON** API responses.
+- **OAuth authentication** is not supported.
+- The HTTP source does not support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Exporting or importing an Eventstream item that includes this source through Git may result in errors.
 
 ## Related content
 

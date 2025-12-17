@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure SQL Managed I
 author: whhender
 ms.author: whhender
 ms.reviewer: lazartimotic, jingwang, nzagorac
-ms.date: 09/25/2025
+ms.date: 12/04/2025
 ms.topic: tutorial
 ---
 
@@ -24,9 +24,10 @@ ms.topic: tutorial
     - [Service principals can use Fabric APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings)
 - You need to have a member or admin role in your workspace when you create a mirrored database from the Fabric portal. During creation, the managed identity of Azure SQL Managed Instance is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
-- Networking requirements for Fabric to access your Azure SQL Managed Instance:
+- Check the networking requirements for Fabric to access your Azure SQL Managed Instance:
   - If your Azure SQL Managed Instance is not publicly accessible, [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via [a private endpoint](/azure/azure-sql/managed-instance/private-endpoint-overview?view=azuresql-mi&preserve-view=true).
   - If you want to connect to Azure SQL Managed Instance's public endpoint without data gateway, you need to allow inbound traffic from Power BI and Data Factory service tags or from Azure Cloud service tag in the network security group. Learn more from [Configure public endpoints in Azure SQL Managed Instance](/azure/azure-sql/managed-instance/public-endpoint-configure).
+- Check the networking requirements for Fabric: If you want to use workspace-level private link, follow the instructions to [create the private link service in Azure](../security/security-workspace-level-private-links-set-up.md#step-2-create-the-private-link-service-in-azure) and [create a private endpoint](../security/security-workspace-level-private-links-set-up.md#step-5-create-a-private-endpoint) from Azure SQL Managed Instance's virtual network and subnet.
 
 ### Enable System Assigned Managed Identity (SAMI) of your Azure SQL Managed Instance
 
@@ -48,27 +49,25 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 1. Create a server login and assign the appropriate permissions.
 
     The permissions required for the Fabric login are:
+   
+   - The following permissions in the user database:
+     - SELECT
+     - ALTER ANY EXTERNAL MIRROR
+     - VIEW DATABASE PERFORMANCE STATE
+     - VIEW DATABASE SECURITY STATE
     
-    - Membership in the server role `##MS_ServerStateReader##`
-    - The following permissions in the user database:
-        - SELECT
-        - ALTER ANY EXTERNAL MIRROR
+   - Create a SQL Authenticated login. You can choose any name for this login, substitute it in the following script for `<fabric_login>`. Provide your own strong password. Run the following T-SQL script in the `master` database:
+      
+   ```sql
+   CREATE LOGIN <fabric_login> WITH PASSWORD = '<strong password>';
+   ```
     
-
-    - Create a SQL Authenticated login. You can choose any name for this login, substitute it in the following script for `<fabric_login>`. Provide your own strong password. Run the following T-SQL script in the `master` database:
-
-    ```sql
-    CREATE LOGIN <fabric_login> WITH PASSWORD = '<strong password>';
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER <fabric_login>;
-    ```
-
-    - Or, create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
-
-    ```sql
-    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
-    ```
-
+   - Or, create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+      
+   ```sql
+   CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
+   ```
+    
 1. Switch your query scope to the database you want to mirror. Substitute the name of your database for `<mirroring_source_database>` and run the following T-SQL:
 
     ```sql
@@ -78,17 +77,17 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 1. Create a database user connected to the login. Substitute the name of a new database user for this purpose for `<fabric_user>`:
 
     ```sql
-    CREATE USER <fabric_user> FOR LOGIN <fabric_login>;
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO <fabric_user>;
+    CREATE USER [fabric_user] FOR LOGIN [fabric_login];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [fabric_user];
     ```
-
-    Or, for Microsoft Entra logins,
+    
+    - Or, for a Microsoft Entra authenticated login:
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO [bob@contoso.com];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW DATABASE PERFORMANCE STATE, VIEW DATABASE SECURITY STATE TO [bob@contoso.com];
     ```
-
+    
 ## Create a mirrored Azure SQL Managed Instance database
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
@@ -163,4 +162,6 @@ The **Monitor replication** screen also reflects any errors and warnings with ta
 ## Related content
 
 - [Mirroring Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance.md)
+
 - [What is Mirroring in Fabric?](../mirroring/overview.md)
+

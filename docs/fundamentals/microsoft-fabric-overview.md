@@ -8,7 +8,7 @@ ms.topic: overview
 ms.custom:
 - build 2024
 ms.search.form: product-trident
-ms.date: 10/02/2025
+ms.date: 12/16/2025
 ---
 
 # What is Microsoft Fabric?
@@ -30,7 +30,7 @@ Microsoft Fabric provides several integrated capabilities:
 * **OneLake:** All Fabric tools can access a central data storage, eliminating the need to copy data between services.
 * **Copilot support:** An AI assistant that helps write code, generate insights, and automate repetitive tasks.
 * **Integration with Microsoft 365:** Connect Fabric data to Excel, Teams, and other Microsoft 365 applications.
-* **Azure AI Foundry:** Provides prebuilt AI models and tools for building custom machine learning solutions.
+* **Microsoft Foundry:** Provides prebuilt AI models and tools for building custom machine learning solutions.
 * **Unified data management:** Centralized data discovery that simplifies governance, sharing, and use.
 
 ## Unification with SaaS foundation
@@ -72,7 +72,7 @@ Microsoft Fabric offers the following workloads, each customized for a specific 
 
 Fabric helps organizations and individuals analyze their data and create reports, dashboards, and machine learning models. It implements a data mesh architecture. For more information, see [What is a data mesh?](/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh)
 
-* **IQ (preview)** - IQ (preview) is a new workload for unifying business semantics across data, models, and systems. With IQ, create a unified semantic layer that organizes your core business concepts and rules, connects them to OneLake data and existing semantic models, and powers consistent decisions, reusable metrics, and context-aware automation across the platform. For more information, see [What is IQ (preview)?](../iq/overview.md)
+* **IQ (preview)** - IQ (preview) is a new workload for unifying business semantics across data, models, and systems. It introduces a new ontology item for organizing your core business concepts and rules into a unified semantic layer. That ontology connects to OneLake data and existing semantic models to create a live, structured, connected model of how your business operates, and offers a managed labeled property graph that is AI ready. IQ powers consistent decisions, reusable metrics, and context-aware automation across the Fabric platform. For more information, see [What is IQ (preview)?](../iq/overview.md)
 
 ## OneLake: The unification of lakehouses
 
