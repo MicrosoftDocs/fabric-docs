@@ -160,7 +160,7 @@ curl --request POST \
 --header 'content-type: application/json' \ 
 --data '{"initializationStrategy": "PreferRemote"}' 
 ```
-If the repository or workspace is not empty, Microsoft Fabric pauses initialization and returns the requiredAction param (which is based on your initializationStrategy). Use [update-from-git](/rest/api/fabric/core/git/update-from-git?tabs=HTTP) OR  [commit-to-git](/rest/api/fabric/core/git/commit-to-git?tabs=HTTP)  accordingly with workspaceHead and remoteCommitHash from the response to finalize the process.
+If the repository /workspace is not empty, the response return requiredAction param (which is based on your initializationStrategy), use [update-from-git](/rest/api/fabric/core/git/update-from-git?tabs=HTTP) OR [commit-to-git](/rest/api/fabric/core/git/commit-to-git?tabs=HTTP) accordingly with workspaceHead and remoteCommitHash from the response to finalize the process
 
 
 ## Connect an Existing Workspace to Use Service Principal 
