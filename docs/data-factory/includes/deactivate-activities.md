@@ -18,7 +18,7 @@ Save the changes to deactivate the activities during the next scheduled pipeline
 1. Under **General** tab, select **Deactivated** for _Activity state_
 1. Pick a state for _Mark activity as_. Choose from _Succeeded_, _Failed_ or _Skipped_
 
-:::image type="content" source="media/deactivate-activity/deactivate-03-deactivate-single.png" alt-text="Screenshot of Fabric Data Factory pipeline editor with ActivityDeactivated web activity set to Inactive in the General settings pane." lightbox="media/deactivate-activity/deactivate-03-deactivate-single.png":::
+:::image type="content" source="../media/deactivate-activity/deactivate-03-deactivate-single.png" alt-text="Screenshot of Fabric Data Factory pipeline editor with ActivityDeactivated web activity set to Inactive in the General settings pane." lightbox="../media/deactivate-activity/deactivate-03-deactivate-single.png":::
 
 ### Deactivate multiple activities
 
