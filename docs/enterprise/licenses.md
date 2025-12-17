@@ -67,7 +67,7 @@ The table lists the Microsoft Fabric SKUs. Capacity units (CUs) measure the comp
 | Scenario | Required capacity or SKU | User license requirement | Notes |
 |---|---|---|---|
 | Embed for your organization (Microsoft Entra users) | F (any), P, or A/EM | Depends on SKU & size (see [licensing rules](#capacity)) | F64+ or P capacities support viewing by users with a Microsoft Fabric free license. |
-| App owns data (external users) | A/EM or P SKUs | End users unlicensed | Service principal handles authentication; Fabric capacity is not required for embedding. |
+| App owns data (external users) | F(any), A/EM or P SKUs | End users unlicensed | Service principal handles authentication. |
 
 In "Embed for your organization" and embedding in Microsoft 365 apps (SharePoint Online, PowerPoint), F SKUs smaller than F64 and all A SKUs require each consuming user to have a Pro, Premium Per User (PPU), or individual trial license to view Power BI content.
 

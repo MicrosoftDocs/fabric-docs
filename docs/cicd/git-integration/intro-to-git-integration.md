@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.custom:
 ms.topic: overview
-ms.date: 02/27/2025
+ms.date: 12/15/2025
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
