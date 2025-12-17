@@ -54,8 +54,7 @@ This cloud connection can be created in two ways through the portal:
 In both cases, the connection is created under the logged-in user’s identity. 
 
 If a Service Principal needs to use this connection, the user needs to either
- - share the connection with the service principal or
- - add the Service Principal as a user to this connection or 
+ - share the connection with the service principal
  - create a new connection using the [Connections REST API](/rest/api/fabric/core/connections/create-connection?tabs=HTTP), passing the Service Principal credentials. 
 
 The steps below outline how to use the API to create the cloud connection using a service principal.
@@ -149,7 +148,10 @@ curl --request POST \
 "connectionId": "<step 2 – the new connection id>"}}' 
 ```
 ### 4. Initialize Connection
-Initializes the Git connection with a "PreferRemote" strategy, which typically means remote content takes precedence during synchronization.
+Initialize Connection, read more [here](/rest/api/fabric/core/git/initialize-connection?tabs=HTTP) 
+
+>[!NOTE]
+> Replace &lt; &gt; with your values, pay attention for initializationStrategy parameter, In case the connected workspace has items already, you might consider using "preferWorkspace".
 
 ```bash
 curl --request POST \ 
@@ -158,49 +160,8 @@ curl --request POST \
 --header 'content-type: application/json' \ 
 --data '{"initializationStrategy": "PreferRemote"}' 
 ```
+If the repository or workspace is not empty, Microsoft Fabric pauses initialization and returns the requiredAction param (which is based on your initializationStrategy). Use [update-from-git](/rest/api/fabric/core/git/update-from-git?tabs=HTTP) OR  [commit-to-git](/rest/api/fabric/core/git/commit-to-git?tabs=HTTP)  accordingly with workspaceHead and remoteCommitHash from the response to finalize the process.
 
-#### Items preexist in the Microsoft Fabric workspace
-If the connected workspace already has items in it, you might consider using the "PreferWorkspace" conflict-resolution strategy. This tells the API to prioritize the current state of the Microsoft Fabric workspace over the content in the remote Git repo when there are conflicts.
-
-```bash
-curl --request POST \ 
---url https://api.fabric.microsoft.com/v1/workspaces/<workspace-id>/git/initializeConnection \ 
---header 'authorization: Bearer <step1: access-token>' \ 
---header 'content-type: application/json' \ 
---data '{"initializationStrategy": "PreferWorkspace"}' 
-```
-
-- PreferWorkspace — tells Microsoft Fabric that if an item exists both in the workspace and in the repo with differences, the workspace version takes precedence over the remote repo version. 
-
-#### Items preexist in both the Microsoft Fabric workspace and Git repo
-When both the Microsoft Fabric workspace and Git repo already contain content, Microsoft Fabric pauses initialization and responds with the following:
-
-```json
- {
-  "requiredAction": "...",
-  "workspaceHead": "...",
-  "remoteCommitHash": "..."
- }
-
-```
-
-The response is because Microsoft Fabric can't guess which side is the source of truth and asks you to make an explicit decision. There are two possible resolutions when this occurs.
-
-|Resolution|API to use|When to use|You provide|
-|-----|-----|-----|----|
-|1. Git to Workspace|[update-from-git](/rest/api/fabric/core/git/update-from-git?tabs=HTTP)|● Git is the source of truth </br>● You want Git content to overwrite or populate the workspace|● workspaceHead</br>● remoteCommitHash|
-|2. Workspace to Git|[commit-to-git](/rest/api/fabric/core/git/commit-to-git?tabs=HTTP)|●  Microsoft Fabric workspace is the source of truth</br>● You want workspace content commited to Git|● workspaceHead</br>● remoteCommitHash|
-
-WorkspaceHead and remoteCommitHash are required in these scenarios and act as safety locks.
- - workspaceHead = "This is the workspace version I think I’m operating on"
- - remoteCommitHash = "This is the Git commit I believe is current"
-
-Microsoft Fabric uses them to:
- - Prevent race conditions
- - Avoid overwriting newer changes
- - Ensure the action is intentional and deterministic
-
-If either value is stale, Microsoft Fabric rejects the request.
 
 ## Connect an Existing Workspace to Use Service Principal 
 If your workspace is already connected to Azure DevOps using a user identity, but you want to perform [Fabric Git REST API](/rest/api/fabric/core/git) operations with a Service Principal, follow these steps: 
@@ -229,7 +190,7 @@ curl --request PATCH \
 "source": "ConfiguredConnection", 
 "connectionId": "<step 3: connection id>"}' 
  ```
-
+After these steps, the Service Principal is fully configured and ready to execute Fabric Git REST API operations.
 
 
 ## Related content
