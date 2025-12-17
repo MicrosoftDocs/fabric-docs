@@ -41,7 +41,7 @@ In this document, we show you how to install and use these on-premises data gate
   * For Google Cloud Storage, the endpoint is either the URL for the bucket or the service. For example:
     * `https://storage.googleapis.com`
     * `https://bucketname.storage.googleapis.com`
-* Identify the user or identity credentials that meet the [necessary access and authorization requirements](onelake-shortcuts.md#s3-shortcuts) for your data source. Your credentials generally need to be able to list buckets, list objects, and read data.
+* Identify the user or identity credentials that meet the necessary access and authorization requirements for your data source. Your credentials generally need to be able to list buckets, list objects, and read data.
 * Identify a physical or virtual machine that:
   * Has network connectivity to your storage endpoint. This article explains how you can confirm this connectivity before creating your shortcut.
   * Allows you to install software.
