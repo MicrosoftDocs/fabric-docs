@@ -69,8 +69,6 @@
         href: decision-guide-data-integration.md
       - name: Decide - Data movement strategy
         href: decision-guide-data-movement.md
-      - name: Decide - Data transformation strategy
-        href: decision-guide-data-transformation.md
       - name: Decide - Copy activity, Copy job, dataflow, or Spark?
         href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md 
       - name: Create a Copy job
@@ -977,6 +975,8 @@
             href: dataflows-gen2-monitor.md
           - name: Performance and troubleshooting
             items:
+              - name: Decide - Dataflow strategy
+                href: decision-guide-data-transformation.md
               - name: Dataflow Gen2 performance and scalability
                 href: dataflow-gen2-performance-best-practices.md  
               - name: Dataflows that use gateways
