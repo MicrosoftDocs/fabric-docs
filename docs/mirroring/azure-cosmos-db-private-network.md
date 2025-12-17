@@ -256,6 +256,8 @@ Authorize your Fabric workspace to bypass network ACLs:
 
     The **Workspace ID** in this example is `d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4`.
 
+:::image type="content" source="./media/azure-cosmos-db-private-network/fabric-tenant-id.png" alt-text="Screenshot showing how to get Fabric tenant id.":::
+
 1. Get your Fabric tenant ID.
     - Navigate to your [Fabric portal](https://app.fabric.microsoft.com/)
     - Click your avatar at the top right of the Fabric Portal
@@ -308,6 +310,8 @@ Create your mirrored database in Fabric:
 1. Select a database to mirror. Optionally, select specific containers to mirror.
 
 1. Select **Connect** to start the mirroring process.
+
+:::image type="content" source="./media/azure-cosmos-db-private-network/mirror-artifact-running.png" alt-text="Screenshot showing a successfully running mirroring artifact with private endpoints enabled." lightbox="./media/azure-cosmos-db-private-network/mirror-artifact-running-full.png":::
 
 1. Monitor replication to verify the connection is working properly.
 
