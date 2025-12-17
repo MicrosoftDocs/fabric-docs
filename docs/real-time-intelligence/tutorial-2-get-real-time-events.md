@@ -13,14 +13,14 @@ ms.search.form: Get started
 ---
 # Real-Time Intelligence tutorial part 2: Get data in the Real-Time hub
 
-This part of the tutorial explains how to browse the Real-Time hub, create an event stream, transform events, and create a destination to send the transformed events to a KQL database.
+This part of the tutorial explains how to browse the Real-Time hub, create an eventstream, transform events, and create a destination to send the transformed events to a KQL database.
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see [Tutorial part 1: Set up Eventhouse](tutorial-1-resources.md).
 
-## Create an event stream
+## Create an eventstream
 
-Use the sample gallery to create an event stream that simulates bicycle rental data.
+Use the sample gallery to create an eventstream that simulates bicycle rental data.
 
 1. Select **Real-Time** in the left navigation bar.
 
@@ -32,7 +32,7 @@ Use the sample gallery to create an event stream that simulates bicycle rental d
 
 1. On the **Connect data source** page, for **Source name**, enter **TutorialSource**.
 
-1. In the **Stream details** section, select the pencil button. Change the name of the event stream to **TutorialEventstream**, and then select **Next**.
+1. In the **Stream details** section, select the pencil button. Change the name of the eventstream to **TutorialEventstream**, and then select **Next**.
 
 1. On the **Review + connect** page, review the settings, and select **Connect**.
 

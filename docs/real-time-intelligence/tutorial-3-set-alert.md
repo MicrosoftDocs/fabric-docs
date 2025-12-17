@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence Tutorial Part 3 - Set an Alert on Your Event Stream
+title: Real-Time Intelligence Tutorial Part 3 - Set an Alert on Your Eventstream
 description: Learn how to set an alert on your event stream in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: spelluru

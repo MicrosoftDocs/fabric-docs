@@ -18,7 +18,7 @@ ms.search.form: Get started
 
 In this part of the tutorial, you set up the environment. Specifically, you create an [eventhouse](eventhouse.md) that automatically creates a child KQL database.
 
-## Create an event house
+## Create an eventhouse
 
 [!INCLUDE [Real-Time Intelligence create-eventhouse](includes/create-eventhouse.md)]
 
