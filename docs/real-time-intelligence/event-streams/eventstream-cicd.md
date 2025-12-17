@@ -80,12 +80,12 @@ Eventstream supports CI/CD through Git integration and Deployment pipelines. Whi
 ### Support Levels
 
 * **Fully Supported**: Configuration is fully preserved during deployment.
-* **Partially Supported**: The resource supports CI/CD, but **advanced settings** (e.g., Azure SQL DB (CDC) Column exclude list) are not supported and will revert to defaults after deployment.
+* **Partially Supported**: The resource supports CI/CD, but **advanced settings** (e.g., Azure SQL DB (CDC) column exclude list) are not supported and will revert to defaults after deployment.
 * **Not Supported**: The component currently do not supports CI/CD through Git integration and Deployment pipelines.
 
 ### Component Support Matrix
 
-| Category | Fully Supported | Partially Supported (Settings Reset) | Not Supported |
+| Category | Fully Supported | Partially Supported | Not Supported |
 | :--- | :--- | :--- | :--- |
 | **Sources** | Most Standard Sources |  Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC) | Azure Service Bus (Preview)<br>Cribl (Preview)<br>HTTP (Preview)<br>MongoDB CDC (Preview) |
 | **Destinations** | All Destinations | - | - |
