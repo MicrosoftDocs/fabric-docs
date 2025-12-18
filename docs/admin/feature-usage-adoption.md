@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.topic: conceptual
 ms.custom: sfi-image-nochange
-ms.date: 03/06/2025
+ms.date: 12/17/2025
 ---
 
 # Feature usage and adoption report (preview)
@@ -17,28 +17,37 @@ You can access the report from the [Admin monitoring](monitoring-workspace.md) w
 You can also have an admin share the report or semantic model directly with you. With build permissions to the semantic model, users can design a custom report that relies on the same underlying data.
 
 ## Navigation
+The report is designed for admins to analyze Fabric activity in various ways. You can filter activity data across all pages using the date range slicer to focus on a specific time period within the last 30 days. Additionally, the filter pane lets you refine your analysis based on capacity, user, item-related information, and other activity characteristics.
 
-The report is designed for admins to analyze Fabric activity in various ways. Use the date range slicer to filter activity data across all pages for a specific range of time over the last 30 days.
+The following image shows an example layout. Your view may look slightly different depending on updates to the Fabric interface and activity in your tenant.
 
-Additionally, use the filter pane to filter activity data based on the desired analysis. Filters are available across different characteristics of activity, including capacity, user, and item-related info.
-    
+:::image type="content" source="media/feature-usage-adoption/feature-usage-adoption-report.png" alt-text="Screenshot showing the elements of the Feature Usage and Adoption report in Fabric." lightbox="media/feature-usage-adoption/feature-usage-adoption-report.png":::
+
+The report consists of these main sections:
+
+1. **Pages** - Navigate between report pages using this section. You can also use the tabs in the upper right of the report to move between report pages and details pages.
+1. **Filters** - Specify date ranges and apply filters to analyze Fabric activity based on different characteristics.
+1. **Report data and visuals** - Analyze Fabric activity across your organization. Right-click visual elements and select **Drill through** to navigate to details pages for deeper insights.
+
+For detailed information and examples of how to use each report page, see the sections below.
+   
 ## Report pages
 
 The report is composed of five pages:
 
-* **Activity Overview** - Provides a high-level overview of Fabric activity across the organization
+* **Overview** - Provides a high-level overview of Fabric activity across the organization. This is one of the main entry points to the report.
 
-* **Analysis** - Visualizes activity across different activity dimensions
+* **Analysis** - Visualizes activity across different activity dimensions.
 
-* **Activity Details** - Shows detailed information on specific activity scenarios
+* **Activity Details** - Display this page by drilling through from the Overview or Analysis pages. It shows detailed information on specific activity scenarios.
 
-* **Inventory** - Lists all Fabric items in your tenant
+* **Inventory** - Lists all Fabric items in your tenant.
  
-* **Item Details page** - Shows detailed information on specific inventory usage scenarios
+* **Item Details page** - Display this page by drilling through from the Inventory page. It shows detailed information on specific inventory usage scenarios.
 
-### Activity Overview page
+### Overview page
 
-The Activity Overview page helps you identify:
+The Overview page helps you identify:
 
 * Daily activities and user trends
 
@@ -48,7 +57,7 @@ The Activity Overview page helps you identify:
 
 #### Example
 
-In a large retail organization, you might use the [Activity Overview](#activity-overview-page) page to check which capacities were most utilized in a given month. Using the date range slicer to filter to the month of December, you notice the *Sales and Marketing* capacity had nearly 1,000 activities while other capacities had under 200. To understand why this is happening, you then go to the [Analysis](#analysis-page) page.
+In a large retail organization, you might use the [Overview](#overview-page) page to check which capacities were most utilized in a given month. Using the date range slicer to filter to the month of December, you notice the *Sales and Marketing* capacity had nearly 1,000 activities while other capacities had under 200. To understand why this is happening, you then go to the [Analysis](#analysis-page) page.
 
 ### Analysis page
 
@@ -60,7 +69,7 @@ On the Analysis page, you can view:
 
 #### Example
 
-Continuing the example from the [Activity Overview](#activity-overview-page) page, you use the Analysis page to investigate why the *Sales and Marketing* capacity had more activity in December than all other capacities. The decomposition tree reveals the most popular activity on the *Sales and Marketing* capacity was *ViewReport*, which signifies the viewing of a Power BI report. You then drill through to the [Activity Details](#activity-details-page) page to identify which reports were most frequently viewed that month on the *Sales and Marketing* capacity.
+Continuing the example from the [Overview](#overview-page) page, you use the Analysis page to investigate why the *Sales and Marketing* capacity had more activity in December than all other capacities. The decomposition tree reveals the most popular activity on the *Sales and Marketing* capacity was *ViewReport*, which signifies the viewing of a Power BI report. You then drill through to the [Activity Details](#activity-details-page) page to identify which reports were most frequently viewed that month on the *Sales and Marketing* capacity.
 
 To drill through to the [Activity Details](#activity-details-page) page:
 
@@ -72,7 +81,7 @@ To drill through to the [Activity Details](#activity-details-page) page:
 
 ### Activity Details page
 
-The Activity Details page shows detailed information on specific activity scenarios. Users can access this page by drilling through from the [Activity Overview](#activity-overview-page) or [Analysis](#analysis-page) pages to display the following activity details:
+The Activity Details page shows detailed information on specific activity scenarios. Users can access this page by drilling through from the [Overview](#overview-page) or [Analysis](#analysis-page) pages to display the following activity details:
 
 * **Creation time** - The time the activity was registered
 
