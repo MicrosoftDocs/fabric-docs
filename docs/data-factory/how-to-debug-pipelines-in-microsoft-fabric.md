@@ -29,6 +29,8 @@ In Microsoft Fabric Data Factory, you debug pipelines by saving and running them
 
 Inactive activities are helpful when you need to test specific parts of your pipeline without running everything. You can isolate a failing activity to identify the problem, validate parameter values and expressions before full execution, or build complex pipelines incrementally by testing each section as you go.
 
+> [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=8807930f-1b4e-4343-9968-a1709afd0964]
+
 ### Common use cases for inactive activities
 
 - Testing part of a pipeline without running downstream steps
