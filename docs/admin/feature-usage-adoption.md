@@ -10,7 +10,7 @@ ms.date: 12/17/2025
 
 # Feature usage and adoption report (preview)
 
-The feature usage and adoption report is aimed at admins who want to understand how Fabric features are utilized across the organization. As an admin, the report insights can help you govern your Fabric tenant and take action when needed.
+This report is aimed at admins who want to understand how Fabric features are utilized across the organization. As an admin, the report insights can help you govern your Fabric tenant and take action when needed.
 
 You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles).
 
@@ -19,7 +19,7 @@ You can also have an admin share the report or semantic model directly with you.
 ## Navigation
 The report is designed for admins to analyze Fabric activity in various ways. You can filter activity data across all pages using the date range slicer to focus on a specific time period within the last 30 days. Additionally, the filter pane lets you refine your analysis based on capacity, user, item-related information, and other activity characteristics.
 
-The following image shows an example layout. Your view will look different based on activity in your tenant.
+The following image shows an example layout. Your view is different based on activity in your tenant.
 
 :::image type="content" source="media/feature-usage-adoption/feature-usage-adoption-report.png" alt-text="Screenshot showing the elements of the Feature Usage and Adoption report in Fabric." lightbox="media/feature-usage-adoption/feature-usage-adoption-report.png":::
 
@@ -29,13 +29,13 @@ The report consists of these main sections:
 1. **Filters** - Specify date ranges and apply filters to analyze Fabric activity based on different characteristics.
 1. **Report data and visuals** - Analyze Fabric activity across your organization. Right-click visual elements and select **Drill through** to navigate to details pages for deeper insights.
 
-For detailed information and examples of how to use each report page, see the sections below.
+For detailed information and examples of how to use each report page, see the following sections.
    
 ## Report pages
 
 The report is composed of five pages:
 
-* **Overview** - Provides a high-level overview of Fabric activity across the organization. This is one of the main entry points to the report.
+* **Overview** - Provides a high-level overview of Fabric activity across the organization. This page is one of the main entry points to the report.
 
 * **Analysis** - Visualizes activity across different activity dimensions.
 
@@ -57,7 +57,7 @@ The Overview page helps you identify:
 
 #### Example
 
-In a large retail organization, you might use the [Overview](#overview-page) page to check which capacities were most utilized in a given month. Using the date range slicer to filter to the month of December, you notice the *Sales and Marketing* capacity had nearly 1,000 activities while other capacities had under 200. To understand why this is happening, you then go to the [Analysis](#analysis-page) page.
+In a large retail organization, you might use the [Overview](#overview-page) page to check which capacities were most utilized in a given month. You use the date range slicer to filter to the month of December. You notice the *Sales and Marketing* capacity had nearly 1,000 activities while other capacities had under 200. To understand why, you then go to the [Analysis](#analysis-page) page.
 
 ### Analysis page
 
@@ -100,8 +100,7 @@ The Activity Details page shows detailed information on specific activity scenar
 * **Total of activities** - The number of times the activity took place
 
 #### Example
-
-From the [Analysis](#analysis-page) page, you drill through on frequently conducted *ViewReport* actions on the *Sales and Marketing* capacity in December. Using info from the Activity Details page, you discover that a new report titled "Unclosed Deals" was heavily viewed, prompting further investigation to understand the report's impact on your organization's sales strategy.
+From the [Analysis](#analysis-page) page, you drill through on frequently conducted *ViewReport* actions on the *Sales and Marketing* capacity in December. Using info from the Activity Details page, you discover that a new report titled "Unclosed Deals" was heavily viewed, prompting further investigation to understand the report's relevance to your organization's sales strategy.
 
 ### Inventory page
 
@@ -111,7 +110,7 @@ The Inventory page displays all items in your Fabric tenant and how they're util
 
 * **Workspace name** - The name of the workspace where the items are located
 
-* **Activity status** - Indicates whether the item has been recently utilized
+* **Activity status** - Indicates whether the item was recently utilized
     * *Active* - At least one audit log activity was generated related to the item over the last 30 days
     * *Inactive* - No audit log activity was generated related to the item over the last 30 days
 
@@ -154,7 +153,7 @@ Measure calculations consider filter context, so measure values change as you ap
 | Measure name    | Description |
 | -------- | ------- |
 | Active capacities  | The number of capacities with audit activity.   |
-| Active users | The number of users who have generated audit activity.     |
+| Active users | The number of users who generated audit activity.     |
 | Active workspaces    | The number of workspaces with audit activity.    |
 | Activities  | The number of audit activities generated.    |
 | Items | The count of items displayed.    |
@@ -167,19 +166,19 @@ This section lists the report's considerations and limitations.
 
 ### Display
 
-* Condensing the zoom slider on a date trend visual to a single day displays a misleading time range, as activities are aggregated by day and not by time.
+* Condensing the zoom slider on a date trend visual to a single day displays a misleading time range, as activities aggregate by day and not by time.
 
 * Using the *next level in the hierarchy* option on the *Most active Capacities* visual doesn't update the dynamic visual title.
 
-* Items with the same name, or items deleted and recreated with the same name, might reflect as one item in certain visuals. To count the total number of unique items, use item IDs or the *Total items* measure.
+* Items with the same name, or items deleted and recreated with the same name, might reflect as one item in certain visuals. To count the total number of unique items, use item identifiers or the *Total items* measure.
 
-* *Info Not Available* represents data that isn't available, which can happen when an audit event doesn't have complete information, or when that information isn't applicable for the event.
+* *Info Not Available* represents data that isn't available. Data might not be available when an audit event doesn't have complete information, or when that information isn't applicable for the event.
 
 * The report retains information for 28 days, including the activities and metadata of deleted capacities, workspaces, and other items.
 
 * Deleted workspaces with extended retention don't appear in the report after 28 days. They can be seen in the admin portal until they're permanently deleted.
 
-* Items created and deleted within a 24 hour period may have incomplete information.
+* Items created and deleted within a 24 hour period could have incomplete information.
   
 ### Pro and Premium Per User (PPU)
 
