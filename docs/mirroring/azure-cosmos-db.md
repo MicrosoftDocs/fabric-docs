@@ -100,7 +100,7 @@ To mirror a database, it should already be provisioned in Azure. You must enable
 
 Nested data is shown as a JSON string in SQL analytics endpoint tables. You can use `OPENJSON`, `CROSS APPLY`, and `OUTER APPLY` in T-SQL queries or views to expand this data selectively. If you're using Power Query, you can also apply the `ToJson` function to expand this data.
 
-Through auto schema inference, nested data can be flattened through `OPENJSON` without having to explicitely define the nested schema. This is especially useful for workloads with dynamic or unpredictable nested schemas. For more information, see [how to query nested data](../mirroring/azure-cosmos-db-how-to-query-nested.md).
+Through auto schema inference, nested data can be flattened through `OPENJSON` without having to explicitly define the nested schema. This is especially useful for workloads with dynamic or unpredictable nested schemas. For more information, see [how to query nested data](../mirroring/azure-cosmos-db-how-to-query-nested.md).
 
 ### Handle schema changes
 
@@ -126,7 +126,7 @@ For more details, explore the documentation on [Vector Search and Indexing for C
 
 ## Security
 
-You can connect to a source acocunt using Microsoft Entra ID and role-based access control or account-level keys.
+You can connect to a source account using Microsoft Entra ID and role-based access control or account-level keys.
 
 If you use keys and rotate or regenerate the keys, you need to update the connections to ensure replication works. For more information, see [connections](../data-factory/connector-azure-cosmosdb-for-nosql.md). Account keys aren't directly visible to other Fabric users once the connection is set up. You can limit who has access to the connections created in Fabric. Writes aren't permitted to Azure Cosmos DB database either from the data explorer or analytics endpoint in your mirrored database. Mirroring doesn't currently support authentication using read-only account keys.
 
@@ -150,7 +150,9 @@ You can also mask sensitive data from non admin users using dynamic data masking
 
 ### Network security
 
-Currently, mirroring doesn't support private endpoints or customer managed keys (CMK) on OneLake. Mirroring isn't supported for Azure Cosmos DB accounts with network security configurations less permissive than **all networks**, using service endpoints, using private endpoints, using IP addresses, or using any other settings that could limit public network access to the account. Azure Cosmos DB accounts should be open to all networks to work with mirroring.
+Azure Cosmos DB accounts with virtual networks or private endpoints are supported with Fabric mirroring using the Network ACL Bypass feature. This allows your authorized Fabric workspace to access the Cosmos DB account without requiring a data gateway, while maintaining enhanced network security. For detailed configuration instructions, see [Configure private networks for Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-private-network.md).
+
+Currently, mirroring doesn't support customer managed keys (CMK) on OneLake.
 
 ## Disaster recovery and replication latency
 
