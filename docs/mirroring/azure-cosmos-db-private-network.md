@@ -187,7 +187,7 @@ We recommend manually adding all IPv4 address ranges from the Azure service tags
 
 1. In the resource menu, select **Networking** under **Settings**.
 
-1. Under **Firewall**, add all the IP address ranges you extracted.
+1. Under **Firewall**, add the IP address ranges you extracted.
 
     > [!IMPORTANT]
     > You must add all IPv4 address ranges for the DataFactory and PowerQueryOnline services. Adding only a subset of addresses may cause connectivity issues. The provided PowerShell script automates this process.
@@ -288,7 +288,7 @@ Create your mirrored database in Fabric:
 
 1. In the **New connection** section, select **Azure Cosmos DB v2**.
 
-    :::image type="content" source="./media/azure-cosmos-db-private-network/mirror-artifact-connection-sign-in.png" alt-text="Screenshot showing a Cosmos DB mirroring configuration set up screen before OAuth authentication." lightbox="./media/azure-cosmos-db-private-network/mirror-artifact-connection-sign-in-full.png":::
+    :::image type="content" source="./media/azure-cosmos-db-private-network/mirror-artifact-connection-sign-in.png" alt-text="Screenshot showing a Cosmos DB mirroring configuration setup screen before OAuth authentication." lightbox="./media/azure-cosmos-db-private-network/mirror-artifact-connection-sign-in-full.png":::
 
 1. Provide credentials for the Azure Cosmos DB for NoSQL account:
 
@@ -302,7 +302,7 @@ Create your mirrored database in Fabric:
     > [!NOTE]
     > Private network support for Cosmos DB mirroring is only available for OAuth-based authentication.
 
-    :::image type="content" source="./media/azure-cosmos-db-private-network/mirror-artifact-connection-connect.png" alt-text="Screenshot showing a Cosmos DB mirroring configuration set up screen after OAuth authentication." lightbox="./media/azure-cosmos-db-private-network/mirror-artifact-connection-connect-full.png":::
+    :::image type="content" source="./media/azure-cosmos-db-private-network/mirror-artifact-connection-connect.png" alt-text="Screenshot showing a Cosmos DB mirroring configuration setup screen after OAuth authentication." lightbox="./media/azure-cosmos-db-private-network/mirror-artifact-connection-connect-full.png":::
 
 1. Select **Connect**.
 
