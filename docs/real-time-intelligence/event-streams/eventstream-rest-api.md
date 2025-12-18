@@ -114,7 +114,7 @@ You can grant these permissions in two ways:
 
   These commands will grant the service principal the necessary data-plane permissions, allowing Eventhouse to create the connection and pull data from Eventstream. For more information, see [Security roles overview](https://kusto.azurewebsites.net/docs/kusto/management/security-roles.html#security-roles-overview)
 
-  :::image type="content" source="media/eventstream-rest-api/grant-permission-via-ui.png" alt-text="A screenshot of granting Database and Table permission via kusto UI." lightbox="media/eventstream-rest-api/grant-permission-via-ui.png":::
+  :::image type="content" source="media/eventstream-rest-api/grant-permission-via-ui.png" alt-text="A screenshot of granting Database and Table permission via Kusto UI." lightbox="media/eventstream-rest-api/grant-permission-via-ui.png":::
 
   ##### [Using Eventhouse REST API](#tab/using-eventhouse-rest-api)
 

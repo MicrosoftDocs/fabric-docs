@@ -81,7 +81,7 @@ Fabric CI/CD features include Git Integration, Deployment Pipelines, and Public 
 
 * **Fully Supported**: Configuration is fully preserved during deployment.
 * **Partially Supported**: The resource supports CI/CD, but **advanced settings** (e.g., Azure SQL DB (CDC) column exclude list) are not supported and will revert to defaults after deployment.
-* **Not Supported**: The component currently do not supports CI/CD through Git integration and Deployment pipelines.
+* **Not Supported**: The component does not support CI/CD through Git integration and Deployment pipelines.
 
 ### Component Support Matrix
 
