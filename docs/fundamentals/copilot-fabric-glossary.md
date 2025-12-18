@@ -4,7 +4,7 @@ description: Learn the definitions of terms and key concepts related to Copilot 
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: daengli
-ms.topic: conceptual
+ms.topic: concept-article
 ms.collection: ce-skilling-ai-copilot
 ms.update-cycle: 180-days
 ms.date: 04/02/2025

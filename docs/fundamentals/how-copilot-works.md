@@ -4,7 +4,7 @@ description: Get an in-depth overview of Copilot in Microsoft Fabric including i
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: daengli
-ms.topic: conceptual
+ms.topic: concept-article
 ms.collection: ce-skilling-ai-copilot
 ms.update-cycle: 180-days
 ms.date: 04/16/2025
