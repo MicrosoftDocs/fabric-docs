@@ -26,24 +26,24 @@ This article describes how to use notebooks in data science and data engineering
 
 ## Security context of running notebook
 
-The execution of a notebook can be triggered by three different manners in Fabric with full flexibility to meet different scenarios:
+Notebook execution can be triggered in three ways, each with a different security context:
 
-- **Interactive run**: User manually triggers the execution via the different UX entries or calling the REST API. The execution would be running under the current user's security context.
-- **Run as pipeline activity**: The execution is triggered from Fabric Data Factory pipeline. You can find the detail steps in the [Notebook Activity](../data-factory/notebook-activity.md). The execution would be running under the context of the pipeline's last modified user.
-- **Scheduler**: The execution is triggered from a scheduler plan. The execution would be running under the security context of the user who setup/update the scheduler plan.
+- **Interactive run**: You manually trigger execution through the UI or REST API. The notebook runs under your security context (the current user).
+- **Run as pipeline activity**: Execution is triggered from a Fabric Data Factory pipeline. See [Notebook activity](../data-factory/notebook-activity.md) for details. The notebook runs under the identity of the **pipeline's last modified user**—not the pipeline owner or notebook owner. This means whoever last edited the pipeline determines the security context for data access, API calls, and permissions.
+- **Scheduler**: Execution is triggered from a scheduled run. The notebook runs under the identity of the user who created or last updated the schedule.
 
-The flexibility of these execution options with different security context allows you to meet different scenarios and requirements, but also requires you to be aware of the security context when you design and develop your notebook, otherwise it may cause unexpected behavior and even some security issues.
+These execution options provide flexibility for different scenarios, but you must understand which identity runs your notebook. The security context affects data access permissions, API call authorization, and resource availability. Some APIs (such as T-SQL endpoints) don't support service principals and require a user principal.
 
 The first time when a notebook is created, a warning message is shown to remind you the risk of running the code without reviewing it.
 
 :::image type="content" source="media\how-to-use-notebook\notebook-security-warning.png" alt-text="Screenshot showing warning of running notebook." lightbox="media\how-to-use-notebook\notebook-security-warning.png":::
 
-Here are some best practices to help you avoid security issues:
+Follow these best practices to avoid security issues:
 
-- Before you manually run the notebook, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change.
-- Before you add a notebook activity to a pipeline, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change. If you are not sure about the latest change, better open the Notebook to review the change before you add it into the pipeline.
-- Before you update the scheduler plan, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change. If you are not sure about the latest change, better open the Notebook to review the change before you update the scheduler plan.
-- Separate the workspace into different stage (dev, test, prod) and control the access of different stage to avoid the security issue. Only add the user who you trust to the prod stage.
+- **Before running a notebook manually**: Check who last modified the notebook and use the [version history](#version-history) panel to review the actual content changes before executing code you didn't write.
+- **Before adding a notebook to a pipeline**: Verify who last modified the pipeline, because the notebook runs under that user's identity. Open the notebook from the pipeline to review its latest content. If the identity doesn't have the required permissions (or if you need a user principal instead of a service principal for certain APIs), have the appropriate user edit the pipeline to update the last modified identity.
+- **Before creating or updating a schedule**: The notebook runs under the identity of whoever creates or updates the schedule. Ensure that user has the necessary permissions for all operations in the notebook.
+- **Use workspace stages**: Separate workspaces into dev, test, and prod stages. Restrict access to production workspaces to trusted users only.
 
 
 ## Create notebooks
@@ -62,7 +62,7 @@ You can import one or more existing notebooks from your local computer using the
 
 ## Export a notebook
 
-You can export your notebook to other standard formats. Synapse notebook can be exported into:
+You can export your notebook to other standard formats. The Fabric notebook can be exported into:
 
 :::image type="content" source="media\how-to-use-notebook\export-notebook.png" alt-text="Screenshot showing where to export notebook." lightbox="media\how-to-use-notebook\export-notebook.png":::
 

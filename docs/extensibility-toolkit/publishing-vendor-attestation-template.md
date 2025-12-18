@@ -4,7 +4,7 @@ description: Template document for vendor attestation requirements when publishi
 author: gsaurer
 ms.author: billmath
 ms.topic: article
-ms.date: 11/20/2025
+ms.date: 12/15/2025
 ---
 
 # Vendor Attestation Document Template

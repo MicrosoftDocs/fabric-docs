@@ -7,7 +7,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
-ms.date: 01/21/2025
+ms.date: 12/15/2025
 #customer intent: As a developer, I want to learn how to deploy content to an empty or nonempty stage using the Fabric Application lifecycle management (ALM) deployment pipeline tool so that I can manage my content lifecycle.
 ---
 

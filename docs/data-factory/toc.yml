@@ -69,8 +69,6 @@
         href: decision-guide-data-integration.md
       - name: Decide - Data movement strategy
         href: decision-guide-data-movement.md
-      - name: Decide - Data transformation strategy
-        href: decision-guide-data-transformation.md
       - name: Decide - Copy activity, Copy job, dataflow, or Spark?
         href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md 
       - name: Create a Copy job
@@ -89,11 +87,17 @@
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
       href: compare-fabric-data-factory-and-azure-data-factory.md
+    - name: Pipeline assessment tool
+      href: /azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json 
     - name: Connector capability comparison
       href: connector-parity.md
+    - name: Migration planning
+      href: migrate-planning-azure-data-factory.md
     - name: Migration best practices
       href: migration-best-practices.md
-    - name: Pipelines
+    - name: Bring your Azure Data Factory to Fabric
+      href: migrate-pipelines-azure-data-factory-item.md 
+    - name: Migrate pipelines with PowerShell
       items:
       - name: Migrate from Azure Data Factory to Data Factory in Microsoft Fabric
         href: migrate-from-azure-data-factory.md  
@@ -975,6 +979,8 @@
             href: dataflows-gen2-monitor.md
           - name: Performance and troubleshooting
             items:
+              - name: Decide - Dataflow strategy
+                href: decision-guide-data-transformation.md
               - name: Dataflow Gen2 performance and scalability
                 href: dataflow-gen2-performance-best-practices.md  
               - name: Dataflows that use gateways
@@ -1138,6 +1144,8 @@
         items:
           - name: Browse pipeline runs in the Monitoring Hub
             href: monitoring-hub-pipeline-runs.md
+          - name: Workspace monitoring
+            href: workspace-monitoring.md
       - name: Parameterization
         items: 
           - name: Parameter usage

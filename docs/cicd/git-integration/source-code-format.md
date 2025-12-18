@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 01/23/2025
+ms.date: 12/15/2025
 ms.custom: 
 #customer intent: As a developer, I want to understand how the items in Microsoft Fabric's Git integration tool are structured so that I can use it effectively.
 ---
