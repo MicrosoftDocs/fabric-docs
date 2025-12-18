@@ -14,8 +14,6 @@ ms.custom:
 
 The Spark connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities. The **Spark connector** in Microsoft Fabric enables you to access data from Spark servers. It supports reading tables, views, and executing custom T-SQL queries for advanced analytics and transformations.
 
-## Supported capabilities
-
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Spark<br> Microsoft Account|
