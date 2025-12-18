@@ -12,7 +12,7 @@ ms.custom:
 
 # Spark connector overview
 
-The Spark connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities. The **Spark connector** in Microsoft Fabric enables you to access data from **Fabric Data Warehouse** and the **SQL analytics endpoint of a Lakehouse** directly from Spark. It supports reading tables, views, and executing custom T-SQL queries for advanced analytics and transformations.
+The Spark connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities. The **Spark connector** in Microsoft Fabric enables you to access data from Spark servers. It supports reading tables, views, and executing custom T-SQL queries for advanced analytics and transformations.
 
 ## Supported capabilities
 
