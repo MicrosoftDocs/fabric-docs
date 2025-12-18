@@ -1,9 +1,9 @@
 ---
 title: How Copilot in Microsoft Fabric works
 description: Get an in-depth overview of Copilot in Microsoft Fabric including its architecture, functionality, and cost implications.
-author: denglishbi
-ms.author: daengli
-ms.reviewer: sngun
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: daengli
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
 ms.update-cycle: 180-days
