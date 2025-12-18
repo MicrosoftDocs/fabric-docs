@@ -91,9 +91,13 @@
       href: /azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json 
     - name: Connector capability comparison
       href: connector-parity.md
+    - name: Migration planning
+      href: migrate-planning-azure-data-factory.md
     - name: Migration best practices
       href: migration-best-practices.md
-    - name: Pipelines
+    - name: Bring your Azure Data Factory to Fabric
+      href: migrate-pipelines-azure-data-factory-item.md 
+    - name: Migrate pipelines with PowerShell
       items:
       - name: Migrate from Azure Data Factory to Data Factory in Microsoft Fabric
         href: migrate-from-azure-data-factory.md  
