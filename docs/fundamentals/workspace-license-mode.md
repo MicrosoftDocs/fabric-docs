@@ -4,7 +4,6 @@ description: This article explains the meanings of the workspace license modes a
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: liud
-ms.author: juliacawthra
 ms.topic: overview
 ms.date: 09/18/2025
 #customer intent: As workspace admin, I want to understand what the workspace license mode options are and how to reassign the workspace to a different capacity.
