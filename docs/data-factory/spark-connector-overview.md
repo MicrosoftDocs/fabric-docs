@@ -18,8 +18,7 @@ The Spark connector is supported in Data Factory for [!INCLUDE [product-name](..
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
-| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Spark<br> Microsoft Account <br> Key-pair |
-| **Pipeline**<br>- Lookup activity  <br>- Script activity |None<br> On-premises<br> Virtual network |Spark<br> Microsoft Account <br> Key-pair |
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Spark<br> Microsoft Account|
 
 
 ## Prerequisites
