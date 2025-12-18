@@ -3,7 +3,7 @@ title: Feature usage and adoption report
 description: Learn how to use the Microsoft feature usage and adoption report.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ms.date: 12/17/2025
 ---
@@ -19,7 +19,7 @@ You can also have an admin share the report or semantic model directly with you.
 ## Navigation
 The report is designed for admins to analyze Fabric activity in various ways. You can filter activity data across all pages using the date range slicer to focus on a specific time period within the last 30 days. Additionally, the filter pane lets you refine your analysis based on capacity, user, item-related information, and other activity characteristics.
 
-The following image shows an example layout. Your view may look slightly different depending on updates to the Fabric interface and activity in your tenant.
+The following image shows an example layout. Your view will look different based on activity in your tenant.
 
 :::image type="content" source="media/feature-usage-adoption/feature-usage-adoption-report.png" alt-text="Screenshot showing the elements of the Feature Usage and Adoption report in Fabric." lightbox="media/feature-usage-adoption/feature-usage-adoption-report.png":::
 
