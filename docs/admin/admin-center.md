@@ -3,7 +3,7 @@ title: What is the Microsoft Fabric admin portal?
 description: This article provides an overview of the admin Microsoft Fabric admin portal.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 10/30/2025
 ---
@@ -52,7 +52,7 @@ To get to the admin portal, follow these steps:
 
 ## Related content
 
-* Microsoft Fabric is currently available in [Azure public cloud regions](https://azure.microsoft.com/explore/global-infrastructure/geographies/). For more information, see [Fabric region availability](rebion-availability.md).
+* Microsoft Fabric is currently available in [Azure public cloud regions](https://azure.microsoft.com/explore/global-infrastructure/geographies/). For more information, see [Fabric region availability](region-availability.md).
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
 * [Workspace tenant settings](portal-workspace.md).
 * [Manage workspaces](portal-workspaces.md).
