@@ -1,9 +1,9 @@
 ---
 title: Fabric trial capacity
 description: Understand how the Fabric trial capacity works. This includes starting a trial, ending a trial, and sharing a trial.
-author: julcsc
+author: SnehaGunda
+ms.author: sngun
 ms.reviewer: alpowers, mibruhje
-ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
