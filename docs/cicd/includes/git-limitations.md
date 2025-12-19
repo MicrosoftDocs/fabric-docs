@@ -51,6 +51,7 @@ If your team uses Fabric Git Integration and is evaluating a migration from Azur
   Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integration-process#permissions) can work in the workspace.
 - Workspaces with template apps installed can't be connected to Git.
 - [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces) can't connect to a Git provider.
+- Workspaces can contain a maximum of 1,000 items. If the Git branch contains more than 1,000 items, syncing the content to the workspace will fail. To avoid this limitation, consider splitting your artifacts into smaller sets. Each set should be placed in a separate workspace and linked to a different Git branch, or organized into different folders within a single branch.
 
 ### Branch and folder limitations
 
