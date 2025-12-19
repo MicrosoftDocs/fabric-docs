@@ -4,7 +4,7 @@ description: Learn how to troubleshoot issues with restricted access.
 author: msmimart
 ms.author: mimart
 ms.reviewer: mimart
-ms.date: 12/18/2025
+ms.date: 12/19/2025
 ms.topic: concept-article
 ---
 
@@ -18,7 +18,7 @@ Because there are multiple layers controlling access, you could encounter restri
 
 ## User's access to an item is blocked
 
-If you previously had access to an item but you can no longer see it in your workspace or open it, here are some common causes.
+If you previously had access to an item but can no longer see it in your workspace or open it, consider the following common causes.
 
 ### Access was manually removed
 
@@ -60,7 +60,7 @@ You can tell a policy change is the cause of your restricted access if you exper
 
 - You see tiles on a dashboard that display a "Permission required" message. This message indicates that these tiles contain data from a restricted underlying source. Tiles that don't use restricted data render normally.
 
-These symptoms apply to both protection policies and DLP policies with the "restrict access" action.
+These symptoms can indicate that either a protection policy or a DLP policy with the "restrict access" action is blocking your access.
 
 ### What should I do if I think a policy is blocking my access?
 
